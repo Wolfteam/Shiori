@@ -1,0 +1,17 @@
+enum AppAccentColorType {
+  blue,
+  green,
+  pink,
+  brown,
+  red,
+  cyan,
+  indigo,
+  purple,
+  deepPurple,
+  grey,
+  orange,
+  yellow,
+  blueGrey,
+  teal,
+  amber,
+}

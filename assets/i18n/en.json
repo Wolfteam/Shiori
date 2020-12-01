@@ -1,0 +1,23 @@
+{
+    "Characters": [
+        {
+            "Key": "Keqing",
+            "Name": "Keqing",
+            "Skills": [
+                {
+                    "Name": "Normal Attack",
+                    "Description": "bla"
+                }
+            ]
+        }
+    ],
+    "Weapons": [],
+    "Artifacts": [
+        {
+            "Key": "Adventurer",
+            "Name": "Adventurer",
+            "TwoPiecesBonus": "Max HP increased by 1000",
+            "FourPiecesBonus": "Opening a chest regenerates 30% Max HP over 5s"
+        }
+    ]
+}
