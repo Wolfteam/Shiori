@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
 
-class CharacterAscentionMaterialModel {
+class ItemAscentionMaterialModel {
   final String imagePath;
   final int quantity;
 
-  CharacterAscentionMaterialModel({
+  ItemAscentionMaterialModel({
     @required this.imagePath,
     @required this.quantity,
   });

@@ -1,4 +1,4 @@
-export 'characters/character_ascention_material_model.dart';
+export 'items/item_ascention_material_model.dart';
 export 'characters/character_ascention_model.dart';
 export 'characters/character_card_model.dart';
 export 'characters/character_passive_talent_model.dart';

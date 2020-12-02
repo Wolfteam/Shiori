@@ -13,6 +13,7 @@ class Styles {
   static const edgeInsetAll5 = EdgeInsets.all(5);
   static const edgeInsetAll0 = EdgeInsets.all(0);
   static const edgeInsetHorizontal16 = EdgeInsets.symmetric(horizontal: 16);
+  static const edgeInsetVertical5 = EdgeInsets.symmetric(vertical: 5);
 
   static const modalBottomSheetShape = RoundedRectangleBorder(
     borderRadius: BorderRadius.only(
@@ -21,5 +22,7 @@ class Styles {
     ),
   );
   static const modalBottomSheetContainerMargin = EdgeInsets.only(left: 10, right: 10, bottom: 10);
-  static const modalBottomSheetContainerPadding = EdgeInsets.only(left: 20, right: 20, top: 20);
+  static const modalBottomSheetContainerPadding = EdgeInsets.only(left: 10, right: 10, top: 10);
+
+  static const listItemWithIconOffset = Offset(-20, 0);
 }

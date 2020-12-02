@@ -1,31 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/ui/widgets/common/rarity.dart';
 
+import '../../../common/enums/element_type.dart';
+import '../../../common/enums/weapon_type.dart';
 import '../../../common/extensions/element_type_extensions.dart';
 import '../../../common/extensions/weapon_type_extensions.dart';
-import '../../../models/characters/character_card_model.dart';
+import '../../../common/styles.dart';
 import '../../pages/character_page.dart';
+import '../common/rarity.dart';
+import 'character_ascention_materials.dart';
 
 class CharacterCard extends StatelessWidget {
-  final CharacterCardModel model;
+  final String logoName;
+  final String name;
+  final int rarity;
+  final WeaponType weaponType;
+  final ElementType elementType;
+  final bool isNew;
+  final bool isComingSoon;
+  final List<String> materials;
 
-  CharacterCard(this.model);
+  const CharacterCard({
+    Key key,
+    @required this.logoName,
+    @required this.name,
+    @required this.rarity,
+    @required this.weaponType,
+    @required this.elementType,
+    @required this.isNew,
+    @required this.isComingSoon,
+    @required this.materials,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final logoPath = "assets/characters/${model.logoName}";
-    final weaponPath = model.weaponType.getWeaponAssetPath();
-    final elementPath = model.elementType.getElementAsssetPath();
-    final stars = <Icon>[];
-    for (var i = 0; i < model.stars; i++) {
-      stars.add(Icon(Icons.star_sharp, color: Colors.yellow, size: 14));
-    }
+    final logoPath = "assets/characters/$logoName";
+    final weaponPath = weaponType.getWeaponAssetPath();
+    final elementPath = elementType.getElementAsssetPath();
 
     return InkWell(
       onTap: () => _gotoCharacterPage(context),
       child: Card(
-        elevation: 10,
+        elevation: Styles.cardTenElevation,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -38,10 +54,7 @@ class CharacterCard extends StatelessWidget {
                 children: [
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    child: Image.asset(
-                      logoPath,
-                      fit: BoxFit.fill,
-                    ),
+                    child: Image.asset(logoPath, fit: BoxFit.fill),
                   ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,28 +76,20 @@ class CharacterCard extends StatelessWidget {
             ),
             Center(
               child: Text(
-                model.name,
+                name,
+                overflow: TextOverflow.ellipsis,
                 style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
-            Rarity(stars: model.stars),
+            Rarity(stars: rarity),
             IntrinsicHeight(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
-                    child: Image.asset(
-                      weaponPath,
-                      height: 50,
-                    ),
-                  ),
+                  Expanded(child: Tooltip(message: '$weaponType', child: Image.asset(weaponPath, height: 50))),
                   VerticalDivider(color: theme.accentColor),
-                  Container(
-                    color: Colors.red,
-                    height: 50,
-                    child: Text('Ascention'),
-                  )
+                  Expanded(child: CharacterAscentionMaterials(images: materials))
                 ],
               ),
             )
@@ -96,8 +101,8 @@ class CharacterCard extends StatelessWidget {
 
   Widget _buildNewOrComingSoonAvatar(BuildContext context) {
     final theme = Theme.of(context);
-    final newOrComingSoon = model.isNew || model.isComingSoon;
-    final icon = model.isNew ? Icons.new_releases_outlined : Icons.confirmation_num;
+    final newOrComingSoon = isNew || isComingSoon;
+    final icon = isNew ? Icons.new_releases_outlined : Icons.confirmation_num;
     final newOrComingSoonAvatar = CircleAvatar(
       radius: 15,
       backgroundColor: newOrComingSoon ? theme.accentColor : Colors.transparent,
@@ -110,7 +115,7 @@ class CharacterCard extends StatelessWidget {
     );
     if (newOrComingSoon)
       return Tooltip(
-        message: model.isComingSoon ? 'Coming soon' : 'New',
+        message: isComingSoon ? 'Coming soon' : 'New',
         child: newOrComingSoonAvatar,
       );
 

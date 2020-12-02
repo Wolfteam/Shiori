@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/common/enums/element_type.dart';
-import 'package:genshindb/common/enums/weapon_type.dart';
-import 'package:genshindb/models/characters/character_ascention_material_model.dart';
-import 'package:genshindb/models/characters/character_ascention_model.dart';
-import 'package:genshindb/ui/widgets/common/rarity.dart';
 
-import '../../common/styles.dart';
+import '../../common/enums/element_type.dart';
+import '../../common/enums/weapon_type.dart';
 import '../../common/extensions/element_type_extensions.dart';
-import '../../common/extensions/weapon_type_extensions.dart';
 import '../../common/extensions/iterable_extensions.dart';
+import '../../common/extensions/weapon_type_extensions.dart';
+import '../../common/styles.dart';
+import '../../models/characters/character_ascention_model.dart';
+import '../../models/items/item_ascention_material_model.dart';
 import '../../models/models.dart';
+import '../widgets/common/item_description.dart';
+import '../widgets/common/item_description_card.dart';
+import '../widgets/common/item_expansion_panel.dart';
+import '../widgets/common/rarity.dart';
+import '../widgets/common/wrapped_ascention_material.dart';
 
 class CharacterPage extends StatelessWidget {
   final double imgSize = 20;
@@ -25,21 +29,21 @@ class CharacterPage extends StatelessWidget {
       rank: 1,
       level: 1,
       materials: [
-        CharacterAscentionMaterialModel(quantity: 1, imagePath: 'vajrada_amethyst_sliver.png'),
-        CharacterAscentionMaterialModel(quantity: 3, imagePath: 'cor_lapis.png'),
-        CharacterAscentionMaterialModel(quantity: 3, imagePath: 'whopperflower_nectar.png'),
-        CharacterAscentionMaterialModel(quantity: 20000, imagePath: 'mora.png'),
+        ItemAscentionMaterialModel(quantity: 1, imagePath: 'vajrada_amethyst_sliver.png'),
+        ItemAscentionMaterialModel(quantity: 3, imagePath: 'cor_lapis.png'),
+        ItemAscentionMaterialModel(quantity: 3, imagePath: 'whopperflower_nectar.png'),
+        ItemAscentionMaterialModel(quantity: 20000, imagePath: 'mora.png'),
       ],
     ),
     CharacterAscentionModel(
       rank: 2,
       level: 20,
       materials: [
-        CharacterAscentionMaterialModel(quantity: 3, imagePath: 'vajrada_amethyst_fragment.png'),
-        CharacterAscentionMaterialModel(quantity: 2, imagePath: 'lightning_prism.png'),
-        CharacterAscentionMaterialModel(quantity: 10, imagePath: 'cor_lapis.png'),
-        CharacterAscentionMaterialModel(quantity: 15, imagePath: 'whopperflower_nectar.png'),
-        CharacterAscentionMaterialModel(quantity: 40000, imagePath: 'mora.png'),
+        ItemAscentionMaterialModel(quantity: 3, imagePath: 'vajrada_amethyst_fragment.png'),
+        ItemAscentionMaterialModel(quantity: 2, imagePath: 'lightning_prism.png'),
+        ItemAscentionMaterialModel(quantity: 10, imagePath: 'cor_lapis.png'),
+        ItemAscentionMaterialModel(quantity: 15, imagePath: 'whopperflower_nectar.png'),
+        ItemAscentionMaterialModel(quantity: 40000, imagePath: 'mora.png'),
       ],
     ),
   ];
@@ -48,17 +52,17 @@ class CharacterPage extends StatelessWidget {
     CharacterTalentAscentionModel(
       level: 1,
       materials: [
-        CharacterAscentionMaterialModel(quantity: 3, imagePath: 'teaching_of_diligence.png'),
-        CharacterAscentionMaterialModel(quantity: 6, imagePath: 'whopperflower_nectar.png'),
-        CharacterAscentionMaterialModel(quantity: 12500, imagePath: 'mora.png'),
+        ItemAscentionMaterialModel(quantity: 3, imagePath: 'teaching_of_diligence.png'),
+        ItemAscentionMaterialModel(quantity: 6, imagePath: 'whopperflower_nectar.png'),
+        ItemAscentionMaterialModel(quantity: 12500, imagePath: 'mora.png'),
       ],
     ),
     CharacterTalentAscentionModel(
       level: 2,
       materials: [
-        CharacterAscentionMaterialModel(quantity: 2, imagePath: 'guide_to_diligence.png'),
-        CharacterAscentionMaterialModel(quantity: 3, imagePath: 'shimmering_nectar.png'),
-        CharacterAscentionMaterialModel(quantity: 17500, imagePath: 'mora.png'),
+        ItemAscentionMaterialModel(quantity: 2, imagePath: 'guide_to_diligence.png'),
+        ItemAscentionMaterialModel(quantity: 3, imagePath: 'shimmering_nectar.png'),
+        ItemAscentionMaterialModel(quantity: 17500, imagePath: 'mora.png'),
       ],
     ),
   ];
@@ -157,7 +161,6 @@ class CharacterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(title: Text('Keqing')),
       body: SafeArea(
@@ -167,7 +170,7 @@ class CharacterPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               _buildGeneralCard(),
-              _buildDescription(context),
+              ItemDescriptionCard(description: description),
               _buildSkillsCard(context),
               _buildAscentionCard(context),
               _buildTalentAscentionCard(context),
@@ -188,18 +191,20 @@ class CharacterPage extends StatelessWidget {
           'Keqing',
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
         ),
-        _buildGeneralItem('Rarity', Rarity(stars: stars)),
-        _buildGeneralItem(
-          'Element',
-          Image.asset(elementType.getElementAsssetPath(), width: imgSize, height: imgSize),
+        ItemDescription(title: 'Rarity', widget: Rarity(stars: stars), useColumn: false),
+        ItemDescription(
+          title: 'Element',
+          widget: Image.asset(elementType.getElementAsssetPath(), width: imgSize, height: imgSize),
+          useColumn: false,
         ),
-        _buildGeneralItem('Region', Text('Mondstat')),
-        _buildGeneralItem(
-          'Weapon',
-          Image.asset(weaponType.getWeaponAssetPath(), width: imgSize, height: imgSize),
+        ItemDescription(title: 'Region', widget: Text('Mondstat'), useColumn: false),
+        ItemDescription(
+          title: 'Weapon',
+          widget: Image.asset(weaponType.getWeaponAssetPath(), width: imgSize, height: imgSize),
+          useColumn: false,
         ),
-        _buildGeneralItem('Role', Text('Support DPS')),
-        _buildGeneralItem('Gender', Text('Female')),
+        ItemDescription(title: 'Role', widget: Text('Support DPS'), useColumn: false),
+        ItemDescription(title: 'Gender', widget: Text('Female'), useColumn: false),
       ],
     );
     return Stack(
@@ -215,51 +220,10 @@ class CharacterPage extends StatelessWidget {
         Image.asset(
           fullImgPath,
           alignment: Alignment.topRight,
-          height: 280,
+          height: 250,
           width: 100,
         ),
       ],
-    );
-  }
-
-  Widget _buildGeneralItem(String title, Widget element) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 2),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text('$title: ', style: TextStyle(color: Colors.amber)),
-          element,
-        ],
-      ),
-    );
-  }
-
-  Widget _buildDescription(BuildContext context) {
-    final theme = Theme.of(context);
-    return Card(
-      elevation: Styles.cardTenElevation,
-      margin: Styles.edgeInsetAll10,
-      shape: Styles.cardShape,
-      child: Container(
-        padding: EdgeInsets.only(top: 0, bottom: 10, left: 10, right: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            ListTile(
-              dense: true,
-              leading: Icon(Icons.settings),
-              contentPadding: EdgeInsets.zero,
-              title: Transform.translate(
-                offset: Offset(-16, 0),
-                child: Text('Description', style: theme.textTheme.headline6.copyWith(color: Colors.amber)),
-              ),
-            ),
-            // Text('Description ', style: TextStyle(color: Colors.amber)),
-            Text(description, style: TextStyle(fontSize: 12)),
-          ],
-        ),
-      ),
     );
   }
 
@@ -316,53 +280,17 @@ class CharacterPage extends StatelessWidget {
   }
 
   Widget _buildSkillsCard(BuildContext context) {
-    final theme = Theme.of(context);
     final cards = skills.mapIndex((e, index) => _buildSkillCard(context, e, index.isEven)).toList();
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-      child: ExpansionPanelList(
-        dividerColor: Colors.red,
-        expandedHeaderPadding: EdgeInsets.zero,
-        expansionCallback: (int index, bool isExpanded) {
-          // setState(() {
-          //   _data[index].isExpanded = !isExpanded;
-          // });
-        },
-        children: [
-          ExpansionPanel(
-            canTapOnHeader: true,
-            headerBuilder: (BuildContext context, bool isExpanded) {
-              return ListTile(
-                dense: true,
-                leading: Icon(Icons.settings),
-                title: Transform.translate(
-                  offset: Offset(-16, 0),
-                  child: Text('Skills', style: theme.textTheme.headline6.copyWith(color: Colors.amber)),
-                ),
-              );
-            },
-            body: Padding(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-              child: Wrap(children: cards),
-            ),
-            isExpanded: true,
-          )
-        ],
-      ),
+    final body = Padding(
+      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+      child: Wrap(children: cards),
     );
+    return ItemExpansionPanel(title: 'Skills', body: body);
   }
 
   TableRow _buildAscentionRow(CharacterAscentionModel model) {
     final materials = model.materials
-        .map(
-          (m) => Wrap(children: [
-            Image.asset('assets/items/${m.imagePath}', width: 20, height: 20),
-            Container(
-              margin: EdgeInsets.only(left: 5, right: 10),
-              child: Text('x ${m.quantity}'),
-            ),
-          ]),
-        )
+        .map((m) => WrappedAscentionMaterial(image: 'assets/items/${m.imagePath}', quantity: m.quantity))
         .toList();
     return TableRow(children: [
       Padding(
@@ -375,7 +303,7 @@ class CharacterPage extends StatelessWidget {
       ),
       Center(
         child: Padding(
-          padding: EdgeInsets.only(top: 5),
+          padding: Styles.edgeInsetVertical5,
           child: Wrap(children: materials),
         ),
       ),
@@ -415,40 +343,7 @@ class CharacterPage extends StatelessWidget {
       ),
     );
 
-    return _buildExpansionPanel('Ascention Materials', body, context);
-  }
-
-  Widget _buildExpansionPanel(String title, Widget body, BuildContext context) {
-    final theme = Theme.of(context);
-    return Container(
-      margin: Styles.edgeInsetAll10,
-      child: ExpansionPanelList(
-        dividerColor: Colors.red,
-        expandedHeaderPadding: EdgeInsets.zero,
-        expansionCallback: (int index, bool isExpanded) {
-          // setState(() {
-          //   _data[index].isExpanded = !isExpanded;
-          // });
-        },
-        children: [
-          ExpansionPanel(
-            canTapOnHeader: true,
-            headerBuilder: (BuildContext context, bool isExpanded) {
-              return ListTile(
-                dense: true,
-                leading: Icon(Icons.settings),
-                title: Transform.translate(
-                  offset: Offset(-16, 0),
-                  child: Text(title, style: theme.textTheme.headline6.copyWith(color: Colors.amber)),
-                ),
-              );
-            },
-            body: body,
-            isExpanded: true,
-          )
-        ],
-      ),
-    );
+    return ItemExpansionPanel(title: 'Ascention Materials', body: body);
   }
 
   TableRow _buildTalentAscentionRow(CharacterTalentAscentionModel model) {
@@ -470,7 +365,7 @@ class CharacterPage extends StatelessWidget {
       ),
       Center(
         child: Padding(
-          padding: EdgeInsets.only(top: 5),
+          padding: Styles.edgeInsetVertical5,
           child: Wrap(children: materials),
         ),
       ),
@@ -504,7 +399,8 @@ class CharacterPage extends StatelessWidget {
         ],
       ),
     );
-    return _buildExpansionPanel('Talent Ascention', body, context);
+
+    return ItemExpansionPanel(title: 'Talent Ascention', body: body);
   }
 
   Widget _buildPassiveCard(CharacterPassiveTalentModel model, BuildContext context) {
@@ -582,12 +478,12 @@ class CharacterPage extends StatelessWidget {
   Widget _buildPassiveCards(BuildContext context) {
     final items = passives.map((e) => _buildPassiveCard(e, context)).toList();
     final body = Wrap(children: items);
-    return _buildExpansionPanel('Passives', body, context);
+    return ItemExpansionPanel(title: 'Passives', body: body);
   }
 
   Widget _buildConstellationCards(BuildContext context) {
     final items = constellations.map((e) => _buildConstellationCard(e, context)).toList();
     final body = Wrap(children: items);
-    return _buildExpansionPanel('Constellations', body, context);
+    return ItemExpansionPanel(title: 'Constellations', body: body);
   }
 }

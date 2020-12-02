@@ -16,7 +16,15 @@ class CharactersPage extends StatefulWidget {
 }
 
 class _CharactersPageState extends State<CharactersPage> {
-  ScrollController _scrollController;
+  static final dummyMaterials = [
+    'assets/items/philosophies_of_diligence.png',
+    'assets/items/lightning_prism.png',
+    'assets/items/vajrada_amethyst_gemstone.png',
+    'assets/items/lightning_prism.png',
+    'assets/items/crown_of_sagehood.png',
+    'assets/items/energy_nectar.png',
+  ];
+
   final characters = <CharacterCardModel>[
     CharacterCardModel(
       name: 'Keqing',
@@ -24,20 +32,24 @@ class _CharactersPageState extends State<CharactersPage> {
       logoName: 'Keqing.png',
       stars: 5,
       weaponType: WeaponType.sword,
+      materials: dummyMaterials,
     ),
     CharacterCardModel(
-        name: 'Qiqi',
-        elementType: ElementType.cryo,
-        logoName: 'Qiqi.png',
-        stars: 5,
-        weaponType: WeaponType.sword,
-        isComingSoon: true),
+      name: 'Qiqi',
+      elementType: ElementType.cryo,
+      logoName: 'Qiqi.png',
+      stars: 5,
+      weaponType: WeaponType.sword,
+      isComingSoon: true,
+      materials: dummyMaterials,
+    ),
     CharacterCardModel(
       name: 'Barbara',
       elementType: ElementType.hydro,
       logoName: 'Barbara.png',
       stars: 4,
       weaponType: WeaponType.catalyst,
+      materials: dummyMaterials,
     ),
     CharacterCardModel(
       name: 'Beidou',
@@ -46,6 +58,7 @@ class _CharactersPageState extends State<CharactersPage> {
       stars: 4,
       weaponType: WeaponType.claymore,
       isNew: true,
+      materials: dummyMaterials,
     ),
     CharacterCardModel(
       name: 'Amber',
@@ -54,6 +67,7 @@ class _CharactersPageState extends State<CharactersPage> {
       stars: 4,
       weaponType: WeaponType.bow,
       isNew: true,
+      materials: dummyMaterials,
     ),
     CharacterCardModel(
       name: 'Venti',
@@ -61,6 +75,7 @@ class _CharactersPageState extends State<CharactersPage> {
       logoName: 'Venti.png',
       stars: 5,
       weaponType: WeaponType.bow,
+      materials: dummyMaterials,
     ),
     CharacterCardModel(
       name: 'Mona',
@@ -68,6 +83,7 @@ class _CharactersPageState extends State<CharactersPage> {
       logoName: 'Mona.png',
       stars: 5,
       weaponType: WeaponType.catalyst,
+      materials: dummyMaterials,
     ),
   ];
 
@@ -122,7 +138,19 @@ class _CharactersPageState extends State<CharactersPage> {
       padding: EdgeInsets.symmetric(horizontal: 5),
       sliver: SliverStaggeredGrid.countBuilder(
         crossAxisCount: isPortrait ? 2 : 3,
-        itemBuilder: (ctx, index) => CharacterCard(characters[index]),
+        itemBuilder: (ctx, index) {
+          final char = characters[index];
+          return CharacterCard(
+            elementType: char.elementType,
+            isComingSoon: char.isComingSoon,
+            isNew: char.isNew,
+            logoName: char.logoName,
+            name: char.name,
+            rarity: char.stars,
+            weaponType: char.weaponType,
+            materials: char.materials,
+          );
+        },
         itemCount: characters.length,
         crossAxisSpacing: isPortrait ? 10 : 5,
         mainAxisSpacing: 5,

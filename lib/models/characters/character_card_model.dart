@@ -10,6 +10,7 @@ class CharacterCardModel {
   final ElementType elementType;
   final bool isNew;
   final bool isComingSoon;
+  final List<String> materials;
 
   const CharacterCardModel({
     @required this.logoName,
@@ -17,6 +18,7 @@ class CharacterCardModel {
     @required this.stars,
     @required this.weaponType,
     @required this.elementType,
+    @required this.materials,
     this.isNew = false,
     this.isComingSoon = false,
   });

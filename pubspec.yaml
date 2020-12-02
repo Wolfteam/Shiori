@@ -41,6 +41,7 @@ dependencies:
   path: ^1.7.0
   path_provider: ^1.6.17
   shared_preferences: ^0.5.11
+  smooth_star_rating: 1.1.1
   sprintf: ^5.0.0
   sqlite3_flutter_libs: ^0.2.0
 
@@ -72,6 +73,11 @@ flutter:
   assets:
     - assets/characters/
     - assets/weapons/
+    - assets/weapons/bows/
+    - assets/weapons/catalysts/
+    - assets/weapons/polearms/
+    - assets/weapons/claymores/
+    - assets/weapons/swords/
     - assets/elements/
     - assets/skills/
     - assets/items/

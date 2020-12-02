@@ -1,0 +1,4 @@
+enum SortDirectionType {
+  asc,
+  desc,
+}

@@ -1,0 +1,4 @@
+enum CharacterFilterType {
+  name,
+  rarity,
+}

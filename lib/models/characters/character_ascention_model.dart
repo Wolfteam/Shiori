@@ -1,11 +1,11 @@
 import 'package:flutter/widgets.dart';
 
-import 'character_ascention_material_model.dart';
+import '../items/item_ascention_material_model.dart';
 
 class CharacterAscentionModel {
   final int rank;
   final int level;
-  final List<CharacterAscentionMaterialModel> materials;
+  final List<ItemAscentionMaterialModel> materials;
 
   CharacterAscentionModel({
     @required this.rank,
