@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:genshindb/common/enums/artifact_filter_type.dart';
+import 'package:genshindb/ui/widgets/common/item_popupmenu_filter.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 import '../../../common/enums/sort_direction_type.dart';
-import '../../../common/enums/weapon_filter_type.dart';
 import '../../../common/styles.dart';
 import '../common/bottom_sheet_title.dart';
 import '../common/modal_sheet_separator.dart';
 import '../common/sort_direction_popupmenu_filter.dart';
-import '../common/weapons_button_bar.dart';
-import 'weapon_popupmenu_filter.dart';
 
-class WeaponBottomSheet extends StatelessWidget {
+class ArtifactBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -25,10 +24,6 @@ class WeaponBottomSheet extends StatelessWidget {
           children: <Widget>[
             ModalSheetSeparator(),
             BottomSheetTitle(icon: Icons.playlist_play, title: 'Filters'),
-            // Text('Elements'),
-            // ElementsButtonBar(),
-            Text('Type'),
-            WeaponsButtonBar(),
             Text('Rarity'),
             Center(
               child: SmoothStarRating(
@@ -45,9 +40,11 @@ class WeaponBottomSheet extends StatelessWidget {
             ButtonBar(
               alignment: MainAxisAlignment.spaceEvenly,
               children: [
-                WeaponPopupMenuFilter(
+                ItemPopupMenuFilter<ArtifactFilterType>(
+                  tooltipText: 'Sort by',
                   onSelected: (v) => {},
-                  selectedValue: WeaponFilterType.name,
+                  selectedValue: ArtifactFilterType.name,
+                  values: ArtifactFilterType.values,
                 ),
                 SortDirectionPopupMenuFilter(
                   selectedSortDirection: SortDirectionType.asc,

@@ -222,8 +222,8 @@ class _CharactersPageState extends State<CharactersPage> {
     );
   }
 
-  void _showFiltersModal(BuildContext context) {
-    showModalBottomSheet(
+  Future<void> _showFiltersModal(BuildContext context) async {
+    await showModalBottomSheet(
       context: context,
       shape: Styles.modalBottomSheetShape,
       isDismissible: true,

@@ -1,0 +1,4 @@
+enum ArtifactFilterType {
+  name,
+  rarity,
+}

@@ -7,11 +7,10 @@ import '../../../common/enums/sort_direction_type.dart';
 import '../../../common/styles.dart';
 import '../common/bottom_sheet_title.dart';
 import '../common/elements_button_bar.dart';
+import '../common/item_popupmenu_filter.dart';
 import '../common/modal_sheet_separator.dart';
-import '../common/released_unreleased_popupmenu_filter.dart';
 import '../common/sort_direction_popupmenu_filter.dart';
 import '../common/weapons_button_bar.dart';
-import 'character_popupmenu_filter.dart';
 
 class CharacterBottomSheet extends StatelessWidget {
   @override
@@ -48,11 +47,16 @@ class CharacterBottomSheet extends StatelessWidget {
             ButtonBar(
               alignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ReleasedUnreleasedPopupMenuFilter(
+                ItemPopupMenuFilter<ReleasedUnreleasedType>(
+                  tooltipText: 'Released / Unreleased type',
+                  values: ReleasedUnreleasedType.values,
                   selectedValue: ReleasedUnreleasedType.all,
                   onSelected: (v) => {},
+                  icon: const Icon(Icons.all_inbox),
                 ),
-                CharacterPopupMenuFilter(
+                ItemPopupMenuFilter<CharacterFilterType>(
+                  tooltipText: 'Sort By',
+                  values: CharacterFilterType.values,
                   selectedValue: CharacterFilterType.name,
                   onSelected: (v) => {},
                 ),

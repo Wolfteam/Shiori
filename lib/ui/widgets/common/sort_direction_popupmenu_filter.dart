@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../common/enums/sort_direction_type.dart';
+import 'item_popupmenu_filter.dart';
 
 class SortDirectionPopupMenuFilter extends StatelessWidget {
   final SortDirectionType selectedSortDirection;
@@ -14,20 +15,12 @@ class SortDirectionPopupMenuFilter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final values = SortDirectionType.values.map((direction) {
-      return CheckedPopupMenuItem<SortDirectionType>(
-        checked: selectedSortDirection == direction,
-        value: direction,
-        child: Text('$direction'),
-      );
-    }).toList();
-    return PopupMenuButton<SortDirectionType>(
-      padding: const EdgeInsets.all(0),
-      initialValue: selectedSortDirection,
-      icon: const Icon(Icons.sort),
+    return ItemPopupMenuFilter<SortDirectionType>(
+      tooltipText: 'Sort direction',
+      selectedValue: selectedSortDirection,
+      values: SortDirectionType.values,
       onSelected: onSelected,
-      itemBuilder: (context) => values,
-      tooltip: 'Sort direction',
+      icon: const Icon(Icons.sort),
     );
   }
 }
