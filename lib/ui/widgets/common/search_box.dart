@@ -59,7 +59,7 @@ class _SearchBoxState extends State<SearchBox> {
     );
   }
 
-  Future<void> _onSearchTextChanged() {}
+  void _onSearchTextChanged() {}
 
   void _cleanSearchText() {
     _searchFocusNode.requestFocus();

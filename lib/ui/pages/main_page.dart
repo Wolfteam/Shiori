@@ -18,7 +18,13 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
   bool _didChangeDependencies = false;
   TabController _tabController;
   int _index = 2;
-  final _pages = [MapPage(), CharactersPage(), HomePage(), WeaponsPage(), ArtifactsPage()];
+  final _pages = [
+    CharactersPage(),
+    WeaponsPage(),
+    HomePage(),
+    ArtifactsPage(),
+    MapPage(),
+  ];
 
   @override
   void initState() {
@@ -70,24 +76,24 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
     final i18n = S.of(context);
     return [
       BottomNavigationBarItem(
-        label: 'Map',
-        icon: const Icon(Icons.map),
-      ),
-      BottomNavigationBarItem(
         label: 'Characters',
         icon: const Icon(Icons.people),
-      ),
-      BottomNavigationBarItem(
-        label: 'Home',
-        icon: const Icon(Icons.home),
       ),
       BottomNavigationBarItem(
         label: 'Weapons',
         icon: const Icon(Icons.settings),
       ),
       BottomNavigationBarItem(
+        label: 'Home',
+        icon: const Icon(Icons.home),
+      ),
+      BottomNavigationBarItem(
         label: 'Artifacts',
         icon: const Icon(Icons.settings),
+      ),
+      BottomNavigationBarItem(
+        label: 'Map',
+        icon: const Icon(Icons.map),
       ),
     ];
   }
