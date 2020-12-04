@@ -3,6 +3,13 @@ import 'package:flutter/material.dart';
 class Styles {
   static const String appIconPath = 'assets/icon/icon.png';
   static final RoundedRectangleBorder cardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(10));
+  static final RoundedRectangleBorder mainCardShape = RoundedRectangleBorder(
+    borderRadius: BorderRadius.only(
+      bottomLeft: Radius.circular(35),
+      // topLeft: Radius.circular(35),
+      topRight: Radius.elliptical(50, 40),
+    ),
+  );
   static final RoundedRectangleBorder floatingCardShape =
       RoundedRectangleBorder(borderRadius: BorderRadius.circular(20));
 
@@ -25,4 +32,11 @@ class Styles {
   static const modalBottomSheetContainerPadding = EdgeInsets.only(left: 10, right: 10, top: 10);
 
   static const listItemWithIconOffset = Offset(-20, 0);
+
+  static const cardItemDetailShape = RoundedRectangleBorder(
+    borderRadius: BorderRadius.only(
+      topRight: Radius.circular(30),
+      topLeft: Radius.circular(30),
+    ),
+  );
 }

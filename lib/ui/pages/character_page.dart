@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import '../../common/enums/element_type.dart';
@@ -10,18 +12,18 @@ import '../../models/characters/character_ascention_model.dart';
 import '../../models/items/item_ascention_material_model.dart';
 import '../../models/models.dart';
 import '../widgets/common/item_description.dart';
-import '../widgets/common/item_description_card.dart';
-import '../widgets/common/item_expansion_panel.dart';
+import '../widgets/common/item_description_detail.dart';
 import '../widgets/common/rarity.dart';
 import '../widgets/common/wrapped_ascention_material.dart';
 
 class CharacterPage extends StatelessWidget {
   final double imgSize = 20;
+  final double imgHeight = 550;
   final fullImgPath = 'assets/characters/Keqing_full.png';
   final description =
       "The Yuheng of the Liyue Qixing. Has much to say about Rex Lapis' unilateral approach to policymaking in Liyue - but in truth, gods admire skeptics such as her quite a lot";
   final stars = 5;
-  final elementType = ElementType.pyro;
+  final elementType = ElementType.electro;
   final weaponType = WeaponType.bow;
 
   final ascentionMaterials = <CharacterAscentionModel>[
@@ -161,21 +163,14 @@ class CharacterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
-      appBar: AppBar(title: Text('Keqing')),
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: Styles.edgeInsetAll5,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+          child: Stack(
             children: [
-              _buildGeneralCard(),
-              ItemDescriptionCard(description: description),
-              _buildSkillsCard(context),
-              _buildAscentionCard(context),
-              _buildTalentAscentionCard(context),
-              _buildPassiveCards(context),
-              _buildConstellationCards(context),
+              _buildTop(context),
+              _buildBottom(context),
             ],
           ),
         ),
@@ -183,13 +178,96 @@ class CharacterPage extends StatelessWidget {
     );
   }
 
-  Widget _buildGeneralCard() {
+  Widget _buildTop(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+    final isPortrait = mediaQuery.orientation == Orientation.portrait;
+    final descriptionWidth = mediaQuery.size.width / (isPortrait ? 1.2 : 2);
+    //TODO: IM NOT SURE HOW THIS WILL LOOK LIKE IN BIGGER DEVICES
+    // final padding = mediaQuery.padding;
+    // final screenHeight = mediaQuery.size.height - padding.top - padding.bottom;
+
+    return Container(
+      color: elementType.getElementColor(),
+      child: Stack(
+        fit: StackFit.passthrough,
+        alignment: Alignment.center,
+        children: <Widget>[
+          Align(
+            alignment: Alignment.topRight,
+            child: Container(
+              transform: Matrix4.translationValues(60, -30, 0.0),
+              child: Opacity(
+                opacity: 0.5,
+                child: Image.asset(
+                  fullImgPath,
+                  width: 350,
+                  height: imgHeight,
+                ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Image.asset(
+              fullImgPath,
+              width: 340,
+              height: imgHeight,
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              width: descriptionWidth,
+              margin: EdgeInsets.symmetric(horizontal: 30),
+              child: _buildGeneralCard(context),
+            ),
+          ),
+          Positioned(
+            top: 0.0,
+            left: 0.0,
+            right: 0.0,
+            child: AppBar(backgroundColor: Colors.transparent, elevation: 0.0),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBottom(BuildContext context) {
+    return Card(
+      margin: EdgeInsets.only(top: 380, right: 10, left: 10),
+      shape: Styles.cardItemDetailShape,
+      child: Padding(
+        padding: EdgeInsets.only(top: 10, right: 10, left: 10),
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(bottom: 10),
+              child: ItemDescriptionDetail(
+                title: 'Description',
+                body: Container(margin: EdgeInsets.symmetric(horizontal: 5), child: Text(description)),
+                icon: Icon(Icons.settings),
+              ),
+            ),
+            _buildSkillsCard(context),
+            _buildAscentionCard(context),
+            _buildTalentAscentionCard(context),
+            _buildPassiveCards(context),
+            _buildConstellationCards(context),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildGeneralCard(BuildContext context) {
+    final theme = Theme.of(context);
     final details = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Keqing',
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          style: theme.textTheme.headline5.copyWith(fontWeight: FontWeight.bold),
         ),
         ItemDescription(title: 'Rarity', widget: Rarity(stars: stars), useColumn: false),
         ItemDescription(
@@ -207,23 +285,12 @@ class CharacterPage extends StatelessWidget {
         ItemDescription(title: 'Gender', widget: Text('Female'), useColumn: false),
       ],
     );
-    return Stack(
-      fit: StackFit.passthrough,
-      alignment: Alignment.center,
-      children: [
-        Card(
-          elevation: Styles.cardTenElevation,
-          margin: Styles.edgeInsetAll10,
-          shape: Styles.cardShape,
-          child: Padding(padding: Styles.edgeInsetAll10, child: details),
-        ),
-        Image.asset(
-          fullImgPath,
-          alignment: Alignment.topRight,
-          height: 250,
-          width: 100,
-        ),
-      ],
+    return Card(
+      color: Colors.amber.withOpacity(0.1),
+      elevation: Styles.cardTenElevation,
+      margin: Styles.edgeInsetAll5,
+      shape: Styles.cardShape,
+      child: Padding(padding: Styles.edgeInsetAll10, child: details),
     );
   }
 
@@ -235,42 +302,52 @@ class CharacterPage extends StatelessWidget {
         margin: EdgeInsets.all(5),
         child: Column(
           children: [
-            Center(child: Text(element.key, style: theme.textTheme.subtitle1.copyWith(color: theme.accentColor))),
+            Center(
+                child: Text(
+              element.key,
+              overflow: TextOverflow.ellipsis,
+              style: theme.textTheme.subtitle1.copyWith(color: theme.accentColor),
+            )),
             Text(element.value, style: theme.textTheme.bodyText2.copyWith(fontSize: 12))
           ],
         ),
       ));
     });
 
-    final img = Image.asset(model.image, width: 80, height: 80);
-    final titles = Column(
-      children: [
-        Center(
-          child: Text(
-            model.skillTitle,
-            overflow: TextOverflow.ellipsis,
-            style: theme.textTheme.headline6.copyWith(color: theme.accentColor),
+    final img = Expanded(child: Image.asset(model.image, width: 80, height: 80));
+    final titles = Expanded(
+      child: Column(
+        children: [
+          Tooltip(
+            message: model.skillTitle,
+            child: Text(
+              model.skillTitle,
+              overflow: TextOverflow.ellipsis,
+              style: theme.textTheme.headline6.copyWith(color: theme.accentColor),
+            ),
           ),
-        ),
-        Center(child: Text(model.skillSubTitle, overflow: TextOverflow.ellipsis)),
-      ],
+          Tooltip(
+            message: model.skillSubTitle,
+            child: Text(
+              model.skillSubTitle,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
+      ),
     );
-
-    final header = isEven ? [img, titles] : [titles, img];
 
     return Card(
       elevation: Styles.cardTenElevation,
-      margin: Styles.edgeInsetAll5,
       shape: Styles.cardShape,
-      child: Container(
+      child: Padding(
         padding: Styles.edgeInsetAll10,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: header,
+              children: isEven ? [img, titles] : [titles, img],
             ),
             ...widgets,
           ],
@@ -280,12 +357,14 @@ class CharacterPage extends StatelessWidget {
   }
 
   Widget _buildSkillsCard(BuildContext context) {
+    final theme = Theme.of(context);
     final cards = skills.mapIndex((e, index) => _buildSkillCard(context, e, index.isEven)).toList();
     final body = Padding(
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+      padding: EdgeInsets.symmetric(vertical: 10),
       child: Wrap(children: cards),
     );
-    return ItemExpansionPanel(title: 'Skills', body: body);
+
+    return ItemDescriptionDetail(title: 'Skills', icon: Icon(Icons.settings), body: body);
   }
 
   TableRow _buildAscentionRow(CharacterAscentionModel model) {
@@ -313,7 +392,7 @@ class CharacterPage extends StatelessWidget {
   Widget _buildAscentionCard(BuildContext context) {
     final body = Card(
       elevation: Styles.cardTenElevation,
-      margin: Styles.edgeInsetAll10,
+      margin: Styles.edgeInsetAll5,
       shape: Styles.cardShape,
       child: Table(
         columnWidths: {
@@ -342,8 +421,7 @@ class CharacterPage extends StatelessWidget {
         ],
       ),
     );
-
-    return ItemExpansionPanel(title: 'Ascention Materials', body: body);
+    return ItemDescriptionDetail(title: 'Ascention Materials', icon: Icon(Icons.settings), body: body);
   }
 
   TableRow _buildTalentAscentionRow(CharacterTalentAscentionModel model) {
@@ -375,7 +453,7 @@ class CharacterPage extends StatelessWidget {
   Widget _buildTalentAscentionCard(BuildContext context) {
     final body = Card(
       elevation: Styles.cardTenElevation,
-      margin: Styles.edgeInsetAll10,
+      margin: Styles.edgeInsetAll5,
       shape: Styles.cardShape,
       child: Table(
         columnWidths: {
@@ -400,14 +478,14 @@ class CharacterPage extends StatelessWidget {
       ),
     );
 
-    return ItemExpansionPanel(title: 'Talent Ascention', body: body);
+    return ItemDescriptionDetail(title: 'Talent Ascention', icon: Icon(Icons.settings), body: body);
   }
 
   Widget _buildPassiveCard(CharacterPassiveTalentModel model, BuildContext context) {
     final theme = Theme.of(context);
     return Card(
       elevation: Styles.cardTenElevation,
-      margin: Styles.edgeInsetAll10,
+      margin: Styles.edgeInsetAll5,
       shape: Styles.cardShape,
       child: Padding(
         padding: Styles.edgeInsetAll10,
@@ -443,7 +521,7 @@ class CharacterPage extends StatelessWidget {
     final theme = Theme.of(context);
     return Card(
       elevation: Styles.cardTenElevation,
-      margin: Styles.edgeInsetAll10,
+      margin: Styles.edgeInsetAll5,
       shape: Styles.cardShape,
       child: Padding(
         padding: Styles.edgeInsetAll10,
@@ -478,12 +556,12 @@ class CharacterPage extends StatelessWidget {
   Widget _buildPassiveCards(BuildContext context) {
     final items = passives.map((e) => _buildPassiveCard(e, context)).toList();
     final body = Wrap(children: items);
-    return ItemExpansionPanel(title: 'Passives', body: body);
+    return ItemDescriptionDetail(title: 'Passives', icon: Icon(Icons.settings), body: body);
   }
 
   Widget _buildConstellationCards(BuildContext context) {
     final items = constellations.map((e) => _buildConstellationCard(e, context)).toList();
     final body = Wrap(children: items);
-    return ItemExpansionPanel(title: 'Constellations', body: body);
+    return ItemDescriptionDetail(title: 'Constellations', icon: Icon(Icons.settings), body: body);
   }
 }

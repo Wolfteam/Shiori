@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../common/extensions/rarity_extensions.dart';
 import '../../../common/styles.dart';
+import '../common/gradient_card.dart';
 import '../common/rarity.dart';
 
 class ArtifactCard extends StatelessWidget {
@@ -43,8 +45,10 @@ class ArtifactCard extends StatelessWidget {
         .toList();
     return InkWell(
       onTap: () => {},
-      child: Card(
+      child: GradientCard(
+        shape: Styles.mainCardShape,
         elevation: Styles.cardTenElevation,
+        gradient: rarity.getRarityGradient(),
         child: Padding(
           padding: Styles.edgeInsetAll5,
           child: Column(

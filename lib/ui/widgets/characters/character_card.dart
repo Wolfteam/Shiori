@@ -41,59 +41,64 @@ class CharacterCard extends StatelessWidget {
     return InkWell(
       onTap: () => _gotoCharacterPage(context),
       child: Card(
+        shape: Styles.mainCardShape,
         elevation: Styles.cardTenElevation,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 5),
-              child: Stack(
-                alignment: AlignmentDirectional.topCenter,
-                fit: StackFit.passthrough,
-                children: [
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    child: Image.asset(logoPath, fit: BoxFit.fill),
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      _buildNewOrComingSoonAvatar(context),
-                      Tooltip(
-                        message: 'Electro',
-                        child: CircleAvatar(
-                          radius: 15,
-                          backgroundColor: Colors.black.withAlpha(100),
-                          backgroundImage: AssetImage(elementPath),
+        color: elementType.getElementColor(),
+        child: Padding(
+          padding: Styles.edgeInsetAll10,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 5),
+                child: Stack(
+                  alignment: AlignmentDirectional.topCenter,
+                  fit: StackFit.passthrough,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                      child: Image.asset(logoPath, fit: BoxFit.fill),
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        _buildNewOrComingSoonAvatar(context),
+                        Tooltip(
+                          message: 'Electro',
+                          child: CircleAvatar(
+                            radius: 15,
+                            backgroundColor: Colors.black.withAlpha(100),
+                            backgroundImage: AssetImage(elementPath),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Center(
-              child: Text(
-                name,
-                overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+              Center(
+                child: Text(
+                  name,
+                  overflow: TextOverflow.ellipsis,
+                  style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                ),
               ),
-            ),
-            Rarity(stars: rarity),
-            IntrinsicHeight(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(child: Tooltip(message: '$weaponType', child: Image.asset(weaponPath, height: 50))),
-                  VerticalDivider(color: theme.accentColor),
-                  Expanded(child: CharacterAscentionMaterials(images: materials))
-                ],
-              ),
-            )
-          ],
+              Rarity(stars: rarity),
+              IntrinsicHeight(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(child: Tooltip(message: '$weaponType', child: Image.asset(weaponPath, height: 50))),
+                    VerticalDivider(color: theme.accentColor),
+                    Expanded(child: CharacterAscentionMaterials(images: materials))
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

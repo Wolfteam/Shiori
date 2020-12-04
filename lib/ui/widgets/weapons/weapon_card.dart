@@ -1,8 +1,12 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'package:genshindb/common/styles.dart';
-import 'package:genshindb/ui/pages/weapon_page.dart';
 
 import '../../../common/enums/weapon_type.dart';
+import '../../../common/extensions/rarity_extensions.dart';
+import '../../../common/styles.dart';
+import '../../pages/weapon_page.dart';
+import '../common/gradient_card.dart';
 import '../common/rarity.dart';
 
 class WeaponCard extends StatelessWidget {
@@ -26,8 +30,10 @@ class WeaponCard extends StatelessWidget {
     final theme = Theme.of(context);
     return InkWell(
       onTap: () => _gotoWeaponPage(context),
-      child: Card(
+      child: GradientCard(
+        shape: Styles.mainCardShape,
         elevation: Styles.cardTenElevation,
+        gradient: rarity.getRarityGradient(),
         child: Padding(
           padding: Styles.edgeInsetAll5,
           child: Column(

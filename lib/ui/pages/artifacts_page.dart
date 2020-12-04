@@ -48,6 +48,82 @@ class ArtifactsPage extends StatelessWidget {
             ' If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%.'
       },
     ),
+    ArtifactCardModel(
+      name: 'Glacier and Snowfield',
+      rarity: 5,
+      image: 'assets/artifacts/glacier_and_snowfield_4.png',
+      bonus: {
+        '2 Piece': 'Cryo DMG Bonus +15%',
+        '4 Piece':
+            'Increases Superconduct DMG by 100%. Increases Melt DMG by 15%. Using an Elemental Burst increases Cryo DMG Bonus by 30% for 10s.'
+      },
+    ),
+    ArtifactCardModel(
+      name: 'Blizzard Strayer',
+      rarity: 5,
+      image: 'assets/artifacts/blizzard_walker_4.png',
+      bonus: {
+        '2 Piece': 'Cryo DMG Bonus +15%',
+        '4 Piece':
+            'When a character attacks an enemy affected by Cryo, their CRIT Rate is increased by 20%. If the enemy is Frozen, CRIT Rate is increased by an additional 20%.'
+      },
+    ),
+    ArtifactCardModel(
+      name: 'Prayers to Springtime',
+      rarity: 4,
+      image: 'assets/artifacts/prayers_of_springtime_4.png',
+      bonus: {
+        '1 Piece bonus': 'Affected by Cryo for 40% less time.',
+      },
+    ),
+    ArtifactCardModel(
+      name: "Gladiator's Finale",
+      rarity: 5,
+      image: 'assets/artifacts/gladiators_finale_4.png',
+      bonus: {
+        '2 Piece': 'ATK +18%.',
+        '4 Piece':
+            ' If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%.'
+      },
+    ),
+    ArtifactCardModel(
+      name: 'Glacier and Snowfield',
+      rarity: 5,
+      image: 'assets/artifacts/glacier_and_snowfield_4.png',
+      bonus: {
+        '2 Piece': 'Cryo DMG Bonus +15%',
+        '4 Piece':
+            'Increases Superconduct DMG by 100%. Increases Melt DMG by 15%. Using an Elemental Burst increases Cryo DMG Bonus by 30% for 10s.'
+      },
+    ),
+    ArtifactCardModel(
+      name: 'Blizzard Strayer',
+      rarity: 5,
+      image: 'assets/artifacts/blizzard_walker_4.png',
+      bonus: {
+        '2 Piece': 'Cryo DMG Bonus +15%',
+        '4 Piece':
+            'When a character attacks an enemy affected by Cryo, their CRIT Rate is increased by 20%. If the enemy is Frozen, CRIT Rate is increased by an additional 20%.'
+      },
+    ),
+    ArtifactCardModel(
+      name: 'Prayers to Springtime',
+      rarity: 4,
+      image: 'assets/artifacts/prayers_of_springtime_4.png',
+      bonus: {
+        '1 Piece bonus': 'Affected by Cryo for 40% less time.',
+      },
+    ),
+    ArtifactCardModel(
+      name: "Gladiator's Finale",
+      rarity: 5,
+      image: 'assets/artifacts/gladiators_finale_4.png',
+      bonus: {
+        '2 Piece': 'ATK +18%.',
+        '4 Piece':
+            ' If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%.'
+      },
+    ),
   ];
 
   @override

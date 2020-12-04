@@ -19,7 +19,7 @@ class ItemDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    if (useColumn)
+    if (useColumn) {
       return Container(
         margin: Styles.edgeInsetAll5,
         child: Column(
@@ -28,7 +28,7 @@ class ItemDescription extends StatelessWidget {
               child: Text(
                 title,
                 overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.subtitle1.copyWith(color: theme.accentColor),
+                style: theme.textTheme.subtitle2.copyWith(color: Colors.white),
               ),
             ),
             Center(
@@ -37,13 +37,18 @@ class ItemDescription extends StatelessWidget {
           ],
         ),
       );
+    }
 
     return Container(
       margin: EdgeInsets.symmetric(vertical: 2),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Text('$title: ', style: TextStyle(color: theme.accentColor), overflow: TextOverflow.ellipsis),
+          Text(
+            '$title: ',
+            style: theme.textTheme.subtitle2.copyWith(color: Colors.white),
+            overflow: TextOverflow.ellipsis,
+          ),
           widget,
         ],
       ),
