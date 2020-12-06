@@ -6,22 +6,22 @@ import '../../../models/home/today_weapon_ascention_material_model.dart';
 import 'weapon_card_ascention_material.dart';
 
 class TodayWeaponMaterials extends StatelessWidget {
-  final weaponAscMaterials = [
-    TodayWeaponAscentionMaterialModel(
-      name: 'Stained Mask',
-      image: 'assets/items/stained_mask.png',
-      days: [DayType.wednesday, DayType.friday],
-    ),
-    TodayWeaponAscentionMaterialModel(
-      name: 'Dvalins Sigh',
-      image: 'assets/items/dvalins_sigh.png',
-      days: [DayType.monday, DayType.friday],
-    ),
-    TodayWeaponAscentionMaterialModel(
-      name: 'Cor Lapis',
-      image: 'assets/items/cor_lapis.png',
-      days: [DayType.monday, DayType.friday],
-    ),
+  final weaponAscMaterials = <TodayWeaponAscentionMaterialModel>[
+    // TodayWeaponAscentionMaterialModel(
+    //   name: 'Stained Mask',
+    //   image: 'assets/items/stained_mask.png',
+    //   days: [DayType.wednesday, DayType.friday],
+    // ),
+    // TodayWeaponAscentionMaterialModel(
+    //   name: 'Dvalins Sigh',
+    //   image: 'assets/items/dvalins_sigh.png',
+    //   days: [DayType.monday, DayType.friday],
+    // ),
+    // TodayWeaponAscentionMaterialModel(
+    //   name: 'Cor Lapis',
+    //   image: 'assets/items/cor_lapis.png',
+    //   days: [DayType.monday, DayType.friday],
+    // ),
   ];
 
   @override

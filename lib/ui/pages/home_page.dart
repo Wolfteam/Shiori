@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/common/styles.dart';
 
 import '../widgets/home/elements_card.dart';
 import '../widgets/home/today_char_ascention_materials.dart';

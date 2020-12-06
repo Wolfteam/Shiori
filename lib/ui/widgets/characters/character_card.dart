@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../bloc/bloc.dart';
 import '../../../common/enums/element_type.dart';
 import '../../../common/enums/weapon_type.dart';
 import '../../../common/extensions/element_type_extensions.dart';
@@ -10,7 +12,7 @@ import '../common/rarity.dart';
 import 'character_ascention_materials.dart';
 
 class CharacterCard extends StatelessWidget {
-  final String logoName;
+  final String image;
   final String name;
   final int rarity;
   final WeaponType weaponType;
@@ -21,7 +23,7 @@ class CharacterCard extends StatelessWidget {
 
   const CharacterCard({
     Key key,
-    @required this.logoName,
+    @required this.image,
     @required this.name,
     @required this.rarity,
     @required this.weaponType,
@@ -34,12 +36,11 @@ class CharacterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final logoPath = "assets/characters/$logoName";
     final weaponPath = weaponType.getWeaponAssetPath();
     final elementPath = elementType.getElementAsssetPath();
 
     return InkWell(
-      onTap: () => _gotoCharacterPage(context),
+      onTap: isComingSoon ? null : () => _gotoCharacterPage(name, context),
       child: Card(
         shape: Styles.mainCardShape,
         elevation: Styles.cardTenElevation,
@@ -58,7 +59,7 @@ class CharacterCard extends StatelessWidget {
                   children: [
                     Container(
                       margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                      child: Image.asset(logoPath, fit: BoxFit.fill),
+                      child: Image.asset(image, fit: BoxFit.fill),
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,11 +90,23 @@ class CharacterCard extends StatelessWidget {
               IntrinsicHeight(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Expanded(child: Tooltip(message: '$weaponType', child: Image.asset(weaponPath, height: 50))),
-                    VerticalDivider(color: theme.accentColor),
-                    Expanded(child: CharacterAscentionMaterials(images: materials))
+                    Flexible(
+                      fit: FlexFit.tight,
+                      flex: 40,
+                      child: Tooltip(message: '$weaponType', child: Image.asset(weaponPath, height: 50)),
+                    ),
+                    Flexible(
+                      fit: FlexFit.tight,
+                      flex: 5,
+                      child: VerticalDivider(color: theme.accentColor),
+                    ),
+                    Flexible(
+                      fit: FlexFit.tight,
+                      flex: 55,
+                      child: CharacterAscentionMaterials(images: materials),
+                    )
                   ],
                 ),
               )
@@ -127,7 +140,8 @@ class CharacterCard extends StatelessWidget {
     return newOrComingSoonAvatar;
   }
 
-  Future<void> _gotoCharacterPage(BuildContext context) async {
+  Future<void> _gotoCharacterPage(String name, BuildContext context) async {
+    context.read<CharacterBloc>().add(CharacterEvent.loadCharacter(name: name));
     final route = MaterialPageRoute(builder: (c) => CharacterPage());
     await Navigator.push(context, route);
   }
