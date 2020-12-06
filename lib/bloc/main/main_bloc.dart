@@ -10,15 +10,18 @@ import '../../common/enums/app_language_type.dart';
 import '../../common/enums/app_theme_type.dart';
 import '../../common/extensions/app_theme_type_extensions.dart';
 import '../../generated/l10n.dart';
+import '../../services/genshing_service.dart';
 
 part 'main_bloc.freezed.dart';
 part 'main_event.dart';
 part 'main_state.dart';
 
 class MainBloc extends Bloc<MainEvent, MainState> {
-  MainLoadedState get currentState => state as MainLoadedState;
+  final GenshinService _genshinService;
 
-  MainBloc() : super(MainState.loading());
+  MainBloc(this._genshinService) : super(const MainState.loading());
+
+  _MainLoadedState get currentState => state as _MainLoadedState;
 
   @override
   Stream<MainState> mapEventToState(
@@ -52,10 +55,10 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     // } catch (e, s) {
     //   _logger.error(runtimeType, '_init: Unknown error while trying to delete old logs', e, s);
     // }
-
+    await _genshinService.init(AppLanguageType.english);
     final packageInfo = await PackageInfo.fromPlatform();
     // final appSettings = _settings.appSettings;
-    return _loadThemeData(packageInfo.appName, AppThemeType.dark, AppAccentColorType.amber, AppLanguageType.spanish);
+    return _loadThemeData(packageInfo.appName, AppThemeType.dark, AppAccentColorType.amber, AppLanguageType.english);
   }
 
   MainState _loadThemeData(

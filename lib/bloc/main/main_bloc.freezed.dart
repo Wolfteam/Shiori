@@ -602,18 +602,18 @@ class _$MainStateTearOff {
   const _$MainStateTearOff();
 
 // ignore: unused_element
-  MainLoadingState loading() {
-    return const MainLoadingState();
+  _MainLoadingState loading() {
+    return const _MainLoadingState();
   }
 
 // ignore: unused_element
-  MainLoadedState loaded(
+  _MainLoadedState loaded(
       {@required String appTitle,
       @required ThemeData theme,
       @required bool initialized,
       @required bool firstInstall,
       int currentSelectedTab = 0}) {
-    return MainLoadedState(
+    return _MainLoadedState(
       appTitle: appTitle,
       theme: theme,
       initialized: initialized,
@@ -645,13 +645,13 @@ mixin _$MainState {
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult loading(MainLoadingState value),
-    @required TResult loaded(MainLoadedState value),
+    @required TResult loading(_MainLoadingState value),
+    @required TResult loaded(_MainLoadedState value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult loading(MainLoadingState value),
-    TResult loaded(MainLoadedState value),
+    TResult loading(_MainLoadingState value),
+    TResult loaded(_MainLoadedState value),
     @required TResult orElse(),
   });
 }
@@ -672,26 +672,27 @@ class _$MainStateCopyWithImpl<$Res> implements $MainStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $MainLoadingStateCopyWith<$Res> {
-  factory $MainLoadingStateCopyWith(
-          MainLoadingState value, $Res Function(MainLoadingState) then) =
-      _$MainLoadingStateCopyWithImpl<$Res>;
+abstract class _$MainLoadingStateCopyWith<$Res> {
+  factory _$MainLoadingStateCopyWith(
+          _MainLoadingState value, $Res Function(_MainLoadingState) then) =
+      __$MainLoadingStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MainLoadingStateCopyWithImpl<$Res> extends _$MainStateCopyWithImpl<$Res>
-    implements $MainLoadingStateCopyWith<$Res> {
-  _$MainLoadingStateCopyWithImpl(
-      MainLoadingState _value, $Res Function(MainLoadingState) _then)
-      : super(_value, (v) => _then(v as MainLoadingState));
+class __$MainLoadingStateCopyWithImpl<$Res>
+    extends _$MainStateCopyWithImpl<$Res>
+    implements _$MainLoadingStateCopyWith<$Res> {
+  __$MainLoadingStateCopyWithImpl(
+      _MainLoadingState _value, $Res Function(_MainLoadingState) _then)
+      : super(_value, (v) => _then(v as _MainLoadingState));
 
   @override
-  MainLoadingState get _value => super._value as MainLoadingState;
+  _MainLoadingState get _value => super._value as _MainLoadingState;
 }
 
 /// @nodoc
-class _$MainLoadingState extends MainLoadingState {
-  const _$MainLoadingState() : super._();
+class _$_MainLoadingState extends _MainLoadingState {
+  const _$_MainLoadingState() : super._();
 
   @override
   String toString() {
@@ -700,7 +701,7 @@ class _$MainLoadingState extends MainLoadingState {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is MainLoadingState);
+    return identical(this, other) || (other is _MainLoadingState);
   }
 
   @override
@@ -737,8 +738,8 @@ class _$MainLoadingState extends MainLoadingState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult loading(MainLoadingState value),
-    @required TResult loaded(MainLoadedState value),
+    @required TResult loading(_MainLoadingState value),
+    @required TResult loaded(_MainLoadedState value),
   }) {
     assert(loading != null);
     assert(loaded != null);
@@ -748,8 +749,8 @@ class _$MainLoadingState extends MainLoadingState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult loading(MainLoadingState value),
-    TResult loaded(MainLoadedState value),
+    TResult loading(_MainLoadingState value),
+    TResult loaded(_MainLoadedState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -760,16 +761,16 @@ class _$MainLoadingState extends MainLoadingState {
   }
 }
 
-abstract class MainLoadingState extends MainState {
-  const MainLoadingState._() : super._();
-  const factory MainLoadingState() = _$MainLoadingState;
+abstract class _MainLoadingState extends MainState {
+  const _MainLoadingState._() : super._();
+  const factory _MainLoadingState() = _$_MainLoadingState;
 }
 
 /// @nodoc
-abstract class $MainLoadedStateCopyWith<$Res> {
-  factory $MainLoadedStateCopyWith(
-          MainLoadedState value, $Res Function(MainLoadedState) then) =
-      _$MainLoadedStateCopyWithImpl<$Res>;
+abstract class _$MainLoadedStateCopyWith<$Res> {
+  factory _$MainLoadedStateCopyWith(
+          _MainLoadedState value, $Res Function(_MainLoadedState) then) =
+      __$MainLoadedStateCopyWithImpl<$Res>;
   $Res call(
       {String appTitle,
       ThemeData theme,
@@ -779,14 +780,14 @@ abstract class $MainLoadedStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MainLoadedStateCopyWithImpl<$Res> extends _$MainStateCopyWithImpl<$Res>
-    implements $MainLoadedStateCopyWith<$Res> {
-  _$MainLoadedStateCopyWithImpl(
-      MainLoadedState _value, $Res Function(MainLoadedState) _then)
-      : super(_value, (v) => _then(v as MainLoadedState));
+class __$MainLoadedStateCopyWithImpl<$Res> extends _$MainStateCopyWithImpl<$Res>
+    implements _$MainLoadedStateCopyWith<$Res> {
+  __$MainLoadedStateCopyWithImpl(
+      _MainLoadedState _value, $Res Function(_MainLoadedState) _then)
+      : super(_value, (v) => _then(v as _MainLoadedState));
 
   @override
-  MainLoadedState get _value => super._value as MainLoadedState;
+  _MainLoadedState get _value => super._value as _MainLoadedState;
 
   @override
   $Res call({
@@ -796,7 +797,7 @@ class _$MainLoadedStateCopyWithImpl<$Res> extends _$MainStateCopyWithImpl<$Res>
     Object firstInstall = freezed,
     Object currentSelectedTab = freezed,
   }) {
-    return _then(MainLoadedState(
+    return _then(_MainLoadedState(
       appTitle: appTitle == freezed ? _value.appTitle : appTitle as String,
       theme: theme == freezed ? _value.theme : theme as ThemeData,
       initialized:
@@ -811,8 +812,8 @@ class _$MainLoadedStateCopyWithImpl<$Res> extends _$MainStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$MainLoadedState extends MainLoadedState {
-  const _$MainLoadedState(
+class _$_MainLoadedState extends _MainLoadedState {
+  const _$_MainLoadedState(
       {@required this.appTitle,
       @required this.theme,
       @required this.initialized,
@@ -845,7 +846,7 @@ class _$MainLoadedState extends MainLoadedState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MainLoadedState &&
+        (other is _MainLoadedState &&
             (identical(other.appTitle, appTitle) ||
                 const DeepCollectionEquality()
                     .equals(other.appTitle, appTitle)) &&
@@ -872,8 +873,8 @@ class _$MainLoadedState extends MainLoadedState {
       const DeepCollectionEquality().hash(currentSelectedTab);
 
   @override
-  $MainLoadedStateCopyWith<MainLoadedState> get copyWith =>
-      _$MainLoadedStateCopyWithImpl<MainLoadedState>(this, _$identity);
+  _$MainLoadedStateCopyWith<_MainLoadedState> get copyWith =>
+      __$MainLoadedStateCopyWithImpl<_MainLoadedState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -908,8 +909,8 @@ class _$MainLoadedState extends MainLoadedState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult loading(MainLoadingState value),
-    @required TResult loaded(MainLoadedState value),
+    @required TResult loading(_MainLoadingState value),
+    @required TResult loaded(_MainLoadedState value),
   }) {
     assert(loading != null);
     assert(loaded != null);
@@ -919,8 +920,8 @@ class _$MainLoadedState extends MainLoadedState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult loading(MainLoadingState value),
-    TResult loaded(MainLoadedState value),
+    TResult loading(_MainLoadingState value),
+    TResult loaded(_MainLoadedState value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -931,19 +932,19 @@ class _$MainLoadedState extends MainLoadedState {
   }
 }
 
-abstract class MainLoadedState extends MainState {
-  const MainLoadedState._() : super._();
-  const factory MainLoadedState(
+abstract class _MainLoadedState extends MainState {
+  const _MainLoadedState._() : super._();
+  const factory _MainLoadedState(
       {@required String appTitle,
       @required ThemeData theme,
       @required bool initialized,
       @required bool firstInstall,
-      int currentSelectedTab}) = _$MainLoadedState;
+      int currentSelectedTab}) = _$_MainLoadedState;
 
   String get appTitle;
   ThemeData get theme;
   bool get initialized;
   bool get firstInstall;
   int get currentSelectedTab;
-  $MainLoadedStateCopyWith<MainLoadedState> get copyWith;
+  _$MainLoadedStateCopyWith<_MainLoadedState> get copyWith;
 }
