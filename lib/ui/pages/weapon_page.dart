@@ -25,60 +25,60 @@ class WeaponPage extends StatelessWidget {
   final double imgSize = 20;
 
   final ascentionMaterials = <WeaponAscentionModel>[
-    WeaponAscentionModel(
-      level: 20,
-      materials: [
-        ItemAscentionMaterialModel(imagePath: 'damaged_mask.png', quantity: 3),
-        ItemAscentionMaterialModel(imagePath: 'shimmering_nectar.png', quantity: 2),
-        ItemAscentionMaterialModel(imagePath: 'crown_of_sagehood.png', quantity: 8),
-        ItemAscentionMaterialModel(imagePath: 'mora.png', quantity: 30000),
-      ],
-    ),
-    WeaponAscentionModel(
-      level: 40,
-      materials: [
-        ItemAscentionMaterialModel(imagePath: 'damaged_mask.png', quantity: 3),
-        ItemAscentionMaterialModel(imagePath: 'shimmering_nectar.png', quantity: 2),
-        ItemAscentionMaterialModel(imagePath: 'crown_of_sagehood.png', quantity: 8),
-        ItemAscentionMaterialModel(imagePath: 'mora.png', quantity: 30000),
-      ],
-    ),
-    WeaponAscentionModel(
-      level: 60,
-      materials: [
-        ItemAscentionMaterialModel(imagePath: 'damaged_mask.png', quantity: 3),
-        ItemAscentionMaterialModel(imagePath: 'shimmering_nectar.png', quantity: 2),
-        ItemAscentionMaterialModel(imagePath: 'crown_of_sagehood.png', quantity: 8),
-        ItemAscentionMaterialModel(imagePath: 'mora.png', quantity: 30000),
-      ],
-    ),
-    WeaponAscentionModel(
-      level: 80,
-      materials: [
-        ItemAscentionMaterialModel(imagePath: 'damaged_mask.png', quantity: 3),
-        ItemAscentionMaterialModel(imagePath: 'shimmering_nectar.png', quantity: 2),
-        ItemAscentionMaterialModel(imagePath: 'crown_of_sagehood.png', quantity: 8),
-        ItemAscentionMaterialModel(imagePath: 'mora.png', quantity: 30000),
-      ],
-    ),
-    WeaponAscentionModel(
-      level: 90,
-      materials: [
-        ItemAscentionMaterialModel(imagePath: 'damaged_mask.png', quantity: 3),
-        ItemAscentionMaterialModel(imagePath: 'shimmering_nectar.png', quantity: 2),
-        ItemAscentionMaterialModel(imagePath: 'crown_of_sagehood.png', quantity: 8),
-        ItemAscentionMaterialModel(imagePath: 'mora.png', quantity: 30000),
-      ],
-    ),
-    WeaponAscentionModel(
-      level: 100,
-      materials: [
-        ItemAscentionMaterialModel(imagePath: 'damaged_mask.png', quantity: 3),
-        ItemAscentionMaterialModel(imagePath: 'shimmering_nectar.png', quantity: 2),
-        ItemAscentionMaterialModel(imagePath: 'crown_of_sagehood.png', quantity: 8),
-        ItemAscentionMaterialModel(imagePath: 'mora.png', quantity: 30000),
-      ],
-    ),
+    // WeaponAscentionModel(
+    //   level: 20,
+    //   materials: [
+    //     ItemAscentionMaterialModel(imagePath: 'damaged_mask.png', quantity: 3),
+    //     ItemAscentionMaterialModel(imagePath: 'shimmering_nectar.png', quantity: 2),
+    //     ItemAscentionMaterialModel(imagePath: 'crown_of_sagehood.png', quantity: 8),
+    //     ItemAscentionMaterialModel(imagePath: 'mora.png', quantity: 30000),
+    //   ],
+    // ),
+    // WeaponAscentionModel(
+    //   level: 40,
+    //   materials: [
+    //     ItemAscentionMaterialModel(imagePath: 'damaged_mask.png', quantity: 3),
+    //     ItemAscentionMaterialModel(imagePath: 'shimmering_nectar.png', quantity: 2),
+    //     ItemAscentionMaterialModel(imagePath: 'crown_of_sagehood.png', quantity: 8),
+    //     ItemAscentionMaterialModel(imagePath: 'mora.png', quantity: 30000),
+    //   ],
+    // ),
+    // WeaponAscentionModel(
+    //   level: 60,
+    //   materials: [
+    //     ItemAscentionMaterialModel(imagePath: 'damaged_mask.png', quantity: 3),
+    //     ItemAscentionMaterialModel(imagePath: 'shimmering_nectar.png', quantity: 2),
+    //     ItemAscentionMaterialModel(imagePath: 'crown_of_sagehood.png', quantity: 8),
+    //     ItemAscentionMaterialModel(imagePath: 'mora.png', quantity: 30000),
+    //   ],
+    // ),
+    // WeaponAscentionModel(
+    //   level: 80,
+    //   materials: [
+    //     ItemAscentionMaterialModel(imagePath: 'damaged_mask.png', quantity: 3),
+    //     ItemAscentionMaterialModel(imagePath: 'shimmering_nectar.png', quantity: 2),
+    //     ItemAscentionMaterialModel(imagePath: 'crown_of_sagehood.png', quantity: 8),
+    //     ItemAscentionMaterialModel(imagePath: 'mora.png', quantity: 30000),
+    //   ],
+    // ),
+    // WeaponAscentionModel(
+    //   level: 90,
+    //   materials: [
+    //     ItemAscentionMaterialModel(imagePath: 'damaged_mask.png', quantity: 3),
+    //     ItemAscentionMaterialModel(imagePath: 'shimmering_nectar.png', quantity: 2),
+    //     ItemAscentionMaterialModel(imagePath: 'crown_of_sagehood.png', quantity: 8),
+    //     ItemAscentionMaterialModel(imagePath: 'mora.png', quantity: 30000),
+    //   ],
+    // ),
+    // WeaponAscentionModel(
+    //   level: 100,
+    //   materials: [
+    //     ItemAscentionMaterialModel(imagePath: 'damaged_mask.png', quantity: 3),
+    //     ItemAscentionMaterialModel(imagePath: 'shimmering_nectar.png', quantity: 2),
+    //     ItemAscentionMaterialModel(imagePath: 'crown_of_sagehood.png', quantity: 8),
+    //     ItemAscentionMaterialModel(imagePath: 'mora.png', quantity: 30000),
+    //   ],
+    // ),
   ];
 
   final refinements = {
@@ -228,9 +228,8 @@ class WeaponPage extends StatelessWidget {
   }
 
   TableRow _buildStatProgressionRow(WeaponAscentionModel model) {
-    final materials = model.materials
-        .map((m) => WrappedAscentionMaterial(image: 'assets/items/${m.imagePath}', quantity: m.quantity))
-        .toList();
+    final materials =
+        model.materials.map((m) => WrappedAscentionMaterial(image: m.image, quantity: m.quantity)).toList();
     return TableRow(children: [
       Padding(
         padding: Styles.edgeInsetAll10,

@@ -3,11 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'bloc/main/main_bloc.dart';
+import 'bloc/bloc.dart';
 import 'generated/l10n.dart';
+import 'injection.dart';
+import 'services/genshing_service.dart';
 import 'ui/pages/main_page.dart';
 
 void main() {
+  initInjection();
   runApp(MyApp());
 }
 
@@ -19,9 +22,22 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (ctx) {
-            return MainBloc()..add(MainEvent.init());
+            final genshinService = getIt<GenshinService>();
+            return MainBloc(genshinService)..add(const MainEvent.init());
           },
         ),
+        BlocProvider(
+          create: (ctx) {
+            final genshinService = getIt<GenshinService>();
+            return CharactersBloc(genshinService);
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final genshinService = getIt<GenshinService>();
+            return CharacterBloc(genshinService);
+          },
+        )
       ],
       child: BlocBuilder<MainBloc, MainState>(
         builder: (ctx, state) => _buildApp(state),

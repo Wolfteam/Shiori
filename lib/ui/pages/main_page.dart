@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../bloc/main/main_bloc.dart';
+import '../../bloc/bloc.dart';
 import '../../generated/l10n.dart';
 import 'artifacts_page.dart';
 import 'characters_page.dart';
@@ -41,6 +41,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
     super.didChangeDependencies();
     if (_didChangeDependencies) return;
     _didChangeDependencies = true;
+    context.read<CharactersBloc>().add(const CharactersEvent.init());
   }
 
   @override
@@ -49,9 +50,10 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
       body: SafeArea(
         child: BlocConsumer<MainBloc, MainState>(
           listener: (ctx, state) async {
-            if (state is MainLoadedState) {
-              _changeCurrentTab(state.currentSelectedTab);
-            }
+            state.maybeMap(
+              loaded: (s) => _changeCurrentTab(s.currentSelectedTab),
+              orElse: () => {},
+            );
           },
           builder: (context, state) {
             return TabBarView(

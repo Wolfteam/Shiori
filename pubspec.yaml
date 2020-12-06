@@ -71,17 +71,27 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/db.json
     - assets/artifacts/
     - assets/characters/
+    - assets/characters_full/
+    - assets/elements/
+    - assets/i18n/
+    - assets/items/common/
+    - assets/items/currency/
+    - assets/items/elemental/
+    - assets/items/jewels/
+    - assets/items/local/
+    - assets/items/talents/
+    - assets/items/weapon/
+    - assets/items/weapon_primary/
+    - assets/skills/
     - assets/weapons/
     - assets/weapons/bows/
     - assets/weapons/catalysts/
     - assets/weapons/polearms/
     - assets/weapons/claymores/
     - assets/weapons/swords/
-    - assets/elements/
-    - assets/skills/
-    - assets/items/
     - assets/icon/icon.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
