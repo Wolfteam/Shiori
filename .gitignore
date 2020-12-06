@@ -1,3 +1,10 @@
+#Secrets
+/lib/secrets.dart
+/android/key.properties
+*.g.dart
+*.freezed.dart
+/lib/generated/**
+
 # Miscellaneous
 *.class
 *.log
