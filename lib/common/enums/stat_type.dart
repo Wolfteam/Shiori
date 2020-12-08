@@ -1,0 +1,15 @@
+enum StatType {
+  none,
+  atk,
+  atkPercentage,
+  defPercentage,
+  critAtk,
+  critRate,
+  critRatePercentage,
+  critDmgPercentage,
+  elementaryMaster,
+  hpPercentage,
+  physDmgPercentage,
+  physDmgBonus,
+  energyRechargePercentage,
+}

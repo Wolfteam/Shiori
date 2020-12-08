@@ -1,9 +1,11 @@
-import 'package:genshindb/common/enums/app_language_type.dart';
-
+import 'enums/app_language_type.dart';
 import 'enums/material_type.dart';
+import 'enums/weapon_type.dart';
 
 class Assets {
-  static String dbPath = 'assets/db.json';
+  static String dbPath = 'assets/db';
+  static String charactersDbPath = '$dbPath/characters.json';
+  static String weaponsDbPath = '$dbPath/weapons.json';
   static String translationsBasePath = 'assets/i18n';
 
   //General
@@ -68,7 +70,7 @@ class Assets {
       case MaterialType.weapon:
         return getWeaponMaterialPath(name);
       case MaterialType.weaponPrimary:
-        return getWeaponMaterialPath(name);
+        return getWeaponPrimaryMaterialPath(name);
       default:
         throw Exception('Invalid material type = $type');
     }
@@ -82,6 +84,23 @@ class Assets {
         return '$translationsBasePath/en.json';
       default:
         throw Exception('Invalid language = $languageType');
+    }
+  }
+
+  static String getWeaponPath(String name, WeaponType type) {
+    switch (type) {
+      case WeaponType.bow:
+        return getBowPath(name);
+      case WeaponType.catalyst:
+        return getCatalystPath(name);
+      case WeaponType.claymore:
+        return getClaymorePath(name);
+      case WeaponType.polearm:
+        return getPolearmPath(name);
+      case WeaponType.sword:
+        return getSwordPath(name);
+      default:
+        throw Exception('Invalid language = $type');
     }
   }
 }
