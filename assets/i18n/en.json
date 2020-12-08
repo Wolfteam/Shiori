@@ -3685,7 +3685,338 @@
             ]
         }
     ],
-    "weapons": [],
+    "weapons": [
+        {
+            "key": "Hunter's Bow",
+            "description": "A hunter's music consists of but two sounds: the twang of the bowstring and the whoosh of soaring arrows.",
+            "refinement": null
+        },
+        {
+            "key": "Seasoned Hunter’s Bow",
+            "description": "A bow that has been well-polished by time and meticulously cared for by its owner. It feels almost like an extension of the archer's arm.",
+            "refinement": null
+        },
+        {
+            "key": "Ebony Bow",
+            "description": "A longbow made of ebony wood with stiffer limbs than ordinary bows. It is also a far more powerful weapon.",
+            "refinement": "Increases DMG against mechanoid Ruin enemies by {{0}}%"
+        },
+        {
+            "key": "Messenger",
+            "description": "A basic wooden bow. It is said to have once been used as a tool for long-distance communication.",
+            "refinement": "Charged Attack hits on weak points deal an additional {{0}}% ATK DMG as CRIT DMG. Can only occur once every 10s."
+        },
+        {
+            "key": "Raven Bow",
+            "description": "Ravens are known to be the ferrymen of the dead. This bow's limb is decorated with raven feathers, which forebode the imminent death of its target.",
+            "refinement": "Increases DMG against enemies affected by Hydro or Pyro by {{0}}%"
+        },
+        {
+            "key": "Recurve Bow",
+            "description": "It is said that this bow can shoot down eagles in flight, but ultimately how true that is depends on the skill of the archer.",
+            "refinement": "Defeating an opponent restores {{0}}% HP"
+        },
+        {
+            "key": "Sharpshooter’s Oath",
+            "description": "This superior bow once belonged to a master archer. However, it gives off a strong scent, thus making it unsuitable for hunting.",
+            "refinement": "Increases DMG against weak spots by {{0}}%"
+        },
+        {
+            "key": "Slingshot",
+            "description": "A bow, despite the name. After countless experiments and improvements to the design, the creator of the ultimate slingshot found himself to have made what was actually a bow.",
+            "refinement": "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by {{0}}%. Otherwise, decreases DMG by 10%."
+        },
+        {
+            "key": "The Stringless",
+            "description": "A bow that once served as an extraordinary instrument. It is no longer capable of getting people up and dancing.",
+            "refinement": "Increases Elemental Skill and Elemental Burst DMG by {{0}}%."
+        },
+        {
+            "key": "Alley Hunter",
+            "description": "An intricate, opulent longbow. It once belonged to a gentleman thief who was never caught.",
+            "refinement": "Every 4s a character is on the field, their ATK increases by {{0}}% and their CRIT DMG increases by {{1}}%. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be cleared when the character takes DMG."
+        },
+        {
+            "key": "Blackcliff Warbow",
+            "description": "A bow made of blackcliff that features extremely sturdy bow limbs. It requires an archer with a strong bow arm to use.",
+            "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+        },
+        {
+            "key": "Compound Bow",
+            "description": "An exotic metallic bow from a distant land. Though extremely difficult to maintain, it is easy to nock and fires with tremendous force.",
+            "refinement": "Normal Attack and Charged Attack hits increase ATK by {{0}}% and Normal ATK SPD by {{1}}% for 6s. Max 4 stacks. Can only occur once every 0.3s."
+        },
+        {
+            "key": "Favonius Warbow",
+            "description": "A standard-issue recurve bow of the Knights of Favonius. Only the best archers can unleash its full potential.",
+            "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+        },
+        {
+            "key": "Prototype Crescent",
+            "description": "A prototype longbow discovered in the Blackcliff Forge. The arrow fired from this bow glimmers like a ray of moonlight.",
+            "refinement": "Charged Attack hits on weak points increase Movement SPD by 10% and ATK by {{0}}% for 10s."
+        },
+        {
+            "key": "Royal Bow",
+            "description": "An old royal longbow that belonged to the erstwhile rulers of Mondstadt. Countless generations later, the bowstring is still tight and can still fire arrows with great force.",
+            "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+        },
+        {
+            "key": "Rust",
+            "description": "A completely rusted iron greatbow. The average person would lack the strength to even lift it, let alone fire it.",
+            "refinement": "Increases Normal Attack DMG by {{0}}% but decreases Charged Attack DMG by 10%."
+        },
+        {
+            "key": "Sacrificial Bow",
+            "description": "A ceremonial hunting bow that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
+            "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s"
+        },
+        {
+            "key": "The Viridescent Hunt",
+            "description": "A pure green hunting bow. This once belonged to a certain hunter whose home was the forest.",
+            "refinement": "Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding enemies, dealing {{0}}% of ATK as DMG to these enemies every 0.5s for 4s. This effect can only occur once every {{1}}s"
+        },
+        {
+            "key": "Skyward Harp",
+            "description": "A greatbow that symbolizes Dvalin's affiliation with the Anemo Archon. The sound of the bow firing is music to the Anemo Archon's ears. It contains the power of the sky and wind within.",
+            "refinement": "Increases CRIT DMG by {{0}}%. Hits have a {{1}}% chance to inflict a small AoE attack, dealing 125% Physical ATK DMG. Can only occur once every {{2}}s."
+        },
+        {
+            "key": "Amos’ Bow",
+            "description": "An extremely ancient bow that has retained its power despite its original master being long gone. It draws power from everyone and everything in the world, and the further away you are from that which your heart desires, the more powerful it is.",
+            "refinement": "Increases Normal and Charged Attack DMG by {{0}}%. Normal and Charged Attack DMG increases by {{1}}% every 0.1s for up to 5 times."
+        },
+        {
+            "key": "Dreams of Dragonfell",
+            "description": "A great bow that once shot clean through a giant dragon. Once released, the impetus of its bowstring resembles a peal of thunder.",
+            "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+        },
+        {
+            "key": "Dull Blade",
+            "description": "Youthful dreams and the thrill of adventure. If this isn't enough, then make it up with valiance.",
+            "refinement": null
+        },
+        {
+            "key": "Silver Sword",
+            "description": "A sword for exorcising demons. Everyone knows it's made of a silver alloy, not pure silver.",
+            "refinement": null
+        },
+        {
+            "key": "Cool Steel",
+            "description": "A reliable steel-forged weapon that serves as a testament to the great adventures of its old master.",
+            "refinement": "Increases DMG against enemies affected by Hydro or Cryo by {{0}}%"
+        },
+        {
+            "key": "Dark Iron Sword",
+            "description": "A perfectly ordinary iron sword, just slightly darker than most.",
+            "refinement": "Upon causing an Overloaded, Superconduct, Electro-Charged, or an Electro-infused Swirl reaction, ATK is increased by {{0}}% for 12s."
+        },
+        {
+            "key": "Fillet Blade",
+            "description": "On hit, has a 50% chance to deal {{0}}% ATK DMG to a single enemy. Can only occur once every {{1}}s.",
+            "refinement": "A sharp filleting knife. The blade is long, thin, and incredibly sharp."
+        },
+        {
+            "key": "Harbinger of Dawn",
+            "description": "A sword that once shone like the sun. The wielder of this sword will be blessed with a \"feel-good\" buff. The reflective material on the blade has long worn off.",
+            "refinement": "When HP is above 90%, increases CRIT Rate by {{0}}%."
+        },
+        {
+            "key": "Skyrider Sword",
+            "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword...",
+            "refinement": "Using an Elemental Burst grants a {{0}}% increase in ATK and Movement SPD for 15s."
+        },
+        {
+            "key": "Traveler’s Handy Sword",
+            "description": "A handy steel sword which contains scissors, a magnifying glass, tinder, and other useful items in its sheath.",
+            "refinement": "Each Elemental Orb or Particle collected restores {{0}}% HP."
+        },
+        {
+            "key": "Blackcliff Longsword",
+            "description": "A sword made of a material known as \"blackcliff.\" It has a dark crimson glow on its black blade.",
+            "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+        },
+        {
+            "key": "Favonius Sword",
+            "description": "A standard-issue longsword of the Knights of Favonius. When you're armed with this agile and sharp weapon, channeling the power of the elements has never been so easy!",
+            "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+        },
+        {
+            "key": "Iron Sting",
+            "description": "An exotic long-bladed rapier that somehow found its way into Liyue via foreign traders. It is light, agile, and sharp.",
+            "refinement": "Dealing Elemental DMG increases all DMG by {{0}}% for 6s. Max 2 stacks. Can occur once every 1s."
+        },
+        {
+            "key": "Lion’s Roar",
+            "description": "A sharp blade with extravagant carvings that somehow does not compromise on durability and sharpness. It roars like a lion as it cuts through the air.",
+            "refinement": "Increases DMG against enemies affected by Pyro or Electro by {{0}}%"
+        },
+        {
+            "key": "Prototype Rancour",
+            "description": "An ancient longsword discovered in the Blackcliff Forge that cuts through rocks like a hot knife through butter.",
+            "refinement": "On hit, Normal or Charged Attacks increase ATK and DEF by {{0}}% for 6s. Max 4 stacks. This effect can only occur once every 0.3s."
+        },
+        {
+            "key": "Royal Longsword",
+            "description": "An old longsword that belonged to the erstwhile rulers of Mondstadt. Exquisitely crafted, the carvings and embellishments testify to the stature of its owner.",
+            "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+        },
+        {
+            "key": "Sacrificial Sword",
+            "description": "A ceremonial sword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
+            "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s"
+        },
+        {
+            "key": "The Alley Flash",
+            "description": "A straight sword as black as the night. It once belonged to a thief who roamed the benighted streets.",
+            "refinement": "Continuosly sprinting for at least 1s increases ATK by {{0}}% for 6s. This effect cannot stack."
+        },
+        {
+            "key": "The Black Sword",
+            "description": "A pitch-black longsword that thirsts for violence and conflict. It is said that this weapon can cause its user to become drunk on the red wine of slaughter.",
+            "refinement": "Increases DMG dealt by Normal and Charged Attacks by {{0}}%. Additionally, regenerates {{1}}% of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s."
+        },
+        {
+            "key": "The Flute",
+            "description": "Beneath its rusty exterior is a lavishly decorated thin blade. It swings as swiftly as the wind.",
+            "refinement": "Normal or Charged Attacks grant a Harmonic on hits. Gaining 5 Harmonics triggers the power of music and deals {{0}}% ATK DMG to surrounding enemies. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s."
+        },
+        {
+            "key": "Sword of Descension",
+            "description": "A sword of unique craftsmanship. It does not appear to belong to this world.",
+            "refinement": null
+        },
+        {
+            "key": "Festering Desire",
+            "description": "A creepy straight sword that almost seems to yearn for life. It drips with a shriveling venom that could even corrupt a mighty dragon.",
+            "refinement": "Increases Elemental Skill DMG by {{0}}% and Elemental Skill CRIT Rate by {{1}}%."
+        },
+        {
+            "key": "Aquila Favonia",
+            "description": "The soul of the Knights of Favonius. Millennia later, it still calls on the winds of swift justice to vanquish all evil  just like the last heroine who wielded it.",
+            "refinement": "ATK is increased by {{0}}%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {{1}}% of ATK and dealing {{2}}% of ATK as DMG to surrounding enemies. This effect can only occur once every 15s."
+        },
+        {
+            "key": "Skyward Blade",
+            "description": "The sword of a knight that symbolizes the restored honor of Dvalin. The blessings of the Anemo Archon rest on the fuller of the blade, imbuing the sword with the powers of the sky and the wind.",
+            "refinement": "CRIT Rate increased by {{0}}%. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by 10%, increases ATK SPD by 10%, and increases the DMG of Normal and Charged Attack hits by {{1}}% for 12s."
+        },
+        {
+            "key": "Summit Shaper",
+            "description": "A symbol of a legendary pact, this sharp blade once cut off the peak of a mountain.",
+            "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+        },
+        {
+            "key": "Apprentice’s Notes",
+            "description": "Notes left behind by a top student. Many useful spells are listed, and the handwriting is beautiful.",
+            "refinement": null
+        },
+        {
+            "key": "Pocket Grimoire",
+            "description": "A carefully compiled notebook featuring the essentials needed to pass a magic exam.",
+            "refinement": null
+        },
+        {
+            "key": "Amber Bead",
+            "description": "A catalyst carved out of amber that gains a warm halo under the sun.",
+            "refinement": "Normal Attack hits increase all Elemental DMG by {{0}}% for 6s. Max 2 stacks."
+        },
+        {
+            "key": "Emerald Orb",
+            "description": "A catalyst carved out of the hard jade from Jueyun Karst north of Liyue. It is small, light, and durable.",
+            "refinement": "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by {{0}}% for 12s."
+        },
+        {
+            "key": "Magic Guide",
+            "description": "Version 12. A reprint featuring corrections to Version 11 and brand-new additions based on recent developments.",
+            "refinement": "Increases DMG against enemies affected by Hydro or Electro by {{0}}%."
+        },
+        {
+            "key": "Otherworldly Story",
+            "description": "A cheap fantasy novel with no value whatsoever. Any claim that it possesses the power of catalysis is also pure fantasy.",
+            "refinement": "Picking up an Elemental Energy Orb/Particle recovers {{0}}% HP."
+        },
+        {
+            "key": "Thrilling Tales of Dragon Slayers",
+            "description": "A fictional story of a band of five heroes who go off on a dragon hunt. It is poorly written and structurally incoherent. Its value lies in the many lessons that can be learned from failure.",
+            "refinement": "When switching characters, the new character taking the field has their ATK increased by {{0}}% for 10s. This effect can only occur once every 20s."
+        },
+        {
+            "key": "Twin Nephrite",
+            "description": "A jade pendant formed by piecing together two jade stones.",
+            "refinement": "Defeating an enemy increases Movement SPD and ATK by {{0}}% for 15s."
+        },
+        {
+            "key": "Blackcliff Agate",
+            "description": "A mysterious catalyst made of a material known as \"blackcliff.\" It has an ominous crimson glow that seems to pulse in synchronization with the tremors from deep within the earth.",
+            "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+        },
+        {
+            "key": "Favonius Codex",
+            "description": "A secret tome that belonged to the scholars of the Knights of Favonius. It describes the logic and power of elements and matter.",
+            "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+        },
+        {
+            "key": "Mappa Mare",
+            "description": "A nautical chart featuring nearby currents and climates that somehow found its way into Liyue via foreign traders.",
+            "refinement": "Triggering an Elemental reaction grants a 8% Elemental DMG Bonus for 10s. Max 2 stacks."
+        },
+        {
+            "key": "Prototype Malice",
+            "description": "A dully gilded catalyst secretly guarded in the Blackcliff Forge. It seems to glow with the very light from the sky.",
+            "refinement": "Using an Elemental Burst regenerates {{0}} Energy every 2s for 6s. All party members will regenerate {{1}}% HP every 2s for this duration."
+        },
+        {
+            "key": "Royal Grimoire",
+            "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
+            "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+        },
+        {
+            "key": "Sacrificial Fragments",
+            "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
+            "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s."
+        },
+        {
+            "key": "Solar Pearl",
+            "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
+            "refinement": "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {{0}}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {{1}}% for 6s."
+        },
+        {
+            "key": "The Widsith",
+            "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
+            "refinement": "When the character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s. Recitative: ATK is increased by {{0}}%. Aria: Increases all Elemental DMG by {{1}}%. Interlude: Elemental Mastery is increased by {{2}}."
+        },
+        {
+            "key": "Wine and Song",
+            "description": "A songbook from the bygone aristocratic era, whose composer has become forgotten. It chronicles the tale of a certain heroic outlaw.",
+            "refinement": "For every character in the party who hails from Mondstadt, the character who equips this weapon gains {{0}}% ATK increase and {{1}}% Movement SPD increase."
+        },
+        {
+            "key": "Eye of Perception",
+            "description": "A dim black glaze pearl that is said to have the power to read the purity of one's heart.",
+            "refinement": "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing {{0}}% ATK as DMG. This bolt can bounce between enemies a maximum of 4 times. This effect can occur once every {{1}}s."
+        },
+        {
+            "key": "Frostbearer",
+            "description": "A fruit that possesses a strange, frosty will. A faint sense of agony emanates from it.",
+            "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, dealing {{1}}% AoE ATK DMG. Can only occur once every 10s. Enemies affected by Cryo are dealt {{2}}% ATK DMG. Can only occur once every 10s."
+        },
+        {
+            "key": "Lost Prayer to the Sacred Winds",
+            "description": "An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.",
+            "refinement": "Increases Movement SPD by 10%. When in battle, gain an {{0}}% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat."
+        },
+        {
+            "key": "Skyward Atlas",
+            "description": "A cloud atlas symbolizing Dvalin and its former master, the Anemo Archon. It details the winds and clouds of the northern regions and contains the powers of the sky and wind.",
+            "refinement": "Increases Elemental DMG Bonus by {{0}}%. Normal Attack hits have a 50% chance to earn the favor of the clouds, which actively seek out nearby enemies to attack for 15s, dealing {{1}}% ATK DMG. Can only occur once every 30s."
+        },
+        {
+            "key": "Memory of Dust",
+            "description": "A stone dumbbell containing distant memories. Its endless transformations reveal the power within.",
+            "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+        }
+    ],
     "artifacts": [
         {
             "Key": "Adventurer",
