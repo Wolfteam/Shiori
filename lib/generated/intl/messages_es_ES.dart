@@ -19,8 +19,59 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'es_ES';
 
+  static m0(value) => "${value} ATK";
+
+  static m1(value) => "${value} ATK%";
+
+  static m2(value) => "${value} CRIT ATK";
+
+  static m3(value) => "${value} CRIT DMG";
+
+  static m4(value) => "${value} CRIT Rate";
+
+  static m5(value) => "${value} CRIT Rate%";
+
+  static m6(value) => "${value} DEF%";
+
+  static m7(value) => "${value} Maestría Elemental";
+
+  static m8(value) => "${value} Recarga de Energía %";
+
+  static m9(value) => "${value} HP%";
+
+  static m10(value) => "${value} PHYS DMG Bonus";
+
+  static m11(value) => "${value} PHYS DMG %";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "appName" : MessageLookupByLibrary.simpleMessage("GenshinDb")
+    "appName" : MessageLookupByLibrary.simpleMessage("GenshinDb"),
+    "atk" : m0,
+    "atkPercentage" : m1,
+    "bow" : MessageLookupByLibrary.simpleMessage("Arco"),
+    "bpBounty" : MessageLookupByLibrary.simpleMessage("BP Bounty"),
+    "catalyst" : MessageLookupByLibrary.simpleMessage("Catalyst"),
+    "chest" : MessageLookupByLibrary.simpleMessage("Cofre"),
+    "claymore" : MessageLookupByLibrary.simpleMessage("Claymore"),
+    "crafting" : MessageLookupByLibrary.simpleMessage("Fabricado"),
+    "critAtk" : m2,
+    "critDmgPercentage" : m3,
+    "critRate" : m4,
+    "critRatePercentage" : m5,
+    "dark" : MessageLookupByLibrary.simpleMessage("Oscuro"),
+    "defPercentage" : m6,
+    "elementaryMaster" : m7,
+    "energyRechargePercentage" : m8,
+    "english" : MessageLookupByLibrary.simpleMessage("Inglés"),
+    "gacha" : MessageLookupByLibrary.simpleMessage("Gacha"),
+    "hpPercentage" : m9,
+    "light" : MessageLookupByLibrary.simpleMessage("Ligero"),
+    "none" : MessageLookupByLibrary.simpleMessage("Ninguno"),
+    "physDmgBonus" : m10,
+    "physDmgPercentage" : m11,
+    "polearm" : MessageLookupByLibrary.simpleMessage("Lanza"),
+    "spanish" : MessageLookupByLibrary.simpleMessage("Español"),
+    "starglitterExchange" : MessageLookupByLibrary.simpleMessage("Starglitter Exchange"),
+    "sword" : MessageLookupByLibrary.simpleMessage("Espada")
   };
 }

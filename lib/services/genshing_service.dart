@@ -9,24 +9,46 @@ import '../models/models.dart';
 
 abstract class GenshinService {
   Future<void> init(AppLanguageType languageType);
+  Future<void> initCharacters();
+  Future<void> initWeapons();
   Future<void> initTranslations(AppLanguageType languageType);
+
   List<CharacterCardModel> getCharactersForCard();
-  List<WepaonCardModel> getWeaponsForCard();
-  List<ArtifactCardModel> getArtifactsForCard();
   CharacterFileModel getCharacter(String name);
+
+  List<WeaponCardModel> getWeaponsForCard();
+  WeaponFileModel getWeapon(String name);
+
+  List<ArtifactCardModel> getArtifactsForCard();
+
   TranslationCharacterFile getCharacterTranslation(String name);
+  TranslationWeaponFile getWeaponTranslation(String name);
 }
 
 class GenshinServiceImpl implements GenshinService {
-  AppFile _appFile;
+  CharactersFile _charactersFile;
+  WeaponsFile _weaponsFile;
   TranslationFile _translationFile;
 
   @override
   Future<void> init(AppLanguageType languageType) async {
-    final jsonStr = await rootBundle.loadString(Assets.dbPath);
-    final json = jsonDecode(jsonStr) as Map<String, dynamic>;
-    _appFile = AppFile.fromJson(json);
+    await initCharacters();
+    await initWeapons();
     await initTranslations(languageType);
+  }
+
+  @override
+  Future<void> initCharacters() async {
+    final jsonStr = await rootBundle.loadString(Assets.charactersDbPath);
+    final json = jsonDecode(jsonStr) as Map<String, dynamic>;
+    _charactersFile = CharactersFile.fromJson(json);
+  }
+
+  @override
+  Future<void> initWeapons() async {
+    final jsonStr = await rootBundle.loadString(Assets.weaponsDbPath);
+    final json = jsonDecode(jsonStr) as Map<String, dynamic>;
+    _weaponsFile = WeaponsFile.fromJson(json);
   }
 
   @override
@@ -38,7 +60,7 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   List<CharacterCardModel> getCharactersForCard() {
-    return _appFile.characters.map(
+    return _charactersFile.characters.map(
       (e) {
         final ascentionMaterial =
             e.ascentionMaterials.reduce((current, next) => current.level > next.level ? current : next);
@@ -75,7 +97,7 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   CharacterFileModel getCharacter(String name) {
-    return _appFile.characters.firstWhere((element) => element.name == name);
+    return _charactersFile.characters.firstWhere((element) => element.name == name);
   }
 
   @override
@@ -84,8 +106,22 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<WepaonCardModel> getWeaponsForCard() {
-    return [];
+  List<WeaponCardModel> getWeaponsForCard() {
+    return _weaponsFile.weapons
+        .map(
+          (e) => WeaponCardModel(baseAtk: e.atk, image: e.fullImagePath, name: e.name, rarity: e.rarity, type: e.type),
+        )
+        .toList();
+  }
+
+  @override
+  WeaponFileModel getWeapon(String name) {
+    return _weaponsFile.weapons.firstWhere((element) => element.name == name);
+  }
+
+  @override
+  TranslationWeaponFile getWeaponTranslation(String name) {
+    return _translationFile.weapons.firstWhere((element) => element.key == name);
   }
 
   @override

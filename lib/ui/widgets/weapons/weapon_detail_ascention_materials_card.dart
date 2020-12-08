@@ -5,10 +5,10 @@ import '../../../models/models.dart';
 import '../common/item_description_detail.dart';
 import '../common/wrapped_ascention_material.dart';
 
-class CharacterDetailAscentionMaterialsCard extends StatelessWidget {
-  final List<CharacterFileAscentionMaterialModel> ascentionMaterials;
+class WeaponDetailAscentionMaterialsCard extends StatelessWidget {
+  final List<WeaponFileAscentionMaterial> ascentionMaterials;
 
-  const CharacterDetailAscentionMaterialsCard({
+  const WeaponDetailAscentionMaterialsCard({
     Key key,
     @required this.ascentionMaterials,
   }) : super(key: key);
@@ -17,24 +17,16 @@ class CharacterDetailAscentionMaterialsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final body = Card(
       elevation: Styles.cardTenElevation,
-      margin: Styles.edgeInsetAll5,
       shape: Styles.cardShape,
+      margin: Styles.edgeInsetAll5,
       child: Table(
         columnWidths: const {
           0: FractionColumnWidth(.2),
-          1: FractionColumnWidth(.2),
-          2: FractionColumnWidth(.6),
+          1: FractionColumnWidth(.8),
         },
         children: [
           TableRow(
             children: [
-              TableCell(
-                verticalAlignment: TableCellVerticalAlignment.middle,
-                child: Padding(
-                  padding: Styles.edgeInsetAll10,
-                  child: Center(child: Text('Rank')),
-                ),
-              ),
               TableCell(
                 verticalAlignment: TableCellVerticalAlignment.middle,
                 child: Padding(
@@ -51,27 +43,17 @@ class CharacterDetailAscentionMaterialsCard extends StatelessWidget {
               ),
             ],
           ),
-          ...ascentionMaterials.map((e) => _buildAscentionRow(e)).toList(),
+          ...ascentionMaterials.map((e) => _buildStatProgressionRow(e)).toList(),
         ],
       ),
     );
     return ItemDescriptionDetail(title: 'Ascention Materials', icon: Icon(Icons.settings), body: body);
   }
 
-  TableRow _buildAscentionRow(CharacterFileAscentionMaterialModel model) {
-    final materials = model.materials
-        .map(
-          (m) => WrappedAscentionMaterial(image: m.fullImagePath, quantity: m.quantity),
-        )
-        .toList();
+  TableRow _buildStatProgressionRow(WeaponFileAscentionMaterial model) {
+    final materials =
+        model.materials.map((m) => WrappedAscentionMaterial(image: m.fullImagePath, quantity: m.quantity)).toList();
     return TableRow(children: [
-      TableCell(
-        verticalAlignment: TableCellVerticalAlignment.middle,
-        child: Padding(
-          padding: Styles.edgeInsetAll10,
-          child: Center(child: Text('${model.rank}')),
-        ),
-      ),
       TableCell(
         verticalAlignment: TableCellVerticalAlignment.middle,
         child: Padding(

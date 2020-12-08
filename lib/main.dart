@@ -37,7 +37,19 @@ class MyApp extends StatelessWidget {
             final genshinService = getIt<GenshinService>();
             return CharacterBloc(genshinService);
           },
-        )
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final genshinService = getIt<GenshinService>();
+            return WeaponsBloc(genshinService);
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final genshinService = getIt<GenshinService>();
+            return WeaponBloc(genshinService);
+          },
+        ),
       ],
       child: BlocBuilder<MainBloc, MainState>(
         builder: (ctx, state) => _buildApp(state),

@@ -1,6 +1,7 @@
-import 'package:genshindb/services/genshing_service.dart';
 import 'package:get_it/get_it.dart';
 import 'package:log_4_dart_2/log_4_dart_2.dart';
+
+import 'services/genshing_service.dart';
 
 final GetIt getIt = GetIt.instance;
 

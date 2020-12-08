@@ -1,10 +1,14 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../bloc/bloc.dart';
 import '../../../common/enums/weapon_type.dart';
+import '../../../common/extensions/i18n_extensions.dart';
 import '../../../common/extensions/rarity_extensions.dart';
 import '../../../common/styles.dart';
+import '../../../generated/l10n.dart';
 import '../../pages/weapon_page.dart';
 import '../common/gradient_card.dart';
 import '../common/rarity.dart';
@@ -27,6 +31,7 @@ class WeaponCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     final theme = Theme.of(context);
     return InkWell(
       onTap: () => _gotoWeaponPage(context),
@@ -54,7 +59,11 @@ class WeaponCard extends StatelessWidget {
               ),
               Rarity(stars: rarity),
               Text('Atk: $baseAtk', textAlign: TextAlign.center, overflow: TextOverflow.ellipsis),
-              Text('Type: $type', textAlign: TextAlign.center, overflow: TextOverflow.ellipsis),
+              Text(
+                'Type: ${s.translateWeaponType(type)}',
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+              ),
             ],
           ),
         ),
@@ -63,6 +72,7 @@ class WeaponCard extends StatelessWidget {
   }
 
   Future<void> _gotoWeaponPage(BuildContext context) async {
+    context.read<WeaponBloc>().add(WeaponEvent.loadWeapon(name: name));
     final route = MaterialPageRoute(builder: (c) => WeaponPage());
     await Navigator.push(context, route);
   }

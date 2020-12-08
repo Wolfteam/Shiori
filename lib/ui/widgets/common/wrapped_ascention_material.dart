@@ -11,8 +11,8 @@ class WrappedAscentionMaterial extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(children: [
-      Image.asset(image, width: 20, height: 20),
+    return Wrap(crossAxisAlignment: WrapCrossAlignment.center, alignment: WrapAlignment.center, children: [
+      Image.asset(image, width: 30, height: 30),
       Container(
         margin: EdgeInsets.only(left: 5, right: 10),
         child: Text('x $quantity'),

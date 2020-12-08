@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../common/enums/element_type.dart';
-import '../../common/enums/weapon_type.dart';
-import '../models.dart';
+import '../../../common/enums/element_type.dart';
+import '../../../common/enums/weapon_type.dart';
+import '../../models.dart';
 
 part 'character_file_model.freezed.dart';
 part 'character_file_model.g.dart';

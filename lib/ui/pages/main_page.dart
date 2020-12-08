@@ -42,6 +42,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
     if (_didChangeDependencies) return;
     _didChangeDependencies = true;
     context.read<CharactersBloc>().add(const CharactersEvent.init());
+    context.read<WeaponsBloc>().add(const WeaponsEvent.init());
   }
 
   @override
