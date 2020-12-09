@@ -1,0 +1,202 @@
+{
+    "artifacts": [
+        {
+            "name": "Adventurer",
+            "image": "adventurer_4.png",
+            "rarityMin": 3,
+            "rarityMax": 3
+        },
+        {
+            "name": "Traveling Doctor",
+            "image": "travelling_doctor_4.png",
+            "rarityMin": 2,
+            "rarityMax": 3
+        },
+        {
+            "name": "Lucky Dog",
+            "image": "lucky_dog_4.png",
+            "rarityMin": 2,
+            "rarityMax": 3
+        },
+        {
+            "name": "Resolution of Sojourner",
+            "image": "resolution_of_sojourner_4.png",
+            "rarityMin": 3,
+            "rarityMax": 4
+        },
+        {
+            "name": "Tiny Miracle",
+            "image": "tiny_miracle_4.png",
+            "rarityMin": 3,
+            "rarityMax": 4
+        },
+        {
+            "name": "Brave Heart",
+            "image": "brave_heart_4.png",
+            "rarityMin": 3,
+            "rarityMax": 4
+        },
+        {
+            "name": "Defender’s Will",
+            "image": "defenders_will_4.png",
+            "rarityMin": 3,
+            "rarityMax": 4
+        },
+        {
+            "name": "Martial Artist",
+            "image": "martial_artist_4.png",
+            "rarityMin": 3,
+            "rarityMax": 4
+        },
+        {
+            "name": "Gambler",
+            "image": "gambler_4.png",
+            "rarityMin": 3,
+            "rarityMax": 4
+        },
+        {
+            "name": "Scholar",
+            "image": "scholar_4.png",
+            "rarityMin": 3,
+            "rarityMax": 4
+        },
+        {
+            "name": "Berserker",
+            "image": "berserker_4.png",
+            "rarityMin": 3,
+            "rarityMax": 4
+        },
+        {
+            "name": "Instructor",
+            "image": "instructor_4.png",
+            "rarityMin": 3,
+            "rarityMax": 4
+        },
+        {
+            "name": "The Exile",
+            "image": "the_exile_4.png",
+            "rarityMin": 3,
+            "rarityMax": 4
+        },
+        {
+            "name": "Thundering Fury",
+            "image": "thundering_fury_4.png",
+            "rarityMin": 4,
+            "rarityMax": 5
+        },
+        {
+            "name": "Thundersoother",
+            "image": "thundersoother_4.png",
+            "rarityMin": 4,
+            "rarityMax": 5
+        },
+        {
+            "name": "Viridescent Venerer",
+            "image": "viridescent_venerer_4.png",
+            "rarityMin": 4,
+            "rarityMax": 5
+        },
+        {
+            "name": "Maiden Beloved",
+            "image": "maiden_beloved_4.png",
+            "rarityMin": 4,
+            "rarityMax": 5
+        },
+        {
+            "name": "Archaic Petra",
+            "image": "archaic_petra_4.png",
+            "rarityMin": 4,
+            "rarityMax": 5
+        },
+        {
+            "name": "Retracing Bolide",
+            "image": "retracing_bolide_4.png",
+            "rarityMin": 4,
+            "rarityMax": 5
+        },
+        {
+            "name": "Crimson Witch of Flames",
+            "image": "crimson_witch_of_flames_4.png",
+            "rarityMin": 4,
+            "rarityMax": 5
+        },
+        {
+            "name": "Lavawalker",
+            "image": "lavawalker_4.png",
+            "rarityMin": 4,
+            "rarityMax": 5
+        },
+        {
+            "name": "Bloodstained Chivalry",
+            "image": "bloodstained_chivalry_4.png",
+            "rarityMin": 4,
+            "rarityMax": 5
+        },
+        {
+            "name": "Noblesse Oblige",
+            "image": "noblesse_oblige_4.png",
+            "rarityMin": 4,
+            "rarityMax": 5
+        },
+        {
+            "name": "Gladiator’s Finale",
+            "image": "gladiators_finale_4.png",
+            "rarityMin": 4,
+            "rarityMax": 5
+        },
+        {
+            "name": "Wanderer’s Troupe",
+            "image": "wanderers_troupe_4.png",
+            "rarityMin": 4,
+            "rarityMax": 5
+        },
+        {
+            "name": "Prayers for Illumination",
+            "image": "prayers_of_illumination_4.png",
+            "rarityMin": 3,
+            "rarityMax": 4
+        },
+        {
+            "name": "Prayers for Destiny",
+            "image": "prayers_of_destiny_4.png",
+            "rarityMin": 3,
+            "rarityMax": 4
+        },
+        {
+            "name": "Prayers for Wisdom",
+            "image": "prayers_of_wisdom_4.png",
+            "rarityMin": 3,
+            "rarityMax": 4
+        },
+        {
+            "name": "Prayers to Springtime",
+            "image": "prayers_of_springtime_4.png",
+            "rarityMin": 3,
+            "rarityMax": 4
+        },
+        {
+            "name": "Blizzard Strayer",
+            "image": "blizzard_walker_4.png",
+            "rarityMin": 4,
+            "rarityMax": 5
+        },
+        {
+            "name": "Heart of Depth",
+            "image": "depth_of_heart_4.png",
+            "rarityMin": 4,
+            "rarityMax": 5
+        },
+        {
+            "name": "Heart of Depth",
+            "image": "depth_of_heart_4.png",
+            "rarityMin": 4,
+            "rarityMax": 5
+        },
+        {
+            "name": "Glacier and Snowfield",
+            "image": "glacier_and_snowfield_4.png",
+            "rarityMin": 4,
+            "rarityMax": 5
+        }
+    ]
+}

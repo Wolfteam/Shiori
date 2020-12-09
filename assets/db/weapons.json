@@ -1,7 +1,7 @@
 {
     "bows": [
         {
-            "name": "Hunter's Bow",
+            "name": "Hunter’s Bow",
             "image": "hunters_bow.png",
             "type": "bow",
             "atk": 23,
@@ -8252,7 +8252,7 @@
     ],
     "catalysts": [
         {
-            "name": "Apprentice's Notes",
+            "name": "Apprentice’s Notes",
             "image": "apprentices_notes.png",
             "type": "catalyst",
             "atk": 23,
