@@ -4577,5 +4577,100 @@
                 "1 Piece bonus: Affected by Anemo for 40% less time."
             ]
         }
+    ],
+    "materials": [
+        {
+            "key": "Freedom",
+            "name": "Freedom"
+        },
+        {
+            "key": "Prosperity",
+            "name": "Prosperity"
+        },
+        {
+            "key": "Dilligence",
+            "name": "Dilligence"
+        },
+        {
+            "key": "Resistance",
+            "name": "Resistance"
+        },
+        {
+            "key": "Ballad",
+            "name": "Ballad"
+        },
+        {
+            "key": "Gold",
+            "name": "Gold"
+        },
+        {
+            "key": "Tail of Boreas",
+            "name": "Tail of Boreas",
+            "bossName": "Andrius"
+        },
+        {
+            "key": "Ring of Boreas",
+            "name": "Ring of Boreas",
+            "bossName": "Andrius"
+        },
+        {
+            "key": "Spirit Locket of Boreas",
+            "name": "Spirit Locket of Boreas",
+            "bossName": "Andrius"
+        },
+        {
+            "key": "Dvalin's Plume",
+            "name": "Dvalin's Plume",
+            "bossName": "Dvalin"
+        },
+        {
+            "key": "Dvalin's Claw",
+            "name": "Dvalin's Claw",
+            "bossName": "Dvalin"
+        },
+        {
+            "key": "Dvalin's Sigh",
+            "name": "Dvalin's Sigh",
+            "bossName": "Dvalin"
+        },
+        {
+            "key": "Tusk of Monoceros Caeli",
+            "name": "Tusk of Monoceros Caeli",
+            "bossName": "Tartaglia"
+        },
+        {
+            "key": "Shard of a Foul Legacy",
+            "name": "Shard of a Foul Legacy",
+            "bossName": "Tartaglia"
+        },
+        {
+            "key": "Shadow of the Warrior",
+            "name": "Shadow of the Warrior",
+            "bossName": "Tartaglia"
+        },
+        {
+            "key": "Decarabian",
+            "name": "Decarabian"
+        },
+        {
+            "key": "Guyun",
+            "name": "Guyun"
+        },
+        {
+            "key": "Mist Veiled Elixir",
+            "name": "Mist Veiled Elixir"
+        },
+        {
+            "key": "Boreal Wolf",
+            "name": "Boreal Wolf"
+        },
+        {
+            "key": "Aerosiderite",
+            "name": "Aerosiderite"
+        },
+        {
+            "key": "Dandelion Gladiator",
+            "name": "Dandelion Gladiator"
+        }
     ]
 }

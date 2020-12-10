@@ -1,0 +1,210 @@
+{
+    "talents": [
+        {
+            "name": "Freedom",
+            "image": "teaching_of_freedom.png",
+            "isFromBoss": false,
+            "isForCharacters": true,
+            "type": "talents",
+            "days": [
+                1,
+                4
+            ]
+        },
+        {
+            "name": "Prosperity",
+            "image": "teaching_of_prosperity.png",
+            "isFromBoss": false,
+            "isForCharacters": true,
+            "type": "talents",
+            "days": [
+                1,
+                4
+            ]
+        },
+        {
+            "name": "Dilligence",
+            "image": "teaching_of_diligence.png",
+            "isFromBoss": false,
+            "isForCharacters": true,
+            "type": "talents",
+            "days": [
+                2,
+                5
+            ]
+        },
+        {
+            "name": "Resistance",
+            "image": "teaching_of_resistance.png",
+            "isFromBoss": false,
+            "isForCharacters": true,
+            "type": "talents",
+            "days": [
+                2,
+                5
+            ]
+        },
+        {
+            "name": "Ballad",
+            "image": "teaching_of_ballad.png",
+            "isFromBoss": false,
+            "isForCharacters": true,
+            "type": "talents",
+            "days": [
+                3,
+                6
+            ]
+        },
+        {
+            "name": "Gold",
+            "image": "teaching_of_gold.png",
+            "isFromBoss": false,
+            "isForCharacters": true,
+            "type": "talents",
+            "days": [
+                3,
+                6
+            ]
+        },
+        {
+            "name": "Tail of Boreas",
+            "image": "tail_of_boreas.png",
+            "isFromBoss": true,
+            "isForCharacters": true,
+            "type": "talents",
+            "days": []
+        },
+        {
+            "name": "Ring of Boreas",
+            "image": "ring_of_boreas.png",
+            "isFromBoss": true,
+            "isForCharacters": true,
+            "type": "talents",
+            "days": []
+        },
+        {
+            "name": "Spirit Locket of Boreas",
+            "image": "spirit_locket_of_boreas.png",
+            "isFromBoss": true,
+            "isForCharacters": true,
+            "type": "talents",
+            "days": []
+        },
+        {
+            "name": "Dvalin's Plume",
+            "image": "dvalins_plume.png",
+            "isFromBoss": true,
+            "isForCharacters": true,
+            "type": "talents",
+            "days": []
+        },
+        {
+            "name": "Dvalin's Claw",
+            "image": "dvalins_claw.png",
+            "isFromBoss": true,
+            "isForCharacters": true,
+            "type": "talents",
+            "days": []
+        },
+        {
+            "name": "Dvalin's Sigh",
+            "image": "dvalins_sigh.png",
+            "isFromBoss": true,
+            "isForCharacters": true,
+            "type": "talents",
+            "days": []
+        },
+        {
+            "name": "Tusk of Monoceros Caeli",
+            "image": "tusk_of_monoceros_caeli.png",
+            "isFromBoss": true,
+            "isForCharacters": true,
+            "type": "talents",
+            "days": []
+        },
+        {
+            "name": "Shard of a Foul Legacy",
+            "image": "shard_of_foul_legacy.png",
+            "isFromBoss": true,
+            "isForCharacters": true,
+            "type": "talents",
+            "days": []
+        },
+        {
+            "name": "Shadow of the Warrior",
+            "image": "shadow_of_the_warrior.png",
+            "isFromBoss": true,
+            "isForCharacters": true,
+            "type": "talents",
+            "days": []
+        }
+    ],
+    "weaponPrimary": [
+        {
+            "name": "Decarabian",
+            "image": "tile_of_decarabians_tower.png",
+            "isFromBoss": false,
+            "isForCharacters": false,
+            "type": "weaponPrimary",
+            "days": [
+                1,
+                4
+            ]
+        },
+        {
+            "name": "Guyun",
+            "image": "luminous_sands_from_guyun.png",
+            "isFromBoss": false,
+            "isForCharacters": false,
+            "type": "weaponPrimary",
+            "days": [
+                1,
+                4
+            ]
+        },
+        {
+            "name": "Mist Veiled Elixir",
+            "image": "mist_veiled_lead_elixir.png",
+            "isFromBoss": false,
+            "isForCharacters": false,
+            "type": "weaponPrimary",
+            "days": [
+                2,
+                5
+            ]
+        },
+        {
+            "name": "Boreal Wolf",
+            "image": "boreal_wolfs_milk_tooth.png",
+            "isFromBoss": false,
+            "isForCharacters": false,
+            "type": "weaponPrimary",
+            "days": [
+                2,
+                5
+            ]
+        },
+        {
+            "name": "Aerosiderite",
+            "image": "grain_of_aerosiderite.png",
+            "isFromBoss": false,
+            "isForCharacters": false,
+            "type": "weaponPrimary",
+            "days": [
+                3,
+                6
+            ]
+        },
+        {
+            "name": "Dandelion Gladiator",
+            "image": "fetters_of_the_dandelion_gladiator.png",
+            "isFromBoss": false,
+            "isForCharacters": false,
+            "type": "weaponPrimary",
+            "days": [
+                3,
+                6
+            ]
+        }
+    ]
+}
