@@ -26,5 +26,12 @@
     "crafting": "Fabricado",
     "starglitterExchange": "Starglitter Exchange",
     "chest": "Cofre",
-    "bpBounty": "BP Bounty"
+    "bpBounty": "BP Bounty",
+    "monday": "Lunes",
+    "tuesday": "Martes",
+    "wednesday": "Miércoles",
+    "thursday": "Jueves",
+    "friday": "Viernes",
+    "saturday": "Sábado",
+    "sunday": "Domingo"
 }

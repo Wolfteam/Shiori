@@ -63,15 +63,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "elementaryMaster" : m7,
     "energyRechargePercentage" : m8,
     "english" : MessageLookupByLibrary.simpleMessage("English"),
+    "friday" : MessageLookupByLibrary.simpleMessage("Friday"),
     "gacha" : MessageLookupByLibrary.simpleMessage("Gacha"),
     "hpPercentage" : m9,
     "light" : MessageLookupByLibrary.simpleMessage("Light"),
+    "monday" : MessageLookupByLibrary.simpleMessage("Monday"),
     "none" : MessageLookupByLibrary.simpleMessage("None"),
     "physDmgBonus" : m10,
     "physDmgPercentage" : m11,
     "polearm" : MessageLookupByLibrary.simpleMessage("Polearm"),
+    "saturday" : MessageLookupByLibrary.simpleMessage("Saturday"),
     "spanish" : MessageLookupByLibrary.simpleMessage("Spanish"),
     "starglitterExchange" : MessageLookupByLibrary.simpleMessage("Starglitter Exchange"),
-    "sword" : MessageLookupByLibrary.simpleMessage("Sword")
+    "sunday" : MessageLookupByLibrary.simpleMessage("Sunday"),
+    "sword" : MessageLookupByLibrary.simpleMessage("Sword"),
+    "thursday" : MessageLookupByLibrary.simpleMessage("Thursday"),
+    "tuesday" : MessageLookupByLibrary.simpleMessage("Tuesday"),
+    "wednesday" : MessageLookupByLibrary.simpleMessage("Wednesday")
   };
 }

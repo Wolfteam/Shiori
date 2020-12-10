@@ -7,6 +7,7 @@ part 'translation_weapon_file.g.dart';
 abstract class TranslationWeaponFile implements _$TranslationWeaponFile {
   factory TranslationWeaponFile({
     @required String key,
+    @required String name,
     @required String description,
     String refinement,
   }) = _TranslationWeaponFile;

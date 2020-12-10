@@ -82,7 +82,7 @@ class WeaponPage extends StatelessWidget {
           Align(
             alignment: Alignment.topRight,
             child: Container(
-              transform: Matrix4.translationValues(60, -30, 0.0),
+              transform: Matrix4.translationValues(80, -30, 0.0),
               child: Opacity(
                 opacity: 0.5,
                 child: Image.asset(

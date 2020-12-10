@@ -87,7 +87,6 @@ class CharacterCard extends StatelessWidget {
               IntrinsicHeight(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Flexible(
                       fit: FlexFit.tight,

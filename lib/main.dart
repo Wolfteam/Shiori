@@ -8,6 +8,7 @@ import 'generated/l10n.dart';
 import 'injection.dart';
 import 'services/genshing_service.dart';
 import 'ui/pages/main_page.dart';
+import 'ui/pages/splash_page.dart';
 
 void main() {
   initInjection();
@@ -24,6 +25,12 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             return MainBloc(genshinService)..add(const MainEvent.init());
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final genshinService = getIt<GenshinService>();
+            return HomeBloc(genshinService);
           },
         ),
         BlocProvider(
@@ -50,6 +57,12 @@ class MyApp extends StatelessWidget {
             return WeaponBloc(genshinService);
           },
         ),
+        BlocProvider(
+          create: (ctx) {
+            final genshinService = getIt<GenshinService>();
+            return ArtifactsBloc(genshinService);
+          },
+        ),
       ],
       child: BlocBuilder<MainBloc, MainState>(
         builder: (ctx, state) => _buildApp(state),
@@ -65,9 +78,10 @@ Widget _buildApp(MainState state) {
     GlobalWidgetsLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
   ];
+
   return state.map<Widget>(
     loading: (_) {
-      return const CircularProgressIndicator();
+      return SplashPage();
     },
     loaded: (s) {
       return MaterialApp(

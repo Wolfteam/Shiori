@@ -96,4 +96,29 @@ extension I18nExtensions on S {
         throw Exception('The provided stat type = $type is not valid');
     }
   }
+
+  String translateDays(List<int> days) {
+    return days.map((e) => translateDay(e)).join(', ');
+  }
+
+  String translateDay(int day) {
+    switch (day) {
+      case 1:
+        return monday;
+      case 2:
+        return tuesday;
+      case 3:
+        return wednesday;
+      case 4:
+        return thursday;
+      case 5:
+        return friday;
+      case 6:
+        return saturday;
+      case 7:
+        return sunday;
+      default:
+        throw Exception('Invalid day = $day');
+    }
+  }
 }

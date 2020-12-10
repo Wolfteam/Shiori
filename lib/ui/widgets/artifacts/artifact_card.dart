@@ -9,7 +9,7 @@ class ArtifactCard extends StatelessWidget {
   final String name;
   final String image;
   final int rarity;
-  final Map<String, String> bonus;
+  final List<String> bonus;
 
   const ArtifactCard({
     Key key,
@@ -22,19 +22,19 @@ class ArtifactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final stats = bonus.entries
+    final stats = bonus
         .map(
           (e) => Container(
             margin: EdgeInsets.symmetric(vertical: 5),
             child: Column(
               children: [
+                // Text(
+                //   '${e.key}:',
+                //   textAlign: TextAlign.center,
+                //   style: theme.textTheme.subtitle2,
+                // ),
                 Text(
-                  '${e.key}:',
-                  textAlign: TextAlign.center,
-                  style: theme.textTheme.subtitle2,
-                ),
-                Text(
-                  e.value,
+                  e,
                   textAlign: TextAlign.center,
                   style: theme.textTheme.bodyText2.copyWith(fontSize: 11),
                 ),

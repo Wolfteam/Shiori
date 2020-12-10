@@ -4,7 +4,7 @@ class ArtifactCardModel {
   final String name;
   final String image;
   final int rarity;
-  final Map<String, String> bonus;
+  final List<String> bonus;
 
   ArtifactCardModel({
     @required this.name,

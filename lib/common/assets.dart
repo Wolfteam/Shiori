@@ -6,6 +6,8 @@ class Assets {
   static String dbPath = 'assets/db';
   static String charactersDbPath = '$dbPath/characters.json';
   static String weaponsDbPath = '$dbPath/weapons.json';
+  static String artifactsDbPath = '$dbPath/artifacts.json';
+  static String materialsDbPath = '$dbPath/materials.json';
   static String translationsBasePath = 'assets/i18n';
 
   //General

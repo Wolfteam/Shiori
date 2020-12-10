@@ -26,5 +26,12 @@
     "crafting": "Crafting",
     "starglitterExchange": "Starglitter Exchange",
     "chest": "Chest",
-    "bpBounty": "BP Bounty"
+    "bpBounty": "BP Bounty",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday"
 }
