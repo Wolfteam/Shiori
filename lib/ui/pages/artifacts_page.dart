@@ -23,7 +23,12 @@ class ArtifactsPage extends StatelessWidget {
           loaded: (state) => CustomScrollView(
             slivers: [
               _buildFiltersSwitch(state.search, context),
-              ArtifactInfoCard(),
+              ArtifactInfoCard(
+                isCollapsed: state.collapseNotes,
+                expansionCallback: (v) => context.read<ArtifactsBloc>().add(
+                      ArtifactsEvent.collapseNotes(collapse: v),
+                    ),
+              ),
               if (state.artifacts.isNotEmpty) _buildGrid(state.artifacts, context) else const SliverNothingFound(),
             ],
           ),
@@ -67,7 +72,7 @@ class ArtifactsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  s.all,
+                  s.artifacts,
                   textAlign: TextAlign.start,
                   style: Theme.of(context).textTheme.headline6,
                 ),

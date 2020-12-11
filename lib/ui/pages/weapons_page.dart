@@ -48,7 +48,7 @@ class WeaponsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  s.all,
+                  s.weapons,
                   textAlign: TextAlign.start,
                   style: Theme.of(context).textTheme.headline6,
                 ),

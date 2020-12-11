@@ -3,6 +3,9 @@ part of 'artifacts_bloc.dart';
 @freezed
 abstract class ArtifactsEvent with _$ArtifactsEvent {
   const factory ArtifactsEvent.init() = _Init;
+
+  const factory ArtifactsEvent.collapseNotes({@required bool collapse}) = _CollapseNotesChanged;
+
   const factory ArtifactsEvent.searchChanged({
     @required String search,
   }) = _SearchChanged;

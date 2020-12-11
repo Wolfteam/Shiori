@@ -6,12 +6,16 @@ class ItemExpansionPanel extends StatelessWidget {
   final String title;
   final Widget body;
   final Icon icon;
+  final bool isCollapsed;
+  final Function(bool) expansionCallback;
 
   const ItemExpansionPanel({
     Key key,
     @required this.title,
     @required this.body,
     this.icon = const Icon(Icons.settings),
+    this.isCollapsed = false,
+    this.expansionCallback,
   }) : super(key: key);
 
   @override
@@ -22,11 +26,7 @@ class ItemExpansionPanel extends StatelessWidget {
       child: ExpansionPanelList(
         dividerColor: Colors.red,
         expandedHeaderPadding: EdgeInsets.zero,
-        expansionCallback: (int index, bool isExpanded) {
-          // setState(() {
-          //   _data[index].isExpanded = !isExpanded;
-          // });
-        },
+        expansionCallback: (int index, bool isExpanded) => expansionCallback?.call(isExpanded),
         children: [
           ExpansionPanel(
             canTapOnHeader: true,
@@ -49,7 +49,7 @@ class ItemExpansionPanel extends StatelessWidget {
               );
             },
             body: body,
-            isExpanded: true,
+            isExpanded: !isCollapsed,
           )
         ],
       ),

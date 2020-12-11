@@ -44,6 +44,7 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
         tempRarity: currentState.rarity,
         tempSortDirectionType: currentState.sortDirectionType,
       ),
+      collapseNotes: (e) => currentState.copyWith.call(collapseNotes: e.collapse),
     );
 
     yield s;
@@ -62,6 +63,7 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
       _sortData(data, artifactFilterType, sortDirectionType);
       return ArtifactsState.loaded(
         artifacts: data,
+        collapseNotes: false,
         search: search,
         rarity: rarity,
         tempRarity: rarity,

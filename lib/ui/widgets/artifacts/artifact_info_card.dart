@@ -8,6 +8,15 @@ import '../common/bullet_list.dart';
 import '../common/item_expansion_panel.dart';
 
 class ArtifactInfoCard extends StatelessWidget {
+  final bool isCollapsed;
+  final Function(bool) expansionCallback;
+
+  const ArtifactInfoCard({
+    Key key,
+    @required this.isCollapsed,
+    this.expansionCallback,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
@@ -40,6 +49,8 @@ class ArtifactInfoCard extends StatelessWidget {
       title: s.note,
       body: BulletList(items: considerations),
       icon: Icon(Icons.info_outline),
+      isCollapsed: isCollapsed,
+      expansionCallback: expansionCallback,
     );
     return SliverToBoxAdapter(child: panel);
   }
