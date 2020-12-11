@@ -115,6 +115,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "name" : MessageLookupByLibrary.simpleMessage("Name"),
     "none" : MessageLookupByLibrary.simpleMessage("None"),
     "note" : MessageLookupByLibrary.simpleMessage("Note"),
+    "nothingToShow" : MessageLookupByLibrary.simpleMessage("Nothing to show"),
     "ok" : MessageLookupByLibrary.simpleMessage("Ok"),
     "others" : MessageLookupByLibrary.simpleMessage("Others"),
     "passives" : MessageLookupByLibrary.simpleMessage("Passives"),
