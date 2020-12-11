@@ -97,6 +97,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     if (!isLoaded) {
       final selectedWeaponTypes = WeaponType.values.toList();
       final selectedElementTypes = ElementType.values.toList();
+      _sortData(characters, characterFilterType, sortDirectionType);
       return CharactersState.loaded(
         characters: characters,
         search: search,
@@ -142,24 +143,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         break;
     }
 
-    switch (characterFilterType) {
-      case CharacterFilterType.name:
-        if (sortDirectionType == SortDirectionType.asc) {
-          characters.sort((x, y) => x.name.compareTo(y.name));
-        } else {
-          characters.sort((x, y) => y.name.compareTo(x.name));
-        }
-        break;
-      case CharacterFilterType.rarity:
-        if (sortDirectionType == SortDirectionType.asc) {
-          characters.sort((x, y) => x.stars.compareTo(y.stars));
-        } else {
-          characters.sort((x, y) => y.stars.compareTo(x.stars));
-        }
-        break;
-      default:
-        break;
-    }
+    _sortData(characters, characterFilterType, sortDirectionType);
 
     final s = currentState.copyWith.call(
       characters: characters,
@@ -178,5 +162,30 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
       tempSortDirectionType: sortDirectionType,
     );
     return s;
+  }
+
+  void _sortData(
+    List<CharacterCardModel> data,
+    CharacterFilterType characterFilterType,
+    SortDirectionType sortDirectionType,
+  ) {
+    switch (characterFilterType) {
+      case CharacterFilterType.name:
+        if (sortDirectionType == SortDirectionType.asc) {
+          data.sort((x, y) => x.name.compareTo(y.name));
+        } else {
+          data.sort((x, y) => y.name.compareTo(x.name));
+        }
+        break;
+      case CharacterFilterType.rarity:
+        if (sortDirectionType == SortDirectionType.asc) {
+          data.sort((x, y) => x.stars.compareTo(y.stars));
+        } else {
+          data.sort((x, y) => y.stars.compareTo(x.stars));
+        }
+        break;
+      default:
+        break;
+    }
   }
 }

@@ -10,6 +10,7 @@ import '../widgets/characters/character_bottom_sheet.dart';
 import '../widgets/characters/character_card.dart';
 import '../widgets/common/loading.dart';
 import '../widgets/common/search_box.dart';
+import '../widgets/common/sliver_nothing_found.dart';
 
 class CharactersPage extends StatelessWidget {
   @override
@@ -20,8 +21,8 @@ class CharactersPage extends StatelessWidget {
           loading: (_) => const Loading(),
           loaded: (s) => CustomScrollView(
             slivers: [
-              _buildFiltersSwitch(s.search != null && s.search.isNotEmpty, context),
-              _buildGrid(context, s.characters),
+              _buildFiltersSwitch(s.search, context),
+              if (s.characters.isNotEmpty) _buildGrid(s.characters, context) else const SliverNothingFound(),
             ],
           ),
         );
@@ -29,7 +30,7 @@ class CharactersPage extends StatelessWidget {
     );
   }
 
-  Widget _buildGrid(BuildContext context, List<CharacterCardModel> characters) {
+  Widget _buildGrid(List<CharacterCardModel> characters, BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -56,12 +57,14 @@ class CharactersPage extends StatelessWidget {
     );
   }
 
-  Widget _buildFiltersSwitch(bool showClearButton, BuildContext context) {
+  Widget _buildFiltersSwitch(String search, BuildContext context) {
+    final showClearButton = search != null && search.isNotEmpty;
     final s = S.of(context);
     return SliverToBoxAdapter(
       child: Column(
         children: [
           SearchBox(
+            value: search,
             showClearButton: showClearButton,
             searchChanged: (newVal) =>
                 context.read<CharactersBloc>().add(CharactersEvent.searchChanged(search: newVal)),
