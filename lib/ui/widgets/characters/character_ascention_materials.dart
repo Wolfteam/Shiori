@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../generated/l10n.dart';
+
 class CharacterAscentionMaterials extends StatelessWidget {
   final List<String> images;
   const CharacterAscentionMaterials({
@@ -9,9 +11,10 @@ class CharacterAscentionMaterials extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     final widgets = images.map((e) => Image.asset(e, width: 20, height: 20)).toList();
     return Tooltip(
-      message: 'Ascention materials',
+      message: s.ascentionMaterials,
       child: Wrap(
         alignment: WrapAlignment.spaceEvenly,
         crossAxisAlignment: WrapCrossAlignment.center,

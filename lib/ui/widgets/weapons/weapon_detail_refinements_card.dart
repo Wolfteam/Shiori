@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../common/styles.dart';
 import '../../../models/weapons/weapon_file_refinement_model.dart';
 import '../common/item_description_detail.dart';
+import '../../../generated/l10n.dart';
 
 class WeaponDetailRefinementsCard extends StatelessWidget {
   final List<WeaponFileRefinementModel> refinements;
@@ -14,6 +15,7 @@ class WeaponDetailRefinementsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     final rows = refinements
         .map(
           (e) => TableRow(
@@ -47,11 +49,11 @@ class WeaponDetailRefinementsCard extends StatelessWidget {
             children: [
               Padding(
                 padding: Styles.edgeInsetAll10,
-                child: Center(child: Text('Level')),
+                child: Center(child: Text(s.level)),
               ),
               Padding(
                 padding: Styles.edgeInsetAll10,
-                child: Center(child: Text('Description')),
+                child: Center(child: Text(s.description)),
               ),
             ],
           ),
@@ -60,6 +62,6 @@ class WeaponDetailRefinementsCard extends StatelessWidget {
       ),
     );
 
-    return ItemDescriptionDetail(title: 'Refinements', icon: Icon(Icons.settings), body: body);
+    return ItemDescriptionDetail(title: s.refinements, icon: Icon(Icons.settings), body: body);
   }
 }

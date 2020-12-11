@@ -4,6 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../bloc/bloc.dart';
 import '../../common/styles.dart';
+import '../../generated/l10n.dart';
 import '../../models/models.dart';
 import '../../models/weapons/weapon_card_model.dart';
 import '../widgets/common/loading.dart';
@@ -30,6 +31,7 @@ class WeaponsPage extends StatelessWidget {
   }
 
   Widget _buildFiltersSwitch(BuildContext context) {
+    final s = S.of(context);
     return SliverToBoxAdapter(
       child: Column(
         children: [
@@ -40,7 +42,7 @@ class WeaponsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  'All',
+                  s.all,
                   textAlign: TextAlign.start,
                   style: Theme.of(context).textTheme.headline6,
                 ),

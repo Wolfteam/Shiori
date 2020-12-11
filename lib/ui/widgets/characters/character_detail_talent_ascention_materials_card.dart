@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import '../../../common/styles.dart';
+import '../../../generated/l10n.dart';
 import '../../../models/models.dart';
 import '../common/item_description_detail.dart';
 
@@ -24,21 +25,22 @@ class CharacterDetailTalentAscentionMaterialsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     if (talentAscentionMaterials.isNotEmpty) {
-      return _buildTableCard('Talent Ascention', talentAscentionMaterials);
+      return _buildTableCard(s.talentsAscention, talentAscentionMaterials, s);
     }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         ...multiTalentAscentionMaterials
-            .map((e) => _buildTableCard('Talent Ascention ${e.number}', e.materials))
+            .map((e) => _buildTableCard(s.talentAscentionX(e.number), e.materials, s))
             .toList()
       ],
     );
   }
 
-  Widget _buildTableCard(String title, List<CharacterFileTalentAscentionMaterialModel> materials) {
+  Widget _buildTableCard(String title, List<CharacterFileTalentAscentionMaterialModel> materials, S s) {
     final body = Card(
       elevation: Styles.cardTenElevation,
       margin: Styles.edgeInsetAll5,
@@ -55,14 +57,14 @@ class CharacterDetailTalentAscentionMaterialsCard extends StatelessWidget {
                 verticalAlignment: TableCellVerticalAlignment.middle,
                 child: Padding(
                   padding: Styles.edgeInsetAll10,
-                  child: Center(child: Text('Level')),
+                  child: Center(child: Text(s.level)),
                 ),
               ),
               TableCell(
                 verticalAlignment: TableCellVerticalAlignment.middle,
                 child: Padding(
                   padding: Styles.edgeInsetAll10,
-                  child: Center(child: Text('Materials')),
+                  child: Center(child: Text(s.materials)),
                 ),
               ),
             ],
@@ -81,7 +83,7 @@ class CharacterDetailTalentAscentionMaterialsCard extends StatelessWidget {
           (m) => Wrap(children: [
             Image.asset(m.fullImagePath, width: 20, height: 20),
             Container(
-              margin: EdgeInsets.only(left: 5, right: 10),
+              margin: const EdgeInsets.only(left: 5, right: 10),
               child: Text('x ${m.quantity}'),
             ),
           ]),

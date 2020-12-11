@@ -1,7 +1,13 @@
 import '../../common/enums/app_language_type.dart';
 import '../../common/enums/app_theme_type.dart';
+import '../../common/enums/artifact_filter_type.dart';
+import '../../common/enums/character_filter_type.dart';
+import '../../common/enums/element_type.dart';
 import '../../common/enums/item_location_type.dart';
+import '../../common/enums/released_unreleased_type.dart';
+import '../../common/enums/sort_direction_type.dart';
 import '../../common/enums/stat_type.dart';
+import '../../common/enums/weapon_filter_type.dart';
 import '../../common/enums/weapon_type.dart';
 import '../../generated/l10n.dart';
 
@@ -64,6 +70,18 @@ extension I18nExtensions on S {
     }
   }
 
+  String translateStatTypeWithoutValue(
+    StatType type, {
+    bool removeExtraSigns = false,
+  }) {
+    final translated = translateStatType(type, 0);
+    final value = translated.replaceFirst('0.0', '').trim();
+    if (removeExtraSigns) {
+      return value.replaceAll('%', '').trim();
+    }
+    return value;
+  }
+
   String translateStatType(StatType type, double value) {
     switch (type) {
       case StatType.atk:
@@ -119,6 +137,88 @@ extension I18nExtensions on S {
         return sunday;
       default:
         throw Exception('Invalid day = $day');
+    }
+  }
+
+  String translateElementType(ElementType type) {
+    switch (type) {
+      case ElementType.anemo:
+        return 'Anemo';
+      case ElementType.cryo:
+        return 'Cryo';
+      case ElementType.dendro:
+        return 'Dendro';
+      case ElementType.electro:
+        return 'Electro';
+      case ElementType.geo:
+        return 'Geo';
+      case ElementType.hydro:
+        return 'Hydro';
+      case ElementType.pyro:
+        return 'Pyro';
+      default:
+        throw Exception('Invalid element type = $type');
+    }
+  }
+
+  String translateSortDirectionType(SortDirectionType type) {
+    switch (type) {
+      case SortDirectionType.asc:
+        return asc;
+      case SortDirectionType.desc:
+        return desc;
+      default:
+        throw Exception('Invalid sort direction type = $type');
+    }
+  }
+
+  String translateReleasedUnreleasedType(ReleasedUnreleasedType type) {
+    switch (type) {
+      case ReleasedUnreleasedType.all:
+        return all;
+      case ReleasedUnreleasedType.released:
+        return released;
+      case ReleasedUnreleasedType.unreleased:
+        return unreleased;
+      default:
+        throw Exception('Invalid released-unreleased type = $type');
+    }
+  }
+
+  String translateCharacterFilterType(CharacterFilterType type) {
+    switch (type) {
+      case CharacterFilterType.name:
+        return name;
+      case CharacterFilterType.rarity:
+        return rarity;
+      default:
+        throw Exception('Invalid character filter type = $type');
+    }
+  }
+
+  String translateWeaponFilterType(WeaponFilterType type) {
+    switch (type) {
+      case WeaponFilterType.atk:
+        return translateStatTypeWithoutValue(StatType.atk);
+      case WeaponFilterType.name:
+        return name;
+      case WeaponFilterType.rarity:
+        return rarity;
+      case WeaponFilterType.type:
+        return this.type;
+      default:
+        throw Exception('Invalid weapon filter type = $type');
+    }
+  }
+
+  String translateArtifactFilterType(ArtifactFilterType type) {
+    switch (type) {
+      case ArtifactFilterType.name:
+        return name;
+      case ArtifactFilterType.rarity:
+        return rarity;
+      default:
+        throw Exception('Invalid artifact filter type = $type');
     }
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/common/styles.dart';
+
+import '../../../common/styles.dart';
 
 class ElementDebuffCard extends StatelessWidget {
   final String image;
@@ -17,6 +18,7 @@ class ElementDebuffCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Card(
+      shape: Styles.cardShape,
       child: Container(
         padding: Styles.edgeInsetAll5,
         child: Column(

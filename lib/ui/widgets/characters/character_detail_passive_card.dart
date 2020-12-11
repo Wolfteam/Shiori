@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../common/enums/element_type.dart';
 import '../../../common/extensions/element_type_extensions.dart';
 import '../../../common/styles.dart';
+import '../../../generated/l10n.dart';
 import '../../../models/models.dart';
 import '../../widgets/common/bullet_list.dart';
 import '../common/item_description_detail.dart';
@@ -19,15 +20,16 @@ class CharacterDetailPassiveCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     final items = passives.map((e) => _buildPassiveCard(e, context)).toList();
     final body = Wrap(alignment: WrapAlignment.center, children: items);
-    return ItemDescriptionDetail(title: 'Passives', icon: Icon(Icons.settings), body: body);
+    return ItemDescriptionDetail(title: s.passives, icon: Icon(Icons.settings), body: body);
   }
 
   Widget _buildPassiveCard(TranslationCharacterPassive model, BuildContext context) {
+    final s = S.of(context);
     final theme = Theme.of(context);
-    final unlockedAt =
-        model.unlockedAt >= 1 ? 'Unlocked at Ascension level ${model.unlockedAt}' : 'Unlocked Automatically';
+    final unlockedAt = model.unlockedAt >= 1 ? s.unclockedAtAscentionLevelX(model.unlockedAt) : s.unlockedAutomatically;
     return Card(
       elevation: Styles.cardTenElevation,
       margin: Styles.edgeInsetAll5,
@@ -53,7 +55,7 @@ class CharacterDetailPassiveCard extends StatelessWidget {
               style: theme.textTheme.subtitle2,
             ),
             Container(
-              margin: EdgeInsets.only(top: 10),
+              margin: const EdgeInsets.only(top: 10),
               child: Text(
                 model.description,
                 textAlign: TextAlign.center,

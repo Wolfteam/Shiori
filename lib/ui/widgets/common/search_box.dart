@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../generated/l10n.dart';
 
 class SearchBox extends StatefulWidget {
   final bool showClearButton;
@@ -24,10 +25,11 @@ class _SearchBoxState extends State<SearchBox> {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     final theme = Theme.of(context);
     return Card(
       elevation: 3,
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: Row(
         children: <Widget>[
@@ -45,7 +47,7 @@ class _SearchBoxState extends State<SearchBox> {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: const EdgeInsets.symmetric(horizontal: 15),
-                hintText: 'Search...',
+                hintText: '${s.search}...',
               ),
             ),
           ),

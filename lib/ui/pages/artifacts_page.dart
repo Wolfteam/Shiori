@@ -4,6 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../bloc/bloc.dart';
 import '../../common/styles.dart';
+import '../../generated/l10n.dart';
 import '../../models/artifacts/artifact_card_model.dart';
 import '../widgets/artifacts/artifact_bottom_sheet.dart';
 import '../widgets/artifacts/artifact_card.dart';
@@ -33,7 +34,7 @@ class ArtifactsPage extends StatelessWidget {
   Widget _buildGrid(List<ArtifactCardModel> artifacts, BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 5),
       sliver: SliverStaggeredGrid.countBuilder(
         crossAxisCount: isPortrait ? 2 : 3,
         itemBuilder: (ctx, index) {
@@ -43,12 +44,13 @@ class ArtifactsPage extends StatelessWidget {
         itemCount: artifacts.length,
         crossAxisSpacing: isPortrait ? 10 : 5,
         mainAxisSpacing: 5,
-        staggeredTileBuilder: (int index) => StaggeredTile.fit(1),
+        staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
       ),
     );
   }
 
   Widget _buildFiltersSwitch(BuildContext context) {
+    final s = S.of(context);
     return SliverToBoxAdapter(
       child: Column(
         children: [
@@ -59,7 +61,7 @@ class ArtifactsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  'All',
+                  s.all,
                   textAlign: TextAlign.start,
                   style: Theme.of(context).textTheme.headline6,
                 ),

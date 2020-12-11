@@ -39,6 +39,7 @@ class ElementReactionCard extends StatelessWidget {
     final principalImgs = principal.map((e) => Image.asset(e, width: 45, height: 45)).toList();
     final secondaryImgs = secondary.map((e) => Image.asset(e, width: 45, height: 45)).toList();
     return Card(
+      shape: Styles.cardShape,
       margin: Styles.edgeInsetAll5,
       child: Padding(
         padding: Styles.edgeInsetAll5,

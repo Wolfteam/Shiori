@@ -7,7 +7,7 @@ class MapPage extends StatefulWidget {
 }
 
 class _MapPageState extends State<MapPage> {
-  final flutterWebviewPlugin = new FlutterWebviewPlugin();
+  final flutterWebviewPlugin = FlutterWebviewPlugin();
 
   final String script = '''
     let elements = document.getElementsByClassName("nav-link");
@@ -33,14 +33,14 @@ class _MapPageState extends State<MapPage> {
     flutterWebviewPlugin.onStateChanged.listen((WebViewStateChanged state) {
       if (mounted) {
         if (state.type == WebViewState.finishLoad) {
-          print("loaded...");
+          debugPrint("loaded...");
           _onPageLoaded();
         } else if (state.type == WebViewState.abortLoad) {
           // if there is a problem with loading the url
-          print("there is a problem...");
+          debugPrint("there is a problem...");
         } else if (state.type == WebViewState.startLoad) {
           // if the url started loading
-          print("start loading...");
+          debugPrint("start loading...");
         }
       }
     });
@@ -54,7 +54,7 @@ class _MapPageState extends State<MapPage> {
 
   @override
   Widget build(BuildContext context) {
-    return WebviewScaffold(
+    return const WebviewScaffold(
       url: "https://genshin-impact-map.appsample.com/#/",
       hidden: true,
       clearCache: true,
@@ -63,7 +63,7 @@ class _MapPageState extends State<MapPage> {
   }
 
   Rect _buildRect() {
-    final statusBarHeight = 24;
+    const statusBarHeight = 24;
     final mediaQuery = MediaQuery.of(context);
     final topPadding = mediaQuery.padding.top;
     final top = topPadding;
@@ -74,7 +74,7 @@ class _MapPageState extends State<MapPage> {
       height = 0.0;
     }
 
-    return new Rect.fromLTWH(0.0, top + statusBarHeight, mediaQuery.size.width, height - statusBarHeight);
+    return Rect.fromLTWH(0.0, top + statusBarHeight, mediaQuery.size.width, height - statusBarHeight);
   }
 
   void _onPageLoaded() {

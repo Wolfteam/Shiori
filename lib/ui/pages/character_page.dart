@@ -9,6 +9,7 @@ import '../../common/enums/weapon_type.dart';
 import '../../common/extensions/element_type_extensions.dart';
 import '../../common/extensions/weapon_type_extensions.dart';
 import '../../common/styles.dart';
+import '../../generated/l10n.dart';
 import '../../models/models.dart';
 import '../widgets/characters/character_detail.dart';
 import '../widgets/common/item_description.dart';
@@ -117,7 +118,7 @@ class CharacterPage extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: Container(
               width: descriptionWidth,
-              margin: EdgeInsets.symmetric(horizontal: 30),
+              margin: const EdgeInsets.symmetric(horizontal: 30),
               child: _buildGeneralCard(name, rarity, elementType, weaponType, region, role, isFemale, context),
             ),
           ),
@@ -143,18 +144,19 @@ class CharacterPage extends StatelessWidget {
     List<TranslationCharacterConstellation> constellations,
     BuildContext context,
   ) {
+    final s = S.of(context);
     return Card(
-      margin: EdgeInsets.only(top: 380, right: 10, left: 10),
+      margin: const EdgeInsets.only(top: 380, right: 10, left: 10),
       shape: Styles.cardItemDetailShape,
       child: Padding(
-        padding: EdgeInsets.only(top: 10, right: 10, left: 10),
+        padding: const EdgeInsets.only(top: 10, right: 10, left: 10),
         child: Column(
           children: [
             Container(
               margin: EdgeInsets.only(bottom: 10),
               child: ItemDescriptionDetail(
-                title: 'Description',
-                body: Container(margin: EdgeInsets.symmetric(horizontal: 5), child: Text(description)),
+                title: s.description,
+                body: Container(margin: const EdgeInsets.symmetric(horizontal: 5), child: Text(description)),
                 icon: Icon(Icons.settings),
               ),
             ),
@@ -186,25 +188,26 @@ class CharacterPage extends StatelessWidget {
     bool isFemale,
     BuildContext context,
   ) {
+    final s = S.of(context);
     final theme = Theme.of(context);
     final details = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(name, style: theme.textTheme.headline5.copyWith(fontWeight: FontWeight.bold)),
-        ItemDescription(title: 'Rarity', widget: Rarity(stars: rarity), useColumn: false),
+        ItemDescription(title: s.rarity, widget: Rarity(stars: rarity), useColumn: false),
         ItemDescription(
-          title: 'Element',
+          title: s.element,
           widget: Image.asset(elementType.getElementAsssetPath(), width: imgSize, height: imgSize),
           useColumn: false,
         ),
-        ItemDescription(title: 'Region', widget: Text(region), useColumn: false),
+        ItemDescription(title: s.region, widget: Text(region), useColumn: false),
         ItemDescription(
-          title: 'Weapon',
+          title: s.weapon,
           widget: Image.asset(weaponType.getWeaponAssetPath(), width: imgSize, height: imgSize),
           useColumn: false,
         ),
-        ItemDescription(title: 'Role', widget: Text(role), useColumn: false),
-        ItemDescription(title: 'Gender', widget: Text(isFemale ? 'Female' : 'Male'), useColumn: false),
+        ItemDescription(title: s.role, widget: Text(role), useColumn: false),
+        ItemDescription(title: s.gender, widget: Text(isFemale ? s.female : s.male), useColumn: false),
       ],
     );
     return Card(

@@ -13,7 +13,7 @@ class TodayCharAscentionMaterials extends StatelessWidget {
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
         return state.when(
-          loading: () => const SliverToBoxAdapter(child: Loading()),
+          loading: () => const SliverToBoxAdapter(child: Loading(useScaffold: false)),
           loaded: (charAscMaterials, _) => SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 5),
             sliver: SliverStaggeredGrid.countBuilder(

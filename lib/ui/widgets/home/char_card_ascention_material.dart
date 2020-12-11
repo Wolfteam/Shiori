@@ -43,6 +43,7 @@ class CharCardAscentionMaterial extends StatelessWidget {
 
     return Card(
       margin: Styles.edgeInsetAll10,
+      shape: Styles.cardShape,
       child: Container(
         padding: Styles.edgeInsetAll5,
         child: Row(

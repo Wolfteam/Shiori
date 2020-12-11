@@ -22,27 +22,28 @@ class ArtifactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final stats = bonus
-        .map(
-          (e) => Container(
-            margin: EdgeInsets.symmetric(vertical: 5),
-            child: Column(
-              children: [
-                // Text(
-                //   '${e.key}:',
-                //   textAlign: TextAlign.center,
-                //   style: theme.textTheme.subtitle2,
-                // ),
-                Text(
-                  e,
-                  textAlign: TextAlign.center,
-                  style: theme.textTheme.bodyText2.copyWith(fontSize: 11),
-                ),
-              ],
-            ),
+    final stats = bonus.map(
+      (e) {
+        final splitted = split(e, ':', max: 1);
+        return Container(
+          margin: const EdgeInsets.symmetric(vertical: 5),
+          child: Column(
+            children: [
+              Text(
+                splitted.first,
+                textAlign: TextAlign.center,
+                style: theme.textTheme.subtitle2,
+              ),
+              Text(
+                splitted.last,
+                textAlign: TextAlign.center,
+                style: theme.textTheme.bodyText2.copyWith(fontSize: 11),
+              ),
+            ],
           ),
-        )
-        .toList();
+        );
+      },
+    ).toList();
     return InkWell(
       onTap: () => {},
       child: GradientCard(
@@ -72,5 +73,28 @@ class ArtifactCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  List<String> split(String string, String separator, {int max = 0}) {
+    final result = <String>[];
+    var copy = string;
+
+    if (separator.isEmpty) {
+      result.add(copy);
+      return result;
+    }
+
+    while (true) {
+      final index = copy.indexOf(separator, 0);
+      if (index == -1 || (max > 0 && result.length >= max)) {
+        result.add(copy);
+        break;
+      }
+
+      result.add(copy.substring(0, index));
+      copy = copy.substring(index + separator.length);
+    }
+
+    return result;
   }
 }

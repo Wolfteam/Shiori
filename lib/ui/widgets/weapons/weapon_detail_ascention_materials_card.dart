@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../common/styles.dart';
+import '../../../generated/l10n.dart';
 import '../../../models/models.dart';
 import '../common/item_description_detail.dart';
 import '../common/wrapped_ascention_material.dart';
@@ -15,6 +16,7 @@ class WeaponDetailAscentionMaterialsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     final body = Card(
       elevation: Styles.cardTenElevation,
       shape: Styles.cardShape,
@@ -31,14 +33,14 @@ class WeaponDetailAscentionMaterialsCard extends StatelessWidget {
                 verticalAlignment: TableCellVerticalAlignment.middle,
                 child: Padding(
                   padding: Styles.edgeInsetAll10,
-                  child: Center(child: Text('Level')),
+                  child: Center(child: Text(s.level)),
                 ),
               ),
               TableCell(
                 verticalAlignment: TableCellVerticalAlignment.middle,
                 child: Padding(
                   padding: Styles.edgeInsetAll10,
-                  child: Center(child: Text('Materials')),
+                  child: Center(child: Text(s.materials)),
                 ),
               ),
             ],
@@ -47,7 +49,7 @@ class WeaponDetailAscentionMaterialsCard extends StatelessWidget {
         ],
       ),
     );
-    return ItemDescriptionDetail(title: 'Ascention Materials', icon: Icon(Icons.settings), body: body);
+    return ItemDescriptionDetail(title: s.ascentionMaterials, icon: Icon(Icons.settings), body: body);
   }
 
   TableRow _buildStatProgressionRow(WeaponFileAscentionMaterial model) {
