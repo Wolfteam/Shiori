@@ -2,13 +2,13 @@ import 'package:flutter/widgets.dart';
 
 import '../../common/enums/weapon_type.dart';
 
-class WepaonCardModel {
+class WeaponCardModel {
   final String image;
   final String name;
   final int rarity;
   final int baseAtk;
   final WeaponType type;
-  WepaonCardModel({
+  WeaponCardModel({
     @required this.image,
     @required this.name,
     @required this.rarity,

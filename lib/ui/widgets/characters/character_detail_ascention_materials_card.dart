@@ -28,17 +28,26 @@ class CharacterDetailAscentionMaterialsCard extends StatelessWidget {
         children: [
           TableRow(
             children: [
-              Padding(
-                padding: Styles.edgeInsetAll10,
-                child: Center(child: Text('Rank')),
+              TableCell(
+                verticalAlignment: TableCellVerticalAlignment.middle,
+                child: Padding(
+                  padding: Styles.edgeInsetAll10,
+                  child: Center(child: Text('Rank')),
+                ),
               ),
-              Padding(
-                padding: Styles.edgeInsetAll10,
-                child: Center(child: Text('Level')),
+              TableCell(
+                verticalAlignment: TableCellVerticalAlignment.middle,
+                child: Padding(
+                  padding: Styles.edgeInsetAll10,
+                  child: Center(child: Text('Level')),
+                ),
               ),
-              Padding(
-                padding: Styles.edgeInsetAll10,
-                child: Center(child: Text('Materials')),
+              TableCell(
+                verticalAlignment: TableCellVerticalAlignment.middle,
+                child: Padding(
+                  padding: Styles.edgeInsetAll10,
+                  child: Center(child: Text('Materials')),
+                ),
               ),
             ],
           ),
@@ -50,20 +59,32 @@ class CharacterDetailAscentionMaterialsCard extends StatelessWidget {
   }
 
   TableRow _buildAscentionRow(CharacterFileAscentionMaterialModel model) {
-    final materials =
-        model.materials.map((m) => WrappedAscentionMaterial(image: m.fullImagePath, quantity: m.quantity)).toList();
+    final materials = model.materials
+        .map(
+          (m) => WrappedAscentionMaterial(image: m.fullImagePath, quantity: m.quantity),
+        )
+        .toList();
     return TableRow(children: [
-      Padding(
-        padding: Styles.edgeInsetAll10,
-        child: Center(child: Text('${model.rank}')),
+      TableCell(
+        verticalAlignment: TableCellVerticalAlignment.middle,
+        child: Padding(
+          padding: Styles.edgeInsetAll10,
+          child: Center(child: Text('${model.rank}')),
+        ),
       ),
-      Padding(
-        padding: Styles.edgeInsetAll10,
-        child: Center(child: Text('${model.level}')),
+      TableCell(
+        verticalAlignment: TableCellVerticalAlignment.middle,
+        child: Padding(
+          padding: Styles.edgeInsetAll10,
+          child: Center(child: Text('${model.level}')),
+        ),
       ),
-      Padding(
-        padding: Styles.edgeInsetVertical5,
-        child: Wrap(alignment: WrapAlignment.center, children: materials),
+      TableCell(
+        verticalAlignment: TableCellVerticalAlignment.middle,
+        child: Padding(
+          padding: Styles.edgeInsetVertical5,
+          child: Wrap(alignment: WrapAlignment.center, children: materials),
+        ),
       ),
     ]);
   }

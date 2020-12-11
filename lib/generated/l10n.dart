@@ -44,6 +44,346 @@ class S {
       args: [],
     );
   }
+
+  /// `Dark`
+  String get dark {
+    return Intl.message(
+      'Dark',
+      name: 'dark',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Light`
+  String get light {
+    return Intl.message(
+      'Light',
+      name: 'light',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message(
+      'English',
+      name: 'english',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spanish`
+  String get spanish {
+    return Intl.message(
+      'Spanish',
+      name: 'spanish',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bow`
+  String get bow {
+    return Intl.message(
+      'Bow',
+      name: 'bow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Claymore`
+  String get claymore {
+    return Intl.message(
+      'Claymore',
+      name: 'claymore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sword`
+  String get sword {
+    return Intl.message(
+      'Sword',
+      name: 'sword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Polearm`
+  String get polearm {
+    return Intl.message(
+      'Polearm',
+      name: 'polearm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Catalyst`
+  String get catalyst {
+    return Intl.message(
+      'Catalyst',
+      name: 'catalyst',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `None`
+  String get none {
+    return Intl.message(
+      'None',
+      name: 'none',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{value} ATK`
+  String atk(Object value) {
+    return Intl.message(
+      '$value ATK',
+      name: 'atk',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `{value} ATK%`
+  String atkPercentage(Object value) {
+    return Intl.message(
+      '$value ATK%',
+      name: 'atkPercentage',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `{value} DEF%`
+  String defPercentage(Object value) {
+    return Intl.message(
+      '$value DEF%',
+      name: 'defPercentage',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `{value} CRIT ATK`
+  String critAtk(Object value) {
+    return Intl.message(
+      '$value CRIT ATK',
+      name: 'critAtk',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `{value} CRIT Rate`
+  String critRate(Object value) {
+    return Intl.message(
+      '$value CRIT Rate',
+      name: 'critRate',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `{value} CRIT Rate%`
+  String critRatePercentage(Object value) {
+    return Intl.message(
+      '$value CRIT Rate%',
+      name: 'critRatePercentage',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `{value} CRIT DMG`
+  String critDmgPercentage(Object value) {
+    return Intl.message(
+      '$value CRIT DMG',
+      name: 'critDmgPercentage',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `{value} Elementary Master`
+  String elementaryMaster(Object value) {
+    return Intl.message(
+      '$value Elementary Master',
+      name: 'elementaryMaster',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `{value} HP%`
+  String hpPercentage(Object value) {
+    return Intl.message(
+      '$value HP%',
+      name: 'hpPercentage',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `{value} PHYS DMG %`
+  String physDmgPercentage(Object value) {
+    return Intl.message(
+      '$value PHYS DMG %',
+      name: 'physDmgPercentage',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `{value} PHYS DMG Bonus`
+  String physDmgBonus(Object value) {
+    return Intl.message(
+      '$value PHYS DMG Bonus',
+      name: 'physDmgBonus',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `{value} Energy Recharge %`
+  String energyRechargePercentage(Object value) {
+    return Intl.message(
+      '$value Energy Recharge %',
+      name: 'energyRechargePercentage',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `Gacha`
+  String get gacha {
+    return Intl.message(
+      'Gacha',
+      name: 'gacha',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crafting`
+  String get crafting {
+    return Intl.message(
+      'Crafting',
+      name: 'crafting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Starglitter Exchange`
+  String get starglitterExchange {
+    return Intl.message(
+      'Starglitter Exchange',
+      name: 'starglitterExchange',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chest`
+  String get chest {
+    return Intl.message(
+      'Chest',
+      name: 'chest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `BP Bounty`
+  String get bpBounty {
+    return Intl.message(
+      'BP Bounty',
+      name: 'bpBounty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monday`
+  String get monday {
+    return Intl.message(
+      'Monday',
+      name: 'monday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tuesday`
+  String get tuesday {
+    return Intl.message(
+      'Tuesday',
+      name: 'tuesday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wednesday`
+  String get wednesday {
+    return Intl.message(
+      'Wednesday',
+      name: 'wednesday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Thursday`
+  String get thursday {
+    return Intl.message(
+      'Thursday',
+      name: 'thursday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Friday`
+  String get friday {
+    return Intl.message(
+      'Friday',
+      name: 'friday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saturday`
+  String get saturday {
+    return Intl.message(
+      'Saturday',
+      name: 'saturday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sunday`
+  String get sunday {
+    return Intl.message(
+      'Sunday',
+      name: 'sunday',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

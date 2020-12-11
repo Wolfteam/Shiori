@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../common/enums/day_type.dart';
-
 class TodayCharAscentionMaterialsModel {
   final String name;
   final String image;
-  final List<DayType> days;
+  final List<int> days;
   final String bossName;
-  final List<String> charactersImg;
+  final List<String> characters;
+  bool get isFromBoss => bossName != null;
 
   bool get onlyObtainableInDays => days.isNotEmpty;
 
@@ -15,13 +14,13 @@ class TodayCharAscentionMaterialsModel {
     @required this.name,
     @required this.image,
     @required this.days,
-    @required this.charactersImg,
+    @required this.characters,
   }) : bossName = null;
 
   TodayCharAscentionMaterialsModel.fromBoss({
     @required this.name,
     @required this.image,
     @required this.bossName,
-    @required this.charactersImg,
+    @required this.characters,
   }) : days = [];
 }

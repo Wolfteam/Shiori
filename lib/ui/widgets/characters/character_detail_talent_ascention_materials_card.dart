@@ -44,20 +44,26 @@ class CharacterDetailTalentAscentionMaterialsCard extends StatelessWidget {
       margin: Styles.edgeInsetAll5,
       shape: Styles.cardShape,
       child: Table(
-        columnWidths: {
+        columnWidths: const {
           0: FractionColumnWidth(.2),
           2: FractionColumnWidth(.8),
         },
         children: [
           TableRow(
             children: [
-              Padding(
-                padding: Styles.edgeInsetAll10,
-                child: Center(child: Text('Level')),
+              TableCell(
+                verticalAlignment: TableCellVerticalAlignment.middle,
+                child: Padding(
+                  padding: Styles.edgeInsetAll10,
+                  child: Center(child: Text('Level')),
+                ),
               ),
-              Padding(
-                padding: Styles.edgeInsetAll10,
-                child: Center(child: Text('Materials')),
+              TableCell(
+                verticalAlignment: TableCellVerticalAlignment.middle,
+                child: Padding(
+                  padding: Styles.edgeInsetAll10,
+                  child: Center(child: Text('Materials')),
+                ),
               ),
             ],
           ),
@@ -82,13 +88,19 @@ class CharacterDetailTalentAscentionMaterialsCard extends StatelessWidget {
         )
         .toList();
     return TableRow(children: [
-      Padding(
-        padding: Styles.edgeInsetAll10,
-        child: Center(child: Text('${model.level}')),
+      TableCell(
+        verticalAlignment: TableCellVerticalAlignment.middle,
+        child: Padding(
+          padding: Styles.edgeInsetAll10,
+          child: Center(child: Text('${model.level}')),
+        ),
       ),
-      Padding(
-        padding: Styles.edgeInsetVertical5,
-        child: Wrap(alignment: WrapAlignment.center, children: materials),
+      TableCell(
+        verticalAlignment: TableCellVerticalAlignment.middle,
+        child: Padding(
+          padding: Styles.edgeInsetVertical5,
+          child: Wrap(alignment: WrapAlignment.center, children: materials),
+        ),
       ),
     ]);
   }

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../../../common/enums/day_type.dart';
+import '../../../common/extensions/i18n_extensions.dart';
 import '../../../common/styles.dart';
+import '../../../generated/l10n.dart';
 
 class WeaponCardAscentionMaterial extends StatelessWidget {
   final String name;
   final String image;
-  final List<DayType> days;
+  final List<int> days;
 
   const WeaponCardAscentionMaterial({
     Key key,
@@ -17,7 +18,9 @@ class WeaponCardAscentionMaterial extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final obtainOn = days.fold('', (previousValue, element) => '$previousValue, $element');
+    final s = S.of(context);
+    final theme = Theme.of(context);
+    final obtainOn = s.translateDays(days);
     return Card(
       margin: Styles.edgeInsetAll10,
       child: Container(
@@ -26,8 +29,24 @@ class WeaponCardAscentionMaterial extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Image.asset(image, width: 120, height: 100),
-            Text(name, textAlign: TextAlign.center),
-            Text(obtainOn, textAlign: TextAlign.center),
+            Tooltip(
+              message: name,
+              child: Text(
+                name,
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+                style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+              ),
+            ),
+            Tooltip(
+              message: obtainOn,
+              child: Text(
+                obtainOn,
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+                style: theme.textTheme.subtitle2.copyWith(fontSize: 12),
+              ),
+            ),
           ],
         ),
       ),

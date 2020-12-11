@@ -1,164 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-import '../../common/enums/weapon_type.dart';
+import '../../bloc/bloc.dart';
 import '../../common/styles.dart';
+import '../../models/models.dart';
 import '../../models/weapons/weapon_card_model.dart';
+import '../widgets/common/loading.dart';
 import '../widgets/common/search_box.dart';
 import '../widgets/weapons/weapon_bottom_sheet.dart';
 import '../widgets/weapons/weapon_card.dart';
 
 class WeaponsPage extends StatelessWidget {
-  final weapons = <WepaonCardModel>[
-    // WepaonCardModel(
-    //   image: 'assets/weapons/swords/aquila_favonia.png',
-    //   baseAtk: 48,
-    //   name: 'Aquila Favonia',
-    //   rarity: 5,
-    //   type: WeaponType.sword,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/swords/festering_fang.png',
-    //   baseAtk: 42,
-    //   name: 'Festering Fang',
-    //   rarity: 4,
-    //   type: WeaponType.sword,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/polearms/primordial_jade_winged_spear.png',
-    //   baseAtk: 48,
-    //   name: 'Primordial Jade Winged-Spear',
-    //   rarity: 5,
-    //   type: WeaponType.polearm,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/polearms/vortex_vanquisher.png',
-    //   baseAtk: 46,
-    //   name: 'Vortex Vanquisher',
-    //   rarity: 5,
-    //   type: WeaponType.polearm,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/claymores/snow_tombed_starsilver.png',
-    //   baseAtk: 44,
-    //   name: 'Snow-Tombed Starsilver',
-    //   rarity: 4,
-    //   type: WeaponType.claymore,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/claymores/wolfs_gravestone.png',
-    //   baseAtk: 46,
-    //   name: "Wolf's Gravestone",
-    //   rarity: 5,
-    //   type: WeaponType.claymore,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/catalysts/eye_of_perception.png',
-    //   baseAtk: 41,
-    //   name: 'Eye of Perception',
-    //   rarity: 4,
-    //   type: WeaponType.catalyst,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/catalysts/lost_prayer_to_the_sacred_winds.png',
-    //   baseAtk: 46,
-    //   name: 'Lost Prayer to the Sacred Winds',
-    //   rarity: 5,
-    //   type: WeaponType.catalyst,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/bows/dreams_of_dragonfell.png',
-    //   baseAtk: 46,
-    //   name: 'Dreams of Dragonfell',
-    //   rarity: 5,
-    //   type: WeaponType.bow,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/bows/rust.png',
-    //   baseAtk: 42,
-    //   name: 'Rust',
-    //   rarity: 4,
-    //   type: WeaponType.bow,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/polearms/vortex_vanquisher.png',
-    //   baseAtk: 46,
-    //   name: 'Vortex Vanquisher',
-    //   rarity: 5,
-    //   type: WeaponType.polearm,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/claymores/snow_tombed_starsilver.png',
-    //   baseAtk: 44,
-    //   name: 'Snow-Tombed Starsilver',
-    //   rarity: 4,
-    //   type: WeaponType.claymore,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/claymores/wolfs_gravestone.png',
-    //   baseAtk: 46,
-    //   name: "Wolf's Gravestone",
-    //   rarity: 5,
-    //   type: WeaponType.claymore,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/catalysts/eye_of_perception.png',
-    //   baseAtk: 41,
-    //   name: 'Eye of Perception',
-    //   rarity: 4,
-    //   type: WeaponType.catalyst,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/catalysts/lost_prayer_to_the_sacred_winds.png',
-    //   baseAtk: 46,
-    //   name: 'Lost Prayer to the Sacred Winds',
-    //   rarity: 5,
-    //   type: WeaponType.catalyst,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/bows/dreams_of_dragonfell.png',
-    //   baseAtk: 46,
-    //   name: 'Dreams of Dragonfell',
-    //   rarity: 5,
-    //   type: WeaponType.bow,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/bows/rust.png',
-    //   baseAtk: 42,
-    //   name: 'Rust',
-    //   rarity: 4,
-    //   type: WeaponType.bow,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/catalysts/lost_prayer_to_the_sacred_winds.png',
-    //   baseAtk: 46,
-    //   name: 'Lost Prayer to the Sacred Winds',
-    //   rarity: 3,
-    //   type: WeaponType.catalyst,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/bows/dreams_of_dragonfell.png',
-    //   baseAtk: 46,
-    //   name: 'Dreams of Dragonfell',
-    //   rarity: 2,
-    //   type: WeaponType.bow,
-    // ),
-    // WepaonCardModel(
-    //   image: 'assets/weapons/bows/rust.png',
-    //   baseAtk: 42,
-    //   name: 'Rust',
-    //   rarity: 1,
-    //   type: WeaponType.bow,
-    // ),
-  ];
-
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        _buildFiltersSwitch(context),
-        _buildGrid(context),
-      ],
+    return BlocBuilder<WeaponsBloc, WeaponsState>(
+      builder: (context, state) {
+        return state.when(
+          loading: () => const Loading(),
+          loaded: (weapons) => CustomScrollView(
+            slivers: [
+              _buildFiltersSwitch(context),
+              _buildGrid(context, weapons),
+            ],
+          ),
+        );
+      },
     );
   }
 
@@ -189,7 +56,7 @@ class WeaponsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildGrid(BuildContext context) {
+  Widget _buildGrid(BuildContext context, List<WeaponCardModel> weapons) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return SliverPadding(
       padding: EdgeInsets.symmetric(horizontal: 5),
@@ -208,7 +75,7 @@ class WeaponsPage extends StatelessWidget {
         itemCount: weapons.length,
         crossAxisSpacing: isPortrait ? 10 : 5,
         mainAxisSpacing: 5,
-        staggeredTileBuilder: (int index) => StaggeredTile.fit(1),
+        staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
       ),
     );
   }

@@ -57,10 +57,7 @@ class CharacterCard extends StatelessWidget {
                   alignment: AlignmentDirectional.topCenter,
                   fit: StackFit.passthrough,
                   children: [
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                      child: Image.asset(image, fit: BoxFit.fill),
-                    ),
+                    Image.asset(image, fit: BoxFit.fill),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -90,7 +87,6 @@ class CharacterCard extends StatelessWidget {
               IntrinsicHeight(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Flexible(
                       fit: FlexFit.tight,

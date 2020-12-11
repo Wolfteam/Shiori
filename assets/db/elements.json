@@ -1,0 +1,170 @@
+{
+    "debuffs": [
+        {
+            "name": "Engulfing Storm",
+            "image": "electro.png"
+        },
+        {
+            "name": "Slowing Water",
+            "image": "hydro.png"
+        },
+        {
+            "name": "Smoldering Flames",
+            "image": "pyro.png"
+        },
+        {
+            "name": "Condensed Ice",
+            "image": "cryo.png"
+        }
+    ],
+    "reactions": [
+        {
+            "name": "Burning",
+            "principal": [
+                "dendro.png"
+            ],
+            "secondary": [
+                "pyro.png"
+            ]
+        },
+        {
+            "name": "Crystalize",
+            "principal": [
+                "geo.png"
+            ],
+            "secondary": [
+                "cryo.png",
+                "electro.png",
+                "hydro.png",
+                "pyro.png"
+            ]
+        },
+        {
+            "name": "Electro-Charged",
+            "principal": [
+                "electro.png"
+            ],
+            "secondary": [
+                "hydro.png"
+            ]
+        },
+        {
+            "name": "Frozen",
+            "principal": [
+                "cryo.png"
+            ],
+            "secondary": [
+                "hydro.png"
+            ]
+        },
+        {
+            "name": "Melt",
+            "principal": [
+                "cryo.png"
+            ],
+            "secondary": [
+                "pyro.png"
+            ]
+        },
+        {
+            "name": "Overloaded",
+            "principal": [
+                "electro.png"
+            ],
+            "secondary": [
+                "pyro.png"
+            ]
+        },
+        {
+            "name": "Superconduct",
+            "principal": [
+                "cryo.png"
+            ],
+            "secondary": [
+                "electro.png"
+            ]
+        },
+        {
+            "name": "Swirl",
+            "principal": [
+                "anemo.png"
+            ],
+            "secondary": [
+                "cryo.png",
+                "electro.png",
+                "hydro.png",
+                "pyro.png"
+            ]
+        },
+        {
+            "name": "Vaporize",
+            "principal": [
+                "hydro.png"
+            ],
+            "secondary": [
+                "pyro.png"
+            ]
+        }
+    ],
+    "resonance": [
+        {
+            "name": "Enduring Rock",
+            "principal": [
+                "geo.png"
+            ],
+            "secondary": [
+                "geo.png"
+            ]
+        },
+        {
+            "name": "Fervent Flames",
+            "principal": [
+                "pyro.png"
+            ],
+            "secondary": [
+                "pyro.png"
+            ]
+        },
+        {
+            "name": "Soothing Waters",
+            "principal": [
+                "hydro.png"
+            ],
+            "secondary": [
+                "hydro.png"
+            ]
+        },
+        {
+            "name": "Impetuous Winds",
+            "principal": [
+                "anemo.png"
+            ],
+            "secondary": [
+                "anemo.png"
+            ]
+        },
+        {
+            "name": "High Voltage",
+            "principal": [
+                "electro.png"
+            ],
+            "secondary": [
+                "electro.png"
+            ]
+        },
+        {
+            "name": "Shattering Ice",
+            "principal": [
+                "cryo.png"
+            ],
+            "secondary": [
+                "cryo.png"
+            ]
+        },
+        {
+            "name": "Protective Canopy",
+            "principal": [],
+            "secondary": []
+        }
+    ]
+}

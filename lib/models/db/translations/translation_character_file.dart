@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../common/assets.dart';
+import '../../../common/assets.dart';
 
 part 'translation_character_file.freezed.dart';
 part 'translation_character_file.g.dart';

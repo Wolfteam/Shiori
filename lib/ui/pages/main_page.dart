@@ -41,7 +41,11 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
     super.didChangeDependencies();
     if (_didChangeDependencies) return;
     _didChangeDependencies = true;
+    context.read<HomeBloc>().add(const HomeEvent.init());
     context.read<CharactersBloc>().add(const CharactersEvent.init());
+    context.read<WeaponsBloc>().add(const WeaponsEvent.init());
+    context.read<ArtifactsBloc>().add(const ArtifactsEvent.init());
+    context.read<ElementsBloc>().add(const ElementsEvent.init());
   }
 
   @override

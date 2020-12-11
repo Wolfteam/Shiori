@@ -58,6 +58,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     await _genshinService.init(AppLanguageType.english);
     final packageInfo = await PackageInfo.fromPlatform();
     // final appSettings = _settings.appSettings;
+    await Future.delayed(const Duration(milliseconds: 600));
     return _loadThemeData(packageInfo.appName, AppThemeType.dark, AppAccentColorType.amber, AppLanguageType.english);
   }
 
