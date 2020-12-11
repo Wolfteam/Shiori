@@ -4,6 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../bloc/bloc.dart';
 import '../../common/styles.dart';
+import '../../generated/l10n.dart';
 import '../../models/characters/character_card_model.dart';
 import '../widgets/characters/character_bottom_sheet.dart';
 import '../widgets/characters/character_card.dart';
@@ -56,6 +57,7 @@ class CharactersPage extends StatelessWidget {
   }
 
   Widget _buildFiltersSwitch(BuildContext context) {
+    final s = S.of(context);
     return SliverToBoxAdapter(
       child: Column(
         children: [
@@ -66,7 +68,7 @@ class CharactersPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  'All',
+                  s.all,
                   textAlign: TextAlign.start,
                   style: Theme.of(context).textTheme.headline6,
                 ),

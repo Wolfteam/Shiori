@@ -4,7 +4,9 @@ import 'package:smooth_star_rating/smooth_star_rating.dart';
 import '../../../common/enums/character_filter_type.dart';
 import '../../../common/enums/released_unreleased_type.dart';
 import '../../../common/enums/sort_direction_type.dart';
+import '../../../common/extensions/i18n_extensions.dart';
 import '../../../common/styles.dart';
+import '../../../generated/l10n.dart';
 import '../common/bottom_sheet_title.dart';
 import '../common/elements_button_bar.dart';
 import '../common/item_popupmenu_filter.dart';
@@ -16,6 +18,8 @@ class CharacterBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final s = S.of(context);
+
     return SingleChildScrollView(
       padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
       child: Container(
@@ -26,12 +30,12 @@ class CharacterBottomSheet extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             ModalSheetSeparator(),
-            BottomSheetTitle(icon: Icons.playlist_play, title: 'Filters'),
-            Text('Elements'),
+            BottomSheetTitle(icon: Icons.playlist_play, title: s.filters),
+            Text(s.elements),
             ElementsButtonBar(),
-            Text('Weapons'),
+            Text(s.weapons),
             WeaponsButtonBar(),
-            Text('Rarity'),
+            Text(s.rarity),
             Center(
               child: SmoothStarRating(
                 allowHalfRating: false,
@@ -43,22 +47,24 @@ class CharacterBottomSheet extends StatelessWidget {
                 spacing: 0.0,
               ),
             ),
-            Text('Others'),
+            Text(s.others),
             ButtonBar(
               alignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ItemPopupMenuFilter<ReleasedUnreleasedType>(
-                  tooltipText: 'Released / Unreleased type',
+                  tooltipText: '${s.released} / ${s.unreleased}',
                   values: ReleasedUnreleasedType.values,
                   selectedValue: ReleasedUnreleasedType.all,
                   onSelected: (v) => {},
                   icon: const Icon(Icons.all_inbox),
+                  itemText: (val) => s.translateReleasedUnreleasedType(val),
                 ),
                 ItemPopupMenuFilter<CharacterFilterType>(
-                  tooltipText: 'Sort By',
+                  tooltipText: s.sortBy,
                   values: CharacterFilterType.values,
                   selectedValue: CharacterFilterType.name,
                   onSelected: (v) => {},
+                  itemText: (val) => s.translateCharacterFilterType(val),
                 ),
                 SortDirectionPopupMenuFilter(
                   selectedSortDirection: SortDirectionType.asc,
@@ -71,12 +77,12 @@ class CharacterBottomSheet extends StatelessWidget {
               children: <Widget>[
                 OutlineButton(
                   onPressed: () => Navigator.pop(context),
-                  child: Text('Cancel', style: TextStyle(color: theme.primaryColor)),
+                  child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
                 ),
                 RaisedButton(
                   color: theme.primaryColor,
                   onPressed: () => {},
-                  child: Text('Ok'),
+                  child: Text(s.ok),
                 )
               ],
             )

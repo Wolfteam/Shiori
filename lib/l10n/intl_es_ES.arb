@@ -98,5 +98,9 @@
     "search": "Buscar",
     "sortDirection": "Dirección de ordenamiento",
     "refinements": "Refinamientos",
-    "sortType": "Tipo de ordenamiento"
+    "sortType": "Tipo de ordenamiento",
+    "asc": "Ascendente",
+    "desc": "Descendente",
+    "name": "Nombre",
+    "weaponType": "Tipo de arma"
 }

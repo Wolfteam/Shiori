@@ -43,7 +43,7 @@ class WeaponPage extends StatelessWidget {
                       s.fullImage,
                       context,
                     ),
-                    _buildBottom(s.description, s.ascentionMaterials, s.refinements),
+                    _buildBottom(s.description, s.ascentionMaterials, s.refinements, context),
                   ],
                 ),
               );
@@ -104,7 +104,7 @@ class WeaponPage extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: Container(
               width: descriptionWidth,
-              margin: EdgeInsets.symmetric(horizontal: 30),
+              margin: const EdgeInsets.symmetric(horizontal: 30),
               child: _buildGeneralCard(
                 name,
                 atk,
@@ -132,15 +132,16 @@ class WeaponPage extends StatelessWidget {
     String description,
     List<WeaponFileAscentionMaterial> ascentionMaterials,
     List<WeaponFileRefinementModel> refinements,
+    BuildContext context,
   ) {
     return Card(
-      margin: EdgeInsets.only(top: 280, right: 10, left: 10),
+      margin: const EdgeInsets.only(top: 280, right: 10, left: 10),
       shape: Styles.cardItemDetailShape,
       child: Padding(
-        padding: EdgeInsets.only(top: 10, right: 10, left: 10),
+        padding: const EdgeInsets.only(top: 10, right: 10, left: 10),
         child: Column(
           children: [
-            _buildDescription(description),
+            _buildDescription(description, context),
             if (ascentionMaterials.isNotEmpty)
               WeaponDetailAscentionMaterialsCard(ascentionMaterials: ascentionMaterials),
             if (refinements.isNotEmpty) WeaponDetailRefinementsCard(refinements: refinements),
@@ -169,12 +170,12 @@ class WeaponPage extends StatelessWidget {
           name,
           style: theme.textTheme.headline5.copyWith(fontWeight: FontWeight.bold),
         ),
-        ItemDescription(title: 'Rarity', widget: Rarity(stars: rarity), useColumn: false),
-        ItemDescription(title: 'Type', widget: Text(s.translateWeaponType(type)), useColumn: false),
-        ItemDescription(title: 'Base Atk', widget: Text('$atk'), useColumn: false),
+        ItemDescription(title: s.rarity, widget: Rarity(stars: rarity), useColumn: false),
+        ItemDescription(title: s.type, widget: Text(s.translateWeaponType(type)), useColumn: false),
+        ItemDescription(title: s.baseAtk, widget: Text('$atk'), useColumn: false),
         ItemDescription(
-            title: 'Secondary Stat', widget: Text(s.translateStatType(statType, secondaryStatValue)), useColumn: false),
-        ItemDescription(title: 'Location', widget: Text(s.translateItemLocationType(locationType)), useColumn: false),
+            title: s.secondaryState, widget: Text(s.translateStatType(statType, secondaryStatValue)), useColumn: false),
+        ItemDescription(title: s.location, widget: Text(s.translateItemLocationType(locationType)), useColumn: false),
       ],
     );
 
@@ -187,15 +188,16 @@ class WeaponPage extends StatelessWidget {
     );
   }
 
-  Widget _buildDescription(String description) {
+  Widget _buildDescription(String description, BuildContext context) {
+    final s = S.of(context);
     final body = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Container(
-          margin: EdgeInsets.only(bottom: 10),
+          margin: const EdgeInsets.only(bottom: 10),
           child: ItemDescriptionDetail(
-            title: 'Description',
-            body: Container(margin: EdgeInsets.symmetric(horizontal: 5), child: Text(description)),
+            title: s.description,
+            body: Container(margin: const EdgeInsets.symmetric(horizontal: 5), child: Text(description)),
             icon: Icon(Icons.settings),
           ),
         ),

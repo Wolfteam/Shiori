@@ -13,7 +13,7 @@ class SliverElementDebuffs extends StatelessWidget {
     return BlocBuilder<ElementsBloc, ElementsState>(
       builder: (context, state) {
         return state.when(
-          loading: () => SliverToBoxAdapter(child: Loading()),
+          loading: () => const SliverToBoxAdapter(child: Loading(useScaffold: false)),
           loaded: (debuffs, _, __) => SliverStaggeredGrid.countBuilder(
             crossAxisCount: isPortrait ? 2 : 3,
             itemBuilder: (ctx, index) {

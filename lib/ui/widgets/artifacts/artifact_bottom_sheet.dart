@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/common/enums/artifact_filter_type.dart';
-import 'package:genshindb/ui/widgets/common/item_popupmenu_filter.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
+import '../../../common/enums/artifact_filter_type.dart';
 import '../../../common/enums/sort_direction_type.dart';
+import '../../../common/extensions/i18n_extensions.dart';
 import '../../../common/styles.dart';
+import '../../../generated/l10n.dart';
 import '../common/bottom_sheet_title.dart';
+import '../common/item_popupmenu_filter.dart';
 import '../common/modal_sheet_separator.dart';
 import '../common/sort_direction_popupmenu_filter.dart';
 
@@ -13,6 +15,7 @@ class ArtifactBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final s = S.of(context);
     return SingleChildScrollView(
       padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
       child: Container(
@@ -23,28 +26,27 @@ class ArtifactBottomSheet extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             ModalSheetSeparator(),
-            BottomSheetTitle(icon: Icons.playlist_play, title: 'Filters'),
-            Text('Rarity'),
+            BottomSheetTitle(icon: Icons.playlist_play, title: s.filters),
+            Text(s.rarity),
             Center(
               child: SmoothStarRating(
                 allowHalfRating: false,
                 onRated: (v) {},
-                starCount: 5,
                 size: 35.0,
                 color: Colors.yellow,
                 borderColor: Colors.yellow,
-                spacing: 0.0,
               ),
             ),
-            Text('Others'),
+            Text(s.others),
             ButtonBar(
               alignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ItemPopupMenuFilter<ArtifactFilterType>(
-                  tooltipText: 'Sort by',
+                  tooltipText: s.sortBy,
                   onSelected: (v) => {},
                   selectedValue: ArtifactFilterType.name,
                   values: ArtifactFilterType.values,
+                  itemText: (val) => s.translateArtifactFilterType(val),
                 ),
                 SortDirectionPopupMenuFilter(
                   selectedSortDirection: SortDirectionType.asc,
@@ -57,12 +59,12 @@ class ArtifactBottomSheet extends StatelessWidget {
               children: <Widget>[
                 OutlineButton(
                   onPressed: () => Navigator.pop(context),
-                  child: Text('Cancel', style: TextStyle(color: theme.primaryColor)),
+                  child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
                 ),
                 RaisedButton(
                   color: theme.primaryColor,
                   onPressed: () => {},
-                  child: Text('Ok'),
+                  child: Text(s.ok),
                 )
               ],
             )

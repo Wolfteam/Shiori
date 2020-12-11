@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../bloc/bloc.dart';
+import '../../../common/enums/stat_type.dart';
 import '../../../common/enums/weapon_type.dart';
 import '../../../common/extensions/i18n_extensions.dart';
 import '../../../common/extensions/rarity_extensions.dart';
@@ -58,9 +59,13 @@ class WeaponCard extends StatelessWidget {
                 ),
               ),
               Rarity(stars: rarity),
-              Text('Atk: $baseAtk', textAlign: TextAlign.center, overflow: TextOverflow.ellipsis),
               Text(
-                'Type: ${s.translateWeaponType(type)}',
+                '${s.translateStatTypeWithoutValue(StatType.atk)}: $baseAtk',
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+              ),
+              Text(
+                '${s.type}: ${s.translateWeaponType(type)}',
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
               ),

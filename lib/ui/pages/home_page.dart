@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../generated/l10n.dart';
 import '../widgets/home/elements_card.dart';
 import '../widgets/home/today_char_ascention_materials.dart';
 import '../widgets/home/today_weapon_materials.dart';
@@ -7,30 +8,54 @@ import '../widgets/home/today_weapon_materials.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     return CustomScrollView(
       slivers: [
-        _buildTitle('Today Character Ascention Materials', 'See All', context),
+        _buildMainTitle(s.todayAscentionMaterials, context),
+        _buildClickableTitle(s.forCharacters, s.seeAll, context),
         TodayCharAscentionMaterials(),
-        _buildTitle('Today Weapon Ascention Materials', 'See All', context),
+        _buildClickableTitle(s.forWeapons, s.seeAll, context),
         TodayWeaponMaterials(),
-        _buildTitle('Elements', null, context),
+        _buildMainTitle(s.elements, context),
         ElementsCard(),
 //TODO: SETTINGS GOES HERE
       ],
     );
   }
 
-  Widget _buildTitle(String title, String buttonText, BuildContext context) {
+  Widget _buildMainTitle(String title, BuildContext context) {
     final theme = Theme.of(context);
     return SliverPadding(
-      padding: EdgeInsets.only(top: 10),
+      padding: const EdgeInsets.only(top: 10),
+      sliver: SliverToBoxAdapter(
+        child: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 15),
+          child: Text(
+            title,
+            style: theme.textTheme.headline6.copyWith(fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildClickableTitle(String title, String buttonText, BuildContext context) {
+    final theme = Theme.of(context);
+    final row = buttonText != null
+        ? Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [const Icon(Icons.chevron_right), Text(buttonText)],
+          )
+        : null;
+    return SliverPadding(
+      padding: const EdgeInsets.only(top: 10),
       sliver: SliverToBoxAdapter(
         child: ListTile(
           dense: true,
-          visualDensity: VisualDensity(vertical: -4, horizontal: -2),
-          trailing: buttonText != null
-              ? FlatButton.icon(onPressed: () => {}, icon: Icon(Icons.chevron_right), label: Text(buttonText))
-              : null,
+          onTap: () => {},
+          visualDensity: const VisualDensity(vertical: -4, horizontal: -2),
+          trailing: row,
           title: Text(
             title,
             textAlign: TextAlign.start,

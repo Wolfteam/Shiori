@@ -60,10 +60,13 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
             );
           },
           builder: (context, state) {
-            return TabBarView(
-              controller: _tabController,
-              physics: const NeverScrollableScrollPhysics(),
-              children: _pages,
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TabBarView(
+                controller: _tabController,
+                physics: const NeverScrollableScrollPhysics(),
+                children: _pages,
+              ),
             );
           },
         ),
@@ -79,26 +82,26 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
   }
 
   List<BottomNavigationBarItem> _buildBottomNavBars() {
-    final i18n = S.of(context);
+    final s = S.of(context);
     return [
       BottomNavigationBarItem(
-        label: 'Characters',
+        label: s.characters,
         icon: const Icon(Icons.people),
       ),
       BottomNavigationBarItem(
-        label: 'Weapons',
+        label: s.weapons,
         icon: const Icon(Icons.settings),
       ),
       BottomNavigationBarItem(
-        label: 'Home',
+        label: s.home,
         icon: const Icon(Icons.home),
       ),
       BottomNavigationBarItem(
-        label: 'Artifacts',
+        label: s.artifacts,
         icon: const Icon(Icons.settings),
       ),
       BottomNavigationBarItem(
-        label: 'Map',
+        label: s.map,
         icon: const Icon(Icons.map),
       ),
     ];

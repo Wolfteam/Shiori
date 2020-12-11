@@ -9,13 +9,12 @@ import 'weapon_card_ascention_material.dart';
 class TodayWeaponMaterials extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
         return state.when(
-          loading: () => const SliverToBoxAdapter(child: Loading()),
+          loading: () => const SliverToBoxAdapter(child: Loading(useScaffold: false)),
           loaded: (_, weaponAscMaterials) => SliverStaggeredGrid.countBuilder(
-            crossAxisCount: isPortrait ? 2 : 3,
+            crossAxisCount: 2,
             itemBuilder: (ctx, index) {
               final item = weaponAscMaterials[index];
               return WeaponCardAscentionMaterial(name: item.name, image: item.image, days: item.days);

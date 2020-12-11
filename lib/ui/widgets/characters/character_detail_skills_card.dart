@@ -4,6 +4,7 @@ import '../../../common/enums/element_type.dart';
 import '../../../common/extensions/element_type_extensions.dart';
 import '../../../common/extensions/iterable_extensions.dart';
 import '../../../common/styles.dart';
+import '../../../generated/l10n.dart';
 import '../../../models/models.dart';
 import '../common/bullet_list.dart';
 import '../common/item_description_detail.dart';
@@ -19,13 +20,14 @@ class CharacterDetailSkillsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     final cards = skills.mapIndex((e, index) => _buildSkillCard(context, e, index.isEven)).toList();
     final body = Padding(
-      padding: EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Wrap(alignment: WrapAlignment.center, children: cards),
     );
 
-    return ItemDescriptionDetail(title: 'Skills', icon: Icon(Icons.settings), body: body);
+    return ItemDescriptionDetail(title: s.skills, icon: Icon(Icons.settings), body: body);
   }
 
   Widget _buildSkillCard(BuildContext context, TranslationCharacterSkillFile model, bool isEven) {

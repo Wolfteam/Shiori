@@ -9,15 +9,20 @@ class SplashPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Container(
-            margin: const EdgeInsets.all(10),
-            child: Image.asset(
-              Assets.getCharacterFullPath('Paimon.png'),
-              fit: BoxFit.fill,
+          Expanded(
+            child: Container(
+              margin: const EdgeInsets.all(10),
+              child: Image.asset(
+                Assets.getCharacterFullPath('Paimon.png'),
+                fit: BoxFit.scaleDown,
+              ),
             ),
           ),
-          const CircularProgressIndicator(
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+          Container(
+            margin: const EdgeInsets.only(bottom: 10),
+            child: const CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+            ),
           ),
         ],
       ),

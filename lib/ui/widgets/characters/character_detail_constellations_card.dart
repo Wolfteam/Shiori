@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/ui/widgets/common/bullet_list.dart';
 
 import '../../../common/enums/element_type.dart';
 import '../../../common/extensions/element_type_extensions.dart';
 import '../../../common/styles.dart';
+import '../../../generated/l10n.dart';
 import '../../../models/models.dart';
+import '../common/bullet_list.dart';
 import '../common/item_description_detail.dart';
 
 class CharacterDetailConstellationsCard extends StatelessWidget {
@@ -19,12 +20,14 @@ class CharacterDetailConstellationsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     final items = constellations.map((e) => _buildConstellationCard(e, context)).toList();
     final body = Wrap(alignment: WrapAlignment.center, children: items);
-    return ItemDescriptionDetail(title: 'Constellations', icon: Icon(Icons.settings), body: body);
+    return ItemDescriptionDetail(title: s.constellations, icon: Icon(Icons.settings), body: body);
   }
 
   Widget _buildConstellationCard(TranslationCharacterConstellation model, BuildContext context) {
+    final s = S.of(context);
     final theme = Theme.of(context);
     return Card(
       elevation: Styles.cardTenElevation,
@@ -46,12 +49,12 @@ class CharacterDetailConstellationsCard extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             Text(
-              'Constellation ${model.number}',
+              s.constellationX('${model.number}'),
               textAlign: TextAlign.center,
               style: theme.textTheme.subtitle2,
             ),
             Container(
-              margin: EdgeInsets.only(top: 10),
+              margin: const EdgeInsets.only(top: 10),
               child: Text(
                 model.description,
                 textAlign: TextAlign.center,
@@ -61,7 +64,7 @@ class CharacterDetailConstellationsCard extends StatelessWidget {
             if (model.descriptions.isNotEmpty) BulletList(items: model.descriptions),
             if (model.secondDescription != null)
               Container(
-                margin: EdgeInsets.only(top: 10),
+                margin: const EdgeInsets.only(top: 10),
                 child: Text(
                   model.secondDescription,
                   textAlign: TextAlign.center,

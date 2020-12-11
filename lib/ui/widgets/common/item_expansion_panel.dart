@@ -33,7 +33,7 @@ class ItemExpansionPanel extends StatelessWidget {
             headerBuilder: (BuildContext context, bool isExpanded) {
               return ListTile(
                 dense: true,
-                contentPadding: EdgeInsets.only(left: 10),
+                contentPadding: const EdgeInsets.only(left: 10),
                 leading: icon,
                 title: Transform.translate(
                   offset: Styles.listItemWithIconOffset,

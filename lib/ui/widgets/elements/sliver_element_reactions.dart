@@ -11,7 +11,7 @@ class SliverElementReactions extends StatelessWidget {
     return BlocBuilder<ElementsBloc, ElementsState>(
       builder: (context, state) {
         return state.when(
-          loading: () => SliverToBoxAdapter(child: Loading()),
+          loading: () => const SliverToBoxAdapter(child: Loading(useScaffold: false)),
           loaded: (_, reactions, __) => SliverList(
             delegate: SliverChildBuilderDelegate(
               (ctx, index) {

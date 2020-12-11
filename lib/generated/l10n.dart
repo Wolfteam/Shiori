@@ -384,6 +384,696 @@ class S {
       args: [],
     );
   }
+
+  /// `All`
+  String get all {
+    return Intl.message(
+      'All',
+      name: 'all',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get description {
+    return Intl.message(
+      'Description',
+      name: 'description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rarity`
+  String get rarity {
+    return Intl.message(
+      'Rarity',
+      name: 'rarity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Element`
+  String get element {
+    return Intl.message(
+      'Element',
+      name: 'element',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Region`
+  String get region {
+    return Intl.message(
+      'Region',
+      name: 'region',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weapon`
+  String get weapon {
+    return Intl.message(
+      'Weapon',
+      name: 'weapon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Role`
+  String get role {
+    return Intl.message(
+      'Role',
+      name: 'role',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gender`
+  String get gender {
+    return Intl.message(
+      'Gender',
+      name: 'gender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Male`
+  String get male {
+    return Intl.message(
+      'Male',
+      name: 'male',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Female`
+  String get female {
+    return Intl.message(
+      'Female',
+      name: 'female',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Elements`
+  String get elements {
+    return Intl.message(
+      'Elements',
+      name: 'elements',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Elemental Debuffs`
+  String get elementalDebuffs {
+    return Intl.message(
+      'Elemental Debuffs',
+      name: 'elementalDebuffs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Each of these have a different negative effect when applied to you or your enemies`
+  String get elementalDebuffsExplainded {
+    return Intl.message(
+      'Each of these have a different negative effect when applied to you or your enemies',
+      name: 'elementalDebuffsExplainded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Elemental Reactions`
+  String get elementalReactions {
+    return Intl.message(
+      'Elemental Reactions',
+      name: 'elementalReactions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Combinations of different elements produces different reactions`
+  String get elementalReactionsExplainded {
+    return Intl.message(
+      'Combinations of different elements produces different reactions',
+      name: 'elementalReactionsExplainded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Elemental Resonances`
+  String get elementalResonances {
+    return Intl.message(
+      'Elemental Resonances',
+      name: 'elementalResonances',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Having these types of character in your party will give you the corresponding effect`
+  String get elemetalResonancesExplanined {
+    return Intl.message(
+      'Having these types of character in your party will give you the corresponding effect',
+      name: 'elemetalResonancesExplanined',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Today's Ascention Materials`
+  String get todayAscentionMaterials {
+    return Intl.message(
+      'Today\'s Ascention Materials',
+      name: 'todayAscentionMaterials',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See all`
+  String get seeAll {
+    return Intl.message(
+      'See all',
+      name: 'seeAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Characters`
+  String get characters {
+    return Intl.message(
+      'Characters',
+      name: 'characters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weapons`
+  String get weapons {
+    return Intl.message(
+      'Weapons',
+      name: 'weapons',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Artifacts`
+  String get artifacts {
+    return Intl.message(
+      'Artifacts',
+      name: 'artifacts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message(
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Map`
+  String get map {
+    return Intl.message(
+      'Map',
+      name: 'map',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type`
+  String get type {
+    return Intl.message(
+      'Type',
+      name: 'type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Base Atk`
+  String get baseAtk {
+    return Intl.message(
+      'Base Atk',
+      name: 'baseAtk',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Secondary Stat`
+  String get secondaryState {
+    return Intl.message(
+      'Secondary Stat',
+      name: 'secondaryState',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Secondary Stat Value`
+  String get secondaryStatValue {
+    return Intl.message(
+      'Secondary Stat Value',
+      name: 'secondaryStatValue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location`
+  String get location {
+    return Intl.message(
+      'Location',
+      name: 'location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading`
+  String get loading {
+    return Intl.message(
+      'Loading',
+      name: 'loading',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `For characters`
+  String get forCharacters {
+    return Intl.message(
+      'For characters',
+      name: 'forCharacters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `For weapons`
+  String get forWeapons {
+    return Intl.message(
+      'For weapons',
+      name: 'forWeapons',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ok`
+  String get ok {
+    return Intl.message(
+      'Ok',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Others`
+  String get others {
+    return Intl.message(
+      'Others',
+      name: 'others',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filters`
+  String get filters {
+    return Intl.message(
+      'Filters',
+      name: 'filters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sort by`
+  String get sortBy {
+    return Intl.message(
+      'Sort by',
+      name: 'sortBy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Flower`
+  String get flower {
+    return Intl.message(
+      'Flower',
+      name: 'flower',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Plume`
+  String get plume {
+    return Intl.message(
+      'Plume',
+      name: 'plume',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clock`
+  String get clock {
+    return Intl.message(
+      'Clock',
+      name: 'clock',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Goblet`
+  String get goblet {
+    return Intl.message(
+      'Goblet',
+      name: 'goblet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crown`
+  String get crown {
+    return Intl.message(
+      'Crown',
+      name: 'crown',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Elemental DMG%`
+  String get elementalDmgPercentage {
+    return Intl.message(
+      'Elemental DMG%',
+      name: 'elementalDmgPercentage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Healing Bonus`
+  String get healingBonus {
+    return Intl.message(
+      'Healing Bonus',
+      name: 'healingBonus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Note`
+  String get note {
+    return Intl.message(
+      'Note',
+      name: 'note',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ascention Materials`
+  String get ascentionMaterials {
+    return Intl.message(
+      'Ascention Materials',
+      name: 'ascentionMaterials',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Released`
+  String get released {
+    return Intl.message(
+      'Released',
+      name: 'released',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unreleased`
+  String get unreleased {
+    return Intl.message(
+      'Unreleased',
+      name: 'unreleased',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Coming soon`
+  String get comingSoon {
+    return Intl.message(
+      'Coming soon',
+      name: 'comingSoon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recent`
+  String get recent {
+    return Intl.message(
+      'Recent',
+      name: 'recent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rank`
+  String get rank {
+    return Intl.message(
+      'Rank',
+      name: 'rank',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Level`
+  String get level {
+    return Intl.message(
+      'Level',
+      name: 'level',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Materials`
+  String get materials {
+    return Intl.message(
+      'Materials',
+      name: 'materials',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Constellation {value}`
+  String constellationX(Object value) {
+    return Intl.message(
+      'Constellation $value',
+      name: 'constellationX',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `Constellations`
+  String get constellations {
+    return Intl.message(
+      'Constellations',
+      name: 'constellations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passives`
+  String get passives {
+    return Intl.message(
+      'Passives',
+      name: 'passives',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unlocked Automatically`
+  String get unlockedAutomatically {
+    return Intl.message(
+      'Unlocked Automatically',
+      name: 'unlockedAutomatically',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unlocked at ascention level {value}`
+  String unclockedAtAscentionLevelX(Object value) {
+    return Intl.message(
+      'Unlocked at ascention level $value',
+      name: 'unclockedAtAscentionLevelX',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `Skills`
+  String get skills {
+    return Intl.message(
+      'Skills',
+      name: 'skills',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Talents Ascention`
+  String get talentsAscention {
+    return Intl.message(
+      'Talents Ascention',
+      name: 'talentsAscention',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Talent Ascention {value}`
+  String talentAscentionX(Object value) {
+    return Intl.message(
+      'Talent Ascention $value',
+      name: 'talentAscentionX',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message(
+      'Search',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sort direction`
+  String get sortDirection {
+    return Intl.message(
+      'Sort direction',
+      name: 'sortDirection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Refinements`
+  String get refinements {
+    return Intl.message(
+      'Refinements',
+      name: 'refinements',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sort type`
+  String get sortType {
+    return Intl.message(
+      'Sort type',
+      name: 'sortType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ascending`
+  String get asc {
+    return Intl.message(
+      'Ascending',
+      name: 'asc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Descending`
+  String get desc {
+    return Intl.message(
+      'Descending',
+      name: 'desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weapon type`
+  String get weaponType {
+    return Intl.message(
+      'Weapon type',
+      name: 'weaponType',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

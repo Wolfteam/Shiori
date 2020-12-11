@@ -5,8 +5,10 @@ import '../../../bloc/bloc.dart';
 import '../../../common/enums/element_type.dart';
 import '../../../common/enums/weapon_type.dart';
 import '../../../common/extensions/element_type_extensions.dart';
+import '../../../common/extensions/i18n_extensions.dart';
 import '../../../common/extensions/weapon_type_extensions.dart';
 import '../../../common/styles.dart';
+import '../../../generated/l10n.dart';
 import '../../pages/character_page.dart';
 import '../common/rarity.dart';
 import 'character_ascention_materials.dart';
@@ -36,6 +38,7 @@ class CharacterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final s = S.of(context);
     final weaponPath = weaponType.getWeaponAssetPath();
     final elementPath = elementType.getElementAsssetPath();
 
@@ -52,7 +55,7 @@ class CharacterCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 5),
+                margin: const EdgeInsets.only(top: 5),
                 child: Stack(
                   alignment: AlignmentDirectional.topCenter,
                   fit: StackFit.passthrough,
@@ -64,7 +67,7 @@ class CharacterCard extends StatelessWidget {
                       children: [
                         _buildNewOrComingSoonAvatar(context),
                         Tooltip(
-                          message: 'Electro',
+                          message: s.translateElementType(elementType),
                           child: CircleAvatar(
                             radius: 15,
                             backgroundColor: Colors.black.withAlpha(100),
@@ -91,7 +94,10 @@ class CharacterCard extends StatelessWidget {
                     Flexible(
                       fit: FlexFit.tight,
                       flex: 40,
-                      child: Tooltip(message: '$weaponType', child: Image.asset(weaponPath, height: 50)),
+                      child: Tooltip(
+                        message: s.translateWeaponType(weaponType),
+                        child: Image.asset(weaponPath, height: 50),
+                      ),
                     ),
                     Flexible(
                       fit: FlexFit.tight,
@@ -114,6 +120,7 @@ class CharacterCard extends StatelessWidget {
   }
 
   Widget _buildNewOrComingSoonAvatar(BuildContext context) {
+    final s = S.of(context);
     final theme = Theme.of(context);
     final newOrComingSoon = isNew || isComingSoon;
     final icon = isNew ? Icons.new_releases_outlined : Icons.confirmation_num;
@@ -127,11 +134,12 @@ class CharacterCard extends StatelessWidget {
             )
           : null,
     );
-    if (newOrComingSoon)
+    if (newOrComingSoon) {
       return Tooltip(
-        message: isComingSoon ? 'Coming soon' : 'New',
+        message: isComingSoon ? s.comingSoon : s.recent,
         child: newOrComingSoonAvatar,
       );
+    }
 
     return newOrComingSoonAvatar;
   }

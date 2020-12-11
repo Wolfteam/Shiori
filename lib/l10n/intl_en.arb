@@ -98,5 +98,9 @@
     "search": "Search",
     "sortDirection": "Sort direction",
     "refinements": "Refinements",
-    "sortType": "Sort type"
+    "sortType": "Sort type",
+    "asc": "Ascending",
+    "desc": "Descending",
+    "name": "Name",
+    "weaponType": "Weapon type"
 }

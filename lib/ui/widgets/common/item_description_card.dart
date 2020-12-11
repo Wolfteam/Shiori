@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../common/styles.dart';
+import '../../../generated/l10n.dart';
 
 class ItemDescriptionCard extends StatelessWidget {
   final String description;
@@ -14,13 +15,14 @@ class ItemDescriptionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     final theme = Theme.of(context);
     return Card(
       elevation: Styles.cardTenElevation,
       margin: Styles.edgeInsetAll10,
       shape: Styles.cardShape,
       child: Container(
-        padding: EdgeInsets.only(top: 0, bottom: 10, left: 10, right: 10),
+        padding: const EdgeInsets.only(top: 0, bottom: 10, left: 10, right: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -30,10 +32,10 @@ class ItemDescriptionCard extends StatelessWidget {
               contentPadding: EdgeInsets.zero,
               title: Transform.translate(
                 offset: Styles.listItemWithIconOffset,
-                child: Text('Description', style: theme.textTheme.headline6.copyWith(color: Colors.amber)),
+                child: Text(s.description, style: theme.textTheme.headline6.copyWith(color: Colors.amber)),
               ),
             ),
-            Text(description, style: TextStyle(fontSize: 12)),
+            Text(description, style: const TextStyle(fontSize: 12)),
             ...widgets
           ],
         ),
