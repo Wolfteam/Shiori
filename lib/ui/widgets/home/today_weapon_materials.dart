@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../../bloc/bloc.dart';
-import '../common/loading.dart';
-import 'weapon_card_ascention_material.dart';
+import '../common/sliver_loading.dart';
+import '../materials/sliver_weapon_ascention_materials.dart';
 
 class TodayWeaponMaterials extends StatelessWidget {
   @override
@@ -12,16 +11,8 @@ class TodayWeaponMaterials extends StatelessWidget {
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
         return state.when(
-          loading: () => const SliverToBoxAdapter(child: Loading(useScaffold: false)),
-          loaded: (_, weaponAscMaterials) => SliverStaggeredGrid.countBuilder(
-            crossAxisCount: 2,
-            itemBuilder: (ctx, index) {
-              final item = weaponAscMaterials[index];
-              return WeaponCardAscentionMaterial(name: item.name, image: item.image, days: item.days);
-            },
-            itemCount: weaponAscMaterials.length,
-            staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
-          ),
+          loading: () => const SliverLoading(),
+          loaded: (_, weaponAscMaterials) => SliverWeaponAscentionMaterials(weaponAscMaterials: weaponAscMaterials),
         );
       },
     );

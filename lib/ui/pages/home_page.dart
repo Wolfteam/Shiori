@@ -4,6 +4,7 @@ import '../../generated/l10n.dart';
 import '../widgets/home/elements_card.dart';
 import '../widgets/home/today_char_ascention_materials.dart';
 import '../widgets/home/today_weapon_materials.dart';
+import 'materials_page.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -12,9 +13,9 @@ class HomePage extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         _buildMainTitle(s.todayAscentionMaterials, context),
-        _buildClickableTitle(s.forCharacters, s.seeAll, context),
+        _buildClickableTitle(s.forCharacters, s.seeAll, context, onClick: () => _gotoMaterialsPage(context)),
         TodayCharAscentionMaterials(),
-        _buildClickableTitle(s.forWeapons, s.seeAll, context),
+        _buildClickableTitle(s.forWeapons, s.seeAll, context, onClick: () => _gotoMaterialsPage(context)),
         TodayWeaponMaterials(),
         _buildMainTitle(s.elements, context),
         ElementsCard(),
@@ -39,7 +40,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildClickableTitle(String title, String buttonText, BuildContext context) {
+  Widget _buildClickableTitle(String title, String buttonText, BuildContext context, {Function onClick}) {
     final theme = Theme.of(context);
     final row = buttonText != null
         ? Row(
@@ -53,7 +54,7 @@ class HomePage extends StatelessWidget {
       sliver: SliverToBoxAdapter(
         child: ListTile(
           dense: true,
-          onTap: () => {},
+          onTap: () => onClick?.call(),
           visualDensity: const VisualDensity(vertical: -4, horizontal: -2),
           trailing: row,
           title: Text(
@@ -65,4 +66,7 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+
+  void _gotoMaterialsPage(BuildContext context) =>
+      Navigator.push(context, MaterialPageRoute(builder: (_) => MaterialsPage()));
 }
