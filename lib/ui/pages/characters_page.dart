@@ -7,6 +7,7 @@ import '../../common/styles.dart';
 import '../../models/characters/character_card_model.dart';
 import '../widgets/characters/character_bottom_sheet.dart';
 import '../widgets/characters/character_card.dart';
+import '../widgets/common/loading.dart';
 import '../widgets/common/search_box.dart';
 
 class CharactersPage extends StatelessWidget {
@@ -15,9 +16,7 @@ class CharactersPage extends StatelessWidget {
     return BlocBuilder<CharactersBloc, CharactersState>(
       builder: (context, state) {
         return state.when(
-          loading: () => const Center(
-            child: CircularProgressIndicator(),
-          ),
+          loading: () => const Loading(),
           loaded: (chars) => CustomScrollView(
             slivers: [
               _buildFiltersSwitch(context),

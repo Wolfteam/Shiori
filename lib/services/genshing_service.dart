@@ -13,6 +13,7 @@ abstract class GenshinService {
   Future<void> initWeapons();
   Future<void> initArtifacts();
   Future<void> initMaterials();
+  Future<void> initElements();
   Future<void> initTranslations(AppLanguageType languageType);
 
   List<CharacterCardModel> getCharactersForCard();
@@ -28,6 +29,10 @@ abstract class GenshinService {
 
   List<TodayCharAscentionMaterialsModel> getCharacterAscentionMaterials(int day);
   List<TodayWeaponAscentionMaterialModel> getWeaponAscentionMaterials(int day);
+
+  List<ElementCardModel> getElementDebuffs();
+  List<ElementReactionCardModel> getElementReactions();
+  List<ElementReactionCardModel> getElementResonances();
 }
 
 class GenshinServiceImpl implements GenshinService {
@@ -36,6 +41,7 @@ class GenshinServiceImpl implements GenshinService {
   TranslationFile _translationFile;
   ArtifactsFile _artifactsFile;
   MaterialsFile _materialsFile;
+  ElementsFile _elementsFile;
 
   @override
   Future<void> init(AppLanguageType languageType) async {
@@ -43,6 +49,7 @@ class GenshinServiceImpl implements GenshinService {
     await initWeapons();
     await initArtifacts();
     await initMaterials();
+    await initElements();
     await initTranslations(languageType);
   }
 
@@ -72,6 +79,13 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.materialsDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _materialsFile = MaterialsFile.fromJson(json);
+  }
+
+  @override
+  Future<void> initElements() async {
+    final jsonStr = await rootBundle.loadString(Assets.elementsDbPath);
+    final json = jsonDecode(jsonStr) as Map<String, dynamic>;
+    _elementsFile = ElementsFile.fromJson(json);
   }
 
   @override
@@ -211,5 +225,54 @@ class GenshinServiceImpl implements GenshinService {
         image: Assets.getMaterialPath(e.image, e.type),
       );
     }).toList();
+  }
+
+  @override
+  List<ElementCardModel> getElementDebuffs() {
+    return _elementsFile.debuffs.map(
+      (e) {
+        final translation = _translationFile.debuffs.firstWhere((t) => t.key == e.name);
+        final reaction = ElementCardModel(name: translation.name, effect: translation.effect, image: e.fullImagePath);
+        return reaction;
+      },
+    ).toList();
+  }
+
+  @override
+  List<ElementReactionCardModel> getElementReactions() {
+    return _elementsFile.reactions.map(
+      (e) {
+        final translation = _translationFile.reactions.firstWhere((t) => t.key == e.name);
+        final reaction = ElementReactionCardModel.withImages(
+          name: translation.name,
+          effect: translation.effect,
+          principal: e.principalImages,
+          secondary: e.secondaryImages,
+        );
+        return reaction;
+      },
+    ).toList();
+  }
+
+  @override
+  List<ElementReactionCardModel> getElementResonances() {
+    return _elementsFile.resonance.map(
+      (e) {
+        final translation = _translationFile.resonance.firstWhere((t) => t.key == e.name);
+        final reaction = e.hasImages
+            ? ElementReactionCardModel.withImages(
+                name: translation.name,
+                effect: translation.effect,
+                principal: e.principalImages,
+                secondary: e.secondaryImages,
+              )
+            : ElementReactionCardModel.withoutImages(
+                name: translation.name,
+                effect: translation.effect,
+                description: translation.description,
+              );
+        return reaction;
+      },
+    ).toList();
   }
 }

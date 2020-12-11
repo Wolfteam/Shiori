@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../../bloc/bloc.dart';
+import '../common/loading.dart';
 import 'char_card_ascention_material.dart';
 
 class TodayCharAscentionMaterials extends StatelessWidget {
@@ -12,7 +13,7 @@ class TodayCharAscentionMaterials extends StatelessWidget {
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
         return state.when(
-          loading: () => const SliverToBoxAdapter(child: CircularProgressIndicator()),
+          loading: () => const SliverToBoxAdapter(child: Loading()),
           loaded: (charAscMaterials, _) => SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 5),
             sliver: SliverStaggeredGrid.countBuilder(

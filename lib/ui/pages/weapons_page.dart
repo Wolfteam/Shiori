@@ -6,6 +6,7 @@ import '../../bloc/bloc.dart';
 import '../../common/styles.dart';
 import '../../models/models.dart';
 import '../../models/weapons/weapon_card_model.dart';
+import '../widgets/common/loading.dart';
 import '../widgets/common/search_box.dart';
 import '../widgets/weapons/weapon_bottom_sheet.dart';
 import '../widgets/weapons/weapon_card.dart';
@@ -16,9 +17,7 @@ class WeaponsPage extends StatelessWidget {
     return BlocBuilder<WeaponsBloc, WeaponsState>(
       builder: (context, state) {
         return state.when(
-          loading: () => const Center(
-            child: CircularProgressIndicator(),
-          ),
+          loading: () => const Loading(),
           loaded: (weapons) => CustomScrollView(
             slivers: [
               _buildFiltersSwitch(context),

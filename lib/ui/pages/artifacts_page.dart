@@ -8,6 +8,7 @@ import '../../models/artifacts/artifact_card_model.dart';
 import '../widgets/artifacts/artifact_bottom_sheet.dart';
 import '../widgets/artifacts/artifact_card.dart';
 import '../widgets/artifacts/artifact_info_card.dart';
+import '../widgets/common/loading.dart';
 import '../widgets/common/search_box.dart';
 
 class ArtifactsPage extends StatelessWidget {
@@ -16,7 +17,7 @@ class ArtifactsPage extends StatelessWidget {
     return BlocBuilder<ArtifactsBloc, ArtifactsState>(
       builder: (context, state) {
         return state.when(
-          loading: () => const CircularProgressIndicator(),
+          loading: () => const Loading(),
           loadedState: (artifacts) => CustomScrollView(
             slivers: [
               _buildFiltersSwitch(context),

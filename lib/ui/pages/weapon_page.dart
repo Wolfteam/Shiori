@@ -12,6 +12,7 @@ import '../../generated/l10n.dart';
 import '../../models/models.dart';
 import '../widgets/common/item_description.dart';
 import '../widgets/common/item_description_detail.dart';
+import '../widgets/common/loading.dart';
 import '../widgets/common/rarity.dart';
 import '../widgets/weapons/weapon_detail_ascention_materials_card.dart';
 import '../widgets/weapons/weapon_detail_refinements_card.dart';
@@ -28,9 +29,7 @@ class WeaponPage extends StatelessWidget {
           child: BlocBuilder<WeaponBloc, WeaponState>(
             builder: (context, state) {
               return state.map(
-                loading: (_) => const Center(
-                  child: CircularProgressIndicator(),
-                ),
+                loading: (_) => const Loading(),
                 loaded: (s) => Stack(
                   children: [
                     _buildTop(

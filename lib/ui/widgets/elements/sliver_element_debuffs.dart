@@ -2,25 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-import '../../../bloc/bloc.dart';
+import '../../../bloc/elements/elements_bloc.dart';
 import '../common/loading.dart';
-import 'weapon_card_ascention_material.dart';
+import 'element_debuff_card.dart';
 
-class TodayWeaponMaterials extends StatelessWidget {
+class SliverElementDebuffs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    return BlocBuilder<HomeBloc, HomeState>(
+    return BlocBuilder<ElementsBloc, ElementsState>(
       builder: (context, state) {
         return state.when(
-          loading: () => const SliverToBoxAdapter(child: Loading()),
-          loaded: (_, weaponAscMaterials) => SliverStaggeredGrid.countBuilder(
+          loading: () => SliverToBoxAdapter(child: Loading()),
+          loaded: (debuffs, _, __) => SliverStaggeredGrid.countBuilder(
             crossAxisCount: isPortrait ? 2 : 3,
             itemBuilder: (ctx, index) {
-              final item = weaponAscMaterials[index];
-              return WeaponCardAscentionMaterial(name: item.name, image: item.image, days: item.days);
+              final item = debuffs[index];
+              return ElementDebuffCard(key: Key(item.name), effect: item.effect, image: item.image, name: item.name);
             },
-            itemCount: weaponAscMaterials.length,
+            itemCount: debuffs.length,
             staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
           ),
         );

@@ -8,6 +8,7 @@ class Assets {
   static String weaponsDbPath = '$dbPath/weapons.json';
   static String artifactsDbPath = '$dbPath/artifacts.json';
   static String materialsDbPath = '$dbPath/materials.json';
+  static String elementsDbPath = '$dbPath/elements.json';
   static String translationsBasePath = 'assets/i18n';
 
   //General
@@ -15,6 +16,7 @@ class Assets {
   static String charactersBasePath = 'assets/characters';
   static String characterFullBasePath = 'assets/characters_full';
   static String skillsBasePath = 'assets/skills';
+  static String elementsBasePath = 'assets/elements';
 
   //Weapons
   static String weaponsBasePath = 'assets/weapons';
@@ -105,4 +107,6 @@ class Assets {
         throw Exception('Invalid language = $type');
     }
   }
+
+  static String getElementPath(String name) => '$elementsBasePath/$name';
 }

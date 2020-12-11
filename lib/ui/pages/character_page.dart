@@ -13,6 +13,7 @@ import '../../models/models.dart';
 import '../widgets/characters/character_detail.dart';
 import '../widgets/common/item_description.dart';
 import '../widgets/common/item_description_detail.dart';
+import '../widgets/common/loading.dart';
 import '../widgets/common/rarity.dart';
 
 class CharacterPage extends StatelessWidget {
@@ -27,9 +28,7 @@ class CharacterPage extends StatelessWidget {
           child: BlocBuilder<CharacterBloc, CharacterState>(
             builder: (context, state) {
               return state.map(
-                loading: (_) => const Center(
-                  child: CircularProgressIndicator(),
-                ),
+                loading: (_) => const Loading(),
                 loaded: (s) => Stack(
                   fit: StackFit.passthrough,
                   clipBehavior: Clip.none,
