@@ -4672,5 +4672,112 @@
             "key": "Dandelion Gladiator",
             "name": "Dandelion Gladiator"
         }
+    ],
+    "debuffs": [
+        {
+            "key": "Engulfing Storm",
+            "name": "Engulfing Storm",
+            "effect": "Continuously drains Energy Recharge."
+        },
+        {
+            "key": "Slowing Water",
+            "name": "Slowing Water",
+            "effect": "Increases skill CD durations."
+        },
+        {
+            "key": "Smoldering Flames",
+            "name": "Smoldering Flames",
+            "effect": "Continuously inflicts damage over time."
+        },
+        {
+            "key": "Condensed Ice",
+            "name": "Condensed Ice",
+            "effect": "Increases stamina consumption."
+        }
+    ],
+    "reactions": [
+        {
+            "key": "Burning",
+            "name": "Burning",
+            "effect": "Deals Pyro DMG over time."
+        },
+        {
+            "key": "Crystalize",
+            "name": "Crystalize",
+            "effect": "Creates a crystal that will provide a shield when picked up."
+        },
+        {
+            "key": "Electro-Charged",
+            "name": "Electro-Charged",
+            "effect": "Deals Electro DMG over time."
+        },
+        {
+            "key": "Frozen",
+            "name": "Frozen",
+            "effect": "Freezes the target."
+        },
+        {
+            "key": "Melt",
+            "name": "Melt",
+            "effect": "Deals extra damage."
+        },
+        {
+            "key": "Overloaded",
+            "name": "Overloaded",
+            "effect": "Deals AoE Pyro DMG."
+        },
+        {
+            "key": "Superconduct",
+            "name": "Superconduct",
+            "effect": "Deals AoE Cryo DMG and reduces the target's Physical RES by 50%."
+        },
+        {
+            "key": "Swirl",
+            "name": "Swirl",
+            "effect": "Deals extra elemental damage and spreads the effect."
+        },
+        {
+            "key": "Vaporize",
+            "name": "Vaporize",
+            "effect": "Deals extra damage."
+        }
+    ],
+    "resonance": [
+        {
+            "key": "Enduring Rock",
+            "name": "Enduring Rock",
+            "effect": "Increases resistance to interruption. When protected by a shield, increases Attack DMG by 15%."
+        },
+        {
+            "key": "Fervent Flames",
+            "name": "Fervent Flames",
+            "effect": "Affected by Cryo for 40% less time. Increases ATK by 25%."
+        },
+        {
+            "key": "Soothing Waters",
+            "name": "Soothing Waters",
+            "effect": "Affected by Pyro for 40% less time. Increases incoming healing by 30%."
+        },
+        {
+            "key": "Impetuous Winds",
+            "name": "Impetuous Winds",
+            "effect": "Decreases Stamina Consumption by 15%. Increases Movement SPD by 10%. Shortens Skill CD by 5%."
+        },
+        {
+            "key": "High Voltage",
+            "name": "High Voltage",
+            "effect": "Affected by Hydro for 40% less time. Superconduct, Overloaded, and Electro-Charged have a 100% chance to generate an Electro Elemental Particle (CD: 5s)."
+        },
+        {
+            "key": "Shattering Ice",
+            "name": "Shattering Ice",
+            "effect": "Affected by Electro for 40% less time. Increases CRIT Rate against enemies that are Frozen or affected by Cryo by 15%."
+        },
+        {
+            "key": "Protective Canopy",
+            "name": "Protective Canopy",
+            "effect": "All Elemental RES by 15%.",
+            "description": "Any 4 Unique Elements"
+        }
     ]
 }
