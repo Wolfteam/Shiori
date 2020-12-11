@@ -3,8 +3,11 @@ import '../../../generated/l10n.dart';
 
 class SearchBox extends StatefulWidget {
   final bool showClearButton;
+  final Function(String) searchChanged;
+
   const SearchBox({
     Key key,
+    @required this.searchChanged,
     this.showClearButton = true,
   }) : super(key: key);
 
@@ -61,7 +64,7 @@ class _SearchBoxState extends State<SearchBox> {
     );
   }
 
-  void _onSearchTextChanged() {}
+  void _onSearchTextChanged() => widget.searchChanged(_searchBoxTextController.text);
 
   void _cleanSearchText() {
     _searchFocusNode.requestFocus();

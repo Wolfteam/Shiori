@@ -16,12 +16,12 @@ class CharactersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CharactersBloc, CharactersState>(
       builder: (context, state) {
-        return state.when(
-          loading: () => const Loading(),
-          loaded: (chars) => CustomScrollView(
+        return state.map(
+          loading: (_) => const Loading(),
+          loaded: (s) => CustomScrollView(
             slivers: [
-              _buildFiltersSwitch(context),
-              _buildGrid(context, chars),
+              _buildFiltersSwitch(s.search != null && s.search.isNotEmpty, context),
+              _buildGrid(context, s.characters),
             ],
           ),
         );
@@ -56,12 +56,16 @@ class CharactersPage extends StatelessWidget {
     );
   }
 
-  Widget _buildFiltersSwitch(BuildContext context) {
+  Widget _buildFiltersSwitch(bool showClearButton, BuildContext context) {
     final s = S.of(context);
     return SliverToBoxAdapter(
       child: Column(
         children: [
-          SearchBox(),
+          SearchBox(
+            showClearButton: showClearButton,
+            searchChanged: (newVal) =>
+                context.read<CharactersBloc>().add(CharactersEvent.searchChanged(search: newVal)),
+          ),
           Padding(
             padding: const EdgeInsets.only(left: 15, right: 5),
             child: Row(
