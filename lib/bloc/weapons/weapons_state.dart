@@ -5,5 +5,14 @@ abstract class WeaponsState with _$WeaponsState {
   const factory WeaponsState.loading() = _LoadingState;
   const factory WeaponsState.loaded({
     @required List<WeaponCardModel> weapons,
+    String search,
+    @required List<WeaponType> weaponTypes,
+    @required List<WeaponType> tempWeaponTypes,
+    @required int rarity,
+    @required int tempRarity,
+    @required WeaponFilterType weaponFilterType,
+    @required WeaponFilterType tempWeaponFilterType,
+    @required SortDirectionType sortDirectionType,
+    @required SortDirectionType tempSortDirectionType,
   }) = _LoadedState;
 }

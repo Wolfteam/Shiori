@@ -9,6 +9,7 @@ import '../../models/models.dart';
 import '../../models/weapons/weapon_card_model.dart';
 import '../widgets/common/loading.dart';
 import '../widgets/common/search_box.dart';
+import '../widgets/common/sliver_nothing_found.dart';
 import '../widgets/weapons/weapon_bottom_sheet.dart';
 import '../widgets/weapons/weapon_card.dart';
 
@@ -17,12 +18,12 @@ class WeaponsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<WeaponsBloc, WeaponsState>(
       builder: (context, state) {
-        return state.when(
-          loading: () => const Loading(),
-          loaded: (weapons) => CustomScrollView(
+        return state.map(
+          loading: (_) => const Loading(),
+          loaded: (s) => CustomScrollView(
             slivers: [
-              _buildFiltersSwitch(context),
-              _buildGrid(context, weapons),
+              _buildFiltersSwitch(s.search, context),
+              if (s.weapons.isNotEmpty) _buildGrid(context, s.weapons) else const SliverNothingFound(),
             ],
           ),
         );
@@ -30,12 +31,17 @@ class WeaponsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildFiltersSwitch(BuildContext context) {
+  Widget _buildFiltersSwitch(String search, BuildContext context) {
+    final showClearButton = search != null && search.isNotEmpty;
     final s = S.of(context);
     return SliverToBoxAdapter(
       child: Column(
         children: [
-          SearchBox(),
+          SearchBox(
+            value: search,
+            showClearButton: showClearButton,
+            searchChanged: (e) => context.read<WeaponsBloc>().add(WeaponsEvent.searchChanged(search: e)),
+          ),
           Padding(
             padding: const EdgeInsets.only(left: 15, right: 5),
             child: Row(
@@ -61,7 +67,7 @@ class WeaponsPage extends StatelessWidget {
   Widget _buildGrid(BuildContext context, List<WeaponCardModel> weapons) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 5),
       sliver: SliverStaggeredGrid.countBuilder(
         crossAxisCount: isPortrait ? 2 : 3,
         itemBuilder: (ctx, index) {
