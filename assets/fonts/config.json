@@ -35,6 +35,18 @@
       "css": "sliders_h",
       "code": 61918,
       "src": "fontawesome5"
+    },
+    {
+      "uid": "acca5a333bcfe091982b3c7898ab626c",
+      "css": "crossed_swords",
+      "code": 59773,
+      "src": "rpgawesome"
+    },
+    {
+      "uid": "0b90f50e06b323a32c0dca801214c9e1",
+      "css": "overmind",
+      "code": 59989,
+      "src": "rpgawesome"
     }
   ]
 }
