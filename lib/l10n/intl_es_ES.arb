@@ -102,5 +102,6 @@
     "asc": "Ascendente",
     "desc": "Descendente",
     "name": "Nombre",
-    "weaponType": "Tipo de arma"
+    "weaponType": "Tipo de arma",
+    "nothingToShow": "Nada para mostrar"
 }

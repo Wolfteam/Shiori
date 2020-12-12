@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import '../../../generated/l10n.dart';
 
 class SearchBox extends StatefulWidget {
+  final String value;
   final bool showClearButton;
+  final Function(String) searchChanged;
+
   const SearchBox({
     Key key,
+    @required this.value,
+    @required this.searchChanged,
     this.showClearButton = true,
   }) : super(key: key);
 
@@ -19,8 +24,15 @@ class _SearchBoxState extends State<SearchBox> {
   @override
   void initState() {
     super.initState();
-    _searchBoxTextController = TextEditingController(text: '');
+    _searchBoxTextController = TextEditingController(text: widget.value);
     _searchBoxTextController.addListener(_onSearchTextChanged);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _searchBoxTextController.removeListener(_onSearchTextChanged);
+    _searchBoxTextController.dispose();
   }
 
   @override
@@ -61,7 +73,7 @@ class _SearchBoxState extends State<SearchBox> {
     );
   }
 
-  void _onSearchTextChanged() {}
+  void _onSearchTextChanged() => widget.searchChanged(_searchBoxTextController.text);
 
   void _cleanSearchText() {
     _searchFocusNode.requestFocus();

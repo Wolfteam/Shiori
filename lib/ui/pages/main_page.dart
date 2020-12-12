@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../bloc/bloc.dart';
+import '../../common/genshin_db_icons.dart';
 import '../../generated/l10n.dart';
 import 'artifacts_page.dart';
 import 'characters_page.dart';
@@ -46,6 +47,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
     context.read<WeaponsBloc>().add(const WeaponsEvent.init());
     context.read<ArtifactsBloc>().add(const ArtifactsEvent.init());
     context.read<ElementsBloc>().add(const ElementsEvent.init());
+    context.read<MaterialsBloc>().add(const MaterialsEvent.init());
   }
 
   @override
@@ -90,7 +92,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
       ),
       BottomNavigationBarItem(
         label: s.weapons,
-        icon: const Icon(Icons.settings),
+        icon: const Icon(GenshinDb.crossed_swords),
       ),
       BottomNavigationBarItem(
         label: s.home,
@@ -98,7 +100,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
       ),
       BottomNavigationBarItem(
         label: s.artifacts,
-        icon: const Icon(Icons.settings),
+        icon: const Icon(GenshinDb.overmind),
       ),
       BottomNavigationBarItem(
         label: s.map,

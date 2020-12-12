@@ -7,10 +7,13 @@ import 'bloc/bloc.dart';
 import 'generated/l10n.dart';
 import 'injection.dart';
 import 'services/genshing_service.dart';
+import 'telemetry.dart';
 import 'ui/pages/main_page.dart';
 import 'ui/pages/splash_page.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initTelemetry();
   initInjection();
   runApp(MyApp());
 }
@@ -67,6 +70,12 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             return ElementsBloc(genshinService);
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final genshinService = getIt<GenshinService>();
+            return MaterialsBloc(genshinService);
           },
         ),
       ],

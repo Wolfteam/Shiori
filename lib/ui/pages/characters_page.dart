@@ -9,19 +9,26 @@ import '../../models/characters/character_card_model.dart';
 import '../widgets/characters/character_bottom_sheet.dart';
 import '../widgets/characters/character_card.dart';
 import '../widgets/common/loading.dart';
-import '../widgets/common/search_box.dart';
+import '../widgets/common/sliver_nothing_found.dart';
+import '../widgets/common/sliver_page_filter.dart';
 
 class CharactersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     return BlocBuilder<CharactersBloc, CharactersState>(
       builder: (context, state) {
-        return state.when(
-          loading: () => const Loading(),
-          loaded: (chars) => CustomScrollView(
+        return state.map(
+          loading: (_) => const Loading(),
+          loaded: (state) => CustomScrollView(
             slivers: [
-              _buildFiltersSwitch(context),
-              _buildGrid(context, chars),
+              SliverPageFilter(
+                search: state.search,
+                title: s.characters,
+                onPressed: () => _showFiltersModal(context),
+                searchChanged: (v) => context.read<CharactersBloc>().add(CharactersEvent.searchChanged(search: v)),
+              ),
+              if (s.characters.isNotEmpty) _buildGrid(state.characters, context) else const SliverNothingFound(),
             ],
           ),
         );
@@ -29,7 +36,7 @@ class CharactersPage extends StatelessWidget {
     );
   }
 
-  Widget _buildGrid(BuildContext context, List<CharacterCardModel> characters) {
+  Widget _buildGrid(List<CharacterCardModel> characters, BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -52,34 +59,6 @@ class CharactersPage extends StatelessWidget {
         crossAxisSpacing: isPortrait ? 10 : 5,
         mainAxisSpacing: 5,
         staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
-      ),
-    );
-  }
-
-  Widget _buildFiltersSwitch(BuildContext context) {
-    final s = S.of(context);
-    return SliverToBoxAdapter(
-      child: Column(
-        children: [
-          SearchBox(),
-          Padding(
-            padding: const EdgeInsets.only(left: 15, right: 5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  s.all,
-                  textAlign: TextAlign.start,
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-                IconButton(
-                  icon: const Icon(Icons.swap_horiz),
-                  onPressed: () => _showFiltersModal(context),
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }

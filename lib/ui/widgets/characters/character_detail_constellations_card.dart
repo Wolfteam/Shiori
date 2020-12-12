@@ -23,7 +23,11 @@ class CharacterDetailConstellationsCard extends StatelessWidget {
     final s = S.of(context);
     final items = constellations.map((e) => _buildConstellationCard(e, context)).toList();
     final body = Wrap(alignment: WrapAlignment.center, children: items);
-    return ItemDescriptionDetail(title: s.constellations, icon: Icon(Icons.settings), body: body);
+    return ItemDescriptionDetail(
+      title: s.constellations,
+      body: body,
+      textColor: elementType.getElementColor(),
+    );
   }
 
   Widget _buildConstellationCard(TranslationCharacterConstellation model, BuildContext context) {
@@ -45,7 +49,7 @@ class CharacterDetailConstellationsCard extends StatelessWidget {
             ),
             Text(
               model.title,
-              style: theme.textTheme.subtitle1.copyWith(color: Colors.amber),
+              style: theme.textTheme.subtitle1.copyWith(color: elementType.getElementColor()),
               textAlign: TextAlign.center,
             ),
             Text(

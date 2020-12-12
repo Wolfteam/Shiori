@@ -187,12 +187,6 @@
             "rarityMax": 5
         },
         {
-            "name": "Heart of Depth",
-            "image": "depth_of_heart_4.png",
-            "rarityMin": 4,
-            "rarityMax": 5
-        },
-        {
             "name": "Glacier and Snowfield",
             "image": "glacier_and_snowfield_4.png",
             "rarityMin": 4,

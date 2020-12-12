@@ -204,8 +204,6 @@ extension I18nExtensions on S {
         return name;
       case WeaponFilterType.rarity:
         return rarity;
-      case WeaponFilterType.type:
-        return this.type;
       default:
         throw Exception('Invalid weapon filter type = $type');
     }

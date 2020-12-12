@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
 import '../../../common/styles.dart';
+import '../../../common/enums/element_type.dart';
+import '../../../common/extensions/element_type_extensions.dart';
 import '../../../generated/l10n.dart';
 import '../../../models/models.dart';
 import '../common/item_description_detail.dart';
 import '../common/wrapped_ascention_material.dart';
 
 class CharacterDetailAscentionMaterialsCard extends StatelessWidget {
+  final ElementType elementType;
   final List<CharacterFileAscentionMaterialModel> ascentionMaterials;
 
   const CharacterDetailAscentionMaterialsCard({
     Key key,
+    @required this.elementType,
     @required this.ascentionMaterials,
   }) : super(key: key);
 
@@ -57,7 +61,11 @@ class CharacterDetailAscentionMaterialsCard extends StatelessWidget {
         ],
       ),
     );
-    return ItemDescriptionDetail(title: s.ascentionMaterials, icon: Icon(Icons.settings), body: body);
+    return ItemDescriptionDetail(
+      title: s.ascentionMaterials,
+      body: body,
+      textColor: elementType.getElementColor(),
+    );
   }
 
   TableRow _buildAscentionRow(CharacterFileAscentionMaterialModel model) {

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
 import '../../../common/styles.dart';
+import '../../../generated/l10n.dart';
 import '../../../models/weapons/weapon_file_refinement_model.dart';
 import '../common/item_description_detail.dart';
-import '../../../generated/l10n.dart';
 
 class WeaponDetailRefinementsCard extends StatelessWidget {
+  final Color rarityColor;
   final List<WeaponFileRefinementModel> refinements;
 
   const WeaponDetailRefinementsCard({
     Key key,
+    @required this.rarityColor,
     @required this.refinements,
   }) : super(key: key);
 
@@ -62,6 +64,6 @@ class WeaponDetailRefinementsCard extends StatelessWidget {
       ),
     );
 
-    return ItemDescriptionDetail(title: s.refinements, icon: Icon(Icons.settings), body: body);
+    return ItemDescriptionDetail(title: s.refinements, body: body, textColor: rarityColor);
   }
 }

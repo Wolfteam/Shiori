@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../bloc/bloc.dart';
 import '../../../common/extensions/i18n_extensions.dart';
 import '../../../common/styles.dart';
 import '../../../generated/l10n.dart';
+import '../../pages/character_page.dart';
 
 class CharCardAscentionMaterial extends StatelessWidget {
   final String name;
@@ -34,10 +37,17 @@ class CharCardAscentionMaterial extends StatelessWidget {
     final s = S.of(context);
     final theme = Theme.of(context);
     final chars = charImgs
-        .map((e) => Container(
-              margin: Styles.edgeInsetAll5,
-              child: Image.asset(e, width: 55, height: 55),
-            ))
+        .map(
+          (e) => Container(
+            margin: Styles.edgeInsetAll5,
+            child: IconButton(
+              padding: EdgeInsets.zero,
+              icon: Image.asset(e),
+              iconSize: 55,
+              onPressed: () => _gotoCharacterPage(e, context),
+            ),
+          ),
+        )
         .toList();
     final obtainOn = days.isNotEmpty ? s.translateDays(days) : bossName;
 
@@ -88,5 +98,11 @@ class CharCardAscentionMaterial extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _gotoCharacterPage(String image, BuildContext context) async {
+    context.read<CharacterBloc>().add(CharacterEvent.loadFromImg(image: image));
+    final route = MaterialPageRoute(builder: (c) => CharacterPage());
+    await Navigator.push(context, route);
   }
 }

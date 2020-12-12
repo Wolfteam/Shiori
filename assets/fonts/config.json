@@ -1,0 +1,52 @@
+{
+  "name": "GenshinDb",
+  "css_prefix_text": "",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "61aeb0c22b7b88f5593d08e26689a71f",
+      "css": "filter",
+      "code": 61616,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "23c2239369a69f752e790de95123b9e9",
+      "css": "male",
+      "code": 59392,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "10b2be8b48bebc1974d6f94bac9de71d",
+      "css": "female",
+      "code": 59393,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "d44d720ef3fc841bb77ba8f0a424b6c5",
+      "css": "cogs",
+      "code": 61573,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "9fa6a125e9296b86a2fff3074c784116",
+      "css": "sliders_h",
+      "code": 61918,
+      "src": "fontawesome5"
+    },
+    {
+      "uid": "acca5a333bcfe091982b3c7898ab626c",
+      "css": "crossed_swords",
+      "code": 59773,
+      "src": "rpgawesome"
+    },
+    {
+      "uid": "0b90f50e06b323a32c0dca801214c9e1",
+      "css": "overmind",
+      "code": 59989,
+      "src": "rpgawesome"
+    }
+  ]
+}

@@ -23,29 +23,40 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
   ) async* {
     yield const CharacterState.loading();
 
-    final s = event.when(loadCharacter: (name) {
-      final char = _genshinService.getCharacter(name);
-      final translations = _genshinService.getCharacterTranslation(name);
-      return CharacterState.loaded(
-        name: char.name,
-        region: char.region,
-        role: translations.role,
-        isFemale: char.isFemale,
-        fullImage: Assets.getCharacterFullPath(char.fullImage),
-        secondFullImage: char.secondFullImage != null ? Assets.getCharacterFullPath(char.secondFullImage) : null,
-        description: translations.description,
-        rarity: char.rarity,
-        elementType: char.elementType,
-        weaponType: char.weaponType,
-        ascentionMaterials: char.ascentionMaterials,
-        talentAscentionsMaterials: char.talentAscentionMaterials,
-        skills: translations.skills,
-        passives: translations.passives,
-        constellations: translations.constellations,
-        multiTalentAscentionMaterials: char.multiTalentAscentionMaterials,
-      );
-    });
+    final s = event.when(
+      loadFromName: (name) {
+        final char = _genshinService.getCharacter(name);
+        final translation = _genshinService.getCharacterTranslation(name);
+        return _buildInitialState(char, translation);
+      },
+      loadFromImg: (img) {
+        final char = _genshinService.getCharacterByImg(img);
+        final translation = _genshinService.getCharacterTranslation(char.name);
+        return _buildInitialState(char, translation);
+      },
+    );
 
     yield s;
+  }
+
+  CharacterState _buildInitialState(CharacterFileModel char, TranslationCharacterFile translations) {
+    return CharacterState.loaded(
+      name: char.name,
+      region: char.region,
+      role: translations.role,
+      isFemale: char.isFemale,
+      fullImage: Assets.getCharacterFullPath(char.fullImage),
+      secondFullImage: char.secondFullImage != null ? Assets.getCharacterFullPath(char.secondFullImage) : null,
+      description: translations.description,
+      rarity: char.rarity,
+      elementType: char.elementType,
+      weaponType: char.weaponType,
+      ascentionMaterials: char.ascentionMaterials,
+      talentAscentionsMaterials: char.talentAscentionMaterials,
+      skills: translations.skills,
+      passives: translations.passives,
+      constellations: translations.constellations,
+      multiTalentAscentionMaterials: char.multiTalentAscentionMaterials,
+    );
   }
 }

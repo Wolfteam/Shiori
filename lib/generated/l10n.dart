@@ -1074,6 +1074,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Nothing to show`
+  String get nothingToShow {
+    return Intl.message(
+      'Nothing to show',
+      name: 'nothingToShow',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

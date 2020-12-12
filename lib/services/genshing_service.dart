@@ -18,6 +18,7 @@ abstract class GenshinService {
 
   List<CharacterCardModel> getCharactersForCard();
   CharacterFileModel getCharacter(String name);
+  CharacterFileModel getCharacterByImg(String img);
 
   List<WeaponCardModel> getWeaponsForCard();
   WeaponFileModel getWeapon(String name);
@@ -45,12 +46,14 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   Future<void> init(AppLanguageType languageType) async {
-    await initCharacters();
-    await initWeapons();
-    await initArtifacts();
-    await initMaterials();
-    await initElements();
-    await initTranslations(languageType);
+    await Future.wait([
+      initCharacters(),
+      initWeapons(),
+      initArtifacts(),
+      initMaterials(),
+      initElements(),
+      initTranslations(languageType)
+    ]);
   }
 
   @override
@@ -135,6 +138,11 @@ class GenshinServiceImpl implements GenshinService {
   @override
   CharacterFileModel getCharacter(String name) {
     return _charactersFile.characters.firstWhere((element) => element.name == name);
+  }
+
+  @override
+  CharacterFileModel getCharacterByImg(String img) {
+    return _charactersFile.characters.firstWhere((element) => Assets.getCharacterPath(element.image) == img);
   }
 
   @override

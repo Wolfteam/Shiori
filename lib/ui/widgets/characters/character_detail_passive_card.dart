@@ -23,7 +23,11 @@ class CharacterDetailPassiveCard extends StatelessWidget {
     final s = S.of(context);
     final items = passives.map((e) => _buildPassiveCard(e, context)).toList();
     final body = Wrap(alignment: WrapAlignment.center, children: items);
-    return ItemDescriptionDetail(title: s.passives, icon: Icon(Icons.settings), body: body);
+    return ItemDescriptionDetail(
+      title: s.passives,
+      body: body,
+      textColor: elementType.getElementColor(),
+    );
   }
 
   Widget _buildPassiveCard(TranslationCharacterPassive model, BuildContext context) {
@@ -46,7 +50,7 @@ class CharacterDetailPassiveCard extends StatelessWidget {
             ),
             Text(
               model.title,
-              style: theme.textTheme.subtitle1.copyWith(color: Colors.amber),
+              style: theme.textTheme.subtitle1.copyWith(color: elementType.getElementColor()),
               textAlign: TextAlign.center,
             ),
             Text(

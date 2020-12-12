@@ -8,21 +8,28 @@ import '../../generated/l10n.dart';
 import '../../models/models.dart';
 import '../../models/weapons/weapon_card_model.dart';
 import '../widgets/common/loading.dart';
-import '../widgets/common/search_box.dart';
+import '../widgets/common/sliver_nothing_found.dart';
+import '../widgets/common/sliver_page_filter.dart';
 import '../widgets/weapons/weapon_bottom_sheet.dart';
 import '../widgets/weapons/weapon_card.dart';
 
 class WeaponsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     return BlocBuilder<WeaponsBloc, WeaponsState>(
       builder: (context, state) {
-        return state.when(
-          loading: () => const Loading(),
-          loaded: (weapons) => CustomScrollView(
+        return state.map(
+          loading: (_) => const Loading(),
+          loaded: (state) => CustomScrollView(
             slivers: [
-              _buildFiltersSwitch(context),
-              _buildGrid(context, weapons),
+              SliverPageFilter(
+                search: state.search,
+                title: s.weapons,
+                onPressed: () => _showFiltersModal(context),
+                searchChanged: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.searchChanged(search: v)),
+              ),
+              if (s.weapons.isNotEmpty) _buildGrid(context, state.weapons) else const SliverNothingFound(),
             ],
           ),
         );
@@ -30,38 +37,10 @@ class WeaponsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildFiltersSwitch(BuildContext context) {
-    final s = S.of(context);
-    return SliverToBoxAdapter(
-      child: Column(
-        children: [
-          SearchBox(),
-          Padding(
-            padding: const EdgeInsets.only(left: 15, right: 5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  s.all,
-                  textAlign: TextAlign.start,
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-                IconButton(
-                  icon: const Icon(Icons.swap_horiz),
-                  onPressed: () => _showFiltersModal(context),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   Widget _buildGrid(BuildContext context, List<WeaponCardModel> weapons) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 5),
       sliver: SliverStaggeredGrid.countBuilder(
         crossAxisCount: isPortrait ? 2 : 3,
         itemBuilder: (ctx, index) {
