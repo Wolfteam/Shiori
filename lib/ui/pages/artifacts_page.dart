@@ -10,19 +10,25 @@ import '../widgets/artifacts/artifact_bottom_sheet.dart';
 import '../widgets/artifacts/artifact_card.dart';
 import '../widgets/artifacts/artifact_info_card.dart';
 import '../widgets/common/loading.dart';
-import '../widgets/common/search_box.dart';
 import '../widgets/common/sliver_nothing_found.dart';
+import '../widgets/common/sliver_page_filter.dart';
 
 class ArtifactsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     return BlocBuilder<ArtifactsBloc, ArtifactsState>(
       builder: (context, state) {
         return state.map(
           loading: (_) => const Loading(),
           loaded: (state) => CustomScrollView(
             slivers: [
-              _buildFiltersSwitch(state.search, context),
+              SliverPageFilter(
+                search: state.search,
+                title: s.artifacts,
+                onPressed: () => _showFiltersModal(context),
+                searchChanged: (v) => context.read<ArtifactsBloc>().add(ArtifactsEvent.searchChanged(search: v)),
+              ),
               ArtifactInfoCard(
                 isCollapsed: state.collapseNotes,
                 expansionCallback: (v) => context.read<ArtifactsBloc>().add(
@@ -51,39 +57,6 @@ class ArtifactsPage extends StatelessWidget {
         crossAxisSpacing: isPortrait ? 10 : 5,
         mainAxisSpacing: 5,
         staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
-      ),
-    );
-  }
-
-  Widget _buildFiltersSwitch(String search, BuildContext context) {
-    final showClearButton = search != null && search.isNotEmpty;
-    final s = S.of(context);
-    return SliverToBoxAdapter(
-      child: Column(
-        children: [
-          SearchBox(
-            value: search,
-            showClearButton: showClearButton,
-            searchChanged: (v) => context.read<ArtifactsBloc>().add(ArtifactsEvent.searchChanged(search: v)),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 15, right: 5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  s.artifacts,
-                  textAlign: TextAlign.start,
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-                IconButton(
-                  icon: const Icon(Icons.swap_horiz),
-                  onPressed: () => _showFiltersModal(context),
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }

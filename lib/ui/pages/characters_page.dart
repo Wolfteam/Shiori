@@ -9,20 +9,26 @@ import '../../models/characters/character_card_model.dart';
 import '../widgets/characters/character_bottom_sheet.dart';
 import '../widgets/characters/character_card.dart';
 import '../widgets/common/loading.dart';
-import '../widgets/common/search_box.dart';
 import '../widgets/common/sliver_nothing_found.dart';
+import '../widgets/common/sliver_page_filter.dart';
 
 class CharactersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     return BlocBuilder<CharactersBloc, CharactersState>(
       builder: (context, state) {
         return state.map(
           loading: (_) => const Loading(),
-          loaded: (s) => CustomScrollView(
+          loaded: (state) => CustomScrollView(
             slivers: [
-              _buildFiltersSwitch(s.search, context),
-              if (s.characters.isNotEmpty) _buildGrid(s.characters, context) else const SliverNothingFound(),
+              SliverPageFilter(
+                search: state.search,
+                title: s.characters,
+                onPressed: () => _showFiltersModal(context),
+                searchChanged: (v) => context.read<CharactersBloc>().add(CharactersEvent.searchChanged(search: v)),
+              ),
+              if (s.characters.isNotEmpty) _buildGrid(state.characters, context) else const SliverNothingFound(),
             ],
           ),
         );
@@ -53,40 +59,6 @@ class CharactersPage extends StatelessWidget {
         crossAxisSpacing: isPortrait ? 10 : 5,
         mainAxisSpacing: 5,
         staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
-      ),
-    );
-  }
-
-  Widget _buildFiltersSwitch(String search, BuildContext context) {
-    final showClearButton = search != null && search.isNotEmpty;
-    final s = S.of(context);
-    return SliverToBoxAdapter(
-      child: Column(
-        children: [
-          SearchBox(
-            value: search,
-            showClearButton: showClearButton,
-            searchChanged: (newVal) =>
-                context.read<CharactersBloc>().add(CharactersEvent.searchChanged(search: newVal)),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 15, right: 5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  s.characters,
-                  textAlign: TextAlign.start,
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-                IconButton(
-                  icon: const Icon(Icons.swap_horiz),
-                  onPressed: () => _showFiltersModal(context),
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }

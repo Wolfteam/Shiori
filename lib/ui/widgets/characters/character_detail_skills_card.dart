@@ -27,7 +27,11 @@ class CharacterDetailSkillsCard extends StatelessWidget {
       child: Wrap(alignment: WrapAlignment.center, children: cards),
     );
 
-    return ItemDescriptionDetail(title: s.skills, icon: Icon(Icons.settings), body: body);
+    return ItemDescriptionDetail(
+      title: s.skills,
+      body: body,
+      textColor: elementType.getElementColor(),
+    );
   }
 
   Widget _buildSkillCard(BuildContext context, TranslationCharacterSkillFile model, bool isEven) {
@@ -47,7 +51,7 @@ class CharacterDetailSkillsCard extends StatelessWidget {
             child: Text(
               model.title,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.headline6.copyWith(color: theme.accentColor),
+              style: theme.textTheme.headline6.copyWith(color: elementType.getElementColor()),
             ),
           ),
           Tooltip(
@@ -76,7 +80,7 @@ class CharacterDetailSkillsCard extends StatelessWidget {
                 Text(
                   e.name,
                   overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.subtitle1.copyWith(color: theme.accentColor),
+                  style: theme.textTheme.subtitle1.copyWith(color: elementType.getElementColor()),
                 ),
                 if (e.description != null) Text(e.description, style: theme.textTheme.bodyText2.copyWith(fontSize: 12)),
                 if (e.descriptions.isNotEmpty) BulletList(items: e.descriptions),

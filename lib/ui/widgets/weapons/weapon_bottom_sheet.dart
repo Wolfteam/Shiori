@@ -5,6 +5,7 @@ import 'package:smooth_star_rating/smooth_star_rating.dart';
 import '../../../bloc/bloc.dart';
 import '../../../common/enums/weapon_filter_type.dart';
 import '../../../common/extensions/i18n_extensions.dart';
+import '../../../common/genshin_db_icons.dart';
 import '../../../common/styles.dart';
 import '../../../generated/l10n.dart';
 import '../common/bottom_sheet_title.dart';
@@ -33,7 +34,7 @@ class WeaponBottomSheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   ModalSheetSeparator(),
-                  BottomSheetTitle(icon: Icons.playlist_play, title: s.filters),
+                  BottomSheetTitle(icon: GenshinDb.filter, title: s.filters),
                   Text(s.type),
                   WeaponsButtonBar(
                     selectedValues: state.tempWeaponTypes,

@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 
 import '../../../common/styles.dart';
+import 'primogem_icon.dart';
 
 class ItemDescriptionDetail extends StatelessWidget {
   final String title;
-  final Icon icon;
   final Widget body;
+  final Color textColor;
 
-  const ItemDescriptionDetail({
-    Key key,
-    @required this.title,
-    @required this.icon,
-    @required this.body,
-  }) : super(key: key);
+  const ItemDescriptionDetail({Key key, @required this.title, @required this.body, @required this.textColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +21,14 @@ class ItemDescriptionDetail extends StatelessWidget {
           visualDensity: VisualDensity.compact,
           dense: true,
           contentPadding: EdgeInsets.zero,
-          leading: Icon(Icons.settings),
+          leading: PrimoGemIcon(),
           title: Transform.translate(
             offset: Styles.listItemWithIconOffset,
             child: Tooltip(
               message: title,
               child: Text(
                 title,
-                style: theme.textTheme.headline5.copyWith(color: theme.accentColor, fontWeight: FontWeight.bold),
+                style: theme.textTheme.headline5.copyWith(color: textColor, fontWeight: FontWeight.bold),
                 overflow: TextOverflow.ellipsis,
               ),
             ),

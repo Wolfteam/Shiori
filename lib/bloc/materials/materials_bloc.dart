@@ -34,8 +34,22 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
         final weaponMaterials = <TodayWeaponAscentionMaterialModel>[];
 
         for (final day in days) {
-          charMaterials.addAll(_genshinService.getCharacterAscentionMaterials(day));
-          weaponMaterials.addAll(_genshinService.getWeaponAscentionMaterials(day));
+          final charMaterialsForDay = _genshinService.getCharacterAscentionMaterials(day);
+          final weaponMaterialsForDay = _genshinService.getWeaponAscentionMaterials(day);
+
+          for (final material in charMaterialsForDay) {
+            if (charMaterials.any((m) => m.name == material.name)) {
+              continue;
+            }
+            charMaterials.add(material);
+          }
+
+          for (final material in weaponMaterialsForDay) {
+            if (weaponMaterials.any((m) => m.name == material.name)) {
+              continue;
+            }
+            weaponMaterials.add(material);
+          }
         }
 
         return MaterialsState.loaded(charAscMaterials: charMaterials, weaponAscMaterials: weaponMaterials);

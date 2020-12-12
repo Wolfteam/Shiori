@@ -101,12 +101,7 @@ class CharacterCard extends StatelessWidget {
                     ),
                     Flexible(
                       fit: FlexFit.tight,
-                      flex: 5,
-                      child: VerticalDivider(color: theme.accentColor),
-                    ),
-                    Flexible(
-                      fit: FlexFit.tight,
-                      flex: 55,
+                      flex: 60,
                       child: CharacterAscentionMaterials(images: materials),
                     )
                   ],
@@ -123,7 +118,7 @@ class CharacterCard extends StatelessWidget {
     final s = S.of(context);
     final theme = Theme.of(context);
     final newOrComingSoon = isNew || isComingSoon;
-    final icon = isNew ? Icons.new_releases_outlined : Icons.confirmation_num;
+    final icon = isNew ? Icons.fiber_new_outlined : Icons.av_timer;
     final newOrComingSoonAvatar = CircleAvatar(
       radius: 15,
       backgroundColor: newOrComingSoon ? theme.accentColor : Colors.transparent,

@@ -59,7 +59,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     final packageInfo = await PackageInfo.fromPlatform();
     // final appSettings = _settings.appSettings;
     await Future.delayed(const Duration(milliseconds: 600));
-    return _loadThemeData(packageInfo.appName, AppThemeType.dark, AppAccentColorType.amber, AppLanguageType.english);
+    return _loadThemeData(packageInfo.appName, AppThemeType.dark, AppAccentColorType.red, AppLanguageType.english);
   }
 
   MainState _loadThemeData(

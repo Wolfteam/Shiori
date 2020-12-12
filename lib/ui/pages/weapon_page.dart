@@ -19,7 +19,7 @@ import '../widgets/weapons/weapon_detail_refinements_card.dart';
 
 class WeaponPage extends StatelessWidget {
   final double imageHeight = 320;
-  final double imgSize = 20;
+  final double imgSize = 28;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class WeaponPage extends StatelessWidget {
                       s.fullImage,
                       context,
                     ),
-                    _buildBottom(s.description, s.ascentionMaterials, s.refinements, context),
+                    _buildBottom(s.description, s.rarity, s.ascentionMaterials, s.refinements, context),
                   ],
                 ),
               );
@@ -130,6 +130,7 @@ class WeaponPage extends StatelessWidget {
 
   Widget _buildBottom(
     String description,
+    int rarity,
     List<WeaponFileAscentionMaterial> ascentionMaterials,
     List<WeaponFileRefinementModel> refinements,
     BuildContext context,
@@ -141,10 +142,17 @@ class WeaponPage extends StatelessWidget {
         padding: const EdgeInsets.only(top: 10, right: 10, left: 10),
         child: Column(
           children: [
-            _buildDescription(description, context),
+            _buildDescription(description, rarity, context),
             if (ascentionMaterials.isNotEmpty)
-              WeaponDetailAscentionMaterialsCard(ascentionMaterials: ascentionMaterials),
-            if (refinements.isNotEmpty) WeaponDetailRefinementsCard(refinements: refinements),
+              WeaponDetailAscentionMaterialsCard(
+                ascentionMaterials: ascentionMaterials,
+                rarityColor: rarity.getRarityColors().last,
+              ),
+            if (refinements.isNotEmpty)
+              WeaponDetailRefinementsCard(
+                refinements: refinements,
+                rarityColor: rarity.getRarityColors().last,
+              ),
           ],
         ),
       ),
@@ -170,7 +178,7 @@ class WeaponPage extends StatelessWidget {
           name,
           style: theme.textTheme.headline5.copyWith(fontWeight: FontWeight.bold),
         ),
-        ItemDescription(title: s.rarity, widget: Rarity(stars: rarity), useColumn: false),
+        Rarity(stars: rarity, starSize: 25, alignment: MainAxisAlignment.start),
         ItemDescription(title: s.type, widget: Text(s.translateWeaponType(type)), useColumn: false),
         ItemDescription(title: s.baseAtk, widget: Text('$atk'), useColumn: false),
         ItemDescription(
@@ -188,7 +196,7 @@ class WeaponPage extends StatelessWidget {
     );
   }
 
-  Widget _buildDescription(String description, BuildContext context) {
+  Widget _buildDescription(String description, int rarity, BuildContext context) {
     final s = S.of(context);
     final body = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -198,18 +206,9 @@ class WeaponPage extends StatelessWidget {
           child: ItemDescriptionDetail(
             title: s.description,
             body: Container(margin: const EdgeInsets.symmetric(horizontal: 5), child: Text(description)),
-            icon: Icon(Icons.settings),
+            textColor: rarity.getRarityColors().last,
           ),
         ),
-        // ItemDescription(
-        //   title: 'Special (Passive) Ability',
-        //   subTitle:
-        //       'Hitting enemies with Normal and Charged Attacks grants a 50% chance to deal 200% ATK as DMG in a small AoE. This effect can only occur once every 10s. Additionally, if the Traveler equips the Sword of Descension, their ATK is increased by 66',
-        // ),
-        // ItemDescription(
-        //   title: 'Special (Passive) Ability Description',
-        //   subTitle: 'A sword of unique craftsmanship. It does not appear to belong to this world.',
-        // ),
       ],
     );
     return body;

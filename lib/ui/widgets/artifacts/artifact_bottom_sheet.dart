@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:genshindb/common/genshin_db_icons.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 import '../../../bloc/bloc.dart';
@@ -33,7 +34,7 @@ class ArtifactBottomSheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   ModalSheetSeparator(),
-                  BottomSheetTitle(icon: Icons.playlist_play, title: s.filters),
+                  BottomSheetTitle(icon: GenshinDb.filter, title: s.filters),
                   Text(s.rarity),
                   Center(
                     child: SmoothStarRating(

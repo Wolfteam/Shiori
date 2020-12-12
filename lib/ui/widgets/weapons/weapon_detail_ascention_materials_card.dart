@@ -7,10 +7,12 @@ import '../common/item_description_detail.dart';
 import '../common/wrapped_ascention_material.dart';
 
 class WeaponDetailAscentionMaterialsCard extends StatelessWidget {
+  final Color rarityColor;
   final List<WeaponFileAscentionMaterial> ascentionMaterials;
 
   const WeaponDetailAscentionMaterialsCard({
     Key key,
+    @required this.rarityColor,
     @required this.ascentionMaterials,
   }) : super(key: key);
 
@@ -49,7 +51,7 @@ class WeaponDetailAscentionMaterialsCard extends StatelessWidget {
         ],
       ),
     );
-    return ItemDescriptionDetail(title: s.ascentionMaterials, icon: Icon(Icons.settings), body: body);
+    return ItemDescriptionDetail(title: s.ascentionMaterials, body: body, textColor: rarityColor);
   }
 
   TableRow _buildStatProgressionRow(WeaponFileAscentionMaterial model) {

@@ -5,8 +5,8 @@ import 'package:smooth_star_rating/smooth_star_rating.dart';
 import '../../../bloc/bloc.dart';
 import '../../../common/enums/character_filter_type.dart';
 import '../../../common/enums/released_unreleased_type.dart';
-import '../../../common/enums/sort_direction_type.dart';
 import '../../../common/extensions/i18n_extensions.dart';
+import '../../../common/genshin_db_icons.dart';
 import '../../../common/styles.dart';
 import '../../../generated/l10n.dart';
 import '../common/bottom_sheet_title.dart';
@@ -37,7 +37,7 @@ class CharacterBottomSheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   ModalSheetSeparator(),
-                  BottomSheetTitle(icon: Icons.playlist_play, title: s.filters),
+                  BottomSheetTitle(icon: GenshinDb.filter, title: s.filters),
                   Text(s.elements),
                   ElementsButtonBar(
                     selectedValues: state.tempElementTypes,
@@ -69,7 +69,7 @@ class CharacterBottomSheet extends StatelessWidget {
                         selectedValue: state.tempReleasedUnreleasedType,
                         onSelected: (v) =>
                             context.read<CharactersBloc>().add(CharactersEvent.releasedUnreleasedTypeChanged(v)),
-                        icon: const Icon(Icons.all_inbox),
+                        icon: const Icon(GenshinDb.sliders_h, size: 18),
                         itemText: (val) => s.translateReleasedUnreleasedType(val),
                       ),
                       ItemPopupMenuFilter<CharacterFilterType>(

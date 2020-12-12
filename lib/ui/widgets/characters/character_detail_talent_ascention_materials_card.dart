@@ -1,24 +1,28 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 import '../../../common/styles.dart';
+import '../../../common/enums/element_type.dart';
+import '../../../common/extensions/element_type_extensions.dart';
 import '../../../generated/l10n.dart';
 import '../../../models/models.dart';
 import '../common/item_description_detail.dart';
+import '../common/wrapped_ascention_material.dart';
 
 class CharacterDetailTalentAscentionMaterialsCard extends StatelessWidget {
+  final ElementType elementType;
   final List<CharacterFileTalentAscentionMaterialModel> talentAscentionMaterials;
   final List<CharacterFileMultiTalentAscentionMaterialModel> multiTalentAscentionMaterials;
 
   CharacterDetailTalentAscentionMaterialsCard.withTalents({
     Key key,
+    @required this.elementType,
     @required this.talentAscentionMaterials,
   })  : multiTalentAscentionMaterials = [],
         super(key: key);
 
   CharacterDetailTalentAscentionMaterialsCard.withMultiTalents({
     Key key,
+    @required this.elementType,
     @required this.multiTalentAscentionMaterials,
   })  : talentAscentionMaterials = [],
         super(key: key);
@@ -74,19 +78,17 @@ class CharacterDetailTalentAscentionMaterialsCard extends StatelessWidget {
       ),
     );
 
-    return ItemDescriptionDetail(title: title, icon: Icon(Icons.settings), body: body);
+    return ItemDescriptionDetail(
+      title: title,
+      body: body,
+      textColor: elementType.getElementColor(),
+    );
   }
 
   TableRow _buildTalentAscentionRow(CharacterFileTalentAscentionMaterialModel model) {
     final materials = model.materials
         .map(
-          (m) => Wrap(children: [
-            Image.asset(m.fullImagePath, width: 20, height: 20),
-            Container(
-              margin: const EdgeInsets.only(left: 5, right: 10),
-              child: Text('x ${m.quantity}'),
-            ),
-          ]),
+          (m) => WrappedAscentionMaterial(image: m.fullImagePath, quantity: m.quantity),
         )
         .toList();
     return TableRow(children: [
