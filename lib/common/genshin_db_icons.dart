@@ -16,6 +16,10 @@
 ///         Author:    MFG Labs
 ///         License:   SIL (http://scripts.sil.org/OFL)
 ///         Homepage:  http://www.mfglabs.com/
+/// * RPG Awesome, Copyright (c) 2014, Daniela Howe
+///         Author:    Daniela Howe & Ivan Montiel
+///         License:   SIL (http://scripts.sil.org/OFL)
+///         Homepage:  http://nagoshiashumari.github.io/Rpg-Awesome/
 /// * Font Awesome 5, Copyright (C) 2016 by Dave Gandy
 ///         Author:    Dave Gandy
 ///         License:   SIL (https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt)
@@ -31,6 +35,8 @@ class GenshinDb {
 
   static const IconData male = IconData(0xe800, fontFamily: _kFontFam);
   static const IconData female = IconData(0xe801, fontFamily: _kFontFam);
+  static const IconData crossed_swords = IconData(0xe97d, fontFamily: _kFontFam);
+  static const IconData overmind = IconData(0xea55, fontFamily: _kFontFam);
   static const IconData cogs = IconData(0xf085, fontFamily: _kFontFam);
   static const IconData filter = IconData(0xf0b0, fontFamily: _kFontFam);
   static const IconData sliders_h = IconData(0xf1de, fontFamily: _kFontFam);

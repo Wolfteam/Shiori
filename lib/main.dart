@@ -12,6 +12,7 @@ import 'ui/pages/main_page.dart';
 import 'ui/pages/splash_page.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await initTelemetry();
   initInjection();
   runApp(MyApp());

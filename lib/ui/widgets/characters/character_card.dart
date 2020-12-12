@@ -140,7 +140,7 @@ class CharacterCard extends StatelessWidget {
   }
 
   Future<void> _gotoCharacterPage(String name, BuildContext context) async {
-    context.read<CharacterBloc>().add(CharacterEvent.loadCharacter(name: name));
+    context.read<CharacterBloc>().add(CharacterEvent.loadFromName(name: name));
     final route = MaterialPageRoute(builder: (c) => CharacterPage());
     await Navigator.push(context, route);
   }
