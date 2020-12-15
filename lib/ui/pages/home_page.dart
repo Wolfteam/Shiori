@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
 import '../widgets/home/elements_card.dart';
+import '../widgets/home/sliver_settings_card.dart';
 import '../widgets/home/today_char_ascention_materials.dart';
 import '../widgets/home/today_weapon_materials.dart';
 import 'materials_page.dart';
@@ -19,7 +20,8 @@ class HomePage extends StatelessWidget {
         TodayWeaponMaterials(),
         _buildMainTitle(s.elements, context),
         ElementsCard(),
-//TODO: SETTINGS GOES HERE
+        _buildMainTitle(s.settings, context),
+        SliverSettingsCard(),
       ],
     );
   }
