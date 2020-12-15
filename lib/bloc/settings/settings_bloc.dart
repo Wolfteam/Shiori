@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:package_info/package_info.dart';
 
 import '../../common/enums/app_accent_color_type.dart';
 import '../../common/enums/app_language_type.dart';
@@ -27,10 +28,12 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
       init: (_) async {
         await _settingsService.init();
         final settings = _settingsService.appSettings;
+        final packageInfo = await PackageInfo.fromPlatform();
         return SettingsState.loaded(
           currentTheme: settings.appTheme,
           currentAccentColor: settings.accentColor,
           currentLanguage: settings.appLanguage,
+          appVersion: packageInfo.version,
         );
       },
       themeChanged: (event) async {

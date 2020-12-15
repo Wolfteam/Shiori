@@ -8,6 +8,7 @@ abstract class MainState with _$MainState {
     @required ThemeData theme,
     @required bool initialized,
     @required bool firstInstall,
+    @required AppLanguageType currentLanguage,
     @Default(0) int currentSelectedTab,
   }) = _MainLoadedState;
   const MainState._();

@@ -89,7 +89,10 @@ class MyApp extends StatelessWidget {
           },
         ),
       ],
-      child: BlocBuilder<MainBloc, MainState>(
+      child: BlocConsumer<MainBloc, MainState>(
+        listener: (ctx, state) {
+          state.maybeWhen(orElse: () => {});
+        },
         builder: (ctx, state) => _buildApp(state),
       ),
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../common/styles.dart';
 import '../../generated/l10n.dart';
+import '../widgets/settings/about_settings_card.dart';
 import '../widgets/settings/accent_color_settings_card.dart';
 import '../widgets/settings/language_settings_card.dart';
 import '../widgets/settings/theme_settings_card.dart';
@@ -20,6 +21,7 @@ class SettingsPage extends StatelessWidget {
             ThemeSettingsCard(),
             AccentColorSettingsCard(),
             LanguageSettingsCard(),
+            AboutSettingsCard(),
           ],
         ),
       ),

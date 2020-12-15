@@ -110,5 +110,15 @@
     "chooseBaseAppTheme": "Escoge un tema base",
     "chooseAccentColor": "Escoge un color de acento",
     "language": "Lenguaje",
-    "chooseLanguage": "Escoge un lenguaje"
+    "chooseLanguage": "Escoge un lenguaje",
+    "appVersion": "Version: {version}",
+    "about": "Acerca de",
+    "aboutSummary": "A Genshin Impact kinda database app",
+    "appInfo": "App information",
+    "support": "Support",
+    "supportMsg": "Hice esta aplicación en mi tiempo libre y también es de código abierto. Si desea ayudarme, informar un problema, tienes una idea, deseas que se implemente una función, etc., crea un issue aquí:",
+    "issues": "Inconvenientes",
+    "disclaimer": "Disclaimer",
+    "disclaimerMsg": "Esta app no está afiliada ni asociada a miHoYo. GenshinDb es solo una aplicación de tipo base de datos para el juego Genshin Impact",
+    "restartMayBeNeeded":"Puede ser necesario reiniciar la app para que los cambios tomen efecto"
 }

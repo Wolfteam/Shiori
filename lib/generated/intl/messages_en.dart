@@ -19,46 +19,52 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static m0(value) => "${value} ATK";
+  static m0(version) => "Version: ${version}";
 
-  static m1(value) => "${value} ATK%";
+  static m1(value) => "${value} ATK";
 
-  static m2(value) => "Constellation ${value}";
+  static m2(value) => "${value} ATK%";
 
-  static m3(value) => "${value} CRIT ATK";
+  static m3(value) => "Constellation ${value}";
 
-  static m4(value) => "${value} CRIT DMG";
+  static m4(value) => "${value} CRIT ATK";
 
-  static m5(value) => "${value} CRIT Rate";
+  static m5(value) => "${value} CRIT DMG";
 
-  static m6(value) => "${value} CRIT Rate%";
+  static m6(value) => "${value} CRIT Rate";
 
-  static m7(value) => "${value} DEF%";
+  static m7(value) => "${value} CRIT Rate%";
 
-  static m8(value) => "${value} Elementary Master";
+  static m8(value) => "${value} DEF%";
 
-  static m9(value) => "${value} Energy Recharge %";
+  static m9(value) => "${value} Elementary Master";
 
-  static m10(value) => "${value} HP%";
+  static m10(value) => "${value} Energy Recharge %";
 
-  static m11(value) => "${value} PHYS DMG Bonus";
+  static m11(value) => "${value} HP%";
 
-  static m12(value) => "${value} PHYS DMG %";
+  static m12(value) => "${value} PHYS DMG Bonus";
 
-  static m13(value) => "Talent Ascention ${value}";
+  static m13(value) => "${value} PHYS DMG %";
 
-  static m14(value) => "Unlocked at ascention level ${value}";
+  static m14(value) => "Talent Ascention ${value}";
+
+  static m15(value) => "Unlocked at ascention level ${value}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "about" : MessageLookupByLibrary.simpleMessage("About"),
+    "aboutSummary" : MessageLookupByLibrary.simpleMessage("A Genshin Impact kinda database app"),
     "accentColor" : MessageLookupByLibrary.simpleMessage("Accent color"),
     "all" : MessageLookupByLibrary.simpleMessage("All"),
+    "appInfo" : MessageLookupByLibrary.simpleMessage("App information"),
     "appName" : MessageLookupByLibrary.simpleMessage("GenshinDb"),
+    "appVersion" : m0,
     "artifacts" : MessageLookupByLibrary.simpleMessage("Artifacts"),
     "asc" : MessageLookupByLibrary.simpleMessage("Ascending"),
     "ascentionMaterials" : MessageLookupByLibrary.simpleMessage("Ascention Materials"),
-    "atk" : m0,
-    "atkPercentage" : m1,
+    "atk" : m1,
+    "atkPercentage" : m2,
     "baseAtk" : MessageLookupByLibrary.simpleMessage("Base Atk"),
     "bow" : MessageLookupByLibrary.simpleMessage("Bow"),
     "bpBounty" : MessageLookupByLibrary.simpleMessage("BP Bounty"),
@@ -72,18 +78,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "claymore" : MessageLookupByLibrary.simpleMessage("Claymore"),
     "clock" : MessageLookupByLibrary.simpleMessage("Clock"),
     "comingSoon" : MessageLookupByLibrary.simpleMessage("Coming soon"),
-    "constellationX" : m2,
+    "constellationX" : m3,
     "constellations" : MessageLookupByLibrary.simpleMessage("Constellations"),
     "crafting" : MessageLookupByLibrary.simpleMessage("Crafting"),
-    "critAtk" : m3,
-    "critDmgPercentage" : m4,
-    "critRate" : m5,
-    "critRatePercentage" : m6,
+    "critAtk" : m4,
+    "critDmgPercentage" : m5,
+    "critRate" : m6,
+    "critRatePercentage" : m7,
     "crown" : MessageLookupByLibrary.simpleMessage("Crown"),
     "dark" : MessageLookupByLibrary.simpleMessage("Dark"),
-    "defPercentage" : m7,
+    "defPercentage" : m8,
     "desc" : MessageLookupByLibrary.simpleMessage("Descending"),
     "description" : MessageLookupByLibrary.simpleMessage("Description"),
+    "disclaimer" : MessageLookupByLibrary.simpleMessage("Disclaimer"),
+    "disclaimerMsg" : MessageLookupByLibrary.simpleMessage("This app is not affiliated with or endorsed by miHoYo. GenshinDb is just a database app for the Genshin Impact game"),
     "element" : MessageLookupByLibrary.simpleMessage("Element"),
     "elementalDebuffs" : MessageLookupByLibrary.simpleMessage("Elemental Debuffs"),
     "elementalDebuffsExplainded" : MessageLookupByLibrary.simpleMessage("Each of these have a different negative effect when applied to you or your enemies"),
@@ -91,10 +99,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "elementalReactions" : MessageLookupByLibrary.simpleMessage("Elemental Reactions"),
     "elementalReactionsExplainded" : MessageLookupByLibrary.simpleMessage("Combinations of different elements produces different reactions"),
     "elementalResonances" : MessageLookupByLibrary.simpleMessage("Elemental Resonances"),
-    "elementaryMaster" : m8,
+    "elementaryMaster" : m9,
     "elements" : MessageLookupByLibrary.simpleMessage("Elements"),
     "elemetalResonancesExplanined" : MessageLookupByLibrary.simpleMessage("Having these types of character in your party will give you the corresponding effect"),
-    "energyRechargePercentage" : m9,
+    "energyRechargePercentage" : m10,
     "english" : MessageLookupByLibrary.simpleMessage("English"),
     "female" : MessageLookupByLibrary.simpleMessage("Female"),
     "filters" : MessageLookupByLibrary.simpleMessage("Filters"),
@@ -107,7 +115,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "goblet" : MessageLookupByLibrary.simpleMessage("Goblet"),
     "healingBonus" : MessageLookupByLibrary.simpleMessage("Healing Bonus"),
     "home" : MessageLookupByLibrary.simpleMessage("Home"),
-    "hpPercentage" : m10,
+    "hpPercentage" : m11,
+    "issues" : MessageLookupByLibrary.simpleMessage("Issues"),
     "language" : MessageLookupByLibrary.simpleMessage("Language"),
     "level" : MessageLookupByLibrary.simpleMessage("Level"),
     "light" : MessageLookupByLibrary.simpleMessage("Light"),
@@ -124,8 +133,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "ok" : MessageLookupByLibrary.simpleMessage("Ok"),
     "others" : MessageLookupByLibrary.simpleMessage("Others"),
     "passives" : MessageLookupByLibrary.simpleMessage("Passives"),
-    "physDmgBonus" : m11,
-    "physDmgPercentage" : m12,
+    "physDmgBonus" : m12,
+    "physDmgPercentage" : m13,
     "plume" : MessageLookupByLibrary.simpleMessage("Plume"),
     "polearm" : MessageLookupByLibrary.simpleMessage("Polearm"),
     "rank" : MessageLookupByLibrary.simpleMessage("Rank"),
@@ -134,6 +143,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "refinements" : MessageLookupByLibrary.simpleMessage("Refinements"),
     "region" : MessageLookupByLibrary.simpleMessage("Region"),
     "released" : MessageLookupByLibrary.simpleMessage("Released"),
+    "restartMayBeNeeded" : MessageLookupByLibrary.simpleMessage("A restart may be needed for the changes to take effect"),
     "role" : MessageLookupByLibrary.simpleMessage("Role"),
     "saturday" : MessageLookupByLibrary.simpleMessage("Saturday"),
     "search" : MessageLookupByLibrary.simpleMessage("Search"),
@@ -148,15 +158,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "spanish" : MessageLookupByLibrary.simpleMessage("Spanish"),
     "starglitterExchange" : MessageLookupByLibrary.simpleMessage("Starglitter Exchange"),
     "sunday" : MessageLookupByLibrary.simpleMessage("Sunday"),
+    "support" : MessageLookupByLibrary.simpleMessage("Support"),
+    "supportMsg" : MessageLookupByLibrary.simpleMessage("I made this app in my free time and it is also open source. If you would like to help me, report an issue, have an idea, want a feature to be implemented, etc please open an issue here:"),
     "sword" : MessageLookupByLibrary.simpleMessage("Sword"),
-    "talentAscentionX" : m13,
+    "talentAscentionX" : m14,
     "talentsAscention" : MessageLookupByLibrary.simpleMessage("Talents Ascention"),
     "theme" : MessageLookupByLibrary.simpleMessage("Theme"),
     "thursday" : MessageLookupByLibrary.simpleMessage("Thursday"),
     "todayAscentionMaterials" : MessageLookupByLibrary.simpleMessage("Today\'s Ascention Materials"),
     "tuesday" : MessageLookupByLibrary.simpleMessage("Tuesday"),
     "type" : MessageLookupByLibrary.simpleMessage("Type"),
-    "unclockedAtAscentionLevelX" : m14,
+    "unclockedAtAscentionLevelX" : m15,
     "unlockedAutomatically" : MessageLookupByLibrary.simpleMessage("Unlocked Automatically"),
     "unreleased" : MessageLookupByLibrary.simpleMessage("Unreleased"),
     "weapon" : MessageLookupByLibrary.simpleMessage("Weapon"),

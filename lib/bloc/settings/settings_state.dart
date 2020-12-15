@@ -7,5 +7,6 @@ abstract class SettingsState with _$SettingsState {
     @required AppThemeType currentTheme,
     @required AppAccentColorType currentAccentColor,
     @required AppLanguageType currentLanguage,
+    @required String appVersion,
   }) = _LoadedState;
 }

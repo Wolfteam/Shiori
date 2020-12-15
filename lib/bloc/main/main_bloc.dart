@@ -70,38 +70,39 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     return _loadThemeData(packageInfo.appName, settings.appTheme, settings.accentColor, settings.appLanguage);
   }
 
-  MainState _loadThemeData(
+  Future<MainState> _loadThemeData(
     String appTitle,
     AppThemeType theme,
     AppAccentColorType accentColor,
     AppLanguageType language, {
     bool isInitialized = true,
-  }) {
+  }) async {
     final themeData = accentColor.getThemeData(theme);
-    _setLocale(language);
+    await _setLocale(language);
 
-    _logger.info(runtimeType, '_init: Is first intall = ${_settingsService.isFirstInstall}');
+    _logger.info(runtimeType, '_init: Is first install = ${_settingsService.isFirstInstall}');
 
     return MainState.loaded(
       appTitle: appTitle,
       initialized: isInitialized,
       theme: themeData,
       firstInstall: _settingsService.isFirstInstall,
+      currentLanguage: language,
       currentSelectedTab: 2,
     );
   }
 
-  void _setLocale(AppLanguageType language) {
+  Future<void> _setLocale(AppLanguageType language) async {
     var langCode = 'en';
     var countryCode = 'US';
     switch (language) {
       case AppLanguageType.spanish:
-        langCode = "es";
-        countryCode = "ES";
+        langCode = 'es';
+        countryCode = 'ES';
         break;
       default:
         break;
     }
-    S.load(Locale(langCode, countryCode));
+    await S.load(Locale(langCode, countryCode));
   }
 }

@@ -776,12 +776,14 @@ class _$MainStateTearOff {
       @required ThemeData theme,
       @required bool initialized,
       @required bool firstInstall,
+      @required AppLanguageType currentLanguage,
       int currentSelectedTab = 0}) {
     return _MainLoadedState(
       appTitle: appTitle,
       theme: theme,
       initialized: initialized,
       firstInstall: firstInstall,
+      currentLanguage: currentLanguage,
       currentSelectedTab: currentSelectedTab,
     );
   }
@@ -797,14 +799,24 @@ mixin _$MainState {
   TResult when<TResult extends Object>({
     @required TResult loading(),
     @required
-        TResult loaded(String appTitle, ThemeData theme, bool initialized,
-            bool firstInstall, int currentSelectedTab),
+        TResult loaded(
+            String appTitle,
+            ThemeData theme,
+            bool initialized,
+            bool firstInstall,
+            AppLanguageType currentLanguage,
+            int currentSelectedTab),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult loading(),
-    TResult loaded(String appTitle, ThemeData theme, bool initialized,
-        bool firstInstall, int currentSelectedTab),
+    TResult loaded(
+        String appTitle,
+        ThemeData theme,
+        bool initialized,
+        bool firstInstall,
+        AppLanguageType currentLanguage,
+        int currentSelectedTab),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -876,8 +888,13 @@ class _$_MainLoadingState extends _MainLoadingState {
   TResult when<TResult extends Object>({
     @required TResult loading(),
     @required
-        TResult loaded(String appTitle, ThemeData theme, bool initialized,
-            bool firstInstall, int currentSelectedTab),
+        TResult loaded(
+            String appTitle,
+            ThemeData theme,
+            bool initialized,
+            bool firstInstall,
+            AppLanguageType currentLanguage,
+            int currentSelectedTab),
   }) {
     assert(loading != null);
     assert(loaded != null);
@@ -888,8 +905,13 @@ class _$_MainLoadingState extends _MainLoadingState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult loading(),
-    TResult loaded(String appTitle, ThemeData theme, bool initialized,
-        bool firstInstall, int currentSelectedTab),
+    TResult loaded(
+        String appTitle,
+        ThemeData theme,
+        bool initialized,
+        bool firstInstall,
+        AppLanguageType currentLanguage,
+        int currentSelectedTab),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -940,6 +962,7 @@ abstract class _$MainLoadedStateCopyWith<$Res> {
       ThemeData theme,
       bool initialized,
       bool firstInstall,
+      AppLanguageType currentLanguage,
       int currentSelectedTab});
 }
 
@@ -959,6 +982,7 @@ class __$MainLoadedStateCopyWithImpl<$Res> extends _$MainStateCopyWithImpl<$Res>
     Object theme = freezed,
     Object initialized = freezed,
     Object firstInstall = freezed,
+    Object currentLanguage = freezed,
     Object currentSelectedTab = freezed,
   }) {
     return _then(_MainLoadedState(
@@ -968,6 +992,9 @@ class __$MainLoadedStateCopyWithImpl<$Res> extends _$MainStateCopyWithImpl<$Res>
           initialized == freezed ? _value.initialized : initialized as bool,
       firstInstall:
           firstInstall == freezed ? _value.firstInstall : firstInstall as bool,
+      currentLanguage: currentLanguage == freezed
+          ? _value.currentLanguage
+          : currentLanguage as AppLanguageType,
       currentSelectedTab: currentSelectedTab == freezed
           ? _value.currentSelectedTab
           : currentSelectedTab as int,
@@ -982,11 +1009,13 @@ class _$_MainLoadedState extends _MainLoadedState {
       @required this.theme,
       @required this.initialized,
       @required this.firstInstall,
+      @required this.currentLanguage,
       this.currentSelectedTab = 0})
       : assert(appTitle != null),
         assert(theme != null),
         assert(initialized != null),
         assert(firstInstall != null),
+        assert(currentLanguage != null),
         assert(currentSelectedTab != null),
         super._();
 
@@ -998,13 +1027,15 @@ class _$_MainLoadedState extends _MainLoadedState {
   final bool initialized;
   @override
   final bool firstInstall;
+  @override
+  final AppLanguageType currentLanguage;
   @JsonKey(defaultValue: 0)
   @override
   final int currentSelectedTab;
 
   @override
   String toString() {
-    return 'MainState.loaded(appTitle: $appTitle, theme: $theme, initialized: $initialized, firstInstall: $firstInstall, currentSelectedTab: $currentSelectedTab)';
+    return 'MainState.loaded(appTitle: $appTitle, theme: $theme, initialized: $initialized, firstInstall: $firstInstall, currentLanguage: $currentLanguage, currentSelectedTab: $currentSelectedTab)';
   }
 
   @override
@@ -1022,6 +1053,9 @@ class _$_MainLoadedState extends _MainLoadedState {
             (identical(other.firstInstall, firstInstall) ||
                 const DeepCollectionEquality()
                     .equals(other.firstInstall, firstInstall)) &&
+            (identical(other.currentLanguage, currentLanguage) ||
+                const DeepCollectionEquality()
+                    .equals(other.currentLanguage, currentLanguage)) &&
             (identical(other.currentSelectedTab, currentSelectedTab) ||
                 const DeepCollectionEquality()
                     .equals(other.currentSelectedTab, currentSelectedTab)));
@@ -1034,6 +1068,7 @@ class _$_MainLoadedState extends _MainLoadedState {
       const DeepCollectionEquality().hash(theme) ^
       const DeepCollectionEquality().hash(initialized) ^
       const DeepCollectionEquality().hash(firstInstall) ^
+      const DeepCollectionEquality().hash(currentLanguage) ^
       const DeepCollectionEquality().hash(currentSelectedTab);
 
   @override
@@ -1045,27 +1080,37 @@ class _$_MainLoadedState extends _MainLoadedState {
   TResult when<TResult extends Object>({
     @required TResult loading(),
     @required
-        TResult loaded(String appTitle, ThemeData theme, bool initialized,
-            bool firstInstall, int currentSelectedTab),
+        TResult loaded(
+            String appTitle,
+            ThemeData theme,
+            bool initialized,
+            bool firstInstall,
+            AppLanguageType currentLanguage,
+            int currentSelectedTab),
   }) {
     assert(loading != null);
     assert(loaded != null);
-    return loaded(
-        appTitle, theme, initialized, firstInstall, currentSelectedTab);
+    return loaded(appTitle, theme, initialized, firstInstall, currentLanguage,
+        currentSelectedTab);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult loading(),
-    TResult loaded(String appTitle, ThemeData theme, bool initialized,
-        bool firstInstall, int currentSelectedTab),
+    TResult loaded(
+        String appTitle,
+        ThemeData theme,
+        bool initialized,
+        bool firstInstall,
+        AppLanguageType currentLanguage,
+        int currentSelectedTab),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (loaded != null) {
-      return loaded(
-          appTitle, theme, initialized, firstInstall, currentSelectedTab);
+      return loaded(appTitle, theme, initialized, firstInstall, currentLanguage,
+          currentSelectedTab);
     }
     return orElse();
   }
@@ -1103,12 +1148,14 @@ abstract class _MainLoadedState extends MainState {
       @required ThemeData theme,
       @required bool initialized,
       @required bool firstInstall,
+      @required AppLanguageType currentLanguage,
       int currentSelectedTab}) = _$_MainLoadedState;
 
   String get appTitle;
   ThemeData get theme;
   bool get initialized;
   bool get firstInstall;
+  AppLanguageType get currentLanguage;
   int get currentSelectedTab;
   _$MainLoadedStateCopyWith<_MainLoadedState> get copyWith;
 }
