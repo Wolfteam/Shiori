@@ -9,17 +9,22 @@ import '../../common/enums/app_accent_color_type.dart';
 import '../../common/enums/app_language_type.dart';
 import '../../common/enums/app_theme_type.dart';
 import '../../common/extensions/app_theme_type_extensions.dart';
+import '../../common/utils/app_path_utils.dart';
 import '../../generated/l10n.dart';
 import '../../services/genshing_service.dart';
+import '../../services/logging_service.dart';
+import '../../services/settings_service.dart';
 
 part 'main_bloc.freezed.dart';
 part 'main_event.dart';
 part 'main_state.dart';
 
 class MainBloc extends Bloc<MainEvent, MainState> {
+  final LoggingService _logger;
   final GenshinService _genshinService;
+  final SettingsService _settingsService;
 
-  MainBloc(this._genshinService) : super(const MainState.loading());
+  MainBloc(this._logger, this._genshinService, this._settingsService) : super(const MainState.loading());
 
   _MainLoadedState get currentState => state as _MainLoadedState;
 
@@ -32,13 +37,16 @@ class MainBloc extends Bloc<MainEvent, MainState> {
         return _init();
       },
       themeChanged: (theme) async {
-        return _loadThemeData(currentState.appTitle, theme, AppAccentColorType.amber, AppLanguageType.english);
+        return _loadThemeData(currentState.appTitle, theme, _settingsService.accentColor, _settingsService.language);
       },
       accentColorChanged: (accentColor) async {
-        return _loadThemeData(currentState.appTitle, AppThemeType.dark, accentColor, AppLanguageType.english);
+        return _loadThemeData(currentState.appTitle, _settingsService.appTheme, accentColor, _settingsService.language);
       },
       goToTab: (index) async {
         return currentState.copyWith(currentSelectedTab: index);
+      },
+      languageChanged: (language) async {
+        return _init();
       },
     );
 
@@ -46,20 +54,20 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   }
 
   Future<MainState> _init() async {
-    // _logger.info(runtimeType, '_init: Initializing all..');
-    // await _settings.init();
+    _logger.info(runtimeType, '_init: Initializing all..');
+    await _settingsService.init();
 
-    // _logger.info(runtimeType, '_init: Deleting old logs...');
-    // try {
-    //   await AppPathUtils.deleteOlLogs();
-    // } catch (e, s) {
-    //   _logger.error(runtimeType, '_init: Unknown error while trying to delete old logs', e, s);
-    // }
+    _logger.info(runtimeType, '_init: Deleting old logs...');
+    try {
+      await AppPathUtils.deleteOlLogs();
+    } catch (e, s) {
+      _logger.error(runtimeType, '_init: Unknown error while trying to delete old logs', e, s);
+    }
     await _genshinService.init(AppLanguageType.english);
     final packageInfo = await PackageInfo.fromPlatform();
-    // final appSettings = _settings.appSettings;
+    final settings = _settingsService.appSettings;
     await Future.delayed(const Duration(milliseconds: 600));
-    return _loadThemeData(packageInfo.appName, AppThemeType.dark, AppAccentColorType.red, AppLanguageType.english);
+    return _loadThemeData(packageInfo.appName, settings.appTheme, settings.accentColor, settings.appLanguage);
   }
 
   MainState _loadThemeData(
@@ -72,11 +80,15 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     final themeData = accentColor.getThemeData(theme);
     _setLocale(language);
 
-    // _logger.info(runtimeType, '_init: Is first intall = ${_settings.isFirstInstall}');
+    _logger.info(runtimeType, '_init: Is first intall = ${_settingsService.isFirstInstall}');
+
     return MainState.loaded(
-        appTitle: appTitle, initialized: isInitialized, theme: themeData, firstInstall: true, currentSelectedTab: 2
-        // firstInstall: _settings.isFirstInstall,
-        );
+      appTitle: appTitle,
+      initialized: isInitialized,
+      theme: themeData,
+      firstInstall: _settingsService.isFirstInstall,
+      currentSelectedTab: 2,
+    );
   }
 
   void _setLocale(AppLanguageType language) {

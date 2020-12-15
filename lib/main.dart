@@ -7,6 +7,8 @@ import 'bloc/bloc.dart';
 import 'generated/l10n.dart';
 import 'injection.dart';
 import 'services/genshing_service.dart';
+import 'services/logging_service.dart';
+import 'services/settings_service.dart';
 import 'telemetry.dart';
 import 'ui/pages/main_page.dart';
 import 'ui/pages/splash_page.dart';
@@ -26,8 +28,10 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (ctx) {
+            final loggingService = getIt<LoggingService>();
             final genshinService = getIt<GenshinService>();
-            return MainBloc(genshinService)..add(const MainEvent.init());
+            final settingsService = getIt<SettingsService>();
+            return MainBloc(loggingService, genshinService, settingsService)..add(const MainEvent.init());
           },
         ),
         BlocProvider(
@@ -76,6 +80,12 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             return MaterialsBloc(genshinService);
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final settingsService = getIt<SettingsService>();
+            return SettingsBloc(settingsService);
           },
         ),
       ],

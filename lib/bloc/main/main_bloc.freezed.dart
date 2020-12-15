@@ -14,29 +14,36 @@ class _$MainEventTearOff {
   const _$MainEventTearOff();
 
 // ignore: unused_element
-  MainInitEvent init() {
-    return const MainInitEvent();
+  _Init init() {
+    return const _Init();
   }
 
 // ignore: unused_element
-  MainThemeChangedEvent themeChanged({@required AppThemeType theme}) {
-    return MainThemeChangedEvent(
-      theme: theme,
+  _ThemeChanged themeChanged({@required AppThemeType newValue}) {
+    return _ThemeChanged(
+      newValue: newValue,
     );
   }
 
 // ignore: unused_element
-  MainAccentColorChangedEvent accentColorChanged(
-      {@required AppAccentColorType accentColor}) {
-    return MainAccentColorChangedEvent(
-      accentColor: accentColor,
+  _AccentColorChanged accentColorChanged(
+      {@required AppAccentColorType newValue}) {
+    return _AccentColorChanged(
+      newValue: newValue,
     );
   }
 
 // ignore: unused_element
-  MainGoToTabEvent goToTab({@required int index}) {
-    return MainGoToTabEvent(
+  _GoToTab goToTab({@required int index}) {
+    return _GoToTab(
       index: index,
+    );
+  }
+
+// ignore: unused_element
+  _LanguageChanged languageChanged({@required AppLanguageType newValue}) {
+    return _LanguageChanged(
+      newValue: newValue,
     );
   }
 }
@@ -50,31 +57,35 @@ mixin _$MainEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult init(),
-    @required TResult themeChanged(AppThemeType theme),
-    @required TResult accentColorChanged(AppAccentColorType accentColor),
+    @required TResult themeChanged(AppThemeType newValue),
+    @required TResult accentColorChanged(AppAccentColorType newValue),
     @required TResult goToTab(int index),
+    @required TResult languageChanged(AppLanguageType newValue),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult init(),
-    TResult themeChanged(AppThemeType theme),
-    TResult accentColorChanged(AppAccentColorType accentColor),
+    TResult themeChanged(AppThemeType newValue),
+    TResult accentColorChanged(AppAccentColorType newValue),
     TResult goToTab(int index),
+    TResult languageChanged(AppLanguageType newValue),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult init(MainInitEvent value),
-    @required TResult themeChanged(MainThemeChangedEvent value),
-    @required TResult accentColorChanged(MainAccentColorChangedEvent value),
-    @required TResult goToTab(MainGoToTabEvent value),
+    @required TResult init(_Init value),
+    @required TResult themeChanged(_ThemeChanged value),
+    @required TResult accentColorChanged(_AccentColorChanged value),
+    @required TResult goToTab(_GoToTab value),
+    @required TResult languageChanged(_LanguageChanged value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult init(MainInitEvent value),
-    TResult themeChanged(MainThemeChangedEvent value),
-    TResult accentColorChanged(MainAccentColorChangedEvent value),
-    TResult goToTab(MainGoToTabEvent value),
+    TResult init(_Init value),
+    TResult themeChanged(_ThemeChanged value),
+    TResult accentColorChanged(_AccentColorChanged value),
+    TResult goToTab(_GoToTab value),
+    TResult languageChanged(_LanguageChanged value),
     @required TResult orElse(),
   });
 }
@@ -95,26 +106,24 @@ class _$MainEventCopyWithImpl<$Res> implements $MainEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $MainInitEventCopyWith<$Res> {
-  factory $MainInitEventCopyWith(
-          MainInitEvent value, $Res Function(MainInitEvent) then) =
-      _$MainInitEventCopyWithImpl<$Res>;
+abstract class _$InitCopyWith<$Res> {
+  factory _$InitCopyWith(_Init value, $Res Function(_Init) then) =
+      __$InitCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MainInitEventCopyWithImpl<$Res> extends _$MainEventCopyWithImpl<$Res>
-    implements $MainInitEventCopyWith<$Res> {
-  _$MainInitEventCopyWithImpl(
-      MainInitEvent _value, $Res Function(MainInitEvent) _then)
-      : super(_value, (v) => _then(v as MainInitEvent));
+class __$InitCopyWithImpl<$Res> extends _$MainEventCopyWithImpl<$Res>
+    implements _$InitCopyWith<$Res> {
+  __$InitCopyWithImpl(_Init _value, $Res Function(_Init) _then)
+      : super(_value, (v) => _then(v as _Init));
 
   @override
-  MainInitEvent get _value => super._value as MainInitEvent;
+  _Init get _value => super._value as _Init;
 }
 
 /// @nodoc
-class _$MainInitEvent extends MainInitEvent {
-  const _$MainInitEvent() : super._();
+class _$_Init extends _Init {
+  const _$_Init() : super._();
 
   @override
   String toString() {
@@ -123,7 +132,7 @@ class _$MainInitEvent extends MainInitEvent {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is MainInitEvent);
+    return identical(this, other) || (other is _Init);
   }
 
   @override
@@ -133,14 +142,16 @@ class _$MainInitEvent extends MainInitEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult init(),
-    @required TResult themeChanged(AppThemeType theme),
-    @required TResult accentColorChanged(AppAccentColorType accentColor),
+    @required TResult themeChanged(AppThemeType newValue),
+    @required TResult accentColorChanged(AppAccentColorType newValue),
     @required TResult goToTab(int index),
+    @required TResult languageChanged(AppLanguageType newValue),
   }) {
     assert(init != null);
     assert(themeChanged != null);
     assert(accentColorChanged != null);
     assert(goToTab != null);
+    assert(languageChanged != null);
     return init();
   }
 
@@ -148,9 +159,10 @@ class _$MainInitEvent extends MainInitEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult init(),
-    TResult themeChanged(AppThemeType theme),
-    TResult accentColorChanged(AppAccentColorType accentColor),
+    TResult themeChanged(AppThemeType newValue),
+    TResult accentColorChanged(AppAccentColorType newValue),
     TResult goToTab(int index),
+    TResult languageChanged(AppLanguageType newValue),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -163,25 +175,28 @@ class _$MainInitEvent extends MainInitEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult init(MainInitEvent value),
-    @required TResult themeChanged(MainThemeChangedEvent value),
-    @required TResult accentColorChanged(MainAccentColorChangedEvent value),
-    @required TResult goToTab(MainGoToTabEvent value),
+    @required TResult init(_Init value),
+    @required TResult themeChanged(_ThemeChanged value),
+    @required TResult accentColorChanged(_AccentColorChanged value),
+    @required TResult goToTab(_GoToTab value),
+    @required TResult languageChanged(_LanguageChanged value),
   }) {
     assert(init != null);
     assert(themeChanged != null);
     assert(accentColorChanged != null);
     assert(goToTab != null);
+    assert(languageChanged != null);
     return init(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult init(MainInitEvent value),
-    TResult themeChanged(MainThemeChangedEvent value),
-    TResult accentColorChanged(MainAccentColorChangedEvent value),
-    TResult goToTab(MainGoToTabEvent value),
+    TResult init(_Init value),
+    TResult themeChanged(_ThemeChanged value),
+    TResult accentColorChanged(_AccentColorChanged value),
+    TResult goToTab(_GoToTab value),
+    TResult languageChanged(_LanguageChanged value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -192,98 +207,101 @@ class _$MainInitEvent extends MainInitEvent {
   }
 }
 
-abstract class MainInitEvent extends MainEvent {
-  const MainInitEvent._() : super._();
-  const factory MainInitEvent() = _$MainInitEvent;
+abstract class _Init extends MainEvent {
+  const _Init._() : super._();
+  const factory _Init() = _$_Init;
 }
 
 /// @nodoc
-abstract class $MainThemeChangedEventCopyWith<$Res> {
-  factory $MainThemeChangedEventCopyWith(MainThemeChangedEvent value,
-          $Res Function(MainThemeChangedEvent) then) =
-      _$MainThemeChangedEventCopyWithImpl<$Res>;
-  $Res call({AppThemeType theme});
+abstract class _$ThemeChangedCopyWith<$Res> {
+  factory _$ThemeChangedCopyWith(
+          _ThemeChanged value, $Res Function(_ThemeChanged) then) =
+      __$ThemeChangedCopyWithImpl<$Res>;
+  $Res call({AppThemeType newValue});
 }
 
 /// @nodoc
-class _$MainThemeChangedEventCopyWithImpl<$Res>
-    extends _$MainEventCopyWithImpl<$Res>
-    implements $MainThemeChangedEventCopyWith<$Res> {
-  _$MainThemeChangedEventCopyWithImpl(
-      MainThemeChangedEvent _value, $Res Function(MainThemeChangedEvent) _then)
-      : super(_value, (v) => _then(v as MainThemeChangedEvent));
+class __$ThemeChangedCopyWithImpl<$Res> extends _$MainEventCopyWithImpl<$Res>
+    implements _$ThemeChangedCopyWith<$Res> {
+  __$ThemeChangedCopyWithImpl(
+      _ThemeChanged _value, $Res Function(_ThemeChanged) _then)
+      : super(_value, (v) => _then(v as _ThemeChanged));
 
   @override
-  MainThemeChangedEvent get _value => super._value as MainThemeChangedEvent;
+  _ThemeChanged get _value => super._value as _ThemeChanged;
 
   @override
   $Res call({
-    Object theme = freezed,
+    Object newValue = freezed,
   }) {
-    return _then(MainThemeChangedEvent(
-      theme: theme == freezed ? _value.theme : theme as AppThemeType,
+    return _then(_ThemeChanged(
+      newValue:
+          newValue == freezed ? _value.newValue : newValue as AppThemeType,
     ));
   }
 }
 
 /// @nodoc
-class _$MainThemeChangedEvent extends MainThemeChangedEvent {
-  const _$MainThemeChangedEvent({@required this.theme})
-      : assert(theme != null),
+class _$_ThemeChanged extends _ThemeChanged {
+  const _$_ThemeChanged({@required this.newValue})
+      : assert(newValue != null),
         super._();
 
   @override
-  final AppThemeType theme;
+  final AppThemeType newValue;
 
   @override
   String toString() {
-    return 'MainEvent.themeChanged(theme: $theme)';
+    return 'MainEvent.themeChanged(newValue: $newValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MainThemeChangedEvent &&
-            (identical(other.theme, theme) ||
-                const DeepCollectionEquality().equals(other.theme, theme)));
+        (other is _ThemeChanged &&
+            (identical(other.newValue, newValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.newValue, newValue)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(theme);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(newValue);
 
   @override
-  $MainThemeChangedEventCopyWith<MainThemeChangedEvent> get copyWith =>
-      _$MainThemeChangedEventCopyWithImpl<MainThemeChangedEvent>(
-          this, _$identity);
+  _$ThemeChangedCopyWith<_ThemeChanged> get copyWith =>
+      __$ThemeChangedCopyWithImpl<_ThemeChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult init(),
-    @required TResult themeChanged(AppThemeType theme),
-    @required TResult accentColorChanged(AppAccentColorType accentColor),
+    @required TResult themeChanged(AppThemeType newValue),
+    @required TResult accentColorChanged(AppAccentColorType newValue),
     @required TResult goToTab(int index),
+    @required TResult languageChanged(AppLanguageType newValue),
   }) {
     assert(init != null);
     assert(themeChanged != null);
     assert(accentColorChanged != null);
     assert(goToTab != null);
-    return themeChanged(theme);
+    assert(languageChanged != null);
+    return themeChanged(newValue);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult init(),
-    TResult themeChanged(AppThemeType theme),
-    TResult accentColorChanged(AppAccentColorType accentColor),
+    TResult themeChanged(AppThemeType newValue),
+    TResult accentColorChanged(AppAccentColorType newValue),
     TResult goToTab(int index),
+    TResult languageChanged(AppLanguageType newValue),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (themeChanged != null) {
-      return themeChanged(theme);
+      return themeChanged(newValue);
     }
     return orElse();
   }
@@ -291,25 +309,28 @@ class _$MainThemeChangedEvent extends MainThemeChangedEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult init(MainInitEvent value),
-    @required TResult themeChanged(MainThemeChangedEvent value),
-    @required TResult accentColorChanged(MainAccentColorChangedEvent value),
-    @required TResult goToTab(MainGoToTabEvent value),
+    @required TResult init(_Init value),
+    @required TResult themeChanged(_ThemeChanged value),
+    @required TResult accentColorChanged(_AccentColorChanged value),
+    @required TResult goToTab(_GoToTab value),
+    @required TResult languageChanged(_LanguageChanged value),
   }) {
     assert(init != null);
     assert(themeChanged != null);
     assert(accentColorChanged != null);
     assert(goToTab != null);
+    assert(languageChanged != null);
     return themeChanged(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult init(MainInitEvent value),
-    TResult themeChanged(MainThemeChangedEvent value),
-    TResult accentColorChanged(MainAccentColorChangedEvent value),
-    TResult goToTab(MainGoToTabEvent value),
+    TResult init(_Init value),
+    TResult themeChanged(_ThemeChanged value),
+    TResult accentColorChanged(_AccentColorChanged value),
+    TResult goToTab(_GoToTab value),
+    TResult languageChanged(_LanguageChanged value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -320,107 +341,107 @@ class _$MainThemeChangedEvent extends MainThemeChangedEvent {
   }
 }
 
-abstract class MainThemeChangedEvent extends MainEvent {
-  const MainThemeChangedEvent._() : super._();
-  const factory MainThemeChangedEvent({@required AppThemeType theme}) =
-      _$MainThemeChangedEvent;
+abstract class _ThemeChanged extends MainEvent {
+  const _ThemeChanged._() : super._();
+  const factory _ThemeChanged({@required AppThemeType newValue}) =
+      _$_ThemeChanged;
 
-  AppThemeType get theme;
-  $MainThemeChangedEventCopyWith<MainThemeChangedEvent> get copyWith;
+  AppThemeType get newValue;
+  _$ThemeChangedCopyWith<_ThemeChanged> get copyWith;
 }
 
 /// @nodoc
-abstract class $MainAccentColorChangedEventCopyWith<$Res> {
-  factory $MainAccentColorChangedEventCopyWith(
-          MainAccentColorChangedEvent value,
-          $Res Function(MainAccentColorChangedEvent) then) =
-      _$MainAccentColorChangedEventCopyWithImpl<$Res>;
-  $Res call({AppAccentColorType accentColor});
+abstract class _$AccentColorChangedCopyWith<$Res> {
+  factory _$AccentColorChangedCopyWith(
+          _AccentColorChanged value, $Res Function(_AccentColorChanged) then) =
+      __$AccentColorChangedCopyWithImpl<$Res>;
+  $Res call({AppAccentColorType newValue});
 }
 
 /// @nodoc
-class _$MainAccentColorChangedEventCopyWithImpl<$Res>
+class __$AccentColorChangedCopyWithImpl<$Res>
     extends _$MainEventCopyWithImpl<$Res>
-    implements $MainAccentColorChangedEventCopyWith<$Res> {
-  _$MainAccentColorChangedEventCopyWithImpl(MainAccentColorChangedEvent _value,
-      $Res Function(MainAccentColorChangedEvent) _then)
-      : super(_value, (v) => _then(v as MainAccentColorChangedEvent));
+    implements _$AccentColorChangedCopyWith<$Res> {
+  __$AccentColorChangedCopyWithImpl(
+      _AccentColorChanged _value, $Res Function(_AccentColorChanged) _then)
+      : super(_value, (v) => _then(v as _AccentColorChanged));
 
   @override
-  MainAccentColorChangedEvent get _value =>
-      super._value as MainAccentColorChangedEvent;
+  _AccentColorChanged get _value => super._value as _AccentColorChanged;
 
   @override
   $Res call({
-    Object accentColor = freezed,
+    Object newValue = freezed,
   }) {
-    return _then(MainAccentColorChangedEvent(
-      accentColor: accentColor == freezed
-          ? _value.accentColor
-          : accentColor as AppAccentColorType,
+    return _then(_AccentColorChanged(
+      newValue: newValue == freezed
+          ? _value.newValue
+          : newValue as AppAccentColorType,
     ));
   }
 }
 
 /// @nodoc
-class _$MainAccentColorChangedEvent extends MainAccentColorChangedEvent {
-  const _$MainAccentColorChangedEvent({@required this.accentColor})
-      : assert(accentColor != null),
+class _$_AccentColorChanged extends _AccentColorChanged {
+  const _$_AccentColorChanged({@required this.newValue})
+      : assert(newValue != null),
         super._();
 
   @override
-  final AppAccentColorType accentColor;
+  final AppAccentColorType newValue;
 
   @override
   String toString() {
-    return 'MainEvent.accentColorChanged(accentColor: $accentColor)';
+    return 'MainEvent.accentColorChanged(newValue: $newValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MainAccentColorChangedEvent &&
-            (identical(other.accentColor, accentColor) ||
+        (other is _AccentColorChanged &&
+            (identical(other.newValue, newValue) ||
                 const DeepCollectionEquality()
-                    .equals(other.accentColor, accentColor)));
+                    .equals(other.newValue, newValue)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(accentColor);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(newValue);
 
   @override
-  $MainAccentColorChangedEventCopyWith<MainAccentColorChangedEvent>
-      get copyWith => _$MainAccentColorChangedEventCopyWithImpl<
-          MainAccentColorChangedEvent>(this, _$identity);
+  _$AccentColorChangedCopyWith<_AccentColorChanged> get copyWith =>
+      __$AccentColorChangedCopyWithImpl<_AccentColorChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult init(),
-    @required TResult themeChanged(AppThemeType theme),
-    @required TResult accentColorChanged(AppAccentColorType accentColor),
+    @required TResult themeChanged(AppThemeType newValue),
+    @required TResult accentColorChanged(AppAccentColorType newValue),
     @required TResult goToTab(int index),
+    @required TResult languageChanged(AppLanguageType newValue),
   }) {
     assert(init != null);
     assert(themeChanged != null);
     assert(accentColorChanged != null);
     assert(goToTab != null);
-    return accentColorChanged(accentColor);
+    assert(languageChanged != null);
+    return accentColorChanged(newValue);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult init(),
-    TResult themeChanged(AppThemeType theme),
-    TResult accentColorChanged(AppAccentColorType accentColor),
+    TResult themeChanged(AppThemeType newValue),
+    TResult accentColorChanged(AppAccentColorType newValue),
     TResult goToTab(int index),
+    TResult languageChanged(AppLanguageType newValue),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (accentColorChanged != null) {
-      return accentColorChanged(accentColor);
+      return accentColorChanged(newValue);
     }
     return orElse();
   }
@@ -428,25 +449,28 @@ class _$MainAccentColorChangedEvent extends MainAccentColorChangedEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult init(MainInitEvent value),
-    @required TResult themeChanged(MainThemeChangedEvent value),
-    @required TResult accentColorChanged(MainAccentColorChangedEvent value),
-    @required TResult goToTab(MainGoToTabEvent value),
+    @required TResult init(_Init value),
+    @required TResult themeChanged(_ThemeChanged value),
+    @required TResult accentColorChanged(_AccentColorChanged value),
+    @required TResult goToTab(_GoToTab value),
+    @required TResult languageChanged(_LanguageChanged value),
   }) {
     assert(init != null);
     assert(themeChanged != null);
     assert(accentColorChanged != null);
     assert(goToTab != null);
+    assert(languageChanged != null);
     return accentColorChanged(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult init(MainInitEvent value),
-    TResult themeChanged(MainThemeChangedEvent value),
-    TResult accentColorChanged(MainAccentColorChangedEvent value),
-    TResult goToTab(MainGoToTabEvent value),
+    TResult init(_Init value),
+    TResult themeChanged(_ThemeChanged value),
+    TResult accentColorChanged(_AccentColorChanged value),
+    TResult goToTab(_GoToTab value),
+    TResult languageChanged(_LanguageChanged value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -457,48 +481,44 @@ class _$MainAccentColorChangedEvent extends MainAccentColorChangedEvent {
   }
 }
 
-abstract class MainAccentColorChangedEvent extends MainEvent {
-  const MainAccentColorChangedEvent._() : super._();
-  const factory MainAccentColorChangedEvent(
-          {@required AppAccentColorType accentColor}) =
-      _$MainAccentColorChangedEvent;
+abstract class _AccentColorChanged extends MainEvent {
+  const _AccentColorChanged._() : super._();
+  const factory _AccentColorChanged({@required AppAccentColorType newValue}) =
+      _$_AccentColorChanged;
 
-  AppAccentColorType get accentColor;
-  $MainAccentColorChangedEventCopyWith<MainAccentColorChangedEvent>
-      get copyWith;
+  AppAccentColorType get newValue;
+  _$AccentColorChangedCopyWith<_AccentColorChanged> get copyWith;
 }
 
 /// @nodoc
-abstract class $MainGoToTabEventCopyWith<$Res> {
-  factory $MainGoToTabEventCopyWith(
-          MainGoToTabEvent value, $Res Function(MainGoToTabEvent) then) =
-      _$MainGoToTabEventCopyWithImpl<$Res>;
+abstract class _$GoToTabCopyWith<$Res> {
+  factory _$GoToTabCopyWith(_GoToTab value, $Res Function(_GoToTab) then) =
+      __$GoToTabCopyWithImpl<$Res>;
   $Res call({int index});
 }
 
 /// @nodoc
-class _$MainGoToTabEventCopyWithImpl<$Res> extends _$MainEventCopyWithImpl<$Res>
-    implements $MainGoToTabEventCopyWith<$Res> {
-  _$MainGoToTabEventCopyWithImpl(
-      MainGoToTabEvent _value, $Res Function(MainGoToTabEvent) _then)
-      : super(_value, (v) => _then(v as MainGoToTabEvent));
+class __$GoToTabCopyWithImpl<$Res> extends _$MainEventCopyWithImpl<$Res>
+    implements _$GoToTabCopyWith<$Res> {
+  __$GoToTabCopyWithImpl(_GoToTab _value, $Res Function(_GoToTab) _then)
+      : super(_value, (v) => _then(v as _GoToTab));
 
   @override
-  MainGoToTabEvent get _value => super._value as MainGoToTabEvent;
+  _GoToTab get _value => super._value as _GoToTab;
 
   @override
   $Res call({
     Object index = freezed,
   }) {
-    return _then(MainGoToTabEvent(
+    return _then(_GoToTab(
       index: index == freezed ? _value.index : index as int,
     ));
   }
 }
 
 /// @nodoc
-class _$MainGoToTabEvent extends MainGoToTabEvent {
-  const _$MainGoToTabEvent({@required this.index})
+class _$_GoToTab extends _GoToTab {
+  const _$_GoToTab({@required this.index})
       : assert(index != null),
         super._();
 
@@ -513,7 +533,7 @@ class _$MainGoToTabEvent extends MainGoToTabEvent {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MainGoToTabEvent &&
+        (other is _GoToTab &&
             (identical(other.index, index) ||
                 const DeepCollectionEquality().equals(other.index, index)));
   }
@@ -523,21 +543,23 @@ class _$MainGoToTabEvent extends MainGoToTabEvent {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
 
   @override
-  $MainGoToTabEventCopyWith<MainGoToTabEvent> get copyWith =>
-      _$MainGoToTabEventCopyWithImpl<MainGoToTabEvent>(this, _$identity);
+  _$GoToTabCopyWith<_GoToTab> get copyWith =>
+      __$GoToTabCopyWithImpl<_GoToTab>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult init(),
-    @required TResult themeChanged(AppThemeType theme),
-    @required TResult accentColorChanged(AppAccentColorType accentColor),
+    @required TResult themeChanged(AppThemeType newValue),
+    @required TResult accentColorChanged(AppAccentColorType newValue),
     @required TResult goToTab(int index),
+    @required TResult languageChanged(AppLanguageType newValue),
   }) {
     assert(init != null);
     assert(themeChanged != null);
     assert(accentColorChanged != null);
     assert(goToTab != null);
+    assert(languageChanged != null);
     return goToTab(index);
   }
 
@@ -545,9 +567,10 @@ class _$MainGoToTabEvent extends MainGoToTabEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult init(),
-    TResult themeChanged(AppThemeType theme),
-    TResult accentColorChanged(AppAccentColorType accentColor),
+    TResult themeChanged(AppThemeType newValue),
+    TResult accentColorChanged(AppAccentColorType newValue),
     TResult goToTab(int index),
+    TResult languageChanged(AppLanguageType newValue),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -560,25 +583,28 @@ class _$MainGoToTabEvent extends MainGoToTabEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult init(MainInitEvent value),
-    @required TResult themeChanged(MainThemeChangedEvent value),
-    @required TResult accentColorChanged(MainAccentColorChangedEvent value),
-    @required TResult goToTab(MainGoToTabEvent value),
+    @required TResult init(_Init value),
+    @required TResult themeChanged(_ThemeChanged value),
+    @required TResult accentColorChanged(_AccentColorChanged value),
+    @required TResult goToTab(_GoToTab value),
+    @required TResult languageChanged(_LanguageChanged value),
   }) {
     assert(init != null);
     assert(themeChanged != null);
     assert(accentColorChanged != null);
     assert(goToTab != null);
+    assert(languageChanged != null);
     return goToTab(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult init(MainInitEvent value),
-    TResult themeChanged(MainThemeChangedEvent value),
-    TResult accentColorChanged(MainAccentColorChangedEvent value),
-    TResult goToTab(MainGoToTabEvent value),
+    TResult init(_Init value),
+    TResult themeChanged(_ThemeChanged value),
+    TResult accentColorChanged(_AccentColorChanged value),
+    TResult goToTab(_GoToTab value),
+    TResult languageChanged(_LanguageChanged value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -589,12 +615,150 @@ class _$MainGoToTabEvent extends MainGoToTabEvent {
   }
 }
 
-abstract class MainGoToTabEvent extends MainEvent {
-  const MainGoToTabEvent._() : super._();
-  const factory MainGoToTabEvent({@required int index}) = _$MainGoToTabEvent;
+abstract class _GoToTab extends MainEvent {
+  const _GoToTab._() : super._();
+  const factory _GoToTab({@required int index}) = _$_GoToTab;
 
   int get index;
-  $MainGoToTabEventCopyWith<MainGoToTabEvent> get copyWith;
+  _$GoToTabCopyWith<_GoToTab> get copyWith;
+}
+
+/// @nodoc
+abstract class _$LanguageChangedCopyWith<$Res> {
+  factory _$LanguageChangedCopyWith(
+          _LanguageChanged value, $Res Function(_LanguageChanged) then) =
+      __$LanguageChangedCopyWithImpl<$Res>;
+  $Res call({AppLanguageType newValue});
+}
+
+/// @nodoc
+class __$LanguageChangedCopyWithImpl<$Res> extends _$MainEventCopyWithImpl<$Res>
+    implements _$LanguageChangedCopyWith<$Res> {
+  __$LanguageChangedCopyWithImpl(
+      _LanguageChanged _value, $Res Function(_LanguageChanged) _then)
+      : super(_value, (v) => _then(v as _LanguageChanged));
+
+  @override
+  _LanguageChanged get _value => super._value as _LanguageChanged;
+
+  @override
+  $Res call({
+    Object newValue = freezed,
+  }) {
+    return _then(_LanguageChanged(
+      newValue:
+          newValue == freezed ? _value.newValue : newValue as AppLanguageType,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_LanguageChanged extends _LanguageChanged {
+  const _$_LanguageChanged({@required this.newValue})
+      : assert(newValue != null),
+        super._();
+
+  @override
+  final AppLanguageType newValue;
+
+  @override
+  String toString() {
+    return 'MainEvent.languageChanged(newValue: $newValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _LanguageChanged &&
+            (identical(other.newValue, newValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.newValue, newValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(newValue);
+
+  @override
+  _$LanguageChangedCopyWith<_LanguageChanged> get copyWith =>
+      __$LanguageChangedCopyWithImpl<_LanguageChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult init(),
+    @required TResult themeChanged(AppThemeType newValue),
+    @required TResult accentColorChanged(AppAccentColorType newValue),
+    @required TResult goToTab(int index),
+    @required TResult languageChanged(AppLanguageType newValue),
+  }) {
+    assert(init != null);
+    assert(themeChanged != null);
+    assert(accentColorChanged != null);
+    assert(goToTab != null);
+    assert(languageChanged != null);
+    return languageChanged(newValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult init(),
+    TResult themeChanged(AppThemeType newValue),
+    TResult accentColorChanged(AppAccentColorType newValue),
+    TResult goToTab(int index),
+    TResult languageChanged(AppLanguageType newValue),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (languageChanged != null) {
+      return languageChanged(newValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult init(_Init value),
+    @required TResult themeChanged(_ThemeChanged value),
+    @required TResult accentColorChanged(_AccentColorChanged value),
+    @required TResult goToTab(_GoToTab value),
+    @required TResult languageChanged(_LanguageChanged value),
+  }) {
+    assert(init != null);
+    assert(themeChanged != null);
+    assert(accentColorChanged != null);
+    assert(goToTab != null);
+    assert(languageChanged != null);
+    return languageChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult init(_Init value),
+    TResult themeChanged(_ThemeChanged value),
+    TResult accentColorChanged(_AccentColorChanged value),
+    TResult goToTab(_GoToTab value),
+    TResult languageChanged(_LanguageChanged value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (languageChanged != null) {
+      return languageChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LanguageChanged extends MainEvent {
+  const _LanguageChanged._() : super._();
+  const factory _LanguageChanged({@required AppLanguageType newValue}) =
+      _$_LanguageChanged;
+
+  AppLanguageType get newValue;
+  _$LanguageChangedCopyWith<_LanguageChanged> get copyWith;
 }
 
 /// @nodoc
