@@ -31,20 +31,25 @@ class CharacterDetailTalentAscentionMaterialsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     if (talentAscentionMaterials.isNotEmpty) {
-      return _buildTableCard(s.talentsAscention, talentAscentionMaterials, s);
+      return _buildTableCard(s.talentsAscention, talentAscentionMaterials, context);
     }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         ...multiTalentAscentionMaterials
-            .map((e) => _buildTableCard(s.talentAscentionX(e.number), e.materials, s))
+            .map((e) => _buildTableCard(s.talentAscentionX(e.number), e.materials, context))
             .toList()
       ],
     );
   }
 
-  Widget _buildTableCard(String title, List<CharacterFileTalentAscentionMaterialModel> materials, S s) {
+  Widget _buildTableCard(
+    String title,
+    List<CharacterFileTalentAscentionMaterialModel> materials,
+    BuildContext context,
+  ) {
+    final s = S.of(context);
     final body = Card(
       elevation: Styles.cardTenElevation,
       margin: Styles.edgeInsetAll5,
@@ -81,7 +86,7 @@ class CharacterDetailTalentAscentionMaterialsCard extends StatelessWidget {
     return ItemDescriptionDetail(
       title: title,
       body: body,
-      textColor: elementType.getElementColor(),
+      textColor: elementType.getElementColorFromContext(context),
     );
   }
 

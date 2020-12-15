@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/common/genshin_db_icons.dart';
-import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 import '../../../bloc/bloc.dart';
 import '../../../common/enums/artifact_filter_type.dart';
-import '../../../common/enums/sort_direction_type.dart';
 import '../../../common/extensions/i18n_extensions.dart';
+import '../../../common/genshin_db_icons.dart';
 import '../../../common/styles.dart';
 import '../../../generated/l10n.dart';
 import '../common/bottom_sheet_title.dart';
 import '../common/item_popupmenu_filter.dart';
 import '../common/loading.dart';
 import '../common/modal_sheet_separator.dart';
+import '../common/rarity_rating.dart';
 import '../common/sort_direction_popupmenu_filter.dart';
 
 class ArtifactBottomSheet extends StatelessWidget {
@@ -36,15 +35,9 @@ class ArtifactBottomSheet extends StatelessWidget {
                   ModalSheetSeparator(),
                   BottomSheetTitle(icon: GenshinDb.filter, title: s.filters),
                   Text(s.rarity),
-                  Center(
-                    child: SmoothStarRating(
-                      rating: state.rarity.toDouble(),
-                      allowHalfRating: false,
-                      onRated: (v) => context.read<ArtifactsBloc>().add(ArtifactsEvent.rarityChanged(v.toInt())),
-                      size: 35.0,
-                      color: Colors.yellow,
-                      borderColor: Colors.yellow,
-                    ),
+                  RarityRating(
+                    rarity: state.rarity,
+                    onRated: (v) => context.read<ArtifactsBloc>().add(ArtifactsEvent.rarityChanged(v)),
                   ),
                   Text(s.others),
                   ButtonBar(

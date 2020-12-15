@@ -30,7 +30,7 @@ class CharacterDetailSkillsCard extends StatelessWidget {
     return ItemDescriptionDetail(
       title: s.skills,
       body: body,
-      textColor: elementType.getElementColor(),
+      textColor: elementType.getElementColorFromContext(context),
     );
   }
 
@@ -39,7 +39,7 @@ class CharacterDetailSkillsCard extends StatelessWidget {
     final img = Expanded(
       child: CircleAvatar(
         radius: 40,
-        backgroundColor: elementType.getElementColor(),
+        backgroundColor: elementType.getElementColorFromContext(context),
         child: Image.asset(model.fullImagePath, width: 65, height: 65),
       ),
     );
@@ -51,7 +51,7 @@ class CharacterDetailSkillsCard extends StatelessWidget {
             child: Text(
               model.title,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.headline6.copyWith(color: elementType.getElementColor()),
+              style: theme.textTheme.headline6.copyWith(color: elementType.getElementColorFromContext(context)),
             ),
           ),
           Tooltip(
@@ -80,7 +80,7 @@ class CharacterDetailSkillsCard extends StatelessWidget {
                 Text(
                   e.name,
                   overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.subtitle1.copyWith(color: elementType.getElementColor()),
+                  style: theme.textTheme.subtitle1.copyWith(color: elementType.getElementColorFromContext(context)),
                 ),
                 if (e.description != null) Text(e.description, style: theme.textTheme.bodyText2.copyWith(fontSize: 12)),
                 if (e.descriptions.isNotEmpty) BulletList(items: e.descriptions),

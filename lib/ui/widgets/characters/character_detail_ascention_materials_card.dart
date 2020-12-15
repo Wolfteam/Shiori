@@ -64,7 +64,7 @@ class CharacterDetailAscentionMaterialsCard extends StatelessWidget {
     return ItemDescriptionDetail(
       title: s.ascentionMaterials,
       body: body,
-      textColor: elementType.getElementColor(),
+      textColor: elementType.getElementColorFromContext(context),
     );
   }
 

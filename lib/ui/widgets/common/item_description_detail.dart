@@ -8,8 +8,12 @@ class ItemDescriptionDetail extends StatelessWidget {
   final Widget body;
   final Color textColor;
 
-  const ItemDescriptionDetail({Key key, @required this.title, @required this.body, @required this.textColor})
-      : super(key: key);
+  const ItemDescriptionDetail({
+    Key key,
+    @required this.title,
+    @required this.body,
+    @required this.textColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -26,7 +26,7 @@ class CharacterDetailPassiveCard extends StatelessWidget {
     return ItemDescriptionDetail(
       title: s.passives,
       body: body,
-      textColor: elementType.getElementColor(),
+      textColor: elementType.getElementColorFromContext(context),
     );
   }
 
@@ -45,12 +45,12 @@ class CharacterDetailPassiveCard extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 40,
-              backgroundColor: elementType.getElementColor(),
+              backgroundColor: elementType.getElementColorFromContext(context),
               child: Image.asset(model.fullImagePath, width: 60, height: 60),
             ),
             Text(
               model.title,
-              style: theme.textTheme.subtitle1.copyWith(color: elementType.getElementColor()),
+              style: theme.textTheme.subtitle1.copyWith(color: elementType.getElementColorFromContext(context)),
               textAlign: TextAlign.center,
             ),
             Text(
