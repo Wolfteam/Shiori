@@ -1084,6 +1084,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Theme`
+  String get theme {
+    return Intl.message(
+      'Theme',
+      name: 'theme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accent color`
+  String get accentColor {
+    return Intl.message(
+      'Accent color',
+      name: 'accentColor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose base app theme`
+  String get chooseBaseAppTheme {
+    return Intl.message(
+      'Choose base app theme',
+      name: 'chooseBaseAppTheme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose an accent color`
+  String get chooseAccentColor {
+    return Intl.message(
+      'Choose an accent color',
+      name: 'chooseAccentColor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose a language`
+  String get chooseLanguage {
+    return Intl.message(
+      'Choose a language',
+      name: 'chooseLanguage',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

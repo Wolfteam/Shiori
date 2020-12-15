@@ -103,5 +103,12 @@
     "desc": "Descending",
     "name": "Name",
     "weaponType": "Weapon type",
-    "nothingToShow": "Nothing to show"
+    "nothingToShow": "Nothing to show",
+    "theme": "Theme",
+    "settings": "Settings",
+    "accentColor": "Accent color",
+    "chooseBaseAppTheme": "Choose base app theme",
+    "chooseAccentColor": "Choose an accent color",
+    "language": "Language",
+    "chooseLanguage": "Choose a language"
 }

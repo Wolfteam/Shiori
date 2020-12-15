@@ -103,5 +103,12 @@
     "desc": "Descendente",
     "name": "Nombre",
     "weaponType": "Tipo de arma",
-    "nothingToShow": "Nada para mostrar"
+    "nothingToShow": "Nada para mostrar",
+    "theme": "Tema",
+    "settings": "Ajustes",
+    "accentColor": "Color de acento",
+    "chooseBaseAppTheme": "Escoge un tema base",
+    "chooseAccentColor": "Escoge un color de acento",
+    "language": "Lenguaje",
+    "chooseLanguage": "Escoge un lenguaje"
 }

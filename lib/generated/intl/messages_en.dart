@@ -51,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "accentColor" : MessageLookupByLibrary.simpleMessage("Accent color"),
     "all" : MessageLookupByLibrary.simpleMessage("All"),
     "appName" : MessageLookupByLibrary.simpleMessage("GenshinDb"),
     "artifacts" : MessageLookupByLibrary.simpleMessage("Artifacts"),
@@ -65,6 +66,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "catalyst" : MessageLookupByLibrary.simpleMessage("Catalyst"),
     "characters" : MessageLookupByLibrary.simpleMessage("Characters"),
     "chest" : MessageLookupByLibrary.simpleMessage("Chest"),
+    "chooseAccentColor" : MessageLookupByLibrary.simpleMessage("Choose an accent color"),
+    "chooseBaseAppTheme" : MessageLookupByLibrary.simpleMessage("Choose base app theme"),
+    "chooseLanguage" : MessageLookupByLibrary.simpleMessage("Choose a language"),
     "claymore" : MessageLookupByLibrary.simpleMessage("Claymore"),
     "clock" : MessageLookupByLibrary.simpleMessage("Clock"),
     "comingSoon" : MessageLookupByLibrary.simpleMessage("Coming soon"),
@@ -104,6 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "healingBonus" : MessageLookupByLibrary.simpleMessage("Healing Bonus"),
     "home" : MessageLookupByLibrary.simpleMessage("Home"),
     "hpPercentage" : m10,
+    "language" : MessageLookupByLibrary.simpleMessage("Language"),
     "level" : MessageLookupByLibrary.simpleMessage("Level"),
     "light" : MessageLookupByLibrary.simpleMessage("Light"),
     "loading" : MessageLookupByLibrary.simpleMessage("Loading"),
@@ -135,6 +140,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "secondaryStatValue" : MessageLookupByLibrary.simpleMessage("Secondary Stat Value"),
     "secondaryState" : MessageLookupByLibrary.simpleMessage("Secondary Stat"),
     "seeAll" : MessageLookupByLibrary.simpleMessage("See all"),
+    "settings" : MessageLookupByLibrary.simpleMessage("Settings"),
     "skills" : MessageLookupByLibrary.simpleMessage("Skills"),
     "sortBy" : MessageLookupByLibrary.simpleMessage("Sort by"),
     "sortDirection" : MessageLookupByLibrary.simpleMessage("Sort direction"),
@@ -145,6 +151,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sword" : MessageLookupByLibrary.simpleMessage("Sword"),
     "talentAscentionX" : m13,
     "talentsAscention" : MessageLookupByLibrary.simpleMessage("Talents Ascention"),
+    "theme" : MessageLookupByLibrary.simpleMessage("Theme"),
     "thursday" : MessageLookupByLibrary.simpleMessage("Thursday"),
     "todayAscentionMaterials" : MessageLookupByLibrary.simpleMessage("Today\'s Ascention Materials"),
     "tuesday" : MessageLookupByLibrary.simpleMessage("Tuesday"),

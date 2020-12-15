@@ -51,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "accentColor" : MessageLookupByLibrary.simpleMessage("Color de acento"),
     "all" : MessageLookupByLibrary.simpleMessage("Todos"),
     "appName" : MessageLookupByLibrary.simpleMessage("GenshinDb"),
     "artifacts" : MessageLookupByLibrary.simpleMessage("Artefactos"),
@@ -65,6 +66,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "catalyst" : MessageLookupByLibrary.simpleMessage("Catalyst"),
     "characters" : MessageLookupByLibrary.simpleMessage("Personajes"),
     "chest" : MessageLookupByLibrary.simpleMessage("Cofre"),
+    "chooseAccentColor" : MessageLookupByLibrary.simpleMessage("Escoge un color de acento"),
+    "chooseBaseAppTheme" : MessageLookupByLibrary.simpleMessage("Escoge un tema base"),
+    "chooseLanguage" : MessageLookupByLibrary.simpleMessage("Escoge un lenguaje"),
     "claymore" : MessageLookupByLibrary.simpleMessage("Claymore"),
     "clock" : MessageLookupByLibrary.simpleMessage("Reloj"),
     "comingSoon" : MessageLookupByLibrary.simpleMessage("Coming soon"),
@@ -104,6 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "healingBonus" : MessageLookupByLibrary.simpleMessage("Bono de curación"),
     "home" : MessageLookupByLibrary.simpleMessage("Inicio"),
     "hpPercentage" : m10,
+    "language" : MessageLookupByLibrary.simpleMessage("Lenguaje"),
     "level" : MessageLookupByLibrary.simpleMessage("Nivel"),
     "light" : MessageLookupByLibrary.simpleMessage("Ligero"),
     "loading" : MessageLookupByLibrary.simpleMessage("Cargando"),
@@ -135,6 +140,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "secondaryStatValue" : MessageLookupByLibrary.simpleMessage("Valor del Stat Secundario"),
     "secondaryState" : MessageLookupByLibrary.simpleMessage("Stat Secundario"),
     "seeAll" : MessageLookupByLibrary.simpleMessage("Ver todos"),
+    "settings" : MessageLookupByLibrary.simpleMessage("Ajustes"),
     "skills" : MessageLookupByLibrary.simpleMessage("Habilidades"),
     "sortBy" : MessageLookupByLibrary.simpleMessage("Ordenar por"),
     "sortDirection" : MessageLookupByLibrary.simpleMessage("Dirección de ordenamiento"),
@@ -145,6 +151,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sword" : MessageLookupByLibrary.simpleMessage("Espada"),
     "talentAscentionX" : m13,
     "talentsAscention" : MessageLookupByLibrary.simpleMessage("Talentos de Ascención"),
+    "theme" : MessageLookupByLibrary.simpleMessage("Tema"),
     "thursday" : MessageLookupByLibrary.simpleMessage("Jueves"),
     "todayAscentionMaterials" : MessageLookupByLibrary.simpleMessage("Materiales de Ascensión para Hoy"),
     "tuesday" : MessageLookupByLibrary.simpleMessage("Martes"),
