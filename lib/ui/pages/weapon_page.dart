@@ -176,19 +176,46 @@ class WeaponPage extends StatelessWidget {
       children: [
         Text(
           name,
-          style: theme.textTheme.headline5.copyWith(fontWeight: FontWeight.bold),
+          style: theme.textTheme.headline5.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         Rarity(stars: rarity, starSize: 25, alignment: MainAxisAlignment.start),
-        ItemDescription(title: s.type, widget: Text(s.translateWeaponType(type)), useColumn: false),
-        ItemDescription(title: s.baseAtk, widget: Text('$atk'), useColumn: false),
         ItemDescription(
-            title: s.secondaryState, widget: Text(s.translateStatType(statType, secondaryStatValue)), useColumn: false),
-        ItemDescription(title: s.location, widget: Text(s.translateItemLocationType(locationType)), useColumn: false),
+          title: s.type,
+          widget: Text(
+            s.translateWeaponType(type),
+            style: const TextStyle(color: Colors.white),
+          ),
+          useColumn: false,
+        ),
+        ItemDescription(
+          title: s.baseAtk,
+          widget: Text(
+            '$atk',
+            style: const TextStyle(color: Colors.white),
+          ),
+          useColumn: false,
+        ),
+        ItemDescription(
+          title: s.secondaryState,
+          widget: Text(
+            s.translateStatType(statType, secondaryStatValue),
+            style: const TextStyle(color: Colors.white),
+          ),
+          useColumn: false,
+        ),
+        ItemDescription(
+          title: s.location,
+          widget: Text(
+            s.translateItemLocationType(locationType),
+            style: const TextStyle(color: Colors.white),
+          ),
+          useColumn: false,
+        ),
       ],
     );
 
     return Card(
-      color: Colors.amber.withOpacity(0.1),
+      color: rarity.getRarityColors().first.withOpacity(0.1),
       elevation: Styles.cardTenElevation,
       margin: Styles.edgeInsetAll10,
       shape: Styles.cardShape,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../common/styles.dart';
+import '../common/element_image.dart';
 
 class ElementDebuffCard extends StatelessWidget {
   final String image;
@@ -22,9 +23,8 @@ class ElementDebuffCard extends StatelessWidget {
       child: Container(
         padding: Styles.edgeInsetAll5,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Image.asset(image, width: 45, height: 45),
+            ElementImage.fromPath(path: image),
             Text(
               name,
               textAlign: TextAlign.center,

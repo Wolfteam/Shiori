@@ -48,6 +48,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
     context.read<ArtifactsBloc>().add(const ArtifactsEvent.init());
     context.read<ElementsBloc>().add(const ElementsEvent.init());
     context.read<MaterialsBloc>().add(const MaterialsEvent.init());
+    context.read<SettingsBloc>().add(const SettingsEvent.init());
   }
 
   @override

@@ -22,14 +22,20 @@ class WeaponDetailRefinementsCard extends StatelessWidget {
         .map(
           (e) => TableRow(
             children: [
-              Padding(
-                padding: Styles.edgeInsetAll10,
-                child: Center(child: Text('${e.level}')),
-              ),
-              Center(
+              TableCell(
+                verticalAlignment: TableCellVerticalAlignment.middle,
                 child: Padding(
-                  padding: Styles.edgeInsetVertical5,
-                  child: Center(child: Text(e.description)),
+                  padding: Styles.edgeInsetAll10,
+                  child: Center(child: Text('${e.level}')),
+                ),
+              ),
+              TableCell(
+                verticalAlignment: TableCellVerticalAlignment.middle,
+                child: Center(
+                  child: Padding(
+                    padding: Styles.edgeInsetVertical5,
+                    child: Center(child: Text(e.description)),
+                  ),
                 ),
               ),
             ],
@@ -49,13 +55,19 @@ class WeaponDetailRefinementsCard extends StatelessWidget {
         children: [
           TableRow(
             children: [
-              Padding(
-                padding: Styles.edgeInsetAll10,
-                child: Center(child: Text(s.level)),
+              TableCell(
+                verticalAlignment: TableCellVerticalAlignment.middle,
+                child: Padding(
+                  padding: Styles.edgeInsetAll10,
+                  child: Center(child: Text(s.level)),
+                ),
               ),
-              Padding(
-                padding: Styles.edgeInsetAll10,
-                child: Center(child: Text(s.description)),
+              TableCell(
+                verticalAlignment: TableCellVerticalAlignment.middle,
+                child: Padding(
+                  padding: Styles.edgeInsetAll10,
+                  child: Center(child: Text(s.description)),
+                ),
               ),
             ],
           ),

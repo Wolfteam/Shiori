@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 import '../../../bloc/bloc.dart';
 import '../../../common/enums/weapon_filter_type.dart';
@@ -12,6 +11,7 @@ import '../common/bottom_sheet_title.dart';
 import '../common/item_popupmenu_filter.dart';
 import '../common/loading.dart';
 import '../common/modal_sheet_separator.dart';
+import '../common/rarity_rating.dart';
 import '../common/sort_direction_popupmenu_filter.dart';
 import '../common/weapons_button_bar.dart';
 
@@ -41,15 +41,9 @@ class WeaponBottomSheet extends StatelessWidget {
                     onClick: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.weaponTypeChanged(v)),
                   ),
                   Text(s.rarity),
-                  Center(
-                    child: SmoothStarRating(
-                      rating: state.rarity.toDouble(),
-                      allowHalfRating: false,
-                      onRated: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.rarityChanged(v.toInt())),
-                      size: 35.0,
-                      color: Colors.yellow,
-                      borderColor: Colors.yellow,
-                    ),
+                  RarityRating(
+                    rarity: state.rarity,
+                    onRated: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.rarityChanged(v)),
                   ),
                   Text(s.others),
                   ButtonBar(

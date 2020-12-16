@@ -1,19 +1,19 @@
+import '../assets.dart';
 import '../enums/weapon_type.dart';
 
 extension WeaponTypeExtension on WeaponType {
   String getWeaponAssetPath() {
-    const basePath = "assets/weapons";
     switch (this) {
       case WeaponType.bow:
-        return "$basePath/bow.png";
+        return Assets.getWeaponPath('amos_bow.png', this);
       case WeaponType.sword:
-        return "$basePath/sword.png";
+        return Assets.getWeaponPath('skyward_blade.png', this);
       case WeaponType.catalyst:
-        return "$basePath/catalyst.png";
+        return Assets.getWeaponPath('lost_prayer_to_the_sacred_winds.png', this);
       case WeaponType.claymore:
-        return "$basePath/claymore.png";
+        return Assets.getWeaponPath('wolfs_gravestone.png', this);
       case WeaponType.polearm:
-        return "$basePath/polearm.png";
+        return Assets.getWeaponPath('skyward_spine.png', this);
       default:
         throw Exception('Invalid weapon type = ${this}');
     }

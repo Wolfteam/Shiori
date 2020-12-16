@@ -62,7 +62,7 @@ extension AppThemeTypeExtensions on AppAccentColorType {
           brightness: Brightness.light,
           accentColor: color,
           primaryColor: color,
-          primaryColorLight: color.withOpacity(0.5),
+          primaryColorLight: color.withOpacity(0.8),
           primaryColorDark: color,
           primarySwatch: MaterialColor(color.value, getSwatch(color)),
         );

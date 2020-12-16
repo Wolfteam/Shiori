@@ -198,6 +198,7 @@ class GenshinServiceImpl implements GenshinService {
       final characters = <String>[];
 
       for (final char in _charactersFile.characters) {
+        if (char.isComingSoon) continue;
         final materialIsBeingUsed =
             char.ascentionMaterials.expand((m) => m.materials).where((m) => m.image == e.image).isNotEmpty ||
                 char.talentAscentionMaterials.expand((m) => m.materials).where((m) => m.image == e.image).isNotEmpty;

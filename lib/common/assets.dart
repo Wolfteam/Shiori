@@ -1,3 +1,5 @@
+import 'package:genshindb/common/enums/element_type.dart';
+
 import 'enums/app_language_type.dart';
 import 'enums/material_type.dart';
 import 'enums/weapon_type.dart';
@@ -109,4 +111,29 @@ class Assets {
   }
 
   static String getElementPath(String name) => '$elementsBasePath/$name';
+
+  static String getElementPathFromType(ElementType type) {
+    switch (type) {
+      case ElementType.anemo:
+        return getElementPath('anemo.png');
+      case ElementType.cryo:
+        return getElementPath('cryo.png');
+      case ElementType.dendro:
+        return getElementPath('dendro.png');
+      case ElementType.electro:
+        return getElementPath('electro.png');
+      case ElementType.geo:
+        return getElementPath('geo.png');
+      case ElementType.hydro:
+        return getElementPath('hydro.png');
+      case ElementType.pyro:
+        return getElementPath('pyro.png');
+      default:
+        throw Exception('Invalid element type = $type');
+    }
+  }
+
+  static ElementType getElementTypeFromPath(String path) {
+    return ElementType.values.firstWhere((type) => getElementPathFromType(type) == path);
+  }
 }

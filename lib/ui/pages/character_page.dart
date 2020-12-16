@@ -17,6 +17,7 @@ import '../widgets/common/item_description.dart';
 import '../widgets/common/item_description_detail.dart';
 import '../widgets/common/loading.dart';
 import '../widgets/common/rarity.dart';
+import '../widgets/common/element_image.dart';
 
 class CharacterPage extends StatelessWidget {
   final double imgSize = 28;
@@ -88,7 +89,7 @@ class CharacterPage extends StatelessWidget {
     // final screenHeight = mediaQuery.size.height - padding.top - padding.bottom;
 
     return Container(
-      color: elementType.getElementColor(),
+      color: elementType.getElementColorFromContext(context),
       child: Stack(
         fit: StackFit.passthrough,
         alignment: Alignment.center,
@@ -158,7 +159,7 @@ class CharacterPage extends StatelessWidget {
               child: ItemDescriptionDetail(
                 title: s.description,
                 body: Container(margin: const EdgeInsets.symmetric(horizontal: 5), child: Text(description)),
-                textColor: elementType.getElementColor(),
+                textColor: elementType.getElementColorFromContext(context),
               ),
             ),
             CharacterDetailSkillsCard(elementType: elementType, skills: skills),
@@ -196,20 +197,34 @@ class CharacterPage extends StatelessWidget {
     final details = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(name, style: theme.textTheme.headline5.copyWith(fontWeight: FontWeight.bold)),
+        Text(name, style: theme.textTheme.headline5.copyWith(fontWeight: FontWeight.bold, color: Colors.white)),
         Rarity(stars: rarity, starSize: 25, alignment: MainAxisAlignment.start),
         ItemDescription(
           title: s.element,
-          widget: Image.asset(elementType.getElementAsssetPath(), width: imgSize, height: imgSize),
+          widget: ElementImage.fromType(type: elementType, radius: 12, useDarkForBackgroundColor: true),
           useColumn: false,
         ),
-        ItemDescription(title: s.region, widget: Text(region), useColumn: false),
+        ItemDescription(
+          title: s.region,
+          widget: Text(
+            region,
+            style: const TextStyle(color: Colors.white),
+          ),
+          useColumn: false,
+        ),
         ItemDescription(
           title: s.weapon,
           widget: Image.asset(weaponType.getWeaponAssetPath(), width: imgSize, height: imgSize),
           useColumn: false,
         ),
-        ItemDescription(title: s.role, widget: Text(role), useColumn: false),
+        ItemDescription(
+          title: s.role,
+          widget: Text(
+            role,
+            style: const TextStyle(color: Colors.white),
+          ),
+          useColumn: false,
+        ),
         ItemDescription(
           title: s.gender,
           widget: Icon(isFemale ? GenshinDb.female : GenshinDb.male, color: isFemale ? Colors.pink : Colors.blue),
@@ -218,7 +233,7 @@ class CharacterPage extends StatelessWidget {
       ],
     );
     return Card(
-      color: elementType.getElementColor().withOpacity(0.1),
+      color: elementType.getElementColorFromContext(context).withOpacity(0.1),
       elevation: Styles.cardTenElevation,
       margin: Styles.edgeInsetAll5,
       shape: Styles.cardShape,

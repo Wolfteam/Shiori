@@ -7,6 +7,8 @@ import 'bloc/bloc.dart';
 import 'generated/l10n.dart';
 import 'injection.dart';
 import 'services/genshing_service.dart';
+import 'services/logging_service.dart';
+import 'services/settings_service.dart';
 import 'telemetry.dart';
 import 'ui/pages/main_page.dart';
 import 'ui/pages/splash_page.dart';
@@ -26,8 +28,10 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (ctx) {
+            final loggingService = getIt<LoggingService>();
             final genshinService = getIt<GenshinService>();
-            return MainBloc(genshinService)..add(const MainEvent.init());
+            final settingsService = getIt<SettingsService>();
+            return MainBloc(loggingService, genshinService, settingsService)..add(const MainEvent.init());
           },
         ),
         BlocProvider(
@@ -78,6 +82,12 @@ class MyApp extends StatelessWidget {
             return MaterialsBloc(genshinService);
           },
         ),
+        BlocProvider(
+          create: (ctx) {
+            final settingsService = getIt<SettingsService>();
+            return SettingsBloc(settingsService);
+          },
+        ),
       ],
       child: BlocBuilder<MainBloc, MainState>(
         builder: (ctx, state) => _buildApp(state),
@@ -87,22 +97,23 @@ class MyApp extends StatelessWidget {
 }
 
 Widget _buildApp(MainState state) {
-  final delegates = <LocalizationsDelegate>[
-    S.delegate,
-    GlobalMaterialLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-  ];
-
   return state.map<Widget>(
     loading: (_) {
       return SplashPage();
     },
     loaded: (s) {
+      final delegates = <LocalizationsDelegate>[
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ];
       return MaterialApp(
         title: s.appTitle,
         theme: s.theme,
         home: MainPage(),
+        //Without this, the lang won't be reloaded
+        locale: s.currentLocale,
         localizationsDelegates: delegates,
         supportedLocales: S.delegate.supportedLocales,
       );

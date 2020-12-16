@@ -1084,6 +1084,196 @@ class S {
       args: [],
     );
   }
+
+  /// `Theme`
+  String get theme {
+    return Intl.message(
+      'Theme',
+      name: 'theme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accent color`
+  String get accentColor {
+    return Intl.message(
+      'Accent color',
+      name: 'accentColor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose base app theme`
+  String get chooseBaseAppTheme {
+    return Intl.message(
+      'Choose base app theme',
+      name: 'chooseBaseAppTheme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose an accent color`
+  String get chooseAccentColor {
+    return Intl.message(
+      'Choose an accent color',
+      name: 'chooseAccentColor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose a language`
+  String get chooseLanguage {
+    return Intl.message(
+      'Choose a language',
+      name: 'chooseLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Version: {version}`
+  String appVersion(Object version) {
+    return Intl.message(
+      'Version: $version',
+      name: 'appVersion',
+      desc: '',
+      args: [version],
+    );
+  }
+
+  /// `About`
+  String get about {
+    return Intl.message(
+      'About',
+      name: 'about',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A Genshin Impact kinda database app`
+  String get aboutSummary {
+    return Intl.message(
+      'A Genshin Impact kinda database app',
+      name: 'aboutSummary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `App information`
+  String get appInfo {
+    return Intl.message(
+      'App information',
+      name: 'appInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Support`
+  String get support {
+    return Intl.message(
+      'Support',
+      name: 'support',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I made this app in my free time and it is also open source. If you would like to help me, report an issue, have an idea, want a feature to be implemented, etc, please open an issue in my Github:`
+  String get supportMsg {
+    return Intl.message(
+      'I made this app in my free time and it is also open source. If you would like to help me, report an issue, have an idea, want a feature to be implemented, etc, please open an issue in my Github:',
+      name: 'supportMsg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Issues`
+  String get issues {
+    return Intl.message(
+      'Issues',
+      name: 'issues',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Disclaimer`
+  String get disclaimer {
+    return Intl.message(
+      'Disclaimer',
+      name: 'disclaimer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This app is not affiliated with or endorsed by miHoYo. GenshinDb is just a database app for the Genshin Impact game`
+  String get disclaimerMsg {
+    return Intl.message(
+      'This app is not affiliated with or endorsed by miHoYo. GenshinDb is just a database app for the Genshin Impact game',
+      name: 'disclaimerMsg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A restart may be needed for the changes to take effect`
+  String get restartMayBeNeeded {
+    return Intl.message(
+      'A restart may be needed for the changes to take effect',
+      name: 'restartMayBeNeeded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can also send me an email`
+  String get youCanAlsoSendMeAnEmail {
+    return Intl.message(
+      'You can also send me an email',
+      name: 'youCanAlsoSendMeAnEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Partial`
+  String get partial {
+    return Intl.message(
+      'Partial',
+      name: 'partial',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -16,6 +16,7 @@ class Styles {
   static const double cardThreeElevation = 3;
   static const double cardTenElevation = 10;
 
+  static const edgeInsetAll15 = EdgeInsets.all(15);
   static const edgeInsetAll10 = EdgeInsets.all(10);
   static const edgeInsetAll5 = EdgeInsets.all(5);
   static const edgeInsetAll0 = EdgeInsets.all(0);
