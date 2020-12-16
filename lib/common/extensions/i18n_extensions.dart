@@ -4,12 +4,12 @@ import '../../common/enums/artifact_filter_type.dart';
 import '../../common/enums/character_filter_type.dart';
 import '../../common/enums/element_type.dart';
 import '../../common/enums/item_location_type.dart';
-import '../../common/enums/released_unreleased_type.dart';
 import '../../common/enums/sort_direction_type.dart';
 import '../../common/enums/stat_type.dart';
 import '../../common/enums/weapon_filter_type.dart';
 import '../../common/enums/weapon_type.dart';
 import '../../generated/l10n.dart';
+import '../enums/item_status_type.dart';
 
 extension I18nExtensions on S {
   String translateAppThemeType(AppThemeType theme) {
@@ -172,14 +172,16 @@ extension I18nExtensions on S {
     }
   }
 
-  String translateReleasedUnreleasedType(ReleasedUnreleasedType type) {
+  String translateReleasedUnreleasedType(ItemStatusType type) {
     switch (type) {
-      case ReleasedUnreleasedType.all:
+      case ItemStatusType.all:
         return all;
-      case ReleasedUnreleasedType.released:
+      case ItemStatusType.released:
         return released;
-      case ReleasedUnreleasedType.unreleased:
-        return unreleased;
+      case ItemStatusType.comingSoon:
+        return comingSoon;
+      case ItemStatusType.newItem:
+        return brandNew;
       default:
         throw Exception('Invalid released-unreleased type = $type');
     }

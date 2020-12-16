@@ -122,5 +122,6 @@
     "disclaimerMsg": "This app is not affiliated with or endorsed by miHoYo. GenshinDb is just a database app for the Genshin Impact game",
     "restartMayBeNeeded": "A restart may be needed for the changes to take effect",
     "youCanAlsoSendMeAnEmail": "You can also send me an email",
-    "partial": "Partial"
+    "partial": "Partial",
+    "brandNew": "New"
 }

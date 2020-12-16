@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../bloc/bloc.dart';
 import '../../../common/enums/character_filter_type.dart';
-import '../../../common/enums/released_unreleased_type.dart';
+import '../../../common/enums/item_status_type.dart';
 import '../../../common/extensions/i18n_extensions.dart';
 import '../../../common/genshin_db_icons.dart';
 import '../../../common/styles.dart';
@@ -57,12 +57,11 @@ class CharacterBottomSheet extends StatelessWidget {
                   ButtonBar(
                     alignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      ItemPopupMenuFilter<ReleasedUnreleasedType>(
-                        tooltipText: '${s.released} / ${s.unreleased}',
-                        values: ReleasedUnreleasedType.values,
-                        selectedValue: state.tempReleasedUnreleasedType,
-                        onSelected: (v) =>
-                            context.read<CharactersBloc>().add(CharactersEvent.releasedUnreleasedTypeChanged(v)),
+                      ItemPopupMenuFilter<ItemStatusType>(
+                        tooltipText: '${s.released} / ${s.brandNew} / ${s.comingSoon}',
+                        values: ItemStatusType.values,
+                        selectedValue: state.tempStatusType,
+                        onSelected: (v) => context.read<CharactersBloc>().add(CharactersEvent.itemStatusChanged(v)),
                         icon: const Icon(GenshinDb.sliders_h, size: 18),
                         itemText: (val) => s.translateReleasedUnreleasedType(val),
                       ),

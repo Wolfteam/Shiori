@@ -68,6 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "baseAtk" : MessageLookupByLibrary.simpleMessage("Base Atk"),
     "bow" : MessageLookupByLibrary.simpleMessage("Bow"),
     "bpBounty" : MessageLookupByLibrary.simpleMessage("BP Bounty"),
+    "brandNew" : MessageLookupByLibrary.simpleMessage("New"),
     "cancel" : MessageLookupByLibrary.simpleMessage("Cancel"),
     "catalyst" : MessageLookupByLibrary.simpleMessage("Catalyst"),
     "characters" : MessageLookupByLibrary.simpleMessage("Characters"),

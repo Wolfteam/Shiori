@@ -5,7 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../common/enums/character_filter_type.dart';
 import '../../common/enums/element_type.dart';
-import '../../common/enums/released_unreleased_type.dart';
+import '../../common/enums/item_status_type.dart';
 import '../../common/enums/sort_direction_type.dart';
 import '../../common/enums/weapon_type.dart';
 import '../../models/models.dart';
@@ -38,8 +38,8 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         return currentState.copyWith.call(tempElementTypes: types);
       },
       rarityChanged: (e) => currentState.copyWith.call(tempRarity: e.rarity),
-      releasedUnreleasedTypeChanged: (e) => currentState.copyWith.call(
-        tempReleasedUnreleasedType: e.releasedUnreleasedType,
+      itemStatusChanged: (e) => currentState.copyWith.call(
+        tempStatusType: e.statusType,
       ),
       sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
       weaponTypeChanged: (e) {
@@ -56,7 +56,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         characterFilterType: currentState.characterFilterType,
         elementTypes: currentState.elementTypes,
         rarity: currentState.rarity,
-        releasedUnreleasedType: currentState.releasedUnreleasedType,
+        statusType: currentState.statusType,
         sortDirectionType: currentState.sortDirectionType,
         weaponTypes: currentState.weaponTypes,
       ),
@@ -65,7 +65,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         characterFilterType: currentState.tempCharacterFilterType,
         elementTypes: currentState.tempElementTypes,
         rarity: currentState.tempRarity,
-        releasedUnreleasedType: currentState.tempReleasedUnreleasedType,
+        statusType: currentState.tempStatusType,
         sortDirectionType: currentState.tempSortDirectionType,
         weaponTypes: currentState.tempWeaponTypes,
       ),
@@ -73,7 +73,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         tempCharacterFilterType: currentState.characterFilterType,
         tempElementTypes: currentState.elementTypes,
         tempRarity: currentState.rarity,
-        tempReleasedUnreleasedType: currentState.releasedUnreleasedType,
+        tempStatusType: currentState.statusType,
         tempSortDirectionType: currentState.sortDirectionType,
         tempWeaponTypes: currentState.weaponTypes,
       ),
@@ -87,7 +87,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     List<WeaponType> weaponTypes = const [],
     List<ElementType> elementTypes = const [],
     int rarity = 0,
-    ReleasedUnreleasedType releasedUnreleasedType = ReleasedUnreleasedType.all,
+    ItemStatusType statusType = ItemStatusType.all,
     CharacterFilterType characterFilterType = CharacterFilterType.name,
     SortDirectionType sortDirectionType = SortDirectionType.asc,
   }) {
@@ -107,8 +107,8 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         tempElementTypes: selectedElementTypes,
         rarity: rarity,
         tempRarity: rarity,
-        releasedUnreleasedType: releasedUnreleasedType,
-        tempReleasedUnreleasedType: releasedUnreleasedType,
+        statusType: statusType,
+        tempStatusType: statusType,
         characterFilterType: characterFilterType,
         tempCharacterFilterType: characterFilterType,
         sortDirectionType: sortDirectionType,
@@ -132,12 +132,15 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
       characters = characters.where((el) => elementTypes.contains(el.elementType)).toList();
     }
 
-    switch (releasedUnreleasedType) {
-      case ReleasedUnreleasedType.released:
+    switch (statusType) {
+      case ItemStatusType.released:
         characters = characters.where((el) => !el.isComingSoon).toList();
         break;
-      case ReleasedUnreleasedType.unreleased:
+      case ItemStatusType.comingSoon:
         characters = characters.where((el) => el.isComingSoon).toList();
+        break;
+      case ItemStatusType.newItem:
+        characters = characters.where((el) => el.isNew).toList();
         break;
       default:
         break;
@@ -154,8 +157,8 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
       tempElementTypes: elementTypes,
       rarity: rarity,
       tempRarity: rarity,
-      releasedUnreleasedType: releasedUnreleasedType,
-      tempReleasedUnreleasedType: releasedUnreleasedType,
+      statusType: statusType,
+      tempStatusType: statusType,
       characterFilterType: characterFilterType,
       tempCharacterFilterType: characterFilterType,
       sortDirectionType: sortDirectionType,
