@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../common/styles.dart';
+import '../common/element_image.dart';
 
 class ElementReactionCard extends StatelessWidget {
   final String name;
@@ -36,15 +37,14 @@ class ElementReactionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final principalImgs = principal.map((e) => Image.asset(e, width: 45, height: 45)).toList();
-    final secondaryImgs = secondary.map((e) => Image.asset(e, width: 45, height: 45)).toList();
+    final principalImgs = principal.map((e) => ElementImage.fromPath(path: e)).toList();
+    final secondaryImgs = secondary.map((e) => ElementImage.fromPath(path: e)).toList();
     return Card(
       shape: Styles.cardShape,
       margin: Styles.edgeInsetAll5,
       child: Padding(
         padding: Styles.edgeInsetAll5,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             if (showImages)
               Wrap(

@@ -10,6 +10,7 @@ import '../../../common/extensions/weapon_type_extensions.dart';
 import '../../../common/styles.dart';
 import '../../../generated/l10n.dart';
 import '../../pages/character_page.dart';
+import '../common/element_image.dart';
 import '../common/rarity.dart';
 import 'character_ascention_materials.dart';
 
@@ -40,7 +41,6 @@ class CharacterCard extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     final weaponPath = weaponType.getWeaponAssetPath();
-    final elementPath = elementType.getElementAsssetPath();
 
     return InkWell(
       onTap: isComingSoon ? null : () => _gotoCharacterPage(name, context),
@@ -68,11 +68,7 @@ class CharacterCard extends StatelessWidget {
                         _buildNewOrComingSoonAvatar(context),
                         Tooltip(
                           message: s.translateElementType(elementType),
-                          child: CircleAvatar(
-                            radius: 15,
-                            backgroundColor: Colors.black.withAlpha(100),
-                            backgroundImage: AssetImage(elementPath),
-                          ),
+                          child: ElementImage.fromType(type: elementType, radius: 15, useDarkForBackgroundColor: true),
                         ),
                       ],
                     ),

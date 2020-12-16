@@ -17,6 +17,7 @@ import '../widgets/common/item_description.dart';
 import '../widgets/common/item_description_detail.dart';
 import '../widgets/common/loading.dart';
 import '../widgets/common/rarity.dart';
+import '../widgets/common/element_image.dart';
 
 class CharacterPage extends StatelessWidget {
   final double imgSize = 28;
@@ -200,7 +201,7 @@ class CharacterPage extends StatelessWidget {
         Rarity(stars: rarity, starSize: 25, alignment: MainAxisAlignment.start),
         ItemDescription(
           title: s.element,
-          widget: Image.asset(elementType.getElementAsssetPath(), width: imgSize, height: imgSize),
+          widget: ElementImage.fromType(type: elementType, radius: 12, useDarkForBackgroundColor: true),
           useColumn: false,
         ),
         ItemDescription(

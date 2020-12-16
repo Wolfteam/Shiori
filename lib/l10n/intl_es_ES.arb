@@ -8,7 +8,7 @@
     "claymore": "Claymore",
     "sword": "Espada",
     "polearm": "Lanza",
-    "catalyst": "Catalyst",
+    "catalyst": "Catalizador",
     "none": "Ninguno",
     "atk": "{value} ATK",
     "atkPercentage": "{value} ATK%",
@@ -79,11 +79,11 @@
     "elementalDmgPercentage": "Elemental DMG%",
     "healingBonus": "Bono de curación",
     "note": "Nota",
-    "ascentionMaterials": "Materials de Ascensión",
-    "released": "Released",
-    "unreleased": "Unreleased",
-    "comingSoon": "Coming soon",
-    "recent": "Recent",
+    "ascentionMaterials": "Materiales de Ascensión",
+    "released": "Publicado",
+    "unreleased": "No Publicado",
+    "comingSoon": "Próximamente",
+    "recent": "Reciente",
     "rank": "Rank",
     "level": "Nivel",
     "materials": "Materiales",
@@ -121,5 +121,6 @@
     "disclaimer": "Disclaimer",
     "disclaimerMsg": "Esta app no está afiliada ni asociada a miHoYo. GenshinDb es solo una aplicación de tipo base de datos para el juego Genshin Impact",
     "restartMayBeNeeded": "Puede ser necesario reiniciar la app para que los cambios tomen efecto",
-    "youCanAlsoSendMeAnEmail": "También puedes enviarme un correo"
+    "youCanAlsoSendMeAnEmail": "También puedes enviarme un correo",
+    "partial": "Parcial"
 }

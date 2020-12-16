@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/common/assets.dart';
-import 'package:genshindb/common/styles.dart';
 
+import '../../../common/enums/element_type.dart';
 import '../../pages/elements_page.dart';
+import '../common/element_image.dart';
 
 class ElementsCard extends StatelessWidget {
   @override
@@ -14,38 +14,28 @@ class ElementsCard extends StatelessWidget {
           margin: const EdgeInsets.all(15),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
           child: SizedBox(
-            height: 160,
+            height: 170,
             child: Stack(
               alignment: Alignment.center,
               children: [
-                FractionalTranslation(
-                  translation: const Offset(0, -1),
-                  child: Image.asset(Assets.getElementPath('anemo.png'), width: 50, height: 50),
-                ),
-                FractionalTranslation(
-                  translation: const Offset(-1.4, -0.5),
-                  child: Image.asset(Assets.getElementPath('cryo.png'), width: 50, height: 50),
-                ),
-                FractionalTranslation(
-                    translation: const Offset(-1.4, 0.5),
-                    child: Image.asset(Assets.getElementPath('dendro.png'), width: 50, height: 50)),
-                FractionalTranslation(
-                  translation: const Offset(0, 1),
-                  child: Image.asset(Assets.getElementPath('geo.png'), width: 50, height: 50),
-                ),
-                FractionalTranslation(
-                  translation: const Offset(1.4, -0.5),
-                  child: Image.asset(Assets.getElementPath('hydro.png'), width: 50, height: 50),
-                ),
-                FractionalTranslation(
-                  translation: const Offset(1.4, 0.5),
-                  child: Image.asset(Assets.getElementPath('pyro.png'), width: 50, height: 50),
-                ),
+                _buildIcon(ElementType.anemo, const Offset(0, -1)),
+                _buildIcon(ElementType.cryo, const Offset(-1.4, -0.6)),
+                _buildIcon(ElementType.dendro, const Offset(-1.4, 0.6)),
+                _buildIcon(ElementType.geo, const Offset(0, 1)),
+                _buildIcon(ElementType.hydro, const Offset(1.4, -0.6)),
+                _buildIcon(ElementType.pyro, const Offset(1.4, 0.6)),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildIcon(ElementType type, Offset offset) {
+    return FractionalTranslation(
+      translation: offset,
+      child: ElementImage.fromType(type: type),
     );
   }
 

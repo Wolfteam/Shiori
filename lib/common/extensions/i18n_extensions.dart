@@ -28,7 +28,7 @@ extension I18nExtensions on S {
       case AppLanguageType.english:
         return english;
       case AppLanguageType.spanish:
-        return spanish;
+        return '$spanish ($partial)';
       default:
         throw Exception('The provided app lang = $lang is not valid');
     }

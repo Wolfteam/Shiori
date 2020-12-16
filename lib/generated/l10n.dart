@@ -1264,6 +1264,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Partial`
+  String get partial {
+    return Intl.message(
+      'Partial',
+      name: 'partial',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
