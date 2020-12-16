@@ -11,7 +11,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstat",
+            "region": "Mondstadt",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -817,7 +817,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstat",
+            "region": "Mondstadt",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -1118,7 +1118,7 @@
                         {
                             "quantity": 1,
                             "materialType": "talents",
-                            "image": "dvalins_sigh.png"
+                            "image": "ring_of_boreas.png"
                         },
                         {
                             "quantity": 120000,
@@ -1143,7 +1143,7 @@
                         {
                             "quantity": 1,
                             "materialType": "talents",
-                            "image": "dvalins_sigh.png"
+                            "image": "ring_of_boreas.png"
                         },
                         {
                             "quantity": 260000,
@@ -1168,7 +1168,7 @@
                         {
                             "quantity": 2,
                             "materialType": "talents",
-                            "image": "dvalins_sigh.png"
+                            "image": "ring_of_boreas.png"
                         },
                         {
                             "quantity": 450000,
@@ -1193,7 +1193,7 @@
                         {
                             "quantity": 2,
                             "materialType": "talents",
-                            "image": "dvalins_sigh.png"
+                            "image": "ring_of_boreas.png"
                         },
                         {
                             "quantity": 1,
@@ -1623,7 +1623,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": false,
-            "region": "Mondstat",
+            "region": "Mondstadt",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -2429,7 +2429,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": false,
-            "region": "Mondstat",
+            "region": "Mondstadt",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -2832,7 +2832,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstat",
+            "region": "Mondstadt",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -3235,7 +3235,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstat",
+            "region": "Mondstadt",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -3638,7 +3638,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstat",
+            "region": "Mondstadt",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -3647,7 +3647,7 @@
                         {
                             "quantity": 1,
                             "materialType": "jewels",
-                            "image": "nagadus_emerald_sliver.png"
+                            "image": "vayuda_turquoise_sliver.png"
                         },
                         {
                             "quantity": 3,
@@ -3673,7 +3673,7 @@
                         {
                             "quantity": 3,
                             "materialType": "jewels",
-                            "image": "nagadus_emerald_fragment.png"
+                            "image": "vayuda_turquoise_fragment.png"
                         },
                         {
                             "quantity": 2,
@@ -3704,7 +3704,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "nagadus_emerald_fragment.png"
+                            "image": "vayuda_turquoise_fragment.png"
                         },
                         {
                             "quantity": 4,
@@ -3735,7 +3735,7 @@
                         {
                             "quantity": 3,
                             "materialType": "jewels",
-                            "image": "vajrada_amethyst_chunk.png"
+                            "image": "vayuda_turquoise_chunk.png"
                         },
                         {
                             "quantity": 8,
@@ -3766,7 +3766,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "vajrada_amethyst_chunk.png"
+                            "image": "vayuda_turquoise_chunk.png"
                         },
                         {
                             "quantity": 12,
@@ -3797,7 +3797,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "vajrada_amethyst_gemstone.png"
+                            "image": "vayuda_turquoise_gemstone.png"
                         },
                         {
                             "quantity": 20,
@@ -4041,7 +4041,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": false,
-            "region": "Mondstat",
+            "region": "Mondstadt",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -5259,7 +5259,7 @@
                         {
                             "quantity": 1,
                             "materialType": "jewels",
-                            "image": "shivada_jade_sliver.png"
+                            "image": "vajrada_amethyst_sliver.png"
                         },
                         {
                             "quantity": 3,
@@ -5285,12 +5285,12 @@
                         {
                             "quantity": 3,
                             "materialType": "jewels",
-                            "image": "shivada_jade_fragment.png"
+                            "image": "vajrada_amethyst_fragment.png"
                         },
                         {
                             "quantity": 2,
                             "materialType": "elemental",
-                            "image": "hoarfrost_core.png"
+                            "image": "lightning_prism.png"
                         },
                         {
                             "quantity": 10,
@@ -5316,12 +5316,12 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "shivada_jade_fragment.png"
+                            "image": "vajrada_amethyst_fragment.png"
                         },
                         {
                             "quantity": 4,
                             "materialType": "elemental",
-                            "image": "hoarfrost_core.png"
+                            "image": "lightning_prism.png"
                         },
                         {
                             "quantity": 20,
@@ -5347,12 +5347,12 @@
                         {
                             "quantity": 3,
                             "materialType": "jewels",
-                            "image": "shivada_jade_chunk.png"
+                            "image": "vajrada_amethyst_chunk.png"
                         },
                         {
                             "quantity": 8,
                             "materialType": "elemental",
-                            "image": "hoarfrost_core.png"
+                            "image": "lightning_prism.png"
                         },
                         {
                             "quantity": 30,
@@ -5378,12 +5378,12 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "shivada_jade_chunk.png"
+                            "image": "vajrada_amethyst_chunk.png"
                         },
                         {
                             "quantity": 12,
                             "materialType": "elemental",
-                            "image": "hoarfrost_core.png"
+                            "image": "lightning_prism.png"
                         },
                         {
                             "quantity": 45,
@@ -5409,12 +5409,12 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "shivada_jade_gemstone.png"
+                            "image": "vajrada_amethyst_gemstone.png"
                         },
                         {
                             "quantity": 20,
                             "materialType": "elemental",
-                            "image": "hoarfrost_core.png"
+                            "image": "lightning_prism.png"
                         },
                         {
                             "quantity": 60,
@@ -6153,7 +6153,7 @@
                         {
                             "quantity": 3,
                             "materialType": "jewels",
-                            "image": "varunada_lazurite_chunk.png"
+                            "image": "prithiva_topaz_chunk.png"
                         },
                         {
                             "quantity": 8,
@@ -6184,7 +6184,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "varunada_lazurite_chunk.png"
+                            "image": "prithiva_topaz_chunk.png"
                         },
                         {
                             "quantity": 12,
@@ -6215,7 +6215,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "varunada_lazurite_gemstone.png"
+                            "image": "prithiva_topaz_gemstone.png"
                         },
                         {
                             "quantity": 20,
@@ -6459,7 +6459,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstat",
+            "region": "Mondstadt",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -6556,7 +6556,7 @@
                         {
                             "quantity": 3,
                             "materialType": "jewels",
-                            "image": "varunada_lazurite_chunk.png"
+                            "image": "prithiva_topaz_chunk.png"
                         },
                         {
                             "quantity": 8,
@@ -6587,7 +6587,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "varunada_lazurite_chunk.png"
+                            "image": "prithiva_topaz_chunk.png"
                         },
                         {
                             "quantity": 12,
@@ -6618,7 +6618,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "varunada_lazurite_gemstone.png"
+                            "image": "prithiva_topaz_gemstone.png"
                         },
                         {
                             "quantity": 20,
@@ -7265,7 +7265,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": false,
-            "region": "Mondstat",
+            "region": "Mondstadt",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -7274,7 +7274,7 @@
                         {
                             "quantity": 1,
                             "materialType": "jewels",
-                            "image": "shivada_jade_sliver.png"
+                            "image": "vajrada_amethyst_sliver.png"
                         },
                         {
                             "quantity": 3,
@@ -7300,12 +7300,12 @@
                         {
                             "quantity": 3,
                             "materialType": "jewels",
-                            "image": "shivada_jade_fragment.png"
+                            "image": "vajrada_amethyst_fragment.png"
                         },
                         {
                             "quantity": 2,
                             "materialType": "elemental",
-                            "image": "hoarfrost_core.png"
+                            "image": "lightning_prism.png"
                         },
                         {
                             "quantity": 10,
@@ -7331,12 +7331,12 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "shivada_jade_fragment.png"
+                            "image": "vajrada_amethyst_fragment.png"
                         },
                         {
                             "quantity": 4,
                             "materialType": "elemental",
-                            "image": "hoarfrost_core.png"
+                            "image": "lightning_prism.png"
                         },
                         {
                             "quantity": 20,
@@ -7362,12 +7362,12 @@
                         {
                             "quantity": 3,
                             "materialType": "jewels",
-                            "image": "shivada_jade_chunk.png"
+                            "image": "vajrada_amethyst_chunk.png"
                         },
                         {
                             "quantity": 8,
                             "materialType": "elemental",
-                            "image": "hoarfrost_core.png"
+                            "image": "lightning_prism.png"
                         },
                         {
                             "quantity": 30,
@@ -7393,12 +7393,12 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "shivada_jade_chunk.png"
+                            "image": "vajrada_amethyst_chunk.png"
                         },
                         {
                             "quantity": 12,
                             "materialType": "elemental",
-                            "image": "hoarfrost_core.png"
+                            "image": "lightning_prism.png"
                         },
                         {
                             "quantity": 45,
@@ -7424,12 +7424,12 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "shivada_jade_gemstone.png"
+                            "image": "vajrada_amethyst_gemstone.png"
                         },
                         {
                             "quantity": 20,
                             "materialType": "elemental",
-                            "image": "hoarfrost_core.png"
+                            "image": "lightning_prism.png"
                         },
                         {
                             "quantity": 60,
@@ -7668,7 +7668,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstat",
+            "region": "Mondstadt",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -7677,7 +7677,7 @@
                         {
                             "quantity": 1,
                             "materialType": "jewels",
-                            "image": "nagadus_emerald_sliver.png"
+                            "image": "vayuda_turquoise_sliver.png"
                         },
                         {
                             "quantity": 3,
@@ -7703,7 +7703,7 @@
                         {
                             "quantity": 3,
                             "materialType": "jewels",
-                            "image": "nagadus_emerald_fragment.png"
+                            "image": "vayuda_turquoise_fragment.png"
                         },
                         {
                             "quantity": 2,
@@ -7734,7 +7734,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "nagadus_emerald_fragment.png"
+                            "image": "vayuda_turquoise_fragment.png"
                         },
                         {
                             "quantity": 4,
@@ -7765,7 +7765,7 @@
                         {
                             "quantity": 3,
                             "materialType": "jewels",
-                            "image": "vajrada_amethyst_chunk.png"
+                            "image": "vayuda_turquoise_chunk.png"
                         },
                         {
                             "quantity": 8,
@@ -7796,7 +7796,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "vajrada_amethyst_chunk.png"
+                            "image": "vayuda_turquoise_chunk.png"
                         },
                         {
                             "quantity": 12,
@@ -7827,7 +7827,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "vajrada_amethyst_gemstone.png"
+                            "image": "vayuda_turquoise_gemstone.png"
                         },
                         {
                             "quantity": 20,
@@ -10082,7 +10082,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": false,
-            "region": "Mondstat",
+            "region": "Mondstadt",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -10091,7 +10091,7 @@
                         {
                             "quantity": 1,
                             "materialType": "jewels",
-                            "image": "nagadus_emerald_sliver.png"
+                            "image": "vayuda_turquoise_sliver.png"
                         },
                         {
                             "quantity": 3,
@@ -10117,7 +10117,7 @@
                         {
                             "quantity": 3,
                             "materialType": "jewels",
-                            "image": "nagadus_emerald_fragment.png"
+                            "image": "vayuda_turquoise_fragment.png"
                         },
                         {
                             "quantity": 2,
@@ -10148,7 +10148,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "nagadus_emerald_fragment.png"
+                            "image": "vayuda_turquoise_fragment.png"
                         },
                         {
                             "quantity": 4,
@@ -10179,7 +10179,7 @@
                         {
                             "quantity": 3,
                             "materialType": "jewels",
-                            "image": "vajrada_amethyst_chunk.png"
+                            "image": "vayuda_turquoise_chunk.png"
                         },
                         {
                             "quantity": 8,
@@ -10210,7 +10210,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "vajrada_amethyst_chunk.png"
+                            "image": "vayuda_turquoise_chunk.png"
                         },
                         {
                             "quantity": 12,
@@ -10241,7 +10241,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "vajrada_amethyst_gemstone.png"
+                            "image": "vayuda_turquoise_gemstone.png"
                         },
                         {
                             "quantity": 20,
@@ -10897,7 +10897,7 @@
                         {
                             "quantity": 1,
                             "materialType": "jewels",
-                            "image": "nagadus_emerald_sliver.png"
+                            "image": "vayuda_turquoise_sliver.png"
                         },
                         {
                             "quantity": 3,
@@ -10923,7 +10923,7 @@
                         {
                             "quantity": 3,
                             "materialType": "jewels",
-                            "image": "nagadus_emerald_fragment.png"
+                            "image": "vayuda_turquoise_fragment.png"
                         },
                         {
                             "quantity": 2,
@@ -10954,7 +10954,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "nagadus_emerald_fragment.png"
+                            "image": "vayuda_turquoise_fragment.png"
                         },
                         {
                             "quantity": 4,
@@ -10985,7 +10985,7 @@
                         {
                             "quantity": 3,
                             "materialType": "jewels",
-                            "image": "vajrada_amethyst_chunk.png"
+                            "image": "vayuda_turquoise_chunk.png"
                         },
                         {
                             "quantity": 8,
@@ -11016,7 +11016,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "vajrada_amethyst_chunk.png"
+                            "image": "vayuda_turquoise_chunk.png"
                         },
                         {
                             "quantity": 12,
@@ -11047,7 +11047,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "vajrada_amethyst_gemstone.png"
+                            "image": "vayuda_turquoise_gemstone.png"
                         },
                         {
                             "quantity": 20,
@@ -12194,7 +12194,7 @@
                         {
                             "quantity": 3,
                             "materialType": "jewels",
-                            "image": "varunada_lazurite_chunk.png"
+                            "image": "prithiva_topaz_chunk.png"
                         },
                         {
                             "quantity": 8,
@@ -12225,7 +12225,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "varunada_lazurite_chunk.png"
+                            "image": "prithiva_topaz_chunk.png"
                         },
                         {
                             "quantity": 12,
@@ -12256,7 +12256,7 @@
                         {
                             "quantity": 6,
                             "materialType": "jewels",
-                            "image": "varunada_lazurite_gemstone.png"
+                            "image": "prithiva_topaz_gemstone.png"
                         },
                         {
                             "quantity": 20,
