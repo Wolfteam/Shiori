@@ -78,8 +78,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     bool isInitialized = true,
   }) async {
     final themeData = accentColor.getThemeData(theme);
-    await _setLocale(language);
-
+    final locale = await _setLocale(language);
     _logger.info(runtimeType, '_init: Is first install = ${_settingsService.isFirstInstall}');
 
     return MainState.loaded(
@@ -89,10 +88,11 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       firstInstall: _settingsService.isFirstInstall,
       currentLanguage: language,
       currentSelectedTab: 2,
+      currentLocale: locale,
     );
   }
 
-  Future<void> _setLocale(AppLanguageType language) async {
+  Future<Locale> _setLocale(AppLanguageType language) async {
     var langCode = 'en';
     var countryCode = 'US';
     switch (language) {
@@ -103,6 +103,8 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       default:
         break;
     }
-    await S.load(Locale(langCode, countryCode));
+    final locale = Locale(langCode, countryCode);
+    await S.load(locale);
+    return locale;
   }
 }

@@ -65,13 +65,6 @@ class LanguageSettingsCard extends StatelessWidget {
               );
             },
           ),
-          Padding(
-            padding: Styles.edgeInsetHorizontal16,
-            child: Text(
-              s.restartMayBeNeeded,
-              style: TextStyle(color: theme.accentColor, fontSize: 11),
-            ),
-          ),
         ],
       ),
     );

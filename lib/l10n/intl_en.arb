@@ -116,9 +116,10 @@
     "aboutSummary": "A Genshin Impact kinda database app",
     "appInfo": "App information",
     "support": "Support",
-    "supportMsg": "I made this app in my free time and it is also open source. If you would like to help me, report an issue, have an idea, want a feature to be implemented, etc please open an issue here:",
+    "supportMsg": "I made this app in my free time and it is also open source. If you would like to help me, report an issue, have an idea, want a feature to be implemented, etc, please open an issue in my Github:",
     "issues": "Issues",
     "disclaimer": "Disclaimer",
     "disclaimerMsg": "This app is not affiliated with or endorsed by miHoYo. GenshinDb is just a database app for the Genshin Impact game",
-    "restartMayBeNeeded":"A restart may be needed for the changes to take effect"
+    "restartMayBeNeeded": "A restart may be needed for the changes to take effect",
+    "youCanAlsoSendMeAnEmail": "You can also send me an email"
 }

@@ -9,6 +9,7 @@ abstract class MainState with _$MainState {
     @required bool initialized,
     @required bool firstInstall,
     @required AppLanguageType currentLanguage,
+    @required Locale currentLocale,
     @Default(0) int currentSelectedTab,
   }) = _MainLoadedState;
   const MainState._();

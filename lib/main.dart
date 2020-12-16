@@ -89,10 +89,7 @@ class MyApp extends StatelessWidget {
           },
         ),
       ],
-      child: BlocConsumer<MainBloc, MainState>(
-        listener: (ctx, state) {
-          state.maybeWhen(orElse: () => {});
-        },
+      child: BlocBuilder<MainBloc, MainState>(
         builder: (ctx, state) => _buildApp(state),
       ),
     );
@@ -100,22 +97,23 @@ class MyApp extends StatelessWidget {
 }
 
 Widget _buildApp(MainState state) {
-  final delegates = <LocalizationsDelegate>[
-    S.delegate,
-    GlobalMaterialLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-  ];
-
   return state.map<Widget>(
     loading: (_) {
       return SplashPage();
     },
     loaded: (s) {
+      final delegates = <LocalizationsDelegate>[
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ];
       return MaterialApp(
         title: s.appTitle,
         theme: s.theme,
         home: MainPage(),
+        //Without this, the lang won't be reloaded
+        locale: s.currentLocale,
         localizationsDelegates: delegates,
         supportedLocales: S.delegate.supportedLocales,
       );

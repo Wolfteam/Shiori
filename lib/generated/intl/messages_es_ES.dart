@@ -19,7 +19,7 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'es_ES';
 
-  static m0(version) => "Version: ${version}";
+  static m0(version) => "Versión: ${version}";
 
   static m1(value) => "${value} ATK";
 
@@ -54,10 +54,10 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "about" : MessageLookupByLibrary.simpleMessage("Acerca de"),
-    "aboutSummary" : MessageLookupByLibrary.simpleMessage("A Genshin Impact kinda database app"),
+    "aboutSummary" : MessageLookupByLibrary.simpleMessage("Un aplicación de tipo base de datos para Genshin Impact"),
     "accentColor" : MessageLookupByLibrary.simpleMessage("Color de acento"),
     "all" : MessageLookupByLibrary.simpleMessage("Todos"),
-    "appInfo" : MessageLookupByLibrary.simpleMessage("App information"),
+    "appInfo" : MessageLookupByLibrary.simpleMessage("Información de la aplicación"),
     "appName" : MessageLookupByLibrary.simpleMessage("GenshinDb"),
     "appVersion" : m0,
     "artifacts" : MessageLookupByLibrary.simpleMessage("Artefactos"),
@@ -107,7 +107,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "female" : MessageLookupByLibrary.simpleMessage("Mujer"),
     "filters" : MessageLookupByLibrary.simpleMessage("Filtros"),
     "flower" : MessageLookupByLibrary.simpleMessage("Flor"),
-    "forCharacters" : MessageLookupByLibrary.simpleMessage("Para persoanjes"),
+    "forCharacters" : MessageLookupByLibrary.simpleMessage("Para personajes"),
     "forWeapons" : MessageLookupByLibrary.simpleMessage("Para armas"),
     "friday" : MessageLookupByLibrary.simpleMessage("Viernes"),
     "gacha" : MessageLookupByLibrary.simpleMessage("Gacha"),
@@ -158,8 +158,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "spanish" : MessageLookupByLibrary.simpleMessage("Español"),
     "starglitterExchange" : MessageLookupByLibrary.simpleMessage("Starglitter Exchange"),
     "sunday" : MessageLookupByLibrary.simpleMessage("Domingo"),
-    "support" : MessageLookupByLibrary.simpleMessage("Support"),
-    "supportMsg" : MessageLookupByLibrary.simpleMessage("Hice esta aplicación en mi tiempo libre y también es de código abierto. Si desea ayudarme, informar un problema, tienes una idea, deseas que se implemente una función, etc., crea un issue aquí:"),
+    "support" : MessageLookupByLibrary.simpleMessage("Soporte"),
+    "supportMsg" : MessageLookupByLibrary.simpleMessage("Hice esta aplicación en mi tiempo libre y también es de código abierto. Si deseas ayudarme, informar de un problema, tienes una idea, deseas que se implemente una funcionalidad, etc., crea un issue en mi Github:"),
     "sword" : MessageLookupByLibrary.simpleMessage("Espada"),
     "talentAscentionX" : m14,
     "talentsAscention" : MessageLookupByLibrary.simpleMessage("Talentos de Ascención"),
@@ -174,6 +174,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "weapon" : MessageLookupByLibrary.simpleMessage("Arma"),
     "weaponType" : MessageLookupByLibrary.simpleMessage("Tipo de arma"),
     "weapons" : MessageLookupByLibrary.simpleMessage("Armas"),
-    "wednesday" : MessageLookupByLibrary.simpleMessage("Miércoles")
+    "wednesday" : MessageLookupByLibrary.simpleMessage("Miércoles"),
+    "youCanAlsoSendMeAnEmail" : MessageLookupByLibrary.simpleMessage("También puedes enviarme un correo")
   };
 }

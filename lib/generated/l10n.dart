@@ -1205,10 +1205,10 @@ class S {
     );
   }
 
-  /// `I made this app in my free time and it is also open source. If you would like to help me, report an issue, have an idea, want a feature to be implemented, etc please open an issue here:`
+  /// `I made this app in my free time and it is also open source. If you would like to help me, report an issue, have an idea, want a feature to be implemented, etc, please open an issue in my Github:`
   String get supportMsg {
     return Intl.message(
-      'I made this app in my free time and it is also open source. If you would like to help me, report an issue, have an idea, want a feature to be implemented, etc please open an issue here:',
+      'I made this app in my free time and it is also open source. If you would like to help me, report an issue, have an idea, want a feature to be implemented, etc, please open an issue in my Github:',
       name: 'supportMsg',
       desc: '',
       args: [],
@@ -1250,6 +1250,16 @@ class S {
     return Intl.message(
       'A restart may be needed for the changes to take effect',
       name: 'restartMayBeNeeded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can also send me an email`
+  String get youCanAlsoSendMeAnEmail {
+    return Intl.message(
+      'You can also send me an email',
+      name: 'youCanAlsoSendMeAnEmail',
       desc: '',
       args: [],
     );

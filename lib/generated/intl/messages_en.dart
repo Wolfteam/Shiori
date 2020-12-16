@@ -159,7 +159,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "starglitterExchange" : MessageLookupByLibrary.simpleMessage("Starglitter Exchange"),
     "sunday" : MessageLookupByLibrary.simpleMessage("Sunday"),
     "support" : MessageLookupByLibrary.simpleMessage("Support"),
-    "supportMsg" : MessageLookupByLibrary.simpleMessage("I made this app in my free time and it is also open source. If you would like to help me, report an issue, have an idea, want a feature to be implemented, etc please open an issue here:"),
+    "supportMsg" : MessageLookupByLibrary.simpleMessage("I made this app in my free time and it is also open source. If you would like to help me, report an issue, have an idea, want a feature to be implemented, etc, please open an issue in my Github:"),
     "sword" : MessageLookupByLibrary.simpleMessage("Sword"),
     "talentAscentionX" : m14,
     "talentsAscention" : MessageLookupByLibrary.simpleMessage("Talents Ascention"),
@@ -174,6 +174,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "weapon" : MessageLookupByLibrary.simpleMessage("Weapon"),
     "weaponType" : MessageLookupByLibrary.simpleMessage("Weapon type"),
     "weapons" : MessageLookupByLibrary.simpleMessage("Weapons"),
-    "wednesday" : MessageLookupByLibrary.simpleMessage("Wednesday")
+    "wednesday" : MessageLookupByLibrary.simpleMessage("Wednesday"),
+    "youCanAlsoSendMeAnEmail" : MessageLookupByLibrary.simpleMessage("You can also send me an email")
   };
 }
