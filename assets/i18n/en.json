@@ -1,6 +1,15 @@
 {
     "characters": [
         {
+            "key": "Albedo",
+            "pending": true,
+            "role": "N/A",
+            "description": "A genius known as the Kreideprinz, he is the Chief Alchemist and Captain of the Investigation Team of the Knights of Favonius.",
+            "skills": [],
+            "passives": [],
+            "constellations": []
+        },
+        {
             "key": "Amber",
             "role": "Support DPS",
             "description": "Always energetic and full of life, Amber’s the best - albeit only - Outrider of the Knights of Favonius.",
@@ -131,6 +140,15 @@
                     "descriptions": []
                 }
             ]
+        },
+        {
+            "key": "Ayaka",
+            "pending": true,
+            "role": "N/A",
+            "description": "The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated beast, flows within her veins.",
+            "skills": [],
+            "passives": [],
+            "constellations": []
         },
         {
             "key": "Barbara",
@@ -1054,6 +1072,15 @@
                     "descriptions": []
                 }
             ]
+        },
+        {
+            "key": "Ganyu",
+            "pending": true,
+            "role": "N/A",
+            "description": "The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated beast, flows within her veins.",
+            "skills": [],
+            "passives": [],
+            "constellations": []
         },
         {
             "key": "Jean",
