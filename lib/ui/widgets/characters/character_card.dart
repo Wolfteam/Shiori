@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../../bloc/bloc.dart';
 import '../../../common/enums/element_type.dart';
@@ -44,7 +45,7 @@ class CharacterCard extends StatelessWidget {
     final weaponPath = weaponType.getWeaponAssetPath();
 
     return InkWell(
-      onTap: isComingSoon ? null : () => _gotoCharacterPage(name, context),
+      onTap: () => _gotoCharacterPage(context),
       child: Card(
         shape: Styles.mainCardShape,
         elevation: Styles.cardTenElevation,
@@ -127,7 +128,21 @@ class CharacterCard extends StatelessWidget {
     );
   }
 
-  Future<void> _gotoCharacterPage(String name, BuildContext context) async {
+  Future<void> _gotoCharacterPage(BuildContext context) async {
+    if (isComingSoon) {
+      final theme = Theme.of(context);
+      final s = S.of(context);
+      Fluttertoast.showToast(
+        msg: s.comingSoon,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        backgroundColor: theme.accentColor,
+        textColor: Colors.white,
+        fontSize: 16.0,
+      );
+      return;
+    }
+
     context.read<CharacterBloc>().add(CharacterEvent.loadFromName(name: name));
     final route = MaterialPageRoute(builder: (c) => CharacterPage());
     await Navigator.push(context, route);

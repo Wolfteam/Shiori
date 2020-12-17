@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
-import '../widgets/home/elements_card.dart';
+import '../widgets/home/sliver_elements_card.dart';
 import '../widgets/home/sliver_settings_card.dart';
 import '../widgets/home/sliver_wish_simulator_card.dart';
-import '../widgets/home/today_char_ascention_materials.dart';
-import '../widgets/home/today_weapon_materials.dart';
+import '../widgets/home/sliver_today_char_ascention_materials.dart';
+import '../widgets/home/sliver_today_weapon_materials.dart';
 import 'materials_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -16,11 +16,11 @@ class HomePage extends StatelessWidget {
       slivers: [
         _buildMainTitle(s.todayAscentionMaterials, context),
         _buildClickableTitle(s.forCharacters, s.seeAll, context, onClick: () => _gotoMaterialsPage(context)),
-        TodayCharAscentionMaterials(),
+        SliverTodayCharAscentionMaterials(),
         _buildClickableTitle(s.forWeapons, s.seeAll, context, onClick: () => _gotoMaterialsPage(context)),
-        TodayWeaponMaterials(),
+        SliverTodayWeaponMaterials(),
         _buildMainTitle(s.elements, context),
-        ElementsCard(),
+        SliverElementsCard(),
         _buildMainTitle(s.settings, context),
         SliverSettingsCard(),
         _buildMainTitle(s.wishSimulator, context),

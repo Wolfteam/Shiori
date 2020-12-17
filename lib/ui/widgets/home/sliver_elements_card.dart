@@ -4,7 +4,7 @@ import '../../../common/enums/element_type.dart';
 import '../../pages/elements_page.dart';
 import '../common/element_image.dart';
 
-class ElementsCard extends StatelessWidget {
+class SliverElementsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(

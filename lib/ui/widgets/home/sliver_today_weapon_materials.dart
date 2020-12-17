@@ -5,7 +5,7 @@ import '../../../bloc/bloc.dart';
 import '../common/sliver_loading.dart';
 import '../materials/sliver_weapon_ascention_materials.dart';
 
-class TodayWeaponMaterials extends StatelessWidget {
+class SliverTodayWeaponMaterials extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
