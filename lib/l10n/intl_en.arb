@@ -123,5 +123,8 @@
     "restartMayBeNeeded": "A restart may be needed for the changes to take effect",
     "youCanAlsoSendMeAnEmail": "You can also send me an email",
     "partial": "Partial",
-    "brandNew": "New"
+    "brandNew": "New",
+    "noInternetConnection": "No internet connection",
+    "wishSimulator": "Wish simulator",
+    "tryYourLuck": "Try your luck with this simulator"
 }

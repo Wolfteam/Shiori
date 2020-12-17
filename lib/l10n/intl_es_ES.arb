@@ -123,5 +123,7 @@
     "restartMayBeNeeded": "Puede ser necesario reiniciar la app para que los cambios tomen efecto",
     "youCanAlsoSendMeAnEmail": "También puedes enviarme un correo",
     "partial": "Parcial",
-    "brandNew": "Nuevo"
+    "brandNew": "Nuevo",
+    "noInternetConnection": "No hay conexión hay internet",
+    "tryYourLuck": "Prueba tu suerte con este simulador de deseos"
 }

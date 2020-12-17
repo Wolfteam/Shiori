@@ -128,6 +128,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "materials" : MessageLookupByLibrary.simpleMessage("Materials"),
     "monday" : MessageLookupByLibrary.simpleMessage("Monday"),
     "name" : MessageLookupByLibrary.simpleMessage("Name"),
+    "noInternetConnection" : MessageLookupByLibrary.simpleMessage("No internet connection"),
     "none" : MessageLookupByLibrary.simpleMessage("None"),
     "note" : MessageLookupByLibrary.simpleMessage("Note"),
     "nothingToShow" : MessageLookupByLibrary.simpleMessage("Nothing to show"),
@@ -168,6 +169,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "theme" : MessageLookupByLibrary.simpleMessage("Theme"),
     "thursday" : MessageLookupByLibrary.simpleMessage("Thursday"),
     "todayAscentionMaterials" : MessageLookupByLibrary.simpleMessage("Today\'s Ascention Materials"),
+    "tryYourLuck" : MessageLookupByLibrary.simpleMessage("Try your luck with this simulator"),
     "tuesday" : MessageLookupByLibrary.simpleMessage("Tuesday"),
     "type" : MessageLookupByLibrary.simpleMessage("Type"),
     "unclockedAtAscentionLevelX" : m15,
@@ -177,6 +179,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "weaponType" : MessageLookupByLibrary.simpleMessage("Weapon type"),
     "weapons" : MessageLookupByLibrary.simpleMessage("Weapons"),
     "wednesday" : MessageLookupByLibrary.simpleMessage("Wednesday"),
+    "wishSimulator" : MessageLookupByLibrary.simpleMessage("Wish simulator"),
     "youCanAlsoSendMeAnEmail" : MessageLookupByLibrary.simpleMessage("You can also send me an email")
   };
 }

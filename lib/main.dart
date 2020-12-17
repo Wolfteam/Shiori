@@ -8,6 +8,7 @@ import 'generated/l10n.dart';
 import 'injection.dart';
 import 'services/genshing_service.dart';
 import 'services/logging_service.dart';
+import 'services/network_service.dart';
 import 'services/settings_service.dart';
 import 'telemetry.dart';
 import 'ui/pages/main_page.dart';
@@ -86,6 +87,12 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final settingsService = getIt<SettingsService>();
             return SettingsBloc(settingsService);
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final networkService = getIt<NetworkService>();
+            return UrlPageBloc(networkService);
           },
         ),
       ],

@@ -1284,6 +1284,36 @@ class S {
       args: [],
     );
   }
+
+  /// `No internet connection`
+  String get noInternetConnection {
+    return Intl.message(
+      'No internet connection',
+      name: 'noInternetConnection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wish simulator`
+  String get wishSimulator {
+    return Intl.message(
+      'Wish simulator',
+      name: 'wishSimulator',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try your luck with this simulator`
+  String get tryYourLuck {
+    return Intl.message(
+      'Try your luck with this simulator',
+      name: 'tryYourLuck',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
