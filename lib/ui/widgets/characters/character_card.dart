@@ -10,6 +10,7 @@ import '../../../common/extensions/weapon_type_extensions.dart';
 import '../../../common/styles.dart';
 import '../../../generated/l10n.dart';
 import '../../pages/character_page.dart';
+import '../common/comingsoon_new_avatar.dart';
 import '../common/element_image.dart';
 import '../common/rarity.dart';
 import 'character_ascention_materials.dart';
@@ -48,91 +49,82 @@ class CharacterCard extends StatelessWidget {
         shape: Styles.mainCardShape,
         elevation: Styles.cardTenElevation,
         color: elementType.getElementColorFromContext(context),
-        child: Padding(
-          padding: Styles.edgeInsetAll10,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Container(
-                margin: const EdgeInsets.only(top: 5),
-                child: Stack(
-                  alignment: AlignmentDirectional.topCenter,
-                  fit: StackFit.passthrough,
-                  children: [
-                    Image.asset(image, fit: BoxFit.fill),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        _buildNewOrComingSoonAvatar(context),
-                        Tooltip(
-                          message: s.translateElementType(elementType),
-                          child: ElementImage.fromType(type: elementType, radius: 15, useDarkForBackgroundColor: true),
-                        ),
-                      ],
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Stack(
+              alignment: AlignmentDirectional.topCenter,
+              fit: StackFit.passthrough,
+              children: [
+                Container(
+                  alignment: Alignment.center,
+                  height: 280,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(image),
+                      fit: BoxFit.cover,
                     ),
-                  ],
+                  ),
                 ),
-              ),
-              Center(
-                child: Text(
-                  name,
-                  overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
-                ),
-              ),
-              Rarity(stars: rarity),
-              IntrinsicHeight(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Flexible(
-                      fit: FlexFit.tight,
-                      flex: 40,
-                      child: Tooltip(
-                        message: s.translateWeaponType(weaponType),
-                        child: Image.asset(weaponPath, height: 50),
+                    ComingSoonNewAvatar(
+                      isNew: isNew,
+                      isComingSoon: isComingSoon,
+                    ),
+                    Tooltip(
+                      message: s.translateElementType(elementType),
+                      child: Container(
+                        margin: const EdgeInsets.only(top: 10, right: 5),
+                        child: ElementImage.fromType(type: elementType, radius: 15, useDarkForBackgroundColor: true),
                       ),
                     ),
-                    Flexible(
-                      fit: FlexFit.tight,
-                      flex: 60,
-                      child: CharacterAscentionMaterials(images: materials),
-                    )
                   ],
                 ),
-              )
-            ],
-          ),
+              ],
+            ),
+            Padding(
+              padding: Styles.edgeInsetAll10,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Center(
+                    child: Text(
+                      name,
+                      overflow: TextOverflow.ellipsis,
+                      style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Rarity(stars: rarity),
+                  IntrinsicHeight(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Flexible(
+                          fit: FlexFit.tight,
+                          flex: 40,
+                          child: Tooltip(
+                            message: s.translateWeaponType(weaponType),
+                            child: Image.asset(weaponPath, height: 50),
+                          ),
+                        ),
+                        Flexible(
+                          fit: FlexFit.tight,
+                          flex: 60,
+                          child: CharacterAscentionMaterials(images: materials),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
-  }
-
-  Widget _buildNewOrComingSoonAvatar(BuildContext context) {
-    final s = S.of(context);
-    final theme = Theme.of(context);
-    final newOrComingSoon = isNew || isComingSoon;
-    final icon = isNew ? Icons.fiber_new_outlined : Icons.av_timer;
-    final newOrComingSoonAvatar = CircleAvatar(
-      radius: 15,
-      backgroundColor: newOrComingSoon ? theme.accentColor : Colors.transparent,
-      child: newOrComingSoon
-          ? Icon(
-              icon,
-              color: Colors.white,
-            )
-          : null,
-    );
-    if (newOrComingSoon) {
-      return Tooltip(
-        message: isComingSoon ? s.comingSoon : s.recent,
-        child: newOrComingSoonAvatar,
-      );
-    }
-
-    return newOrComingSoonAvatar;
   }
 
   Future<void> _gotoCharacterPage(String name, BuildContext context) async {

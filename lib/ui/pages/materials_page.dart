@@ -21,7 +21,7 @@ class MaterialsPage extends StatelessWidget {
             appBar: AppBar(title: Text(s.materials)),
             body: SafeArea(
               child: Container(
-                padding: EdgeInsets.all(15),
+                padding: Styles.edgeInsetAll10,
                 child: CustomScrollView(
                   slivers: [
                     SliverPadding(

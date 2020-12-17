@@ -39,12 +39,14 @@ class CharCardAscentionMaterial extends StatelessWidget {
     final chars = charImgs
         .map(
           (e) => Container(
-            margin: Styles.edgeInsetAll5,
-            child: IconButton(
-              padding: EdgeInsets.zero,
-              icon: Image.asset(e),
-              iconSize: 55,
-              onPressed: () => _gotoCharacterPage(e, context),
+            margin: const EdgeInsets.all(3),
+            child: InkWell(
+              onTap: () => _gotoCharacterPage(e, context),
+              child: CircleAvatar(
+                radius: 35,
+                backgroundColor: Colors.transparent,
+                backgroundImage: AssetImage(e),
+              ),
             ),
           ),
         )
@@ -60,7 +62,7 @@ class CharCardAscentionMaterial extends StatelessWidget {
           children: [
             Flexible(
               fit: FlexFit.tight,
-              flex: 40,
+              flex: 35,
               child: Column(
                 children: [
                   Image.asset(image, width: 120, height: 100),

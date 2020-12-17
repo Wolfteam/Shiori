@@ -4,10 +4,11 @@ class Styles {
   static const String appIconPath = 'assets/icon/icon.png';
   static final RoundedRectangleBorder cardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(10));
   static final RoundedRectangleBorder mainCardShape = RoundedRectangleBorder(
-    borderRadius: BorderRadius.only(
+    borderRadius: const BorderRadius.only(
       bottomLeft: Radius.circular(35),
-      // topLeft: Radius.circular(35),
-      topRight: Radius.elliptical(50, 40),
+      bottomRight: Radius.circular(35),
+      topLeft: Radius.circular(10),
+      topRight: Radius.circular(10),
     ),
   );
   static final RoundedRectangleBorder floatingCardShape =

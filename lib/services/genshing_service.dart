@@ -102,16 +102,23 @@ class GenshinServiceImpl implements GenshinService {
   List<CharacterCardModel> getCharactersForCard() {
     return _charactersFile.characters.map(
       (e) {
-        final ascentionMaterial =
-            e.ascentionMaterials.reduce((current, next) => current.level > next.level ? current : next);
+        final multiTalentAscentionMaterials =
+            e.multiTalentAscentionMaterials ?? <CharacterFileMultiTalentAscentionMaterialModel>[];
+
+        final ascentionMaterial = e.ascentionMaterials.isNotEmpty
+            ? e.ascentionMaterials.reduce((current, next) => current.level > next.level ? current : next)
+            : null;
 
         final talentMaterial = e.talentAscentionMaterials.isNotEmpty
             ? e.talentAscentionMaterials.reduce((current, next) => current.level > next.level ? current : next)
-            : e.multiTalentAscentionMaterials
-                .expand((e) => e.materials)
-                .reduce((current, next) => current.level > next.level ? current : next);
+            : multiTalentAscentionMaterials.isNotEmpty
+                ? multiTalentAscentionMaterials
+                    .expand((e) => e.materials)
+                    .reduce((current, next) => current.level > next.level ? current : next)
+                : null;
 
-        final materials = ascentionMaterial.materials + talentMaterial.materials;
+        final materials = (ascentionMaterial?.materials ?? <ItemAscentionMaterialModel>[]) +
+            (talentMaterial?.materials ?? <ItemAscentionMaterialModel>[]);
 
         final mp = <String, ItemAscentionMaterialModel>{};
         for (final item in materials) {
