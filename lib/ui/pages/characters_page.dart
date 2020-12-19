@@ -12,9 +12,19 @@ import '../widgets/common/loading.dart';
 import '../widgets/common/sliver_nothing_found.dart';
 import '../widgets/common/sliver_page_filter.dart';
 
-class CharactersPage extends StatelessWidget {
+class CharactersPage extends StatefulWidget {
+  @override
+  _CharactersPageState createState() => _CharactersPageState();
+}
+
+class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAliveClientMixin<CharactersPage> {
+  @override
+  bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext context) {
+    super.build(context);
+
     final s = S.of(context);
     return BlocBuilder<CharactersBloc, CharactersState>(
       builder: (context, state) {

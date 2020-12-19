@@ -13,9 +13,18 @@ import '../widgets/common/sliver_page_filter.dart';
 import '../widgets/weapons/weapon_bottom_sheet.dart';
 import '../widgets/weapons/weapon_card.dart';
 
-class WeaponsPage extends StatelessWidget {
+class WeaponsPage extends StatefulWidget {
+  @override
+  _WeaponsPageState createState() => _WeaponsPageState();
+}
+
+class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClientMixin<WeaponsPage> {
+  @override
+  bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     final s = S.of(context);
     return BlocBuilder<WeaponsBloc, WeaponsState>(
       builder: (context, state) {

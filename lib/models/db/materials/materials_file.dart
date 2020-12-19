@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'talent_material_file_model.dart';
 
 part 'materials_file.freezed.dart';

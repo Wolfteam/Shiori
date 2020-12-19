@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../../../common/assets.dart';
 
 part 'translation_character_file.freezed.dart';
@@ -31,8 +32,7 @@ abstract class TranslationCharacterSkillFile implements _$TranslationCharacterSk
     @required List<TranslationCharacterAbility> abilities,
   }) = _TranslationCharacterSkillFile;
 
-  factory TranslationCharacterSkillFile.fromJson(Map<String, dynamic> json) =>
-      _$TranslationCharacterSkillFileFromJson(json);
+  factory TranslationCharacterSkillFile.fromJson(Map<String, dynamic> json) => _$TranslationCharacterSkillFileFromJson(json);
 }
 
 @freezed
@@ -44,8 +44,7 @@ abstract class TranslationCharacterAbility implements _$TranslationCharacterAbil
     @required List<String> descriptions,
   }) = _TranslationCharacterAbility;
 
-  factory TranslationCharacterAbility.fromJson(Map<String, dynamic> json) =>
-      _$TranslationCharacterAbilityFromJson(json);
+  factory TranslationCharacterAbility.fromJson(Map<String, dynamic> json) => _$TranslationCharacterAbilityFromJson(json);
 }
 
 @freezed
@@ -61,8 +60,7 @@ abstract class TranslationCharacterPassive implements _$TranslationCharacterPass
     @required List<String> descriptions,
   }) = _TranslationCharacterPassive;
 
-  factory TranslationCharacterPassive.fromJson(Map<String, dynamic> json) =>
-      _$TranslationCharacterPassiveFromJson(json);
+  factory TranslationCharacterPassive.fromJson(Map<String, dynamic> json) => _$TranslationCharacterPassiveFromJson(json);
 }
 
 @freezed
@@ -79,6 +77,5 @@ abstract class TranslationCharacterConstellation implements _$TranslationCharact
     @required List<String> descriptions,
   }) = _TranslationCharacterConstellation;
 
-  factory TranslationCharacterConstellation.fromJson(Map<String, dynamic> json) =>
-      _$TranslationCharacterConstellationFromJson(json);
+  factory TranslationCharacterConstellation.fromJson(Map<String, dynamic> json) => _$TranslationCharacterConstellationFromJson(json);
 }

@@ -8,9 +8,19 @@ import '../widgets/common/loading.dart';
 import '../widgets/materials/sliver_character_ascention_materials.dart';
 import '../widgets/materials/sliver_weapon_ascention_materials.dart';
 
-class MaterialsPage extends StatelessWidget {
+class MaterialsPage extends StatefulWidget {
+  @override
+  _MaterialsPageState createState() => _MaterialsPageState();
+}
+
+class _MaterialsPageState extends State<MaterialsPage> with AutomaticKeepAliveClientMixin<MaterialsPage> {
+  @override
+  bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext context) {
+    super.build(context);
+
     final theme = Theme.of(context);
     final s = S.of(context);
     return BlocBuilder<MaterialsBloc, MaterialsState>(

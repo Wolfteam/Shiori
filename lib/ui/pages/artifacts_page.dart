@@ -13,9 +13,19 @@ import '../widgets/common/loading.dart';
 import '../widgets/common/sliver_nothing_found.dart';
 import '../widgets/common/sliver_page_filter.dart';
 
-class ArtifactsPage extends StatelessWidget {
+class ArtifactsPage extends StatefulWidget {
+  @override
+  _ArtifactsPageState createState() => _ArtifactsPageState();
+}
+
+class _ArtifactsPageState extends State<ArtifactsPage> with AutomaticKeepAliveClientMixin<ArtifactsPage> {
+  @override
+  bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext context) {
+    super.build(context);
+
     final s = S.of(context);
     return BlocBuilder<ArtifactsBloc, ArtifactsState>(
       builder: (context, state) {

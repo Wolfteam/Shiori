@@ -13,11 +13,11 @@ import '../../common/styles.dart';
 import '../../generated/l10n.dart';
 import '../../models/models.dart';
 import '../widgets/characters/character_detail.dart';
+import '../widgets/common/element_image.dart';
 import '../widgets/common/item_description.dart';
 import '../widgets/common/item_description_detail.dart';
 import '../widgets/common/loading.dart';
 import '../widgets/common/rarity.dart';
-import '../widgets/common/element_image.dart';
 
 class CharacterPage extends StatelessWidget {
   final double imgSize = 28;

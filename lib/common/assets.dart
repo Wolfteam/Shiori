@@ -1,6 +1,5 @@
-import 'package:genshindb/common/enums/element_type.dart';
-
 import 'enums/app_language_type.dart';
+import 'enums/element_type.dart';
 import 'enums/material_type.dart';
 import 'enums/weapon_type.dart';
 

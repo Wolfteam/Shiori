@@ -42,9 +42,6 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       accentColorChanged: (accentColor) async {
         return _loadThemeData(currentState.appTitle, _settingsService.appTheme, accentColor, _settingsService.language);
       },
-      goToTab: (index) async {
-        return currentState.copyWith(currentSelectedTab: index);
-      },
       languageChanged: (language) async {
         return _init();
       },
@@ -87,7 +84,6 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       theme: themeData,
       firstInstall: _settingsService.isFirstInstall,
       currentLanguage: language,
-      currentSelectedTab: 2,
       currentLocale: locale,
     );
   }

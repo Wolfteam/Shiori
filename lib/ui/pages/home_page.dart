@@ -3,14 +3,24 @@ import 'package:flutter/material.dart';
 import '../../generated/l10n.dart';
 import '../widgets/home/sliver_elements_card.dart';
 import '../widgets/home/sliver_settings_card.dart';
-import '../widgets/home/sliver_wish_simulator_card.dart';
 import '../widgets/home/sliver_today_char_ascention_materials.dart';
 import '../widgets/home/sliver_today_weapon_materials.dart';
+import '../widgets/home/sliver_wish_simulator_card.dart';
 import 'materials_page.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<HomePage> {
+  @override
+  bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext context) {
+    super.build(context);
+
     final s = S.of(context);
     return CustomScrollView(
       slivers: [
@@ -72,6 +82,5 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  void _gotoMaterialsPage(BuildContext context) =>
-      Navigator.push(context, MaterialPageRoute(builder: (_) => MaterialsPage()));
+  void _gotoMaterialsPage(BuildContext context) => Navigator.push(context, MaterialPageRoute(builder: (_) => MaterialsPage()));
 }

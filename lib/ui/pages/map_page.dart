@@ -12,7 +12,10 @@ class MapPage extends StatefulWidget {
   _MapPageState createState() => _MapPageState();
 }
 
-class _MapPageState extends State<MapPage> {
+class _MapPageState extends State<MapPage> with AutomaticKeepAliveClientMixin<MapPage> {
+  @override
+  bool get wantKeepAlive => true;
+
   final flutterWebviewPlugin = FlutterWebviewPlugin();
 
   final String script = '''

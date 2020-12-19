@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../common/styles.dart';
 
 class BulletList extends StatelessWidget {

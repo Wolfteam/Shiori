@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+
 import '../items/item_ascention_material_model.dart';
 
 class CharacterTalentAscentionModel {

@@ -10,12 +10,12 @@ import 'home_page.dart';
 import 'map_page.dart';
 import 'weapons_page.dart';
 
-class MainPage extends StatefulWidget {
+class MainTabPage extends StatefulWidget {
   @override
-  _MainPageState createState() => _MainPageState();
+  _MainTabPageState createState() => _MainTabPageState();
 }
 
-class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin {
+class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStateMixin {
   bool _didChangeDependencies = false;
   TabController _tabController;
   int _index = 2;
@@ -55,10 +55,10 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: BlocConsumer<MainBloc, MainState>(
+        child: BlocConsumer<MainTabBloc, MainTabState>(
           listener: (ctx, state) async {
             state.maybeMap(
-              loaded: (s) => _changeCurrentTab(s.currentSelectedTab),
+              initial: (s) => _changeCurrentTab(s.currentSelectedTab),
               orElse: () => {},
             );
           },
@@ -79,7 +79,7 @@ class _MainPageState extends State<MainPage> with SingleTickerProviderStateMixin
         showUnselectedLabels: true,
         items: _buildBottomNavBars(),
         type: BottomNavigationBarType.fixed,
-        onTap: (newIndex) => context.read<MainBloc>().add(MainEvent.goToTab(index: newIndex)),
+        onTap: (newIndex) => context.read<MainTabBloc>().add(MainTabEvent.goToTab(index: newIndex)),
       ),
     );
   }

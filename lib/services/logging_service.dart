@@ -1,7 +1,7 @@
+import 'package:dog/dog.dart';
 import 'package:flutter/foundation.dart';
 import 'package:log_4_dart_2/log_4_dart_2.dart';
 import 'package:sprintf/sprintf.dart';
-import 'package:dog/dog.dart';
 
 import '../common/extensions/string_extensions.dart';
 

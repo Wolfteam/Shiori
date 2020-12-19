@@ -11,7 +11,7 @@ import 'services/logging_service.dart';
 import 'services/network_service.dart';
 import 'services/settings_service.dart';
 import 'telemetry.dart';
-import 'ui/pages/main_page.dart';
+import 'ui/pages/main_tab_page.dart';
 import 'ui/pages/splash_page.dart';
 
 Future<void> main() async {
@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
             return MainBloc(loggingService, genshinService, settingsService)..add(const MainEvent.init());
           },
         ),
+        BlocProvider(create: (ctx) => MainTabBloc()),
         BlocProvider(
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
@@ -118,7 +119,7 @@ Widget _buildApp(MainState state) {
       return MaterialApp(
         title: s.appTitle,
         theme: s.theme,
-        home: MainPage(),
+        home: MainTabPage(),
         //Without this, the lang won't be reloaded
         locale: s.currentLocale,
         localizationsDelegates: delegates,

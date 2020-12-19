@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../common/styles.dart';
 import '../../../common/enums/element_type.dart';
 import '../../../common/extensions/element_type_extensions.dart';
+import '../../../common/styles.dart';
 import '../../../generated/l10n.dart';
 import '../../../models/models.dart';
 import '../common/item_description_detail.dart';

@@ -12,10 +12,6 @@ abstract class MainEvent with _$MainEvent {
     @required AppAccentColorType newValue,
   }) = _AccentColorChanged;
 
-  const factory MainEvent.goToTab({
-    @required int index,
-  }) = _GoToTab;
-
   const factory MainEvent.languageChanged({
     @required AppLanguageType newValue,
   }) = _LanguageChanged;
