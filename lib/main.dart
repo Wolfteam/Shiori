@@ -96,6 +96,12 @@ class MyApp extends StatelessWidget {
             return UrlPageBloc(networkService);
           },
         ),
+        BlocProvider(
+          create: (ctx) {
+            final genshinService = getIt<GenshinService>();
+            return ArtifactDetailsBloc(genshinService);
+          },
+        ),
       ],
       child: BlocBuilder<MainBloc, MainState>(
         builder: (ctx, state) => _buildApp(state),

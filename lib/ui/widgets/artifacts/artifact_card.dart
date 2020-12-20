@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../bloc/bloc.dart';
 import '../../../common/extensions/rarity_extensions.dart';
 import '../../../common/styles.dart';
+import '../../pages/artifact_details_page.dart';
 import '../common/gradient_card.dart';
 import '../common/rarity.dart';
+import 'artifact_stats.dart';
 
 class ArtifactCard extends StatelessWidget {
+  final String keyName;
   final String name;
   final String image;
   final int rarity;
@@ -13,6 +18,7 @@ class ArtifactCard extends StatelessWidget {
 
   const ArtifactCard({
     Key key,
+    @required this.keyName,
     @required this.name,
     @required this.image,
     @required this.rarity,
@@ -22,30 +28,8 @@ class ArtifactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final stats = bonus.map(
-      (e) {
-        final splitted = split(e, ':', max: 1);
-        return Container(
-          margin: const EdgeInsets.symmetric(vertical: 5),
-          child: Column(
-            children: [
-              Text(
-                splitted.first,
-                textAlign: TextAlign.center,
-                style: theme.textTheme.subtitle2,
-              ),
-              Text(
-                splitted.last,
-                textAlign: TextAlign.center,
-                style: theme.textTheme.bodyText2.copyWith(fontSize: 11),
-              ),
-            ],
-          ),
-        );
-      },
-    ).toList();
     return InkWell(
-      onTap: () => {},
+      onTap: () => _gotoDetailPage(context),
       child: GradientCard(
         shape: Styles.mainCardShape,
         elevation: Styles.cardTenElevation,
@@ -67,7 +51,7 @@ class ArtifactCard extends StatelessWidget {
                 ),
               ),
               Rarity(stars: rarity),
-              ...stats
+              ArtifactStats(bonus: bonus),
             ],
           ),
         ),
@@ -75,26 +59,9 @@ class ArtifactCard extends StatelessWidget {
     );
   }
 
-  List<String> split(String string, String separator, {int max = 0}) {
-    final result = <String>[];
-    var copy = string;
-
-    if (separator.isEmpty) {
-      result.add(copy);
-      return result;
-    }
-
-    while (true) {
-      final index = copy.indexOf(separator, 0);
-      if (index == -1 || (max > 0 && result.length >= max)) {
-        result.add(copy);
-        break;
-      }
-
-      result.add(copy.substring(0, index));
-      copy = copy.substring(index + separator.length);
-    }
-
-    return result;
+  Future<void> _gotoDetailPage(BuildContext context) async {
+    context.read<ArtifactDetailsBloc>().add(ArtifactDetailsEvent.loadArtifact(name: keyName));
+    final route = MaterialPageRoute(builder: (ctx) => ArtifactDetailsPage());
+    await Navigator.of(context).push(route);
   }
 }

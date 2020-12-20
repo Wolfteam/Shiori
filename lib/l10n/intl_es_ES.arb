@@ -125,5 +125,7 @@
     "partial": "Parcial",
     "brandNew": "Nuevo",
     "noInternetConnection": "No hay conexión hay internet",
-    "tryYourLuck": "Prueba tu suerte con este simulador de deseos"
+    "tryYourLuck": "Prueba tu suerte con este simulador de deseos",
+    "bonus": "Bonos",
+    "pieces": "Piezas"
 }

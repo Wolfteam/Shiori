@@ -61,7 +61,13 @@ class _ArtifactsPageState extends State<ArtifactsPage> with AutomaticKeepAliveCl
         crossAxisCount: isPortrait ? 2 : 3,
         itemBuilder: (ctx, index) {
           final item = artifacts[index];
-          return ArtifactCard(name: item.name, image: item.image, rarity: item.rarity, bonus: item.bonus);
+          return ArtifactCard(
+            keyName: item.key,
+            name: item.name,
+            image: item.image,
+            rarity: item.rarity,
+            bonus: item.bonus,
+          );
         },
         itemCount: artifacts.length,
         crossAxisSpacing: isPortrait ? 10 : 5,

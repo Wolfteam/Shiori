@@ -24,6 +24,8 @@ abstract class GenshinService {
   WeaponFileModel getWeapon(String name);
 
   List<ArtifactCardModel> getArtifactsForCard();
+  ArtifactFileModel getArtifact(String name);
+  TranslationArtifactFile getArtifactTranslation(String name);
 
   TranslationCharacterFile getCharacterTranslation(String name);
   TranslationWeaponFile getWeaponTranslation(String name);
@@ -189,6 +191,7 @@ class GenshinServiceImpl implements GenshinService {
       (e) {
         final translation = _translationFile.artifacts.firstWhere((t) => t.key == e.name);
         return ArtifactCardModel(
+          key: e.name,
           name: translation.name,
           image: e.fullImagePath,
           rarity: e.rarityMax,
@@ -199,8 +202,22 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
+  ArtifactFileModel getArtifact(String name) {
+    return _artifactsFile.artifacts.firstWhere((a) => a.name == name);
+  }
+
+  @override
+  TranslationArtifactFile getArtifactTranslation(String name) {
+    return _translationFile.artifacts.firstWhere((t) => t.key == name);
+  }
+
+  @override
   List<TodayCharAscentionMaterialsModel> getCharacterAscentionMaterials(int day) {
-    return _materialsFile.talents.where((t) => t.days.contains(day)).map((e) {
+    final iterable = day == DateTime.sunday
+        ? _materialsFile.talents.where((t) => t.days.isNotEmpty)
+        : _materialsFile.talents.where((t) => t.days.contains(day));
+
+    return iterable.map((e) {
       final translation = _translationFile.materials.firstWhere((t) => t.key == e.name);
       final characters = <String>[];
 
@@ -232,7 +249,10 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   List<TodayWeaponAscentionMaterialModel> getWeaponAscentionMaterials(int day) {
-    return _materialsFile.weaponPrimary.where((t) => t.days.contains(day)).map((e) {
+    final iterable = day == DateTime.sunday
+        ? _materialsFile.weaponPrimary
+        : _materialsFile.weaponPrimary.where((t) => t.days.contains(day));
+    return iterable.map((e) {
       final translation = _translationFile.materials.firstWhere((t) => t.key == e.name);
 
       return TodayWeaponAscentionMaterialModel(

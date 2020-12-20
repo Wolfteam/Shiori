@@ -126,5 +126,7 @@
     "brandNew": "New",
     "noInternetConnection": "No internet connection",
     "wishSimulator": "Wish simulator",
-    "tryYourLuck": "Try your luck with this simulator"
+    "tryYourLuck": "Try your luck with this simulator",
+    "bonus": "Bonus",
+    "pieces": "Pieces"
 }

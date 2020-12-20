@@ -1,3 +1,4 @@
+export 'artifact_details/artifact_details_bloc.dart';
 export 'artifacts/artifacts_bloc.dart';
 export 'character/character_bloc.dart';
 export 'characters/characters_bloc.dart';
