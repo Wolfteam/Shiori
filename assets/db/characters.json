@@ -401,7 +401,8 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "builds": []
         },
         {
             "name": "Amber",
@@ -801,6 +802,46 @@
                             "quantity": 700000,
                             "materialType": "currency",
                             "image": "mora.png"
+                        }
+                    ]
+                }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "sharpshooters_oath.png",
+                        "messenger.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "wanderers_troupe_4.png",
+                            "multiples": []
+                        }
+                    ]
+                },
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "sharpshooters_oath.png",
+                        "messenger.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "noblesse_oblige_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "crimson_witch_of_flames_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "gladiators_finale_4.png"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -1207,7 +1248,8 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "builds": []
         },
         {
             "name": "Barbara",
@@ -1607,6 +1649,21 @@
                             "quantity": 700000,
                             "materialType": "currency",
                             "image": "mora.png"
+                        }
+                    ]
+                }
+            ],
+            "builds": [
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "prototype_malice.png",
+                        "thrilling_tales_of_dragon_slayers.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "maiden_beloved_4.png",
+                            "multiples": []
                         }
                     ]
                 }
@@ -2013,6 +2070,21 @@
                         }
                     ]
                 }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "wolfs_gravestone.png",
+                        "prototype_aminus.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "gladiators_finale_4.png",
+                            "multiples": []
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -2413,6 +2485,46 @@
                             "quantity": 700000,
                             "materialType": "currency",
                             "image": "mora.png"
+                        }
+                    ]
+                }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "aquila_favonia.png",
+                        "skyward_blade.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "gladiators_finale_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "bloodstained_chivalry_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "gladiators_finale_4.png"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "skyward_blade.png",
+                        "favonius_sword.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "noblesse_oblige_4.png",
+                            "multiples": []
                         }
                     ]
                 }
@@ -2819,6 +2931,34 @@
                         }
                     ]
                 }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "wolfs_gravestone.png",
+                        "skyward_pride.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "noblesse_oblige_4.png",
+                            "multiples": []
+                        }
+                    ]
+                },
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "skyward_pride.png",
+                        "favonius_greatsword.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "noblesse_oblige_4.png",
+                            "multiples": []
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -3219,6 +3359,25 @@
                             "quantity": 700000,
                             "materialType": "currency",
                             "image": "mora.png"
+                        }
+                    ]
+                }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "wolfs_gravestone.png",
+                        "prototype_aminus.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "crimson_witch_of_flames_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "one": "gladiators_finale_4.png",
+                            "multiples": []
                         }
                     ]
                 }
@@ -3625,6 +3784,25 @@
                         }
                     ]
                 }
+            ],
+            "builds": [
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "sacrificial_bow.png",
+                        "favonius_warbow.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "maiden_beloved_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "one": "noblesse_oblige_4.png",
+                            "multiples": []
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -4025,6 +4203,42 @@
                             "quantity": 700000,
                             "materialType": "currency",
                             "image": "mora.png"
+                        }
+                    ]
+                }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "skyward_harp.png",
+                        "compound_bow.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "bloodstained_chivalry_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "gladiators_finale_4.png"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "skyward_harp.png",
+                        "the_stringless.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "thundering_fury_4.png",
+                            "multiples": []
                         }
                     ]
                 }
@@ -4431,7 +4645,8 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "builds": []
         },
         {
             "name": "Jean",
@@ -4831,6 +5046,50 @@
                             "quantity": 700000,
                             "materialType": "currency",
                             "image": "mora.png"
+                        }
+                    ]
+                }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "aquila_favonia.png",
+                        "prototype_rancour.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "gladiators_finale_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "bloodstained_chivalry_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "gladiators_finale_4.png"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "skyward_blade.png",
+                        "favonius_sword.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "noblesse_oblige_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "one": "viridescent_venerer_4.png",
+                            "multiples": []
                         }
                     ]
                 }
@@ -5237,6 +5496,21 @@
                         }
                     ]
                 }
+            ],
+            "builds": [
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "skyward_blade.png",
+                        "favonius_sword.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "noblesse_oblige_4.png",
+                            "multiples": []
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -5637,6 +5911,33 @@
                             "quantity": 700000,
                             "materialType": "currency",
                             "image": "mora.png"
+                        }
+                    ]
+                }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "the_black_sword.png",
+                        "lions_roar.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "gladiators_finale_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "thundering_fury_4.png"
+                                }
+                            ]
+                        },
+                        {
+                            "one": "thundersoother_4.png",
+                            "multiples": []
                         }
                     ]
                 }
@@ -6043,6 +6344,33 @@
                         }
                     ]
                 }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "skyward_atlas.png",
+                        "solar_pearl.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "crimson_witch_of_flames_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "gladiators_finale_4.png"
+                                }
+                            ]
+                        },
+                        {
+                            "one": "wanderers_troupe_4.png",
+                            "multiples": []
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -6443,6 +6771,25 @@
                             "quantity": 700000,
                             "materialType": "currency",
                             "image": "mora.png"
+                        }
+                    ]
+                }
+            ],
+            "builds": [
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "skyward_atlas.png",
+                        "favonius_codex.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "noblesse_oblige_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "one": "thundering_fury_4.png",
+                            "multiples": []
                         }
                     ]
                 }
@@ -6849,6 +7196,21 @@
                         }
                     ]
                 }
+            ],
+            "builds": [
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "skyward_atlas.png",
+                        "favonius_codex.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "noblesse_oblige_4.png",
+                            "multiples": []
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -7249,6 +7611,41 @@
                             "quantity": 700000,
                             "materialType": "currency",
                             "image": "mora.png"
+                        }
+                    ]
+                }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "lost_prayer_to_the_sacred_winds.png",
+                        "skyward_atlas.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "archaic_petra_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "gladiators_finale_4.png"
+                                }
+                            ]
+                        },
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "archaic_petra_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "noblesse_oblige_4.png"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -7655,6 +8052,46 @@
                         }
                     ]
                 }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "skyward_pride.png",
+                        "whiteblind.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "retracing_bolide_4.png",
+                            "multiples": []
+                        }
+                    ]
+                },
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "skyward_pride.png",
+                        "whiteblind.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "maiden_beloved_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "retracing_bolide_4.png"
+                                }
+                            ]
+                        },
+                        {
+                            "one": "maiden_beloved_4.png",
+                            "multiples": []
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -8055,6 +8492,21 @@
                             "quantity": 700000,
                             "materialType": "currency",
                             "image": "mora.png"
+                        }
+                    ]
+                }
+            ],
+            "builds": [
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "skyward_blade.png",
+                        "sacrificial_sword.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "maiden_beloved_4.png",
+                            "multiples": []
                         }
                     ]
                 }
@@ -8461,6 +8913,21 @@
                         }
                     ]
                 }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "wolfs_gravestone.png",
+                        "prototype_aminus.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "gladiators_finale_4.png",
+                            "multiples": []
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -8864,6 +9331,25 @@
                         }
                     ]
                 }
+            ],
+            "builds": [
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "sacrificial_fragments.png",
+                        "mappa_mare.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "viridescent_venerer_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "one": "instructor_4.png",
+                            "multiples": []
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -9264,6 +9750,33 @@
                             "quantity": 700000,
                             "materialType": "currency",
                             "image": "mora.png"
+                        }
+                    ]
+                }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "skyward_harp.png",
+                        "rust.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "gladiators_finale_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "noblesse_oblige_4.png"
+                                }
+                            ]
+                        },
+                        {
+                            "one": "wanderers_troupe_4.png",
+                            "multiples": []
                         }
                     ]
                 }
@@ -10071,6 +10584,21 @@
                         }
                     ]
                 }
+            ],
+            "builds": [
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "skyward_blade.png",
+                        "favonius_sword.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "viridescent_venerer_4.png",
+                            "multiples": []
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -10875,6 +11403,25 @@
                         }
                     ]
                 }
+            ],
+            "builds": [
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "skyward_blade.png",
+                        "favonius_sword.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "archaic_petra_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "one": "noblesse_oblige_4.png",
+                            "multiples": []
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -11275,6 +11822,25 @@
                             "quantity": 700000,
                             "materialType": "currency",
                             "image": "mora.png"
+                        }
+                    ]
+                }
+            ],
+            "builds": [
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "the_stringless.png",
+                        "favonius_warbow.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "viridescent_venerer_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "one": "noblesse_oblige_4.png",
+                            "multiples": []
                         }
                     ]
                 }
@@ -11681,6 +12247,50 @@
                         }
                     ]
                 }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "primordial_jade_winged_spear.png",
+                        "crescent_pike.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "gladiators_finale_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "bloodstained_chivalry_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "gladiators_finale_4.png"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "skyward_spine.png",
+                        "prototype_grudge.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "crimson_witch_of_flames_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "one": "noblesse_oblige_4.png",
+                            "multiples": []
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -12081,6 +12691,21 @@
                             "quantity": 700000,
                             "materialType": "currency",
                             "image": "mora.png"
+                        }
+                    ]
+                }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "primordial_jade_winged_spear.png",
+                        "halberd.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "gladiators_finale_4.png",
+                            "multiples": []
                         }
                     ]
                 }
@@ -12487,6 +13112,21 @@
                         }
                     ]
                 }
+            ],
+            "builds": [
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "sacrificial_sword.png",
+                        "favonius_sword.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "noblesse_oblige_4.png",
+                            "multiples": []
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -12890,6 +13530,33 @@
                         }
                     ]
                 }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "wolfs_gravestone.png",
+                        "prototype_aminus.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "gladiators_finale_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "bloodstained_chivalry_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "gladiators_finale_4.png"
+                                }
+                            ]
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -13290,6 +13957,49 @@
                             "quantity": 700000,
                             "materialType": "currency",
                             "image": "mora.png"
+                        }
+                    ]
+                }
+            ],
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "crescent_pike.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "gladiators_finale_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "bloodstained_chivalry_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "gladiators_finale_4.png"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "skyward_spine.png",
+                        "prototype_grudge.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "archaic_petra_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "one": "noblesse_oblige_4.png",
+                            "multiples": []
                         }
                     ]
                 }

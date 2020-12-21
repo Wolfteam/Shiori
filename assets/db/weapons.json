@@ -3357,7 +3357,7 @@
         },
         {
             "name": "Skyward Harp",
-            "image": "the_viridescent_hunt.png",
+            "image": "skyward_harp.png",
             "type": "bow",
             "atk": 48,
             "rarity": 5,

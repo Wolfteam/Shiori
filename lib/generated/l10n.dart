@@ -1334,6 +1334,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Builds`
+  String get builds {
+    return Intl.message(
+      'Builds',
+      name: 'builds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `DPS`
+  String get dps {
+    return Intl.message(
+      'DPS',
+      name: 'dps',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or`
+  String get or {
+    return Intl.message(
+      'Or',
+      name: 'or',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
