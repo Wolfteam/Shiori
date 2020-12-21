@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../../../bloc/elements/elements_bloc.dart';
 import '../common/loading.dart';
@@ -14,15 +13,27 @@ class SliverElementDebuffs extends StatelessWidget {
       builder: (context, state) {
         return state.when(
           loading: () => const SliverToBoxAdapter(child: Loading(useScaffold: false)),
-          loaded: (debuffs, _, __) => SliverStaggeredGrid.countBuilder(
+          loaded: (debuffs, _, __) => SliverGrid.count(
             crossAxisCount: isPortrait ? 2 : 3,
-            itemBuilder: (ctx, index) {
-              final item = debuffs[index];
-              return ElementDebuffCard(key: Key(item.name), effect: item.effect, image: item.image, name: item.name);
-            },
-            itemCount: debuffs.length,
-            staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
+            children: debuffs
+                .map((item) => ElementDebuffCard(
+                      key: Key(item.name),
+                      effect: item.effect,
+                      image: item.image,
+                      name: item.name,
+                    ))
+                .toList(),
           ),
+          //TODO: COMMENTED UNTIL https://github.com/letsar/flutter_staggered_grid_view/issues/145
+          // loaded: (debuffs, _, __) => SliverStaggeredGrid.countBuilder(
+          //   crossAxisCount: isPortrait ? 2 : 3,
+          //   itemBuilder: (ctx, index) {
+          //     final item = debuffs[index];
+          //     return ElementDebuffCard(key: Key(item.name), effect: item.effect, image: item.image, name: item.name);
+          //   },
+          //   itemCount: debuffs.length,
+          //   staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
+          // ),
         );
       },
     );

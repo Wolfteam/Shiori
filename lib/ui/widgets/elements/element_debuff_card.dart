@@ -23,6 +23,8 @@ class ElementDebuffCard extends StatelessWidget {
       child: Container(
         padding: Styles.edgeInsetAll5,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: [
             ElementImage.fromPath(path: image),
             Text(

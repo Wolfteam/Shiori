@@ -30,7 +30,7 @@ class ElementImage extends StatelessWidget {
   Widget build(BuildContext context) {
     final bgColor = useDarkForBackgroundColor ? Colors.black.withAlpha(100) : type.getElementColorFromContext(context);
     return Container(
-      margin: EdgeInsets.all(2),
+      margin: const EdgeInsets.all(2),
       child: CircleAvatar(
         radius: radius,
         backgroundColor: bgColor,

@@ -28,6 +28,7 @@ class WeaponCardAscentionMaterial extends StatelessWidget {
         padding: Styles.edgeInsetAll5,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(image, width: 120, height: 100),
             Tooltip(
