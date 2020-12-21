@@ -21,9 +21,11 @@ abstract class GenshinService {
   CharacterFileModel getCharacterByImg(String img);
 
   List<WeaponCardModel> getWeaponsForCard();
+  WeaponCardModel getWeaponForCardByImg(String image);
   WeaponFileModel getWeapon(String name);
 
   List<ArtifactCardModel> getArtifactsForCard();
+  ArtifactCardModel getArtifactForCardByImg(String image);
   ArtifactFileModel getArtifact(String name);
   TranslationArtifactFile getArtifactTranslation(String name);
 
@@ -176,6 +178,19 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
+  WeaponCardModel getWeaponForCardByImg(String image) {
+    final weapon = _weaponsFile.weapons.firstWhere((e) => e.image == image);
+    final translation = getWeaponTranslation(weapon.name);
+    return WeaponCardModel(
+      baseAtk: weapon.atk,
+      image: weapon.fullImagePath,
+      name: translation.name,
+      rarity: weapon.rarity,
+      type: weapon.type,
+    );
+  }
+
+  @override
   WeaponFileModel getWeapon(String name) {
     return _weaponsFile.weapons.firstWhere((element) => element.name == name);
   }
@@ -199,6 +214,19 @@ class GenshinServiceImpl implements GenshinService {
         );
       },
     ).toList();
+  }
+
+  @override
+  ArtifactCardModel getArtifactForCardByImg(String image) {
+    final artifact = _artifactsFile.artifacts.firstWhere((a) => a.image == image);
+    final translation = _translationFile.artifacts.firstWhere((t) => t.key == artifact.name);
+    return ArtifactCardModel(
+      key: artifact.name,
+      name: translation.name,
+      image: artifact.fullImagePath,
+      rarity: artifact.rarityMax,
+      bonus: translation.bonus,
+    );
   }
 
   @override

@@ -57,6 +57,25 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
       passives: translations.passives,
       constellations: translations.constellations,
       multiTalentAscentionMaterials: char.multiTalentAscentionMaterials,
+      builds: char.builds.map((build) {
+        return CharacterBuildCardModel(
+          isForSupport: build.isSupport,
+          weapons: build.weaponImages.map((e) => _genshinService.getWeaponForCardByImg(e)).toList(),
+          artifacts: build.artifacts.map(
+            (e) {
+              final one = e.one != null ? _genshinService.getArtifactForCardByImg(e.one) : null;
+              final multiples = e.multiples
+                  .map((m) => CharacterBuildMultipleArtifactModel(
+                        quantity: m.quantity,
+                        artifact: _genshinService.getArtifactForCardByImg(m.image),
+                      ))
+                  .toList();
+
+              return CharacterBuildArtifactModel(one: one, multiples: multiples);
+            },
+          ).toList(),
+        );
+      }).toList(),
     );
   }
 }

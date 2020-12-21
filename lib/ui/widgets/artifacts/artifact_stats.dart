@@ -18,6 +18,7 @@ class ArtifactStats extends StatelessWidget {
           return Container(
             margin: const EdgeInsets.symmetric(vertical: 5),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
                   splitted.first,

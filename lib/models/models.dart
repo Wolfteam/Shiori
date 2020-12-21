@@ -1,5 +1,6 @@
 export 'artifacts/artifact_card_model.dart';
 export 'characters/character_ascention_model.dart';
+export 'characters/character_build_card_model.dart';
 export 'characters/character_card_model.dart';
 export 'characters/character_constellation_model.dart';
 export 'characters/character_passive_talent_model.dart';

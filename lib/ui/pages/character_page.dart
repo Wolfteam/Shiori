@@ -12,6 +12,7 @@ import '../../common/genshin_db_icons.dart';
 import '../../common/styles.dart';
 import '../../generated/l10n.dart';
 import '../../models/models.dart';
+import '../widgets/characters/character_build_card.dart';
 import '../widgets/characters/character_detail.dart';
 import '../widgets/common/element_image.dart';
 import '../widgets/common/item_description.dart';
@@ -57,6 +58,7 @@ class CharacterPage extends StatelessWidget {
                       s.multiTalentAscentionMaterials ?? [],
                       s.passives,
                       s.constellations,
+                      s.builds,
                       context,
                     ),
                   ],
@@ -144,6 +146,7 @@ class CharacterPage extends StatelessWidget {
     List<CharacterFileMultiTalentAscentionMaterialModel> multiTalentAscentionMaterials,
     List<TranslationCharacterPassive> passives,
     List<TranslationCharacterConstellation> constellations,
+    List<CharacterBuildCardModel> builds,
     BuildContext context,
   ) {
     final s = S.of(context);
@@ -153,9 +156,10 @@ class CharacterPage extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(top: 10, right: 10, left: 10),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              margin: EdgeInsets.only(bottom: 10),
+              margin: const EdgeInsets.only(bottom: 10),
               child: ItemDescriptionDetail(
                 title: s.description,
                 body: Container(margin: const EdgeInsets.symmetric(horizontal: 5), child: Text(description)),
@@ -163,6 +167,21 @@ class CharacterPage extends StatelessWidget {
               ),
             ),
             CharacterDetailSkillsCard(elementType: elementType, skills: skills),
+            if (builds.isNotEmpty)
+              ItemDescriptionDetail(
+                title: s.builds,
+                body: Column(
+                  children: builds
+                      .map((build) => CharacterBuildCard(
+                            isForSupport: build.isForSupport,
+                            elementType: elementType,
+                            weapons: build.weapons,
+                            artifacts: build.artifacts,
+                          ))
+                      .toList(),
+                ),
+                textColor: elementType.getElementColorFromContext(context),
+              ),
             CharacterDetailAscentionMaterialsCard(ascentionMaterials: ascentionMaterials, elementType: elementType),
             if (talentAscentionMaterials.isNotEmpty)
               CharacterDetailTalentAscentionMaterialsCard.withTalents(

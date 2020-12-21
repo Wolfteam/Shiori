@@ -20,5 +20,6 @@ abstract class CharacterState with _$CharacterState {
     @required List<TranslationCharacterSkillFile> skills,
     @required List<TranslationCharacterPassive> passives,
     @required List<TranslationCharacterConstellation> constellations,
+    @required List<CharacterBuildCardModel> builds,
   }) = _LoadedState;
 }

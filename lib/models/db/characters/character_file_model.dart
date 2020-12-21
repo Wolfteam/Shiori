@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../common/assets.dart';
 import '../../../common/enums/element_type.dart';
 import '../../../common/enums/weapon_type.dart';
 import '../../models.dart';
@@ -25,6 +26,7 @@ abstract class CharacterFileModel implements _$CharacterFileModel {
     @required List<CharacterFileAscentionMaterialModel> ascentionMaterials,
     @required List<CharacterFileTalentAscentionMaterialModel> talentAscentionMaterials,
     List<CharacterFileMultiTalentAscentionMaterialModel> multiTalentAscentionMaterials,
+    @required List<CharacterFileBuild> builds,
   }) = _CharacterFileModel;
 
   const CharacterFileModel._();
@@ -71,4 +73,48 @@ abstract class CharacterFileMultiTalentAscentionMaterialModel
 
   factory CharacterFileMultiTalentAscentionMaterialModel.fromJson(Map<String, dynamic> json) =>
       _$CharacterFileMultiTalentAscentionMaterialModelFromJson(json);
+}
+
+@freezed
+abstract class CharacterFileBuild implements _$CharacterFileBuild {
+  factory CharacterFileBuild({
+    @required bool isSupport,
+    @required List<String> weaponImages,
+    @required List<CharacterFileArtifactBuild> artifacts,
+  }) = _CharacterFileBuild;
+
+  const CharacterFileBuild._();
+
+  factory CharacterFileBuild.fromJson(Map<String, dynamic> json) => _$CharacterFileBuildFromJson(json);
+}
+
+@freezed
+abstract class CharacterFileArtifactBuild implements _$CharacterFileArtifactBuild {
+  @late
+  String get fullImagePath => one != null ? Assets.getArtifactPath(one) : null;
+
+  factory CharacterFileArtifactBuild({
+    String one,
+    List<CharacterFileArtifactMultipleBuild> multiples,
+  }) = _CharacterFileArtifactBuild;
+
+  CharacterFileArtifactBuild._();
+
+  factory CharacterFileArtifactBuild.fromJson(Map<String, dynamic> json) => _$CharacterFileArtifactBuildFromJson(json);
+}
+
+@freezed
+abstract class CharacterFileArtifactMultipleBuild implements _$CharacterFileArtifactMultipleBuild {
+  @late
+  String get fullImagePath => Assets.getArtifactPath(image);
+
+  factory CharacterFileArtifactMultipleBuild({
+    @required int quantity,
+    @required String image,
+  }) = _CharacterFileArtifactMultipleBuild;
+
+  CharacterFileArtifactMultipleBuild._();
+
+  factory CharacterFileArtifactMultipleBuild.fromJson(Map<String, dynamic> json) =>
+      _$CharacterFileArtifactMultipleBuildFromJson(json);
 }

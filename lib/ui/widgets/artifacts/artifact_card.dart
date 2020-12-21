@@ -15,6 +15,9 @@ class ArtifactCard extends StatelessWidget {
   final String image;
   final int rarity;
   final List<String> bonus;
+  final double imgWidth;
+  final double imgHeight;
+  final bool withoutDetails;
 
   const ArtifactCard({
     Key key,
@@ -23,7 +26,22 @@ class ArtifactCard extends StatelessWidget {
     @required this.image,
     @required this.rarity,
     @required this.bonus,
-  }) : super(key: key);
+    this.imgWidth = 140,
+    this.imgHeight = 120,
+  })  : withoutDetails = false,
+        super(key: key);
+
+  const ArtifactCard.withoutDetails({
+    Key key,
+    @required this.keyName,
+    @required this.name,
+    @required this.image,
+    @required this.rarity,
+  })  : imgWidth = 70,
+        imgHeight = 60,
+        bonus = const [],
+        withoutDetails = true,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,21 +55,21 @@ class ArtifactCard extends StatelessWidget {
         child: Padding(
           padding: Styles.edgeInsetAll5,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Image.asset(image, width: 140, height: 120),
-              Center(
-                child: Tooltip(
-                  message: name,
-                  child: Text(
-                    name,
-                    textAlign: TextAlign.center,
-                    style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+              Image.asset(image, width: imgWidth, height: imgHeight),
+              if (!withoutDetails)
+                Center(
+                  child: Tooltip(
+                    message: name,
+                    child: Text(
+                      name,
+                      textAlign: TextAlign.center,
+                      style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
-              ),
               Rarity(stars: rarity),
-              ArtifactStats(bonus: bonus),
+              if (bonus.isNotEmpty) ArtifactStats(bonus: bonus),
             ],
           ),
         ),

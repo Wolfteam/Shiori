@@ -20,6 +20,9 @@ class WeaponCard extends StatelessWidget {
   final int rarity;
   final int baseAtk;
   final WeaponType type;
+  final double imgWidth;
+  final double imgHeight;
+  final bool withoutDetails;
 
   const WeaponCard({
     Key key,
@@ -28,7 +31,22 @@ class WeaponCard extends StatelessWidget {
     @required this.rarity,
     @required this.baseAtk,
     @required this.type,
-  }) : super(key: key);
+    this.imgWidth = 160,
+    this.imgHeight = 140,
+  })  : withoutDetails = false,
+        super(key: key);
+
+  const WeaponCard.withoutDetails({
+    Key key,
+    @required this.image,
+    @required this.name,
+    @required this.rarity,
+    this.imgWidth = 80,
+    this.imgHeight = 70,
+  })  : type = null,
+        baseAtk = null,
+        withoutDetails = true,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,32 +61,34 @@ class WeaponCard extends StatelessWidget {
         child: Padding(
           padding: Styles.edgeInsetAll5,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Image.asset(image, width: 160, height: 140),
-              Center(
-                child: Tooltip(
-                  message: name,
-                  child: Text(
-                    name,
-                    overflow: TextOverflow.ellipsis,
-                    style: theme.textTheme.subtitle1.copyWith(
-                      fontWeight: FontWeight.bold,
+              Image.asset(image, width: imgWidth, height: imgHeight),
+              if (!withoutDetails)
+                Center(
+                  child: Tooltip(
+                    message: name,
+                    child: Text(
+                      name,
+                      overflow: TextOverflow.ellipsis,
+                      style: theme.textTheme.subtitle1.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
-              ),
               Rarity(stars: rarity),
-              Text(
-                '${s.translateStatTypeWithoutValue(StatType.atk)}: $baseAtk',
-                textAlign: TextAlign.center,
-                overflow: TextOverflow.ellipsis,
-              ),
-              Text(
-                '${s.type}: ${s.translateWeaponType(type)}',
-                textAlign: TextAlign.center,
-                overflow: TextOverflow.ellipsis,
-              ),
+              if (!withoutDetails)
+                Text(
+                  '${s.translateStatTypeWithoutValue(StatType.atk)}: $baseAtk',
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              if (!withoutDetails)
+                Text(
+                  '${s.type}: ${s.translateWeaponType(type)}',
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                ),
             ],
           ),
         ),
