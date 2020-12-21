@@ -1364,6 +1364,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Rate this app`
+  String get rateThisApp {
+    return Intl.message(
+      'Rate this app',
+      name: 'rateThisApp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you like this app, please take a little bit of your time to review it !\nIt really helps me and it shouldn't take you more than one minute.`
+  String get rateMsg {
+    return Intl.message(
+      'If you like this app, please take a little bit of your time to review it !\nIt really helps me and it shouldn\'t take you more than one minute.',
+      name: 'rateMsg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rate`
+  String get rate {
+    return Intl.message(
+      'Rate',
+      name: 'rate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No thanks`
+  String get noThanks {
+    return Intl.message(
+      'No thanks',
+      name: 'noThanks',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Maybe later`
+  String get maybeLater {
+    return Intl.message(
+      'Maybe later',
+      name: 'maybeLater',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

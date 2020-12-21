@@ -131,5 +131,10 @@
     "pieces": "Pieces",
     "builds": "Builds",
     "dps": "DPS",
-    "or": "Or"
+    "or": "Or",
+    "rateThisApp": "Rate this app",
+    "rateMsg": "If you like this app, please take a little bit of your time to review it !\nIt really helps me and it shouldn't take you more than one minute.",
+    "rate": "Rate",
+    "noThanks": "No thanks",
+    "maybeLater": "Maybe later"
 }

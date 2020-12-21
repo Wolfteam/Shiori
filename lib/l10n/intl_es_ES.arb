@@ -130,5 +130,10 @@
     "pieces": "Piezas",
     "builds": "Builds",
     "dps": "DPS",
-    "or": "O"
+    "or": "O",
+    "rateThisApp": "Califica esta aplicación",
+    "rateMsg": "Si te gusta esta aplicación, por favor tomate un segundo para calificarla !\nAl hacerlo, me ayudas y además no te tomara mas de un minuto.",
+    "rate": "Calificar",
+    "noThanks": "No gracias",
+    "maybeLater": "Quizás después"
 }

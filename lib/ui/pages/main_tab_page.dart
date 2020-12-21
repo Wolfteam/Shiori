@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rate_my_app/rate_my_app.dart';
 
 import '../../bloc/bloc.dart';
 import '../../common/genshin_db_icons.dart';
@@ -52,33 +53,50 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: BlocConsumer<MainTabBloc, MainTabState>(
-          listener: (ctx, state) async {
-            state.maybeMap(
-              initial: (s) => _changeCurrentTab(s.currentSelectedTab),
-              orElse: () => {},
-            );
-          },
-          builder: (context, state) {
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TabBarView(
-                controller: _tabController,
-                physics: const NeverScrollableScrollPhysics(),
-                children: _pages,
-              ),
-            );
-          },
+    return RateMyAppBuilder(
+      rateMyApp: RateMyApp(minDays: 7, minLaunches: 10, remindDays: 7, remindLaunches: 10),
+      onInitialized: (ctx, rateMyApp) {
+        if (!rateMyApp.shouldOpenDialog) {
+          return;
+        }
+        final s = S.of(ctx);
+        rateMyApp.showRateDialog(
+          ctx,
+          title: s.rateThisApp,
+          message: s.rateMsg,
+          rateButton: s.rate,
+          laterButton: s.maybeLater,
+          noButton: s.noThanks,
+        );
+      },
+      builder: (ctx) => Scaffold(
+        body: SafeArea(
+          child: BlocConsumer<MainTabBloc, MainTabState>(
+            listener: (ctx, state) async {
+              state.maybeMap(
+                initial: (s) => _changeCurrentTab(s.currentSelectedTab),
+                orElse: () => {},
+              );
+            },
+            builder: (context, state) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TabBarView(
+                  controller: _tabController,
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: _pages,
+                ),
+              );
+            },
+          ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _index,
-        showUnselectedLabels: true,
-        items: _buildBottomNavBars(),
-        type: BottomNavigationBarType.fixed,
-        onTap: (newIndex) => context.read<MainTabBloc>().add(MainTabEvent.goToTab(index: newIndex)),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _index,
+          showUnselectedLabels: true,
+          items: _buildBottomNavBars(),
+          type: BottomNavigationBarType.fixed,
+          onTap: (newIndex) => context.read<MainTabBloc>().add(MainTabEvent.goToTab(index: newIndex)),
+        ),
       ),
     );
   }
