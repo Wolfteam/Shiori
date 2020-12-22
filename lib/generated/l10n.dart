@@ -1414,6 +1414,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Other apps`
+  String get otherApps {
+    return Intl.message(
+      'Other apps',
+      name: 'otherApps',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

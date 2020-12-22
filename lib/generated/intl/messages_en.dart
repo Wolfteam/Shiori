@@ -139,6 +139,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "nothingToShow" : MessageLookupByLibrary.simpleMessage("Nothing to show"),
     "ok" : MessageLookupByLibrary.simpleMessage("Ok"),
     "or" : MessageLookupByLibrary.simpleMessage("Or"),
+    "otherApps" : MessageLookupByLibrary.simpleMessage("Other apps"),
     "others" : MessageLookupByLibrary.simpleMessage("Others"),
     "partial" : MessageLookupByLibrary.simpleMessage("Partial"),
     "passives" : MessageLookupByLibrary.simpleMessage("Passives"),

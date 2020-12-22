@@ -69,6 +69,7 @@ class AboutSettingsCard extends StatelessWidget {
                   },
                 ),
                 Text(s.aboutSummary, textAlign: TextAlign.center),
+                _buildLink(s.otherApps, 'https://wolfteam.github.io'),
                 Container(
                   margin: const EdgeInsets.only(top: 10),
                   child: Text(

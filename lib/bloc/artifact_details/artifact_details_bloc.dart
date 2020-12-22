@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../common/app_constants.dart';
 import '../../common/assets.dart';
 import '../../services/genshing_service.dart';
 
@@ -36,7 +37,7 @@ class ArtifactDetailsBloc extends Bloc<ArtifactDetailsEvent, ArtifactDetailsStat
           bonus: translation.bonus,
           images: translation.bonus.length == 1
               ? [artifact.fullImagePath]
-              : [1, 2, 3, 4, 5].map((e) => Assets.getArtifactPath('$image${e}.png')).toList(),
+              : artifactOrder.map((e) => Assets.getArtifactPath('$image$e.png')).toList(),
         );
       },
     );

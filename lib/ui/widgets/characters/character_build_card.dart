@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../common/app_constants.dart';
 import '../../../common/enums/element_type.dart';
 import '../../../common/extensions/element_type_extensions.dart';
 import '../../../common/styles.dart';
@@ -115,7 +116,7 @@ class CharacterBuildCard extends StatelessWidget {
   }
 
   Widget _builArtifactOne(CharacterBuildArtifactModel artifact) {
-    final items = [1, 2, 3, 4, 5].map(
+    final items = artifactOrder.map(
       (digit) {
         final path = artifact.one.image.replaceFirst(replaceDigitRegex, '$digit');
         return ArtifactCard.withoutDetails(
@@ -138,9 +139,11 @@ class CharacterBuildCard extends StatelessWidget {
 
   Widget _buildMultipleArtifact(CharacterBuildArtifactModel artifact) {
     final childs = <Widget>[];
+    final order = [...artifactOrder];
+
     for (final art in artifact.multiples) {
-      var startFrom = 1;
       for (var i = 0; i < art.quantity; i++) {
+        final startFrom = order.first;
         final path = art.artifact.image.replaceFirst(replaceDigitRegex, '$startFrom');
         final widget = ArtifactCard.withoutDetails(
           name: art.artifact.name,
@@ -149,7 +152,8 @@ class CharacterBuildCard extends StatelessWidget {
           keyName: art.artifact.key,
         );
         childs.add(widget);
-        startFrom++;
+
+        order.remove(startFrom);
       }
     }
 
