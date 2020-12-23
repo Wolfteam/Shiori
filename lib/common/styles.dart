@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class Styles {
   static const String appIconPath = 'assets/icon/icon.png';
   static final RoundedRectangleBorder cardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(10));
-  static final RoundedRectangleBorder mainCardShape = RoundedRectangleBorder(
-    borderRadius: const BorderRadius.only(
+  static const RoundedRectangleBorder mainCardShape = RoundedRectangleBorder(
+    borderRadius: BorderRadius.only(
       bottomLeft: Radius.circular(35),
       bottomRight: Radius.circular(35),
       topLeft: Radius.circular(10),

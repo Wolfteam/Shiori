@@ -13,18 +13,18 @@ class CharacterDetailTalentAscentionMaterialsCard extends StatelessWidget {
   final List<CharacterFileTalentAscentionMaterialModel> talentAscentionMaterials;
   final List<CharacterFileMultiTalentAscentionMaterialModel> multiTalentAscentionMaterials;
 
-  CharacterDetailTalentAscentionMaterialsCard.withTalents({
+  const CharacterDetailTalentAscentionMaterialsCard.withTalents({
     Key key,
     @required this.elementType,
     @required this.talentAscentionMaterials,
-  })  : multiTalentAscentionMaterials = [],
+  })  : multiTalentAscentionMaterials = const [],
         super(key: key);
 
-  CharacterDetailTalentAscentionMaterialsCard.withMultiTalents({
+  const CharacterDetailTalentAscentionMaterialsCard.withMultiTalents({
     Key key,
     @required this.elementType,
     @required this.multiTalentAscentionMaterials,
-  })  : talentAscentionMaterials = [],
+  })  : talentAscentionMaterials = const [],
         super(key: key);
 
   @override
@@ -36,7 +36,11 @@ class CharacterDetailTalentAscentionMaterialsCard extends StatelessWidget {
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [...multiTalentAscentionMaterials.map((e) => _buildTableCard(s.talentAscentionX(e.number), e.materials, context)).toList()],
+      children: [
+        ...multiTalentAscentionMaterials
+            .map((e) => _buildTableCard(s.talentAscentionX(e.number), e.materials, context))
+            .toList()
+      ],
     );
   }
 

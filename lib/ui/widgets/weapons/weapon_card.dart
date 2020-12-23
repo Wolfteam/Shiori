@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 import '../../../bloc/bloc.dart';
 import '../../../common/enums/stat_type.dart';
@@ -12,6 +13,7 @@ import '../../../common/styles.dart';
 import '../../../generated/l10n.dart';
 import '../../pages/weapon_page.dart';
 import '../common/gradient_card.dart';
+import '../common/loading.dart';
 import '../common/rarity.dart';
 
 class WeaponCard extends StatelessWidget {
@@ -62,7 +64,12 @@ class WeaponCard extends StatelessWidget {
           padding: Styles.edgeInsetAll5,
           child: Column(
             children: [
-              Image.asset(image, width: imgWidth, height: imgHeight),
+              FadeInImage(
+                width: imgWidth,
+                height: imgHeight,
+                placeholder: MemoryImage(kTransparentImage),
+                image: AssetImage(image),
+              ),
               if (!withoutDetails)
                 Center(
                   child: Tooltip(
@@ -77,18 +84,40 @@ class WeaponCard extends StatelessWidget {
                   ),
                 ),
               Rarity(stars: rarity),
-              if (!withoutDetails)
-                Text(
-                  '${s.translateStatTypeWithoutValue(StatType.atk)}: $baseAtk',
-                  textAlign: TextAlign.center,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              if (!withoutDetails)
-                Text(
-                  '${s.type}: ${s.translateWeaponType(type)}',
-                  textAlign: TextAlign.center,
-                  overflow: TextOverflow.ellipsis,
-                ),
+              BlocBuilder<SettingsBloc, SettingsState>(
+                builder: (context, state) {
+                  return state.map(
+                    loading: (_) => const Loading(useScaffold: false),
+                    loaded: (settingsState) {
+                      if (withoutDetails || !settingsState.showWeaponDetails) {
+                        return Container();
+                      }
+                      return Text(
+                        '${s.translateStatTypeWithoutValue(StatType.atk)}: $baseAtk',
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
+                      );
+                    },
+                  );
+                },
+              ),
+              BlocBuilder<SettingsBloc, SettingsState>(
+                builder: (context, state) {
+                  return state.map(
+                    loading: (_) => const Loading(useScaffold: false),
+                    loaded: (settingsState) {
+                      if (withoutDetails || !settingsState.showWeaponDetails) {
+                        return Container();
+                      }
+                      return Text(
+                        '${s.type}: ${s.translateWeaponType(type)}',
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
+                      );
+                    },
+                  );
+                },
+              ),
             ],
           ),
         ),

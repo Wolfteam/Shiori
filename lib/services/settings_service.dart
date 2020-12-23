@@ -21,6 +21,12 @@ abstract class SettingsService {
   bool get isFirstInstall;
   set isFirstInstall(bool itIs);
 
+  bool get showCharacterDetails;
+  set showCharacterDetails(bool show);
+
+  bool get showWeaponDetails;
+  set showWeaponDetails(bool show);
+
   Future<void> init();
 }
 
@@ -29,6 +35,8 @@ class SettingsServiceImpl extends SettingsService {
   final _accentColorKey = 'AccentColor';
   final _appLanguageKey = 'AppLanguage';
   final _firstInstallKey = 'FirstInstall';
+  final _showCharacterDetailsKey = 'ShowCharacterDetailsKey';
+  final _showWeaponDetailsKey = 'ShowWeaponDetailsKey';
 
   bool _initialized = false;
 
@@ -56,11 +64,23 @@ class SettingsServiceImpl extends SettingsService {
   set isFirstInstall(bool itIs) => _prefs.setBool(_firstInstallKey, itIs);
 
   @override
+  bool get showCharacterDetails => _prefs.getBool(_showCharacterDetailsKey);
+  @override
+  set showCharacterDetails(bool show) => _prefs.setBool(_showCharacterDetailsKey, show);
+
+  @override
+  bool get showWeaponDetails => _prefs.getBool(_showWeaponDetailsKey);
+  @override
+  set showWeaponDetails(bool show) => _prefs.setBool(_showWeaponDetailsKey, show);
+
+  @override
   AppSettings get appSettings => AppSettings(
         appTheme: appTheme,
         useDarkAmoled: false,
         accentColor: accentColor,
         appLanguage: language,
+        showCharacterDetails: showCharacterDetails,
+        showWeaponDetails: showWeaponDetails,
       );
 
   SettingsServiceImpl(this._logger);
@@ -94,6 +114,16 @@ class SettingsServiceImpl extends SettingsService {
     if (_prefs.get(_appLanguageKey) == null) {
       _logger.info(runtimeType, 'Setting english as the default lang');
       language = AppLanguageType.english;
+    }
+
+    if (_prefs.get(_showCharacterDetailsKey) == null) {
+      _logger.info(runtimeType, 'Character details are shown by default');
+      showCharacterDetails = true;
+    }
+
+    if (_prefs.get(_showWeaponDetailsKey) == null) {
+      _logger.info(runtimeType, 'Weapon details are shown by default');
+      showWeaponDetails = true;
     }
 
     _initialized = true;

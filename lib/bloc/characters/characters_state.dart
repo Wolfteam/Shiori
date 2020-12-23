@@ -6,6 +6,7 @@ abstract class CharactersState with _$CharactersState {
   const factory CharactersState.loaded({
     @required List<CharacterCardModel> characters,
     String search,
+    @required bool showCharacterDetails,
     @required List<WeaponType> weaponTypes,
     @required List<WeaponType> tempWeaponTypes,
     @required List<ElementType> elementTypes,

@@ -19,7 +19,7 @@ class BulletList extends StatelessWidget {
             (e) => ListTile(
               dense: true,
               contentPadding: const EdgeInsets.only(left: 10),
-              visualDensity: const VisualDensity(horizontal: 0, vertical: -4),
+              visualDensity: const VisualDensity(vertical: -4),
               leading: const Icon(Icons.fiber_manual_record, size: 15),
               title: Transform.translate(
                 offset: Styles.listItemWithIconOffset,

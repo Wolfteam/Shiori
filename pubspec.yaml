@@ -47,6 +47,7 @@ dependencies:
   smooth_star_rating: 1.1.1
   sprintf: ^5.0.0
   sqlite3_flutter_libs: ^0.2.0
+  transparent_image: 1.0.0
 
 dev_dependencies:
   build_runner: ^1.10.6

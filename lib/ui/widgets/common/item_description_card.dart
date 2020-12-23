@@ -22,13 +22,13 @@ class ItemDescriptionCard extends StatelessWidget {
       margin: Styles.edgeInsetAll10,
       shape: Styles.cardShape,
       child: Container(
-        padding: const EdgeInsets.only(top: 0, bottom: 10, left: 10, right: 10),
+        padding: const EdgeInsets.only(bottom: 10, left: 10, right: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             ListTile(
               dense: true,
-              leading: Icon(Icons.settings),
+              leading: const Icon(Icons.settings),
               contentPadding: EdgeInsets.zero,
               title: Transform.translate(
                 offset: Styles.listItemWithIconOffset,

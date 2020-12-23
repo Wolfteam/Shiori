@@ -85,7 +85,7 @@ class CharacterBuildCard extends StatelessWidget {
     return SizedBox(
       height: 120,
       child: ListView(
-        physics: const ClampingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         children: widgets,
       ),
@@ -130,7 +130,7 @@ class CharacterBuildCard extends StatelessWidget {
     return SizedBox(
       height: imgHeight,
       child: ListView(
-        physics: const ClampingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         children: items,
       ),
@@ -160,7 +160,7 @@ class CharacterBuildCard extends StatelessWidget {
     final widget = SizedBox(
       height: imgHeight,
       child: ListView(
-        physics: const ClampingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         children: childs,
       ),

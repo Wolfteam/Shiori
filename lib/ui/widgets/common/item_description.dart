@@ -42,7 +42,6 @@ class ItemDescription extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 2),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(
             '$title: ',

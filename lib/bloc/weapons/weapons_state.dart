@@ -6,6 +6,7 @@ abstract class WeaponsState with _$WeaponsState {
   const factory WeaponsState.loaded({
     @required List<WeaponCardModel> weapons,
     String search,
+    @required bool showWeaponDetails,
     @required List<WeaponType> weaponTypes,
     @required List<WeaponType> tempWeaponTypes,
     @required int rarity,

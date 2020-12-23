@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 import '../../../bloc/bloc.dart';
 import '../../../common/extensions/rarity_extensions.dart';
@@ -56,7 +57,12 @@ class ArtifactCard extends StatelessWidget {
           padding: Styles.edgeInsetAll5,
           child: Column(
             children: [
-              Image.asset(image, width: imgWidth, height: imgHeight),
+              FadeInImage(
+                width: imgWidth,
+                height: imgHeight,
+                placeholder: MemoryImage(kTransparentImage),
+                image: AssetImage(image),
+              ),
               if (!withoutDetails)
                 Center(
                   child: Tooltip(

@@ -18,6 +18,8 @@ import '../common/sort_direction_popupmenu_filter.dart';
 import '../common/weapons_button_bar.dart';
 
 class CharacterBottomSheet extends StatelessWidget {
+  const CharacterBottomSheet({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);

@@ -8,6 +8,7 @@ import '../../common/enums/weapon_filter_type.dart';
 import '../../common/enums/weapon_type.dart';
 import '../../models/models.dart';
 import '../../services/genshing_service.dart';
+import '../../services/settings_service.dart';
 
 part 'weapons_bloc.freezed.dart';
 part 'weapons_event.dart';
@@ -15,7 +16,9 @@ part 'weapons_state.dart';
 
 class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
   final GenshinService _genshinService;
-  WeaponsBloc(this._genshinService) : super(const WeaponsState.loading());
+  final SettingsService _settingsService;
+
+  WeaponsBloc(this._genshinService, this._settingsService) : super(const WeaponsState.loading());
 
   _LoadedState get currentState => state as _LoadedState;
 
@@ -86,6 +89,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         tempWeaponFilterType: weaponFilterType,
         sortDirectionType: sortDirectionType,
         tempSortDirectionType: sortDirectionType,
+        showWeaponDetails: _settingsService.showWeaponDetails,
       );
     }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 import '../../../generated/l10n.dart';
 
@@ -12,7 +13,16 @@ class CharacterAscentionMaterials extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final widgets = images.map((e) => Image.asset(e, width: 20, height: 20)).toList();
+    final widgets = images
+        .map(
+          (e) => FadeInImage(
+            height: 20,
+            width: 20,
+            placeholder: MemoryImage(kTransparentImage),
+            image: AssetImage(e),
+          ),
+        )
+        .toList();
     return Tooltip(
       message: s.ascentionMaterials,
       child: Wrap(

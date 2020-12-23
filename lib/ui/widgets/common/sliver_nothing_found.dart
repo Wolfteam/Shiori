@@ -11,7 +11,7 @@ class SliverNothingFound extends StatelessWidget {
       hasScrollBody: false,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [const NothingFound()],
+        children: const [NothingFound()],
       ),
     );
   }

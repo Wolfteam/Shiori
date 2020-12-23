@@ -106,7 +106,7 @@ class CharCardAscentionMaterial extends StatelessWidget {
 
   Future<void> _gotoCharacterPage(String image, BuildContext context) async {
     context.read<CharacterBloc>().add(CharacterEvent.loadFromImg(image: image));
-    final route = MaterialPageRoute(builder: (c) => CharacterPage());
+    final route = MaterialPageRoute(builder: (c) => const CharacterPage());
     await Navigator.push(context, route);
   }
 }

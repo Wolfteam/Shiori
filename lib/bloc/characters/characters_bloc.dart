@@ -10,6 +10,7 @@ import '../../common/enums/sort_direction_type.dart';
 import '../../common/enums/weapon_type.dart';
 import '../../models/models.dart';
 import '../../services/genshing_service.dart';
+import '../../services/settings_service.dart';
 
 part 'characters_bloc.freezed.dart';
 part 'characters_event.dart';
@@ -17,7 +18,9 @@ part 'characters_state.dart';
 
 class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   final GenshinService _genshinService;
-  CharactersBloc(this._genshinService) : super(const CharactersState.loading());
+  final SettingsService _settingsService;
+
+  CharactersBloc(this._genshinService, this._settingsService) : super(const CharactersState.loading());
 
   _LoadedState get currentState => state as _LoadedState;
 
@@ -113,6 +116,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         tempCharacterFilterType: characterFilterType,
         sortDirectionType: sortDirectionType,
         tempSortDirectionType: sortDirectionType,
+        showCharacterDetails: _settingsService.showCharacterDetails,
       );
     }
 

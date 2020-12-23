@@ -79,7 +79,7 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
       shape: Styles.modalBottomSheetShape,
       isDismissible: true,
       isScrollControlled: true,
-      builder: (_) => CharacterBottomSheet(),
+      builder: (_) => const CharacterBottomSheet(),
     );
   }
 }

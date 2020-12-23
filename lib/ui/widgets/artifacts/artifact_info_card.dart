@@ -48,7 +48,7 @@ class ArtifactInfoCard extends StatelessWidget {
     final panel = ItemExpansionPanel(
       title: s.note,
       body: BulletList(items: considerations),
-      icon: Icon(Icons.info_outline),
+      icon: const Icon(Icons.info_outline),
       isCollapsed: isCollapsed,
       expansionCallback: expansionCallback,
     );
