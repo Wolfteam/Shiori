@@ -8,5 +8,7 @@ abstract class SettingsState with _$SettingsState {
     @required AppAccentColorType currentAccentColor,
     @required AppLanguageType currentLanguage,
     @required String appVersion,
+    @required bool showCharacterDetails,
+    @required bool showWeaponDetails,
   }) = _LoadedState;
 }

@@ -16,6 +16,8 @@ abstract class AppSettings implements _$AppSettings {
     @required bool useDarkAmoled,
     @required AppAccentColorType accentColor,
     @required AppLanguageType appLanguage,
+    @required bool showCharacterDetails,
+    @required bool showWeaponDetails,
   }) = _AppSettings;
   const AppSettings._();
 

@@ -14,4 +14,12 @@ abstract class SettingsEvent with _$SettingsEvent {
   const factory SettingsEvent.languageChanged({
     @required AppLanguageType newValue,
   }) = _LanguageChanged;
+
+  const factory SettingsEvent.showCharacterDetailsChanged({
+    @required bool newValue,
+  }) = _ShowCharacterDetailsChanged;
+
+  const factory SettingsEvent.showWeaponDetailsChanged({
+    @required bool newValue,
+  }) = _ShowWeaponDetailsChanged;
 }

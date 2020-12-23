@@ -16,6 +16,7 @@ part 'settings_state.dart';
 
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   final SettingsService _settingsService;
+
   SettingsBloc(this._settingsService) : super(const SettingsState.loading());
 
   _LoadedState get currentState => state as _LoadedState;
@@ -34,6 +35,8 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           currentAccentColor: settings.accentColor,
           currentLanguage: settings.appLanguage,
           appVersion: packageInfo.version,
+          showCharacterDetails: settings.showCharacterDetails,
+          showWeaponDetails: settings.showWeaponDetails,
         );
       },
       themeChanged: (event) async {
@@ -46,9 +49,15 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
       },
       languageChanged: (event) async {
         _settingsService.language = event.newValue;
-        // final locale = I18n.delegate.supportedLocales[event.newValue.index];
-        // I18n.onLocaleChanged(locale);
         return currentState.copyWith.call(currentLanguage: event.newValue);
+      },
+      showCharacterDetailsChanged: (event) async {
+        _settingsService.showCharacterDetails = event.newValue;
+        return currentState.copyWith.call(showCharacterDetails: event.newValue);
+      },
+      showWeaponDetailsChanged: (event) async {
+        _settingsService.showWeaponDetails = event.newValue;
+        return currentState.copyWith.call(showWeaponDetails: event.newValue);
       },
     );
 
