@@ -1424,6 +1424,36 @@ class S {
       args: [],
     );
   }
+
+  /// `General settings`
+  String get generalSettings {
+    return Intl.message(
+      'General settings',
+      name: 'generalSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show character details`
+  String get showCharacterDetails {
+    return Intl.message(
+      'Show character details',
+      name: 'showCharacterDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show weapon details`
+  String get showWeaponDetails {
+    return Intl.message(
+      'Show weapon details',
+      name: 'showWeaponDetails',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

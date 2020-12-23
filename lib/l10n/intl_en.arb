@@ -137,5 +137,8 @@
     "rate": "Rate",
     "noThanks": "No thanks",
     "maybeLater": "Maybe later",
-    "otherApps": "Other apps"
+    "otherApps": "Other apps",
+    "generalSettings": "General settings",
+    "showCharacterDetails": "Show character details",
+    "showWeaponDetails": "Show weapon details"
 }

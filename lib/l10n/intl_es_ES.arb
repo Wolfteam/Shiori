@@ -136,5 +136,8 @@
     "rate": "Calificar",
     "noThanks": "No gracias",
     "maybeLater": "Quizás después",
-    "otherApps": "Otras aplicaciones"
+    "otherApps": "Otras aplicaciones",
+    "generalSettings": "General settings",
+    "showCharacterDetails": "Mostrar el detalle de los personajes",
+    "showWeaponDetails": "Mostrar el detalle de las armas"
 }
