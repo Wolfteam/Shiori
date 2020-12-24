@@ -5,4 +5,5 @@ enum ItemLocationType {
   crafting,
   starglitterExchange,
   bpBounty,
+  quest,
 }

@@ -140,5 +140,6 @@
     "otherApps": "Other apps",
     "generalSettings": "General settings",
     "showCharacterDetails": "Show character details",
-    "showWeaponDetails": "Show weapon details"
+    "showWeaponDetails": "Show weapon details",
+    "quest": "Quest"
 }

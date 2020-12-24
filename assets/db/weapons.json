@@ -7456,7 +7456,7 @@
             "rarity": 4,
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 10,
-            "location": "na",
+            "location": "quest",
             "ascentionMaterials": [
                 {
                     "level": 20,
@@ -11624,7 +11624,7 @@
             "rarity": 4,
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 9,
-            "location": "na",
+            "location": "crafting",
             "ascentionMaterials": [
                 {
                     "level": 20,
@@ -15777,7 +15777,7 @@
             "rarity": 4,
             "secondaryStat": "physDmgPercentage",
             "secondaryStatValue": 7.5,
-            "location": "gacha",
+            "location": "crafting",
             "ascentionMaterials": [
                 {
                     "level": 20,
@@ -18960,7 +18960,7 @@
             "rarity": 4,
             "secondaryStat": "physDmgPercentage",
             "secondaryStatValue": 15,
-            "location": "gacha",
+            "location": "crafting",
             "ascentionMaterials": [
                 {
                     "level": 20,

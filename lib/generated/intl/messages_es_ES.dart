@@ -149,6 +149,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "pieces" : MessageLookupByLibrary.simpleMessage("Piezas"),
     "plume" : MessageLookupByLibrary.simpleMessage("Pluma"),
     "polearm" : MessageLookupByLibrary.simpleMessage("Lanza"),
+    "quest" : MessageLookupByLibrary.simpleMessage("Misión"),
     "rank" : MessageLookupByLibrary.simpleMessage("Rank"),
     "rarity" : MessageLookupByLibrary.simpleMessage("Rareza"),
     "rate" : MessageLookupByLibrary.simpleMessage("Calificar"),

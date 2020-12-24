@@ -8,8 +8,8 @@
             "image": "Albedo.png",
             "fullImage": "Albedo.png",
             "secondFullImage": null,
-            "isComingSoon": true,
-            "isNew": false,
+            "isComingSoon": false,
+            "isNew": true,
             "isFemale": false,
             "region": "Mondstadt",
             "ascentionMaterials": [
@@ -402,7 +402,33 @@
                     ]
                 }
             ],
-            "builds": []
+            "builds": [
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "skyward_blade.png",
+                        "festering_fang.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "archaic_petra_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "noblesse_oblige_4.png"
+                                }
+                            ]
+                        },
+                        {
+                            "one": "noblesse_oblige_4.png",
+                            "multiples": []
+                        }
+                    ]
+                }
+            ]
         },
         {
             "name": "Amber",
@@ -13138,7 +13164,7 @@
             "fullImage": "Xinyan.png",
             "secondFullImage": null,
             "isComingSoon": false,
-            "isNew": true,
+            "isNew": false,
             "isFemale": true,
             "region": "Liyue",
             "ascentionMaterials": [
@@ -13568,7 +13594,7 @@
             "fullImage": "Zhongli.png",
             "secondFullImage": null,
             "isComingSoon": false,
-            "isNew": true,
+            "isNew": false,
             "isFemale": false,
             "region": "Liyue",
             "ascentionMaterials": [
