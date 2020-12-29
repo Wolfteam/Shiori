@@ -23,34 +23,43 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
   ) async* {
     yield const WeaponState.loading();
     final s = event.when(
-      loadWeapon: (name) {
+      loadFromImg: (img) {
+        final weapon = _genshinService.getWeaponByImg(img);
+        final translation = _genshinService.getWeaponTranslation(weapon.name);
+        return _buildInitialState(weapon, translation);
+      },
+      loadFromName: (name) {
         final weapon = _genshinService.getWeapon(name);
         final translation = _genshinService.getWeaponTranslation(name);
-        return WeaponState.loaded(
-          name: weapon.name,
-          weaponType: weapon.type,
-          fullImage: weapon.fullImagePath,
-          rarity: weapon.rarity,
-          atk: weapon.atk,
-          secondaryStat: weapon.secondaryStat,
-          secondaryStatValue: weapon.secondaryStatValue,
-          description: translation.description,
-          locationType: weapon.location,
-          ascentionMaterials: weapon.ascentionMaterials,
-          refinements: weapon.refinements.map(
-            (e) {
-              var description = translation.refinement;
-              for (var i = 0; i < e.values.length; i++) {
-                description = description.replaceFirst('{{$i}}', '${e.values[i]}');
-              }
-
-              return WeaponFileRefinementModel(level: e.level, description: description);
-            },
-          ).toList(),
-        );
+        return _buildInitialState(weapon, translation);
       },
     );
 
     yield s;
+  }
+
+  WeaponState _buildInitialState(WeaponFileModel weapon, TranslationWeaponFile translation) {
+    return WeaponState.loaded(
+      name: weapon.name,
+      weaponType: weapon.type,
+      fullImage: weapon.fullImagePath,
+      rarity: weapon.rarity,
+      atk: weapon.atk,
+      secondaryStat: weapon.secondaryStat,
+      secondaryStatValue: weapon.secondaryStatValue,
+      description: translation.description,
+      locationType: weapon.location,
+      ascentionMaterials: weapon.ascentionMaterials,
+      refinements: weapon.refinements.map(
+        (e) {
+          var description = translation.refinement;
+          for (var i = 0; i < e.values.length; i++) {
+            description = description.replaceFirst('{{$i}}', '${e.values[i]}');
+          }
+
+          return WeaponFileRefinementModel(level: e.level, description: description);
+        },
+      ).toList(),
+    );
   }
 }

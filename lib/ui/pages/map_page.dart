@@ -16,21 +16,29 @@ class _MapPageState extends State<MapPage> {
   final flutterWebviewPlugin = FlutterWebviewPlugin();
 
   final String script = '''
-    let elements = document.getElementsByClassName("nav-link");
-    let total = elements.length;
-    for (let index = 0; index < total; index++) {
-        const element = elements[index];
-        const text = element.childNodes[0].textContent;
-        if (text !== "Markers") {
-            element.remove();
-            total--;
-            index--;
+    setTimeout(function(){ 
+        let elements = document.getElementsByClassName("nav-link");
+        let total = elements.length;
+        for (let index = 0; index < total; index++) {
+            const element = elements[index];
+            const text = element.childNodes[0].textContent;
+            if (text !== "Markers") {
+                element.remove();
+                total--;
+                index--;
+            }
+
+            if (total === 1)
+                break;
         }
 
-        if (total === 1)
-            break;
-    }
-    document.getElementsByClassName("fixed-bottom")[0].remove();
+        total = document.getElementsByClassName("fixed-bottom").length;
+        for (let index = 0; index < total; index++) {
+            if (document.getElementsByClassName("fixed-bottom").length > 0)
+              document.getElementsByClassName("fixed-bottom")[0].remove();
+        }
+    }, 
+    800);
     ''';
 
   @override

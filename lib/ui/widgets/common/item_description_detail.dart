@@ -30,10 +30,18 @@ class ItemDescriptionDetail extends StatelessWidget {
             offset: Styles.listItemWithIconOffset,
             child: Tooltip(
               message: title,
-              child: Text(
-                title,
-                style: theme.textTheme.headline5.copyWith(color: textColor, fontWeight: FontWeight.bold),
-                overflow: TextOverflow.ellipsis,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    title,
+                    style: theme.textTheme.headline5.copyWith(color: textColor, fontWeight: FontWeight.bold),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  Divider(color: textColor, thickness: 2),
+                ],
               ),
             ),
           ),

@@ -23,6 +23,7 @@ abstract class GenshinService {
   List<WeaponCardModel> getWeaponsForCard();
   WeaponCardModel getWeaponForCardByImg(String image);
   WeaponFileModel getWeapon(String name);
+  WeaponFileModel getWeaponByImg(String img);
 
   List<ArtifactCardModel> getArtifactsForCard();
   ArtifactCardModel getArtifactForCardByImg(String image);
@@ -196,6 +197,11 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
+  WeaponFileModel getWeaponByImg(String img) {
+    return _weaponsFile.weapons.firstWhere((element) => Assets.getWeaponPath(element.image, element.type) == img);
+  }
+
+  @override
   TranslationWeaponFile getWeaponTranslation(String name) {
     return _translationFile.weapons.firstWhere((element) => element.key == name);
   }
@@ -280,13 +286,23 @@ class GenshinServiceImpl implements GenshinService {
     final iterable = day == DateTime.sunday
         ? _materialsFile.weaponPrimary
         : _materialsFile.weaponPrimary.where((t) => t.days.contains(day));
+
     return iterable.map((e) {
       final translation = _translationFile.materials.firstWhere((t) => t.key == e.name);
 
+      final weapons = <String>[];
+      for (final weapon in _weaponsFile.weapons) {
+        final materialIsBeingUsed =
+            weapon.ascentionMaterials.expand((m) => m.materials).where((m) => m.image == e.image).isNotEmpty;
+        if (materialIsBeingUsed) {
+          weapons.add(weapon.fullImagePath);
+        }
+      }
       return TodayWeaponAscentionMaterialModel(
         days: e.days,
         name: translation.name,
         image: Assets.getMaterialPath(e.image, e.type),
+        weapons: weapons,
       );
     }).toList();
   }

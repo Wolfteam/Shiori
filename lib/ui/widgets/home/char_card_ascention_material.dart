@@ -82,7 +82,6 @@ class CharCardAscentionMaterial extends StatelessWidget {
                     child: Text(
                       obtainOn,
                       textAlign: TextAlign.center,
-                      overflow: TextOverflow.ellipsis,
                       style: theme.textTheme.subtitle2.copyWith(fontSize: 12),
                     ),
                   ),

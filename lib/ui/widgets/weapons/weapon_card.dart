@@ -126,7 +126,7 @@ class WeaponCard extends StatelessWidget {
   }
 
   Future<void> _gotoWeaponPage(BuildContext context) async {
-    context.read<WeaponBloc>().add(WeaponEvent.loadWeapon(name: name));
+    context.read<WeaponBloc>().add(WeaponEvent.loadFromName(name: name));
     final route = MaterialPageRoute(builder: (c) => WeaponPage());
     await Navigator.push(context, route);
   }

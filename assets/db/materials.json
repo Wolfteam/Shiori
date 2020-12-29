@@ -8,7 +8,8 @@
             "type": "talents",
             "days": [
                 1,
-                4
+                4,
+                7
             ]
         },
         {
@@ -19,7 +20,8 @@
             "type": "talents",
             "days": [
                 1,
-                4
+                4,
+                7
             ]
         },
         {
@@ -30,7 +32,8 @@
             "type": "talents",
             "days": [
                 2,
-                5
+                5,
+                7
             ]
         },
         {
@@ -41,7 +44,8 @@
             "type": "talents",
             "days": [
                 2,
-                5
+                5,
+                7
             ]
         },
         {
@@ -52,7 +56,8 @@
             "type": "talents",
             "days": [
                 3,
-                6
+                6,
+                7
             ]
         },
         {
@@ -63,7 +68,8 @@
             "type": "talents",
             "days": [
                 3,
-                6
+                6,
+                7
             ]
         },
         {
@@ -148,7 +154,8 @@
             "type": "weaponPrimary",
             "days": [
                 1,
-                4
+                4,
+                7
             ]
         },
         {
@@ -159,7 +166,8 @@
             "type": "weaponPrimary",
             "days": [
                 1,
-                4
+                4,
+                7
             ]
         },
         {
@@ -170,7 +178,8 @@
             "type": "weaponPrimary",
             "days": [
                 2,
-                5
+                5,
+                7
             ]
         },
         {
@@ -181,7 +190,8 @@
             "type": "weaponPrimary",
             "days": [
                 2,
-                5
+                5,
+                7
             ]
         },
         {
@@ -192,7 +202,8 @@
             "type": "weaponPrimary",
             "days": [
                 3,
-                6
+                6,
+                7
             ]
         },
         {
@@ -203,7 +214,8 @@
             "type": "weaponPrimary",
             "days": [
                 3,
-                6
+                6,
+                7
             ]
         }
     ]
