@@ -5525,15 +5525,44 @@
             ],
             "builds": [
                 {
-                    "isSupport": true,
+                    "isSupport": false,
                     "weaponImages": [
                         "skyward_blade.png",
-                        "favonius_sword.png"
+                        "blackcliff_longsword.png",
+                        "the_flute.png",
+                        "festering_fang.png"
                     ],
                     "artifacts": [
                         {
-                            "one": "noblesse_oblige_4.png",
+                            "one": "blizzard_walker_4.png",
                             "multiples": []
+                        }
+                    ]
+                },
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "skyward_blade.png",
+                        "blackcliff_longsword.png",
+                        "the_flute.png",
+                        "festering_fang.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "blizzard_walker_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "noblesse_oblige_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "blizzard_walker_4.png"
+                                }
+                            ]
                         }
                     ]
                 }

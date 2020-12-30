@@ -3994,8 +3994,8 @@
         {
             "key": "Fillet Blade",
             "name": "Fillet Blade",
-            "description": "On hit, has a 50% chance to deal {{0}}% ATK DMG to a single enemy. Can only occur once every {{1}}s.",
-            "refinement": "A sharp filleting knife. The blade is long, thin, and incredibly sharp."
+            "description": "A sharp filleting knife. The blade is long, thin, and incredibly sharp.",
+            "refinement": "On hit, has a 50% chance to deal {{0}}% ATK DMG to a single enemy. Can only occur once every {{1}}s."
         },
         {
             "key": "Harbinger of Dawn",
