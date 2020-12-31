@@ -2963,11 +2963,12 @@
                     "isSupport": false,
                     "weaponImages": [
                         "wolfs_gravestone.png",
-                        "skyward_pride.png"
+                        "skyward_pride.png",
+                        "prototype_aminus.png"
                     ],
                     "artifacts": [
                         {
-                            "one": "noblesse_oblige_4.png",
+                            "one": "blizzard_walker_4.png",
                             "multiples": []
                         }
                     ]
@@ -2976,12 +2977,29 @@
                     "isSupport": true,
                     "weaponImages": [
                         "skyward_pride.png",
-                        "favonius_greatsword.png"
+                        "favonius_greatsword.png",
+                        "prototype_aminus.png"
                     ],
                     "artifacts": [
                         {
+                            "one": "blizzard_walker_4.png",
+                            "multiples": []
+                        },
+                        {
                             "one": "noblesse_oblige_4.png",
                             "multiples": []
+                        },
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "blizzard_walker_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "noblesse_oblige_4.png"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -6735,7 +6753,7 @@
                         {
                             "quantity": 4,
                             "materialType": "common",
-                            "image": "golden_raven_insignia.png"
+                            "image": "slime_concentrate.png"
                         },
                         {
                             "quantity": 1,
@@ -6760,7 +6778,7 @@
                         {
                             "quantity": 6,
                             "materialType": "common",
-                            "image": "golden_raven_insignia.png"
+                            "image": "slime_concentrate.png"
                         },
                         {
                             "quantity": 1,
@@ -6785,7 +6803,7 @@
                         {
                             "quantity": 9,
                             "materialType": "common",
-                            "image": "golden_raven_insignia.png"
+                            "image": "slime_concentrate.png"
                         },
                         {
                             "quantity": 2,
@@ -6810,7 +6828,7 @@
                         {
                             "quantity": 12,
                             "materialType": "common",
-                            "image": "golden_raven_insignia.png"
+                            "image": "slime_concentrate.png"
                         },
                         {
                             "quantity": 2,
@@ -9818,6 +9836,10 @@
                     ],
                     "artifacts": [
                         {
+                            "one": "depth_of_heart_4.png",
+                            "multiples": []
+                        },
+                        {
                             "multiples": [
                                 {
                                     "quantity": 2,
@@ -10018,7 +10040,7 @@
                                 {
                                     "quantity": 3,
                                     "materialType": "talents",
-                                    "image": "guide_to_freedom.png"
+                                    "image": "teaching_of_freedom.png"
                                 },
                                 {
                                     "quantity": 6,
@@ -10228,7 +10250,7 @@
                                 {
                                     "quantity": 3,
                                     "materialType": "talents",
-                                    "image": "guide_to_freedom.png"
+                                    "image": "teaching_of_freedom.png"
                                 },
                                 {
                                     "quantity": 6,
@@ -10438,7 +10460,7 @@
                                 {
                                     "quantity": 3,
                                     "materialType": "talents",
-                                    "image": "guide_to_freedom.png"
+                                    "image": "teaching_of_freedom.png"
                                 },
                                 {
                                     "quantity": 6,
@@ -10837,7 +10859,7 @@
                                 {
                                     "quantity": 3,
                                     "materialType": "talents",
-                                    "image": "guide_to_freedom.png"
+                                    "image": "teaching_of_freedom.png"
                                 },
                                 {
                                     "quantity": 6,
@@ -13491,7 +13513,7 @@
                         {
                             "quantity": 4,
                             "materialType": "common",
-                            "image": "slime_concentrate.png"
+                            "image": "golden_raven_insignia.png"
                         },
                         {
                             "quantity": 1,

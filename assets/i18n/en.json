@@ -316,7 +316,7 @@
                             "name": "Melody Loop",
                             "description": null,
                             "descriptions": [
-                                "Baron Bunny’s HP scales with Amber’s Max HP.",
+                                "Barbara's Normal Attacks heal all party members and nearby allied characters for a certain amount of HP, which scales with Barbara's Max HP.",
                                 "Her Charged Attack generates 4 times the amount of healing.",
                                 "Regenerates a certain amount of the current character’s HP at regular intervals.",
                                 "Applies the Wet status to the character and enemies who come in contact with them."
@@ -344,7 +344,7 @@
                     "image": "glorious_season.png",
                     "title": "Glorious Season",
                     "unlockedAt": 1,
-                    "description": "Increases the CRIT Rate of Fiery Rain by 10% and widens its AoE by 30%.",
+                    "description": "The Stamina Consumption of characters within Let the Show Begin's Melody Loop is reduced by 12%.",
                     "descriptions": []
                 },
                 {
@@ -392,7 +392,7 @@
                     "number": 5,
                     "image": "the_purest_companionship.png",
                     "title": "The Purest Companionship",
-                    "description": "Increase the Level of Let the Show Begin by 3. Maximum upgrade level is 15.",
+                    "description": "Increases the Level of Let the Show Begin by 3.\nMaximum upgrade level is 15.",
                     "secondDescription": null,
                     "descriptions": []
                 },
@@ -404,7 +404,7 @@
                     "secondDescription": "This effect can only occur once every 15 mins.",
                     "descriptions": [
                         "Automatically revives this character.",
-                        "Fully regenerates this characters HP by 100%."
+                        "Fully regenerates this character's HP by 100%."
                     ]
                 }
             ]
@@ -462,14 +462,15 @@
                     "image": "stormbreaker.png",
                     "title": "Stormbreaker",
                     "subTitle": "Elemental Burst",
-                    "description": "Recalling her slaying of the great beast Haishan. Beidou calls upon that monstrous strength and the lightning to create a Thunderbeast’s Targe around herself.",
+                    "description": "Recalling her slaying of the great beast Haishan. Beidou calls upon that monstrous strength and the lightning to create a Thunderbeast’s Targe around herself, dealing Electro DMG to nearby opponents.",
                     "abilities": [
                         {
-                            "name": "Thunderbeast’s Target",
+                            "name": "Thunderbeast’s Targe",
                             "description": null,
                             "descriptions": [
                                 "When Normal and Charged Attacks hit, they create a lightning discharge that can jump between enemies, dealing Electro DMG.",
-                                "Increases the character’s resistance to interruption, and decreases DMG taken."
+                                "Increases the character’s resistance to interruption, and decreases DMG taken.",
+                                "A maximum of 1 lightning discharge can be triggered per second."
                             ]
                         }
                     ]
@@ -587,7 +588,7 @@
                     "image": "passion_overload.png",
                     "title": "Passion Overload",
                     "subTitle": "Elemental Skill",
-                    "description": "Bennett puts all his fire and passion for adventuring into his sword. Results may very based on how fired up he is.",
+                    "description": "Bennett puts all his fire and passion for adventuring into his sword. Results may vary based on how fired up he is.",
                     "abilities": [
                         {
                             "name": "Press",
@@ -1144,7 +1145,7 @@
                 },
                 {
                     "image": "lighting_smite.png",
-                    "title": "Lightning Smite",
+                    "title": "Undone Be Thy Sinful Hex",
                     "unlockedAt": 4,
                     "description": "If a character triggers an Electro-related Elemental Reaction when Oz is on the field, the enemy shall be stricken with Thundering Retribution, dealing Electro DMG equal to 80% of Fischl’s ATK.",
                     "descriptions": []
@@ -1261,7 +1262,7 @@
                             "name": "Dandelion Field",
                             "description": null,
                             "descriptions": [
-                                "Continuously regenerates HP for one ally and imbues them with the Anemo attribute.",
+                                "Continuously regenerates HP of characters within the AoE and continuously imbues them with Anemo.",
                                 "Deals Anemo DMG to enemies entering or exiting the field."
                             ]
                         }
@@ -1871,7 +1872,7 @@
                 },
                 {
                     "image": "mirror_reflection_of_doom.png",
-                    "title": "Reflection of Doom",
+                    "title": "Mirror Reflection of Doom",
                     "subTitle": "Elemental Skill",
                     "description": "Creates an illusory Phantom of fate from coalesced waterspouts.",
                     "abilities": [
@@ -2455,12 +2456,13 @@
                     "abilities": [
                         {
                             "name": "The Wolf Within",
-                            "description": "The effects end when Razor leaves the battlefield. When Razor leaves the field, a maximum of 10 Energy will be returned to him based off the duration remaining on this skill.",
+                            "description": "These effects end when Razor leaves the battlefield. When Razor leaves the field, a maximum of 10 Energy will be returned to him based off the duration remaining on this skill.",
                             "descriptions": [
                                 "Strikes alongside Razor’s normal attacks, dealing Electro DMG.",
                                 "Raises Razor’s ATK SPD and Electro RES.",
                                 "Causes Razor to be immune to DMG inflicted by the Electro-Charged status.",
-                                "Disables Razor’s Charged Attacks."
+                                "Disables Razor’s Charged Attacks.",
+                                "Increases Razor's resistance to interruption."
                             ]
                         }
                     ]
@@ -2954,7 +2956,7 @@
             "skills": [
                 {
                     "image": "normal_attack_foreign_rockblade.png",
-                    "title": "Foreign Ironwind",
+                    "title": "Foreign Rockblade",
                     "subTitle": "Normal Attack",
                     "description": null,
                     "abilities": [
@@ -3434,7 +3436,7 @@
                 {
                     "image": "normal_attack_guhua_style.png",
                     "title": "Guhua Style",
-                    "subTitle": "Performs up to 5 rapid strikes.",
+                    "subTitle": "Normal Attack",
                     "description": null,
                     "abilities": [
                         {
@@ -3568,8 +3570,8 @@
             "skills": [
                 {
                     "image": "normal_attack_dance_on_fire.png",
-                    "title": "Guhua Style",
-                    "subTitle": "Performs up to 5 rapid strikes.",
+                    "title": "Dance on Fire",
+                    "subTitle": "Normal Attack",
                     "description": null,
                     "abilities": [
                         {
@@ -3684,7 +3686,7 @@
                 {
                     "number": 5,
                     "image": "screaming_for_an_encore.png",
-                    "title": "Screaming for Encore",
+                    "title": "Screamin’ for an Encore",
                     "description": "Increases the Level of Riff Revolution by 3. Maximum upgrade level is 15.",
                     "secondDescription": null,
                     "descriptions": []
@@ -3692,7 +3694,7 @@
                 {
                     "number": 6,
                     "image": "rockin_in_a_flaming.png",
-                    "title": "Rocking in Flaming",
+                    "title": "Rockin’ in a Flaming World",
                     "description": "Decrease the stamina consumption of Xinyan Charged Attacks by 30%. Additionally, Xinyan Charged Attack gain an ATK bonus equal to 50% of her DEF.",
                     "secondDescription": null,
                     "descriptions": []
@@ -3712,26 +3714,26 @@
                     "abilities": [
                         {
                             "name": "Normal Attack",
-                            "description": "Performs up to 4 consecutive strikes.",
+                            "description": " Performs up to 6 consecutive spear strikes.",
                             "descriptions": []
                         },
                         {
                             "name": "Charged Attack",
-                            "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.",
+                            "description": "Consumes a certain amount of Stamina to lunge forward, causing stone spears to fall along his path.",
                             "descriptions": []
                         },
                         {
                             "name": "Plunging Attack",
-                            "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+                            "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
                     ]
                 },
                 {
                     "image": "dominus_lapidis.png",
-                    "title": "Sweeping Fervor",
+                    "title": "Dominus Lapidis",
                     "subTitle": "Elemental Skill",
-                    "description": "Xinyan brandishes her instrument, dealing Pyro DMG on nearby enemies, forming a shield made out of her audience’s passion.",
+                    "description": "Every mountain, rock and inch of land is filled with the power of Geo, but those who can wield such powers freely are few and far between.",
                     "abilities": [
                         {
                             "name": "Press",
