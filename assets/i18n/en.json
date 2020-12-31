@@ -3714,7 +3714,7 @@
                     "abilities": [
                         {
                             "name": "Normal Attack",
-                            "description": " Performs up to 6 consecutive spear strikes.",
+                            "description": "Performs up to 6 consecutive spear strikes.",
                             "descriptions": []
                         },
                         {

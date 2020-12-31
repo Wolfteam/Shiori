@@ -8,6 +8,7 @@ import '../../common/enums/stat_type.dart';
 import '../../common/enums/weapon_type.dart';
 import '../../models/models.dart';
 import '../../services/genshing_service.dart';
+import '../../telemetry.dart';
 
 part 'weapon_bloc.freezed.dart';
 part 'weapon_event.dart';
@@ -22,13 +23,15 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
     WeaponEvent event,
   ) async* {
     yield const WeaponState.loading();
-    final s = event.when(
-      loadFromImg: (img) {
+    final s = await event.when(
+      loadFromImg: (img) async {
+        await trackWeaponLoaded(img, loadedFromName: false);
         final weapon = _genshinService.getWeaponByImg(img);
         final translation = _genshinService.getWeaponTranslation(weapon.name);
         return _buildInitialState(weapon, translation);
       },
-      loadFromName: (name) {
+      loadFromName: (name) async {
+        await trackWeaponLoaded(name);
         final weapon = _genshinService.getWeapon(name);
         final translation = _genshinService.getWeaponTranslation(name);
         return _buildInitialState(weapon, translation);

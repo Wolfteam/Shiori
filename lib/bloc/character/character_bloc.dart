@@ -8,6 +8,7 @@ import '../../common/enums/element_type.dart';
 import '../../common/enums/weapon_type.dart';
 import '../../models/models.dart';
 import '../../services/genshing_service.dart';
+import '../../telemetry.dart';
 
 part 'character_bloc.freezed.dart';
 part 'character_event.dart';
@@ -23,13 +24,15 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
   ) async* {
     yield const CharacterState.loading();
 
-    final s = event.when(
-      loadFromName: (name) {
+    final s = await event.when(
+      loadFromName: (name) async {
+        await trackCharacterLoaded(name);
         final char = _genshinService.getCharacter(name);
         final translation = _genshinService.getCharacterTranslation(name);
         return _buildInitialState(char, translation);
       },
-      loadFromImg: (img) {
+      loadFromImg: (img) async {
+        await trackCharacterLoaded(img, loadedFromName: false);
         final char = _genshinService.getCharacterByImg(img);
         final translation = _genshinService.getCharacterTranslation(char.name);
         return _buildInitialState(char, translation);

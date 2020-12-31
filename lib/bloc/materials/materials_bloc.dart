@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../models/models.dart';
 import '../../services/genshing_service.dart';
+import '../../telemetry.dart';
 
 part 'materials_bloc.freezed.dart';
 part 'materials_event.dart';
@@ -18,6 +19,7 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
   Stream<MaterialsState> mapEventToState(
     MaterialsEvent event,
   ) async* {
+    await trackAscentionMaterialsOpened();
     final s = event.when(
       init: () {
         final days = [

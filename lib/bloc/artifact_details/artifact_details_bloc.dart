@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../common/app_constants.dart';
 import '../../common/assets.dart';
 import '../../services/genshing_service.dart';
+import '../../telemetry.dart';
 
 part 'artifact_details_bloc.freezed.dart';
 part 'artifact_details_event.dart';
@@ -22,8 +23,9 @@ class ArtifactDetailsBloc extends Bloc<ArtifactDetailsEvent, ArtifactDetailsStat
   ) async* {
     yield const ArtifactDetailsState.loading();
 
-    final s = event.map(
-      loadArtifact: (e) {
+    final s = await event.map(
+      loadArtifact: (e) async {
+        await trackArtifactLoaded(e.name);
         final artifact = _genshinService.getArtifact(e.name);
         final translation = _genshinService.getArtifactTranslation(e.name);
         var image = artifact.image.split('.png').first;

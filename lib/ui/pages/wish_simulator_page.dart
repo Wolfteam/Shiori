@@ -18,7 +18,7 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    context.read<UrlPageBloc>().add(const UrlPageEvent.init());
+    context.read<UrlPageBloc>().add(const UrlPageEvent.init(loadMap: false, loadWishSimulator: true));
   }
 
   @override

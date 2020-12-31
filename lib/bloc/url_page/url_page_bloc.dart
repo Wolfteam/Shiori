@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../services/network_service.dart';
+import '../../telemetry.dart';
 
 part 'url_page_bloc.freezed.dart';
 part 'url_page_event.dart';
@@ -20,9 +21,10 @@ class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
   Stream<UrlPageState> mapEventToState(
     UrlPageEvent event,
   ) async* {
-    final s = await event.when(
-      init: () async {
+    final s = await event.map(
+      init: (e) async {
         final isInternetAvailable = await _networkService.isInternetAvailable();
+        await trackUrlOpened(e.loadMap, e.loadWishSimulator, isInternetAvailable);
         return UrlPageState.loaded(
           hasInternetConnection: isInternetAvailable,
           mapUrl: mapUrl,
