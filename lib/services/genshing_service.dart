@@ -257,11 +257,29 @@ class GenshinServiceImpl implements GenshinService {
 
       for (final char in _charactersFile.characters) {
         if (char.isComingSoon) continue;
-        final materialIsBeingUsed =
+        final normalAscMaterial =
             char.ascentionMaterials.expand((m) => m.materials).where((m) => m.image == e.image).isNotEmpty ||
                 char.talentAscentionMaterials.expand((m) => m.materials).where((m) => m.image == e.image).isNotEmpty;
-        if (materialIsBeingUsed) {
-          characters.add(Assets.getCharacterPath(char.image));
+
+        //The travelers have different ascention materials, that's why we do the following
+        var specialAscMaterial = false;
+        if (char.multiTalentAscentionMaterials != null) {
+          final keyword = e.image.split('_').last;
+          final materials = char.multiTalentAscentionMaterials
+              .expand((m) => m.materials)
+              .expand((m) => m.materials)
+              .where((m) => m.materialType == MaterialType.talents)
+              .map((e) => e.image.split('_').last)
+              .toSet()
+              .toList();
+
+          specialAscMaterial = materials.any((m) => m == keyword);
+        }
+
+        final materialIsBeingUsed = normalAscMaterial || specialAscMaterial;
+        final charImg = Assets.getCharacterPath(char.image);
+        if (materialIsBeingUsed && !characters.contains(charImg)) {
+          characters.add(charImg);
         }
       }
 
