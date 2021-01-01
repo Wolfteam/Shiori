@@ -205,10 +205,10 @@ class S {
     );
   }
 
-  /// `{value} CRIT DMG`
+  /// `{value} CRIT DMG%`
   String critDmgPercentage(Object value) {
     return Intl.message(
-      '$value CRIT DMG',
+      '$value CRIT DMG%',
       name: 'critDmgPercentage',
       desc: '',
       args: [value],

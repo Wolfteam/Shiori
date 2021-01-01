@@ -21,7 +21,7 @@ class ArtifactDetailsPage extends StatelessWidget {
           child: BlocBuilder<ArtifactDetailsBloc, ArtifactDetailsState>(
             builder: (context, state) {
               return state.map(
-                loading: (_) => const Loading(),
+                loading: (_) => const Loading(useScaffold: false),
                 loaded: (s) => Stack(
                   fit: StackFit.passthrough,
                   clipBehavior: Clip.none,

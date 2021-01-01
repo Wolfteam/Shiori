@@ -29,7 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m4(value) => "${value} CRIT ATK";
 
-  static m5(value) => "${value} CRIT DMG";
+  static m5(value) => "${value} CRIT DMG%";
 
   static m6(value) => "${value} CRIT Rate";
 

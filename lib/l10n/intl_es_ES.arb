@@ -16,7 +16,7 @@
     "critAtk": "{value} CRIT ATK",
     "critRate": "{value} CRIT Rate",
     "critRatePercentage": "{value} CRIT Rate%",
-    "critDmgPercentage": "{value} CRIT DMG",
+    "critDmgPercentage": "{value} CRIT DMG%",
     "elementaryMaster": "{value} Maestría Elemental",
     "hpPercentage": "{value} HP%",
     "physDmgPercentage": "{value} PHYS DMG %",

@@ -29,7 +29,7 @@ class WeaponPage extends StatelessWidget {
           child: BlocBuilder<WeaponBloc, WeaponState>(
             builder: (context, state) {
               return state.map(
-                loading: (_) => const Loading(),
+                loading: (_) => const Loading(useScaffold: false),
                 loaded: (s) => Stack(
                   children: [
                     _buildTop(

@@ -4081,7 +4081,7 @@
             "key": "Sword of Descension",
             "name": "Sword of Descension",
             "description": "A sword of unique craftsmanship. It does not appear to belong to this world.",
-            "refinement": null
+            "refinement": "Hitting opponents with Normal and Charged Attacks grants a {{0}}% chance to deal 200% ATK as DMG in a small AoE. This effect can only occur once every 10s. Additionally, if the Traveler equips the Sword of Descension, their ATK is increased by {{1}}."
         },
         {
             "key": "Festering Desire",
@@ -4171,11 +4171,11 @@
             "key": "Mappa Mare",
             "name": "Mappa Mare",
             "description": "A nautical chart featuring nearby currents and climates that somehow found its way into Liyue via foreign traders.",
-            "refinement": "Triggering an Elemental reaction grants a 8% Elemental DMG Bonus for 10s. Max 2 stacks."
+            "refinement": "Triggering an Elemental reaction grants a {{0}}% Elemental DMG Bonus for 10s. Max 2 stacks."
         },
         {
-            "key": "Prototype Malice",
-            "name": "Prototype Malice",
+            "key": "Prototype Amber",
+            "name": "Prototype Amber",
             "description": "A dully gilded catalyst secretly guarded in the Blackcliff Forge. It seems to glow with the very light from the sky.",
             "refinement": "Using an Elemental Burst regenerates {{0}} Energy every 2s for 6s. All party members will regenerate {{1}}% HP every 2s for this duration."
         },
@@ -4188,19 +4188,19 @@
         {
             "key": "Sacrificial Fragments",
             "name": "Sacrificial Fragments",
-            "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
+            "description": "A weathered script, the text of which is no longer legible. A cursed item eroded by the winds of time.",
             "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s."
         },
         {
             "key": "Solar Pearl",
             "name": "Solar Pearl",
-            "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
+            "description": "A dull, golden pearl made of an unknown substance that harbors the light of the sun and the moon, and pulses with a warm strength.",
             "refinement": "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {{0}}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {{1}}% for 6s."
         },
         {
             "key": "The Widsith",
             "name": "The Widsith",
-            "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
+            "description": "A heavy notebook filled with musical scores. Though suffering from moth damage and heavy wear-and-tear, there is still much power to be found among the hand-written words within.",
             "refinement": "When the character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s. Recitative: ATK is increased by {{0}}%. Aria: Increases all Elemental DMG by {{1}}%. Interlude: Elemental Mastery is increased by {{2}}."
         },
         {
@@ -4297,7 +4297,7 @@
             "key": "Favonius Greatsword",
             "name": "Favonius Greatsword",
             "description": "A heavy ceremonial sword of the Knights of Favonius. It channels elemental power easily and is highly destructive.",
-            "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}"
+            "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
         },
         {
             "key": "Lithic Blade",
@@ -4306,8 +4306,8 @@
             "refinement": "For every character in the party who hails from Liyue, the character who equips this weapon gains {{0}}% ATK increase and {{1}}% CRIT Rate increase."
         },
         {
-            "key": "Prototype Aminus",
-            "name": "Prototype Aminus",
+            "key": "Prototype Archaic",
+            "name": "Prototype Archaic",
             "description": "An ancient greatsword discovered in the Blackcliff Forge. It swings with such an immense force that one feels it could cut straight through reality itself.",
             "refinement": "On hit, Normal or Charged Attacks have a 50% chance to deal an additional {{0}}% ATK DMG to enemies within a small AoE. Can only occur once every 15s."
         },
@@ -4432,8 +4432,8 @@
             "refinement": "Normal Attack hits have a {{0}}% chance of causing the next Charged Attack performed in the following 10s to deal {{1}}% increased DMG."
         },
         {
-            "key": "Prototype Grudge",
-            "name": "Prototype Grudge",
+            "key": "Prototype Starglitter",
+            "name": "Prototype Starglitter",
             "description": "A grudge discovered in the Blackcliff Forge. The glimmers along the sharp edge are like stars in the night.",
             "refinement": "After using an Elemental Skill, increases Normal and Charged Attack DMG by {{0}}% for 12s. Max 2 stacks."
         },
