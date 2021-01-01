@@ -11,14 +11,14 @@
     "catalyst": "Catalyst",
     "none": "None",
     "atk": "{value} ATK",
-    "atkPercentage": "{value} ATK%",
-    "defPercentage": "{value} DEF%",
+    "atkPercentage": "{value} ATK %",
+    "defPercentage": "{value} DEF %",
     "critAtk": "{value} CRIT ATK",
     "critRate": "{value} CRIT Rate",
-    "critRatePercentage": "{value} CRIT Rate%",
-    "critDmgPercentage": "{value} CRIT DMG%",
+    "critRatePercentage": "{value} CRIT Rate %",
+    "critDmgPercentage": "{value} CRIT DMG %",
     "elementaryMaster": "{value} Elementary Master",
-    "hpPercentage": "{value} HP%",
+    "hpPercentage": "{value} HP %",
     "physDmgPercentage": "{value} PHYS DMG %",
     "physDmgBonus": "{value} PHYS DMG Bonus",
     "energyRechargePercentage": "{value} Energy Recharge %",
@@ -141,5 +141,6 @@
     "generalSettings": "General settings",
     "showCharacterDetails": "Show character details",
     "showWeaponDetails": "Show weapon details",
-    "quest": "Quest"
+    "quest": "Quest",
+    "subStat": "Sub. Stat"
 }

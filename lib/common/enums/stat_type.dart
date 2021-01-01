@@ -1,4 +1,5 @@
 enum StatType {
+  all,
   none,
   atk,
   atkPercentage,

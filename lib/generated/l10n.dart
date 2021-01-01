@@ -155,20 +155,20 @@ class S {
     );
   }
 
-  /// `{value} ATK%`
+  /// `{value} ATK %`
   String atkPercentage(Object value) {
     return Intl.message(
-      '$value ATK%',
+      '$value ATK %',
       name: 'atkPercentage',
       desc: '',
       args: [value],
     );
   }
 
-  /// `{value} DEF%`
+  /// `{value} DEF %`
   String defPercentage(Object value) {
     return Intl.message(
-      '$value DEF%',
+      '$value DEF %',
       name: 'defPercentage',
       desc: '',
       args: [value],
@@ -195,20 +195,20 @@ class S {
     );
   }
 
-  /// `{value} CRIT Rate%`
+  /// `{value} CRIT Rate %`
   String critRatePercentage(Object value) {
     return Intl.message(
-      '$value CRIT Rate%',
+      '$value CRIT Rate %',
       name: 'critRatePercentage',
       desc: '',
       args: [value],
     );
   }
 
-  /// `{value} CRIT DMG%`
+  /// `{value} CRIT DMG %`
   String critDmgPercentage(Object value) {
     return Intl.message(
-      '$value CRIT DMG%',
+      '$value CRIT DMG %',
       name: 'critDmgPercentage',
       desc: '',
       args: [value],
@@ -225,10 +225,10 @@ class S {
     );
   }
 
-  /// `{value} HP%`
+  /// `{value} HP %`
   String hpPercentage(Object value) {
     return Intl.message(
-      '$value HP%',
+      '$value HP %',
       name: 'hpPercentage',
       desc: '',
       args: [value],
@@ -1460,6 +1460,16 @@ class S {
     return Intl.message(
       'Quest',
       name: 'quest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sub. Stat`
+  String get subStat {
+    return Intl.message(
+      'Sub. Stat',
+      name: 'subStat',
       desc: '',
       args: [],
     );

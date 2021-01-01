@@ -60,6 +60,8 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
             name: weapon.name,
             rarity: weapon.rarity,
             type: weapon.type,
+            subStatType: weapon.subStatType,
+            subStatValue: weapon.subStatValue,
           );
         },
         itemCount: weapons.length,

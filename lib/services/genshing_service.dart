@@ -173,6 +173,8 @@ class GenshinServiceImpl implements GenshinService {
           name: translation.name,
           rarity: e.rarity,
           type: e.type,
+          subStatType: e.secondaryStat,
+          subStatValue: e.secondaryStatValue,
         );
       },
     ).toList();
@@ -188,6 +190,8 @@ class GenshinServiceImpl implements GenshinService {
       name: translation.name,
       rarity: weapon.rarity,
       type: weapon.type,
+      subStatType: weapon.secondaryStat,
+      subStatValue: weapon.secondaryStatValue,
     );
   }
 

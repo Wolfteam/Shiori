@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../bloc/bloc.dart';
+import '../../../common/enums/stat_type.dart';
 import '../../../common/enums/weapon_filter_type.dart';
 import '../../../common/extensions/i18n_extensions.dart';
 import '../../../common/genshin_db_icons.dart';
@@ -20,6 +21,8 @@ class WeaponBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
+    final ignoredSubStats = [StatType.atk, StatType.critAtk, StatType.critRate, StatType.physDmgBonus];
+
     return SingleChildScrollView(
       padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
       child: Container(
@@ -49,6 +52,14 @@ class WeaponBottomSheet extends StatelessWidget {
                   ButtonBar(
                     alignment: MainAxisAlignment.spaceEvenly,
                     children: [
+                      ItemPopupMenuFilter<StatType>(
+                        tooltipText: s.secondaryState,
+                        onSelected: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.weaponSubStatTypeChanged(v)),
+                        selectedValue: state.tempWeaponSubStatType,
+                        values: StatType.values.where((el) => !ignoredSubStats.contains(el)).toList(),
+                        itemText: (val) => s.translateStatTypeWithoutValue(val),
+                        icon: const Icon(GenshinDb.sliders_h, size: 18),
+                      ),
                       ItemPopupMenuFilter<WeaponFilterType>(
                         tooltipText: s.sortBy,
                         onSelected: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.weaponFilterTypeChanged(v)),

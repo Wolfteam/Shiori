@@ -23,25 +23,25 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m1(value) => "${value} ATK";
 
-  static m2(value) => "${value} ATK%";
+  static m2(value) => "${value} ATK %";
 
   static m3(value) => "Constellation ${value}";
 
   static m4(value) => "${value} CRIT ATK";
 
-  static m5(value) => "${value} CRIT DMG%";
+  static m5(value) => "${value} CRIT DMG %";
 
   static m6(value) => "${value} CRIT Rate";
 
-  static m7(value) => "${value} CRIT Rate%";
+  static m7(value) => "${value} CRIT Rate %";
 
-  static m8(value) => "${value} DEF%";
+  static m8(value) => "${value} DEF %";
 
   static m9(value) => "${value} Elementary Master";
 
   static m10(value) => "${value} Energy Recharge %";
 
-  static m11(value) => "${value} HP%";
+  static m11(value) => "${value} HP %";
 
   static m12(value) => "${value} PHYS DMG Bonus";
 
@@ -175,6 +175,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sortType" : MessageLookupByLibrary.simpleMessage("Sort type"),
     "spanish" : MessageLookupByLibrary.simpleMessage("Spanish"),
     "starglitterExchange" : MessageLookupByLibrary.simpleMessage("Starglitter Exchange"),
+    "subStat" : MessageLookupByLibrary.simpleMessage("Sub. Stat"),
     "sunday" : MessageLookupByLibrary.simpleMessage("Sunday"),
     "support" : MessageLookupByLibrary.simpleMessage("Support"),
     "supportMsg" : MessageLookupByLibrary.simpleMessage("I made this app in my free time and it is also open source. If you would like to help me, report an issue, have an idea, want a feature to be implemented, etc, please open an issue in my Github:"),

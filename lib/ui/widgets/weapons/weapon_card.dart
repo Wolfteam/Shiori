@@ -22,6 +22,9 @@ class WeaponCard extends StatelessWidget {
   final int rarity;
   final int baseAtk;
   final WeaponType type;
+  final StatType subStatType;
+  final double subStatValue;
+
   final double imgWidth;
   final double imgHeight;
   final bool withoutDetails;
@@ -33,6 +36,8 @@ class WeaponCard extends StatelessWidget {
     @required this.rarity,
     @required this.baseAtk,
     @required this.type,
+    @required this.subStatType,
+    @required this.subStatValue,
     this.imgWidth = 160,
     this.imgHeight = 140,
   })  : withoutDetails = false,
@@ -47,6 +52,8 @@ class WeaponCard extends StatelessWidget {
     this.imgHeight = 70,
   })  : type = null,
         baseAtk = null,
+        subStatType = null,
+        subStatValue = null,
         withoutDetails = true,
         super(key: key);
 
@@ -92,27 +99,28 @@ class WeaponCard extends StatelessWidget {
                       if (withoutDetails || !settingsState.showWeaponDetails) {
                         return Container();
                       }
-                      return Text(
-                        '${s.translateStatTypeWithoutValue(StatType.atk)}: $baseAtk',
-                        textAlign: TextAlign.center,
-                        overflow: TextOverflow.ellipsis,
-                      );
-                    },
-                  );
-                },
-              ),
-              BlocBuilder<SettingsBloc, SettingsState>(
-                builder: (context, state) {
-                  return state.map(
-                    loading: (_) => const Loading(useScaffold: false),
-                    loaded: (settingsState) {
-                      if (withoutDetails || !settingsState.showWeaponDetails) {
-                        return Container();
-                      }
-                      return Text(
-                        '${s.type}: ${s.translateWeaponType(type)}',
-                        textAlign: TextAlign.center,
-                        overflow: TextOverflow.ellipsis,
+
+                      return Container(
+                        margin: Styles.edgeInsetHorizontal16,
+                        child: Column(
+                          children: [
+                            Text(
+                              '${s.translateStatTypeWithoutValue(StatType.atk)}: $baseAtk',
+                              textAlign: TextAlign.center,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            Text(
+                              '${s.type}: ${s.translateWeaponType(type)}',
+                              textAlign: TextAlign.center,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            Text(
+                              '${s.subStat}: ${s.translateStatType(subStatType, subStatValue)}',
+                              textAlign: TextAlign.center,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
+                        ),
                       );
                     },
                   );

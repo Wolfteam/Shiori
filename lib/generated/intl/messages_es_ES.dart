@@ -23,25 +23,25 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m1(value) => "${value} ATK";
 
-  static m2(value) => "${value} ATK%";
+  static m2(value) => "${value} ATK %";
 
   static m3(value) => "Constelación ${value}";
 
   static m4(value) => "${value} CRIT ATK";
 
-  static m5(value) => "${value} CRIT DMG%";
+  static m5(value) => "${value} CRIT DMG %";
 
   static m6(value) => "${value} CRIT Rate";
 
-  static m7(value) => "${value} CRIT Rate%";
+  static m7(value) => "${value} CRIT Rate %";
 
-  static m8(value) => "${value} DEF%";
+  static m8(value) => "${value} DEF %";
 
   static m9(value) => "${value} Maestría Elemental";
 
   static m10(value) => "${value} Recarga de Energía %";
 
-  static m11(value) => "${value} HP%";
+  static m11(value) => "${value} HP %";
 
   static m12(value) => "${value} PHYS DMG Bonus";
 
@@ -175,6 +175,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sortType" : MessageLookupByLibrary.simpleMessage("Tipo de ordenamiento"),
     "spanish" : MessageLookupByLibrary.simpleMessage("Español"),
     "starglitterExchange" : MessageLookupByLibrary.simpleMessage("Starglitter Exchange"),
+    "subStat" : MessageLookupByLibrary.simpleMessage("Sub. Stat"),
     "sunday" : MessageLookupByLibrary.simpleMessage("Domingo"),
     "support" : MessageLookupByLibrary.simpleMessage("Soporte"),
     "supportMsg" : MessageLookupByLibrary.simpleMessage("Hice esta aplicación en mi tiempo libre y también es de código abierto. Si deseas ayudarme, informar de un problema, tienes una idea, deseas que se implemente una funcionalidad, etc., crea un issue en mi Github:"),

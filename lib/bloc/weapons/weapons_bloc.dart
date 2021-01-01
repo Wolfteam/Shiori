@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../common/enums/sort_direction_type.dart';
+import '../../common/enums/stat_type.dart';
 import '../../common/enums/weapon_filter_type.dart';
 import '../../common/enums/weapon_type.dart';
 import '../../models/models.dart';
@@ -46,19 +47,23 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         rarity: currentState.rarity,
         sortDirectionType: currentState.sortDirectionType,
         weaponTypes: currentState.weaponTypes,
+        weaponSubStatType: currentState.weaponSubStatType,
       ),
+      weaponSubStatTypeChanged: (e) => currentState.copyWith.call(tempWeaponSubStatType: e.subStatType),
       applyFilterChanges: (_) => _buildInitialState(
         search: currentState.search,
         weaponFilterType: currentState.tempWeaponFilterType,
         rarity: currentState.tempRarity,
         sortDirectionType: currentState.tempSortDirectionType,
         weaponTypes: currentState.tempWeaponTypes,
+        weaponSubStatType: currentState.tempWeaponSubStatType,
       ),
       cancelChanges: (_) => currentState.copyWith.call(
         tempWeaponFilterType: currentState.weaponFilterType,
         tempRarity: currentState.rarity,
         tempSortDirectionType: currentState.sortDirectionType,
         tempWeaponTypes: currentState.weaponTypes,
+        tempWeaponSubStatType: currentState.weaponSubStatType,
       ),
     );
 
@@ -71,6 +76,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
     int rarity = 0,
     WeaponFilterType weaponFilterType = WeaponFilterType.rarity,
     SortDirectionType sortDirectionType = SortDirectionType.asc,
+    StatType weaponSubStatType = StatType.all,
   }) {
     final isLoaded = state is _LoadedState;
     var data = _genshinService.getWeaponsForCard();
@@ -90,6 +96,8 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         sortDirectionType: sortDirectionType,
         tempSortDirectionType: sortDirectionType,
         showWeaponDetails: _settingsService.showWeaponDetails,
+        weaponSubStatType: weaponSubStatType,
+        tempWeaponSubStatType: weaponSubStatType,
       );
     }
 
@@ -103,6 +111,10 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
 
     if (weaponTypes.isNotEmpty) {
       data = data.where((el) => weaponTypes.contains(el.type)).toList();
+    }
+
+    if (weaponSubStatType != StatType.all) {
+      data = data.where((el) => el.subStatType == weaponSubStatType).toList();
     }
 
     _sortData(data, weaponFilterType, sortDirectionType);
@@ -148,6 +160,13 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
           data.sort((x, y) => x.rarity.compareTo(y.rarity));
         } else {
           data.sort((x, y) => y.rarity.compareTo(x.rarity));
+        }
+        break;
+      case WeaponFilterType.subStat:
+        if (sortDirectionType == SortDirectionType.asc) {
+          data.sort((x, y) => x.subStatValue.compareTo(y.subStatValue));
+        } else {
+          data.sort((x, y) => y.subStatValue.compareTo(x.subStatValue));
         }
         break;
       default:

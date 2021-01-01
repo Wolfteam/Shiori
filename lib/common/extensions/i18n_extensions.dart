@@ -86,6 +86,8 @@ extension I18nExtensions on S {
 
   String translateStatType(StatType type, double value) {
     switch (type) {
+      case StatType.all:
+        return all;
       case StatType.atk:
         return atk(value);
       case StatType.atkPercentage:
@@ -208,6 +210,8 @@ extension I18nExtensions on S {
         return name;
       case WeaponFilterType.rarity:
         return rarity;
+      case WeaponFilterType.subStat:
+        return subStat;
       default:
         throw Exception('Invalid weapon filter type = $type');
     }

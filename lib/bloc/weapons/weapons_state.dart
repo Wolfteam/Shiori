@@ -15,5 +15,7 @@ abstract class WeaponsState with _$WeaponsState {
     @required WeaponFilterType tempWeaponFilterType,
     @required SortDirectionType sortDirectionType,
     @required SortDirectionType tempSortDirectionType,
+    @required StatType weaponSubStatType,
+    @required StatType tempWeaponSubStatType,
   }) = _LoadedState;
 }
