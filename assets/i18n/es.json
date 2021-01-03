@@ -3503,14 +3503,14 @@
     "weapons": [
         {
             "key": "Hunter’s Bow",
-            "name": "Hunter’s Bow",
-            "description": "A hunter’s music consists of but two sounds: the twang of the bowstring and the whoosh of soaring arrows.",
+            "name": "Arco del Cazador",
+            "description": "La música de un cazador consta de dos sonidos: el de la tensión de la cuerda del arco y el silbido de las flechas que vuelan.",
             "refinement": null
         },
         {
             "key": "Seasoned Hunter’s Bow",
-            "name": "Seasoned Hunter’s Bow",
-            "description": "A bow that has been well-polished by time and meticulously cared for by its owner. It feels almost like an extension of the archer’s arm.",
+            "name": "Arco del Cazador Estacional",
+            "description": "Un arco viejo pero bien conservado. Podría ser considerado una extensión del brazo del arquero cuando se utiliza.",
             "refinement": null
         },
         {
@@ -3521,105 +3521,105 @@
         },
         {
             "key": "Messenger",
-            "name": "Messenger",
-            "description": "A basic wooden bow. It is said to have once been used as a tool for long-distance communication.",
-            "refinement": "Charged Attack hits on weak points deal an additional {{0}}% ATK DMG as CRIT DMG. Can only occur once every 10s."
+            "name": "Mensajero",
+            "description": "Un arco de madera básico. Dicen que se usaba para comunicaciones de larga distancia.",
+            "refinement": "Al golpear un punto débil con un Ataque Cargado, inflige un {{0}}% adicional de Daño de ATQ como Daño CRIT. Este efecto puede activarse una vez cada 10 s."
         },
         {
             "key": "Raven Bow",
-            "name": "Raven Bow",
-            "description": "Ravens are known to be the ferrymen of the dead. This bow’s limb is decorated with raven feathers, which forebode the imminent death of its target.",
-            "refinement": "Increases DMG against enemies affected by Hydro or Pyro by {{0}}%"
+            "name": "Arco de Cuervo",
+            "description": "Los cuervos son conocidos por ser los mensajeros de la muerte. Las plumas que decoran este arco presagian la muerte inminente de cualquier objetivo.",
+            "refinement": "Aumenta el daño contra los enemigos afectados por Hydro o Pyro en un {{0}}%."
         },
         {
             "key": "Recurve Bow",
-            "name": "Recurve Bow",
-            "description": "It is said that this bow can shoot down eagles in flight, but ultimately how true that is depends on the skill of the archer.",
-            "refinement": "Defeating an opponent restores {{0}}% HP"
+            "name": "Arco Recurvo",
+            "description": "Se dice que este arco podría derribar águilas en vuelo, pero mucho de eso depende de la habilidad del arquero.",
+            "refinement": "Restaura {{0}}% de Vida después de derrotar al oponente."
         },
         {
             "key": "Sharpshooter’s Oath",
-            "name": "Sharpshooter’s Oath",
-            "description": "This superior bow once belonged to a master archer. However, it gives off a strong scent, thus making it unsuitable for hunting.",
-            "refinement": "Increases DMG against weak spots by {{0}}%"
+            "name": "Juramento del Arquero",
+            "description": "Este sublime arco perteneció una vez a un maestro arquero. Emite un fuerte olor, por lo que no es apto para la caza.",
+            "refinement": "Aumenta el daño contra los puntos débiles en un {{0}}%."
         },
         {
             "key": "Slingshot",
-            "name": "Slingshot",
-            "description": "A bow, despite the name. After countless experiments and improvements to the design, the creator of the ultimate slingshot found himself to have made what was actually a bow.",
-            "refinement": "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by {{0}}%. Otherwise, decreases DMG by 10%."
+            "name": "Tirachinas",
+            "description": "Después de muchas modificaciones y mejoras, su inventor acabó cambiando su aspecto por completo. Ahora, en realidad, es un arco.",
+            "refinement": "Al activar un Ataque Normal o Cargado, si se golpea al enemigo en menos de 0,3 segundos, el daño causado tendrá un aumento de un {{0}}%. Si excede el tiempo, el daño causado disminuirá un 10%."
         },
         {
             "key": "The Stringless",
-            "name": "The Stringless",
-            "description": "A bow that once served as an extraordinary instrument. It is no longer capable of getting people up and dancing.",
-            "refinement": "Increases Elemental Skill and Elemental Burst DMG by {{0}}%."
+            "name": "Último Acorde",
+            "description": "Un arco que alguna vez sirvió como un instrumento extraordinario. Ya no puede levantar a las personas para hacerlas bailar.",
+            "refinement": "Incrementa el daño de la habilidad elemental y la explosión elemental un {{0}}%"
         },
         {
             "key": "Alley Hunter",
             "name": "Alley Hunter",
-            "description": "An intricate, opulent longbow. It once belonged to a gentleman thief who was never caught.",
-            "refinement": "Every 4s a character is on the field, their ATK increases by {{0}}% and their CRIT DMG increases by {{1}}%. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be cleared when the character takes DMG."
+            "description": "Un arco de largo alcance. Una vez perteneció a un caballero ladrón que nunca fue atrapado.",
+            "refinement": "Cada 4 segundos cuando hay un personaje en su campo, su ataque aumenta un {{0}}% y su probabilidad crítica aumenta un {{1}}%. Este efecto se puede acumular un máximo de 5 veces y no se reiniciará si el personaje abandona el campo, pero se eliminará cuando el personaje reciba daño."
         },
         {
             "key": "Blackcliff Warbow",
-            "name": "Blackcliff Warbow",
-            "description": "A bow made of blackcliff that features extremely sturdy bow limbs. It requires an archer with a strong bow arm to use.",
-            "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+            "name": "Arco del Peñasco Oscuro",
+            "description": "Un arco hecho de Piedra negra cuyos extremos son sumamente resistentes. Su uso requiere de un arquero diestro y de brazos fuertes.",
+            "refinement": "Al derrotar a un enemigo, aumenta el ATQ en {{0}}% durante 30s, pudiéndose acumular hasta 3 veces. La duración de cada acumulación es independiente."
         },
         {
             "key": "Compound Bow",
-            "name": "Compound Bow",
-            "description": "An exotic metallic bow from a distant land. Though extremely difficult to maintain, it is easy to nock and fires with tremendous force.",
-            "refinement": "Normal Attack and Charged Attack hits increase ATK by {{0}}% and Normal ATK SPD by {{1}}% for 6s. Max 4 stacks. Can only occur once every 0.3s."
+            "name": "Arco Compuesto",
+            "description": "Un arco de aleación de metal, con ruedas que estiran la cuerda. Su extraña estructura hace que sea difícil de manejar, pero las flechas golpean al objetivo con una fuerza impresionante.",
+            "refinement": "Al golpear con Ataque Normal y Ataque Cargado, aumenta el ATQ en un {{0}}% y la Vel. de Ataque Normal en un {{1}}% durante 6 s. Este efecto puede acumularse hasta 4 veces y activarse una vez cada 0.3 s."
         },
         {
             "key": "Favonius Warbow",
-            "name": "Favonius Warbow",
-            "description": "A standard-issue recurve bow of the Knights of Favonius. Only the best archers can unleash its full potential.",
-            "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+            "name": "Arco de Favonius",
+            "description": "Un arco recurvo estándar de los Caballeros de Favonius. Solo los mejores arqueros pueden sacar todo su potencial.",
+            "refinement": "Los Golpes CRIT tienen un {{0}}% probabilidad de generar una pequeña cantidad de Partículas Elementales, que regenerarán 6 de Energía para el personaje. Solo puede ocurrir una vez cada {{1}} s."
         },
         {
             "key": "Prototype Crescent",
-            "name": "Prototype Crescent",
-            "description": "A prototype longbow discovered in the Blackcliff Forge. The arrow fired from this bow glimmers like a ray of moonlight.",
-            "refinement": "Charged Attack hits on weak points increase Movement SPD by 10% and ATK by {{0}}% for 10s."
+            "name": "Prototipo Luz de Luna",
+            "description": "Un prototipo de arco largo descubierto en la Forja Peñasco Oscuro. La flecha disparada desde este arco brilla como un rayo de luz de luna.",
+            "refinement": "Al golpear con Ataque Cargado los puntos débiles del enemigo, aumenta la Vel. Movimiento en 10% y ATQ {{0}}% durante 10 s."
         },
         {
             "key": "Royal Bow",
-            "name": "Royal Bow",
-            "description": "An old royal longbow that belonged to the erstwhile rulers of Mondstadt. Countless generations later, the bowstring is still tight and can still fire arrows with great force.",
-            "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+            "name": "Arco Real",
+            "description": "Un viejo arco largo de la realeza que alguna vez gobernó Mondstadt. Innumerables generaciones después, la cuerda del arco sigue tensa y puede disparar flechas rápidamente.",
+            "refinement": "Al dañar a un oponente, aumenta la Prob. CRIT en un {{0}}%. Acumulable hasta 5 veces. Un vez dado un golpe CRIT, reiniciará todos aquellos acumulados."
         },
         {
             "key": "Rust",
-            "name": "Rust",
-            "description": "A completely rusted iron greatbow. The average person would lack the strength to even lift it, let alone fire it.",
-            "refinement": "Increases Normal Attack DMG by {{0}}% but decreases Charged Attack DMG by 10%."
+            "name": "Herrumbre",
+            "description": "Un arco de hierro completamente oxidado. La gente común ni siquiera tiene la fuerza necesaria para levantarlo, y menos aún para disparar sus flechas.",
+            "refinement": "El Daño de Ataque Normal aumenta un {{0}}%, y el Daño de Ataque Cargado disminuye un 10%."
         },
         {
             "key": "Sacrificial Bow",
-            "name": "Sacrificial Bow",
-            "description": "A ceremonial hunting bow that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-            "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s"
+            "name": "Arco del Sacrificio",
+            "description": "Un arco de caza decorativo que ha sido petrificado por el tiempo. Las decoraciones en él son todavía fácilmente visibles. Concede al portador el poder de resistir los vientos del tiempo.",
+            "refinement": "Al hacer daño por medio de una Habilidad Elemental, hay un {{0}}% de probabilidad de restablecer el TdE de esta habilidad. Este efecto puede activarse una vez cada {{1}} s."
         },
         {
             "key": "The Viridescent Hunt",
-            "name": "The Viridescent Hunt",
-            "description": "A pure green hunting bow. This once belonged to a certain hunter whose home was the forest.",
-            "refinement": "Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding enemies, dealing {{0}}% of ATK as DMG to these enemies every 0.5s for 4s. This effect can only occur once every {{1}}s"
+            "name": "Arco Esmeralda de la Cazadora",
+            "description": "Un noble e inmaculado arco de caza de color verde oscuro. Perteneció a una persona que solía cazar en los bosques.",
+            "refinement": "Al golpear con un Ataque Normal o Ataque Cargado, hay un 50% de probabilidad de crear un ciclón que atrae a los enemigos cercanos de forma continua, infligiendo un {{0}}% del ATQ como Daño cada 0.5s durante 4s. Este efecto puede ocurrir una vez cada {{1}} s."
         },
         {
             "key": "Skyward Harp",
-            "name": "Skyward Harp",
-            "description": "A greatbow that symbolizes Dvalin’s affiliation with the Anemo Archon. The sound of the bow firing is music to the Anemo Archon’s ears. It contains the power of the sky and wind within.",
-            "refinement": "Increases CRIT DMG by {{0}}%. Hits have a {{1}}% chance to inflict a small AoE attack, dealing 125% Physical ATK DMG. Can only occur once every {{2}}s."
+            "name": "Alas Celestiales",
+            "description": "Un gran arco que simboliza la afiliación de Dvalin con el Arconte Anemo. El sonido del arco disparando es música para los oidos del Arconte Anemo. Contiene el poder del cielo y el viento en su interior.",
+            "refinement": "Aumenta el daño crítico un {{0}}%. Los golpes tienen un {{1}}% de probabilidad de infligir un pequeño ataque en área, causando 125% del ataque físico como daño. Este efecto solo puede ocurrir una vez cada {{2}} segundos."
         },
         {
             "key": "Amos’ Bow",
-            "name": "Amos’ Bow",
-            "description": "An extremely ancient bow that has retained its power despite its original master being long gone. It draws power from everyone and everything in the world, and the further away you are from that which your heart desires, the more powerful it is.",
-            "refinement": "Increases Normal and Charged Attack DMG by {{0}}%. Normal and Charged Attack DMG increases by {{1}}% every 0.1s for up to 5 times."
+            "name": "Arco de Amos",
+            "description": "Un arco muy antiguo que conserva su poder a pesar de que su dueño original se fue hace mucho tiempo. Toma el poder de todos y todo en el mundo.",
+            "refinement": "El daño infligido con Ataques Normales y Cargados aumenta en un {{0}}%. Tras hacer un Ataque Normal o Cargado, el daño aumenta en un {{1}}% cada 0.1 s, acumulable hasta 5 veces."
         },
         {
             "key": "Dreams of Dragonfell",
@@ -3629,513 +3629,513 @@
         },
         {
             "key": "Dull Blade",
-            "name": "Dull Blade",
-            "description": "Youthful dreams and the thrill of adventure. If this isn’t enough, then make it up with valiance.",
+            "name": "Hoja Desafilada",
+            "description": "Si tus sueños de la juventud y la emoción de la aventura no son suficientes, ¡compleméntalos con valentía!",
             "refinement": null
         },
         {
             "key": "Silver Sword",
-            "name": "Silver Sword",
-            "description": "A sword for exorcising demons. Everyone knows it’s made of a silver alloy, not pure silver.",
+            "name": "Espada Plateada",
+            "description": "Una espada para ahuyentar a los demonios. Todo el mundo sabe que está hecha de una aleación de plata, no de plata pura.",
             "refinement": null
         },
         {
             "key": "Cool Steel",
-            "name": "Cool Steel",
-            "description": "A reliable steel-forged weapon that serves as a testament to the great adventures of its old master.",
-            "refinement": "Increases DMG against enemies affected by Hydro or Cryo by {{0}}%"
+            "name": "Hoja Fría",
+            "description": "Un arma laminada fiable, forjada en acero, que sirve como testimonio de las grandes aventuras de su antiguo maestro.",
+            "refinement": "Aumenta el Daño contra los enemigos afectados por Hydro o Cryo un {{0}}%."
         },
         {
             "key": "Dark Iron Sword",
-            "name": "Dark Iron Sword",
-            "description": "A perfectly ordinary iron sword, just slightly darker than most.",
-            "refinement": "Upon causing an Overloaded, Superconduct, Electro-Charged, or an Electro-infused Swirl reaction, ATK is increased by {{0}}% for 12s."
+            "name": "Espada de Hierro Oscuro",
+            "description": "Bueno... Es simplemente una espada de hierro oscura.",
+            "refinement": "Aumenta el ATQ en un {{0}}% durante los 12 s posteriores a la activación de Sobrecarga, Superconductor, Electrocarga o Torbellino Electro."
         },
         {
             "key": "Fillet Blade",
-            "name": "Fillet Blade",
-            "description": "A sharp filleting knife. The blade is long, thin, and incredibly sharp.",
-            "refinement": "On hit, has a 50% chance to deal {{0}}% ATK DMG to a single enemy. Can only occur once every {{1}}s."
+            "name": "Hoja de Filetear",
+            "description": "Un cuchillo afilado con una hoja larga.",
+            "refinement": "Al atacar, hay un 50% de Prob. de infligir un {{0}}% de Daño a un solo enemigo, Este efecto puede activarse una vez cada {{1}} s."
         },
         {
             "key": "Harbinger of Dawn",
-            "name": "Harbinger of Dawn",
-            "description": "A sword that once shone like the sun. The wielder of this sword will be blessed with a \"feel-good\" buff. The reflective material on the blade has long worn off.",
-            "refinement": "When HP is above 90%, increases CRIT Rate by {{0}}%."
+            "name": "Espada del Alba",
+            "description": "Una espada que solía brillar como el sol. Su portador será bendecido con una sensación de poder y bienestar. El material reflectante de su hoja se desgastó hace mucho tiempo.",
+            "refinement": "Cuando la Vida esté al 90%, aumenta la Prob. CRIT un {{0}}%."
         },
         {
             "key": "Skyrider Sword",
-            "name": "Skyrider Sword",
-            "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword...",
-            "refinement": "Using an Elemental Burst grants a {{0}}% increase in ATK and Movement SPD for 15s."
+            "name": "Espada Surcacielos",
+            "description": "Una espada de acero fiable. Cierta persona intentó usarla como una espada voladora...",
+            "refinement": "Después de causar Daño Elemental, aumenta el Daño y Velocidad de Movimiento en un {{0}}% por 15 s."
         },
         {
             "key": "Traveler’s Handy Sword",
-            "name": "Traveler’s Handy Sword",
-            "description": "A handy steel sword which contains scissors, a magnifying glass, tinder, and other useful items in its sheath.",
-            "refinement": "Each Elemental Orb or Particle collected restores {{0}}% HP."
+            "name": "Espada del Viajero",
+            "description": "Una práctica espada de acero que esconde en su vaina unas tijeras, una lupa y yesca, entre otras cosas...",
+            "refinement": "Al obtener un Orbe o Partícula Elemental, recupera un {{0}}% de Vida."
         },
         {
             "key": "Blackcliff Longsword",
-            "name": "Blackcliff Longsword",
-            "description": "A sword made of a material known as \"blackcliff.\" It has a dark crimson glow on its black blade.",
-            "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+            "name": "Espada Larga del Peñasco Oscuro",
+            "description": "Una espada larga hecha de Piedra negra. Tiene un brillo carmesí oscuro en su oscura hoja.",
+            "refinement": "Al derrotar a un enemigo, aumenta el ATQ en {{0}}% durante 30s, pudiéndose acumular hasta 3 veces. La duración de cada acumulación es independiente."
         },
         {
             "key": "Favonius Sword",
-            "name": "Favonius Sword",
-            "description": "A standard-issue longsword of the Knights of Favonius. When you’re armed with this agile and sharp weapon, channeling the power of the elements has never been so easy!",
-            "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+            "name": "Espada de Favonius",
+            "description": "Una espada larga estándar de los Caballeros de Favonius. ¡Canalizar el poder de los elementos nunca fue tan fácil como con esta espada!",
+            "refinement": "Los Golpes CRIT tienen un {{0}}% probabilidad de generar una pequeña cantidad de Partículas Elementales, que regenerán 6 de Energía para el personaje. Solo puede ocurrir una vez cada {{1}} s."
         },
         {
             "key": "Iron Sting",
-            "name": "Iron Sting",
-            "description": "An exotic long-bladed rapier that somehow found its way into Liyue via foreign traders. It is light, agile, and sharp.",
-            "refinement": "Dealing Elemental DMG increases all DMG by {{0}}% for 6s. Max 2 stacks. Can occur once every 1s."
+            "name": "Espina de Hierro",
+            "description": "Espada exótica que de alguna forma acabó en manos de comerciantes de Liyue. Es ligera, ágil y afilada.",
+            "refinement": "Después de 6s de causar Daño Elemental, aumenta todo el Daño un {{0}}%. Este efecto puede acumularse hasta 2 veces y puede activarse una vez cada 1s."
         },
         {
             "key": "Lion’s Roar",
-            "name": "Lion’s Roar",
-            "description": "A sharp blade with extravagant carvings that somehow does not compromise on durability and sharpness. It roars like a lion as it cuts through the air.",
-            "refinement": "Increases DMG against enemies affected by Pyro or Electro by {{0}}%"
+            "name": "Rugido del León",
+            "description": "Una hoja afilada con tallas de lujo que de alguna manera no comprometen su durabilidad y nitidez. El sonido de la misma cortando el aire es como el rugido de un león.",
+            "refinement": "Aumenta el Daño contra los enemigos afectados por Pyro o Electro un {{0}}%."
         },
         {
             "key": "Prototype Rancour",
-            "name": "Prototype Rancour",
-            "description": "An ancient longsword discovered in the Blackcliff Forge that cuts through rocks like a hot knife through butter.",
-            "refinement": "On hit, Normal or Charged Attacks increase ATK and DEF by {{0}}% for 6s. Max 4 stacks. This effect can only occur once every 0.3s."
+            "name": "Prototipo Rencor",
+            "description": "Una espada larga antigua descubierta en la Forja Peñasco Oscuro. Es tan afilada que con ella se puede cortar una roca con gran facilidad.",
+            "refinement": "Al golpear, los Ataques Normales o Cargados aumentan el ATQ y DEF en {{0}}% durante 6 s. Máximo 4 acumulaciones. Puede ocurrir una vez cada 0.3 s."
         },
         {
             "key": "Royal Longsword",
-            "name": "Royal Longsword",
-            "description": "An old longsword that belonged to the erstwhile rulers of Mondstadt. Exquisitely crafted, the carvings and embellishments testify to the stature of its owner.",
-            "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+            "name": "Espada Real Larga",
+            "description": "Una vieja espada larga que perteneció a aquellos que algunas vez gobernaron sobre Mondstadt. Tiene un acabado exquisito. Sus decoraciones y grabados hablan del prestigio del propietario.",
+            "refinement": "Al dañar a un oponente, aumenta la Prob. CRIT en un {{0}}%. Acumulable hasta 5 veces. Un vez dado un golpe CRIT, reiniciará todos aquellos acumulados."
         },
         {
             "key": "Sacrificial Sword",
-            "name": "Sacrificial Sword",
-            "description": "A ceremonial sword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-            "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s"
+            "name": "Espada de Sacrificio",
+            "description": "Una espada decorativa que ha sido petrificada por el tiempo. Las baratijas incrustadas en su superficie todavía son visibles. Concede al portador el poder de resistir los vientos del tiempo.",
+            "refinement": "Al hacer daño por medio de una Habilidad Elemental, hay un {{0}}% de probabilidad de restablecer el TdE de esta habilidad. Este efecto puede activarse una vez cada {{1}} s."
         },
         {
             "key": "The Alley Flash",
             "name": "The Alley Flash",
-            "description": "A straight sword as black as the night. It once belonged to a thief who roamed the benighted streets.",
-            "refinement": "Continuosly sprinting for at least 1s increases ATK by {{0}}% for 6s. This effect cannot stack."
+            "description": "Una espada tan negra como la noche. Alguna vez perteneció a un ladrón que acechaba en las calles oscuras",
+            "refinement": "Correr continuamente durante al menos 1s aumenta el ataque un {{0}}% durante 6s. Este efecto no se acumula."
         },
         {
             "key": "The Black Sword",
-            "name": "The Black Sword",
-            "description": "A pitch-black longsword that thirsts for violence and conflict. It is said that this weapon can cause its user to become drunk on the red wine of slaughter.",
-            "refinement": "Increases DMG dealt by Normal and Charged Attacks by {{0}}%. Additionally, regenerates {{1}}% of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s."
+            "name": "Espada Negra",
+            "description": "Una espada larga oscura que ansia el conflicto y el combate. Se dice que sume a su portador en el violento deseo de mancharse de sangre en una masacre.",
+            "refinement": "Aumenta el daño de ATQ Normal y ATQ Cargado en un {{0}}%; además, al hacer CRIT con Ataque Normal o Ataque Crítico, recuperas vida equivalente al {{1}}% del ATQ. Este efecto puede activarse una vez cada 5s."
         },
         {
             "key": "The Flute",
-            "name": "The Flute",
-            "description": "Beneath its rusty exterior is a lavishly decorated thin blade. It swings as swiftly as the wind.",
-            "refinement": "Normal or Charged Attacks grant a Harmonic on hits. Gaining 5 Harmonics triggers the power of music and deals {{0}}% ATK DMG to surrounding enemies. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s."
+            "name": "Flauta",
+            "description": "Tras el óxido, se esconde una hoja delgada y lujosamente decorada. Se balancea tan rápido como el viento.",
+            "refinement": "Al golpear, los ATQ Normales o Cargados obtendrán un Armónico. 5 Armónicos activan el poder de la música, que inflige un {{0}}% de Daño ATQ a los oponentes de alrededor. Los Armónicos duran hasta 30 segundos, y se puede 1 Armónico cada 0.5 s."
         },
         {
             "key": "Sword of Descension",
-            "name": "Sword of Descension",
-            "description": "A sword of unique craftsmanship. It does not appear to belong to this world.",
-            "refinement": "Hitting opponents with Normal and Charged Attacks grants a {{0}}% chance to deal 200% ATK as DMG in a small AoE. This effect can only occur once every 10s. Additionally, if the Traveler equips the Sword of Descension, their ATK is increased by {{1}}."
+            "name": "Espada del Descenso",
+            "description": "Una espada de artesanía única. No parece pertenecer a este mundo.",
+            "refinement": "Golpear a los enemigos con Ataques Normales y Cargados otorga un {{0}}% de probabilidad de infligir 200% de ATQ como Daño de Área pequeña. Este efecto solo puede ocurrir una vez cada 10 s. Además, si el Viajero equipa la Espada del Descenso, su ATQ aumenta en {{1}} pts."
         },
         {
             "key": "Festering Desire",
-            "name": "Festering Desire",
-            "description": "A creepy straight sword that almost seems to yearn for life. It drips with a shriveling venom that could even corrupt a mighty dragon.",
-            "refinement": "Increases Elemental Skill DMG by {{0}}% and Elemental Skill CRIT Rate by {{1}}%."
+            "name": "Deseo Ponzoñoso",
+            "description": "Una espada muy recta y misteriosa que parece sedienta de Vida. De ella gotea un veneno capaz de corromper hasta a un dragón.",
+            "refinement": "Aumenta el daño de la habilidad elemental un {{0}}% y la probabilidad crítica de la habilidad elemental un {{1}}%."
         },
         {
             "key": "Aquila Favonia",
             "name": "Aquila Favonia",
-            "description": "The soul of the Knights of Favonius. Millennia later, it still calls on the winds of swift justice to vanquish all evil  just like the last heroine who wielded it.",
-            "refinement": "ATK is increased by {{0}}%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {{1}}% of ATK and dealing {{2}}% of ATK as DMG to surrounding enemies. This effect can only occur once every 15s."
+            "description": "La espada de los Caballeros de Favonius. Milenios más tarde, aun llama por los vientos de la justicia para eliminar todo el mal, justo como la última heroina que la usó.",
+            "refinement": "Aumenta el ataque un {{0}}%. Se activa al recibir daño: el alma del halcón del oeste despierta, sosteniendo el estandarte de la resistencia, regenerando Vida igual al {{1}}% del ataque e infligiendo {{2}}% del ataque como daño a los enemigos que le rodean. Este efecto sólo puede ocurrir una vez cada 15 segundos."
         },
         {
             "key": "Skyward Blade",
-            "name": "Skyward Blade",
-            "description": "The sword of a knight that symbolizes the restored honor of Dvalin. The blessings of the Anemo Archon rest on the fuller of the blade, imbuing the sword with the powers of the sky and the wind.",
-            "refinement": "CRIT Rate increased by {{0}}%. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by 10%, increases ATK SPD by 10%, and increases the DMG of Normal and Charged Attack hits by {{1}}% for 12s."
+            "name": "Hoja Afilada Celestial",
+            "description": "La espada de un caballero que simboliza el honor restaurado de Dvalin. Las bendiciones del Arconte de Anemo descansan en esta espada, imbuyéndola con poderes del cielo y el viento.",
+            "refinement": "Probabilidad crítica aumentada un {{0}}%. Gana Skypiercing Might al usar la habilidad elemental. Aumenta la velocidad de movimiento un 10%, aumenta la velocidad de ataque un 10% y aumenta el daño de los ataques normales y cargados un {{1}}% durante 12s."
         },
         {
             "key": "Summit Shaper",
-            "name": "Summit Shaper",
-            "description": "A symbol of a legendary pact, this sharp blade once cut off the peak of a mountain.",
-            "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+            "name": "Rompemontañas",
+            "description": "Según la leyenda, esta afilada espada, que representa la firma de cierto contrato, se usó para cortar los picos de las montañas.",
+            "refinement": "La Protección de Escudo aumenta en un {{0}}%. Durante 8 s después de atacar a un enemigo, el ATQ aumenta en un {{1}}%. Este efecto puede acumularse hasta 5 veces y activarse una vez cada 0.3 s. Además, al estar bajo la protección de un escudo, el efecto de aumento de ATQ aumenta en un 100%."
         },
         {
             "key": "Apprentice’s Notes",
-            "name": "Apprentice’s Notes",
-            "description": "Notes left behind by a top student. Many useful spells are listed, and the handwriting is beautiful.",
+            "name": "Apuntes del aprendiz",
+            "description": "Notas escritas por un estudiante brillante. Dejó anotados muchos hechizos útiles. Su letra es hermosa.",
             "refinement": null
         },
         {
             "key": "Pocket Grimoire",
-            "name": "Pocket Grimoire",
-            "description": "A carefully compiled notebook featuring the essentials needed to pass a magic exam.",
+            "name": "Grimorio de Bolsillo",
+            "description": "Un cuaderno que recoge con todo detalle anotaciones muy útiles para los exámenes de magia.",
             "refinement": null
         },
         {
             "key": "Amber Bead",
             "name": "Amber Bead",
-            "description": "A catalyst carved out of amber that gains a warm halo under the sun.",
-            "refinement": "Normal Attack hits increase all Elemental DMG by {{0}}% for 6s. Max 2 stacks."
+            "description": "Un catalizador tallado del ámbar que gana un cálido halo debajo del sol.",
+            "refinement": "Los ataques normales aumentan todo el daño elemental un {{0}}% durante 6 segundos. Se acumula hasta 2 veces."
         },
         {
             "key": "Emerald Orb",
-            "name": "Emerald Orb",
-            "description": "A catalyst carved out of the hard jade from Jueyun Karst north of Liyue. It is small, light, and durable.",
-            "refinement": "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by {{0}}% for 12s."
+            "name": "Orbe Esmeralda",
+            "description": "Un catalizador tallado en jade del Desfiladero Jueyun, al norte de Liyue. Es pequeño, ligero y duradero: Popularmente se conoce como \"Orbe de Jade\".",
+            "refinement": "12 s después de activar el efecto de Vaporización: Electrocargado, Congelación, o Torbellino Hydro, el ATQ aumenta en un {{0}}%."
         },
         {
             "key": "Magic Guide",
-            "name": "Magic Guide",
-            "description": "Version 12. A reprint featuring corrections to Version 11 and brand-new additions based on recent developments.",
-            "refinement": "Increases DMG against enemies affected by Hydro or Electro by {{0}}%."
+            "name": "Guía Mágica",
+            "description": "12ª edición. Una reimpresión con correcciones de la 11ª edición y contenido nuevo basado en el desarrollo de los últimos años.",
+            "refinement": "Aumenta el Daño contra los enemigos afectados por Hydro o Electro {{0}}%."
         },
         {
             "key": "Otherworldly Story",
-            "name": "Otherworldly Story",
-            "description": "A cheap fantasy novel with no value whatsoever. Any claim that it possesses the power of catalysis is also pure fantasy.",
-            "refinement": "Picking up an Elemental Energy Orb/Particle recovers {{0}}% HP."
+            "name": "Historias de Otros Mundos",
+            "description": "Una novela de fantasía sin ningún valor. Probablemente puedas usar este objeto como un catalizador mágico en tu imaginación.",
+            "refinement": "Al obtener un Orbe o Partícula Elemental, recupera un {{0}}% de Vida."
         },
         {
             "key": "Thrilling Tales of Dragon Slayers",
-            "name": "Thrilling Tales of Dragon Slayers",
-            "description": "A fictional story of a band of five heroes who go off on a dragon hunt. It is poorly written and structurally incoherent. Its value lies in the many lessons that can be learned from failure.",
-            "refinement": "When switching characters, the new character taking the field has their ATK increased by {{0}}% for 10s. This effect can only occur once every 20s."
+            "name": "Cuentos de Cazadores de Dragones",
+            "description": "Una historia ficticia de una banda de Cinco Héroes en una expedición de cacería de dragones. Está mal escrita, pero puede transmitir a la gente la importancia de no cometer errores.",
+            "refinement": "Al cambiar de personaje, el ATQ del nuevo personaje aumenta en un {{0}}% durante 10s. Este efecto ocurre una vez cada 20s."
         },
         {
             "key": "Twin Nephrite",
-            "name": "Twin Nephrite",
-            "description": "A jade pendant formed by piecing together two jade stones.",
-            "refinement": "Defeating an enemy increases Movement SPD and ATK by {{0}}% for 15s."
+            "name": "Nefrita Gemela",
+            "description": "Un colgante de Nefrita colocado entre dos piedras de jade.",
+            "refinement": "Derrotar a un oponente aumenta la Vel. Movimiento y el Ataque en un {{0}}% durante 15s."
         },
         {
             "key": "Blackcliff Agate",
-            "name": "Blackcliff Agate",
-            "description": "A mysterious catalyst made of a material known as \"blackcliff.\" It has an ominous crimson glow that seems to pulse in synchronization with the tremors from deep within the earth.",
-            "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+            "name": "Ágata del Peñasco Oscuro",
+            "description": "Un misterioso catalizador hecho de Piedra negra. Tiene un brillo carmesí siniestro que parece latir en sincronía con los temblores de las profundidades de la tierra.",
+            "refinement": "Al derrotar a un enemigo, aumenta el ATQ en {{0}}% durante 30s, pudiéndose acumular hasta 3 veces. La duración de cada acumulación es independiente."
         },
         {
             "key": "Favonius Codex",
-            "name": "Favonius Codex",
-            "description": "A secret tome that belonged to the scholars of the Knights of Favonius. It describes the logic and power of elements and matter.",
-            "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+            "name": "Códice de Favonius",
+            "description": "Un libro secreto que perteneció a los eruditos de los Caballeros de Favonius. Describe el poder de la materia y la lógica.",
+            "refinement": "Los Golpes CRIT tienen un {{0}}% probabilidad de generar una pequeña cantidad de Partículas Elementales, que regenerarán 6 de Energía para el personaje. Solo puede ocurrir una vez cada {{1}} s."
         },
         {
             "key": "Mappa Mare",
-            "name": "Mappa Mare",
-            "description": "A nautical chart featuring nearby currents and climates that somehow found its way into Liyue via foreign traders.",
-            "refinement": "Triggering an Elemental reaction grants a {{0}}% Elemental DMG Bonus for 10s. Max 2 stacks."
+            "name": "Carta Náutica de las Tierras y los Mares",
+            "description": "Un mapa muy detallado de las aguas alrededor de Teyvat. Este es uno de esos maravillosos documentos que llegaron a través de las rutas comerciales de Liyue.",
+            "refinement": "La activación de una Reacción Elemental otorga un {{0}}% adicional de Daño Elemental durante 10 s, y puede acumularse hasta 2 veces."
         },
         {
             "key": "Prototype Amber",
-            "name": "Prototype Amber",
-            "description": "A dully gilded catalyst secretly guarded in the Blackcliff Forge. It seems to glow with the very light from the sky.",
-            "refinement": "Using an Elemental Burst regenerates {{0}} Energy every 2s for 6s. All party members will regenerate {{1}}% HP every 2s for this duration."
+            "name": "Prototipo Malicia",
+            "description": "Un catalizador recubierto de oro guardado en secreto en la Forja Peñasco Oscuro. Parece brillar con la misma luz del cielo.",
+            "refinement": "Durante los 6 s. después de lanzar una Habilidad Definitiva, recuperará {{0}} puntos de Energía Elemental cada 2 s. Todos los miembros del equipo recuperarán {{1}}% de Vida cada 2 s."
         },
         {
             "key": "Royal Grimoire",
-            "name": "Royal Grimoire",
-            "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
-            "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+            "name": "Grimorio Real",
+            "description": "Un libro que una vez perteneció a un mago real de Mondstadt. Mantiene extensos y verdaderos relatos históricos y hechizos.",
+            "refinement": "Al dañar a un oponente, aumenta la Prob. Crit en un {{0}}%. Se acumula hasta 5 veces. Una vez dado un golpe CRTI, reiniciará todos aquellos acumulados."
         },
         {
             "key": "Sacrificial Fragments",
-            "name": "Sacrificial Fragments",
-            "description": "A weathered script, the text of which is no longer legible. A cursed item eroded by the winds of time.",
-            "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s."
+            "name": "Memorias de Sacrificios",
+            "description": "Un guión desgastado, con textos que ya no son identificables. Un objeto maldito erosionado por los vientos del tiempo.",
+            "refinement": "Al hacer daño por medio de una Habilidad Elemental, hay un {{0}}% de probabilidad de restablecer el TdE de esta habilidad. Este efecto puede activarse una vez cada {{1}} s."
         },
         {
             "key": "Solar Pearl",
-            "name": "Solar Pearl",
-            "description": "A dull, golden pearl made of an unknown substance that harbors the light of the sun and the moon, and pulses with a warm strength.",
-            "refinement": "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {{0}}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {{1}}% for 6s."
+            "name": "Perla Solar",
+            "description": "Una perla opaca y dorada hecha de una sustancia desconocida que alberga la luz del sol y la luna. Late con una fuerza muy cálida.",
+            "refinement": "Dentro de los 6s después de realizar un Ataque Normal, el Daño de Hab. Elemental y Hab. Definitiva aumenta en un {{0}}%. Dentro de los 6 s después de lanzar una Hab. Elemental o Definitiva, el Daño de Ataque Normal aumenta un {{1}}%."
         },
         {
             "key": "The Widsith",
-            "name": "The Widsith",
-            "description": "A heavy notebook filled with musical scores. Though suffering from moth damage and heavy wear-and-tear, there is still much power to be found among the hand-written words within.",
-            "refinement": "When the character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s. Recitative: ATK is increased by {{0}}%. Aria: Increases all Elemental DMG by {{1}}%. Interlude: Elemental Mastery is increased by {{2}}."
+            "name": "Sinfonía de los Merodeadores",
+            "description": "Un pesado cuaderno lleno de partituras. A pesar de que está consumido por las polillas, la escritura sigue mostrando su poder.",
+            "refinement": "Al entrar en combate, el personaje obtiene una canción aleatoria durante 10 s. Puede ocurrir una vez cada 30 s. Recital: aumenta el ATQ en un {{0}}%; Aria: aumenta todo el Daño elemental en un {{1}}; Interludio: aumenta la Maestría Elemental en {{2}}."
         },
         {
             "key": "Wine and Song",
             "name": "Wine and Song",
-            "description": "A songbook from the bygone aristocratic era, whose composer has become forgotten. It chronicles the tale of a certain heroic outlaw.",
-            "refinement": "For every character in the party who hails from Mondstadt, the character who equips this weapon gains {{0}}% ATK increase and {{1}}% Movement SPD increase."
+            "description": "Un libro de canciones de la era aristocrática, cuyo compositor ha sido olvidado. Relata las historias de cierto héroe del exterior.",
+            "refinement": "Por cada personaje en el equipo proveniente de Mondstadt, el personaje que lleva equipada esta arma gana un aumento del {{0}}% en su ataque y {{1}}% en su velocidad de movimiento."
         },
         {
             "key": "Eye of Perception",
-            "name": "Eye of Perception",
-            "description": "A dim black glaze pearl that is said to have the power to read the purity of one’s heart.",
-            "refinement": "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing {{0}}% ATK as DMG. This bolt can bounce between enemies a maximum of 4 times. This effect can occur once every {{1}}s."
+            "name": "Ojo de la Perspicacia",
+            "description": "Una oscura joya hecha de cristal. Cuenta la leyenda que posee la capacidad de ver a través de la pureza de las personas.",
+            "refinement": "Los Ataques Normales y Ataques Cargados tienen un 50% de probabilidad de lanzar un Ojo de la Perspicacia que inflige {{0}}% de ATQ como Daño. El Ojo de la Perspicacia puede rebotar entre enemigos un máximo de 4 veces. Este efecto puede ocurrir una vez cada {{1}} s."
         },
         {
             "key": "Frostbearer",
-            "name": "Frostbearer",
-            "description": "A fruit that possesses a strange, frosty will. A faint sense of agony emanates from it.",
-            "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, dealing {{1}}% AoE ATK DMG. Can only occur once every 10s. Enemies affected by Cryo are dealt {{2}}% ATK DMG. Can only occur once every 10s."
+            "name": "Frío Eterno",
+            "description": "Un fruto cristalizado que posee una extraña voluntad helada. Una tenue sensación de agonía emana de él.",
+            "refinement": "Al golpear a los enemigos con Ataques Normales y Cargados, hay un {{0}}% de probabilidad de crear un carámbano sobre ellos. Al caer, el carámbano inflige un {{1}}% de daño de ATQ en el AdE. Si los enemigos están afectados por Cryo, el daño de ATQ infligido será del {{2}}%. Este efecto solo puede ocurrir una vez cada 10 s."
         },
         {
             "key": "Lost Prayer to the Sacred Winds",
-            "name": "Lost Prayer to the Sacred Winds",
-            "description": "An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.",
-            "refinement": "Increases Movement SPD by 10%. When in battle, gain an {{0}}% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat."
+            "name": "Oración Perdida a los Vientos Sagrados",
+            "description": "Un libro educativo escrito por aldeanos anónimos que adoraban al viento. Fue bendecido por el viento por su fidelidad e influencia acumulada a lo largo de milenios.",
+            "refinement": "Aumenta la Vel. Movimiento en un 10%. Obtienes en batalla un {{0}}% de Bono de Daño Elemental cada 4 s, pudiéndose acumular hasta 4 veces. Dura hasta derrotar al último personaje o al abandonar el combate."
         },
         {
             "key": "Skyward Atlas",
-            "name": "Skyward Atlas",
-            "description": "A cloud atlas symbolizing Dvalin and its former master, the Anemo Archon. It details the winds and clouds of the northern regions and contains the powers of the sky and wind.",
-            "refinement": "Increases Elemental DMG Bonus by {{0}}%. Normal Attack hits have a 50% chance to earn the favor of the clouds, which actively seek out nearby enemies to attack for 15s, dealing {{1}}% ATK DMG. Can only occur once every 30s."
+            "name": "Pergamino Celestial",
+            "description": "Un atlas de nubes que simboliza a Stormterror y al Dios de los Vientos, su antiguo maestro. Detalla los vientos y las nubes de las regiones del norte y contiene los poderes del cielo y de los vientos.",
+            "refinement": "Incrementa el el bono de Daño Elemental en un {{0}}%. Al lanzar un Ataque Normal, hay un 50% de prob. de conseguir la gracia de las nubes. Estas buscarán durante 15 s oponentes a los que atacar, infligiendo un {{1}}% de Daño de ATQ. Este efecto solo puede ocurrir una vez cada 30 s."
         },
         {
             "key": "Memory of Dust",
-            "name": "Memory of Dust",
+            "name": "Candado Terrenal",
             "description": "A stone dumbbell containing distant memories. Its endless transformations reveal the power within.",
-            "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+            "refinement": "La Protección de Escudo aumenta en un {{0}}%. Durante 8 s después de atacar a un enemigo, el ATQ aumenta en un {{1}}%. Este efecto puede acumularse hasta 5 veces y activarse una vez cada 0.3 s. Además, al estar bajo la protección de un escudo, el efecto de aumento de ATQ aumenta en un 100%."
         },
         {
             "key": "Waster Greatsword",
-            "name": "Waster Greatsword",
-            "description": "A sturdy sheet of iron that may be powerful enough to break apart mountains if wielded with enough willpower.",
+            "name": "Gran Espada del Guerrero",
+            "description": "Una plancha de hierro resistente que, con la fuerza de voluntad de la persona que la empuñe, puede ser lo suficientemente potente como para romper montañas.",
             "refinement": null
         },
         {
             "key": "Old Merc’s Pal",
-            "name": "Old Merc’s Pal",
-            "description": "A battle-tested greatsword that has seen better days and worse.",
+            "name": "Espada del Mercenario",
+            "description": "Una gran espada probada en batalla, que ha visto días mejores y peores.",
             "refinement": null
         },
         {
             "key": "Bloodtainted Greatsword",
-            "name": "Bloodtainted Greatsword",
-            "description": "A steel sword that is said to have been coated with dragon blood, rendering it invulnerable to damage. This effect is not extended to its wielder, however.",
-            "refinement": "Increases DMG dealt against enemies affected by Pyro or Electro by {{0}}%"
+            "name": "Gran Espada Sangrienta",
+            "description": "Una espada de acero que se dice que ha sido vestida con sangre de dragón, haciéndola invulnerable al daño. Sin embargo, este efecto no se extiende a su portador.",
+            "refinement": "Aumenta el Daño contra los enemigos afectados por Pyro o Electro un {{0}}%."
         },
         {
             "key": "Debate Club",
-            "name": "Debate Club",
-            "description": "A handy club made of fine steel. The most persuasive line of reasoning in any debater’s arsenal.",
-            "refinement": "After using an Elemental Skill, Normal or Charged Attacks, on hit, deal an additional {{0}}% ATK DMG in a small area. Effect lasts 15s. DMG can only occur once every 3s."
+            "name": "Garrote del Debate",
+            "description": "Una práctica vara hecha de acero fino. Es la base de la \"convicción racional\".",
+            "refinement": "Después de usar una Habilidad Elemental, los Ataques Normales o Cargados infligirán un daño de ATQ adicional del {{0}}% en un área pequeña durante 15s. Solo puede ocurrir una vez cada 3s."
         },
         {
             "key": "Ferrous Shadow",
-            "name": "Ferrous Shadow",
-            "description": "A replica of the famed sword of Arundolyn, the Lion of Light. Feel the power of a legendary hero as you hold this sword in your hand! Imagine yourself as the great warrior himself! Note: Daydreaming not recommended in live combat.",
-            "refinement": "When HP falls below {{0}}%, increases Charged Attack DMG by {{1}}% and Charged Attacks become harder to interrupt."
+            "name": "Sombra férrea",
+            "description": "Una réplica de la famosa espada de Arundolyn, el León de la Luz. ¡Sostenla y siente el poder del héroe legendario! Nota: Soñar despierto demasiado tiempo puede ser perjudicial para la salud.",
+            "refinement": "Cuando la Vida está por debajo del {{0}}%, los Ataques Cargados casi nunca serán interrumpidos. También aumenta el daño del Ataque Cargado en un {{1}}%."
         },
         {
             "key": "Quartz",
             "name": "Quartz",
-            "description": "A simple but heavy greatsword made of polished black quartz with a golden gilt. It has an air of elegance and dignity about it.",
-            "refinement": "Upon causing an Overloaded, Melt, Burning, Vaporize, or a Pyro-infused Swirl reaction, ATK is increased by {{0}}% for 12s."
+            "description": "Una mandoble simple pero pesada hecha de cuarzo negro pulido con adornos dorados. Tiene un aire de elegancia y dignidad.",
+            "refinement": "Al causar una reacción de Sobrecarga, Derretimiento, Quemadura, Vaporización o Remolino Pyro, aumenta el ataque base un {{0}}% durante 12s."
         },
         {
             "key": "Skyrider Greatsword",
-            "name": "Skyrider Greatsword",
-            "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword... for the second time.",
-            "refinement": "On hit, Normal or Charged Attacks increase ATK by {{0}}% for 6s. Max 4 stacks. Can occur once every 0.5s."
+            "name": "Gran Espada Surcacielos",
+            "description": "Una espada de acero fiable. Cierta persona intentó usarla como una espada voladora... por segunda vez.",
+            "refinement": "En los Ataques Normales o Cargados, aumenta el ATQ en un {{0}}% durante 6 s y puede ser acumulado hasta 4 veces. Este efecto puede activarse una vez cada 0.5 s."
         },
         {
             "key": "White Iron Greatsword",
-            "name": "White Iron Greatsword",
-            "description": "A claymore made from white iron. Lightweight without compromising on power. Effective even when wielded by one of average strength, it is extremely deadly in the hands of a physically stronger wielder.",
-            "refinement": "Defeating an opponent restores {{0}}% HP."
+            "name": "Espada de Hierro Blanco",
+            "description": "Una espada a dos manos fabricada con hierro blanco que aumenta su potencia al tiempo que tiene un peso relativamente ligero. Puede ser manejada por personas con fuerza normal en los brazos, pero su manejo es mucho mejor cuando es empuñada por grandes guerreros.",
+            "refinement": "Restaura {{0}}% de Vida después de derrotar al oponente."
         },
         {
             "key": "Blackcliff Slasher",
-            "name": "Blackcliff Slasher",
-            "description": "An extremely sturdy greatsword from the Blackcliff Forge. It has a dark crimson color from the blade to pommel.",
-            "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+            "name": "Gran Hoja del Peñasco Oscuro",
+            "description": "Una gran espada firme forjada en el Peñasco Oscuro. Tiene un color carmesí oscuro a lo largo de su cuchilla.",
+            "refinement": "Al derrotar a un enemigo, aumenta el ATQ en {{0}}% durante 30s, pudiéndose acumular hasta 3 veces. La duración de cada acumulación es independiente."
         },
         {
             "key": "Favonius Greatsword",
-            "name": "Favonius Greatsword",
-            "description": "A heavy ceremonial sword of the Knights of Favonius. It channels elemental power easily and is highly destructive.",
-            "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+            "name": "Gran Espada de Favonius",
+            "description": "Una pesada espada ceremonial de los Caballeros de Favonius. Canaliza el poder elemental con facilidad y es muy destructiva.",
+            "refinement": "Los Golpes CRIT tienen un {{0}}% probabilidad de generar una pequeña cantidad de Partículas Elementales, que regenerarán 6 de Energía para el personaje. Solo puede ocurrir una vez cada {{1}} s."
         },
         {
             "key": "Lithic Blade",
             "name": "Lithic Blade",
-            "description": "A greatsword carved and chiseled from the very bedrock of Liyue.",
-            "refinement": "For every character in the party who hails from Liyue, the character who equips this weapon gains {{0}}% ATK increase and {{1}}% CRIT Rate increase."
+            "description": "Una espada tallada y pulida a partir de la roca que sostiene Liyue.",
+            "refinement": "Por cada personaje en el equipo proveniente de Liyue, el personaje que lleva equipada esta arma gana un aumento de {{0}}% en su ataque y {{1}}% en su probabilidad crítica."
         },
         {
             "key": "Prototype Archaic",
-            "name": "Prototype Archaic",
-            "description": "An ancient greatsword discovered in the Blackcliff Forge. It swings with such an immense force that one feels it could cut straight through reality itself.",
-            "refinement": "On hit, Normal or Charged Attacks have a 50% chance to deal an additional {{0}}% ATK DMG to enemies within a small AoE. Can only occur once every 15s."
+            "name": "Prototipo Aminus",
+            "description": "Una espada larga antigua descubierta en la Forja Peñasco Oscuro. Es tan afilada que con ella se puede cortar una roca con gran facilidad.",
+            "refinement": "Al lanzar un Ataque Normal o Cargado, hay un 50% de prob. de causar un {{0}}% de daño adicional en ATQ en un área pequeña. Este efecto solo puede ocurrir una vez cada 15 s."
         },
         {
             "key": "Rainslasher",
-            "name": "Rainslasher",
-            "description": "A fluorescent greatsword with no sharp edge that crushes enemies with brute force and raw power.",
-            "refinement": "Increases DMG against enemies affected by Hydro or Electro by {{0}}%"
+            "name": "Segadora de la Lluvia",
+            "description": "Una gran espada fluorescente y sin punta que hace añicos a los enemigos con fuerza bruta y poder.",
+            "refinement": "Aumenta el daño contra los enemigos afectados por Hydro o Electro un {{0}}%."
         },
         {
             "key": "Royal Greatsword",
-            "name": "Royal Greatsword",
-            "description": "An old greatsword that belonged to the erstwhile rulers of Mondstadt. It is made from the finest-quality materials and has stood the test of time. A weapon for use by royals only.",
-            "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+            "name": "Gran Espada Real",
+            "description": "Una vieja gran espada que perteneció a los que alguna vez gobernaron Mondstadt. Está hecha con materiales de primera calidad que han resistido la prueba del tiempo. Un arma de batalla exclusiva para la realeza.",
+            "refinement": "Al dañar a un oponente, aumenta la Prob. CRIT en un {{0}}%. Acumulable hasta 5 veces. Un vez dado un golpe CRIT, reiniciará todos aquellos acumulados."
         },
         {
             "key": "Serpent Spine",
-            "name": "Serpent Spine",
-            "description": "A rare weapon whose origin is the ancient ocean. One can hear the sound of the ageless waves as one swings it.",
-            "refinement": "Every 4s a character is on the field, they will deal {{0}}% more DMG and take {{1}}% more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG."
+            "name": "Médula de la Serpiente Marina",
+            "description": "Un arma muy poco común procedente del océano. Al blandirla, emite un silbido que recuerda al romper de las olas.",
+            "refinement": "Cuando el personaje esté en combate, aumenta el Daño que inflige en un {{0}}% y el Daño que recibe en un {{1}}% cada 4s. Este efecto puede acumularse un máximo de 5 veces, y no se reiniciará si el personaje se retira de combate, sino que, cada vez que reciba daño, perderá una de las cargas acumuladas."
         },
         {
             "key": "The Bell",
-            "name": "The Bell",
-            "description": "A heavy greatsword. A clock is embedded within it, though its internal mechanisms have long been damaged.",
-            "refinement": "Taking DMG generates a shield which absorbs DMG up to {{0}}% of Max HP. This shield lasts for 10s or until broken, and can only be triggered once every 45s. While protected by the shield, the character gains {{1}}% increased DMG."
+            "name": "Espada del Tiempo",
+            "description": "Una espada pesada con un reloj, pero sus mecanismos internos fueron dañados hace mucho tiempo.",
+            "refinement": "Al recibir Daño, genera un escudo que absorbe Daño hasta el {{0}}% de la Vida Máx. Este escudo dura 10 s o hasta que se rompe, y solo puede ser activado una vez cada 45 s. Mientras esté protegido por el escudo, el personaje aumenta su Daño de ATQ en un {{1}}%."
         },
         {
             "key": "Whiteblind",
-            "name": "Whiteblind",
-            "description": "An exotic sword with one section of the blade left blunt. It made its way into Liyue via the hands of foreign traders. Incredibly powerful in the hands of someone who knows how to use it.",
-            "refinement": "On hit, Normal or Charged Attacks increase ATK and DEF by {{0}}% for 6s. Max 4 stacks. This effect can only occur once every 0.5s."
+            "name": "Sombra Blanca",
+            "description": "Una espada exótica con una navaja no muy afilada. Terminó en Liyue a manos de comerciantes extranjeros. Increíblemente poderosa en las manos de aquellos que realmente saben cómo usarla.",
+            "refinement": "Después de lanzar un Ataque Normal o Cargado, el ATQ y DEF aumentan en un 6% en 6s y pueden ser acumulados hasta 4 veces ({{0}}% en total). Este efecto puede activarse una vez cada 0.5s."
         },
         {
             "key": "Sacrificial Greatsword",
-            "name": "Sacrificial Greatsword",
-            "description": "A ceremonial greatsword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-            "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s."
+            "name": "Gran Espada de Sacrificio",
+            "description": "Una gran espada decorativa que ha sido petrificada por el tiempo. Las baratijas en ella todavía son visibles. Concede al portador el poder de resistir los vientos del tiempo.",
+            "refinement": "Al hacer daño por medio de una Habilidad Elemental, hay un {{0}}% de probabilidad de restablecer el TdE de esta habilidad. Este efecto puede activarse una vez cada {{1}} s."
         },
         {
             "key": "Snow-Tombed Starsilver",
-            "name": "Snow-Tombed Starsilver",
-            "description": "An ancient greatsword that was stored between frescoes. Forged from Starsilver, it has the power to cleave through ice and snow.",
-            "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, dealing {{1}}% AoE ATK DMG. Can only occur once every 10s. Enemies affected by Cryo are dealt {{2}}% ATK DMG. Can only occur once every 10s."
+            "name": "Argento Estelar de las Nieves",
+            "description": "Un mandoble antiguo oculto detrás de un fresco. Fue forjado con argento estelar, y tiene el poder de cortar a través del hielo y la nieve.",
+            "refinement": "Al golpear a los enemigos con Ataques Normales y Cargados, hay un {{0}}% de probabilidad de crear un carámbano sobre ellos. Al caer, el carámbano inflige un {{1}}% de daño de ATQ en el AdE. Si los enemigos están afectados por Cryo, el daño de ATQ infligido será del {{2}}%. Este efecto solo puede ocurrir una vez cada 10 s."
         },
         {
             "key": "Skyward Pride",
-            "name": "Skyward Pride",
-            "description": "A claymore that symbolizes the pride of Dvalin soaring through the skies. When swung, it emits a deep hum as the full force of Dvalin’s command of the sky and the wind is unleashed.",
-            "refinement": "Increases all DMG by {{0}}%. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does {{1}}% of ATK as DMG to enemies along its path. Lasts for 20s or 8 vacuum blades."
+            "name": "Orgullo Celestial",
+            "description": "Una espada de dos manos que simboliza el orgullo de Dvalin en los cielos. Cuando es utilizada, emite un zumbido que representa la fuerza Dvalin y el poder de Anemo.",
+            "refinement": "Aumenta todo Daño en un {{0}}%. Al realizar Ataques Normales o Cargados después de usar la Habilidad Definitiva, se crea una hoja de vacío que inflige un {{1}}% de Daño Físico a todos los enemigos cercanos. Tiene una duración de 20 s u 8 ataques de hoja."
         },
         {
             "key": "Wolf’s Gravestone",
-            "name": "Wolf’s Gravestone",
-            "description": "A longsword used by the Wolf Knight. Originally just a heavy sheet of iron given to the knight by a blacksmith from the city, it became endowed with legendary power owing to his friendship with the wolves.",
-            "refinement": "Increases ATK by {{0}}%. On hit, attacks against enemies with less than 30% HP increase all party members’ ATK by {{1}}% for 12s. Can only occur once every 30s."
+            "name": "Lápida del Lobo",
+            "description": "Una espada larga que fue usada por el Caballero Lobo. Originariamente, era solo una pesada lámina de hierro que le regaló el herrero de la ciudad. Pero se convirtió en una gran espada al serle otorgado poderes legendarios por su amistad con los lobos.",
+            "refinement": "Aumenta el ATQ en un {{0}}%. Al atacar a oponentes con Vida menor al 30%, aumenta el ATQ de todos los compañeros en un {{1}}% durante 12 s. Este efecto puede activarse una vez cada 30 s."
         },
         {
             "key": "The Unforged",
-            "name": "The Unforged",
-            "description": "Capable of driving away evil spirits and wicked people alike, this edgeless claymore seems to possess divine might.",
-            "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+            "name": "Espada de la Desidia",
+            "description": "Capaz de alejar a los malos espíritus y las personas desquiciadas, esta mandoble posee una fuerza adivina",
+            "refinement": "La Protección de Escudo aumenta en un {{0}}%. Durante 8 s después de atacar a un enemigo, el ATQ aumenta en un {{1}}%. Este efecto puede acumularse hasta 5 veces y activarse una vez cada 0.3 s. Además, al estar bajo la protección de un escudo, el efecto de aumento de ATQ aumenta en un 100%."
         },
         {
             "key": "Beginner’s Protector",
-            "name": "Beginner’s Protector",
-            "description": "A polearm as straight as a flag pole. Well suited to most combat situations, it has an imposing presence when swung.",
+            "name": "Protector del Principiante",
+            "description": "Una arma tan recta como el asta de una bandera. Adecuada para la mayoría de las situaciones, el portador se siente imponente cuando la balancea.",
             "refinement": null
         },
         {
             "key": "Iron Point",
-            "name": "Iron Point",
-            "description": "Sharp and pointy at one end, it is a balanced weapon that is quite popular among travelers.",
+            "name": "Punta de Hierro",
+            "description": "Aguda y puntiaguda en un extremo, es un arma muy equilibrada. Popular entre los viajeros.",
             "refinement": null
         },
         {
             "key": "Black Tassel",
-            "name": "Black Tassel",
-            "description": "An exceptionally powerful polearm that also offers a simple but elegant solution to the issue of the easily stained white tassel.",
-            "refinement": "Increases DMG against slimes by {{0}}%"
+            "name": "Borla Negra",
+            "description": "Bueno... El hecho de que sea de color oscuro soluciona el problema que tienen las borlas blancas... Las negras no se manchan fácilmente",
+            "refinement": "Aumenta el daño contra los Slimes un {{0}}%."
         },
         {
             "key": "Halberd",
-            "name": "Halberd",
-            "description": "A polearm with an axe blade mounted on top that can deal quite a lot of damage. It’s favored by the Millelith officers.",
-            "refinement": "Normal Attacks deal an additional {{0}}% DMG. Can only occur once every 10s."
+            "name": "Alabarda",
+            "description": "Un arma de asta con una hoja de hacha montada en la parte superior, capaz de causar mucho daño. El arma predilecta entre los oficiales del Ejército de las Mil Rocas.",
+            "refinement": "Los ataques normales infligen un {{0}}% de daño adicional a los enemigos. Este efecto solo puede ocurrir una vez cada 10 segundos."
         },
         {
             "key": "White Tassel",
-            "name": "White Tassel",
-            "description": "A standard-issue weapon of the Millelith soldiers. It has a sturdy shaft and sharp spearhead. It’s a reliable weapon.",
-            "refinement": "Increases Normal Attack DMG by {{0}}%."
+            "name": "Borla Blanca",
+            "description": "Un arma estándar del Ejército de las Mil Rocas. Tiene un eje firme y una punta de lanza afilada. Es un arma confiable.",
+            "refinement": "Aumenta el daño del ATQ Normal un {{0}}%."
         },
         {
             "key": "Blackcliff Pole",
-            "name": "Blackcliff Pole",
-            "description": "A weapon made of blackcliff and aerosiderite. There is a dark crimson glow on its cold black sheen.",
-            "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+            "name": "Lanza del Peñasco Oscuro",
+            "description": "Un arma hecha de Piedra negra y Siderita. Hay un brillo carmesí oscuro a lo largo de su filo frío.",
+            "refinement": "Al derrotar a un enemigo, aumenta el ATQ en {{0}}% durante 30s, pudiéndose acumular hasta 3 veces. La duración de cada acumulación es independiente."
         },
         {
             "key": "Crescent Pike",
-            "name": "Crescent Pike",
-            "description": "An exotic weapon with an extremely long blade on the top and a crescent blade at the bottom. It found its way into Liyue through foreign traders. With practice, it can deal heavy damage.",
-            "refinement": "After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal an additional {{0}}% ATK DMG for 5s."
+            "name": "Pica Luna Creciente",
+            "description": "Un arma exótica con una cuchilla extremadamente larga en pa parte superior y una cuchilla en forma de media luna en la parte inferior. Llegó a Liyue a través de comerciantes extranjeros. Con la práctica, puede causar grandes daños.",
+            "refinement": "5 s después de obtener una Partícula u Orbe Elemental, los Ataques Normales y Ataques Cargados causan un {{0}}% adicional de Daño de Ataque."
         },
         {
             "key": "Deathmatch",
-            "name": "Deathmatch",
-            "description": "A sharp crimson polearm that was once a gladiator’s priceless treasure. Its awl has been stained by the blood of countless beasts and men.",
-            "refinement": "If are there at least 2 enemies nearby, ATK is increased by {{0}}% and DEF is increased by {{1}}%. If there are less than 2 enemies nearby, ATK is increased by {{2}}%"
+            "name": "Lanza del Duelo",
+            "description": "Una lanza afilada de color rojo sangre que fue un objeto de valor incalculable para un gladiador. Su punta está manchada con la sangre de innumerables bestias y personas.",
+            "refinement": "Cuando hay dos o más enemigos cerca, aumenta el ATQ en un {{0}}% y la DEF en un {{1}}%. Cuando haya menos de 2 enemigos, aumenta el ATQ en un {{2}}%."
         },
         {
             "key": "Dragon’s Bane",
-            "name": "Dragon’s Bane",
-            "description": "A polearm decorated with an entwining golden dragon. Light and sharp, this weapon may very well kill dragons with ease.",
-            "refinement": "Increases DMG against enemies affected by Hydro or Pyro by {{0}}%"
+            "name": "Perdición del Dragón",
+            "description": "Un plano decorado con un dragón dorado entrelazado. Ligera y afilada, esta arma puede matar dragones con facilidad.",
+            "refinement": "Aumenta el daño contra los enemigos afectados por Hydro o Pyro un {{0}}%."
         },
         {
             "key": "Lithic Spear",
             "name": "Lithic Spear",
-            "description": "A spear forged from the rocks of the Guyun Stone Forest. Its hardness knows no equal.",
-            "refinement": "Normal Attack hits have a {{0}}% chance of causing the next Charged Attack performed in the following 10s to deal {{1}}% increased DMG."
+            "description": "Una lanza forjada a partir de las rocas del Bosque de Rocas de Guyun. Su dureza no tiene rival.",
+            "refinement": "Los ataques normales tienen un {{0}}% de probabilidad de causar que el siguiente ataque cargado realizado en los próximos 10s causen {{1}}% de daño adicional."
         },
         {
             "key": "Prototype Starglitter",
-            "name": "Prototype Starglitter",
-            "description": "A grudge discovered in the Blackcliff Forge. The glimmers along the sharp edge are like stars in the night.",
-            "refinement": "After using an Elemental Skill, increases Normal and Charged Attack DMG by {{0}}% for 12s. Max 2 stacks."
+            "name": "Prototipo Resentimiento",
+            "description": "Una alabarda descubierta en la Forja Peñasco Oscuro. Los destellos a lo largo del borde afilado son como estrellas en la noche.",
+            "refinement": "Después de usar una Hab. Elemental, aumenta el daño del Ataque Normal y Cargado un {{1}}% durante 12 s. Puede acumularse hasta 2 veces."
         },
         {
             "key": "Favonius Lance",
-            "name": "Favonius Lance",
-            "description": "A polearm made in the style of the Knights of Favonius. Its shaft is straight, and its tip flows lightly like the wind.",
-            "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+            "name": "Lanza de Favonius",
+            "description": "Una lanza hecha con el estilo de los Caballeros de Favonius Su barra es recta y su punta fluye ligeramente como el viento.",
+            "refinement": "Los Golpes CRIT tienen un {{1}}% probabilidad de generar una pequeña cantidad de Partículas Elementales, que regenerán 6 de Energía para el personaje. Solo puede ocurrir una vez cada {{1}} s."
         },
         {
             "key": "Royal Spear",
-            "name": "Royal Spear",
-            "description": "This polearm was once cherished by a member of the old nobility that governed Mondstadt long ago. Although it has never seen the light of day, it is still incomparably sharp.",
-            "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+            "name": "Lanza de Caza Real",
+            "description": "Una lnaza atesorada por un antiguo aristócrata que gobernó Mondstadt. Aunque nunca ha visto la luz del día, su filo no tiene rival.",
+            "refinement": "Al dañar a un oponente, aumenta la Prob. CRIT en un {{0}}%. Acumulable hasta 5 veces. Un vez dado un golpe CRIT, reiniciará todos aquellos acumulados."
         },
         {
             "key": "Dragonspine Spear",
-            "name": "Dragonspine Spear",
-            "description": "A spear created from the fang of a dragon. It is oddly warm to the touch.",
-            "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, dealing {{1}}% AoE ATK DMG. Can only occur once every 10s. Enemies affected by Cryo are dealt {{2}}% ATK DMG. Can only occur once every 10s."
+            "name": "Lanza de Espinadragón",
+            "description": "Una lanza creada a partir del colmillo de un dragón. Sorprendentemente, es cálida al tacto.",
+            "refinement": "Al golpear a los enemigos con Ataques Normales y Cargados, hay un {{0}}% de probabilidad de crear un carámbano sobre ellos. Al caer, el carámbano inflige un {{1}}% de daño de ATQ en el AdE. Si los enemigos están afectados por Cryo, el daño de ATQ infligido será del {{2}}%. Este efecto solo puede ocurrir una vez cada 10 s."
         },
         {
             "key": "Vortex Vanquisher",
-            "name": "Vortex Vanquisher",
-            "description": "This sharp polearm can seemingly pierce through anything. When swung, one can almost see the rift it tears in the air.",
-            "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+            "name": "Lanza Perforanubes",
+            "description": "Una afilada lanza que puede atravesar cualquier cosa. Al blandirla, casi se pueden ver las grietas creadas por su punta en el aire.",
+            "refinement": "La Protección de Escudo aumenta en un {{0}}%. Durante 8 s después de atacar a un enemigo, el ATQ aumenta en un {{1}}%. Este efecto puede acumularse hasta 5 veces y activarse una vez cada 0.3 s. Además, al estar bajo la protección de un escudo, el efecto de aumento de ATQ aumenta en un 100%."
         },
         {
             "key": "Primordial Jade Winged-Spear",
-            "name": "Primordial Jade Winged-Spear",
-            "description": "A jade polearm made by the archons, capable of slaying ancient beasts.",
-            "refinement": "On hit, increases ATK by {{0}}% for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by {{1}}%."
+            "name": "Halcón de Jade",
+            "description": "Una lanza de jade hecha por los arcontes, capaz de derrotar a antiguas bestias.",
+            "refinement": "Al impactar, aumenta el ataque un {{0}}% durante 6s. Se acumula hasta 7 veces. Este efecto sólo puede ocurrir una vez cada 0.3s. Mientras se tenga el máximo número de efectos acumulados, el daño infligido aumenta un {{1}}%."
         },
         {
             "key": "Skyward Spine",
-            "name": "Skyward Spine",
-            "description": "A polearm that symbolizes Dvalin’s firm resolve. The upright shaft of this weapon points towards the heavens, clad in the might of sky and wind.",
-            "refinement": "Increases CRIT Rate by {{0}}% and increases Normal ATK SPD by 12%. Additionally, Normal and Charged Attacks hits on enemies have a 50% chance to trigger a vacuum blade that deals {{1}}% of ATK as DMG in a small AoE. This effect can occur no more than once every 2s."
+            "name": "Púa Celestial",
+            "description": "Una lanza que simboliza la resolución de Dvalin. La punta de esta arma señala hacia el cielo, pidiendo la fuerza del cielo y el viento.",
+            "refinement": "Aumenta la probabilidad crítica un {{0}}% y aumenta la velocidad del ataque normal un 12%. Adicionalmente, los golpes del ataque normal y cargado tienen un 50% de probabilidad de activar una hoja de vacío que inflige {{1}}% del ataque como daño en un área pequeña. Este efecto no puede ocurrir más de una vez cada 2s."
         }
     ],
     "artifacts": [
         {
             "key": "Adventurer",
-            "name": "Adventurer",
+            "name": "Aventurero",
             "bonus": [
                 "2 Piece: Max HP increased by 1000.",
                 "4 Piece: Opening a chest regenerates 30% Max HP over 5s."
