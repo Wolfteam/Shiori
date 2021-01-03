@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/enums/element_type.dart';
 import '../../../common/extensions/element_type_extensions.dart';
+import '../../../common/extensions/i18n_extensions.dart';
 import '../../../common/extensions/iterable_extensions.dart';
 import '../../../common/styles.dart';
 import '../../../generated/l10n.dart';
@@ -11,7 +12,7 @@ import '../common/item_description_detail.dart';
 
 class CharacterDetailSkillsCard extends StatelessWidget {
   final ElementType elementType;
-  final List<TranslationCharacterSkillFile> skills;
+  final List<CharacterSkillCardModel> skills;
   const CharacterDetailSkillsCard({
     Key key,
     @required this.elementType,
@@ -34,13 +35,14 @@ class CharacterDetailSkillsCard extends StatelessWidget {
     );
   }
 
-  Widget _buildSkillCard(BuildContext context, TranslationCharacterSkillFile model, bool isEven) {
+  Widget _buildSkillCard(BuildContext context, CharacterSkillCardModel model, bool isEven) {
     final theme = Theme.of(context);
+    final s = S.of(context);
     final img = Expanded(
       child: CircleAvatar(
         radius: 40,
         backgroundColor: elementType.getElementColorFromContext(context),
-        child: Image.asset(model.fullImagePath, width: 65, height: 65),
+        child: Image.asset(model.image, width: 65, height: 65),
       ),
     );
     final titles = Expanded(
@@ -55,9 +57,9 @@ class CharacterDetailSkillsCard extends StatelessWidget {
             ),
           ),
           Tooltip(
-            message: model.subTitle,
+            message: s.translateCharacterSkillType(model.type),
             child: Text(
-              model.subTitle,
+              s.translateCharacterSkillType(model.type),
               overflow: TextOverflow.ellipsis,
             ),
           ),

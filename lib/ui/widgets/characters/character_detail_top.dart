@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../bloc/bloc.dart';
 import '../../../common/extensions/element_type_extensions.dart';
+import '../../../common/extensions/i18n_extensions.dart';
+import '../../../generated/l10n.dart';
 import '../common/loading.dart';
 import 'character_detail.dart';
 
@@ -11,6 +13,7 @@ class CharacterDetailTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     final mediaQuery = MediaQuery.of(context);
     final isPortrait = mediaQuery.orientation == Orientation.portrait;
     final descriptionWidth = mediaQuery.size.width / (isPortrait ? 1.2 : 2);
@@ -60,7 +63,7 @@ class CharacterDetailTop extends StatelessWidget {
                     name: state.name,
                     rarity: state.rarity,
                     region: state.region,
-                    role: state.role,
+                    role: s.translateCharacterType(state.role),
                     weaponType: state.weaponType,
                   ),
                 ),

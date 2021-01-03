@@ -10,7 +10,7 @@ import '../common/item_description_detail.dart';
 
 class CharacterDetailPassiveCard extends StatelessWidget {
   final ElementType elementType;
-  final List<TranslationCharacterPassive> passives;
+  final List<CharacterPassiveTalentModel> passives;
 
   const CharacterDetailPassiveCard({
     Key key,
@@ -30,7 +30,7 @@ class CharacterDetailPassiveCard extends StatelessWidget {
     );
   }
 
-  Widget _buildPassiveCard(TranslationCharacterPassive model, BuildContext context) {
+  Widget _buildPassiveCard(CharacterPassiveTalentModel model, BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
     final unlockedAt = model.unlockedAt >= 1 ? s.unclockedAtAscentionLevelX(model.unlockedAt) : s.unlockedAutomatically;
@@ -46,7 +46,7 @@ class CharacterDetailPassiveCard extends StatelessWidget {
             CircleAvatar(
               radius: 40,
               backgroundColor: elementType.getElementColorFromContext(context),
-              child: Image.asset(model.fullImagePath, width: 60, height: 60),
+              child: Image.asset(model.image, width: 60, height: 60),
             ),
             Text(
               model.title,

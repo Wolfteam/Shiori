@@ -12,14 +12,14 @@ abstract class CharacterState with _$CharacterState {
     @required ElementType elementType,
     @required WeaponType weaponType,
     @required String region,
-    @required String role,
+    @required CharacterType role,
     @required bool isFemale,
     @required List<CharacterFileAscentionMaterialModel> ascentionMaterials,
     @required List<CharacterFileTalentAscentionMaterialModel> talentAscentionsMaterials,
     List<CharacterFileMultiTalentAscentionMaterialModel> multiTalentAscentionMaterials,
-    @required List<TranslationCharacterSkillFile> skills,
-    @required List<TranslationCharacterPassive> passives,
-    @required List<TranslationCharacterConstellation> constellations,
+    @required List<CharacterSkillCardModel> skills,
+    @required List<CharacterPassiveTalentModel> passives,
+    @required List<CharacterConstellationModel> constellations,
     @required List<CharacterBuildCardModel> builds,
   }) = _LoadedState;
 }

@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../common/assets.dart';
+import '../../../common/enums/character_skill_type.dart';
+import '../../../common/enums/character_type.dart';
 import '../../../common/enums/element_type.dart';
 import '../../../common/enums/weapon_type.dart';
 import '../../models.dart';
@@ -23,10 +25,14 @@ abstract class CharacterFileModel implements _$CharacterFileModel {
     @required bool isFemale,
     @required bool isComingSoon,
     @required bool isNew,
+    @required CharacterType role,
     @required List<CharacterFileAscentionMaterialModel> ascentionMaterials,
     @required List<CharacterFileTalentAscentionMaterialModel> talentAscentionMaterials,
     List<CharacterFileMultiTalentAscentionMaterialModel> multiTalentAscentionMaterials,
     @required List<CharacterFileBuild> builds,
+    @required List<CharacterFileSkillModel> skills,
+    @required List<CharacterFilePassiveModel> passives,
+    @required List<CharacterFileConstellationModel> constellations,
   }) = _CharacterFileModel;
 
   const CharacterFileModel._();
@@ -117,4 +123,53 @@ abstract class CharacterFileArtifactMultipleBuild implements _$CharacterFileArti
 
   factory CharacterFileArtifactMultipleBuild.fromJson(Map<String, dynamic> json) =>
       _$CharacterFileArtifactMultipleBuildFromJson(json);
+}
+
+@freezed
+abstract class CharacterFileSkillModel implements _$CharacterFileSkillModel {
+  @late
+  String get fullImagePath => Assets.getSkillPath(image);
+
+  factory CharacterFileSkillModel({
+    @required String key,
+    @required CharacterSkillType type,
+    @required String image,
+  }) = _CharacterFileSkillModel;
+
+  CharacterFileSkillModel._();
+
+  factory CharacterFileSkillModel.fromJson(Map<String, dynamic> json) => _$CharacterFileSkillModelFromJson(json);
+}
+
+@freezed
+abstract class CharacterFilePassiveModel implements _$CharacterFilePassiveModel {
+  @late
+  String get fullImagePath => Assets.getSkillPath(image);
+
+  factory CharacterFilePassiveModel({
+    @required String key,
+    @required int unlockedAt,
+    @required String image,
+  }) = _CharacterFilePassiveModel;
+
+  CharacterFilePassiveModel._();
+
+  factory CharacterFilePassiveModel.fromJson(Map<String, dynamic> json) => _$CharacterFilePassiveModelFromJson(json);
+}
+
+@freezed
+abstract class CharacterFileConstellationModel implements _$CharacterFileConstellationModel {
+  @late
+  String get fullImagePath => Assets.getSkillPath(image);
+
+  factory CharacterFileConstellationModel({
+    @required String key,
+    @required int number,
+    @required String image,
+  }) = _CharacterFileConstellationModel;
+
+  CharacterFileConstellationModel._();
+
+  factory CharacterFileConstellationModel.fromJson(Map<String, dynamic> json) =>
+      _$CharacterFileConstellationModelFromJson(json);
 }

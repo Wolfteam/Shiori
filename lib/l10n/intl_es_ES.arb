@@ -141,5 +141,12 @@
     "showCharacterDetails": "Mostrar el detalle de los personajes",
     "showWeaponDetails": "Mostrar el detalle de las armas",
     "quest": "Misión",
-    "subStat": "Sub. Stat"
+    "subStat": "Sub. Stat",
+    "na": "N/A",
+    "mainDps": "DPS Principal",
+    "supportDps": "DPS de Soporte",
+    "utility": "Utilidad",
+    "normalAttack": "Ataque Normal",
+    "elementalSkill": "Habilidad Elemental",
+    "elementalBurst": "Ráfaga Elemental"
 }

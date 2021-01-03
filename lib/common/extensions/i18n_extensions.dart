@@ -9,6 +9,8 @@ import '../../common/enums/stat_type.dart';
 import '../../common/enums/weapon_filter_type.dart';
 import '../../common/enums/weapon_type.dart';
 import '../../generated/l10n.dart';
+import '../enums/character_skill_type.dart';
+import '../enums/character_type.dart';
 import '../enums/item_status_type.dart';
 
 extension I18nExtensions on S {
@@ -225,6 +227,36 @@ extension I18nExtensions on S {
         return rarity;
       default:
         throw Exception('Invalid artifact filter type = $type');
+    }
+  }
+
+  String translateCharacterType(CharacterType type) {
+    switch (type) {
+      case CharacterType.mainDps:
+        return mainDps;
+      case CharacterType.supportDps:
+        return supportDps;
+      case CharacterType.utility:
+        return utility;
+      case CharacterType.na:
+        return na;
+      default:
+        throw Exception('Invalid character type = $type');
+    }
+  }
+
+  String translateCharacterSkillType(CharacterSkillType type) {
+    switch (type) {
+      case CharacterSkillType.normalAttack:
+        return normalAttack;
+      case CharacterSkillType.elementalSkill:
+        return elementalSkill;
+      case CharacterSkillType.elementalBurst:
+        return elementalBurst;
+      case CharacterSkillType.others:
+        return others;
+      default:
+        throw Exception('Invalid character type = $type');
     }
   }
 }

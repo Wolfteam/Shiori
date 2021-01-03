@@ -12,6 +12,7 @@
             "isNew": true,
             "isFemale": false,
             "region": "Mondstadt",
+            "role": "supportDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -428,6 +429,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "favonius_bladework_white.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "abiogenesis_solar_radiance.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "rite_of_progeniture_tectonic_tide.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "genius_unearthed.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "calcite_suppression.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "albedo_p4_talent.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "flower_of_eden.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "opening_of_phanerozoic.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "grace_of_helios.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "descent_of_divinity.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "tide_of_hadean.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "domain_of_purification.png"
+                }
             ]
         },
         {
@@ -442,6 +509,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Mondstadt",
+            "role": "supportDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -871,6 +939,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_atack_sharpshooter.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "explosive_puppet.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "fiery_rain.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "gliding_champion.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "every_arrow_finds_its_target.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "precise_shot.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "one_arrow_to_rule_them_all.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "bunny_triggered.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "it_burns.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "not_just_any_doll.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "its_baron_bunny.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "wildfire.png"
+                }
             ]
         },
         {
@@ -885,6 +1019,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Inazuma",
+            "role": "mainDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -1275,7 +1410,10 @@
                     ]
                 }
             ],
-            "builds": []
+            "builds": [],
+            "skills": [],
+            "passives": [],
+            "constellations": []
         },
         {
             "name": "Barbara",
@@ -1289,6 +1427,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Mondstadt",
+            "role": "utility",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -1693,6 +1832,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_atack_whisper_of_water.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "let_the_show_begin.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "shining_miracle.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "with_my_whole_heart.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "glorious_season.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "encore.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "gleeful_songs.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "vitality_burst.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "star_of_tomorrow.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "attentiveness_be_my_power.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "the_purest_companionship.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "dedicating_everything_to_you.png"
+                }
             ]
         },
         {
@@ -1707,6 +1912,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Liyue",
+            "role": "mainDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -2111,6 +2317,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_atack_oceanborne.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "tidecaller.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "stormbreaker.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "conqueror_of_tides.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "retribution.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "lightning_storm.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "sea_beasts_scourge.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "upon_the_turbulent_sea.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "summoner_of_storm.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "stunning_revenge.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "crimson_tidewalker.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "bane_of_evil.png"
+                }
             ]
         },
         {
@@ -2125,6 +2397,7 @@
             "isNew": false,
             "isFemale": false,
             "region": "Mondstadt",
+            "role": "utility",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -2554,6 +2827,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_atack_strike_of_fortune.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "passion_overload.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "fantastic_voyage.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "it_should_be_safe.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "rekindle.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "fearnaught.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "grand_expectation.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "impasse_conqueror.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "unstoppable_fervor.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "unexpected_odyssey.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "the_explorer.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "fire_ventures_with_me.png"
+                }
             ]
         },
         {
@@ -2568,6 +2907,7 @@
             "isNew": false,
             "isFemale": false,
             "region": "Liyue",
+            "role": "supportDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -3003,6 +3343,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_atack_demonbane.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "spirit_blade_chonghuas.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "spirit_blade_cloud_parting_star.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "gallant_journey.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "steady_breathing.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "rimechaser_blade.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "ice_unleashed.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "atmo_revolution.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "cloudburst.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "frozen_skies.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "the_true_path.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "rally_of_four_blades.png"
+                }
             ]
         },
         {
@@ -3017,6 +3423,7 @@
             "isNew": false,
             "isFemale": false,
             "region": "Mondstadt",
+            "role": "mainDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -3425,6 +3832,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_atack_tempered_sword.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "searing_onslaught.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "dawn.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "tradition_of_the_dawn_knight.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "relentless.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "blessing_of_phoenix.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "conviction.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "searing_ember.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "steel_and_fire.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "flowing_flame.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "phoenix_harbinger_of_dawn.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "flaming_sword_nemesis_of_dark.png"
+                }
             ]
         },
         {
@@ -3439,6 +3912,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Mondstadt",
+            "role": "utility",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -3847,6 +4321,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_attack_katzlein_style.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "icy_paws.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "signature_mix.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "complimentary_bar_food.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "cats_tail_secret_menu.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "drunkards_farce.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "a_lingering_flavor.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "shaken_not_purred.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "a_another_round.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "wine_industry_slayer.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "double_shot_on_the_rocks.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "cats_tail_closing_time.png"
+                }
             ]
         },
         {
@@ -3861,6 +4401,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Mondstadt",
+            "role": "supportDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -4286,6 +4827,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_atack_bolts_of_downfall.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "nightrider.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "midnight_phantasmagoria.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "mein_hausgarten.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "stellar_predator.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "lighting_smite.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "gaze_of_the_deep.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "devpirer_of_all_sins.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "wings_of_nightmare.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "her_pilgrimage_of_bleak.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "agaomst_the_fleeing_light.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "evernight_raven.png"
+                }
             ]
         },
         {
@@ -4300,6 +4907,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Liyue",
+            "role": "na",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -4690,7 +5298,10 @@
                     ]
                 }
             ],
-            "builds": []
+            "builds": [],
+            "skills": [],
+            "passives": [],
+            "constellations": []
         },
         {
             "name": "Jean",
@@ -4704,6 +5315,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Mondstadt",
+            "role": "utility",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -5137,6 +5749,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_atack_favonius_bladework.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "gale_blade.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "dandelion_breeze.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "guiding_breeze.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "wind_companion.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "let_the_wind_lead.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "spiraling_tempest.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "peoples_aegis.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "when_the_west_wind_arises.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "lands_of_dandelion.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "outbursting_gust.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "lions_fang_fair_protector.png"
+                }
             ]
         },
         {
@@ -5151,6 +5829,7 @@
             "isNew": false,
             "isFemale": false,
             "region": "Mondstadt",
+            "role": "supportDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -5584,6 +6263,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_atack_ceremonial_bladework.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "frostgnaw.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "glacial_waltz.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "hidden_strength.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "cold_blooded_strike.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "heart_of_the_abyss.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "excellent_blood.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "never_ending_performance.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "dance_of_frost.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "frozen_kiss.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "frostbiting_embrace.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "glacial_whirlwind.png"
+                }
             ]
         },
         {
@@ -5598,6 +6343,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Liyue",
+            "role": "mainDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -6014,6 +6760,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "stellar_resonator.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "stellar_resonator.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "starward_sword.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "lands_overseer.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "thundering_penance.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "aristocratic_dignity.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "thundering_might.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "keen_extraction.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "foreseen_reformation.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "attunement.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "beckoning_stars.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "tenacious_star.png"
+                }
             ]
         },
         {
@@ -6028,6 +6840,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Mondstadt",
+            "role": "mainDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -6444,6 +7257,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_atack_kaboom.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "jumpy_dumpy.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "sparks_n_splash.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "all_of_my_treasures.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "pounding_surprise.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "sparkling_burst.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "chained_reactions.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "explosive_frags.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "exquisitive_compound.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "sparkly_explosion.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "nova_burst.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "blazing_delight.png"
+                }
             ]
         },
         {
@@ -6458,6 +7337,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Mondstadt",
+            "role": "supportDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -6866,6 +7746,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_atack_lightning_touch.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "violet_ark.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "lightning_rose.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "general_pharmaceutics.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "induced_aftershock.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "static_electricity_field.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "infinite_circuit.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "electromagnetic_field.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "resonant_thunder.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "plasma_eruption.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "electrocute.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "pulsating_witch.png"
+                }
             ]
         },
         {
@@ -6880,6 +7826,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Mondstadt",
+            "role": "supportDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -7284,6 +8231,77 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_attack_ripple_of_fate.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "mirror_reflection_of_doom.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "stellaris_phantasm.png",
+                    "type": "elementalBurst"
+                },
+                {
+                    "key": "s4",
+                    "image": "stellaris_phantasm.png",
+                    "type": "others"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "principium_of_astrology.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "come_n_get_me_hag.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "waterborne_destiny.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "prophecy_of_submersion.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "lunar_chain.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "restless_revolution.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "prophecy_of_oblivion.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "mockery_of_fortuna.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "rhetirucs_of_calamitas.png"
+                }
             ]
         },
         {
@@ -7298,6 +8316,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Liyue",
+            "role": "mainDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -7722,6 +8741,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_attack_sparkling_scatter.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "jade_screen.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "starshatter.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "trove_of_marvelous_treasures.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "backup_plan.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "strategic_reserve.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "piercing_fragments.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "shock_effect.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "majesty_be_the_array_of_stars.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "exqyusute_be_the_jade.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "invincible_be_the_jade_screen.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "grandeur_be_the_seven_stars.png"
+                }
             ]
         },
         {
@@ -7736,6 +8821,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Mondstadt",
+            "role": "utility",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -8165,6 +9251,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_attack_favonius_bladework.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "breastplate.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "sweeping_time.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "maids_knighthood.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "devotion.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "nice_and_clean.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "i_got_your_back.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "combat_maid.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "invul_maid.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "to_be_cleaned.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "favonuis_sweeper.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "must_be_spotless.png"
+                }
             ]
         },
         {
@@ -8179,6 +9331,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Liyue",
+            "role": "utility",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -8583,6 +9736,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_atack_ancient_sword_art.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "adeptus_art_herald_of_the_frost.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "adeptus_art_preserver_of_fortune.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "former_life_memories.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "life_prolonging_methods.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "a_glimse_into_arcanum.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "ascetics_of_frost.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "frozen_to_the_bone.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "ascendant_praise.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "divine_suppression.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "crimson_lotus_bloom.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "rite_of_resurrection.png"
+                }
             ]
         },
         {
@@ -8597,6 +9816,7 @@
             "isNew": false,
             "isFemale": false,
             "region": "Mondstadt",
+            "role": "mainDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -9001,6 +10221,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_attack_steel_fang.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "claw_and_thunder.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "lightning_fang.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "wolvensprint.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "awakening.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "hunger.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "wolfs_instinct.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "suppression.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "soul_companion.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "bite.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "sharpened_claws.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "lupus_fulguris.png"
+                }
             ]
         },
         {
@@ -9015,6 +10301,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Mondstadt",
+            "role": "utility",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -9423,6 +10710,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_attack_wind_spirit_creation.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "astable_anemohypostasis_creation.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "forbidden_creation_isomer_75.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "astable_invention.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "catalyst_conversion.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "mollis_favonius.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "clustered_vacuum_field.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "beth_unbound_form.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "flawless_alchemistress.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "alchemania.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "caution_standard_flask.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "chaotic_entropy.png"
+                }
             ]
         },
         {
@@ -9437,6 +10790,7 @@
             "isNew": false,
             "isFemale": false,
             "region": "Snezhnaya",
+            "role": "mainDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -9857,6 +11211,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_attack_cutting_torrent.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "foul_legacy_raging_tide.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "havoc_obliteration.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "master_of_weaponry.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "never_ending.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "sword_of_torrents.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "foul_legacy_tide.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "foul_legacy_understream.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "abyssal_mayhem_vortex_of_turmoil.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "abyssal_mayhem_hydrospout.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "havoc_formless_blade.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "havoc_annihilation.png"
+                }
             ]
         },
         {
@@ -9871,6 +11291,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Another World",
+            "role": "supportDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -10676,6 +12097,67 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_attack_foreign_ironwind.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "palm_vortex.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "gust_surge.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p2",
+                    "image": "slitting_wind.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "second_wind.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "raging_vortex.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "uprising_whirlwind.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "sweeping_gust.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "cherishing_breezes.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "vortex_stellaris.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "interwined_winds.png"
+                }
             ]
         },
         {
@@ -10690,6 +12172,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Another World",
+            "role": "utility",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -11499,6 +12982,67 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_attack_foreign_rockblade.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "starfell_sword.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "wake_of_earth.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p2",
+                    "image": "shattered_darkrock.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "frenzied_rockslide.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "invincible_stonewall.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "rockcore_meltdown.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "will_of_the_rock.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "reaction_force.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "meteorite_impact.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "everlasting_boulder.png"
+                }
             ]
         },
         {
@@ -11513,6 +13057,7 @@
             "isNew": false,
             "isFemale": false,
             "region": "Mondstadt",
+            "role": "utility",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -11921,6 +13466,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_attack_divine_marksmanship.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "skyward_sonnet.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "winds_grand_ode.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "windrider.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "embrace_of_winds.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "stormeye.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "splitting_gales.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "breeze_of_reminiscence.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "ode_to_thousand_winds.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "hurricane_of_freedom.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "concerto_dal_cielo.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "storm_of_defiance.png"
+                }
             ]
         },
         {
@@ -11935,6 +13546,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Liyue",
+            "role": "supportDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -12368,6 +13980,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_attack_dough_fu.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "guoba_attack.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "pyronado.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "chef_de_cuisine.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "crossfire.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "beware_its_super_hot.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "crispy_outside.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "oil_meets_fire.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "deepfry.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "slowbake.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "guoba_mad.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "condensed_pyronado.png"
+                }
             ]
         },
         {
@@ -12382,6 +14060,7 @@
             "isNew": false,
             "isFemale": false,
             "region": "Liyue",
+            "role": "na",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -12786,6 +14465,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_attack_whirlwind_thrust.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "lemniscatic_wind_cycling.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "bane_of_all_evil.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "transcension_gravity_defier.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "evil_conqueror_tamer_of_demons.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "dissolution_eon_heaven_fall.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "dissolution_eon_destroyer_of_worlds.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "Annihilation_eon_blossom_of_kaleidos.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "evil_conqueror_wrath_deity.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "transcension_extinction_of_suffering.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "evolution_eon_origin_of_ignorance.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "evil_conqueror_vigilant_yaksha.png"
+                }
             ]
         },
         {
@@ -12800,6 +14545,7 @@
             "isNew": false,
             "isFemale": false,
             "region": "Liyue",
+            "role": "supportDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -13204,6 +14950,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_attack_guhua_style.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "guhua_sword_fatal_rainscreen.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "guhua_sword_raincutter.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "flash_of_genius.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "hydropathic.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "blades_amidst_raindrops.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "the_scent_remained.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "rainbow_upon_the_azure_sky.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "weaver_of_verses.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "evilsoother.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "embrace_of_rain.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "hence_call_them_my_own.png"
+                }
             ]
         },
         {
@@ -13218,6 +15030,7 @@
             "isNew": false,
             "isFemale": true,
             "region": "Liyue",
+            "role": "mainDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -13634,6 +15447,72 @@
                         }
                     ]
                 }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_attack_dance_on_fire.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "sweeping_fervor.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "riff_revolution.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "a_bad_recipe.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "the_show_goes_on_even_without_an_audience.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "now_thats_rock_n_roll.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "fatal_acceleration.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "impromptu_opening.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "double_stop.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "wildfire_rhytm.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "screaming_for_an_encore.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "rockin_in_a_flaming.png"
+                }
             ]
         },
         {
@@ -13648,6 +15527,7 @@
             "isNew": false,
             "isFemale": false,
             "region": "Liyue",
+            "role": "supportDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -14079,6 +15959,72 @@
                             "multiples": []
                         }
                     ]
+                }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "image": "normal_attack_rain_of_stone.png",
+                    "type": "normalAttack"
+                },
+                {
+                    "key": "s2",
+                    "image": "dominus_lapidis.png",
+                    "type": "elementalSkill"
+                },
+                {
+                    "key": "s3",
+                    "image": "planet_befall.png",
+                    "type": "elementalBurst"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "image": "arcanum_of_crystal.png",
+                    "unlockedAt": -1
+                },
+                {
+                    "key": "p2",
+                    "image": "resonant_waves.png",
+                    "unlockedAt": 1
+                },
+                {
+                    "key": "p3",
+                    "image": "dominance_of_earth.png",
+                    "unlockedAt": 4
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "rock_the_backbone_of_earth.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "stone_the_cradle_of_jade.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "jade_shimmering_through_darkness.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "topaz_unbreakable_and_fearless.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "lazuli_herald_of_the_order.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "chrysos_bounty_of_dominator.png"
                 }
             ]
         }

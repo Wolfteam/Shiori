@@ -1474,6 +1474,76 @@ class S {
       args: [],
     );
   }
+
+  /// `N/A`
+  String get na {
+    return Intl.message(
+      'N/A',
+      name: 'na',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Main DPS`
+  String get mainDps {
+    return Intl.message(
+      'Main DPS',
+      name: 'mainDps',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Suppport DPS`
+  String get supportDps {
+    return Intl.message(
+      'Suppport DPS',
+      name: 'supportDps',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Utility`
+  String get utility {
+    return Intl.message(
+      'Utility',
+      name: 'utility',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Normal Attack`
+  String get normalAttack {
+    return Intl.message(
+      'Normal Attack',
+      name: 'normalAttack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Elemental Skill`
+  String get elementalSkill {
+    return Intl.message(
+      'Elemental Skill',
+      name: 'elementalSkill',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Elemental Burst`
+  String get elementalBurst {
+    return Intl.message(
+      'Elemental Burst',
+      name: 'elementalBurst',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
