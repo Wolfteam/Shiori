@@ -4579,71 +4579,71 @@
     "materials": [
         {
             "key": "Freedom",
-            "name": "Freedom"
+            "name": "Libertad"
         },
         {
             "key": "Prosperity",
-            "name": "Prosperity"
+            "name": "Prosperidad"
         },
         {
             "key": "Dilligence",
-            "name": "Dilligence"
+            "name": "Esfuerzo"
         },
         {
             "key": "Resistance",
-            "name": "Resistance"
+            "name": "Resistencia"
         },
         {
             "key": "Ballad",
-            "name": "Ballad"
+            "name": "Poesía"
         },
         {
             "key": "Gold",
-            "name": "Gold"
+            "name": "Oro"
         },
         {
             "key": "Tail of Boreas",
-            "name": "Tail of Boreas",
+            "name": "Cola de Boreas",
             "bossName": "Andrius"
         },
         {
             "key": "Ring of Boreas",
-            "name": "Ring of Boreas",
+            "name": "Anillo de Boreas",
             "bossName": "Andrius"
         },
         {
             "key": "Spirit Locket of Boreas",
-            "name": "Spirit Locket of Boreas",
+            "name": "Alma de  Boreas",
             "bossName": "Andrius"
         },
         {
             "key": "Dvalin's Plume",
-            "name": "Dvalin's Plume",
+            "name": "Pluma de Stormterror",
             "bossName": "Dvalin"
         },
         {
             "key": "Dvalin's Claw",
-            "name": "Dvalin's Claw",
+            "name": "Garra de Stormterror",
             "bossName": "Dvalin"
         },
         {
             "key": "Dvalin's Sigh",
-            "name": "Dvalin's Sigh",
+            "name": "Suspiro de Stormterror",
             "bossName": "Dvalin"
         },
         {
             "key": "Tusk of Monoceros Caeli",
-            "name": "Tusk of Monoceros Caeli",
+            "name": "Cuerno de Monoceros",
             "bossName": "Tartaglia"
         },
         {
             "key": "Shard of a Foul Legacy",
-            "name": "Shard of a Foul Legacy",
+            "name": "Fragmento de Espada de Legado del mal",
             "bossName": "Tartaglia"
         },
         {
             "key": "Shadow of the Warrior",
-            "name": "Shadow of the Warrior",
+            "name": "Sombra del guerrero",
             "bossName": "Tartaglia"
         },
         {
@@ -4656,126 +4656,126 @@
         },
         {
             "key": "Mist Veiled Elixir",
-            "name": "Mist Veiled Elixir"
+            "name": "Niebla Marina"
         },
         {
             "key": "Boreal Wolf",
-            "name": "Boreal Wolf"
+            "name": "Lobo Boreal"
         },
         {
             "key": "Aerosiderite",
-            "name": "Aerosiderite"
+            "name": "Siderita Oscura"
         },
         {
             "key": "Dandelion Gladiator",
-            "name": "Dandelion Gladiator"
+            "name": "Diente de León"
         }
     ],
     "debuffs": [
         {
             "key": "Engulfing Storm",
-            "name": "Engulfing Storm",
-            "effect": "Continuously drains Energy Recharge."
+            "name": "Tormenta Envolvente",
+            "effect": "Drena continuamente la recarga de energía del personaje."
         },
         {
             "key": "Slowing Water",
-            "name": "Slowing Water",
-            "effect": "Increases skill CD durations."
+            "name": "Agua Ralentizadora",
+            "effect": "Aumenta la duración del CD de habilidades del personaje."
         },
         {
             "key": "Smoldering Flames",
-            "name": "Smoldering Flames",
-            "effect": "Continuously inflicts damage over time."
+            "name": "Llamas Humeantes",
+            "effect": "Continuamente inflige daño Pyro al personaje."
         },
         {
             "key": "Condensed Ice",
-            "name": "Condensed Ice",
-            "effect": "Increases stamina consumption."
+            "name": "Hielo Condensado",
+            "effect": "Aumenta el consumo de «Estamina | Resistencia» del personaje."
         }
     ],
     "reactions": [
         {
             "key": "Burning",
-            "name": "Burning",
-            "effect": "Deals Pyro DMG over time."
+            "name": "Quemadura",
+            "effect": "Inflige daño Pyro continuo durante un tiempo."
         },
         {
             "key": "Crystalize",
-            "name": "Crystalize",
-            "effect": "Creates a crystal that will provide a shield when picked up."
+            "name": "Cristalizar",
+            "effect": "Genera fragmentos elementales correspondientes, que proporcionan escudos elementales."
         },
         {
             "key": "Electro-Charged",
-            "name": "Electro-Charged",
-            "effect": "Deals Electro DMG over time."
+            "name": "Electrocargado",
+            "effect": "Inflige daño Electro continuo durante un periodo tiempo."
         },
         {
             "key": "Frozen",
-            "name": "Frozen",
-            "effect": "Freezes the target."
+            "name": "Congelado",
+            "effect": "Congela el objetivo."
         },
         {
             "key": "Melt",
-            "name": "Melt",
-            "effect": "Deals extra damage."
+            "name": "Derretir",
+            "effect": "Inflige daño extra."
         },
         {
             "key": "Overloaded",
-            "name": "Overloaded",
-            "effect": "Deals AoE Pyro DMG."
+            "name": "Sobrecargado",
+            "effect": "Crea una explosión que inflige daño Pyro en área."
         },
         {
             "key": "Superconduct",
-            "name": "Superconduct",
-            "effect": "Deals AoE Cryo DMG and reduces the target's Physical RES by 50%."
+            "name": "Superconductor",
+            "effect": "Inflige daño Cryo en area y reduce la defensa del objetivo en un 50%"
         },
         {
             "key": "Swirl",
-            "name": "Swirl",
-            "effect": "Deals extra elemental damage and spreads the effect."
+            "name": "Torbellino",
+            "effect": "Absorbe el primer elemento con el cual entra en contacto y inflige daño extra elemental y genera mas reacciones elementales."
         },
         {
             "key": "Vaporize",
-            "name": "Vaporize",
-            "effect": "Deals extra damage."
+            "name": "Vaporizar",
+            "effect": "Inflige daño elemental adicional."
         }
     ],
     "resonance": [
         {
             "key": "Enduring Rock",
-            "name": "Enduring Rock",
-            "effect": "Increases resistance to interruption. When protected by a shield, increases Attack DMG by 15%."
+            "name": "Roca Resistente",
+            "effect": "Aumenta la RES a interrupcion. Cuando estás protegido por un Escudo, aumenta en un 15% el daño inflingido"
         },
         {
             "key": "Fervent Flames",
-            "name": "Fervent Flames",
-            "effect": "Affected by Cryo for 40% less time. Increases ATK by 25%."
+            "name": "Llamas Fervientes",
+            "effect": "Reduce la duración de efectos con Cryo en 40%. Aumenta ATQ en 25%."
         },
         {
             "key": "Soothing Waters",
-            "name": "Soothing Waters",
-            "effect": "Affected by Pyro for 40% less time. Increases incoming healing by 30%."
+            "name": "Agua Medicinal",
+            "effect": "Reduce en un 40% la duración de los efectos Pyro sobre ti. Aumenta en un 30% la curación recibida."
         },
         {
             "key": "Impetuous Winds",
-            "name": "Impetuous Winds",
-            "effect": "Decreases Stamina Consumption by 15%. Increases Movement SPD by 10%. Shortens Skill CD by 5%."
+            "name": "Vientos Impetuosos",
+            "effect": "Disminuye el Coste de Aguante en 15%. Aumenta Vel. de Movimiento en 10%. Reduce el TdE en 5%."
         },
         {
             "key": "High Voltage",
-            "name": "High Voltage",
-            "effect": "Affected by Hydro for 40% less time. Superconduct, Overloaded, and Electro-Charged have a 100% chance to generate an Electro Elemental Particle (CD: 5s)."
+            "name": "Alto Voltaje",
+            "effect": "Reduce la duración de efectos con Hydro en 40%. Superconductor, Sobrecarga y Electrocargado tienen 100% de generar una Particula Elemental Electro (TdE 5 s.)."
         },
         {
             "key": "Shattering Ice",
-            "name": "Shattering Ice",
-            "effect": "Affected by Electro for 40% less time. Increases CRIT Rate against enemies that are Frozen or affected by Cryo by 15%."
+            "name": "Hielo Fragmentado",
+            "effect": "Reduce la duración de efectos con Electro en 40%. Aumenta la Prob. CRIT contra oponentes afectados por Cryo o enemigos congelados en un 15%."
         },
         {
             "key": "Protective Canopy",
-            "name": "Protective Canopy",
-            "effect": "All Elemental RES by 15%.",
-            "description": "Any 4 Unique Elements"
+            "name": "Cubierta Protectora",
+            "effect": "Todas las RES elementales + 15%, RES Física + 15%.",
+            "description": "Cualquiera de los 4 elementos únicos"
         }
     ]
 }

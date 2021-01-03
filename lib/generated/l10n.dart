@@ -635,10 +635,10 @@ class S {
     );
   }
 
-  /// `Base Atk`
+  /// `Base ATK`
   String get baseAtk {
     return Intl.message(
-      'Base Atk',
+      'Base ATK',
       name: 'baseAtk',
       desc: '',
       args: [],
@@ -805,10 +805,10 @@ class S {
     );
   }
 
-  /// `Elemental DMG%`
+  /// `Elemental DMG %`
   String get elementalDmgPercentage {
     return Intl.message(
-      'Elemental DMG%',
+      'Elemental DMG %',
       name: 'elementalDmgPercentage',
       desc: '',
       args: [],
@@ -1605,10 +1605,10 @@ class S {
     );
   }
 
-  /// `{value} Pieces`
+  /// `{value} Piece(s)`
   String xPieces(Object value) {
     return Intl.message(
-      '$value Pieces',
+      '$value Piece(s)',
       name: 'xPieces',
       desc: '',
       args: [value],

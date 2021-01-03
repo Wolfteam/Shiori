@@ -4774,7 +4774,7 @@
         {
             "key": "Protective Canopy",
             "name": "Protective Canopy",
-            "effect": "All Elemental RES by 15%.",
+            "effect": "All Elemental RES by 15%. Physical RES + 15%",
             "description": "Any 4 Unique Elements"
         }
     ]

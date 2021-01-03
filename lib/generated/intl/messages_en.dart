@@ -51,7 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m15(value) => "Unlocked at ascention level ${value}";
 
-  static m16(value) => "${value} Pieces";
+  static m16(value) => "${value} Piece(s)";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
@@ -67,7 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ascentionMaterials" : MessageLookupByLibrary.simpleMessage("Ascention Materials"),
     "atk" : m1,
     "atkPercentage" : m2,
-    "baseAtk" : MessageLookupByLibrary.simpleMessage("Base Atk"),
+    "baseAtk" : MessageLookupByLibrary.simpleMessage("Base ATK"),
     "bonus" : MessageLookupByLibrary.simpleMessage("Bonus"),
     "bow" : MessageLookupByLibrary.simpleMessage("Bow"),
     "bpBounty" : MessageLookupByLibrary.simpleMessage("BP Bounty"),
@@ -104,7 +104,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "elementalBurst" : MessageLookupByLibrary.simpleMessage("Elemental Burst"),
     "elementalDebuffs" : MessageLookupByLibrary.simpleMessage("Elemental Debuffs"),
     "elementalDebuffsExplainded" : MessageLookupByLibrary.simpleMessage("Each of these have a different negative effect when applied to you or your enemies"),
-    "elementalDmgPercentage" : MessageLookupByLibrary.simpleMessage("Elemental DMG%"),
+    "elementalDmgPercentage" : MessageLookupByLibrary.simpleMessage("Elemental DMG %"),
     "elementalReactions" : MessageLookupByLibrary.simpleMessage("Elemental Reactions"),
     "elementalReactionsExplainded" : MessageLookupByLibrary.simpleMessage("Combinations of different elements produces different reactions"),
     "elementalResonances" : MessageLookupByLibrary.simpleMessage("Elemental Resonances"),

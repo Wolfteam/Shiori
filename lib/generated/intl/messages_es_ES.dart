@@ -21,19 +21,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m0(version) => "Versión: ${version}";
 
-  static m1(value) => "${value} ATK";
+  static m1(value) => "${value} ATQ";
 
-  static m2(value) => "${value} ATK %";
+  static m2(value) => "${value} ATQ %";
 
   static m3(value) => "Constelación ${value}";
 
-  static m4(value) => "${value} CRIT ATK";
+  static m4(value) => "${value} ATQ CRIT";
 
-  static m5(value) => "${value} CRIT DMG %";
+  static m5(value) => "${value} Daño CRIT %";
 
-  static m6(value) => "${value} CRIT Rate";
+  static m6(value) => "${value} Prob. CRIT";
 
-  static m7(value) => "${value} CRIT Rate %";
+  static m7(value) => "${value} Prob. CRIT %";
 
   static m8(value) => "${value} DEF %";
 
@@ -41,17 +41,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m10(value) => "${value} Recarga de Energía %";
 
-  static m11(value) => "${value} HP %";
+  static m11(value) => "${value} Vida %";
 
-  static m12(value) => "${value} PHYS DMG Bonus";
+  static m12(value) => "${value} Bono Daño FIS.";
 
-  static m13(value) => "${value} PHYS DMG %";
+  static m13(value) => "${value} Daño FIS. %";
 
   static m14(value) => "Talento de Ascención ${value}";
 
   static m15(value) => "Desbloqueada en nivel de ascención ${value}";
 
-  static m16(value) => "${value} Piezas";
+  static m16(value) => "${value} Pieza(s)";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
@@ -104,7 +104,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "elementalBurst" : MessageLookupByLibrary.simpleMessage("Impulso Elemental"),
     "elementalDebuffs" : MessageLookupByLibrary.simpleMessage("Debuffs Elementales"),
     "elementalDebuffsExplainded" : MessageLookupByLibrary.simpleMessage("Cada uno de estos tienen diferentes efectos negativos cuando son aplicados a tus enemigos o a ti"),
-    "elementalDmgPercentage" : MessageLookupByLibrary.simpleMessage("Elemental DMG%"),
+    "elementalDmgPercentage" : MessageLookupByLibrary.simpleMessage("Daño Elemental %"),
     "elementalReactions" : MessageLookupByLibrary.simpleMessage("Reacciones Elementales"),
     "elementalReactionsExplainded" : MessageLookupByLibrary.simpleMessage("Combinaciones de diferentes elementos producen diferentes reacciones"),
     "elementalResonances" : MessageLookupByLibrary.simpleMessage("Resonancias Elementales"),
@@ -210,6 +210,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "weaponType" : MessageLookupByLibrary.simpleMessage("Tipo de arma"),
     "weapons" : MessageLookupByLibrary.simpleMessage("Armas"),
     "wednesday" : MessageLookupByLibrary.simpleMessage("Miércoles"),
+    "wishSimulator" : MessageLookupByLibrary.simpleMessage("Simulador de Deseos"),
     "xPieces" : m16,
     "youCanAlsoSendMeAnEmail" : MessageLookupByLibrary.simpleMessage("También puedes enviarme un correo")
   };

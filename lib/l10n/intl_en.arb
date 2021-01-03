@@ -59,7 +59,7 @@
     "home": "Home",
     "map": "Map",
     "type": "Type",
-    "baseAtk": "Base Atk",
+    "baseAtk": "Base ATK",
     "secondaryState": "Secondary Stat",
     "secondaryStatValue": "Secondary Stat Value",
     "location": "Location",
@@ -76,7 +76,7 @@
     "clock": "Clock",
     "goblet": "Goblet",
     "crown": "Crown",
-    "elementalDmgPercentage": "Elemental DMG%",
+    "elementalDmgPercentage": "Elemental DMG %",
     "healingBonus": "Healing Bonus",
     "note": "Note",
     "ascentionMaterials": "Ascention Materials",
@@ -156,5 +156,5 @@
     "press": "Press",
     "short": "Short",
     "elementalAbsorption": "Elemental Absorption",
-    "xPieces": "{value} Pieces"
+    "xPieces": "{value} Piece(s)"
 }
