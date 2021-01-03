@@ -4137,259 +4137,442 @@
             "key": "Adventurer",
             "name": "Aventurero",
             "bonus": [
-                "2 Piece: Max HP increased by 1000.",
-                "4 Piece: Opening a chest regenerates 30% Max HP over 5s."
+                {
+                    "key": "b1",
+                    "bonus": "Vida Máx. +1000."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Al abrir un cofre, se regenera un 30% de Vida durante 5 s."
+                }
             ]
         },
         {
             "key": "Traveling Doctor",
-            "name": "Traveling Doctor",
+            "name": "Médica Itinerante",
             "bonus": [
-                "2 Piece: Increases incoming healing by 20%.",
-                "4 Piece: Using Elemental Burst restores 20% HP."
+                {
+                    "key": "b1",
+                    "bonus": "Curación de personaje +20%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Al lanzar una Habilidad Definitiva, restaura 20% de Vida."
+                }
             ]
         },
         {
             "key": "Lucky Dog",
-            "name": "Lucky Dog",
+            "name": "Afortunado",
             "bonus": [
-                "2 Piece: DEF increased by 100.",
-                "4 Piece: Picking up Mora restores 300 HP."
+                {
+                    "key": "b1",
+                    "bonus": "DEF +100."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Recoger Mora restaura 300 de vida."
+                }
             ]
         },
         {
             "key": "Resolution of Sojourner",
-            "name": "Resolution of Sojourner",
+            "name": "Corazón del Viajero",
             "bonus": [
-                "2 Piece: ATK +18%.",
-                "4 Piece: Increases Charged Attack CRIT Rate by 30%."
+                {
+                    "key": "b1",
+                    "bonus": "ATQ +18%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Incrementa la Tasa Crítica del Ataque Cargado un 30%."
+                }
             ]
         },
         {
             "key": "Tiny Miracle",
-            "name": "Tiny Miracle",
+            "name": "Milagro",
             "bonus": [
-                "2 Piece: All Elemental RES increased by 20%.",
-                "4 Piece: Incoming elemental DMG increases corresponding Elemental RES by 30% for 10s. Can only occur once every 10s."
+                {
+                    "key": "b1",
+                    "bonus": "Todas las Resistencias Elementales aumentan un 20%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "El Daño Elemental recibido incrementa la Resistencia Elemental correspondiente un 30% por 10s. Sólo puede ocurrir una vez cada 10s."
+                }
             ]
         },
         {
             "key": "Brave Heart",
-            "name": "Brave Heart",
+            "name": "Corazón del Guerrero",
             "bonus": [
-                "2 Piece: ATK +18%.",
-                "4 Piece: Increases DMG by 30% against enemies with more than 50% HP."
+                {
+                    "key": "b1",
+                    "bonus": "ATQ +18%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Incrementa el Daño un 30% contra enemigos con más de 50% de Vida."
+                }
             ]
         },
         {
             "key": "Defender’s Will",
-            "name": "Defender’s Will",
+            "name": "Corazón del Guardián",
             "bonus": [
-                "2 Piece: DEF +30%",
-                "4 Piece: For each different element present in your own party, the wearer’s Elemental RES to that corresponding element is increased by 30%."
+                {
+                    "key": "b1",
+                    "bonus": "DEF +30%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Incrementa la Resistencia Elemental un 30% por cada elemento presente junto al personaje en el equipo"
+                }
             ]
         },
         {
             "key": "Martial Artist",
-            "name": "Martial Artist",
+            "name": "Artista Marcial",
             "bonus": [
-                "2 Piece: Increases Normal Attack and Charged Attack DMG by 15%.",
-                "4 Piece: After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 25% for 8s."
+                {
+                    "key": "b1",
+                    "bonus": "Incrementa el daño del ataque normal y cargado un 15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Después de usar una habilidad elemental, incrementa el daño del ataque normal y cargado un 25% durante 8s."
+                }
             ]
         },
         {
             "key": "Gambler",
-            "name": "Gambler",
+            "name": "Jugadora",
             "bonus": [
-                "2 Piece: Increases Elemental Skill DMG by 20%.",
-                "4 Piece: Defeating an enemy has a 100% chance to remove Elemental Skill CD. Can only occur once every 15s."
+                {
+                    "key": "b1",
+                    "bonus": "Incrementa el daño de la habilidad elemental un 20%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Derrotar a un enemigo tiene un 100% de probabilidad de remover el tiempo de reutilización de la habilidad elemental. Sólo puede ocurrir una vez cada 15s."
+                }
             ]
         },
         {
             "key": "Scholar",
-            "name": "Scholar",
+            "name": "Erudita",
             "bonus": [
-                "2 Piece: Energy Recharge +20%",
-                "4 Piece: Gaining Elemental Particles or Orbs gives 3 Energy to all party members who have a bow or a catalyst equipped. Can only occur once every 3s."
+                {
+                    "key": "b1",
+                    "bonus": "Recarga de Energía +20%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Ganar energía da 3 de energía a todos los miembros del equipo que tienen un arco o catalizador equipado. Sólo puede ocurrir una vez cada 3s."
+                }
             ]
         },
         {
             "key": "Berserker",
             "name": "Berserker",
             "bonus": [
-                "2 Piece: CRIT Rate +12%",
-                "4 Piece: When HP is below 70%, CRIT Rate increases by an additional 24%."
+                {
+                    "key": "b1",
+                    "bonus": "Tasa Crítica +12%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Cuando la Vida está debajo del 70%, la Tasa Crítica incrementa un 24%."
+                }
             ]
         },
         {
             "key": "Instructor",
             "name": "Instructor",
             "bonus": [
-                "2 Piece: Increases Elemental Mastery by 80.",
-                "4 Piece: Upon triggering an Elemental Reaction, increases all party members’ Elemental Mastery by 120 for 8s."
+                {
+                    "key": "b1",
+                    "bonus": "Incrementa la Maestría Elemental en 80."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Después de usar una habilidad elemental, incrementa la Maestría Elemental de todos los miembros del equipo en 120 durante 8s."
+                }
             ]
         },
         {
             "key": "The Exile",
-            "name": "The Exile",
+            "name": "Exiliado",
             "bonus": [
-                "2 Piece: Energy Recharge +20%",
-                "4 Piece: Using an Elemental Burst regenerates 2 Energy for all party members (excluding the wearer) every 2s for 6s. This effect cannot stack."
+                {
+                    "key": "b1",
+                    "bonus": "Recarga de Energía +20%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Usar una habilidad elemental regenera 2 de energía para todos los miembros del equipo (excepto el portador) cada 2s durante 6s. Este efecto no se acumula."
+                }
             ]
         },
         {
             "key": "Thundering Fury",
-            "name": "Thundering Fury",
+            "name": "Furia del Trueno",
             "bonus": [
-                "2 Piece: Electro DMG Bonus +15%",
-                "4 Piece: Increases damage caused by Overloaded, Electro-Charged and Superconduct by 40%. Triggering such effects decreases Elemental Skill CD by 1s. Can only occur once every 0.8s."
+                {
+                    "key": "b1",
+                    "bonus": "Bonificación de daño Electro +15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Aumenta el daño causado por reacciones elementales que involucran al elementl Electro un 40%. Activar tales efectos disminuye el tiempo de reutilización de la habilidad elemental por 1s. Sólo puede ocurrir una vez cada 0.8s."
+                }
             ]
         },
         {
             "key": "Thundersoother",
-            "name": "Thundersoother",
+            "name": "Domador de Truenos",
             "bonus": [
-                "2 Piece: Electro RES increased by 40%.",
-                "4 Piece: Increases DMG against enemies affected by Electro by 35%."
+                {
+                    "key": "b1",
+                    "bonus": "Aumenta la RES Electro un 40%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Aumenta el daño contra enemigos afectados por Electro un 35%."
+                }
             ]
         },
         {
             "key": "Viridescent Venerer",
-            "name": "Viridescent Venerer",
+            "name": "Sombra Verde Esmeralda",
             "bonus": [
-                "2 Piece: Anemo DMG Bonus +15%.",
-                "4 Piece: Increases Swirl DMG by 60%. Decreases opponent’s Elemental RES to the element infused in the Swirl by 40% for 10s."
+                {
+                    "key": "b1",
+                    "bonus": "Bonificación de daño Anemo +15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Incrementa el daño por remolino un 60%. Reduce al oponente la Resistencia Elemental del elemento del remolino un 40% durante 10s."
+                }
             ]
         },
         {
             "key": "Maiden Beloved",
-            "name": "Maiden Beloved",
+            "name": "Doncella Amada",
             "bonus": [
-                "2 Piece: Character Healing Effectiveness +15%",
-                "4 Piece: Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s."
+                {
+                    "key": "b1",
+                    "bonus": "Efectividad de la Curación del personaje +15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Usar una habilidad elemental o habilidad definitiva incrementa la curación recibida por todos los miembros del equipo un 20% durante 10s."
+                }
             ]
         },
         {
             "key": "Archaic Petra",
-            "name": "Archaic Petra",
+            "name": "Petra Arcaica",
             "bonus": [
-                "2 Piece: Gain a 15% Geo DMG Bonus.",
-                "4 Piece: Upon obtaining an Elemental Shard created through a Crystallize Reaction, all party members gain a 35% DMG Bonus for that particular element for 10s. Only one form of Elemental DMG Bonus can be gained in this manner at any one time."
+                {
+                    "key": "b1",
+                    "bonus": "Bonificación de daño Geo +15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Al obtener un fragmento elemental creado a partir de una reacción de cristalización, todos los miembros del equipo ganan 35% de daño a ese elemento en particular durante 10s. Sólo puede tenerse una bonificación de daño a un elemento obtenida de esta manera a la vez."
+                }
             ]
         },
         {
             "key": "Retracing Bolide",
-            "name": "Retracing Bolide",
+            "name": "Retroceso del Meteorito",
             "bonus": [
-                "2 Piece: Increases Shield Strength by 35%.",
-                "4 Piece: While protected by a shield, gain an additional 40% Normal and Charged Attack DMG."
+                {
+                    "key": "b1",
+                    "bonus": "Aumenta la fuerza del escudo un 35%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Al estar protegido por un escudo, gana 40% de daño para el ataque normal y cargado."
+                }
             ]
         },
         {
             "key": "Crimson Witch of Flames",
-            "name": "Crimson Witch of Flames",
+            "name": "Bruja Carmesí en Llamas",
             "bonus": [
-                "2 Piece: Pyro DMG Bonus +15%.",
-                "4 Piece: Increases Overloaded and Burning DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using an Elemental Skill increases 2-Piece Set effects by 50% for 10s. Max 3 stacks."
+                {
+                    "key": "b1",
+                    "bonus": "Bonificación de daño Pyro +15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Aumenta el daño de Sobrecargado y En llamas un 40%. Aumenta el daño de Vaporizar y Derretir un 15%. Usar una habilidad elemental potencia los efectos de conjuntos de 2 piezas un 50% durante 10s. Se puede acumular hasta 3 veces."
+                }
             ]
         },
         {
             "key": "Lavawalker",
-            "name": "Lavawalker",
+            "name": "Virtuoso Corredor de Lava",
             "bonus": [
-                "2 Piece: Pyro RES increased by 40%.",
-                "4 Piece: Increases DMG against enemies affected by Pyro by 35%."
+                {
+                    "key": "b1",
+                    "bonus": "Aumenta la Resistencia Pyro un 40%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Aumenta el daño contra enemigos afectados por Pyro un 35%."
+                }
             ]
         },
         {
             "key": "Bloodstained Chivalry",
-            "name": "Bloodstained Chivalry",
+            "name": "Caballería Sanguinaria",
             "bonus": [
-                "2 Piece: Physical DMG +25%",
-                "4 Piece: After defeating an opponent, increases Charged Attack DMG by 50%, and reduces its Stamina cost to 0 for 10s."
+                {
+                    "key": "b1",
+                    "bonus": "Daño físico +25%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Tras derrotar a un oponente, aumenta el daño del ataque cargado un 50% y reduce su costo a 0 durante 10s."
+                }
             ]
         },
         {
             "key": "Noblesse Oblige",
-            "name": "Noblesse Oblige",
+            "name": "Ritual Antiguo de la Nobleza",
             "bonus": [
-                "2 Piece: Elemental Burst DMG +20%",
-                "4 Piece: Using an Elemental Burst increases all party members’ ATK by 20% for 12s. This effect cannot stack."
+                {
+                    "key": "b1",
+                    "bonus": "Daño de la habilidad definitiva +20%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Usar una habilidad definitiva aumenta el ataque de los miembros del equipo un 20% durante 12s. Este efecto no es acumulable."
+                }
             ]
         },
         {
             "key": "Gladiator’s Finale",
-            "name": "Gladiator’s Finale",
+            "name": "Final del Gladiador",
             "bonus": [
-                "2 Piece: ATK +18%.",
-                "4 Piece: If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%."
+                {
+                    "key": "b1",
+                    "bonus": "ATQ +18%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Si el portador usa una espada, mandoble o lanza, incrementa el daño de su ataque normal un 35%."
+                }
             ]
         },
         {
             "key": "Wanderer’s Troupe",
-            "name": "Wanderer’s Troupe",
+            "name": "Orquesta del Errante",
             "bonus": [
-                "2 Piece: Increases Elemental Mastery by 80.",
-                "4 Piece: Increases Charged Attack DMG by 35% if the character uses a Catalyst or a Bow."
+                {
+                    "key": "b1",
+                    "bonus": "Maestría Elemental +80."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Aumenta el daño del ataque cargado un 35% si el personaje usa un catalizador o arco."
+                }
             ]
         },
         {
             "key": "Prayers for Illumination",
-            "name": "Prayers for Illumination",
+            "name": "Ritual de la Iluminación",
             "bonus": [
-                "1 Piece bonus: Affected by Pyro for 40% less time."
+                {
+                    "key": "b1",
+                    "bonus": "Reduce el tiempo afectado por Pyro un 40%."
+                }
             ]
         },
         {
             "key": "Prayers for Destiny",
-            "name": "Prayers for Destiny",
+            "name": "Ritual del Destino",
             "bonus": [
-                "1 Piece bonus: Affected by Hydro for 40% less time."
+                {
+                    "key": "b1",
+                    "bonus": "Reduce el tiempo afectado por Hydro un 40%."
+                }
             ]
         },
         {
             "key": "Prayers for Wisdom",
-            "name": "Prayers for Wisdom",
+            "name": "Ritual de la Sabiduría",
             "bonus": [
-                "1 Piece bonus: Affected by Electro for 40% less time."
+                {
+                    "key": "b1",
+                    "bonus": "Reduce el tiempo afectado por Electro un 40%."
+                }
             ]
         },
         {
             "key": "Prayers to Springtime",
-            "name": "Prayers to Springtime",
+            "name": "Ritual de la Primavera",
             "bonus": [
-                "1 Piece bonus: Affected by Cryo for 40% less time."
+                {
+                    "key": "b1",
+                    "bonus": "Reduce el tiempo afectado por Cryo un 40%."
+                }
             ]
         },
         {
             "key": "Blizzard Strayer",
-            "name": "Blizzard Strayer",
+            "name": "Orgullo del Invierno",
             "bonus": [
-                "2 Piece: Cryo DMG Bonus +15%",
-                "4 Piece: When a character attacks an enemy affected by Cryo, their CRIT Rate is increased by 20%. If the enemy is Frozen, CRIT Rate is increased by an additional 20%."
+                {
+                    "key": "b1",
+                    "bonus": "Bono de Daño Cryo +15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Aumenta en un 20% la Prob. CRIT contra los enemigos afectados por Cryo. Si el enemigo está Congelado, la Prob. CRIT aumentará en un 20% adicional."
+                }
             ]
         },
         {
             "key": "Heart of Depth",
-            "name": "Heart of Depth",
+            "name": "Corazon de las Profundidades",
             "bonus": [
-                "2 Piece: Hydro DMG Bonus +15%",
-                "4 Piece: After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 30% for 15s."
+                {
+                    "key": "b1",
+                    "bonus": "Bono de Daño Hydro +15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Tras usar la Habilidad Elemental, aumenta el Daño de Ataque Normal y Ataque Cargado en un 30% durante 15s."
+                }
             ]
         },
         {
             "key": "Glacier and Snowfield",
             "name": "Glacier and Snowfield",
             "bonus": [
-                "2 Piece: Cryo DMG Bonus +15%",
-                "4 Piece: Increases Superconduct DMG by 100%. Increases Melt DMG by 15%. Using an Elemental Burst increases Cryo DMG Bonus by 30% for 10s."
+                {
+                    "key": "b1",
+                    "bonus": "Cryo DMG Bonus +15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Increases Superconduct DMG by 100%. Increases Melt DMG by 15%. Using an Elemental Burst increases Cryo DMG Bonus by 30% for 10s."
+                }
             ]
         },
         {
             "key": "Prayers to the Firmament",
-            "name": "Prayers to the Firmament",
+            "name": "Ritual del Firmamento",
             "bonus": [
-                "1 Piece bonus: Affected by Anemo for 40% less time."
+                {
+                    "key": "b1",
+                    "bonus": "Reduce el tiempo afectado por Anemo un 40%."
+                }
             ]
         }
     ],

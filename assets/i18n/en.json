@@ -4167,11 +4167,11 @@
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "2 Piece: DEF increased by 100."
+                    "bonus": "DEF increased by 100."
                 },
                 {
                     "key": "b2",
-                    "bonus": "4 Piece: Picking up Mora restores 300 HP."
+                    "bonus": "Picking up Mora restores 300 HP."
                 }
             ]
         },
