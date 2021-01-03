@@ -148,11 +148,11 @@
     "utility": "Utilidad",
     "normalAttack": "Ataque Normal",
     "elementalSkill": "Habilidad Elemental",
-    "elementalBurst": "Ráfaga Elemental",
+    "elementalBurst": "Impulso Elemental",
     "chargedAttack": "Ataque Cargado",
-    "plungingAttack": "Ataque en Picada",
+    "plungingAttack": "Ataque Descendiente",
     "hold": "Mantener",
     "press": "Presionar",
     "short": "Corto",
-    "elementalAbsorption": "Absorción Elemental"
+    "elementalAbsorption": "Cambio Elemental"
 }

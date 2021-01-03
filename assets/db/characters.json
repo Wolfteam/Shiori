@@ -11085,7 +11085,13 @@
                 {
                     "key": "s3",
                     "image": "forbidden_creation_isomer_75.png",
-                    "type": "elementalBurst"
+                    "type": "elementalBurst",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "elementalAbsorption"
+                        }
+                    ]
                 }
             ],
             "passives": [
