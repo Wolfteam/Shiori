@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../common/assets.dart';
+import '../../../common/enums/character_skill_ability_type.dart';
 import '../../../common/enums/character_skill_type.dart';
 import '../../../common/enums/character_type.dart';
 import '../../../common/enums/element_type.dart';
@@ -14,7 +15,7 @@ part 'character_file_model.g.dart';
 @freezed
 abstract class CharacterFileModel implements _$CharacterFileModel {
   factory CharacterFileModel({
-    @required String name,
+    @required String key,
     @required int rarity,
     @required WeaponType weaponType,
     @required ElementType elementType,
@@ -134,11 +135,25 @@ abstract class CharacterFileSkillModel implements _$CharacterFileSkillModel {
     @required String key,
     @required CharacterSkillType type,
     @required String image,
+    List<CharacterFileSkillAbilityModel> abilities,
   }) = _CharacterFileSkillModel;
 
   CharacterFileSkillModel._();
 
   factory CharacterFileSkillModel.fromJson(Map<String, dynamic> json) => _$CharacterFileSkillModelFromJson(json);
+}
+
+@freezed
+abstract class CharacterFileSkillAbilityModel implements _$CharacterFileSkillAbilityModel {
+  factory CharacterFileSkillAbilityModel({
+    @required String key,
+    @required CharacterSkillAbilityType type,
+  }) = _CharacterFileSkillAbilityModel;
+
+  CharacterFileSkillAbilityModel._();
+
+  factory CharacterFileSkillAbilityModel.fromJson(Map<String, dynamic> json) =>
+      _$CharacterFileSkillAbilityModelFromJson(json);
 }
 
 @freezed

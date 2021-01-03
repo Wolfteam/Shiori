@@ -25,14 +25,14 @@ class ArtifactDetailsBloc extends Bloc<ArtifactDetailsEvent, ArtifactDetailsStat
 
     final s = await event.map(
       loadArtifact: (e) async {
-        await trackArtifactLoaded(e.name);
-        final artifact = _genshinService.getArtifact(e.name);
-        final translation = _genshinService.getArtifactTranslation(e.name);
+        await trackArtifactLoaded(e.key);
+        final artifact = _genshinService.getArtifact(e.key);
+        final translation = _genshinService.getArtifactTranslation(e.key);
         var image = artifact.image.split('.png').first;
         image = image.substring(0, image.length - 1);
 
         return ArtifactDetailsState.loaded(
-          name: artifact.name,
+          name: translation.name,
           image: artifact.fullImagePath,
           rarityMin: artifact.rarityMin,
           rarityMax: artifact.rarityMax,

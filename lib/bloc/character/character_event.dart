@@ -3,7 +3,7 @@ part of 'character_bloc.dart';
 @freezed
 abstract class CharacterEvent with _$CharacterEvent {
   const factory CharacterEvent.loadFromName({
-    @required String name,
+    @required String key,
   }) = _LoadCharacterFroName;
 
   const factory CharacterEvent.loadFromImg({

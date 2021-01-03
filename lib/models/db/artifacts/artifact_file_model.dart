@@ -11,7 +11,7 @@ abstract class ArtifactFileModel implements _$ArtifactFileModel {
   String get fullImagePath => Assets.getArtifactPath(image);
 
   factory ArtifactFileModel({
-    @required String name,
+    @required String key,
     @required String image,
     @required int rarityMin,
     @required int rarityMax,

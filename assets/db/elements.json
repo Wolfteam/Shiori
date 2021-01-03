@@ -1,25 +1,25 @@
 {
     "debuffs": [
         {
-            "name": "Engulfing Storm",
+            "key": "Engulfing Storm",
             "image": "electro.png"
         },
         {
-            "name": "Slowing Water",
+            "key": "Slowing Water",
             "image": "hydro.png"
         },
         {
-            "name": "Smoldering Flames",
+            "key": "Smoldering Flames",
             "image": "pyro.png"
         },
         {
-            "name": "Condensed Ice",
+            "key": "Condensed Ice",
             "image": "cryo.png"
         }
     ],
     "reactions": [
         {
-            "name": "Burning",
+            "key": "Burning",
             "principal": [
                 "dendro.png"
             ],
@@ -28,7 +28,7 @@
             ]
         },
         {
-            "name": "Crystalize",
+            "key": "Crystalize",
             "principal": [
                 "geo.png"
             ],
@@ -40,7 +40,7 @@
             ]
         },
         {
-            "name": "Electro-Charged",
+            "key": "Electro-Charged",
             "principal": [
                 "electro.png"
             ],
@@ -49,7 +49,7 @@
             ]
         },
         {
-            "name": "Frozen",
+            "key": "Frozen",
             "principal": [
                 "cryo.png"
             ],
@@ -58,7 +58,7 @@
             ]
         },
         {
-            "name": "Melt",
+            "key": "Melt",
             "principal": [
                 "cryo.png"
             ],
@@ -67,7 +67,7 @@
             ]
         },
         {
-            "name": "Overloaded",
+            "key": "Overloaded",
             "principal": [
                 "electro.png"
             ],
@@ -76,7 +76,7 @@
             ]
         },
         {
-            "name": "Superconduct",
+            "key": "Superconduct",
             "principal": [
                 "cryo.png"
             ],
@@ -85,7 +85,7 @@
             ]
         },
         {
-            "name": "Swirl",
+            "key": "Swirl",
             "principal": [
                 "anemo.png"
             ],
@@ -97,7 +97,7 @@
             ]
         },
         {
-            "name": "Vaporize",
+            "key": "Vaporize",
             "principal": [
                 "hydro.png"
             ],
@@ -108,7 +108,7 @@
     ],
     "resonance": [
         {
-            "name": "Enduring Rock",
+            "key": "Enduring Rock",
             "principal": [
                 "geo.png"
             ],
@@ -117,7 +117,7 @@
             ]
         },
         {
-            "name": "Fervent Flames",
+            "key": "Fervent Flames",
             "principal": [
                 "pyro.png"
             ],
@@ -126,7 +126,7 @@
             ]
         },
         {
-            "name": "Soothing Waters",
+            "key": "Soothing Waters",
             "principal": [
                 "hydro.png"
             ],
@@ -135,7 +135,7 @@
             ]
         },
         {
-            "name": "Impetuous Winds",
+            "key": "Impetuous Winds",
             "principal": [
                 "anemo.png"
             ],
@@ -144,7 +144,7 @@
             ]
         },
         {
-            "name": "High Voltage",
+            "key": "High Voltage",
             "principal": [
                 "electro.png"
             ],
@@ -153,7 +153,7 @@
             ]
         },
         {
-            "name": "Shattering Ice",
+            "key": "Shattering Ice",
             "principal": [
                 "cryo.png"
             ],
@@ -162,7 +162,7 @@
             ]
         },
         {
-            "name": "Protective Canopy",
+            "key": "Protective Canopy",
             "principal": [],
             "secondary": []
         }

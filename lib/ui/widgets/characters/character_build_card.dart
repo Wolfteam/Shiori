@@ -71,6 +71,7 @@ class CharacterBuildCard extends StatelessWidget {
     for (var i = 0; i < weapons.length; i++) {
       final weapon = weapons[i];
       final child = WeaponCard.withoutDetails(
+        keyName: weapon.key,
         name: weapon.name,
         rarity: weapon.rarity,
         image: weapon.image,

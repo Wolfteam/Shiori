@@ -1,3 +1,5 @@
+import 'package:genshindb/common/enums/character_skill_ability_type.dart';
+
 import '../../common/enums/app_language_type.dart';
 import '../../common/enums/app_theme_type.dart';
 import '../../common/enums/artifact_filter_type.dart';
@@ -256,7 +258,28 @@ extension I18nExtensions on S {
       case CharacterSkillType.others:
         return others;
       default:
-        throw Exception('Invalid character type = $type');
+        throw Exception('Invalid character skill type = $type');
+    }
+  }
+
+  String translateCharacterSkillAbilityType(CharacterSkillAbilityType type) {
+    switch (type) {
+      case CharacterSkillAbilityType.normalAttack:
+        return normalAttack;
+      case CharacterSkillAbilityType.chargedAttack:
+        return chargedAttack;
+      case CharacterSkillAbilityType.plungingAttack:
+        return plungingAttack;
+      case CharacterSkillAbilityType.hold:
+        return hold;
+      case CharacterSkillAbilityType.holdShort:
+        return '$hold ($short)';
+      case CharacterSkillAbilityType.press:
+        return press;
+      case CharacterSkillAbilityType.elementalAbsorption:
+        return elementalAbsorption;
+      default:
+        throw Exception('Invalid character skill ability type = $type');
     }
   }
 }

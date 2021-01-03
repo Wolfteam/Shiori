@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:genshindb/common/enums/character_skill_ability_type.dart';
 
 import '../../common/assets.dart';
 import '../../common/enums/character_type.dart';
@@ -35,7 +36,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
       loadFromImg: (img) async {
         await trackCharacterLoaded(img, loadedFromName: false);
         final char = _genshinService.getCharacterByImg(img);
-        final translation = _genshinService.getCharacterTranslation(char.name);
+        final translation = _genshinService.getCharacterTranslation(char.key);
         return _buildInitialState(char, translation);
       },
     );
@@ -43,30 +44,34 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
     yield s;
   }
 
-  CharacterState _buildInitialState(CharacterFileModel char, TranslationCharacterFile translations) {
+  CharacterState _buildInitialState(CharacterFileModel char, TranslationCharacterFile translation) {
     return CharacterState.loaded(
-      name: char.name,
+      name: translation.name,
       region: char.region,
       role: char.role,
       isFemale: char.isFemale,
       fullImage: Assets.getCharacterFullPath(char.fullImage),
       secondFullImage: char.secondFullImage != null ? Assets.getCharacterFullPath(char.secondFullImage) : null,
-      description: translations.description,
+      description: translation.description,
       rarity: char.rarity,
       elementType: char.elementType,
       weaponType: char.weaponType,
       ascentionMaterials: char.ascentionMaterials,
       talentAscentionsMaterials: char.talentAscentionMaterials,
-      skills: translations.skills.map((e) {
-        final abilities = e.abilities
-            .map((a) => CharacterSkillAbilityModel(
-                  name: a.name,
-                  description: a.description,
-                  descriptions: a.descriptions,
-                  secondDescription: a.secondDescription,
-                ))
-            .toList();
+      skills: translation.skills.map((e) {
         final skill = char.skills.firstWhere((s) => s.key == e.key);
+        final abilities = e.abilities.map((a) {
+          final type = skill.abilities != null && skill.abilities.any((x) => x.key == a.key)
+              ? skill.abilities.firstWhere((x) => x.key == a.key).type
+              : null;
+          return CharacterSkillAbilityModel(
+            type: type,
+            name: a.name,
+            description: a.description,
+            descriptions: a.descriptions,
+            secondDescription: a.secondDescription,
+          );
+        }).toList();
         return CharacterSkillCardModel(
           image: skill.fullImagePath,
           title: e.title,
@@ -75,7 +80,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
           description: e.description,
         );
       }).toList(),
-      passives: translations.passives.map((e) {
+      passives: translation.passives.map((e) {
         final passive = char.passives.firstWhere((p) => p.key == e.key);
         return CharacterPassiveTalentModel(
           unlockedAt: passive.unlockedAt,
@@ -85,7 +90,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
           descriptions: e.descriptions,
         );
       }).toList(),
-      constellations: translations.constellations.map((e) {
+      constellations: translation.constellations.map((e) {
         final constellation = char.constellations.firstWhere((c) => c.key == e.key);
         return CharacterConstellationModel(
           number: constellation.number,

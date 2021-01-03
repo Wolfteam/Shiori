@@ -149,5 +149,11 @@
     "utility": "Utility",
     "normalAttack": "Normal Attack",
     "elementalSkill": "Elemental Skill",
-    "elementalBurst": "Elemental Burst"
+    "elementalBurst": "Elemental Burst",
+    "chargedAttack": "Charged Attack",
+    "plungingAttack": "Plunging Attack",
+    "hold": "Hold",
+    "press": "Press",
+    "short": "Short",
+    "elementalAbsorption": "Elemental Absorption"
 }

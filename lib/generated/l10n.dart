@@ -1544,6 +1544,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Charged Attack`
+  String get chargedAttack {
+    return Intl.message(
+      'Charged Attack',
+      name: 'chargedAttack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Plunging Attack`
+  String get plungingAttack {
+    return Intl.message(
+      'Plunging Attack',
+      name: 'plungingAttack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hold`
+  String get hold {
+    return Intl.message(
+      'Hold',
+      name: 'hold',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Press`
+  String get press {
+    return Intl.message(
+      'Press',
+      name: 'press',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Short`
+  String get short {
+    return Intl.message(
+      'Short',
+      name: 'short',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Elemental Absorption`
+  String get elementalAbsorption {
+    return Intl.message(
+      'Elemental Absorption',
+      name: 'elementalAbsorption',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

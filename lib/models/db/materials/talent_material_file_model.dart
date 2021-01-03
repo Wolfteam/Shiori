@@ -12,7 +12,7 @@ abstract class TalentMaterialFileModel implements _$TalentMaterialFileModel {
   String get fullImagePath => Assets.getMaterialPath(image, type);
 
   factory TalentMaterialFileModel({
-    @required String name,
+    @required String key,
     @required String image,
     @required bool isFromBoss,
     @required bool isForCharacters,

@@ -11,7 +11,7 @@ abstract class ElementDebuffFileModel implements _$ElementDebuffFileModel {
   String get fullImagePath => Assets.getElementPath(image);
 
   factory ElementDebuffFileModel({
-    @required String name,
+    @required String key,
     @required String image,
   }) = _ElementDebuffFileModel;
 

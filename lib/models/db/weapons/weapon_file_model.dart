@@ -15,7 +15,7 @@ abstract class WeaponFileModel implements _$WeaponFileModel {
   String get fullImagePath => Assets.getWeaponPath(image, type);
 
   factory WeaponFileModel({
-    @required String name,
+    @required String key,
     @required String image,
     @required WeaponType type,
     @required int atk,

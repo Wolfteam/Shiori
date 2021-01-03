@@ -55,6 +55,7 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
         itemBuilder: (ctx, index) {
           final char = characters[index];
           return CharacterCard(
+            keyName: char.key,
             elementType: char.elementType,
             isComingSoon: char.isComingSoon,
             isNew: char.isNew,

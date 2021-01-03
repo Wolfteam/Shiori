@@ -2,6 +2,7 @@
     "characters": [
         {
             "key": "Albedo",
+            "name": "Albedo",
             "description": "A genius known as the Kreideprinz, he is the Chief Alchemist and Captain of the Investigation Team of the Knights of Favonius.",
             "skills": [
                 {
@@ -10,17 +11,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Perform up to 5 rapid strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -42,7 +43,7 @@
                             ]
                         },
                         {
-                            "name": "Hold",
+                            "key": "a2",
                             "description": "Hold to designate the location of the skill.",
                             "descriptions": []
                         }
@@ -125,6 +126,7 @@
         },
         {
             "key": "Amber",
+            "name": "Amber",
             "description": "Always energetic and full of life, Amber’s the best - albeit only - Outrider of the Knights of Favonius.",
             "skills": [
                 {
@@ -133,17 +135,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 5 consecutive shots with a bow.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, flames accumulates on the arrowhead. A fully charged flaming arrow will deal Pyro DMG.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -164,7 +166,7 @@
                             ]
                         },
                         {
-                            "name": "Hold",
+                            "key": "a2",
                             "description": "Adjusts the throwing direction of Baron Bunny.The longer the button is held, the further the throw.",
                             "descriptions": []
                         }
@@ -245,6 +247,7 @@
         {
             "key": "Ayaka",
             "pending": true,
+            "name": "Ayaka",
             "description": "The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated beast, flows within her veins.",
             "skills": [],
             "passives": [],
@@ -252,6 +255,7 @@
         },
         {
             "key": "Barbara",
+            "name": "Barbara",
             "description": "Every denizen of Mondstadt adores Barbara. However, she learned the word \"idol\" from a magazine.",
             "skills": [
                 {
@@ -260,17 +264,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Perform up to 4 water splashes attacks that deal Hydro DMG.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina to deal AoE Hydro DMG after a short casting time.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Gathering the might of Hydro, Barbara plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Hydro DMG upon impact with the ground.",
                             "descriptions": []
                         }
@@ -370,6 +374,7 @@
         },
         {
             "key": "Beidou",
+            "name": "Beidou",
             "description": "Beidou is the leader of the Crux — an armed fleet based in Liyue Harbor. An armed fleet means exactly what it sounds like: a fleet of ships armed to the teeth.",
             "skills": [
                 {
@@ -378,17 +383,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 5 successive strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Drains Stamina over time to perform continuous slashes. At end of the sequence, perform a more powerful slash.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -400,12 +405,12 @@
                     "description": "Nothing to worry about. Should anyone raise a hand against her or her men, she will avenge it ten-fold with sword and thunder.",
                     "abilities": [
                         {
-                            "name": "Press",
+                            "key": "a1",
                             "description": "Accumulating the power of lightning, Beidou swings her blade forward fiercely, dealing Electro DMG.",
                             "descriptions": []
                         },
                         {
-                            "name": "Hold",
+                            "key": "a2",
                             "description": "Lifts her weapon up as a shield. Max DMG absorbed scales off Beidou’s Max HP. Attacks using the energy stored within the greatsword upon release or once this ability’s duration expires, dealing Electro DMG. DMG dealt scales with the number of times Beidou is attacked in the skill’s duration. The greatest DMG Bonus will be attained once this effect is triggered twice. The shield possesses the following properties:",
                             "descriptions": [
                                 "Has 250% Electro DMG Absorption Efficiency.",
@@ -504,6 +509,7 @@
         },
         {
             "key": "Bennett",
+            "name": "Bennett",
             "description": "A righteous and good-natured adventurer from Mondstadt who’s unfortunately extremely unlucky.",
             "skills": [
                 {
@@ -512,17 +518,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Perform up to 5 rapid strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword swings.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -534,12 +540,12 @@
                     "description": "Bennett puts all his fire and passion for adventuring into his sword. Results may vary based on how fired up he is.",
                     "abilities": [
                         {
-                            "name": "Press",
+                            "key": "a1",
                             "description": "A single, swift flame strike that deals Pyro DMG.",
                             "descriptions": []
                         },
                         {
-                            "name": "Hold (Short)",
+                            "key": "a2",
                             "description": "Charges up, resulting in different effects when unleashed based on the Charge Level.",
                             "secondDescription": "Bennett takes no damage from being launched.",
                             "descriptions": [
@@ -636,6 +642,7 @@
         },
         {
             "key": "Chongyun",
+            "name": "Chongyun",
             "description": "A young exortcist from a family of exorcists. He does everything he can to suppress his pure positive energy.",
             "skills": [
                 {
@@ -644,17 +651,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 4 consecutive strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Drains Stamina over time to perform continuous swirling attacks against all nearby enemies. At end of the sequence, perform a more powerful slash.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -740,6 +747,7 @@
         },
         {
             "key": "Diluc",
+            "name": "Diluc",
             "description": "The tycoon of a winery empire in Mondstadt, unmatched in every possible way.",
             "skills": [
                 {
@@ -748,17 +756,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 4 consecutive strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Drains Stamina over time to perform continuous slashes. At the end of the sequence, perform a more powerful slash.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -844,6 +852,7 @@
         },
         {
             "key": "Diona",
+            "name": "Diona",
             "description": "A young lady who has inherited trace amounts of non-human blood. She is the incredible popular bartender of the Cat’s Tail tavern.",
             "skills": [
                 {
@@ -852,17 +861,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 5 consecutive shots with a bow.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, biting frost accumulates on the arrowhead. A fully charged frost arrow will deal Cryo DMG.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -971,6 +980,7 @@
         },
         {
             "key": "Fischl",
+            "name": "Fischl",
             "description": "A mysterious girl who calls herself \"Prinzessia der Verurteilung\" and travels with a night raven named Oz.",
             "skills": [
                 {
@@ -979,17 +989,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 5 consecutive shots with a bow.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, the dark lightning spirits of Immernachtreich shall heed the call of their Prinzessin and indwell the enchanted arrowhead. When fully indwelt, the Rachsuchtig Blitz shall deal immense Electro DMG.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -1086,6 +1096,7 @@
         {
             "key": "Ganyu",
             "pending": true,
+            "name": "Ganyu",
             "description": "The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated beast, flows within her veins.",
             "skills": [],
             "passives": [],
@@ -1093,6 +1104,7 @@
         },
         {
             "key": "Jean",
+            "name": "Jean",
             "description": "The righteous and rigorous Dandelion Knight, and Acting Grand Master of the Knights of Favonius in Mondstadt.",
             "skills": [
                 {
@@ -1101,17 +1113,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 5 consecutive strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina to launch an enemy using the power of wind. Launched enemies will slowly fall to the ground.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -1123,7 +1135,7 @@
                     "description": "Focusing the might of the formless wind around her blade, Jean releases a miniature storm, launching enemies in the direction she aims at, dealing massive Anemo DMG.",
                     "abilities": [
                         {
-                            "name": "Hold",
+                            "key": "a1",
                             "description": "At the cost of continued Stamina consumption, Jean can command the whirlwind to pull surrounding enemies towards her front. Direction can be adjusted. Character is immobile during skill duration.",
                             "descriptions": []
                         }
@@ -1212,6 +1224,7 @@
         },
         {
             "key": "Kaeya",
+            "name": "Kaeya",
             "description": "A thinker in the Knights of Favonius with a somewhat exotic appearance.",
             "skills": [
                 {
@@ -1220,17 +1233,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 5 consecutive strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-air to strike the ground below, damaging enemeies along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -1319,6 +1332,7 @@
         },
         {
             "key": "Keqing",
+            "name": "Keqing",
             "description": "The Yuheng of the Liyue Qixing. Has much to say about Rex Lapis’ unilateral approach to policymaking in Liyue - but in truth, gods admire skeptics such as her quite a lot.",
             "skills": [
                 {
@@ -1327,17 +1341,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 5 rapid strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-air to strike the ground below, damaging enemeies along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -1349,7 +1363,7 @@
                     "description": "Hurls a Lightning Stiletto that annihilates her enemies like the swift thunder. When the Stiletto hits its target, it deals Electro DMG to enemies in a small AoE, and places a Stiletto Mark on the spot hit.",
                     "abilities": [
                         {
-                            "name": "Hold",
+                            "key": "a1",
                             "description": "Hold to adjust the direction in which the Stiletto shall be thrown. Stilettos thrown by the Hold attack mode can be suspended in mid-air, allowing Keqing to jump to them when using Stellar Restoration a second time.",
                             "descriptions": []
                         },
@@ -1437,6 +1451,7 @@
         },
         {
             "key": "Klee",
+            "name": "Klee",
             "description": "An explosives expert and a regular at the Knights of Favonius’ confinement room. Also known as Fleeing Sunlight.",
             "skills": [
                 {
@@ -1445,17 +1460,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Throws things that go boom when they hit things! Perform up to 3 explosive attacks, dealing AoE Pyro DMG.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina and deals Pyro DMG to enemies after a short casting time.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Gathering the power of Pyro, Klee plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Pyro DMG upon impact with the ground.",
                             "descriptions": []
                         }
@@ -1541,6 +1556,7 @@
         },
         {
             "key": "Lisa",
+            "name": "Lisa",
             "description": "The languid but knowledgeable Librarian of the Knights of Favonius who was deemed by Sumeru Academia to be their most distinguised graduate in the past two centuries.",
             "skills": [
                 {
@@ -1549,17 +1565,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Perform up to 4 lightning attacks that deal Electro DMG.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina to deal AoE Electro DMG after a short casting time.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Gathering the might of Electro, Lisa plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Electro DMG upon impact with the ground.",
                             "descriptions": []
                         }
@@ -1571,12 +1587,12 @@
                     "description": "Channels the power of lightning to sweep bothersome matters away.",
                     "abilities": [
                         {
-                            "name": "Press",
+                            "key": "a1",
                             "description": "Releases a homing Lightning Orb. On hit, it deals Electro DMG, and applies a stack of Conductive status (Max 3 stacks) to enemies in a small AoE.",
                             "descriptions": []
                         },
                         {
-                            "name": "Hold",
+                            "key": "a2",
                             "description": "After an extended casting time, calls down lightning from the heavens, dealing massive Electro DMG to all nearby enemies. Deals great amounts of extra damage to enemies based on the number of Conductive stacks applied to them, and clears their Conductive status.",
                             "descriptions": []
                         }
@@ -1659,6 +1675,7 @@
         },
         {
             "key": "Mona",
+            "name": "Mona",
             "description": "A mysterious young astrologer who proclaims herself to be \"Astrologist Mona Megistus,\" and who possesses abilities to match the title.",
             "skills": [
                 {
@@ -1667,17 +1684,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 4 water splash attacks that deal Hydro DMG.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina and deals AoE Hydro DMG after a short casting time.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Gathering the might of Hydro, Mona plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Hydro DMG upon impact with the ground.",
                             "descriptions": []
                         }
@@ -1698,7 +1715,7 @@
                             ]
                         },
                         {
-                            "name": "Hold",
+                            "key": "a2",
                             "description": "Utilizes water currents to move backwards swiftly before conjuring a Phantom. Only one Phantom created by Mirror Reflection of Doom can exist at any time.",
                             "descriptions": []
                         }
@@ -1809,6 +1826,7 @@
         },
         {
             "key": "Ningguang",
+            "name": "Ningguang",
             "description": "The Tianquan of Liyue Qixing. Her wealth is unsurpassed in all of Teyvat.",
             "skills": [
                 {
@@ -1817,17 +1835,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Shoots gems that deal Geo DMG. Upon hit, this grants Ningguang 1 Star Jade.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina to fire off a giant gem that deals Geo DMG. If Ningguang has any Star Jades, unleashing a Charged Attack will cause the Star Jades to be fired at the enemy as well, dealing additional DMG.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Gathering the might of Geo, Ningguang plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Geo DMG upon impact with the ground.",
                             "descriptions": []
                         }
@@ -1922,6 +1940,7 @@
         },
         {
             "key": "Noelle",
+            "name": "Noelle",
             "description": "A maid in the service of the Knights of Favonius that dreams of joining their ranks someday.",
             "skills": [
                 {
@@ -1930,17 +1949,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 4 consecutive strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Drains Stamina over time to perform continuous swirling attacks against all nearby enemies. At end of the sequence, perform a more powerful slash.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -2046,6 +2065,7 @@
         },
         {
             "key": "Qiqi",
+            "name": "Qiqi",
             "description": "An apprentice and herb-picker Bubu Pharmacy. An undead with a bone-white complexion, she seldom has much in the way of words or emotion.",
             "skills": [
                 {
@@ -2054,17 +2074,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 5 rapid strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -2166,6 +2186,7 @@
         },
         {
             "key": "Razor",
+            "name": "Razor",
             "description": "A boy who lives among the wolves in Wolvendom of Mondstadt, away from human civilization. As agile as lightning.",
             "skills": [
                 {
@@ -2174,17 +2195,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 4 consecutive strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Drains Stamina over time to perform continuous swirling attacks against all nearby enemies. At end of the sequence, perform a more powerful slash.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -2196,12 +2217,12 @@
                     "description": "Hunts his prey using the techniques taught to him by his master and his Lupical.",
                     "abilities": [
                         {
-                            "name": "Press",
+                            "key": "a1",
                             "description": "Swings the Thunder Wolf Claw, dealing Electro DMG to enemies in front of Razor. Upon striking an enemy, Razor will gain an Electro Sigil, which increases his Energy Recharge rate. Razor can have up to 3 Electro Sigils simultaneously, and gaining a new Electro Sigil refreshes their duration.",
                             "descriptions": []
                         },
                         {
-                            "name": "Hold",
+                            "key": "a2",
                             "description": "Gathers Electro energy to unleash a lightning storm over a small AoE, causing massive Electro DMG, and clears all of Razor’s Electro Sigils. Each Electro Sigil cleared in this manner will be converted into Energy for Razor.",
                             "descriptions": []
                         }
@@ -2293,6 +2314,7 @@
         },
         {
             "key": "Sucrose",
+            "name": "Sucrose",
             "description": "An alchemist filled with curiosity about all things. She researches bio-alchemy.",
             "skills": [
                 {
@@ -2301,17 +2323,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 4 attacks using Wind Spirits, dealing Anemo DMG.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina and deals AoE Anemo DMG after a short casting time.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Calling upon the power of her Wind Spirits, Sucrose plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Anemo DMG upon impact with the ground.",
                             "descriptions": []
                         }
@@ -2403,6 +2425,7 @@
         },
         {
             "key": "Tartaglia",
+            "name": "Tartaglia",
             "description": "No. 11 of The Harbingers, also known as \"Childe\". His name is highly feared on the battlefield.",
             "skills": [
                 {
@@ -2411,12 +2434,12 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 6 consecutive shots with a bow.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, the power of Hydro will accumulate on the arrowhead. An arrow fully charged with the torrent will deal Hydro DMG and apply Riptide status..",
                             "descriptions": []
                         },
@@ -2429,7 +2452,7 @@
                             ]
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a4",
                             "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact. When Tartaglia is in Foul Legacy: Raging Tide’s Melee Stance, he cannot perform a plunging attack.",
                             "descriptions": []
                         }
@@ -2441,12 +2464,12 @@
                     "description": "Unleashes a set of weaponry made of pure water, dealing Hydro DMG to surrounding opponents and entering a Melee Stance. In this Stance, Tartaglia’s Normal and Charged Attacks change as follows:",
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 6 consecutive Hydro strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina to unleash a cross slash, dealing Hydro DMG.",
                             "descriptions": []
                         },
@@ -2547,6 +2570,7 @@
         },
         {
             "key": "Traveler (Anemo)",
+            "name": "Traveler (Anemo)",
             "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
             "skills": [
                 {
@@ -2555,17 +2579,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 5 consecutive strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -2577,12 +2601,12 @@
                     "description": "Grasping the wind’s might, you form a vortex of vacuum in your palm, causing continuous Anemo DMG to enemies in front of you. The vacuum vortex explodes when the skill duration ends, causing a greater amount of Anemo DMG over a larger area.",
                     "abilities": [
                         {
-                            "name": "Hold",
+                            "key": "a1",
                             "description": "DMG and AoE will gradually increase",
                             "descriptions": []
                         },
                         {
-                            "name": "Elemental Absorption",
+                            "key": "a2",
                             "description": "If the vortex comes in contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
                             "descriptions": []
                         }
@@ -2594,7 +2618,7 @@
                     "description": "Guiding the path of the wind currents, you summon a forward-moving tornado that pulls objects and opponents towards itself, dealing continuous Anemo DMG.",
                     "abilities": [
                         {
-                            "name": "Elemental Absorption",
+                            "key": "a1",
                             "description": "If the tornado comes in contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
                             "descriptions": []
                         }
@@ -2662,6 +2686,7 @@
         },
         {
             "key": "Traveler (Geo)",
+            "name": "Traveler (Geo)",
             "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
             "skills": [
                 {
@@ -2670,17 +2695,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 5 consecutive strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -2692,7 +2717,7 @@
                     "description": "You disgorge a meteorite from the depths of the earth, dealing AoE Geo DMG. The meteorite is considered a Geo Construct, and can be climbed or used to block attacks.",
                     "abilities": [
                         {
-                            "name": "Hold",
+                            "key": "a1",
                             "description": "The skill’s positioning may be adjusted.",
                             "descriptions": []
                         }
@@ -2766,6 +2791,7 @@
         },
         {
             "key": "Venti",
+            "name": "Venti",
             "description": "One of the many bards of Mondstadt, who freely wanders the city’s streets and alleys.",
             "skills": [
                 {
@@ -2774,17 +2800,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 6 consecutive shots with a bow.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, favorable winds will accumulate on the arrowhead. A fully charged arrow will deal Anemo DMG.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -2796,12 +2822,12 @@
                     "description": "O wind upon which all hymns and songs fly, bear these earth-walkers up into the sky!",
                     "abilities": [
                         {
-                            "name": "Press",
+                            "key": "a1",
                             "description": "Summons a Wind Domain at the enemy’s location, dealing AoE Anemo DMG and launching enemies into the air.",
                             "descriptions": []
                         },
                         {
-                            "name": "Hold",
+                            "key": "a2",
                             "description": "Summons an even larger Wind Domain with Venti as the epicenter, dealing AoE Anemo DMG and launching affected enemies into the air. After unleashing the Hold version of this ability, Venti rides the wind into the air. Enemies hit by Skyward Sonnet will fall to the ground slowly.",
                             "descriptions": []
                         }
@@ -2813,7 +2839,7 @@
                     "description": "Fires off an arrow made of countless coalesced winds, creating a huge Stormeye that sucks in objects and enemies along its path, dealing continuous Anemo DMG.",
                     "abilities": [
                         {
-                            "name": "Elemental Absorption",
+                            "key": "a1",
                             "description": "If the Stormeye comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
                             "descriptions": []
                         }
@@ -2887,6 +2913,7 @@
         },
         {
             "key": "Xiangling",
+            "name": "Xiangling",
             "description": "A renowned chef from Liyue. She’s extremely passionate about cooking and excels at making her signature hot and spicy dishes.",
             "skills": [
                 {
@@ -2895,17 +2922,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 5 consecutive spear strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -2991,6 +3018,7 @@
         },
         {
             "key": "Xiao",
+            "name": "Xiao",
             "description": "A yaksha adeptus that defends Liyue. Also heralded as the \"Conqueror of Demons\" or \"Vigilant Yaksha.\"",
             "skills": [
                 {
@@ -2999,13 +3027,18 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Perform up to 6 rapid strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
-                            "description": "Dive down and impact the ground, causing damage relative to the falling height. Can only be triggered in mid-air.",
+                            "key": "a2",
+                            "description": "Consumes a certain amount of Stamina to perform an upward thrust.",
+                            "descriptions": []
+                        },
+                        {
+                            "key": "a3",
+                            "description": " Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
                     ]
@@ -3090,6 +3123,7 @@
         },
         {
             "key": "Xingqiu",
+            "name": "Xingqiu",
             "description": "A young man carrying a longsword who is frequently seen at book booths. He has a chivalrous heart and yearns for justice and fairness for all.",
             "skills": [
                 {
@@ -3098,17 +3132,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 5 consecutive spear strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-aur to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -3212,6 +3246,7 @@
         },
         {
             "key": "Xinyan",
+            "name": "Xinyan",
             "description": "Liyue’s sole rock ’n’ roll musician. She rebels against ossified prejudices using her music and passionate singing.",
             "skills": [
                 {
@@ -3220,17 +3255,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 4 consecutive strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Drains Stamina over time to perform continuous spinning attacks against all nearby enemies. At the end of the sequence, perform a more powerful slash.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -3337,6 +3372,7 @@
         },
         {
             "key": "Zhongli",
+            "name": "Zhongli",
             "description": "A mysterious guest invited by the Wangsheng Funeral Parlor. Extremely knowledgeable in all things.",
             "skills": [
                 {
@@ -3345,17 +3381,17 @@
                     "description": null,
                     "abilities": [
                         {
-                            "name": "Normal Attack",
+                            "key": "a1",
                             "description": "Performs up to 6 consecutive spear strikes.",
                             "descriptions": []
                         },
                         {
-                            "name": "Charged Attack",
+                            "key": "a2",
                             "description": "Consumes a certain amount of Stamina to lunge forward, causing stone spears to fall along his path.",
                             "descriptions": []
                         },
                         {
-                            "name": "Plunging Attack",
+                            "key": "a3",
                             "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
                             "descriptions": []
                         }
@@ -3367,12 +3403,12 @@
                     "description": "Every mountain, rock and inch of land is filled with the power of Geo, but those who can wield such powers freely are few and far between.",
                     "abilities": [
                         {
-                            "name": "Press",
+                            "key": "a1",
                             "description": "Commands the omnipresent power of earth to solidify into a Stone Stele, dealing AoE Geo DMG. Additionally, the Stone Stele will resonate with other Geo Constructs in the vicinity, dealing Geo DMG to surrounding enemies. The Stone Stele is considered a Geo Construct, and can both be climbed and used to block attacks. Only one may exist at any one time.",
                             "descriptions": []
                         },
                         {
-                            "name": "Hold",
+                            "key": "a2",
                             "description": "Causes nearby Geo energy to explode, causing the following effects:",
                             "descriptions": [
                                 "Creates a shield of jade. The shield’s DMG Absorption scales based on Zhongli’s Max HP, and absorbs Geo DMG 250% more effectively.",

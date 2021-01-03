@@ -80,7 +80,7 @@ class CharacterDetailSkillsCard extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  e.name,
+                  e.hasCommonTranslation ? s.translateCharacterSkillAbilityType(e.type) : e.name,
                   overflow: TextOverflow.ellipsis,
                   style: theme.textTheme.subtitle1.copyWith(color: elementType.getElementColorFromContext(context)),
                 ),

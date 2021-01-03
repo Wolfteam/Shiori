@@ -4,6 +4,7 @@ import '../../common/enums/stat_type.dart';
 import '../../common/enums/weapon_type.dart';
 
 class WeaponCardModel {
+  final String key;
   final String image;
   final String name;
   final int rarity;
@@ -13,6 +14,7 @@ class WeaponCardModel {
   final double subStatValue;
 
   const WeaponCardModel({
+    @required this.key,
     @required this.image,
     @required this.name,
     @required this.rarity,

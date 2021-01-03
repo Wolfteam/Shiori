@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:genshindb/common/enums/character_skill_ability_type.dart';
 
 import '../../common/enums/character_skill_type.dart';
 
@@ -20,12 +21,16 @@ class CharacterSkillCardModel {
 
 class CharacterSkillAbilityModel {
   final String name;
+  final CharacterSkillAbilityType type;
   final String description;
   final String secondDescription;
   final List<String> descriptions;
 
-  CharacterSkillAbilityModel({
-    @required this.name,
+  bool get hasCommonTranslation => type != null;
+
+  const CharacterSkillAbilityModel({
+    this.name,
+    this.type,
     this.description,
     this.secondDescription,
     @required this.descriptions,

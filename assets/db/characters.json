@@ -1,7 +1,7 @@
 {
     "characters": [
         {
-            "name": "Albedo",
+            "key": "Albedo",
             "rarity": 5,
             "weaponType": "sword",
             "elementType": "geo",
@@ -434,12 +434,32 @@
                 {
                     "key": "s1",
                     "image": "favonius_bladework_white.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
                     "image": "abiogenesis_solar_radiance.png",
-                    "type": "elementalSkill"
+                    "type": "elementalSkill",
+                    "abilities": [
+                        {
+                            "key": "a2",
+                            "type": "hold"
+                        }
+                    ]
                 },
                 {
                     "key": "s3",
@@ -498,7 +518,7 @@
             ]
         },
         {
-            "name": "Amber",
+            "key": "Amber",
             "rarity": 4,
             "weaponType": "bow",
             "elementType": "pyro",
@@ -944,12 +964,32 @@
                 {
                     "key": "s1",
                     "image": "normal_atack_sharpshooter.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
                     "image": "explosive_puppet.png",
-                    "type": "elementalSkill"
+                    "type": "elementalSkill",
+                    "abilities": [
+                        {
+                            "key": "a2",
+                            "type": "hold"
+                        }
+                    ]
                 },
                 {
                     "key": "s3",
@@ -1008,7 +1048,7 @@
             ]
         },
         {
-            "name": "Ayaka",
+            "key": "Ayaka",
             "rarity": 5,
             "weaponType": "sword",
             "elementType": "cryo",
@@ -1416,7 +1456,7 @@
             "constellations": []
         },
         {
-            "name": "Barbara",
+            "key": "Barbara",
             "rarity": 4,
             "weaponType": "catalyst",
             "elementType": "hydro",
@@ -1837,7 +1877,21 @@
                 {
                     "key": "s1",
                     "image": "normal_atack_whisper_of_water.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
@@ -1901,7 +1955,7 @@
             ]
         },
         {
-            "name": "Beidou",
+            "key": "Beidou",
             "rarity": 4,
             "weaponType": "claymore",
             "elementType": "electro",
@@ -2322,12 +2376,36 @@
                 {
                     "key": "s1",
                     "image": "normal_atack_oceanborne.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
                     "image": "tidecaller.png",
-                    "type": "elementalSkill"
+                    "type": "elementalSkill",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "press"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "hold"
+                        }
+                    ]
                 },
                 {
                     "key": "s3",
@@ -2386,7 +2464,7 @@
             ]
         },
         {
-            "name": "Bennett",
+            "key": "Bennett",
             "rarity": 4,
             "weaponType": "sword",
             "elementType": "pyro",
@@ -2832,12 +2910,36 @@
                 {
                     "key": "s1",
                     "image": "normal_atack_strike_of_fortune.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
                     "image": "passion_overload.png",
-                    "type": "elementalSkill"
+                    "type": "elementalSkill",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "press"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "holdShort"
+                        }
+                    ]
                 },
                 {
                     "key": "s3",
@@ -2896,7 +2998,7 @@
             ]
         },
         {
-            "name": "Chongyun",
+            "key": "Chongyun",
             "rarity": 4,
             "weaponType": "claymore",
             "elementType": "cryo",
@@ -3348,7 +3450,21 @@
                 {
                     "key": "s1",
                     "image": "normal_atack_demonbane.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
@@ -3412,7 +3528,7 @@
             ]
         },
         {
-            "name": "Diluc",
+            "key": "Diluc",
             "rarity": 5,
             "weaponType": "claymore",
             "elementType": "pyro",
@@ -3837,7 +3953,21 @@
                 {
                     "key": "s1",
                     "image": "normal_atack_tempered_sword.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
@@ -3901,7 +4031,7 @@
             ]
         },
         {
-            "name": "Diona",
+            "key": "Diona",
             "rarity": 4,
             "weaponType": "bow",
             "elementType": "cryo",
@@ -4326,12 +4456,36 @@
                 {
                     "key": "s1",
                     "image": "normal_attack_katzlein_style.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
                     "image": "icy_paws.png",
-                    "type": "elementalSkill"
+                    "type": "elementalSkill",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "press"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "hold"
+                        }
+                    ]
                 },
                 {
                     "key": "s3",
@@ -4390,7 +4544,7 @@
             ]
         },
         {
-            "name": "Fischl",
+            "key": "Fischl",
             "rarity": 4,
             "weaponType": "bow",
             "elementType": "electro",
@@ -4832,7 +4986,21 @@
                 {
                     "key": "s1",
                     "image": "normal_atack_bolts_of_downfall.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
@@ -4896,7 +5064,7 @@
             ]
         },
         {
-            "name": "Ganyu",
+            "key": "Ganyu",
             "rarity": 5,
             "weaponType": "bow",
             "elementType": "cryo",
@@ -5304,7 +5472,7 @@
             "constellations": []
         },
         {
-            "name": "Jean",
+            "key": "Jean",
             "rarity": 5,
             "weaponType": "sword",
             "elementType": "anemo",
@@ -5754,12 +5922,32 @@
                 {
                     "key": "s1",
                     "image": "normal_atack_favonius_bladework.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
                     "image": "gale_blade.png",
-                    "type": "elementalSkill"
+                    "type": "elementalSkill",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "hold"
+                        }
+                    ]
                 },
                 {
                     "key": "s3",
@@ -5818,7 +6006,7 @@
             ]
         },
         {
-            "name": "Kaeya",
+            "key": "Kaeya",
             "rarity": 4,
             "weaponType": "sword",
             "elementType": "cryo",
@@ -6268,7 +6456,21 @@
                 {
                     "key": "s1",
                     "image": "normal_atack_ceremonial_bladework.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
@@ -6332,7 +6534,7 @@
             ]
         },
         {
-            "name": "Keqing",
+            "key": "Keqing",
             "rarity": 5,
             "weaponType": "sword",
             "elementType": "electro",
@@ -6765,12 +6967,32 @@
                 {
                     "key": "s1",
                     "image": "stellar_resonator.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
                     "image": "stellar_resonator.png",
-                    "type": "elementalSkill"
+                    "type": "elementalSkill",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "hold"
+                        }
+                    ]
                 },
                 {
                     "key": "s3",
@@ -6829,7 +7051,7 @@
             ]
         },
         {
-            "name": "Klee",
+            "key": "Klee",
             "rarity": 5,
             "weaponType": "catalyst",
             "elementType": "pyro",
@@ -7262,7 +7484,21 @@
                 {
                     "key": "s1",
                     "image": "normal_atack_kaboom.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
@@ -7326,7 +7562,7 @@
             ]
         },
         {
-            "name": "Lisa",
+            "key": "Lisa",
             "rarity": 4,
             "weaponType": "catalyst",
             "elementType": "electro",
@@ -7751,12 +7987,36 @@
                 {
                     "key": "s1",
                     "image": "normal_atack_lightning_touch.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
                     "image": "violet_ark.png",
-                    "type": "elementalSkill"
+                    "type": "elementalSkill",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "press"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "hold"
+                        }
+                    ]
                 },
                 {
                     "key": "s3",
@@ -7815,7 +8075,7 @@
             ]
         },
         {
-            "name": "Mona",
+            "key": "Mona",
             "rarity": 5,
             "weaponType": "catalyst",
             "elementType": "hydro",
@@ -8236,12 +8496,32 @@
                 {
                     "key": "s1",
                     "image": "normal_attack_ripple_of_fate.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
                     "image": "mirror_reflection_of_doom.png",
-                    "type": "elementalSkill"
+                    "type": "elementalSkill",
+                    "abilities": [
+                        {
+                            "key": "a2",
+                            "type": "hold"
+                        }
+                    ]
                 },
                 {
                     "key": "s3",
@@ -8305,7 +8585,7 @@
             ]
         },
         {
-            "name": "Ningguang",
+            "key": "Ningguang",
             "rarity": 4,
             "weaponType": "catalyst",
             "elementType": "geo",
@@ -8746,7 +9026,21 @@
                 {
                     "key": "s1",
                     "image": "normal_attack_sparkling_scatter.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
@@ -8810,7 +9104,7 @@
             ]
         },
         {
-            "name": "Noelle",
+            "key": "Noelle",
             "rarity": 4,
             "weaponType": "claymore",
             "elementType": "geo",
@@ -9256,7 +9550,21 @@
                 {
                     "key": "s1",
                     "image": "normal_attack_favonius_bladework.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
@@ -9320,7 +9628,7 @@
             ]
         },
         {
-            "name": "Qiqi",
+            "key": "Qiqi",
             "rarity": 5,
             "weaponType": "sword",
             "elementType": "cryo",
@@ -9741,7 +10049,21 @@
                 {
                     "key": "s1",
                     "image": "normal_atack_ancient_sword_art.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
@@ -9805,7 +10127,7 @@
             ]
         },
         {
-            "name": "Razor",
+            "key": "Razor",
             "rarity": 4,
             "weaponType": "claymore",
             "elementType": "electro",
@@ -10226,12 +10548,36 @@
                 {
                     "key": "s1",
                     "image": "normal_attack_steel_fang.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
                     "image": "claw_and_thunder.png",
-                    "type": "elementalSkill"
+                    "type": "elementalSkill",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "press"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "hold"
+                        }
+                    ]
                 },
                 {
                     "key": "s3",
@@ -10290,7 +10636,7 @@
             ]
         },
         {
-            "name": "Sucrose",
+            "key": "Sucrose",
             "rarity": 4,
             "weaponType": "catalyst",
             "elementType": "anemo",
@@ -10715,7 +11061,21 @@
                 {
                     "key": "s1",
                     "image": "normal_attack_wind_spirit_creation.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
@@ -10779,7 +11139,7 @@
             ]
         },
         {
-            "name": "Tartaglia",
+            "key": "Tartaglia",
             "rarity": 5,
             "weaponType": "bow",
             "elementType": "hydro",
@@ -11216,12 +11576,36 @@
                 {
                     "key": "s1",
                     "image": "normal_attack_cutting_torrent.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a4",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
                     "image": "foul_legacy_raging_tide.png",
-                    "type": "elementalSkill"
+                    "type": "elementalSkill",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s3",
@@ -11280,7 +11664,7 @@
             ]
         },
         {
-            "name": "Traveler (Anemo)",
+            "key": "Traveler (Anemo)",
             "rarity": 5,
             "weaponType": "sword",
             "elementType": "anemo",
@@ -12102,17 +12486,47 @@
                 {
                     "key": "s1",
                     "image": "normal_attack_foreign_ironwind.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
                     "image": "palm_vortex.png",
-                    "type": "elementalSkill"
+                    "type": "elementalSkill",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "hold"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "elementalAbsorption"
+                        }
+                    ]
                 },
                 {
                     "key": "s3",
                     "image": "gust_surge.png",
-                    "type": "elementalBurst"
+                    "type": "elementalBurst",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "elementalAbsorption"
+                        }
+                    ]
                 }
             ],
             "passives": [
@@ -12161,7 +12575,7 @@
             ]
         },
         {
-            "name": "Traveler (Geo)",
+            "key": "Traveler (Geo)",
             "rarity": 5,
             "weaponType": "sword",
             "elementType": "geo",
@@ -12987,12 +13401,32 @@
                 {
                     "key": "s1",
                     "image": "normal_attack_foreign_rockblade.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
                     "image": "starfell_sword.png",
-                    "type": "elementalSkill"
+                    "type": "elementalSkill",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "hold"
+                        }
+                    ]
                 },
                 {
                     "key": "s3",
@@ -13046,7 +13480,7 @@
             ]
         },
         {
-            "name": "Venti",
+            "key": "Venti",
             "rarity": 5,
             "weaponType": "bow",
             "elementType": "anemo",
@@ -13471,17 +13905,47 @@
                 {
                     "key": "s1",
                     "image": "normal_attack_divine_marksmanship.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
                     "image": "skyward_sonnet.png",
-                    "type": "elementalSkill"
+                    "type": "elementalSkill",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "press"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "hold"
+                        }
+                    ]
                 },
                 {
                     "key": "s3",
                     "image": "winds_grand_ode.png",
-                    "type": "elementalBurst"
+                    "type": "elementalBurst",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "elementalAbsorption"
+                        }
+                    ]
                 }
             ],
             "passives": [
@@ -13535,7 +13999,7 @@
             ]
         },
         {
-            "name": "Xiangling",
+            "key": "Xiangling",
             "rarity": 4,
             "weaponType": "polearm",
             "elementType": "pyro",
@@ -13985,7 +14449,21 @@
                 {
                     "key": "s1",
                     "image": "normal_attack_dough_fu.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
@@ -14049,7 +14527,7 @@
             ]
         },
         {
-            "name": "Xiao",
+            "key": "Xiao",
             "rarity": 5,
             "weaponType": "polearm",
             "elementType": "anemo",
@@ -14470,7 +14948,21 @@
                 {
                     "key": "s1",
                     "image": "normal_attack_whirlwind_thrust.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
@@ -14534,7 +15026,7 @@
             ]
         },
         {
-            "name": "Xingqiu",
+            "key": "Xingqiu",
             "rarity": 4,
             "weaponType": "sword",
             "elementType": "hydro",
@@ -14955,7 +15447,21 @@
                 {
                     "key": "s1",
                     "image": "normal_attack_guhua_style.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
@@ -15019,7 +15525,7 @@
             ]
         },
         {
-            "name": "Xinyan",
+            "key": "Xinyan",
             "rarity": 4,
             "weaponType": "claymore",
             "elementType": "pyro",
@@ -15452,7 +15958,21 @@
                 {
                     "key": "s1",
                     "image": "normal_attack_dance_on_fire.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
@@ -15516,7 +16036,7 @@
             ]
         },
         {
-            "name": "Zhongli",
+            "key": "Zhongli",
             "rarity": 5,
             "weaponType": "polearm",
             "elementType": "geo",
@@ -15965,12 +16485,36 @@
                 {
                     "key": "s1",
                     "image": "normal_attack_rain_of_stone.png",
-                    "type": "normalAttack"
+                    "type": "normalAttack",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
                 },
                 {
                     "key": "s2",
                     "image": "dominus_lapidis.png",
-                    "type": "elementalSkill"
+                    "type": "elementalSkill",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "press"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "hold"
+                        }
+                    ]
                 },
                 {
                     "key": "s3",

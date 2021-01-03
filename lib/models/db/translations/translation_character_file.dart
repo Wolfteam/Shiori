@@ -7,10 +7,11 @@ part 'translation_character_file.g.dart';
 abstract class TranslationCharacterFile implements _$TranslationCharacterFile {
   factory TranslationCharacterFile({
     @required String key,
+    @required String name,
     @required String description,
     @required List<TranslationCharacterSkillFile> skills,
-    @required List<TranslationCharacterPassive> passives,
-    @required List<TranslationCharacterConstellation> constellations,
+    @required List<TranslationCharacterPassiveFile> passives,
+    @required List<TranslationCharacterConstellationFile> constellations,
   }) = _TranslationCharacterFile;
 
   factory TranslationCharacterFile.fromJson(Map<String, dynamic> json) => _$TranslationCharacterFileFromJson(json);
@@ -22,7 +23,7 @@ abstract class TranslationCharacterSkillFile implements _$TranslationCharacterSk
     @required String key,
     @required String title,
     String description,
-    @required List<TranslationCharacterAbility> abilities,
+    @required List<TranslationCharacterAbilityFile> abilities,
   }) = _TranslationCharacterSkillFile;
 
   factory TranslationCharacterSkillFile.fromJson(Map<String, dynamic> json) =>
@@ -30,41 +31,45 @@ abstract class TranslationCharacterSkillFile implements _$TranslationCharacterSk
 }
 
 @freezed
-abstract class TranslationCharacterAbility implements _$TranslationCharacterAbility {
-  factory TranslationCharacterAbility({
-    @required String name,
+abstract class TranslationCharacterAbilityFile implements _$TranslationCharacterAbilityFile {
+  @late
+  bool get hasCommonTranslation => key != null;
+
+  factory TranslationCharacterAbilityFile({
+    String key,
+    String name,
     String description,
     String secondDescription,
     @required List<String> descriptions,
-  }) = _TranslationCharacterAbility;
+  }) = _TranslationCharacterAbilityFile;
 
-  factory TranslationCharacterAbility.fromJson(Map<String, dynamic> json) =>
-      _$TranslationCharacterAbilityFromJson(json);
+  factory TranslationCharacterAbilityFile.fromJson(Map<String, dynamic> json) =>
+      _$TranslationCharacterAbilityFileFromJson(json);
 }
 
 @freezed
-abstract class TranslationCharacterPassive implements _$TranslationCharacterPassive {
-  factory TranslationCharacterPassive({
+abstract class TranslationCharacterPassiveFile implements _$TranslationCharacterPassiveFile {
+  factory TranslationCharacterPassiveFile({
     @required String key,
     @required String title,
     @required String description,
     @required List<String> descriptions,
-  }) = _TranslationCharacterPassive;
+  }) = _TranslationCharacterPassiveFile;
 
-  factory TranslationCharacterPassive.fromJson(Map<String, dynamic> json) =>
-      _$TranslationCharacterPassiveFromJson(json);
+  factory TranslationCharacterPassiveFile.fromJson(Map<String, dynamic> json) =>
+      _$TranslationCharacterPassiveFileFromJson(json);
 }
 
 @freezed
-abstract class TranslationCharacterConstellation implements _$TranslationCharacterConstellation {
-  factory TranslationCharacterConstellation({
+abstract class TranslationCharacterConstellationFile implements _$TranslationCharacterConstellationFile {
+  factory TranslationCharacterConstellationFile({
     @required String key,
     @required String title,
     @required String description,
     String secondDescription,
     @required List<String> descriptions,
-  }) = _TranslationCharacterConstellation;
+  }) = _TranslationCharacterConstellationFile;
 
-  factory TranslationCharacterConstellation.fromJson(Map<String, dynamic> json) =>
-      _$TranslationCharacterConstellationFromJson(json);
+  factory TranslationCharacterConstellationFile.fromJson(Map<String, dynamic> json) =>
+      _$TranslationCharacterConstellationFileFromJson(json);
 }

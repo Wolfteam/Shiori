@@ -17,6 +17,7 @@ import '../common/loading.dart';
 import '../common/rarity.dart';
 
 class WeaponCard extends StatelessWidget {
+  final String keyName;
   final String image;
   final String name;
   final int rarity;
@@ -31,6 +32,7 @@ class WeaponCard extends StatelessWidget {
 
   const WeaponCard({
     Key key,
+    @required this.keyName,
     @required this.image,
     @required this.name,
     @required this.rarity,
@@ -45,6 +47,7 @@ class WeaponCard extends StatelessWidget {
 
   const WeaponCard.withoutDetails({
     Key key,
+    @required this.keyName,
     @required this.image,
     @required this.name,
     @required this.rarity,
@@ -134,7 +137,7 @@ class WeaponCard extends StatelessWidget {
   }
 
   Future<void> _gotoWeaponPage(BuildContext context) async {
-    context.read<WeaponBloc>().add(WeaponEvent.loadFromName(name: name));
+    context.read<WeaponBloc>().add(WeaponEvent.loadFromName(key: keyName));
     final route = MaterialPageRoute(builder: (c) => WeaponPage());
     await Navigator.push(context, route);
   }

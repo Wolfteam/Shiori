@@ -55,6 +55,7 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
         itemBuilder: (ctx, index) {
           final weapon = weapons[index];
           return WeaponCard(
+            keyName: weapon.key,
             baseAtk: weapon.baseAtk,
             image: weapon.image,
             name: weapon.name,
