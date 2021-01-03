@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../common/app_constants.dart';
 import '../../common/assets.dart';
+import '../../models/models.dart';
 import '../../services/genshing_service.dart';
 import '../../telemetry.dart';
 
@@ -36,7 +37,10 @@ class ArtifactDetailsBloc extends Bloc<ArtifactDetailsEvent, ArtifactDetailsStat
           image: artifact.fullImagePath,
           rarityMin: artifact.rarityMin,
           rarityMax: artifact.rarityMax,
-          bonus: translation.bonus,
+          bonus: translation.bonus.map((t) {
+            final pieces = artifact.bonus.firstWhere((b) => b.key == t.key).pieces;
+            return ArtifactCardBonusModel(pieces: pieces, bonus: t.bonus);
+          }).toList(),
           images: translation.bonus.length == 1
               ? [artifact.fullImagePath]
               : artifactOrder.map((e) => Assets.getArtifactPath('$image$e.png')).toList(),

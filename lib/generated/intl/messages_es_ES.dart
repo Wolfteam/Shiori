@@ -51,6 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m15(value) => "Desbloqueada en nivel de ascención ${value}";
 
+  static m16(value) => "${value} Piezas";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "about" : MessageLookupByLibrary.simpleMessage("Acerca de"),
@@ -79,7 +81,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "chooseAccentColor" : MessageLookupByLibrary.simpleMessage("Escoge un color de acento"),
     "chooseBaseAppTheme" : MessageLookupByLibrary.simpleMessage("Escoge un tema base"),
     "chooseLanguage" : MessageLookupByLibrary.simpleMessage("Escoge un lenguaje"),
-    "claymore" : MessageLookupByLibrary.simpleMessage("Claymore"),
+    "claymore" : MessageLookupByLibrary.simpleMessage("Mandoble"),
     "clock" : MessageLookupByLibrary.simpleMessage("Reloj"),
     "comingSoon" : MessageLookupByLibrary.simpleMessage("Próximamente"),
     "constellationX" : m3,
@@ -98,8 +100,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "disclaimerMsg" : MessageLookupByLibrary.simpleMessage("Esta app no está afiliada ni asociada a miHoYo. GenshinDb es solo una aplicación de tipo base de datos para el juego Genshin Impact"),
     "dps" : MessageLookupByLibrary.simpleMessage("DPS"),
     "element" : MessageLookupByLibrary.simpleMessage("Elemento"),
-    "elementalAbsorption" : MessageLookupByLibrary.simpleMessage("Absorción Elemental"),
-    "elementalBurst" : MessageLookupByLibrary.simpleMessage("Ráfaga Elemental"),
+    "elementalAbsorption" : MessageLookupByLibrary.simpleMessage("Cambio Elemental"),
+    "elementalBurst" : MessageLookupByLibrary.simpleMessage("Impulso Elemental"),
     "elementalDebuffs" : MessageLookupByLibrary.simpleMessage("Debuffs Elementales"),
     "elementalDebuffsExplainded" : MessageLookupByLibrary.simpleMessage("Cada uno de estos tienen diferentes efectos negativos cuando son aplicados a tus enemigos o a ti"),
     "elementalDmgPercentage" : MessageLookupByLibrary.simpleMessage("Elemental DMG%"),
@@ -156,7 +158,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "physDmgPercentage" : m13,
     "pieces" : MessageLookupByLibrary.simpleMessage("Piezas"),
     "plume" : MessageLookupByLibrary.simpleMessage("Pluma"),
-    "plungingAttack" : MessageLookupByLibrary.simpleMessage("Ataque en Picada"),
+    "plungingAttack" : MessageLookupByLibrary.simpleMessage("Ataque Descendiente"),
     "polearm" : MessageLookupByLibrary.simpleMessage("Lanza"),
     "press" : MessageLookupByLibrary.simpleMessage("Presionar"),
     "quest" : MessageLookupByLibrary.simpleMessage("Misión"),
@@ -208,6 +210,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "weaponType" : MessageLookupByLibrary.simpleMessage("Tipo de arma"),
     "weapons" : MessageLookupByLibrary.simpleMessage("Armas"),
     "wednesday" : MessageLookupByLibrary.simpleMessage("Miércoles"),
+    "xPieces" : m16,
     "youCanAlsoSendMeAnEmail" : MessageLookupByLibrary.simpleMessage("También puedes enviarme un correo")
   };
 }

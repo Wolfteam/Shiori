@@ -86,7 +86,7 @@ class Assets {
       case AppLanguageType.english:
         return '$translationsBasePath/en.json';
       case AppLanguageType.spanish:
-        return '$translationsBasePath/en.json';
+        return '$translationsBasePath/es.json';
       default:
         throw Exception('Invalid language = $languageType');
     }

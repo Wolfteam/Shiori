@@ -5,6 +5,7 @@ import '../../bloc/bloc.dart';
 import '../../common/extensions/rarity_extensions.dart';
 import '../../common/styles.dart';
 import '../../generated/l10n.dart';
+import '../../models/models.dart';
 import '../widgets/artifacts/artifact_stats.dart';
 import '../widgets/common/item_description_detail.dart';
 import '../widgets/common/loading.dart';
@@ -97,7 +98,7 @@ class ArtifactDetailsPage extends StatelessWidget {
   Widget _buildBottom(
     int rarity,
     List<String> images,
-    List<String> bonus,
+    List<ArtifactCardBonusModel> bonus,
     BuildContext context,
   ) {
     final s = S.of(context);
@@ -116,7 +117,10 @@ class ArtifactDetailsPage extends StatelessWidget {
               margin: const EdgeInsets.only(bottom: 10),
               child: ItemDescriptionDetail(
                 title: s.bonus,
-                body: Container(margin: const EdgeInsets.symmetric(horizontal: 5), child: ArtifactStats(bonus: bonus)),
+                body: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 5),
+                  child: ArtifactStats(bonus: bonus),
+                ),
                 textColor: rarity.getRarityColors().last,
               ),
             ),

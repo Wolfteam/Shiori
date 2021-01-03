@@ -9,7 +9,7 @@ abstract class ArtifactDetailsState with _$ArtifactDetailsState {
     @required String image,
     @required int rarityMin,
     @required int rarityMax,
-    @required List<String> bonus,
+    @required List<ArtifactCardBonusModel> bonus,
     @required List<String> images,
   }) = _LoadedState;
 }

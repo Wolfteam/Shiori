@@ -5,7 +5,7 @@
     "english": "Inglés",
     "spanish": "Español",
     "bow": "Arco",
-    "claymore": "Claymore",
+    "claymore": "Mandoble",
     "sword": "Espada",
     "polearm": "Lanza",
     "catalyst": "Catalizador",
@@ -154,5 +154,6 @@
     "hold": "Mantener",
     "press": "Presionar",
     "short": "Corto",
-    "elementalAbsorption": "Cambio Elemental"
+    "elementalAbsorption": "Cambio Elemental",
+    "xPieces": "{value} Piezas"
 }

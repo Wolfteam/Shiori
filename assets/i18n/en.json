@@ -883,12 +883,12 @@
                     "description": "Fires an Icy Paw that deals Cryo DMG to opponents and forms a shield on hit. The shield’s DMG Absorption scales based on Diona’s Max HP, and its duration scales off the number of Icy Paws that hit their target.",
                     "abilities": [
                         {
-                            "key":"a1",
+                            "key": "a1",
                             "description": "Rapidly fires off 2 Icy Paws.",
                             "descriptions": []
                         },
                         {
-                            "key":"a2",
+                            "key": "a2",
                             "description": "Dashes back quickly before firing five Icy Paws. The shield created by a Hold attack will gain a 75% DMG Absorption Bonus. The shield has a 250% Cryo DMG Absorption Bonus, and will cause your active character to become affected by Cryo at the point of formation for a short duration.",
                             "descriptions": []
                         }
@@ -4137,259 +4137,442 @@
             "key": "Adventurer",
             "name": "Adventurer",
             "bonus": [
-                "2 Piece: Max HP increased by 1000.",
-                "4 Piece: Opening a chest regenerates 30% Max HP over 5s."
+                {
+                    "key": "b1",
+                    "bonus": "Max HP increased by 1000."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Opening a chest regenerates 30% Max HP over 5s."
+                }
             ]
         },
         {
             "key": "Traveling Doctor",
             "name": "Traveling Doctor",
             "bonus": [
-                "2 Piece: Increases incoming healing by 20%.",
-                "4 Piece: Using Elemental Burst restores 20% HP."
+                {
+                    "key": "b1",
+                    "bonus": "Increases incoming healing by 20%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Using Elemental Burst restores 20% HP."
+                }
             ]
         },
         {
             "key": "Lucky Dog",
             "name": "Lucky Dog",
             "bonus": [
-                "2 Piece: DEF increased by 100.",
-                "4 Piece: Picking up Mora restores 300 HP."
+                {
+                    "key": "b1",
+                    "bonus": "2 Piece: DEF increased by 100."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "4 Piece: Picking up Mora restores 300 HP."
+                }
             ]
         },
         {
             "key": "Resolution of Sojourner",
             "name": "Resolution of Sojourner",
             "bonus": [
-                "2 Piece: ATK +18%.",
-                "4 Piece: Increases Charged Attack CRIT Rate by 30%."
+                {
+                    "key": "b1",
+                    "bonus": "ATK +18%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Increases Charged Attack CRIT Rate by 30%."
+                }
             ]
         },
         {
             "key": "Tiny Miracle",
             "name": "Tiny Miracle",
             "bonus": [
-                "2 Piece: All Elemental RES increased by 20%.",
-                "4 Piece: Incoming elemental DMG increases corresponding Elemental RES by 30% for 10s. Can only occur once every 10s."
+                {
+                    "key": "b1",
+                    "bonus": "All Elemental RES increased by 20%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Incoming elemental DMG increases corresponding Elemental RES by 30% for 10s. Can only occur once every 10s."
+                }
             ]
         },
         {
             "key": "Brave Heart",
             "name": "Brave Heart",
             "bonus": [
-                "2 Piece: ATK +18%.",
-                "4 Piece: Increases DMG by 30% against enemies with more than 50% HP."
+                {
+                    "key": "b1",
+                    "bonus": "ATK +18%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Increases DMG by 30% against enemies with more than 50% HP."
+                }
             ]
         },
         {
             "key": "Defender’s Will",
             "name": "Defender’s Will",
             "bonus": [
-                "2 Piece: DEF +30%",
-                "4 Piece: For each different element present in your own party, the wearer’s Elemental RES to that corresponding element is increased by 30%."
+                {
+                    "key": "b1",
+                    "bonus": "DEF +30%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "For each different element present in your own party, the wearer’s Elemental RES to that corresponding element is increased by 30%."
+                }
             ]
         },
         {
             "key": "Martial Artist",
             "name": "Martial Artist",
             "bonus": [
-                "2 Piece: Increases Normal Attack and Charged Attack DMG by 15%.",
-                "4 Piece: After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 25% for 8s."
+                {
+                    "key": "b1",
+                    "bonus": "Increases Normal Attack and Charged Attack DMG by 15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 25% for 8s."
+                }
             ]
         },
         {
             "key": "Gambler",
             "name": "Gambler",
             "bonus": [
-                "2 Piece: Increases Elemental Skill DMG by 20%.",
-                "4 Piece: Defeating an enemy has a 100% chance to remove Elemental Skill CD. Can only occur once every 15s."
+                {
+                    "key": "b1",
+                    "bonus": "Increases Elemental Skill DMG by 20%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Defeating an enemy has a 100% chance to remove Elemental Skill CD. Can only occur once every 15s."
+                }
             ]
         },
         {
             "key": "Scholar",
             "name": "Scholar",
             "bonus": [
-                "2 Piece: Energy Recharge +20%",
-                "4 Piece: Gaining Elemental Particles or Orbs gives 3 Energy to all party members who have a bow or a catalyst equipped. Can only occur once every 3s."
+                {
+                    "key": "b1",
+                    "bonus": "Energy Recharge +20%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Gaining Elemental Particles or Orbs gives 3 Energy to all party members who have a bow or a catalyst equipped. Can only occur once every 3s."
+                }
             ]
         },
         {
             "key": "Berserker",
             "name": "Berserker",
             "bonus": [
-                "2 Piece: CRIT Rate +12%",
-                "4 Piece: When HP is below 70%, CRIT Rate increases by an additional 24%."
+                {
+                    "key": "b1",
+                    "bonus": "CRIT Rate +12%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "When HP is below 70%, CRIT Rate increases by an additional 24%."
+                }
             ]
         },
         {
             "key": "Instructor",
             "name": "Instructor",
             "bonus": [
-                "2 Piece: Increases Elemental Mastery by 80.",
-                "4 Piece: Upon triggering an Elemental Reaction, increases all party members’ Elemental Mastery by 120 for 8s."
+                {
+                    "key": "b1",
+                    "bonus": "Increases Elemental Mastery by 80."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Upon triggering an Elemental Reaction, increases all party members’ Elemental Mastery by 120 for 8s."
+                }
             ]
         },
         {
             "key": "The Exile",
             "name": "The Exile",
             "bonus": [
-                "2 Piece: Energy Recharge +20%",
-                "4 Piece: Using an Elemental Burst regenerates 2 Energy for all party members (excluding the wearer) every 2s for 6s. This effect cannot stack."
+                {
+                    "key": "b1",
+                    "bonus": "Energy Recharge +20%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Using an Elemental Burst regenerates 2 Energy for all party members (excluding the wearer) every 2s for 6s. This effect cannot stack."
+                }
             ]
         },
         {
             "key": "Thundering Fury",
             "name": "Thundering Fury",
             "bonus": [
-                "2 Piece: Electro DMG Bonus +15%",
-                "4 Piece: Increases damage caused by Overloaded, Electro-Charged and Superconduct by 40%. Triggering such effects decreases Elemental Skill CD by 1s. Can only occur once every 0.8s."
+                {
+                    "key": "b1",
+                    "bonus": "Electro DMG Bonus +15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Increases damage caused by Overloaded, Electro-Charged and Superconduct by 40%. Triggering such effects decreases Elemental Skill CD by 1s. Can only occur once every 0.8s."
+                }
             ]
         },
         {
             "key": "Thundersoother",
             "name": "Thundersoother",
             "bonus": [
-                "2 Piece: Electro RES increased by 40%.",
-                "4 Piece: Increases DMG against enemies affected by Electro by 35%."
+                {
+                    "key": "b1",
+                    "bonus": "Electro RES increased by 40%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Increases DMG against enemies affected by Electro by 35%."
+                }
             ]
         },
         {
             "key": "Viridescent Venerer",
             "name": "Viridescent Venerer",
             "bonus": [
-                "2 Piece: Anemo DMG Bonus +15%.",
-                "4 Piece: Increases Swirl DMG by 60%. Decreases opponent’s Elemental RES to the element infused in the Swirl by 40% for 10s."
+                {
+                    "key": "b1",
+                    "bonus": "Anemo DMG Bonus +15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Increases Swirl DMG by 60%. Decreases opponent’s Elemental RES to the element infused in the Swirl by 40% for 10s."
+                }
             ]
         },
         {
             "key": "Maiden Beloved",
             "name": "Maiden Beloved",
             "bonus": [
-                "2 Piece: Character Healing Effectiveness +15%",
-                "4 Piece: Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s."
+                {
+                    "key": "b1",
+                    "bonus": "Character Healing Effectiveness +15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s."
+                }
             ]
         },
         {
             "key": "Archaic Petra",
             "name": "Archaic Petra",
             "bonus": [
-                "2 Piece: Gain a 15% Geo DMG Bonus.",
-                "4 Piece: Upon obtaining an Elemental Shard created through a Crystallize Reaction, all party members gain a 35% DMG Bonus for that particular element for 10s. Only one form of Elemental DMG Bonus can be gained in this manner at any one time."
+                {
+                    "key": "b1",
+                    "bonus": "Gain a 15% Geo DMG Bonus."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Upon obtaining an Elemental Shard created through a Crystallize Reaction, all party members gain a 35% DMG Bonus for that particular element for 10s. Only one form of Elemental DMG Bonus can be gained in this manner at any one time."
+                }
             ]
         },
         {
             "key": "Retracing Bolide",
             "name": "Retracing Bolide",
             "bonus": [
-                "2 Piece: Increases Shield Strength by 35%.",
-                "4 Piece: While protected by a shield, gain an additional 40% Normal and Charged Attack DMG."
+                {
+                    "key": "b1",
+                    "bonus": "Increases Shield Strength by 35%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "While protected by a shield, gain an additional 40% Normal and Charged Attack DMG."
+                }
             ]
         },
         {
             "key": "Crimson Witch of Flames",
             "name": "Crimson Witch of Flames",
             "bonus": [
-                "2 Piece: Pyro DMG Bonus +15%.",
-                "4 Piece: Increases Overloaded and Burning DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using an Elemental Skill increases 2-Piece Set effects by 50% for 10s. Max 3 stacks."
+                {
+                    "key": "b1",
+                    "bonus": "Pyro DMG Bonus +15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Increases Overloaded and Burning DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using an Elemental Skill increases 2-Piece Set effects by 50% for 10s. Max 3 stacks."
+                }
             ]
         },
         {
             "key": "Lavawalker",
             "name": "Lavawalker",
             "bonus": [
-                "2 Piece: Pyro RES increased by 40%.",
-                "4 Piece: Increases DMG against enemies affected by Pyro by 35%."
+                {
+                    "key": "b1",
+                    "bonus": "Pyro RES increased by 40%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Increases DMG against enemies affected by Pyro by 35%."
+                }
             ]
         },
         {
             "key": "Bloodstained Chivalry",
             "name": "Bloodstained Chivalry",
             "bonus": [
-                "2 Piece: Physical DMG +25%",
-                "4 Piece: After defeating an opponent, increases Charged Attack DMG by 50%, and reduces its Stamina cost to 0 for 10s."
+                {
+                    "key": "b1",
+                    "bonus": "Physical DMG +25%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "After defeating an opponent, increases Charged Attack DMG by 50%, and reduces its Stamina cost to 0 for 10s."
+                }
             ]
         },
         {
             "key": "Noblesse Oblige",
             "name": "Noblesse Oblige",
             "bonus": [
-                "2 Piece: Elemental Burst DMG +20%",
-                "4 Piece: Using an Elemental Burst increases all party members’ ATK by 20% for 12s. This effect cannot stack."
+                {
+                    "key": "b1",
+                    "bonus": "Elemental Burst DMG +20%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Using an Elemental Burst increases all party members’ ATK by 20% for 12s. This effect cannot stack."
+                }
             ]
         },
         {
             "key": "Gladiator’s Finale",
             "name": "Gladiator’s Finale",
             "bonus": [
-                "2 Piece: ATK +18%.",
-                "4 Piece: If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%."
+                {
+                    "key": "b1",
+                    "bonus": "ATK +18%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%."
+                }
             ]
         },
         {
             "key": "Wanderer’s Troupe",
             "name": "Wanderer’s Troupe",
             "bonus": [
-                "2 Piece: Increases Elemental Mastery by 80.",
-                "4 Piece: Increases Charged Attack DMG by 35% if the character uses a Catalyst or a Bow."
+                {
+                    "key": "b1",
+                    "bonus": "Increases Elemental Mastery by 80."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Increases Charged Attack DMG by 35% if the character uses a Catalyst or a Bow."
+                }
             ]
         },
         {
             "key": "Prayers for Illumination",
             "name": "Prayers for Illumination",
             "bonus": [
-                "1 Piece bonus: Affected by Pyro for 40% less time."
+                {
+                    "key": "b1",
+                    "bonus": "Affected by Pyro for 40% less time."
+                }
             ]
         },
         {
             "key": "Prayers for Destiny",
             "name": "Prayers for Destiny",
             "bonus": [
-                "1 Piece bonus: Affected by Hydro for 40% less time."
+                {
+                    "key": "b1",
+                    "bonus": "Affected by Hydro for 40% less time."
+                }
             ]
         },
         {
             "key": "Prayers for Wisdom",
             "name": "Prayers for Wisdom",
             "bonus": [
-                "1 Piece bonus: Affected by Electro for 40% less time."
+                {
+                    "key": "b1",
+                    "bonus": "Affected by Electro for 40% less time."
+                }
             ]
         },
         {
             "key": "Prayers to Springtime",
             "name": "Prayers to Springtime",
             "bonus": [
-                "1 Piece bonus: Affected by Cryo for 40% less time."
+                {
+                    "key": "b1",
+                    "bonus": "Affected by Cryo for 40% less time."
+                }
             ]
         },
         {
             "key": "Blizzard Strayer",
             "name": "Blizzard Strayer",
             "bonus": [
-                "2 Piece: Cryo DMG Bonus +15%",
-                "4 Piece: When a character attacks an enemy affected by Cryo, their CRIT Rate is increased by 20%. If the enemy is Frozen, CRIT Rate is increased by an additional 20%."
+                {
+                    "key": "b1",
+                    "bonus": "Cryo DMG Bonus +15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "When a character attacks an enemy affected by Cryo, their CRIT Rate is increased by 20%. If the enemy is Frozen, CRIT Rate is increased by an additional 20%."
+                }
             ]
         },
         {
             "key": "Heart of Depth",
             "name": "Heart of Depth",
             "bonus": [
-                "2 Piece: Hydro DMG Bonus +15%",
-                "4 Piece: After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 30% for 15s."
+                {
+                    "key": "b1",
+                    "bonus": "Hydro DMG Bonus +15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 30% for 15s."
+                }
             ]
         },
         {
             "key": "Glacier and Snowfield",
             "name": "Glacier and Snowfield",
             "bonus": [
-                "2 Piece: Cryo DMG Bonus +15%",
-                "4 Piece: Increases Superconduct DMG by 100%. Increases Melt DMG by 15%. Using an Elemental Burst increases Cryo DMG Bonus by 30% for 10s."
+                {
+                    "key": "b1",
+                    "bonus": "Cryo DMG Bonus +15%."
+                },
+                {
+                    "key": "b2",
+                    "bonus": "Increases Superconduct DMG by 100%. Increases Melt DMG by 15%. Using an Elemental Burst increases Cryo DMG Bonus by 30% for 10s."
+                }
             ]
         },
         {
             "key": "Prayers to the Firmament",
             "name": "Prayers to the Firmament",
             "bonus": [
-                "1 Piece bonus: Affected by Anemo for 40% less time."
+                {
+                    "key": "b1",
+                    "bonus": "Affected by Anemo for 40% less time."
+                }
             ]
         }
     ],

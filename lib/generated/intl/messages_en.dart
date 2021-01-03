@@ -51,6 +51,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m15(value) => "Unlocked at ascention level ${value}";
 
+  static m16(value) => "${value} Pieces";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "about" : MessageLookupByLibrary.simpleMessage("About"),
@@ -209,6 +211,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "weapons" : MessageLookupByLibrary.simpleMessage("Weapons"),
     "wednesday" : MessageLookupByLibrary.simpleMessage("Wednesday"),
     "wishSimulator" : MessageLookupByLibrary.simpleMessage("Wish simulator"),
+    "xPieces" : m16,
     "youCanAlsoSendMeAnEmail" : MessageLookupByLibrary.simpleMessage("You can also send me an email")
   };
 }

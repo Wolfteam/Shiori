@@ -5,6 +5,7 @@ import 'package:transparent_image/transparent_image.dart';
 import '../../../bloc/bloc.dart';
 import '../../../common/extensions/rarity_extensions.dart';
 import '../../../common/styles.dart';
+import '../../../models/models.dart';
 import '../../pages/artifact_details_page.dart';
 import '../common/gradient_card.dart';
 import '../common/rarity.dart';
@@ -15,7 +16,7 @@ class ArtifactCard extends StatelessWidget {
   final String name;
   final String image;
   final int rarity;
-  final List<String> bonus;
+  final List<ArtifactCardBonusModel> bonus;
   final double imgWidth;
   final double imgHeight;
   final bool withoutDetails;

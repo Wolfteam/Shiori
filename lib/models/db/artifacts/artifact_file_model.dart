@@ -15,9 +15,22 @@ abstract class ArtifactFileModel implements _$ArtifactFileModel {
     @required String image,
     @required int rarityMin,
     @required int rarityMax,
+    @required List<ArtifactFileBonusModel> bonus,
   }) = _ArtifactFileModel;
 
   ArtifactFileModel._();
 
   factory ArtifactFileModel.fromJson(Map<String, dynamic> json) => _$ArtifactFileModelFromJson(json);
+}
+
+@freezed
+abstract class ArtifactFileBonusModel implements _$ArtifactFileBonusModel {
+  factory ArtifactFileBonusModel({
+    @required String key,
+    @required int pieces,
+  }) = _ArtifactFileBonusModel;
+
+  ArtifactFileBonusModel._();
+
+  factory ArtifactFileBonusModel.fromJson(Map<String, dynamic> json) => _$ArtifactFileBonusModelFromJson(json);
 }

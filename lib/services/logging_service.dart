@@ -64,20 +64,21 @@ class LoggingServiceImpl implements LoggingService {
   }
 
   void _trackError(String tag, String msg, [dynamic ex, StackTrace trace]) {
-    final map = {
-      'tag': tag,
-      'msg': _formatEx(msg, ex),
-      'trace': trace?.toString() ?? 'No trace available',
-    };
+    final map = _buildError(tag, msg, ex, trace);
     trackEventAsync('Error - ${DateTime.now()}', map);
   }
 
   void _trackWarning(String tag, String msg, [dynamic ex, StackTrace trace]) {
-    final map = {
+    final map = _buildError(tag, msg, ex, trace);
+    trackEventAsync('Warning - ${DateTime.now()}', map);
+  }
+
+  Map<String, String> _buildError(String tag, String msg, [dynamic ex, StackTrace trace]) {
+    return {
       'tag': tag,
-      'msg': _formatEx(msg, ex),
+      'msg': msg ?? 'No message available',
+      'ex': ex?.toString() ?? 'No exception available',
       'trace': trace?.toString() ?? 'No trace available',
     };
-    trackEventAsync('Warning - ${DateTime.now()}', map);
   }
 }

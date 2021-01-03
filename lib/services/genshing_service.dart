@@ -213,7 +213,10 @@ class GenshinServiceImpl implements GenshinService {
           name: translation.name,
           image: e.fullImagePath,
           rarity: e.rarityMax,
-          bonus: translation.bonus,
+          bonus: translation.bonus.map((t) {
+            final pieces = e.bonus.firstWhere((b) => b.key == t.key).pieces;
+            return ArtifactCardBonusModel(pieces: pieces, bonus: t.bonus);
+          }).toList(),
         );
       },
     ).toList();
@@ -228,7 +231,10 @@ class GenshinServiceImpl implements GenshinService {
       name: translation.name,
       image: artifact.fullImagePath,
       rarity: artifact.rarityMax,
-      bonus: translation.bonus,
+      bonus: translation.bonus.map((t) {
+        final pieces = artifact.bonus.firstWhere((b) => b.key == t.key).pieces;
+        return ArtifactCardBonusModel(pieces: pieces, bonus: t.bonus);
+      }).toList(),
     );
   }
 

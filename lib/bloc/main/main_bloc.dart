@@ -60,7 +60,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     } catch (e, s) {
       _logger.error(runtimeType, '_init: Unknown error while trying to delete old logs', e, s);
     }
-    await _genshinService.init(AppLanguageType.english);
+    await _genshinService.init(_settingsService.language);
     final packageInfo = await PackageInfo.fromPlatform();
     final settings = _settingsService.appSettings;
     await Future.delayed(const Duration(milliseconds: 600));

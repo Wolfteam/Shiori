@@ -1604,6 +1604,16 @@ class S {
       args: [],
     );
   }
+
+  /// `{value} Pieces`
+  String xPieces(Object value) {
+    return Intl.message(
+      '$value Pieces',
+      name: 'xPieces',
+      desc: '',
+      args: [value],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

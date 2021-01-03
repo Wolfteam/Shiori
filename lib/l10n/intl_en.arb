@@ -155,5 +155,6 @@
     "hold": "Hold",
     "press": "Press",
     "short": "Short",
-    "elementalAbsorption": "Elemental Absorption"
+    "elementalAbsorption": "Elemental Absorption",
+    "xPieces": "{value} Pieces"
 }
