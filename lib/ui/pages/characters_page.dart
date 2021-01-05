@@ -11,6 +11,7 @@ import '../widgets/characters/character_card.dart';
 import '../widgets/common/loading.dart';
 import '../widgets/common/sliver_nothing_found.dart';
 import '../widgets/common/sliver_page_filter.dart';
+import '../widgets/common/sliver_scaffold_with_fab.dart';
 
 class CharactersPage extends StatefulWidget {
   @override
@@ -30,7 +31,7 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
       builder: (context, state) {
         return state.map(
           loading: (_) => const Loading(),
-          loaded: (state) => CustomScrollView(
+          loaded: (state) => SliverScaffoldWithFab(
             slivers: [
               SliverPageFilter(
                 search: state.search,

@@ -12,6 +12,7 @@ import '../widgets/artifacts/artifact_info_card.dart';
 import '../widgets/common/loading.dart';
 import '../widgets/common/sliver_nothing_found.dart';
 import '../widgets/common/sliver_page_filter.dart';
+import '../widgets/common/sliver_scaffold_with_fab.dart';
 
 class ArtifactsPage extends StatefulWidget {
   @override
@@ -31,7 +32,7 @@ class _ArtifactsPageState extends State<ArtifactsPage> with AutomaticKeepAliveCl
       builder: (context, state) {
         return state.map(
           loading: (_) => const Loading(),
-          loaded: (state) => CustomScrollView(
+          loaded: (state) => SliverScaffoldWithFab(
             slivers: [
               SliverPageFilter(
                 search: state.search,
