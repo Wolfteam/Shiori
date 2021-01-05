@@ -72,6 +72,5 @@ class ThemeSettingsCard extends StatelessWidget {
 
   void _appThemeChanged(AppThemeType newValue, BuildContext context) {
     context.read<SettingsBloc>().add(SettingsEvent.themeChanged(newValue: newValue));
-    context.read<MainBloc>().add(MainEvent.themeChanged(newValue: newValue));
   }
 }

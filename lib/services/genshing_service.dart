@@ -17,21 +17,23 @@ abstract class GenshinService {
   Future<void> initTranslations(AppLanguageType languageType);
 
   List<CharacterCardModel> getCharactersForCard();
-  CharacterFileModel getCharacter(String name);
+  CharacterFileModel getCharacter(String key);
   CharacterFileModel getCharacterByImg(String img);
 
   List<WeaponCardModel> getWeaponsForCard();
   WeaponCardModel getWeaponForCardByImg(String image);
-  WeaponFileModel getWeapon(String name);
+  WeaponFileModel getWeapon(String key);
   WeaponFileModel getWeaponByImg(String img);
+  List<String> getCharactersImgUsingWeapon(String key);
 
   List<ArtifactCardModel> getArtifactsForCard();
   ArtifactCardModel getArtifactForCardByImg(String image);
-  ArtifactFileModel getArtifact(String name);
-  TranslationArtifactFile getArtifactTranslation(String name);
+  ArtifactFileModel getArtifact(String key);
+  List<String> getCharactersImgUsingArtifact(String key);
 
-  TranslationCharacterFile getCharacterTranslation(String name);
-  TranslationWeaponFile getWeaponTranslation(String name);
+  TranslationArtifactFile getArtifactTranslation(String key);
+  TranslationCharacterFile getCharacterTranslation(String key);
+  TranslationWeaponFile getWeaponTranslation(String key);
 
   List<TodayCharAscentionMaterialsModel> getCharacterAscentionMaterials(int day);
   List<TodayWeaponAscentionMaterialModel> getWeaponAscentionMaterials(int day);
@@ -132,12 +134,13 @@ class GenshinServiceImpl implements GenshinService {
           }
         }
         final quickMaterials = mp.values.toList();
-
+        final translation = getCharacterTranslation(e.key);
         return CharacterCardModel(
+          key: e.key,
           elementType: e.elementType,
           logoName: Assets.getCharacterPath(e.image),
           materials: quickMaterials.map((m) => m.fullImagePath).toList(),
-          name: e.name,
+          name: translation.name,
           stars: e.rarity,
           weaponType: e.weaponType,
           isComingSoon: e.isComingSoon,
@@ -148,8 +151,8 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  CharacterFileModel getCharacter(String name) {
-    return _charactersFile.characters.firstWhere((element) => element.name == name);
+  CharacterFileModel getCharacter(String key) {
+    return _charactersFile.characters.firstWhere((element) => element.key == key);
   }
 
   @override
@@ -158,16 +161,12 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  TranslationCharacterFile getCharacterTranslation(String name) {
-    return _translationFile.characters.firstWhere((element) => element.key == name);
-  }
-
-  @override
   List<WeaponCardModel> getWeaponsForCard() {
     return _weaponsFile.weapons.map(
       (e) {
-        final translation = getWeaponTranslation(e.name);
+        final translation = getWeaponTranslation(e.key);
         return WeaponCardModel(
+          key: e.key,
           baseAtk: e.atk,
           image: e.fullImagePath,
           name: translation.name,
@@ -183,8 +182,9 @@ class GenshinServiceImpl implements GenshinService {
   @override
   WeaponCardModel getWeaponForCardByImg(String image) {
     final weapon = _weaponsFile.weapons.firstWhere((e) => e.image == image);
-    final translation = getWeaponTranslation(weapon.name);
+    final translation = getWeaponTranslation(weapon.key);
     return WeaponCardModel(
+      key: weapon.key,
       baseAtk: weapon.atk,
       image: weapon.fullImagePath,
       name: translation.name,
@@ -196,8 +196,8 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  WeaponFileModel getWeapon(String name) {
-    return _weaponsFile.weapons.firstWhere((element) => element.name == name);
+  WeaponFileModel getWeapon(String key) {
+    return _weaponsFile.weapons.firstWhere((element) => element.key == key);
   }
 
   @override
@@ -206,21 +206,36 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  TranslationWeaponFile getWeaponTranslation(String name) {
-    return _translationFile.weapons.firstWhere((element) => element.key == name);
+  List<String> getCharactersImgUsingWeapon(String key) {
+    final weapon = getWeapon(key);
+    final imgs = <String>[];
+    for (final char in _charactersFile.characters) {
+      for (final build in char.builds) {
+        final isBeingUsed = build.weaponImages.contains(weapon.image);
+        final img = Assets.getCharacterPath(char.image);
+        if (isBeingUsed && !imgs.contains(img)) {
+          imgs.add(img);
+        }
+      }
+    }
+
+    return imgs;
   }
 
   @override
   List<ArtifactCardModel> getArtifactsForCard() {
     return _artifactsFile.artifacts.map(
       (e) {
-        final translation = _translationFile.artifacts.firstWhere((t) => t.key == e.name);
+        final translation = _translationFile.artifacts.firstWhere((t) => t.key == e.key);
         return ArtifactCardModel(
-          key: e.name,
+          key: e.key,
           name: translation.name,
           image: e.fullImagePath,
           rarity: e.rarityMax,
-          bonus: translation.bonus,
+          bonus: translation.bonus.map((t) {
+            final pieces = e.bonus.firstWhere((b) => b.key == t.key).pieces;
+            return ArtifactCardBonusModel(pieces: pieces, bonus: t.bonus);
+          }).toList(),
         );
       },
     ).toList();
@@ -229,24 +244,56 @@ class GenshinServiceImpl implements GenshinService {
   @override
   ArtifactCardModel getArtifactForCardByImg(String image) {
     final artifact = _artifactsFile.artifacts.firstWhere((a) => a.image == image);
-    final translation = _translationFile.artifacts.firstWhere((t) => t.key == artifact.name);
+    final translation = _translationFile.artifacts.firstWhere((t) => t.key == artifact.key);
     return ArtifactCardModel(
-      key: artifact.name,
+      key: artifact.key,
       name: translation.name,
       image: artifact.fullImagePath,
       rarity: artifact.rarityMax,
-      bonus: translation.bonus,
+      bonus: translation.bonus.map((t) {
+        final pieces = artifact.bonus.firstWhere((b) => b.key == t.key).pieces;
+        return ArtifactCardBonusModel(pieces: pieces, bonus: t.bonus);
+      }).toList(),
     );
   }
 
   @override
-  ArtifactFileModel getArtifact(String name) {
-    return _artifactsFile.artifacts.firstWhere((a) => a.name == name);
+  ArtifactFileModel getArtifact(String key) {
+    return _artifactsFile.artifacts.firstWhere((a) => a.key == key);
   }
 
   @override
-  TranslationArtifactFile getArtifactTranslation(String name) {
-    return _translationFile.artifacts.firstWhere((t) => t.key == name);
+  List<String> getCharactersImgUsingArtifact(String key) {
+    final artifact = getArtifact(key);
+    final imgs = <String>[];
+    for (final char in _charactersFile.characters) {
+      for (final build in char.builds) {
+        final isBeingUsed =
+            build.artifacts.any((a) => a.one == artifact.image || a.multiples.any((m) => m.image == artifact.image));
+
+        final img = Assets.getCharacterPath(char.image);
+        if (isBeingUsed && !imgs.contains(img)) {
+          imgs.add(img);
+        }
+      }
+    }
+
+    return imgs;
+  }
+
+  @override
+  TranslationCharacterFile getCharacterTranslation(String key) {
+    return _translationFile.characters.firstWhere((element) => element.key == key);
+  }
+
+  @override
+  TranslationWeaponFile getWeaponTranslation(String key) {
+    return _translationFile.weapons.firstWhere((element) => element.key == key);
+  }
+
+  @override
+  TranslationArtifactFile getArtifactTranslation(String key) {
+    return _translationFile.artifacts.firstWhere((t) => t.key == key);
   }
 
   @override
@@ -256,7 +303,7 @@ class GenshinServiceImpl implements GenshinService {
         : _materialsFile.talents.where((t) => t.days.contains(day));
 
     return iterable.map((e) {
-      final translation = _translationFile.materials.firstWhere((t) => t.key == e.name);
+      final translation = _translationFile.materials.firstWhere((t) => t.key == e.key);
       final characters = <String>[];
 
       for (final char in _charactersFile.characters) {
@@ -310,7 +357,7 @@ class GenshinServiceImpl implements GenshinService {
         : _materialsFile.weaponPrimary.where((t) => t.days.contains(day));
 
     return iterable.map((e) {
-      final translation = _translationFile.materials.firstWhere((t) => t.key == e.name);
+      final translation = _translationFile.materials.firstWhere((t) => t.key == e.key);
 
       final weapons = <String>[];
       for (final weapon in _weaponsFile.weapons) {
@@ -333,7 +380,7 @@ class GenshinServiceImpl implements GenshinService {
   List<ElementCardModel> getElementDebuffs() {
     return _elementsFile.debuffs.map(
       (e) {
-        final translation = _translationFile.debuffs.firstWhere((t) => t.key == e.name);
+        final translation = _translationFile.debuffs.firstWhere((t) => t.key == e.key);
         final reaction = ElementCardModel(name: translation.name, effect: translation.effect, image: e.fullImagePath);
         return reaction;
       },
@@ -344,7 +391,7 @@ class GenshinServiceImpl implements GenshinService {
   List<ElementReactionCardModel> getElementReactions() {
     return _elementsFile.reactions.map(
       (e) {
-        final translation = _translationFile.reactions.firstWhere((t) => t.key == e.name);
+        final translation = _translationFile.reactions.firstWhere((t) => t.key == e.key);
         final reaction = ElementReactionCardModel.withImages(
           name: translation.name,
           effect: translation.effect,
@@ -360,7 +407,7 @@ class GenshinServiceImpl implements GenshinService {
   List<ElementReactionCardModel> getElementResonances() {
     return _elementsFile.resonance.map(
       (e) {
-        final translation = _translationFile.resonance.firstWhere((t) => t.key == e.name);
+        final translation = _translationFile.resonance.firstWhere((t) => t.key == e.key);
         final reaction = e.hasImages
             ? ElementReactionCardModel.withImages(
                 name: translation.name,

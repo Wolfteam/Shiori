@@ -1,196 +1,500 @@
 {
     "artifacts": [
         {
-            "name": "Adventurer",
+            "key": "Adventurer",
             "image": "adventurer_4.png",
             "rarityMin": 3,
-            "rarityMax": 3
+            "rarityMax": 3,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Traveling Doctor",
+            "key": "Traveling Doctor",
             "image": "travelling_doctor_4.png",
             "rarityMin": 2,
-            "rarityMax": 3
+            "rarityMax": 3,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Lucky Dog",
+            "key": "Lucky Dog",
             "image": "lucky_dog_4.png",
             "rarityMin": 2,
-            "rarityMax": 3
+            "rarityMax": 3,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Resolution of Sojourner",
+            "key": "Resolution of Sojourner",
             "image": "resolution_of_sojourner_4.png",
             "rarityMin": 3,
-            "rarityMax": 4
+            "rarityMax": 4,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Tiny Miracle",
+            "key": "Tiny Miracle",
             "image": "tiny_miracle_4.png",
             "rarityMin": 3,
-            "rarityMax": 4
+            "rarityMax": 4,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Brave Heart",
+            "key": "Brave Heart",
             "image": "brave_heart_4.png",
             "rarityMin": 3,
-            "rarityMax": 4
+            "rarityMax": 4,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Defender’s Will",
+            "key": "Defender’s Will",
             "image": "defenders_will_4.png",
             "rarityMin": 3,
-            "rarityMax": 4
+            "rarityMax": 4,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Martial Artist",
+            "key": "Martial Artist",
             "image": "martial_artist_4.png",
             "rarityMin": 3,
-            "rarityMax": 4
+            "rarityMax": 4,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Gambler",
+            "key": "Gambler",
             "image": "gambler_4.png",
             "rarityMin": 3,
-            "rarityMax": 4
+            "rarityMax": 4,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Scholar",
+            "key": "Scholar",
             "image": "scholar_4.png",
             "rarityMin": 3,
-            "rarityMax": 4
+            "rarityMax": 4,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Berserker",
+            "key": "Berserker",
             "image": "berserker_4.png",
             "rarityMin": 3,
-            "rarityMax": 4
+            "rarityMax": 4,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Instructor",
+            "key": "Instructor",
             "image": "instructor_4.png",
             "rarityMin": 3,
-            "rarityMax": 4
+            "rarityMax": 4,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "The Exile",
+            "key": "The Exile",
             "image": "the_exile_4.png",
             "rarityMin": 3,
-            "rarityMax": 4
+            "rarityMax": 4,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Thundering Fury",
+            "key": "Thundering Fury",
             "image": "thundering_fury_4.png",
             "rarityMin": 4,
-            "rarityMax": 5
+            "rarityMax": 5,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Thundersoother",
+            "key": "Thundersoother",
             "image": "thundersoother_4.png",
             "rarityMin": 4,
-            "rarityMax": 5
+            "rarityMax": 5,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Viridescent Venerer",
+            "key": "Viridescent Venerer",
             "image": "viridescent_venerer_4.png",
             "rarityMin": 4,
-            "rarityMax": 5
+            "rarityMax": 5,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Maiden Beloved",
+            "key": "Maiden Beloved",
             "image": "maiden_beloved_4.png",
             "rarityMin": 4,
-            "rarityMax": 5
+            "rarityMax": 5,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Archaic Petra",
+            "key": "Archaic Petra",
             "image": "archaic_petra_4.png",
             "rarityMin": 4,
-            "rarityMax": 5
+            "rarityMax": 5,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Retracing Bolide",
+            "key": "Retracing Bolide",
             "image": "retracing_bolide_4.png",
             "rarityMin": 4,
-            "rarityMax": 5
+            "rarityMax": 5,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Crimson Witch of Flames",
+            "key": "Crimson Witch of Flames",
             "image": "crimson_witch_of_flames_4.png",
             "rarityMin": 4,
-            "rarityMax": 5
+            "rarityMax": 5,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Lavawalker",
+            "key": "Lavawalker",
             "image": "lavawalker_4.png",
             "rarityMin": 4,
-            "rarityMax": 5
+            "rarityMax": 5,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Bloodstained Chivalry",
+            "key": "Bloodstained Chivalry",
             "image": "bloodstained_chivalry_4.png",
             "rarityMin": 4,
-            "rarityMax": 5
+            "rarityMax": 5,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Noblesse Oblige",
+            "key": "Noblesse Oblige",
             "image": "noblesse_oblige_4.png",
             "rarityMin": 4,
-            "rarityMax": 5
+            "rarityMax": 5,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Gladiator’s Finale",
+            "key": "Gladiator’s Finale",
             "image": "gladiators_finale_4.png",
             "rarityMin": 4,
-            "rarityMax": 5
+            "rarityMax": 5,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Wanderer’s Troupe",
+            "key": "Wanderer’s Troupe",
             "image": "wanderers_troupe_4.png",
             "rarityMin": 4,
-            "rarityMax": 5
+            "rarityMax": 5,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Prayers for Illumination",
+            "key": "Prayers for Illumination",
             "image": "prayers_of_illumination_4.png",
             "rarityMin": 3,
-            "rarityMax": 4
+            "rarityMax": 4,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 1
+                }
+            ]
         },
         {
-            "name": "Prayers for Destiny",
+            "key": "Prayers for Destiny",
             "image": "prayers_of_destiny_4.png",
             "rarityMin": 3,
-            "rarityMax": 4
+            "rarityMax": 4,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 1
+                }
+            ]
         },
         {
-            "name": "Prayers for Wisdom",
+            "key": "Prayers for Wisdom",
             "image": "prayers_of_wisdom_4.png",
             "rarityMin": 3,
-            "rarityMax": 4
+            "rarityMax": 4,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 1
+                }
+            ]
         },
         {
-            "name": "Prayers to Springtime",
+            "key": "Prayers to Springtime",
             "image": "prayers_of_springtime_4.png",
             "rarityMin": 3,
-            "rarityMax": 4
+            "rarityMax": 4,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 1
+                }
+            ]
         },
         {
-            "name": "Blizzard Strayer",
+            "key": "Blizzard Strayer",
             "image": "blizzard_walker_4.png",
             "rarityMin": 4,
-            "rarityMax": 5
+            "rarityMax": 5,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Heart of Depth",
+            "key": "Heart of Depth",
             "image": "depth_of_heart_4.png",
             "rarityMin": 4,
-            "rarityMax": 5
+            "rarityMax": 5,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         },
         {
-            "name": "Glacier and Snowfield",
+            "key": "Glacier and Snowfield",
             "image": "glacier_and_snowfield_4.png",
             "rarityMin": 4,
-            "rarityMax": 5
+            "rarityMax": 5,
+            "bonus": [
+                {
+                    "key": "b1",
+                    "pieces": 2
+                },
+                {
+                    "key": "b2",
+                    "pieces": 4
+                }
+            ]
         }
     ]
 }

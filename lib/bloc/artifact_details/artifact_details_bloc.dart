@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../common/app_constants.dart';
 import '../../common/assets.dart';
+import '../../models/models.dart';
 import '../../services/genshing_service.dart';
 import '../../telemetry.dart';
 
@@ -25,21 +26,27 @@ class ArtifactDetailsBloc extends Bloc<ArtifactDetailsEvent, ArtifactDetailsStat
 
     final s = await event.map(
       loadArtifact: (e) async {
-        await trackArtifactLoaded(e.name);
-        final artifact = _genshinService.getArtifact(e.name);
-        final translation = _genshinService.getArtifactTranslation(e.name);
+        await trackArtifactLoaded(e.key);
+        final artifact = _genshinService.getArtifact(e.key);
+        final translation = _genshinService.getArtifactTranslation(e.key);
+        final charImgs = _genshinService.getCharactersImgUsingArtifact(e.key);
+
         var image = artifact.image.split('.png').first;
         image = image.substring(0, image.length - 1);
 
         return ArtifactDetailsState.loaded(
-          name: artifact.name,
+          name: translation.name,
           image: artifact.fullImagePath,
           rarityMin: artifact.rarityMin,
           rarityMax: artifact.rarityMax,
-          bonus: translation.bonus,
+          bonus: translation.bonus.map((t) {
+            final pieces = artifact.bonus.firstWhere((b) => b.key == t.key).pieces;
+            return ArtifactCardBonusModel(pieces: pieces, bonus: t.bonus);
+          }).toList(),
           images: translation.bonus.length == 1
               ? [artifact.fullImagePath]
               : artifactOrder.map((e) => Assets.getArtifactPath('$image$e.png')).toList(),
+          charImages: charImgs,
         );
       },
     );

@@ -17,6 +17,7 @@ import '../common/rarity.dart';
 import 'character_card_ascention_materials_bottom.dart';
 
 class CharacterCard extends StatelessWidget {
+  final String keyName;
   final String image;
   final String name;
   final int rarity;
@@ -28,6 +29,7 @@ class CharacterCard extends StatelessWidget {
 
   const CharacterCard({
     Key key,
+    @required this.keyName,
     @required this.image,
     @required this.name,
     @required this.rarity,
@@ -121,7 +123,7 @@ class CharacterCard extends StatelessWidget {
       return;
     }
 
-    context.read<CharacterBloc>().add(CharacterEvent.loadFromName(name: name));
+    context.read<CharacterBloc>().add(CharacterEvent.loadFromName(key: keyName));
     final route = MaterialPageRoute(builder: (c) => const CharacterPage());
     await Navigator.push(context, route);
   }

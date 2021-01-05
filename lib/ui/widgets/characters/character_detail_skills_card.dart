@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../common/enums/element_type.dart';
 import '../../../common/extensions/element_type_extensions.dart';
+import '../../../common/extensions/i18n_extensions.dart';
 import '../../../common/extensions/iterable_extensions.dart';
+import '../../../common/extensions/string_extensions.dart';
 import '../../../common/styles.dart';
 import '../../../generated/l10n.dart';
 import '../../../models/models.dart';
@@ -11,7 +13,7 @@ import '../common/item_description_detail.dart';
 
 class CharacterDetailSkillsCard extends StatelessWidget {
   final ElementType elementType;
-  final List<TranslationCharacterSkillFile> skills;
+  final List<CharacterSkillCardModel> skills;
   const CharacterDetailSkillsCard({
     Key key,
     @required this.elementType,
@@ -34,13 +36,14 @@ class CharacterDetailSkillsCard extends StatelessWidget {
     );
   }
 
-  Widget _buildSkillCard(BuildContext context, TranslationCharacterSkillFile model, bool isEven) {
+  Widget _buildSkillCard(BuildContext context, CharacterSkillCardModel model, bool isEven) {
     final theme = Theme.of(context);
+    final s = S.of(context);
     final img = Expanded(
       child: CircleAvatar(
         radius: 40,
         backgroundColor: elementType.getElementColorFromContext(context),
-        child: Image.asset(model.fullImagePath, width: 65, height: 65),
+        child: Image.asset(model.image, width: 65, height: 65),
       ),
     );
     final titles = Expanded(
@@ -55,9 +58,9 @@ class CharacterDetailSkillsCard extends StatelessWidget {
             ),
           ),
           Tooltip(
-            message: model.subTitle,
+            message: s.translateCharacterSkillType(model.type),
             child: Text(
-              model.subTitle,
+              s.translateCharacterSkillType(model.type),
               overflow: TextOverflow.ellipsis,
             ),
           ),
@@ -77,11 +80,13 @@ class CharacterDetailSkillsCard extends StatelessWidget {
             margin: Styles.edgeInsetAll5,
             child: Column(
               children: [
-                Text(
-                  e.name,
-                  overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.subtitle1.copyWith(color: elementType.getElementColorFromContext(context)),
-                ),
+                if (e.hasCommonTranslation || e.name.isNotNullEmptyOrWhitespace)
+                  Text(
+                    e.hasCommonTranslation ? s.translateCharacterSkillAbilityType(e.type) : e.name,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center,
+                    style: theme.textTheme.subtitle1.copyWith(color: elementType.getElementColorFromContext(context)),
+                  ),
                 if (e.description != null) Text(e.description, style: theme.textTheme.bodyText2.copyWith(fontSize: 12)),
                 if (e.descriptions.isNotEmpty) BulletList(items: e.descriptions),
                 if (e.secondDescription != null)

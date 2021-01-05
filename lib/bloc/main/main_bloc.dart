@@ -14,6 +14,7 @@ import '../../generated/l10n.dart';
 import '../../services/genshing_service.dart';
 import '../../services/logging_service.dart';
 import '../../services/settings_service.dart';
+import '../bloc.dart';
 
 part 'main_bloc.freezed.dart';
 part 'main_event.dart';
@@ -24,7 +25,20 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   final GenshinService _genshinService;
   final SettingsService _settingsService;
 
-  MainBloc(this._logger, this._genshinService, this._settingsService) : super(const MainState.loading());
+  final CharactersBloc _charactersBloc;
+  final WeaponsBloc _weaponsBloc;
+  final HomeBloc _homeBloc;
+  final ArtifactsBloc _artifactsBloc;
+
+  MainBloc(
+    this._logger,
+    this._genshinService,
+    this._settingsService,
+    this._charactersBloc,
+    this._weaponsBloc,
+    this._homeBloc,
+    this._artifactsBloc,
+  ) : super(const MainState.loading());
 
   _MainLoadedState get currentState => state as _MainLoadedState;
 
@@ -43,14 +57,14 @@ class MainBloc extends Bloc<MainEvent, MainState> {
         return _loadThemeData(currentState.appTitle, _settingsService.appTheme, accentColor, _settingsService.language);
       },
       languageChanged: (language) async {
-        return _init();
+        return _init(languageChanged: true);
       },
     );
 
     yield s;
   }
 
-  Future<MainState> _init() async {
+  Future<MainState> _init({bool languageChanged = false}) async {
     _logger.info(runtimeType, '_init: Initializing all..');
     await _settingsService.init();
 
@@ -60,7 +74,16 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     } catch (e, s) {
       _logger.error(runtimeType, '_init: Unknown error while trying to delete old logs', e, s);
     }
-    await _genshinService.init(AppLanguageType.english);
+    await _genshinService.init(_settingsService.language);
+
+    if (languageChanged) {
+      _logger.info(runtimeType, '_init: Language changed, reloading all the required blocs...');
+      _charactersBloc.add(const CharactersEvent.init());
+      _weaponsBloc.add(const WeaponsEvent.init());
+      _homeBloc.add(const HomeEvent.init());
+      _artifactsBloc.add(const ArtifactsEvent.init());
+    }
+
     final packageInfo = await PackageInfo.fromPlatform();
     final settings = _settingsService.appSettings;
     await Future.delayed(const Duration(milliseconds: 600));

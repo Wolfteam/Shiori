@@ -4,6 +4,7 @@ import '../../common/enums/element_type.dart';
 import '../../common/enums/weapon_type.dart';
 
 class CharacterCardModel {
+  final String key;
   final String logoName;
   final String name;
   final int stars;
@@ -14,6 +15,7 @@ class CharacterCardModel {
   final List<String> materials;
 
   const CharacterCardModel({
+    @required this.key,
     @required this.logoName,
     @required this.name,
     @required this.stars,

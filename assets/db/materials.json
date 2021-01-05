@@ -1,7 +1,7 @@
 {
     "talents": [
         {
-            "name": "Freedom",
+            "key": "Freedom",
             "image": "teaching_of_freedom.png",
             "isFromBoss": false,
             "isForCharacters": true,
@@ -13,7 +13,7 @@
             ]
         },
         {
-            "name": "Prosperity",
+            "key": "Prosperity",
             "image": "teaching_of_prosperity.png",
             "isFromBoss": false,
             "isForCharacters": true,
@@ -25,7 +25,7 @@
             ]
         },
         {
-            "name": "Dilligence",
+            "key": "Dilligence",
             "image": "teaching_of_diligence.png",
             "isFromBoss": false,
             "isForCharacters": true,
@@ -37,7 +37,7 @@
             ]
         },
         {
-            "name": "Resistance",
+            "key": "Resistance",
             "image": "teaching_of_resistance.png",
             "isFromBoss": false,
             "isForCharacters": true,
@@ -49,7 +49,7 @@
             ]
         },
         {
-            "name": "Ballad",
+            "key": "Ballad",
             "image": "teaching_of_ballad.png",
             "isFromBoss": false,
             "isForCharacters": true,
@@ -61,7 +61,7 @@
             ]
         },
         {
-            "name": "Gold",
+            "key": "Gold",
             "image": "teaching_of_gold.png",
             "isFromBoss": false,
             "isForCharacters": true,
@@ -73,7 +73,7 @@
             ]
         },
         {
-            "name": "Tail of Boreas",
+            "key": "Tail of Boreas",
             "image": "tail_of_boreas.png",
             "isFromBoss": true,
             "isForCharacters": true,
@@ -81,7 +81,7 @@
             "days": []
         },
         {
-            "name": "Ring of Boreas",
+            "key": "Ring of Boreas",
             "image": "ring_of_boreas.png",
             "isFromBoss": true,
             "isForCharacters": true,
@@ -89,7 +89,7 @@
             "days": []
         },
         {
-            "name": "Spirit Locket of Boreas",
+            "key": "Spirit Locket of Boreas",
             "image": "spirit_locket_of_boreas.png",
             "isFromBoss": true,
             "isForCharacters": true,
@@ -97,7 +97,7 @@
             "days": []
         },
         {
-            "name": "Dvalin's Plume",
+            "key": "Dvalin's Plume",
             "image": "dvalins_plume.png",
             "isFromBoss": true,
             "isForCharacters": true,
@@ -105,7 +105,7 @@
             "days": []
         },
         {
-            "name": "Dvalin's Claw",
+            "key": "Dvalin's Claw",
             "image": "dvalins_claw.png",
             "isFromBoss": true,
             "isForCharacters": true,
@@ -113,7 +113,7 @@
             "days": []
         },
         {
-            "name": "Dvalin's Sigh",
+            "key": "Dvalin's Sigh",
             "image": "dvalins_sigh.png",
             "isFromBoss": true,
             "isForCharacters": true,
@@ -121,7 +121,7 @@
             "days": []
         },
         {
-            "name": "Tusk of Monoceros Caeli",
+            "key": "Tusk of Monoceros Caeli",
             "image": "tusk_of_monoceros_caeli.png",
             "isFromBoss": true,
             "isForCharacters": true,
@@ -129,7 +129,7 @@
             "days": []
         },
         {
-            "name": "Shard of a Foul Legacy",
+            "key": "Shard of a Foul Legacy",
             "image": "shard_of_foul_legacy.png",
             "isFromBoss": true,
             "isForCharacters": true,
@@ -137,7 +137,7 @@
             "days": []
         },
         {
-            "name": "Shadow of the Warrior",
+            "key": "Shadow of the Warrior",
             "image": "shadow_of_the_warrior.png",
             "isFromBoss": true,
             "isForCharacters": true,
@@ -147,7 +147,7 @@
     ],
     "weaponPrimary": [
         {
-            "name": "Decarabian",
+            "key": "Decarabian",
             "image": "tile_of_decarabians_tower.png",
             "isFromBoss": false,
             "isForCharacters": false,
@@ -159,7 +159,7 @@
             ]
         },
         {
-            "name": "Guyun",
+            "key": "Guyun",
             "image": "luminous_sands_from_guyun.png",
             "isFromBoss": false,
             "isForCharacters": false,
@@ -171,7 +171,7 @@
             ]
         },
         {
-            "name": "Mist Veiled Elixir",
+            "key": "Mist Veiled Elixir",
             "image": "mist_veiled_lead_elixir.png",
             "isFromBoss": false,
             "isForCharacters": false,
@@ -183,7 +183,7 @@
             ]
         },
         {
-            "name": "Boreal Wolf",
+            "key": "Boreal Wolf",
             "image": "boreal_wolfs_milk_tooth.png",
             "isFromBoss": false,
             "isForCharacters": false,
@@ -195,7 +195,7 @@
             ]
         },
         {
-            "name": "Aerosiderite",
+            "key": "Aerosiderite",
             "image": "grain_of_aerosiderite.png",
             "isFromBoss": false,
             "isForCharacters": false,
@@ -207,7 +207,7 @@
             ]
         },
         {
-            "name": "Dandelion Gladiator",
+            "key": "Dandelion Gladiator",
             "image": "fetters_of_the_dandelion_gladiator.png",
             "isFromBoss": false,
             "isForCharacters": false,

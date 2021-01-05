@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
-import '../../common/extensions/scroll_controller_extensions.dart';
-import '../widgets/characters/character_detail.dart';
-import '../widgets/common/app_fab.dart';
+import '../../../common/extensions/scroll_controller_extensions.dart';
+import 'app_fab.dart';
 
-class CharacterPage extends StatefulWidget {
-  const CharacterPage({Key key}) : super(key: key);
+class SliverScaffoldWithFab extends StatefulWidget {
+  final List<Widget> slivers;
+
+  const SliverScaffoldWithFab({
+    Key key,
+    @required this.slivers,
+  }) : super(key: key);
 
   @override
-  _CharacterPageState createState() => _CharacterPageState();
+  _SliverScaffoldWithFabState createState() => _SliverScaffoldWithFabState();
 }
 
-class _CharacterPageState extends State<CharacterPage> with SingleTickerProviderStateMixin {
+class _SliverScaffoldWithFabState extends State<SliverScaffoldWithFab> with SingleTickerProviderStateMixin {
   ScrollController _scrollController;
   AnimationController _hideFabAnimController;
 
@@ -31,15 +35,9 @@ class _CharacterPageState extends State<CharacterPage> with SingleTickerProvider
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          controller: _scrollController,
-          child: Stack(
-            fit: StackFit.passthrough,
-            clipBehavior: Clip.none,
-            children: const [CharacterDetailTop(), CharacterDetailBottom()],
-          ),
-        ),
+      body: CustomScrollView(
+        controller: _scrollController,
+        slivers: widget.slivers,
       ),
       floatingActionButton: AppFab(
         hideFabAnimController: _hideFabAnimController,

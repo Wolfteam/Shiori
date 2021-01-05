@@ -17,7 +17,7 @@ abstract class ElementReactionFileModel implements _$ElementReactionFileModel {
   bool get hasImages => principal.isNotEmpty && secondary.isNotEmpty;
 
   factory ElementReactionFileModel({
-    @required String name,
+    @required String key,
     @required List<String> principal,
     @required List<String> secondary,
   }) = _ElementReactionFileModel;

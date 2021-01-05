@@ -2,7 +2,11 @@ import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../common/assets.dart';
+import '../../../common/enums/character_skill_ability_type.dart';
+import '../../../common/enums/character_skill_type.dart';
+import '../../../common/enums/character_type.dart';
 import '../../../common/enums/element_type.dart';
+import '../../../common/enums/region_type.dart';
 import '../../../common/enums/weapon_type.dart';
 import '../../models.dart';
 
@@ -12,21 +16,25 @@ part 'character_file_model.g.dart';
 @freezed
 abstract class CharacterFileModel implements _$CharacterFileModel {
   factory CharacterFileModel({
-    @required String name,
+    @required String key,
     @required int rarity,
     @required WeaponType weaponType,
     @required ElementType elementType,
     @required String image,
     @required String fullImage,
     String secondFullImage,
-    @required String region,
+    @required RegionType region,
     @required bool isFemale,
     @required bool isComingSoon,
     @required bool isNew,
+    @required CharacterType role,
     @required List<CharacterFileAscentionMaterialModel> ascentionMaterials,
     @required List<CharacterFileTalentAscentionMaterialModel> talentAscentionMaterials,
     List<CharacterFileMultiTalentAscentionMaterialModel> multiTalentAscentionMaterials,
     @required List<CharacterFileBuild> builds,
+    @required List<CharacterFileSkillModel> skills,
+    @required List<CharacterFilePassiveModel> passives,
+    @required List<CharacterFileConstellationModel> constellations,
   }) = _CharacterFileModel;
 
   const CharacterFileModel._();
@@ -95,7 +103,7 @@ abstract class CharacterFileArtifactBuild implements _$CharacterFileArtifactBuil
 
   factory CharacterFileArtifactBuild({
     String one,
-    List<CharacterFileArtifactMultipleBuild> multiples,
+    @required List<CharacterFileArtifactMultipleBuild> multiples,
   }) = _CharacterFileArtifactBuild;
 
   CharacterFileArtifactBuild._();
@@ -117,4 +125,67 @@ abstract class CharacterFileArtifactMultipleBuild implements _$CharacterFileArti
 
   factory CharacterFileArtifactMultipleBuild.fromJson(Map<String, dynamic> json) =>
       _$CharacterFileArtifactMultipleBuildFromJson(json);
+}
+
+@freezed
+abstract class CharacterFileSkillModel implements _$CharacterFileSkillModel {
+  @late
+  String get fullImagePath => Assets.getSkillPath(image);
+
+  factory CharacterFileSkillModel({
+    @required String key,
+    @required CharacterSkillType type,
+    @required String image,
+    List<CharacterFileSkillAbilityModel> abilities,
+  }) = _CharacterFileSkillModel;
+
+  CharacterFileSkillModel._();
+
+  factory CharacterFileSkillModel.fromJson(Map<String, dynamic> json) => _$CharacterFileSkillModelFromJson(json);
+}
+
+@freezed
+abstract class CharacterFileSkillAbilityModel implements _$CharacterFileSkillAbilityModel {
+  factory CharacterFileSkillAbilityModel({
+    @required String key,
+    @required CharacterSkillAbilityType type,
+  }) = _CharacterFileSkillAbilityModel;
+
+  CharacterFileSkillAbilityModel._();
+
+  factory CharacterFileSkillAbilityModel.fromJson(Map<String, dynamic> json) =>
+      _$CharacterFileSkillAbilityModelFromJson(json);
+}
+
+@freezed
+abstract class CharacterFilePassiveModel implements _$CharacterFilePassiveModel {
+  @late
+  String get fullImagePath => Assets.getSkillPath(image);
+
+  factory CharacterFilePassiveModel({
+    @required String key,
+    @required int unlockedAt,
+    @required String image,
+  }) = _CharacterFilePassiveModel;
+
+  CharacterFilePassiveModel._();
+
+  factory CharacterFilePassiveModel.fromJson(Map<String, dynamic> json) => _$CharacterFilePassiveModelFromJson(json);
+}
+
+@freezed
+abstract class CharacterFileConstellationModel implements _$CharacterFileConstellationModel {
+  @late
+  String get fullImagePath => Assets.getSkillPath(image);
+
+  factory CharacterFileConstellationModel({
+    @required String key,
+    @required int number,
+    @required String image,
+  }) = _CharacterFileConstellationModel;
+
+  CharacterFileConstellationModel._();
+
+  factory CharacterFileConstellationModel.fromJson(Map<String, dynamic> json) =>
+      _$CharacterFileConstellationModelFromJson(json);
 }

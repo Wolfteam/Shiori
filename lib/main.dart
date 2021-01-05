@@ -26,14 +26,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (ctx) {
-            final loggingService = getIt<LoggingService>();
-            final genshinService = getIt<GenshinService>();
-            final settingsService = getIt<SettingsService>();
-            return MainBloc(loggingService, genshinService, settingsService)..add(const MainEvent.init());
-          },
-        ),
         BlocProvider(create: (ctx) => MainTabBloc()),
         BlocProvider(
           create: (ctx) {
@@ -87,12 +79,6 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (ctx) {
-            final settingsService = getIt<SettingsService>();
-            return SettingsBloc(settingsService);
-          },
-        ),
-        BlocProvider(
-          create: (ctx) {
             final networkService = getIt<NetworkService>();
             return UrlPageBloc(networkService);
           },
@@ -101,6 +87,28 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             return ArtifactDetailsBloc(genshinService);
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final loggingService = getIt<LoggingService>();
+            final genshinService = getIt<GenshinService>();
+            final settingsService = getIt<SettingsService>();
+            return MainBloc(
+              loggingService,
+              genshinService,
+              settingsService,
+              ctx.read<CharactersBloc>(),
+              ctx.read<WeaponsBloc>(),
+              ctx.read<HomeBloc>(),
+              ctx.read<ArtifactsBloc>(),
+            )..add(const MainEvent.init());
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final settingsService = getIt<SettingsService>();
+            return SettingsBloc(settingsService, ctx.read<MainBloc>());
           },
         ),
       ],

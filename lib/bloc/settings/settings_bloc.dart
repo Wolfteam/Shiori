@@ -9,6 +9,7 @@ import '../../common/enums/app_accent_color_type.dart';
 import '../../common/enums/app_language_type.dart';
 import '../../common/enums/app_theme_type.dart';
 import '../../services/settings_service.dart';
+import '../bloc.dart';
 
 part 'settings_bloc.freezed.dart';
 part 'settings_event.dart';
@@ -16,8 +17,9 @@ part 'settings_state.dart';
 
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   final SettingsService _settingsService;
+  final MainBloc _mainBloc;
 
-  SettingsBloc(this._settingsService) : super(const SettingsState.loading());
+  SettingsBloc(this._settingsService, this._mainBloc) : super(const SettingsState.loading());
 
   _LoadedState get currentState => state as _LoadedState;
 
@@ -41,14 +43,17 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
       },
       themeChanged: (event) async {
         _settingsService.appTheme = event.newValue;
+        _mainBloc.add(MainEvent.themeChanged(newValue: event.newValue));
         return currentState.copyWith.call(currentTheme: event.newValue);
       },
       accentColorChanged: (event) async {
         _settingsService.accentColor = event.newValue;
+        _mainBloc.add(MainEvent.accentColorChanged(newValue: event.newValue));
         return currentState.copyWith.call(currentAccentColor: event.newValue);
       },
       languageChanged: (event) async {
         _settingsService.language = event.newValue;
+        _mainBloc.add(MainEvent.languageChanged(newValue: event.newValue));
         return currentState.copyWith.call(currentLanguage: event.newValue);
       },
       showCharacterDetailsChanged: (event) async {

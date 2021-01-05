@@ -10,6 +10,7 @@ import '../../models/weapons/weapon_card_model.dart';
 import '../widgets/common/loading.dart';
 import '../widgets/common/sliver_nothing_found.dart';
 import '../widgets/common/sliver_page_filter.dart';
+import '../widgets/common/sliver_scaffold_with_fab.dart';
 import '../widgets/weapons/weapon_bottom_sheet.dart';
 import '../widgets/weapons/weapon_card.dart';
 
@@ -30,7 +31,7 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
       builder: (context, state) {
         return state.map(
           loading: (_) => const Loading(),
-          loaded: (state) => CustomScrollView(
+          loaded: (state) => SliverScaffoldWithFab(
             slivers: [
               SliverPageFilter(
                 search: state.search,
@@ -55,6 +56,7 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
         itemBuilder: (ctx, index) {
           final weapon = weapons[index];
           return WeaponCard(
+            keyName: weapon.key,
             baseAtk: weapon.baseAtk,
             image: weapon.image,
             name: weapon.name,

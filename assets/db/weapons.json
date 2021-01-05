@@ -1,7 +1,7 @@
 {
     "bows": [
         {
-            "name": "Hunter’s Bow",
+            "key": "Hunter’s Bow",
             "image": "hunters_bow.png",
             "type": "bow",
             "atk": 23,
@@ -114,7 +114,7 @@
             "refinements": []
         },
         {
-            "name": "Seasoned Hunter’s Bow",
+            "key": "Seasoned Hunter’s Bow",
             "image": "seasoned_hunters_bow.png",
             "type": "bow",
             "atk": 33,
@@ -227,7 +227,7 @@
             "refinements": []
         },
         {
-            "name": "Ebony Bow",
+            "key": "Ebony Bow",
             "image": "ebony_bow.png",
             "type": "bow",
             "atk": 39,
@@ -421,7 +421,7 @@
             ]
         },
         {
-            "name": "Messenger",
+            "key": "Messenger",
             "image": "messenger.png",
             "type": "bow",
             "atk": 40,
@@ -615,7 +615,7 @@
             ]
         },
         {
-            "name": "Raven Bow",
+            "key": "Raven Bow",
             "image": "raven_bow.png",
             "type": "bow",
             "atk": 40,
@@ -809,7 +809,7 @@
             ]
         },
         {
-            "name": "Recurve Bow",
+            "key": "Recurve Bow",
             "image": "recurve_bow.png",
             "type": "bow",
             "atk": 38,
@@ -1003,7 +1003,7 @@
             ]
         },
         {
-            "name": "Sharpshooter’s Oath",
+            "key": "Sharpshooter’s Oath",
             "image": "sharpshooters_oath.png",
             "type": "bow",
             "atk": 39,
@@ -1197,7 +1197,7 @@
             ]
         },
         {
-            "name": "Slingshot",
+            "key": "Slingshot",
             "image": "slingshot.png",
             "type": "bow",
             "atk": 38,
@@ -1391,7 +1391,7 @@
             ]
         },
         {
-            "name": "The Stringless",
+            "key": "The Stringless",
             "image": "the_stringless.png",
             "type": "bow",
             "atk": 42,
@@ -1585,7 +1585,7 @@
             ]
         },
         {
-            "name": "Alley Hunter",
+            "key": "Alley Hunter",
             "image": "alley_hunter.png",
             "type": "bow",
             "atk": 41,
@@ -1784,7 +1784,7 @@
             ]
         },
         {
-            "name": "Blackcliff Warbow",
+            "key": "Blackcliff Warbow",
             "image": "blackcliff_warbow.png",
             "type": "bow",
             "atk": 44,
@@ -1978,7 +1978,7 @@
             ]
         },
         {
-            "name": "Compound Bow",
+            "key": "Compound Bow",
             "image": "compound_bow.png",
             "type": "bow",
             "atk": 41,
@@ -2177,7 +2177,7 @@
             ]
         },
         {
-            "name": "Favonius Warbow",
+            "key": "Favonius Warbow",
             "image": "favonius_warbow.png",
             "type": "bow",
             "atk": 41,
@@ -2376,7 +2376,7 @@
             ]
         },
         {
-            "name": "Prototype Crescent",
+            "key": "Prototype Crescent",
             "image": "prototype_crescent.png",
             "type": "bow",
             "atk": 42,
@@ -2570,7 +2570,7 @@
             ]
         },
         {
-            "name": "Royal Bow",
+            "key": "Royal Bow",
             "image": "royal_bow.png",
             "type": "bow",
             "atk": 42,
@@ -2764,7 +2764,7 @@
             ]
         },
         {
-            "name": "Rust",
+            "key": "Rust",
             "image": "rust.png",
             "type": "bow",
             "atk": 42,
@@ -2958,7 +2958,7 @@
             ]
         },
         {
-            "name": "Sacrificial Bow",
+            "key": "Sacrificial Bow",
             "image": "sacrificial_bow.png",
             "type": "bow",
             "atk": 44,
@@ -3157,7 +3157,7 @@
             ]
         },
         {
-            "name": "The Viridescent Hunt",
+            "key": "The Viridescent Hunt",
             "image": "the_viridescent_hunt.png",
             "type": "bow",
             "atk": 42,
@@ -3356,7 +3356,7 @@
             ]
         },
         {
-            "name": "Skyward Harp",
+            "key": "Skyward Harp",
             "image": "skyward_harp.png",
             "type": "bow",
             "atk": 48,
@@ -3560,7 +3560,7 @@
             ]
         },
         {
-            "name": "Amos’ Bow",
+            "key": "Amos’ Bow",
             "image": "amos_bow.png",
             "type": "bow",
             "atk": 46,
@@ -3759,7 +3759,7 @@
             ]
         },
         {
-            "name": "Dreams of Dragonfell",
+            "key": "Dreams of Dragonfell",
             "image": "dreams_of_dragonfell.png",
             "type": "bow",
             "atk": 46,
@@ -3960,7 +3960,7 @@
     ],
     "swords": [
         {
-            "name": "Dull Blade",
+            "key": "Dull Blade",
             "image": "dull_blade.png",
             "type": "sword",
             "atk": 23,
@@ -4073,7 +4073,7 @@
             "refinements": []
         },
         {
-            "name": "Silver Sword",
+            "key": "Silver Sword",
             "image": "silver_sword.png",
             "type": "sword",
             "atk": 33,
@@ -4186,7 +4186,7 @@
             "refinements": []
         },
         {
-            "name": "Cool Steel",
+            "key": "Cool Steel",
             "image": "cool_steel.png",
             "type": "sword",
             "atk": 39,
@@ -4380,7 +4380,7 @@
             ]
         },
         {
-            "name": "Dark Iron Sword",
+            "key": "Dark Iron Sword",
             "image": "dark_iron_sword.png",
             "type": "sword",
             "atk": 39,
@@ -4574,7 +4574,7 @@
             ]
         },
         {
-            "name": "Fillet Blade",
+            "key": "Fillet Blade",
             "image": "fillet_blade.png",
             "type": "sword",
             "atk": 39,
@@ -4773,7 +4773,7 @@
             ]
         },
         {
-            "name": "Harbinger of Dawn",
+            "key": "Harbinger of Dawn",
             "image": "harbinger_of_dawn.png",
             "type": "sword",
             "atk": 39,
@@ -4967,7 +4967,7 @@
             ]
         },
         {
-            "name": "Skyrider Sword",
+            "key": "Skyrider Sword",
             "image": "skyrider_sword.png",
             "type": "sword",
             "atk": 38,
@@ -5161,7 +5161,7 @@
             ]
         },
         {
-            "name": "Traveler’s Handy Sword",
+            "key": "Traveler’s Handy Sword",
             "image": "travelers_handy_sword.png",
             "type": "sword",
             "atk": 40,
@@ -5355,7 +5355,7 @@
             ]
         },
         {
-            "name": "Blackcliff Longsword",
+            "key": "Blackcliff Longsword",
             "image": "blackcliff_longsword.png",
             "type": "sword",
             "atk": 44,
@@ -5549,7 +5549,7 @@
             ]
         },
         {
-            "name": "Favonius Sword",
+            "key": "Favonius Sword",
             "image": "favonius_sword.png",
             "type": "sword",
             "atk": 41,
@@ -5748,7 +5748,7 @@
             ]
         },
         {
-            "name": "Iron Sting",
+            "key": "Iron Sting",
             "image": "iron_sting.png",
             "type": "sword",
             "atk": 42,
@@ -5942,7 +5942,7 @@
             ]
         },
         {
-            "name": "Lion’s Roar",
+            "key": "Lion’s Roar",
             "image": "lions_roar.png",
             "type": "sword",
             "atk": 42,
@@ -6136,7 +6136,7 @@
             ]
         },
         {
-            "name": "Prototype Rancour",
+            "key": "Prototype Rancour",
             "image": "prototype_rancour.png",
             "type": "sword",
             "atk": 44,
@@ -6330,7 +6330,7 @@
             ]
         },
         {
-            "name": "Royal Longsword",
+            "key": "Royal Longsword",
             "image": "royal_longsword.png",
             "type": "sword",
             "atk": 42,
@@ -6524,7 +6524,7 @@
             ]
         },
         {
-            "name": "Sacrificial Sword",
+            "key": "Sacrificial Sword",
             "image": "sacrificial_sword.png",
             "type": "sword",
             "atk": 41,
@@ -6723,7 +6723,7 @@
             ]
         },
         {
-            "name": "The Alley Flash",
+            "key": "The Alley Flash",
             "image": "the_alley_flash.png",
             "type": "sword",
             "atk": 44,
@@ -6893,7 +6893,7 @@
             ]
         },
         {
-            "name": "The Black Sword",
+            "key": "The Black Sword",
             "image": "the_black_sword.png",
             "type": "sword",
             "atk": 42,
@@ -7092,7 +7092,7 @@
             ]
         },
         {
-            "name": "The Flute",
+            "key": "The Flute",
             "image": "the_flute.png",
             "type": "sword",
             "atk": 42,
@@ -7286,7 +7286,7 @@
             ]
         },
         {
-            "name": "Sword of Descension",
+            "key": "Sword of Descension",
             "image": "sword_of_descension.png",
             "type": "sword",
             "atk": 39,
@@ -7457,7 +7457,7 @@
             ]
         },
         {
-            "name": "Festering Desire",
+            "key": "Festering Desire",
             "image": "festering_fang.png",
             "type": "sword",
             "atk": 42,
@@ -7656,7 +7656,7 @@
             ]
         },
         {
-            "name": "Aquila Favonia",
+            "key": "Aquila Favonia",
             "image": "aquila_favonia.png",
             "type": "sword",
             "atk": 48,
@@ -7860,7 +7860,7 @@
             ]
         },
         {
-            "name": "Skyward Blade",
+            "key": "Skyward Blade",
             "image": "skyward_blade.png",
             "type": "sword",
             "atk": 46,
@@ -8059,7 +8059,7 @@
             ]
         },
         {
-            "name": "Summit Shaper",
+            "key": "Summit Shaper",
             "image": "summit_shaper.png",
             "type": "sword",
             "atk": 46,
@@ -8260,7 +8260,7 @@
     ],
     "catalysts": [
         {
-            "name": "Apprentice’s Notes",
+            "key": "Apprentice’s Notes",
             "image": "apprentices_notes.png",
             "type": "catalyst",
             "atk": 23,
@@ -8373,7 +8373,7 @@
             "refinements": []
         },
         {
-            "name": "Pocket Grimoire",
+            "key": "Pocket Grimoire",
             "image": "pocket_grimoire.png",
             "type": "catalyst",
             "atk": 33,
@@ -8486,7 +8486,7 @@
             "refinements": []
         },
         {
-            "name": "Amber Bead",
+            "key": "Amber Bead",
             "image": "amber_catalyst.png",
             "type": "catalyst",
             "atk": 39,
@@ -8680,7 +8680,7 @@
             ]
         },
         {
-            "name": "Emerald Orb",
+            "key": "Emerald Orb",
             "image": "emerald_orb.png",
             "type": "catalyst",
             "atk": 40,
@@ -8874,7 +8874,7 @@
             ]
         },
         {
-            "name": "Magic Guide",
+            "key": "Magic Guide",
             "image": "magic_guide.png",
             "type": "catalyst",
             "atk": 38,
@@ -9068,7 +9068,7 @@
             ]
         },
         {
-            "name": "Otherworldly Story",
+            "key": "Otherworldly Story",
             "image": "otherworldly_story.png",
             "type": "catalyst",
             "atk": 39,
@@ -9262,7 +9262,7 @@
             ]
         },
         {
-            "name": "Thrilling Tales of Dragon Slayers",
+            "key": "Thrilling Tales of Dragon Slayers",
             "image": "thrilling_tales_of_dragon_slayers.png",
             "type": "catalyst",
             "atk": 39,
@@ -9456,7 +9456,7 @@
             ]
         },
         {
-            "name": "Twin Nephrite",
+            "key": "Twin Nephrite",
             "image": "twin_nephrite.png",
             "type": "catalyst",
             "atk": 40,
@@ -9650,7 +9650,7 @@
             ]
         },
         {
-            "name": "Blackcliff Agate",
+            "key": "Blackcliff Agate",
             "image": "blackcliff_amulet.png",
             "type": "catalyst",
             "atk": 42,
@@ -9844,7 +9844,7 @@
             ]
         },
         {
-            "name": "Favonius Codex",
+            "key": "Favonius Codex",
             "image": "favonius_codex.png",
             "type": "catalyst",
             "atk": 42,
@@ -10043,7 +10043,7 @@
             ]
         },
         {
-            "name": "Mappa Mare",
+            "key": "Mappa Mare",
             "image": "mappa_mare.png",
             "type": "catalyst",
             "atk": 44,
@@ -10237,7 +10237,7 @@
             ]
         },
         {
-            "name": "Prototype Amber",
+            "key": "Prototype Amber",
             "image": "prototype_malice.png",
             "type": "catalyst",
             "atk": 42,
@@ -10436,7 +10436,7 @@
             ]
         },
         {
-            "name": "Royal Grimoire",
+            "key": "Royal Grimoire",
             "image": "royal_grimoire.png",
             "type": "catalyst",
             "atk": 44,
@@ -10630,7 +10630,7 @@
             ]
         },
         {
-            "name": "Sacrificial Fragments",
+            "key": "Sacrificial Fragments",
             "image": "sacrificial_fragments.png",
             "type": "catalyst",
             "atk": 41,
@@ -10829,7 +10829,7 @@
             ]
         },
         {
-            "name": "Solar Pearl",
+            "key": "Solar Pearl",
             "image": "solar_pearl.png",
             "type": "catalyst",
             "atk": 42,
@@ -11028,7 +11028,7 @@
             ]
         },
         {
-            "name": "The Widsith",
+            "key": "The Widsith",
             "image": "the_widsith.png",
             "type": "catalyst",
             "atk": 42,
@@ -11232,7 +11232,7 @@
             ]
         },
         {
-            "name": "Wine and Song",
+            "key": "Wine and Song",
             "image": "wine_and_song.png",
             "type": "catalyst",
             "atk": 42,
@@ -11431,7 +11431,7 @@
             ]
         },
         {
-            "name": "Eye of Perception",
+            "key": "Eye of Perception",
             "image": "eye_of_perception.png",
             "type": "catalyst",
             "atk": 41,
@@ -11630,7 +11630,7 @@
             ]
         },
         {
-            "name": "Frostbearer",
+            "key": "Frostbearer",
             "image": "everfrost_core.png",
             "type": "catalyst",
             "atk": 42,
@@ -11834,7 +11834,7 @@
             ]
         },
         {
-            "name": "Lost Prayer to the Sacred Winds",
+            "key": "Lost Prayer to the Sacred Winds",
             "image": "lost_prayer_to_the_sacred_winds.png",
             "type": "catalyst",
             "atk": 46,
@@ -12028,7 +12028,7 @@
             ]
         },
         {
-            "name": "Skyward Atlas",
+            "key": "Skyward Atlas",
             "image": "skyward_atlas.png",
             "type": "catalyst",
             "atk": 48,
@@ -12227,7 +12227,7 @@
             ]
         },
         {
-            "name": "Memory of Dust",
+            "key": "Memory of Dust",
             "image": "memory_of_dust.png",
             "type": "catalyst",
             "atk": 46,
@@ -12428,7 +12428,7 @@
     ],
     "claymores": [
         {
-            "name": "Waster Greatsword",
+            "key": "Waster Greatsword",
             "image": "waster_greatsword.png",
             "type": "claymore",
             "atk": 23,
@@ -12541,7 +12541,7 @@
             "refinements": []
         },
         {
-            "name": "Old Merc’s Pal",
+            "key": "Old Merc’s Pal",
             "image": "old_mercs_pal.png",
             "type": "claymore",
             "atk": 33,
@@ -12654,7 +12654,7 @@
             "refinements": []
         },
         {
-            "name": "Bloodtainted Greatsword",
+            "key": "Bloodtainted Greatsword",
             "image": "bloodtainted_greatsword.png",
             "type": "claymore",
             "atk": 38,
@@ -12848,7 +12848,7 @@
             ]
         },
         {
-            "name": "Debate Club",
+            "key": "Debate Club",
             "image": "debate_club.png",
             "type": "claymore",
             "atk": 39,
@@ -13042,7 +13042,7 @@
             ]
         },
         {
-            "name": "Ferrous Shadow",
+            "key": "Ferrous Shadow",
             "image": "ferrous_shadow.png",
             "type": "claymore",
             "atk": 39,
@@ -13241,7 +13241,7 @@
             ]
         },
         {
-            "name": "Quartz",
+            "key": "Quartz",
             "image": "quartz.png",
             "type": "claymore",
             "atk": 39,
@@ -13435,7 +13435,7 @@
             ]
         },
         {
-            "name": "Skyrider Greatsword",
+            "key": "Skyrider Greatsword",
             "image": "skyrider_greatsword.png",
             "type": "claymore",
             "atk": 39,
@@ -13629,7 +13629,7 @@
             ]
         },
         {
-            "name": "White Iron Greatsword",
+            "key": "White Iron Greatsword",
             "image": "white_iron_greatsword.png",
             "type": "claymore",
             "atk": 39,
@@ -13823,7 +13823,7 @@
             ]
         },
         {
-            "name": "Blackcliff Slasher",
+            "key": "Blackcliff Slasher",
             "image": "blackcliff_slasher.png",
             "type": "claymore",
             "atk": 42,
@@ -14017,7 +14017,7 @@
             ]
         },
         {
-            "name": "Favonius Greatsword",
+            "key": "Favonius Greatsword",
             "image": "favonius_greatsword.png",
             "type": "claymore",
             "atk": 41,
@@ -14216,7 +14216,7 @@
             ]
         },
         {
-            "name": "Lithic Blade",
+            "key": "Lithic Blade",
             "image": "lithic_blade.png",
             "type": "claymore",
             "atk": 41,
@@ -14415,7 +14415,7 @@
             ]
         },
         {
-            "name": "Prototype Archaic",
+            "key": "Prototype Archaic",
             "image": "prototype_aminus.png",
             "type": "claymore",
             "atk": 44,
@@ -14609,7 +14609,7 @@
             ]
         },
         {
-            "name": "Rainslasher",
+            "key": "Rainslasher",
             "image": "rainslasher.png",
             "type": "claymore",
             "atk": 42,
@@ -14803,7 +14803,7 @@
             ]
         },
         {
-            "name": "Royal Greatsword",
+            "key": "Royal Greatsword",
             "image": "royal_greatsword.png",
             "type": "claymore",
             "atk": 44,
@@ -14997,7 +14997,7 @@
             ]
         },
         {
-            "name": "Serpent Spine",
+            "key": "Serpent Spine",
             "image": "serpent_spine.png",
             "type": "claymore",
             "atk": 42,
@@ -15196,7 +15196,7 @@
             ]
         },
         {
-            "name": "The Bell",
+            "key": "The Bell",
             "image": "the_bell.png",
             "type": "claymore",
             "atk": 42,
@@ -15395,7 +15395,7 @@
             ]
         },
         {
-            "name": "Whiteblind",
+            "key": "Whiteblind",
             "image": "whiteblind.png",
             "type": "claymore",
             "atk": 42,
@@ -15589,7 +15589,7 @@
             ]
         },
         {
-            "name": "Sacrificial Greatsword",
+            "key": "Sacrificial Greatsword",
             "image": "sacrificial_greatsword.png",
             "type": "claymore",
             "atk": 44,
@@ -15788,7 +15788,7 @@
             ]
         },
         {
-            "name": "Snow-Tombed Starsilver",
+            "key": "Snow-Tombed Starsilver",
             "image": "snow_tombed_starsilver.png",
             "type": "claymore",
             "atk": 44,
@@ -15992,7 +15992,7 @@
             ]
         },
         {
-            "name": "Skyward Pride",
+            "key": "Skyward Pride",
             "image": "skyward_pride.png",
             "type": "claymore",
             "atk": 48,
@@ -16191,7 +16191,7 @@
             ]
         },
         {
-            "name": "Wolf’s Gravestone",
+            "key": "Wolf’s Gravestone",
             "image": "wolfs_gravestone.png",
             "type": "claymore",
             "atk": 46,
@@ -16390,7 +16390,7 @@
             ]
         },
         {
-            "name": "The Unforged",
+            "key": "The Unforged",
             "image": "the_unforged.png",
             "type": "claymore",
             "atk": 46,
@@ -16591,7 +16591,7 @@
     ],
     "polearms": [
         {
-            "name": "Beginner’s Protector",
+            "key": "Beginner’s Protector",
             "image": "beginners_protector.png",
             "type": "polearm",
             "atk": 23,
@@ -16704,7 +16704,7 @@
             "refinements": []
         },
         {
-            "name": "Iron Point",
+            "key": "Iron Point",
             "image": "iron_point.png",
             "type": "polearm",
             "atk": 33,
@@ -16817,7 +16817,7 @@
             "refinements": []
         },
         {
-            "name": "Black Tassel",
+            "key": "Black Tassel",
             "image": "black_tassel.png",
             "type": "polearm",
             "atk": 38,
@@ -17011,7 +17011,7 @@
             ]
         },
         {
-            "name": "Halberd",
+            "key": "Halberd",
             "image": "halberd.png",
             "type": "polearm",
             "atk": 40,
@@ -17205,7 +17205,7 @@
             ]
         },
         {
-            "name": "White Tassel",
+            "key": "White Tassel",
             "image": "white_tassel.png",
             "type": "polearm",
             "atk": 39,
@@ -17399,7 +17399,7 @@
             ]
         },
         {
-            "name": "Blackcliff Pole",
+            "key": "Blackcliff Pole",
             "image": "blackcliff_pole.png",
             "type": "polearm",
             "atk": 42,
@@ -17593,7 +17593,7 @@
             ]
         },
         {
-            "name": "Crescent Pike",
+            "key": "Crescent Pike",
             "image": "crescent_pike.png",
             "type": "polearm",
             "atk": 44,
@@ -17787,7 +17787,7 @@
             ]
         },
         {
-            "name": "Deathmatch",
+            "key": "Deathmatch",
             "image": "deathmatch.png",
             "type": "polearm",
             "atk": 41,
@@ -17991,7 +17991,7 @@
             ]
         },
         {
-            "name": "Dragon’s Bane",
+            "key": "Dragon’s Bane",
             "image": "dragons_bane.png",
             "type": "polearm",
             "atk": 41,
@@ -18185,7 +18185,7 @@
             ]
         },
         {
-            "name": "Lithic Spear",
+            "key": "Lithic Spear",
             "image": "lithic_spear.png",
             "type": "polearm",
             "atk": 42,
@@ -18384,7 +18384,7 @@
             ]
         },
         {
-            "name": "Prototype Starglitter",
+            "key": "Prototype Starglitter",
             "image": "prototype_grudge.png",
             "type": "polearm",
             "atk": 42,
@@ -18578,7 +18578,7 @@
             ]
         },
         {
-            "name": "Favonius Lance",
+            "key": "Favonius Lance",
             "image": "favonius_lance.png",
             "type": "polearm",
             "atk": 44,
@@ -18777,7 +18777,7 @@
             ]
         },
         {
-            "name": "Royal Spear",
+            "key": "Royal Spear",
             "image": "royal_spear.png",
             "type": "polearm",
             "atk": 44,
@@ -18971,7 +18971,7 @@
             ]
         },
         {
-            "name": "Dragonspine Spear",
+            "key": "Dragonspine Spear",
             "image": "dragonspine_spear.png",
             "type": "polearm",
             "atk": 41,
@@ -19175,7 +19175,7 @@
             ]
         },
         {
-            "name": "Vortex Vanquisher",
+            "key": "Vortex Vanquisher",
             "image": "vortex_vanquisher.png",
             "type": "polearm",
             "atk": 46,
@@ -19374,7 +19374,7 @@
             ]
         },
         {
-            "name": "Primordial Jade Winged-Spear",
+            "key": "Primordial Jade Winged-Spear",
             "image": "primordial_jade_winged_spear.png",
             "type": "polearm",
             "atk": 48,
@@ -19573,7 +19573,7 @@
             ]
         },
         {
-            "name": "Skyward Spine",
+            "key": "Skyward Spine",
             "image": "skyward_spine.png",
             "type": "polearm",
             "atk": 48,

@@ -21,19 +21,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m0(version) => "Versión: ${version}";
 
-  static m1(value) => "${value} ATK";
+  static m1(value) => "${value} ATQ";
 
-  static m2(value) => "${value} ATK %";
+  static m2(value) => "${value} ATQ %";
 
   static m3(value) => "Constelación ${value}";
 
-  static m4(value) => "${value} CRIT ATK";
+  static m4(value) => "${value} ATQ CRIT";
 
-  static m5(value) => "${value} CRIT DMG %";
+  static m5(value) => "${value} Daño CRIT %";
 
-  static m6(value) => "${value} CRIT Rate";
+  static m6(value) => "${value} Prob. CRIT";
 
-  static m7(value) => "${value} CRIT Rate %";
+  static m7(value) => "${value} Prob. CRIT %";
 
   static m8(value) => "${value} DEF %";
 
@@ -41,15 +41,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m10(value) => "${value} Recarga de Energía %";
 
-  static m11(value) => "${value} HP %";
+  static m11(value) => "${value} Vida %";
 
-  static m12(value) => "${value} PHYS DMG Bonus";
+  static m12(value) => "${value} Bono Daño FIS.";
 
-  static m13(value) => "${value} PHYS DMG %";
+  static m13(value) => "${value} Daño FIS. %";
 
   static m14(value) => "Talento de Ascención ${value}";
 
   static m15(value) => "Desbloqueada en nivel de ascención ${value}";
+
+  static m16(value) => "${value} Pieza(s)";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
@@ -57,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "aboutSummary" : MessageLookupByLibrary.simpleMessage("Un aplicación de tipo base de datos para Genshin Impact"),
     "accentColor" : MessageLookupByLibrary.simpleMessage("Color de acento"),
     "all" : MessageLookupByLibrary.simpleMessage("Todos"),
+    "anotherWorld" : MessageLookupByLibrary.simpleMessage("Otro Mundo"),
     "appInfo" : MessageLookupByLibrary.simpleMessage("Información de la aplicación"),
     "appName" : MessageLookupByLibrary.simpleMessage("GenshinDb"),
     "appVersion" : m0,
@@ -74,11 +77,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancel" : MessageLookupByLibrary.simpleMessage("Cancelar"),
     "catalyst" : MessageLookupByLibrary.simpleMessage("Catalizador"),
     "characters" : MessageLookupByLibrary.simpleMessage("Personajes"),
+    "chargedAttack" : MessageLookupByLibrary.simpleMessage("Ataque Cargado"),
     "chest" : MessageLookupByLibrary.simpleMessage("Cofre"),
     "chooseAccentColor" : MessageLookupByLibrary.simpleMessage("Escoge un color de acento"),
     "chooseBaseAppTheme" : MessageLookupByLibrary.simpleMessage("Escoge un tema base"),
     "chooseLanguage" : MessageLookupByLibrary.simpleMessage("Escoge un lenguaje"),
-    "claymore" : MessageLookupByLibrary.simpleMessage("Claymore"),
+    "claymore" : MessageLookupByLibrary.simpleMessage("Mandoble"),
     "clock" : MessageLookupByLibrary.simpleMessage("Reloj"),
     "comingSoon" : MessageLookupByLibrary.simpleMessage("Próximamente"),
     "constellationX" : m3,
@@ -97,12 +101,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "disclaimerMsg" : MessageLookupByLibrary.simpleMessage("Esta app no está afiliada ni asociada a miHoYo. GenshinDb es solo una aplicación de tipo base de datos para el juego Genshin Impact"),
     "dps" : MessageLookupByLibrary.simpleMessage("DPS"),
     "element" : MessageLookupByLibrary.simpleMessage("Elemento"),
+    "elementalAbsorption" : MessageLookupByLibrary.simpleMessage("Cambio Elemental"),
+    "elementalBurst" : MessageLookupByLibrary.simpleMessage("Impulso Elemental"),
     "elementalDebuffs" : MessageLookupByLibrary.simpleMessage("Debuffs Elementales"),
     "elementalDebuffsExplainded" : MessageLookupByLibrary.simpleMessage("Cada uno de estos tienen diferentes efectos negativos cuando son aplicados a tus enemigos o a ti"),
-    "elementalDmgPercentage" : MessageLookupByLibrary.simpleMessage("Elemental DMG%"),
+    "elementalDmgPercentage" : MessageLookupByLibrary.simpleMessage("Daño Elemental %"),
     "elementalReactions" : MessageLookupByLibrary.simpleMessage("Reacciones Elementales"),
     "elementalReactionsExplainded" : MessageLookupByLibrary.simpleMessage("Combinaciones de diferentes elementos producen diferentes reacciones"),
     "elementalResonances" : MessageLookupByLibrary.simpleMessage("Resonancias Elementales"),
+    "elementalSkill" : MessageLookupByLibrary.simpleMessage("Habilidad Elemental"),
     "elementaryMaster" : m9,
     "elements" : MessageLookupByLibrary.simpleMessage("Elementos"),
     "elemetalResonancesExplanined" : MessageLookupByLibrary.simpleMessage("Teniendo estos tipos de personajes en tu equipo te daran el effecto correspondiente"),
@@ -119,6 +126,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "generalSettings" : MessageLookupByLibrary.simpleMessage("General settings"),
     "goblet" : MessageLookupByLibrary.simpleMessage("Copa"),
     "healingBonus" : MessageLookupByLibrary.simpleMessage("Bono de curación"),
+    "hold" : MessageLookupByLibrary.simpleMessage("Mantener"),
     "home" : MessageLookupByLibrary.simpleMessage("Inicio"),
     "hpPercentage" : m11,
     "issues" : MessageLookupByLibrary.simpleMessage("Inconvenientes"),
@@ -127,15 +135,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "light" : MessageLookupByLibrary.simpleMessage("Ligero"),
     "loading" : MessageLookupByLibrary.simpleMessage("Cargando"),
     "location" : MessageLookupByLibrary.simpleMessage("Ubicación"),
+    "mainDps" : MessageLookupByLibrary.simpleMessage("DPS Principal"),
     "male" : MessageLookupByLibrary.simpleMessage("Hombre"),
     "map" : MessageLookupByLibrary.simpleMessage("Mapa"),
     "materials" : MessageLookupByLibrary.simpleMessage("Materiales"),
     "maybeLater" : MessageLookupByLibrary.simpleMessage("Quizás después"),
     "monday" : MessageLookupByLibrary.simpleMessage("Lunes"),
+    "na" : MessageLookupByLibrary.simpleMessage("N/A"),
     "name" : MessageLookupByLibrary.simpleMessage("Nombre"),
     "noInternetConnection" : MessageLookupByLibrary.simpleMessage("No hay conexión hay internet"),
     "noThanks" : MessageLookupByLibrary.simpleMessage("No gracias"),
     "none" : MessageLookupByLibrary.simpleMessage("Ninguno"),
+    "normalAttack" : MessageLookupByLibrary.simpleMessage("Ataque Normal"),
     "note" : MessageLookupByLibrary.simpleMessage("Nota"),
     "nothingToShow" : MessageLookupByLibrary.simpleMessage("Nada para mostrar"),
     "ok" : MessageLookupByLibrary.simpleMessage("Ok"),
@@ -148,7 +159,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "physDmgPercentage" : m13,
     "pieces" : MessageLookupByLibrary.simpleMessage("Piezas"),
     "plume" : MessageLookupByLibrary.simpleMessage("Pluma"),
+    "plungingAttack" : MessageLookupByLibrary.simpleMessage("Ataque Descendiente"),
     "polearm" : MessageLookupByLibrary.simpleMessage("Lanza"),
+    "press" : MessageLookupByLibrary.simpleMessage("Presionar"),
     "quest" : MessageLookupByLibrary.simpleMessage("Misión"),
     "rank" : MessageLookupByLibrary.simpleMessage("Rank"),
     "rarity" : MessageLookupByLibrary.simpleMessage("Rareza"),
@@ -167,6 +180,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "secondaryState" : MessageLookupByLibrary.simpleMessage("Stat Secundario"),
     "seeAll" : MessageLookupByLibrary.simpleMessage("Ver todos"),
     "settings" : MessageLookupByLibrary.simpleMessage("Ajustes"),
+    "short" : MessageLookupByLibrary.simpleMessage("Corto"),
     "showCharacterDetails" : MessageLookupByLibrary.simpleMessage("Mostrar el detalle de los personajes"),
     "showWeaponDetails" : MessageLookupByLibrary.simpleMessage("Mostrar el detalle de las armas"),
     "skills" : MessageLookupByLibrary.simpleMessage("Habilidades"),
@@ -178,6 +192,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "subStat" : MessageLookupByLibrary.simpleMessage("Sub. Stat"),
     "sunday" : MessageLookupByLibrary.simpleMessage("Domingo"),
     "support" : MessageLookupByLibrary.simpleMessage("Soporte"),
+    "supportDps" : MessageLookupByLibrary.simpleMessage("DPS de Soporte"),
     "supportMsg" : MessageLookupByLibrary.simpleMessage("Hice esta aplicación en mi tiempo libre y también es de código abierto. Si deseas ayudarme, informar de un problema, tienes una idea, deseas que se implemente una funcionalidad, etc., crea un issue en mi Github:"),
     "sword" : MessageLookupByLibrary.simpleMessage("Espada"),
     "talentAscentionX" : m14,
@@ -191,10 +206,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "unclockedAtAscentionLevelX" : m15,
     "unlockedAutomatically" : MessageLookupByLibrary.simpleMessage("Desbloqueada Automáticamente"),
     "unreleased" : MessageLookupByLibrary.simpleMessage("No Publicado"),
+    "utility" : MessageLookupByLibrary.simpleMessage("Utilidad"),
     "weapon" : MessageLookupByLibrary.simpleMessage("Arma"),
     "weaponType" : MessageLookupByLibrary.simpleMessage("Tipo de arma"),
     "weapons" : MessageLookupByLibrary.simpleMessage("Armas"),
     "wednesday" : MessageLookupByLibrary.simpleMessage("Miércoles"),
+    "wishSimulator" : MessageLookupByLibrary.simpleMessage("Simulador de Deseos"),
+    "xPieces" : m16,
     "youCanAlsoSendMeAnEmail" : MessageLookupByLibrary.simpleMessage("También puedes enviarme un correo")
   };
 }

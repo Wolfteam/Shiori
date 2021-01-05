@@ -10,7 +10,7 @@ import '../common/item_description_detail.dart';
 
 class CharacterDetailConstellationsCard extends StatelessWidget {
   final ElementType elementType;
-  final List<TranslationCharacterConstellation> constellations;
+  final List<CharacterConstellationModel> constellations;
 
   const CharacterDetailConstellationsCard({
     Key key,
@@ -30,7 +30,7 @@ class CharacterDetailConstellationsCard extends StatelessWidget {
     );
   }
 
-  Widget _buildConstellationCard(TranslationCharacterConstellation model, BuildContext context) {
+  Widget _buildConstellationCard(CharacterConstellationModel model, BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
     return Card(
@@ -45,7 +45,7 @@ class CharacterDetailConstellationsCard extends StatelessWidget {
             CircleAvatar(
               radius: 40,
               backgroundColor: elementType.getElementColorFromContext(context),
-              child: Image.asset(model.fullImagePath, width: 60, height: 60),
+              child: Image.asset(model.image, width: 60, height: 60),
             ),
             Text(
               model.title,

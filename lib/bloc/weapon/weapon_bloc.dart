@@ -27,7 +27,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
       loadFromImg: (img) async {
         await trackWeaponLoaded(img, loadedFromName: false);
         final weapon = _genshinService.getWeaponByImg(img);
-        final translation = _genshinService.getWeaponTranslation(weapon.name);
+        final translation = _genshinService.getWeaponTranslation(weapon.key);
         return _buildInitialState(weapon, translation);
       },
       loadFromName: (name) async {
@@ -42,8 +42,9 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
   }
 
   WeaponState _buildInitialState(WeaponFileModel weapon, TranslationWeaponFile translation) {
+    final charImgs = _genshinService.getCharactersImgUsingWeapon(weapon.key);
     return WeaponState.loaded(
-      name: weapon.name,
+      name: translation.name,
       weaponType: weapon.type,
       fullImage: weapon.fullImagePath,
       rarity: weapon.rarity,
@@ -63,6 +64,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
           return WeaponFileRefinementModel(level: e.level, description: description);
         },
       ).toList(),
+      charImages: charImgs,
     );
   }
 }

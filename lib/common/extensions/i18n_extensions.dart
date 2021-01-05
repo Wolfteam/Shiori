@@ -4,11 +4,15 @@ import '../../common/enums/artifact_filter_type.dart';
 import '../../common/enums/character_filter_type.dart';
 import '../../common/enums/element_type.dart';
 import '../../common/enums/item_location_type.dart';
+import '../../common/enums/region_type.dart';
 import '../../common/enums/sort_direction_type.dart';
 import '../../common/enums/stat_type.dart';
 import '../../common/enums/weapon_filter_type.dart';
 import '../../common/enums/weapon_type.dart';
 import '../../generated/l10n.dart';
+import '../enums/character_skill_ability_type.dart';
+import '../enums/character_skill_type.dart';
+import '../enums/character_type.dart';
 import '../enums/item_status_type.dart';
 
 extension I18nExtensions on S {
@@ -225,6 +229,74 @@ extension I18nExtensions on S {
         return rarity;
       default:
         throw Exception('Invalid artifact filter type = $type');
+    }
+  }
+
+  String translateCharacterType(CharacterType type) {
+    switch (type) {
+      case CharacterType.mainDps:
+        return mainDps;
+      case CharacterType.supportDps:
+        return supportDps;
+      case CharacterType.utility:
+        return utility;
+      case CharacterType.na:
+        return na;
+      default:
+        throw Exception('Invalid character type = $type');
+    }
+  }
+
+  String translateCharacterSkillType(CharacterSkillType type) {
+    switch (type) {
+      case CharacterSkillType.normalAttack:
+        return normalAttack;
+      case CharacterSkillType.elementalSkill:
+        return elementalSkill;
+      case CharacterSkillType.elementalBurst:
+        return elementalBurst;
+      case CharacterSkillType.others:
+        return others;
+      default:
+        throw Exception('Invalid character skill type = $type');
+    }
+  }
+
+  String translateCharacterSkillAbilityType(CharacterSkillAbilityType type) {
+    switch (type) {
+      case CharacterSkillAbilityType.normalAttack:
+        return normalAttack;
+      case CharacterSkillAbilityType.chargedAttack:
+        return chargedAttack;
+      case CharacterSkillAbilityType.plungingAttack:
+        return plungingAttack;
+      case CharacterSkillAbilityType.hold:
+        return hold;
+      case CharacterSkillAbilityType.holdShort:
+        return '$hold ($short)';
+      case CharacterSkillAbilityType.press:
+        return press;
+      case CharacterSkillAbilityType.elementalAbsorption:
+        return elementalAbsorption;
+      default:
+        throw Exception('Invalid character skill ability type = $type');
+    }
+  }
+
+  String translateRegionType(RegionType type) {
+    switch (type) {
+      case RegionType.anotherWorld:
+        return anotherWorld;
+      case RegionType.inazuma:
+        return 'Inazuma';
+      case RegionType.mondstadt:
+        return 'Mondstadt';
+      case RegionType.liyue:
+        return 'Liyue';
+      case RegionType.snezhnaya:
+        return 'Snezhnaya';
+      default:
+        throw Exception('Invalid region type = $type');
     }
   }
 }

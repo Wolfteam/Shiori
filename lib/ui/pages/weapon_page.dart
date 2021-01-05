@@ -10,6 +10,7 @@ import '../../common/extensions/rarity_extensions.dart';
 import '../../common/styles.dart';
 import '../../generated/l10n.dart';
 import '../../models/models.dart';
+import '../widgets/common/circle_character.dart';
 import '../widgets/common/item_description.dart';
 import '../widgets/common/item_description_detail.dart';
 import '../widgets/common/loading.dart';
@@ -43,7 +44,7 @@ class WeaponPage extends StatelessWidget {
                       s.fullImage,
                       context,
                     ),
-                    _buildBottom(s.description, s.rarity, s.ascentionMaterials, s.refinements, context),
+                    _buildBottom(s.description, s.rarity, s.ascentionMaterials, s.refinements, s.charImages, context),
                   ],
                 ),
               );
@@ -133,16 +134,27 @@ class WeaponPage extends StatelessWidget {
     int rarity,
     List<WeaponFileAscentionMaterial> ascentionMaterials,
     List<WeaponFileRefinementModel> refinements,
+    List<String> charImgs,
     BuildContext context,
   ) {
+    final s = S.of(context);
     return Card(
       margin: const EdgeInsets.only(top: 280, right: 10, left: 10),
       shape: Styles.cardItemDetailShape,
       child: Padding(
-        padding: const EdgeInsets.only(top: 10, right: 10, left: 10),
+        padding: Styles.edgeInsetAll10,
         child: Column(
           children: [
             _buildDescription(description, rarity, context),
+            if (charImgs.isNotEmpty)
+              ItemDescriptionDetail(
+                title: s.builds,
+                body: Wrap(
+                  alignment: WrapAlignment.center,
+                  children: charImgs.map((e) => CircleCharacter(image: e)).toList(),
+                ),
+                textColor: rarity.getRarityColors().last,
+              ),
             if (ascentionMaterials.isNotEmpty)
               WeaponDetailAscentionMaterialsCard(
                 ascentionMaterials: ascentionMaterials,

@@ -70,6 +70,5 @@ class AccentColorSettingsCard extends StatelessWidget {
 
   void _accentColorChanged(AppAccentColorType newValue, BuildContext context) {
     context.read<SettingsBloc>().add(SettingsEvent.accentColorChanged(newValue: newValue));
-    context.read<MainBloc>().add(MainEvent.accentColorChanged(newValue: newValue));
   }
 }

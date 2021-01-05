@@ -5,7 +5,9 @@ import '../../bloc/bloc.dart';
 import '../../common/extensions/rarity_extensions.dart';
 import '../../common/styles.dart';
 import '../../generated/l10n.dart';
+import '../../models/models.dart';
 import '../widgets/artifacts/artifact_stats.dart';
+import '../widgets/common/circle_character.dart';
 import '../widgets/common/item_description_detail.dart';
 import '../widgets/common/loading.dart';
 import '../widgets/common/rarity.dart';
@@ -27,7 +29,7 @@ class ArtifactDetailsPage extends StatelessWidget {
                   clipBehavior: Clip.none,
                   children: [
                     _buildTop(s.name, s.rarityMax, s.image, context),
-                    _buildBottom(s.rarityMax, s.images, s.bonus, context),
+                    _buildBottom(s.rarityMax, s.images, s.bonus, s.charImages, context),
                   ],
                 ),
               );
@@ -97,7 +99,8 @@ class ArtifactDetailsPage extends StatelessWidget {
   Widget _buildBottom(
     int rarity,
     List<String> images,
-    List<String> bonus,
+    List<ArtifactCardBonusModel> bonus,
+    List<String> charImgs,
     BuildContext context,
   ) {
     final s = S.of(context);
@@ -108,7 +111,7 @@ class ArtifactDetailsPage extends StatelessWidget {
       margin: const EdgeInsets.only(top: 300, right: 10, left: 10),
       shape: Styles.cardItemDetailShape,
       child: Padding(
-        padding: const EdgeInsets.only(top: 10, right: 10, left: 10),
+        padding: Styles.edgeInsetAll10,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -116,7 +119,10 @@ class ArtifactDetailsPage extends StatelessWidget {
               margin: const EdgeInsets.only(bottom: 10),
               child: ItemDescriptionDetail(
                 title: s.bonus,
-                body: Container(margin: const EdgeInsets.symmetric(horizontal: 5), child: ArtifactStats(bonus: bonus)),
+                body: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 5),
+                  child: ArtifactStats(bonus: bonus),
+                ),
                 textColor: rarity.getRarityColors().last,
               ),
             ),
@@ -128,6 +134,15 @@ class ArtifactDetailsPage extends StatelessWidget {
               ),
               textColor: rarity.getRarityColors().last,
             ),
+            if (charImgs.isNotEmpty)
+              ItemDescriptionDetail(
+                title: s.builds,
+                body: Wrap(
+                  alignment: WrapAlignment.center,
+                  children: charImgs.map((e) => CircleCharacter(image: e)).toList(),
+                ),
+                textColor: rarity.getRarityColors().last,
+              ),
           ],
         ),
       ),
