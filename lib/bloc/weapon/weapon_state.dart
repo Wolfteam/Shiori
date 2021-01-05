@@ -15,5 +15,6 @@ abstract class WeaponState with _$WeaponState {
     @required ItemLocationType locationType,
     @required List<WeaponFileAscentionMaterial> ascentionMaterials,
     @required List<WeaponFileRefinementModel> refinements,
+    @required List<String> charImages,
   }) = _LoadedState;
 }

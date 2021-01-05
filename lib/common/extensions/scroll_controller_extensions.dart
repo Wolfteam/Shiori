@@ -3,9 +3,6 @@ import 'package:flutter/rendering.dart';
 
 extension ScrollControllerExtensions on ScrollController {
   void handleScrollForFab(AnimationController hideFabController) {
-    print(position.userScrollDirection);
-    print(position.pixels);
-    print(position.atEdge);
     switch (position.userScrollDirection) {
       case ScrollDirection.idle:
         break;

@@ -24,7 +24,7 @@ class CharacterDetailBottom extends StatelessWidget {
           margin: const EdgeInsets.only(top: 380, right: 10, left: 10),
           shape: Styles.cardItemDetailShape,
           child: Padding(
-            padding: const EdgeInsets.only(top: 10, right: 10, left: 10),
+            padding: Styles.edgeInsetAll10,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [

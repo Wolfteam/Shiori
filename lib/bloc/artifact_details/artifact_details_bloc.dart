@@ -29,6 +29,8 @@ class ArtifactDetailsBloc extends Bloc<ArtifactDetailsEvent, ArtifactDetailsStat
         await trackArtifactLoaded(e.key);
         final artifact = _genshinService.getArtifact(e.key);
         final translation = _genshinService.getArtifactTranslation(e.key);
+        final charImgs = _genshinService.getCharactersImgUsingArtifact(e.key);
+
         var image = artifact.image.split('.png').first;
         image = image.substring(0, image.length - 1);
 
@@ -44,6 +46,7 @@ class ArtifactDetailsBloc extends Bloc<ArtifactDetailsEvent, ArtifactDetailsStat
           images: translation.bonus.length == 1
               ? [artifact.fullImagePath]
               : artifactOrder.map((e) => Assets.getArtifactPath('$image$e.png')).toList(),
+          charImages: charImgs,
         );
       },
     );

@@ -103,7 +103,7 @@ abstract class CharacterFileArtifactBuild implements _$CharacterFileArtifactBuil
 
   factory CharacterFileArtifactBuild({
     String one,
-    List<CharacterFileArtifactMultipleBuild> multiples,
+    @required List<CharacterFileArtifactMultipleBuild> multiples,
   }) = _CharacterFileArtifactBuild;
 
   CharacterFileArtifactBuild._();

@@ -11,5 +11,6 @@ abstract class ArtifactDetailsState with _$ArtifactDetailsState {
     @required int rarityMax,
     @required List<ArtifactCardBonusModel> bonus,
     @required List<String> images,
+    @required List<String> charImages,
   }) = _LoadedState;
 }

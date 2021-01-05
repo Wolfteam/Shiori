@@ -42,6 +42,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
   }
 
   WeaponState _buildInitialState(WeaponFileModel weapon, TranslationWeaponFile translation) {
+    final charImgs = _genshinService.getCharactersImgUsingWeapon(weapon.key);
     return WeaponState.loaded(
       name: translation.name,
       weaponType: weapon.type,
@@ -63,6 +64,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
           return WeaponFileRefinementModel(level: e.level, description: description);
         },
       ).toList(),
+      charImages: charImgs,
     );
   }
 }

@@ -24,10 +24,12 @@ abstract class GenshinService {
   WeaponCardModel getWeaponForCardByImg(String image);
   WeaponFileModel getWeapon(String key);
   WeaponFileModel getWeaponByImg(String img);
+  List<String> getCharactersImgUsingWeapon(String key);
 
   List<ArtifactCardModel> getArtifactsForCard();
   ArtifactCardModel getArtifactForCardByImg(String image);
   ArtifactFileModel getArtifact(String key);
+  List<String> getCharactersImgUsingArtifact(String key);
 
   TranslationArtifactFile getArtifactTranslation(String key);
   TranslationCharacterFile getCharacterTranslation(String key);
@@ -204,6 +206,23 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
+  List<String> getCharactersImgUsingWeapon(String key) {
+    final weapon = getWeapon(key);
+    final imgs = <String>[];
+    for (final char in _charactersFile.characters) {
+      for (final build in char.builds) {
+        final isBeingUsed = build.weaponImages.contains(weapon.image);
+        final img = Assets.getCharacterPath(char.image);
+        if (isBeingUsed && !imgs.contains(img)) {
+          imgs.add(img);
+        }
+      }
+    }
+
+    return imgs;
+  }
+
+  @override
   List<ArtifactCardModel> getArtifactsForCard() {
     return _artifactsFile.artifacts.map(
       (e) {
@@ -241,6 +260,25 @@ class GenshinServiceImpl implements GenshinService {
   @override
   ArtifactFileModel getArtifact(String key) {
     return _artifactsFile.artifacts.firstWhere((a) => a.key == key);
+  }
+
+  @override
+  List<String> getCharactersImgUsingArtifact(String key) {
+    final artifact = getArtifact(key);
+    final imgs = <String>[];
+    for (final char in _charactersFile.characters) {
+      for (final build in char.builds) {
+        final isBeingUsed =
+            build.artifacts.any((a) => a.one == artifact.image || a.multiples.any((m) => m.image == artifact.image));
+
+        final img = Assets.getCharacterPath(char.image);
+        if (isBeingUsed && !imgs.contains(img)) {
+          imgs.add(img);
+        }
+      }
+    }
+
+    return imgs;
   }
 
   @override
