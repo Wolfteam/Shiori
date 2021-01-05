@@ -52,7 +52,7 @@
                 {
                     "key": "s3",
                     "title": "Creación: Marea tectónica",
-                    "description": "Albedo ordena a sus cristales Geo que exploten, lanzándolos al frente e infligiendo Daño Geo en el AdE. Si en el campo de batalla ya hay una isotoma solar creada por Albedo. creará 7 flores de la muerte dentro del área de la isotoma, provocando una violenta explosión que inflige Daño Geo en el ME.",
+                    "description": "Albedo ordena a sus cristales Geo que exploten, lanzándolos al frente e infligiendo Daño Geo en el AdE. Si en el campo de batalla ya hay una isotoma solar creada por Albedo. creará 7 flores de la muerte dentro del área de la isotoma, provocando una violenta explosión que inflige Daño Geo.",
                     "abilities": []
                 }
             ],
@@ -80,7 +80,7 @@
                 {
                     "key": "c1",
                     "title": "Flor del Edén",
-                    "description": "Cuando explota una flor fugaz de Abiogénesis: Isotoma solar creara por Albedo, este recupera 1.2 pts. de Energía Elemental.",
+                    "description": "Cuando explota una flor fugaz de Abiogénesis: Isotoma solar creada por Albedo, este recupera 1.2 pts. de Energía Elemental.",
                     "secondDescription": null,
                     "descriptions": []
                 },
@@ -88,7 +88,7 @@
                     "key": "c2",
                     "title": "Eón Fanerozoico",
                     "description": "Al explotar, las flores fugaces de Abiogénesis: Isotoma solar otorgan a Albedo aritmética fatídica durante 30 s:",
-                    "secondDescription": "Creacón: Marea tectónica consume la aritmética fatídica, eliminando todas sus acumulaciones y aumentando el daño infligido por las explosiones de Creación: Marea tectónica y de las flores de la muerte.",
+                    "secondDescription": "Creación: Marea tectónica consume la aritmética fatídica, eliminando todas sus acumulaciones y aumentando el daño infligido por las explosiones de Creación: Marea tectónica y de las flores de la muerte.",
                     "descriptions": [
                         "Cada acumulación de aritmética fatídica aumenta el daño de Albedo en una cantidad igual al 30% de su DEF.",
                         "Puede acumularse un máximo de 4 veces."
@@ -256,7 +256,7 @@
         {
             "key": "Barbara",
             "name": "Bárbara",
-            "description": "Todos los habitantes de Mondstadt adoran a Barbara. Ella vio por primera vez la palabra \"ídolo\" en una revista.",
+            "description": "Todos los habitantes de Mondstadt adoran a Bárbara. Ella vio por primera vez la palabra \"ídolo\" en una revista.",
             "skills": [
                 {
                     "key": "s1",
@@ -292,7 +292,7 @@
                                 "Los Ataques Normales de Bárbara curan a todos los miembros del grupo y a los personajes aliados cercanos una cierta cantidad de Vida, que aumenta con la Vida Máx. de Bárbara.",
                                 "Su Ataque Cargado puede generar 4 veces la cantidad de curación.",
                                 "Regenera una cierta cantidad de Vida del personaje actual a intervalos regulares.",
-                                "Aplica el estado Mojado al personaje y a los enemigos que entren e ncontacto con él."
+                                "Aplica el estado Mojado al personaje y a los enemigos que entren en contacto con él."
                             ]
                         }
                     ]
@@ -421,8 +421,8 @@
                 },
                 {
                     "key": "s3",
-                    "title": "Quiebrantatormentas",
-                    "description": "Recalling her slaying of the great beast Haishan. Beidou calls upon that monstrous strength and the lightning to create a Thunderbeast’s Targe around herself, dealing Electro DMG to nearby opponents.",
+                    "title": "Quebrantatormentas",
+                    "description": "Recordando su batalla contra la gran bestia Haishan, Beidou recurre a esa monstruosa fuerza y al rayo para crear un Escudo del trueno a su alrededor que inflige Daño Electro a los enemigos cercanos.",
                     "abilities": [
                         {
                             "name": "Escudo del trueno",
@@ -550,7 +550,7 @@
                             "secondDescription": "Bennett no resulta herido por esta explosión.",
                             "descriptions": [
                                 "Nivel 1: Golpea dos veces, infligiendo Daño Pyro y lanzando a los enemigos por los aires.",
-                                "Lanza 3 ataques consecutivos que infligen una cantidad significativa de Daño Pyro. El último ataque causa una explosión que lanza tanto a los enemigos como a Bennett por los aires."
+                                "Nivel 2: Lanza 3 ataques consecutivos que infligen una cantidad significativa de Daño Pyro. El último ataque causa una explosión que lanza tanto a los enemigos como a Bennett por los aires."
                             ]
                         }
                     ]
@@ -561,7 +561,7 @@
                     "description": "Bennett salta hacia el enemigo y ataca, infligiendo Daño Pyro y creando un círculo de apoyo moral.",
                     "abilities": [
                         {
-                            "name": "Círculo de apoyo moral:",
+                            "name": "Círculo de apoyo moral",
                             "description": null,
                             "descriptions": [
                                 "Si la Vida de un personaje dentro del círculo es igual o inferior al 70%, su vida se regenerará continuamente.",
@@ -880,7 +880,7 @@
                 {
                     "key": "s2",
                     "title": "Zarpazo helado",
-                    "description": "Dispara unas garras heladas, infligiendo Daño Cryo a los enemigos y creando un escudo es proporcional a la Vida Máx. De Diona, y su duración depende del número de garras que golpeen a su objetivo.",
+                    "description": "Dispara unas garras heladas, infligiendo Daño Cryo a los enemigos y creando un escudo es proporcional a la Vida Máx. de Diona, y su duración depende del número de garras que golpeen a su objetivo.",
                     "abilities": [
                         {
                             "key":"a1",
@@ -889,7 +889,7 @@
                         },
                         {
                             "key":"a2",
-                            "description": "Mantener presionado Retrocede rápidamente y dispara 5 garras heladas. Además, genera un escudo que gana un 75% de bono de absorción de Daño.Este escudo tiene un 250% de bono de absorción de Daño Cryo sobre el personaje actual.",
+                            "description": "Retrocede rápidamente y dispara 5 garras heladas. Además, genera un escudo que gana un 75% de bono de absorción de Daño.Este escudo tiene un 250% de bono de absorción de Daño Cryo sobre el personaje actual.",
                             "descriptions": []
                         }
                     ]
@@ -1368,7 +1368,7 @@
                             "descriptions": []
                         },
                         {
-                            "name": "Lightning Stiletto",
+                            "name": "Cuña relámpago",
                             "description": "Si Keching usa Retorno estelar de nuevo o hace un Ataque Cargado durante la habilidad, borrará la Marca de Cuña y producirá diferentes efectos:",
                             "descriptions": [
                                 "Si vuelve a usar Retorno Estelar, se teletransportará hasta la ubicación de la marca y desatará un ataque cortante que inflige Daño Electro en el AdE. Al teletransportarse a una cuña lanzada al mantener presionado, Keching ignora los obstáculos del terreno.",
@@ -1452,7 +1452,7 @@
         {
             "key": "Klee",
             "name": "Klee",
-            "description": "Una visitante frecuente de los calabozos de los Caballeros de Favonius, la maestra de explosiones de Mondstadt. La llaman \"el Sol Fugitivo\"",
+            "description": "Una visitante frecuente de los calabozos de los Caballeros de Favonius, la maestra de explosiones de Mondstadt. La llaman \"el Sol Fugitivo\".",
             "skills": [
                 {
                     "key": "s1",
@@ -1557,7 +1557,7 @@
         {
             "key": "Lisa",
             "name": "Lisa",
-            "description": "La perezosa pero sabia bibliotecaria de los Caballeros de Favonius. En realidad, fue considerada por la Academia de Sumeru como su graduada mas sobresaliente en los últimos dos siglos",
+            "description": "La perezosa pero sabia bibliotecaria de los Caballeros de Favonius. En realidad, fue considerada por la Academia de Sumeru como su graduada mas sobresaliente en los últimos dos siglos.",
             "skills": [
                 {
                     "key": "s1",
@@ -1709,7 +1709,7 @@
                             "name": "",
                             "description": "La Ilusión tiene las siguientes propiedades especiales:",
                             "descriptions": [
-                                "Provoca continuamente de los enemigos cercanos, atrayendo sus ataques.",
+                                "Provoca continuamente a los enemigos cercanos, atrayendo sus ataques.",
                                 "Continuamente inflige Daño Hydro a los enemigos cercanos.",
                                 "Al terminar su efecto, la Ilusión explota e inflige Daño Hydro en el AdE."
                             ]
@@ -1727,8 +1727,8 @@
                     "description": "Mona invoca unas olas cristalinas para crear un reflejo del cielo estrellado, aplicando el estado burbuja ilusoria sobre los enemigos en una gran AdE.",
                     "abilities": [
                         {
-                            "name": "Búrbuja ilusoria",
-                            "description": "Invoca una burbuja estrellada que envuelve a sus enemigos, aplicando el efecto Mojado sobre ellos. La búrbuja inmoviliza a los enemigos más débiles, los cuales no podran moverse. Cuando un enemigo que está bajo los efectos de la burbuja ilusoria recibe daño, se producen los siguientes efectos:",
+                            "name": "Burbuja ilusoria",
+                            "description": "Invoca una burbuja estrellada que envuelve a sus enemigos, aplicando el efecto Mojado sobre ellos. La burbuja inmoviliza a los enemigos más débiles, los cuales no podran moverse. Cuando un enemigo que está bajo los efectos de la burbuja ilusoria recibe daño, se producen los siguientes efectos:",
                             "descriptions": [
                                 "Coloca un presagio sobre el enemigo, lo que otorga un bono de daño y tambien aumenta el daño del ataque que lo causa.",
                                 "Elimina la burbuja ilusoria, inflingiendo Daño Hydro adicional."
@@ -1827,7 +1827,7 @@
         {
             "key": "Ningguang",
             "name": "Ninguang",
-            "description": "Ninguang es conocida como el \"Equilibrio Celestial\", es miembro de las \"Siete Estrellas de Liyue\". Su riquza es insuperable en todo Teyvat",
+            "description": "Ninguang es conocida como el \"Equilibrio Celestial\", es miembro de las \"Siete Estrellas de Liyue\". Su riquza es insuperable en todo Teyvat.",
             "skills": [
                 {
                     "key": "s1",
@@ -1841,7 +1841,7 @@
                         },
                         {
                             "key": "a2",
-                            "description": "Consume una cierta cantidad de Aguante para disparar una gema gigante que inflige Daño Geo. Si Ninguang tiene algún jade estelar, lanzar un Ataque Cargado también disparará el jade estelar contra el enemigo, causando Daño adicional",
+                            "description": "Consume una cierta cantidad de Aguante para disparar una gema gigante que inflige Daño Geo. Si Ninguang tiene algún jade estelar, lanzar un Ataque Cargado también disparará el jade estelar contra el enemigo, causando Daño adicional.",
                             "descriptions": []
                         },
                         {
@@ -2096,7 +2096,7 @@
                     "description": "Usando el Talismán de sangre helada, Qiqi invoca al Heraldo de la escarcha, infligiendo Daño Cryo a todos los enemigos cercanos.",
                     "abilities": [
                         {
-                            "name": "Heraldo de la escarcha:",
+                            "name": "Heraldo de la escarcha",
                             "description": "",
                             "descriptions": [
                                 "Cuando Qiqi golpea a un objetivo con sus Ataques Normales o Cargados, regenera Vida para todos los miembros del equipo y todos los personajes aliados cercanos. La cantidad de Vida regenerada dependerá del ATQ de Qiqi.",
@@ -2109,7 +2109,7 @@
                 {
                     "key": "s3",
                     "title": "Magia Adeptus: Preservadora de la fortuna",
-                    "description": "Qiqi libera el poder Adeptus sellado dentro de su cuerpo, marcando a los enemigos cercanos con un Talismán de conservación de la fortuna que inflige Daño Cryo",
+                    "description": "Qiqi libera el poder Adeptus sellado dentro de su cuerpo, marcando a los enemigos cercanos con un Talismán de conservación de la fortuna que inflige Daño Cryo.",
                     "abilities": [
                         {
                             "name": " Talismán de conservación de la fortuna",
@@ -2122,20 +2122,20 @@
             "passives": [
                 {
                     "key": "p1",
+                    "title": "Recuerdos de una vida pasada",
+                    "description": "Muestra la ubicación de las especialidades de Liyue cercanas en el Mini-mapa.",
+                    "descriptions": []
+                },
+                {
+                    "key": "p2",
                     "title": "Elixir de vida",
                     "description": "Cuando un personaje bajo el efecto de Arte de Adeptus: Heraldo de la escarcha activa una Reacción Elemental, aumenta su Bono de Curación recibida en un 20% durante 8 s.",
                     "descriptions": []
                 },
                 {
-                    "key": "p2",
+                    "key": "p3",
                     "title": "Un vistazo al arcano",
                     "description": "Cuando Qiqi golpea a enemigos con Ataque Normal o Ataque Cargado, tiene un 50% de posibilidad de ponerles un Talismán de conservación de la fortuna durante 6 s. Este efecto solo puede activarse una vez cada 30 s.",
-                    "descriptions": []
-                },
-                {
-                    "key": "p3",
-                    "title": "Recuerdos de una vida pasada",
-                    "description": "Muestra la ubicación de las especialidades de Liyue cercanas en el Mini-mapa.",
                     "descriptions": []
                 }
             ],
@@ -2461,7 +2461,7 @@
                 {
                     "key": "s2",
                     "title": "Legado del mal: Olas furiosas",
-                    "description": "Lanza un arsenal hecho de agua pura que inflige Daño Hydro a los enemigos cercanos y entra en posición de combate cuerpo a cuerpo.\nEn esta posición, los ataques Normales y Cargados de Tartaglia se convierten en Daño Hydro, el cual no puede ser sustituido imbuyéndolo de otro elemento, y cambian:",
+                    "description": "Lanza un arsenal hecho de agua pura que inflige Daño Hydro a los enemigos cercanos y entra en posición de combate cuerpo a cuerpo.\nEn esta posición, los ataques Normales y Cargados de Tartaglia se convierten en Daño Hydro, el cual no puede ser sustituido imbuyéndolo de otro elemento, y cambian de la siguiente forma:",
                     "abilities": [
                         {
                             "key": "a1",
@@ -2474,7 +2474,7 @@
                             "descriptions": []
                         },
                         {
-                            "name": "Obstrucción del flujo Corte",
+                            "name": "Obstrucción del flujo: Corte",
                             "description": "Al golpear con un ataque cuerpo a cuerpo a un enemigo bajo los efectos de Obstrucción del flujo, Tartaglia realiza Obstrucción del flujo: Corte, infligiendo Daño Hydro en el AdE. Este daño es considerado como daño de Habilidad Elemental, y solo se puede activar una vez cada 1.5 s.\nDespués de 30 s, o una vez que los efectos de la habilidad se hayan disipado tras lanzarla, Tartaglia regresa a su posición de combate a distancia, y esta habilidad entra en TdE. Cuanto más tiempo permanezca Tartaglia en su posición de combate cuerpo a cuerpo, más durará el TdE.\nSi el retorno a la posición de combate a distancia se produce automáticamente después de 30 s, el TdE será aún más largo.",
                             "descriptions": []
                         }
@@ -3123,7 +3123,7 @@
         },
         {
             "key": "Xingqiu",
-            "name": "Xingqiu",
+            "name": "Xingchiu",
             "description": "Un joven con una espada larga al que puede verse frecuentemente en las librerías. Tiene un corazón de oro y anhela la justicia y la igualdad para todos.",
             "skills": [
                 {
@@ -3150,23 +3150,23 @@
                 },
                 {
                     "key": "s2",
-                    "title": "Guhua Sword - Fatal Rainscreen",
-                    "description": "Xingqiu performs twin strikes with his sword, dealing Hydro DMG. At the same time, this ability creates the maximum number of Rain Swords, which will orbit the character. 20% of Xingqiu’s Hydro DMG Bonus will be converted to additional DMG Reduction for the Rain Swords. The maximum amount of additional DMG Reduction that can be gained this way is 24%. The initial maximum number of Rain Swords is 3. Using this ability applies the Wet status onto the character.",
+                    "title": "Espada Guhua: Lluvia torrencial mortal",
+                    "description": "Xingchiu realiza golpes gemelos con su espada, infligiendo Daño Hydro. Al mismo tiempo, esta habilidad crea la cantidad máxima de Espadas de lluvia, que orbitarán alrededor del personaje.\n20% del Bono de Daño Hydro de Xingchiu se convertirá en reducción de Daño adicional para las Espadas de lluvia.\nLa cantidad máxima de reducción de Daño que se puede obtener de esta manera es del 24%.",
                     "abilities": [
                         {
                             "name": "",
-                            "description": "The Rain Swords have the following properties:",
+                            "description": "Las Espadas de lluvia tienen las siguientes propiedades:",
                             "descriptions": [
-                                "When a character takes DMG, the Rain Sword will shatter, reducing the amount of DMG taken.",
-                                "Increases the character’s resistance to interruption."
+                                "Cuando el personaje recibe Daño, una Espada de lluvia se romperá, reduciendo la cantidad de Daño recibido.",
+                                "Aumenta la RES a interrupción del personaje."
                             ]
                         }
                     ]
                 },
                 {
                     "key": "s3",
-                    "title": "Espada Guhua: Lluvia torrencial mortal",
-                    "description": "Xingchiu realiza golpes gemelos con su espada, infligiendo Daño Hydro. Al mismo tiempo, esta habilidad crea la cantidad máxima de Espadas de lluvia, que orbitarán alrededor del personaje.",
+                    "title": "Espada Guhua: Sable de lluvia",
+                    "description": "Activa la Espada arcoíris y lucha con una lluvia de espadas fantasma, a la vez que crea el número máximo de Espadas de lluvia.",
                     "abilities": [
                         {
                             "name": "Espada arcoiris",
@@ -3278,7 +3278,7 @@
                     "abilities": [
                         {
                             "name": "",
-                            "description": "La absorción de daño del escudo es proporcional a la DEF de Xinyan y al número de enemigos alcanzados",
+                            "description": "La absorción de daño del escudo es proporcional a la DEF de Xinyan y al número de enemigos alcanzados:",
                             "descriptions": [
                                 "De 0 a 1 enemigos: otorga un Escudo Niv. 1: Improvisación.",
                                 "2 enemigos: otorga un Escudo Niv. 2: Entrada.",
@@ -4093,13 +4093,13 @@
             "key": "Prototype Starglitter",
             "name": "Prototipo Resentimiento",
             "description": "Una alabarda descubierta en la Forja Peñasco Oscuro. Los destellos a lo largo del borde afilado son como estrellas en la noche.",
-            "refinement": "Después de usar una Hab. Elemental, aumenta el daño del Ataque Normal y Cargado un {{1}}% durante 12 s. Puede acumularse hasta 2 veces."
+            "refinement": "Después de usar una Hab. Elemental, aumenta el daño del Ataque Normal y Cargado un {{0}}% durante 12 s. Puede acumularse hasta 2 veces."
         },
         {
             "key": "Favonius Lance",
             "name": "Lanza de Favonius",
             "description": "Una lanza hecha con el estilo de los Caballeros de Favonius Su barra es recta y su punta fluye ligeramente como el viento.",
-            "refinement": "Los Golpes CRIT tienen un {{1}}% probabilidad de generar una pequeña cantidad de Partículas Elementales, que regenerán 6 de Energía para el personaje. Solo puede ocurrir una vez cada {{1}} s."
+            "refinement": "Los Golpes CRIT tienen un {{0}}% probabilidad de generar una pequeña cantidad de Partículas Elementales, que regenerán 6 de Energía para el personaje. Solo puede ocurrir una vez cada {{1}} s."
         },
         {
             "key": "Royal Spear",

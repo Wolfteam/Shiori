@@ -4,6 +4,7 @@ import '../../../common/enums/element_type.dart';
 import '../../../common/extensions/element_type_extensions.dart';
 import '../../../common/extensions/i18n_extensions.dart';
 import '../../../common/extensions/iterable_extensions.dart';
+import '../../../common/extensions/string_extensions.dart';
 import '../../../common/styles.dart';
 import '../../../generated/l10n.dart';
 import '../../../models/models.dart';
@@ -79,11 +80,13 @@ class CharacterDetailSkillsCard extends StatelessWidget {
             margin: Styles.edgeInsetAll5,
             child: Column(
               children: [
-                Text(
-                  e.hasCommonTranslation ? s.translateCharacterSkillAbilityType(e.type) : e.name,
-                  overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.subtitle1.copyWith(color: elementType.getElementColorFromContext(context)),
-                ),
+                if (e.hasCommonTranslation || e.name.isNotNullEmptyOrWhitespace)
+                  Text(
+                    e.hasCommonTranslation ? s.translateCharacterSkillAbilityType(e.type) : e.name,
+                    overflow: TextOverflow.ellipsis,
+                    textAlign: TextAlign.center,
+                    style: theme.textTheme.subtitle1.copyWith(color: elementType.getElementColorFromContext(context)),
+                  ),
                 if (e.description != null) Text(e.description, style: theme.textTheme.bodyText2.copyWith(fontSize: 12)),
                 if (e.descriptions.isNotEmpty) BulletList(items: e.descriptions),
                 if (e.secondDescription != null)

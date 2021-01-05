@@ -11,7 +11,7 @@ abstract class CharacterState with _$CharacterState {
     @required int rarity,
     @required ElementType elementType,
     @required WeaponType weaponType,
-    @required String region,
+    @required RegionType region,
     @required CharacterType role,
     @required bool isFemale,
     @required List<CharacterFileAscentionMaterialModel> ascentionMaterials,

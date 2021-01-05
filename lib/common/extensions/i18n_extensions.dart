@@ -1,16 +1,16 @@
-import 'package:genshindb/common/enums/character_skill_ability_type.dart';
-
 import '../../common/enums/app_language_type.dart';
 import '../../common/enums/app_theme_type.dart';
 import '../../common/enums/artifact_filter_type.dart';
 import '../../common/enums/character_filter_type.dart';
 import '../../common/enums/element_type.dart';
 import '../../common/enums/item_location_type.dart';
+import '../../common/enums/region_type.dart';
 import '../../common/enums/sort_direction_type.dart';
 import '../../common/enums/stat_type.dart';
 import '../../common/enums/weapon_filter_type.dart';
 import '../../common/enums/weapon_type.dart';
 import '../../generated/l10n.dart';
+import '../enums/character_skill_ability_type.dart';
 import '../enums/character_skill_type.dart';
 import '../enums/character_type.dart';
 import '../enums/item_status_type.dart';
@@ -280,6 +280,23 @@ extension I18nExtensions on S {
         return elementalAbsorption;
       default:
         throw Exception('Invalid character skill ability type = $type');
+    }
+  }
+
+  String translateRegionType(RegionType type) {
+    switch (type) {
+      case RegionType.anotherWorld:
+        return anotherWorld;
+      case RegionType.inazuma:
+        return 'Inazuma';
+      case RegionType.mondstadt:
+        return 'Mondstadt';
+      case RegionType.liyue:
+        return 'Liyue';
+      case RegionType.snezhnaya:
+        return 'Snezhnaya';
+      default:
+        throw Exception('Invalid region type = $type');
     }
   }
 }

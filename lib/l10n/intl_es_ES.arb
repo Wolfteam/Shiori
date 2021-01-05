@@ -156,5 +156,6 @@
     "press": "Presionar",
     "short": "Corto",
     "elementalAbsorption": "Cambio Elemental",
-    "xPieces": "{value} Pieza(s)"
+    "xPieces": "{value} Pieza(s)",
+    "anotherWorld": "Otro Mundo"
 }

@@ -6,6 +6,7 @@ import '../../../common/enums/character_skill_ability_type.dart';
 import '../../../common/enums/character_skill_type.dart';
 import '../../../common/enums/character_type.dart';
 import '../../../common/enums/element_type.dart';
+import '../../../common/enums/region_type.dart';
 import '../../../common/enums/weapon_type.dart';
 import '../../models.dart';
 
@@ -22,7 +23,7 @@ abstract class CharacterFileModel implements _$CharacterFileModel {
     @required String image,
     @required String fullImage,
     String secondFullImage,
-    @required String region,
+    @required RegionType region,
     @required bool isFemale,
     @required bool isComingSoon,
     @required bool isNew,

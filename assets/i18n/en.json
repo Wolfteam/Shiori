@@ -3278,7 +3278,7 @@
                     "abilities": [
                         {
                             "name": "",
-                            "description": "The shield’s DMG Absorption scales based on Xinyan’s DEF and on the number of enemies hit.",
+                            "description": "The shield’s DMG Absorption scales based on Xinyan’s DEF and on the number of enemies hit:",
                             "descriptions": [
                                 "Hitting 0-1 enemies grants Shield Level 1: Ad Lib.",
                                 "Hitting 2 enemies grants Shield Level 2: Lead-In.",

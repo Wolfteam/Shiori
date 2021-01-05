@@ -59,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "aboutSummary" : MessageLookupByLibrary.simpleMessage("A Genshin Impact kinda database app"),
     "accentColor" : MessageLookupByLibrary.simpleMessage("Accent color"),
     "all" : MessageLookupByLibrary.simpleMessage("All"),
+    "anotherWorld" : MessageLookupByLibrary.simpleMessage("Another World"),
     "appInfo" : MessageLookupByLibrary.simpleMessage("App information"),
     "appName" : MessageLookupByLibrary.simpleMessage("GenshinDb"),
     "appVersion" : m0,

@@ -3,9 +3,11 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import '../../../common/enums/element_type.dart';
+import '../../../common/enums/region_type.dart';
 import '../../../common/enums/weapon_type.dart';
 import '../../../common/extensions/element_type_extensions.dart';
 import '../../../common/extensions/weapon_type_extensions.dart';
+import '../../../common/extensions/i18n_extensions.dart';
 import '../../../common/genshin_db_icons.dart';
 import '../../../common/styles.dart';
 import '../../../generated/l10n.dart';
@@ -19,7 +21,7 @@ class CharacterDetailGeneralCard extends StatelessWidget {
   final int rarity;
   final ElementType elementType;
   final WeaponType weaponType;
-  final String region;
+  final RegionType region;
   final String role;
   final bool isFemale;
 
@@ -59,7 +61,7 @@ class CharacterDetailGeneralCard extends StatelessWidget {
             ItemDescription(
               title: s.region,
               widget: Text(
-                region,
+                s.translateRegionType(region),
                 style: const TextStyle(color: Colors.white),
               ),
               useColumn: false,

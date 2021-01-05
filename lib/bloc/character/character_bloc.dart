@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/common/enums/character_skill_ability_type.dart';
 
 import '../../common/assets.dart';
 import '../../common/enums/character_type.dart';
 import '../../common/enums/element_type.dart';
+import '../../common/enums/region_type.dart';
 import '../../common/enums/weapon_type.dart';
 import '../../models/models.dart';
 import '../../services/genshing_service.dart';

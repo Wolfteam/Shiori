@@ -1614,6 +1614,16 @@ class S {
       args: [value],
     );
   }
+
+  /// `Another World`
+  String get anotherWorld {
+    return Intl.message(
+      'Another World',
+      name: 'anotherWorld',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

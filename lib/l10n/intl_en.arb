@@ -156,5 +156,6 @@
     "press": "Press",
     "short": "Short",
     "elementalAbsorption": "Elemental Absorption",
-    "xPieces": "{value} Piece(s)"
+    "xPieces": "{value} Piece(s)",
+    "anotherWorld": "Another World"
 }

@@ -11,7 +11,7 @@
             "isComingSoon": false,
             "isNew": true,
             "isFemale": false,
-            "region": "Mondstadt",
+            "region": "mondstadt",
             "role": "supportDps",
             "ascentionMaterials": [
                 {
@@ -528,7 +528,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstadt",
+            "region": "mondstadt",
             "role": "supportDps",
             "ascentionMaterials": [
                 {
@@ -1058,7 +1058,7 @@
             "isComingSoon": true,
             "isNew": false,
             "isFemale": true,
-            "region": "Inazuma",
+            "region": "inazuma",
             "role": "mainDps",
             "ascentionMaterials": [
                 {
@@ -1466,7 +1466,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstadt",
+            "region": "mondstadt",
             "role": "utility",
             "ascentionMaterials": [
                 {
@@ -1965,7 +1965,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Liyue",
+            "region": "liyue",
             "role": "mainDps",
             "ascentionMaterials": [
                 {
@@ -2474,7 +2474,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": false,
-            "region": "Mondstadt",
+            "region": "mondstadt",
             "role": "utility",
             "ascentionMaterials": [
                 {
@@ -3008,7 +3008,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": false,
-            "region": "Liyue",
+            "region": "liyue",
             "role": "supportDps",
             "ascentionMaterials": [
                 {
@@ -3538,7 +3538,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": false,
-            "region": "Mondstadt",
+            "region": "mondstadt",
             "role": "mainDps",
             "ascentionMaterials": [
                 {
@@ -4041,7 +4041,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstadt",
+            "region": "mondstadt",
             "role": "utility",
             "ascentionMaterials": [
                 {
@@ -4554,7 +4554,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstadt",
+            "region": "mondstadt",
             "role": "supportDps",
             "ascentionMaterials": [
                 {
@@ -5074,7 +5074,7 @@
             "isComingSoon": true,
             "isNew": false,
             "isFemale": true,
-            "region": "Liyue",
+            "region": "liyue",
             "role": "na",
             "ascentionMaterials": [
                 {
@@ -5482,7 +5482,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstadt",
+            "region": "mondstadt",
             "role": "utility",
             "ascentionMaterials": [
                 {
@@ -6016,7 +6016,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": false,
-            "region": "Mondstadt",
+            "region": "mondstadt",
             "role": "supportDps",
             "ascentionMaterials": [
                 {
@@ -6544,7 +6544,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Liyue",
+            "region": "liyue",
             "role": "mainDps",
             "ascentionMaterials": [
                 {
@@ -7061,7 +7061,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstadt",
+            "region": "mondstadt",
             "role": "mainDps",
             "ascentionMaterials": [
                 {
@@ -7572,7 +7572,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstadt",
+            "region": "mondstadt",
             "role": "supportDps",
             "ascentionMaterials": [
                 {
@@ -8085,7 +8085,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstadt",
+            "region": "mondstadt",
             "role": "supportDps",
             "ascentionMaterials": [
                 {
@@ -8595,7 +8595,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Liyue",
+            "region": "liyue",
             "role": "mainDps",
             "ascentionMaterials": [
                 {
@@ -9114,7 +9114,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstadt",
+            "region": "mondstadt",
             "role": "utility",
             "ascentionMaterials": [
                 {
@@ -9638,7 +9638,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Liyue",
+            "region": "liyue",
             "role": "utility",
             "ascentionMaterials": [
                 {
@@ -10137,7 +10137,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": false,
-            "region": "Mondstadt",
+            "region": "mondstadt",
             "role": "mainDps",
             "ascentionMaterials": [
                 {
@@ -10646,7 +10646,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Mondstadt",
+            "region": "mondstadt",
             "role": "utility",
             "ascentionMaterials": [
                 {
@@ -11155,7 +11155,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": false,
-            "region": "Snezhnaya",
+            "region": "snezhnaya",
             "role": "mainDps",
             "ascentionMaterials": [
                 {
@@ -11680,7 +11680,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Another World",
+            "region": "anotherWorld",
             "role": "supportDps",
             "ascentionMaterials": [
                 {
@@ -12591,7 +12591,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Another World",
+            "region": "anotherWorld",
             "role": "utility",
             "ascentionMaterials": [
                 {
@@ -13496,7 +13496,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": false,
-            "region": "Mondstadt",
+            "region": "mondstadt",
             "role": "utility",
             "ascentionMaterials": [
                 {
@@ -14015,7 +14015,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Liyue",
+            "region": "liyue",
             "role": "supportDps",
             "ascentionMaterials": [
                 {
@@ -14543,7 +14543,7 @@
             "isComingSoon": true,
             "isNew": false,
             "isFemale": false,
-            "region": "Liyue",
+            "region": "liyue",
             "role": "na",
             "ascentionMaterials": [
                 {
@@ -15042,7 +15042,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": false,
-            "region": "Liyue",
+            "region": "liyue",
             "role": "supportDps",
             "ascentionMaterials": [
                 {
@@ -15541,7 +15541,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": true,
-            "region": "Liyue",
+            "region": "liyue",
             "role": "mainDps",
             "ascentionMaterials": [
                 {
@@ -16052,7 +16052,7 @@
             "isComingSoon": false,
             "isNew": false,
             "isFemale": false,
-            "region": "Liyue",
+            "region": "liyue",
             "role": "supportDps",
             "ascentionMaterials": [
                 {
