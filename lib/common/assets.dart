@@ -1,3 +1,4 @@
+import '../common/extensions/string_extensions.dart';
 import 'enums/app_language_type.dart';
 import 'enums/element_type.dart';
 import 'enums/material_type.dart';
@@ -18,6 +19,7 @@ class Assets {
   static String characterFullBasePath = 'assets/characters_full';
   static String skillsBasePath = 'assets/skills';
   static String elementsBasePath = 'assets/elements';
+  static String noImageAvailableName = 'na.png';
 
   //Weapons
   static String weaponsBasePath = 'assets/weapons';
@@ -41,7 +43,13 @@ class Assets {
   static String getArtifactPath(String name) => '$artifactsBasePath/$name';
   static String getCharacterPath(String name) => '$charactersBasePath/$name';
   static String getCharacterFullPath(String name) => '$characterFullBasePath/$name';
-  static String getSkillPath(String name) => '$skillsBasePath/$name';
+  static String getSkillPath(String name) {
+    var skill = name;
+    if (name.isNullEmptyOrWhitespace) {
+      skill = noImageAvailableName;
+    }
+    return '$skillsBasePath/$skill';
+  }
 
   static String getBowPath(String name) => '$bowsBasePath/$name';
   static String getCatalystPath(String name) => '$catalystBasePath/$name';

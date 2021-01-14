@@ -9,7 +9,7 @@
             "fullImage": "Albedo.png",
             "secondFullImage": null,
             "isComingSoon": false,
-            "isNew": true,
+            "isNew": false,
             "isFemale": false,
             "region": "mondstadt",
             "role": "supportDps",
@@ -924,6 +924,8 @@
                 {
                     "isSupport": false,
                     "weaponImages": [
+                        "favonius_warbow.png",
+                        "the_stringless.png",
                         "sharpshooters_oath.png",
                         "messenger.png"
                     ],
@@ -2362,7 +2364,8 @@
                     "isSupport": false,
                     "weaponImages": [
                         "wolfs_gravestone.png",
-                        "prototype_aminus.png"
+                        "prototype_aminus.png",
+                        "debate_club.png"
                     ],
                     "artifacts": [
                         {
@@ -2871,7 +2874,9 @@
                     "isSupport": false,
                     "weaponImages": [
                         "aquila_favonia.png",
-                        "skyward_blade.png"
+                        "skyward_blade.png",
+                        "the_flute.png",
+                        "fillet_blade.png"
                     ],
                     "artifacts": [
                         {
@@ -2896,7 +2901,8 @@
                     "isSupport": true,
                     "weaponImages": [
                         "skyward_blade.png",
-                        "favonius_sword.png"
+                        "favonius_sword.png",
+                        "skyrider_sword.png"
                     ],
                     "artifacts": [
                         {
@@ -5071,11 +5077,11 @@
             "image": "Ganyu.png",
             "fullImage": "Ganyu.png",
             "secondFullImage": null,
-            "isComingSoon": true,
-            "isNew": false,
+            "isComingSoon": false,
+            "isNew": true,
             "isFemale": true,
             "region": "liyue",
-            "role": "na",
+            "role": "supportDps",
             "ascentionMaterials": [
                 {
                     "rank": 1,
@@ -5466,10 +5472,148 @@
                     ]
                 }
             ],
-            "builds": [],
-            "skills": [],
-            "passives": [],
-            "constellations": []
+            "builds": [
+                {
+                    "isSupport": false,
+                    "weaponImages": [
+                        "amos_bow.png",
+                        "prototype_crescent.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "one": "wanderers_troupe_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "gladiators_finale_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "blizzard_walker_4.png"
+                                }
+                            ]
+                        },
+                        {
+                            "one": "resolution_of_sojourner_4.png",
+                            "multiples": []
+                        },
+                        {
+                            "one": "martial_artist_4.png",
+                            "multiples": []
+                        }
+                    ]
+                },
+                {
+                    "isSupport": true,
+                    "weaponImages": [
+                        "skyward_harp.png",
+                        "the_viridescent_hunt.png",
+                        "the_stringless.png",
+                        "slingshot.png"
+                    ],
+                    "artifacts": [
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "noblesse_oblige_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "blizzard_walker_4.png"
+                                }
+                            ]
+                        },
+                        {
+                            "one": "noblesse_oblige_4.png",
+                            "multiples": []
+                        }
+                    ]
+                }
+            ],
+            "skills": [
+                {
+                    "key": "s1",
+                    "type": "normalAttack",
+                    "image": "normal_atack_bolts_of_downfall.png",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "type": "normalAttack"
+                        },
+                        {
+                            "key": "a2",
+                            "type": "chargedAttack"
+                        },
+                        {
+                            "key": "a3",
+                            "type": "plungingAttack"
+                        }
+                    ]
+                },
+                {
+                    "key": "s2",
+                    "type": "elementalSkill",
+                    "image": "the_merciful.png"
+                },
+                {
+                    "key": "s3",
+                    "type": "elementalBurst",
+                    "image": "celestial_shower.png"
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "unlockedAt": -1,
+                    "image": "preserved_for_the_hunt.png"
+                },
+                {
+                    "key": "p2",
+                    "unlockedAt": 1,
+                    "image": "undivided_heart.png"
+                },
+                {
+                    "key": "p3",
+                    "unlockedAt": 4,
+                    "image": "harmony_between_heaven_and_earth.png"
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "number": 1,
+                    "image": "dew_drinker.png"
+                },
+                {
+                    "key": "c2",
+                    "number": 2,
+                    "image": "the_auspicious.png"
+                },
+                {
+                    "key": "c3",
+                    "number": 3,
+                    "image": "cloud_strider.png"
+                },
+                {
+                    "key": "c4",
+                    "number": 4,
+                    "image": "westward_sojourn.png"
+                },
+                {
+                    "key": "c5",
+                    "number": 5,
+                    "image": "the_merciful.png"
+                },
+                {
+                    "key": "c6",
+                    "number": 6,
+                    "image": "the_clement.png"
+                }
+            ]
         },
         {
             "key": "Jean",
@@ -11042,6 +11186,7 @@
                 {
                     "isSupport": true,
                     "weaponImages": [
+                        "lost_prayer_to_the_sacred_winds.png",
                         "sacrificial_fragments.png",
                         "mappa_mare.png"
                     ],
@@ -11552,6 +11697,8 @@
                     "isSupport": false,
                     "weaponImages": [
                         "skyward_harp.png",
+                        "amos_bow.png",
+                        "the_viridescent_hunt.png",
                         "rust.png"
                     ],
                     "artifacts": [
@@ -15438,10 +15585,24 @@
                 {
                     "isSupport": true,
                     "weaponImages": [
+                        "skyward_blade.png",
                         "sacrificial_sword.png",
+                        "festering_fang.png",
                         "favonius_sword.png"
                     ],
                     "artifacts": [
+                        {
+                            "multiples": [
+                                {
+                                    "quantity": 2,
+                                    "image": "depth_of_heart_4.png"
+                                },
+                                {
+                                    "quantity": 2,
+                                    "image": "noblesse_oblige_4.png"
+                                }
+                            ]
+                        },
                         {
                             "one": "noblesse_oblige_4.png",
                             "multiples": []
@@ -16448,6 +16609,8 @@
                 {
                     "isSupport": false,
                     "weaponImages": [
+                        "vortex_vanquisher.png",
+                        "primordial_jade_winged_spear.png",
                         "crescent_pike.png"
                     ],
                     "artifacts": [
@@ -16456,16 +16619,8 @@
                             "multiples": []
                         },
                         {
-                            "multiples": [
-                                {
-                                    "quantity": 2,
-                                    "image": "bloodstained_chivalry_4.png"
-                                },
-                                {
-                                    "quantity": 2,
-                                    "image": "gladiators_finale_4.png"
-                                }
-                            ]
+                            "one": "retracing_bolide_4.png",
+                            "multiples": []
                         }
                     ]
                 },
@@ -16473,6 +16628,7 @@
                     "isSupport": true,
                     "weaponImages": [
                         "skyward_spine.png",
+                        "favonius_lance.png",
                         "prototype_grudge.png"
                     ],
                     "artifacts": [

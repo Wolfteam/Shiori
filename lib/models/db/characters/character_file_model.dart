@@ -135,7 +135,7 @@ abstract class CharacterFileSkillModel implements _$CharacterFileSkillModel {
   factory CharacterFileSkillModel({
     @required String key,
     @required CharacterSkillType type,
-    @required String image,
+    String image,
     List<CharacterFileSkillAbilityModel> abilities,
   }) = _CharacterFileSkillModel;
 
@@ -165,7 +165,7 @@ abstract class CharacterFilePassiveModel implements _$CharacterFilePassiveModel 
   factory CharacterFilePassiveModel({
     @required String key,
     @required int unlockedAt,
-    @required String image,
+    String image,
   }) = _CharacterFilePassiveModel;
 
   CharacterFilePassiveModel._();
@@ -181,7 +181,7 @@ abstract class CharacterFileConstellationModel implements _$CharacterFileConstel
   factory CharacterFileConstellationModel({
     @required String key,
     @required int number,
-    @required String image,
+    String image,
   }) = _CharacterFileConstellationModel;
 
   CharacterFileConstellationModel._();
