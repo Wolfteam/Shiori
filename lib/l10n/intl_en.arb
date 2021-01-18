@@ -164,5 +164,7 @@
     "addWeapon": "Add weapon",
     "startByAddingMsg": "Start by adding some characters / weapons",
     "currentLevel": "Current level",
-    "desiredLevel": "Desired level"
+    "desiredLevel": "Desired level",
+    "selectCharacter": "Select a character",
+    "selectWeapon": "Select a weapon"
 }

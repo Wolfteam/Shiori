@@ -164,5 +164,7 @@
     "addWeapon": "Agregar arma",
     "startByAddingMsg": "Empieza por agregar algunos personajes / armas",
     "currentLevel": "Nivel actual",
-    "desiredLevel": "Nivel deseado"
+    "desiredLevel": "Nivel deseado",
+    "selectCharacter": "Selecciona un personaje",
+    "selectWeapon": "Selecciona una arma"
 }

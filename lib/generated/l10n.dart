@@ -1694,6 +1694,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Select a character`
+  String get selectCharacter {
+    return Intl.message(
+      'Select a character',
+      name: 'selectCharacter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select a weapon`
+  String get selectWeapon {
+    return Intl.message(
+      'Select a weapon',
+      name: 'selectWeapon',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

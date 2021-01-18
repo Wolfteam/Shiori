@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../bloc/bloc.dart';
 import '../../generated/l10n.dart';
+import '../widgets/home/sliver_calculators_card.dart';
 import '../widgets/home/sliver_elements_card.dart';
 import '../widgets/home/sliver_settings_card.dart';
 import '../widgets/home/sliver_today_char_ascention_materials.dart';
@@ -26,17 +27,19 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
     final s = S.of(context);
     return CustomScrollView(
       slivers: [
-        _buildMainTitle(s.todayAscentionMaterials, context),
+        _buildMainTitle(s.todayAscensionMaterials, context),
         _buildClickableTitle(s.forCharacters, s.seeAll, context, onClick: () => _gotoMaterialsPage(context)),
         SliverTodayCharAscentionMaterials(),
         _buildClickableTitle(s.forWeapons, s.seeAll, context, onClick: () => _gotoMaterialsPage(context)),
         SliverTodayWeaponMaterials(),
         _buildMainTitle(s.elements, context),
         SliverElementsCard(),
-        _buildMainTitle(s.settings, context),
-        SliverSettingsCard(),
+        _buildMainTitle(s.calculators, context),
+        SliverCalculatorsCard(),
         _buildMainTitle(s.wishSimulator, context),
         SliverWishSimulatorCard(),
+        _buildMainTitle(s.settings, context),
+        SliverSettingsCard(),
       ],
     );
   }

@@ -185,6 +185,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "secondaryStatValue" : MessageLookupByLibrary.simpleMessage("Secondary Stat Value"),
     "secondaryState" : MessageLookupByLibrary.simpleMessage("Secondary Stat"),
     "seeAll" : MessageLookupByLibrary.simpleMessage("See all"),
+    "selectCharacter" : MessageLookupByLibrary.simpleMessage("Select a character"),
+    "selectWeapon" : MessageLookupByLibrary.simpleMessage("Select a weapon"),
     "settings" : MessageLookupByLibrary.simpleMessage("Settings"),
     "short" : MessageLookupByLibrary.simpleMessage("Short"),
     "showCharacterDetails" : MessageLookupByLibrary.simpleMessage("Show character details"),

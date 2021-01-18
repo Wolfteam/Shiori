@@ -15,6 +15,13 @@ import '../widgets/weapons/weapon_bottom_sheet.dart';
 import '../widgets/weapons/weapon_card.dart';
 
 class WeaponsPage extends StatefulWidget {
+  final bool isInSelectionMode;
+
+  const WeaponsPage({
+    Key key,
+    this.isInSelectionMode = false,
+  }) : super(key: key);
+
   @override
   _WeaponsPageState createState() => _WeaponsPageState();
 }
@@ -27,7 +34,7 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
   Widget build(BuildContext context) {
     super.build(context);
     final s = S.of(context);
-    return BlocBuilder<WeaponsBloc, WeaponsState>(
+    final child = BlocBuilder<WeaponsBloc, WeaponsState>(
       builder: (context, state) {
         return state.map(
           loading: (_) => const Loading(),
@@ -39,12 +46,25 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
                 onPressed: () => _showFiltersModal(context),
                 searchChanged: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.searchChanged(search: v)),
               ),
-              if (s.weapons.isNotEmpty) _buildGrid(context, state.weapons) else const SliverNothingFound(),
+              if (state.weapons.isNotEmpty) _buildGrid(context, state.weapons) else const SliverNothingFound(),
             ],
           ),
         );
       },
     );
+
+    if (widget.isInSelectionMode) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(s.selectWeapon),
+        ),
+        body: SafeArea(
+          child: child,
+        ),
+      );
+    }
+
+    return child;
   }
 
   Widget _buildGrid(BuildContext context, List<WeaponCardModel> weapons) {
@@ -64,6 +84,7 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
             type: weapon.type,
             subStatType: weapon.subStatType,
             subStatValue: weapon.subStatValue,
+            isInSelectionMode: widget.isInSelectionMode,
           );
         },
         itemCount: weapons.length,
