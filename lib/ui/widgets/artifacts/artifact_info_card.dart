@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../common/assets.dart';
+import '../../../common/enums/artifact_type.dart';
 import '../../../common/enums/element_type.dart';
 import '../../../common/enums/stat_type.dart';
 import '../../../common/extensions/i18n_extensions.dart';
@@ -47,7 +49,14 @@ class ArtifactInfoCard extends StatelessWidget {
 
     final panel = ItemExpansionPanel(
       title: s.note,
-      body: BulletList(items: considerations),
+      body: BulletList(
+        items: considerations,
+        iconResolver: (index) => Image.asset(
+          Assets.getArtifactPathFromType(ArtifactType.values[index]),
+          width: 24,
+          height: 24,
+        ),
+      ),
       icon: const Icon(Icons.info_outline),
       isCollapsed: isCollapsed,
       expansionCallback: expansionCallback,

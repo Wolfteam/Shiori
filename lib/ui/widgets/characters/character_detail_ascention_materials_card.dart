@@ -57,18 +57,18 @@ class CharacterDetailAscentionMaterialsCard extends StatelessWidget {
               ),
             ],
           ),
-          ...ascentionMaterials.map((e) => _buildAscentionRow(e)).toList(),
+          ...ascentionMaterials.map((e) => _buildAscensionRow(e)).toList(),
         ],
       ),
     );
     return ItemDescriptionDetail(
-      title: s.ascentionMaterials,
+      title: s.ascensionMaterials,
       body: body,
       textColor: elementType.getElementColorFromContext(context),
     );
   }
 
-  TableRow _buildAscentionRow(CharacterFileAscentionMaterialModel model) {
+  TableRow _buildAscensionRow(CharacterFileAscentionMaterialModel model) {
     final materials = model.materials
         .map(
           (m) => WrappedAscentionMaterial(image: m.fullImagePath, quantity: m.quantity),

@@ -33,7 +33,7 @@ class CharacterDetailPassiveCard extends StatelessWidget {
   Widget _buildPassiveCard(CharacterPassiveTalentModel model, BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
-    final unlockedAt = model.unlockedAt >= 1 ? s.unclockedAtAscentionLevelX(model.unlockedAt) : s.unlockedAutomatically;
+    final unlockedAt = model.unlockedAt >= 1 ? s.unlockedAtAscensionLevelX(model.unlockedAt) : s.unlockedAutomatically;
     return Card(
       elevation: Styles.cardTenElevation,
       margin: Styles.edgeInsetAll5,

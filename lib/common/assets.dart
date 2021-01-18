@@ -2,6 +2,7 @@ import 'enums/app_language_type.dart';
 import 'enums/element_type.dart';
 import 'enums/material_type.dart';
 import 'enums/weapon_type.dart';
+import 'enums/artifact_type.dart';
 
 class Assets {
   static String dbPath = 'assets/db';
@@ -37,6 +38,7 @@ class Assets {
   static String weaponBasePath = '$itemsBasePath/weapon';
   static String weaponPrimaryBasePath = '$itemsBasePath/weapon_primary';
   static String currencyBasePath = '$itemsBasePath/currency';
+  static String othersBasePath = '$itemsBasePath/others';
 
   static String getArtifactPath(String name) => '$artifactsBasePath/$name';
   static String getCharacterPath(String name) => '$charactersBasePath/$name';
@@ -57,6 +59,7 @@ class Assets {
   static String getWeaponMaterialPath(String name) => '$weaponBasePath/$name';
   static String getWeaponPrimaryMaterialPath(String name) => '$weaponPrimaryBasePath/$name';
   static String getCurrencyMaterialPath(String name) => '$currencyBasePath/$name';
+  static String getOtherMaterialPath(String name) => '$othersBasePath/$name';
 
   static String getMaterialPath(String name, MaterialType type) {
     switch (type) {
@@ -76,6 +79,8 @@ class Assets {
         return getWeaponMaterialPath(name);
       case MaterialType.weaponPrimary:
         return getWeaponPrimaryMaterialPath(name);
+      case MaterialType.others:
+        return getOtherMaterialPath(name);
       default:
         throw Exception('Invalid material type = $type');
     }
@@ -134,5 +139,22 @@ class Assets {
 
   static ElementType getElementTypeFromPath(String path) {
     return ElementType.values.firstWhere((type) => getElementPathFromType(type) == path);
+  }
+
+  static String getArtifactPathFromType(ArtifactType type) {
+    switch (type) {
+      case ArtifactType.clock:
+        return getMaterialPath('clock.png', MaterialType.others);
+      case ArtifactType.crown:
+        return getMaterialPath('crown.png', MaterialType.others);
+      case ArtifactType.flower:
+        return getMaterialPath('flower.png', MaterialType.others);
+      case ArtifactType.goblet:
+        return getMaterialPath('goblet.png', MaterialType.others);
+      case ArtifactType.plume:
+        return getMaterialPath('plume.png', MaterialType.others);
+      default:
+        throw Exception('Invalid artifact type = $type');
+    }
   }
 }
