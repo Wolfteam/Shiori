@@ -31,16 +31,17 @@ dependencies:
   flutter_staggered_grid_view: "^0.3.2"
   flutter_localizations:
     sdk: flutter
-  fluttertoast: ^7.1.5
+  fluttertoast: ^7.1.6
   flutter_webview_plugin: ^0.3.11
   freezed_annotation: ^0.12.0
-  get_it: ^5.0.0
+  get_it: ^5.0.4
+  hawk_fab_menu: ^0.3.2
   json_annotation: ^3.1.0
   log_4_dart_2: ^0.4.0
   moor: ^3.4.0
   package_info: ^0.4.1
   path: ^1.7.0
-  path_provider: ^1.6.17
+  path_provider: ^1.6.27
   rate_my_app: ^0.7.2
   shared_preferences: ^0.5.11
   smooth_star_rating: 1.1.1
@@ -79,6 +80,7 @@ flutter:
     - assets/items/elemental/
     - assets/items/jewels/
     - assets/items/local/
+    - assets/items/others/
     - assets/items/talents/
     - assets/items/weapon/
     - assets/items/weapon_primary/
