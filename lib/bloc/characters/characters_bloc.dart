@@ -29,7 +29,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     CharactersEvent event,
   ) async* {
     final s = event.map(
-      init: (_) => _buildInitialState(),
+      init: (_) => _buildInitialState(elementTypes: ElementType.values, weaponTypes: WeaponType.values),
       characterFilterTypeChanged: (e) => currentState.copyWith.call(tempCharacterFilterType: e.characterFilterType),
       elementTypeChanged: (e) {
         var types = <ElementType>[];
