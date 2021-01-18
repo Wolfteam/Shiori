@@ -506,10 +506,10 @@ class S {
   }
 
   /// `Each of these have a different negative effect when applied to you or your enemies`
-  String get elementalDebuffsExplainded {
+  String get elementalDebuffsExplained {
     return Intl.message(
       'Each of these have a different negative effect when applied to you or your enemies',
-      name: 'elementalDebuffsExplainded',
+      name: 'elementalDebuffsExplained',
       desc: '',
       args: [],
     );
@@ -526,10 +526,10 @@ class S {
   }
 
   /// `Combinations of different elements produces different reactions`
-  String get elementalReactionsExplainded {
+  String get elementalReactionsExplained {
     return Intl.message(
       'Combinations of different elements produces different reactions',
-      name: 'elementalReactionsExplainded',
+      name: 'elementalReactionsExplained',
       desc: '',
       args: [],
     );
@@ -546,20 +546,20 @@ class S {
   }
 
   /// `Having these types of character in your party will give you the corresponding effect`
-  String get elemetalResonancesExplanined {
+  String get elementalResonancesExplained {
     return Intl.message(
       'Having these types of character in your party will give you the corresponding effect',
-      name: 'elemetalResonancesExplanined',
+      name: 'elementalResonancesExplained',
       desc: '',
       args: [],
     );
   }
 
-  /// `Today's Ascention Materials`
-  String get todayAscentionMaterials {
+  /// `Today's Ascension Materials`
+  String get todayAscensionMaterials {
     return Intl.message(
-      'Today\'s Ascention Materials',
-      name: 'todayAscentionMaterials',
+      'Today\'s Ascension Materials',
+      name: 'todayAscensionMaterials',
       desc: '',
       args: [],
     );
@@ -835,11 +835,11 @@ class S {
     );
   }
 
-  /// `Ascention Materials`
-  String get ascentionMaterials {
+  /// `Ascension Materials`
+  String get ascensionMaterials {
     return Intl.message(
-      'Ascention Materials',
-      name: 'ascentionMaterials',
+      'Ascension Materials',
+      name: 'ascensionMaterials',
       desc: '',
       args: [],
     );
@@ -955,11 +955,11 @@ class S {
     );
   }
 
-  /// `Unlocked at ascention level {value}`
-  String unclockedAtAscentionLevelX(Object value) {
+  /// `Unlocked at ascension level {value}`
+  String unlockedAtAscensionLevelX(Object value) {
     return Intl.message(
-      'Unlocked at ascention level $value',
-      name: 'unclockedAtAscentionLevelX',
+      'Unlocked at ascension level $value',
+      name: 'unlockedAtAscensionLevelX',
       desc: '',
       args: [value],
     );
@@ -975,21 +975,21 @@ class S {
     );
   }
 
-  /// `Talents Ascention`
-  String get talentsAscention {
+  /// `Talents Ascension`
+  String get talentsAscension {
     return Intl.message(
-      'Talents Ascention',
-      name: 'talentsAscention',
+      'Talents Ascension',
+      name: 'talentsAscension',
       desc: '',
       args: [],
     );
   }
 
-  /// `Talent Ascention {value}`
-  String talentAscentionX(Object value) {
+  /// `Talent Ascension {value}`
+  String talentAscensionX(Object value) {
     return Intl.message(
-      'Talent Ascention $value',
-      name: 'talentAscentionX',
+      'Talent Ascension $value',
+      name: 'talentAscensionX',
       desc: '',
       args: [value],
     );
@@ -1620,6 +1620,76 @@ class S {
     return Intl.message(
       'Another World',
       name: 'anotherWorld',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Calculators`
+  String get calculators {
+    return Intl.message(
+      'Calculators',
+      name: 'calculators',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check how many materials you need for a character / weapon`
+  String get ascensionMaterialsCalculatorMsg {
+    return Intl.message(
+      'Check how many materials you need for a character / weapon',
+      name: 'ascensionMaterialsCalculatorMsg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add character`
+  String get addCharacter {
+    return Intl.message(
+      'Add character',
+      name: 'addCharacter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add weapon`
+  String get addWeapon {
+    return Intl.message(
+      'Add weapon',
+      name: 'addWeapon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start by adding some characters / weapons`
+  String get startByAddingMsg {
+    return Intl.message(
+      'Start by adding some characters / weapons',
+      name: 'startByAddingMsg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Current level`
+  String get currentLevel {
+    return Intl.message(
+      'Current level',
+      name: 'currentLevel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Desired level`
+  String get desiredLevel {
+    return Intl.message(
+      'Desired level',
+      name: 'desiredLevel',
       desc: '',
       args: [],
     );
