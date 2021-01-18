@@ -1,4 +1,7 @@
 export 'artifacts/artifact_card_model.dart';
+export 'calculator_asc_materials/ascention_materials_summary.dart';
+export 'calculator_asc_materials/character_skill.dart';
+export 'calculator_asc_materials/item_ascention_materials.dart';
 export 'characters/character_ascention_model.dart';
 export 'characters/character_build_card_model.dart';
 export 'characters/character_card_model.dart';
