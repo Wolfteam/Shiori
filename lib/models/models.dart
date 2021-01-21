@@ -17,7 +17,7 @@ export 'db/elements/element_debuff_file_model.dart';
 export 'db/elements/element_reaction_file_model.dart';
 export 'db/elements/elements_file.dart';
 export 'db/materials/materials_file.dart';
-export 'db/materials/talent_material_file_model.dart';
+export 'db/materials/material_file_model.dart';
 export 'db/translations/translation_artifact_file.dart';
 export 'db/translations/translation_character_file.dart';
 export 'db/translations/translation_element_file.dart';

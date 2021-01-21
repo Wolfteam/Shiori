@@ -1,37 +1,34 @@
 import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../models.dart';
 
-class ItemAscentionMaterials {
-  final String key;
-  final String name;
-  final String image;
-  final int rarity;
-  final bool isCharacter;
-  final List<ItemAscentionMaterialModel> materials;
+part 'item_ascention_materials.freezed.dart';
 
-  ItemAscentionMaterials({
-    @required this.key,
-    @required this.name,
-    @required this.image,
-    @required this.rarity,
-    @required this.isCharacter,
-    @required this.materials,
-  });
+@freezed
+abstract class ItemAscentionMaterials with _$ItemAscentionMaterials {
+ const factory ItemAscentionMaterials.forCharacters({
+   @required String key,
+   @required String name,
+   @required String image,
+   @required int rarity,
+   @required List<ItemAscentionMaterialModel> materials,
+   @required int currentLevel,
+   @required int desiredLevel,
+   @required List<CharacterSkill> skills,
+   @Default(true) bool isCharacter
+  }) = _ForCharacter;
 
-  ItemAscentionMaterials.forCharacters({
-    @required this.key,
-    @required this.name,
-    @required this.image,
-    @required this.rarity,
-    @required this.materials,
-  }) : isCharacter = true;
-
-  ItemAscentionMaterials.forWeapons({
-    @required this.key,
-    @required this.name,
-    @required this.image,
-    @required this.rarity,
-    @required this.materials,
-  }) : isCharacter = false;
+  const factory ItemAscentionMaterials.forWeapons({
+    @required String key,
+    @required String name,
+    @required String image,
+    @required int rarity,
+    @required List<ItemAscentionMaterialModel> materials,
+    @required int currentLevel,
+    @required int desiredLevel,
+    //This are here just for convenience
+    @Default([]) List<CharacterSkill> skills,
+    @Default(false) bool isCharacter
+  })  = _ForWeapon;
 }

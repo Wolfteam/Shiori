@@ -23,7 +23,7 @@ class MaterialItem extends StatelessWidget {
       margin: Styles.edgeInsetAll5,
       child: Column(
         children: [
-          Image.asset(image, width: 40, height: 40),
+          Image.asset(image, width: 50, height: 50),
           Text(
             '$quantity',
             textAlign: TextAlign.center,

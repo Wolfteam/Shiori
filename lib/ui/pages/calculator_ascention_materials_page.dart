@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:genshindb/common/styles.dart';
 import 'package:hawk_fab_menu/hawk_fab_menu.dart';
 
 import '../../bloc/bloc.dart';
 import '../../common/extensions/string_extensions.dart';
 import '../../common/genshin_db_icons.dart';
+import '../../common/styles.dart';
 import '../../generated/l10n.dart';
 import '../widgets/ascension_materials/add_edit_item_bottom_sheet.dart';
+import '../widgets/ascension_materials/ascension_materials_summary.dart';
 import '../widgets/ascension_materials/item_card.dart';
+import '../widgets/common/item_description_detail.dart';
 import '../widgets/common/nothing_found_column.dart';
+import '../widgets/common/sliver_row_grid.dart';
 import 'characters_page.dart';
 import 'weapons_page.dart';
 
@@ -23,16 +25,6 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text(s.ascensionMaterials)),
-      // body: SafeArea(
-      //   child: Container(
-      //     padding: Styles.edgeInsetAll10,
-      //     child: SingleChildScrollView(
-      //       child: Column(
-      //         children: [],
-      //       ),
-      //     ),
-      //   ),
-      // ),
       body: SafeArea(
         child: HawkFabMenu(
           icon: AnimatedIcons.menu_arrow,
@@ -64,33 +56,51 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
                       icon: Icons.add_circle_outline,
                     );
                   }
-                  // final items = s.items
-                  //     .map((e) => ItemCard(
-                  //           itemKey: e.key,
-                  //           image: e.image,
-                  //           name: e.name,
-                  //           rarity: e.rarity,
-                  //           materials: e.materials,
-                  //         ))
-                  //     .toList();
-                  return StaggeredGridView.countBuilder(
-                    crossAxisCount: isPortrait ? 2 : 3,
-                    itemBuilder: (ctx, index) {
-                      final e = state.items[index];
-                      return ItemCard(
-                        index: index,
-                        itemKey: e.key,
-                        image: e.image,
-                        name: e.name,
-                        rarity: e.rarity,
-                        isWeapon: !e.isCharacter,
-                        materials: e.materials,
-                      );
-                    },
-                    itemCount: state.items.length,
-                    crossAxisSpacing: isPortrait ? 10 : 5,
-                    mainAxisSpacing: 5,
-                    staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
+                  return CustomScrollView(
+                    slivers: [
+                      SliverPadding(
+                        padding: const EdgeInsets.only(top: 10),
+                        sliver: SliverToBoxAdapter(
+                          child: ItemDescriptionDetail(
+                            title: '${s.characters} / ${s.weapons}',
+                            textColor: theme.accentColor,
+                            body: null,
+                          ),
+                        ),
+                      ),
+                      SliverPadding(
+                        padding: Styles.edgeInsetHorizontal16,
+                        sliver: SliverRowGrid(
+                          crossAxisCount: isPortrait ? 2 : 3,
+                          crossAxisSpacing: isPortrait ? 10 : 5,
+                          itemsCount: state.items.length,
+                          builder: (index) {
+                            final e = state.items[index];
+                            return ItemCard(
+                              index: index,
+                              itemKey: e.key,
+                              image: e.image,
+                              name: e.name,
+                              rarity: e.rarity,
+                              isWeapon: !e.isCharacter,
+                              materials: e.materials,
+                            );
+                          },
+                        ),
+                      ),
+                      SliverToBoxAdapter(
+                        child: ItemDescriptionDetail(
+                          title: s.summary,
+                          textColor: theme.accentColor,
+                          body: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              ...state.summary.map((e) => AscensionMaterialsSummaryWidget(summary: e)).toList()
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   );
                 },
               );
@@ -111,7 +121,9 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
       return;
     }
 
-    context.read<CalculatorAscMaterialsItemBloc>().add(CalculatorAscMaterialsItemEvent.load(key: keyName, isCharacter: true));
+    context
+        .read<CalculatorAscMaterialsItemBloc>()
+        .add(CalculatorAscMaterialsItemEvent.load(key: keyName, isCharacter: true));
 
     await showModalBottomSheet(
       context: context,
@@ -132,7 +144,9 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
       return;
     }
 
-    context.read<CalculatorAscMaterialsItemBloc>().add(CalculatorAscMaterialsItemEvent.load(key: keyName, isCharacter: false));
+    context
+        .read<CalculatorAscMaterialsItemBloc>()
+        .add(CalculatorAscMaterialsItemEvent.load(key: keyName, isCharacter: false));
 
     await showModalBottomSheet<bool>(
       context: context,

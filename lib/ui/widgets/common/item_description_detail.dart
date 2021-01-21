@@ -46,7 +46,8 @@ class ItemDescriptionDetail extends StatelessWidget {
             ),
           ),
         ),
-        body
+        if (body != null)
+          body
       ],
     );
   }

@@ -7,6 +7,14 @@ abstract class CalculatorAscMaterialsItemEvent with _$CalculatorAscMaterialsItem
     @required bool isCharacter,
   }) = _Init;
 
+  const factory CalculatorAscMaterialsItemEvent.loadWith({
+    @required String key,
+    @required bool isCharacter,
+    @required int currentLevel,
+    @required int desiredLevel,
+    @required List<CharacterSkill> skills,
+  }) = _LoadWith;
+
   const factory CalculatorAscMaterialsItemEvent.currentLevelChanged({
     @required int newValue,
   }) = _CurrentLevelChanged;

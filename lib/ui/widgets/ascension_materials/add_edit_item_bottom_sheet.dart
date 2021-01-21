@@ -40,11 +40,13 @@ class AddEditItemBottomSheet extends StatelessWidget {
       builder: (context, state) => state.map(
         loading: (_) => const Loading(),
         loaded: (state) => CommonBottomSheet(
-          title: state.name,
+          title: isAWeapon ? '${s.weapon}: ${state.name}': '${s.character}: ${state.name}',
           titleIcon: !isInEditMode ? Icons.add : Icons.edit,
           iconSize: 40,
-          onOk: () => Navigator.of(context).pop(true),
-          onCancel: () => Navigator.of(context).pop(false),
+          onOk: () => isAWeapon
+              ? _applyChangesForWeapon(state.currentLevel, state.desiredLevel, context)
+              : _applyChangesForCharacter(state.currentLevel, state.desiredLevel, state.skills, context),
+          onCancel: () => Navigator.of(context).pop(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -80,12 +82,12 @@ class AddEditItemBottomSheet extends StatelessWidget {
       context
           .read<CalculatorAscMaterialsBloc>()
           .add(CalculatorAscMaterialsEvent.addWeapon(key: keyName, currentLevel: currentLevel, desiredLevel: desiredLevel));
-      return;
+    } else {
+      context
+          .read<CalculatorAscMaterialsBloc>()
+          .add(CalculatorAscMaterialsEvent.updateWeapon(index: index, currentLevel: currentLevel, desiredLevel: desiredLevel));
     }
-
-    context
-        .read<CalculatorAscMaterialsBloc>()
-        .add(CalculatorAscMaterialsEvent.updateWeapon(index: 1, currentLevel: currentLevel, desiredLevel: desiredLevel));
+    Navigator.of(context).pop();
   }
 
   void _applyChangesForCharacter(
@@ -98,7 +100,12 @@ class AddEditItemBottomSheet extends StatelessWidget {
       context
           .read<CalculatorAscMaterialsBloc>()
           .add(CalculatorAscMaterialsEvent.addCharacter(key: keyName, currentLevel: currentLevel, desiredLevel: desiredLevel, skills: skills));
+    } else {
+      context
+          .read<CalculatorAscMaterialsBloc>()
+          .add(CalculatorAscMaterialsEvent.updateCharacter(index: index, currentLevel: currentLevel, desiredLevel: desiredLevel, skills: skills));
     }
+    Navigator.of(context).pop();
   }
 }
 
@@ -116,7 +123,7 @@ class AscensionLevel extends StatelessWidget {
   Widget build(BuildContext context) {
     final widgets = <Widget>[];
 
-    for (var i = CalculatorAscMaterialsItemBloc.minAscensionLevel; i < CalculatorAscMaterialsItemBloc.maxAscensionLevel; i++) {
+    for (var i = CalculatorAscMaterialsItemBloc.minAscensionLevel; i <= CalculatorAscMaterialsItemBloc.maxAscensionLevel; i++) {
       final isSelected = level > 0 && i <= level;
       final button = IconButton(
         icon: Opacity(
@@ -124,11 +131,12 @@ class AscensionLevel extends StatelessWidget {
           child: Image.asset(Assets.getOtherMaterialPath('mark_wind_crystal.png'), width: 40, height: 40),
         ),
         onPressed: () {
+          final newValue = i == CalculatorAscMaterialsItemBloc.minAscensionLevel && isSelected ? 0 : i;
           final bloc = context.read<CalculatorAscMaterialsItemBloc>();
           if (isCurrentLevel) {
-            bloc.add(CalculatorAscMaterialsItemEvent.currentLevelChanged(newValue: i));
+            bloc.add(CalculatorAscMaterialsItemEvent.currentLevelChanged(newValue: newValue));
           } else {
-            bloc.add(CalculatorAscMaterialsItemEvent.desiredLevelChanged(newValue: i));
+            bloc.add(CalculatorAscMaterialsItemEvent.desiredLevelChanged(newValue: newValue));
           }
         },
       );

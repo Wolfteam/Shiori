@@ -36,8 +36,8 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
         final weaponMaterials = <TodayWeaponAscentionMaterialModel>[];
 //TODO: YOU MAY WANT TO SHOW THE BOSS ITEMS AS WELL
         for (final day in days) {
-          final charMaterialsForDay = _genshinService.getCharacterAscentionMaterials(day);
-          final weaponMaterialsForDay = _genshinService.getWeaponAscentionMaterials(day);
+          final charMaterialsForDay = _genshinService.getCharacterAscensionMaterials(day);
+          final weaponMaterialsForDay = _genshinService.getWeaponAscensionMaterials(day);
 
           for (final material in charMaterialsForDay) {
             if (charMaterials.any((m) => m.name == material.name)) {

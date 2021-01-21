@@ -43,11 +43,8 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
             imageFullPath: Assets.getCharacterPath(char.image),
             currentLevel: minAscensionLevel,
             desiredLevel: maxAscensionLevel,
-            skills: translation.skills
-                .map(
-                  (e) => CharacterSkill.skill(name: e.title, currentLevel: minSkillLevel, desiredLevel: maxSkillLevel),
-                )
-                .toList(),
+            skills:
+                translation.skills.map((e) => CharacterSkill.skill(name: e.title, currentLevel: minSkillLevel, desiredLevel: maxSkillLevel)).toList(),
           );
         }
         final weapon = _genshinService.getWeapon(e.key);
@@ -57,6 +54,28 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
           imageFullPath: weapon.fullImagePath,
           currentLevel: minAscensionLevel,
           desiredLevel: maxAscensionLevel,
+        );
+      },
+      loadWith: (e) {
+        if (e.isCharacter) {
+          final char = _genshinService.getCharacter(e.key);
+          final translation = _genshinService.getCharacterTranslation(e.key);
+          return CalculatorAscMaterialsItemState.loaded(
+            name: translation.name,
+            imageFullPath: Assets.getCharacterPath(char.image),
+            currentLevel: e.currentLevel,
+            desiredLevel: e.desiredLevel,
+            skills: e.skills,
+          );
+        }
+
+        final weapon = _genshinService.getWeapon(e.key);
+        final translation = _genshinService.getWeaponTranslation(e.key);
+        return CalculatorAscMaterialsItemState.loaded(
+          name: translation.name,
+          imageFullPath: weapon.fullImagePath,
+          currentLevel: e.currentLevel,
+          desiredLevel: e.desiredLevel,
         );
       },
       currentLevelChanged: (e) {
@@ -86,7 +105,9 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
       cl = dl;
     }
 
-    if (cl > maxAscensionLevel || cl < minAscensionLevel) {
+    //Here we consider the 0, because otherwise we will always start from a current level of 1, and sometimes, we want to know the whole thing
+    //(from 1 to 10 with 1 inclusive)
+    if (cl > maxAscensionLevel || (cl < minAscensionLevel && cl != 0)) {
       return currentState;
     }
 
