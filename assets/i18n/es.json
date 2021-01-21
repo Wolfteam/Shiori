@@ -4578,28 +4578,76 @@
     ],
     "materials": [
         {
-            "key": "Freedom",
-            "name": "Libertad"
+            "key": "FreedomA",
+            "name": "Enseñanzas de la Libertad"
         },
         {
-            "key": "Prosperity",
-            "name": "Prosperidad"
+            "key": "FreedomB",
+            "name": "Guía de la Libertad"
         },
         {
-            "key": "Dilligence",
-            "name": "Esfuerzo"
+            "key": "FreedomC",
+            "name": "Filosofía de la Libertad"
         },
         {
-            "key": "Resistance",
-            "name": "Resistencia"
+            "key": "ProsperityA",
+            "name": "Enseñanzas de la Prosperidad"
         },
         {
-            "key": "Ballad",
-            "name": "Poesía"
+            "key": "ProsperityB",
+            "name": "Guía de la Prosperidad"
         },
         {
-            "key": "Gold",
-            "name": "Oro"
+            "key": "ProsperityC",
+            "name": "Filosofía de la Prosperidad"
+        },
+        {
+            "key": "DilligenceA",
+            "name": "Enseñanzas del Esfuerzo"
+        },
+        {
+            "key": "DilligenceB",
+            "name": "Guía del Esfuerzo"
+        },
+        {
+            "key": "DilligenceC",
+            "name": "Filosofía del Esfuerzo"
+        },
+        {
+            "key": "ResistanceA",
+            "name": "Enseñanzas de la Resistencia"
+        },
+        {
+            "key": "ResistanceB",
+            "name": "Guía de la Resistencia"
+        },
+        {
+            "key": "ResistanceC",
+            "name": "Filosofía de la Resistencia"
+        },
+        {
+            "key": "BalladA",
+            "name": "Enseñanzas de la Poesía"
+        },
+        {
+            "key": "BalladB",
+            "name": "Guía de la Poesía"
+        },
+        {
+            "key": "BalladC",
+            "name": "Filosofía de la Poesía"
+        },
+        {
+            "key": "GoldA",
+            "name": "Enseñanzas del Oro"
+        },
+        {
+            "key": "GoldB",
+            "name": "Guía del Oro"
+        },
+        {
+            "key": "GoldC",
+            "name": "Filosofía del Oro"
         },
         {
             "key": "Tail of Boreas",
@@ -4647,28 +4695,588 @@
             "bossName": "Tartaglia"
         },
         {
-            "key": "Decarabian",
-            "name": "Decarabian"
+            "key": "DecarabianA",
+            "name": "Fragmento de azulejo de Decarabian"
         },
         {
-            "key": "Guyun",
-            "name": "Guyun"
+            "key": "DecarabianB",
+            "name": "Escombro de la ciudad de Decarabian"
         },
         {
-            "key": "Mist Veiled Elixir",
-            "name": "Niebla Marina"
+            "key": "DecarabianC",
+            "name": "Fragmento de epopeya de Decarabian"
         },
         {
-            "key": "Boreal Wolf",
-            "name": "Lobo Boreal"
+            "key": "DecarabianD",
+            "name": "Fragmento de sueño de Decarabian"
         },
         {
-            "key": "Aerosiderite",
-            "name": "Siderita Oscura"
+            "key": "GuyunA",
+            "name": "Arena brillante de Guyun"
         },
         {
-            "key": "Dandelion Gladiator",
-            "name": "Diente de León"
+            "key": "GuyunB",
+            "name": "Piedra reluciente de Guyun"
+        },
+        {
+            "key": "GuyunC",
+            "name": "Reliquia de Guyun"
+        },
+        {
+            "key": "GuyunD",
+            "name": "Cuerpo divino de Guyun"
+        },
+        {
+            "key": "ElixirA",
+            "name": "Perdigones de plomo de la niebla marina"
+        },
+        {
+            "key": "ElixirB",
+            "name": "Perdigones de mercurio de la niebla marina"
+        },
+        {
+            "key": "ElixirC",
+            "name": "Perdigones de oro de la niebla marina"
+        },
+        {
+            "key": "ElixirD",
+            "name": "Perdigones primordiales de la niebla marina"
+        },
+        {
+            "key": "BorealWolfA",
+            "name": "Diente de leche de lobo boreal"
+        },
+        {
+            "key": "BorealWolfB",
+            "name": "Diente roto de lobo boreal"
+        },
+        {
+            "key": "BorealWolfC",
+            "name": "Colmillo roto de lobo boreal"
+        },
+        {
+            "key": "BorealWolfD",
+            "name": "Nostalgia del lobo boreal"
+        },
+        {
+            "key": "AerosideriteA",
+            "name": "Grano de siderita oscura"
+        },
+        {
+            "key": "AerosideriteB",
+            "name": "Lámina de siderita oscura"
+        },
+        {
+            "key": "AerosideriteC",
+            "name": "Fragmento de siderita oscura"
+        },
+        {
+            "key": "AerosideriteD",
+            "name": "Trozo de siderita oscura"
+        },
+        {
+            "key": "GladiatorA",
+            "name": "Grilletes de Diente de León"
+        },
+        {
+            "key": "GladiatorB",
+            "name": "Cadena de Diente de León"
+        },
+        {
+            "key": "GladiatorC",
+            "name": "Esposas de Diente de León"
+        },
+        {
+            "key": "GladiatorD",
+            "name": "Ideales de Diente de León"
+        },
+        {
+            "key": "Crown of Insight",
+            "name": "Corona de la Sabiduría"
+        },
+        {
+            "key": "SacrificialKnifeA",
+            "name": "Daga de cacería"
+        },
+        {
+            "key": "SacrificialKnifeB",
+            "name": "Daga del Agente"
+        },
+        {
+            "key": "SacrificialKnifeC",
+            "name": "Daga larga del Inspector"
+        },
+        {
+            "key": "HornA",
+            "name": "Cuerno pesado"
+        },
+        {
+            "key": "HornB",
+            "name": "Cuerno de bronce negro"
+        },
+        {
+            "key": "HornC",
+            "name": "Cuerno con cristal negro"
+        },
+        {
+            "key": "ChaosA",
+            "name": "Dispositivo del caos"
+        },
+        {
+            "key": "ChaosB",
+            "name": "Circuito del caos"
+        },
+        {
+            "key": "ChaosC",
+            "name": "Caldera del caos"
+        },
+        {
+            "key": "LeyLineA",
+            "name": "Ramas secas de líneas ley"
+        },
+        {
+            "key": "LeyLineB",
+            "name": "Hojas secas de líneas ley"
+        },
+        {
+            "key": "LeyLineC",
+            "name": "Brotes de líneas ley"
+        },
+        {
+            "key": "MistGrassA",
+            "name": "Polen de neblina"
+        },
+        {
+            "key": "MistGrassB",
+            "name": "Hierba brumosa"
+        },
+        {
+            "key": "MistGrassC",
+            "name": "Estambre de hierba brumosa"
+        },
+        {
+            "key": "BoneShardA",
+            "name": "Fragmento de hueso frágil"
+        },
+        {
+            "key": "BoneShardB",
+            "name": "Fragmento de hueso sólido"
+        },
+        {
+            "key": "BoneShardC",
+            "name": "Fragmento de hueso fosilizado"
+        },
+        {
+            "key": "DecarabianA",
+            "name": "Fragmento de azulejo de Decarabian"
+        },
+        {
+            "key": "DecarabianB",
+            "name": "Escombro de la ciudad de Decarabian"
+        },
+        {
+            "key": "DecarabianC",
+            "name": "Fragmento de epopeya de Decarabian"
+        },
+        {
+            "key": "DecarabianD",
+            "name": "Fragmento de sueño de Decarabian"
+        },
+        {
+            "key": "GuyunA",
+            "name": "Arena brillante de Guyun"
+        },
+        {
+            "key": "GuyunB",
+            "name": "Piedra reluciente de Guyun"
+        },
+        {
+            "key": "GuyunC",
+            "name": "Reliquia de Guyun"
+        },
+        {
+            "key": "GuyunD",
+            "name": "Cuerpo divino de Guyun"
+        },
+        {
+            "key": "ElixirA",
+            "name": "Perdigones de plomo de la niebla marina"
+        },
+        {
+            "key": "ElixirB",
+            "name": "Perdigones de mercurio de la niebla marina"
+        },
+        {
+            "key": "ElixirC",
+            "name": "Perdigones de oro de la niebla marina"
+        },
+        {
+            "key": "ElixirD",
+            "name": "Perdigones primordiales de la niebla marina"
+        },
+        {
+            "key": "BorealWolfA",
+            "name": "Diente de leche de lobo boreal"
+        },
+        {
+            "key": "BorealWolfB",
+            "name": "Diente roto de lobo boreal"
+        },
+        {
+            "key": "BorealWolfC",
+            "name": "Colmillo roto de lobo boreal"
+        },
+        {
+            "key": "BorealWolfD",
+            "name": "Nostalgia de lobo boreal"
+        },
+        {
+            "key": "AerosideriteA",
+            "name": "Grano de siderita oscura"
+        },
+        {
+            "key": "AerosideriteB",
+            "name": "Lámina de siderita oscura"
+        },
+        {
+            "key": "AerosideriteC",
+            "name": "Fragmento de siderita oscura"
+        },
+        {
+            "key": "AerosideriteD",
+            "name": "Trozo de siderita oscura"
+        },
+        {
+            "key": "GladiatorA",
+            "name": "Grilletes de Diente de Léon"
+        },
+        {
+            "key": "GladiatorB",
+            "name": "Cadena de Diente de Léon"
+        },
+        {
+            "key": "GladiatorC",
+            "name": "Esposas de Diente de Léon"
+        },
+        {
+            "key": "GladiatorD",
+            "name": "Ideales de Diente de Léon"
+        },
+        {
+            "key": "MaskA",
+            "name": "Máscara dañada"
+        },
+        {
+            "key": "MaskB",
+            "name": "Máscara sucia"
+        },
+        {
+            "key": "MaskC",
+            "name": "Máscara amenazante"
+        },
+        {
+            "key": "StatuetteA",
+            "name": "Gloomy Statuette"
+        },
+        {
+            "key": "StatuetteB",
+            "name": "Dark Statuette"
+        },
+        {
+            "key": "StatuetteC",
+            "name": "Deathly Statuette"
+        },
+        {
+            "key": "ScrollA",
+            "name": "Pergamino guía"
+        },
+        {
+            "key": "ScrollB",
+            "name": "Pergamino hechizado"
+        },
+        {
+            "key": "ScrollC",
+            "name": "Pergamino maldito"
+        },
+        {
+            "key": "NectarA",
+            "name": "Néctar de Megaflora"
+        },
+        {
+            "key": "NectarB",
+            "name": "Néctar brillante"
+        },
+        {
+            "key": "NectarC",
+            "name": "Néctar energético"
+        },
+        {
+            "key": "ArrowHeadA",
+            "name": "Flecha robusta"
+        },
+        {
+            "key": "ArrowHeadB",
+            "name": "Flecha afilada"
+        },
+        {
+            "key": "ArrowHeadC",
+            "name": "Flecha veterana"
+        },
+        {
+            "key": "CircularInsigniaA",
+            "name": "Insignia de cuervo novato"
+        },
+        {
+            "key": "CircularInsigniaB",
+            "name": "Insignia de cuervo plateada"
+        },
+        {
+            "key": "CircularInsigniaC",
+            "name": "Insignia de cuervo dorada"
+        },
+        {
+            "key": "InsigniaA",
+            "name": "Insignia del recluta"
+        },
+        {
+            "key": "InsigniaB",
+            "name": "Insignia del sargento"
+        },
+        {
+            "key": "InsigniaC",
+            "name": "Insignia del oficial"
+        },
+        {
+            "key": "SlimeA",
+            "name": "Condensado de Slime"
+        },
+        {
+            "key": "SlimeB",
+            "name": "Babas de Slime"
+        },
+        {
+            "key": "SlimeC",
+            "name": "Esencia de Slime"
+        },
+        {
+            "key": "Mora",
+            "name": "Mora"
+        },
+        {
+            "key": "BasaltPillar",
+            "name": "Pilar de basalto"
+        },
+        {
+            "key": "CleansingHeart",
+            "name": "Corazón purificador"
+        },
+        {
+            "key": "EverflameSeed",
+            "name": "Semilla de fuego eterno"
+        },
+        {
+            "key": "HoarfrostCore",
+            "name": "Núcleo de escarcha"
+        },
+        {
+            "key": "HurricaneSeed",
+            "name": "Semilla de Huracán"
+        },
+        {
+            "key": "LightningPrism",
+            "name": "Prisma de Relámpago"
+        },
+        {
+            "key": "AgateA",
+            "name": "Pedacito de ágata agnidus"
+        },
+        {
+            "key": "AgateB",
+            "name": "Fragmento de ágata agnidus"
+        },
+        {
+            "key": "AgateC",
+            "name": "Trozo de ágata agnidus"
+        },
+        {
+            "key": "AgateD",
+            "name": "Ágata agnidus"
+        },
+        {
+            "key": "DiamondA",
+            "name": "Pedacito de diamante brillante"
+        },
+        {
+            "key": "DiamondB",
+            "name": "Fragmento de diamante brillante"
+        },
+        {
+            "key": "DiamondC",
+            "name": "Trozo de diamante brillante"
+        },
+        {
+            "key": "DiamondD",
+            "name": "Diamante brillante"
+        },
+        {
+            "key": "EmeraldA",
+            "name": "Nagadus Emerald Sliver"
+        },
+        {
+            "key": "EmeraldB",
+            "name": "Nagadus Emerald Fragment"
+        },
+        {
+            "key": "EmeraldC",
+            "name": "Nagadus Emerald Chunk"
+        },
+        {
+            "key": "EmeraldD",
+            "name": "Nagadus Emerald Gemstone"
+        },
+        {
+            "key": "TopazA",
+            "name": "Pedacito de topacio prithiva"
+        },
+        {
+            "key": "TopazB",
+            "name": "Fragmento de topacio prithiva"
+        },
+        {
+            "key": "TopazC",
+            "name": "Trozo de topacio prithiva"
+        },
+        {
+            "key": "TopazD",
+            "name": "Topacio prithiva"
+        },
+        {
+            "key": "JadeA",
+            "name": "Pedacito de jade shivada"
+        },
+        {
+            "key": "JadeB",
+            "name": "Fragmento de jade shivada"
+        },
+        {
+            "key": "JadeC",
+            "name": "Trozo de jade shivada"
+        },
+        {
+            "key": "JadeD",
+            "name": "Jade shivada"
+        },
+        {
+            "key": "AmethystA",
+            "name": "Pedacito de amatista vajrada"
+        },
+        {
+            "key": "AmethystB",
+            "name": "Fragmento de amatista vajrada"
+        },
+        {
+            "key": "AmethystC",
+            "name": "Trozo de amatista vajrada"
+        },
+        {
+            "key": "AmethystD",
+            "name": "Amatista vajrada"
+        },
+        {
+            "key": "LazuriteA",
+            "name": "Pedacito de lazurita varunada"
+        },
+        {
+            "key": "LazuriteB",
+            "name": "Fragmento de lazurita varunada"
+        },
+        {
+            "key": "LazuriteC",
+            "name": "Trozo de lazurita varunada"
+        },
+        {
+            "key": "LazuriteD",
+            "name": "Lazurita varunada"
+        },
+        {
+            "key": "TurquoiseA",
+            "name": "Pedacito de turquesa vayuda"
+        },
+        {
+            "key": "TurquoiseB",
+            "name": "Fragment de turquesa vayuda"
+        },
+        {
+            "key": "TurquoiseC",
+            "name": "Trozo de turquesa vayuda"
+        },
+        {
+            "key": "TurquoiseD",
+            "name": "Turquesa vayuda"
+        },
+        {
+            "key": "CallaLily",
+            "name": "Lirio cala"
+        },
+        {
+            "key": "Cecilia",
+            "name": "Cecilia"
+        },
+        {
+            "key": "CorLapis",
+            "name": "Cor Lapis"
+        },
+        {
+            "key": "DandelionSeed",
+            "name": "Semilla de diente de léon"
+        },
+        {
+            "key": "GlazeLily",
+            "name": "Lirio de cristal"
+        },
+        {
+            "key": "JueyunChili",
+            "name": "Chile de Jueyun"
+        },
+        {
+            "key": "NoctilousJade",
+            "name": "Jade noctilucoso"
+        },
+        {
+            "key": "PhilanemoMushroom",
+            "name": "Seta filanemo"
+        },
+        {
+            "key": "Qingxin",
+            "name": "Flor chingxin"
+        },
+        {
+            "key": "SilkFlower",
+            "name": "Flor de seda"
+        },
+        {
+            "key": "SmallLampGrass",
+            "name": "Lucetta"
+        },
+        {
+            "key": "Starconch",
+            "name": "Caracola estelar"
+        },
+        {
+            "key": "Valberry",
+            "name": "Valbaya"
+        },
+        {
+            "key": "Violetgrass",
+            "name": "Campanita de cristal"
+        },
+        {
+            "key": "WindwheelAster",
+            "name": "Margarita voladora"
+        },
+        {
+            "key": "Wolfhook",
+            "name": "Gancho de lobo"
         }
     ],
     "debuffs": [
