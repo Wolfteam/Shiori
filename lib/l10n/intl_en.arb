@@ -4,6 +4,7 @@
     "light": "Light",
     "english": "English",
     "spanish": "Spanish",
+    "french": "French",
     "bow": "Bow",
     "claymore": "Claymore",
     "sword": "Sword",
@@ -166,5 +167,12 @@
     "currentLevel": "Current level",
     "desiredLevel": "Desired level",
     "selectCharacter": "Select a character",
-    "selectWeapon": "Select a weapon"
+    "selectWeapon": "Select a weapon",
+    "character": "Character",
+    "summary": "Summary",
+    "common": "Common",
+    "localSpecialities": "Local Specialities",
+    "boss": "Boss",
+    "day": "Day",
+    "currency": "Currency"
 }
