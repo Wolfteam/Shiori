@@ -85,6 +85,16 @@ class S {
     );
   }
 
+  /// `French`
+  String get french {
+    return Intl.message(
+      'French',
+      name: 'french',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Bow`
   String get bow {
     return Intl.message(
@@ -1714,6 +1724,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Character`
+  String get character {
+    return Intl.message(
+      'Character',
+      name: 'character',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Summary`
+  String get summary {
+    return Intl.message(
+      'Summary',
+      name: 'summary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Common`
+  String get common {
+    return Intl.message(
+      'Common',
+      name: 'common',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Local Specialities`
+  String get localSpecialities {
+    return Intl.message(
+      'Local Specialities',
+      name: 'localSpecialities',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Boss`
+  String get boss {
+    return Intl.message(
+      'Boss',
+      name: 'boss',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Day`
+  String get day {
+    return Intl.message(
+      'Day',
+      name: 'day',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Currency`
+  String get currency {
+    return Intl.message(
+      'Currency',
+      name: 'currency',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -1723,6 +1803,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'es', countryCode: 'ES'),
+      Locale.fromSubtags(languageCode: 'fr'),
     ];
   }
 

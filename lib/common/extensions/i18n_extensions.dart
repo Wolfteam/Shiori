@@ -10,10 +10,12 @@ import '../../common/enums/stat_type.dart';
 import '../../common/enums/weapon_filter_type.dart';
 import '../../common/enums/weapon_type.dart';
 import '../../generated/l10n.dart';
+import '../enums/ascension_material_summary_type.dart';
 import '../enums/character_skill_ability_type.dart';
 import '../enums/character_skill_type.dart';
 import '../enums/character_type.dart';
 import '../enums/item_status_type.dart';
+import '../enums/material_type.dart';
 
 extension I18nExtensions on S {
   String translateAppThemeType(AppThemeType theme) {
@@ -33,6 +35,8 @@ extension I18nExtensions on S {
         return english;
       case AppLanguageType.spanish:
         return '$spanish ($partial)';
+      case AppLanguageType.french:
+        return '$french ($partial)';
       default:
         throw Exception('The provided app lang = $lang is not valid');
     }
@@ -297,6 +301,25 @@ extension I18nExtensions on S {
         return 'Snezhnaya';
       default:
         throw Exception('Invalid region type = $type');
+    }
+  }
+
+  String translateAscensionSummaryType(AscensionMaterialSummaryType type) {
+    switch (type) {
+      case AscensionMaterialSummaryType.common:
+        return common;
+      case AscensionMaterialSummaryType.local:
+        return localSpecialities;
+      case AscensionMaterialSummaryType.worldBoss:
+        return boss;
+      case AscensionMaterialSummaryType.day:
+        return day;
+      case AscensionMaterialSummaryType.currency:
+        return currency;
+      case AscensionMaterialSummaryType.others:
+        return others;
+      default:
+        throw Exception('Invalid ascension material type = $type');
     }
   }
 }
