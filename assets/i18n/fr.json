@@ -4578,28 +4578,76 @@
     ],
     "materials": [
         {
-            "key": "Freedom",
-            "name": "Freedom"
+            "key": "FreedomA",
+            "name": "Teachings of Freedom"
         },
         {
-            "key": "Prosperity",
-            "name": "Prosperity"
+            "key": "FreedomB",
+            "name": "Guide to Freedom"
         },
         {
-            "key": "Dilligence",
-            "name": "Dilligence"
+            "key": "FreedomC",
+            "name": "Philosophies of Freedom"
         },
         {
-            "key": "Resistance",
-            "name": "Resistance"
+            "key": "ProsperityA",
+            "name": "Teachings of Prosperity"
         },
         {
-            "key": "Ballad",
-            "name": "Ballad"
+            "key": "ProsperityB",
+            "name": "Guide to Prosperity"
         },
         {
-            "key": "Gold",
-            "name": "Gold"
+            "key": "ProsperityC",
+            "name": "Philosophies of Prosperity"
+        },
+        {
+            "key": "DilligenceA",
+            "name": "Teachings of Dilligence"
+        },
+        {
+            "key": "DilligenceB",
+            "name": "Guide to Dilligence"
+        },
+        {
+            "key": "DilligenceC",
+            "name": "Philosophies of Dilligence"
+        },
+        {
+            "key": "ResistanceA",
+            "name": "Teachings of Resistance"
+        },
+        {
+            "key": "ResistanceB",
+            "name": "Guide to Resistance"
+        },
+        {
+            "key": "ResistanceC",
+            "name": "Philosophies of Resistance"
+        },
+        {
+            "key": "BalladA",
+            "name": "Teachings of Ballad"
+        },
+        {
+            "key": "BalladB",
+            "name": "Guide to Ballad"
+        },
+        {
+            "key": "BalladC",
+            "name": "Philosophies of Ballad"
+        },
+        {
+            "key": "GoldA",
+            "name": "Teachings of Gold"
+        },
+        {
+            "key": "GoldB",
+            "name": "Guide to Gold"
+        },
+        {
+            "key": "GoldC",
+            "name": "Philosophies of Gold"
         },
         {
             "key": "Tail of Boreas",
@@ -4647,28 +4695,588 @@
             "bossName": "Tartaglia"
         },
         {
-            "key": "Decarabian",
-            "name": "Decarabian"
+            "key": "DecarabianA",
+            "name": "Tile of Decarabian’s Tower"
         },
         {
-            "key": "Guyun",
-            "name": "Guyun"
+            "key": "DecarabianB",
+            "name": "Debris of Decarabian’s City"
         },
         {
-            "key": "Mist Veiled Elixir",
-            "name": "Mist Veiled Elixir"
+            "key": "DecarabianC",
+            "name": "Fragment of Decarabian’s Epic"
         },
         {
-            "key": "Boreal Wolf",
-            "name": "Boreal Wolf"
+            "key": "DecarabianD",
+            "name": "Scattered Piece of Decarabian’s Dream"
         },
         {
-            "key": "Aerosiderite",
-            "name": "Aerosiderite"
+            "key": "GuyunA",
+            "name": "Luminous Sands from Guyun"
         },
         {
-            "key": "Dandelion Gladiator",
-            "name": "Dandelion Gladiator"
+            "key": "GuyunB",
+            "name": "Lustrous Stone from Guyun"
+        },
+        {
+            "key": "GuyunC",
+            "name": "Relic from Guyun"
+        },
+        {
+            "key": "GuyunD",
+            "name": "Divine Body from Guyun"
+        },
+        {
+            "key": "ElixirA",
+            "name": "Mist Veiled Lead Elixir"
+        },
+        {
+            "key": "ElixirB",
+            "name": "Mist Veiled Mercury Elixir"
+        },
+        {
+            "key": "ElixirC",
+            "name": "Mist Veiled Gold Elixir"
+        },
+        {
+            "key": "ElixirD",
+            "name": "Mist Veiled Primo Elixir"
+        },
+        {
+            "key": "BorealWolfA",
+            "name": "Boreal Wolf’s Milk Tooth"
+        },
+        {
+            "key": "BorealWolfB",
+            "name": "Boreal Wolf’s Cracked Tooth"
+        },
+        {
+            "key": "BorealWolfC",
+            "name": "Boreal Wolf’s Broken Fang"
+        },
+        {
+            "key": "BorealWolfD",
+            "name": "Boreal Wolf's Nostalgia"
+        },
+        {
+            "key": "AerosideriteA",
+            "name": "Grain of Aerosiderite"
+        },
+        {
+            "key": "AerosideriteB",
+            "name": "Piece of Aerosiderite"
+        },
+        {
+            "key": "AerosideriteC",
+            "name": "Bit of Aerosiderite"
+        },
+        {
+            "key": "AerosideriteD",
+            "name": "Chunk of Aerosiderite"
+        },
+        {
+            "key": "GladiatorA",
+            "name": "Fetters of the Dandelion Gladiator"
+        },
+        {
+            "key": "GladiatorB",
+            "name": "Chains of the Dandelion Gladiator"
+        },
+        {
+            "key": "GladiatorC",
+            "name": "Shackles of the Dandelion Gladiator"
+        },
+        {
+            "key": "GladiatorD",
+            "name": "Dream of the Dandelion Gladiator"
+        },
+        {
+            "key": "Crown of Insight",
+            "name": "Crown of Insight"
+        },
+        {
+            "key": "SacrificialKnifeA",
+            "name": "Hunter's Sacrificial Knife"
+        },
+        {
+            "key": "SacrificialKnifeB",
+            "name": "Agent's Sacrificial Knife"
+        },
+        {
+            "key": "SacrificialKnifeC",
+            "name": "Inspector's Sacrificial Knife"
+        },
+        {
+            "key": "HornA",
+            "name": "Heavy Horn"
+        },
+        {
+            "key": "HornB",
+            "name": "Black Bronze Horn"
+        },
+        {
+            "key": "HornC",
+            "name": "Black Crystal Horn"
+        },
+        {
+            "key": "ChaosA",
+            "name": "Chaos Device"
+        },
+        {
+            "key": "ChaosB",
+            "name": "Chaos Circuit"
+        },
+        {
+            "key": "ChaosC",
+            "name": "Chaos Core"
+        },
+        {
+            "key": "LeyLineA",
+            "name": "Dead Ley Line Branch"
+        },
+        {
+            "key": "LeyLineB",
+            "name": "Dead Ley Line Leaves"
+        },
+        {
+            "key": "LeyLineC",
+            "name": "Ley Line Sprout"
+        },
+        {
+            "key": "MistGrassA",
+            "name": "Mist Grass Pollen"
+        },
+        {
+            "key": "MistGrassB",
+            "name": "Mist Grass"
+        },
+        {
+            "key": "MistGrassC",
+            "name": "Mist Grass Wick"
+        },
+        {
+            "key": "BoneShardA",
+            "name": "Fragile Bone Shard"
+        },
+        {
+            "key": "BoneShardB",
+            "name": "Sturdy Bone Shard"
+        },
+        {
+            "key": "BoneShardC",
+            "name": "Fossilized Bone Shard"
+        },
+        {
+            "key": "DecarabianA",
+            "name": "Tile of Decarabian's Tower"
+        },
+        {
+            "key": "DecarabianB",
+            "name": "Debris of Decarabian's City"
+        },
+        {
+            "key": "DecarabianC",
+            "name": "Fragment of Decarabian's Epic"
+        },
+        {
+            "key": "DecarabianD",
+            "name": "Scattered Piece of Decarabian's Dream"
+        },
+        {
+            "key": "GuyunA",
+            "name": "Luminous Sands from Guyun"
+        },
+        {
+            "key": "GuyunB",
+            "name": "Lustrous Stone from Guyun"
+        },
+        {
+            "key": "GuyunC",
+            "name": "Relic from Guyun"
+        },
+        {
+            "key": "GuyunD",
+            "name": "Divine Body from Guyun"
+        },
+        {
+            "key": "ElixirA",
+            "name": "Mist Veiled Lead Elixir"
+        },
+        {
+            "key": "ElixirB",
+            "name": "Mist Veiled Mercury Elixir"
+        },
+        {
+            "key": "ElixirC",
+            "name": "Mist Veiled Gold Elixir"
+        },
+        {
+            "key": "ElixirD",
+            "name": "Mist Veiled Primo Elixir"
+        },
+        {
+            "key": "BorealWolfA",
+            "name": "Boreal Wolf's Milk Tooth"
+        },
+        {
+            "key": "BorealWolfB",
+            "name": "Boreal Wolf's Cracked Tooth"
+        },
+        {
+            "key": "BorealWolfC",
+            "name": "Boreal Wolf's Broken Fang"
+        },
+        {
+            "key": "BorealWolfD",
+            "name": "Boreal Wolf's Nostalgia"
+        },
+        {
+            "key": "AerosideriteA",
+            "name": "Grain of Aerosiderite"
+        },
+        {
+            "key": "AerosideriteB",
+            "name": "Piece of Aerosiderite"
+        },
+        {
+            "key": "AerosideriteC",
+            "name": "Bit of Aerosiderite"
+        },
+        {
+            "key": "AerosideriteD",
+            "name": "Chunk of Aerosiderite"
+        },
+        {
+            "key": "GladiatorA",
+            "name": "Fetters of the Dandelion Gladiator"
+        },
+        {
+            "key": "GladiatorB",
+            "name": "Chains of the Dandelion Gladiator"
+        },
+        {
+            "key": "GladiatorC",
+            "name": "Shackles of the Dandelion Gladiator"
+        },
+        {
+            "key": "GladiatorD",
+            "name": "Dream of the Dandelion Gladiator"
+        },
+        {
+            "key": "MaskA",
+            "name": "Damaged Mask"
+        },
+        {
+            "key": "MaskB",
+            "name": "Stained Mask"
+        },
+        {
+            "key": "MaskC",
+            "name": "Ominous Mask"
+        },
+        {
+            "key": "StatuetteA",
+            "name": "Gloomy Statuette"
+        },
+        {
+            "key": "StatuetteB",
+            "name": "Dark Statuette"
+        },
+        {
+            "key": "StatuetteC",
+            "name": "Deathly Statuette"
+        },
+        {
+            "key": "ScrollA",
+            "name": "Divining Scroll"
+        },
+        {
+            "key": "ScrollB",
+            "name": "Sealed Scroll"
+        },
+        {
+            "key": "ScrollC",
+            "name": "Forbidden Curse Scroll"
+        },
+        {
+            "key": "NectarA",
+            "name": "Whopperflower Nectar"
+        },
+        {
+            "key": "NectarB",
+            "name": "Shimmering Nectar"
+        },
+        {
+            "key": "NectarC",
+            "name": "Energy Nectar"
+        },
+        {
+            "key": "ArrowHeadA",
+            "name": "Firm Arrowhead"
+        },
+        {
+            "key": "ArrowHeadB",
+            "name": "Sharp Arrowhead"
+        },
+        {
+            "key": "ArrowHeadC",
+            "name": "Weathered Arrowhead"
+        },
+        {
+            "key": "CircularInsigniaA",
+            "name": "Treasure Hoarder Insignia"
+        },
+        {
+            "key": "CircularInsigniaB",
+            "name": "Silver Raven Insignia"
+        },
+        {
+            "key": "CircularInsigniaC",
+            "name": "Golden Raven Insignia"
+        },
+        {
+            "key": "InsigniaA",
+            "name": "Recruit's Insignia"
+        },
+        {
+            "key": "InsigniaB",
+            "name": "Sergeant's Insignia"
+        },
+        {
+            "key": "InsigniaC",
+            "name": "Lieutenant's Insignia"
+        },
+        {
+            "key": "SlimeA",
+            "name": "Slime Condensate"
+        },
+        {
+            "key": "SlimeB",
+            "name": "Slime Secretions"
+        },
+        {
+            "key": "SlimeC",
+            "name": "Slime Concentrate"
+        },
+        {
+            "key": "Mora",
+            "name": "Mora"
+        },
+        {
+            "key": "BasaltPillar",
+            "name": "Basalt Pillar"
+        },
+        {
+            "key": "CleansingHeart",
+            "name": "Cleansing Heart"
+        },
+        {
+            "key": "EverflameSeed",
+            "name": "Everflame Seed"
+        },
+        {
+            "key": "HoarfrostCore",
+            "name": "Hoarfrost Core"
+        },
+        {
+            "key": "HurricaneSeed",
+            "name": "Hurricane Seed"
+        },
+        {
+            "key": "LightningPrism",
+            "name": "Lightning Prism"
+        },
+        {
+            "key": "AgateA",
+            "name": "Agnidus Agate Sliver"
+        },
+        {
+            "key": "AgateB",
+            "name": "Agnidus Agate Fragment"
+        },
+        {
+            "key": "AgateC",
+            "name": "Agnidus Agate Chunk"
+        },
+        {
+            "key": "AgateD",
+            "name": "Agnidus Agate Gemstone"
+        },
+        {
+            "key": "DiamondA",
+            "name": "Brilliant Diamond Sliver"
+        },
+        {
+            "key": "DiamondB",
+            "name": "Brilliant Diamond Fragment"
+        },
+        {
+            "key": "DiamondC",
+            "name": "Brilliant Diamond Chunk"
+        },
+        {
+            "key": "DiamondD",
+            "name": "Brilliant Diamond Gemstone"
+        },
+        {
+            "key": "EmeraldA",
+            "name": "Nagadus Emerald Sliver"
+        },
+        {
+            "key": "EmeraldB",
+            "name": "Nagadus Emerald Fragment"
+        },
+        {
+            "key": "EmeraldC",
+            "name": "Nagadus Emerald Chunk"
+        },
+        {
+            "key": "EmeraldD",
+            "name": "Nagadus Emerald Gemstone"
+        },
+        {
+            "key": "TopazA",
+            "name": "Prithiva Topaz Sliver"
+        },
+        {
+            "key": "TopazB",
+            "name": "Prithiva Topaz Fragment"
+        },
+        {
+            "key": "TopazC",
+            "name": "Prithiva Topaz Chunk"
+        },
+        {
+            "key": "TopazD",
+            "name": "Prithiva Topaz Gemstone"
+        },
+        {
+            "key": "JadeA",
+            "name": "Shivada Jade Sliver"
+        },
+        {
+            "key": "JadeB",
+            "name": "Shivada Jade Fragment"
+        },
+        {
+            "key": "JadeC",
+            "name": "Shivada Jade Chunk"
+        },
+        {
+            "key": "JadeD",
+            "name": "Shivada Jade Gemstone"
+        },
+        {
+            "key": "AmethystA",
+            "name": "Vajrada Amethyst Sliver"
+        },
+        {
+            "key": "AmethystB",
+            "name": "Vajrada Amethyst Fragment"
+        },
+        {
+            "key": "AmethystC",
+            "name": "Vajrada Amethyst Chunk"
+        },
+        {
+            "key": "AmethystD",
+            "name": "Vajrada Amethyst Gemstone"
+        },
+        {
+            "key": "LazuriteA",
+            "name": "Varunada Lazurite Sliver"
+        },
+        {
+            "key": "LazuriteB",
+            "name": "Varunada Lazurite Fragment"
+        },
+        {
+            "key": "LazuriteC",
+            "name": "Varunada Lazurite Chunk"
+        },
+        {
+            "key": "LazuriteD",
+            "name": "Varunada Lazurite Gemstone"
+        },
+        {
+            "key": "TurquoiseA",
+            "name": "Vayuda Turquoise Sliver"
+        },
+        {
+            "key": "TurquoiseB",
+            "name": "Vayuda Turquoise Fragment"
+        },
+        {
+            "key": "TurquoiseC",
+            "name": "Vayuda Turquoise Chunk"
+        },
+        {
+            "key": "TurquoiseD",
+            "name": "Vayuda Turquoise Gemstone"
+        },
+        {
+            "key": "CallaLily",
+            "name": "Calla Lily"
+        },
+        {
+            "key": "Cecilia",
+            "name": "Cecilia"
+        },
+        {
+            "key": "CorLapis",
+            "name": "Cor Lapis"
+        },
+        {
+            "key": "DandelionSeed",
+            "name": "Dandelion Seed"
+        },
+        {
+            "key": "GlazeLily",
+            "name": "Glaze Lily"
+        },
+        {
+            "key": "JueyunChili",
+            "name": "Jueyun Chili"
+        },
+        {
+            "key": "NoctilousJade",
+            "name": "Noctilucous Jade"
+        },
+        {
+            "key": "PhilanemoMushroom",
+            "name": "Philanemo Mushroom"
+        },
+        {
+            "key": "Qingxin",
+            "name": "Qingxin"
+        },
+        {
+            "key": "SilkFlower",
+            "name": "Silk Flower"
+        },
+        {
+            "key": "SmallLampGrass",
+            "name": "Small Lamp Grass"
+        },
+        {
+            "key": "Starconch",
+            "name": "Starconch"
+        },
+        {
+            "key": "Valberry",
+            "name": "Valberry"
+        },
+        {
+            "key": "Violetgrass",
+            "name": "Violetgrass"
+        },
+        {
+            "key": "WindwheelAster",
+            "name": "Windwheel Aster"
+        },
+        {
+            "key": "Wolfhook",
+            "name": "Wolfhook"
         }
     ],
     "debuffs": [

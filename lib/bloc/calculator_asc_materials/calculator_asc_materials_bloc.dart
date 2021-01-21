@@ -10,7 +10,9 @@ import '../../models/models.dart';
 import '../../services/genshing_service.dart';
 
 part 'calculator_asc_materials_bloc.freezed.dart';
+
 part 'calculator_asc_materials_event.dart';
+
 part 'calculator_asc_materials_state.dart';
 
 class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, CalculatorAscMaterialsState> {
@@ -18,8 +20,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
 
   _InitialState get currentState => state as _InitialState;
 
-  CalculatorAscMaterialsBloc(this._genshinService)
-      : super(const CalculatorAscMaterialsState.initial(items: [], summary: []));
+  CalculatorAscMaterialsBloc(this._genshinService) : super(const CalculatorAscMaterialsState.initial(items: [], summary: []));
 
   @override
   Stream<CalculatorAscMaterialsState> mapEventToState(
@@ -45,8 +46,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
           )
         ];
 
-        return currentState.copyWith
-            .call(items: items, summary: _generateSummary(items.expand((i) => i.materials).toList()));
+        return currentState.copyWith.call(items: items, summary: _generateSummary(items.expand((i) => i.materials).toList()));
       },
       addWeapon: (e) {
         final weapon = _genshinService.getWeapon(e.key);
@@ -63,14 +63,12 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
             desiredLevel: e.desiredLevel,
           )
         ];
-        return currentState.copyWith
-            .call(items: items, summary: _generateSummary(items.expand((i) => i.materials).toList()));
+        return currentState.copyWith.call(items: items, summary: _generateSummary(items.expand((i) => i.materials).toList()));
       },
       removeItem: (e) {
         final items = [...currentState.items];
         items.removeAt(e.index);
-        return currentState.copyWith
-            .call(items: items, summary: _generateSummary(items.expand((i) => i.materials).toList()));
+        return currentState.copyWith.call(items: items, summary: _generateSummary(items.expand((i) => i.materials).toList()));
       },
       updateCharacter: (e) {
         final currentChar = currentState.items.elementAt(e.index);
@@ -180,24 +178,36 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     int desiredLevel,
     List<CharacterSkill> skills,
   ) {
-    final ascensionMaterials = char.ascentionMaterials
-        .where((m) => m.rank > currentLevel && m.rank <= desiredLevel)
-        .expand((e) => e.materials)
-        .toList();
+    final ascensionMaterials =
+        char.ascentionMaterials.where((m) => m.rank > currentLevel && m.rank <= desiredLevel).expand((e) => e.materials).toList();
 
     final skillMaterials = <ItemAscentionMaterialModel>[];
 
-    for (final skill in skills) {
-      final materials = char.talentAscentionMaterials
-          .where((m) => m.level > skill.currentLevel && m.level <= skill.desiredLevel)
-          .expand((m) => m.materials)
-          .toList();
+    if (char.talentAscentionMaterials.isNotEmpty) {
+      for (final skill in skills) {
+        final materials = char.talentAscentionMaterials
+            .where((m) => m.level > skill.currentLevel && m.level <= skill.desiredLevel)
+            .expand((m) => m.materials)
+            .toList();
 
-      skillMaterials.addAll(materials);
-    }
+        skillMaterials.addAll(materials);
+      }
+    } else if (char.multiTalentAscentionMaterials != null && char.multiTalentAscentionMaterials.isNotEmpty) {
+      //The traveler has different materials depending on the skill, that's why we need to retrieve the right amount for the provided skill
+      //Also, we are assuming that the skill's order are fixed
+      var talentNumber = 1;
+      for (final skill in skills) {
+        final materials = char.multiTalentAscentionMaterials
+            .where((mt) => mt.number == talentNumber)
+            .expand((mt) => mt.materials)
+            .where((m) => m.level > skill.currentLevel && m.level <= skill.desiredLevel)
+            .expand((m) => m.materials)
+            .toList();
 
-    if (char.multiTalentAscentionMaterials != null && char.multiTalentAscentionMaterials.isNotEmpty) {
-//TODO: WHAT SHOULD I DO HERE ?
+        skillMaterials.addAll(materials);
+
+        talentNumber++;
+      }
     }
 
     return _flatMaterialsList(ascensionMaterials + skillMaterials);
@@ -220,10 +230,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     final materials = <ItemAscentionMaterialModel>[];
     for (final image in current.map((e) => e.fullImagePath).toSet().toList()) {
       final item = current.firstWhere((m) => m.fullImagePath == image);
-      final int quantity = current
-          .where((m) => m.fullImagePath == image)
-          .map((e) => e.quantity)
-          .fold(0, (previous, current) => previous + current);
+      final int quantity = current.where((m) => m.fullImagePath == image).map((e) => e.quantity).fold(0, (previous, current) => previous + current);
 
       materials.add(item.copyWith.call(quantity: quantity));
     }
@@ -235,8 +242,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     final items = [...currentState.items];
     items.removeAt(index);
     items.insert(index, updatedItem);
-    return currentState.copyWith
-        .call(items: items, summary: _generateSummary(items.expand((i) => i.materials).toList()));
+    return currentState.copyWith.call(items: items, summary: _generateSummary(items.expand((i) => i.materials).toList()));
   }
 
   int _mapToWeaponLevel(int val) {
