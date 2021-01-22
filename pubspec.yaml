@@ -28,7 +28,9 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^6.1.0
   flutter_cupertino_localizations: ^1.0.1
-  flutter_staggered_grid_view: "^0.3.2"
+  flutter_staggered_grid_view:
+    git:
+      url: https://github.com/BertrandBev/flutter_staggered_grid_view.git
   flutter_localizations:
     sdk: flutter
   fluttertoast: ^7.1.6

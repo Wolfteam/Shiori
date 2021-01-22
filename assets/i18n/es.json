@@ -883,12 +883,12 @@
                     "description": "Dispara unas garras heladas, infligiendo Daño Cryo a los enemigos y creando un escudo es proporcional a la Vida Máx. de Diona, y su duración depende del número de garras que golpeen a su objetivo.",
                     "abilities": [
                         {
-                            "key":"a1",
+                            "key": "a1",
                             "description": "Dispara 2 veloces garras heladas.",
                             "descriptions": []
                         },
                         {
-                            "key":"a2",
+                            "key": "a2",
                             "description": "Retrocede rápidamente y dispara 5 garras heladas. Además, genera un escudo que gana un 75% de bono de absorción de Daño.Este escudo tiene un 250% de bono de absorción de Daño Cryo sobre el personaje actual.",
                             "descriptions": []
                         }
@@ -1097,10 +1097,119 @@
             "key": "Ganyu",
             "pending": true,
             "name": "Ganyu",
-            "description": "The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated beast, flows within her veins.",
-            "skills": [],
-            "passives": [],
-            "constellations": []
+            "description": "La secretaria del pabellón Yuehai. La sangre de los Qilin, una bestia iluminada, fluye por sus venas.",
+            "skills": [
+                {
+                    "key": "s1",
+                    "title": "Técnica de tiro Liutian",
+                    "description": null,
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "description": "Ejecuta hasta 6 disparos consecutivos.",
+                            "descriptions": []
+                        },
+                        {
+                            "key": "a2",
+                            "description": " Ejecuta un Disparo Preciso. Mientras apunta, un aura helada se acumulará en la punta de la flecha antes de que esta sea disparada. Sus efectos serán distintos dependiendo de cuánto tiempo se ha cargado:",
+                            "descriptions": [
+                                "Carga 1: Dispara una flecha congelada que inflige Daño Cryo.",
+                                "Carga 2: Dispara una flecha helada que inflige Daño Cryo. Al golpear a su objetivo, la flecha estallará, creando una explosión de escarcha e infligiendo Daño Cryo en el AdE."
+                            ]
+                        },
+                        {
+                            "key": "a3",
+                            "description": "Dispara una lluvia de flechas al aire antes de caer y golpear el suelo, infligiendo Daño de Área en el momento del impacto.",
+                            "descriptions": []
+                        }
+                    ]
+                },
+                {
+                    "key": "s2",
+                    "title": "Senda de Chilin",
+                    "description": "Ganyu da un salto atrás para dejar un loto de hielo, evitando toda impureza e inflingiendo Daño Cryo en el AdE.",
+                    "abilities": [
+                        {
+                            "name": "Loto de Hielo",
+                            "descriptions": [
+                                "El loto de hielo provoca continuamente a los enemigos que lo rodean, atrayéndolos para que lo ataquen.",
+                                "La resistencia del loto es proporcional a la Vida Max. de Ganyu.",
+                                "Explota cuando es destruido o una vez terminada su duración, infligiendo Daño Cryo en el AdE.."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "key": "s3",
+                    "title": "Diluvio celestial",
+                    "description": "Fusiona nieve y escarcha en la atmósfera para invocar una perla de hielo sagrada que exorciza el mal. Mientras dure la habilidad, la perla hará llover continuamente fragmentos de hielo que golpean a los enemigos dentro de un AdE e infligen Daño Cryo.",
+                    "abilities": []
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "title": "Arco de repuesto",
+                    "description": "Recupera el 15% de los minerales utilizados en la fabricación de arcos.",
+                    "descriptions": []
+                },
+                {
+                    "key": "p2",
+                    "title": "Corazón indiviso",
+                    "description": "Tras lanzar una flecha helada, aumenta en un 20% la Prob.CRIT de la siguiente flecha helada y de la explosión de escarcha causada por ella durante 5 s.",
+                    "descriptions": []
+                },
+                {
+                    "key": "p3",
+                    "title": "Armonía entre el Cielo y la Tierra",
+                    "description": "Los personajes del equipo dentro del área de Diluvio celestial obtienen un 20% de Bono de Daño Cryo.",
+                    "descriptions": []
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "title": "Bebedora de rocío",
+                    "description": "Reduce en un 15% la RES Cryo de los enemigos golpeados por una flecha helada de Carga 2 o una explosión de escarcha durante 6 s.\nAdemás, al golpear a un enemigo, Ganyu recupera 2 pts. de Energía Elemental. Este efecto solo puede activarse una vez por cada flecha helada de carga 2, independientemente de que tanto dicha flecha helada como la explosión de escarcha golpeen al enemigo.",
+                    "secondDescription": null,
+                    "descriptions": []
+                },
+                {
+                    "key": "c2",
+                    "title": "La auspiciosa",
+                    "description": "Aumenta en 1 las cargas de Senda de Chilin.",
+                    "secondDescription": null,
+                    "descriptions": []
+                },
+                {
+                    "key": "c3",
+                    "title": "Jinete de las nubes",
+                    "description": "Aumenta el nivel de habilidad de Diluvio celestial +3. Puede ser aumentado hasta Niv. 15.",
+                    "secondDescription": null,
+                    "descriptions": []
+                },
+                {
+                    "key": "c4",
+                    "title": "Viaje al Oeste",
+                    "description": "Los enemigos une estén en el AdE de Diluvio celestial reciben daño adicional. Este efecto se fortalece con el tiempo.\nEl daño comienza con un 5% adicional, y aumenta en un 5% cada 3 s hasta un máximo de un 25%.\nEste efecto persiste durante 3 s después de que el enémigo se aleje del AdE de la habilidad.",
+                    "secondDescription": null,
+                    "descriptions": []
+                },
+                {
+                    "key": "c5",
+                    "title": "La misericordiosa",
+                    "description": "Aumenta el nivel de habilidad de Senda de Chilin +3. Puede ser aumentado hasta Niv. 15.",
+                    "secondDescription": null,
+                    "descriptions": []
+                },
+                {
+                    "key": "c6",
+                    "title": "La clemente",
+                    "description": "Utilizar Senda de Chilin hace que durante 30 s no se requiera cargar la siguiente flecha helada.",
+                    "secondDescription": null,
+                    "descriptions": []
+                }
+            ]
         },
         {
             "key": "Jean",
