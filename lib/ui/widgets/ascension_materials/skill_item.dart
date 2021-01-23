@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 import '../../../bloc/bloc.dart';
 import '../../../common/styles.dart';
 import '../../../generated/l10n.dart';
@@ -26,52 +25,48 @@ class SkillItem extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
 
-    return Container(
-      margin: Styles.edgeInsetVertical5,
-      padding: Styles.edgeInsetHorizontal16,
-      child: Column(
-        children: [
-          Text(name, style: theme.textTheme.subtitle2),
-          const Divider(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              IncrementButton(
-                title: s.currentLevel,
-                value: currentLevel,
-                incrementIsDisabled: currentLevel == CalculatorAscMaterialsItemBloc.maxSkillLevel,
-                decrementIsDisabled: currentLevel == CalculatorAscMaterialsItemBloc.minSkillLevel,
-                onMinus: (val) {
-                  context
-                      .read<CalculatorAscMaterialsItemBloc>()
-                      .add(CalculatorAscMaterialsItemEvent.skillCurrentLevelChanged(index: index, newValue: val));
-                },
-                onAdd: (val) {
-                  context
-                      .read<CalculatorAscMaterialsItemBloc>()
-                      .add(CalculatorAscMaterialsItemEvent.skillCurrentLevelChanged(index: index, newValue: val));
-                },
-              ),
-              IncrementButton(
-                title: s.desiredLevel,
-                value: desiredLevel,
-                incrementIsDisabled: desiredLevel == CalculatorAscMaterialsItemBloc.maxSkillLevel,
-                decrementIsDisabled: desiredLevel == CalculatorAscMaterialsItemBloc.minSkillLevel,
-                onMinus: (val) {
-                  context
-                      .read<CalculatorAscMaterialsItemBloc>()
-                      .add(CalculatorAscMaterialsItemEvent.skillDesiredLevelChanged(index: index, newValue: val));
-                },
-                onAdd: (val) {
-                  context
-                      .read<CalculatorAscMaterialsItemBloc>()
-                      .add(CalculatorAscMaterialsItemEvent.skillDesiredLevelChanged(index: index, newValue: val));
-                },
-              ),
-            ],
-          ),
-        ],
-      ),
+    return Column(
+      children: [
+        Text(name, style: theme.textTheme.subtitle2),
+        const Divider(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IncrementButton(
+              title: s.currentLevel,
+              value: currentLevel,
+              incrementIsDisabled: currentLevel == CalculatorAscMaterialsItemBloc.maxSkillLevel,
+              decrementIsDisabled: currentLevel == CalculatorAscMaterialsItemBloc.minSkillLevel,
+              onMinus: (val) {
+                context
+                    .read<CalculatorAscMaterialsItemBloc>()
+                    .add(CalculatorAscMaterialsItemEvent.skillCurrentLevelChanged(index: index, newValue: val));
+              },
+              onAdd: (val) {
+                context
+                    .read<CalculatorAscMaterialsItemBloc>()
+                    .add(CalculatorAscMaterialsItemEvent.skillCurrentLevelChanged(index: index, newValue: val));
+              },
+            ),
+            IncrementButton(
+              title: s.desiredLevel,
+              value: desiredLevel,
+              incrementIsDisabled: desiredLevel == CalculatorAscMaterialsItemBloc.maxSkillLevel,
+              decrementIsDisabled: desiredLevel == CalculatorAscMaterialsItemBloc.minSkillLevel,
+              onMinus: (val) {
+                context
+                    .read<CalculatorAscMaterialsItemBloc>()
+                    .add(CalculatorAscMaterialsItemEvent.skillDesiredLevelChanged(index: index, newValue: val));
+              },
+              onAdd: (val) {
+                context
+                    .read<CalculatorAscMaterialsItemBloc>()
+                    .add(CalculatorAscMaterialsItemEvent.skillDesiredLevelChanged(index: index, newValue: val));
+              },
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
