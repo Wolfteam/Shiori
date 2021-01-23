@@ -68,7 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "artifacts" : MessageLookupByLibrary.simpleMessage("Artifacts"),
     "asc" : MessageLookupByLibrary.simpleMessage("Ascending"),
     "ascensionMaterials" : MessageLookupByLibrary.simpleMessage("Ascension Materials"),
-    "ascensionMaterialsCalculatorMsg" : MessageLookupByLibrary.simpleMessage("Check how many materials you need for a character / weapon"),
+    "ascensionMaterialsCalculatorMsg" : MessageLookupByLibrary.simpleMessage("Check how many materials you will need for a character / weapon"),
     "atk" : m1,
     "atkPercentage" : m2,
     "baseAtk" : MessageLookupByLibrary.simpleMessage("Base ATK"),

@@ -1645,10 +1645,10 @@ class S {
     );
   }
 
-  /// `Check how many materials you need for a character / weapon`
+  /// `Check how many materials you will need for a character / weapon`
   String get ascensionMaterialsCalculatorMsg {
     return Intl.message(
-      'Check how many materials you need for a character / weapon',
+      'Check how many materials you will need for a character / weapon',
       name: 'ascensionMaterialsCalculatorMsg',
       desc: '',
       args: [],

@@ -15,6 +15,7 @@ class LanguageSettingsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
+    final languages = AppLanguageType.values.where((x) => x != AppLanguageType.french).toList();
     return SettingsCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -53,7 +54,7 @@ class LanguageSettingsCard extends StatelessWidget {
                       color: Colors.transparent,
                     ),
                     onChanged: (v) => _languageChanged(v, context),
-                    items: AppLanguageType.values
+                    items: languages
                         .map<DropdownMenuItem<AppLanguageType>>(
                           (lang) => DropdownMenuItem<AppLanguageType>(
                             value: lang,

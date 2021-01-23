@@ -1,9 +1,9 @@
 import '../common/extensions/string_extensions.dart';
 import 'enums/app_language_type.dart';
+import 'enums/artifact_type.dart';
 import 'enums/element_type.dart';
 import 'enums/material_type.dart';
 import 'enums/weapon_type.dart';
-import 'enums/artifact_type.dart';
 
 class Assets {
   static String dbPath = 'assets/db';
