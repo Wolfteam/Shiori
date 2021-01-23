@@ -24,7 +24,7 @@ class BottomSheetTitle extends StatelessWidget {
           Expanded(
             child: Container(
               margin: const EdgeInsets.only(left: 5),
-              child: Text(title, style: theme.textTheme.headline6),
+              child: Text(title, style: theme.textTheme.headline6, overflow: TextOverflow.ellipsis),
             ),
           ),
         ],

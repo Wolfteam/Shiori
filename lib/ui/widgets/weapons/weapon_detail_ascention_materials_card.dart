@@ -51,7 +51,7 @@ class WeaponDetailAscentionMaterialsCard extends StatelessWidget {
         ],
       ),
     );
-    return ItemDescriptionDetail(title: s.ascentionMaterials, body: body, textColor: rarityColor);
+    return ItemDescriptionDetail(title: s.ascensionMaterials, body: body, textColor: rarityColor);
   }
 
   TableRow _buildStatProgressionRow(WeaponFileAscentionMaterial model) {

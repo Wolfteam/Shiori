@@ -54,3 +54,9 @@ Future<void> trackUrlOpened(bool loadMap, bool loadWishSimulator, bool networkAv
     'NetworkAvailable': networkAvailable.toString(),
   });
 }
+
+Future<void> trackCalculatorItemAscMaterialLoaded(String item) async {
+  await trackEventAsync('Calculator-Asc-Mat', {
+    'Name': item,
+  });
+}

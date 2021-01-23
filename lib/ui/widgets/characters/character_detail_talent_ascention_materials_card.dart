@@ -31,14 +31,14 @@ class CharacterDetailTalentAscentionMaterialsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     if (talentAscentionMaterials.isNotEmpty) {
-      return _buildTableCard(s.talentsAscention, talentAscentionMaterials, context);
+      return _buildTableCard(s.talentsAscension, talentAscentionMaterials, context);
     }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         ...multiTalentAscentionMaterials
-            .map((e) => _buildTableCard(s.talentAscentionX(e.number), e.materials, context))
+            .map((e) => _buildTableCard(s.talentAscensionX(e.number), e.materials, context))
             .toList()
       ],
     );

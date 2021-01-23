@@ -1,18 +1,25 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'talent_material_file_model.dart';
+import 'material_file_model.dart';
 
 part 'materials_file.freezed.dart';
+
 part 'materials_file.g.dart';
 
 @freezed
 abstract class MaterialsFile implements _$MaterialsFile {
   @late
-  List<TalentMaterialFileModel> get materials => talents + weaponPrimary;
+  List<MaterialFileModel> get materials => talents + weapon + weaponPrimary + common + currency + elemental + jewels + locals;
 
   factory MaterialsFile({
-    @required List<TalentMaterialFileModel> talents,
-    @required List<TalentMaterialFileModel> weaponPrimary,
+    @required List<MaterialFileModel> talents,
+    @required List<MaterialFileModel> weapon,
+    @required List<MaterialFileModel> weaponPrimary,
+    @required List<MaterialFileModel> common,
+    @required List<MaterialFileModel> currency,
+    @required List<MaterialFileModel> elemental,
+    @required List<MaterialFileModel> jewels,
+    @required List<MaterialFileModel> locals,
   }) = _MaterialsFile;
 
   MaterialsFile._();

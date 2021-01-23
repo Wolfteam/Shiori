@@ -14,6 +14,13 @@ import '../widgets/common/sliver_page_filter.dart';
 import '../widgets/common/sliver_scaffold_with_fab.dart';
 
 class CharactersPage extends StatefulWidget {
+  final bool isInSelectionMode;
+
+  const CharactersPage({
+    Key key,
+    this.isInSelectionMode = false,
+  }) : super(key: key);
+
   @override
   _CharactersPageState createState() => _CharactersPageState();
 }
@@ -25,9 +32,8 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
   @override
   Widget build(BuildContext context) {
     super.build(context);
-
     final s = S.of(context);
-    return BlocBuilder<CharactersBloc, CharactersState>(
+    final child = BlocBuilder<CharactersBloc, CharactersState>(
       builder: (context, state) {
         return state.map(
           loading: (_) => const Loading(),
@@ -39,12 +45,25 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
                 onPressed: () => _showFiltersModal(context),
                 searchChanged: (v) => context.read<CharactersBloc>().add(CharactersEvent.searchChanged(search: v)),
               ),
-              if (s.characters.isNotEmpty) _buildGrid(state.characters, context) else const SliverNothingFound(),
+              if (state.characters.isNotEmpty) _buildGrid(state.characters, context) else const SliverNothingFound(),
             ],
           ),
         );
       },
     );
+
+    if (widget.isInSelectionMode) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(s.selectCharacter),
+        ),
+        body: SafeArea(
+          child: child,
+        ),
+      );
+    }
+
+    return child;
   }
 
   Widget _buildGrid(List<CharacterCardModel> characters, BuildContext context) {
@@ -65,6 +84,7 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
             rarity: char.stars,
             weaponType: char.weaponType,
             materials: char.materials,
+            isInSelectionMode: widget.isInSelectionMode,
           );
         },
         itemCount: characters.length,

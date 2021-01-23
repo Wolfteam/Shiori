@@ -7,4 +7,5 @@ enum MaterialType {
   weapon,
   weaponPrimary,
   currency,
+  others,
 }

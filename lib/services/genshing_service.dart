@@ -35,12 +35,14 @@ abstract class GenshinService {
   TranslationCharacterFile getCharacterTranslation(String key);
   TranslationWeaponFile getWeaponTranslation(String key);
 
-  List<TodayCharAscentionMaterialsModel> getCharacterAscentionMaterials(int day);
-  List<TodayWeaponAscentionMaterialModel> getWeaponAscentionMaterials(int day);
+  List<TodayCharAscentionMaterialsModel> getCharacterAscensionMaterials(int day);
+  List<TodayWeaponAscentionMaterialModel> getWeaponAscensionMaterials(int day);
 
   List<ElementCardModel> getElementDebuffs();
   List<ElementReactionCardModel> getElementReactions();
   List<ElementReactionCardModel> getElementResonances();
+
+  MaterialFileModel getMaterialByImage(String image);
 }
 
 class GenshinServiceImpl implements GenshinService {
@@ -297,10 +299,10 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<TodayCharAscentionMaterialsModel> getCharacterAscentionMaterials(int day) {
+  List<TodayCharAscentionMaterialsModel> getCharacterAscensionMaterials(int day) {
     final iterable = day == DateTime.sunday
-        ? _materialsFile.talents.where((t) => t.days.isNotEmpty)
-        : _materialsFile.talents.where((t) => t.days.contains(day));
+        ? _materialsFile.talents.where((t) => t.days.isNotEmpty && t.level == 0)
+        : _materialsFile.talents.where((t) => t.days.contains(day) && t.level == 0);
 
     return iterable.map((e) {
       final translation = _translationFile.materials.firstWhere((t) => t.key == e.key);
@@ -312,7 +314,7 @@ class GenshinServiceImpl implements GenshinService {
             char.ascentionMaterials.expand((m) => m.materials).where((m) => m.image == e.image).isNotEmpty ||
                 char.talentAscentionMaterials.expand((m) => m.materials).where((m) => m.image == e.image).isNotEmpty;
 
-        //The travelers have different ascention materials, that's why we do the following
+        //The travelers have different ascension materials, that's why we do the following
         var specialAscMaterial = false;
         if (char.multiTalentAscentionMaterials != null) {
           final keyword = e.image.split('_').last;
@@ -351,10 +353,10 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<TodayWeaponAscentionMaterialModel> getWeaponAscentionMaterials(int day) {
+  List<TodayWeaponAscentionMaterialModel> getWeaponAscensionMaterials(int day) {
     final iterable = day == DateTime.sunday
-        ? _materialsFile.weaponPrimary
-        : _materialsFile.weaponPrimary.where((t) => t.days.contains(day));
+        ? _materialsFile.weaponPrimary.where((t) => t.level == 0)
+        : _materialsFile.weaponPrimary.where((t) => t.days.contains(day) && t.level == 0);
 
     return iterable.map((e) {
       final translation = _translationFile.materials.firstWhere((t) => t.key == e.key);
@@ -423,5 +425,10 @@ class GenshinServiceImpl implements GenshinService {
         return reaction;
       },
     ).toList();
+  }
+
+  @override
+  MaterialFileModel getMaterialByImage(String image) {
+    return _materialsFile.materials.firstWhere((m) => m.fullImagePath == image);
   }
 }

@@ -29,6 +29,7 @@ class WeaponCard extends StatelessWidget {
   final double imgWidth;
   final double imgHeight;
   final bool withoutDetails;
+  final bool isInSelectionMode;
 
   const WeaponCard({
     Key key,
@@ -42,6 +43,7 @@ class WeaponCard extends StatelessWidget {
     @required this.subStatValue,
     this.imgWidth = 160,
     this.imgHeight = 140,
+    this.isInSelectionMode = false,
   })  : withoutDetails = false,
         super(key: key);
 
@@ -58,6 +60,7 @@ class WeaponCard extends StatelessWidget {
         subStatType = null,
         subStatValue = null,
         withoutDetails = true,
+        isInSelectionMode = false,
         super(key: key);
 
   @override
@@ -137,6 +140,11 @@ class WeaponCard extends StatelessWidget {
   }
 
   Future<void> _gotoWeaponPage(BuildContext context) async {
+    if (isInSelectionMode) {
+      Navigator.pop(context, keyName);
+      return;
+    }
+
     context.read<WeaponBloc>().add(WeaponEvent.loadFromName(key: keyName));
     final route = MaterialPageRoute(builder: (c) => WeaponPage());
     await Navigator.push(context, route);

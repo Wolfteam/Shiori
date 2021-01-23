@@ -27,7 +27,7 @@ class ElementsPage extends StatelessWidget {
                         s.elementalDebuffs,
                         style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
                       ),
-                      Text(s.elementalDebuffsExplainded)
+                      Text(s.elementalDebuffsExplained)
                     ],
                   ),
                 ),
@@ -41,7 +41,7 @@ class ElementsPage extends StatelessWidget {
                       s.elementalReactions,
                       style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
                     ),
-                    Text(s.elementalReactionsExplainded),
+                    Text(s.elementalReactionsExplained),
                   ]),
                 ),
               ),
@@ -54,7 +54,7 @@ class ElementsPage extends StatelessWidget {
                       s.elementalResonances,
                       style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
                     ),
-                    Text(s.elemetalResonancesExplanined),
+                    Text(s.elementalResonancesExplained),
                   ]),
                 ),
               ),

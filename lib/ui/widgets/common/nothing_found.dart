@@ -4,10 +4,12 @@ import '../../../generated/l10n.dart';
 
 class NothingFound extends StatelessWidget {
   final String msg;
+  final IconData icon;
   final EdgeInsets padding;
 
   const NothingFound({
     this.msg,
+    this.icon = Icons.info,
     this.padding = const EdgeInsets.only(bottom: 30, right: 20, left: 20),
   });
 
@@ -22,7 +24,7 @@ class NothingFound extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Icon(
-              Icons.info,
+              icon,
               color: theme.primaryColor,
               size: 60,
             ),

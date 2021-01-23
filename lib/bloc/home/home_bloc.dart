@@ -21,8 +21,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     final s = event.when(
       init: () {
         final day = DateTime.now().weekday;
-        final charMaterials = _genshinService.getCharacterAscentionMaterials(day);
-        final weaponMaterials = _genshinService.getWeaponAscentionMaterials(day);
+        final charMaterials = _genshinService.getCharacterAscensionMaterials(day);
+        final weaponMaterials = _genshinService.getWeaponAscensionMaterials(day);
 
         return HomeState.loaded(charAscMaterials: charMaterials, weaponAscMaterials: weaponMaterials);
       },

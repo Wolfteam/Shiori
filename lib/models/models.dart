@@ -1,4 +1,7 @@
 export 'artifacts/artifact_card_model.dart';
+export 'calculator_asc_materials/ascention_materials_summary.dart';
+export 'calculator_asc_materials/character_skill.dart';
+export 'calculator_asc_materials/item_ascention_materials.dart';
 export 'characters/character_ascention_model.dart';
 export 'characters/character_build_card_model.dart';
 export 'characters/character_card_model.dart';
@@ -14,7 +17,7 @@ export 'db/elements/element_debuff_file_model.dart';
 export 'db/elements/element_reaction_file_model.dart';
 export 'db/elements/elements_file.dart';
 export 'db/materials/materials_file.dart';
-export 'db/materials/talent_material_file_model.dart';
+export 'db/materials/material_file_model.dart';
 export 'db/translations/translation_artifact_file.dart';
 export 'db/translations/translation_character_file.dart';
 export 'db/translations/translation_element_file.dart';

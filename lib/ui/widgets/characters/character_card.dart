@@ -26,6 +26,7 @@ class CharacterCard extends StatelessWidget {
   final bool isNew;
   final bool isComingSoon;
   final List<String> materials;
+  final bool isInSelectionMode;
 
   const CharacterCard({
     Key key,
@@ -38,6 +39,7 @@ class CharacterCard extends StatelessWidget {
     @required this.isNew,
     @required this.isComingSoon,
     @required this.materials,
+    this.isInSelectionMode = false,
   }) : super(key: key);
 
   @override
@@ -120,6 +122,11 @@ class CharacterCard extends StatelessWidget {
         textColor: Colors.white,
         fontSize: 16.0,
       );
+      return;
+    }
+
+    if (isInSelectionMode) {
+      Navigator.pop(context, keyName);
       return;
     }
 

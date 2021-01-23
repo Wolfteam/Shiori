@@ -119,6 +119,10 @@ class MainBloc extends Bloc<MainEvent, MainState> {
         langCode = 'es';
         countryCode = 'ES';
         break;
+      case AppLanguageType.french:
+        langCode = 'fr';
+        countryCode = 'FR';
+        break;
       default:
         break;
     }

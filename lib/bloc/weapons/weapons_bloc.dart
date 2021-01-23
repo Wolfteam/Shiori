@@ -28,7 +28,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
     WeaponsEvent event,
   ) async* {
     final s = event.map(
-      init: (_) => _buildInitialState(),
+      init: (_) => _buildInitialState(weaponTypes: WeaponType.values),
       weaponFilterTypeChanged: (e) => currentState.copyWith.call(tempWeaponFilterType: e.filterType),
       rarityChanged: (e) => currentState.copyWith.call(tempRarity: e.rarity),
       sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),

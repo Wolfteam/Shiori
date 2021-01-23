@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 
-import 'nothing_found.dart';
+import 'nothing_found_column.dart';
 
 class SliverNothingFound extends StatelessWidget {
-  const SliverNothingFound();
+  final String msg;
+  final IconData icon;
+  final EdgeInsets padding;
+
+  const SliverNothingFound({
+    this.msg,
+    this.icon = Icons.info,
+    this.padding = const EdgeInsets.only(bottom: 30, right: 20, left: 20),
+  });
 
   @override
   Widget build(BuildContext context) {
-    return SliverFillRemaining(
+    return const SliverFillRemaining(
       hasScrollBody: false,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [NothingFound()],
-      ),
+      child: NothingFoundColumn(),
     );
   }
 }

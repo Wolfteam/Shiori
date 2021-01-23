@@ -1,222 +1,1676 @@
 {
-    "talents": [
-        {
-            "key": "Freedom",
-            "image": "teaching_of_freedom.png",
-            "isFromBoss": false,
-            "isForCharacters": true,
-            "type": "talents",
-            "days": [
-                1,
-                4,
-                7
-            ]
-        },
-        {
-            "key": "Prosperity",
-            "image": "teaching_of_prosperity.png",
-            "isFromBoss": false,
-            "isForCharacters": true,
-            "type": "talents",
-            "days": [
-                1,
-                4,
-                7
-            ]
-        },
-        {
-            "key": "Dilligence",
-            "image": "teaching_of_diligence.png",
-            "isFromBoss": false,
-            "isForCharacters": true,
-            "type": "talents",
-            "days": [
-                2,
-                5,
-                7
-            ]
-        },
-        {
-            "key": "Resistance",
-            "image": "teaching_of_resistance.png",
-            "isFromBoss": false,
-            "isForCharacters": true,
-            "type": "talents",
-            "days": [
-                2,
-                5,
-                7
-            ]
-        },
-        {
-            "key": "Ballad",
-            "image": "teaching_of_ballad.png",
-            "isFromBoss": false,
-            "isForCharacters": true,
-            "type": "talents",
-            "days": [
-                3,
-                6,
-                7
-            ]
-        },
-        {
-            "key": "Gold",
-            "image": "teaching_of_gold.png",
-            "isFromBoss": false,
-            "isForCharacters": true,
-            "type": "talents",
-            "days": [
-                3,
-                6,
-                7
-            ]
-        },
-        {
-            "key": "Tail of Boreas",
-            "image": "tail_of_boreas.png",
-            "isFromBoss": true,
-            "isForCharacters": true,
-            "type": "talents",
-            "days": []
-        },
-        {
-            "key": "Ring of Boreas",
-            "image": "ring_of_boreas.png",
-            "isFromBoss": true,
-            "isForCharacters": true,
-            "type": "talents",
-            "days": []
-        },
-        {
-            "key": "Spirit Locket of Boreas",
-            "image": "spirit_locket_of_boreas.png",
-            "isFromBoss": true,
-            "isForCharacters": true,
-            "type": "talents",
-            "days": []
-        },
-        {
-            "key": "Dvalin's Plume",
-            "image": "dvalins_plume.png",
-            "isFromBoss": true,
-            "isForCharacters": true,
-            "type": "talents",
-            "days": []
-        },
-        {
-            "key": "Dvalin's Claw",
-            "image": "dvalins_claw.png",
-            "isFromBoss": true,
-            "isForCharacters": true,
-            "type": "talents",
-            "days": []
-        },
-        {
-            "key": "Dvalin's Sigh",
-            "image": "dvalins_sigh.png",
-            "isFromBoss": true,
-            "isForCharacters": true,
-            "type": "talents",
-            "days": []
-        },
-        {
-            "key": "Tusk of Monoceros Caeli",
-            "image": "tusk_of_monoceros_caeli.png",
-            "isFromBoss": true,
-            "isForCharacters": true,
-            "type": "talents",
-            "days": []
-        },
-        {
-            "key": "Shard of a Foul Legacy",
-            "image": "shard_of_foul_legacy.png",
-            "isFromBoss": true,
-            "isForCharacters": true,
-            "type": "talents",
-            "days": []
-        },
-        {
-            "key": "Shadow of the Warrior",
-            "image": "shadow_of_the_warrior.png",
-            "isFromBoss": true,
-            "isForCharacters": true,
-            "type": "talents",
-            "days": []
-        }
-    ],
-    "weaponPrimary": [
-        {
-            "key": "Decarabian",
-            "image": "tile_of_decarabians_tower.png",
-            "isFromBoss": false,
-            "isForCharacters": false,
-            "type": "weaponPrimary",
-            "days": [
-                1,
-                4,
-                7
-            ]
-        },
-        {
-            "key": "Guyun",
-            "image": "luminous_sands_from_guyun.png",
-            "isFromBoss": false,
-            "isForCharacters": false,
-            "type": "weaponPrimary",
-            "days": [
-                1,
-                4,
-                7
-            ]
-        },
-        {
-            "key": "Mist Veiled Elixir",
-            "image": "mist_veiled_lead_elixir.png",
-            "isFromBoss": false,
-            "isForCharacters": false,
-            "type": "weaponPrimary",
-            "days": [
-                2,
-                5,
-                7
-            ]
-        },
-        {
-            "key": "Boreal Wolf",
-            "image": "boreal_wolfs_milk_tooth.png",
-            "isFromBoss": false,
-            "isForCharacters": false,
-            "type": "weaponPrimary",
-            "days": [
-                2,
-                5,
-                7
-            ]
-        },
-        {
-            "key": "Aerosiderite",
-            "image": "grain_of_aerosiderite.png",
-            "isFromBoss": false,
-            "isForCharacters": false,
-            "type": "weaponPrimary",
-            "days": [
-                3,
-                6,
-                7
-            ]
-        },
-        {
-            "key": "Dandelion Gladiator",
-            "image": "fetters_of_the_dandelion_gladiator.png",
-            "isFromBoss": false,
-            "isForCharacters": false,
-            "type": "weaponPrimary",
-            "days": [
-                3,
-                6,
-                7
-            ]
-        }
-    ]
+  "talents": [
+    {
+      "key": "FreedomA",
+      "image": "teaching_of_freedom.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": [
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "key": "FreedomB",
+      "image": "guide_to_freedom.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "talents",
+      "days": [
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "key": "FreedomC",
+      "image": "philosophies_of_freedom.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "talents",
+      "days": [
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "key": "ProsperityA",
+      "image": "teaching_of_prosperity.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": [
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "key": "ProsperityB",
+      "image": "guide_to_prosperity.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "talents",
+      "days": [
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "key": "ProsperityC",
+      "image": "philosophies_of_prosperity.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "talents",
+      "days": [
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "key": "DilligenceA",
+      "image": "teaching_of_diligence.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "key": "DilligenceB",
+      "image": "guide_to_diligence.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "talents",
+      "days": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "key": "DilligenceC",
+      "image": "philosophies_of_diligence.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "talents",
+      "days": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "key": "ResistanceA",
+      "image": "teaching_of_resistance.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "key": "ResistanceB",
+      "image": "guide_to_resistance.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "talents",
+      "days": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "key": "ResistanceC",
+      "image": "philosophies_of_resistance.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "talents",
+      "days": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "key": "BalladA",
+      "image": "teaching_of_ballad.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "key": "BalladB",
+      "image": "guide_to_ballad.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "talents",
+      "days": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "key": "BalladC",
+      "image": "philosophies_of_ballad.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "talents",
+      "days": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "key": "GoldA",
+      "image": "teaching_of_gold.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "key": "GoldB",
+      "image": "guide_to_gold.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "talents",
+      "days": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "key": "GoldC",
+      "image": "philosophies_of_gold.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "talents",
+      "days": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "key": "Tail of Boreas",
+      "image": "tail_of_boreas.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": []
+    },
+    {
+      "key": "Ring of Boreas",
+      "image": "ring_of_boreas.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": []
+    },
+    {
+      "key": "Spirit Locket of Boreas",
+      "image": "spirit_locket_of_boreas.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": []
+    },
+    {
+      "key": "Dvalin's Plume",
+      "image": "dvalins_plume.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": []
+    },
+    {
+      "key": "Dvalin's Claw",
+      "image": "dvalins_claw.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": []
+    },
+    {
+      "key": "Dvalin's Sigh",
+      "image": "dvalins_sigh.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": []
+    },
+    {
+      "key": "Tusk of Monoceros Caeli",
+      "image": "tusk_of_monoceros_caeli.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": []
+    },
+    {
+      "key": "Shard of a Foul Legacy",
+      "image": "shard_of_foul_legacy.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": []
+    },
+    {
+      "key": "Shadow of the Warrior",
+      "image": "shadow_of_the_warrior.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": []
+    },
+    {
+      "key": "Crown of Insight",
+      "image": "crown_of_sagehood.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": []
+    }
+  ],
+  "weapon": [
+    {
+      "key": "SacrificialKnifeA",
+      "image": "hunters_sacrificial_knife.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "SacrificialKnifeB",
+      "image": "agents_sacrificial_knife.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "SacrificialKnifeC",
+      "image": "inspectors_sacrificial_knife.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "HornA",
+      "image": "heavy_horn.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "HornB",
+      "image": "black_bronze_horn.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "HornC",
+      "image": "black_crystal_horn.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "ChaosA",
+      "image": "chaos_device.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "ChaosB",
+      "image": "chaos_circuit.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "ChaosC",
+      "image": "chaos_core.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "LeyLineA",
+      "image": "dead_ley_line_branch.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "LeyLineB",
+      "image": "dead_ley_line_leaves.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "LeyLineC",
+      "image": "ley_line_sprout.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "MistGrassA",
+      "image": "mist_grass_pollen.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "MistGrassB",
+      "image": "mist_grass.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "MistGrassC",
+      "image": "mist_grass_wick.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "BoneShardA",
+      "image": "fragile_bone_shard.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "BoneShardB",
+      "image": "sturdy_bone_shard.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weapon",
+      "days": []
+    },
+    {
+      "key": "BoneShardC",
+      "image": "fossilized_bone_shard.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weapon",
+      "days": []
+    }
+  ],
+  "weaponPrimary": [
+    {
+      "key": "DecarabianA",
+      "image": "tile_of_decarabians_tower.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weaponPrimary",
+      "days": [
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "key": "DecarabianB",
+      "image": "debris_of_decarabians_city.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weaponPrimary",
+      "days": [
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "key": "DecarabianC",
+      "image": "fragment_of_decarabians_epic.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weaponPrimary",
+      "days": [
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "key": "DecarabianD",
+      "image": "scattered_piece_of_decarabianss_dream.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 3,
+      "type": "weaponPrimary",
+      "days": [
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "key": "GuyunA",
+      "image": "luminous_sands_from_guyun.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weaponPrimary",
+      "days": [
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "key": "GuyunB",
+      "image": "lustrous_stone_from_guyun.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weaponPrimary",
+      "days": [
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "key": "GuyunC",
+      "image": "relic_from_guyun.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weaponPrimary",
+      "days": [
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "key": "GuyunD",
+      "image": "divine_body_from_guyun.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 3,
+      "type": "weaponPrimary",
+      "days": [
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "key": "ElixirA",
+      "image": "mist_veiled_lead_elixir.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weaponPrimary",
+      "days": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "key": "ElixirB",
+      "image": "mist_veiled_mercury_elixir.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weaponPrimary",
+      "days": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "key": "ElixirC",
+      "image": "mist_veiled_gold_elixir.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weaponPrimary",
+      "days": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "key": "ElixirD",
+      "image": "mist_veiled_primo_elixir.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 3,
+      "type": "weaponPrimary",
+      "days": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "key": "BorealWolfA",
+      "image": "boreal_wolfs_milk_tooth.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weaponPrimary",
+      "days": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "key": "BorealWolfB",
+      "image": "boreal_wolfs_cracked_tooth.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weaponPrimary",
+      "days": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "key": "BorealWolfC",
+      "image": "boreal_wolfs_broken_fang.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weaponPrimary",
+      "days": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "key": "BorealWolfD",
+      "image": "boreal_wolfs_nostalgia.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 3,
+      "type": "weaponPrimary",
+      "days": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "key": "AerosideriteA",
+      "image": "grain_of_aerosiderite.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weaponPrimary",
+      "days": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "key": "AerosideriteB",
+      "image": "piece_of_aerosiderite.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weaponPrimary",
+      "days": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "key": "AerosideriteC",
+      "image": "bit_of_aerosiderite.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weaponPrimary",
+      "days": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "key": "AerosideriteD",
+      "image": "chunk_of_aerosiderite.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 3,
+      "type": "weaponPrimary",
+      "days": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "key": "GladiatorA",
+      "image": "fetters_of_the_dandelion_gladiator.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weaponPrimary",
+      "days": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "key": "GladiatorB",
+      "image": "chains_of_the_dandelion_gladiator.png.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weaponPrimary",
+      "days": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "key": "GladiatorC",
+      "image": "shackles_of_the_dandelion_gladiator.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weaponPrimary",
+      "days": [
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "key": "GladiatorD",
+      "image": "dream_of_the_dandelion_gladiator.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 3,
+      "type": "weaponPrimary",
+      "days": [
+        3,
+        6,
+        7
+      ]
+    }
+  ],
+  "common": [
+    {
+      "key": "MaskA",
+      "image": "damaged_mask.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "MaskB",
+      "image": "stained_mask.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "MaskC",
+      "image": "ominous_mask.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "StatuetteA",
+      "image": "gloomy_statuette.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "StatuetteB",
+      "image": "dark_statuette.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "StatuetteC",
+      "image": "deathly_statuette.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "ScrollA",
+      "image": "divining_scroll.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "ScrollB",
+      "image": "sealed_scroll.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "ScrollC",
+      "image": "forbidden_curse_scroll.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "NectarA",
+      "image": "whopperflower_nectar.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "NectarB",
+      "image": "shimmering_nectar.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "NectarC",
+      "image": "energy_nectar.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "ArrowHeadA",
+      "image": "firm_arrowhead.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "ArrowHeadB",
+      "image": "sharp_arrowhead.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "ArrowHeadC",
+      "image": "weathered_arrowhead.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "CircularInsigniaA",
+      "image": "treasure_hoarder_insignia.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "CircularInsigniaB",
+      "image": "silver_raven_insignia.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "CircularInsigniaC",
+      "image": "golden_raven_insignia.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "InsigniaA",
+      "image": "recruits_insignia.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "InsigniaB",
+      "image": "sergeants_insignia.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "InsigniaC",
+      "image": "lieutenants_insignia.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "SlimeA",
+      "image": "slime_condensate.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "SlimeB",
+      "image": "slime_secretions.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "common",
+      "days": []
+    },
+    {
+      "key": "SlimeC",
+      "image": "slime_concentrate.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "common",
+      "days": []
+    }
+  ],
+  "currency": [
+    {
+      "key": "Mora",
+      "image": "mora.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "currency",
+      "days": []
+    }
+  ],
+  "elemental": [
+    {
+      "key": "BasaltPillar",
+      "image": "basalt_pillar.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "elemental",
+      "days": []
+    },
+    {
+      "key": "CleansingHeart",
+      "image": "cleansing_heart.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "elemental",
+      "days": []
+    },
+    {
+      "key": "EverflameSeed",
+      "image": "everflame_seed.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "elemental",
+      "days": []
+    },
+    {
+      "key": "HoarfrostCore",
+      "image": "hoarfrost_core.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "elemental",
+      "days": []
+    },
+    {
+      "key": "HurricaneSeed",
+      "image": "hurricane_seed.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "elemental",
+      "days": []
+    },
+    {
+      "key": "LightningPrism",
+      "image": "lightning_prism.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "elemental",
+      "days": []
+    }
+  ],
+  "jewels": [
+    {
+      "key": "AgateA",
+      "image": "agnidus_agate_sliver.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "AgateB",
+      "image": "agnidus_agate_fragment.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "AgateC",
+      "image": "agnidus_agate_chunk.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "AgateD",
+      "image": "agnidus_agate_gemstone.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 3,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "DiamondA",
+      "image": "brilliant_diamond_sliver.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "DiamondB",
+      "image": "brilliant_diamond_fragment.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "DiamondC",
+      "image": "brilliant_diamond_chunk.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "DiamondD",
+      "image": "brilliant_diamond_gemstone.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 3,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "EmeraldA",
+      "image": "nagadus_emerald_sliver.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "EmeraldB",
+      "image": "nagadus_emerald_fragment.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "EmeraldC",
+      "image": "nagadus_emerald_chunk.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "EmeraldD",
+      "image": "nagadus_emerald_gemstone.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 3,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "TopazA",
+      "image": "prithiva_topaz_sliver.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "TopazB",
+      "image": "prithiva_topaz_fragment.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "TopazC",
+      "image": "prithiva_topaz_chunk.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "TopazD",
+      "image": "prithiva_topaz_gemstone.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 3,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "JadeA",
+      "image": "shivada_jade_sliver.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "JadeB",
+      "image": "shivada_jade_fragment.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "JadeC",
+      "image": "shivada_jade_chunk.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "JadeD",
+      "image": "shivada_jade_gemstone.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 3,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "AmethystA",
+      "image": "vajrada_amethyst_sliver.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "AmethystB",
+      "image": "vajrada_amethyst_fragment.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "AmethystC",
+      "image": "vajrada_amethyst_chunk.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "AmethystD",
+      "image": "vajrada_amethyst_gemstone.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 3,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "LazuriteA",
+      "image": "varunada_lazurite_sliver.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "LazuriteB",
+      "image": "varunada_lazurite_fragment.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "LazuriteC",
+      "image": "varunada_lazurite_chunk.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "LazuriteD",
+      "image": "varunada_lazurite_gemstone.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 3,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "TurquoiseA",
+      "image": "vayuda_turquoise_sliver.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "TurquoiseB",
+      "image": "vayuda_turquoise_fragment.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "TurquoiseC",
+      "image": "vayuda_turquoise_chunk.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "jewels",
+      "days": []
+    },
+    {
+      "key": "TurquoiseD",
+      "image": "vayuda_turquoise_gemstone.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 3,
+      "type": "jewels",
+      "days": []
+    }
+  ],
+  "locals": [
+    {
+      "key": "CallaLily",
+      "image": "calla_lily.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": []
+    },
+    {
+      "key": "Cecilia",
+      "image": "cecilia.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": []
+    },
+    {
+      "key": "CorLapis",
+      "image": "cor_lapis.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": []
+    },
+    {
+      "key": "DandelionSeed",
+      "image": "dandelion_seed.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": []
+    },
+    {
+      "key": "GlazeLily",
+      "image": "glaze_lily.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": []
+    },
+    {
+      "key": "JueyunChili",
+      "image": "jueyun_chili.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": []
+    },
+    {
+      "key": "NoctilousJade",
+      "image": "noctilous_jade.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": []
+    },
+    {
+      "key": "PhilanemoMushroom",
+      "image": "philanemo_mushroom.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": []
+    },
+    {
+      "key": "Qingxin",
+      "image": "qingxin.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": []
+    },
+    {
+      "key": "SilkFlower",
+      "image": "silk_flower.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": []
+    },
+    {
+      "key": "SmallLampGrass",
+      "image": "small_lamp_grass.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": []
+    },
+    {
+      "key": "Starconch",
+      "image": "starconch.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": []
+    },
+    {
+      "key": "Valberry",
+      "image": "valberry.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": []
+    },
+    {
+      "key": "Violetgrass",
+      "image": "violetgrass.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": []
+    },
+    {
+      "key": "WindwheelAster",
+      "image": "windwheel_aster.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": []
+    },
+    {
+      "key": "Wolfhook",
+      "image": "wolfhook.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": []
+    }
+  ]
 }

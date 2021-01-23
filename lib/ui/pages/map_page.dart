@@ -16,8 +16,14 @@ class _MapPageState extends State<MapPage> {
   final flutterWebviewPlugin = FlutterWebviewPlugin();
 
   final String script = '''
-    setTimeout(function(){ 
-        let elements = document.getElementsByClassName("nav-link");
+    function removeAds(){
+      //console.log("Removing ads..");
+      let topNav = document.getElementById("topnav");
+      if (topNav) {
+        topNav.remove();
+      }
+
+      let elements = document.getElementsByClassName("nav-link");
         let total = elements.length;
         for (let index = 0; index < total; index++) {
             const element = elements[index];
@@ -37,8 +43,11 @@ class _MapPageState extends State<MapPage> {
             if (document.getElementsByClassName("fixed-bottom").length > 0)
               document.getElementsByClassName("fixed-bottom")[0].remove();
         }
-    }, 
-    800);
+    }
+    setTimeout(removeAds, 800);
+    setTimeout(removeAds, 1600);
+    setTimeout(removeAds, 3200);
+    setTimeout(removeAds, 6400);
     ''';
 
   @override
