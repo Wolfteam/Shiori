@@ -832,7 +832,7 @@
     },
     {
       "key": "GladiatorB",
-      "image": "chains_of_the_dandelion_gladiator.png.png",
+      "image": "chains_of_the_dandelion_gladiator.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
