@@ -209,7 +209,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "summary" : MessageLookupByLibrary.simpleMessage("Summary"),
     "sunday" : MessageLookupByLibrary.simpleMessage("Sunday"),
     "support" : MessageLookupByLibrary.simpleMessage("Support"),
-    "supportDps" : MessageLookupByLibrary.simpleMessage("Suppport DPS"),
+    "supportDps" : MessageLookupByLibrary.simpleMessage("Support DPS"),
     "supportMsg" : MessageLookupByLibrary.simpleMessage("I made this app in my free time and it is also open source. If you would like to help me, report an issue, have an idea, want a feature to be implemented, etc, please open an issue in my Github:"),
     "sword" : MessageLookupByLibrary.simpleMessage("Sword"),
     "talentAscensionX" : m14,

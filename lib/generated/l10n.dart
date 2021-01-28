@@ -1505,10 +1505,10 @@ class S {
     );
   }
 
-  /// `Suppport DPS`
+  /// `Support DPS`
   String get supportDps {
     return Intl.message(
-      'Suppport DPS',
+      'Support DPS',
       name: 'supportDps',
       desc: '',
       args: [],
