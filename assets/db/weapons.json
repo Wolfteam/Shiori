@@ -9,7 +9,7 @@
             "secondaryStat": "none",
             "secondaryStatValue": 0,
             "location": "chest",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -122,7 +122,7 @@
             "secondaryStat": "none",
             "secondaryStatValue": 0,
             "location": "chest",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -235,7 +235,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 7.7,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -429,7 +429,7 @@
             "secondaryStat": "critDmgPercentage",
             "secondaryStatValue": 6.8,
             "location": "chest",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -623,7 +623,7 @@
             "secondaryStat": "elementaryMaster",
             "secondaryStatValue": 20,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -817,7 +817,7 @@
             "secondaryStat": "hpPercentage",
             "secondaryStatValue": 10.2,
             "location": "chest",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -1011,7 +1011,7 @@
             "secondaryStat": "critDmgPercentage",
             "secondaryStatValue": 10.2,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -1205,7 +1205,7 @@
             "secondaryStat": "critRatePercentage",
             "secondaryStatValue": 6.8,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -1399,7 +1399,7 @@
             "secondaryStat": "elementaryMaster",
             "secondaryStatValue": 36,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -1593,7 +1593,7 @@
             "secondaryStat": "critRatePercentage",
             "secondaryStatValue": 8.0,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -1792,7 +1792,7 @@
             "secondaryStat": "critDmgPercentage",
             "secondaryStatValue": 8.0,
             "location": "starglitterExchange",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -1986,7 +1986,7 @@
             "secondaryStat": "physDmgPercentage",
             "secondaryStatValue": 15,
             "location": "crafting",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -2185,7 +2185,7 @@
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 13.3,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -2384,7 +2384,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 9,
             "location": "crafting",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -2578,7 +2578,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 9,
             "location": "starglitterExchange",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -2772,7 +2772,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 9,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -2966,7 +2966,7 @@
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 6.7,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -3165,7 +3165,7 @@
             "secondaryStat": "critRatePercentage",
             "secondaryStatValue": 6.0,
             "location": "bpBounty",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -3364,7 +3364,7 @@
             "secondaryStat": "critRatePercentage",
             "secondaryStatValue": 4.8,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -3568,7 +3568,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 10.8,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -3767,7 +3767,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 10.8,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -3968,7 +3968,7 @@
             "secondaryStat": "none",
             "secondaryStatValue": 0,
             "location": "chest",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -4081,7 +4081,7 @@
             "secondaryStat": "none",
             "secondaryStatValue": 0,
             "location": "chest",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -4194,7 +4194,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 7.7,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -4388,7 +4388,7 @@
             "secondaryStat": "elementaryMaster",
             "secondaryStatValue": 31,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -4582,7 +4582,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 7.7,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -4781,7 +4781,7 @@
             "secondaryStat": "critDmgPercentage",
             "secondaryStatValue": 10.2,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -4975,7 +4975,7 @@
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 11.3,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -5169,7 +5169,7 @@
             "secondaryStat": "defPercentage",
             "secondaryStatValue": 6.4,
             "location": "chest",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -5363,7 +5363,7 @@
             "secondaryStat": "critDmgPercentage",
             "secondaryStatValue": 8,
             "location": "starglitterExchange",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -5557,7 +5557,7 @@
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 13.3,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -5756,7 +5756,7 @@
             "secondaryStat": "elementaryMaster",
             "secondaryStatValue": 36,
             "location": "crafting",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -5950,7 +5950,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 9,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -6144,7 +6144,7 @@
             "secondaryStat": "physDmgPercentage",
             "secondaryStatValue": 7.5,
             "location": "crafting",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -6338,7 +6338,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 9,
             "location": "starglitterExchange",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -6532,7 +6532,7 @@
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 13.3,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -6731,7 +6731,7 @@
             "secondaryStat": "critRatePercentage",
             "secondaryStatValue": 4.0,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -6901,7 +6901,7 @@
             "secondaryStat": "critRatePercentage",
             "secondaryStatValue": 6.0,
             "location": "bpBounty",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -7100,7 +7100,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 9.0,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -7294,7 +7294,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 7.7,
             "location": "na",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -7465,7 +7465,7 @@
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 10,
             "location": "quest",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -7664,7 +7664,7 @@
             "secondaryStat": "physDmgPercentage",
             "secondaryStatValue": 9,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -7868,7 +7868,7 @@
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 12,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -8067,7 +8067,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 10.8,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -8268,7 +8268,7 @@
             "secondaryStat": "none",
             "secondaryStatValue": 0,
             "location": "chest",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -8381,7 +8381,7 @@
             "secondaryStat": "none",
             "secondaryStatValue": 0,
             "location": "chest",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -8494,7 +8494,7 @@
             "secondaryStat": "elementaryMaster",
             "secondaryStatValue": 31,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -8688,7 +8688,7 @@
             "secondaryStat": "elementaryMaster",
             "secondaryStatValue": 20,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -8882,7 +8882,7 @@
             "secondaryStat": "elementaryMaster",
             "secondaryStatValue": 41,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -9076,7 +9076,7 @@
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 8.5,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -9270,7 +9270,7 @@
             "secondaryStat": "hpPercentage",
             "secondaryStatValue": 7.7,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -9464,7 +9464,7 @@
             "secondaryStat": "critRatePercentage",
             "secondaryStatValue": 3.4,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -9658,7 +9658,7 @@
             "secondaryStat": "critDmgPercentage",
             "secondaryStatValue": 12,
             "location": "starglitterExchange",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -9852,7 +9852,7 @@
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 10,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -10051,7 +10051,7 @@
             "secondaryStat": "elementaryMaster",
             "secondaryStatValue": 24,
             "location": "crafting",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -10245,7 +10245,7 @@
             "secondaryStat": "hpPercentage",
             "secondaryStatValue": 9,
             "location": "crafting",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -10444,7 +10444,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 6,
             "location": "starglitterExchange",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -10638,7 +10638,7 @@
             "secondaryStat": "elementaryMaster",
             "secondaryStatValue": 48,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -10837,7 +10837,7 @@
             "secondaryStat": "critRatePercentage",
             "secondaryStatValue": 6,
             "location": "bpBounty",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -11036,7 +11036,7 @@
             "secondaryStat": "critDmgPercentage",
             "secondaryStatValue": 12,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -11240,7 +11240,7 @@
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 10,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -11439,7 +11439,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 12,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -11638,7 +11638,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 9,
             "location": "crafting",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -11842,7 +11842,7 @@
             "secondaryStat": "critRatePercentage",
             "secondaryStatValue": 7.2,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -12036,7 +12036,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 7.2,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -12235,7 +12235,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 10.8,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -12436,7 +12436,7 @@
             "secondaryStat": "none",
             "secondaryStatValue": 0,
             "location": "chest",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -12549,7 +12549,7 @@
             "secondaryStat": "none",
             "secondaryStatValue": 0,
             "location": "chest",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -12662,7 +12662,7 @@
             "secondaryStat": "elementaryMaster",
             "secondaryStatValue": 41,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -12856,7 +12856,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 7.7,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -13050,7 +13050,7 @@
             "secondaryStat": "hpPercentage",
             "secondaryStatValue": 7.7,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -13249,7 +13249,7 @@
             "secondaryStat": "elementaryMaster",
             "secondaryStatValue": 31,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -13443,7 +13443,7 @@
             "secondaryStat": "physDmgPercentage",
             "secondaryStatValue": 9.6,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -13637,7 +13637,7 @@
             "secondaryStat": "defPercentage",
             "secondaryStatValue": 9.6,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -13831,7 +13831,7 @@
             "secondaryStat": "critDmgPercentage",
             "secondaryStatValue": 12,
             "location": "starglitterExchange",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -14025,7 +14025,7 @@
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 13.3,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -14224,7 +14224,7 @@
             "secondaryStat": "critDmgPercentage",
             "secondaryStatValue": 16,
             "location": "starglitterExchange",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -14423,7 +14423,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 6,
             "location": "crafting",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -14617,7 +14617,7 @@
             "secondaryStat": "elementaryMaster",
             "secondaryStatValue": 36,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -14811,7 +14811,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 6,
             "location": "starglitterExchange",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -15005,7 +15005,7 @@
             "secondaryStat": "critRatePercentage",
             "secondaryStatValue": 6,
             "location": "bpBounty",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -15204,7 +15204,7 @@
             "secondaryStat": "hpPercentage",
             "secondaryStatValue": 9,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -15403,7 +15403,7 @@
             "secondaryStat": "defPercentage",
             "secondaryStatValue": 11.3,
             "location": "crafting",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -15597,7 +15597,7 @@
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 6.7,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -15796,7 +15796,7 @@
             "secondaryStat": "physDmgPercentage",
             "secondaryStatValue": 7.5,
             "location": "crafting",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -16000,7 +16000,7 @@
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 8,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -16199,7 +16199,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 10.8,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -16398,7 +16398,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 10.8,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -16599,7 +16599,7 @@
             "secondaryStat": "none",
             "secondaryStatValue": 0,
             "location": "chest",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -16712,7 +16712,7 @@
             "secondaryStat": "none",
             "secondaryStatValue": 0,
             "location": "chest",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -16825,7 +16825,7 @@
             "secondaryStat": "hpPercentage",
             "secondaryStatValue": 10.2,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -17019,7 +17019,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 5.1,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -17213,7 +17213,7 @@
             "secondaryStat": "critRatePercentage",
             "secondaryStatValue": 5.1,
             "location": "chest",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -17407,7 +17407,7 @@
             "secondaryStat": "critDmgPercentage",
             "secondaryStatValue": 12,
             "location": "starglitterExchange",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -17601,7 +17601,7 @@
             "secondaryStat": "physDmgPercentage",
             "secondaryStatValue": 7.5,
             "location": "crafting",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -17795,7 +17795,7 @@
             "secondaryStat": "critRatePercentage",
             "secondaryStatValue": 8,
             "location": "bpBounty",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -17999,7 +17999,7 @@
             "secondaryStat": "elementaryMaster",
             "secondaryStatValue": 48,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -18193,7 +18193,7 @@
             "secondaryStat": "physDmgPercentage",
             "secondaryStatValue": 9.0,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -18392,7 +18392,7 @@
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 10,
             "location": "crafting",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -18586,7 +18586,7 @@
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 6.7,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -18785,7 +18785,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 6,
             "location": "starglitterExchange",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -18979,7 +18979,7 @@
             "secondaryStat": "physDmgPercentage",
             "secondaryStatValue": 15,
             "location": "crafting",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -19183,7 +19183,7 @@
             "secondaryStat": "atkPercentage",
             "secondaryStatValue": 10.8,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -19382,7 +19382,7 @@
             "secondaryStat": "critRatePercentage",
             "secondaryStatValue": 4.8,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [
@@ -19581,7 +19581,7 @@
             "secondaryStat": "energyRechargePercentage",
             "secondaryStatValue": 8,
             "location": "gacha",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "level": 20,
                     "materials": [

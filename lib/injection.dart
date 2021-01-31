@@ -1,17 +1,25 @@
+import 'package:genshindb/domain/services/genshin_service.dart';
+import 'package:genshindb/domain/services/logging_service.dart';
+import 'package:genshindb/domain/services/network_service.dart';
+import 'package:genshindb/domain/services/settings_service.dart';
+import 'package:genshindb/domain/services/telemetry_service.dart';
+import 'package:genshindb/infrastructure/genshin_service.dart';
+import 'package:genshindb/infrastructure/logging_service.dart';
+import 'package:genshindb/infrastructure/network_service.dart';
+import 'package:genshindb/infrastructure/settings_service.dart';
+import 'package:genshindb/infrastructure/telemetry/telemetry_service.dart';
 import 'package:get_it/get_it.dart';
 import 'package:log_4_dart_2/log_4_dart_2.dart';
 
-import 'services/genshing_service.dart';
-import 'services/logging_service.dart';
-import 'services/network_service.dart';
-import 'services/settings_service.dart';
-
 final GetIt getIt = GetIt.instance;
 
-void initInjection() {
+Future<void> initInjection() async {
   getIt.registerSingleton(Logger());
+  final telemetryService = TelemetryServiceImpl();
+  getIt.registerSingleton<TelemetryService>(telemetryService);
+  await telemetryService.initTelemetry();
   getIt.registerSingleton<GenshinService>(GenshinServiceImpl());
-  getIt.registerSingleton<LoggingService>(LoggingServiceImpl(getIt<Logger>()));
+  getIt.registerSingleton<LoggingService>(LoggingServiceImpl(getIt<Logger>(), getIt<TelemetryService>()));
   getIt.registerSingleton<SettingsService>(SettingsServiceImpl(getIt<LoggingService>()));
   getIt.registerSingleton<NetworkService>(NetworkServiceImpl());
 }

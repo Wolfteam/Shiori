@@ -47,6 +47,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m13(value) => "${value} Daño FIS. %";
 
+  static m14(value) => "Talento de Ascención ${value}";
+
+  static m15(value) => "Desbloqueada en nivel de ascención ${value}";
+
   static m16(value) => "${value} Pieza(s)";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -207,12 +211,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "supportDps" : MessageLookupByLibrary.simpleMessage("DPS de Soporte"),
     "supportMsg" : MessageLookupByLibrary.simpleMessage("Hice esta aplicación en mi tiempo libre y también es de código abierto. Si deseas ayudarme, informar de un problema, tienes una idea, deseas que se implemente una funcionalidad, etc., crea un issue en mi Github:"),
     "sword" : MessageLookupByLibrary.simpleMessage("Espada"),
+    "talentAscensionX" : m14,
+    "talentsAscension" : MessageLookupByLibrary.simpleMessage("Talentos de Ascención"),
     "theme" : MessageLookupByLibrary.simpleMessage("Tema"),
     "thursday" : MessageLookupByLibrary.simpleMessage("Jueves"),
     "todayAscensionMaterials" : MessageLookupByLibrary.simpleMessage("Materiales de Ascensión para Hoy"),
     "tryYourLuck" : MessageLookupByLibrary.simpleMessage("Prueba tu suerte con este simulador de deseos"),
     "tuesday" : MessageLookupByLibrary.simpleMessage("Martes"),
     "type" : MessageLookupByLibrary.simpleMessage("Tipo"),
+    "unlockedAtAscensionLevelX" : m15,
     "unlockedAutomatically" : MessageLookupByLibrary.simpleMessage("Desbloqueada Automáticamente"),
     "unreleased" : MessageLookupByLibrary.simpleMessage("No Publicado"),
     "utility" : MessageLookupByLibrary.simpleMessage("Utilidad"),

@@ -13,7 +13,7 @@
             "isFemale": false,
             "region": "mondstadt",
             "role": "supportDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -196,7 +196,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -530,7 +530,7 @@
             "isFemale": true,
             "region": "mondstadt",
             "role": "supportDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -713,7 +713,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -1062,7 +1062,7 @@
             "isFemale": true,
             "region": "inazuma",
             "role": "mainDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -1245,7 +1245,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -1470,7 +1470,7 @@
             "isFemale": true,
             "region": "mondstadt",
             "role": "utility",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -1653,7 +1653,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -1969,7 +1969,7 @@
             "isFemale": true,
             "region": "liyue",
             "role": "mainDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -2152,7 +2152,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -2479,7 +2479,7 @@
             "isFemale": false,
             "region": "mondstadt",
             "role": "utility",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -2662,7 +2662,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -3016,7 +3016,7 @@
             "isFemale": false,
             "region": "liyue",
             "role": "supportDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -3199,7 +3199,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -3546,7 +3546,7 @@
             "isFemale": false,
             "region": "mondstadt",
             "role": "mainDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -3729,7 +3729,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -4049,7 +4049,7 @@
             "isFemale": true,
             "region": "mondstadt",
             "role": "utility",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -4232,7 +4232,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -4562,7 +4562,7 @@
             "isFemale": true,
             "region": "mondstadt",
             "role": "supportDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -4745,7 +4745,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -5082,7 +5082,7 @@
             "isFemale": true,
             "region": "liyue",
             "role": "supportDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -5265,7 +5265,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -5628,7 +5628,7 @@
             "isFemale": true,
             "region": "mondstadt",
             "role": "utility",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -5811,7 +5811,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -6162,7 +6162,7 @@
             "isFemale": false,
             "region": "mondstadt",
             "role": "supportDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -6345,7 +6345,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -6690,7 +6690,7 @@
             "isFemale": true,
             "region": "liyue",
             "role": "mainDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -6873,7 +6873,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -7207,7 +7207,7 @@
             "isFemale": true,
             "region": "mondstadt",
             "role": "mainDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -7390,7 +7390,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -7718,7 +7718,7 @@
             "isFemale": true,
             "region": "mondstadt",
             "role": "supportDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -7901,7 +7901,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -8231,7 +8231,7 @@
             "isFemale": true,
             "region": "mondstadt",
             "role": "supportDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -8414,7 +8414,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -8741,7 +8741,7 @@
             "isFemale": true,
             "region": "liyue",
             "role": "mainDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -8924,7 +8924,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -9260,7 +9260,7 @@
             "isFemale": true,
             "region": "mondstadt",
             "role": "utility",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -9443,7 +9443,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -9784,7 +9784,7 @@
             "isFemale": true,
             "region": "liyue",
             "role": "utility",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -9967,7 +9967,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -10283,7 +10283,7 @@
             "isFemale": false,
             "region": "mondstadt",
             "role": "mainDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -10466,7 +10466,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -10792,7 +10792,7 @@
             "isFemale": true,
             "region": "mondstadt",
             "role": "utility",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -10975,7 +10975,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -11302,7 +11302,7 @@
             "isFemale": false,
             "region": "snezhnaya",
             "role": "mainDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -11485,7 +11485,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -11829,7 +11829,7 @@
             "isFemale": true,
             "region": "anotherWorld",
             "role": "supportDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -11987,8 +11987,8 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [],
-            "multiTalentAscentionMaterials": [
+            "talentAscensionMaterials": [],
+            "multiTalentAscensionMaterials": [
                 {
                     "number": 1,
                     "materials": [
@@ -12740,7 +12740,7 @@
             "isFemale": true,
             "region": "anotherWorld",
             "role": "utility",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -12898,8 +12898,8 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [],
-            "multiTalentAscentionMaterials": [
+            "talentAscensionMaterials": [],
+            "multiTalentAscensionMaterials": [
                 {
                     "number": 1,
                     "materials": [
@@ -13645,7 +13645,7 @@
             "isFemale": false,
             "region": "mondstadt",
             "role": "utility",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -13828,7 +13828,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -14164,7 +14164,7 @@
             "isFemale": true,
             "region": "liyue",
             "role": "supportDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -14347,7 +14347,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -14692,7 +14692,7 @@
             "isFemale": false,
             "region": "liyue",
             "role": "na",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -14875,7 +14875,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -15191,7 +15191,7 @@
             "isFemale": false,
             "region": "liyue",
             "role": "supportDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -15374,7 +15374,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -15704,7 +15704,7 @@
             "isFemale": true,
             "region": "liyue",
             "role": "mainDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -15887,7 +15887,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
@@ -16215,7 +16215,7 @@
             "isFemale": false,
             "region": "liyue",
             "role": "supportDps",
-            "ascentionMaterials": [
+            "ascensionMaterials": [
                 {
                     "rank": 1,
                     "level": 20,
@@ -16398,7 +16398,7 @@
                     ]
                 }
             ],
-            "talentAscentionMaterials": [
+            "talentAscensionMaterials": [
                 {
                     "level": 2,
                     "materials": [
