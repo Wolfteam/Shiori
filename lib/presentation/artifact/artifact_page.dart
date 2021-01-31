@@ -11,7 +11,7 @@ import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/rarity.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 
-class ArtifactDetailsPage extends StatelessWidget {
+class ArtifactPage extends StatelessWidget {
   final double imgHeight = 350;
 
   @override
@@ -19,7 +19,7 @@ class ArtifactDetailsPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: BlocBuilder<ArtifactDetailsBloc, ArtifactDetailsState>(
+          child: BlocBuilder<ArtifactBloc, ArtifactState>(
             builder: (context, state) {
               return state.map(
                 loading: (_) => const Loading(useScaffold: false),

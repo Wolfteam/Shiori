@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 const _methodChannelName = 'com.github.wolfteam.genshindb';
@@ -32,7 +31,6 @@ class AppCenter {
       return;
     }
 
-    WidgetsFlutterBinding.ensureInitialized();
     await configureAnalyticsAsync(enabled: enableAnalytics);
     await configureCrashesAsync(enabled: enableCrashes);
 

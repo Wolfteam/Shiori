@@ -1,4 +1,4 @@
-export 'artifact_details/artifact_details_bloc.dart';
+export 'artifact/artifact_bloc.dart';
 export 'artifacts/artifacts_bloc.dart';
 export 'calculator_asc_materials/calculator_asc_materials_bloc.dart';
 export 'calculator_asc_materials_item/calculator_asc_materials_item_bloc.dart';

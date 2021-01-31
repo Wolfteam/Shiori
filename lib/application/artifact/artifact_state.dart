@@ -1,10 +1,10 @@
-part of 'artifact_details_bloc.dart';
+part of 'artifact_bloc.dart';
 
 @freezed
-abstract class ArtifactDetailsState with _$ArtifactDetailsState {
-  const factory ArtifactDetailsState.loading() = _LoadingState;
+abstract class ArtifactState with _$ArtifactState {
+  const factory ArtifactState.loading() = _LoadingState;
 
-  const factory ArtifactDetailsState.loaded({
+  const factory ArtifactState.loaded({
     @required String name,
     @required String image,
     @required int rarityMin,

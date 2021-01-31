@@ -8,21 +8,21 @@ import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/genshin_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
 
-part 'artifact_details_bloc.freezed.dart';
-part 'artifact_details_event.dart';
-part 'artifact_details_state.dart';
+part 'artifact_bloc.freezed.dart';
+part 'artifact_event.dart';
+part 'artifact_state.dart';
 
-class ArtifactDetailsBloc extends Bloc<ArtifactDetailsEvent, ArtifactDetailsState> {
+class ArtifactBloc extends Bloc<ArtifactEvent, ArtifactState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
 
-  ArtifactDetailsBloc(this._genshinService, this._telemetryService) : super(const ArtifactDetailsState.loading());
+  ArtifactBloc(this._genshinService, this._telemetryService) : super(const ArtifactState.loading());
 
   @override
-  Stream<ArtifactDetailsState> mapEventToState(
-    ArtifactDetailsEvent event,
+  Stream<ArtifactState> mapEventToState(
+    ArtifactEvent event,
   ) async* {
-    yield const ArtifactDetailsState.loading();
+    yield const ArtifactState.loading();
 
     final s = await event.map(
       loadArtifact: (e) async {
@@ -34,7 +34,7 @@ class ArtifactDetailsBloc extends Bloc<ArtifactDetailsEvent, ArtifactDetailsStat
         var image = artifact.image.split('.png').first;
         image = image.substring(0, image.length - 1);
 
-        return ArtifactDetailsState.loaded(
+        return ArtifactState.loaded(
           name: translation.name,
           image: artifact.fullImagePath,
           rarityMin: artifact.rarityMin,

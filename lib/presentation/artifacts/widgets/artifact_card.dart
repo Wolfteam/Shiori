@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/presentation/artifact/artifact_details_page.dart';
+import 'package:genshindb/presentation/artifact/artifact_page.dart';
 import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:genshindb/presentation/shared/gradient_card.dart';
 import 'package:genshindb/presentation/shared/rarity.dart';
@@ -85,8 +85,8 @@ class ArtifactCard extends StatelessWidget {
   }
 
   Future<void> _gotoDetailPage(BuildContext context) async {
-    context.read<ArtifactDetailsBloc>().add(ArtifactDetailsEvent.loadArtifact(key: keyName));
-    final route = MaterialPageRoute(builder: (ctx) => ArtifactDetailsPage());
+    context.read<ArtifactBloc>().add(ArtifactEvent.loadArtifact(key: keyName));
+    final route = MaterialPageRoute(builder: (ctx) => ArtifactPage());
     await Navigator.of(context).push(route);
   }
 }

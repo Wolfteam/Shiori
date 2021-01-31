@@ -11,6 +11,8 @@ import 'injection.dart';
 import 'presentation/app_widget.dart';
 
 Future<void> main() async {
+  //This is required by app center
+  WidgetsFlutterBinding.ensureInitialized();
   await initInjection();
   runApp(MyApp());
 }
@@ -85,7 +87,7 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             final telemetryService = getIt<TelemetryService>();
-            return ArtifactDetailsBloc(genshinService, telemetryService);
+            return ArtifactBloc(genshinService, telemetryService);
           },
         ),
         BlocProvider(
