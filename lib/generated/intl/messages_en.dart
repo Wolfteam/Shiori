@@ -41,17 +41,23 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m10(value) => "${value} Energy Recharge %";
 
-  static m11(value) => "${value} HP %";
+  static m11(value) => "${value} Healing Bonus %";
 
-  static m12(value) => "${value} PHYS DMG Bonus";
+  static m12(value) => "${value} HP";
 
-  static m13(value) => "${value} PHYS DMG %";
+  static m13(value) => "${value} HP %";
 
-  static m14(value) => "Talent Ascension ${value}";
+  static m14(value) => "${value} PHYS DMG Bonus";
 
-  static m15(value) => "Unlocked at ascension level ${value}";
+  static m15(value) => "${value} PHYS DMG %";
 
-  static m16(value) => "${value} Piece(s)";
+  static m16(value) => "Talent Ascension ${value}";
+
+  static m17(value) => "Unlocked at ascension level ${value}";
+
+  static m18(value, x) => "${value} ${x} DMG Bonus %";
+
+  static m19(value) => "${value} Piece(s)";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
@@ -138,9 +144,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "generalSettings" : MessageLookupByLibrary.simpleMessage("General settings"),
     "goblet" : MessageLookupByLibrary.simpleMessage("Goblet"),
     "healingBonus" : MessageLookupByLibrary.simpleMessage("Healing Bonus"),
+    "healingBonusPercentage" : m11,
     "hold" : MessageLookupByLibrary.simpleMessage("Hold"),
     "home" : MessageLookupByLibrary.simpleMessage("Home"),
-    "hpPercentage" : m11,
+    "hp" : m12,
+    "hpPercentage" : m13,
     "issues" : MessageLookupByLibrary.simpleMessage("Issues"),
     "language" : MessageLookupByLibrary.simpleMessage("Language"),
     "level" : MessageLookupByLibrary.simpleMessage("Level"),
@@ -168,8 +176,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "others" : MessageLookupByLibrary.simpleMessage("Others"),
     "partial" : MessageLookupByLibrary.simpleMessage("Partial"),
     "passives" : MessageLookupByLibrary.simpleMessage("Passives"),
-    "physDmgBonus" : m12,
-    "physDmgPercentage" : m13,
+    "physDmgBonus" : m14,
+    "physDmgPercentage" : m15,
     "pieces" : MessageLookupByLibrary.simpleMessage("Pieces"),
     "plume" : MessageLookupByLibrary.simpleMessage("Plume"),
     "plungingAttack" : MessageLookupByLibrary.simpleMessage("Plunging Attack"),
@@ -212,7 +220,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "supportDps" : MessageLookupByLibrary.simpleMessage("Support DPS"),
     "supportMsg" : MessageLookupByLibrary.simpleMessage("I made this app in my free time and it is also open source. If you would like to help me, report an issue, have an idea, want a feature to be implemented, etc, please open an issue in my Github:"),
     "sword" : MessageLookupByLibrary.simpleMessage("Sword"),
-    "talentAscensionX" : m14,
+    "talentAscensionX" : m16,
     "talentsAscension" : MessageLookupByLibrary.simpleMessage("Talents Ascension"),
     "theme" : MessageLookupByLibrary.simpleMessage("Theme"),
     "thursday" : MessageLookupByLibrary.simpleMessage("Thursday"),
@@ -220,7 +228,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "tryYourLuck" : MessageLookupByLibrary.simpleMessage("Try your luck with this simulator"),
     "tuesday" : MessageLookupByLibrary.simpleMessage("Tuesday"),
     "type" : MessageLookupByLibrary.simpleMessage("Type"),
-    "unlockedAtAscensionLevelX" : m15,
+    "unlockedAtAscensionLevelX" : m17,
     "unlockedAutomatically" : MessageLookupByLibrary.simpleMessage("Unlocked Automatically"),
     "unreleased" : MessageLookupByLibrary.simpleMessage("Unreleased"),
     "utility" : MessageLookupByLibrary.simpleMessage("Utility"),
@@ -229,7 +237,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "weapons" : MessageLookupByLibrary.simpleMessage("Weapons"),
     "wednesday" : MessageLookupByLibrary.simpleMessage("Wednesday"),
     "wishSimulator" : MessageLookupByLibrary.simpleMessage("Wish simulator"),
-    "xPieces" : m16,
+    "xDmgBonusPercentage" : m18,
+    "xPieces" : m19,
     "youCanAlsoSendMeAnEmail" : MessageLookupByLibrary.simpleMessage("You can also send me an email")
   };
 }
