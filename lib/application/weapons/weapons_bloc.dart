@@ -126,6 +126,8 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
       tempWeaponFilterType: weaponFilterType,
       sortDirectionType: sortDirectionType,
       tempSortDirectionType: sortDirectionType,
+      weaponSubStatType: weaponSubStatType,
+      tempWeaponSubStatType: weaponSubStatType,
     );
     return s;
   }
