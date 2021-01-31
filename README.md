@@ -2,6 +2,7 @@
 <p align="center">
   <img height="120px" src="assets/icon/icon.png">
 </p>
+
 > A Genshin Impact database kinda app
 
 > This app is not affiliated with or endorsed by miHoYo. GenshinDb is just a database app for the Genshin Impact game
