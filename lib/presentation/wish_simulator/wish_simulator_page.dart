@@ -14,6 +14,45 @@ class WishSimulatorPage extends StatefulWidget {
 class _WishSimulatorPageState extends State<WishSimulatorPage> {
   final flutterWebviewPlugin = FlutterWebviewPlugin();
 
+  final script = '''
+    function closeModal(){
+      if (!document.getElementsByClassName("modal-container"))
+        return;
+      let modal = document.getElementsByClassName("modal-container")[0];
+      if (!modal)
+        return;
+      let closeModalBtn = modal.querySelector(".close-button");
+      if (!closeModalBtn)
+        return;
+      
+      closeModalBtn.click();
+    }
+    
+    setTimeout(closeModal, 300);
+    setTimeout(closeModal, 1200);
+    setTimeout(closeModal, 3000);
+    setTimeout(closeModal, 6000);
+   ''';
+
+  @override
+  void initState() {
+    super.initState();
+    flutterWebviewPlugin.onStateChanged.listen((WebViewStateChanged state) {
+      if (mounted) {
+        if (state.type == WebViewState.finishLoad) {
+          debugPrint('loaded...');
+          _onPageLoaded();
+        } else if (state.type == WebViewState.abortLoad) {
+          // if there is a problem with loading the url
+          debugPrint('there is a problem...');
+        } else if (state.type == WebViewState.startLoad) {
+          // if the url started loading
+          debugPrint('start loading...');
+        }
+      }
+    });
+  }
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -29,28 +68,28 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return Scaffold(
-      appBar: AppBar(title: Text(s.wishSimulator)),
-      body: SafeArea(
-        child: BlocBuilder<UrlPageBloc, UrlPageState>(
-          builder: (context, state) {
-            return state.map(
-              loading: (_) => const Loading(useScaffold: false),
-              loaded: (state) {
-                if (state.hasInternetConnection) {
-                  return WebviewScaffold(
-                    url: state.wishSimulatorUrl,
-                    hidden: true,
-                    clearCache: true,
-                    clearCookies: true,
-                  );
-                }
-                return PageMessage(text: s.noInternetConnection);
-              },
-            );
+    return SafeArea(child: BlocBuilder<UrlPageBloc, UrlPageState>(
+      builder: (context, state) {
+        return state.map(
+          loading: (_) => const Loading(useScaffold: false),
+          loaded: (state) {
+            if (state.hasInternetConnection) {
+              return WebviewScaffold(
+                appBar: AppBar(title: Text(s.wishSimulator)),
+                url: state.wishSimulatorUrl,
+                hidden: true,
+                clearCache: true,
+                clearCookies: true,
+              );
+            }
+            return PageMessage(text: s.noInternetConnection);
           },
-        ),
-      ),
-    );
+        );
+      },
+    ));
+  }
+
+  void _onPageLoaded() {
+    flutterWebviewPlugin.evalJavascript(script);
   }
 }
