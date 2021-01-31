@@ -102,10 +102,26 @@ extension I18nExtensions on S {
         return hpPercentage(value);
       case StatType.none:
         return none;
-      case StatType.physDmgBonus:
+      case StatType.physDmgBonusPercentage:
         return physDmgBonus(value);
       case StatType.physDmgPercentage:
         return physDmgPercentage(value);
+      case StatType.hp:
+        return hp(value);
+      case StatType.electroDmgBonusPercentage:
+        return xDmgBonusPercentage(value, translateElementType(ElementType.electro));
+      case StatType.cryoDmgBonusPercentage:
+        return xDmgBonusPercentage(value, translateElementType(ElementType.cryo));
+      case StatType.pyroDmgBonusPercentage:
+        return xDmgBonusPercentage(value, translateElementType(ElementType.pyro));
+      case StatType.hydroDmgBonusPercentage:
+        return xDmgBonusPercentage(value, translateElementType(ElementType.hydro));
+      case StatType.geoDmgBonusPercentage:
+        return xDmgBonusPercentage(value, translateElementType(ElementType.geo));
+      case StatType.anemoDmgBonusPercentage:
+        return xDmgBonusPercentage(value, translateElementType(ElementType.anemo));
+      case StatType.healingBonusPercentage:
+        return healingBonusPercentage(value);
       default:
         throw Exception('The provided stat type = $type is not valid');
     }

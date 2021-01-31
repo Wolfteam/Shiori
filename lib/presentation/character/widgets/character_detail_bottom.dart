@@ -7,7 +7,6 @@ import 'package:genshindb/presentation/shared/item_description_detail.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 
-import '../../characters/widgets/character_build_card.dart';
 import 'character_detail.dart';
 
 class CharacterDetailBottom extends StatelessWidget {
@@ -42,7 +41,7 @@ class CharacterDetailBottom extends StatelessWidget {
                     title: s.builds,
                     body: Column(
                       children: state.builds
-                          .map((build) => CharacterBuildCard(
+                          .map((build) => CharacterDetailBuildCard(
                                 isForSupport: build.isForSupport,
                                 elementType: state.elementType,
                                 weapons: build.weapons,

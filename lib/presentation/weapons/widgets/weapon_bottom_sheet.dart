@@ -13,10 +13,24 @@ import 'package:genshindb/presentation/shared/sort_direction_popupmenu_filter.da
 import 'package:genshindb/presentation/shared/weapons_button_bar.dart';
 
 class WeaponBottomSheet extends StatelessWidget {
+  final ignoredSubStats = [
+    StatType.atk,
+    StatType.critAtk,
+    StatType.critRate,
+    StatType.physDmgBonusPercentage,
+    StatType.hp,
+    StatType.electroDmgBonusPercentage,
+    StatType.cryoDmgBonusPercentage,
+    StatType.pyroDmgBonusPercentage,
+    StatType.hydroDmgBonusPercentage,
+    StatType.geoDmgBonusPercentage,
+    StatType.anemoDmgBonusPercentage,
+    StatType.healingBonusPercentage,
+  ];
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final ignoredSubStats = [StatType.atk, StatType.critAtk, StatType.critRate, StatType.physDmgBonus];
 
     return CommonBottomSheet(
       titleIcon: GenshinDb.filter,

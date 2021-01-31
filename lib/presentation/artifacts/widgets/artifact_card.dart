@@ -64,17 +64,23 @@ class ArtifactCard extends StatelessWidget {
                 placeholder: MemoryImage(kTransparentImage),
                 image: AssetImage(image),
               ),
-              if (!withoutDetails)
-                Center(
-                  child: Tooltip(
-                    message: name,
-                    child: Text(
-                      name,
-                      textAlign: TextAlign.center,
-                      style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                  ),
+              Center(
+                child: Tooltip(
+                  message: name,
+                  child: !withoutDetails
+                      ? Text(
+                          name,
+                          textAlign: TextAlign.center,
+                          style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                        )
+                      : Text(
+                          name,
+                          textAlign: TextAlign.center,
+                          style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                          overflow: TextOverflow.ellipsis,
+                        ),
                 ),
+              ),
               Rarity(stars: rarity),
               if (bonus.isNotEmpty) ArtifactStats(bonus: bonus),
             ],

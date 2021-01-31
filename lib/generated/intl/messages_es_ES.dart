@@ -41,17 +41,23 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m10(value) => "${value} Recarga de Energía %";
 
-  static m11(value) => "${value} Vida %";
+  static m11(value) => "${value} Bonus de Curación %";
 
-  static m12(value) => "${value} Bono Daño FIS.";
+  static m12(value) => "${value} Vida";
 
-  static m13(value) => "${value} Daño FIS. %";
+  static m13(value) => "${value} Vida %";
 
-  static m14(value) => "Talento de Ascención ${value}";
+  static m14(value) => "${value} Bono Daño FIS.";
 
-  static m15(value) => "Desbloqueada en nivel de ascención ${value}";
+  static m15(value) => "${value} Daño FIS. %";
 
-  static m16(value) => "${value} Pieza(s)";
+  static m16(value) => "Talento de Ascención ${value}";
+
+  static m17(value) => "Desbloqueada en nivel de ascención ${value}";
+
+  static m18(value, x) => "${value} Bono de Daño ${x} %";
+
+  static m19(value) => "${value} Pieza(s)";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
@@ -137,9 +143,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "generalSettings" : MessageLookupByLibrary.simpleMessage("General settings"),
     "goblet" : MessageLookupByLibrary.simpleMessage("Copa"),
     "healingBonus" : MessageLookupByLibrary.simpleMessage("Bono de curación"),
+    "healingBonusPercentage" : m11,
     "hold" : MessageLookupByLibrary.simpleMessage("Mantener"),
     "home" : MessageLookupByLibrary.simpleMessage("Inicio"),
-    "hpPercentage" : m11,
+    "hp" : m12,
+    "hpPercentage" : m13,
     "issues" : MessageLookupByLibrary.simpleMessage("Inconvenientes"),
     "language" : MessageLookupByLibrary.simpleMessage("Lenguaje"),
     "level" : MessageLookupByLibrary.simpleMessage("Nivel"),
@@ -167,8 +175,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "others" : MessageLookupByLibrary.simpleMessage("Otros"),
     "partial" : MessageLookupByLibrary.simpleMessage("Parcial"),
     "passives" : MessageLookupByLibrary.simpleMessage("Pasivas"),
-    "physDmgBonus" : m12,
-    "physDmgPercentage" : m13,
+    "physDmgBonus" : m14,
+    "physDmgPercentage" : m15,
     "pieces" : MessageLookupByLibrary.simpleMessage("Piezas"),
     "plume" : MessageLookupByLibrary.simpleMessage("Pluma"),
     "plungingAttack" : MessageLookupByLibrary.simpleMessage("Ataque Descendiente"),
@@ -211,7 +219,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "supportDps" : MessageLookupByLibrary.simpleMessage("DPS de Soporte"),
     "supportMsg" : MessageLookupByLibrary.simpleMessage("Hice esta aplicación en mi tiempo libre y también es de código abierto. Si deseas ayudarme, informar de un problema, tienes una idea, deseas que se implemente una funcionalidad, etc., crea un issue en mi Github:"),
     "sword" : MessageLookupByLibrary.simpleMessage("Espada"),
-    "talentAscensionX" : m14,
+    "talentAscensionX" : m16,
     "talentsAscension" : MessageLookupByLibrary.simpleMessage("Talentos de Ascención"),
     "theme" : MessageLookupByLibrary.simpleMessage("Tema"),
     "thursday" : MessageLookupByLibrary.simpleMessage("Jueves"),
@@ -219,7 +227,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "tryYourLuck" : MessageLookupByLibrary.simpleMessage("Prueba tu suerte con este simulador de deseos"),
     "tuesday" : MessageLookupByLibrary.simpleMessage("Martes"),
     "type" : MessageLookupByLibrary.simpleMessage("Tipo"),
-    "unlockedAtAscensionLevelX" : m15,
+    "unlockedAtAscensionLevelX" : m17,
     "unlockedAutomatically" : MessageLookupByLibrary.simpleMessage("Desbloqueada Automáticamente"),
     "unreleased" : MessageLookupByLibrary.simpleMessage("No Publicado"),
     "utility" : MessageLookupByLibrary.simpleMessage("Utilidad"),
@@ -228,7 +236,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "weapons" : MessageLookupByLibrary.simpleMessage("Armas"),
     "wednesday" : MessageLookupByLibrary.simpleMessage("Miércoles"),
     "wishSimulator" : MessageLookupByLibrary.simpleMessage("Simulador de Deseos"),
-    "xPieces" : m16,
+    "xDmgBonusPercentage" : m18,
+    "xPieces" : m19,
     "youCanAlsoSendMeAnEmail" : MessageLookupByLibrary.simpleMessage("También puedes enviarme un correo")
   };
 }

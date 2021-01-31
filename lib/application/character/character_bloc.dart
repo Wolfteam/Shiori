@@ -113,7 +113,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
                       ))
                   .toList();
 
-              return CharacterBuildArtifactModel(one: one, multiples: multiples);
+              return CharacterBuildArtifactModel(one: one, multiples: multiples, stats: e.stats);
             },
           ).toList(),
         );

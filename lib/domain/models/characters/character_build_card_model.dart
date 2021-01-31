@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:genshindb/domain/enums/enums.dart';
 
 import '../models.dart';
 
@@ -16,18 +17,22 @@ class CharacterBuildCardModel {
 class CharacterBuildArtifactModel {
   final ArtifactCardModel one;
   final List<CharacterBuildMultipleArtifactModel> multiples;
+  final List<StatType> stats;
 
   const CharacterBuildArtifactModel({
     @required this.one,
     @required this.multiples,
+    @required this.stats,
   });
 
   const CharacterBuildArtifactModel.one({
     @required this.one,
+    @required this.stats,
   }) : multiples = const [];
 
   const CharacterBuildArtifactModel.multiples({
     @required this.multiples,
+    @required this.stats,
   }) : one = null;
 }
 

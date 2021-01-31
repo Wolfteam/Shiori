@@ -275,6 +275,36 @@ class S {
     );
   }
 
+  /// `{value} HP`
+  String hp(Object value) {
+    return Intl.message(
+      '$value HP',
+      name: 'hp',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `{value} {x} DMG Bonus %`
+  String xDmgBonusPercentage(Object value, Object x) {
+    return Intl.message(
+      '$value $x DMG Bonus %',
+      name: 'xDmgBonusPercentage',
+      desc: '',
+      args: [value, x],
+    );
+  }
+
+  /// `{value} Healing Bonus %`
+  String healingBonusPercentage(Object value) {
+    return Intl.message(
+      '$value Healing Bonus %',
+      name: 'healingBonusPercentage',
+      desc: '',
+      args: [value],
+    );
+  }
+
   /// `Gacha`
   String get gacha {
     return Intl.message(

@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:genshindb/domain/enums/enums.dart';
 
 import '../../../assets.dart';
 import '../../../enums/character_skill_ability_type.dart';
@@ -101,6 +102,7 @@ abstract class CharacterFileArtifactBuild implements _$CharacterFileArtifactBuil
   factory CharacterFileArtifactBuild({
     String one,
     @required List<CharacterFileArtifactMultipleBuild> multiples,
+    @required List<StatType> stats,
   }) = _CharacterFileArtifactBuild;
 
   CharacterFileArtifactBuild._();
