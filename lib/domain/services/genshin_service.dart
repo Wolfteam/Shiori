@@ -13,6 +13,7 @@ abstract class GenshinService {
   List<CharacterCardModel> getCharactersForCard();
   CharacterFileModel getCharacter(String key);
   CharacterFileModel getCharacterByImg(String img);
+  List<CharacterFileModel> getCharactersForBirthday(DateTime date);
 
   List<WeaponCardModel> getWeaponsForCard();
   WeaponCardModel getWeaponForCardByImg(String image);

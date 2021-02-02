@@ -73,7 +73,7 @@ class CharCardAscensionMaterial extends StatelessWidget {
             ),
             Flexible(
               fit: FlexFit.tight,
-              flex: 60,
+              flex: 65,
               child: Wrap(
                 crossAxisAlignment: WrapCrossAlignment.center,
                 alignment: WrapAlignment.center,

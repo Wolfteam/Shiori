@@ -178,6 +178,7 @@
     "boss": "Boss",
     "day": "Day",
     "currency": "Currency",
+    "birthday": "Birthday",
     "todayBirthdays": "Today's Birthdays",
     "happyBirthday": "Happy Birthday!"
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/extensions/app_theme_type_extensions.dart';
 
@@ -22,7 +21,7 @@ class AppWidget extends StatelessWidget {
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ];
-          final locale = _getLocale(s.currentLanguage);
+          final locale = Locale(s.language.code, s.language.countryCode);
           return MaterialApp(
             title: s.appTitle,
             theme: s.accentColor.getThemeData(s.theme),
@@ -35,25 +34,5 @@ class AppWidget extends StatelessWidget {
         },
       ),
     );
-  }
-
-  Locale _getLocale(AppLanguageType language) {
-    var langCode = 'en';
-    var countryCode = 'US';
-    switch (language) {
-      case AppLanguageType.spanish:
-        langCode = 'es';
-        countryCode = 'ES';
-        break;
-      case AppLanguageType.french:
-        langCode = 'fr';
-        countryCode = 'FR';
-        break;
-      default:
-        break;
-    }
-    final locale = Locale(langCode, countryCode);
-    // await S.load(locale);
-    return locale;
   }
 }

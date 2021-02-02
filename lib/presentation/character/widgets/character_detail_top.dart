@@ -65,6 +65,7 @@ class CharacterDetailTop extends StatelessWidget {
                     region: state.region,
                     role: s.translateCharacterType(state.role),
                     weaponType: state.weaponType,
+                    birthday: state.birthday,
                   ),
                 ),
               ),

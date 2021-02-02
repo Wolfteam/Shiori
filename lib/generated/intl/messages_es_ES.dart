@@ -78,6 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "atk" : m1,
     "atkPercentage" : m2,
     "baseAtk" : MessageLookupByLibrary.simpleMessage("ATQ Base"),
+    "birthday" : MessageLookupByLibrary.simpleMessage("Cumpleaños"),
     "bonus" : MessageLookupByLibrary.simpleMessage("Bonos"),
     "boss" : MessageLookupByLibrary.simpleMessage("Jefe"),
     "bow" : MessageLookupByLibrary.simpleMessage("Arco"),

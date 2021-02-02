@@ -79,13 +79,10 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
               );
             },
             builder: (context, state) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TabBarView(
-                  controller: _tabController,
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: _pages,
-                ),
+              return TabBarView(
+                controller: _tabController,
+                physics: const NeverScrollableScrollPhysics(),
+                children: _pages,
               );
             },
           ),

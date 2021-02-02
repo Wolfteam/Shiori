@@ -1825,6 +1825,16 @@ class S {
     );
   }
 
+  /// `Birthday`
+  String get birthday {
+    return Intl.message(
+      'Birthday',
+      name: 'birthday',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Today's Birthdays`
   String get todayBirthdays {
     return Intl.message(

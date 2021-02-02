@@ -177,6 +177,7 @@
     "boss": "Jefe",
     "day": "Día",
     "currency": "Moneda",
+    "birthday": "Cumpleaños",
     "todayBirthdays": "Los Cumpleaños de Hoy",
     "happyBirthday": "¡Feliz Cumpleaños!"
 }
