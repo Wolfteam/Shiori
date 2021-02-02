@@ -176,5 +176,8 @@
     "localSpecialities": "Especialidades Locales",
     "boss": "Jefe",
     "day": "Día",
-    "currency": "Moneda"
+    "currency": "Moneda",
+    "birthday": "Cumpleaños",
+    "todayBirthdays": "Los Cumpleaños de Hoy",
+    "happyBirthday": "¡Feliz Cumpleaños!"
 }

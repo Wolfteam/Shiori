@@ -4,7 +4,9 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:genshindb/application/utils/app_path_utils.dart';
 import 'package:genshindb/domain/enums/enums.dart';
+import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/genshin_service.dart';
+import 'package:genshindb/domain/services/locale_service.dart';
 import 'package:genshindb/domain/services/logging_service.dart';
 import 'package:genshindb/domain/services/settings_service.dart';
 import 'package:package_info/package_info.dart';
@@ -19,6 +21,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   final LoggingService _logger;
   final GenshinService _genshinService;
   final SettingsService _settingsService;
+  final LocaleService _localeService;
 
   final CharactersBloc _charactersBloc;
   final WeaponsBloc _weaponsBloc;
@@ -29,6 +32,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     this._logger,
     this._genshinService,
     this._settingsService,
+    this._localeService,
     this._charactersBloc,
     this._weaponsBloc,
     this._homeBloc,
@@ -43,13 +47,13 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   ) async* {
     final s = await event.when(
       init: () async {
-        return _init();
+        return _init(init: true);
       },
       themeChanged: (theme) async {
-        return _loadThemeData(currentState.appTitle, theme, _settingsService.accentColor, _settingsService.language);
+        return _loadThemeData(currentState.appTitle, theme, _settingsService.accentColor);
       },
       accentColorChanged: (accentColor) async {
-        return _loadThemeData(currentState.appTitle, _settingsService.appTheme, accentColor, _settingsService.language);
+        return _loadThemeData(currentState.appTitle, _settingsService.appTheme, accentColor);
       },
       languageChanged: (language) async {
         return _init(languageChanged: true);
@@ -59,7 +63,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     yield s;
   }
 
-  Future<MainState> _init({bool languageChanged = false}) async {
+  Future<MainState> _init({bool languageChanged = false, bool init = false}) async {
     _logger.info(runtimeType, '_init: Initializing all..');
     await _settingsService.init();
 
@@ -81,18 +85,17 @@ class MainBloc extends Bloc<MainEvent, MainState> {
 
     final packageInfo = await PackageInfo.fromPlatform();
     final settings = _settingsService.appSettings;
-    if (!languageChanged) {
+    if (init) {
       await Future.delayed(const Duration(milliseconds: 600));
     }
 
-    return _loadThemeData(packageInfo.appName, settings.appTheme, settings.accentColor, settings.appLanguage);
+    return _loadThemeData(packageInfo.appName, settings.appTheme, settings.accentColor);
   }
 
   Future<MainState> _loadThemeData(
     String appTitle,
     AppThemeType theme,
-    AppAccentColorType accentColor,
-    AppLanguageType language, {
+    AppAccentColorType accentColor, {
     bool isInitialized = true,
   }) async {
     _logger.info(runtimeType, '_init: Is first install = ${_settingsService.isFirstInstall}');
@@ -100,7 +103,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     return MainState.loaded(
       appTitle: appTitle,
       accentColor: accentColor,
-      currentLanguage: language,
+      language: _localeService.getLocaleWithoutLang(),
       initialized: isInitialized,
       theme: theme,
       firstInstall: _settingsService.isFirstInstall,

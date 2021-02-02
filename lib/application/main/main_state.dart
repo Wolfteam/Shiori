@@ -7,7 +7,7 @@ abstract class MainState with _$MainState {
     @required String appTitle,
     @required AppThemeType theme,
     @required AppAccentColorType accentColor,
-    @required AppLanguageType currentLanguage,
+    @required LanguageModel language,
     @required bool initialized,
     @required bool firstInstall,
   }) = _MainLoadedState;

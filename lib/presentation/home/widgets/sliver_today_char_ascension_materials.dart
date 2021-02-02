@@ -11,7 +11,7 @@ class SliverTodayCharAscensionMaterials extends StatelessWidget {
       builder: (context, state) {
         return state.when(
           loading: () => const SliverLoading(),
-          loaded: (charAscMaterials, _) => SliverCharacterAscensionMaterials(charAscMaterials: charAscMaterials),
+          loaded: (charAscMaterials, _, __) => SliverCharacterAscensionMaterials(charAscMaterials: charAscMaterials),
         );
       },
     );

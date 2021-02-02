@@ -176,6 +176,9 @@
     "common": "Commun",
     "localSpecialities": "Spécialité local",
     "boss": "Boss",
-    "day": "jour",
-    "currency": "prix"
+    "day": "Day",
+    "currency": "Currency",
+    "birthday": "Birthday",
+    "todayBirthdays": "Today's Birthdays",
+    "happyBirthday": "Happy Birthday!"
 }

@@ -5,11 +5,9 @@ import 'package:genshindb/presentation/character/character_page.dart';
 
 class CircleCharacter extends StatelessWidget {
   final String image;
+  final double radius;
 
-  const CircleCharacter({
-    Key key,
-    @required this.image,
-  }) : super(key: key);
+  const CircleCharacter({Key key, @required this.image, this.radius = 35}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +16,7 @@ class CircleCharacter extends StatelessWidget {
       child: InkWell(
         onTap: () => _gotoCharacterPage(image, context),
         child: CircleAvatar(
-          radius: 35,
+          radius: radius,
           backgroundColor: Colors.transparent,
           backgroundImage: AssetImage(image),
         ),

@@ -20,7 +20,7 @@ class CharacterDetailBottom extends StatelessWidget {
       builder: (ctx, state) => state.map(
         loading: (_) => const Loading(useScaffold: false),
         loaded: (state) => Card(
-          margin: const EdgeInsets.only(top: 380, right: 10, left: 10),
+          margin: const EdgeInsets.only(top: 400, right: 10, left: 10),
           shape: Styles.cardItemDetailShape,
           child: Padding(
             padding: Styles.edgeInsetAll10,

@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:genshindb/domain/enums/enums.dart';
+import 'package:genshindb/domain/extensions/string_extensions.dart';
 import 'package:genshindb/domain/extensions/weapon_type_extensions.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/element_image.dart';
@@ -22,6 +23,7 @@ class CharacterDetailGeneralCard extends StatelessWidget {
   final RegionType region;
   final String role;
   final bool isFemale;
+  final String birthday;
 
   const CharacterDetailGeneralCard({
     Key key,
@@ -32,6 +34,7 @@ class CharacterDetailGeneralCard extends StatelessWidget {
     @required this.region,
     @required this.role,
     @required this.isFemale,
+    this.birthday,
   }) : super(key: key);
 
   @override
@@ -82,6 +85,12 @@ class CharacterDetailGeneralCard extends StatelessWidget {
               widget: Icon(isFemale ? GenshinDb.female : GenshinDb.male, color: isFemale ? Colors.pink : Colors.blue),
               useColumn: false,
             ),
+            if (birthday.isNotNullEmptyOrWhitespace)
+              ItemDescription(
+                title: s.birthday,
+                widget: Text(birthday, style: const TextStyle(color: Colors.white)),
+                useColumn: false,
+              ),
           ],
         ),
       ),

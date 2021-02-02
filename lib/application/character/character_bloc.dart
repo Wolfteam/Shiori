@@ -6,6 +6,7 @@ import 'package:genshindb/domain/assets.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/genshin_service.dart';
+import 'package:genshindb/domain/services/locale_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
 
 part 'character_bloc.freezed.dart';
@@ -15,8 +16,9 @@ part 'character_state.dart';
 class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
+  final LocaleService _localeService;
 
-  CharacterBloc(this._genshinService, this._telemetryService) : super(const CharacterState.loading());
+  CharacterBloc(this._genshinService, this._telemetryService, this._localeService) : super(const CharacterState.loading());
 
   @override
   Stream<CharacterState> mapEventToState(
@@ -52,6 +54,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
       secondFullImage: char.secondFullImage != null ? Assets.getCharacterFullPath(char.secondFullImage) : null,
       description: translation.description,
       rarity: char.rarity,
+      birthday: _localeService.formatCharBirthDate(char.birthday),
       elementType: char.elementType,
       weaponType: char.weaponType,
       ascensionMaterials: char.ascensionMaterials,

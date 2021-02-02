@@ -14,6 +14,7 @@ abstract class CharacterState with _$CharacterState {
     @required RegionType region,
     @required CharacterType role,
     @required bool isFemale,
+    String birthday,
     @required List<CharacterFileAscensionMaterialModel> ascensionMaterials,
     @required List<CharacterFileTalentAscensionMaterialModel> talentAscensionsMaterials,
     List<CharacterFileMultiTalentAscensionMaterialModel> multiTalentAscensionMaterials,

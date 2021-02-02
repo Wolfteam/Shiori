@@ -5,7 +5,9 @@ import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/today_materials/materials_page.dart';
 
 import 'widgets/sliver_calculators_card.dart';
+import 'widgets/sliver_characters_birthday_card.dart';
 import 'widgets/sliver_elements_card.dart';
+import 'widgets/sliver_main_title.dart';
 import 'widgets/sliver_settings_card.dart';
 import 'widgets/sliver_today_char_ascension_materials.dart';
 import 'widgets/sliver_today_weapon_materials.dart';
@@ -27,36 +29,21 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
     final s = S.of(context);
     return CustomScrollView(
       slivers: [
-        _buildMainTitle(s.todayAscensionMaterials, context),
+        SliverCharactersBirthdayCard(),
+        SliverMainTitle(title: s.todayAscensionMaterials),
         _buildClickableTitle(s.forCharacters, s.seeAll, context, onClick: () => _gotoMaterialsPage(context)),
         SliverTodayCharAscensionMaterials(),
         _buildClickableTitle(s.forWeapons, s.seeAll, context, onClick: () => _gotoMaterialsPage(context)),
         SliverTodayWeaponMaterials(),
-        _buildMainTitle(s.elements, context),
+        SliverMainTitle(title: s.elements),
         SliverElementsCard(),
-        _buildMainTitle(s.calculators, context),
+        SliverMainTitle(title: s.calculators),
         SliverCalculatorsCard(),
-        _buildMainTitle(s.wishSimulator, context),
+        SliverMainTitle(title: s.wishSimulator),
         SliverWishSimulatorCard(),
-        _buildMainTitle(s.settings, context),
+        SliverMainTitle(title: s.settings),
         SliverSettingsCard(),
       ],
-    );
-  }
-
-  Widget _buildMainTitle(String title, BuildContext context) {
-    final theme = Theme.of(context);
-    return SliverPadding(
-      padding: const EdgeInsets.only(top: 10),
-      sliver: SliverToBoxAdapter(
-        child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 15),
-          child: Text(
-            title,
-            style: theme.textTheme.headline6.copyWith(fontWeight: FontWeight.bold),
-          ),
-        ),
-      ),
     );
   }
 

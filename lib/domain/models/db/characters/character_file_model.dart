@@ -29,6 +29,7 @@ abstract class CharacterFileModel implements _$CharacterFileModel {
     @required bool isComingSoon,
     @required bool isNew,
     @required CharacterType role,
+    String birthday,
     @required List<CharacterFileAscensionMaterialModel> ascensionMaterials,
     @required List<CharacterFileTalentAscensionMaterialModel> talentAscensionMaterials,
     List<CharacterFileMultiTalentAscensionMaterialModel> multiTalentAscensionMaterials,

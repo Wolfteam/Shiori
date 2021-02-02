@@ -31,6 +31,7 @@ export 'elements/element_reaction_card_model.dart';
 export 'home/today_char_ascension_materials_model.dart';
 export 'home/today_weapon_ascension_material_model.dart';
 export 'items/item_ascension_material_model.dart';
+export 'language_model.dart';
 export 'settings/app_settings.dart';
 export 'weapons/weapon_card_model.dart';
 export 'weapons/weapon_file_refinement_model.dart';

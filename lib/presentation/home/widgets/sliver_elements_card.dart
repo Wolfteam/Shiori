@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/presentation/elements/elements_page.dart';
 import 'package:genshindb/presentation/shared/element_image.dart';
+import 'package:genshindb/presentation/shared/styles.dart';
 
 class SliverElementsCard extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class SliverElementsCard extends StatelessWidget {
       child: InkWell(
         onTap: () => _gotoElementsPage(context),
         child: Card(
-          margin: const EdgeInsets.all(15),
+          margin: Styles.edgeInsetAll15,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
           child: SizedBox(
             height: 170,

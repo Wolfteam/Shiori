@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:genshindb/domain/services/locale_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
 
 import 'application/bloc.dart';
@@ -40,7 +41,8 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             final telemetryService = getIt<TelemetryService>();
-            return CharacterBloc(genshinService, telemetryService);
+            final localeService = getIt<LocaleService>();
+            return CharacterBloc(genshinService, telemetryService, localeService);
           },
         ),
         BlocProvider(
@@ -95,10 +97,12 @@ class MyApp extends StatelessWidget {
             final loggingService = getIt<LoggingService>();
             final genshinService = getIt<GenshinService>();
             final settingsService = getIt<SettingsService>();
+            final localeService = getIt<LocaleService>();
             return MainBloc(
               loggingService,
               genshinService,
               settingsService,
+              localeService,
               ctx.read<CharactersBloc>(),
               ctx.read<WeaponsBloc>(),
               ctx.read<HomeBloc>(),
