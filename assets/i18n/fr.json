@@ -4244,141 +4244,141 @@
     "artifacts": [
         {
             "key": "Adventurer",
-            "name": "Adventurer",
+            "name": "Aventurier",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Max HP increased by 1000."
+                    "bonus": "Augmente les PV max de 1000 pts."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Opening a chest regenerates 30% Max HP over 5s."
+                    "bonus": "Restaure 30% des PV pendant 5s après l'ouverture d'un coffre."
                 }
             ]
         },
         {
             "key": "Traveling Doctor",
-            "name": "Traveling Doctor",
+            "name": "Médecin itinérant",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Increases incoming healing by 20%."
+                    "bonus": "Augmente les soins reçus par le personnage de 20%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Using Elemental Burst restores 20% HP."
+                    "bonus": "Le déchaînement élémentaire restaure 20% des PV."
                 }
             ]
         },
         {
             "key": "Lucky Dog",
-            "name": "Lucky Dog",
+            "name": "Chanceux",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "DEF increased by 100."
+                    "bonus": "Augmente la DÉF de 100 pts."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Picking up Mora restores 300 HP."
+                    "bonus": "Collecter des moras restaure 300 PV."
                 }
             ]
         },
         {
             "key": "Resolution of Sojourner",
-            "name": "Resolution of Sojourner",
+            "name": "Cœur du Voyageur",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "ATK +18%."
+                    "bonus": "Augmente l'ATQ de 18%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Increases Charged Attack CRIT Rate by 30%."
+                    "bonus": "Augmente le taux CRIT des attaques chargées de 30%."
                 }
             ]
         },
         {
             "key": "Tiny Miracle",
-            "name": "Tiny Miracle",
+            "name": "Miracle",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "All Elemental RES increased by 20%."
+                    "bonus": "Augmente toutes les RÉS élémentaires de 20%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Incoming elemental DMG increases corresponding Elemental RES by 30% for 10s. Can only occur once every 10s."
+                    "bonus": "Les DÉG élémentaires subis augmentent la RÉS à l'élément correspondant de 30% pendant 10s. Cet effet peut être déclenché une fois toutes les 10s."
                 }
             ]
         },
         {
             "key": "Brave Heart",
-            "name": "Brave Heart",
+            "name": "Cœur du Brave",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "ATK +18%."
+                    "bonus": "Augmente l'ATQ de 18%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Increases DMG by 30% against enemies with more than 50% HP."
+                    "bonus": "Augmente les DGT infligés aux ennemis ayant plus de 50% de PV de 30%."
                 }
             ]
         },
         {
             "key": "Defender’s Will",
-            "name": "Defender’s Will",
+            "name": "Cœur du Gardien",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "DEF +30%."
+                    "bonus": "Augmente la DÉF de 30%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "For each different element present in your own party, the wearer’s Elemental RES to that corresponding element is increased by 30%."
+                    "bonus": "Pour chaque personnage de l'équipe ayant un élément de type différent du personnage équipé, la RÉS élémentaire correspondante est augmentée de 30%."
                 }
             ]
         },
         {
             "key": "Martial Artist",
-            "name": "Martial Artist",
+            "name": "Artiste martial",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Increases Normal Attack and Charged Attack DMG by 15%."
+                    "bonus": "Augmente les DGT infligés par les attaques normales et chargées de 15%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 25% for 8s."
+                    "bonus": "Augmente les DGT infligés par les attaques normales et chargées de 25% pendant 8s après l'utilisation d'une compétence élémentaire."
                 }
             ]
         },
         {
             "key": "Gambler",
-            "name": "Gambler",
+            "name": "Parieur",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Increases Elemental Skill DMG by 20%."
+                    "bonus": "Augmente les DGT infligés par la compétence élémentaire de 20%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Defeating an enemy has a 100% chance to remove Elemental Skill CD. Can only occur once every 15s."
+                    "bonus": "Après la défaite d'un ennemi, le TdR de compétence élémentaire a 100% de chance d'être réinitialisé. Cet effet peut être déclenché une fois toutes les 15s"
                 }
             ]
         },
         {
             "key": "Scholar",
-            "name": "Scholar",
+            "name": "Érudit",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Energy Recharge +20%."
+                    "bonus": "Augmente la recharge d'énergie de 20%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Gaining Elemental Particles or Orbs gives 3 Energy to all party members who have a bow or a catalyst equipped. Can only occur once every 3s."
+                    "bonus": "Les personnages maniant l'arc et le catalyseur récupèrent 3 pts d'énergie supplémentaire à chaque fois qu'une particule ou un orbe élémentaire sont récupérés. Cet effet peut être déclenché une fois toutes les 3s."
                 }
             ]
         },
@@ -4388,275 +4388,275 @@
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "CRIT Rate +12%."
+                    "bonus": "Augmente le taux CRIT de 12%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "When HP is below 70%, CRIT Rate increases by an additional 24%."
+                    "bonus": "Augmente le taux CRIT de 24% lorsque les PV sont inférieurs à 70%."
                 }
             ]
         },
         {
             "key": "Instructor",
-            "name": "Instructor",
+            "name": "Instructeur",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Increases Elemental Mastery by 80."
+                    "bonus": "Augmente la maîtrise élémentaire de 80 pts."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Upon triggering an Elemental Reaction, increases all party members’ Elemental Mastery by 120 for 8s."
+                    "bonus": "Augmente la maîtrise élémentaire de toute l'équipe de 120 pts pendant 8s après avoir déclenché une réaction élémentaire."
                 }
             ]
         },
         {
             "key": "The Exile",
-            "name": "The Exile",
+            "name": "Exilé",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Energy Recharge +20%."
+                    "bonus": "Augmente la recharge d'énergie de 20%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Using an Elemental Burst regenerates 2 Energy for all party members (excluding the wearer) every 2s for 6s. This effect cannot stack."
+                    "bonus": "Le déchaînement élémentaire restaure 2 pts d'énergie élémentaire à tous les personnages de l'équipe (à l'exception du porteur) toutes les 2s pendant 6s. Cet effet est non cumulable."
                 }
             ]
         },
         {
             "key": "Thundering Fury",
-            "name": "Thundering Fury",
+            "name": "Colère de tonnerre",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Electro DMG Bonus +15%."
+                    "bonus": "Confère un bonus de DGT Électro de 15%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Increases damage caused by Overloaded, Electro-Charged and Superconduct by 40%. Triggering such effects decreases Elemental Skill CD by 1s. Can only occur once every 0.8s."
+                    "bonus": "Augmente les DGT infligés par Surcharge, Décharge électrique et Supraconductivité de 40%. Lorsque vous déclenchez ces réactions élémentaires, le TdR de compétence élémentaire est réduit de 1s. Cet effet peut être déclenché une fois toutes les 0,8s."
                 }
             ]
         },
         {
             "key": "Thundersoother",
-            "name": "Thundersoother",
+            "name": "Dompteur de foudre",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Electro RES increased by 40%."
+                    "bonus": "Augmente la RÉS Électro de 40%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Increases DMG against enemies affected by Electro by 35%."
+                    "bonus": "Augmente les DGT infligés aux ennemis affectés par l'élément Électro de 35%."
                 }
             ]
         },
         {
             "key": "Viridescent Venerer",
-            "name": "Viridescent Venerer",
+            "name": "Ombre de la Verte Chasseuse",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Anemo DMG Bonus +15%."
+                    "bonus": "Confère une bonus de DGT Anémo de 15%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Increases Swirl DMG by 60%. Decreases opponent’s Elemental RES to the element infused in the Swirl by 40% for 10s."
+                    "bonus": "Augmente les DGT infligés par Dispersion de 60% ; la RÉS élémentaire des ennemis est réduite de 40% pendant 10s selon le type élémentaire de Dispersion."
                 }
             ]
         },
         {
             "key": "Maiden Beloved",
-            "name": "Maiden Beloved",
+            "name": "Amour chéri",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Character Healing Effectiveness +15%."
+                    "bonus": "Augmente les soins effectués par le personnage de 15%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s."
+                    "bonus": "Augmente les soins reçus par toute l'équipe de 20% pendant 10s après l'utilisation d'une compétence élémentaire ou d'un déchaînement élémentaire."
                 }
             ]
         },
         {
             "key": "Archaic Petra",
-            "name": "Archaic Petra",
+            "name": "Roche ancienne",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Gain a 15% Geo DMG Bonus."
+                    "bonus": "Confère un bonus de DGT Géo de 15%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Upon obtaining an Elemental Shard created through a Crystallize Reaction, all party members gain a 35% DMG Bonus for that particular element for 10s. Only one form of Elemental DMG Bonus can be gained in this manner at any one time."
+                    "bonus": "Losque vous obtenez un cristal issu d'une Cristallisation, tous les personnages de l'équipe reçoivent un bonus de DGT du second élément de la réaction de 35% pendant 10s. Cet effet ne peut s'appliquer qu'à une seul élément à la fois"
                 }
             ]
         },
         {
             "key": "Retracing Bolide",
-            "name": "Retracing Bolide",
+            "name": "Météore inversé",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Increases Shield Strength by 35%."
+                    "bonus": "Augmente la force du bouclier de 35%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "While protected by a shield, gain an additional 40% Normal and Charged Attack DMG."
+                    "bonus": "Les attaques normales et chargées infligent un bonus de 40% de DGT lorsque le personnage est sous la protection d'un bouclier."
                 }
             ]
         },
         {
             "key": "Crimson Witch of Flames",
-            "name": "Crimson Witch of Flames",
+            "name": "Sorcière des flammes ardentes%",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Pyro DMG Bonus +15%."
+                    "bonus": "Confère un bonus de DGT Pyro de 15%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Increases Overloaded and Burning DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using an Elemental Skill increases 2-Piece Set effects by 50% for 10s. Max 3 stacks."
+                    "bonus": "Augmente les DGT infligés par Surcharge et Brûlure de 40% et ceux d'Évaporation et Fonte de 15%. L'utilisation d'une compétence élémentaire augmente pendant 10s l'effet du set de 2 pièces de 50% ; cet effet peut être cumulé 3 fois au maximum."
                 }
             ]
         },
         {
             "key": "Lavawalker",
-            "name": "Lavawalker",
+            "name": "Marcheur de feu",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Pyro RES increased by 40%."
+                    "bonus": "Augemnte la RÉS Pyro de 40%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Increases DMG against enemies affected by Pyro by 35%."
+                    "bonus": "Augmente les DGT infligés aux ennemis affectés par l'élément Pyro de 35%."
                 }
             ]
         },
         {
             "key": "Bloodstained Chivalry",
-            "name": "Bloodstained Chivalry",
+            "name": "Chevalerie ensanglantée",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Physical DMG +25%."
+                    "bonus": "Augmente les DGT physiques de 25%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "After defeating an opponent, increases Charged Attack DMG by 50%, and reduces its Stamina cost to 0 for 10s."
+                    "bonus": "L'utilisation d'attaques chargées ne consomme pas l'enduance pendant 10s après la défaite d'un ennemi, et ces dernières infligent 50% de DGT supplémentaires."
                 }
             ]
         },
         {
             "key": "Noblesse Oblige",
-            "name": "Noblesse Oblige",
+            "name": "Ancien rituel royal",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Elemental Burst DMG +20%."
+                    "bonus": "Augmente les DGT infligés par le déchaînement de 20%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Using an Elemental Burst increases all party members’ ATK by 20% for 12s. This effect cannot stack."
+                    "bonus": "Augmente l'ATQ de tous les personnages de l'équipe de 20% pendant 12s après un déchaînement élémentaire. Cet effect est non cumulable."
                 }
             ]
         },
         {
             "key": "Gladiator’s Finale",
-            "name": "Gladiator’s Finale",
+            "name": "Rideau du Gladiateur",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "ATK +18%."
+                    "bonus": "Augmente l'ATQ de 18%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%."
+                    "bonus": "Augmente les DGT infligés de 35% lorsque ce set d'artéfacts est équipé par les personnages maniant une épée à une ou deux mains ou une arme d'hast."
                 }
             ]
         },
         {
             "key": "Wanderer’s Troupe",
-            "name": "Wanderer’s Troupe",
+            "name": "Bande vagabonde",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Increases Elemental Mastery by 80."
+                    "bonus": "Augmente la maîtrise élémentaire de 80 pts."
                 },
                 {
                     "key": "b2",
-                    "bonus": "Increases Charged Attack DMG by 35% if the character uses a Catalyst or a Bow."
+                    "bonus": "Augmente les DGT infligés par les attaques chargées de 35% lorsque ce set d'artéfacts est équipé par les personnages maniant un arc ou un catalyseur."
                 }
             ]
         },
         {
             "key": "Prayers for Illumination",
-            "name": "Prayers for Illumination",
+            "name": "Sacrificieur Pyro",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Affected by Pyro for 40% less time."
+                    "bonus": "Réduit la durée des effets Pyro subis de 40%."
                 }
             ]
         },
         {
             "key": "Prayers for Destiny",
-            "name": "Prayers for Destiny",
+            "name": "Sacrificieur Hydro",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Affected by Hydro for 40% less time."
+                    "bonus": "Réduit la durée des effets Hydro subis de 40."
                 }
             ]
         },
         {
             "key": "Prayers for Wisdom",
-            "name": "Prayers for Wisdom",
+            "name": "Sacrificieur Électro",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Affected by Electro for 40% less time."
+                    "bonus": "Réduit la durée des effets Électro subis de 40."
                 }
             ]
         },
         {
             "key": "Prayers to Springtime",
-            "name": "Prayers to Springtime",
+            "name": "Sacrificieur Cryo",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Affected by Cryo for 40% less time."
+                    "bonus": "Réduit la durée des effets Cryo subis de 40."
                 }
             ]
         },
         {
             "key": "Blizzard Strayer",
-            "name": "Blizzard Strayer",
+            "name": "Briseur de glace",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Cryo DMG Bonus +15%."
+                    "bonus": "Confère un bonus de DGT Cryo de 15%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "When a character attacks an enemy affected by Cryo, their CRIT Rate is increased by 20%. If the enemy is Frozen, CRIT Rate is increased by an additional 20%."
+                    "bonus": "Augmente le taux CRIT de 20% lorsque le personnage attaque un ennemi affecté par l'élément Cryo. Confère un bonus supplémentaire de 20% de taux CRIT si l'ennemi est gelé."
                 }
             ]
         },
         {
             "key": "Heart of Depth",
-            "name": "Heart of Depth",
+            "name": "Âme du naufragé",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Hydro DMG Bonus +15%."
+                    "bonus": "Confère un bonus de DGT Hydro de 15%."
                 },
                 {
                     "key": "b2",
-                    "bonus": "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 30% for 15s."
+                    "bonus": "Augmente les DGT infligés par les attaques normales et chargées de 30% pendant 15s après l'utilisation d'une compétence élémentaire."
                 }
             ]
         },
@@ -4676,11 +4676,11 @@
         },
         {
             "key": "Prayers to the Firmament",
-            "name": "Prayers to the Firmament",
+            "name": "Sacrificieur Anémo",
             "bonus": [
                 {
                     "key": "b1",
-                    "bonus": "Affected by Anemo for 40% less time."
+                    "bonus": "Réduit la durée des effets Anémo subis de 40%."
                 }
             ]
         }
@@ -4688,400 +4688,304 @@
     "materials": [
         {
             "key": "FreedomA",
-            "name": "Teachings of Freedom"
+            "name": "Enseignement de la Liberté"
         },
         {
             "key": "FreedomB",
-            "name": "Guide to Freedom"
+            "name": "Guide de la Liberté"
         },
         {
             "key": "FreedomC",
-            "name": "Philosophies of Freedom"
+            "name": "Philosophie de la Liberté"
         },
         {
             "key": "ProsperityA",
-            "name": "Teachings of Prosperity"
+            "name": "Enseignement de la Prospérité"
         },
         {
             "key": "ProsperityB",
-            "name": "Guide to Prosperity"
+            "name": "Guide de la Prospérité"
         },
         {
             "key": "ProsperityC",
-            "name": "Philosophies of Prosperity"
+            "name": "Philosophie de la Prospérité"
         },
         {
             "key": "DilligenceA",
-            "name": "Teachings of Dilligence"
+            "name": "Enseignement de la Diligence"
         },
         {
             "key": "DilligenceB",
-            "name": "Guide to Dilligence"
+            "name": "Guide de la Diligence"
         },
         {
             "key": "DilligenceC",
-            "name": "Philosophies of Dilligence"
+            "name": "Philosophie de la Diligence"
         },
         {
             "key": "ResistanceA",
-            "name": "Teachings of Resistance"
+            "name": "Enseignement de la Résistance"
         },
         {
             "key": "ResistanceB",
-            "name": "Guide to Resistance"
+            "name": "Guide de la Résistance"
         },
         {
             "key": "ResistanceC",
-            "name": "Philosophies of Resistance"
+            "name": "Philosophie de la Résistance"
         },
         {
             "key": "BalladA",
-            "name": "Teachings of Ballad"
+            "name": "Enseignement de la Poésie"
         },
         {
             "key": "BalladB",
-            "name": "Guide to Ballad"
+            "name": "Guide de la Poésie"
         },
         {
             "key": "BalladC",
-            "name": "Philosophies of Ballad"
+            "name": "Philosophie de la Poésie"
         },
         {
             "key": "GoldA",
-            "name": "Teachings of Gold"
+            "name": "Enseignement de l'Or"
         },
         {
             "key": "GoldB",
-            "name": "Guide to Gold"
+            "name": "Guide de l'Or"
         },
         {
             "key": "GoldC",
-            "name": "Philosophies of Gold"
+            "name": "Philosophie de l'Or"
         },
         {
             "key": "Tail of Boreas",
-            "name": "Tail of Boreas",
-            "bossName": "Andrius"
+            "name": "Queue de Boréas",
+            "bossName": "Andros"
         },
         {
             "key": "Ring of Boreas",
-            "name": "Ring of Boreas",
-            "bossName": "Andrius"
+            "name": "Anneau de Boréas",
+            "bossName": "Andros"
         },
         {
             "key": "Spirit Locket of Boreas",
-            "name": "Spirit Locket of Boreas",
-            "bossName": "Andrius"
+            "name": "Esprit de Boréas",
+            "bossName": "Andros"
         },
         {
             "key": "Dvalin's Plume",
-            "name": "Dvalin's Plume",
+            "name": "Plume de Stormterror",
             "bossName": "Dvalin"
         },
         {
             "key": "Dvalin's Claw",
-            "name": "Dvalin's Claw",
+            "name": "Griffe de Stormterror",
             "bossName": "Dvalin"
         },
         {
             "key": "Dvalin's Sigh",
-            "name": "Dvalin's Sigh",
+            "name": "Souffle de Stormterror",
             "bossName": "Dvalin"
         },
         {
             "key": "Tusk of Monoceros Caeli",
-            "name": "Tusk of Monoceros Caeli",
+            "name": "Corne de Monoceros",
             "bossName": "Tartaglia"
         },
         {
             "key": "Shard of a Foul Legacy",
-            "name": "Shard of a Foul Legacy",
+            "name": "Fragment du démon",
             "bossName": "Tartaglia"
         },
         {
             "key": "Shadow of the Warrior",
-            "name": "Shadow of the Warrior",
+            "name": "Ombre du guerrier",
             "bossName": "Tartaglia"
         },
         {
             "key": "DecarabianA",
-            "name": "Tile of Decarabian’s Tower"
+            "name": "Tuile casssée de Décabarian"
         },
         {
             "key": "DecarabianB",
-            "name": "Debris of Decarabian’s City"
+            "name": "Mur abattu de Décabarian"
         },
         {
             "key": "DecarabianC",
-            "name": "Fragment of Decarabian’s Epic"
+            "name": "Fragment dispersé de Décabarian"
         },
         {
             "key": "DecarabianD",
-            "name": "Scattered Piece of Decarabian’s Dream"
+            "name": "Rêve brisé de Décabarian"
         },
         {
             "key": "GuyunA",
-            "name": "Luminous Sands from Guyun"
+            "name": "Sable lumineux de Guyun"
         },
         {
             "key": "GuyunB",
-            "name": "Lustrous Stone from Guyun"
+            "name": "Roche lustrée de Guyun"
         },
         {
             "key": "GuyunC",
-            "name": "Relic from Guyun"
+            "name": "Squelette sacré de Guyun"
         },
         {
             "key": "GuyunD",
-            "name": "Divine Body from Guyun"
+            "name": "Corps divin de Guyun"
         },
         {
             "key": "ElixirA",
-            "name": "Mist Veiled Lead Elixir"
+            "name": "Élixir de plomb brumeux"
         },
         {
             "key": "ElixirB",
-            "name": "Mist Veiled Mercury Elixir"
+            "name": "Élixir de mercure"
         },
         {
             "key": "ElixirC",
-            "name": "Mist Veiled Gold Elixir"
+            "name": "Élixir d'or brumeux"
         },
         {
             "key": "ElixirD",
-            "name": "Mist Veiled Primo Elixir"
+            "name": "Élixir de primordialité de la brume voilée"
         },
         {
             "key": "BorealWolfA",
-            "name": "Boreal Wolf’s Milk Tooth"
+            "name": "Dent de lait du Loup boréal"
         },
         {
             "key": "BorealWolfB",
-            "name": "Boreal Wolf’s Cracked Tooth"
+            "name": "Croc brisé du Loup boréal"
         },
         {
             "key": "BorealWolfC",
-            "name": "Boreal Wolf’s Broken Fang"
+            "name": "Croc fendu du Loup boréal"
         },
         {
             "key": "BorealWolfD",
-            "name": "Boreal Wolf's Nostalgia"
+            "name": "Nostalgie du Loup boréal"
         },
         {
             "key": "AerosideriteA",
-            "name": "Grain of Aerosiderite"
+            "name": "Grain d'aerosidérite"
         },
         {
             "key": "AerosideriteB",
-            "name": "Piece of Aerosiderite"
+            "name": "Éclat d'aerosidérite"
         },
         {
             "key": "AerosideriteC",
-            "name": "Bit of Aerosiderite"
+            "name": "Fragment d'aerosidérite"
         },
         {
             "key": "AerosideriteD",
-            "name": "Chunk of Aerosiderite"
+            "name": "Morceau d'aerosidérite"
         },
         {
             "key": "GladiatorA",
-            "name": "Fetters of the Dandelion Gladiator"
+            "name": "Entraves du Chevalier de Croc de Lion"
         },
         {
             "key": "GladiatorB",
-            "name": "Chains of the Dandelion Gladiator"
+            "name": "Chaînes du Chevalier de Croc de Lion"
         },
         {
             "key": "GladiatorC",
-            "name": "Shackles of the Dandelion Gladiator"
+            "name": "Menottes du Chevalier de Croc de Lion"
         },
         {
             "key": "GladiatorD",
-            "name": "Dream of the Dandelion Gladiator"
+            "name": "Idéaux du Chevalier de Croc de Lion"
         },
         {
             "key": "Crown of Insight",
-            "name": "Crown of Insight"
+            "name": "Couronne de la sagesse"
         },
         {
             "key": "SacrificialKnifeA",
-            "name": "Hunter's Sacrificial Knife"
+            "name": "Dague de chasse rituelle"
         },
         {
             "key": "SacrificialKnifeB",
-            "name": "Agent's Sacrificial Knife"
+            "name": "Dague rituelle de l'Agent"
         },
         {
             "key": "SacrificialKnifeC",
-            "name": "Inspector's Sacrificial Knife"
+            "name": "Grande dague de l'Inspecteur"
         },
         {
             "key": "HornA",
-            "name": "Heavy Horn"
+            "name": "Corne lourde"
         },
         {
             "key": "HornB",
-            "name": "Black Bronze Horn"
+            "name": "Corne en bronze noir"
         },
         {
             "key": "HornC",
-            "name": "Black Crystal Horn"
+            "name": "Corne en cristal noir"
         },
         {
             "key": "ChaosA",
-            "name": "Chaos Device"
+            "name": "Dispositif du chaos"
         },
         {
             "key": "ChaosB",
-            "name": "Chaos Circuit"
+            "name": "Circuit du chaos"
         },
         {
             "key": "ChaosC",
-            "name": "Chaos Core"
+            "name": "Noyau du chaos"
         },
         {
             "key": "LeyLineA",
-            "name": "Dead Ley Line Branch"
+            "name": "Branche morte des lignes"
         },
         {
             "key": "LeyLineB",
-            "name": "Dead Ley Line Leaves"
+            "name": "Feuilles mortes des lignes"
         },
         {
             "key": "LeyLineC",
-            "name": "Ley Line Sprout"
+            "name": "Pousse des lignes"
         },
         {
             "key": "MistGrassA",
-            "name": "Mist Grass Pollen"
+            "name": "Pollen d'herbe brumeuse"
         },
         {
             "key": "MistGrassB",
-            "name": "Mist Grass"
+            "name": "Herbes brumeuses"
         },
         {
             "key": "MistGrassC",
-            "name": "Mist Grass Wick"
+            "name": "Mèches d'herbe brumeuse"
         },
         {
             "key": "BoneShardA",
-            "name": "Fragile Bone Shard"
+            "name": "Fragment d'os fragile"
         },
         {
             "key": "BoneShardB",
-            "name": "Sturdy Bone Shard"
+            "name": "Fragment d'os solide"
         },
         {
             "key": "BoneShardC",
-            "name": "Fossilized Bone Shard"
-        },
-        {
-            "key": "DecarabianA",
-            "name": "Tile of Decarabian's Tower"
-        },
-        {
-            "key": "DecarabianB",
-            "name": "Debris of Decarabian's City"
-        },
-        {
-            "key": "DecarabianC",
-            "name": "Fragment of Decarabian's Epic"
-        },
-        {
-            "key": "DecarabianD",
-            "name": "Scattered Piece of Decarabian's Dream"
-        },
-        {
-            "key": "GuyunA",
-            "name": "Luminous Sands from Guyun"
-        },
-        {
-            "key": "GuyunB",
-            "name": "Lustrous Stone from Guyun"
-        },
-        {
-            "key": "GuyunC",
-            "name": "Relic from Guyun"
-        },
-        {
-            "key": "GuyunD",
-            "name": "Divine Body from Guyun"
-        },
-        {
-            "key": "ElixirA",
-            "name": "Mist Veiled Lead Elixir"
-        },
-        {
-            "key": "ElixirB",
-            "name": "Mist Veiled Mercury Elixir"
-        },
-        {
-            "key": "ElixirC",
-            "name": "Mist Veiled Gold Elixir"
-        },
-        {
-            "key": "ElixirD",
-            "name": "Mist Veiled Primo Elixir"
-        },
-        {
-            "key": "BorealWolfA",
-            "name": "Boreal Wolf's Milk Tooth"
-        },
-        {
-            "key": "BorealWolfB",
-            "name": "Boreal Wolf's Cracked Tooth"
-        },
-        {
-            "key": "BorealWolfC",
-            "name": "Boreal Wolf's Broken Fang"
-        },
-        {
-            "key": "BorealWolfD",
-            "name": "Boreal Wolf's Nostalgia"
-        },
-        {
-            "key": "AerosideriteA",
-            "name": "Grain of Aerosiderite"
-        },
-        {
-            "key": "AerosideriteB",
-            "name": "Piece of Aerosiderite"
-        },
-        {
-            "key": "AerosideriteC",
-            "name": "Bit of Aerosiderite"
-        },
-        {
-            "key": "AerosideriteD",
-            "name": "Chunk of Aerosiderite"
-        },
-        {
-            "key": "GladiatorA",
-            "name": "Fetters of the Dandelion Gladiator"
-        },
-        {
-            "key": "GladiatorB",
-            "name": "Chains of the Dandelion Gladiator"
-        },
-        {
-            "key": "GladiatorC",
-            "name": "Shackles of the Dandelion Gladiator"
-        },
-        {
-            "key": "GladiatorD",
-            "name": "Dream of the Dandelion Gladiator"
+            "name": "Fragment d'os fossilisé"
         },
         {
             "key": "MaskA",
-            "name": "Damaged Mask"
+            "name": "Masque endommagé"
         },
         {
             "key": "MaskB",
-            "name": "Stained Mask"
+            "name": "Masque sale"
         },
         {
             "key": "MaskC",
-            "name": "Ominous Mask"
+            "name": "Masque sinistre"
         },
         {
             "key": "StatuetteA",
@@ -5097,75 +5001,75 @@
         },
         {
             "key": "ScrollA",
-            "name": "Divining Scroll"
+            "name": "Parchemin divinatoire"
         },
         {
             "key": "ScrollB",
-            "name": "Sealed Scroll"
+            "name": "Parchemin sigilé"
         },
         {
             "key": "ScrollC",
-            "name": "Forbidden Curse Scroll"
+            "name": "Parchemin maudit"
         },
         {
             "key": "NectarA",
-            "name": "Whopperflower Nectar"
+            "name": "Nectar léger"
         },
         {
             "key": "NectarB",
-            "name": "Shimmering Nectar"
+            "name": "Nectar miroitant"
         },
         {
             "key": "NectarC",
-            "name": "Energy Nectar"
+            "name": "Nectar élémentaire"
         },
         {
             "key": "ArrowHeadA",
-            "name": "Firm Arrowhead"
+            "name": "Pointe de flèche robuste"
         },
         {
             "key": "ArrowHeadB",
-            "name": "Sharp Arrowhead"
+            "name": "Pointe de flèche aiguisée"
         },
         {
             "key": "ArrowHeadC",
-            "name": "Weathered Arrowhead"
+            "name": "Pointe de flèche usée"
         },
         {
             "key": "CircularInsigniaA",
-            "name": "Treasure Hoarder Insignia"
+            "name": "Insigne de Pilleur"
         },
         {
             "key": "CircularInsigniaB",
-            "name": "Silver Raven Insignia"
+            "name": "Insigne de corbeau en argent"
         },
         {
             "key": "CircularInsigniaC",
-            "name": "Golden Raven Insignia"
+            "name": "Insigne de corbeau en or"
         },
         {
             "key": "InsigniaA",
-            "name": "Recruit's Insignia"
+            "name": "Insigne de nouvelle recrue"
         },
         {
             "key": "InsigniaB",
-            "name": "Sergeant's Insignia"
+            "name": "Insigne de sergent"
         },
         {
             "key": "InsigniaC",
-            "name": "Lieutenant's Insignia"
+            "name": "Insigne d'officier"
         },
         {
             "key": "SlimeA",
-            "name": "Slime Condensate"
+            "name": "Bave de Blob"
         },
         {
             "key": "SlimeB",
-            "name": "Slime Secretions"
+            "name": "Mucus de Blob"
         },
         {
             "key": "SlimeC",
-            "name": "Slime Concentrate"
+            "name": "Essence de Blob"
         },
         {
             "key": "Mora",
@@ -5173,326 +5077,326 @@
         },
         {
             "key": "BasaltPillar",
-            "name": "Basalt Pillar"
+            "name": "Pilier de basalte"
         },
         {
             "key": "CleansingHeart",
-            "name": "Cleansing Heart"
+            "name": "Cœur d\"eau pure"
         },
         {
             "key": "EverflameSeed",
-            "name": "Everflame Seed"
+            "name": "Graine de feu"
         },
         {
             "key": "HoarfrostCore",
-            "name": "Hoarfrost Core"
+            "name": "Duramen de glace"
         },
         {
             "key": "HurricaneSeed",
-            "name": "Hurricane Seed"
+            "name": "Graine d'ouragan"
         },
         {
             "key": "LightningPrism",
-            "name": "Lightning Prism"
+            "name": "Prisme d'éclair"
         },
         {
             "key": "AgateA",
-            "name": "Agnidus Agate Sliver"
+            "name": "Éclat d'agate agnidus"
         },
         {
             "key": "AgateB",
-            "name": "Agnidus Agate Fragment"
+            "name": "Fragment d'agate agnidus"
         },
         {
             "key": "AgateC",
-            "name": "Agnidus Agate Chunk"
+            "name": "Morceau d'agate agnidus"
         },
         {
             "key": "AgateD",
-            "name": "Agnidus Agate Gemstone"
+            "name": "Pierre d'agate agnidus"
         },
         {
             "key": "DiamondA",
-            "name": "Brilliant Diamond Sliver"
+            "name": "Éclat de diamant scintillant"
         },
         {
             "key": "DiamondB",
-            "name": "Brilliant Diamond Fragment"
+            "name": "Fragment de diamant scintillant"
         },
         {
             "key": "DiamondC",
-            "name": "Brilliant Diamond Chunk"
+            "name": "Morceau de diamant scintillant"
         },
         {
             "key": "DiamondD",
-            "name": "Brilliant Diamond Gemstone"
+            "name": "Diamant scintillant"
         },
         {
             "key": "EmeraldA",
-            "name": "Nagadus Emerald Sliver"
+            "name": "Éclat d'émeraude nagadus"
         },
         {
             "key": "EmeraldB",
-            "name": "Nagadus Emerald Fragment"
+            "name": "Fragment d'émeraude nagadus"
         },
         {
             "key": "EmeraldC",
-            "name": "Nagadus Emerald Chunk"
+            "name": "Morceau d'émeraude nagadus"
         },
         {
             "key": "EmeraldD",
-            "name": "Nagadus Emerald Gemstone"
+            "name": "Pierre d'émeraude nagadus"
         },
         {
             "key": "TopazA",
-            "name": "Prithiva Topaz Sliver"
+            "name": "Éclat de topaze prithiva"
         },
         {
             "key": "TopazB",
-            "name": "Prithiva Topaz Fragment"
+            "name": "Fragment de topaze prithiva"
         },
         {
             "key": "TopazC",
-            "name": "Prithiva Topaz Chunk"
+            "name": "Morceau de topaze prithiva"
         },
         {
             "key": "TopazD",
-            "name": "Prithiva Topaz Gemstone"
+            "name": "Pierre de topaze prithiva"
         },
         {
             "key": "JadeA",
-            "name": "Shivada Jade Sliver"
+            "name": "Éclat de jade shivada"
         },
         {
             "key": "JadeB",
-            "name": "Shivada Jade Fragment"
+            "name": "Fragment de jade shivada"
         },
         {
             "key": "JadeC",
-            "name": "Shivada Jade Chunk"
+            "name": "Morceau de jade shivada"
         },
         {
             "key": "JadeD",
-            "name": "Shivada Jade Gemstone"
+            "name": "Pierre de jade shivada"
         },
         {
             "key": "AmethystA",
-            "name": "Vajrada Amethyst Sliver"
+            "name": "Éclat d'améthyste vajrada"
         },
         {
             "key": "AmethystB",
-            "name": "Vajrada Amethyst Fragment"
+            "name": "Fragment d'améthyste vajrada"
         },
         {
             "key": "AmethystC",
-            "name": "Vajrada Amethyst Chunk"
+            "name": "Morceau d'améthyste vajrada"
         },
         {
             "key": "AmethystD",
-            "name": "Vajrada Amethyst Gemstone"
+            "name": "Pierre d'améthyste vajrada"
         },
         {
             "key": "LazuriteA",
-            "name": "Varunada Lazurite Sliver"
+            "name": "Éclat de lazurite varunada"
         },
         {
             "key": "LazuriteB",
-            "name": "Varunada Lazurite Fragment"
+            "name": "Fragment de lazurite varunada"
         },
         {
             "key": "LazuriteC",
-            "name": "Varunada Lazurite Chunk"
+            "name": "Morceau de lazurite varunada"
         },
         {
             "key": "LazuriteD",
-            "name": "Varunada Lazurite Gemstone"
+            "name": "Pierre de lazurite varunada"
         },
         {
             "key": "TurquoiseA",
-            "name": "Vayuda Turquoise Sliver"
+            "name": "Éclat de turquoise vayuda"
         },
         {
             "key": "TurquoiseB",
-            "name": "Vayuda Turquoise Fragment"
+            "name": "Fragment de turquoise vayuda"
         },
         {
             "key": "TurquoiseC",
-            "name": "Vayuda Turquoise Chunk"
+            "name": "Morceau de turquoise vayuda"
         },
         {
             "key": "TurquoiseD",
-            "name": "Vayuda Turquoise Gemstone"
+            "name": "Pierre de turquoise vayuda"
         },
         {
             "key": "CallaLily",
-            "name": "Calla Lily"
+            "name": "Lys calla"
         },
         {
             "key": "Cecilia",
-            "name": "Cecilia"
+            "name": "Cécilia"
         },
         {
             "key": "CorLapis",
-            "name": "Cor Lapis"
+            "name": "Cœur de lapis"
         },
         {
             "key": "DandelionSeed",
-            "name": "Dandelion Seed"
+            "name": "Graine de pissenlit"
         },
         {
             "key": "GlazeLily",
-            "name": "Glaze Lily"
+            "name": "Lys verni"
         },
         {
             "key": "JueyunChili",
-            "name": "Jueyun Chili"
+            "name": "Piment de Jueyun"
         },
         {
             "key": "NoctilousJade",
-            "name": "Noctilucous Jade"
+            "name": "Jade noctiluque"
         },
         {
             "key": "PhilanemoMushroom",
-            "name": "Philanemo Mushroom"
+            "name": "Champignon anémophile"
         },
         {
             "key": "Qingxin",
-            "name": "Qingxin"
+            "name": "Fleur de Qingxin"
         },
         {
             "key": "SilkFlower",
-            "name": "Silk Flower"
+            "name": "Fleur de soie"
         },
         {
             "key": "SmallLampGrass",
-            "name": "Small Lamp Grass"
+            "name": "Herbe à lampe"
         },
         {
             "key": "Starconch",
-            "name": "Starconch"
+            "name": "conque d'étoile"
         },
         {
             "key": "Valberry",
-            "name": "Valberry"
+            "name": "Tombaie"
         },
         {
             "key": "Violetgrass",
-            "name": "Violetgrass"
+            "name": "Muguet bleu"
         },
         {
             "key": "WindwheelAster",
-            "name": "Windwheel Aster"
+            "name": "Chrysanthème à aubes"
         },
         {
             "key": "Wolfhook",
-            "name": "Wolfhook"
+            "name": "Baie à crochet"
         }
     ],
     "debuffs": [
         {
             "key": "Engulfing Storm",
-            "name": "Engulfing Storm",
-            "effect": "Continuously drains Energy Recharge."
+            "name": "Tempête dévastatrice",
+            "effect": "Draine l'énergie élémentaire."
         },
         {
             "key": "Slowing Water",
-            "name": "Slowing Water",
-            "effect": "Increases skill CD durations."
+            "name": "Eau ralentissante",
+            "effect": "Augmente de TdR des compétences."
         },
         {
             "key": "Smoldering Flames",
-            "name": "Smoldering Flames",
-            "effect": "Continuously inflicts damage over time."
+            "name": "Flammes dévoreuses",
+            "effect": "Inflige des DGT Pyro continus."
         },
         {
             "key": "Condensed Ice",
-            "name": "Condensed Ice",
-            "effect": "Increases stamina consumption."
+            "name": "Glace condensée",
+            "effect": "Augmente la consommation d'endurance."
         }
     ],
     "reactions": [
         {
             "key": "Burning",
-            "name": "Burning",
-            "effect": "Deals Pyro DMG over time."
+            "name": "Brûlure",
+            "effect": "Inflige des DGT Pyro continus."
         },
         {
             "key": "Crystalize",
-            "name": "Crystalize",
-            "effect": "Creates a crystal that will provide a shield when picked up."
+            "name": "Cristallisation",
+            "effect": "Génère des fragments élémentaires et vous protège à l'aide de différents types de boucliers élémentaires."
         },
         {
             "key": "Electro-Charged",
-            "name": "Electro-Charged",
-            "effect": "Deals Electro DMG over time."
+            "name": "Électrocution",
+            "effect": "Inflige des DGT Électro continus et rebondit sur les ennemis proches affectés par l'élément Hydro."
         },
         {
             "key": "Frozen",
-            "name": "Frozen",
-            "effect": "Freezes the target."
+            "name": "Gel",
+            "effect": "Gèle la cible."
         },
         {
             "key": "Melt",
-            "name": "Melt",
-            "effect": "Deals extra damage."
+            "name": "Fonte",
+            "effect": "Inflige des dégâts supplémentaire."
         },
         {
             "key": "Overloaded",
-            "name": "Overloaded",
-            "effect": "Deals AoE Pyro DMG."
+            "name": "Surcharge",
+            "effect": "Inflige des dégâts Pyro de zone."
         },
         {
             "key": "Superconduct",
-            "name": "Superconduct",
-            "effect": "Deals AoE Cryo DMG and reduces the target's Physical RES by 50%."
+            "name": "Supraconduction",
+            "effect": "Inflige des dégâts Cryo de zone et réduit la RÉS physique de 50%."
         },
         {
             "key": "Swirl",
-            "name": "Swirl",
-            "effect": "Deals extra elemental damage and spreads the effect."
+            "name": "Dispersion",
+            "effect": "Inflige des DGT de l'élément correspondant."
         },
         {
             "key": "Vaporize",
-            "name": "Vaporize",
-            "effect": "Deals extra damage."
+            "name": "Évaporation",
+            "effect": "Inflige des dégâts supplémentaire."
         }
     ],
     "resonance": [
         {
             "key": "Enduring Rock",
-            "name": "Enduring Rock",
-            "effect": "Increases resistance to interruption. When protected by a shield, increases Attack DMG by 15%."
+            "name": "Roc inamovible",
+            "effect": "Vos actions sont plus difficiles à interrompre. Le bouclier protecteur augmente les DGT infligés de 15%."
         },
         {
             "key": "Fervent Flames",
-            "name": "Fervent Flames",
-            "effect": "Affected by Cryo for 40% less time. Increases ATK by 25%."
+            "name": "Flammes de la ferveur",
+            "effect": "Réduit la durée des effets Cryo de 40% et augmente l'ATQ de 25%."
         },
         {
             "key": "Soothing Waters",
-            "name": "Soothing Waters",
-            "effect": "Affected by Pyro for 40% less time. Increases incoming healing by 30%."
+            "name": "Eau salvatrice",
+            "effect": "Réduit la durée des effets Pyro de 40% et augmente les soins reçus de 30%."
         },
         {
             "key": "Impetuous Winds",
-            "name": "Impetuous Winds",
-            "effect": "Decreases Stamina Consumption by 15%. Increases Movement SPD by 10%. Shortens Skill CD by 5%."
+            "name": "Vents de la célérité",
+            "effect": "Réduit le coût d'endurance de 15%, augmente la VIT de déplacement de 10% et réduit les TdR des compétences élémentaires de 5%."
         },
         {
             "key": "High Voltage",
-            "name": "High Voltage",
-            "effect": "Affected by Hydro for 40% less time. Superconduct, Overloaded, and Electro-Charged have a 100% chance to generate an Electro Elemental Particle (CD: 5s)."
+            "name": "Tonnerre puissant",
+            "effect": "Réduit la durée des effets Hydro de 40%. 100% de chance de récupérer 1 particule élémentaire lorsque Supraconduction, Surcharge et Décharge électrique sont déclenchées. TdR : 5s."
         },
         {
             "key": "Shattering Ice",
-            "name": "Shattering Ice",
-            "effect": "Affected by Electro for 40% less time. Increases CRIT Rate against enemies that are Frozen or affected by Cryo by 15%."
+            "name": "Gel Pulvarisateur",
+            "effect": "Réduit la durée des effets Électro de 40%. Augmente le taux Crit de 15% lorsque vous attaquez des ennemis gelés ou affectés par l'élément Cryo."
         },
         {
             "key": "Protective Canopy",
-            "name": "Protective Canopy",
-            "effect": "All Elemental RES by 15%. Physical RES + 15%",
-            "description": "Any 4 Unique Elements"
+            "name": "Lianes protectrices",
+            "effect": "Augmente toutes les RÉS élémentaires et RÉS physique de 15%.",
+            "description": "4 éléments différents"
         }
     ]
 }
