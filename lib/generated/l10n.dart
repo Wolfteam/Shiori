@@ -1824,6 +1824,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Today's Birthdays`
+  String get todayBirthdays {
+    return Intl.message(
+      'Today\'s Birthdays',
+      name: 'todayBirthdays',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Happy Birthday!`
+  String get happyBirthday {
+    return Intl.message(
+      'Happy Birthday!',
+      name: 'happyBirthday',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

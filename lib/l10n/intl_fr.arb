@@ -177,5 +177,7 @@
     "localSpecialities": "Local Specialities",
     "boss": "Boss",
     "day": "Day",
-    "currency": "Currency"
+    "currency": "Currency",
+    "todayBirthdays": "Today's Birthdays",
+    "happyBirthday": "Happy Birthday!"
 }
