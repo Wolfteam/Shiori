@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
+import 'package:genshindb/presentation/home/widgets/sliver_tierlist_card.dart';
 import 'package:genshindb/presentation/today_materials/materials_page.dart';
 
 import 'widgets/sliver_calculators_card.dart';
@@ -43,6 +44,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
         SliverWishSimulatorCard(),
         SliverMainTitle(title: s.settings),
         SliverSettingsCard(),
+        SliverTierList(),
       ],
     );
   }

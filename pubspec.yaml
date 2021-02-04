@@ -45,6 +45,7 @@ dependencies:
   path: ^1.7.0
   path_provider: ^1.6.27
   rate_my_app: ^0.7.2
+  screenshot: ^0.2.0
   shared_preferences: ^0.5.12+4
   smooth_star_rating: 1.1.1
   sprintf: ^5.0.0
