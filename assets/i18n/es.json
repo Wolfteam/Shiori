@@ -3128,103 +3128,112 @@
         {
             "key": "Xiao",
             "name": "Xiao",
-            "description": "A yaksha adeptus that defends Liyue. Also heralded as the \"Conqueror of Demons\" or \"Vigilant Yaksha.\"",
+            "description": "Un Yaksha o Adeptus que protege Liyue. También llamado el \"Gran Cazador de Demonios\" o \"Guardian Yaksha\".",
             "skills": [
                 {
                     "key": "s1",
-                    "title": "Whirlwind Thrust",
-                    "description": null,
+                    "title": "Impulso de torbellino",
                     "abilities": [
                         {
                             "key": "a1",
-                            "description": "Perform up to 6 rapid strikes.",
+                            "description": "Ejecuta hasta 6 ataques rápidos con lanza.",
                             "descriptions": []
                         },
                         {
                             "key": "a2",
-                            "description": "Consumes a certain amount of Stamina to perform an upward thrust.",
+                            "description": "Consume una cierta cantidad de Aguante para atacar alzando su lanza.",
                             "descriptions": []
                         },
                         {
                             "key": "a3",
-                            "description": " Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+                            "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.\nXiao no recibirá daño al caer con un Ataque Descendente.",
                             "descriptions": []
                         }
                     ]
                 },
                 {
                     "key": "s2",
-                    "title": "Lemniscatic Wind Cycling",
-                    "description": "He lunges forward, dealing Anemo DMG to enemies along the path. Can be used in mid-air. Has 2 charges to begin with.",
+                    "title": "Ciclón de viento lemniscático",
+                    "description": "Xiao se lanza hacia adelante e inflinge Daño Anemo a todos los enemigos que se crucen en su camino.\nPuede activarse en el aire y empieza con un total de 2 cargas.",
                     "abilities": []
                 },
                 {
                     "key": "s3",
-                    "title": "Bane of All Evil",
-                    "description": "Takes on the form of the yaksha that terrified both demons and archons alike millennia ago. For its duration, increases Xiao’s attack range and DMG, while converting damage type to Anemo and enhancing Xiao’s jumping ability. Maintaining this form continuously drains Xiao’s HP.",
-                    "abilities": []
+                    "title": "Azote de todos los males",
+                    "description": "Xiao se pone la máscara de Yaksha que aterrorizó tanto a los demonios como a los arcontes hace miles de años",
+                    "abilities": [
+                        {
+                            "description": "Máscara de Yaksha",
+                            "descriptions": [
+                                "Mejora la capacidad de salto de Xiao.",
+                                "Mientras dura la habilidad, aumenta el alcance y el daño de los ataques de Xiao.",
+                                "Convierte su daño de ataque en Daño Anemo. Este cambio elemental no puede sustituirse imbuyéndose de otro elemento. Estar en esta forma consume la Vida de Xiao de manera continua.",
+                                "Los efectos de esta habilidad terminan cuando Xiao deja el campo."
+                            ]
+                        }
+                    ]
                 }
             ],
             "passives": [
                 {
                     "key": "p1",
-                    "title": "Transcension - Gravity Defier",
-                    "description": "Decreases all party member’s falling DMG by 30%. The greatest effect out of all Talents of the same type prevails.",
+                    "title": "Trascendencia: Desafío a la gravedad",
+                    "description": "Disminuye en un 20% el Coste de Aguante al escalar de todos los miembros de tu equipo.\nNo se puede acumular con otros talentos pasivos que tengan los mismos efectos.",
                     "descriptions": []
                 },
                 {
                     "key": "p2",
-                    "title": "Evil Conqueror - Tamer of Demons",
-                    "description": "Starting Bane of All Evil increases Xiao’s DMG by 5%. After this, Xiao’s DMG continues to increase by 5% every 3s until the skill ends. Max 25% increase.",
+                    "title": "Conquista del mal: Domademonios",
+                    "description": "Al estar bajo los efectos de Azote de todos los males, el daño infligido por Xiao se incrementa en un 5%. Después, su daño continúa aumentando en un 5% cada 3 s hasta el fin de la habilidad.\nSolo se puede alcanzar un 25% de bono de daño máximo.",
                     "descriptions": []
                 },
                 {
                     "key": "p3",
-                    "title": "Dissolution Eon - Heaven Fall",
-                    "description": "When Lemniscatic Wind Cycling is used, increases all subsequent Lemniscatic Wind Cycling’s DMG by 10% for 6s. Max 3 stacks. Duration refreshes with new stacks.",
+                    "title": "Desintegración: Caída celestial",
+                    "description": "Usar Ciclón de viento lemniscático aumenta en un 15% el daño infligido por los siguientes Ciclones de viento lemniscático durante 7 s.\nEste efecto puede acumularse un máximo de 3 veces y, cada vez que se obtenga una nueva carga, la duración de este efecto se reiniciará.",
                     "descriptions": []
                 }
             ],
             "constellations": [
                 {
                     "key": "c1",
-                    "title": "Dissolution Eon - Destroyer of Worlds",
-                    "description": "Increases Lemniscatic Wind Cycling’s charges by 1.",
+                    "title": "Desintegración: Destructor de mundos",
+                    "description": "Aumenta las cargas de Ciclón de viento lemniscático en 1.",
                     "secondDescription": null,
                     "descriptions": []
                 },
                 {
                     "key": "c2",
-                    "title": "Annihilation Eon - Blossom of Kaleidos",
-                    "description": "When in party but not the currently active character, Xiao’s Energy Recharge is increased by 25%.",
+                    "title": "Aniquilación: Flor de Kaleidos",
+                    "description": "Cuando Xiao está en tu equipo pero no en combate, su Recarga de Energía aumenta en un 25%.",
                     "secondDescription": null,
                     "descriptions": []
                 },
                 {
                     "key": "c3",
-                    "title": "Evil Conqueror - Wrath Deity",
-                    "description": "Increases the Level of Lemniscatic Wind Cycling by 3. Maximum upgrade level is 15.",
+                    "title": "Conquista del mal: Deidad de la ira",
+                    "description": "Aumenta el nivel de habilidad de Ciclón de viento lemniscático +3. Puede ser aumentado hasta Niv. 15.",
                     "secondDescription": null,
                     "descriptions": []
                 },
                 {
                     "key": "c4",
-                    "title": "Transcension - Extinction of Suffering",
-                    "description": "When Xiao’s HP falls below 50%, gains a 100% DEF Bonus.",
+                    "title": "Trascendencia: Fin del sufrimiento",
+                    "description": "Cuando la Vida de Xiao cae por debajo del 50%, obtiene un 100% de Bono de DEF.",
                     "secondDescription": null,
                     "descriptions": []
                 },
                 {
                     "key": "c5",
-                    "title": "Evolution Eon - Origin of Ignorance",
-                    "description": "Increase the Level of Bane of All Evil by 3. Maximum upgrade level is 15.",
+                    "title": "Evolución: Origen de la ignorancia",
+                    "description": "Aumenta el nivel de habilidad de Azote de todos los males +3. Puede ser aumentado hasta Niv. 15.",
                     "secondDescription": null,
                     "descriptions": []
                 },
                 {
                     "key": "c6",
-                    "title": "Evil Conqueror - Vigilant Yaksha",
-                    "description": "During Bane of All Evil, hitting 2 or more enemies with a Charged Attack grants Lemniscatic Wind Cycling 1 additional charge and reduces Lemniscatic Wind Cycling’s CD by 1s.",
+                    "title": "Conquista del mal: Guardián Yaksha",
+                    "description": "Mientras Xiao está bajo los efectos de Azote de todos los males, golpear a 2 o más enemigos con Ataque Descendente otorga a Ciclón de viento lemniscático 1 carga adicional y elimina su TdE durante 1 s.",
                     "secondDescription": null,
                     "descriptions": []
                 }
@@ -4239,6 +4248,18 @@
             "name": "Púa Celestial",
             "description": "Una lanza que simboliza la resolución de Dvalin. La punta de esta arma señala hacia el cielo, pidiendo la fuerza del cielo y el viento.",
             "refinement": "Aumenta la probabilidad crítica un {{0}}% y aumenta la velocidad del ataque normal un 12%. Adicionalmente, los golpes del ataque normal y cargado tienen un 50% de probabilidad de activar una hoja de vacío que inflige {{1}}% del ataque como daño en un área pequeña. Este efecto no puede ocurrir más de una vez cada 2s."
+        },
+        {
+            "key": "Primordial Jade Cutter",
+            "name": "Cortador de Jade Primordial",
+            "description": "Una espada para ceremonias hecha con esencia de jade puro muy finamente tallado. El aire que se produce al blandirla emite un sonido parecido al de un suspiro.",
+            "refinement": "La Vida aumenta en {{0}}%. Adicionalmente provee un Bono de ATQ basado en el {{1}}% de la Vida Max. de su portador."
+        },
+        {
+            "key": "Staff of Homa",
+            "name": "Staff of Homa",
+            "description": "A \"firewood staff\" that was once used in ancient and long-lost rituals.",
+            "refinement": "HP increased by {{0}}%. Additionally, provides an ATK Bonus based on {{1}}% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional {{2}}% of Max HP."
         }
     ],
     "artifacts": [

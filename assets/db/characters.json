@@ -5331,7 +5331,7 @@
       "fullImage": "Ganyu.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "liyue",
       "role": "supportDps",
@@ -15387,11 +15387,11 @@
       "image": "Xiao.png",
       "fullImage": "Xiao.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": false,
       "region": "liyue",
-      "role": "na",
+      "role": "mainDps",
       "birthday": "04/17",
       "ascensionMaterials": [
         {
@@ -15783,7 +15783,50 @@
           ]
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "primordial_jade_winged_spear.png",
+            "skyward_spine.png",
+            "lithic_spear.png",
+            "blackcliff_pole.png",
+            "crescent_pike.png"
+          ],
+          "artifacts": [
+            {
+              "multiples": [
+                {
+                  "quantity": 2,
+                  "image": "viridescent_venerer_4.png"
+                },
+                {
+                  "quantity": 2,
+                  "image": "gladiators_finale_4.png"
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "anemoDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
+            {
+              "one": "viridescent_venerer_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "anemoDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            }
+          ]
+        }
+      ],
       "skills": [
         {
           "key": "s1",
@@ -17347,9 +17390,9 @@
         {
           "isSupport": false,
           "weaponImages": [
-            "vortex_vanquisher.png",
-            "skyward_spine.png",
             "primordial_jade_winged_spear.png",
+            "vortex_vanquisher.png",
+            "lithic_spear.png",
             "crescent_pike.png"
           ],
           "artifacts": [
@@ -17360,7 +17403,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "physDmgBonusPercentage",
+                "geoDmgBonusPercentage",
                 "critDmgPercentage"
               ]
             },
@@ -17371,7 +17414,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "physDmgBonusPercentage",
+                "geoDmgBonusPercentage",
                 "critDmgPercentage"
               ]
             }
@@ -17380,8 +17423,9 @@
         {
           "isSupport": true,
           "weaponImages": [
-            "vortex_vanquisher.png",
+            "staff_of_homa.png",
             "skyward_spine.png",
+            "lithic_spear.png",
             "favonius_lance.png",
             "prototype_grudge.png"
           ],
