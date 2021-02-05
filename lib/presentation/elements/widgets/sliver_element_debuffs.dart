@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
+import 'package:genshindb/presentation/shared/styles.dart';
 
 import 'element_debuff_card.dart';
 
@@ -16,11 +17,14 @@ class SliverElementDebuffs extends StatelessWidget {
           loaded: (debuffs, _, __) => SliverGrid.count(
             crossAxisCount: isPortrait ? 2 : 3,
             children: debuffs
-                .map((item) => ElementDebuffCard(
-                      key: Key(item.name),
-                      effect: item.effect,
-                      image: item.image,
-                      name: item.name,
+                .map((item) => Padding(
+                      padding: Styles.edgeInsetAll5,
+                      child: ElementDebuffCard(
+                        key: Key(item.name),
+                        effect: item.effect,
+                        image: item.image,
+                        name: item.name,
+                      ),
                     ))
                 .toList(),
           ),

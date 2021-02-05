@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
+import 'package:genshindb/presentation/shared/styles.dart';
 
 import 'element_reaction_card.dart';
 
@@ -17,21 +18,27 @@ class SliverElementResonances extends StatelessWidget {
               (ctx, index) {
                 final e = resonances[index];
                 if (e.principal.isNotEmpty && e.secondary.isNotEmpty) {
-                  return ElementReactionCard.withImages(
-                    key: Key('resonance_$index'),
-                    name: e.name,
-                    effect: e.effect,
-                    principal: e.principal,
-                    secondary: e.secondary,
-                    showPlusIcon: false,
+                  return Padding(
+                    padding: Styles.edgeInsetAll5,
+                    child: ElementReactionCard.withImages(
+                      key: Key('resonance_$index'),
+                      name: e.name,
+                      effect: e.effect,
+                      principal: e.principal,
+                      secondary: e.secondary,
+                      showPlusIcon: false,
+                    ),
                   );
                 }
 
-                return ElementReactionCard.withoutImage(
-                  name: e.name,
-                  effect: e.effect,
-                  showPlusIcon: false,
-                  description: e.description,
+                return Padding(
+                  padding: Styles.edgeInsetAll5,
+                  child: ElementReactionCard.withoutImage(
+                    name: e.name,
+                    effect: e.effect,
+                    showPlusIcon: false,
+                    description: e.description,
+                  ),
                 );
               },
               childCount: resonances.length,
