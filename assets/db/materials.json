@@ -1187,6 +1187,16 @@
       "level": 0,
       "type": "elemental",
       "days": []
+    },
+    {
+      "key": "JuvenileJade",
+      "image": "juvenile_jade.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "elemental",
+      "days": []
     }
   ],
   "jewels": [

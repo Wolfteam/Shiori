@@ -3128,12 +3128,11 @@
         {
             "key": "Xiao",
             "name": "Xiao",
-            "description": "A yaksha adeptus that defends Liyue. Also heralded as the \"Conqueror of Demons\" or \"Vigilant Yaksha.\"",
+            "description": "A yaksha adeptus who defends Liyue. Also heralded as the \"Conqueror of Demons\" or \"Vigilant Yaksha.\"",
             "skills": [
                 {
                     "key": "s1",
                     "title": "Whirlwind Thrust",
-                    "description": null,
                     "abilities": [
                         {
                             "key": "a1",
@@ -3147,7 +3146,7 @@
                         },
                         {
                             "key": "a3",
-                            "description": " Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+                            "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.\nXiao does not take DMG from performing Plunging Attacks.",
                             "descriptions": []
                         }
                     ]
@@ -3155,76 +3154,86 @@
                 {
                     "key": "s2",
                     "title": "Lemniscatic Wind Cycling",
-                    "description": "He lunges forward, dealing Anemo DMG to enemies along the path. Can be used in mid-air. Has 2 charges to begin with.",
+                    "description": "Xiao lunges forward, dealing Anemo DMG to opponents in his path.\nCan be used in mid-air.\nStarts with 2 charges.",
                     "abilities": []
                 },
                 {
                     "key": "s3",
                     "title": "Bane of All Evil",
-                    "description": "Takes on the form of the yaksha that terrified both demons and archons alike millennia ago. For its duration, increases Xiao’s attack range and DMG, while converting damage type to Anemo and enhancing Xiao’s jumping ability. Maintaining this form continuously drains Xiao’s HP.",
-                    "abilities": []
+                    "description": "Xiao dons the Yaksha Mask that set gods and demons trembling millennia ago.",
+                    "abilities": [
+                        {
+                            "description": "Yaksha's Mask",
+                            "descriptions": [
+                                "Greatly increases Xiao's jumping ability.",
+                                "Increases his attack AoE and attack DMG.",
+                                "Converts attack DMG into Anemo DMG, which cannot be overridden by any other elemental infusion. In this state, Xiao will continuously lose HP.",
+                                "The effects of this skill end when Xiao leaves the field."
+                            ]
+                        }
+                    ]
                 }
             ],
             "passives": [
                 {
                     "key": "p1",
-                    "title": "Transcension - Gravity Defier",
-                    "description": "Decreases all party member’s falling DMG by 30%. The greatest effect out of all Talents of the same type prevails.",
+                    "title": "Transcension: Gravity Defier",
+                    "description": "Decreases climbing Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
                     "descriptions": []
                 },
                 {
                     "key": "p2",
-                    "title": "Evil Conqueror - Tamer of Demons",
-                    "description": "Starting Bane of All Evil increases Xiao’s DMG by 5%. After this, Xiao’s DMG continues to increase by 5% every 3s until the skill ends. Max 25% increase.",
+                    "title": "Conqueror of Evil: Tamer of Demons",
+                    "description": "While under the effects of Bane of All Evil, all DMG dealt by Xiao increases by 5%. DMG increases by a further 5% for every 3s the ability persists.\nThe maximum DMG Bonus is 25%.",
                     "descriptions": []
                 },
                 {
                     "key": "p3",
-                    "title": "Dissolution Eon - Heaven Fall",
-                    "description": "When Lemniscatic Wind Cycling is used, increases all subsequent Lemniscatic Wind Cycling’s DMG by 10% for 6s. Max 3 stacks. Duration refreshes with new stacks.",
+                    "title": "Dissolution Eon: Heaven Fall",
+                    "description": "Using Lemniscatic Wind Cycling increases the DMG of subsequent uses of Lemniscatic Wind Cycling by 15%.\n This effect lasts for 7s, and has a maximum of 3 stacks. Gaining a new stack refreshes the effect's duration.",
                     "descriptions": []
                 }
             ],
             "constellations": [
                 {
                     "key": "c1",
-                    "title": "Dissolution Eon - Destroyer of Worlds",
+                    "title": "Dissolution Eon: Destroyer of Worlds",
                     "description": "Increases Lemniscatic Wind Cycling’s charges by 1.",
                     "secondDescription": null,
                     "descriptions": []
                 },
                 {
                     "key": "c2",
-                    "title": "Annihilation Eon - Blossom of Kaleidos",
-                    "description": "When in party but not the currently active character, Xiao’s Energy Recharge is increased by 25%.",
+                    "title": "Annihilation Eon: Blossom of Kaleidos",
+                    "description": "When in the party and not on the field, Xiao's Energy Recharge is increased by 25%.",
                     "secondDescription": null,
                     "descriptions": []
                 },
                 {
                     "key": "c3",
-                    "title": "Evil Conqueror - Wrath Deity",
+                    "title": "Conqueror of Evil: Wrath Deity",
                     "description": "Increases the Level of Lemniscatic Wind Cycling by 3. Maximum upgrade level is 15.",
                     "secondDescription": null,
                     "descriptions": []
                 },
                 {
                     "key": "c4",
-                    "title": "Transcension - Extinction of Suffering",
-                    "description": "When Xiao’s HP falls below 50%, gains a 100% DEF Bonus.",
+                    "title": "Transcension: Extinction of Suffering",
+                    "description": "When Xiao's HP falls below 50%, he gains a 100% DEF Bonus.",
                     "secondDescription": null,
                     "descriptions": []
                 },
                 {
                     "key": "c5",
-                    "title": "Evolution Eon - Origin of Ignorance",
+                    "title": "Evolution Eon: Origin of Ignorance",
                     "description": "Increase the Level of Bane of All Evil by 3. Maximum upgrade level is 15.",
                     "secondDescription": null,
                     "descriptions": []
                 },
                 {
                     "key": "c6",
-                    "title": "Evil Conqueror - Vigilant Yaksha",
-                    "description": "During Bane of All Evil, hitting 2 or more enemies with a Charged Attack grants Lemniscatic Wind Cycling 1 additional charge and reduces Lemniscatic Wind Cycling’s CD by 1s.",
+                    "title": "Conqueror of Evil: Guardian Yaksha",
+                    "description": "Bane of All Evil, hitting at least 2 opponents with Xiao's Plunging Attack will immediately grant him 1 charge of Lemniscatic Wind Cycling, and for the next 1s, he may use Lemniscatic Wind Cycling while ignoring its CD.",
                     "secondDescription": null,
                     "descriptions": []
                 }
@@ -4239,6 +4248,18 @@
             "name": "Skyward Spine",
             "description": "A polearm that symbolizes Dvalin’s firm resolve. The upright shaft of this weapon points towards the heavens, clad in the might of sky and wind.",
             "refinement": "Increases CRIT Rate by {{0}}% and increases Normal ATK SPD by 12%. Additionally, Normal and Charged Attacks hits on enemies have a 50% chance to trigger a vacuum blade that deals {{1}}% of ATK as DMG in a small AoE. This effect can occur no more than once every 2s."
+        },
+        {
+            "key": "Primordial Jade Cutter",
+            "name": "Primordial Jade Cutter",
+            "description": "A ceremonial sword masterfully carved from pure jade. There almost seems to be an audible sigh in the wind as it is swung.",
+            "refinement": "HP increased by {{0}}%. Additionally, provides an ATK Bonus based on {{1}}% of the wielder's Max HP."
+        },
+        {
+            "key": "Staff of Homa",
+            "name": "Staff of Homa",
+            "description": "A \"firewood staff\" that was once used in ancient and long-lost rituals.",
+            "refinement": "HP increased by {{0}}%. Additionally, provides an ATK Bonus based on {{1}}% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional {{2}}% of Max HP."
         }
     ],
     "artifacts": [
