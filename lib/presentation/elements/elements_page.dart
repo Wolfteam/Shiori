@@ -14,53 +14,50 @@ class ElementsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(s.elements)),
       body: SafeArea(
-        child: Container(
-          padding: Styles.edgeInsetAll10,
-          child: CustomScrollView(
-            slivers: [
-              SliverPadding(
-                padding: Styles.edgeInsetAll5,
-                sliver: SliverList(
-                  delegate: SliverChildListDelegate.fixed(
-                    [
-                      Text(
-                        s.elementalDebuffs,
-                        style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      Text(s.elementalDebuffsExplained)
-                    ],
+        child: CustomScrollView(
+          slivers: [
+            SliverPadding(
+              padding: Styles.edgeInsetAll10,
+              sliver: SliverList(
+                delegate: SliverChildListDelegate.fixed(
+                  [
+                    Text(
+                      s.elementalDebuffs,
+                      style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    Text(s.elementalDebuffsExplained)
+                  ],
+                ),
+              ),
+            ),
+            SliverElementDebuffs(),
+            SliverPadding(
+              padding: Styles.edgeInsetAll10,
+              sliver: SliverList(
+                delegate: SliverChildListDelegate.fixed([
+                  Text(
+                    s.elementalReactions,
+                    style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
                   ),
-                ),
+                  Text(s.elementalReactionsExplained),
+                ]),
               ),
-              SliverElementDebuffs(),
-              SliverPadding(
-                padding: Styles.edgeInsetAll5,
-                sliver: SliverList(
-                  delegate: SliverChildListDelegate.fixed([
-                    Text(
-                      s.elementalReactions,
-                      style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                    Text(s.elementalReactionsExplained),
-                  ]),
-                ),
+            ),
+            SliverElementReactions(),
+            SliverPadding(
+              padding: Styles.edgeInsetAll10,
+              sliver: SliverList(
+                delegate: SliverChildListDelegate.fixed([
+                  Text(
+                    s.elementalResonances,
+                    style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                  Text(s.elementalResonancesExplained),
+                ]),
               ),
-              SliverElementReactions(),
-              SliverPadding(
-                padding: Styles.edgeInsetAll5,
-                sliver: SliverList(
-                  delegate: SliverChildListDelegate.fixed([
-                    Text(
-                      s.elementalResonances,
-                      style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                    Text(s.elementalResonancesExplained),
-                  ]),
-                ),
-              ),
-              SliverElementResonances(),
-            ],
-          ),
+            ),
+            SliverElementResonances(),
+          ],
         ),
       ),
     );
