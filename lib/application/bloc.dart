@@ -10,6 +10,7 @@ export 'main/main_bloc.dart';
 export 'main_tab/main_tab_bloc.dart';
 export 'materials/materials_bloc.dart';
 export 'settings/settings_bloc.dart';
+export 'tierlist/tier_list_bloc.dart';
 export 'url_page/url_page_bloc.dart';
 export 'weapon/weapon_bloc.dart';
 export 'weapons/weapons_bloc.dart';

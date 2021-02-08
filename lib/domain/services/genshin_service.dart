@@ -14,6 +14,7 @@ abstract class GenshinService {
   CharacterFileModel getCharacter(String key);
   CharacterFileModel getCharacterByImg(String img);
   List<CharacterFileModel> getCharactersForBirthday(DateTime date);
+  List<TierListRowModel> getDefaultCharacterTierList(List<int> colors);
 
   List<WeaponCardModel> getWeaponsForCard();
   WeaponCardModel getWeaponForCardByImg(String image);
