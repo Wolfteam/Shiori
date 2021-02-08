@@ -180,5 +180,21 @@
     "currency": "Currency",
     "birthday": "Birthday",
     "todayBirthdays": "Today's Birthdays",
-    "happyBirthday": "Happy Birthday!"
+    "happyBirthday": "Happy Birthday!",
+    "tierListBuilder": "Tier List Builder",
+    "buildYourOwnTierList": "Build your own character tier list",
+    "imgSavedSuccessfully": "Image was successfully saved to the gallery",
+    "acceptToSaveImg": "To save the image you need to accept the requested permission",
+    "save": "Save",
+    "clearAll": "Clear all",
+    "restore": "Restore",
+    "unknownError": "Unknown error occurred",
+    "addRowAbove": "Add row above",
+    "addRowBelow": "Add row below",
+    "deleteRow": "Delete row",
+    "clearRow": "Clear row",
+    "changeColor": "Change color",
+    "rowSettings": "Row settings",
+    "rename": "Rename",
+    "confirm": "Confirm"
 }
