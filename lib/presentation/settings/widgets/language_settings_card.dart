@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
 
 import 'settings_card.dart';
 
@@ -73,16 +73,8 @@ class LanguageSettingsCard extends StatelessWidget {
   }
 
   void _languageChanged(AppLanguageType newValue, BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
-    Fluttertoast.showToast(
-      msg: s.restartMayBeNeeded,
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.BOTTOM,
-      backgroundColor: theme.accentColor,
-      textColor: Colors.white,
-      fontSize: 16.0,
-    );
+    ToastUtils.showInfoToast(s.restartMayBeNeeded);
     context.read<SettingsBloc>().add(SettingsEvent.languageChanged(newValue: newValue));
   }
 }

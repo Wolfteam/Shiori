@@ -12,6 +12,8 @@ class CommonBottomSheet extends StatelessWidget {
   final Function onOk;
   final Function onCancel;
   final double iconSize;
+  final bool showOkButton;
+  final bool showCancelButton;
 
   const CommonBottomSheet({
     Key key,
@@ -21,6 +23,8 @@ class CommonBottomSheet extends StatelessWidget {
     this.onCancel,
     @required this.child,
     this.iconSize = 25,
+    this.showOkButton = true,
+    this.showCancelButton = true,
   }) : super(key: key);
 
   @override
@@ -38,20 +42,23 @@ class CommonBottomSheet extends StatelessWidget {
             ModalSheetSeparator(),
             BottomSheetTitle(icon: titleIcon, title: title, iconSize: iconSize),
             child,
-            ButtonBar(
-              buttonPadding: const EdgeInsets.symmetric(horizontal: 10),
-              children: <Widget>[
-                OutlineButton(
-                  onPressed: () => onCancel != null ? onCancel() : Navigator.pop(context),
-                  child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
-                ),
-                RaisedButton(
-                  color: theme.primaryColor,
-                  onPressed: () => onOk(),
-                  child: Text(s.ok),
-                )
-              ],
-            )
+            if (showOkButton || showCancelButton)
+              ButtonBar(
+                buttonPadding: const EdgeInsets.symmetric(horizontal: 10),
+                children: <Widget>[
+                  if (showCancelButton)
+                    OutlineButton(
+                      onPressed: () => onCancel != null ? onCancel() : Navigator.pop(context),
+                      child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+                    ),
+                  if (showOkButton)
+                    RaisedButton(
+                      color: theme.primaryColor,
+                      onPressed: () => onOk(),
+                      child: Text(s.ok),
+                    )
+                ],
+              )
           ],
         ),
       ),

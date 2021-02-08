@@ -23,4 +23,6 @@ abstract class TelemetryService {
   Future<void> trackUrlOpened(bool loadMap, bool loadWishSimulator, bool networkAvailable);
 
   Future<void> trackCalculatorItemAscMaterialLoaded(String item);
+
+  Future<void> trackTierListOpened();
 }

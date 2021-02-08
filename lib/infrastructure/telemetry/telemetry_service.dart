@@ -70,4 +70,9 @@ class TelemetryServiceImpl implements TelemetryService {
       'Name': item,
     });
   }
+
+  @override
+  Future<void> trackTierListOpened() async {
+    await trackEventAsync('TierList-Opened');
+  }
 }
