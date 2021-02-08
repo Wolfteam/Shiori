@@ -27,6 +27,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^6.1.1
+  flutter_colorpicker: ^0.3.5
   flutter_cupertino_localizations: ^1.0.1
   flutter_staggered_grid_view:
     git:
@@ -38,12 +39,14 @@ dependencies:
   freezed_annotation: ^0.12.0
   get_it: ^5.0.6
   hawk_fab_menu: ^0.3.2
+  image_gallery_saver: ^1.6.7
   json_annotation: ^3.1.0
   log_4_dart_2: ^0.4.0
   moor: ^3.4.0
   package_info: ^0.4.3+4
   path: ^1.7.0
   path_provider: ^1.6.27
+  permission_handler: ^5.1.0+2
   rate_my_app: ^0.7.2
   screenshot: ^0.2.0
   shared_preferences: ^0.5.12+4
