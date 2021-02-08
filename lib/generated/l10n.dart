@@ -1854,6 +1854,166 @@ class S {
       args: [],
     );
   }
+
+  /// `Tier List Builder`
+  String get tierListBuilder {
+    return Intl.message(
+      'Tier List Builder',
+      name: 'tierListBuilder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Build your own character tier list`
+  String get buildYourOwnTierList {
+    return Intl.message(
+      'Build your own character tier list',
+      name: 'buildYourOwnTierList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Image was successfully saved to the gallery`
+  String get imgSavedSuccessfully {
+    return Intl.message(
+      'Image was successfully saved to the gallery',
+      name: 'imgSavedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To save the image you need to accept the requested permission`
+  String get acceptToSaveImg {
+    return Intl.message(
+      'To save the image you need to accept the requested permission',
+      name: 'acceptToSaveImg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear all`
+  String get clearAll {
+    return Intl.message(
+      'Clear all',
+      name: 'clearAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Restore`
+  String get restore {
+    return Intl.message(
+      'Restore',
+      name: 'restore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown error occurred`
+  String get unknownError {
+    return Intl.message(
+      'Unknown error occurred',
+      name: 'unknownError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add row above`
+  String get addRowAbove {
+    return Intl.message(
+      'Add row above',
+      name: 'addRowAbove',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add row below`
+  String get addRowBelow {
+    return Intl.message(
+      'Add row below',
+      name: 'addRowBelow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete row`
+  String get deleteRow {
+    return Intl.message(
+      'Delete row',
+      name: 'deleteRow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear row`
+  String get clearRow {
+    return Intl.message(
+      'Clear row',
+      name: 'clearRow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change color`
+  String get changeColor {
+    return Intl.message(
+      'Change color',
+      name: 'changeColor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Row settings`
+  String get rowSettings {
+    return Intl.message(
+      'Row settings',
+      name: 'rowSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rename`
+  String get rename {
+    return Intl.message(
+      'Rename',
+      name: 'rename',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message(
+      'Confirm',
+      name: 'confirm',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

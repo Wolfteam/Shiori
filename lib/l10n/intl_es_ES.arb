@@ -179,5 +179,21 @@
     "currency": "Moneda",
     "birthday": "Cumpleaños",
     "todayBirthdays": "Los Cumpleaños de Hoy",
-    "happyBirthday": "¡Feliz Cumpleaños!"
+    "happyBirthday": "¡Feliz Cumpleaños!",
+    "tierListBuilder": "Tier List Builder",
+    "buildYourOwnTierList": "Crea tu propia tier list de personajes",
+    "imgSavedSuccessfully": "La imagen fue guardada exitósamente en la galería",
+    "acceptToSaveImg": "Para guardar la imagen debes aceptar el permiso solicitado",
+    "save": "Guardar",
+    "clearAll": "Limpiar todo",
+    "restore": "Restaurar",
+    "unknownError": "Un error desconocido ha ocurrido",
+    "addRowAbove": "Agregar una fila por encima",
+    "addRowBelow": "Agregar una fila por debajo",
+    "deleteRow": "Borrar fila",
+    "clearRow": "Limpiar fila",
+    "changeColor": "Cambiar color",
+    "rowSettings": "Ajustes de la fila",
+    "rename": "Renombrar",
+    "confirm": "Confirmar"
 }

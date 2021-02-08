@@ -47,6 +47,42 @@
       "css": "overmind",
       "code": 59989,
       "src": "rpgawesome"
+    },
+    {
+      "uid": "0d9286a84324b172a37713a799ae171b",
+      "css": "reactor",
+      "code": 60027,
+      "src": "rpgawesome"
+    },
+    {
+      "uid": "fca2a7ff7701c8d37ce172fadd10fc48",
+      "css": "trefoil_lily",
+      "code": 60116,
+      "src": "rpgawesome"
+    },
+    {
+      "uid": "c071e68eab1a979ba705b6cb3682211b",
+      "css": "level_four",
+      "code": 59940,
+      "src": "rpgawesome"
+    },
+    {
+      "uid": "f0af88af512d80d752c6d62a1eead7fb",
+      "css": "cubes",
+      "code": 59782,
+      "src": "rpgawesome"
+    },
+    {
+      "uid": "7cf9de2713586859b1e3f07237f3826c",
+      "css": "hive_emblem",
+      "code": 59904,
+      "src": "rpgawesome"
+    },
+    {
+      "uid": "fc4db1ba12da44cab81322d735ef89f9",
+      "css": "level_three_advanced",
+      "code": 59941,
+      "src": "rpgawesome"
     }
   ]
 }

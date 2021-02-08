@@ -131,6 +131,40 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
+  List<TierListRowModel> getDefaultCharacterTierList(List<int> colors) {
+    assert(colors.length == 5);
+
+    final sTier = _charactersFile.characters
+        .where((char) => !char.isComingSoon && char.tier == 's')
+        .map((char) => Assets.getCharacterPath(char.image))
+        .toList();
+    final aTier = _charactersFile.characters
+        .where((char) => !char.isComingSoon && char.tier == 'a')
+        .map((char) => Assets.getCharacterPath(char.image))
+        .toList();
+    final bTier = _charactersFile.characters
+        .where((char) => !char.isComingSoon && char.tier == 'b')
+        .map((char) => Assets.getCharacterPath(char.image))
+        .toList();
+    final cTier = _charactersFile.characters
+        .where((char) => !char.isComingSoon && char.tier == 'c')
+        .map((char) => Assets.getCharacterPath(char.image))
+        .toList();
+    final dTier = _charactersFile.characters
+        .where((char) => !char.isComingSoon && char.tier == 'd')
+        .map((char) => Assets.getCharacterPath(char.image))
+        .toList();
+
+    return <TierListRowModel>[
+      TierListRowModel.row(tierText: 'S', tierColor: colors.first, charImgs: sTier),
+      TierListRowModel.row(tierText: 'A', tierColor: colors[1], charImgs: aTier),
+      TierListRowModel.row(tierText: 'B', tierColor: colors[2], charImgs: bTier),
+      TierListRowModel.row(tierText: 'C', tierColor: colors[3], charImgs: cTier),
+      TierListRowModel.row(tierText: 'D', tierColor: colors.last, charImgs: dTier),
+    ];
+  }
+
+  @override
   List<WeaponCardModel> getWeaponsForCard() {
     return _weaponsFile.weapons.map(
       (e) {

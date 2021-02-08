@@ -33,5 +33,6 @@ export 'home/today_weapon_ascension_material_model.dart';
 export 'items/item_ascension_material_model.dart';
 export 'language_model.dart';
 export 'settings/app_settings.dart';
+export 'tierlist/tierlist_row_model.dart';
 export 'weapons/weapon_card_model.dart';
 export 'weapons/weapon_file_refinement_model.dart';
