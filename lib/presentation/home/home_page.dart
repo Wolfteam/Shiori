@@ -42,9 +42,10 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
         SliverCalculatorsCard(),
         SliverMainTitle(title: s.wishSimulator),
         SliverWishSimulatorCard(),
+        SliverMainTitle(title: s.tierListBuilder),
+        SliverTierList(),
         SliverMainTitle(title: s.settings),
         SliverSettingsCard(),
-        SliverTierList(),
       ],
     );
   }

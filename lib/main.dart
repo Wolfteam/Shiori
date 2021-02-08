@@ -129,6 +129,13 @@ class MyApp extends StatelessWidget {
             return CalculatorAscMaterialsItemBloc(genshinService);
           },
         ),
+        BlocProvider(
+          create: (_) {
+            final genshinService = getIt<GenshinService>();
+            final telemetryService = getIt<TelemetryService>();
+            return TierListBloc(genshinService, telemetryService);
+          },
+        ),
       ],
       child: BlocBuilder<MainBloc, MainState>(
         builder: (ctx, state) => AppWidget(),
