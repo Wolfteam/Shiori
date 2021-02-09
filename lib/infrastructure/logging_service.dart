@@ -1,6 +1,7 @@
 import 'package:dog/dog.dart';
 import 'package:flutter/foundation.dart';
 import 'package:genshindb/domain/extensions/string_extensions.dart';
+import 'package:genshindb/domain/services/device_info_service.dart';
 import 'package:genshindb/domain/services/logging_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
 import 'package:log_4_dart_2/log_4_dart_2.dart';
@@ -9,8 +10,9 @@ import 'package:sprintf/sprintf.dart';
 class LoggingServiceImpl implements LoggingService {
   final Logger _logger;
   final TelemetryService _telemetryService;
+  final DeviceInfoService _deviceInfoService;
 
-  LoggingServiceImpl(this._logger, this._telemetryService);
+  LoggingServiceImpl(this._logger, this._telemetryService, this._deviceInfoService);
 
   @override
   void info(Type type, String msg, [List<Object> args]) {
@@ -67,11 +69,15 @@ class LoggingServiceImpl implements LoggingService {
   }
 
   Map<String, String> _buildError(String tag, String msg, [dynamic ex, StackTrace trace]) {
-    return {
+    final map = {
       'tag': tag,
       'msg': msg ?? 'No message available',
       'ex': ex?.toString() ?? 'No exception available',
       'trace': trace?.toString() ?? 'No trace available',
     };
+
+    map.addAll(_deviceInfoService.deviceInfo);
+
+    return map;
   }
 }

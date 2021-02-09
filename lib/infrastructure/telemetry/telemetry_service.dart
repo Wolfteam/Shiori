@@ -1,8 +1,13 @@
+import 'package:genshindb/domain/services/device_info_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
 import 'package:genshindb/infrastructure/telemetry/flutter_appcenter_bundle.dart';
 import 'package:genshindb/infrastructure/telemetry/secrets.dart';
 
 class TelemetryServiceImpl implements TelemetryService {
+  final DeviceInfoService _deviceInfoService;
+
+  TelemetryServiceImpl(this._deviceInfoService);
+
   //Only call this function from the main.dart
   @override
   Future<void> initTelemetry() async {
@@ -11,6 +16,8 @@ class TelemetryServiceImpl implements TelemetryService {
 
   @override
   Future<void> trackEventAsync(String name, [Map<String, String> properties]) {
+    properties ??= {};
+    properties.addAll(_deviceInfoService.deviceInfo);
     return AppCenter.trackEventAsync(name, properties);
   }
 
