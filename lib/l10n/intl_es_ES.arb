@@ -195,5 +195,6 @@
     "changeColor": "Cambiar color",
     "rowSettings": "Ajustes de la fila",
     "rename": "Renombrar",
-    "confirm": "Confirmar"
+    "confirm": "Confirmar",
+    "pickColor": "Selecciona un color"
 }

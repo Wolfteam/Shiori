@@ -2014,6 +2014,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Pick a color`
+  String get pickColor {
+    return Intl.message(
+      'Pick a color',
+      name: 'pickColor',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

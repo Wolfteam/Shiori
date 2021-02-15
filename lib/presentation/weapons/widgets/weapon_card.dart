@@ -88,9 +88,7 @@ class WeaponCard extends StatelessWidget {
                     child: Text(
                       name,
                       overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.subtitle1.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                     ),
                   ),
                 ),
@@ -112,16 +110,19 @@ class WeaponCard extends StatelessWidget {
                               '${s.translateStatTypeWithoutValue(StatType.atk)}: $baseAtk',
                               textAlign: TextAlign.center,
                               overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(color: Colors.white),
                             ),
                             Text(
                               '${s.type}: ${s.translateWeaponType(type)}',
                               textAlign: TextAlign.center,
                               overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(color: Colors.white),
                             ),
                             Text(
                               '${s.subStat}: ${s.translateStatType(subStatType, subStatValue)}',
                               textAlign: TextAlign.center,
                               overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ],
                         ),

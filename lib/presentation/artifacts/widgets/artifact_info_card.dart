@@ -19,6 +19,7 @@ class ArtifactInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final theme = Theme.of(context);
     final considerations = <String>[];
 
     final hp = s.translateStatTypeWithoutValue(StatType.hpPercentage, removeExtraSigns: true);
@@ -52,6 +53,7 @@ class ArtifactInfoCard extends StatelessWidget {
           Assets.getArtifactPathFromType(ArtifactType.values[index]),
           width: 24,
           height: 24,
+          color: theme.brightness == Brightness.dark ? Colors.white : Colors.black,
         ),
       ),
       icon: const Icon(Icons.info_outline),

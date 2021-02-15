@@ -71,18 +71,18 @@ class ArtifactCard extends StatelessWidget {
                       ? Text(
                           name,
                           textAlign: TextAlign.center,
-                          style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                          style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                         )
                       : Text(
                           name,
                           textAlign: TextAlign.center,
-                          style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                          style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                           overflow: TextOverflow.ellipsis,
                         ),
                 ),
               ),
               Rarity(stars: rarity),
-              if (bonus.isNotEmpty) ArtifactStats(bonus: bonus),
+              if (bonus.isNotEmpty) ArtifactStats(bonus: bonus, textColor: Colors.white),
             ],
           ),
         ),
