@@ -5482,7 +5482,7 @@
         {
             "key": "Enduring Rock",
             "name": "Roca Resistente",
-            "effect": "Aumenta la RES a interrupcion. Cuando estás protegido por un Escudo, aumenta en un 15% el daño inflingido"
+            "effect": "La Protección de Escudo aumenta en un 15%. Cuando un personaje está protegido por un escudo, inflige un 15% mas de daño. Al causar daño contra un enemigo, la RES Geo de dicho enemigo se reduce en un 20% durante 15s."
         },
         {
             "key": "Fervent Flames",

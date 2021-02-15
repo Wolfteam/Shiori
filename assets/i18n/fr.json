@@ -5481,8 +5481,8 @@
     "resonance": [
         {
             "key": "Enduring Rock",
-            "name": "Enduring Rock",
-            "effect": "Increases resistance to interruption. When protected by a shield, increases Attack DMG by 15%."
+            "name": "Roc inamovible",
+            "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemeies will decrease their Geo RES by 20% for 15s."
         },
         {
             "key": "Fervent Flames",
