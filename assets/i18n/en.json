@@ -3522,17 +3522,28 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Commands the omnipresent power of earth to solidify into a Stone Stele, dealing AoE Geo DMG. Additionally, the Stone Stele will resonate with other Geo Constructs in the vicinity, dealing Geo DMG to surrounding enemies. The Stone Stele is considered a Geo Construct, and can both be climbed and used to block attacks. Only one may exist at any one time.",
+              "description": "Commands the power of earth to create a Stone Stele.",
               "descriptions": []
             },
             {
               "key": "a2",
               "description": "Causes nearby Geo energy to explode, causing the following effects:",
               "descriptions": [
-                "Creates a shield of jade. The shield’s DMG Absorption scales based on Zhongli’s Max HP, and absorbs Geo DMG 250% more effectively.",
-                "Causes AoE Geo DMG.",
+                "If their maximum number hasn't been reached, creates a Stone Stele.",
+                "Creates a shield of jade. The shield's DMG Absorption scales based on Zhongli's Max HP.",
+                "Deals AoE Geo DMG.",
                 "If there are nearby targets with the Geo element, it will drain a large amount of Geo element from a maximum of 2 such targets. This effect does not cause DMG."
               ]
+            },
+            {
+              "name": "Stone Stele",
+              "description": "When created, deals AoE Geo DMG.\nAdditionally, it will intermittently resonate with other nearby Geo constructs, dealing Geo DMG to nearby opponents.\n1The Stone Stele is considered a Geo construct that can both be climbed and used to block attacks.\nOnly one Stele created by Zhongli himself may initially exist at any one time",
+              "descriptions": []
+            },
+            {
+              "name": "Jade Shield",
+              "description": "Possesses 150% DMG Absorption against all Elemental and Physical DMG.\nCharacters protected by the Jade Shield will decrease the Elemental RES and Physical RES of opponents in a small AoE by 20%. This effect cannot be stacked.",
+              "descriptions": []
             }
           ]
         },
@@ -3562,14 +3573,18 @@
           "description": "When the Jade Shield takes DMG, it will Fortify:",
           "descriptions": [
             "Fortified characters have 5% increased Shield Strength.",
-            "Can stack up to 5 times, and lasts until the Jade Shield dissapears."
+            "Can stack up to 5 times, and lasts until the Jade Shield disappears."
           ]
         },
         {
           "key": "p3",
           "title": "Dominance of Earth",
-          "description": "Planet Befall deals additional DMG equal to 33% of Zhongli’s Max HP.",
-          "descriptions": []
+          "description": "Zhongli deals bonus DMG based on his Max HP:",
+          "descriptions": [
+            "Normal Attack, Charged Attack, and Plunging Attack DMG is increased by 1.39% of Max HP.",
+            "Dominus Lapidis' Stone Stele, resonance, and hold DMG is increased by 1.9% of Max HP.",
+            "Planet Befall's DMG is increased by 33% of Max HP."
+          ]
         }
       ],
       "constellations": [
@@ -3611,7 +3626,7 @@
         {
           "key": "c6",
           "title": "Chrysos, Bounty of Dominator",
-          "description": "When the Jade Shield takes DMG, 40% of that incoming DMG is converted to HP for the current character. A single instance of regeneration cannot exceed 8% of that character’s Max HP.",
+          "description": "When the Jade Shield takes DMG, 40% of that incoming DMG is converted to HP for the current character.\nA single instance of regeneration cannot exceed 8% of that character’s Max HP.",
           "secondDescription": null,
           "descriptions": []
         }

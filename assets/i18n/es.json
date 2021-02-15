@@ -3522,17 +3522,28 @@
                     "abilities": [
                         {
                             "key": "a1",
-                            "description": "Controla el poder omnipresente de la tierra para solidificarlo en una Cresta de piedra que inflige Daño Geo en el AdE. La Cresta de piedra resonará con los objetos Geo cercanos, infligiendo Daño Geo a los enemigos de alrededor. La Cresta de piedra es considerada una creación Geo, y puede escalarse y usarse para bloquear ataques. Solo puede existir una al mismo tiempo.",
+                            "description": "Ordena al poder Geo de la tierra que se solidifique en una cresta de piedra.",
                             "descriptions": []
                         },
                         {
                             "key": "a2",
                             "description": "Hace que los elementos Geo cercanos exploten, provocando los siguientes efectos:",
                             "descriptions": [
-                                "Crea un escudo de jade. La cantidad de absorción de daño del escudo se basa en la Vida Máx. de Zhongli, y dicho escudo tiene un 250% de absorción de Daño Geo.",
+                                "Si aún no se ha alcanzado la cantidad máxima de crestas de piedra, invocará una cresta de piedra.",
+                                "Crea un escudo de jade. La cantidad de absorción de daño del escudo es proporcional a la Vida Max. de Zhongli.",
                                 "Inflige Daño Geo en el AdE.",
-                                "Si hay enemigos cercanos afectados por el Elemento Geo, absorberá una gran cantidad de Elemento Geo de un máximo de dos objetivos afectados por dicho elemento. Este efecto no causa daño."
+                                "Si hay enemigos cercanos afectados por el elemento Geo, absorberá una gran cantidad de dicho elemento de un máximo de dos objetivos afectados por él. Este efecto no causa daño."
                             ]
+                        },
+                        {
+                            "name": "Cresta de piedra",
+                            "description": "Al ser creada, inflige Daño Geo en el AdE.\nLa cresta de piedra resonará con las creaciones de Geo cercanas, infligiendo Daño Geo a los enemigos cercanos.\nLa cresta de piedra es considerada una creación Geo, y puede escalarse y usarse para bloquear ataques.\nSolo puede existir una al mismo tiempo.",
+                            "descriptions": []
+                        },
+                        {
+                            "name": "Escudo de jade",
+                            "description": "Tiene un 150% de eficiencia de abosorción contra todo el Daño Elemental y el Daño Físico. Cuando un personaje se encuentra protegido por este escudo, todas las RES Elementales y la RES Física de los enemigos cercanos a él en una pequeña AdE se reducen en un 20%.\nEste efecto no puede acumularse.",
+                            "descriptions": []
                         }
                     ]
                 },
@@ -3568,8 +3579,12 @@
                 {
                     "key": "p3",
                     "title": "Dominio de la Tierra",
-                    "description": "Lluvia estelar inflige daño adicional equivalente al 33% de la Vida Máx. de Zhongli.",
-                    "descriptions": []
+                    "description": "El daño infligido por los siguientes ataques de Zhongli aumenta en proporción a su Vida Máx.:",
+                    "descriptions": [
+                        "Aumenta el daño de Ataque Normal, Ataque Cargado y Ataque Descendente en un 1.39% de su Vida Máx.",
+                        "Aumenta en un 1.9% de su Vida Máx. el daño de resonancia de la cresta de piedra de Dominus lapidis, asi como el daño de mantener pulsado",
+                        "Aumenta el daño de Lluvia estelar en un 33% de la Vida Máx. de Zhongli"
+                    ]
                 }
             ],
             "constellations": [
@@ -3611,7 +3626,7 @@
                 {
                     "key": "c6",
                     "title": "Chrysos, la generosidad del dominador",
-                    "description": "Cuando Escudo de Jade recibe daño, el 40% del daño recibido se convierte en Vida para el personaje actual. No se puede recuperar más del 8% de la Vida Máx. del personaje cada vez que se activa el efecto.",
+                    "description": "Cuando Escudo de Jade recibe daño, el 40% del daño recibido se convierte en Vida para el personaje actual.\nNo se puede recuperar más del 8% de la Vida Máx. del personaje cada vez que se activa el efecto.",
                     "secondDescription": null,
                     "descriptions": []
                 }
