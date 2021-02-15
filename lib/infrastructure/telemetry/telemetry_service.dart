@@ -1,3 +1,5 @@
+import 'package:enum_to_string/enum_to_string.dart';
+import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/device_info_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
 import 'package:genshindb/infrastructure/telemetry/flutter_appcenter_bundle.dart';
@@ -81,5 +83,14 @@ class TelemetryServiceImpl implements TelemetryService {
   @override
   Future<void> trackTierListOpened() async {
     await trackEventAsync('TierList-Opened');
+  }
+
+  @override
+  Future<void> trackInit(AppSettings settings) async {
+    await trackEventAsync('Init', {
+      'Theme': EnumToString.convertToString(settings.appTheme),
+      'AccentColor': EnumToString.convertToString(settings.accentColor),
+      'Language': EnumToString.convertToString(settings.appLanguage),
+    });
   }
 }

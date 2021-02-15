@@ -16,8 +16,8 @@ class CharacterAscensionMaterials extends StatelessWidget {
     final widgets = images
         .map(
           (e) => FadeInImage(
-            height: 20,
-            width: 20,
+            height: 25,
+            width: 25,
             placeholder: MemoryImage(kTransparentImage),
             image: AssetImage(e),
           ),

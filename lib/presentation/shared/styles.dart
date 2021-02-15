@@ -11,8 +11,7 @@ class Styles {
       topRight: Radius.circular(10),
     ),
   );
-  static final RoundedRectangleBorder floatingCardShape =
-      RoundedRectangleBorder(borderRadius: BorderRadius.circular(20));
+  static final RoundedRectangleBorder floatingCardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(20));
 
   static const double cardThreeElevation = 3;
   static const double cardTenElevation = 10;

@@ -13,11 +13,11 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
       final deviceInfo = DeviceInfoPlugin();
       final androidInfo = await deviceInfo.androidInfo;
       _deviceInfo = {
-        'model': androidInfo.model,
-        'os': '${androidInfo.version.sdkInt}',
+        'Model': androidInfo.model,
+        'OsVersion': '${androidInfo.version.sdkInt}',
       };
     } catch (ex) {
-      _deviceInfo = {'model': 'N/A', 'os': 'N/A'};
+      _deviceInfo = {'Model': 'N/A', 'OsVersion': 'N/A'};
     }
   }
 }

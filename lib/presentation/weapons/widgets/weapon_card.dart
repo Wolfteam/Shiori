@@ -28,6 +28,7 @@ class WeaponCard extends StatelessWidget {
   final double imgHeight;
   final bool withoutDetails;
   final bool isInSelectionMode;
+  final bool withElevation;
 
   const WeaponCard({
     Key key,
@@ -42,6 +43,7 @@ class WeaponCard extends StatelessWidget {
     this.imgWidth = 160,
     this.imgHeight = 140,
     this.isInSelectionMode = false,
+    this.withElevation = true,
   })  : withoutDetails = false,
         super(key: key);
 
@@ -59,6 +61,7 @@ class WeaponCard extends StatelessWidget {
         subStatValue = null,
         withoutDetails = true,
         isInSelectionMode = false,
+        withElevation = false,
         super(key: key);
 
   @override
@@ -69,7 +72,7 @@ class WeaponCard extends StatelessWidget {
       onTap: () => _gotoWeaponPage(context),
       child: GradientCard(
         shape: Styles.mainCardShape,
-        elevation: Styles.cardTenElevation,
+        elevation: withElevation ? Styles.cardTenElevation : 0,
         gradient: rarity.getRarityGradient(),
         child: Padding(
           padding: Styles.edgeInsetAll5,

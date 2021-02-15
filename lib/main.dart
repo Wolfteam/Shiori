@@ -98,11 +98,13 @@ class MyApp extends StatelessWidget {
             final genshinService = getIt<GenshinService>();
             final settingsService = getIt<SettingsService>();
             final localeService = getIt<LocaleService>();
+            final telemetryService = getIt<TelemetryService>();
             return MainBloc(
               loggingService,
               genshinService,
               settingsService,
               localeService,
+              telemetryService,
               ctx.read<CharactersBloc>(),
               ctx.read<WeaponsBloc>(),
               ctx.read<HomeBloc>(),
