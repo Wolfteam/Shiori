@@ -12,6 +12,7 @@ export 'characters/character_talent_ascension_model.dart';
 export 'db/artifacts/artifact_file_model.dart';
 export 'db/artifacts/artifacts_file.dart';
 export 'db/characters/character_file_model.dart';
+export 'db/characters/character_file_stat_model.dart';
 export 'db/characters/characters_file.dart';
 export 'db/elements/element_debuff_file_model.dart';
 export 'db/elements/element_reaction_file_model.dart';

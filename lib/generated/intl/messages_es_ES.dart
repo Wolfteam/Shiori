@@ -137,7 +137,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "elementalResonances" : MessageLookupByLibrary.simpleMessage("Resonancias Elementales"),
     "elementalResonancesExplained" : MessageLookupByLibrary.simpleMessage("Teniendo estos tipos de personajes en tu equipo te daran el effecto correspondiente"),
     "elementalSkill" : MessageLookupByLibrary.simpleMessage("Habilidad Elemental"),
-    "elementaryMaster" : m9,
+    "elementaryMastery" : m9,
     "elements" : MessageLookupByLibrary.simpleMessage("Elementos"),
     "energyRechargePercentage" : m10,
     "english" : MessageLookupByLibrary.simpleMessage("Inglés"),

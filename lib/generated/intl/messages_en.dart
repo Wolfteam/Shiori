@@ -37,7 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m8(value) => "${value} DEF %";
 
-  static m9(value) => "${value} Elementary Master";
+  static m9(value) => "${value} Elementary Mastery";
 
   static m10(value) => "${value} Energy Recharge %";
 
@@ -138,7 +138,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "elementalResonances" : MessageLookupByLibrary.simpleMessage("Elemental Resonances"),
     "elementalResonancesExplained" : MessageLookupByLibrary.simpleMessage("Having these types of character in your party will give you the corresponding effect"),
     "elementalSkill" : MessageLookupByLibrary.simpleMessage("Elemental Skill"),
-    "elementaryMaster" : m9,
+    "elementaryMastery" : m9,
     "elements" : MessageLookupByLibrary.simpleMessage("Elements"),
     "energyRechargePercentage" : m10,
     "english" : MessageLookupByLibrary.simpleMessage("English"),

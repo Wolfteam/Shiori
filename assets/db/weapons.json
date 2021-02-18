@@ -620,7 +620,7 @@
             "type": "bow",
             "atk": 40,
             "rarity": 3,
-            "secondaryStat": "elementaryMaster",
+            "secondaryStat": "elementaryMastery",
             "secondaryStatValue": 20,
             "location": "gacha",
             "ascensionMaterials": [
@@ -1396,7 +1396,7 @@
             "type": "bow",
             "atk": 42,
             "rarity": 4,
-            "secondaryStat": "elementaryMaster",
+            "secondaryStat": "elementaryMastery",
             "secondaryStatValue": 36,
             "location": "gacha",
             "ascensionMaterials": [
@@ -4385,7 +4385,7 @@
             "type": "sword",
             "atk": 39,
             "rarity": 3,
-            "secondaryStat": "elementaryMaster",
+            "secondaryStat": "elementaryMastery",
             "secondaryStatValue": 31,
             "location": "gacha",
             "ascensionMaterials": [
@@ -5753,7 +5753,7 @@
             "type": "sword",
             "atk": 42,
             "rarity": 4,
-            "secondaryStat": "elementaryMaster",
+            "secondaryStat": "elementaryMastery",
             "secondaryStatValue": 36,
             "location": "crafting",
             "ascensionMaterials": [
@@ -8690,7 +8690,7 @@
             "type": "catalyst",
             "atk": 39,
             "rarity": 3,
-            "secondaryStat": "elementaryMaster",
+            "secondaryStat": "elementaryMastery",
             "secondaryStatValue": 31,
             "location": "gacha",
             "ascensionMaterials": [
@@ -8884,7 +8884,7 @@
             "type": "catalyst",
             "atk": 40,
             "rarity": 3,
-            "secondaryStat": "elementaryMaster",
+            "secondaryStat": "elementaryMastery",
             "secondaryStatValue": 20,
             "location": "gacha",
             "ascensionMaterials": [
@@ -9078,7 +9078,7 @@
             "type": "catalyst",
             "atk": 38,
             "rarity": 3,
-            "secondaryStat": "elementaryMaster",
+            "secondaryStat": "elementaryMastery",
             "secondaryStatValue": 41,
             "location": "gacha",
             "ascensionMaterials": [
@@ -10247,7 +10247,7 @@
             "type": "catalyst",
             "atk": 44,
             "rarity": 4,
-            "secondaryStat": "elementaryMaster",
+            "secondaryStat": "elementaryMastery",
             "secondaryStatValue": 24,
             "location": "crafting",
             "ascensionMaterials": [
@@ -10834,7 +10834,7 @@
             "type": "catalyst",
             "atk": 41,
             "rarity": 4,
-            "secondaryStat": "elementaryMaster",
+            "secondaryStat": "elementaryMastery",
             "secondaryStatValue": 48,
             "location": "gacha",
             "ascensionMaterials": [
@@ -12858,7 +12858,7 @@
             "type": "claymore",
             "atk": 38,
             "rarity": 3,
-            "secondaryStat": "elementaryMaster",
+            "secondaryStat": "elementaryMastery",
             "secondaryStatValue": 41,
             "location": "gacha",
             "ascensionMaterials": [
@@ -13445,7 +13445,7 @@
             "type": "claymore",
             "atk": 39,
             "rarity": 3,
-            "secondaryStat": "elementaryMaster",
+            "secondaryStat": "elementaryMastery",
             "secondaryStatValue": 31,
             "location": "gacha",
             "ascensionMaterials": [
@@ -14813,7 +14813,7 @@
             "type": "claymore",
             "atk": 42,
             "rarity": 4,
-            "secondaryStat": "elementaryMaster",
+            "secondaryStat": "elementaryMastery",
             "secondaryStatValue": 36,
             "location": "gacha",
             "ascensionMaterials": [
@@ -18195,7 +18195,7 @@
             "type": "polearm",
             "atk": 41,
             "rarity": 4,
-            "secondaryStat": "elementaryMaster",
+            "secondaryStat": "elementaryMastery",
             "secondaryStatValue": 48,
             "location": "gacha",
             "ascensionMaterials": [

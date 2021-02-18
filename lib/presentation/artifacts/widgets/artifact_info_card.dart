@@ -29,20 +29,20 @@ class ArtifactInfoCard extends StatelessWidget {
     final def = s.translateStatTypeWithoutValue(StatType.defPercentage, removeExtraSigns: true);
     final defPercentage = s.translateStatTypeWithoutValue(StatType.defPercentage);
     final energyRecharge = s.translateStatTypeWithoutValue(StatType.energyRechargePercentage, removeExtraSigns: true);
-    final elementaryMaster = s.translateStatTypeWithoutValue(StatType.elementaryMaster);
+    final elementaryMastery = s.translateStatTypeWithoutValue(StatType.elementaryMastery);
     final critRate = s.translateStatTypeWithoutValue(StatType.critRate);
     final critDmg = s.translateStatTypeWithoutValue(StatType.critDmgPercentage, removeExtraSigns: true);
 
     considerations.add('${s.flower}: $hp');
     considerations.add('${s.plume}: $atk');
     considerations.add(
-      '${s.clock}: $atk / $atkPercentage / $def / $defPercentage / $hp / $hpPercentage / $energyRecharge / $elementaryMaster',
+      '${s.clock}: $atkPercentage / $defPercentage / $hpPercentage / $energyRecharge / $elementaryMastery',
     );
     considerations.add(
-      '${s.goblet}: $atkPercentage / $defPercentage / $hpPercentage / $elementaryMaster / ${s.elementalDmgPercentage} (${s.translateElementType(ElementType.electro)}, ${s.translateElementType(ElementType.hydro)}...)',
+      '${s.goblet}: $atkPercentage / $defPercentage / $hpPercentage / $elementaryMastery / ${s.elementalDmgPercentage} (${s.translateElementType(ElementType.electro)}, ${s.translateElementType(ElementType.hydro)}...)',
     );
     considerations.add(
-      '${s.crown}: $atkPercentage / $defPercentage / $hpPercentage / $critRate / $critDmg / $elementaryMaster / ${s.healingBonus}',
+      '${s.crown}: $atkPercentage / $defPercentage / $hpPercentage / $critRate / $critDmg / $elementaryMastery / ${s.healingBonus}',
     );
 
     final panel = ItemExpansionPanel(

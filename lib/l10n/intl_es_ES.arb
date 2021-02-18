@@ -18,7 +18,7 @@
     "critRate": "{value} Prob. CRIT",
     "critRatePercentage": "{value} Prob. CRIT %",
     "critDmgPercentage": "{value} Daño CRIT %",
-    "elementaryMaster": "{value} Maestría Elemental",
+    "elementaryMastery": "{value} Maestría Elemental",
     "hpPercentage": "{value} Vida %",
     "physDmgPercentage": "{value} Daño FIS. %",
     "physDmgBonus": "{value} Bono Daño FIS.",

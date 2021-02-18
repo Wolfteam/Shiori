@@ -94,8 +94,8 @@ extension I18nExtensions on S {
         return critRatePercentage(value);
       case StatType.defPercentage:
         return defPercentage(value);
-      case StatType.elementaryMaster:
-        return elementaryMaster(value);
+      case StatType.elementaryMastery:
+        return elementaryMastery(value);
       case StatType.energyRechargePercentage:
         return energyRechargePercentage(value);
       case StatType.hpPercentage:
@@ -299,6 +299,12 @@ extension I18nExtensions on S {
         return 'Liyue';
       case RegionType.snezhnaya:
         return 'Snezhnaya';
+      case RegionType.fontaine:
+        return 'Fontaine';
+      case RegionType.natlan:
+        return 'Natlan';
+      case RegionType.sumeru:
+        return 'Sumeru';
       default:
         throw Exception('Invalid region type = $type');
     }
