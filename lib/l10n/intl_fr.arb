@@ -196,5 +196,6 @@
     "changeColor": "Change color",
     "rowSettings": "Row settings",
     "rename": "Rename",
-    "confirm": "Confirm"
+    "confirm": "Confirm",
+    "pickColor": "Pick a color"
 }

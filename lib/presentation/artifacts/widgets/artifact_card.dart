@@ -20,6 +20,7 @@ class ArtifactCard extends StatelessWidget {
   final double imgWidth;
   final double imgHeight;
   final bool withoutDetails;
+  final bool withElevation;
 
   const ArtifactCard({
     Key key,
@@ -30,6 +31,7 @@ class ArtifactCard extends StatelessWidget {
     @required this.bonus,
     this.imgWidth = 140,
     this.imgHeight = 120,
+    this.withElevation = true,
   })  : withoutDetails = false,
         super(key: key);
 
@@ -43,6 +45,7 @@ class ArtifactCard extends StatelessWidget {
         imgHeight = 60,
         bonus = const [],
         withoutDetails = true,
+        withElevation = false,
         super(key: key);
 
   @override
@@ -52,7 +55,7 @@ class ArtifactCard extends StatelessWidget {
       onTap: () => _gotoDetailPage(context),
       child: GradientCard(
         shape: Styles.mainCardShape,
-        elevation: Styles.cardTenElevation,
+        elevation: withElevation ? Styles.cardTenElevation : 0,
         gradient: rarity.getRarityGradient(),
         child: Padding(
           padding: Styles.edgeInsetAll5,
@@ -71,18 +74,18 @@ class ArtifactCard extends StatelessWidget {
                       ? Text(
                           name,
                           textAlign: TextAlign.center,
-                          style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                          style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                         )
                       : Text(
                           name,
                           textAlign: TextAlign.center,
-                          style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                          style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                           overflow: TextOverflow.ellipsis,
                         ),
                 ),
               ),
               Rarity(stars: rarity),
-              if (bonus.isNotEmpty) ArtifactStats(bonus: bonus),
+              if (bonus.isNotEmpty) ArtifactStats(bonus: bonus, textColor: Colors.white),
             ],
           ),
         ),

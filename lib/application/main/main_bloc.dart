@@ -9,6 +9,7 @@ import 'package:genshindb/domain/services/genshin_service.dart';
 import 'package:genshindb/domain/services/locale_service.dart';
 import 'package:genshindb/domain/services/logging_service.dart';
 import 'package:genshindb/domain/services/settings_service.dart';
+import 'package:genshindb/domain/services/telemetry_service.dart';
 import 'package:package_info/package_info.dart';
 
 import '../bloc.dart';
@@ -22,6 +23,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   final GenshinService _genshinService;
   final SettingsService _settingsService;
   final LocaleService _localeService;
+  final TelemetryService _telemetryService;
 
   final CharactersBloc _charactersBloc;
   final WeaponsBloc _weaponsBloc;
@@ -33,6 +35,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     this._genshinService,
     this._settingsService,
     this._localeService,
+    this._telemetryService,
     this._charactersBloc,
     this._weaponsBloc,
     this._homeBloc,
@@ -85,6 +88,8 @@ class MainBloc extends Bloc<MainEvent, MainState> {
 
     final packageInfo = await PackageInfo.fromPlatform();
     final settings = _settingsService.appSettings;
+    await _telemetryService.trackInit(settings);
+
     if (init) {
       await Future.delayed(const Duration(milliseconds: 600));
     }

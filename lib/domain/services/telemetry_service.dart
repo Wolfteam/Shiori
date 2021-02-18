@@ -1,3 +1,5 @@
+import 'package:genshindb/domain/models/models.dart';
+
 abstract class TelemetryService {
   Future<void> initTelemetry();
 
@@ -25,4 +27,6 @@ abstract class TelemetryService {
   Future<void> trackCalculatorItemAscMaterialLoaded(String item);
 
   Future<void> trackTierListOpened();
+
+  Future<void> trackInit(AppSettings settings);
 }

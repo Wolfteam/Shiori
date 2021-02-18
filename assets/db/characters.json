@@ -8550,14 +8550,16 @@
       ],
       "builds": [
         {
-          "isSupport": true,
+          "isSupport": false,
           "weaponImages": [
-            "skyward_atlas.png",
-            "favonius_codex.png"
+            "lost_prayer_to_the_sacred_winds.png",
+            "solar_pearl.png",
+            "eye_of_perception.png",
+            "the_widsith.png"
           ],
           "artifacts": [
             {
-              "one": "noblesse_oblige_4.png",
+              "one": "thundering_fury_4.png",
               "multiples": [],
               "stats": [
                 "hp",
@@ -8566,7 +8568,18 @@
                 "electroDmgBonusPercentage",
                 "critDmgPercentage"
               ]
-            },
+            }
+          ]
+        },
+        {
+          "isSupport": true,
+          "weaponImages": [
+            "the_widsith.png",
+            "skyward_atlas.png",
+            "mappa_mare.png",
+            "thrilling_tales_of_dragon_slayers.png"
+          ],
+          "artifacts": [
             {
               "one": "thundering_fury_4.png",
               "multiples": [],
@@ -17428,8 +17441,16 @@
           ],
           "artifacts": [
             {
-              "one": "gladiators_finale_4.png",
-              "multiples": [],
+              "multiples": [
+                {
+                  "quantity": 2,
+                  "image": "archaic_petra_4.png"
+                },
+                {
+                  "quantity": 2,
+                  "image": "gladiators_finale_4.png"
+                }
+              ],
               "stats": [
                 "hp",
                 "atk",

@@ -189,6 +189,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "passives" : MessageLookupByLibrary.simpleMessage("Pasivas"),
     "physDmgBonus" : m14,
     "physDmgPercentage" : m15,
+    "pickColor" : MessageLookupByLibrary.simpleMessage("Selecciona un color"),
     "pieces" : MessageLookupByLibrary.simpleMessage("Piezas"),
     "plume" : MessageLookupByLibrary.simpleMessage("Pluma"),
     "plungingAttack" : MessageLookupByLibrary.simpleMessage("Ataque Descendiente"),
