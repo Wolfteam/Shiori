@@ -18,7 +18,7 @@
     "critRate": "{value} Taux CRIT",
     "critRatePercentage": "{value} Taux CRIT %",
     "critDmgPercentage": "{value} DGT CRIT %",
-    "elementaryMaster": "{value} Maîtrise élémentaire",
+    "elementaryMastery": "{value} Maîtrise élémentaire",
     "hpPercentage": "{value} PV %",
     "physDmgPercentage": "{value} DGT physiques %",
     "physDmgBonus": "{value} Bonus de DGT physiques",
@@ -63,7 +63,7 @@
     "home": "Menu",
     "map": "Carte",
     "type": "Type",
-    "baseAtk": "ATQ de base",
+    "baseAtk": "Base d'Attaque",
     "secondaryState": "Stat Secondaire",
     "secondaryStatValue": "Valeur Stat Secondaire",
     "location": "Localisation",
@@ -197,5 +197,7 @@
     "rowSettings": "Row settings",
     "rename": "Rename",
     "confirm": "Confirm",
-    "pickColor": "Pick a color"
+    "pickColor": "Pick a color",
+    "stats": "Stats",
+    "baseX": "Base {value}"
 }

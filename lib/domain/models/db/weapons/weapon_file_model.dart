@@ -23,8 +23,10 @@ abstract class WeaponFileModel implements _$WeaponFileModel {
     @required StatType secondaryStat,
     @required double secondaryStatValue,
     @required ItemLocationType location,
+    @required bool isComingSoon,
     @required List<WeaponFileAscensionMaterial> ascensionMaterials,
     @required List<WeaponFileRefinement> refinements,
+    @required List<WeaponFileStatModel> stats,
   }) = _WeaponFileModel;
 
   WeaponFileModel._();
@@ -54,4 +56,18 @@ abstract class WeaponFileRefinement implements _$WeaponFileRefinement {
   const WeaponFileRefinement._();
 
   factory WeaponFileRefinement.fromJson(Map<String, dynamic> json) => _$WeaponFileRefinementFromJson(json);
+}
+
+@freezed
+abstract class WeaponFileStatModel implements _$WeaponFileStatModel {
+  factory WeaponFileStatModel({
+    @required int level,
+    @required double baseAtk,
+    @required bool isAnAscension,
+    @required double specificValue,
+  }) = _WeaponFileStatModel;
+
+  const WeaponFileStatModel._();
+
+  factory WeaponFileStatModel.fromJson(Map<String, dynamic> json) => _$WeaponFileStatModelFromJson(json);
 }

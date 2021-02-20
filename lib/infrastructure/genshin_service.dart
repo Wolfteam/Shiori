@@ -178,6 +178,7 @@ class GenshinServiceImpl implements GenshinService {
           type: e.type,
           subStatType: e.secondaryStat,
           subStatValue: e.secondaryStatValue,
+          isComingSoon: e.isComingSoon,
         );
       },
     ).toList();
@@ -196,6 +197,7 @@ class GenshinServiceImpl implements GenshinService {
       type: weapon.type,
       subStatType: weapon.secondaryStat,
       subStatValue: weapon.secondaryStatValue,
+      isComingSoon: weapon.isComingSoon,
     );
   }
 

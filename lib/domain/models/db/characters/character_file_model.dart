@@ -38,6 +38,8 @@ abstract class CharacterFileModel implements _$CharacterFileModel {
     @required List<CharacterFileSkillModel> skills,
     @required List<CharacterFilePassiveModel> passives,
     @required List<CharacterFileConstellationModel> constellations,
+    @required StatType subStatType,
+    @required List<CharacterFileStatModel> stats,
   }) = _CharacterFileModel;
 
   const CharacterFileModel._();
@@ -186,4 +188,20 @@ abstract class CharacterFileConstellationModel implements _$CharacterFileConstel
   CharacterFileConstellationModel._();
 
   factory CharacterFileConstellationModel.fromJson(Map<String, dynamic> json) => _$CharacterFileConstellationModelFromJson(json);
+}
+
+@freezed
+abstract class CharacterFileStatModel implements _$CharacterFileStatModel {
+  factory CharacterFileStatModel({
+    @required int level,
+    @required double baseHp,
+    @required double baseAtk,
+    @required double baseDef,
+    @required bool isAnAscension,
+    @required double specificValue,
+  }) = _CharacterFileStatModel;
+
+  const CharacterFileStatModel._();
+
+  factory CharacterFileStatModel.fromJson(Map<String, dynamic> json) => _$CharacterFileStatModelFromJson(json);
 }

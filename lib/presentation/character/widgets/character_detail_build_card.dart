@@ -76,6 +76,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
         name: weapon.name,
         rarity: weapon.rarity,
         image: weapon.image,
+        isComingSoon: weapon.isComingSoon,
       );
       widgets.add(child);
 

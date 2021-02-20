@@ -18,7 +18,7 @@
     "critRate": "{value} Prob. CRIT",
     "critRatePercentage": "{value} Prob. CRIT %",
     "critDmgPercentage": "{value} Daño CRIT %",
-    "elementaryMaster": "{value} Maestría Elemental",
+    "elementaryMastery": "{value} Maestría Elemental",
     "hpPercentage": "{value} Vida %",
     "physDmgPercentage": "{value} Daño FIS. %",
     "physDmgBonus": "{value} Bono Daño FIS.",
@@ -196,5 +196,7 @@
     "rowSettings": "Ajustes de la fila",
     "rename": "Renombrar",
     "confirm": "Confirmar",
-    "pickColor": "Selecciona un color"
+    "pickColor": "Selecciona un color",
+    "stats": "Estadísticas",
+    "baseX": "{value} Base"
 }

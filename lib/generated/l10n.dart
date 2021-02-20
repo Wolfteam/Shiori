@@ -225,11 +225,11 @@ class S {
     );
   }
 
-  /// `{value} Elementary Master`
-  String elementaryMaster(Object value) {
+  /// `{value} Elementary Mastery`
+  String elementaryMastery(Object value) {
     return Intl.message(
-      '$value Elementary Master',
-      name: 'elementaryMaster',
+      '$value Elementary Mastery',
+      name: 'elementaryMastery',
       desc: '',
       args: [value],
     );
@@ -2022,6 +2022,26 @@ class S {
       name: 'pickColor',
       desc: '',
       args: [],
+    );
+  }
+
+  /// `Stats`
+  String get stats {
+    return Intl.message(
+      'Stats',
+      name: 'stats',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Base {value}`
+  String baseX(Object value) {
+    return Intl.message(
+      'Base $value',
+      name: 'baseX',
+      desc: '',
+      args: [value],
     );
   }
 }

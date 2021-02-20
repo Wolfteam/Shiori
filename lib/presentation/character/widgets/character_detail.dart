@@ -5,6 +5,7 @@ export 'character_detail_constellations_card.dart';
 export 'character_detail_general_card.dart';
 export 'character_detail_passive_card.dart';
 export 'character_detail_skills_card.dart';
+export 'character_detail_stats_card.dart';
 export 'character_detail_talent_ascension_materials_card.dart';
 export 'character_detail_top.dart';
 

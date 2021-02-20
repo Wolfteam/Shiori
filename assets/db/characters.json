@@ -532,6 +532,121 @@
           "number": 6,
           "image": "domain_of_purification.png"
         }
+      ],
+      "subStatType": "geoDmgBonusPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1030,
+          "baseAtk": 20,
+          "baseDef": 68,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2671,
+          "baseAtk": 51,
+          "baseDef": 177,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3554,
+          "baseAtk": 67,
+          "baseDef": 235,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5317,
+          "baseAtk": 101,
+          "baseDef": 352,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5944,
+          "baseAtk": 113,
+          "baseDef": 394,
+          "isAnAscension": true,
+          "specificValue": 7.2
+        },
+        {
+          "level": 50,
+          "baseHp": 6839,
+          "baseAtk": 130,
+          "baseDef": 453,
+          "isAnAscension": false,
+          "specificValue": 7.2
+        },
+        {
+          "level": 50,
+          "baseHp": 7675,
+          "baseAtk": 146,
+          "baseDef": 508,
+          "isAnAscension": true,
+          "specificValue": 14.4
+        },
+        {
+          "level": 60,
+          "baseHp": 8579,
+          "baseAtk": 163,
+          "baseDef": 568,
+          "isAnAscension": false,
+          "specificValue": 14.4
+        },
+        {
+          "level": 60,
+          "baseHp": 9207,
+          "baseAtk": 175,
+          "baseDef": 610,
+          "isAnAscension": true,
+          "specificValue": 14.4
+        },
+        {
+          "level": 70,
+          "baseHp": 10119,
+          "baseAtk": 192,
+          "baseDef": 670,
+          "isAnAscension": false,
+          "specificValue": 14.4
+        },
+        {
+          "level": 70,
+          "baseHp": 10746,
+          "baseAtk": 204,
+          "baseDef": 712,
+          "isAnAscension": true,
+          "specificValue": 21.6
+        },
+        {
+          "level": 80,
+          "baseHp": 11669,
+          "baseAtk": 222,
+          "baseDef": 773,
+          "isAnAscension": false,
+          "specificValue": 21.6
+        },
+        {
+          "level": 80,
+          "baseHp": 12296,
+          "baseAtk": 233,
+          "baseDef": 815,
+          "isAnAscension": true,
+          "specificValue": 28.8
+        },
+        {
+          "level": 90,
+          "baseHp": 13226,
+          "baseAtk": 251,
+          "baseDef": 876,
+          "isAnAscension": false,
+          "specificValue": 28.8
+        }
       ]
     },
     {
@@ -1087,6 +1202,121 @@
           "number": 6,
           "image": "wildfire.png"
         }
+      ],
+      "subStatType": "atkPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 793,
+          "baseAtk": 19,
+          "baseDef": 50,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2038,
+          "baseAtk": 48,
+          "baseDef": 129,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2630,
+          "baseAtk": 62,
+          "baseDef": 167,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 3940,
+          "baseAtk": 93,
+          "baseDef": 250,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4361,
+          "baseAtk": 103,
+          "baseDef": 277,
+          "isAnAscension": true,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5016,
+          "baseAtk": 118,
+          "baseDef": 318,
+          "isAnAscension": false,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5578,
+          "baseAtk": 131,
+          "baseDef": 354,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 6233,
+          "baseAtk": 147,
+          "baseDef": 396,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 6654,
+          "baseAtk": 157,
+          "baseDef": 422,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 7309,
+          "baseAtk": 172,
+          "baseDef": 464,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 7730,
+          "baseAtk": 182,
+          "baseDef": 491,
+          "isAnAscension": true,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 8385,
+          "baseAtk": 198,
+          "baseDef": 532,
+          "isAnAscension": false,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 8806,
+          "baseAtk": 208,
+          "baseDef": 559,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 90,
+          "baseHp": 9461,
+          "baseAtk": 223,
+          "baseDef": 601,
+          "isAnAscension": false,
+          "specificValue": 24
+        }
       ]
     },
     {
@@ -1496,7 +1726,122 @@
       "builds": [],
       "skills": [],
       "passives": [],
-      "constellations": []
+      "constellations": [],
+      "subStatType": "cryoDmgBonusPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1058,
+          "baseAtk": 23,
+          "baseDef": 61,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2745,
+          "baseAtk": 59,
+          "baseDef": 158,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3652,
+          "baseAtk": 78,
+          "baseDef": 211,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5465,
+          "baseAtk": 117,
+          "baseDef": 315,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 6110,
+          "baseAtk": 131,
+          "baseDef": 352,
+          "isAnAscension": true,
+          "specificValue": 7.2
+        },
+        {
+          "level": 50,
+          "baseHp": 7029,
+          "baseAtk": 151,
+          "baseDef": 405,
+          "isAnAscension": false,
+          "specificValue": 7.2
+        },
+        {
+          "level": 50,
+          "baseHp": 7889,
+          "baseAtk": 169,
+          "baseDef": 455,
+          "isAnAscension": true,
+          "specificValue": 14.4
+        },
+        {
+          "level": 60,
+          "baseHp": 8818,
+          "baseAtk": 189,
+          "baseDef": 509,
+          "isAnAscension": false,
+          "specificValue": 14.4
+        },
+        {
+          "level": 60,
+          "baseHp": 9462,
+          "baseAtk": 203,
+          "baseDef": 546,
+          "isAnAscension": true,
+          "specificValue": 14.4
+        },
+        {
+          "level": 70,
+          "baseHp": 10400,
+          "baseAtk": 223,
+          "baseDef": 600,
+          "isAnAscension": false,
+          "specificValue": 14.4
+        },
+        {
+          "level": 70,
+          "baseHp": 11045,
+          "baseAtk": 237,
+          "baseDef": 637,
+          "isAnAscension": true,
+          "specificValue": 21.6
+        },
+        {
+          "level": 80,
+          "baseHp": 11993,
+          "baseAtk": 257,
+          "baseDef": 692,
+          "isAnAscension": false,
+          "specificValue": 21.6
+        },
+        {
+          "level": 80,
+          "baseHp": 12637,
+          "baseAtk": 271,
+          "baseDef": 729,
+          "isAnAscension": true,
+          "specificValue": 28.8
+        },
+        {
+          "level": 90,
+          "baseHp": 13593,
+          "baseAtk": 292,
+          "baseDef": 784,
+          "isAnAscension": false,
+          "specificValue": 28.8
+        }
+      ]
     },
     {
       "key": "Barbara",
@@ -2003,6 +2348,121 @@
           "key": "c6",
           "number": 6,
           "image": "dedicating_everything_to_you.png"
+        }
+      ],
+      "subStatType": "hpPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 821,
+          "baseAtk": 13,
+          "baseDef": 56,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2108,
+          "baseAtk": 34,
+          "baseDef": 144,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2721,
+          "baseAtk": 44,
+          "baseDef": 186,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4076,
+          "baseAtk": 66,
+          "baseDef": 279,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4512,
+          "baseAtk": 73,
+          "baseDef": 308,
+          "isAnAscension": true,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5189,
+          "baseAtk": 84,
+          "baseDef": 355,
+          "isAnAscension": false,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5770,
+          "baseAtk": 94,
+          "baseDef": 394,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 6448,
+          "baseAtk": 105,
+          "baseDef": 441,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 6884,
+          "baseAtk": 112,
+          "baseDef": 470,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 7561,
+          "baseAtk": 123,
+          "baseDef": 517,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 7996,
+          "baseAtk": 130,
+          "baseDef": 546,
+          "isAnAscension": true,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 8674,
+          "baseAtk": 141,
+          "baseDef": 593,
+          "isAnAscension": false,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 9110,
+          "baseAtk": 148,
+          "baseDef": 623,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 90,
+          "baseHp": 9787,
+          "baseAtk": 159,
+          "baseDef": 669,
+          "isAnAscension": false,
+          "specificValue": 24
         }
       ]
     },
@@ -2573,6 +3033,121 @@
           "number": 6,
           "image": "bane_of_evil.png"
         }
+      ],
+      "subStatType": "electroDmgBonusPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1094,
+          "baseAtk": 19,
+          "baseDef": 54,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2811,
+          "baseAtk": 48,
+          "baseDef": 140,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3628,
+          "baseAtk": 63,
+          "baseDef": 180,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5435,
+          "baseAtk": 94,
+          "baseDef": 270,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 6015,
+          "baseAtk": 104,
+          "baseDef": 299,
+          "isAnAscension": true,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 6919,
+          "baseAtk": 119,
+          "baseDef": 344,
+          "isAnAscension": false,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 7694,
+          "baseAtk": 133,
+          "baseDef": 382,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 8597,
+          "baseAtk": 148,
+          "baseDef": 427,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 9178,
+          "baseAtk": 158,
+          "baseDef": 456,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 10081,
+          "baseAtk": 174,
+          "baseDef": 501,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 10662,
+          "baseAtk": 184,
+          "baseDef": 530,
+          "isAnAscension": true,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 11565,
+          "baseAtk": 200,
+          "baseDef": 575,
+          "isAnAscension": false,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 12146,
+          "baseAtk": 210,
+          "baseDef": 603,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 90,
+          "baseHp": 13050,
+          "baseAtk": 225,
+          "baseDef": 648,
+          "isAnAscension": false,
+          "specificValue": 24
+        }
       ]
     },
     {
@@ -3133,6 +3708,121 @@
           "key": "c6",
           "number": 6,
           "image": "fire_ventures_with_me.png"
+        }
+      ],
+      "subStatType": "energyRechargePercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1039,
+          "baseAtk": 16,
+          "baseDef": 65,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2670,
+          "baseAtk": 41,
+          "baseDef": 166,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3447,
+          "baseAtk": 53,
+          "baseDef": 214,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5163,
+          "baseAtk": 80,
+          "baseDef": 321,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5715,
+          "baseAtk": 88,
+          "baseDef": 356,
+          "isAnAscension": true,
+          "specificValue": 6.7
+        },
+        {
+          "level": 50,
+          "baseHp": 6573,
+          "baseAtk": 101,
+          "baseDef": 409,
+          "isAnAscension": false,
+          "specificValue": 6.7
+        },
+        {
+          "level": 50,
+          "baseHp": 7309,
+          "baseAtk": 113,
+          "baseDef": 455,
+          "isAnAscension": true,
+          "specificValue": 13.3
+        },
+        {
+          "level": 60,
+          "baseHp": 8168,
+          "baseAtk": 126,
+          "baseDef": 508,
+          "isAnAscension": false,
+          "specificValue": 13.3
+        },
+        {
+          "level": 60,
+          "baseHp": 8719,
+          "baseAtk": 134,
+          "baseDef": 542,
+          "isAnAscension": true,
+          "specificValue": 13.3
+        },
+        {
+          "level": 70,
+          "baseHp": 9577,
+          "baseAtk": 148,
+          "baseDef": 596,
+          "isAnAscension": false,
+          "specificValue": 13.3
+        },
+        {
+          "level": 70,
+          "baseHp": 10129,
+          "baseAtk": 156,
+          "baseDef": 630,
+          "isAnAscension": true,
+          "specificValue": 20
+        },
+        {
+          "level": 80,
+          "baseHp": 10987,
+          "baseAtk": 169,
+          "baseDef": 684,
+          "isAnAscension": false,
+          "specificValue": 20
+        },
+        {
+          "level": 80,
+          "baseHp": 11539,
+          "baseAtk": 178,
+          "baseDef": 718,
+          "isAnAscension": true,
+          "specificValue": 26.7
+        },
+        {
+          "level": 90,
+          "baseHp": 12397,
+          "baseAtk": 191,
+          "baseDef": 771,
+          "isAnAscension": false,
+          "specificValue": 26.7
         }
       ]
     },
@@ -3695,6 +4385,121 @@
           "number": 6,
           "image": "rally_of_four_blades.png"
         }
+      ],
+      "subStatType": "atkPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 921,
+          "baseAtk": 19,
+          "baseDef": 54,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2366,
+          "baseAtk": 48,
+          "baseDef": 140,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3054,
+          "baseAtk": 62,
+          "baseDef": 180,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4574,
+          "baseAtk": 93,
+          "baseDef": 270,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5063,
+          "baseAtk": 103,
+          "baseDef": 299,
+          "isAnAscension": true,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5824,
+          "baseAtk": 118,
+          "baseDef": 344,
+          "isAnAscension": false,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 6475,
+          "baseAtk": 131,
+          "baseDef": 382,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 7236,
+          "baseAtk": 147,
+          "baseDef": 427,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 7725,
+          "baseAtk": 157,
+          "baseDef": 456,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 8485,
+          "baseAtk": 172,
+          "baseDef": 501,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 8974,
+          "baseAtk": 182,
+          "baseDef": 530,
+          "isAnAscension": true,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 9734,
+          "baseAtk": 198,
+          "baseDef": 575,
+          "isAnAscension": false,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 10223,
+          "baseAtk": 208,
+          "baseDef": 603,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 90,
+          "baseHp": 10984,
+          "baseAtk": 223,
+          "baseDef": 648,
+          "isAnAscension": false,
+          "specificValue": 24
+        }
       ]
     },
     {
@@ -4223,6 +5028,121 @@
           "key": "c6",
           "number": 6,
           "image": "flaming_sword_nemesis_of_dark.png"
+        }
+      ],
+      "subStatType": "critRatePercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1011,
+          "baseAtk": 26,
+          "baseDef": 61,
+          "isAnAscension": false,
+          "specificValue": 5
+        },
+        {
+          "level": 20,
+          "baseHp": 2621,
+          "baseAtk": 68,
+          "baseDef": 158,
+          "isAnAscension": false,
+          "specificValue": 5
+        },
+        {
+          "level": 20,
+          "baseHp": 3488,
+          "baseAtk": 90,
+          "baseDef": 211,
+          "isAnAscension": true,
+          "specificValue": 5
+        },
+        {
+          "level": 40,
+          "baseHp": 5219,
+          "baseAtk": 135,
+          "baseDef": 315,
+          "isAnAscension": false,
+          "specificValue": 5
+        },
+        {
+          "level": 40,
+          "baseHp": 5834,
+          "baseAtk": 151,
+          "baseDef": 352,
+          "isAnAscension": true,
+          "specificValue": 9.8
+        },
+        {
+          "level": 50,
+          "baseHp": 6712,
+          "baseAtk": 173,
+          "baseDef": 405,
+          "isAnAscension": false,
+          "specificValue": 9.8
+        },
+        {
+          "level": 50,
+          "baseHp": 7533,
+          "baseAtk": 194,
+          "baseDef": 455,
+          "isAnAscension": true,
+          "specificValue": 14.6
+        },
+        {
+          "level": 60,
+          "baseHp": 8421,
+          "baseAtk": 217,
+          "baseDef": 509,
+          "isAnAscension": false,
+          "specificValue": 14.6
+        },
+        {
+          "level": 60,
+          "baseHp": 9036,
+          "baseAtk": 233,
+          "baseDef": 546,
+          "isAnAscension": true,
+          "specificValue": 14.6
+        },
+        {
+          "level": 70,
+          "baseHp": 9932,
+          "baseAtk": 256,
+          "baseDef": 600,
+          "isAnAscension": false,
+          "specificValue": 14.6
+        },
+        {
+          "level": 70,
+          "baseHp": 10547,
+          "baseAtk": 272,
+          "baseDef": 637,
+          "isAnAscension": true,
+          "specificValue": 19.4
+        },
+        {
+          "level": 80,
+          "baseHp": 11453,
+          "baseAtk": 295,
+          "baseDef": 692,
+          "isAnAscension": false,
+          "specificValue": 19.4
+        },
+        {
+          "level": 80,
+          "baseHp": 12068,
+          "baseAtk": 311,
+          "baseDef": 729,
+          "isAnAscension": true,
+          "specificValue": 24.2
+        },
+        {
+          "level": 90,
+          "baseHp": 12981,
+          "baseAtk": 335,
+          "baseDef": 784,
+          "isAnAscension": false,
+          "specificValue": 24.2
         }
       ]
     },
@@ -4792,6 +5712,121 @@
           "number": 6,
           "image": "cats_tail_closing_time.png"
         }
+      ],
+      "subStatType": "cryoDmgBonusPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 802,
+          "baseAtk": 18,
+          "baseDef": 50,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2061,
+          "baseAtk": 46,
+          "baseDef": 129,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2661,
+          "baseAtk": 59,
+          "baseDef": 167,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 3985,
+          "baseAtk": 88,
+          "baseDef": 250,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4411,
+          "baseAtk": 98,
+          "baseDef": 277,
+          "isAnAscension": true,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5074,
+          "baseAtk": 113,
+          "baseDef": 318,
+          "isAnAscension": false,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5642,
+          "baseAtk": 125,
+          "baseDef": 354,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 6305,
+          "baseAtk": 140,
+          "baseDef": 396,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 6731,
+          "baseAtk": 149,
+          "baseDef": 422,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 7393,
+          "baseAtk": 164,
+          "baseDef": 464,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 7818,
+          "baseAtk": 174,
+          "baseDef": 491,
+          "isAnAscension": true,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 8481,
+          "baseAtk": 188,
+          "baseDef": 532,
+          "isAnAscension": false,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 8907,
+          "baseAtk": 198,
+          "baseDef": 559,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 90,
+          "baseHp": 9570,
+          "baseAtk": 212,
+          "baseDef": 601,
+          "isAnAscension": false,
+          "specificValue": 24
+        }
       ]
     },
     {
@@ -5329,6 +6364,121 @@
           "key": "c6",
           "number": 6,
           "image": "evernight_raven.png"
+        }
+      ],
+      "subStatType": "atkPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 770,
+          "baseAtk": 20,
+          "baseDef": 50,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 1979,
+          "baseAtk": 53,
+          "baseDef": 128,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2555,
+          "baseAtk": 68,
+          "baseDef": 165,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 3827,
+          "baseAtk": 102,
+          "baseDef": 247,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4236,
+          "baseAtk": 113,
+          "baseDef": 274,
+          "isAnAscension": true,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 4872,
+          "baseAtk": 130,
+          "baseDef": 315,
+          "isAnAscension": false,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5418,
+          "baseAtk": 144,
+          "baseDef": 350,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 6054,
+          "baseAtk": 161,
+          "baseDef": 391,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 6463,
+          "baseAtk": 172,
+          "baseDef": 418,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 7099,
+          "baseAtk": 189,
+          "baseDef": 459,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 7508,
+          "baseAtk": 200,
+          "baseDef": 485,
+          "isAnAscension": true,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 8144,
+          "baseAtk": 216,
+          "baseDef": 526,
+          "isAnAscension": false,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 8553,
+          "baseAtk": 227,
+          "baseDef": 553,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 90,
+          "baseHp": 9189,
+          "baseAtk": 244,
+          "baseDef": 594,
+          "isAnAscension": false,
+          "specificValue": 24
         }
       ]
     },
@@ -5919,6 +7069,121 @@
           "number": 6,
           "image": "the_clement.png"
         }
+      ],
+      "subStatType": "critDmgPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 763,
+          "baseAtk": 26,
+          "baseDef": 49,
+          "isAnAscension": false,
+          "specificValue": 50
+        },
+        {
+          "level": 20,
+          "baseHp": 1978,
+          "baseAtk": 68,
+          "baseDef": 127,
+          "isAnAscension": false,
+          "specificValue": 50
+        },
+        {
+          "level": 20,
+          "baseHp": 2632,
+          "baseAtk": 90,
+          "baseDef": 169,
+          "isAnAscension": true,
+          "specificValue": 50
+        },
+        {
+          "level": 40,
+          "baseHp": 3939,
+          "baseAtk": 135,
+          "baseDef": 253,
+          "isAnAscension": false,
+          "specificValue": 50
+        },
+        {
+          "level": 40,
+          "baseHp": 4403,
+          "baseAtk": 151,
+          "baseDef": 283,
+          "isAnAscension": true,
+          "specificValue": 59.6
+        },
+        {
+          "level": 50,
+          "baseHp": 5066,
+          "baseAtk": 173,
+          "baseDef": 326,
+          "isAnAscension": false,
+          "specificValue": 59.6
+        },
+        {
+          "level": 50,
+          "baseHp": 5686,
+          "baseAtk": 194,
+          "baseDef": 366,
+          "isAnAscension": true,
+          "specificValue": 69.2
+        },
+        {
+          "level": 60,
+          "baseHp": 6355,
+          "baseAtk": 217,
+          "baseDef": 409,
+          "isAnAscension": false,
+          "specificValue": 69.2
+        },
+        {
+          "level": 60,
+          "baseHp": 6820,
+          "baseAtk": 233,
+          "baseDef": 439,
+          "isAnAscension": true,
+          "specificValue": 69.2
+        },
+        {
+          "level": 70,
+          "baseHp": 7495,
+          "baseAtk": 256,
+          "baseDef": 482,
+          "isAnAscension": false,
+          "specificValue": 69.2
+        },
+        {
+          "level": 70,
+          "baseHp": 7960,
+          "baseAtk": 272,
+          "baseDef": 512,
+          "isAnAscension": true,
+          "specificValue": 78.8
+        },
+        {
+          "level": 80,
+          "baseHp": 8643,
+          "baseAtk": 295,
+          "baseDef": 556,
+          "isAnAscension": false,
+          "specificValue": 78.8
+        },
+        {
+          "level": 80,
+          "baseHp": 9108,
+          "baseAtk": 311,
+          "baseDef": 586,
+          "isAnAscension": true,
+          "specificValue": 88.4
+        },
+        {
+          "level": 90,
+          "baseHp": 9797,
+          "baseAtk": 335,
+          "baseDef": 630,
+          "isAnAscension": false,
+          "specificValue": 88.4
+        }
       ]
     },
     {
@@ -6497,6 +7762,121 @@
           "number": 6,
           "image": "lions_fang_fair_protector.png"
         }
+      ],
+      "subStatType": "healingBonusPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1144,
+          "baseAtk": 19,
+          "baseDef": 60,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2967,
+          "baseAtk": 48,
+          "baseDef": 155,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3948,
+          "baseAtk": 64,
+          "baseDef": 206,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5908,
+          "baseAtk": 96,
+          "baseDef": 309,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 6605,
+          "baseAtk": 108,
+          "baseDef": 345,
+          "isAnAscension": true,
+          "specificValue": 5.5
+        },
+        {
+          "level": 50,
+          "baseHp": 7599,
+          "baseAtk": 124,
+          "baseDef": 397,
+          "isAnAscension": false,
+          "specificValue": 5.5
+        },
+        {
+          "level": 50,
+          "baseHp": 8528,
+          "baseAtk": 139,
+          "baseDef": 446,
+          "isAnAscension": true,
+          "specificValue": 11.1
+        },
+        {
+          "level": 60,
+          "baseHp": 9533,
+          "baseAtk": 155,
+          "baseDef": 499,
+          "isAnAscension": false,
+          "specificValue": 11.1
+        },
+        {
+          "level": 60,
+          "baseHp": 10230,
+          "baseAtk": 166,
+          "baseDef": 535,
+          "isAnAscension": true,
+          "specificValue": 11.1
+        },
+        {
+          "level": 70,
+          "baseHp": 11243,
+          "baseAtk": 183,
+          "baseDef": 588,
+          "isAnAscension": false,
+          "specificValue": 11.1
+        },
+        {
+          "level": 70,
+          "baseHp": 11940,
+          "baseAtk": 194,
+          "baseDef": 624,
+          "isAnAscension": true,
+          "specificValue": 16.6
+        },
+        {
+          "level": 80,
+          "baseHp": 12965,
+          "baseAtk": 211,
+          "baseDef": 678,
+          "isAnAscension": false,
+          "specificValue": 16.6
+        },
+        {
+          "level": 80,
+          "baseHp": 13662,
+          "baseAtk": 222,
+          "baseDef": 715,
+          "isAnAscension": true,
+          "specificValue": 22.2
+        },
+        {
+          "level": 90,
+          "baseHp": 14695,
+          "baseAtk": 239,
+          "baseDef": 769,
+          "isAnAscension": false,
+          "specificValue": 22.2
+        }
       ]
     },
     {
@@ -7035,6 +8415,121 @@
           "key": "c6",
           "number": 6,
           "image": "glacial_whirlwind.png"
+        }
+      ],
+      "subStatType": "energyRechargePercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 976,
+          "baseAtk": 19,
+          "baseDef": 66,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2506,
+          "baseAtk": 48,
+          "baseDef": 171,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3235,
+          "baseAtk": 62,
+          "baseDef": 220,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4846,
+          "baseAtk": 93,
+          "baseDef": 330,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5364,
+          "baseAtk": 103,
+          "baseDef": 365,
+          "isAnAscension": true,
+          "specificValue": 6.7
+        },
+        {
+          "level": 50,
+          "baseHp": 6170,
+          "baseAtk": 118,
+          "baseDef": 420,
+          "isAnAscension": false,
+          "specificValue": 6.7
+        },
+        {
+          "level": 50,
+          "baseHp": 6860,
+          "baseAtk": 131,
+          "baseDef": 467,
+          "isAnAscension": true,
+          "specificValue": 13.3
+        },
+        {
+          "level": 60,
+          "baseHp": 7666,
+          "baseAtk": 147,
+          "baseDef": 522,
+          "isAnAscension": false,
+          "specificValue": 13.3
+        },
+        {
+          "level": 60,
+          "baseHp": 8184,
+          "baseAtk": 157,
+          "baseDef": 557,
+          "isAnAscension": true,
+          "specificValue": 13.3
+        },
+        {
+          "level": 70,
+          "baseHp": 8989,
+          "baseAtk": 172,
+          "baseDef": 612,
+          "isAnAscension": false,
+          "specificValue": 13.3
+        },
+        {
+          "level": 70,
+          "baseHp": 9507,
+          "baseAtk": 182,
+          "baseDef": 647,
+          "isAnAscension": true,
+          "specificValue": 20
+        },
+        {
+          "level": 80,
+          "baseHp": 10312,
+          "baseAtk": 198,
+          "baseDef": 702,
+          "isAnAscension": false,
+          "specificValue": 20
+        },
+        {
+          "level": 80,
+          "baseHp": 10830,
+          "baseAtk": 208,
+          "baseDef": 737,
+          "isAnAscension": true,
+          "specificValue": 26.7
+        },
+        {
+          "level": 90,
+          "baseHp": 11636,
+          "baseAtk": 223,
+          "baseDef": 792,
+          "isAnAscension": false,
+          "specificValue": 26.7
         }
       ]
     },
@@ -7612,6 +9107,121 @@
           "number": 6,
           "image": "tenacious_star.png"
         }
+      ],
+      "subStatType": "critDmgPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1020,
+          "baseAtk": 25,
+          "baseDef": 62,
+          "isAnAscension": false,
+          "specificValue": 50
+        },
+        {
+          "level": 20,
+          "baseHp": 2646,
+          "baseAtk": 65,
+          "baseDef": 161,
+          "isAnAscension": false,
+          "specificValue": 50
+        },
+        {
+          "level": 20,
+          "baseHp": 3521,
+          "baseAtk": 87,
+          "baseDef": 215,
+          "isAnAscension": true,
+          "specificValue": 50
+        },
+        {
+          "level": 40,
+          "baseHp": 5268,
+          "baseAtk": 130,
+          "baseDef": 321,
+          "isAnAscension": false,
+          "specificValue": 50
+        },
+        {
+          "level": 40,
+          "baseHp": 5889,
+          "baseAtk": 145,
+          "baseDef": 359,
+          "isAnAscension": true,
+          "specificValue": 59.6
+        },
+        {
+          "level": 50,
+          "baseHp": 6776,
+          "baseAtk": 167,
+          "baseDef": 413,
+          "isAnAscension": false,
+          "specificValue": 59.6
+        },
+        {
+          "level": 50,
+          "baseHp": 7604,
+          "baseAtk": 187,
+          "baseDef": 464,
+          "isAnAscension": true,
+          "specificValue": 69.2
+        },
+        {
+          "level": 60,
+          "baseHp": 8500,
+          "baseAtk": 209,
+          "baseDef": 519,
+          "isAnAscension": false,
+          "specificValue": 69.2
+        },
+        {
+          "level": 60,
+          "baseHp": 9121,
+          "baseAtk": 225,
+          "baseDef": 556,
+          "isAnAscension": true,
+          "specificValue": 69.2
+        },
+        {
+          "level": 70,
+          "baseHp": 10025,
+          "baseAtk": 247,
+          "baseDef": 612,
+          "isAnAscension": false,
+          "specificValue": 69.2
+        },
+        {
+          "level": 70,
+          "baseHp": 10647,
+          "baseAtk": 262,
+          "baseDef": 649,
+          "isAnAscension": true,
+          "specificValue": 78.8
+        },
+        {
+          "level": 80,
+          "baseHp": 11561,
+          "baseAtk": 285,
+          "baseDef": 705,
+          "isAnAscension": false,
+          "specificValue": 78.8
+        },
+        {
+          "level": 80,
+          "baseHp": 12182,
+          "baseAtk": 300,
+          "baseDef": 743,
+          "isAnAscension": true,
+          "specificValue": 88.4
+        },
+        {
+          "level": 90,
+          "baseHp": 13103,
+          "baseAtk": 323,
+          "baseDef": 799,
+          "isAnAscension": false,
+          "specificValue": 88.4
+        }
       ]
     },
     {
@@ -8140,6 +9750,121 @@
           "key": "c6",
           "number": 6,
           "image": "blazing_delight.png"
+        }
+      ],
+      "subStatType": "pyroDmgBonusPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 801,
+          "baseAtk": 24,
+          "baseDef": 48,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2077,
+          "baseAtk": 63,
+          "baseDef": 124,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2764,
+          "baseAtk": 84,
+          "baseDef": 165,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4136,
+          "baseAtk": 125,
+          "baseDef": 247,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4623,
+          "baseAtk": 140,
+          "baseDef": 276,
+          "isAnAscension": true,
+          "specificValue": 7.2
+        },
+        {
+          "level": 50,
+          "baseHp": 5319,
+          "baseAtk": 161,
+          "baseDef": 318,
+          "isAnAscension": false,
+          "specificValue": 7.2
+        },
+        {
+          "level": 50,
+          "baseHp": 5970,
+          "baseAtk": 180,
+          "baseDef": 357,
+          "isAnAscension": true,
+          "specificValue": 14.4
+        },
+        {
+          "level": 60,
+          "baseHp": 6673,
+          "baseAtk": 202,
+          "baseDef": 399,
+          "isAnAscension": false,
+          "specificValue": 14.4
+        },
+        {
+          "level": 60,
+          "baseHp": 7161,
+          "baseAtk": 216,
+          "baseDef": 428,
+          "isAnAscension": true,
+          "specificValue": 14.4
+        },
+        {
+          "level": 70,
+          "baseHp": 7870,
+          "baseAtk": 238,
+          "baseDef": 470,
+          "isAnAscension": false,
+          "specificValue": 14.4
+        },
+        {
+          "level": 70,
+          "baseHp": 8358,
+          "baseAtk": 253,
+          "baseDef": 500,
+          "isAnAscension": true,
+          "specificValue": 21.6
+        },
+        {
+          "level": 80,
+          "baseHp": 9076,
+          "baseAtk": 274,
+          "baseDef": 542,
+          "isAnAscension": false,
+          "specificValue": 21.6
+        },
+        {
+          "level": 80,
+          "baseHp": 9563,
+          "baseAtk": 289,
+          "baseDef": 572,
+          "isAnAscension": true,
+          "specificValue": 28.8
+        },
+        {
+          "level": 90,
+          "baseHp": 10287,
+          "baseAtk": 311,
+          "baseDef": 615,
+          "isAnAscension": false,
+          "specificValue": 28.8
         }
       ]
     },
@@ -8683,6 +10408,121 @@
           "number": 6,
           "image": "pulsating_witch.png"
         }
+      ],
+      "subStatType": "elementaryMastery",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 802,
+          "baseAtk": 19,
+          "baseDef": 48,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2061,
+          "baseAtk": 50,
+          "baseDef": 123,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2661,
+          "baseAtk": 64,
+          "baseDef": 159,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 3985,
+          "baseAtk": 96,
+          "baseDef": 239,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4411,
+          "baseAtk": 107,
+          "baseDef": 264,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 50,
+          "baseHp": 5074,
+          "baseAtk": 123,
+          "baseDef": 304,
+          "isAnAscension": false,
+          "specificValue": 24
+        },
+        {
+          "level": 50,
+          "baseHp": 5642,
+          "baseAtk": 136,
+          "baseDef": 338,
+          "isAnAscension": true,
+          "specificValue": 48
+        },
+        {
+          "level": 60,
+          "baseHp": 6305,
+          "baseAtk": 153,
+          "baseDef": 378,
+          "isAnAscension": false,
+          "specificValue": 48
+        },
+        {
+          "level": 60,
+          "baseHp": 6731,
+          "baseAtk": 163,
+          "baseDef": 403,
+          "isAnAscension": true,
+          "specificValue": 48
+        },
+        {
+          "level": 70,
+          "baseHp": 7393,
+          "baseAtk": 179,
+          "baseDef": 443,
+          "isAnAscension": false,
+          "specificValue": 48
+        },
+        {
+          "level": 70,
+          "baseHp": 7818,
+          "baseAtk": 189,
+          "baseDef": 468,
+          "isAnAscension": true,
+          "specificValue": 72
+        },
+        {
+          "level": 80,
+          "baseHp": 8481,
+          "baseAtk": 205,
+          "baseDef": 508,
+          "isAnAscension": false,
+          "specificValue": 72
+        },
+        {
+          "level": 80,
+          "baseHp": 8907,
+          "baseAtk": 215,
+          "baseDef": 534,
+          "isAnAscension": true,
+          "specificValue": 96
+        },
+        {
+          "level": 90,
+          "baseHp": 9570,
+          "baseAtk": 232,
+          "baseDef": 573,
+          "isAnAscension": false,
+          "specificValue": 96
+        }
       ]
     },
     {
@@ -9223,6 +11063,121 @@
           "key": "c6",
           "number": 6,
           "image": "rhetirucs_of_calamitas.png"
+        }
+      ],
+      "subStatType": "energyRechargePercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 810,
+          "baseAtk": 22,
+          "baseDef": 51,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2102,
+          "baseAtk": 58,
+          "baseDef": 132,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2797,
+          "baseAtk": 77,
+          "baseDef": 176,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4185,
+          "baseAtk": 115,
+          "baseDef": 263,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4678,
+          "baseAtk": 129,
+          "baseDef": 294,
+          "isAnAscension": true,
+          "specificValue": 8
+        },
+        {
+          "level": 50,
+          "baseHp": 5383,
+          "baseAtk": 148,
+          "baseDef": 338,
+          "isAnAscension": false,
+          "specificValue": 8
+        },
+        {
+          "level": 50,
+          "baseHp": 6041,
+          "baseAtk": 167,
+          "baseDef": 379,
+          "isAnAscension": true,
+          "specificValue": 16
+        },
+        {
+          "level": 60,
+          "baseHp": 6752,
+          "baseAtk": 186,
+          "baseDef": 424,
+          "isAnAscension": false,
+          "specificValue": 16
+        },
+        {
+          "level": 60,
+          "baseHp": 7246,
+          "baseAtk": 200,
+          "baseDef": 455,
+          "isAnAscension": true,
+          "specificValue": 16
+        },
+        {
+          "level": 70,
+          "baseHp": 7964,
+          "baseAtk": 220,
+          "baseDef": 500,
+          "isAnAscension": false,
+          "specificValue": 16
+        },
+        {
+          "level": 70,
+          "baseHp": 8458,
+          "baseAtk": 233,
+          "baseDef": 531,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 80,
+          "baseHp": 9184,
+          "baseAtk": 253,
+          "baseDef": 576,
+          "isAnAscension": false,
+          "specificValue": 24
+        },
+        {
+          "level": 80,
+          "baseHp": 9677,
+          "baseAtk": 267,
+          "baseDef": 607,
+          "isAnAscension": true,
+          "specificValue": 32
+        },
+        {
+          "level": 90,
+          "baseHp": 10409,
+          "baseAtk": 287,
+          "baseDef": 653,
+          "isAnAscension": false,
+          "specificValue": 32
         }
       ]
     },
@@ -9794,6 +11749,121 @@
           "number": 6,
           "image": "grandeur_be_the_seven_stars.png"
         }
+      ],
+      "subStatType": "geoDmgBonusPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 821,
+          "baseAtk": 18,
+          "baseDef": 48,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2108,
+          "baseAtk": 46,
+          "baseDef": 123,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2721,
+          "baseAtk": 59,
+          "baseDef": 159,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4076,
+          "baseAtk": 88,
+          "baseDef": 239,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4512,
+          "baseAtk": 98,
+          "baseDef": 264,
+          "isAnAscension": true,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5189,
+          "baseAtk": 113,
+          "baseDef": 304,
+          "isAnAscension": false,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5770,
+          "baseAtk": 125,
+          "baseDef": 338,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 6448,
+          "baseAtk": 140,
+          "baseDef": 378,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 6884,
+          "baseAtk": 149,
+          "baseDef": 403,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 7561,
+          "baseAtk": 164,
+          "baseDef": 443,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 7996,
+          "baseAtk": 174,
+          "baseDef": 468,
+          "isAnAscension": true,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 8674,
+          "baseAtk": 188,
+          "baseDef": 508,
+          "isAnAscension": false,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 9110,
+          "baseAtk": 198,
+          "baseDef": 534,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 90,
+          "baseHp": 9787,
+          "baseAtk": 212,
+          "baseDef": 573,
+          "isAnAscension": false,
+          "specificValue": 24
+        }
       ]
     },
     {
@@ -10356,6 +12426,121 @@
           "number": 6,
           "image": "must_be_spotless.png"
         }
+      ],
+      "subStatType": "defPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1012,
+          "baseAtk": 16,
+          "baseDef": 67,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2600,
+          "baseAtk": 41,
+          "baseDef": 172,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3356,
+          "baseAtk": 53,
+          "baseDef": 222,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5027,
+          "baseAtk": 80,
+          "baseDef": 333,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5564,
+          "baseAtk": 88,
+          "baseDef": 368,
+          "isAnAscension": true,
+          "specificValue": 7.5
+        },
+        {
+          "level": 50,
+          "baseHp": 6400,
+          "baseAtk": 101,
+          "baseDef": 423,
+          "isAnAscension": false,
+          "specificValue": 7.5
+        },
+        {
+          "level": 50,
+          "baseHp": 7117,
+          "baseAtk": 113,
+          "baseDef": 471,
+          "isAnAscension": true,
+          "specificValue": 15
+        },
+        {
+          "level": 60,
+          "baseHp": 7953,
+          "baseAtk": 126,
+          "baseDef": 526,
+          "isAnAscension": false,
+          "specificValue": 15
+        },
+        {
+          "level": 60,
+          "baseHp": 8490,
+          "baseAtk": 134,
+          "baseDef": 562,
+          "isAnAscension": true,
+          "specificValue": 15
+        },
+        {
+          "level": 70,
+          "baseHp": 9325,
+          "baseAtk": 148,
+          "baseDef": 617,
+          "isAnAscension": false,
+          "specificValue": 15
+        },
+        {
+          "level": 70,
+          "baseHp": 9862,
+          "baseAtk": 156,
+          "baseDef": 652,
+          "isAnAscension": true,
+          "specificValue": 22.5
+        },
+        {
+          "level": 80,
+          "baseHp": 10698,
+          "baseAtk": 169,
+          "baseDef": 708,
+          "isAnAscension": false,
+          "specificValue": 22.5
+        },
+        {
+          "level": 80,
+          "baseHp": 11235,
+          "baseAtk": 178,
+          "baseDef": 743,
+          "isAnAscension": true,
+          "specificValue": 30
+        },
+        {
+          "level": 90,
+          "baseHp": 12071,
+          "baseAtk": 191,
+          "baseDef": 799,
+          "isAnAscension": false,
+          "specificValue": 30
+        }
       ]
     },
     {
@@ -10865,6 +13050,121 @@
           "key": "c6",
           "number": 6,
           "image": "rite_of_resurrection.png"
+        }
+      ],
+      "subStatType": "healingBonusPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 963,
+          "baseAtk": 22,
+          "baseDef": 72,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2498,
+          "baseAtk": 58,
+          "baseDef": 186,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3323,
+          "baseAtk": 77,
+          "baseDef": 248,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4973,
+          "baseAtk": 115,
+          "baseDef": 371,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5559,
+          "baseAtk": 129,
+          "baseDef": 415,
+          "isAnAscension": true,
+          "specificValue": 5.5
+        },
+        {
+          "level": 50,
+          "baseHp": 6396,
+          "baseAtk": 148,
+          "baseDef": 477,
+          "isAnAscension": false,
+          "specificValue": 5.5
+        },
+        {
+          "level": 50,
+          "baseHp": 7178,
+          "baseAtk": 167,
+          "baseDef": 535,
+          "isAnAscension": true,
+          "specificValue": 11.1
+        },
+        {
+          "level": 60,
+          "baseHp": 8023,
+          "baseAtk": 186,
+          "baseDef": 598,
+          "isAnAscension": false,
+          "specificValue": 11.1
+        },
+        {
+          "level": 60,
+          "baseHp": 8610,
+          "baseAtk": 200,
+          "baseDef": 642,
+          "isAnAscension": true,
+          "specificValue": 11.1
+        },
+        {
+          "level": 70,
+          "baseHp": 9463,
+          "baseAtk": 220,
+          "baseDef": 706,
+          "isAnAscension": false,
+          "specificValue": 11.1
+        },
+        {
+          "level": 70,
+          "baseHp": 10050,
+          "baseAtk": 233,
+          "baseDef": 749,
+          "isAnAscension": true,
+          "specificValue": 16.6
+        },
+        {
+          "level": 80,
+          "baseHp": 10912,
+          "baseAtk": 253,
+          "baseDef": 814,
+          "isAnAscension": false,
+          "specificValue": 16.6
+        },
+        {
+          "level": 80,
+          "baseHp": 11499,
+          "baseAtk": 267,
+          "baseDef": 857,
+          "isAnAscension": true,
+          "specificValue": 22.2
+        },
+        {
+          "level": 90,
+          "baseHp": 12368,
+          "baseAtk": 287,
+          "baseDef": 922,
+          "isAnAscension": false,
+          "specificValue": 22.2
         }
       ]
     },
@@ -11386,6 +13686,121 @@
           "number": 6,
           "image": "lupus_fulguris.png"
         }
+      ],
+      "subStatType": "physDmgBonusPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1003,
+          "baseAtk": 20,
+          "baseDef": 63,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2577,
+          "baseAtk": 50,
+          "baseDef": 162,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3326,
+          "baseAtk": 65,
+          "baseDef": 209,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4982,
+          "baseAtk": 97,
+          "baseDef": 313,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5514,
+          "baseAtk": 108,
+          "baseDef": 346,
+          "isAnAscension": true,
+          "specificValue": 7.5
+        },
+        {
+          "level": 50,
+          "baseHp": 6343,
+          "baseAtk": 124,
+          "baseDef": 398,
+          "isAnAscension": false,
+          "specificValue": 7.5
+        },
+        {
+          "level": 50,
+          "baseHp": 7052,
+          "baseAtk": 138,
+          "baseDef": 443,
+          "isAnAscension": true,
+          "specificValue": 15
+        },
+        {
+          "level": 60,
+          "baseHp": 7881,
+          "baseAtk": 154,
+          "baseDef": 495,
+          "isAnAscension": false,
+          "specificValue": 15
+        },
+        {
+          "level": 60,
+          "baseHp": 8413,
+          "baseAtk": 164,
+          "baseDef": 528,
+          "isAnAscension": true,
+          "specificValue": 15
+        },
+        {
+          "level": 70,
+          "baseHp": 9241,
+          "baseAtk": 180,
+          "baseDef": 580,
+          "isAnAscension": false,
+          "specificValue": 15
+        },
+        {
+          "level": 70,
+          "baseHp": 9773,
+          "baseAtk": 191,
+          "baseDef": 613,
+          "isAnAscension": true,
+          "specificValue": 22.5
+        },
+        {
+          "level": 80,
+          "baseHp": 10602,
+          "baseAtk": 207,
+          "baseDef": 665,
+          "isAnAscension": false,
+          "specificValue": 22.5
+        },
+        {
+          "level": 80,
+          "baseHp": 11134,
+          "baseAtk": 217,
+          "baseDef": 699,
+          "isAnAscension": true,
+          "specificValue": 30
+        },
+        {
+          "level": 90,
+          "baseHp": 11962,
+          "baseAtk": 234,
+          "baseDef": 751,
+          "isAnAscension": false,
+          "specificValue": 30
+        }
       ]
     },
     {
@@ -11831,9 +14246,9 @@
               "stats": [
                 "hp",
                 "atk",
-                "elementaryMaster",
-                "elementaryMaster",
-                "elementaryMaster"
+                "elementaryMastery",
+                "elementaryMastery",
+                "elementaryMastery"
               ]
             }
           ]
@@ -11923,6 +14338,121 @@
           "key": "c6",
           "number": 6,
           "image": "chaotic_entropy.png"
+        }
+      ],
+      "subStatType": "anemoDmgBonusPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 775,
+          "baseAtk": 14,
+          "baseDef": 59,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 1991,
+          "baseAtk": 37,
+          "baseDef": 151,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2570,
+          "baseAtk": 47,
+          "baseDef": 195,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 3850,
+          "baseAtk": 71,
+          "baseDef": 293,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4261,
+          "baseAtk": 78,
+          "baseDef": 324,
+          "isAnAscension": true,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 4901,
+          "baseAtk": 90,
+          "baseDef": 373,
+          "isAnAscension": false,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5450,
+          "baseAtk": 100,
+          "baseDef": 414,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 6090,
+          "baseAtk": 112,
+          "baseDef": 463,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 6501,
+          "baseAtk": 120,
+          "baseDef": 494,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 7141,
+          "baseAtk": 131,
+          "baseDef": 543,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 7552,
+          "baseAtk": 139,
+          "baseDef": 574,
+          "isAnAscension": true,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 8192,
+          "baseAtk": 151,
+          "baseDef": 623,
+          "isAnAscension": false,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 8604,
+          "baseAtk": 158,
+          "baseDef": 654,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 90,
+          "baseHp": 9244,
+          "baseAtk": 170,
+          "baseDef": 703,
+          "isAnAscension": false,
+          "specificValue": 24
         }
       ]
     },
@@ -12355,7 +14885,7 @@
               "stats": [
                 "hp",
                 "atk",
-                "elementaryMaster",
+                "elementaryMastery",
                 "hydroDmgBonusPercentage",
                 "critRatePercentage"
               ]
@@ -12366,7 +14896,7 @@
               "stats": [
                 "hp",
                 "atk",
-                "elementaryMaster",
+                "elementaryMastery",
                 "hydroDmgBonusPercentage",
                 "critRatePercentage"
               ]
@@ -12503,6 +15033,121 @@
           "key": "c6",
           "number": 6,
           "image": "havoc_annihilation.png"
+        }
+      ],
+      "subStatType": "hydroDmgBonusPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1020,
+          "baseAtk": 23,
+          "baseDef": 63,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2646,
+          "baseAtk": 61,
+          "baseDef": 165,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3521,
+          "baseAtk": 81,
+          "baseDef": 219,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5268,
+          "baseAtk": 121,
+          "baseDef": 328,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5889,
+          "baseAtk": 135,
+          "baseDef": 366,
+          "isAnAscension": true,
+          "specificValue": 7.2
+        },
+        {
+          "level": 50,
+          "baseHp": 6776,
+          "baseAtk": 156,
+          "baseDef": 421,
+          "isAnAscension": false,
+          "specificValue": 7.2
+        },
+        {
+          "level": 50,
+          "baseHp": 7604,
+          "baseAtk": 175,
+          "baseDef": 473,
+          "isAnAscension": true,
+          "specificValue": 14.4
+        },
+        {
+          "level": 60,
+          "baseHp": 8500,
+          "baseAtk": 195,
+          "baseDef": 528,
+          "isAnAscension": false,
+          "specificValue": 14.4
+        },
+        {
+          "level": 60,
+          "baseHp": 9121,
+          "baseAtk": 210,
+          "baseDef": 567,
+          "isAnAscension": true,
+          "specificValue": 14.4
+        },
+        {
+          "level": 70,
+          "baseHp": 10025,
+          "baseAtk": 231,
+          "baseDef": 623,
+          "isAnAscension": false,
+          "specificValue": 14.4
+        },
+        {
+          "level": 70,
+          "baseHp": 10647,
+          "baseAtk": 245,
+          "baseDef": 662,
+          "isAnAscension": true,
+          "specificValue": 21.6
+        },
+        {
+          "level": 80,
+          "baseHp": 11561,
+          "baseAtk": 266,
+          "baseDef": 719,
+          "isAnAscension": false,
+          "specificValue": 21.6
+        },
+        {
+          "level": 80,
+          "baseHp": 12182,
+          "baseAtk": 280,
+          "baseDef": 757,
+          "isAnAscension": true,
+          "specificValue": 28.8
+        },
+        {
+          "level": 90,
+          "baseHp": 13103,
+          "baseAtk": 301,
+          "baseDef": 815,
+          "isAnAscension": false,
+          "specificValue": 28.8
         }
       ]
     },
@@ -13325,7 +15970,7 @@
               "stats": [
                 "hp",
                 "atk",
-                "elementaryMaster",
+                "elementaryMastery",
                 "anemoDmgBonusPercentage",
                 "critRatePercentage"
               ]
@@ -13422,6 +16067,121 @@
           "key": "c6",
           "number": 6,
           "image": "interwined_winds.png"
+        }
+      ],
+      "subStatType": "atkPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 912,
+          "baseAtk": 18,
+          "baseDef": 57,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2342,
+          "baseAtk": 46,
+          "baseDef": 147,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3024,
+          "baseAtk": 59,
+          "baseDef": 190,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4529,
+          "baseAtk": 88,
+          "baseDef": 284,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5013,
+          "baseAtk": 98,
+          "baseDef": 315,
+          "isAnAscension": true,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5766,
+          "baseAtk": 113,
+          "baseDef": 362,
+          "isAnAscension": false,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 6411,
+          "baseAtk": 125,
+          "baseDef": 402,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 7164,
+          "baseAtk": 140,
+          "baseDef": 450,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 7648,
+          "baseAtk": 149,
+          "baseDef": 480,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 8401,
+          "baseAtk": 164,
+          "baseDef": 527,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 8885,
+          "baseAtk": 174,
+          "baseDef": 558,
+          "isAnAscension": true,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 9638,
+          "baseAtk": 188,
+          "baseDef": 605,
+          "isAnAscension": false,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 10122,
+          "baseAtk": 198,
+          "baseDef": 635,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 90,
+          "baseHp": 10875,
+          "baseAtk": 212,
+          "baseDef": 683,
+          "isAnAscension": false,
+          "specificValue": 24
         }
       ]
     },
@@ -14244,7 +17004,7 @@
               "stats": [
                 "hp",
                 "atk",
-                "elementaryMaster",
+                "elementaryMastery",
                 "geoDmgBonusPercentage",
                 "critRatePercentage"
               ]
@@ -14255,7 +17015,7 @@
               "stats": [
                 "hp",
                 "atk",
-                "elementaryMaster",
+                "elementaryMastery",
                 "geoDmgBonusPercentage",
                 "critRatePercentage"
               ]
@@ -14342,6 +17102,121 @@
           "key": "c6",
           "number": 6,
           "image": "everlasting_boulder.png"
+        }
+      ],
+      "subStatType": "atkPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 912,
+          "baseAtk": 18,
+          "baseDef": 57,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2342,
+          "baseAtk": 46,
+          "baseDef": 147,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3024,
+          "baseAtk": 59,
+          "baseDef": 190,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4529,
+          "baseAtk": 88,
+          "baseDef": 284,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5013,
+          "baseAtk": 98,
+          "baseDef": 315,
+          "isAnAscension": true,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5766,
+          "baseAtk": 113,
+          "baseDef": 362,
+          "isAnAscension": false,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 6411,
+          "baseAtk": 125,
+          "baseDef": 402,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 7164,
+          "baseAtk": 140,
+          "baseDef": 450,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 7648,
+          "baseAtk": 149,
+          "baseDef": 480,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 8401,
+          "baseAtk": 164,
+          "baseDef": 527,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 8885,
+          "baseAtk": 174,
+          "baseDef": 558,
+          "isAnAscension": true,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 9638,
+          "baseAtk": 188,
+          "baseDef": 605,
+          "isAnAscension": false,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 10122,
+          "baseAtk": 198,
+          "baseDef": 635,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 90,
+          "baseHp": 10875,
+          "baseAtk": 212,
+          "baseDef": 683,
+          "isAnAscension": false,
+          "specificValue": 24
         }
       ]
     },
@@ -14869,6 +17744,121 @@
           "number": 6,
           "image": "storm_of_defiance.png"
         }
+      ],
+      "subStatType": "energyRechargePercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 820,
+          "baseAtk": 20,
+          "baseDef": 52,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2127,
+          "baseAtk": 53,
+          "baseDef": 135,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2830,
+          "baseAtk": 71,
+          "baseDef": 180,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4234,
+          "baseAtk": 106,
+          "baseDef": 269,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4734,
+          "baseAtk": 118,
+          "baseDef": 301,
+          "isAnAscension": true,
+          "specificValue": 8
+        },
+        {
+          "level": 50,
+          "baseHp": 5446,
+          "baseAtk": 136,
+          "baseDef": 346,
+          "isAnAscension": false,
+          "specificValue": 8
+        },
+        {
+          "level": 50,
+          "baseHp": 6112,
+          "baseAtk": 153,
+          "baseDef": 388,
+          "isAnAscension": true,
+          "specificValue": 16
+        },
+        {
+          "level": 60,
+          "baseHp": 6832,
+          "baseAtk": 171,
+          "baseDef": 434,
+          "isAnAscension": false,
+          "specificValue": 16
+        },
+        {
+          "level": 60,
+          "baseHp": 7331,
+          "baseAtk": 183,
+          "baseDef": 465,
+          "isAnAscension": true,
+          "specificValue": 16
+        },
+        {
+          "level": 70,
+          "baseHp": 8058,
+          "baseAtk": 201,
+          "baseDef": 512,
+          "isAnAscension": false,
+          "specificValue": 16
+        },
+        {
+          "level": 70,
+          "baseHp": 8557,
+          "baseAtk": 214,
+          "baseDef": 543,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 80,
+          "baseHp": 9292,
+          "baseAtk": 232,
+          "baseDef": 590,
+          "isAnAscension": false,
+          "specificValue": 24
+        },
+        {
+          "level": 80,
+          "baseHp": 9791,
+          "baseAtk": 245,
+          "baseDef": 622,
+          "isAnAscension": true,
+          "specificValue": 32
+        },
+        {
+          "level": 90,
+          "baseHp": 10531,
+          "baseAtk": 263,
+          "baseDef": 669,
+          "isAnAscension": false,
+          "specificValue": 32
+        }
       ]
     },
     {
@@ -15332,7 +18322,7 @@
                 "atk",
                 "energyRechargePercentage",
                 "pyroDmgBonusPercentage",
-                "elementaryMaster"
+                "elementaryMastery"
               ]
             }
           ]
@@ -15416,6 +18406,121 @@
           "key": "c6",
           "number": 6,
           "image": "condensed_pyronado.png"
+        }
+      ],
+      "subStatType": "elementaryMastery",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 912,
+          "baseAtk": 19,
+          "baseDef": 56,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2342,
+          "baseAtk": 48,
+          "baseDef": 144,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3024,
+          "baseAtk": 63,
+          "baseDef": 186,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4529,
+          "baseAtk": 94,
+          "baseDef": 279,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5013,
+          "baseAtk": 104,
+          "baseDef": 308,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 50,
+          "baseHp": 5766,
+          "baseAtk": 119,
+          "baseDef": 355,
+          "isAnAscension": false,
+          "specificValue": 24
+        },
+        {
+          "level": 50,
+          "baseHp": 6411,
+          "baseAtk": 133,
+          "baseDef": 394,
+          "isAnAscension": true,
+          "specificValue": 48
+        },
+        {
+          "level": 60,
+          "baseHp": 7164,
+          "baseAtk": 148,
+          "baseDef": 441,
+          "isAnAscension": false,
+          "specificValue": 48
+        },
+        {
+          "level": 60,
+          "baseHp": 7648,
+          "baseAtk": 158,
+          "baseDef": 470,
+          "isAnAscension": true,
+          "specificValue": 48
+        },
+        {
+          "level": 70,
+          "baseHp": 8401,
+          "baseAtk": 174,
+          "baseDef": 517,
+          "isAnAscension": false,
+          "specificValue": 48
+        },
+        {
+          "level": 70,
+          "baseHp": 8885,
+          "baseAtk": 184,
+          "baseDef": 546,
+          "isAnAscension": true,
+          "specificValue": 72
+        },
+        {
+          "level": 80,
+          "baseHp": 9638,
+          "baseAtk": 200,
+          "baseDef": 593,
+          "isAnAscension": false,
+          "specificValue": 72
+        },
+        {
+          "level": 80,
+          "baseHp": 10122,
+          "baseAtk": 210,
+          "baseDef": 623,
+          "isAnAscension": true,
+          "specificValue": 96
+        },
+        {
+          "level": 90,
+          "baseHp": 10875,
+          "baseAtk": 225,
+          "baseDef": 669,
+          "isAnAscension": false,
+          "specificValue": 96
         }
       ]
     },
@@ -15947,6 +19052,121 @@
           "number": 6,
           "image": "evil_conqueror_vigilant_yaksha.png"
         }
+      ],
+      "subStatType": "critRatePercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 991,
+          "baseAtk": 27,
+          "baseDef": 62,
+          "isAnAscension": false,
+          "specificValue": 5
+        },
+        {
+          "level": 20,
+          "baseHp": 2572,
+          "baseAtk": 71,
+          "baseDef": 161,
+          "isAnAscension": false,
+          "specificValue": 5
+        },
+        {
+          "level": 20,
+          "baseHp": 3422,
+          "baseAtk": 94,
+          "baseDef": 215,
+          "isAnAscension": true,
+          "specificValue": 5
+        },
+        {
+          "level": 40,
+          "baseHp": 5120,
+          "baseAtk": 140,
+          "baseDef": 321,
+          "isAnAscension": false,
+          "specificValue": 5
+        },
+        {
+          "level": 40,
+          "baseHp": 5724,
+          "baseAtk": 157,
+          "baseDef": 359,
+          "isAnAscension": true,
+          "specificValue": 9.8
+        },
+        {
+          "level": 50,
+          "baseHp": 6586,
+          "baseAtk": 181,
+          "baseDef": 413,
+          "isAnAscension": false,
+          "specificValue": 9.8
+        },
+        {
+          "level": 50,
+          "baseHp": 7391,
+          "baseAtk": 203,
+          "baseDef": 464,
+          "isAnAscension": true,
+          "specificValue": 14.6
+        },
+        {
+          "level": 60,
+          "baseHp": 8262,
+          "baseAtk": 227,
+          "baseDef": 519,
+          "isAnAscension": false,
+          "specificValue": 14.6
+        },
+        {
+          "level": 60,
+          "baseHp": 8866,
+          "baseAtk": 243,
+          "baseDef": 556,
+          "isAnAscension": true,
+          "specificValue": 14.6
+        },
+        {
+          "level": 70,
+          "baseHp": 9744,
+          "baseAtk": 267,
+          "baseDef": 612,
+          "isAnAscension": false,
+          "specificValue": 14.6
+        },
+        {
+          "level": 70,
+          "baseHp": 10348,
+          "baseAtk": 284,
+          "baseDef": 649,
+          "isAnAscension": true,
+          "specificValue": 19.4
+        },
+        {
+          "level": 80,
+          "baseHp": 11236,
+          "baseAtk": 308,
+          "baseDef": 705,
+          "isAnAscension": false,
+          "specificValue": 19.4
+        },
+        {
+          "level": 80,
+          "baseHp": 11840,
+          "baseAtk": 325,
+          "baseDef": 743,
+          "isAnAscension": true,
+          "specificValue": 24.2
+        },
+        {
+          "level": 90,
+          "baseHp": 12736,
+          "baseAtk": 349,
+          "baseDef": 799,
+          "isAnAscension": false,
+          "specificValue": 24.2
+        }
       ]
     },
     {
@@ -16474,6 +19694,121 @@
           "key": "c6",
           "number": 6,
           "image": "hence_call_them_my_own.png"
+        }
+      ],
+      "subStatType": "atkPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 857,
+          "baseAtk": 17,
+          "baseDef": 64,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2202,
+          "baseAtk": 43,
+          "baseDef": 163,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2842,
+          "baseAtk": 56,
+          "baseDef": 211,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4257,
+          "baseAtk": 84,
+          "baseDef": 316,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4712,
+          "baseAtk": 93,
+          "baseDef": 349,
+          "isAnAscension": true,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5420,
+          "baseAtk": 107,
+          "baseDef": 402,
+          "isAnAscension": false,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 6027,
+          "baseAtk": 119,
+          "baseDef": 447,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 6735,
+          "baseAtk": 133,
+          "baseDef": 499,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 7190,
+          "baseAtk": 142,
+          "baseDef": 533,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 7897,
+          "baseAtk": 156,
+          "baseDef": 585,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 8352,
+          "baseAtk": 165,
+          "baseDef": 619,
+          "isAnAscension": true,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 9060,
+          "baseAtk": 179,
+          "baseDef": 671,
+          "isAnAscension": false,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 9514,
+          "baseAtk": 188,
+          "baseDef": 705,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 90,
+          "baseHp": 10222,
+          "baseAtk": 202,
+          "baseDef": 758,
+          "isAnAscension": false,
+          "specificValue": 24
         }
       ]
     },
@@ -17022,6 +20357,121 @@
           "key": "c6",
           "number": 6,
           "image": "rockin_in_a_flaming.png"
+        }
+      ],
+      "subStatType": "atkPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 939,
+          "baseAtk": 21,
+          "baseDef": 67,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2413,
+          "baseAtk": 54,
+          "baseDef": 172,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3114,
+          "baseAtk": 69,
+          "baseDef": 222,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4665,
+          "baseAtk": 103,
+          "baseDef": 333,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5163,
+          "baseAtk": 115,
+          "baseDef": 368,
+          "isAnAscension": true,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5939,
+          "baseAtk": 132,
+          "baseDef": 423,
+          "isAnAscension": false,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 6604,
+          "baseAtk": 147,
+          "baseDef": 471,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 7379,
+          "baseAtk": 164,
+          "baseDef": 526,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 7878,
+          "baseAtk": 175,
+          "baseDef": 562,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 8653,
+          "baseAtk": 192,
+          "baseDef": 617,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 9151,
+          "baseAtk": 203,
+          "baseDef": 652,
+          "isAnAscension": true,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 9927,
+          "baseAtk": 220,
+          "baseDef": 708,
+          "isAnAscension": false,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 10425,
+          "baseAtk": 231,
+          "baseDef": 743,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 90,
+          "baseHp": 11201,
+          "baseAtk": 249,
+          "baseDef": 799,
+          "isAnAscension": false,
+          "specificValue": 24
         }
       ]
     },
@@ -17592,6 +21042,121 @@
           "key": "c6",
           "number": 6,
           "image": "chrysos_bounty_of_dominator.png"
+        }
+      ],
+      "subStatType": "geoDmgBonusPercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1144,
+          "baseAtk": 20,
+          "baseDef": 57,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2967,
+          "baseAtk": 51,
+          "baseDef": 149,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3948,
+          "baseAtk": 67,
+          "baseDef": 198,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5908,
+          "baseAtk": 101,
+          "baseDef": 297,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 6605,
+          "baseAtk": 113,
+          "baseDef": 332,
+          "isAnAscension": true,
+          "specificValue": 7.2
+        },
+        {
+          "level": 50,
+          "baseHp": 7599,
+          "baseAtk": 130,
+          "baseDef": 382,
+          "isAnAscension": false,
+          "specificValue": 7.2
+        },
+        {
+          "level": 50,
+          "baseHp": 8528,
+          "baseAtk": 146,
+          "baseDef": 428,
+          "isAnAscension": true,
+          "specificValue": 14.4
+        },
+        {
+          "level": 60,
+          "baseHp": 9533,
+          "baseAtk": 163,
+          "baseDef": 479,
+          "isAnAscension": false,
+          "specificValue": 14.4
+        },
+        {
+          "level": 60,
+          "baseHp": 10230,
+          "baseAtk": 175,
+          "baseDef": 514,
+          "isAnAscension": true,
+          "specificValue": 14.4
+        },
+        {
+          "level": 70,
+          "baseHp": 11243,
+          "baseAtk": 192,
+          "baseDef": 564,
+          "isAnAscension": false,
+          "specificValue": 14.4
+        },
+        {
+          "level": 70,
+          "baseHp": 11940,
+          "baseAtk": 204,
+          "baseDef": 599,
+          "isAnAscension": true,
+          "specificValue": 21.6
+        },
+        {
+          "level": 80,
+          "baseHp": 12965,
+          "baseAtk": 222,
+          "baseDef": 651,
+          "isAnAscension": false,
+          "specificValue": 21.6
+        },
+        {
+          "level": 80,
+          "baseHp": 13662,
+          "baseAtk": 233,
+          "baseDef": 686,
+          "isAnAscension": true,
+          "specificValue": 28.8
+        },
+        {
+          "level": 90,
+          "baseHp": 14695,
+          "baseAtk": 251,
+          "baseDef": 738,
+          "isAnAscension": false,
+          "specificValue": 28.8
         }
       ]
     }
