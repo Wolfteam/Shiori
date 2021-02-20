@@ -64,6 +64,7 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
         },
       ).toList(),
       charImages: charImgs,
+      stats: weapon.stats,
     );
   }
 }

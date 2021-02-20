@@ -84,6 +84,7 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
             subStatType: weapon.subStatType,
             subStatValue: weapon.subStatValue,
             isInSelectionMode: widget.isInSelectionMode,
+            isComingSoon: weapon.isComingSoon,
           );
         },
         itemCount: weapons.length,

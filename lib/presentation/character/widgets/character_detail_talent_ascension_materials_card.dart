@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
+import 'package:genshindb/presentation/shared/common_table_cell.dart';
 import 'package:genshindb/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
@@ -49,32 +50,23 @@ class CharacterDetailTalentAscensionMaterialsCard extends StatelessWidget {
       elevation: Styles.cardTenElevation,
       margin: Styles.edgeInsetAll5,
       shape: Styles.cardShape,
-      child: Table(
-        columnWidths: const {
-          0: FractionColumnWidth(.2),
-          2: FractionColumnWidth(.8),
-        },
-        children: [
-          TableRow(
-            children: [
-              TableCell(
-                verticalAlignment: TableCellVerticalAlignment.middle,
-                child: Padding(
-                  padding: Styles.edgeInsetAll10,
-                  child: Center(child: Text(s.level)),
-                ),
-              ),
-              TableCell(
-                verticalAlignment: TableCellVerticalAlignment.middle,
-                child: Padding(
-                  padding: Styles.edgeInsetAll10,
-                  child: Center(child: Text(s.materials)),
-                ),
-              ),
-            ],
-          ),
-          ...materials.map((e) => _buildTalentAscensionRow(e)).toList(),
-        ],
+      child: Padding(
+        padding: Styles.edgeInsetVertical5,
+        child: Table(
+          columnWidths: const {
+            0: FractionColumnWidth(.2),
+            2: FractionColumnWidth(.8),
+          },
+          children: [
+            TableRow(
+              children: [
+                CommonTableCell(text: s.level, padding: Styles.edgeInsetAll10),
+                CommonTableCell(text: s.materials, padding: Styles.edgeInsetAll10),
+              ],
+            ),
+            ...materials.map((e) => _buildTalentAscensionRow(e)).toList(),
+          ],
+        ),
       ),
     );
 
@@ -87,21 +79,17 @@ class CharacterDetailTalentAscensionMaterialsCard extends StatelessWidget {
 
   TableRow _buildTalentAscensionRow(CharacterFileTalentAscensionMaterialModel model) {
     final materials = model.materials.map((m) => WrappedAscensionMaterial(image: m.fullImagePath, quantity: m.quantity)).toList();
-    return TableRow(children: [
-      TableCell(
-        verticalAlignment: TableCellVerticalAlignment.middle,
-        child: Padding(
+    return TableRow(
+      children: [
+        CommonTableCell(
+          text: '${model.level}',
           padding: Styles.edgeInsetAll10,
-          child: Center(child: Text('${model.level}')),
         ),
-      ),
-      TableCell(
-        verticalAlignment: TableCellVerticalAlignment.middle,
-        child: Padding(
-          padding: Styles.edgeInsetVertical5,
+        CommonTableCell.child(
+          padding: Styles.edgeInsetAll5,
           child: Wrap(alignment: WrapAlignment.center, children: materials),
         ),
-      ),
-    ]);
+      ],
+    );
   }
 }

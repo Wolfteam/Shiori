@@ -121,6 +121,8 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
           ).toList(),
         );
       }).toList(),
+      subStatType: char.subStatType,
+      stats: char.stats,
     );
   }
 }

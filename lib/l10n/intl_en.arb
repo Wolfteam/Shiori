@@ -197,5 +197,7 @@
     "rowSettings": "Row settings",
     "rename": "Rename",
     "confirm": "Confirm",
-    "pickColor": "Pick a color"
+    "pickColor": "Pick a color",
+    "stats": "Stats",
+    "baseX": "Base {value}"
 }

@@ -25,39 +25,41 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m2(value) => "${value} ATK %";
 
-  static m3(value) => "Constellation ${value}";
+  static m3(value) => "Base ${value}";
 
-  static m4(value) => "${value} CRIT ATK";
+  static m4(value) => "Constellation ${value}";
 
-  static m5(value) => "${value} CRIT DMG %";
+  static m5(value) => "${value} CRIT ATK";
 
-  static m6(value) => "${value} CRIT Rate";
+  static m6(value) => "${value} CRIT DMG %";
 
-  static m7(value) => "${value} CRIT Rate %";
+  static m7(value) => "${value} CRIT Rate";
 
-  static m8(value) => "${value} DEF %";
+  static m8(value) => "${value} CRIT Rate %";
 
-  static m9(value) => "${value} Elementary Mastery";
+  static m9(value) => "${value} DEF %";
 
-  static m10(value) => "${value} Energy Recharge %";
+  static m10(value) => "${value} Elementary Mastery";
 
-  static m11(value) => "${value} Healing Bonus %";
+  static m11(value) => "${value} Energy Recharge %";
 
-  static m12(value) => "${value} HP";
+  static m12(value) => "${value} Healing Bonus %";
 
-  static m13(value) => "${value} HP %";
+  static m13(value) => "${value} HP";
 
-  static m14(value) => "${value} PHYS DMG Bonus";
+  static m14(value) => "${value} HP %";
 
-  static m15(value) => "${value} PHYS DMG %";
+  static m15(value) => "${value} PHYS DMG Bonus";
 
-  static m16(value) => "Talent Ascension ${value}";
+  static m16(value) => "${value} PHYS DMG %";
 
-  static m17(value) => "Unlocked at ascension level ${value}";
+  static m17(value) => "Talent Ascension ${value}";
 
-  static m18(value, x) => "${value} ${x} DMG Bonus %";
+  static m18(value) => "Unlocked at ascension level ${value}";
 
-  static m19(value) => "${value} Piece(s)";
+  static m19(value, x) => "${value} ${x} DMG Bonus %";
+
+  static m20(value) => "${value} Piece(s)";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
@@ -81,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "atk" : m1,
     "atkPercentage" : m2,
     "baseAtk" : MessageLookupByLibrary.simpleMessage("Base ATK"),
+    "baseX" : m3,
     "birthday" : MessageLookupByLibrary.simpleMessage("Birthday"),
     "bonus" : MessageLookupByLibrary.simpleMessage("Bonus"),
     "boss" : MessageLookupByLibrary.simpleMessage("Boss"),
@@ -107,19 +110,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "comingSoon" : MessageLookupByLibrary.simpleMessage("Coming soon"),
     "common" : MessageLookupByLibrary.simpleMessage("Common"),
     "confirm" : MessageLookupByLibrary.simpleMessage("Confirm"),
-    "constellationX" : m3,
+    "constellationX" : m4,
     "constellations" : MessageLookupByLibrary.simpleMessage("Constellations"),
     "crafting" : MessageLookupByLibrary.simpleMessage("Crafting"),
-    "critAtk" : m4,
-    "critDmgPercentage" : m5,
-    "critRate" : m6,
-    "critRatePercentage" : m7,
+    "critAtk" : m5,
+    "critDmgPercentage" : m6,
+    "critRate" : m7,
+    "critRatePercentage" : m8,
     "crown" : MessageLookupByLibrary.simpleMessage("Crown"),
     "currency" : MessageLookupByLibrary.simpleMessage("Currency"),
     "currentLevel" : MessageLookupByLibrary.simpleMessage("Current level"),
     "dark" : MessageLookupByLibrary.simpleMessage("Dark"),
     "day" : MessageLookupByLibrary.simpleMessage("Day"),
-    "defPercentage" : m8,
+    "defPercentage" : m9,
     "deleteRow" : MessageLookupByLibrary.simpleMessage("Delete row"),
     "desc" : MessageLookupByLibrary.simpleMessage("Descending"),
     "description" : MessageLookupByLibrary.simpleMessage("Description"),
@@ -138,9 +141,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "elementalResonances" : MessageLookupByLibrary.simpleMessage("Elemental Resonances"),
     "elementalResonancesExplained" : MessageLookupByLibrary.simpleMessage("Having these types of character in your party will give you the corresponding effect"),
     "elementalSkill" : MessageLookupByLibrary.simpleMessage("Elemental Skill"),
-    "elementaryMastery" : m9,
+    "elementaryMastery" : m10,
     "elements" : MessageLookupByLibrary.simpleMessage("Elements"),
-    "energyRechargePercentage" : m10,
+    "energyRechargePercentage" : m11,
     "english" : MessageLookupByLibrary.simpleMessage("English"),
     "female" : MessageLookupByLibrary.simpleMessage("Female"),
     "filters" : MessageLookupByLibrary.simpleMessage("Filters"),
@@ -155,11 +158,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "goblet" : MessageLookupByLibrary.simpleMessage("Goblet"),
     "happyBirthday" : MessageLookupByLibrary.simpleMessage("Happy Birthday!"),
     "healingBonus" : MessageLookupByLibrary.simpleMessage("Healing Bonus"),
-    "healingBonusPercentage" : m11,
+    "healingBonusPercentage" : m12,
     "hold" : MessageLookupByLibrary.simpleMessage("Hold"),
     "home" : MessageLookupByLibrary.simpleMessage("Home"),
-    "hp" : m12,
-    "hpPercentage" : m13,
+    "hp" : m13,
+    "hpPercentage" : m14,
     "imgSavedSuccessfully" : MessageLookupByLibrary.simpleMessage("Image was successfully saved to the gallery"),
     "issues" : MessageLookupByLibrary.simpleMessage("Issues"),
     "language" : MessageLookupByLibrary.simpleMessage("Language"),
@@ -188,8 +191,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "others" : MessageLookupByLibrary.simpleMessage("Others"),
     "partial" : MessageLookupByLibrary.simpleMessage("Partial"),
     "passives" : MessageLookupByLibrary.simpleMessage("Passives"),
-    "physDmgBonus" : m14,
-    "physDmgPercentage" : m15,
+    "physDmgBonus" : m15,
+    "physDmgPercentage" : m16,
     "pickColor" : MessageLookupByLibrary.simpleMessage("Pick a color"),
     "pieces" : MessageLookupByLibrary.simpleMessage("Pieces"),
     "plume" : MessageLookupByLibrary.simpleMessage("Plume"),
@@ -230,6 +233,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "spanish" : MessageLookupByLibrary.simpleMessage("Spanish"),
     "starglitterExchange" : MessageLookupByLibrary.simpleMessage("Starglitter Exchange"),
     "startByAddingMsg" : MessageLookupByLibrary.simpleMessage("Start by adding some characters / weapons"),
+    "stats" : MessageLookupByLibrary.simpleMessage("Stats"),
     "subStat" : MessageLookupByLibrary.simpleMessage("Sub. Stat"),
     "summary" : MessageLookupByLibrary.simpleMessage("Summary"),
     "sunday" : MessageLookupByLibrary.simpleMessage("Sunday"),
@@ -237,7 +241,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "supportDps" : MessageLookupByLibrary.simpleMessage("Support DPS"),
     "supportMsg" : MessageLookupByLibrary.simpleMessage("I made this app in my free time and it is also open source. If you would like to help me, report an issue, have an idea, want a feature to be implemented, etc, please open an issue in my Github:"),
     "sword" : MessageLookupByLibrary.simpleMessage("Sword"),
-    "talentAscensionX" : m16,
+    "talentAscensionX" : m17,
     "talentsAscension" : MessageLookupByLibrary.simpleMessage("Talents Ascension"),
     "theme" : MessageLookupByLibrary.simpleMessage("Theme"),
     "thursday" : MessageLookupByLibrary.simpleMessage("Thursday"),
@@ -248,7 +252,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "tuesday" : MessageLookupByLibrary.simpleMessage("Tuesday"),
     "type" : MessageLookupByLibrary.simpleMessage("Type"),
     "unknownError" : MessageLookupByLibrary.simpleMessage("Unknown error occurred"),
-    "unlockedAtAscensionLevelX" : m17,
+    "unlockedAtAscensionLevelX" : m18,
     "unlockedAutomatically" : MessageLookupByLibrary.simpleMessage("Unlocked Automatically"),
     "unreleased" : MessageLookupByLibrary.simpleMessage("Unreleased"),
     "utility" : MessageLookupByLibrary.simpleMessage("Utility"),
@@ -257,8 +261,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "weapons" : MessageLookupByLibrary.simpleMessage("Weapons"),
     "wednesday" : MessageLookupByLibrary.simpleMessage("Wednesday"),
     "wishSimulator" : MessageLookupByLibrary.simpleMessage("Wish simulator"),
-    "xDmgBonusPercentage" : m18,
-    "xPieces" : m19,
+    "xDmgBonusPercentage" : m19,
+    "xPieces" : m20,
     "youCanAlsoSendMeAnEmail" : MessageLookupByLibrary.simpleMessage("You can also send me an email")
   };
 }

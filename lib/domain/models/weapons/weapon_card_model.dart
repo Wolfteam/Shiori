@@ -12,6 +12,7 @@ class WeaponCardModel {
   final WeaponType type;
   final StatType subStatType;
   final double subStatValue;
+  final bool isComingSoon;
 
   const WeaponCardModel({
     @required this.key,
@@ -22,5 +23,6 @@ class WeaponCardModel {
     @required this.type,
     @required this.subStatType,
     @required this.subStatValue,
+    @required this.isComingSoon,
   });
 }

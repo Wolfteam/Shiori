@@ -38,6 +38,7 @@ abstract class CharacterFileModel implements _$CharacterFileModel {
     @required List<CharacterFileSkillModel> skills,
     @required List<CharacterFilePassiveModel> passives,
     @required List<CharacterFileConstellationModel> constellations,
+    @required StatType subStatType,
     @required List<CharacterFileStatModel> stats,
   }) = _CharacterFileModel;
 
@@ -56,8 +57,7 @@ abstract class CharacterFileAscensionMaterialModel implements _$CharacterFileAsc
 
   const CharacterFileAscensionMaterialModel._();
 
-  factory CharacterFileAscensionMaterialModel.fromJson(Map<String, dynamic> json) =>
-      _$CharacterFileAscensionMaterialModelFromJson(json);
+  factory CharacterFileAscensionMaterialModel.fromJson(Map<String, dynamic> json) => _$CharacterFileAscensionMaterialModelFromJson(json);
 }
 
 @freezed
@@ -69,13 +69,11 @@ abstract class CharacterFileTalentAscensionMaterialModel implements _$CharacterF
 
   const CharacterFileTalentAscensionMaterialModel._();
 
-  factory CharacterFileTalentAscensionMaterialModel.fromJson(Map<String, dynamic> json) =>
-      _$CharacterFileTalentAscensionMaterialModelFromJson(json);
+  factory CharacterFileTalentAscensionMaterialModel.fromJson(Map<String, dynamic> json) => _$CharacterFileTalentAscensionMaterialModelFromJson(json);
 }
 
 @freezed
-abstract class CharacterFileMultiTalentAscensionMaterialModel
-    implements _$CharacterFileMultiTalentAscensionMaterialModel {
+abstract class CharacterFileMultiTalentAscensionMaterialModel implements _$CharacterFileMultiTalentAscensionMaterialModel {
   factory CharacterFileMultiTalentAscensionMaterialModel({
     @required int number,
     @required List<CharacterFileTalentAscensionMaterialModel> materials,
@@ -128,8 +126,7 @@ abstract class CharacterFileArtifactMultipleBuild implements _$CharacterFileArti
 
   CharacterFileArtifactMultipleBuild._();
 
-  factory CharacterFileArtifactMultipleBuild.fromJson(Map<String, dynamic> json) =>
-      _$CharacterFileArtifactMultipleBuildFromJson(json);
+  factory CharacterFileArtifactMultipleBuild.fromJson(Map<String, dynamic> json) => _$CharacterFileArtifactMultipleBuildFromJson(json);
 }
 
 @freezed
@@ -158,8 +155,7 @@ abstract class CharacterFileSkillAbilityModel implements _$CharacterFileSkillAbi
 
   CharacterFileSkillAbilityModel._();
 
-  factory CharacterFileSkillAbilityModel.fromJson(Map<String, dynamic> json) =>
-      _$CharacterFileSkillAbilityModelFromJson(json);
+  factory CharacterFileSkillAbilityModel.fromJson(Map<String, dynamic> json) => _$CharacterFileSkillAbilityModelFromJson(json);
 }
 
 @freezed
@@ -191,6 +187,21 @@ abstract class CharacterFileConstellationModel implements _$CharacterFileConstel
 
   CharacterFileConstellationModel._();
 
-  factory CharacterFileConstellationModel.fromJson(Map<String, dynamic> json) =>
-      _$CharacterFileConstellationModelFromJson(json);
+  factory CharacterFileConstellationModel.fromJson(Map<String, dynamic> json) => _$CharacterFileConstellationModelFromJson(json);
+}
+
+@freezed
+abstract class CharacterFileStatModel implements _$CharacterFileStatModel {
+  factory CharacterFileStatModel({
+    @required int level,
+    @required double baseHp,
+    @required double baseAtk,
+    @required double baseDef,
+    @required bool isAnAscension,
+    @required double specificValue,
+  }) = _CharacterFileStatModel;
+
+  const CharacterFileStatModel._();
+
+  factory CharacterFileStatModel.fromJson(Map<String, dynamic> json) => _$CharacterFileStatModelFromJson(json);
 }

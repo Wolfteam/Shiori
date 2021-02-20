@@ -67,6 +67,12 @@ class CharacterDetailBottom extends StatelessWidget {
                   ),
                 CharacterDetailPassiveCard(elementType: state.elementType, passives: state.passives),
                 CharacterDetailConstellationsCard(elementType: state.elementType, constellations: state.constellations),
+                if (state.stats.isNotEmpty)
+                  CharacterDetailStatsCard(
+                    elementType: state.elementType,
+                    stats: state.stats,
+                    subStatType: state.subStatType,
+                  ),
               ],
             ),
           ),

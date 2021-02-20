@@ -22,5 +22,7 @@ abstract class CharacterState with _$CharacterState {
     @required List<CharacterPassiveTalentModel> passives,
     @required List<CharacterConstellationModel> constellations,
     @required List<CharacterBuildCardModel> builds,
+    @required StatType subStatType,
+    @required List<CharacterFileStatModel> stats,
   }) = _LoadedState;
 }

@@ -2024,6 +2024,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Stats`
+  String get stats {
+    return Intl.message(
+      'Stats',
+      name: 'stats',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Base {value}`
+  String baseX(Object value) {
+    return Intl.message(
+      'Base $value',
+      name: 'baseX',
+      desc: '',
+      args: [value],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

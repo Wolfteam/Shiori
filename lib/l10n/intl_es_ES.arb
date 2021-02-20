@@ -196,5 +196,7 @@
     "rowSettings": "Ajustes de la fila",
     "rename": "Renombrar",
     "confirm": "Confirmar",
-    "pickColor": "Selecciona un color"
+    "pickColor": "Selecciona un color",
+    "stats": "Estadísticas",
+    "baseX": "{value} Base"
 }

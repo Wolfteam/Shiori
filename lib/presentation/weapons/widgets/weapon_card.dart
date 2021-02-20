@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/generated/l10n.dart';
+import 'package:genshindb/presentation/shared/comingsoon_new_avatar.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:genshindb/presentation/shared/gradient_card.dart';
@@ -23,6 +24,7 @@ class WeaponCard extends StatelessWidget {
   final WeaponType type;
   final StatType subStatType;
   final double subStatValue;
+  final bool isComingSoon;
 
   final double imgWidth;
   final double imgHeight;
@@ -40,6 +42,7 @@ class WeaponCard extends StatelessWidget {
     @required this.type,
     @required this.subStatType,
     @required this.subStatValue,
+    @required this.isComingSoon,
     this.imgWidth = 160,
     this.imgHeight = 140,
     this.isInSelectionMode = false,
@@ -53,6 +56,7 @@ class WeaponCard extends StatelessWidget {
     @required this.image,
     @required this.name,
     @required this.rarity,
+    @required this.isComingSoon,
     this.imgWidth = 80,
     this.imgHeight = 70,
   })  : type = null,
@@ -78,11 +82,26 @@ class WeaponCard extends StatelessWidget {
           padding: Styles.edgeInsetAll5,
           child: Column(
             children: [
-              FadeInImage(
-                width: imgWidth,
-                height: imgHeight,
-                placeholder: MemoryImage(kTransparentImage),
-                image: AssetImage(image),
+              Stack(
+                alignment: AlignmentDirectional.topCenter,
+                fit: StackFit.passthrough,
+                children: [
+                  FadeInImage(
+                    width: imgWidth,
+                    height: imgHeight,
+                    placeholder: MemoryImage(kTransparentImage),
+                    image: AssetImage(image),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ComingSoonNewAvatar(
+                        isNew: false,
+                        isComingSoon: isComingSoon,
+                      ),
+                    ],
+                  ),
+                ],
               ),
               if (!withoutDetails)
                 Center(
