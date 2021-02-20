@@ -61,6 +61,7 @@ class SettingsServiceImpl extends SettingsService {
         appLanguage: language,
         showCharacterDetails: showCharacterDetails,
         showWeaponDetails: showWeaponDetails,
+        isFirstInstall: isFirstInstall,
       );
 
   SettingsServiceImpl(this._logger);

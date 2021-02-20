@@ -91,6 +91,9 @@ class TelemetryServiceImpl implements TelemetryService {
       'Theme': EnumToString.convertToString(settings.appTheme),
       'AccentColor': EnumToString.convertToString(settings.accentColor),
       'Language': EnumToString.convertToString(settings.appLanguage),
+      'ShowCharacterDetails': settings.showCharacterDetails.toString(),
+      'ShowWeaponDetails': settings.showWeaponDetails.toString(),
+      'IsFirstInstall': settings.isFirstInstall.toString(),
     });
   }
 }

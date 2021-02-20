@@ -18,6 +18,7 @@ abstract class AppSettings implements _$AppSettings {
     @required AppLanguageType appLanguage,
     @required bool showCharacterDetails,
     @required bool showWeaponDetails,
+    @required bool isFirstInstall,
   }) = _AppSettings;
   const AppSettings._();
 
