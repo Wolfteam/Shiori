@@ -27,7 +27,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
-            return HomeBloc(genshinService);
+            final settingsService = getIt<SettingsService>();
+            return HomeBloc(genshinService, settingsService);
           },
         ),
         BlocProvider(
@@ -115,7 +116,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (ctx) {
             final settingsService = getIt<SettingsService>();
-            return SettingsBloc(settingsService, ctx.read<MainBloc>());
+            return SettingsBloc(settingsService, ctx.read<MainBloc>(), ctx.read<HomeBloc>());
           },
         ),
         BlocProvider(

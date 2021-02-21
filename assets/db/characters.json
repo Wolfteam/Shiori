@@ -16195,7 +16195,7 @@
       "secondFullImage": "Traveler_Male.png",
       "isComingSoon": false,
       "isNew": false,
-      "isFemale": true,
+      "isFemale": false,
       "region": "anotherWorld",
       "role": "utility",
       "tier": "c",

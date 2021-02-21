@@ -328,4 +328,17 @@ extension I18nExtensions on S {
         throw Exception('Invalid ascension material type = $type');
     }
   }
+
+  String translateServerResetTimeType(AppServerResetTimeType type) {
+    switch (type) {
+      case AppServerResetTimeType.northAmerica:
+        return northAmerica;
+      case AppServerResetTimeType.europe:
+        return europe;
+      case AppServerResetTimeType.asia:
+        return asia;
+      default:
+        throw Exception('Invalid server reset time type = $type');
+    }
+  }
 }

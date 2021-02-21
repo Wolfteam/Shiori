@@ -199,5 +199,10 @@
     "confirm": "Confirm",
     "pickColor": "Pick a color",
     "stats": "Stats",
-    "baseX": "Base {value}"
+    "baseX": "Base {value}",
+    "northAmerica": "North America",
+    "europe": "Europe",
+    "asia": "Asia",
+    "chooseServer": "Choose a server",
+    "serverWhereYouPlay":"The server where you play"
 }

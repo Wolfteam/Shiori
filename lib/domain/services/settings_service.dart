@@ -22,5 +22,8 @@ abstract class SettingsService {
   bool get showWeaponDetails;
   set showWeaponDetails(bool show);
 
+  AppServerResetTimeType get serverResetTime;
+  set serverResetTime(AppServerResetTimeType time);
+
   Future<void> init();
 }

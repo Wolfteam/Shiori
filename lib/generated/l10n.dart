@@ -2044,6 +2044,56 @@ class S {
       args: [value],
     );
   }
+
+  /// `North America`
+  String get northAmerica {
+    return Intl.message(
+      'North America',
+      name: 'northAmerica',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Europe`
+  String get europe {
+    return Intl.message(
+      'Europe',
+      name: 'europe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Asia`
+  String get asia {
+    return Intl.message(
+      'Asia',
+      name: 'asia',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose a server`
+  String get chooseServer {
+    return Intl.message(
+      'Choose a server',
+      name: 'chooseServer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The server where you play`
+  String get serverWhereYouPlay {
+    return Intl.message(
+      'The server where you play',
+      name: 'serverWhereYouPlay',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

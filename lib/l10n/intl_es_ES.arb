@@ -198,5 +198,10 @@
     "confirm": "Confirmar",
     "pickColor": "Selecciona un color",
     "stats": "Estadísticas",
-    "baseX": "{value} Base"
+    "baseX": "{value} Base",
+    "northAmerica": "Norte América",
+    "europe": "Europa",
+    "asia": "Asia",
+    "chooseServer": "Escoge un servidor",
+    "serverWhereYouPlay":"El servidor donde juegas"
 }

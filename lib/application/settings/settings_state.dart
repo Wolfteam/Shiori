@@ -10,5 +10,6 @@ abstract class SettingsState with _$SettingsState {
     @required String appVersion,
     @required bool showCharacterDetails,
     @required bool showWeaponDetails,
+    @required AppServerResetTimeType serverResetTime,
   }) = _LoadedState;
 }

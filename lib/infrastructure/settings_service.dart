@@ -11,6 +11,7 @@ class SettingsServiceImpl extends SettingsService {
   final _firstInstallKey = 'FirstInstall';
   final _showCharacterDetailsKey = 'ShowCharacterDetailsKey';
   final _showWeaponDetailsKey = 'ShowWeaponDetailsKey';
+  final _serverResetTimeKey = 'ServerResetTimeKey';
 
   bool _initialized = false;
 
@@ -54,6 +55,12 @@ class SettingsServiceImpl extends SettingsService {
   set showWeaponDetails(bool show) => _prefs.setBool(_showWeaponDetailsKey, show);
 
   @override
+  AppServerResetTimeType get serverResetTime => AppServerResetTimeType.values[_prefs.getInt(_serverResetTimeKey)];
+
+  @override
+  set serverResetTime(AppServerResetTimeType time) => _prefs.setInt(_serverResetTimeKey, time.index);
+
+  @override
   AppSettings get appSettings => AppSettings(
         appTheme: appTheme,
         useDarkAmoled: false,
@@ -62,6 +69,7 @@ class SettingsServiceImpl extends SettingsService {
         showCharacterDetails: showCharacterDetails,
         showWeaponDetails: showWeaponDetails,
         isFirstInstall: isFirstInstall,
+        serverResetTime: serverResetTime,
       );
 
   SettingsServiceImpl(this._logger);
@@ -105,6 +113,11 @@ class SettingsServiceImpl extends SettingsService {
     if (_prefs.get(_showWeaponDetailsKey) == null) {
       _logger.info(runtimeType, 'Weapon details are shown by default');
       showWeaponDetails = true;
+    }
+
+    if (_prefs.get(_serverResetTimeKey) == null) {
+      _logger.info(runtimeType, 'The server reset time will be ${AppServerResetTimeType.northAmerica} by default');
+      serverResetTime = AppServerResetTimeType.northAmerica;
     }
 
     _initialized = true;
