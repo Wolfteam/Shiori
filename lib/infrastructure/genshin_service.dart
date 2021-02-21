@@ -22,7 +22,14 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   Future<void> init(AppLanguageType languageType) async {
-    await Future.wait([initCharacters(), initWeapons(), initArtifacts(), initMaterials(), initElements(), initTranslations(languageType)]);
+    await Future.wait([
+      initCharacters(),
+      initWeapons(),
+      initArtifacts(),
+      initMaterials(),
+      initElements(),
+      initTranslations(languageType),
+    ]);
   }
 
   @override

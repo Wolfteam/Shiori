@@ -218,6 +218,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "restore" : MessageLookupByLibrary.simpleMessage("Restore"),
     "role" : MessageLookupByLibrary.simpleMessage("Role"),
     "rowSettings" : MessageLookupByLibrary.simpleMessage("Row settings"),
+    "russian" : MessageLookupByLibrary.simpleMessage("Russian"),
     "saturday" : MessageLookupByLibrary.simpleMessage("Saturday"),
     "save" : MessageLookupByLibrary.simpleMessage("Save"),
     "search" : MessageLookupByLibrary.simpleMessage("Search"),

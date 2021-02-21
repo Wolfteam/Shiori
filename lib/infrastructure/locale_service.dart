@@ -54,6 +54,10 @@ class LocaleServiceImpl implements LocaleService {
         langCode = 'fr';
         countryCode = 'FR';
         break;
+      case AppLanguageType.russian:
+        langCode = 'ru';
+        countryCode = 'RU';
+        break;
       default:
         break;
     }
