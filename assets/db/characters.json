@@ -1058,10 +1058,9 @@
         {
           "isSupport": false,
           "weaponImages": [
-            "favonius_warbow.png",
-            "the_stringless.png",
-            "sharpshooters_oath.png",
-            "messenger.png"
+            "amos_bow.png",
+            "the_viridescent_hunt.png",
+            "prototype_crescent.png"
           ],
           "artifacts": [
             {
@@ -1080,8 +1079,9 @@
         {
           "isSupport": true,
           "weaponImages": [
-            "sharpshooters_oath.png",
-            "messenger.png"
+            "skyward_harp.png",
+            "the_stringless.png",
+            "prototype_crescent.png"
           ],
           "artifacts": [
             {
