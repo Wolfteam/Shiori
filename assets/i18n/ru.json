@@ -157,7 +157,7 @@
           "description": null,
           "abilities": [
             {
-              "name": "Baron Bunny",
+              "name": "Барон Зайчик",
               "description": null,
               "descriptions": [
                 "Непрерывно дразнит врагов, привлекая их огонь на себя.",
@@ -175,7 +175,7 @@
         {
           "key": "s3",
           "title": "Огненный дождь.",
-          "description": "Fires of a shower of arrows, dealing continuous AoE Pyro DMG.",
+          "description": "Эмбер выпускает град огненных стрел, который наносит периодически Пиро урон по площади.",
           "abilities": []
         }
       ],
@@ -1213,39 +1213,39 @@
     },
     {
       "key": "Jean",
-      "name": "Jean",
-      "description": "The righteous and rigorous Dandelion Knight, and Acting Grand Master of the Knights of Favonius in Mondstadt.",
+      "name": "Джинн",
+      "description": "Справедливый и искренний Рыцарь Одуванчик, действующий магистр Ордо Фавониус.",
       "skills": [
         {
           "key": "s1",
-          "title": "Favonius Bladework",
+          "title": "Фехтовальный стиль Фавония",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive strikes.",
+              "description": "До пяти быстрых ударов мечом.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to launch an enemy using the power of wind. Launched enemies will slowly fall to the ground.",
+              "description": "С помощью силы ветра подкидывает противников в воздух, на что тратится определённое количество выносливости. Подкинутые враги медленно падают на землю.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Gale Blade",
-          "description": "Focusing the might of the formless wind around her blade, Jean releases a miniature storm, launching enemies in the direction she aims at, dealing massive Anemo DMG.",
+          "title": "Клинок ветра",
+          "description": "Джинн фокусирует всю мощь бесформенного ветра вокруг своего клинка и создаёт миниатюрный вихрь, который подбрасывает противников в направлении её взгляда, а также наносит им Анемо урон.",
           "abilities": [
             {
               "key": "a1",
-              "description": "At the cost of continued Stamina consumption, Jean can command the whirlwind to pull surrounding enemies towards her front. Direction can be adjusted. Character is immobile during skill duration.",
+              "description": "Продолжая затрачивать выносливость, Джинн может с помощью вихря притянуть врагов и предметы к себе. Также можно выбрать направление броска. Во время действия навыка Джинн не может двигаться.",
               "descriptions": []
             }
           ]
@@ -1256,11 +1256,11 @@
           "description": "Calling upon the wind’s protection, Jean creates a swirling Dandelion Field, launching surrounding enemies and causing Anemo DMG. At the same time, she instantly regenerates a large amount of HP for nearby allied units and all party members. HP restored scale off Jean’s ATK.",
           "abilities": [
             {
-              "name": "Dandelion Field",
+              "name": "Поле одуванчиков",
               "description": null,
               "descriptions": [
-                "Continuously regenerates HP of characters within the AoE and continuously imbues them with Anemo.",
-                "Deals Anemo DMG to enemies entering or exiting the field."
+                "Периодически восстанавливает здоровье членам отряда в поле одуванчиков.",
+                "Наносит Анемо урон врагам, входящим и выходящим за границы поля одуванчиков."
               ]
             }
           ]
@@ -1269,19 +1269,19 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Guiding Breeze",
-          "description": "When a Perfect Cooking is achieved on a dish with restorative effects, there is a 12% chance to obtain double the product.",
+          "title": "Направляющий ветер",
+          "description": "При приготовлении идеального восстанавливающего блюда имеет 12% шанс приготовить дополнительное блюдо.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Wind Companion",
-          "description": "Hits by Normal Attacks have a 50% chance to regenerate HP equal to 15% of Jean’s ATK for all party members.",
+          "title": "Дружественный бриз",
+          "description": "Попадания обычной атакой Джинн имеют 50% шанс вылечить всех членов отряда на количество здоровья, равное 15% от силы атаки Джинн.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Let the Wind Lead",
+          "title": "Да направит тебя ветер",
           "description": "Using Dandelion Breeze will regenerate 20% of its Energy.",
           "descriptions": []
         }
@@ -1289,43 +1289,43 @@
       "constellations": [
         {
           "key": "c1",
-          "title": "Spiraling Tempest",
-          "description": "Increases the pulling speed of Gale Blade after holding for more than 1s, and increases the DMG dealt by 40%.",
+          "title": "Растущий ураган",
+          "description": "Увеличивает скорость притягивания навыка Клинок ветра после его удержания более 1 секунды, а также увеличивает урон навыка на 40%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "People’s Aegis",
-          "description": "When Jean picks up an Elemental Orb/Particle, all party members have their Movement SPD and ATK SPD increased by 15% for 15s.",
+          "title": "Братский щит",
+          "description": "Когда Джинн подбирает элементальную сферу или частицу, она увеличивает скорость передвижения и атаки всех членов отряда на 15% на 15 секунд.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "When the West Wind Arises",
-          "description": "Increases the Level of Dandelion Breeze by 3. Maximum upgrade level is 15.",
+          "title": "Куда дует ветер",
+          "description": "Увеличивает уровень навыка Одуванчиковый бриз на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Lands of Dandelion",
-          "description": "Within the Field created by Dandelion Breeze, all enemies have their Anemo RES decreased by 40%.",
+          "title": "Королевство Одуванчиков",
+          "description": "Понижает Анемо сопротивление противников, находящихся в поле навыка Одуванчиковый бриз, на 40%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Outbursting Gust",
-          "description": "Increase the Level of Gale Blade by 3. Maximum upgrade level is 15.",
+          "title": "Шквальный ветер",
+          "description": "Увеличивает уровень навыка Клинок ветра на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Lion’s Fang, Fair Protector of Mondstadt",
-          "description": "Incoming DMG is decreased by 35% within the Field created by Dandelion Breeze. Upon leaving the Dandelion Field, this effect lasts for 3 attacks or 10s.",
+          "title": "Рыцарь Львиный Клык",
+          "description": "Уменьшает получаемый в поле навыка Одуванчиковый бриз урон на 35%. После выхода из поля одуванчиков данный эффект длится ещё 3 атаки или 10 секунд.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1333,107 +1333,107 @@
     },
     {
       "key": "Kaeya",
-      "name": "Kaeya",
-      "description": "A thinker in the Knights of Favonius with a somewhat exotic appearance.",
+      "name": "Кэйа",
+      "description": "Капитан Ордо Фавониус выглядит довольно экзотично. Несмотря на дружелюбие и приветливость, от него веет странным холодком.",
       "skills": [
         {
           "key": "s1",
-          "title": "Ceremonial Bladework",
+          "title": "Ритуальное фехтование",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive strikes.",
+              "description": "До пяти быстрых ударов мечом.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Два быстрых взмаха мечом, для которых тратится определённое количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemeies along the path and dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Frostgnaw",
-          "description": "Unleashes a frigit blast, dealing Cryo DMG to enemies in front of Kaeya.",
+          "title": "Выпад холода",
+          "description": "Совершает выпад холода, который наносит Крио урон врагам впереди.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Glacial Waltz",
-          "description": "Coalescing the frost in the air, Kaeya summons 3 icicles that revolve around him. These icicles will follow the character around and deal Cryo DMG to enemies in their path for so long as they persist.",
+          "title": "Ледниковый вальс",
+          "description": "Собрав остатки инея из утреннего воздуха, Кэйа создаёт три вращающихся вокруг него льдинки. Они следуют за активным персонажем и наносят Крио урон врагам, которых касаются.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Hidden Strength",
-          "description": "Decreases all party member’s sprinting Stamina consumption by 20%.",
+          "title": "Скрытые силы",
+          "description": "Уменьшает потребление выносливости активного персонажа во время спринта на 20%. Не суммируется с пассивными талантами, дающими точно такие же эффекты.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Cold-Blooded Strike",
-          "description": "Every hit with Frostgnaw regenerates HP for Kaeya equal to 15% of ATK.",
+          "title": "Клинок холодной крови",
+          "description": "Каждое попадание навыком Выпад холода восстанавливает 15% здоровья от нанесённого урона.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Heart of the Abyss",
-          "description": "Enemies Frozen by Frostgnaw will drop additional Elemental Particles. Frostgnaw may only produce a maximum of 2 additional Elemental Particles per use.",
+          "title": "Сердце бездны",
+          "description": "Противники, замороженные навыком Выпад холода, роняют больше элементальных частиц. Каждый удар навыка Выпад холода генерирует до 2 элементальных частиц.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Excellent Blood",
-          "description": "The CRIT Rate of Normal Attack and Charged Attack DMG against enemies affected by the Cold or Frozen status effects is increased by 15%.",
+          "title": "Изморозь",
+          "description": "Увеличивает шанс критического попадания обычной и заряженной атаки Кэйи по противникам с эффектом Крио на 15%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Never-Ending Performance",
-          "description": "Every time Glacial Waltz defeats an enemy, its duration is increased by 2.5s, up to a maximum of 15s.",
+          "title": "Бесконечный вальс",
+          "description": "Каждый побеждённый во время длительности навыка Ледниковый вальс враг увеличивает его длительность на 2,5 секунды. Максимум 15 секунд.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Dance of Frost",
-          "description": "Increases the Level of Frostgnaw by 3. Maximum upgrade level is 15.",
+          "title": "Танец холода",
+          "description": "Увеличивает уровень навыка Выпад холода на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Frozen Kiss",
-          "description": "Triggers automatically when Kaeya’s HP falls below 20%:",
+          "title": "Поцелуй холода",
+          "description": "Активируется, когда показатель здоровья Кэйи падает ниже 20%:",
           "secondDescription": null,
           "descriptions": [
-            "Creates a shield that absorbs damage equal to 30% of Kaeya’s Max HP. Lasts for 20s.",
-            "This shield absorbs Cryo DMG with 250% efficiency. Can only occur once every 60s."
+            "Создаёт щит, в течение 20 секунд поглощающий урон, равный 30% от максимального здоровья Кэйи.",
+            "Крио урон поглощается на 250% эффективнее. Может возникнуть раз в 60 секунд"
           ]
         },
         {
           "key": "c5",
-          "title": "Frostbiting Embrace",
-          "description": "Increase the Level of Glacial Waltz by 3. Maximum upgrade level is 15.",
+          "title": "Объятья холода",
+          "description": "Увеличивает уровень навыка Ледниковый вальс на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Glacial Whirlwind",
-          "description": "Glacial Waltz will generate 1 additional icicle, and will regenerate 15 Energy when cast.",
+          "title": "Ледниковый вихрь",
+          "description": "Использование навыка Ледниковый вальс создаёт одну дополнительную льдинку, и при активации восстанавливает 15 единиц энергии.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1441,118 +1441,118 @@
     },
     {
       "key": "Keqing",
-      "name": "Keqing",
-      "description": "The Yuheng of the Liyue Qixing. Has much to say about Rex Lapis’ unilateral approach to policymaking in Liyue - but in truth, gods admire skeptics such as her quite a lot.",
+      "name": "Кэ Цин",
+      "description": "Нефритовое Равновесие группировки Цисин в Ли Юэ. У неё есть, что сказать против «Властелина Камня, правящего Ли Юэ лишь словом», но, оказывается, боги любят таких скептиков, как она.",
       "skills": [
         {
           "key": "s1",
-          "title": "Yunlai Swordsmanship",
+          "title": "Грозовое фехтование",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 rapid strikes.",
+              "description": "Выполняет до 5 быстрых ударов мечом.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Два быстрых взмаха мечом, для которых тратится определённое количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemeies along the path and dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Stellar Restoration",
-          "description": "Hurls a Lightning Stiletto that annihilates her enemies like the swift thunder. When the Stiletto hits its target, it deals Electro DMG to enemies in a small AoE, and places a Stiletto Mark on the spot hit.",
+          "title": "Возвращение звезды",
+          "description": "Выпускает Громовой стилет, который поражает врагов словно внезапный удар молнии. При попадании Громовой стилет наносит Электро урон врагам в небольшом радиусе и устанавливает Метку стилета в точке попадания.",
           "abilities": [
             {
               "key": "a1",
-              "description": "Hold to adjust the direction in which the Stiletto shall be thrown. Stilettos thrown by the Hold attack mode can be suspended in mid-air, allowing Keqing to jump to them when using Stellar Restoration a second time.",
+              "description": "Удерживайте, чтобы выбрать направление броска Громового стилета. Стилеты, брошенные долгим нажатием, могут остаться в воздухе, что позволит Кэ Цин телепортироваться к ним при повторном использовании навыка Возвращение звезды.",
               "descriptions": []
             },
             {
-              "name": "Lightning Stiletto",
-              "description": "If Keqing uses Stellar Restoration again or uses a Charged Attack while its duration lasts, it will clear the Stiletto Mark and produce different effects:",
+              "name": "Громовой стилет",
+              "description": "Если Кэ Цин активирует навык второй раз или использует заряженную атаку в течение действия навыка, Метка стилета пропадает и эффекты навыка меняются:",
               "descriptions": [
-                "If she uses Stellar Restoration again, she will blink to the location of the Mark and unleashed one slashing attack that deals AoE Electro DMG. When blinking to a Stiletto that was thrown from a Holding attack, Keqing can leap across obstructing terrain.",
-                "If Keqing uses a Charged Attack, she will ignite a series of thundering cuts at the Mark’s location, dealing AoE Electro DMG."
+                "При повторном использовании навыка Возвращение звезды, Кэ Цин телепортируется к Метке стилета и проводит атаку, наносящую Электро урон по площади. При телепортации к брошенному долгим нажатием стилету Кэ Цин игнорирует преграды.",
+                "Выполнение заряженной атаки активирует серию ударов молнии в точке Метки стилета, нанося множественный Электро урон по площади."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Starward Sword",
-          "description": "Keqing unleashes the power of lightning, dealing Electro DMG in an AoE. She then blends into the shadow of her blade, striking a series of thunderclap-blows to nearby enemies simultaneous that deal multiple instance of Electro DMG. The final attack deals massive AoE Electro DMG.",
+          "title": "Меч небесного тракта",
+          "description": "Кэ Цин выпускает силу грома, нанося Электро урон по площади. Затем она растворяется в тени своего меча и исполняет серию молниеносных атак по всем окружающим её врагам, нанося множественный Электро урон. Последний удар наносит Электро урон по площади.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Land’s Overseer",
-          "description": "When dispatched on an expedition in Liyue, time consumed is reduced by 25%.",
+          "title": "Управляющий землями",
+          "description": "Уменьшает длительность экспедиций в Ли Юэ на 25%",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Thundering Penance",
-          "description": "Within 5s of recasting Stellar Restoration while a Lightning Stiletto is present, Keqing’s Normal and Charged Attacks are converted to Electro DMG.",
+          "title": "Небесное покаяние",
+          "description": "В течение 5 секунд после повторной активации навыка Возвращение звезды, когда на поле боя есть Громовой стилет, обычные и заряженные атаки, а также атаки в падении Кэ Цин наносят Электро урон.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Aristocratic Dignity",
-          "description": "When casting Starward Sword, Keqing’s CRIT Rate is increased by 15%, and her Energy Recharge is increased by 15%. This effect lasts for 8s.",
+          "title": "Благородие аристократа",
+          "description": "Активация навыка Меч небесного тракта увеличивает шанс критического попадания Кэ Цин и её восстановление энергии на 15%. Эффект длится 8 секунд.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Thundering Might",
-          "description": "Recasting Stellar Restoration while a Lightning Stiletto is present causes Keqing to deal 50% of her ATK as AoE Electro DMG at the start point and terminus of her Blink.",
+          "title": "Громовая мощь",
+          "description": "При повторной активации навыка Возвращение звезды, когда на поле боя есть Громовой стилет, Кэ Цин в начальной и конечной точке своей телепортации наносит Электро урон по площади, равный 50% от её силы атаки.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Keen Extraction",
-          "description": "When Keqing’s Normal and Charged Attack’s hit enemies affected by Electro, they have a 50% chance of producing an Elemental Particle. This effect can only occur once every 5s.",
+          "title": "Тяжёлые налоги",
+          "description": "Попадания Кэ Цин по врагу с эффектом Электро имеют 50% шанс создать элементальную частицу. Может возникнуть раз в 5 секунд.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Forseen Reformation",
-          "description": "Increases the Level of Starward Sword by 3. Maximum upgrade level is 15.",
+          "title": "Верх иерархии",
+          "description": "Увеличивает уровень навыка Меч небесного тракта на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Attunement",
-          "description": "For 10s after Keqing triggers an Electro-related Elemental Reaction, her ATK is increased by 25%.",
+          "title": "Настройка инструмента",
+          "description": "При вызове Электро реакций Кэ Цин увеличивает силу атаки на 25% в течение 10 секунд.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Beckoning Stars",
-          "description": "Increase the Level of Stellar Restoration by 3. Maximum upgrade level is 15.",
+          "title": "Мановение звёзд",
+          "description": "Увеличивает уровень навыка Возвращение звезды на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Tenacious Star",
-          "description": "When initiating a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst, Keqing gains a 6% Electro DMG Bonus for 8s. Effects triggered by Normal Attacks, Charged Attacks, Elemental Skills and Elemental Bursts are considered independent entities.",
+          "title": "Упорная звезда",
+          "description": "При выполнении обычной или заряженной атаки, либо при активации элементального навыка или взрыва стихии Кэ Цин получает 6% бонуса Электро урона на 8 секунд. Эффекты, вызванные обычной атакой, заряженной атакой, элементным навыком или взрывом стихии, существуют отдельно друг от друга.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1560,104 +1560,104 @@
     },
     {
       "key": "Klee",
-      "name": "Klee",
-      "description": "An explosives expert and a regular at the Knights of Favonius’ confinement room. Also known as Fleeing Sunlight.",
+      "name": "Кли",
+      "description": "Эксперт по взрывчатке и частый гость темницы Ордо Фавониус. Также известна, как «Ускользающее солнце».",
       "skills": [
         {
           "key": "s1",
-          "title": "Kaboom!",
+          "title": "Бабах!",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Throws things that go boom when they hit things! Perform up to 3 explosive attacks, dealing AoE Pyro DMG.",
+              "description": "Кли любит взрывать всё вокруг! Она бросает до трёх бомб, наносящих Пиро урон по площади.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina and deals Pyro DMG to enemies after a short casting time.",
+              "description": "Короткое заклинание, наносящее Пиро урон по площади, на которое тратится определённое количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the power of Pyro, Klee plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Pyro DMG upon impact with the ground.",
+              "description": "Накопив энергию огня, стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит Пиро урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Jumpy Dumpty",
-          "description": "Jumpy Dumpty is tons of boom-bang-fun! When thrown, Jumpy Dumpty bounces thrice, igniting and dealing AoE Pyro DMG with every bounce. On the third bounce, the bomb splits into many mines. The mines will explode upon contact with enemies, or after a short period of time, dealing AoE Pyro DMG. Starts with 2 charges.",
+          "title": "Прыг-скок бомба",
+          "description": "Кидает мощную Прыг-скок бомбу, которая три раза отскакивает от поверхностей и взрывается, нанося Пиро урон по площади при каждом отскоке.\nПосле третьего отскока бомба взрывается и распадается на мины. Мины взрываются через некоторое время, либо при касании врагов. Взрыв наносит Пиро урон по площади. Изначально имеет два заряда.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Sparks ’n’ Splash",
-          "description": "Klee’s Blazing Delight! For the duration of this ability, continuously summons Sparks ’n’ Splash to attack nearby enemies, dealing AoE Pyro DMG.",
+          "title": "Грохот и искры",
+          "description": "Кли жжёт по-полной! На время действия навыка Кли призывает Грохот и искры, которые наносят окружающим врагам Пиро урон по площади.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "All Of My Treasures!",
-          "description": "Displays the location of nearby resources unique to Mondstadt on the mini-map.",
+          "title": "Всюду сокровища!",
+          "description": "Отмечает диковины Мондштадта на мини-карте.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Pounding Surprise",
-          "description": "When Jumpy Dumpty and Normal Attacks deal DMG, Klee has a 50% chance to obtain an Explosive Spark. This Explosive Spark is consumed by the next Charged Attack, which costs no Stamina and deals 50% increased DMG.",
+          "title": "Тук-тук, кто там?",
+          "description": "При нанесении урона навыком Прыг-скок бомба или обычной атакой, Кли имеет 50% шанс получить взрывную искру. Взрывная искра тратится при следующей заряженной атаке, которая наносит на 50% больше урона и не потребляет выносливость.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Sparkling Burst",
-          "description": "When a Charged Attack results in a CRIT, all party members gain 2 Elemental Energy.",
+          "title": "Искры без границ",
+          "description": "При критическом попадании заряженной атакой Кли все члены отряда получают 2 единицы элементальной энергии.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Chained Reaction",
-          "description": "Attacks and Skills have a certain chance to summon a spark that bombards enemies, dealing DMG equal to 120% of Sparks ’n’ Splash’s DMG.",
+          "title": "Цепные реакции",
+          "description": "Исполнение атак и навыков имеет шанс закидать врагов искрами, нанося урон, равный 120% от урона навыка Грохот и искры.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Explosive Frags",
-          "description": "Being hit by Jumpy Dumpty’s mines decreases enemy DEF by 23% for 10s.",
+          "title": "Осколочные мины",
+          "description": "Мины навыка Прыг-скок бомба уменьшают защиту коснувшихся их врагов на 23% в течение 10 секунд.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Exquisite Compound",
-          "description": "Increases the Level of Jumpy Dumpty by 3. Maximum upgrade level is 15.",
+          "title": "Фирменный ингредиент.",
+          "description": "Увеличивает уровень навыка Прыг-скок бомба на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Sparkly Explosion",
-          "description": "If Klee leaves the field during the duration of Sparks ’n’ Splash, her departure triggers an explosion that deals 555% of her ATK as AoE Pyro DMG.",
+          "title": "Взрывоопасно",
+          "description": "Если Кли покидает поле боя во время навыка Грохот и искры, активируется взрыв, который наносит 555% её силы атаки в качестве Пиро урона по площади.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Nova Burst",
-          "description": "Increase the Level of Sparks ’n’ Splash by 3. Maximum upgrade level is 15.",
+          "title": "Сверхновая звезда",
+          "description": "Увеличивает уровень навыка Грохот и искры на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Blazing Delight",
-          "description": "While under the effects of Sparks ’n’ Splash, other members of the party will continuously regenerate Energy. When Sparks ’n’ Splash is used, all party members will gain 10% Pyro DMG Bonus for 25s.",
+          "title": "Пламенный восторг",
+          "description": "Когда навык Грохот и искры активен, Кли каждые 3 секунды восстанавливает 3 единицы элементальной энергии другим членам отряда. Также при активном навыке Грохот и искры все члены отряда (кроме Кли) получают 10% бонуса Пиро урона в течение 25 секунд.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1665,118 +1665,118 @@
     },
     {
       "key": "Lisa",
-      "name": "Lisa",
-      "description": "The languid but knowledgeable Librarian of the Knights of Favonius who was deemed by Sumeru Academia to be their most distinguised graduate in the past two centuries.",
+      "name": "Лиза",
+      "description": "Ленивый, но безгранично эрудированный библиотекарь Ордо Фавониус. Лучшая выпускница академии Сумеру за последние несколько веков.",
       "skills": [
         {
           "key": "s1",
-          "title": "Lightning Touch",
+          "title": "Касание молнии",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 4 lightning attacks that deal Electro DMG.",
+              "description": "До четырех ударов молнией, наносящих Электро урон.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to deal AoE Electro DMG after a short casting time.",
+              "description": "Короткое заклинание, наносящее Электро урон по площади, на который тратится определенное количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the might of Electro, Lisa plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Electro DMG upon impact with the ground.",
+              "description": "Накопив энергию молнии, стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит Электро урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Violet Arc",
-          "description": "Channels the power of lightning to sweep bothersome matters away.",
+          "title": "Пурпурная дуга",
+          "description": "Фокусирует силу молнии на вечно мешающих надоедливых существах.",
           "abilities": [
             {
               "key": "a1",
-              "description": "Releases a homing Lightning Orb. On hit, it deals Electro DMG, and applies a stack of Conductive status (Max 3 stacks) to enemies in a small AoE.",
+              "description": "Выпускает самонаводящийся шар молнии, который при попадании наносит Электро урон и накладывает на противников статус Проводник (Может складываться до 3 раз).",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "After an extended casting time, calls down lightning from the heavens, dealing massive Electro DMG to all nearby enemies. Deals great amounts of extra damage to enemies based on the number of Conductive stacks applied to them, and clears their Conductive status.",
+              "description": "Произносит заклинание, вызывающее с небес гром, который наносит Электро урон окружающим врагам. Также наносит дополнительный урон врагам со статусом Проводник, в зависимости от количества складываний, при этом снимая с них этот статус.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Lightning Rose",
-          "description": "Summons a Lightning Rose that unleashes powerful lightning bolts, launching surrounding enemies and dealing Electro DMG. The Lightning Rose will continuously emit lightning to knock back enemies and deal Electro DMG for so long as it persists.",
+          "title": "Громовая роза",
+          "description": "Призывает Громовую розу, которая отталкивает окружающих врагов и наносит им Электро урон. В течении продолжительного времени атакует окружающих врагов, нанося им Электро урон.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "General Pharmaceutics",
-          "description": "When Lisa crafts a potion, she has a 20% chance to refund a portion of the crafting materials used.",
+          "title": "Знаток зелий",
+          "description": "При создании зелий имеет 20% шанс восстановить часть использованных материалов.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Induced Aftershock",
-          "description": "Hits by charged Attacks apply Violet Arc’s Conductive status to enemies.",
+          "title": "Остаточная индукция",
+          "description": "Попадание заряженной атакой накладывает на врагов статус Проводник навыка Пурпурная дуга.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Static Electricity Field",
-          "description": "Enemies hit by Lightning Rose have their DEF decreased by 15% for 10s.",
+          "title": "Сила электрического поля",
+          "description": "Попадание навыком Громовая роза уменьшает защиту противника на 15% в течении 10 секунд.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Infinite Circuit",
-          "description": "Lisa recovers 2 Energy for every opponent hit while holding Violet Arc. A maximum of 10 Energy can be regenerated in this manner at any one time.",
+          "title": "Замыкание цепи",
+          "description": "За каждое попадание долгим нажатием навыка Пурпурная дуга Лиза восстанавливает 2 единицы энергии. Не более 10 единиц энергии за раз.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Electromagnetic Field",
-          "description": "Holding Violet Arc has the following effects:",
+          "title": "Электромагнитное поле",
+          "description": "Долгое нажатие навыка Пурпурная дуга получает следующие эффекты:",
           "secondDescription": null,
           "descriptions": [
-            "Increases DEF by 25%.",
-            "Increases Lisa’s resistance to interruption."
+            "Увеличивает защиту на 25%.",
+            "Повышает устойчивость к прерыванию атак."
           ]
         },
         {
           "key": "c3",
-          "title": "Resonant Thunder",
-          "description": "Increases the Level of Lightning Rose by 3. Maximum upgrade level is 15.",
+          "title": "Резонанс цепи",
+          "description": "Увеличивает уровень навыка Громовая роза на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Plasma Eruption",
-          "description": "Increases the number of lightning bolts released by Lightning Rose by 1-3.",
+          "title": "Извержение плазмы",
+          "description": "Увеличивает количество ударов молнии навыка Громовая роза до 1-3.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Electrocute",
-          "description": "Increase the Level of Violet Arc by 3. Maximum upgrade level is 15.",
+          "title": "Электро казнь",
+          "description": "Увеличивает уровень навыка Пурпурная дуга на 3.\nМаксимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Pulsating Witch",
-          "description": "When Lisa takes the field, she applies 3 stacks of Violet Arc’s Conductive status onto nearby enemies. This effect can only occur once every 5s.",
+          "title": "Импульс ведьмы",
+          "description": "При переключении на Лизу накладывает на окружающих врагов 3 статуса Проводник навыка Пурпурная дуга. Может возникнуть раз в 5 секунд.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1784,80 +1784,80 @@
     },
     {
       "key": "Mona",
-      "name": "Mona",
-      "description": "A mysterious young astrologer who proclaims herself to be \"Astrologist Mona Megistus,\" and who possesses abilities to match the title.",
+      "name": "Мона",
+      "description": "Таинственный молодой астролог, которая представляется как «профессиональный астролог Мона Мегистус» и на самом деле достойна этого звания. Эрудирована и горделива.",
       "skills": [
         {
           "key": "s1",
-          "title": "Ripple of Fate",
+          "title": "Круги на воде",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 water splash attacks that deal Hydro DMG.",
+              "description": "До четырёх ударов пузырями, наносящих Гидро урон.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina and deals AoE Hydro DMG after a short casting time.",
+              "description": "Короткое заклинание, наносящее Гидро урон по площади, на которое тратится определённое количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the might of Hydro, Mona plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Hydro DMG upon impact with the ground.",
+              "description": "Накопив энергию воды, стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит Гидро урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Mirror Reflection of Doom",
-          "description": "Creates an illusory Phantom of fate from coalesced waterspouts.",
+          "title": "Отражение фатума",
+          "description": "Создаёт фантома судьбы из водных пузырей.",
           "abilities": [
             {
               "name": "",
-              "description": "The Phantom has the following special properties:",
+              "description": "Фантом имеет следующие свойства:",
               "descriptions": [
-                "Continuously taunts nearby enemies, attracting their fire.",
-                "Continuously deals Hydro DMG to nearby enemies.",
-                "When its duration expires, the Phantom explodes, dealing AoE Hydro DMG."
+                "Непрерывно привлекает атаки врагов на себя.",
+                "Непрерывно наносит Гидро урон окружающим врагам.",
+                "По истечении времени действия фантом взрывается, нанося Гидро урон по площади."
               ]
             },
             {
               "key": "a2",
-              "description": "Utilizes water currents to move backwards swiftly before conjuring a Phantom. Only one Phantom created by Mirror Reflection of Doom can exist at any time.",
+              "description": "Отпрыгивает назад с помощью водных потоков, при этом создав фантома. Одновременно на поле боя может существовать только один фантом навыка Отражение фатума.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Stellaris Phantasm",
-          "description": "Mona summons the sparkling waves and creates a reflection of the starry sky, applying the Illusory Bubble status to opponents in a large AoE.",
+          "title": "Звёздный фантазм",
+          "description": "Мона призывает бушующие волны и создаёт отражение звёздного неба, заключая врагов в большом радиусе в Теневые пузыри.",
           "abilities": [
             {
-              "name": "Illusory Bubble",
-              "description": "Traps opponents inside a pocket of destiny and also makes them Wet. Renders weaker opponents immobile. When an opponent affected by Illusory Bubble sustains DMG, the following effects are produced:",
+              "name": "Теневой пузырь",
+              "description": "Заключает в себя врагов, накладывая на них статус Мокрый. Попав в Теневой пузырь, слабые противники также теряют способность двигаться. Нанесённый заключённому в Теневой пузырь противнику урон активирует следующие эффекты:",
               "descriptions": [
-                "Applies an Omen to the opponent, which gives a DMG Bonus, also increasing the DMG of the attack that causes it.",
-                "Removes the Illusory Bubble, dealing Hydro Elemental DMG in the process. The DMG Bonus does not apply to the Hydro Elemental DMG dealt in this instance."
+                "Добавляет бонус урона от Омена, также увеличивая нанесённый урон.",
+                "Снимает эффект Теневого пузыря, при этом нанося Гидро урон."
               ]
             },
             {
-              "name": "Omen",
-              "description": "During its duration, increases DMG taken by enemies.",
+              "name": "Омен",
+              "description": "На время длительности навыка увеличивает получаемый противником урон.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s4",
-          "title": "Illusory Torrent",
+          "title": "Иллюзорный поток",
           "description": null,
           "abilities": [
             {
-              "name": "Alternate Spirit",
-              "description": "Mona cloaks herself within the water’s flow, consuming Stamina to move rapidly. When under the effect of Illusory Torrent, Mona can move at high speed on water. Applies the Wet status to nearby enemies when she reappears.",
+              "name": "Заменяет спринт",
+              "description": "Мона движется вместе с потоками воды, затрачивая определённое количество выносливости. Будучи в форме иллюзорного потока, Мона может двигаться по поверхности воды с высокой скоростью. По окончании навыка накладывает на окружающих статус Мокрый.",
               "descriptions": []
             }
           ]
@@ -1866,68 +1866,68 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Principium of Astrology",
-          "description": "When Mona crafts Weapon Ascension Materials, she has a 25% chance to refund a portion of the crafting materials used.",
+          "title": "Принципы астрологии",
+          "description": "При создании материалов возвышения оружия имеет 25% шанс восстановить часть использованных материалов.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Come ’n’ Get Me, Hag!",
-          "description": "After she has used Illusory Torrent for 2s, if there are any enemies nearby, Mona will automatically create a Phantom. A Phantom created in this manner lasts for 2s, and its explosion DMG is equal to 50% of Mirror Reflection of Doom.",
+          "title": "«Старуха, тебе меня не найти!»",
+          "description": "Если через 2 секунды после активации навыка Иллюзорный поток вокруг Моны есть враги, она создает одного Фантома. Созданный таким образом Фантом существует 2 секунды, урон от его взрыва равен 50% от навыка Отражение фатума.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Waterborne Destiny",
-          "description": "Increases Mona’s Hydro DMG Bonus by a degree equivalent to 20% of her Energy Recharge rate.",
+          "title": "Пусть судьба кинет кости!",
+          "description": "Увеличивает бонус Гидро урона Моны на 20% от её восстановления энергии.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Prophecy of Submersion",
-          "description": "The effects of Hydro-related Elemental Reactions are enhanced for 8s after a character hits an enemy affected by an Omen:",
+          "title": "Пророчество потопа",
+          "description": "Попадания атакой поп противнику со статусом Омен на 8 секунд усиливают эффекты Гидро реакций:",
           "secondDescription": null,
           "descriptions": [
-            "Electro-Charged DMG is increased by 15%.",
-            "Vaporize DMG is increased by 15%.",
-            "Hydro Swirl DMG is increased by 15%.",
-            "The duration for which enemies are Frozen is increased by 15%."
+            "Увеличивает урон реакций Заряжен на 15%.",
+            "Увеличивает урон реакций Пар на 15%.",
+            "Увеличивает урон реакций Гидро Рассеивание на 15%.",
+            "Увеличивает длительность реакции Заморозка на 15%."
           ]
         },
         {
           "key": "c2",
-          "title": "Lunar Chain",
-          "description": "When a Normal Attack hits, there is a 20% chance that it will be automatically followed by a Charged Attack. This effect can only occur once every 5s.",
+          "title": "Лунная цепь",
+          "description": "Попадания обычной атакой имеют 20% шанс автоматически активировать заряженную атаку.\nМожет возникнуть раз в 5 секунд.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Restless Revolution",
-          "description": "Increases the Level of Stellaris Phantasm by 3. Maximum upgrade level is 15.",
+          "title": "Бесконечное вращение планет.",
+          "description": "Увеличивает уровень навыка Звёздный фантазм на 3.\nМаксимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Prophecy of Oblivion",
-          "description": "When a character attacks an enemy affected by the Omen status effect, their CRIT Rate is increased by 15%.",
+          "title": "Пророчество забвения",
+          "description": "Попадания по врагу со статусом Омен увеличивают шанс критического попадания на 15%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Mockery of Fortuna",
-          "description": "Increase the Level of Mirror Reflection of Doom by 3. Maximum upgrade level is 15.",
+          "title": "Насмешка судьбы",
+          "description": "Увеличивает уровень навыка Отражение фатума на 3.\nМаксимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Rhetorics of Calamitas",
-          "description": "Upon entering Illusory Torrent, Mona gain a 60% increase to the DMG her next Charged Attack per second of movement. A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s.",
+          "title": "Риторика катаклизма",
+          "description": "Каждая секунда движения в форма навыка Иллюзорный поток увеличивает урон следующей заряженной атаки Моны на 60%. Таким способом можно получить не более 180% бонуса урона заряженной атаки. Длится не более 8 секунд.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1935,113 +1935,113 @@
     },
     {
       "key": "Ningguang",
-      "name": "Ningguang",
-      "description": "The Tianquan of Liyue Qixing. Her wealth is unsurpassed in all of Teyvat.",
+      "name": "Нин Гуан",
+      "description": "Воля небес в группировке Цисин. Её богатства несравнимы ни с кем на континенте Тейват.",
       "skills": [
         {
           "key": "s1",
-          "title": "Sparkling Scatter",
+          "title": "Сверкающий дождь",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Shoots gems that deal Geo DMG. Upon hit, this grants Ningguang 1 Star Jade.",
+              "description": "Стреляет драгоценными камнями, которые наносят Гео урон. При попадании даёт Нин Гуан одну Нефритовую звезду.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to fire off a giant gem that deals Geo DMG. If Ningguang has any Star Jades, unleashing a Charged Attack will cause the Star Jades to be fired at the enemy as well, dealing additional DMG.",
+              "description": "Выстреливает гигантским драгоценным камнем, наносящим Гео урон, на который тратится определённое количество выносливости. Если Нин Гуан имеет Нефритовые Звёзды, то при выполнении заряженной атаки также выстреливает и ими, нанося дополнительный урон.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the might of Geo, Ningguang plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Geo DMG upon impact with the ground.",
+              "description": "Накопив энергию камня, стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит Гео урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Jade Screen",
-          "description": "Ningguang creates a Jade Screen out of gold, obsidian and her great opulence, dealing AoE Geo DMG.",
+          "title": "Нефритовая ширма",
+          "description": "Нин Гуан создаёт роскошную Нефритовую ширму из обсидиана и золота, нанося при этом Гео урон по площади.",
           "abilities": [
             {
-              "name": "Jade Screen",
-              "description": "Jade Screen is considered a Geo Construct and can be used to block certain attacks, but cannot be climbed. Only one Jade Screen may exist at any one time.",
+              "name": "Нефритовая ширма",
+              "description": "Ширмой можно воспользоваться для защиты от вражеских атак, но на неё нельзя взобраться. Одновременно может существовать не больше одной Нефритовой ширмы.",
               "descriptions": [
-                "Blocks enemy projectiles.",
-                "Endurance scales based on Ningguang’s Max HP."
+                "Блокирует вражеские снаряды.",
+                "Прочность зависит от максимального здоровья Нин Гуан."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Starshatter",
-          "description": "Gathering a great number of gems, Ningguang scatters them all at once, sending homing projectiles at her enemies that deal massive Geo DMG. If Starshatter is cast when a Jade Screen is nearby, the Jade Screen will fire additional gem projectiles at the same time.",
+          "title": "Осколки звёзд",
+          "description": "Собрав большое количество самоцветов, Нин Гуан запускает их во врагов, нанося огромный Гео урон. Самоцветы сами находят свою цель.\nЕсли поблизости находится Нефритовая ширма, то она также запускает дополнительные самоцветы.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Trove of Marvelous Treasure",
-          "description": "Displays the location of nearby ore veins (Iron Ore, White Iron Ore, Crystal Ore, and Magical Crystal Ore) on the mini-map.",
+          "title": "Рог изобилия",
+          "description": "Отмечает руду на мини-карте (железная руда, руда белого железа, кристальная руда, магическая руда).",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Backup Plan",
-          "description": "When Ningguang is in possession of Star Jades, her Charged Attack does not consume Stamina.",
+          "title": "Запасной план",
+          "description": "Когда у Нин Гуан есть Звёздные Нефриты, её заряженная атака не требует энергии.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Strategic Reserve",
-          "description": "A character that passes through the Jade Screen will gain a 12% Geo DMG Bonus for 10s.",
+          "title": "Стратегические запасы",
+          "description": "Увеличивает бонус Гео урона прошедших сквозь Нефритовую ширму персонажей на 12% в течение 10 секунд.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Piercing Fragments",
-          "description": "When a Normal Attack hits, it deals AoE DMG.",
+          "title": "Пронзающие осколки",
+          "description": "При попадании обычная атака наносит урон по площади.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Shock Effect",
-          "description": "When Jade Screen is shattered, its CD will reset. Can occur once every 6s.",
+          "title": "Шоковый эффект",
+          "description": "Разрушение Нефритовой ширмы сбрасывает время её отката. Может возникнуть раз в 6 секунд.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Majesty be the Array of Stars",
-          "description": "Increases the Level of Starshatter by 3. Maximum upgrade level is 15.",
+          "title": "Величественная россыпь звёзд",
+          "description": "Увеличивает уровень навыка Осколки звёзд на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Exquisite be the Jade, Outshining All the Beneath",
-          "description": "Jade Screen increases nearby characters’ Elemental RES by 10%.",
+          "title": "Изысканный блеск нефрита",
+          "description": "Навык Нефритовая ширма повышает элементальное сопротивление окружающих персонажей на 10%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Invincible be the Jade Screen",
-          "description": "Increase the Level of Jade Screen by 3. Maximum upgrade level is 15.",
+          "title": "Бессмертная нефритовая птица",
+          "description": "Увеличивает уровень навыка Нефритовая ширма на 3.\nМаксимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Grandeur be the Seven Stars",
-          "description": "When Starshatter is used, Ningguang gains 7 Star Jades.",
+          "title": "Грандиозность Цисин",
+          "description": "Активация навыка Осколки звёзд даёт Нин Гуан 7 единиц Звёздного нефрита.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2049,59 +2049,59 @@
     },
     {
       "key": "Noelle",
-      "name": "Noelle",
-      "description": "A maid in the service of the Knights of Favonius that dreams of joining their ranks someday.",
+      "name": "Ноэлль",
+      "description": "Горничная Ордо Фавониус, которая страстно мечтает однажды пополнить ряды ордена.",
       "skills": [
         {
           "key": "s1",
-          "title": "Favonius Bladework - Maid",
+          "title": "Фехтовальный стиль Фавония",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 consecutive strikes.",
+              "description": "До четырёх рубящих ударов мечом.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous swirling attacks against all nearby enemies. At end of the sequence, perform a more powerful slash.",
+              "description": "Вращающаяся атака по окружающим врагам, на которую непрерывно тратиться выносливость. После вращения проводит дополнительную мощную атаку мечом.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Breastplate",
-          "description": "Summons a protective stone armor, dealing Geo DMG to surrounding enemies and creating a shield. The shield’s DMG Absorption scaled based on Noelle’s DEF.",
+          "title": "Бронефартук",
+          "description": "Навык призывает каменную броню, которая наносит Гео урон окружающим врагам и создаёт щит.",
           "abilities": [
             {
               "name": "",
-              "description": "The shield has the following properties:",
+              "description": "Щит имеет следующие свойства:",
               "descriptions": [
-                "When Noelle’s Normal and Charged Attacks hit a target, they have a certain chance to regenerate HP for all characters, both on and off the field. The amount of HP healed when regeneration is triggered scales based on Noelle’s DEF.",
-                "Applies the Geo element to the character.",
-                "Possesses 250% Absorption Efficiency against Geo DMG."
+                "Попадания обычной и заряженной атакой имеют шанс восстановить здоровье всем членам отряда.\nПоглощаемый урон зависит от защиты Ноэлль.",
+                "Применяет к персонажу Гео элемент.",
+                "Гео урон поглощается на 250% эффективнее."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Sweeping Time",
-          "description": "Gathering the strength of stone around her weapon, Noelle strikes the enemies surrounding her within a large AoE, dealing Geo DMG.",
+          "title": "Генеральная уборка",
+          "description": "Ноэлль собирает силу камня вокруг своего меча и проводит атаку по врагам в большом радиусе, нанося им Гео урон.",
           "abilities": [
             {
               "name": "",
-              "description": "Afterwards, Noelle gains the following effects:",
+              "description": "После этого Ноэлль получает следующие эффекты:",
               "descriptions": [
-                "Larger attack AoE.",
-                "Converts attack DMG to Geo DMG.",
-                "Increased ATK that scales based on her DEF."
+                "Увеличивается радиус атак.",
+                "Весь урон конвертируется в Гео урон.",
+                "Сила атаки увеличивается пропорционально защите Ноэлль."
               ]
             }
           ]
@@ -2110,63 +2110,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Maid’s Knighthood",
-          "description": "When a Perfect Cooking is achieved on a DEF-boosting dish, Noelle has a 12% chance to obtain double the product.",
+          "title": "Забота горничной",
+          "description": "При приготовлении идеального блюда Стража имеет 12% шанс приготовить дополнительное блюдо.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Devotion",
-          "description": "When Noelle is in the party but not on the field, this ability triggers automatically when the active character’s HP falls below 30%: Creates a shield that lasts for 20s and absorbs DMG equal to 400% of Noelle’s DEF. This effect can only occur once every 60s.",
+          "title": "От всего сердца",
+          "description": "Будучи в отряде, но не активным персонажем, Ноэлль активирует этот навык, когда показатель здоровья активного персонажа падает ниже 30%:\nСоздаёт щит для вашего персонажа, который длится 20 секунд и поглощает урон, равный 400% от защиты Ноэлль. Может возникнуть раз в 60 секунд.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Nice and Clean",
-          "description": "Every 4 Normal or Charged Attack hits will decrease the CD of Breastplate by 1s. Hitting multiple enemies with a single attack is only counted as 1 hit.",
+          "title": "Вот и чистенько",
+          "description": "Каждые 4 попадания обычными или заряженными атаками уменьшают время отката навыка Бронефартук на 1 секунду. Попадание одной атакой по нескольким противникам считается за одно попадание.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "I Got Your Back",
-          "description": "While Sweeping Time and Breastplate are both in effect, the chance of Breastplate’s healing effects activating is increased to 100%.",
+          "title": "Я прикрою!",
+          "description": "Одновременное использование навыков Генеральная уборка и Бронефартук повышает шанс активации лечащей способности навыка Бронефартук на 100%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Combat Maid",
-          "description": "Decreases the Stamina Consumption of Noelle’s Charged Attacks by 20% and increases her Charged Attack DMG by 15%.",
+          "title": "Горничная на ветру",
+          "description": "Уменьшает потребление выносливости заряженной атаки Ноэлль на 20%, а также увеличивает урон на 15%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Invulnerable Maid",
-          "description": "Increases the Level of Breastplate by 3. Maximum upgrade level is 15.",
+          "title": "Неуязвимая горничная",
+          "description": "Увеличивает уровень навыка Бронефартук на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "To Be Cleaned",
-          "description": "When Breastplate’s duration expires or it is destroyed by DMG, it will deal 400% ATK of Geo DMG to surrounding enemies.",
+          "title": "Всё будет чисто",
+          "description": "При окончании или разрушении щита навыка Бронефартук наносит окружающим врагам Гео урон, равный 400% от силы атаки.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Favonius Sweeper Master",
-          "description": "Increase the Level of Sweeping Time by 3. Maximum upgrade level is 15.",
+          "title": "Рыцарь метлы и щётки",
+          "description": "Увеличивает уровень навыка Генеральная уборка на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Must Be Spotless",
-          "description": "Sweeping Time increases Noelle’s ATK by an additional 50% of her DEF. Additionally, every enemy defeated during the skill’s duration adds 1s to the duration, up to 10s.",
+          "title": "Пятновыводитель",
+          "description": "Навык Генеральная уборка увеличивает силу атаки на дополнительные 50% от защиты Ноэлль. Также, каждый побеждённый враг добавляет 1 секунду к длительности навыка пока он активен. Максимум 10 секунд.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2174,55 +2174,55 @@
     },
     {
       "key": "Qiqi",
-      "name": "Qiqi",
-      "description": "An apprentice and herb-picker Bubu Pharmacy. An undead with a bone-white complexion, she seldom has much in the way of words or emotion.",
+      "name": "Ци Ци",
+      "description": "Ученица и сборщица трав из хижины Бубу. Зомби с бледным лицом, разговаривает и проявляет эмоции очень редко…",
       "skills": [
         {
           "key": "s1",
-          "title": "Ancient Sword Art",
+          "title": "Облачный меч",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 rapid strikes.",
+              "description": "До 5 быстрых ударов мечом.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Два быстрых взмаха мечом, для которых тратится определенное количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Adeptus Art: Herald of Frost",
-          "description": "Using the Icevein Talisman, Qiqi brings forth the Herald of Frost, dealing Cryo DMG to nearby enemies.",
+          "title": "Искусство Адепта: Вестник стужи",
+          "description": "Ци Ци использует талисман Ледяной крови для того, чтобы призвать Вестника стужи, и наносит Крио урон окружающим врагам.",
           "abilities": [
             {
-              "name": "Herald of Frost",
+              "name": "Вестник стужи",
               "description": "",
               "descriptions": [
-                "When Qiqi hits a target with her Normal or Charged Attacks, she regenerates HP for all party members and all nearby allied characters. Healing scales based on Qiqi’s ATK.",
-                "Regenerates HP for current character at regular intervals.",
-                "Follows the character around, dealing Cryo DMG to enemies in its path."
+                "Попадания обычной или заряженной атакой восстанавливают определенное количество здоровья всем членам отряда и ближайшим союзникам. Количество здоровья зависит от силы атаки Ци Ци.",
+                "Регулярно восстанавливает здоровье вашему персонажу.",
+                "Следует за выбранным персонажем и наносит Крио урон врагам, которых касается."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Adeptus Art: Preserver of Fortune",
-          "description": "Qiqi releases the adeptus power sealed within her body, marking nearby enemies with a Fortune-Preserving Talisman that deals Cryo DMG.",
+          "title": "Искусство Адепта: Хранитель Фортуны",
+          "description": "Цици выпускает на волю запечатанную в ее теле мощь адептов, помечая ближайших врагов талисманом Фортуны, который наносит им Крио урон.",
           "abilities": [
             {
-              "name": "Fortune-Preserving Talisman",
-              "description": "When enemies affected by this Talisman take DMG, the character that dealt this DMG regenerates HP.",
+              "name": "Талисман Фортуны",
+              "description": "Помеченные талисманом Фортуны враги при получении урона восстанавливают здоровье нанесшего урон персонажа.",
               "descriptions": []
             }
           ]
@@ -2231,63 +2231,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Former Life Memories",
-          "description": "Displays the location of nearby resources unique to Liyue on the mini-map.",
+          "title": "Пыльные воспоминания",
+          "description": "Отмечает диковины Ли Юэ на мини-карте.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Life-Prolonging Methods",
-          "description": "When a character under the effects of Adeptus Art: Herald of Frost triggers an Elemental Reaction, their Incoming Healing Bonus is increased by 20% for 8s.",
+          "title": "Долголетие",
+          "description": "Когда персонаж, находящийся под эффектом навыка Искусство Адепта: Вестник стужи совершает элементальную реакцию, его бонус лечения увеличивается на 20% в течении 8 секунд.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "A Glimpse into Arcanum",
-          "description": "When Qiqi hits enemies with her Normal and Charged Attacks, she has a 50% chance to apply a Fortune-Preserving Talisman to them for 6s. This effect can only occur once every 30s.",
+          "title": "Созерцание тайн волшебства",
+          "description": "При попадании обычной и заряженной атакой у Ци Ци есть 50% шанс применить на них талисман Фортуны на 6 секунд. Может возникнуть раз в 30 секунд.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Ascetics of Frost",
-          "description": "When the Herald of Frost hits an enemy marked by a Fortune-Preserving Talisman, Qiqi regenerates 2 Energy.",
+          "title": "Зима близко",
+          "description": "Когда Вестник стужи попадает по цели, помеченной талисманом Фортуны, Ци Ци восстанавливает 2 единицы энергии.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Frozen to the Bone",
-          "description": "Qiqi’s Normal and Charge Attack DMG against enemies affected by Cryo is increased by 15%.",
+          "title": "Мороз до костей",
+          "description": "Увеличивает урон обычной и заряженной атаки Ци Ци по противникам с эффектом Крио на 15%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Ascendant Praise",
-          "description": "Increases the Level of Adeptus Art: Preserver of Fortune by 3. Maximum upgrade level is 15.",
+          "title": "Хвала небесам",
+          "description": "Увеличивает уровень навыка Искусство Адепта: Хранитель Фортуны на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Divine Suppression",
-          "description": "Targets marked by the Fortune-Preserving Talisman have their ATK decreased by 20%.",
+          "title": "Божественное подавление",
+          "description": "Уменьшает силу атаки врагов, помеченных талисманом Фортуны, на 20%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Crimson Lotus Bloom",
-          "description": "Increase the Level of Adeptus Art: Herald of Frost by 3. Maximum upgrade level is 15.",
+          "title": "Цветение красного лотоса",
+          "description": "Увеличивает уровень навыка Искусство Адепта: Вестник стужи на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Rite of Resurrection",
-          "description": "Using Adeptus Art: Preserve of Fortune revives all nearby fallen characters and regenerates 50% of their HP. This effect can only occur once every 15 mins.",
+          "title": "Возвращение к жизни",
+          "description": "Использование навыка Искусство Адепта: Хранитель Фортуны воскрешает ближайших павших персонажей вашего отряда и восстанавливает им 50% здоровья. Может возникнуть раз в 15 минут.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2295,62 +2295,62 @@
     },
     {
       "key": "Razor",
-      "name": "Razor",
-      "description": "A boy who lives among the wolves in Wolvendom of Mondstadt, away from human civilization. As agile as lightning.",
+      "name": "Рэйзор",
+      "description": "Мальчик, живущий среди волков в Вольфендоме у Мондштадта, вдали от цивилизации. Ловок как молния.",
       "skills": [
         {
           "key": "s1",
-          "title": "Steel Fang",
+          "title": "Стальной клык",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 consecutive strikes.",
+              "description": "До 4 рубящих ударов мечом.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous swirling attacks against all nearby enemies. At end of the sequence, perform a more powerful slash.",
+              "description": "Вращающаяся атака по окружающим врагам, на которую непрерывно тратится выносливость. После вращения проводит дополнительную мощную атаку мечом.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Claw and Thunder",
-          "description": "Hunts his prey using the techniques taught to him by his master and his Lupical.",
+          "title": "Гром и когти",
+          "description": "Выслеживает жертву, используя приёмы и методы, которые он узнал от своего учителя и своей стаи.",
           "abilities": [
             {
               "key": "a1",
-              "description": "Swings the Thunder Wolf Claw, dealing Electro DMG to enemies in front of Razor. Upon striking an enemy, Razor will gain an Electro Sigil, which increases his Energy Recharge rate. Razor can have up to 3 Electro Sigils simultaneously, and gaining a new Electro Sigil refreshes their duration.",
+              "description": "Удар когтями громового волка, наносящий Электро урон врагам впереди. При попадании Рэйзор получает символ Электро, который увеличивает скорость восстановления его энергии. Рэйзор может иметь до 3 символов Электро одновременно. Получение нового значка Электро обнуляет их длительность.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Gathers Electro energy to unleash a lightning storm over a small AoE, causing massive Electro DMG, and clears all of Razor’s Electro Sigils. Each Electro Sigil cleared in this manner will be converted into Energy for Razor.",
+              "description": "Собирает энергию Электро и на небольшой площади вызывает грозу, которая наносит огромный Электро урон, отнимая все накопленные символы Электро. Каждый отнятый символ конвертируется в энергию для Рэйзора.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Lightning Fang",
-          "description": "Summons the Wolf Within which deals Electro DMG to all nearby opponents. This clears all of Razor’s Electro Sigils, which will be converted into elemental energy for him. The Wolf Within will fight alongside Razor for the skill’s duration.",
+          "title": "Громовой клык",
+          "description": "Пробуждает внутреннего волка, который наносит Электро урон всем окружающим врагам. Активация навыка отнимает все накопленные символы Электро, конвертирую их в энергию для Рэйзора. На время длительности навыка волк сражается вместе с Рэйзором.",
           "abilities": [
             {
-              "name": "The Wolf Within",
-              "description": "These effects end when Razor leaves the battlefield. When Razor leaves the field, a maximum of 10 Energy will be returned to him based off the duration remaining on this skill.",
+              "name": "Внутренний волк",
+              "description": "Повышает устойчивость к прерыванию атак Рэйзора.\nЭтот эффект заканчивается, когда Рейзор покидает бой. Оставшееся время длительности навыка возвращается ему в виде энергии. Максимум 10 единиц энергии.",
               "descriptions": [
-                "Strikes alongside Razor’s normal attacks, dealing Electro DMG.",
-                "Raises Razor’s ATK SPD and Electro RES.",
-                "Causes Razor to be immune to DMG inflicted by the Electro-Charged status.",
-                "Disables Razor’s Charged Attacks.",
-                "Increases Razor\u0027s resistance to interruption."
+                "Атакует вместе с обычными атаками Рэйзора, нанося Электро урон.",
+                "Увеличивает скорость атаки и Электро сопротивление Рэйзора.",
+                "Даёт Рэйзору иммунитет от урона, вызванного статусом Заряжен.",
+                "Заряженные атаки Рэйзора становятся недоступны.",
+                "Повышает устойчивость к прерыванию атак Рэйзора."
               ]
             }
           ]
@@ -2359,63 +2359,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Wolvensprint",
-          "description": "Decreases all party member’s sprinting Stamina Consumption by 20%.",
+          "title": "Вольфенспринт",
+          "description": "Уменьшает потребление выносливости активного персонажа во время спринта на 20%.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Awakening",
-          "description": "Decreases Claw and Thunder’s CD by 18%. Using Lightning Fang resets the CD of Claw and Thunder.",
+          "title": "Пробуждение",
+          "description": "Уменьшает время отката навыка Гром и когти на 18%, также использование навыка Громовой клык полностью отбрасывает его время отката.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Hunger",
-          "description": "When Razor’s Energy is below 50%, increases Energy Recharge by 30%.",
+          "title": "Голод",
+          "description": "Восстановление энергии Рэйзора увеличивается на 30%, когда количество его энергии опускается ниже 50%.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Wolf’s Instinct",
-          "description": "Picking up an Elemental Orb or Particle increases Razor’s DMG by 10% for 8s.",
+          "title": "Волчья натура",
+          "description": "Подобранные элементные сферы или частицы увеличивают урон Рэйзора на 10% в течении 8 секунд.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Suppression",
-          "description": "Increases CRIT Rate against enemies with less than 30% HP by 10%.",
+          "title": "Подавление",
+          "description": "Увеличивает шанс критического попадания Рэйзора против врагов с показателем здоровья ниже 30% на 10%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Soul Companion",
-          "description": "Increases the Level of Lightning Fang by 3. Maximum upgrade level is 15.",
+          "title": "Родственная душа",
+          "description": "Увеличивает уровень навыка Громовой клык на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Bite",
-          "description": "When casting Claw and Thunder (Press), enemies hit will have their DEF decreased by 15% for 7s.",
+          "title": "Укус",
+          "description": "При попадании быстрое нажатие навыка Гром и когти понижает защиту противника на 15% в течении 7 секунд.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Sharpened Claws",
-          "description": "Increase the Level of Claw and Thunder by 3. Maximum upgrade level is 15.",
+          "title": "Заточенные когти",
+          "description": "Увеличивает уровень навыка Гром и когти на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Lupus Fulguris",
-          "description": "Every 10s, Razor’s sword charges up, causing the next Normal Attack to release lightning that deals 100% of Razor’s ATK as Electro DMG. When Razor is not using Lightning Fang, a lightning strike on an enemy will grant Razor an Electro Sigil for Claw and Thunder.",
+          "title": "Звезда Сириус",
+          "description": "Каждые 10 секунд меч Рэйзора заряжается молнией, которая высвобождается при следующей обычной атаке и наносит Электро урон, равный 100% от силы атаки Рэйзора. Если Рэйзор не находится под действием навыка Громовой клык, каждое попадание молнией по врагу даёт ему символ Электро навыка Гром и когти.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2423,45 +2423,45 @@
     },
     {
       "key": "Sucrose",
-      "name": "Sucrose",
-      "description": "An alchemist filled with curiosity about all things. She researches bio-alchemy.",
+      "name": "Сахароза",
+      "description": "Алхимик, преисполненная любопытством по отношению ко всему на свете. Она занимается исследованием биоалхимии.",
       "skills": [
         {
           "key": "s1",
-          "title": "Wind Spirit Creation",
+          "title": "Базовая эссенция ветра",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 attacks using Wind Spirits, dealing Anemo DMG.",
+              "description": "До четырёх ударов эссенцией ветра, наносящих Анемо урон.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina and deals AoE Anemo DMG after a short casting time.",
+              "description": "Короткое заклинание, наносящее Анемо урон по площади, на которое тратится определённое количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Calling upon the power of her Wind Spirits, Sucrose plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Anemo DMG upon impact with the ground.",
+              "description": "Накопив энергию ветра, стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит Анемо урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Astable Anemohypostasis Creation - 6308",
-          "description": "Creates a small Wind Spirit that deals Anemo DMG to enemies in an AoE, pulling them towards the location of the Wind Spirit before launching them.",
+          "title": "Эксперимент №6308",
+          "description": "Создаёт маленького Воздушного духа, который притягивает к себе врагов и предметы, а затем подбрасывает врагов поблизости и наносит им Анемо урон.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Forbidden Creation - Isomer 75 / Type II",
-          "description": "Sucrose hurls an unstable concoction that creates a Large Wind Spirit. While it persists, the Large Wind Spirit will continuously pull and launch nearby enemies, dealing AoE Anemo DMG.",
+          "title": "Запретно! Изомер 75 / Тип II",
+          "description": "Сахароза бросает колбу с нестабильным реагентом, который создаёт большого Воздушного духа. Он непрерывно притягивает предметы и врагов поблизости, подбрасывает врагов в воздух, нанося им Анемо урон по площади.",
           "abilities": [
             {
               "key": "a1",
-              "description": "If the Wind Spirit comes into contact with Hydro / Pyro / Cryo / Electro elements, it will deal additional DMG of that type. Elemental Absorption may only occur once per use.",
+              "description": "При контакте с элементами Гидро, Пиро, Крио или Электробольшой Воздушный дух наносит дополнительный урон этим элементом. За каждое использование навык может поглотить только один элемент.",
               "descriptions": []
             }
           ]
@@ -2470,63 +2470,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Astable Invention",
-          "description": "When Sucrose crafts Character and Weapon Enhancement Materials, she has a 10% to obtain double the product.",
+          "title": "Нестабильное изобретение",
+          "description": "При создании материалов улучшения персонажей и оружия имеет 10% шанс создать дополнительный предмет.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Catalyst Conversion",
-          "description": "When Sucrose triggers a Swirl effect, characters in the party with the matching element have their Elemental Mastery increased by 50 for 8s.",
+          "title": "Замещение катализатора",
+          "description": "Вызванная Сахарозой реакция Рассеивание увеличивает мастерство соответствующего элемента остальных членов отряда (но не у Сахарозы) на 50 единиц в течение 8 секунд.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Mollis Favonius",
-          "description": "When Astable Anemohypostatis Creation - 6308 or Forbidden Creation - Isomer 75 / Type II hit an enemy, increases other party member’s Elemental Mastery based on 20% of Sucrose’s Elemental Mastery for 8s.",
+          "title": "Сообразительный ветерок",
+          "description": "При попадании навыками Эксперимент №6308 или Запретно! Изомер 75 / Тип II увеличивает мастерство стихий остальных членов отряда (но не у Сахарозы) на 20% от мастерства стихий Сахарозы в течение 8 секунд.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Clustered Vacuum Field",
-          "description": "Astable Anemohypostasis Creation - 6308 gains 1 additional charge.",
+          "title": "Кластерное вакуумное поле",
+          "description": "Увеличивает количество зарядов навыка Эксперимент №6308 на 1.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Beth - Unbound Form",
-          "description": "The duration of Forbidden Creation - Isomer 75 / Type II is increased by 2s.",
+          "title": "Бет: Свободная форма",
+          "description": "Увеличивает длительность навыка Запретно! Изомер 75 / Тип II на 2 секунды.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Flawless Alchemistress",
-          "description": "Increases the Level of Astable Anemohypostasis Creation - 6308 by 3. Maximum upgrade level is 15.",
+          "title": "Безупречный алхимик",
+          "description": "Увеличивает уровень навыка Эксперимент №6308 на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Alchemania",
-          "description": "Every 7 Normal and Charged Attacks, Sucrose will reduce the CD of Astable Anemohypostasis Creation - 6308 by 1-7s.",
+          "title": "Мания алхимии",
+          "description": "Каждые 7 обычных и заряженный атак Сахарозы уменьшают время отката навыка Эксперимент №6308 на 1-7 секунд.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Caution: Standard Flask",
-          "description": "Increase the Level of Forbidden Creation - Isomer 75 / Type II by 3. Maximum upgrade level is 15.",
+          "title": "Внимание: обычная колба",
+          "description": "Увеличивает уровень навыка Запретно! Изомер 75 / Тип II на 3.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Chaotic Entropy",
-          "description": "If Forbidden Creation - Isomer 75 / Type II triggers an Elemental Absorption, all party members gain a 20% Elemental DMG Bonus for the corresponding absorbed element during its duration.",
+          "title": "Энтропия хаоса",
+          "description": "Если навык Запретно! Изомер 75 / Тип II активировал поглощение стихий, все члены отряда получают 20% бонус урона соответствующего элемента на время действия навыка.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2534,79 +2534,79 @@
     },
     {
       "key": "Tartaglia",
-      "name": "Tartaglia",
-      "description": "No. 11 of The Harbingers, also known as \"Childe\". His name is highly feared on the battlefield.",
+      "name": "Тарталья",
+      "description": "Номер одиннадцать из Предвестников Фатуи, искусный воин, также известный под именем Чайльд.",
       "skills": [
         {
           "key": "s1",
-          "title": "Cutting Torrent",
+          "title": "Дождь расставаний",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 6 consecutive shots with a bow.",
+              "description": "До шести выстрелов из лука.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, the power of Hydro will accumulate on the arrowhead. An arrow fully charged with the torrent will deal Hydro DMG and apply Riptide status..",
+              "description": "Более меткий прицельный выстрел с увеличенным уроном. Во время прицеливания наконечник стрелы заряжается энергией воды. Полностью заряженная водой стрела наносит Гидро урон и накладывает на противников статус Отлив.",
               "descriptions": []
             },
             {
-              "name": "Riptide",
-              "description": "Opponents affected by Riptide will suffer from AoE Hydro DMG effects when attacked by Tartaglia in various ways. DMG dealt in this way is considered Normal Attack DMG.",
+              "name": "Отлив",
+              "description": "Любая атака Тартальи по противникам со статусом Отлив будет наносит им Гидро урон по площади. Этот урон считается нанесённым обычной атакой.",
               "descriptions": [
-                "Riptide Flash: A fully-charged Aimed Shot that hits an opponent affected by Riptide deals consecutive bouts of AoE DMG. Can occur once every 0.7s.",
-                "Riptide Burst: Defeating an opponent affected by Riptide created a Hydro burst that inflicts the Riptide status on nearby opponents hit."
+                "Полностью заряженный прицельный выстрел по противнику со статусом Отлив наносит последовательный Гидро урон по площади. Может срабатывать раз в 0,7 сек.",
+                "Отлив-всплеск. Победа над противником со статусом Отлив вызывает Гидро всплеск, который накладывает на ближайших врагов статус Отлив."
               ]
             },
             {
               "key": "a4",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact. When Tartaglia is in Foul Legacy: Raging Tide’s Melee Stance, he cannot perform a plunging attack.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади. Когда Тарталья находится в Форме духа: Бушующие волны, он не может совершить атаку.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Foul Legacy: Raging Tide",
-          "description": "Unleashes a set of weaponry made of pure water, dealing Hydro DMG to surrounding opponents and entering a Melee Stance. In this Stance, Tartaglia’s Normal and Charged Attacks change as follows:",
+          "title": "Форма духа: Бушующие волны",
+          "description": "Тарталья обнажает клинки из чистой воды, которые наносят Гидро урон окружающим врагам и активируют ближнюю стойку. В этой стойке атаки Тартальи изменяются следующим образом:",
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 6 consecutive Hydro strikes.",
+              "description": "До шести ударов Гидро клинками.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash a cross slash, dealing Hydro DMG.",
+              "description": "Перекрёстный удар, который наносит Гидро урон и затрачивает определённое количество выносливости.",
               "descriptions": []
             },
             {
               "name": "Riptide Slash",
-              "description": "Hitting an opponent affected by Riptide with a melee attack unleashes a Riptide Slash that deals AoE Hydro DMG. DMG dealt in this way is considered Elemental Skill DMG, and can only occur once every 1.5s. After 30s, or when the ability is unleashed again, this skill will end. Tartaglia will return to his Ranged Stance and this ability will enter CD. The longer Tartaglia stays in his Melee Stance, the longer the CD. If the return to a ranged stance occurs automatically after 30s, the CD is even longer.",
+              "description": "Перекрёстный удар, который наносит Гидро урон и затрачивает определённое количество выносливости.\nОтлив-удар. Атаки ближней стойки по противникам со статусом Отлив будут наносить им Гидро урон по площади. Урон от Отлив-удара наносит элементальный урон, который срабатывает не чаще одного раза раз в 1.5 секунды.\nТарталья возвращается в стойку дальнего боя по истечению 30 секунд или при повторной активации навыка, а сам навык уходит в откат. Чем дольше Тарталья был в рукопашной стойке, тем дольше будет время отката навыка. Время отката увеличивается, если возврат в стойку дальнего боя произошёл по истечении 30 секунд.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Havor: Obliteration",
-          "description": "Performs different attacks based on what stance Tartaglia is in when casting.",
+          "title": "Хаос: Опустошение",
+          "description": "Совершаемая атака определяется стойкой, в которой находится Тарталья.",
           "abilities": [
             {
-              "name": "Ranged Stance: Flash of Havoc",
-              "description": "Swiftly fires a Hydro-imbued magic arrow, dealing AoE Hydro DMG and applying the Riptide status. Returns a portion of its Energy Cost after use.",
+              "name": "Дальняя стойка — Вспышка хаоса",
+              "description": "Тарталья выпускает заряженную водной стихией стрелу, которая наносит Гидро урон по площади и накладывает на врагов статус Отлив. После активации навык восстанавливает часть энергии.",
               "descriptions": []
             },
             {
-              "name": "Melee Stance: Light Obliteration",
-              "description": "Performs a slash with a large AoE, dealing massive Hydro DMG to all surrounding opponents, which triggers Riptide Blast.",
+              "name": "Ближняя стойка — Свет погибели",
+              "description": "Тарталья выполняет круговую атаку, которая наносит большой Гидро урон окружающим врагам и накладывает на них статус Отлив-взрыв.",
               "descriptions": []
             },
             {
-              "name": "Riptide Blast",
-              "description": "When the obliterating waters hit an opponent affected by Riptide, it clears their Riptide status and triggers a Hydro Explosion that deals AoE Hydro DMG. DMG dealt in this way is considered Elemental Burst DMG.",
+              "name": "Отлив-взрыв",
+              "description": "Атака Свет погибели, попавшая по врагам со статусом Отлив, снимает с них этот статус, вызывая при этом Гидро взрывы, которые наносят Гидро урон по площади. Урон Отлив-взрыв считается элементальным уроном.",
               "descriptions": []
             }
           ]
@@ -2615,63 +2615,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Master of Weaponry",
-          "description": "Increases your own party member’s Normal Attack Level by 1.",
+          "title": "Мастерское владение оружием",
+          "description": "Увеличивает уровень обычной атаки вашего персонажа на 1.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Never Ending",
-          "description": "Extends Riptide duration by 8s.",
+          "title": "Не кончается пытка",
+          "description": "Увеличивает длительность статуса Отлив на 8 секунд.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Sword of Torrents",
-          "description": "When Tartaglia is in Foul Legacy: Raging Tide’s Melee Stance, or if his Normal and Charged Attacks do CRIT DMG, they will apply the Riptide status effect on the hit enemy.",
+          "title": "Водяной меч",
+          "description": "Находясь в рукопашной стойке навыка Форма духа: Бушующие волны при критическом попадании обычной или заряженной атакой противник получает статус Отлив.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Foul Legacy: Tide Withholder",
-          "description": "Decreases the CD of Foul Legacy: Raging Tide by 20%.",
+          "title": "Форма духа. Останавливающий волну.",
+          "description": "Уменьшает время отката навыка Форма духа. Бушующие волны на 20%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Foul Legacy: Understream",
-          "description": "When opponents affected by Riptide are defeated, Tartaglia regenerates 4 Elemental Energy.",
+          "title": "Форма духа. Скрытое течение.",
+          "description": "Когда враги со статусом Отлив побеждены, Тарталья восстанавливает 4 единицы элементальной энергии.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Abyssal Mayhem: Vortex of Turmoil",
-          "description": "Increases the Level of Foul Legacy: Raging Tide by 3. Maximum upgrade level is 15.",
+          "title": "Хаос бездны: Источник беспорядков",
+          "description": "Увеличивает уровень навыка Форма духа: Бушующие волны на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Abyssal Mayhem: Hydrospout",
-          "description": "If Tartaglia is in Foul Legacy: Raging Tide’s Melee Stance, triggers Riptide Slash against opponents on the field affected by Riptide every 4s, otherwise, triggers Riptide Flash. Riptide Slashes and Riptide Flashes triggered by this Constellation effect are not subject to the time intervals that would typically apply to these two Riptide effects, nor do they have any effect on those time intervals.",
+          "title": "Хаос бездны: Гидро излив",
+          "description": "Когда Тарталья находится в стойке Форма духа: Бушующие волны, враги со статусом Отлив получают урон от эффекта Отлив-удар каждые 4 секунды. В противном случае срабатывает эффект Отлив-вспышка. На вызванные этим уровнем созвездия эффекты Отлив-удар и Отлив-вспышка не действуют их обычные ограничения длительности, также они не имеют никаких эффектов в этих временных промежутках.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Havoc: Formless Blade",
-          "description": "Increase the Level of Havoc: Obliteration by 3. Maximum upgrade level is 15.",
+          "title": "Хаос: Бесформенный клинок",
+          "description": "Увеличивает уровень навыка Хаос: Опустошение на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Havoc: Annihilation",
-          "description": "When Havoc: Obliteration is cast in Melee Stance, the CD of Foul Legacy: Raging Tide is reset. This effect will only take place once Tartaglia returns to his Ranged Stance.",
+          "title": "Хаос: Охота на ангелов",
+          "description": "При активации навыка Хаос: Опустошение обнуляется время отката навыка Форма духа: Бушующие волны. Этот эффект срабатывает только когда Тарталья возвращается в дальнюю стойку.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2679,56 +2679,56 @@
     },
     {
       "key": "Traveler (Anemo)",
-      "name": "Traveler (Anemo)",
-      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
+      "name": "Путешественник (Анемо)",
+      "description": "Пришедший из другого мира поисках семи Архонтов Путешественник, пытающийся вернуть свою сестренку.",
       "skills": [
         {
           "key": "s1",
-          "title": "Foreign Ironwind",
+          "title": "Железный ветер иноземца",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive strikes.",
+              "description": "До пяти быстрых ударов мечом.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Два быстрых взмаха мечом, для которых тратится определённое количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Palm Vortex",
-          "description": "Grasping the wind’s might, you form a vortex of vacuum in your palm, causing continuous Anemo DMG to enemies in front of you. The vacuum vortex explodes when the skill duration ends, causing a greater amount of Anemo DMG over a larger area.",
+          "title": "Ладонь вихря",
+          "description": "Усмирив ветер, вы выпускаете из ладоней вакуумный вихрь, который наносит постоянный Анемо урон врагам на пути.\nКогда навык оканчивается, вакуумный вихрь взрывается, нанося огромный Анемо урон по большой площади",
           "abilities": [
             {
               "key": "a1",
-              "description": "DMG and AoE will gradually increase",
+              "description": "Постепенно увеличивает урон и его площадь.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "If the vortex comes in contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+              "description": "При контакте с элементами Гидро, Пиро, Крио или Электро вихрь наносит дополнительный урон этим элементом. За каждое использование навык может поглотить только один элемент.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Gust Surge",
-          "description": "Guiding the path of the wind currents, you summon a forward-moving tornado that pulls objects and opponents towards itself, dealing continuous Anemo DMG.",
+          "title": "Взрывное торнадо",
+          "description": "Вы направляете ветряные потоки и создаёте торнадо, который притягивает к себе предметы и врагов, нанося им постоянный Анемо урон.",
           "abilities": [
             {
               "key": "a1",
-              "description": "If the tornado comes in contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+              "description": "При контакте с элементами Гидро, Пиро, Крио или Электро вихрь наносит дополнительный урон этим элементом. За каждое использование навык может поглотить только один элемент.",
               "descriptions": []
             }
           ]
@@ -2737,57 +2737,57 @@
       "passives": [
         {
           "key": "p2",
-          "title": "Slitting Wind",
-          "description": "The last hit of a Normal Attack combo unleashes a wind blade, dealing 60% of ATK as Anemo DMG to all opponents in its path.",
+          "title": "Кромсающий ветер",
+          "description": "Последний удар серии обычных атак призывает меч Анемо, который наносит 60% Анемо урон всем врагам на своём пути.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Second Wind",
-          "description": "Palm Vortex kills renegerate 2% HP for 5s. This effect can only occur once every 5s.",
+          "title": "Второе дыхание",
+          "description": "Враги, побеждённые навыком Ладонь вихря, восстанавливают 2% HP персонажа в течение 5 сек.\nМожет возникнуть раз в 5 сек.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Raging Vortex",
-          "description": "Palm Vortex pulls in enemies within a 5m radius.",
+          "title": "Бушующий ураган",
+          "description": "Ладонь вихря затягивает врагов и предметы в радиусе 5 метров.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Uprising Whirlwind",
-          "description": "Increases Energy Recharge by 16%.",
+          "title": "Вздымающийся вихрь",
+          "description": "Увеличивает перезарядку энергии на 16%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Sweeping Gust",
-          "description": "Increases the Level of Gust Surge by 3. Maximum upgrade level is 15.",
+          "title": "Режущий торнадо",
+          "description": "Увеличивает уровень навыка Взрывное торнадо на 3.\nМакс. Ур.: 15",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Cherishing Breezes",
-          "description": "Reduces DMG taken while casting Palm Vortex by 10%.",
+          "title": "Хранящий бриз",
+          "description": "Уменьшает получаемый во время действия навыка Ладонь вихря урон на 10%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Vortex Stellaris",
-          "description": "Increase the Level of Palm Vortex by 3. Maximum upgrade level is 15.",
+          "title": "Звёздная круговерть",
+          "description": "Увеличивает уровень навыка Ладонь вихря на 3.\nМакс. Ур.: 15",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Intertwined Winds",
-          "description": "Targets who take DMG from Gust Surge have their Anemo RES decreased by 20%. If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%.",
+          "title": "Плетение ветров",
+          "description": "Понижает Анемо сопротивление противников, получивших урон от навыка Взрывное торнадо, на 20%.\nЕсли произошло Поглощение стихии, то также понижает сопротивление к поглощённому элементу на 20%.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2795,104 +2795,104 @@
     },
     {
       "key": "Traveler (Geo)",
-      "name": "Traveler (Geo)",
-      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
+      "name": "Путешественник (Гео)",
+      "description": "Пришедший из другого мира поисках семи Архонтов Путешественник, пытающийся вернуть свою сестренку.",
       "skills": [
         {
           "key": "s1",
-          "title": "Foreign Rockblade",
+          "title": "Каменный меч иноземца",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive strikes.",
+              "description": "До пяти быстрых ударов мечом.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Два быстрых взмаха мечом, для которых тратится определённое количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Starfell Sword",
-          "description": "You disgorge a meteorite from the depths of the earth, dealing AoE Geo DMG. The meteorite is considered a Geo Construct, and can be climbed or used to block attacks.",
+          "title": "Меч звездопада",
+          "description": "Из глубин земли извергается метеорит, который взрывается, нанося Гео урон по площади. Метеорит считается Гео конструкцией, на него можно взобраться или использовать его для блокирования атак.",
           "abilities": [
             {
               "key": "a1",
-              "description": "The skill’s positioning may be adjusted.",
+              "description": "Можно выбрать место падения метеорита.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Wake of Earth",
-          "description": "Energizing the Geo elements deep underground, you set off expanding shockwaves. Launches surrounding enemies back and deals AoE Geo DMG. A stone wall is erected at the edges of the shockwave. The stone wall is considered a Geo Construct, and may be used to block attacks.",
+          "title": "Движение земли",
+          "description": "Стимулируя глубоко в недрах земли Гео элемент, вы вызываете разрушительное землетрясение. Оно откидывает окружающих врагов и наносит им Гео урон по площади.\nПо краям ударной волны возводится каменная стена. Она считается Гео конструкцией, которую можно использовать для блокирования атак",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p2",
-          "title": "Shattered Darkrock",
-          "description": "Reduces Starfell Sword’s CD by 2s.",
+          "title": "Разрушенный утёс",
+          "description": "Уменьшает время отката навыка на 2 сек.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Frenzied Rockslide",
-          "description": "The final hit of a Normal Attack combo triggers a collapse, dealing 60% of ATK as AoE Geo DMG.",
+          "title": "Безумный оползень",
+          "description": "Последний удар серии обычных атак призывает оползень, который наносит 60% Гео урона всем окружающим врагам.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Invincible Stonewall",
-          "description": "Allies within the radius of Wake of Earth have their CRIT Rate increased by 10% and have increased resistance against interruption.",
+          "title": "Неприступная стена",
+          "description": "Увеличивает шанс крит. попадания союзников в пределах Каменной стены, созданной навыком Движение земли, на 10%, также повышает устойчивость к прерыванию атак.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Rockcore Meltdown",
-          "description": "When the meteorite created by Starfell Sword is destroyed, it will also explode, dealing additional AoE Geo DMG equal to the amount of damage dealt by Starfell Sword.",
+          "title": "Плавление каменного ядра",
+          "description": "После уничтожения, Комета, созданная навыком Меч звездопада, взрывается ещё раз, нанося дополнительный Гео урон по площади, равный урону, нанесённому этим навыком.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Will of the Rock",
-          "description": "Increases the Level of Wake of Earth by 3. Maximum upgrade level is 15.",
+          "title": "Каменная воля",
+          "description": "Увеличивает уровень навыка Движение земли на 3.\nМакс. Ур.: 15",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Reaction Force",
-          "description": "The shockwave triggered by Wake of Earth regenerates 5 Energy for every enemy hit. A maximum of 25 Energy can be recovered in this manner at any one time.",
+          "title": "Сила реакции",
+          "description": "Ударная волна навыка Движение земли восстанавливает 5 ед. энергии за каждого получившего урон противника.\nНе более 25 ед. энергии за раз.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Meteorite Impact",
-          "description": "Increase the Level of Starfell Sword by 3. Maximum upgrade level is 15.",
+          "title": "Метеоритный удар",
+          "description": "Увеличивает уровень навыка Меч звездопада на 3.\nМакс. Ур.: 15",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Everlasting Boulder",
-          "description": "The barrier created by Wake of Earth lasts 5s longer. The meteorite created by Starfell Sword lasts 10s longer.",
+          "title": "Нетленный камень",
+          "description": "Увеличивает время существования Кометы, созданной навыком Меч звездопада, на 10 сек.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2900,27 +2900,27 @@
     },
     {
       "key": "Venti",
-      "name": "Venti",
-      "description": "One of the many bards of Mondstadt, who freely wanders the city’s streets and alleys.",
+      "name": "Венти",
+      "description": "Обычный бард, слоняющийся по улочкам Мондштадта.",
       "skills": [
         {
           "key": "s1",
-          "title": "Divine Marksmanship",
+          "title": "Божественная точность",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 6 consecutive shots with a bow.",
+              "description": "До шести выстрелов из лука.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, favorable winds will accumulate on the arrowhead. A fully charged arrow will deal Anemo DMG.",
+              "description": "Более меткий прицельный выстрел с увеличенным уроном. Во время прицеливания наконечник стрелы заряжается божественным ветром. Полностью заряженная ветром стрела наносит Анемо урон.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
@@ -2928,28 +2928,28 @@
         {
           "key": "s2",
           "title": "Skyward Sonnet",
-          "description": "O wind upon which all hymns and songs fly, bear these earth-walkers up into the sky!",
+          "description": "О ветер, на котором летают все гимны и песни, вознеси этих землян в небо!",
           "abilities": [
             {
               "key": "a1",
-              "description": "Summons a Wind Domain at the enemy’s location, dealing AoE Anemo DMG and launching enemies into the air.",
+              "description": "Вызывает силу ветра, которая наносит Анемо урон по площади и подкидывает врагов в воздух.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Summons an even larger Wind Domain with Venti as the epicenter, dealing AoE Anemo DMG and launching affected enemies into the air. After unleashing the Hold version of this ability, Venti rides the wind into the air. Enemies hit by Skyward Sonnet will fall to the ground slowly.",
+              "description": "Вызывает ещё большую силу ветра с Венти в её центре. Она наносит Анемо урон по площади и подкидывает попавших в её зону действия врагов. Эта версия таланта поднимает Венти в воздух.\nВраги, подкинутые навыком Небесная поэзия, медленно опускаются на землю.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Wind’s Grand Ode",
-          "description": "Fires off an arrow made of countless coalesced winds, creating a huge Stormeye that sucks in objects and enemies along its path, dealing continuous Anemo DMG.",
+          "title": "Великая ода ветру.",
+          "description": "Выпустив стрелу из тысячи ветров, призывает огромный глаз бури, который притягивает к себе врагов, нанося им постоянный Анемо урон.",
           "abilities": [
             {
               "key": "a1",
-              "description": "If the Stormeye comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+              "description": "При контакте с элементами Гидро, Пиро, Крио или Электро глаз бури наносит дополнительный урон этим элементом. За каждое использование навык может поглотить только один элемент.",
               "descriptions": []
             }
           ]
@@ -2958,63 +2958,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Windrider",
-          "description": "Decreases all party member’s gliding Stamina Consumption by 20%.",
+          "title": "Ветряной наездник",
+          "description": "Уменьшает потребление выносливости активного персонажа во время полёта на 20%.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Embrace of Winds",
-          "description": "Holding Skyward Sonnet creates an upcurrent that lasts for 20s.",
+          "title": "Объятья ветра",
+          "description": "Долгое нажатие навыка Небесная поэзия создаёт поток ветра, который длится 20 секунд.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Stormeye",
-          "description": "Regenerates 15 Energy for Venti after the effects of Wind’s Grand Ode end. If an Elemental Absorption occurred, this also restores 15 Energy to all characters of that corresponding element.",
+          "title": "Глаз бури",
+          "description": "После окончания действия таланта Великая ода ветру восстанавливает 15 единиц энергии Венти. Если произошло поглощение стихии, то также восстанавливает 15 единиц энергии всем членам отряда, чей элемент соответствует поглощённому элементу.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Splitting Gale",
-          "description": "Fires 2 additional arrows per Aimed Shot, each dealing 33% of the original arrow’s DMG.",
+          "title": "Дробящий шторм",
+          "description": "Каждый прицельный выстрел пускает две дополнительные стрелы. Каждая дополнительная стрела наносит 33% от урона первой стрелы.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Breeze of Reminiscence",
-          "description": "Skyward Sonnet decreases enemy Anemo RES by 12% for 10s. Enemies launched by Skyward Sonnet suffer an additional 12% Anemo RES and Physical RES decrease while airborne.",
+          "title": "Бриз воспоминаний",
+          "description": "Использование таланта Небесная поэзия уменьшает Анемо и физическое сопротивление противников на 12% в течение 10 секунд. Также временно понижает Анемо и физическое сопротивление противников, подкинутых в воздух этим навыком, на 12%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Ode to Thousand Winds",
-          "description": "Increases the Level of Wind’s Grand Ode by 3. Maximum upgrade level is 15.",
+          "title": "Ода тысяче ветров",
+          "description": "Увеличивает уровень таланта Великая ода ветру на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Hurricane of Freedom",
-          "description": "When Venti picks up an Elemental Orb or Particle, he receives a 25% Anemo DMG Bonus for 10s.",
+          "title": "Ветер свободы",
+          "description": "Подобранные Венти элементальные сферы и частицы дают ему 25% бонус Анемо урона в течение 10 секунд.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Concierto dal Cielo",
-          "description": "Increase the Level of Skyward Sonnet by 3. Maximum upgrade level is 15.",
+          "title": "Небесная гармония",
+          "description": "Увеличивает уровень таланта Небесная поэзия на 3. \nМаксимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Storm of Defiance",
-          "description": "Targets who take DMG from Wind’s Grand Ode have their Anemo RES decreased by 20%. If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%.",
+          "title": "Шторм непокорности",
+          "description": "Понижает Анемо сопротивление противников, получивших урон от действия таланта Великая ода ветру, на 20%. Если произошло Поглощение стихии, то также понижает сопротивление к поглощённому элементу на 20%.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3022,104 +3022,104 @@
     },
     {
       "key": "Xiangling",
-      "name": "Xiangling",
-      "description": "A renowned chef from Liyue. She’s extremely passionate about cooking and excels at making her signature hot and spicy dishes.",
+      "name": "Сян Лин",
+      "description": "Знаменитый шеф-повар Ли Юэ. Она со всей страстью относится к приготовлению еды, а её острые блюда известны на весь Тейват.",
       "skills": [
         {
           "key": "s1",
-          "title": "Dough-Fu",
+          "title": "Кунг-Тесто",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive spear strikes.",
+              "description": "До 5 ударов копьём.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.",
+              "description": "Выпад, наносящий урон противникам на пути, на который тратится определённое количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Guoba Attack",
-          "description": "Summons Guoba the Panda. Guoba continuously breathes fire, dealing AoE Pyro DMG.",
+          "title": "Атака Гобы",
+          "description": "Призывает панду по имени Гоба, который длительное время дышит огнём, нанося Пиро урон по площади.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Pyronado",
-          "description": "Displaying her mastery over both fire and polearms, Xiangling sends a Pyronado whirling around her. The Pyronado will move with your character for so long as the ability persists, dealing Pyro DMG to all enemies in its path.",
+          "title": "Огневихрь",
+          "description": "Используя свои умения Пиро и древкового оружия, Сян Лин закручивает вокруг себя огненный вихрь. Он следует за активным персонажем и наносит Пиро урон врагам, которых касается.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Chef de Cuisine",
-          "description": "When Xiangling cooks an ATK-boosting dish perfectly, she has a 12% chance to receive double the product.",
+          "title": "Народный выбор",
+          "description": "При приготовлении идеального блюда Храбреца имеет 12% шанс приготовить дополнительное блюдо.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Crossfire",
-          "description": "Increases the flame range of Guoba by 20%.",
+          "title": "Перекрёстный огонь",
+          "description": "Дистанция огненного дыхания Гобы увеличивается на 20%.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Beware, It’s Super Hot!",
-          "description": "When Guoba Attack’s effect ends, Guoba leaves a chili pepper on the spot where it disappeared. Picking up a chili pepper increases ATK by 10% for 10s.",
+          "title": "Острота!!!",
+          "description": "После окончания навыка Атака Гобы на его месте остается перец. Этот перец увеличивает силу атаки на 10% в течение 10 секунд.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Crispy Outside, Tender Inside",
-          "description": "Enemies hit by Guoba’s attacks have their Pyro RES reduced by 15% for 6s.",
+          "title": "Внешность обманчива",
+          "description": "Попадания атакой Гобы понижают Пиро сопротивление врагов на 15% в течении 6 секунд.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Oil Meets Fire",
-          "description": "The last attack in a Normal Attack sequence applies the Implode status onto the enemy for 2s. An explosion will occur once this duration ends, dealing 75% of Xiangling’s ATK as AoE Pyro DMG.",
+          "title": "Масло в огонь",
+          "description": "Последний удар обычной атаки накладывает на врага статус Возгорание на 2 секунды. По истечении этого времени происходит взрыв, который наносит Пиро урон по площади равный 75% от силы атаки Сян Лин.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Deepfry",
-          "description": "Increases the Level of Pyronado by 3. Maximum upgrade level is 15.",
+          "title": "Жарка в масле",
+          "description": "Увеличивает уровень навыка Огневихрь на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Slowbake",
-          "description": "Pyronado’s duration is increased by 40%.",
+          "title": "На маленьком огне",
+          "description": "Увеличивает длительность навыка Огневихрь на 40%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Guoba Mad",
-          "description": "Increase the Level of Guoba Attack by 3. Maximum upgrade level is 15.",
+          "title": "Гоба зол",
+          "description": "Увеличивает уровень навыка Атака Гобы на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Condensed Pyronado",
-          "description": "For the duration of Pyronado, all party members receive a 15% Pyro DMG Bonus.",
+          "title": "Усиленный огневихрь",
+          "description": "При активном Огневихре все члены отряда получают 15% бонус Пиро урона.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3127,48 +3127,48 @@
     },
     {
       "key": "Xiao",
-      "name": "Xiao",
-      "description": "A yaksha adeptus who defends Liyue. Also heralded as the \"Conqueror of Demons\" or \"Vigilant Yaksha.\"",
+      "name": "Сяо",
+      "description": "Адепт Якса, оберегающий Ли Юэ. Также его называют Завоевателем демонов или защитником Якса.",
       "skills": [
         {
           "key": "s1",
-          "title": "Whirlwind Thrust",
+          "title": "Вихревой удар",
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 6 rapid strikes.",
+              "description": "До шести быстрых ударов копьём.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to perform an upward thrust.",
+              "description": "Проводит воздушную атаку, для которой тратится определённое количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.\nXiao does not take DMG from performing Plunging Attacks.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади. Сяо не получает урона от проведения атаки в падении.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Lemniscatic Wind Cycling",
-          "description": "Xiao lunges forward, dealing Anemo DMG to opponents in his path.\nCan be used in mid-air.\nStarts with 2 charges.",
+          "title": "Лемниската ветра",
+          "description": "Сяо совершает выпад вперёд, нанося Анемо урон врагам на пути. Можно совершить в воздухе. Изначально имеет два заряда.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Bane of All Evil",
-          "description": "Xiao dons the Yaksha Mask that set gods and demons trembling millennia ago.",
+          "title": "Истребление всего зла",
+          "description": "Сяо надевает маску Якса, заставляющую трепетать от страха богов и демонов тысячи лет назад.",
           "abilities": [
             {
-              "description": "Yaksha\u0027s Mask",
+              "description": "Маска Якса",
               "descriptions": [
-                "Greatly increases Xiao\u0027s jumping ability.",
-                "Increases his attack AoE and attack DMG.",
-                "Converts attack DMG into Anemo DMG, which cannot be overridden by any other elemental infusion. In this state, Xiao will continuously lose HP.",
-                "The effects of this skill end when Xiao leaves the field."
+                "Значительно усиливает прыжки Сяо.",
+                "Увеличивает радиус и урон его атак.",
+                "Конвертирует урон от атак в Анемо урон, этот эффект не может быть отменён какой-либо элементальной инфузией. Находясь в этой форме, Сяо периодически теряет здоровье.",
+                "Эффекты этого навыка заканчиваются, когда Сяо покидает поля боя."
               ]
             }
           ]
@@ -3177,63 +3177,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Transcension: Gravity Defier",
-          "description": "Decreases climbing Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+          "title": "Трансценденция: Отрицание гравитации",
+          "description": "Уменьшает потребление выносливости активного персонажа во время карабканья на 20%. Не суммируется с пассивными талантами, дающими точно такие же эффекты.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Conqueror of Evil: Tamer of Demons",
-          "description": "While under the effects of Bane of All Evil, all DMG dealt by Xiao increases by 5%. DMG increases by a further 5% for every 3s the ability persists.\nThe maximum DMG Bonus is 25%.",
+          "title": "Завоеватель зла: Усмиряющий демонов",
+          "description": "При использовании навыка Истребление всего зла урон Сяо увеличивается на 5%. После этого его урон продолжает увеличиваться на 5% каждые 3 секунды до окончания действия навыка. Максимальное увеличение урона – 25%.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Dissolution Eon: Heaven Fall",
-          "description": "Using Lemniscatic Wind Cycling increases the DMG of subsequent uses of Lemniscatic Wind Cycling by 15%.\n This effect lasts for 7s, and has a maximum of 3 stacks. Gaining a new stack refreshes the effect\u0027s duration.",
+          "title": "Эра распада: Падение небес",
+          "description": "В течение 7 секунд после использования навыка Лемниската ветра увеличивает урон следующего использования навыка Лемниската ветра на 15%. Эффект длится 7 секунд и может складываться до трёх раз. Длительность обнуляется с каждым новым складыванием.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Dissolution Eon: Destroyer of Worlds",
-          "description": "Increases Lemniscatic Wind Cycling’s charges by 1.",
+          "title": "Эра распада: Сокрушитель миров",
+          "description": "Увеличивает количество зарядов навыка Лемниската ветра на 1.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Annihilation Eon: Blossom of Kaleidos",
-          "description": "When in the party and not on the field, Xiao\u0027s Energy Recharge is increased by 25%.",
+          "title": "Эра истребления: Расцвет Калейдоса",
+          "description": "Будучи в отряде, но не активным персонажем, энергия самого Сяо восстанавливается на 25% быстрее.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Conqueror of Evil: Wrath Deity",
-          "description": "Increases the Level of Lemniscatic Wind Cycling by 3. Maximum upgrade level is 15.",
+          "title": "Завоеватель зла: Бог гнева",
+          "description": "Увеличивает уровень навыка Лемниската ветра на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Transcension: Extinction of Suffering",
-          "description": "When Xiao\u0027s HP falls below 50%, he gains a 100% DEF Bonus.",
+          "title": "Трансценденция: Исчезновение страданий",
+          "description": "Когда здоровье Сяо опускается ниже 50%, его защита увеличивается на 100%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Evolution Eon: Origin of Ignorance",
-          "description": "Increase the Level of Bane of All Evil by 3. Maximum upgrade level is 15.",
+          "title": "Эра эволюции: Истоки невежества",
+          "description": "Увеличивает уровень навыка Истребление всего зла на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Conqueror of Evil: Guardian Yaksha",
-          "description": "While under the effects of Bane of All Evil, hitting at least 2 opponents with Xiao\u0027s Plunging Attack will immediately grant him 1 charge of Lemniscatic Wind Cycling, and for the next 1s, he may use Lemniscatic Wind Cycling while ignoring its CD.",
+          "title": "Завоеватель зла: Защитник Якса",
+          "description": "Попадание атакой в падении по двум и более врагам в форме навыка Истребление всего зла добавляет один заряд навыку Лемниската ветра, после чего в течение 1 секунды его можно активировать, игнорируя время отката.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3241,57 +3241,57 @@
     },
     {
       "key": "Xingqiu",
-      "name": "Xingqiu",
-      "description": "A young man carrying a longsword who is frequently seen at book booths. He has a chivalrous heart and yearns for justice and fairness for all.",
+      "name": "Син Цю",
+      "description": "Молодой любитель книг с благородным сердцем и длинным мечом.",
       "skills": [
         {
           "key": "s1",
-          "title": "Guhua Style",
+          "title": "Стиль Гу Хуа",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive spear strikes.",
+              "description": "До пяти быстрых ударов мечом.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Два быстрых взмаха мечом, для который тратится определённое количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-aur to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Guhua Sword - Fatal Rainscreen",
-          "description": "Xingqiu performs twin strikes with his sword, dealing Hydro DMG. At the same time, this ability creates the maximum number of Rain Swords, which will orbit the character. 20% of Xingqiu’s Hydro DMG Bonus will be converted to additional DMG Reduction for the Rain Swords. The maximum amount of additional DMG Reduction that can be gained this way is 24%. The initial maximum number of Rain Swords is 3. Using this ability applies the Wet status onto the character.",
+          "title": "Гу Хуа: Завеса дождя",
+          "description": "Син Цю выполняет два удара мечом, которые наносят Гидро урон. В то же время активация навыка создаёт максимальное количество Мечей дождя, которые вращаются вокруг персонажа.",
           "abilities": [
             {
               "name": "",
-              "description": "The Rain Swords have the following properties:",
+              "description": "Мечи дождя имеют следующие свойства:",
               "descriptions": [
-                "When a character takes DMG, the Rain Sword will shatter, reducing the amount of DMG taken.",
-                "Increases the character’s resistance to interruption."
+                "Понижают получаемый персонажем урон, но каждая полученная атака уничтожает один меч.",
+                "Повышают устойчивость к прерыванию атак.\n20% бонуса Гидро урона Син Цю конвертируются в количество поглощаемого урона.\nТаким образом максимальное количество поглощаемого урона может быть увеличено до 24%."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Guhua Sword - Raincutter",
-          "description": "Initiate Rainbow Bladework and fight using an illusory sword rain, while creating the maximum number of Rain Swords.",
+          "title": "Гу Хуа: Радужная стойка",
+          "description": "Активирует Радужную стойку и позволяет сражаться с помощью максимального количества Мечей дождя.",
           "abilities": [
             {
-              "name": "Rainbow Bladework",
-              "description": "These effects carry over to other characters.",
+              "name": "Радужная стойка",
+              "description": "Эти эффекты переносятся на других персонажей.",
               "descriptions": [
-                "Normal Attacks will trigger consecutive sword rain attacks, dealing Hydro DMG.",
-                "Rain Swords will remain at the maximum number throughout the ability’s duration."
+                "Обычные атаки вашего персонажа дополняются атаками Мечей дождя, которые наносят Гидро урон.",
+                "Количество Мечей дождя остаётся постоянным на всё время действия навыка."
               ]
             }
           ]
@@ -3300,63 +3300,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Flash of Genius",
-          "description": "When Xingqiu crafts Character Talent Materials, he has a 25% chance to refund a portion of the crafting materials used.",
+          "title": "Всплеск вдохновения",
+          "description": "При Создании материалов повышения талантов имеет 25% шанс восстановит часть использованных материалов.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Hydropathic",
-          "description": "When a Rain Sword is shattered or when its duration expires, it regenerates the current character’s HP based on 6% of Xingqiu’s Max HP.",
+          "title": "Секрет текущей воды",
+          "description": "При уничтожении или окончании действия Меча дождя, восстанавливает здоровье активного персонажа на 6% от максимального здоровья Син Цю.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Blades Amidst Raindrops",
-          "description": "Xingqiu gains a 20% Hydro DMG Bonus.",
+          "title": "Красивый почерк",
+          "description": "Увеличивает бонус Гидро урона Син Цю на 20%.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "The Scent Remained",
-          "description": "Increases the maximum number of Rain Swords by 1.",
+          "title": "Запах дождя по утрам",
+          "description": "Увеличивает максимальное количество Мечей дождя на 1.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Rainbow Upon the Azure Sky",
-          "description": "Extends the duration of Guhua Sword - Raincutter by 3s. Decreases the Hydro RES of enemies hit by sword rain attacks by 15% for 4s.",
+          "title": "Радужное небо",
+          "description": "Увеличивает длительность навыка Гу Хуа: Радужная стойка на 3 секунды. Понижает на 15% Гидро сопротивление противников, получивших урон от Мечей дождя, на 4 секунды.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Weaver of Verses",
-          "description": "Increases the Level of Guhua Sword - Raincutter by 3. Maximum upgrade level is 15.",
+          "title": "Стихоплетение",
+          "description": "Увеличивает уровень навыка Гу Хуа: Радужная стойка на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Evilsoother",
-          "description": "Throughout the duration of Guhua Sword: Raincutter, the DMG dealt by Guhua Sword: Fatal Rainscreen is increased by 50%.",
+          "title": "Укротитель зла",
+          "description": "Увеличивает уровень навыка Гу Хуа: Завеса дождя на 50% во время действия навыка Гу Хуа: Радужная стойка.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Embrace of Rain",
-          "description": "Increase the Level of Guhua Sword - Fatal Rainscreen by 3. Maximum upgrade level is 15.",
+          "title": "Объятья дождя",
+          "description": "Увеличивает уровень навыка Гу Хуа: Завеса дождя на 3. Максимальный уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Hence, Call Them My Own Verses",
-          "description": "Activating 2 of Guhua Sword - Raincutter’s sword rain attacks greatly increases the DMG of the third. Xingqiu regenerates 3 Energy when sword rain attacks hit enemies.",
+          "title": "Собрание сочинений",
+          "description": "Каждые две атаки Мечей дождя навыка Гу Хуа: Радужная стойка увеличивают урон следующей атаки Мечей дождя. При попадании атаки Мечей дождя восстанавливают 3 ед. энергии Син Цю.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3364,125 +3364,125 @@
     },
     {
       "key": "Xinyan",
-      "name": "Xinyan",
-      "description": "Liyue’s sole rock ’n’ roll musician. She rebels against ossified prejudices using her music and passionate singing.",
+      "name": "Синь Янь",
+      "description": "Единственный рок-музыкант Ли Юэ. Своей вдохновляющей музыкой и пением она выражает протест предубеждениям.",
       "skills": [
         {
           "key": "s1",
-          "title": "Dance on Fire",
+          "title": "Зажигательный танец",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 consecutive strikes.",
+              "description": "До четырёх рубящих ударов мечом.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous spinning attacks against all nearby enemies. At the end of the sequence, perform a more powerful slash.",
+              "description": "Вращающаяся атака по окружающим врагам, на которую непрерывно тратится выносливость.\nПосле вращения проводит дополнительную мощную атаку мечом.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Sweeping Fervor",
-          "description": "Xinyan brandishes her instrument, dealing Pyro DMG on nearby enemies, forming a shield made out of her audience’s passion.",
+          "title": "Решительный жар",
+          "description": "Синь Янь размахивает своим музыкальным инструментом, нанося Пиро урон окружающим врагам, и создаёт щит из жаркой любви своих фанатов.",
           "abilities": [
             {
               "name": "",
-              "description": "The shield’s DMG Absorption scales based on Xinyan’s DEF and on the number of enemies hit:",
+              "description": "Поглощение урона щита зависит от защиты Синь Янь и от количества попавших под удар врагов:",
               "descriptions": [
-                "Hitting 0-1 enemies grants Shield Level 1: Ad Lib.",
-                "Hitting 2 enemies grants Shield Level 2: Lead-In.",
-                "Hitting 3 or more enemies grants Shield Level 3: Rave, which will also deal intermittent Pyro DMG to nearby enemies."
+                "Не попадает или попадает по одному – щит 1 ур. «Импровизация».",
+                "Попадает по двум – щит 2 ур. «Вступление».",
+                "Попадает по трём и более – щит 3 ур. «Рейв», который также периодически наносит Пиро урон окружающим врагам."
               ]
             },
             {
               "name": "",
-              "description": "The shield has the following special properties:",
+              "description": "Щит обладает следующими свойствами:",
               "descriptions": [
-                "When unleashed, it infuses Xinyan with Pyro.",
-                "It has 250% DMG Absorption effectiveness against Pyro DMG."
+                "Во время активации накладывает на Синь Янь эффект Пиро.",
+                "Пиро урон поглощается на 250% эффективнее."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Riff Revolution",
-          "description": "Strumming rapidly, Xinyan launches nearby enemies and deals Physical DMG to them, hyping up the crowd. The sheer intensity of the atmosphere will cause explosions that deal Pyro DMG to nearby enemies.",
+          "title": "Струны протеста",
+          "description": "Синь Янь зажигает толпу игрой на своём инструменте, подкидывая окружающих врагов в воздух и нанося им физический урон.\nЖаркая атмосфера её выступления создаёт струи огня, которые наносят Пиро урон окружающим врагам.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "A Rad Recipe",
-          "description": "When a Perfect Cooking is achieved on an DEF-boosting dish, Xinyan has a 12% chance to obtain double the product.",
+          "title": "Готовка рулит",
+          "description": "При приготовлении идеального блюда, повышающего защиту, имеет 12% шанс приготовить дополнительное блюдо.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "\"The Show Goes On, Even Without an Audience...\"",
-          "description": "Decreases the number of enemies Sweeping Fervor must hit to trigger each level of shielding.",
+          "title": "Выступление без публики",
+          "description": "Уменьшает необходимое для получения уровня щита навыка Решительный жар количество врагов.",
           "descriptions": [
-            "Shield Level 2: Lead-In requirement reduced to 1 enemy hit.",
-            "Shield Level 3: Rave requirement reduced to 2 enemies hit or more."
+            "Щит 2 ур. – «Вступление»: требуется попадание по одному врагу.",
+            "Щит 3 ур. – «Рейв»: требуется попадание по двум и более врагам"
           ]
         },
         {
           "key": "p3",
-          "title": "\"...Now That’s Rock ’N’ Roll!\"",
-          "description": "Characters shielded by Sweeping Fervor deal 15% increased Physical DMG.",
+          "title": "Вот это рок-н-ролл!",
+          "description": "Щит навыка Решительный жар увеличивает физ. урон персонажа на 15%.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Fatal Acceleration",
-          "description": "Upon scoring a CRIT hit, increases ATK SPD of Xinyan’s Normal and Charged Attacks by 12% for 5s. Can only occur once every 5s.",
+          "title": "Фатальный разгон",
+          "description": "При крит. попадании увеличивает скорость обычной и заряженной атаки Синь Янь на 12% в течение 5 сек.\nМожет возникнуть раз в 5 сек.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Impromptu Opening",
-          "description": "Riff Revolution Physical DMG has its Crit rate increased by 100%, and will form a shield at Shield Level 3: Rave when cast.",
+          "title": "Выступление экспромтом",
+          "description": "Увеличивает шанс крит. попадания физ. уроном навыка Струны протеста на 100%, также при использовании навыка активирует щит 3 ур. — «Рейв».",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Double Stop",
-          "description": "Increases the Level of Sweeping Fervor by 3. Maximum upgrade level is 15.",
+          "title": "Сложный аккорд",
+          "description": "Увеличивает уровень навыка Решительный жар на 3.\nМакс. Ур.: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Wildfire Rhythm",
-          "description": "Sweeping Fervor’s swing DMG decrease opponents Physical RES by 15% for 12s.",
+          "title": "Дикий ритм",
+          "description": "Попадание навыком Решительный жар понижает физ. сопротивление врага на 15% в течение 12 сек.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Screamin’ for an Encore",
-          "description": "Increases the Level of Riff Revolution by 3. Maximum upgrade level is 15.",
+          "title": "Крики «Браво!»",
+          "description": "Увеличивает уровень навыка Струны протеста на 3.\nМакс. Ур.: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Rockin’ in a Flaming World",
-          "description": "Decrease the stamina consumption of Xinyan Charged Attacks by 30%. Additionally, Xinyan Charged Attack gain an ATK bonus equal to 50% of her DEF.",
+          "title": "Адский рок-н-ролл",
+          "description": "потребление выносливости заряженной атакой Синь Янь на 30%. Также при исполнении заряженной атаки Синь Янь получает бонус атаки равный 50% от её защиты.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3490,71 +3490,71 @@
     },
     {
       "key": "Zhongli",
-      "name": "Zhongli",
-      "description": "A mysterious guest invited by the Wangsheng Funeral Parlor. Extremely knowledgeable in all things.",
+      "name": "Чжун Ли",
+      "description": "Приглашенный специалист ритуального бюро «Ваншэнэ».\nНеобычайно загадочен и сведущ во всех делах.",
       "skills": [
         {
           "key": "s1",
-          "title": "Rain of Stone",
+          "title": "Каменный дождь",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 6 consecutive spear strikes.",
+              "description": "До шести ударов копьём.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to lunge forward, causing stone spears to fall along his path.",
+              "description": "Выпад, вызывающий дождь из каменный копий, на который тратится определённое количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Dominus Lapidis",
-          "description": "Every mountain, rock and inch of land is filled with the power of Geo, but those who can wield such powers freely are few and far between.",
+          "title": "Власть над камнем",
+          "description": "Каждая гора, каждый камень и вся земля пронизаны энергией Гео, но только единицы могут ею управлять.",
           "abilities": [
             {
               "key": "a1",
-              "description": "Commands the power of earth to create a Stone Stele.",
+              "description": "Приказывает силам земли возвести Гео колонну",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Causes nearby Geo energy to explode, causing the following effects:",
+              "description": "Эта колонна входит в резонанс с другими окружающими её Гео конструкциями, нанося периодический Гео урон окружающим врагам. Колона обладает следующими параметрами:",
               "descriptions": [
-                "If their maximum number hasn\u0027t been reached, creates a Stone Stele.",
-                "Creates a shield of jade. The shield\u0027s DMG Absorption scales based on Zhongli\u0027s Max HP.",
-                "Deals AoE Geo DMG.",
-                "If there are nearby targets with the Geo element, it will drain a large amount of Geo element from a maximum of 2 such targets. This effect does not cause DMG."
+                "Одновременно может существовать не более одной Гео колонны.",
+                "Создаёт Яшмовый щит, чей макс. поглощаемый урон зависит от макс. HP Чжун Ли",
+                "Наносит Гео урон по площади",
+                "если поблизости есть цели с элементом Гео, вытягивает большое количество Гео элемента от макс. двух целей. Этот эффект не наносит урон."
               ]
             },
             {
-              "name": "Stone Stele",
-              "description": "When created, deals AoE Geo DMG.\nAdditionally, it will intermittently resonate with other nearby Geo constructs, dealing Geo DMG to nearby opponents.\n1The Stone Stele is considered a Geo construct that can both be climbed and used to block attacks.\nOnly one Stele created by Zhongli himself may initially exist at any one time",
+              "name": "Власть над камнем",
+              "description": "Приказывает силам земли возвести Гео колонну, которая наносит Гео урон по площади. Эта колонна входит в резонанс с другими окружающими её Гео конструкциями, нанося периодический Гео урон окружающим врагам. Гео колонна считается Гео конструкцией, на неё можно взобраться и использовать её для блокирования атак. Одновременно может существовать не более одной Гео колонны.",
               "descriptions": []
             },
             {
-              "name": "Jade Shield",
-              "description": "Possesses 150% DMG Absorption against all Elemental and Physical DMG.\nCharacters protected by the Jade Shield will decrease the Elemental RES and Physical RES of opponents in a small AoE by 20%. This effect cannot be stacked.",
+              "name": "Яшмовый щит",
+              "description": "Обладает 150% поглощением урона против всех стихийных и физических ударов.\nПерсонажи, защищенные Яшмовым щитом, уменьшает сопротивление защиты стихийным и физическим атакам противников в небольшом областич на 20%. Этот эффект не складывается.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Planet Befall",
-          "description": "Brings a falling meteor down to earth, dealing massive Geo DMG to opponents caught in its AoE and applying the Petrification status to them.",
+          "title": "Падение кометы",
+          "description": "Призывает гигантский метеорит, который наносит огромный Гео урон врагам в радиусе поражения, а также накладывает на них статус Окаменение.",
           "abilities": [
             {
-              "name": "Petrification",
-              "description": "Opponents affected by the Petrification status cannot move.",
+              "name": "Окаменение",
+              "description": "Враги со статусом Окаменение не могут двигаться.",
               "descriptions": []
             }
           ]
@@ -3563,70 +3563,70 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Arcanum of Crystal",
-          "description": "Refunds 15% of the ores used when crafting Polearm-type weapons.",
+          "title": "Кристальная судьба",
+          "description": "При ковке древкового оружия возвращает 15% затраченной руды.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Resonant Waves",
-          "description": "When the Jade Shield takes DMG, it will Fortify:",
+          "title": "Каменная воля",
+          "description": "Полученный при активном Яшмовом щите урон накладывает статус Укрепление:",
           "descriptions": [
-            "Fortified characters have 5% increased Shield Strength.",
-            "Can stack up to 5 times, and lasts until the Jade Shield disappears."
+            "Увеличивает прочность щита персонажа, защищённого Яшмовым щитом, на 5%.",
+            "Может складываться до 5 раз и длится до тех пор, пока не исчезнет Яшмовый щит."
           ]
         },
         {
           "key": "p3",
-          "title": "Dominance of Earth",
-          "description": "Zhongli deals bonus DMG based on his Max HP:",
+          "title": "Богатый стол",
+          "description": "Падение кометы",
           "descriptions": [
-            "Normal Attack, Charged Attack, and Plunging Attack DMG is increased by 1.39% of Max HP.",
-            "Dominus Lapidis\u0027 Stone Stele, resonance, and hold DMG is increased by 1.9% of Max HP.",
-            "Planet Befall\u0027s DMG is increased by 33% of Max HP."
+            "Обычная атака, заряженная атака и урон падения увеличен на 1,39% от максимального запаса здоровья.",
+            "Падение кометы и Гео колона, резонируют, и урон удержание  увеличены на 1,9% от максимального запаса здоровья.",
+            "Навык «Падение кометы» наносит дополнительный урон, равный 33% от макс HP Чжун Ли."
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Rock, the Backbone of Earth",
-          "description": "Increases the maximum number of Stone Steles created by Dominus Lapidis that may exist simultaneously by 2.",
+          "title": "На чём держится земля",
+          "description": "Допускает одновременное существование двух Гео колонн навыка Власть над камнем.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Stone, the Cradle of Jade",
-          "description": "Planet Befall grants nearby characters on the field a Jade Shield when it descends.",
+          "title": "Колыбель нефрита",
+          "description": "Навык Падение кометы накладывает Яшмовый щит на окружающих персонажей.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Jade, Shimmering through Darkness",
-          "description": "Increases the Level of Dominus Lapidis by 3. Maximum upgrade level is 15.",
+          "title": "Яшмовый блеск",
+          "description": "Увеличивает уровень навыка Власть над камнем на 3.\nМакс. Ур.: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Topaz, Unbreakable and Fearless",
-          "description": "Increases Planet Befall’s AoE by 20% and increases the duration of Planet Befall’s Petrification effect by 2s.",
+          "title": "Топаз, несломленный и бесстрашный",
+          "description": "Увеличивает зону поражения навыка Падение кометы на 20%, также увеличивает длительность окаменения на 2 сек.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Lazuli, Herald of the Order",
-          "description": "Increase the Level of Planet Befall by 3. Maximum upgrade level is 15.",
+          "title": "Лазурит, вестник порядка",
+          "description": "Увеличивает уровень навыка Падение кометы на 3.\nМакс. Ур.: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Chrysos, Bounty of Dominator",
-          "description": "When the Jade Shield takes DMG, 40% of that incoming DMG is converted to HP for the current character.\nA single instance of regeneration cannot exceed 8% of that character’s Max HP.",
+          "title": "Кризос, награда деспота",
+          "description": "Когда Яшмовый щит получает урон, 40% этого урона конвертируется в HP для активного персонажа. Одно восстановление не может превышать 8% от макс. HP персонажа.",
           "secondDescription": null,
           "descriptions": []
         }
