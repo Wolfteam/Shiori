@@ -15,6 +15,7 @@
     "atk": "{value} ATQ",
     "atkPercentage": "{value} ATQ %",
     "defPercentage": "{value} DEF %",
+    "def": "{value} DEF",
     "critAtk": "{value} ATQ CRIT",
     "critRate": "{value} Prob. CRIT",
     "critRatePercentage": "{value} Prob. CRIT %",
@@ -204,5 +205,6 @@
     "europe": "Europa",
     "asia": "Asia",
     "chooseServer": "Escoge un servidor",
-    "serverWhereYouPlay":"El servidor donde juegas"
+    "serverWhereYouPlay":"El servidor donde juegas",
+    "subStats": "Subestadisticas"
 }

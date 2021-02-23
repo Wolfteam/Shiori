@@ -91,6 +91,7 @@ abstract class CharacterFileBuild implements _$CharacterFileBuild {
     @required bool isSupport,
     @required List<String> weaponImages,
     @required List<CharacterFileArtifactBuild> artifacts,
+    @required List<StatType> subStatsToFocus,
   }) = _CharacterFileBuild;
 
   const CharacterFileBuild._();

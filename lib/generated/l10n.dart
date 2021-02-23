@@ -195,6 +195,16 @@ class S {
     );
   }
 
+  /// `{value} DEF`
+  String def(Object value) {
+    return Intl.message(
+      '$value DEF',
+      name: 'def',
+      desc: '',
+      args: [value],
+    );
+  }
+
   /// `{value} CRIT ATK`
   String critAtk(Object value) {
     return Intl.message(
@@ -2100,6 +2110,16 @@ class S {
     return Intl.message(
       'The server where you play',
       name: 'serverWhereYouPlay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Substats`
+  String get subStats {
+    return Intl.message(
+      'Substats',
+      name: 'subStats',
       desc: '',
       args: [],
     );

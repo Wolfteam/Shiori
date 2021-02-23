@@ -7,10 +7,13 @@ class CharacterBuildCardModel {
   final bool isForSupport;
   final List<WeaponCardModel> weapons;
   final List<CharacterBuildArtifactModel> artifacts;
+  final List<StatType> subStatsToFocus;
+
   CharacterBuildCardModel({
     @required this.isForSupport,
     @required this.weapons,
     @required this.artifacts,
+    @required this.subStatsToFocus,
   });
 }
 

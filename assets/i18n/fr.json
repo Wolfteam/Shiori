@@ -4094,7 +4094,7 @@
             "key": "Lithic Blade",
             "name": "Lithic Blade",
             "description": "A greatsword carved and chiseled from the very bedrock of Liyue.",
-            "refinement": "For every character in the party who hails from Liyue, the character who equips this weapon gains {{0}}% ATK increase and {{1}}% CRIT Rate increase."
+            "refinement": "For every character in the party who hails from Liyue, the character who equips this weapon gains a {{0}}% ATK increase and a {{1}}% CRIT Rate increase. This effect stacks up to 4 times."
         },
         {
             "key": "Prototype Archaic",
@@ -4220,7 +4220,7 @@
             "key": "Lithic Spear",
             "name": "Lithic Spear",
             "description": "A spear forged from the rocks of the Guyun Stone Forest. Its hardness knows no equal.",
-            "refinement": "Normal Attack hits have a {{0}}% chance of causing the next Charged Attack performed in the following 10s to deal {{1}}% increased DMG."
+            "refinement": "For every character in the party who hails from Liyue, the character who equips this weapon gains a {{0}}% ATK increase and a {{1}}% CRIT Rate increase. This effect stacks up to 4 times."
         },
         {
             "key": "Prototype Starglitter",

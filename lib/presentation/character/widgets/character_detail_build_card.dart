@@ -15,6 +15,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
   final bool isForSupport;
   final List<WeaponCardModel> weapons;
   final List<CharacterBuildArtifactModel> artifacts;
+  final List<StatType> subStatsToFocus;
   final double imgHeight = 125;
 
   final replaceDigitRegex = RegExp(r'\d{1}');
@@ -25,6 +26,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
     @required this.isForSupport,
     @required this.weapons,
     @required this.artifacts,
+    @required this.subStatsToFocus,
   }) : super(key: key);
 
   @override
@@ -59,6 +61,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
                 style: theme.textTheme.subtitle2.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
+            if (subStatsToFocus.isNotEmpty) _buildSubStatsToFocus(context),
             ..._buildArtifacts(context),
           ],
         ),
@@ -216,6 +219,23 @@ class CharacterDetailBuildCard extends StatelessWidget {
       image: path,
       rarity: current.artifact.rarity,
       keyName: current.artifact.key,
+    );
+  }
+
+  Widget _buildSubStatsToFocus(BuildContext context) {
+    final s = S.of(context);
+    final theme = Theme.of(context);
+    final text = subStatsToFocus.map((e) => s.translateStatTypeWithoutValue(e)).join(' > ');
+    return Container(
+      margin: Styles.edgeInsetHorizontal5,
+      child: Text(
+        '${s.subStats}: $text',
+        style: theme.textTheme.subtitle2.copyWith(
+          fontWeight: FontWeight.bold,
+          color: elementType.getElementColorFromContext(context),
+          fontSize: 12,
+        ),
+      ),
     );
   }
 }

@@ -25935,11 +25935,11 @@
       "key": "Lithic Blade",
       "image": "lithic_blade.png",
       "type": "claymore",
-      "atk": 41,
+      "atk": 42,
       "rarity": 4,
-      "secondaryStat": "critDmgPercentage",
-      "secondaryStatValue": 16,
-      "location": "starglitterExchange",
+      "secondaryStat": "atkPercentage",
+      "secondaryStatValue": 9,
+      "location": "gacha",
       "isComingSoon": false,
       "ascensionMaterials": [
         {
@@ -25948,17 +25948,17 @@
             {
               "quantity": 3,
               "materialType": "weaponPrimary",
-              "image": "mist_veiled_lead_elixir.png"
+              "image": "luminous_sands_from_guyun.png"
             },
             {
               "quantity": 3,
               "materialType": "weapon",
-              "image": "mist_grass_pollen.png"
+              "image": "hunters_sacrificial_knife.png"
             },
             {
               "quantity": 2,
               "materialType": "common",
-              "image": "treasure_hoarder_insignia.png"
+              "image": "firm_arrowhead.png"
             },
             {
               "quantity": 5000,
@@ -25973,17 +25973,17 @@
             {
               "quantity": 3,
               "materialType": "weaponPrimary",
-              "image": "mist_veiled_mercury_elixir.png"
+              "image": "lustrous_stone_from_guyun.png"
             },
             {
               "quantity": 12,
               "materialType": "weapon",
-              "image": "mist_grass_pollen.png"
+              "image": "hunters_sacrificial_knife.png"
             },
             {
               "quantity": 8,
               "materialType": "common",
-              "image": "treasure_hoarder_insignia.png"
+              "image": "firm_arrowhead.png"
             },
             {
               "quantity": 15000,
@@ -25998,17 +25998,17 @@
             {
               "quantity": 6,
               "materialType": "weaponPrimary",
-              "image": "mist_veiled_mercury_elixir.png"
+              "image": "lustrous_stone_from_guyun.png"
             },
             {
               "quantity": 6,
               "materialType": "weapon",
-              "image": "mist_grass.png"
+              "image": "agents_sacrificial_knife.png"
             },
             {
               "quantity": 6,
               "materialType": "common",
-              "image": "silver_raven_insignia.png"
+              "image": "sharp_arrowhead.png"
             },
             {
               "quantity": 20000,
@@ -26023,17 +26023,17 @@
             {
               "quantity": 3,
               "materialType": "weaponPrimary",
-              "image": "mist_veiled_gold_elixir.png"
+              "image": "relic_from_guyun.png"
             },
             {
               "quantity": 12,
               "materialType": "weapon",
-              "image": "mist_grass.png"
+              "image": "agents_sacrificial_knife.png"
             },
             {
               "quantity": 9,
               "materialType": "common",
-              "image": "silver_raven_insignia.png"
+              "image": "sharp_arrowhead.png"
             },
             {
               "quantity": 30000,
@@ -26048,17 +26048,17 @@
             {
               "quantity": 6,
               "materialType": "weaponPrimary",
-              "image": "mist_veiled_gold_elixir.png"
+              "image": "relic_from_guyun.png"
             },
             {
               "quantity": 9,
               "materialType": "weapon",
-              "image": "mist_grass_wick.png"
+              "image": "inspectors_sacrificial_knife.png"
             },
             {
               "quantity": 6,
               "materialType": "common",
-              "image": "golden_raven_insignia.png"
+              "image": "weathered_arrowhead.png"
             },
             {
               "quantity": 35000,
@@ -26073,17 +26073,17 @@
             {
               "quantity": 4,
               "materialType": "weaponPrimary",
-              "image": "mist_veiled_primo_elixir.png"
+              "image": "divine_body_from_guyun.png"
             },
             {
               "quantity": 18,
               "materialType": "weapon",
-              "image": "mist_grass_wick.png"
+              "image": "inspectors_sacrificial_knife.png"
             },
             {
               "quantity": 12,
               "materialType": "common",
-              "image": "golden_raven_insignia.png"
+              "image": "weathered_arrowhead.png"
             },
             {
               "quantity": 45000,
@@ -26097,36 +26097,36 @@
         {
           "level": 1,
           "values": [
-            6,
-            2
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
             7,
             3
           ]
         },
         {
-          "level": 3,
+          "level": 2,
           "values": [
             8,
             4
           ]
         },
         {
-          "level": 4,
+          "level": 3,
           "values": [
             9,
             5
           ]
         },
         {
-          "level": 5,
+          "level": 4,
           "values": [
             10,
             6
+          ]
+        },
+        {
+          "level": 5,
+          "values": [
+            11,
+            7
           ]
         }
       ],
@@ -33045,10 +33045,10 @@
       "key": "Lithic Spear",
       "image": "lithic_spear.png",
       "type": "polearm",
-      "atk": 42,
+      "atk": 44,
       "rarity": 4,
-      "secondaryStat": "physDmgPercentage",
-      "secondaryStatValue": 9.0,
+      "secondaryStat": "atkPercentage",
+      "secondaryStatValue": 6,
       "location": "gacha",
       "isComingSoon": false,
       "ascensionMaterials": [
@@ -33058,17 +33058,17 @@
             {
               "quantity": 3,
               "materialType": "weaponPrimary",
-              "image": "mist_veiled_lead_elixir.png"
+              "image": "grain_of_aerosiderite.png"
             },
             {
               "quantity": 3,
               "materialType": "weapon",
-              "image": "mist_grass_pollen.png"
+              "image": "fragile_bone_shard.png"
             },
             {
               "quantity": 2,
               "materialType": "common",
-              "image": "slime_condensate.png"
+              "image": "firm_arrowhead.png"
             },
             {
               "quantity": 5000,
@@ -33083,17 +33083,17 @@
             {
               "quantity": 3,
               "materialType": "weaponPrimary",
-              "image": "mist_veiled_mercury_elixir.png"
+              "image": "piece_of_aerosiderite.png"
             },
             {
               "quantity": 12,
               "materialType": "weapon",
-              "image": "mist_grass_pollen.png"
+              "image": "fragile_bone_shard.png"
             },
             {
               "quantity": 8,
               "materialType": "common",
-              "image": "slime_condensate.png"
+              "image": "firm_arrowhead.png"
             },
             {
               "quantity": 15000,
@@ -33108,17 +33108,17 @@
             {
               "quantity": 6,
               "materialType": "weaponPrimary",
-              "image": "mist_veiled_mercury_elixir.png"
+              "image": "piece_of_aerosiderite.png"
             },
             {
               "quantity": 6,
               "materialType": "weapon",
-              "image": "mist_grass.png"
+              "image": "sturdy_bone_shard.png"
             },
             {
               "quantity": 6,
               "materialType": "common",
-              "image": "slime_secretions.png"
+              "image": "sharp_arrowhead.png"
             },
             {
               "quantity": 20000,
@@ -33133,17 +33133,17 @@
             {
               "quantity": 3,
               "materialType": "weaponPrimary",
-              "image": "mist_veiled_gold_elixir.png"
+              "image": "bit_of_aerosiderite.png"
             },
             {
               "quantity": 12,
               "materialType": "weapon",
-              "image": "mist_grass.png"
+              "image": "sturdy_bone_shard.png"
             },
             {
               "quantity": 9,
               "materialType": "common",
-              "image": "slime_secretions.png"
+              "image": "sharp_arrowhead.png"
             },
             {
               "quantity": 30000,
@@ -33158,17 +33158,17 @@
             {
               "quantity": 6,
               "materialType": "weaponPrimary",
-              "image": "mist_veiled_gold_elixir.png"
+              "image": "bit_of_aerosiderite.png"
             },
             {
               "quantity": 9,
               "materialType": "weapon",
-              "image": "mist_grass_wick.png"
+              "image": "fossilized_bone_shard.png"
             },
             {
               "quantity": 6,
               "materialType": "common",
-              "image": "slime_concentrate.png"
+              "image": "weathered_arrowhead.png"
             },
             {
               "quantity": 35000,
@@ -33183,20 +33183,20 @@
             {
               "quantity": 4,
               "materialType": "weaponPrimary",
-              "image": "mist_veiled_primo_elixir.png"
+              "image": "chunk_of_aerosiderite.png"
             },
             {
               "quantity": 18,
               "materialType": "weapon",
-              "image": "mist_grass_wick.png"
+              "image": "fossilized_bone_shard.png"
             },
             {
               "quantity": 12,
               "materialType": "common",
-              "image": "slime_concentrate.png"
+              "image": "weathered_arrowhead.png"
             },
             {
-              "quantity": 450000,
+              "quantity": 45000,
               "materialType": "currency",
               "image": "mora.png"
             }
@@ -33207,36 +33207,36 @@
         {
           "level": 1,
           "values": [
-            20,
-            40
+            7,
+            3
           ]
         },
         {
           "level": 2,
           "values": [
-            25,
-            50
+            8,
+            4
           ]
         },
         {
           "level": 3,
           "values": [
-            30,
-            60
+            9,
+            5
           ]
         },
         {
           "level": 4,
           "values": [
-            35,
-            70
+            10,
+            6
           ]
         },
         {
           "level": 5,
           "values": [
-            40,
-            80
+            11,
+            7
           ]
         }
       ],

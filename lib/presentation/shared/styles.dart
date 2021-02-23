@@ -22,6 +22,7 @@ class Styles {
   static const edgeInsetAll0 = EdgeInsets.all(0);
   static const edgeInsetHorizontal16 = EdgeInsets.symmetric(horizontal: 16);
   static const edgeInsetVertical5 = EdgeInsets.symmetric(vertical: 5);
+  static const edgeInsetHorizontal5 = EdgeInsets.symmetric(horizontal: 5);
 
   static const modalBottomSheetShape = RoundedRectangleBorder(
     borderRadius: BorderRadius.only(
