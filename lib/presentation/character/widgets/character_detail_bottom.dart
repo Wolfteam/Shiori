@@ -46,6 +46,7 @@ class CharacterDetailBottom extends StatelessWidget {
                                 elementType: state.elementType,
                                 weapons: build.weapons,
                                 artifacts: build.artifacts,
+                                subStatsToFocus: build.subStatsToFocus,
                               ))
                           .toList(),
                     ),

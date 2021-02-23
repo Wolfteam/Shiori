@@ -105,6 +105,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
       builds: char.builds.map((build) {
         return CharacterBuildCardModel(
           isForSupport: build.isSupport,
+          subStatsToFocus: build.subStatsToFocus,
           weapons: build.weaponImages.map((e) => _genshinService.getWeaponForCardByImg(e)).toList(),
           artifacts: build.artifacts.map(
             (e) {

@@ -122,6 +122,8 @@ extension I18nExtensions on S {
         return xDmgBonusPercentage(value, translateElementType(ElementType.anemo));
       case StatType.healingBonusPercentage:
         return healingBonusPercentage(value);
+      case StatType.def:
+        return def(value);
       default:
         throw Exception('The provided stat type = $type is not valid');
     }
