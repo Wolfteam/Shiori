@@ -444,6 +444,12 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "def"
           ]
         }
       ],
@@ -1074,6 +1080,12 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery"
           ]
         },
         {
@@ -1114,6 +1126,12 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery"
           ]
         }
       ],
@@ -2267,6 +2285,12 @@
                 "healingBonusPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "hpPercentage",
+            "hp",
+            "energyRechargePercentage",
+            "critRate"
           ]
         }
       ],
@@ -2911,6 +2935,13 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery"
           ]
         },
         {
@@ -2941,6 +2972,13 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery",
+            "energyRechargePercentage"
           ]
         }
       ],
@@ -3595,6 +3633,13 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "energyRechargePercentage",
+            "atkPercentage",
+            "elementaryMastery"
           ]
         },
         {
@@ -3617,6 +3662,12 @@
                 "healingBonusPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "hpPercentage",
+            "energyRechargePercentage",
+            "critRatePercentage",
+            "elementaryMastery"
           ]
         }
       ],
@@ -4252,6 +4303,12 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery"
           ]
         },
         {
@@ -4303,6 +4360,12 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery"
           ]
         }
       ],
@@ -4925,7 +4988,7 @@
                 "atk",
                 "atkPercentage",
                 "pyroDmgBonusPercentage",
-                "critRatePercentage"
+                "critDmgPercentage"
               ]
             },
             {
@@ -4944,9 +5007,16 @@
                 "atk",
                 "atkPercentage",
                 "pyroDmgBonusPercentage",
-                "critRatePercentage"
+                "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery",
+            "energyRechargePercentage"
           ]
         }
       ],
@@ -5581,6 +5651,11 @@
                 "hpPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "hpPercentage",
+            "critRatePercentage"
           ]
         },
         {
@@ -5620,6 +5695,12 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage"
           ]
         }
       ],
@@ -6263,6 +6344,13 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery",
+            "energyRechargePercentage"
           ]
         },
         {
@@ -6283,6 +6371,13 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery",
+            "energyRechargePercentage"
           ]
         }
       ],
@@ -6946,6 +7041,13 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery"
           ]
         },
         {
@@ -6987,6 +7089,13 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery"
           ]
         }
       ],
@@ -7632,6 +7741,13 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery"
           ]
         },
         {
@@ -7674,6 +7790,13 @@
                 "atkPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery",
+            "critRatePercentage",
+            "critDmgPercentage"
           ]
         }
       ],
@@ -8305,6 +8428,13 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery",
+            "energyRechargePercentage",
+            "critRatePercentage"
           ]
         },
         {
@@ -8334,6 +8464,13 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery"
           ]
         }
       ],
@@ -8978,6 +9115,12 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery"
           ]
         },
         {
@@ -9019,6 +9162,12 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "atk"
           ]
         }
       ],
@@ -9669,6 +9818,12 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery"
           ]
         }
       ],
@@ -10294,6 +10449,12 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery"
           ]
         },
         {
@@ -10316,6 +10477,12 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery"
           ]
         }
       ],
@@ -10950,6 +11117,13 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery"
           ]
         },
         {
@@ -10971,6 +11145,13 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery"
           ]
         }
       ],
@@ -11634,6 +11815,12 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "atk"
           ]
         },
         {
@@ -11667,6 +11854,12 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery"
           ]
         }
       ],
@@ -12303,6 +12496,13 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "defPercentage",
+            "energyRechargePercentage",
+            "atkPercentage"
           ]
         },
         {
@@ -12344,6 +12544,13 @@
                 "defPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "defPercentage",
+            "def",
+            "energyRechargePercentage",
+            "critRatePercentage",
+            "critDmgPercentage"
           ]
         }
       ],
@@ -12969,6 +13176,12 @@
                 "atkPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "atkPercentage",
+            "energyRechargePercentage",
+            "atk",
+            "elementaryMastery"
           ]
         }
       ],
@@ -13594,6 +13807,13 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "atk",
+            "energyRechargePercentage"
           ]
         }
       ],
@@ -14229,6 +14449,13 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery",
+            "energyRechargePercentage"
           ]
         },
         {
@@ -14251,6 +14478,13 @@
                 "elementaryMastery"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "elementaryMastery",
+            "critRatePercentage",
+            "critDmgPercentage",
+            "energyRechargePercentage",
+            "atkPercentage"
           ]
         }
       ],
@@ -14901,6 +15135,13 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery"
           ]
         },
         {
@@ -14942,6 +15183,13 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery"
           ]
         }
       ],
@@ -15975,6 +16223,10 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "critRatePercentage"
           ]
         }
       ],
@@ -17020,6 +17272,10 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "atkPercentage",
+            "energyRechargePercentage"
           ]
         }
       ],
@@ -17646,6 +17902,12 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage"
           ]
         }
       ],
@@ -18295,6 +18557,13 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery",
+            "energyRechargePercentage"
           ]
         },
         {
@@ -18325,6 +18594,13 @@
                 "elementaryMastery"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery",
+            "critRatePercentage",
+            "critDmgPercentage"
           ]
         }
       ],
@@ -18970,6 +19246,13 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery"
           ]
         }
       ],
@@ -19613,6 +19896,13 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery"
           ]
         }
       ],
@@ -20246,6 +20536,13 @@
                 "critRatePercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "defPercentage",
+            "energyRechargePercentage"
           ]
         },
         {
@@ -20276,6 +20573,13 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "defPercentage",
+            "atkPercentage",
+            "energyRechargePercentage"
           ]
         }
       ],
@@ -20920,6 +21224,13 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "hpPercentage",
+            "energyRechargePercentage"
           ]
         },
         {
@@ -20951,6 +21262,13 @@
                 "critDmgPercentage"
               ]
             }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "hpPercentage",
+            "atkPercentage",
+            "energyRechargePercentage"
           ]
         }
       ],
