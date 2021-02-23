@@ -15,6 +15,7 @@
   "atk": "{value} АТК",
   "atkPercentage": "{value} АТК %",
   "defPercentage": "{value} ЗАЩ %",
+  "def": "{value} ЗАЩ",
   "critAtk": "{value} КРИТ УРОН",
   "critRate": "{value} Шанс КРИТ",
   "critRatePercentage": "{value} Шанс КРИТА %",
@@ -29,6 +30,7 @@
   "healingBonusPercentage": "{value} Бонус Лечения %",
   "gacha": "Гача",
   "crafting": "Крафт",
+  "starglitterExchange": "Starglitter Exchange",
   "chest": "Сундук",
   "bpBounty": "Награда БП",
   "monday": "Понедельник",
@@ -204,5 +206,6 @@
   "europe": "Europe",
   "asia": "Asia",
   "chooseServer": "Choose a server",
-  "serverWhereYouPlay":"The server where you play"
+  "serverWhereYouPlay":"The server where you play",
+  "subStats": "Substats"
 }
