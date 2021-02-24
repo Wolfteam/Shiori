@@ -4330,7 +4330,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Шанс крит.попадания заряженной атакой увеличен на 30%."
+          "bonus": "Шанс критического попадания заряженной атакой увеличен на 30%."
         }
       ]
     },
@@ -4344,7 +4344,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Получаемый элементальный урон повышает сопротивление к этому элементу на 30% в течении 10 секунд. Накладывается один раз за 10 секунд."
+          "bonus": "Получаемый элементальный урон повышает сопротивление к этому элементу на 30% в течении 10 секунд. Может возникнуть один раз за 10 секунд."
         }
       ]
     },
@@ -4372,115 +4372,115 @@
         },
         {
           "key": "b2",
-          "bonus": "Увеличивает сопротивление к элементам, отличающимся от элементов каждого вашего члена отряда, на 30%."
+          "bonus": "Увеличивает сопротивление к элементам, отличающихся от элементов каждого члена вашего отряда, на 30%."
         }
       ]
     },
     {
       "key": "Martial Artist",
-      "name": "Martial Artist",
+      "name": "Воин",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Increases Normal Attack and Charged Attack DMG by 15%."
+          "bonus": "Увеличивает урон обычной и заряженной атаки на 15%."
         },
         {
           "key": "b2",
-          "bonus": "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 25% for 8s."
+          "bonus": "После использования элементального навыка, увеличивает урон простой и заряженной атаки на 25% в течении 8 секунд."
         }
       ]
     },
     {
       "key": "Gambler",
-      "name": "Gambler",
+      "name": "Азартный игрок",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Increases Elemental Skill DMG by 20%."
+          "bonus": "Увеличивает урон элементального навыка на 20%."
         },
         {
           "key": "b2",
-          "bonus": "Defeating an enemy has a 100% chance to remove Elemental Skill CD. Can only occur once every 15s."
+          "bonus": "Победа над врагом даёт 100% шанс сбросить перезарядку элементального навыка. Может возникнуть каждые 15 секунд."
         }
       ]
     },
     {
       "key": "Scholar",
-      "name": "Scholar",
+      "name": "Ученый",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Energy Recharge +20%."
+          "bonus": "Увеличивает скорость восстановления энергии на 20%."
         },
         {
           "key": "b2",
-          "bonus": "Gaining Elemental Particles or Orbs gives 3 Energy to all party members who have a bow or a catalyst equipped. Can only occur once every 3s."
+          "bonus": "Получение элементальных сфер или частиц восстанавливает 3 ед. энергии членам отряда, экипированным стрелковым оружием или катализатором. Может возникнуть раз в 3 сек."
         }
       ]
     },
     {
       "key": "Berserker",
-      "name": "Berserker",
+      "name": "Берсерк",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "CRIT Rate +12%."
+          "bonus": "Увеличивает шанс критического урона на 12%."
         },
         {
           "key": "b2",
-          "bonus": "When HP is below 70%, CRIT Rate increases by an additional 24%."
+          "bonus": "Когда количество здоровья ниже 70%, шанс критического урона возрастает на 24%."
         }
       ]
     },
     {
       "key": "Instructor",
-      "name": "Instructor",
+      "name": "Инструктор",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Increases Elemental Mastery by 80."
+          "bonus": "Увеличивает мастерство стихий на 80 единиц."
         },
         {
           "key": "b2",
-          "bonus": "Upon triggering an Elemental Reaction, increases all party members’ Elemental Mastery by 120 for 8s."
+          "bonus": "Вызов элементальной реакции увеличивает мастерство стихий всех членов отряда на 120 ед. в течении 8 сек."
         }
       ]
     },
     {
       "key": "The Exile",
-      "name": "The Exile",
+      "name": "Изгнанник",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Energy Recharge +20%."
+          "bonus": "Увеличивает скорость восстановления энергии на 20%."
         },
         {
           "key": "b2",
-          "bonus": "Using an Elemental Burst regenerates 2 Energy for all party members (excluding the wearer) every 2s for 6s. This effect cannot stack."
+          "bonus": "Использование взрыва стихии восстанавливает 2 ед. энергии остальным членам отряда (но не выбранному персонажу) каждые 2 сек. в течение 6 сек. Эффект не может складываться."
         }
       ]
     },
     {
       "key": "Thundering Fury",
-      "name": "Thundering Fury",
+      "name": "Громогласный рёв ярости",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Electro DMG Bonus +15%."
+          "bonus": "Увеличивает Электро урон на 15%."
         },
         {
           "key": "b2",
-          "bonus": "Increases damage caused by Overloaded, Electro-Charged and Superconduct by 40%. Triggering such effects decreases Elemental Skill CD by 1s. Can only occur once every 0.8s."
+          "bonus": "Увеличивает урон статусов Перегрузка, Заряжен и Суперпроводник на 40%. Наложение этих статусов уменьшает время отката элементального навыка на 1 секунду. Может возникнуть раз в 0.8 сек."
         }
       ]
     },
     {
       "key": "Thundersoother",
-      "name": "Thundersoother",
+      "name": "Усмиряющий гром",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Electro RES increased by 40%."
+          "bonus": "Повышает Электросопротивление на 40%."
         },
         {
           "key": "b2",
@@ -4490,11 +4490,11 @@
     },
     {
       "key": "Viridescent Venerer",
-      "name": "Viridescent Venerer",
+      "name": "Изумрудная тень",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Anemo DMG Bonus +15%."
+          "bonus": "Увеличивает Анемо урон на 15%."
         },
         {
           "key": "b2",
@@ -4504,7 +4504,7 @@
     },
     {
       "key": "Maiden Beloved",
-      "name": "Maiden Beloved",
+      "name": "Возлюбленная юная дева",
       "bonus": [
         {
           "key": "b1",
@@ -4518,7 +4518,7 @@
     },
     {
       "key": "Archaic Petra",
-      "name": "Archaic Petra",
+      "name": "Архаичный камень",
       "bonus": [
         {
           "key": "b1",
@@ -4532,7 +4532,7 @@
     },
     {
       "key": "Retracing Bolide",
-      "name": "Retracing Bolide",
+      "name": "Встречная комета",
       "bonus": [
         {
           "key": "b1",
@@ -4546,7 +4546,7 @@
     },
     {
       "key": "Crimson Witch of Flames",
-      "name": "Crimson Witch of Flames",
+      "name": "Горящая алая ведьма",
       "bonus": [
         {
           "key": "b1",
@@ -4560,7 +4560,7 @@
     },
     {
       "key": "Lavawalker",
-      "name": "Lavawalker",
+      "name": "Ступающий по лаве",
       "bonus": [
         {
           "key": "b1",
@@ -4574,7 +4574,7 @@
     },
     {
       "key": "Bloodstained Chivalry",
-      "name": "Bloodstained Chivalry",
+      "name": "Сердце глубин",
       "bonus": [
         {
           "key": "b1",
@@ -4588,7 +4588,7 @@
     },
     {
       "key": "Noblesse Oblige",
-      "name": "Noblesse Oblige",
+      "name": "Церемония древней знати",
       "bonus": [
         {
           "key": "b1",
@@ -4602,11 +4602,11 @@
     },
     {
       "key": "Gladiator’s Finale",
-      "name": "Gladiator’s Finale",
+      "name": " Конец гладиатора",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "ATK +18%."
+          "bonus": "Увеличивает атаку на 18%."
         },
         {
           "key": "b2",
@@ -4616,7 +4616,7 @@
     },
     {
       "key": "Wanderer’s Troupe",
-      "name": "Wanderer’s Troupe",
+      "name": "Странствующий ансамбль",
       "bonus": [
         {
           "key": "b1",
@@ -4630,7 +4630,7 @@
     },
     {
       "key": "Prayers for Illumination",
-      "name": "Prayers for Illumination",
+      "name": "Шаман огня",
       "bonus": [
         {
           "key": "b1",
@@ -4640,7 +4640,7 @@
     },
     {
       "key": "Prayers for Destiny",
-      "name": "Prayers for Destiny",
+      "name": "Шаман воды",
       "bonus": [
         {
           "key": "b1",
@@ -4660,7 +4660,7 @@
     },
     {
       "key": "Prayers to Springtime",
-      "name": "Prayers to Springtime",
+      "name": "Шаман льда",
       "bonus": [
         {
           "key": "b1",
@@ -4670,7 +4670,7 @@
     },
     {
       "key": "Blizzard Strayer",
-      "name": "Blizzard Strayer",
+      "name": "Заблудший в метели",
       "bonus": [
         {
           "key": "b1",
@@ -4684,7 +4684,7 @@
     },
     {
       "key": "Heart of Depth",
-      "name": "Heart of Depth",
+      "name": "Сердце глубин",
       "bonus": [
         {
           "key": "b1",
@@ -4698,7 +4698,7 @@
     },
     {
       "key": "Glacier and Snowfield",
-      "name": "Glacier and Snowfield",
+      "name": "Ледник и снежное поле",
       "bonus": [
         {
           "key": "b1",
@@ -4712,7 +4712,7 @@
     },
     {
       "key": "Prayers to the Firmament",
-      "name": "Prayers to the Firmament",
+      "name": "Молитвы небесному своду",
       "bonus": [
         {
           "key": "b1",
