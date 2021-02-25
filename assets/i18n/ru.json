@@ -3720,19 +3720,19 @@
     },
     {
       "key": "Royal Bow",
-      "name": "Royal Bow",
+      "name": "Королевский лук",
       "description": "An old royal longbow that belonged to the erstwhile rulers of Mondstadt. Countless generations later, the bowstring is still tight and can still fire arrows with great force.",
       "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
     },
     {
       "key": "Rust",
-      "name": "Rust",
+      "name": "Ржавый лук",
       "description": "A completely rusted iron greatbow. The average person would lack the strength to even lift it, let alone fire it.",
       "refinement": "Increases Normal Attack DMG by {{0}}% but decreases Charged Attack DMG by 10%."
     },
     {
       "key": "Sacrificial Bow",
-      "name": "Sacrificial Bow",
+      "name": "Церемониальный лук",
       "description": "A ceremonial hunting bow that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
       "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s"
     },
@@ -3744,7 +3744,7 @@
     },
     {
       "key": "Skyward Harp",
-      "name": "Skyward Harp",
+      "name": "Небесная Ось",
       "description": "A greatbow that symbolizes Dvalin’s affiliation with the Anemo Archon. The sound of the bow firing is music to the Anemo Archon’s ears. It contains the power of the sky and wind within.",
       "refinement": "Increases CRIT DMG by {{0}}%. Hits have a {{1}}% chance to inflict a small AoE attack, dealing 125% Physical ATK DMG. Can only occur once every {{2}}s."
     },
@@ -4268,13 +4268,13 @@
       "key": "Primordial Jade Cutter",
       "name": "Primordial Jade Cutter",
       "description": "A ceremonial sword masterfully carved from pure jade. There almost seems to be an audible sigh in the wind as it is swung.",
-      "refinement": "HP increased by {{0}}%. Additionally, provides an ATK Bonus based on {{1}}% of the wielder\u0027s Max HP."
+      "refinement": "HP increased by {{0}}%. Additionally, provides an ATK Bonus based on {{1}}% of the wielder's Max HP."
     },
     {
       "key": "Staff of Homa",
       "name": "Staff of Homa",
       "description": "A \"firewood staff\" that was once used in ancient and long-lost rituals.",
-      "refinement": "HP increased by {{0}}%. Additionally, provides an ATK Bonus based on {{1}}% of the wielder\u0027s Max HP. When the wielder\u0027s HP is less than 50%, this ATK Bonus is increased by an additional {{2}}% of Max HP."
+      "refinement": "HP increased by {{0}}%. Additionally, provides an ATK Bonus based on {{1}}% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional {{2}}% of Max HP."
     }
   ],
   "artifacts": [
@@ -4284,11 +4284,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Увеличивает максимальное кол-во здоровья на 1000 ед."
+          "bonus": "Увеличивает макс. HP на 1000 ед."
         },
         {
           "key": "b2",
-          "bonus": "В течение 5 секунд после открытия любого сундука восстанавливает 30% здоровья."
+          "bonus": "В течение 5 сек. после открытия любого сундука восстанавливает 30% HP."
         }
       ]
     },
@@ -4298,11 +4298,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Увеличивает получаемое лечение на 20%."
+          "bonus": "Увеличивает получаемое Лечение на 20%."
         },
         {
           "key": "b2",
-          "bonus": "Использование взрыва стихии восстанавливает 20% здоровья."
+          "bonus": "Использование взрыва стихии восстанавливает 20% HP."
         }
       ]
     },
@@ -4312,11 +4312,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Увеличивает защиту на 100 единиц."
+          "bonus": "Увеличивает защиту на 100 ед."
         },
         {
           "key": "b2",
-          "bonus": "Каждое поднятие Моры восстанавливает 300 единиц здоровья."
+          "bonus": "Поднятие монет восстанавливает 300 HP."
         }
       ]
     },
@@ -4330,7 +4330,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Шанс критического попадания заряженной атакой увеличен на 30%."
+          "bonus": "Увеличивает шанс крит. попадания заряженной атаки на 30%."
         }
       ]
     },
@@ -4340,11 +4340,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Сопротивление ко всем элементом увеличивается на 20%."
+          "bonus": "Увеличивает сопротивление ко всем элементам на 20%."
         },
         {
           "key": "b2",
-          "bonus": "Получаемый элементальный урон повышает сопротивление к этому элементу на 30% в течении 10 секунд. Может возникнуть один раз за 10 секунд."
+          "bonus": "Получаемый элементальный урон повышает сопротивление к соответствующему элементу на 30% в течение 10 сек. Может возникнуть раз в 10 сек."
         }
       ]
     },
@@ -4358,7 +4358,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Увеличивает урон на 30% против врагов, здоровье у которых, больше 50%."
+          "bonus": "Увеличивает на 30% урон против врагов с HP выше 50%."
         }
       ]
     },
@@ -4368,11 +4368,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Повышает защиту на 30%."
+          "bonus": "Увеличивает защиту на 30%."
         },
         {
           "key": "b2",
-          "bonus": "Увеличивает сопротивление к элементам, отличающихся от элементов каждого члена вашего отряда, на 30%."
+          "bonus": "Увеличивает сопротивление к элементам, отличающимся от элементов каждого вашего члена отряда, на 30%."
         }
       ]
     },
@@ -4386,7 +4386,7 @@
         },
         {
           "key": "b2",
-          "bonus": "После использования элементального навыка, увеличивает урон простой и заряженной атаки на 25% в течении 8 секунд."
+          "bonus": "Увеличивает урон обычной и заряженной атаки на 25% в течении 8 сек. после использования элементального навыка."
         }
       ]
     },
@@ -4400,7 +4400,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Победа над врагом даёт 100% шанс сбросить перезарядку элементального навыка. Может возникнуть каждые 15 секунд."
+          "bonus": "Победа над противником со 100% шансом восстанавливает время отката элементального навыка. Может возникнуть раз в 15 сек."
         }
       ]
     },
@@ -4424,11 +4424,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Увеличивает шанс критического урона на 12%."
+          "bonus": "Увеличивает шанс крит. попадания на 12%."
         },
         {
           "key": "b2",
-          "bonus": "Когда количество здоровья ниже 70%, шанс критического урона возрастает на 24%."
+          "bonus": "Увеличивает шанс крит. попадания на 24% при HP ниже 70%."
         }
       ]
     },
@@ -4438,7 +4438,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Увеличивает мастерство стихий на 80 единиц."
+          "bonus": "Увеличивает мастерство стихий на 80 ед."
         },
         {
           "key": "b2",
@@ -4466,11 +4466,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Увеличивает Электро урон на 15%."
+          "bonus": "Увеличивает бонус Электро урона на 15%."
         },
         {
           "key": "b2",
-          "bonus": "Увеличивает урон статусов Перегрузка, Заряжен и Суперпроводник на 40%. Наложение этих статусов уменьшает время отката элементального навыка на 1 секунду. Может возникнуть раз в 0.8 сек."
+          "bonus": "Увеличивает урон статусов Перегрузка, Заряжен и Суперпроводник на 40%. Наложение этих статусов уменьшает время отката элементального навыка на 1 сек. Может возникнуть раз в 0.8 сек."
         }
       ]
     },
@@ -4480,11 +4480,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Повышает Электросопротивление на 40%."
+          "bonus": "Повышает Электро сопротивление на +40%.."
         },
         {
           "key": "b2",
-          "bonus": "Increases DMG against enemies affected by Electro by 35%."
+          "bonus": "Увеличивает урон против врагов, находящихся под действием Электро, на 35%."
         }
       ]
     },
@@ -4494,11 +4494,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Увеличивает Анемо урон на 15%."
+          "bonus": "Увеличивает бонус Анемо урона на 15%."
         },
         {
           "key": "b2",
-          "bonus": "Increases Swirl DMG by 60%. Decreases opponent’s Elemental RES to the element infused in the Swirl by 40% for 10s."
+          "bonus": "Увеличивает урон Рассеивания на 60%. При взаимодействии Рассеивания с другим элементом, также понижает сопротивление противника к соответствующему элементу на 40% в течении 10 сек."
         }
       ]
     },
@@ -4574,7 +4574,7 @@
     },
     {
       "key": "Bloodstained Chivalry",
-      "name": "Сердце глубин",
+      "name": "Рыцарь крови",
       "bonus": [
         {
           "key": "b1",
@@ -4602,15 +4602,15 @@
     },
     {
       "key": "Gladiator’s Finale",
-      "name": " Конец гладиатора",
+      "name": "Конец гладиатора",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Увеличивает атаку на 18%."
+          "bonus": "Увеличивает силу атаки на 18%."
         },
         {
           "key": "b2",
-          "bonus": "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%."
+          "bonus": "Увеличивает урон обычной атаки на 35%, если персонаж использует одноручное, двуручное или древковое оружие."
         }
       ]
     },
@@ -4810,18 +4810,18 @@
       "bossName": "Andrius"
     },
     {
-      "key": "Dvalin\u0027s Plume",
-      "name": "Dvalin\u0027s Plume",
+      "key": "Dvalin's Plume",
+      "name": "Dvalin's Plume",
       "bossName": "Dvalin"
     },
     {
-      "key": "Dvalin\u0027s Claw",
-      "name": "Dvalin\u0027s Claw",
+      "key": "Dvalin's Claw",
+      "name": "Dvalin's Claw",
       "bossName": "Dvalin"
     },
     {
-      "key": "Dvalin\u0027s Sigh",
-      "name": "Dvalin\u0027s Sigh",
+      "key": "Dvalin's Sigh",
+      "name": "Dvalin's Sigh",
       "bossName": "Dvalin"
     },
     {
@@ -4901,7 +4901,7 @@
     },
     {
       "key": "BorealWolfD",
-      "name": "Boreal Wolf\u0027s Nostalgia"
+      "name": "Boreal Wolf's Nostalgia"
     },
     {
       "key": "AerosideriteA",
@@ -4941,15 +4941,15 @@
     },
     {
       "key": "SacrificialKnifeA",
-      "name": "Hunter\u0027s Sacrificial Knife"
+      "name": "Hunter's Sacrificial Knife"
     },
     {
       "key": "SacrificialKnifeB",
-      "name": "Agent\u0027s Sacrificial Knife"
+      "name": "Agent's Sacrificial Knife"
     },
     {
       "key": "SacrificialKnifeC",
-      "name": "Inspector\u0027s Sacrificial Knife"
+      "name": "Inspector's Sacrificial Knife"
     },
     {
       "key": "HornA",
@@ -5013,19 +5013,19 @@
     },
     {
       "key": "DecarabianA",
-      "name": "Tile of Decarabian\u0027s Tower"
+      "name": "Tile of Decarabian's Tower"
     },
     {
       "key": "DecarabianB",
-      "name": "Debris of Decarabian\u0027s City"
+      "name": "Debris of Decarabian's City"
     },
     {
       "key": "DecarabianC",
-      "name": "Fragment of Decarabian\u0027s Epic"
+      "name": "Fragment of Decarabian's Epic"
     },
     {
       "key": "DecarabianD",
-      "name": "Scattered Piece of Decarabian\u0027s Dream"
+      "name": "Scattered Piece of Decarabian's Dream"
     },
     {
       "key": "GuyunA",
@@ -5061,19 +5061,19 @@
     },
     {
       "key": "BorealWolfA",
-      "name": "Boreal Wolf\u0027s Milk Tooth"
+      "name": "Boreal Wolf's Milk Tooth"
     },
     {
       "key": "BorealWolfB",
-      "name": "Boreal Wolf\u0027s Cracked Tooth"
+      "name": "Boreal Wolf's Cracked Tooth"
     },
     {
       "key": "BorealWolfC",
-      "name": "Boreal Wolf\u0027s Broken Fang"
+      "name": "Boreal Wolf's Broken Fang"
     },
     {
       "key": "BorealWolfD",
-      "name": "Boreal Wolf\u0027s Nostalgia"
+      "name": "Boreal Wolf's Nostalgia"
     },
     {
       "key": "AerosideriteA",
@@ -5181,15 +5181,15 @@
     },
     {
       "key": "InsigniaA",
-      "name": "Recruit\u0027s Insignia"
+      "name": "Recruit's Insignia"
     },
     {
       "key": "InsigniaB",
-      "name": "Sergeant\u0027s Insignia"
+      "name": "Sergeant's Insignia"
     },
     {
       "key": "InsigniaC",
-      "name": "Lieutenant\u0027s Insignia"
+      "name": "Lieutenant's Insignia"
     },
     {
       "key": "SlimeA",
@@ -5480,7 +5480,7 @@
     {
       "key": "Superconduct",
       "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target\u0027s Physical RES by 50%."
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical RES by 50%."
     },
     {
       "key": "Swirl",
