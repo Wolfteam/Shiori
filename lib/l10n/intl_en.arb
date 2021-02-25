@@ -14,6 +14,7 @@
     "atk": "{value} ATK",
     "atkPercentage": "{value} ATK %",
     "defPercentage": "{value} DEF %",
+    "def": "{value} DEF",
     "critAtk": "{value} CRIT ATK",
     "critRate": "{value} CRIT Rate",
     "critRatePercentage": "{value} CRIT Rate %",
@@ -199,5 +200,11 @@
     "confirm": "Confirm",
     "pickColor": "Pick a color",
     "stats": "Stats",
-    "baseX": "Base {value}"
+    "baseX": "Base {value}",
+    "northAmerica": "North America",
+    "europe": "Europe",
+    "asia": "Asia",
+    "chooseServer": "Choose a server",
+    "serverWhereYouPlay":"The server where you play",
+    "subStats": "Substats"
 }

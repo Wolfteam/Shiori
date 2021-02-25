@@ -16,8 +16,9 @@ part 'settings_state.dart';
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   final SettingsService _settingsService;
   final MainBloc _mainBloc;
+  final HomeBloc _homeBloc;
 
-  SettingsBloc(this._settingsService, this._mainBloc) : super(const SettingsState.loading());
+  SettingsBloc(this._settingsService, this._mainBloc, this._homeBloc) : super(const SettingsState.loading());
 
   _LoadedState get currentState => state as _LoadedState;
 
@@ -37,6 +38,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           appVersion: packageInfo.version,
           showCharacterDetails: settings.showCharacterDetails,
           showWeaponDetails: settings.showWeaponDetails,
+          serverResetTime: settings.serverResetTime,
         );
       },
       themeChanged: (event) async {
@@ -61,6 +63,11 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
       showWeaponDetailsChanged: (event) async {
         _settingsService.showWeaponDetails = event.newValue;
         return currentState.copyWith.call(showWeaponDetails: event.newValue);
+      },
+      serverResetTimeChanged: (event) async {
+        _settingsService.serverResetTime = event.newValue;
+        _homeBloc.add(const HomeEvent.init());
+        return currentState.copyWith.call(serverResetTime: event.newValue);
       },
     );
 

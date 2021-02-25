@@ -2,9 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../enums/app_accent_color_type.dart';
-import '../../enums/app_language_type.dart';
-import '../../enums/app_theme_type.dart';
+import '../../enums/enums.dart';
 
 part 'app_settings.freezed.dart';
 part 'app_settings.g.dart';
@@ -19,6 +17,7 @@ abstract class AppSettings implements _$AppSettings {
     @required bool showCharacterDetails,
     @required bool showWeaponDetails,
     @required bool isFirstInstall,
+    @required AppServerResetTimeType serverResetTime,
   }) = _AppSettings;
   const AppSettings._();
 

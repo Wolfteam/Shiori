@@ -432,4 +432,37 @@ class GenshinServiceImpl implements GenshinService {
   MaterialFileModel getMaterialByImage(String image) {
     return _materialsFile.materials.firstWhere((m) => m.fullImagePath == image);
   }
+
+  @override
+  int getServerDay(AppServerResetTimeType type) {
+    final now = DateTime.now();
+    final nowUtc = now.toUtc();
+    DateTime server;
+    // According to this page, the server reset happens at 4 am
+    // https://game8.co/games/Genshin-Impact/archives/301599
+    const resetHour = 4;
+    switch (type) {
+      case AppServerResetTimeType.northAmerica:
+        server = nowUtc.subtract(const Duration(hours: 5));
+        break;
+      case AppServerResetTimeType.europe:
+        server = nowUtc.add(const Duration(hours: 1));
+        break;
+      case AppServerResetTimeType.asia:
+        server = nowUtc.add(const Duration(hours: 8));
+        break;
+      default:
+        throw Exception('Invalid server reset type');
+    }
+
+    if (server.hour >= resetHour) {
+      return server.weekday;
+    }
+
+    if (server.weekday == DateTime.monday) {
+      return DateTime.sunday;
+    }
+
+    return server.weekday - 1;
+  }
 }

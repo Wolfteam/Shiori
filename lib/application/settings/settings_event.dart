@@ -22,4 +22,8 @@ abstract class SettingsEvent with _$SettingsEvent {
   const factory SettingsEvent.showWeaponDetailsChanged({
     @required bool newValue,
   }) = _ShowWeaponDetailsChanged;
+
+  const factory SettingsEvent.serverResetTimeChanged({
+    @required AppServerResetTimeType newValue,
+  }) = _ServerResetTimeChanged;
 }

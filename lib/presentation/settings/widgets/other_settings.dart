@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
+import 'package:genshindb/application/settings/settings_bloc.dart';
+import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/generated/l10n.dart';
+import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
+import 'package:genshindb/presentation/shared/styles.dart';
 
 import 'settings_card.dart';
 
@@ -51,6 +55,36 @@ class OtherSettings extends StatelessWidget {
                       title: Text(s.showWeaponDetails),
                       value: settingsState.showWeaponDetails,
                       onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.showWeaponDetailsChanged(newValue: newVal)),
+                    ),
+                    ListTile(
+                      dense: true,
+                      contentPadding: EdgeInsets.zero,
+                      title: Padding(
+                        padding: Styles.edgeInsetHorizontal16,
+                        child: DropdownButton<AppServerResetTimeType>(
+                          isExpanded: true,
+                          hint: Text(s.chooseServer),
+                          value: settingsState.serverResetTime,
+                          underline: Container(height: 0, color: Colors.transparent),
+                          onChanged: (v) => context.read<SettingsBloc>().add(SettingsEvent.serverResetTimeChanged(newValue: v)),
+                          items: AppServerResetTimeType.values
+                              .map((type) => DropdownMenuItem<AppServerResetTimeType>(value: type, child: Text(s.translateServerResetTimeType(type))))
+                              .toList(),
+                        ),
+                      ),
+                      subtitle: Container(
+                        margin: const EdgeInsets.only(left: 25),
+                        child: Transform.translate(
+                          offset: const Offset(0, -10),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              s.serverWhereYouPlay,
+                              style: const TextStyle(color: Colors.grey),
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),

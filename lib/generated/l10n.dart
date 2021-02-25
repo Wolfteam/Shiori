@@ -185,6 +185,16 @@ class S {
     );
   }
 
+  /// `{value} DEF`
+  String def(Object value) {
+    return Intl.message(
+      '$value DEF',
+      name: 'def',
+      desc: '',
+      args: [value],
+    );
+  }
+
   /// `{value} CRIT ATK`
   String critAtk(Object value) {
     return Intl.message(
@@ -2042,6 +2052,66 @@ class S {
       name: 'baseX',
       desc: '',
       args: [value],
+    );
+  }
+
+  /// `North America`
+  String get northAmerica {
+    return Intl.message(
+      'North America',
+      name: 'northAmerica',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Europe`
+  String get europe {
+    return Intl.message(
+      'Europe',
+      name: 'europe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Asia`
+  String get asia {
+    return Intl.message(
+      'Asia',
+      name: 'asia',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose a server`
+  String get chooseServer {
+    return Intl.message(
+      'Choose a server',
+      name: 'chooseServer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The server where you play`
+  String get serverWhereYouPlay {
+    return Intl.message(
+      'The server where you play',
+      name: 'serverWhereYouPlay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Substats`
+  String get subStats {
+    return Intl.message(
+      'Substats',
+      name: 'subStats',
+      desc: '',
+      args: [],
     );
   }
 }
