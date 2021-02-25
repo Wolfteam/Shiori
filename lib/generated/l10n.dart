@@ -2114,6 +2114,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Anemo`
+  String get anemo {
+    return Intl.message(
+      'Anemo',
+      name: 'anemo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cryo`
+  String get cryo {
+    return Intl.message(
+      'Cryo',
+      name: 'cryo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dendro`
+  String get dendro {
+    return Intl.message(
+      'Dendro',
+      name: 'dendro',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Electro`
+  String get electro {
+    return Intl.message(
+      'Electro',
+      name: 'electro',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Geo`
+  String get geo {
+    return Intl.message(
+      'Geo',
+      name: 'geo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pyro`
+  String get pyro {
+    return Intl.message(
+      'Pyro',
+      name: 'pyro',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hydro`
+  String get hydro {
+    return Intl.message(
+      'Hydro',
+      name: 'hydro',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

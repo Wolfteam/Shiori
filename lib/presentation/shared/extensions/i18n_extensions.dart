@@ -157,19 +157,19 @@ extension I18nExtensions on S {
   String translateElementType(ElementType type) {
     switch (type) {
       case ElementType.anemo:
-        return 'Anemo';
+        return anemo;
       case ElementType.cryo:
-        return 'Cryo';
+        return cryo;
       case ElementType.dendro:
-        return 'Dendro';
+        return dendro;
       case ElementType.electro:
-        return 'Electro';
+        return electro;
       case ElementType.geo:
-        return 'Geo';
+        return geo;
       case ElementType.hydro:
-        return 'Hydro';
+        return hydro;
       case ElementType.pyro:
-        return 'Pyro';
+        return pyro;
       default:
         throw Exception('Invalid element type = $type');
     }

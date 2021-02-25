@@ -205,5 +205,12 @@
     "asia": "Asia",
     "chooseServer": "Escoge un servidor",
     "serverWhereYouPlay":"El servidor donde juegas",
-    "subStats": "Subestadisticas"
+    "subStats": "Subestadisticas",
+    "anemo": "Anemo",
+    "cryo": "Cryo",
+    "dendro": "Dendro",
+    "electro": "Electro",
+    "geo": "Geo",
+    "pyro": "Pyro",
+    "hydro": "Hydro"
 }
