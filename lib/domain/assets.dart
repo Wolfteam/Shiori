@@ -42,11 +42,10 @@ class Assets {
   static String getCharacterPath(String name) => '$charactersBasePath/$name';
   static String getCharacterFullPath(String name) => '$characterFullBasePath/$name';
   static String getSkillPath(String name) {
-    var skill = name;
     if (name.isNullEmptyOrWhitespace) {
-      skill = noImageAvailableName;
+      return '$othersBasePath/$noImageAvailableName';
     }
-    return '$skillsBasePath/$skill';
+    return '$skillsBasePath/$name';
   }
 
   static String getBowPath(String name) => '$bowsBasePath/$name';
