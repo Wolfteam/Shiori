@@ -17,5 +17,6 @@ abstract class WeaponState with _$WeaponState {
     @required List<WeaponFileRefinementModel> refinements,
     @required List<String> charImages,
     @required List<WeaponFileStatModel> stats,
+    @required List<WeaponCraftedFileModel> craftingMaterials,
   }) = _LoadedState;
 }
