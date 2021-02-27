@@ -86,6 +86,7 @@ flutter:
     - assets/items/common/
     - assets/items/currency/
     - assets/items/elemental/
+    - assets/items/ingredients/
     - assets/items/jewels/
     - assets/items/local/
     - assets/items/others/
