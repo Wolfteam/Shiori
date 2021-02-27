@@ -2185,10 +2185,10 @@ class S {
     );
   }
 
-  /// `Crafting materials`
+  /// `Crafting Materials`
   String get craftingMaterials {
     return Intl.message(
-      'Crafting materials',
+      'Crafting Materials',
       name: 'craftingMaterials',
       desc: '',
       args: [],
