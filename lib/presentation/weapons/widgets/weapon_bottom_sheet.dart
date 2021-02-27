@@ -64,6 +64,14 @@ class WeaponBottomSheet extends StatelessWidget {
               ButtonBar(
                 alignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  ItemPopupMenuFilter<ItemLocationType>(
+                    tooltipText: s.location,
+                    onSelected: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.weaponLocationTypeChanged(v)),
+                    selectedValue: state.tempWeaponLocationType,
+                    values: ItemLocationType.values.where((el) => el != ItemLocationType.na).toList(),
+                    itemText: (val) => s.translateItemLocationType(val),
+                    icon: const Icon(Icons.location_pin, size: 18),
+                  ),
                   ItemPopupMenuFilter<StatType>(
                     tooltipText: s.secondaryState,
                     onSelected: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.weaponSubStatTypeChanged(v)),

@@ -59,6 +59,8 @@ extension I18nExtensions on S {
         return bpBounty;
       case ItemLocationType.quest:
         return quest;
+      case ItemLocationType.all:
+        return all;
       default:
         throw Exception('The provided location type = $type is not valid');
     }

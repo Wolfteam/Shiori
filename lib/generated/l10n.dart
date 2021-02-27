@@ -2184,6 +2184,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Crafting materials`
+  String get craftingMaterials {
+    return Intl.message(
+      'Crafting materials',
+      name: 'craftingMaterials',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

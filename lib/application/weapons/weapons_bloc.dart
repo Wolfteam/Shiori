@@ -46,6 +46,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         weaponSubStatType: currentState.weaponSubStatType,
       ),
       weaponSubStatTypeChanged: (e) => currentState.copyWith.call(tempWeaponSubStatType: e.subStatType),
+      weaponLocationTypeChanged: (e) => currentState.copyWith.call(tempWeaponLocationType: e.locationType),
       applyFilterChanges: (_) => _buildInitialState(
         search: currentState.search,
         weaponFilterType: currentState.tempWeaponFilterType,
@@ -53,6 +54,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         sortDirectionType: currentState.tempSortDirectionType,
         weaponTypes: currentState.tempWeaponTypes,
         weaponSubStatType: currentState.tempWeaponSubStatType,
+        locationType: currentState.tempWeaponLocationType,
       ),
       cancelChanges: (_) => currentState.copyWith.call(
         tempWeaponFilterType: currentState.weaponFilterType,
@@ -60,6 +62,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         tempSortDirectionType: currentState.sortDirectionType,
         tempWeaponTypes: currentState.weaponTypes,
         tempWeaponSubStatType: currentState.weaponSubStatType,
+        tempWeaponLocationType: currentState.weaponLocationType,
       ),
     );
 
@@ -73,6 +76,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
     WeaponFilterType weaponFilterType = WeaponFilterType.rarity,
     SortDirectionType sortDirectionType = SortDirectionType.asc,
     StatType weaponSubStatType = StatType.all,
+    ItemLocationType locationType = ItemLocationType.all,
   }) {
     final isLoaded = state is _LoadedState;
     var data = _genshinService.getWeaponsForCard();
@@ -94,6 +98,8 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         showWeaponDetails: _settingsService.showWeaponDetails,
         weaponSubStatType: weaponSubStatType,
         tempWeaponSubStatType: weaponSubStatType,
+        weaponLocationType: locationType,
+        tempWeaponLocationType: locationType,
       );
     }
 
@@ -113,6 +119,10 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
       data = data.where((el) => el.subStatType == weaponSubStatType).toList();
     }
 
+    if (locationType != ItemLocationType.all) {
+      data = data.where((el) => el.locationType == locationType).toList();
+    }
+
     _sortData(data, weaponFilterType, sortDirectionType);
 
     final s = currentState.copyWith.call(
@@ -128,6 +138,8 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
       tempSortDirectionType: sortDirectionType,
       weaponSubStatType: weaponSubStatType,
       tempWeaponSubStatType: weaponSubStatType,
+      weaponLocationType: locationType,
+      tempWeaponLocationType: locationType,
     );
     return s;
   }

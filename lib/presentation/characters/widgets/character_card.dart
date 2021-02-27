@@ -110,7 +110,7 @@ class CharacterCard extends StatelessWidget {
   }
 
   Future<void> _gotoCharacterPage(BuildContext context) async {
-    if (isComingSoon) {
+    if (isComingSoon && !isInSelectionMode) {
       final theme = Theme.of(context);
       final s = S.of(context);
       Fluttertoast.showToast(

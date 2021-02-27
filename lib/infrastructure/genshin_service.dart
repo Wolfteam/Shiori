@@ -22,7 +22,14 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   Future<void> init(AppLanguageType languageType) async {
-    await Future.wait([initCharacters(), initWeapons(), initArtifacts(), initMaterials(), initElements(), initTranslations(languageType)]);
+    await Future.wait([
+      initCharacters(),
+      initWeapons(),
+      initArtifacts(),
+      initMaterials(),
+      initElements(),
+      initTranslations(languageType),
+    ]);
   }
 
   @override
@@ -179,6 +186,7 @@ class GenshinServiceImpl implements GenshinService {
           subStatType: e.secondaryStat,
           subStatValue: e.secondaryStatValue,
           isComingSoon: e.isComingSoon,
+          locationType: e.location,
         );
       },
     ).toList();
@@ -198,6 +206,7 @@ class GenshinServiceImpl implements GenshinService {
       subStatType: weapon.secondaryStat,
       subStatValue: weapon.secondaryStatValue,
       isComingSoon: weapon.isComingSoon,
+      locationType: weapon.location,
     );
   }
 

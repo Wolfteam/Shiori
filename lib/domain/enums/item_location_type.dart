@@ -1,5 +1,6 @@
 enum ItemLocationType {
   na,
+  all,
   gacha,
   chest,
   crafting,
