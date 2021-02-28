@@ -24,6 +24,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   data_connection_checker: ^0.3.4
   device_info: ^1.0.0
+  devicelocale: ^0.3.3
   dog: ^1.3.1
   enum_to_string: ^1.0.14
   flutter:
