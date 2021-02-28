@@ -3938,6 +3938,23 @@
           "isAnAscension": false,
           "specificValue": 69
         }
+      ],
+      "craftingMaterials": [
+        {
+          "quantity": 1,
+          "materialType": "ingredient",
+          "image": "northlander_bow_prototype.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "crystal_chunk.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "white_iron_chunk.png"
+        }
       ]
     },
     {
@@ -4636,6 +4653,23 @@
           "baseAtk": 510,
           "isAnAscension": false,
           "specificValue": 41.3
+        }
+      ],
+      "craftingMaterials": [
+        {
+          "quantity": 1,
+          "materialType": "ingredient",
+          "image": "northlander_bow_prototype.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "crystal_chunk.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "white_iron_chunk.png"
         }
       ]
     },
@@ -10691,6 +10725,23 @@
           "isAnAscension": false,
           "specificValue": 165
         }
+      ],
+      "craftingMaterials": [
+        {
+          "quantity": 1,
+          "materialType": "ingredient",
+          "image": "northlander_sword_prototype.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "crystal_chunk.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "white_iron_chunk.png"
+        }
       ]
     },
     {
@@ -11384,6 +11435,23 @@
           "baseAtk": 565,
           "isAnAscension": false,
           "specificValue": 34.5
+        }
+      ],
+      "craftingMaterials": [
+        {
+          "quantity": 1,
+          "materialType": "ingredient",
+          "image": "northlander_sword_prototype.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "crystal_chunk.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "white_iron_chunk.png"
         }
       ]
     },
@@ -18809,6 +18877,23 @@
           "isAnAscension": false,
           "specificValue": 110
         }
+      ],
+      "craftingMaterials": [
+        {
+          "quantity": 1,
+          "materialType": "ingredient",
+          "image": "northlander_catalyst_prototype.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "crystal_chunk.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "white_iron_chunk.png"
+        }
       ]
     },
     {
@@ -19160,6 +19245,23 @@
           "baseAtk": 510,
           "isAnAscension": false,
           "specificValue": 41.3
+        }
+      ],
+      "craftingMaterials": [
+        {
+          "quantity": 1,
+          "materialType": "ingredient",
+          "image": "northlander_catalyst_prototype.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "crystal_chunk.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "white_iron_chunk.png"
         }
       ]
     },
@@ -21629,6 +21731,23 @@
           "baseAtk": 510,
           "isAnAscension": false,
           "specificValue": 41.3
+        }
+      ],
+      "craftingMaterials": [
+        {
+          "quantity": 1,
+          "materialType": "ingredient",
+          "image": "northlander_catalyst_prototype.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "crystal_chunk.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "white_iron_chunk.png"
         }
       ]
     },
@@ -26628,6 +26747,23 @@
           "isAnAscension": false,
           "specificValue": 27.6
         }
+      ],
+      "craftingMaterials": [
+        {
+          "quantity": 1,
+          "materialType": "ingredient",
+          "image": "northlander_claymore_prototype.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "crystal_chunk.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "white_iron_chunk.png"
+        }
       ]
     },
     {
@@ -28373,6 +28509,23 @@
           "isAnAscension": false,
           "specificValue": 51.7
         }
+      ],
+      "craftingMaterials": [
+        {
+          "quantity": 1,
+          "materialType": "ingredient",
+          "image": "northlander_claymore_prototype.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "crystal_chunk.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "white_iron_chunk.png"
+        }
       ]
     },
     {
@@ -29081,6 +29234,23 @@
           "baseAtk": 565,
           "isAnAscension": false,
           "specificValue": 34.5
+        }
+      ],
+      "craftingMaterials": [
+        {
+          "quantity": 1,
+          "materialType": "ingredient",
+          "image": "northlander_claymore_prototype.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "crystal_chunk.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "white_iron_chunk.png"
         }
       ]
     },
@@ -32335,6 +32505,23 @@
           "isAnAscension": false,
           "specificValue": 34.5
         }
+      ],
+      "craftingMaterials": [
+        {
+          "quantity": 1,
+          "materialType": "ingredient",
+          "image": "northlander_polearm_prototype.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "crystal_chunk.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "white_iron_chunk.png"
+        }
       ]
     },
     {
@@ -33738,6 +33925,23 @@
           "isAnAscension": false,
           "specificValue": 45.9
         }
+      ],
+      "craftingMaterials": [
+        {
+          "quantity": 1,
+          "materialType": "ingredient",
+          "image": "northlander_polearm_prototype.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "crystal_chunk.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "white_iron_chunk.png"
+        }
       ]
     },
     {
@@ -34793,6 +34997,23 @@
           "baseAtk": 454,
           "isAnAscension": false,
           "specificValue": 69
+        }
+      ],
+      "craftingMaterials": [
+        {
+          "quantity": 1,
+          "materialType": "ingredient",
+          "image": "northlander_polearm_prototype.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "crystal_chunk.png"
+        },
+        {
+          "quantity": 50,
+          "materialType": "ingredient",
+          "image": "white_iron_chunk.png"
         }
       ]
     },

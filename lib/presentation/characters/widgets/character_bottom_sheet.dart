@@ -56,6 +56,14 @@ class CharacterBottomSheet extends StatelessWidget {
               ButtonBar(
                 alignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  ItemPopupMenuFilter<CharacterRoleType>(
+                    tooltipText: s.role,
+                    values: CharacterRoleType.values.where((el) => el != CharacterRoleType.na).toList(),
+                    selectedValue: state.tempRoleType,
+                    onSelected: (v) => context.read<CharactersBloc>().add(CharactersEvent.roleTypeChanged(v)),
+                    itemText: (val) => s.translateCharacterType(val),
+                    icon: const Icon(GenshinDb.trefoil_lily, size: 18),
+                  ),
                   ItemPopupMenuFilter<ItemStatusType>(
                     tooltipText: '${s.released} / ${s.brandNew} / ${s.comingSoon}',
                     values: ItemStatusType.values,

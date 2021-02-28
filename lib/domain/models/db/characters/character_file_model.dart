@@ -3,9 +3,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 
 import '../../../assets.dart';
+import '../../../enums/character_role_type.dart';
 import '../../../enums/character_skill_ability_type.dart';
 import '../../../enums/character_skill_type.dart';
-import '../../../enums/character_type.dart';
 import '../../../enums/element_type.dart';
 import '../../../enums/region_type.dart';
 import '../../../enums/weapon_type.dart';
@@ -28,7 +28,7 @@ abstract class CharacterFileModel implements _$CharacterFileModel {
     @required bool isFemale,
     @required bool isComingSoon,
     @required bool isNew,
-    @required CharacterType role,
+    @required CharacterRoleType role,
     @required String tier,
     String birthday,
     @required List<CharacterFileAscensionMaterialModel> ascensionMaterials,

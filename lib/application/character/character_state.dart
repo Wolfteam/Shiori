@@ -12,7 +12,7 @@ abstract class CharacterState with _$CharacterState {
     @required ElementType elementType,
     @required WeaponType weaponType,
     @required RegionType region,
-    @required CharacterType role,
+    @required CharacterRoleType role,
     @required bool isFemale,
     String birthday,
     @required List<CharacterFileAscensionMaterialModel> ascensionMaterials,

@@ -37,6 +37,7 @@ class Assets {
   static String weaponPrimaryBasePath = '$itemsBasePath/weapon_primary';
   static String currencyBasePath = '$itemsBasePath/currency';
   static String othersBasePath = '$itemsBasePath/others';
+  static String ingredientsBasePath = '$itemsBasePath/ingredients';
 
   static String getArtifactPath(String name) => '$artifactsBasePath/$name';
   static String getCharacterPath(String name) => '$charactersBasePath/$name';
@@ -63,6 +64,7 @@ class Assets {
   static String getWeaponPrimaryMaterialPath(String name) => '$weaponPrimaryBasePath/$name';
   static String getCurrencyMaterialPath(String name) => '$currencyBasePath/$name';
   static String getOtherMaterialPath(String name) => '$othersBasePath/$name';
+  static String getIngredientMaterialPath(String name) => '$ingredientsBasePath/$name';
 
   static String getMaterialPath(String name, MaterialType type) {
     switch (type) {
@@ -84,6 +86,8 @@ class Assets {
         return getWeaponPrimaryMaterialPath(name);
       case MaterialType.others:
         return getOtherMaterialPath(name);
+      case MaterialType.ingredient:
+        return getIngredientMaterialPath(name);
       default:
         throw Exception('Invalid material type = $type');
     }

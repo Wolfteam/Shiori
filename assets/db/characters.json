@@ -9764,7 +9764,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": "stellar_resonator.png",
+          "image": "normal_atack_yunlai_swordmanship.png",
           "type": "normalAttack",
           "abilities": [
             {
@@ -14615,7 +14615,7 @@
     },
     {
       "key": "Rosaria",
-      "rarity": 5,
+      "rarity": 4,
       "weaponType": "polearm",
       "elementType": "cryo",
       "image": "Rosaria.png",

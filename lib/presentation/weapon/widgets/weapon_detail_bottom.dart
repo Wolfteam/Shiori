@@ -9,12 +9,14 @@ import 'package:genshindb/presentation/shared/styles.dart';
 import 'package:genshindb/presentation/weapon/widgets/weapon_detail_stats_card.dart';
 
 import 'weapon_detail_ascension_materials_card.dart';
+import 'weapon_detail_crafting_materials.dart';
 import 'weapon_detail_refinements_card.dart';
 
 class WeaponDetailBottom extends StatelessWidget {
   final String description;
   final int rarity;
   final StatType secondaryStatType;
+  final List<WeaponCraftedFileModel> craftingMaterials;
   final List<WeaponFileAscensionMaterial> ascensionMaterials;
   final List<WeaponFileRefinementModel> refinements;
   final List<WeaponFileStatModel> stats;
@@ -25,6 +27,7 @@ class WeaponDetailBottom extends StatelessWidget {
     @required this.description,
     @required this.rarity,
     @required this.secondaryStatType,
+    @required this.craftingMaterials,
     @required this.ascensionMaterials,
     @required this.refinements,
     @required this.stats,
@@ -51,6 +54,11 @@ class WeaponDetailBottom extends StatelessWidget {
                   children: charImgs.map((e) => CircleCharacter(image: e)).toList(),
                 ),
                 textColor: rarityColor,
+              ),
+            if (craftingMaterials.isNotEmpty)
+              WeaponCraftingMaterials(
+                materials: craftingMaterials,
+                rarityColor: rarityColor,
               ),
             if (ascensionMaterials.isNotEmpty)
               WeaponDetailAscensionMaterialsCard(

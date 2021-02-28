@@ -61,6 +61,8 @@ extension I18nExtensions on S {
         return bpBounty;
       case ItemLocationType.quest:
         return quest;
+      case ItemLocationType.all:
+        return all;
       default:
         throw Exception('The provided location type = $type is not valid');
     }
@@ -240,16 +242,18 @@ extension I18nExtensions on S {
     }
   }
 
-  String translateCharacterType(CharacterType type) {
+  String translateCharacterType(CharacterRoleType type) {
     switch (type) {
-      case CharacterType.mainDps:
+      case CharacterRoleType.mainDps:
         return mainDps;
-      case CharacterType.supportDps:
+      case CharacterRoleType.supportDps:
         return supportDps;
-      case CharacterType.utility:
+      case CharacterRoleType.utility:
         return utility;
-      case CharacterType.na:
+      case CharacterRoleType.na:
         return na;
+      case CharacterRoleType.all:
+        return all;
       default:
         throw Exception('Invalid character type = $type');
     }
