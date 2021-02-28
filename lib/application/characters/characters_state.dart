@@ -19,5 +19,7 @@ abstract class CharactersState with _$CharactersState {
     @required CharacterFilterType tempCharacterFilterType,
     @required SortDirectionType sortDirectionType,
     @required SortDirectionType tempSortDirectionType,
+    @required CharacterRoleType roleType,
+    @required CharacterRoleType tempRoleType,
   }) = _LoadedState;
 }

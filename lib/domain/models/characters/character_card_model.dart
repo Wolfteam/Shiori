@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../enums/element_type.dart';
-import '../../enums/weapon_type.dart';
+import '../../enums/enums.dart';
 
 class CharacterCardModel {
   final String key;
@@ -13,6 +12,7 @@ class CharacterCardModel {
   final bool isNew;
   final bool isComingSoon;
   final List<String> materials;
+  final CharacterRoleType roleType;
 
   const CharacterCardModel({
     @required this.key,
@@ -22,6 +22,7 @@ class CharacterCardModel {
     @required this.weaponType,
     @required this.elementType,
     @required this.materials,
+    @required this.roleType,
     this.isNew = false,
     this.isComingSoon = false,
   });

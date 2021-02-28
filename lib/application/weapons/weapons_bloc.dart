@@ -37,6 +37,8 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         }
         return currentState.copyWith.call(tempWeaponTypes: types);
       },
+      weaponSubStatTypeChanged: (e) => currentState.copyWith.call(tempWeaponSubStatType: e.subStatType),
+      weaponLocationTypeChanged: (e) => currentState.copyWith.call(tempWeaponLocationType: e.locationType),
       searchChanged: (e) => _buildInitialState(
         search: e.search,
         weaponFilterType: currentState.weaponFilterType,
@@ -44,9 +46,8 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         sortDirectionType: currentState.sortDirectionType,
         weaponTypes: currentState.weaponTypes,
         weaponSubStatType: currentState.weaponSubStatType,
+        locationType: currentState.weaponLocationType,
       ),
-      weaponSubStatTypeChanged: (e) => currentState.copyWith.call(tempWeaponSubStatType: e.subStatType),
-      weaponLocationTypeChanged: (e) => currentState.copyWith.call(tempWeaponLocationType: e.locationType),
       applyFilterChanges: (_) => _buildInitialState(
         search: currentState.search,
         weaponFilterType: currentState.tempWeaponFilterType,

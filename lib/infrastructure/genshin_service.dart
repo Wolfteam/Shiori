@@ -110,6 +110,7 @@ class GenshinServiceImpl implements GenshinService {
           weaponType: e.weaponType,
           isComingSoon: e.isComingSoon,
           isNew: e.isNew,
+          roleType: e.role,
         );
       },
     ).toList();
