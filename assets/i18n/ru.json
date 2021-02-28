@@ -995,7 +995,7 @@
             },
             {
               "key": "a2",
-              "description": "Более меткий прицельный выстрелс увеличенным уроном. Во время прицеливания наконечник стрелы заряжается тьмой Нирваны Ночи. Полностью заряженная тьмой стрела наносит огромный Электро урон.",
+              "description": "Более меткий прицельный выстрел с увеличенным уроном. Во время прицеливания наконечник стрелы заряжается тьмой Нирваны Ночи. Полностью заряженная тьмой стрела наносит огромный Электро урон.",
               "descriptions": []
             },
             {
@@ -1038,7 +1038,7 @@
         {
           "key": "p2",
           "title": "Ворон, клюющий звёзды",
-          "description": "При попадании по Озу полностью заряженной стелой Фишль, он создаёт грозу, наносящую Электро урон по площади, равный 152,7% от урона стрелы.",
+          "description": "При попадании по Озу полностью заряженной стрелой Фишль, он создаёт грозу, наносящую Электро урон по площади, равный 152,7% от урона стрелы.",
           "descriptions": []
         },
         {
@@ -1142,7 +1142,7 @@
         {
           "key": "s3",
           "title": "Небесный дождь",
-          "description": "Собирает из воздуха иней для того, что бы призвать Жемчужину души, изгоняющую зло.\nПока навык активен, Жемчужины души непрерывно обрушивают на врагов в области осколки льда, нанося Крио урон.",
+          "description": "Собирает из воздуха иней для того, чтобы призвать Жемчужину души, изгоняющую зло.\nПока навык активен, Жемчужины души непрерывно обрушивают на врагов в области осколки льда, нанося Крио урон.",
           "abilities": []
         }
       ],
@@ -1170,7 +1170,7 @@
         {
           "key": "c1",
           "title": "Жажда росы",
-          "description": "Попадание стрелой-снежинкой с уровнем заряда 2 или её цветением понижает Крио сопротивление противников на 15% в течение 6 секуды;\nТакже попадание восстанавливает 2 ед. энергии Гань Юй. Каждое попадание заряженной атакой с уровнем заряда 2 может восстановить энергию только один раз, вне зависимости от того, были ли это попадание стрелой-снежинкой или её цветением.",
+          "description": "Попадание стрелой-снежинкой с уровнем заряда 2 или её цветением понижает Крио сопротивление противников на 15% в течение 6 секунды;\nТакже попадание восстанавливает 2 ед. энергии Гань Юй. Каждое попадание заряженной атакой с уровнем заряда 2 может восстановить энергию только один раз, вне зависимости от того, были ли это попадание стрелой-снежинкой или её цветением.",
           "secondDescription": null,
           "descriptions": []
         },
@@ -1213,7 +1213,7 @@
     },
     {
       "key": "HuTao",
-      "name": "Hu Tao",
+      "name": "Ху Тао",
       "description": "The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.",
       "skills": [
         {
@@ -2552,7 +2552,7 @@
     },
     {
       "key": "Rosaria",
-      "name": "Rosaria",
+      "name": "Розария",
       "description": "A nun who, outside of her garb, seems nothing at all like a person of the cloth. Known for her sharp, cold words and manner, she often works alone.",
       "skills": [
         {
@@ -2688,7 +2688,7 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "При контакте с элементами Гидро, Пиро, Крио или Электробольшой Воздушный дух наносит дополнительный урон этим элементом. За каждое использование навык может поглотить только один элемент.",
+              "description": "При контакте с элементами Гидро, Пиро, Крио или Электр обольшой Воздушный дух наносит дополнительный урон этим элементом. За каждое использование навык может поглотить только один элемент.",
               "descriptions": []
             }
           ]
@@ -3863,57 +3863,57 @@
   "weapons": [
     {
       "key": "Hunter’s Bow",
-      "name": "Hunter’s Bow",
+      "name": "Охотничий лук",
       "description": "A hunter’s music consists of but two sounds: the twang of the bowstring and the whoosh of soaring arrows.",
       "refinement": null
     },
     {
       "key": "Seasoned Hunter’s Bow",
-      "name": "Seasoned Hunter’s Bow",
+      "name": "Охотничий лук",
       "description": "A bow that has been well-polished by time and meticulously cared for by its owner. It feels almost like an extension of the archer’s arm.",
       "refinement": null
     },
     {
       "key": "Ebony Bow",
-      "name": "Ebony Bow",
+      "name": "Эбеновый лук",
       "description": "A longbow made of ebony wood with stiffer limbs than ordinary bows. It is also a far more powerful weapon.",
       "refinement": "Increases DMG against mechanoid Ruin enemies by {{0}}%"
     },
     {
       "key": "Messenger",
-      "name": "Messenger",
+      "name": "Посыльный",
       "description": "A basic wooden bow. It is said to have once been used as a tool for long-distance communication.",
-      "refinement": "Charged Attack hits on weak points deal an additional {{0}}% ATK DMG as CRIT DMG. Can only occur once every 10s."
+      "refinement": "Шальная почта. Попадание Прицельным выстрелом по слабому месту дополнительно наносит {{0}}% Крит. урона. Может возникнуть раз в 10 секунд."
     },
     {
       "key": "Raven Bow",
-      "name": "Raven Bow",
+      "name": "Охотничий лук",
       "description": "Ravens are known to be the ferrymen of the dead. This bow’s limb is decorated with raven feathers, which forebode the imminent death of its target.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Pyro by {{0}}%"
+      "refinement": "Увеличивает на {{0}}% урон против врагов, находящихся под действием Гидро или Пиро элементов."
     },
     {
       "key": "Recurve Bow",
-      "name": "Recurve Bow",
+      "name": "Изогнутый лук",
       "description": "It is said that this bow can shoot down eagles in flight, but ultimately how true that is depends on the skill of the archer.",
-      "refinement": "Defeating an opponent restores {{0}}% HP"
+      "refinement": "Победа над противником восстанавливает {{0}}% HP."
     },
     {
       "key": "Sharpshooter’s Oath",
-      "name": "Sharpshooter’s Oath",
+      "name": "Клятва стрелка",
       "description": "This superior bow once belonged to a master archer. However, it gives off a strong scent, thus making it unsuitable for hunting.",
-      "refinement": "Increases DMG against weak spots by {{0}}%"
+      "refinement": "Увеличивает урон по слабым местам противников на {{0}}%."
     },
     {
       "key": "Slingshot",
-      "name": "Slingshot",
+      "name": "Рогатка",
       "description": "A bow, despite the name. After countless experiments and improvements to the design, the creator of the ultimate slingshot found himself to have made what was actually a bow.",
-      "refinement": "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by {{0}}%. Otherwise, decreases DMG by 10%."
+      "refinement": "Если обычная атака или Прицельный выстрел поразили цель в течение 0.3 сек после удара или выстрела, то их урон увеличивается на {{0}}%. В противном случае, урон уменьшается на 10%."
     },
     {
       "key": "The Stringless",
-      "name": "The Stringless",
+      "name": "Бесструнный",
       "description": "A bow that once served as an extraordinary instrument. It is no longer capable of getting people up and dancing.",
-      "refinement": "Increases Elemental Skill and Elemental Burst DMG by {{0}}%."
+      "refinement": "Увеличивает урон элементальных навыков и взрыва стихий на {{0}}%."
     },
     {
       "key": "Alley Hunter",
@@ -3923,27 +3923,27 @@
     },
     {
       "key": "Blackcliff Warbow",
-      "name": "Blackcliff Warbow",
+      "name": "Черногорский боевой лук",
       "description": "A bow made of blackcliff that features extremely sturdy bow limbs. It requires an archer with a strong bow arm to use.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "refinement": "Побеждённые противники увеличивают силу атаки на {{0}}%. Длится 30 сек. Эффект может складываться до 3 раз. Длительность добавочных эффектов друг от друга не зависит."
     },
     {
       "key": "Compound Bow",
-      "name": "Compound Bow",
+      "name": "Составной лук",
       "description": "An exotic metallic bow from a distant land. Though extremely difficult to maintain, it is easy to nock and fires with tremendous force.",
-      "refinement": "Normal Attack and Charged Attack hits increase ATK by {{0}}% and Normal ATK SPD by {{1}}% for 6s. Max 4 stacks. Can only occur once every 0.3s."
+      "refinement": "Попадание обычной атакой и прицельным выстрелом увеличивают силу атаки на {{0}}% и скорость атаки на {{1}}% в течение 6 сек. Может складываться до 4 раз. Может возникнуть раз 0.3 сек."
     },
     {
       "key": "Favonius Warbow",
-      "name": "Favonius Warbow",
+      "name": "Боевой лук Фавония",
       "description": "A standard-issue recurve bow of the Knights of Favonius. Only the best archers can unleash its full potential.",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "refinement": "Критические атаки имеют {{0}}% шанс создать элементальные частицы, которые восстанавливают 6 ед. энергии. Возникает раз в {{1}} сек."
     },
     {
       "key": "Prototype Crescent",
-      "name": "Prototype Crescent",
+      "name": "Прототип: Полумесяц",
       "description": "A prototype longbow discovered in the Blackcliff Forge. The arrow fired from this bow glimmers like a ray of moonlight.",
-      "refinement": "Charged Attack hits on weak points increase Movement SPD by 10% and ATK by {{0}}% for 10s."
+      "refinement": "Попадание прицельным выстрелом по слабым местам увеличивают скорость передвижения на 10% и силу атаки на {{0}}% в течение 10 сек.."
     },
     {
       "key": "Royal Bow",
@@ -3955,31 +3955,31 @@
       "key": "Rust",
       "name": "Ржавый лук",
       "description": "A completely rusted iron greatbow. The average person would lack the strength to even lift it, let alone fire it.",
-      "refinement": "Increases Normal Attack DMG by {{0}}% but decreases Charged Attack DMG by 10%."
+      "refinement": "Увеличивает урон обычной атаки на {{0}}%, но понижает урон прицельного выстрела на 10%."
     },
     {
       "key": "Sacrificial Bow",
       "name": "Церемониальный лук",
       "description": "A ceremonial hunting bow that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s"
+      "refinement": "Попадания Элементальным навыком могут с {{0}}% вероятностью моментально восстановить собственный откат. Может возникнуть раз в {{1}} сек."
     },
     {
       "key": "The Viridescent Hunt",
       "name": "The Viridescent Hunt",
       "description": "A pure green hunting bow. This once belonged to a certain hunter whose home was the forest.",
-      "refinement": "Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding enemies, dealing {{0}}% of ATK as DMG to these enemies every 0.5s for 4s. This effect can only occur once every {{1}}s"
+      "refinement": "При попадании обычной или заряженной атакой появляется 50% шанс создать Циклон, который притягивает к себе врагов и наносит им {{0}}% урона каждые 0.5 сек. в течение 4 сек. Может возникнуть раз в {{1}} сек."
     },
     {
       "key": "Skyward Harp",
-      "name": "Небесная Ось",
+      "name": "Небесное крыло",
       "description": "A greatbow that symbolizes Dvalin’s affiliation with the Anemo Archon. The sound of the bow firing is music to the Anemo Archon’s ears. It contains the power of the sky and wind within.",
-      "refinement": "Increases CRIT DMG by {{0}}%. Hits have a {{1}}% chance to inflict a small AoE attack, dealing 125% Physical ATK DMG. Can only occur once every {{2}}s."
+      "refinement": "Увеличивает крит. урон на {{0}}%. При попадании есть {{1}}% шанс нанести 125% физ. урона в небольшом радиусе. Может возникнуть раз {{2}} сек."
     },
     {
       "key": "Amos’ Bow",
-      "name": "Amos’ Bow",
+      "name": "Лук Амоса",
       "description": "An extremely ancient bow that has retained its power despite its original master being long gone. It draws power from everyone and everything in the world, and the further away you are from that which your heart desires, the more powerful it is.",
-      "refinement": "Increases Normal and Charged Attack DMG by {{0}}%. Normal and Charged Attack DMG increases by {{1}}% every 0.1s for up to 5 times."
+      "refinement": "Увеличивает урон обычной атаки и заряженной атаки на {{0}}%. Каждые 0.1 сек. полёта стрелы, выпущенной обычной или заряженной атакой, увеличивает её урон на {{1}}%. Эффект может складываться до 5 раз."
     },
     {
       "key": "Dreams of Dragonfell",
@@ -3989,93 +3989,93 @@
     },
     {
       "key": "Dull Blade",
-      "name": "Dull Blade",
+      "name": "Тупой меч",
       "description": "Youthful dreams and the thrill of adventure. If this isn’t enough, then make it up with valiance.",
       "refinement": null
     },
     {
       "key": "Silver Sword",
-      "name": "Silver Sword",
+      "name": "Серебряный меч",
       "description": "A sword for exorcising demons. Everyone knows it’s made of a silver alloy, not pure silver.",
       "refinement": null
     },
     {
       "key": "Cool Steel",
-      "name": "Cool Steel",
+      "name": "Холодное лезвие",
       "description": "A reliable steel-forged weapon that serves as a testament to the great adventures of its old master.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Cryo by {{0}}%"
+      "refinement": "Увеличивает урон против врагов, находящихся под Гидро и Крио эффектом на {{0}}%."
     },
     {
       "key": "Dark Iron Sword",
-      "name": "Dark Iron Sword",
+      "name": "Тёмный железный меч",
       "description": "A perfectly ordinary iron sword, just slightly darker than most.",
-      "refinement": "Upon causing an Overloaded, Superconduct, Electro-Charged, or an Electro-infused Swirl reaction, ATK is increased by {{0}}% for 12s."
+      "refinement": " Увеличивает силу атаки на {{0}}% в течение 12 секунд при нанесении статусов Перегрузка, Суперпроводник, Заряжен или Электро, Рассеивание."
     },
     {
       "key": "Fillet Blade",
-      "name": "Fillet Blade",
+      "name": "Филейный нож",
       "description": "A sharp filleting knife. The blade is long, thin, and incredibly sharp.",
-      "refinement": "On hit, has a 50% chance to deal {{0}}% ATK DMG to a single enemy. Can only occur once every {{1}}s."
+      "refinement": "При попадании с 50% вероятностью наносит {{0}}% урона одной цели. Может возникнуть раз в {{1}} сек."
     },
     {
       "key": "Harbinger of Dawn",
-      "name": "Harbinger of Dawn",
+      "name": "Предвестник зари",
       "description": "A sword that once shone like the sun. The wielder of this sword will be blessed with a \"feel-good\" buff. The reflective material on the blade has long worn off.",
-      "refinement": "When HP is above 90%, increases CRIT Rate by {{0}}%."
+      "refinement": "Увеличивает шанс крит. попадания на {{0}}% при HP выше 90%."
     },
     {
       "key": "Skyrider Sword",
-      "name": "Skyrider Sword",
+      "name": "Меч небесного всадника",
       "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword...",
-      "refinement": "Using an Elemental Burst grants a {{0}}% increase in ATK and Movement SPD for 15s."
+      "refinement": "Активация взрыва стихии увеличивает силу атаки и скорость передвижения на {{0}}% в течение 15 сек."
     },
     {
       "key": "Traveler’s Handy Sword",
-      "name": "Traveler’s Handy Sword",
+      "name": "Меч путешественника",
       "description": "A handy steel sword which contains scissors, a magnifying glass, tinder, and other useful items in its sheath.",
-      "refinement": "Each Elemental Orb or Particle collected restores {{0}}% HP."
+      "refinement": "Подобранные элементальные сферы и частицы восстанавливают {{0}}% HP."
     },
     {
       "key": "Blackcliff Longsword",
-      "name": "Blackcliff Longsword",
+      "name": "Черногорский длинный меч",
       "description": "A sword made of a material known as \"blackcliff.\" It has a dark crimson glow on its black blade.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "refinement": "Побеждённые противники увеличивают силу атаки на {{0}}% Длится 30 сек. Эффект может складываться до 3 раз. Длительность добавочных эффектов друг от друга не зависит."
     },
     {
       "key": "Favonius Sword",
-      "name": "Favonius Sword",
+      "name": "Меч Фавония",
       "description": "A standard-issue longsword of the Knights of Favonius. When you’re armed with this agile and sharp weapon, channeling the power of the elements has never been so easy!",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "refinement": "Критические атаки имеют {{0}}% шанс создать элементальные частицы, которые восстанавливают 6 ед. энергии. Возникает раз в {{1}} сек."
     },
     {
       "key": "Iron Sting",
-      "name": "Iron Sting",
+      "name": "Стальное жало",
       "description": "An exotic long-bladed rapier that somehow found its way into Liyue via foreign traders. It is light, agile, and sharp.",
-      "refinement": "Dealing Elemental DMG increases all DMG by {{0}}% for 6s. Max 2 stacks. Can occur once every 1s."
+      "refinement": "Нанесённый Элементальный урон увеличивает весь урон на {{0}}% в течении 6 сек. Эффект может складываться до 2 раз. Может возникнуть не чаще 1 раза в 1 сек."
     },
     {
       "key": "Lion’s Roar",
-      "name": "Lion’s Roar",
+      "name": "Драконий рык",
       "description": "A sharp blade with extravagant carvings that somehow does not compromise on durability and sharpness. It roars like a lion as it cuts through the air.",
-      "refinement": "Increases DMG against enemies affected by Pyro or Electro by {{0}}%"
+      "refinement": "Увеличивает на {{0}}% урон против врагов, находящихся под действием Пиро или Электро элементов."
     },
     {
       "key": "Prototype Rancour",
-      "name": "Prototype Rancour",
+      "name": "Прототип: Злоба",
       "description": "An ancient longsword discovered in the Blackcliff Forge that cuts through rocks like a hot knife through butter.",
-      "refinement": "On hit, Normal or Charged Attacks increase ATK and DEF by {{0}}% for 6s. Max 4 stacks. This effect can only occur once every 0.3s."
+      "refinement": "Попадание обычной или заряженной атакой увеличивают силу атаки на {{0}}% в течении 6 сек. Эффект может складываться до 4 раз и возникает раз в 0.3 сек."
     },
     {
       "key": "Royal Longsword",
-      "name": "Royal Longsword",
+      "name": "Королевский длинный меч",
       "description": "An old longsword that belonged to the erstwhile rulers of Mondstadt. Exquisitely crafted, the carvings and embellishments testify to the stature of its owner.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "refinement": "Повышает вероятность критического удара на {{0}}% при нанесении урона. Максимальный стек 5."
     },
     {
       "key": "Sacrificial Sword",
-      "name": "Sacrificial Sword",
+      "name": "Церемониальный меч",
       "description": "A ceremonial sword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s"
+      "refinement": "Попадания Элементальным навыком могут с {{0}}% вероятностью моментально восстановить собственный откат. Может возникнуть раз в {{1}} сек."
     },
     {
       "key": "The Alley Flash",
@@ -4085,45 +4085,45 @@
     },
     {
       "key": "The Black Sword",
-      "name": "The Black Sword",
+      "name": "Чёрный меч",
       "description": "A pitch-black longsword that thirsts for violence and conflict. It is said that this weapon can cause its user to become drunk on the red wine of slaughter.",
-      "refinement": "Increases DMG dealt by Normal and Charged Attacks by {{0}}%. Additionally, regenerates {{1}}% of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s."
+      "refinement": "Увеличивает урон обычной и заряженной атаки на {{0}}%. Крит. попадания обычной и заряженной атакой восстанавливают HP, равное {{1}}% от силы атаки. Может возникнуть раз в 5 сек."
     },
     {
       "key": "The Flute",
-      "name": "The Flute",
+      "name": "Меч-флейта",
       "description": "Beneath its rusty exterior is a lavishly decorated thin blade. It swings as swiftly as the wind.",
-      "refinement": "Normal or Charged Attacks grant a Harmonic on hits. Gaining 5 Harmonics triggers the power of music and deals {{0}}% ATK DMG to surrounding enemies. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s."
+      "refinement": "Попадание обычной или заряженной атакой дают ноту. При накоплении 5 нот активируется сила музыки которая наносит {{0}}% урона окружающим врагам. Ноты исчезают через 30 сек. Новую ноту можно получить раз в 0.5 сек."
     },
     {
       "key": "Sword of Descension",
-      "name": "Sword of Descension",
+      "name": "Меч нисхождения",
       "description": "A sword of unique craftsmanship. It does not appear to belong to this world.",
-      "refinement": "Hitting opponents with Normal and Charged Attacks grants a {{0}}% chance to deal 200% ATK as DMG in a small AoE. This effect can only occur once every 10s. Additionally, if the Traveler equips the Sword of Descension, their ATK is increased by {{1}}."
+      "refinement": "Попадание обычной или заряженной атакой имеют 50% шанс нанести 200% урона в небольшом радиусе. Может возникнуть раз в 10 сек. Увеличивает силу атаки Путешественника, экипированного Мечом нисхождения, на {{1}} ед."
     },
     {
       "key": "Festering Desire",
-      "name": "Festering Desire",
+      "name": "Осквернённое желание",
       "description": "A creepy straight sword that almost seems to yearn for life. It drips with a shriveling venom that could even corrupt a mighty dragon.",
-      "refinement": "Increases Elemental Skill DMG by {{0}}% and Elemental Skill CRIT Rate by {{1}}%."
+      "refinement": "Увеличивает урон элементального навыка на {{0}}%, и его шанс крит. попадания - на {{1}}%."
     },
     {
       "key": "Aquila Favonia",
-      "name": "Aquila Favonia",
+      "name": "Меч Сокола",
       "description": "The soul of the Knights of Favonius. Millennia later, it still calls on the winds of swift justice to vanquish all evil  just like the last heroine who wielded it.",
-      "refinement": "ATK is increased by {{0}}%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {{1}}% of ATK and dealing {{2}}% of ATK as DMG to surrounding enemies. This effect can only occur once every 15s."
+      "refinement": "Увеличивает силу атаки на {{0}}%. При получении урона пробуждается душа Сокола Запада, несущего знамя сопротивления. Восстанавливает HP, равное {{1}}% от силы атаки, и наносит {{2}}% урона окружающим врагам. Может возникнуть раз в 15 сек."
     },
     {
       "key": "Skyward Blade",
-      "name": "Skyward Blade",
+      "name": "Небесный меч",
       "description": "The sword of a knight that symbolizes the restored honor of Dvalin. The blessings of the Anemo Archon rest on the fuller of the blade, imbuing the sword with the powers of the sky and the wind.",
-      "refinement": "CRIT Rate increased by {{0}}%. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by 10%, increases ATK SPD by 10%, and increases the DMG of Normal and Charged Attack hits by {{1}}% for 12s."
+      "refinement": "Увеличивает шанс крит. попадания на {{0}}%. Взрыв стихии пробуждает силу небес, которая увеличивает скорость передвижения и атаки на 10%, а обычные и заряженные атаки при попадании наносят дополнительные {{1}}% урона. Все эффекты длятся 12 сек."
     },
     {
       "key": "Summit Shaper",
-      "name": "Summit Shaper",
+      "name": "Кромсатель пиков",
       "description": "A symbol of a legendary pact, this sharp blade once cut off the peak of a mountain.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "refinement": "Увеличивает прочность щита на {{0}}%. При попадании увеличивает силу атаки на {{1}}% в течение 8 сек. Эффект может складываться до 5 раз и возникнуть раз в 0.3 сек. Кроме того, под защитой щита бонус силы атаки данного эффекта увеличивается на 100%."
     },
     {
       "key": "Apprentice’s Notes",
@@ -4145,81 +4145,81 @@
     },
     {
       "key": "Emerald Orb",
-      "name": "Emerald Orb",
+      "name": "Изумрудный шар",
       "description": "A catalyst carved out of the hard jade from Jueyun Karst north of Liyue. It is small, light, and durable.",
-      "refinement": "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by {{0}}% for 12s."
+      "refinement": "Увеличивает силу атаки на {{0}}% в течение 12 сек при нанесении статусов Пар, Заряжен, Заморозка или Гидро рассеивание."
     },
     {
       "key": "Magic Guide",
-      "name": "Magic Guide",
+      "name": "Руководство по магии",
       "description": "Version 12. A reprint featuring corrections to Version 11 and brand-new additions based on recent developments.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Electro by {{0}}%."
+      "refinement": "Увеличивает на 12~24% урон против врагов, находящихся под действием Гидро или Электро элементов."
     },
     {
       "key": "Otherworldly Story",
-      "name": "Otherworldly Story",
+      "name": "Потусторонняя история",
       "description": "A cheap fantasy novel with no value whatsoever. Any claim that it possesses the power of catalysis is also pure fantasy.",
-      "refinement": "Picking up an Elemental Energy Orb/Particle recovers {{0}}% HP."
+      "refinement": "Подобранные элементальные сферы и частицы восстанавливают {{0}}% HP."
     },
     {
       "key": "Thrilling Tales of Dragon Slayers",
-      "name": "Thrilling Tales of Dragon Slayers",
+      "name": "Эпос о драконоборцах",
       "description": "A fictional story of a band of five heroes who go off on a dragon hunt. It is poorly written and structurally incoherent. Its value lies in the many lessons that can be learned from failure.",
-      "refinement": "When switching characters, the new character taking the field has their ATK increased by {{0}}% for 10s. This effect can only occur once every 20s."
+      "refinement": "При переключении персонажа увеличивает силу атаки вошедшего на поле боя персонажа на {{0}}% в течение 10 сек. этот эффект может возникнуть раз в 20 сек."
     },
     {
       "key": "Twin Nephrite",
-      "name": "Twin Nephrite",
+      "name": "Парный нефрит",
       "description": "A jade pendant formed by piecing together two jade stones.",
-      "refinement": "Defeating an enemy increases Movement SPD and ATK by {{0}}% for 15s."
+      "refinement": "Победа над противником увеличивает скорость передвижения и силу атаки на {{0}}% в течении 15 сек."
     },
     {
       "key": "Blackcliff Agate",
-      "name": "Blackcliff Agate",
+      "name": "Черногорский агат",
       "description": "A mysterious catalyst made of a material known as \"blackcliff.\" It has an ominous crimson glow that seems to pulse in synchronization with the tremors from deep within the earth.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "refinement": "Побеждённые противники увеличивают силу атаки на {{0}}%. Длится 30 сек. Эффект может складываться до 3 раз. Длительность добавочных эффектов друг от друга не зависит."
     },
     {
       "key": "Favonius Codex",
-      "name": "Favonius Codex",
+      "name": "Кодекс Фавония",
       "description": "A secret tome that belonged to the scholars of the Knights of Favonius. It describes the logic and power of elements and matter.",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "refinement": "Критические атаки имеют {{0}}% шанс создать элементальные частицы, которые восстанавливают 6 ед. энергии. Возникает раз в {{1}} сек."
     },
     {
       "key": "Mappa Mare",
-      "name": "Mappa Mare",
+      "name": "Морская карта",
       "description": "A nautical chart featuring nearby currents and climates that somehow found its way into Liyue via foreign traders.",
-      "refinement": "Triggering an Elemental reaction grants a {{0}}% Elemental DMG Bonus for 10s. Max 2 stacks."
+      "refinement": "В течение 10 сек. после вызова элементальной реакции увелчивает бонус элементального урона на {{0}}%. Может складываться до 2 раз."
     },
     {
       "key": "Prototype Amber",
-      "name": "Prototype Amber",
+      "name": "Прототип: Янтарьr",
       "description": "A dully gilded catalyst secretly guarded in the Blackcliff Forge. It seems to glow with the very light from the sky.",
-      "refinement": "Using an Elemental Burst regenerates {{0}} Energy every 2s for 6s. All party members will regenerate {{1}}% HP every 2s for this duration."
+      "refinement": "Взрыв стихии восстанавливает {{0}} ед. энергии и {{1}}% HP всем членам отряда каждые 2 сек. в течение 6 сек."
     },
     {
       "key": "Royal Grimoire",
-      "name": "Royal Grimoire",
+      "name": "Королевский гримуар",
       "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "refinement": "При нанесении урона противнику скорость Крита увеличивается на {{0}}%. Максимум 5 стеков. Удар Крита удаляет все стеки."
     },
     {
       "key": "Sacrificial Fragments",
-      "name": "Sacrificial Fragments",
+      "name": "Ритуальные мемуары",
       "description": "A weathered script, the text of which is no longer legible. A cursed item eroded by the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s."
+      "refinement": "Попадания Элементальным навыков могут с {{0}}% вероятностью моментально восстановить собственный откат. Может возникнуть раз в {{0}} сек."
     },
     {
       "key": "Solar Pearl",
-      "name": "Solar Pearl",
+      "name": "Солнечная жемчужина",
       "description": "A dull, golden pearl made of an unknown substance that harbors the light of the sun and the moon, and pulses with a warm strength.",
-      "refinement": "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {{0}}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {{1}}% for 6s."
+      "refinement": "Попадания обычной атакой увеличивают урон элементальных навыков и взрыва стихии на {{0}}% в течение 6 сек. И наоборот, попадания элементальными навыками и взрывом стихии увеличивают урон обычной атаки на {{1}}% в течение 6 сек."
     },
     {
       "key": "The Widsith",
-      "name": "The Widsith",
+      "name": "Песнь странника",
       "description": "A heavy notebook filled with musical scores. Though suffering from moth damage and heavy wear-and-tear, there is still much power to be found among the hand-written words within.",
-      "refinement": "When the character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s. Recitative: ATK is increased by {{0}}%. Aria: Increases all Elemental DMG by {{1}}%. Interlude: Elemental Mastery is increased by {{2}}."
+      "refinement": "При переключении на персонажа в течение 10 сек. играет случайная музыкальная тема. Может возникнуть раз в 30 сек. Речитатив: увеличивает силу атаки на {{0}}%; Ария: увеличивает элементальный урон на {{1}}%; Интерлюдия: увеличивает мастерство стихий на {{2}}."
     },
     {
       "key": "Wine and Song",
@@ -4229,63 +4229,63 @@
     },
     {
       "key": "Eye of Perception",
-      "name": "Eye of Perception",
+      "name": "Око сознания",
       "description": "A dim black glaze pearl that is said to have the power to read the purity of one’s heart.",
-      "refinement": "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing {{0}}% ATK as DMG. This bolt can bounce between enemies a maximum of 4 times. This effect can occur once every {{1}}s."
+      "refinement": "При попадании обычной или заряженной атакой появляется 50% шанс запустить Око сознания, которое наносит {{0}}% урона силы атаки. Оно способно отразиться от противника к противнику до 4 раз. Может возникнуть раз в {{1}}. сек."
     },
     {
       "key": "Frostbearer",
-      "name": "Frostbearer",
+      "name": "Плод вечной мерзлоты",
       "description": "A fruit that possesses a strange, frosty will. A faint sense of agony emanates from it.",
-      "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, dealing {{1}}% AoE ATK DMG. Can only occur once every 10s. Enemies affected by Cryo are dealt {{2}}% ATK DMG. Can only occur once every 10s."
+      "refinement": "Попадания обычной или заряженной атакой имеют {{0}}% шанс создать над противником ледяной кристалл и уронить его, нанося {{1}}% урона силы атаки по площади. Если противник имеет эффект Крио, то наносит ему {{2}}% урона силы атаки. Может возникнуть раз в 10 сек."
     },
     {
       "key": "Lost Prayer to the Sacred Winds",
-      "name": "Lost Prayer to the Sacred Winds",
+      "name": "Молитва святым ветрам",
       "description": "An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.",
-      "refinement": "Increases Movement SPD by 10%. When in battle, gain an {{0}}% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat."
+      "refinement": "Увеличивает скорость передвижения на 10%. Во время битвы даёт {{0}}% бонус элементального урона каждые 4 сек. Может складываться до 4 раз. Эффект оканчивается, если персонаж погибает или покидает зону битвы."
     },
     {
       "key": "Skyward Atlas",
-      "name": "Skyward Atlas",
+      "name": "Небесный атлас",
       "description": "A cloud atlas symbolizing Dvalin and its former master, the Anemo Archon. It details the winds and clouds of the northern regions and contains the powers of the sky and wind.",
-      "refinement": "Increases Elemental DMG Bonus by {{0}}%. Normal Attack hits have a 50% chance to earn the favor of the clouds, which actively seek out nearby enemies to attack for 15s, dealing {{1}}% ATK DMG. Can only occur once every 30s."
+      "refinement": "Увеличивает бонус элементального урона на {{0}}%. При попадании обычной атакой есть 50% шанс получить благословение облаков, которые в течение 15 сек. атакуют ближайших врагов и наносят им {{1}}% урона. Может возникнуть раз в 30 сек."
     },
     {
       "key": "Memory of Dust",
-      "name": "Memory of Dust",
+      "name": "Память о пыли",
       "description": "A stone dumbbell containing distant memories. Its endless transformations reveal the power within.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "refinement": "Увеличивает силу щита на {{0}}%. Засчитывание ударов по противникам увеличивает Атаку на {{1}}% на 8 сек. Максимум 5 стаков. Может срабатывать только раз в 0,3 сек. Пока он защищен щитом, этот эффект увеличения Атаки увеличивается на 100%."
     },
     {
       "key": "Waster Greatsword",
-      "name": "Waster Greatsword",
+      "name": "Двуручный меч богатыря",
       "description": "A sturdy sheet of iron that may be powerful enough to break apart mountains if wielded with enough willpower.",
       "refinement": null
     },
     {
       "key": "Old Merc’s Pal",
-      "name": "Old Merc’s Pal",
+      "name": "Лучший друг наёмника",
       "description": "A battle-tested greatsword that has seen better days and worse.",
       "refinement": null
     },
     {
       "key": "Bloodtainted Greatsword",
-      "name": "Bloodtainted Greatsword",
-      "description": "A steel sword that is said to have been coated with dragon blood, rendering it invulnerable to damage. This effect is not extended to its wielder, however.",
-      "refinement": "Increases DMG dealt against enemies affected by Pyro or Electro by {{0}}%"
+      "name": "Меч драконьей крови",
+      "description": "Стальной меч, по легенде запятнанный кровью дракона, что делает его невосприимчивым к повреждениям. Однако, это свойство не распространяется на его владельца.",
+      "refinement": "Увеличивает на {{0}}% урон против врагов, находящихся под действием Пиро или Электро элементов."
     },
     {
       "key": "Debate Club",
-      "name": "Debate Club",
-      "description": "A handy club made of fine steel. The most persuasive line of reasoning in any debater’s arsenal.",
-      "refinement": "After using an Elemental Skill, Normal or Charged Attacks, on hit, deal an additional {{0}}% ATK DMG in a small area. Effect lasts 15s. DMG can only occur once every 3s."
+      "name": "Дубина переговоров",
+      "description": "Удобная дубина, сделанная из качественной стали. Фундамент «Рационального убеждения».",
+      "refinement": "При попадании Элементальным навыком Обычные и Заряженные атаки наносят дополнительные {{0}}% урона по небольшой площади в течение 15 сек. Может возникнуть раз в 3 сек."
     },
     {
       "key": "Ferrous Shadow",
-      "name": "Ferrous Shadow",
-      "description": "A replica of the famed sword of Arundolyn, the Lion of Light. Feel the power of a legendary hero as you hold this sword in your hand! Imagine yourself as the great warrior himself! Note: Daydreaming not recommended in live combat.",
-      "refinement": "When HP falls below {{0}}%, increases Charged Attack DMG by {{1}}% and Charged Attacks become harder to interrupt."
+      "name": "Металлическая тень",
+      "description": "Копия знаменитого меча Арундолина, Льва Света. Возьмите его в руки и почувствуйте силу легендарного героя! Внимание: много мечтать вредно для вашего здоровья.",
+      "refinement": "При HP ниже {{0}}% врагу становится труднее прервать заряженную атаку. Также увеличивает урон заряженной атаки на {{1}}%."
     },
     {
       "key": "Quartz",
@@ -4295,99 +4295,99 @@
     },
     {
       "key": "Skyrider Greatsword",
-      "name": "Skyrider Greatsword",
-      "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword... for the second time.",
-      "refinement": "On hit, Normal or Charged Attacks increase ATK by {{0}}% for 6s. Max 4 stacks. Can occur once every 0.5s."
+      "name": "Двуручный меч Небесного всадника",
+      "description": "Надёжный стальной меч. Однажды некто пытался заставить его летать... снова.",
+      "refinement": "При попадании обычной или заряженной атакой сила атаки увеличивается на {{0}}% в течение 6 сек. Эффект может складываться до 4 раз. Может возникнуть раз в 0.5 сек."
     },
     {
       "key": "White Iron Greatsword",
-      "name": "White Iron Greatsword",
-      "description": "A claymore made from white iron. Lightweight without compromising on power. Effective even when wielded by one of average strength, it is extremely deadly in the hands of a physically stronger wielder.",
-      "refinement": "Defeating an opponent restores {{0}}% HP."
+      "name": "Меч из белого железа",
+      "description": "Двуручный меч, выкованный из белого железа. Такой материал делает его одновременно сильным и лёгким. Подходит даже для человека среднего телосложения, однако его мощь всё же растёт с силой владельца.",
+      "refinement": "Победа над противником восстанавливает {{0}}% HP."
     },
     {
       "key": "Blackcliff Slasher",
-      "name": "Blackcliff Slasher",
-      "description": "An extremely sturdy greatsword from the Blackcliff Forge. It has a dark crimson color from the blade to pommel.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "name": "Черногорская бритва",
+      "description": "Крепкий двуручный меч из кузницы Черногорья. Лезвие отливает зловещим красным цветом.",
+      "refinement": "Побеждённые противники увеличивают силу атаки на {{0}}%. Длится 30 сек. Эффект может складываться до 3 раз. Длительность добавочных эффектов друг от друга не зависит."
     },
     {
       "key": "Favonius Greatsword",
-      "name": "Favonius Greatsword",
-      "description": "A heavy ceremonial sword of the Knights of Favonius. It channels elemental power easily and is highly destructive.",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "name": "Двуручный меч Фавония",
+      "description": "Тяжёлый церемониальный меч Ордо Фавониус. С лёгкостью направляет элементальную энергию и обладает высокой разрушительной силой.",
+      "refinement": "Критические атаки имеют {{0}}% шанс создать элементальные частицы, которые восстанавливают 6 ед. энергии. Возникает раз в {{0}} сек."
     },
     {
       "key": "Lithic Blade",
-      "name": "Lithic Blade",
-      "description": "A greatsword carved and chiseled from the very bedrock of Liyue.",
-      "refinement": "For every character in the party who hails from Liyue, the character who equips this weapon gains a {{0}}% ATK increase and a {{1}}% CRIT Rate increase. This effect stacks up to 4 times."
+      "name": "Каменный меч",
+      "description": "Массивный двуручный меч, вырубленный из каменного основания Ли Юэ.",
+      "refinement": "С каждым членом отряда из Ли Юэ сила атаки экипированного этим оружием персонажа увеличивается на {{0}}%, а его шанс крит. попадания - на {{1}}%. Эффект может складываться до 4 раз."
     },
     {
       "key": "Prototype Archaic",
-      "name": "Prototype Archaic",
-      "description": "An ancient greatsword discovered in the Blackcliff Forge. It swings with such an immense force that one feels it could cut straight through reality itself.",
-      "refinement": "On hit, Normal or Charged Attacks have a 50% chance to deal an additional {{0}}% ATK DMG to enemies within a small AoE. Can only occur once every 15s."
+      "name": "Прототип: Архаичный",
+      "description": "Древний двуручный меч, обнаруженный в кузнице Черногорья. Он производит впечатление меча, который может разрубить пополам саму реальность.",
+      "refinement": "При попадании обычной или заряженной атакой имеет 50% шанс нанести дополнительные {{0}}%% урона в небольшом радиусе. Может возникнуть раз в 15 сек."
     },
     {
       "key": "Rainslasher",
-      "name": "Rainslasher",
-      "description": "A fluorescent greatsword with no sharp edge that crushes enemies with brute force and raw power.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Electro by {{0}}%"
+      "name": "Дождерез",
+      "description": "Светящий двуручный меч с затупленным острием, который неистово крушит врагов своей массой.",
+      "refinement": "Увеличивает на {{0}}% урон против врагов, находящихся под действием Гидро или Электро элементов."
     },
     {
       "key": "Royal Greatsword",
-      "name": "Royal Greatsword",
-      "description": "An old greatsword that belonged to the erstwhile rulers of Mondstadt. It is made from the finest-quality materials and has stood the test of time. A weapon for use by royals only.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "name": "Королевский двуручный меч",
+      "description": "Старинный меч, который носили с собой древние правители Мондштадта. Выкован из материалов высочайшего качества, которые позволили ему выстоять испытание временем. Боевой меч знати, и никого больше.",
+      "refinement": "При нанесении урона противнику повышает шанс крит. попадания на {{0}}%. Эффект может складываться до 5 раз. Добавочный шанс крит. попадания исчезает с первым крит. попаданием."
     },
     {
       "key": "Serpent Spine",
-      "name": "Serpent Spine",
-      "description": "A rare weapon whose origin is the ancient ocean. One can hear the sound of the ageless waves as one swings it.",
-      "refinement": "Every 4s a character is on the field, they will deal {{0}}% more DMG and take {{1}}% more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG."
+      "name": "Меч драконьей кости",
+      "description": "Редкое оружие, произошедшее из древнего океана. Взмахните им, чтобы услышать шум вечных волн.",
+      "refinement": "Пока персонаж находится в бою, каждые 4 сек. увеличивает наносимый им урон на {{0}}% и получаемый им урон на {{1}}%. Может складываться до 5 раз, не сбрасывается при смене персонажа, при получении урона снижается на 1 уровень складывания."
     },
     {
       "key": "The Bell",
-      "name": "The Bell",
-      "description": "A heavy greatsword. A clock is embedded within it, though its internal mechanisms have long been damaged.",
-      "refinement": "Taking DMG generates a shield which absorbs DMG up to {{0}}% of Max HP. This shield lasts for 10s or until broken, and can only be triggered once every 45s. While protected by the shield, the character gains {{1}}% increased DMG."
+      "name": "Меч-колокол",
+      "description": "Тяжёлый двуручный меч со встроенными часами механизмы которых уже давно изношены.",
+      "refinement": "При получении урона генерируется щит, который в течение 10 сек. поглощает урон, равный {{0}}% от макс. HP. Может возникнуть раз в 45 сек. Под защитой щита увеличивает урон персонажа на {{1}}%."
     },
     {
       "key": "Whiteblind",
-      "name": "Whiteblind",
-      "description": "An exotic sword with one section of the blade left blunt. It made its way into Liyue via the hands of foreign traders. Incredibly powerful in the hands of someone who knows how to use it.",
-      "refinement": "On hit, Normal or Charged Attacks increase ATK and DEF by {{0}}% for 6s. Max 4 stacks. This effect can only occur once every 0.5s."
+      "name": "Белая тень",
+      "description": "Экзотичный меч с тупой секцией на лезвии, который оказался в Ли Юэ благодаря иностранным торговцам. Невероятно мощный в руках того, кто знает, как им пользоваться.",
+      "refinement": "При попадании Обычной или Заряженной атакой Сила атаки и Защита увеличивается на {{0}}% в течение 6 сек. Эффект может складываться до 4 раз. Может возникнуть не чаще 1 раза за 0.5 сек."
     },
     {
       "key": "Sacrificial Greatsword",
-      "name": "Sacrificial Greatsword",
-      "description": "A ceremonial greatsword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s."
+      "name": "Церемониальный двуручный меч",
+      "description": "Декоративный церемониальный двуручный меч, со временем покрывшийся камнем, но украшения на нём всё ещё можно разобрать. Позволяет владельцу выстоять суровость песков времени.",
+      "refinement": "Попадание Элементальным навыком могут с {{0}}% вероятностью моментально восстановить собственный откат. Может возникнуть раз в {{1}} сек."
     },
     {
       "key": "Snow-Tombed Starsilver",
-      "name": "Snow-Tombed Starsilver",
-      "description": "An ancient greatsword that was stored between frescoes. Forged from Starsilver, it has the power to cleave through ice and snow.",
-      "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, dealing {{1}}% AoE ATK DMG. Can only occur once every 10s. Enemies affected by Cryo are dealt {{2}}% ATK DMG. Can only occur once every 10s."
+      "name": "Заснеженное звёздное серебро",
+      "description": "Древний меч, сохранившийся среди настенных фресок. Он сделан из звёздного серебра и обладает силой, способной расколоть самый твёрдый лёд.",
+      "refinement": "Попадания обычной или заряженной атакой имеют {{0}}% шанс создать над противником ледяной кристалл и уронить его при этом нанося {{1}}% урона силы атаки по площади. Если противник имеет эффект Крио, то наносит ему {{2}}% урона силы атаки. Может возникнуть раз в 10 сек."
     },
     {
       "key": "Skyward Pride",
-      "name": "Skyward Pride",
-      "description": "A claymore that symbolizes the pride of Dvalin soaring through the skies. When swung, it emits a deep hum as the full force of Dvalin’s command of the sky and the wind is unleashed.",
-      "refinement": "Increases all DMG by {{0}}%. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does {{1}}% of ATK as DMG to enemies along its path. Lasts for 20s or 8 vacuum blades."
+      "name": "Небесное величие",
+      "description": "Двуручный меч, символ власти Двалина над небесами. Дыхание дракона питает его силой небес и ветров.",
+      "refinement": "Увеличивает наносимый урон на {{0}}%. Активация взрыва стихии и попадания обычными или заряженными атаками запускают лезвие, которое наносит {{1}}% урона всем врагам на своём пути. Длится 20 сек. или 8 неосязаемых лезвий."
     },
     {
       "key": "Wolf’s Gravestone",
-      "name": "Wolf’s Gravestone",
-      "description": "A longsword used by the Wolf Knight. Originally just a heavy sheet of iron given to the knight by a blacksmith from the city, it became endowed with legendary power owing to his friendship with the wolves.",
-      "refinement": "Increases ATK by {{0}}%. On hit, attacks against enemies with less than 30% HP increase all party members’ ATK by {{1}}% for 12s. Can only occur once every 30s."
+      "name": "Волчья погибель",
+      "description": "Двуручный меч рыцаря Ордо Бореалис. Изначально это был просто лист металла из лавки кузнеца. Однако, он был наделён легендарной силой в знак дружбы между кузнецом и волками.",
+      "refinement": "Увеличивает силу атаки на {{0}}%. При попадании по цели с HP меньше 30% увеличивает силу атаки всех членов отряда на {{1}}% в течении 12 сек. Может возникнуть не чаще 1 раза за 30 сек."
     },
     {
       "key": "The Unforged",
-      "name": "The Unforged",
+      "name": "Некованный",
       "description": "Capable of driving away evil spirits and wicked people alike, this edgeless claymore seems to possess divine might.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "refinement": "Увеличивает прочность щита на {{0}}%. При попадании увеличивает силу атаки на {{1}}% в течение 8 сек. Эффект может складываться до 5 раз и возникнуть раз в 0.3 сек. Кроме того, под защитой щита бонус силы атаки данного эффекта увеличивается на 100%."
     },
     {
       "key": "Beginner’s Protector",
@@ -4397,7 +4397,7 @@
     },
     {
       "key": "Iron Point",
-      "name": "Iron Point",
+      "name": "Железный наконечник",
       "description": "Sharp and pointy at one end, it is a balanced weapon that is quite popular among travelers.",
       "refinement": null
     },
