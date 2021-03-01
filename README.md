@@ -21,13 +21,14 @@
 [<img height="100" width="250" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" />](https://play.google.com/store/apps/details?id=com.miraisoft.genshindb)
 
 ### Translations
+
 Currently the app supports English and Spanish (There are some folks working on a french / russian translation).
 If you want to help me with the translations, i encourage you to check the following files:
 
-The translations are splitted in two files, the main one (where all the data of the characters / artifacts / etc are stored):
+* The main one (where all the data of the characters / artifacts / etc are stored):
 [Main](https://github.com/Wolfteam/GenshinDb/blob/develop/assets/i18n/en.json)
 
-And the general one:
+* The general one (where common strings are stored [not related specifically to the game]):
 [General](https://github.com/Wolfteam/GenshinDb/blob/develop/lib/l10n/intl_en.arb)
 
 To translate the general one is very simple, create a copy of the file, keeping the keys and translate the values:
