@@ -2194,6 +2194,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Current: {value}`
+  String currentX(Object value) {
+    return Intl.message(
+      'Current: $value',
+      name: 'currentX',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `Desired: {value}`
+  String desiredX(Object value) {
+    return Intl.message(
+      'Desired: $value',
+      name: 'desiredX',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `Current Ascension`
+  String get currentAscension {
+    return Intl.message(
+      'Current Ascension',
+      name: 'currentAscension',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Desired Ascension`
+  String get desiredAscension {
+    return Intl.message(
+      'Desired Ascension',
+      name: 'desiredAscension',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose a level`
+  String get chooseALevel {
+    return Intl.message(
+      'Choose a level',
+      name: 'chooseALevel',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

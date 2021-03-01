@@ -8,6 +8,8 @@ abstract class CalculatorAscMaterialsEvent with _$CalculatorAscMaterialsEvent {
     @required String key,
     @required int currentLevel,
     @required int desiredLevel,
+    @required int currentAscensionLevel,
+    @required int desiredAscensionLevel,
     @required List<CharacterSkill> skills,
   }) = _AddCharacter;
 
@@ -15,6 +17,8 @@ abstract class CalculatorAscMaterialsEvent with _$CalculatorAscMaterialsEvent {
     @required int index,
     @required int currentLevel,
     @required int desiredLevel,
+    @required int currentAscensionLevel,
+    @required int desiredAscensionLevel,
     @required List<CharacterSkill> skills,
   }) = _UpdateCharacter;
 
@@ -22,12 +26,16 @@ abstract class CalculatorAscMaterialsEvent with _$CalculatorAscMaterialsEvent {
     @required String key,
     @required int currentLevel,
     @required int desiredLevel,
+    @required int currentAscensionLevel,
+    @required int desiredAscensionLevel,
   }) = _AddWeapon;
 
   const factory CalculatorAscMaterialsEvent.updateWeapon({
     @required int index,
     @required int currentLevel,
     @required int desiredLevel,
+    @required int currentAscensionLevel,
+    @required int desiredAscensionLevel,
   }) = _UpdateWeapon;
 
   const factory CalculatorAscMaterialsEvent.removeItem({

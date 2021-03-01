@@ -129,11 +129,14 @@ class ItemCard extends StatelessWidget {
 
     context.read<CalculatorAscMaterialsItemBloc>().add(
           CalculatorAscMaterialsItemEvent.loadWith(
-              key: itemKey,
-              isCharacter: currentData.isCharacter,
-              currentLevel: currentData.currentLevel,
-              desiredLevel: currentData.desiredLevel,
-              skills: currentData.skills),
+            key: itemKey,
+            isCharacter: currentData.isCharacter,
+            currentLevel: currentData.currentLevel,
+            desiredLevel: currentData.desiredLevel,
+            skills: currentData.skills,
+            currentAscensionLevel: currentData.currentAscensionLevel,
+            desiredAscensionLevel: currentData.desiredAscensionLevel,
+          ),
         );
 
     await showModalBottomSheet<bool>(

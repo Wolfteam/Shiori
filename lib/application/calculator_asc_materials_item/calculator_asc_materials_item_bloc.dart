@@ -2,9 +2,11 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/assets.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/genshin_service.dart';
+import 'package:tuple/tuple.dart';
 
 part 'calculator_asc_materials_item_bloc.freezed.dart';
 part 'calculator_asc_materials_item_event.dart';
@@ -17,6 +19,8 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
   static int maxSkillLevel = 10;
   static int minAscensionLevel = 1;
   static int maxAscensionLevel = 6;
+  static int minItemLevel = 1;
+  static int maxItemLevel = 90;
 
   _LoadedState get currentState => state as _LoadedState;
 
@@ -38,10 +42,15 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
           return CalculatorAscMaterialsItemState.loaded(
             name: translation.name,
             imageFullPath: Assets.getCharacterPath(char.image),
-            currentLevel: minAscensionLevel,
-            desiredLevel: maxAscensionLevel,
-            skills:
-                translation.skills.map((e) => CharacterSkill.skill(name: e.title, currentLevel: minSkillLevel, desiredLevel: maxSkillLevel)).toList(),
+            currentLevel: itemAscensionLevelMap.entries.first.value,
+            desiredLevel: maxItemLevel,
+            currentAscensionLevel: minAscensionLevel,
+            desiredAscensionLevel: maxAscensionLevel,
+            skills: translation.skills
+                .map(
+                  (e) => CharacterSkill.skill(name: e.title, currentLevel: minSkillLevel, desiredLevel: maxSkillLevel),
+                )
+                .toList(),
           );
         }
         final weapon = _genshinService.getWeapon(e.key);
@@ -49,8 +58,10 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
         return CalculatorAscMaterialsItemState.loaded(
           name: translation.name,
           imageFullPath: weapon.fullImagePath,
-          currentLevel: minAscensionLevel,
-          desiredLevel: maxAscensionLevel,
+          currentLevel: itemAscensionLevelMap.entries.first.value,
+          desiredLevel: maxItemLevel,
+          currentAscensionLevel: minAscensionLevel,
+          desiredAscensionLevel: maxAscensionLevel,
         );
       },
       loadWith: (e) {
@@ -63,6 +74,8 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
             currentLevel: e.currentLevel,
             desiredLevel: e.desiredLevel,
             skills: e.skills,
+            currentAscensionLevel: e.currentAscensionLevel,
+            desiredAscensionLevel: e.desiredAscensionLevel,
           );
         }
 
@@ -73,34 +86,35 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
           imageFullPath: weapon.fullImagePath,
           currentLevel: e.currentLevel,
           desiredLevel: e.desiredLevel,
+          currentAscensionLevel: e.currentAscensionLevel,
+          desiredAscensionLevel: e.desiredAscensionLevel,
         );
       },
-      currentLevelChanged: (e) {
-        return _ascensionChanged(e.newValue, currentState.desiredLevel);
-      },
-      desiredLevelChanged: (e) {
-        return _ascensionChanged(currentState.currentLevel, e.newValue);
-      },
-      skillCurrentLevelChanged: (e) {
-        return _skillChanged(e.index, e.newValue, true);
-      },
-      skillDesiredLevelChanged: (e) {
-        return _skillChanged(e.index, e.newValue, false);
-      },
+      currentLevelChanged: (e) => _levelChanged(e.newValue, currentState.desiredLevel),
+      desiredLevelChanged: (e) => _levelChanged(currentState.currentLevel, e.newValue),
+      currentAscensionLevelChanged: (e) => _ascensionChanged(e.newValue, currentState.desiredAscensionLevel),
+      desiredAscensionLevelChanged: (e) => _ascensionChanged(currentState.currentAscensionLevel, e.newValue),
+      skillCurrentLevelChanged: (e) => _skillChanged(e.index, e.newValue, true),
+      skillDesiredLevelChanged: (e) => _skillChanged(e.index, e.newValue, false),
     );
 
     yield s;
   }
 
-  CalculatorAscMaterialsItemState _ascensionChanged(int currentLevel, int desiredLevel) {
-    var cl = currentLevel;
-    var dl = desiredLevel;
+  //TODO: COMPLETE THIS
 
-    if (cl > dl) {
-      dl = cl;
-    } else if (dl < cl) {
-      cl = dl;
-    }
+  CalculatorAscMaterialsItemState _levelChanged(int currentLevel, int desiredLevel) {
+    final tuple = _checkProvidedLevels(currentLevel, desiredLevel);
+    final cl = tuple.item1;
+    final dl = tuple.item2;
+
+    return currentState.copyWith.call(currentLevel: currentLevel, desiredLevel: desiredLevel);
+  }
+
+  CalculatorAscMaterialsItemState _ascensionChanged(int currentLevel, int desiredLevel) {
+    final tuple = _checkProvidedLevels(currentLevel, desiredLevel);
+    final cl = tuple.item1;
+    final dl = tuple.item2;
 
     //Here we consider the 0, because otherwise we will always start from a current level of 1, and sometimes, we want to know the whole thing
     //(from 1 to 10 with 1 inclusive)
@@ -112,7 +126,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
       return currentState;
     }
 
-    return currentState.copyWith.call(currentLevel: cl, desiredLevel: dl);
+    return currentState.copyWith.call(currentAscensionLevel: cl, desiredAscensionLevel: dl);
   }
 
   CalculatorAscMaterialsItemState _skillChanged(int skillIndex, int newValue, bool currentChanged) {
@@ -125,14 +139,9 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
         continue;
       }
 
-      var cl = currentChanged ? newValue : item.currentLevel;
-      var dl = currentChanged ? item.desiredLevel : newValue;
-
-      if (cl > dl) {
-        dl = cl;
-      } else if (dl < cl) {
-        cl = dl;
-      }
+      final tuple = _checkProvidedLevels(currentChanged ? newValue : item.currentLevel, currentChanged ? item.desiredLevel : newValue);
+      final cl = tuple.item1;
+      final dl = tuple.item2;
 
       if (cl > maxSkillLevel || cl < minSkillLevel) {
         return currentState;
@@ -146,5 +155,18 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     }
 
     return currentState.copyWith.call(skills: skills);
+  }
+
+  Tuple2<int, int> _checkProvidedLevels(int currentLevel, int desiredLevel) {
+    var cl = currentLevel;
+    var dl = desiredLevel;
+
+    if (cl > dl) {
+      dl = cl;
+    } else if (dl < cl) {
+      cl = dl;
+    }
+
+    return Tuple2<int, int>(cl, dl);
   }
 }

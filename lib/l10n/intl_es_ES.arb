@@ -213,5 +213,10 @@
     "geo": "Geo",
     "pyro": "Pyro",
     "hydro": "Hydro",
-    "craftingMaterials": "Materiales de Elaboración"
+    "craftingMaterials": "Materiales de Elaboración",
+    "currentX": "Actual: {value}",
+    "desiredX": "Deseado: {value}",
+    "currentAscension": "Ascensión Actual",
+    "desiredAscension": "Ascención Deseada",
+    "chooseALevel": "Escoge un nivel"
 }

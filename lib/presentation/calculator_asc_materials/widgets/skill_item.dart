@@ -25,7 +25,7 @@ class SkillItem extends StatelessWidget {
 
     return Column(
       children: [
-        Text(name, style: theme.textTheme.subtitle2),
+        Text(name, style: theme.textTheme.subtitle2, overflow: TextOverflow.ellipsis),
         const Divider(),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -37,31 +37,35 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static m8(value) => "${value} Prob. CRIT %";
 
-  static m9(value) => "${value} DEF";
+  static m9(value) => "Actual: ${value}";
 
-  static m10(value) => "${value} DEF %";
+  static m10(value) => "${value} DEF";
 
-  static m11(value) => "${value} Maestría Elemental";
+  static m11(value) => "${value} DEF %";
 
-  static m12(value) => "${value} Recarga de Energía %";
+  static m12(value) => "Deseado: ${value}";
 
-  static m13(value) => "${value} Bonus de Curación %";
+  static m13(value) => "${value} Maestría Elemental";
 
-  static m14(value) => "${value} Vida";
+  static m14(value) => "${value} Recarga de Energía %";
 
-  static m15(value) => "${value} Vida %";
+  static m15(value) => "${value} Bonus de Curación %";
 
-  static m16(value) => "${value} Bono Daño FIS.";
+  static m16(value) => "${value} Vida";
 
-  static m17(value) => "${value} Daño FIS. %";
+  static m17(value) => "${value} Vida %";
 
-  static m18(value) => "Talento de Ascención ${value}";
+  static m18(value) => "${value} Bono Daño FIS.";
 
-  static m19(value) => "Desbloqueada en nivel de ascención ${value}";
+  static m19(value) => "${value} Daño FIS. %";
 
-  static m20(value, x) => "${value} Bono de Daño ${x} %";
+  static m20(value) => "Talento de Ascención ${value}";
 
-  static m21(value) => "${value} Pieza(s)";
+  static m21(value) => "Desbloqueada en nivel de ascención ${value}";
+
+  static m22(value, x) => "${value} Bono de Daño ${x} %";
+
+  static m23(value) => "${value} Pieza(s)";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
@@ -104,6 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "characters" : MessageLookupByLibrary.simpleMessage("Personajes"),
     "chargedAttack" : MessageLookupByLibrary.simpleMessage("Ataque Cargado"),
     "chest" : MessageLookupByLibrary.simpleMessage("Cofre"),
+    "chooseALevel" : MessageLookupByLibrary.simpleMessage("Escoge un nivel"),
     "chooseAccentColor" : MessageLookupByLibrary.simpleMessage("Escoge un color de acento"),
     "chooseBaseAppTheme" : MessageLookupByLibrary.simpleMessage("Escoge un tema base"),
     "chooseLanguage" : MessageLookupByLibrary.simpleMessage("Escoge un lenguaje"),
@@ -125,16 +130,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "crown" : MessageLookupByLibrary.simpleMessage("Corona"),
     "cryo" : MessageLookupByLibrary.simpleMessage("Cryo"),
     "currency" : MessageLookupByLibrary.simpleMessage("Moneda"),
+    "currentAscension" : MessageLookupByLibrary.simpleMessage("Ascensión Actual"),
     "currentLevel" : MessageLookupByLibrary.simpleMessage("Nivel actual"),
+    "currentX" : m9,
     "dark" : MessageLookupByLibrary.simpleMessage("Oscuro"),
     "day" : MessageLookupByLibrary.simpleMessage("Día"),
-    "def" : m9,
-    "defPercentage" : m10,
+    "def" : m10,
+    "defPercentage" : m11,
     "deleteRow" : MessageLookupByLibrary.simpleMessage("Borrar fila"),
     "dendro" : MessageLookupByLibrary.simpleMessage("Dendro"),
     "desc" : MessageLookupByLibrary.simpleMessage("Descendente"),
     "description" : MessageLookupByLibrary.simpleMessage("Descripción"),
+    "desiredAscension" : MessageLookupByLibrary.simpleMessage("Ascención Deseada"),
     "desiredLevel" : MessageLookupByLibrary.simpleMessage("Nivel deseado"),
+    "desiredX" : m12,
     "disclaimer" : MessageLookupByLibrary.simpleMessage("Disclaimer"),
     "disclaimerMsg" : MessageLookupByLibrary.simpleMessage("Esta app no está afiliada ni asociada a miHoYo. GenshinDb es solo una aplicación de tipo base de datos para el juego Genshin Impact"),
     "dps" : MessageLookupByLibrary.simpleMessage("DPS"),
@@ -150,9 +159,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "elementalResonances" : MessageLookupByLibrary.simpleMessage("Resonancias Elementales"),
     "elementalResonancesExplained" : MessageLookupByLibrary.simpleMessage("Teniendo estos tipos de personajes en tu equipo te daran el effecto correspondiente"),
     "elementalSkill" : MessageLookupByLibrary.simpleMessage("Habilidad Elemental"),
-    "elementaryMastery" : m11,
+    "elementaryMastery" : m13,
     "elements" : MessageLookupByLibrary.simpleMessage("Elementos"),
-    "energyRechargePercentage" : m12,
+    "energyRechargePercentage" : m14,
     "english" : MessageLookupByLibrary.simpleMessage("Inglés"),
     "europe" : MessageLookupByLibrary.simpleMessage("Europa"),
     "female" : MessageLookupByLibrary.simpleMessage("Mujer"),
@@ -169,11 +178,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "goblet" : MessageLookupByLibrary.simpleMessage("Copa"),
     "happyBirthday" : MessageLookupByLibrary.simpleMessage("¡Feliz Cumpleaños!"),
     "healingBonus" : MessageLookupByLibrary.simpleMessage("Bono de curación"),
-    "healingBonusPercentage" : m13,
+    "healingBonusPercentage" : m15,
     "hold" : MessageLookupByLibrary.simpleMessage("Mantener"),
     "home" : MessageLookupByLibrary.simpleMessage("Inicio"),
-    "hp" : m14,
-    "hpPercentage" : m15,
+    "hp" : m16,
+    "hpPercentage" : m17,
     "hydro" : MessageLookupByLibrary.simpleMessage("Hydro"),
     "imgSavedSuccessfully" : MessageLookupByLibrary.simpleMessage("La imagen fue guardada exitósamente en la galería"),
     "issues" : MessageLookupByLibrary.simpleMessage("Inconvenientes"),
@@ -204,8 +213,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "others" : MessageLookupByLibrary.simpleMessage("Otros"),
     "partial" : MessageLookupByLibrary.simpleMessage("Parcial"),
     "passives" : MessageLookupByLibrary.simpleMessage("Pasivas"),
-    "physDmgBonus" : m16,
-    "physDmgPercentage" : m17,
+    "physDmgBonus" : m18,
+    "physDmgPercentage" : m19,
     "pickColor" : MessageLookupByLibrary.simpleMessage("Selecciona un color"),
     "pieces" : MessageLookupByLibrary.simpleMessage("Piezas"),
     "plume" : MessageLookupByLibrary.simpleMessage("Pluma"),
@@ -257,7 +266,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "supportDps" : MessageLookupByLibrary.simpleMessage("DPS de Soporte"),
     "supportMsg" : MessageLookupByLibrary.simpleMessage("Hice esta aplicación en mi tiempo libre y también es de código abierto. Si deseas ayudarme, informar de un problema, tienes una idea, deseas que se implemente una funcionalidad, etc., crea un issue en mi Github:"),
     "sword" : MessageLookupByLibrary.simpleMessage("Espada"),
-    "talentAscensionX" : m18,
+    "talentAscensionX" : m20,
     "talentsAscension" : MessageLookupByLibrary.simpleMessage("Talentos de Ascención"),
     "theme" : MessageLookupByLibrary.simpleMessage("Tema"),
     "thursday" : MessageLookupByLibrary.simpleMessage("Jueves"),
@@ -268,7 +277,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "tuesday" : MessageLookupByLibrary.simpleMessage("Martes"),
     "type" : MessageLookupByLibrary.simpleMessage("Tipo"),
     "unknownError" : MessageLookupByLibrary.simpleMessage("Un error desconocido ha ocurrido"),
-    "unlockedAtAscensionLevelX" : m19,
+    "unlockedAtAscensionLevelX" : m21,
     "unlockedAutomatically" : MessageLookupByLibrary.simpleMessage("Desbloqueada Automáticamente"),
     "unreleased" : MessageLookupByLibrary.simpleMessage("No Publicado"),
     "utility" : MessageLookupByLibrary.simpleMessage("Utilidad"),
@@ -277,8 +286,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "weapons" : MessageLookupByLibrary.simpleMessage("Armas"),
     "wednesday" : MessageLookupByLibrary.simpleMessage("Miércoles"),
     "wishSimulator" : MessageLookupByLibrary.simpleMessage("Simulador de Deseos"),
-    "xDmgBonusPercentage" : m20,
-    "xPieces" : m21,
+    "xDmgBonusPercentage" : m22,
+    "xPieces" : m23,
     "youCanAlsoSendMeAnEmail" : MessageLookupByLibrary.simpleMessage("También puedes enviarme un correo")
   };
 }
