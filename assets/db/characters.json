@@ -9669,23 +9669,13 @@
         {
           "isSupport": false,
           "weaponImages": [
+            "primordial_jade_cutter.png",
             "aquila_favonia.png",
-            "the_black_sword.png",
             "lions_roar.png",
-            "the_flute.png"
+            "the_black_sword.png",
+            "prototype_rancour.png"
           ],
           "artifacts": [
-            {
-              "one": "thundersoother_4.png",
-              "multiples": [],
-              "stats": [
-                "hp",
-                "atk",
-                "atkPercentage",
-                "electroDmgBonusPercentage",
-                "critDmgPercentage"
-              ]
-            },
             {
               "multiples": [
                 {
@@ -9697,6 +9687,28 @@
                   "image": "thundering_fury_4.png"
                 }
               ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "electroDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
+            {
+              "one": "thundering_fury_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "electroDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
+            {
+              "one": "thundersoother_4.png",
+              "multiples": [],
               "stats": [
                 "hp",
                 "atk",
@@ -9717,8 +9729,9 @@
           "isSupport": false,
           "weaponImages": [
             "aquila_favonia.png",
+            "primordial_jade_cutter.png",
+            "prototype_rancour.png",
             "the_black_sword.png",
-            "lions_roar.png",
             "the_flute.png"
           ],
           "artifacts": [
@@ -9733,17 +9746,6 @@
                   "image": "bloodstained_chivalry_4.png"
                 }
               ],
-              "stats": [
-                "hp",
-                "atk",
-                "atkPercentage",
-                "physDmgBonusPercentage",
-                "critDmgPercentage"
-              ]
-            },
-            {
-              "one": "thundersoother_4.png",
-              "multiples": [],
               "stats": [
                 "hp",
                 "atk",
@@ -21042,21 +21044,11 @@
           "isSupport": true,
           "weaponImages": [
             "sacrificial_sword.png",
-            "skyward_blade.png",
-            "festering_fang.png"
+            "primordial_jade_cutter.png",
+            "festering_fang.png",
+            "harbinger_of_dawn.png"
           ],
           "artifacts": [
-            {
-              "one": "noblesse_oblige_4.png",
-              "multiples": [],
-              "stats": [
-                "hp",
-                "atk",
-                "energyRechargePercentage",
-                "hydroDmgBonusPercentage",
-                "critRatePercentage"
-              ]
-            },
             {
               "multiples": [
                 {
@@ -21075,14 +21067,24 @@
                 "hydroDmgBonusPercentage",
                 "critRatePercentage"
               ]
+            },
+            {
+              "one": "noblesse_oblige_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "hydroDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
             }
           ],
           "subStatsToFocus": [
             "energyRechargePercentage",
             "critRatePercentage",
             "critDmgPercentage",
-            "atkPercentage",
-            "elementaryMastery"
+            "atkPercentage"
           ]
         }
       ],
