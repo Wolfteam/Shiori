@@ -241,6 +241,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "short" : MessageLookupByLibrary.simpleMessage("Corto"),
     "showCharacterDetails" : MessageLookupByLibrary.simpleMessage("Mostrar el detalle de los personajes"),
     "showWeaponDetails" : MessageLookupByLibrary.simpleMessage("Mostrar el detalle de las armas"),
+    "simplifiedChinese" : MessageLookupByLibrary.simpleMessage("Chino (Simplificado)"),
     "skills" : MessageLookupByLibrary.simpleMessage("Habilidades"),
     "sortBy" : MessageLookupByLibrary.simpleMessage("Ordenar por"),
     "sortDirection" : MessageLookupByLibrary.simpleMessage("Dirección de ordenamiento"),
