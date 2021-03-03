@@ -852,7 +852,7 @@
     },
     {
       "key": "Diona",
-      "name": "Diona",
+      "name": "迪奥娜",
       "description": "遗传了稀薄的「非人」血统的少女,「猫尾酒馆」的超人气调酒师。",
       "skills": [
         {
@@ -1213,7 +1213,7 @@
     {
       "key": "HuTao",
       "name": "胡桃",
-      "description": "The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.",
+      "description": "「往生堂」七十七代堂主，年纪轻轻就已主掌璃月的葬仪事务。",
       "skills": [
         {
           "key": "s1",
@@ -1530,7 +1530,7 @@
         },
         {
           "key": "c2",
-          "title": "Never-Ending Performance",
+          "title": "无尽的霜舞",
           "description": "无尽的在凛冽轮舞的持续时间击败敌人时，其持续时间延长2.5秒，最多不会超过15秒。",
           "secondDescription": null,
           "descriptions": []
@@ -2301,7 +2301,7 @@
     },
     {
       "key": "Qiqi",
-      "name": "Qiqi",
+      "name": "七七",
       "description": "药庐「不卜庐」的采药姑娘兼学徒，面色苍白如纸的不死之人。话很少，也没有什么表情。",
       "skills": [
         {
@@ -5238,102 +5238,6 @@
       "name": "石化的骨片"
     },
     {
-      "key": "DecarabianA",
-      "name": "Tile of Decarabian's Tower"
-    },
-    {
-      "key": "DecarabianB",
-      "name": "Debris of Decarabian's City"
-    },
-    {
-      "key": "DecarabianC",
-      "name": "Fragment of Decarabian's Epic"
-    },
-    {
-      "key": "DecarabianD",
-      "name": "Scattered Piece of Decarabian's Dream"
-    },
-    {
-      "key": "GuyunA",
-      "name": "Luminous Sands from Guyun"
-    },
-    {
-      "key": "GuyunB",
-      "name": "Lustrous Stone from Guyun"
-    },
-    {
-      "key": "GuyunC",
-      "name": "Relic from Guyun"
-    },
-    {
-      "key": "GuyunD",
-      "name": "Divine Body from Guyun"
-    },
-    {
-      "key": "ElixirA",
-      "name": "Mist Veiled Lead Elixir"
-    },
-    {
-      "key": "ElixirB",
-      "name": "Mist Veiled Mercury Elixir"
-    },
-    {
-      "key": "ElixirC",
-      "name": "Mist Veiled Gold Elixir"
-    },
-    {
-      "key": "ElixirD",
-      "name": "Mist Veiled Primo Elixir"
-    },
-    {
-      "key": "BorealWolfA",
-      "name": "Boreal Wolf's Milk Tooth"
-    },
-    {
-      "key": "BorealWolfB",
-      "name": "Boreal Wolf's Cracked Tooth"
-    },
-    {
-      "key": "BorealWolfC",
-      "name": "Boreal Wolf's Broken Fang"
-    },
-    {
-      "key": "BorealWolfD",
-      "name": "Boreal Wolf's Nostalgia"
-    },
-    {
-      "key": "AerosideriteA",
-      "name": "Grain of Aerosiderite"
-    },
-    {
-      "key": "AerosideriteB",
-      "name": "Piece of Aerosiderite"
-    },
-    {
-      "key": "AerosideriteC",
-      "name": "Bit of Aerosiderite"
-    },
-    {
-      "key": "AerosideriteD",
-      "name": "Chunk of Aerosiderite"
-    },
-    {
-      "key": "GladiatorA",
-      "name": "Fetters of the Dandelion Gladiator"
-    },
-    {
-      "key": "GladiatorB",
-      "name": "Chains of the Dandelion Gladiator"
-    },
-    {
-      "key": "GladiatorC",
-      "name": "Shackles of the Dandelion Gladiator"
-    },
-    {
-      "key": "GladiatorD",
-      "name": "Dream of the Dandelion Gladiator"
-    },
-    {
       "key": "MaskA",
       "name": "破损的面具"
     },
@@ -5653,23 +5557,23 @@
   "debuffs": [
     {
       "key": "Engulfing Storm",
-      "name": "Engulfing Storm",
-      "effect": "Continuously drains Energy Recharge."
+      "name": "噬能之雷",
+      "effect": "处于该元素状态下的角色，不断减少元素充能。"
     },
     {
       "key": "Slowing Water",
-      "name": "Slowing Water",
-      "effect": "Increases skill CD durations."
+      "name": "迟滞之水",
+      "effect": "处于迟滞之水状态下的角色，技能冷却时间会被延长。"
     },
     {
       "key": "Smoldering Flames",
-      "name": "Smoldering Flames",
-      "effect": "Continuously inflicts damage over time."
+      "name": "阴燃之火",
+      "effect": "处于阴燃之火状态下的角色，会受到火元素持续伤害。"
     },
     {
       "key": "Condensed Ice",
-      "name": "Condensed Ice",
-      "effect": "Increases stamina consumption."
+      "name": "凝结之冰",
+      "effect": "处于凝结之冰状态下的角色，消耗的体力会增加。"
     }
   ],
   "reactions": [
