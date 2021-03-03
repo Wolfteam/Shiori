@@ -11,6 +11,9 @@ const languagesMap = {
   // AppLanguageType.french: LanguageModel('fr', 'FR'),
 };
 
+//key = ascension level
+//value = item level
+//Remember that you can be level 80 but that doesn't mean you have ascended to level 6
 const itemAscensionLevelMap = {
   1: 20,
   2: 40,
@@ -18,6 +21,17 @@ const itemAscensionLevelMap = {
   4: 60,
   5: 70,
   6: 80,
+};
+
+//key = ascension level
+//value = the possible skill upgrades level
+const skillAscensionMap = {
+  1: [1],
+  2: [2],
+  3: [3, 4],
+  4: [5, 6],
+  5: [7],
+  6: [8, 9, 10]
 };
 
 const characterExp = [

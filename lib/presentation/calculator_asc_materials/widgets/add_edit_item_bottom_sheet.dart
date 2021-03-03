@@ -59,7 +59,11 @@ class AddEditItemBottomSheet extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(s.level, textAlign: TextAlign.center, style: theme.textTheme.subtitle2.copyWith(fontWeight: FontWeight.bold)),
+              Text(
+                s.level,
+                textAlign: TextAlign.center,
+                style: theme.textTheme.subtitle2.copyWith(fontWeight: FontWeight.bold),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -83,6 +87,10 @@ class AddEditItemBottomSheet extends StatelessWidget {
                         name: e.name,
                         currentLevel: e.currentLevel,
                         desiredLevel: e.desiredLevel,
+                        isCurrentDecEnabled: e.isCurrentDecEnabled,
+                        isCurrentIncEnabled: e.isCurrentIncEnabled,
+                        isDesiredDecEnabled: e.isDesiredDecEnabled,
+                        isDesiredIncEnabled: e.isDesiredIncEnabled,
                       ))
                   .toList()
             ],

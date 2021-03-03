@@ -26,12 +26,10 @@ class AscensionLevel extends StatelessWidget {
         ),
         onPressed: () {
           final newValue = i == CalculatorAscMaterialsItemBloc.minAscensionLevel && isSelected ? 0 : i;
-          final bloc = context.read<CalculatorAscMaterialsItemBloc>();
-          if (isCurrentLevel) {
-            bloc.add(CalculatorAscMaterialsItemEvent.currentLevelChanged(newValue: newValue));
-          } else {
-            bloc.add(CalculatorAscMaterialsItemEvent.desiredLevelChanged(newValue: newValue));
-          }
+          final event = isCurrentLevel
+              ? CalculatorAscMaterialsItemEvent.currentAscensionLevelChanged(newValue: newValue)
+              : CalculatorAscMaterialsItemEvent.desiredAscensionLevelChanged(newValue: newValue);
+          context.read<CalculatorAscMaterialsItemBloc>().add(event);
         },
       );
       widgets.add(button);

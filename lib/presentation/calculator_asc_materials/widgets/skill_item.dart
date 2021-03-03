@@ -9,6 +9,10 @@ class SkillItem extends StatelessWidget {
   final String name;
   final int currentLevel;
   final int desiredLevel;
+  final bool isCurrentIncEnabled;
+  final bool isCurrentDecEnabled;
+  final bool isDesiredIncEnabled;
+  final bool isDesiredDecEnabled;
 
   const SkillItem({
     Key key,
@@ -16,6 +20,10 @@ class SkillItem extends StatelessWidget {
     @required this.name,
     @required this.currentLevel,
     @required this.desiredLevel,
+    @required this.isCurrentIncEnabled,
+    @required this.isCurrentDecEnabled,
+    @required this.isDesiredIncEnabled,
+    @required this.isDesiredDecEnabled,
   }) : super(key: key);
 
   @override
@@ -33,8 +41,8 @@ class SkillItem extends StatelessWidget {
             IncrementButton(
               title: s.currentLevel,
               value: currentLevel,
-              incrementIsDisabled: currentLevel == CalculatorAscMaterialsItemBloc.maxSkillLevel,
-              decrementIsDisabled: currentLevel == CalculatorAscMaterialsItemBloc.minSkillLevel,
+              incrementIsDisabled: !isCurrentIncEnabled,
+              decrementIsDisabled: !isCurrentDecEnabled,
               onMinus: (val) {
                 context
                     .read<CalculatorAscMaterialsItemBloc>()
@@ -49,8 +57,8 @@ class SkillItem extends StatelessWidget {
             IncrementButton(
               title: s.desiredLevel,
               value: desiredLevel,
-              incrementIsDisabled: desiredLevel == CalculatorAscMaterialsItemBloc.maxSkillLevel,
-              decrementIsDisabled: desiredLevel == CalculatorAscMaterialsItemBloc.minSkillLevel,
+              incrementIsDisabled: !isDesiredIncEnabled,
+              decrementIsDisabled: !isDesiredDecEnabled,
               onMinus: (val) {
                 context
                     .read<CalculatorAscMaterialsItemBloc>()
