@@ -4975,27 +4975,27 @@
     },
     {
       "key": "DilligenceA",
-      "name": "Teachings of Dilligence"
+      "name": "Учение об “Усердии”"
     },
     {
       "key": "DilligenceB",
-      "name": "Guide to Dilligence"
+      "name": "Указание об “Усердии”"
     },
     {
       "key": "DilligenceC",
-      "name": "Philosophies of Dilligence"
+      "name": "Философия об “Усердии”"
     },
     {
       "key": "ResistanceA",
-      "name": "Teachings of Resistance"
+      "name": "Учение о “Борьбе”"
     },
     {
       "key": "ResistanceB",
-      "name": "Guide to Resistance"
+      "name": "Учказание о “Борьбе”"
     },
     {
       "key": "ResistanceC",
-      "name": "Philosophies of Resistance"
+      "name": "Философия о “Борьбе”"
     },
     {
       "key": "BalladA",
@@ -5100,35 +5100,35 @@
     },
     {
       "key": "ElixirA",
-      "name": "Mist Veiled Lead Elixir"
+      "name": "Свинцовая пилюля Заоблачного моря"
     },
     {
       "key": "ElixirB",
-      "name": "Mist Veiled Mercury Elixir"
+      "name": "Ртутная пилюля Заоблачного моря"
     },
     {
       "key": "ElixirC",
-      "name": "Mist Veiled Gold Elixir"
+      "name": "Золотая пилюля Заоблачного моря"
     },
     {
       "key": "ElixirD",
-      "name": "Mist Veiled Primo Elixir"
+      "name": "Примо эликсир Заоблачного моря"
     },
     {
       "key": "BorealWolfA",
-      "name": "Boreal Wolf’s Milk Tooth"
+      "name": "Молочный зуб арктического волка"
     },
     {
       "key": "BorealWolfB",
-      "name": "Boreal Wolf’s Cracked Tooth"
+      "name": "Треснувший зуб арктического волка"
     },
     {
       "key": "BorealWolfC",
-      "name": "Boreal Wolf’s Broken Fang"
+      "name": "Сломанный клык арктического волка"
     },
     {
       "key": "BorealWolfD",
-      "name": "Boreal Wolf's Nostalgia"
+      "name": "Ностальгия арктического волка"
     },
     {
       "key": "AerosideriteA",
@@ -5701,23 +5701,23 @@
     },
     {
       "key": "Overloaded",
-      "name": "Overloaded",
-      "effect": "Deals AoE Pyro DMG."
+      "name": "Перегрузка",
+      "effect": "Вызывает взрыв, который наносит Пиро урон по площади."
     },
     {
       "key": "Superconduct",
-      "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target's Physical RES by 50%."
+      "name": "Суперпроводник",
+      "effect": "Наносит Крио урон по площади и понижает защиту физ. сопротивление на 50% пострадавших целей"
     },
     {
       "key": "Swirl",
-      "name": "Swirl",
-      "effect": "Deals extra elemental damage and spreads the effect."
+      "name": "Рассеивание",
+      "effect": "Наносит дополнительный элементальный урон и накладывает соответствующий эффект."
     },
     {
       "key": "Vaporize",
-      "name": "Vaporize",
-      "effect": "Deals extra damage."
+      "name": "Пар",
+      "effect": "Наносит дополнительный урон."
     }
   ],
   "resonance": [
