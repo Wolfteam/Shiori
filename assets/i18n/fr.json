@@ -2209,7 +2209,7 @@
                             "descriptions": [
                                 "When Noelle’s Normal and Charged Attacks hit a target, they have a certain chance to regenerate HP for all characters, both on and off the field. The amount of HP healed when regeneration is triggered scales based on Noelle’s DEF.",
                                 "Applies the Geo element to the character.",
-                                "Possesses 250% Absorption Efficiency against Geo DMG."
+                                "Possesses 150% Absorption Efficiency against Geo DMG."
                             ]
                         }
                     ]

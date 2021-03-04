@@ -2209,7 +2209,7 @@
                             "descriptions": [
                                 "Cuando los Ataques Normales y Ataques Cargados de Noelle golpean un objetivo, hay una posibilidad de regenerar Vida a todos los miembros del equipo. La cantidad de Vida curada es proporcional a la DEF de Noelle.",
                                 "Aplica el elemento Geo al personaje.",
-                                "Posee un 250% de eficiencia de absorción contra Daño Geo."
+                                "Posee un 150% de eficiencia de absorción contra Daño Geo."
                             ]
                         }
                     ]
