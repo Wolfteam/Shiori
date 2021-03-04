@@ -3863,14 +3863,14 @@
   "weapons": [
     {
       "key": "Hunter’s Bow",
-      "name": "Охотничий лук",
-      "description": "A hunter’s music consists of but two sounds: the twang of the bowstring and the whoosh of soaring arrows.",
+      "name": "Лук охотника",
+      "description": "Музыка охотника состоит всего лишь из двух нот: натягивание тетивы и свиста спущенной стрелы.",
       "refinement": null
     },
     {
       "key": "Seasoned Hunter’s Bow",
-      "name": "Охотничий лук",
-      "description": "A bow that has been well-polished by time and meticulously cared for by its owner. It feels almost like an extension of the archer’s arm.",
+      "name": "Лук опытного охотника",
+      "description": "Ухоженный лук, полированный временем. Продолжение руки лучника.",
       "refinement": null
     },
     {
@@ -3882,37 +3882,37 @@
     {
       "key": "Messenger",
       "name": "Посыльный",
-      "description": "A basic wooden bow. It is said to have once been used as a tool for long-distance communication.",
+      "description": "Простой деревянный лук. Говорят, что когда-то такие луки использовали для дистанционного общения.",
       "refinement": "Шальная почта. Попадание Прицельным выстрелом по слабому месту дополнительно наносит {{0}}% Крит. урона. Может возникнуть раз в 10 секунд."
     },
     {
       "key": "Raven Bow",
-      "name": "Охотничий лук",
-      "description": "Ravens are known to be the ferrymen of the dead. This bow’s limb is decorated with raven feathers, which forebode the imminent death of its target.",
+      "name": "Лук ворона",
+      "description": "Как известно, вороны - проводники мёртвых. Этот лук украшен их перьями, предвещающими скорую смерть любой цели.",
       "refinement": "Увеличивает на {{0}}% урон против врагов, находящихся под действием Гидро или Пиро элементов."
     },
     {
       "key": "Recurve Bow",
       "name": "Изогнутый лук",
-      "description": "It is said that this bow can shoot down eagles in flight, but ultimately how true that is depends on the skill of the archer.",
+      "description": "Говорят, этот лук может сбить орла в полёте, но всё же многое зависит и от навыка самого лучника.",
       "refinement": "Победа над противником восстанавливает {{0}}% HP."
     },
     {
       "key": "Sharpshooter’s Oath",
       "name": "Клятва стрелка",
-      "description": "This superior bow once belonged to a master archer. However, it gives off a strong scent, thus making it unsuitable for hunting.",
+      "description": "Когда-то этот превосходный лук принадлежал профессиональному охотнику, однако его стойкий запах делает его непригодным для охоты.",
       "refinement": "Увеличивает урон по слабым местам противников на {{0}}%."
     },
     {
       "key": "Slingshot",
       "name": "Рогатка",
-      "description": "A bow, despite the name. After countless experiments and improvements to the design, the creator of the ultimate slingshot found himself to have made what was actually a bow.",
+      "description": "На самом деле это лук. Его создатель хотел сделать рогатку, но после кучи доработок и поправок у него получился лук.",
       "refinement": "Если обычная атака или Прицельный выстрел поразили цель в течение 0.3 сек после удара или выстрела, то их урон увеличивается на {{0}}%. В противном случае, урон уменьшается на 10%."
     },
     {
       "key": "The Stringless",
       "name": "Бесструнный",
-      "description": "A bow that once served as an extraordinary instrument. It is no longer capable of getting people up and dancing.",
+      "description": "Когда-то этот лук был восхитительным музыкальным инструментом, но больше под его музыку никто не запляшет.",
       "refinement": "Увеличивает урон элементальных навыков и взрыва стихий на {{0}}%."
     },
     {
@@ -3924,61 +3924,61 @@
     {
       "key": "Blackcliff Warbow",
       "name": "Черногорский боевой лук",
-      "description": "A bow made of blackcliff that features extremely sturdy bow limbs. It requires an archer with a strong bow arm to use.",
+      "description": "Весьма крепкий лук из чёрного камня. Только лучники с сильными руками смогут им воспользоваться.",
       "refinement": "Побеждённые противники увеличивают силу атаки на {{0}}%. Длится 30 сек. Эффект может складываться до 3 раз. Длительность добавочных эффектов друг от друга не зависит."
     },
     {
       "key": "Compound Bow",
       "name": "Составной лук",
-      "description": "An exotic metallic bow from a distant land. Though extremely difficult to maintain, it is easy to nock and fires with tremendous force.",
+      "description": "Экзотичный металлический составной лук, привезённый издалека. Сложен в уходе, но прост в обращении.",
       "refinement": "Попадание обычной атакой и прицельным выстрелом увеличивают силу атаки на {{0}}% и скорость атаки на {{1}}% в течение 6 сек. Может складываться до 4 раз. Может возникнуть раз 0.3 сек."
     },
     {
       "key": "Favonius Warbow",
       "name": "Боевой лук Фавония",
-      "description": "A standard-issue recurve bow of the Knights of Favonius. Only the best archers can unleash its full potential.",
+      "description": "Лук, входящий в стандартную экипировку рыцарей Ордо Фавониус, но только самые опытные лучники могут использовать весь его потенциал.",
       "refinement": "Критические атаки имеют {{0}}% шанс создать элементальные частицы, которые восстанавливают 6 ед. энергии. Возникает раз в {{1}} сек."
     },
     {
       "key": "Prototype Crescent",
       "name": "Прототип: Полумесяц",
-      "description": "A prototype longbow discovered in the Blackcliff Forge. The arrow fired from this bow glimmers like a ray of moonlight.",
+      "description": "Древний лук, обнаруженный в кузнице Черногорья. Выпущенная из этого лука стрела сияет, как луна после захода солнца.",
       "refinement": "Попадание прицельным выстрелом по слабым местам увеличивают скорость передвижения на 10% и силу атаки на {{0}}% в течение 10 сек.."
     },
     {
       "key": "Royal Bow",
       "name": "Королевский лук",
-      "description": "An old royal longbow that belonged to the erstwhile rulers of Mondstadt. Countless generations later, the bowstring is still tight and can still fire arrows with great force.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "description": "Древний лук правителя Мондштадта. Спустя века, тетива на нём всё ещё крепко натянута и готова пускать стрелы.",
+      "refinement": "При нанесении урона противнику повышает шанс крит. попадания на {{0}}%. Эффект может складываться до 5 раз. Добавочный шанс крит. попадания исчезает с первым крит. попаданием."
     },
     {
       "key": "Rust",
       "name": "Ржавый лук",
-      "description": "A completely rusted iron greatbow. The average person would lack the strength to even lift it, let alone fire it.",
+      "description": "Полностью проржавевший железный лук. У многих даже не получится поднять его, не говоря уж о стрельбе.",
       "refinement": "Увеличивает урон обычной атаки на {{0}}%, но понижает урон прицельного выстрела на 10%."
     },
     {
       "key": "Sacrificial Bow",
       "name": "Церемониальный лук",
-      "description": "A ceremonial hunting bow that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
+      "description": "Декоративный церемониальный лук, со временем покрывшийся камнем, но украшения на нём всё ещё можно разобрать. Позволяет владельцу выстоять суровость песков времени.",
       "refinement": "Попадания Элементальным навыком могут с {{0}}% вероятностью моментально восстановить собственный откат. Может возникнуть раз в {{1}} сек."
     },
     {
       "key": "The Viridescent Hunt",
-      "name": "The Viridescent Hunt",
-      "description": "A pure green hunting bow. This once belonged to a certain hunter whose home was the forest.",
+      "name": "Зелёный лук",
+      "description": "Лук чистого тёмно-зеленого цвета. Он принадлежал охотнику, который жил в лесу.",
       "refinement": "При попадании обычной или заряженной атакой появляется 50% шанс создать Циклон, который притягивает к себе врагов и наносит им {{0}}% урона каждые 0.5 сек. в течение 4 сек. Может возникнуть раз в {{1}} сек."
     },
     {
       "key": "Skyward Harp",
       "name": "Небесное крыло",
-      "description": "A greatbow that symbolizes Dvalin’s affiliation with the Anemo Archon. The sound of the bow firing is music to the Anemo Archon’s ears. It contains the power of the sky and wind within.",
+      "description": "Длинный лук, символ дружбы между Двалином и Анемо Архонтом. Звук спущенной тетивы исполнен любовь. Анемо Архонта, питающей его силой небес и ветров.",
       "refinement": "Увеличивает крит. урон на {{0}}%. При попадании есть {{1}}% шанс нанести 125% физ. урона в небольшом радиусе. Может возникнуть раз {{2}} сек."
     },
     {
       "key": "Amos’ Bow",
       "name": "Лук Амоса",
-      "description": "An extremely ancient bow that has retained its power despite its original master being long gone. It draws power from everyone and everything in the world, and the further away you are from that which your heart desires, the more powerful it is.",
+      "description": "Необычайно древний лук, который до сих пор сохранил силу своего давно ушедшего хозяина. Он поглощает энергию всего и всех на свете. Чем дальше вы от желаемой цели, тем мощнее выпущенные им стрелы.",
       "refinement": "Увеличивает урон обычной атаки и заряженной атаки на {{0}}%. Каждые 0.1 сек. полёта стрелы, выпущенной обычной или заряженной атакой, увеличивает её урон на {{1}}%. Эффект может складываться до 5 раз."
     },
     {
@@ -4999,27 +4999,27 @@
     },
     {
       "key": "BalladA",
-      "name": "Teachings of Ballad"
+      "name": "Учения о “Поэзии”"
     },
     {
       "key": "BalladB",
-      "name": "Guide to Ballad"
+      "name": "Указания о “Поэзии”"
     },
     {
       "key": "BalladC",
-      "name": "Philosophies of Ballad"
+      "name": "Философия о “Поэзии”"
     },
     {
       "key": "GoldA",
-      "name": "Teachings of Gold"
+      "name": "Учение о “Золоте”"
     },
     {
       "key": "GoldB",
-      "name": "Guide to Gold"
+      "name": "Указание о “Золоте”"
     },
     {
       "key": "GoldC",
-      "name": "Philosophies of Gold"
+      "name": "Философия о “Золоте”"
     },
     {
       "key": "Tail of Boreas",
@@ -5132,19 +5132,19 @@
     },
     {
       "key": "AerosideriteA",
-      "name": "Grain of Aerosiderite"
+      "name": "Зерно чёрного сидерита"
     },
     {
       "key": "AerosideriteB",
-      "name": "Piece of Aerosiderite"
+      "name": "Кусочек чёрного сидерита"
     },
     {
       "key": "AerosideriteC",
-      "name": "Bit of Aerosiderite"
+      "name": "Осколок чёрного сидерита"
     },
     {
       "key": "AerosideriteD",
-      "name": "Chunk of Aerosiderite"
+      "name": "Обломок чёрного сидерита"
     },
     {
       "key": "GladiatorA",
@@ -5237,102 +5237,6 @@
     {
       "key": "BoneShardC",
       "name": "Fossilized Bone Shard"
-    },
-    {
-      "key": "DecarabianA",
-      "name": "Tile of Decarabian's Tower"
-    },
-    {
-      "key": "DecarabianB",
-      "name": "Debris of Decarabian's City"
-    },
-    {
-      "key": "DecarabianC",
-      "name": "Fragment of Decarabian's Epic"
-    },
-    {
-      "key": "DecarabianD",
-      "name": "Scattered Piece of Decarabian's Dream"
-    },
-    {
-      "key": "GuyunA",
-      "name": "Luminous Sands from Guyun"
-    },
-    {
-      "key": "GuyunB",
-      "name": "Lustrous Stone from Guyun"
-    },
-    {
-      "key": "GuyunC",
-      "name": "Relic from Guyun"
-    },
-    {
-      "key": "GuyunD",
-      "name": "Divine Body from Guyun"
-    },
-    {
-      "key": "ElixirA",
-      "name": "Mist Veiled Lead Elixir"
-    },
-    {
-      "key": "ElixirB",
-      "name": "Mist Veiled Mercury Elixir"
-    },
-    {
-      "key": "ElixirC",
-      "name": "Mist Veiled Gold Elixir"
-    },
-    {
-      "key": "ElixirD",
-      "name": "Mist Veiled Primo Elixir"
-    },
-    {
-      "key": "BorealWolfA",
-      "name": "Boreal Wolf's Milk Tooth"
-    },
-    {
-      "key": "BorealWolfB",
-      "name": "Boreal Wolf's Cracked Tooth"
-    },
-    {
-      "key": "BorealWolfC",
-      "name": "Boreal Wolf's Broken Fang"
-    },
-    {
-      "key": "BorealWolfD",
-      "name": "Boreal Wolf's Nostalgia"
-    },
-    {
-      "key": "AerosideriteA",
-      "name": "Grain of Aerosiderite"
-    },
-    {
-      "key": "AerosideriteB",
-      "name": "Piece of Aerosiderite"
-    },
-    {
-      "key": "AerosideriteC",
-      "name": "Bit of Aerosiderite"
-    },
-    {
-      "key": "AerosideriteD",
-      "name": "Chunk of Aerosiderite"
-    },
-    {
-      "key": "GladiatorA",
-      "name": "Fetters of the Dandelion Gladiator"
-    },
-    {
-      "key": "GladiatorB",
-      "name": "Chains of the Dandelion Gladiator"
-    },
-    {
-      "key": "GladiatorC",
-      "name": "Shackles of the Dandelion Gladiator"
-    },
-    {
-      "key": "GladiatorD",
-      "name": "Dream of the Dandelion Gladiator"
     },
     {
       "key": "MaskA",
