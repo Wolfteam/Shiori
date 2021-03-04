@@ -117,6 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "constellationX" : m4,
     "constellations" : MessageLookupByLibrary.simpleMessage("Constelaciones"),
     "crafting" : MessageLookupByLibrary.simpleMessage("Fabricado"),
+    "craftingMaterials" : MessageLookupByLibrary.simpleMessage("Materiales de Elaboración"),
     "critAtk" : m5,
     "critDmgPercentage" : m6,
     "critRate" : m7,

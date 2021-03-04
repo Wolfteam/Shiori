@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:genshindb/domain/enums/enums.dart';
 
 import '../../enums/stat_type.dart';
 import '../../enums/weapon_type.dart';
@@ -13,6 +14,7 @@ class WeaponCardModel {
   final StatType subStatType;
   final double subStatValue;
   final bool isComingSoon;
+  final ItemLocationType locationType;
 
   const WeaponCardModel({
     @required this.key,
@@ -24,5 +26,6 @@ class WeaponCardModel {
     @required this.subStatType,
     @required this.subStatValue,
     @required this.isComingSoon,
+    @required this.locationType,
   });
 }

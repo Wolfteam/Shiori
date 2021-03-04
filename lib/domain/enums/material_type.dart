@@ -8,4 +8,5 @@ enum MaterialType {
   weaponPrimary,
   currency,
   others,
+  ingredient,
 }

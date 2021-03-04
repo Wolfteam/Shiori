@@ -59,6 +59,7 @@ class _WeaponPageState extends State<WeaponPage> with SingleTickerProviderStateM
                       ascensionMaterials: s.ascensionMaterials,
                       refinements: s.refinements,
                       charImgs: s.charImages,
+                      craftingMaterials: s.craftingMaterials,
                     ),
                   ],
                 ),

@@ -36,9 +36,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         return currentState.copyWith.call(tempElementTypes: types);
       },
       rarityChanged: (e) => currentState.copyWith.call(tempRarity: e.rarity),
-      itemStatusChanged: (e) => currentState.copyWith.call(
-        tempStatusType: e.statusType,
-      ),
+      itemStatusChanged: (e) => currentState.copyWith.call(tempStatusType: e.statusType),
       sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
       weaponTypeChanged: (e) {
         var types = <WeaponType>[];
@@ -49,6 +47,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         }
         return currentState.copyWith.call(tempWeaponTypes: types);
       },
+      roleTypeChanged: (e) => currentState.copyWith.call(tempRoleType: e.roleType),
       searchChanged: (e) => _buildInitialState(
         search: e.search,
         characterFilterType: currentState.characterFilterType,
@@ -57,6 +56,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         statusType: currentState.statusType,
         sortDirectionType: currentState.sortDirectionType,
         weaponTypes: currentState.weaponTypes,
+        roleType: currentState.tempRoleType,
       ),
       applyFilterChanges: (_) => _buildInitialState(
         search: currentState.search,
@@ -66,6 +66,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         statusType: currentState.tempStatusType,
         sortDirectionType: currentState.tempSortDirectionType,
         weaponTypes: currentState.tempWeaponTypes,
+        roleType: currentState.tempRoleType,
       ),
       cancelChanges: (_) => currentState.copyWith.call(
         tempCharacterFilterType: currentState.characterFilterType,
@@ -74,6 +75,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         tempStatusType: currentState.statusType,
         tempSortDirectionType: currentState.sortDirectionType,
         tempWeaponTypes: currentState.weaponTypes,
+        tempRoleType: currentState.roleType,
       ),
     );
     yield s;
@@ -88,6 +90,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     ItemStatusType statusType = ItemStatusType.all,
     CharacterFilterType characterFilterType = CharacterFilterType.name,
     SortDirectionType sortDirectionType = SortDirectionType.asc,
+    CharacterRoleType roleType = CharacterRoleType.all,
   }) {
     final isLoaded = state is _LoadedState;
     var characters = _genshinService.getCharactersForCard();
@@ -112,6 +115,8 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         sortDirectionType: sortDirectionType,
         tempSortDirectionType: sortDirectionType,
         showCharacterDetails: _settingsService.showCharacterDetails,
+        roleType: roleType,
+        tempRoleType: roleType,
       );
     }
 
@@ -129,6 +134,10 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
 
     if (elementTypes.isNotEmpty) {
       characters = characters.where((el) => elementTypes.contains(el.elementType)).toList();
+    }
+
+    if (roleType != CharacterRoleType.all) {
+      characters = characters.where((el) => el.roleType == roleType).toList();
     }
 
     switch (statusType) {

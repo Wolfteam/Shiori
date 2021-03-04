@@ -58,7 +58,7 @@ class ArtifactCard extends StatelessWidget {
         elevation: withElevation ? Styles.cardTenElevation : 0,
         gradient: rarity.getRarityGradient(),
         child: Padding(
-          padding: Styles.edgeInsetAll5,
+          padding: withoutDetails ? Styles.edgeInsetAll5 : Styles.edgeInsetAll10,
           child: Column(
             children: [
               FadeInImage(

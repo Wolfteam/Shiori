@@ -1,3 +1,5 @@
+import 'package:devicelocale/devicelocale.dart';
+import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/logging_service.dart';
@@ -101,8 +103,7 @@ class SettingsServiceImpl extends SettingsService {
     }
 
     if (_prefs.get(_appLanguageKey) == null) {
-      _logger.info(runtimeType, 'Setting english as the default lang');
-      language = AppLanguageType.english;
+      language = await _getDefaultLangToUse();
     }
 
     if (_prefs.get(_showCharacterDetailsKey) == null) {
@@ -122,5 +123,29 @@ class SettingsServiceImpl extends SettingsService {
 
     _initialized = true;
     _logger.info(runtimeType, 'Settings were initialized successfully');
+  }
+
+  Future<AppLanguageType> _getDefaultLangToUse() async {
+    try {
+      _logger.info(runtimeType, '_getDefaultLangToUse: Trying to retrieve device lang...');
+      final deviceLocale = await Devicelocale.currentAsLocale;
+      final appLang = languagesMap.entries.firstWhere((val) => val.value.code == deviceLocale.languageCode, orElse: () => null);
+      if (appLang == null) {
+        _logger.info(
+          runtimeType,
+          "_getDefaultLangToUse: Couldn't find an appropriate app language for = ${deviceLocale.languageCode}_${deviceLocale.countryCode}, falling back to english",
+        );
+        return AppLanguageType.english;
+      }
+
+      _logger.info(
+        runtimeType,
+        '_getDefaultLangToUse: Found an appropriate language to use for = ${deviceLocale.languageCode}_${deviceLocale.countryCode}, that is = ${appLang.key}',
+      );
+      return appLang.key;
+    } catch (e, s) {
+      _logger.error(runtimeType, '_getDefaultLangToUse: Unknown error occurred', e, s);
+      return AppLanguageType.english;
+    }
   }
 }

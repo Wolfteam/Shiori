@@ -1,3 +1,4 @@
+import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/extensions/string_extensions.dart';
 import 'package:genshindb/domain/models/models.dart';
@@ -43,21 +44,10 @@ class LocaleServiceImpl implements LocaleService {
 
   @override
   LanguageModel getLocale(AppLanguageType language) {
-    var langCode = 'en';
-    var countryCode = 'US';
-    switch (language) {
-      case AppLanguageType.spanish:
-        langCode = 'es';
-        countryCode = 'ES';
-        break;
-      case AppLanguageType.french:
-        langCode = 'fr';
-        countryCode = 'FR';
-        break;
-      default:
-        break;
+    if (!languagesMap.entries.any((kvp) => kvp.key == language)) {
+      throw Exception('The language = $language is not a valid value');
     }
 
-    return LanguageModel(langCode, countryCode);
+    return languagesMap.entries.firstWhere((kvp) => kvp.key == language).value;
   }
 }

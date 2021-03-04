@@ -1,4 +1,5 @@
-enum CharacterType {
+enum CharacterRoleType {
+  all,
   mainDps,
   supportDps,
   utility,

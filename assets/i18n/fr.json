@@ -1212,6 +1212,130 @@
             ]
           },
         {
+            "key": "HuTao",
+            "name": "Hu Tao",
+            "description": "The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.",
+            "skills": [
+                {
+                    "key": "s1",
+                    "title": "Secret Spear of Wangsheng",
+                    "description": null,
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "description": "Performs up to six consecutive spear strikes.",
+                            "descriptions": []
+                        },
+                        {
+                            "key": "a2",
+                            "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.",
+                            "descriptions": []
+                        },
+                        {
+                            "key": "a3",
+                            "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                            "descriptions": []
+                        }
+                    ]
+                },
+                {
+                    "key": "s2",
+                    "title": "Guide to Afterlife",
+                    "description": "Only an unwavering flame can cleanse the impurities of this world.\nHu Tao consumes a set portion of her HP to knock the surrounding enemies back and enter the Paramita Papilio state.",
+                    "abilities": [
+                        {
+                            "name": "Paramita Papilio",
+                            "descriptions": [
+                                "Increases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK.",
+                                "Converts attack DMG to Pyro DMG, which cannot be overridden by any other elemental infusion.",
+                                "Charged Attacks apply the Blood Blossom effect to the enemies hit.",
+                                "Increases Hu Tao's resistance to interruption."
+                            ]
+                        },
+                        {
+                            "name": "Blood Blossom",
+                            "description": "Enemies affected by Blood Blossom will take Pyro DMG every 4s. This DMG is considered Elemental Skill DMG.\nEach enemy can be affected by only one Blood Blossom effect at a time, and its duration may only be refreshed by Hu Tao herself.\nParamita Papilio ends when its duration is over, or Hu Tao has left the battlefield or fallen.",
+                            "descriptions": []
+                        }
+                    ]
+                },
+                {
+                    "key": "s3",
+                    "title": "Spirit Soother",
+                    "description": "Commands a blazing spirit to attack, dealing Pyro DMG in a large AoE.\nUpon striking the enemy, regenerates a percentage of Hu Tao's Max HP. This effect can be triggered up to 5 times, based on the number of enemies hit.\nIf Hu Tao's HP is below or equal to 50% when the enemy is hit, both the DMG and HP Regeneration are increased.",
+                    "abilities": []
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "title": "The More the Merrier",
+                    "description": "When Hu Tao cooks a dish perfectly, she has a 18% chance to receive an additional \"Suspicious\" dish of the same type.",
+                    "descriptions": []
+                },
+                {
+                    "key": "p2",
+                    "title": "Flutter By",
+                    "description": "When a Paramita Papilio state activated by Guide to Afterlife ends, all allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 8s.",
+                    "descriptions": []
+                },
+                {
+                    "key": "p3",
+                    "title": "Sanguine Rouge",
+                    "description": "When Hu Tao's HP is equal to or less than 50%, her Pyro DMG Bonus is increased by 33%.",
+                    "descriptions": []
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "title": "Crimson Bouquet",
+                    "description": "While in a Paramita Papilio state activated by Guide to Afterlife, Hu Tao's Charge Attacks do not consume Stamina.",
+                    "secondDescription": null,
+                    "descriptions": []
+                },
+                {
+                    "key": "c2",
+                    "title": "Ominous Rainfall",
+                    "description": "Increases the Blood Blossom DMG by an amount equal to 10% of Hu Tao's Max HP at the time the effect is applied.\nAdditionally, Spirit Soother will also apply the Blood Blossom effect.",
+                    "secondDescription": null,
+                    "descriptions": []
+                },
+                {
+                    "key": "c3",
+                    "title": "Lingering Carmine",
+                    "description": "Increases the Level of Guide to Afterlife by 3. Maximum upgrade level is 15.",
+                    "secondDescription": null,
+                    "descriptions": []
+                },
+                {
+                    "key": "c4",
+                    "title": "Garden of Eternal Rest",
+                    "description": "Upon defeating an enemy affected by a Blood Blossom that Hu Tao applied herself, all nearby allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 15s.",
+                    "secondDescription": null,
+                    "descriptions": []
+                },
+                {
+                    "key": "c5",
+                    "title": "Floral Incense",
+                    "description": "Increases the Level of Spirit Soother by 3. Maximum upgrade level is 15.",
+                    "secondDescription": null,
+                    "descriptions": []
+                },
+                {
+                    "key": "c6",
+                    "title": "Butterfly's Embrace",
+                    "description": "Triggers when Hu Tao's HP drops below 25%, or when she suffers a lethal strike:",
+                    "secondDescription": null,
+                    "descriptions": [
+                        "Hu Tao will not fall as a result of the DMG sustained. Additionally, for the next 10s, all of her Elemental and Physical RES is increased by 200%, her CRIT Rate is increased by 100%, and her resistance to interruption is greatly increased.",
+                        "This effect triggers automatically when Hu Tao has 1 HP left.",
+                        "Can only occur once every 60s."
+                    ]
+                }
+            ]
+        },
+        {
             "key": "Jean",
             "name": "Jean",
             "description": "The righteous and rigorous Dandelion Knight, and Acting Grand Master of the Knights of Favonius in Mondstadt.",
@@ -2085,7 +2209,7 @@
                             "descriptions": [
                                 "When Noelle’s Normal and Charged Attacks hit a target, they have a certain chance to regenerate HP for all characters, both on and off the field. The amount of HP healed when regeneration is triggered scales based on Noelle’s DEF.",
                                 "Applies the Geo element to the character.",
-                                "Possesses 250% Absorption Efficiency against Geo DMG."
+                                "Possesses 150% Absorption Efficiency against Geo DMG."
                             ]
                         }
                     ]
@@ -2417,6 +2541,104 @@
                     "title": "Lupus Fulguris",
                     "description": "Every 10s, Razor’s sword charges up, causing the next Normal Attack to release lightning that deals 100% of Razor’s ATK as Electro DMG. When Razor is not using Lightning Fang, a lightning strike on an enemy will grant Razor an Electro Sigil for Claw and Thunder.",
                     "secondDescription": null,
+                    "descriptions": []
+                }
+            ]
+        },
+        {
+            "key": "Rosaria",
+            "name": "Rosaria",
+            "description": "A nun who, outside of her garb, seems nothing at all like a person of the cloth. Known for her sharp, cold words and manner, she often works alone.",
+            "skills": [
+                {
+                    "key": "s1",
+                    "title": "Spear of Worship",
+                    "abilities": [
+                        {
+                            "key": "a1",
+                            "description": "Performs up to five consecutive spear strikes.",
+                            "descriptions": []
+                        },
+                        {
+                            "key": "a2",
+                            "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.",
+                            "descriptions": []
+                        },
+                        {
+                            "key": "a3",
+                            "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                            "descriptions": []
+                        }
+                    ]
+                },
+                {
+                    "key": "s2",
+                    "title": "Ravaging Confession",
+                    "description": "Rosaria swiftly shifts her position to appear behind her opponent, then stabs and slashes them with her polearm, dealing Cyro DMG.\nThis ability cannot be used to travel behind opponents of a larger build.",
+                    "abilities": []
+                },
+                {
+                    "key": "s3",
+                    "title": "Rites of Termination",
+                    "description": "Rosaria's unique take on this prayer ritual: First, she swings her weapon to slash surrounding opponents; then, she summons a frigid Ice Lance that strikes the ground. Both actions deal Cryo DMG.\nWhile active, the Ice Lance periodically releases a blast of cold air, dealing Cryo DMG to surrounding opponents.",
+                    "abilities": []
+                }
+            ],
+            "passives": [
+                {
+                    "key": "p1",
+                    "title": "Night Walk",
+                    "description": "At night (18:00–6:00), increases the Movement SPD of your own party members by 10%.\nDoes not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects.",
+                    "descriptions": []
+                },
+                {
+                    "key": "p2",
+                    "title": "Extracted Confession",
+                    "description": "When Rosaria strikes an opponent from behind using Ravaging Confession, Rosaria's CRIT Rate increases by 12% for 5s.",
+                    "descriptions": []
+                },
+                {
+                    "key": "p3",
+                    "title": "Shadow Samaritan",
+                    "description": "Casting Rites of Termination increases CRIT Rate of all nearby party members (except Rosaria herself) by 15% of Rosaria's CRIT Rate for 10s.\nCRIT Rate Bonus gained this way cannot exceed 15%.",
+                    "descriptions": []
+                }
+            ],
+            "constellations": [
+                {
+                    "key": "c1",
+                    "title": "Unholy Revelation",
+                    "description": "When Rosaria deals a CRIT Hit, her ATK SPD increases by 10% and her Normal Attack DMG increases by 10% for 4s.",
+                    "descriptions": []
+                },
+                {
+                    "key": "c2",
+                    "title": "Land Without Promise",
+                    "description": "The duration of the Ice Lance created by Rites of Termination is increased by 4s.",
+                    "descriptions": []
+                },
+                {
+                    "key": "c3",
+                    "title": "Sacrament of Penance",
+                    "description": "Increases the Level of Ravaging Confessionby 3. Maximum upgrade level is 15.",
+                    "descriptions": []
+                },
+                {
+                    "key": "c4",
+                    "title": "Amazing Disgrace",
+                    "description": "Ravaging Confession's Crit Hits regenerate 5 Energy for Rosaria. Can only be triggered once each time Ravaging Confession is cast.",
+                    "descriptions": []
+                },
+                {
+                    "key": "c5",
+                    "title": "Extreme Unction",
+                    "description": "Increases the Level of Rites of Termination by 3. Maximum upgrade level is 15.",
+                    "descriptions": []
+                },
+                {
+                    "key": "c6",
+                    "title": "Divine Retribution",
+                    "description": "Rites of Termination' attack decreases opponents' Physical RES by 20% for 10s.",
                     "descriptions": []
                 }
             ]

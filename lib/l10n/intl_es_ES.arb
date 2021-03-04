@@ -212,5 +212,6 @@
     "electro": "Electro",
     "geo": "Geo",
     "pyro": "Pyro",
-    "hydro": "Hydro"
+    "hydro": "Hydro",
+    "craftingMaterials": "Materiales de Elaboración"
 }
