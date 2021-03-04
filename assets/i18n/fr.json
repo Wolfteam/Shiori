@@ -1241,7 +1241,7 @@
                 {
                     "key": "s2",
                     "title": "Guide to Afterlife",
-                    "description": "Only an unwavering flame can cleanse the impurities of this world.\n Hu Tao consumes a set portion of her HP to knock the surrounding enemies back and enter the Paramita Papilio state.",
+                    "description": "Only an unwavering flame can cleanse the impurities of this world.\nHu Tao consumes a set portion of her HP to knock the surrounding enemies back and enter the Paramita Papilio state.",
                     "abilities": [
                         {
                             "name": "Paramita Papilio",
@@ -1254,12 +1254,7 @@
                         },
                         {
                             "name": "Blood Blossom",
-                            "description": "Enemies affected by Blood Blossom will take Pyro DMG every 4s. This DMG is considered Elemental Skill DMG.\n Each enemy can be affected by only one Blood Blossom effect at a time, and its duration may only be refreshed by Hu Tao herself.Paramita Papilio ends when its duration is over, or Hu Tao has left the battlefield or fallen.",
-                            "descriptions": []
-                        },
-                        {
-                            "name": "Spirit Soother",
-                            "description": "Commands a blazing spirit to attack, dealing Pyro DMG in a large AoE.\nUpon striking the enemy, regenerates a percentage of Hu Tao's Max HP. This effect can be triggered up to 5 times, based on the number of enemies hit.\nIf Hu Tao's HP is below or equal to 50% when the enemy is hit, both the DMG and HP Regeneration are increased.",
+                            "description": "Enemies affected by Blood Blossom will take Pyro DMG every 4s. This DMG is considered Elemental Skill DMG.\nEach enemy can be affected by only one Blood Blossom effect at a time, and its duration may only be refreshed by Hu Tao herself.\nParamita Papilio ends when its duration is over, or Hu Tao has left the battlefield or fallen.",
                             "descriptions": []
                         }
                     ]
@@ -1281,7 +1276,7 @@
                 {
                     "key": "p2",
                     "title": "Flutter By",
-                    "description": "Paramita Papilio state activated by Guide to Afterlife ends, all allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 8s.",
+                    "description": "When a Paramita Papilio state activated by Guide to Afterlife ends, all allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 8s.",
                     "descriptions": []
                 },
                 {
