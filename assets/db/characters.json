@@ -7303,11 +7303,11 @@
       "image": "HuTao.png",
       "fullImage": "HuTao.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": true,
       "region": "liyue",
-      "role": "na",
+      "role": "mainDps",
       "tier": "s",
       "birthday": "07/15",
       "ascensionMaterials": [
@@ -7700,11 +7700,41 @@
           ]
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "staff_of_homa.png",
+            "dragons_bane.png",
+            "primordial_jade_winged_spear.png",
+            "white_tassel.png"
+          ],
+          "artifacts": [
+            {
+              "one": "crimson_witch_of_flames_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "pyroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "elementaryMastery",
+            "hpPercentage"
+          ]
+        }
+      ],
       "skills": [
         {
           "key": "s1",
           "type": "normalAttack",
+          "image": "normal_attack_dough_fu.png",
           "abilities": [
             {
               "key": "a1",
@@ -7722,51 +7752,62 @@
         },
         {
           "key": "s2",
-          "type": "elementalSkill"
+          "type": "elementalSkill",
+          "image": "rebirths_chaperone.png"
         },
         {
           "key": "s3",
-          "type": "elementalBurst"
+          "type": "elementalBurst",
+          "image": "godsoother.png"
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "unlockedAt": -1
+          "unlockedAt": -1,
+          "image": "hutao_passive_1.png"
         },
         {
           "key": "p2",
-          "unlockedAt": 1
+          "unlockedAt": 1,
+          "image": "hutao_passive_2.png"
         },
         {
           "key": "p3",
-          "unlockedAt": 4
+          "unlockedAt": 4,
+          "image": "hutao_passive_3.png"
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "number": 1
+          "number": 1,
+          "image": "hutao_const_1.png"
         },
         {
           "key": "c2",
-          "number": 2
+          "number": 2,
+          "image": "hutao_const_2.png"
         },
         {
           "key": "c3",
-          "number": 3
+          "number": 3,
+          "image": "rebirths_chaperone.png"
         },
         {
           "key": "c4",
-          "number": 4
+          "number": 4,
+          "image": "hutao_const_4.png"
         },
         {
           "key": "c5",
-          "number": 5
+          "number": 5,
+          "image": "godsoother.png"
         },
         {
           "key": "c6",
-          "number": 6
+          "number": 6,
+          "image": "hutao_const_6.png"
         }
       ],
       "subStatType": "critDmgPercentage",
@@ -9669,23 +9710,13 @@
         {
           "isSupport": false,
           "weaponImages": [
+            "primordial_jade_cutter.png",
             "aquila_favonia.png",
-            "the_black_sword.png",
             "lions_roar.png",
-            "the_flute.png"
+            "the_black_sword.png",
+            "prototype_rancour.png"
           ],
           "artifacts": [
-            {
-              "one": "thundersoother_4.png",
-              "multiples": [],
-              "stats": [
-                "hp",
-                "atk",
-                "atkPercentage",
-                "electroDmgBonusPercentage",
-                "critDmgPercentage"
-              ]
-            },
             {
               "multiples": [
                 {
@@ -9697,6 +9728,28 @@
                   "image": "thundering_fury_4.png"
                 }
               ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "electroDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
+            {
+              "one": "thundering_fury_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "electroDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
+            {
+              "one": "thundersoother_4.png",
+              "multiples": [],
               "stats": [
                 "hp",
                 "atk",
@@ -9717,8 +9770,9 @@
           "isSupport": false,
           "weaponImages": [
             "aquila_favonia.png",
+            "primordial_jade_cutter.png",
+            "prototype_rancour.png",
             "the_black_sword.png",
-            "lions_roar.png",
             "the_flute.png"
           ],
           "artifacts": [
@@ -9733,17 +9787,6 @@
                   "image": "bloodstained_chivalry_4.png"
                 }
               ],
-              "stats": [
-                "hp",
-                "atk",
-                "atkPercentage",
-                "physDmgBonusPercentage",
-                "critDmgPercentage"
-              ]
-            },
-            {
-              "one": "thundersoother_4.png",
-              "multiples": [],
               "stats": [
                 "hp",
                 "atk",
@@ -21042,21 +21085,11 @@
           "isSupport": true,
           "weaponImages": [
             "sacrificial_sword.png",
-            "skyward_blade.png",
-            "festering_fang.png"
+            "primordial_jade_cutter.png",
+            "festering_fang.png",
+            "harbinger_of_dawn.png"
           ],
           "artifacts": [
-            {
-              "one": "noblesse_oblige_4.png",
-              "multiples": [],
-              "stats": [
-                "hp",
-                "atk",
-                "energyRechargePercentage",
-                "hydroDmgBonusPercentage",
-                "critRatePercentage"
-              ]
-            },
             {
               "multiples": [
                 {
@@ -21075,14 +21108,24 @@
                 "hydroDmgBonusPercentage",
                 "critRatePercentage"
               ]
+            },
+            {
+              "one": "noblesse_oblige_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "hydroDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
             }
           ],
           "subStatsToFocus": [
             "energyRechargePercentage",
             "critRatePercentage",
             "critDmgPercentage",
-            "atkPercentage",
-            "elementaryMastery"
+            "atkPercentage"
           ]
         }
       ],
