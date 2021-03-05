@@ -4,25 +4,21 @@ import 'package:genshindb/domain/extensions/string_extensions.dart';
 import 'package:genshindb/domain/services/device_info_service.dart';
 import 'package:genshindb/domain/services/logging_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
-import 'package:log_4_dart_2/log_4_dart_2.dart';
 import 'package:sprintf/sprintf.dart';
 
 class LoggingServiceImpl implements LoggingService {
-  final Logger _logger;
   final TelemetryService _telemetryService;
   final DeviceInfoService _deviceInfoService;
 
-  LoggingServiceImpl(this._logger, this._telemetryService, this._deviceInfoService);
+  LoggingServiceImpl(this._telemetryService, this._deviceInfoService);
 
   @override
   void info(Type type, String msg, [List<Object> args]) {
     assert(type != null && !msg.isNullEmptyOrWhitespace);
 
     if (args != null && args.isNotEmpty) {
-      _logger.info(type.toString(), sprintf(msg, args));
       dog.i('$type - ${sprintf(msg, args)}');
     } else {
-      _logger.info(type.toString(), msg);
       dog.i('$type - $msg');
     }
   }
@@ -31,7 +27,6 @@ class LoggingServiceImpl implements LoggingService {
   void warning(Type type, String msg, [dynamic ex, StackTrace trace]) {
     assert(type != null && !msg.isNullEmptyOrWhitespace);
     final tag = type.toString();
-    _logger.warning(tag, _formatEx(msg, ex), ex, trace);
     dog.w('$tag - ${_formatEx(msg, ex)}');
 
     if (kReleaseMode) {
@@ -43,7 +38,6 @@ class LoggingServiceImpl implements LoggingService {
   void error(Type type, String msg, [dynamic ex, StackTrace trace]) {
     assert(type != null && !msg.isNullEmptyOrWhitespace);
     final tag = type.toString();
-    _logger.error(tag, _formatEx(msg, ex), ex, trace);
     dog.e('$tag - ${_formatEx(msg, ex)}');
 
     if (kReleaseMode) {
