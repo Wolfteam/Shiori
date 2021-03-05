@@ -1241,7 +1241,7 @@
                 {
                     "key": "s2",
                     "title": "Guide to Afterlife",
-                    "description": "Only an unwavering flame can cleanse the impurities of this world.\n Hu Tao consumes a set portion of her HP to knock the surrounding enemies back and enter the Paramita Papilio state.",
+                    "description": "Only an unwavering flame can cleanse the impurities of this world.\nHu Tao consumes a set portion of her HP to knock the surrounding enemies back and enter the Paramita Papilio state.",
                     "abilities": [
                         {
                             "name": "Paramita Papilio",
@@ -1254,12 +1254,7 @@
                         },
                         {
                             "name": "Blood Blossom",
-                            "description": "Enemies affected by Blood Blossom will take Pyro DMG every 4s. This DMG is considered Elemental Skill DMG.\n Each enemy can be affected by only one Blood Blossom effect at a time, and its duration may only be refreshed by Hu Tao herself.Paramita Papilio ends when its duration is over, or Hu Tao has left the battlefield or fallen.",
-                            "descriptions": []
-                        },
-                        {
-                            "name": "Spirit Soother",
-                            "description": "Commands a blazing spirit to attack, dealing Pyro DMG in a large AoE.\nUpon striking the enemy, regenerates a percentage of Hu Tao's Max HP. This effect can be triggered up to 5 times, based on the number of enemies hit.\nIf Hu Tao's HP is below or equal to 50% when the enemy is hit, both the DMG and HP Regeneration are increased.",
+                            "description": "Enemies affected by Blood Blossom will take Pyro DMG every 4s. This DMG is considered Elemental Skill DMG.\nEach enemy can be affected by only one Blood Blossom effect at a time, and its duration may only be refreshed by Hu Tao herself.\nParamita Papilio ends when its duration is over, or Hu Tao has left the battlefield or fallen.",
                             "descriptions": []
                         }
                     ]
@@ -1281,7 +1276,7 @@
                 {
                     "key": "p2",
                     "title": "Flutter By",
-                    "description": "Paramita Papilio state activated by Guide to Afterlife ends, all allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 8s.",
+                    "description": "When a Paramita Papilio state activated by Guide to Afterlife ends, all allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 8s.",
                     "descriptions": []
                 },
                 {
@@ -2214,7 +2209,7 @@
                             "descriptions": [
                                 "When Noelle’s Normal and Charged Attacks hit a target, they have a certain chance to regenerate HP for all characters, both on and off the field. The amount of HP healed when regeneration is triggered scales based on Noelle’s DEF.",
                                 "Applies the Geo element to the character.",
-                                "Possesses 250% Absorption Efficiency against Geo DMG."
+                                "Possesses 150% Absorption Efficiency against Geo DMG."
                             ]
                         }
                     ]
@@ -5237,102 +5232,6 @@
         {
             "key": "BoneShardC",
             "name": "Fossilized Bone Shard"
-        },
-        {
-            "key": "DecarabianA",
-            "name": "Tile of Decarabian's Tower"
-        },
-        {
-            "key": "DecarabianB",
-            "name": "Debris of Decarabian's City"
-        },
-        {
-            "key": "DecarabianC",
-            "name": "Fragment of Decarabian's Epic"
-        },
-        {
-            "key": "DecarabianD",
-            "name": "Scattered Piece of Decarabian's Dream"
-        },
-        {
-            "key": "GuyunA",
-            "name": "Luminous Sands from Guyun"
-        },
-        {
-            "key": "GuyunB",
-            "name": "Lustrous Stone from Guyun"
-        },
-        {
-            "key": "GuyunC",
-            "name": "Relic from Guyun"
-        },
-        {
-            "key": "GuyunD",
-            "name": "Divine Body from Guyun"
-        },
-        {
-            "key": "ElixirA",
-            "name": "Mist Veiled Lead Elixir"
-        },
-        {
-            "key": "ElixirB",
-            "name": "Mist Veiled Mercury Elixir"
-        },
-        {
-            "key": "ElixirC",
-            "name": "Mist Veiled Gold Elixir"
-        },
-        {
-            "key": "ElixirD",
-            "name": "Mist Veiled Primo Elixir"
-        },
-        {
-            "key": "BorealWolfA",
-            "name": "Boreal Wolf's Milk Tooth"
-        },
-        {
-            "key": "BorealWolfB",
-            "name": "Boreal Wolf's Cracked Tooth"
-        },
-        {
-            "key": "BorealWolfC",
-            "name": "Boreal Wolf's Broken Fang"
-        },
-        {
-            "key": "BorealWolfD",
-            "name": "Boreal Wolf's Nostalgia"
-        },
-        {
-            "key": "AerosideriteA",
-            "name": "Grain of Aerosiderite"
-        },
-        {
-            "key": "AerosideriteB",
-            "name": "Piece of Aerosiderite"
-        },
-        {
-            "key": "AerosideriteC",
-            "name": "Bit of Aerosiderite"
-        },
-        {
-            "key": "AerosideriteD",
-            "name": "Chunk of Aerosiderite"
-        },
-        {
-            "key": "GladiatorA",
-            "name": "Fetters of the Dandelion Gladiator"
-        },
-        {
-            "key": "GladiatorB",
-            "name": "Chains of the Dandelion Gladiator"
-        },
-        {
-            "key": "GladiatorC",
-            "name": "Shackles of the Dandelion Gladiator"
-        },
-        {
-            "key": "GladiatorD",
-            "name": "Dream of the Dandelion Gladiator"
         },
         {
             "key": "MaskA",

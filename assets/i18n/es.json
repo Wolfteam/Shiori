@@ -1214,128 +1214,123 @@
         {
             "key": "HuTao",
             "name": "Hu Tao",
-            "description": "The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.",
+            "description": "77.° directora de la Funeraria El Camino. Pese a su corta edad, ya es la principal encargada de todos los asuntos funerarios de Liyue.",
             "skills": [
                 {
                     "key": "s1",
-                    "title": "Secret Spear of Wangsheng",
+                    "title": "Técnica de lanza de El Camino",
                     "description": null,
                     "abilities": [
                         {
                             "key": "a1",
-                            "description": "Performs up to six consecutive spear strikes.",
+                            "description": "Realiza hasta 6 ataques rápidos con lanza.",
                             "descriptions": []
                         },
                         {
                             "key": "a2",
-                            "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.",
+                            "description": "Consume una cierta cantidad de Aguante para lanzarse al frente e inflige daño a los enemigos en el camino.",
                             "descriptions": []
                         },
                         {
                             "key": "a3",
-                            "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                            "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
                             "descriptions": []
                         }
                     ]
                 },
                 {
                     "key": "s2",
-                    "title": "Guide to Afterlife",
-                    "description": "Only an unwavering flame can cleanse the impurities of this world.\n Hu Tao consumes a set portion of her HP to knock the surrounding enemies back and enter the Paramita Papilio state.",
+                    "title": "Guía hacia el más allá",
+                    "description": "Solo las llamas eternas pueden purificar las impurezas de este mundo.\nHu Tao consume una parte de su Vida para empujar a sus enemigos y entrar en el estado de mariposa excelsa.",
                     "abilities": [
                         {
-                            "name": "Paramita Papilio",
+                            "name": "Mariposa excelsa",
                             "descriptions": [
-                                "Increases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK.",
-                                "Converts attack DMG to Pyro DMG, which cannot be overridden by any other elemental infusion.",
-                                "Charged Attacks apply the Blood Blossom effect to the enemies hit.",
-                                "Increases Hu Tao's resistance to interruption."
+                                "Aumenta el ATQ de Hu Tao en base a la Vida Máx. que tenía al entrar en este estado. El bono de ATQ obtenido de esta forma no podrá ser superior al 400% del ATQ Básico de Hu Tao.",
+                                "El daño de ATQ se convierte en Daño Pyro. Este cambio elemental no puede sustituirse imbuyéndose de otro elemento.",
+                                "Al atacar a sus enemigos con Ataques Cargados, aplicará sobre ellos el efecto de pétalos sangrientos.",
+                                "Aumenta la RES a interrupción de Hu Tao."
                             ]
                         },
                         {
-                            "name": "Blood Blossom",
-                            "description": "Enemies affected by Blood Blossom will take Pyro DMG every 4s. This DMG is considered Elemental Skill DMG.\n Each enemy can be affected by only one Blood Blossom effect at a time, and its duration may only be refreshed by Hu Tao herself.Paramita Papilio ends when its duration is over, or Hu Tao has left the battlefield or fallen.",
-                            "descriptions": []
-                        },
-                        {
-                            "name": "Spirit Soother",
-                            "description": "Commands a blazing spirit to attack, dealing Pyro DMG in a large AoE.\nUpon striking the enemy, regenerates a percentage of Hu Tao's Max HP. This effect can be triggered up to 5 times, based on the number of enemies hit.\nIf Hu Tao's HP is below or equal to 50% when the enemy is hit, both the DMG and HP Regeneration are increased.",
+                            "name": "Pétalos sangrientos",
+                            "description": " Los enemigos afectados por pétalos sangrientos recibirán Daño Pyro cada 4 s. Este daño se considera daño de Habilidad Elemental.\nCada enemigo solo puede ser afectado por un único pétalo sangriento al mismo tiempo, y dicho efecto solamente podrá ser reiniciado por Hu Tao.\nEl estado de mariposa excelsa se disparará cuando su duración termine, o cuando Hu Tao se retire del combate o sea derrotada.",
                             "descriptions": []
                         }
                     ]
                 },
                 {
                     "key": "s3",
-                    "title": "Spirit Soother",
-                    "description": "Commands a blazing spirit to attack, dealing Pyro DMG in a large AoE.\nUpon striking the enemy, regenerates a percentage of Hu Tao's Max HP. This effect can be triggered up to 5 times, based on the number of enemies hit.\nIf Hu Tao's HP is below or equal to 50% when the enemy is hit, both the DMG and HP Regeneration are increased.",
+                    "title": "Calma de los espíritus",
+                    "description": "Hu Tao ordena a las almas ardientes que ataquen, e inflige Daño Pyro en una gran AdE.\nAl golpear a sus enemigos, Hu Tao regenera Vida en proporción a su Vida Máx. Este efecto solo puede tener lugar contra un máximo de 5 enemigos.\nSi la Vida de Hu Tao es inferior o igual al 50% al atacar con esta habilidad, infligirá mayor daño y regenerará más Vida.",
                     "abilities": []
                 }
             ],
             "passives": [
                 {
                     "key": "p1",
-                    "title": "The More the Merrier",
-                    "description": "When Hu Tao cooks a dish perfectly, she has a 18% chance to receive an additional \"Suspicious\" dish of the same type.",
+                    "title": "Cuanto más, mejor",
+                    "description": "Cuando se logra un \"Perfecto\" al cocinar un plato, hay una probabilidad del 18% de obtener ese mismo plato con la calidad \"extraña\".",
                     "descriptions": []
                 },
                 {
                     "key": "p2",
-                    "title": "Flutter By",
-                    "description": "Paramita Papilio state activated by Guide to Afterlife ends, all allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 8s.",
+                    "title": "Aleteo sutil",
+                    "description": "Al terminar la duración del estado de mariposa excelsa aplicado mediante Guía hacia el más allá, la Prob. CRIT de todos los miembros del equipo (a excepción de Hu Tao) aumenta en un 12% durante 8 s.",
                     "descriptions": []
                 },
                 {
                     "key": "p3",
-                    "title": "Sanguine Rouge",
-                    "description": "When Hu Tao's HP is equal to or less than 50%, her Pyro DMG Bonus is increased by 33%.",
+                    "title": "Baño de sangre",
+                    "description": "Cuando su Vida es inferior o igual al 50%, Hu Tao obtiene un 33% de Bono de Daño Pyro.",
                     "descriptions": []
                 }
             ],
             "constellations": [
                 {
                     "key": "c1",
-                    "title": "Crimson Bouquet",
-                    "description": "While in a Paramita Papilio state activated by Guide to Afterlife, Hu Tao's Charge Attacks do not consume Stamina.",
+                    "title": "Florecimiento carmesí",
+                    "description": "Al estar bajo los efectos de mariposa excelsa aplicados por Guía hacia el más allá, el Ataque Cargado de Hu Tao no consumirá Aguante.",
                     "secondDescription": null,
                     "descriptions": []
                 },
                 {
                     "key": "c2",
-                    "title": "Ominous Rainfall",
-                    "description": "Increases the Blood Blossom DMG by an amount equal to 10% of Hu Tao's Max HP at the time the effect is applied.\nAdditionally, Spirit Soother will also apply the Blood Blossom effect.",
+                    "title": "Mal presagio",
+                    "description": "Aumenta el daño infligido por pétalos sangrientos en una cantidad equivalente al 10% de la Vida Máx. que tenía Hu Tao al aplicar dicho efecto.\nAdemás, Calma de los espíritus aplicará sobre los enemigos atacados el efecto de pétalos sangrientos.",
                     "secondDescription": null,
                     "descriptions": []
                 },
                 {
                     "key": "c3",
-                    "title": "Lingering Carmine",
-                    "description": "Increases the Level of Guide to Afterlife by 3. Maximum upgrade level is 15.",
+                    "title": "Persistencia escarlata",
+                    "description": "Aumenta el nivel de habilidad de Guía hacia el más allá +3. Puede ser aumentado hasta Niv. 15.",
                     "secondDescription": null,
                     "descriptions": []
                 },
                 {
                     "key": "c4",
-                    "title": "Garden of Eternal Rest",
-                    "description": "Upon defeating an enemy affected by a Blood Blossom that Hu Tao applied herself, all nearby allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 15s.",
+                    "title": "Jardín del reposo eterno",
+                    "description": "Al derrotar a un enemigo que está bajo los efectos de pétalos sangrientos aplicados por Hu Tao, la Prob. CRIT de todos los miembros del equipo (a excepción de Hu Tao) aumenta en un 12% durante 15 s.",
                     "secondDescription": null,
                     "descriptions": []
                 },
                 {
                     "key": "c5",
-                    "title": "Floral Incense",
-                    "description": "Increases the Level of Spirit Soother by 3. Maximum upgrade level is 15.",
+                    "title": "Ofrenda de incienso",
+                    "description": "Aumenta el nivel de habilidad de Calma de los espíritus +3. Puede ser aumentado hasta Niv. 15.",
                     "secondDescription": null,
                     "descriptions": []
                 },
                 {
                     "key": "c6",
-                    "title": "Butterfly's Embrace",
-                    "description": "Triggers when Hu Tao's HP drops below 25%, or when she suffers a lethal strike:",
+                    "title": "Último suspiro",
+                    "description": "Cuando la Vida de Hu Tao esté por debajo del 25% o cuando vaya a recibir una cantidad de daño suficiente como para ser derrotada, esta habilidad se activará y tendrá los siguientes efectos:",
                     "secondDescription": null,
                     "descriptions": [
-                        "Hu Tao will not fall as a result of the DMG sustained. Additionally, for the next 10s, all of her Elemental and Physical RES is increased by 200%, her CRIT Rate is increased by 100%, and her resistance to interruption is greatly increased.",
-                        "This effect triggers automatically when Hu Tao has 1 HP left.",
-                        "Can only occur once every 60s."
+                        "Dicho daño no hará que Hu Tao sea derrotada, y durante 10 s aumentará en un 200% todas sus RES Elementales y su RES Física, así como su Prob. CRIT en un 100%. Además, su RES a interrupción se incrementará en gran medida.",
+                        "Este efecto se activará automáticamente cuando Hu Tao tenga 1 pt. de Vida.",
+                        "Solo puede ocurrir una vez cada 60 s."
                     ]
                 }
             ]
@@ -2214,7 +2209,7 @@
                             "descriptions": [
                                 "Cuando los Ataques Normales y Ataques Cargados de Noelle golpean un objetivo, hay una posibilidad de regenerar Vida a todos los miembros del equipo. La cantidad de Vida curada es proporcional a la DEF de Noelle.",
                                 "Aplica el elemento Geo al personaje.",
-                                "Posee un 250% de eficiencia de absorción contra Daño Geo."
+                                "Posee un 150% de eficiencia de absorción contra Daño Geo."
                             ]
                         }
                     ]
@@ -5237,102 +5232,6 @@
         {
             "key": "BoneShardC",
             "name": "Fragmento de hueso fosilizado"
-        },
-        {
-            "key": "DecarabianA",
-            "name": "Fragmento de azulejo de Decarabian"
-        },
-        {
-            "key": "DecarabianB",
-            "name": "Escombro de la ciudad de Decarabian"
-        },
-        {
-            "key": "DecarabianC",
-            "name": "Fragmento de epopeya de Decarabian"
-        },
-        {
-            "key": "DecarabianD",
-            "name": "Fragmento de sueño de Decarabian"
-        },
-        {
-            "key": "GuyunA",
-            "name": "Arena brillante de Guyun"
-        },
-        {
-            "key": "GuyunB",
-            "name": "Piedra reluciente de Guyun"
-        },
-        {
-            "key": "GuyunC",
-            "name": "Reliquia de Guyun"
-        },
-        {
-            "key": "GuyunD",
-            "name": "Cuerpo divino de Guyun"
-        },
-        {
-            "key": "ElixirA",
-            "name": "Perdigones de plomo de la niebla marina"
-        },
-        {
-            "key": "ElixirB",
-            "name": "Perdigones de mercurio de la niebla marina"
-        },
-        {
-            "key": "ElixirC",
-            "name": "Perdigones de oro de la niebla marina"
-        },
-        {
-            "key": "ElixirD",
-            "name": "Perdigones primordiales de la niebla marina"
-        },
-        {
-            "key": "BorealWolfA",
-            "name": "Diente de leche de lobo boreal"
-        },
-        {
-            "key": "BorealWolfB",
-            "name": "Diente roto de lobo boreal"
-        },
-        {
-            "key": "BorealWolfC",
-            "name": "Colmillo roto de lobo boreal"
-        },
-        {
-            "key": "BorealWolfD",
-            "name": "Nostalgia de lobo boreal"
-        },
-        {
-            "key": "AerosideriteA",
-            "name": "Grano de siderita oscura"
-        },
-        {
-            "key": "AerosideriteB",
-            "name": "Lámina de siderita oscura"
-        },
-        {
-            "key": "AerosideriteC",
-            "name": "Fragmento de siderita oscura"
-        },
-        {
-            "key": "AerosideriteD",
-            "name": "Trozo de siderita oscura"
-        },
-        {
-            "key": "GladiatorA",
-            "name": "Grilletes de Diente de Léon"
-        },
-        {
-            "key": "GladiatorB",
-            "name": "Cadena de Diente de Léon"
-        },
-        {
-            "key": "GladiatorC",
-            "name": "Esposas de Diente de Léon"
-        },
-        {
-            "key": "GladiatorD",
-            "name": "Ideales de Diente de Léon"
         },
         {
             "key": "MaskA",
