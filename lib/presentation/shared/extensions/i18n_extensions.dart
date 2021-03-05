@@ -21,6 +21,8 @@ extension I18nExtensions on S {
         return '$spanish ($partial)';
       case AppLanguageType.french:
         return '$french ($partial)';
+      case AppLanguageType.russian:
+        return '$russian ($partial)';
       case AppLanguageType.simplifiedChinese:
         return '$simplifiedChinese ($partial)';
       default:

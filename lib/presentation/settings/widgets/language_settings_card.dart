@@ -15,7 +15,8 @@ class LanguageSettingsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
-    final languages = AppLanguageType.values.where((x) => x != AppLanguageType.french).toList();
+    final ignored = [AppLanguageType.french];
+    final languages = AppLanguageType.values.where((x) => !ignored.contains(x)).toList();
     return SettingsCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
