@@ -124,8 +124,8 @@ class _TierListPageState extends State<TierListPage> {
         return;
       }
 
-      final file = await screenshotController.capture(pixelRatio: 1.5);
-      ImageGallerySaver.saveImage(file.readAsBytesSync(), quality: 100);
+      final bytes = await screenshotController.capture(pixelRatio: 1.5);
+      ImageGallerySaver.saveImage(bytes, quality: 100);
       ToastUtils.showSucceedToast(s.imgSavedSuccessfully);
     } catch (e) {
       ToastUtils.showErrorToast(s.unknownError);
