@@ -13,12 +13,10 @@ import 'package:genshindb/infrastructure/network_service.dart';
 import 'package:genshindb/infrastructure/settings_service.dart';
 import 'package:genshindb/infrastructure/telemetry/telemetry_service.dart';
 import 'package:get_it/get_it.dart';
-import 'package:log_4_dart_2/log_4_dart_2.dart';
 
 final GetIt getIt = GetIt.instance;
 
 Future<void> initInjection() async {
-  getIt.registerSingleton(Logger());
   getIt.registerSingleton<NetworkService>(NetworkServiceImpl());
 
   final deviceInfoService = DeviceInfoServiceImpl();
@@ -29,7 +27,7 @@ Future<void> initInjection() async {
   getIt.registerSingleton<TelemetryService>(telemetryService);
   await telemetryService.initTelemetry();
 
-  final loggingService = LoggingServiceImpl(getIt<Logger>(), getIt<TelemetryService>(), deviceInfoService);
+  final loggingService = LoggingServiceImpl(getIt<TelemetryService>(), deviceInfoService);
 
   getIt.registerSingleton<LoggingService>(loggingService);
   getIt.registerSingleton<SettingsService>(SettingsServiceImpl(loggingService));
