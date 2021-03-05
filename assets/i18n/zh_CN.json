@@ -1,0 +1,5664 @@
+{
+  "characters": [
+    {
+      "key": "Albedo",
+      "name": "阿贝多",
+      "description": "西风骑士团首席炼金术士兼调查小队队长，被称作「白垩之子」的天才。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "西风剑术·白",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续剑击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，瞬间向前方挥出两剑。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "炼成阳华，造成岩元素范围伤害",
+          "description": null,
+          "abilities": [
+            {
+              "name": "阳华",
+              "description": "具有如下特性：",
+              "descriptions": [
+                "以阳华为中心的领域中的敌人受到伤害时，阳华将会生成刹那之花，绽放造成岩元素范围伤害，伤害基于阿贝多的防御力。",
+                "每2秒只能生成一次刹那之花。",
+                "角色处在阳华上时，阳华将会凝聚岩元素的力量，形成将角色托起至一定高度的晶态。同时只能存在一个晶台。",
+                "同时只能存在一个由阿贝多自己创造的阳华，视为岩元素创造物。"
+              ]
+            },
+            {
+              "key": "a2",
+              "description": "可以调整技能生效位置",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "诞生式·大地之潮",
+          "description": "岩晶在阿贝多的指示下涌动爆发，在阿贝多前方造成岩元素范围伤害。\n场上存在阿贝多自己创造的阳华时，会在阳华的领域内生成7朵生灭之花，猛烈绽放并造成岩元素范围伤害。\n爆发伤害与生灭之花的伤害不会生成刹那之花。",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "天才的发现",
+          "description": "合成武器突破素材时，有10%概率获得2倍产出。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "白垩色的威压",
+          "description": "创生法·拟造阳华的刹那之花对生命值低于50%的敌人造成的伤害提高25%。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "瓶中人的天慧",
+          "description": "施放诞生式·大地之潮时，使附近的队伍中角色的元素精通提高125点，持续10秒。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "伊甸之花",
+          "description": "阿贝多的创生法·拟造阳华生成的刹那之花绽放时，为阿贝多自己回复1.2点元素能量",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "显生之宙",
+          "description": "创生法·拟造阳华的刹那之花绽放时，会为阿贝多赋予生灭计数效果，持续30秒：",
+          "secondDescription": "施放诞生式·大地之潮时，清除所有生灭计数效果，并根据清除的层数，提高诞生式·大地之潮的爆发伤害与生灭之花造成的伤害；",
+          "descriptions": [
+            "每层生灭计数，会提高等同于阿贝多防御力的30%的伤害；",
+            "该效果至多叠加4次。"
+          ]
+        },
+        {
+          "key": "c3",
+          "title": "太阳之华",
+          "description": "创生法·拟造阳华的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "神性之陨",
+          "description": "处于阳华的领域中的队伍中当前场上角色，造成的下落攻击伤害提高30%。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "冥古之潮",
+          "description": "诞生式·大地之潮的技能提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "无垢之土",
+          "description": "处在阳华的领域中的队伍中当前场上角色，若处于结晶反应产生的护盾庇护下，造成的伤害提高17%。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Amber",
+      "name": "安柏",
+      "description": "永远充满活力的女孩，骑士团最优秀，同时也是最后的侦察骑士。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "普通攻击·神射手",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续弓箭射击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "进行伤害更高、更为精准的瞄准射击。\n瞄准时，烈焰会在箭矢上持续积聚。聚满了烈焰的箭矢会造成火元素伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中射出箭雨，并迅速下坠冲击地面，在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "爆弹玩偶",
+          "description": null,
+          "abilities": [
+            {
+              "name": "兔兔伯爵",
+              "description": null,
+              "descriptions": [
+                "持续嘲讽周围的敌人，吸引火力；",
+                "耐久度按比例继承安柏的生命值上限；",
+                "被摧毁或持续时间结束时，会发生剧烈的爆炸，造成火元素范围伤害。"
+              ]
+            },
+            {
+              "key": "a2",
+              "description": "调整投掷方向。\n投掷距离随长按时间增加。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "箭雨",
+          "description": "射出火焰箭雨，持续造成火元素范围伤害。",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "飞行冠军",
+          "description": "队伍中自己的角色滑翔消耗的体力降低20%。\n无法与效果完全相同的固有天赋叠加。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "百发百中！",
+          "description": "箭雨的暴击率提高10%，影响范围扩大30%。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "压制射击",
+          "description": "瞄准设计命中弱点时，攻击力提高15%，持续10秒。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "一箭双丘丘！",
+          "description": "瞄准射击时，会连续射出2支箭。第二支箭能造成原本20%的伤害。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "一触即发",
+          "description": "兔兔伯爵进行了全新改良！蓄力完成的瞄准射击命中兔兔伯爵脚部时，能直接引爆兔兔伯爵…\n通过这种方式主动引爆兔兔伯爵时，会额外造成200%伤害。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "烧起来啦！",
+          "description": "箭雨的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "才不是普通的布偶",
+          "description": "爆弹玩偶的冷却时间减少20%，并增加1次可使用次数。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "是兔兔伯爵！",
+          "description": "爆弹玩偶的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "疾如野火",
+          "description": "使用箭雨后的10秒内，队伍中所有角色的移动速度提升15%，攻击力提升15%。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Ayaka",
+      "pending": true,
+      "name": "神里绫华",
+      "description": "The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated beast, flows within her veins.",
+      "skills": [],
+      "passives": [],
+      "constellations": []
+    },
+    {
+      "key": "Barbara",
+      "name": "芭芭拉",
+      "description": "蒙德城的大家都喜欢芭芭拉。「偶像」这个词是她从一本杂志里看到的。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "水之浅唱",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多四段的水花攻击，造成水元素伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，短暂咏唱后，造成水元素范围伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "凝聚水元素的力量，从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成水元素范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "演唱，开始♪",
+          "description": "唤出歌声般跃动的水珠，形成歌声之环，对周围的敌人造成水元素伤害，并施加潮湿状态。",
+          "abilities": [
+            {
+              "name": "歌声之环",
+              "description": null,
+              "descriptions": [
+                "芭芭拉的普通攻击命中时，为队伍中自己的角色，以及附近的友方角色恢复生命值，回复量受益于芭芭拉的生命值上限；",
+                "重击命中时，能产生4倍回复量；",
+                "每隔一段时间，为当前场上自己的角色恢复生命值；",
+                "对角色与触及的敌人施加潮湿状态。"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "闪耀奇迹♪",
+          "description": "为附近的友方角色及队伍中自己的角色恢复大量生命值，回复量受益于芭芭拉的生命值上限。",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "心意♪注入",
+          "description": "完美烹饪恢复类食物时，有12%概率获得2倍产出。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "光辉的季节",
+          "description": "角色在演唱，开始♪的歌声之环中时，体力消耗降低12%。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "安可",
+          "description": "当前场上自己的角色获得元素晶球或元素微粒时，延长演唱，开始♪歌声之环持续时间1秒。\n通过这种方式，至多延长5秒。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "彩色歌谣",
+          "description": "芭芭拉每10秒恢复1点元素能量。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "元气迸发",
+          "description": "演唱，开始♪的冷却时间降低15%；技能持续时间，当前场上自己的角色获得15%水元素伤害加成。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "明日之星",
+          "description": "闪耀奇迹♪的技能等级提高至3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "努力即魔法",
+          "description": "芭芭拉使用重击时，每命中一个敌人，就恢复1点元素能量。\n通过这种方式，一次至多回复5点元素能量。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "纯真的羁绊",
+          "description": "演唱，开始♪的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c1",
+          "title": "将一切美好献给你",
+          "description": "芭芭拉处于队伍后台时，队伍中自己的角色倒下时，则立即：",
+          "secondDescription": "该效果每15分钟只能触发一次。",
+          "descriptions": [
+            "复苏该角色；",
+            "将该角色生命值恢复至100%；"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "Beidou",
+      "name": "北斗",
+      "description": "武装船队「南十字」的首领，豪快的大姐头。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "征涛",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续挥砍。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "持续消耗体力，快速进行连续的斩击。\n重击结束时，会进行一次格外有力的挥砍。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "捉浪",
+          "description": "没什么好担心的。如果有人敢对她或她的人出手，那就以雷电与大剑十倍奉还。",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "积聚雷之力，猛烈向前挥舞大剑，造成雷元素伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "举起武器形成护盾，伤害吸收量受益于北斗的生命值上限。\n松开技能或持续时间结束时，会挥舞大剑释放积攒的力量进行攻击，造成雷元素伤害。依据技能期间受到攻击的次数，提高释放时造成的伤害。触发2次达到最高伤害加成。\n护盾具有如下效果：",
+              "descriptions": [
+                "对雷元素伤害有250%的吸收效果；",
+                "施放的瞬间，为北斗施加雷元素附着。"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "斫雷",
+          "description": "重忆斩灭海山巨兽之战，唤起巨兽与雷电的力量，创造环绕自身的雷兽之盾，并对周围的敌人造成雷元素伤害。",
+          "abilities": [
+            {
+              "name": "雷兽之盾",
+              "description": null,
+              "descriptions": [
+                "普通攻击与重击命中时，释放雷电之力，引来1道能在敌人之间跃动的闪雷，造成雷元素伤害；",
+                "提高角色的抗打断能力，并降低受到的伤害。",
+                "每秒至多触发1道闪雷。"
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "拥涛踏潮",
+          "description": "队伍中自己的角色游泳消耗的体力降低20%。\n无法与效果完全相同的固有天赋叠加。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "遍宇灵光",
+          "description": "在被攻击瞬间施放的捉浪反击，拥有最高伤害加成。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "霹雳连霄",
+          "description": "施放拥有最高伤害加成的捉浪后的10秒内，获得如下效果：",
+          "descriptions": [
+            "普通攻击与重击造成的伤害提高15%，攻击速度提高15%；",
+            "大幅减少重击需要的准备时间。"
+          ]
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "鱼龙沉四方",
+          "description": "施放斫雷时",
+          "secondDescription": null,
+          "descriptions": [
+            "生成一个伤害吸收量等于生命值上限16%的护盾，持续15秒。",
+            "该护盾对雷元素伤害有250%的吸收效果。"
+          ]
+        },
+        {
+          "key": "c2",
+          "title": "赫赫雷涌起",
+          "description": "斫雷的闪雷能额外弹跳2个敌人。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "潮奔蓦引电",
+          "description": "捉浪的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "牵星觅乡岸",
+          "description": "受到攻击后的10秒内，北斗的普通攻击附带20%的额外雷元素伤害。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "潮奔蓦引电",
+          "description": "捉浪的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "北斗祓幽孽",
+          "description": "斫雷持续期间，周围敌人的雷元素抗性降低15%。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Bennett",
+      "name": "班尼特",
+      "description": "蒙德的冒险家少年，拥有与他的善良毫不相称的霉运。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "好运剑",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续剑击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，瞬间向前方挥出两剑。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时，造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "热情过载",
+          "description": "班尼特将火元素与冒险的热情凝聚在剑上。根据热情凝聚的程度，可能会发生不同的事情…",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "快速向前挥出火焰一击。造成火元素伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "根据长按时间进行蓄力，释放时依照蓄力段数造成不同的效果。",
+              "secondDescription": "被击飞时，班尼特不会受到伤害。",
+              "descriptions": [
+                "一段蓄力：发动二段攻击，造成火元素伤害并将敌人击飞；",
+                "二段蓄力：发动三段攻击，造成火元素伤害。最后一击会发生爆炸，将班尼特和敌人同时击飞。"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "美妙旅程",
+          "description": "班尼特向敌人方向跳跃，进行一次下落攻击，造成火元素伤害，并生成鼓舞领域。",
+          "abilities": [
+            {
+              "name": "鼓舞领域",
+              "description": null,
+              "descriptions": [
+                "领域内的角色如果生命值低于或等于70％，会持续恢复生命值，回复量受益于班尼特的最大生命值；",
+                "领域内的角色如果生命值高于70％，会基于班尼特的基础攻击力，以一定比例获得攻击力加成；",
+                "为其中的角色施加火元素附着。"
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "应该安全",
+          "description": "在蒙德执行探索派遣任务时，消耗的时间缩短25%。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "热情复燃",
+          "description": "热情过载的冷却时间减少20%。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "无畏的热血",
+          "description": "在美妙旅程领域内，热情过载具有如下效果：",
+          "descriptions": [
+            "冷却时间减少50％。",
+            "二段蓄力不会将班尼特自身击飞。"
+          ]
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "冒险憧憬",
+          "description": "美妙旅程的攻击力提升效果不再有血量限制，数值上追加班尼特基础攻击力的20%。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "踏破绝境",
+          "description": "生命值低于70％时，元素充能效率提高30％。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "火热激情",
+          "description": "热情过载的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "热情不灭",
+          "description": "施放一段蓄力的热情过载时，在技能第二段攻击中进行普通攻击，可以施放额外的追击。追击的伤害等同于第二段攻击的135%。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "开拓的心魂",
+          "description": "美妙旅程的技能等级提高3级。\n最高提升至15级",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "烈火与勇气",
+          "description": "处在美妙旅程领域内的单手剑、双手剑、长柄武器角色获得15％火元素伤害加成，并将普通攻击与重击伤害转为火元素。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Chongyun",
+      "name": "重云",
+      "description": "驱邪世家的年轻方士，为压制自身的「纯阳之体」费尽心机。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "灭邪四式",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多四段的连续挥砍。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "持续消耗体力，旋转大剑攻击周围的敌人。\n停止旋转时，会进行一次格外有力的挥砍。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "灵刃·重华叠霜",
+          "description": "重云挥动巨剑猛击地面，在前方圆形范围内引发冰爆，并对敌人造成冰元素伤害。\n短暂延迟后，冰爆引发的寒气汇聚成重华叠霜领域，其中的单手剑、双手剑、长柄武器角色获得冰元素附魔。",
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "灵刃·云开星落",
+          "description": "重云结印，在前方半空中连续召唤出三柄巨大灵刃，短时间内依次落向地面并爆裂。 灵刃爆裂时，会造成冰元素范围伤害，并击飞敌人。",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "云游山海",
+          "description": "在璃月执行探索派遣任务时，消耗的时间缩短25%。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "吐纳真定",
+          "description": "处在灵刃·重华叠霜领域内的单手剑、双手剑、长柄武器角色，普通攻击的攻击速度提升8%。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "追冰剑诀",
+          "description": "灵刃·重华叠霜领域消失时，会唤出一柄灵刃自动攻击附近的敌人，造成相当于灵刃·重华叠霜技能伤害100%的冰元素范围伤害。被击中的敌人冰元素抗性降低10%，持续8秒。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "释凌咏冰",
+          "description": "普通攻击的最后一击会向前方释放三道冰之刃，每道冰之刃对沿途的敌人造成重云50%攻击力的冰元素伤害。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "周天运转",
+          "description": "在灵刃·重华叠霜领域内施放的元素战技与元素爆发的冷却时间减少15%。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "云尽光生",
+          "description": "灵刃·云开星落的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "浮云霜天",
+          "description": "重云的所有攻击命中受到冰元素影响的敌人时，自身将恢复1点元素能量。\n该效果每2秒最多触发一次。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "真道正理",
+          "description": "灵刃·重华叠霜的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "四灵捧圣",
+          "description": "灵刃·云开星落对生命值百分比低于重云的敌人造成伤害时，伤害提升15%；\n此外，施放时，会召唤一柄额外的灵刃。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Diluc",
+      "name": "迪卢克",
+      "description": "坐拥蒙德大半酒业的贵公子，财力、人望、能力都令人无法小觑。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "淬炼之剑",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多四段的连续挥砍。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "持续消耗体力，快速进行连续的斩击。重击结束时，会进行一次格外有力的挥砍。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "逆焰之刃",
+          "description": "挥舞大剑向前劈砍，造成火元素伤害。\n可以连续施放3次。若短时间内没有施放，则会进入冷却。",
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "黎明",
+          "description": "爆发出烈焰的力量，击退周围的敌人，造成火元素伤害。随后，将烈焰凝聚在武器上，挥出向前飞行的火之鸟，对路径上的敌人造成高额火元素伤害，并在火之鸟行进的终点爆裂造成大量的火元素范围伤害。\n武器上凝聚的烈焰会使迪卢克获得火元素附魔。",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "晨曦的传统",
+          "description": "锻造双手剑类武器时，返还15%消耗的矿石。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "永不休止",
+          "description": "重击的体力消耗减低50%，最大持续时间增加3秒。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "熔毁之翼",
+          "description": "黎明提供的火元素附魔持续时间延长4秒；此外，在效果持续期间，迪卢克获得20%火元素伤害加成。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "罪罚裁断",
+          "description": "对生命值高于50％的敌人，迪卢克造成的伤害提高15％。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "炙热余烬",
+          "description": "迪卢克受到伤害时，攻击力提高10％，攻击速度提高5％，持续10秒。该效果至多叠加3层。每1.5秒只能触发一次。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "钢铁炽焰",
+          "description": "逆焰之刃的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "流火焦灼",
+          "description": "释放逆焰之刃的2秒后，下一段逆焰之刃的伤害提高40％，持续2秒。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "昭告黎明的火之鸟",
+          "description": "黎明的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "清算黑暗的炎之剑",
+          "description": "释放逆焰之刃会使接下来6秒内的2次普通攻击的攻击速度提升30％，造成伤害提高30％。\n此外，逆焰之刃不再会中断前两段普通攻击的连击段数。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Diona",
+      "name": "迪奥娜",
+      "description": "遗传了稀薄的「非人」血统的少女,「猫尾酒馆」的超人气调酒师。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "猎人射术",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续弓箭射击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "进行伤害更高、更为精准的瞄准射击。\n瞄准时，冰霜散发的寒气会凭附在箭矢上。聚满了寒气的箭矢会造成冰元素伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中射出箭雨,并迅速下坠冲击地面,在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "猫爪冻冻",
+          "description": "发射冻冻猫猫爪，对敌人造成冰元素伤害，并在命中时形成护盾。\n护盾的伤害吸收量受益于迪奥娜的生命值上限，持续时间基于命中的冻冻猫猫爪数目。",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "快速发射二枚冻冻猫猫爪。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "迅速后撤，并发射五枚冻冻猫猫爪。\n通过长按产生的护盾获得75%伤害吸收量加成。\n护盾对冰元素伤害有250%的吸收效果，并会在形成时，为当前角色施加短暂的冰元素附着。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "最烈特调",
+          "description": "抛出特别调制的冰酿烈调，造成冰元素范围伤害，并产生冰气酒雾领域。",
+          "abilities": [
+            {
+              "name": "冰气酒雾领域",
+              "description": null,
+              "descriptions": [
+                "对其中的敌人持续造成冰元素伤害；",
+                "为其中的角色持续恢复生命值。"
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "附赠的下酒菜",
+          "description": "完美烹饪恢复类食物时，有12%概率获得2倍产出。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "猫尾隐藏菜单",
+          "description": "处于猫爪冻冻的护盾保护下的角色，移动速度提升10%，体力消耗降低10%。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "滑稽百出的醉相",
+          "description": "敌人进入最烈特调的领域后的15秒内，攻击力降低10%。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "特调的余韵",
+          "description": "最烈特调的效果结束时，为迪奥娜恢复15点元素能量。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "猫爪冰摇",
+          "description": "猫爪冻冻造成的伤害提高15%，护盾的伤害吸收量提高15%；\n此外，命中时，将为附近的当前其他场上角色生成一个伤害吸收量为猫爪冻冻50%的护盾，持续5秒。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "还、还要续杯？",
+          "description": "最烈特调的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "「酒业杀手」",
+          "description": "在最烈特调的领域内，迪奥娜的瞄准射击的所需的蓄力时间减少60%。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "双份加冰",
+          "description": "猫爪冻冻的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "猫尾打烊之时",
+          "description": "处在最烈特调领域内的角色，依据生命值获得如下效果：",
+          "secondDescription": null,
+          "descriptions": [
+            "生命值低于或等于50%时，受治疗加成提升30%；",
+            "生命值高于50%时，元素精通提升200。"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "Fischl",
+      "name": "菲谢尔",
+      "description": "自称「断罪之皇女」，与名为奥兹的漆黑夜鸦同行的神秘少女。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "罪灭之矢",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续弓箭射击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "进行伤害更高、更为精准的瞄准射击。瞄准时，幽夜净土的黯雷精灵会听从皇女的号令，凭附在她的雷影魔箭上。聚满了断罪之雷的魔箭会造成高额的雷元素伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中射出箭雨，并迅速下坠冲击地面，在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "夜巡影翼",
+          "description": "召唤奥兹。暗影与雷电构成的夜鸦降生尘世时，会在小范围内造成雷元素伤害。\n存在期间内，奥兹会持续发射雷之魔弹攻击附近的敌人。\n长按以调整技能生效位置。\n奥兹存在期间内再次点按可以将其召唤至身旁。",
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "至夜幻现",
+          "description": "呼喚奥兹，张开纯粹的夜色编织成的双翼，守护菲谢尔。\n持续期间，具有如下效果：",
+          "abilities": [
+            {
+              "name": "",
+              "description": null,
+              "descriptions": [
+                "以奥兹的形态进行高速移动；",
+                "对附近的敌人降下落雷，造成雷元素伤害。每个敌人只能受到一次落雷伤害；",
+                "效果结束时，奥兹将会停留在战场上，攻击皇女的敌人。若奥兹已经在场，则重置奥兹的存在时间。"
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "吾之后花园",
+          "description": "在蒙德执行探索派遣任务时，消耗的时间缩短25％。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "噬星魔鸦",
+          "description": "菲谢尔以蓄力完成的瞄准射击命中奥兹时，奥兹会对附近敌人降下圣裁之雷，造成等同射击伤害152.7％的雷元素范围伤害。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "断罪雷影",
+          "description": "奥兹在场时，若当前场上自己的角色攻击敌人时触发了雷元素相关反应，则会对敌人降下圣裁之雷，造成菲谢尔80％攻击力的雷元素伤害。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "幽邃鸦眼",
+          "description": "奥兹不在战场上时，也会透过鸦眼守望菲谢尔。在菲谢尔对敌人进行普通攻击时，奥兹会通过鸦眼协同攻击，造成22％攻击力的伤害。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "圣裁影羽",
+          "description": "施放夜巡影翼时，能额外造成200％攻击力的伤害，并使影响范围扩大50％。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "渊色黑翼",
+          "description": "夜巡影翼的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "皇女幻绮谭",
+          "description": "施放至夜幻现时，会对周围的敌人造成222％攻击力的雷元素伤害;技能效果结束时，会为菲谢尔回复20％的生命值。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "至夜默示录",
+          "description": "至夜幻现的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "永夜之禽",
+          "description": "奥兹的存在时间延长2秒。此外，奥兹会协同当前场上自己的角色一起攻击，造成菲谢尔30％攻击力的雷元素伤害。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Ganyu",
+      "name": "甘雨",
+      "description": "月海亭的秘书，体内流淌着仙兽「麒麟」的血脉。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "流天射术",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多六段的连续弓箭射击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "进行伤害更高、更为精准的瞄准射击。\n瞄准时，冰寒之气会在箭矢上持续积聚，并随攻击发射出去。根据蓄力时间长短，能造成不同的效果：",
+              "descriptions": [
+                "一段蓄力：射出附有寒气的箭矢，造成冰元素伤害；",
+                "二段蓄力：发射霜华矢，造成冰元素伤害；命中后霜华绽发，再次造成冰元素范围伤害。"
+              ]
+            },
+            {
+              "key": "a3",
+              "description": "从空中射出箭雨，并迅速下坠冲击地面，在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "山泽麟迹",
+          "description": "甘雨留下一朵冰莲并迅速后退，远离一切魑魅魍魉，造成冰元素范围伤害。",
+          "abilities": [
+            {
+              "name": "冰莲",
+              "descriptions": [
+                "持续嘲讽周围的敌人，吸引敌人攻击；",
+                "耐久度按比例继承甘雨的生命值上限；",
+                "被摧毁或持续时间结束时，会剧烈地绽放，造成冰元素范围伤害。"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "降众天华",
+          "description": "凝聚大气中的霜雪，召唤退魔的冰灵珠。\n存在期间内，冰灵珠会持续降下冰棱，攻击范围内的敌人，造成冰元素伤害。",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "藏弓待用",
+          "description": "锻造弓类武器时，返还15%消耗的矿石。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "唯此一心",
+          "description": "霜华矢发射后的5秒内，会使接下来的发射的霜华矢与这些霜华矢引发的霜华绽发的暴击率提高20%。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "天地交泰",
+          "description": "降众天华领域内的队伍中当前场上角色获得20%冰元素伤害加成。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "饮露",
+          "description": "二段蓄力重击的霜华矢或霜华绽发命中敌人时，会使敌人的冰元素抗性降低15%，持续6秒；\n此外，命中时会为甘雨恢复2点元素能量。每次二段蓄力重击只能触发一次元素能量恢复效果，无论霜华矢或霜华绽发是否都命中目标。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "获麟",
+          "description": "山泽麟迹的可使用次数增加1次。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "云行",
+          "description": "降众天华的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "西狩",
+          "description": "在降众天华的领域内，敌人受到的伤害会增加，这个效果会随时间逐步加强。\n受伤害加成初始为5%，每3秒提升5%，至多提升至25%。\n离开领域后效果至多持续3秒。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "折草",
+          "description": "山泽麟迹的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "履虫",
+          "description": "施放山泽麟迹后30秒内的第一次霜华矢，无需蓄力即可施放。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "HuTao",
+      "name": "胡桃",
+      "description": "「往生堂」七十七代堂主，年纪轻轻就已主掌璃月的葬仪事务。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "往生秘传枪法",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多六段的连续枪击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，向前方突进，对路径上的敌人造成伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "蝶引来生",
+          "description": "只有永不间断的烈焰可以洗净世间的不净之物。\n胡桃消耗一部分生命值，击退周围敌人，进入彼岸蝶舞状态。",
+          "abilities": [
+            {
+              "name": "彼岸蝶舞",
+              "descriptions": [
+                "基于进入该状态时胡桃的生命值上限，提高胡桃的攻击力。通过这种方式获得的攻击力提升，不能超过胡桃基础攻击力的400%。",
+                "将攻击伤害转为火元素伤害，该元素转化无法被附魔覆盖；",
+                "重击会为命中的敌人施加血梅香效果；",
+                "提高胡桃的抗打断能力。"
+              ]
+            },
+            {
+              "name": "血梅香",
+              "description": "处于血梅香状态下的敌人，每4秒会受到一次火元素伤害。这个伤害视为元素战技伤害。\n同一个目标身上只能存在一个血梅香效果，且只能被胡桃自己刷新持续时间。\n彼岸蝶舞将在持续时间结束、胡桃下场或倒下时解除。",
+              "descriptions": []
+            },
+            {
+              "name": "Spirit Soother",
+              "description": "Commands a blazing spirit to attack, dealing Pyro DMG in a large AoE.\nUpon striking the enemy, regenerates a percentage of Hu Tao's Max HP. This effect can be triggered up to 5 times, based on the number of enemies hit.\nIf Hu Tao's HP is below or equal to 50% when the enemy is hit, both the DMG and HP Regeneration are increased.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "安神秘法",
+          "description": "挥动炽热的魂灵，造成大范围火元素伤害。\n命中敌人时，基于胡桃的生命值上限，恢复胡桃的生命值。这个效果最多对5个命中的敌人生效。\n如果技能命中时胡桃的生命值低于或等于50%，则造成更高的伤害和治疗量。",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "多多益善",
+          "description": "烹饪食物时，有18%概率额外获得一个「奇怪的」品质的同种料理。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "蝶隐之时",
+          "description": "蝶隐来生施加的彼岸蝶舞状态结束后，队伍中所有角色（不包括胡桃自己）的暴击率提高12%，持续8秒。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "血之灶火",
+          "description": "胡桃的生命值低于或等于50%时,获得33%火元素伤害加成。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "赤团开时斜飞去",
+          "description": "处于蝶引来生施加的彼岸蝶舞状态下时，胡桃的重击不会消耗体力。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "最不安神晴又复雨",
+          "description": "血梅香造成的伤害提高，提高值相当于效果附加时胡桃生命值上限的10%。\n此外，安神秘法会为命中的敌人施加血梅香效果。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "逗留采血色",
+          "description": "蝶引来生的技能等级提升3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "伴君眠花房",
+          "description": "处于胡桃自己施加的血梅香状态影响下的敌人被击败时，附近的队伍中所有角色（不包括胡桃自己）的暴击率提高12%，持续15秒。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "无可奈何燃花作香",
+          "description": "安神秘法的技能等级提升至3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "幽蝶能留一缕芳",
+          "description": "胡桃的生命值降至25%以下，或承受足以使她倒下的伤害时触发：",
+          "secondDescription": null,
+          "descriptions": [
+            "此次伤害不会使胡桃倒下，并在接下来的10秒内，胡桃的所有元素抗性和物理抗性提高200%，暴击率提高100%，并极大地提高抗打断能力。",
+            "这个效果在胡桃生命值为1时会自动触发。",
+            "该效果每60秒只能触发一次。"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "Jean",
+      "name": "琴",
+      "description": "正直严谨的蒲公英骑士，蒙德西风骑士团的代理团长。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "西风剑术",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续剑击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，进行饱含风之力的挑击。被挑飞的敌人，在短时间内会缓慢坠落。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "风压剑",
+          "description": "将无形的风之力汇聚在剑上，释放微型的风暴，将敌人向瞄准的方向击飞，造成大量风元素伤害。",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "以持续消耗体力为代价，令旋风将周围的敌人牵引至面前。\n可以调整方向。\n期间无法移动。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "蒲公英之风",
+          "description": "呼唤风的护佑，创造千风涌动的蒲公英领域，击退周围的敌人并造成风元素伤害。同时，为队伍中的所有角色瞬间恢复大量生命值，回复量受益于琴的攻击力。",
+          "abilities": [
+            {
+              "name": "蒲公英领域",
+              "description": null,
+              "descriptions": [
+                "为其中的角色持续恢复生命值;",
+                "令其中的角色持续受到风元素影响;",
+                "对出入领域的敌人造成风元素伤害。"
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "引领之风",
+          "description": "完美烹饪恢复类食物时，有12%概率获得2倍产出。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "顺风而行",
+          "description": "琴的普通攻击命中时，有50%的几率为队伍中所有角色恢复等同于琴攻击力15%的生命值。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "听凭风引",
+          "description": "使用蒲公英之风后，会恢复20%元素能量。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "流转剑脊的暴风",
+          "description": "风压剑长按超过1秒后，提升牵引速度，并使造成的伤害提升40%。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "守护众人的坚盾",
+          "description": "获得元素晶球或元素微粒时，队伍中所有角色获得15％攻击速度和15％移动速度提升，持续15秒。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "西风吹拂之时",
+          "description": "蒲公英之风的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "蒲公英的国土",
+          "description": "蒲公英领域内，所有敌人的风元素抗性下降40％。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "须臾一瞬的烈风",
+          "description": "风压剑的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "恩眷万民的狮牙",
+          "description": "蒲公英领域内的角色受到的伤害降低35％。离开蒲公英领域后，这个效果会在承受3次攻击或10秒后消失",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Kaeya",
+      "name": "凯亚",
+      "description": "异国面容的剑斗士，西风骑士团的头脑派人物。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "仪典剑术",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续剑击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，瞬间向前方挥出两剑。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "霜袭",
+          "description": "瞬间放出急冻的寒气，对前方的敌人造成冰元素伤害。",
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "凛冽轮舞",
+          "description": "凝聚空气中的寒霜，召唤3枚围绕自身旋转的寒冰之棱。\n存在期间内，寒冰之棱会跟随角色运动，对路径上的敌人造成冰元素伤害。",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "隐藏的实力",
+          "description": "队伍中自己的角色冲刺消耗的体力降低20％。\n无法与效果完全相同的固有天赋叠加。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "冷血之剑",
+          "description": "霜袭每击中一个单位，便为凯亚恢复等同于攻击力15%的生命值。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "冰渊之心",
+          "description": "霜袭使敌人冻结时，被冻结的敌人会掉落额外的元素微粒。一次霜袭至多因此产生2个额外元素微粒。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "卓越的血脉",
+          "description": "对受到冰元素影响的敌人，凯亚的普通攻击与重击暴击率提升15％。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "无尽的霜舞",
+          "description": "无尽的在凛冽轮舞的持续时间击败敌人时，其持续时间延长2.5秒，最多不会超过15秒。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "凛冽的冰戏",
+          "description": "霜袭的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "极寒的轻吻",
+          "description": "凯亚的生命值低于20％时自动触发：",
+          "secondDescription": null,
+          "descriptions": [
+            "生成一个伤害吸收量等于生命上限30％的护盾，持续20秒。",
+            "该护盾对冰元素伤害有250％的吸收效果。",
+            "每60秒只能触发一次。"
+          ]
+        },
+        {
+          "key": "c5",
+          "title": "至冷的拥抱",
+          "description": "凛冽轮舞的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "轮旋的冰凌",
+          "description": "凛冽轮舞会产生一个额外的寒冰之棱，并在施放时返还15点元素能量。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Keqing",
+      "name": "刻晴",
+      "description": "璃月七星之一，玉衡星。对「帝君一言而决的璃月」颇有微词——但实际上，神挺欣赏她这样的人。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "云来剑法",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续剑击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力,瞬间向前方挥出两剑。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "星斗归位",
+          "description": "迅速投出雷楔，以疾雷之势歼敌。\n雷楔命中时会对小范围内的敌人造成雷元素伤害,并在命中的位置留下雷楔标记。",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "长按以调整雷楔标记投掷的方向。\n通过长按投出的雷楔，可以悬浮在空中,并使刻晴再次施放星斗归位时跨越地形。",
+              "descriptions": []
+            },
+            {
+              "name": "雷楔",
+              "description": "在雷楔的持续期间内,刻睛再次施放星斗归位或施展重击时,会清除雷楔标记并造成不同的效果：",
+              "descriptions": [
+                "再次施放星斗归位时，瞬移到标记处进行一次斩击，造成雷元素范围伤害。瞬移至长按投掷的雷楔处时，可以跨越地形障碍；",
+                "施展重击时，在标记处引发雷暴连斩，造成数次雷元素范围伤害。"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "天街巡游",
+          "description": "爆发雷电的力量，造成范围雷元素伤害。\n随后隐入剑影中，对周围的敌人进行如同迅雷霆霓般疾速的连斩，造成多段雷元素伤害,并在最后一击时造成高额雷元素范围伤害。",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "总务土地",
+          "description": "在璃月执行探索派遣任务时，消耗的时间缩短25%。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "抵天雷罚",
+          "description": "雷楔存在期间再次施放星斗归位后的5秒内，刻晴的普通攻击和重击伤害转为雷元素伤害。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "玉衡之贵",
+          "description": "施放天街巡游时,刻晴的暴击率提升15%,元素充能效率提升15%，持续8秒。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "雷厉",
+          "description": "雷楔存在期间再次施放星斗归位时，在刻晴消失与出现的位置造成50%攻击力的雷元素范围伤害。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "苛捐",
+          "description": "刻晴普通攻击与重击命中受到雷元素影响的敌人时，有50%几率产生一个元素微粒。该效果每5秒只能触发一次。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "登楼",
+          "description": "天街巡游的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "调律",
+          "description": "刻晴触发雷元素相关反应后的10秒内，攻击力提升25%。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "移灯",
+          "description": "星斗归位的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "廉贞",
+          "description": "进行普通攻击、重击、施放元素战技或元素爆发时，刻晴获得6%雷元素伤害加成，持续8秒。由普通攻击、重击、元素战技或元素爆发引起的效果分别独立存在。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Klee",
+      "name": "可莉",
+      "description": "西风骑士团禁闭室的常客，蒙德的爆破大师。人称「逃跑的太阳」。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "砰砰",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "投掷在碰撞后爆炸的好东西!进行至多三段的炸弹攻击，造成火元素范围伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，短暂咏唱后，轰击敌人，造成火元素范围伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "凝聚烈焰的力量，从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成火元素范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": " 蹦蹦炸弹",
+          "description": "投岀带来无限快乐的蹦蹦炸弹！蹦蹦炸弹会连续弹跳三次，每次弹跳都会引发爆炸，造成火元素范围伤害。\n第三次弹跳后，将分裂成许多（8个）诡雷。\n诡雷会在接触到敌人或一段时间后发生爆炸，造成火元素范围伤害。\n初始拥有2次可使用次数。",
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "轰轰火花",
+          "description": "可莉火力全开！在技能持续时间内，不停召唤轰轰火花攻击附近的敌人，造成火元素范围伤害。",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "全是宝藏",
+          "description": "在小地图上显示周围的蒙德区域特产的位置。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "砰砰礼物",
+          "description": "蹦蹦炸弹与普通攻击造成伤害时，有50％的几率赋予可莉一朵爆裂火花。施放重击时将消耗爆裂火花，使本次重击不消耗体力，造成的伤害提升50％。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "火花无限",
+          "description": "可莉的重击造成暴击后，为队伍中所有角色恢复2点元素能量",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "连环轰隆",
+          "description": "攻击与施放技能时，有几率召唤火花轰击敌人，造成相当于轰轰火花大招单段攻击伤害120％的伤害。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "破破弹片",
+          "description": "蹦蹦炸弹的诡雷会使敌人防御力降低23％，持续10秒。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "可莉特调",
+          "description": "蹦蹦炸弹的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "一触即发",
+          "description": "如果在轰轰火花持续期间内退场，会引发爆炸，造成555％攻击力的火元素范围伤害。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "轰击之星",
+          "description": "轰轰火花的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "火力全开",
+          "description": "在轰轰火花的状态下，会持续为队伍中所有角色（不包括可莉自己）恢复元素能量；\n施放轰轰火花后的25秒内，队伍中所有角色获得10％火元素伤害加成。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Lisa",
+      "name": "丽莎",
+      "description": "慵懒而博学的图书管理员，须弥教令院「两百年一见」的天才毕业生。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "指尖雷暴",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多四段的电击，造成雷元素伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力,短暂咏唱后，造成雷元素范围伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "凝聚雷电的力量，从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成雷元素范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "苍雷",
+          "description": "导引雷电的力量，把麻烦的东西都清理干净。",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "放出能自行索敌的球形闪电。命中时，会造成雷元素伤害，并对小范围内的敌人施加至多叠加3层的引雷状态。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "持续咏唱后，召唤雷电从天而降，对附近的所有敌人造成大量雷元素伤害。对处于引雷状态下的敌人，会根据叠加层数造成大量额外伤害,并清除引雷效果。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "蔷薇的雷光",
+          "description": "召唤蔷薇雷光，释放强大的雷电之力，击退周围的敌人并造成雷元素伤害。存在期间内，蔷薇雷光会持续放电攻击附近的敌人，造成雷元素伤害。",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "药剂通识",
+          "description": "合成药剂时，有20%概率返还部分合成材料。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "电感余震",
+          "description": "重击命中时，会为敌人附加苍雷的引雷效果。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "静电场力",
+          "description": "敌人受到蔷薇的雷光攻击后，降低15%防御力，持续10秒。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "无限的电回路",
+          "description": "苍雷长按时,每个命中的敌人都会为丽莎恢复2点元素能量。通过这种方式，一次至多回复10点元素能量。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "空间电势结界",
+          "description": "苍雷长按时具有如下效果：",
+          "secondDescription": null,
+          "descriptions": [
+            "防御力提升25％；",
+            "提高丽莎的抗打断能力。"
+          ]
+        },
+        {
+          "key": "c3",
+          "title": "谐振的雷光",
+          "description": "蔷薇的雷光的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "如雨的电浆",
+          "description": "蔷薇的雷光攻击时，放出的闪电增加至1~3道。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "等离态的落雷",
+          "description": "苍雷的技能等级提高3级。至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "脉冲的魔女",
+          "description": "丽莎登场时，对附近的敌人施加3层苍雷的引雷效果。该效果每5秒只能触发一次。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Mona",
+      "name": "莫娜",
+      "description": "神秘的少女占星术士，声称自己是「伟大的占星术士莫娜」，拥有与名号相符的不俗实力，博学而高傲。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "因果点破",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多四段的水花攻击，造成水元素伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，短暂咏唱后，造成水元素范围伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "凝聚水元素的力量，从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成水元素范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "水中幻愿",
+          "description": "聚集水花汇成命运的虚影。",
+          "abilities": [
+            {
+              "name": "虚影",
+              "description": "具有如下特性：",
+              "descriptions": [
+                "持续嘲讽周围的敌人，吸引火力；",
+                "持续对附近的敌人造成水元素伤害；",
+                "持续时间结束时，虚影破裂，造成水元素范围伤害。"
+              ]
+            },
+            {
+              "key": "a2",
+              "description": "借助水流之势迅速后退，并唤出虚影。\n场上同时只能存在一个通过水中幻愿创造的虚影。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "星命定轨",
+          "description": "凝聚粼粼的水波，倒映出虚幻星空，对大范围内的敌人施加泡影状态。",
+          "abilities": [
+            {
+              "name": "泡影",
+              "description": "以星相的气泡包裹敌人，施加潮湿状态。较弱的敌人会被禁锢在泡影中，无法行动。\n处于泡影影响下的敌人受到伤害时，会产生以下效果：",
+              "descriptions": [
+                "对敌人施加星异的伤害加成效果，并以此提高这一次造成的伤害；",
+                "解除泡影效果，并额外造成一次水元素伤害。"
+              ]
+            },
+            {
+              "name": "星异",
+              "description": "持续时间内，提高目标对象受到的伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s4",
+          "title": "虚实流动",
+          "description": null,
+          "abilities": [
+            {
+              "name": "替代冲刺",
+              "description": "隐入流水,以消耗体力为代价,化为激流快速移动。\n在虚实流动状态下，莫娜可以在水面上高速移动。\n结束虚实流动现身时,对周围的敌人施加潮湿状态。",
+              "descriptions": []
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "运行原理",
+          "description": "合成武器突破素材时，有25%概率返还部分合成材料。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "「老太婆来抓我啊!」",
+          "description": "进入虚实流动状态2秒后，如果周围存在敌人，则自动凝聚一个虚影。\n通过这种方式产生的虚影持续2秒，造成的破裂伤害相当于水中幻愿伤害的50%。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "「托付于命运吧!」",
+          "description": "莫娜的水元素伤害加成获得额外提升,提升程度相当于她的元素充能效率的20%。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "沉没的预言",
+          "description": "队伍中自己的角色攻击命中处于星异状态下的敌人后的8秒内，水元素相关反应的效果提升：",
+          "secondDescription": null,
+          "descriptions": [
+            "感电反应造成的伤害提升15%，蒸发反应造成的伤害提升15%，水元素扩散反应造成的伤害提升15%；",
+            "冻结反应的持续时间延长15%。"
+          ]
+        },
+        {
+          "key": "c2",
+          "title": "星月的连珠",
+          "description": "普通攻击命中时，有20%的几率自动施放一次重击。\n该效果每5秒只能触发一次。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "不休的天象",
+          "description": "星命定轨的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "灭绝的预言",
+          "description": "队伍中所有角色攻击处于星异状态下的敌人时，暴击率提升15%。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "命运的嘲弄",
+          "description": "水中幻愿的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "厄运的修辞",
+          "description": "进入虚实流动状态后，每移动1秒，莫娜的下—次重击伤害就增加60%，\n通过这种方式至多可以获得180%重击伤害加成，该效果至多持续8秒。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Ningguang",
+      "name": "凝光",
+      "description": "「璃月七星」中的「天权」，其名下财富之多，全大陆鲜有人能望其项背",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "千金掷",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "发射宝石，造成岩元素伤害。\n命中时，赋予凝光一枚星璇",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗体力，发射一颗巨型宝石，造成岩元素伤害。\n若凝光拥有星璇，施放重击时会将所有星璇一同发射，造成额外的伤害",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "凝聚晶岩的力量，从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成岩元素范围伤害",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "璇玑屏",
+          "description": "借由黄金、黑曜岩与强者的余裕，构建出坚固的璇玑屏，并造成岩元素范围伤害。",
+          "abilities": [
+            {
+              "name": "璇玑屏",
+              "description": "璇玑屏被视为岩元素创造物，可以阻挡部分攻击，不可攀爬。同时只能存在一个。",
+              "descriptions": [
+                "阻挡敌人发射的投射物；",
+                "耐久度按比例继承凝光的生命值上限。"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "天权崩玉",
+          "description": "凝光在身边凝聚诸多宝石，散之一瞬，自动索敌打击附近的敌人，造成大量岩元素伤害。\n施放天权崩玉时，如果附近有璇玑屏存在，璇玑屏将发射额外的宝石飞弹协同攻击。",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "奇石珠宝录",
+          "description": "在小地图上显示周围的矿脉(铁矿、白铁矿、水晶矿、魔晶矿、星银矿)的位置。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "星移势转",
+          "description": "拥有星璇时，凝光的重击不会消耗体力。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "储之千日，用之一刻",
+          "description": "穿过璇玑屏的角色会获得12%岩元素伤害加成，持续10秒。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "悬星尽散击云碎",
+          "description": "普通攻击命中时会造成范围伤害。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "璇玑合璧镇昆仑",
+          "description": "璇玑屏碎裂时，会清除冷却时间。该效果每6秒只能触发一次。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "星罗宿列天权临",
+          "description": "天权崩玉的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "攻守易形著神机",
+          "description": "璇玑屏会使周围角色的所有元素抗性提升10%。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "琼屏千扇正天衡",
+          "description": "璇玑屏的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "七星璨璨凝流光",
+          "description": "施放天权崩玉时，会为凝光生成七枚星璇。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Noelle",
+      "name": "诺艾尔",
+      "description": "「西风骑士团」的可靠女仆，梦想有天能成为正式的骑士。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "西风剑术·女仆",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多四段的连续挥砍。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "持续消耗体力旋转大剑，攻击周围的敌人。结束旋转时，会进行一次格外有力的挥斩。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "护心铠",
+          "description": "唤出护体的岩铠，对周围的敌人造成岩元素伤害，并形成护盾，伤害吸收量基于诺艾尔的防御力。",
+          "abilities": [
+            {
+              "name": "",
+              "description": "护盾具有如下效果：",
+              "descriptions": [
+                "诺艾尔的普通攻击与重击命中敌人时,都有几率为队伍中所有角色恢复生命值；触发治疗时的治疗量受益于诺艾尔的防御力。",
+                "对所有元素伤害与物理伤害有150％的吸收效果。"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "大扫除",
+          "description": "将磐石的力量凝聚在武器上，冲击周围的敌人并进行一次大范围攻击，造成岩元素伤害。",
+          "abilities": [
+            {
+              "name": "",
+              "description": "此后获得如下效果：",
+              "descriptions": [
+                "提高诺艾尔的攻击范围；",
+                "将攻击伤害转为岩元素伤害，该元素转化无法被附魔覆盖；",
+                "基于诺艾尔的防御力，提高攻击力。"
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "女仆的态度",
+          "description": "完美烹饪防御类食物时，由12%概率获得2倍产出。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "全心全意",
+          "description": "当诺艾尔在后台时，若当前场上自己的角色生命值低于30％时自动触发：\n为当前场上自己的角色生成一个伤害吸收量等同于诺艾尔防御力400%的护盾，持续20秒。\n对所有元素伤害与物理伤害有150％的吸收效果。\n该效果60秒内只能触发一次。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "干净利落",
+          "description": "诺艾尔的普通攻击或重击每命中4次，都会减少护心铠1秒的冷却。同时命中多名敌人视作攻击命中一次。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "支援就交给我吧",
+          "description": "同时处于大扫除与护心铠状态时若攻击命中，则一定触发护心铠的生命值回复效果。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "旋风女仆",
+          "description": "诺艾尔的重击体力消耗降低20造成的伤害提升15％。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "女仆不会受伤",
+          "description": "护心铠的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "之后会扫干净的",
+          "description": "护心铠在效果结束时，或因伤害破碎时，会对周围的敌人造成400％攻击力的岩元素伤害。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "骑士团扫除专家",
+          "description": "大扫除的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "要一尘不染才行",
+          "description": "大扫除额外提高诺艾尔防御力50％的攻击力。此外，在技能持续时间内，每打倒1个敌人，其持续时间将延长1秒最多不会超过10秒。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Qiqi",
+      "name": "七七",
+      "description": "药庐「不卜庐」的采药姑娘兼学徒，面色苍白如纸的不死之人。话很少，也没有什么表情。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "云来古剑法",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续剑击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，瞬间向前方挥出两剑。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "仙法·寒病鬼差",
+          "description": "冰血化符，召唤寒病鬼差，并对周围的敌人造成冰元素伤害。",
+          "abilities": [
+            {
+              "name": "寒病鬼差",
+              "description": "",
+              "descriptions": [
+                "七七的普通攻击与重击命中时，为队伍中自己的角色，以及附近的友方角色恢复生命值，回复量受益于七七的攻击力；",
+                "每隔一段时间，为当前场上自己的角色恢复生命值；",
+                "跟随角色行动，对路径上的敌人造成冰元素伤害。"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "仙法·救苦度厄",
+          "description": "七七释放体内封印的仙力，以度厄真符标记附近的敌人，并造成冰元素伤害。",
+          "abilities": [
+            {
+              "name": "度厄真符",
+              "description": "处于度厄真符影响下的敌人受到伤害时，为造成伤害的角色恢复生命值。",
+              "descriptions": []
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "前尘旧忆",
+          "description": "在小地图上显示周围的璃月区域特产的位置。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "延命妙法",
+          "description": "处于仙法·寒病鬼差状态下的角色触发元素反应时，受治疗加成提升20%,持续8秒。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "玉签偶开",
+          "description": "七七的普通攻击与重击命中敌人时，有50%的几率为敌人添加一枚度厄真符，持续6秒。该效果每30秒只能触发一次。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "寒苦回向",
+          "description": "寒病鬼差命中被度厄真符标记的敌人时，为七七恢复2点元素能量。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "冰寒蚀骨",
+          "description": "对受到冰元素影响的敌人，七七的普通攻击与重击造成的伤害提升15%。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "升天宝诏",
+          "description": "仙法·救苦度厄的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "天威压众",
+          "description": "被度厄真符标记的目标，攻击力下降20%。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "红莲开绽",
+          "description": "仙法·寒病鬼差的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "起死回骸",
+          "description": "施放仙法·救苦度厄时，复苏附近队伍中所有倒下的角色，并将其生命值恢复至50%。该效果每15分钟只能触发一次。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Razor",
+      "name": "雷泽",
+      "description": "住在蒙德地区奔狼领，远离城市与人群，和狼一同生活的少年。直觉锐利，身姿迅捷。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "钢脊",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多四段的连续挥砍。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "持续消耗体力旋转大剑，攻击周围的敌人。结束旋转时，会进行一次格外有力的挥斩。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "利爪与苍雷",
+          "description": "用师父与他的「家人」教他的方法，来解决猎物。",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "若命中敌人，则会为雷泽积攒一个雷之印，提高雷泽的元素充能效率。最多同时存在3个雷之印，叠加刷新持续时间。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "积聚雷电力量引发小范围的雷爆，造成大量雷元素伤害，并清除已有的雷之印。每个因此被清除的雷之印，都会转为雷泽的元素能量。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "雷牙",
+          "description": "唤醒无形的雷狼守护自己，对周围的敌人造成雷元素伤害，并消耗所有雷之印，为雷泽恢复元素能量。\n雷狼存在期间，会与雷泽共同战斗。",
+          "abilities": [
+            {
+              "name": "雷狼",
+              "description": "效果将在雷泽退场时解除。\n退场时，会依据剩余的持续时间，返还至多10点元素能量。",
+              "descriptions": [
+                "会随雷泽的普通攻击协同攻击，造成雷元素伤害；",
+                "提高雷泽的攻击速度、雷元素抗性；",
+                "使雷泽免疫感电反应的伤害；",
+                "无法施放重击；",
+                "提高雷泽的抗打断能力。"
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "奔狼",
+          "description": "队伍中自己的角色冲刺消耗的体力降低20%。\n无法与效果完全相同的固有天赋叠加。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "觉醒",
+          "description": "利爪与苍雷的冷却时间降低18%。\n施放雷牙时，重置利爪与苍雷的冷却时间。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "饥饿",
+          "description": "雷泽的元素能量在50%以下时，元素充能效率提高30%。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "狼性",
+          "description": "雷泽获取元素晶球或元素徼粒后的8秒内，造成的伤害提高10%。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "压制",
+          "description": "攻击生命值低于30％的敌人时，暴击率提高10％。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "兽魂",
+          "description": "雷牙的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "撕咬",
+          "description": "利爪与苍雷点按时，会使命中的敌人防御力降低15％，持续7秒。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "利爪",
+          "description": "利爪与苍雷的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "天狼",
+          "description": "每10秒，雷泽的大剑将自动充能，使下一次普通攻击引发落雷，造成100％攻击力的雷元素伤害。不处于雷牙状态下时，若落雷击中敌人，会为雷泽添加一层雷之印。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Rosaria",
+      "name": "罗莎莉亚",
+      "description": "A nun who, outside of her garb, seems nothing at all like a person of the cloth. Known for her sharp, cold words and manner, she often works alone.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Spear of Worship",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Performs up to five consecutive spear strikes.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Ravaging Confession",
+          "description": "Rosaria swiftly shifts her position to appear behind her opponent, then stabs and slashes them with her polearm, dealing Cyro DMG.\nThis ability cannot be used to travel behind opponents of a larger build.",
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "Rites of Termination",
+          "description": "Rosaria's unique take on this prayer ritual: First, she swings her weapon to slash surrounding opponents; then, she summons a frigid Ice Lance that strikes the ground. Both actions deal Cryo DMG.\nWhile active, the Ice Lance periodically releases a blast of cold air, dealing Cryo DMG to surrounding opponents.",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Night Walk",
+          "description": "At night (18:00–6:00), increases the Movement SPD of your own party members by 10%.\nDoes not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Extracted Confession",
+          "description": "When Rosaria strikes an opponent from behind using Ravaging Confession, Rosaria's CRIT Rate increases by 12% for 5s.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Shadow Samaritan",
+          "description": "Casting Rites of Termination increases CRIT Rate of all nearby party members (except Rosaria herself) by 15% of Rosaria's CRIT Rate for 10s.\nCRIT Rate Bonus gained this way cannot exceed 15%.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Unholy Revelation",
+          "description": "When Rosaria deals a CRIT Hit, her ATK SPD increases by 10% and her Normal Attack DMG increases by 10% for 4s.",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Land Without Promise",
+          "description": "The duration of the Ice Lance created by Rites of Termination is increased by 4s.",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Sacrament of Penance",
+          "description": "Increases the Level of Ravaging Confessionby 3. Maximum upgrade level is 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Amazing Disgrace",
+          "description": "Ravaging Confession's Crit Hits regenerate 5 Energy for Rosaria. Can only be triggered once each time Ravaging Confession is cast.",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Extreme Unction",
+          "description": "Increases the Level of Rites of Termination by 3. Maximum upgrade level is 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Divine Retribution",
+          "description": "Rites of Termination' attack decreases opponents' Physical RES by 20% for 10s.",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Sucrose",
+      "name": "砂糖",
+      "description": "对万物充满好奇的炼金术士，「生物炼金」学派的研究者。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "简式风灵作成",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多四段的风灵攻击，造成风元素伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，短暂咏唱后，造成风元素范围伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "凝聚风灵的力量，从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成风元素范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "风灵作成·陆叁零捌",
+          "description": "召唤出小型风灵，对范围内敌人造成风元素伤害，牵引至风灵所在位置并击飞。",
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "禁·风灵作成·柒伍同构贰型",
+          "description": "砂糖抛出不稳定的烧瓶，生成大型风灵。\n存在期间，大型风灵会持续牵引并击飞附近的敌人，造成风元素范围伤害。",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "若风灵在技能持续期间接触了水元素/火元素/冰元素/雷元素，则会获得对应元素属性，额外造成该元素的附加伤害。\n元素转化在技能持续期间仅会发生一次。",
+              "descriptions": []
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "不稳定发现",
+          "description": "合成角色与武器培养素材时，有10%概率获得2倍产出。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "触媒置换术",
+          "description": "砂糖触发扩散反应时，使队伍中所有对应元素类型的角色（不包括砂糖自己）元素精通提升50，持续8秒。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "小小的慧风",
+          "description": "风灵作成·陆叁零捌或禁·风灵作成·染伍同构贰型命中敌人时，基于砂糖元素精通的20%,为队伍中所有角色（不包括砂糖自己）提供元素精通加成，持续8秒。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "堆叠真空域",
+          "description": "风灵作成·陆叁零捌的可使用次数增加1次。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "不羁型贝特",
+          "description": "禁·风灵作成·柒伍同构贰型的技能持续时间延长2秒。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "零失误少女",
+          "description": "风灵作成·陆叁零捌的技能等级提高3级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "炼金的偏执",
+          "description": "砂糖每进行7次普通攻击或者重击，风灵作成·陆叁零捌的冷却时间就会随机减少1-7秒。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "认真普通瓶",
+          "description": "禁·风灵作成·柒伍同构贰型的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "混元熵增论",
+          "description": "禁·风灵作成·柒伍同构贰型如果发生了元素转化，则使队伍中所有角色在技能持续时间内获得20%的对应元素伤害加成。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Tartaglia",
+      "name": "达达利亚",
+      "description": "愚人众执行官第十一位，「公子」，其战绩威名远扬。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "断雨",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至六段的连续弓箭射击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "进行伤害更高、更为精准的瞄准射击。\n瞄准时，水元素之力会在箭矢上持续积聚。聚满了激流的箭矢会在命中敌人时造成水元素伤害施加断流效果。",
+              "descriptions": []
+            },
+            {
+              "name": "断流",
+              "description": "处于断流影响下的敌人受到达达利亚的各种攻击时，将产生水元素范围伤害效果。这些效果造成的伤害视为普通攻击伤害。",
+              "descriptions": [
+                "断流·闪：满蓄力瞄准射击命中处于断流影响下的敌人时，会引发连续范围伤害。断流·闪每0.7秒至多触发一次。",
+                "断流·破：击败处于断流影响下的敌人时会引发水之绽放，对附近的敌人施加断流效果。"
+              ]
+            },
+            {
+              "key": "a4",
+              "description": "从空中射出箭雨，并迅速下坠冲击地面，在落地时造成范围伤害。\n处于魔王武装·狂澜的近战状态下时，无法施展下落攻击。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "魔王武装·狂澜",
+          "description": "解放纯水结构的武装，对周围的敌人造成水元素伤害，并进入近战状态。\n在此状态下，达达利亚的普通攻击与重击都将发生变化：",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多六次的连续水元素斩击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗体力，瞬间向前挥出两剑，造成水元素伤害。",
+              "descriptions": []
+            },
+            {
+              "name": "断流·斩",
+              "description": "近战攻击命中处于断流影响下的敌人时，将引发一次断流·斩，造成水元素范围伤害。断流·斩造成的伤害视为元素战技伤害，每1.5秒至多触发一次。\n30秒后或再次释放时效果将会解除，回到远程状态，并使技能进入冷却。近战状态下持续的时间越长，冷却时间越长。\n若持续30秒后自动回到远程状态，技能将进入更长的冷却周期。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "极恶技·尽灭闪",
+          "description": "依据达达利亚当前所处的状态，进行不同的攻击：",
+          "abilities": [
+            {
+              "name": "远程状态·魔弹一闪",
+              "description": "向前方快速射出一发饱含水元素的魔箭，造成水元素范围伤害，并施加断流效果。\n释放后，返还部分元素能量。",
+              "descriptions": []
+            },
+            {
+              "name": "近战状态·尽灭水光",
+              "description": "进行一次大范围斩击，对附近所有敌人造成大量水元素伤害，并能引发断流·爆。",
+              "descriptions": []
+            },
+            {
+              "name": "断流·爆",
+              "description": "尽灭水光命中处于断流状态下的敌人时，会消耗断流效果并引发水爆，造成水元素范围伤害。断流·爆造成的伤害视为元素爆发伤害。",
+              "descriptions": []
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "诸武精通",
+          "description": "队伍中自己的角色普通攻击等级提高1级。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "永无谢幕",
+          "description": "断流效果的持续时间延长8秒。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "水形剑",
+          "description": "处于魔王武装·狂澜的近战状态时，普通攻击与重击在造成暴击时，会为命中的敌人施加断流效果。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "魔王武装·遏浪",
+          "description": "魔王武装·狂澜的冷却时间降低20%。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "魔王武装·暗流",
+          "description": "处于断流效果影响下的敌人被击败时，为达达利亚恢复4点元素能量。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "深渊之灾·纷争涡源",
+          "description": "魔王武装·狂澜的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "深渊之灾·凝水盛放",
+          "description": "每4秒，场上存在达达利亚自身施加的断流效果时，若达达利亚当前处于魔王武装·狂澜的近战状态，则触发断流·斩；否则，触发断流闪。\n通过此命之座触发的断流·斩与断流·闪不受这两种断流各自的触发间隔限制，也不会影响其触发间隔。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "极恶技·斩水斩雨",
+          "description": "极恶技·尽灭闪的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "极恶技·天使灭尽",
+          "description": "在近战状态下施放极恶技·尽灭闪时，清除魔王武装·狂澜的冷却时间。\n该效果会在回到远程状态后触发。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Traveler (Anemo)",
+      "name": "旅行者（风）",
+      "description": "从世界之外漂流而来的旅行者，被神带走血亲，自此踏上寻找七神之路。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "异邦铁风",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续剑击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，瞬间向前方挥出两剑。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "风涡剑",
+          "description": "紧握风的力量，在掌中汇聚真空涡流，对前方敌人持续造成风元素伤害。技能结束时真空涡流会炸裂，造成范围更大、威力更强的风元素伤害。",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "伤害与影响范围会提升。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "若真空涡流在技能持续期间接触了水元素/火元素/冰元素/雷元素，则会获得对应元素属性，额外造成该元素的附加伤害。元素转化在技能持续期间仅会发生一次。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "风息激荡",
+          "description": "导引风行进的路途，唤出持续前进的龙卷风，将沿途的物体与敌人吸入，持续造成风元素伤害。",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "若龙卷风在技能持续期间接触了水元素/火元素/冰元素/雷元素，则会获得对应元素属性，额外造成该元素的附加伤害。元素转化在技能持续期间仅会发生一次。",
+              "descriptions": []
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p2",
+          "title": "裂空之风",
+          "description": "普通攻击的最后一击会打出一道风刃，对沿途敌人造成60%攻击力的风元素伤害。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "复苏之风",
+          "description": "用风涡剑打败敌人后的5秒内，每秒恢复2%生命值。该效果每5秒只能触发一次。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "回转的怒风",
+          "description": "风涡剑可将周围5米内的敌人缓慢牵引到角色面前。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "革新的旋风",
+          "description": "元素充能的效率提升16%。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "天地的刚风",
+          "description": "风息激荡的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "眷护的和风",
+          "description": "风涡剑持续期间，受到伤害降低10%。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "群星的涡风",
+          "description": "风涡剑的技能等级提高3级。至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "纠缠的信风",
+          "description": "受到风息激荡伤害的目标，风元素抗性下降20%。如果产生了元素转化，那么对应元素抗性也下降20%。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Traveler (Geo)",
+      "name": "旅行者（岩）",
+      "description": "从世界之外漂流而来的旅行者，被神带走血亲，自此踏上寻找七神之路。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "异邦岩峰",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续剑击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，瞬间向前方挥出两剑。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "星陨剑",
+          "description": "从大地深处升起荒星，引发爆炸，造成岩元素范围伤害。\n荒星视为岩元素创造物，可以阻拦攻击，可以攀爬。",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "可以调整技能生效位置。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "岩潮叠嶂",
+          "description": "激活大地深处的岩元素，引发扩散的震荡波。击退周围的敌人，造成岩元素范围伤害。\n此后，在震荡波的外围形成突起的岩嶂。岩嶂视为岩元素创造物，可以阻拦攻击。",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p2",
+          "title": "破碎的绝岩",
+          "description": "星陨剑的冷却时间减少2秒。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "狂乱的崩岩",
+          "description": "普通攻击的最后一击会附带崩毁，对范围内的敌人造成60%攻击力的岩元素伤害。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "巍然的青岩",
+          "description": "队伍中角色处于岩潮叠嶂的岩嶂包围中时，暴击率提升10%，并提高抗打断能力。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "不稳的熔岩",
+          "description": "星陨剑的荒星被摧毁时会再度发生爆炸，造成等同于星陨剑伤害的额外岩元素范围伤害。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "八方之岩",
+          "description": "岩潮叠嶂的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "险峻的重岩",
+          "description": "岩潮叠嶂引发的震荡波每击中一个敌人，都会恢复5点元素能量。通过这种方式，一次至多恢复25点元素能量。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "天坠之岩",
+          "description": "星陨剑的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "永世的磐岩",
+          "description": "岩潮叠嶂的岩嶂持续时间延长5秒；星陨剑的荒星持续时间延长10秒。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Venti",
+      "name": "温迪",
+      "description": "蒙德城诸多吟游诗人中的一位，自由自在地穿行在街头巷尾。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "神代射术",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多六段的连续弓箭射击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "进行伤害更高，更为精准的瞄准射击。\n瞄淮时，眷顾天地的风会在箭矢上持续积聚，聚满了风之力的箭矢会造成风元素伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中射出箭雨，并迅速下坠冲击地面，在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "高天之歌",
+          "description": "呼唤与诗和乐协鸣的风，将在尘泥中行走的事物送上高空吧。",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "在目标位置唤出风域，造成风元素范围伤害，并击飞其中的敌人。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "以自身为中心,唤出更大的风域，造成风元素范围伤害，并击飞其中的敌人。\n长按施放后，温迪会乘风飞到空中。\n被高天之歌击飞的敌人，在短时间内会缓慢坠落。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "风神之诗",
+          "description": "射出千风汇聚而成的箭矢，在前方造出巨大的暴风之眼，将敌人卷入，持续造成风元素伤害。",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "若暴风之眼在技能持续期间接触了水元素/火元素/冰元素/雷元素，则会获得对应元素属性，额外造成该元素的附加伤害。\n元素转化在技能持续期间仅会发生一次。",
+              "descriptions": []
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "恒风随行",
+          "description": "队伍中自己的角色滑翔消耗的体力降低20％。\n无法与效果完全相同的固有天赋叠加。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "绪风之拥",
+          "description": "长按高天之歌后，会产生上升气流，持续20秒。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "暴风之眼",
+          "description": "风神之诗效果结束后，会为温迪恢复15点元素能量;若发生了元素转化，则同样为队伍中所有对应元素的角色恢复15点元素能量。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "弦发的苍风",
+          "description": "瞄准射击会额外发射两枚分裂箭，分别造成原本33％的伤害。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "眷恋的泠风",
+          "description": "高天之歌会使敌人的风元素抗性与物理抗性降低12％，持续10秒。\n被高天之歌击飞的敌人在落地前，风元素抗性与物理抗性额外降低12％。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "千风的诗篇",
+          "description": "风神之诗的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "自由的凛风",
+          "description": "温迪获取元素晶球或元素微粒后，获得25％的风元素伤害加成，持续10秒。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "高天的协奏",
+          "description": "高天之歌的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "抗争的暴风",
+          "description": "受风神之诗伤害的敌人，风元素抗性降低20％。若产生了元素转化，则使转换的元素抗性也降低20％。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Xiangling",
+      "name": "香菱",
+      "description": "来自璃月，名声在外的少女厨师，对料理之道极具热情，拿手麻辣菜肴堪称一绝。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "白案功夫",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续枪击",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，向前方突进，对路径上的敌人造成伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "锅巴出击",
+          "description": "唤出喷火的锅巴，存在期间内，不断对敌人喷火，造成火元素范围伤害。",
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "旋火轮",
+          "description": "以控制火候与枪术的精湛技巧，甩出围绕自己快速旋转的旋火轮。存在期间内，旋火轮会跟随角色运动，对路径上的敌人造成火元素伤害。",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "万民堂大厨",
+          "description": "完美烹饪攻击类食物时，有12%概率获得2倍产出。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "交叉火力",
+          "description": "锅巴的喷火距离提高20%。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "绝云朝天椒",
+          "description": "锅巴出击效果结束时，锅巴会在消失的位置留下辣椒。拾取辣椒会提高10%攻击力，持续10秒。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "外酥里嫩",
+          "description": "受到锅巴攻击的敌人火元素抗性降低15％，持续6秒。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "大火宽油",
+          "description": "普通攻击的最后一击会对敌人施加持续2秒的内爆效果。持续时间结束时会发生爆炸，造成75%攻击力的火元素范围伤害。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "武火急烹",
+          "description": "旋火轮的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "文火慢煨",
+          "description": "旋火轮的持续时间延长40％。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "锅巴凶猛",
+          "description": "锅巴出击的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "大龙卷旋火轮",
+          "description": "旋火轮持续期间，队伍中所有角色获得15％火元素伤害加成。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Xiao",
+      "name": "魈",
+      "description": "守护璃月的仙人，「夜叉」。美号「降魔大圣」，妙称「护法夜叉大将」。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "卷积微尘",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多六段的连续枪击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，进行上挑攻击。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。魈进行下落攻击时，不会承受坠落伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "风轮两立",
+          "description": "疾速突进，对路径上的敌人造成风元素伤害。可以在空中施放。\n初始拥有2次可使用次数。",
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "靖妖傩舞",
+          "description": "展现数千年前令神魔精妖睹之胆颤的夜叉傩面。",
+          "abilities": [
+            {
+              "description": "夜叉傩面",
+              "descriptions": [
+                "大幅提升魈的跳跃能力；",
+                "提高攻击范围与攻击伤害；",
+                "将攻击伤害转为风元素伤害，该元素转化无法被附魔覆盖；",
+                "在这个状态下,魈会持续损失生命值。",
+                "效果将在魈退场时解除。"
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "神通·空中自在法",
+          "description": "队伍中自己的角色攀爬消耗的体力降低20%。\n无法与效果完全相同的固有天赋叠加。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "降魔·平妖大圣",
+          "description": "在靖妖傩舞状态下，魈造成的所有伤害提高5%。此后，在技能持续时间内，每经过3秒，造成的伤害再额外提高5%。\n至多获得25%伤害加成。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "坏劫·国土碾尘",
+          "description": "施放风轮两立会使之后7秒内的风轮两立造成的伤害提高15%。\n该效果持续7秒,最多叠加3次,叠加时刷新持续时间。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "坏劫·毁坏三界",
+          "description": "风轮两立的可使用次数增加1次。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "空劫·虚空华开敷变",
+          "description": "处在队伍后台时，魈自己的元素充能效率提高25％。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "降魔·忿怒显相",
+          "description": "风轮两立的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "神通·诸苦灭尽",
+          "description": "魈的生命值低于50％时，获得100％的防御力提升。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "成劫·无明增长",
+          "description": "靖妖傩舞的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "降魔·护法夜叉",
+          "description": "在靖妖傩舞状态下，下落攻击命中至少2个敌人时，风轮两立立刻获得1次可使用次数，并且在接下来1秒内，可以无视冷却时间施放风轮两立。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Xingqiu",
+      "name": "行秋",
+      "description": "经常能在书摊看到的少年人。手执长剑，胸中常怀侠义之心。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "古华剑法",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续剑击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，瞬间向前方挥出两剑。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "古华剑·画雨笼山",
+          "description": "使出连续两段的剑技，对前方的敌人造成水元素伤害。同时，生成最大数量的雨帘剑围绕在当前场上自己的角色身边。\n行秋水元素伤害加成的20％将转换为雨帘剑的额外伤害减免。\n最多通过这种方式获得24％额外伤害减免。\n初始雨帘剑的最大数量为3柄。\n施放的瞬间，为角色施加潮湿状态。",
+          "abilities": [
+            {
+              "name": "",
+              "description": "具有如下特性:",
+              "descriptions": [
+                "角色受到伤害时会破碎，降低受到的伤害；",
+                "提高角色的抗打断能力。"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "古华剑·裁雨留虹",
+          "description": "展开虹剑势，驾御幻影剑雨战斗，并生成最大数量的雨帘剑。",
+          "abilities": [
+            {
+              "name": "虹剑势",
+              "description": "",
+              "descriptions": [
+                "当前场上自己的角色进行普通攻击时，会产生剑雨连携攻击，造成水元素伤害；",
+                "雨帘剑的数量将始终维持在最大数量。"
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "灵光乍现",
+          "description": "合成角色天赋素材时，有25％概率返还部分合成材料。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "生水要诀",
+          "description": "雨帘剑受击破碎时或持续时间结束时，基于行秋最大生命值的6％，恢复当前角色的生命值。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "虚实工笔",
+          "description": "行秋获得20％水元素伤害加成。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "重帘留香",
+          "description": "雨帘剑的最大数量增加1柄。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "天青现虹",
+          "description": "古华剑·裁雨留虹的持续时间延长3秒;此外，受到剑雨攻击的敌人，水元素抗性降低15％，持续4秒。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "织诗成锦",
+          "description": "古华剑·裁雨留虹的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "孤舟斩蛟",
+          "description": "在古华剑·裁雨留虹效果持续期间，古华剑·画雨笼山造成的伤害提升50％。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "雨深闭门",
+          "description": "古华剑·画雨笼山的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "万文集此",
+          "description": "古华剑·裁雨留虹每发动2次剑雨攻击，就大幅增强下一次剑雨攻击并在命中敌人时为行秋恢复3点元素能量。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Xinyan",
+      "name": "辛焱",
+      "description": "璃月港唯一的摇滚歌手，以音乐和热情歌颂着对「成见」的反抗。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "炎舞",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多四段的连续挥砍。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "持续消耗体力，旋转大剑攻击周围的敌人。\n停止旋转时，会进行一次格外有力的挥砍。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "热情拂扫",
+          "description": "辛焱挥动乐器，对周围的敌人造成火元素伤害，并借由「观众」的「热情」，形成护盾。",
+          "abilities": [
+            {
+              "name": "",
+              "description": "护盾的伤害吸收量受益于辛焱的防御力，并基于命中敌人的数目：",
+              "descriptions": [
+                "未命中或命中一名敌人：一级护盾·散序节拍；",
+                "命中二名敌人：二级护盾·歌头节拍；",
+                "命中三名或更多敌人：将产生三级护盾·舞遍节拍。除了吸收伤害，还会间歇性对周围的敌人造成火元素伤害。"
+              ]
+            },
+            {
+              "name": "",
+              "description": "护盾具有如下特性：",
+              "descriptions": [
+                "施放的瞬间，为辛焱施加火元素附着；",
+                "对火元素伤害有着250%的吸收效果。"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "叛逆刮弦",
+          "description": "迅速扫弦引发音波，击退敌人，对周围的敌人造成物理伤害，激起「舞台」上的氛围。\n因为氛围实在太过炙烈，所以会引起烈焰，对周围的敌人持续造成火元素伤害。",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "摇滚的食谱",
+          "description": "完美烹饪防御类食物时，有12%概率获得2倍产出。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "「没观众也要演奏...」",
+          "description": "减少热情拂扫的护盾所需的命中敌人数量：",
+          "descriptions": [
+            "二级护盾·歌头节拍:命中一名敌人；",
+            "三级护盾·舞遍节拍:命中二名或更多敌人。"
+          ]
+        },
+        {
+          "key": "p3",
+          "title": "「这才是摇滚!」",
+          "description": "处于热情拂扫的护盾保护下的角色造成的物理伤害提高15%。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "绝命的加速",
+          "description": "辛焱造成暴击后的5秒内，普通攻击和重击的攻击速度提升12%。\n该效果每5秒只能触发一次。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "开场即兴段",
+          "description": "叛逆刮弦造成的物理伤害暴击率提升100%，并会在施放时形成三级护盾·舞遍节拍。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "摭分的指法",
+          "description": "热情拂扫的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "节奏的传染",
+          "description": "热情拂扫的伤害，会使敌人的物理抗性降低15%，持续12秒。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "返场的高呼",
+          "description": "叛逆刮弦的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "地狱里摇摆",
+          "description": "辛焱的重击的体力消耗降低30%；此外，进行重击时，将基于防御力的50%加成获得攻击力加成。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Zhongli",
+      "name": "钟离",
+      "description": "被「往生堂」请来的神秘客人,知识渊博,对各种事物都颇有见地。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "岩雨",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多六段的连续枪击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，向前方疾行，在行动路径上和终点投下如雨的岩枪。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "元素战技·地心",
+          "description": "山脉中、大地上、磐石间，都遍布着岩之力。能自如驱动这股力量的人却少之又少。",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "命令大地上的岩元素积聚而起，创造岩脊。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "令附近岩元素爆发，造成以下效果：",
+              "descriptions": [
+                "如果岩脊数量没有达到上限，则创造岩脊；",
+                "形成玉璋护盾。伤害吸收量收益于钟离的生命值上限；",
+                "造成岩元素范围伤害；",
+                "身边如果有附带岩元素的目标，则大量消耗至多两个目标的岩元素。这个效果不会造成伤害。"
+              ]
+            },
+            {
+              "name": "岩脊",
+              "description": "创造时，造成岩元素范围伤害。\n此外，岩脊存在期间会与周围的其他岩元素创造物间隙进行原岩共鸣，对周围的敌人造成岩元素伤害。\n岩脊视为岩元素创生物，可以阻挡攻击、可以攀爬。\n由钟离自己创造的岩脊，初始同时只能存在一个。",
+              "descriptions": []
+            },
+            {
+              "name": "玉璋护盾",
+              "description": "对所有元素伤害与物理伤害有150%的吸收效果。\n处于玉璋护盾庇护下的角色，会使附近小范围内敌人的所有元素抗性与物理抗性降低20%，该效果不可叠加。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "元素爆发·天星",
+          "description": "降下巨大的星岩，对坠落范围内的敌人造成巨额岩元素伤害，并使其石化。",
+          "abilities": [
+            {
+              "name": "石化",
+              "description": "处于石化状态下的敌人无法行动。",
+              "descriptions": []
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "晶石命理",
+          "description": "锻造长柄武器时，返还15%消耗的矿石。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "悬岩宸断",
+          "description": "玉璋护盾受到伤害时,会为产生坚璧效果：",
+          "descriptions": [
+            "处于玉璋护盾庇护下的角色,护盾强效提升5%；",
+            "该效果至多叠加5次,持续直到玉璋护盾消失。"
+          ]
+        },
+        {
+          "key": "p3",
+          "title": "炊金馔玉",
+          "description": "基于生命值上限，钟离的以下攻击造成的伤害提高：",
+          "descriptions": [
+            "普通攻击、重击与下落攻击造成的伤害提高值：生命值上限的1.39%；",
+            "地心的岩脊、共鸣伤害与长按伤害提高值：生命值上限的1.9%；",
+            "天星伤害提高值：生命值上限33%。"
+          ]
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "岩者，六合引之为骨",
+          "description": "地心创造的岩脊至多可以同时存在2个。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "石者，八荒韫玉而明",
+          "description": "天星陨落时，会为附近的角色赋予玉璋护盾。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "圭璋，瞑仍不移其晖",
+          "description": "地心的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "黄琮，破而不夺其坚",
+          "description": "天星的影响范围扩大20%。\n此外，天星的石化效果持续时间延长2秒。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "苍璧，驱之长昭天理",
+          "description": "天星的技能等级提高3级。\n最高提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "金玉，礼予天地四方",
+          "description": "玉璋护盾生效期间，受到伤害的40%转为等额生命值恢复。\n单次恢复量不超过角色最大生命值的8%。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    }
+  ],
+  "weapons": [
+    {
+      "key": "Hunter’s Bow",
+      "name": "猎弓",
+      "description": "猎手演奏的音乐由两种音色组成。弓弦颤动的声音，和羽箭破空的低啸。",
+      "refinement": null
+    },
+    {
+      "key": "Seasoned Hunter’s Bow",
+      "name": "历练的猎弓",
+      "description": "饱经磨练又精心护养的弓，经历了漫长的岁月。仿佛会主动配合射手的动作一般好使。",
+      "refinement": null
+    },
+    {
+      "key": "Ebony Bow",
+      "name": "Ebony Bow",
+      "description": "A longbow made of ebony wood with stiffer limbs than ordinary bows. It is also a far more powerful weapon.",
+      "refinement": "Increases DMG against mechanoid Ruin enemies by {{0}}%"
+    },
+    {
+      "key": "Messenger",
+      "name": "信使",
+      "description": "造型简单的木制弓。传说它曾被人用作远程通讯的道具。",
+      "refinement": "瞄准射击时，若命中要害，则额外造成{{0}}攻击力的伤害，该伤害必定暴击。此效果每10秒只能触发一次。"
+    },
+    {
+      "key": "Raven Bow",
+      "name": "鸦羽弓",
+      "description": "相传渡鸦是死的使者。将鸦羽装饰在弓臂上，射出的每一箭都宣告着猎物的终末。",
+      "refinement": "对处于火元素或水元素影响下的敌人，造成的伤害提高{{0}}%。"
+    },
+    {
+      "key": "Recurve Bow",
+      "name": "反曲弓",
+      "description": "据说能射下苍鹰的猎弓，但能不能做到主要还得看弓手的技术。",
+      "refinement": "击败敌人时，恢复{{0}}%生命值。"
+    },
+    {
+      "key": "Sharpshooter’s Oath",
+      "name": "神射手之誓",
+      "description": "据说曾属于技艺高强的射手，是一把上好的弓。因为散发出强烈的气息，难以用于狩猎。",
+      "refinement": "针对要害造成的伤害提升{{0}}%。"
+    },
+    {
+      "key": "Slingshot",
+      "name": "弹弓",
+      "description": "其实就是一把弓。在无数的改进和实验中，发明出究极弹弓的人发现自己做了一把弓。",
+      "refinement": "普通攻击和瞄准射击时，箭矢若在发射后的0.3秒内击中敌人，则造成的伤害增加{{0}}%；否则，造成的伤害下降10%。"
+    },
+    {
+      "key": "The Stringless",
+      "name": "绝弦",
+      "description": "曾经作为乐器大放异彩的弓。如今已经不再能令人起舞。",
+      "refinement": "元素战技与元素爆发的伤害提高{{0}}%。"
+    },
+    {
+      "key": "Alley Hunter",
+      "name": "Alley Hunter",
+      "description": "An intricate, opulent longbow. It once belonged to a gentleman thief who was never caught.",
+      "refinement": "Every 4s a character is on the field, their ATK increases by {{0}}% and their CRIT DMG increases by {{1}}%. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be cleared when the character takes DMG."
+    },
+    {
+      "key": "Blackcliff Warbow",
+      "name": "黑岩战弓",
+      "description": "以黑岩塑成的弓。弓臂坚硬无比,只有膂力绝人的弓手才能尽心所欲地使用。",
+      "refinement": "击败敌人后,攻击力提升{{0}}%，持续30秒。该效果至多叠加3层，每层持续时间独立。"
+    },
+    {
+      "key": "Compound Bow",
+      "name": "钢轮弓",
+      "description": "以金属制成，用滑轮引弦的复合弓，来自异国。护养极其困难，但引弓轻松，威力惊人。",
+      "refinement": "普通攻击和瞄准攻击命中时，提升{{0}}%攻击力和{{1}}%普攻速度，持续6秒。最多可以叠加4层，每0.3秒只能触发一次。"
+    },
+    {
+      "key": "Favonius Warbow",
+      "name": "西风猎弓",
+      "description": "西风骑士团的制式反曲弓，只有杰出的弓手能与它的杰出性能相衬。",
+      "refinement": "攻击造成暴击时，有{{0}}%的几率产生少量元素微粒，能为角色恢复6点元素能量。该效果每{{1}}秒只能触发一次。"
+    },
+    {
+      "key": "Prototype Crescent",
+      "name": "试作澹月",
+      "description": "黑岩厂中秘藏的原型长弓。放矢之姿有如透过薄暮的月光。",
+      "refinement": "瞄准射击时，若命中要害，则提升10%移动速度与{{0}}%攻击力，持续10秒。"
+    },
+    {
+      "key": "Royal Bow",
+      "name": "宗室长弓",
+      "description": "曾支配蒙德的旧日贵族的长弓。经过世代，弓弦仍十分有力，击发迅猛",
+      "refinement": "攻击造成伤害时，暴击率提升{{0}}%，最多堆叠5次。攻击造成暴击后，移除已有的专注效果。"
+    },
+    {
+      "key": "Rust",
+      "name": "弓藏",
+      "description": "布满锈迹的铁造大弓，一般人根本拿不动，遑论引弓放矢。",
+      "refinement": "普通攻击伤害提升{{0}}%，重击伤害下降10%。"
+    },
+    {
+      "key": "Sacrificial Bow",
+      "name": "祭礼弓",
+      "description": "在漫长岁月中石化的道具猎弓，上面的仪式性装饰依然清晰可见。拥有受时间之风冲刷的祝福力量",
+      "refinement": "元素战技造成伤害时，有{{0}}%的概率重置该技能的冷却时间，该效果每{{1}}秒触发一次。"
+    },
+    {
+      "key": "The Viridescent Hunt",
+      "name": "苍翠猎弓",
+      "description": "高洁的青绿猎弓，曾属于在林间狩猎的某人。",
+      "refinement": "普通攻击与重击命中时，有50%几率生成一个风之眼，持续吸引周围敌人，并对其中的敌人每0.5秒造成{{0}}%攻击力的伤害。该效果持续4秒，每{{1}}秒至多触发一次。"
+    },
+    {
+      "key": "Skyward Harp",
+      "name": "天空之翼",
+      "description": "象征风龙身为风之神眷属的大弓。释弦时的鸣声是风之神的偏爱，蕴含苍空与长风的力量。",
+      "refinement": "暴击伤害提高{{0}}%；攻击命中时有{{1}}%概率造成125%攻击力的小范围物理伤害，该效果每{{2}}秒只能触发一次。"
+    },
+    {
+      "key": "Amos’ Bow",
+      "name": "阿莫斯之弓",
+      "description": "极为古老的弓。即使原主不复存在，其中蕴藏之力依旧—那种力量无主,却在万物当中。距离心系之物越是遥远，那种力量愈是剧烈。",
+      "refinement": "普通攻击和瞄准射击伤害提升{{0}}%；箭矢发射后每经过0.1秒，伤害还会提升{{1}}%。至多提升5次。"
+    },
+    {
+      "key": "Dreams of Dragonfell",
+      "name": "Dreams of Dragonfell",
+      "description": "A great bow that once shot clean through a giant dragon. Once released, the impetus of its bowstring resembles a peal of thunder.",
+      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+    },
+    {
+      "key": "Dull Blade",
+      "name": "无锋剑",
+      "description": "少年人的梦想，踏上旅途的兴奋——如果这两种珍贵的品质还不够锋利，那就用勇气补足吧。",
+      "refinement": null
+    },
+    {
+      "key": "Silver Sword",
+      "name": "银剑",
+      "description": "能退魔的银剑。大家都知道，其实用料是银合金而不是纯银。",
+      "refinement": null
+    },
+    {
+      "key": "Cool Steel",
+      "name": "冷刃",
+      "description": "多层锻打的精钢铸就的可靠兵器，曾见证旧主诸多冒险奇谭。",
+      "refinement": "对处于水元素或冰元素影响下的敌人，造成的伤害提高{{0}}%。"
+    },
+    {
+      "key": "Dark Iron Sword",
+      "name": "暗铁剑",
+      "description": "其实就是稍微有些黑的铁剑。",
+      "refinement": "触发超载、超导、感电或雷元素扩散反应后的12秒内，攻击力提高{{0}}%。"
+    },
+    {
+      "key": "Fillet Blade",
+      "name": "吃虎鱼刀",
+      "description": "用来剖鱼的锋利铁刀，刀身狭长，非常锋利",
+      "refinement": "攻击命中时，有50%的概率对单个敌人造成{{0}}%攻击力的伤害。该效果每{{1}}秒只能触发一次。"
+    },
+    {
+      "key": "Harbinger of Dawn",
+      "name": "黎明神剑",
+      "description": "一把曾经耀若朝阳的宝剑，掌握它的人会获得「自我感觉良好」的力量加持。剑身上的发光材料已经褪去。",
+      "refinement": "生命值高于90%时，暴击率提升{{0}}%。"
+    },
+    {
+      "key": "Skyrider Sword",
+      "name": "飞天御剑",
+      "description": "可靠的钢剑，传说著名的「御剑公子」曾试图借助它飞天。",
+      "refinement": "施放元素爆发后，提高{{0}}%攻击力和移动速度，持续15秒。"
+    },
+    {
+      "key": "Traveler’s Handy Sword",
+      "name": "旅行剑",
+      "description": "趁手的钢剑，剑柄里藏着剪子、放大镜、火绒等方便旅行的小物件。",
+      "refinement": "获得元素晶球或元素微粒时，恢复{{0}}%生命值。"
+    },
+    {
+      "key": "Blackcliff Longsword",
+      "name": "Blackcliff Longsword",
+      "description": "A sword made of a material known as \"blackcliff.\" It has a dark crimson glow on its black blade.",
+      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+    },
+    {
+      "key": "Favonius Sword",
+      "name": "西风剑",
+      "description": "西风骑士团的制式长剑。轻快锐利之余，也能轻易导出元素力量。",
+      "refinement": "攻击造成暴击时，有{{0}}%的几率产生少量元素微粒，能为角色恢复6点元素能量。该效果每{{1}}秒只能触发一次。"
+    },
+    {
+      "key": "Iron Sting",
+      "name": "铁蜂刺",
+      "description": "外形流利的细长刺剑，是从异国经由商路流落到璃月的奇异兵器。轻快无比，剑芒极其锐利。",
+      "refinement": "造成元素伤害后的6秒内，角色造成的伤害提高{{0}}%，该效果最多叠加2层。该效果每1秒可以触发一次。"
+    },
+    {
+      "key": "Lion’s Roar",
+      "name": "匣里龙吟",
+      "description": "雕饰浮华的利刃，却丝毫不损它的柔韧与锋锐。破空之声有如龙吟。",
+      "refinement": "对处于火元素或雷元素影响下的敌人，造成的伤害提高{{0}}%。"
+    },
+    {
+      "key": "Prototype Rancour",
+      "name": "试作斩岩",
+      "description": "黑岩厂中秘藏的古老长剑。可挥砍断岩而刃不卷。",
+      "refinement": "普通攻击或重击命中时，攻击力（原为基础攻击力）和防御力提高{{0}}%，持续6秒，最多叠加4层。该效果每0.3秒只能触发一次。"
+    },
+    {
+      "key": "Royal Longsword",
+      "name": "宗室长剑",
+      "description": "曾支配蒙德的旧日贵族的佩剑。做工精良，装饰与雕花彰显着挥舞者的身份。",
+      "refinement": "攻击造成伤害时，暴击率提升{{0}}%，最多堆叠5次。攻击造成暴击后，移除已有的专注效果。"
+    },
+    {
+      "key": "Sacrificial Sword",
+      "name": "祭礼剑",
+      "description": "在漫长岁月中石化的道具剑，上面的仪式性装饰依然清晰可见。拥有受时间之风冲刷的祝福力量。",
+      "refinement": "元素战技造成伤害时，有{{0}}%概率重置该技能的冷却时间，该效果每{{1}}秒只能触发一次。"
+    },
+    {
+      "key": "The Alley Flash",
+      "name": "The Alley Flash",
+      "description": "A straight sword as black as the night. It once belonged to a thief who roamed the benighted streets.",
+      "refinement": "Continuosly sprinting for at least 1s increases ATK by {{0}}% for 6s. This effect cannot stack."
+    },
+    {
+      "key": "The Black Sword",
+      "name": "黑剑",
+      "description": "渴求着纷争与砍杀的漆黑长剑，据说会让人沉醉在浴血厮杀的亢奋中。",
+      "refinement": "普通攻击与重击造成的伤害提升{{0}}%；此外普通攻击和重击暴击时，恢复等同于攻击力{{1}}%的生命值。该效果每5秒至多发动一次。"
+    },
+    {
+      "key": "The Flute",
+      "name": "笛剑",
+      "description": "细剑的锈迹下透露出原本华丽的装饰，挥舞时轻若无物。",
+      "refinement": "普通攻击或重击命中时，会获得一个和音。积攒了5个和音后，释放音律的力量，对周围的敌人造成{{0}}%攻击力的伤害。和音最多存在30秒，每0.5秒至多获得1个和音。"
+    },
+    {
+      "key": "Sword of Descension",
+      "name": "降临之剑",
+      "description": "造型独特的剑。看起来并不属于这个世界。",
+      "refinement": "普通攻击与重击命中敌人后有{{0}}%概率在小范围内造成200%攻击力的伤害。该效果每10秒只能触发一次；此外，旅行者装备降临之剑时，攻击力提升{{1}}点。"
+    },
+    {
+      "key": "Festering Desire",
+      "name": "腐殖之剑",
+      "description": "希冀着生命的诡谲直剑，附有连龙也能侵蚀的腐殖之毒。.",
+      "refinement": "元素战技造成的伤害增加{{0}}%，元素战技的暴击率提升{{1}}%。"
+    },
+    {
+      "key": "Aquila Favonia",
+      "name": "风鹰剑",
+      "description": "西风骑士团的灵魂。历经千年仍在呼唤你卷起正义之风，祓除奸邪，一如上一位挥舞此剑的女杰。",
+      "refinement": "攻击力提高{{0}}%；受到伤害时触发：高扬抗争旗号的西风鹰之魂苏醒，恢复同等与攻击力的{{1}}%生命值，并对周围的敌人造成{{2}}%攻击力的伤害。该效果每15秒只能触发一次。"
+    },
+    {
+      "key": "Skyward Blade",
+      "name": "天空之刃",
+      "description": "象征风龙的荣誉的骑士剑，如今失而复得。剑脊上吹息着风之神的赐福，蕴含着苍空与长风的力量",
+      "refinement": "暴击率提升{{0}}%；施放元素爆发时，获得破空之势：移动速度提升10%，攻击速度提升10%，普通攻击与重击命中时，额外造成{{1}}%攻击力的伤害，持续12秒。"
+    },
+    {
+      "key": "Summit Shaper",
+      "name": "斫峰之刃",
+      "description": "传说中象征着某一则特定契约的利刃，曾经斩落过山岳的尖端",
+      "refinement": "护盾强效提升{{0}}%。攻击命中后的8秒内，攻击力提升{{1}}%。该效果至多可叠加5层，每0.3秒只能触发一次。此外，处于护盾庇护下时，该效果的攻击力提升效果提高100%。"
+    },
+    {
+      "key": "Apprentice’s Notes",
+      "name": "学徒笔记",
+      "description": "某个优等生留下的学习笔记，娟秀的字迹非常好看。记录了不少实用的咒语。",
+      "refinement": null
+    },
+    {
+      "key": "Pocket Grimoire",
+      "name": "口袋魔导书",
+      "description": "精心编纂，只留下考试重点的魔导参考小册。",
+      "refinement": null
+    },
+    {
+      "key": "Amber Bead",
+      "name": "Amber Bead",
+      "description": "A catalyst carved out of amber that gains a warm halo under the sun.",
+      "refinement": "Normal Attack hits increase all Elemental DMG by {{0}}% for 6s. Max 2 stacks."
+    },
+    {
+      "key": "Emerald Orb",
+      "name": "翡玉法球",
+      "description": "由璃月北郊绝云间出产的硬玉雕琢而成的法器。小巧轻盈，经久耐用，江湖人称「翡玉丸」。",
+      "refinement": "触发蒸发、感电、冰冻、或水元素扩散反应后的12秒内，攻击力提高{{0}}%。"
+    },
+    {
+      "key": "Magic Guide",
+      "name": "魔导绪论",
+      "description": "第十二版。结合时代发展加注了新内容，并修订了第十一版的错别字。",
+      "refinement": "对处于水元素或雷元素影响下的敌人，造成的伤害提高{{0}}%。"
+    },
+    {
+      "key": "Otherworldly Story",
+      "name": "异世界行记",
+      "description": "廉价的幻想小说，不具备参考价值。作为法器的力量当然也来自幻想。",
+      "refinement": "获得元素微粒或元素晶球时，恢复{{0}}%生命值。"
+    },
+    {
+      "key": "Thrilling Tales of Dragon Slayers",
+      "name": "讨龙英杰谭",
+      "description": "五名英雄踏上屠龙征途的虚构故事。文笔很差，结构散乱。失败的教训是这本书所拥有的伟大力量。",
+      "refinement": "主动切换角色时，新登场的角色攻击力提升{{0}}%，持续10秒。该效果每20秒只能触发一次。"
+    },
+    {
+      "key": "Twin Nephrite",
+      "name": "甲级宝珏",
+      "description": "两块玉石拼成的精致玉佩。",
+      "refinement": "击败敌人后的15秒内，移动速度和攻击力提升{{0}}%。"
+    },
+    {
+      "key": "Blackcliff Agate",
+      "name": "黑岩绯玉",
+      "description": "由黑岩制成的神秘法器，无常的赤色闪光仿佛大地深处的悸动同调",
+      "refinement": "击败敌人后，攻击力提升{{0}}%，持续30秒。该效果至多叠加3层，每层持续时间独立。"
+    },
+    {
+      "key": "Favonius Codex",
+      "name": "西风秘典",
+      "description": "西风骑士团的学者间流传的秘典，记载着元素与物质的道理和力量。",
+      "refinement": "攻击造成暴击时，有{{0}}%的几率产生少量元素微粒，能为角色恢复6点元素能量。该效果每{{1}}秒只能触发一次。"
+    },
+    {
+      "key": "Mappa Mare",
+      "name": "万国诸海图谱",
+      "description": "详尽记载了大陆周边海流气候的海图，是从异国经由商路流落到璃月的奇异典籍。",
+      "refinement": "触发元素反应后的10秒内，获得{{0}}%元素伤害加成，该效果最多可叠加2层。"
+    },
+    {
+      "key": "Prototype Amber",
+      "name": "试作金珀",
+      "description": "黑岩厂中秘藏的金珀法器。其中黯黯绽放着日月星光。",
+      "refinement": "施放元素爆发后6秒内，每2秒恢复{{0}}点元素能量；此外，队伍中所有角色每2秒恢复{{1}}%生命值。"
+    },
+    {
+      "key": "Royal Grimoire",
+      "name": "宗室秘法录",
+      "description": "属于曾支配蒙德的贵族麾下的宫廷魔导师，其中记载的史话与法术同样翔实。",
+      "refinement": "攻击造成伤害时，暴击率提升{{0}}%，最多堆叠5次。攻击造成暴击后，移除已有的专注效果。"
+    },
+    {
+      "key": "Sacrificial Fragments",
+      "name": "祭礼残章",
+      "description": "经历漫长岁月的剧本，记载着的颂词和剧本已经无法辨认。被下了受时间之风侵蚀毁坏的诅咒。",
+      "refinement": "元素战技造成伤害时，有{{0}}%的概率重置该技能的冷却时间，该效果每{{1}}秒只能触发1次。"
+    },
+    {
+      "key": "Solar Pearl",
+      "name": "匣里日月",
+      "description": "材质难解的暗金宝珠，饱含日月天地的光辉，脉动着温暖的力量。",
+      "refinement": "普通攻击命中后的6秒内，元素战技与元素爆发的伤害提高{{0}}%；元素战技与元素爆发命中后的6秒内，普通攻击的伤害提高{{1}}%。"
+    },
+    {
+      "key": "The Widsith",
+      "name": "流浪乐章",
+      "description": "记载着歌谱的厚重记事簿。尽管遭受了虫蛀和风化，残留的手迹仍透露出力量",
+      "refinement": "角色登场时，随机获得一个主题曲，持续10秒。每30秒只能触发一次。宣叙调：攻击力提升{{0}}%；咏叹调：全元素伤害提升{{1}}%；间奏曲：元素精通提升{{2}}。"
+    },
+    {
+      "key": "Wine and Song",
+      "name": "Wine and Song",
+      "description": "A songbook from the bygone aristocratic era, whose composer has become forgotten. It chronicles the tale of a certain heroic outlaw.",
+      "refinement": "For every character in the party who hails from Mondstadt, the character who equips this weapon gains {{0}}% ATK increase and {{1}}% Movement SPD increase."
+    },
+    {
+      "key": "Eye of Perception",
+      "name": "昭心",
+      "description": "幽暗的琉璃宝珠，传说中拥有洞察人心清白的力量。",
+      "refinement": "普通攻击与重击命中时，有50%几率发射一枚昭心法球，造成{{0}}% 攻击力伤害，至多在敌人之间弹射4次。该效果每{{1}}秒至多触发一次。"
+    },
+    {
+      "key": "Frostbearer",
+      "name": "忍冬之果",
+      "description": "具有某种冰冷意志的奇特果实，散发着微弱的苦涩气息。",
+      "refinement": "普通攻击与重击命中敌人时，有{{0}}%概率在敌人上方生成恒冰晶核并坠落，造成{{1}}%攻击力的范围伤害。若敌人处于冰元素影响下，则造成{{2}}%攻击力的伤害。该效果每10秒至多触发一次。"
+    },
+    {
+      "key": "Lost Prayer to the Sacred Winds",
+      "name": "四风原典",
+      "description": "崇信风的无名先民所写的教典珍本。数千年流传的信仰之力得到了风的青睐，饱含祝福与力量。",
+      "refinement": "移动速度提高10%；在场上每4秒获得{{0}}%元素伤害加成。该效果最多叠加4层，角色倒下或离场后清空。"
+    },
+    {
+      "key": "Skyward Atlas",
+      "name": "天空之卷",
+      "description": "象征风龙与其主风之神的云图集。细致记载了北地天空的风与云，蕴含苍空与长风的力量。",
+      "refinement": "元素伤害加成提升{{0}}%；普通攻击命中时，有50%的概率获得高天流云的青睐，在15秒内主动攻击附近的敌人，造成等同于{{1}}%攻击力的伤害。该效果每30秒只能触发一次。"
+    },
+    {
+      "key": "Memory of Dust",
+      "name": "尘世之锁",
+      "description": "蕴含着某种悠远记忆的石锁，随着无穷的变换透露出其中的力量。",
+      "refinement": "护盾强效提升{{0}}%。攻击命中后的8秒内，攻击力提升{{1}}%。该效果至多可叠加5层，每0.3秒只能触发一次。此外，处于护盾庇护下时，该效果的攻击力提升效果提高100%。"
+    },
+    {
+      "key": "Waster Greatsword",
+      "name": "训练大剑",
+      "description": "仅仅是削出剑形的厚重铁片。在意志强韧的人手里，也有劈开磐石的力量。",
+      "refinement": null
+    },
+    {
+      "key": "Old Merc’s Pal",
+      "name": "佣兵重剑",
+      "description": "沉重坚实的古旧大剑，饱经战火与岁月的洗练。",
+      "refinement": null
+    },
+    {
+      "key": "Bloodtainted Greatsword",
+      "name": "沐浴龙血的剑",
+      "description": "据说是北方英雄浸过龙血的钢铁大剑，有刀枪不入的神力...这种护佑并不会延伸到挥舞它的人身上。",
+      "refinement": "对处于火元素或雷元素影响下的敌人，造成的伤害提高{{0}}%。"
+    },
+    {
+      "key": "Debate Club",
+      "name": "以理服人",
+      "description": "精钢打造的趁手大铁棒子，最好的理论依据。",
+      "refinement": "施放元素战技后，普通攻击和重击命中时会在小范围内额外造成{{0}}% 攻击力的伤害。该效果持续15秒，伤害每3秒只能触发一次。"
+    },
+    {
+      "key": "Ferrous Shadow",
+      "name": "铁影阔剑",
+      "description": "这把剑是著名的光之狮艾伦德林的佩剑的仿品。握紧它，感受传说中大英雄的力量吧！注意：幻想请适度。",
+      "refinement": "生命值低于{{0}}%时，重击不会轻易被打断，并提高{{1}}%重击伤害。"
+    },
+    {
+      "key": "Quartz",
+      "name": "Quartz",
+      "description": "A simple but heavy greatsword made of polished black quartz with a golden gilt. It has an air of elegance and dignity about it.",
+      "refinement": "Upon causing an Overloaded, Melt, Burning, Vaporize, or a Pyro-infused Swirl reaction, ATK is increased by {{0}}% for 12s."
+    },
+    {
+      "key": "Skyrider Greatsword",
+      "name": "飞天大御剑",
+      "description": "可靠的大剑。传说著名的「御剑公子」曾试图借助它二度飞天。",
+      "refinement": "普通攻击和重击命中时，攻击力提高{{0}}%，持续6秒，最多叠加4层，该效果每0.5秒只能触发一次。"
+    },
+    {
+      "key": "White Iron Greatsword",
+      "name": "白铁大剑",
+      "description": "白铁锻成的双手剑，兼顾了重量与强度。即使臂力一般的人也能舞得生风，在力量强大者手中更是威力无穷。",
+      "refinement": "击败敌人时，恢复{{0}}%生命值。"
+    },
+    {
+      "key": "Blackcliff Slasher",
+      "name": "黑岩斩刀",
+      "description": "坚韧无比的黑岩大刀,通体皆为玄赤之色",
+      "refinement": "击败敌人后,攻击力提升{{0}}%，持续30秒。该效果至多叠加3层，每层持续时间独立。"
+    },
+    {
+      "key": "Favonius Greatsword",
+      "name": "西风大剑",
+      "description": "西风骑士团的重型仪式剑。能轻易导出元素力量，具有卓越的破坏力。",
+      "refinement": "攻击造成暴击时，有{{0}}%的几率产生少量元素微粒，能为角色恢复6点元素能量。该效果每{{1}}秒只能触发一次。"
+    },
+    {
+      "key": "Lithic Blade",
+      "name": "千岩古剑",
+      "description": "以璃月的基岩为原料削凿成的厚重大剑。",
+      "refinement": "队伍中每有一位璃月角色，装备该武器的角色便获得{{0}}%攻击力提升与{{1}}%暴击率提升。至多获得4层提升效果。"
+    },
+    {
+      "key": "Prototype Archaic",
+      "name": "试作古华",
+      "description": "黑岩厂中秘藏的古老大刀。挥舞时，仿佛连空间本身也要被一刀两断。",
+      "refinement": "普通攻击和重击命中时，有50%的概率对小范围内的敌人造成{{0}}%攻击力的额外伤害。该效果每15秒只能触发一次。"
+    },
+    {
+      "key": "Rainslasher",
+      "name": "雨裁",
+      "description": "散发着黯淡荧光的无锋大剑，纯粹以气势和力量碾碎敌人",
+      "refinement": "对处于水元素或雷元素影响下的敌人，造成的伤害提高{{0}}%。"
+    },
+    {
+      "key": "Royal Greatsword",
+      "name": "宗室大剑",
+      "description": "曾支配蒙德的旧日贵族的大剑，用料极佳，历久犹弥新。是贵族的战斗兵器。",
+      "refinement": "攻击造成伤害时，暴击率提升{{0}}%，最多堆叠5次。攻击造成暴击后，移除已有的专注效果。"
+    },
+    {
+      "key": "Serpent Spine",
+      "name": "螭骨剑",
+      "description": "来自古代大海的稀有兵器，舞剑猎猎宛如太古的涛声。",
+      "refinement": "角色在场上时，每4秒提升{{0}}%造成的伤害，{{1}}%受到的伤害。该效果最多叠加5层，不随角色退场重置，受到伤害后会减少1层效果。"
+    },
+    {
+      "key": "The Bell",
+      "name": "钟剑",
+      "description": "装有时钟的厚重大剑，其中的计时机关早已被破坏。",
+      "refinement": "受到伤害时，生成一个伤害吸收等同于生命上限{{0}}%的护盾，持续10秒或者直到护盾失效，每45秒只能触发一次。角色处于护盾庇护下时，造成的伤害提升{{1}}%。"
+    },
+    {
+      "key": "Whiteblind",
+      "name": "白影剑",
+      "description": "剑身上有一面未开刃的异国大剑，经商路流落到璃月。在了解它的人手里，破坏力极可观。",
+      "refinement": "普通攻击和重击命中后，攻击力和防御力提高{{0}}%。该效果持续6秒，最多叠加4层，每0.5秒只能触发一次。"
+    },
+    {
+      "key": "Sacrificial Greatsword",
+      "name": "祭礼大剑",
+      "description": "在漫长岁月中石化的道具大剑，上面的仪式性装饰依然清晰可见。拥有受时间之风冲刷的祝福力量。",
+      "refinement": "元素战技造成伤害时，有{{0}}%概率重置该技能的冷却时间，该效果每{{1}}秒只能触发一次。"
+    },
+    {
+      "key": "Snow-Tombed Starsilver",
+      "name": "雪葬的星银",
+      "description": "储存在壁画之间的古老大剑。由星银铸成，似乎拥有斩开冰雪的力量。",
+      "refinement": "普通攻击与重击命中敌人时，有{{0}}%概率在敌人上方生成恒冰晶核并坠落，造成{{1}}%攻击力的范围伤害。若敌人处于冰元素影响下，则造成{{2}}%攻击力的伤害。该效果每10秒至多触发一次。"
+    },
+    {
+      "key": "Skyward Pride",
+      "name": "天空之傲",
+      "description": "象征风龙的骄傲广布长空的双手剑。挥舞时的低吟是风龙的气势，蕴含苍空与长风的力量。",
+      "refinement": "造成的伤害提高{{0}}%施放元素爆发后:普通攻击和重击命中时会发出真空刃，对路径上的敌人造成{{1}}%攻击力的伤害，持续20秒或直至发出8次真空刃。"
+    },
+    {
+      "key": "Wolf’s Gravestone",
+      "name": "狼的末路",
+      "description": "狼的骑士所使的大剑。原本只是城中铁匠赠予的厚重的铁片，却在他与狼的情谊中，获得神话般的力量。",
+      "refinement": "攻击力提高{{0}}%；攻击命中生命值低于30%的敌人时，队伍中所有成员的攻击力提高{{1}}%，持续12秒。该效果30秒只能触发一次。"
+    },
+    {
+      "key": "The Unforged",
+      "name": "无工之剑",
+      "description": "能靖祛妖魔奸佞，仿佛有神威的无锋大剑。",
+      "refinement": "护盾强效提升{{0}}%。攻击命中后的8秒内，攻击力提升{{1}}%。该效果至多可叠加5层，每0.3秒只能触发一次。此外，处于护盾庇护下，该效果的攻击力提升效果提高100%。"
+    },
+    {
+      "key": "Beginner’s Protector",
+      "name": "新手长枪",
+      "description": "笔直得像旗杆一般的长枪，挥舞起来颇具气势。足以应付大多数情况。",
+      "refinement": null
+    },
+    {
+      "key": "Iron Point",
+      "name": "铁尖枪",
+      "description": "一头有尖，可攻可守的护身武器。在旅者中非常流行。",
+      "refinement": null
+    },
+    {
+      "key": "Black Tassel",
+      "name": "黑缨枪",
+      "description": "解决了白缨容易弄脏问题的绝世好枪。",
+      "refinement": "对史莱姆类敌人造成的伤害增加{{0}}%。"
+    },
+    {
+      "key": "Halberd",
+      "name": "钺矛",
+      "description": "在矛上增加斧刃的兵器，有不俗的破坏力。是千岩军军官青睐的武器。",
+      "refinement": "对普通攻击命中的敌人造成{{0}}%攻击力的额外伤害。该效果每10秒只能触发一次。"
+    },
+    {
+      "key": "White Tassel",
+      "name": "白缨枪",
+      "description": "千岩军士兵的制式武器，枪身牢靠，枪尖锋锐，是无比可靠的武器。",
+      "refinement": "普通攻击造成的伤害提升{{0}}%。"
+    },
+    {
+      "key": "Blackcliff Pole",
+      "name": "黑岩刺枪",
+      "description": "以黑岩与陨铁铸成的兵器，玄锋清凛的光泽中仿佛隐隐可见血色。",
+      "refinement": "击败敌人后，攻击力提升{{0}}%，持续30秒。该效果至多叠加3层，每层持续时间独立。"
+    },
+    {
+      "key": "Crescent Pike",
+      "name": "流月针",
+      "description": "枪尖狭长，尾部分出半月刀刃的异国兵器，经由商路流落到璃月。稍事练习掌握，便有极其出众的杀伤力。",
+      "refinement": "获得元素微粒或元素晶球后的5秒内，普通攻击和重击额外造成{{0}}%攻击力伤害。"
+    },
+    {
+      "key": "Deathmatch",
+      "name": "决斗之枪",
+      "description": "血红色的锋利长枪，过去曾是某位角斗士无比珍视的宝物。枪芒上曾沾染了无数野兽与人的鲜血。",
+      "refinement": "身边至少有2个敌人时，获得{{0}}%攻击力提升与{{1}}%防御力提升；身边的敌人少于2个时，获得{{2}}%攻击力提升。"
+    },
+    {
+      "key": "Dragon’s Bane",
+      "name": "匣里灭辰",
+      "description": "金龙缠绕的长枪，轻快锐利无比。大抵真能轻易屠龙。",
+      "refinement": "对于处于水元素或火元素影响下的敌人，造成的伤害提高{{0}}%。"
+    },
+    {
+      "key": "Lithic Spear",
+      "name": "千岩长枪",
+      "description": "取孤云阁的岩片精工打造的长枪，枪尖坚固无比。",
+      "refinement": "队伍中每有一位璃月角色，装备该武器的角色便获得{{0}}%攻击力提升与{{1}}%暴击率提升。至多获得4层提升效果。"
+    },
+    {
+      "key": "Prototype Starglitter",
+      "name": "试作星镰",
+      "description": "黑岩厂中秘藏的古老钩枪。锋芒上的点点闪光有如夜空稀星。",
+      "refinement": "施放元素战技后，普通攻击和重击造成的伤害提高{{0}}%。该效果持续12秒，最多叠加2层。"
+    },
+    {
+      "key": "Favonius Lance",
+      "name": "西风长枪",
+      "description": "西风骑士团的制式长枪。枪杆直挺，枪尖轻风流溢。",
+      "refinement": "攻击造成暴击时，有{{0}}%的几率产生少量元素微粒，能为角色恢复6点元素能量。该效果每{{1}}秒只能触发一次。"
+    },
+    {
+      "key": "Royal Spear",
+      "name": "宗室猎枪",
+      "description": "某位曾支配蒙德的旧日贵族，曾经珍爱的长枪。过去不曾见过天日，但如今依然尖锐无比。",
+      "refinement": "攻击造成伤害时，暴击率提升{{0}}%，最多堆叠5次。攻击造成暴击后，移除已有的专注效果。"
+    },
+    {
+      "key": "Dragonspine Spear",
+      "name": "龙脊长枪",
+      "description": "利用龙之牙制成的长枪，有着奇异的温暖触感。",
+      "refinement": "普通攻击与重击命中敌人时，有{{0}}%概率在敌人上方生成恒冰晶核并坠落，造成{{1}}%攻击力的范围伤害。若敌人处于冰元素影响下，则造成{{2}}%攻击力的伤害。该效果每10秒至多触发一次。"
+    },
+    {
+      "key": "Vortex Vanquisher",
+      "name": "贯虹之槊",
+      "description": "或许能贯穿一切的锋利长枪。挥舞当中，仿佛能见到空气被枪划破的裂痕。",
+      "refinement": "护盾强效提升{{0}}%。攻击命中后的8秒内，攻击力提升{{1}}%。该效果至多可叠加5层，每0.3秒只能触发一次。此外，处于护盾庇护下时，该效果的攻击力提升效果提高100%。"
+    },
+    {
+      "key": "Primordial Jade Winged-Spear",
+      "name": "和璞鸢",
+      "description": "魔神翡玉化作的长枪，拥有刺杀远古海兽的沉重与锋利。",
+      "refinement": "命中敌人时自身攻击力提高{{0}}%，持续6秒，最高可以叠加7层。该效果每0.3秒最多触发一次。满层状态时伤害提升{{1}}%。"
+    },
+    {
+      "key": "Skyward Spine",
+      "name": "天空之脊",
+      "description": "象征风龙坚定决心的长枪。直挺的枪杆直指天穹，蕴含苍空与长风的力量。",
+      "refinement": "暴击率提升{{0}}%，普通攻击速度提升12%， 此外，普通攻击与重击命中敌人时，有50%概率触发真空刃，在小范围内造成额外{{1}}%攻击力的伤害。该效果每2秒至多触发一次。"
+    },
+    {
+      "key": "Primordial Jade Cutter",
+      "name": "磐岩结绿",
+      "description": "由纯净的翠玉精琢细雕而成的仪礼宝剑，挥舞时剑风中似有叹息之声。",
+      "refinement": "生命值提升{{0}}%。此外，基于装备该武器的角色生命值上限的{{1}}% ，获得攻击力加成。"
+    },
+    {
+      "key": "Staff of Homa",
+      "name": "护摩之杖",
+      "description": "在早已失落的古老祭仪中，使用的朱赤「柴火杖」。",
+      "refinement": "生命值提升{{0}}%。此外，提供基于装备该武器的角色生命值上限的{{1}}%，获得攻击力加成。当装备该武器的角色生命值低于50%时，进一步获得{{2}}%最大生命值上限的攻击力提升。"
+    }
+  ],
+  "artifacts": [
+    {
+      "key": "Adventurer",
+      "name": "冒险家",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "生命值上限提升1000点。"
+        },
+        {
+          "key": "b2",
+          "bonus": "开启各类宝箱后5秒内，持续恢复30%生命值。"
+        }
+      ]
+    },
+    {
+      "key": "Traveling Doctor",
+      "name": "游医",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "角色受到的治疗效果提高20%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "施放元素爆发时，恢复20%生命值。"
+        }
+      ]
+    },
+    {
+      "key": "Lucky Dog",
+      "name": "幸运儿",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "防御力提高100点。"
+        },
+        {
+          "key": "b2",
+          "bonus": "拾取摩拉时，恢复300点生命值。"
+        }
+      ]
+    },
+    {
+      "key": "Resolution of Sojourner",
+      "name": "行者之心",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "攻击力提高18%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "重击的暴击率提高30%。"
+        }
+      ]
+    },
+    {
+      "key": "Tiny Miracle",
+      "name": "奇迹",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "所有元素抗性提高20%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "受到某个元素类型的伤害后，相应的抗性提升30%，持续10秒。该效果每10秒只能触发一次。"
+        }
+      ]
+    },
+    {
+      "key": "Brave Heart",
+      "name": "勇士之心",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "攻击力提高18%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "对生命值高于50%的敌人，造成的伤害增加30%。"
+        }
+      ]
+    },
+    {
+      "key": "Defender’s Will",
+      "name": "守护之心",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "防御力提高30%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "队伍里每有不同一种元素类型的自己的角色，自身获得30%相应的元素抗性。"
+        }
+      ]
+    },
+    {
+      "key": "Martial Artist",
+      "name": "被怜爱的少女",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "角色造成的治疗效果提升15%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "施放元素战技或元素爆发后的10秒内，队伍中所有角色受治疗效果加成提高20%。"
+        }
+      ]
+    },
+    {
+      "key": "Gambler",
+      "name": "赌徒",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "元素战技造成的伤害提升20%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "击败敌人时，有100%概率清除元素战技的冷却时间。该效果每15秒至多触发一次。"
+        }
+      ]
+    },
+    {
+      "key": "Scholar",
+      "name": "学士",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "元素充能效率提高20%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "获得元素微粒或元素晶球时，队伍中所有弓箭和法器角色额外恢复3点元素能量。该效果每3秒只能触发一次。"
+        }
+      ]
+    },
+    {
+      "key": "Berserker",
+      "name": "战狂",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "暴击率提高12%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "生命值低于70%时，暴击率额外提高24%。"
+        }
+      ]
+    },
+    {
+      "key": "Instructor",
+      "name": "教官",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "元素精通提高80点。"
+        },
+        {
+          "key": "b2",
+          "bonus": "触发元素反应后。队伍中所有角色元素精通提高120点，持续8秒。"
+        }
+      ]
+    },
+    {
+      "key": "The Exile",
+      "name": "流放者",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "元素充能效率提高20%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "施放元素爆发后，每2秒为队伍中所有角色（不包括自己）恢复2点元素能量。该效果持续6秒，无法叠加。"
+        }
+      ]
+    },
+    {
+      "key": "Thundering Fury",
+      "name": "如雷的盛怒",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "获得15%雷元素伤害加成。"
+        },
+        {
+          "key": "b2",
+          "bonus": "超载、感电、超导反应造成的伤害提升40%。触发这些元素反应时，元素战技冷却时间减少1秒。该效果每0.8秒最多触发一次。"
+        }
+      ]
+    },
+    {
+      "key": "Thundersoother",
+      "name": "平息鸣雷的尊者",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "雷元素抗性提高40%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "对处于雷元素影响下的敌人造成的伤害提升35%。"
+        }
+      ]
+    },
+    {
+      "key": "Viridescent Venerer",
+      "name": "翠绿之影",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "获得15%风元素伤害加成。"
+        },
+        {
+          "key": "b2",
+          "bonus": "扩散反应造成的伤害提升60%，根据扩散的元素类型，降低受到影响的敌人40%的对应元素抗性，持续10秒。"
+        }
+      ]
+    },
+    {
+      "key": "Maiden Beloved",
+      "name": "被怜爱的少女",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "角色造成的治疗效果提升15%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "施放元素战技或元素爆发后的10秒内，队伍中所有角色受治疗效果加成提高20%。"
+        }
+      ]
+    },
+    {
+      "key": "Archaic Petra",
+      "name": "悠古的磐岩",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "获得15%岩元素伤害加成。"
+        },
+        {
+          "key": "b2",
+          "bonus": "获得结晶反应形成的晶片时，队伍中所有角色获得35%对应元素伤害加成，持续10秒。同时只能通过该效果获得一种元素伤害加成。"
+        }
+      ]
+    },
+    {
+      "key": "Retracing Bolide",
+      "name": "逆飞的流星",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "护盾强效提高35%"
+        },
+        {
+          "key": "b2",
+          "bonus": "处于护盾庇护下时，额外获得40%普通攻击和重击伤害加成。"
+        }
+      ]
+    },
+    {
+      "key": "Crimson Witch of Flames",
+      "name": "炽烈的炎之魔女",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "获得15%火元素伤害加成。"
+        },
+        {
+          "key": "b2",
+          "bonus": "超载、燃烧反应造成的伤害提升40%，蒸发、融化反应的加成系数提高15%。施放元素战技后的10秒内，二件套的效果提高50%，该效果最多叠加3次。"
+        }
+      ]
+    },
+    {
+      "key": "Lavawalker",
+      "name": "渡过烈火的贤人",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "火元素抗性提高40%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "对处于火元素影响下的敌人造成的伤害提升35%。"
+        }
+      ]
+    },
+    {
+      "key": "Bloodstained Chivalry",
+      "name": "染血的骑士道",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "造成的物理伤害提高25%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "击败敌人后的10秒内，施放重击时不消耗体力，且造成的伤害提升50%。"
+        }
+      ]
+    },
+    {
+      "key": "Noblesse Oblige",
+      "name": "昔日宗室之仪",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "元素爆发造成的伤害提升20％ 。"
+        },
+        {
+          "key": "b2",
+          "bonus": "施放元素爆发后，队伍中所有角色攻击力提升20％，持续12秒。该效果不可叠加。"
+        }
+      ]
+    },
+    {
+      "key": "Gladiator’s Finale",
+      "name": "角斗士的终幕礼",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "攻击力提高18%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "装备该圣遗物套装的角色为单手剑、双手剑、长柄武器角色时，角色普通攻击造成的伤害提高35%。"
+        }
+      ]
+    },
+    {
+      "key": "Wanderer’s Troupe",
+      "name": "流浪大地的乐团",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "元素精通提高80点。"
+        },
+        {
+          "key": "b2",
+          "bonus": "装备该圣遗物套装的角色为法器、弓箭角色时，角色重击造成的伤害提高35%。"
+        }
+      ]
+    },
+    {
+      "key": "Prayers for Illumination",
+      "name": "祭火之人",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "受到的火元素附着效果的持续时间减少40%。"
+        }
+      ]
+    },
+    {
+      "key": "Prayers for Destiny",
+      "name": "祭水之人",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "受到的水元素附着效果的持续时间减少40%。"
+        }
+      ]
+    },
+    {
+      "key": "Prayers for Wisdom",
+      "name": "祭雷之人",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "受到的雷元素附着效果的持续时间减少40%。"
+        }
+      ]
+    },
+    {
+      "key": "Prayers to Springtime",
+      "name": "祭冰之人",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "受到的冰元素附着效果的持续时间减少40%。"
+        }
+      ]
+    },
+    {
+      "key": "Blizzard Strayer",
+      "name": "冰风迷途的勇士",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "获得15%冰元素伤害加成。"
+        },
+        {
+          "key": "b2",
+          "bonus": "攻击处于冰元素影响状态下的敌人时，暴击率提高20%；若敌人处于冰冻状态下，暴击率额外提高20%。"
+        }
+      ]
+    },
+    {
+      "key": "Heart of Depth",
+      "name": "沉沦之心",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "获得15%水元素伤害加成。"
+        },
+        {
+          "key": "b2",
+          "bonus": "施放元素战技后的15秒内，普通攻击与重击造成的伤害提高30%。"
+        }
+      ]
+    },
+    {
+      "key": "Glacier and Snowfield",
+      "name": "（已移除）冰之川与雪之砂",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "获得15%冰元素伤害加成。"
+        },
+        {
+          "key": "b2",
+          "bonus": "超导反应造成的伤害提升50%，融化反应加成系数提高15%，施放元素爆发后的10秒内，冰元素伤害加成额外提升25%。"
+        }
+      ]
+    },
+    {
+      "key": "Prayers to the Firmament",
+      "name": "Prayers to the Firmament",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "Affected by Anemo for 40% less time."
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "key": "FreedomA",
+      "name": "「自由」的教导"
+    },
+    {
+      "key": "FreedomB",
+      "name": "「自由」的指引"
+    },
+    {
+      "key": "FreedomC",
+      "name": "「自由」的哲学"
+    },
+    {
+      "key": "ProsperityA",
+      "name": "「繁荣」的教导"
+    },
+    {
+      "key": "ProsperityB",
+      "name": "「繁荣」的指引"
+    },
+    {
+      "key": "ProsperityC",
+      "name": "「繁荣」的哲学"
+    },
+    {
+      "key": "DilligenceA",
+      "name": "「勤劳」的教导"
+    },
+    {
+      "key": "DilligenceB",
+      "name": "「勤劳」的指引"
+    },
+    {
+      "key": "DilligenceC",
+      "name": "「勤劳」的哲学"
+    },
+    {
+      "key": "ResistanceA",
+      "name": "「抗争」的教导"
+    },
+    {
+      "key": "ResistanceB",
+      "name": "「抗争」的指引"
+    },
+    {
+      "key": "ResistanceC",
+      "name": "「抗争」的哲学"
+    },
+    {
+      "key": "BalladA",
+      "name": "「诗文」的教导"
+    },
+    {
+      "key": "BalladB",
+      "name": "「诗文」的指引"
+    },
+    {
+      "key": "BalladC",
+      "name": "「诗文」的哲学"
+    },
+    {
+      "key": "GoldA",
+      "name": "「黄金」的教导"
+    },
+    {
+      "key": "GoldB",
+      "name": "「黄金」的指引"
+    },
+    {
+      "key": "GoldC",
+      "name": "「黄金」的哲学"
+    },
+    {
+      "key": "Tail of Boreas",
+      "name": "北风之尾",
+      "bossName": "北风之狼"
+    },
+    {
+      "key": "Ring of Boreas",
+      "name": "北风之环",
+      "bossName": "北风之狼"
+    },
+    {
+      "key": "Spirit Locket of Boreas",
+      "name": "北风的魂匣",
+      "bossName": "北风之狼"
+    },
+    {
+      "key": "Dvalin's Plume",
+      "name": "东风之翎",
+      "bossName": "风魔龙"
+    },
+    {
+      "key": "Dvalin's Claw",
+      "name": "东风之爪",
+      "bossName": "风魔龙"
+    },
+    {
+      "key": "Dvalin's Sigh",
+      "name": "东风的吐息",
+      "bossName": "风魔龙"
+    },
+    {
+      "key": "Tusk of Monoceros Caeli",
+      "name": "吞天之鲸·只角",
+      "bossName": "黄金屋"
+    },
+    {
+      "key": "Shard of a Foul Legacy",
+      "name": "魔王之刃·残片",
+      "bossName": "黄金屋"
+    },
+    {
+      "key": "Shadow of the Warrior",
+      "name": "武炼之魂·孤影",
+      "bossName": "黄金屋"
+    },
+    {
+      "key": "DecarabianA",
+      "name": "高塔孤王的破瓦"
+    },
+    {
+      "key": "DecarabianB",
+      "name": "高塔孤王的残垣"
+    },
+    {
+      "key": "DecarabianC",
+      "name": "高塔孤王的断片"
+    },
+    {
+      "key": "DecarabianD",
+      "name": "高塔孤王的碎梦"
+    },
+    {
+      "key": "GuyunA",
+      "name": "孤云寒林的光砂"
+    },
+    {
+      "key": "GuyunB",
+      "name": "孤云寒林的辉岩"
+    },
+    {
+      "key": "GuyunC",
+      "name": "孤云寒林的圣骸"
+    },
+    {
+      "key": "GuyunD",
+      "name": "孤云寒林的神体"
+    },
+    {
+      "key": "ElixirA",
+      "name": "雾海云间的铅丹"
+    },
+    {
+      "key": "ElixirB",
+      "name": "雾海云间的汞丹"
+    },
+    {
+      "key": "ElixirC",
+      "name": "雾海云间的金丹"
+    },
+    {
+      "key": "ElixirD",
+      "name": "雾海云间的转还"
+    },
+    {
+      "key": "BorealWolfA",
+      "name": "凛风奔狼的始龀"
+    },
+    {
+      "key": "BorealWolfB",
+      "name": "凛风奔狼的裂齿"
+    },
+    {
+      "key": "BorealWolfC",
+      "name": "凛风奔狼的断牙"
+    },
+    {
+      "key": "BorealWolfD",
+      "name": "凛风奔狼的怀乡"
+    },
+    {
+      "key": "AerosideriteA",
+      "name": "漆黑陨铁的一粒"
+    },
+    {
+      "key": "AerosideriteB",
+      "name": "漆黑陨铁的一片"
+    },
+    {
+      "key": "AerosideriteC",
+      "name": "漆黑陨铁的一角"
+    },
+    {
+      "key": "AerosideriteD",
+      "name": "漆黑陨铁的一块"
+    },
+    {
+      "key": "GladiatorA",
+      "name": "狮牙斗士的枷锁"
+    },
+    {
+      "key": "GladiatorB",
+      "name": "狮牙斗士的铁链"
+    },
+    {
+      "key": "GladiatorC",
+      "name": "狮牙斗士的镣铐"
+    },
+    {
+      "key": "GladiatorD",
+      "name": "狮牙斗士的理想"
+    },
+    {
+      "key": "Crown of Insight",
+      "name": "智识之冕"
+    },
+    {
+      "key": "SacrificialKnifeA",
+      "name": "猎兵祭刀"
+    },
+    {
+      "key": "SacrificialKnifeB",
+      "name": "特工祭刀"
+    },
+    {
+      "key": "SacrificialKnifeC",
+      "name": "督察长祭刀"
+    },
+    {
+      "key": "HornA",
+      "name": "沉重号角"
+    },
+    {
+      "key": "HornB",
+      "name": "黑铜号角"
+    },
+    {
+      "key": "HornC",
+      "name": "黑晶号角"
+    },
+    {
+      "key": "ChaosA",
+      "name": "混沌装置"
+    },
+    {
+      "key": "ChaosB",
+      "name": "混沌回路"
+    },
+    {
+      "key": "ChaosC",
+      "name": "混沌炉心"
+    },
+    {
+      "key": "LeyLineA",
+      "name": "地脉的旧枝"
+    },
+    {
+      "key": "LeyLineB",
+      "name": "地脉的枯叶"
+    },
+    {
+      "key": "LeyLineC",
+      "name": "地脉的新芽"
+    },
+    {
+      "key": "MistGrassA",
+      "name": "雾虚花粉"
+    },
+    {
+      "key": "MistGrassB",
+      "name": "雾虚草囊"
+    },
+    {
+      "key": "MistGrassC",
+      "name": "雾虚灯芯"
+    },
+    {
+      "key": "BoneShardA",
+      "name": "脆弱的骨片"
+    },
+    {
+      "key": "BoneShardB",
+      "name": "结实的骨片"
+    },
+    {
+      "key": "BoneShardC",
+      "name": "石化的骨片"
+    },
+    {
+      "key": "MaskA",
+      "name": "破损的面具"
+    },
+    {
+      "key": "MaskB",
+      "name": "污秽的面具"
+    },
+    {
+      "key": "MaskC",
+      "name": "不祥的面具"
+    },
+    {
+      "key": "StatuetteA",
+      "name": "Gloomy Statuette"
+    },
+    {
+      "key": "StatuetteB",
+      "name": "Dark Statuette"
+    },
+    {
+      "key": "StatuetteC",
+      "name": "Deathly Statuette"
+    },
+    {
+      "key": "ScrollA",
+      "name": "导能绘卷"
+    },
+    {
+      "key": "ScrollB",
+      "name": "封魔绘卷"
+    },
+    {
+      "key": "ScrollC",
+      "name": "禁咒绘卷"
+    },
+    {
+      "key": "NectarA",
+      "name": "骗骗花蜜"
+    },
+    {
+      "key": "NectarB",
+      "name": "微光花蜜"
+    },
+    {
+      "key": "NectarC",
+      "name": "原素花蜜"
+    },
+    {
+      "key": "ArrowHeadA",
+      "name": "牢固的箭簇"
+    },
+    {
+      "key": "ArrowHeadB",
+      "name": "锐利的箭簇"
+    },
+    {
+      "key": "ArrowHeadC",
+      "name": "历战的箭簇"
+    },
+    {
+      "key": "CircularInsigniaA",
+      "name": "寻宝鸦印"
+    },
+    {
+      "key": "CircularInsigniaB",
+      "name": "藏银鸦印"
+    },
+    {
+      "key": "CircularInsigniaC",
+      "name": "攫金鸦印"
+    },
+    {
+      "key": "InsigniaA",
+      "name": "新兵的徽记"
+    },
+    {
+      "key": "InsigniaB",
+      "name": "士官的徽记"
+    },
+    {
+      "key": "InsigniaC",
+      "name": "尉官的徽记"
+    },
+    {
+      "key": "SlimeA",
+      "name": "史莱姆原浆"
+    },
+    {
+      "key": "SlimeB",
+      "name": "史莱姆清"
+    },
+    {
+      "key": "SlimeC",
+      "name": "史莱姆凝液"
+    },
+    {
+      "key": "Mora",
+      "name": "摩拉"
+    },
+    {
+      "key": "BasaltPillar",
+      "name": "玄岩之塔"
+    },
+    {
+      "key": "CleansingHeart",
+      "name": "净水之心"
+    },
+    {
+      "key": "EverflameSeed",
+      "name": "常燃火种"
+    },
+    {
+      "key": "HoarfrostCore",
+      "name": "极寒之核"
+    },
+    {
+      "key": "HurricaneSeed",
+      "name": "狂风之核"
+    },
+    {
+      "key": "LightningPrism",
+      "name": "雷光棱镜"
+    },
+    {
+      "key": "AgateA",
+      "name": "燃愿玛瑙碎屑"
+    },
+    {
+      "key": "AgateB",
+      "name": "燃愿玛瑙断片"
+    },
+    {
+      "key": "AgateC",
+      "name": "燃愿玛瑙块"
+    },
+    {
+      "key": "AgateD",
+      "name": "燃愿玛瑙"
+    },
+    {
+      "key": "DiamondA",
+      "name": "璀璨原钻碎屑"
+    },
+    {
+      "key": "DiamondB",
+      "name": "璀璨原钻断片"
+    },
+    {
+      "key": "DiamondC",
+      "name": "璀璨原钻块"
+    },
+    {
+      "key": "DiamondD",
+      "name": "璀璨原钻"
+    },
+    {
+      "key": "EmeraldA",
+      "name": "Nagadus Emerald Sliver"
+    },
+    {
+      "key": "EmeraldB",
+      "name": "Nagadus Emerald Fragment"
+    },
+    {
+      "key": "EmeraldC",
+      "name": "Nagadus Emerald Chuck"
+    },
+    {
+      "key": "EmeraldD",
+      "name": "Nagadus Emerald Gemstone"
+    },
+    {
+      "key": "TopazA",
+      "name": "坚牢黄玉碎屑"
+    },
+    {
+      "key": "TopazB",
+      "name": "坚牢黄玉断片"
+    },
+    {
+      "key": "TopazC",
+      "name": "坚牢黄玉块"
+    },
+    {
+      "key": "TopazD",
+      "name": "坚牢黄玉"
+    },
+    {
+      "key": "JadeA",
+      "name": "哀叙冰玉碎屑"
+    },
+    {
+      "key": "JadeB",
+      "name": "哀叙冰玉断片"
+    },
+    {
+      "key": "JadeC",
+      "name": "哀叙冰玉块"
+    },
+    {
+      "key": "JadeD",
+      "name": "哀叙冰玉"
+    },
+    {
+      "key": "AmethystA",
+      "name": "最胜紫晶碎屑"
+    },
+    {
+      "key": "AmethystB",
+      "name": "最胜紫晶断片"
+    },
+    {
+      "key": "AmethystC",
+      "name": "最胜紫晶块"
+    },
+    {
+      "key": "AmethystD",
+      "name": "最胜紫晶"
+    },
+    {
+      "key": "LazuriteA",
+      "name": "涤净青金碎屑"
+    },
+    {
+      "key": "LazuriteB",
+      "name": "涤净青金断片"
+    },
+    {
+      "key": "LazuriteC",
+      "name": "涤净青金块"
+    },
+    {
+      "key": "LazuriteD",
+      "name": "涤净青金"
+    },
+    {
+      "key": "TurquoiseA",
+      "name": "自在松石碎屑"
+    },
+    {
+      "key": "TurquoiseB",
+      "name": "自在松石断片"
+    },
+    {
+      "key": "TurquoiseC",
+      "name": "自在松石块"
+    },
+    {
+      "key": "TurquoiseD",
+      "name": "自在松石"
+    },
+    {
+      "key": "CallaLily",
+      "name": "嘟嘟莲"
+    },
+    {
+      "key": "Cecilia",
+      "name": "塞西莉亚花"
+    },
+    {
+      "key": "CorLapis",
+      "name": "石珀"
+    },
+    {
+      "key": "DandelionSeed",
+      "name": "蒲公英籽"
+    },
+    {
+      "key": "GlazeLily",
+      "name": "琉璃百合"
+    },
+    {
+      "key": "JueyunChili",
+      "name": "绝云椒椒"
+    },
+    {
+      "key": "NoctilousJade",
+      "name": "夜泊石"
+    },
+    {
+      "key": "PhilanemoMushroom",
+      "name": "慕风蘑菇"
+    },
+    {
+      "key": "Qingxin",
+      "name": "清心"
+    },
+    {
+      "key": "SilkFlower",
+      "name": "霓裳花"
+    },
+    {
+      "key": "SmallLampGrass",
+      "name": "小灯草"
+    },
+    {
+      "key": "Starconch",
+      "name": "星螺"
+    },
+    {
+      "key": "Valberry",
+      "name": "落落莓"
+    },
+    {
+      "key": "Violetgrass",
+      "name": "琉璃袋"
+    },
+    {
+      "key": "WindwheelAster",
+      "name": "风车菊"
+    },
+    {
+      "key": "Wolfhook",
+      "name": "钩钩果"
+    }
+  ],
+  "debuffs": [
+    {
+      "key": "Engulfing Storm",
+      "name": "噬能之雷",
+      "effect": "处于该元素状态下的角色，不断减少元素充能。"
+    },
+    {
+      "key": "Slowing Water",
+      "name": "迟滞之水",
+      "effect": "处于迟滞之水状态下的角色，技能冷却时间会被延长。"
+    },
+    {
+      "key": "Smoldering Flames",
+      "name": "阴燃之火",
+      "effect": "处于阴燃之火状态下的角色，会受到火元素持续伤害。"
+    },
+    {
+      "key": "Condensed Ice",
+      "name": "凝结之冰",
+      "effect": "处于凝结之冰状态下的角色，消耗的体力会增加。"
+    }
+  ],
+  "reactions": [
+    {
+      "key": "Burning",
+      "name": "燃烧",
+      "effect": "持续造成火元素伤害，并毁坏草元素的装备、物体。"
+    },
+    {
+      "key": "Crystalize",
+      "name": "结晶",
+      "effect": "产生对应元素的晶片，为角色提供各种元素护盾。"
+    },
+    {
+      "key": "Electro-Charged",
+      "name": "感电",
+      "effect": "持续造成雷元素伤害。"
+    },
+    {
+      "key": "Frozen",
+      "name": "冻结",
+      "effect": "冻结目标。"
+    },
+    {
+      "key": "Melt",
+      "name": "融化",
+      "effect": "通过火元素或冰元素攻击导致融化时，会按照一定的比例提高该次攻击造成的伤害。"
+    },
+    {
+      "key": "Overloaded",
+      "name": "超载",
+      "effect": "超载反应会引发剧烈的爆炸，造成火元素的爆炸范围伤害。"
+    },
+    {
+      "key": "Superconduct",
+      "name": "超导",
+      "effect": "超导会造成冰元素的范围伤害，并降低受到超导影响的生物50%的防御力。"
+    },
+    {
+      "key": "Swirl",
+      "name": "扩散",
+      "effect": "扩散能造成对应元素的伤害，产生附着，或进一步引发其他反应。"
+    },
+    {
+      "key": "Vaporize",
+      "name": "蒸发",
+      "effect": "通过火元素或水元素攻击导致蒸发时，会按照一定的比例提高该次攻击造成的伤害。"
+    }
+  ],
+  "resonance": [
+    {
+      "key": "Enduring Rock",
+      "name": "坚定之岩",
+      "effect": "护盾强效提升15%。角色处于护盾保护状态时，造成的伤害提升15%，对敌人造成伤害时会使敌人的的岩元素抗性降低20%，持续15秒。"
+    },
+    {
+      "key": "Fervent Flames",
+      "name": "热诚之火",
+      "effect": "冰元素附着的持续时间下降40%。攻击力提升25%。"
+    },
+    {
+      "key": "Soothing Waters",
+      "name": "愈疗之水",
+      "effect": "火元素附着的持续时间下降40%。受治疗效果提升30%。"
+    },
+    {
+      "key": "Impetuous Winds",
+      "name": "迅捷之风",
+      "effect": "体力消耗降低15%，移动速度提升10%，技能冷却时间缩短5%。"
+    },
+    {
+      "key": "High Voltage",
+      "name": "强能之雷",
+      "effect": "水元素附着持续时间下降40%。触发超导、超载和感电反应时，有100%概率掉落1个雷元素微粒，冷却时间5秒。"
+    },
+    {
+      "key": "Shattering Ice",
+      "name": "粉碎之冰",
+      "effect": "雷元素附着持续时间下降40%。攻击冰元素附着或冻结状态下的敌人时，暴击率提高15%。"
+    },
+    {
+      "key": "Protective Canopy",
+      "name": "交织之护",
+      "effect": "所有元素抗性提升15%，物理抗性提升15%。",
+      "description": "任意四种不同元素"
+    }
+  ]
+}
