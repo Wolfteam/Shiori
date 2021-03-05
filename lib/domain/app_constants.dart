@@ -8,7 +8,7 @@ const artifactOrder = [4, 2, 5, 1, 3];
 final languagesMap = {
   AppLanguageType.english: LanguageModel('en', 'US'),
   AppLanguageType.spanish: LanguageModel('es', 'ES'),
-  // AppLanguageType.french: LanguageModel('fr', 'FR'),
+  AppLanguageType.french: LanguageModel('fr', 'FR'),
   AppLanguageType.russian: LanguageModel('ru', 'RU'),
   AppLanguageType.simplifiedChinese: LanguageModel('zh', 'CN'),
 };
