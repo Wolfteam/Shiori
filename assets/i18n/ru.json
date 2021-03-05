@@ -1214,128 +1214,123 @@
     {
       "key": "HuTao",
       "name": "Ху Тао",
-      "description": "The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.",
+      "description": "Хозяйка ритуального бюро «Ваншэн» в семьдесят седьмом поколении. Важная фигура в похоронном деле Ли Юэ.",
       "skills": [
         {
           "key": "s1",
-          "title": "Secret Spear of Wangsheng",
+          "title": "Скрытое копьё «Ваншэн»",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to six consecutive spear strikes.",
+              "description": "До шести ударов копьём.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.",
+              "description": "Выпад, наносящий урон противникам на пути, на который тратится определённое количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Guide to Afterlife",
-          "description": "Only an unwavering flame can cleanse the impurities of this world.\n Hu Tao consumes a set portion of her HP to knock the surrounding enemies back and enter the Paramita Papilio state.",
+          "title": "Путеводитель по загробной жизни",
+          "description": "Лишь непоколебимое пламя сможет очистить этот мир.\n Ху Тао потребляет определённое количество HP, откидывает окружающих её противников и входит в состояние Танца бабочки.",
           "abilities": [
             {
-              "name": "Paramita Papilio",
+              "name": "Танец бабочки",
               "descriptions": [
-                "Increases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK.",
-                "Converts attack DMG to Pyro DMG, which cannot be overridden by any other elemental infusion.",
-                "Charged Attacks apply the Blood Blossom effect to the enemies hit.",
-                "Increases Hu Tao's resistance to interruption."
+                "Войдя в это состояние, сила атаки Ху Тао увеличивается в зависимости от её макс. HP. Полученный таким образом бонус силы атаки не может превышать 400% от базовой силы атаки Ху Тао.",
+                "Конвертирует урон от атак в Пиро урон, этот эффект не может быть отменён какой-либо элементальной инфузией.",
+                "Заряженные атаки накладывают на врагов эффект Кровавого цветка.",
+                "Повышает сопротивление Ху Тао к прерыванию."
               ]
             },
             {
-              "name": "Blood Blossom",
-              "description": "Enemies affected by Blood Blossom will take Pyro DMG every 4s. This DMG is considered Elemental Skill DMG.\n Each enemy can be affected by only one Blood Blossom effect at a time, and its duration may only be refreshed by Hu Tao herself.Paramita Papilio ends when its duration is over, or Hu Tao has left the battlefield or fallen.",
-              "descriptions": []
-            },
-            {
-              "name": "Spirit Soother",
-              "description": "Commands a blazing spirit to attack, dealing Pyro DMG in a large AoE.\nUpon striking the enemy, regenerates a percentage of Hu Tao's Max HP. This effect can be triggered up to 5 times, based on the number of enemies hit.\nIf Hu Tao's HP is below or equal to 50% when the enemy is hit, both the DMG and HP Regeneration are increased.",
+              "name": "Кровавый цветок",
+              "description": "Противники с эффектом Кровавого цветка будут получать Пиро урон каждые 4 сек. Этот урон считается уроном элементального навыка. Каждый противник может иметь только один эффект Кровавого цветка, и его длительность может быть обновлена только самой Ху Тао.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Spirit Soother",
-          "description": "Commands a blazing spirit to attack, dealing Pyro DMG in a large AoE.\nUpon striking the enemy, regenerates a percentage of Hu Tao's Max HP. This effect can be triggered up to 5 times, based on the number of enemies hit.\nIf Hu Tao's HP is below or equal to 50% when the enemy is hit, both the DMG and HP Regeneration are increased.",
+          "title": "Упокоение духов",
+          "description": "Приказывает пылающим духам пуститься в атаку, нанося Пиро урон по большой площади.\nПри попадании по врагу восстанавливает некоторый процент макс. HP Ху Тао. Этот эффект может активироваться до 5 раз, в зависимости от количества задетых противников.\nЕсли HP Ху Тао равно или ниже 50%, в момент попадания по противнику, наносимый урон и количество восстановленного HP увеличиваются.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "The More the Merrier",
-          "description": "When Hu Tao cooks a dish perfectly, she has a 18% chance to receive an additional \"Suspicious\" dish of the same type.",
+          "title": "Чем больше, тем лучше",
+          "description": "При приготовлении идеального блюда имеет 18% шанс приготовить дополнительное «странное» блюдо того же типа.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Flutter By",
-          "description": "Paramita Papilio state activated by Guide to Afterlife ends, all allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 8s.",
+          "title": "Фаза куколки",
+          "description": "Во время активации состояния Танец бабочки навыка Путеводитель по загробной жизни шанс крит. попадания всех членов отряда (кроме самой Ху Тао) увеличивается на 12% в течение 8 сек.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Sanguine Rouge",
-          "description": "When Hu Tao's HP is equal to or less than 50%, her Pyro DMG Bonus is increased by 33%.",
+          "title": "Кипение крови",
+          "description": "Увеличивает бонус Пиро урона Ху Тао на 33%, когда её HP меньше или равно 50%.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Crimson Bouquet",
-          "description": "While in a Paramita Papilio state activated by Guide to Afterlife, Hu Tao's Charge Attacks do not consume Stamina.",
+          "title": "Алый букет",
+          "description": "Заряженный атаки Ху Тао перестают потреблять выносливость в состоянии Танец бабочки навыка Путеводитель по загробной жизни.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Ominous Rainfall",
-          "description": "Increases the Blood Blossom DMG by an amount equal to 10% of Hu Tao's Max HP at the time the effect is applied.\nAdditionally, Spirit Soother will also apply the Blood Blossom effect.",
+          "title": "Плохой знак",
+          "description": "Увеличивает урон Кровавого цветка на 10% от макс. HP Ху Тао на момент наложения эффекта.\nНавык Упокоение духов также накладывает эффект Кровавого цветка.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Lingering Carmine",
-          "description": "Increases the Level of Guide to Afterlife by 3. Maximum upgrade level is 15.",
+          "title": "Ритуал кровопускания",
+          "description": "Усиливает уровень навыка Путеводитель по загробной жизни на 3. Макс. Ур.: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Garden of Eternal Rest",
-          "description": "Upon defeating an enemy affected by a Blood Blossom that Hu Tao applied herself, all nearby allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 15s.",
+          "title": "Сады вечного покоя",
+          "description": "После победы над противником, находящимся под эффектом Кровавого цветка, наложенным самой Ху Тао, шанс крит. попадания всех окружающих членов отряда (кроме самой Ху Тао) увеличивается на 12% в течение 15 сек.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Floral Incense",
-          "description": "Increases the Level of Spirit Soother by 3. Maximum upgrade level is 15.",
+          "title": "Цветочные благовония",
+          "description": "Увеличивает уровень навыка Упокоение духов на 3. Макс. Ур.: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Butterfly's Embrace",
-          "description": "Triggers when Hu Tao's HP drops below 25%, or when she suffers a lethal strike:",
+          "title": "Объятья бабочки",
+          "description": "Активируется, когда HP Ху Тао опускается ниже 25% или когда она получается летальный урон:",
           "secondDescription": null,
           "descriptions": [
-            "Hu Tao will not fall as a result of the DMG sustained. Additionally, for the next 10s, all of her Elemental and Physical RES is increased by 200%, her CRIT Rate is increased by 100%, and her resistance to interruption is greatly increased.",
-            "This effect triggers automatically when Hu Tao has 1 HP left.",
-            "Can only occur once every 60s."
+            "Ху Тао не погибает от полученного урона. напротив, на следующие 10 сек. все её элементальные и физические сопротивления повышаются на 200%, её шанс крит. попадания увеличивается на 100%, а также сильно повышается её сопротивление к прерыванию",
+            "Этот эффект активируется автоматически, когда у Ху Тао остаётся 1 HP.",
+            "Может возникнуть раз в 60 сек."
           ]
         }
       ]
@@ -4127,7 +4122,7 @@
     },
     {
       "key": "Apprentice’s Notes",
-      "name": "Apprentice’s Notes",
+      "name": "Записи ученика",
       "description": "Notes left behind by a top student. Many useful spells are listed, and the handwriting is beautiful.",
       "refinement": null
     },
@@ -4153,7 +4148,7 @@
       "key": "Magic Guide",
       "name": "Руководство по магии",
       "description": "Version 12. A reprint featuring corrections to Version 11 and brand-new additions based on recent developments.",
-      "refinement": "Увеличивает на 12~24% урон против врагов, находящихся под действием Гидро или Электро элементов."
+      "refinement": "Увеличивает на {{0}}% урон против врагов, находящихся под действием Гидро или Электро элементов."
     },
     {
       "key": "Otherworldly Story",
@@ -4391,14 +4386,14 @@
     },
     {
       "key": "Beginner’s Protector",
-      "name": "Beginner’s Protector",
-      "description": "A polearm as straight as a flag pole. Well suited to most combat situations, it has an imposing presence when swung.",
+      "name": "Копьё новичка",
+      "description": "Обычное копьё. Прямое, как флагшток. Одним его взмахом можно разрешить большинство споров.",
       "refinement": null
     },
     {
       "key": "Iron Point",
       "name": "Железный наконечник",
-      "description": "Sharp and pointy at one end, it is a balanced weapon that is quite popular among travelers.",
+      "description": "Прекрасно сбалансированное оружие, заострённое с одной стороны. Популярно среди путешественников.",
       "refinement": null
     },
     {
@@ -4422,13 +4417,13 @@
     {
       "key": "Blackcliff Pole",
       "name": "Черногорская пика",
-      "description": "A weapon made of blackcliff and aerosiderite. There is a dark crimson glow on its cold black sheen.",
+      "description": "Оружие, сделанное из чёрного камня и метеоритного железа. Его холодный клинок отливает кроваво-красным цветов.",
       "refinement": "Побеждённые противники увеличивают силу атаки на {{0}}%. Длится 30 сек. Эффект может складываться до 3 раз. Длительность добавочных эффектов друг от друга не зависит."
     },
     {
       "key": "Crescent Pike",
       "name": "Пика полумесяца",
-      "description": "An exotic weapon with an extremely long blade on the top and a crescent blade at the bottom. It found its way into Liyue through foreign traders. With practice, it can deal heavy damage.",
+      "description": "Экзотичное оружие с длинным лезвием на одном коне и полукруглым лезвием на другом. Попало в Ли Юэ благодаря иностранным торговцам. В умелых руках может наносить огромный урон.",
       "refinement": "Подобранные элементарные сферы и частицы увеличивают урон обычной и заряженной атаки на {{0}}% в течение 5 сек."
     },
     {
@@ -4499,9 +4494,9 @@
     },
     {
       "key": "Staff of Homa",
-      "name": "Staff of Homa",
+      "name": "Посох Хомы",
       "description": "A \"firewood staff\" that was once used in ancient and long-lost rituals.",
-      "refinement": "HP increased by {{0}}%. Additionally, provides an ATK Bonus based on {{1}}% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional {{2}}% of Max HP."
+      "refinement": "Увеличивает HP на {{0}}%. Также даёт бонус атаки, равный {{1}}% от макс. HP экипированного этим оружием персонажа. Когда HP экипированного этим оружием персонажа опускается ниже 50%, его сила атаки дополнительно увеличивается на {{2}}% от его макс. HP."
     }
   ],
   "artifacts": [
@@ -4955,11 +4950,11 @@
     },
     {
       "key": "FreedomB",
-      "name": "Guide to Freedom"
+      "name": "Указания о “Свободе”"
     },
     {
       "key": "FreedomC",
-      "name": "Philosophies of Freedom"
+      "name": "Философия о “Свободе”"
     },
     {
       "key": "ProsperityA",
@@ -5558,50 +5553,50 @@
   "debuffs": [
     {
       "key": "Engulfing Storm",
-      "name": "Engulfing Storm",
-      "effect": "Continuously drains Energy Recharge."
+      "name": "Объятья грозы",
+      "effect": "Непрерывно выкачивает Энергию элементов из персонажа."
     },
     {
       "key": "Slowing Water",
-      "name": "Slowing Water",
-      "effect": "Increases skill CD durations."
+      "name": "Медленный поток",
+      "effect": "Увеличивает время отката навыков."
     },
     {
       "key": "Smoldering Flames",
-      "name": "Smoldering Flames",
-      "effect": "Continuously inflicts damage over time."
+      "name": "Тлеющее пламя",
+      "effect": "Непрерывно наносит фиксированный урон."
     },
     {
       "key": "Condensed Ice",
-      "name": "Condensed Ice",
-      "effect": "Increases stamina consumption."
+      "name": "Застывший лёд",
+      "effect": "Увеличивает расход выносливости."
     }
   ],
   "reactions": [
     {
       "key": "Burning",
-      "name": "Burning",
-      "effect": "Deals Pyro DMG over time."
+      "name": "Горение",
+      "effect": "Наносит постоянный Пиро урон."
     },
     {
       "key": "Crystalize",
-      "name": "Crystalize",
-      "effect": "Creates a crystal that will provide a shield when picked up."
+      "name": "Кристаллизация",
+      "effect": "Поглощает часть элементальной энергии противника и роняет сферу, которая может дать персонажу элементальный щит."
     },
     {
       "key": "Electro-Charged",
-      "name": "Electro-Charged",
-      "effect": "Deals Electro DMG over time."
+      "name": "Заряд",
+      "effect": "Наносит постоянный Электро урон."
     },
     {
       "key": "Frozen",
-      "name": "Frozen",
-      "effect": "Freezes the target."
+      "name": "Замораживание",
+      "effect": "Замораживает цель"
     },
     {
       "key": "Melt",
-      "name": "Melt",
-      "effect": "Deals extra damage."
+      "name": "Таяние",
+      "effect": "Наносит дополнительный урон."
     },
     {
       "key": "Overloaded",
@@ -5627,39 +5622,39 @@
   "resonance": [
     {
       "key": "Enduring Rock",
-      "name": "Enduring Rock",
-      "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemeies will decrease their Geo RES by 20% for 15s."
+      "name": "Прочность Гео",
+      "effect": "Прочность щита повышается на 15%. Если у персонажа активен щит, то урон атаки увеличивается на 15%, а при нанесении урона врагу его Гео сопротивление в течение 15 сек. понижается на 20%."
     },
     {
       "key": "Fervent Flames",
-      "name": "Fervent Flames",
-      "effect": "Affected by Cryo for 40% less time. Increases ATK by 25%."
+      "name": "Преданность Пиро",
+      "effect": "Уменьшает длительность Крио эффекта на 40%, увеличивает силу атаки на 25%."
     },
     {
       "key": "Soothing Waters",
-      "name": "Soothing Waters",
-      "effect": "Affected by Pyro for 40% less time. Increases incoming healing by 30%."
+      "name": "Лечение Гидро",
+      "effect": "Уменьшает длительность Пиро эффекта на 40%, увеличивает бонус получаемого лечения на 30%."
     },
     {
       "key": "Impetuous Winds",
-      "name": "Impetuous Winds",
-      "effect": "Decreases Stamina Consumption by 15%. Increases Movement SPD by 10%. Shortens Skill CD by 5%."
+      "name": "Проворность Анемо",
+      "effect": "Уменьшает потребление выносливости на 15%. Увеличивает скорость передвижения на 10%. Уменьшает время отката навыков на 5%."
     },
     {
       "key": "High Voltage",
-      "name": "High Voltage",
-      "effect": "Affected by Hydro for 40% less time. Superconduct, Overloaded, and Electro-Charged have a 100% chance to generate an Electro Elemental Particle (CD: 5s)."
+      "name": "Энергия Электро",
+      "effect": "Уменьшает длительность Пиро эффекта на 40%, Суперпроводник, Перегрузка и Заряжен имеют шанс в 100% создать элементальную частицу Электро (Уменьшение восстановления умения на 5%)."
     },
     {
       "key": "Shattering Ice",
-      "name": "Shattering Ice",
-      "effect": "Affected by Electro for 40% less time. Increases CRIT Rate against enemies that are Frozen or affected by Cryo by 15%."
+      "name": "Разрушение Крио",
+      "effect": "Уменьшает длительность Электро эффекта на 40%, увеличивает шанс критического урона по замороженным противникам или противникам с Крио эффектом на 15%."
     },
     {
       "key": "Protective Canopy",
-      "name": "Protective Canopy",
-      "effect": "All Elemental RES by 15%. Physical RES + 15%",
-      "description": "Any 4 Unique Elements"
+      "name": "Нити защиты",
+      "effect": "Элементальное сопротивление повышается на 15%.",
+      "description": "Любые 4 уникальных элемента"
     }
   ]
 }

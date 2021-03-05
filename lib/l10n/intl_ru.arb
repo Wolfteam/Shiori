@@ -97,7 +97,7 @@
   "constellations": "Созвездия",
   "passives": "Пассивные",
   "unlockedAutomatically": "Разблокируются Автоматически",
-  "unlockedAtAscensionLevelX": "Разблокируются на уровне возвышения {value}",
+  "unlockedAtAscensionLevelX": "Разблокируются на {value} уровне возвышения ",
   "skills": "Способности",
   "talentsAscension": "Возвышение Талантов",
   "talentAscensionX": "Возвышение Таланта {value}",
@@ -160,7 +160,7 @@
   "plungingAttack": "Атака в падении",
   "hold": "Зажать",
   "press": "Нажатие",
-  "short": "недолгое",
+  "short": "ненадолго",
   "elementalAbsorption": "Элементное поглощение",
   "xPieces": "{value} части",
   "anotherWorld": "Другой мир",
@@ -215,5 +215,12 @@
   "geo": "Гео",
   "pyro": "Пиро",
   "hydro": "Гидро",
-  "craftingMaterials": "Материалы изготовления"
+  "craftingMaterials": "Материалы изготовления",
+  "inazuma": "Inazuma",
+  "mondstadt": "Mondstadt",
+  "liyue": "Liyue",
+  "snezhnaya": "Snezhnaya",
+  "fontaine": "Fontaine",
+  "natlan": "Natlan",
+  "sumeru": "Sumeru"
 }
