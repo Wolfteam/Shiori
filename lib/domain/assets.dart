@@ -103,6 +103,8 @@ class Assets {
         return '$translationsBasePath/fr.json';
       case AppLanguageType.russian:
         return '$translationsBasePath/ru.json';
+      case AppLanguageType.simplifiedChinese:
+        return '$translationsBasePath/zh_CN.json';
       default:
         throw Exception('Invalid language = $languageType');
     }

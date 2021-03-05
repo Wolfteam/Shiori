@@ -105,6 +105,16 @@ class S {
     );
   }
 
+  /// `Chinese (Simplified)`
+  String get simplifiedChinese {
+    return Intl.message(
+      'Chinese (Simplified)',
+      name: 'simplifiedChinese',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Bow`
   String get bow {
     return Intl.message(
@@ -2285,6 +2295,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
       Locale.fromSubtags(languageCode: 'es', countryCode: 'ES'),
       Locale.fromSubtags(languageCode: 'fr'),
       Locale.fromSubtags(languageCode: 'ru'),
+      Locale.fromSubtags(languageCode: 'zh', countryCode: 'CN'),
     ];
   }
 
