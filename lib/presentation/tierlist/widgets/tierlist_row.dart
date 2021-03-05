@@ -181,7 +181,7 @@ class TierListRow extends StatelessWidget {
   Future<void> _showColorPicker(BuildContext context) async {
     final newColor = await showDialog<Color>(
       context: context,
-      child: TierListRowColorPicker(currentColor: color),
+      builder: (_) => TierListRowColorPicker(currentColor: color),
     );
 
     if (newColor != null && newColor != color) {

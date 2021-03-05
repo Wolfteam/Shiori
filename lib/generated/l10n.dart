@@ -2194,6 +2194,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Inazuma`
+  String get inazuma {
+    return Intl.message(
+      'Inazuma',
+      name: 'inazuma',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mondstadt`
+  String get mondstadt {
+    return Intl.message(
+      'Mondstadt',
+      name: 'mondstadt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Liyue`
+  String get liyue {
+    return Intl.message(
+      'Liyue',
+      name: 'liyue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Snezhnaya`
+  String get snezhnaya {
+    return Intl.message(
+      'Snezhnaya',
+      name: 'snezhnaya',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fontaine`
+  String get fontaine {
+    return Intl.message(
+      'Fontaine',
+      name: 'fontaine',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Natlan`
+  String get natlan {
+    return Intl.message(
+      'Natlan',
+      name: 'natlan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sumeru`
+  String get sumeru {
+    return Intl.message(
+      'Sumeru',
+      name: 'sumeru',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
