@@ -213,5 +213,12 @@
     "geo": "Geo",
     "pyro": "Pyro",
     "hydro": "Hydro",
-    "craftingMaterials": "Materiales de Elaboración"
+    "craftingMaterials": "Materiales de Elaboración",
+    "inazuma": "Inazuma",
+    "mondstadt": "Mondstadt",
+    "liyue": "Liyue",
+    "snezhnaya": "Snezhnaya",
+    "fontaine": "Fontaine",
+    "natlan": "Natlan",
+    "sumeru": "Sumeru"
 }
