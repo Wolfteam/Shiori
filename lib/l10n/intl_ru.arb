@@ -6,6 +6,7 @@
   "spanish": "Испанский",
   "french": "Французский",
   "russian": "Русский",
+  "simplifiedChinese": "Китайский (упрощённый)",
   "bow": "Лук",
   "claymore": "Двуручный меч",
   "sword": "Меч",
@@ -216,11 +217,11 @@
   "pyro": "Пиро",
   "hydro": "Гидро",
   "craftingMaterials": "Материалы изготовления",
-  "inazuma": "Inazuma",
-  "mondstadt": "Mondstadt",
-  "liyue": "Liyue",
-  "snezhnaya": "Snezhnaya",
-  "fontaine": "Fontaine",
-  "natlan": "Natlan",
-  "sumeru": "Sumeru"
+  "inazuma": "Инадзума",
+  "mondstadt": "Мондштадт",
+  "liyue": "Ли Юэ",
+  "snezhnaya": "Снежная",
+  "fontaine": "Фонтейн",
+  "natlan": "Натлан",
+  "sumeru": "Сумеру"
 }

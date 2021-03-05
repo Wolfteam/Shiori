@@ -3985,91 +3985,91 @@
     {
       "key": "Dull Blade",
       "name": "Тупой меч",
-      "description": "Youthful dreams and the thrill of adventure. If this isn’t enough, then make it up with valiance.",
+      "description": "Юношеские мечты и жажда приключений, приправленные отвагой.",
       "refinement": null
     },
     {
       "key": "Silver Sword",
       "name": "Серебряный меч",
-      "description": "A sword for exorcising demons. Everyone knows it’s made of a silver alloy, not pure silver.",
+      "description": "Говорят, что этот меч может изгонять демонов, но всем известно, что он сделан не из настоящего серебра.",
       "refinement": null
     },
     {
       "key": "Cool Steel",
       "name": "Холодное лезвие",
-      "description": "A reliable steel-forged weapon that serves as a testament to the great adventures of its old master.",
+      "description": "Стальной меч, на который можно положиться. Служит доказательством великих завоеваний своего прежнего владельца.",
       "refinement": "Увеличивает урон против врагов, находящихся под Гидро и Крио эффектом на {{0}}%."
     },
     {
       "key": "Dark Iron Sword",
       "name": "Тёмный железный меч",
-      "description": "A perfectly ordinary iron sword, just slightly darker than most.",
+      "description": "На самом деле это просто немного тёмный железный меч.",
       "refinement": " Увеличивает силу атаки на {{0}}% в течение 12 секунд при нанесении статусов Перегрузка, Суперпроводник, Заряжен или Электро, Рассеивание."
     },
     {
       "key": "Fillet Blade",
       "name": "Филейный нож",
-      "description": "A sharp filleting knife. The blade is long, thin, and incredibly sharp.",
+      "description": "Острый филейный нож. Имеет длинное, тонкое и невероятно острое лезвия.",
       "refinement": "При попадании с 50% вероятностью наносит {{0}}% урона одной цели. Может возникнуть раз в {{1}} сек."
     },
     {
       "key": "Harbinger of Dawn",
       "name": "Предвестник зари",
-      "description": "A sword that once shone like the sun. The wielder of this sword will be blessed with a \"feel-good\" buff. The reflective material on the blade has long worn off.",
+      "description": "Меч, некогда испускавший солнечный свет. Владелец этого меча получит благословение «Хорошего Самочувствия». Отражающая поверхность меча давно стёрлась.",
       "refinement": "Увеличивает шанс крит. попадания на {{0}}% при HP выше 90%."
     },
     {
       "key": "Skyrider Sword",
       "name": "Меч небесного всадника",
-      "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword...",
+      "description": "Надёжный стальной меч. Однажды некто пытался заставить его летать...",
       "refinement": "Активация взрыва стихии увеличивает силу атаки и скорость передвижения на {{0}}% в течение 15 сек."
     },
     {
       "key": "Traveler’s Handy Sword",
       "name": "Меч путешественника",
-      "description": "A handy steel sword which contains scissors, a magnifying glass, tinder, and other useful items in its sheath.",
+      "description": "Удобный стальной меч, в ножнах которого также можно найти ножницы, лупу, трутницу и много чего ещё.",
       "refinement": "Подобранные элементальные сферы и частицы восстанавливают {{0}}% HP."
     },
     {
       "key": "Blackcliff Longsword",
       "name": "Черногорский длинный меч",
-      "description": "A sword made of a material known as \"blackcliff.\" It has a dark crimson glow on its black blade.",
+      "description": "Этот меч сделан из обломков скал Черногорья. Его тёмное лезвие имеет кровавое свечение.",
       "refinement": "Побеждённые противники увеличивают силу атаки на {{0}}% Длится 30 сек. Эффект может складываться до 3 раз. Длительность добавочных эффектов друг от друга не зависит."
     },
     {
       "key": "Favonius Sword",
       "name": "Меч Фавония",
-      "description": "A standard-issue longsword of the Knights of Favonius. When you’re armed with this agile and sharp weapon, channeling the power of the elements has never been so easy!",
+      "description": "Стандартный длинный меч на вооружении рыцарей Ордо Фавониус. Легко позволяет проводить через себя энергию стихий.",
       "refinement": "Критические атаки имеют {{0}}% шанс создать элементальные частицы, которые восстанавливают 6 ед. энергии. Возникает раз в {{1}} сек."
     },
     {
       "key": "Iron Sting",
       "name": "Стальное жало",
-      "description": "An exotic long-bladed rapier that somehow found its way into Liyue via foreign traders. It is light, agile, and sharp.",
+      "description": "Экзотическая рапира, каким-то образом попавшая в Ли Юэ. Скорее всего, её привёз какой-то торговец. Она лёгкая и очень острая.",
       "refinement": "Нанесённый Элементальный урон увеличивает весь урон на {{0}}% в течении 6 сек. Эффект может складываться до 2 раз. Может возникнуть не чаще 1 раза в 1 сек."
     },
     {
       "key": "Lion’s Roar",
       "name": "Драконий рык",
-      "description": "A sharp blade with extravagant carvings that somehow does not compromise on durability and sharpness. It roars like a lion as it cuts through the air.",
+      "description": "Роскошная гравировка никак не повлияла на прочность и остроту этого меча. Звук от взмахов напоминает рык дракона.",
       "refinement": "Увеличивает на {{0}}% урон против врагов, находящихся под действием Пиро или Электро элементов."
     },
     {
       "key": "Prototype Rancour",
       "name": "Прототип: Злоба",
-      "description": "An ancient longsword discovered in the Blackcliff Forge that cuts through rocks like a hot knife through butter.",
+      "description": "Древний меч, обнаруженный в кузнице Черногорья. Режет камень словно масло.",
       "refinement": "Попадание обычной или заряженной атакой увеличивают силу атаки на {{0}}% в течении 6 сек. Эффект может складываться до 4 раз и возникает раз в 0.3 сек."
     },
     {
       "key": "Royal Longsword",
-      "name": "Королевский длинный меч",
-      "description": "An old longsword that belonged to the erstwhile rulers of Mondstadt. Exquisitely crafted, the carvings and embellishments testify to the stature of its owner.",
-      "refinement": "Повышает вероятность критического удара на {{0}}% при нанесении урона. Максимальный стек 5."
+      "name": "Меч аристократов",
+      "description": "Старинный меч, который носили с собой древние правители Мондштадта. Изысканно выполненная резьба и инкрустация подчёркивают высокий статус его владельца.",
+      "refinement": "При нанесении урона противнику повышает шанс крит. попадания на {{0}}%. Эффект может складываться до 5 раз. Добавочный шанс крит. попадания исчезает с первым крит. попаданием."
     },
     {
       "key": "Sacrificial Sword",
       "name": "Церемониальный меч",
-      "description": "A ceremonial sword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
+      "description": "Декоративный церемониальный меч, со временем покрывшийся камнем, но украшения на нём всё ещё можно разобрать. Позволяет владельцу выстоять суровость песков времени.",
       "refinement": "Попадания Элементальным навыком могут с {{0}}% вероятностью моментально восстановить собственный откат. Может возникнуть раз в {{1}} сек."
     },
     {
@@ -4081,55 +4081,55 @@
     {
       "key": "The Black Sword",
       "name": "Чёрный меч",
-      "description": "A pitch-black longsword that thirsts for violence and conflict. It is said that this weapon can cause its user to become drunk on the red wine of slaughter.",
+      "description": "Этот чёрный как смоль меч жаждет кровопролития. Говорят, что в пылу резни его владелец пьянеет, словно от вина.",
       "refinement": "Увеличивает урон обычной и заряженной атаки на {{0}}%. Крит. попадания обычной и заряженной атакой восстанавливают HP, равное {{1}}% от силы атаки. Может возникнуть раз в 5 сек."
     },
     {
       "key": "The Flute",
       "name": "Меч-флейта",
-      "description": "Beneath its rusty exterior is a lavishly decorated thin blade. It swings as swiftly as the wind.",
+      "description": "Под всей ржавчиной скрывается роскошно украшенный меч. Режет плоть так же легко, как воздух.",
       "refinement": "Попадание обычной или заряженной атакой дают ноту. При накоплении 5 нот активируется сила музыки которая наносит {{0}}% урона окружающим врагам. Ноты исчезают через 30 сек. Новую ноту можно получить раз в 0.5 сек."
     },
     {
       "key": "Sword of Descension",
       "name": "Меч нисхождения",
-      "description": "A sword of unique craftsmanship. It does not appear to belong to this world.",
+      "description": "Меч уникальной формы. Кажется, что он не принадлежит этому миру.",
       "refinement": "Попадание обычной или заряженной атакой имеют 50% шанс нанести 200% урона в небольшом радиусе. Может возникнуть раз в 10 сек. Увеличивает силу атаки Путешественника, экипированного Мечом нисхождения, на {{1}} ед."
     },
     {
       "key": "Festering Desire",
       "name": "Осквернённое желание",
-      "description": "A creepy straight sword that almost seems to yearn for life. It drips with a shriveling venom that could even corrupt a mighty dragon.",
+      "description": "Зловещий меч, мечтающий о жизни. Он пропитан сильным ядом, способным осквернить даже могучего дракона.",
       "refinement": "Увеличивает урон элементального навыка на {{0}}%, и его шанс крит. попадания - на {{1}}%."
     },
     {
       "key": "Aquila Favonia",
       "name": "Меч Сокола",
-      "description": "The soul of the Knights of Favonius. Millennia later, it still calls on the winds of swift justice to vanquish all evil  just like the last heroine who wielded it.",
+      "description": "Дух рыцарей Ордо Фавониус. Спустя века он всё ещё взывает к ветрам правосудия, чтобы наказать зло, словно героиня легенд, что была когда-то его владельцем.",
       "refinement": "Увеличивает силу атаки на {{0}}%. При получении урона пробуждается душа Сокола Запада, несущего знамя сопротивления. Восстанавливает HP, равное {{1}}% от силы атаки, и наносит {{2}}% урона окружающим врагам. Может возникнуть раз в 15 сек."
     },
     {
       "key": "Skyward Blade",
       "name": "Небесный меч",
-      "description": "The sword of a knight that symbolizes the restored honor of Dvalin. The blessings of the Anemo Archon rest on the fuller of the blade, imbuing the sword with the powers of the sky and the wind.",
+      "description": "Меч рыцаря, символ вернувшего свою честь Двалина. Благословения Анемо Архонта питают его силой небес и ветров.",
       "refinement": "Увеличивает шанс крит. попадания на {{0}}%. Взрыв стихии пробуждает силу небес, которая увеличивает скорость передвижения и атаки на 10%, а обычные и заряженные атаки при попадании наносят дополнительные {{1}}% урона. Все эффекты длятся 12 сек."
     },
     {
       "key": "Summit Shaper",
       "name": "Кромсатель пиков",
-      "description": "A symbol of a legendary pact, this sharp blade once cut off the peak of a mountain.",
+      "description": "Говорят, этот клинок - символ легендарного контракта. Когда-то его острым лезвием была срезана вершина горы.",
       "refinement": "Увеличивает прочность щита на {{0}}%. При попадании увеличивает силу атаки на {{1}}% в течение 8 сек. Эффект может складываться до 5 раз и возникнуть раз в 0.3 сек. Кроме того, под защитой щита бонус силы атаки данного эффекта увеличивается на 100%."
     },
     {
       "key": "Apprentice’s Notes",
       "name": "Записи ученика",
-      "description": "Notes left behind by a top student. Many useful spells are listed, and the handwriting is beautiful.",
+      "description": "Конспекты, оставленные лучшим учеником класса, содержит много полезных заклинаний. Написано прекрасным почерком.",
       "refinement": null
     },
     {
       "key": "Pocket Grimoire",
-      "name": "Pocket Grimoire",
-      "description": "A carefully compiled notebook featuring the essentials needed to pass a magic exam.",
+      "name": "Карманный гримуар",
+      "description": "Тетрадь с конспектами по магическим дисциплинам, написанная аккуратным почерком.",
       "refinement": null
     },
     {
@@ -4141,79 +4141,79 @@
     {
       "key": "Emerald Orb",
       "name": "Изумрудный шар",
-      "description": "A catalyst carved out of the hard jade from Jueyun Karst north of Liyue. It is small, light, and durable.",
+      "description": "Катализатор, вырезанный из твёрдого нефрита, добываемого в Заоблачном пределе на севере Ли Юэ. Он маленький, лёгкий и прочный.",
       "refinement": "Увеличивает силу атаки на {{0}}% в течение 12 сек при нанесении статусов Пар, Заряжен, Заморозка или Гидро рассеивание."
     },
     {
       "key": "Magic Guide",
       "name": "Руководство по магии",
-      "description": "Version 12. A reprint featuring corrections to Version 11 and brand-new additions based on recent developments.",
+      "description": "12-е издание. Копия 11-го издания, содержащая исправления, согласно последним разработкам.",
       "refinement": "Увеличивает на {{0}}% урон против врагов, находящихся под действием Гидро или Электро элементов."
     },
     {
       "key": "Otherworldly Story",
       "name": "Потусторонняя история",
-      "description": "A cheap fantasy novel with no value whatsoever. Any claim that it possesses the power of catalysis is also pure fantasy.",
+      "description": "Дешёвая фантастика. Если использовать в качестве катализатора, можно понять, что силы её - тоже фантастика.",
       "refinement": "Подобранные элементальные сферы и частицы восстанавливают {{0}}% HP."
     },
     {
       "key": "Thrilling Tales of Dragon Slayers",
       "name": "Эпос о драконоборцах",
-      "description": "A fictional story of a band of five heroes who go off on a dragon hunt. It is poorly written and structurally incoherent. Its value lies in the many lessons that can be learned from failure.",
+      "description": "Художественная история о пяти героях, собравшихся охотиться на дракона. Написано очень плохо, без какой-либо структуры. Суть книги в том, чтобы научить людей, как важно избегать ошибок.",
       "refinement": "При переключении персонажа увеличивает силу атаки вошедшего на поле боя персонажа на {{0}}% в течение 10 сек. этот эффект может возникнуть раз в 20 сек."
     },
     {
       "key": "Twin Nephrite",
       "name": "Парный нефрит",
-      "description": "A jade pendant formed by piecing together two jade stones.",
+      "description": "Ожерелье с замочком из двух кусочков нефрита.",
       "refinement": "Победа над противником увеличивает скорость передвижения и силу атаки на {{0}}% в течении 15 сек."
     },
     {
       "key": "Blackcliff Agate",
       "name": "Черногорский агат",
-      "description": "A mysterious catalyst made of a material known as \"blackcliff.\" It has an ominous crimson glow that seems to pulse in synchronization with the tremors from deep within the earth.",
+      "description": "Загадочный катализатор, сделанный из черногорского камня. Его зловещее малиновое сияние пульсирует в такт подземным толчкам.",
       "refinement": "Побеждённые противники увеличивают силу атаки на {{0}}%. Длится 30 сек. Эффект может складываться до 3 раз. Длительность добавочных эффектов друг от друга не зависит."
     },
     {
       "key": "Favonius Codex",
       "name": "Кодекс Фавония",
-      "description": "A secret tome that belonged to the scholars of the Knights of Favonius. It describes the logic and power of elements and matter.",
+      "description": "Тайный гримуар, принадлежащий учёным Ордо Фавониус. Описывает силу и логику элементов и материи.",
       "refinement": "Критические атаки имеют {{0}}% шанс создать элементальные частицы, которые восстанавливают 6 ед. энергии. Возникает раз в {{1}} сек."
     },
     {
       "key": "Mappa Mare",
       "name": "Морская карта",
-      "description": "A nautical chart featuring nearby currents and climates that somehow found its way into Liyue via foreign traders.",
+      "description": "Привезённая иностранными торговцами в Ли Юэ карта морских течений и ветров.",
       "refinement": "В течение 10 сек. после вызова элементальной реакции увелчивает бонус элементального урона на {{0}}%. Может складываться до 2 раз."
     },
     {
       "key": "Prototype Amber",
       "name": "Прототип: Янтарь",
-      "description": "A dully gilded catalyst secretly guarded in the Blackcliff Forge. It seems to glow with the very light from the sky.",
+      "description": "Древний катализатор, обнаруженный в кузнице Черногорья. От него исходит сияние звёзд, солнца и луны.",
       "refinement": "Взрыв стихии восстанавливает {{0}} ед. энергии и {{1}}% HP всем членам отряда каждые 2 сек. в течение 6 сек."
     },
     {
       "key": "Royal Grimoire",
       "name": "Королевский гримуар",
-      "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
+      "description": "Книга, когда-то принадлежавшая королевскому магу Мондштадта. Содержит подробные исторические данные и заклинания.",
       "refinement": "При нанесении урона противнику скорость Крита увеличивается на {{0}}%. Максимум 5 стеков. Удар Крита удаляет все стеки."
     },
     {
       "key": "Sacrificial Fragments",
       "name": "Ритуальные мемуары",
-      "description": "A weathered script, the text of which is no longer legible. A cursed item eroded by the winds of time.",
+      "description": "Ветхий том, текст которого уже, увы, не прочитать. Проклятая вещь, изъеденная ветрами времени.",
       "refinement": "Попадания Элементальным навыков могут с {{0}}% вероятностью моментально восстановить собственный откат. Может возникнуть раз в {{0}} сек."
     },
     {
       "key": "Solar Pearl",
       "name": "Солнечная жемчужина",
-      "description": "A dull, golden pearl made of an unknown substance that harbors the light of the sun and the moon, and pulses with a warm strength.",
+      "description": "Грубая золотая жемчужина из неизвестного материала, скрывающая в себе силу солнца и луны. Пульсирует тёплой энергией.",
       "refinement": "Попадания обычной атакой увеличивают урон элементальных навыков и взрыва стихии на {{0}}% в течение 6 сек. И наоборот, попадания элементальными навыками и взрывом стихии увеличивают урон обычной атаки на {{1}}% в течение 6 сек."
     },
     {
       "key": "The Widsith",
       "name": "Песнь странника",
-      "description": "A heavy notebook filled with musical scores. Though suffering from moth damage and heavy wear-and-tear, there is still much power to be found among the hand-written words within.",
+      "description": "Эта тяжёлая книга содержит огромное количество песен. Рукописный текст внушает уважение, хоть книга и была поедена молью.",
       "refinement": "При переключении на персонажа в течение 10 сек. играет случайная музыкальная тема. Может возникнуть раз в 30 сек. Речитатив: увеличивает силу атаки на {{0}}%; Ария: увеличивает элементальный урон на {{1}}%; Интерлюдия: увеличивает мастерство стихий на {{2}}."
     },
     {
@@ -4225,43 +4225,43 @@
     {
       "key": "Eye of Perception",
       "name": "Око сознания",
-      "description": "A dim black glaze pearl that is said to have the power to read the purity of one’s heart.",
+      "description": "Тёмная жемчужина, покрытая чёрной глазурью. Легенда гласит, что в её силах разглядеть саму суть человека.",
       "refinement": "При попадании обычной или заряженной атакой появляется 50% шанс запустить Око сознания, которое наносит {{0}}% урона силы атаки. Оно способно отразиться от противника к противнику до 4 раз. Может возникнуть раз в {{1}}. сек."
     },
     {
       "key": "Frostbearer",
       "name": "Плод вечной мерзлоты",
-      "description": "A fruit that possesses a strange, frosty will. A faint sense of agony emanates from it.",
+      "description": "Загадочный плод, обладающий холодным сознанием. Он источает слабый аромат горечи.",
       "refinement": "Попадания обычной или заряженной атакой имеют {{0}}% шанс создать над противником ледяной кристалл и уронить его, нанося {{1}}% урона силы атаки по площади. Если противник имеет эффект Крио, то наносит ему {{2}}% урона силы атаки. Может возникнуть раз в 10 сек."
     },
     {
       "key": "Lost Prayer to the Sacred Winds",
       "name": "Молитва святым ветрам",
-      "description": "An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.",
+      "description": "Сборник молитв, написанный коренными жителями континента, которые поклонялись ветру. В течение тысячелетий эта книга, наделённая благословением ветров, накопила необычайную магическую силу.",
       "refinement": "Увеличивает скорость передвижения на 10%. Во время битвы даёт {{0}}% бонус элементального урона каждые 4 сек. Может складываться до 4 раз. Эффект оканчивается, если персонаж погибает или покидает зону битвы."
     },
     {
       "key": "Skyward Atlas",
       "name": "Небесный атлас",
-      "description": "A cloud atlas symbolizing Dvalin and its former master, the Anemo Archon. It details the winds and clouds of the northern regions and contains the powers of the sky and wind.",
+      "description": "Облачный атлас, символ Двалина и его повелителя, Анемо Архонта. Детально описывает облака и воздушные потоки северного региона, питающие его силой небес и ветров.",
       "refinement": "Увеличивает бонус элементального урона на {{0}}%. При попадании обычной атакой есть 50% шанс получить благословение облаков, которые в течение 15 сек. атакуют ближайших врагов и наносят им {{1}}% урона. Может возникнуть раз в 30 сек."
     },
     {
       "key": "Memory of Dust",
       "name": "Память о пыли",
-      "description": "A stone dumbbell containing distant memories. Its endless transformations reveal the power within.",
+      "description": "Камень, содержащий далёкие воспоминания. Нескончаемые изменения обнажили его внутреннюю силу.",
       "refinement": "Увеличивает силу щита на {{0}}%. Засчитывание ударов по противникам увеличивает Атаку на {{1}}% на 8 сек. Максимум 5 стаков. Может срабатывать только раз в 0,3 сек. Пока он защищен щитом, этот эффект увеличения Атаки увеличивается на 100%."
     },
     {
       "key": "Waster Greatsword",
       "name": "Двуручный меч богатыря",
-      "description": "A sturdy sheet of iron that may be powerful enough to break apart mountains if wielded with enough willpower.",
+      "description": "Человек, обладающий достаточной силой воли, сможет расколоть горы этим куском металла, отдалённо напоминающим меч.",
       "refinement": null
     },
     {
       "key": "Old Merc’s Pal",
       "name": "Лучший друг наёмника",
-      "description": "A battle-tested greatsword that has seen better days and worse.",
+      "description": "Этот меч, испытанный битвой, видал лучшие дни... и худшие тоже.",
       "refinement": null
     },
     {
@@ -4381,7 +4381,7 @@
     {
       "key": "The Unforged",
       "name": "Некованный",
-      "description": "Capable of driving away evil spirits and wicked people alike, this edgeless claymore seems to possess divine might.",
+      "description": "Двуручный меч без острия, способный изгонять нечистую силу и карать предателей. Он будто наделён божественной силой.",
       "refinement": "Увеличивает прочность щита на {{0}}%. При попадании увеличивает силу атаки на {{1}}% в течение 8 сек. Эффект может складываться до 5 раз и возникнуть раз в 0.3 сек. Кроме того, под защитой щита бонус силы атаки данного эффекта увеличивается на 100%."
     },
     {
@@ -4406,7 +4406,7 @@
       "key": "Halberd",
       "name": "Алебарда Миллелита",
       "description": "Длинное древко с прикреплённым лезвием на одном конце. Любимое оружие офицеров Миллелита.",
-      "refinement": "Normal Attacks deal an additional {{0}}% DMG. Can only occur once every 10s."
+      "refinement": "Обычные атаки наносят дополнительные {{0}}% урона. Может возникнуть не чаще 1 раза за 10 сек.."
     },
     {
       "key": "White Tassel",
@@ -4428,74 +4428,74 @@
     },
     {
       "key": "Deathmatch",
-      "name": "Deathmatch",
-      "description": "A sharp crimson polearm that was once a gladiator’s priceless treasure. Its awl has been stained by the blood of countless beasts and men.",
-      "refinement": "If are there at least 2 enemies nearby, ATK is increased by {{0}}% and DEF is increased by {{1}}%. If there are less than 2 enemies nearby, ATK is increased by {{2}}%"
+      "name": "Смертельный бой",
+      "description": "Один гладиатор очень дорожил этим копьём. Остриё его познало кровь бесчисленного множества людей и тварей.",
+      "refinement": "Если рядом 2 врага и более, сила атаки и защита увеличиваются на {{0}}%; если рядом менее 2 врагов, сила атаки увеличивается на {{1}}%."
     },
     {
       "key": "Dragon’s Bane",
-      "name": "Dragon’s Bane",
-      "description": "A polearm decorated with an entwining golden dragon. Light and sharp, this weapon may very well kill dragons with ease.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Pyro by {{0}}%"
+      "name": "Гроза драконов",
+      "description": "Копьё, декорированное извивающимся золотым драконом. Будучи лёгким и острым, это копьё может с лёгкостью убить дракона.",
+      "refinement": "Увеличивает на {{0}}% урон против врагов, находящихся под действием Гидро или Пиро элементов."
     },
     {
       "key": "Lithic Spear",
-      "name": "Lithic Spear",
-      "description": "A spear forged from the rocks of the Guyun Stone Forest. Its hardness knows no equal.",
-      "refinement": "For every character in the party who hails from Liyue, the character who equips this weapon gains a {{0}}% ATK increase and a {{1}}% CRIT Rate increase. This effect stacks up to 4 times."
+      "name": "Каменное копьё",
+      "description": "Копьё тонкой работы, выточенное из утёсов каменного леса Гуюнь. На свете нет ничего твёрже, чем его наконечник.",
+      "refinement": "С каждым членом отряда из Ли Юэ сила атаки экипированного этим оружием персонажа увеличивается на {{0}}%, а его шанс крит. попадания - на {{1}}%. Эффект может складываться до 4 раз."
     },
     {
       "key": "Prototype Starglitter",
-      "name": "Prototype Starglitter",
-      "description": "A grudge discovered in the Blackcliff Forge. The glimmers along the sharp edge are like stars in the night.",
-      "refinement": "After using an Elemental Skill, increases Normal and Charged Attack DMG by {{0}}% for 12s. Max 2 stacks."
+      "name": "Прототип: Звёздный блеск",
+      "description": "Древнее копьё, обнаруженное в кузнице Черногорья. Самоцветы на лезвии этого копья сверкают, словно звёзды в ночном небе.",
+      "refinement": "Использование элементального навыка увеличивает урон обычной и заряженной атаки на {{0}}% в течение 12 сек. Эффект может складываться до 2 раз."
     },
     {
       "key": "Favonius Lance",
-      "name": "Favonius Lance",
-      "description": "A polearm made in the style of the Knights of Favonius. Its shaft is straight, and its tip flows lightly like the wind.",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "name": "Копьё Фавония",
+      "description": "Копьё, состоящее на вооружении рыцарей Ордо Фавониус. Лёгкий ветерок ласкает направленный в небеса наконечник.",
+      "refinement": "Критические атаки имеют {{0}}% шанс создать элементальные частицы, которые восстанавливают 6 ед. энергии. Возникает раз в {{1}} сек."
     },
     {
       "key": "Royal Spear",
-      "name": "Royal Spear",
-      "description": "This polearm was once cherished by a member of the old nobility that governed Mondstadt long ago. Although it has never seen the light of day, it is still incomparably sharp.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "name": "Королевское копьё",
+      "description": "Некогда это копьё было любимым оружием одного мондштадского аристократа. Хотя оно никогда не видело белого света, это копьё и поныне остро.",
+      "refinement": "При нанесении урона противнику повышает шанс крит. попадания на {{0}}%. Эффект может складываться до 5 раз. Добавочный шанс крит. попадания исчезает с первым крит. попаданием."
     },
     {
       "key": "Dragonspine Spear",
-      "name": "Dragonspine Spear",
-      "description": "A spear created from the fang of a dragon. It is oddly warm to the touch.",
-      "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, dealing {{1}}% AoE ATK DMG. Can only occur once every 10s. Enemies affected by Cryo are dealt {{2}}% ATK DMG. Can only occur once every 10s."
+      "name": "Копьё Драконьего хребта",
+      "description": "Копьё из драконьих клыков. От него исходит необычное тепло.",
+      "refinement": "Попадания обычной или заряженной атакой имеют {{0}}% шанс создать над противником ледяной кристалл и уронит его, нанося {{1}}% урона силы атаки по площади. Если противник имеет эффект Крио, то наносит ему {{2}}% урона силы атаки. Может возникнуть раз в 10 сек."
     },
     {
       "key": "Vortex Vanquisher",
-      "name": "Vortex Vanquisher",
+      "name": "Покоритель вихря",
       "description": "This sharp polearm can seemingly pierce through anything. When swung, one can almost see the rift it tears in the air.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "refinement": "Увеличивает прочность щита на {{0}}%. При попадании увеличивает силу атаки на {{1}}% в течение 8 сек. Эффект может складываться до 5 раз и возникнуть раз в 0.3 сек. Кроме того, под защитой щита бонус силы атаки данного эффекта увеличивается на 100%."
     },
     {
       "key": "Primordial Jade Winged-Spear",
-      "name": "Primordial Jade Winged-Spear",
-      "description": "A jade polearm made by the archons, capable of slaying ancient beasts.",
-      "refinement": "On hit, increases ATK by {{0}}% for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by {{1}}%."
+      "name": "Нефритовый коршун",
+      "description": "Это копьё создали Архонты для борьбы с чудовищами доисторических морей.",
+      "refinement": "При попадании увеличивают силу атаки на {{0}}% в течение 6 сек. Эффект может складываться до 7 раз и возникает не чаще, чем в 0.3 сек. На 7 уровне увеличивает урон на {{1}}%."
     },
     {
       "key": "Skyward Spine",
-      "name": "Skyward Spine",
-      "description": "A polearm that symbolizes Dvalin’s firm resolve. The upright shaft of this weapon points towards the heavens, clad in the might of sky and wind.",
-      "refinement": "Increases CRIT Rate by {{0}}% and increases Normal ATK SPD by 12%. Additionally, Normal and Charged Attacks hits on enemies have a 50% chance to trigger a vacuum blade that deals {{1}}% of ATK as DMG in a small AoE. This effect can occur no more than once every 2s."
+      "name": "Небесная ось",
+      "description": "Длинное копьё, символ твёрдой воли дракона ветра. Тянущееся вверх древко указывает на небесный свод, питающий его силой небес и ветров.",
+      "refinement": "“Увеличивает шанс крит.попадания на {{0}}% и скорость обычной атаки на 12%. При попадании обычной или заряженной атакой есть 50% шанс активировать неосязаемое лезвие, которое наносит {{1}}% урона в небольшом радиусе. Может возникнуть раз в 2 сек."
     },
     {
       "key": "Primordial Jade Cutter",
-      "name": "Primordial Jade Cutter",
-      "description": "A ceremonial sword masterfully carved from pure jade. There almost seems to be an audible sigh in the wind as it is swung.",
-      "refinement": "HP increased by {{0}}%. Additionally, provides an ATK Bonus based on {{1}}% of the wielder's Max HP."
+      "name": "Драгоценный омут",
+      "description": "Ритуальный меч, искусно вырезанный из чистейшего нефрита и покрытый изящными гравировками. Иногда кажется, что при взмахе им можно услышать тихий вздох ветра.",
+      "refinement": "Увеличивает HP на {{0}}%. Также даёт бонус атаки, равный {{1}}% от макс. HP экипированного этим оружием персонажа."
     },
     {
       "key": "Staff of Homa",
       "name": "Посох Хомы",
-      "description": "A \"firewood staff\" that was once used in ancient and long-lost rituals.",
+      "description": "Алый посох, использовавшийся в давно утраченном древнем ритуале.",
       "refinement": "Увеличивает HP на {{0}}%. Также даёт бонус атаки, равный {{1}}% от макс. HP экипированного этим оружием персонажа. Когда HP экипированного этим оружием персонажа опускается ниже 50%, его сила атаки дополнительно увеличивается на {{2}}% от его макс. HP."
     }
   ],
@@ -4872,7 +4872,7 @@
     },
     {
       "key": "Prayers for Wisdom",
-      "name": "Prayers for Wisdom",
+      "name": "Шаман молнии",
       "bonus": [
         {
           "key": "b1",
@@ -4928,7 +4928,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Увеличивает урон Суперпроводника на 100%. Увеличивает урон Заморозки на 15%. Использование элементельного навыка увеличивает Крио урон на 30% на 10 сек."
+          "bonus": "Увеличивает урон Суперпроводника на 100%. Увеличивает урон Заморозки на 15%. Использование элементального навыка увеличивает Крио урон на 30% на 10 сек."
         }
       ]
     },
@@ -4958,15 +4958,15 @@
     },
     {
       "key": "ProsperityA",
-      "name": "Указания о “Процветании”"
+      "name": "Учения о “Процветании”"
     },
     {
       "key": "ProsperityB",
-      "name": "Guide to Prosperity"
+      "name": "Указания о “Процветании”"
     },
     {
       "key": "ProsperityC",
-      "name": "Philosophies of Prosperity"
+      "name": "Философия о “Процветании”"
     },
     {
       "key": "DilligenceA",
@@ -5018,47 +5018,47 @@
     },
     {
       "key": "Tail of Boreas",
-      "name": "Tail of Boreas",
+      "name": "Хвост Борея",
       "bossName": "Andrius"
     },
     {
       "key": "Ring of Boreas",
-      "name": "Ring of Boreas",
+      "name": "Кольцо Борея",
       "bossName": "Andrius"
     },
     {
       "key": "Spirit Locket of Boreas",
-      "name": "Spirit Locket of Boreas",
+      "name": "Шкатулка с Духом Борея",
       "bossName": "Andrius"
     },
     {
       "key": "Dvalin's Plume",
-      "name": "Dvalin's Plume",
+      "name": "Перо с хвоста Двалина",
       "bossName": "Dvalin"
     },
     {
       "key": "Dvalin's Claw",
-      "name": "Dvalin's Claw",
+      "name": "Коготь Двалина",
       "bossName": "Dvalin"
     },
     {
       "key": "Dvalin's Sigh",
-      "name": "Dvalin's Sigh",
+      "name": "Вздох Двалина",
       "bossName": "Dvalin"
     },
     {
       "key": "Tusk of Monoceros Caeli",
-      "name": "Tusk of Monoceros Caeli",
+      "name": "Рог небесного кита",
       "bossName": "Tartaglia"
     },
     {
       "key": "Shard of a Foul Legacy",
-      "name": "Shard of a Foul Legacy",
+      "name": "Осколок дьявольского меча",
       "bossName": "Tartaglia"
     },
     {
       "key": "Shadow of the Warrior",
-      "name": "Shadow of the Warrior",
+      "name": "Тень воина",
       "bossName": "Tartaglia"
     },
     {
@@ -5067,31 +5067,31 @@
     },
     {
       "key": "DecarabianB",
-      "name": "Debris of Decarabian’s City"
+      "name": "Обломок стены Декарабиана"
     },
     {
       "key": "DecarabianC",
-      "name": "Fragment of Decarabian’s Epic"
+      "name": "Фрагмент эпоса Декарабиана"
     },
     {
       "key": "DecarabianD",
-      "name": "Scattered Piece of Decarabian’s Dream"
+      "name": "Осколок мечты Декарабиана"
     },
     {
       "key": "GuyunA",
-      "name": "Блестящий камень Гуюнь"
+      "name": "Светящийся песок Гуюнь"
     },
     {
       "key": "GuyunB",
-      "name": "Lustrous Stone from Guyun"
+      "name": "Блестящий камень Гуюнь"
     },
     {
       "key": "GuyunC",
-      "name": "Relic from Guyun"
+      "name": "Реликвия Гуюнь"
     },
     {
       "key": "GuyunD",
-      "name": "Divine Body from Guyun"
+      "name": "Останки богов Гуюнь"
     },
     {
       "key": "ElixirA",
@@ -5143,107 +5143,107 @@
     },
     {
       "key": "GladiatorA",
-      "name": "Fetters of the Dandelion Gladiator"
+      "name": "Кандалы львиного клыка"
     },
     {
       "key": "GladiatorB",
-      "name": "Chains of the Dandelion Gladiator"
+      "name": "Цепи львиного клыка"
     },
     {
       "key": "GladiatorC",
-      "name": "Shackles of the Dandelion Gladiator"
+      "name": "Оковы львиного клыка"
     },
     {
       "key": "GladiatorD",
-      "name": "Dream of the Dandelion Gladiator"
+      "name": "Мечты львиного клыка"
     },
     {
       "key": "Crown of Insight",
-      "name": "Crown of Insight"
+      "name": "Корона прозрения"
     },
     {
       "key": "SacrificialKnifeA",
-      "name": "Hunter's Sacrificial Knife"
+      "name": "Церемониальный нож охотника"
     },
     {
       "key": "SacrificialKnifeB",
-      "name": "Agent's Sacrificial Knife"
+      "name": "Церемониальный нож агента"
     },
     {
       "key": "SacrificialKnifeC",
-      "name": "Inspector's Sacrificial Knife"
+      "name": "Церемониальный нож инспектора"
     },
     {
       "key": "HornA",
-      "name": "Heavy Horn"
+      "name": "Тяжелый рог"
     },
     {
       "key": "HornB",
-      "name": "Black Bronze Horn"
+      "name": "Черный бронзовый рог"
     },
     {
       "key": "HornC",
-      "name": "Black Crystal Horn"
+      "name": "Черный кристаллический рог"
     },
     {
       "key": "ChaosA",
-      "name": "Chaos Device"
+      "name": "Устройство хаоса"
     },
     {
       "key": "ChaosB",
-      "name": "Chaos Circuit"
+      "name": "Цепь хаоса"
     },
     {
       "key": "ChaosC",
-      "name": "Chaos Core"
+      "name": "Ядро хаоса"
     },
     {
       "key": "LeyLineA",
-      "name": "Dead Ley Line Branch"
+      "name": "Ветви артерий земли"
     },
     {
       "key": "LeyLineB",
-      "name": "Dead Ley Line Leaves"
+      "name": "Листья артерий земли"
     },
     {
       "key": "LeyLineC",
-      "name": "Ley Line Sprout"
+      "name": "Ростки артерий земли"
     },
     {
       "key": "MistGrassA",
-      "name": "Mist Grass Pollen"
+      "name": "Пыльца туманной травы"
     },
     {
       "key": "MistGrassB",
-      "name": "Mist Grass"
+      "name": "Мешочек с туманной травой"
     },
     {
       "key": "MistGrassC",
-      "name": "Mist Grass Wick"
+      "name": "Пучок туманной травы"
     },
     {
       "key": "BoneShardA",
-      "name": "Fragile Bone Shard"
+      "name": "Хрупкие останки"
     },
     {
       "key": "BoneShardB",
-      "name": "Sturdy Bone Shard"
+      "name": "Креикие останки"
     },
     {
       "key": "BoneShardC",
-      "name": "Fossilized Bone Shard"
+      "name": "Окаменевшие останки"
     },
     {
       "key": "MaskA",
-      "name": "Damaged Mask"
+      "name": "Разбитая маска"
     },
     {
       "key": "MaskB",
-      "name": "Stained Mask"
+      "name": "Грязная маска"
     },
     {
       "key": "MaskC",
-      "name": "Ominous Mask"
+      "name": "Зловещая маска"
     },
     {
       "key": "StatuetteA",
@@ -5259,295 +5259,295 @@
     },
     {
       "key": "ScrollA",
-      "name": "Divining Scroll"
+      "name": "Свиток божественной магии"
     },
     {
       "key": "ScrollB",
-      "name": "Sealed Scroll"
+      "name": "Свиток печати"
     },
     {
       "key": "ScrollC",
-      "name": "Forbidden Curse Scroll"
+      "name": "Свиток запретного проклятия"
     },
     {
       "key": "NectarA",
-      "name": "Whopperflower Nectar"
+      "name": "Нектар попрыгуньи"
     },
     {
       "key": "NectarB",
-      "name": "Shimmering Nectar"
+      "name": "Мерцающий нектар"
     },
     {
       "key": "NectarC",
-      "name": "Energy Nectar"
+      "name": "Элементальный нектар"
     },
     {
       "key": "ArrowHeadA",
-      "name": "Firm Arrowhead"
+      "name": "Прочный наконечник стрелы"
     },
     {
       "key": "ArrowHeadB",
-      "name": "Sharp Arrowhead"
+      "name": "Острый наконечник стрелы"
     },
     {
       "key": "ArrowHeadC",
-      "name": "Weathered Arrowhead"
+      "name": "Старый наконечник стрелы"
     },
     {
       "key": "CircularInsigniaA",
-      "name": "Treasure Hoarder Insignia"
+      "name": "Печать “Похитителей сокровищ”"
     },
     {
       "key": "CircularInsigniaB",
-      "name": "Silver Raven Insignia"
+      "name": "Печать серебряного ворона"
     },
     {
       "key": "CircularInsigniaC",
-      "name": "Golden Raven Insignia"
+      "name": "Печать золотого ворона"
     },
     {
       "key": "InsigniaA",
-      "name": "Recruit's Insignia"
+      "name": "Шеврон рядового"
     },
     {
       "key": "InsigniaB",
-      "name": "Sergeant's Insignia"
+      "name": "Шеврон сержанта"
     },
     {
       "key": "InsigniaC",
-      "name": "Lieutenant's Insignia"
+      "name": "Шеврон офицера"
     },
     {
       "key": "SlimeA",
-      "name": "Slime Condensate"
+      "name": "Слизь слайма"
     },
     {
       "key": "SlimeB",
-      "name": "Slime Secretions"
+      "name": "Выделения слайма"
     },
     {
       "key": "SlimeC",
-      "name": "Slime Concentrate"
+      "name": "Концентрат слайма"
     },
     {
       "key": "Mora",
-      "name": "Mora"
+      "name": "Мора"
     },
     {
       "key": "BasaltPillar",
-      "name": "Basalt Pillar"
+      "name": "Базальтовая колонна"
     },
     {
       "key": "CleansingHeart",
-      "name": "Cleansing Heart"
+      "name": "Очищающее сердце"
     },
     {
       "key": "EverflameSeed",
-      "name": "Everflame Seed"
+      "name": "Пылающее семя"
     },
     {
       "key": "HoarfrostCore",
-      "name": "Hoarfrost Core"
+      "name": "Инеевое ядро"
     },
     {
       "key": "HurricaneSeed",
-      "name": "Hurricane Seed"
+      "name": "Семя урагана"
     },
     {
       "key": "LightningPrism",
-      "name": "Lightning Prism"
+      "name": "Призма молнии"
     },
     {
       "key": "AgateA",
-      "name": "Agnidus Agate Sliver"
+      "name": "Осколок агата Агнидус"
     },
     {
       "key": "AgateB",
-      "name": "Agnidus Agate Fragment"
+      "name": "Фрагмент агата Агнидус"
     },
     {
       "key": "AgateC",
-      "name": "Agnidus Agate Chunk"
+      "name": "Кусок агата Агнидус"
     },
     {
       "key": "AgateD",
-      "name": "Agnidus Agate Gemstone"
+      "name": "Драгоценный агат Агнидус"
     },
     {
       "key": "DiamondA",
-      "name": "Brilliant Diamond Sliver"
+      "name": "Осколок бриллианта"
     },
     {
       "key": "DiamondB",
-      "name": "Brilliant Diamond Fragment"
+      "name": "Фрагмент бриллианта"
     },
     {
       "key": "DiamondC",
-      "name": "Brilliant Diamond Chunk"
+      "name": "Кусок бриллианта"
     },
     {
       "key": "DiamondD",
-      "name": "Brilliant Diamond Gemstone"
+      "name": "Драгоценный бриллиант"
     },
     {
       "key": "EmeraldA",
-      "name": "Nagadus Emerald Sliver"
+      "name": "Осколок бриллианта"
     },
     {
       "key": "EmeraldB",
-      "name": "Nagadus Emerald Fragment"
+      "name": "Фрагмент бриллианта"
     },
     {
       "key": "EmeraldC",
-      "name": "Nagadus Emerald Chunk"
+      "name": "Кусок бриллианта"
     },
     {
       "key": "EmeraldD",
-      "name": "Nagadus Emerald Gemstone"
+      "name": "Драгоценный бриллиант"
     },
     {
       "key": "TopazA",
-      "name": "Prithiva Topaz Sliver"
+      "name": "Осколок топаза Притхива"
     },
     {
       "key": "TopazB",
-      "name": "Prithiva Topaz Fragment"
+      "name": "Фрагмент топаза Притхива"
     },
     {
       "key": "TopazC",
-      "name": "Prithiva Topaz Chunk"
+      "name": "Кусок топаза Притхива"
     },
     {
       "key": "TopazD",
-      "name": "Prithiva Topaz Gemstone"
+      "name": "Драгоценный топаз Притхива"
     },
     {
       "key": "JadeA",
-      "name": "Shivada Jade Sliver"
+      "name": "Осколок нефрита Шивада"
     },
     {
       "key": "JadeB",
-      "name": "Shivada Jade Fragment"
+      "name": "Фрагмент нефрита Шивада"
     },
     {
       "key": "JadeC",
-      "name": "Shivada Jade Chunk"
+      "name": "Кусок нефрита Шивада"
     },
     {
       "key": "JadeD",
-      "name": "Shivada Jade Gemstone"
+      "name": "Драгоценный нефрит Шивада"
     },
     {
       "key": "AmethystA",
-      "name": "Vajrada Amethyst Sliver"
+      "name": "Осколок аметиста Ваджрада"
     },
     {
       "key": "AmethystB",
-      "name": "Vajrada Amethyst Fragment"
+      "name": "Фрагмент аметиста Ваджрада"
     },
     {
       "key": "AmethystC",
-      "name": "Vajrada Amethyst Chunk"
+      "name": "Кусок аметиста Ваджрада"
     },
     {
       "key": "AmethystD",
-      "name": "Vajrada Amethyst Gemstone"
+      "name": "Драгоценный аметист Ваджрада"
     },
     {
       "key": "LazuriteA",
-      "name": "Varunada Lazurite Sliver"
+      "name": "Осколок лазурита Варунада"
     },
     {
       "key": "LazuriteB",
-      "name": "Varunada Lazurite Fragment"
+      "name": "Фрагмент лазурита Варунада"
     },
     {
       "key": "LazuriteC",
-      "name": "Varunada Lazurite Chunk"
+      "name": "Кусок лазурита Варунада"
     },
     {
       "key": "LazuriteD",
-      "name": "Varunada Lazurite Gemstone"
+      "name": "Драгоценный лазурит Варунада"
     },
     {
       "key": "TurquoiseA",
-      "name": "Vayuda Turquoise Sliver"
+      "name": "Осколок бирюзы Вайюда"
     },
     {
       "key": "TurquoiseB",
-      "name": "Vayuda Turquoise Fragment"
+      "name": "Фрагмент бирюзы Вайюда"
     },
     {
       "key": "TurquoiseC",
-      "name": "Vayuda Turquoise Chunk"
+      "name": "Кусок бирюзы Вайюда"
     },
     {
       "key": "TurquoiseD",
-      "name": "Vayuda Turquoise Gemstone"
+      "name": "Драгоценная бирюза Вайюда"
     },
     {
       "key": "CallaLily",
-      "name": "Calla Lily"
+      "name": "Лилия калла"
     },
     {
       "key": "Cecilia",
-      "name": "Cecilia"
+      "name": "Сесилия"
     },
     {
       "key": "CorLapis",
-      "name": "Cor Lapis"
+      "name": "Кор ляпис"
     },
     {
       "key": "DandelionSeed",
-      "name": "Dandelion Seed"
+      "name": "Семена одуванчика"
     },
     {
       "key": "GlazeLily",
-      "name": "Glaze Lily"
+      "name": "Лилия глазурька"
     },
     {
       "key": "JueyunChili",
-      "name": "Jueyun Chili"
+      "name": "Заоблачный перчик"
     },
     {
       "key": "NoctilousJade",
-      "name": "Noctilucous Jade"
+      "name": "Полуночный нефрит"
     },
     {
       "key": "PhilanemoMushroom",
-      "name": "Philanemo Mushroom"
+      "name": "Гриб филанемо"
     },
     {
       "key": "Qingxin",
-      "name": "Qingxin"
+      "name": "Цветок цинсинь"
     },
     {
       "key": "SilkFlower",
-      "name": "Silk Flower"
+      "name": "Шелковица"
     },
     {
       "key": "SmallLampGrass",
-      "name": "Small Lamp Grass"
+      "name": "Трава-светяшка"
     },
     {
       "key": "Starconch",
-      "name": "Starconch"
+      "name": "Звёздная ракушка"
     },
     {
       "key": "Valberry",
-      "name": "Valberry"
+      "name": "Валяшка"
     },
     {
       "key": "Violetgrass",
-      "name": "Violetgrass"
+      "name": "Стеклянные колокольчики"
     },
     {
       "key": "WindwheelAster",
-      "name": "Windwheel Aster"
+      "name": "Ветряная астра"
     },
     {
       "key": "Wolfhook",
-      "name": "Wolfhook"
+      "name": "Волчий крюк"
     }
   ],
   "debuffs": [
