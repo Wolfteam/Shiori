@@ -4,6 +4,7 @@ import 'package:genshindb/presentation/shared/styles.dart';
 
 import 'widgets/about_settings_card.dart';
 import 'widgets/accent_color_settings_card.dart';
+import 'widgets/credits_settings_card.dart';
 import 'widgets/language_settings_card.dart';
 import 'widgets/other_settings.dart';
 import 'widgets/theme_settings_card.dart';
@@ -24,6 +25,7 @@ class SettingsPage extends StatelessWidget {
             LanguageSettingsCard(),
             OtherSettings(),
             AboutSettingsCard(),
+            CreditsSettingsCard(),
           ],
         ),
       ),

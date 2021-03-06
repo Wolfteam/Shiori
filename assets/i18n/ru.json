@@ -4946,120 +4946,120 @@
   "materials": [
     {
       "key": "FreedomA",
-      "name": "Учения о “Свободе”"
+      "name": "Учения о \"Свободе\""
     },
     {
       "key": "FreedomB",
-      "name": "Указания о “Свободе”"
+      "name": "Указания о \"Свободе\""
     },
     {
       "key": "FreedomC",
-      "name": "Философия о “Свободе”"
+      "name": "Философия о \"Свободе\""
     },
     {
       "key": "ProsperityA",
-      "name": "Учения о “Процветании”"
+      "name": "Учения о \"Процветании\""
     },
     {
       "key": "ProsperityB",
-      "name": "Указания о “Процветании”"
+      "name": "Указания о \"Процветании\""
     },
     {
       "key": "ProsperityC",
-      "name": "Философия о “Процветании”"
+      "name": "Философия о \"Процветании\""
     },
     {
       "key": "DilligenceA",
-      "name": "Учение об “Усердии”"
+      "name": "Учение об \"Усердии\""
     },
     {
       "key": "DilligenceB",
-      "name": "Указание об “Усердии”"
+      "name": "Указание об \"Усердии\""
     },
     {
       "key": "DilligenceC",
-      "name": "Философия об “Усердии”"
+      "name": "Философия об \"Усердии\""
     },
     {
       "key": "ResistanceA",
-      "name": "Учение о “Борьбе”"
+      "name": "Учение о \"Борьбе\""
     },
     {
       "key": "ResistanceB",
-      "name": "Учказание о “Борьбе”"
+      "name": "Учказание о \"Борьбе\""
     },
     {
       "key": "ResistanceC",
-      "name": "Философия о “Борьбе”"
+      "name": "Философия о \"Борьбе\""
     },
     {
       "key": "BalladA",
-      "name": "Учения о “Поэзии”"
+      "name": "Учения о \"Поэзии\""
     },
     {
       "key": "BalladB",
-      "name": "Указания о “Поэзии”"
+      "name": "Указания о \"Поэзии\""
     },
     {
       "key": "BalladC",
-      "name": "Философия о “Поэзии”"
+      "name": "Философия о \"Поэзии\""
     },
     {
       "key": "GoldA",
-      "name": "Учение о “Золоте”"
+      "name": "Учение о \"Золоте\""
     },
     {
       "key": "GoldB",
-      "name": "Указание о “Золоте”"
+      "name": "Указание о \"Золоте\""
     },
     {
       "key": "GoldC",
-      "name": "Философия о “Золоте”"
+      "name": "Философия о \"Золоте\""
     },
     {
       "key": "Tail of Boreas",
       "name": "Хвост Борея",
-      "bossName": "Andrius"
+      "bossName": "Андриус"
     },
     {
       "key": "Ring of Boreas",
       "name": "Кольцо Борея",
-      "bossName": "Andrius"
+      "bossName": "Андриус"
     },
     {
       "key": "Spirit Locket of Boreas",
       "name": "Шкатулка с Духом Борея",
-      "bossName": "Andrius"
+      "bossName": "Андриус"
     },
     {
       "key": "Dvalin's Plume",
       "name": "Перо с хвоста Двалина",
-      "bossName": "Dvalin"
+      "bossName": "Давалин"
     },
     {
       "key": "Dvalin's Claw",
       "name": "Коготь Двалина",
-      "bossName": "Dvalin"
+      "bossName": "Давалин"
     },
     {
       "key": "Dvalin's Sigh",
       "name": "Вздох Двалина",
-      "bossName": "Dvalin"
+      "bossName": "Давалин"
     },
     {
       "key": "Tusk of Monoceros Caeli",
       "name": "Рог небесного кита",
-      "bossName": "Tartaglia"
+      "bossName": "Тарталья"
     },
     {
       "key": "Shard of a Foul Legacy",
       "name": "Осколок дьявольского меча",
-      "bossName": "Tartaglia"
+      "bossName": "Тарталья"
     },
     {
       "key": "Shadow of the Warrior",
       "name": "Тень воина",
-      "bossName": "Tartaglia"
+      "bossName": "Тарталья"
     },
     {
       "key": "DecarabianA",
@@ -5391,19 +5391,19 @@
     },
     {
       "key": "EmeraldA",
-      "name": "Осколок бриллианта"
+      "name": "Nagadus Emerald Sliver"
     },
     {
       "key": "EmeraldB",
-      "name": "Фрагмент бриллианта"
+      "name": "Nagadus Emerald Fragment"
     },
     {
       "key": "EmeraldC",
-      "name": "Кусок бриллианта"
+      "name": "Nagadus Emerald Chunk"
     },
     {
       "key": "EmeraldD",
-      "name": "Драгоценный бриллиант"
+      "name": "Nagadus Emerald Gemstone"
     },
     {
       "key": "TopazA",
@@ -5654,7 +5654,7 @@
       "key": "Protective Canopy",
       "name": "Нити защиты",
       "effect": "Элементальное сопротивление повышается на 15%.",
-      "description": "Любые 4 уникальных элемента"
+      "description": "4 неодинаковых элемента"
     }
   ]
 }

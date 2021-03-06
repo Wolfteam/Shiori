@@ -2284,6 +2284,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Credits`
+  String get credits {
+    return Intl.message(
+      'Credits',
+      name: 'credits',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Translators`
+  String get translators {
+    return Intl.message(
+      'Translators',
+      name: 'translators',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Translating the app to other languages won't have been possible without the following contributors`
+  String get creditsTranslatorsMsg {
+    return Intl.message(
+      'Translating the app to other languages won\'t have been possible without the following contributors',
+      name: 'creditsTranslatorsMsg',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

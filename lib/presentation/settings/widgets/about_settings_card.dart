@@ -1,11 +1,10 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:genshindb/presentation/shared/text_link.dart';
 
 import 'settings_card.dart';
 
@@ -69,7 +68,7 @@ class AboutSettingsCard extends StatelessWidget {
                   },
                 ),
                 Text(s.aboutSummary, textAlign: TextAlign.center),
-                _buildLink(s.otherApps, 'https://wolfteam.github.io'),
+                TextLink(text: s.otherApps, url: 'https://wolfteam.github.io'),
                 Container(
                   margin: const EdgeInsets.only(top: 10),
                   child: Text(
@@ -92,47 +91,17 @@ class AboutSettingsCard extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 5),
                   child: Text(s.supportMsg),
                 ),
-                _buildLink('GitHub', 'https://github.com/Wolfteam/GenshinDb/issues'),
+                const TextLink(text: 'GitHub', url: 'https://github.com/Wolfteam/GenshinDb/issues'),
                 Container(
                   margin: const EdgeInsets.only(top: 5),
                   child: Text('${s.youCanAlsoSendMeAnEmail}:', textAlign: TextAlign.center),
                 ),
-                _buildLink('miraisoft20@gmail.com', 'mailto:miraisoft20@gmail.com?subject=Subject&body=Hiho'),
+                const TextLink(text: 'miraisoft20@gmail.com', url: 'mailto:miraisoft20@gmail.com?subject=Subject&body=Hiho'),
               ],
             ),
           ),
         ],
       ),
     );
-  }
-
-  Widget _buildLink(String title, String url) {
-    return Container(
-      margin: const EdgeInsets.only(top: 5),
-      child: RichText(
-        textAlign: TextAlign.center,
-        text: TextSpan(
-          children: [
-            TextSpan(
-              text: title,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.blue,
-                decoration: TextDecoration.underline,
-                decorationColor: Colors.blue,
-                fontSize: 18,
-              ),
-              recognizer: TapGestureRecognizer()..onTap = () => _launchUrl(url),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Future<void> _launchUrl(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    }
   }
 }
