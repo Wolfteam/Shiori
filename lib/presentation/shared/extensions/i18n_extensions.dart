@@ -21,6 +21,10 @@ extension I18nExtensions on S {
         return '$spanish ($partial)';
       case AppLanguageType.french:
         return '$french ($partial)';
+      case AppLanguageType.russian:
+        return '$russian ($partial)';
+      case AppLanguageType.simplifiedChinese:
+        return '$simplifiedChinese ($partial)';
       default:
         throw Exception('The provided app lang = $lang is not valid');
     }
@@ -298,19 +302,19 @@ extension I18nExtensions on S {
       case RegionType.anotherWorld:
         return anotherWorld;
       case RegionType.inazuma:
-        return 'Inazuma';
+        return inazuma;
       case RegionType.mondstadt:
-        return 'Mondstadt';
+        return mondstadt;
       case RegionType.liyue:
-        return 'Liyue';
+        return liyue;
       case RegionType.snezhnaya:
-        return 'Snezhnaya';
+        return snezhnaya;
       case RegionType.fontaine:
-        return 'Fontaine';
+        return fontaine;
       case RegionType.natlan:
-        return 'Natlan';
+        return natlan;
       case RegionType.sumeru:
-        return 'Sumeru';
+        return sumeru;
       default:
         throw Exception('Invalid region type = $type');
     }

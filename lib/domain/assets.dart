@@ -38,6 +38,7 @@ class Assets {
   static String currencyBasePath = '$itemsBasePath/currency';
   static String othersBasePath = '$itemsBasePath/others';
   static String ingredientsBasePath = '$itemsBasePath/ingredients';
+  static String otherImgsBasePath = 'assets/others';
 
   static String getArtifactPath(String name) => '$artifactsBasePath/$name';
   static String getCharacterPath(String name) => '$charactersBasePath/$name';
@@ -48,6 +49,8 @@ class Assets {
     }
     return '$skillsBasePath/$name';
   }
+
+  static String getOtherImgsPath(String name) => '$otherImgsBasePath/$name';
 
   static String getBowPath(String name) => '$bowsBasePath/$name';
   static String getCatalystPath(String name) => '$catalystBasePath/$name';
@@ -101,6 +104,10 @@ class Assets {
         return '$translationsBasePath/es.json';
       case AppLanguageType.french:
         return '$translationsBasePath/fr.json';
+      case AppLanguageType.russian:
+        return '$translationsBasePath/ru.json';
+      case AppLanguageType.simplifiedChinese:
+        return '$translationsBasePath/zh_CN.json';
       default:
         throw Exception('Invalid language = $languageType');
     }

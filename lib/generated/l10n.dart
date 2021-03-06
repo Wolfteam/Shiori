@@ -95,6 +95,26 @@ class S {
     );
   }
 
+  /// `Russian`
+  String get russian {
+    return Intl.message(
+      'Russian',
+      name: 'russian',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chinese (Simplified)`
+  String get simplifiedChinese {
+    return Intl.message(
+      'Chinese (Simplified)',
+      name: 'simplifiedChinese',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Bow`
   String get bow {
     return Intl.message(
@@ -2195,6 +2215,106 @@ class S {
     );
   }
 
+  /// `Inazuma`
+  String get inazuma {
+    return Intl.message(
+      'Inazuma',
+      name: 'inazuma',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mondstadt`
+  String get mondstadt {
+    return Intl.message(
+      'Mondstadt',
+      name: 'mondstadt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Liyue`
+  String get liyue {
+    return Intl.message(
+      'Liyue',
+      name: 'liyue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Snezhnaya`
+  String get snezhnaya {
+    return Intl.message(
+      'Snezhnaya',
+      name: 'snezhnaya',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fontaine`
+  String get fontaine {
+    return Intl.message(
+      'Fontaine',
+      name: 'fontaine',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Natlan`
+  String get natlan {
+    return Intl.message(
+      'Natlan',
+      name: 'natlan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sumeru`
+  String get sumeru {
+    return Intl.message(
+      'Sumeru',
+      name: 'sumeru',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Credits`
+  String get credits {
+    return Intl.message(
+      'Credits',
+      name: 'credits',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Translators`
+  String get translators {
+    return Intl.message(
+      'Translators',
+      name: 'translators',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Translating the app to other languages won't have been possible without the following contributors`
+  String get creditsTranslatorsMsg {
+    return Intl.message(
+      'Translating the app to other languages won\'t have been possible without the following contributors',
+      name: 'creditsTranslatorsMsg',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Current: {value}`
   String currentX(Object value) {
     return Intl.message(
@@ -2254,6 +2374,8 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'es', countryCode: 'ES'),
       Locale.fromSubtags(languageCode: 'fr'),
+      Locale.fromSubtags(languageCode: 'ru'),
+      Locale.fromSubtags(languageCode: 'zh', countryCode: 'CN'),
     ];
   }
 
