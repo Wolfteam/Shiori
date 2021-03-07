@@ -231,5 +231,9 @@
   "desiredX": "Desired: {value}",
   "currentAscension": "Current Ascension",
   "desiredAscension": "Desired Ascension",
-  "chooseALevel": "Choose a level"
+  "chooseALevel": "Choose a level",
+  "experience": "Experience",
+  "approximate": "Approximate",
+  "active": "Active",
+  "inactive": "Inactive"
 }

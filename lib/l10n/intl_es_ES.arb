@@ -176,6 +176,7 @@
   "selectWeapon": "Selecciona una arma",
   "character": "Personaje",
   "summary": "Resúmen",
+  "common": "Común",
   "localSpecialities": "Especialidades Locales",
   "boss": "Jefe",
   "day": "Día",
@@ -230,5 +231,9 @@
   "desiredX": "Deseado: {value}",
   "currentAscension": "Ascensión Actual",
   "desiredAscension": "Ascención Deseada",
-  "chooseALevel": "Escoge un nivel"
+  "chooseALevel": "Escoge un nivel",
+  "experience": "Experiencia",
+  "approximate": "Aproximado",
+  "active": "Activo",
+  "inactive": "Inactivo"
 }
