@@ -23,22 +23,25 @@ class GameCodesPage extends StatelessWidget {
       appBar: AppBar(title: Text(s.gameCodes)),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              BlocBuilder<GameCodesBloc, GameCodesState>(
-                builder: (ctx, state) => state.map(
-                  loading: (_) => const Loading(useScaffold: false),
-                  loaded: (state) => _buildTableCard(s.workingCodes, state.workingGameCodes, context),
+          child: Padding(
+            padding: Styles.edgeInsetAll10,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                BlocBuilder<GameCodesBloc, GameCodesState>(
+                  builder: (ctx, state) => state.map(
+                    loading: (_) => const Loading(useScaffold: false),
+                    loaded: (state) => _buildTableCard(s.workingCodes, state.workingGameCodes, context),
+                  ),
                 ),
-              ),
-              BlocBuilder<GameCodesBloc, GameCodesState>(
-                builder: (ctx, state) => state.map(
-                  loading: (_) => const Loading(useScaffold: false),
-                  loaded: (state) => _buildTableCard(s.expiredCodes, state.expiredGameCodes, context),
+                BlocBuilder<GameCodesBloc, GameCodesState>(
+                  builder: (ctx, state) => state.map(
+                    loading: (_) => const Loading(useScaffold: false),
+                    loaded: (state) => _buildTableCard(s.expiredCodes, state.expiredGameCodes, context),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

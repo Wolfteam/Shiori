@@ -45,4 +45,10 @@ abstract class TierListEvent with _$TierListEvent {
   }) = _DeleteCharacterFromRow;
 
   const factory TierListEvent.readyToSave({@required bool ready}) = _ReadyToSave;
+
+  const factory TierListEvent.screenshotTaken({
+    @required bool succeed,
+    dynamic ex,
+    StackTrace trace,
+  }) = _ScreenshotTaken;
 }

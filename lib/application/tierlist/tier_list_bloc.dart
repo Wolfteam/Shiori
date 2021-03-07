@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/genshin_service.dart';
+import 'package:genshindb/domain/services/logging_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
 import 'package:meta/meta.dart';
 
@@ -14,6 +15,7 @@ part 'tier_list_state.dart';
 class TierListBloc extends Bloc<TierListEvent, TierListState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
+  final LoggingService _loggingService;
   final List<int> defaultColors = [
     0xfff44336,
     0xffff9800,
@@ -24,7 +26,7 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
 
   _LoadedState get currentState => state as _LoadedState;
 
-  TierListBloc(this._genshinService, this._telemetryService) : super(const TierListState.loading());
+  TierListBloc(this._genshinService, this._telemetryService, this._loggingService) : super(const TierListState.loading());
 
   @override
   Stream<TierListState> mapEventToState(TierListEvent event) async* {
@@ -44,6 +46,15 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
       addCharacterToRow: (e) async => _addCharacterToRow(e.index, e.charImg),
       deleteCharacterFromRow: (e) async => _deleteCharacterFromRow(e.index, e.charImg),
       readyToSave: (e) async => currentState.copyWith.call(readyToSave: e.ready),
+      screenshotTaken: (e) async {
+        if (e.succeed) {
+          await _telemetryService.trackTierListBuilderScreenShootTaken();
+        } else {
+          _loggingService.error(runtimeType, 'Something went wrong while taking the tier list builder screenshot', e.ex, e.trace);
+        }
+
+        return currentState;
+      },
     );
 
     yield s;

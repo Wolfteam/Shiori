@@ -110,6 +110,7 @@ class OtherSettings extends StatelessWidget {
   }
 
   Future<void> _showGameCodesDialog(BuildContext context) async {
+    context.read<GameCodesBloc>().add(const GameCodesEvent.opened());
     await Navigator.push(context, MaterialPageRoute(fullscreenDialog: true, builder: (ctx) => const GameCodesPage()));
   }
 }
