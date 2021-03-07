@@ -9,6 +9,8 @@ abstract class CalculatorAscMaterialsItemState with _$CalculatorAscMaterialsItem
     @required String imageFullPath,
     @required int currentLevel,
     @required int desiredLevel,
+    @required int currentAscensionLevel,
+    @required int desiredAscensionLevel,
     @Default([]) List<CharacterSkill> skills,
   }) = _LoadedState;
 }

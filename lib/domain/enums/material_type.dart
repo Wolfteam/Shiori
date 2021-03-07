@@ -9,4 +9,6 @@ enum MaterialType {
   currency,
   others,
   ingredient,
+  expWeapon,
+  expCharacter,
 }

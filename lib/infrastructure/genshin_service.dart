@@ -444,6 +444,11 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
+  List<MaterialFileModel> getMaterials(MaterialType type) {
+    return _materialsFile.materials.where((m) => m.type == type).toList();
+  }
+
+  @override
   int getServerDay(AppServerResetTimeType type) {
     final now = DateTime.now();
     final nowUtc = now.toUtc();

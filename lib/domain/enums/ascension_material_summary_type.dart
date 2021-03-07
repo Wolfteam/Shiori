@@ -5,4 +5,5 @@ enum AscensionMaterialSummaryType {
   day,
   currency,
   others,
+  exp,
 }

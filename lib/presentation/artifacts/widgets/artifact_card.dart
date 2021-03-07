@@ -52,8 +52,10 @@ class ArtifactCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return InkWell(
+      borderRadius: Styles.mainCardBorderRadius,
       onTap: () => _gotoDetailPage(context),
       child: GradientCard(
+        clipBehavior: Clip.hardEdge,
         shape: Styles.mainCardShape,
         elevation: withElevation ? Styles.cardTenElevation : 0,
         gradient: rarity.getRarityGradient(),

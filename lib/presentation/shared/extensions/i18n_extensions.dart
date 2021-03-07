@@ -331,9 +331,11 @@ extension I18nExtensions on S {
       case AscensionMaterialSummaryType.day:
         return day;
       case AscensionMaterialSummaryType.currency:
-        return currency;
+        return '$currency ($approximate)';
       case AscensionMaterialSummaryType.others:
         return others;
+      case AscensionMaterialSummaryType.exp:
+        return '$experience ($approximate)';
       default:
         throw Exception('Invalid ascension material type = $type');
     }

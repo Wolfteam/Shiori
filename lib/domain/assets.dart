@@ -38,6 +38,10 @@ class Assets {
   static String currencyBasePath = '$itemsBasePath/currency';
   static String othersBasePath = '$itemsBasePath/others';
   static String ingredientsBasePath = '$itemsBasePath/ingredients';
+  static String experienceBasePath = '$itemsBasePath/experience';
+
+  //Others
+  static String otherImgsBasePath = 'assets/others';
 
   static String getArtifactPath(String name) => '$artifactsBasePath/$name';
   static String getCharacterPath(String name) => '$charactersBasePath/$name';
@@ -48,6 +52,8 @@ class Assets {
     }
     return '$skillsBasePath/$name';
   }
+
+  static String getOtherImgsPath(String name) => '$otherImgsBasePath/$name';
 
   static String getBowPath(String name) => '$bowsBasePath/$name';
   static String getCatalystPath(String name) => '$catalystBasePath/$name';
@@ -65,6 +71,7 @@ class Assets {
   static String getCurrencyMaterialPath(String name) => '$currencyBasePath/$name';
   static String getOtherMaterialPath(String name) => '$othersBasePath/$name';
   static String getIngredientMaterialPath(String name) => '$ingredientsBasePath/$name';
+  static String getExperienceMaterialPath(String name) => '$experienceBasePath/$name';
 
   static String getMaterialPath(String name, MaterialType type) {
     switch (type) {
@@ -88,6 +95,9 @@ class Assets {
         return getOtherMaterialPath(name);
       case MaterialType.ingredient:
         return getIngredientMaterialPath(name);
+      case MaterialType.expCharacter:
+      case MaterialType.expWeapon:
+        return getExperienceMaterialPath(name);
       default:
         throw Exception('Invalid material type = $type');
     }
