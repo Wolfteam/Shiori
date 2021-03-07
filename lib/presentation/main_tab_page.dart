@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
+import 'package:genshindb/presentation/shared/extensions/focus_scope_node_extensions.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 
 import 'artifacts/artifacts_page.dart';
@@ -110,6 +111,7 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
   }
 
   void _changeCurrentTab(int index) {
+    FocusScope.of(context).removeFocus();
     setState(() {
       _index = index;
       _tabController.index = index;

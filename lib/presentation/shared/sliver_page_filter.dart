@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'genshin_db_icons.dart';
 import 'search_box.dart';
 
+typedef OnPressed = void Function();
+
 class SliverPageFilter extends StatelessWidget {
   final String title;
   final String search;
-  final Function onPressed;
+  final OnPressed onPressed;
   final Function(String) searchChanged;
 
   const SliverPageFilter({

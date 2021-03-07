@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'app_fab.dart';
+import 'extensions/focus_scope_node_extensions.dart';
 import 'extensions/scroll_controller_extensions.dart';
 
 class SliverScaffoldWithFab extends StatefulWidget {
@@ -34,14 +35,19 @@ class _SliverScaffoldWithFabState extends State<SliverScaffoldWithFab> with Sing
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        controller: _scrollController,
-        slivers: widget.slivers,
-      ),
-      floatingActionButton: AppFab(
-        hideFabAnimController: _hideFabAnimController,
-        scrollController: _scrollController,
+    return Listener(
+      onPointerDown: (_) {
+        FocusScope.of(context).removeFocus();
+      },
+      child: Scaffold(
+        body: CustomScrollView(
+          controller: _scrollController,
+          slivers: widget.slivers,
+        ),
+        floatingActionButton: AppFab(
+          hideFabAnimController: _hideFabAnimController,
+          scrollController: _scrollController,
+        ),
       ),
     );
   }
