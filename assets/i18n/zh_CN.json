@@ -5555,27 +5555,27 @@
     },
     {
       "key": "EnhancementOreA",
-      "name": "Enhancement Ore"
+      "name": "精锻用杂矿"
     },
     {
       "key": "EnhancementOreB",
-      "name": "Fine Enhancement Ore"
+      "name": "精锻用良矿"
     },
     {
       "key": "EnhancementOreC",
-      "name": "Mystic Enhancement Ore"
+      "name": "精锻用魔矿"
     },
     {
       "key": "CharExpA",
-      "name": "Wanderer's Advice"
+      "name": "流浪者的经验"
     },
     {
       "key": "CharExpB",
-      "name": "Adventurer's Experience"
+      "name": "冒险家的经验"
     },
     {
       "key": "CharExpC",
-      "name": "Hero's Wit"
+      "name": "大英雄的经验"
     }
   ],
   "debuffs": [

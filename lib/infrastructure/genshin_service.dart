@@ -17,6 +17,7 @@ class GenshinServiceImpl implements GenshinService {
   ArtifactsFile _artifactsFile;
   MaterialsFile _materialsFile;
   ElementsFile _elementsFile;
+  GameCodesFile _gameCodesFile;
 
   GenshinServiceImpl(this._localeService);
 
@@ -28,6 +29,7 @@ class GenshinServiceImpl implements GenshinService {
       initArtifacts(),
       initMaterials(),
       initElements(),
+      initGameCodes(),
       initTranslations(languageType),
     ]);
   }
@@ -65,6 +67,13 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.elementsDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _elementsFile = ElementsFile.fromJson(json);
+  }
+
+  @override
+  Future<void> initGameCodes() async {
+    final jsonStr = await rootBundle.loadString(Assets.gameCodesDbPath);
+    final json = jsonDecode(jsonStr) as Map<String, dynamic>;
+    _gameCodesFile = GameCodesFile.fromJson(json);
   }
 
   @override
@@ -480,4 +489,7 @@ class GenshinServiceImpl implements GenshinService {
 
     return server.weekday - 1;
   }
+
+  @override
+  List<GameCodeFileModel> getAllGameCodes() => _gameCodesFile.gameCodes;
 }

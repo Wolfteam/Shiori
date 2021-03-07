@@ -8,6 +8,7 @@ abstract class GenshinService {
   Future<void> initArtifacts();
   Future<void> initMaterials();
   Future<void> initElements();
+  Future<void> initGameCodes();
   Future<void> initTranslations(AppLanguageType languageType);
 
   List<CharacterCardModel> getCharactersForCard();
@@ -42,4 +43,6 @@ abstract class GenshinService {
   List<MaterialFileModel> getMaterials(MaterialType type);
 
   int getServerDay(AppServerResetTimeType type);
+
+  List<GameCodeFileModel> getAllGameCodes();
 }
