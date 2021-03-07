@@ -115,8 +115,8 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     final cl = tuple.item1;
     final dl = tuple.item2;
 
-    final cAsc = _getClosestAscensionLevel(cl);
-    final dAsc = _getClosestAscensionLevel(dl);
+    final cAsc = _getClosestAscensionLevel(cl, cl == currentLevel);
+    final dAsc = _getClosestAscensionLevel(dl, dl == desiredLevel);
     final skills = _updateSkills(cAsc, dAsc);
 
     return currentState.copyWith.call(
@@ -130,8 +130,9 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
 
   CalculatorAscMaterialsItemState _ascensionChanged(int currentLevel, int desiredLevel, bool currentChanged) {
     final tuple = _checkProvidedLevels(currentLevel, desiredLevel, currentChanged);
+    final bothAreZero = tuple.item1 == tuple.item2 && tuple.item1 == 0;
     final cAsc = tuple.item1;
-    final dAsc = tuple.item2;
+    final dAsc = bothAreZero ? 1 : tuple.item2;
 
     //Here we consider the 0, because otherwise we will always start from a current level of 1, and sometimes, we want to know the whole thing
     //(from 1 to 10 with 1 inclusive)
@@ -155,7 +156,6 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     );
   }
 
-  //TODO: THIS ?
   CalculatorAscMaterialsItemState _skillChanged(int skillIndex, int newValue, bool currentChanged) {
     final skills = <CharacterSkill>[];
 
@@ -212,7 +212,11 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     return Tuple2<int, int>(cl, dl);
   }
 
-  int _getClosestAscensionLevel(int toItemLevel) {
+  /// Gets the closest ascension level [toItemLevel]
+  ///
+  /// Keep in mind that you can be of level 80 but that doesn't mean you have ascended to level 6,
+  /// that's why you must provide [isAscended]
+  int _getClosestAscensionLevel(int toItemLevel, bool isAscended) {
     if (toItemLevel <= 0) {
       throw Exception('The provided itemLevel = $toItemLevel is not valid');
     }
@@ -222,6 +226,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
       final temp = kvp.value;
       if (temp >= toItemLevel && ascensionLevel == -1) {
         ascensionLevel = kvp.key;
+        break;
       }
       continue;
     }
@@ -233,7 +238,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     }
 
     if (toItemLevel == itemAscensionLevelMap.entries.firstWhere((kvp) => kvp.key == ascensionLevel).value) {
-      return ascensionLevel;
+      return isAscended ? ascensionLevel : ascensionLevel - 1;
     }
 
     return ascensionLevel - 1;
@@ -252,7 +257,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     }
 
     final currentKvp = itemAscensionLevelMap.entries.firstWhere((kvp) => kvp.key == currentAscensionLevel);
-    final suggestedAscLevel = _getClosestAscensionLevel(currentItemLevel);
+    final suggestedAscLevel = _getClosestAscensionLevel(currentItemLevel, true);
 
     if (currentKvp.key != suggestedAscLevel) {
       return currentKvp.value;
@@ -304,16 +309,36 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     return skills;
   }
 
-  //TODO: FIX THIS METHOD
-  bool _canSkillBeIncreased(int skillLevel, int maxAscensionLevel, bool inclusive) {
-    final entry = skillAscensionMap.entries.firstWhere((kvp) => kvp.value.contains(skillLevel));
-    final isNotTheLast = entry.value.last != skillLevel;
-    if (inclusive) {
-      return entry.key <= maxAscensionLevel && isNotTheLast;
+  /// Checks if a skill can be increased.
+  ///
+  /// Keep in mind that the values provided  must be already validated
+  bool _canSkillBeIncreased(int skillLevel, int maxAscensionLevel) {
+    if (maxAscensionLevel < 0) {
+      throw Exception('The provided ascension level = $maxAscensionLevel is not valid');
     }
-    return entry.key < maxAscensionLevel && isNotTheLast;
+
+    if (maxAscensionLevel == 0 && skillLevel > minSkillLevel) {
+      return true;
+    } else if (maxAscensionLevel == 0 && skillLevel == minSkillLevel) {
+      return false;
+    }
+
+    final currentSkillEntry = skillAscensionMap.entries.firstWhere((kvp) => kvp.value.contains(skillLevel));
+    final ascensionEntry = skillAscensionMap.entries.firstWhere((kvp) => kvp.key == maxAscensionLevel);
+
+    //If the ascension level are different, just return true, since we don't need to make any validation in this method
+    if (ascensionEntry.key != currentSkillEntry.key) {
+      return true;
+    }
+
+    //otherwise, return true only if this skill is not the last in the map
+    final isNotTheLast = currentSkillEntry.value.last != skillLevel;
+    return isNotTheLast;
   }
 
+  /// This method checks if the provided skills are enabled or not.
+  ///
+  /// Keep in mind that the values provided  must be already validated
   Tuple4<bool, bool, bool, bool> _isSkillEnabled(
     int currentLevel,
     int desiredLevel,
@@ -321,20 +346,11 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     int desiredAscensionLevel,
   ) {
     final currentDecEnabled = currentLevel != minSkillLevel;
-    final currentIncEnabled = currentLevel != maxSkillLevel &&
-        _canSkillBeIncreased(currentLevel, currentAscensionLevel, skillAscensionMap.entries.first.key != currentAscensionLevel);
+    final currentIncEnabled = currentLevel != maxSkillLevel && _canSkillBeIncreased(currentLevel, currentAscensionLevel);
 
     final desiredDecEnabled = desiredLevel != minSkillLevel;
-    final desiredIncEnabled = desiredLevel != maxSkillLevel &&
-        _canSkillBeIncreased(desiredLevel, desiredAscensionLevel, skillAscensionMap.entries.first.key != desiredAscensionLevel);
+    final desiredIncEnabled = desiredLevel != maxSkillLevel && _canSkillBeIncreased(desiredLevel, desiredAscensionLevel);
 
     return Tuple4<bool, bool, bool, bool>(currentDecEnabled, currentIncEnabled, desiredDecEnabled, desiredIncEnabled);
-    //Current
-    // incrementIsDisabled: currentLevel == CalculatorAscMaterialsItemBloc.maxSkillLevel,
-    // decrementIsDisabled: currentLevel == CalculatorAscMaterialsItemBloc.minSkillLevel,
-
-    //Desired
-    // incrementIsDisabled: desiredLevel == CalculatorAscMaterialsItemBloc.maxSkillLevel,
-    // decrementIsDisabled: desiredLevel == CalculatorAscMaterialsItemBloc.minSkillLevel,
   }
 }
