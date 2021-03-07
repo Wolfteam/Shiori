@@ -95,6 +95,12 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (ctx) {
+            final genshinService = getIt<GenshinService>();
+            return GameCodesBloc(genshinService);
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
             final loggingService = getIt<LoggingService>();
             final genshinService = getIt<GenshinService>();
             final settingsService = getIt<SettingsService>();

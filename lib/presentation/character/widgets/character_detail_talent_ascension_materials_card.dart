@@ -55,7 +55,7 @@ class CharacterDetailTalentAscensionMaterialsCard extends StatelessWidget {
         child: Table(
           columnWidths: const {
             0: FractionColumnWidth(.2),
-            2: FractionColumnWidth(.8),
+            1: FractionColumnWidth(.8),
           },
           children: [
             TableRow(

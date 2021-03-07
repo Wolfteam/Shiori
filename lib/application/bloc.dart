@@ -5,6 +5,7 @@ export 'calculator_asc_materials_item/calculator_asc_materials_item_bloc.dart';
 export 'character/character_bloc.dart';
 export 'characters/characters_bloc.dart';
 export 'elements/elements_bloc.dart';
+export 'game_codes/game_codes_bloc.dart';
 export 'home/home_bloc.dart';
 export 'main/main_bloc.dart';
 export 'main_tab/main_tab_bloc.dart';
