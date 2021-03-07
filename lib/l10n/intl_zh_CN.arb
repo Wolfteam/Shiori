@@ -235,5 +235,12 @@
   "experience": "实验性",
   "approximate": "大约",
   "active": "已启用",
-  "inactive": "未启用"
+  "inactive": "未启用",
+  "gameCodes": "Game Codes",
+  "codes": "Codes",
+  "rewards": "Rewards",
+  "codeXWasCopied": "Code {value} was copied to the clipboard",
+  "expiredCodes": "Expired Codes",
+  "workingCodes": "Working Codes",
+  "seeAllInGameGameCodes": "See all the game codes that you can use"
 }

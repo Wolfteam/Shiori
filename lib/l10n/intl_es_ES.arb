@@ -235,5 +235,12 @@
   "experience": "Experiencia",
   "approximate": "Aproximado",
   "active": "Activo",
-  "inactive": "Inactivo"
+  "inactive": "Inactivo",
+  "gameCodes": "Códigos del Juego",
+  "codes": "Códigos",
+  "rewards": "Recompensas",
+  "codeXWasCopied": "El código {value} fue copiado al portapapeles",
+  "expiredCodes": "Códigos Expirados",
+  "workingCodes": "Códigos Funcionales",
+  "seeAllInGameGameCodes": "Ve todos los códigos del juego que puedes usar"
 }

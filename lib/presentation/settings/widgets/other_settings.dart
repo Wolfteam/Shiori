@@ -98,7 +98,7 @@ class OtherSettings extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   s.seeAllInGameGameCodes,
-                  style: const TextStyle(color: Colors.grey, fontSize: 12),
+                  style: const TextStyle(color: Colors.grey, fontSize: 11),
                 ),
               ),
             ),
