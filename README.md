@@ -48,3 +48,21 @@ The {{x}} is a placeholder and the value shouldn't be changed, but the position 
 * To  [Uzair Ashraf](https://github.com/uzair-ashraf) for his wish simulator
 * The folk(s) that developed the [Map](https://genshin-impact-map.appsample.com/#/)
 * And the folks from [Honey Impact](https://genshin.honeyhunterworld), [Fandom Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact), [Genshin.in](https://www.gensh.in/), [Genshin.Center](https://genshin-center.com/) that provide useful data
+
+### Translators
+
+Translating the app to other languages won't have been possible without the following contributors
+
+|Chinese |Russian|
+|---|---|
+|2O48#9733|SipTik#8026|
+| |KKTS#8567|
+| |KlimeLime#7577|
+| |Avantel#8880|
+| |чебилин#5968|
+| |Anixty#3279|
+
+
+
+
+

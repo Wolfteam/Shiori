@@ -115,8 +115,8 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     final cl = tuple.item1;
     final dl = tuple.item2;
 
-    final cAsc = _getClosestAscensionLevel(cl, cl == currentLevel);
-    final dAsc = _getClosestAscensionLevel(dl, dl == desiredLevel);
+    final cAsc = _getClosestAscensionLevel(cl, _isLevelValidForAscensionLevel(cl, currentState.currentAscensionLevel));
+    final dAsc = _getClosestAscensionLevel(dl, _isLevelValidForAscensionLevel(dl, currentState.desiredAscensionLevel));
     final skills = _updateSkills(cAsc, dAsc);
 
     return currentState.copyWith.call(
@@ -144,8 +144,14 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
       return currentState;
     }
 
-    final cl = _getItemLevelToUse(cAsc, currentState.currentLevel);
-    final dl = _getItemLevelToUse(dAsc, currentState.desiredLevel);
+    final levelTuple = _checkProvidedLevels(
+      _getItemLevelToUse(cAsc, currentState.currentLevel),
+      _getItemLevelToUse(dAsc, currentState.desiredLevel),
+      currentChanged,
+    );
+    final cl = levelTuple.item1;
+    final dl = levelTuple.item2;
+
     final skills = _updateSkills(cAsc, dAsc);
     return currentState.copyWith.call(
       currentLevel: cl,
@@ -257,7 +263,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     }
 
     final currentKvp = itemAscensionLevelMap.entries.firstWhere((kvp) => kvp.key == currentAscensionLevel);
-    final suggestedAscLevel = _getClosestAscensionLevel(currentItemLevel, true);
+    final suggestedAscLevel = _getClosestAscensionLevel(currentItemLevel, false);
 
     if (currentKvp.key != suggestedAscLevel) {
       return currentKvp.value;
@@ -352,5 +358,19 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     final desiredIncEnabled = desiredLevel != maxSkillLevel && _canSkillBeIncreased(desiredLevel, desiredAscensionLevel);
 
     return Tuple4<bool, bool, bool, bool>(currentDecEnabled, currentIncEnabled, desiredDecEnabled, desiredIncEnabled);
+  }
+
+  bool _isLevelValidForAscensionLevel(int currentLevel, int ascensionLevel) {
+    if (ascensionLevel == 0) {
+      return itemAscensionLevelMap.entries.first.value >= currentLevel;
+    }
+
+    if (ascensionLevel == itemAscensionLevelMap.entries.last.key) {
+      return currentLevel >= itemAscensionLevelMap.entries.last.value;
+    }
+
+    final entry = itemAscensionLevelMap.entries.firstWhere((kvp) => kvp.key == ascensionLevel);
+    final nextEntry = itemAscensionLevelMap.entries.firstWhere((kvp) => kvp.key == ascensionLevel + 1);
+    return entry.value >= currentLevel && currentLevel <= nextEntry.value;
   }
 }

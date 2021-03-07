@@ -29,4 +29,8 @@ abstract class TelemetryService {
   Future<void> trackTierListOpened();
 
   Future<void> trackInit(AppSettings settings);
+
+  Future<void> trackGameCodesOpened();
+
+  Future<void> trackTierListBuilderScreenShootTaken();
 }

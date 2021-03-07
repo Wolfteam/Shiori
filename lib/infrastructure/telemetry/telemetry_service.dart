@@ -81,9 +81,7 @@ class TelemetryServiceImpl implements TelemetryService {
   }
 
   @override
-  Future<void> trackTierListOpened() async {
-    await trackEventAsync('TierList-Opened');
-  }
+  Future<void> trackTierListOpened() => trackEventAsync('TierList-Opened');
 
   @override
   Future<void> trackInit(AppSettings settings) async {
@@ -97,4 +95,10 @@ class TelemetryServiceImpl implements TelemetryService {
       'ServerResetTime': EnumToString.convertToString(settings.serverResetTime),
     });
   }
+
+  @override
+  Future<void> trackGameCodesOpened() => trackEventAsync('GameCodes-Opened');
+
+  @override
+  Future<void> trackTierListBuilderScreenShootTaken() => trackEventAsync('TierListBuilder-ScreenShootTaken');
 }

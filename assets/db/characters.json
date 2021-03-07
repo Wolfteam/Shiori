@@ -7720,6 +7720,25 @@
                 "pyroDmgBonusPercentage",
                 "critRatePercentage"
               ]
+            },
+            {
+              "multiples": [
+                {
+                  "quantity": 2,
+                  "image": "crimson_witch_of_flames_4.png"
+                },
+                {
+                  "quantity": 2,
+                  "image": "noblesse_oblige_4.png"
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "pyroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
             }
           ],
           "subStatsToFocus": [
