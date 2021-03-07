@@ -10,6 +10,8 @@ class Styles {
     topRight: Radius.circular(10),
   );
 
+  static BorderRadius homeCardItemBorderRadius = BorderRadius.circular(40);
+
   static final RoundedRectangleBorder cardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(10));
   static const RoundedRectangleBorder mainCardShape = RoundedRectangleBorder(borderRadius: mainCardBorderRadius);
   static final RoundedRectangleBorder floatingCardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(20));

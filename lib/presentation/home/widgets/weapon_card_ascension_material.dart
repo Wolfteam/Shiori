@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
+import 'package:genshindb/presentation/shared/circle_weapon.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/weapon/weapon_page.dart';
 
 class WeaponCardAscensionMaterial extends StatelessWidget {
   final String name;
@@ -60,28 +58,12 @@ class WeaponCardAscensionMaterial extends StatelessWidget {
                 itemCount: weapons.length,
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (ctx, index) => Container(
-                  margin: const EdgeInsets.all(3),
-                  child: InkWell(
-                    onTap: () => _gotoWeaponPage(weapons[index], context),
-                    child: CircleAvatar(
-                      radius: 30,
-                      backgroundColor: Colors.transparent,
-                      backgroundImage: AssetImage(weapons[index]),
-                    ),
-                  ),
-                ),
+                itemBuilder: (ctx, index) => CircleWeapon(image: weapons[index]),
               ),
             ),
           ],
         ),
       ),
     );
-  }
-
-  Future<void> _gotoWeaponPage(String image, BuildContext context) async {
-    context.read<WeaponBloc>().add(WeaponEvent.loadFromImg(image: image));
-    final route = MaterialPageRoute(builder: (c) => WeaponPage());
-    await Navigator.push(context, route);
   }
 }
