@@ -226,5 +226,14 @@
   "sumeru": "须弥",
   "credits": "Credits",
   "translators": "Translators",
-  "creditsTranslatorsMsg": "Translating the app to other languages won't have been possible without the following contributors"
+  "creditsTranslatorsMsg": "Translating the app to other languages won't have been possible without the following contributors",
+  "currentX": "Current: {value}",
+  "desiredX": "Desired: {value}",
+  "currentAscension": "Current Ascension",
+  "desiredAscension": "Desired Ascension",
+  "chooseALevel": "Choose a level",
+  "experience": "Experience",
+  "approximate": "Approximate",
+  "active": "Active",
+  "inactive": "Inactive"
 }

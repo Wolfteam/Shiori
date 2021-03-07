@@ -46,8 +46,10 @@ class CharacterCard extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     return InkWell(
+      borderRadius: Styles.mainCardBorderRadius,
       onTap: () => _gotoCharacterPage(context),
       child: Card(
+        clipBehavior: Clip.hardEdge,
         shape: Styles.mainCardShape,
         elevation: Styles.cardTenElevation,
         color: elementType.getElementColorFromContext(context),

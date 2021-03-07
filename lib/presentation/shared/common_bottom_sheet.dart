@@ -19,7 +19,7 @@ class CommonBottomSheet extends StatelessWidget {
     Key key,
     @required this.title,
     @required this.titleIcon,
-    @required this.onOk,
+    this.onOk,
     this.onCancel,
     @required this.child,
     this.iconSize = 25,
@@ -54,7 +54,7 @@ class CommonBottomSheet extends StatelessWidget {
                   if (showOkButton)
                     RaisedButton(
                       color: theme.primaryColor,
-                      onPressed: () => onOk(),
+                      onPressed: () => onOk != null ? onOk() : Navigator.pop(context),
                       child: Text(s.ok),
                     )
                 ],

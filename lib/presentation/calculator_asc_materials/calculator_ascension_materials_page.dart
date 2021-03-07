@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/extensions/string_extensions.dart';
+import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/characters/characters_page.dart';
+import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/genshin_db_icons.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
 import 'package:genshindb/presentation/shared/nothing_found_column.dart';
@@ -74,6 +76,7 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
                           builder: (index) {
                             final e = state.items[index];
                             return ItemCard(
+                              isActive: e.isActive,
                               index: index,
                               itemKey: e.key,
                               image: e.image,
@@ -85,16 +88,17 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
                           },
                         ),
                       ),
-                      SliverToBoxAdapter(
-                        child: ItemDescriptionDetail(
-                          title: s.summary,
-                          textColor: theme.accentColor,
-                          body: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [...state.summary.map((e) => AscensionMaterialsSummaryWidget(summary: e)).toList()],
+                      if (state.summary.isNotEmpty)
+                        SliverToBoxAdapter(
+                          child: ItemDescriptionDetail(
+                            title: s.summary,
+                            textColor: theme.accentColor,
+                            body: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: _buildSummary(s, state.summary),
+                            ),
                           ),
                         ),
-                      ),
                     ],
                   );
                 },
@@ -104,6 +108,12 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  List<AscensionMaterialsSummaryWidget> _buildSummary(S s, List<AscensionMaterialsSummary> items) {
+    items.sort((x, y) => s.translateAscensionSummaryType(x.type).compareTo(s.translateAscensionSummaryType(y.type)));
+
+    return items.map((e) => AscensionMaterialsSummaryWidget(summary: e)).toList();
   }
 
   Future<void> _openCharacterPage(BuildContext context) async {

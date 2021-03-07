@@ -176,6 +176,7 @@
   "selectWeapon": "Selecciona una arma",
   "character": "Personaje",
   "summary": "Resúmen",
+  "common": "Común",
   "localSpecialities": "Especialidades Locales",
   "boss": "Jefe",
   "day": "Día",
@@ -225,5 +226,14 @@
   "sumeru": "Sumeru",
   "credits": "Créditos",
   "translators": "Traductores",
-  "creditsTranslatorsMsg": "La aplicación no habria sido traducida a otros lenguajes sin la ayuda de los siguientes contribuidores"
+  "creditsTranslatorsMsg": "La aplicación no habria sido traducida a otros lenguajes sin la ayuda de los siguientes contribuidores",
+  "currentX": "Actual: {value}",
+  "desiredX": "Deseado: {value}",
+  "currentAscension": "Ascensión Actual",
+  "desiredAscension": "Ascención Deseada",
+  "chooseALevel": "Escoge un nivel",
+  "experience": "Experiencia",
+  "approximate": "Aproximado",
+  "active": "Activo",
+  "inactive": "Inactivo"
 }

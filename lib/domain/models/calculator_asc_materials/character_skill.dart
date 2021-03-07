@@ -9,5 +9,9 @@ abstract class CharacterSkill with _$CharacterSkill {
     @required String name,
     @required int currentLevel,
     @required int desiredLevel,
+    @required bool isCurrentIncEnabled,
+    @required bool isCurrentDecEnabled,
+    @required bool isDesiredIncEnabled,
+    @required bool isDesiredDecEnabled,
   }) = _CharacterSkill;
 }
