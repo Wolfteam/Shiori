@@ -5551,27 +5551,27 @@
     },
     {
       "key": "EnhancementOreA",
-      "name": "Enhancement Ore"
+      "name": "Обычная руда усиления"
     },
     {
       "key": "EnhancementOreB",
-      "name": "Fine Enhancement Ore"
+      "name": "Превосходная руда усиления"
     },
     {
       "key": "EnhancementOreC",
-      "name": "Mystic Enhancement Ore"
+      "name": "Волшебная руда усиления"
     },
     {
       "key": "CharExpA",
-      "name": "Wanderer's Advice"
+      "name": "Опыт странника"
     },
     {
       "key": "CharExpB",
-      "name": "Adventurer's Experience"
+      "name": "Опыт искателя приключений"
     },
     {
       "key": "CharExpC",
-      "name": "Hero's Wit"
+      "name": "Опыт героя"
     }
   ],
   "debuffs": [
