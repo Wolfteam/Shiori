@@ -5552,6 +5552,30 @@
     {
       "key": "Wolfhook",
       "name": "钩钩果"
+    },
+    {
+      "key": "EnhancementOreA",
+      "name": "Enhancement Ore"
+    },
+    {
+      "key": "EnhancementOreB",
+      "name": "Fine Enhancement Ore"
+    },
+    {
+      "key": "EnhancementOreC",
+      "name": "Mystic Enhancement Ore"
+    },
+    {
+      "key": "CharExpA",
+      "name": "Wanderer's Advice"
+    },
+    {
+      "key": "CharExpB",
+      "name": "Adventurer's Experience"
+    },
+    {
+      "key": "CharExpC",
+      "name": "Hero's Wit"
     }
   ],
   "debuffs": [

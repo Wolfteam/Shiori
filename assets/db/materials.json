@@ -1682,5 +1682,91 @@
       "type": "local",
       "days": []
     }
+  ],
+  "experience": [
+    {
+      "key": "EnhancementOreA",
+      "image": "enchancement_ore.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "expWeapon",
+      "days": [],
+      "attributes": {
+        "experience": 400,
+        "pricePerUsage": 40
+      }
+    },
+    {
+      "key": "EnhancementOreB",
+      "image": "fine_enchancement_ore.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "expWeapon",
+      "days": [],
+      "attributes": {
+        "experience": 2000,
+        "pricePerUsage": 200
+      }
+    },
+    {
+      "key": "EnhancementOreC",
+      "image": "mystic_enchancement_ore.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "expWeapon",
+      "days": [],
+      "attributes": {
+        "experience": 10000,
+        "pricePerUsage": 1000
+      }
+    },
+    {
+      "key": "CharExpA",
+      "image": "wanderers_advice.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "expCharacter",
+      "days": [],
+      "attributes": {
+        "experience": 1000,
+        "pricePerUsage": 200
+      }
+    },
+    {
+      "key": "CharExpB",
+      "image": "adventurers_experience.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "expCharacter",
+      "days": [],
+      "attributes": {
+        "experience": 5000,
+        "pricePerUsage": 1000
+      }
+    },
+    {
+      "key": "CharExpC",
+      "image": "heros_wit.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "expCharacter",
+      "days": [],
+      "attributes": {
+        "experience": 20000,
+        "pricePerUsage": 4000
+      }
+    }
   ]
 }

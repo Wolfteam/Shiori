@@ -39,6 +39,7 @@ abstract class GenshinService {
   List<ElementReactionCardModel> getElementResonances();
 
   MaterialFileModel getMaterialByImage(String image);
+  List<MaterialFileModel> getMaterials(MaterialType type);
 
   int getServerDay(AppServerResetTimeType type);
 }
