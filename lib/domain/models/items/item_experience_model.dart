@@ -1,18 +1,18 @@
-class ItemExperience {
+class ItemExperienceModel {
   final int level;
-  final int nextLevelExp;
-  final int totalExp;
+  final double nextLevelExp;
+  final double totalExp;
   final bool isForCharacter;
 
   bool get maxReached => level == -1;
 
-  const ItemExperience.forCharacters(
+  const ItemExperienceModel.forCharacters(
     this.level,
     this.nextLevelExp,
     this.totalExp,
   ) : isForCharacter = true;
 
-  const ItemExperience.forWeapons(
+  const ItemExperienceModel.forWeapons(
     this.level,
     this.nextLevelExp,
     this.totalExp,

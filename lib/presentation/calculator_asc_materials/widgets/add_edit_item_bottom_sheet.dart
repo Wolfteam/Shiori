@@ -16,6 +16,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
   final String keyName;
   final bool isInEditMode;
   final bool isAWeapon;
+  final bool isActive;
 
   const AddEditItemBottomSheet.toAddItem({
     Key key,
@@ -23,12 +24,14 @@ class AddEditItemBottomSheet extends StatelessWidget {
     @required this.isAWeapon,
   })  : index = null,
         isInEditMode = false,
+        isActive = true,
         super(key: key);
 
   const AddEditItemBottomSheet.toEditItem({
     Key key,
     @required this.index,
     @required this.isAWeapon,
+    @required this.isActive,
   })  : keyName = null,
         isInEditMode = true,
         super(key: key);
@@ -44,17 +47,8 @@ class AddEditItemBottomSheet extends StatelessWidget {
           title: isAWeapon ? '${s.weapon}: ${state.name}' : '${s.character}: ${state.name}',
           titleIcon: !isInEditMode ? Icons.add : Icons.edit,
           iconSize: 40,
-          onOk: () => isAWeapon
-              ? _applyChangesForWeapon(state.currentLevel, state.desiredLevel, state.currentAscensionLevel, state.desiredAscensionLevel, context)
-              : _applyChangesForCharacter(
-                  state.currentLevel,
-                  state.desiredLevel,
-                  state.currentAscensionLevel,
-                  state.desiredAscensionLevel,
-                  state.skills,
-                  context,
-                ),
-          onCancel: () => Navigator.of(context).pop(),
+          showCancelButton: false,
+          showOkButton: false,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -92,7 +86,53 @@ class AddEditItemBottomSheet extends StatelessWidget {
                         isDesiredDecEnabled: e.isDesiredDecEnabled,
                         isDesiredIncEnabled: e.isDesiredIncEnabled,
                       ))
-                  .toList()
+                  .toList(),
+              ButtonBar(
+                buttonPadding: const EdgeInsets.symmetric(horizontal: 10),
+                children: <Widget>[
+                  OutlineButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+                  ),
+                  if (isInEditMode)
+                    OutlineButton(
+                      onPressed: () => isAWeapon
+                          ? _applyChangesForWeapon(
+                              state.currentLevel,
+                              state.desiredLevel,
+                              state.currentAscensionLevel,
+                              state.desiredAscensionLevel,
+                              context,
+                              isActiveChanged: true,
+                            )
+                          : _applyChangesForCharacter(
+                              state.currentLevel,
+                              state.desiredLevel,
+                              state.currentAscensionLevel,
+                              state.desiredAscensionLevel,
+                              state.skills,
+                              context,
+                              isActiveChanged: true,
+                            ),
+                      child: Text(isActive ? s.inactive : s.active, style: TextStyle(color: theme.primaryColor)),
+                    ),
+                  RaisedButton(
+                    color: theme.primaryColor,
+                    onPressed: () => isAWeapon
+                        ? _applyChangesForWeapon(
+                            state.currentLevel, state.desiredLevel, state.currentAscensionLevel, state.desiredAscensionLevel, context)
+                        : _applyChangesForCharacter(
+                            state.currentLevel,
+                            state.desiredLevel,
+                            state.currentAscensionLevel,
+                            state.desiredAscensionLevel,
+                            state.skills,
+                            context,
+                          ),
+                    child: Text(s.ok),
+                  )
+                ],
+              )
             ],
           ),
         ),
@@ -107,8 +147,8 @@ class AddEditItemBottomSheet extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return NumberPickerDialog.integer(
-          minValue: 0,
-          maxValue: 90,
+          minValue: CalculatorAscMaterialsItemBloc.minItemLevel,
+          maxValue: CalculatorAscMaterialsItemBloc.maxItemLevel,
           title: Text(s.chooseALevel),
           initialIntegerValue: value,
           infiniteLoop: true,
@@ -133,8 +173,9 @@ class AddEditItemBottomSheet extends StatelessWidget {
     int desiredLevel,
     int currentAscensionLevel,
     int desiredAscensionLevel,
-    BuildContext context,
-  ) {
+    BuildContext context, {
+    bool isActiveChanged = false,
+  }) {
     final event = !isInEditMode
         ? CalculatorAscMaterialsEvent.addWeapon(
             key: keyName,
@@ -149,6 +190,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
             desiredLevel: desiredLevel,
             currentAscensionLevel: currentAscensionLevel,
             desiredAscensionLevel: desiredAscensionLevel,
+            isActive: isActiveChanged ? !isActive : isActive,
           );
     context.read<CalculatorAscMaterialsBloc>().add(event);
     Navigator.of(context).pop();
@@ -160,8 +202,9 @@ class AddEditItemBottomSheet extends StatelessWidget {
     int currentAscensionLevel,
     int desiredAscensionLevel,
     List<CharacterSkill> skills,
-    BuildContext context,
-  ) {
+    BuildContext context, {
+    bool isActiveChanged = false,
+  }) {
     final event = !isInEditMode
         ? CalculatorAscMaterialsEvent.addCharacter(
             key: keyName,
@@ -178,6 +221,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
             skills: skills,
             currentAscensionLevel: currentAscensionLevel,
             desiredAscensionLevel: desiredAscensionLevel,
+            isActive: isActiveChanged ? !isActive : isActive,
           );
     context.read<CalculatorAscMaterialsBloc>().add(event);
     Navigator.of(context).pop();

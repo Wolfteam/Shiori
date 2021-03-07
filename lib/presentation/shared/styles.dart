@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 
 class Styles {
   static const String appIconPath = 'assets/icon/icon.png';
-  static final RoundedRectangleBorder cardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(10));
-  static const RoundedRectangleBorder mainCardShape = RoundedRectangleBorder(
-    borderRadius: BorderRadius.only(
-      bottomLeft: Radius.circular(35),
-      bottomRight: Radius.circular(35),
-      topLeft: Radius.circular(10),
-      topRight: Radius.circular(10),
-    ),
+
+  static const BorderRadius mainCardBorderRadius = BorderRadius.only(
+    bottomLeft: Radius.circular(35),
+    bottomRight: Radius.circular(35),
+    topLeft: Radius.circular(10),
+    topRight: Radius.circular(10),
   );
+
+  static final RoundedRectangleBorder cardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(10));
+  static const RoundedRectangleBorder mainCardShape = RoundedRectangleBorder(borderRadius: mainCardBorderRadius);
   static final RoundedRectangleBorder floatingCardShape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(20));
 
   static const double cardThreeElevation = 3;

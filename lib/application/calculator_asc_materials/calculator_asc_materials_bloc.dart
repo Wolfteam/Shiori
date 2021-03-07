@@ -42,7 +42,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
             image: Assets.getCharacterPath(char.image),
             name: translation.name,
             rarity: char.rarity,
-            materials: _getCharacterMaterialsToUse(char, e.currentAscensionLevel, e.desiredAscensionLevel, e.skills),
+            materials: _getCharacterMaterialsToUse(char, e.currentLevel, e.desiredLevel, e.currentAscensionLevel, e.desiredAscensionLevel, e.skills),
             currentLevel: e.currentLevel,
             desiredLevel: e.desiredLevel,
             skills: e.skills,
@@ -50,8 +50,8 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
             currentAscensionLevel: e.currentAscensionLevel,
           )
         ];
-
-        return currentState.copyWith.call(items: items, summary: _generateSummary(items.expand((i) => i.materials).toList()));
+        final materialsForSummary = _buildMaterialsForSummary(items);
+        return currentState.copyWith.call(items: items, summary: _generateSummary(materialsForSummary));
       },
       addWeapon: (e) async {
         await _telemetryService.trackCalculatorItemAscMaterialLoaded(e.key);
@@ -64,30 +64,33 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
             image: weapon.fullImagePath,
             name: translation.name,
             rarity: weapon.rarity,
-            materials: _getWeaponMaterialsToUse(weapon, e.currentAscensionLevel, e.desiredAscensionLevel),
+            materials: _getWeaponMaterialsToUse(weapon, e.currentLevel, e.desiredLevel, e.currentAscensionLevel, e.desiredAscensionLevel),
             currentLevel: e.currentLevel,
             desiredLevel: e.desiredLevel,
             desiredAscensionLevel: e.desiredAscensionLevel,
             currentAscensionLevel: e.currentAscensionLevel,
           )
         ];
-        return currentState.copyWith.call(items: items, summary: _generateSummary(items.expand((i) => i.materials).toList()));
+        final materialsForSummary = _buildMaterialsForSummary(items);
+        return currentState.copyWith.call(items: items, summary: _generateSummary(materialsForSummary));
       },
       removeItem: (e) async {
         final items = [...currentState.items];
         items.removeAt(e.index);
-        return currentState.copyWith.call(items: items, summary: _generateSummary(items.expand((i) => i.materials).toList()));
+        final materialsForSummary = _buildMaterialsForSummary(items);
+        return currentState.copyWith.call(items: items, summary: _generateSummary(materialsForSummary));
       },
       updateCharacter: (e) async {
         final currentChar = currentState.items.elementAt(e.index);
         final char = _genshinService.getCharacter(currentChar.key);
         final updatedChar = currentChar.copyWith.call(
-          materials: _getCharacterMaterialsToUse(char, e.currentAscensionLevel, e.desiredAscensionLevel, e.skills),
+          materials: _getCharacterMaterialsToUse(char, e.currentLevel, e.desiredLevel, e.currentAscensionLevel, e.desiredAscensionLevel, e.skills),
           currentLevel: e.currentLevel,
           desiredLevel: e.desiredLevel,
           skills: e.skills,
           desiredAscensionLevel: e.desiredAscensionLevel,
           currentAscensionLevel: e.currentAscensionLevel,
+          isActive: e.isActive,
         );
 
         return _updateItem(e.index, updatedChar);
@@ -96,11 +99,12 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
         final currentWeapon = currentState.items.elementAt(e.index);
         final weapon = _genshinService.getWeapon(currentWeapon.key);
         final updatedWeapon = currentWeapon.copyWith.call(
-          materials: _getWeaponMaterialsToUse(weapon, e.currentAscensionLevel, e.desiredAscensionLevel),
+          materials: _getWeaponMaterialsToUse(weapon, e.currentLevel, e.desiredLevel, e.currentAscensionLevel, e.desiredAscensionLevel),
           currentLevel: e.currentLevel,
           desiredLevel: e.desiredLevel,
           desiredAscensionLevel: e.desiredAscensionLevel,
           currentAscensionLevel: e.currentAscensionLevel,
+          isActive: e.isActive,
         );
 
         return _updateItem(e.index, updatedWeapon);
@@ -164,6 +168,10 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
           case MaterialType.ingredient:
             key = AscensionMaterialSummaryType.others;
             break;
+          case MaterialType.expWeapon:
+          case MaterialType.expCharacter:
+            key = AscensionMaterialSummaryType.exp;
+            break;
         }
         newValue = MaterialSummary.others(
           key: material.key,
@@ -187,10 +195,14 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
 
   List<ItemAscensionMaterialModel> _getCharacterMaterialsToUse(
     CharacterFileModel char,
+    int currentLevel,
+    int desiredLevel,
     int currentAscensionLevel,
     int desiredAscensionLevel,
     List<CharacterSkill> skills,
   ) {
+    final expMaterials = _getItemExperienceMaterials(currentLevel, desiredLevel, true);
+
     final ascensionMaterials =
         char.ascensionMaterials.where((m) => m.rank > currentAscensionLevel && m.rank <= desiredAscensionLevel).expand((e) => e.materials).toList();
 
@@ -223,20 +235,23 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
       }
     }
 
-    return _flatMaterialsList(ascensionMaterials + skillMaterials);
+    return _flatMaterialsList(expMaterials + ascensionMaterials + skillMaterials);
   }
 
   List<ItemAscensionMaterialModel> _getWeaponMaterialsToUse(
     WeaponFileModel weapon,
+    int currentLevel,
+    int desiredLevel,
     int currentAscensionLevel,
     int desiredAscensionLevel,
   ) {
+    final expMaterials = _getItemExperienceMaterials(currentLevel, desiredLevel, false);
     final materials = weapon.ascensionMaterials
         .where((m) => m.level > _mapToWeaponLevel(currentAscensionLevel) && m.level <= _mapToWeaponLevel(desiredAscensionLevel))
         .expand((m) => m.materials)
         .toList();
 
-    return _flatMaterialsList(materials);
+    return _flatMaterialsList(expMaterials + materials);
   }
 
   List<ItemAscensionMaterialModel> _flatMaterialsList(List<ItemAscensionMaterialModel> current) {
@@ -255,7 +270,12 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     final items = [...currentState.items];
     items.removeAt(index);
     items.insert(index, updatedItem);
-    return currentState.copyWith.call(items: items, summary: _generateSummary(items.expand((i) => i.materials).toList()));
+    final materialsForSummary = _buildMaterialsForSummary(items);
+    return currentState.copyWith.call(items: items, summary: _generateSummary(materialsForSummary));
+  }
+
+  List<ItemAscensionMaterialModel> _buildMaterialsForSummary(List<ItemAscensionMaterials> items) {
+    return items.where((i) => i.isActive).expand((i) => i.materials).toList();
   }
 
   int _mapToWeaponLevel(int val) {
@@ -268,5 +288,33 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
         final entry = itemAscensionLevelMap.entries.firstWhere((kvp) => kvp.key == val);
         return entry.value;
     }
+  }
+
+  List<ItemAscensionMaterialModel> _getItemExperienceMaterials(int currentLevel, int desiredLevel, bool forCharacters) {
+    final materials = <ItemAscensionMaterialModel>[];
+    //Here we order the exp materials in a way that the one that gives more exp is first and so on
+    final expMaterials = _genshinService.getMaterials(forCharacters ? MaterialType.expCharacter : MaterialType.expWeapon)
+      ..sort((x, y) => (y.experienceAttributes.experience - x.experienceAttributes.experience).round());
+    var requiredExp = getItemTotalExp(currentLevel, desiredLevel, forCharacters);
+    final moraMaterial = _genshinService.getMaterials(MaterialType.currency).first;
+
+    for (final material in expMaterials) {
+      if (requiredExp <= 0) {
+        break;
+      }
+
+      final matExp = material.experienceAttributes.experience;
+      final quantity = (requiredExp / matExp).floor();
+      if (quantity == 0) {
+        continue;
+      }
+      materials.add(ItemAscensionMaterialModel(quantity: quantity, image: material.image, materialType: material.type));
+      requiredExp -= quantity * matExp;
+
+      final requiredMora = quantity * material.experienceAttributes.pricePerUsage;
+      materials.add(ItemAscensionMaterialModel(quantity: requiredMora.round(), image: moraMaterial.image, materialType: moraMaterial.type));
+    }
+
+    return materials.reversed.toList();
   }
 }

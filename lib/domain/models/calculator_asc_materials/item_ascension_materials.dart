@@ -19,6 +19,7 @@ abstract class ItemAscensionMaterials with _$ItemAscensionMaterials {
     @required int desiredAscensionLevel,
     @required List<CharacterSkill> skills,
     @Default(true) bool isCharacter,
+    @Default(true) bool isActive,
   }) = _ForCharacter;
 
   const factory ItemAscensionMaterials.forWeapons({
@@ -34,5 +35,6 @@ abstract class ItemAscensionMaterials with _$ItemAscensionMaterials {
     //This are here just for convenience
     @Default([]) List<CharacterSkill> skills,
     @Default(false) bool isCharacter,
+    @Default(true) bool isActive,
   }) = _ForWeapon;
 }
