@@ -2893,10 +2893,10 @@
       "key": "Alley Hunter",
       "image": "alley_hunter.png",
       "type": "bow",
-      "atk": 41,
+      "atk": 44,
       "rarity": 4,
-      "secondaryStat": "critRatePercentage",
-      "secondaryStatValue": 8.0,
+      "secondaryStat": "atkPercentage",
+      "secondaryStatValue": 6.0,
       "location": "gacha",
       "isComingSoon": true,
       "ascensionMaterials": [
@@ -2906,17 +2906,17 @@
             {
               "quantity": 3,
               "materialType": "weaponPrimary",
-              "image": "boreal_wolfs_milk_tooth.png"
+              "image": "fetters_of_the_dandelion_gladiator.png"
             },
             {
               "quantity": 3,
               "materialType": "weapon",
-              "image": "dead_ley_line_branch.png"
+              "image": "chaos_device.png"
             },
             {
-              "quantity": 8,
+              "quantity": 2,
               "materialType": "common",
-              "image": "treasure_hoarder_insignia.png"
+              "image": "slime_condensate.png"
             },
             {
               "quantity": 5000,
@@ -2931,17 +2931,17 @@
             {
               "quantity": 3,
               "materialType": "weaponPrimary",
-              "image": "boreal_wolfs_cracked_tooth.png"
+              "image": "chains_of_the_dandelion_gladiator.png"
             },
             {
               "quantity": 12,
               "materialType": "weapon",
-              "image": "dead_ley_line_branch.png"
+              "image": "chaos_device.png"
             },
             {
               "quantity": 8,
               "materialType": "common",
-              "image": "treasure_hoarder_insignia.png"
+              "image": "slime_condensate.png"
             },
             {
               "quantity": 15000,
@@ -2956,17 +2956,17 @@
             {
               "quantity": 6,
               "materialType": "weaponPrimary",
-              "image": "boreal_wolfs_cracked_tooth.png"
+              "image": "chains_of_the_dandelion_gladiator.png"
             },
             {
               "quantity": 6,
               "materialType": "weapon",
-              "image": "dead_ley_line_leaves.png"
+              "image": "chaos_circuit.png"
             },
             {
               "quantity": 6,
               "materialType": "common",
-              "image": "treasure_hoarder_insignia.png"
+              "image": "slime_secretions.png"
             },
             {
               "quantity": 20000,
@@ -2981,17 +2981,17 @@
             {
               "quantity": 3,
               "materialType": "weaponPrimary",
-              "image": "boreal_wolfs_broken_fang.png"
+              "image": "shackles_of_the_dandelion_gladiator.png"
             },
             {
               "quantity": 12,
               "materialType": "weapon",
-              "image": "dead_ley_line_leaves.png"
+              "image": "chaos_circuit.png"
             },
             {
               "quantity": 9,
               "materialType": "common",
-              "image": "treasure_hoarder_insignia.png"
+              "image": "slime_secretions.png"
             },
             {
               "quantity": 30000,
@@ -3006,17 +3006,17 @@
             {
               "quantity": 6,
               "materialType": "weaponPrimary",
-              "image": "boreal_wolfs_broken_fang.png"
+              "image": "shackles_of_the_dandelion_gladiator.png"
             },
             {
               "quantity": 9,
               "materialType": "weapon",
-              "image": "ley_line_sprout.png"
+              "image": "chaos_core.png"
             },
             {
               "quantity": 6,
               "materialType": "common",
-              "image": "golden_raven_insignia.png"
+              "image": "slime_concentrate.png"
             },
             {
               "quantity": 35000,
@@ -3031,17 +3031,17 @@
             {
               "quantity": 4,
               "materialType": "weaponPrimary",
-              "image": "boreal_wolfs_nostalgia.png"
+              "image": "dream_of_the_dandelion_gladiator.png"
             },
             {
               "quantity": 18,
               "materialType": "weapon",
-              "image": "ley_line_sprout.png"
+              "image": "chaos_core.png"
             },
             {
               "quantity": 12,
               "materialType": "common",
-              "image": "golden_raven_insignia.png"
+              "image": "slime_concentrate.png"
             },
             {
               "quantity": 45000,
@@ -3055,35 +3055,40 @@
         {
           "level": 1,
           "values": [
-            4,
+            2,
+            20,
             4
           ]
         },
         {
           "level": 2,
           "values": [
-            5,
+            2.5,
+            25,
             5
           ]
         },
         {
           "level": 3,
           "values": [
-            6,
+            3,
+            30,
             6
           ]
         },
         {
           "level": 4,
           "values": [
-            7,
+            3.5,
+            35,
             7
           ]
         },
         {
           "level": 5,
           "values": [
-            8,
+            4,
+            40,
             8
           ]
         }
@@ -7129,6 +7134,710 @@
           "baseAtk": 608,
           "isAnAscension": false,
           "specificValue": 49.6
+        }
+      ]
+    },
+    {
+      "key": "Windblume Ode",
+      "image": "windblume_ode.png",
+      "type": "bow",
+      "atk": 42,
+      "rarity": 4,
+      "secondaryStat": "elementaryMastery",
+      "secondaryStatValue": 36,
+      "location": "quest",
+      "isComingSoon": true,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "fetters_of_the_dandelion_gladiator.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "dead_ley_line_branch.png"
+            },
+            {
+              "quantity": 2,
+              "materialType": "common",
+              "image": "whopperflower_nectar.png"
+            },
+            {
+              "quantity": 5000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "chains_of_the_dandelion_gladiator.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "weapon",
+              "image": "dead_ley_line_branch.png"
+            },
+            {
+              "quantity": 8,
+              "materialType": "common",
+              "image": "whopperflower_nectar.png"
+            },
+            {
+              "quantity": 15000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "weaponPrimary",
+              "image": "chains_of_the_dandelion_gladiator.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "weapon",
+              "image": "dead_ley_line_leaves.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "shimmering_nectar.png"
+            },
+            {
+              "quantity": 20000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "shackles_of_the_dandelion_gladiator.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "weapon",
+              "image": "dead_ley_line_leaves.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "shimmering_nectar.png"
+            },
+            {
+              "quantity": 30000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "weaponPrimary",
+              "image": "shackles_of_the_dandelion_gladiator.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "weapon",
+              "image": "ley_line_sprout.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "energy_nectar.png"
+            },
+            {
+              "quantity": 35000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "quantity": 4,
+              "materialType": "weaponPrimary",
+              "image": "dream_of_the_dandelion_gladiator.png"
+            },
+            {
+              "quantity": 18,
+              "materialType": "weapon",
+              "image": "ley_line_sprout.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "energy_nectar.png"
+            },
+            {
+              "quantity": 45000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        }
+      ],
+      "refinements": [
+        {
+          "level": 1,
+          "values": [
+            16
+          ]
+        },
+        {
+          "level": 2,
+          "values": [
+            20
+          ]
+        },
+        {
+          "level": 3,
+          "values": [
+            24
+          ]
+        },
+        {
+          "level": 4,
+          "values": [
+            28
+          ]
+        },
+        {
+          "level": 5,
+          "values": [
+            32
+          ]
+        }
+      ],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 42,
+          "isAnAscension": false,
+          "specificValue": 36
+        },
+        {
+          "level": 5,
+          "baseAtk": 56,
+          "isAnAscension": false,
+          "specificValue": 42
+        },
+        {
+          "level": 10,
+          "baseAtk": 74,
+          "isAnAscension": false,
+          "specificValue": 49
+        },
+        {
+          "level": 15,
+          "baseAtk": 91,
+          "isAnAscension": false,
+          "specificValue": 56
+        },
+        {
+          "level": 20,
+          "baseAtk": 109,
+          "isAnAscension": false,
+          "specificValue": 64
+        },
+        {
+          "level": 20,
+          "baseAtk": 135,
+          "isAnAscension": true,
+          "specificValue": 64
+        },
+        {
+          "level": 25,
+          "baseAtk": 152,
+          "isAnAscension": false,
+          "specificValue": 71
+        },
+        {
+          "level": 30,
+          "baseAtk": 170,
+          "isAnAscension": false,
+          "specificValue": 78
+        },
+        {
+          "level": 35,
+          "baseAtk": 187,
+          "isAnAscension": false,
+          "specificValue": 85
+        },
+        {
+          "level": 40,
+          "baseAtk": 205,
+          "isAnAscension": false,
+          "specificValue": 93
+        },
+        {
+          "level": 40,
+          "baseAtk": 231,
+          "isAnAscension": true,
+          "specificValue": 93
+        },
+        {
+          "level": 45,
+          "baseAtk": 248,
+          "isAnAscension": false,
+          "specificValue": 100
+        },
+        {
+          "level": 50,
+          "baseAtk": 266,
+          "isAnAscension": false,
+          "specificValue": 107
+        },
+        {
+          "level": 50,
+          "baseAtk": 292,
+          "isAnAscension": true,
+          "specificValue": 107
+        },
+        {
+          "level": 55,
+          "baseAtk": 309,
+          "isAnAscension": false,
+          "specificValue": 115
+        },
+        {
+          "level": 60,
+          "baseAtk": 327,
+          "isAnAscension": false,
+          "specificValue": 122
+        },
+        {
+          "level": 60,
+          "baseAtk": 353,
+          "isAnAscension": true,
+          "specificValue": 122
+        },
+        {
+          "level": 65,
+          "baseAtk": 370,
+          "isAnAscension": false,
+          "specificValue": 129
+        },
+        {
+          "level": 70,
+          "baseAtk": 388,
+          "isAnAscension": false,
+          "specificValue": 136
+        },
+        {
+          "level": 70,
+          "baseAtk": 414,
+          "isAnAscension": true,
+          "specificValue": 136
+        },
+        {
+          "level": 75,
+          "baseAtk": 431,
+          "isAnAscension": false,
+          "specificValue": 144
+        },
+        {
+          "level": 80,
+          "baseAtk": 449,
+          "isAnAscension": false,
+          "specificValue": 151
+        },
+        {
+          "level": 80,
+          "baseAtk": 475,
+          "isAnAscension": true,
+          "specificValue": 151
+        },
+        {
+          "level": 85,
+          "baseAtk": 492,
+          "isAnAscension": false,
+          "specificValue": 158
+        },
+        {
+          "level": 90,
+          "baseAtk": 510,
+          "isAnAscension": false,
+          "specificValue": 165
+        }
+      ]
+    },
+    {
+      "key": "Elegy for the End",
+      "image": "serene_requiem.png",
+      "type": "bow",
+      "atk": 46,
+      "rarity": 5,
+      "secondaryStat": "energyRechargePercentage",
+      "secondaryStatValue": 12,
+      "location": "gacha",
+      "isComingSoon": true,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "quantity": 5,
+              "materialType": "weaponPrimary",
+              "image": "boreal_wolfs_milk_tooth.png"
+            },
+            {
+              "quantity": 5,
+              "materialType": "weapon",
+              "image": "heavy_horn.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "recruits_insignia.png"
+            },
+            {
+              "quantity": 10000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "quantity": 5,
+              "materialType": "weaponPrimary",
+              "image": "boreal_wolfs_cracked_tooth.png"
+            },
+            {
+              "quantity": 18,
+              "materialType": "weapon",
+              "image": "heavy_horn.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "recruits_insignia.png"
+            },
+            {
+              "quantity": 20000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "quantity": 9,
+              "materialType": "weaponPrimary",
+              "image": "boreal_wolfs_cracked_tooth.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "weapon",
+              "image": "black_bronze_horn.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "sergeants_insignia.png"
+            },
+            {
+              "quantity": 30000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "quantity": 5,
+              "materialType": "weaponPrimary",
+              "image": "boreal_wolfs_broken_fang.png"
+            },
+            {
+              "quantity": 18,
+              "materialType": "weapon",
+              "image": "black_bronze_horn.png"
+            },
+            {
+              "quantity": 14,
+              "materialType": "common",
+              "image": "sergeants_insignia.png"
+            },
+            {
+              "quantity": 45000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "quantity": 9,
+              "materialType": "weaponPrimary",
+              "image": "boreal_wolfs_broken_fang.png"
+            },
+            {
+              "quantity": 14,
+              "materialType": "weapon",
+              "image": "black_crystal_horn.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "lieutenants_insignia.png"
+            },
+            {
+              "quantity": 55000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "weaponPrimary",
+              "image": "boreal_wolfs_nostalgia.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "weapon",
+              "image": "black_crystal_horn.png"
+            },
+            {
+              "quantity": 18,
+              "materialType": "common",
+              "image": "lieutenants_insignia.png"
+            },
+            {
+              "quantity": 65000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        }
+      ],
+      "refinements": [
+        {
+          "level": 1,
+          "values": [
+            60,
+            100,
+            20
+          ]
+        },
+        {
+          "level": 2,
+          "values": [
+            75,
+            125,
+            25
+          ]
+        },
+        {
+          "level": 3,
+          "values": [
+            90,
+            150,
+            30
+          ]
+        },
+        {
+          "level": 4,
+          "values": [
+            105,
+            175,
+            35
+          ]
+        },
+        {
+          "level": 5,
+          "values": [
+            120,
+            200,
+            40
+          ]
+        }
+      ],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 46,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 5,
+          "baseAtk": 62,
+          "isAnAscension": false,
+          "specificValue": 13.9
+        },
+        {
+          "level": 10,
+          "baseAtk": 82,
+          "isAnAscension": false,
+          "specificValue": 16.4
+        },
+        {
+          "level": 15,
+          "baseAtk": 102,
+          "isAnAscension": false,
+          "specificValue": 18.8
+        },
+        {
+          "level": 20,
+          "baseAtk": 122,
+          "isAnAscension": false,
+          "specificValue": 21.2
+        },
+        {
+          "level": 20,
+          "baseAtk": 153,
+          "isAnAscension": true,
+          "specificValue": 21.2
+        },
+        {
+          "level": 25,
+          "baseAtk": 173,
+          "isAnAscension": false,
+          "specificValue": 23.6
+        },
+        {
+          "level": 30,
+          "baseAtk": 194,
+          "isAnAscension": false,
+          "specificValue": 26.1
+        },
+        {
+          "level": 35,
+          "baseAtk": 214,
+          "isAnAscension": false,
+          "specificValue": 28.5
+        },
+        {
+          "level": 40,
+          "baseAtk": 235,
+          "isAnAscension": false,
+          "specificValue": 30.9
+        },
+        {
+          "level": 40,
+          "baseAtk": 266,
+          "isAnAscension": true,
+          "specificValue": 30.9
+        },
+        {
+          "level": 45,
+          "baseAtk": 287,
+          "isAnAscension": false,
+          "specificValue": 33.3
+        },
+        {
+          "level": 50,
+          "baseAtk": 308,
+          "isAnAscension": false,
+          "specificValue": 35.7
+        },
+        {
+          "level": 50,
+          "baseAtk": 340,
+          "isAnAscension": true,
+          "specificValue": 35.7
+        },
+        {
+          "level": 55,
+          "baseAtk": 361,
+          "isAnAscension": false,
+          "specificValue": 38.2
+        },
+        {
+          "level": 60,
+          "baseAtk": 382,
+          "isAnAscension": false,
+          "specificValue": 40.6
+        },
+        {
+          "level": 60,
+          "baseAtk": 414,
+          "isAnAscension": true,
+          "specificValue": 40.6
+        },
+        {
+          "level": 65,
+          "baseAtk": 435,
+          "isAnAscension": false,
+          "specificValue": 43
+        },
+        {
+          "level": 70,
+          "baseAtk": 457,
+          "isAnAscension": false,
+          "specificValue": 45.4
+        },
+        {
+          "level": 70,
+          "baseAtk": 488,
+          "isAnAscension": true,
+          "specificValue": 45.4
+        },
+        {
+          "level": 75,
+          "baseAtk": 510,
+          "isAnAscension": false,
+          "specificValue": 47.9
+        },
+        {
+          "level": 80,
+          "baseAtk": 532,
+          "isAnAscension": false,
+          "specificValue": 50.3
+        },
+        {
+          "level": 80,
+          "baseAtk": 563,
+          "isAnAscension": true,
+          "specificValue": 50.3
+        },
+        {
+          "level": 85,
+          "baseAtk": 586,
+          "isAnAscension": false,
+          "specificValue": 52.7
+        },
+        {
+          "level": 90,
+          "baseAtk": 608,
+          "isAnAscension": false,
+          "specificValue": 55.1
         }
       ]
     }
@@ -20698,9 +21407,9 @@
               "image": "dead_ley_line_branch.png"
             },
             {
-              "quantity": 8,
+              "quantity": 2,
               "materialType": "common",
-              "image": "divining_scroll.png"
+              "image": "treasure_hoarder_insignia.png"
             },
             {
               "quantity": 5000,
@@ -20725,7 +21434,7 @@
             {
               "quantity": 8,
               "materialType": "common",
-              "image": "divining_scroll.png"
+              "image": "treasure_hoarder_insignia.png"
             },
             {
               "quantity": 15000,
@@ -20750,7 +21459,7 @@
             {
               "quantity": 6,
               "materialType": "common",
-              "image": "sealed_scroll.png"
+              "image": "silver_raven_insignia.png"
             },
             {
               "quantity": 20000,
@@ -20775,7 +21484,7 @@
             {
               "quantity": 9,
               "materialType": "common",
-              "image": "sealed_scroll.png"
+              "image": "silver_raven_insignia.png"
             },
             {
               "quantity": 30000,
@@ -20800,7 +21509,7 @@
             {
               "quantity": 6,
               "materialType": "common",
-              "image": "forbidden_curse_scroll.png"
+              "image": "golden_raven_insignia.png"
             },
             {
               "quantity": 35000,
@@ -20825,7 +21534,7 @@
             {
               "quantity": 12,
               "materialType": "common",
-              "image": "forbidden_curse_scroll.png"
+              "image": "golden_raven_insignia.png"
             },
             {
               "quantity": 45000,
@@ -20839,36 +21548,36 @@
         {
           "level": 1,
           "values": [
-            8,
-            3
+            14,
+            20
           ]
         },
         {
           "level": 2,
           "values": [
-            10,
-            3.5
+            16,
+            25
           ]
         },
         {
           "level": 3,
           "values": [
-            12,
-            4
+            18,
+            30
           ]
         },
         {
           "level": 4,
           "values": [
-            14,
-            4.5
+            20,
+            35
           ]
         },
         {
           "level": 5,
           "values": [
-            16,
-            5
+            22,
+            40
           ]
         }
       ],
