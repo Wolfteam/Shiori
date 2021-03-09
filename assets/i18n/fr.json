@@ -131,7 +131,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Sharpshooter",
+          "title": "Archerie revisitée",
           "description": null,
           "abilities": [
             {
@@ -375,62 +375,62 @@
     {
       "key": "Beidou",
       "name": "Beidou",
-      "description": "Beidou is the leader of the Crux — an armed fleet based in Liyue Harbor. An armed fleet means exactly what it sounds like: a fleet of ships armed to the teeth.",
+      "description": "Capitaine de la flotte du Crux, une femme de tête franche et directe.",
       "skills": [
         {
           "key": "s1",
-          "title": "Oceanborne",
+          "title": "Conquête des mers",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 successive strikes.",
+              "description": "Enchaîne jusqu'à 5 coups d'épée.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous slashes. At end of the sequence, perform a more powerful slash.",
+              "description": "Exécute une succession d'entailles aussi rapides que tranchantes ; cette attaque consomme de l'endurance de façon continue. L'attaque chargée se termine sur un coup puissant.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Tidecaller",
-          "description": "Nothing to worry about. Should anyone raise a hand against her or her men, she will avenge it ten-fold with sword and thunder.",
+          "title": "Invocation des marées",
+          "description": "N'ayez crainte. Que quelqu'un ose s'en prendre à Beidou ou aux siens, et sa lame et le tonerre lui feront payer au centuple.",
           "abilities": [
             {
               "key": "a1",
-              "description": "Accumulating the power of lightning, Beidou swings her blade forward fiercely, dealing Electro DMG.",
+              "description": "Beidou concentre le pouvoir de la foudre sur son épée, et exécute un coup violent qui inflige aux ennemis en face des DGT Électro.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Lifts her weapon up as a shield. Max DMG absorbed scales off Beidou’s Max HP. Attacks using the energy stored within the greatsword upon release or once this ability’s duration expires, dealing Electro DMG. DMG dealt scales with the number of times Beidou is attacked in the skill’s duration. The greatest DMG Bonus will be attained once this effect is triggered twice. The shield possesses the following properties:",
+              "description": "Beidou brandit son arme, qu'elle utilise comme bouclier. La quantité de DGT absorbés est proportionnelle aux PV max de Beidou. Lorsque vous relâchez la compétence ou que celle-ci prend fin, Beidou brandit sa longue épée et effectue une contre-attaque libérant toute l'énergie accumulée, qui inflige des DGT Électro. Augmente considérablement les DGT infligés selon le nombre de coups portés lors de la durée de la conséquence. Deux coups minimum doivent être portés pour obtenir le bonus de DGT maximum. Bouclier:",
               "descriptions": [
-                "Has 250% Electro DMG Absorption Efficiency.",
-                "Applies the Electro element to Beidou upon activation."
+                "Le bouclier est efficace à 250 % contre les DGT Électro.",
+                "Applique l'élément Électro à Beidou."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Stormbreaker",
-          "description": "Recalling her slaying of the great beast Haishan. Beidou calls upon that monstrous strength and the lightning to create a Thunderbeast’s Targe around herself, dealing Electro DMG to nearby opponents.",
+          "title": "Brisure d'orage",
+          "description": "Se remémorant son combat contre Haishan, la bête géante, Beidou fait appel à la même force destructrice, et crée un bouclier de tonnerre qui inflige des DGT Électro aux ennemis à proximité.",
           "abilities": [
             {
-              "name": "Thunderbeast’s Targe",
+              "name": "Bouclier de tonnerre",
               "description": null,
               "descriptions": [
-                "When Normal and Charged Attacks hit, they create a lightning discharge that can jump between enemies, dealing Electro DMG.",
-                "Increases the character’s resistance to interruption, and decreases DMG taken.",
-                "A maximum of 1 lightning discharge can be triggered per second."
+                "Les attaques normales et chargées, lorsqu'elles touchent, libèrent une décharge électrique qui se propage d'ennemi en ennemi et inflige des DGT Électro.",
+                "Augmente la RÉS à l'interruption du personnage et réduit les DGT subis.",
+                "Au maximum, une décharge par seconde peut être libérée. Le plus puissant des éclairs peut fendre mers et montagnes."
               ]
             }
           ]
@@ -439,69 +439,69 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Conqueror of Tides",
-          "description": "Decreases all party member’s swimming Stamina consumption by 20%.",
+          "title": "Braveuse de marée",
+          "description": "Réduit la consommation d'endurance des personnages de l'équipe de 20% lors de la nage. Ne peut pas être cumulé avec d'autres aptitudes passives ayant les mêmes effets.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Retribution",
-          "description": "Counterattacking with Tidecaller at the precise moment when the character is hit grants the maximum DMG Bonus.",
+          "title": "Châtiment",
+          "description": "La contre-attaque d'Invocation des marées inflige le maximum de DGT lorsqu'elle est exécutée juste après une attaque.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Leviathan’s Protection",
-          "description": "Gain the following effects for 10s after unleashing Tidecaller with its maximum DMG Bonus:",
+          "title": "Tempête de coups de tonnerre",
+          "description": "Invocation des marées confère pendant 10s les effets suivants lorsqu'il est exécuté avec le maximum de DGT :",
           "descriptions": [
-            "DMG dealt by Normal and Charged Attacks is increased by 15%. ATK SPD of Normal and Charged Attacks is increased by 15%.",
-            "Greatly reduced delay before unleashing Charged Attacks."
+            "Les attaques normales et chargées infligent 15% de DGT supplémentaires.",
+            "Les attaques chargées se chargent beaucoup plus vite."
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Sea Beast’s Scourge",
-          "description": "When Stormbreaker is used:",
+          "title": "Fléau des monstres marins",
+          "description": "L'activation de Brisure d'orage confère les effets suivants:",
           "secondDescription": null,
           "descriptions": [
-            "Creates a shield that absorbs up to 16% of Beidou’s Max HP for 15s.",
-            "This shield absorbs Electro DMG 250% more effectively."
+            "Génère un bouclier qui absorbe une quantité de DGT équivalant à 16% des PV max et dure 15s.",
+            "Le bouclier est efficace à 250% contre les DGT Électro."
           ]
         },
         {
           "key": "c2",
-          "title": "Upon the Turbulent Sea, the Thunder Arises",
-          "description": "Stormbreaker’s arc lightning can jump 2 additional targets.",
+          "title": "Sur la mer turbulente, le tonnerre gronde",
+          "description": "Les décharges de Brisure d'orage se propagent à 2 ennemis supplémentaires.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Summoner of Storm",
-          "description": "Increases the Level of Tidecaller by 3. Maximum upgrade level is 15.",
+          "title": "Invocateur de tonnerre",
+          "description": "Niveau de compétence Invocation des marées +3. Niveau max 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Stunning Revenge",
-          "description": "Within 10s of taking DMG, Beidou’s Normal Attacks gain 20% additional Electro DMG.",
+          "title": "Vengeance étonnante",
+          "description": "Les attaques normales de Beidou infligent 20% de DGT Électro supplémentaires pendant 10s quand elle est touchée.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Crimson Tidewalker",
-          "description": "Increase the Level of Stormbreaker by 3. Maximum upgrade level is 15.",
+          "title": "Marcheur de marée écarlate",
+          "description": "Niveau de compétence Brisure d'orage +3. Niveau max 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Bane of Evil",
-          "description": "During the duration of Stormbreaker, the Electro RES of surrounding enemies is decreased by 15%.",
+          "title": "Chancre du mal",
+          "description": "La RÉS Électro des ennemis proches est réduite de 15% tant que Brisure d'orage est actif.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -510,63 +510,63 @@
     {
       "key": "Bennett",
       "name": "Bennett",
-      "description": "A righteous and good-natured adventurer from Mondstadt who’s unfortunately extremely unlucky.",
+      "description": "Un jeune aventurier originaire de Mondstadt. Sa gentillesse n'a d'égale que sa guigne.",
       "skills": [
         {
           "key": "s1",
-          "title": "Strike of Fortune",
+          "title": "Épée chanceuse",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 5 rapid strikes.",
+              "description": "Enchaîne jusqu'à 5 coups d'épée.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword swings.",
+              "description": "Consomme de l'endurance pour déclencher deux coups d'épée rapides.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Passion Overload",
-          "description": "Bennett puts all his fire and passion for adventuring into his sword. Results may vary based on how fired up he is.",
+          "title": "Surpassion",
+          "description": "Bennett concentre l'élément Pyro et sa passion pour l'aventure sur son épée. Différentes choses se produisent selon le niveau de passion atteint.",
           "abilities": [
             {
               "key": "a1",
-              "description": "A single, swift flame strike that deals Pyro DMG.",
+              "description": "Bennet exécute un coup rapide de sa lame enflammée, qui inflige des DGT Pyro aux ennemis en face.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Charges up, resulting in different effects when unleashed based on the Charge Level.",
-              "secondDescription": "Bennett takes no damage from being launched.",
+              "description": "Bennett effectue une charge qui donne des résultats différents selon le niveau de charge.",
+              "secondDescription": "Bennett ne subit pas de DGT lorsqu'il est projeté.",
               "descriptions": [
-                "Level 1: Strikes twice, dealing Pyro DMG and launching enemies.",
-                "Level 2: Unleashes 3 consecutive attacks that deal impressive Pyro DMG, but the last attack triggers an explosion that launches both Bennet and the enemy."
+                "Niveau 1: Bennett exécute une seconde attaque, qui inflige des DGT Pyro et projette les ennemis en l'air.",
+                "Niveau 2: Une troisième attaque complète l'enchaînement ; celle-ci inflige d'importants DGT Pyro. L'attaque se termine par une explosion, qui projette simultanément Bennett et les ennemis dans les airs."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Fantastic Voyage",
-          "description": "Bennett leaps towards the enemy and performs a plunging attack, dealing Pyro DMG, creating an Inspiration Field.",
+          "title": "Merveilleux voyage",
+          "description": "Bennett exécute une attaque sautée qui inflige des DGT Pyro et génère un champ vertueux.",
           "abilities": [
             {
-              "name": "Inspiration Field",
+              "name": "Champ vertueux",
               "description": null,
               "descriptions": [
-                "If the health of a character in the circle is equal to or falls below 70%, their health will continuously regenerate. Regeneration scales based on Bennett’s Max HP.",
-                "If the health of a character in the circle is higher than 70%, they gain an ATK Bonus that is based on Bennett’s Base ATK.",
-                "Applies the Pyro element to characters within the Field."
+                "Les personnages se trouvant dans le champ et ayant moins de 70% de PV sont soignés d'une quantité de PV proportionnelle aux PV max de Bennett.",
+                "Les personnages se trouvant dans le champ et ayant plus de 70% de PV obtiennent un bonus d'ATQ proportionnel à l'ATQ de base de bennett.",
+                "Le champ vertueux applique l'élément Pyro à tous les personnages qui s'y trouvent."
               ]
             }
           ]
@@ -575,66 +575,66 @@
       "passives": [
         {
           "key": "p1",
-          "title": "It Should Be Safe...",
-          "description": "When dispatched on an expedition in Mondstadt, time consumed is reduced by 25%.",
+          "title": "R.A.S.",
+          "description": "Réduit la durée d'une expédition de 25% lorsqu'elle se déroule à Mondstadt.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Rekindle",
-          "description": "Decreases Passion Overload’s CD by 20%.",
+          "title": "Renouveau de la passion",
+          "description": "Réduit le TdR de Surpassion de 20%.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Fearnaught",
-          "description": "When inside the area created by Fantastic Voyage, Passion Overload takes on the following effects:",
+          "title": "Enthousiasme intrépide",
+          "description": "Dans le champ de Merveilleux voyage, Surpassion bénéficie des effets suivants:",
           "descriptions": [
-            "CD is reduced by 50%.",
-            "Bennett will not be launched by the effects of Charge Level 2."
+            "TdR réduit de 50%.",
+            "Ne projette pas Bennett en l'air en niveau 2 de charge."
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Grand Expectation",
-          "description": "Fantastic Voyage’s ATK increases no longer has an HP restriction, and gains an additional 20% Base ATK.",
+          "title": "Perspective de voyage",
+          "description": "Le bonus d'ATK conféré par Merveilleux voyage n'est plus soumis à la restriction de PV, et augmente numériquement l'ATQ de base de Bennett de 20%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Impasse Conqueror",
-          "description": "When Bennett’s HP falls below 70%, his Energy Recharge is increased by 30%.",
+          "title": "Brise-désespoir",
+          "description": "La recharge d'énergie de Bennett augmente de 30% lorsque ses PV tombent en dessous de 70%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Unstoppable Fervor",
-          "description": "Increases the Level of Passion Overload by 3. Maximum upgrade level is 15.",
+          "title": "Passion ardente",
+          "description": "Niveau de compétence Surpassion +3. Niveau max 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Unexpected Odyssey",
-          "description": "Using a Normal Attack when executing the second attack of Passion Overload’s Charge Level 1 allows an additional attack to be performed. This additional attack does 135% of the second attack’s DMG.",
+          "title": "Enthousiasme éternel",
+          "description": "Une attaque supplémentaire est permise lorsque le deuxième coup de Surpassion en 1e charge est une attaque normale. Celle-ci inflige 135% des DGT du deuxième coup.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "True Explorer",
-          "description": "Increase the Level of Fantastic Voyage by 3. Maximum upgrade level is 15.",
+          "title": "Ouverture d'âme",
+          "description": "Niveau de compétence Merveilleux voyage +3. Niveau max 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Fire Ventures with Me",
-          "description": "Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage’s radius gain a 15% Pyro DMG Bonus. Normal and Charged Attacks now do Pyro DMG.",
+          "title": "Feu et courage",
+          "description": "Le champ de Merveilleux voyage confère à tous les personnages de l'équipe déployés et maniant une épée à une ou deux mains ou une arme d'hast qui s'y trouvent un bonus de DGT Pyro de 15%, ainsi qu'un enchantement Pyro.",
           "secondDescription": null,
           "descriptions": []
         }
