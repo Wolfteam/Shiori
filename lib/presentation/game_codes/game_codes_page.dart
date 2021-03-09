@@ -10,6 +10,7 @@ import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
 import 'package:genshindb/presentation/shared/wrapped_ascension_material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class GameCodesPage extends StatelessWidget {
   const GameCodesPage({
@@ -20,7 +21,15 @@ class GameCodesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return Scaffold(
-      appBar: AppBar(title: Text(s.gameCodes)),
+      appBar: AppBar(
+        title: Text(s.gameCodes),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.open_in_new),
+            onPressed: () => _launchUrl('https://genshin.mihoyo.com/en/gift'),
+          )
+        ],
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -106,5 +115,11 @@ class GameCodesPage extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  Future<void> _launchUrl(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    }
   }
 }

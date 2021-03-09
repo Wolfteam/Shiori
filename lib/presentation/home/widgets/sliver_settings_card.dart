@@ -11,6 +11,7 @@ class SliverSettingsCard extends StatelessWidget {
     final s = S.of(context);
     return SliverCardItem(
       onClick: _gotoSettingsPage,
+      iconToTheLeft: true,
       icon: Icon(Icons.settings, size: 60, color: theme.accentColor),
       children: [
         Text(s.theme, style: theme.textTheme.subtitle2),

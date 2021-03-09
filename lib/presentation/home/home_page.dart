@@ -8,6 +8,7 @@ import 'package:genshindb/presentation/today_materials/materials_page.dart';
 import 'widgets/sliver_calculators_card.dart';
 import 'widgets/sliver_characters_birthday_card.dart';
 import 'widgets/sliver_elements_card.dart';
+import 'widgets/sliver_game_codes_card.dart';
 import 'widgets/sliver_main_title.dart';
 import 'widgets/sliver_settings_card.dart';
 import 'widgets/sliver_today_char_ascension_materials.dart';
@@ -44,6 +45,8 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
         SliverWishSimulatorCard(),
         SliverMainTitle(title: s.tierListBuilder),
         SliverTierList(),
+        SliverMainTitle(title: s.gameCodes),
+        SliverGameCodesCard(),
         SliverMainTitle(title: s.settings),
         SliverSettingsCard(),
       ],
