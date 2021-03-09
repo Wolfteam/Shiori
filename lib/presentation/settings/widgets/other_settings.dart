@@ -4,7 +4,6 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/application/settings/settings_bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/game_codes/game_codes_page.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
@@ -89,28 +88,8 @@ class OtherSettings extends StatelessWidget {
               );
             },
           ),
-          ListTile(
-            dense: false,
-            title: Text(s.gameCodes),
-            subtitle: Container(
-              margin: const EdgeInsets.only(left: 10),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  s.seeAllInGameGameCodes,
-                  style: const TextStyle(color: Colors.grey, fontSize: 11),
-                ),
-              ),
-            ),
-            onTap: () => _showGameCodesDialog(context),
-          )
         ],
       ),
     );
-  }
-
-  Future<void> _showGameCodesDialog(BuildContext context) async {
-    context.read<GameCodesBloc>().add(const GameCodesEvent.opened());
-    await Navigator.push(context, MaterialPageRoute(fullscreenDialog: true, builder: (ctx) => const GameCodesPage()));
   }
 }
