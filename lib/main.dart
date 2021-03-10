@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_user_agent/flutter_user_agent.dart';
 import 'package:genshindb/domain/services/locale_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
 
@@ -14,6 +15,7 @@ import 'presentation/app_widget.dart';
 Future<void> main() async {
   //This is required by app center
   WidgetsFlutterBinding.ensureInitialized();
+  await FlutterUserAgent.init();
   await initInjection();
   runApp(MyApp());
 }

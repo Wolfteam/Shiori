@@ -236,11 +236,11 @@
   "approximate": "大约",
   "active": "已启用",
   "inactive": "未启用",
-  "gameCodes": "Game Codes",
-  "codes": "Codes",
-  "rewards": "Rewards",
-  "codeXWasCopied": "Code {value} was copied to the clipboard",
-  "expiredCodes": "Expired Codes",
-  "workingCodes": "Working Codes",
-  "seeAllInGameGameCodes": "See all the game codes that you can use"
+  "gameCodes": "兑换代码",
+  "codes": "代码",
+  "rewards": "奖励",
+  "codeXWasCopied": "代码 {value} 已复制到剪贴板",
+  "expiredCodes": "过期代码",
+  "workingCodes": "可用代码",
+  "seeAllInGameGameCodes": "查看全部可以使用的兑换代码"
 }

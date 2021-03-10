@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_user_agent/flutter_user_agent.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
@@ -15,6 +16,7 @@ class _MapPageState extends State<MapPage> {
   final flutterWebviewPlugin = FlutterWebviewPlugin();
 
   final String script = '''
+    let wasRemoved = false;
     function removeAds(){
       //console.log("Removing ads..");
       let topNav = document.getElementById("topnav");
@@ -23,40 +25,35 @@ class _MapPageState extends State<MapPage> {
       }
 
       let elements = document.getElementsByClassName("nav-link");
-        let total = elements.length;
-        for (let index = 0; index < total; index++) {
-            const element = elements[index];
-            const text = element.childNodes[0].textContent;
-            if (text !== "Markers") {
-                element.remove();
-                total--;
-                index--;
-            }
+      let total = elements.length;
+      for (let index = 0; index < total; index++) {
+          const element = elements[index];
+          if (index === 2 && !wasRemoved) {
+              element.remove();
+              wasRemoved = true;
+          }
+      }
 
-            if (total === 1)
-                break;
-        }
-
-        total = document.getElementsByClassName("fixed-bottom").length;
-        for (let index = 0; index < total; index++) {
-            if (document.getElementsByClassName("fixed-bottom").length > 0)
-              document.getElementsByClassName("fixed-bottom")[0].remove();
-        }
+      total = document.getElementsByClassName("fixed-bottom").length;
+      for (let index = 0; index < total; index++) {
+          if (document.getElementsByClassName("fixed-bottom").length > 0)
+            document.getElementsByClassName("fixed-bottom")[0].remove();
+      }
     }
-    setTimeout(removeAds, 800);
-    setTimeout(removeAds, 1600);
-    setTimeout(removeAds, 3200);
-    setTimeout(removeAds, 6400);
+    setTimeout(removeAds, 500);
+    setTimeout(removeAds, 1000);
+    setTimeout(removeAds, 2000);
+    setTimeout(removeAds, 3500);
     ''';
 
   @override
   void initState() {
     super.initState();
-    flutterWebviewPlugin.onStateChanged.listen((WebViewStateChanged state) {
+    flutterWebviewPlugin.onStateChanged.listen((WebViewStateChanged state) async {
       if (mounted) {
-        if (state.type == WebViewState.finishLoad) {
+        if (state.type == WebViewState.finishLoad && !state.url.contains('google')) {
           debugPrint('loaded...');
-          _onPageLoaded();
+          await _onPageLoaded();
         } else if (state.type == WebViewState.abortLoad) {
           // if there is a problem with loading the url
           debugPrint('there is a problem...');
@@ -88,12 +85,20 @@ class _MapPageState extends State<MapPage> {
         return state.map(
           loading: (_) => const Loading(),
           loaded: (state) {
+            final userAgent = FlutterUserAgent.webViewUserAgent.replaceAll(RegExp(r'wv'), '');
             if (state.hasInternetConnection) {
               return WebviewScaffold(
                 url: state.mapUrl,
-                hidden: true,
-                clearCache: true,
-                clearCookies: true,
+                userAgent: userAgent,
+                ignoreSSLErrors: true,
+                withJavascript: true,
+                withLocalStorage: true,
+                appCacheEnabled: true,
+                clearCookies: false,
+                clearCache: false,
+                initialChild: const Center(
+                  child: CircularProgressIndicator(),
+                ),
               );
             }
             return PageMessage(text: s.noInternetConnection);
@@ -118,8 +123,8 @@ class _MapPageState extends State<MapPage> {
     return Rect.fromLTWH(0.0, top + statusBarHeight, mediaQuery.size.width, height - statusBarHeight);
   }
 
-  void _onPageLoaded() {
-    flutterWebviewPlugin.resize(_buildRect());
-    flutterWebviewPlugin.evalJavascript(script);
+  Future<void> _onPageLoaded() async {
+    await flutterWebviewPlugin.resize(_buildRect());
+    await flutterWebviewPlugin.evalJavascript(script);
   }
 }
