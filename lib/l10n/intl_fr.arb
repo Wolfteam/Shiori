@@ -236,11 +236,11 @@
   "approximate": "Approximation",
   "active": "Actif",
   "inactive": "Inactif",
-  "gameCodes": "Game Codes",
+  "gameCodes": "Code jeu",
   "codes": "Codes",
-  "rewards": "Rewards",
-  "codeXWasCopied": "Code {value} was copied to the clipboard",
-  "expiredCodes": "Expired Codes",
-  "workingCodes": "Working Codes",
-  "seeAllInGameGameCodes": "See all the game codes that you can use"
+  "rewards": "Récompense",
+  "codeXWasCopied": "Code {value} copié dans le presse papier",
+  "expiredCodes": "Codes expiré",
+  "workingCodes": "Code fonctionnant",
+  "seeAllInGameGameCodes": "Voir tout les codes que vous pouvez utilisé"
 }
