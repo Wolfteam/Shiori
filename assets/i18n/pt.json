@@ -1253,7 +1253,7 @@
             },
             {
               "name": "Pétalas Sangrentas",
-              "description": "Enemies affected by Blood Blossom will take Pyro DMG every 4s. This DMG is considered Elemental Skill DMG.\nEach enemy can be affected by only one Blood Blossom effect at a time, and its duration may only be refreshed by Hu Tao herself.\nParamita Papilio ends when its duration is over, or Hu Tao has left the battlefield or fallen.",
+              "description": "Os inimigos afetados pelas Pétalas Sangrentas receberão a cada 4s Dano Pyro uma vez. Esse dano é considerado dano de habilidade elemental. Só é possivel existir um efeito de Pétalas Sangrentas por alvo, e sua duração só pode ser renovada por Hu Tao.",
               "descriptions": []
             }
           ]
@@ -1261,7 +1261,7 @@
         {
           "key": "s3",
           "title": "Pacificadora de Espiritos",
-          "description": "Commands a blazing spirit to attack, dealing Pyro DMG in a large AoE.\nUpon striking the enemy, regenerates a percentage of Hu Tao's Max HP. This effect can be triggered up to 5 times, based on the number of enemies hit.\nIf Hu Tao's HP is below or equal to 50% when the enemy is hit, both the DMG and HP Regeneration are increased.",
+          "description": "Balança a sua alma flamejante, causando Dano Pyro em uma grande AdE. Ao acertar nos inimigos, restaura a Vida de Hutao baseando na sua Vida Máxima. Esse efeito pode ser aplicado até 5 inimigos acertados. Ao acertar, se a Vida de Hutao for inferior ou igual a 50%, pode causar um maior Dano e Cura.",
           "abilities": []
         }
       ],
