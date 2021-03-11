@@ -32,8 +32,8 @@ const skillAscensionMap = {
   2: [2],
   3: [3, 4],
   4: [5, 6],
-  5: [7],
-  6: [8, 9, 10]
+  5: [7, 8],
+  6: [9, 10]
 };
 
 const characterExp = [
