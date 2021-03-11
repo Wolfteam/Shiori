@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:genshindb/application/common/pop_bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/genshin_service.dart';
@@ -11,11 +11,14 @@ part 'weapon_bloc.freezed.dart';
 part 'weapon_event.dart';
 part 'weapon_state.dart';
 
-class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
+class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
 
   WeaponBloc(this._genshinService, this._telemetryService) : super(const WeaponState.loading());
+
+  @override
+  WeaponEvent getEventForPop(String key) => WeaponEvent.loadFromName(key: key, addToQueue: false);
 
   @override
   Stream<WeaponState> mapEventToState(
@@ -23,16 +26,24 @@ class WeaponBloc extends Bloc<WeaponEvent, WeaponState> {
   ) async* {
     yield const WeaponState.loading();
     final s = await event.when(
-      loadFromImg: (img) async {
-        await _telemetryService.trackWeaponLoaded(img, loadedFromName: false);
+      loadFromImg: (img, addToQueue) async {
         final weapon = _genshinService.getWeaponByImg(img);
         final translation = _genshinService.getWeaponTranslation(weapon.key);
+
+        if (addToQueue) {
+          await _telemetryService.trackWeaponLoaded(img, loadedFromName: false);
+          currentItemsInStack.add(weapon.key);
+        }
         return _buildInitialState(weapon, translation);
       },
-      loadFromName: (name) async {
-        await _telemetryService.trackWeaponLoaded(name);
+      loadFromName: (name, addToQueue) async {
         final weapon = _genshinService.getWeapon(name);
         final translation = _genshinService.getWeaponTranslation(name);
+
+        if (addToQueue) {
+          await _telemetryService.trackWeaponLoaded(name);
+          currentItemsInStack.add(weapon.key);
+        }
         return _buildInitialState(weapon, translation);
       },
     );

@@ -20051,7 +20051,7 @@
       "fullImage": "Xiao.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": false,
       "region": "liyue",
       "role": "mainDps",

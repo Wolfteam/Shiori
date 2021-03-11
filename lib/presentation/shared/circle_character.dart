@@ -39,8 +39,10 @@ class CircleCharacter extends StatelessWidget {
   }
 
   Future<void> _gotoCharacterPage(String image, BuildContext context) async {
-    context.read<CharacterBloc>().add(CharacterEvent.loadFromImg(image: image));
+    final bloc = context.read<CharacterBloc>();
+    bloc.add(CharacterEvent.loadFromImg(image: image));
     final route = MaterialPageRoute(builder: (c) => const CharacterPage());
     await Navigator.push(context, route);
+    bloc.pop();
   }
 }

@@ -81,7 +81,7 @@ class TelemetryServiceImpl implements TelemetryService {
   }
 
   @override
-  Future<void> trackTierListOpened() => trackEventAsync('TierList-Opened');
+  Future<void> trackTierListOpened() => trackEventAsync('TierListBuilder-Opened');
 
   @override
   Future<void> trackInit(AppSettings settings) async {
