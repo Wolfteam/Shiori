@@ -19777,7 +19777,7 @@
             "crescent_pike.png",
             "primordial_jade_winged_spear.png",
             "skyward_spine.png",
-            "dragons_bane.png"
+            "vortex_vanquisher.png"
           ],
           "artifacts": [
             {
@@ -19804,17 +19804,16 @@
             "critRatePercentage",
             "critDmgPercentage",
             "atkPercentage",
-            "elementaryMastery",
-            "energyRechargePercentage"
+            "elementaryMastery"
           ]
         },
         {
           "isSupport": true,
           "weaponImages": [
-            "crescent_pike.png",
-            "primordial_jade_winged_spear.png",
-            "skyward_spine.png",
-            "dragons_bane.png"
+            "staff_of_homa.png",
+            "dragons_bane.png",
+            "lithic_spear.png",
+            "favonius_lance.png"
           ],
           "artifacts": [
             {
@@ -19831,9 +19830,9 @@
               "stats": [
                 "hp",
                 "atk",
-                "energyRechargePercentage",
+                "atkPercentage",
                 "pyroDmgBonusPercentage",
-                "elementaryMastery"
+                "critRatePercentage"
               ]
             }
           ],
