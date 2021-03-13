@@ -2,7 +2,7 @@
   "gameCodes": [
     {
       "dateAdded": "03/06/2021",
-      "isExpired": false,
+      "isExpired": true,
       "code": "PSNTC8FEQK4D",
       "rewards": [
         {
@@ -19,7 +19,7 @@
     },
     {
       "dateAdded": "03/06/2021",
-      "isExpired": false,
+      "isExpired": true,
       "code": "KTNSCQWW922M",
       "rewards": [
         {
@@ -36,7 +36,7 @@
     },
     {
       "dateAdded": "03/06/2021",
-      "isExpired": false,
+      "isExpired": true,
       "code": "ET7ADQFF8KJR",
       "rewards": [
         {
