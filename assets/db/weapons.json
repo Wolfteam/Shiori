@@ -22456,7 +22456,7 @@
         {
           "quantity": 50,
           "materialType": "ingredient",
-          "image": "white_iron_chunk.png"
+          "image": "starsilver.png"
         }
       ]
     },
@@ -29959,7 +29959,7 @@
         {
           "quantity": 50,
           "materialType": "ingredient",
-          "image": "white_iron_chunk.png"
+          "image": "starsilver.png"
         }
       ]
     },
@@ -35717,12 +35717,12 @@
         {
           "quantity": 50,
           "materialType": "ingredient",
-          "image": "crystal_chunk.png"
+          "image": "starsilver.png"
         },
         {
-          "quantity": 50,
+          "quantity": 8,
           "materialType": "ingredient",
-          "image": "white_iron_chunk.png"
+          "image": "vitalized_dragontooth.png"
         }
       ]
     },
