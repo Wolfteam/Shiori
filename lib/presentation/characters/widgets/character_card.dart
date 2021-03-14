@@ -26,6 +26,7 @@ class CharacterCard extends StatelessWidget {
   final bool isComingSoon;
   final List<String> materials;
   final bool isInSelectionMode;
+  final bool showMaterials;
 
   const CharacterCard({
     Key key,
@@ -39,6 +40,7 @@ class CharacterCard extends StatelessWidget {
     @required this.isComingSoon,
     @required this.materials,
     this.isInSelectionMode = false,
+    this.showMaterials = true,
   }) : super(key: key);
 
   @override
@@ -98,10 +100,11 @@ class CharacterCard extends StatelessWidget {
                     ),
                   ),
                   Rarity(stars: rarity),
-                  CharacterCardAscensionMaterialsBottom(
-                    materials: materials,
-                    weaponType: weaponType,
-                  ),
+                  if (showMaterials)
+                    CharacterCardAscensionMaterialsBottom(
+                      materials: materials,
+                      weaponType: weaponType,
+                    ),
                 ],
               ),
             ),
