@@ -20,6 +20,7 @@ abstract class MaterialFileModel implements _$MaterialFileModel {
 
   factory MaterialFileModel({
     @required String key,
+    @required int rarity,
     @required String image,
     @required bool isFromBoss,
     @required bool isForCharacters,

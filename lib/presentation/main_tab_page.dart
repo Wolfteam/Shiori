@@ -51,6 +51,7 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
     context.read<ElementsBloc>().add(const ElementsEvent.init());
     context.read<SettingsBloc>().add(const SettingsEvent.init());
     context.read<GameCodesBloc>().add(const GameCodesEvent.init());
+    context.read<MaterialsBloc>().add(const MaterialsEvent.init());
   }
 
   @override

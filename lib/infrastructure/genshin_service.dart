@@ -448,6 +448,14 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
+  List<MaterialCardModel> getAllMaterials() {
+    return _materialsFile.materials.map((e) {
+      final translation = _translationFile.materials.firstWhere((m) => m.key == e.key);
+      return MaterialCardModel(key: e.key, image: e.fullImagePath, rarity: e.rarity, type: e.type, name: translation.name);
+    }).toList();
+  }
+
+  @override
   MaterialFileModel getMaterialByImage(String image) {
     return _materialsFile.materials.firstWhere((m) => m.fullImagePath == image);
   }

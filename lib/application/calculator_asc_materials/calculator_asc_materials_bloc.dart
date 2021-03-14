@@ -161,7 +161,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
           case MaterialType.weaponPrimary:
             key = AscensionMaterialSummaryType.common;
             break;
-          case MaterialType.elemental:
+          case MaterialType.elementalStone:
           case MaterialType.jewels:
           case MaterialType.talents:
           case MaterialType.others:

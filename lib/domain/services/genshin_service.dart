@@ -39,6 +39,7 @@ abstract class GenshinService {
   List<ElementReactionCardModel> getElementReactions();
   List<ElementReactionCardModel> getElementResonances();
 
+  List<MaterialCardModel> getAllMaterials();
   MaterialFileModel getMaterialByImage(String image);
   List<MaterialFileModel> getMaterials(MaterialType type);
 
