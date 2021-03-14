@@ -2,6 +2,7 @@
   "talents": [
     {
       "key": "FreedomA",
+      "rarity": 2,
       "image": "teaching_of_freedom.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -16,6 +17,7 @@
     },
     {
       "key": "FreedomB",
+      "rarity": 3,
       "image": "guide_to_freedom.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -30,6 +32,7 @@
     },
     {
       "key": "FreedomC",
+      "rarity": 4,
       "image": "philosophies_of_freedom.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -44,6 +47,7 @@
     },
     {
       "key": "ProsperityA",
+      "rarity": 2,
       "image": "teaching_of_prosperity.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -58,6 +62,7 @@
     },
     {
       "key": "ProsperityB",
+      "rarity": 3,
       "image": "guide_to_prosperity.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -72,6 +77,7 @@
     },
     {
       "key": "ProsperityC",
+      "rarity": 4,
       "image": "philosophies_of_prosperity.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -86,6 +92,7 @@
     },
     {
       "key": "DilligenceA",
+      "rarity": 2,
       "image": "teaching_of_diligence.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -100,6 +107,7 @@
     },
     {
       "key": "DilligenceB",
+      "rarity": 3,
       "image": "guide_to_diligence.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -114,6 +122,7 @@
     },
     {
       "key": "DilligenceC",
+      "rarity": 4,
       "image": "philosophies_of_diligence.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -128,6 +137,7 @@
     },
     {
       "key": "ResistanceA",
+      "rarity": 2,
       "image": "teaching_of_resistance.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -142,6 +152,7 @@
     },
     {
       "key": "ResistanceB",
+      "rarity": 3,
       "image": "guide_to_resistance.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -156,6 +167,7 @@
     },
     {
       "key": "ResistanceC",
+      "rarity": 4,
       "image": "philosophies_of_resistance.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -170,6 +182,7 @@
     },
     {
       "key": "BalladA",
+      "rarity": 2,
       "image": "teaching_of_ballad.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -184,6 +197,7 @@
     },
     {
       "key": "BalladB",
+      "rarity": 3,
       "image": "guide_to_ballad.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -198,6 +212,7 @@
     },
     {
       "key": "BalladC",
+      "rarity": 4,
       "image": "philosophies_of_ballad.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -212,6 +227,7 @@
     },
     {
       "key": "GoldA",
+      "rarity": 2,
       "image": "teaching_of_gold.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -226,6 +242,7 @@
     },
     {
       "key": "GoldB",
+      "rarity": 3,
       "image": "guide_to_gold.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -240,6 +257,7 @@
     },
     {
       "key": "GoldC",
+      "rarity": 4,
       "image": "philosophies_of_gold.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -254,6 +272,7 @@
     },
     {
       "key": "Tail of Boreas",
+      "rarity": 5,
       "image": "tail_of_boreas.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -264,6 +283,7 @@
     },
     {
       "key": "Ring of Boreas",
+      "rarity": 5,
       "image": "ring_of_boreas.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -274,6 +294,7 @@
     },
     {
       "key": "Spirit Locket of Boreas",
+      "rarity": 5,
       "image": "spirit_locket_of_boreas.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -284,6 +305,7 @@
     },
     {
       "key": "Dvalin's Plume",
+      "rarity": 5,
       "image": "dvalins_plume.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -294,6 +316,7 @@
     },
     {
       "key": "Dvalin's Claw",
+      "rarity": 5,
       "image": "dvalins_claw.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -304,6 +327,7 @@
     },
     {
       "key": "Dvalin's Sigh",
+      "rarity": 5,
       "image": "dvalins_sigh.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -314,6 +338,7 @@
     },
     {
       "key": "Tusk of Monoceros Caeli",
+      "rarity": 5,
       "image": "tusk_of_monoceros_caeli.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -324,6 +349,7 @@
     },
     {
       "key": "Shard of a Foul Legacy",
+      "rarity": 5,
       "image": "shard_of_foul_legacy.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -334,6 +360,7 @@
     },
     {
       "key": "Shadow of the Warrior",
+      "rarity": 5,
       "image": "shadow_of_the_warrior.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -344,6 +371,7 @@
     },
     {
       "key": "Crown of Insight",
+      "rarity": 5,
       "image": "crown_of_sagehood.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -356,6 +384,7 @@
   "weapon": [
     {
       "key": "SacrificialKnifeA",
+      "rarity": 2,
       "image": "hunters_sacrificial_knife.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -366,6 +395,7 @@
     },
     {
       "key": "SacrificialKnifeB",
+      "rarity": 3,
       "image": "agents_sacrificial_knife.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -376,6 +406,7 @@
     },
     {
       "key": "SacrificialKnifeC",
+      "rarity": 4,
       "image": "inspectors_sacrificial_knife.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -386,6 +417,7 @@
     },
     {
       "key": "HornA",
+      "rarity": 2,
       "image": "heavy_horn.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -396,6 +428,7 @@
     },
     {
       "key": "HornB",
+      "rarity": 3,
       "image": "black_bronze_horn.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -406,6 +439,7 @@
     },
     {
       "key": "HornC",
+      "rarity": 4,
       "image": "black_crystal_horn.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -416,6 +450,7 @@
     },
     {
       "key": "ChaosA",
+      "rarity": 2,
       "image": "chaos_device.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -426,6 +461,7 @@
     },
     {
       "key": "ChaosB",
+      "rarity": 3,
       "image": "chaos_circuit.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -436,6 +472,7 @@
     },
     {
       "key": "ChaosC",
+      "rarity": 4,
       "image": "chaos_core.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -446,6 +483,7 @@
     },
     {
       "key": "LeyLineA",
+      "rarity": 2,
       "image": "dead_ley_line_branch.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -456,6 +494,7 @@
     },
     {
       "key": "LeyLineB",
+      "rarity": 3,
       "image": "dead_ley_line_leaves.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -466,6 +505,7 @@
     },
     {
       "key": "LeyLineC",
+      "rarity": 4,
       "image": "ley_line_sprout.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -476,6 +516,7 @@
     },
     {
       "key": "MistGrassA",
+      "rarity": 2,
       "image": "mist_grass_pollen.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -486,6 +527,7 @@
     },
     {
       "key": "MistGrassB",
+      "rarity": 3,
       "image": "mist_grass.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -496,6 +538,7 @@
     },
     {
       "key": "MistGrassC",
+      "rarity": 4,
       "image": "mist_grass_wick.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -506,6 +549,7 @@
     },
     {
       "key": "BoneShardA",
+      "rarity": 2,
       "image": "fragile_bone_shard.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -516,6 +560,7 @@
     },
     {
       "key": "BoneShardB",
+      "rarity": 3,
       "image": "sturdy_bone_shard.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -526,6 +571,7 @@
     },
     {
       "key": "BoneShardC",
+      "rarity": 4,
       "image": "fossilized_bone_shard.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -538,6 +584,7 @@
   "weaponPrimary": [
     {
       "key": "DecarabianA",
+      "rarity": 2,
       "image": "tile_of_decarabians_tower.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -552,6 +599,7 @@
     },
     {
       "key": "DecarabianB",
+      "rarity": 3,
       "image": "debris_of_decarabians_city.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -566,6 +614,7 @@
     },
     {
       "key": "DecarabianC",
+      "rarity": 4,
       "image": "fragment_of_decarabians_epic.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -580,6 +629,7 @@
     },
     {
       "key": "DecarabianD",
+      "rarity": 5,
       "image": "scattered_piece_of_decarabianss_dream.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -594,6 +644,7 @@
     },
     {
       "key": "GuyunA",
+      "rarity": 2,
       "image": "luminous_sands_from_guyun.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -608,6 +659,7 @@
     },
     {
       "key": "GuyunB",
+      "rarity": 3,
       "image": "lustrous_stone_from_guyun.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -622,6 +674,7 @@
     },
     {
       "key": "GuyunC",
+      "rarity": 4,
       "image": "relic_from_guyun.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -636,6 +689,7 @@
     },
     {
       "key": "GuyunD",
+      "rarity": 5,
       "image": "divine_body_from_guyun.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -650,6 +704,7 @@
     },
     {
       "key": "ElixirA",
+      "rarity": 2,
       "image": "mist_veiled_lead_elixir.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -664,6 +719,7 @@
     },
     {
       "key": "ElixirB",
+      "rarity": 3,
       "image": "mist_veiled_mercury_elixir.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -678,6 +734,7 @@
     },
     {
       "key": "ElixirC",
+      "rarity": 4,
       "image": "mist_veiled_gold_elixir.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -692,6 +749,7 @@
     },
     {
       "key": "ElixirD",
+      "rarity": 5,
       "image": "mist_veiled_primo_elixir.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -706,6 +764,7 @@
     },
     {
       "key": "BorealWolfA",
+      "rarity": 2,
       "image": "boreal_wolfs_milk_tooth.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -720,6 +779,7 @@
     },
     {
       "key": "BorealWolfB",
+      "rarity": 3,
       "image": "boreal_wolfs_cracked_tooth.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -734,6 +794,7 @@
     },
     {
       "key": "BorealWolfC",
+      "rarity": 4,
       "image": "boreal_wolfs_broken_fang.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -748,6 +809,7 @@
     },
     {
       "key": "BorealWolfD",
+      "rarity": 5,
       "image": "boreal_wolfs_nostalgia.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -762,6 +824,7 @@
     },
     {
       "key": "AerosideriteA",
+      "rarity": 2,
       "image": "grain_of_aerosiderite.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -776,6 +839,7 @@
     },
     {
       "key": "AerosideriteB",
+      "rarity": 3,
       "image": "piece_of_aerosiderite.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -790,6 +854,7 @@
     },
     {
       "key": "AerosideriteC",
+      "rarity": 4,
       "image": "bit_of_aerosiderite.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -804,6 +869,7 @@
     },
     {
       "key": "AerosideriteD",
+      "rarity": 5,
       "image": "chunk_of_aerosiderite.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -818,6 +884,7 @@
     },
     {
       "key": "GladiatorA",
+      "rarity": 2,
       "image": "fetters_of_the_dandelion_gladiator.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -832,6 +899,7 @@
     },
     {
       "key": "GladiatorB",
+      "rarity": 3,
       "image": "chains_of_the_dandelion_gladiator.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -846,6 +914,7 @@
     },
     {
       "key": "GladiatorC",
+      "rarity": 4,
       "image": "shackles_of_the_dandelion_gladiator.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -860,6 +929,7 @@
     },
     {
       "key": "GladiatorD",
+      "rarity": 5,
       "image": "dream_of_the_dandelion_gladiator.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -876,6 +946,7 @@
   "common": [
     {
       "key": "MaskA",
+      "rarity": 1,
       "image": "damaged_mask.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -886,6 +957,7 @@
     },
     {
       "key": "MaskB",
+      "rarity": 2,
       "image": "stained_mask.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -896,6 +968,7 @@
     },
     {
       "key": "MaskC",
+      "rarity": 3,
       "image": "ominous_mask.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -906,6 +979,7 @@
     },
     {
       "key": "StatuetteA",
+      "rarity": 1,
       "image": "gloomy_statuette.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -916,6 +990,7 @@
     },
     {
       "key": "StatuetteB",
+      "rarity": 2,
       "image": "dark_statuette.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -926,6 +1001,7 @@
     },
     {
       "key": "StatuetteC",
+      "rarity": 3,
       "image": "deathly_statuette.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -936,6 +1012,7 @@
     },
     {
       "key": "ScrollA",
+      "rarity": 1,
       "image": "divining_scroll.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -946,6 +1023,7 @@
     },
     {
       "key": "ScrollB",
+      "rarity": 2,
       "image": "sealed_scroll.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -956,6 +1034,7 @@
     },
     {
       "key": "ScrollC",
+      "rarity": 3,
       "image": "forbidden_curse_scroll.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -966,6 +1045,7 @@
     },
     {
       "key": "NectarA",
+      "rarity": 1,
       "image": "whopperflower_nectar.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -976,6 +1056,7 @@
     },
     {
       "key": "NectarB",
+      "rarity": 2,
       "image": "shimmering_nectar.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -986,6 +1067,7 @@
     },
     {
       "key": "NectarC",
+      "rarity": 3,
       "image": "energy_nectar.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -996,6 +1078,7 @@
     },
     {
       "key": "ArrowHeadA",
+      "rarity": 1,
       "image": "firm_arrowhead.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1006,6 +1089,7 @@
     },
     {
       "key": "ArrowHeadB",
+      "rarity": 2,
       "image": "sharp_arrowhead.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1016,6 +1100,7 @@
     },
     {
       "key": "ArrowHeadC",
+      "rarity": 3,
       "image": "weathered_arrowhead.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1026,6 +1111,7 @@
     },
     {
       "key": "CircularInsigniaA",
+      "rarity": 1,
       "image": "treasure_hoarder_insignia.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1036,6 +1122,7 @@
     },
     {
       "key": "CircularInsigniaB",
+      "rarity": 2,
       "image": "silver_raven_insignia.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1046,6 +1133,7 @@
     },
     {
       "key": "CircularInsigniaC",
+      "rarity": 3,
       "image": "golden_raven_insignia.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1056,6 +1144,7 @@
     },
     {
       "key": "InsigniaA",
+      "rarity": 1,
       "image": "recruits_insignia.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1066,6 +1155,7 @@
     },
     {
       "key": "InsigniaB",
+      "rarity": 2,
       "image": "sergeants_insignia.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1076,6 +1166,7 @@
     },
     {
       "key": "InsigniaC",
+      "rarity": 3,
       "image": "lieutenants_insignia.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1086,6 +1177,7 @@
     },
     {
       "key": "SlimeA",
+      "rarity": 1,
       "image": "slime_condensate.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1096,6 +1188,7 @@
     },
     {
       "key": "SlimeB",
+      "rarity": 2,
       "image": "slime_secretions.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1106,6 +1199,7 @@
     },
     {
       "key": "SlimeC",
+      "rarity": 3,
       "image": "slime_concentrate.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1118,6 +1212,7 @@
   "currency": [
     {
       "key": "Mora",
+      "rarity": 3,
       "image": "mora.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1130,78 +1225,86 @@
   "elemental": [
     {
       "key": "BasaltPillar",
+      "rarity": 4,
       "image": "basalt_pillar.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
-      "type": "elemental",
+      "type": "elementalStone",
       "days": []
     },
     {
       "key": "CleansingHeart",
+      "rarity": 4,
       "image": "cleansing_heart.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
-      "type": "elemental",
+      "type": "elementalStone",
       "days": []
     },
     {
       "key": "EverflameSeed",
+      "rarity": 4,
       "image": "everflame_seed.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
-      "type": "elemental",
+      "type": "elementalStone",
       "days": []
     },
     {
       "key": "HoarfrostCore",
+      "rarity": 4,
       "image": "hoarfrost_core.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
-      "type": "elemental",
+      "type": "elementalStone",
       "days": []
     },
     {
       "key": "HurricaneSeed",
+      "rarity": 4,
       "image": "hurricane_seed.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
-      "type": "elemental",
+      "type": "elementalStone",
       "days": []
     },
     {
       "key": "LightningPrism",
+      "rarity": 4,
       "image": "lightning_prism.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
-      "type": "elemental",
+      "type": "elementalStone",
       "days": []
     },
     {
       "key": "JuvenileJade",
+      "rarity": 4,
       "image": "juvenile_jade.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
-      "type": "elemental",
+      "type": "elementalStone",
       "days": []
     }
   ],
   "jewels": [
     {
       "key": "AgateA",
+      "rarity": 2,
       "image": "agnidus_agate_sliver.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1212,6 +1315,7 @@
     },
     {
       "key": "AgateB",
+      "rarity": 3,
       "image": "agnidus_agate_fragment.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1222,6 +1326,7 @@
     },
     {
       "key": "AgateC",
+      "rarity": 4,
       "image": "agnidus_agate_chunk.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1232,6 +1337,7 @@
     },
     {
       "key": "AgateD",
+      "rarity": 5,
       "image": "agnidus_agate_gemstone.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1242,6 +1348,7 @@
     },
     {
       "key": "DiamondA",
+      "rarity": 2,
       "image": "brilliant_diamond_sliver.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1252,6 +1359,7 @@
     },
     {
       "key": "DiamondB",
+      "rarity": 3,
       "image": "brilliant_diamond_fragment.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1262,6 +1370,7 @@
     },
     {
       "key": "DiamondC",
+      "rarity": 4,
       "image": "brilliant_diamond_chunk.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1272,6 +1381,7 @@
     },
     {
       "key": "DiamondD",
+      "rarity": 5,
       "image": "brilliant_diamond_gemstone.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1282,6 +1392,7 @@
     },
     {
       "key": "EmeraldA",
+      "rarity": 2,
       "image": "nagadus_emerald_sliver.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1292,6 +1403,7 @@
     },
     {
       "key": "EmeraldB",
+      "rarity": 3,
       "image": "nagadus_emerald_fragment.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1302,6 +1414,7 @@
     },
     {
       "key": "EmeraldC",
+      "rarity": 4,
       "image": "nagadus_emerald_chunk.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1312,6 +1425,7 @@
     },
     {
       "key": "EmeraldD",
+      "rarity": 5,
       "image": "nagadus_emerald_gemstone.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1322,6 +1436,7 @@
     },
     {
       "key": "TopazA",
+      "rarity": 2,
       "image": "prithiva_topaz_sliver.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1332,6 +1447,7 @@
     },
     {
       "key": "TopazB",
+      "rarity": 3,
       "image": "prithiva_topaz_fragment.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1342,6 +1458,7 @@
     },
     {
       "key": "TopazC",
+      "rarity": 4,
       "image": "prithiva_topaz_chunk.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1352,6 +1469,7 @@
     },
     {
       "key": "TopazD",
+      "rarity": 5,
       "image": "prithiva_topaz_gemstone.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1362,6 +1480,7 @@
     },
     {
       "key": "JadeA",
+      "rarity": 2,
       "image": "shivada_jade_sliver.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1372,6 +1491,7 @@
     },
     {
       "key": "JadeB",
+      "rarity": 3,
       "image": "shivada_jade_fragment.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1382,6 +1502,7 @@
     },
     {
       "key": "JadeC",
+      "rarity": 4,
       "image": "shivada_jade_chunk.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1392,6 +1513,7 @@
     },
     {
       "key": "JadeD",
+      "rarity": 5,
       "image": "shivada_jade_gemstone.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1402,6 +1524,7 @@
     },
     {
       "key": "AmethystA",
+      "rarity": 2,
       "image": "vajrada_amethyst_sliver.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1412,6 +1535,7 @@
     },
     {
       "key": "AmethystB",
+      "rarity": 3,
       "image": "vajrada_amethyst_fragment.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1422,6 +1546,7 @@
     },
     {
       "key": "AmethystC",
+      "rarity": 4,
       "image": "vajrada_amethyst_chunk.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1432,6 +1557,7 @@
     },
     {
       "key": "AmethystD",
+      "rarity": 5,
       "image": "vajrada_amethyst_gemstone.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1442,6 +1568,7 @@
     },
     {
       "key": "LazuriteA",
+      "rarity": 2,
       "image": "varunada_lazurite_sliver.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1452,6 +1579,7 @@
     },
     {
       "key": "LazuriteB",
+      "rarity": 3,
       "image": "varunada_lazurite_fragment.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1462,6 +1590,7 @@
     },
     {
       "key": "LazuriteC",
+      "rarity": 4,
       "image": "varunada_lazurite_chunk.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1472,6 +1601,7 @@
     },
     {
       "key": "LazuriteD",
+      "rarity": 5,
       "image": "varunada_lazurite_gemstone.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1482,6 +1612,7 @@
     },
     {
       "key": "TurquoiseA",
+      "rarity": 2,
       "image": "vayuda_turquoise_sliver.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1492,6 +1623,7 @@
     },
     {
       "key": "TurquoiseB",
+      "rarity": 3,
       "image": "vayuda_turquoise_fragment.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1502,6 +1634,7 @@
     },
     {
       "key": "TurquoiseC",
+      "rarity": 4,
       "image": "vayuda_turquoise_chunk.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1512,6 +1645,7 @@
     },
     {
       "key": "TurquoiseD",
+      "rarity": 5,
       "image": "vayuda_turquoise_gemstone.png",
       "isFromBoss": true,
       "isForCharacters": true,
@@ -1524,6 +1658,7 @@
   "locals": [
     {
       "key": "CallaLily",
+      "rarity": 1,
       "image": "calla_lily.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1534,6 +1669,7 @@
     },
     {
       "key": "Cecilia",
+      "rarity": 1,
       "image": "cecilia.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1544,6 +1680,7 @@
     },
     {
       "key": "CorLapis",
+      "rarity": 1,
       "image": "cor_lapis.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1554,6 +1691,7 @@
     },
     {
       "key": "DandelionSeed",
+      "rarity": 1,
       "image": "dandelion_seed.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1564,6 +1702,7 @@
     },
     {
       "key": "GlazeLily",
+      "rarity": 1,
       "image": "glaze_lily.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1574,6 +1713,7 @@
     },
     {
       "key": "JueyunChili",
+      "rarity": 1,
       "image": "jueyun_chili.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1584,6 +1724,7 @@
     },
     {
       "key": "NoctilousJade",
+      "rarity": 1,
       "image": "noctilous_jade.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1594,6 +1735,7 @@
     },
     {
       "key": "PhilanemoMushroom",
+      "rarity": 1,
       "image": "philanemo_mushroom.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1604,6 +1746,7 @@
     },
     {
       "key": "Qingxin",
+      "rarity": 1,
       "image": "qingxin.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1614,6 +1757,7 @@
     },
     {
       "key": "SilkFlower",
+      "rarity": 1,
       "image": "silk_flower.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1624,6 +1768,7 @@
     },
     {
       "key": "SmallLampGrass",
+      "rarity": 1,
       "image": "small_lamp_grass.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1634,6 +1779,7 @@
     },
     {
       "key": "Starconch",
+      "rarity": 1,
       "image": "starconch.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1644,6 +1790,7 @@
     },
     {
       "key": "Valberry",
+      "rarity": 1,
       "image": "valberry.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1654,6 +1801,7 @@
     },
     {
       "key": "Violetgrass",
+      "rarity": 1,
       "image": "violetgrass.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1664,6 +1812,7 @@
     },
     {
       "key": "WindwheelAster",
+      "rarity": 1,
       "image": "windwheel_aster.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1674,6 +1823,7 @@
     },
     {
       "key": "Wolfhook",
+      "rarity": 1,
       "image": "wolfhook.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1686,6 +1836,7 @@
   "experience": [
     {
       "key": "EnhancementOreA",
+      "rarity": 1,
       "image": "enchancement_ore.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -1700,6 +1851,7 @@
     },
     {
       "key": "EnhancementOreB",
+      "rarity": 2,
       "image": "fine_enchancement_ore.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -1714,6 +1866,7 @@
     },
     {
       "key": "EnhancementOreC",
+      "rarity": 3,
       "image": "mystic_enchancement_ore.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -1728,6 +1881,7 @@
     },
     {
       "key": "CharExpA",
+      "rarity": 2,
       "image": "wanderers_advice.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1742,6 +1896,7 @@
     },
     {
       "key": "CharExpB",
+      "rarity": 3,
       "image": "adventurers_experience.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1756,6 +1911,7 @@
     },
     {
       "key": "CharExpC",
+      "rarity": 4,
       "image": "heros_wit.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1767,6 +1923,107 @@
         "experience": 20000,
         "pricePerUsage": 4000
       }
+    }
+  ],
+  "ingredient": [
+    {
+      "key": "Starsilver",
+      "rarity": 3,
+      "image": "starsilver.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 3,
+      "type": "ingredient",
+      "days": []
+    },
+    {
+      "key": "Vitalized Dragontooth",
+      "rarity": 4,
+      "image": "vitalized_dragontooth.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": []
+    },
+    {
+      "key": "White Iron Chunk",
+      "rarity": 1,
+      "image": "white_iron_chunk.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": []
+    },
+    {
+      "key": "Crystal Chunk",
+      "rarity": 1,
+      "image": "crystal_chunk.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": []
+    },
+    {
+      "key": "Northlander Bow Billet",
+      "rarity": 4,
+      "image": "northlander_bow_prototype.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": []
+    },
+    {
+      "key": "Northlander Catalyst Billet",
+      "rarity": 4,
+      "image": "northlander_catalyst_prototype.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": []
+    },
+    {
+      "key": "Northlander Claymore Billet",
+      "rarity": 4,
+      "image": "northlander_claymore_prototype.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": []
+    },
+    {
+      "key": "Northlander Polearm Billet",
+      "rarity": 4,
+      "image": "northlander_polearm_prototype.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": []
+    },
+    {
+      "key": "Northlander Sword Billet",
+      "rarity": 4,
+      "image": "northlander_sword_prototype.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": []
     }
   ]
 }

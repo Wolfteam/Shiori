@@ -1,0 +1,4 @@
+enum MaterialFilterType {
+  name,
+  rarity,
+}

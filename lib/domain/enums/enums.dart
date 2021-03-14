@@ -13,6 +13,7 @@ export 'day_type.dart';
 export 'element_type.dart';
 export 'item_location_type.dart';
 export 'item_status_type.dart';
+export 'material_filter_type.dart';
 export 'material_type.dart';
 export 'region_type.dart';
 export 'sort_direction_type.dart';
