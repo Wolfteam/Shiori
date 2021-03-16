@@ -53,7 +53,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -84,7 +84,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -115,7 +115,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -146,7 +146,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -177,7 +177,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -708,7 +708,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -739,7 +739,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -770,7 +770,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -801,7 +801,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -832,7 +832,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -1389,7 +1389,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -1420,7 +1420,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -1451,7 +1451,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -1482,7 +1482,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -1513,7 +1513,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -1914,7 +1914,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -1945,7 +1945,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -1976,7 +1976,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -2007,7 +2007,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -2038,7 +2038,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -2543,7 +2543,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -2574,7 +2574,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -2605,7 +2605,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -2636,7 +2636,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -2667,7 +2667,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -3241,7 +3241,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -3272,7 +3272,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -3303,7 +3303,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -3334,7 +3334,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -3365,7 +3365,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -3930,7 +3930,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -3961,7 +3961,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -3992,7 +3992,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -4023,7 +4023,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -4054,7 +4054,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -4618,7 +4618,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -4649,7 +4649,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -4680,7 +4680,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -4711,7 +4711,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -4742,7 +4742,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -5269,7 +5269,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -5300,7 +5300,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -5331,7 +5331,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -5362,7 +5362,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -5393,7 +5393,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -5963,7 +5963,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -5994,7 +5994,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -6025,7 +6025,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -6056,7 +6056,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -6087,7 +6087,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -6630,7 +6630,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -6661,7 +6661,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -6692,7 +6692,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -6723,7 +6723,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -6754,7 +6754,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -7348,7 +7348,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "juvenile_jade.png"
             },
             {
@@ -7379,7 +7379,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "juvenile_jade.png"
             },
             {
@@ -7410,7 +7410,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "juvenile_jade.png"
             },
             {
@@ -7441,7 +7441,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "juvenile_jade.png"
             },
             {
@@ -7472,7 +7472,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "juvenile_jade.png"
             },
             {
@@ -7998,7 +7998,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hurricane_seed.png"
             },
             {
@@ -8029,7 +8029,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hurricane_seed.png"
             },
             {
@@ -8060,7 +8060,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hurricane_seed.png"
             },
             {
@@ -8091,7 +8091,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hurricane_seed.png"
             },
             {
@@ -8122,7 +8122,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hurricane_seed.png"
             },
             {
@@ -8705,7 +8705,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -8736,7 +8736,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -8767,7 +8767,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -8798,7 +8798,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -8829,7 +8829,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -9373,7 +9373,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -9404,7 +9404,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -9435,7 +9435,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -9466,7 +9466,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -9497,7 +9497,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -10078,7 +10078,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -10109,7 +10109,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -10140,7 +10140,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -10171,7 +10171,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -10202,7 +10202,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -10728,7 +10728,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -10759,7 +10759,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -10790,7 +10790,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -10821,7 +10821,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -10852,7 +10852,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -11397,7 +11397,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -11428,7 +11428,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -11459,7 +11459,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -11490,7 +11490,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -11521,7 +11521,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -12067,7 +12067,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -12098,7 +12098,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -12129,7 +12129,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -12160,7 +12160,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -12191,7 +12191,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -12764,7 +12764,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -12795,7 +12795,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -12826,7 +12826,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -12857,7 +12857,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -12888,7 +12888,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -13455,7 +13455,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -13486,7 +13486,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -13517,7 +13517,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -13548,7 +13548,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -13579,7 +13579,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -14086,7 +14086,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -14117,7 +14117,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -14148,7 +14148,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -14179,7 +14179,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -14210,7 +14210,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "lightning_prism.png"
             },
             {
@@ -14728,7 +14728,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -14759,7 +14759,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -14790,7 +14790,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -14821,7 +14821,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -14852,7 +14852,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hoarfrost_core.png"
             },
             {
@@ -15318,7 +15318,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hurricane_seed.png"
             },
             {
@@ -15349,7 +15349,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hurricane_seed.png"
             },
             {
@@ -15380,7 +15380,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hurricane_seed.png"
             },
             {
@@ -15411,7 +15411,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hurricane_seed.png"
             },
             {
@@ -15442,7 +15442,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hurricane_seed.png"
             },
             {
@@ -15985,7 +15985,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -16016,7 +16016,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -16047,7 +16047,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -16078,7 +16078,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -16109,7 +16109,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -18802,7 +18802,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hurricane_seed.png"
             },
             {
@@ -18833,7 +18833,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hurricane_seed.png"
             },
             {
@@ -18864,7 +18864,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hurricane_seed.png"
             },
             {
@@ -18895,7 +18895,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hurricane_seed.png"
             },
             {
@@ -18926,7 +18926,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "hurricane_seed.png"
             },
             {
@@ -19451,7 +19451,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -19482,7 +19482,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -19513,7 +19513,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -19544,7 +19544,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -19575,7 +19575,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -20126,7 +20126,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "juvenile_jade.png"
             },
             {
@@ -20157,7 +20157,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "juvenile_jade.png"
             },
             {
@@ -20188,7 +20188,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "juvenile_jade.png"
             },
             {
@@ -20219,7 +20219,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "juvenile_jade.png"
             },
             {
@@ -20250,7 +20250,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "juvenile_jade.png"
             },
             {
@@ -20778,7 +20778,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -20809,7 +20809,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -20840,7 +20840,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -20871,7 +20871,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -20902,7 +20902,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "cleansing_heart.png"
             },
             {
@@ -21428,7 +21428,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -21459,7 +21459,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -21490,7 +21490,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -21521,7 +21521,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -21552,7 +21552,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "everflame_seed.png"
             },
             {
@@ -22105,7 +22105,7 @@
             },
             {
               "quantity": 2,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -22136,7 +22136,7 @@
             },
             {
               "quantity": 4,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -22167,7 +22167,7 @@
             },
             {
               "quantity": 8,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -22198,7 +22198,7 @@
             },
             {
               "quantity": 12,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {
@@ -22229,7 +22229,7 @@
             },
             {
               "quantity": 20,
-              "materialType": "elemental",
+              "materialType": "elementalStone",
               "image": "basalt_pillar.png"
             },
             {

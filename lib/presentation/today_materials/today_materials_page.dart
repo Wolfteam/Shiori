@@ -7,12 +7,12 @@ import 'package:genshindb/presentation/shared/loading.dart';
 import 'widgets/sliver_character_ascension_materials.dart';
 import 'widgets/sliver_weapon_ascension_materials.dart';
 
-class MaterialsPage extends StatelessWidget {
+class TodayMaterialsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
-    return BlocBuilder<MaterialsBloc, MaterialsState>(
+    return BlocBuilder<TodayMaterialsBloc, TodayMaterialsState>(
       builder: (context, state) {
         return state.when(
           loading: () => const Loading(),

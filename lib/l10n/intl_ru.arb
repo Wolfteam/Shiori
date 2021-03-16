@@ -242,5 +242,13 @@
   "codeXWasCopied": "Код {value} был скопирован в буфер обмена",
   "expiredCodes": "Просроченные коды",
   "workingCodes": "Рабочие коды",
-  "seeAllInGameGameCodes": "Посмотрите все игровые коды, которые вы можете использовать"
+  "seeAllInGameGameCodes": "Посмотрите все игровые коды, которые вы можете использовать",
+  "ingredient": "Ingredient",
+  "talent": "Talent",
+  "local": "Local",
+  "elementalStone": "Elemental Stone",
+  "jewel": "Jewel",
+  "checkAllMaterials": "Check all the available materials",
+  "related": "Related",
+  "obtainedFrom": "Obtained From"
 }

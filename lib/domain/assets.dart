@@ -80,7 +80,7 @@ class Assets {
         return getCommonMaterialPath(name);
       case MaterialType.currency:
         return getCurrencyMaterialPath(name);
-      case MaterialType.elemental:
+      case MaterialType.elementalStone:
         return getElementalMaterialPath(name);
       case MaterialType.jewels:
         return getJewelMaterialPath(name);

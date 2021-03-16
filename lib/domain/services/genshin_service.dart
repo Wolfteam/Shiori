@@ -21,16 +21,21 @@ abstract class GenshinService {
   WeaponCardModel getWeaponForCardByImg(String image);
   WeaponFileModel getWeapon(String key);
   WeaponFileModel getWeaponByImg(String img);
-  List<String> getCharactersImgUsingWeapon(String key);
 
   List<ArtifactCardModel> getArtifactsForCard();
   ArtifactCardModel getArtifactForCardByImg(String image);
   ArtifactFileModel getArtifact(String key);
-  List<String> getCharactersImgUsingArtifact(String key);
+
+  List<String> getCharacterImgsUsingWeapon(String key);
+  List<String> getCharacterImgsUsingArtifact(String key);
+  List<String> getCharacterImgsUsingMaterial(String key);
+  List<String> getWeaponImgsUsingMaterial(String key);
+  List<String> getRelatedMaterialImgsToMaterial(String key);
 
   TranslationArtifactFile getArtifactTranslation(String key);
   TranslationCharacterFile getCharacterTranslation(String key);
   TranslationWeaponFile getWeaponTranslation(String key);
+  TranslationMaterialFile getMaterialTranslation(String key);
 
   List<TodayCharAscensionMaterialsModel> getCharacterAscensionMaterials(int day);
   List<TodayWeaponAscensionMaterialModel> getWeaponAscensionMaterials(int day);
@@ -39,6 +44,8 @@ abstract class GenshinService {
   List<ElementReactionCardModel> getElementReactions();
   List<ElementReactionCardModel> getElementResonances();
 
+  List<MaterialCardModel> getAllMaterials();
+  MaterialFileModel getMaterial(String key);
   MaterialFileModel getMaterialByImage(String image);
   List<MaterialFileModel> getMaterials(MaterialType type);
 
