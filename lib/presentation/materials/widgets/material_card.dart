@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/models/materials/material_card_model.dart';
+import 'package:genshindb/presentation/material/material_page.dart' as mp;
 import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:genshindb/presentation/shared/gradient_card.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
@@ -74,7 +77,7 @@ class MaterialCard extends StatelessWidget {
     final theme = Theme.of(context);
     return InkWell(
       borderRadius: Styles.mainCardBorderRadius,
-      onTap: () {},
+      onTap: () => _gotoMaterialPage(context),
       child: GradientCard(
         clipBehavior: Clip.hardEdge,
         shape: Styles.mainCardShape,
@@ -108,5 +111,13 @@ class MaterialCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _gotoMaterialPage(BuildContext context) async {
+    final bloc = context.read<MaterialBloc>();
+    bloc.add(MaterialEvent.loadFromName(key: keyName));
+    final route = MaterialPageRoute(builder: (c) => mp.MaterialPage());
+    await Navigator.push(context, route);
+    bloc.pop();
   }
 }

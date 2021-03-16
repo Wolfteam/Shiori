@@ -5,7 +5,7 @@ import 'package:genshindb/presentation/shared/item_description_detail.dart';
 import 'package:genshindb/presentation/shared/wrapped_ascension_material.dart';
 
 class WeaponCraftingMaterials extends StatelessWidget {
-  final List<WeaponCraftedFileModel> materials;
+  final List<ItemAscensionMaterialModel> materials;
   final Color rarityColor;
 
   const WeaponCraftingMaterials({
