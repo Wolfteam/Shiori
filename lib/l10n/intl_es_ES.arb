@@ -242,5 +242,13 @@
   "codeXWasCopied": "El código {value} fue copiado al portapapeles",
   "expiredCodes": "Códigos Expirados",
   "workingCodes": "Códigos Funcionales",
-  "seeAllInGameGameCodes": "Ve todos los códigos del juego que puedes usar"
+  "seeAllInGameGameCodes": "Ve todos los códigos del juego que puedes usar",
+  "ingredient": "Ingrediente",
+  "talent": "Talento",
+  "local": "Local",
+  "elementalStone": "Piedra Elemental",
+  "jewel": "Joya",
+  "checkAllMaterials": "Comprueba todos los materials disponibles",
+  "related": "Relacionado",
+  "obtainedFrom": "Obtenido de"
 }
