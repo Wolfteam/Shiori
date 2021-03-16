@@ -361,7 +361,7 @@
           "descriptions": []
         },
         {
-          "key": "c1",
+          "key": "c6",
           "title": "В твою честь",
           "description": "Когда член отряда Барбары погибает, и она не находится на поле боя:",
           "secondDescription": "Может возникнуть раз в 15 мин.",
@@ -4074,9 +4074,9 @@
     },
     {
       "key": "The Alley Flash",
-      "name": "The Alley Flash",
-      "description": "A straight sword as black as the night. It once belonged to a thief who roamed the benighted streets.",
-      "refinement": "Increases DMG dealt by the character equipping this weapon by {{0}}%. Taking DMG disables this effect for 5s."
+      "name": "Вспышка во тьме",
+      "description": "Черный как ночь клинок. Его хозяином был грабитель, который орудовал в темных переулках.",
+      "refinement": "Увеличивает урон персонажа на {{0}}%. После получения урона эффект пропадает на 5 сек."
     },
     {
       "key": "The Black Sword",
@@ -4218,9 +4218,9 @@
     },
     {
       "key": "Wine and Song",
-      "name": "Wine and Song",
-      "description": "A songbook from the bygone aristocratic era, whose composer has become forgotten. It chronicles the tale of a certain heroic outlaw.",
-      "refinement": "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by {{0}}% for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by {{1}}% for 5s."
+      "name": "Вино и стихи",
+      "description": "Сборник песен давно минувшей эпохи аристократии. В нем автор, чьё имя кануло в лету, ведёт сказ об одном благородном разбойнике.",
+      "refinement": "Попадания обычной атакой уменьшают потребление выносливости спринта и навыков, заменяющих спринт, на {{0}}% в течение 5 сек. Кроме того, использование спринта или навыка, заменяющего спринт, увеличивает силу атаки на {{1}}% в течение 5 сек."
     },
     {
       "key": "Eye of Perception",
@@ -4484,7 +4484,7 @@
       "key": "Skyward Spine",
       "name": "Небесная ось",
       "description": "Длинное копьё, символ твёрдой воли дракона ветра. Тянущееся вверх древко указывает на небесный свод, питающий его силой небес и ветров.",
-      "refinement": "“Увеличивает шанс крит.попадания на {{0}}% и скорость обычной атаки на 12%. При попадании обычной или заряженной атакой есть 50% шанс активировать неосязаемое лезвие, которое наносит {{1}}% урона в небольшом радиусе. Может возникнуть раз в 2 сек."
+      "refinement": "Увеличивает шанс крит.попадания на {{0}}% и скорость обычной атаки на 12%. При попадании обычной или заряженной атакой есть 50% шанс активировать неосязаемое лезвие, которое наносит {{1}}% урона в небольшом радиусе. Может возникнуть раз в 2 сек."
     },
     {
       "key": "Primordial Jade Cutter",
@@ -4500,15 +4500,15 @@
     },
     {
       "key": "Windblume Ode",
-      "name": "Windblume Ode",
-      "description": "A bow adorned with nameless flowers that bears the earnest hopes of an equally nameless person.",
-      "refinement": "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by {{0}}% for 6s."
+      "name": "Ода анемонии",
+      "description": "Украшенный безымянными цветами лук несет заветные желания такого же безымянного человека",
+      "refinement": "Использование элементального навыка накладывает Древнее желание анемонии, которое увеличивает силу атаки на {{0}}% в течение 6 сек."
     },
     {
       "key": "Elegy for the End",
-      "name": "Elegy for the End",
-      "description": "A bow as lovely as any bard's lyre, its arrows pierce the heart like a lamenting sigh.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by {{0}}. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by {{1}} and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "name": "”Элегия погибели",
+      "description": "В изящности этот лук не уступает лире барда. Словно вздох печали, выпущенные из него стрелы разят точно в сердце.",
+      "refinement": "С ветром доносится мотив Тысячелетней симфонии, которая увеличивает мастерство стихий на {{0}} ед. При попадании элементальным навыком или взрывом стихии по противнику персонаж получает один Талисман воспоминаний. Он может возникнуть раз в 0.2 сек., даже когда персонаж в отряде, но не активен. Четыре собранных Талисмана воспоминаний пропадают, на 12 сек. наделяя ближайших членов отряда эффектом Тысячелетняя симфония: Прощальный гимн. Их мастерство стихии повышается на {{1}} ед., а сила атаки - на {{2}}%. В течение 20 сек. после активации эффекта Талисманы воспоминаний появляться не будут. Тысячелетняя симфония с эффектами, влияющими на те же навыки, не складывается."
     }
   ],
   "artifacts": [
@@ -5679,7 +5679,7 @@
     {
       "key": "High Voltage",
       "name": "Энергия Электро",
-      "effect": "Уменьшает длительность Пиро эффекта на 40%, Суперпроводник, Перегрузка и Заряжен имеют шанс в 100% создать элементальную частицу Электро (Уменьшение восстановления умения на 5%)."
+      "effect": "Уменьшает длительность Гидро эффекта на 40%, Суперпроводник, Перегрузка и Заряжен имеют шанс в 100% создать элементальную частицу Электро (Уменьшение восстановления умения на 5%)."
     },
     {
       "key": "Shattering Ice",
