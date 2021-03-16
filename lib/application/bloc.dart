@@ -9,6 +9,7 @@ export 'game_codes/game_codes_bloc.dart';
 export 'home/home_bloc.dart';
 export 'main/main_bloc.dart';
 export 'main_tab/main_tab_bloc.dart';
+export 'material/material_bloc.dart';
 export 'materials/materials_bloc.dart';
 export 'settings/settings_bloc.dart';
 export 'tierlist/tier_list_bloc.dart';
