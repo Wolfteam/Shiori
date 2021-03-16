@@ -33,4 +33,9 @@ abstract class TelemetryService {
   Future<void> trackGameCodesOpened();
 
   Future<void> trackTierListBuilderScreenShootTaken();
+
+  Future<void> trackMaterialLoaded(
+    String key, {
+    bool loadedFromName = true,
+  });
 }

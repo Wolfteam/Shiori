@@ -66,11 +66,15 @@ class TelemetryServiceImpl implements TelemetryService {
 
   @override
   Future<void> trackUrlOpened(bool loadMap, bool loadWishSimulator, bool networkAvailable) async {
-    await trackEventAsync('Url-Opened', {
-      'Map': loadMap.toString(),
-      'WishSimulator': loadWishSimulator.toString(),
+    final props = {
       'NetworkAvailable': networkAvailable.toString(),
-    });
+    };
+
+    if (loadMap) {
+      await trackEventAsync('Map-Opened', props);
+    } else if (loadWishSimulator) {
+      await trackEventAsync('WishSimulator-Opened', props);
+    }
   }
 
   @override
@@ -101,4 +105,13 @@ class TelemetryServiceImpl implements TelemetryService {
 
   @override
   Future<void> trackTierListBuilderScreenShootTaken() => trackEventAsync('TierListBuilder-ScreenShootTaken');
+
+  @override
+  Future<void> trackMaterialLoaded(String key, {bool loadedFromName = true}) async {
+    if (loadedFromName) {
+      await trackEventAsync('Material-FromName', {'Name': key});
+    } else {
+      await trackEventAsync('Material-FromImg', {'Image': key});
+    }
+  }
 }
