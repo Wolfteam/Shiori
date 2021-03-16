@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:genshindb/application/common/pop_bloc.dart';
 import 'package:genshindb/domain/assets.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
@@ -13,12 +13,15 @@ part 'character_bloc.freezed.dart';
 part 'character_event.dart';
 part 'character_state.dart';
 
-class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
+class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
   final LocaleService _localeService;
 
   CharacterBloc(this._genshinService, this._telemetryService, this._localeService) : super(const CharacterState.loading());
+
+  @override
+  CharacterEvent getEventForPop(String key) => CharacterEvent.loadFromName(key: key, addToQueue: false);
 
   @override
   Stream<CharacterState> mapEventToState(
@@ -27,16 +30,25 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
     yield const CharacterState.loading();
 
     final s = await event.when(
-      loadFromName: (name) async {
-        await _telemetryService.trackCharacterLoaded(name);
-        final char = _genshinService.getCharacter(name);
-        final translation = _genshinService.getCharacterTranslation(name);
+      loadFromName: (key, addToQueue) async {
+        final char = _genshinService.getCharacter(key);
+        final translation = _genshinService.getCharacterTranslation(key);
+
+        if (addToQueue) {
+          await _telemetryService.trackCharacterLoaded(key);
+          currentItemsInStack.add(char.key);
+        }
         return _buildInitialState(char, translation);
       },
-      loadFromImg: (img) async {
-        await _telemetryService.trackCharacterLoaded(img, loadedFromName: false);
+      loadFromImg: (img, addToQueue) async {
         final char = _genshinService.getCharacterByImg(img);
         final translation = _genshinService.getCharacterTranslation(char.key);
+
+        if (addToQueue) {
+          await _telemetryService.trackCharacterLoaded(img, loadedFromName: false);
+          currentItemsInStack.add(char.key);
+        }
+
         return _buildInitialState(char, translation);
       },
     );

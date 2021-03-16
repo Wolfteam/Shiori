@@ -36,8 +36,10 @@ class CircleWeapon extends StatelessWidget {
   }
 
   Future<void> _gotoWeaponPage(String image, BuildContext context) async {
-    context.read<WeaponBloc>().add(WeaponEvent.loadFromImg(image: image));
+    final bloc = context.read<WeaponBloc>();
+    bloc.add(WeaponEvent.loadFromImg(image: image));
     final route = MaterialPageRoute(builder: (c) => WeaponPage());
     await Navigator.push(context, route);
+    bloc.pop();
   }
 }

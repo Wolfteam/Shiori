@@ -96,8 +96,10 @@ class ArtifactCard extends StatelessWidget {
   }
 
   Future<void> _gotoDetailPage(BuildContext context) async {
-    context.read<ArtifactBloc>().add(ArtifactEvent.loadArtifact(key: keyName));
+    final bloc = context.read<ArtifactBloc>();
+    bloc.add(ArtifactEvent.loadArtifact(key: keyName));
     final route = MaterialPageRoute(builder: (ctx) => ArtifactPage());
     await Navigator.of(context).push(route);
+    bloc.pop();
   }
 }
