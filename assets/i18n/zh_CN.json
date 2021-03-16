@@ -4962,632 +4962,857 @@
   "materials": [
     {
       "key": "FreedomA",
-      "name": "「自由」的教导"
+      "name": "「自由」的教导",
+      "description": "Freedom is the spirit of the land of the wind.\nThe freedom to live is one of such. It is the freedom to live freely and healthily without concerns of one's own safety."
     },
     {
       "key": "FreedomB",
-      "name": "「自由」的指引"
+      "name": "「自由」的指引",
+      "description": "Freedom is the spirit of the land of the wind.\nThe freedom of travel is one of such. It is the freedom to traverse the land freely without being obstructed."
     },
     {
       "key": "FreedomC",
-      "name": "「自由」的哲学"
+      "name": "「自由」的哲学",
+      "description": "Freedom is the spirit of the land of the wind.\nTo sing is one such freedom. To sing on the land created by the Anemo Archon is to send your heart away with the song on the wind."
     },
     {
       "key": "ProsperityA",
-      "name": "「繁荣」的教导"
+      "name": "「繁荣」的教导",
+      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is the blessing of Liyue, it is the foundation of the great city built by the gods and the people of Liyue, and it is the source of the peace and safety of the land."
     },
     {
       "key": "ProsperityB",
-      "name": "「繁荣」的指引"
+      "name": "「繁荣」的指引",
+      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is the promise made by Liyue to its children: To repay the hard-working laborers with enough gold to brighten up this land."
     },
     {
       "key": "ProsperityC",
-      "name": "「繁荣」的哲学"
+      "name": "「繁荣」的哲学",
+      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is Liyue's past, present, and future. This prosperity is unmatched and unobtainable by any other nations — it all belongs to Liyue and its inhabitants."
     },
     {
       "key": "DilligenceA",
-      "name": "「勤劳」的教导"
+      "name": "「勤劳」的教导",
+      "description": "Industriousness is the foundation of the land of Geo.\nDiligence is having the bravery and the strength to conquer mountains and seas and to pursue gold and prosperity through honest, hard work."
     },
     {
       "key": "DilligenceB",
-      "name": "「勤劳」的指引"
+      "name": "「勤劳」的指引",
+      "description": "Industriousness is the foundation of the land of Geo.\nIndustriousness is the catalyst that flows in the blood of the people of Liyue, able to turn rocks into gold. It is what lies behind the greatness of its great commercial port."
     },
     {
       "key": "DilligenceC",
-      "name": "「勤劳」的哲学"
+      "name": "「勤劳」的哲学",
+      "description": "Industriousness is the foundation of the land of Geo.\nIndustriousness is believing in one's own ability to earn a place in the land of the gods through sweat, wisdom, and power."
     },
     {
       "key": "ResistanceA",
-      "name": "「抗争」的教导"
+      "name": "「抗争」的教导",
+      "description": "Resistance is the backbone of the land of the wind.\nThe history of Mondstadt is one of resistances. People rose up to prevent past conflicts from ever being forgotten, like sprouts breaking through the soil, like the eternal wind eroding through stone walls."
     },
     {
       "key": "ResistanceB",
-      "name": "「抗争」的指引"
+      "name": "「抗争」的指引",
+      "description": "Resistance is the backbone of the city of Wind.\nThe history of Mondstadt is one of resistances. People rose up to grant the citizens of Mondstadt the freedom they now enjoy, like the Anemo Archon blowing away the snow, or like Vennessa rising up to fight."
     },
     {
       "key": "ResistanceC",
-      "name": "「抗争」的哲学"
+      "name": "「抗争」的哲学",
+      "description": "Resistance is the backbone of the land of the wind.\nThe history of Mondstadt is one of resistances. People rose up to allow the future Mondstadt's poetry to freely be that of the wind and be spread across the land."
     },
     {
       "key": "BalladA",
-      "name": "「诗文」的教导"
+      "name": "「诗文」的教导",
+      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of beautiful feelings. On a beautiful day, the breezes carry with them poetry that touches the heart of people like the wind caressing the leaves."
     },
     {
       "key": "BalladB",
-      "name": "「诗文」的指引"
+      "name": "「诗文」的指引",
+      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of the will to encourage. In the dark days, the gales in the streets and alleyways whisper words of fury, like the battle drums, like the low rumbling before the storm."
     },
     {
       "key": "BalladC",
-      "name": "「诗文」的哲学"
+      "name": "「诗文」的哲学",
+      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of the desire to spread the word. Though nothing is eternal, though nothing will be the same, the wind's poetry will still spread beyond the skies, the land, the seas to every corner of the world."
     },
     {
       "key": "GoldA",
-      "name": "「黄金」的教导"
+      "name": "「黄金」的教导",
+      "description": "Gold is the symbol of the land of Geo.\nGold is the blood that flows deep within Liyue's veins, the muscle that makes up Liyue's beating heart, and the bones that make Liyue stand proud."
     },
     {
       "key": "GoldB",
-      "name": "「黄金」的指引"
+      "name": "「黄金」的指引",
+      "description": "Gold is the symbol of the land of Geo.\nGold symbolizes conversion. This is the unspoken understanding between Liyue's mountains, land, city, and people. In Liyue, industriousness is converted into gold, and gold into prosperity."
     },
     {
       "key": "GoldC",
-      "name": "「黄金」的哲学"
+      "name": "「黄金」的哲学",
+      "description": "Gold is the symbol of the land of Geo.\nGold is the wealth of Liyue, but Liyue's true wealth is the hearts of its people that shine like gold."
     },
     {
       "key": "Tail of Boreas",
       "name": "北风之尾",
+      "description": "A handful of tail scales from the Great Wolf King of the North.\nEven without his physical body and beyond death, Boreas still possesses extraordinary powers. He took a form comprised of ice and wind to embrace a new challenge, but even such a form could not house all of his power. The ice scales that fell during the battle still retain some of their spiritual energy.",
       "bossName": "北风之狼"
     },
     {
       "key": "Ring of Boreas",
       "name": "北风之环",
+      "description": "A bit of crystallized ice from the Great Wolf King of the North.\nThis land was once a realm of freezing-cold blizzards and ice storms filled with razor-sharp ice shards, all at the command of Boreas. Though his power may have diminished, he could still freeze the land in an instant.",
       "bossName": "北风之狼"
     },
     {
       "key": "Spirit Locket of Boreas",
       "name": "北风的魂匣",
+      "description": "A bit of the Great Wolf King of the North's power drawn from its soul.\nThis land was once a realm of freezing-cold blizzards and ice storms filled with razor-sharp ice shards, all at the command of Boreas. In his final moments, he finally realized the chilling north wind could only extinguish life, not nurture it. Therefore, Boreas let his powers freely flow into the land to protect it and its inhabitants.",
       "bossName": "北风之狼"
     },
     {
       "key": "Dvalin's Plume",
       "name": "东风之翎",
+      "description": "A feather from the tail of the Dragon of the East.\nAs a dragon's feather it has experienced more than a thousand years' worth of winds. One senses within it a yearning for freedom so strong that it could whip up a light breeze to rescue it from its current confines. Its former owner's recognition of you is what makes it content to stay in your hands.",
       "bossName": "风魔龙"
     },
     {
       "key": "Dvalin's Claw",
       "name": "东风之爪",
+      "description": "A claw from the Dragon of the East.\nIt once contained the shadow dragon Durin's vile poison, having torn through the latter's flesh in battle. Thanks to your purification and healing, it is no longer toxic.",
       "bossName": "风魔龙"
     },
     {
       "key": "Dvalin's Sigh",
       "name": "东风的吐息",
+      "description": "A bit of power taken from the whirlwinds evoked by the Dragon of the East.\nBeautiful and transparent, both trade winds and tornadoes will work in his name. The winds move as his companion, his voice, and his freedom.His enemies are the thousands who stand against the wind.",
       "bossName": "风魔龙"
     },
     {
       "key": "Tusk of Monoceros Caeli",
       "name": "吞天之鲸·只角",
+      "description": "The horn of a whale that you obtained from defeating Childe, who had unleashed the might of his Delusion.\nIt is said that the shape of one's constellation determines one's character. The image of a whale cruising across the celestial heights represents a solipsism that seeks to crush and devour all in its path.\nEmbracing this aspect of himself, Childe gleefully summoned one such beast before throwing himself into battle against you.",
       "bossName": "黄金屋"
     },
     {
       "key": "Shard of a Foul Legacy",
       "name": "魔王之刃·残片",
+      "description": "The shard of a weapon that you obtained from defeating Childe, who had unleashed the might of his Delusion.\nIt is stained with a profound color that is not of this world, no doubt due to the land of endless darkness that the young boy saw with his own two eyes.\nPerhaps it has nothing to do with the power of a Delusion, but as they say, the weapon reflects its user...",
       "bossName": "黄金屋"
     },
     {
       "key": "Shadow of the Warrior",
       "name": "武炼之魂·孤影",
+      "description": "A fragment of power that you obtained from defeating Childe, who had unleashed the might of his Delusion.\nIt is the product of a will to fight that has been honed over countless slaughters.\nIf humans do indeed have destinies, then his must surely have been twisted by such deeds. Why else, then, would he always be at the heart of every conflict?",
       "bossName": "黄金屋"
     },
     {
       "key": "DecarabianA",
-      "name": "高塔孤王的破瓦"
+      "name": "高塔孤王的破瓦",
+      "description": "The place now known as Stormterror's Lair was once the capital city of Decarabian, the God of Storms. Since this dream of prosperity was created entirely by his divine might, the broken pieces left behind by the shattering of that dream still possess great power."
     },
     {
       "key": "DecarabianB",
-      "name": "高塔孤王的残垣"
+      "name": "高塔孤王的残垣",
+      "description": "Decarabian, the God of Storms, was content with the capital city he had raised, and accepted the worship of the people from atop his tower. But he knew not that the people did not bow to him out of respect or adoration."
     },
     {
       "key": "DecarabianC",
-      "name": "高塔孤王的断片"
+      "name": "高塔孤王的断片",
+      "description": "Andrius once declared war upon Decarabian, but failed to even scratch the capital of the Lord of the Tower. If it were not for the song of freedom that shattered the city in an instant, Decarabian's dream would have gone on forever."
     },
     {
       "key": "DecarabianD",
-      "name": "高塔孤王的碎梦"
+      "name": "高塔孤王的碎梦",
+      "description": "The people did not bow to Decarabian out of respect or adoration, but because the harsh winds had laid them low. This was the shattered dream and ambition of the Anemo Archon before the rise of Barbatos.He tried so hard to make his dream come true, and so the fragments of that dream are still mighty."
     },
     {
       "key": "GuyunA",
-      "name": "孤云寒林的光砂"
+      "name": "孤云寒林的光砂",
+      "description": "The stone pillars that tower amid Guyun Stone Forest were once the stone spears Morax used to defeat his enemies. Over time, the gods' substance has seeped into the pillars that pin them down, lending them divine power. The pillars sometimes shed fragments of hatred and curses."
     },
     {
       "key": "GuyunB",
-      "name": "孤云寒林的辉岩"
+      "name": "孤云寒林的辉岩",
+      "description": "The learned know that Guyun Stone Forest is far more than simply a miraculous sight on the sea to behold: It is the cemetery of the former gods of Liyue. Hatred and filth have periodically risen up from it, but all have been subdued by a demon-conquering young man."
     },
     {
       "key": "GuyunC",
-      "name": "孤云寒林的圣骸"
+      "name": "孤云寒林的圣骸",
+      "description": "The stone spear has a glimmering core formed by the power of the defeated gods. Their hatred is not directed at Morax, however, for they have lost themselves a long time ago and are incapable of holding personal grudges."
     },
     {
       "key": "GuyunD",
-      "name": "孤云寒林的神体"
+      "name": "孤云寒林的神体",
+      "description": "That which lurks within and animates this relic are the divine remains of lamenting gods. They are unrealized ideals, designs for a prosperous humanity that could never be. They may now lie deep within stone and sea, but they will not go quietly into the night."
     },
     {
       "key": "ElixirA",
-      "name": "雾海云间的铅丹"
+      "name": "雾海云间的铅丹",
+      "description": "Jueyun Karst is the realm of the mighty and illuminated adepti. But other than the ability to control the elements of the world, Jueyun Karst is also home to three other untold secrets: Alchemy, Sigils, and Sub-Space Creation."
     },
     {
       "key": "ElixirB",
-      "name": "雾海云间的汞丹"
+      "name": "雾海云间的汞丹",
+      "description": "With Fulu (Sigils), the adepti can store their power in the form of symbols, and with Waijing (Sub-Space Creation) they can fashion a cosmic paradise with the power of their minds. The manufacture of elixirs, however, has always been shrouded in mystery, for certain death follows for any who swallow them."
     },
     {
       "key": "ElixirC",
-      "name": "雾海云间的金丹"
+      "name": "雾海云间的金丹",
+      "description": "Elixirs are in fact pills made from metal alloys. They were created by the adepti, and are able to grant weapons transcendent powers. However, they are rarely seen in the world due to the hubris of the practitioners of martial arts, who prized the ways of combat over the paths of the adepti."
     },
     {
       "key": "ElixirD",
-      "name": "雾海云间的转还"
+      "name": "雾海云间的转还",
+      "description": "An elixir of the highest quality. It embodies a state of intertwining order and chaos, and is said to mirror how the world was when it was first created. Of course, a certain someone knows that this was not the case."
     },
     {
       "key": "BorealWolfA",
-      "name": "凛风奔狼的始龀"
+      "name": "凛风奔狼的始龀",
+      "description": "Andrius' wolf pack is its blessed honor guard, and even the milk teeth of a wolf cub possess great potential.\nIn the past, the gods had the responsibility to love all people. Andrius was therefore quite unusual in that he became leader of the wolves, while only welcoming abandoned babies and wanderers when it came to humans."
     },
     {
       "key": "BorealWolfB",
-      "name": "凛风奔狼的裂齿"
+      "name": "凛风奔狼的裂齿",
+      "description": "The life of a wolf is not without violence, broken bones or cracked teeth are nothing special.\nAndrius found humans to be a disappointment, but believed babies to be innocent. If both the wolf pack and the adopted children chose each other, then they become a Lupical, a fated family."
     },
     {
       "key": "BorealWolfC",
-      "name": "凛风奔狼的断牙"
+      "name": "凛风奔狼的断牙",
+      "description": "The wolf pack also understands that humans are not solitary creatures. The honorary broken tooth is a parting gift said to bring protection and luck.\nIn the legends of a far-off world, a female wolf once adopted two great humans. Their home was known as the Cave of Wolves, or Lupercal - that word meaning the same thing as Lupical does in this world."
     },
     {
       "key": "BorealWolfD",
-      "name": "凛风奔狼的怀乡"
+      "name": "凛风奔狼的怀乡",
+      "description": "The Wolf King, believing himself to despise humans, thought himself unable to envision a happy life for humanity, making him unworthy of becoming the Lord of the Winds of the world. Therefore, he chose to disappear. Yet, in truth, he gazes on the ones abandoned by the world ever so gently."
     },
     {
       "key": "AerosideriteA",
-      "name": "漆黑陨铁的一粒"
+      "name": "漆黑陨铁的一粒",
+      "description": "A black meteor once fell beyond Liyue's Sea of Clouds, said to have fallen to vanquish a monster. However, it was stained by powerful tainted blood, so this item no longer possesses the pure power of Rex Lapis."
     },
     {
       "key": "AerosideriteB",
-      "name": "漆黑陨铁的一片"
+      "name": "漆黑陨铁的一片",
+      "description": "Rumors of sea monsters are commonplace in Liyue, since the other shore is an unknown region that lies outside of Teyvat. Without the protection of The Seven, all that lies beyond is unknown chaos. Only power beyond the order of Teyvat is able to stain the power of Rex Lapis black."
     },
     {
       "key": "AerosideriteC",
-      "name": "漆黑陨铁的一角"
+      "name": "漆黑陨铁的一角",
+      "description": "The coastal nations of Teyvat refer to the region beyond the protection of The Seven as the Dark Sea. It is said that many defeated gods refused to live under the new order of The Seven, so they fled to remote islands and became evil gods. However, their powers came from the same source as Rex Lapis, separate from this all-devouring darkness."
     },
     {
       "key": "AerosideriteD",
-      "name": "漆黑陨铁的一块"
+      "name": "漆黑陨铁的一块",
+      "description": "When Khaenri'ah was destroyed, a great sinner created endless monsters with dark, alien blood flowing through their veins. They rampaged across the land, destroying all in their paths. They were mutated lifeforms, and the mutations were caused by powers from beyond this world. The black serpentine dragon Durin that attacked Mondstadt was one such mutated being."
     },
     {
       "key": "GladiatorA",
-      "name": "狮牙斗士的枷锁"
+      "name": "狮牙斗士的枷锁",
+      "description": "It's a human thing to exaggerate a hero's story, even to the point of elevating the fetters that once bound the hero to the level of an enemy of true freedom.As a result, these fetters were granted extraordinary powers."
     },
     {
       "key": "GladiatorB",
-      "name": "狮牙斗士的铁链"
+      "name": "狮牙斗士的铁链",
+      "description": "The chains that once bound the great hero Vennessa. In truth, all gladiators would have worn chains in that era, and Vennessa was but one of many."
     },
     {
       "key": "GladiatorC",
-      "name": "狮牙斗士的镣铐"
+      "name": "狮牙斗士的镣铐",
+      "description": "Vennessa was not truly bound by her chains. If she had so wished, no ordinary physical constraints forged in Mondstadt could have held her, for the land there yielded no ore of exceptional quality, nor did it possess the divine flame of her ancestral home.She was only bound by her responsibility to take care of her tribespeople."
     },
     {
       "key": "GladiatorD",
-      "name": "狮牙斗士的理想"
+      "name": "狮牙斗士的理想",
+      "description": "Vennessa may have been freed from slavery, but she then found herself subject to many other, even greater forms of bondage. What began as a duty to her tribespeople extended to all of Mondstadt, then to the concept of freedom itself, and beyond a point even to the whole world.What she really hoped for, in truth, was that the world might grow stronger."
     },
     {
       "key": "Crown of Insight",
-      "name": "智识之冕"
+      "name": "智识之冕",
+      "description": "A precious Talent Level-Up material.\nOnce a medium for the storage and transfer of wisdom in ancient times. Now, wisdom is found in ancient texts and in profound speech.\nNevertheless, this Crown of Insight must still be able to impart some transcendent power and wisdom to its bearer."
     },
     {
       "key": "SacrificialKnifeA",
-      "name": "猎兵祭刀"
+      "name": "猎兵祭刀",
+      "description": "A sharp alloy weapon. Though its owner has been lost, it still reflects a disturbingly cold light."
     },
     {
       "key": "SacrificialKnifeB",
-      "name": "特工祭刀"
+      "name": "特工祭刀",
+      "description": "An oddly-shaped weapon made with superior Snezhnayan technology that once belonged to a senior agent. Proper training is required for using this strange weapon."
     },
     {
       "key": "SacrificialKnifeC",
-      "name": "督察长祭刀"
+      "name": "督察长祭刀",
+      "description": "In the hands of its lord, this fierce weapon has handled many \"debts\". No-one has eyes in the back of their heads, and this weapon and its related techniques are designed around that weakness."
     },
     {
       "key": "HornA",
-      "name": "沉重号角"
+      "name": "沉重号角",
+      "description": "A crude horn used by hilichurls to warn each other. Given the damage to the horn, it won't be warning anyone any time soon."
     },
     {
       "key": "HornB",
-      "name": "黑铜号角"
+      "name": "黑铜号角",
+      "description": "A metallic monster horn that can only be obtained from especially strong hilichurls, since blowing on the horn takes real strength."
     },
     {
       "key": "HornC",
-      "name": "黑晶号角"
+      "name": "黑晶号角",
+      "description": "A metallic horn with an ominous shine decorated with black crystals of an unknown source. It has hardly been used at all. It is likely a ceremonial item of the hilichurls'."
     },
     {
       "key": "ChaosA",
-      "name": "混沌装置"
+      "name": "混沌装置",
+      "description": "Comes from ancient defunct relic structures. A part that once held the structure together. Its aesthetically-pleasing engineering is quite exquisite."
     },
     {
       "key": "ChaosB",
-      "name": "混沌回路"
+      "name": "混沌回路",
+      "description": "Comes from ancient defunct relic structures. Was once a logic circuit responsible for movement functions. Sadly, no-one is able to make sense of how it worked."
     },
     {
       "key": "ChaosC",
-      "name": "混沌炉心"
+      "name": "混沌炉心",
+      "description": "Comes from ancient defunct relic structures. The core that once drove a mechanical beast. Should you come to understand its workings and reproduce it, you could perhaps change the world."
     },
     {
       "key": "LeyLineA",
-      "name": "地脉的旧枝"
+      "name": "地脉的旧枝",
+      "description": "Fragile branches from deep within the earth. Even after years of aging, from beneath it's mottled surface you can see that its power is not yet entirely lost."
     },
     {
       "key": "LeyLineB",
-      "name": "地脉的枯叶"
+      "name": "地脉的枯叶",
+      "description": "A twig from deep within the earth. Though it is far from where it once lay, its leaves still pulsate with energy."
     },
     {
       "key": "LeyLineC",
-      "name": "地脉的新芽"
+      "name": "地脉的新芽",
+      "description": "It is said that there was a great tree whose roots once spread out to every corner of the world, and this branch is said to be part of it. It is almost if it was never broken off and taken far away, for its vitality is such that it still sprouts new leaves even now."
     },
     {
       "key": "MistGrassA",
-      "name": "雾虚花粉"
+      "name": "雾虚花粉",
+      "description": "Strange spores created by Mist Grass in enclosed spaces. They are the Cicins' favorite food."
     },
     {
       "key": "MistGrassB",
-      "name": "雾虚草囊"
+      "name": "雾虚草囊",
+      "description": "Well-preserved Mist Grass. Some would take advantage of the Cicins' love for the Mist Grass to control them."
     },
     {
       "key": "MistGrassC",
-      "name": "雾虚灯芯"
+      "name": "雾虚灯芯",
+      "description": "A rare bundle of Mist Grass that gives off a faint glow. Those who carry it invite both the Cicins and misfortune."
     },
     {
       "key": "BoneShardA",
-      "name": "脆弱的骨片"
+      "name": "脆弱的骨片",
+      "description": "A bone shard once carried by a Geovishap.\nAlthough they are quite fragile, they seem to still harbor some indescribable power."
     },
     {
       "key": "BoneShardB",
-      "name": "结实的骨片"
+      "name": "结实的骨片",
+      "description": "A fragment of an unknown creature's bones that appear to be prized by Geovishaps for some reason.\nThe fragment appears to be quite aged. Despite being dragon-like beasts with no spoken language, they still seem to have some sort of special affection for these bone shards."
     },
     {
       "key": "BoneShardC",
-      "name": "石化的骨片"
+      "name": "石化的骨片",
+      "description": "A fossilized bone fragment sometimes found after defeating Geovishaps.\nGeovishaps all dream of growing into great dragons one day. They see these fossils as dragon bones and greatly cherish them, perhaps because they too hope to attain the dragons' longevity and power."
     },
     {
       "key": "MaskA",
-      "name": "破损的面具"
+      "name": "破损的面具",
+      "description": "A broken bone mask that once belonged to some hilichurl.\nNow more broken than complete, it can no longer perform its primary function."
     },
     {
       "key": "MaskB",
-      "name": "污秽的面具"
+      "name": "污秽的面具",
+      "description": "A bone mask, covered in unidentifiable stains, that emanates a mysterious odor.\nYet such is the devotion of hilichurls to masks that they will wear it nonetheless."
     },
     {
       "key": "MaskC",
-      "name": "不祥的面具"
+      "name": "不祥的面具",
+      "description": "A glossy bone mask with oil markings painted on it, meant to intimidate enemies.\nNo-one really knows why hilichurls are so fascinated with masks. Some say that it's because they don't want to see their own reflections in the water."
     },
     {
       "key": "StatuetteA",
-      "name": "Gloomy Statuette"
+      "name": "Gloomy Statuette",
+      "description": "A vague portrayal of some unknown person. Even though it has seen many days, it still has not been damaged in any way."
     },
     {
       "key": "StatuetteB",
-      "name": "Dark Statuette"
+      "name": "Dark Statuette",
+      "description": "A carved idol representing an unknown person. Contaminated with a dark and unfathomable power, simply holding it makes you feel uneasy."
     },
     {
       "key": "StatuetteC",
-      "name": "Deathly Statuette"
+      "name": "Deathly Statuette",
+      "description": "A carving that emanates an evil energy, with no indication of what it's truly made of. Simply focusing on it evokes dark whispering inside your very soul."
     },
     {
       "key": "ScrollA",
-      "name": "导能绘卷"
+      "name": "导能绘卷",
+      "description": "A scroll that likely relates to some kind of magic. Exudes an inexplicable but ominous warmth."
     },
     {
       "key": "ScrollB",
-      "name": "封魔绘卷"
+      "name": "封魔绘卷",
+      "description": "An old scroll lacking in detail and clarity. By following the images on it, some magical creatures can recreate a small part of its magic."
     },
     {
       "key": "ScrollC",
-      "name": "禁咒绘卷"
+      "name": "禁咒绘卷",
+      "description": "A scroll inscribed with ancient images. It is said that few can decipher its meaning, and the few scholars that have all went mad."
     },
     {
       "key": "NectarA",
-      "name": "骗骗花蜜"
+      "name": "骗骗花蜜",
+      "description": "Nectar extracted from the stamen of a Whopperflower that contains trace amounts of elemental energy.\nThe taste of the nectar has a hint of Sweet Flower in it."
     },
     {
       "key": "NectarB",
-      "name": "微光花蜜"
+      "name": "微光花蜜",
+      "description": "Nectar that is full of pure elemental energy.\nScholars generally concur that Whopperflowers are advanced life forms among the elemental plants, but there has yet to be a satisfactory explanation regarding their predatory habits."
     },
     {
       "key": "NectarC",
-      "name": "原素花蜜"
+      "name": "原素花蜜",
+      "description": "A thick and sticky honey that is full of energy.\nThe Whopperflower hunts by tricking its prey, a process it uses to possibly evolve into a more powerful and pure form."
     },
     {
       "key": "ArrowHeadA",
-      "name": "牢固的箭簇"
+      "name": "牢固的箭簇",
+      "description": "A roughly produced arrowhead. Though unimpressive, neither it nor the bow should be underestimated, for even the bravest knight can be felled by an arrow from the rear."
     },
     {
       "key": "ArrowHeadB",
-      "name": "锐利的箭簇"
+      "name": "锐利的箭簇",
+      "description": "A well-made arrowhead. Sharp enough to penetrate armor with the ease of a rock through the surface of water."
     },
     {
       "key": "ArrowHeadC",
-      "name": "历战的箭簇"
+      "name": "历战的箭簇",
+      "description": "An old arrowhead coated in blood. The arrowhead has long since lost its sharpness and thus its use as a weapon.However, it represents the pride of a hunter and acts as both an amulet and a medal."
     },
     {
       "key": "CircularInsigniaA",
-      "name": "寻宝鸦印"
+      "name": "寻宝鸦印",
+      "description": "A signet that proudly represents its owner's position as member of the Treasure Hoarders. The pursuit of treasure knows no bounds. That said... Is being a thief something to be proud of?"
     },
     {
       "key": "CircularInsigniaB",
-      "name": "藏银鸦印"
+      "name": "藏银鸦印",
+      "description": "A raven insignia used by members of the Treasure Hoarders to identify each other. The Treasure Hoarders ask for no resume. Anyone who has an insatiable desire for treasure and is backed up by an equal amount of courage can become a worthy member."
     },
     {
       "key": "CircularInsigniaC",
-      "name": "攫金鸦印"
+      "name": "攫金鸦印",
+      "description": "A raven insignia that symbolizes the pride and the guiding principle of the Treasure Hoarders. Whether it's hidden amidst the vastness of the land or in the depths of the seas, as long as there are treasures to be hunted down, the spirit of Treasure Hoarders, who will stop at nothing to acquire them, will never die."
     },
     {
       "key": "InsigniaA",
-      "name": "新兵的徽记"
+      "name": "新兵的徽记",
+      "description": "An insignia to identify the recruits. Makes one wonder about what the ones joining the Fatui's war machine were thinking."
     },
     {
       "key": "InsigniaB",
-      "name": "士官的徽记"
+      "name": "士官的徽记",
+      "description": "An insignia with a different shape to distinguish the sergeants from new recruits. Perhaps there are complicated emotions behind it."
     },
     {
       "key": "InsigniaC",
-      "name": "尉官的徽记"
+      "name": "尉官的徽记",
+      "description": "An armband to identify officers. The Fatui possess a colossal army, so there must be something extraordinary about the ones who achieved this rank within the group."
     },
     {
       "key": "SlimeA",
-      "name": "史莱姆原浆"
+      "name": "史莱姆原浆",
+      "description": "A thick coating found on slimes. Most commonly seen material in elemental workshops."
     },
     {
       "key": "SlimeB",
-      "name": "史莱姆清"
+      "name": "史莱姆清",
+      "description": "Mildly purified slime secretions. Harmful to the skin. Please avoid direct exposure."
     },
     {
       "key": "SlimeC",
-      "name": "史莱姆凝液"
+      "name": "史莱姆凝液",
+      "description": "Concentrated slime essence. When left alone, it will begin to move on its own."
     },
     {
       "key": "Mora",
-      "name": "摩拉"
+      "name": "摩拉",
+      "description": "Common currency. The one language everybody speaks."
     },
     {
       "key": "BasaltPillar",
-      "name": "玄岩之塔"
+      "name": "玄岩之塔",
+      "description": "A pillar formed by the shell of a Geo Hypostasis, composed of high-density Geo energy.\nIt is a testament to Geo's status as the heaviest of the elements. Maybe the reason a Geo Hypostasis creates this pillar out of its shell and raises itself is just to get closer to the sky, not to combat enemies."
     },
     {
       "key": "CleansingHeart",
-      "name": "净水之心"
+      "name": "净水之心",
+      "description": "A palmful of eternal water left by an oceanid.\nThough it has already diffused among the depths of the lake, its purity remains all the same. But why would a creature so pure and clean as an oceanid covet the appearance of a being that roams the land, and assume such a form with pure water? They need not breathe nor do they require sustenance..."
     },
     {
       "key": "EverflameSeed",
-      "name": "常燃火种"
+      "name": "常燃火种",
+      "description": "A seed that fuels the unending flames of the Pyro Regisvine. It emits Pyro energy as if it will burn all that has ever sprouted from the ground.Endless desires flow among turbulent energy deep within the earth. What desire could steadily hold such fire to the plants and long so eagerly to bathe everything in unquenchable flames?"
     },
     {
       "key": "HoarfrostCore",
-      "name": "极寒之核"
+      "name": "极寒之核",
+      "description": "The exposed core of a defeated Cryo Regisvine. Pure Cryo energy is contained within it.\nEnergy and thoughts that swell deep within the earth will eventually erupt on the surface. Even the deathly silent frost will attach to living things on the ground, turning even ordinary vegetation like vines into huge, vicious predators."
     },
     {
       "key": "HurricaneSeed",
-      "name": "狂风之核"
+      "name": "狂风之核",
+      "description": "The imploded form of an Anemo Hypostasis upon its defeat.Contains the essence of Anemo energy.\nIt is said that the power to create hurricanes resides within its seemingly fragile body. This butterfly of pure Anemo energy must surely be waiting for the day when it can conjure up storms once again."
     },
     {
       "key": "LightningPrism",
-      "name": "雷光棱镜"
+      "name": "雷光棱镜",
+      "description": "An Electro Hypostasis channels nearby elemental energy to repair damaged elemental entities. Contains the essence of Electro energy.\nAn ordinary prism separates white light into its component colors; a Lightning Prism, however, channels flowing energy and weaves them into lightning. It will continue to do so even after the Electro Hypostasis has been defeated."
     },
     {
       "key": "AgateA",
-      "name": "燃愿玛瑙碎屑"
+      "name": "燃愿玛瑙碎屑",
+      "description": null
     },
     {
       "key": "AgateB",
-      "name": "燃愿玛瑙断片"
+      "name": "燃愿玛瑙断片",
+      "description": "\"A pilgrimage for a wish; a battle to earn a name...\""
     },
     {
       "key": "AgateC",
-      "name": "燃愿玛瑙块"
+      "name": "燃愿玛瑙块",
+      "description": "\"A pilgrimage for a wish; a battle to earn a name...Burnt to cinders for a dream.\""
     },
     {
       "key": "AgateD",
-      "name": "燃愿玛瑙"
+      "name": "燃愿玛瑙",
+      "description": "\"A pilgrimage for a wish; a battle to earn a name...Burnt to cinders for a dream.\nIf the intention yet remains, achieved ██'s truth he has.\""
     },
     {
       "key": "DiamondA",
-      "name": "璀璨原钻碎屑"
+      "name": "璀璨原钻碎屑",
+      "description": "\"Welcome to this world.\""
     },
     {
       "key": "DiamondB",
-      "name": "璀璨原钻断片"
+      "name": "璀璨原钻断片",
+      "description": "\"Welcome to this world.\""
     },
     {
       "key": "DiamondC",
-      "name": "璀璨原钻块"
+      "name": "璀璨原钻块",
+      "description": "\"Welcome to this world.\""
     },
     {
       "key": "DiamondD",
-      "name": "璀璨原钻"
+      "name": "璀璨原钻",
+      "description": "\"Welcome to this world.\""
     },
     {
       "key": "EmeraldA",
-      "name": "Nagadus Emerald Sliver"
+      "name": "Nagadus Emerald Sliver",
+      "description": null
     },
     {
       "key": "EmeraldB",
-      "name": "Nagadus Emerald Fragment"
+      "name": "Nagadus Emerald Fragment",
+      "description": "\"In the end, life opened its closed fist...\""
     },
     {
       "key": "EmeraldC",
-      "name": "Nagadus Emerald Chuck"
+      "name": "Nagadus Emerald Chuck",
+      "description": "\"In the end, life opened its closed fist...\""
     },
     {
       "key": "EmeraldD",
-      "name": "Nagadus Emerald Gemstone"
+      "name": "Nagadus Emerald Gemstone",
+      "description": "\"In the end, life opened its closed fist...granting freedom of life to all.\""
     },
     {
       "key": "TopazA",
-      "name": "坚牢黄玉碎屑"
+      "name": "坚牢黄玉碎屑",
+      "description": null
     },
     {
       "key": "TopazB",
-      "name": "坚牢黄玉断片"
+      "name": "坚牢黄玉断片",
+      "description": "\"The currencies that flow through this land are my flesh and blood.\""
     },
     {
       "key": "TopazC",
-      "name": "坚牢黄玉块"
+      "name": "坚牢黄玉块",
+      "description": "\"The currencies that flow through this land are my flesh and blood.\nFor thus did I become the guarantor of the people's hard work, wisdom, and future.\""
     },
     {
       "key": "TopazD",
-      "name": "坚牢黄玉"
+      "name": "坚牢黄玉",
+      "description": "\"The currencies that flow through this land are my flesh and blood.\nFor thus did I become the guarantor of the people's hard work, wisdom, and future.This is the trust I have placed in them. Betray it, and you taint my blood.\""
     },
     {
       "key": "JadeA",
-      "name": "哀叙冰玉碎屑"
+      "name": "哀叙冰玉碎屑",
+      "description": null
     },
     {
       "key": "JadeB",
-      "name": "哀叙冰玉断片"
+      "name": "哀叙冰玉断片",
+      "description": "\"Sorry...\""
     },
     {
       "key": "JadeC",
-      "name": "哀叙冰玉块"
+      "name": "哀叙冰玉块",
+      "description": "\"Sorry...\"\"...to also have you shoulder the grievances of the world.\""
     },
     {
       "key": "JadeD",
-      "name": "哀叙冰玉"
+      "name": "哀叙冰玉",
+      "description": "\"Sorry... to also have you shoulder the grievances of the world.\"Since you could endure my bitter cold, you must have the desire to burn?\"Then, burn away the old world for me.\""
     },
     {
       "key": "AmethystA",
-      "name": "最胜紫晶碎屑"
+      "name": "最胜紫晶碎屑",
+      "description": null
     },
     {
       "key": "AmethystB",
-      "name": "最胜紫晶断片"
+      "name": "最胜紫晶断片",
+      "description": "\"This body is the noblest and most eminent of all in this world.\""
     },
     {
       "key": "AmethystC",
-      "name": "最胜紫晶块"
+      "name": "最胜紫晶块",
+      "description": "\"This body is the noblest and most eminent of all in this world.It should hold absolute control over this world.\""
     },
     {
       "key": "AmethystD",
-      "name": "最胜紫晶"
+      "name": "最胜紫晶",
+      "description": "\"This body is the noblest and most eminent of all in this world.\"It should hold absolute control over this world.\"It once promised its people a dream: the never-changing 'eternity.'\""
     },
     {
       "key": "LazuriteA",
-      "name": "涤净青金碎屑"
+      "name": "涤净青金碎屑",
+      "description": null
     },
     {
       "key": "LazuriteB",
-      "name": "涤净青金断片"
+      "name": "涤净青金断片",
+      "description": "\"My ideals have no stains.\""
     },
     {
       "key": "LazuriteC",
-      "name": "涤净青金块"
+      "name": "涤净青金块",
+      "description": "\"My ideals have no stains.I must correct you. People here bear no sins in the eyes of the gods...\""
     },
     {
       "key": "LazuriteD",
-      "name": "涤净青金"
+      "name": "涤净青金",
+      "description": "\"My ideals have no stains.I must correct you. People here bear no sins in the eyes of the gods... Only laws and the Tribunal can judge someone.\nThey can judge even me. So praise my magnificence and purity.\""
     },
     {
       "key": "TurquoiseA",
-      "name": "自在松石碎屑"
+      "name": "自在松石碎屑",
+      "description": null
     },
     {
       "key": "TurquoiseB",
-      "name": "自在松石断片"
+      "name": "自在松石断片",
+      "description": "\"Still, the winds change direction.\""
     },
     {
       "key": "TurquoiseC",
-      "name": "自在松石块"
+      "name": "自在松石块",
+      "description": "\"Still, the winds change direction.Someday, they will blow towards a brighter future...\""
     },
     {
       "key": "TurquoiseD",
-      "name": "自在松石"
+      "name": "自在松石",
+      "description": "\"Still, the winds change direction.\"Someday, they will blow towards a brighter future...\"Take my blessings and live leisurely from this day onward.\""
     },
     {
       "key": "CallaLily",
-      "name": "嘟嘟莲"
+      "name": "嘟嘟莲",
+      "description": "A flower that grows near water sources. When cooked, the petals have a chunky texture, yet are sweet and a little bitter."
     },
     {
       "key": "Cecilia",
-      "name": "塞西莉亚花"
+      "name": "塞西莉亚花",
+      "description": "A beautiful flower with a name that suits its appearance. It only grows where harsh winds blow, and is just as intangible as the true heart of an unbound soul."
     },
     {
       "key": "CorLapis",
-      "name": "石珀"
+      "name": "石珀",
+      "description": "A precious crystal of condensed pure Geo element that usually grows along with other minerals. It's also commonly called \"Cor Petrae."
     },
     {
       "key": "DandelionSeed",
-      "name": "蒲公英籽"
+      "name": "蒲公英籽",
+      "description": "A tiny seed that rides on the wind. Even without its feathered wings, it still holds the hope from afar within."
     },
     {
       "key": "GlazeLily",
-      "name": "琉璃百合"
+      "name": "琉璃百合",
+      "description": "An extremely ancient flower that was said to be commonly seen in Liyue. It transforms the memories of the land into its fragrance during florescence."
     },
     {
       "key": "JueyunChili",
-      "name": "绝云椒椒"
+      "name": "绝云椒椒",
+      "description": "A spicy plant native to Liyue. Merely smelling it makes one hot and thirsty."
     },
     {
       "key": "NoctilousJade",
-      "name": "夜泊石"
+      "name": "夜泊石",
+      "description": "A rare mineral that glimmers in the dark. It's said to be a mutated gemstone condensed from the flourishing elements of the world."
     },
     {
       "key": "PhilanemoMushroom",
-      "name": "慕风蘑菇"
+      "name": "慕风蘑菇",
+      "description": "A fungus that grows in the warm caress of the wind. It is as everlasting as the wind, nourishing life."
     },
     {
       "key": "Qingxin",
-      "name": "清心"
+      "name": "清心",
+      "description": "A crimson flower that blooms like the rainbow clouds in Liyue. It can be made into silky-smooth fabric."
     },
     {
       "key": "SilkFlower",
-      "name": "霓裳花"
+      "name": "霓裳花",
+      "description": "A crimson flower that blooms like the rainbow clouds in Liyue. It can be made into silky-smooth fabric."
     },
     {
       "key": "SmallLampGrass",
-      "name": "小灯草"
+      "name": "小灯草",
+      "description": "A wild grass that emits light at night. Used in cooking to enhance other flavors."
     },
     {
       "key": "Starconch",
-      "name": "星螺"
+      "name": "星螺",
+      "description": "Empty seashells brought ashore by the tides. Hold it close to your ear, and hear the longing calls of the sea."
     },
     {
       "key": "Valberry",
-      "name": "落落莓"
+      "name": "落落莓",
+      "description": "A plump and translucent berry that has a fragrant smell and a sweet refreshing taste. In the past, the watchers of the storms found solace in the sweetness of the fruit and the hope for the city's security."
     },
     {
       "key": "Violetgrass",
-      "name": "琉璃袋"
+      "name": "琉璃袋",
+      "description": "A small flower with strong vitality. It was said its downward-blooming flower keeps its fragrance from dissipating."
     },
     {
       "key": "WindwheelAster",
-      "name": "风车菊"
+      "name": "风车菊",
+      "description": "A plant that adores the wind. To the proud children of the wind, or the citizens of Mondstadt, the Windwheel Asters are \"the visible winds."
     },
     {
       "key": "Wolfhook",
-      "name": "钩钩果"
+      "name": "钩钩果",
+      "description": "A berry with thorns that often gets attached to a wolf's pelt. When you look at it, you can almost hear the echoing cries of the wolves in the woods."
     },
     {
       "key": "EnhancementOreA",
-      "name": "精锻用杂矿"
+      "name": "精锻用杂矿",
+      "description": "Gives 400 EXP.\nA refined ingot with endless possibilities that can be used to enhance weapons."
     },
     {
       "key": "EnhancementOreB",
-      "name": "精锻用良矿"
+      "name": "精锻用良矿",
+      "description": "Gives 2,000 EXP.\nFor reasons unknown, this special and refined ore can be absorbed by weapons to greatly increase their strengths."
     },
     {
       "key": "EnhancementOreC",
-      "name": "精锻用魔矿"
+      "name": "精锻用魔矿",
+      "description": "Gives 10,000 EXP.\nLegend has it that this refined ingot contains the memories of battles that had taken place in the land. The weapons that benefit from these memories naturally become sentient."
     },
     {
       "key": "CharExpA",
-      "name": "流浪者的经验"
+      "name": "流浪者的经验",
+      "description": "Gives 1000 EXP.\nThese experiences are still beneficial even if one does not live in Teyvat."
     },
     {
       "key": "CharExpB",
-      "name": "冒险家的经验"
+      "name": "冒险家的经验",
+      "description": "Gives 5000 EXP.\nThese experiences are very beneficial for journeys into the unknown."
     },
     {
       "key": "CharExpC",
-      "name": "大英雄的经验"
+      "name": "大英雄的经验",
+      "description": "Gives 20000 EXP.\nThese experiences are extremely precious for a pilgrim traveling through Teyvat in order to be closer to Celestia."
+    },
+    {
+      "key": "JuvenileJade",
+      "name": "Juvenile Jade",
+      "description": "A crystalline substance taken from a Primo Geovishap. Within it is contained the potential to become a dragon.\nThese dull crystals are precipitated within the bodies of vishaps sleeping in the mountains. Liyue folklore holds that they will gather power over many years, after which this crystal will, at last, replace their original heart, and the vishap will become a true dragon — one that can shake the mountains and split the earth."
+    },
+    {
+      "key": "Starsilver",
+      "name": "Starsilver",
+      "description": "A rare and precious ore formed by the unique geographical conditions and Ley Lines of Dragonspine."
+    },
+    {
+      "key": "Vitalized Dragontooth",
+      "name": "Vitalized Dragontooth",
+      "description": "A Dragontooth infused with vitality. Just its luster and texture are enough to make one uneasy..."
+    },
+    {
+      "key": "Iron Chunk",
+      "name": "Iron Chunk",
+      "description": "This iron chunk can be turned into a multitude of handy items in the hands of a skilled craftsman."
+    },
+    {
+      "key": "White Iron Chunk",
+      "name": "White Iron Chunk",
+      "description": "Skilled hands can make this into something brilliant."
+    },
+    {
+      "key": "Crystal Chunk",
+      "name": "Crystal Chunk",
+      "description": "An uncut crystal. Only professional craftsmanship can bring out its true value."
+    },
+    {
+      "key": "Northlander Bow Billet",
+      "name": "Northlander Bow Billet",
+      "description": "Can be used to forge 4-star bows. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+    },
+    {
+      "key": "Northlander Catalyst Billet",
+      "name": "Northlander Catalyst Billet",
+      "description": "Can be used to forge 4-star catalysts. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+    },
+    {
+      "key": "Northlander Claymore Billet",
+      "name": "Northlander Claymore Billet",
+      "description": "Can be used to forge 4-star claymores. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+    },
+    {
+      "key": "Northlander Polearm Billet",
+      "name": "Northlander Polearm Billet",
+      "description": "Can be used to forge 4-star polearms. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+    },
+    {
+      "key": "Northlander Sword Billet",
+      "name": "Northlander Sword Billet",
+      "description": "Can be used to forge 4-star swords. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+    },
+    {
+      "key": "Dust of Azoth",
+      "name": "Dust of Azoth",
+      "description": "A device that can transmute elemental Ascension Materials and change their Elemental Type.Its practical uses notwithstanding, alchemy is the study of the nature of matter and the rules that underpin its transformations, and ultimately it seeks to comprehend the working principles of the world and the flow of the ley lines\nIt is not known who would share alchemical achievements of this magnitude with the civilizations of the world and why. But although the power to fundamentally transmute elemental energy in its crystallized and inert form is a highly useful one, this device also conceals the grave danger of disrupting the elemental balance..."
+    },
+    {
+      "key": "Magical Crystal Chunk",
+      "name": "Magical Crystal Chunk",
+      "description": "These crystal chunks can be refined into Weapon EXP materials by using Original Resin.\nCrystals from mines that were eroded by the energy of the Ley Lines cannot be processed by ordinary means."
+    },
+    {
+      "key": "Original Resin",
+      "name": "Original Resin",
+      "description": "Used to vitalize Petrified Trees and Ley Line Blossoms, allowing access to the treasures they hold. Energy regenerates over time.\nIt is said that the roots of all the Irminsul trees and blossoms in the world are intertwined at the deepest, most hidden place in the earth, and that the pattern the root system makes defines the Ley Lines of the world."
     }
   ],
   "debuffs": [
