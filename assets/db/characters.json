@@ -17448,10 +17448,12 @@
       ],
       "builds": [
         {
-          "isSupport": true,
+          "isSupport": false,
           "weaponImages": [
-            "skyward_blade.png",
-            "favonius_sword.png"
+            "primordial_jade_cutter.png",
+            "festering_fang.png",
+            "blackcliff_longsword.png",
+            "the_flute.png"
           ],
           "artifacts": [
             {
@@ -17460,15 +17462,44 @@
               "stats": [
                 "hp",
                 "atk",
-                "elementaryMastery",
+                "atkPercentage",
                 "anemoDmgBonusPercentage",
                 "critRatePercentage"
               ]
             }
           ],
           "subStatsToFocus": [
-            "energyRechargePercentage",
-            "critRatePercentage"
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery"
+          ]
+        },
+        {
+          "isSupport": true,
+          "weaponImages": [
+            "primordial_jade_cutter.png",
+            "festering_fang.png",
+            "iron_sting.png"
+          ],
+          "artifacts": [
+            {
+              "one": "viridescent_venerer_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "anemoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery"
           ]
         }
       ],
@@ -19127,10 +19158,12 @@
         {
           "isSupport": true,
           "weaponImages": [
+            "serene_requiem.png",
             "skyward_harp.png",
-            "the_stringless.png",
             "amos_bow.png",
-            "rust.png"
+            "the_stringless.png",
+            "blackcliff_warbow.png",
+            "windblume_ode.png"
           ],
           "artifacts": [
             {
@@ -19837,11 +19870,10 @@
             }
           ],
           "subStatsToFocus": [
-            "atkPercentage",
-            "energyRechargePercentage",
-            "elementaryMastery",
             "critRatePercentage",
-            "critDmgPercentage"
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage"
           ]
         }
       ],
