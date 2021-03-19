@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../../../assets.dart';
-import '../../../enums/material_type.dart';
+import 'package:genshindb/domain/assets.dart';
+import 'package:genshindb/domain/enums/enums.dart';
+import 'package:genshindb/domain/models/models.dart';
 
 part 'material_file_model.freezed.dart';
 part 'material_file_model.g.dart';
@@ -20,6 +20,7 @@ abstract class MaterialFileModel implements _$MaterialFileModel {
 
   factory MaterialFileModel({
     @required String key,
+    @required int rarity,
     @required String image,
     @required bool isFromBoss,
     @required bool isForCharacters,
@@ -27,6 +28,7 @@ abstract class MaterialFileModel implements _$MaterialFileModel {
     @required MaterialType type,
     @required List<int> days,
     @required double level,
+    @required List<ObtainedFromFileModel> obtainedFrom,
     Map<String, dynamic> attributes,
   }) = _MaterialFileModel;
 
@@ -45,4 +47,15 @@ abstract class ExperienceMaterialAttributesModel implements _$ExperienceMaterial
   ExperienceMaterialAttributesModel._();
 
   factory ExperienceMaterialAttributesModel.fromJson(Map<String, dynamic> json) => _$ExperienceMaterialAttributesModelFromJson(json);
+}
+
+@freezed
+abstract class ObtainedFromFileModel implements _$ObtainedFromFileModel {
+  factory ObtainedFromFileModel({
+    @required List<ItemAscensionMaterialModel> items,
+  }) = _ObtainedFromFileModel;
+
+  ObtainedFromFileModel._();
+
+  factory ObtainedFromFileModel.fromJson(Map<String, dynamic> json) => _$ObtainedFromFileModelFromJson(json);
 }

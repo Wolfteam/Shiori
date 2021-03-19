@@ -8,7 +8,8 @@ part 'materials_file.g.dart';
 @freezed
 abstract class MaterialsFile implements _$MaterialsFile {
   @late
-  List<MaterialFileModel> get materials => talents + weapon + weaponPrimary + common + currency + elemental + jewels + locals + experience;
+  List<MaterialFileModel> get materials =>
+      talents + weapon + weaponPrimary + common + currency + elemental + jewels + locals + experience + ingredient;
 
   factory MaterialsFile({
     @required List<MaterialFileModel> talents,
@@ -20,6 +21,7 @@ abstract class MaterialsFile implements _$MaterialsFile {
     @required List<MaterialFileModel> jewels,
     @required List<MaterialFileModel> locals,
     @required List<MaterialFileModel> experience,
+    @required List<MaterialFileModel> ingredient,
   }) = _MaterialsFile;
 
   MaterialsFile._();

@@ -242,5 +242,13 @@
   "codeXWasCopied": "代码 {value} 已复制到剪贴板",
   "expiredCodes": "过期代码",
   "workingCodes": "可用代码",
-  "seeAllInGameGameCodes": "查看全部可以使用的兑换代码"
+  "seeAllInGameGameCodes": "查看全部可以使用的兑换代码",
+  "ingredient": "Ingredient",
+  "talent": "Talent",
+  "local": "Local",
+  "elementalStone": "Elemental Stone",
+  "jewel": "Jewel",
+  "checkAllMaterials": "Check all the available materials",
+  "related": "Related",
+  "obtainedFrom": "Obtained From"
 }

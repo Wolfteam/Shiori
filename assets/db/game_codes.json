@@ -1,6 +1,23 @@
 {
   "gameCodes": [
     {
+      "dateAdded": "03/18/2021",
+      "isExpired": false,
+      "code": "GS6ACJ775KNV",
+      "rewards": [
+        {
+          "quantity": 60,
+          "materialType": "currency",
+          "image": "primogem.png"
+        },
+        {
+          "quantity": 10000,
+          "materialType": "currency",
+          "image": "mora.png"
+        }
+      ]
+    },
+    {
       "dateAdded": "03/06/2021",
       "isExpired": true,
       "code": "PSNTC8FEQK4D",

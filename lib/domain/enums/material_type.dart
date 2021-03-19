@@ -1,6 +1,7 @@
 enum MaterialType {
+  all,
   common,
-  elemental,
+  elementalStone,
   jewels,
   local,
   talents,

@@ -19,8 +19,6 @@ extension I18nExtensions on S {
         return english;
       case AppLanguageType.spanish:
         return '$spanish ($partial)';
-      case AppLanguageType.french:
-        return '$french ($partial)';
       case AppLanguageType.russian:
         return '$russian ($partial)';
       case AppLanguageType.simplifiedChinese:
@@ -351,6 +349,48 @@ extension I18nExtensions on S {
         return asia;
       default:
         throw Exception('Invalid server reset time type = $type');
+    }
+  }
+
+  String translateMaterialFilterType(MaterialFilterType type) {
+    switch (type) {
+      case MaterialFilterType.name:
+        return name;
+      case MaterialFilterType.rarity:
+        return rarity;
+      default:
+        throw Exception('Invalid material filter type = $type');
+    }
+  }
+
+  String translateMaterialType(MaterialType type) {
+    switch (type) {
+      case MaterialType.all:
+        return all;
+      case MaterialType.common:
+        return common;
+      case MaterialType.elementalStone:
+        return elementalStone;
+      case MaterialType.jewels:
+        return jewel;
+      case MaterialType.local:
+        return local;
+      case MaterialType.talents:
+        return talent;
+      case MaterialType.weapon:
+      case MaterialType.weaponPrimary:
+        return weapon;
+      case MaterialType.currency:
+        return currency;
+      case MaterialType.others:
+        return others;
+      case MaterialType.ingredient:
+        return ingredient;
+      case MaterialType.expWeapon:
+      case MaterialType.expCharacter:
+        return experience;
+      default:
+        throw Exception('Invalid material type = $type');
     }
   }
 }

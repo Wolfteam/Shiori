@@ -87,6 +87,9 @@ class GenshinServiceImpl implements GenshinService {
   List<CharacterCardModel> getCharactersForCard() {
     return _charactersFile.characters.map(
       (e) {
+        final translation = getCharacterTranslation(e.key);
+
+        //The reduce is to take the material with the biggest level of each type
         final multiTalentAscensionMaterials = e.multiTalentAscensionMaterials ?? <CharacterFileMultiTalentAscensionMaterialModel>[];
 
         final ascensionMaterial =
@@ -101,14 +104,8 @@ class GenshinServiceImpl implements GenshinService {
         final materials =
             (ascensionMaterial?.materials ?? <ItemAscensionMaterialModel>[]) + (talentMaterial?.materials ?? <ItemAscensionMaterialModel>[]);
 
-        final mp = <String, ItemAscensionMaterialModel>{};
-        for (final item in materials) {
-          if (item.materialType != MaterialType.currency) {
-            mp[item.image] = item;
-          }
-        }
-        final quickMaterials = mp.values.toList();
-        final translation = getCharacterTranslation(e.key);
+        final quickMaterials = _getMaterialsToUse(materials);
+
         return CharacterCardModel(
           key: e.key,
           elementType: e.elementType,
@@ -231,7 +228,7 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<String> getCharactersImgUsingWeapon(String key) {
+  List<String> getCharacterImgsUsingWeapon(String key) {
     final weapon = getWeapon(key);
     final imgs = <String>[];
     for (final char in _charactersFile.characters) {
@@ -288,7 +285,7 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<String> getCharactersImgUsingArtifact(String key) {
+  List<String> getCharacterImgsUsingArtifact(String key) {
     final artifact = getArtifact(key);
     final imgs = <String>[];
     for (final char in _charactersFile.characters) {
@@ -318,6 +315,11 @@ class GenshinServiceImpl implements GenshinService {
   @override
   TranslationArtifactFile getArtifactTranslation(String key) {
     return _translationFile.artifacts.firstWhere((t) => t.key == key);
+  }
+
+  @override
+  TranslationMaterialFile getMaterialTranslation(String key) {
+    return _translationFile.materials.firstWhere((t) => t.key == key);
   }
 
   @override
@@ -448,6 +450,19 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
+  List<MaterialCardModel> getAllMaterials() {
+    return _materialsFile.materials.map((e) {
+      final translation = _translationFile.materials.firstWhere((m) => m.key == e.key);
+      return MaterialCardModel(key: e.key, image: e.fullImagePath, rarity: e.rarity, type: e.type, name: translation.name);
+    }).toList();
+  }
+
+  @override
+  MaterialFileModel getMaterial(String key) {
+    return _materialsFile.materials.firstWhere((m) => m.key == key);
+  }
+
+  @override
   MaterialFileModel getMaterialByImage(String image) {
     return _materialsFile.materials.firstWhere((m) => m.fullImagePath == image);
   }
@@ -492,4 +507,70 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   List<GameCodeFileModel> getAllGameCodes() => _gameCodesFile.gameCodes;
+
+  @override
+  List<String> getCharacterImgsUsingMaterial(String key) {
+    final material = getMaterial(key);
+    final imgs = <String>[];
+
+    for (final char in _charactersFile.characters.where((c) => !c.isComingSoon)) {
+      final multiTalentAscensionMaterials =
+          (char.multiTalentAscensionMaterials?.expand((e) => e.materials)?.expand((e) => e.materials) ?? <ItemAscensionMaterialModel>[]).toList();
+
+      final ascensionMaterial = char.ascensionMaterials.expand((e) => e.materials).toList();
+      final talentMaterial = char.talentAscensionMaterials.expand((e) => e.materials).toList();
+
+      final materials = multiTalentAscensionMaterials + ascensionMaterial + talentMaterial;
+      final allMaterials = _getMaterialsToUse(materials);
+
+      if (allMaterials.any((m) => m.fullImagePath == material.fullImagePath)) {
+        imgs.add(Assets.getCharacterPath(char.image));
+      }
+    }
+
+    return imgs;
+  }
+
+  @override
+  List<String> getWeaponImgsUsingMaterial(String key) {
+    final material = getMaterial(key);
+    final imgs = <String>[];
+
+    for (final weapon in _weaponsFile.weapons) {
+      final materials = (weapon.craftingMaterials ?? <ItemAscensionMaterialModel>[]) + weapon.ascensionMaterials.expand((e) => e.materials).toList();
+      final allMaterials = _getMaterialsToUse(materials);
+      if (allMaterials.any((m) => m.fullImagePath == material.fullImagePath)) {
+        imgs.add(weapon.fullImagePath);
+      }
+    }
+
+    return imgs;
+  }
+
+  @override
+  List<String> getRelatedMaterialImgsToMaterial(String key) {
+    final material = getMaterial(key);
+    return _materialsFile.materials
+        .where((m) {
+          final isUsed = m.obtainedFrom.expand((e) => e.items).where((e) => e.fullImagePath == material.fullImagePath).isNotEmpty;
+          return m.key != key && isUsed;
+        })
+        .map((m) => m.fullImagePath)
+        .toSet()
+        .toList();
+  }
+
+  List<ItemAscensionMaterialModel> _getMaterialsToUse(
+    List<ItemAscensionMaterialModel> materials, {
+    List<MaterialType> ignore = const [MaterialType.currency],
+  }) {
+    final mp = <String, ItemAscensionMaterialModel>{};
+    for (final item in materials) {
+      if (!ignore.contains(item.materialType)) {
+        mp[item.image] = item;
+      }
+    }
+
+    return mp.values.toList();
+  }
 }

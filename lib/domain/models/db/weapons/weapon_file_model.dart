@@ -8,7 +8,6 @@ import '../../../enums/weapon_type.dart';
 import '../../models.dart';
 
 part 'weapon_file_model.freezed.dart';
-
 part 'weapon_file_model.g.dart';
 
 @freezed
@@ -29,7 +28,7 @@ abstract class WeaponFileModel implements _$WeaponFileModel {
     @required List<WeaponFileAscensionMaterial> ascensionMaterials,
     @required List<WeaponFileRefinement> refinements,
     @required List<WeaponFileStatModel> stats,
-    List<WeaponCraftedFileModel> craftingMaterials,
+    List<ItemAscensionMaterialModel> craftingMaterials,
   }) = _WeaponFileModel;
 
   WeaponFileModel._();
@@ -73,20 +72,4 @@ abstract class WeaponFileStatModel implements _$WeaponFileStatModel {
   const WeaponFileStatModel._();
 
   factory WeaponFileStatModel.fromJson(Map<String, dynamic> json) => _$WeaponFileStatModelFromJson(json);
-}
-
-@freezed
-abstract class WeaponCraftedFileModel implements _$WeaponCraftedFileModel {
-  @late
-  String get fullImagePath => Assets.getMaterialPath(image, materialType);
-
-  factory WeaponCraftedFileModel({
-    @required int quantity,
-    @required MaterialType materialType,
-    @required String image,
-  }) = _WeaponCraftedFileModel;
-
-  WeaponCraftedFileModel._();
-
-  factory WeaponCraftedFileModel.fromJson(Map<String, dynamic> json) => _$WeaponCraftedFileModelFromJson(json);
 }

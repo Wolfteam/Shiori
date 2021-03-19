@@ -16,6 +16,7 @@ class MaterialItem extends StatelessWidget {
     @required this.quantity,
   }) : super(key: key);
 
+  //TODO: GO TO THE MATERIALS PAGE
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
