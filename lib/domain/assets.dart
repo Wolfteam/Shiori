@@ -110,8 +110,6 @@ class Assets {
         return '$translationsBasePath/en.json';
       case AppLanguageType.spanish:
         return '$translationsBasePath/es.json';
-      case AppLanguageType.french:
-        return '$translationsBasePath/fr.json';
       case AppLanguageType.russian:
         return '$translationsBasePath/ru.json';
       case AppLanguageType.simplifiedChinese:
