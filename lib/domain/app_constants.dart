@@ -13,6 +13,13 @@ const languagesMap = {
   AppLanguageType.simplifiedChinese: LanguageModel('zh', 'CN'),
 };
 
+const int minSkillLevel = 1;
+const int maxSkillLevel = 10;
+const int minAscensionLevel = 1;
+const int maxAscensionLevel = 6;
+const int minItemLevel = 1;
+const int maxItemLevel = 90;
+
 //key = ascension level
 //value = item level
 //Remember that you can be level 80 but that doesn't mean you have ascended to level 6

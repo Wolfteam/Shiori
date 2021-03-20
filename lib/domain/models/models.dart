@@ -1,5 +1,6 @@
 export 'artifacts/artifact_card_model.dart';
 export 'calculator_asc_materials/ascension_materials_summary.dart';
+export 'calculator_asc_materials/calculator_session_model.dart';
 export 'calculator_asc_materials/character_skill.dart';
 export 'calculator_asc_materials/item_ascension_materials.dart';
 export 'characters/character_ascension_model.dart';

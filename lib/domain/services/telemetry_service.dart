@@ -38,4 +38,12 @@ abstract class TelemetryService {
     String key, {
     bool loadedFromName = true,
   });
+
+  Future<void> trackCalculatorAscMaterialsSessionsLoaded();
+
+  Future<void> trackCalculatorAscMaterialsSessionsCreated();
+
+  Future<void> trackCalculatorAscMaterialsSessionsUpdated();
+
+  Future<void> trackCalculatorAscMaterialsSessionsDeleted();
 }
