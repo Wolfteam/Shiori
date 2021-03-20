@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
         SliverTodayWeaponMaterials(),
         SliverMainTitle(title: s.elements),
         SliverElementsCard(),
-        SliverMainTitle(title: 'Inventory'),
+        SliverMainTitle(title: s.myInventory),
         SliverMyInventoryCard(),
         SliverMainTitle(title: s.materials),
         SliverMaterialsCard(),

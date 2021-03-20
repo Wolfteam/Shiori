@@ -3,6 +3,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:genshindb/domain/assets.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
+import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/artifacts/widgets/artifact_card.dart';
 import 'package:genshindb/presentation/characters/widgets/character_card.dart';
 import 'package:genshindb/presentation/materials/materials_page.dart';
@@ -68,11 +69,12 @@ class InventoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     return DefaultTabController(
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('My Inventory'),
+          title: Text(s.myInventory),
           bottom: TabBar(
             tabs: tabs,
           ),

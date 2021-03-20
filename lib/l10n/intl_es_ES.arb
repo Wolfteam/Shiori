@@ -250,5 +250,18 @@
   "jewel": "Joya",
   "checkAllMaterials": "Comprueba todos los materials disponibles",
   "related": "Relacionado",
-  "obtainedFrom": "Obtenido de"
+  "obtainedFrom": "Obtenido de",
+  "sessions": "Sesiones",
+  "delete": "Borrar",
+  "edit": "Editar",
+  "charactersX": "{value} Personaje(s)",
+  "weaponsX": "{value} Arma(s)",
+  "addSession": "Agregar sesión",
+  "editSession": "Editar sesión",
+  "deleteSession": "Borrar sesión",
+  "invalidValue": "Valor inválido",
+  "confirmDeleteSessionX": "¿ Estás seguro que deseas borrar la sesión: {value} ?",
+  "noSessionsHaveBeenCreated": "No se han creado sesiones.\nComienza por crear una.",
+  "myInventory": "Mi Inventario",
+  "addTheItemsYouGotInGame": "Añade los items que has obtenido en el juego"
 }

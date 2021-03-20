@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/home/widgets/sliver_card_item.dart';
 import 'package:genshindb/presentation/inventory/inventory_page.dart';
 
 class SliverMyInventoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     final theme = Theme.of(context);
     return SliverCardItem(
       icon: Icon(Icons.inventory, size: 60, color: theme.accentColor),
@@ -12,7 +14,7 @@ class SliverMyInventoryCard extends StatelessWidget {
       iconToTheLeft: true,
       children: [
         Text(
-          'Add the items you have got in the game',
+          s.addTheItemsYouGotInGame,
           textAlign: TextAlign.center,
           style: theme.textTheme.subtitle2,
         ),

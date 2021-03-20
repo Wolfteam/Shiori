@@ -250,5 +250,18 @@
   "jewel": "Jewel",
   "checkAllMaterials": "Check all the available materials",
   "related": "Related",
-  "obtainedFrom": "Obtained From"
+  "obtainedFrom": "Obtained From",
+  "sessions": "Sessions",
+  "delete": "Delete",
+  "edit": "Edit",
+  "charactersX": "{value} Character(s)",
+  "weaponsX": "{value} Weapon(s)",
+  "addSession": "Add session",
+  "editSession": "Edit session",
+  "deleteSession": "Delete session",
+  "invalidValue": "Invalid value",
+  "confirmDeleteSessionX": "Are you sure you wanna delete session: {value} ?",
+  "noSessionsHaveBeenCreated": "No sessions have been created.\nStart by creating one.",
+  "myInventory": "My Inventory",
+  "addTheItemsYouGotInGame": "Add the items you have got in the game"
 }

@@ -7,7 +7,6 @@ import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/nothing_found_column.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
 
 import 'calculator_ascension_materials_page.dart';
 import 'widgets/add_edit_session_dialog.dart';
@@ -17,9 +16,7 @@ class CalculatorSessionsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Sessions'),
-      ),
+      appBar: AppBar(title: Text(s.sessions)),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showAddSessionDialog(context),
         child: const Icon(Icons.add),
@@ -30,7 +27,7 @@ class CalculatorSessionsPage extends StatelessWidget {
             loading: (_) => const Loading(useScaffold: false),
             loaded: (state) {
               if (state.sessions.isEmpty) {
-                return NothingFoundColumn(msg: 'No sessions have been created.\nStart by creating one');
+                return NothingFoundColumn(msg: s.noSessionsHaveBeenCreated);
               }
 
               return ListView.separated(
@@ -44,7 +41,7 @@ class CalculatorSessionsPage extends StatelessWidget {
                     actionPane: const SlidableDrawerActionPane(),
                     actions: [
                       IconSlideAction(
-                        caption: 'Delete',
+                        caption: s.delete,
                         color: Colors.red,
                         icon: Icons.delete,
                         onTap: () => _showDeleteSessionDialog(session.key, session.name, context),
@@ -52,7 +49,7 @@ class CalculatorSessionsPage extends StatelessWidget {
                     ],
                     secondaryActions: [
                       IconSlideAction(
-                        caption: 'Edit',
+                        caption: s.edit,
                         color: Colors.lightBlueAccent,
                         icon: Icons.edit,
                         onTap: () => _showEditSessionDialog(session.key, session.name, context),
@@ -62,8 +59,8 @@ class CalculatorSessionsPage extends StatelessWidget {
                       onLongPress: () => _showEditSessionDialog(session.key, session.name, context),
                       title: Text(session.name),
                       onTap: () => _gotoCalculatorAscensionMaterialsPage(session, context),
-                      subtitle: Text('$numberOfChars Character / $numberOfWeapons Weapons'),
-                      trailing: Icon(Icons.chevron_right),
+                      subtitle: Text('${s.charactersX(numberOfChars)} / ${s.weaponsX(numberOfWeapons)}'),
+                      trailing: const Icon(Icons.chevron_right),
                     ),
                   );
                 },
@@ -101,8 +98,8 @@ class CalculatorSessionsPage extends StatelessWidget {
     await showDialog(
       context: context,
       builder: (_) => AlertDialog(
-        title: Text('Delete session'),
-        content: Text('Are you sure you wanna delete session $name'),
+        title: Text(s.deleteSession),
+        content: Text(s.confirmDeleteSessionX(name)),
         actions: [
           OutlinedButton(
             onPressed: () => Navigator.pop(context),

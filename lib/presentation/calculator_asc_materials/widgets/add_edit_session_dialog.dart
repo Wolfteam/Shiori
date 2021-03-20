@@ -38,7 +38,7 @@ class _AddEditSessionDialogState extends State<AddEditSessionDialog> {
     final theme = Theme.of(context);
     final s = S.of(context);
     return AlertDialog(
-      title: Text(widget.sessionKey != null ? "Edit session" : "Add session"),
+      title: Text(widget.sessionKey != null ? s.editSession : s.addSession),
       content: BlocBuilder<CalculatorAscMaterialsSessionFormBloc, CalculatorAscMaterialsSessionFormState>(
         builder: (ctx, state) => TextField(
           maxLength: CalculatorAscMaterialsSessionFormBloc.nameMaxLength,
@@ -47,7 +47,7 @@ class _AddEditSessionDialogState extends State<AddEditSessionDialog> {
             hintText: s.name,
             alignLabelWithHint: true,
             labelText: s.name,
-            errorText: !state.isNameValid && state.isNameDirty ? 'Invalid name' : null,
+            errorText: !state.isNameValid && state.isNameDirty ? s.invalidValue : null,
           ),
         ),
       ),
