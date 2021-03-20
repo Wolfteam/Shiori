@@ -9,6 +9,7 @@ class SliverMyInventoryCard extends StatelessWidget {
     return SliverCardItem(
       icon: Icon(Icons.inventory, size: 60, color: theme.accentColor),
       onClick: _goToInventoryPage,
+      iconToTheLeft: true,
       children: [
         Text(
           'Add the items you have got in the game',

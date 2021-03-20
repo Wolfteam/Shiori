@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
+import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/extensions/iterable_extensions.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
@@ -12,6 +13,7 @@ import 'ascension_level.dart';
 import 'skill_item.dart';
 
 class AddEditItemBottomSheet extends StatelessWidget {
+  final int sessionKey;
   final int index;
   final String keyName;
   final bool isInEditMode;
@@ -20,6 +22,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
 
   const AddEditItemBottomSheet.toAddItem({
     Key key,
+    @required this.sessionKey,
     @required this.keyName,
     @required this.isAWeapon,
   })  : index = null,
@@ -29,6 +32,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
 
   const AddEditItemBottomSheet.toEditItem({
     Key key,
+    @required this.sessionKey,
     @required this.index,
     @required this.isAWeapon,
     @required this.isActive,
@@ -147,8 +151,8 @@ class AddEditItemBottomSheet extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return NumberPickerDialog.integer(
-          minValue: CalculatorAscMaterialsItemBloc.minItemLevel,
-          maxValue: CalculatorAscMaterialsItemBloc.maxItemLevel,
+          minValue: minItemLevel,
+          maxValue: maxItemLevel,
           title: Text(s.chooseALevel),
           initialIntegerValue: value,
           infiniteLoop: true,
@@ -178,6 +182,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
   }) {
     final event = !isInEditMode
         ? CalculatorAscMaterialsEvent.addWeapon(
+            sessionKey: sessionKey,
             key: keyName,
             currentLevel: currentLevel,
             desiredLevel: desiredLevel,
@@ -185,6 +190,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
             desiredAscensionLevel: desiredAscensionLevel,
           )
         : CalculatorAscMaterialsEvent.updateWeapon(
+            sessionKey: sessionKey,
             index: index,
             currentLevel: currentLevel,
             desiredLevel: desiredLevel,
@@ -207,6 +213,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
   }) {
     final event = !isInEditMode
         ? CalculatorAscMaterialsEvent.addCharacter(
+            sessionKey: sessionKey,
             key: keyName,
             currentLevel: currentLevel,
             desiredLevel: desiredLevel,
@@ -215,6 +222,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
             desiredAscensionLevel: desiredAscensionLevel,
           )
         : CalculatorAscMaterialsEvent.updateCharacter(
+            sessionKey: sessionKey,
             index: index,
             currentLevel: currentLevel,
             desiredLevel: desiredLevel,

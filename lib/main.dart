@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_user_agent/flutter_user_agent.dart';
+import 'package:genshindb/domain/services/calculator_service.dart';
 import 'package:genshindb/domain/services/locale_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
 
 import 'application/bloc.dart';
+import 'domain/services/data_service.dart';
 import 'domain/services/genshin_service.dart';
 import 'domain/services/logging_service.dart';
 import 'domain/services/network_service.dart';
@@ -129,16 +131,27 @@ class MyApp extends StatelessWidget {
           },
         ),
         BlocProvider(
-          create: (ctx) {
-            final genshinService = getIt<GenshinService>();
+          create: (_) {
+            final dataService = getIt<DataService>();
             final telemetryService = getIt<TelemetryService>();
-            return CalculatorAscMaterialsBloc(genshinService, telemetryService);
+            return CalculatorAscMaterialsSessionsBloc(dataService, telemetryService);
           },
         ),
         BlocProvider(
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
-            return CalculatorAscMaterialsItemBloc(genshinService);
+            final telemetryService = getIt<TelemetryService>();
+            final calculatorService = getIt<CalculatorService>();
+            final dataService = getIt<DataService>();
+            final parentBloc = ctx.read<CalculatorAscMaterialsSessionsBloc>();
+            return CalculatorAscMaterialsBloc(genshinService, telemetryService, calculatorService, dataService, parentBloc);
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final genshinService = getIt<GenshinService>();
+            final calculatorService = getIt<CalculatorService>();
+            return CalculatorAscMaterialsItemBloc(genshinService, calculatorService);
           },
         ),
         BlocProvider(
@@ -162,6 +175,7 @@ class MyApp extends StatelessWidget {
             return MaterialBloc(genshinService, telemetryService);
           },
         ),
+        BlocProvider(create: (_) => CalculatorAscMaterialsSessionFormBloc()),
       ],
       child: BlocBuilder<MainBloc, MainState>(
         builder: (ctx, state) => AppWidget(),

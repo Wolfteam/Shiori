@@ -12,6 +12,7 @@ import 'add_edit_item_bottom_sheet.dart';
 import 'material_item.dart';
 
 class ItemCard extends StatelessWidget {
+  final int sessionKey;
   final int index;
   final String itemKey;
   final String name;
@@ -23,6 +24,7 @@ class ItemCard extends StatelessWidget {
 
   const ItemCard({
     Key key,
+    @required this.sessionKey,
     @required this.index,
     @required this.itemKey,
     @required this.name,
@@ -154,9 +156,10 @@ class ItemCard extends StatelessWidget {
       shape: Styles.modalBottomSheetShape,
       isDismissible: true,
       isScrollControlled: true,
-      builder: (_) => AddEditItemBottomSheet.toEditItem(index: index, isAWeapon: isWeapon, isActive: isActive),
+      builder: (_) => AddEditItemBottomSheet.toEditItem(sessionKey: sessionKey, index: index, isAWeapon: isWeapon, isActive: isActive),
     );
   }
 
-  void _removeItem(BuildContext context) => context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.removeItem(index: index));
+  void _removeItem(BuildContext context) =>
+      context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.removeItem(sessionKey: sessionKey, index: index));
 }

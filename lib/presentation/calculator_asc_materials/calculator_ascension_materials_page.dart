@@ -19,6 +19,13 @@ import 'widgets/ascension_materials_summary.dart';
 import 'widgets/item_card.dart';
 
 class CalculatorAscensionMaterialsPage extends StatelessWidget {
+  final int sessionKey;
+
+  const CalculatorAscensionMaterialsPage({
+    Key key,
+    @required this.sessionKey,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -76,6 +83,7 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
                           builder: (index) {
                             final e = state.items[index];
                             return ItemCard(
+                              sessionKey: sessionKey,
                               isActive: e.isActive,
                               index: index,
                               itemKey: e.key,
@@ -133,7 +141,7 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
       shape: Styles.modalBottomSheetShape,
       isDismissible: true,
       isScrollControlled: true,
-      builder: (_) => AddEditItemBottomSheet.toAddItem(keyName: keyName, isAWeapon: false),
+      builder: (_) => AddEditItemBottomSheet.toAddItem(sessionKey: sessionKey, keyName: keyName, isAWeapon: false),
     );
   }
 
@@ -154,7 +162,7 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
       shape: Styles.modalBottomSheetShape,
       isDismissible: true,
       isScrollControlled: true,
-      builder: (_) => AddEditItemBottomSheet.toAddItem(keyName: keyName, isAWeapon: true),
+      builder: (_) => AddEditItemBottomSheet.toAddItem(sessionKey: sessionKey, keyName: keyName, isAWeapon: true),
     );
   }
 }
