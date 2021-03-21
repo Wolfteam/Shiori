@@ -263,5 +263,7 @@
   "confirmDeleteSessionX": "Are you sure you wanna delete session: {value} ?",
   "noSessionsHaveBeenCreated": "No sessions have been created.\nStart by creating one.",
   "myInventory": "My Inventory",
-  "addTheItemsYouGotInGame": "Add the items you have got in the game"
+  "addTheItemsYouGotInGame": "Add the items you have got in the game",
+  "successfullyAddedToInventory": "Successfully added to the inventory",
+  "quantity": "Quantity"
 }

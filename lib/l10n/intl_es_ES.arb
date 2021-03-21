@@ -263,5 +263,7 @@
   "confirmDeleteSessionX": "¿ Estás seguro que deseas borrar la sesión: {value} ?",
   "noSessionsHaveBeenCreated": "No se han creado sesiones.\nComienza por crear una.",
   "myInventory": "Mi Inventario",
-  "addTheItemsYouGotInGame": "Añade los items que has obtenido en el juego"
+  "addTheItemsYouGotInGame": "Añade los items que has obtenido en el juego",
+  "successfullyAddedToInventory": "Exitósamente agregado al inventario",
+  "quantity": "Cantidad"
 }
