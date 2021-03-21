@@ -100,6 +100,11 @@ class AddEditItemBottomSheet extends StatelessWidget {
                   ),
                   if (isInEditMode)
                     OutlineButton(
+                      onPressed: () => _removeItem(context),
+                      child: Text(s.delete, style: TextStyle(color: theme.primaryColor)),
+                    ),
+                  if (isInEditMode)
+                    OutlineButton(
                       onPressed: () => isAWeapon
                           ? _applyChangesForWeapon(
                               state.currentLevel,
@@ -233,5 +238,10 @@ class AddEditItemBottomSheet extends StatelessWidget {
           );
     context.read<CalculatorAscMaterialsBloc>().add(event);
     Navigator.of(context).pop();
+  }
+
+  void _removeItem(BuildContext context) {
+    context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.removeItem(sessionKey: sessionKey, index: index));
+    Navigator.pop(context);
   }
 }

@@ -5,7 +5,6 @@ import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
 
 import '../../character/widgets/character_detail.dart';
 
@@ -101,12 +100,7 @@ class CharacterDetailTop extends StatelessWidget {
   }
 
   void _favoriteCharacter(String key, bool isInInventory, BuildContext context) {
-    final s = S.of(context);
     final event = !isInInventory ? InventoryEvent.addCharacter(key: key) : InventoryEvent.deleteCharacter(key: key);
     context.read<InventoryBloc>().add(event);
-
-    if (!isInInventory) {
-      ToastUtils.showSucceedToast(s.successfullyAddedToInventory);
-    }
   }
 }

@@ -24,6 +24,7 @@ class CalculatorAscMaterialsSessionFormBloc extends Bloc<CalculatorAscMaterialsS
 
         return state.copyWith.call(name: e.name, isNameDirty: isDirty, isNameValid: isValid);
       },
+      close: (_) => const CalculatorAscMaterialsSessionFormState.loaded(name: '', isNameDirty: false, isNameValid: false),
     );
 
     yield s;

@@ -129,6 +129,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
           desiredAscensionLevel: e.desiredAscensionLevel,
           currentAscensionLevel: e.currentAscensionLevel,
           isActive: e.isActive,
+          position: e.index,
         );
         return _updateItem(e.sessionKey, e.index, updatedChar);
       },
@@ -148,6 +149,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
           desiredAscensionLevel: e.desiredAscensionLevel,
           currentAscensionLevel: e.currentAscensionLevel,
           isActive: e.isActive,
+          position: e.index,
         );
 
         return _updateItem(e.sessionKey, e.index, updatedWeapon);

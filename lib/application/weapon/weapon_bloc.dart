@@ -26,7 +26,10 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
   Stream<WeaponState> mapEventToState(
     WeaponEvent event,
   ) async* {
-    yield const WeaponState.loading();
+    if (event is! _AddedToInventory) {
+      yield const WeaponState.loading();
+    }
+
     final s = await event.when(
       loadFromImg: (img, addToQueue) async {
         final weapon = _genshinService.getWeaponByImg(img);
@@ -47,6 +50,18 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
           currentItemsInStack.add(weapon.key);
         }
         return _buildInitialState(weapon, translation);
+      },
+      addedToInventory: (key, wasAdded) async {
+        if (state is! _LoadedState) {
+          return state;
+        }
+
+        final currentState = state as _LoadedState;
+        if (currentState.key != key) {
+          return state;
+        }
+
+        return currentState.copyWith.call(isInInventory: wasAdded);
       },
     );
 

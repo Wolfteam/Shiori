@@ -180,10 +180,10 @@ class MyApp extends StatelessWidget {
           },
         ),
         BlocProvider(create: (_) => CalculatorAscMaterialsSessionFormBloc()),
-        BlocProvider(create: (_) {
+        BlocProvider(create: (ctx) {
           final telemetryService = getIt<TelemetryService>();
           final dataService = getIt<DataService>();
-          return InventoryBloc(dataService, telemetryService);
+          return InventoryBloc(dataService, telemetryService, ctx.read<CharacterBloc>(), ctx.read<WeaponBloc>());
         }),
       ],
       child: BlocBuilder<MainBloc, MainState>(

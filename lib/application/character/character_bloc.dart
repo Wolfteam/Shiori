@@ -34,7 +34,9 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
   Stream<CharacterState> mapEventToState(
     CharacterEvent event,
   ) async* {
-    yield const CharacterState.loading();
+    if (event is! _AddedToInventory) {
+      yield const CharacterState.loading();
+    }
 
     final s = await event.when(
       loadFromName: (key, addToQueue) async {
@@ -57,6 +59,18 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
         }
 
         return _buildInitialState(char, translation);
+      },
+      addedToInventory: (key, wasAdded) async {
+        if (state is! _LoadedState) {
+          return state;
+        }
+
+        final currentState = state as _LoadedState;
+        if (currentState.key != key) {
+          return state;
+        }
+
+        return currentState.copyWith.call(isInInventory: wasAdded);
       },
     );
 

@@ -5,4 +5,6 @@ abstract class CalculatorAscMaterialsSessionFormEvent implements _$CalculatorAsc
   const factory CalculatorAscMaterialsSessionFormEvent.nameChanged({
     @required String name,
   }) = _Init;
+
+  const factory CalculatorAscMaterialsSessionFormEvent.close() = _Close;
 }

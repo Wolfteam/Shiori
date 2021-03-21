@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
 
 import 'weapon_detail_general_card.dart';
 
@@ -114,12 +112,7 @@ class WeaponDetailTop extends StatelessWidget {
   }
 
   void _favoriteWeapon(String key, bool isInInventory, BuildContext context) {
-    final s = S.of(context);
     final event = !isInInventory ? InventoryEvent.addWeapon(key: key) : InventoryEvent.deleteWeapon(key: key);
     context.read<InventoryBloc>().add(event);
-
-    if (!isInInventory) {
-      ToastUtils.showSucceedToast(s.successfullyAddedToInventory);
-    }
   }
 }

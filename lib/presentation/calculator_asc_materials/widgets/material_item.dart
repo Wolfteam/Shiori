@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart' as app;
 import 'package:genshindb/domain/utils/currency_utils.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/material/material_page.dart' as mp;
 
 class MaterialItem extends StatelessWidget {
   final app.MaterialType type;
@@ -18,15 +20,21 @@ class MaterialItem extends StatelessWidget {
     this.textColor,
   }) : super(key: key);
 
-  //TODO: GO TO THE MATERIALS PAGE
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Container(
-      margin: Styles.edgeInsetAll5,
+      // margin: Styles.edgeInsetAll5,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(image, width: 50, height: 50),
+          IconButton(
+            icon: Image.asset(image),
+            iconSize: 45,
+            splashRadius: 30,
+            constraints: const BoxConstraints(),
+            onPressed: () => _gotoMaterialPage(context),
+          ),
           Text(
             type == app.MaterialType.currency ? CurrencyUtils.formatNumber(quantity) : '$quantity',
             textAlign: TextAlign.center,
@@ -35,5 +43,13 @@ class MaterialItem extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future<void> _gotoMaterialPage(BuildContext context) async {
+    final bloc = context.read<MaterialBloc>();
+    bloc.add(MaterialEvent.loadFromImg(image: image));
+    final route = MaterialPageRoute(builder: (c) => mp.MaterialPage());
+    await Navigator.push(context, route);
+    bloc.pop();
   }
 }

@@ -25,10 +25,12 @@ class AddEditSessionDialog extends StatefulWidget {
 
 class _AddEditSessionDialogState extends State<AddEditSessionDialog> {
   TextEditingController _textEditingController;
+  String _currentValue;
 
   @override
   void initState() {
-    _textEditingController = TextEditingController(text: widget.name);
+    _currentValue = widget.name;
+    _textEditingController = TextEditingController(text: _currentValue);
     _textEditingController.addListener(_textChanged);
     super.initState();
   }
@@ -43,6 +45,7 @@ class _AddEditSessionDialogState extends State<AddEditSessionDialog> {
         builder: (ctx, state) => TextField(
           maxLength: CalculatorAscMaterialsSessionFormBloc.nameMaxLength,
           controller: _textEditingController,
+          autofocus: true,
           decoration: InputDecoration(
             hintText: s.name,
             alignLabelWithHint: true,
@@ -66,9 +69,21 @@ class _AddEditSessionDialogState extends State<AddEditSessionDialog> {
     );
   }
 
-  void _textChanged() => context
-      .read<CalculatorAscMaterialsSessionFormBloc>()
-      .add(CalculatorAscMaterialsSessionFormEvent.nameChanged(name: _textEditingController.text));
+  @override
+  void dispose() {
+    _textEditingController.removeListener(_textChanged);
+    _textEditingController.dispose();
+    super.dispose();
+  }
+
+  void _textChanged() {
+    //Focusing the text field triggers text changed, that why we used it like this
+    if (_currentValue == _textEditingController.text) {
+      return;
+    }
+    _currentValue = _textEditingController.text;
+    context.read<CalculatorAscMaterialsSessionFormBloc>().add(CalculatorAscMaterialsSessionFormEvent.nameChanged(name: _currentValue));
+  }
 
   void _saveSession() {
     if (widget.sessionKey != null) {

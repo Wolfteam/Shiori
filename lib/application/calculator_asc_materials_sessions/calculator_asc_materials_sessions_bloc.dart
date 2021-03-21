@@ -27,13 +27,13 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
       },
       createSession: (e) async {
         await _telemetryService.trackCalculatorAscMaterialsSessionsCreated();
-        await _dataService.createCalAscMatSession(e.name);
+        await _dataService.createCalAscMatSession(e.name.trim());
         final sessions = _dataService.getAllCalAscMatSessions();
         return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
       },
       updateSession: (e) async {
         await _telemetryService.trackCalculatorAscMaterialsSessionsUpdated();
-        await _dataService.updateCalAscMatSession(e.key, e.name);
+        await _dataService.updateCalAscMatSession(e.key, e.name.trim());
         final sessions = _dataService.getAllCalAscMatSessions();
         return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
       },
