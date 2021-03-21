@@ -4,7 +4,6 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/domain/services/data_service.dart';
 import 'package:genshindb/domain/services/genshin_service.dart';
 import 'package:genshindb/domain/services/settings_service.dart';
 
@@ -15,9 +14,8 @@ part 'characters_state.dart';
 class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   final GenshinService _genshinService;
   final SettingsService _settingsService;
-  final DataService _dataService;
 
-  CharactersBloc(this._genshinService, this._settingsService, this._dataService) : super(const CharactersState.loading());
+  CharactersBloc(this._genshinService, this._settingsService) : super(const CharactersState.loading());
 
   _LoadedState get currentState => state as _LoadedState;
 
@@ -26,7 +24,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     CharactersEvent event,
   ) async* {
     final s = event.map(
-      init: (e) => _buildInitialState(includeInventory: e.includeInventory, elementTypes: ElementType.values, weaponTypes: WeaponType.values),
+      init: (e) => _buildInitialState(excludeKeys: e.excludeKeys, elementTypes: ElementType.values, weaponTypes: WeaponType.values),
       characterFilterTypeChanged: (e) => currentState.copyWith.call(tempCharacterFilterType: e.characterFilterType),
       elementTypeChanged: (e) {
         var types = <ElementType>[];
@@ -59,6 +57,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         sortDirectionType: currentState.sortDirectionType,
         weaponTypes: currentState.weaponTypes,
         roleType: currentState.tempRoleType,
+        excludeKeys: currentState.excludeKeys,
       ),
       applyFilterChanges: (_) => _buildInitialState(
         search: currentState.search,
@@ -69,6 +68,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         sortDirectionType: currentState.tempSortDirectionType,
         weaponTypes: currentState.tempWeaponTypes,
         roleType: currentState.tempRoleType,
+        excludeKeys: currentState.excludeKeys,
       ),
       cancelChanges: (_) => currentState.copyWith.call(
         tempCharacterFilterType: currentState.characterFilterType,
@@ -78,15 +78,15 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         tempSortDirectionType: currentState.sortDirectionType,
         tempWeaponTypes: currentState.weaponTypes,
         tempRoleType: currentState.roleType,
+        excludeKeys: currentState.excludeKeys,
       ),
     );
     yield s;
   }
 
-//TODO: FALTA UN DELAY EN EL SEARCH
   CharactersState _buildInitialState({
     String search,
-    bool includeInventory = true,
+    List<String> excludeKeys = const [],
     List<WeaponType> weaponTypes = const [],
     List<ElementType> elementTypes = const [],
     int rarity = 0,
@@ -97,8 +97,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   }) {
     final isLoaded = state is _LoadedState;
     var characters = _genshinService.getCharactersForCard();
-    if (!includeInventory) {
-      final excludeKeys = _dataService.getAllCharactersInInventory().map((e) => e.key).toList();
+    if (excludeKeys.isNotEmpty) {
       characters = characters.where((el) => !excludeKeys.contains(el.key)).toList();
     }
 
@@ -124,6 +123,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         showCharacterDetails: _settingsService.showCharacterDetails,
         roleType: roleType,
         tempRoleType: roleType,
+        excludeKeys: excludeKeys,
       );
     }
 
@@ -178,6 +178,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
       tempCharacterFilterType: characterFilterType,
       sortDirectionType: sortDirectionType,
       tempSortDirectionType: sortDirectionType,
+      excludeKeys: excludeKeys,
     );
     return s;
   }

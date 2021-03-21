@@ -63,15 +63,17 @@ class _WeaponsInventoryTabPageState extends State<WeaponsInventoryTabPage> with 
   }
 
   Future<void> _openWeaponsPage(BuildContext context) async {
-    context.read<WeaponsBloc>().add(const WeaponsEvent.init(includeInventory: false));
+    final inventoryBloc = context.read<InventoryBloc>();
+    final weaponsBloc = context.read<WeaponsBloc>();
+    weaponsBloc.add(WeaponsEvent.init(excludeKeys: inventoryBloc.getItemsKeysToExclude()));
     final route = MaterialPageRoute<String>(builder: (ctx) => const WeaponsPage(isInSelectionMode: true));
     final keyName = await Navigator.of(context).push(route);
 
-    context.read<WeaponsBloc>().add(const WeaponsEvent.init());
+    weaponsBloc.add(const WeaponsEvent.init());
     if (keyName.isNullEmptyOrWhitespace) {
       return;
     }
 
-    context.read<InventoryBloc>().add(InventoryEvent.addWeapon(key: keyName));
+    inventoryBloc.add(InventoryEvent.addWeapon(key: keyName));
   }
 }

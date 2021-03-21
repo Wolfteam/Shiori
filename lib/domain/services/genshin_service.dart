@@ -17,12 +17,14 @@ abstract class GenshinService {
   CharacterFileModel getCharacterByImg(String img);
   List<CharacterFileModel> getCharactersForBirthday(DateTime date);
   List<TierListRowModel> getDefaultCharacterTierList(List<int> colors);
+  List<String> getUpcomingCharactersKeys();
 
   List<WeaponCardModel> getWeaponsForCard();
   WeaponCardModel getWeaponForCard(String key);
   WeaponCardModel getWeaponForCardByImg(String image);
   WeaponFileModel getWeapon(String key);
   WeaponFileModel getWeaponByImg(String img);
+  List<String> getUpcomingWeaponsKeys();
 
   List<ArtifactCardModel> getArtifactsForCard();
   ArtifactCardModel getArtifactForCardByImg(String image);
@@ -55,4 +57,6 @@ abstract class GenshinService {
   int getServerDay(AppServerResetTimeType type);
 
   List<GameCodeFileModel> getAllGameCodes();
+
+  List<String> getUpcomingKeys();
 }

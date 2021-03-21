@@ -161,6 +161,8 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
 
   ItemAscensionMaterials getItem(int index) => currentState.items.elementAt(index);
 
+  List<String> getItemsKeysToExclude() => currentState.items.map((e) => e.key).toList();
+
   Future<CalculatorAscMaterialsState> _updateItem(int sessionKey, int index, ItemAscensionMaterials updatedItem) async {
     final items = [...currentState.items];
     items.removeAt(index);

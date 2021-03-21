@@ -70,15 +70,17 @@ class _CharactersInventoryTabPageState extends State<CharactersInventoryTabPage>
   }
 
   Future<void> _openCharactersPage(BuildContext context) async {
-    context.read<CharactersBloc>().add(const CharactersEvent.init(includeInventory: false));
+    final inventoryBloc = context.read<InventoryBloc>();
+    final charactersBloc = context.read<CharactersBloc>();
+    charactersBloc.add(CharactersEvent.init(excludeKeys: inventoryBloc.getItemsKeysToExclude()));
     final route = MaterialPageRoute<String>(builder: (_) => const CharactersPage(isInSelectionMode: true));
     final keyName = await Navigator.push(context, route);
 
-    context.read<CharactersBloc>().add(const CharactersEvent.init());
+    charactersBloc.add(const CharactersEvent.init());
     if (keyName.isNullEmptyOrWhitespace) {
       return;
     }
 
-    context.read<InventoryBloc>().add(InventoryEvent.addCharacter(key: keyName));
+    inventoryBloc.add(InventoryEvent.addCharacter(key: keyName));
   }
 }

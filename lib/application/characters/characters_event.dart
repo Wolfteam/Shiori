@@ -3,7 +3,7 @@ part of 'characters_bloc.dart';
 @freezed
 abstract class CharactersEvent with _$CharactersEvent {
   const factory CharactersEvent.init({
-    @Default(true) bool includeInventory,
+    @Default(<String>[]) List<String> excludeKeys,
   }) = _Init;
 
   const factory CharactersEvent.searchChanged({

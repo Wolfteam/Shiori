@@ -39,8 +39,7 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             final settingsService = getIt<SettingsService>();
-            final dataService = getIt<DataService>();
-            return CharactersBloc(genshinService, settingsService, dataService);
+            return CharactersBloc(genshinService, settingsService);
           },
         ),
         BlocProvider(
@@ -56,8 +55,7 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             final settingsService = getIt<SettingsService>();
-            final dataService = getIt<DataService>();
-            return WeaponsBloc(genshinService, settingsService, dataService);
+            return WeaponsBloc(genshinService, settingsService);
           },
         ),
         BlocProvider(
@@ -182,9 +180,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => CalculatorAscMaterialsSessionFormBloc()),
         BlocProvider(
           create: (ctx) {
+            final genshinService = getIt<GenshinService>();
             final telemetryService = getIt<TelemetryService>();
             final dataService = getIt<DataService>();
-            return InventoryBloc(dataService, telemetryService, ctx.read<CharacterBloc>(), ctx.read<WeaponBloc>());
+            return InventoryBloc(genshinService, dataService, telemetryService, ctx.read<CharacterBloc>(), ctx.read<WeaponBloc>());
           },
         ),
         BlocProvider(create: (_) => ItemQuantityFormBloc()),

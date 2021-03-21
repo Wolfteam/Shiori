@@ -6,6 +6,7 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/data_service.dart';
+import 'package:genshindb/domain/services/genshin_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
 import 'package:meta/meta.dart';
 
@@ -14,6 +15,7 @@ part 'inventory_event.dart';
 part 'inventory_state.dart';
 
 class InventoryBloc extends Bloc<InventoryEvent, InventoryState> {
+  final GenshinService _genshinService;
   final DataService _dataService;
   final TelemetryService _telemetryService;
   final CharacterBloc _characterBloc;
@@ -21,7 +23,8 @@ class InventoryBloc extends Bloc<InventoryEvent, InventoryState> {
 
   _LoadedState get currentState => state as _LoadedState;
 
-  InventoryBloc(this._dataService, this._telemetryService, this._characterBloc, this._weaponBloc) : super(const InventoryState.loading());
+  InventoryBloc(this._genshinService, this._dataService, this._telemetryService, this._characterBloc, this._weaponBloc)
+      : super(const InventoryState.loading());
 
   @override
   Stream<InventoryState> mapEventToState(InventoryEvent event) async* {
@@ -97,5 +100,14 @@ class InventoryBloc extends Bloc<InventoryEvent, InventoryState> {
     );
 
     yield s;
+  }
+
+  List<String> getItemsKeysToExclude() {
+    final upcoming = _genshinService.getUpcomingKeys();
+    if (state is _LoadedState) {
+      return currentState.characters.map((e) => e.key).toList() + currentState.weapons.map((e) => e.key).toList() + upcoming;
+    }
+
+    return upcoming;
   }
 }

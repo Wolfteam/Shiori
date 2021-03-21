@@ -125,11 +125,13 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
   }
 
   Future<void> _openCharacterPage(BuildContext context) async {
-    context.read<CharactersBloc>().add(const CharactersEvent.init());
+    final charactersBloc = context.read<CharactersBloc>();
+    charactersBloc.add(CharactersEvent.init(excludeKeys: context.read<CalculatorAscMaterialsBloc>().getItemsKeysToExclude()));
+
     final route = MaterialPageRoute<String>(builder: (ctx) => const CharactersPage(isInSelectionMode: true));
     final keyName = await Navigator.of(context).push(route);
 
-    context.read<CharactersBloc>().add(const CharactersEvent.init());
+    charactersBloc.add(const CharactersEvent.init());
     if (keyName.isNullEmptyOrWhitespace) {
       return;
     }
@@ -146,11 +148,13 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
   }
 
   Future<void> _openWeaponPage(BuildContext context) async {
-    context.read<WeaponsBloc>().add(const WeaponsEvent.init());
+    final weaponsBloc = context.read<WeaponsBloc>();
+    weaponsBloc.add(WeaponsEvent.init(excludeKeys: context.read<CalculatorAscMaterialsBloc>().getItemsKeysToExclude()));
+
     final route = MaterialPageRoute<String>(builder: (ctx) => const WeaponsPage(isInSelectionMode: true));
     final keyName = await Navigator.of(context).push(route);
 
-    context.read<WeaponsBloc>().add(const WeaponsEvent.init());
+    weaponsBloc.add(const WeaponsEvent.init());
     if (keyName.isNullEmptyOrWhitespace) {
       return;
     }

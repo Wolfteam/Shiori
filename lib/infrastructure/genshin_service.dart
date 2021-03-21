@@ -489,6 +489,15 @@ class GenshinServiceImpl implements GenshinService {
     return _toWeaponForCard(weapon);
   }
 
+  @override
+  List<String> getUpcomingCharactersKeys() => _charactersFile.characters.where((el) => el.isComingSoon).map((e) => e.key).toList();
+
+  @override
+  List<String> getUpcomingWeaponsKeys() => _weaponsFile.weapons.where((el) => el.isComingSoon).map((e) => e.key).toList();
+
+  @override
+  List<String> getUpcomingKeys() => getUpcomingCharactersKeys() + getUpcomingWeaponsKeys();
+
   List<ItemAscensionMaterialModel> _getMaterialsToUse(
     List<ItemAscensionMaterialModel> materials, {
     List<MaterialType> ignore = const [MaterialType.currency],
