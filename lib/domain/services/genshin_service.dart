@@ -12,12 +12,14 @@ abstract class GenshinService {
   Future<void> initTranslations(AppLanguageType languageType);
 
   List<CharacterCardModel> getCharactersForCard();
+  CharacterCardModel getCharacterForCard(String key);
   CharacterFileModel getCharacter(String key);
   CharacterFileModel getCharacterByImg(String img);
   List<CharacterFileModel> getCharactersForBirthday(DateTime date);
   List<TierListRowModel> getDefaultCharacterTierList(List<int> colors);
 
   List<WeaponCardModel> getWeaponsForCard();
+  WeaponCardModel getWeaponForCard(String key);
   WeaponCardModel getWeaponForCardByImg(String image);
   WeaponFileModel getWeapon(String key);
   WeaponFileModel getWeaponByImg(String img);
@@ -44,7 +46,8 @@ abstract class GenshinService {
   List<ElementReactionCardModel> getElementReactions();
   List<ElementReactionCardModel> getElementResonances();
 
-  List<MaterialCardModel> getAllMaterials();
+  List<MaterialCardModel> getAllMaterialsForCard();
+  MaterialCardModel getMaterialForCard(String key);
   MaterialFileModel getMaterial(String key);
   MaterialFileModel getMaterialByImage(String image);
   List<MaterialFileModel> getMaterials(MaterialType type);
