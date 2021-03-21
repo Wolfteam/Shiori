@@ -1,6 +1,23 @@
 {
   "gameCodes": [
     {
+      "dateAdded": "03/20/2021",
+      "isExpired": false,
+      "code": "SBNBUK67M37Z",
+      "rewards": [
+        {
+          "quantity": 30,
+          "materialType": "currency",
+          "image": "primogem.png"
+        },
+        {
+          "quantity": 5,
+          "materialType": "expCharacter",
+          "image": "adventurers_experience.png"
+        }
+      ]
+    },
+    {
       "dateAdded": "03/18/2021",
       "isExpired": false,
       "code": "GS6ACJ775KNV",
@@ -217,6 +234,18 @@
       ]
     },
     {
+      "dateAdded": "11/20/2020",
+      "isExpired": true,
+      "code": "GOLNXLAKC58",
+      "rewards": [
+        {
+          "quantity": 50,
+          "materialType": "currency",
+          "image": "primogem.png"
+        }
+      ]
+    },
+    {
       "dateAdded": "11/10/2020",
       "isExpired": false,
       "code": "GENSHINGIFT",
@@ -234,19 +263,7 @@
       ]
     },
     {
-      "dateAdded": null,
-      "isExpired": true,
-      "code": "GOLNXLAKC58",
-      "rewards": [
-        {
-          "quantity": 50,
-          "materialType": "currency",
-          "image": "primogem.png"
-        }
-      ]
-    },
-    {
-      "dateAdded": null,
+      "dateAdded": "11/10/2020",
       "isExpired": true,
       "code": "GENSHIN1111",
       "rewards": [
@@ -263,7 +280,7 @@
       ]
     },
     {
-      "dateAdded": null,
+      "dateAdded": "10/30/2020",
       "isExpired": true,
       "code": "GENSHINZHB30",
       "rewards": [
@@ -275,7 +292,7 @@
       ]
     },
     {
-      "dateAdded": null,
+      "dateAdded": "10/14/2020",
       "isExpired": true,
       "code": "GENSHINMHY0O",
       "rewards": [
@@ -287,7 +304,7 @@
       ]
     },
     {
-      "dateAdded": null,
+      "dateAdded": "10/14/2020",
       "isExpired": true,
       "code": "GENSHINMHY0M",
       "rewards": [
@@ -299,7 +316,7 @@
       ]
     },
     {
-      "dateAdded": null,
+      "dateAdded": "10/14/2020",
       "isExpired": true,
       "code": "GENSHINMHY0I",
       "rewards": [
@@ -311,7 +328,7 @@
       ]
     },
     {
-      "dateAdded": null,
+      "dateAdded": "10/06/2020",
       "isExpired": true,
       "code": "GENSHIN1006U",
       "rewards": [
@@ -328,7 +345,7 @@
       ]
     },
     {
-      "dateAdded": null,
+      "dateAdded": "10/06/2020",
       "isExpired": true,
       "code": "GENSHIN1006A",
       "rewards": [
@@ -345,7 +362,7 @@
       ]
     },
     {
-      "dateAdded": null,
+      "dateAdded": "10/06/2020",
       "isExpired": true,
       "code": "GENSHIN1006S",
       "rewards": [
@@ -362,7 +379,7 @@
       ]
     },
     {
-      "dateAdded": null,
+      "dateAdded": "10/04/2020",
       "isExpired": true,
       "code": "GENSHIN0928E",
       "rewards": [
@@ -379,7 +396,7 @@
       ]
     },
     {
-      "dateAdded": null,
+      "dateAdded": "10/04/2020",
       "isExpired": true,
       "code": "GENSHIN0928N",
       "rewards": [
@@ -396,7 +413,7 @@
       ]
     },
     {
-      "dateAdded": null,
+      "dateAdded": "10/04/2020",
       "isExpired": true,
       "code": "GENSHIN0928A",
       "rewards": [

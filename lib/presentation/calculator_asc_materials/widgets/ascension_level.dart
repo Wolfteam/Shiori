@@ -25,6 +25,7 @@ class AscensionLevel extends StatelessWidget {
           opacity: isSelected ? 1 : 0.2,
           child: Image.asset(Assets.getOtherMaterialPath('mark_wind_crystal.png'), width: 40, height: 40),
         ),
+        splashRadius: 20,
         onPressed: () {
           final newValue = i == minAscensionLevel && isSelected ? 0 : i;
           final event = isCurrentLevel
