@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/models/materials/material_card_model.dart';
+import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/material/material_page.dart' as mp;
 import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:genshindb/presentation/shared/gradient_card.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:numberpicker/numberpicker.dart';
 import 'package:transparent_image/transparent_image.dart';
+
+const double defaultWidth = 70;
+const double defaultHeight = 60;
 
 class MaterialCard extends StatelessWidget {
   final String keyName;
@@ -18,6 +23,8 @@ class MaterialCard extends StatelessWidget {
   final bool withoutDetails;
   final bool withElevation;
   final int quantity;
+  final bool isInSelectionMode;
+  final bool isInQuantityMode;
 
   const MaterialCard({
     Key key,
@@ -25,24 +32,28 @@ class MaterialCard extends StatelessWidget {
     @required this.name,
     @required this.image,
     @required this.rarity,
-    this.imgWidth = 70,
-    this.imgHeight = 60,
+    this.imgWidth = defaultWidth,
+    this.imgHeight = defaultHeight,
     this.withElevation = true,
+    this.isInSelectionMode = false,
   })  : withoutDetails = false,
+        isInQuantityMode = false,
         quantity = -1,
         super(key: key);
 
   MaterialCard.item({
     Key key,
     @required MaterialCardModel item,
-    this.imgWidth = 70,
-    this.imgHeight = 60,
+    this.imgWidth = defaultWidth,
+    this.imgHeight = defaultHeight,
     this.withElevation = true,
+    this.isInSelectionMode = false,
   })  : keyName = item.key,
         name = item.name,
         image = item.image,
         rarity = item.rarity,
         withoutDetails = false,
+        isInQuantityMode = false,
         quantity = -1,
         super(key: key);
 
@@ -51,25 +62,30 @@ class MaterialCard extends StatelessWidget {
     @required this.keyName,
     @required this.image,
     @required this.rarity,
+    this.isInSelectionMode = false,
   })  : name = null,
-        imgWidth = 70,
-        imgHeight = 60,
+        imgWidth = defaultWidth,
+        imgHeight = defaultHeight,
         withoutDetails = true,
         withElevation = false,
+        isInQuantityMode = false,
         quantity = -1,
         super(key: key);
 
-  const MaterialCard.quantity({
+  MaterialCard.quantity({
     Key key,
-    @required this.keyName,
-    @required this.image,
-    @required this.rarity,
-    @required this.quantity,
-  })  : name = null,
-        imgWidth = 70,
-        imgHeight = 60,
+    @required MaterialCardModel item,
+    this.isInSelectionMode = false,
+  })  : keyName = item.key,
+        name = item.name,
+        image = item.image,
+        rarity = item.rarity,
+        quantity = item.quantity,
+        imgWidth = defaultWidth,
+        imgHeight = defaultHeight,
         withoutDetails = true,
         withElevation = false,
+        isInQuantityMode = true,
         super(key: key);
 
   @override
@@ -93,7 +109,7 @@ class MaterialCard extends StatelessWidget {
                 placeholder: MemoryImage(kTransparentImage),
                 image: AssetImage(image),
               ),
-              if (quantity >= 0) Text('$quantity', style: theme.textTheme.subtitle2),
+              if (quantity >= 0 && isInQuantityMode) Text('$quantity', style: theme.textTheme.subtitle2),
               if (!withoutDetails)
                 Center(
                   child: Tooltip(
@@ -114,10 +130,45 @@ class MaterialCard extends StatelessWidget {
   }
 
   Future<void> _gotoMaterialPage(BuildContext context) async {
+    if (isInQuantityMode) {
+      return _showQuantityPickerDialog(context);
+    }
+
+    if (isInSelectionMode) {
+      Navigator.pop(context, keyName);
+      return;
+    }
+
     final bloc = context.read<MaterialBloc>();
     bloc.add(MaterialEvent.loadFromName(key: keyName));
     final route = MaterialPageRoute(builder: (c) => mp.MaterialPage());
     await Navigator.push(context, route);
     bloc.pop();
+  }
+
+  Future<void> _showQuantityPickerDialog(BuildContext context) async {
+    final theme = Theme.of(context);
+    final s = S.of(context);
+    final newValue = await showDialog<int>(
+      context: context,
+      builder: (BuildContext context) {
+        return NumberPickerDialog.integer(
+          minValue: 0,
+          //TODO: CHANGE THIS
+          maxValue: 2000,
+          title: Text(s.quantity),
+          initialIntegerValue: quantity,
+          infiniteLoop: true,
+          cancelWidget: Text(s.cancel),
+          confirmWidget: Text(s.ok, style: TextStyle(color: theme.primaryColor)),
+        );
+      },
+    );
+
+    if (newValue == null) {
+      return;
+    }
+
+    context.read<InventoryBloc>().add(InventoryEvent.updateMaterial(key: keyName, quantity: newValue));
   }
 }

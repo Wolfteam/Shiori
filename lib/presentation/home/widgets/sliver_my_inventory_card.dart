@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/home/widgets/sliver_card_item.dart';
 import 'package:genshindb/presentation/inventory/inventory_page.dart';
@@ -24,6 +26,8 @@ class SliverMyInventoryCard extends StatelessWidget {
 }
 
 Future<void> _goToInventoryPage(BuildContext context) async {
+  context.read<InventoryBloc>().add(const InventoryEvent.init());
   final route = MaterialPageRoute(builder: (c) => InventoryPage());
   await Navigator.push(context, route);
+  context.read<InventoryBloc>().add(const InventoryEvent.close());
 }

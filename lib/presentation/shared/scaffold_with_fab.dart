@@ -44,9 +44,11 @@ class _ScaffoldWithFabState extends State<ScaffoldWithFab> with SingleTickerProv
       child: SafeArea(
         child: Scaffold(
           appBar: widget.appbar,
-          body: SingleChildScrollView(
-            controller: _scrollController,
-            child: widget.child,
+          body: SafeArea(
+            child: SingleChildScrollView(
+              controller: _scrollController,
+              child: widget.child,
+            ),
           ),
           floatingActionButton: AppFab(
             hideFabAnimController: _hideFabAnimController,

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_user_agent/flutter_user_agent.dart';
-import 'package:genshindb/domain/services/calculator_service.dart';
-import 'package:genshindb/domain/services/locale_service.dart';
-import 'package:genshindb/domain/services/telemetry_service.dart';
 
 import 'application/bloc.dart';
+import 'domain/services/calculator_service.dart';
 import 'domain/services/data_service.dart';
 import 'domain/services/genshin_service.dart';
+import 'domain/services/locale_service.dart';
 import 'domain/services/logging_service.dart';
 import 'domain/services/network_service.dart';
 import 'domain/services/settings_service.dart';
+import 'domain/services/telemetry_service.dart';
 import 'injection.dart';
 import 'presentation/app_widget.dart';
 
@@ -39,7 +39,8 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             final settingsService = getIt<SettingsService>();
-            return CharactersBloc(genshinService, settingsService);
+            final dataService = getIt<DataService>();
+            return CharactersBloc(genshinService, settingsService, dataService);
           },
         ),
         BlocProvider(
@@ -47,21 +48,24 @@ class MyApp extends StatelessWidget {
             final genshinService = getIt<GenshinService>();
             final telemetryService = getIt<TelemetryService>();
             final localeService = getIt<LocaleService>();
-            return CharacterBloc(genshinService, telemetryService, localeService);
+            final dataService = getIt<DataService>();
+            return CharacterBloc(genshinService, telemetryService, localeService, dataService);
           },
         ),
         BlocProvider(
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             final settingsService = getIt<SettingsService>();
-            return WeaponsBloc(genshinService, settingsService);
+            final dataService = getIt<DataService>();
+            return WeaponsBloc(genshinService, settingsService, dataService);
           },
         ),
         BlocProvider(
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             final telemetryService = getIt<TelemetryService>();
-            return WeaponBloc(genshinService, telemetryService);
+            final dataService = getIt<DataService>();
+            return WeaponBloc(genshinService, telemetryService, dataService);
           },
         ),
         BlocProvider(
@@ -176,6 +180,11 @@ class MyApp extends StatelessWidget {
           },
         ),
         BlocProvider(create: (_) => CalculatorAscMaterialsSessionFormBloc()),
+        BlocProvider(create: (_) {
+          final telemetryService = getIt<TelemetryService>();
+          final dataService = getIt<DataService>();
+          return InventoryBloc(dataService, telemetryService);
+        }),
       ],
       child: BlocBuilder<MainBloc, MainState>(
         builder: (ctx, state) => AppWidget(),

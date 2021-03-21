@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/material/material_page.dart' as mp;
-import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
 
 class MaterialItemButton extends StatelessWidget {
   final String image;
@@ -28,9 +26,6 @@ class MaterialItemButton extends StatelessWidget {
   }
 
   Future<void> _gotoMaterialPage(BuildContext context) async {
-    final s = S.of(context);
-    ToastUtils.showWarningToast(s.comingSoon);
-    return;
     final bloc = context.read<MaterialBloc>();
     bloc.add(MaterialEvent.loadFromImg(image: image));
     final route = MaterialPageRoute(builder: (c) => mp.MaterialPage());
