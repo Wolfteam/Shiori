@@ -10,6 +10,7 @@ export 'elements/elements_bloc.dart';
 export 'game_codes/game_codes_bloc.dart';
 export 'home/home_bloc.dart';
 export 'inventory/inventory_bloc.dart';
+export 'item_quantity_form/item_quantity_form_bloc.dart';
 export 'main/main_bloc.dart';
 export 'main_tab/main_tab_bloc.dart';
 export 'material/material_bloc.dart';

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
+import 'package:genshindb/domain/enums/enums.dart' as enums;
 import 'package:genshindb/domain/models/materials/material_card_model.dart';
-import 'package:genshindb/generated/l10n.dart';
+import 'package:genshindb/domain/utils/currency_utils.dart';
 import 'package:genshindb/presentation/material/material_page.dart' as mp;
 import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:genshindb/presentation/shared/gradient_card.dart';
+import 'package:genshindb/presentation/shared/item_quantity_dialog.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:numberpicker/numberpicker.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 const double defaultWidth = 70;
@@ -25,6 +26,7 @@ class MaterialCard extends StatelessWidget {
   final int quantity;
   final bool isInSelectionMode;
   final bool isInQuantityMode;
+  final enums.MaterialType type;
 
   const MaterialCard({
     Key key,
@@ -32,6 +34,7 @@ class MaterialCard extends StatelessWidget {
     @required this.name,
     @required this.image,
     @required this.rarity,
+    @required this.type,
     this.imgWidth = defaultWidth,
     this.imgHeight = defaultHeight,
     this.withElevation = true,
@@ -55,6 +58,7 @@ class MaterialCard extends StatelessWidget {
         withoutDetails = false,
         isInQuantityMode = false,
         quantity = -1,
+        type = item.type,
         super(key: key);
 
   const MaterialCard.withoutDetails({
@@ -62,6 +66,7 @@ class MaterialCard extends StatelessWidget {
     @required this.keyName,
     @required this.image,
     @required this.rarity,
+    @required this.type,
     this.isInSelectionMode = false,
   })  : name = null,
         imgWidth = defaultWidth,
@@ -86,6 +91,7 @@ class MaterialCard extends StatelessWidget {
         withoutDetails = true,
         withElevation = false,
         isInQuantityMode = true,
+        type = item.type,
         super(key: key);
 
   @override
@@ -109,8 +115,15 @@ class MaterialCard extends StatelessWidget {
                 placeholder: MemoryImage(kTransparentImage),
                 image: AssetImage(image),
               ),
-              if (quantity >= 0 && isInQuantityMode) Text('$quantity', style: theme.textTheme.subtitle2),
-              if (!withoutDetails)
+              if (quantity >= 0 && isInQuantityMode)
+                Container(
+                  margin: const EdgeInsets.only(bottom: 5),
+                  child: Text(
+                    type == enums.MaterialType.currency ? CurrencyUtils.formatNumber(quantity) : '$quantity',
+                    style: theme.textTheme.subtitle2,
+                  ),
+                ),
+              if (!withoutDetails && !isInQuantityMode)
                 Center(
                   child: Tooltip(
                     message: name,
@@ -147,22 +160,9 @@ class MaterialCard extends StatelessWidget {
   }
 
   Future<void> _showQuantityPickerDialog(BuildContext context) async {
-    final theme = Theme.of(context);
-    final s = S.of(context);
     final newValue = await showDialog<int>(
       context: context,
-      builder: (BuildContext context) {
-        return NumberPickerDialog.integer(
-          minValue: 0,
-          //TODO: CHANGE THIS
-          maxValue: 2000,
-          title: Text(s.quantity),
-          initialIntegerValue: quantity,
-          infiniteLoop: true,
-          cancelWidget: Text(s.cancel),
-          confirmWidget: Text(s.ok, style: TextStyle(color: theme.primaryColor)),
-        );
-      },
+      builder: (_) => ItemQuantityDialog(quantity: quantity),
     );
 
     if (newValue == null) {

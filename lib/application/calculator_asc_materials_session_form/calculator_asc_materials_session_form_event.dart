@@ -4,7 +4,7 @@ part of 'calculator_asc_materials_session_form_bloc.dart';
 abstract class CalculatorAscMaterialsSessionFormEvent implements _$CalculatorAscMaterialsSessionFormEvent {
   const factory CalculatorAscMaterialsSessionFormEvent.nameChanged({
     @required String name,
-  }) = _Init;
+  }) = _NameChanged;
 
   const factory CalculatorAscMaterialsSessionFormEvent.close() = _Close;
 }

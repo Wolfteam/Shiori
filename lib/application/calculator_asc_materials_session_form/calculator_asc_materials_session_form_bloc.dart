@@ -9,9 +9,10 @@ part 'calculator_asc_materials_session_form_bloc.freezed.dart';
 part 'calculator_asc_materials_session_form_event.dart';
 part 'calculator_asc_materials_session_form_state.dart';
 
+const _defaultState = CalculatorAscMaterialsSessionFormState.loaded(name: '', isNameDirty: false, isNameValid: false);
+
 class CalculatorAscMaterialsSessionFormBloc extends Bloc<CalculatorAscMaterialsSessionFormEvent, CalculatorAscMaterialsSessionFormState> {
-  CalculatorAscMaterialsSessionFormBloc()
-      : super(const CalculatorAscMaterialsSessionFormState.loaded(name: '', isNameDirty: false, isNameValid: false));
+  CalculatorAscMaterialsSessionFormBloc() : super(_defaultState);
 
   static int nameMaxLength = 25;
 
@@ -24,7 +25,7 @@ class CalculatorAscMaterialsSessionFormBloc extends Bloc<CalculatorAscMaterialsS
 
         return state.copyWith.call(name: e.name, isNameDirty: isDirty, isNameValid: isValid);
       },
-      close: (_) => const CalculatorAscMaterialsSessionFormState.loaded(name: '', isNameDirty: false, isNameValid: false),
+      close: (_) => _defaultState,
     );
 
     yield s;
