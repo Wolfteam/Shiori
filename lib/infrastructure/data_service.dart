@@ -1,5 +1,6 @@
 import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/assets.dart';
+import 'package:genshindb/domain/enums/item_type.dart';
 import 'package:genshindb/domain/models/entities.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/calculator_service.dart';
@@ -14,6 +15,7 @@ class DataServiceImpl implements DataService {
   Box<CalculatorSession> _sessionBox;
   Box<CalculatorItem> _calcItemBox;
   Box<CalculatorCharacterSkill> _calcItemSkillBox;
+  Box<InventoryItem> _inventoryBox;
 
   DataServiceImpl(this._genshinService, this._calculatorService);
 
@@ -23,6 +25,7 @@ class DataServiceImpl implements DataService {
     _sessionBox = await Hive.openBox<CalculatorSession>('calculatorSessions');
     _calcItemBox = await Hive.openBox<CalculatorItem>('calculatorSessionsItems');
     _calcItemSkillBox = await Hive.openBox<CalculatorCharacterSkill>('calculatorSessionsItemsSkills');
+    _inventoryBox = await Hive.openBox<InventoryItem>('inventory');
   }
 
   @override
@@ -114,10 +117,83 @@ class DataServiceImpl implements DataService {
     }
   }
 
+  @override
+  Future<void> addItemToInventory(String key, ItemType type, int quantity) {
+    if (isItemInInventory(key, type)) {
+      return Future.value();
+    }
+    return _inventoryBox.add(InventoryItem(key, quantity, type.index));
+  }
+
+  @override
+  Future<void> deleteItemFromInventory(String key, ItemType type) async {
+    final item = _getItemFromInventory(key, type);
+
+    if (item != null) {
+      await _inventoryBox.delete(item.key);
+    }
+  }
+
+  @override
+  List<CharacterCardModel> getAllCharactersInInventory() {
+    final characters =
+        _inventoryBox.values.where((el) => el.type == ItemType.character.index).map((e) => _genshinService.getCharacterForCard(e.itemKey)).toList();
+
+    return characters..sort((x, y) => x.name.compareTo(y.name));
+  }
+
+  @override
+  List<MaterialCardModel> getAllMaterialsInInventory() {
+    final materials = _genshinService.getAllMaterialsForCard();
+    final inInventory = _inventoryBox.values.where((el) => el.type == ItemType.material.index).map((e) {
+      final material = _genshinService.getMaterialForCard(e.itemKey);
+      return material.copyWith.call(quantity: e.quantity);
+    }).toList();
+
+    final allMaterials = <MaterialCardModel>[];
+    for (final material in materials) {
+      if (inInventory.any((m) => m.key == material.key)) {
+        //The one in db has the quantity
+        final inDb = inInventory.firstWhere((m) => m.key == material.key);
+        allMaterials.add(inDb);
+      } else {
+        allMaterials.add(material);
+      }
+    }
+
+    return allMaterials..sort((x, y) => x.rarity.compareTo(y.rarity));
+  }
+
+  @override
+  List<WeaponCardModel> getAllWeaponsInInventory() {
+    final weapons =
+        _inventoryBox.values.where((el) => el.type == ItemType.weapon.index).map((e) => _genshinService.getWeaponForCard(e.itemKey)).toList();
+
+    return weapons..sort((x, y) => x.name.compareTo(y.name));
+  }
+
+  @override
+  Future<void> updateItemInInventory(String key, ItemType type, int quantity) async {
+    var item = _getItemFromInventory(key, type);
+    if (item == null) {
+      item = InventoryItem(key, quantity, type.index);
+      await _inventoryBox.add(item);
+    } else {
+      item.quantity = quantity;
+      await item.save();
+    }
+  }
+
+  @override
+  bool isItemInInventory(String key, ItemType type) {
+    return _inventoryBox.values.any((el) => el.itemKey == key && el.type == type.index);
+  }
+
   void _registerAdapters() {
     Hive.registerAdapter(CalculatorCharacterSkillAdapter());
     Hive.registerAdapter(CalculatorItemAdapter());
     Hive.registerAdapter(CalculatorSessionAdapter());
+    Hive.registerAdapter(InventoryItemAdapter());
   }
 
   ItemAscensionMaterials _buildForCharacter(CalculatorItem item) {
@@ -201,5 +277,9 @@ class DataServiceImpl implements DataService {
       isWeapon: item.isWeapon,
       isCharacter: item.isCharacter,
     );
+  }
+
+  InventoryItem _getItemFromInventory(String key, ItemType type) {
+    return _inventoryBox.values.firstWhere((el) => el.itemKey == key && el.type == type.index, orElse: () => null);
   }
 }
