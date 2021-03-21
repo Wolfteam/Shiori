@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
+import 'package:genshindb/domain/services/data_service.dart';
 import 'package:genshindb/domain/services/genshin_service.dart';
 import 'package:genshindb/domain/services/settings_service.dart';
 
@@ -14,8 +15,9 @@ part 'weapons_state.dart';
 class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
   final GenshinService _genshinService;
   final SettingsService _settingsService;
+  final DataService _dataService;
 
-  WeaponsBloc(this._genshinService, this._settingsService) : super(const WeaponsState.loading());
+  WeaponsBloc(this._genshinService, this._settingsService, this._dataService) : super(const WeaponsState.loading());
 
   _LoadedState get currentState => state as _LoadedState;
 
@@ -24,7 +26,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
     WeaponsEvent event,
   ) async* {
     final s = event.map(
-      init: (_) => _buildInitialState(weaponTypes: WeaponType.values),
+      init: (e) => _buildInitialState(includeInventory: e.includeInventory, weaponTypes: WeaponType.values),
       weaponFilterTypeChanged: (e) => currentState.copyWith.call(tempWeaponFilterType: e.filterType),
       rarityChanged: (e) => currentState.copyWith.call(tempRarity: e.rarity),
       sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
@@ -72,6 +74,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
 
   WeaponsState _buildInitialState({
     String search,
+    bool includeInventory = true,
     List<WeaponType> weaponTypes = const [],
     int rarity = 0,
     WeaponFilterType weaponFilterType = WeaponFilterType.rarity,
@@ -81,6 +84,10 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
   }) {
     final isLoaded = state is _LoadedState;
     var data = _genshinService.getWeaponsForCard();
+    if (!includeInventory) {
+      final excludeKeys = _dataService.getAllWeaponsInInventory().map((e) => e.key).toList();
+      data = data.where((el) => !excludeKeys.contains(el.key)).toList();
+    }
 
     if (!isLoaded) {
       final selectedWeaponTypes = WeaponType.values.toList();
