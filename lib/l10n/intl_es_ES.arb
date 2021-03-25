@@ -264,5 +264,6 @@
   "noSessionsHaveBeenCreated": "No se han creado sesiones.\nComienza por crear una.",
   "myInventory": "Mi Inventario",
   "addTheItemsYouGotInGame": "Añade los items que has obtenido en el juego",
-  "quantity": "Cantidad"
+  "quantity": "Cantidad",
+  "useMaterialsFromInventory": "Usar materials de mi inventario"
 }

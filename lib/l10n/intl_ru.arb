@@ -264,5 +264,6 @@
   "noSessionsHaveBeenCreated": "No sessions have been created.\nStart by creating one.",
   "myInventory": "My Inventory",
   "addTheItemsYouGotInGame": "Add the items you have got in the game",
-  "quantity": "Quantity"
+  "quantity": "Quantity",
+  "useMaterialsFromInventory": "Use materials from my inventory"
 }
