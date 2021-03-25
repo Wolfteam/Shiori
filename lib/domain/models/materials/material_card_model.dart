@@ -13,5 +13,6 @@ abstract class MaterialCardModel implements _$MaterialCardModel {
     @required String image,
     @required MaterialType type,
     @Default(0) int quantity,
+    @Default(0) int usedQuantity,
   }) = _Item;
 }

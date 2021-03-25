@@ -34,6 +34,9 @@ class CalculatorItem extends HiveObject {
   @HiveField(9)
   final bool isActive;
 
+  @HiveField(10)
+  final bool useMaterialsFromInventory;
+
   CalculatorItem(
     this.sessionKey,
     this.itemKey,
@@ -45,5 +48,6 @@ class CalculatorItem extends HiveObject {
     this.isCharacter,
     this.isWeapon,
     this.isActive,
+    this.useMaterialsFromInventory,
   );
 }

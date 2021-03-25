@@ -19,6 +19,7 @@ abstract class ItemAscensionMaterials with _$ItemAscensionMaterials {
     @required int currentAscensionLevel,
     @required int desiredAscensionLevel,
     @required List<CharacterSkill> skills,
+    @required bool useMaterialsFromInventory,
     @Default(true) bool isCharacter,
     @Default(false) bool isWeapon,
     @Default(true) bool isActive,
@@ -35,6 +36,7 @@ abstract class ItemAscensionMaterials with _$ItemAscensionMaterials {
     @required int desiredLevel,
     @required int currentAscensionLevel,
     @required int desiredAscensionLevel,
+    @required bool useMaterialsFromInventory,
     //This are here just for convenience
     @Default([]) List<CharacterSkill> skills,
     @Default(false) bool isCharacter,
