@@ -8,7 +8,10 @@ class CalculatorSession extends HiveObject {
   String name;
 
   @HiveField(1)
+  int position;
+
+  @HiveField(2)
   DateTime createdAt;
 
-  CalculatorSession(this.name) : createdAt = DateTime.now();
+  CalculatorSession(this.name, this.position) : createdAt = DateTime.now();
 }

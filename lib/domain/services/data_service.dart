@@ -5,9 +5,11 @@ import 'package:genshindb/domain/models/models.dart';
 abstract class DataService {
   List<CalculatorSessionModel> getAllCalAscMatSessions();
 
-  Future<int> createCalAscMatSession(String name);
+  CalculatorSessionModel getCalcAscMatSession(int sessionKey);
 
-  Future<void> updateCalAscMatSession(int sessionKey, String name);
+  Future<int> createCalAscMatSession(String name, int position);
+
+  Future<void> updateCalAscMatSession(int sessionKey, String name, int position, {bool redistributeMaterials = false});
 
   Future<void> deleteCalAscMatSession(int sessionKey);
 
