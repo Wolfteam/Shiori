@@ -15,6 +15,8 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
   final DataService _dataService;
   final TelemetryService _telemetryService;
 
+  _LoadedState get currentState => state as _LoadedState;
+
   CalculatorAscMaterialsSessionsBloc(this._dataService, this._telemetryService) : super(const CalculatorAscMaterialsSessionsState.loading());
 
   @override
@@ -27,13 +29,14 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
       },
       createSession: (e) async {
         await _telemetryService.trackCalculatorAscMaterialsSessionsCreated();
-        await _dataService.createCalAscMatSession(e.name.trim());
+        await _dataService.createCalAscMatSession(e.name.trim(), currentState.sessions.length);
         final sessions = _dataService.getAllCalAscMatSessions();
         return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
       },
       updateSession: (e) async {
+        final position = currentState.sessions.firstWhere((el) => el.key == e.key).position;
         await _telemetryService.trackCalculatorAscMaterialsSessionsUpdated();
-        await _dataService.updateCalAscMatSession(e.key, e.name.trim());
+        await _dataService.updateCalAscMatSession(e.key, e.name.trim(), position);
         final sessions = _dataService.getAllCalAscMatSessions();
         return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
       },

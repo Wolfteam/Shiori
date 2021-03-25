@@ -3,7 +3,7 @@ part of 'calculator_asc_materials_bloc.dart';
 @freezed
 abstract class CalculatorAscMaterialsEvent with _$CalculatorAscMaterialsEvent {
   const factory CalculatorAscMaterialsEvent.init({
-    @required List<ItemAscensionMaterials> items,
+    @required int sessionKey,
   }) = _Init;
 
   const factory CalculatorAscMaterialsEvent.addCharacter({

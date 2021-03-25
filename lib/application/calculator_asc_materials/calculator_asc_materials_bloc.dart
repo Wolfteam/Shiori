@@ -38,9 +38,10 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   ) async* {
     final s = await event.map(
       init: (e) async {
-        final materialsForSummary = _buildMaterialsForSummary(e.items);
+        final session = _dataService.getCalcAscMatSession(e.sessionKey);
+        final materialsForSummary = _buildMaterialsForSummary(session.items);
         final summary = _calculatorService.generateSummary(materialsForSummary);
-        return CalculatorAscMaterialsState.initial(items: e.items, summary: summary);
+        return CalculatorAscMaterialsState.initial(items: session.items, summary: summary);
       },
       addCharacter: (e) async {
         await _telemetryService.trackCalculatorItemAscMaterialLoaded(e.key);
