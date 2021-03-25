@@ -97,7 +97,7 @@
         {
           "key": "c3",
           "title": "Esplendor Solar",
-          "description": "Aumenta o nível da Abiogênese: Radiação Solar em 3. O nivel máximo de elevação é 15.",
+          "description": "Aumenta o nível da Abiogênese: Radiação Solar em 3. O nível máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
@@ -375,7 +375,7 @@
     {
       "key": "Beidou",
       "name": "Beidou",
-      "description": "Lider da frota armada Crux — uma frota armada baseada no porto de Liyue. Uma frota armada significa exatamente o que parece: uma frota de navios armados até os dentes.",
+      "description": "Líder da frota armada Crux — uma frota armada baseada no porto de Liyue. Uma frota armada significa exatamente o que parece: uma frota de navios armados até os dentes.",
       "skills": [
         {
           "key": "s1",
@@ -652,51 +652,51 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 consecutive strikes.",
+              "description": "Realiza até 4 golpes consecutivos.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous swirling attacks against all nearby enemies. At end of the sequence, perform a more powerful slash.",
+              "description": "Drena Stamina ao longo do tempo para realizar um ataque giratório contínuo contra todos os inimigos próximos. Ao final da sequência, realiza um corte poderoso.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Mergulha em pleno ar para golpear o chão, danificando inimigos em seu caminho e infligindo Dano em uma AdE durante o impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Spirit Blade - Chonghua’s Layered Frost",
-          "description": "Chongyun strikes the ground with his greatsword, causing a Cryo explosion in a circular AoE in front of him that deals Cryo DMG. After a short delay, the cold air created by the Cryo explosion will coalesce into a Chonghua Frost Field, within which all DMG done through Normal and Charged Attacks by Sword, Greatsword and Polearm-wielding characters will be converted to Cryo DMG.",
+          "title": "Lámina do Espirito - Geada de Chongyun",
+          "description": "Chongyun golpeia o chão com seu Espadão, causando uma explosão Cryo em uma AdE circular na sua frente que inflige Dano Cryo. Depois de um curto intervalo, o ar frio criado pela explosão Cryo se coalescerá em um Campo Gelado Chonghua, em que todos os personagens que usem Espada, Espadão ou Lança serão imbuidos com Cryo.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Spirit Blade - Cloud-parting Star",
-          "description": "Performing the secret hand seals, Chongyun summons 3 giant spirit blades in mid-air that fall to the earth one by one after a short delay, exploding as they hit the ground. When the spirit blades explode, they will deal AoE Cryo DMG and launch enemies.",
+          "title": "Lâmina do Espirito - Cortanuvens",
+          "description": "Criando os secretos selos artesanais, Chongyun evoca 3 làminas espirituais em pleno ar que caem à terra uma por uma depois de um curto período de tempo, explodindo assim que encostam ao chão. Quando as lâminas espirituais explodem, elas infligem Dano Cryo em uma AdE e lançam inimigos.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Gallant Journey",
-          "description": "When dispatched on an expedition in Liyue, time consumed is reduced by 25%.",
+          "title": "Jornada Galante",
+          "description": "Quando despachado em uma expedição em Liyue, o tempo consumido é reduzido em 25%.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Steady Breathing",
-          "description": "Sword, Claymore, or Polearm-wielding characters within the field created by Spirit Blade - Chonghua’s Layered Frost have their Normal Attack SPD increased by 8%.",
+          "title": "Respiração Constante",
+          "description": "Os personagens que usam Espada, Espadão e Lança dentro do campo criado pela Lâmina do Espírito - Geada de Chongyun terão a Vel. de ATQ aumentada em 8%.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Rimechaser Blade",
-          "description": "When the field created by Spirit Blade - Chonghua’s Layered Frost disappears, another spirit will be summoned to strike nearby enemies, dealing 100% of Chonghua’s Layered Frost’s Skill DMG as AoE Cryo DMG. Enemies hit by this blade will have their Cryo RES decreased by 10% for 8s.",
+          "title": "Lamina do Caçador de Gelo",
+          "description": "Quando a área criada pela Lámina do Espirito - Geada de Chongyun dissipa, outra lâmina do espirito será evocada para atacar inimigos próximos, infligindo 100% de Dano da habilidade Geada de Chongyun como Dano Cryo em uma AdE. Inimigos golpeados por essa lâmina terá sua RES Cryo diminuida em 10% por 8s.",
           "descriptions": []
         }
       ],
@@ -810,6 +810,7 @@
           "key": "c1",
           "title": "Convicção",
           "description": "Diluc causa 15% a mais de Dano aos inimigos com vida superior a 50%",
+          "secondDescription": null,
           "descriptions": []
         },
         {
@@ -856,54 +857,54 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Katzlein Style",
+          "title": "Pontaria do Caçador",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive shots with a bow.",
+              "description": "Realiza até 5 disparos consecutivos com o arco.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, biting frost accumulates on the arrowhead. A fully charged frost arrow will deal Cryo DMG.",
+              "description": "Realiza um ataque Disparo com Mira mais preciso e com mais dano. Enquanto mira, gelo será acumulado na flecha. Uma flecha totalmente carregada causará Dano Cryo.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "Dispara uma chuva de flechas no ar antes de cair e impactar o chão, causando Dano AdE no impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Icy Paws",
-          "description": "Fires an Icy Paw that deals Cryo DMG to opponents and forms a shield on hit. The shield’s DMG Absorption scales based on Diona’s Max HP, and its duration scales off the number of Icy Paws that hit their target.",
+          "title": "Garra de Gato Gelada",
+          "description": "Dispara uma Garra de Gato Gelada que causa Dano Cryo e cria um escudo. A Absorção de Dano do escudo é baseada na Vida Máxima de Diona, e sua duração depende do número de garras que atingem seu objetivo.",
           "abilities": [
             {
               "key": "a1",
-              "description": "Rapidly fires off 2 Icy Paws.",
+              "description": "Dispara rápidamente 2 Garras de Gato Gelada.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Dashes back quickly before firing five Icy Paws. The shield created by a Hold attack will gain a 75% DMG Absorption Bonus. The shield has a 250% Cryo DMG Absorption Bonus, and will cause your active character to become affected by Cryo at the point of formation for a short duration.",
+              "description": "Retrocede rapidamente e dispara 5 Garras de Gato Geladas. O escudo criado pelo ataque Manter Pressionado ganhará um bónus de 75% de Absorção de Dano. O escudo tem um bônus de 250% de Absorção de Dano Cryo, e ao ser formado aplica o Elemento Cryo em seu próprio personagem por uma curta duração.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Signature Mix",
-          "description": "Tosses out a special cold brew that deals AoE Cryo DMG and creates a Drunken Mist in an AoE.",
+          "title": "Coquetel Assassino",
+          "description": "Atira um coquetel gelado especial que causa Dano Cryo em uma AdE e cria uma Névoa Embriagada em uma AdE.",
           "abilities": [
             {
-              "name": "Drunken Mist",
+              "name": "Névoa Embriagada",
               "description": null,
               "descriptions": [
-                "Deals continuous Cryo DMG to opponents within the AoE.",
-                "Continuously regenerates the HP of characters within the AoE."
+                "Causa Dano Cryo continuo nos inimigos dentro da AdE.",
+                "Regenera continuamente a Vida dos personagens dentro da AdE."
               ]
             }
           ]
@@ -912,20 +913,20 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Complimentary Bar Food",
-          "description": "When a Perfect Cooking is achieved on a dish with restorative effects, there is a 12% chance to obtain double the product.",
+          "title": "Aperitivos Gratis",
+          "description": "Quando uma Culinária Perfeita é feita em uma comida com efeito de recuperação, tem uma chance de 12% de receber o dobro de produção.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Cat’s Tail Secret Menu",
-          "description": "Characters shielded by Icy Paws have their Movement SPD increased by 10% and their Stamina Consumption decreased by 10%.",
+          "title": "Menu Secreto da Cauda do Gato",
+          "description": "Os personagens protegidos por Garras de Gato Gelado tem sua Veloc. Mov. aumentado em 10% e seu Consumo de Stamina diminuido em 10%.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Drunkard’s Farce",
-          "description": "Opponents who enter the AoE of Signature Mix have 10% decreased ATK for 15s.",
+          "title": "Diversão dos bebados",
+          "description": "Inimigos que entram na AdE do Coquetel Assassino causam 10% a menos de ATQ por 15s.",
           "descriptions": []
         }
       ],
@@ -980,48 +981,48 @@
     {
       "key": "Fischl",
       "name": "Fischl",
-      "description": "Uma mulher misteriosa que se autointitula \"Princesa dos Pecados\" e viaja com um corvo chamado Oz.",
+      "description": "Uma mulher misteriosa que se autointitula \"Princesa dos Pecados\", e viaja com um corvo chamado Oz.",
       "skills": [
         {
           "key": "s1",
-          "title": "Bolts of Downfall",
+          "title": "Flechas da Culpa",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive shots with a bow.",
+              "description": "Realiza até 5 tiros consecutivos com um arco.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, the dark lightning spirits of Immernachtreich shall heed the call of their Prinzessin and indwell the enchanted arrowhead. When fully indwelt, the Rachsuchtig Blitz shall deal immense Electro DMG.",
+              "description": "Realiza um Disparo com Mira mais preciso e com Dano aumentado. Durante a mira, espiritos sombrios dos relâmpagos da escuridão atenderão o chamado de sua Princesa e residirão na ponta encantada de sua flecha. Quando estiver completamente incorporado, o relâmpago vingativo ira infligir um imenso Dano Electro.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "Atira uma chuva de flechas em pleno ar antes de atingir o chão, infligindo Dano em uma AdE durante o impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Nightrider",
-          "description": "Summons Oz, the night raven forged of darkness and lightning descends upon the land, dealing Electro DMG in a small AoE. For the ability’s duration, Oz will continuously attack nearby enemies with Freikugel. Hold to adjust the location Oz will be summoned to. Press again any time during the ability’s duration to once again summon him to Fischl’s side.",
+          "title": "Asas da Vigilância Noturna",
+          "description": "Evoca o Oz. O corvo da noite moldado pela escuridão e relâmpagos desce à terra, infligindo Dano Electro em uma Pequena AdE. Ao longo da duração da habilidade, Oz irá continuamente atacar inimigos próximos com Bolas Eletrificantes. Mantenha pressionado para ajustar a localização de onde o Oz será evocado. Pressione a qualquer momento ao longo da duração da habilidade para chamá-lo novamente para o lado de Fischl.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Midnight Phantasmagoria",
-          "description": "Summons Oz to spread his twin swings of twilight and defend Fischl. Has the following properties during the ability’s duration:",
+          "title": "Ilusão Noturna",
+          "description": "Evoca Oz para estender suas asas gêmeas do crepúsculo e defender Fischl. Tem as seguintes propriedades ao longo da duração da habilidade:",
           "abilities": [
             {
               "name": "",
               "description": null,
               "descriptions": [
-                "Fischl takes on Oz’s form, greatly increasing her Movement Speed.",
-                "Strikes nearby enemies with lightning, dealing Electro DMG to enemies she comes into contact with. Each enemy can only be struck once.",
-                "Once this ability’s effects end, Oz will remain on the battlefield and attack his Prinzessin’s foes. If Oz is already on the field, then this will reset the duration of his presence."
+                "Fischl se transforma na forma de Oz, aumentando incrivelmente sua Velocidade de Movimento.",
+                "Ataca inimigos próximos com relâmpago, infligindo Dano Electro em inimigos que ela entra em contato. Cada inimigo pode ser atingido apenas uma vez.",
+                "Quando o efeito dessa habilidade acaba, Oz continuará em campo, então reiniciará a duração de sua presença."
               ]
             }
           ]
@@ -1030,20 +1031,20 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Mein Hausgarten",
-          "description": "When dispatched on an expedition in Mondstadt, time consumed is reduced by 25%.",
+          "title": "Meu Jardim Secreto",
+          "description": "Quando despachado em uma expedição em Mondstadt, o tempo consumido é reduzido em 25%.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Stellar Predator",
-          "description": "When Fischl hits Oz with a fully-charged Aimed Shot, Oz brings down Thundering Retribution, dealing AoE Electro DMG equal to 152.7% of the arrow’s DMG.",
+          "title": "Predador Estelar",
+          "description": "Quando Fischi atinge Oz com um Disparo com Mira totalmente carregado, Oz traz a Retribuição Trovejante, causando Dano Electro AdE igual a 152.7% do Dano da flecha.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Undone Be Thy Sinful Hex",
-          "description": "If a character triggers an Electro-related Elemental Reaction when Oz is on the field, the enemy shall be stricken with Thundering Retribution, dealing Electro DMG equal to 80% of Fischl’s ATK.",
+          "title": "Desfeito Seja Teu Feitiço Pecaminoso",
+          "description": "Se o seu próprio personagem desencadeia uma Reação Elemental do tipo Electro quando Oz está em campo, o inimigo será infligido com Retribuição Trovejante, causando Dano Electro igual a 80% do ATQ de Fischl.",
           "descriptions": []
         }
       ],
@@ -1316,7 +1317,7 @@
         {
           "key": "c5",
           "title": "Incenso de Flores",
-          "description": "Aumenta o nível do Pacificadora de Espíritos em 3 níveis. O nível máximo de elevação é 15.",
+          "description": "Aumenta o nível do Pacificadora de Espíritos em 3 níveis.O nível máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
@@ -1568,70 +1569,70 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Yunlai Swordsmanship",
+          "title": "Estilo de Yunlai",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 rapid strikes.",
+              "description": "Realiza até 5 golpes rápidos.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemeies along the path and dealing AoE DMG upon impact.",
+              "description": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Stellar Restoration",
-          "description": "Hurls a Lightning Stiletto that annihilates her enemies like the swift thunder. When the Stiletto hits its target, it deals Electro DMG to enemies in a small AoE, and places a Stiletto Mark on the spot hit.",
+          "title": "Restauração Estelar",
+          "description": "Arremessa um Relampago Stiletto que aniquila seus inimigos como um rápido trovão. Quando o Stiletto acerta seu alvo, ele causa Dano Electro nos inimigos em uma pequena AdE e coloca uma Marca de Stiletto no local atingido.",
           "abilities": [
             {
               "key": "a1",
-              "description": "Hold to adjust the direction in which the Stiletto shall be thrown. Stilettos thrown by the Hold attack mode can be suspended in mid-air, allowing Keqing to jump to them when using Stellar Restoration a second time.",
+              "description": "Mantenha pressionado para ajustar a direção na qual o Stiletto deve ser lançado. Stilettos lançados pelo modo de Manter pressionado podem ser suspensos em pleno ar, permitindo Keging saltar neles ao usar Estrelas do Regresso uma segunda vez.",
               "descriptions": []
             },
             {
-              "name": "Lightning Stiletto",
-              "description": "If Keqing uses Stellar Restoration again or uses a Charged Attack while its duration lasts, it will clear the Stiletto Mark and produce different effects:",
+              "name": "Relâmpago Stiletto",
+              "description": "Se Keqing usar Estrelas do Regresso novamente ou usar um Ataque Carregado ainda em sua duração, removerá a Marca de Stiletto e produzirá efeitos diferentes:",
               "descriptions": [
-                "If she uses Stellar Restoration again, she will blink to the location of the Mark and unleashed one slashing attack that deals AoE Electro DMG. When blinking to a Stiletto that was thrown from a Holding attack, Keqing can leap across obstructing terrain.",
-                "If Keqing uses a Charged Attack, she will ignite a series of thundering cuts at the Mark’s location, dealing AoE Electro DMG."
+                "Se ela usar Estrelas do Regresso novamente, ela irá teleportar para a localização da Marca e desencadeará um ataque cortante, que causa Dano Electro em AdE. Quando teleportando para um Stiletto que foi lançado com um Ataque Pressionado, Keqing pode ignorar obstruções do terreno.",
+                "Se Keqing usa um Ataque Carregado, ela provocará uma série de cortes estrondosos na localização da Marca, causando Dano Electro em AdE."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Starward Sword",
-          "description": "Keqing unleashes the power of lightning, dealing Electro DMG in an AoE. She then blends into the shadow of her blade, striking a series of thunderclap-blows to nearby enemies simultaneous that deal multiple instance of Electro DMG. The final attack deals massive AoE Electro DMG.",
+          "title": "Passeio Celestial",
+          "description": "Keqing desencadeia o poder dos raios, infligindo Dano Electro em uma AdE. Ela então se mistura na sombra de sua espada, desferindo uma série de golpes trovejantes nos inimigos próximos que simultaneamente infligem múltiplos acertos de Dano Electro. O ataque final inflige um massivo Dano Electro em uma AdE.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Land’s Overseer",
-          "description": "When dispatched on an expedition in Liyue, time consumed is reduced by 25%.",
+          "title": "Supervisor da Terra",
+          "description": "Quando despachado em uma expedição em Liyue, o tempo consumido é reduzido em 25%.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Thundering Penance",
-          "description": "Within 5s of recasting Stellar Restoration while a Lightning Stiletto is present, Keqing’s Normal and Charged Attacks are converted to Electro DMG.",
+          "title": "Penitencia do Trovão",
+          "description": "Após relancar Restauração Estrelar enquanto um Relâmpago Stiletto está presente, Keqing ganha Encantamento Electro por 5s.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Aristocratic Dignity",
-          "description": "When casting Starward Sword, Keqing’s CRIT Rate is increased by 15%, and her Energy Recharge is increased by 15%. This effect lasts for 8s.",
+          "title": "Dignidade Aristocrática",
+          "description": "Quando lançado Passeio Celestial, a Taxa CRIT de Keqing é aumentada em 15%, e sua Recuperação de Energia é aumentada em 15%. Esse efeito dura por 8s.",
           "descriptions": []
         }
       ],
@@ -1683,7 +1684,7 @@
     {
       "key": "Klee",
       "name": "Klee",
-      "description": "An explosives expert and a regular at the Knights of Favonius’ confinement room. Also known as Fleeing Sunlight.",
+      "description": "Uma visitante frequente da sala de confinamento dos Cavaleiros de Favonius, também conhecido como \"Sol fugitivo\"",
       "skills": [
         {
           "key": "s1",
@@ -1692,51 +1693,51 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Throws things that go boom when they hit things! Perform up to 3 explosive attacks, dealing AoE Pyro DMG.",
+              "description": "Atira coisas que fazem boom quando acertam coisas! Realiza até 3 ataques explosivos, infligindo Dano Pyro em uma AdE.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina and deals Pyro DMG to enemies after a short casting time.",
+              "description": "Consome uma certa quantidade de Stamina que inflige Dano Pyro em uma AdE em inimigos após um curto tempo de canalização.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the power of Pyro, Klee plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Pyro DMG upon impact with the ground.",
+              "description": "Reunindo o poder do Pyro, Klee mergulha em direção ao chão em pleno ar, causando dano a todos os inimigos em seu caminho. Inflige Dano Pyro em uma AdE ao entrar em contato com o chão.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Jumpy Dumpty",
-          "description": "Jumpy Dumpty is tons of boom-bang-fun! When thrown, Jumpy Dumpty bounces thrice, igniting and dealing AoE Pyro DMG with every bounce. On the third bounce, the bomb splits into many mines. The mines will explode upon contact with enemies, or after a short period of time, dealing AoE Pyro DMG. Starts with 2 charges.",
+          "title": "Bomba Saltitante",
+          "description": "A Bomba Saltitante é uma explosão de diversão! Quando lançada, Bomba Saltitante quica três vezes, incendiando e infligindo Dano Pyro em uma AdE a cada salto. No terceiro salto, a bomba se divide em várias minas. As minas irão explodir ao entrar em contato com os inimigos, ou após um curto periodo de tempo, infligindo Dano Pyro em uma AdE. Começa com 2 cargas.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Sparks ’n’ Splash",
-          "description": "Klee’s Blazing Delight! For the duration of this ability, continuously summons Sparks ’n’ Splash to attack nearby enemies, dealing AoE Pyro DMG.",
+          "title": "Faiscas Explosivas",
+          "description": "Delicia Ardente de Klee! Ao longo da duração dessa habilidade, evoca continuamente os ataques de Faiscas Explosivas para atacar inimigos próximos, infligindo Dano Pyro em uma AdE.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "All Of My Treasures!",
-          "description": "Displays the location of nearby resources unique to Mondstadt on the mini-map.",
+          "title": "Tem tesouros por toda parte!",
+          "description": "Mostra a localização de recursos únicos de Mondstadt próximos no mapa.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Pounding Surprise",
-          "description": "When Jumpy Dumpty and Normal Attacks deal DMG, Klee has a 50% chance to obtain an Explosive Spark. This Explosive Spark is consumed by the next Charged Attack, which costs no Stamina and deals 50% increased DMG.",
+          "title": "Presente Explosivo",
+          "description": "Quando a Bomba Saltitante e os Ataques Normais causam Dano, Klee possui 50% de chance de obter um Lampejo Explosivo. O Lampejo Explosivo será consumido pelo próximo Ataque Carregado sem consumo de Stamina e causa 50% de Dano adicional.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Sparkling Burst",
-          "description": "When a Charged Attack results in a CRIT, all party members gain 2 Elemental Energy.",
+          "title": "Faiscas Ilimitadas",
+          "description": "Quando o Ataque Carregado de Klee resultar em um Critico, todos os membros da equipe ganham 2 pontos de Energia Elemental.",
           "descriptions": []
         }
       ],
@@ -1911,75 +1912,75 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Ripple of Fate",
+          "title": "Destino Desencapado",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 water splash attacks that deal Hydro DMG.",
+              "description": "Realiza até 4 ataques com esguichos de água que infligem Dano Hydro.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina and deals AoE Hydro DMG after a short casting time.",
+              "description": "Consome uma certa quantidade de Stamina para infligir Dano Hydro em uma AdE após um curto periodo de canalização.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the might of Hydro, Mona plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Hydro DMG upon impact with the ground.",
+              "description": "Reunindo o poder do Hydro, Mona mergulha em direção ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige Dano Hydro em uma AdE durante o impacto com o chão.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Mirror Reflection of Doom",
-          "description": "Creates an illusory Phantom of fate from coalesced waterspouts.",
+          "title": "Águas da Ilusão",
+          "description": "Cria um Fantasma ilusório do destino a partir de trombas d'águas fundidas.",
           "abilities": [
             {
               "name": "",
-              "description": "The Phantom has the following special properties:",
+              "description": "O Fantasma tem as seguintes propriedades especiais:",
               "descriptions": [
-                "Continuously taunts nearby enemies, attracting their fire.",
-                "Continuously deals Hydro DMG to nearby enemies.",
-                "When its duration expires, the Phantom explodes, dealing AoE Hydro DMG."
+                "Continuamente provoca inimigos próximos, atraindo seus golpes.",
+                "Continuamente inflige Dano Hydro nos inimigos próximos.",
+                "Quando sua duração expira, o Fantasma explode, infligindo Dano Hydro em uma AdE."
               ]
             },
             {
               "key": "a2",
-              "description": "Utilizes water currents to move backwards swiftly before conjuring a Phantom. Only one Phantom created by Mirror Reflection of Doom can exist at any time.",
+              "description": "Utiliza a corrente da água para movimentar-se rapidamente para trás antes de conjurar o Fantasma. Apenas um Fantasma criado pelo Espelho do Reflexo do Apocalipse pode existir a qualquer momento.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Stellaris Phantasm",
-          "description": "Mona summons the sparkling waves and creates a reflection of the starry sky, applying the Illusory Bubble status to opponents in a large AoE.",
+          "title": "Órbita Divina",
+          "description": "Mona evoca as ondas cintilantes e cria um reflexo do céu estrelado, aplicando o status de Bolha Ilusória aos oponentes em uma grande AdE.",
           "abilities": [
             {
-              "name": "Illusory Bubble",
-              "description": "Traps opponents inside a pocket of destiny and also makes them Wet. Renders weaker opponents immobile. When an opponent affected by Illusory Bubble sustains DMG, the following effects are produced:",
+              "name": "Bolha Ilusória",
+              "description": "Prende inimigos em um bolso do destino e também deixa eles Molhados. Torna oponentes mais fracos imóveis. Quando um oponente afetado pela Bolha Ilusória recebe Dano, os seguintes efeitos são aplicados:",
               "descriptions": [
-                "Applies an Omen to the opponent, which gives a DMG Bonus, also increasing the DMG of the attack that causes it.",
-                "Removes the Illusory Bubble, dealing Hydro Elemental DMG in the process. The DMG Bonus does not apply to the Hydro Elemental DMG dealt in this instance."
+                "Aplica um Presságio no oponente, que causa Dano Bônus, também aumentando o Dano do ataque que o ocasiona.",
+                "Remove a Bolha Ilusória, causando Dano Elemental Hydro no processo. O Dano Bônus não se aplica ao Dano Hydro Elemental negociado nesta instância."
               ]
             },
             {
-              "name": "Omen",
-              "description": "During its duration, increases DMG taken by enemies.",
+              "name": "Presságio",
+              "description": "Ao longo da duração, aumenta o Dano recebido pelos inimigos.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s4",
-          "title": "Illusory Torrent",
+          "title": "Vicissitude",
           "description": null,
           "abilities": [
             {
-              "name": "Alternate Spirit",
-              "description": "Mona cloaks herself within the water’s flow, consuming Stamina to move rapidly. When under the effect of Illusory Torrent, Mona can move at high speed on water. Applies the Wet status to nearby enemies when she reappears.",
+              "name": "Arrancada Alternativa",
+              "description": "Mona se envolve dentro do fluxo da água, consumindo Stamina para se mover rapidamente. Quando sob o efeito de Vicissitude, Mona pode se movementar em alta velocidade sobre a água. Aplica o estado de Molhado para inimigos próximos quando ela ressurge.",
               "descriptions": []
             }
           ]
@@ -1988,20 +1989,20 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Principium of Astrology",
-          "description": "When Mona crafts Weapon Ascension Materials, she has a 25% chance to refund a portion of the crafting materials used.",
+          "title": "Principio da Astrologia",
+          "description": "Quando Mona cria Materiais de Avanço de Armas, ela tem 25% de chance de recuperar parte do material usado para criação.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Come ’n’ Get Me, Hag!",
-          "description": "After she has used Illusory Torrent for 2s, if there are any enemies nearby, Mona will automatically create a Phantom. A Phantom created in this manner lasts for 2s, and its explosion DMG is equal to 50% of Mirror Reflection of Doom.",
+          "title": "Aquela bruxa velha veio atrás de mim!",
+          "description": "Depois dela usar Vicissitude por 2 segundos, se existir algum inimigo próximo, Mona irá automaticamente criar um Fantasma. Um Fantasma criado dessa maneira dura por 2 segundos, e o Dano da sua explosão é igual a 50% da Água Ilusória.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Waterborne Destiny",
-          "description": "Increases Mona’s Hydro DMG Bonus by a degree equivalent to 20% of her Energy Recharge rate.",
+          "title": "Deixe nas mãos do destino!",
+          "description": "Aumenta o Bônus de Dano Hydro de Mona em certo grau, equivalente a 20% da sua Taxa de Recarga de Energia.",
           "descriptions": []
         }
       ],
@@ -2301,50 +2302,50 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Ancient Sword Art",
+          "title": "Arte da Espada Antiga",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 rapid strikes.",
+              "description": "Realiza até 5 golpes rápidos.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Adeptus Art: Herald of Frost",
-          "description": "Using the Icevein Talisman, Qiqi brings forth the Herald of Frost, dealing Cryo DMG to nearby enemies.",
+          "title": "Arte do Adeptus: Arauto da Floresta",
+          "description": "Ao usar o Talisma das Veias Congelantes, Qiqi invoca o Arauto da Floresta, causando Dano Cryo a todos os inimigos ao redor.",
           "abilities": [
             {
-              "name": "Herald of Frost",
+              "name": "Arauto da Floresta",
               "description": "",
               "descriptions": [
-                "When Qiqi hits a target with her Normal or Charged Attacks, she regenerates HP for all party members and all nearby allied characters. Healing scales based on Qiqi’s ATK.",
-                "Regenerates HP for current character at regular intervals.",
-                "Follows the character around, dealing Cryo DMG to enemies in its path."
+                "Quando Qiqi atinge um alvo com seu Ataque Normal ou Ataque Carregado, ela regenera Vida para seu próprio personagem e aos personagens aliados ao redor. A Cura aumenta com base no ATQ de Qiqi.",
+                "Regenera Vida ao seu próprio personagem em intervalos regulares.",
+                "Segue o personagem ao redor, causando Dano Cryo aos inimigos em seu caminho."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Adeptus Art: Preserver of Fortune",
-          "description": "Qiqi releases the adeptus power sealed within her body, marking nearby enemies with a Fortune-Preserving Talisman that deals Cryo DMG.",
+          "title": "Arte do Adeptus: Preservador da Fortuna",
+          "description": "Qiqi libera o poder do Adeptus selado dentro de si, marcando inimigos próximos como Amuleto de Preservação da Fortuna que inflige Dano Cryo.",
           "abilities": [
             {
-              "name": "Fortune-Preserving Talisman",
-              "description": "When enemies affected by this Talisman take DMG, the character that dealt this DMG regenerates HP.",
+              "name": "Amuleto de Preservação da Fortuna",
+              "description": "Quando inimigos afetados por esse Amuleto recebem Dano, o personagem que causou esse Dano regenera Vida.",
               "descriptions": []
             }
           ]
@@ -2353,20 +2354,20 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Former Life Memories",
-          "description": "Displays the location of nearby resources unique to Liyue on the mini-map.",
+          "title": "Memorias da Vida Passada",
+          "description": "Mostra a localização de recursos únicos de Liyue próximos no mapa.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Life-Prolonging Methods",
-          "description": "When a character under the effects of Adeptus Art: Herald of Frost triggers an Elemental Reaction, their Incoming Healing Bonus is increased by 20% for 8s.",
+          "title": "Metodos que Prolongam a Vida",
+          "description": "Quando um personagem está sob o efeito de Arte do Adeptus: Arauto da Floresta aciona uma Reação Elemental, seu Bônus de Cura Recebido é aumentado em 20% por 8s.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "A Glimpse into Arcanum",
-          "description": "When Qiqi hits enemies with her Normal and Charged Attacks, she has a 50% chance to apply a Fortune-Preserving Talisman to them for 6s. This effect can only occur once every 30s.",
+          "title": "Um Vislumbre do Arcano",
+          "description": "Quando Qigi atinge inimigos com seus Ataques normais e Carregados, ela tem 50% de chance de aplicar um Talismā de preservação de fortuna a eles por 6s. Este efeito pode ser ativado apenas uma vez a cada 30s.",
           "descriptions": []
         }
       ],
@@ -2422,57 +2423,57 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Steel Fang",
+          "title": "Presa de Aço",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 consecutive strikes.",
+              "description": "Realiza até 4 golpes consecutivos.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous swirling attacks against all nearby enemies. At end of the sequence, perform a more powerful slash.",
+              "description": "Drena Stamina ao longo do tempo para realizar um ataque giratório contínuo contra todos os inimigos próximos. Ao final da sequência, realiza um corte poderoso.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Mergulha em pleno ar para golpear o chão, danificando inimigos em seu caminho e infligindo Dano em uma AdE durante o impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Claw and Thunder",
-          "description": "Hunts his prey using the techniques taught to him by his master and his Lupical.",
+          "title": "Garra e Trovão",
+          "description": "Caça sua presa usando as técnicas ensinadas para ele por seu mestre e seu Lupical.",
           "abilities": [
             {
               "key": "a1",
-              "description": "Swings the Thunder Wolf Claw, dealing Electro DMG to enemies in front of Razor. Upon striking an enemy, Razor will gain an Electro Sigil, which increases his Energy Recharge rate. Razor can have up to 3 Electro Sigils simultaneously, and gaining a new Electro Sigil refreshes their duration.",
+              "description": "Balança suas Garras de Lobo do Trovão, causando Dano Electro nos inimigos em frente do Razor. Ao atacar um inimigo, Razor ganha um Selo Electro que aumenta sua taxa de Recarga de Energia. Razor pode ter até 3 Selos Electro simultaneamente, e ganhando um novo Selo Electro recarrega sua duração.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Gathers Electro energy to unleash a lightning storm over a small AoE, causing massive Electro DMG, and clears all of Razor’s Electro Sigils. Each Electro Sigil cleared in this manner will be converted into Energy for Razor.",
+              "description": "Reúne energia Electro para desencadear uma tempestade de raios em uma pequena AdE, causando Dano Electro massivo, e removendo todos os Selos Electro de Razor. Cada Selo Electro removido dessa maneira será convertido em Energia para o Razor.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Lightning Fang",
-          "description": "Summons the Wolf Within which deals Electro DMG to all nearby opponents. This clears all of Razor’s Electro Sigils, which will be converted into elemental energy for him. The Wolf Within will fight alongside Razor for the skill’s duration.",
+          "title": "Dente de Relámpago",
+          "description": "Evoca o Lobo Interior que causa Dano Electro a todos os inimigos ao redor. Isso remove todos os Selos Electro do Razor, que serão convertidos em energia elemental para ele. O Lobo Interior ira lutar ao lado de Razor durante o periodo de duração da habilidade.",
           "abilities": [
             {
-              "name": "The Wolf Within",
-              "description": "These effects end when Razor leaves the battlefield. When Razor leaves the field, a maximum of 10 Energy will be returned to him based off the duration remaining on this skill.",
+              "name": "O Lobo Interior",
+              "description": "Esses efeitos terminam quando Razor sai de batalha. Quando Razor deixa o campo, um máximo de 10 de Energia irá ser retornada para ele baseado na duração restante da habilidade.",
               "descriptions": [
-                "Strikes alongside Razor’s normal attacks, dealing Electro DMG.",
-                "Raises Razor’s ATK SPD and Electro RES.",
-                "Causes Razor to be immune to DMG inflicted by the Electro-Charged status.",
-                "Disables Razor’s Charged Attacks.",
-                "Increases Razor's resistance to interruption."
+                "Ataca juntamente com os ataques normais do Razor, causando Dano Electro.",
+                "Aumenta a Vel. de ATQ e RES Electro.",
+                "Causa imunidade a Razor por Dano infligido pelo estado de Eletricamente Carregado.",
+                "Desabilita o Ataque Carregado do Razor.",
+                "Aumenta a capacidade de RES à Interrupção de Razor."
               ]
             }
           ]
@@ -2481,20 +2482,20 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Wolvensprint",
-          "description": "Decreases all party member’s sprinting Stamina Consumption by 20%.",
+          "title": "Corrida de Lobos",
+          "description": "Diminui o consumo de Stamina ao Correr de todos os seus personagens em 20%.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Awakening",
-          "description": "Decreases Claw and Thunder’s CD by 18%. Using Lightning Fang resets the CD of Claw and Thunder.",
+          "title": "Despertamento",
+          "description": "Diminui a Recarga das Garra e Trovão em 18%. Usar as Dente de Relâmpago redefinem a Recarga da Garra e Trovão.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Hunger",
-          "description": "When Razor’s Energy is below 50%, increases Energy Recharge by 30%.",
+          "title": "Fome",
+          "description": "Quando a Energia de Razor está abaixo de 50%, aumenta a Recarga de Energia em 30%.",
           "descriptions": []
         }
       ],
@@ -2648,40 +2649,40 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Wind Spirit Creation",
+          "title": "Criação do Espirito do Vento",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 attacks using Wind Spirits, dealing Anemo DMG.",
+              "description": "Realiza até 4 ataques usando os Espiritos dos Ventos, infligindo Dano Anemo.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina and deals AoE Anemo DMG after a short casting time.",
+              "description": "Consome uma certa quantidade de Stamina que inflige Dano Anemo em uma AdE após um curto período de canalização.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Calling upon the power of her Wind Spirits, Sucrose plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Anemo DMG upon impact with the ground.",
+              "description": "Convocando os poderes dos Espiritos do Vento para si, Sucrose mergulha ao chão em pleno ar, infligindo dano a todos os inimigos em seu caminho. Inflige Dano Anemo em uma AdE durante o impacto com o chão.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Astable Anemohypostasis Creation - 6308",
-          "description": "Creates a small Wind Spirit that deals Anemo DMG to enemies in an AoE, pulling them towards the location of the Wind Spirit before launching them.",
+          "title": "Criação do Espirito do Vento: Experimento 6308",
+          "description": "Cria um pequeno Espirito de Vento que puxa inimigos e objetos em direção a sua localização, lançando os inimigos em AdE e causando Dano Anemo neles.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Forbidden Creation - Isomer 75 / Type II",
-          "description": "Sucrose hurls an unstable concoction that creates a Large Wind Spirit. While it persists, the Large Wind Spirit will continuously pull and launch nearby enemies, dealing AoE Anemo DMG.",
+          "title": "Criação de Espirito do Vento Proibido: Isomorfismo Tipo 75-II",
+          "description": "Sucrose libera uma mistura instável que cria um Grande Espirito do Vento. Enquanto ela persistir, o Grande Espirito do Vento irá continuamente puxar e lançar inimigos e objetos próximos, causando Dano de Anemo em AdE.",
           "abilities": [
             {
               "key": "a1",
-              "description": "If the Wind Spirit comes into contact with Hydro / Pyro / Cryo / Electro elements, it will deal additional DMG of that type. Elemental Absorption may only occur once per use.",
+              "description": "Se o Espirito do Vento entrar em contato com os elementos Hydro/ Pyro/ Cryo/ Electro, ele irá causar Dano elemental adicional baseado naquele tipo. Absorção Elemental pode ocorrer apenas uma vez por uso.",
               "descriptions": []
             }
           ]
@@ -2690,20 +2691,20 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Astable Invention",
-          "description": "When Sucrose crafts Character and Weapon Enhancement Materials, she has a 10% to obtain double the product.",
+          "title": "Invenção Instável",
+          "description": "Quando Sucrose cria Materiais de Elevação de Personagens e de Armas, ela tem 10% de chance de receber o dobro de produção.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Catalyst Conversion",
-          "description": "When Sucrose triggers a Swirl effect, characters in the party with the matching element have their Elemental Mastery increased by 50 for 8s.",
+          "title": "Conversão de Catalisador",
+          "description": "Quando Sucrose ativa um efeito de Redemoinho, todos os personagens na equipe com o elemento correspondente (exceto Sucrose) possuem sua Proficiência Elemental aumentada em 50 por 8s.",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Mollis Favonius",
-          "description": "When Astable Anemohypostatis Creation - 6308 or Forbidden Creation - Isomer 75 / Type II hit an enemy, increases other party member’s Elemental Mastery based on 20% of Sucrose’s Elemental Mastery for 8s.",
+          "description": "Quando a Criação do Espirito do Vento: Experimento 6308 ou a Criação Proibida do Espirito do Vento: Isomórfico-75 Tipo II acerta um inimigo, aumenta a Proficiencia Elemental de todos os membros de equipe (exceto Sucrose) em 20% baseada na Proficiência de Sucrose por 8s.",
           "descriptions": []
         }
       ],
@@ -2900,55 +2901,55 @@
     {
       "key": "Traveler (Anemo)",
       "name": "Traveler (Anemo)",
-      "description": "Um viajante de outro mundo que teve sua ente querida levada e foi forçado a embarcar em uma jornada em busca dos sete",
+      "description": "Um viajante de outro mundo que teve sua ente querida levada e foi forçado a embarcar em uma jornada em busca dos sete.",
       "skills": [
         {
           "key": "s1",
-          "title": "Foreign Ironwind",
+          "title": "Vento de Ferro Estrangeiro",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive strikes.",
+              "description": "Realiza até 5 golpes rápidos.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Palm Vortex",
-          "description": "Grasping the wind’s might, you form a vortex of vacuum in your palm, causing continuous Anemo DMG to enemies in front of you. The vacuum vortex explodes when the skill duration ends, causing a greater amount of Anemo DMG over a larger area.",
+          "title": "Vórtice da Palma",
+          "description": "Agarrando o poder do vento, você cria um vórtex de vácuo na sua palma, causando Dano Anemo continuo nos inimigos à sua frente. O vórtex de vácuo explode quando a duração da habilidade acaba, causando um dano Anemo ainda maior em uma grande área.",
           "abilities": [
             {
               "key": "a1",
-              "description": "DMG and AoE will gradually increase",
+              "description": "Dano em AdE irá aumentar gradualmente.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "If the vortex comes in contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+              "description": "Se o vórtex entrar em contato com os elementos Hydro / Pyro / Cryo / Electro, ele irá causar Dano elemental adicional baseado naquele tipo. Absorção Elemental pode ocorrer apenas uma vez por uso.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Gust Surge",
-          "description": "Guiding the path of the wind currents, you summon a forward-moving tornado that pulls objects and opponents towards itself, dealing continuous Anemo DMG.",
+          "title": "Ondas de Rajadas",
+          "description": "Guiando o caminho das correntes de vento, você evoca um tornado que se movimenta rapidamente para a frente e suga objetos e oponentes para dentro de si, causando Dano Anemo continuo.",
           "abilities": [
             {
               "key": "a1",
-              "description": "If the tornado comes in contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+              "description": "Se o tornado entrar em contato com os elementos Hydro/Pyro/Cryo/Electro, ele irá causar Dano elemental adicional daquele tipo. Absorção Elemental pode ocorrer apenas uma vez por uso.",
               "descriptions": []
             }
           ]
@@ -2957,14 +2958,14 @@
       "passives": [
         {
           "key": "p2",
-          "title": "Slitting Wind",
-          "description": "The last hit of a Normal Attack combo unleashes a wind blade, dealing 60% of ATK as Anemo DMG to all opponents in its path.",
+          "title": "Vento Cortante",
+          "description": "O último acerto de um combo de Ataques Normais libera uma làmina de vento, causando 60% de Dano Anemo de ATQ a todos os oponentes em seu caminho.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Second Wind",
-          "description": "Palm Vortex kills renegerate 2% HP for 5s. This effect can only occur once every 5s.",
+          "title": "Vento da Ressuscitação",
+          "description": "Os abates com a Palma da Vórtice regeneram 2% de Vida por 5s. Este efeito pode ser ativado uma vez a cada 5s.",
           "descriptions": []
         }
       ],
@@ -3016,103 +3017,103 @@
     {
       "key": "Traveler (Geo)",
       "name": "Traveler (Geo)",
-      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
+      "description": "Um viajante de outro mundo que teve sua ente querida levada e foi forçado a embarcar em uma jornada em busca dos sete.",
       "skills": [
         {
           "key": "s1",
-          "title": "Foreign Rockblade",
+          "title": "Lâmina de Rocha Estrangeira",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive strikes.",
+              "description": "Realiza até 5 golpes rápidos.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Starfell Sword",
-          "description": "You disgorge a meteorite from the depths of the earth, dealing AoE Geo DMG. The meteorite is considered a Geo Construct, and can be climbed or used to block attacks.",
+          "title": "Espada da Estrela Cadente",
+          "description": "Você expele um meteorito das profundezas da terra, infligindo Dano Geo em uma AdE. O meteorito é considerado uma Construção Geo, e pode ser escalada ou usada para bloquear ataques.",
           "abilities": [
             {
               "key": "a1",
-              "description": "The skill’s positioning may be adjusted.",
+              "description": "O posicionamento dessa habilidade pode ser controlado.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Wake of Earth",
-          "description": "Energizing the Geo elements deep underground, you set off expanding shockwaves. Launches surrounding enemies back and deals AoE Geo DMG. A stone wall is erected at the edges of the shockwave. The stone wall is considered a Geo Construct, and may be used to block attacks.",
+          "title": "Despertar da Terra",
+          "description": "Energizando os elementos Geo no subsolo, você desencadeia ondas de choque em expansão. Lança os inimigos ao redor e causa Dano AdE Geo. Uma parede de pedra é erguida nas bordas da onda de choque. A parede de pedra é considerada uma Construção Geo e pode ser usada para bloquear ataques.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p2",
-          "title": "Shattered Darkrock",
-          "description": "Reduces Starfell Sword’s CD by 2s.",
+          "title": "Rocha Quebrada",
+          "description": "Restaura a Recarga da Espada da Estrela Cadente em 2s.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Frenzied Rockslide",
-          "description": "The final hit of a Normal Attack combo triggers a collapse, dealing 60% of ATK as AoE Geo DMG.",
+          "title": "Rocha Turbulenta",
+          "description": "O golpe final de um combo de Ataque Normal ativa um colapso, causando Dano AdE Geo de 60% do ATQ.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Invincible Stonewall",
-          "description": "Allies within the radius of Wake of Earth have their CRIT Rate increased by 10% and have increased resistance against interruption.",
+          "title": "Parede de Pedra Inquebrável",
+          "description": "Personagens de equipe dentro do raio do Despertamento da Terra possuem sua Taxa Critica aumentada em 10% e possuem a resistência contra interrupção aumentada.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Rockcore Meltdown",
-          "description": "When the meteorite created by Starfell Sword is destroyed, it will also explode, dealing additional AoE Geo DMG equal to the amount of damage dealt by Starfell Sword.",
+          "title": "Pedra Derretida",
+          "description": "Quando o meteorito criado pela Espada da Estrela Cadente é destruido, ela também explode, causando Dano Geo Adicional equivalente a quantidade de dano causada pela Espada da Estrela Cadente.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Will of the Rock",
-          "description": "Increases the Level of Wake of Earth by 3. Maximum upgrade level is 15.",
+          "title": "Desejo da Pedra",
+          "description": "Aumenta o nivel do Despertar da Terra em 3. O nivel máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Reaction Force",
-          "description": "The shockwave triggered by Wake of Earth regenerates 5 Energy for every enemy hit. A maximum of 25 Energy can be recovered in this manner at any one time.",
+          "title": "Força de Reação",
+          "description": "A onda de choque do Despertamento da Terra recupera 5 de Energia até no máximo 25 de Energia a cada oponente atingido. Um máximo de 25 de Energia pode ser restaurada desta maneira.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Meteorite Impact",
-          "description": "Increase the Level of Starfell Sword by 3. Maximum upgrade level is 15.",
+          "title": "Impacto de Meteorito",
+          "description": "Aumenta o nivel da Espada da Estrela Cadente em 3. O nivel máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Everlasting Boulder",
-          "description": "The barrier created by Wake of Earth lasts 5s longer. The meteorite created by Starfell Sword lasts 10s longer.",
+          "title": "Pedregulho Eterno",
+          "description": "Uma barreira criada pelo Despertar da Terra por 5 segundos extra. O meteorito criado pela Espada da Estrela Cadente se estende por 10s.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3125,51 +3126,51 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Divine Marksmanship",
+          "title": "Tiro com Arco Divino",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 6 consecutive shots with a bow.",
+              "description": "Realiza até 6 tiros consecutivos como arco.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, favorable winds will accumulate on the arrowhead. A fully charged arrow will deal Anemo DMG.",
+              "description": "Realiza um Tiro com Mira mais preciso com Dano aumentado. Enquanto estiver mirando, ventos favoráveis irão se acumular na ponta da flecha. Uma flecha completamente carregada com o vento irá infligir Dano Anemo.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "Dispara uma chuva de flechas em pleno ar antes de atingir o chão, infligindo Dano em uma AdE durante o impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Skyward Sonnet",
-          "description": "O wind upon which all hymns and songs fly, bear these earth-walkers up into the sky!",
+          "title": "Sonata Celestial",
+          "description": "O vento no qual voam todos os hinos e canções pelo ar, leve estes peregrinos terrestres aos céus!",
           "abilities": [
             {
               "key": "a1",
-              "description": "Summons a Wind Domain at the enemy’s location, dealing AoE Anemo DMG and launching enemies into the air.",
+              "description": "Evoca um Dominio dos Ventos na localização do inimigo, causando Dano Anemo em AdE e lançando inimigos pelo аг.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Summons an even larger Wind Domain with Venti as the epicenter, dealing AoE Anemo DMG and launching affected enemies into the air. After unleashing the Hold version of this ability, Venti rides the wind into the air. Enemies hit by Skyward Sonnet will fall to the ground slowly.",
+              "description": "Evoca um Dominio dos Ventos ainda maior com um Venti em seu centro, causando Dano Anemo em AdE e lançando inimigos afetados pelo ar. Após liberar a versão de Manter Pressionado dessa habilidade, Venti monta o vento pelo ar. Inimigos atingidos pelo Soneto dos Céus cairão lentamente ao chão.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Wind’s Grand Ode",
-          "description": "Fires off an arrow made of countless coalesced winds, creating a huge Stormeye that sucks in objects and enemies along its path, dealing continuous Anemo DMG.",
+          "title": "Grande Ode do Vento",
+          "description": "Dispara uma flecha energizada com vento, criando um grande Olho da Tempestade que suga inimigos, causando Dano Anemo continuo.",
           "abilities": [
             {
               "key": "a1",
-              "description": "If the Stormeye comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+              "description": "Se o Olho da Tempestade entrar em contato com os elementos Hydro/Pyro/Cryo/Electro, causara Dano elemental adicional daquele tipo. A Absorção Elemental pode ocorrer uma vez a cada uso.",
               "descriptions": []
             }
           ]
@@ -3178,63 +3179,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Windrider",
-          "description": "Decreases all party member’s gliding Stamina Consumption by 20%.",
+          "title": "Viajante do Vento",
+          "description": "Diminui o consumo de Stamina ao Planar de todos os seus personagens em 20%.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Embrace of Winds",
-          "description": "Holding Skyward Sonnet creates an upcurrent that lasts for 20s.",
+          "title": "Abrace os Ventos",
+          "description": "Ao manter pressionado a Sonata Celestial cria uma corrente de vento que dura por 20s.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Stormeye",
-          "description": "Regenerates 15 Energy for Venti after the effects of Wind’s Grand Ode end. If an Elemental Absorption occurred, this also restores 15 Energy to all characters of that corresponding element.",
+          "title": "Olho da Tempestade",
+          "description": "Regenera 15 de Energia para Venti após o efeito do Grande Ode do Vento terminar. Se ocorrer uma Absorção Elemental, também irá restaurar 15 de Energia a todos os personagens da equipe do elemento correspondente.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Splitting Gale",
-          "description": "Fires 2 additional arrows per Aimed Shot, each dealing 33% of the original arrow’s DMG.",
+          "title": "Vento Dividido",
+          "description": "Dispara 2 flechas adicionais por cada Disparo com Mira, cada flecha causa 33% do Dano original da flecha.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Breeze of Reminiscence",
-          "description": "Skyward Sonnet decreases enemy Anemo RES by 12% for 10s. Enemies launched by Skyward Sonnet suffer an additional 12% Anemo RES and Physical RES decrease while airborne.",
+          "title": "Brisa da Reminiscência",
+          "description": "Sonata Celestial diminui a RES Anemo e RES Fisica do inimigo em 12% por 10s. Os inimigos lançados pela Sonata Celestial sofrem uma penalidade adicional de RES Anemo de 12% e RES fisica quando estiverem no ar.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Ode to Thousand Winds",
-          "description": "Increases the Level of Wind’s Grand Ode by 3. Maximum upgrade level is 15.",
+          "title": "Ode aos Ventos Milenares",
+          "description": "Aumenta o nivel do Grande Ode do Vento em 3. O nivel máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Hurricane of Freedom",
-          "description": "When Venti picks up an Elemental Orb or Particle, he receives a 25% Anemo DMG Bonus for 10s.",
+          "title": "Furacão da Liberdade",
+          "description": "Quando Venti obtém um Orbe ou uma Particula Elemental, ele recebe 25% de Dano Anemo Bonus por 10s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Concierto dal Cielo",
-          "description": "Increase the Level of Skyward Sonnet by 3. Maximum upgrade level is 15.",
+          "title": "Concerto Celestial",
+          "description": "Aumenta o nivel da Sonata Celestial em 3. O nivel máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Storm of Defiance",
-          "description": "Targets who take DMG from Wind’s Grand Ode have their Anemo RES decreased by 20%. If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%.",
+          "title": "Tempestade do Desafio",
+          "description": "Alvos que levarem Dano da Grande Ode do Vento terão sua RES Anemo reduzida em 20%. Se uma Absorção Elemental ocorrer, então sua RES ao Elemento correspondente também é reduzida em 20%.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3243,103 +3244,103 @@
     {
       "key": "Xiangling",
       "name": "Xiangling",
-      "description": "A renowned chef from Liyue. She’s extremely passionate about cooking and excels at making her signature hot and spicy dishes.",
+      "description": "Uma renomada chef de Liyue. Ela é extremamente apaixonada por cozinhar e se destaca em fazer seus pratos quentes e picantes.",
       "skills": [
         {
           "key": "s1",
-          "title": "Dough-Fu",
+          "title": "Pastelaria Kung Fu",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive spear strikes.",
+              "description": "Realiza até 5 golpes com a lança.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.",
+              "description": "Consome uma certa quantidade de Stamina para se lançar para frente, infligindo Dano em seu trajeto.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Guoba Attack",
-          "description": "Summons Guoba the Panda. Guoba continuously breathes fire, dealing AoE Pyro DMG.",
+          "title": "Ataque de Guoba",
+          "description": "Invoca Guoba, o Panda. Guoba continua exalando fogo contra o inimigo, causando Dano Pyro de AdE.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Pyronado",
-          "description": "Displaying her mastery over both fire and polearms, Xiangling sends a Pyronado whirling around her. The Pyronado will move with your character for so long as the ability persists, dealing Pyro DMG to all enemies in its path.",
+          "title": "Pyronado de Chamas",
+          "description": "Exibindo seu dominio sobre o fogo e as armas de fogo, Xiangling envia um Pyronado girando ao seu redor. O Pyronado se moverá com o seu personagem enquanto a habilidade persistir, causando Dano Pyro a todos os inimigos em seu caminho.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Chef de Cuisine",
-          "description": "When Xiangling cooks an ATK-boosting dish perfectly, she has a 12% chance to receive double the product.",
+          "title": "Chefe de Cozinha",
+          "description": "Quando uma Culinária Perfeita é feita em uma comida de aumento de ATQ, Xiangling tem uma chance de 12% de receber o dobro de produção.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Crossfire",
-          "description": "Increases the flame range of Guoba by 20%.",
+          "title": "Fogo Cruzado",
+          "description": "A distància do lança-chamas de Guoba aumenta 20%.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Beware, It’s Super Hot!",
-          "description": "When Guoba Attack’s effect ends, Guoba leaves a chili pepper on the spot where it disappeared. Picking up a chili pepper increases ATK by 10% for 10s.",
+          "title": "Cuidado, Está Muito Quente!",
+          "description": "Quando o efeito do Ataque de Guoba terminar, Guoba deixa uma pimenta no ponto onde desapareceu. Ao pegar a pimenta, aumenta o ATQ em 10% por 10s.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Crispy Outside, Tender Inside",
-          "description": "Enemies hit by Guoba’s attacks have their Pyro RES reduced by 15% for 6s.",
+          "title": "Crocante por Fora, Macio por Dentro",
+          "description": "Inimigos atingidos pelos ataques de Guoba têm sua RES Pyro reduzida em 15% por 6s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Oil Meets Fire",
-          "description": "The last attack in a Normal Attack sequence applies the Implode status onto the enemy for 2s. An explosion will occur once this duration ends, dealing 75% of Xiangling’s ATK as AoE Pyro DMG.",
+          "title": "Esquentar o Óleo",
+          "description": "O golpe final de um combo de Ataque Normal aplica o efeito Implosão nos inimigos por 2 segundos. Uma explosão irá ocorrer quando essa duração acabar, causando 75% do ATQ de Xiangling como Dano Pyro em uma AdE.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Deepfry",
-          "description": "Increases the Level of Pyronado by 3. Maximum upgrade level is 15.",
+          "title": "Bem Passado",
+          "description": "Aumenta o nivel do Pyronado em 3. O nivel máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Slowbake",
-          "description": "Pyronado’s duration is increased by 40%.",
+          "title": "Assando Devagar",
+          "description": "Aumenta a duração do Pyronado em 40%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Guoba Mad",
-          "description": "Increase the Level of Guoba Attack by 3. Maximum upgrade level is 15.",
+          "title": "Guoba Furioso",
+          "description": "Aumenta o nivel do Ataque de Guoba em 3. O nivel máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Condensed Pyronado",
-          "description": "For the duration of Pyronado, all party members receive a 15% Pyro DMG Bonus.",
+          "title": "Pyronado Condensado",
+          "description": "Durante a duração do Pyronado, todos os membros da equipe recebem 15% de Bônus de Dano Pyro.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3348,47 +3349,47 @@
     {
       "key": "Xiao",
       "name": "Xiao",
-      "description": "A yaksha adeptus who defends Liyue. Also heralded as the \"Conqueror of Demons\" or \"Vigilant Yaksha.\"",
+      "description": "Um Yaksha, um ser imortal que protege Liyue. Também chamado de \"O Caçador de Demónios\" ou \"Guardião Yaksha\".",
       "skills": [
         {
           "key": "s1",
-          "title": "Whirlwind Thrust",
+          "title": "Impulso do Redemoinho",
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 6 rapid strikes.",
+              "description": "Realiza até 6 golpes rápidos.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to perform an upward thrust.",
+              "description": "Consome uma certa quantidade de Stamina para desferir um golpe com pulo.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.\nXiao does not take DMG from performing Plunging Attacks.",
+              "description": "Se lança em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto. Xiao não recebe dano de queda ao realizar um Ataque Imersivo.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Lemniscatic Wind Cycling",
-          "description": "Xiao lunges forward, dealing Anemo DMG to opponents in his path.\nCan be used in mid-air.\nStarts with 2 charges.",
+          "title": "Vento Lemniscático",
+          "description": "Xiao avança, causando Dano Anemo aos inimigos em seu caminho. Pode ser usado no meio do ar. Inicia com 2 cargas.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Bane of All Evil",
-          "description": "Xiao dons the Yaksha Mask that set gods and demons trembling millennia ago.",
+          "title": "Dança Nuo da Conquista do Mal",
+          "description": "Xiao veste a Máscara Yaksha, que há milenios atrás, pôs deuses e demônios a tremer.",
           "abilities": [
             {
-              "description": "Yaksha's Mask",
+              "description": "Máscara Yaksha",
               "descriptions": [
-                "Greatly increases Xiao's jumping ability.",
-                "Increases his attack AoE and attack DMG.",
-                "Converts attack DMG into Anemo DMG, which cannot be overridden by any other elemental infusion. In this state, Xiao will continuously lose HP.",
-                "The effects of this skill end when Xiao leaves the field."
+                "Aumenta consideravelmente a capacidade de salto de Xiao.",
+                "Aumenta a AdE de seu Ataque e aumenta seu Dano.",
+                "Converte o Dano do seu Ataque em Dano Anemo, que não pode ser anulado por nenhuma outra infusão elemental. Nesse estado, Xiao perderá vida continuamente.",
+                "Os efeitos dessa habilidade terminam quando Xiao deixa o campo."
               ]
             }
           ]
@@ -3397,63 +3398,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Transcension: Gravity Defier",
-          "description": "Decreases climbing Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+          "title": "Transcensão: Transgressão Gravitacional",
+          "description": "Diminui o consumo de Stamina ao Escalar de todos os seus personagens em 20%. Não acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Conqueror of Evil: Tamer of Demons",
-          "description": "While under the effects of Bane of All Evil, all DMG dealt by Xiao increases by 5%. DMG increases by a further 5% for every 3s the ability persists.\nThe maximum DMG Bonus is 25%.",
+          "title": "Conquistador do Mal: Domador de Demonios",
+          "description": "Enquanto estiver sob efeito da Dança Nuo da Conquista do Mal, todos os Danos causado por Xiao aumentam em 5%. O Dano aumenta por mais 5% a cada 3 segundos em que a habilidade persistir. O Bônus máximo de Dano é de 25%.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Dissolution Eon: Heaven Fall",
-          "description": "Using Lemniscatic Wind Cycling increases the DMG of subsequent uses of Lemniscatic Wind Cycling by 15%.\n This effect lasts for 7s, and has a maximum of 3 stacks. Gaining a new stack refreshes the effect's duration.",
+          "title": "Dissolução de Eon: Queda do Céu",
+          "description": "Ao liberar Vento Lemniscático, aumenta o Dano dos próximos usos em 15% por 7s. O efeito dura 7s e pode ser acumulado até 3 vezes. Ganhar um novo acúmulo atualiza a duração do efeito.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Dissolution Eon: Destroyer of Worlds",
-          "description": "Increases Lemniscatic Wind Cycling’s charges by 1.",
+          "title": "Dissolução de Eon: Destruidor de Mundos",
+          "description": "Aumenta a carga do Vento Lemniscático em 1.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Annihilation Eon: Blossom of Kaleidos",
-          "description": "When in the party and not on the field, Xiao's Energy Recharge is increased by 25%.",
+          "title": "Aniquilação de Eon: Flor de Kaleidos",
+          "description": "Quando Xiao estiver na equipe, mas não em campo, a Recarga da Energia de lao é aumentada em 25%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Conqueror of Evil: Wrath Deity",
-          "description": "Increases the Level of Lemniscatic Wind Cycling by 3. Maximum upgrade level is 15.",
+          "title": "Conquistador do Mal: Deidade da Ira",
+          "description": "Aumenta o nivel do Vento Lemniscático em 3. O nivel máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Transcension: Extinction of Suffering",
-          "description": "When Xiao's HP falls below 50%, he gains a 100% DEF Bonus.",
+          "title": "Transcensão: Extinção do Sofrimento",
+          "description": "Quando a Vida de Xiao for menor que 50%, ele ganha 100% de Bonus de DEF.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Evolution Eon: Origin of Ignorance",
-          "description": "Increase the Level of Bane of All Evil by 3. Maximum upgrade level is 15.",
+          "title": "Evolução de Eon: Origem da Ignorancia",
+          "description": "Aumenta o nivel da Dança Nuo da Conquista do Mal em 3. O nivel máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Conqueror of Evil: Guardian Yaksha",
-          "description": "While under the effects of Bane of All Evil, hitting at least 2 opponents with Xiao's Plunging Attack will immediately grant him 1 charge of Lemniscatic Wind Cycling, and for the next 1s, he may use Lemniscatic Wind Cycling while ignoring its CD.",
+          "title": "Conquistador do Mal: Guardião Yaksha",
+          "description": "Enquanto sob o efeito da Dança Nuo da Conquista do Mal, acertar pelo menos 2 inimigos como ataque carregado de Xiao irá imediatamente conceder a ele 1 carga de Vento Lemniscático, e durante o próximo 1s, ele poderá usar Vento Lemniscático ignorando seu tempo de recarga.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3466,52 +3467,52 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Guhua Style",
+          "title": "Estilo Guhua",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive spear strikes.",
+              "description": "Realiza até 5 golpes rápidos.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-aur to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Guhua Sword - Fatal Rainscreen",
-          "description": "Xingqiu performs twin strikes with his sword, dealing Hydro DMG. At the same time, this ability creates the maximum number of Rain Swords, which will orbit the character. 20% of Xingqiu’s Hydro DMG Bonus will be converted to additional DMG Reduction for the Rain Swords. The maximum amount of additional DMG Reduction that can be gained this way is 24%. The initial maximum number of Rain Swords is 3. Using this ability applies the Wet status onto the character.",
+          "title": "Espada de Guhua: Chuva Torrencial",
+          "description": "Xingqiu realiza ataques duplos com sua espada, causando Dano Hydro. Ao mesmo tempo, essa habilidade cria o número máximo de Espadas de Chuva, que orbitarão o seu próprio personagem. 20% do Dano Hydro Adicional de Xingqiu será convertido em Redução de Dano adicional para as Espadas de Chuva. A quantidade máxima de adicional da Redução de Dano que pode ser obtida é de 24%. O número máximo inicial de Espadas de Chuva é 3. O uso dessa habilidade aplica o estado de Molhado ao personagem.",
           "abilities": [
             {
               "name": "",
-              "description": "The Rain Swords have the following properties:",
+              "description": "As Espadas de Chuva têm as seguintes propriedades:",
               "descriptions": [
-                "When a character takes DMG, the Rain Sword will shatter, reducing the amount of DMG taken.",
-                "Increases the character’s resistance to interruption."
+                "Quando um personagem recebe Dano, a Espada de Chuva se despedaça, reduzindo a quantidade de Dano recebido.",
+                "Aumenta a resistência do personagem à interrupção."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Guhua Sword - Raincutter",
-          "description": "Initiate Rainbow Bladework and fight using an illusory sword rain, while creating the maximum number of Rain Swords.",
+          "title": "Espada Guhua: Retalhador de Chuva",
+          "description": "Inicia o Trabalho com Lâminas do Arco-íris e luta usando uma chuva de espadas ilusórias, enquanto cria um número máximo de Chuvas de Espadas.",
           "abilities": [
             {
-              "name": "Rainbow Bladework",
-              "description": "These effects carry over to other characters.",
+              "name": "Trabalho com Lâminas do Arco-iris",
+              "description": "Esses efeitos são transferidos para outros personagens.",
               "descriptions": [
-                "Normal Attacks will trigger consecutive sword rain attacks, dealing Hydro DMG.",
-                "Rain Swords will remain at the maximum number throughout the ability’s duration."
+                "Os Ataques Normais do seu próprio personagem irão desencadear ataques consecutivos da chuva de espadas, infligindo Dano Hydro.",
+                "Chuva de Espadas irá continuar no número máximo ao longo da duração da habilidade."
               ]
             }
           ]
@@ -3520,63 +3521,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Flash of Genius",
-          "description": "When Xingqiu crafts Character Talent Materials, he has a 25% chance to refund a portion of the crafting materials used.",
+          "title": "Flash do Genio",
+          "description": "Quando Xingqiu forja Materiais de Talento de Personagem, ele possui 25% de chance de retornar uma certa quantidade de materiais usados.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Hydropathic",
-          "description": "When a Rain Sword is shattered or when its duration expires, it regenerates the current character’s HP based on 6% of Xingqiu’s Max HP.",
+          "title": "Hidropático",
+          "description": "Quando a Chuva de Espadas é quebrada ou quando sua duração acabar, regenera a Vida do personagem atual em 6% da Vida Máxima de Xingqiu.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Blades Amidst Raindrops",
-          "description": "Xingqiu gains a 20% Hydro DMG Bonus.",
+          "title": "Láminas Entre Gotas de Chuva",
+          "description": "Xingqiu ganha 20% de Dano Hydro Bônus.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "The Scent Remained",
-          "description": "Increases the maximum number of Rain Swords by 1.",
+          "title": "O Aroma Remanescente",
+          "description": "Aumenta o número Máximo de Espadas em 1.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Rainbow Upon the Azure Sky",
-          "description": "Extends the duration of Guhua Sword - Raincutter by 3s. Decreases the Hydro RES of enemies hit by sword rain attacks by 15% for 4s.",
+          "title": "Arco-Íris Acima do Céu Azul",
+          "description": "Estende a duração da Espada de Guhua - Retalhador de Chuva por 3s. Reduz a RES Hydro dos inimigos golpeados pelos ataques do retalhador de chuva em 15% por 4s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Weaver of Verses",
-          "description": "Increases the Level of Guhua Sword - Raincutter by 3. Maximum upgrade level is 15.",
+          "title": "Tecedor de Versos",
+          "description": "Aumenta o Nivel de Guhua: Retalhador de Chuva em 3. Pode ser elevado até Nv.15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Evilsoother",
-          "description": "Throughout the duration of Guhua Sword: Raincutter, the DMG dealt by Guhua Sword: Fatal Rainscreen is increased by 50%.",
+          "title": "Abrandamento do Mal",
+          "description": "Ao longo da duração da Espada de Guhua - Retalhador de Chuva, o Dano causada por Espada de Guhua - Chuva Torrencial e aumentado em 50%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Embrace of Rain",
-          "description": "Increase the Level of Guhua Sword - Fatal Rainscreen by 3. Maximum upgrade level is 15.",
+          "title": "Abrace a Chuva",
+          "description": "Aumenta o Nivel da Espada de Guhua - Chuva Torrencial em 3. Pode ser elevado até Nv.15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Hence, Call Them My Own Verses",
-          "description": "Activating 2 of Guhua Sword - Raincutter’s sword rain attacks greatly increases the DMG of the third. Xingqiu regenerates 3 Energy when sword rain attacks hit enemies.",
+          "title": "Coleção de Poemas",
+          "description": "A cada 2 ataques da Espada de Guhua - Retalhador de Chuva o ataque da chuva de espadas aumenta drasticamente o Dano do terceiro, e ao atingir um inimigo, o terceiro golpe de chuva de espadas de Xingqiu regenerara 3 de Energia.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3589,120 +3590,120 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Dance on Fire",
+          "title": "Dança do Fogo",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 consecutive strikes.",
+              "description": "Realiza até 4 golpes consecutivos.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous spinning attacks against all nearby enemies. At the end of the sequence, perform a more powerful slash.",
+              "description": "Drena Stamina ao longo do tempo para realizar um ataque giratório continuo contra todos os inimigos próximos. Ao final da sequência, realiza um corte poderoso.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Mergulha em pleno ar para golpear o chão, danificando inimigos em seu caminho e infligindo Dano em uma AdE durante o impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Sweeping Fervor",
-          "description": "Xinyan brandishes her instrument, dealing Pyro DMG on nearby enemies, forming a shield made out of her audience’s passion.",
+          "title": "Fervor Arrebatador",
+          "description": "Xinyan brande seu instrumento, causando Dano Pyro em inimigos próximos, criando um escudo feito a partir da paixão de seu público.",
           "abilities": [
             {
               "name": "",
-              "description": "The shield’s DMG Absorption scales based on Xinyan’s DEF and on the number of enemies hit:",
+              "description": "A absorção de Dano do escudo aumenta com base na DEF de Xinyan e no número de inimigos atingidos:",
               "descriptions": [
-                "Hitting 0-1 enemies grants Shield Level 1: Ad Lib.",
-                "Hitting 2 enemies grants Shield Level 2: Lead-In.",
-                "Hitting 3 or more enemies grants Shield Level 3: Rave, which will also deal intermittent Pyro DMG to nearby enemies."
+                "Atingir de 0-1 inimigo concede Escudo Nivel 1: Improviso.",
+                "Atingir 2 inimigos concede Escudo Nivel 2: Introdução.",
+                "Atingir 3 ou mais inimigos concede Escudo Nivel 3: Rave, que também causará Dano Pyro periodicamente aos inimigos próximos."
               ]
             },
             {
               "name": "",
-              "description": "The shield has the following special properties:",
+              "description": "O escudo tem as seguintes propriedades especiais:",
               "descriptions": [
-                "When unleashed, it infuses Xinyan with Pyro.",
-                "It has 250% DMG Absorption effectiveness against Pyro DMG."
+                "Quando ativado, ele aplica o elemento Pyro em Xinyan.",
+                "Tem 250% de eficácia de absorção de Dano contra Dano Pyro."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Riff Revolution",
-          "description": "Strumming rapidly, Xinyan launches nearby enemies and deals Physical DMG to them, hyping up the crowd. The sheer intensity of the atmosphere will cause explosions that deal Pyro DMG to nearby enemies.",
+          "title": "Melodia da Rebelião",
+          "description": "Tocando sua música rápidamente, Xinyan lança os inimigos próximos e causa Dano Fisico neles, hipnotizando a multidão. A pura intensidade da atmosfera causará explosões que causam Dano Pyro aos inimigos próximos.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "A Rad Recipe",
-          "description": "When a Perfect Cooking is achieved on an DEF-boosting dish, Xinyan has a 12% chance to obtain double the product.",
+          "title": "Uma Receita Radical",
+          "description": "Quando uma Culinária Perfeita é feita em uma comida de aumento de DEF, Xinyan tem uma chance de 12% de receber o dobro de produção.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "\"The Show Goes On, Even Without an Audience...\"",
-          "description": "Decreases the number of enemies Sweeping Fervor must hit to trigger each level of shielding.",
+          "title": "\"O espetáculo deve continuar...\"",
+          "description": "Diminui o número de inimigos que Fervor Arrebatador precisa acertar para acionar cada nível do escudo.",
           "descriptions": [
-            "Shield Level 2: Lead-In requirement reduced to 1 enemy hit.",
-            "Shield Level 3: Rave requirement reduced to 2 enemies hit or more."
+            "Escudo Nivel 2: Introdução, requerimento reduzido a 1 inimigo atingido.",
+            "Escudo Nivel 3: Rave, requerimento reduzido a 2 inimigos atingidos ou mais."
           ]
         },
         {
           "key": "p3",
-          "title": "\"...Now That’s Rock ’N’ Roll!\"",
-          "description": "Characters shielded by Sweeping Fervor deal 15% increased Physical DMG.",
+          "title": "\"...Isso sim é Rock 'n Roll!\"",
+          "description": "Personagens protegidos por Fervor Arrebatador causam 15% mais Dano Físico.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Fatal Acceleration",
-          "description": "Upon scoring a CRIT hit, increases ATK SPD of Xinyan’s Normal and Charged Attacks by 12% for 5s. Can only occur once every 5s.",
+          "title": "Aceleração Fatal",
+          "description": "5s após Xinyan criar CRIT, a Vel. de ATQ do Ataque Normal e Ataque Carregado aumenta 12%. Esse efeito pode ocorrer apenas uma vez a cada 5s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Impromptu Opening",
-          "description": "Riff Revolution Physical DMG has its Crit rate increased by 100%, and will form a shield at Shield Level 3: Rave when cast.",
+          "title": "Começo Improvisado",
+          "description": "Taxa CRIT de Dano Fisico causado pela Melodia da Rebelião aumenta em 100%, e ao lançar, formará um escudo Nv.3: Rave.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Double Stop",
-          "description": "Increases the Level of Sweeping Fervor by 3. Maximum upgrade level is 15.",
+          "title": "Duplo-Stop",
+          "description": "Aumenta o nível da Fervor O Arrebatador em 3. O nível máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Wildfire Rhythm",
-          "description": "Sweeping Fervor’s swing DMG decrease opponents Physical RES by 15% for 12s.",
+          "title": "Ritmo Contagiante",
+          "description": "O Dano de Balanço de Fervor Arrebatadoriră diminuir a RES Física do inimigo em 15% por 12s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Screamin’ for an Encore",
-          "description": "Increases the Level of Riff Revolution by 3. Maximum upgrade level is 15.",
+          "title": "Gritos de Bis",
+          "description": "Aumenta o nível da Melodia da Rebelião em 3. O nível máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Rockin’ in a Flaming World",
-          "description": "Decrease the stamina consumption of Xinyan Charged Attacks by 30%. Additionally, Xinyan Charged Attack gain an ATK bonus equal to 50% of her DEF.",
+          "title": "Rockeando no inferno",
+          "description": "Diminui o Consumo de Stamina do Ataque Carregado de Xinyan em 30%. Ao usar Ataques Carregados, Xinyan ganha um Bonus de Ataque baseado em 50% de sua defesa.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3715,22 +3716,22 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Rain of Stone",
+          "title": "Chuva de Pedras",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 6 consecutive spear strikes.",
+              "description": "Realiza até 6 golpes consecutivos com a lança.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to lunge forward, causing stone spears to fall along his path.",
+              "description": "Consome uma certa quantidade de Stamina para se lançar para frente, fazendo com que lanças de pedras caiam em seu trajeto.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Mergulha em pleno ar para golpear o chão, causando dano a inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.",
               "descriptions": []
             }
           ]
@@ -3738,43 +3739,43 @@
         {
           "key": "s2",
           "title": "Dominus Lapidis",
-          "description": "Every mountain, rock and inch of land is filled with the power of Geo, but those who can wield such powers freely are few and far between.",
+          "description": "O Poder Geo cobre todas as montanhas, terras e rochas. Mas poucas são as pessoas que o podem usar livremente.",
           "abilities": [
             {
               "key": "a1",
-              "description": "Commands the power of earth to create a Stone Stele.",
+              "description": "Ordena que o elemento Geo na terra se uma em Estela de Pedra.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Causes nearby Geo energy to explode, causing the following effects:",
+              "description": "Ordena que elementos Geo ao redor explodam, causando o seguinte efeito:",
               "descriptions": [
-                "If their maximum number hasn't been reached, creates a Stone Stele.",
-                "Creates a shield of jade. The shield's DMG Absorption scales based on Zhongli's Max HP.",
-                "Deals AoE Geo DMG.",
-                "If there are nearby targets with the Geo element, it will drain a large amount of Geo element from a maximum of 2 such targets. This effect does not cause DMG."
+                "Se o número de Estelas de Pedra não alcançou o máximo, cria outra Estela de Pedra.",
+                "Forma um Escudo de Jade, que absorve o Dano com base na Vida Máxima de Zhongli;",
+                "Causa Dano Geo AdE.",
+                "Se houver alvos com Elemento Geo nas proximidades, absorverá o Elemento Geo de até dois alvos. Esse efeito não causa dano."
               ]
             },
             {
-              "name": "Stone Stele",
-              "description": "When created, deals AoE Geo DMG.\nAdditionally, it will intermittently resonate with other nearby Geo constructs, dealing Geo DMG to nearby opponents.\n1The Stone Stele is considered a Geo construct that can both be climbed and used to block attacks.\nOnly one Stele created by Zhongli himself may initially exist at any one time",
+              "name": "Estela de Pedra",
+              "description": "Ao ser criada, causa Dano Geo AdE.\nAlém disso, enquanto existir, ressoara com Construções Geo próximas, causando Dano Geo aos inimigos próximos.\n1A Estela de Pedra é considerada uma Construção Geo, pode parar ataques, e pode ser escalada.\nSó é possivel existir uma Estela de Pedra ao mesmo tempo.",
               "descriptions": []
             },
             {
-              "name": "Jade Shield",
-              "description": "Possesses 150% DMG Absorption against all Elemental and Physical DMG.\nCharacters protected by the Jade Shield will decrease the Elemental RES and Physical RES of opponents in a small AoE by 20%. This effect cannot be stacked.",
+              "name": "Escudo de Jade",
+              "description": "Absorve 150% de todos os Danos Elementais e Danos Fisicos.\nOs personagens sob a proteção do Escudo de Jade, diminuem a RES Elemental e RES Fisica de todos os inimigos em uma pequena área em redor.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Planet Befall",
-          "description": "Brings a falling meteor down to earth, dealing massive Geo DMG to opponents caught in its AoE and applying the Petrification status to them.",
+          "title": "Chuva Estelar",
+          "description": "Traz uma estrela cadente em direção à terra, infligindo Dano Geo massivo nos inimigos pegos em sua AdE e aplicando o efeito Petrificante.",
           "abilities": [
             {
-              "name": "Petrification",
-              "description": "Opponents affected by the Petrification status cannot move.",
+              "name": "Petrificação",
+              "description": "Inimigos afetados pelo efeito Petrificante não podem se mover.",
               "descriptions": []
             }
           ]
@@ -3783,70 +3784,70 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Arcanum of Crystal",
-          "description": "Refunds 15% of the ores used when crafting Polearm-type weapons.",
+          "title": "Cristal do Destino",
+          "description": "Retorna 15% dos Minérios usados ao criar armas de tipo Lança.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Resonant Waves",
-          "description": "When the Jade Shield takes DMG, it will Fortify:",
+          "title": "Ondas de Ressonância",
+          "description": "Quando o Escudo de Jade receber dano, terá os seguintes efeitos de fortificação:",
           "descriptions": [
-            "Fortified characters have 5% increased Shield Strength.",
-            "Can stack up to 5 times, and lasts until the Jade Shield disappears."
+            "Os Personagens que estiverem sendo protegidos pelo Escudo de Jade terão um aumento de Força do Escudo de 5%.",
+            "Esse efeito pode ser acumulado até 5 vezes, e dura até o Escudo de Jade se dissipar."
           ]
         },
         {
           "key": "p3",
-          "title": "Dominance of Earth",
-          "description": "Zhongli deals bonus DMG based on his Max HP:",
+          "title": "Dominio da Terra",
+          "description": "Os ataques de Zhongli terão os seguintes aumentos de Dano de acordo com sua Vida Máxima:",
           "descriptions": [
-            "Normal Attack, Charged Attack, and Plunging Attack DMG is increased by 1.39% of Max HP.",
-            "Dominus Lapidis' Stone Stele, resonance, and hold DMG is increased by 1.9% of Max HP.",
-            "Planet Befall's DMG is increased by 33% of Max HP."
+            "Ataque Normal, Ataque Carregado e Ataque Imersivo terão seu dano aumentado para 1.39% da Vida Máxima",
+            "O Dano da Estela de Pedra, Dano de ressonancia Geo e Dano de Manter Pressionado de Dominis Lapidis aumentarão para 1.9% da Vida Máxima",
+            "O Dano de Chuva Estrelar aumentará para 33% da Vida Máxima"
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Rock, the Backbone of Earth",
-          "description": "Increases the maximum number of Stone Steles created by Dominus Lapidis that may exist simultaneously by 2.",
+          "title": "Pedra, a Espinha Vertebral da Terra",
+          "description": "Aumenta o número máximo de Espirais de Pedra criados pelo Dominus Lapidis que podem existir simultaneamente para 2.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Stone, the Cradle of Jade",
-          "description": "Planet Befall grants nearby characters on the field a Jade Shield when it descends.",
+          "title": "Pedra, a Vela de Jade",
+          "description": "Quando a Chuva Estelar cair; dará um Escudo de Jade para os personagens ao redor em campo próximos.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Jade, Shimmering through Darkness",
-          "description": "Increases the Level of Dominus Lapidis by 3. Maximum upgrade level is 15.",
+          "title": "Jade, Cintilando na Escuridão",
+          "description": "Aumenta o nivel do Dominus Lapidis em 3. O nivel máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Topaz, Unbreakable and Fearless",
-          "description": "Increases Planet Befall’s AoE by 20% and increases the duration of Planet Befall’s Petrification effect by 2s.",
+          "title": "Topázio, Inquebravel e Destemido",
+          "description": "Aumenta a AdE da Chuva Estelar em 20%. Além disso, o efeito de Petrificação da Chuva Estelar é prolongado em 2s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Lazuli, Herald of the Order",
-          "description": "Increase the Level of Planet Befall by 3. Maximum upgrade level is 15.",
+          "title": "Lazuli, Heraldo da Ordem",
+          "description": "Aumenta o nivel da Chuva Estelar em 3. O nivel máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Chrysos, Bounty of Dominator",
-          "description": "When the Jade Shield takes DMG, 40% of that incoming DMG is converted to HP for the current character.\nA single instance of regeneration cannot exceed 8% of that character’s Max HP.",
+          "title": "Chrysos, Recompensa do Dominador",
+          "description": "Quando o Escudo de Jade recebe dano, 40% do Dano recebido é convertido em Vida para o personagem atual. A regeneração não pode exceder 8% da Vida Máxima do personagem por vez.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3856,123 +3857,123 @@
   "weapons": [
     {
       "key": "Hunter’s Bow",
-      "name": "Hunter’s Bow",
-      "description": "A hunter’s music consists of but two sounds: the twang of the bowstring and the whoosh of soaring arrows.",
+      "name": "Arco do Caçador",
+      "description": "A melodia de um caçador consiste em dois tipos de sons: o som do tensionamento da corda do seu arco e o som da flecha atravessando o ar.",
       "refinement": null
     },
     {
       "key": "Seasoned Hunter’s Bow",
-      "name": "Seasoned Hunter’s Bow",
-      "description": "A bow that has been well-polished by time and meticulously cared for by its owner. It feels almost like an extension of the archer’s arm.",
+      "name": "Arco do Caçador Experiente",
+      "description": "Um arco antigo, mas bem conservado. Pode ser considerado a extensão do braço de um arqueiro quando é utilizado.",
       "refinement": null
     },
     {
       "key": "Ebony Bow",
-      "name": "Ebony Bow",
-      "description": "A longbow made of ebony wood with stiffer limbs than ordinary bows. It is also a far more powerful weapon.",
-      "refinement": "Increases DMG against mechanoid Ruin enemies by {{0}}%"
+      "name": "Arco de Ébano",
+      "description": "Um arco longo feito de madeira ébano sendo mais resistente com os arcos comuns. É muito mais poderoso também.",
+      "refinement": "Aumenta o Dano contra os inimigos das Ruínas em {{0}}."
     },
     {
       "key": "Messenger",
-      "name": "Messenger",
-      "description": "A basic wooden bow. It is said to have once been used as a tool for long-distance communication.",
-      "refinement": "Charged Attack hits on weak points deal an additional {{0}}% ATK DMG as CRIT DMG. Can only occur once every 10s."
+      "name": "Mensageiro",
+      "description": "Um arco básico de madeira. Dizem que ele foi usado para comunicações de longa distância.",
+      "refinement": "Ao acertar um ponto fraco com Ataque Carregado, causa um adicional de {{0}}% de Dano de ATQ como Dano Crítico. Este efeito pode ser ativado uma vez a cada 10s."
     },
     {
       "key": "Raven Bow",
-      "name": "Raven Bow",
-      "description": "Ravens are known to be the ferrymen of the dead. This bow’s limb is decorated with raven feathers, which forebode the imminent death of its target.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Pyro by {{0}}%"
+      "name": "Arco de Corvo",
+      "description": "Os corvos são conhecidos como mensageiros da morte. O arco é decorado com penas de corvo que prenunciam a morte iminente de qualquer alvo.",
+      "refinement": "Aumenta o Dano contra inimigos afetados por Hydro ou Pyro em {{0}}%"
     },
     {
       "key": "Recurve Bow",
-      "name": "Recurve Bow",
-      "description": "It is said that this bow can shoot down eagles in flight, but ultimately how true that is depends on the skill of the archer.",
-      "refinement": "Defeating an opponent restores {{0}}% HP"
+      "name": "Arco Recurvado",
+      "description": "“Dizem que é possível caçar águias em pleno voo com este arco mas na verdade depende muito das habilidades do arqueiro também.",
+      "refinement": "Derrotar um oponente recupera {{0}}% vida"
     },
     {
       "key": "Sharpshooter’s Oath",
-      "name": "Sharpshooter’s Oath",
-      "description": "This superior bow once belonged to a master archer. However, it gives off a strong scent, thus making it unsuitable for hunting.",
-      "refinement": "Increases DMG against weak spots by {{0}}%"
+      "name": "Juramento de Sagitário",
+      "description": "Este poderoso arco pertencia a um grande arqueiro. Contudo, emana um aroma bastante forte, o tornando inadequado para caças.",
+      "refinement": "Aumenta o Dano contra pontos fracos em {{0}}%"
     },
     {
       "key": "Slingshot",
-      "name": "Slingshot",
-      "description": "A bow, despite the name. After countless experiments and improvements to the design, the creator of the ultimate slingshot found himself to have made what was actually a bow.",
-      "refinement": "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by {{0}}%. Otherwise, decreases DMG by 10%."
+      "name": "Estilingue",
+      "description": "Na verdade, é um arco. Depois de incontáveis experimentos e melhorias, o mestre criador de estilingues acabou criando um arco.",
+      "refinement": "Se a flecha do Ataque Normal e do Ataque Carregado atingir um alvo dentro de 0.3s após o disparo, o Dano é aumentado em  {{0}}%. Caso contrário, o Dano é diminuído em 10%."
     },
     {
       "key": "The Stringless",
-      "name": "The Stringless",
-      "description": "A bow that once served as an extraordinary instrument. It is no longer capable of getting people up and dancing.",
-      "refinement": "Increases Elemental Skill and Elemental Burst DMG by {{0}}%."
+      "name": "Último Acorde",
+      "description": "Um arco que serviu como um instrumento extraordinário. Não é mais capaz de fazer pessoas dançarem.",
+      "refinement": "Aumenta o Dano da Habilidade Elemental e do Supremo em {{0}}%."
     },
     {
       "key": "Alley Hunter",
-      "name": "Alley Hunter",
-      "description": "An intricate, opulent longbow. It once belonged to a gentleman thief who was never caught.",
-      "refinement": "While the character equipped with this weapon is in the party but not on the field, their DMG increases by {{0}}% every second up to a max of {{1}}%. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by {{2}}% per second until it reaches 0%."
+      "name": "Caçador do Beco",
+      "description": "Um arco longo e opulento intrincado. Pertenceu a um ladrão de cavalheiros que nunca foi pego.",
+      "refinement": "Quando o personagem com essa arma equipada estiver na equipe mas não no campo da batalha, o Dano causado por personagem será aumentado em {{0}}% a cada 1s, a quantidade máxima do aumento do Dano desta maneira é de {1}. Depois de 4s de ficar no campo, o efeito de aumento do Dano será reduzido em {2} a cada 1s até que seja reduzido para 0%."
     },
     {
       "key": "Blackcliff Warbow",
-      "name": "Blackcliff Warbow",
-      "description": "A bow made of blackcliff that features extremely sturdy bow limbs. It requires an archer with a strong bow arm to use.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "name": "Arco do Penhasco Obscuro",
+      "description": "Um arco feito de Pedra Negra extremamente robusto. Requer um arqueiro com um braço forte para usar",
+      "refinement": "Após derrotar um inimigo, o ATQ é aumentado em  {{0}}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
     },
     {
       "key": "Compound Bow",
-      "name": "Compound Bow",
-      "description": "An exotic metallic bow from a distant land. Though extremely difficult to maintain, it is easy to nock and fires with tremendous force.",
-      "refinement": "Normal Attack and Charged Attack hits increase ATK by {{0}}% and Normal ATK SPD by {{1}}% for 6s. Max 4 stacks. Can only occur once every 0.3s."
+      "name": "Arco Composto",
+      "description": "Um arco de liga de metal, com rodas que esticam a corda. De difícil manuseio, mas consegue acertar o alvo com uma força incrível.",
+      "refinement": "Ao acertar o Ataque Normal e o Ataque Carregado, aumenta o ATQ em  {{0}}% e a VEL do Ataque Normal em  {{1}}% por 6s, podendo acumular até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s"
     },
     {
       "key": "Favonius Warbow",
-      "name": "Favonius Warbow",
-      "description": "A standard-issue recurve bow of the Knights of Favonius. Only the best archers can unleash its full potential.",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "name": "Arco de Guerra de Favonius",
+      "description": "Um arco recurvo usado pelos Cavaleiros de Favonius. Apenas os melhores arqueiros conseguem tirar todo o seu potencial.",
+      "refinement": "Os Acertos Críticos possuem  {{0}}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada  {{1}}%s."
     },
     {
       "key": "Prototype Crescent",
-      "name": "Prototype Crescent",
-      "description": "A prototype longbow discovered in the Blackcliff Forge. The arrow fired from this bow glimmers like a ray of moonlight.",
-      "refinement": "Charged Attack hits on weak points increase Movement SPD by 10% and ATK by {{0}}% for 10s."
+      "name": "Protótipo",
+      "description": "Um arco de protótipo descoberto na Forja do Penhasco Obscuro. A flecha disparada deste arco brilha como um raio de luar.",
+      "refinement": "Os ataques de Ataques Carregados em pontos fracos aumentam a velocidade de Mov. em 10% e ATQ em {{0}}% por 10s."
     },
     {
       "key": "Royal Bow",
-      "name": "Royal Bow",
-      "description": "An old royal longbow that belonged to the erstwhile rulers of Mondstadt. Countless generations later, the bowstring is still tight and can still fire arrows with great force.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "name": "Arco Real",
+      "description": "Um velho arco real que pertencia aos antigos governantes de Mondstadt. Inúmeras gerações depois, a corda do arco ainda está firme e ainda pode disparar flechas com grande força.",
+      "refinement": "Ao atingir um oponente, aumenta a Taxa Crítica em  {{0}}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.."
     },
     {
       "key": "Rust",
-      "name": "Rust",
-      "description": "A completely rusted iron greatbow. The average person would lack the strength to even lift it, let alone fire it.",
-      "refinement": "Increases Normal Attack DMG by {{0}}% but decreases Charged Attack DMG by 10%."
+      "name": "Arco Enferrujado",
+      "description": "Um arco de ferro completamente enferrujado. Uma pessoa comum não teria forças para sequer levantá-lo, muito menos dispará-lo.",
+      "refinement": "Aumenta o Dano do Ataque Normal em  {{0}}% mas diminui o Dano do Ataque Carregado em 10%."
     },
     {
       "key": "Sacrificial Bow",
-      "name": "Sacrificial Bow",
-      "description": "A ceremonial hunting bow that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s"
+      "name": "Arco do Sacrifício",
+      "description": "Um arco de caça decorativo que foi petrificada pelo tempo. Os acessórios inseridos ainda estão visíveis. Garante um grande poder ao seu portador.",
+      "refinement": "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {{0}} de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {{1}}s"
     },
     {
       "key": "The Viridescent Hunt",
-      "name": "The Viridescent Hunt",
-      "description": "A pure green hunting bow. This once belonged to a certain hunter whose home was the forest.",
-      "refinement": "Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding enemies, dealing {{0}}% of ATK as DMG to these enemies every 0.5s for 4s. This effect can only occur once every {{1}}s"
+      "name": "Arco Esmeralda do Caçador",
+      "description": "Um arco de caça verde puro. Isso pertenceu a um certo caçador cuja casa era a floresta.",
+      "refinement": "Ao acertar um Ataque Normal ou Ataque com Mira, possui 50% de chance de gerar um Ciclone que atacará continuamente os inimigos ao redor, causando  {{0}} de Dano de ATQ a esses inimigos a cada 0.5s por 4s. Este efeito pode ser ativado uma vez a cada {{1}}s"
     },
     {
       "key": "Skyward Harp",
-      "name": "Skyward Harp",
-      "description": "A greatbow that symbolizes Dvalin’s affiliation with the Anemo Archon. The sound of the bow firing is music to the Anemo Archon’s ears. It contains the power of the sky and wind within.",
-      "refinement": "Increases CRIT DMG by {{0}}%. Hits have a {{1}}% chance to inflict a small AoE attack, dealing 125% Physical ATK DMG. Can only occur once every {{2}}s."
+      "name": "Harpa Celestial",
+      "description": "Um grande arco que simboliza o vínculo entre Dvalin e o Arconte Anemo. O som do disparo das flechas é como música para os ouvidos do Arconte do Vento. Contém poderes dos céus e do vento.",
+      "refinement": "Aumenta o Dano Crítico em {{0}}. Ao acertar, possui {{1}} de chance de infligir um pequeno ataque AdE, causando 100% de Dano de ATQ Físico. Pode ser ativada uma vez a cada {{2}}s."
     },
     {
       "key": "Amos’ Bow",
-      "name": "Amos’ Bow",
-      "description": "An extremely ancient bow that has retained its power despite its original master being long gone. It draws power from everyone and everything in the world, and the further away you are from that which your heart desires, the more powerful it is.",
-      "refinement": "Increases Normal and Charged Attack DMG by {{0}}%. Normal and Charged Attack DMG increases by {{1}}% every 0.1s for up to 5 times."
+      "name": "Arco de Amos",
+      "description": "Um arco extremamente antigo que reteve seu poder, apesar de seu mestre original ter desaparecido há muito tempo. Ele extrai poder de todos e de tudo no mundo, e quanto mais longe você estiver daquilo que seu coração deseja, mais poderoso será.",
+      "refinement": "Aumenta o Dano infligido pelo Ataque Normal e Ataque Carregado em {{0}}. O Dano da Flecha com Ataque Normal e Ataque Carregado aumenta {{1}} a cada 0.1s até 5 vezes."
     },
     {
       "key": "Dreams of Dragonfell",
@@ -3982,146 +3983,146 @@
     },
     {
       "key": "Dull Blade",
-      "name": "Dull Blade",
-      "description": "Youthful dreams and the thrill of adventure. If this isn’t enough, then make it up with valiance.",
+      "name": "Lâmina Sem Fio",
+      "description": "Sonhos de juventude e muita aventura. Se isso não for suficiente, então use a coragem para compensar.",
       "refinement": null
     },
     {
       "key": "Silver Sword",
-      "name": "Silver Sword",
-      "description": "A sword for exorcising demons. Everyone knows it’s made of a silver alloy, not pure silver.",
+      "name": "Espada de Prata",
+      "description": "Uma espada para afastar os demônios. Todos sabem que ela é feita de liga de prata e não de prata pura.",
       "refinement": null
     },
     {
       "key": "Cool Steel",
-      "name": "Cool Steel",
-      "description": "A reliable steel-forged weapon that serves as a testament to the great adventures of its old master.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Cryo by {{0}}%"
+      "name": "Lâmina Fria",
+      "description": "Uma arma laminada confiável, forjada em aço, que serve como testemunho das grandes aventuras de seu antigo mestre.",
+      "refinement": "Aumenta o Dano contra inimigos afetados por Hydro ou Cryo em{{0}}%"
     },
     {
       "key": "Dark Iron Sword",
-      "name": "Dark Iron Sword",
-      "description": "A perfectly ordinary iron sword, just slightly darker than most.",
-      "refinement": "Upon causing an Overloaded, Superconduct, Electro-Charged, or an Electro-infused Swirl reaction, ATK is increased by {{0}}% for 12s."
+      "name": "Espada de Ferro Negro",
+      "description": "Bem, na verdade é apenas uma espada de ferro um pouco escura.",
+      "refinement": "Depois de 12s após a ativação da reação de Sobrecarga, Supercondutor, Redemoinho Electro, aumenta o ATQ em {{0}}%."
     },
     {
       "key": "Fillet Blade",
-      "name": "Fillet Blade",
-      "description": "A sharp filleting knife. The blade is long, thin, and incredibly sharp.",
-      "refinement": "On hit, has a 50% chance to deal {{0}}% ATK DMG to a single enemy. Can only occur once every {{1}}s."
+      "name": "Lâmina de Filés",
+      "description": "Uma faca afiada com uma lâmina longa.",
+      "refinement": "Ao acertar, possui 50% de chance de infligir {{0}}% de Dano de ATQ a um único alvo. Pode ocorrer uma vez a cada {{1}}s."
     },
     {
       "key": "Harbinger of Dawn",
-      "name": "Harbinger of Dawn",
-      "description": "A sword that once shone like the sun. The wielder of this sword will be blessed with a \"feel-good\" buff. The reflective material on the blade has long worn off.",
-      "refinement": "When HP is above 90%, increases CRIT Rate by {{0}}%."
+      "name": "Prenúncio do Alvorecer",
+      "description": "Uma espada, uma vez, brilhou como o sol. O portador dessa espada será abençoado com um bônus de \"boa sensação\". O material refletivo na sua lâmina já se desgastou há muito tempo.",
+      "refinement": "Quando a Vida estiver acima de 90%, aumenta a Taxa Crítica em {{0}}%."
     },
     {
       "key": "Skyrider Sword",
-      "name": "Skyrider Sword",
-      "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword...",
-      "refinement": "Using an Elemental Burst grants a {{0}}% increase in ATK and Movement SPD for 15s."
+      "name": "Espada do Cavaleiro do Céu",
+      "description": "Uma espada de aço confiável. Uma certa pessoa tentou usá-la como espada voadora...",
+      "refinement": "Ao usar o Supremo, concede um aumento de {{0}}% no ATQ e Veloc. Mov. por 15s."
     },
     {
       "key": "Traveler’s Handy Sword",
-      "name": "Traveler’s Handy Sword",
-      "description": "A handy steel sword which contains scissors, a magnifying glass, tinder, and other useful items in its sheath.",
-      "refinement": "Each Elemental Orb or Particle collected restores {{0}}% HP."
+      "name": "Espada do Viajante",
+      "description": "Uma espada de aço que esconde tesouras, lupas, entre outros itens de viagem..",
+      "refinement": "Cada Orbe ou Partícula Elemental coletada restaura {{0}}% da Vida."
     },
     {
       "key": "Blackcliff Longsword",
-      "name": "Blackcliff Longsword",
-      "description": "A sword made of a material known as \"blackcliff.\" It has a dark crimson glow on its black blade.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "name": "Espada do Penhasco Obscuro",
+      "description": "Uma espada feita de pedra negra. Tem um brilho vermelho escuro em sua lâmina preta.",
+      "refinement": "Após derrotar um inimigo, o ataque é aumentado em {{0}}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
     },
     {
       "key": "Favonius Sword",
-      "name": "Favonius Sword",
-      "description": "A standard-issue longsword of the Knights of Favonius. When you’re armed with this agile and sharp weapon, channeling the power of the elements has never been so easy!",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "name": "Espada de Favonius",
+      "description": "Uma espada longa comum usada pelos Cavaleiros de Favonius. Canalizar o poder dos elementos nunca foi tão fácil nesta arma ágil e afiada!",
+      "refinement": "Os Acertos Críticos possuem {{0}}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {{1}}s."
     },
     {
       "key": "Iron Sting",
-      "name": "Iron Sting",
-      "description": "An exotic long-bladed rapier that somehow found its way into Liyue via foreign traders. It is light, agile, and sharp.",
-      "refinement": "Dealing Elemental DMG increases all DMG by {{0}}% for 6s. Max 2 stacks. Can occur once every 1s."
+      "name": "Espinho de Ferro",
+      "description": "Espada exótica que de alguma forma acabou nas mãos dos comerciantes de Liyue. É leve, ágil e afiada.",
+      "refinement": "6s após ao causar Dano Elemental, aumenta todos os Danos em {{0}}%. Este efeito pode acumular até 2 vezes e pode ser ativado uma vez a cada 1s."
     },
     {
       "key": "Lion’s Roar",
-      "name": "Lion’s Roar",
-      "description": "A sharp blade with extravagant carvings that somehow does not compromise on durability and sharpness. It roars like a lion as it cuts through the air.",
-      "refinement": "Increases DMG against enemies affected by Pyro or Electro by {{0}}%"
+      "name": "Rugido do Leão",
+      "description": "Uma lâmina afiada com inserções luxuosas que de alguma forma não comprometeu sua durabilidade e nitidez. O som que emite ao fazer cortes pelo ar é como o rugido de leões.",
+      "refinement": "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {{0}}%"
     },
     {
       "key": "Prototype Rancour",
-      "name": "Prototype Rancour",
-      "description": "An ancient longsword discovered in the Blackcliff Forge that cuts through rocks like a hot knife through butter.",
-      "refinement": "On hit, Normal or Charged Attacks increase ATK and DEF by {{0}}% for 6s. Max 4 stacks. This effect can only occur once every 0.3s."
+      "name": "Protótipo Rancor",
+      "description": "Uma antiga espada longa descoberta na Forja do Penhasco Obscuro que corta pedras como uma faca quente na manteiga.",
+      "refinement": "Ao acertar um Ataque Normal ou Ataque Carregado, o ATQ e a DEF aumentam {{0}}%, com duração de 6s, acumulando até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s."
     },
     {
       "key": "Royal Longsword",
-      "name": "Royal Longsword",
-      "description": "An old longsword that belonged to the erstwhile rulers of Mondstadt. Exquisitely crafted, the carvings and embellishments testify to the stature of its owner.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "name": "Espada Longa Real",
+      "description": "Uma velha espada longa que pertencia aos antigos governantes de Mondstadt. Requintadamente trabalhada, as esculturas e enfeites testemunham a estatura de seu dono.",
+      "refinement": "Ao atingir um oponente, aumenta a Taxa Crítica em {{0}}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos."
     },
     {
       "key": "Sacrificial Sword",
-      "name": "Sacrificial Sword",
-      "description": "A ceremonial sword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s"
+      "name": "Espada do Sacrifício",
+      "description": "Uma espada decorativa que foi petrificada pelo tempo. Os acessórios inseridos ainda estão visíveis. Garante um grande poder ao seu portador.",
+      "refinement": "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {{0}}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {{1}}s"
     },
     {
       "key": "The Alley Flash",
-      "name": "The Alley Flash",
-      "description": "A straight sword as black as the night. It once belonged to a thief who roamed the benighted streets.",
-      "refinement": "Increases DMG dealt by the character equipping this weapon by {{0}}%. Taking DMG disables this effect for 5s."
+      "name": "Brilho do Beco",
+      "description": "Uma espada negra, tão escura quanto a noite. Pertenceu a um ladrão que vagava pelas ruas à noite.",
+      "refinement": "Aumenta o Dano causado pelo Personagem em {{0}}%. Ao sofrer Dano, esse efeito de aumento de Dano não ocorrerá por 5s."
     },
     {
       "key": "The Black Sword",
-      "name": "The Black Sword",
-      "description": "A pitch-black longsword that thirsts for violence and conflict. It is said that this weapon can cause its user to become drunk on the red wine of slaughter.",
-      "refinement": "Increases DMG dealt by Normal and Charged Attacks by {{0}}%. Additionally, regenerates {{1}}% of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s."
+      "name": "Espada Negra",
+      "description": "Uma espada longa que anseia por conflito e combate. Diz-se que mergulha seu portador em um desejo violento de se manchar de sangue em um massacre..",
+      "refinement": "Aumenta o dano causado pelos Ataques Normais e Carregados em {{0}}%, regenera {{1}}% do ATQ como Vida quando o Ataque Normal ou Ataque Carregado atingir Crítico. Este efeito pode ser ativado uma vez a cada 5s."
     },
     {
       "key": "The Flute",
-      "name": "The Flute",
-      "description": "Beneath its rusty exterior is a lavishly decorated thin blade. It swings as swiftly as the wind.",
-      "refinement": "Normal or Charged Attacks grant a Harmonic on hits. Gaining 5 Harmonics triggers the power of music and deals {{0}}% ATK DMG to surrounding enemies. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s."
+      "name": "A Flauta",
+      "description": "Abaixo da poeira, há uma lâmina fina e luxuosamente decorada. Seus movimentos são suaves como a vento.",
+      "refinement": "O Ataque Normal ou Ataque Carregado concede um Acorde. Obter 5 Acordes ativa o poder da música e causa {{0}}% de Dano de ATQ aos inimigos ao redor. Os Acordes duram até 30s e pode-se ganhar 1 Acorde a cada 0.5s."
     },
     {
       "key": "Sword of Descension",
-      "name": "Sword of Descension",
-      "description": "A sword of unique craftsmanship. It does not appear to belong to this world.",
-      "refinement": "Hitting opponents with Normal and Charged Attacks grants a {{0}}% chance to deal 200% ATK as DMG in a small AoE. This effect can only occur once every 10s. Additionally, if the Traveler equips the Sword of Descension, their ATK is increased by {{1}}."
+      "name": "Espada do Advento",
+      "description": "Uma espada de artesanato único. Não parece pertencer a este mundo.",
+      "refinement": "Ao atingir o inimigo com um Ataque Normal ou Ataque Carregado, tem {{0}}% de chance de causar 200% de Dano de ATQ em uma pequena área. Este efeito só pode ser ativado uma vez a cada 10s. Além disso, os Viajantes que estão equipados com a Espada do Advento terão seu ATQ aumentado em {{1}}."
     },
     {
       "key": "Festering Desire",
-      "name": "Festering Desire",
-      "description": "A creepy straight sword that almost seems to yearn for life. It drips with a shriveling venom that could even corrupt a mighty dragon.",
-      "refinement": "Increases Elemental Skill DMG by {{0}}% and Elemental Skill CRIT Rate by {{1}}%."
+      "name": "Espada Pútrida",
+      "description": "Uma espada reta assustadora que parece ansiar pela vida. Ela verte um veneno enfraquecedor que poderia corromper até mesmo um dragão poderoso.",
+      "refinement": "Aumenta em {{0}}% o Dano da Habilidade Elemental e em {{1}}%. a Taxa CRIT da Habilidade Elemental."
     },
     {
       "key": "Aquila Favonia",
-      "name": "Aquila Favonia",
-      "description": "The soul of the Knights of Favonius. Millennia later, it still calls on the winds of swift justice to vanquish all evil  just like the last heroine who wielded it.",
-      "refinement": "ATK is increased by {{0}}%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {{1}}% of ATK and dealing {{2}}% of ATK as DMG to surrounding enemies. This effect can only occur once every 15s."
+      "name": "Falcão",
+      "description": "A alma dos Cavaleiros de Favonius. Milênios depois, ainda chama pelos ventos para expulsar todo o mal - assim como a última heroína que a manejava.",
+      "refinement": "O ATQ aumenta em {{0}}%; Ativa ao receber Dano: A alma do Falcão do Leste desperta, segurando a bandeira da resistência no alto, regenerando Vida equivalente a {{1}}% do ATQ e causando {{2}}% do ATQ como Dano aos inimigos ao redor. Esta habilidade pode ser ativada uma vez a cada 15s."
     },
     {
       "key": "Skyward Blade",
-      "name": "Skyward Blade",
-      "description": "The sword of a knight that symbolizes the restored honor of Dvalin. The blessings of the Anemo Archon rest on the fuller of the blade, imbuing the sword with the powers of the sky and the wind.",
-      "refinement": "CRIT Rate increased by {{0}}%. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by 10%, increases ATK SPD by 10%, and increases the DMG of Normal and Charged Attack hits by {{1}}% for 12s."
+      "name": "Espada Celestial",
+      "description": "A espada de um cavaleiro que simboliza a honra restaurada de Dvalin. As bênçãos do Arconte Anemo repousam sobre a lâmina mais cheia, imbuindo a espada com os poderes do céu e do vento.",
+      "refinement": "A Taxa Crítica aumenta em {0}. Obtém a Perfuração Celestial ao usar o Supremo: Aumenta a Veloc. Mov. em 10%, aumenta a Velocidade de Ataque em 10%. Quando o Ataque Normal e o Ataque Carregado atingirem, causará um Dano adicional de {{1}}% por 12s."
     },
     {
       "key": "Summit Shaper",
-      "name": "Summit Shaper",
-      "description": "A symbol of a legendary pact, this sharp blade once cut off the peak of a mountain.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "name": "Cortador de Montanhas",
+      "description": "Um símbolo de um pacto lendário, esta lâmina afiada uma vez cortou o pico de uma montanha.",
+      "refinement": "Aumenta a força do Escudo em {{0}}%. Acertar ataques em inimigos aumenta o ataque em {{1}}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%."
     },
     {
       "key": "Apprentice’s Notes",
-      "name": "Apprentice’s Notes",
-      "description": "Notes left behind by a top student. Many useful spells are listed, and the handwriting is beautiful.",
+      "name": "Anotações do Aprendiz",
+      "description": "Notas deixadas por um estudante brilhante que deixou uma lista de magias muito úteis. Sua caligrafia é muito bonita.",
       "refinement": null
     },
     {
@@ -4240,7 +4241,7 @@
     },
     {
       "key": "Skyward Atlas",
-      "name": "Skyward Atlas",
+      "name": "Atlas Celestial",
       "description": "A cloud atlas symbolizing Dvalin and its former master, the Anemo Archon. It details the winds and clouds of the northern regions and contains the powers of the sky and wind.",
       "refinement": "Increases Elemental DMG Bonus by {{0}}%. Normal Attack hits have a 50% chance to earn the favor of the clouds, which actively seek out nearby enemies to attack for 15s, dealing {{1}}% ATK DMG. Can only occur once every 30s."
     },
@@ -4300,7 +4301,7 @@
     },
     {
       "key": "Blackcliff Slasher",
-      "name": "Blackcliff Slasher",
+      "name": "Foice do Penhasco Obscuro",
       "description": "An extremely sturdy greatsword from the Blackcliff Forge. It has a dark crimson color from the blade to pommel.",
       "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
     },
