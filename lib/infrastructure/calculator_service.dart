@@ -97,8 +97,12 @@ class CalculatorServiceImpl implements CalculatorService {
   ) {
     final expMaterials = _getItemExperienceMaterials(currentLevel, desiredLevel, true);
 
-    final ascensionMaterials =
-        char.ascensionMaterials.where((m) => m.rank > currentAscensionLevel && m.rank <= desiredAscensionLevel).expand((e) => e.materials).toList();
+    final ascensionMaterials = char.ascensionMaterials
+        .where((m) => m.rank > currentAscensionLevel && m.rank <= desiredAscensionLevel)
+        .expand(
+          (e) => e.materials,
+        )
+        .toList();
 
     final skillMaterials = <ItemAscensionMaterialModel>[];
 

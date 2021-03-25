@@ -41,6 +41,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
             desiredLevel: maxItemLevel,
             currentAscensionLevel: minAscensionLevel,
             desiredAscensionLevel: maxAscensionLevel,
+            useMaterialsFromInventory: false,
             skills: translation.skills.mapIndexed(
               (index, e) {
                 final enableTuple = _calculatorService.isSkillEnabled(
@@ -75,6 +76,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
           desiredLevel: maxItemLevel,
           currentAscensionLevel: minAscensionLevel,
           desiredAscensionLevel: maxAscensionLevel,
+          useMaterialsFromInventory: false,
         );
       },
       loadWith: (e) {
@@ -89,6 +91,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
             skills: e.skills,
             currentAscensionLevel: e.currentAscensionLevel,
             desiredAscensionLevel: e.desiredAscensionLevel,
+            useMaterialsFromInventory: e.useMaterialsFromInventory,
           );
         }
 
@@ -101,6 +104,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
           desiredLevel: e.desiredLevel,
           currentAscensionLevel: e.currentAscensionLevel,
           desiredAscensionLevel: e.desiredAscensionLevel,
+          useMaterialsFromInventory: e.useMaterialsFromInventory,
         );
       },
       currentLevelChanged: (e) => _levelChanged(e.newValue, currentState.desiredLevel, true),
@@ -109,6 +113,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
       desiredAscensionLevelChanged: (e) => _ascensionChanged(currentState.currentAscensionLevel, e.newValue, false),
       skillCurrentLevelChanged: (e) => _skillChanged(e.index, e.newValue, true),
       skillDesiredLevelChanged: (e) => _skillChanged(e.index, e.newValue, false),
+      useMaterialsFromInventoryChanged: (e) => currentState.copyWith.call(useMaterialsFromInventory: e.useThem),
     );
 
     yield s;

@@ -14,6 +14,7 @@ abstract class CalculatorAscMaterialsEvent with _$CalculatorAscMaterialsEvent {
     @required int currentAscensionLevel,
     @required int desiredAscensionLevel,
     @required List<CharacterSkill> skills,
+    @required bool useMaterialsFromInventory,
   }) = _AddCharacter;
 
   const factory CalculatorAscMaterialsEvent.updateCharacter({
@@ -25,6 +26,7 @@ abstract class CalculatorAscMaterialsEvent with _$CalculatorAscMaterialsEvent {
     @required int desiredAscensionLevel,
     @required List<CharacterSkill> skills,
     @required bool isActive,
+    @required bool useMaterialsFromInventory,
   }) = _UpdateCharacter;
 
   const factory CalculatorAscMaterialsEvent.addWeapon({
@@ -34,6 +36,7 @@ abstract class CalculatorAscMaterialsEvent with _$CalculatorAscMaterialsEvent {
     @required int desiredLevel,
     @required int currentAscensionLevel,
     @required int desiredAscensionLevel,
+    @required bool useMaterialsFromInventory,
   }) = _AddWeapon;
 
   const factory CalculatorAscMaterialsEvent.updateWeapon({
@@ -44,6 +47,7 @@ abstract class CalculatorAscMaterialsEvent with _$CalculatorAscMaterialsEvent {
     @required int currentAscensionLevel,
     @required int desiredAscensionLevel,
     @required bool isActive,
+    @required bool useMaterialsFromInventory,
   }) = _UpdateWeapon;
 
   const factory CalculatorAscMaterialsEvent.removeItem({

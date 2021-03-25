@@ -46,7 +46,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
         await _telemetryService.trackCalculatorItemAscMaterialLoaded(e.key);
         final char = _genshinService.getCharacter(e.key);
         final translation = _genshinService.getCharacterTranslation(e.key);
-        final newItem = ItemAscensionMaterials.forCharacters(
+        var newItem = ItemAscensionMaterials.forCharacters(
           key: e.key,
           image: Assets.getCharacterPath(char.image),
           position: currentState.items.length,
@@ -65,8 +65,9 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
           skills: e.skills,
           desiredAscensionLevel: e.desiredAscensionLevel,
           currentAscensionLevel: e.currentAscensionLevel,
+          useMaterialsFromInventory: e.useMaterialsFromInventory,
         );
-        await _dataService.addCalAscMatSessionItem(e.sessionKey, newItem);
+        newItem = await _dataService.addCalAscMatSessionItem(e.sessionKey, newItem);
         final items = [...currentState.items, newItem];
         final materialsForSummary = _buildMaterialsForSummary(items);
 
@@ -77,7 +78,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
         await _telemetryService.trackCalculatorItemAscMaterialLoaded(e.key);
         final weapon = _genshinService.getWeapon(e.key);
         final translation = _genshinService.getWeaponTranslation(e.key);
-        final newItem = ItemAscensionMaterials.forWeapons(
+        var newItem = ItemAscensionMaterials.forWeapons(
           key: e.key,
           image: weapon.fullImagePath,
           position: currentState.items.length,
@@ -94,9 +95,10 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
           desiredLevel: e.desiredLevel,
           desiredAscensionLevel: e.desiredAscensionLevel,
           currentAscensionLevel: e.currentAscensionLevel,
+          useMaterialsFromInventory: e.useMaterialsFromInventory,
         );
+        newItem = await _dataService.addCalAscMatSessionItem(e.sessionKey, newItem);
         final items = [...currentState.items, newItem];
-        await _dataService.addCalAscMatSessionItem(e.sessionKey, newItem);
         final materialsForSummary = _buildMaterialsForSummary(items);
 
         _notifyParent();
@@ -130,6 +132,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
           currentAscensionLevel: e.currentAscensionLevel,
           isActive: e.isActive,
           position: e.index,
+          useMaterialsFromInventory: e.useMaterialsFromInventory,
         );
         return _updateItem(e.sessionKey, e.index, updatedChar);
       },
@@ -150,6 +153,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
           currentAscensionLevel: e.currentAscensionLevel,
           isActive: e.isActive,
           position: e.index,
+          useMaterialsFromInventory: e.useMaterialsFromInventory,
         );
 
         return _updateItem(e.sessionKey, e.index, updatedWeapon);
@@ -164,10 +168,10 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
   List<String> getItemsKeysToExclude() => currentState.items.map((e) => e.key).toList();
 
   Future<CalculatorAscMaterialsState> _updateItem(int sessionKey, int index, ItemAscensionMaterials updatedItem) async {
+    final toAdd = await _dataService.updateCalAscMatSessionItem(sessionKey, index, updatedItem);
     final items = [...currentState.items];
     items.removeAt(index);
-    items.insert(index, updatedItem);
-    await _dataService.updateCalAscMatSessionItem(sessionKey, index, updatedItem);
+    items.insert(index, toAdd);
 
     final materialsForSummary = _buildMaterialsForSummary(items);
     return currentState.copyWith.call(items: items, summary: _calculatorService.generateSummary(materialsForSummary));
