@@ -4,6 +4,7 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart' as enums;
 import 'package:genshindb/domain/models/materials/material_card_model.dart';
 import 'package:genshindb/domain/utils/currency_utils.dart';
+import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/material/material_page.dart' as mp;
 import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:genshindb/presentation/shared/gradient_card.dart';
@@ -27,6 +28,7 @@ class MaterialCard extends StatelessWidget {
   final bool isInSelectionMode;
   final bool isInQuantityMode;
   final enums.MaterialType type;
+  final int usedQuantity;
 
   const MaterialCard({
     Key key,
@@ -42,6 +44,7 @@ class MaterialCard extends StatelessWidget {
   })  : withoutDetails = false,
         isInQuantityMode = false,
         quantity = -1,
+        usedQuantity = -1,
         super(key: key);
 
   MaterialCard.item({
@@ -58,6 +61,7 @@ class MaterialCard extends StatelessWidget {
         withoutDetails = false,
         isInQuantityMode = false,
         quantity = -1,
+        usedQuantity = -1,
         type = item.type,
         super(key: key);
 
@@ -75,6 +79,7 @@ class MaterialCard extends StatelessWidget {
         withElevation = false,
         isInQuantityMode = false,
         quantity = -1,
+        usedQuantity = -1,
         super(key: key);
 
   MaterialCard.quantity({
@@ -92,6 +97,7 @@ class MaterialCard extends StatelessWidget {
         withElevation = false,
         isInQuantityMode = true,
         type = item.type,
+        usedQuantity = item.usedQuantity,
         super(key: key);
 
   @override
@@ -109,17 +115,37 @@ class MaterialCard extends StatelessWidget {
           padding: withoutDetails ? Styles.edgeInsetAll5 : Styles.edgeInsetAll10,
           child: Column(
             children: [
-              FadeInImage(
-                width: imgWidth,
-                height: imgHeight,
-                placeholder: MemoryImage(kTransparentImage),
-                image: AssetImage(image),
+              Stack(
+                alignment: Alignment.topCenter,
+                children: [
+                  FadeInImage(
+                    width: imgWidth,
+                    height: imgHeight,
+                    placeholder: MemoryImage(kTransparentImage),
+                    image: AssetImage(image),
+                  ),
+                  if (usedQuantity > 0 && isInQuantityMode)
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: GestureDetector(
+                        onTap: () => _showUsedItemsDialog(context),
+                        child: Container(
+                          padding: const EdgeInsets.all(3),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: theme.accentColor.withOpacity(0.8),
+                          ),
+                          child: Text(' - ${CurrencyUtils.formatNumber(usedQuantity)} '),
+                        ),
+                      ),
+                    ),
+                ],
               ),
               if (quantity >= 0 && isInQuantityMode)
                 Container(
                   margin: const EdgeInsets.only(bottom: 5),
                   child: Text(
-                    type == enums.MaterialType.currency ? CurrencyUtils.formatNumber(quantity) : '$quantity',
+                    CurrencyUtils.formatNumber(quantity),
                     style: theme.textTheme.subtitle2,
                   ),
                 ),
@@ -170,5 +196,23 @@ class MaterialCard extends StatelessWidget {
     }
 
     context.read<InventoryBloc>().add(InventoryEvent.updateMaterial(key: keyName, quantity: newValue));
+  }
+
+  Future<void> _showUsedItemsDialog(BuildContext context) async {
+    //TODO: COMPLETE THIS
+    final s = S.of(context);
+    await showDialog<int>(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: Text('Used item'),
+        content: Text('This item is being used in one or more calculator sessions.\nThe used quantity is $usedQuantity.'),
+        actions: [
+          ElevatedButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text(s.ok),
+          ),
+        ],
+      ),
+    );
   }
 }

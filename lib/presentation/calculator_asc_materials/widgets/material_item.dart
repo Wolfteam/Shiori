@@ -23,25 +23,24 @@ class MaterialItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Container(
-      // margin: Styles.edgeInsetAll5,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          IconButton(
-            icon: Image.asset(image),
-            iconSize: 45,
-            splashRadius: 30,
-            constraints: const BoxConstraints(),
-            onPressed: () => _gotoMaterialPage(context),
-          ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        IconButton(
+          icon: Image.asset(image),
+          iconSize: 45,
+          splashRadius: 30,
+          constraints: const BoxConstraints(),
+          onPressed: () => _gotoMaterialPage(context),
+        ),
+        if (quantity > 0)
           Text(
             type == app.MaterialType.currency ? CurrencyUtils.formatNumber(quantity) : '$quantity',
             textAlign: TextAlign.center,
             style: textColor != null ? theme.textTheme.subtitle2.copyWith(color: textColor) : theme.textTheme.subtitle2,
           ),
-        ],
-      ),
+        if (quantity == 0) const Icon(Icons.check, color: Colors.green, size: 18),
+      ],
     );
   }
 

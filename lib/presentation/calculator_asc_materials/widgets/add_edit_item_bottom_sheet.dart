@@ -62,18 +62,21 @@ class AddEditItemBottomSheet extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: theme.textTheme.subtitle2.copyWith(fontWeight: FontWeight.bold),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  OutlineButton(
-                    onPressed: () => _showLevelPickerDialog(context, state.currentLevel, true),
-                    child: Text(s.currentX(state.currentLevel)),
-                  ),
-                  OutlineButton(
-                    onPressed: () => _showLevelPickerDialog(context, state.desiredLevel, false),
-                    child: Text(s.desiredX(state.desiredLevel)),
-                  ),
-                ],
+              Container(
+                margin: const EdgeInsets.only(bottom: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    OutlineButton(
+                      onPressed: () => _showLevelPickerDialog(context, state.currentLevel, true),
+                      child: Text(s.currentX(state.currentLevel)),
+                    ),
+                    OutlineButton(
+                      onPressed: () => _showLevelPickerDialog(context, state.desiredLevel, false),
+                      child: Text(s.desiredX(state.desiredLevel)),
+                    ),
+                  ],
+                ),
               ),
               Text(s.currentAscension, textAlign: TextAlign.center, style: theme.textTheme.subtitle2),
               AscensionLevel(isCurrentLevel: true, level: state.currentAscensionLevel),
@@ -91,6 +94,27 @@ class AddEditItemBottomSheet extends StatelessWidget {
                         isDesiredIncEnabled: e.isDesiredIncEnabled,
                       ))
                   .toList(),
+              Column(
+                children: [
+                  Text(
+                    s.useMaterialsFromInventory,
+                    style: theme.textTheme.subtitle2.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(top: 5),
+                    child: ToggleButtons(
+                      constraints: const BoxConstraints(minHeight: 40, minWidth: 100),
+                      borderRadius: BorderRadius.circular(20),
+                      onPressed: (index) => _useFromInventory(index, context),
+                      isSelected: [state.useMaterialsFromInventory, !state.useMaterialsFromInventory],
+                      children: const <Widget>[
+                        Icon(Icons.check),
+                        Icon(Icons.close),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
               ButtonBar(
                 buttonPadding: const EdgeInsets.symmetric(horizontal: 10),
                 children: <Widget>[
@@ -111,6 +135,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
                               state.desiredLevel,
                               state.currentAscensionLevel,
                               state.desiredAscensionLevel,
+                              state.useMaterialsFromInventory,
                               context,
                               isActiveChanged: true,
                             )
@@ -120,6 +145,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
                               state.currentAscensionLevel,
                               state.desiredAscensionLevel,
                               state.skills,
+                              state.useMaterialsFromInventory,
                               context,
                               isActiveChanged: true,
                             ),
@@ -129,13 +155,20 @@ class AddEditItemBottomSheet extends StatelessWidget {
                     color: theme.primaryColor,
                     onPressed: () => isAWeapon
                         ? _applyChangesForWeapon(
-                            state.currentLevel, state.desiredLevel, state.currentAscensionLevel, state.desiredAscensionLevel, context)
+                            state.currentLevel,
+                            state.desiredLevel,
+                            state.currentAscensionLevel,
+                            state.desiredAscensionLevel,
+                            state.useMaterialsFromInventory,
+                            context,
+                          )
                         : _applyChangesForCharacter(
                             state.currentLevel,
                             state.desiredLevel,
                             state.currentAscensionLevel,
                             state.desiredAscensionLevel,
                             state.skills,
+                            state.useMaterialsFromInventory,
                             context,
                           ),
                     child: Text(s.ok),
@@ -182,6 +215,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
     int desiredLevel,
     int currentAscensionLevel,
     int desiredAscensionLevel,
+    bool useMaterialsFromInventory,
     BuildContext context, {
     bool isActiveChanged = false,
   }) {
@@ -193,6 +227,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
             desiredLevel: desiredLevel,
             currentAscensionLevel: currentAscensionLevel,
             desiredAscensionLevel: desiredAscensionLevel,
+            useMaterialsFromInventory: useMaterialsFromInventory,
           )
         : CalculatorAscMaterialsEvent.updateWeapon(
             sessionKey: sessionKey,
@@ -202,6 +237,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
             currentAscensionLevel: currentAscensionLevel,
             desiredAscensionLevel: desiredAscensionLevel,
             isActive: isActiveChanged ? !isActive : isActive,
+            useMaterialsFromInventory: useMaterialsFromInventory,
           );
     context.read<CalculatorAscMaterialsBloc>().add(event);
     Navigator.of(context).pop();
@@ -213,6 +249,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
     int currentAscensionLevel,
     int desiredAscensionLevel,
     List<CharacterSkill> skills,
+    bool useMaterialsFromInventory,
     BuildContext context, {
     bool isActiveChanged = false,
   }) {
@@ -225,6 +262,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
             skills: skills,
             currentAscensionLevel: currentAscensionLevel,
             desiredAscensionLevel: desiredAscensionLevel,
+            useMaterialsFromInventory: useMaterialsFromInventory,
           )
         : CalculatorAscMaterialsEvent.updateCharacter(
             sessionKey: sessionKey,
@@ -235,6 +273,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
             currentAscensionLevel: currentAscensionLevel,
             desiredAscensionLevel: desiredAscensionLevel,
             isActive: isActiveChanged ? !isActive : isActive,
+            useMaterialsFromInventory: useMaterialsFromInventory,
           );
     context.read<CalculatorAscMaterialsBloc>().add(event);
     Navigator.of(context).pop();
@@ -243,5 +282,10 @@ class AddEditItemBottomSheet extends StatelessWidget {
   void _removeItem(BuildContext context) {
     context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.removeItem(sessionKey: sessionKey, index: index));
     Navigator.pop(context);
+  }
+
+  void _useFromInventory(int index, BuildContext context) {
+    final useThem = index == 0;
+    context.read<CalculatorAscMaterialsItemBloc>().add(CalculatorAscMaterialsItemEvent.useMaterialsFromInventoryChanged(useThem: useThem));
   }
 }

@@ -134,6 +134,7 @@ class ItemCard extends StatelessWidget {
             skills: currentData.skills,
             currentAscensionLevel: currentData.currentAscensionLevel,
             desiredAscensionLevel: currentData.desiredAscensionLevel,
+            useMaterialsFromInventory: currentData.useMaterialsFromInventory,
           ),
         );
 
