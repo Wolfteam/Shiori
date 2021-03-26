@@ -1,6 +1,18 @@
 {
   "gameCodes": [
     {
+      "dateAdded": "03/22/2021",
+      "isExpired": false,
+      "code": "TT7BVJNPL249",
+      "rewards": [
+        {
+          "quantity": 60,
+          "materialType": "currency",
+          "image": "primogem.png"
+        }
+      ]
+    },
+    {
       "dateAdded": "03/20/2021",
       "isExpired": false,
       "code": "SBNBUK67M37Z",
@@ -138,7 +150,7 @@
     },
     {
       "dateAdded": "01/12/2021",
-      "isExpired": false,
+      "isExpired": true,
       "code": "153YuSaenh",
       "rewards": [
         {
@@ -167,7 +179,7 @@
     },
     {
       "dateAdded": "12/24/2020",
-      "isExpired": false,
+      "isExpired": true,
       "code": "GSIMPTq125",
       "rewards": [
         {
