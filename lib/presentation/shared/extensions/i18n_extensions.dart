@@ -24,6 +24,8 @@ extension I18nExtensions on S {
         return '$russian ($partial)';
       case AppLanguageType.simplifiedChinese:
         return '$simplifiedChinese ($partial)';
+      case AppLanguageType.portuguese:
+        return '$portuguese ($partial)';
       default:
         throw Exception('The provided app lang = $lang is not valid');
     }

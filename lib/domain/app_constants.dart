@@ -10,6 +10,7 @@ const languagesMap = {
   AppLanguageType.spanish: LanguageModel('es', 'ES'),
   AppLanguageType.russian: LanguageModel('ru', 'RU'),
   AppLanguageType.simplifiedChinese: LanguageModel('zh', 'CN'),
+  AppLanguageType.portuguese: LanguageModel('pt', 'PT'),
 };
 
 //key = ascension level
