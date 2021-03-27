@@ -12,6 +12,8 @@ abstract class MaterialCardModel implements _$MaterialCardModel {
     @required int rarity,
     @required String image,
     @required MaterialType type,
+    @required double level,
+    @required bool hasSiblings,
     @Default(0) int quantity,
     @Default(0) int usedQuantity,
   }) = _Item;

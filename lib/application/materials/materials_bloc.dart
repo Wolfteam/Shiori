@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/enums/material_type.dart';
 import 'package:genshindb/domain/models/models.dart';
@@ -55,16 +57,15 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
     String search,
     int rarity = 0,
     MaterialType type = MaterialType.all,
-    MaterialFilterType filterType = MaterialFilterType.rarity,
+    MaterialFilterType filterType = MaterialFilterType.grouped,
     SortDirectionType sortDirectionType = SortDirectionType.asc,
   }) {
     final isLoaded = state is _LoadedState;
     var data = _genshinService.getAllMaterialsForCard();
 
     if (!isLoaded) {
-      _sortData(data, filterType, sortDirectionType);
       return MaterialsState.loaded(
-        materials: data,
+        materials: _sortData(data, filterType, sortDirectionType),
         search: search,
         rarity: rarity,
         tempRarity: rarity,
@@ -101,10 +102,8 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
       }
     }
 
-    _sortData(data, filterType, sortDirectionType);
-
     final s = currentState.copyWith.call(
-      materials: data,
+      materials: _sortData(data, filterType, sortDirectionType),
       search: search,
       rarity: rarity,
       tempRarity: rarity,
@@ -118,28 +117,22 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
     return s;
   }
 
-  void _sortData(
+  List<MaterialCardModel> _sortData(
     List<MaterialCardModel> data,
     MaterialFilterType filterType,
     SortDirectionType sortDirectionType,
   ) {
     switch (filterType) {
       case MaterialFilterType.name:
-        if (sortDirectionType == SortDirectionType.asc) {
-          data.sort((x, y) => x.name.compareTo(y.name));
-        } else {
-          data.sort((x, y) => y.name.compareTo(x.name));
-        }
-        break;
+        return sortDirectionType == SortDirectionType.asc ? data.orderBy((el) => el.name).toList() : data.orderByDescending((el) => el.name).toList();
       case MaterialFilterType.rarity:
-        if (sortDirectionType == SortDirectionType.asc) {
-          data.sort((x, y) => x.rarity.compareTo(y.rarity));
-        } else {
-          data.sort((x, y) => y.rarity.compareTo(x.rarity));
-        }
-        break;
+        return sortDirectionType == SortDirectionType.asc
+            ? data.orderBy((el) => el.rarity).toList()
+            : data.orderByDescending((el) => el.rarity).toList();
+      case MaterialFilterType.grouped:
+        return sortMaterialsByGrouping(data, sortDirectionType);
       default:
-        break;
+        return data;
     }
   }
 }

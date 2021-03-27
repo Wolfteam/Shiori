@@ -1,5 +1,6 @@
 import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/assets.dart';
+import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/enums/item_type.dart';
 import 'package:genshindb/domain/extensions/string_extensions.dart';
 import 'package:genshindb/domain/models/entities.dart';
@@ -240,7 +241,7 @@ class DataServiceImpl implements DataService {
       }
     }
 
-    return allMaterials..sort((x, y) => x.rarity.compareTo(y.rarity));
+    return sortMaterialsByGrouping(allMaterials, SortDirectionType.asc);
   }
 
   @override

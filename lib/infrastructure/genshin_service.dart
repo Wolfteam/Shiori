@@ -585,6 +585,8 @@ class GenshinServiceImpl implements GenshinService {
       rarity: material.rarity,
       type: material.type,
       name: translation.name,
+      level: material.level,
+      hasSiblings: material.hasSiblings,
     );
   }
 }
