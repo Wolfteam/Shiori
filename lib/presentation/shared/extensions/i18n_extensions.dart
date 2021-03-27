@@ -15,6 +15,7 @@ extension I18nExtensions on S {
 
   String translateAppLanguageType(AppLanguageType lang) {
     switch (lang) {
+      case AppLanguageType.french:
       case AppLanguageType.english:
         return english;
       case AppLanguageType.spanish:

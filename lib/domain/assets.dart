@@ -106,6 +106,7 @@ class Assets {
 
   static String getTranslationPath(AppLanguageType languageType) {
     switch (languageType) {
+      case AppLanguageType.french:
       case AppLanguageType.english:
         return '$translationsBasePath/en.json';
       case AppLanguageType.spanish:
