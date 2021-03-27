@@ -14,6 +14,8 @@ part 'calculator_asc_materials_bloc.freezed.dart';
 part 'calculator_asc_materials_event.dart';
 part 'calculator_asc_materials_state.dart';
 
+const _initialState = CalculatorAscMaterialsState.initial(items: [], summary: []);
+
 class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, CalculatorAscMaterialsState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
@@ -30,7 +32,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
     this._calculatorService,
     this._dataService,
     this._calculatorAscMaterialsSessionsBloc,
-  ) : super(const CalculatorAscMaterialsState.initial(items: [], summary: []));
+  ) : super(_initialState);
 
   @override
   Stream<CalculatorAscMaterialsState> mapEventToState(
@@ -159,6 +161,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
 
         return _updateItem(e.sessionKey, e.index, updatedWeapon);
       },
+      close: (e) async => _initialState,
     );
 
     yield s;

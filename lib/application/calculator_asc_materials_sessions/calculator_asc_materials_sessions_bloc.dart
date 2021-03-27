@@ -22,31 +22,31 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
   @override
   Stream<CalculatorAscMaterialsSessionsState> mapEventToState(CalculatorAscMaterialsSessionsEvent event) async* {
     final s = await event.map(
-      init: (_) async {
-        await _telemetryService.trackCalculatorAscMaterialsSessionsLoaded();
-        final sessions = _dataService.getAllCalAscMatSessions();
-        return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
-      },
-      createSession: (e) async {
-        await _telemetryService.trackCalculatorAscMaterialsSessionsCreated();
-        await _dataService.createCalAscMatSession(e.name.trim(), currentState.sessions.length);
-        final sessions = _dataService.getAllCalAscMatSessions();
-        return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
-      },
-      updateSession: (e) async {
-        final position = currentState.sessions.firstWhere((el) => el.key == e.key).position;
-        await _telemetryService.trackCalculatorAscMaterialsSessionsUpdated();
-        await _dataService.updateCalAscMatSession(e.key, e.name.trim(), position);
-        final sessions = _dataService.getAllCalAscMatSessions();
-        return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
-      },
-      deleteSession: (e) async {
-        await _telemetryService.trackCalculatorAscMaterialsSessionsDeleted();
-        await _dataService.deleteCalAscMatSession(e.key);
-        final sessions = _dataService.getAllCalAscMatSessions();
-        return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
-      },
-    );
+        init: (_) async {
+          await _telemetryService.trackCalculatorAscMaterialsSessionsLoaded();
+          final sessions = _dataService.getAllCalAscMatSessions();
+          return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
+        },
+        createSession: (e) async {
+          await _telemetryService.trackCalculatorAscMaterialsSessionsCreated();
+          await _dataService.createCalAscMatSession(e.name.trim(), currentState.sessions.length);
+          final sessions = _dataService.getAllCalAscMatSessions();
+          return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
+        },
+        updateSession: (e) async {
+          final position = currentState.sessions.firstWhere((el) => el.key == e.key).position;
+          await _telemetryService.trackCalculatorAscMaterialsSessionsUpdated();
+          await _dataService.updateCalAscMatSession(e.key, e.name.trim(), position);
+          final sessions = _dataService.getAllCalAscMatSessions();
+          return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
+        },
+        deleteSession: (e) async {
+          await _telemetryService.trackCalculatorAscMaterialsSessionsDeleted();
+          await _dataService.deleteCalAscMatSession(e.key);
+          final sessions = _dataService.getAllCalAscMatSessions();
+          return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
+        },
+        close: (e) async => const CalculatorAscMaterialsSessionsState.loaded(sessions: []));
 
     yield s;
   }

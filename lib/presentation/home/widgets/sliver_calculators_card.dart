@@ -28,5 +28,7 @@ class SliverCalculatorsCard extends StatelessWidget {
     context.read<CalculatorAscMaterialsSessionsBloc>().add(const CalculatorAscMaterialsSessionsEvent.init());
     final route = MaterialPageRoute(builder: (c) => CalculatorSessionsPage());
     await Navigator.push(context, route);
+    await route.completed;
+    context.read<CalculatorAscMaterialsSessionsBloc>().add(const CalculatorAscMaterialsSessionsEvent.close());
   }
 }

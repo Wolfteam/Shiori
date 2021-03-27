@@ -14,4 +14,6 @@ abstract class MaterialsEvent implements _$MaterialsEvent {
   const factory MaterialsEvent.sortDirectionTypeChanged(SortDirectionType sortDirectionType) = _SortDirectionTypeChanged;
 
   const factory MaterialsEvent.cancelChanges() = _CancelChanges;
+
+  const factory MaterialsEvent.close() = _Close;
 }

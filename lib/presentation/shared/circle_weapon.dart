@@ -40,6 +40,7 @@ class CircleWeapon extends StatelessWidget {
     bloc.add(WeaponEvent.loadFromImg(image: image));
     final route = MaterialPageRoute(builder: (c) => WeaponPage());
     await Navigator.push(context, route);
+    await route.completed;
     bloc.pop();
   }
 }

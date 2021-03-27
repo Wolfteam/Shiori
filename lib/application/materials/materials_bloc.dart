@@ -48,6 +48,7 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
         tempSortDirectionType: currentState.sortDirectionType,
         tempType: currentState.type,
       ),
+      close: (e) => currentState.copyWith.call(materials: []),
     );
 
     yield s;

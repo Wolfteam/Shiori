@@ -54,4 +54,6 @@ abstract class CalculatorAscMaterialsEvent with _$CalculatorAscMaterialsEvent {
     @required int sessionKey,
     @required int index,
   }) = _RemoveItem;
+
+  const factory CalculatorAscMaterialsEvent.close() = _Close;
 }

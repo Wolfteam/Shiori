@@ -28,6 +28,9 @@ class SliverMaterialsCard extends StatelessWidget {
 
   Future<void> _gotoMaterialsPage(BuildContext context) async {
     context.read<MaterialsBloc>().add(const MaterialsEvent.init());
-    await Navigator.push(context, MaterialPageRoute(builder: (_) => const MaterialsPage()));
+    final route = MaterialPageRoute(builder: (_) => const MaterialsPage());
+    await Navigator.push(context, route);
+    await route.completed;
+    context.read<MaterialsBloc>().add(const MaterialsEvent.close());
   }
 }

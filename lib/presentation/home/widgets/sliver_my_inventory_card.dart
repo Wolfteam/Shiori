@@ -29,5 +29,6 @@ Future<void> _goToInventoryPage(BuildContext context) async {
   context.read<InventoryBloc>().add(const InventoryEvent.init());
   final route = MaterialPageRoute(builder: (c) => InventoryPage());
   await Navigator.push(context, route);
+  await route.completed;
   context.read<InventoryBloc>().add(const InventoryEvent.close());
 }

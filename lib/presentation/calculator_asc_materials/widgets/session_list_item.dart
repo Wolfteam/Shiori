@@ -89,5 +89,7 @@ class SessionListItem extends StatelessWidget {
     context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.init(sessionKey: session.key));
     final route = MaterialPageRoute(builder: (c) => CalculatorAscensionMaterialsPage(sessionKey: session.key));
     await Navigator.push(context, route);
+    await route.completed;
+    context.read<CalculatorAscMaterialsBloc>().add(const CalculatorAscMaterialsEvent.close());
   }
 }

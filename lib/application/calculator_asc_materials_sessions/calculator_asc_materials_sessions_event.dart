@@ -16,4 +16,6 @@ abstract class CalculatorAscMaterialsSessionsEvent implements _$CalculatorAscMat
   const factory CalculatorAscMaterialsSessionsEvent.deleteSession({
     @required int key,
   }) = _DeleteSession;
+
+  const factory CalculatorAscMaterialsSessionsEvent.close() = _Close;
 }
