@@ -193,6 +193,12 @@ class MyApp extends StatelessWidget {
             return CalculatorAscMaterialsSessionsOrderBloc(dataService, ctx.read<CalculatorAscMaterialsSessionsBloc>());
           },
         ),
+        BlocProvider(
+          create: (ctx) {
+            final dataService = getIt<DataService>();
+            return CalculatorAscMaterialsOrderBloc(dataService, ctx.read<CalculatorAscMaterialsBloc>());
+          },
+        ),
       ],
       child: BlocBuilder<MainBloc, MainState>(
         builder: (ctx, state) => AppWidget(),

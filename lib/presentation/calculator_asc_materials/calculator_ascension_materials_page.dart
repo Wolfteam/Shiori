@@ -17,6 +17,7 @@ import 'package:hawk_fab_menu/hawk_fab_menu.dart';
 import 'widgets/add_edit_item_bottom_sheet.dart';
 import 'widgets/ascension_materials_summary.dart';
 import 'widgets/item_card.dart';
+import 'widgets/reorder_items_dialog.dart';
 
 class CalculatorAscensionMaterialsPage extends StatelessWidget {
   final int sessionKey;
@@ -33,7 +34,19 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
 
     return Scaffold(
-      appBar: AppBar(title: Text(s.ascensionMaterials)),
+      appBar: AppBar(
+        title: Text(s.ascensionMaterials),
+        actions: [
+          BlocBuilder<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
+            builder: (context, state) => state.items.length > 1
+                ? IconButton(
+                    icon: const Icon(Icons.unfold_more),
+                    onPressed: () => _showReorderDialog(state.items, context),
+                  )
+                : Container(),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: HawkFabMenu(
           icon: AnimatedIcons.menu_arrow,
@@ -168,5 +181,11 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
       isScrollControlled: true,
       builder: (_) => AddEditItemBottomSheet.toAddItem(sessionKey: sessionKey, keyName: keyName, isAWeapon: true),
     );
+  }
+
+  Future<void> _showReorderDialog(List<ItemAscensionMaterials> items, BuildContext context) async {
+    context.read<CalculatorAscMaterialsOrderBloc>().add(CalculatorAscMaterialsOrderEvent.init(sessionKey: sessionKey, items: items));
+    await showDialog(context: context, builder: (_) => ReorderItemsDialog());
+    context.read<CalculatorAscMaterialsOrderBloc>().add(const CalculatorAscMaterialsOrderEvent.discardChanges());
   }
 }
