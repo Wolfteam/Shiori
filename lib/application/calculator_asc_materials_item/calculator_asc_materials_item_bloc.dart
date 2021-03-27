@@ -242,15 +242,25 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
 
   List<CharacterSkill> _getCharacterSkillsToUse(CharacterFileModel character, TranslationCharacterFile translation) {
     final skills = <CharacterSkill>[];
-    for (final e in translation.skills) {
+    for (var i = 0; i < translation.skills.length; i++) {
+      final e = translation.skills[i];
       final related = character.skills.firstWhereOrNull((el) => el.key == e.key);
       if (related == null || related.type == CharacterSkillType.others) {
         continue;
       }
 
-      final enableTuple = _calculatorService.isSkillEnabled(minSkillLevel, maxSkillLevel, minAscensionLevel, maxAscensionLevel);
+      final enableTuple = _calculatorService.isSkillEnabled(
+        minSkillLevel,
+        maxSkillLevel,
+        minAscensionLevel,
+        maxAscensionLevel,
+        minSkillLevel,
+        maxSkillLevel,
+      );
       final skill = CharacterSkill.skill(
+        key: e.key,
         name: e.title,
+        position: i,
         currentLevel: minSkillLevel,
         desiredLevel: maxSkillLevel,
         isCurrentDecEnabled: enableTuple.item1,
