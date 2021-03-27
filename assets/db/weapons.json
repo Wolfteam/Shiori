@@ -2898,7 +2898,7 @@
       "secondaryStat": "atkPercentage",
       "secondaryStatValue": 6.0,
       "location": "gacha",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "ascensionMaterials": [
         {
           "level": 20,
@@ -6794,7 +6794,7 @@
       "secondaryStat": "atkPercentage",
       "secondaryStatValue": 10.8,
       "location": "gacha",
-      "isComingSoon": false,
+      "isComingSoon": true,
       "ascensionMaterials": [
         {
           "level": 20,
@@ -7146,7 +7146,7 @@
       "secondaryStat": "elementaryMastery",
       "secondaryStatValue": 36,
       "location": "quest",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "ascensionMaterials": [
         {
           "level": 20,
@@ -7493,7 +7493,7 @@
       "secondaryStat": "energyRechargePercentage",
       "secondaryStatValue": 12,
       "location": "gacha",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "ascensionMaterials": [
         {
           "level": 20,
@@ -12872,7 +12872,7 @@
       "secondaryStat": "elementaryMastery",
       "secondaryStatValue": 12,
       "location": "gacha",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "ascensionMaterials": [
         {
           "level": 20,
@@ -21391,7 +21391,7 @@
       "secondaryStat": "energyRechargePercentage",
       "secondaryStatValue": 6.7,
       "location": "gacha",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "ascensionMaterials": [
         {
           "level": 20,
@@ -22456,7 +22456,7 @@
         {
           "quantity": 50,
           "materialType": "ingredient",
-          "image": "white_iron_chunk.png"
+          "image": "starsilver.png"
         }
       ]
     },
@@ -29959,7 +29959,7 @@
         {
           "quantity": 50,
           "materialType": "ingredient",
-          "image": "white_iron_chunk.png"
+          "image": "starsilver.png"
         }
       ]
     },
@@ -35717,12 +35717,12 @@
         {
           "quantity": 50,
           "materialType": "ingredient",
-          "image": "crystal_chunk.png"
+          "image": "starsilver.png"
         },
         {
-          "quantity": 50,
+          "quantity": 8,
           "materialType": "ingredient",
-          "image": "white_iron_chunk.png"
+          "image": "vitalized_dragontooth.png"
         }
       ]
     },

@@ -361,7 +361,7 @@
           "descriptions": []
         },
         {
-          "key": "c1",
+          "key": "c6",
           "title": "Dedicándote Todo",
           "description": "Cuando Bárbara está fuera de escena, si un miembro del equipo ha sido derrotado:",
           "secondDescription": "Solo puede ocurrir una vez cada 15 min.",
@@ -3245,7 +3245,7 @@
     {
       "key": "Xiangling",
       "name": "Xiangling",
-      "description": "Una reconida chef de Liyue. Le aposiona la cocina y sobresale al hacer sus platos calientes y picantes.",
+      "description": "Una reconida chef de Liyue. Le apasiona la cocina y sobresale al hacer sus platos calientes y picantes.",
       "skills": [
         {
           "key": "s1",
@@ -3912,9 +3912,9 @@
     },
     {
       "key": "Alley Hunter",
-      "name": "Alley Hunter",
+      "name": "Cazador del Callejón",
       "description": "Un arco de largo alcance. Una vez perteneció a un caballero ladrón que nunca fue atrapado.",
-      "refinement": "While the character equipped with this weapon is in the party but not on the field, their DMG increases by {{0}}% every second up to a max of {{1}}%. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by {{2}}% per second until it reaches 0%."
+      "refinement": "Cuando el personaje que lleva esta arma equipada está en tu equipo pero no en combate, el daño de dicho personaje aumenta en un {{0}}% cada 1 s. Como máximo, solo se puede obtener un aumento del {{1}}% de daño de esta manera. 4 s después de que dicho personaje esté en uso, el aumento de daño irá reduciéndose en un {{2}}% cada 1 s hasta llegar al 0%."
     },
     {
       "key": "Blackcliff Warbow",
@@ -4495,20 +4495,20 @@
     {
       "key": "Staff of Homa",
       "name": "Báculo de Homa",
-      "description": "A \"firewood staff\" that was once used in ancient and long-lost rituals.",
-      "refinement": "HP increased by {{0}}%. Additionally, provides an ATK Bonus based on {{1}}% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional {{2}}% of Max HP."
+      "description": "Un bastón de color bermellón utilizado en un antiguo ritual que hace mucho tiempo que no se practica.",
+      "refinement": "Aumenta la Vida en un {{0}}%. Además, el personaje que lleve esta arma equipada obtendrá un {{1}}% de Bono de ATQ en proporción a su Vida Máx. Cuando la Vida de dicho personaje esté por debajo del 50%, el ATQ aumentará en un {{2}}% adicional en proporción a su Vida Máx."
     },
     {
       "key": "Windblume Ode",
-      "name": "Windblume Ode",
-      "description": "A bow adorned with nameless flowers that bears the earnest hopes of an equally nameless person.",
-      "refinement": "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by {{0}}% for 6s."
+      "name": "Oda a las Flores de Viento",
+      "description": "Un arco ornamentado con flores desconocidas que carga con los fervientes deseos de una persona también desconocida.",
+      "refinement": "Al usar una Habilidad Elemental, obtienes la gracia de las flores de viento, que aumenta el ATQ en un {{0}}% durante 6 s."
     },
     {
       "key": "Elegy for the End",
-      "name": "Elegy for the End",
-      "description": "A bow as lovely as any bard's lyre, its arrows pierce the heart like a lamenting sigh.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by {{0}}. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by {{1}} and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "name": "Elegía del Fin",
+      "description": "Un arco tan bello como el instrumento de un bardo. Las flechas que dispara son como un suspiro capaz de atravesar el corazón de una persona.",
+      "refinement": "Una parte del «Gran concierto milenario» que flota por los vientos. Aumenta en {{0}} pts. la Maestría Elemental. Cuando el personaje que lleva esta arma equipada ataca a un enemigo con una Habilidad Elemental o Definitiva, dicho personaje obtiene un talismán de reminiscencia que puede adquirirse una vez cada 0.2 s como máximo. Este efecto también puede ocurrir cuando el personaje que lleva equipada esta arma está en tu equipo pero no en combate. Al obtener 4 talismanes de reminiscencia, estos se consumirán y otorgarán a todos los miembros del equipo cercanos el efecto de «Gran concierto milenario: Canción del adiós» durante 12 s, el cual aumenta en {{1}} pts. la Maestría Elemental y el ATQ en un {{2}}%. Tras activarse este efecto, no podrán obtenerse talismanes de reminiscencia durante 20 s. Los efectos de «Gran concierto milenario» no se acumularán con otros efectos del mismo tipo."
     }
   ],
   "artifacts": [
@@ -4958,632 +4958,857 @@
   "materials": [
     {
       "key": "FreedomA",
-      "name": "Enseñanzas de la Libertad"
+      "name": "Enseñanzas de la Libertad",
+      "description": "Freedom is the spirit of the land of the wind.\nThe freedom to live is one of such. It is the freedom to live freely and healthily without concerns of one's own safety."
     },
     {
       "key": "FreedomB",
-      "name": "Guía de la Libertad"
+      "name": "Guía de la Libertad",
+      "description": "Freedom is the spirit of the land of the wind.\nThe freedom of travel is one of such. It is the freedom to traverse the land freely without being obstructed."
     },
     {
       "key": "FreedomC",
-      "name": "Filosofía de la Libertad"
+      "name": "Filosofía de la Libertad",
+      "description": "Freedom is the spirit of the land of the wind.\nTo sing is one such freedom. To sing on the land created by the Anemo Archon is to send your heart away with the song on the wind."
     },
     {
       "key": "ProsperityA",
-      "name": "Enseñanzas de la Prosperidad"
+      "name": "Enseñanzas de la Prosperidad",
+      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is the blessing of Liyue, it is the foundation of the great city built by the gods and the people of Liyue, and it is the source of the peace and safety of the land."
     },
     {
       "key": "ProsperityB",
-      "name": "Guía de la Prosperidad"
+      "name": "Guía de la Prosperidad",
+      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is the promise made by Liyue to its children: To repay the hard-working laborers with enough gold to brighten up this land."
     },
     {
       "key": "ProsperityC",
-      "name": "Filosofía de la Prosperidad"
+      "name": "Filosofía de la Prosperidad",
+      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is Liyue's past, present, and future. This prosperity is unmatched and unobtainable by any other nations — it all belongs to Liyue and its inhabitants."
     },
     {
       "key": "DilligenceA",
-      "name": "Enseñanzas del Esfuerzo"
+      "name": "Enseñanzas del Esfuerzo",
+      "description": "Industriousness is the foundation of the land of Geo.\nDiligence is having the bravery and the strength to conquer mountains and seas and to pursue gold and prosperity through honest, hard work."
     },
     {
       "key": "DilligenceB",
-      "name": "Guía del Esfuerzo"
+      "name": "Guía del Esfuerzo",
+      "description": "Industriousness is the foundation of the land of Geo.\nIndustriousness is the catalyst that flows in the blood of the people of Liyue, able to turn rocks into gold. It is what lies behind the greatness of its great commercial port."
     },
     {
       "key": "DilligenceC",
-      "name": "Filosofía del Esfuerzo"
+      "name": "Filosofía del Esfuerzo",
+      "description": "Industriousness is the foundation of the land of Geo.\nIndustriousness is believing in one's own ability to earn a place in the land of the gods through sweat, wisdom, and power."
     },
     {
       "key": "ResistanceA",
-      "name": "Enseñanzas de la Resistencia"
+      "name": "Enseñanzas de la Resistencia",
+      "description": "Resistance is the backbone of the land of the wind.\nThe history of Mondstadt is one of resistances. People rose up to prevent past conflicts from ever being forgotten, like sprouts breaking through the soil, like the eternal wind eroding through stone walls."
     },
     {
       "key": "ResistanceB",
-      "name": "Guía de la Resistencia"
+      "name": "Guía de la Resistencia",
+      "description": "Resistance is the backbone of the city of Wind.\nThe history of Mondstadt is one of resistances. People rose up to grant the citizens of Mondstadt the freedom they now enjoy, like the Anemo Archon blowing away the snow, or like Vennessa rising up to fight."
     },
     {
       "key": "ResistanceC",
-      "name": "Filosofía de la Resistencia"
+      "name": "Filosofía de la Resistencia",
+      "description": "Resistance is the backbone of the land of the wind.\nThe history of Mondstadt is one of resistances. People rose up to allow the future Mondstadt's poetry to freely be that of the wind and be spread across the land."
     },
     {
       "key": "BalladA",
-      "name": "Enseñanzas de la Poesía"
+      "name": "Enseñanzas de la Poesía",
+      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of beautiful feelings. On a beautiful day, the breezes carry with them poetry that touches the heart of people like the wind caressing the leaves."
     },
     {
       "key": "BalladB",
-      "name": "Guía de la Poesía"
+      "name": "Guía de la Poesía",
+      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of the will to encourage. In the dark days, the gales in the streets and alleyways whisper words of fury, like the battle drums, like the low rumbling before the storm."
     },
     {
       "key": "BalladC",
-      "name": "Filosofía de la Poesía"
+      "name": "Filosofía de la Poesía",
+      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of the desire to spread the word. Though nothing is eternal, though nothing will be the same, the wind's poetry will still spread beyond the skies, the land, the seas to every corner of the world."
     },
     {
       "key": "GoldA",
-      "name": "Enseñanzas del Oro"
+      "name": "Enseñanzas del Oro",
+      "description": "Gold is the symbol of the land of Geo.\nGold is the blood that flows deep within Liyue's veins, the muscle that makes up Liyue's beating heart, and the bones that make Liyue stand proud."
     },
     {
       "key": "GoldB",
-      "name": "Guía del Oro"
+      "name": "Guía del Oro",
+      "description": "Gold is the symbol of the land of Geo.\nGold symbolizes conversion. This is the unspoken understanding between Liyue's mountains, land, city, and people. In Liyue, industriousness is converted into gold, and gold into prosperity."
     },
     {
       "key": "GoldC",
-      "name": "Filosofía del Oro"
+      "name": "Filosofía del Oro",
+      "description": "Gold is the symbol of the land of Geo.\nGold is the wealth of Liyue, but Liyue's true wealth is the hearts of its people that shine like gold."
     },
     {
       "key": "Tail of Boreas",
       "name": "Cola de Boreas",
+      "description": "A handful of tail scales from the Great Wolf King of the North.\nEven without his physical body and beyond death, Boreas still possesses extraordinary powers. He took a form comprised of ice and wind to embrace a new challenge, but even such a form could not house all of his power. The ice scales that fell during the battle still retain some of their spiritual energy.",
       "bossName": "Andrius"
     },
     {
       "key": "Ring of Boreas",
       "name": "Anillo de Boreas",
+      "description": "A bit of crystallized ice from the Great Wolf King of the North.\nThis land was once a realm of freezing-cold blizzards and ice storms filled with razor-sharp ice shards, all at the command of Boreas. Though his power may have diminished, he could still freeze the land in an instant.",
       "bossName": "Andrius"
     },
     {
       "key": "Spirit Locket of Boreas",
       "name": "Alma de  Boreas",
+      "description": "A bit of the Great Wolf King of the North's power drawn from its soul.\nThis land was once a realm of freezing-cold blizzards and ice storms filled with razor-sharp ice shards, all at the command of Boreas. In his final moments, he finally realized the chilling north wind could only extinguish life, not nurture it. Therefore, Boreas let his powers freely flow into the land to protect it and its inhabitants.",
       "bossName": "Andrius"
     },
     {
       "key": "Dvalin's Plume",
       "name": "Pluma de Stormterror",
+      "description": "A feather from the tail of the Dragon of the East.\nAs a dragon's feather it has experienced more than a thousand years' worth of winds. One senses within it a yearning for freedom so strong that it could whip up a light breeze to rescue it from its current confines. Its former owner's recognition of you is what makes it content to stay in your hands.",
       "bossName": "Dvalin"
     },
     {
       "key": "Dvalin's Claw",
       "name": "Garra de Stormterror",
+      "description": "A claw from the Dragon of the East.\nIt once contained the shadow dragon Durin's vile poison, having torn through the latter's flesh in battle. Thanks to your purification and healing, it is no longer toxic.",
       "bossName": "Dvalin"
     },
     {
       "key": "Dvalin's Sigh",
       "name": "Suspiro de Stormterror",
+      "description": "A bit of power taken from the whirlwinds evoked by the Dragon of the East.\nBeautiful and transparent, both trade winds and tornadoes will work in his name. The winds move as his companion, his voice, and his freedom.His enemies are the thousands who stand against the wind.",
       "bossName": "Dvalin"
     },
     {
       "key": "Tusk of Monoceros Caeli",
       "name": "Cuerno de Monoceros",
+      "description": "The horn of a whale that you obtained from defeating Childe, who had unleashed the might of his Delusion.\nIt is said that the shape of one's constellation determines one's character. The image of a whale cruising across the celestial heights represents a solipsism that seeks to crush and devour all in its path.\nEmbracing this aspect of himself, Childe gleefully summoned one such beast before throwing himself into battle against you.",
       "bossName": "Tartaglia"
     },
     {
       "key": "Shard of a Foul Legacy",
       "name": "Fragmento de Espada de Legado del mal",
+      "description": "The shard of a weapon that you obtained from defeating Childe, who had unleashed the might of his Delusion.\nIt is stained with a profound color that is not of this world, no doubt due to the land of endless darkness that the young boy saw with his own two eyes.\nPerhaps it has nothing to do with the power of a Delusion, but as they say, the weapon reflects its user...",
       "bossName": "Tartaglia"
     },
     {
       "key": "Shadow of the Warrior",
       "name": "Sombra del guerrero",
+      "description": "A fragment of power that you obtained from defeating Childe, who had unleashed the might of his Delusion.\nIt is the product of a will to fight that has been honed over countless slaughters.\nIf humans do indeed have destinies, then his must surely have been twisted by such deeds. Why else, then, would he always be at the heart of every conflict?",
       "bossName": "Tartaglia"
     },
     {
       "key": "DecarabianA",
-      "name": "Fragmento de azulejo de Decarabian"
+      "name": "Fragmento de azulejo de Decarabian",
+      "description": "The place now known as Stormterror's Lair was once the capital city of Decarabian, the God of Storms. Since this dream of prosperity was created entirely by his divine might, the broken pieces left behind by the shattering of that dream still possess great power."
     },
     {
       "key": "DecarabianB",
-      "name": "Escombro de la ciudad de Decarabian"
+      "name": "Escombro de la ciudad de Decarabian",
+      "description": "Decarabian, the God of Storms, was content with the capital city he had raised, and accepted the worship of the people from atop his tower. But he knew not that the people did not bow to him out of respect or adoration."
     },
     {
       "key": "DecarabianC",
-      "name": "Fragmento de epopeya de Decarabian"
+      "name": "Fragmento de epopeya de Decarabian",
+      "description": "Andrius once declared war upon Decarabian, but failed to even scratch the capital of the Lord of the Tower. If it were not for the song of freedom that shattered the city in an instant, Decarabian's dream would have gone on forever."
     },
     {
       "key": "DecarabianD",
-      "name": "Fragmento de sueño de Decarabian"
+      "name": "Fragmento de sueño de Decarabian",
+      "description": "The people did not bow to Decarabian out of respect or adoration, but because the harsh winds had laid them low. This was the shattered dream and ambition of the Anemo Archon before the rise of Barbatos.He tried so hard to make his dream come true, and so the fragments of that dream are still mighty."
     },
     {
       "key": "GuyunA",
-      "name": "Arena brillante de Guyun"
+      "name": "Arena brillante de Guyun",
+      "description": "The stone pillars that tower amid Guyun Stone Forest were once the stone spears Morax used to defeat his enemies. Over time, the gods' substance has seeped into the pillars that pin them down, lending them divine power. The pillars sometimes shed fragments of hatred and curses."
     },
     {
       "key": "GuyunB",
-      "name": "Piedra reluciente de Guyun"
+      "name": "Piedra reluciente de Guyun",
+      "description": "The learned know that Guyun Stone Forest is far more than simply a miraculous sight on the sea to behold: It is the cemetery of the former gods of Liyue. Hatred and filth have periodically risen up from it, but all have been subdued by a demon-conquering young man."
     },
     {
       "key": "GuyunC",
-      "name": "Reliquia de Guyun"
+      "name": "Reliquia de Guyun",
+      "description": "The stone spear has a glimmering core formed by the power of the defeated gods. Their hatred is not directed at Morax, however, for they have lost themselves a long time ago and are incapable of holding personal grudges."
     },
     {
       "key": "GuyunD",
-      "name": "Cuerpo divino de Guyun"
+      "name": "Cuerpo divino de Guyun",
+      "description": "That which lurks within and animates this relic are the divine remains of lamenting gods. They are unrealized ideals, designs for a prosperous humanity that could never be. They may now lie deep within stone and sea, but they will not go quietly into the night."
     },
     {
       "key": "ElixirA",
-      "name": "Perdigones de plomo de la niebla marina"
+      "name": "Perdigones de plomo de la niebla marina",
+      "description": "Jueyun Karst is the realm of the mighty and illuminated adepti. But other than the ability to control the elements of the world, Jueyun Karst is also home to three other untold secrets: Alchemy, Sigils, and Sub-Space Creation."
     },
     {
       "key": "ElixirB",
-      "name": "Perdigones de mercurio de la niebla marina"
+      "name": "Perdigones de mercurio de la niebla marina",
+      "description": "With Fulu (Sigils), the adepti can store their power in the form of symbols, and with Waijing (Sub-Space Creation) they can fashion a cosmic paradise with the power of their minds. The manufacture of elixirs, however, has always been shrouded in mystery, for certain death follows for any who swallow them."
     },
     {
       "key": "ElixirC",
-      "name": "Perdigones de oro de la niebla marina"
+      "name": "Perdigones de oro de la niebla marina",
+      "description": "Elixirs are in fact pills made from metal alloys. They were created by the adepti, and are able to grant weapons transcendent powers. However, they are rarely seen in the world due to the hubris of the practitioners of martial arts, who prized the ways of combat over the paths of the adepti."
     },
     {
       "key": "ElixirD",
-      "name": "Perdigones primordiales de la niebla marina"
+      "name": "Perdigones primordiales de la niebla marina",
+      "description": "An elixir of the highest quality. It embodies a state of intertwining order and chaos, and is said to mirror how the world was when it was first created. Of course, a certain someone knows that this was not the case."
     },
     {
       "key": "BorealWolfA",
-      "name": "Diente de leche de lobo boreal"
+      "name": "Diente de leche de lobo boreal",
+      "description": "Andrius' wolf pack is its blessed honor guard, and even the milk teeth of a wolf cub possess great potential.\nIn the past, the gods had the responsibility to love all people. Andrius was therefore quite unusual in that he became leader of the wolves, while only welcoming abandoned babies and wanderers when it came to humans."
     },
     {
       "key": "BorealWolfB",
-      "name": "Diente roto de lobo boreal"
+      "name": "Diente roto de lobo boreal",
+      "description": "The life of a wolf is not without violence, broken bones or cracked teeth are nothing special.\nAndrius found humans to be a disappointment, but believed babies to be innocent. If both the wolf pack and the adopted children chose each other, then they become a Lupical, a fated family."
     },
     {
       "key": "BorealWolfC",
-      "name": "Colmillo roto de lobo boreal"
+      "name": "Colmillo roto de lobo boreal",
+      "description": "The wolf pack also understands that humans are not solitary creatures. The honorary broken tooth is a parting gift said to bring protection and luck.\nIn the legends of a far-off world, a female wolf once adopted two great humans. Their home was known as the Cave of Wolves, or Lupercal - that word meaning the same thing as Lupical does in this world."
     },
     {
       "key": "BorealWolfD",
-      "name": "Nostalgia del lobo boreal"
+      "name": "Nostalgia del lobo boreal",
+      "description": "The Wolf King, believing himself to despise humans, thought himself unable to envision a happy life for humanity, making him unworthy of becoming the Lord of the Winds of the world. Therefore, he chose to disappear. Yet, in truth, he gazes on the ones abandoned by the world ever so gently."
     },
     {
       "key": "AerosideriteA",
-      "name": "Grano de siderita oscura"
+      "name": "Grano de siderita oscura",
+      "description": "A black meteor once fell beyond Liyue's Sea of Clouds, said to have fallen to vanquish a monster. However, it was stained by powerful tainted blood, so this item no longer possesses the pure power of Rex Lapis."
     },
     {
       "key": "AerosideriteB",
-      "name": "Lámina de siderita oscura"
+      "name": "Lámina de siderita oscura",
+      "description": "Rumors of sea monsters are commonplace in Liyue, since the other shore is an unknown region that lies outside of Teyvat. Without the protection of The Seven, all that lies beyond is unknown chaos. Only power beyond the order of Teyvat is able to stain the power of Rex Lapis black."
     },
     {
       "key": "AerosideriteC",
-      "name": "Fragmento de siderita oscura"
+      "name": "Fragmento de siderita oscura",
+      "description": "The coastal nations of Teyvat refer to the region beyond the protection of The Seven as the Dark Sea. It is said that many defeated gods refused to live under the new order of The Seven, so they fled to remote islands and became evil gods. However, their powers came from the same source as Rex Lapis, separate from this all-devouring darkness."
     },
     {
       "key": "AerosideriteD",
-      "name": "Trozo de siderita oscura"
+      "name": "Trozo de siderita oscura",
+      "description": "When Khaenri'ah was destroyed, a great sinner created endless monsters with dark, alien blood flowing through their veins. They rampaged across the land, destroying all in their paths. They were mutated lifeforms, and the mutations were caused by powers from beyond this world. The black serpentine dragon Durin that attacked Mondstadt was one such mutated being."
     },
     {
       "key": "GladiatorA",
-      "name": "Grilletes de Diente de León"
+      "name": "Grilletes de Diente de León",
+      "description": "It's a human thing to exaggerate a hero's story, even to the point of elevating the fetters that once bound the hero to the level of an enemy of true freedom.As a result, these fetters were granted extraordinary powers."
     },
     {
       "key": "GladiatorB",
-      "name": "Cadena de Diente de León"
+      "name": "Cadena de Diente de León",
+      "description": "The chains that once bound the great hero Vennessa. In truth, all gladiators would have worn chains in that era, and Vennessa was but one of many."
     },
     {
       "key": "GladiatorC",
-      "name": "Esposas de Diente de León"
+      "name": "Esposas de Diente de León",
+      "description": "Vennessa was not truly bound by her chains. If she had so wished, no ordinary physical constraints forged in Mondstadt could have held her, for the land there yielded no ore of exceptional quality, nor did it possess the divine flame of her ancestral home.She was only bound by her responsibility to take care of her tribespeople."
     },
     {
       "key": "GladiatorD",
-      "name": "Ideales de Diente de León"
+      "name": "Ideales de Diente de León",
+      "description": "Vennessa may have been freed from slavery, but she then found herself subject to many other, even greater forms of bondage. What began as a duty to her tribespeople extended to all of Mondstadt, then to the concept of freedom itself, and beyond a point even to the whole world.What she really hoped for, in truth, was that the world might grow stronger."
     },
     {
       "key": "Crown of Insight",
-      "name": "Corona de la Sabiduría"
+      "name": "Corona de la Sabiduría",
+      "description": "A precious Talent Level-Up material.\nOnce a medium for the storage and transfer of wisdom in ancient times. Now, wisdom is found in ancient texts and in profound speech.\nNevertheless, this Crown of Insight must still be able to impart some transcendent power and wisdom to its bearer."
     },
     {
       "key": "SacrificialKnifeA",
-      "name": "Daga de cacería"
+      "name": "Daga de cacería",
+      "description": "A sharp alloy weapon. Though its owner has been lost, it still reflects a disturbingly cold light."
     },
     {
       "key": "SacrificialKnifeB",
-      "name": "Daga del Agente"
+      "name": "Daga del Agente",
+      "description": "An oddly-shaped weapon made with superior Snezhnayan technology that once belonged to a senior agent. Proper training is required for using this strange weapon."
     },
     {
       "key": "SacrificialKnifeC",
-      "name": "Daga larga del Inspector"
+      "name": "Daga larga del Inspector",
+      "description": "In the hands of its lord, this fierce weapon has handled many \"debts\". No-one has eyes in the back of their heads, and this weapon and its related techniques are designed around that weakness."
     },
     {
       "key": "HornA",
-      "name": "Cuerno pesado"
+      "name": "Cuerno pesado",
+      "description": "A crude horn used by hilichurls to warn each other. Given the damage to the horn, it won't be warning anyone any time soon."
     },
     {
       "key": "HornB",
-      "name": "Cuerno de bronce negro"
+      "name": "Cuerno de bronce negro",
+      "description": "A metallic monster horn that can only be obtained from especially strong hilichurls, since blowing on the horn takes real strength."
     },
     {
       "key": "HornC",
-      "name": "Cuerno con cristal negro"
+      "name": "Cuerno con cristal negro",
+      "description": "A metallic horn with an ominous shine decorated with black crystals of an unknown source. It has hardly been used at all. It is likely a ceremonial item of the hilichurls'."
     },
     {
       "key": "ChaosA",
-      "name": "Dispositivo del caos"
+      "name": "Dispositivo del caos",
+      "description": "Comes from ancient defunct relic structures. A part that once held the structure together. Its aesthetically-pleasing engineering is quite exquisite."
     },
     {
       "key": "ChaosB",
-      "name": "Circuito del caos"
+      "name": "Circuito del caos",
+      "description": "Comes from ancient defunct relic structures. Was once a logic circuit responsible for movement functions. Sadly, no-one is able to make sense of how it worked."
     },
     {
       "key": "ChaosC",
-      "name": "Caldera del caos"
+      "name": "Caldera del caos",
+      "description": "Comes from ancient defunct relic structures. The core that once drove a mechanical beast. Should you come to understand its workings and reproduce it, you could perhaps change the world."
     },
     {
       "key": "LeyLineA",
-      "name": "Ramas secas de líneas ley"
+      "name": "Ramas secas de líneas ley",
+      "description": "Fragile branches from deep within the earth. Even after years of aging, from beneath it's mottled surface you can see that its power is not yet entirely lost."
     },
     {
       "key": "LeyLineB",
-      "name": "Hojas secas de líneas ley"
+      "name": "Hojas secas de líneas ley",
+      "description": "A twig from deep within the earth. Though it is far from where it once lay, its leaves still pulsate with energy."
     },
     {
       "key": "LeyLineC",
-      "name": "Brotes de líneas ley"
+      "name": "Brotes de líneas ley",
+      "description": "It is said that there was a great tree whose roots once spread out to every corner of the world, and this branch is said to be part of it. It is almost if it was never broken off and taken far away, for its vitality is such that it still sprouts new leaves even now."
     },
     {
       "key": "MistGrassA",
-      "name": "Polen de neblina"
+      "name": "Polen de neblina",
+      "description": "Strange spores created by Mist Grass in enclosed spaces. They are the Cicins' favorite food."
     },
     {
       "key": "MistGrassB",
-      "name": "Hierba brumosa"
+      "name": "Hierba brumosa",
+      "description": "Well-preserved Mist Grass. Some would take advantage of the Cicins' love for the Mist Grass to control them."
     },
     {
       "key": "MistGrassC",
-      "name": "Estambre de hierba brumosa"
+      "name": "Estambre de hierba brumosa",
+      "description": "A rare bundle of Mist Grass that gives off a faint glow. Those who carry it invite both the Cicins and misfortune."
     },
     {
       "key": "BoneShardA",
-      "name": "Fragmento de hueso frágil"
+      "name": "Fragmento de hueso frágil",
+      "description": "A bone shard once carried by a Geovishap.\nAlthough they are quite fragile, they seem to still harbor some indescribable power."
     },
     {
       "key": "BoneShardB",
-      "name": "Fragmento de hueso sólido"
+      "name": "Fragmento de hueso sólido",
+      "description": "A fragment of an unknown creature's bones that appear to be prized by Geovishaps for some reason.\nThe fragment appears to be quite aged. Despite being dragon-like beasts with no spoken language, they still seem to have some sort of special affection for these bone shards."
     },
     {
       "key": "BoneShardC",
-      "name": "Fragmento de hueso fosilizado"
+      "name": "Fragmento de hueso fosilizado",
+      "description": "A fossilized bone fragment sometimes found after defeating Geovishaps.\nGeovishaps all dream of growing into great dragons one day. They see these fossils as dragon bones and greatly cherish them, perhaps because they too hope to attain the dragons' longevity and power."
     },
     {
       "key": "MaskA",
-      "name": "Máscara dañada"
+      "name": "Máscara dañada",
+      "description": "A broken bone mask that once belonged to some hilichurl.\nNow more broken than complete, it can no longer perform its primary function."
     },
     {
       "key": "MaskB",
-      "name": "Máscara sucia"
+      "name": "Máscara sucia",
+      "description": "A bone mask, covered in unidentifiable stains, that emanates a mysterious odor.\nYet such is the devotion of hilichurls to masks that they will wear it nonetheless."
     },
     {
       "key": "MaskC",
-      "name": "Máscara amenazante"
+      "name": "Máscara amenazante",
+      "description": "A glossy bone mask with oil markings painted on it, meant to intimidate enemies.\nNo-one really knows why hilichurls are so fascinated with masks. Some say that it's because they don't want to see their own reflections in the water."
     },
     {
       "key": "StatuetteA",
-      "name": "Gloomy Statuette"
+      "name": "Gloomy Statuette",
+      "description": "A vague portrayal of some unknown person. Even though it has seen many days, it still has not been damaged in any way."
     },
     {
       "key": "StatuetteB",
-      "name": "Dark Statuette"
+      "name": "Dark Statuette",
+      "description": "A carved idol representing an unknown person. Contaminated with a dark and unfathomable power, simply holding it makes you feel uneasy."
     },
     {
       "key": "StatuetteC",
-      "name": "Deathly Statuette"
+      "name": "Deathly Statuette",
+      "description": "A carving that emanates an evil energy, with no indication of what it's truly made of. Simply focusing on it evokes dark whispering inside your very soul."
     },
     {
       "key": "ScrollA",
-      "name": "Pergamino guía"
+      "name": "Pergamino guía",
+      "description": "A scroll that likely relates to some kind of magic. Exudes an inexplicable but ominous warmth."
     },
     {
       "key": "ScrollB",
-      "name": "Pergamino hechizado"
+      "name": "Pergamino hechizado",
+      "description": "An old scroll lacking in detail and clarity. By following the images on it, some magical creatures can recreate a small part of its magic."
     },
     {
       "key": "ScrollC",
-      "name": "Pergamino maldito"
+      "name": "Pergamino maldito",
+      "description": "A scroll inscribed with ancient images. It is said that few can decipher its meaning, and the few scholars that have all went mad."
     },
     {
       "key": "NectarA",
-      "name": "Néctar de Megaflora"
+      "name": "Néctar de Megaflora",
+      "description": "Nectar extracted from the stamen of a Whopperflower that contains trace amounts of elemental energy.\nThe taste of the nectar has a hint of Sweet Flower in it."
     },
     {
       "key": "NectarB",
-      "name": "Néctar brillante"
+      "name": "Néctar brillante",
+      "description": "Nectar that is full of pure elemental energy.\nScholars generally concur that Whopperflowers are advanced life forms among the elemental plants, but there has yet to be a satisfactory explanation regarding their predatory habits."
     },
     {
       "key": "NectarC",
-      "name": "Néctar energético"
+      "name": "Néctar energético",
+      "description": "A thick and sticky honey that is full of energy.\nThe Whopperflower hunts by tricking its prey, a process it uses to possibly evolve into a more powerful and pure form."
     },
     {
       "key": "ArrowHeadA",
-      "name": "Flecha robusta"
+      "name": "Flecha robusta",
+      "description": "A roughly produced arrowhead. Though unimpressive, neither it nor the bow should be underestimated, for even the bravest knight can be felled by an arrow from the rear."
     },
     {
       "key": "ArrowHeadB",
-      "name": "Flecha afilada"
+      "name": "Flecha afilada",
+      "description": "A well-made arrowhead. Sharp enough to penetrate armor with the ease of a rock through the surface of water."
     },
     {
       "key": "ArrowHeadC",
-      "name": "Flecha veterana"
+      "name": "Flecha veterana",
+      "description": "An old arrowhead coated in blood. The arrowhead has long since lost its sharpness and thus its use as a weapon.However, it represents the pride of a hunter and acts as both an amulet and a medal."
     },
     {
       "key": "CircularInsigniaA",
-      "name": "Insignia de cuervo novato"
+      "name": "Insignia de cuervo novato",
+      "description": "A signet that proudly represents its owner's position as member of the Treasure Hoarders. The pursuit of treasure knows no bounds. That said... Is being a thief something to be proud of?"
     },
     {
       "key": "CircularInsigniaB",
-      "name": "Insignia de cuervo plateada"
+      "name": "Insignia de cuervo plateada",
+      "description": "A raven insignia used by members of the Treasure Hoarders to identify each other. The Treasure Hoarders ask for no resume. Anyone who has an insatiable desire for treasure and is backed up by an equal amount of courage can become a worthy member."
     },
     {
       "key": "CircularInsigniaC",
-      "name": "Insignia de cuervo dorada"
+      "name": "Insignia de cuervo dorada",
+      "description": "A raven insignia that symbolizes the pride and the guiding principle of the Treasure Hoarders. Whether it's hidden amidst the vastness of the land or in the depths of the seas, as long as there are treasures to be hunted down, the spirit of Treasure Hoarders, who will stop at nothing to acquire them, will never die."
     },
     {
       "key": "InsigniaA",
-      "name": "Insignia del recluta"
+      "name": "Insignia del recluta",
+      "description": "An insignia to identify the recruits. Makes one wonder about what the ones joining the Fatui's war machine were thinking."
     },
     {
       "key": "InsigniaB",
-      "name": "Insignia del sargento"
+      "name": "Insignia del sargento",
+      "description": "An insignia with a different shape to distinguish the sergeants from new recruits. Perhaps there are complicated emotions behind it."
     },
     {
       "key": "InsigniaC",
-      "name": "Insignia del oficial"
+      "name": "Insignia del oficial",
+      "description": "An armband to identify officers. The Fatui possess a colossal army, so there must be something extraordinary about the ones who achieved this rank within the group."
     },
     {
       "key": "SlimeA",
-      "name": "Condensado de Slime"
+      "name": "Condensado de Slime",
+      "description": "A thick coating found on slimes. Most commonly seen material in elemental workshops."
     },
     {
       "key": "SlimeB",
-      "name": "Babas de Slime"
+      "name": "Babas de Slime",
+      "description": "Mildly purified slime secretions. Harmful to the skin. Please avoid direct exposure."
     },
     {
       "key": "SlimeC",
-      "name": "Esencia de Slime"
+      "name": "Esencia de Slime",
+      "description": "Concentrated slime essence. When left alone, it will begin to move on its own."
     },
     {
       "key": "Mora",
-      "name": "Mora"
+      "name": "Mora",
+      "description": "Common currency. The one language everybody speaks."
     },
     {
       "key": "BasaltPillar",
-      "name": "Pilar de basalto"
+      "name": "Pilar de basalto",
+      "description": "A pillar formed by the shell of a Geo Hypostasis, composed of high-density Geo energy.\nIt is a testament to Geo's status as the heaviest of the elements. Maybe the reason a Geo Hypostasis creates this pillar out of its shell and raises itself is just to get closer to the sky, not to combat enemies."
     },
     {
       "key": "CleansingHeart",
-      "name": "Corazón purificador"
+      "name": "Corazón purificador",
+      "description": "A palmful of eternal water left by an oceanid.\nThough it has already diffused among the depths of the lake, its purity remains all the same. But why would a creature so pure and clean as an oceanid covet the appearance of a being that roams the land, and assume such a form with pure water? They need not breathe nor do they require sustenance..."
     },
     {
       "key": "EverflameSeed",
-      "name": "Semilla de fuego eterno"
+      "name": "Semilla de fuego eterno",
+      "description": "A seed that fuels the unending flames of the Pyro Regisvine. It emits Pyro energy as if it will burn all that has ever sprouted from the ground.Endless desires flow among turbulent energy deep within the earth. What desire could steadily hold such fire to the plants and long so eagerly to bathe everything in unquenchable flames?"
     },
     {
       "key": "HoarfrostCore",
-      "name": "Núcleo de escarcha"
+      "name": "Núcleo de escarcha",
+      "description": "The exposed core of a defeated Cryo Regisvine. Pure Cryo energy is contained within it.\nEnergy and thoughts that swell deep within the earth will eventually erupt on the surface. Even the deathly silent frost will attach to living things on the ground, turning even ordinary vegetation like vines into huge, vicious predators."
     },
     {
       "key": "HurricaneSeed",
-      "name": "Semilla de Huracán"
+      "name": "Semilla de Huracán",
+      "description": "The imploded form of an Anemo Hypostasis upon its defeat.Contains the essence of Anemo energy.\nIt is said that the power to create hurricanes resides within its seemingly fragile body. This butterfly of pure Anemo energy must surely be waiting for the day when it can conjure up storms once again."
     },
     {
       "key": "LightningPrism",
-      "name": "Prisma de Relámpago"
+      "name": "Prisma de Relámpago",
+      "description": "An Electro Hypostasis channels nearby elemental energy to repair damaged elemental entities. Contains the essence of Electro energy.\nAn ordinary prism separates white light into its component colors; a Lightning Prism, however, channels flowing energy and weaves them into lightning. It will continue to do so even after the Electro Hypostasis has been defeated."
     },
     {
       "key": "AgateA",
-      "name": "Pedacito de ágata agnidus"
+      "name": "Pedacito de ágata agnidus",
+      "description": null
     },
     {
       "key": "AgateB",
-      "name": "Fragmento de ágata agnidus"
+      "name": "Fragmento de ágata agnidus",
+      "description": "\"A pilgrimage for a wish; a battle to earn a name...\""
     },
     {
       "key": "AgateC",
-      "name": "Trozo de ágata agnidus"
+      "name": "Trozo de ágata agnidus",
+      "description": "\"A pilgrimage for a wish; a battle to earn a name...Burnt to cinders for a dream.\""
     },
     {
       "key": "AgateD",
-      "name": "Ágata agnidus"
+      "name": "Ágata agnidus",
+      "description": "\"A pilgrimage for a wish; a battle to earn a name...Burnt to cinders for a dream.\nIf the intention yet remains, achieved ██'s truth he has.\""
     },
     {
       "key": "DiamondA",
-      "name": "Pedacito de diamante brillante"
+      "name": "Pedacito de diamante brillante",
+      "description": "\"Welcome to this world.\""
     },
     {
       "key": "DiamondB",
-      "name": "Fragmento de diamante brillante"
+      "name": "Fragmento de diamante brillante",
+      "description": "\"Welcome to this world.\""
     },
     {
       "key": "DiamondC",
-      "name": "Trozo de diamante brillante"
+      "name": "Trozo de diamante brillante",
+      "description": "\"Welcome to this world.\""
     },
     {
       "key": "DiamondD",
-      "name": "Diamante brillante"
+      "name": "Diamante brillante",
+      "description": "\"Welcome to this world.\""
     },
     {
       "key": "EmeraldA",
-      "name": "Nagadus Emerald Sliver"
+      "name": "Nagadus Emerald Sliver",
+      "description": null
     },
     {
       "key": "EmeraldB",
-      "name": "Nagadus Emerald Fragment"
+      "name": "Nagadus Emerald Fragment",
+      "description": "\"In the end, life opened its closed fist...\""
     },
     {
       "key": "EmeraldC",
-      "name": "Nagadus Emerald Chunk"
+      "name": "Nagadus Emerald Chunk",
+      "description": "\"In the end, life opened its closed fist...\""
     },
     {
       "key": "EmeraldD",
-      "name": "Nagadus Emerald Gemstone"
+      "name": "Nagadus Emerald Gemstone",
+      "description": "\"In the end, life opened its closed fist...granting freedom of life to all.\""
     },
     {
       "key": "TopazA",
-      "name": "Pedacito de topacio prithiva"
+      "name": "Pedacito de topacio prithiva",
+      "description": null
     },
     {
       "key": "TopazB",
-      "name": "Fragmento de topacio prithiva"
+      "name": "Fragmento de topacio prithiva",
+      "description": "\"The currencies that flow through this land are my flesh and blood.\""
     },
     {
       "key": "TopazC",
-      "name": "Trozo de topacio prithiva"
+      "name": "Trozo de topacio prithiva",
+      "description": "\"The currencies that flow through this land are my flesh and blood.\nFor thus did I become the guarantor of the people's hard work, wisdom, and future.\""
     },
     {
       "key": "TopazD",
-      "name": "Topacio prithiva"
+      "name": "Topacio prithiva",
+      "description": "\"The currencies that flow through this land are my flesh and blood.\nFor thus did I become the guarantor of the people's hard work, wisdom, and future.This is the trust I have placed in them. Betray it, and you taint my blood.\""
     },
     {
       "key": "JadeA",
-      "name": "Pedacito de jade shivada"
+      "name": "Pedacito de jade shivada",
+      "description": null
     },
     {
       "key": "JadeB",
-      "name": "Fragmento de jade shivada"
+      "name": "Fragmento de jade shivada",
+      "description": "\"Sorry...\""
     },
     {
       "key": "JadeC",
-      "name": "Trozo de jade shivada"
+      "name": "Trozo de jade shivada",
+      "description": "\"Sorry...\"\"...to also have you shoulder the grievances of the world.\""
     },
     {
       "key": "JadeD",
-      "name": "Jade shivada"
+      "name": "Jade shivada",
+      "description": "\"Sorry... to also have you shoulder the grievances of the world.\"Since you could endure my bitter cold, you must have the desire to burn?\"Then, burn away the old world for me.\""
     },
     {
       "key": "AmethystA",
-      "name": "Pedacito de amatista vajrada"
+      "name": "Pedacito de amatista vajrada",
+      "description": null
     },
     {
       "key": "AmethystB",
-      "name": "Fragmento de amatista vajrada"
+      "name": "Fragmento de amatista vajrada",
+      "description": "\"This body is the noblest and most eminent of all in this world.\""
     },
     {
       "key": "AmethystC",
-      "name": "Trozo de amatista vajrada"
+      "name": "Trozo de amatista vajrada",
+      "description": "\"This body is the noblest and most eminent of all in this world.It should hold absolute control over this world.\""
     },
     {
       "key": "AmethystD",
-      "name": "Amatista vajrada"
+      "name": "Amatista vajrada",
+      "description": "\"This body is the noblest and most eminent of all in this world.\"It should hold absolute control over this world.\"It once promised its people a dream: the never-changing 'eternity.'\""
     },
     {
       "key": "LazuriteA",
-      "name": "Pedacito de lazurita varunada"
+      "name": "Pedacito de lazurita varunada",
+      "description": null
     },
     {
       "key": "LazuriteB",
-      "name": "Fragmento de lazurita varunada"
+      "name": "Fragmento de lazurita varunada",
+      "description": "\"My ideals have no stains.\""
     },
     {
       "key": "LazuriteC",
-      "name": "Trozo de lazurita varunada"
+      "name": "Trozo de lazurita varunada",
+      "description": "\"My ideals have no stains.I must correct you. People here bear no sins in the eyes of the gods...\""
     },
     {
       "key": "LazuriteD",
-      "name": "Lazurita varunada"
+      "name": "Lazurita varunada",
+      "description": "\"My ideals have no stains.I must correct you. People here bear no sins in the eyes of the gods... Only laws and the Tribunal can judge someone.\nThey can judge even me. So praise my magnificence and purity.\""
     },
     {
       "key": "TurquoiseA",
-      "name": "Pedacito de turquesa vayuda"
+      "name": "Pedacito de turquesa vayuda",
+      "description": null
     },
     {
       "key": "TurquoiseB",
-      "name": "Fragment de turquesa vayuda"
+      "name": "Fragment de turquesa vayuda",
+      "description": "\"Still, the winds change direction.\""
     },
     {
       "key": "TurquoiseC",
-      "name": "Trozo de turquesa vayuda"
+      "name": "Trozo de turquesa vayuda",
+      "description": "\"Still, the winds change direction.Someday, they will blow towards a brighter future...\""
     },
     {
       "key": "TurquoiseD",
-      "name": "Turquesa vayuda"
+      "name": "Turquesa vayuda",
+      "description": "\"Still, the winds change direction.\"Someday, they will blow towards a brighter future...\"Take my blessings and live leisurely from this day onward.\""
     },
     {
       "key": "CallaLily",
-      "name": "Lirio cala"
+      "name": "Lirio cala",
+      "description": "A flower that grows near water sources. When cooked, the petals have a chunky texture, yet are sweet and a little bitter."
     },
     {
       "key": "Cecilia",
-      "name": "Cecilia"
+      "name": "Cecilia",
+      "description": "A beautiful flower with a name that suits its appearance. It only grows where harsh winds blow, and is just as intangible as the true heart of an unbound soul."
     },
     {
       "key": "CorLapis",
-      "name": "Cor Lapis"
+      "name": "Cor Lapis",
+      "description": "A precious crystal of condensed pure Geo element that usually grows along with other minerals. It's also commonly called \"Cor Petrae."
     },
     {
       "key": "DandelionSeed",
-      "name": "Semilla de diente de léon"
+      "name": "Semilla de diente de léon",
+      "description": "A tiny seed that rides on the wind. Even without its feathered wings, it still holds the hope from afar within."
     },
     {
       "key": "GlazeLily",
-      "name": "Lirio de cristal"
+      "name": "Lirio de cristal",
+      "description": "An extremely ancient flower that was said to be commonly seen in Liyue. It transforms the memories of the land into its fragrance during florescence."
     },
     {
       "key": "JueyunChili",
-      "name": "Chile de Jueyun"
+      "name": "Chile de Jueyun",
+      "description": "A spicy plant native to Liyue. Merely smelling it makes one hot and thirsty."
     },
     {
       "key": "NoctilousJade",
-      "name": "Jade noctilucoso"
+      "name": "Jade noctilucoso",
+      "description": "A rare mineral that glimmers in the dark. It's said to be a mutated gemstone condensed from the flourishing elements of the world."
     },
     {
       "key": "PhilanemoMushroom",
-      "name": "Seta filanemo"
+      "name": "Seta filanemo",
+      "description": "A fungus that grows in the warm caress of the wind. It is as everlasting as the wind, nourishing life."
     },
     {
       "key": "Qingxin",
-      "name": "Flor chingxin"
+      "name": "Flor chingxin",
+      "description": "A crimson flower that blooms like the rainbow clouds in Liyue. It can be made into silky-smooth fabric."
     },
     {
       "key": "SilkFlower",
-      "name": "Flor de seda"
+      "name": "Flor de seda",
+      "description": "A crimson flower that blooms like the rainbow clouds in Liyue. It can be made into silky-smooth fabric."
     },
     {
       "key": "SmallLampGrass",
-      "name": "Lucetta"
+      "name": "Lucetta",
+      "description": "A wild grass that emits light at night. Used in cooking to enhance other flavors."
     },
     {
       "key": "Starconch",
-      "name": "Caracola estelar"
+      "name": "Caracola estelar",
+      "description": "Empty seashells brought ashore by the tides. Hold it close to your ear, and hear the longing calls of the sea."
     },
     {
       "key": "Valberry",
-      "name": "Valbaya"
+      "name": "Valbaya",
+      "description": "A plump and translucent berry that has a fragrant smell and a sweet refreshing taste. In the past, the watchers of the storms found solace in the sweetness of the fruit and the hope for the city's security."
     },
     {
       "key": "Violetgrass",
-      "name": "Campanita de cristal"
+      "name": "Campanita de cristal",
+      "description": "A small flower with strong vitality. It was said its downward-blooming flower keeps its fragrance from dissipating."
     },
     {
       "key": "WindwheelAster",
-      "name": "Margarita voladora"
+      "name": "Margarita voladora",
+      "description": "A plant that adores the wind. To the proud children of the wind, or the citizens of Mondstadt, the Windwheel Asters are \"the visible winds."
     },
     {
       "key": "Wolfhook",
-      "name": "Gancho de lobo"
+      "name": "Gancho de lobo",
+      "description": "A berry with thorns that often gets attached to a wolf's pelt. When you look at it, you can almost hear the echoing cries of the wolves in the woods."
     },
     {
       "key": "EnhancementOreA",
-      "name": "Enhancement Ore"
+      "name": "Enhancement Ore",
+      "description": "Gives 400 EXP.\nA refined ingot with endless possibilities that can be used to enhance weapons."
     },
     {
       "key": "EnhancementOreB",
-      "name": "Fine Enhancement Ore"
+      "name": "Fine Enhancement Ore",
+      "description": "Gives 2,000 EXP.\nFor reasons unknown, this special and refined ore can be absorbed by weapons to greatly increase their strengths."
     },
     {
       "key": "EnhancementOreC",
-      "name": "Mystic Enhancement Ore"
+      "name": "Mystic Enhancement Ore",
+      "description": "Gives 10,000 EXP.\nLegend has it that this refined ingot contains the memories of battles that had taken place in the land. The weapons that benefit from these memories naturally become sentient."
     },
     {
       "key": "CharExpA",
-      "name": "Wanderer's Advice"
+      "name": "Wanderer's Advice",
+      "description": "Gives 1000 EXP.\nThese experiences are still beneficial even if one does not live in Teyvat."
     },
     {
       "key": "CharExpB",
-      "name": "Adventurer's Experience"
+      "name": "Adventurer's Experience",
+      "description": "Gives 5000 EXP.\nThese experiences are very beneficial for journeys into the unknown."
     },
     {
       "key": "CharExpC",
-      "name": "Hero's Wit"
+      "name": "Hero's Wit",
+      "description": "Gives 20000 EXP.\nThese experiences are extremely precious for a pilgrim traveling through Teyvat in order to be closer to Celestia."
+    },
+    {
+      "key": "JuvenileJade",
+      "name": "Juvenile Jade",
+      "description": "A crystalline substance taken from a Primo Geovishap. Within it is contained the potential to become a dragon.\nThese dull crystals are precipitated within the bodies of vishaps sleeping in the mountains. Liyue folklore holds that they will gather power over many years, after which this crystal will, at last, replace their original heart, and the vishap will become a true dragon — one that can shake the mountains and split the earth."
+    },
+    {
+      "key": "Starsilver",
+      "name": "Starsilver",
+      "description": "A rare and precious ore formed by the unique geographical conditions and Ley Lines of Dragonspine."
+    },
+    {
+      "key": "Vitalized Dragontooth",
+      "name": "Vitalized Dragontooth",
+      "description": "A Dragontooth infused with vitality. Just its luster and texture are enough to make one uneasy..."
+    },
+    {
+      "key": "Iron Chunk",
+      "name": "Iron Chunk",
+      "description": "This iron chunk can be turned into a multitude of handy items in the hands of a skilled craftsman."
+    },
+    {
+      "key": "White Iron Chunk",
+      "name": "White Iron Chunk",
+      "description": "Skilled hands can make this into something brilliant."
+    },
+    {
+      "key": "Crystal Chunk",
+      "name": "Crystal Chunk",
+      "description": "An uncut crystal. Only professional craftsmanship can bring out its true value."
+    },
+    {
+      "key": "Northlander Bow Billet",
+      "name": "Northlander Bow Billet",
+      "description": "Can be used to forge 4-star bows. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+    },
+    {
+      "key": "Northlander Catalyst Billet",
+      "name": "Northlander Catalyst Billet",
+      "description": "Can be used to forge 4-star catalysts. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+    },
+    {
+      "key": "Northlander Claymore Billet",
+      "name": "Northlander Claymore Billet",
+      "description": "Can be used to forge 4-star claymores. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+    },
+    {
+      "key": "Northlander Polearm Billet",
+      "name": "Northlander Polearm Billet",
+      "description": "Can be used to forge 4-star polearms. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+    },
+    {
+      "key": "Northlander Sword Billet",
+      "name": "Northlander Sword Billet",
+      "description": "Can be used to forge 4-star swords. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+    },
+    {
+      "key": "Dust of Azoth",
+      "name": "Dust of Azoth",
+      "description": "A device that can transmute elemental Ascension Materials and change their Elemental Type.Its practical uses notwithstanding, alchemy is the study of the nature of matter and the rules that underpin its transformations, and ultimately it seeks to comprehend the working principles of the world and the flow of the ley lines\nIt is not known who would share alchemical achievements of this magnitude with the civilizations of the world and why. But although the power to fundamentally transmute elemental energy in its crystallized and inert form is a highly useful one, this device also conceals the grave danger of disrupting the elemental balance..."
+    },
+    {
+      "key": "Magical Crystal Chunk",
+      "name": "Magical Crystal Chunk",
+      "description": "These crystal chunks can be refined into Weapon EXP materials by using Original Resin.\nCrystals from mines that were eroded by the energy of the Ley Lines cannot be processed by ordinary means."
+    },
+    {
+      "key": "Original Resin",
+      "name": "Original Resin",
+      "description": "Used to vitalize Petrified Trees and Ley Line Blossoms, allowing access to the treasures they hold. Energy regenerates over time.\nIt is said that the roots of all the Irminsul trees and blossoms in the world are intertwined at the deepest, most hidden place in the earth, and that the pattern the root system makes defines the Ley Lines of the world."
     }
   ],
   "debuffs": [

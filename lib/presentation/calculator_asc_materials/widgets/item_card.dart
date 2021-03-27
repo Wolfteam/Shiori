@@ -119,6 +119,7 @@ class ItemCard extends StatelessWidget {
                               type: item.materialType,
                               image: item.fullImagePath,
                               quantity: item.quantity,
+                              textColor: Colors.white,
                             );
                           },
                         ),

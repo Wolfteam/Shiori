@@ -80,7 +80,7 @@ class Assets {
         return getCommonMaterialPath(name);
       case MaterialType.currency:
         return getCurrencyMaterialPath(name);
-      case MaterialType.elemental:
+      case MaterialType.elementalStone:
         return getElementalMaterialPath(name);
       case MaterialType.jewels:
         return getJewelMaterialPath(name);
@@ -106,12 +106,11 @@ class Assets {
 
   static String getTranslationPath(AppLanguageType languageType) {
     switch (languageType) {
+      case AppLanguageType.french:
       case AppLanguageType.english:
         return '$translationsBasePath/en.json';
       case AppLanguageType.spanish:
         return '$translationsBasePath/es.json';
-      case AppLanguageType.french:
-        return '$translationsBasePath/fr.json';
       case AppLanguageType.russian:
         return '$translationsBasePath/ru.json';
       case AppLanguageType.simplifiedChinese:

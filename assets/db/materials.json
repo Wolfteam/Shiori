@@ -2,6 +2,7 @@
   "talents": [
     {
       "key": "FreedomA",
+      "rarity": 2,
       "image": "teaching_of_freedom.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -12,10 +13,13 @@
         1,
         4,
         7
-      ]
+      ],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "FreedomB",
+      "rarity": 3,
       "image": "guide_to_freedom.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -26,10 +30,23 @@
         1,
         4,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "teaching_of_freedom.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "FreedomC",
+      "rarity": 4,
       "image": "philosophies_of_freedom.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -40,10 +57,23 @@
         1,
         4,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "guide_to_freedom.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "ProsperityA",
+      "rarity": 2,
       "image": "teaching_of_prosperity.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -54,10 +84,13 @@
         1,
         4,
         7
-      ]
+      ],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "ProsperityB",
+      "rarity": 3,
       "image": "guide_to_prosperity.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -68,10 +101,23 @@
         1,
         4,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "teaching_of_prosperity.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "ProsperityC",
+      "rarity": 4,
       "image": "philosophies_of_prosperity.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -82,10 +128,23 @@
         1,
         4,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "guide_to_prosperity.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "DilligenceA",
+      "rarity": 2,
       "image": "teaching_of_diligence.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -96,10 +155,13 @@
         2,
         5,
         7
-      ]
+      ],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "DilligenceB",
+      "rarity": 3,
       "image": "guide_to_diligence.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -110,10 +172,23 @@
         2,
         5,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "teaching_of_diligence.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "DilligenceC",
+      "rarity": 4,
       "image": "philosophies_of_diligence.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -124,10 +199,23 @@
         2,
         5,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "guide_to_diligence.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "ResistanceA",
+      "rarity": 2,
       "image": "teaching_of_resistance.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -138,10 +226,13 @@
         2,
         5,
         7
-      ]
+      ],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "ResistanceB",
+      "rarity": 3,
       "image": "guide_to_resistance.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -152,10 +243,23 @@
         2,
         5,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "teaching_of_resistance.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "ResistanceC",
+      "rarity": 4,
       "image": "philosophies_of_resistance.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -166,10 +270,23 @@
         2,
         5,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "guide_to_resistance.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "BalladA",
+      "rarity": 2,
       "image": "teaching_of_ballad.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -180,10 +297,13 @@
         3,
         6,
         7
-      ]
+      ],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "BalladB",
+      "rarity": 3,
       "image": "guide_to_ballad.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -194,10 +314,23 @@
         3,
         6,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "teaching_of_ballad.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "BalladC",
+      "rarity": 4,
       "image": "philosophies_of_ballad.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -208,10 +341,23 @@
         3,
         6,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "guide_to_ballad.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "GoldA",
+      "rarity": 2,
       "image": "teaching_of_gold.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -222,10 +368,13 @@
         3,
         6,
         7
-      ]
+      ],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "GoldB",
+      "rarity": 3,
       "image": "guide_to_gold.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -236,10 +385,23 @@
         3,
         6,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "teaching_of_gold.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "GoldC",
+      "rarity": 4,
       "image": "philosophies_of_gold.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -250,294 +412,510 @@
         3,
         6,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "guide_to_gold.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "Tail of Boreas",
+      "rarity": 5,
       "image": "tail_of_boreas.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "talents",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "Ring of Boreas",
+      "rarity": 5,
       "image": "ring_of_boreas.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "talents",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "Spirit Locket of Boreas",
+      "rarity": 5,
       "image": "spirit_locket_of_boreas.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "talents",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "Dvalin's Plume",
+      "rarity": 5,
       "image": "dvalins_plume.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "talents",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "Dvalin's Claw",
+      "rarity": 5,
       "image": "dvalins_claw.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "talents",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "Dvalin's Sigh",
+      "rarity": 5,
       "image": "dvalins_sigh.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "talents",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "Tusk of Monoceros Caeli",
+      "rarity": 5,
       "image": "tusk_of_monoceros_caeli.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "talents",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "Shard of a Foul Legacy",
+      "rarity": 5,
       "image": "shard_of_foul_legacy.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "talents",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "Shadow of the Warrior",
+      "rarity": 5,
       "image": "shadow_of_the_warrior.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "talents",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "Crown of Insight",
+      "rarity": 5,
       "image": "crown_of_sagehood.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "talents",
-      "days": []
+      "days": [],
+      "obtainedFrom": []
     }
   ],
   "weapon": [
     {
       "key": "SacrificialKnifeA",
+      "rarity": 2,
       "image": "hunters_sacrificial_knife.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 0,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "SacrificialKnifeB",
+      "rarity": 3,
       "image": "agents_sacrificial_knife.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 1,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "hunters_sacrificial_knife.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "SacrificialKnifeC",
+      "rarity": 4,
       "image": "inspectors_sacrificial_knife.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 2,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "agents_sacrificial_knife.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "HornA",
+      "rarity": 2,
       "image": "heavy_horn.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 0,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "HornB",
+      "rarity": 3,
       "image": "black_bronze_horn.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 1,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "heavy_horn.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "HornC",
+      "rarity": 4,
       "image": "black_crystal_horn.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 2,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "black_bronze_horn.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "ChaosA",
+      "rarity": 2,
       "image": "chaos_device.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 0,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "ChaosB",
+      "rarity": 3,
       "image": "chaos_circuit.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 1,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "chaos_device.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "ChaosC",
+      "rarity": 4,
       "image": "chaos_core.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 2,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "chaos_circuit.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "LeyLineA",
+      "rarity": 2,
       "image": "dead_ley_line_branch.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 0,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "LeyLineB",
+      "rarity": 3,
       "image": "dead_ley_line_leaves.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 1,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "dead_ley_line_branch.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "LeyLineC",
+      "rarity": 4,
       "image": "ley_line_sprout.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 2,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "dead_ley_line_leaves.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "MistGrassA",
+      "rarity": 2,
       "image": "mist_grass_pollen.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 0,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "MistGrassB",
+      "rarity": 3,
       "image": "mist_grass.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 1,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "mist_grass_pollen.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "MistGrassC",
+      "rarity": 4,
       "image": "mist_grass_wick.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 2,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "mist_grass.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "BoneShardA",
+      "rarity": 2,
       "image": "fragile_bone_shard.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 0,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "BoneShardB",
+      "rarity": 3,
       "image": "sturdy_bone_shard.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 1,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "fragile_bone_shard.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "BoneShardC",
+      "rarity": 4,
       "image": "fossilized_bone_shard.png",
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
       "level": 2,
       "type": "weapon",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "sturdy_bone_shard.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     }
   ],
   "weaponPrimary": [
     {
       "key": "DecarabianA",
+      "rarity": 2,
       "image": "tile_of_decarabians_tower.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -548,10 +926,13 @@
         1,
         4,
         7
-      ]
+      ],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "DecarabianB",
+      "rarity": 3,
       "image": "debris_of_decarabians_city.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -562,10 +943,23 @@
         1,
         4,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "tile_of_decarabians_tower.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "DecarabianC",
+      "rarity": 4,
       "image": "fragment_of_decarabians_epic.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -576,10 +970,23 @@
         1,
         4,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "debris_of_decarabians_city.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "DecarabianD",
+      "rarity": 5,
       "image": "scattered_piece_of_decarabianss_dream.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -590,10 +997,23 @@
         1,
         4,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "fragment_of_decarabians_epic.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "GuyunA",
+      "rarity": 2,
       "image": "luminous_sands_from_guyun.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -604,10 +1024,13 @@
         1,
         4,
         7
-      ]
+      ],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "GuyunB",
+      "rarity": 3,
       "image": "lustrous_stone_from_guyun.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -618,10 +1041,23 @@
         1,
         4,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "luminous_sands_from_guyun.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "GuyunC",
+      "rarity": 4,
       "image": "relic_from_guyun.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -632,10 +1068,23 @@
         1,
         4,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "lustrous_stone_from_guyun.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "GuyunD",
+      "rarity": 5,
       "image": "divine_body_from_guyun.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -646,10 +1095,23 @@
         1,
         4,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "relic_from_guyun.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "ElixirA",
+      "rarity": 2,
       "image": "mist_veiled_lead_elixir.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -660,10 +1122,13 @@
         2,
         5,
         7
-      ]
+      ],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "ElixirB",
+      "rarity": 3,
       "image": "mist_veiled_mercury_elixir.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -674,10 +1139,23 @@
         2,
         5,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "mist_veiled_lead_elixir.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "ElixirC",
+      "rarity": 4,
       "image": "mist_veiled_gold_elixir.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -688,10 +1166,23 @@
         2,
         5,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "mist_veiled_mercury_elixir.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "ElixirD",
+      "rarity": 5,
       "image": "mist_veiled_primo_elixir.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -702,10 +1193,23 @@
         2,
         5,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "mist_veiled_gold_elixir.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "BorealWolfA",
+      "rarity": 2,
       "image": "boreal_wolfs_milk_tooth.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -716,10 +1220,13 @@
         2,
         5,
         7
-      ]
+      ],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "BorealWolfB",
+      "rarity": 3,
       "image": "boreal_wolfs_cracked_tooth.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -730,10 +1237,23 @@
         2,
         5,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "boreal_wolfs_milk_tooth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "BorealWolfC",
+      "rarity": 4,
       "image": "boreal_wolfs_broken_fang.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -744,10 +1264,23 @@
         2,
         5,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "boreal_wolfs_cracked_tooth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "BorealWolfD",
+      "rarity": 5,
       "image": "boreal_wolfs_nostalgia.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -758,10 +1291,23 @@
         2,
         5,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "boreal_wolfs_broken_fang.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "AerosideriteA",
+      "rarity": 2,
       "image": "grain_of_aerosiderite.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -772,10 +1318,13 @@
         3,
         6,
         7
-      ]
+      ],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "AerosideriteB",
+      "rarity": 3,
       "image": "piece_of_aerosiderite.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -786,10 +1335,23 @@
         3,
         6,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "grain_of_aerosiderite.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "AerosideriteC",
+      "rarity": 4,
       "image": "bit_of_aerosiderite.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -800,10 +1362,23 @@
         3,
         6,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "piece_of_aerosiderite.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "AerosideriteD",
+      "rarity": 5,
       "image": "chunk_of_aerosiderite.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -814,10 +1389,23 @@
         3,
         6,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "bit_of_aerosiderite.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "GladiatorA",
+      "rarity": 2,
       "image": "fetters_of_the_dandelion_gladiator.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -828,10 +1416,13 @@
         3,
         6,
         7
-      ]
+      ],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "GladiatorB",
+      "rarity": 3,
       "image": "chains_of_the_dandelion_gladiator.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -842,10 +1433,23 @@
         3,
         6,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "fetters_of_the_dandelion_gladiator.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "GladiatorC",
+      "rarity": 4,
       "image": "shackles_of_the_dandelion_gladiator.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -856,10 +1460,23 @@
         3,
         6,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "chains_of_the_dandelion_gladiator.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "GladiatorD",
+      "rarity": 5,
       "image": "dream_of_the_dandelion_gladiator.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -870,822 +1487,3816 @@
         3,
         6,
         7
-      ]
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "shackles_of_the_dandelion_gladiator.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     }
   ],
   "common": [
     {
       "key": "MaskA",
+      "rarity": 1,
       "image": "damaged_mask.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 0,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "MaskB",
+      "rarity": 2,
       "image": "stained_mask.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 1,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "damaged_mask.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "MaskC",
+      "rarity": 3,
       "image": "ominous_mask.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 2,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "stained_mask.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "StatuetteA",
+      "rarity": 1,
       "image": "gloomy_statuette.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 0,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "StatuetteB",
+      "rarity": 2,
       "image": "dark_statuette.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 1,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "gloomy_statuette.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "StatuetteC",
+      "rarity": 3,
       "image": "deathly_statuette.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 2,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "dark_statuette.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "ScrollA",
+      "rarity": 1,
       "image": "divining_scroll.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 0,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "ScrollB",
+      "rarity": 2,
       "image": "sealed_scroll.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 1,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "divining_scroll.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "ScrollC",
+      "rarity": 3,
       "image": "forbidden_curse_scroll.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 2,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "sealed_scroll.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "NectarA",
+      "rarity": 1,
       "image": "whopperflower_nectar.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 0,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "NectarB",
+      "rarity": 2,
       "image": "shimmering_nectar.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 1,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "whopperflower_nectar.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "NectarC",
+      "rarity": 3,
       "image": "energy_nectar.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 2,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "shimmering_nectar.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "ArrowHeadA",
+      "rarity": 1,
       "image": "firm_arrowhead.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 0,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "ArrowHeadB",
+      "rarity": 2,
       "image": "sharp_arrowhead.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 1,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "firm_arrowhead.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "ArrowHeadC",
+      "rarity": 3,
       "image": "weathered_arrowhead.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 2,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "sharp_arrowhead.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "CircularInsigniaA",
+      "rarity": 1,
       "image": "treasure_hoarder_insignia.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 0,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "CircularInsigniaB",
+      "rarity": 2,
       "image": "silver_raven_insignia.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 1,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "treasure_hoarder_insignia.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "CircularInsigniaC",
+      "rarity": 3,
       "image": "golden_raven_insignia.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 2,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "silver_raven_insignia.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "InsigniaA",
+      "rarity": 1,
       "image": "recruits_insignia.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 0,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "InsigniaB",
+      "rarity": 2,
       "image": "sergeants_insignia.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 1,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "recruits_insignia.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "InsigniaC",
+      "rarity": 3,
       "image": "lieutenants_insignia.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 2,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "sergeants_insignia.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "SlimeA",
+      "rarity": 1,
       "image": "slime_condensate.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 0,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "SlimeB",
+      "rarity": 2,
       "image": "slime_secretions.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 1,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "slime_condensate.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "SlimeC",
+      "rarity": 3,
       "image": "slime_concentrate.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 2,
       "type": "common",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "slime_secretions.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     }
   ],
   "currency": [
     {
       "key": "Mora",
+      "rarity": 3,
       "image": "mora.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": true,
       "level": 0,
       "type": "currency",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
+    },
+    {
+      "key": "Original Resin",
+      "rarity": 1,
+      "image": "fragile_resin.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "currency",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     }
   ],
   "elemental": [
     {
       "key": "BasaltPillar",
+      "rarity": 4,
       "image": "basalt_pillar.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
-      "type": "elemental",
-      "days": []
+      "type": "elementalStone",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "CleansingHeart",
+      "rarity": 4,
       "image": "cleansing_heart.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
-      "type": "elemental",
-      "days": []
+      "type": "elementalStone",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "EverflameSeed",
+      "rarity": 4,
       "image": "everflame_seed.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
-      "type": "elemental",
-      "days": []
+      "type": "elementalStone",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "HoarfrostCore",
+      "rarity": 4,
       "image": "hoarfrost_core.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
-      "type": "elemental",
-      "days": []
+      "type": "elementalStone",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "HurricaneSeed",
+      "rarity": 4,
       "image": "hurricane_seed.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
-      "type": "elemental",
-      "days": []
+      "type": "elementalStone",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "LightningPrism",
+      "rarity": 4,
       "image": "lightning_prism.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
-      "type": "elemental",
-      "days": []
+      "type": "elementalStone",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "JuvenileJade",
+      "rarity": 4,
       "image": "juvenile_jade.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
-      "type": "elemental",
-      "days": []
+      "type": "elementalStone",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     }
   ],
   "jewels": [
     {
       "key": "AgateA",
+      "rarity": 2,
       "image": "agnidus_agate_sliver.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "AgateB",
+      "rarity": 3,
       "image": "agnidus_agate_fragment.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 1,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "agnidus_agate_sliver.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "AgateC",
+      "rarity": 4,
       "image": "agnidus_agate_chunk.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 2,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "agnidus_agate_fragment.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "AgateD",
+      "rarity": 5,
       "image": "agnidus_agate_gemstone.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 3,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "agnidus_agate_chunk.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "DiamondA",
+      "rarity": 2,
       "image": "brilliant_diamond_sliver.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "DiamondB",
+      "rarity": 3,
       "image": "brilliant_diamond_fragment.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 1,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "DiamondC",
+      "rarity": 4,
       "image": "brilliant_diamond_chunk.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 2,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "DiamondD",
+      "rarity": 5,
       "image": "brilliant_diamond_gemstone.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 3,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "EmeraldA",
+      "rarity": 2,
       "image": "nagadus_emerald_sliver.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "EmeraldB",
+      "rarity": 3,
       "image": "nagadus_emerald_fragment.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 1,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_sliver.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "EmeraldC",
+      "rarity": 4,
       "image": "nagadus_emerald_chunk.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 2,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_fragment.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "EmeraldD",
+      "rarity": 5,
       "image": "nagadus_emerald_gemstone.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 3,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_chunk.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "TopazA",
+      "rarity": 2,
       "image": "prithiva_topaz_sliver.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "TopazB",
+      "rarity": 3,
       "image": "prithiva_topaz_fragment.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 1,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_sliver.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "TopazC",
+      "rarity": 4,
       "image": "prithiva_topaz_chunk.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 2,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_fragment.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "TopazD",
+      "rarity": 5,
       "image": "prithiva_topaz_gemstone.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 3,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_chunk.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "JadeA",
+      "rarity": 2,
       "image": "shivada_jade_sliver.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "JadeB",
+      "rarity": 3,
       "image": "shivada_jade_fragment.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 1,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "shivada_jade_sliver.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "JadeC",
+      "rarity": 4,
       "image": "shivada_jade_chunk.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 2,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "shivada_jade_fragment.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "JadeD",
+      "rarity": 5,
       "image": "shivada_jade_gemstone.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 3,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "shivada_jade_chunk.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "AmethystA",
+      "rarity": 2,
       "image": "vajrada_amethyst_sliver.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "AmethystB",
+      "rarity": 3,
       "image": "vajrada_amethyst_fragment.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 1,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_sliver.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "AmethystC",
+      "rarity": 4,
       "image": "vajrada_amethyst_chunk.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 2,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_fragment.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "AmethystD",
+      "rarity": 5,
       "image": "vajrada_amethyst_gemstone.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 3,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_chunk.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "LazuriteA",
+      "rarity": 2,
       "image": "varunada_lazurite_sliver.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "LazuriteB",
+      "rarity": 3,
       "image": "varunada_lazurite_fragment.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 1,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_sliver.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "LazuriteC",
+      "rarity": 4,
       "image": "varunada_lazurite_chunk.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 2,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_fragment.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "LazuriteD",
+      "rarity": 5,
       "image": "varunada_lazurite_gemstone.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 3,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_chunk.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "TurquoiseA",
+      "rarity": 2,
       "image": "vayuda_turquoise_sliver.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_sliver.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "TurquoiseB",
+      "rarity": 3,
       "image": "vayuda_turquoise_fragment.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 1,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_sliver.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_fragment.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "TurquoiseC",
+      "rarity": 4,
       "image": "vayuda_turquoise_chunk.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 2,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_fragment.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_chunk.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     },
     {
       "key": "TurquoiseD",
+      "rarity": 5,
       "image": "vayuda_turquoise_gemstone.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 3,
       "type": "jewels",
-      "days": []
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_chunk.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "agnidus_agate_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "nagadus_emerald_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "prithiva_topaz_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_gemstone.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "ingredient",
+              "image": "dust_of_azoth.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": []
     }
   ],
   "locals": [
     {
       "key": "CallaLily",
+      "rarity": 1,
       "image": "calla_lily.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "local",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "Cecilia",
+      "rarity": 1,
       "image": "cecilia.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "local",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "CorLapis",
+      "rarity": 1,
       "image": "cor_lapis.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "local",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "DandelionSeed",
+      "rarity": 1,
       "image": "dandelion_seed.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "local",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "GlazeLily",
+      "rarity": 1,
       "image": "glaze_lily.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "local",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "JueyunChili",
+      "rarity": 1,
       "image": "jueyun_chili.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "local",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "NoctilousJade",
+      "rarity": 1,
       "image": "noctilous_jade.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "local",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "PhilanemoMushroom",
+      "rarity": 1,
       "image": "philanemo_mushroom.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "local",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "Qingxin",
+      "rarity": 1,
       "image": "qingxin.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "local",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "SilkFlower",
+      "rarity": 1,
       "image": "silk_flower.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "local",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "SmallLampGrass",
+      "rarity": 1,
       "image": "small_lamp_grass.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "local",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "Starconch",
+      "rarity": 1,
       "image": "starconch.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "local",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "Valberry",
+      "rarity": 1,
       "image": "valberry.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "local",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "Violetgrass",
+      "rarity": 1,
       "image": "violetgrass.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "local",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "WindwheelAster",
+      "rarity": 1,
       "image": "windwheel_aster.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "local",
-      "days": []
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     },
     {
       "key": "Wolfhook",
+      "rarity": 1,
       "image": "wolfhook.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,
       "level": 0,
       "type": "local",
-      "days": []
+      "days": [],
+      "obtainedFrom": []
     }
   ],
   "experience": [
     {
       "key": "EnhancementOreA",
+      "rarity": 1,
       "image": "enchancement_ore.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -1693,6 +5304,18 @@
       "level": 0,
       "type": "expWeapon",
       "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 2,
+              "materialType": "ingredient",
+              "image": "iron_chunk.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
       "attributes": {
         "experience": 400,
         "pricePerUsage": 40
@@ -1700,6 +5323,7 @@
     },
     {
       "key": "EnhancementOreB",
+      "rarity": 2,
       "image": "fine_enchancement_ore.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -1707,6 +5331,27 @@
       "level": 1,
       "type": "expWeapon",
       "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 2,
+              "materialType": "ingredient",
+              "image": "white_iron_chunk.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "starsilver.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
       "attributes": {
         "experience": 2000,
         "pricePerUsage": 200
@@ -1714,6 +5359,7 @@
     },
     {
       "key": "EnhancementOreC",
+      "rarity": 3,
       "image": "mystic_enchancement_ore.png",
       "isFromBoss": false,
       "isForCharacters": false,
@@ -1721,6 +5367,32 @@
       "level": 2,
       "type": "expWeapon",
       "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 4,
+              "materialType": "ingredient",
+              "image": "crystal_chunk.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "ingredient",
+              "image": "magical_crystal_chunk.png"
+            },
+            {
+              "quantity": 10,
+              "materialType": "currency",
+              "image": "fragile_resin.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
       "attributes": {
         "experience": 10000,
         "pricePerUsage": 1000
@@ -1728,6 +5400,7 @@
     },
     {
       "key": "CharExpA",
+      "rarity": 2,
       "image": "wanderers_advice.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1735,6 +5408,8 @@
       "level": 0,
       "type": "expCharacter",
       "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
       "attributes": {
         "experience": 1000,
         "pricePerUsage": 200
@@ -1742,6 +5417,7 @@
     },
     {
       "key": "CharExpB",
+      "rarity": 3,
       "image": "adventurers_experience.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1749,6 +5425,8 @@
       "level": 0,
       "type": "expCharacter",
       "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
       "attributes": {
         "experience": 5000,
         "pricePerUsage": 1000
@@ -1756,6 +5434,7 @@
     },
     {
       "key": "CharExpC",
+      "rarity": 4,
       "image": "heros_wit.png",
       "isFromBoss": false,
       "isForCharacters": true,
@@ -1763,10 +5442,170 @@
       "level": 0,
       "type": "expCharacter",
       "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
       "attributes": {
         "experience": 20000,
         "pricePerUsage": 4000
       }
+    }
+  ],
+  "ingredient": [
+    {
+      "key": "Starsilver",
+      "rarity": 3,
+      "image": "starsilver.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 3,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
+    },
+    {
+      "key": "Vitalized Dragontooth",
+      "rarity": 4,
+      "image": "vitalized_dragontooth.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
+    },
+    {
+      "key": "Iron Chunk",
+      "rarity": 1,
+      "image": "iron_chunk.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
+    },
+    {
+      "key": "White Iron Chunk",
+      "rarity": 1,
+      "image": "white_iron_chunk.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
+    },
+    {
+      "key": "Crystal Chunk",
+      "rarity": 1,
+      "image": "crystal_chunk.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
+    },
+    {
+      "key": "Northlander Bow Billet",
+      "rarity": 4,
+      "image": "northlander_bow_prototype.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
+    },
+    {
+      "key": "Northlander Catalyst Billet",
+      "rarity": 4,
+      "image": "northlander_catalyst_prototype.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
+    },
+    {
+      "key": "Northlander Claymore Billet",
+      "rarity": 4,
+      "image": "northlander_claymore_prototype.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
+    },
+    {
+      "key": "Northlander Polearm Billet",
+      "rarity": 4,
+      "image": "northlander_polearm_prototype.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
+    },
+    {
+      "key": "Northlander Sword Billet",
+      "rarity": 4,
+      "image": "northlander_sword_prototype.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
+    },
+    {
+      "key": "Dust of Azoth",
+      "rarity": 2,
+      "image": "dust_of_azoth.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
+    },
+    {
+      "key": "Magical Crystal Chunk",
+      "rarity": 1,
+      "image": "magical_crystal_chunk.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": []
     }
   ]
 }

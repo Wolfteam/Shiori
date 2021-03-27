@@ -33,7 +33,9 @@ class IncrementButton extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(right: 10),
                 child: IconButton(
-                  icon: const Icon(Icons.exposure_minus_1_outlined),
+                  icon: const Icon(Icons.remove),
+                  splashRadius: 20,
+                  constraints: const BoxConstraints(),
                   onPressed: decrementIsDisabled ? null : () => onMinus(value - 1),
                 ),
               ),
@@ -41,8 +43,10 @@ class IncrementButton extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(left: 10),
                 child: IconButton(
+                  icon: const Icon(Icons.add),
+                  splashRadius: 20,
                   color: Colors.red,
-                  icon: const Icon(Icons.exposure_plus_1_outlined),
+                  constraints: const BoxConstraints(),
                   onPressed: incrementIsDisabled ? null : () => onAdd(value + 1),
                 ),
               ),
