@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/assets.dart';
+import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/genshin_service.dart';
 import 'package:tuple/tuple.dart';
@@ -46,20 +47,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
             desiredLevel: maxItemLevel,
             currentAscensionLevel: minAscensionLevel,
             desiredAscensionLevel: maxAscensionLevel,
-            skills: translation.skills.map(
-              (e) {
-                final enableTuple = _isSkillEnabled(minSkillLevel, maxSkillLevel, minAscensionLevel, maxAscensionLevel);
-                return CharacterSkill.skill(
-                  name: e.title,
-                  currentLevel: minSkillLevel,
-                  desiredLevel: maxSkillLevel,
-                  isCurrentDecEnabled: enableTuple.item1,
-                  isCurrentIncEnabled: enableTuple.item2,
-                  isDesiredDecEnabled: enableTuple.item3,
-                  isDesiredIncEnabled: enableTuple.item4,
-                );
-              },
-            ).toList(),
+            skills: _getCharacterSkillsToUse(char, translation),
           );
         }
         final weapon = _genshinService.getWeapon(e.key);
@@ -372,5 +360,29 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
     final entry = itemAscensionLevelMap.entries.firstWhere((kvp) => kvp.key == ascensionLevel);
     final nextEntry = itemAscensionLevelMap.entries.firstWhere((kvp) => kvp.key == ascensionLevel + 1);
     return entry.value >= currentLevel && currentLevel <= nextEntry.value;
+  }
+
+  List<CharacterSkill> _getCharacterSkillsToUse(CharacterFileModel character, TranslationCharacterFile translation) {
+    final skills = <CharacterSkill>[];
+    for (final e in translation.skills) {
+      final related = character.skills.firstWhereOrNull((el) => el.key == e.key);
+      if (related == null || related.type == CharacterSkillType.others) {
+        continue;
+      }
+
+      final enableTuple = _isSkillEnabled(minSkillLevel, maxSkillLevel, minAscensionLevel, maxAscensionLevel);
+      final skill = CharacterSkill.skill(
+        name: e.title,
+        currentLevel: minSkillLevel,
+        desiredLevel: maxSkillLevel,
+        isCurrentDecEnabled: enableTuple.item1,
+        isCurrentIncEnabled: enableTuple.item2,
+        isDesiredDecEnabled: enableTuple.item3,
+        isDesiredIncEnabled: enableTuple.item4,
+      );
+      skills.add(skill);
+    }
+
+    return skills;
   }
 }
