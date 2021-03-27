@@ -8,12 +8,14 @@ class MaterialItem extends StatelessWidget {
   final app.MaterialType type;
   final String image;
   final int quantity;
+  final Color textColor;
 
   const MaterialItem({
     Key key,
     @required this.type,
     @required this.image,
     @required this.quantity,
+    this.textColor,
   }) : super(key: key);
 
   //TODO: GO TO THE MATERIALS PAGE
@@ -28,7 +30,7 @@ class MaterialItem extends StatelessWidget {
           Text(
             type == app.MaterialType.currency ? CurrencyUtils.formatNumber(quantity) : '$quantity',
             textAlign: TextAlign.center,
-            style: theme.textTheme.subtitle2.copyWith(color: Colors.white),
+            style: textColor != null ? theme.textTheme.subtitle2.copyWith(color: textColor) : theme.textTheme.subtitle2,
           ),
         ],
       ),

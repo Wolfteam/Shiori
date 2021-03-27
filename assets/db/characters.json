@@ -9730,6 +9730,7 @@
           "isSupport": false,
           "weaponImages": [
             "primordial_jade_cutter.png",
+            "summit_shaper.png",
             "aquila_favonia.png",
             "lions_roar.png",
             "the_black_sword.png",
@@ -9790,9 +9791,10 @@
           "weaponImages": [
             "aquila_favonia.png",
             "primordial_jade_cutter.png",
-            "prototype_rancour.png",
+            "summit_shaper.png",
             "the_black_sword.png",
-            "the_flute.png"
+            "the_flute.png",
+            "prototype_rancour.png"
           ],
           "artifacts": [
             {

@@ -106,6 +106,7 @@ class Assets {
 
   static String getTranslationPath(AppLanguageType languageType) {
     switch (languageType) {
+      case AppLanguageType.french:
       case AppLanguageType.english:
         return '$translationsBasePath/en.json';
       case AppLanguageType.spanish:
@@ -114,6 +115,8 @@ class Assets {
         return '$translationsBasePath/ru.json';
       case AppLanguageType.simplifiedChinese:
         return '$translationsBasePath/zh_CN.json';
+      case AppLanguageType.portuguese:
+        return '$translationsBasePath/pt.json';
       default:
         throw Exception('Invalid language = $languageType');
     }
