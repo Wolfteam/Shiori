@@ -2,6 +2,7 @@ export 'artifact/artifact_bloc.dart';
 export 'artifacts/artifacts_bloc.dart';
 export 'calculator_asc_materials/calculator_asc_materials_bloc.dart';
 export 'calculator_asc_materials_item/calculator_asc_materials_item_bloc.dart';
+export 'calculator_asc_materials_order/calculator_asc_materials_order_bloc.dart';
 export 'calculator_asc_materials_session_form/calculator_asc_materials_session_form_bloc.dart';
 export 'calculator_asc_materials_sessions/calculator_asc_materials_sessions_bloc.dart';
 export 'calculator_asc_materials_sessions_order/calculator_asc_materials_sessions_order_bloc.dart';
