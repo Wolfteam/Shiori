@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/assets.dart';
+import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/calculator_service.dart';
 import 'package:genshindb/domain/services/genshin_service.dart';
@@ -42,29 +43,7 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
             currentAscensionLevel: minAscensionLevel,
             desiredAscensionLevel: maxAscensionLevel,
             useMaterialsFromInventory: false,
-            skills: translation.skills.mapIndexed(
-              (index, e) {
-                final enableTuple = _calculatorService.isSkillEnabled(
-                  minSkillLevel,
-                  maxSkillLevel,
-                  minAscensionLevel,
-                  maxAscensionLevel,
-                  minSkillLevel,
-                  maxSkillLevel,
-                );
-                return CharacterSkill.skill(
-                  key: e.key,
-                  name: e.title,
-                  position: index,
-                  currentLevel: minSkillLevel,
-                  desiredLevel: maxSkillLevel,
-                  isCurrentDecEnabled: enableTuple.item1,
-                  isCurrentIncEnabled: enableTuple.item2,
-                  isDesiredDecEnabled: enableTuple.item3,
-                  isDesiredIncEnabled: enableTuple.item4,
-                );
-              },
-            ).toList(),
+            skills: _getCharacterSkillsToUse(char, translation),
           );
         }
         final weapon = _genshinService.getWeapon(e.key);
@@ -256,6 +235,30 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
         isDesiredDecEnabled: enableTuple.item3,
         isDesiredIncEnabled: enableTuple.item4,
       ));
+    }
+
+    return skills;
+  }
+
+  List<CharacterSkill> _getCharacterSkillsToUse(CharacterFileModel character, TranslationCharacterFile translation) {
+    final skills = <CharacterSkill>[];
+    for (final e in translation.skills) {
+      final related = character.skills.firstWhereOrNull((el) => el.key == e.key);
+      if (related == null || related.type == CharacterSkillType.others) {
+        continue;
+      }
+
+      final enableTuple = _calculatorService.isSkillEnabled(minSkillLevel, maxSkillLevel, minAscensionLevel, maxAscensionLevel);
+      final skill = CharacterSkill.skill(
+        name: e.title,
+        currentLevel: minSkillLevel,
+        desiredLevel: maxSkillLevel,
+        isCurrentDecEnabled: enableTuple.item1,
+        isCurrentIncEnabled: enableTuple.item2,
+        isDesiredDecEnabled: enableTuple.item3,
+        isDesiredIncEnabled: enableTuple.item4,
+      );
+      skills.add(skill);
     }
 
     return skills;
