@@ -274,5 +274,15 @@
   "calcSessionInfoMsgC": "El orden de los items dentro de una sesión también es considerado.",
   "calcSessionInfoMsgD": "Al cambiar la prioridad de una sesión, ocasionará que se redistribuyan los materiales solo si seleccionaste la opción ' {useMaterialsFromInventory} ' option.",
   "calcSessionInfoMsgE": "Un indicador de los materiales usados en tus sesiones será mostrado en la página ' {myInventory} '",
-  "grouped": "Agrupado"
+  "grouped": "Agrupado",
+  "monsters": "Monstruos",
+  "checkAllMonsters": "Comprueba todos los monstruos disponibles",
+  "abyssOrder": "Orden del Abismo",
+  "elementalLifeForm": "Forma de Vida Elemental",
+  "human": "Humano",
+  "magicalBeast": "Bestia Mágica",
+  "boss": "Jefe",
+  "hilichurl": "Hilichurl",
+  "fatui": "Fatui",
+  "automaton": "Automata"
 }
