@@ -36,6 +36,8 @@ abstract class GenshinService {
   List<String> getCharacterImgsUsingMaterial(String key);
   List<String> getWeaponImgsUsingMaterial(String key);
   List<String> getRelatedMaterialImgsToMaterial(String key);
+  List<String> getRelatedMonsterImgsToMaterial(String key);
+  List<String> getRelatedMonsterImgsToArtifact(String key);
 
   TranslationArtifactFile getArtifactTranslation(String key);
   TranslationCharacterFile getCharacterTranslation(String key);

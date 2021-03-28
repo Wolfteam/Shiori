@@ -186,6 +186,5 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
   Future<void> _showReorderDialog(List<ItemAscensionMaterials> items, BuildContext context) async {
     context.read<CalculatorAscMaterialsOrderBloc>().add(CalculatorAscMaterialsOrderEvent.init(sessionKey: sessionKey, items: items));
     await showDialog(context: context, builder: (_) => ReorderItemsDialog());
-    context.read<CalculatorAscMaterialsOrderBloc>().add(const CalculatorAscMaterialsOrderEvent.discardChanges());
   }
 }

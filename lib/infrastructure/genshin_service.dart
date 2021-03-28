@@ -542,6 +542,32 @@ class GenshinServiceImpl implements GenshinService {
     return mp.values.toList();
   }
 
+  @override
+  List<String> getRelatedMonsterImgsToMaterial(String key) {
+    final material = getMaterial(key);
+    final images = <String>[];
+    for (final monster in _monstersFile.monsters) {
+      if (!monster.drops.any((el) => material.image.contains(el))) {
+        continue;
+      }
+      images.add(monster.fullImagePath);
+    }
+    return images;
+  }
+
+  @override
+  List<String> getRelatedMonsterImgsToArtifact(String key) {
+    final artifact = getArtifact(key);
+    final images = <String>[];
+    for (final monster in _monstersFile.monsters) {
+      if (!monster.drops.any((el) => artifact.image.contains(el.replaceAll('.png', '')))) {
+        continue;
+      }
+      images.add(monster.fullImagePath);
+    }
+    return images;
+  }
+
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {
     final translation = getCharacterTranslation(character.key);
 

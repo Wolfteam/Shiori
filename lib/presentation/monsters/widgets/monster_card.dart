@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
+import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/comingsoon_new_avatar.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class MonsterCard extends StatelessWidget {
@@ -34,8 +36,10 @@ class MonsterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final s = S.of(context);
     return InkWell(
       borderRadius: Styles.mainCardBorderRadius,
+      onTap: () => ToastUtils.showWarningToast(s.comingSoon),
       child: Card(
         clipBehavior: Clip.hardEdge,
         shape: Styles.mainCardShape,
@@ -66,7 +70,7 @@ class MonsterCard extends StatelessWidget {
                   child: Text(
                     name,
                     textAlign: TextAlign.center,
-                    style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                    style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
