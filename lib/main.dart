@@ -199,6 +199,12 @@ class MyApp extends StatelessWidget {
             return CalculatorAscMaterialsOrderBloc(dataService, ctx.read<CalculatorAscMaterialsBloc>());
           },
         ),
+        BlocProvider(
+          create: (ctx) {
+            final genshinService = getIt<GenshinService>();
+            return MonstersBloc(genshinService);
+          },
+        ),
       ],
       child: BlocBuilder<MainBloc, MainState>(
         builder: (ctx, state) => AppWidget(),

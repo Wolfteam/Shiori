@@ -13,7 +13,6 @@ class SliverMaterialsCard extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     return SliverCardItem(
-      iconToTheLeft: true,
       onClick: _gotoMaterialsPage,
       icon: Image.asset(Assets.getOtherMaterialPath('bag.png'), width: 60, height: 60, color: theme.accentColor),
       children: [

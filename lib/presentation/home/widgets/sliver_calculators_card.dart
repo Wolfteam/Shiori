@@ -13,6 +13,7 @@ class SliverCalculatorsCard extends StatelessWidget {
     final s = S.of(context);
     return SliverCardItem(
       onClick: _gotoSessionsPage,
+      iconToTheLeft: true,
       icon: Icon(Icons.calculate, size: 60, color: theme.accentColor),
       children: [
         Text(
