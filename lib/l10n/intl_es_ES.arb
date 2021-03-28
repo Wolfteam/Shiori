@@ -284,5 +284,6 @@
   "boss": "Jefe",
   "hilichurl": "Hilichurl",
   "fatui": "Fatui",
-  "automaton": "Automata"
+  "automaton": "Automata",
+  "droppedBy": "Dejado por"
 }

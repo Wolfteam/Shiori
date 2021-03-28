@@ -284,5 +284,6 @@
   "boss": "Boss",
   "hilichurl": "Hilichurl",
   "fatui": "Fatui",
-  "automaton": "Automaton"
+  "automaton": "Automaton",
+  "droppedBy": "Dropped by"
 }
