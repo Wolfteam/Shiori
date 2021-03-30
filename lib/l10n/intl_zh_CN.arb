@@ -274,5 +274,8 @@
   "calcSessionInfoMsgC": "The order of the items inside a session is also considered as well.",
   "calcSessionInfoMsgD": "Changing the session's priority will automatically redistribute the materials only if you selected the ' {useMaterialsFromInventory} ' option.",
   "calcSessionInfoMsgE": "An indicator of the used materials by your sessions will be shown in the ' {myInventory} ' page",
-  "grouped": "Grouped"
+  "grouped": "Grouped",
+  "copy": "Copy",
+  "markAsUsed": "Mark as used",
+  "markAsUnused": "Mark as unused"
 }

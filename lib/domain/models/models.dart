@@ -30,6 +30,7 @@ export 'db/weapons/weapon_file_model.dart';
 export 'db/weapons/weapons_file.dart';
 export 'elements/element_card_model.dart';
 export 'elements/element_reaction_card_model.dart';
+export 'game_codes/game_code_model.dart';
 export 'home/today_char_ascension_materials_model.dart';
 export 'home/today_weapon_ascension_material_model.dart';
 export 'items/item_ascension_material_model.dart';

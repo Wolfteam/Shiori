@@ -56,8 +56,11 @@ abstract class DataService {
   ///
   /// E.g: If we now have more, we may update the used quantity in a [InventoryUsedItem] to use more,
   /// otherwise we may reduce the used quantity or even delete the whole thing
-  Future<void> redistributeInventoryMaterial(
-    String itemKey,
-    int newQuantity,
-  );
+  Future<void> redistributeInventoryMaterial(String itemKey, int newQuantity);
+
+  List<GameCodeModel> getAllGameCodes();
+
+  List<String> getAllUsedGameCodes();
+
+  Future<void> markCodeAsUsed(String code, {bool wasUsed = true});
 }

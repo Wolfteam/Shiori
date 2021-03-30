@@ -19,6 +19,7 @@ class DataServiceImpl implements DataService {
   Box<CalculatorCharacterSkill> _calcItemSkillBox;
   Box<InventoryItem> _inventoryBox;
   Box<InventoryUsedItem> _inventoryUsedItemsBox;
+  Box<UsedGameCode> _usedGameCodesBox;
 
   DataServiceImpl(this._genshinService, this._calculatorService);
 
@@ -30,12 +31,7 @@ class DataServiceImpl implements DataService {
     _calcItemSkillBox = await Hive.openBox<CalculatorCharacterSkill>('calculatorSessionsItemsSkills');
     _inventoryBox = await Hive.openBox<InventoryItem>('inventory');
     _inventoryUsedItemsBox = await Hive.openBox<InventoryUsedItem>('inventoryUsedItems');
-
-    //TODO: REMOVE THIS
-    // await _sessionBox.clear();
-    // await _calcItemBox.clear();
-    // await _calcItemSkillBox.clear();
-    // await _inventoryUsedItemsBox.clear();
+    _usedGameCodesBox = await Hive.openBox<UsedGameCode>('usedGameCodes');
   }
 
   @override
@@ -353,12 +349,39 @@ class DataServiceImpl implements DataService {
     }
   }
 
+  @override
+  List<GameCodeModel> getAllGameCodes() {
+    final usedCodes = getAllUsedGameCodes();
+    return _genshinService.getAllGameCodes().map((e) {
+      final isUsed = usedCodes.contains(e.code);
+      return GameCodeModel(code: e.code, isExpired: e.isExpired, isUsed: isUsed, rewards: e.rewards);
+    }).toList();
+  }
+
+  @override
+  List<String> getAllUsedGameCodes() {
+    return _usedGameCodesBox.values.map((e) => e.code).toList();
+  }
+
+  @override
+  Future<void> markCodeAsUsed(String code, {bool wasUsed = true}) async {
+    final usedGameCode = _usedGameCodesBox.values.firstWhere((el) => el.code == code, orElse: () => null);
+    if (usedGameCode != null) {
+      await _usedGameCodesBox.delete(usedGameCode.key);
+    }
+
+    if (wasUsed) {
+      await _usedGameCodesBox.add(UsedGameCode(code, DateTime.now()));
+    }
+  }
+
   void _registerAdapters() {
     Hive.registerAdapter(CalculatorCharacterSkillAdapter());
     Hive.registerAdapter(CalculatorItemAdapter());
     Hive.registerAdapter(CalculatorSessionAdapter());
     Hive.registerAdapter(InventoryItemAdapter());
     Hive.registerAdapter(InventoryUsedItemAdapter());
+    Hive.registerAdapter(UsedGameCodeAdapter());
   }
 
   ItemAscensionMaterials _buildForCharacter(CalculatorItem item, {int calculatorItemKey, bool includeInventory = false}) {
