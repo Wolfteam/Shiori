@@ -200,6 +200,7 @@ class MyApp extends StatelessWidget {
             return CalculatorAscMaterialsOrderBloc(dataService, ctx.read<CalculatorAscMaterialsBloc>());
           },
         ),
+        BlocProvider(create: (_) => TierListFormBloc()),
       ],
       child: BlocBuilder<MainBloc, MainState>(
         builder: (ctx, state) => AppWidget(),

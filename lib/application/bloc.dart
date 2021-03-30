@@ -18,6 +18,7 @@ export 'main_tab/main_tab_bloc.dart';
 export 'material/material_bloc.dart';
 export 'materials/materials_bloc.dart';
 export 'settings/settings_bloc.dart';
+export 'tier_list_form/tier_list_form_bloc.dart';
 export 'tierlist/tier_list_bloc.dart';
 export 'today_materials/today_materials_bloc.dart';
 export 'url_page/url_page_bloc.dart';

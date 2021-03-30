@@ -186,6 +186,7 @@ class TierListRow extends StatelessWidget {
         index: index,
       ),
     );
+    context.read<TierListFormBloc>().add(const TierListFormEvent.close());
   }
 
   Future<void> _showColorPicker(BuildContext context) async {
