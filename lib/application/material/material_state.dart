@@ -14,5 +14,6 @@ abstract class MaterialState implements _$MaterialState {
     @required List<int> days,
     @required List<ObtainedFromFileModel> obtainedFrom,
     @required List<String> relatedMaterials,
+    @required List<String> droppedBy,
   }) = _LoadedState;
 }

@@ -2783,7 +2783,7 @@
             },
             {
               "key": "a4",
-              "description": "Dispara uma chuva de flechas no ar antes de cair e impactar o chão, causando dano AoE no impacto. Se estiver no estado corpo-a-corpo em Legado do Mal - Ondas de Fúria, não pode apresentar o Ataque Imersivo.",
+              "description": "Dispara uma chuva de flechas no ar antes de cair e impactar o chão, causando dano AdE no impacto. Se estiver no estado corpo-a-corpo em Legado do Mal - Ondas de Fúria, não pode apresentar o Ataque Imersivo.",
               "descriptions": []
             }
           ]
@@ -2817,7 +2817,7 @@
           "abilities": [
             {
               "name": "Posição À Distância: Clarão da Devastação",
-              "description": "Dispara uma flecha Hydro, causando Dano Hydro AoE e aplicando o efeito Interceptação de Fluxo. Regenera uma porção de seu Consumo de Energia após o uso.",
+              "description": "Dispara uma flecha Hydro, causando Dano Hydro AdE e aplicando o efeito Interceptação de Fluxo. Regenera uma porção de seu Consumo de Energia após o uso.",
               "descriptions": []
             },
             {
@@ -3600,7 +3600,7 @@
             },
             {
               "key": "a2",
-              "description": "Drena Stamina ao longo do tempo para realizar um ataque giratório continuo contra todos os inimigos próximos. Ao final da sequência, realiza um corte poderoso.",
+              "description": "Drena Stamina ao longo do tempo para realizar um ataque giratório contínuo contra todos os inimigos próximos. Ao final da sequência, realiza um corte poderoso.",
               "descriptions": []
             },
             {
@@ -3758,7 +3758,7 @@
             },
             {
               "name": "Estela de Pedra",
-              "description": "Ao ser criada, causa Dano Geo AdE.\nAlém disso, enquanto existir, ressoara com Construções Geo próximas, causando Dano Geo aos inimigos próximos.\n1A Estela de Pedra é considerada uma Construção Geo, pode parar ataques, e pode ser escalada.\nSó é possivel existir uma Estela de Pedra ao mesmo tempo.",
+              "description": "Ao ser criada, causa Dano Geo AdE.\nAlém disso, enquanto existir, ressoara com Construções Geo próximas, causando Dano Geo aos inimigos próximos.\nA Estela de Pedra é considerada uma Construção Geo, pode parar ataques, e pode ser escalada.\nSó é possivel existir uma Estela de Pedra ao mesmo tempo.",
               "descriptions": []
             },
             {
@@ -4555,99 +4555,99 @@
     },
     {
       "key": "Resolution of Sojourner",
-      "name": "Resolution of Sojourner",
+      "name": "Resolução de Sojourner",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "ATK +18%."
+          "bonus": "Ataque +18%."
         },
         {
           "key": "b2",
-          "bonus": "Increases Charged Attack CRIT Rate by 30%."
+          "bonus": "Aumenta a Taxa Crítica do Ataque Carregado em 30%."
         }
       ]
     },
     {
       "key": "Tiny Miracle",
-      "name": "Tiny Miracle",
+      "name": "Pequeno Milagre",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "All Elemental RES increased by 20%."
+          "bonus": "RES de todos os Elementos +20%."
         },
         {
           "key": "b2",
-          "bonus": "Incoming elemental DMG increases corresponding Elemental RES by 30% for 10s. Can only occur once every 10s."
+          "bonus": "O Dano elemental recebido aumenta a RES Elemental correspondente em 30% por 10s. Pode ser lançado uma vez a cada 10s."
         }
       ]
     },
     {
       "key": "Brave Heart",
-      "name": "Brave Heart",
+      "name": "Coração Valente",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "ATK +18%."
+          "bonus": "Ataque +18%."
         },
         {
           "key": "b2",
-          "bonus": "Increases DMG by 30% against enemies with more than 50% HP."
+          "bonus": "Aumenta o Dano em 30% contra os inimigos com mais de 50% de Vida."
         }
       ]
     },
     {
       "key": "Defender’s Will",
-      "name": "Defender’s Will",
+      "name": "Guardião",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "DEF +30%."
+          "bonus": "Defesa +30%."
         },
         {
           "key": "b2",
-          "bonus": "For each different element present in your own party, the wearer’s Elemental RES to that corresponding element is increased by 30%."
+          "bonus": "Aumenta a própria RES do respectivo elemento em 30% para cada elemento diferente dos seus personagens da equipe."
         }
       ]
     },
     {
       "key": "Martial Artist",
-      "name": "Martial Artist",
+      "name": "Artista Marcial",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Increases Normal Attack and Charged Attack DMG by 15%."
+          "bonus": "Aumenta o Dano do Ataque Normal e do Ataque Carregado em 15%."
         },
         {
           "key": "b2",
-          "bonus": "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 25% for 8s."
+          "bonus": "Após usar uma Habilidade Elemental, aumenta o Dano do Ataque Normal e Ataque Carregado em 25% por 8s."
         }
       ]
     },
     {
       "key": "Gambler",
-      "name": "Gambler",
+      "name": "Apostador",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Increases Elemental Skill DMG by 20%."
+          "bonus": "Aumenta o dano da Habilidade Elemental em 20%."
         },
         {
           "key": "b2",
-          "bonus": "Defeating an enemy has a 100% chance to remove Elemental Skill CD. Can only occur once every 15s."
+          "bonus": "Ao derrotar um inimigo, possui 100% de chance de remover a Recarga da Habilidade Elemental. Este efeito pode ser ativado uma vez a cada 15s."
         }
       ]
     },
     {
       "key": "Scholar",
-      "name": "Scholar",
+      "name": "O Estudioso",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Energy Recharge +20%."
+          "bonus": "Recarga de Energia +20%"
         },
         {
           "key": "b2",
-          "bonus": "Gaining Elemental Particles or Orbs gives 3 Energy to all party members who have a bow or a catalyst equipped. Can only occur once every 3s."
+          "bonus": "Obter Partículas ou Orbes Elementais confere 3 de Energia a todos os membros da equipe que possuem um arco ou catalisador equipado. Pode ser ativado uma vez a cada 3s."
         }
       ]
     },
@@ -4657,165 +4657,165 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "CRIT Rate +12%."
+          "bonus": "Taxa Crítica +12%."
         },
         {
           "key": "b2",
-          "bonus": "When HP is below 70%, CRIT Rate increases by an additional 24%."
+          "bonus": "Quando a Vida estiver abaixo de 70%, a Taxa Crítica aumenta 24%."
         }
       ]
     },
     {
       "key": "Instructor",
-      "name": "Instructor",
+      "name": "Instrutor",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Increases Elemental Mastery by 80."
+          "bonus": "Proficiência Elemental +80."
         },
         {
           "key": "b2",
-          "bonus": "Upon triggering an Elemental Reaction, increases all party members’ Elemental Mastery by 120 for 8s."
+          "bonus": "Após uma Reação Elemental aumenta a Proficiência Elemental de todos os membros da Equipe em 120 por 8s."
         }
       ]
     },
     {
       "key": "The Exile",
-      "name": "The Exile",
+      "name": "O Exilado",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Energy Recharge +20%."
+          "bonus": "Recarga de Energia +20%"
         },
         {
           "key": "b2",
-          "bonus": "Using an Elemental Burst regenerates 2 Energy for all party members (excluding the wearer) every 2s for 6s. This effect cannot stack."
+          "bonus": "Ao usar o Supremo, regenera 2 de Energia a todos os personagens da equipe (excluindo o portador) a cada 2s por 6s. Este efeito não pode ser acumulado."
         }
       ]
     },
     {
       "key": "Thundering Fury",
-      "name": "Thundering Fury",
+      "name": "Trovão Furioso",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Electro DMG Bonus +15%."
+          "bonus": "Bônus de Dano Electro +15%"
         },
         {
           "key": "b2",
-          "bonus": "Increases damage caused by Overloaded, Electro-Charged and Superconduct by 40%. Triggering such effects decreases Elemental Skill CD by 1s. Can only occur once every 0.8s."
+          "bonus": "Aumenta o Dano causado pela Sobrecarga, Eletricamente Carregado e Supercondutor em 40%. Ao ativar estes efeitos, diminui a Recarga da Habilidade Elemental em 1s. Pode ser ativado uma vez a cada 0.8s."
         }
       ]
     },
     {
       "key": "Thundersoother",
-      "name": "Thundersoother",
+      "name": "Lançador de Trovões",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Electro RES increased by 40%."
+          "bonus": "Resistencia electro +40%."
         },
         {
           "key": "b2",
-          "bonus": "Increases DMG against enemies affected by Electro by 35%."
+          "bonus": "Aumenta o Dano contra inimigos afetados por Electro em 35%"
         }
       ]
     },
     {
       "key": "Viridescent Venerer",
-      "name": "Viridescent Venerer",
+      "name": "Sombra Verde",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Anemo DMG Bonus +15%."
+          "bonus": "Bônus de Dano Anemo +15%"
         },
         {
           "key": "b2",
-          "bonus": "Increases Swirl DMG by 60%. Decreases opponent’s Elemental RES to the element infused in the Swirl by 40% for 10s."
+          "bonus": "Aumenta o Dano do Redemoinho em 60%. Dependendo do tipo elemento infundido, diminui a RES Elemental correspondente do oponente em 40% por 10s."
         }
       ]
     },
     {
       "key": "Maiden Beloved",
-      "name": "Maiden Beloved",
+      "name": "Donzela Amada",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Character Healing Effectiveness +15%."
+          "bonus": "Efeito de Cura do Personagem aumenta em 15%"
         },
         {
           "key": "b2",
-          "bonus": "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s."
+          "bonus": "Ao usar uma Habilidade Elemental ou Explosão, aumenta a cura recebida por todos os membros da equipe em 20% por 10s."
         }
       ]
     },
     {
       "key": "Archaic Petra",
-      "name": "Archaic Petra",
+      "name": "Pedra Arcaica",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Gain a 15% Geo DMG Bonus."
+          "bonus": "Obtém 15% de Bônus de Dano Geo."
         },
         {
           "key": "b2",
-          "bonus": "Upon obtaining an Elemental Shard created through a Crystallize Reaction, all party members gain a 35% DMG Bonus for that particular element for 10s. Only one form of Elemental DMG Bonus can be gained in this manner at any one time."
+          "bonus": "Ao obter um Fragmento Elemental por meio de uma Reação de Cristalização, todos os personagens na equipe ganham 35% de DMG para esse elemento em particular por 10s. Somente uma forma de Dano Elemental pode ser obtida dessa maneira a qualquer momento."
         }
       ]
     },
     {
       "key": "Retracing Bolide",
-      "name": "Retracing Bolide",
+      "name": "Meteoro Invertido",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Increases Shield Strength by 35%."
+          "bonus": "Aumenta a efetividade de escudos em 35%"
         },
         {
           "key": "b2",
-          "bonus": "While protected by a shield, gain an additional 40% Normal and Charged Attack DMG."
+          "bonus": "Ganha um adicional de 40% de Dano Normal e Carregado enquanto estiver sob a proteção de um escudo."
         }
       ]
     },
     {
       "key": "Crimson Witch of Flames",
-      "name": "Crimson Witch of Flames",
+      "name": "A Bruxa das Chamas Carmesim",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Pyro DMG Bonus +15%."
+          "bonus": "Bônus de Dano Pyro +15%"
         },
         {
           "key": "b2",
-          "bonus": "Increases Overloaded and Burning DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using an Elemental Skill increases 2-Piece Set effects by 50% for 10s. Max 3 stacks."
+          "bonus": "Aumenta o dano causado por Sobrecarga e Queimadura em 40%, aumenta o dano causado pela Vaporização e Fusão em 15%. Ao usar a Habilidade Elemental aumenta os efeitos do Conjunto de 2 Peças em 50% por 10s. Pode acumular até 3x."
         }
       ]
     },
     {
       "key": "Lavawalker",
-      "name": "Lavawalker",
+      "name": "Atravessador do Fogo",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Pyro RES increased by 40%."
+          "bonus": "Resistencia Pyro(Fogo) +40%."
         },
         {
           "key": "b2",
-          "bonus": "Increases DMG against enemies affected by Pyro by 35%."
+          "bonus": "Aumenta o Dano contra inimigos afetados por Pyro em 35%."
         }
       ]
     },
     {
       "key": "Bloodstained Chivalry",
-      "name": "Bloodstained Chivalry",
+      "name": "Cavaleiro Manchado de Sangue",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Physical DMG +25%."
+          "bonus": "Dano Físico causado +25%."
         },
         {
           "key": "b2",
-          "bonus": "After defeating an opponent, increases Charged Attack DMG by 50%, and reduces its Stamina cost to 0 for 10s."
+          "bonus": "Após derrotar um oponente, aumenta o Dano do Ataque Carregado em 50% e reduz seu custo de Stamina para 0 por 10s."
         }
       ]
     },
@@ -4825,131 +4825,131 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Elemental Burst DMG +20%."
+          "bonus": "Dano do Supremo +20%."
         },
         {
           "key": "b2",
-          "bonus": "Using an Elemental Burst increases all party members’ ATK by 20% for 12s. This effect cannot stack."
+          "bonus": "Usar o Supremo aumenta o ATQ de todos os membros da equipe em 20% por 12s. Este efeito não pode ser acumulado."
         }
       ]
     },
     {
       "key": "Gladiator’s Finale",
-      "name": "Gladiator’s Finale",
+      "name": "Último Juramento do Gladiador",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "ATK +18%."
+          "bonus": "Ataque +18%."
         },
         {
           "key": "b2",
-          "bonus": "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%."
+          "bonus": "Se o portador deste conjunto de artefato usar uma Espada, Espadão ou Lança, aumenta o Dano de seus Ataques Normais em 35%."
         }
       ]
     },
     {
       "key": "Wanderer’s Troupe",
-      "name": "Wanderer’s Troupe",
+      "name": "Trupe Itinerante",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Increases Elemental Mastery by 80."
+          "bonus": "Proficiência Elemental +80"
         },
         {
           "key": "b2",
-          "bonus": "Increases Charged Attack DMG by 35% if the character uses a Catalyst or a Bow."
+          "bonus": "Aumenta o Dano do Ataque Carregado em 35% se o personagem estiver usando Catalisador ou Arco."
         }
       ]
     },
     {
       "key": "Prayers for Illumination",
-      "name": "Prayers for Illumination",
+      "name": "Xamã do Ritual Pyro",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Affected by Pyro for 40% less time."
+          "bonus": "Reduz a duração dos efeitos causados por Pyro em 40%."
         }
       ]
     },
     {
       "key": "Prayers for Destiny",
-      "name": "Prayers for Destiny",
+      "name": "Orações para o Destino",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Affected by Hydro for 40% less time."
+          "bonus": "Reduz a duração dos efeitos causados por Hydro em 40%."
         }
       ]
     },
     {
       "key": "Prayers for Wisdom",
-      "name": "Prayers for Wisdom",
+      "name": "Xamã do Ritual Electro",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Affected by Electro for 40% less time."
+          "bonus": "Reduz a duração dos efeitos causados por Electro em 40%."
         }
       ]
     },
     {
       "key": "Prayers to Springtime",
-      "name": "Prayers to Springtime",
+      "name": "Orações para a Primavera",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Affected by Cryo for 40% less time."
+          "bonus": "Reduz a duração dos efeitos causados por Cryo em 40%."
         }
       ]
     },
     {
       "key": "Blizzard Strayer",
-      "name": "Blizzard Strayer",
+      "name": "Herói Invernal",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Cryo DMG Bonus +15%."
+          "bonus": "Bônus de Dano Cryo +15%"
         },
         {
           "key": "b2",
-          "bonus": "When a character attacks an enemy affected by Cryo, their CRIT Rate is increased by 20%. If the enemy is Frozen, CRIT Rate is increased by an additional 20%."
+          "bonus": "Quando um personagem ataca um inimigo afetado por Cryo, a sua Taxa CRIT aumenta em 20%. Adicionalmente, se o inimigo estiver Congelado, a Taxa CRIT aumenta em mais 20%."
         }
       ]
     },
     {
       "key": "Heart of Depth",
-      "name": "Heart of Depth",
+      "name": "Profundezas do Coração",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Hydro DMG Bonus +15%."
+          "bonus": "Bônus de Dano Hydro +15%"
         },
         {
           "key": "b2",
-          "bonus": "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 30% for 15s."
+          "bonus": "Após usar uma Habilidade Elemental, aumenta o Dano do Ataque Normal e Carregado em 30% por 15s."
         }
       ]
     },
     {
       "key": "Glacier and Snowfield",
-      "name": "Glacier and Snowfield",
+      "name": "Rios de Gelo e Areia de Neve",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Cryo DMG Bonus +15%."
+          "bonus": "Bônus de Dano Cryo +15%"
         },
         {
           "key": "b2",
-          "bonus": "Increases Superconduct DMG by 100%. Increases Melt DMG by 15%. Using an Elemental Burst increases Cryo DMG Bonus by 30% for 10s."
+          "bonus": "Aumenta o Dano causado por Supercondutor em 100%, aumenta o Dano causado pela Fusão em 15%. Ao usar um Supremo, aumenta o Dano Cryo em 30% por 10s."
         }
       ]
     },
     {
       "key": "Prayers to the Firmament",
-      "name": "Prayers to the Firmament",
+      "name": "Xamã do Ritual Anemo",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Affected by Anemo for 40% less time."
+          "bonus": "Reduz a duração dos efeitos causados por Anemo em 40%."
         }
       ]
     }
@@ -4957,33 +4957,33 @@
   "materials": [
     {
       "key": "FreedomA",
-      "name": "Teachings of Freedom",
-      "description": "Freedom is the spirit of the land of the wind.\nThe freedom to live is one of such. It is the freedom to live freely and healthily without concerns of one's own safety."
+      "name": "Ensinamentos de \"Liberdade\"",
+      "description": "A liberdade é o espirito do Reino do Vento.\nA primeira liberdade é a de viver. É a liberdade de viver com liberdade e saúde, sem preocupações com a própria segurança."
     },
     {
       "key": "FreedomB",
-      "name": "Guide to Freedom",
-      "description": "Freedom is the spirit of the land of the wind.\nThe freedom of travel is one of such. It is the freedom to traverse the land freely without being obstructed."
+      "name": "Guia da Liberdade",
+      "description": "A liberdade é o espirito do Reino do Vento.\nA liberdade de viajar é uma dessas. É a liberdade de percorrer a terra livremente sem ser obstruida."
     },
     {
       "key": "FreedomC",
-      "name": "Philosophies of Freedom",
-      "description": "Freedom is the spirit of the land of the wind.\nTo sing is one such freedom. To sing on the land created by the Anemo Archon is to send your heart away with the song on the wind."
+      "name": "Filosofia da Liberdade",
+      "description": "A liberdade é o espirito da Cidade do Vento.\nCantar é uma dessas liberdades. Cantar na terra criada pelo Arconte Anemo é enviar o seu coração para longe com a música ao vento."
     },
     {
       "key": "ProsperityA",
-      "name": "Teachings of Prosperity",
-      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is the blessing of Liyue, it is the foundation of the great city built by the gods and the people of Liyue, and it is the source of the peace and safety of the land."
+      "name": "Ensinamentos de Prosperidade",
+      "description": "A busca pela prosperidade é aspiração do Reino de Pedra. A prosperidade é uma benção de Liyue, a grande cidade construída pelos deuses e pelo povo, é a fonte de paz e segurança da terra"
     },
     {
       "key": "ProsperityB",
-      "name": "Guide to Prosperity",
-      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is the promise made by Liyue to its children: To repay the hard-working laborers with enough gold to brighten up this land."
+      "name": "Guia de Prosperidade",
+      "description": "A prosperidade é a busca do território na terra. A prosperidade é uma promessa feita por Liyue aos seus filhos: retribuir o trabalho árduo com ouro suficiente para iluminar todo o território."
     },
     {
       "key": "ProsperityC",
-      "name": "Philosophies of Prosperity",
-      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is Liyue's past, present, and future. This prosperity is unmatched and unobtainable by any other nations — it all belongs to Liyue and its inhabitants."
+      "name": "Filosofía de prosperidade",
+      "description": "A prosperidade é a busca do Reino das Rochas.\nA prosperidade é o passado, presente e futuro de Liyue. A prosperidade incomparável e inalcançável para qualquer reino é algo que somente os filhos de Liyue podem desfrutar"
     },
     {
       "key": "DilligenceA",
@@ -5808,6 +5808,11 @@
       "key": "Original Resin",
       "name": "Original Resin",
       "description": "Used to vitalize Petrified Trees and Ley Line Blossoms, allowing access to the treasures they hold. Energy regenerates over time.\nIt is said that the roots of all the Irminsul trees and blossoms in the world are intertwined at the deepest, most hidden place in the earth, and that the pattern the root system makes defines the Ley Lines of the world."
+    },
+    {
+      "key": "Primogem",
+      "name": "Primogem",
+      "description": "A primordial crystalline gem that's beyond the mundane world. Shines with the condensed hopes and dreams of universes that once were."
     }
   ],
   "debuffs": [
@@ -5915,6 +5920,380 @@
       "name": "Protective Canopy",
       "effect": "All Elemental RES by 15%. Physical RES + 15%",
       "description": "Any 4 Unique Elements"
+    }
+  ],
+  "monsters": [
+    {
+      "key": "Abyss Herald: Wicked Torrents",
+      "name": "Abyss Herald: Wicked Torrents"
+    },
+    {
+      "key": "Abyss Lector: Violet Lightning",
+      "name": "Abyss Lector: Violet Lightning"
+    },
+    {
+      "key": "Anemo Hypostasis",
+      "name": "Anemo Hypostasis"
+    },
+    {
+      "key": "Anemo Samachurl",
+      "name": "Anemo Samachurl"
+    },
+    {
+      "key": "Anemo Slime",
+      "name": "Anemo Slime"
+    },
+    {
+      "key": "Azhdaha",
+      "name": "Azhdaha"
+    },
+    {
+      "key": "Blazing Axe Mitachurl",
+      "name": "Blazing Axe Mitachurl"
+    },
+    {
+      "key": "Childe",
+      "name": "Childe"
+    },
+    {
+      "key": "Cryo Abyss Mage",
+      "name": "Cryo Abyss Mage"
+    },
+    {
+      "key": "Cryo Cicin",
+      "name": "Cryo Cicin"
+    },
+    {
+      "key": "Cryo Hilichurl Grenadier",
+      "name": "Cryo Hilichurl Grenadier"
+    },
+    {
+      "key": "Cryo Hilichurl Shooter",
+      "name": "Cryo Hilichurl Shooter"
+    },
+    {
+      "key": "Cryo Hypostasis",
+      "name": "Cryo Hypostasis"
+    },
+    {
+      "key": "Cryo Regisvine",
+      "name": "Cryo Regisvine"
+    },
+    {
+      "key": "Cryo Samachurl",
+      "name": "Cryo Samachurl"
+    },
+    {
+      "key": "Cryo Slime",
+      "name": "Cryo Slime"
+    },
+    {
+      "key": "Cryo Whopperflower",
+      "name": "Cryo Whopperflower"
+    },
+    {
+      "key": "Dendro Samachurl",
+      "name": "Dendro Samachurl"
+    },
+    {
+      "key": "Dendro Slime",
+      "name": "Dendro Slime"
+    },
+    {
+      "key": "Electro Cicin",
+      "name": "Electro Cicin"
+    },
+    {
+      "key": "Electro Hilichurl Shooter",
+      "name": "Electro Hilichurl Shooter"
+    },
+    {
+      "key": "Electro Hypostasis",
+      "name": "Electro Hypostasis"
+    },
+    {
+      "key": "Electro Slime",
+      "name": "Electro Slime"
+    },
+    {
+      "key": "Eye of the Storm",
+      "name": "Eye of the Storm"
+    },
+    {
+      "key": "Fatui Cryo Cicin Mage",
+      "name": "Fatui Cryo Cicin Mage"
+    },
+    {
+      "key": "Fatui Electro Cicin Mage",
+      "name": "Fatui Electro Cicin Mage"
+    },
+    {
+      "key": "Fatui Pyro Agent",
+      "name": "Fatui Pyro Agent"
+    },
+    {
+      "key": "Fatui Skirmisher - Anemoboxer Vanguard",
+      "name": "Fatui Skirmisher - Anemoboxer Vanguard"
+    },
+    {
+      "key": "Fatui Skirmisher - Cryogunner Legionnaire",
+      "name": "Fatui Skirmisher - Cryogunner Legionnaire"
+    },
+    {
+      "key": "Fatui Skirmisher - Electrohammer Vanguard",
+      "name": "Fatui Skirmisher - Electrohammer Vanguard"
+    },
+    {
+      "key": "Fatui Skirmisher - Geochanter Bracer",
+      "name": "Fatui Skirmisher - Geochanter Bracer"
+    },
+    {
+      "key": "Fatui Skirmisher - Hydrogunner Legionnaire",
+      "name": "Fatui Skirmisher - Hydrogunner Legionnaire"
+    },
+    {
+      "key": "Fatui Skirmisher - Pyroslinger Bracer",
+      "name": "Fatui Skirmisher - Pyroslinger Bracer"
+    },
+    {
+      "key": "Frostarm Lawachurl",
+      "name": "Frostarm Lawachurl"
+    },
+    {
+      "key": "Geo Hypostasis",
+      "name": "Geo Hypostasis"
+    },
+    {
+      "key": "Geo Samachurl",
+      "name": "Geo Samachurl"
+    },
+    {
+      "key": "Geo Slime",
+      "name": "Geo Slime"
+    },
+    {
+      "key": "Geovishap",
+      "name": "Geovishap"
+    },
+    {
+      "key": "Geovishap Hatchling",
+      "name": "Geovishap Hatchling"
+    },
+    {
+      "key": "Hilichurl",
+      "name": "Hilichurl"
+    },
+    {
+      "key": "Hilichurl Berserker",
+      "name": "Hilichurl Berserker"
+    },
+    {
+      "key": "Hilichurl Fighter",
+      "name": "Hilichurl Fighter"
+    },
+    {
+      "key": "Hilichurl Grenadier",
+      "name": "Hilichurl Grenadier"
+    },
+    {
+      "key": "Hilichurl Shooter",
+      "name": "Hilichurl Shooter"
+    },
+    {
+      "key": "Hydro Abyss Mage",
+      "name": "Hydro Abyss Mage"
+    },
+    {
+      "key": "Hydro Cicin",
+      "name": "Hydro Cicin"
+    },
+    {
+      "key": "Hydro Samachurl",
+      "name": "Hydro Samachurl"
+    },
+    {
+      "key": "Hydro Slime",
+      "name": "Hydro Slime"
+    },
+    {
+      "key": "Ice Shield Hilichurl Guard",
+      "name": "Ice Shield Hilichurl Guard"
+    },
+    {
+      "key": "Ice Shieldwall Mitachurl",
+      "name": "Ice Shieldwall Mitachurl"
+    },
+    {
+      "key": "Large Anemo Slime",
+      "name": "Large Anemo Slime"
+    },
+    {
+      "key": "Large Cryo Slime",
+      "name": "Large Cryo Slime"
+    },
+    {
+      "key": "Large Dendro Slime",
+      "name": "Large Dendro Slime"
+    },
+    {
+      "key": "Large Electro Slime",
+      "name": "Large Electro Slime"
+    },
+    {
+      "key": "Large Geo Slime",
+      "name": "Large Geo Slime"
+    },
+    {
+      "key": "Large Hydro Slime",
+      "name": "Large Hydro Slime"
+    },
+    {
+      "key": "Large Pyro Slime",
+      "name": "Large Pyro Slime"
+    },
+    {
+      "key": "Lupus Boreas, Dominator of Wolves",
+      "name": "Lupus Boreas, Dominator of Wolves"
+    },
+    {
+      "key": "Millelith Sergeant",
+      "name": "Millelith Sergeant"
+    },
+    {
+      "key": "Millelith Soldier",
+      "name": "Millelith Soldier"
+    },
+    {
+      "key": "Mutant Electro Slime",
+      "name": "Mutant Electro Slime"
+    },
+    {
+      "key": "Oceanid",
+      "name": "Oceanid"
+    },
+    {
+      "key": "Primo Geovishap",
+      "name": "Primo Geovishap"
+    },
+    {
+      "key": "Pyro Abyss Mage",
+      "name": "Pyro Abyss Mage"
+    },
+    {
+      "key": "Pyro Hilichurl Shooter",
+      "name": "Pyro Hilichurl Shooter"
+    },
+    {
+      "key": "Pyro Regisvine",
+      "name": "Pyro Regisvine"
+    },
+    {
+      "key": "Pyro Slime",
+      "name": "Pyro Slime"
+    },
+    {
+      "key": "Pyro Whopperflower",
+      "name": "Pyro Whopperflower"
+    },
+    {
+      "key": "Rock Shield Hilichurl Guard",
+      "name": "Rock Shield Hilichurl Guard"
+    },
+    {
+      "key": "Rock Shieldwall Mitachurl",
+      "name": "Rock Shieldwall Mitachurl"
+    },
+    {
+      "key": "Ruin Grader",
+      "name": "Ruin Grader"
+    },
+    {
+      "key": "Ruin Guard",
+      "name": "Ruin Guard"
+    },
+    {
+      "key": "Ruin Hunter",
+      "name": "Ruin Hunter"
+    },
+    {
+      "key": "Stonehide Lawachurl",
+      "name": "Stonehide Lawachurl"
+    },
+    {
+      "key": "Stormterror",
+      "name": "Stormterror"
+    },
+    {
+      "key": "Treasure Hoarders - Boss",
+      "name": "Treasure Hoarders - Boss"
+    },
+    {
+      "key": "Treasure Hoarders - Carmen",
+      "name": "Treasure Hoarders - Carmen"
+    },
+    {
+      "key": "Treasure Hoarders - Crusher",
+      "name": "Treasure Hoarders - Crusher"
+    },
+    {
+      "key": "Treasure Hoarders - Liuliu",
+      "name": "Treasure Hoarders - Liuliu"
+    },
+    {
+      "key": "Treasure Hoarders - Marksman",
+      "name": "Treasure Hoarders - Marksman"
+    },
+    {
+      "key": "Treasure Hoarders - Pugilist",
+      "name": "Treasure Hoarders - Pugilist"
+    },
+    {
+      "key": "Treasure Hoarders - Raptor",
+      "name": "Treasure Hoarders - Raptor"
+    },
+    {
+      "key": "Treasure Hoarders - Scout",
+      "name": "Treasure Hoarders - Scout"
+    },
+    {
+      "key": "Treasure Hoarders - Seaman",
+      "name": "Treasure Hoarders - Seaman"
+    },
+    {
+      "key": "Treasure Hoarders: Cryo Potioneer",
+      "name": "Treasure Hoarders: Cryo Potioneer"
+    },
+    {
+      "key": "Treasure Hoarders: Electro Potioneer",
+      "name": "Treasure Hoarders: Electro Potioneer"
+    },
+    {
+      "key": "Treasure Hoarders: Gravedigger",
+      "name": "Treasure Hoarders: Gravedigger"
+    },
+    {
+      "key": "Treasure Hoarders: Handyman",
+      "name": "Treasure Hoarders: Handyman"
+    },
+    {
+      "key": "Treasure Hoarders: Hydro Potioneer",
+      "name": "Treasure Hoarders: Hydro Potioneer"
+    },
+    {
+      "key": "Treasure Hoarders: Pyro Potioneer",
+      "name": "Treasure Hoarders: Pyro Potioneer"
+    },
+    {
+      "key": "Unusual Hilichurl",
+      "name": "Unusual Hilichurl"
+    },
+    {
+      "key": "Wooden Shield Hilichurl Guard",
+      "name": "Wooden Shield Hilichurl Guard"
+    },
+    {
+      "key": "Wooden Shieldwall Mitachurl",
+      "name": "Wooden Shieldwall Mitachurl"
     }
   ]
 }

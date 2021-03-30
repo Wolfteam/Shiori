@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
+import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/comingsoon_new_avatar.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
@@ -66,6 +67,25 @@ class WeaponCard extends StatelessWidget {
         withoutDetails = true,
         isInSelectionMode = false,
         withElevation = false,
+        super(key: key);
+
+  WeaponCard.item({
+    Key key,
+    WeaponCardModel weapon,
+    this.imgWidth = 160,
+    this.imgHeight = 140,
+    this.isInSelectionMode = false,
+    this.withElevation = true,
+  })  : keyName = weapon.key,
+        baseAtk = weapon.baseAtk,
+        image = weapon.image,
+        name = weapon.name,
+        rarity = weapon.rarity,
+        type = weapon.type,
+        subStatType = weapon.subStatType,
+        subStatValue = weapon.subStatValue,
+        isComingSoon = weapon.isComingSoon,
+        withoutDetails = false,
         super(key: key);
 
   @override
@@ -172,6 +192,7 @@ class WeaponCard extends StatelessWidget {
     bloc.add(WeaponEvent.loadFromName(key: keyName));
     final route = MaterialPageRoute(builder: (c) => WeaponPage());
     await Navigator.push(context, route);
+    await route.completed;
     bloc.pop();
   }
 }

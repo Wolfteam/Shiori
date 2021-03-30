@@ -11,4 +11,9 @@ abstract class CharacterEvent with _$CharacterEvent {
     @required String image,
     @Default(true) bool addToQueue,
   }) = _LoadCharacterFromImg;
+
+  const factory CharacterEvent.addedToInventory({
+    @required String key,
+    @required bool wasAdded,
+  }) = _AddedToInventory;
 }

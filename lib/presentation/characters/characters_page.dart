@@ -57,9 +57,7 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
         appBar: AppBar(
           title: Text(s.selectCharacter),
         ),
-        body: SafeArea(
-          child: child,
-        ),
+        body: child,
       );
     }
 
@@ -72,21 +70,7 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
       padding: const EdgeInsets.symmetric(horizontal: 5),
       sliver: SliverStaggeredGrid.countBuilder(
         crossAxisCount: isPortrait ? 2 : 3,
-        itemBuilder: (ctx, index) {
-          final char = characters[index];
-          return CharacterCard(
-            keyName: char.key,
-            elementType: char.elementType,
-            isComingSoon: char.isComingSoon,
-            isNew: char.isNew,
-            image: char.logoName,
-            name: char.name,
-            rarity: char.stars,
-            weaponType: char.weaponType,
-            materials: char.materials,
-            isInSelectionMode: widget.isInSelectionMode,
-          );
-        },
+        itemBuilder: (ctx, index) => CharacterCard.item(char: characters[index], isInSelectionMode: widget.isInSelectionMode),
         itemCount: characters.length,
         crossAxisSpacing: isPortrait ? 10 : 5,
         mainAxisSpacing: 5,

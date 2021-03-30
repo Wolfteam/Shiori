@@ -2,8 +2,6 @@ part of 'tier_list_bloc.dart';
 
 @freezed
 abstract class TierListState with _$TierListState {
-  const factory TierListState.loading() = _LoadingState;
-
   const factory TierListState.loaded({
     @required List<TierListRowModel> rows,
     @required List<String> charsAvailable,
