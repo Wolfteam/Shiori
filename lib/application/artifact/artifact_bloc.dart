@@ -32,6 +32,7 @@ class ArtifactBloc extends PopBloc<ArtifactEvent, ArtifactState> {
         final artifact = _genshinService.getArtifact(e.key);
         final translation = _genshinService.getArtifactTranslation(e.key);
         final charImgs = _genshinService.getCharacterImgsUsingArtifact(e.key);
+        final droppedBy = _genshinService.getRelatedMonsterImgsToArtifact(e.key);
 
         var image = artifact.image.split('.png').first;
         image = image.substring(0, image.length - 1);
@@ -50,9 +51,15 @@ class ArtifactBloc extends PopBloc<ArtifactEvent, ArtifactState> {
             final pieces = artifact.bonus.firstWhere((b) => b.key == t.key).pieces;
             return ArtifactCardBonusModel(pieces: pieces, bonus: t.bonus);
           }).toList(),
-          images:
-              translation.bonus.length == 1 ? [artifact.fullImagePath] : artifactOrder.map((e) => Assets.getArtifactPath('$image$e.png')).toList(),
+          images: translation.bonus.length == 1
+              ? [artifact.fullImagePath]
+              : artifactOrder
+                  .map(
+                    (e) => Assets.getArtifactPath('$image$e.png'),
+                  )
+                  .toList(),
           charImages: charImgs,
+          droppedBy: droppedBy,
         );
       },
     );

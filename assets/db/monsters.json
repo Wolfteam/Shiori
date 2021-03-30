@@ -1,0 +1,1263 @@
+{
+  "monsters": [
+    {
+      "key": "Abyss Herald: Wicked Torrents",
+      "image": "abyss_herald_wicked_torrents.png",
+      "type": "abyssOrder",
+      "isComingSoon": true,
+      "drops": []
+    },
+    {
+      "key": "Abyss Lector: Violet Lightning",
+      "image": "abyss_lector_violet_lightning.png",
+      "type": "abyssOrder",
+      "isComingSoon": true,
+      "drops": []
+    },
+    {
+      "key": "Anemo Hypostasis",
+      "image": "anemo_hypostasis.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "adventure_exp.png",
+        "berserker.png",
+        "companionship_exp.png",
+        "gladiators_finale.png",
+        "hurricane_seed.png",
+        "instructor.png",
+        "mora.png",
+        "the_exile.png",
+        "travelling_doctor.png",
+        "vayuda_turquoise_chunk.png",
+        "vayuda_turquoise_fragment.png",
+        "vayuda_turquoise_gemstone.png",
+        "vayuda_turquoise_sliver.png",
+        "wanderers_troupe.png"
+      ]
+    },
+    {
+      "key": "Anemo Samachurl",
+      "image": "anemo_samachurl.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "divining_scroll.png",
+        "forbidden_curse_scroll.png",
+        "ominous_mask.png",
+        "sealed_scroll.png",
+        "stained_mask.png"
+      ]
+    },
+    {
+      "key": "Anemo Slime",
+      "image": "anemo_slime.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "slime_concentrate.png",
+        "slime_condensate.png",
+        "slime_secretions.png"
+      ]
+    },
+    {
+      "key": "Azhdaha",
+      "image": "azhdaha.png",
+      "type": "boss",
+      "isComingSoon": true,
+      "drops": []
+    },
+    {
+      "key": "Blazing Axe Mitachurl",
+      "image": "blazing_axe_mitachurl.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "berserker.png",
+        "black_bronze_horn.png",
+        "black_crystal_horn.png",
+        "damaged_mask.png",
+        "heavy_horn.png",
+        "instructor.png",
+        "ominous_mask.png",
+        "stained_mask.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Childe",
+      "image": "childe.png",
+      "type": "boss",
+      "isComingSoon": false,
+      "drops": [
+        "adventure_exp.png",
+        "berserker.png",
+        "companionship_exp.png",
+        "gladiators_finale.png",
+        "instructor.png",
+        "mora.png",
+        "northlander_bow_prototype.png",
+        "northlander_catalyst_prototype.png",
+        "northlander_claymore_prototype.png",
+        "northlander_polearm_prototype.png",
+        "northlander_sword_prototype.png",
+        "shadow_of_the_warrior.png",
+        "shard_of_foul_legacy.png",
+        "shivada_jade_chunk.png",
+        "shivada_jade_fragment.png",
+        "shivada_jade_gemstone.png",
+        "shivada_jade_sliver.png",
+        "the_exile.png",
+        "travelling_doctor.png",
+        "tusk_of_monoceros_caeli.png",
+        "vajrada_amethyst_chunk.png",
+        "vajrada_amethyst_fragment.png",
+        "vajrada_amethyst_gemstone.png",
+        "vajrada_amethyst_sliver.png",
+        "varunada_lazurite_chunk.png",
+        "varunada_lazurite_fragment.png",
+        "varunada_lazurite_gemstone.png",
+        "varunada_lazurite_sliver.png",
+        "wanderers_troupe.png"
+      ]
+    },
+    {
+      "key": "Cryo Abyss Mage",
+      "image": "cryo_abyss_mage.png",
+      "type": "abyssOrder",
+      "isComingSoon": false,
+      "drops": [
+        "berserker.png",
+        "dark_statuette.png",
+        "dead_ley_line_branch.png",
+        "dead_ley_line_leaves.png",
+        "deathly_statuette.png",
+        "gloomy_statuette.png",
+        "instructor.png",
+        "ley_line_sprout.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Cryo Cicin",
+      "image": "cryo_cicin.png",
+      "type": "magicalBeast",
+      "isComingSoon": true,
+      "drops": []
+    },
+    {
+      "key": "Cryo Hilichurl Grenadier",
+      "image": "cryo_hilichurl_grenadier.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "ominous_mask.png",
+        "stained_mask.png"
+      ]
+    },
+    {
+      "key": "Cryo Hilichurl Shooter",
+      "image": "cryo_hilichurl_shooter.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "firm_arrowhead.png",
+        "ominous_mask.png",
+        "sharp_arrowhead.png",
+        "stained_mask.png",
+        "weathered_arrowhead.png"
+      ]
+    },
+    {
+      "key": "Cryo Hypostasis",
+      "image": "cryo_hypostasis.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": true,
+      "drops": []
+    },
+    {
+      "key": "Cryo Regisvine",
+      "image": "cryo_regisvine.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": [
+        "adventure_exp.png",
+        "berserker.png",
+        "companionship_exp.png",
+        "gladiators_finale.png",
+        "hoarfrost_core.png",
+        "instructor.png",
+        "mora.png",
+        "prayers_of_springtime.png",
+        "shivada_jade_chunk.png",
+        "shivada_jade_fragment.png",
+        "shivada_jade_gemstone.png",
+        "shivada_jade_sliver.png",
+        "the_exile.png",
+        "travelling_doctor.png",
+        "wanderers_troupe.png"
+      ]
+    },
+    {
+      "key": "Cryo Samachurl",
+      "image": "cryo_samachurl.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "divining_scroll.png",
+        "forbidden_curse_scroll.png",
+        "ominous_mask.png",
+        "sealed_scroll.png",
+        "stained_mask.png"
+      ]
+    },
+    {
+      "key": "Cryo Slime",
+      "image": "cryo_slime.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "slime_concentrate.png",
+        "slime_condensate.png",
+        "slime_secretions.png"
+      ]
+    },
+    {
+      "key": "Cryo Whopperflower",
+      "image": "cryo_whopperflower.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": [
+        "energy_nectar.png",
+        "shimmering_nectar.png",
+        "whopperflower_nectar.png"
+      ]
+    },
+    {
+      "key": "Dendro Samachurl",
+      "image": "dendro_samachurl.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "divining_scroll.png",
+        "forbidden_curse_scroll.png",
+        "ominous_mask.png",
+        "sealed_scroll.png",
+        "stained_mask.png"
+      ]
+    },
+    {
+      "key": "Dendro Slime",
+      "image": "dendro_slime.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "slime_concentrate.png",
+        "slime_condensate.png",
+        "slime_secretions.png"
+      ]
+    },
+    {
+      "key": "Electro Cicin",
+      "image": "electro_cicin.png",
+      "type": "magicalBeast",
+      "isComingSoon": true,
+      "drops": []
+    },
+    {
+      "key": "Electro Hilichurl Shooter",
+      "image": "electro_hilichurl_shooter.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "firm_arrowhead.png",
+        "ominous_mask.png",
+        "sharp_arrowhead.png",
+        "stained_mask.png",
+        "weathered_arrowhead.png"
+      ]
+    },
+    {
+      "key": "Electro Hypostasis",
+      "image": "electro_hypostasis.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "adventure_exp.png",
+        "berserker.png",
+        "companionship_exp.png",
+        "gladiators_finale.png",
+        "instructor.png",
+        "lightning_prism.png",
+        "mora.png",
+        "prayers_of_wisdom.png",
+        "the_exile.png",
+        "travelling_doctor.png",
+        "vajrada_amethyst_chunk.png",
+        "vajrada_amethyst_fragment.png",
+        "vajrada_amethyst_gemstone.png",
+        "vajrada_amethyst_sliver.png",
+        "wanderers_troupe.png"
+      ]
+    },
+    {
+      "key": "Electro Slime",
+      "image": "electro_slime.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "slime_concentrate.png",
+        "slime_condensate.png",
+        "slime_secretions.png"
+      ]
+    },
+    {
+      "key": "Eye of the Storm",
+      "image": "eye_of_the_storm.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "berserker.png",
+        "instructor.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Fatui Cryo Cicin Mage",
+      "image": "fatui_cryo_cicin_mage.png",
+      "type": "fatui",
+      "isComingSoon": false,
+      "drops": [
+        "agents_sacrificial_knife.png",
+        "berserker.png",
+        "hunters_sacrificial_knife.png",
+        "inspectors_sacrificial_knife.png",
+        "instructor.png",
+        "lieutenants_insignia.png",
+        "recruits_insignia.png",
+        "sergeants_insignia.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Fatui Electro Cicin Mage",
+      "image": "fatui_electro_cicin_mage.png",
+      "type": "fatui",
+      "isComingSoon": false,
+      "drops": [
+        "agents_sacrificial_knife.png",
+        "berserker.png",
+        "hunters_sacrificial_knife.png",
+        "inspectors_sacrificial_knife.png",
+        "instructor.png",
+        "lieutenants_insignia.png",
+        "recruits_insignia.png",
+        "sergeants_insignia.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Fatui Pyro Agent",
+      "image": "fatui_pyro_agent.png",
+      "type": "fatui",
+      "isComingSoon": false,
+      "drops": [
+        "agents_sacrificial_knife.png",
+        "berserker.png",
+        "hunters_sacrificial_knife.png",
+        "inspectors_sacrificial_knife.png",
+        "instructor.png",
+        "lieutenants_insignia.png",
+        "recruits_insignia.png",
+        "sergeants_insignia.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Fatui Skirmisher - Anemoboxer Vanguard",
+      "image": "fatui_skirmisher___anemoboxer_vanguard.png",
+      "type": "fatui",
+      "isComingSoon": false,
+      "drops": [
+        "lieutenants_insignia.png",
+        "recruits_insignia.png",
+        "sergeants_insignia.png"
+      ]
+    },
+    {
+      "key": "Fatui Skirmisher - Cryogunner Legionnaire",
+      "image": "fatui_skirmisher___cryogunner_legionnaire.png",
+      "type": "fatui",
+      "isComingSoon": false,
+      "drops": [
+        "lieutenants_insignia.png",
+        "recruits_insignia.png",
+        "sergeants_insignia.png"
+      ]
+    },
+    {
+      "key": "Fatui Skirmisher - Electrohammer Vanguard",
+      "image": "fatui_skirmisher___electrohammer_vanguard.png",
+      "type": "fatui",
+      "isComingSoon": false,
+      "drops": [
+        "lieutenants_insignia.png",
+        "recruits_insignia.png",
+        "sergeants_insignia.png"
+      ]
+    },
+    {
+      "key": "Fatui Skirmisher - Geochanter Bracer",
+      "image": "fatui_skirmisher___geochanter_bracer.png",
+      "type": "fatui",
+      "isComingSoon": false,
+      "drops": [
+        "lieutenants_insignia.png",
+        "recruits_insignia.png",
+        "sergeants_insignia.png"
+      ]
+    },
+    {
+      "key": "Fatui Skirmisher - Hydrogunner Legionnaire",
+      "image": "fatui_skirmisher___hydrogunner_legionnaire.png",
+      "type": "fatui",
+      "isComingSoon": false,
+      "drops": [
+        "lieutenants_insignia.png",
+        "recruits_insignia.png",
+        "sergeants_insignia.png"
+      ]
+    },
+    {
+      "key": "Fatui Skirmisher - Pyroslinger Bracer",
+      "image": "fatui_skirmisher___pyroslinger_bracer.png",
+      "type": "fatui",
+      "isComingSoon": false,
+      "drops": [
+        "lieutenants_insignia.png",
+        "recruits_insignia.png",
+        "sergeants_insignia.png"
+      ]
+    },
+    {
+      "key": "Frostarm Lawachurl",
+      "image": "frostarm_lawachurl.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "berserker.png",
+        "black_bronze_horn.png",
+        "black_crystal_horn.png",
+        "damaged_mask.png",
+        "heavy_horn.png",
+        "instructor.png",
+        "ominous_mask.png",
+        "stained_mask.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Geo Hypostasis",
+      "image": "geo_hypostasis.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "adventure_exp.png",
+        "basalt_pillar.png",
+        "berserker.png",
+        "companionship_exp.png",
+        "gladiators_finale.png",
+        "instructor.png",
+        "mora.png",
+        "prithiva_topaz_chunk.png",
+        "prithiva_topaz_fragment.png",
+        "prithiva_topaz_gemstone.png",
+        "prithiva_topaz_sliver.png",
+        "the_exile.png",
+        "travelling_doctor.png",
+        "wanderers_troupe.png"
+      ]
+    },
+    {
+      "key": "Geo Samachurl",
+      "image": "geo_samachurl.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "divining_scroll.png",
+        "forbidden_curse_scroll.png",
+        "ominous_mask.png",
+        "sealed_scroll.png",
+        "stained_mask.png"
+      ]
+    },
+    {
+      "key": "Geo Slime",
+      "image": "geo_slime.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "slime_concentrate.png",
+        "slime_condensate.png",
+        "slime_secretions.png"
+      ]
+    },
+    {
+      "key": "Geovishap",
+      "image": "geovishap.png",
+      "type": "magicalBeast",
+      "isComingSoon": true,
+      "drops": []
+    },
+    {
+      "key": "Geovishap Hatchling",
+      "image": "geovishap_hatchling.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": [
+        "berserker.png",
+        "fossilized_bone_shard.png",
+        "fragile_bone_shard.png",
+        "instructor.png",
+        "sturdy_bone_shard.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Hilichurl",
+      "image": "hilichurl.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "ominous_mask.png",
+        "stained_mask.png"
+      ]
+    },
+    {
+      "key": "Hilichurl Berserker",
+      "image": "hilichurl_berserker.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "ominous_mask.png",
+        "stained_mask.png"
+      ]
+    },
+    {
+      "key": "Hilichurl Fighter",
+      "image": "hilichurl_fighter.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "ominous_mask.png",
+        "stained_mask.png"
+      ]
+    },
+    {
+      "key": "Hilichurl Grenadier",
+      "image": "hilichurl_grenadier.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "ominous_mask.png",
+        "stained_mask.png"
+      ]
+    },
+    {
+      "key": "Hilichurl Shooter",
+      "image": "hilichurl_shooter.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "firm_arrowhead.png",
+        "ominous_mask.png",
+        "sharp_arrowhead.png",
+        "stained_mask.png",
+        "weathered_arrowhead.png"
+      ]
+    },
+    {
+      "key": "Hydro Abyss Mage",
+      "image": "hydro_abyss_mage.png",
+      "type": "abyssOrder",
+      "isComingSoon": false,
+      "drops": [
+        "berserker.png",
+        "dark_statuette.png",
+        "dead_ley_line_branch.png",
+        "dead_ley_line_leaves.png",
+        "deathly_statuette.png",
+        "gloomy_statuette.png",
+        "instructor.png",
+        "ley_line_sprout.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Hydro Cicin",
+      "image": "hydro_cicin.png",
+      "type": "magicalBeast",
+      "isComingSoon": true,
+      "drops": []
+    },
+    {
+      "key": "Hydro Samachurl",
+      "image": "hydro_samachurl.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "divining_scroll.png",
+        "forbidden_curse_scroll.png",
+        "ominous_mask.png",
+        "sealed_scroll.png",
+        "stained_mask.png"
+      ]
+    },
+    {
+      "key": "Hydro Slime",
+      "image": "hydro_slime.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "slime_concentrate.png",
+        "slime_condensate.png",
+        "slime_secretions.png"
+      ]
+    },
+    {
+      "key": "Ice Shield Hilichurl Guard",
+      "image": "ice_shield_hilichurl_guard.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "ominous_mask.png",
+        "stained_mask.png"
+      ]
+    },
+    {
+      "key": "Ice Shieldwall Mitachurl",
+      "image": "ice_shieldwall_mitachurl.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "berserker.png",
+        "black_bronze_horn.png",
+        "black_crystal_horn.png",
+        "damaged_mask.png",
+        "heavy_horn.png",
+        "instructor.png",
+        "ominous_mask.png",
+        "stained_mask.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Large Anemo Slime",
+      "image": "large_anemo_slime.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "slime_concentrate.png",
+        "slime_condensate.png",
+        "slime_secretions.png"
+      ]
+    },
+    {
+      "key": "Large Cryo Slime",
+      "image": "large_cryo_slime.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "slime_concentrate.png",
+        "slime_condensate.png",
+        "slime_secretions.png"
+      ]
+    },
+    {
+      "key": "Large Dendro Slime",
+      "image": "large_dendro_slime.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "slime_concentrate.png",
+        "slime_condensate.png",
+        "slime_secretions.png"
+      ]
+    },
+    {
+      "key": "Large Electro Slime",
+      "image": "large_electro_slime.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "slime_concentrate.png",
+        "slime_condensate.png",
+        "slime_secretions.png"
+      ]
+    },
+    {
+      "key": "Large Geo Slime",
+      "image": "large_geo_slime.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "slime_concentrate.png",
+        "slime_condensate.png",
+        "slime_secretions.png"
+      ]
+    },
+    {
+      "key": "Large Hydro Slime",
+      "image": "large_hydro_slime.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "slime_concentrate.png",
+        "slime_condensate.png",
+        "slime_secretions.png"
+      ]
+    },
+    {
+      "key": "Large Pyro Slime",
+      "image": "large_pyro_slime.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "slime_concentrate.png",
+        "slime_condensate.png",
+        "slime_secretions.png"
+      ]
+    },
+    {
+      "key": "Lupus Boreas, Dominator of Wolves",
+      "image": "lupus_boreas,_dominator_of_wolves.png",
+      "type": "boss",
+      "isComingSoon": false,
+      "drops": [
+        "adventure_exp.png",
+        "agnidus_agate_chunk.png",
+        "agnidus_agate_fragment.png",
+        "agnidus_agate_gemstone.png",
+        "agnidus_agate_sliver.png",
+        "berserker.png",
+        "companionship_exp.png",
+        "gladiators_finale.png",
+        "instructor.png",
+        "mora.png",
+        "northlander_bow_prototype.png",
+        "northlander_catalyst_prototype.png",
+        "northlander_claymore_prototype.png",
+        "northlander_polearm_prototype.png",
+        "northlander_sword_prototype.png",
+        "prithiva_topaz_chunk.png",
+        "prithiva_topaz_fragment.png",
+        "prithiva_topaz_gemstone.png",
+        "prithiva_topaz_sliver.png",
+        "ring_of_boreas.png",
+        "shivada_jade_chunk.png",
+        "shivada_jade_fragment.png",
+        "shivada_jade_gemstone.png",
+        "shivada_jade_sliver.png",
+        "spirit_locket_of_boreas.png",
+        "tail_of_boreas.png",
+        "the_exile.png",
+        "travelling_doctor.png",
+        "wanderers_troupe.png"
+      ]
+    },
+    {
+      "key": "Millelith Sergeant",
+      "image": "millelith_sergeant.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Millelith Soldier",
+      "image": "millelith_soldier.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Mutant Electro Slime",
+      "image": "mutant_electro_slime.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "slime_concentrate.png",
+        "slime_condensate.png",
+        "slime_secretions.png"
+      ]
+    },
+    {
+      "key": "Oceanid",
+      "image": "oceanid.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "adventure_exp.png",
+        "berserker.png",
+        "cleansing_heart.png",
+        "companionship_exp.png",
+        "gladiators_finale.png",
+        "instructor.png",
+        "mora.png",
+        "prayers_of_destiny.png",
+        "the_exile.png",
+        "travelling_doctor.png",
+        "varunada_lazurite_chunk.png",
+        "varunada_lazurite_fragment.png",
+        "varunada_lazurite_gemstone.png",
+        "varunada_lazurite_sliver.png",
+        "wanderers_troupe.png"
+      ]
+    },
+    {
+      "key": "Primo Geovishap",
+      "image": "primo_geovishap.png",
+      "type": "magicalBeast",
+      "isComingSoon": true,
+      "drops": []
+    },
+    {
+      "key": "Pyro Abyss Mage",
+      "image": "pyro_abyss_mage.png",
+      "type": "abyssOrder",
+      "isComingSoon": false,
+      "drops": [
+        "berserker.png",
+        "dark_statuette.png",
+        "dead_ley_line_branch.png",
+        "dead_ley_line_leaves.png",
+        "deathly_statuette.png",
+        "gloomy_statuette.png",
+        "instructor.png",
+        "ley_line_sprout.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Pyro Hilichurl Shooter",
+      "image": "pyro_hilichurl_shooter.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "firm_arrowhead.png",
+        "ominous_mask.png",
+        "sharp_arrowhead.png",
+        "stained_mask.png",
+        "weathered_arrowhead.png"
+      ]
+    },
+    {
+      "key": "Pyro Regisvine",
+      "image": "pyro_regisvine.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": [
+        "adventure_exp.png",
+        "agnidus_agate_chunk.png",
+        "agnidus_agate_fragment.png",
+        "agnidus_agate_gemstone.png",
+        "agnidus_agate_sliver.png",
+        "berserker.png",
+        "companionship_exp.png",
+        "everflame_seed.png",
+        "gladiators_finale.png",
+        "instructor.png",
+        "mora.png",
+        "prayers_of_illumination.png",
+        "the_exile.png",
+        "travelling_doctor.png",
+        "wanderers_troupe.png"
+      ]
+    },
+    {
+      "key": "Pyro Slime",
+      "image": "pyro_slime.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "slime_concentrate.png",
+        "slime_condensate.png",
+        "slime_secretions.png"
+      ]
+    },
+    {
+      "key": "Pyro Whopperflower",
+      "image": "pyro_whopperflower.png",
+      "type": "magicalBeast",
+      "isComingSoon": false,
+      "drops": [
+        "energy_nectar.png",
+        "shimmering_nectar.png",
+        "whopperflower_nectar.png"
+      ]
+    },
+    {
+      "key": "Rock Shield Hilichurl Guard",
+      "image": "rock_shield_hilichurl_guard.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "ominous_mask.png",
+        "stained_mask.png"
+      ]
+    },
+    {
+      "key": "Rock Shieldwall Mitachurl",
+      "image": "rock_shieldwall_mitachurl.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "berserker.png",
+        "black_bronze_horn.png",
+        "black_crystal_horn.png",
+        "damaged_mask.png",
+        "heavy_horn.png",
+        "instructor.png",
+        "ominous_mask.png",
+        "stained_mask.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Ruin Grader",
+      "image": "ruin_grader.png",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": [
+        "berserker.png",
+        "chaos_circuit.png",
+        "chaos_core.png",
+        "chaos_device.png",
+        "instructor.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Ruin Guard",
+      "image": "ruin_guard.png",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": [
+        "berserker.png",
+        "chaos_circuit.png",
+        "chaos_core.png",
+        "chaos_device.png",
+        "instructor.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Ruin Hunter",
+      "image": "ruin_hunter.png",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": [
+        "berserker.png",
+        "chaos_circuit.png",
+        "chaos_core.png",
+        "chaos_device.png",
+        "instructor.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Stonehide Lawachurl",
+      "image": "stonehide_lawachurl.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "berserker.png",
+        "black_bronze_horn.png",
+        "black_crystal_horn.png",
+        "damaged_mask.png",
+        "heavy_horn.png",
+        "instructor.png",
+        "ominous_mask.png",
+        "stained_mask.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Stormterror",
+      "image": "stormterror.png",
+      "type": "boss",
+      "isComingSoon": false,
+      "drops": [
+        "adventure_exp.png",
+        "berserker.png",
+        "companionship_exp.png",
+        "dvalins_claw.png",
+        "dvalins_plume.png",
+        "dvalins_sigh.png",
+        "gladiators_finale.png",
+        "instructor.png",
+        "mora.png",
+        "northlander_bow_prototype.png",
+        "northlander_catalyst_prototype.png",
+        "northlander_claymore_prototype.png",
+        "northlander_polearm_prototype.png",
+        "northlander_sword_prototype.png",
+        "the_exile.png",
+        "travelling_doctor.png",
+        "vajrada_amethyst_chunk.png",
+        "vajrada_amethyst_fragment.png",
+        "vajrada_amethyst_gemstone.png",
+        "vajrada_amethyst_sliver.png",
+        "varunada_lazurite_chunk.png",
+        "varunada_lazurite_fragment.png",
+        "varunada_lazurite_gemstone.png",
+        "varunada_lazurite_sliver.png",
+        "vayuda_turquoise_chunk.png",
+        "vayuda_turquoise_fragment.png",
+        "vayuda_turquoise_gemstone.png",
+        "vayuda_turquoise_sliver.png",
+        "wanderers_troupe.png"
+      ]
+    },
+    {
+      "key": "Treasure Hoarders - Boss",
+      "image": "treasure_hoarders___boss.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Treasure Hoarders - Carmen",
+      "image": "treasure_hoarders___carmen.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Treasure Hoarders - Crusher",
+      "image": "treasure_hoarders___crusher.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Treasure Hoarders - Liuliu",
+      "image": "treasure_hoarders___liuliu.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Treasure Hoarders - Marksman",
+      "image": "treasure_hoarders___marksman.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Treasure Hoarders - Pugilist",
+      "image": "treasure_hoarders___pugilist.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Treasure Hoarders - Raptor",
+      "image": "treasure_hoarders___raptor.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Treasure Hoarders - Scout",
+      "image": "treasure_hoarders___scout.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Treasure Hoarders - Seaman",
+      "image": "treasure_hoarders___seaman.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Treasure Hoarders: Cryo Potioneer",
+      "image": "treasure_hoarders_cryo_potioneer.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Treasure Hoarders: Electro Potioneer",
+      "image": "treasure_hoarders_electro_potioneer.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Treasure Hoarders: Gravedigger",
+      "image": "treasure_hoarders_gravedigger.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Treasure Hoarders: Handyman",
+      "image": "treasure_hoarders_handyman.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Treasure Hoarders: Hydro Potioneer",
+      "image": "treasure_hoarders_hydro_potioneer.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Treasure Hoarders: Pyro Potioneer",
+      "image": "treasure_hoarders_pyro_potioneer.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "golden_raven_insignia.png",
+        "silver_raven_insignia.png",
+        "treasure_hoarder_insignia.png"
+      ]
+    },
+    {
+      "key": "Unusual Hilichurl",
+      "image": "unusual_hilichurl.png",
+      "type": "hilichurl",
+      "isComingSoon": true,
+      "drops": []
+    },
+    {
+      "key": "Wooden Shield Hilichurl Guard",
+      "image": "wooden_shield_hilichurl_guard.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "ominous_mask.png",
+        "stained_mask.png"
+      ]
+    },
+    {
+      "key": "Wooden Shieldwall Mitachurl",
+      "image": "wooden_shieldwall_mitachurl.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "berserker.png",
+        "black_bronze_horn.png",
+        "black_crystal_horn.png",
+        "damaged_mask.png",
+        "heavy_horn.png",
+        "instructor.png",
+        "ominous_mask.png",
+        "stained_mask.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    }
+  ]
+}

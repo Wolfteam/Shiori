@@ -4,6 +4,7 @@ import 'package:genshindb/domain/extensions/string_extensions.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/circle_character.dart';
+import 'package:genshindb/presentation/shared/circle_monster.dart';
 import 'package:genshindb/presentation/shared/circle_weapon.dart';
 import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
@@ -18,6 +19,7 @@ class MaterialDetailBottom extends StatelessWidget {
   final List<String> weaponImgs;
   final List<ObtainedFromFileModel> obtainedFrom;
   final List<String> relatedTo;
+  final List<String> droppedBy;
 
   const MaterialDetailBottom({
     Key key,
@@ -27,6 +29,7 @@ class MaterialDetailBottom extends StatelessWidget {
     @required this.weaponImgs,
     @required this.obtainedFrom,
     @required this.relatedTo,
+    @required this.droppedBy,
   }) : super(key: key);
 
   @override
@@ -74,6 +77,15 @@ class MaterialDetailBottom extends StatelessWidget {
                 body: Wrap(
                   alignment: WrapAlignment.center,
                   children: relatedTo.map((e) => MaterialItemButton(image: e, size: 55)).toList(),
+                ),
+                textColor: rarityColor,
+              ),
+            if (droppedBy.isNotEmpty)
+              ItemDescriptionDetail(
+                title: s.droppedBy,
+                body: Wrap(
+                  alignment: WrapAlignment.center,
+                  children: droppedBy.map((e) => CircleMonster(image: e)).toList(),
                 ),
                 textColor: rarityColor,
               ),

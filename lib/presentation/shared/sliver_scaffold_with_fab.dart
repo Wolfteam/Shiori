@@ -43,9 +43,11 @@ class _SliverScaffoldWithFabState extends State<SliverScaffoldWithFab> with Sing
       },
       child: Scaffold(
         appBar: widget.appbar,
-        body: CustomScrollView(
-          controller: _scrollController,
-          slivers: widget.slivers,
+        body: SafeArea(
+          child: CustomScrollView(
+            controller: _scrollController,
+            slivers: widget.slivers,
+          ),
         ),
         floatingActionButton: AppFab(
           hideFabAnimController: _hideFabAnimController,

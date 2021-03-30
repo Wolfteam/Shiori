@@ -51,7 +51,12 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
     context.read<ElementsBloc>().add(const ElementsEvent.init());
     context.read<SettingsBloc>().add(const SettingsEvent.init());
     context.read<GameCodesBloc>().add(const GameCodesEvent.init());
-    context.read<MaterialsBloc>().add(const MaterialsEvent.init());
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
   }
 
   @override
@@ -95,7 +100,7 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
           showUnselectedLabels: true,
           items: _buildBottomNavBars(),
           type: BottomNavigationBarType.fixed,
-          onTap: (newIndex) => context.read<MainTabBloc>().add(MainTabEvent.goToTab(index: newIndex)),
+          onTap: _gotoTab,
         ),
       ),
     );
@@ -111,6 +116,8 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
       BottomNavigationBarItem(label: s.map, icon: const Icon(Icons.map)),
     ];
   }
+
+  void _gotoTab(int newIndex) => context.read<MainTabBloc>().add(MainTabEvent.goToTab(index: newIndex));
 
   void _changeCurrentTab(int index) {
     FocusScope.of(context).removeFocus();

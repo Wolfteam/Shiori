@@ -11,4 +11,9 @@ abstract class WeaponEvent with _$WeaponEvent {
     @required String image,
     @Default(true) bool addToQueue,
   }) = _LoadWeaponFromImg;
+
+  const factory WeaponEvent.addedToInventory({
+    @required String key,
+    @required bool wasAdded,
+  }) = _AddedToInventory;
 }
