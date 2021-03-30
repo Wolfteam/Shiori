@@ -18,6 +18,7 @@ class GenshinServiceImpl implements GenshinService {
   MaterialsFile _materialsFile;
   ElementsFile _elementsFile;
   GameCodesFile _gameCodesFile;
+  MonstersFile _monstersFile;
 
   GenshinServiceImpl(this._localeService);
 
@@ -30,6 +31,7 @@ class GenshinServiceImpl implements GenshinService {
       initMaterials(),
       initElements(),
       initGameCodes(),
+      initMonsters(),
       initTranslations(languageType),
     ]);
   }
@@ -74,6 +76,13 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.gameCodesDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _gameCodesFile = GameCodesFile.fromJson(json);
+  }
+
+  @override
+  Future<void> initMonsters() async {
+    final jsonStr = await rootBundle.loadString(Assets.monstersDbPath);
+    final json = jsonDecode(jsonStr) as Map<String, dynamic>;
+    _monstersFile = MonstersFile.fromJson(json);
   }
 
   @override
@@ -498,6 +507,27 @@ class GenshinServiceImpl implements GenshinService {
   @override
   List<String> getUpcomingKeys() => getUpcomingCharactersKeys() + getUpcomingWeaponsKeys();
 
+  @override
+  MonsterFileModel getMonster(String key) {
+    return _monstersFile.monsters.firstWhere((el) => el.key == key);
+  }
+
+  @override
+  MonsterFileModel getMonsterByImg(String image) {
+    return _monstersFile.monsters.firstWhere((el) => el.fullImagePath == image);
+  }
+
+  @override
+  List<MonsterCardModel> getAllMonstersForCard() {
+    return _monstersFile.monsters.map((e) => _toMonsterForCard(e)).toList();
+  }
+
+  @override
+  MonsterCardModel getMonsterForCardByImg(String image) {
+    final monster = _monstersFile.monsters.firstWhere((el) => el.fullImagePath == image);
+    return _toMonsterForCard(monster);
+  }
+
   List<ItemAscensionMaterialModel> _getMaterialsToUse(
     List<ItemAscensionMaterialModel> materials, {
     List<MaterialType> ignore = const [MaterialType.currency],
@@ -510,6 +540,32 @@ class GenshinServiceImpl implements GenshinService {
     }
 
     return mp.values.toList();
+  }
+
+  @override
+  List<String> getRelatedMonsterImgsToMaterial(String key) {
+    final material = getMaterial(key);
+    final images = <String>[];
+    for (final monster in _monstersFile.monsters) {
+      if (!monster.drops.any((el) => material.image.contains(el))) {
+        continue;
+      }
+      images.add(monster.fullImagePath);
+    }
+    return images;
+  }
+
+  @override
+  List<String> getRelatedMonsterImgsToArtifact(String key) {
+    final artifact = getArtifact(key);
+    final images = <String>[];
+    for (final monster in _monstersFile.monsters) {
+      if (!monster.drops.any((el) => artifact.image.contains(el.replaceAll('.png', '')))) {
+        continue;
+      }
+      images.add(monster.fullImagePath);
+    }
+    return images;
   }
 
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {
@@ -587,6 +643,17 @@ class GenshinServiceImpl implements GenshinService {
       name: translation.name,
       level: material.level,
       hasSiblings: material.hasSiblings,
+    );
+  }
+
+  MonsterCardModel _toMonsterForCard(MonsterFileModel monster) {
+    final translation = _translationFile.monsters.firstWhere((el) => el.key == monster.key);
+    return MonsterCardModel(
+      key: monster.key,
+      image: monster.fullImagePath,
+      name: translation.name,
+      type: monster.type,
+      isComingSoon: monster.isComingSoon,
     );
   }
 }

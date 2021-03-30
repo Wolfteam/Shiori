@@ -13,6 +13,7 @@ class SliverCalculatorsCard extends StatelessWidget {
     final s = S.of(context);
     return SliverCardItem(
       onClick: _gotoSessionsPage,
+      iconToTheLeft: true,
       icon: Icon(Icons.calculate, size: 60, color: theme.accentColor),
       children: [
         Text(
@@ -30,5 +31,6 @@ class SliverCalculatorsCard extends StatelessWidget {
     await Navigator.push(context, route);
     await route.completed;
     context.read<CalculatorAscMaterialsSessionsBloc>().add(const CalculatorAscMaterialsSessionsEvent.close());
+    context.read<CalculatorAscMaterialsSessionsOrderBloc>().add(const CalculatorAscMaterialsSessionsOrderEvent.discardChanges());
   }
 }

@@ -97,6 +97,7 @@ flutter:
     - assets/items/talents/
     - assets/items/weapon/
     - assets/items/weapon_primary/
+    - assets/monsters/
     - assets/others/
     - assets/skills/
     - assets/weapons/

@@ -9,6 +9,7 @@ class Assets {
   static String materialsDbPath = '$dbPath/materials.json';
   static String elementsDbPath = '$dbPath/elements.json';
   static String gameCodesDbPath = '$dbPath/game_codes.json';
+  static String monstersDbPath = '$dbPath/monsters.json';
   static String translationsBasePath = 'assets/i18n';
 
   //General
@@ -44,6 +45,9 @@ class Assets {
   //Others
   static String otherImgsBasePath = 'assets/others';
 
+  //Monsters
+  static String monstersImgsBasePath = 'assets/monsters';
+
   static String getArtifactPath(String name) => '$artifactsBasePath/$name';
   static String getCharacterPath(String name) => '$charactersBasePath/$name';
   static String getCharacterFullPath(String name) => '$characterFullBasePath/$name';
@@ -55,6 +59,8 @@ class Assets {
   }
 
   static String getOtherImgsPath(String name) => '$otherImgsBasePath/$name';
+
+  static String getMonsterImgPath(String name) => '$monstersImgsBasePath/$name';
 
   static String getBowPath(String name) => '$bowsBasePath/$name';
   static String getCatalystPath(String name) => '$catalystBasePath/$name';

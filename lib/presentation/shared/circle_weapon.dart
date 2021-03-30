@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/presentation/weapon/weapon_page.dart';
 
+import 'circle_item.dart';
+
 class CircleWeapon extends StatelessWidget {
   final String image;
   final double radius;
@@ -19,23 +21,15 @@ class CircleWeapon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final avatar = CircleAvatar(
+    return CircleItem(
+      image: image,
       radius: radius,
-      backgroundColor: Colors.transparent,
-      backgroundImage: AssetImage(image),
-    );
-
-    return Container(
-      margin: const EdgeInsets.all(3),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(radius),
-        onTap: () => onTap != null ? onTap(image) : _gotoWeaponPage(image, context),
-        child: avatar,
-      ),
+      forDrag: forDrag,
+      onTap: (img) => onTap != null ? onTap(img) : _gotoWeaponPage(context),
     );
   }
 
-  Future<void> _gotoWeaponPage(String image, BuildContext context) async {
+  Future<void> _gotoWeaponPage(BuildContext context) async {
     final bloc = context.read<WeaponBloc>();
     bloc.add(WeaponEvent.loadFromImg(image: image));
     final route = MaterialPageRoute(builder: (c) => WeaponPage());

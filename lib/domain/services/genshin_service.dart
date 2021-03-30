@@ -9,6 +9,7 @@ abstract class GenshinService {
   Future<void> initMaterials();
   Future<void> initElements();
   Future<void> initGameCodes();
+  Future<void> initMonsters();
   Future<void> initTranslations(AppLanguageType languageType);
 
   List<CharacterCardModel> getCharactersForCard();
@@ -35,6 +36,8 @@ abstract class GenshinService {
   List<String> getCharacterImgsUsingMaterial(String key);
   List<String> getWeaponImgsUsingMaterial(String key);
   List<String> getRelatedMaterialImgsToMaterial(String key);
+  List<String> getRelatedMonsterImgsToMaterial(String key);
+  List<String> getRelatedMonsterImgsToArtifact(String key);
 
   TranslationArtifactFile getArtifactTranslation(String key);
   TranslationCharacterFile getCharacterTranslation(String key);
@@ -59,4 +62,9 @@ abstract class GenshinService {
   List<GameCodeFileModel> getAllGameCodes();
 
   List<String> getUpcomingKeys();
+
+  MonsterFileModel getMonster(String key);
+  MonsterFileModel getMonsterByImg(String image);
+  List<MonsterCardModel> getAllMonstersForCard();
+  MonsterCardModel getMonsterForCardByImg(String image);
 }

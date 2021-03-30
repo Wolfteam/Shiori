@@ -201,6 +201,12 @@ class MyApp extends StatelessWidget {
           },
         ),
         BlocProvider(create: (_) => TierListFormBloc()),
+        BlocProvider(
+          create: (ctx) {
+            final genshinService = getIt<GenshinService>();
+            return MonstersBloc(genshinService);
+          },
+        ),
       ],
       child: BlocBuilder<MainBloc, MainState>(
         builder: (ctx, state) => AppWidget(),

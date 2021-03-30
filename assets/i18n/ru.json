@@ -5922,5 +5922,379 @@
       "effect": "Элементальное сопротивление повышается на 15%.",
       "description": "4 неодинаковых элемента"
     }
+  ],
+  "monsters": [
+    {
+      "key": "Abyss Herald: Wicked Torrents",
+      "name": "Abyss Herald: Wicked Torrents"
+    },
+    {
+      "key": "Abyss Lector: Violet Lightning",
+      "name": "Abyss Lector: Violet Lightning"
+    },
+    {
+      "key": "Anemo Hypostasis",
+      "name": "Anemo Hypostasis"
+    },
+    {
+      "key": "Anemo Samachurl",
+      "name": "Anemo Samachurl"
+    },
+    {
+      "key": "Anemo Slime",
+      "name": "Anemo Slime"
+    },
+    {
+      "key": "Azhdaha",
+      "name": "Azhdaha"
+    },
+    {
+      "key": "Blazing Axe Mitachurl",
+      "name": "Blazing Axe Mitachurl"
+    },
+    {
+      "key": "Childe",
+      "name": "Childe"
+    },
+    {
+      "key": "Cryo Abyss Mage",
+      "name": "Cryo Abyss Mage"
+    },
+    {
+      "key": "Cryo Cicin",
+      "name": "Cryo Cicin"
+    },
+    {
+      "key": "Cryo Hilichurl Grenadier",
+      "name": "Cryo Hilichurl Grenadier"
+    },
+    {
+      "key": "Cryo Hilichurl Shooter",
+      "name": "Cryo Hilichurl Shooter"
+    },
+    {
+      "key": "Cryo Hypostasis",
+      "name": "Cryo Hypostasis"
+    },
+    {
+      "key": "Cryo Regisvine",
+      "name": "Cryo Regisvine"
+    },
+    {
+      "key": "Cryo Samachurl",
+      "name": "Cryo Samachurl"
+    },
+    {
+      "key": "Cryo Slime",
+      "name": "Cryo Slime"
+    },
+    {
+      "key": "Cryo Whopperflower",
+      "name": "Cryo Whopperflower"
+    },
+    {
+      "key": "Dendro Samachurl",
+      "name": "Dendro Samachurl"
+    },
+    {
+      "key": "Dendro Slime",
+      "name": "Dendro Slime"
+    },
+    {
+      "key": "Electro Cicin",
+      "name": "Electro Cicin"
+    },
+    {
+      "key": "Electro Hilichurl Shooter",
+      "name": "Electro Hilichurl Shooter"
+    },
+    {
+      "key": "Electro Hypostasis",
+      "name": "Electro Hypostasis"
+    },
+    {
+      "key": "Electro Slime",
+      "name": "Electro Slime"
+    },
+    {
+      "key": "Eye of the Storm",
+      "name": "Eye of the Storm"
+    },
+    {
+      "key": "Fatui Cryo Cicin Mage",
+      "name": "Fatui Cryo Cicin Mage"
+    },
+    {
+      "key": "Fatui Electro Cicin Mage",
+      "name": "Fatui Electro Cicin Mage"
+    },
+    {
+      "key": "Fatui Pyro Agent",
+      "name": "Fatui Pyro Agent"
+    },
+    {
+      "key": "Fatui Skirmisher - Anemoboxer Vanguard",
+      "name": "Fatui Skirmisher - Anemoboxer Vanguard"
+    },
+    {
+      "key": "Fatui Skirmisher - Cryogunner Legionnaire",
+      "name": "Fatui Skirmisher - Cryogunner Legionnaire"
+    },
+    {
+      "key": "Fatui Skirmisher - Electrohammer Vanguard",
+      "name": "Fatui Skirmisher - Electrohammer Vanguard"
+    },
+    {
+      "key": "Fatui Skirmisher - Geochanter Bracer",
+      "name": "Fatui Skirmisher - Geochanter Bracer"
+    },
+    {
+      "key": "Fatui Skirmisher - Hydrogunner Legionnaire",
+      "name": "Fatui Skirmisher - Hydrogunner Legionnaire"
+    },
+    {
+      "key": "Fatui Skirmisher - Pyroslinger Bracer",
+      "name": "Fatui Skirmisher - Pyroslinger Bracer"
+    },
+    {
+      "key": "Frostarm Lawachurl",
+      "name": "Frostarm Lawachurl"
+    },
+    {
+      "key": "Geo Hypostasis",
+      "name": "Geo Hypostasis"
+    },
+    {
+      "key": "Geo Samachurl",
+      "name": "Geo Samachurl"
+    },
+    {
+      "key": "Geo Slime",
+      "name": "Geo Slime"
+    },
+    {
+      "key": "Geovishap",
+      "name": "Geovishap"
+    },
+    {
+      "key": "Geovishap Hatchling",
+      "name": "Geovishap Hatchling"
+    },
+    {
+      "key": "Hilichurl",
+      "name": "Hilichurl"
+    },
+    {
+      "key": "Hilichurl Berserker",
+      "name": "Hilichurl Berserker"
+    },
+    {
+      "key": "Hilichurl Fighter",
+      "name": "Hilichurl Fighter"
+    },
+    {
+      "key": "Hilichurl Grenadier",
+      "name": "Hilichurl Grenadier"
+    },
+    {
+      "key": "Hilichurl Shooter",
+      "name": "Hilichurl Shooter"
+    },
+    {
+      "key": "Hydro Abyss Mage",
+      "name": "Hydro Abyss Mage"
+    },
+    {
+      "key": "Hydro Cicin",
+      "name": "Hydro Cicin"
+    },
+    {
+      "key": "Hydro Samachurl",
+      "name": "Hydro Samachurl"
+    },
+    {
+      "key": "Hydro Slime",
+      "name": "Hydro Slime"
+    },
+    {
+      "key": "Ice Shield Hilichurl Guard",
+      "name": "Ice Shield Hilichurl Guard"
+    },
+    {
+      "key": "Ice Shieldwall Mitachurl",
+      "name": "Ice Shieldwall Mitachurl"
+    },
+    {
+      "key": "Large Anemo Slime",
+      "name": "Large Anemo Slime"
+    },
+    {
+      "key": "Large Cryo Slime",
+      "name": "Large Cryo Slime"
+    },
+    {
+      "key": "Large Dendro Slime",
+      "name": "Large Dendro Slime"
+    },
+    {
+      "key": "Large Electro Slime",
+      "name": "Large Electro Slime"
+    },
+    {
+      "key": "Large Geo Slime",
+      "name": "Large Geo Slime"
+    },
+    {
+      "key": "Large Hydro Slime",
+      "name": "Large Hydro Slime"
+    },
+    {
+      "key": "Large Pyro Slime",
+      "name": "Large Pyro Slime"
+    },
+    {
+      "key": "Lupus Boreas, Dominator of Wolves",
+      "name": "Lupus Boreas, Dominator of Wolves"
+    },
+    {
+      "key": "Millelith Sergeant",
+      "name": "Millelith Sergeant"
+    },
+    {
+      "key": "Millelith Soldier",
+      "name": "Millelith Soldier"
+    },
+    {
+      "key": "Mutant Electro Slime",
+      "name": "Mutant Electro Slime"
+    },
+    {
+      "key": "Oceanid",
+      "name": "Oceanid"
+    },
+    {
+      "key": "Primo Geovishap",
+      "name": "Primo Geovishap"
+    },
+    {
+      "key": "Pyro Abyss Mage",
+      "name": "Pyro Abyss Mage"
+    },
+    {
+      "key": "Pyro Hilichurl Shooter",
+      "name": "Pyro Hilichurl Shooter"
+    },
+    {
+      "key": "Pyro Regisvine",
+      "name": "Pyro Regisvine"
+    },
+    {
+      "key": "Pyro Slime",
+      "name": "Pyro Slime"
+    },
+    {
+      "key": "Pyro Whopperflower",
+      "name": "Pyro Whopperflower"
+    },
+    {
+      "key": "Rock Shield Hilichurl Guard",
+      "name": "Rock Shield Hilichurl Guard"
+    },
+    {
+      "key": "Rock Shieldwall Mitachurl",
+      "name": "Rock Shieldwall Mitachurl"
+    },
+    {
+      "key": "Ruin Grader",
+      "name": "Ruin Grader"
+    },
+    {
+      "key": "Ruin Guard",
+      "name": "Ruin Guard"
+    },
+    {
+      "key": "Ruin Hunter",
+      "name": "Ruin Hunter"
+    },
+    {
+      "key": "Stonehide Lawachurl",
+      "name": "Stonehide Lawachurl"
+    },
+    {
+      "key": "Stormterror",
+      "name": "Stormterror"
+    },
+    {
+      "key": "Treasure Hoarders - Boss",
+      "name": "Treasure Hoarders - Boss"
+    },
+    {
+      "key": "Treasure Hoarders - Carmen",
+      "name": "Treasure Hoarders - Carmen"
+    },
+    {
+      "key": "Treasure Hoarders - Crusher",
+      "name": "Treasure Hoarders - Crusher"
+    },
+    {
+      "key": "Treasure Hoarders - Liuliu",
+      "name": "Treasure Hoarders - Liuliu"
+    },
+    {
+      "key": "Treasure Hoarders - Marksman",
+      "name": "Treasure Hoarders - Marksman"
+    },
+    {
+      "key": "Treasure Hoarders - Pugilist",
+      "name": "Treasure Hoarders - Pugilist"
+    },
+    {
+      "key": "Treasure Hoarders - Raptor",
+      "name": "Treasure Hoarders - Raptor"
+    },
+    {
+      "key": "Treasure Hoarders - Scout",
+      "name": "Treasure Hoarders - Scout"
+    },
+    {
+      "key": "Treasure Hoarders - Seaman",
+      "name": "Treasure Hoarders - Seaman"
+    },
+    {
+      "key": "Treasure Hoarders: Cryo Potioneer",
+      "name": "Treasure Hoarders: Cryo Potioneer"
+    },
+    {
+      "key": "Treasure Hoarders: Electro Potioneer",
+      "name": "Treasure Hoarders: Electro Potioneer"
+    },
+    {
+      "key": "Treasure Hoarders: Gravedigger",
+      "name": "Treasure Hoarders: Gravedigger"
+    },
+    {
+      "key": "Treasure Hoarders: Handyman",
+      "name": "Treasure Hoarders: Handyman"
+    },
+    {
+      "key": "Treasure Hoarders: Hydro Potioneer",
+      "name": "Treasure Hoarders: Hydro Potioneer"
+    },
+    {
+      "key": "Treasure Hoarders: Pyro Potioneer",
+      "name": "Treasure Hoarders: Pyro Potioneer"
+    },
+    {
+      "key": "Unusual Hilichurl",
+      "name": "Unusual Hilichurl"
+    },
+    {
+      "key": "Wooden Shield Hilichurl Guard",
+      "name": "Wooden Shield Hilichurl Guard"
+    },
+    {
+      "key": "Wooden Shieldwall Mitachurl",
+      "name": "Wooden Shieldwall Mitachurl"
+    }
   ]
 }

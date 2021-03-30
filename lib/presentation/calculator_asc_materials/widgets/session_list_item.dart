@@ -91,5 +91,6 @@ class SessionListItem extends StatelessWidget {
     await Navigator.push(context, route);
     await route.completed;
     context.read<CalculatorAscMaterialsBloc>().add(const CalculatorAscMaterialsEvent.close());
+    context.read<CalculatorAscMaterialsOrderBloc>().add(const CalculatorAscMaterialsOrderEvent.discardChanges());
   }
 }

@@ -51,6 +51,7 @@ class MaterialBloc extends PopBloc<MaterialEvent, MaterialState> {
     final charImgs = _genshinService.getCharacterImgsUsingMaterial(material.key);
     final weaponImgs = _genshinService.getWeaponImgsUsingMaterial(material.key);
     final relatedMaterials = _genshinService.getRelatedMaterialImgsToMaterial(material.key);
+    final droppedBy = _genshinService.getRelatedMonsterImgsToMaterial(material.key);
     return MaterialState.loaded(
       name: translation.name,
       fullImage: material.fullImagePath,
@@ -62,6 +63,7 @@ class MaterialBloc extends PopBloc<MaterialEvent, MaterialState> {
       days: material.days,
       obtainedFrom: material.obtainedFrom,
       relatedMaterials: relatedMaterials,
+      droppedBy: droppedBy,
     );
   }
 }

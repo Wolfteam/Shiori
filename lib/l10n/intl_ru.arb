@@ -277,5 +277,16 @@
   "grouped": "Grouped",
   "copy": "Copy",
   "markAsUsed": "Mark as used",
-  "markAsUnused": "Mark as unused"
+  "markAsUnused": "Mark as unused",
+  "monsters": "Monsters",
+  "checkAllMonsters": "Check all the available monsters",
+  "abyssOrder": "Abyss Order",
+  "elementalLifeForm": "Elemental LifeForm",
+  "human": "Human",
+  "magicalBeast": "Magical Beast",
+  "boss": "Boss",
+  "hilichurl": "Hilichurl",
+  "fatui": "Fatui",
+  "automaton": "Automaton",
+  "droppedBy": "Dropped by"
 }
