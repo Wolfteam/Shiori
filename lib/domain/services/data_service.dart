@@ -63,4 +63,10 @@ abstract class DataService {
   List<String> getAllUsedGameCodes();
 
   Future<void> markCodeAsUsed(String code, {bool wasUsed = true});
+
+  List<TierListRowModel> getTierList();
+
+  Future<void> saveTierList(List<TierListRowModel> tierList);
+
+  Future<void> deleteTierList();
 }

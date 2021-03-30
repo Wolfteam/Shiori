@@ -159,9 +159,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (_) {
             final genshinService = getIt<GenshinService>();
+            final dataService = getIt<DataService>();
             final telemetryService = getIt<TelemetryService>();
             final loggingService = getIt<LoggingService>();
-            return TierListBloc(genshinService, telemetryService, loggingService);
+            return TierListBloc(genshinService, dataService, telemetryService, loggingService);
           },
         ),
         BlocProvider(

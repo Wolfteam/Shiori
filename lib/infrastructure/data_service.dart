@@ -2,6 +2,7 @@ import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/assets.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/enums/item_type.dart';
+import 'package:genshindb/domain/extensions/iterable_extensions.dart';
 import 'package:genshindb/domain/extensions/string_extensions.dart';
 import 'package:genshindb/domain/models/entities.dart';
 import 'package:genshindb/domain/models/models.dart';
@@ -20,6 +21,7 @@ class DataServiceImpl implements DataService {
   Box<InventoryItem> _inventoryBox;
   Box<InventoryUsedItem> _inventoryUsedItemsBox;
   Box<UsedGameCode> _usedGameCodesBox;
+  Box<TierListItem> _tierListBox;
 
   DataServiceImpl(this._genshinService, this._calculatorService);
 
@@ -32,6 +34,7 @@ class DataServiceImpl implements DataService {
     _inventoryBox = await Hive.openBox<InventoryItem>('inventory');
     _inventoryUsedItemsBox = await Hive.openBox<InventoryUsedItem>('inventoryUsedItems');
     _usedGameCodesBox = await Hive.openBox<UsedGameCode>('usedGameCodes');
+    _tierListBox = await Hive.openBox<TierListItem>('tierList');
   }
 
   @override
@@ -375,6 +378,25 @@ class DataServiceImpl implements DataService {
     }
   }
 
+  @override
+  List<TierListRowModel> getTierList() {
+    final values = _tierListBox.values.toList()..sort((x, y) => x.position.compareTo(y.position));
+    return values.map((e) => TierListRowModel.row(tierText: e.text, charImgs: e.charsImgs, tierColor: e.color)).toList();
+  }
+
+  @override
+  Future<void> saveTierList(List<TierListRowModel> tierList) async {
+    await deleteTierList();
+    final toSave = tierList.mapIndex((e, i) => TierListItem(e.tierText, e.tierColor, i, e.charImgs)).toList();
+    await _tierListBox.addAll(toSave);
+  }
+
+  @override
+  Future<void> deleteTierList() async {
+    final keys = _tierListBox.values.map((e) => e.key);
+    await _tierListBox.deleteAll(keys);
+  }
+
   void _registerAdapters() {
     Hive.registerAdapter(CalculatorCharacterSkillAdapter());
     Hive.registerAdapter(CalculatorItemAdapter());
@@ -382,6 +404,7 @@ class DataServiceImpl implements DataService {
     Hive.registerAdapter(InventoryItemAdapter());
     Hive.registerAdapter(InventoryUsedItemAdapter());
     Hive.registerAdapter(UsedGameCodeAdapter());
+    Hive.registerAdapter(TierListItemAdapter());
   }
 
   ItemAscensionMaterials _buildForCharacter(CalculatorItem item, {int calculatorItemKey, bool includeInventory = false}) {
