@@ -1,18 +1,20 @@
 import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:genshindb/domain/enums/material_type.dart';
 
-class MaterialCardModel {
-  final String key;
-  final String name;
-  final int rarity;
-  final String image;
-  final MaterialType type;
+part 'material_card_model.freezed.dart';
 
-  MaterialCardModel({
-    @required this.key,
-    @required this.name,
-    @required this.rarity,
-    @required this.image,
-    @required this.type,
-  });
+@freezed
+abstract class MaterialCardModel implements _$MaterialCardModel {
+  const factory MaterialCardModel.item({
+    @required String key,
+    @required String name,
+    @required int rarity,
+    @required String image,
+    @required MaterialType type,
+    @required double level,
+    @required bool hasSiblings,
+    @Default(0) int quantity,
+    @Default(0) int usedQuantity,
+  }) = _Item;
 }

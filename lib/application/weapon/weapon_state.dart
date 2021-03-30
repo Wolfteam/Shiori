@@ -4,6 +4,7 @@ part of 'weapon_bloc.dart';
 abstract class WeaponState with _$WeaponState {
   const factory WeaponState.loading() = _LoadingState;
   const factory WeaponState.loaded({
+    @required String key,
     @required String name,
     @required WeaponType weaponType,
     @required String fullImage,
@@ -13,6 +14,7 @@ abstract class WeaponState with _$WeaponState {
     @required double secondaryStatValue,
     @required String description,
     @required ItemLocationType locationType,
+    @required bool isInInventory,
     @required List<WeaponFileAscensionMaterial> ascensionMaterials,
     @required List<WeaponFileRefinementModel> refinements,
     @required List<String> charImages,

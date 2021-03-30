@@ -1,4 +1,5 @@
 //This order matches the one in the game, and the numbers represent each image
+import 'package:darq/darq.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 
 import 'models/models.dart';
@@ -11,6 +12,13 @@ const languagesMap = {
   AppLanguageType.russian: LanguageModel('ru', 'RU'),
   AppLanguageType.simplifiedChinese: LanguageModel('zh', 'CN'),
 };
+
+const int minSkillLevel = 1;
+const int maxSkillLevel = 10;
+const int minAscensionLevel = 1;
+const int maxAscensionLevel = 6;
+const int minItemLevel = 1;
+const int maxItemLevel = 90;
 
 //key = ascension level
 //value = item level
@@ -231,4 +239,48 @@ double getItemTotalExp(int currentLevel, int desiredLevel, bool forCharacters) {
       .where((item) => item.level >= currentLevel && item.level < desiredLevel)
       .map((item) => item.nextLevelExp)
       .fold(0, (previous, current) => previous + current);
+}
+
+List<MaterialCardModel> sortMaterialsByGrouping(List<MaterialCardModel> data, SortDirectionType sortDirectionType) {
+  final expChar = data.where((el) => el.type == MaterialType.expCharacter);
+  final expWeapon = data.where((el) => el.type == MaterialType.expWeapon);
+  final common = data.where((el) => el.type == MaterialType.common);
+  final weaponPrimary = data.where((el) => el.type == MaterialType.weaponPrimary);
+  final weapon = data.where((el) => el.type == MaterialType.weapon);
+  final stones = data.where((el) => el.type == MaterialType.elementalStone);
+  final jewels = data.where((el) => el.type == MaterialType.jewels);
+  final local = data.where((el) => el.type == MaterialType.local);
+  final currency = data.where((el) => el.type == MaterialType.currency);
+  final ingredients = data.where((el) => el.type == MaterialType.ingredient);
+  final talents = data.where((el) => el.type == MaterialType.talents);
+  final talentsWithSiblings = talents.where((el) => el.hasSiblings);
+  final talentsWithoutSiblings = talents.where((el) => !el.hasSiblings);
+
+  if (sortDirectionType == SortDirectionType.asc) {
+    return jewels.orderBy((el) => el.key).thenBy((el) => el.level).toList() +
+        expChar.orderBy((el) => el.key).thenBy((el) => el.level).toList() +
+        expWeapon.orderBy((el) => el.key).thenBy((el) => el.level).toList() +
+        weaponPrimary.orderBy((el) => el.key).thenBy((el) => el.level).toList() +
+        weapon.orderBy((el) => el.key).thenBy((el) => el.level).toList() +
+        talentsWithSiblings.orderBy((el) => el.key).thenBy((el) => el.level).toList() +
+        talentsWithoutSiblings.orderBy((el) => el.key).thenBy((el) => el.level).toList() +
+        common.orderBy((el) => el.key).thenBy((el) => el.level).toList() +
+        stones.orderBy((el) => el.rarity).toList() +
+        local.orderBy((el) => el.rarity).toList() +
+        currency.orderBy((el) => el.rarity).toList() +
+        ingredients.orderBy((el) => el.rarity).toList();
+  }
+
+  return jewels.orderByDescending((el) => el.key).thenByDescending((el) => el.level).toList() +
+      expChar.orderByDescending((el) => el.key).thenByDescending((el) => el.level).toList() +
+      expWeapon.orderByDescending((el) => el.key).thenByDescending((el) => el.level).toList() +
+      weaponPrimary.orderByDescending((el) => el.key).thenByDescending((el) => el.level).toList() +
+      weapon.orderByDescending((el) => el.key).thenByDescending((el) => el.level).toList() +
+      talentsWithSiblings.orderByDescending((el) => el.key).thenByDescending((el) => el.level).toList() +
+      talentsWithoutSiblings.orderByDescending((el) => el.key).thenByDescending((el) => el.level).toList() +
+      common.orderByDescending((el) => el.key).thenByDescending((el) => el.level).toList() +
+      stones.orderByDescending((el) => el.rarity).toList() +
+      local.orderByDescending((el) => el.rarity).toList() +
+      currency.orderByDescending((el) => el.rarity).toList() +
+      ingredients.orderByDescending((el) => el.rarity).toList();
 }

@@ -29,6 +29,7 @@ abstract class MaterialFileModel implements _$MaterialFileModel {
     @required List<int> days,
     @required double level,
     @required List<ObtainedFromFileModel> obtainedFrom,
+    @required bool hasSiblings,
     Map<String, dynamic> attributes,
   }) = _MaterialFileModel;
 

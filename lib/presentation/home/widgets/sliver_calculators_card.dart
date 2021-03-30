@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/calculator_asc_materials/calculator_ascension_materials_page.dart';
+import 'package:genshindb/presentation/calculator_asc_materials/calculator_sessions_page.dart';
 
 import 'sliver_card_item.dart';
 
@@ -10,8 +12,7 @@ class SliverCalculatorsCard extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     return SliverCardItem(
-      iconToTheLeft: true,
-      onClick: _gotoCalculatorAscensionMaterialsPage,
+      onClick: _gotoSessionsPage,
       icon: Icon(Icons.calculate, size: 60, color: theme.accentColor),
       children: [
         Text(
@@ -23,8 +24,11 @@ class SliverCalculatorsCard extends StatelessWidget {
     );
   }
 
-  Future<void> _gotoCalculatorAscensionMaterialsPage(BuildContext context) async {
-    final route = MaterialPageRoute(builder: (c) => CalculatorAscensionMaterialsPage());
+  Future<void> _gotoSessionsPage(BuildContext context) async {
+    context.read<CalculatorAscMaterialsSessionsBloc>().add(const CalculatorAscMaterialsSessionsEvent.init());
+    final route = MaterialPageRoute(builder: (c) => CalculatorSessionsPage());
     await Navigator.push(context, route);
+    await route.completed;
+    context.read<CalculatorAscMaterialsSessionsBloc>().add(const CalculatorAscMaterialsSessionsEvent.close());
   }
 }

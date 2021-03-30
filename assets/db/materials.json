@@ -15,7 +15,8 @@
         7
       ],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "FreedomB",
@@ -42,7 +43,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "FreedomC",
@@ -69,7 +71,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ProsperityA",
@@ -86,7 +89,8 @@
         7
       ],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ProsperityB",
@@ -113,7 +117,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ProsperityC",
@@ -140,7 +145,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "DilligenceA",
@@ -157,7 +163,8 @@
         7
       ],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "DilligenceB",
@@ -184,7 +191,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "DilligenceC",
@@ -211,7 +219,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ResistanceA",
@@ -228,7 +237,8 @@
         7
       ],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ResistanceB",
@@ -255,7 +265,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ResistanceC",
@@ -282,7 +293,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "BalladA",
@@ -299,7 +311,8 @@
         7
       ],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "BalladB",
@@ -326,7 +339,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "BalladC",
@@ -353,7 +367,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "GoldA",
@@ -370,7 +385,8 @@
         7
       ],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "GoldB",
@@ -397,7 +413,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "GoldC",
@@ -424,7 +441,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "Tail of Boreas",
@@ -437,7 +455,8 @@
       "type": "talents",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Ring of Boreas",
@@ -450,7 +469,8 @@
       "type": "talents",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Spirit Locket of Boreas",
@@ -463,7 +483,8 @@
       "type": "talents",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Dvalin's Plume",
@@ -476,7 +497,8 @@
       "type": "talents",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Dvalin's Claw",
@@ -489,7 +511,8 @@
       "type": "talents",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Dvalin's Sigh",
@@ -502,7 +525,8 @@
       "type": "talents",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Tusk of Monoceros Caeli",
@@ -515,7 +539,8 @@
       "type": "talents",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Shard of a Foul Legacy",
@@ -528,7 +553,8 @@
       "type": "talents",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Shadow of the Warrior",
@@ -541,7 +567,8 @@
       "type": "talents",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Crown of Insight",
@@ -553,7 +580,9 @@
       "level": 0,
       "type": "talents",
       "days": [],
-      "obtainedFrom": []
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false
     }
   ],
   "weapon": [
@@ -568,7 +597,8 @@
       "type": "weapon",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "SacrificialKnifeB",
@@ -591,7 +621,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "SacrificialKnifeC",
@@ -614,7 +645,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "HornA",
@@ -627,7 +659,8 @@
       "type": "weapon",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "HornB",
@@ -650,7 +683,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "HornC",
@@ -673,7 +707,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ChaosA",
@@ -686,7 +721,8 @@
       "type": "weapon",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ChaosB",
@@ -709,7 +745,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ChaosC",
@@ -732,7 +769,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "LeyLineA",
@@ -745,7 +783,8 @@
       "type": "weapon",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "LeyLineB",
@@ -768,7 +807,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "LeyLineC",
@@ -791,7 +831,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "MistGrassA",
@@ -804,7 +845,8 @@
       "type": "weapon",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "MistGrassB",
@@ -827,7 +869,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "MistGrassC",
@@ -850,7 +893,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "BoneShardA",
@@ -863,7 +907,8 @@
       "type": "weapon",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "BoneShardB",
@@ -886,7 +931,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "BoneShardC",
@@ -909,7 +955,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     }
   ],
   "weaponPrimary": [
@@ -928,7 +975,8 @@
         7
       ],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "DecarabianB",
@@ -955,7 +1003,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "DecarabianC",
@@ -982,7 +1031,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "DecarabianD",
@@ -1009,7 +1059,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "GuyunA",
@@ -1026,7 +1077,8 @@
         7
       ],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "GuyunB",
@@ -1053,7 +1105,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "GuyunC",
@@ -1080,7 +1133,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "GuyunD",
@@ -1107,7 +1161,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ElixirA",
@@ -1124,7 +1179,8 @@
         7
       ],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ElixirB",
@@ -1151,7 +1207,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ElixirC",
@@ -1178,7 +1235,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ElixirD",
@@ -1205,7 +1263,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "BorealWolfA",
@@ -1222,7 +1281,8 @@
         7
       ],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "BorealWolfB",
@@ -1249,7 +1309,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "BorealWolfC",
@@ -1276,7 +1337,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "BorealWolfD",
@@ -1303,7 +1365,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "AerosideriteA",
@@ -1320,7 +1383,8 @@
         7
       ],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "AerosideriteB",
@@ -1347,7 +1411,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "AerosideriteC",
@@ -1374,7 +1439,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "AerosideriteD",
@@ -1401,7 +1467,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "GladiatorA",
@@ -1418,7 +1485,8 @@
         7
       ],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "GladiatorB",
@@ -1445,7 +1513,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "GladiatorC",
@@ -1472,7 +1541,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "GladiatorD",
@@ -1499,7 +1569,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     }
   ],
   "common": [
@@ -1514,7 +1585,8 @@
       "type": "common",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "MaskB",
@@ -1537,7 +1609,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "MaskC",
@@ -1560,7 +1633,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "StatuetteA",
@@ -1573,7 +1647,8 @@
       "type": "common",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "StatuetteB",
@@ -1596,7 +1671,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "StatuetteC",
@@ -1619,7 +1695,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ScrollA",
@@ -1632,7 +1709,8 @@
       "type": "common",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ScrollB",
@@ -1655,7 +1733,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ScrollC",
@@ -1678,7 +1757,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "NectarA",
@@ -1691,7 +1771,8 @@
       "type": "common",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "NectarB",
@@ -1714,7 +1795,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "NectarC",
@@ -1737,7 +1819,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ArrowHeadA",
@@ -1750,7 +1833,8 @@
       "type": "common",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ArrowHeadB",
@@ -1773,7 +1857,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "ArrowHeadC",
@@ -1796,7 +1881,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "CircularInsigniaA",
@@ -1809,7 +1895,8 @@
       "type": "common",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "CircularInsigniaB",
@@ -1832,7 +1919,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "CircularInsigniaC",
@@ -1855,7 +1943,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "InsigniaA",
@@ -1868,7 +1957,8 @@
       "type": "common",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "InsigniaB",
@@ -1891,7 +1981,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "InsigniaC",
@@ -1914,7 +2005,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "SlimeA",
@@ -1927,7 +2019,8 @@
       "type": "common",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "SlimeB",
@@ -1950,7 +2043,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "SlimeC",
@@ -1973,7 +2067,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     }
   ],
   "currency": [
@@ -1988,7 +2083,8 @@
       "type": "currency",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Original Resin",
@@ -2001,7 +2097,22 @@
       "type": "currency",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
+    },
+    {
+      "key": "Primogem",
+      "rarity": 5,
+      "image": "primogem.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "currency",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false
     }
   ],
   "elemental": [
@@ -2016,7 +2127,8 @@
       "type": "elementalStone",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "CleansingHeart",
@@ -2029,7 +2141,8 @@
       "type": "elementalStone",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "EverflameSeed",
@@ -2042,7 +2155,8 @@
       "type": "elementalStone",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "HoarfrostCore",
@@ -2055,7 +2169,8 @@
       "type": "elementalStone",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "HurricaneSeed",
@@ -2068,7 +2183,8 @@
       "type": "elementalStone",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "LightningPrism",
@@ -2081,7 +2197,8 @@
       "type": "elementalStone",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "JuvenileJade",
@@ -2094,7 +2211,8 @@
       "type": "elementalStone",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     }
   ],
   "jewels": [
@@ -2194,7 +2312,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "AgateB",
@@ -2301,7 +2420,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "AgateC",
@@ -2408,7 +2528,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "AgateD",
@@ -2515,7 +2636,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "DiamondA",
@@ -2528,7 +2650,8 @@
       "type": "jewels",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "DiamondB",
@@ -2541,7 +2664,8 @@
       "type": "jewels",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "DiamondC",
@@ -2554,7 +2678,8 @@
       "type": "jewels",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "DiamondD",
@@ -2567,7 +2692,8 @@
       "type": "jewels",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "EmeraldA",
@@ -2665,7 +2791,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "EmeraldB",
@@ -2772,7 +2899,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "EmeraldC",
@@ -2879,7 +3007,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "EmeraldD",
@@ -2986,7 +3115,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "TopazA",
@@ -3084,7 +3214,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "TopazB",
@@ -3191,7 +3322,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "TopazC",
@@ -3298,7 +3430,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "TopazD",
@@ -3405,7 +3538,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "JadeA",
@@ -3503,7 +3637,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "JadeB",
@@ -3610,7 +3745,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "JadeC",
@@ -3717,7 +3853,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "JadeD",
@@ -3824,7 +3961,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "AmethystA",
@@ -3922,7 +4060,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "AmethystB",
@@ -4029,7 +4168,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "AmethystC",
@@ -4136,7 +4276,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "AmethystD",
@@ -4243,7 +4384,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "LazuriteA",
@@ -4341,7 +4483,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "LazuriteB",
@@ -4448,7 +4591,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "LazuriteC",
@@ -4555,7 +4699,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "LazuriteD",
@@ -4662,7 +4807,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "TurquoiseA",
@@ -4760,7 +4906,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "TurquoiseB",
@@ -4867,7 +5014,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "TurquoiseC",
@@ -4974,7 +5122,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     },
     {
       "key": "TurquoiseD",
@@ -5081,7 +5230,8 @@
           ]
         }
       ],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": true
     }
   ],
   "locals": [
@@ -5096,7 +5246,8 @@
       "type": "local",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Cecilia",
@@ -5109,7 +5260,8 @@
       "type": "local",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "CorLapis",
@@ -5122,7 +5274,8 @@
       "type": "local",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "DandelionSeed",
@@ -5135,7 +5288,8 @@
       "type": "local",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "GlazeLily",
@@ -5148,7 +5302,8 @@
       "type": "local",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "JueyunChili",
@@ -5161,7 +5316,8 @@
       "type": "local",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "NoctilousJade",
@@ -5174,7 +5330,8 @@
       "type": "local",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "PhilanemoMushroom",
@@ -5187,7 +5344,8 @@
       "type": "local",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Qingxin",
@@ -5200,7 +5358,8 @@
       "type": "local",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "SilkFlower",
@@ -5213,7 +5372,8 @@
       "type": "local",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "SmallLampGrass",
@@ -5226,7 +5386,8 @@
       "type": "local",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Starconch",
@@ -5239,7 +5400,8 @@
       "type": "local",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Valberry",
@@ -5252,7 +5414,8 @@
       "type": "local",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Violetgrass",
@@ -5265,7 +5428,8 @@
       "type": "local",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "WindwheelAster",
@@ -5278,7 +5442,8 @@
       "type": "local",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Wolfhook",
@@ -5290,7 +5455,9 @@
       "level": 0,
       "type": "local",
       "days": [],
-      "obtainedFrom": []
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false
     }
   ],
   "experience": [
@@ -5316,6 +5483,7 @@
         }
       ],
       "droppedBy": [],
+      "hasSiblings": true,
       "attributes": {
         "experience": 400,
         "pricePerUsage": 40
@@ -5352,6 +5520,7 @@
         }
       ],
       "droppedBy": [],
+      "hasSiblings": true,
       "attributes": {
         "experience": 2000,
         "pricePerUsage": 200
@@ -5393,6 +5562,7 @@
         }
       ],
       "droppedBy": [],
+      "hasSiblings": true,
       "attributes": {
         "experience": 10000,
         "pricePerUsage": 1000
@@ -5410,6 +5580,7 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
+      "hasSiblings": true,
       "attributes": {
         "experience": 1000,
         "pricePerUsage": 200
@@ -5427,6 +5598,7 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
+      "hasSiblings": true,
       "attributes": {
         "experience": 5000,
         "pricePerUsage": 1000
@@ -5444,6 +5616,7 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
+      "hasSiblings": true,
       "attributes": {
         "experience": 20000,
         "pricePerUsage": 4000
@@ -5458,11 +5631,12 @@
       "isFromBoss": false,
       "isForCharacters": false,
       "isForWeapons": true,
-      "level": 3,
+      "level": 0,
       "type": "ingredient",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Vitalized Dragontooth",
@@ -5475,7 +5649,8 @@
       "type": "ingredient",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Iron Chunk",
@@ -5488,7 +5663,8 @@
       "type": "ingredient",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "White Iron Chunk",
@@ -5501,7 +5677,8 @@
       "type": "ingredient",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Crystal Chunk",
@@ -5514,7 +5691,8 @@
       "type": "ingredient",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Northlander Bow Billet",
@@ -5527,7 +5705,8 @@
       "type": "ingredient",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Northlander Catalyst Billet",
@@ -5540,7 +5719,8 @@
       "type": "ingredient",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Northlander Claymore Billet",
@@ -5553,7 +5733,8 @@
       "type": "ingredient",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Northlander Polearm Billet",
@@ -5566,7 +5747,8 @@
       "type": "ingredient",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Northlander Sword Billet",
@@ -5579,7 +5761,8 @@
       "type": "ingredient",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Dust of Azoth",
@@ -5592,7 +5775,8 @@
       "type": "ingredient",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     },
     {
       "key": "Magical Crystal Chunk",
@@ -5605,7 +5789,8 @@
       "type": "ingredient",
       "days": [],
       "obtainedFrom": [],
-      "droppedBy": []
+      "droppedBy": [],
+      "hasSiblings": false
     }
   ]
 }

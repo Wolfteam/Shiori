@@ -359,6 +359,8 @@ extension I18nExtensions on S {
         return name;
       case MaterialFilterType.rarity:
         return rarity;
+      case MaterialFilterType.grouped:
+        return grouped;
       default:
         throw Exception('Invalid material filter type = $type');
     }

@@ -85,41 +85,7 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   List<CharacterCardModel> getCharactersForCard() {
-    return _charactersFile.characters.map(
-      (e) {
-        final translation = getCharacterTranslation(e.key);
-
-        //The reduce is to take the material with the biggest level of each type
-        final multiTalentAscensionMaterials = e.multiTalentAscensionMaterials ?? <CharacterFileMultiTalentAscensionMaterialModel>[];
-
-        final ascensionMaterial =
-            e.ascensionMaterials.isNotEmpty ? e.ascensionMaterials.reduce((current, next) => current.level > next.level ? current : next) : null;
-
-        final talentMaterial = e.talentAscensionMaterials.isNotEmpty
-            ? e.talentAscensionMaterials.reduce((current, next) => current.level > next.level ? current : next)
-            : multiTalentAscensionMaterials.isNotEmpty
-                ? multiTalentAscensionMaterials.expand((e) => e.materials).reduce((current, next) => current.level > next.level ? current : next)
-                : null;
-
-        final materials =
-            (ascensionMaterial?.materials ?? <ItemAscensionMaterialModel>[]) + (talentMaterial?.materials ?? <ItemAscensionMaterialModel>[]);
-
-        final quickMaterials = _getMaterialsToUse(materials);
-
-        return CharacterCardModel(
-          key: e.key,
-          elementType: e.elementType,
-          logoName: Assets.getCharacterPath(e.image),
-          materials: quickMaterials.map((m) => m.fullImagePath).toList(),
-          name: translation.name,
-          stars: e.rarity,
-          weaponType: e.weaponType,
-          isComingSoon: e.isComingSoon,
-          isNew: e.isNew,
-          roleType: e.role,
-        );
-      },
-    ).toList();
+    return _charactersFile.characters.map((e) => _toCharacterForCard(e)).toList();
   }
 
   @override
@@ -180,41 +146,13 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   List<WeaponCardModel> getWeaponsForCard() {
-    return _weaponsFile.weapons.map(
-      (e) {
-        final translation = getWeaponTranslation(e.key);
-        return WeaponCardModel(
-          key: e.key,
-          baseAtk: e.atk,
-          image: e.fullImagePath,
-          name: translation.name,
-          rarity: e.rarity,
-          type: e.type,
-          subStatType: e.secondaryStat,
-          subStatValue: e.secondaryStatValue,
-          isComingSoon: e.isComingSoon,
-          locationType: e.location,
-        );
-      },
-    ).toList();
+    return _weaponsFile.weapons.map((e) => _toWeaponForCard(e)).toList();
   }
 
   @override
   WeaponCardModel getWeaponForCardByImg(String image) {
     final weapon = _weaponsFile.weapons.firstWhere((e) => e.image == image);
-    final translation = getWeaponTranslation(weapon.key);
-    return WeaponCardModel(
-      key: weapon.key,
-      baseAtk: weapon.atk,
-      image: weapon.fullImagePath,
-      name: translation.name,
-      rarity: weapon.rarity,
-      type: weapon.type,
-      subStatType: weapon.secondaryStat,
-      subStatValue: weapon.secondaryStatValue,
-      isComingSoon: weapon.isComingSoon,
-      locationType: weapon.location,
-    );
+    return _toWeaponForCard(weapon);
   }
 
   @override
@@ -246,37 +184,13 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   List<ArtifactCardModel> getArtifactsForCard() {
-    return _artifactsFile.artifacts.map(
-      (e) {
-        final translation = _translationFile.artifacts.firstWhere((t) => t.key == e.key);
-        return ArtifactCardModel(
-          key: e.key,
-          name: translation.name,
-          image: e.fullImagePath,
-          rarity: e.rarityMax,
-          bonus: translation.bonus.map((t) {
-            final pieces = e.bonus.firstWhere((b) => b.key == t.key).pieces;
-            return ArtifactCardBonusModel(pieces: pieces, bonus: t.bonus);
-          }).toList(),
-        );
-      },
-    ).toList();
+    return _artifactsFile.artifacts.map((e) => _toArtifactForCard(e)).toList();
   }
 
   @override
   ArtifactCardModel getArtifactForCardByImg(String image) {
     final artifact = _artifactsFile.artifacts.firstWhere((a) => a.image == image);
-    final translation = _translationFile.artifacts.firstWhere((t) => t.key == artifact.key);
-    return ArtifactCardModel(
-      key: artifact.key,
-      name: translation.name,
-      image: artifact.fullImagePath,
-      rarity: artifact.rarityMax,
-      bonus: translation.bonus.map((t) {
-        final pieces = artifact.bonus.firstWhere((b) => b.key == t.key).pieces;
-        return ArtifactCardBonusModel(pieces: pieces, bonus: t.bonus);
-      }).toList(),
-    );
+    return _toArtifactForCard(artifact);
   }
 
   @override
@@ -450,11 +364,8 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<MaterialCardModel> getAllMaterials() {
-    return _materialsFile.materials.map((e) {
-      final translation = _translationFile.materials.firstWhere((m) => m.key == e.key);
-      return MaterialCardModel(key: e.key, image: e.fullImagePath, rarity: e.rarity, type: e.type, name: translation.name);
-    }).toList();
+  List<MaterialCardModel> getAllMaterialsForCard() {
+    return _materialsFile.materials.map((e) => _toMaterialForCard(e)).toList();
   }
 
   @override
@@ -560,6 +471,33 @@ class GenshinServiceImpl implements GenshinService {
         .toList();
   }
 
+  @override
+  MaterialCardModel getMaterialForCard(String key) {
+    final material = _materialsFile.materials.firstWhere((m) => m.key == key);
+    return _toMaterialForCard(material);
+  }
+
+  @override
+  CharacterCardModel getCharacterForCard(String key) {
+    final character = _charactersFile.characters.firstWhere((el) => el.key == key);
+    return _toCharacterForCard(character);
+  }
+
+  @override
+  WeaponCardModel getWeaponForCard(String key) {
+    final weapon = _weaponsFile.weapons.firstWhere((el) => el.key == key);
+    return _toWeaponForCard(weapon);
+  }
+
+  @override
+  List<String> getUpcomingCharactersKeys() => _charactersFile.characters.where((el) => el.isComingSoon).map((e) => e.key).toList();
+
+  @override
+  List<String> getUpcomingWeaponsKeys() => _weaponsFile.weapons.where((el) => el.isComingSoon).map((e) => e.key).toList();
+
+  @override
+  List<String> getUpcomingKeys() => getUpcomingCharactersKeys() + getUpcomingWeaponsKeys();
+
   List<ItemAscensionMaterialModel> _getMaterialsToUse(
     List<ItemAscensionMaterialModel> materials, {
     List<MaterialType> ignore = const [MaterialType.currency],
@@ -572,5 +510,83 @@ class GenshinServiceImpl implements GenshinService {
     }
 
     return mp.values.toList();
+  }
+
+  CharacterCardModel _toCharacterForCard(CharacterFileModel character) {
+    final translation = getCharacterTranslation(character.key);
+
+    //The reduce is to take the material with the biggest level of each type
+    final multiTalentAscensionMaterials = character.multiTalentAscensionMaterials ?? <CharacterFileMultiTalentAscensionMaterialModel>[];
+
+    final ascensionMaterial = character.ascensionMaterials.isNotEmpty
+        ? character.ascensionMaterials.reduce((current, next) => current.level > next.level ? current : next)
+        : null;
+
+    final talentMaterial = character.talentAscensionMaterials.isNotEmpty
+        ? character.talentAscensionMaterials.reduce((current, next) => current.level > next.level ? current : next)
+        : multiTalentAscensionMaterials.isNotEmpty
+            ? multiTalentAscensionMaterials.expand((e) => e.materials).reduce((current, next) => current.level > next.level ? current : next)
+            : null;
+
+    final materials =
+        (ascensionMaterial?.materials ?? <ItemAscensionMaterialModel>[]) + (talentMaterial?.materials ?? <ItemAscensionMaterialModel>[]);
+
+    final quickMaterials = _getMaterialsToUse(materials);
+
+    return CharacterCardModel(
+      key: character.key,
+      elementType: character.elementType,
+      logoName: Assets.getCharacterPath(character.image),
+      materials: quickMaterials.map((m) => m.fullImagePath).toList(),
+      name: translation.name,
+      stars: character.rarity,
+      weaponType: character.weaponType,
+      isComingSoon: character.isComingSoon,
+      isNew: character.isNew,
+      roleType: character.role,
+    );
+  }
+
+  WeaponCardModel _toWeaponForCard(WeaponFileModel weapon) {
+    final translation = getWeaponTranslation(weapon.key);
+    return WeaponCardModel(
+      key: weapon.key,
+      baseAtk: weapon.atk,
+      image: weapon.fullImagePath,
+      name: translation.name,
+      rarity: weapon.rarity,
+      type: weapon.type,
+      subStatType: weapon.secondaryStat,
+      subStatValue: weapon.secondaryStatValue,
+      isComingSoon: weapon.isComingSoon,
+      locationType: weapon.location,
+    );
+  }
+
+  ArtifactCardModel _toArtifactForCard(ArtifactFileModel artifact) {
+    final translation = _translationFile.artifacts.firstWhere((t) => t.key == artifact.key);
+    return ArtifactCardModel(
+      key: artifact.key,
+      name: translation.name,
+      image: artifact.fullImagePath,
+      rarity: artifact.rarityMax,
+      bonus: translation.bonus.map((t) {
+        final pieces = artifact.bonus.firstWhere((b) => b.key == t.key).pieces;
+        return ArtifactCardBonusModel(pieces: pieces, bonus: t.bonus);
+      }).toList(),
+    );
+  }
+
+  MaterialCardModel _toMaterialForCard(MaterialFileModel material) {
+    final translation = getMaterialTranslation(material.key);
+    return MaterialCardModel.item(
+      key: material.key,
+      image: material.fullImagePath,
+      rarity: material.rarity,
+      type: material.type,
+      name: translation.name,
+      level: material.level,
+      hasSiblings: material.hasSiblings,
+    );
   }
 }

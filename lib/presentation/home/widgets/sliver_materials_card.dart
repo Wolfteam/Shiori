@@ -13,6 +13,7 @@ class SliverMaterialsCard extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     return SliverCardItem(
+      iconToTheLeft: true,
       onClick: _gotoMaterialsPage,
       icon: Image.asset(Assets.getOtherMaterialPath('bag.png'), width: 60, height: 60, color: theme.accentColor),
       children: [
@@ -27,6 +28,9 @@ class SliverMaterialsCard extends StatelessWidget {
 
   Future<void> _gotoMaterialsPage(BuildContext context) async {
     context.read<MaterialsBloc>().add(const MaterialsEvent.init());
-    await Navigator.push(context, MaterialPageRoute(builder: (_) => MaterialsPage()));
+    final route = MaterialPageRoute(builder: (_) => const MaterialsPage());
+    await Navigator.push(context, route);
+    await route.completed;
+    context.read<MaterialsBloc>().add(const MaterialsEvent.close());
   }
 }
