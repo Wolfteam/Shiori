@@ -21,7 +21,10 @@ class SliverGameCodesCard extends StatelessWidget {
   }
 
   Future<void> _showGameCodesDialog(BuildContext context) async {
-    context.read<GameCodesBloc>().add(const GameCodesEvent.opened());
-    await Navigator.push(context, MaterialPageRoute(fullscreenDialog: true, builder: (ctx) => const GameCodesPage()));
+    context.read<GameCodesBloc>().add(const GameCodesEvent.init());
+    final route = MaterialPageRoute(fullscreenDialog: true, builder: (ctx) => const GameCodesPage());
+    await Navigator.push(context, route);
+    await route.completed;
+    context.read<GameCodesBloc>().add(const GameCodesEvent.close());
   }
 }
