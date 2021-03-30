@@ -4,8 +4,8 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:genshindb/domain/enums/enums.dart';
+import 'package:genshindb/domain/services/device_info_service.dart';
 import 'package:genshindb/domain/services/settings_service.dart';
-import 'package:package_info/package_info.dart';
 
 import '../bloc.dart';
 
@@ -15,10 +15,11 @@ part 'settings_state.dart';
 
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   final SettingsService _settingsService;
+  final DeviceInfoService _deviceInfoService;
   final MainBloc _mainBloc;
   final HomeBloc _homeBloc;
 
-  SettingsBloc(this._settingsService, this._mainBloc, this._homeBloc) : super(const SettingsState.loading());
+  SettingsBloc(this._settingsService, this._deviceInfoService, this._mainBloc, this._homeBloc) : super(const SettingsState.loading());
 
   _LoadedState get currentState => state as _LoadedState;
 
@@ -30,12 +31,11 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
       init: (_) async {
         await _settingsService.init();
         final settings = _settingsService.appSettings;
-        final packageInfo = await PackageInfo.fromPlatform();
         return SettingsState.loaded(
           currentTheme: settings.appTheme,
           currentAccentColor: settings.accentColor,
           currentLanguage: settings.appLanguage,
-          appVersion: packageInfo.version,
+          appVersion: _deviceInfoService.version,
           showCharacterDetails: settings.showCharacterDetails,
           showWeaponDetails: settings.showWeaponDetails,
           serverResetTime: settings.serverResetTime,

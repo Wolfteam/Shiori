@@ -5,6 +5,7 @@ import 'package:flutter_user_agent/flutter_user_agent.dart';
 import 'application/bloc.dart';
 import 'domain/services/calculator_service.dart';
 import 'domain/services/data_service.dart';
+import 'domain/services/device_info_service.dart';
 import 'domain/services/genshin_service.dart';
 import 'domain/services/locale_service.dart';
 import 'domain/services/logging_service.dart';
@@ -129,7 +130,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (ctx) {
             final settingsService = getIt<SettingsService>();
-            return SettingsBloc(settingsService, ctx.read<MainBloc>(), ctx.read<HomeBloc>());
+            final deviceInfoService = getIt<DeviceInfoService>();
+            return SettingsBloc(settingsService, deviceInfoService, ctx.read<MainBloc>(), ctx.read<HomeBloc>());
           },
         ),
         BlocProvider(
