@@ -22,6 +22,7 @@ class MonstersPage extends StatelessWidget {
         return state.map(
           loading: (_) => const Loading(),
           loaded: (state) => SliverScaffoldWithFab(
+            appbar: AppBar(title: Text(s.monsters)),
             slivers: [
               SliverPageFilter(
                 search: state.search,
