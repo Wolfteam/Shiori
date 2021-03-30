@@ -24,7 +24,7 @@ class CircleCharacter extends StatelessWidget {
     return CircleItem(
       image: image,
       forDrag: forDrag,
-      onTap: (_) => _gotoCharacterPage(context),
+      onTap: (img) => onTap != null ? onTap(img) : _gotoCharacterPage(context),
       radius: radius,
     );
   }

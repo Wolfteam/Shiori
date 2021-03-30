@@ -25,7 +25,7 @@ class CircleWeapon extends StatelessWidget {
       image: image,
       radius: radius,
       forDrag: forDrag,
-      onTap: (_) => _gotoWeaponPage(context),
+      onTap: (img) => onTap != null ? onTap(img) : _gotoWeaponPage(context),
     );
   }
 
