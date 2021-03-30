@@ -22,7 +22,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
       _deviceInfo = {
         'Model': androidInfo.model,
         'OsVersion': '${androidInfo.version.sdkInt}',
-        'AppVersion': '${packageInfo.version}_${packageInfo.buildNumber}'
+        'AppVersion': '${packageInfo.version}+${packageInfo.buildNumber}'
       };
     } catch (ex) {
       _deviceInfo = {'Model': 'N/A', 'OsVersion': 'N/A', 'AppVersion': 'N/A'};
