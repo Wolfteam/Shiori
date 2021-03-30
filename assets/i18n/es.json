@@ -5809,6 +5809,11 @@
       "key": "Original Resin",
       "name": "Original Resin",
       "description": "Used to vitalize Petrified Trees and Ley Line Blossoms, allowing access to the treasures they hold. Energy regenerates over time.\nIt is said that the roots of all the Irminsul trees and blossoms in the world are intertwined at the deepest, most hidden place in the earth, and that the pattern the root system makes defines the Ley Lines of the world."
+    },
+    {
+      "key": "Primogem",
+      "name": "Primogem",
+      "description": "A primordial crystalline gem that's beyond the mundane world. Shines with the condensed hopes and dreams of universes that once were."
     }
   ],
   "debuffs": [
