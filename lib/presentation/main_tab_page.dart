@@ -54,6 +54,12 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
   }
 
   @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return RateMyAppBuilder(
       rateMyApp: RateMyApp(minDays: 7, minLaunches: 10, remindDays: 7, remindLaunches: 10),
@@ -94,7 +100,7 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
           showUnselectedLabels: true,
           items: _buildBottomNavBars(),
           type: BottomNavigationBarType.fixed,
-          onTap: (newIndex) => context.read<MainTabBloc>().add(MainTabEvent.goToTab(index: newIndex)),
+          onTap: _gotoTab,
         ),
       ),
     );
@@ -110,6 +116,8 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
       BottomNavigationBarItem(label: s.map, icon: const Icon(Icons.map)),
     ];
   }
+
+  void _gotoTab(int newIndex) => context.read<MainTabBloc>().add(MainTabEvent.goToTab(index: newIndex));
 
   void _changeCurrentTab(int index) {
     FocusScope.of(context).removeFocus();

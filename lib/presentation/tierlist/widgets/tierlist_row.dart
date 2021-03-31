@@ -25,6 +25,7 @@ class TierListRow extends StatelessWidget {
   final bool isUpButtonEnabled;
   final bool isDownButtonEnabled;
   final int numberOfRows;
+  final bool isTheLastRow;
 
   const TierListRow({
     Key key,
@@ -33,6 +34,7 @@ class TierListRow extends StatelessWidget {
     @required this.color,
     @required this.images,
     @required this.numberOfRows,
+    @required this.isTheLastRow,
     this.showButtons = true,
     this.isUpButtonEnabled = true,
     this.isDownButtonEnabled = true,
@@ -54,7 +56,13 @@ class TierListRow extends StatelessWidget {
                   child: Container(
                     constraints: const BoxConstraints(minHeight: 120),
                     color: color,
-                    child: Center(child: Text(title, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24))),
+                    child: Center(
+                      child: Text(
+                        title,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 24),
+                      ),
+                    ),
                   ),
                 ),
                 Flexible(
@@ -102,14 +110,16 @@ class TierListRow extends StatelessWidget {
                               value: TierListRowOptionsType.rename,
                               child: _buildOption(Icons.edit, s.rename),
                             ),
-                            PopupMenuItem<TierListRowOptionsType>(
-                              value: TierListRowOptionsType.delete,
-                              child: _buildOption(Icons.delete, s.deleteRow),
-                            ),
-                            PopupMenuItem<TierListRowOptionsType>(
-                              value: TierListRowOptionsType.clear,
-                              child: _buildOption(Icons.clear_all, s.clearRow),
-                            ),
+                            if (!isTheLastRow)
+                              PopupMenuItem<TierListRowOptionsType>(
+                                value: TierListRowOptionsType.delete,
+                                child: _buildOption(Icons.delete, s.deleteRow),
+                              ),
+                            if (images.isNotEmpty)
+                              PopupMenuItem<TierListRowOptionsType>(
+                                value: TierListRowOptionsType.clear,
+                                child: _buildOption(Icons.clear_all, s.clearRow),
+                              ),
                             PopupMenuItem<TierListRowOptionsType>(
                               value: TierListRowOptionsType.changeColor,
                               child: _buildOption(Icons.color_lens_outlined, s.changeColor),
@@ -176,6 +186,7 @@ class TierListRow extends StatelessWidget {
         index: index,
       ),
     );
+    context.read<TierListFormBloc>().add(const TierListFormEvent.close());
   }
 
   Future<void> _showColorPicker(BuildContext context) async {
