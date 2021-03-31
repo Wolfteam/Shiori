@@ -2548,97 +2548,97 @@
     {
       "key": "Rosaria",
       "name": "Розария",
-      "description": "A nun who, outside of her garb, seems nothing at all like a person of the cloth. Known for her sharp, cold words and manner, she often works alone.",
+      "description": "Кроме её одеяния ничто не напоминает о её принадлежности церкви. Известна своими холодными речами и резкими поступками. Всегда действует одна.",
       "skills": [
         {
           "key": "s1",
-          "title": "Spear of Worship",
+          "title": "Копьё церкви",
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to five consecutive spear strikes.",
+              "description": "До пяти ударов копьём.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.",
+              "description": "Выпад, наносящий урон противникам на пути, на который тратится определённое количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Ravaging Confession",
-          "description": "Rosaria swiftly shifts her position to appear behind her opponent, then stabs and slashes them with her polearm, dealing Cyro DMG.\nThis ability cannot be used to travel behind opponents of a larger build.",
+          "title": "Казнящая исповедь",
+          "description": "Розария стремительно передвигается за спину противника и пронзает его своим копьём, нанося Крио урон.\nЭта способность не позволяет оказаться за спиной у противников крупного телосложения.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Rites of Termination",
-          "description": "Rosaria's unique take on this prayer ritual: First, she swings her weapon to slash surrounding opponents; then, she summons a frigid Ice Lance that strikes the ground. Both actions deal Cryo DMG.\nWhile active, the Ice Lance periodically releases a blast of cold air, dealing Cryo DMG to surrounding opponents.",
+          "title": "Обряд кончины",
+          "description": "Авторская молитва Розарии. После кругового взмаха своим оружием она вонзает Ледяное копьё в землю. Обе этих атаки наносят Крио урон.\nПока активно, Ледяное копьё периодически выпускает холодный воздух, который наносит Крио урон окружающим врагам.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Night Walk",
-          "description": "At night (18:00–6:00), increases the Movement SPD of your own party members by 10%.\nDoes not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects.",
+          "title": "Путь в ночи",
+          "description": "Увеличивает скорость передвижения персонажей отряда в ночное время (18:00-06:00) на 10%.\nВ подземельях, Витой Бездне и подземельях Наказания навык не действует, и со схожими пассивными талантами не суммируется.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Extracted Confession",
-          "description": "When Rosaria strikes an opponent from behind using Ravaging Confession, Rosaria's CRIT Rate increases by 12% for 5s.",
+          "title": "Покаяние призрака",
+          "description": "Атаки со спины навыка Казнящая исповедь увеличивают шанс крит. попадания Розарии на 12% в течение 5 сек.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Shadow Samaritan",
-          "description": "Casting Rites of Termination increases CRIT Rate of all nearby party members (except Rosaria herself) by 15% of Rosaria's CRIT Rate for 10s.\nCRIT Rate Bonus gained this way cannot exceed 15%.",
+          "title": "Поддерживающая тьма",
+          "description": "Активация навыка Заключительный обряд увеличивает шанс крит. попадания всех членов отряда (кроме самой Розарии) на 15% от шанса крит. попадания Розарии в течение 10 сек.\nДобавленный таким образом шанс крит. попадания не может превышать 15%.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Unholy Revelation",
-          "description": "When Rosaria deals a CRIT Hit, her ATK SPD increases by 10% and her Normal Attack DMG increases by 10% for 4s.",
+          "title": "Откровения грешника",
+          "description": "При критическом попадании скорость и урон обычной атаки Розарии повышается на 10% в течение 4 сек.",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Land Without Promise",
-          "description": "The duration of the Ice Lance created by Rites of Termination is increased by 4s.",
+          "title": "Несчастная земля",
+          "description": "Увеличивает длительность существования Ледяного копья навыка **Обряд кончины** на 4 сек.",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Sacrament of Penance",
-          "description": "Increases the Level of Ravaging Confessionby 3. Maximum upgrade level is 15.",
+          "title": "Таинство покаяния",
+          "description": "Увеличивает уровень навыка **Казнящая исповедь** на 3.\nМакс. Ур.: 15",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Amazing Disgrace",
-          "description": "Ravaging Confession's Crit Hits regenerate 5 Energy for Rosaria. Can only be triggered once each time Ravaging Confession is cast.",
+          "title": "Благодатные муки",
+          "description": "Крит. попадания навыка **Казнящая исповедь** восстанавливают 5 ед. энергии Розарии.\nМожет возникнуть не более 1 раза за каждое использование навыка Казнящая исповедь.",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Extreme Unction",
+          "title": "Предсмертная молитва",
           "description": "Increases the Level of Rites of Termination by 3. Maximum upgrade level is 15.",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Divine Retribution",
-          "description": "Rites of Termination' attack decreases opponents' Physical RES by 20% for 10s.",
+          "title": "Божественный суд",
+          "description": "Атаки навыка **Обряд кончины** понижают физ. сопротивление врагов на 20% в течение 10 сек.",
           "descriptions": []
         }
       ]
@@ -3871,8 +3871,8 @@
     {
       "key": "Ebony Bow",
       "name": "Эбеновый лук",
-      "description": "A longbow made of ebony wood with stiffer limbs than ordinary bows. It is also a far more powerful weapon.",
-      "refinement": "Increases DMG against mechanoid Ruin enemies by {{0}}%"
+      "description": "Лук, сделанный из эбенового дерева. Плечи этого лука намного крепче обычного. Он и сам по себе намного мощнее.",
+      "refinement": "Увеличивает урон по механическим защитникам руин на {{0}}%"
     },
     {
       "key": "Messenger",
@@ -3912,9 +3912,9 @@
     },
     {
       "key": "Alley Hunter",
-      "name": "Alley Hunter",
-      "description": "An intricate, opulent longbow. It once belonged to a gentleman thief who was never caught.",
-      "refinement": "While the character equipped with this weapon is in the party but not on the field, their DMG increases by {{0}}% every second up to a max of {{1}}%. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by {{2}}% per second until it reaches 0%."
+      "name": "Охотник во тьме",
+      "description": "Мастерски исполненный роскошный лук. Принадлежал он благородному вору, которого никто так и не поймал.",
+      "refinement": "Увеличивает урон экипированного этим оружием персонажа, когда тот не на поле боя, на {{0}}% в сек. Таким способом макс. количество наносимого урона может быть увеличено до {{1}}%. Через 4 сек. после появления персонажа на поле боя бонус повышения урона от данного эффекта начнёт убывать по {{2}}% в сек., пока не опустится до 0%."
     },
     {
       "key": "Blackcliff Warbow",
@@ -3978,9 +3978,9 @@
     },
     {
       "key": "Dreams of Dragonfell",
-      "name": "Dreams of Dragonfell",
-      "description": "A great bow that once shot clean through a giant dragon. Once released, the impetus of its bowstring resembles a peal of thunder.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "name": "Мечты Драконьей погибели",
+      "description": "Отличный лук, который однажды прострелил гигантского дракона. После того, как его выпустили, сила его тетивы напоминает раскат грома.",
+      "refinement": "Увеличивает прочность щита на {{0}}%. При попаданий по противникам увеличивает Атаку на {{1}}% на 8 секунд. Эффект может складываться до 5 раз. Возникает только раз в 0,3 сек. Во время пока персонаж защищен щитом, эффект увеличения АТК увеличивается на 100%."
     },
     {
       "key": "Dull Blade",
@@ -4134,9 +4134,9 @@
     },
     {
       "key": "Amber Bead",
-      "name": "Amber Bead",
-      "description": "A catalyst carved out of amber that gains a warm halo under the sun.",
-      "refinement": "Normal Attack hits increase all Elemental DMG by {{0}}% for 6s. Max 2 stacks."
+      "name": "Янтарная жемчужина",
+      "description": "Катализатор, вырезанный из янтаря. Приятно светится на солнце.",
+      "refinement": "Попадания Обычной атакой увеличивают весь Элементальный урон на {{0}}% в течение 6 сек. Может складываться до 2 раз."
     },
     {
       "key": "Emerald Orb",
@@ -4284,9 +4284,9 @@
     },
     {
       "key": "Quartz",
-      "name": "Quartz",
-      "description": "A simple but heavy greatsword made of polished black quartz with a golden gilt. It has an air of elegance and dignity about it.",
-      "refinement": "Upon causing an Overloaded, Melt, Burning, Vaporize, or a Pyro-infused Swirl reaction, ATK is increased by {{0}}% for 12s."
+      "name": "Кварц",
+      "description": "Довольно простой и тяжёлый двуручный меч, сделанный из полированного чёрного кварца с небольшой позолотой. Показывает элегантность и достоинство владельца.",
+      "refinement": "Увеличивает силу атаки на {{0}}% в течение 12 сек при нанесении статусов Перегрузка, Таяние, Горение, Пар или Пиро рассеивание."
     },
     {
       "key": "Skyrider Greatsword",
@@ -4471,7 +4471,7 @@
     {
       "key": "Vortex Vanquisher",
       "name": "Покоритель вихря",
-      "description": "This sharp polearm can seemingly pierce through anything. When swung, one can almost see the rift it tears in the air.",
+      "description": "Острое копьё, которое, похоже, может пронзить что угодно. При взмахе можно увидеть, будто в месте, где наконечник касается воздуха, появляется брешь.",
       "refinement": "Увеличивает прочность щита на {{0}}%. При попадании увеличивает силу атаки на {{1}}% в течение 8 сек. Эффект может складываться до 5 раз и возникнуть раз в 0.3 сек. Кроме того, под защитой щита бонус силы атаки данного эффекта увеличивается на 100%."
     },
     {
@@ -4959,77 +4959,77 @@
     {
       "key": "FreedomA",
       "name": "Учения о «Свободе»",
-      "description": "Freedom is the spirit of the land of the wind.\nThe freedom to live is one of such. It is the freedom to live freely and healthily without concerns of one's own safety."
+      "description": "Свобода - это дух царства ветров.\nЖизнь без забот о здоровье и благополучии."
     },
     {
       "key": "FreedomB",
       "name": "Указания о «Свободе»",
-      "description": "Freedom is the spirit of the land of the wind.\nThe freedom of travel is one of such. It is the freedom to traverse the land freely without being obstructed."
+      "description": "Свобода - это дух царства ветров.\nСвобода вольных путешествий, не вызывающих страх."
     },
     {
       "key": "FreedomC",
       "name": "Философия о «Свободе»",
-      "description": "Freedom is the spirit of the land of the wind.\nTo sing is one such freedom. To sing on the land created by the Anemo Archon is to send your heart away with the song on the wind."
+      "description": "Свобода - это дух царства ветров.\nСвобода песен на землях Анемо Архонта. Можно отлучить свое сердце вместе с песней на ветру."
     },
     {
       "key": "ProsperityA",
       "name": "Учения о «Процветании»",
-      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is the blessing of Liyue, it is the foundation of the great city built by the gods and the people of Liyue, and it is the source of the peace and safety of the land."
+      "description": "Процветание - это стремление царства земли.\nПроцветание - это благословление Ли Юэ, великого города, основанного богами и людьми, это источник мира на земле."
     },
     {
       "key": "ProsperityB",
       "name": "Указания о «Процветании»",
-      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is the promise made by Liyue to its children: To repay the hard-working laborers with enough gold to brighten up this land."
+      "description": "Процветание - это стремление царства земли.\nПроцветание - это обещание Ли Юэ перед своими детьми - вознаградить усердие рабочих достаточным количеством золота для того, чтобы украсить эти земли."
     },
     {
       "key": "ProsperityC",
       "name": "Философия о «Процветании»",
-      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is Liyue's past, present, and future. This prosperity is unmatched and unobtainable by any other nations — it all belongs to Liyue and its inhabitants."
+      "description": "Процветание - это стремление царства земли.\nПроцветание - это прошлое, настоящее и будущее Ли Юэ. Ли Юэ и её дети довольствуются процветанием, не имеющим себе равных и недостижимым для других королевств."
     },
     {
       "key": "DilligenceA",
       "name": "Учение об «Усердии»",
-      "description": "Industriousness is the foundation of the land of Geo.\nDiligence is having the bravery and the strength to conquer mountains and seas and to pursue gold and prosperity through honest, hard work."
+      "description": "Трудолюбие - это фундамент царства земли.\nТрудолюбие - это покорение гор и морей, стремление к процветанию, золотой храбрости и власти честной, тяжелой работой."
     },
     {
       "key": "DilligenceB",
       "name": "Указание об «Усердии»",
-      "description": "Industriousness is the foundation of the land of Geo.\nIndustriousness is the catalyst that flows in the blood of the people of Liyue, able to turn rocks into gold. It is what lies behind the greatness of its great commercial port."
+      "description": "Трудолюбие - это фундамент царства земли.\nТрудолюбие - это катализатор, который течёт в крови народа Ли Юэ, способный превращать камень в золото. Это то, что придаёт величия торговому порту."
     },
     {
       "key": "DilligenceC",
       "name": "Философия об «Усердии»",
-      "description": "Industriousness is the foundation of the land of Geo.\nIndustriousness is believing in one's own ability to earn a place in the land of the gods through sweat, wisdom, and power."
+      "description": "Трудолюбие - это фундамент царства земли.\nТрудолюбие - это вера в свою способность заработать место в царстве богов потом, мудростью и силой."
     },
     {
       "key": "ResistanceA",
       "name": "Учение о «Борьбе»",
-      "description": "Resistance is the backbone of the land of the wind.\nThe history of Mondstadt is one of resistances. People rose up to prevent past conflicts from ever being forgotten, like sprouts breaking through the soil, like the eternal wind eroding through stone walls."
+      "description": "Сопротивление - это основа царства ветров.\nИстория Мондштадта - это история сопротивления. Люди восстали, чтобы не допустить забытья конфликтов прошлого. Они словно ростки, прорывающиеся сквозь почву, словно вечный ветер, разрушающий каменные стены."
     },
     {
       "key": "ResistanceB",
-      "name": "Учказание о «Борьбе»",
-      "description": "Resistance is the backbone of the city of Wind.\nThe history of Mondstadt is one of resistances. People rose up to grant the citizens of Mondstadt the freedom they now enjoy, like the Anemo Archon blowing away the snow, or like Vennessa rising up to fight."
+      "name": "Указание о «Борьбе»",
+      "description": "Сопротивление - это основа царства ветров..\nИстория Мондштадта - это история сопротивления. Люди восстали, чтобы отвоевать свою свободу. Они словно Анемо Архонт, раздувающий снега, словно Венесса, которая поднимается с колен, чтобы сражаться."
     },
     {
       "key": "ResistanceC",
       "name": "Философия о «Борьбе»",
-      "description": "Resistance is the backbone of the land of the wind.\nThe history of Mondstadt is one of resistances. People rose up to allow the future Mondstadt's poetry to freely be that of the wind and be spread across the land."
+      "description": "Сопротивление - это основа царства ветров.\nTИстория Мондштадта - это история сопротивления. Люди восстали, чтобы поэзия и песни будущего Мондштадта летели по ветру свободы и распространились по всей земле."
     },
     {
       "key": "BalladA",
       "name": "Учения о «Поэзии»",
-      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of beautiful feelings. On a beautiful day, the breezes carry with them poetry that touches the heart of people like the wind caressing the leaves."
+      "description": "Поэзия - это душа царства ветров.\nПоэзия - это проявление прекрасных чувств. Приятным летним днем ветер несет слова песен и стихов, которые касаются людских сердец, как ветер, ласкающий листья деревьев."
     },
     {
       "key": "BalladB",
       "name": "Указания о «Поэзии»",
-      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of the will to encourage. In the dark days, the gales in the streets and alleyways whisper words of fury, like the battle drums, like the low rumbling before the storm."
+      "description": "Поэзия - это душа царства ветров.\nПоэзия - это проявление желания воодушевлять. Тёмным летним днём злой ветер на улицах и в переулках шепчет слова ярости, словно бой военных барабанов, словно грохот бури."
     },
     {
       "key": "BalladC",
       "name": "Философия о «Поэзии»",
-      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of the desire to spread the word. Though nothing is eternal, though nothing will be the same, the wind's poetry will still spread beyond the skies, the land, the seas to every corner of the world."
+      "description": "Поэзия - это душа царства ветров.\nПоэзия - это проявление желания распространять слово. Ничто не вечно и ничего не будет прежним, но только поэзия ветра будет вечно лететь по небесам, земле и морям во все уголки мира."
     },
     {
       "key": "GoldA",
