@@ -17,7 +17,7 @@
             },
             {
               "key": "a2",
-              "description": "Consuma una certa quantità di Stamina perper scatenare 2 fendenti rapidi.",
+              "description": "Consuma una certa quantità di Stamina per scatenare 2 fendenti rapidi.",
               "descriptions": []
             },
             {
@@ -547,26 +547,26 @@
             {
               "key": "a2",
               "description": "Quando viene scatenato, produce diversi effetti a seconda del livello di Carica.",
-              "secondDescription": "Bennett non subisce danno dall'esplosione.",
+              "secondDescription": "Bennett non prende danno dall'esplosione.",
               "descriptions": [
                 "Livello 1: Colpisce due volte infliggendo Pyro DMG e scaglia via i nemici.",
-                "Livello 2: Unleashes 3 consecutive attacks che infligge impressive Pyro DMG, but the last attack innesca an explosion that launches both Bennet and the enemy."
+                "Livello 2: Scatena 3 attacchi consecutivi che infliggono notevoli Pyro DMG, ma l'ultimo attacco innesca un'esplosione che lancia sia Bennet che il nemico."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Fantastic Voyage",
-          "description": "Bennett leaps towards the enemy and performs a Attacco in Picchiata, Infliggere Pyro DMG, creating an Inspiration Field.",
+          "title": "Viaggio Fantastico",
+          "description": "Bennett salta verso il nemico e precipita sul nemico attaccando, infliggendo Pyro DMG, creando un Inspiration Field.",
           "abilities": [
             {
               "name": "Inspiration Field",
               "description": null,
               "descriptions": [
-                "If the health of a character in the circle is equal to or falls below 70%, their health will continuously regenerate. Regeneration scales based on Bennett’s Max HP.",
-                "If the health of a character in the circle is higher than 70%, they gain an ATK Bonus that is based on Bennett’s Base ATK.",
-                "Applica the Pyro element to characters within the Field."
+                "Se la salute di un personaggio nel cerchio è minore o uguale al 70%, la sua salute si rigenererà continuamente. La rigenerazione scala in base al Max HP di Bennett.",
+                "e la salute di un personaggio nel cerchio è maggiore del 70%, il personaggio ottiene un ATK Bonus basato sul Base ATK di Bennett.",
+                "Applica il Pyro element ai personaggi nel Field."
               ]
             }
           ]
@@ -575,66 +575,66 @@
       "passives": [
         {
           "key": "p1",
-          "title": "It Should Be Safe...",
-          "description": "Quando viene schierato in una spedizione  in Mondstadt, il tempo di esplorazione si riduce del 25%.",
+          "title": "Dovrebbe essere sicuro...",
+          "description": "Quando viene schierato in una spedizione in Mondstadt, il tempo di esplorazione si riduce del 25%.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Rekindle",
-          "description": "Decreases Passion Overload’s CD by 20%.",
+          "title": "Riaccendere",
+          "description": "Riduce del 20% il CD del Sovraccarico di Passione.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Fearnaught",
-          "description": "When inside the area created by Fantastic Voyage, Passion Overload takes on the following effects:",
+          "title": "Niente paura",
+          "description": "Quando all'interno dell'area creata da Viaggio Fantastico, Sovraccarico di Passione ha i seguenti effetti:",
           "descriptions": [
-            "CD is reduced by 50%.",
-            "Bennett will not be launched by the effects of Charge Level 2."
+            "Riduce il CD del 50%.",
+            "Bennett non sarà lanciato dagli effetti di Livello 2."
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Grand Expectation",
-          "description": "Fantastic Voyage’s ATK increases no longer has an HP restriction, and gains an additional 20% Base ATK.",
+          "title": "Grandi Aspettative",
+          "description": "L'aumento di ATK  di Viaggio Fantastico non ha più una restrizione in base agli HP, e guadagna un 20% Base ATK aggiuntivo.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Impasse Conqueror",
-          "description": "When Bennett’s HP falls below 70%, his Energia Recharge is increased by 30%.",
+          "description": "Quando gli HP di Bennett scendono sotto il 70%, la sua Energy Recharge è aumentata del 30%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Unstoppable Fervor",
-          "description": "Aumenta di 3 il livello di Passion Overload by 3. Il livello massimo di upgrade è 15.",
+          "title": "Fervore Instoppabile",
+          "description": "Aumenta di 3 il livello di Sovraccarico di Passione. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Unexpected Odyssey",
-          "description": "Using a Normal Attack when executing the second attack of Passion Overload’s Charge Level 1 allows an additional attack to be performed. This additional attack does 135% of the second attack’s DMG.",
+          "title": "Odissea Inaspettata",
+          "description": "Usare un Normal Attack mentre si esegue il secondo attacco di Sovraccarico di Passione di Charge Level 1 permette di eseguire un attacco supplementare. Questo attacco aggiuntivo infligge il 135% di DMG del secondo attacco.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "True Explorer",
-          "description": "Aumenta di 3 il livello di Fantastic Voyage by 3. Il livello massimo di upgrade è 15.",
+          "title": "Vero Esploratore",
+          "description": "Aumenta di 3 il livello del Viaggio Fantastico. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Fire Ventures with Me",
-          "description": "Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage’s raggio d'azione gain a 15% Pyro DMG Bonus. Normal and Charged Attacks now do Pyro DMG.",
+          "title": "Il Fuoco fa Avventure con Me",
+          "description": "I personaggi portatori di Spada, Claymore o Lancia nel raggio di Viaggio Fantastico guadagnano un 15% di Pyro DMG Bonus. Attacchi Normali e Caricati ora infliggono Pyro DMG.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -643,7 +643,7 @@
     {
       "key": "Chongyun",
       "name": "Chongyun",
-      "description": "AUn giovane esorcista proveniente da una famiglia di esorcisti. Fa di tutto per sopprimere la sua vera e pura energia positiva.",
+      "description": "Un giovane esorcista proveniente da una famiglia di esorcisti. Fa di tutto per sopprimere la sua vera e pura energia positiva.",
       "skills": [
         {
           "key": "s1",
@@ -969,7 +969,7 @@
         {
           "key": "c6",
           "title": "Orario di Chiusura",
-          "description": "I personaggi all 'interno del raggio d' azione del Cocktail Firmato ottiene i seguenti effetti in base alla quantità di HP",
+          "description": "I personaggi all'interno del raggio d'azione del Cocktail Firmato ottiene i seguenti effetti in base alla quantità di HP:",
           "secondDescription": null,
           "descriptions": [
             "Aumenta del 30% l'Incoming Healing Bonus quando l'HP è inferiore o pari al 50%.",
@@ -1175,7 +1175,7 @@
         },
         {
           "key": "c2",
-          "title": "Il Buon Auspicio",
+          "title": "Di Buon Auspicio",
           "description": "Retaggio del Qilin ottiene 1 carica in più.",
           "secondDescription": null,
           "descriptions": []
@@ -1204,7 +1204,7 @@
         {
           "key": "c6",
           "title": "La Clemente",
-          "description": "La Prima Freccia Stella Assiderata scoccata entro 30s dall'attivazione di Retaggio del Qilin non ha bisogno di alcun caricamento. .",
+          "description": "La Prima Freccia Stella Assiderata scoccata entro 30s dall'attivazione del Retaggio del Qilin non ha bisogno di alcun caricamento.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1213,21 +1213,21 @@
     {
       "key": "HuTao",
       "name": "Hu Tao",
-      "description": "La 77sima Direttrice del Wangsheng Funeral Parlor. Lei ha preso le redini dell'attività ad un'età relativamente giovane.",
+      "description": "La 77esima direttrice del Wangsheng Funeral Parlor. Ha preso le redini dell'attività ad un'età relativamente giovane.",
       "skills": [
         {
           "key": "s1",
-          "title": "Secret Spear of Wangsheng",
+          "title": "Lancia Segreta del Wangsheng",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Esegue six consecutive spear strikes.",
+              "description": "Esegue 6 attacchi rapidi.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consuma una certa quantità di Stamina per to lunge forward, Infliggere damage to opponents along the way.",
+              "description": "Consuma una certa quantità di Stamina per eseguire un affondo lungo che infligge DMG ai nemici che incontra.",
               "descriptions": []
             },
             {
@@ -1239,97 +1239,97 @@
         },
         {
           "key": "s2",
-          "title": "Guide to Afterlife",
-          "description": "Only an unwavering flame can cleanse the impurities of this world.\nHu Tao consumes a set portion of her HP to knock the surrounding enemies back and enter the Paramita Papilio state.",
+          "title": "Guida per l'Aldilà",
+          "description": "Solo una fiamma eterna può purificare le impurità di questo mondo.\nHu Tao consuma parte della sua HP per respingere i nemici vicini ed entrare nello stato del Paramita Papilio.",
           "abilities": [
             {
               "name": "Paramita Papilio",
               "descriptions": [
-                "Increases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK.",
-                "Converts attack DMG to Pyro DMG, which cannot be overridden by any other elemental infusion.",
-                "Charged Attacks apply the Blood Blossom effect to the enemies hit.",
-                "Increases Hu Tao's resistance to interruption."
+                "Aumenta l'ATK di Hu Tao in base alla sua Max HP quando entra in questo stato. L'ATK Bonus ottenuto non può superare il 400% del Base ATK di Hu Tao.",
+                "Converte i DMG degli attacchi in Pyro DMG, che non si possono sovrascrivere con altre infusioni elementali.",
+                "Gli Attacchi Caricati applicano Fiore Sanguineo ai nemici colpiti.",
+                "All'interruzione aumenta la resistenza di Hu Tao."
               ]
             },
             {
-              "name": "Blood Blossom",
-              "description": "Enemies afflitto by Blood Blossom will take Pyro DMG every 4s. This DMG is considered Elemental Skill DMG.\nEach enemy can be afflitto by only one Blood Blossom effect at a time, and its duration may only be refreshed by Hu Tao herself.\nParamita Papilio ends when its duration is over, or Hu Tao has left the battlefield or fallen.",
+              "name": "Fiore Sanguineo",
+              "description": "I nemici afflitti dal Fiore Sanguineo subiscono Pyro DMG ogni 4s. Questo DMG è considerato Elemental Skill DMG.\nCiascun nemico può subire gli effetti del Fiore Sanguineo solo una volta, e la sua durata può essere ripristinata solo dalla stessa Hu Tao.\nParamita Papilio termina quando scade, Hu Tao muore oppure abbandona il campo di battaglia.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Spirit Soother",
-          "description": "Commands a blazing spirit to attack, Infliggere Pyro DMG in a large AoE.\nUpon striking the enemy, Rigenera a percentage of Hu Tao's Max HP. This effect can be triggered up to 5 times, based on the number of enemies hit.\nIf Hu Tao's HP is below or equal to 50% when the enemy is hit, both the DMG and HP Regeneration are increased.",
+          "title": "Estasi dello Spirito",
+          "description": "Controlla uno spirito ardente per combattere, infligge un vasto AoE Pyro DMG.\nAll'impatto con il nemico rigenera parte della Max HP di Hu Tao. La rigenerazione può essere attivata fino a 5 volte, in base al numero di nemici colpiti.\nSe l'HP di Hu Tao è inferiore o pari al 50% i DMG e la Rigenerazione di HP aumentano.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "The More the Merrier",
-          "description": "When Hu Tao cooks a dish perfectly, she has a 18% chance to receive an additional \"Suspicious\" dish of the same type.",
+          "title": "Più siamo, meglio è!",
+          "description": "Quando Hu Tao ottiene un Perfect Cooking, ha il 18% di possibilità di ottenere un piatto \"Suspicious\" dello stesso tipo.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Flutter By",
-          "description": "When a Paramita Papilio state activated by Guide to Afterlife ends, all allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 8s.",
+          "title": "Sbalorditivo",
+          "description": "Quando termina un Paramita Papilio attivato dalla Guida per l'Aldilà, il CRIT Rate di tutti gli alleati del party (tranne Hu Tao) aumenta del 12% per 8s.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Sanguine Rouge",
-          "description": "When Hu Tao's HP is equal to or less than 50%, her Pyro DMG Bonus is increased by 33%.",
+          "title": "Rosso Sanguigno",
+          "description": "Quando l'HP di Hu Tao è inferiore o pari al 50%, il Pyro DMG Bonus aumenta del 33%.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Crimson Bouquet",
-          "description": "While in a Paramita Papilio state activated by Guide to Afterlife, Hu Tao's Charge Attacks do not consume Stamina.",
+          "title": "Bouquet Cremisi",
+          "description": "Quando un Paramita Papilio è attivato dalla Guida per l'Aldilà, gli Attacchi Caricati di Hu Tao non consuma Stamina.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Ominous Rainfall",
-          "description": "Increases the Blood Blossom DMG by an amount equal to 10% of Hu Tao's Max HP at the time the effect is applied.\nInoltre, Spirit Soother will also apply the Blood Blossom effect.",
+          "title": "Pioggia Nefasta",
+          "description": "Aumenta i DMG del Fiore Sanguineo di un valore pari al 10% del Max HP.\nInoltre, Estasi dello Spirito può applicare gli effetti del Fiore Sanguineo.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Lingering Carmine",
-          "description": "Aumenta di 3 il livello di Guide to Afterlife by 3. Il livello massimo di upgrade è 15.",
+          "title": "Persistenza Carminio",
+          "description": "Aumenta di 3 il livello della Guida per l'Aldilà. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Garden of Eternal Rest",
-          "description": "Upon defeating an enemy afflitto by a Blood Blossom that Hu Tao applied herself, all nearby allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 15s.",
+          "title": "Eden del Riposo Eterno",
+          "description": "Sconfitti i nemici afflitti dal Fiore Sanguineo di Hu Tao, il CRIT Rate di tutti gli alleati del party (tranne Hu Tao) aumenta del 12% per 815s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Floral Incense",
-          "description": "Aumenta di 3 il livello di Spirit Soother by 3. Il livello massimo di upgrade è 15.",
+          "title": "Incenso Floreale",
+          "description": "Aumenta di 3 il livello dell'Estasi dello Spirito. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Butterfly's Embrace",
-          "description": "innesca when Hu Tao's HP drops below 25%, or when she suffers a lethal strike:",
+          "title": "Abbraccio della Farfalla",
+          "description": "Si innesca quando l'HP di Hu Tao è inferiore al 25% o quando subisce un colpo letale:",
           "secondDescription": null,
           "descriptions": [
-            "Hu Tao will not fall as a result of the DMG sustained. Inoltre, for the next 10s, all of her Elemental and Physical RES is increased by 200%, her CRIT Rate is increased by 100%, and her resistance to interruption is greatly increased.",
-            "This effect innesca automatically when Hu Tao has 1 HP left.",
-            "Can only avvenire once every 60s."
+            "Hu Tao non muore come risultato del DMG sostenuto. Inoltre, per i prossimi 10s, tutti i suoi Elemental r Physical RES aumenta del 200%, il CRIT Rate aumenta del 100% e, all'interruzione dell'effetto, la sua resistenza aumenta notevolmente.",
+            "L'effetto si innesca automaticamente quando Hu Tao ha 1 HP rimasto.",
+            "Può avvenire una volta ogni 60s."
           ]
         }
       ]
@@ -1337,11 +1337,11 @@
     {
       "key": "Jean",
       "name": "Jean",
-      "description": "La più devota,onesta e rigorosa Dandelion Knight, e l'attuale facente Funzione di Gran Maestro dell'Ordine dei Cavalieri di Favonius a Monstadt.",
+      "description": "La più devota,onesta e rigorosa Dandelion Knight, e l'attuale facente Funzione di Gran Maestro dell'Ordine dei Cavalieri di Favonius a Mondstadt.",
       "skills": [
         {
           "key": "s1",
-          "title": "Favonius Bladework",
+          "title": "Tecnica Favonius",
           "description": null,
           "abilities": [
             {
@@ -1351,7 +1351,7 @@
             },
             {
               "key": "a2",
-              "description": "Consuma una certa quantità di Stamina per to launch an enemy using the power of wind. Launched enemies will slowly fall to the ground.",
+              "description": "Con il potere del vento consuma una certa quantità di Stamina per lanciare in aria i nemici. I nemici fluttuanti cadranno lentamente.",
               "descriptions": []
             },
             {
@@ -1363,27 +1363,27 @@
         },
         {
           "key": "s2",
-          "title": "Gale Blade",
-          "description": "Focusing the might of the formless wind around her blade, Jean Rilascia a miniature storm, launching enemies in the direction she aims at, Infliggere massive Anemo DMG.",
+          "title": "Lama della Burrasca",
+          "description": "Concentrando il potere del vento sulla sua lama, Jean scatena una mini-tempesta/vortice che scaglia i nemici nella direzione che stà osservando e infligge notevoli Anemo DMG.",
           "abilities": [
             {
               "key": "a1",
-              "description": "At the cost of continued consumo di Stamina, Jean can command the whirlwind to pull surrounding enemies towards her front. Direction can be adjusted. Character is immobile during skill duration.",
+              "description": "Consumando continuamente Stamina, Jean può controllare il vortice generato e attrae i nemici davanti a sè. L'attrazione può essere ridirezionata e mentre è attiva, il personaggio non può muoversi.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Dandelion Breeze",
-          "description": "Calling upon the wind’s protection, Jean creates a swirling Dandelion Field, launching surrounding enemies and causing Anemo DMG. At the same time, she instantly Rigenera a large amount of HP for nearby allied units and tutti i membri del party. HP restored scale off Jean’s ATK.",
+          "title": "Brezza di Dandelion",
+          "description": "Richiamando a sè la protezione del vento, Jean genera un turbinoso Campo di Dandelion che scaglia via i nemici vicini infliggendo Anemo DMG. Allo stesso tempo, rigenera grandi quantità di HP per gli alleati vicini e tutti i membri del party. L'HP ripristinata scala sull'ATK di Jean.",
           "abilities": [
             {
-              "name": "Dandelion Field",
+              "name": "Campo di Dandelion",
               "description": null,
               "descriptions": [
-                "Continuously Rigenera HP of characters within the AoE and continuously imbues them with Anemo.",
-                "infligges Anemo DMG to enemies entering or exiting the field."
+                "Rigenera continuamente l'HP dei personaggi all'interno dell'AoE imbevendoli di Anemo.",
+                "Infligge Anemo DMG ai nemici che entrano o escono dal campo d'azione."
               ]
             }
           ]
@@ -1392,63 +1392,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Guiding Breeze",
-          "description": "Quando si ottiene un Perfect Cooking su un piatto con a dish with effetti ristorativi, there is a 12% di possibilità di ottenere il doppio del prodotto.",
+          "title": "Brezza Guida",
+          "description": "Quando si ottiene un Perfect Cooking su un piatto con effetti ristorativi, c'è il 12% di possibilità di ottenere il doppio del prodotto.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Wind Companion",
-          "description": "Hits by Normal Attacks have a 50% chance to regenerate HP equal to 15% of Jean’s ATK for tutti i membri del party.",
+          "title": "Compagna del Vento",
+          "description": "Gli Attacchi Normali hanno il 50% di possibilità di rigenerare HP pari al 15% dell'ATK di Jean per tutti i membri del party.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Let the Wind Lead",
-          "description": "Using Dandelion Breeze will regenerate 20% of its Energia.",
+          "title": "Lascia che il Vento ti conduca",
+          "description": "Brezza di Dandelion rigenera il 20% della sua Energia.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Spiraling Tempest",
-          "description": "Increases the pulling speed of Gale Blade after holding for more than 1s, and increases the DMG infligget by 40%.",
+          "title": "Spirale di Tempesta",
+          "description": "Aumenta del 40% il DMG inflitto e la velocità di attrazione della Lama della Burrasca dopo averla trattenuta per più di 1s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "People’s Aegis",
-          "description": "When Jean picks up an Elemental Orb/Particle, tutti i membri del party have their Movement SPD and ATK SPD increased by 15% for 15s.",
+          "title": "Egida del Popolo",
+          "description": "Quando Jean raccoglie un Elemental Orb/Particle, Il Movement SPD e l'ATK SPD di tutti i membri del party aumenta del 15% per 15s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "When the West Wind Arises",
-          "description": "Aumenta di 3 il livello di Dandelion Breeze by 3. Il livello massimo di upgrade è 15.",
+          "title": "Quando Soffia il Vento dell'Ovest",
+          "description": "Aumenta di 3 il livello della Brezza di Dandelion. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Lands of Dandelion",
-          "description": "Within the Field created by Dandelion Breeze, all enemies have their Anemo RES decreased by 40%.",
+          "title": "Regno dei Dandelion",
+          "description": "All'interno del campo d'azione della Brezza di Dandelion, l'Anemo RES dei nemici si riduce del 40%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Outbursting Gust",
-          "description": "Aumenta di 3 il livello di Gale Blade by 3. Il livello massimo di upgrade è 15.",
+          "title": "Folata Esplosiva",
+          "description": "Aumenta di 3 il livello della Lama della Burrasca. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Lion’s Fang, Fair Protector of Mondstadt",
-          "description": "Incoming DMG is decreased by 35% within the Field created by Dandelion Breeze. Upon leaving the Dandelion Field, this effect lasts for 3 attacks or 10s.",
+          "title": "Lion’s Fang, la vera protettrice di Mondstadt",
+          "description": "All'interno del campo creato dalla Brezza di Dandelion i DMG in arrivo si riducono del 35%. Abbandonando il campo, l'effetto dura 3 attacchi o 10s.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1457,11 +1457,11 @@
     {
       "key": "Kaeya",
       "name": "Kaeya",
-      "description": "A thinker in the Knights of Favonius with a somewhat exotic appearance.",
+      "description": "Stratega nei Cavalieri di Favonius con \"un certo non so che\" di esotico nell'aspetto.",
       "skills": [
         {
           "key": "s1",
-          "title": "Ceremonial Bladework",
+          "title": "Tecnica Cerimoniale",
           "description": null,
           "abilities": [
             {
@@ -1471,92 +1471,92 @@
             },
             {
               "key": "a2",
-              "description": "Consuma una certa quantità di Stamina perper scatenare  2 fendenti rapidi.",
+              "description": "Consuma una certa quantità di Stamina per scatenare 2 fendenti rapidi.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemeies along the path and Infliggere AoE DMG upon impact.",
+              "description": "Si lancia in picchiata da mezz'aria per colpire il terreno sottostante, danneggiando i nemici lungo il percorso e assestando AoE DMG all'impatto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Frostgnaw",
+          "title": "Morso del Gelo",
           "description": "Unleashes a frigit blast, Infliggere Cryo DMG to enemies in front of Kaeya.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Glacial Waltz",
-          "description": "Coalescing the frost in the air, Kaeya Fa apparire 3 icicles that revolve around him. These icicles will follow the character around and infligge Cryo DMG to enemies in their path for so long as they persist.",
+          "title": "Valzer Glaciale",
+          "description": "Kaeya condensa il ghiaccio nell'aria e fa apparire 3 cristalli di ghiaccio che gli ruotano attorno. Questi cristalli seguono il personaggio e infliggono Cryo DMG ai nemici che incontrano.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Hidden Strength",
-          "description": "Decreases all party member’s sprinting consumo di Stamina by 20%.",
+          "title": "Forza Latente",
+          "description": "Riduce del 20% il consumo di Stamina della corsa di tutti i membri del party.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Cold-Blooded Strike",
-          "description": "Every hit with Frostgnaw Rigenera HP for Kaeya equal to 15% of ATK.",
+          "title": "Colpo a Sangue Freddo",
+          "description": "Tutti i colpi inflitti dal Morso del Gelo rigenerano HP pari al 15% dell'ATK di Kaeya.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Heart of the Abyss",
-          "description": "Enemies Frozen by Frostgnaw will drop additional Elemental Particles. Frostgnaw may only produce a maximum of 2 additional Elemental Particles per use.",
+          "title": "Cuore degli Abissi",
+          "description": "I nemici congelati dal Morso del Gelo rilasciano Elemental Particles in più. Morso del Gelo può produrre al massimo 2 Elemental Particles in più per volta.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Excellent Blood",
-          "description": "The CRIT Rate of Normal Attack and Charged Attack DMG against enemies afflitto by the Cold or Frozen status effects is increased by 15%.",
+          "title": "Di Sangue Eccezionale",
+          "description": "Aumenta del 15% il CRIT Rate di Attacchi Normali e Caricati su nemici afflitti da Cold o Frozen status.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Never-Ending Performance",
-          "description": "Every time Glacial Waltz defeats an enemy, its duration is increased by 2.5s, up to a maximum of 15s.",
+          "title": "Performance Senza Fine",
+          "description": "Ogni volta che il Valzer Glaciale sconfigge un nemico, la sua durata aumenta di 2.5s, fino a un massimo di 15s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Dance of Frost",
-          "description": "Aumenta di 3 il livello di Frostgnaw by 3. Il livello massimo di upgrade è 15.",
+          "title": "Danza del Gelo",
+          "description": "Aumenta di 3 il livello del Morso del Gelo. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Frozen Kiss",
-          "description": "innesca automatically when Kaeya’s HP falls below 20%:",
+          "title": "Bacio Ghiacciato",
+          "description": "Si innesca automaticamente quando l'HP di Kaeya è inferiore al 20%:",
           "secondDescription": null,
           "descriptions": [
-            "Creates a shield that absorbs damage equal to 30% of Kaeya’s Max HP. Lasts for 20s.",
-            "This shield absorbs Cryo DMG with 250% efficiency. Can only avvenire once every 60s."
+            "Crea uno scudo che assorbe DMG pari al 30% del Max HP di Kaeya. Dura per 20s.",
+            "Questo scudo assorbe Cryo DMG con un'efficienza del 250%. Può avvenire solo una volta ogni 60s."
           ]
         },
         {
           "key": "c5",
-          "title": "Frostbiting Embrace",
-          "description": "Aumenta di 3 il livello di Glacial Waltz by 3. Il livello massimo di upgrade è 15.",
+          "title": "Abbraccio Gelido",
+          "description": "Aumenta di 3 il livello del Valzer Glaciale. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Glacial Whirlwind",
-          "description": "Glacial Waltz will generate 1 additional icicle, and will regenerate 15 Energia when cast.",
+          "title": "Vortice Glaciale",
+          "description": "Valzer Glaciale genera 1 cristallo di ghiaccio in più e, all'attivazione, 15 Energia.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1565,11 +1565,11 @@
     {
       "key": "Keqing",
       "name": "Keqing",
-      "description": "The Yuheng of the Liyue Qixing. Has much to say about Rex Lapis’ unilateral approach to policymaking in Liyue - but in truth, gods admire skeptics such as her quite a lot.",
+      "description": "La Yuheng dei Liyue Qixing. Ha molto da ridire sull'approccio unilaterale delle decisioni contrattualistiche di Rex Lapis per Liyue, ma in realtà, gli dei ammirano molto gli scettici come lei.",
       "skills": [
         {
           "key": "s1",
-          "title": "Yunlai Swordsmanship",
+          "title": "Maestria dei fendenti Yunlai",
           "description": null,
           "abilities": [
             {
@@ -1579,103 +1579,103 @@
             },
             {
               "key": "a2",
-              "description": "Consuma una certa quantità di Stamina perper scatenare  2 fendenti rapidi.",
+              "description": "Consuma una certa quantità di Stamina per scatenare 2 fendenti rapidi.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemeies along the path and Infliggere AoE DMG upon impact.",
+              "description": "Si lancia in picchiata da mezz'aria per colpire il terreno sottostante, danneggiando i nemici lungo il percorso e assestando AoE DMG all'impatto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Stellar Restoration",
-          "description": "Hurls a Lightning Stiletto that annihilates her enemies like the swift thunder. When the Stiletto hits its target, it infligges Electro DMG to enemies in un piccolo AoE, and places a Stiletto Mark on the spot hit.",
+          "title": "Ritorno Stellare",
+          "description": "Lancia uno Stiletto Fulmineo che annichilisce i suoi nemici come un fulmine a ciel sereno. Quando lo Stiletto colpisce il suo bersaglio, infligge Electro DMG in un piccolo AoE e piazza un Segnale nel punto colpito.",
           "abilities": [
             {
               "key": "a1",
-              "description": "Tieni premuto per adjust the direction in which the Stiletto shall be thrown. Stilettos thrown by the Hold attack mode can be suspended in mid-air, allowing Keqing to jump to them when using Stellar Restoration a second time.",
+              "description": "Tieni premuto per aggiustare la direzione di lancio dello Stiletto. Lo Stiletto può essere posizionato a mezz'aria, Keqing può teletrasportarsi lì con un secondo Ritorno Stellare.",
               "descriptions": []
             },
             {
-              "name": "Lightning Stiletto",
-              "description": "If Keqing uses Stellar Restoration again or uses a Charged Attack while its duration lasts, it will clear the Stiletto Mark and produce different effects:",
+              "name": "Stiletto Fulmineo",
+              "description": "Se Keqing usa ancora Ritorno Stellare o esegue un Attacco Caricato mentre l'abilità è attiva, il Segnale dello Stiletto scompare e produce diversi effetti:",
               "descriptions": [
-                "If she uses Stellar Restoration again, she will blink to the location of the Mark and unleashed one slashing attack che infligges AoE Electro DMG. When blinking to a Stiletto that was thrown from a Holding attack, Keqing can leap across obstructing terrain.",
-                "If Keqing uses a Charged Attack, she will ignite a series of thundering cuts at the Mark’s location, Infliggere AoE Electro DMG."
+                "Se Keqing usa Ritorno Stellare per la seconda volta, si teletrasporterà verso il Segnale assestando un potente fendente che infligge AoE Electro DMG. Quando si teletrasporta verso uno Stiletto, Keqing oltrepasserà ogni ostacolo del terreno.",
+                "Se Keqing usa un Attacco Caricato, lo Stiletto innescherà una serie di fendenti fulminei che infliggono AoE Electro DMG."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Starward Sword",
-          "description": "Keqing unleashes the power of lightning, Infliggere Electro DMG in an AoE. She then blends into the shadow of her blade, striking a series of thunderclap-blows to nearby enemies simultaneous che infligge multiple instance of Electro DMG. The final attack infligges massive AoE Electro DMG.",
+          "title": "Tempesta dei Fendenti Stellari",
+          "description": "Keqing scatena il potere dei fulmini, infligge Electro DMG in an AoE. Diventa tutt'uno con l'ombra della sua lama e assesta una serie continua di colpi fulminei che infliggono multipli Electro DMG. Il colpo finale infligge un notevole AoE Electro DMG.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Land’s Overseer",
-          "description": "Quando viene schierato in una spedizione  in Liyue, il tempo di esplorazione si riduce del 25%.",
+          "title": "Supervisore di terre",
+          "description": "Quando viene schierato in una spedizione in Liyue, il tempo di esplorazione si riduce del 25%.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Thundering Penance",
-          "description": "Within 5s of recasting Stellar Restoration while a Lightning Stiletto is present, Keqing’s Normal and Charged Attacks are converted to Electro DMG.",
+          "title": "Penitenza Tonante",
+          "description": "Entro 5s dalla riattivazione di Ritorno Stellare quando uno Stiletto Fulmineo è presente, gli Attacchi Normali e Caricati di Keqing infliggono Electro DMG.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Aristocratic Dignity",
-          "description": "When Attivare Starward Sword, Keqing’s CRIT Rate is increased by 15%, and her Energia Recharge is increased by 15%. This effect lasts for 8s.",
+          "title": "Decoro Aristocratico",
+          "description": "Quando si usa Tempesta dei Fendenti Stellari, il CRIT Rate e l'Energy Recharge di Keqing aumentano del 15%. L'effetto dura per 8s.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Thundering Might",
-          "description": "Recasting Stellar Restoration while a Lightning Stiletto is present causes Keqing to infligge 50% of her ATK as AoE Electro DMG at the start point and terminus of her Blink.",
+          "title": "Forza Tonante",
+          "description": "Riattivare Ritorno Stellare quando uno Stiletto Fulmineo è presente permette a Keqing di infliggere il 50% del suo ATK come AoE Electro DMG, all'inizio e alla fine del teletrasporto.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Keen Extraction",
-          "description": "When Keqing’s Normal and Charged Attack’s hit enemies afflitto by Electro, they have a 50% chance of producing an Elemental Particle. Questo effetto può avvenire solo una volta ogni 5s.",
+          "title": "Estrazione Scrupolosa",
+          "description": "Attacchi Normali e Caricati su nemici afflitti da Electro, hanno il 50% di possibilità di rilasciare 1 Elemental Particle. Questo effetto può avvenire solo una volta ogni 5s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Forseen Reformation",
-          "description": "Aumenta di 3 il livello di Starward Sword by 3. Il livello massimo di upgrade è 15.",
+          "title": "Riforma Prevista",
+          "description": "Aumenta di 3 il livello di Tempesta dei Fendenti Stellari. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Attunement",
-          "description": "For 10s after Keqing innesca an Electro-related Elemental Reaction, her ATK is increased by 25%.",
+          "title": "Armonizzazione",
+          "description": "Dopo aver innescato una Reazione Elementale Electro, l'ATK di Keqing aumenta del 25% per 10s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Beckoning Stars",
-          "description": "Aumenta di 3 il livello di Stellar Restoration by 3. Il livello massimo di upgrade è 15.",
+          "title": "Richiamo delle Stelle",
+          "description": "Aumenta di 3 il livello di Ritorno Stellare. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Tenacious Star",
-          "description": "When initiating a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst, Keqing gains a 6% Electro DMG Bonus for 8s. Effects triggered by Normal Attacks, Charged Attacks, Elemental Skills and Elemental Bursts are considered independent entities.",
+          "title": "Stella Tenace",
+          "description": "Quando esegue un Attacco Normale, Caricato, Elemental Skill o un Elemental Burst, Keqing ottiene un 6% di Electro DMG Bonus per 8s. Quanto scatenato è da considerarsi entità indipendente.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1684,7 +1684,7 @@
     {
       "key": "Klee",
       "name": "Klee",
-      "description": "An explosives expert and a regular at the Knights of Favonius’ confinement room. Also known as Fleeing Sunlight.",
+      "description": "Un'esperta di esplosivi, conosce fin troppo bene la stanza di confinamento dei Cavalieri di Favonius. Conosciuta anche come Fleeing Sunlight.",
       "skills": [
         {
           "key": "s1",
@@ -1693,17 +1693,17 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Throws things that go boom when they hit things! Esegue  3 explosive attacks, Infliggere AoE Pyro DMG.",
+              "description": "Lancia cose che fanno boom quando colpiscono altre cose! Esegue 3 attacchi esplosivi che infliggono AoE Pyro DMG.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consuma una certa quantità di Stamina per and infligges Pyro DMG to enemies after a short Attivare time.",
+              "description": "Consuma una certa quantità di Stamina per and infligges Pyro DMG.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Concentrando il potere power of Pyro, Klee si lancia in picchiata da mezz'aria verso il terreno, danneggiando i nemici lungo il percorso e assestando AoE Pyro DMG all'impatto.",
+              "description": "Concentrando il potere Pyro, Klee si lancia in picchiata da mezz'aria verso il terreno, danneggiando i nemici lungo il percorso e assestando AoE Pyro DMG all'impatto.",
               "descriptions": []
             }
           ]
@@ -1711,76 +1711,76 @@
         {
           "key": "s2",
           "title": "Jumpy Dumpty",
-          "description": "Jumpy Dumpty is tons of boom-bang-fun! When thrown, Jumpy Dumpty bounces thrice, igniting and Infliggere AoE Pyro DMG with every bounce. On the third bounce, the bomb splits into many mines. The mines will explode upon contact with enemies, or after a short period of time, Infliggere AoE Pyro DMG. Starts with 2 charges.",
+          "description": "Jumpy Dumpty è un sacco di divertimento boom-bang! Quando viene lanciato, il Jumpy Dumpty rimbalza 3 volte, si innesca e infligge AoE Pyro DMG ad ogni rimbalzo. Al terzo rimbalzo la bomba si frammenta in diverse mine. Ciascuna mina esploderà al contatto con i nemici o dopo un po' di tempo, infliggendo AoE Pyro DMG. Inizia con 2 cariche.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Sparks ’n’ Splash",
-          "description": "Klee’s Blazing Delight! For the duration of this ability, continuously Fa apparire Sparks ’n’ Splash to attack nearby enemies, Infliggere AoE Pyro DMG.",
+          "title": "Scintille Esplosive!",
+          "description": "Klee Alla Carica! Fa apparire continue Scintille Esplosive per attaccare i nemici vicini, infliggendo AoE Pyro DMG.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "All Of My Treasures!",
-          "description": "Displays the location of nearby resources unique to Mondstadt on the mini-map.",
+          "title": "Tutti i Miei Tesori!",
+          "description": "Rivela nella minimappa la posizione delle vicine risorse uniche a Mondstadt.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Pounding Surprise",
-          "description": "When Jumpy Dumpty and Normal Attacks infligge DMG, Klee has a 50% chance to obtain an Explosive Spark. This Explosive Spark is consumed by the next Charged Attack, which costs no Stamina and infligges 50% increased DMG.",
+          "title": "Sorpresa Martellante",
+          "description": "Quando Jumpy Dumpty e Attacchi Normali infliggono DMG, Klee ha il 50% di possibilità di ottenere una Scintilla Esplosiva. L'Attacco Caricato successivo consuma la Scintilla, senza consumare Stamina e infliggendo DMG aumentato del 50%.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Sparkling Burst",
-          "description": "When a Charged Attack results in a CRIT, tutti i membri del party gain 2 Elemental Energia.",
+          "title": "Esplosione Scintillante",
+          "description": "Quando si assesta un CRIT DMG con un Attacco Caricato, tutti i membri del party ottengono 2 Elemental Energy.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Chained Reaction",
-          "description": "Attacks and Skills have a certain chance to summon a spark that bombards enemies, Infliggere DMG equal to 120% of Sparks ’n’ Splash’s DMG.",
+          "title": "Reazioni a Catena",
+          "description": "Gli Attacchi e le Abilità hanno una certa possibiità di bombardare i nemici, infliggendo DMG pari al 120% del DMG delle Scintille Esplosive.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Explosive Frags",
-          "description": "Being hit by Jumpy Dumpty’s mines decreases enemy DEF by 23% for 10s.",
+          "title": "Frange Esplosive",
+          "description": "I nemici colpiti dalle mine del Jumpy Dumpty hanno la DEF ridotta del 23% per 10s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Exquisite Compound",
-          "description": "Aumenta di 3 il livello di Jumpy Dumpty by 3. Il livello massimo di upgrade è 15.",
+          "title": "Composto Squisito",
+          "description": "Aumenta di 3 il livello del Jumpy Dumpty. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Sparkly Explosion",
-          "description": "If Klee leaves the field during the duration of Sparks ’n’ Splash, her departure innesca an explosion che infligges 555% of her ATK as AoE Pyro DMG.",
+          "title": "Esplosine Sfavillante",
+          "description": "Se Klee abbandona il combattimento mentre Scintille Esplosive è attiva, si innesca un'esplosione che infligge il 555% del suo ATK come AoE Pyro DMG.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Nova Burst",
-          "description": "Aumenta di 3 il livello di Sparks ’n’ Splash by 3. Il livello massimo di upgrade è 15.",
+          "title": "Esplosione di Supernova",
+          "description": "Aumenta di 3 il livello di Scintille Esplosive. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Blazing Delight",
-          "description": "While under the effects of Sparks ’n’ Splash, other members of the party will continuously regenerate Energia. When Sparks ’n’ Splash is used, tutti i membri del party will gain 10% Pyro DMG Bonus for 25s.",
+          "title": "Alla Carica!",
+          "description": "Durante le Scintille Esplosive, gli altri membri del party rigenerano continuamente Energia e ottengono il 10% di Pyro DMG Bonus per 25s.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1789,117 +1789,117 @@
     {
       "key": "Lisa",
       "name": "Lisa",
-      "description": "The languid but knowledgeable Librarian of the Knights of Favonius who was deemed by Sumeru Academia to be their most distinguised graduate in the past two centuries.",
+      "description": "La languida ma intelligente Bibliotecaria dei Cavalieri di Favonius, ritenuta dall'Accademia di Sumeru una delle più brillanti laureate degli ultimi due secoli.",
       "skills": [
         {
           "key": "s1",
-          "title": "Lightning Touch",
+          "title": "Tocco Folgorante",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Esegue  4 lightning attacks che infligge Electro DMG.",
+              "description": "Scaglia 4 fulmini che infliggono Electro DMG.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consuma una certa quantità di Stamina per to infligge AoE Electro DMG after a short Attivare time.",
+              "description": "Consuma una certa quantità di Stamina per infliggere AoE Electro DMG.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Concentrando il potere might of Electro, Lisa si lancia in picchiata da mezz'aria verso il terreno, danneggiando i nemici lungo il percorso e assestando AoE Electro DMG all'impatto.",
+              "description": "Concentrando il potere Electro, Lisa si lancia in picchiata da mezz'aria verso il terreno, danneggiando i nemici lungo il percorso e assestando AoE Electro DMG all'impatto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Violet Arc",
-          "description": "Channels the power of lightning to sweep bothersome matters away.",
+          "title": "Fiocco Viola",
+          "description": "Canalizza il potere dei fulmini per spazzare via qualunque fastidio.",
           "abilities": [
             {
               "key": "a1",
-              "description": "Rilascia a homing Lightning Orb. On hit, it infligges Electro DMG, and Applica a stack of Conductive status (Max 3 stacks) to enemies in un piccolo AoE.",
+              "description": "Scaglia una sfera vagante di fulmini. All'impatto infligge Electro DMG e applica Conductive status (Al massimo 3) ai nemici in un piccolo AoE.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "After an extended Attivare time, calls down lightning from the heavens, Infliggere massive Electro DMG to all nearby enemies. infligges great amounts of extra damage to enemies based on the number of Conductive stacks applied to them, and clears their Conductive status.",
+              "description": "Se si tiene premuto, chiama a terra una folgore dal cielo che infligge notevoli Electro DMG ai nemici vicini. Infligge una grande quantità di danno extra sulla base di Conductive Status accumulati.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Lightning Rose",
-          "description": "Fa apparire a Lightning Rose that unleashes powerful lightning bolts, launching surrounding enemies and Infliggere Electro DMG. The Lightning Rose will continuously emit lightning to knock back enemies and infligge Electro DMG for so long as it persists.",
+          "title": "Rosa Folgorante",
+          "description": "Fa apparire una Rosa Folgorante che scatena potenti saette che scagliano via i nemici vicini e infliggono Electro DMG. La Rosa Folgorante emette continui fulmini che respingono i nemici e infliggono Electro DMG per tutta la sua durata.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "General Pharmaceutics",
-          "description": "When Lisa crafts a potion, she has a 20% chance to refund a portion of the crafting materials used.",
+          "title": "Farmaceutica di Base",
+          "description": "Quando Lisa prepara una pozione, ha il 20% di possibilità di rimborsare parte dei materiali usati.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Induced Aftershock",
-          "description": "Hits by charged Attacks apply Violet Arc’s Conductive status to enemies.",
+          "title": "Corrente Indotta",
+          "description": "Attraverso Attacchi Caricati Fiocco Viola applica Conductive status ai nemici.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Static Electricity Field",
-          "description": "Enemies hit by Lightning Rose have their DEF decreased by 15% for 10s.",
+          "title": "Campo Elettrostatico",
+          "description": "I nemici colpidi dalla Rosa Folgorante hanno DEF ridotta del 15% per 10s.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Infinite Circuit",
-          "description": "Lisa recovers 2 Energia for every opponent hit while holding Violet Arc. A maximum of 10 Energia can be regenerated in this manner at any one time.",
+          "title": "Circuito Infinito",
+          "description": "Lisa recupera 2 Energia per ogni nemico colpito mentre si trattiene Fiocco Viola. Si possono generare al massimo 10 Energia alla volta.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Electromagnetic Field",
-          "description": "Holding Violet Arc has the following effects:",
+          "title": "Campo Elettromagnetico",
+          "description": "Trattenere Fiocco Viola ha i seguenti effetti:",
           "secondDescription": null,
           "descriptions": [
-            "Increases DEF by 25%.",
-            "Increases Lisa’s resistance to interruption."
+            "Aumenta del 25% la DEF.",
+            "All'interruzione aumenta la resistenza di Lisa."
           ]
         },
         {
           "key": "c3",
-          "title": "Resonant Thunder",
-          "description": "Aumenta di 3 il livello di Lightning Rose by 3. Il livello massimo di upgrade è 15.",
+          "title": "Folgore Risonante",
+          "description": "Aumenta di 3 il livello della Rosa Folgorante. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Plasma Eruption",
-          "description": "Increases the number of lightning bolts released by Lightning Rose by 1-3.",
+          "title": "Eruzione di Plasma",
+          "description": "Aumenta di 1-3 le saette rilasciate simultaneamente dalla Rosa Folgorante.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Electrocute",
-          "description": "Aumenta di 3 il livello di Violet Arc by 3. Il livello massimo di upgrade è 15.",
+          "title": "Elettrocarina",
+          "description": "Aumenta di 3 il livello del Fiocco Viola. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Pulsating Witch",
-          "description": "When Lisa takes the field, she Applica 3 stacks of Violet Arc’s Conductive status onto nearby enemies. Questo effetto può avvenire solo una volta ogni 5s.",
+          "title": "Maga Pulsante",
+          "description": "Quando Lisa appare, si applicano 3 Conductive Status del Fiocco Viola ai nemici vicini. Questo effetto può avvenire solo una volta ogni 5s.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1908,79 +1908,79 @@
     {
       "key": "Mona",
       "name": "Mona",
-      "description": "A mysterious young astrologer who proclaims herself to be \"Astrologist Mona Megistus,\" and who possesses abilities to match the title.",
+      "description": "Una giovane e misteriosa astrologa autoproclamatasi  \"Astrologus Mona Megistus,\" e con abilità degne di questo titolo.",
       "skills": [
         {
           "key": "s1",
-          "title": "Ripple of Fate",
+          "title": "Increspature del Destino",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Esegue 4 water splash attacks che infligge Hydro DMG.",
+              "description": "Esegue 4 water splash attacks che infliggono Hydro DMG.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consuma una certa quantità di Stamina per and infligges AoE Hydro DMG after a short Attivare time.",
+              "description": "Consuma una certa quantità di Stamina per infliggere AoE Hydro DMG after.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Concentrando il potere might of Hydro, Mona si lancia in picchiata da mezz'aria verso il terreno, danneggiando i nemici lungo il percorso e assestando AoE Hydro DMG all'impatto.",
+              "description": "Concentrando il potere Hydro, Mona si lancia in picchiata da mezz'aria verso il terreno, danneggiando i nemici lungo il percorso e assestando AoE Hydro DMG all'impatto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Mirror Reflection of Doom",
-          "description": "Creates an illusory Phantom of fate from coalesced waterspouts.",
+          "title": "Miraggio del Destino",
+          "description": "Unisce trombe d'acqua per creare uno Spettro illusorio del Destino.",
           "abilities": [
             {
               "name": "",
-              "description": "The Phantom has the following special properties:",
+              "description": "Lo Spettro ha le seguenti proprietà speciali:",
               "descriptions": [
-                "Continuously taunts nearby enemies, attracting their fire.",
-                "Continuously infligges Hydro DMG to nearby enemies.",
-                "When its duration expires, the Phantom explodes, Infliggere AoE Hydro DMG."
+                "Schernisce continuamente il nemico attirandone gli attacchi.",
+                "Infligge continui Hydro DMG ai nemici vicini.",
+                "Quando scade, lo Spettro esplode infliggendo AoE Hydro DMG."
               ]
             },
             {
               "key": "a2",
-              "description": "Utilizes water currents to move backwards swiftly before conjuring a Phantom. Only one Phantom created by Mirror Reflection of Doom can exist at any time.",
+              "description": "Grazie alle correnti marine indietreggia in scivolata prima di evocare uno Spettro. Può esistere un solo Spettro per volta.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Stellaris Phantasm",
-          "description": "Mona Fa apparire the sparkling waves and creates a reflection of the starry sky, applying the Illusory Bubble status to opponents in a large AoE.",
+          "title": "Spettro Stellare",
+          "description": "Mona fa apparire onde cristalline per riflettere il cielo stellato, che applicano lo status Bolla Illusoria ai nemici in un largo AoE.",
           "abilities": [
             {
-              "name": "Illusory Bubble",
-              "description": "Traps opponents inside a pocket of destiny and also makes them Wet. Renders weaker opponents immobile. When an opponent afflitto by Illusory Bubble sustains DMG, the following effects are produced:",
+              "name": "Bolla Illusoria",
+              "description": "Intrappola i nemici in una Tasca del Destino applicandoli Wet status. Immobilizza i nemici deboli. Quando un nemico afflitto dalla Bolla Illusoria riceve DMG, si producono i seguenti effetti:",
               "descriptions": [
-                "Applica an Omen to the opponent, which gives a DMG Bonus, also increasing the DMG of the attack that causes it.",
-                "Removes the Illusory Bubble, Infliggere Hydro Elemental DMG in the process. The DMG Bonus does not apply to the Hydro Elemental DMG infligget in this instance."
+                "Applica an Presagio to the opponent, which gives a DMG Bonus, also increasing the DMG of the attack that causes it.",
+                "Removes the Bolla Illusoria, Infliggere Hydro Elemental DMG in the process. The DMG Bonus does not applicano to the Hydro Elemental DMG infligget in this instance."
               ]
             },
             {
-              "name": "Omen",
-              "description": "During its duration, increases DMG taken by enemies.",
+              "name": "Presagio",
+              "description": "Mentre l'abilità è attiva, aumenta i DMG inflitti ai nemici.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s4",
-          "title": "Illusory Torrent",
+          "title": "Torrente Illusoria",
           "description": null,
           "abilities": [
             {
-              "name": "Alternate Spirit",
-              "description": "Mona cloaks herself within the water’s flow, consuming Stamina to move rapidly. When under the effect of Illusory Torrent, Mona can move at high speed on water. Applica the Wet status to nearby enemies when she reappears.",
+              "name": "Sprint Alternativo",
+              "description": "Mona diventa tutt'uno con il flusso dell'acqua, consumando Stamina per muoversi velocemente. Sotto l'effetto della Torrente Illusoria, Mona si muove ad alta velocità sulla superfiecie dell'acqua. Quando riemerge applica Wet status ai nemici vicini.",
               "descriptions": []
             }
           ]
@@ -1989,68 +1989,68 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Principium of Astrology",
-          "description": "When Mona crafts Weapon Ascension Materials, she has a 25% chance to refund a portion of the crafting materials used.",
+          "title": "Astrologiae Principium",
+          "description": "Quando Mona crea Materiali per l'Ascensione delle Armi, ha il 25% di possibilità di rimborsare parte dei materiali usati.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Come ’n’ Get Me, Hag!",
-          "description": "After she has used Illusory Torrent for 2s, if there are any enemies nearby, Mona will automatically create a Phantom. A Phantom created in this manner lasts for 2s, and its explosion DMG is equal to 50% of Mirror Reflection of Doom.",
+          "title": "Vieni a prendermi, befana!",
+          "description": "Dopo aver usato Torrente Illusoria per 2s, se ci sono nemici vicini, Mona crea automaticamente uno Spettro. Lo Spettro creato in questo modo dura per 2s, i suo DMG all'esplosione sono pari al 50% dei DMG del Miraggio del Destino.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Waterborne Destiny",
-          "description": "Increases Mona’s Hydro DMG Bonus by a degree equivalent to 20% of her Energy Recharge rate.",
+          "title": "Destino scritto dall'acqua",
+          "description": "Aumenta l'Hydro DMG Bonus di Mona di una quantità pari al 20% della sua Energy Recharge rate.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Prophecy of Submersion",
-          "description": "The effects of Hydro-related Elemental Reactions are enhanced for 8s after a character hits an enemy afflitto by an Omen:",
+          "title": "Profezia dell'Immersione",
+          "description": "Quando si colpisce un nemico afflitto da un Presagio, gli effetti di Reazioni Elementali Hydro sono potenziati per 8s:",
           "secondDescription": null,
           "descriptions": [
-            "Electro-Charged DMG is increased by 15%.",
-            "Vaporize DMG is increased by 15%.",
-            "Hydro Swirl DMG is increased by 15%.",
-            "The duration for which enemies are Frozen is increased by 15%."
+            "Electro-Charged DMG aumentan del 15%.",
+            "Vaporize DMG aumenta del 15%.",
+            "Hydro Swirl DMG aumenta del 15%.",
+            "La durata del Frozen status aumenta del 15%."
           ]
         },
         {
           "key": "c2",
-          "title": "Lunar Chain",
-          "description": "When a Normal Attack hits, there is a 20% chance that it will be automatically followed by a Charged Attack. Questo effetto può avvenire solo una volta ogni 5s.",
+          "title": "Catena Lunare",
+          "description": "Quando un Attacco Normale va a segno, c'è il 20% di possibilità di concatenare automaticamente un Attacco Caricato. Questo effetto può avvenire solo una volta ogni 5s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Restless Revolution",
-          "description": "Aumenta di 3 il livello di Stellaris Phantasm by 3. Il livello massimo di upgrade è 15.",
+          "title": "Rivoluzione Senza Fine",
+          "description": "Aumenta di 3 il livello dello Spettro Stellare. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Prophecy of Oblivion",
-          "description": "When a character attacks an enemy afflitto by the Omen status effect, their CRIT Rate is increased by 15%.",
+          "title": "Profezia dell'Oblio",
+          "description": "Quando si attacca un nemico afflitto da Presagio, il CRIT Rate aumenta del 15%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Mockery of Fortuna",
-          "description": "Aumenta di 3 il livello di Mirror Reflection of Doom by 3. Il livello massimo di upgrade è 15.",
+          "title": "Ironia della Sorte",
+          "description": "Aumenta di 3 il livello del Miraggio del Destino. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Rhetorics of Calamitas",
-          "description": "Upon entering Illusory Torrent, Mona gain a 60% increase to the DMG her next Charged Attack per second of movement. A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s.",
+          "title": "Rhetorica Calamitatis",
+          "description": "Entrando in Torrente Illusoria, il DMG dell'Attacco Caricato di Mona aumentano del 60% per ciascun secondo che si muove. Il massimo DMG Bonus ottenibile è del 180%. L'effetto non dura più di 8s.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2059,26 +2059,26 @@
     {
       "key": "Ningguang",
       "name": "Ningguang",
-      "description": "The Tianquan of Liyue Qixing. Her wealth is unsurpassed in all of Teyvat.",
+      "description": "La Tianquan dei Liyue Qixing. La sua ricchezza è insormontabile in tutta Teyvat.",
       "skills": [
         {
           "key": "s1",
-          "title": "Sparkling Scatter",
+          "title": "Dispersione Scintillante",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Shoots gems che infligge Geo DMG. Upon hit, this conferisce Ningguang 1 Star Jade.",
+              "description": "Scaglia gemme che infliggono Geo DMG. All'impatto conferisce a Ningguang 1 Star Jade.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consuma una certa quantità di Stamina per to fire off a giant gem che infligges Geo DMG. If Ningguang has any Star Jades, unleashing a Charged Attack will cause the Star Jades to be fired at the enemy as well, Infliggere additional DMG.",
+              "description": "Consuma una certa quantità di Stamina per scagliare una gemma gigante che infligge Geo DMG. Se Ningguang ha Star Jades, scatenare un Attacco Caricato li rilascia contro i nemici, infliggendo DMG supplementari.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Concentrando il potere might of Geo, Ningguang si lancia in picchiata da mezz'aria verso il terreno, danneggiando i nemici lungo il percorso e assestando AoE Geo DMG all'impatto.",
+              "description": "Concentrando il potere Geo, Ningguang si lancia in picchiata da mezz'aria verso il terreno, danneggiando i nemici lungo il percorso e assestando AoE Geo DMG all'impatto.",
               "descriptions": []
             }
           ]
@@ -2086,85 +2086,85 @@
         {
           "key": "s2",
           "title": "Jade Screen",
-          "description": "Ningguang creates a Jade Screen out of gold, obsidian and her great opulence, Infliggere AoE Geo DMG.",
+          "description": "Ningguang crea un Jade Screen fatto d'oro, ossidiana e il suo grande fascino. Infligger AoE Geo DMG.",
           "abilities": [
             {
               "name": "Jade Screen",
-              "description": "Jade Screen is considered a Geo Construct and can be used to block certain attacks, but cannot be climbed. Only one Jade Screen may exist at any one time.",
+              "description": "Jade Screen è considerato una costruzione Geo, può essere usata per bloccare alcuni attacchi, ma non ci si può arrampicare. Può esistere un solo Jade Screen per volta.",
               "descriptions": [
-                "Blocks enemy projectiles.",
-                "Endurance scales based on Ningguang’s Max HP."
+                "Blocca proiettili nemici.",
+                "La durata scala sul Max HP di Ningguang."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Starshatter",
-          "description": "Gathering a great number of gems, Ningguang scatters them all at once, sending homing projectiles at her enemies che infligge massive Geo DMG. If Starshatter is cast when a Jade Screen is nearby, the Jade Screen will fire additional gem projectiles at the same time.",
+          "title": "Frantumastella",
+          "description": "Ningguang raccoglie una grande quantità di gemme e li disperde tutte in una sola volta. I proiettili vaganti scagliati ai suoi nemici infliggono notevoli Geo DMG. Se Frantumastella è attivata vicina a un Jade Screen, questa rilascierà multiple gemme in contemporanea.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Trove of Marvelous Treasure",
-          "description": "Displays the location of nearby ore veins (Iron Ore, White Iron Ore, Crystal Ore, and Magical Crystal Ore) on the mini-map.",
+          "title": "Collezione di Straordinari Tesori",
+          "description": "Rivela nella minimappa la posizione delle vicine vene minerarie (Iron Ore, White Iron Ore, Crystal Ore, and Magical Crystal Ore).",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Backup Plan",
-          "description": "When Ningguang is in possession of Star Jades, her Charged Attack does not consume Stamina.",
+          "title": "Piano di Riserva",
+          "description": "Quando Ningguang ha una Star Jades, gli Attacchi Caricati non consumano Stamina.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Strategic Reserve",
-          "description": "A character that passes through the Jade Screen will gain a 12% Geo DMG Bonus for 10s.",
+          "title": "Riserva Strategica",
+          "description": "Se si attraversa un Jade Screen si ottiene il 12% di Geo DMG Bonus per 10s.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Piercing Fragments",
-          "description": "When a Normal Attack hits, it infligges AoE DMG.",
+          "title": "Frammenti Perforanti",
+          "description": "Attacchi Normali infliggono AoE DMG.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Shock Effect",
-          "description": "When Jade Screen is shattered, its CD will reset. Can avvenire once every 6s.",
+          "title": "Effetto Shock",
+          "description": "Quando il Jade Screen si frantuma, il suo CD si resetta. Può avvenire una volta ogni 6s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Majesty be the Array of Stars",
-          "description": "Aumenta di 3 il livello di Starshatter by 3. Il livello massimo di upgrade è 15.",
+          "title": "Sua Maestà, sia una Schiera di Stelle",
+          "description": "Aumenta di 3 il livello di Frantumastella. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Exquisite be the Jade, Outshining All the Beneath",
-          "description": "Jade Screen increases nearby characters’ Elemental RES by 10%.",
+          "title": "Raffinato sia il Jade. Risplenda il suolo!",
+          "description": "Il Jade Screen aumenta del 10% l'Elemental RES dei personaggi vicini.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Invincible be the Jade Screen",
-          "description": "Aumenta di 3 il livello di Jade Screen by 3. Il livello massimo di upgrade è 15.",
+          "title": "Invincibile sia il Jade Screen",
+          "description": "Aumenta di 3 il livello del Jade Screen. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Grandeur be the Seven Stars",
-          "description": "When Starshatter is used, Ningguang gains 7 Star Jades.",
+          "title": "Siano magnifiche le Sette Stelle",
+          "description": "Quando Frantumastella è in uso, Ningguang ottiene 7 Star Jades.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2173,11 +2173,11 @@
     {
       "key": "Noelle",
       "name": "Noelle",
-      "description": "A maid in the service of the Knights of Favonius that dreams of joining their ranks someday.",
+      "description": "Una badante al servizio dei Cavalieri di Favonius che sogna di unirsi ai loro ranghi un giorno.",
       "skills": [
         {
           "key": "s1",
-          "title": "Favonius Bladework - Maid",
+          "title": "Tecnica Favonius - Maid",
           "description": null,
           "abilities": [
             {
@@ -2199,32 +2199,32 @@
         },
         {
           "key": "s2",
-          "title": "Breastplate",
-          "description": "Fa apparire a protective stone armor, Infliggere Geo DMG to surrounding enemies and creating a shield. The shield’s DMG Absorption scaled based on Noelle’s DEF.",
+          "title": "Egida",
+          "description": "Fa apparire un'armatura protettiva di pietra, infligge Geo DMG ai nemici vicini e creano uno scudo. L'assorbimento dei DMG dello scudo scala sulla DEF di Noelle.",
           "abilities": [
             {
               "name": "",
-              "description": "The shield has the following properties:",
+              "description": "Lo scudo ha le seguenti proprietà:",
               "descriptions": [
-                "When Noelle’s Normal and Charged Attacks hit a target, they have a certain chance to regenerate HP for all characters, both on and off the field. The amount of HP healed when regeneration is triggered scales based on Noelle’s DEF.",
-                "Applica the Geo element to the character.",
-                "Ha il 150% di Absorption Efficiency di Geo DMG."
+                "Attacchi Normali e Caricati hanno una certa possibilità di rigenerare HP a tutti i personaggi, presenti o meno sul campo. L'HP rigenerata scala sulla DEF di Noelle.",
+                "Applica l'elemento Geo ai personaggi.",
+                "Assorbe fino al 150% di Geo DMG."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Sweeping Time",
-          "description": "Concentrando il potere strength of stone around her weapon, Noelle strikes the enemies surrounding her within a large AoE, Infliggere Geo DMG.",
+          "title": "L'Ora Travolgente",
+          "description": "Concentrando il potere della pietra sulla sua lama, Noelle infligge Geo DMG ai nemici vicini in un ampio AoE.",
           "abilities": [
             {
               "name": "",
-              "description": "Afterwards, Noelle gains the following effects:",
+              "description": "Successivamente, Noelle ottiene i seguenti effetti:",
               "descriptions": [
-                "Larger attack AoE.",
-                "Converts attack DMG to Geo DMG.",
-                "Increased ATK that scales based on her DEF."
+                "Attacca con un AoE più vasto.",
+                "Converte i DMG in Geo DMG.",
+                "Gli ATK aumentati scalano sulla sua DEF."
               ]
             }
           ]
@@ -2233,63 +2233,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Maid’s Knighthood",
-          "description": "Quando si ottiene un Perfect Cooking su un piatto con a DEF-boosting dish, Noelle has a 12% di possibilità di ottenere il doppio del prodotto.",
+          "title": "Cavalierato della badante",
+          "description": "Quando si ottiene un Perfect Cooking su un piatto con DEF-boosting, Noelle ha il 12% di possibilità di ottenere il doppio del prodotto.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Devotion",
-          "description": "When Noelle is in the party but not on the field, this ability innesca automatically when the active character’s HP falls below 30%: Creates a shield that lasts for 20s and absorbs DMG equal to 400% of Noelle’s DEF. Questo effetto può avvenire solo una volta ogni 60s.",
+          "title": "Devozione",
+          "description": "Quando Noelle è nel party ma non sul campo, quest'abilità si innesca automaticamente quando l'HP del personaggio attivo è inferiore del 30%: Crea uno scudo che dura per 20s e assorbe DMG pari al 400% della DEF di Noelle. Questo effetto può avvenire solo una volta ogni 60s.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Nice and Clean",
-          "description": "Every 4 Normal or Charged Attack hits will decrease the CD of Breastplate by 1s. Hitting multiple enemies with a single attack is only counted as 1 hit.",
+          "title": "Lindo e Pulito",
+          "description": "Ogni 4 Attacchi Normali o Caricati il CD dell'Egida si riduce di 1s. Colpire più nemici con un unico colpo è considerato 1 attacco.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "I Got Your Back",
-          "description": "While Sweeping Time and Breastplate are both in effect, the chance of Breastplate’s healing effects activating is increased to 100%.",
+          "title": "Ti guardo le spalle!",
+          "description": "Quando l'Ora Travolgente e Egida sono attivi, le possibilità di curare con Egida aumenta al 100%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Combat Maid",
-          "description": "Decreases Il Consumo di Stamina of Noelle’s Charged Attacks by 20% and increases her Charged Attack DMG by 15%.",
+          "title": "Badante Guerriera",
+          "description": "Riduce del 20% il Consumo di Stamina e aumenta del 15% i DMG degli Attacchi Caricati di Noelle.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Invulnerable Maid",
-          "description": "Aumenta di 3 il livello di Breastplate by 3. Il livello massimo di upgrade è 15.",
+          "title": "Badante Invulnerabile",
+          "description": "Aumenta di 3 il livello dell'Egida. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "To Be Cleaned",
-          "description": "When Breastplate’s duration expires or it is destroyed by DMG, it will infligge 400% ATK of Geo DMG to surrounding enemies.",
+          "title": "Da ripulire",
+          "description": "Quando Egida scade o viene distrutta, alla scomparsa infligge il 400% di ATK Geo DMG ai nemici vicini.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Favonius Sweeper Master",
-          "description": "Aumenta di 3 il livello di Sweeping Time by 3. Il livello massimo di upgrade è 15.",
+          "description": "Aumenta di 3 il livello dell''Ora Travolgente. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Must Be Spotless",
-          "description": "Sweeping Time increases Noelle’s ATK by an additional 50% of her DEF. Inoltre, every enemy defeated during the skill’s duration adds 1s to the duration, up to 10s.",
+          "title": "Dev'essere impeccabile",
+          "description": "L'Ora Travolgente aumenta l'ATK di Noelle aggiungendo il 50% della sua DEF. Inoltre, per ogni nemico sconfitto la durata dell'abilità aumenta di 1s, fino a 10s.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2298,11 +2298,11 @@
     {
       "key": "Qiqi",
       "name": "Qiqi",
-      "description": "An apprentice and herb-picker Bubu Pharmacy. An undead with a bone-white complexion, she seldom has much in the way of words or emotion.",
+      "description": "Un'apprendista e raccoglitrice di erbe alla Bubu Pharmacy. Un non-morto con una pelle bianca come le ossa, raramente si esprime con parole o emozioni.",
       "skills": [
         {
           "key": "s1",
-          "title": "Ancient Sword Art",
+          "title": "Antica Arte della Spada",
           "description": null,
           "abilities": [
             {
@@ -2312,7 +2312,7 @@
             },
             {
               "key": "a2",
-              "description": "Consuma una certa quantità di Stamina perper scatenare  2 fendenti rapidi.",
+              "description": "Consuma una certa quantità di Stamina per scatenare 2 fendenti rapidi.",
               "descriptions": []
             },
             {
@@ -2324,14 +2324,14 @@
         },
         {
           "key": "s2",
-          "title": "Adeptus Art: Herald of Frost",
-          "description": "Using the Icevein Talisman, Qiqi brings forth the Herald of Frost, Infliggere Cryo DMG to nearby enemies.",
+          "title": "Adeptus Art: Araldo del Gelo",
+          "description": "Usando l'Icevein Talisman, Qiqi porta in avanti l'Araldo del Gelo, infliggendo Cryo DMG ai nemici vicini.",
           "abilities": [
             {
-              "name": "Herald of Frost",
+              "name": "Araldo del Gelo",
               "description": "",
               "descriptions": [
-                "When Qiqi hits a target with her Normal or Charged Attacks, she Rigenera HP for tutti i membri del party and all personaggi alleati vicini. Healing scales based on Qiqi’s ATK.",
+                "Quando Qiqi colpisce un obiettivo con il suo Attacco Normale o Attacco Caricato, rigenera gli HP di tutti i membri del party e di tutti i personaggi alleati vicini. La rigenerazione degli HP scala in base all'ATK di Qiqi.",
                 "Rigenera HP for current character at regular intervals.",
                 "Follows the character around, Infliggere Cryo DMG to enemies in its path."
               ]
@@ -2367,7 +2367,7 @@
         {
           "key": "p3",
           "title": "A Glimpse into Arcanum",
-          "description": "When Qiqi hits enemies with her Normal and Charged Attacks, she has a 50% chance to apply a Fortune-Preserving Talisman to them for 6s. Questo effetto può avvenire solo una volta ogni 30s.",
+          "description": "When Qiqi hits enemies with her Normal and Attacchi Caricati, she has a 50% chance to applicano a Fortune-Preserving Talisman to them for 6s. Questo effetto può avvenire solo una volta ogni 30s.",
           "descriptions": []
         }
       ],
@@ -2419,11 +2419,11 @@
     {
       "key": "Razor",
       "name": "Razor",
-      "description": "A boy who lives among the wolves in Wolvendom of Mondstadt, away from human civilization. As agile as lightning.",
+      "description": "Un ragazzo che vive tra i lupi del Wolvendom a Mondstadt, lontano da qualsiasi civilizzazione umana. E' agile come una saetta.",
       "skills": [
         {
           "key": "s1",
-          "title": "Steel Fang",
+          "title": "Zanna d'acciaio",
           "description": null,
           "abilities": [
             {
@@ -2445,35 +2445,35 @@
         },
         {
           "key": "s2",
-          "title": "Claw and Thunder",
-          "description": "Hunts his prey using the techniques taught to him by his master and his Lupical.",
+          "title": "Tuono e Artiglio",
+          "description": "Caccia le sue prede con le tecniche apprese dal suo maestro e il suo Lupical.",
           "abilities": [
             {
               "key": "a1",
-              "description": "Swings the Thunder Wolf Claw, Infliggere Electro DMG to enemies in front of Razor. Upon striking an enemy, Razor will gain an Electro Sigil, which increases his Energy Recharge rate. Razor can have up to 3 Electro Sigils simultaneously, and gaining a new Electro Sigil refreshes their duration.",
+              "description": "Lacera i nemici davanti a lui con i Thunder Claw del Lupo, che infliggono Electro DMG. Colpendo un nemici Razor ottiene un Electro Sigil, che aumenta il suo Energy Recharge rate. Razor può avere fino a 3 Electro Sigils simultaneamente, ottenere ulteriori Electro Sigil azzera la loro durata.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Gathers Electro Energia to unleash a lightning storm over a small AoE, causing massive Electro DMG, and clears all of Razor’s Electro Sigils. Each Electro Sigil cleared in this manner will be converted into Energia for Razor.",
+              "description": "Convoglia Energia Electro per scatenare una tempesta di fulmini in un piccolo AoE, che assesta notevoli Electro DMG, e consuma tutti gli Electro Sigil di Razor. Ciascun Electro Sigil ,consumato in questo modo, genera Energia per Razor.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Lightning Fang",
-          "description": "Fa apparire the Wolf Within which infligges Electro DMG to all nearby opponents. This clears all of Razor’s Electro Sigils, which will be converted into elemental Energia for him. The Wolf Within will fight alongside Razor for the skill’s duration.",
+          "title": "Zanna del Fulmine",
+          "description": "Fa apparire il Lupo Nascosto che infligge Electro DMG ai nemici vicibi. Questo consuma tutti gli Electro Sigil di Razor, che si convertono in Energia. Il Lupo Nascosto combatte a fianco di Razor per la durata dell'abilità.",
           "abilities": [
             {
-              "name": "The Wolf Within",
-              "description": "These effects end when Razor leaves the battlefield. When Razor leaves the field, a maximum of 10 Energia will be returned to him based off the duration remaining on this skill.",
+              "name": "Il Lupo Nascosto",
+              "description": "Questi effetti svaniscono quando Razor abbandona campo di battaglia. Quando accade, un massimo di 10 Energia ritornano a Razor in base a quanto tempo si usa l'abilità.",
               "descriptions": [
-                "Strikes alongside Razor’s normal attacks, Infliggere Electro DMG.",
-                "Raises Razor’s ATK SPD and Electro RES.",
-                "Causes Razor to be immune to DMG inflicted by the Electro-Charged status.",
-                "Disables Razor’s Charged Attacks.",
-                "Increases Razor's resistance to interruption."
+                "Colpisce assieme agli Attacchi Normali di Razor, infliggendo Electro DMG.",
+                "Aumenta l'ATK SPD e l'Electro RES di Razor.",
+                "Immunizza Razor dai DMG derivanti dall'Electro-Charged status.",
+                "Disattiva Attacchi Caricati di Razor.",
+                "All'interruzione aumenta la resistenza di Razor."
               ]
             }
           ]
@@ -2483,27 +2483,27 @@
         {
           "key": "p1",
           "title": "Wolvensprint",
-          "description": "Decreases all party member’s sprinting consumo di Stamina by 20%.",
+          "description": "Riduce il consumo di Stamina della corsa di tutti i membri del party.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Awakening",
-          "description": "Decreases Claw and Thunder’s CD by 18%. Using Lightning Fang resets the CD of Claw and Thunder.",
+          "title": "Risveglio",
+          "description": "Riduce del 18% il CD del Tuono e Artiglio. Usare Zanna del Fulmine azzera il CD del Tuono e Artiglio.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Hunger",
-          "description": "When Razor’s Energia is below 50%, increases Energia Recharge by 30%.",
+          "title": "Fame!",
+          "description": "Quando l'Energia di Razor è inferiore al 50%, l' Energy Recharge aumenta del 30%.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Wolf’s Instinct",
-          "description": "Picking up an Elemental Orb or Particle increases Razor’s DMG by 10% for 8s.",
+          "title": "Istinto del Lupo",
+          "description": "Raccogliere un Elemental Orb o Particle aumenta del 10% il DMG di Razor per 8s.",
           "secondDescription": null,
           "descriptions": []
         },
@@ -2524,21 +2524,21 @@
         {
           "key": "c4",
           "title": "Bite",
-          "description": "When Attivare Claw and Thunder (Press), enemies hit will have their DEF decreased by 15% for 7s.",
+          "description": "When Attivare Tuono e Artiglio (Press), enemies hit will have their DEF decreased by 15% for 7s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Sharpened Claws",
-          "description": "Aumenta di 3 il livello di Claw and Thunder by 3. Il livello massimo di upgrade è 15.",
+          "description": "Aumenta di 3 il livello di Tuono e Artiglio by 3. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Lupus Fulguris",
-          "description": "Every 10s, Razor’s sword charges up, causing the next Normal Attack to release lightning che infligges 100% of Razor’s ATK as Electro DMG. When Razor is not using Lightning Fang, a lightning strike on an enemy will garantisce Razor an Electro Sigil for Claw and Thunder.",
+          "description": "Every 10s, Razor’s sword charges up, causing the next Normal Attack to release lightning che infligges 100% of Razor’s ATK as Electro DMG. When Razor is not using Lightning Fang, a lightning strike on an enemy will garantisce Razor an Electro Sigil for Tuono e Artiglio.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2555,12 +2555,12 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Esegue five consecutive spear strikes.",
+              "description": "Esegue five attacchi rapidi.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consuma una certa quantità di Stamina per to lunge forward, Infliggere damage to opponents along the way.",
+              "description": "Consuma una certa quantità di Stamina per eseguire un affondo lungo, che infligge DMG ai nemici che incontra to opponents along the way.",
               "descriptions": []
             },
             {
@@ -2733,7 +2733,7 @@
         {
           "key": "c4",
           "title": "Alchemania",
-          "description": "Every 7 Normal and Charged Attacks, Sucrose will reduce the CD of Astable Anemohypostasis Creation - 6308 by 1-7s.",
+          "description": "Every 7 Normal and Attacchi Caricati, Sucrose will reduce the CD of Astable Anemohypostasis Creation - 6308 by 1-7s.",
           "secondDescription": null,
           "descriptions": []
         },
@@ -2756,7 +2756,7 @@
     {
       "key": "Tartaglia",
       "name": "Tartaglia",
-      "description": "No. 11 of The Harbingers, also known as \"Childe\". His name is highly feared on the battlefield.",
+      "description": "No. 11 of The Harbingers, also known as \"Childe\". His name is highly feared on the campo di battaglia.",
       "skills": [
         {
           "key": "s1",
@@ -2770,7 +2770,7 @@
             },
             {
               "key": "a2",
-              "description": "Esegue un colpo mirato più preciso con DMG aumentato. Mentre si mira, the power of Hydro will accumulate on the arrowhead. An arrow fully charged with the torrent will infligge Hydro DMG and apply Riptide status..",
+              "description": "Esegue un colpo mirato più preciso con DMG aumentato. Mentre si mira, the power of Hydro will accumulate on the arrowhead. An arrow fully charged with the torrent will infligge Hydro DMG and applicano Riptide status..",
               "descriptions": []
             },
             {
@@ -2791,7 +2791,7 @@
         {
           "key": "s2",
           "title": "Foul Legacy: Raging Tide",
-          "description": "Unleashes a set of weaponry made of pure water, Infliggere Hydro DMG to surrounding opponents and entering a Melee Stance. In this Stance, Tartaglia’s Normal and Charged Attacks change as follows:",
+          "description": "Unleashes a set of weaponry made of pure water, Infliggere Hydro DMG to surrounding opponents and entering a Melee Stance. In this Stance, Tartaglia’s Normal and Attacchi Caricati change as follows:",
           "abilities": [
             {
               "key": "a1",
@@ -2849,7 +2849,7 @@
         {
           "key": "p3",
           "title": "Sword of Torrents",
-          "description": "When Tartaglia is in Foul Legacy: Raging Tide’s Melee Stance, or if his Normal and Charged Attacks do CRIT DMG, they will apply the Riptide status effect on the hit enemy.",
+          "description": "When Tartaglia is in Foul Legacy: Raging Tide’s Melee Stance, or if his Normal and Attacchi Caricati do CRIT DMG, they will applicano the Riptide status effect on the hit enemy.",
           "descriptions": []
         }
       ],
@@ -2878,7 +2878,7 @@
         {
           "key": "c4",
           "title": "Abyssal Mayhem: Hydrospout",
-          "description": "If Tartaglia is in Foul Legacy: Raging Tide’s Melee Stance, innesca Riptide Slash against opponents on the field afflitto by Riptide every 4s, otherwise, innesca Riptide Flash. Riptide Slashes and Riptide Flashes triggered by this Constellation effect are not subject to the time intervals that would typically apply to these two Riptide effects, nor do they have any effect on those time intervals.",
+          "description": "If Tartaglia is in Foul Legacy: Raging Tide’s Melee Stance, innesca Riptide Slash against opponents on the field afflitto by Riptide every 4s, otherwise, innesca Riptide Flash. Riptide Slashes and Riptide Flashes triggered by this Constellation effect are not subject to the time intervals that would typically applicano to these two Riptide effects, nor do they have any effect on those time intervals.",
           "secondDescription": null,
           "descriptions": []
         },
@@ -3044,7 +3044,7 @@
         {
           "key": "s2",
           "title": "Starfell Sword",
-          "description": "You disgorge a meteorite from the depths of the earth, Infliggere AoE Geo DMG. The meteorite is considered a Geo Construct, and can be climbed or used to block attacks.",
+          "description": "You disgorge a meteorite from the depths of the earth, Infliggere AoE Geo DMG. The meteorite è considerato una costruzione Geo, and can be climbed or used to block attacks.",
           "abilities": [
             {
               "key": "a1",
@@ -3056,7 +3056,7 @@
         {
           "key": "s3",
           "title": "Wake of Earth",
-          "description": "Energizing the Geo elements deep underground, you set off expanding shockwaves. Launches surrounding enemies back and infligges AoE Geo DMG. A stone wall is erected at the edges of the shockwave. The stone wall is considered a Geo Construct, and may be used to block attacks.",
+          "description": "Energizing the Geo elements deep underground, you set off expanding shockwaves. Launches surrounding enemies back and infligges AoE Geo DMG. A stone wall is erected at the edges of the shockwave. The stone wall è considerato una costruzione Geo, and may be used to block attacks.",
           "abilities": []
         }
       ],
@@ -3221,7 +3221,7 @@
         {
           "key": "c4",
           "title": "Hurricane of Freedom",
-          "description": "When Venti picks up an Elemental Orb or Particle, he receives a 25% Anemo DMG Bonus for 10s.",
+          "description": "When Venti raccoglie an Elemental Orb or Particle, he receives a 25% Anemo DMG Bonus for 10s.",
           "secondDescription": null,
           "descriptions": []
         },
@@ -3253,12 +3253,12 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Esegue 5 consecutive spear strikes.",
+              "description": "Esegue 5 attacchi rapidi.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consuma una certa quantità di Stamina per to lunge forward, Infliggere damage to enemies along the way.",
+              "description": "Consuma una certa quantità di Stamina per eseguire un affondo lungo, che infligge DMG ai nemici che incontra to enemies along the way.",
               "descriptions": []
             },
             {
@@ -3285,7 +3285,7 @@
         {
           "key": "p1",
           "title": "Chef de Cuisine",
-          "description": "When Xiangling cooks an ATK-boosting dish perfectly, she has a 12% possibilità di ricevere il doppio del prodotto.",
+          "description": "When Xiangling cooks an ATK-boosting Quando ... ottiene un Perfect Cooking, she has a 12% possibilità di ricevere il doppio del prodotto.",
           "descriptions": []
         },
         {
@@ -3297,7 +3297,7 @@
         {
           "key": "p3",
           "title": "Beware, It’s Super Hot!",
-          "description": "When Guoba Attack’s effect ends, Guoba leaves a chili pepper on the spot where it disappeared. Picking up a chili pepper increases ATK by 10% for 10s.",
+          "description": "When Guoba Attack’s effect termina, Guoba leaves a chili pepper on the spot where it disappeared. Picking up a chili pepper increases ATK by 10% for 10s.",
           "descriptions": []
         }
       ],
@@ -3312,7 +3312,7 @@
         {
           "key": "c2",
           "title": "Oil Meets Fire",
-          "description": "The last attack in a Normal Attack sequence Applica the Implode status onto the enemy for 2s. An explosion will avvenire once this duration ends, Infliggere 75% of Xiangling’s ATK as AoE Pyro DMG.",
+          "description": "The last attack in a Normal Attack sequence Applica the Implode status onto the enemy for 2s. An explosion will avvenire once this duration termina, Infliggere 75% of Xiangling’s ATK as AoE Pyro DMG.",
           "secondDescription": null,
           "descriptions": []
         },
@@ -3388,7 +3388,7 @@
               "descriptions": [
                 "Greatly increases Xiao's jumping ability.",
                 "Increases his attack AoE and attack DMG.",
-                "Converts attack DMG into Anemo DMG, which cannot be overridden by any other elemental infusion. In this state, Xiao will continuously lose HP.",
+                "Converte DMG into Anemo DMG, che non si possono sovrascrivere con altre infusioni elementali. In this state, Xiao will continuously lose HP.",
                 "The effects of this skill end when Xiao leaves the field."
               ]
             }
@@ -3472,7 +3472,7 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Esegue 5 consecutive spear strikes.",
+              "description": "Esegue 5 attacchi rapidi.",
               "descriptions": []
             },
             {
@@ -3490,14 +3490,14 @@
         {
           "key": "s2",
           "title": "Guhua Sword - Fatal Rainscreen",
-          "description": "Xingqiu performs twin strikes with his sword, Infliggere Hydro DMG. At the same time, this ability creates the maximum number of Rain Swords, which will orbit the character. 20% of Xingqiu’s Hydro DMG Bonus will be converted to additional DMG Reduction for the Rain Swords. The maximum amount of additional DMG Reduction that can be gained this way is 24%. The initial maximum number of Rain Swords is 3. Using this ability Applica the Wet status onto the character.",
+          "description": "Xingqiu performs twin strikes with his sword, Infliggere Hydro DMG. Allo stesso tempo, this ability creates the maximum number of Rain Swords, which will orbit the character. 20% of Xingqiu’s Hydro DMG Bonus will be converted to additional DMG Reduction for the Rain Swords. The maximum amount of additional DMG Reduction that can be gained this way is 24%. The initial maximum number of Rain Swords is 3. Using this ability Applica the Wet status onto the character.",
           "abilities": [
             {
               "name": "",
               "description": "The Rain Swords have the following properties:",
               "descriptions": [
                 "When a character takes DMG, the Rain Sword will shatter, reducing the amount of DMG taken.",
-                "Increases the character’s resistance to interruption."
+                "Increases the character’s resistance All'interruzione."
               ]
             }
           ]
@@ -3522,7 +3522,7 @@
         {
           "key": "p1",
           "title": "Lampo di Genio",
-          "description": "When Xingqiu crafts Character Talent Materials, he has a 25% chance to refund a portion of the crafting materials used.",
+          "description": "When Xingqiu crafts Character Talent Materials, he has a 25% chance to refund a parte dei materiali usati.",
           "descriptions": []
         },
         {
@@ -3668,7 +3668,7 @@
         {
           "key": "c1",
           "title": "Fatal Acceleration",
-          "description": "Upon scoring a CRIT hit, increases ATK SPD of Xinyan’s Normal and Charged Attacks by 12% for 5s. Can only avvenire once every 5s.",
+          "description": "Upon scoring a CRIT hit, increases ATK SPD of Xinyan’s Normal and Attacchi Caricati by 12% for 5s. Can only avvenire once every 5s.",
           "secondDescription": null,
           "descriptions": []
         },
@@ -3703,7 +3703,7 @@
         {
           "key": "c6",
           "title": "Rockin’ in a Flaming World",
-          "description": "Decrease Il Consumo di Stamina of Xinyan Charged Attacks by 30%. Inoltre, Xinyan Charged Attack gain an ATK bonus equal to 50% of her DEF.",
+          "description": "Decrease Il Consumo di Stamina of Xinyan Attacchi Caricati by 30%. Inoltre, Xinyan Charged Attack gain an ATK bonus equal to 50% of her DEF.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3721,12 +3721,12 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 6 consecutive spear strikes.",
+              "description": "Performs up to 6 attacchi rapidi.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consuma una certa quantità di Stamina per to lunge forward, causing stone spears to fall along his path.",
+              "description": "Consuma una certa quantità di Stamina per eseguire un affondo lungo, causing stone spears to fall along his path.",
               "descriptions": []
             },
             {
@@ -3758,7 +3758,7 @@
             },
             {
               "name": "Stone Stele",
-              "description": "When created, infligges AoE Geo DMG.\nInoltre, it will intermittently resonate with other nearby Geo constructs, Infliggere Geo DMG to nearby opponents.\n1The Stone Stele is considered a Geo construct that can both be climbed and used to block attacks.\nOnly one Stele created by Zhongli himself may initially exist at any one time",
+              "description": "When created, infligges AoE Geo DMG.\nInoltre, it will intermittently resonate with other nearby Geo constructs, Infliggere Geo DMG to nearby opponents.\n1The Stone Stele è considerato una costruzione Geo that can both be climbed and used to block attacks.\nOnly one Stele created by Zhongli himself may initially exist at any one time",
               "descriptions": []
             },
             {
@@ -4057,7 +4057,7 @@
       "key": "Prototype Rancour",
       "name": "Prototype Rancour",
       "description": "An ancient longsword discovered in the Blackcliff Forge that cuts through rocks like a hot knife through butter.",
-      "refinement": "On hit, Normal or Charged Attacks increase ATK and DEF by {{0}}% for 6s. Max 4 stacks. Questo effetto può avvenire solo una volta ogni 0.3s."
+      "refinement": "On hit, Normal or Attacchi Caricati increase ATK and DEF by {{0}}% for 6s. Max 4 stacks. Questo effetto può avvenire solo una volta ogni 0.3s."
     },
     {
       "key": "Royal Longsword",
@@ -4075,25 +4075,25 @@
       "key": "The Alley Flash",
       "name": "The Alley Flash",
       "description": "A straight sword as black as the night. It once belonged to a thief who roamed the benighted streets.",
-      "refinement": "Increases DMG dealt by the character equipping this weapon by {{0}}%. Taking DMG disables this effect for 5s."
+      "refinement": "Continuosly sprinting for at least 1s increases ATK by {{0}}% for 6s. This effect cannot stack."
     },
     {
       "key": "The Black Sword",
       "name": "The Black Sword",
       "description": "A pitch-black longsword that thirsts for violence and conflict. It is said that this weapon can cause its user to become drunk on the red wine of slaughter.",
-      "refinement": "Increases DMG infligget by Normal and Charged Attacks by {{0}}%. Inoltre, Rigenera {{1}}% of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can avvenire once every 5s."
+      "refinement": "Increases DMG infligget by Normal and Attacchi Caricati by {{0}}%. Inoltre, Rigenera {{1}}% of ATK as HP when Normal and Attacchi Caricati score a CRIT Hit. This effect can avvenire once every 5s."
     },
     {
       "key": "The Flute",
       "name": "The Flute",
       "description": "Beneath its rusty exterior is a lavishly decorated thin blade. It swings as swiftly as the wind.",
-      "refinement": "Normal or Charged Attacks garantisce a Harmonic on hits. Gaining 5 Harmonics innesca the power of music and infligges {{0}}% ATK DMG to surrounding enemies. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s."
+      "refinement": "Normal or Attacchi Caricati garantisce a Harmonic on hits. Gaining 5 Harmonics innesca the power of music and infligges {{0}}% ATK DMG to surrounding enemies. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s."
     },
     {
       "key": "Sword of Descension",
       "name": "Sword of Descension",
       "description": "A sword of unique craftsmanship. It does not appear to belong to this world.",
-      "refinement": "Hitting opponents with Normal and Charged Attacks conferisce a {{0}}% chance to infligge 200% ATK as DMG in un piccolo AoE. Questo effetto può avvenire solo una volta ogni 10s. Inoltre, if the Traveler equips the Sword of Descension, their ATK is increased by {{1}}."
+      "refinement": "Hitting opponents with Normal and Attacchi Caricati conferisce a {{0}}% chance to infligge 200% ATK as DMG in un piccolo AoE. Questo effetto può avvenire solo una volta ogni 10s. Inoltre, if the Traveler equips the Sword of Descension, their ATK is increased by {{1}}."
     },
     {
       "key": "Festering Desire",
@@ -4219,19 +4219,19 @@
       "key": "Wine and Song",
       "name": "Wine and Song",
       "description": "A songbook from the bygone aristocratic era, whose composer has become forgotten. It chronicles the tale of a certain heroic outlaw.",
-      "refinement": "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by {{0}}% for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by {{1}}% for 5s."
+      "refinement": "For every character in the party who hails from Mondstadt, the character who equips this weapon gains {{0}}% ATK increase and {{1}}% Movement SPD increase."
     },
     {
       "key": "Eye of Perception",
       "name": "Eye of Perception",
       "description": "A dim black glaze pearl that is said to have the power to read the purity of one’s heart.",
-      "refinement": "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, Infliggere {{0}}% ATK as DMG. This bolt can bounce between enemies a maximum of 4 times. This effect can avvenire once every {{1}}s."
+      "refinement": "Normal and Attacchi Caricati have a 50% chance to fire a Bolt of Perception, Infliggere {{0}}% ATK as DMG. This bolt can bounce between enemies a maximum of 4 times. This effect can avvenire once every {{1}}s."
     },
     {
       "key": "Frostbearer",
       "name": "Frostbearer",
       "description": "A fruit that possesses a strange, frosty will. A faint sense of agony emanates from it.",
-      "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, Infliggere {{1}}% AoE ATK DMG. Can only avvenire once every 10s. Enemies afflitto by Cryo are infligget {{2}}% ATK DMG. Can only avvenire once every 10s."
+      "refinement": "Hitting an enemy with Normal and Attacchi Caricati has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, Infliggere {{1}}% AoE ATK DMG. Can only avvenire once every 10s. Enemies afflitto by Cryo are infligget {{2}}% ATK DMG. Can only avvenire once every 10s."
     },
     {
       "key": "Lost Prayer to the Sacred Winds",
@@ -4273,13 +4273,13 @@
       "key": "Debate Club",
       "name": "Debate Club",
       "description": "A handy club made of fine steel. The most persuasive line of reasoning in any debater’s arsenal.",
-      "refinement": "After using an Elemental Skill, Normal or Charged Attacks, on hit, infligge an additional {{0}}% ATK DMG in a small area. Effect lasts 15s. DMG can only avvenire once every 3s."
+      "refinement": "After using an Elemental Skill, Normal or Attacchi Caricati, on hit, infligge an additional {{0}}% ATK DMG in a small area. Effect lasts 15s. DMG can only avvenire once every 3s."
     },
     {
       "key": "Ferrous Shadow",
       "name": "Ferrous Shadow",
       "description": "A replica of the famed sword of Arundolyn, the Lion of Light. Feel the power of a legendary hero as you hold this sword in your hand! Imagine yourself as the great warrior himself! Note: Daydreaming not recommended in live combat.",
-      "refinement": "When HP falls below {{0}}%, increases Charged Attack DMG by {{1}}% and Charged Attacks become harder to interrupt."
+      "refinement": "When HP falls below {{0}}%, increases Charged Attack DMG by {{1}}% and Attacchi Caricati become harder to interrupt."
     },
     {
       "key": "Quartz",
@@ -4291,7 +4291,7 @@
       "key": "Skyrider Greatsword",
       "name": "Skyrider Greatsword",
       "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword... for the second time.",
-      "refinement": "On hit, Normal or Charged Attacks increase ATK by {{0}}% for 6s. Max 4 stacks. Can avvenire once every 0.5s."
+      "refinement": "On hit, Normal or Attacchi Caricate increase ATK by {{0}}% for 6s. Max 4 stacks. Can avvenire once every 0.5s."
     },
     {
       "key": "White Iron Greatsword",
@@ -4321,7 +4321,7 @@
       "key": "Prototype Archaic",
       "name": "Prototype Archaic",
       "description": "An ancient greatsword discovered in the Blackcliff Forge. It swings with such an immense force that one feels it could cut straight through reality itself.",
-      "refinement": "On hit, Normal or Charged Attacks have a 50% chance to infligge an additional {{0}}% ATK DMG to enemies within un piccolo AoE. Can only avvenire once every 15s."
+      "refinement": "On hit, Normal or Attacchi Caricati have a 50% chance to infligge an additional {{0}}% ATK DMG to enemies within un piccolo AoE. Can only avvenire once every 15s."
     },
     {
       "key": "Rainslasher",
@@ -4351,7 +4351,7 @@
       "key": "Whiteblind",
       "name": "Whiteblind",
       "description": "An exotic sword with one section of the blade left blunt. It made its way into Liyue via the hands of foreign traders. Incredibly powerful in the hands of someone who knows how to use it.",
-      "refinement": "On hit, Normal or Charged Attacks increase ATK and DEF by {{0}}% for 6s. Max 4 stacks. Questo effetto può avvenire solo una volta ogni 0.5s."
+      "refinement": "On hit, Normal or Attacchi Caricati increase ATK and DEF by {{0}}% for 6s. Max 4 stacks. Questo effetto può avvenire solo una volta ogni 0.5s."
     },
     {
       "key": "Sacrificial Greatsword",
@@ -4363,7 +4363,7 @@
       "key": "Snow-Tombed Starsilver",
       "name": "Snow-Tombed Starsilver",
       "description": "An ancient greatsword that was stored between frescoes. Forged from Starsilver, it has the power to cleave through ice and snow.",
-      "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, Infliggere {{1}}% AoE ATK DMG. Can only avvenire once every 10s. Enemies afflitto by Cryo are infligget {{2}}% ATK DMG. Can only avvenire once every 10s."
+      "refinement": "Hitting an enemy with Normal and Attacchi Caricati has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, Infliggere {{1}}% AoE ATK DMG. Can only avvenire once every 10s. Enemies afflitto by Cryo are infligget {{2}}% ATK DMG. Can only avvenire once every 10s."
     },
     {
       "key": "Skyward Pride",
@@ -4423,7 +4423,7 @@
       "key": "Crescent Pike",
       "name": "Crescent Pike",
       "description": "An exotic weapon with an extremely long blade on the top and a crescent blade at the bottom. It found its way into Liyue through foreign traders. With practice, it can infligge heavy damage.",
-      "refinement": "After picking up an Elemental Orb/Particle, Normal and Charged Attacks infligge an additional {{0}}% ATK DMG for 5s."
+      "refinement": "After picking up an Elemental Orb/Particle, Normal and Attacchi Caricati infligge an additional {{0}}% ATK DMG for 5s."
     },
     {
       "key": "Deathmatch",
@@ -4465,7 +4465,7 @@
       "key": "Dragonspine Spear",
       "name": "Dragonspine Spear",
       "description": "A spear created from the fang of a dragon. It is oddly warm to the touch.",
-      "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, Infliggere {{1}}% AoE ATK DMG. Can only avvenire once every 10s. Enemies afflitto by Cryo are infligget {{2}}% ATK DMG. Can only avvenire once every 10s."
+      "refinement": "Hitting an enemy with Normal and Attacchi Caricati has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, Infliggere {{1}}% AoE ATK DMG. Can only avvenire once every 10s. Enemies afflitto by Cryo are infligget {{2}}% ATK DMG. Can only avvenire once every 10s."
     },
     {
       "key": "Vortex Vanquisher",
@@ -4483,7 +4483,7 @@
       "key": "Skyward Spine",
       "name": "Skyward Spine",
       "description": "A polearm that symbolizes Dvalin’s firm resolve. The upright shaft of this weapon points towards the heavens, clad in the might of sky and wind.",
-      "refinement": "Increases CRIT Rate by {{0}}% and increases Normal ATK SPD by 12%. Inoltre, Normal and Charged Attacks hits on enemies have a 50% chance to trigger a vacuum blade che infligges {{1}}% of ATK as DMG in un piccolo AoE. This effect can avvenire no more than once every 2s."
+      "refinement": "Increases CRIT Rate by {{0}}% and increases Normal ATK SPD by 12%. Inoltre, Normal and Attacchi Caricati hits on enemies have a 50% chance to trigger a vacuum blade che infligges {{1}}% of ATK as DMG in un piccolo AoE. This effect can avvenire no more than once every 2s."
     },
     {
       "key": "Primordial Jade Cutter",
@@ -4957,632 +4957,862 @@
   "materials": [
     {
       "key": "FreedomA",
-      "name": "Teachings of Freedom"
+      "name": "Teachings of Freedom",
+      "description": "Freedom is the spirit of the land of the wind.\nThe freedom to live is one of such. It is the freedom to live freely and healthily without concerns of one's own safety."
     },
     {
       "key": "FreedomB",
-      "name": "Guide to Freedom"
+      "name": "Guide to Freedom",
+      "description": "Freedom is the spirit of the land of the wind.\nThe freedom of travel is one of such. It is the freedom to traverse the land freely without being obstructed."
     },
     {
       "key": "FreedomC",
-      "name": "Philosophies of Freedom"
+      "name": "Philosophies of Freedom",
+      "description": "Freedom is the spirit of the land of the wind.\nTo sing is one such freedom. To sing on the land created by the Anemo Archon is to send your heart away with the song on the wind."
     },
     {
       "key": "ProsperityA",
-      "name": "Teachings of Prosperity"
+      "name": "Teachings of Prosperity",
+      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is the blessing of Liyue, it is the foundation of the great city built by the gods and the people of Liyue, and it is the source of the peace and safety of the land."
     },
     {
       "key": "ProsperityB",
-      "name": "Guide to Prosperity"
+      "name": "Guide to Prosperity",
+      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is the promise made by Liyue to its children: To repay the hard-working laborers with enough gold to brighten up this land."
     },
     {
       "key": "ProsperityC",
-      "name": "Philosophies of Prosperity"
+      "name": "Philosophies of Prosperity",
+      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is Liyue's past, present, and future. This prosperity is unmatched and unobtainable by any other nations — it all belongs to Liyue and its inhabitants."
     },
     {
       "key": "DilligenceA",
-      "name": "Teachings of Dilligence"
+      "name": "Teachings of Dilligence",
+      "description": "Industriousness is the foundation of the land of Geo.\nDiligence is having the bravery and the strength to conquer mountains and seas and to pursue gold and prosperity through honest, hard work."
     },
     {
       "key": "DilligenceB",
-      "name": "Guide to Dilligence"
+      "name": "Guide to Dilligence",
+      "description": "Industriousness is the foundation of the land of Geo.\nIndustriousness is the catalyst that flows in the blood of the people of Liyue, able to turn rocks into gold. It is what lies behind the greatness of its great commercial port."
     },
     {
       "key": "DilligenceC",
-      "name": "Philosophies of Dilligence"
+      "name": "Philosophies of Dilligence",
+      "description": "Industriousness is the foundation of the land of Geo.\nIndustriousness is believing in one's own ability to earn a place in the land of the gods through sweat, wisdom, and power."
     },
     {
       "key": "ResistanceA",
-      "name": "Teachings of Resistance"
+      "name": "Teachings of Resistance",
+      "description": "Resistance is the backbone of the land of the wind.\nThe history of Mondstadt is one of resistances. People rose up to prevent past conflicts from ever being forgotten, like sprouts breaking through the soil, like the eternal wind eroding through stone walls."
     },
     {
       "key": "ResistanceB",
-      "name": "Guide to Resistance"
+      "name": "Guide to Resistance",
+      "description": "Resistance is the backbone of the city of Wind.\nThe history of Mondstadt is one of resistances. People rose up to grant the citizens of Mondstadt the freedom they now enjoy, like the Anemo Archon blowing away the snow, or like Vennessa rising up to fight."
     },
     {
       "key": "ResistanceC",
-      "name": "Philosophies of Resistance"
+      "name": "Philosophies of Resistance",
+      "description": "Resistance is the backbone of the land of the wind.\nThe history of Mondstadt is one of resistances. People rose up to allow the future Mondstadt's poetry to freely be that of the wind and be spread across the land."
     },
     {
       "key": "BalladA",
-      "name": "Teachings of Ballad"
+      "name": "Teachings of Ballad",
+      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of beautiful feelings. On a beautiful day, the breezes carry with them poetry that touches the heart of people like the wind caressing the leaves."
     },
     {
       "key": "BalladB",
-      "name": "Guide to Ballad"
+      "name": "Guide to Ballad",
+      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of the will to encourage. In the dark days, the gales in the streets and alleyways whisper words of fury, like the battle drums, like the low rumbling before the storm."
     },
     {
       "key": "BalladC",
-      "name": "Philosophies of Ballad"
+      "name": "Philosophies of Ballad",
+      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of the desire to spread the word. Though nothing is eternal, though nothing will be the same, the wind's poetry will still spread beyond the skies, the land, the seas to every corner of the world."
     },
     {
       "key": "GoldA",
-      "name": "Teachings of Gold"
+      "name": "Teachings of Gold",
+      "description": "Gold is the symbol of the land of Geo.\nGold is the blood that flows deep within Liyue's veins, the muscle that makes up Liyue's beating heart, and the bones that make Liyue stand proud."
     },
     {
       "key": "GoldB",
-      "name": "Guide to Gold"
+      "name": "Guide to Gold",
+      "description": "Gold is the symbol of the land of Geo.\nGold symbolizes conversion. This is the unspoken understanding between Liyue's mountains, land, city, and people. In Liyue, industriousness is converted into gold, and gold into prosperity."
     },
     {
       "key": "GoldC",
-      "name": "Philosophies of Gold"
+      "name": "Philosophies of Gold",
+      "description": "Gold is the symbol of the land of Geo.\nGold is the wealth of Liyue, but Liyue's true wealth is the hearts of its people that shine like gold."
     },
     {
       "key": "Tail of Boreas",
       "name": "Tail of Boreas",
+      "description": "A handful of tail scales from the Great Wolf King of the North.\nEven without his physical body and beyond death, Boreas still possesses extraordinary powers. He took a form comprised of ice and wind to embrace a new challenge, but even such a form could not house all of his power. The ice scales that fell during the battle still retain some of their spiritual energy.",
       "bossName": "Andrius"
     },
     {
       "key": "Ring of Boreas",
       "name": "Ring of Boreas",
+      "description": "A bit of crystallized ice from the Great Wolf King of the North.\nThis land was once a realm of freezing-cold blizzards and ice storms filled with razor-sharp ice shards, all at the command of Boreas. Though his power may have diminished, he could still freeze the land in an instant.",
       "bossName": "Andrius"
     },
     {
       "key": "Spirit Locket of Boreas",
       "name": "Spirit Locket of Boreas",
+      "description": "A bit of the Great Wolf King of the North's power drawn from its soul.\nThis land was once a realm of freezing-cold blizzards and ice storms filled with razor-sharp ice shards, all at the command of Boreas. In his final moments, he finally realized the chilling north wind could only extinguish life, not nurture it. Therefore, Boreas let his powers freely flow into the land to protect it and its inhabitants.",
       "bossName": "Andrius"
     },
     {
       "key": "Dvalin's Plume",
       "name": "Dvalin's Plume",
+      "description": "A feather from the tail of the Dragon of the East.\nAs a dragon's feather it has experienced more than a thousand years' worth of winds. One senses within it a yearning for freedom so strong that it could whip up a light breeze to rescue it from its current confines. Its former owner's recognition of you is what makes it content to stay in your hands.",
       "bossName": "Dvalin"
     },
     {
       "key": "Dvalin's Claw",
       "name": "Dvalin's Claw",
+      "description": "A claw from the Dragon of the East.\nIt once contained the shadow dragon Durin's vile poison, having torn through the latter's flesh in battle. Thanks to your purification and healing, it is no longer toxic.",
       "bossName": "Dvalin"
     },
     {
       "key": "Dvalin's Sigh",
       "name": "Dvalin's Sigh",
+      "description": "A bit of power taken from the whirlwinds evoked by the Dragon of the East.\nBeautiful and transparent, both trade winds and tornadoes will work in his name. The winds move as his companion, his voice, and his freedom.His enemies are the thousands who stand against the wind.",
       "bossName": "Dvalin"
     },
     {
       "key": "Tusk of Monoceros Caeli",
       "name": "Tusk of Monoceros Caeli",
+      "description": "The horn of a whale that you obtained from defeating Childe, who had unleashed the might of his Delusion.\nIt is said that the shape of one's constellation determines one's character. The image of a whale cruising across the celestial heights represents a solipsism that seeks to crush and devour all in its path.\nEmbracing this aspect of himself, Childe gleefully summoned one such beast before throwing himself into battle against you.",
       "bossName": "Tartaglia"
     },
     {
       "key": "Shard of a Foul Legacy",
       "name": "Shard of a Foul Legacy",
+      "description": "The shard of a weapon that you obtained from defeating Childe, who had unleashed the might of his Delusion.\nIt is stained with a profound color that is not of this world, no doubt due to the land of endless darkness that the young boy saw with his own two eyes.\nPerhaps it has nothing to do with the power of a Delusion, but as they say, the weapon reflects its user...",
       "bossName": "Tartaglia"
     },
     {
       "key": "Shadow of the Warrior",
       "name": "Shadow of the Warrior",
+      "description": "A fragment of power that you obtained from defeating Childe, who had unleashed the might of his Delusion.\nIt is the product of a will to fight that has been honed over countless slaughters.\nIf humans do indeed have destinies, then his must surely have been twisted by such deeds. Why else, then, would he always be at the heart of every conflict?",
       "bossName": "Tartaglia"
     },
     {
       "key": "DecarabianA",
-      "name": "Tile of Decarabian’s Tower"
+      "name": "Tile of Decarabian’s Tower",
+      "description": "The place now known as Stormterror's Lair was once the capital city of Decarabian, the God of Storms. Since this dream of prosperity was created entirely by his divine might, the broken pieces left behind by the shattering of that dream still possess great power."
     },
     {
       "key": "DecarabianB",
-      "name": "Debris of Decarabian’s City"
+      "name": "Debris of Decarabian’s City",
+      "description": "Decarabian, the God of Storms, was content with the capital city he had raised, and accepted the worship of the people from atop his tower. But he knew not that the people did not bow to him out of respect or adoration."
     },
     {
       "key": "DecarabianC",
-      "name": "Fragment of Decarabian’s Epic"
+      "name": "Fragment of Decarabian’s Epic",
+      "description": "Andrius once declared war upon Decarabian, but failed to even scratch the capital of the Lord of the Tower. If it were not for the song of freedom that shattered the city in an instant, Decarabian's dream would have gone on forever."
     },
     {
       "key": "DecarabianD",
-      "name": "Scattered Piece of Decarabian’s Dream"
+      "name": "Scattered Piece of Decarabian’s Dream",
+      "description": "The people did not bow to Decarabian out of respect or adoration, but because the harsh winds had laid them low. This was the shattered dream and ambition of the Anemo Archon before the rise of Barbatos.He tried so hard to make his dream come true, and so the fragments of that dream are still mighty."
     },
     {
       "key": "GuyunA",
-      "name": "Luminous Sands from Guyun"
+      "name": "Luminous Sands from Guyun",
+      "description": "The stone pillars that tower amid Guyun Stone Forest were once the stone spears Morax used to defeat his enemies. Over time, the gods' substance has seeped into the pillars that pin them down, lending them divine power. The pillars sometimes shed fragments of hatred and curses."
     },
     {
       "key": "GuyunB",
-      "name": "Lustrous Stone from Guyun"
+      "name": "Lustrous Stone from Guyun",
+      "description": "The learned know that Guyun Stone Forest is far more than simply a miraculous sight on the sea to behold: It is the cemetery of the former gods of Liyue. Hatred and filth have periodically risen up from it, but all have been subdued by a demon-conquering young man."
     },
     {
       "key": "GuyunC",
-      "name": "Relic from Guyun"
+      "name": "Relic from Guyun",
+      "description": "The stone spear has a glimmering core formed by the power of the defeated gods. Their hatred is not directed at Morax, however, for they have lost themselves a long time ago and are incapable of holding personal grudges."
     },
     {
       "key": "GuyunD",
-      "name": "Divine Body from Guyun"
+      "name": "Divine Body from Guyun",
+      "description": "That which lurks within and animates this relic are the divine remains of lamenting gods. They are unrealized ideals, designs for a prosperous humanity that could never be. They may now lie deep within stone and sea, but they will not go quietly into the night."
     },
     {
       "key": "ElixirA",
-      "name": "Mist Veiled Lead Elixir"
+      "name": "Mist Veiled Lead Elixir",
+      "description": "Jueyun Karst is the realm of the mighty and illuminated adepti. But other than the ability to control the elements of the world, Jueyun Karst is also home to three other untold secrets: Alchemy, Sigils, and Sub-Space Creation."
     },
     {
       "key": "ElixirB",
-      "name": "Mist Veiled Mercury Elixir"
+      "name": "Mist Veiled Mercury Elixir",
+      "description": "With Fulu (Sigils), the adepti can store their power in the form of symbols, and with Waijing (Sub-Space Creation) they can fashion a cosmic paradise with the power of their minds. The manufacture of elixirs, however, has always been shrouded in mystery, for certain death follows for any who swallow them."
     },
     {
       "key": "ElixirC",
-      "name": "Mist Veiled Gold Elixir"
+      "name": "Mist Veiled Gold Elixir",
+      "description": "Elixirs are in fact pills made from metal alloys. They were created by the adepti, and are able to grant weapons transcendent powers. However, they are rarely seen in the world due to the hubris of the practitioners of martial arts, who prized the ways of combat over the paths of the adepti."
     },
     {
       "key": "ElixirD",
-      "name": "Mist Veiled Primo Elixir"
+      "name": "Mist Veiled Primo Elixir",
+      "description": "An elixir of the highest quality. It embodies a state of intertwining order and chaos, and is said to mirror how the world was when it was first created. Of course, a certain someone knows that this was not the case."
     },
     {
       "key": "BorealWolfA",
-      "name": "Boreal Wolf’s Milk Tooth"
+      "name": "Boreal Wolf’s Milk Tooth",
+      "description": "Andrius' wolf pack is its blessed honor guard, and even the milk teeth of a wolf cub possess great potential.\nIn the past, the gods had the responsibility to love all people. Andrius was therefore quite unusual in that he became leader of the wolves, while only welcoming abandoned babies and wanderers when it came to humans."
     },
     {
       "key": "BorealWolfB",
-      "name": "Boreal Wolf’s Cracked Tooth"
+      "name": "Boreal Wolf’s Cracked Tooth",
+      "description": "The life of a wolf is not without violence, broken bones or cracked teeth are nothing special.\nAndrius found humans to be a disappointment, but believed babies to be innocent. If both the wolf pack and the adopted children chose each other, then they become a Lupical, a fated family."
     },
     {
       "key": "BorealWolfC",
-      "name": "Boreal Wolf’s Broken Fang"
+      "name": "Boreal Wolf’s Broken Fang",
+      "description": "The wolf pack also understands that humans are not solitary creatures. The honorary broken tooth is a parting gift said to bring protection and luck.\nIn the legends of a far-off world, a female wolf once adopted two great humans. Their home was known as the Cave of Wolves, or Lupercal - that word meaning the same thing as Lupical does in this world."
     },
     {
       "key": "BorealWolfD",
-      "name": "Boreal Wolf's Nostalgia"
+      "name": "Boreal Wolf's Nostalgia",
+      "description": "The Wolf King, believing himself to despise humans, thought himself unable to envision a happy life for humanity, making him unworthy of becoming the Lord of the Winds of the world. Therefore, he chose to disappear. Yet, in truth, he gazes on the ones abandoned by the world ever so gently."
     },
     {
       "key": "AerosideriteA",
-      "name": "Grain of Aerosiderite"
+      "name": "Grain of Aerosiderite",
+      "description": "A black meteor once fell beyond Liyue's Sea of Clouds, said to have fallen to vanquish a monster. However, it was stained by powerful tainted blood, so this item no longer possesses the pure power of Rex Lapis."
     },
     {
       "key": "AerosideriteB",
-      "name": "Piece of Aerosiderite"
+      "name": "Piece of Aerosiderite",
+      "description": "Rumors of sea monsters are commonplace in Liyue, since the other shore is an unknown region that lies outside of Teyvat. Without the protection of The Seven, all that lies beyond is unknown chaos. Only power beyond the order of Teyvat is able to stain the power of Rex Lapis black."
     },
     {
       "key": "AerosideriteC",
-      "name": "Bit of Aerosiderite"
+      "name": "Bit of Aerosiderite",
+      "description": "The coastal nations of Teyvat refer to the region beyond the protection of The Seven as the Dark Sea. It is said that many defeated gods refused to live under the new order of The Seven, so they fled to remote islands and became evil gods. However, their powers came from the same source as Rex Lapis, separate from this all-devouring darkness."
     },
     {
       "key": "AerosideriteD",
-      "name": "Chunk of Aerosiderite"
+      "name": "Chunk of Aerosiderite",
+      "description": "When Khaenri'ah was destroyed, a great sinner created endless monsters with dark, alien blood flowing through their veins. They rampaged across the land, destroying all in their paths. They were mutated lifeforms, and the mutations were caused by powers from beyond this world. The black serpentine dragon Durin that attacked Mondstadt was one such mutated being."
     },
     {
       "key": "GladiatorA",
-      "name": "Fetters of the Dandelion Gladiator"
+      "name": "Fetters of the Dandelion Gladiator",
+      "description": "It's a human thing to exaggerate a hero's story, even to the point of elevating the fetters that once bound the hero to the level of an enemy of true freedom.As a result, these fetters were granted extraordinary powers."
     },
     {
       "key": "GladiatorB",
-      "name": "Chains of the Dandelion Gladiator"
+      "name": "Chains of the Dandelion Gladiator",
+      "description": "The chains that once bound the great hero Vennessa. In truth, all gladiators would have worn chains in that era, and Vennessa was but one of many."
     },
     {
       "key": "GladiatorC",
-      "name": "Shackles of the Dandelion Gladiator"
+      "name": "Shackles of the Dandelion Gladiator",
+      "description": "Vennessa was not truly bound by her chains. If she had so wished, no ordinary physical constraints forged in Mondstadt could have held her, for the land there yielded no ore of exceptional quality, nor did it possess the divine flame of her ancestral home.She was only bound by her responsibility to take care of her tribespeople."
     },
     {
       "key": "GladiatorD",
-      "name": "Dream of the Dandelion Gladiator"
+      "name": "Dream of the Dandelion Gladiator",
+      "description": "Vennessa may have been freed from slavery, but she then found herself subject to many other, even greater forms of bondage. What began as a duty to her tribespeople extended to all of Mondstadt, then to the concept of freedom itself, and beyond a point even to the whole world.What she really hoped for, in truth, was that the world might grow stronger."
     },
     {
       "key": "Crown of Insight",
-      "name": "Crown of Insight"
+      "name": "Crown of Insight",
+      "description": "A precious Talent Level-Up material.\nOnce a medium for the storage and transfer of wisdom in ancient times. Now, wisdom is found in ancient texts and in profound speech.\nNevertheless, this Crown of Insight must still be able to impart some transcendent power and wisdom to its bearer."
     },
     {
       "key": "SacrificialKnifeA",
-      "name": "Hunter's Sacrificial Knife"
+      "name": "Hunter's Sacrificial Knife",
+      "description": "A sharp alloy weapon. Though its owner has been lost, it still reflects a disturbingly cold light."
     },
     {
       "key": "SacrificialKnifeB",
-      "name": "Agent's Sacrificial Knife"
+      "name": "Agent's Sacrificial Knife",
+      "description": "An oddly-shaped weapon made with superior Snezhnayan technology that once belonged to a senior agent. Proper training is required for using this strange weapon."
     },
     {
       "key": "SacrificialKnifeC",
-      "name": "Inspector's Sacrificial Knife"
+      "name": "Inspector's Sacrificial Knife",
+      "description": "In the hands of its lord, this fierce weapon has handled many \"debts\". No-one has eyes in the back of their heads, and this weapon and its related techniques are designed around that weakness."
     },
     {
       "key": "HornA",
-      "name": "Heavy Horn"
+      "name": "Heavy Horn",
+      "description": "A crude horn used by hilichurls to warn each other. Given the damage to the horn, it won't be warning anyone any time soon."
     },
     {
       "key": "HornB",
-      "name": "Black Bronze Horn"
+      "name": "Black Bronze Horn",
+      "description": "A metallic monster horn that can only be obtained from especially strong hilichurls, since blowing on the horn takes real strength."
     },
     {
       "key": "HornC",
-      "name": "Black Crystal Horn"
+      "name": "Black Crystal Horn",
+      "description": "A metallic horn with an ominous shine decorated with black crystals of an unknown source. It has hardly been used at all. It is likely a ceremonial item of the hilichurls'."
     },
     {
       "key": "ChaosA",
-      "name": "Chaos Device"
+      "name": "Chaos Device",
+      "description": "Comes from ancient defunct relic structures. A part that once held the structure together. Its aesthetically-pleasing engineering is quite exquisite."
     },
     {
       "key": "ChaosB",
-      "name": "Chaos Circuit"
+      "name": "Chaos Circuit",
+      "description": "Comes from ancient defunct relic structures. Was once a logic circuit responsible for movement functions. Sadly, no-one is able to make sense of how it worked."
     },
     {
       "key": "ChaosC",
-      "name": "Chaos Core"
+      "name": "Chaos Core",
+      "description": "Comes from ancient defunct relic structures. The core that once drove a mechanical beast. Should you come to understand its workings and reproduce it, you could perhaps change the world."
     },
     {
       "key": "LeyLineA",
-      "name": "Dead Ley Line Branch"
+      "name": "Dead Ley Line Branch",
+      "description": "Fragile branches from deep within the earth. Even after years of aging, from beneath it's mottled surface you can see that its power is not yet entirely lost."
     },
     {
       "key": "LeyLineB",
-      "name": "Dead Ley Line Leaves"
+      "name": "Dead Ley Line Leaves",
+      "description": "A twig from deep within the earth. Though it is far from where it once lay, its leaves still pulsate with energy."
     },
     {
       "key": "LeyLineC",
-      "name": "Ley Line Sprout"
+      "name": "Ley Line Sprout",
+      "description": "It is said that there was a great tree whose roots once spread out to every corner of the world, and this branch is said to be part of it. It is almost if it was never broken off and taken far away, for its vitality is such that it still sprouts new leaves even now."
     },
     {
       "key": "MistGrassA",
-      "name": "Mist Grass Pollen"
+      "name": "Mist Grass Pollen",
+      "description": "Strange spores created by Mist Grass in enclosed spaces. They are the Cicins' favorite food."
     },
     {
       "key": "MistGrassB",
-      "name": "Mist Grass"
+      "name": "Mist Grass",
+      "description": "Well-preserved Mist Grass. Some would take advantage of the Cicins' love for the Mist Grass to control them."
     },
     {
       "key": "MistGrassC",
-      "name": "Mist Grass Wick"
+      "name": "Mist Grass Wick",
+      "description": "A rare bundle of Mist Grass that gives off a faint glow. Those who carry it invite both the Cicins and misfortune."
     },
     {
       "key": "BoneShardA",
-      "name": "Fragile Bone Shard"
+      "name": "Fragile Bone Shard",
+      "description": "A bone shard once carried by a Geovishap.\nAlthough they are quite fragile, they seem to still harbor some indescribable power."
     },
     {
       "key": "BoneShardB",
-      "name": "Sturdy Bone Shard"
+      "name": "Sturdy Bone Shard",
+      "description": "A fragment of an unknown creature's bones that appear to be prized by Geovishaps for some reason.\nThe fragment appears to be quite aged. Despite being dragon-like beasts with no spoken language, they still seem to have some sort of special affection for these bone shards."
     },
     {
       "key": "BoneShardC",
-      "name": "Fossilized Bone Shard"
+      "name": "Fossilized Bone Shard",
+      "description": "A fossilized bone fragment sometimes found after defeating Geovishaps.\nGeovishaps all dream of growing into great dragons one day. They see these fossils as dragon bones and greatly cherish them, perhaps because they too hope to attain the dragons' longevity and power."
     },
     {
       "key": "MaskA",
-      "name": "Damaged Mask"
+      "name": "Damaged Mask",
+      "description": "A broken bone mask that once belonged to some hilichurl.\nNow more broken than complete, it can no longer perform its primary function."
     },
     {
       "key": "MaskB",
-      "name": "Stained Mask"
+      "name": "Stained Mask",
+      "description": "A bone mask, covered in unidentifiable stains, that emanates a mysterious odor.\nYet such is the devotion of hilichurls to masks that they will wear it nonetheless."
     },
     {
       "key": "MaskC",
-      "name": "Ominous Mask"
+      "name": "Ominous Mask",
+      "description": "A glossy bone mask with oil markings painted on it, meant to intimidate enemies.\nNo-one really knows why hilichurls are so fascinated with masks. Some say that it's because they don't want to see their own reflections in the water."
     },
     {
       "key": "StatuetteA",
-      "name": "Gloomy Statuette"
+      "name": "Gloomy Statuette",
+      "description": "A vague portrayal of some unknown person. Even though it has seen many days, it still has not been damaged in any way."
     },
     {
       "key": "StatuetteB",
-      "name": "Dark Statuette"
+      "name": "Dark Statuette",
+      "description": "A carved idol representing an unknown person. Contaminated with a dark and unfathomable power, simply holding it makes you feel uneasy."
     },
     {
       "key": "StatuetteC",
-      "name": "Deathly Statuette"
+      "name": "Deathly Statuette",
+      "description": "A carving that emanates an evil energy, with no indication of what it's truly made of. Simply focusing on it evokes dark whispering inside your very soul."
     },
     {
       "key": "ScrollA",
-      "name": "Divining Scroll"
+      "name": "Divining Scroll",
+      "description": "A scroll that likely relates to some kind of magic. Exudes an inexplicable but ominous warmth."
     },
     {
       "key": "ScrollB",
-      "name": "Sealed Scroll"
+      "name": "Sealed Scroll",
+      "description": "An old scroll lacking in detail and clarity. By following the images on it, some magical creatures can recreate a small part of its magic."
     },
     {
       "key": "ScrollC",
-      "name": "Forbidden Curse Scroll"
+      "name": "Forbidden Curse Scroll",
+      "description": "A scroll inscribed with ancient images. It is said that few can decipher its meaning, and the few scholars that have all went mad."
     },
     {
       "key": "NectarA",
-      "name": "Whopperflower Nectar"
+      "name": "Whopperflower Nectar",
+      "description": "Nectar extracted from the stamen of a Whopperflower that contains trace amounts of elemental energy.\nThe taste of the nectar has a hint of Sweet Flower in it."
     },
     {
       "key": "NectarB",
-      "name": "Shimmering Nectar"
+      "name": "Shimmering Nectar",
+      "description": "Nectar that is full of pure elemental energy.\nScholars generally concur that Whopperflowers are advanced life forms among the elemental plants, but there has yet to be a satisfactory explanation regarding their predatory habits."
     },
     {
       "key": "NectarC",
-      "name": "Energia Nectar"
+      "name": "Energy Nectar",
+      "description": "A thick and sticky honey that is full of energy.\nThe Whopperflower hunts by tricking its prey, a process it uses to possibly evolve into a more powerful and pure form."
     },
     {
       "key": "ArrowHeadA",
-      "name": "Firm Arrowhead"
+      "name": "Firm Arrowhead",
+      "description": "A roughly produced arrowhead. Though unimpressive, neither it nor the bow should be underestimated, for even the bravest knight can be felled by an arrow from the rear."
     },
     {
       "key": "ArrowHeadB",
-      "name": "Sharp Arrowhead"
+      "name": "Sharp Arrowhead",
+      "description": "A well-made arrowhead. Sharp enough to penetrate armor with the ease of a rock through the surface of water."
     },
     {
       "key": "ArrowHeadC",
-      "name": "Weathered Arrowhead"
+      "name": "Weathered Arrowhead",
+      "description": "An old arrowhead coated in blood. The arrowhead has long since lost its sharpness and thus its use as a weapon.However, it represents the pride of a hunter and acts as both an amulet and a medal."
     },
     {
       "key": "CircularInsigniaA",
-      "name": "Treasure Hoarder Insignia"
+      "name": "Treasure Hoarder Insignia",
+      "description": "A signet that proudly represents its owner's position as member of the Treasure Hoarders. The pursuit of treasure knows no bounds. That said... Is being a thief something to be proud of?"
     },
     {
       "key": "CircularInsigniaB",
-      "name": "Silver Raven Insignia"
+      "name": "Silver Raven Insignia",
+      "description": "A raven insignia used by members of the Treasure Hoarders to identify each other. The Treasure Hoarders ask for no resume. Anyone who has an insatiable desire for treasure and is backed up by an equal amount of courage can become a worthy member."
     },
     {
       "key": "CircularInsigniaC",
-      "name": "Golden Raven Insignia"
+      "name": "Golden Raven Insignia",
+      "description": "A raven insignia that symbolizes the pride and the guiding principle of the Treasure Hoarders. Whether it's hidden amidst the vastness of the land or in the depths of the seas, as long as there are treasures to be hunted down, the spirit of Treasure Hoarders, who will stop at nothing to acquire them, will never die."
     },
     {
       "key": "InsigniaA",
-      "name": "Recruit's Insignia"
+      "name": "Recruit's Insignia",
+      "description": "An insignia to identify the recruits. Makes one wonder about what the ones joining the Fatui's war machine were thinking."
     },
     {
       "key": "InsigniaB",
-      "name": "Sergeant's Insignia"
+      "name": "Sergeant's Insignia",
+      "description": "An insignia with a different shape to distinguish the sergeants from new recruits. Perhaps there are complicated emotions behind it."
     },
     {
       "key": "InsigniaC",
-      "name": "Lieutenant's Insignia"
+      "name": "Lieutenant's Insignia",
+      "description": "An armband to identify officers. The Fatui possess a colossal army, so there must be something extraordinary about the ones who achieved this rank within the group."
     },
     {
       "key": "SlimeA",
-      "name": "Slime Condensate"
+      "name": "Slime Condensate",
+      "description": "A thick coating found on slimes. Most commonly seen material in elemental workshops."
     },
     {
       "key": "SlimeB",
-      "name": "Slime Secretions"
+      "name": "Slime Secretions",
+      "description": "Mildly purified slime secretions. Harmful to the skin. Please avoid direct exposure."
     },
     {
       "key": "SlimeC",
-      "name": "Slime Concentrate"
+      "name": "Slime Concentrate",
+      "description": "Concentrated slime essence. When left alone, it will begin to move on its own."
     },
     {
       "key": "Mora",
-      "name": "Mora"
+      "name": "Mora",
+      "description": "Common currency. The one language everybody speaks."
     },
     {
       "key": "BasaltPillar",
-      "name": "Basalt Pillar"
+      "name": "Basalt Pillar",
+      "description": "A pillar formed by the shell of a Geo Hypostasis, composed of high-density Geo energy.\nIt is a testament to Geo's status as the heaviest of the elements. Maybe the reason a Geo Hypostasis creates this pillar out of its shell and raises itself is just to get closer to the sky, not to combat enemies."
     },
     {
       "key": "CleansingHeart",
-      "name": "Cleansing Heart"
+      "name": "Cleansing Heart",
+      "description": "A palmful of eternal water left by an oceanid.\nThough it has already diffused among the depths of the lake, its purity remains all the same. But why would a creature so pure and clean as an oceanid covet the appearance of a being that roams the land, and assume such a form with pure water? They need not breathe nor do they require sustenance..."
     },
     {
       "key": "EverflameSeed",
-      "name": "Everflame Seed"
+      "name": "Everflame Seed",
+      "description": "A seed that fuels the unending flames of the Pyro Regisvine. It emits Pyro energy as if it will burn all that has ever sprouted from the ground.Endless desires flow among turbulent energy deep within the earth. What desire could steadily hold such fire to the plants and long so eagerly to bathe everything in unquenchable flames?"
     },
     {
       "key": "HoarfrostCore",
-      "name": "Hoarfrost Core"
+      "name": "Hoarfrost Core",
+      "description": "The exposed core of a defeated Cryo Regisvine. Pure Cryo energy is contained within it.\nEnergy and thoughts that swell deep within the earth will eventually erupt on the surface. Even the deathly silent frost will attach to living things on the ground, turning even ordinary vegetation like vines into huge, vicious predators."
     },
     {
       "key": "HurricaneSeed",
-      "name": "Hurricane Seed"
+      "name": "Hurricane Seed",
+      "description": "The imploded form of an Anemo Hypostasis upon its defeat.Contains the essence of Anemo energy.\nIt is said that the power to create hurricanes resides within its seemingly fragile body. This butterfly of pure Anemo energy must surely be waiting for the day when it can conjure up storms once again."
     },
     {
       "key": "LightningPrism",
-      "name": "Lightning Prism"
+      "name": "Lightning Prism",
+      "description": "An Electro Hypostasis channels nearby elemental energy to repair damaged elemental entities. Contains the essence of Electro energy.\nAn ordinary prism separates white light into its component colors; a Lightning Prism, however, channels flowing energy and weaves them into lightning. It will continue to do so even after the Electro Hypostasis has been defeated."
     },
     {
       "key": "AgateA",
-      "name": "Agnidus Agate Sliver"
+      "name": "Agnidus Agate Sliver",
+      "description": null
     },
     {
       "key": "AgateB",
-      "name": "Agnidus Agate Fragment"
+      "name": "Agnidus Agate Fragment",
+      "description": "\"A pilgrimage for a wish; a battle to earn a name...\""
     },
     {
       "key": "AgateC",
-      "name": "Agnidus Agate Chunk"
+      "name": "Agnidus Agate Chunk",
+      "description": "\"A pilgrimage for a wish; a battle to earn a name...Burnt to cinders for a dream.\""
     },
     {
       "key": "AgateD",
-      "name": "Agnidus Agate Gemstone"
+      "name": "Agnidus Agate Gemstone",
+      "description": "\"A pilgrimage for a wish; a battle to earn a name...Burnt to cinders for a dream.\nIf the intention yet remains, achieved ██'s truth he has.\""
     },
     {
       "key": "DiamondA",
-      "name": "Brilliant Diamond Sliver"
+      "name": "Brilliant Diamond Sliver",
+      "description": "\"Welcome to this world.\""
     },
     {
       "key": "DiamondB",
-      "name": "Brilliant Diamond Fragment"
+      "name": "Brilliant Diamond Fragment",
+      "description": "\"Welcome to this world.\""
     },
     {
       "key": "DiamondC",
-      "name": "Brilliant Diamond Chunk"
+      "name": "Brilliant Diamond Chunk",
+      "description": "\"Welcome to this world.\""
     },
     {
       "key": "DiamondD",
-      "name": "Brilliant Diamond Gemstone"
+      "name": "Brilliant Diamond Gemstone",
+      "description": "\"Welcome to this world.\""
     },
     {
       "key": "EmeraldA",
-      "name": "Nagadus Emerald Sliver"
+      "name": "Nagadus Emerald Sliver",
+      "description": null
     },
     {
       "key": "EmeraldB",
-      "name": "Nagadus Emerald Fragment"
+      "name": "Nagadus Emerald Fragment",
+      "description": "\"In the end, life opened its closed fist...\""
     },
     {
       "key": "EmeraldC",
-      "name": "Nagadus Emerald Chunk"
+      "name": "Nagadus Emerald Chunk",
+      "description": "\"In the end, life opened its closed fist...\""
     },
     {
       "key": "EmeraldD",
-      "name": "Nagadus Emerald Gemstone"
+      "name": "Nagadus Emerald Gemstone",
+      "description": "\"In the end, life opened its closed fist...granting freedom of life to all.\""
     },
     {
       "key": "TopazA",
-      "name": "Prithiva Topaz Sliver"
+      "name": "Prithiva Topaz Sliver",
+      "description": null
     },
     {
       "key": "TopazB",
-      "name": "Prithiva Topaz Fragment"
+      "name": "Prithiva Topaz Fragment",
+      "description": "\"The currencies that flow through this land are my flesh and blood.\""
     },
     {
       "key": "TopazC",
-      "name": "Prithiva Topaz Chunk"
+      "name": "Prithiva Topaz Chunk",
+      "description": "\"The currencies that flow through this land are my flesh and blood.\nFor thus did I become the guarantor of the people's hard work, wisdom, and future.\""
     },
     {
       "key": "TopazD",
-      "name": "Prithiva Topaz Gemstone"
+      "name": "Prithiva Topaz Gemstone",
+      "description": "\"The currencies that flow through this land are my flesh and blood.\nFor thus did I become the guarantor of the people's hard work, wisdom, and future.This is the trust I have placed in them. Betray it, and you taint my blood.\""
     },
     {
       "key": "JadeA",
-      "name": "Shivada Jade Sliver"
+      "name": "Shivada Jade Sliver",
+      "description": null
     },
     {
       "key": "JadeB",
-      "name": "Shivada Jade Fragment"
+      "name": "Shivada Jade Fragment",
+      "description": "\"Sorry...\""
     },
     {
       "key": "JadeC",
-      "name": "Shivada Jade Chunk"
+      "name": "Shivada Jade Chunk",
+      "description": "\"Sorry...\"\"...to also have you shoulder the grievances of the world.\""
     },
     {
       "key": "JadeD",
-      "name": "Shivada Jade Gemstone"
+      "name": "Shivada Jade Gemstone",
+      "description": "\"Sorry... to also have you shoulder the grievances of the world.\"Since you could endure my bitter cold, you must have the desire to burn?\"Then, burn away the old world for me.\""
     },
     {
       "key": "AmethystA",
-      "name": "Vajrada Amethyst Sliver"
+      "name": "Vajrada Amethyst Sliver",
+      "description": null
     },
     {
       "key": "AmethystB",
-      "name": "Vajrada Amethyst Fragment"
+      "name": "Vajrada Amethyst Fragment",
+      "description": "\"This body is the noblest and most eminent of all in this world.\""
     },
     {
       "key": "AmethystC",
-      "name": "Vajrada Amethyst Chunk"
+      "name": "Vajrada Amethyst Chunk",
+      "description": "\"This body is the noblest and most eminent of all in this world.It should hold absolute control over this world.\""
     },
     {
       "key": "AmethystD",
-      "name": "Vajrada Amethyst Gemstone"
+      "name": "Vajrada Amethyst Gemstone",
+      "description": "\"This body is the noblest and most eminent of all in this world.\"It should hold absolute control over this world.\"It once promised its people a dream: the never-changing 'eternity.'\""
     },
     {
       "key": "LazuriteA",
-      "name": "Varunada Lazurite Sliver"
+      "name": "Varunada Lazurite Sliver",
+      "description": null
     },
     {
       "key": "LazuriteB",
-      "name": "Varunada Lazurite Fragment"
+      "name": "Varunada Lazurite Fragment",
+      "description": "\"My ideals have no stains.\""
     },
     {
       "key": "LazuriteC",
-      "name": "Varunada Lazurite Chunk"
+      "name": "Varunada Lazurite Chunk",
+      "description": "\"My ideals have no stains.I must correct you. People here bear no sins in the eyes of the gods...\""
     },
     {
       "key": "LazuriteD",
-      "name": "Varunada Lazurite Gemstone"
+      "name": "Varunada Lazurite Gemstone",
+      "description": "\"My ideals have no stains.I must correct you. People here bear no sins in the eyes of the gods... Only laws and the Tribunal can judge someone.\nThey can judge even me. So praise my magnificence and purity.\""
     },
     {
       "key": "TurquoiseA",
-      "name": "Vayuda Turquoise Sliver"
+      "name": "Vayuda Turquoise Sliver",
+      "description": null
     },
     {
       "key": "TurquoiseB",
-      "name": "Vayuda Turquoise Fragment"
+      "name": "Vayuda Turquoise Fragment",
+      "description": "\"Still, the winds change direction.\""
     },
     {
       "key": "TurquoiseC",
-      "name": "Vayuda Turquoise Chunk"
+      "name": "Vayuda Turquoise Chunk",
+      "description": "\"Still, the winds change direction.Someday, they will blow towards a brighter future...\""
     },
     {
       "key": "TurquoiseD",
-      "name": "Vayuda Turquoise Gemstone"
+      "name": "Vayuda Turquoise Gemstone",
+      "description": "\"Still, the winds change direction.\"Someday, they will blow towards a brighter future...\"Take my blessings and live leisurely from this day onward.\""
     },
     {
       "key": "CallaLily",
-      "name": "Calla Lily"
+      "name": "Calla Lily",
+      "description": "A flower that grows near water sources. When cooked, the petals have a chunky texture, yet are sweet and a little bitter."
     },
     {
       "key": "Cecilia",
-      "name": "Cecilia"
+      "name": "Cecilia",
+      "description": "A beautiful flower with a name that suits its appearance. It only grows where harsh winds blow, and is just as intangible as the true heart of an unbound soul."
     },
     {
       "key": "CorLapis",
-      "name": "Cor Lapis"
+      "name": "Cor Lapis",
+      "description": "A precious crystal of condensed pure Geo element that usually grows along with other minerals. It's also commonly called \"Cor Petrae."
     },
     {
       "key": "DandelionSeed",
-      "name": "Dandelion Seed"
+      "name": "Dandelion Seed",
+      "description": "A tiny seed that rides on the wind. Even without its feathered wings, it still holds the hope from afar within."
     },
     {
       "key": "GlazeLily",
-      "name": "Glaze Lily"
+      "name": "Glaze Lily",
+      "description": "An extremely ancient flower that was said to be commonly seen in Liyue. It transforms the memories of the land into its fragrance during florescence."
     },
     {
       "key": "JueyunChili",
-      "name": "Jueyun Chili"
+      "name": "Jueyun Chili",
+      "description": "A spicy plant native to Liyue. Merely smelling it makes one hot and thirsty."
     },
     {
       "key": "NoctilousJade",
-      "name": "Noctilucous Jade"
+      "name": "Noctilucous Jade",
+      "description": "A rare mineral that glimmers in the dark. It's said to be a mutated gemstone condensed from the flourishing elements of the world."
     },
     {
       "key": "PhilanemoMushroom",
-      "name": "Philanemo Mushroom"
+      "name": "Philanemo Mushroom",
+      "description": "A fungus that grows in the warm caress of the wind. It is as everlasting as the wind, nourishing life."
     },
     {
       "key": "Qingxin",
-      "name": "Qingxin"
+      "name": "Qingxin",
+      "description": "A crimson flower that blooms like the rainbow clouds in Liyue. It can be made into silky-smooth fabric."
     },
     {
       "key": "SilkFlower",
-      "name": "Silk Flower"
+      "name": "Silk Flower",
+      "description": "A crimson flower that blooms like the rainbow clouds in Liyue. It can be made into silky-smooth fabric."
     },
     {
       "key": "SmallLampGrass",
-      "name": "Small Lamp Grass"
+      "name": "Small Lamp Grass",
+      "description": "A wild grass that emits light at night. Used in cooking to enhance other flavors."
     },
     {
       "key": "Starconch",
-      "name": "Starconch"
+      "name": "Starconch",
+      "description": "Empty seashells brought ashore by the tides. Hold it close to your ear, and hear the longing calls of the sea."
     },
     {
       "key": "Valberry",
-      "name": "Valberry"
+      "name": "Valberry",
+      "description": "A plump and translucent berry that has a fragrant smell and a sweet refreshing taste. In the past, the watchers of the storms found solace in the sweetness of the fruit and the hope for the city's security."
     },
     {
       "key": "Violetgrass",
-      "name": "Violetgrass"
+      "name": "Violetgrass",
+      "description": "A small flower with strong vitality. It was said its downward-blooming flower keeps its fragrance from dissipating."
     },
     {
       "key": "WindwheelAster",
-      "name": "Windwheel Aster"
+      "name": "Windwheel Aster",
+      "description": "A plant that adores the wind. To the proud children of the wind, or the citizens of Mondstadt, the Windwheel Asters are \"the visible winds."
     },
     {
       "key": "Wolfhook",
-      "name": "Wolfhook"
+      "name": "Wolfhook",
+      "description": "A berry with thorns that often gets attached to a wolf's pelt. When you look at it, you can almost hear the echoing cries of the wolves in the woods."
     },
     {
       "key": "EnhancementOreA",
-      "name": "Enhancement Ore"
+      "name": "Enhancement Ore",
+      "description": "Gives 400 EXP.\nA refined ingot with endless possibilities that can be used to enhance weapons."
     },
     {
       "key": "EnhancementOreB",
-      "name": "Fine Enhancement Ore"
+      "name": "Fine Enhancement Ore",
+      "description": "Gives 2,000 EXP.\nFor reasons unknown, this special and refined ore can be absorbed by weapons to greatly increase their strengths."
     },
     {
       "key": "EnhancementOreC",
-      "name": "Mystic Enhancement Ore"
+      "name": "Mystic Enhancement Ore",
+      "description": "Gives 10,000 EXP.\nLegend has it that this refined ingot contains the memories of battles that had taken place in the land. The weapons that benefit from these memories naturally become sentient."
     },
     {
       "key": "CharExpA",
-      "name": "Wanderer's Advice"
+      "name": "Wanderer's Advice",
+      "description": "Gives 1000 EXP.\nThese experiences are still beneficial even if one does not live in Teyvat."
     },
     {
       "key": "CharExpB",
-      "name": "Adventurer's Experience"
+      "name": "Adventurer's Experience",
+      "description": "Gives 5000 EXP.\nThese experiences are very beneficial for journeys into the unknown."
     },
     {
       "key": "CharExpC",
-      "name": "Hero's Wit"
+      "name": "Hero's Wit",
+      "description": "Gives 20000 EXP.\nThese experiences are extremely precious for a pilgrim traveling through Teyvat in order to be closer to Celestia."
+    },
+    {
+      "key": "JuvenileJade",
+      "name": "Juvenile Jade",
+      "description": "A crystalline substance taken from a Primo Geovishap. Within it is contained the potential to become a dragon.\nThese dull crystals are precipitated within the bodies of vishaps sleeping in the mountains. Liyue folklore holds that they will gather power over many years, after which this crystal will, at last, replace their original heart, and the vishap will become a true dragon — one that can shake the mountains and split the earth."
+    },
+    {
+      "key": "Starsilver",
+      "name": "Starsilver",
+      "description": "A rare and precious ore formed by the unique geographical conditions and Ley Lines of Dragonspine."
+    },
+    {
+      "key": "Vitalized Dragontooth",
+      "name": "Vitalized Dragontooth",
+      "description": "A Dragontooth infused with vitality. Just its luster and texture are enough to make one uneasy..."
+    },
+    {
+      "key": "Iron Chunk",
+      "name": "Iron Chunk",
+      "description": "This iron chunk can be turned into a multitude of handy items in the hands of a skilled craftsman."
+    },
+    {
+      "key": "White Iron Chunk",
+      "name": "White Iron Chunk",
+      "description": "Skilled hands can make this into something brilliant."
+    },
+    {
+      "key": "Crystal Chunk",
+      "name": "Crystal Chunk",
+      "description": "An uncut crystal. Only professional craftsmanship can bring out its true value."
+    },
+    {
+      "key": "Northlander Bow Billet",
+      "name": "Northlander Bow Billet",
+      "description": "Can be used to forge 4-star bows. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+    },
+    {
+      "key": "Northlander Catalyst Billet",
+      "name": "Northlander Catalyst Billet",
+      "description": "Can be used to forge 4-star catalysts. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+    },
+    {
+      "key": "Northlander Claymore Billet",
+      "name": "Northlander Claymore Billet",
+      "description": "Can be used to forge 4-star claymores. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+    },
+    {
+      "key": "Northlander Polearm Billet",
+      "name": "Northlander Polearm Billet",
+      "description": "Can be used to forge 4-star polearms. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+    },
+    {
+      "key": "Northlander Sword Billet",
+      "name": "Northlander Sword Billet",
+      "description": "Can be used to forge 4-star swords. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+    },
+    {
+      "key": "Dust of Azoth",
+      "name": "Dust of Azoth",
+      "description": "A device that can transmute elemental Ascension Materials and change their Elemental Type.Its practical uses notwithstanding, alchemy is the study of the nature of matter and the rules that underpin its transformations, and ultimately it seeks to comprehend the working principles of the world and the flow of the ley lines\nIt is not known who would share alchemical achievements of this magnitude with the civilizations of the world and why. But although the power to fundamentally transmute elemental energy in its crystallized and inert form is a highly useful one, this device also conceals the grave danger of disrupting the elemental balance..."
+    },
+    {
+      "key": "Magical Crystal Chunk",
+      "name": "Magical Crystal Chunk",
+      "description": "These crystal chunks can be refined into Weapon EXP materials by using Original Resin.\nCrystals from mines that were eroded by the energy of the Ley Lines cannot be processed by ordinary means."
+    },
+    {
+      "key": "Original Resin",
+      "name": "Original Resin",
+      "description": "Used to vitalize Petrified Trees and Ley Line Blossoms, allowing access to the treasures they hold. Energy regenerates over time.\nIt is said that the roots of all the Irminsul trees and blossoms in the world are intertwined at the deepest, most hidden place in the earth, and that the pattern the root system makes defines the Ley Lines of the world."
+    },
+    {
+      "key": "Primogem",
+      "name": "Primogem",
+      "description": "A primordial crystalline gem that's beyond the mundane world. Shines with the condensed hopes and dreams of universes that once were."
     }
   ],
   "debuffs": [
@@ -5690,6 +5920,380 @@
       "name": "Protective Canopy",
       "effect": "All Elemental RES by 15%. Physical RES + 15%",
       "description": "Any 4 Unique Elements"
+    }
+  ],
+  "monsters": [
+    {
+      "key": "Abyss Herald: Wicked Torrents",
+      "name": "Abyss Herald: Wicked Torrents"
+    },
+    {
+      "key": "Abyss Lector: Violet Lightning",
+      "name": "Abyss Lector: Violet Lightning"
+    },
+    {
+      "key": "Anemo Hypostasis",
+      "name": "Anemo Hypostasis"
+    },
+    {
+      "key": "Anemo Samachurl",
+      "name": "Anemo Samachurl"
+    },
+    {
+      "key": "Anemo Slime",
+      "name": "Anemo Slime"
+    },
+    {
+      "key": "Azhdaha",
+      "name": "Azhdaha"
+    },
+    {
+      "key": "Blazing Axe Mitachurl",
+      "name": "Blazing Axe Mitachurl"
+    },
+    {
+      "key": "Childe",
+      "name": "Childe"
+    },
+    {
+      "key": "Cryo Abyss Mage",
+      "name": "Cryo Abyss Mage"
+    },
+    {
+      "key": "Cryo Cicin",
+      "name": "Cryo Cicin"
+    },
+    {
+      "key": "Cryo Hilichurl Grenadier",
+      "name": "Cryo Hilichurl Grenadier"
+    },
+    {
+      "key": "Cryo Hilichurl Shooter",
+      "name": "Cryo Hilichurl Shooter"
+    },
+    {
+      "key": "Cryo Hypostasis",
+      "name": "Cryo Hypostasis"
+    },
+    {
+      "key": "Cryo Regisvine",
+      "name": "Cryo Regisvine"
+    },
+    {
+      "key": "Cryo Samachurl",
+      "name": "Cryo Samachurl"
+    },
+    {
+      "key": "Cryo Slime",
+      "name": "Cryo Slime"
+    },
+    {
+      "key": "Cryo Whopperflower",
+      "name": "Cryo Whopperflower"
+    },
+    {
+      "key": "Dendro Samachurl",
+      "name": "Dendro Samachurl"
+    },
+    {
+      "key": "Dendro Slime",
+      "name": "Dendro Slime"
+    },
+    {
+      "key": "Electro Cicin",
+      "name": "Electro Cicin"
+    },
+    {
+      "key": "Electro Hilichurl Shooter",
+      "name": "Electro Hilichurl Shooter"
+    },
+    {
+      "key": "Electro Hypostasis",
+      "name": "Electro Hypostasis"
+    },
+    {
+      "key": "Electro Slime",
+      "name": "Electro Slime"
+    },
+    {
+      "key": "Eye of the Storm",
+      "name": "Eye of the Storm"
+    },
+    {
+      "key": "Fatui Cryo Cicin Mage",
+      "name": "Fatui Cryo Cicin Mage"
+    },
+    {
+      "key": "Fatui Electro Cicin Mage",
+      "name": "Fatui Electro Cicin Mage"
+    },
+    {
+      "key": "Fatui Pyro Agent",
+      "name": "Fatui Pyro Agent"
+    },
+    {
+      "key": "Fatui Skirmisher - Anemoboxer Vanguard",
+      "name": "Fatui Skirmisher - Anemoboxer Vanguard"
+    },
+    {
+      "key": "Fatui Skirmisher - Cryogunner Legionnaire",
+      "name": "Fatui Skirmisher - Cryogunner Legionnaire"
+    },
+    {
+      "key": "Fatui Skirmisher - Electrohammer Vanguard",
+      "name": "Fatui Skirmisher - Electrohammer Vanguard"
+    },
+    {
+      "key": "Fatui Skirmisher - Geochanter Bracer",
+      "name": "Fatui Skirmisher - Geochanter Bracer"
+    },
+    {
+      "key": "Fatui Skirmisher - Hydrogunner Legionnaire",
+      "name": "Fatui Skirmisher - Hydrogunner Legionnaire"
+    },
+    {
+      "key": "Fatui Skirmisher - Pyroslinger Bracer",
+      "name": "Fatui Skirmisher - Pyroslinger Bracer"
+    },
+    {
+      "key": "Frostarm Lawachurl",
+      "name": "Frostarm Lawachurl"
+    },
+    {
+      "key": "Geo Hypostasis",
+      "name": "Geo Hypostasis"
+    },
+    {
+      "key": "Geo Samachurl",
+      "name": "Geo Samachurl"
+    },
+    {
+      "key": "Geo Slime",
+      "name": "Geo Slime"
+    },
+    {
+      "key": "Geovishap",
+      "name": "Geovishap"
+    },
+    {
+      "key": "Geovishap Hatchling",
+      "name": "Geovishap Hatchling"
+    },
+    {
+      "key": "Hilichurl",
+      "name": "Hilichurl"
+    },
+    {
+      "key": "Hilichurl Berserker",
+      "name": "Hilichurl Berserker"
+    },
+    {
+      "key": "Hilichurl Fighter",
+      "name": "Hilichurl Fighter"
+    },
+    {
+      "key": "Hilichurl Grenadier",
+      "name": "Hilichurl Grenadier"
+    },
+    {
+      "key": "Hilichurl Shooter",
+      "name": "Hilichurl Shooter"
+    },
+    {
+      "key": "Hydro Abyss Mage",
+      "name": "Hydro Abyss Mage"
+    },
+    {
+      "key": "Hydro Cicin",
+      "name": "Hydro Cicin"
+    },
+    {
+      "key": "Hydro Samachurl",
+      "name": "Hydro Samachurl"
+    },
+    {
+      "key": "Hydro Slime",
+      "name": "Hydro Slime"
+    },
+    {
+      "key": "Ice Shield Hilichurl Guard",
+      "name": "Ice Shield Hilichurl Guard"
+    },
+    {
+      "key": "Ice Shieldwall Mitachurl",
+      "name": "Ice Shieldwall Mitachurl"
+    },
+    {
+      "key": "Large Anemo Slime",
+      "name": "Large Anemo Slime"
+    },
+    {
+      "key": "Large Cryo Slime",
+      "name": "Large Cryo Slime"
+    },
+    {
+      "key": "Large Dendro Slime",
+      "name": "Large Dendro Slime"
+    },
+    {
+      "key": "Large Electro Slime",
+      "name": "Large Electro Slime"
+    },
+    {
+      "key": "Large Geo Slime",
+      "name": "Large Geo Slime"
+    },
+    {
+      "key": "Large Hydro Slime",
+      "name": "Large Hydro Slime"
+    },
+    {
+      "key": "Large Pyro Slime",
+      "name": "Large Pyro Slime"
+    },
+    {
+      "key": "Lupus Boreas, Dominator of Wolves",
+      "name": "Lupus Boreas, Dominator of Wolves"
+    },
+    {
+      "key": "Millelith Sergeant",
+      "name": "Millelith Sergeant"
+    },
+    {
+      "key": "Millelith Soldier",
+      "name": "Millelith Soldier"
+    },
+    {
+      "key": "Mutant Electro Slime",
+      "name": "Mutant Electro Slime"
+    },
+    {
+      "key": "Oceanid",
+      "name": "Oceanid"
+    },
+    {
+      "key": "Primo Geovishap",
+      "name": "Primo Geovishap"
+    },
+    {
+      "key": "Pyro Abyss Mage",
+      "name": "Pyro Abyss Mage"
+    },
+    {
+      "key": "Pyro Hilichurl Shooter",
+      "name": "Pyro Hilichurl Shooter"
+    },
+    {
+      "key": "Pyro Regisvine",
+      "name": "Pyro Regisvine"
+    },
+    {
+      "key": "Pyro Slime",
+      "name": "Pyro Slime"
+    },
+    {
+      "key": "Pyro Whopperflower",
+      "name": "Pyro Whopperflower"
+    },
+    {
+      "key": "Rock Shield Hilichurl Guard",
+      "name": "Rock Shield Hilichurl Guard"
+    },
+    {
+      "key": "Rock Shieldwall Mitachurl",
+      "name": "Rock Shieldwall Mitachurl"
+    },
+    {
+      "key": "Ruin Grader",
+      "name": "Ruin Grader"
+    },
+    {
+      "key": "Ruin Guard",
+      "name": "Ruin Guard"
+    },
+    {
+      "key": "Ruin Hunter",
+      "name": "Ruin Hunter"
+    },
+    {
+      "key": "Stonehide Lawachurl",
+      "name": "Stonehide Lawachurl"
+    },
+    {
+      "key": "Stormterror",
+      "name": "Stormterror"
+    },
+    {
+      "key": "Treasure Hoarders - Boss",
+      "name": "Treasure Hoarders - Boss"
+    },
+    {
+      "key": "Treasure Hoarders - Carmen",
+      "name": "Treasure Hoarders - Carmen"
+    },
+    {
+      "key": "Treasure Hoarders - Crusher",
+      "name": "Treasure Hoarders - Crusher"
+    },
+    {
+      "key": "Treasure Hoarders - Liuliu",
+      "name": "Treasure Hoarders - Liuliu"
+    },
+    {
+      "key": "Treasure Hoarders - Marksman",
+      "name": "Treasure Hoarders - Marksman"
+    },
+    {
+      "key": "Treasure Hoarders - Pugilist",
+      "name": "Treasure Hoarders - Pugilist"
+    },
+    {
+      "key": "Treasure Hoarders - Raptor",
+      "name": "Treasure Hoarders - Raptor"
+    },
+    {
+      "key": "Treasure Hoarders - Scout",
+      "name": "Treasure Hoarders - Scout"
+    },
+    {
+      "key": "Treasure Hoarders - Seaman",
+      "name": "Treasure Hoarders - Seaman"
+    },
+    {
+      "key": "Treasure Hoarders: Cryo Potioneer",
+      "name": "Treasure Hoarders: Cryo Potioneer"
+    },
+    {
+      "key": "Treasure Hoarders: Electro Potioneer",
+      "name": "Treasure Hoarders: Electro Potioneer"
+    },
+    {
+      "key": "Treasure Hoarders: Gravedigger",
+      "name": "Treasure Hoarders: Gravedigger"
+    },
+    {
+      "key": "Treasure Hoarders: Handyman",
+      "name": "Treasure Hoarders: Handyman"
+    },
+    {
+      "key": "Treasure Hoarders: Hydro Potioneer",
+      "name": "Treasure Hoarders: Hydro Potioneer"
+    },
+    {
+      "key": "Treasure Hoarders: Pyro Potioneer",
+      "name": "Treasure Hoarders: Pyro Potioneer"
+    },
+    {
+      "key": "Unusual Hilichurl",
+      "name": "Unusual Hilichurl"
+    },
+    {
+      "key": "Wooden Shield Hilichurl Guard",
+      "name": "Wooden Shield Hilichurl Guard"
+    },
+    {
+      "key": "Wooden Shieldwall Mitachurl",
+      "name": "Wooden Shieldwall Mitachurl"
     }
   ]
 }
