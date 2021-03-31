@@ -19,10 +19,12 @@ class SliverCardItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: InkWell(
+        borderRadius: Styles.homeCardItemBorderRadius,
         onTap: () => onClick(context),
         child: Card(
+          clipBehavior: Clip.hardEdge,
           margin: Styles.edgeInsetAll15,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+          shape: RoundedRectangleBorder(borderRadius: Styles.homeCardItemBorderRadius),
           child: Container(
             padding: Styles.edgeInsetAll15,
             child: Row(

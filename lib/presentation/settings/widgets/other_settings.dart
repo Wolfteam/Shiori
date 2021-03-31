@@ -24,10 +24,7 @@ class OtherSettings extends StatelessWidget {
               const Icon(Icons.build),
               Container(
                 margin: const EdgeInsets.only(left: 5),
-                child: Text(
-                  s.others,
-                  style: Theme.of(context).textTheme.headline6,
-                ),
+                child: Text(s.others, style: Theme.of(context).textTheme.headline6),
               ),
             ],
           ),

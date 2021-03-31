@@ -52,8 +52,10 @@ class ArtifactCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return InkWell(
+      borderRadius: Styles.mainCardBorderRadius,
       onTap: () => _gotoDetailPage(context),
       child: GradientCard(
+        clipBehavior: Clip.hardEdge,
         shape: Styles.mainCardShape,
         elevation: withElevation ? Styles.cardTenElevation : 0,
         gradient: rarity.getRarityGradient(),
@@ -94,8 +96,10 @@ class ArtifactCard extends StatelessWidget {
   }
 
   Future<void> _gotoDetailPage(BuildContext context) async {
-    context.read<ArtifactBloc>().add(ArtifactEvent.loadArtifact(key: keyName));
+    final bloc = context.read<ArtifactBloc>();
+    bloc.add(ArtifactEvent.loadArtifact(key: keyName));
     final route = MaterialPageRoute(builder: (ctx) => ArtifactPage());
     await Navigator.of(context).push(route);
+    bloc.pop();
   }
 }

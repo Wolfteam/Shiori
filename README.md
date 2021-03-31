@@ -20,12 +20,27 @@
 
 [<img height="100" width="250" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" />](https://play.google.com/store/apps/details?id=com.miraisoft.genshindb)
 
+### Contributing
+
+> Before contributing, please ask me if whatever you are planning to do / add / improve is valid for this project.
+
+You can build and run this thing by following these steps:
+
+* Clone this repository
+* Checkout the **develop** branch
+* Run ``flutter pub get``
+* Run ``flutter pub run build_runner build --delete-conflicting-outputs``
+* Install the ``Flutter Intl extension`` (It is available in Vs Code and Android Studio)
+* Run the ``flutter intl initialize`` command from your IDE
+* Create a ``Secrets`` class in the infrastructure/telemetry folder and add a static property called ``appCenterKey`` (You could also comment the related code)
+* Profit
+
 ### Translations
 
-Currently the app supports English and Spanish (There are some folks working on a french / russian translation).
-If you want to help me with the translations, i encourage you to check the following files:
+Currently the app supports English and Spanish (There are some folks working on a French / Russian translation).
+If you want to help me with the translations, I encourage you to check the following files:
 
-* The main one (where all the data of the characters / artifacts / etc are stored):
+* The main one (where all the data of the characters / artifacts / etc. are stored):
 [Main](https://github.com/Wolfteam/GenshinDb/blob/develop/assets/i18n/en.json)
 
 * The general one (where common strings are stored [not related specifically to the game]):
@@ -48,3 +63,16 @@ The {{x}} is a placeholder and the value shouldn't be changed, but the position 
 * To  [Uzair Ashraf](https://github.com/uzair-ashraf) for his wish simulator
 * The folk(s) that developed the [Map](https://genshin-impact-map.appsample.com/#/)
 * And the folks from [Honey Impact](https://genshin.honeyhunterworld), [Fandom Wiki](https://genshin-impact.fandom.com/wiki/Genshin_Impact), [Genshin.in](https://www.gensh.in/), [Genshin.Center](https://genshin-center.com/) that provide useful data
+
+### Translators
+
+Translating the app to other languages won't have been possible without the following contributors
+
+|Chinese |Russian|
+|---|---|
+|2O48#9733|SipTik#8026|
+| |KKTS#8567|
+| |KlimeLime#7577|
+| |Avantel#8880|
+| |чебилин#5968|
+| |Anixty#3279|

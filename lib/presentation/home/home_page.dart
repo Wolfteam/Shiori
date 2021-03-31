@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/home/widgets/sliver_tierlist_card.dart';
-import 'package:genshindb/presentation/today_materials/materials_page.dart';
+import 'package:genshindb/presentation/today_materials/today_materials_page.dart';
 
 import 'widgets/sliver_calculators_card.dart';
 import 'widgets/sliver_characters_birthday_card.dart';
 import 'widgets/sliver_elements_card.dart';
+import 'widgets/sliver_game_codes_card.dart';
 import 'widgets/sliver_main_title.dart';
+import 'widgets/sliver_materials_card.dart';
+import 'widgets/sliver_monsters_card.dart';
+import 'widgets/sliver_my_inventory_card.dart';
 import 'widgets/sliver_settings_card.dart';
+import 'widgets/sliver_tierlist_card.dart';
 import 'widgets/sliver_today_char_ascension_materials.dart';
 import 'widgets/sliver_today_weapon_materials.dart';
 import 'widgets/sliver_wish_simulator_card.dart';
@@ -38,12 +42,20 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
         SliverTodayWeaponMaterials(),
         SliverMainTitle(title: s.elements),
         SliverElementsCard(),
+        SliverMainTitle(title: s.myInventory),
+        SliverMyInventoryCard(),
         SliverMainTitle(title: s.calculators),
         SliverCalculatorsCard(),
+        SliverMainTitle(title: s.materials),
+        SliverMaterialsCard(),
+        SliverMainTitle(title: s.monsters),
+        SliverMonstersCard(),
         SliverMainTitle(title: s.wishSimulator),
         SliverWishSimulatorCard(),
         SliverMainTitle(title: s.tierListBuilder),
         SliverTierList(),
+        SliverMainTitle(title: s.gameCodes),
+        SliverGameCodesCard(),
         SliverMainTitle(title: s.settings),
         SliverSettingsCard(),
       ],
@@ -78,7 +90,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
   }
 
   Future<void> _gotoMaterialsPage(BuildContext context) async {
-    context.read<MaterialsBloc>().add(const MaterialsEvent.init());
-    await Navigator.push(context, MaterialPageRoute(builder: (_) => MaterialsPage()));
+    context.read<TodayMaterialsBloc>().add(const TodayMaterialsEvent.init());
+    await Navigator.push(context, MaterialPageRoute(builder: (_) => TodayMaterialsPage()));
   }
 }

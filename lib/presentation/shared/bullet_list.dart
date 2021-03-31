@@ -7,12 +7,14 @@ class BulletList extends StatelessWidget {
   final List<String> items;
   final Widget icon;
   final Widget Function(int) iconResolver;
+  final double fontSize;
 
   const BulletList({
     Key key,
     @required this.items,
     this.icon = const Icon(Icons.fiber_manual_record, size: 15),
     this.iconResolver,
+    this.fontSize = 11,
   }) : super(key: key);
 
   @override
@@ -35,7 +37,7 @@ class BulletList extends StatelessWidget {
             leading: leading,
             title: Transform.translate(
               offset: Styles.listItemWithIconOffset,
-              child: Text(e, style: theme.textTheme.bodyText2.copyWith(fontSize: 11)),
+              child: Tooltip(message: e, child: Text(e, style: theme.textTheme.bodyText2.copyWith(fontSize: fontSize))),
             ),
           );
         },

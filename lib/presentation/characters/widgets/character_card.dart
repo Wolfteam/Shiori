@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
+import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/character/character_page.dart';
 import 'package:genshindb/presentation/shared/comingsoon_new_avatar.dart';
@@ -26,6 +27,7 @@ class CharacterCard extends StatelessWidget {
   final bool isComingSoon;
   final List<String> materials;
   final bool isInSelectionMode;
+  final bool showMaterials;
 
   const CharacterCard({
     Key key,
@@ -39,15 +41,34 @@ class CharacterCard extends StatelessWidget {
     @required this.isComingSoon,
     @required this.materials,
     this.isInSelectionMode = false,
+    this.showMaterials = true,
   }) : super(key: key);
+
+  CharacterCard.item({
+    Key key,
+    CharacterCardModel char,
+    this.isInSelectionMode = false,
+    this.showMaterials = true,
+  })  : keyName = char.key,
+        elementType = char.elementType,
+        isComingSoon = char.isComingSoon,
+        isNew = char.isNew,
+        image = char.logoName,
+        name = char.name,
+        rarity = char.stars,
+        weaponType = char.weaponType,
+        materials = char.materials,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
     return InkWell(
+      borderRadius: Styles.mainCardBorderRadius,
       onTap: () => _gotoCharacterPage(context),
       child: Card(
+        clipBehavior: Clip.hardEdge,
         shape: Styles.mainCardShape,
         elevation: Styles.cardTenElevation,
         color: elementType.getElementColorFromContext(context),
@@ -96,10 +117,11 @@ class CharacterCard extends StatelessWidget {
                     ),
                   ),
                   Rarity(stars: rarity),
-                  CharacterCardAscensionMaterialsBottom(
-                    materials: materials,
-                    weaponType: weaponType,
-                  ),
+                  if (showMaterials)
+                    CharacterCardAscensionMaterialsBottom(
+                      materials: materials,
+                      weaponType: weaponType,
+                    ),
                 ],
               ),
             ),
@@ -129,8 +151,11 @@ class CharacterCard extends StatelessWidget {
       return;
     }
 
-    context.read<CharacterBloc>().add(CharacterEvent.loadFromName(key: keyName));
+    final bloc = context.read<CharacterBloc>();
+    bloc.add(CharacterEvent.loadFromName(key: keyName));
     final route = MaterialPageRoute(builder: (c) => const CharacterPage());
     await Navigator.push(context, route);
+    await route.completed;
+    bloc.pop();
   }
 }

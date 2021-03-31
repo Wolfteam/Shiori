@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/extensions/string_extensions.dart';
+import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/characters/characters_page.dart';
+import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/genshin_db_icons.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
 import 'package:genshindb/presentation/shared/nothing_found_column.dart';
@@ -15,8 +17,16 @@ import 'package:hawk_fab_menu/hawk_fab_menu.dart';
 import 'widgets/add_edit_item_bottom_sheet.dart';
 import 'widgets/ascension_materials_summary.dart';
 import 'widgets/item_card.dart';
+import 'widgets/reorder_items_dialog.dart';
 
 class CalculatorAscensionMaterialsPage extends StatelessWidget {
+  final int sessionKey;
+
+  const CalculatorAscensionMaterialsPage({
+    Key key,
+    @required this.sessionKey,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -24,7 +34,19 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
 
     return Scaffold(
-      appBar: AppBar(title: Text(s.ascensionMaterials)),
+      appBar: AppBar(
+        title: Text(s.ascensionMaterials),
+        actions: [
+          BlocBuilder<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
+            builder: (context, state) => state.items.length > 1
+                ? IconButton(
+                    icon: const Icon(Icons.unfold_more),
+                    onPressed: () => _showReorderDialog(state.items, context),
+                  )
+                : Container(),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: HawkFabMenu(
           icon: AnimatedIcons.menu_arrow,
@@ -74,6 +96,8 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
                           builder: (index) {
                             final e = state.items[index];
                             return ItemCard(
+                              sessionKey: sessionKey,
+                              isActive: e.isActive,
                               index: index,
                               itemKey: e.key,
                               image: e.image,
@@ -85,16 +109,17 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
                           },
                         ),
                       ),
-                      SliverToBoxAdapter(
-                        child: ItemDescriptionDetail(
-                          title: s.summary,
-                          textColor: theme.accentColor,
-                          body: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [...state.summary.map((e) => AscensionMaterialsSummaryWidget(summary: e)).toList()],
+                      if (state.summary.isNotEmpty)
+                        SliverToBoxAdapter(
+                          child: ItemDescriptionDetail(
+                            title: s.summary,
+                            textColor: theme.accentColor,
+                            body: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: _buildSummary(s, state.summary),
+                            ),
                           ),
                         ),
-                      ),
                     ],
                   );
                 },
@@ -106,12 +131,20 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
     );
   }
 
+  List<AscensionMaterialsSummaryWidget> _buildSummary(S s, List<AscensionMaterialsSummary> items) {
+    items.sort((x, y) => s.translateAscensionSummaryType(x.type).compareTo(s.translateAscensionSummaryType(y.type)));
+
+    return items.map((e) => AscensionMaterialsSummaryWidget(summary: e)).toList();
+  }
+
   Future<void> _openCharacterPage(BuildContext context) async {
-    context.read<CharactersBloc>().add(const CharactersEvent.init());
+    final charactersBloc = context.read<CharactersBloc>();
+    charactersBloc.add(CharactersEvent.init(excludeKeys: context.read<CalculatorAscMaterialsBloc>().getItemsKeysToExclude()));
+
     final route = MaterialPageRoute<String>(builder: (ctx) => const CharactersPage(isInSelectionMode: true));
     final keyName = await Navigator.of(context).push(route);
 
-    context.read<CharactersBloc>().add(const CharactersEvent.init());
+    charactersBloc.add(const CharactersEvent.init());
     if (keyName.isNullEmptyOrWhitespace) {
       return;
     }
@@ -123,16 +156,18 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
       shape: Styles.modalBottomSheetShape,
       isDismissible: true,
       isScrollControlled: true,
-      builder: (_) => AddEditItemBottomSheet.toAddItem(keyName: keyName, isAWeapon: false),
+      builder: (_) => AddEditItemBottomSheet.toAddItem(sessionKey: sessionKey, keyName: keyName, isAWeapon: false),
     );
   }
 
   Future<void> _openWeaponPage(BuildContext context) async {
-    context.read<WeaponsBloc>().add(const WeaponsEvent.init());
+    final weaponsBloc = context.read<WeaponsBloc>();
+    weaponsBloc.add(WeaponsEvent.init(excludeKeys: context.read<CalculatorAscMaterialsBloc>().getItemsKeysToExclude()));
+
     final route = MaterialPageRoute<String>(builder: (ctx) => const WeaponsPage(isInSelectionMode: true));
     final keyName = await Navigator.of(context).push(route);
 
-    context.read<WeaponsBloc>().add(const WeaponsEvent.init());
+    weaponsBloc.add(const WeaponsEvent.init());
     if (keyName.isNullEmptyOrWhitespace) {
       return;
     }
@@ -144,7 +179,12 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
       shape: Styles.modalBottomSheetShape,
       isDismissible: true,
       isScrollControlled: true,
-      builder: (_) => AddEditItemBottomSheet.toAddItem(keyName: keyName, isAWeapon: true),
+      builder: (_) => AddEditItemBottomSheet.toAddItem(sessionKey: sessionKey, keyName: keyName, isAWeapon: true),
     );
+  }
+
+  Future<void> _showReorderDialog(List<ItemAscensionMaterials> items, BuildContext context) async {
+    context.read<CalculatorAscMaterialsOrderBloc>().add(CalculatorAscMaterialsOrderEvent.init(sessionKey: sessionKey, items: items));
+    await showDialog(context: context, builder: (_) => ReorderItemsDialog());
   }
 }

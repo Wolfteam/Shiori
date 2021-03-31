@@ -15,6 +15,7 @@ abstract class TranslationFile implements _$TranslationFile {
     @required List<TranslationElementFile> debuffs,
     @required List<TranslationElementFile> reactions,
     @required List<TranslationElementFile> resonance,
+    @required List<TranslationMonsterFile> monsters,
   }) = _TranslationFile;
 
   factory TranslationFile.fromJson(Map<String, dynamic> json) => _$TranslationFileFromJson(json);

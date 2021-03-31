@@ -42,9 +42,7 @@ class _ArtifactsPageState extends State<ArtifactsPage> with AutomaticKeepAliveCl
               ),
               ArtifactInfoCard(
                 isCollapsed: state.collapseNotes,
-                expansionCallback: (v) => context.read<ArtifactsBloc>().add(
-                      ArtifactsEvent.collapseNotes(collapse: v),
-                    ),
+                expansionCallback: (v) => context.read<ArtifactsBloc>().add(ArtifactsEvent.collapseNotes(collapse: v)),
               ),
               if (state.artifacts.isNotEmpty) _buildGrid(state.artifacts, context) else const SliverNothingFound(),
             ],

@@ -12,13 +12,9 @@ class SliverWishSimulatorCard extends StatelessWidget {
     final s = S.of(context);
     return SliverCardItem(
       onClick: _gotoWishSimulatorPage,
-      icon: Image.asset(
-        Assets.getCurrencyMaterialPath('acquaint_fate.png'),
-        width: 70,
-        height: 70,
-      ),
+      icon: Image.asset(Assets.getOtherMaterialPath('gacha.png'), width: 60, height: 60, color: theme.accentColor),
       children: [
-        Text(s.tryYourLuck, style: theme.textTheme.subtitle2, textAlign: TextAlign.right),
+        Text(s.tryYourLuck, style: theme.textTheme.subtitle2, textAlign: TextAlign.center),
       ],
     );
   }

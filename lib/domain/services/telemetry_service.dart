@@ -29,4 +29,27 @@ abstract class TelemetryService {
   Future<void> trackTierListOpened();
 
   Future<void> trackInit(AppSettings settings);
+
+  Future<void> trackGameCodesOpened();
+
+  Future<void> trackTierListBuilderScreenShootTaken();
+
+  Future<void> trackMaterialLoaded(
+    String key, {
+    bool loadedFromName = true,
+  });
+
+  Future<void> trackCalculatorAscMaterialsSessionsLoaded();
+
+  Future<void> trackCalculatorAscMaterialsSessionsCreated();
+
+  Future<void> trackCalculatorAscMaterialsSessionsUpdated();
+
+  Future<void> trackCalculatorAscMaterialsSessionsDeleted();
+
+  Future<void> trackItemAddedToInventory(String key, int quantity);
+
+  Future<void> trackItemUpdatedInInventory(String key, int quantity);
+
+  Future<void> trackItemDeletedFromInventory(String key);
 }

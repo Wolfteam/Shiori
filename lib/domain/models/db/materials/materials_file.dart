@@ -3,13 +3,13 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'material_file_model.dart';
 
 part 'materials_file.freezed.dart';
-
 part 'materials_file.g.dart';
 
 @freezed
 abstract class MaterialsFile implements _$MaterialsFile {
   @late
-  List<MaterialFileModel> get materials => talents + weapon + weaponPrimary + common + currency + elemental + jewels + locals;
+  List<MaterialFileModel> get materials =>
+      talents + weapon + weaponPrimary + common + currency + elemental + jewels + locals + experience + ingredient;
 
   factory MaterialsFile({
     @required List<MaterialFileModel> talents,
@@ -20,6 +20,8 @@ abstract class MaterialsFile implements _$MaterialsFile {
     @required List<MaterialFileModel> elemental,
     @required List<MaterialFileModel> jewels,
     @required List<MaterialFileModel> locals,
+    @required List<MaterialFileModel> experience,
+    @required List<MaterialFileModel> ingredient,
   }) = _MaterialsFile;
 
   MaterialsFile._();

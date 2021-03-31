@@ -1,6 +1,7 @@
 enum MaterialType {
+  all,
   common,
-  elemental,
+  elementalStone,
   jewels,
   local,
   talents,
@@ -9,4 +10,6 @@ enum MaterialType {
   currency,
   others,
   ingredient,
+  expWeapon,
+  expCharacter,
 }

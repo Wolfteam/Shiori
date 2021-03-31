@@ -1,10 +1,11 @@
 import 'dart:async';
 
-import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:genshindb/application/common/pop_bloc.dart';
 import 'package:genshindb/domain/assets.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
+import 'package:genshindb/domain/services/data_service.dart';
 import 'package:genshindb/domain/services/genshin_service.dart';
 import 'package:genshindb/domain/services/locale_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
@@ -13,31 +14,63 @@ part 'character_bloc.freezed.dart';
 part 'character_event.dart';
 part 'character_state.dart';
 
-class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
+class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
   final LocaleService _localeService;
+  final DataService _dataService;
 
-  CharacterBloc(this._genshinService, this._telemetryService, this._localeService) : super(const CharacterState.loading());
+  CharacterBloc(
+    this._genshinService,
+    this._telemetryService,
+    this._localeService,
+    this._dataService,
+  ) : super(const CharacterState.loading());
+
+  @override
+  CharacterEvent getEventForPop(String key) => CharacterEvent.loadFromName(key: key, addToQueue: false);
 
   @override
   Stream<CharacterState> mapEventToState(
     CharacterEvent event,
   ) async* {
-    yield const CharacterState.loading();
+    if (event is! _AddedToInventory) {
+      yield const CharacterState.loading();
+    }
 
     final s = await event.when(
-      loadFromName: (name) async {
-        await _telemetryService.trackCharacterLoaded(name);
-        final char = _genshinService.getCharacter(name);
-        final translation = _genshinService.getCharacterTranslation(name);
+      loadFromName: (key, addToQueue) async {
+        final char = _genshinService.getCharacter(key);
+        final translation = _genshinService.getCharacterTranslation(key);
+
+        if (addToQueue) {
+          await _telemetryService.trackCharacterLoaded(key);
+          currentItemsInStack.add(char.key);
+        }
         return _buildInitialState(char, translation);
       },
-      loadFromImg: (img) async {
-        await _telemetryService.trackCharacterLoaded(img, loadedFromName: false);
+      loadFromImg: (img, addToQueue) async {
         final char = _genshinService.getCharacterByImg(img);
         final translation = _genshinService.getCharacterTranslation(char.key);
+
+        if (addToQueue) {
+          await _telemetryService.trackCharacterLoaded(img, loadedFromName: false);
+          currentItemsInStack.add(char.key);
+        }
+
         return _buildInitialState(char, translation);
+      },
+      addedToInventory: (key, wasAdded) async {
+        if (state is! _LoadedState) {
+          return state;
+        }
+
+        final currentState = state as _LoadedState;
+        if (currentState.key != key) {
+          return state;
+        }
+
+        return currentState.copyWith.call(isInInventory: wasAdded);
       },
     );
 
@@ -46,6 +79,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
 
   CharacterState _buildInitialState(CharacterFileModel char, TranslationCharacterFile translation) {
     return CharacterState.loaded(
+      key: char.key,
       name: translation.name,
       region: char.region,
       role: char.role,
@@ -55,6 +89,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
       description: translation.description,
       rarity: char.rarity,
       birthday: _localeService.formatCharBirthDate(char.birthday),
+      isInInventory: _dataService.isItemInInventory(char.key, ItemType.character),
       elementType: char.elementType,
       weaponType: char.weaponType,
       ascensionMaterials: char.ascensionMaterials,

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:genshindb/generated/l10n.dart';
 
+typedef SearchChanged = void Function(String val);
+
 class SearchBox extends StatefulWidget {
   final String value;
   final bool showClearButton;
-  final Function(String) searchChanged;
+  final SearchChanged searchChanged;
 
   const SearchBox({
     Key key,

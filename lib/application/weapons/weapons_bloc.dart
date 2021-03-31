@@ -24,7 +24,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
     WeaponsEvent event,
   ) async* {
     final s = event.map(
-      init: (_) => _buildInitialState(weaponTypes: WeaponType.values),
+      init: (e) => _buildInitialState(excludeKeys: e.excludeKeys, weaponTypes: WeaponType.values),
       weaponFilterTypeChanged: (e) => currentState.copyWith.call(tempWeaponFilterType: e.filterType),
       rarityChanged: (e) => currentState.copyWith.call(tempRarity: e.rarity),
       sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
@@ -47,6 +47,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         weaponTypes: currentState.weaponTypes,
         weaponSubStatType: currentState.weaponSubStatType,
         locationType: currentState.weaponLocationType,
+        excludeKeys: currentState.excludeKeys,
       ),
       applyFilterChanges: (_) => _buildInitialState(
         search: currentState.search,
@@ -56,6 +57,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         weaponTypes: currentState.tempWeaponTypes,
         weaponSubStatType: currentState.tempWeaponSubStatType,
         locationType: currentState.tempWeaponLocationType,
+        excludeKeys: currentState.excludeKeys,
       ),
       cancelChanges: (_) => currentState.copyWith.call(
         tempWeaponFilterType: currentState.weaponFilterType,
@@ -64,6 +66,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         tempWeaponTypes: currentState.weaponTypes,
         tempWeaponSubStatType: currentState.weaponSubStatType,
         tempWeaponLocationType: currentState.weaponLocationType,
+        excludeKeys: currentState.excludeKeys,
       ),
     );
 
@@ -72,6 +75,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
 
   WeaponsState _buildInitialState({
     String search,
+    List<String> excludeKeys = const [],
     List<WeaponType> weaponTypes = const [],
     int rarity = 0,
     WeaponFilterType weaponFilterType = WeaponFilterType.rarity,
@@ -81,6 +85,9 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
   }) {
     final isLoaded = state is _LoadedState;
     var data = _genshinService.getWeaponsForCard();
+    if (excludeKeys.isNotEmpty) {
+      data = data.where((el) => !excludeKeys.contains(el.key)).toList();
+    }
 
     if (!isLoaded) {
       final selectedWeaponTypes = WeaponType.values.toList();
@@ -101,6 +108,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         tempWeaponSubStatType: weaponSubStatType,
         weaponLocationType: locationType,
         tempWeaponLocationType: locationType,
+        excludeKeys: excludeKeys,
       );
     }
 
@@ -141,6 +149,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
       tempWeaponSubStatType: weaponSubStatType,
       weaponLocationType: locationType,
       tempWeaponLocationType: locationType,
+      excludeKeys: excludeKeys,
     );
     return s;
   }

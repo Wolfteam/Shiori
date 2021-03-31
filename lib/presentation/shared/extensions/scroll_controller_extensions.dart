@@ -1,8 +1,8 @@
-import 'package:flutter/widgets.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 
 extension ScrollControllerExtensions on ScrollController {
-  void handleScrollForFab(AnimationController hideFabController) {
+  void handleScrollForFab(AnimationController hideFabController, {bool hideOnTop = true}) {
     switch (position.userScrollDirection) {
       case ScrollDirection.idle:
         break;
@@ -14,7 +14,7 @@ extension ScrollControllerExtensions on ScrollController {
         break;
     }
 
-    if (position.pixels == 0 && position.atEdge) {
+    if (hideOnTop && position.pixels == 0 && position.atEdge) {
       //User is at the top, so lets hide the fab
       hideFabController.reverse();
     }

@@ -15,12 +15,15 @@ extension I18nExtensions on S {
 
   String translateAppLanguageType(AppLanguageType lang) {
     switch (lang) {
+      case AppLanguageType.french:
       case AppLanguageType.english:
         return english;
       case AppLanguageType.spanish:
         return '$spanish ($partial)';
-      case AppLanguageType.french:
-        return '$french ($partial)';
+      case AppLanguageType.russian:
+        return '$russian ($partial)';
+      case AppLanguageType.simplifiedChinese:
+        return '$simplifiedChinese ($partial)';
       default:
         throw Exception('The provided app lang = $lang is not valid');
     }
@@ -298,19 +301,19 @@ extension I18nExtensions on S {
       case RegionType.anotherWorld:
         return anotherWorld;
       case RegionType.inazuma:
-        return 'Inazuma';
+        return inazuma;
       case RegionType.mondstadt:
-        return 'Mondstadt';
+        return mondstadt;
       case RegionType.liyue:
-        return 'Liyue';
+        return liyue;
       case RegionType.snezhnaya:
-        return 'Snezhnaya';
+        return snezhnaya;
       case RegionType.fontaine:
-        return 'Fontaine';
+        return fontaine;
       case RegionType.natlan:
-        return 'Natlan';
+        return natlan;
       case RegionType.sumeru:
-        return 'Sumeru';
+        return sumeru;
       default:
         throw Exception('Invalid region type = $type');
     }
@@ -327,9 +330,11 @@ extension I18nExtensions on S {
       case AscensionMaterialSummaryType.day:
         return day;
       case AscensionMaterialSummaryType.currency:
-        return currency;
+        return '$currency ($approximate)';
       case AscensionMaterialSummaryType.others:
         return others;
+      case AscensionMaterialSummaryType.exp:
+        return '$experience ($approximate)';
       default:
         throw Exception('Invalid ascension material type = $type');
     }
@@ -345,6 +350,84 @@ extension I18nExtensions on S {
         return asia;
       default:
         throw Exception('Invalid server reset time type = $type');
+    }
+  }
+
+  String translateMaterialFilterType(MaterialFilterType type) {
+    switch (type) {
+      case MaterialFilterType.name:
+        return name;
+      case MaterialFilterType.rarity:
+        return rarity;
+      case MaterialFilterType.grouped:
+        return grouped;
+      default:
+        throw Exception('Invalid material filter type = $type');
+    }
+  }
+
+  String translateMaterialType(MaterialType type) {
+    switch (type) {
+      case MaterialType.all:
+        return all;
+      case MaterialType.common:
+        return common;
+      case MaterialType.elementalStone:
+        return elementalStone;
+      case MaterialType.jewels:
+        return jewel;
+      case MaterialType.local:
+        return local;
+      case MaterialType.talents:
+        return talent;
+      case MaterialType.weapon:
+      case MaterialType.weaponPrimary:
+        return weapon;
+      case MaterialType.currency:
+        return currency;
+      case MaterialType.others:
+        return others;
+      case MaterialType.ingredient:
+        return ingredient;
+      case MaterialType.expWeapon:
+      case MaterialType.expCharacter:
+        return experience;
+      default:
+        throw Exception('Invalid material type = $type');
+    }
+  }
+
+  String translateMonsterType(MonsterType type) {
+    switch (type) {
+      case MonsterType.all:
+        return all;
+      case MonsterType.abyssOrder:
+        return abyssOrder;
+      case MonsterType.elementalLifeForm:
+        return elementalLifeForm;
+      case MonsterType.human:
+        return human;
+      case MonsterType.magicalBeast:
+        return magicalBeast;
+      case MonsterType.boss:
+        return boss;
+      case MonsterType.hilichurl:
+        return hilichurl;
+      case MonsterType.fatui:
+        return fatui;
+      case MonsterType.automaton:
+        return automaton;
+      default:
+        throw Exception('Invalid monster type = $type');
+    }
+  }
+
+  String translateMonsterFilterType(MonsterFilterType type) {
+    switch (type) {
+      case MonsterFilterType.name:
+        return name;
+      default:
+        throw Exception('Invalid monster filter type = $type');
     }
   }
 }

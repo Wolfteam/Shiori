@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
+import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/comingsoon_new_avatar.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
@@ -68,13 +69,34 @@ class WeaponCard extends StatelessWidget {
         withElevation = false,
         super(key: key);
 
+  WeaponCard.item({
+    Key key,
+    WeaponCardModel weapon,
+    this.imgWidth = 160,
+    this.imgHeight = 140,
+    this.isInSelectionMode = false,
+    this.withElevation = true,
+  })  : keyName = weapon.key,
+        baseAtk = weapon.baseAtk,
+        image = weapon.image,
+        name = weapon.name,
+        rarity = weapon.rarity,
+        type = weapon.type,
+        subStatType = weapon.subStatType,
+        subStatValue = weapon.subStatValue,
+        isComingSoon = weapon.isComingSoon,
+        withoutDetails = false,
+        super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
     return InkWell(
+      borderRadius: Styles.mainCardBorderRadius,
       onTap: () => _gotoWeaponPage(context),
       child: GradientCard(
+        clipBehavior: Clip.hardEdge,
         shape: Styles.mainCardShape,
         elevation: withElevation ? Styles.cardTenElevation : 0,
         gradient: rarity.getRarityGradient(),
@@ -166,8 +188,11 @@ class WeaponCard extends StatelessWidget {
       return;
     }
 
-    context.read<WeaponBloc>().add(WeaponEvent.loadFromName(key: keyName));
+    final bloc = context.read<WeaponBloc>();
+    bloc.add(WeaponEvent.loadFromName(key: keyName));
     final route = MaterialPageRoute(builder: (c) => WeaponPage());
     await Navigator.push(context, route);
+    await route.completed;
+    bloc.pop();
   }
 }
