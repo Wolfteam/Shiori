@@ -26,12 +26,11 @@ dependencies:
   data_connection_checker: ^0.3.4
   device_info: ^2.0.0
   devicelocale: ^0.4.1
-  dog: ^1.3.1
-  enum_to_string: ^1.0.14
+  enum_to_string: ^2.0.1
   flutter:
     sdk: flutter
-  flutter_bloc: ^6.1.3
-  flutter_colorpicker: ^0.3.5
+  flutter_bloc: ^7.0.0
+  flutter_colorpicker: ^0.4.0
   flutter_cupertino_localizations: ^1.0.1
   flutter_localizations:
     sdk: flutter
@@ -39,26 +38,26 @@ dependencies:
   flutter_staggered_grid_view: ^0.3.4
   flutter_user_agent: ^1.2.2
   flutter_webview_plugin: ^0.3.11
-  fluttertoast: ^7.1.8
+  fluttertoast: ^8.0.3
   freezed_annotation: ^0.12.0
   get_it: ^6.0.0
   hawk_fab_menu: ^0.3.2
   hive: ^2.0.0
   hive_flutter: ^1.0.0
   image_gallery_saver: ^1.6.8
-  json_annotation: ^3.1.0
+  logger: ^1.0.0
   numberpicker: ^1.3.0
   package_info: ^2.0.0
   path: ^1.8.0
   path_provider: ^2.0.1
-  permission_handler: ^6.1.0
-  rate_my_app: ^1.0.0+2
+  permission_handler: ^6.1.1
+  rate_my_app: ^1.1.0+1
   screenshot: ^0.3.0
   shared_preferences: ^2.0.5
   smooth_star_rating: 1.1.1
   sprintf: ^6.0.0
-  transparent_image: 1.0.0
-  tuple: ^1.0.3
+  transparent_image: 2.0.0
+  tuple: ^2.0.0
   url_launcher: ^6.0.2
 
 dev_dependencies:
@@ -68,7 +67,6 @@ dev_dependencies:
     sdk: flutter
   freezed: ^0.12.7
   hive_generator: ^1.0.0
-  json_serializable: ^3.3.0
   lint: ^1.5.3
 
 flutter_icons:
