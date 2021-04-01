@@ -5,9 +5,13 @@ import 'package:package_info/package_info.dart';
 class DeviceInfoServiceImpl implements DeviceInfoService {
   Map<String, String> _deviceInfo;
   String _version;
+  String _appName;
 
   @override
   Map<String, String> get deviceInfo => _deviceInfo;
+
+  @override
+  String get appName => _appName;
 
   @override
   String get version => _version;
@@ -19,6 +23,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
       final androidInfo = await deviceInfo.androidInfo;
       final packageInfo = await PackageInfo.fromPlatform();
       _version = packageInfo.version;
+      _appName = packageInfo.appName;
       _deviceInfo = {
         'Model': androidInfo.model,
         'OsVersion': '${androidInfo.version.sdkInt}',
@@ -26,7 +31,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
       };
     } catch (ex) {
       _deviceInfo = {'Model': 'N/A', 'OsVersion': 'N/A', 'AppVersion': 'N/A'};
-      _version = 'N/A';
+      _version = _appName = 'N/A';
     }
   }
 }
