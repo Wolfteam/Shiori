@@ -2551,11 +2551,11 @@
     {
       "key": "Rosaria",
       "name": "罗莎莉亚",
-      "description": "A nun who, outside of her garb, seems nothing at all like a person of the cloth. Known for her sharp, cold words and manner, she often works alone.",
+      "description": "A sister of the church, though you wouldn't know it if it weren't for her attire. Known for her sharp, cold words and manner, she often works alone.",
       "skills": [
         {
           "key": "s1",
-          "title": "Spear of Worship",
+          "title": "Spear of the Church",
           "abilities": [
             {
               "key": "a1",
@@ -2596,7 +2596,7 @@
         },
         {
           "key": "p2",
-          "title": "Extracted Confession",
+          "title": "Regina Probationum",
           "description": "When Rosaria strikes an opponent from behind using Ravaging Confession, Rosaria's CRIT Rate increases by 12% for 5s.",
           "descriptions": []
         },
@@ -2622,19 +2622,19 @@
         },
         {
           "key": "c3",
-          "title": "Sacrament of Penance",
+          "title": "The Wages of Sin",
           "description": "Increases the Level of Ravaging Confessionby 3. Maximum upgrade level is 15.",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Amazing Disgrace",
+          "title": "Painful Grace",
           "description": "Ravaging Confession's Crit Hits regenerate 5 Energy for Rosaria. Can only be triggered once each time Ravaging Confession is cast.",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Extreme Unction",
+          "title": "Last Rites",
           "description": "Increases the Level of Rites of Termination by 3. Maximum upgrade level is 15.",
           "descriptions": []
         },
@@ -5746,77 +5746,77 @@
     },
     {
       "key": "JuvenileJade",
-      "name": "Juvenile Jade",
+      "name": "未熟之玉",
       "description": "A crystalline substance taken from a Primo Geovishap. Within it is contained the potential to become a dragon.\nThese dull crystals are precipitated within the bodies of vishaps sleeping in the mountains. Liyue folklore holds that they will gather power over many years, after which this crystal will, at last, replace their original heart, and the vishap will become a true dragon — one that can shake the mountains and split the earth."
     },
     {
       "key": "Starsilver",
-      "name": "Starsilver",
+      "name": "星银矿石",
       "description": "A rare and precious ore formed by the unique geographical conditions and Ley Lines of Dragonspine."
     },
     {
       "key": "Vitalized Dragontooth",
-      "name": "Vitalized Dragontooth",
+      "name": "染血的龙牙",
       "description": "A Dragontooth infused with vitality. Just its luster and texture are enough to make one uneasy..."
     },
     {
       "key": "Iron Chunk",
-      "name": "Iron Chunk",
+      "name": "铁块",
       "description": "This iron chunk can be turned into a multitude of handy items in the hands of a skilled craftsman."
     },
     {
       "key": "White Iron Chunk",
-      "name": "White Iron Chunk",
+      "name": "白铁块",
       "description": "Skilled hands can make this into something brilliant."
     },
     {
       "key": "Crystal Chunk",
-      "name": "Crystal Chunk",
+      "name": "水晶块",
       "description": "An uncut crystal. Only professional craftsmanship can bring out its true value."
     },
     {
       "key": "Northlander Bow Billet",
-      "name": "Northlander Bow Billet",
+      "name": "北陆弓原胚",
       "description": "Can be used to forge 4-star bows. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
     },
     {
       "key": "Northlander Catalyst Billet",
-      "name": "Northlander Catalyst Billet",
+      "name": "北陆法器原胚",
       "description": "Can be used to forge 4-star catalysts. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
     },
     {
       "key": "Northlander Claymore Billet",
-      "name": "Northlander Claymore Billet",
+      "name": "北陆双手剑原胚",
       "description": "Can be used to forge 4-star claymores. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
     },
     {
       "key": "Northlander Polearm Billet",
-      "name": "Northlander Polearm Billet",
+      "name": "北陆长柄武器原胚",
       "description": "Can be used to forge 4-star polearms. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
     },
     {
       "key": "Northlander Sword Billet",
-      "name": "Northlander Sword Billet",
+      "name": "北陆单手剑原胚",
       "description": "Can be used to forge 4-star swords. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
     },
     {
       "key": "Dust of Azoth",
-      "name": "Dust of Azoth",
+      "name": "嬗变之尘",
       "description": "A device that can transmute elemental Ascension Materials and change their Elemental Type.Its practical uses notwithstanding, alchemy is the study of the nature of matter and the rules that underpin its transformations, and ultimately it seeks to comprehend the working principles of the world and the flow of the ley lines\nIt is not known who would share alchemical achievements of this magnitude with the civilizations of the world and why. But although the power to fundamentally transmute elemental energy in its crystallized and inert form is a highly useful one, this device also conceals the grave danger of disrupting the elemental balance..."
     },
     {
       "key": "Magical Crystal Chunk",
-      "name": "Magical Crystal Chunk",
+      "name": "魔晶块",
       "description": "These crystal chunks can be refined into Weapon EXP materials by using Original Resin.\nCrystals from mines that were eroded by the energy of the Ley Lines cannot be processed by ordinary means."
     },
     {
       "key": "Original Resin",
-      "name": "Original Resin",
+      "name": "原粹树脂",
       "description": "Used to vitalize Petrified Trees and Ley Line Blossoms, allowing access to the treasures they hold. Energy regenerates over time.\nIt is said that the roots of all the Irminsul trees and blossoms in the world are intertwined at the deepest, most hidden place in the earth, and that the pattern the root system makes defines the Ley Lines of the world."
     },
     {
       "key": "Primogem",
-      "name": "Primogem",
+      "name": "原石",
       "description": "A primordial crystalline gem that's beyond the mundane world. Shines with the condensed hopes and dreams of universes that once were."
     }
   ],

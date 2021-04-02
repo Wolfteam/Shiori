@@ -2,15 +2,14 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/application/utils/app_path_utils.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
+import 'package:genshindb/domain/services/device_info_service.dart';
 import 'package:genshindb/domain/services/genshin_service.dart';
 import 'package:genshindb/domain/services/locale_service.dart';
 import 'package:genshindb/domain/services/logging_service.dart';
 import 'package:genshindb/domain/services/settings_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
-import 'package:package_info/package_info.dart';
 
 import '../bloc.dart';
 
@@ -24,6 +23,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   final SettingsService _settingsService;
   final LocaleService _localeService;
   final TelemetryService _telemetryService;
+  final DeviceInfoService _deviceInfoService;
 
   final CharactersBloc _charactersBloc;
   final WeaponsBloc _weaponsBloc;
@@ -36,6 +36,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     this._settingsService,
     this._localeService,
     this._telemetryService,
+    this._deviceInfoService,
     this._charactersBloc,
     this._weaponsBloc,
     this._homeBloc,
@@ -49,18 +50,10 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     MainEvent event,
   ) async* {
     final s = await event.when(
-      init: () async {
-        return _init(init: true);
-      },
-      themeChanged: (theme) async {
-        return _loadThemeData(currentState.appTitle, theme, _settingsService.accentColor);
-      },
-      accentColorChanged: (accentColor) async {
-        return _loadThemeData(currentState.appTitle, _settingsService.appTheme, accentColor);
-      },
-      languageChanged: (language) async {
-        return _init(languageChanged: true);
-      },
+      init: () async => _init(init: true),
+      themeChanged: (theme) async => _loadThemeData(theme, _settingsService.accentColor),
+      accentColorChanged: (accentColor) async => _loadThemeData(_settingsService.appTheme, accentColor),
+      languageChanged: (language) async => _init(languageChanged: true),
     );
 
     yield s;
@@ -68,14 +61,6 @@ class MainBloc extends Bloc<MainEvent, MainState> {
 
   Future<MainState> _init({bool languageChanged = false, bool init = false}) async {
     _logger.info(runtimeType, '_init: Initializing all..');
-    await _settingsService.init();
-
-    _logger.info(runtimeType, '_init: Deleting old logs...');
-    try {
-      await AppPathUtils.deleteOlLogs();
-    } catch (e, s) {
-      _logger.error(runtimeType, '_init: Unknown error while trying to delete old logs', e, s);
-    }
     await _genshinService.init(_settingsService.language);
 
     if (languageChanged) {
@@ -86,19 +71,19 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       _artifactsBloc.add(const ArtifactsEvent.init());
     }
 
-    final packageInfo = await PackageInfo.fromPlatform();
     final settings = _settingsService.appSettings;
     await _telemetryService.trackInit(settings);
+
+    final state = _loadThemeData(settings.appTheme, settings.accentColor);
 
     if (init) {
       await Future.delayed(const Duration(milliseconds: 600));
     }
 
-    return _loadThemeData(packageInfo.appName, settings.appTheme, settings.accentColor);
+    return state;
   }
 
   Future<MainState> _loadThemeData(
-    String appTitle,
     AppThemeType theme,
     AppAccentColorType accentColor, {
     bool isInitialized = true,
@@ -106,7 +91,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     _logger.info(runtimeType, '_init: Is first install = ${_settingsService.isFirstInstall}');
 
     return MainState.loaded(
-      appTitle: appTitle,
+      appTitle: _deviceInfoService.appName,
       accentColor: accentColor,
       language: _localeService.getLocaleWithoutLang(),
       initialized: isInitialized,

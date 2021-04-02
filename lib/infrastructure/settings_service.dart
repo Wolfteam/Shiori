@@ -83,7 +83,7 @@ class SettingsServiceImpl extends SettingsService {
       return;
     }
 
-    _logger.info(runtimeType, 'Getting shared prefs instance...');
+    _logger.info(runtimeType, 'Initializing settings... Getting shared prefs instance...');
 
     _prefs = await SharedPreferences.getInstance();
 
