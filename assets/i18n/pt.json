@@ -2325,7 +2325,7 @@
         {
           "key": "s2",
           "title": "Arte do Adeptus: Arauto da Floresta",
-          "description": "Ao usar o Talisma das Veias Congelantes, Qiqi invoca o Arauto da Floresta, causando Dano Cryo a todos os inimigos ao redor.",
+          "description": "Ao usar o Talismã das Veias Congelantes, Qiqi invoca o Arauto da Floresta, causando Dano Cryo a todos os inimigos ao redor.",
           "abilities": [
             {
               "name": "Arauto da Floresta",
@@ -2360,7 +2360,7 @@
         },
         {
           "key": "p2",
-          "title": "Metodos que Prolongam a Vida",
+          "title": "Métodos que Prolongam a Vida",
           "description": "Quando um personagem está sob o efeito de Arte do Adeptus: Arauto da Floresta aciona uma Reação Elemental, seu Bônus de Cura Recebido é aumentado em 20% por 8s.",
           "descriptions": []
         },
@@ -2827,7 +2827,7 @@
             },
             {
               "name": "Interceptação de Fluxo - Explosão",
-              "description": "Quando as águas obliteradoras atingem inimigos afetados pela Interceptação de Fluxo, acaba com esse efeito e desencadeia Explosões Hydro que causam Dano Hydro AdE. O dano de Interceptação de Fluxo - Explosão é tratado como um dano de Supremo.",
+              "description": "Quando as águas obliteradoras atingem inimigos afetados pela Interceptação de Fluxo, acaba com esse efeito e desencadear Explosões Hydro que causam Dano Hydro AdE. O dano de Interceptação de Fluxo - Explosão é tratado como um dano de Supremo.",
               "descriptions": []
             }
           ]
@@ -2856,7 +2856,7 @@
       "constellations": [
         {
           "key": "c1",
-          "title": "Armas Demoniacas: Ondas Calmas",
+          "title": "Armas Demoníacas: Ondas Calmas",
           "description": "Diminui a Recarga de Legado do Mal: Ondas de Fúria por 20%.",
           "secondDescription": null,
           "descriptions": []
@@ -2864,7 +2864,7 @@
         {
           "key": "c2",
           "title": "Armas Demoniacas: Submarino",
-          "description": "Quando os inimigos afetados pela Interceptacão de Fluxo forem derrotados, Tartaglia ganha 4 de Energia Elemental.",
+          "description": "Quando os inimigos afetados pela Interceptação de Fluxo forem derrotados, Tartaglia ganha 4 de Energia Elemental.",
           "secondDescription": null,
           "descriptions": []
         },
@@ -2959,7 +2959,7 @@
         {
           "key": "p2",
           "title": "Vento Cortante",
-          "description": "O último acerto de um combo de Ataques Normais libera uma làmina de vento, causando 60% de Dano Anemo de ATQ a todos os oponentes em seu caminho.",
+          "description": "O último acerto de um combo de Ataques Normais libera uma lâmina de vento, causando 60% de Dano Anemo de ATQ a todos os oponentes em seu caminho.",
           "descriptions": []
         },
         {
@@ -3008,7 +3008,7 @@
         {
           "key": "c6",
           "title": "Ventos Entrelaçados",
-          "description": "Os alvos que recebem Dano de Ondas de Rajadas possuem sua RES Anemo reduzido em 20%. Se ocorrer uma Absorção ELementa, então sua RES do Elemento correspondente tamém diminuirá 20%.",
+          "description": "Os alvos que recebem Dano de Ondas de Rajadas possuem sua RES Anemo reduzido em 20%. Se ocorrer uma Absorção ELementa, então sua RES do Elemento correspondente também diminuirá 20%.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3085,7 +3085,7 @@
         {
           "key": "c2",
           "title": "Pedra Derretida",
-          "description": "Quando o meteorito criado pela Espada da Estrela Cadente é destruido, ela também explode, causando Dano Geo Adicional equivalente a quantidade de dano causada pela Espada da Estrela Cadente.",
+          "description": "Quando o meteorito criado pela Espada da Estrela Cadente é destruído, ela também explode, causando Dano Geo Adicional equivalente a quantidade de dano causada pela Espada da Estrela Cadente.",
           "secondDescription": null,
           "descriptions": []
         },
@@ -3166,7 +3166,7 @@
         {
           "key": "s3",
           "title": "Grande Ode do Vento",
-          "description": "Dispara uma flecha energizada com vento, criando um grande Olho da Tempestade que suga inimigos, causando Dano Anemo continuo.",
+          "description": "Dispara uma flecha energizada com vento, criando um grande Olho da Tempestade que suga inimigos, causando Dano Anemo contínuo.",
           "abilities": [
             {
               "key": "a1",
@@ -3381,7 +3381,7 @@
         {
           "key": "s3",
           "title": "Dança Nuo da Conquista do Mal",
-          "description": "Xiao veste a Máscara Yaksha, que há milenios atrás, pôs deuses e demônios a tremer.",
+          "description": "Xiao veste a Máscara Yaksha, que há milênios atrás, pôs deuses e demônios a tremer.",
           "abilities": [
             {
               "description": "Máscara Yaksha",
@@ -3675,7 +3675,7 @@
         {
           "key": "c2",
           "title": "Começo Improvisado",
-          "description": "Taxa CRIT de Dano Fisico causado pela Melodia da Rebelião aumenta em 100%, e ao lançar, formará um escudo Nv.3: Rave.",
+          "description": "Taxa CRIT de Dano Físico causado pela Melodia da Rebelião aumenta em 100%, e ao lançar, formará um escudo Nv.3: Rave.",
           "secondDescription": null,
           "descriptions": []
         },
@@ -3803,7 +3803,7 @@
           "description": "Os ataques de Zhongli terão os seguintes aumentos de Dano de acordo com sua Vida Máxima:",
           "descriptions": [
             "Ataque Normal, Ataque Carregado e Ataque Imersivo terão seu dano aumentado para 1.39% da Vida Máxima",
-            "O Dano da Estela de Pedra, Dano de ressonancia Geo e Dano de Manter Pressionado de Dominis Lapidis aumentarão para 1.9% da Vida Máxima",
+            "O Dano da Estela de Pedra, Dano de ressonância Geo e Dano de Manter Pressionado de Dominis Lapidis aumentarão para 1.9% da Vida Máxima",
             "O Dano de Chuva Estrelar aumentará para 33% da Vida Máxima"
           ]
         }
@@ -3832,7 +3832,7 @@
         },
         {
           "key": "c4",
-          "title": "Topázio, Inquebravel e Destemido",
+          "title": "Topázio, Inquebrável e Destemido",
           "description": "Aumenta a AdE da Chuva Estelar em 20%. Além disso, o efeito de Petrificação da Chuva Estelar é prolongado em 2s.",
           "secondDescription": null,
           "descriptions": []
@@ -4643,7 +4643,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Recarga de Energia +20%"
+          "bonus": "Recarga de Energía +20%"
         },
         {
           "key": "b2",
@@ -4685,7 +4685,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Recarga de Energia +20%"
+          "bonus": "Recarga de Energía +20%"
         },
         {
           "key": "b2",
@@ -4829,7 +4829,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Usar o Supremo aumenta o ATQ de todos os membros da equipe em 20% por 12s. Este efeito não pode ser acumulado."
+          "bonus": "Usar o Supremo aumenta o ataque de todos os membros da equipe em 20% por 12s. Este efeito não pode ser acumulado."
         }
       ]
     },
@@ -4958,17 +4958,17 @@
     {
       "key": "FreedomA",
       "name": "Ensinamentos de \"Liberdade\"",
-      "description": "A liberdade é o espirito do Reino do Vento.\nA primeira liberdade é a de viver. É a liberdade de viver com liberdade e saúde, sem preocupações com a própria segurança."
+      "description": "A liberdade é o espírito do Reino do Vento.\nA primeira liberdade é a de viver. É a liberdade de viver com liberdade e saúde, sem preocupações com a própria segurança."
     },
     {
       "key": "FreedomB",
       "name": "Guia da Liberdade",
-      "description": "A liberdade é o espirito do Reino do Vento.\nA liberdade de viajar é uma dessas. É a liberdade de percorrer a terra livremente sem ser obstruida."
+      "description": "A liberdade é o espírito do Reino do Vento.\nA liberdade de viajar é uma dessas. É a liberdade de percorrer a terra livremente sem ser obstruída."
     },
     {
       "key": "FreedomC",
       "name": "Filosofia da Liberdade",
-      "description": "A liberdade é o espirito da Cidade do Vento.\nCantar é uma dessas liberdades. Cantar na terra criada pelo Arconte Anemo é enviar o seu coração para longe com a música ao vento."
+      "description": "A liberdade é o espírito da Cidade do Vento.\nCantar é uma dessas liberdades. Cantar na terra criada pelo Arconte Anemo é enviar o seu coração para longe com a música ao vento."
     },
     {
       "key": "ProsperityA",
@@ -4987,68 +4987,68 @@
     },
     {
       "key": "DilligenceA",
-      "name": "Teachings of Dilligence",
-      "description": "Industriousness is the foundation of the land of Geo.\nDiligence is having the bravery and the strength to conquer mountains and seas and to pursue gold and prosperity through honest, hard work."
+      "name": "Ensinamentos de Esforço",
+      "description": "A diligência é a base da Terra das Rochas. A diligência é conquistar montanhas e mares, buscar prosperidade, bravura dourada e poder com trabalho honesto e árduo"
     },
     {
       "key": "DilligenceB",
-      "name": "Guide to Dilligence",
-      "description": "Industriousness is the foundation of the land of Geo.\nIndustriousness is the catalyst that flows in the blood of the people of Liyue, able to turn rocks into gold. It is what lies behind the greatness of its great commercial port."
+      "name": "Guia de Esforço",
+      "description": "A diligència é a base da terra do Geo.\nA diligência é o catalisador que flui no sangue do povo de Liyue, capaz de transformar rochas em ouro. É o que está por trás da grandeza de seu grande porto comercial."
     },
     {
       "key": "DilligenceC",
-      "name": "Philosophies of Dilligence",
-      "description": "Industriousness is the foundation of the land of Geo.\nIndustriousness is believing in one's own ability to earn a place in the land of the gods through sweat, wisdom, and power."
+      "name": "Filosofia de Esforço",
+      "description": "A indústria é o fundamento da Terra.\nA indústria está acreditando na própria capacidade de ganhar um lugar na terra dos deuses através do suor, sabedoria e poder."
     },
     {
       "key": "ResistanceA",
-      "name": "Teachings of Resistance",
-      "description": "Resistance is the backbone of the land of the wind.\nThe history of Mondstadt is one of resistances. People rose up to prevent past conflicts from ever being forgotten, like sprouts breaking through the soil, like the eternal wind eroding through stone walls."
+      "name": "Ensinamentos de Resistência",
+      "description": "A resistência é a espinha dorsal do Reino do Vento.\nA história de Mondstadt é uma das resistências. As pessoas se levantaram para impedir que conflitos passados fossem esquecidos, como brotos rompendo o solo, como o vento eterno corroendo as paredes de pedra."
     },
     {
       "key": "ResistanceB",
-      "name": "Guide to Resistance",
-      "description": "Resistance is the backbone of the city of Wind.\nThe history of Mondstadt is one of resistances. People rose up to grant the citizens of Mondstadt the freedom they now enjoy, like the Anemo Archon blowing away the snow, or like Vennessa rising up to fight."
+      "name": "Guia de Resistência",
+      "description": "A resistência é a Espinha dorsal da cidade do Vento.\nA história de Mondstadt é uma das resistências. As pessoas se levantaram para conceder aos cidadãos de Mondstadt a liberdade que agora desfrutam, como o Arconte Anemo soprando a neve, ou como a Vennessa se levantando para lutar."
     },
     {
       "key": "ResistanceC",
-      "name": "Philosophies of Resistance",
-      "description": "Resistance is the backbone of the land of the wind.\nThe history of Mondstadt is one of resistances. People rose up to allow the future Mondstadt's poetry to freely be that of the wind and be spread across the land."
+      "name": "Filosofia de Resistência",
+      "description": "A resistência é a espinha dorsal do Reino do Vento.\nA história de Mondstadt é uma das resistências. As pessoas se levantaram para permitir que a futura poesia de Mondstadt fosse livremente como o vento e se espalhasse por toda a terra."
     },
     {
       "key": "BalladA",
-      "name": "Teachings of Ballad",
-      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of beautiful feelings. On a beautiful day, the breezes carry with them poetry that touches the heart of people like the wind caressing the leaves."
+      "name": "Ensinamentos de Poemas",
+      "description": "A poesia é a alma do Reino do Vento.\nA poesia é a manifestação de sentimentos bonitos. Em um lindo dia, a brisa carrega consigo poesia que toca o coração das pessoas como o vento acariciando as folhas."
     },
     {
       "key": "BalladB",
-      "name": "Guide to Ballad",
-      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of the will to encourage. In the dark days, the gales in the streets and alleyways whisper words of fury, like the battle drums, like the low rumbling before the storm."
+      "name": "Guia de Poemas",
+      "description": "A poesia é a alma do Reino do Vento.\nA Poesia é a manifestação da vontade de encorajar. Nos dias obscuros, os vendavais nas ruas e becos sussurram palavras de fúria, como os tambores de batalha, como o estrondo baixo antes da tempestade."
     },
     {
       "key": "BalladC",
-      "name": "Philosophies of Ballad",
-      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of the desire to spread the word. Though nothing is eternal, though nothing will be the same, the wind's poetry will still spread beyond the skies, the land, the seas to every corner of the world."
+      "name": "Filosofia de Poemas",
+      "description": "A poesia é a alma do Reino do Vento.\nPoesia é a manifestação do desejo de difundir as palavras. Embora nada seja eterno, ainda que nada seja o mesmo, a poesia do vento ainda se espalhara além dos céus, da terra e dos mares em todos os cantos do mundo."
     },
     {
       "key": "GoldA",
-      "name": "Teachings of Gold",
-      "description": "Gold is the symbol of the land of Geo.\nGold is the blood that flows deep within Liyue's veins, the muscle that makes up Liyue's beating heart, and the bones that make Liyue stand proud."
+      "name": "Ensinamentos de Ouro",
+      "description": "O ouro é o símbolo da Terra.\nO ouro é o sangue que flui profundamente sob a terra de Liyue, são os músculos que bombeiam o coração de Liyue e os ossos que fazem Liyue se orgulhar."
     },
     {
       "key": "GoldB",
-      "name": "Guide to Gold",
-      "description": "Gold is the symbol of the land of Geo.\nGold symbolizes conversion. This is the unspoken understanding between Liyue's mountains, land, city, and people. In Liyue, industriousness is converted into gold, and gold into prosperity."
+      "name": "Guia de Ouro",
+      "description": "O ouro é o símbolo da Terra.\nO ouro simboliza a conversão. Este é o entendimento tácito entre as montanhas, a terra, a cidade e o povo de Liyue. Em Liyue, diligência é convertida em ouro e ouro em prosperidade."
     },
     {
       "key": "GoldC",
-      "name": "Philosophies of Gold",
-      "description": "Gold is the symbol of the land of Geo.\nGold is the wealth of Liyue, but Liyue's true wealth is the hearts of its people that shine like gold."
+      "name": "Filosofia de Ouro",
+      "description": "O ouro é o Reino das Rochas.\nO ouro é a riqueza de Liyue, mas a verdadeira riqueza de Liyue é o coração de seu povo que brilha como ouro."
     },
     {
       "key": "Tail of Boreas",
-      "name": "Tail of Boreas",
-      "description": "A handful of tail scales from the Great Wolf King of the North.\nEven without his physical body and beyond death, Boreas still possesses extraordinary powers. He took a form comprised of ice and wind to embrace a new challenge, but even such a form could not house all of his power. The ice scales that fell during the battle still retain some of their spiritual energy.",
+      "name": "Cauda do Vento do Norte",
+      "description": "O Lobo do Vento do Norte, que perdeu sua vida e forma, ainda conta com poderes maiores que o normal. Assumiu a forma do gelo e vento para enfrentar um novo desafio, mas nem isso consegue abranger todo seu poder. As escamas de gelo que caem durante a batalha ainda conservam parte de sua energia espiritual.",
       "bossName": "Andrius"
     },
     {
@@ -5071,8 +5071,8 @@
     },
     {
       "key": "Dvalin's Claw",
-      "name": "Dvalin's Claw",
-      "description": "A claw from the Dragon of the East.\nIt once contained the shadow dragon Durin's vile poison, having torn through the latter's flesh in battle. Thanks to your purification and healing, it is no longer toxic.",
+      "name": "Garras do Vento Oriental",
+      "description": "Uma garra de dragão que continha o veneno vil do dragão sombrio Durin, tendo rasgado sua carne em batalha. Graças a purificação e cura, ela não é mais tóxica.",
       "bossName": "Dvalin"
     },
     {
@@ -5083,8 +5083,8 @@
     },
     {
       "key": "Tusk of Monoceros Caeli",
-      "name": "Tusk of Monoceros Caeli",
-      "description": "The horn of a whale that you obtained from defeating Childe, who had unleashed the might of his Delusion.\nIt is said that the shape of one's constellation determines one's character. The image of a whale cruising across the celestial heights represents a solipsism that seeks to crush and devour all in its path.\nEmbracing this aspect of himself, Childe gleefully summoned one such beast before throwing himself into battle against you.",
+      "name": "Chifre da Baleia Come-Céu",
+      "description": "Diz a lenda que a forma da constelação de uma pessoa reflete suas características. A imagem de uma baleia pairando o céu celestial representa um solipsismo que busca destruir e devorar tudo em seu caminho. Durante a batalha, ele chamou essa baleia para lhe atacar.",
       "bossName": "Tartaglia"
     },
     {
@@ -5101,13 +5101,13 @@
     },
     {
       "key": "DecarabianA",
-      "name": "Tile of Decarabian’s Tower",
-      "description": "The place now known as Stormterror's Lair was once the capital city of Decarabian, the God of Storms. Since this dream of prosperity was created entirely by his divine might, the broken pieces left behind by the shattering of that dream still possess great power."
+      "name": "Fragmento de azulejo de Decarabia",
+      "description": "O local atualmente conhecido como Toca de StormTerror já foi a capital construida por Decarabian, o Arconde Anemo. Desde que esse sonho foi próximo foi criado pelo seu poder, os pedaços partidos deixados para trás quando o sonho foi destruido e ainda possuem grandes poderes."
     },
     {
       "key": "DecarabianB",
-      "name": "Debris of Decarabian’s City",
-      "description": "Decarabian, the God of Storms, was content with the capital city he had raised, and accepted the worship of the people from atop his tower. But he knew not that the people did not bow to him out of respect or adoration."
+      "name": "Detritos da Cidade de Decarabian",
+      "description": "Decarabian, o arconde dos ventos ferozes, está contente com a capital que ele criou e recebeu o culto das pessoas no topo de sua torre. No entanto, ele não sabia que as pessoas não se curvavam por respeito ou adoração."
     },
     {
       "key": "DecarabianC",
@@ -5121,8 +5121,8 @@
     },
     {
       "key": "GuyunA",
-      "name": "Luminous Sands from Guyun",
-      "description": "The stone pillars that tower amid Guyun Stone Forest were once the stone spears Morax used to defeat his enemies. Over time, the gods' substance has seeped into the pillars that pin them down, lending them divine power. The pillars sometimes shed fragments of hatred and curses."
+      "name": "Areia Brilhante de Guyun",
+      "description": "Os pilares de pedra da Floresta de Pedra de Guyun foi a lança de pedra que Morax usou para derrotar seus inimigos. Com o passar do tempo, o corpo do Arconde penetrou nos pilares concedendo-lhes divinidade. Os pilares às vezes derramavam pedaços de ódio e maldições."
     },
     {
       "key": "GuyunB",

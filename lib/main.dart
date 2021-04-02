@@ -114,12 +114,14 @@ class MyApp extends StatelessWidget {
             final settingsService = getIt<SettingsService>();
             final localeService = getIt<LocaleService>();
             final telemetryService = getIt<TelemetryService>();
+            final deviceInfoService = getIt<DeviceInfoService>();
             return MainBloc(
               loggingService,
               genshinService,
               settingsService,
               localeService,
               telemetryService,
+              deviceInfoService,
               ctx.read<CharactersBloc>(),
               ctx.read<WeaponsBloc>(),
               ctx.read<HomeBloc>(),

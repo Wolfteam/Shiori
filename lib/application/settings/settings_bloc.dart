@@ -29,7 +29,6 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   ) async* {
     final s = await event.map(
       init: (_) async {
-        await _settingsService.init();
         final settings = _settingsService.appSettings;
         return SettingsState.loaded(
           currentTheme: settings.appTheme,
