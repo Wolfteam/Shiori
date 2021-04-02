@@ -4196,7 +4196,7 @@
       "key": "Royal Grimoire",
       "name": "Королевский гримуар",
       "description": "Книга, когда-то принадлежавшая королевскому магу Мондштадта. Содержит подробные исторические данные и заклинания.",
-      "refinement": "При нанесении урона противнику скорость Крита увеличивается на {{0}}%. Максимум 5 стеков. Удар Крита удаляет все стеки."
+      "refinement": "При нанесении урона противнику шанс Крита увеличивается на {{0}}%. Максимум 5 стеков. Крит удар удаляет все стеки."
     },
     {
       "key": "Sacrificial Fragments",
@@ -5034,12 +5034,12 @@
     {
       "key": "GoldA",
       "name": "Учение о «Золоте»",
-      "description": "Gold is the symbol of the land of Geo.\nGold is the blood that flows deep within Liyue's veins, the muscle that makes up Liyue's beating heart, and the bones that make Liyue stand proud."
+      "description": "Золото - это символ царства земли.\nЗолото - это кровь, текущая глубоко под землёй Ли Юэ, это мышцы, которые сокращают сердце Ли Юэ, это кости, которые заставляют Ли Юэ гордо стоять на ногах."
     },
     {
       "key": "GoldB",
       "name": "Указание о «Золоте»",
-      "description": "Gold is the symbol of the land of Geo.\nGold symbolizes conversion. This is the unspoken understanding between Liyue's mountains, land, city, and people. In Liyue, industriousness is converted into gold, and gold into prosperity."
+      "description": "Золото - это символ царства земли.\nGold symbolizes conversion. This is the unspoken understanding between Liyue's mountains, land, city, and people. In Liyue, industriousness is converted into gold, and gold into prosperity."
     },
     {
       "key": "GoldC",
