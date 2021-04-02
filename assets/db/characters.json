@@ -7304,7 +7304,7 @@
       "fullImage": "HuTao.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "liyue",
       "role": "mainDps",
@@ -14685,12 +14685,12 @@
       "image": "Rosaria.png",
       "fullImage": "Rosaria.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": true,
       "region": "mondstadt",
       "role": "na",
-      "tier": "s",
+      "tier": "a",
       "birthday": "01/24",
       "ascensionMaterials": [
         {
@@ -15151,7 +15151,7 @@
           "number": 6
         }
       ],
-      "subStatType": "critDmgPercentage",
+      "subStatType": "atkPercentage",
       "stats": [
         {
           "level": 1,

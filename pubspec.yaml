@@ -66,6 +66,7 @@ dev_dependencies:
     sdk: flutter
   freezed: ^0.12.7
   hive_generator: ^1.0.0
+  json_serializable: ^3.3.0
   lint: ^1.5.3
 
 flutter_icons:

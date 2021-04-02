@@ -2547,11 +2547,11 @@
     {
       "key": "Rosaria",
       "name": "Rosaria",
-      "description": "A nun who, outside of her garb, seems nothing at all like a person of the cloth. Known for her sharp, cold words and manner, she often works alone.",
+      "description": "A sister of the church, though you wouldn't know it if it weren't for her attire. Known for her sharp, cold words and manner, she often works alone.",
       "skills": [
         {
           "key": "s1",
-          "title": "Spear of Worship",
+          "title": "Spear of the Church",
           "abilities": [
             {
               "key": "a1",
@@ -2592,7 +2592,7 @@
         },
         {
           "key": "p2",
-          "title": "Extracted Confession",
+          "title": "Regina Probationum",
           "description": "When Rosaria strikes an opponent from behind using Ravaging Confession, Rosaria's CRIT Rate increases by 12% for 5s.",
           "descriptions": []
         },
@@ -2618,19 +2618,19 @@
         },
         {
           "key": "c3",
-          "title": "Sacrament of Penance",
+          "title": "The Wages of Sin",
           "description": "Increases the Level of Ravaging Confessionby 3. Maximum upgrade level is 15.",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Amazing Disgrace",
+          "title": "Painful Grace",
           "description": "Ravaging Confession's Crit Hits regenerate 5 Energy for Rosaria. Can only be triggered once each time Ravaging Confession is cast.",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Extreme Unction",
+          "title": "Last Rites",
           "description": "Increases the Level of Rites of Termination by 3. Maximum upgrade level is 15.",
           "descriptions": []
         },
