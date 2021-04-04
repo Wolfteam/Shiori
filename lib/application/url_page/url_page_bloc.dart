@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:genshindb/domain/services/device_info_service.dart';
 import 'package:genshindb/domain/services/network_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
 
@@ -15,8 +16,9 @@ class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
 
   final NetworkService _networkService;
   final TelemetryService _telemetryService;
+  final DeviceInfoService _deviceInfoService;
 
-  UrlPageBloc(this._networkService, this._telemetryService) : super(const UrlPageState.loading());
+  UrlPageBloc(this._networkService, this._telemetryService, this._deviceInfoService) : super(const UrlPageState.loading());
 
   @override
   Stream<UrlPageState> mapEventToState(
@@ -30,6 +32,7 @@ class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
           hasInternetConnection: isInternetAvailable,
           mapUrl: mapUrl,
           wishSimulatorUrl: wishSimulatorUrl,
+          userAgent: _deviceInfoService.userAgent,
         );
       },
     );

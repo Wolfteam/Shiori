@@ -288,5 +288,7 @@
   "hilichurl": "Hilichurl",
   "fatui": "Fatui",
   "automaton": "Automaton",
-  "droppedBy": "Dropped by"
+  "droppedBy": "Dropped by",
+  "pressOnceAgainToExit": "Press once again to exit",
+  "discordServer": "Discord Server"
 }

@@ -11,5 +11,6 @@ abstract class SettingsState with _$SettingsState {
     @required bool showCharacterDetails,
     @required bool showWeaponDetails,
     @required AppServerResetTimeType serverResetTime,
+    @required bool doubleBackToClose,
   }) = _LoadedState;
 }

@@ -110,19 +110,20 @@ class _TierListPageState extends State<TierListPage> {
 
   Future<void> _takeScreenshot() async {
     final s = S.of(context);
+    final fToast = ToastUtils.of(context);
     final bloc = context.read<TierListBloc>();
     try {
       if (!await Permission.storage.request().isGranted) {
-        ToastUtils.showInfoToast(s.acceptToSaveImg);
+        ToastUtils.showInfoToast(fToast, s.acceptToSaveImg);
         return;
       }
 
       final bytes = await screenshotController.capture(pixelRatio: 1.5);
       ImageGallerySaver.saveImage(bytes, quality: 100);
-      ToastUtils.showSucceedToast(s.imgSavedSuccessfully);
+      ToastUtils.showSucceedToast(fToast, s.imgSavedSuccessfully);
       bloc.add(const TierListEvent.screenshotTaken(succeed: true));
     } catch (e, trace) {
-      ToastUtils.showErrorToast(s.unknownError);
+      ToastUtils.showErrorToast(fToast, s.unknownError);
       bloc.add(TierListEvent.screenshotTaken(succeed: false, ex: e, trace: trace));
     }
   }
