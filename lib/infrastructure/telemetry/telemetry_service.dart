@@ -97,6 +97,7 @@ class TelemetryServiceImpl implements TelemetryService {
       'ShowWeaponDetails': settings.showWeaponDetails.toString(),
       'IsFirstInstall': settings.isFirstInstall.toString(),
       'ServerResetTime': EnumToString.convertToString(settings.serverResetTime),
+      'DoubleBackToClose': settings.doubleBackToClose.toString(),
     });
   }
 

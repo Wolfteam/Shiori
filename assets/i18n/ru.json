@@ -4196,7 +4196,7 @@
       "key": "Royal Grimoire",
       "name": "Королевский гримуар",
       "description": "Книга, когда-то принадлежавшая королевскому магу Мондштадта. Содержит подробные исторические данные и заклинания.",
-      "refinement": "При нанесении урона противнику скорость Крита увеличивается на {{0}}%. Максимум 5 стеков. Удар Крита удаляет все стеки."
+      "refinement": "При нанесении урона противнику шанс Крита увеличивается на {{0}}%. Максимум 5 стеков. Крит удар удаляет все стеки."
     },
     {
       "key": "Sacrificial Fragments",
@@ -5034,301 +5034,301 @@
     {
       "key": "GoldA",
       "name": "Учение о «Золоте»",
-      "description": "Gold is the symbol of the land of Geo.\nGold is the blood that flows deep within Liyue's veins, the muscle that makes up Liyue's beating heart, and the bones that make Liyue stand proud."
+      "description": "Золото - это символ царства земли.\nЗолото - это кровь, текущая глубоко под землёй Ли Юэ, это мышцы, которые сокращают сердце Ли Юэ, это кости, которые заставляют Ли Юэ гордо стоять на ногах."
     },
     {
       "key": "GoldB",
       "name": "Указание о «Золоте»",
-      "description": "Gold is the symbol of the land of Geo.\nGold symbolizes conversion. This is the unspoken understanding between Liyue's mountains, land, city, and people. In Liyue, industriousness is converted into gold, and gold into prosperity."
+      "description": "Золото - это символ царства земли.\nЗолото символизирует преобразование. Это негласное взаимопонимание между горами, землёй, городом Ли Юэ и его народом. В Ли Юэ трудолюбие превращается в золото, а золото в процветание."
     },
     {
       "key": "GoldC",
       "name": "Философия о «Золоте»",
-      "description": "Gold is the symbol of the land of Geo.\nGold is the wealth of Liyue, but Liyue's true wealth is the hearts of its people that shine like gold."
+      "description": "Золото - это символ царства земли.\nЗолото - это богатство Ли Юэ, но истинное богатство Ли Юэ - это сердца его народа, которые сияют ярче золота."
     },
     {
       "key": "Tail of Boreas",
       "name": "Хвост Борея",
-      "description": "A handful of tail scales from the Great Wolf King of the North.\nEven without his physical body and beyond death, Boreas still possesses extraordinary powers. He took a form comprised of ice and wind to embrace a new challenge, but even such a form could not house all of his power. The ice scales that fell during the battle still retain some of their spiritual energy.",
+      "description": "Чешуя с хвоста Великого Короля Волков Севера.\nБорей не теряет свою силу даже после смерти и потери своего физического тела. Чтобы справиться с новым вызовом, он принял форму, состоящую изо льда и ветра, но даже такая форма не смогла вместить всю его силу. Ледяные чешуйки, оторвавшиеся от его хвоста во время боя, всё ещё хранят часть его духовной энергии.",
       "bossName": "Андриус"
     },
     {
       "key": "Ring of Boreas",
       "name": "Кольцо Борея",
-      "description": "A bit of crystallized ice from the Great Wolf King of the North.\nThis land was once a realm of freezing-cold blizzards and ice storms filled with razor-sharp ice shards, all at the command of Boreas. Though his power may have diminished, he could still freeze the land in an instant.",
+      "description": "Кусок кристаллизованного льда от Великого Короля Волков Севера.\nКогда-то эта земля была царством метелей и ледяных бурь, заполненных острыми, словно бритва, осколками льда, и все это находилось под командованием Борея. И хоть его сила, возможно, уменьшилась, мгновенное замораживание земли по-прежнему остается легкой задачей для него.",
       "bossName": "Андриус"
     },
     {
       "key": "Spirit Locket of Boreas",
       "name": "Шкатулка с Духом Борея",
-      "description": "A bit of the Great Wolf King of the North's power drawn from its soul.\nThis land was once a realm of freezing-cold blizzards and ice storms filled with razor-sharp ice shards, all at the command of Boreas. In his final moments, he finally realized the chilling north wind could only extinguish life, not nurture it. Therefore, Boreas let his powers freely flow into the land to protect it and its inhabitants.",
+      "description": "Сила души Великого Короля Волков Севера.\nВо времена правления Борея в этих землях царили замораживающие кровь в венах бури и метели из острых как бритва ледяных осколков. В последние минуты жизни Борей понял, что леденящие северные ветра могли лишь погасить жизнь, а не зажечь её, поэтому он отпустил свои силы, чтобы защитить свои земли и их жителей.",
       "bossName": "Андриус"
     },
     {
       "key": "Dvalin's Plume",
       "name": "Перо с хвоста Двалина",
-      "description": "A feather from the tail of the Dragon of the East.\nAs a dragon's feather it has experienced more than a thousand years' worth of winds. One senses within it a yearning for freedom so strong that it could whip up a light breeze to rescue it from its current confines. Its former owner's recognition of you is what makes it content to stay in your hands.",
+      "description": "Перо из хвоста Дракона Востока.\nЭто - перо дракона, испытавшее тысячелетние ветра. Его стремление быть свободным вызывает лёгкий ветерок, чтобы освободить его от оков, но его предыдущий владелец оставил вам это перо в знак признательности.",
       "bossName": "Давалин"
     },
     {
       "key": "Dvalin's Claw",
       "name": "Коготь Двалина",
-      "description": "A claw from the Dragon of the East.\nIt once contained the shadow dragon Durin's vile poison, having torn through the latter's flesh in battle. Thanks to your purification and healing, it is no longer toxic.",
+      "description": "Коготь Дракона востока.\nКак когда-то он разрывал плоть теневого дракона «Дурина», так и содежал в себе его злобный яд. Однако благодаря вашему очищению и исцелению он больше не токсичен.",
       "bossName": "Давалин"
     },
     {
       "key": "Dvalin's Sigh",
       "name": "Вздох Двалина",
-      "description": "A bit of power taken from the whirlwinds evoked by the Dragon of the East.\nBeautiful and transparent, both trade winds and tornadoes will work in his name. The winds move as his companion, his voice, and his freedom.His enemies are the thousands who stand against the wind.",
+      "description": "Сила, извлечённая из вихрей, вызванных Драконом Востока.\nПрекрасный и невидимый, ветер следует за ним, он - его голос и свобода.И враги его, сражающиеся с ветром, многочисленны.",
       "bossName": "Давалин"
     },
     {
       "key": "Tusk of Monoceros Caeli",
       "name": "Рог небесного кита",
-      "description": "The horn of a whale that you obtained from defeating Childe, who had unleashed the might of his Delusion.\nIt is said that the shape of one's constellation determines one's character. The image of a whale cruising across the celestial heights represents a solipsism that seeks to crush and devour all in its path.\nEmbracing this aspect of himself, Childe gleefully summoned one such beast before throwing himself into battle against you.",
+      "description": "Рог кита, доставшийся вам после победы над Чайльдом, выпустившим на волю силу своего Глаза Порчи.\nГоворят, что созвездие, под которым родился человек, определяет его характер. Небесный кит, плывущий в звёздной черноте ночи, пожалуй, олицетворяет всепоглощающее и непреклонное высокомерие... Зная об этом, Чайльд с удовольствием призвал это чудовище себе на помощь во время боя.",
       "bossName": "Тарталья"
     },
     {
       "key": "Shard of a Foul Legacy",
       "name": "Осколок дьявольского меча",
-      "description": "The shard of a weapon that you obtained from defeating Childe, who had unleashed the might of his Delusion.\nIt is stained with a profound color that is not of this world, no doubt due to the land of endless darkness that the young boy saw with his own two eyes.\nPerhaps it has nothing to do with the power of a Delusion, but as they say, the weapon reflects its user...",
+      "description": "Осколок оружия, доставшийся вам после победы над Чайльдом, выпустившим на волю силу своего.\nГлаза Порчи. Когда перед глазами мальчика предстала земля бескрайней тьмы, меч окрасился густым потусторонним цветом. Хотя это и не имеет отношения к Глазу Порчи, но, как говорится, оружие походит на владельца...",
       "bossName": "Тарталья"
     },
     {
       "key": "Shadow of the Warrior",
       "name": "Тень воина",
-      "description": "A fragment of power that you obtained from defeating Childe, who had unleashed the might of his Delusion.\nIt is the product of a will to fight that has been honed over countless slaughters.\nIf humans do indeed have destinies, then his must surely have been twisted by such deeds. Why else, then, would he always be at the heart of every conflict?",
+      "description": "Фрагмент силы, доставшийся вам после победы над Чайльдом, выпустившим на волю силу своего Глаза Порчи.\nВоля к победе, которая материализовалась во время бесчисленных побоищ. Если судьба существует, то его судьба наверняка исказилась из-за его действий. Иначе почему он всегда оказывается в центре любого конфликта?",
       "bossName": "Тарталья"
     },
     {
       "key": "DecarabianA",
       "name": "Плитка башни Декарабиана",
-      "description": "The place now known as Stormterror's Lair was once the capital city of Decarabian, the God of Storms. Since this dream of prosperity was created entirely by his divine might, the broken pieces left behind by the shattering of that dream still possess great power."
+      "description": "Место, ныне известное как логово Ужаса бури, в древности было столицей Декарабиана, бога бури. Его стремления были созданы из божественной силы, поэтому осколки его разбитой мечты до сих пор хранят в себе частицу его могущества."
     },
     {
       "key": "DecarabianB",
       "name": "Обломок стены Декарабиана",
-      "description": "Decarabian, the God of Storms, was content with the capital city he had raised, and accepted the worship of the people from atop his tower. But he knew not that the people did not bow to him out of respect or adoration."
+      "description": "Бог бури, Декарабиан, довольствовался своей столицей и наблюдал с вершины своей башни за тем, как люди поклонялись ему. Он не подозревал, что они делали это вовсе не из уважения или обожания."
     },
     {
       "key": "DecarabianC",
       "name": "Фрагмент эпоса Декарабиана",
-      "description": "Andrius once declared war upon Decarabian, but failed to even scratch the capital of the Lord of the Tower. If it were not for the song of freedom that shattered the city in an instant, Decarabian's dream would have gone on forever."
+      "description": "Однажды Андриус объявил войну Декарабиану, но даже не смог ступить на земли его столицы. Мечты Декарабиана могли длиться вечно, если бы не песня свободы, в один миг разрушившая стены его столицы."
     },
     {
       "key": "DecarabianD",
       "name": "Осколок мечты Декарабиана",
-      "description": "The people did not bow to Decarabian out of respect or adoration, but because the harsh winds had laid them low. This was the shattered dream and ambition of the Anemo Archon before the rise of Barbatos.He tried so hard to make his dream come true, and so the fragments of that dream are still mighty."
+      "description": "Люди поклонялись Декарабиану не из уважения или обожания, а из-за сильных ветров, не дающих им встать с колен. Таковы были мечты и стремления Анемо Архонта до появления Барбатоса.Мечта Декарабиана всё ещё хранит в себе частицу его могущества."
     },
     {
       "key": "GuyunA",
       "name": "Светящийся песок Гуюнь",
-      "description": "The stone pillars that tower amid Guyun Stone Forest were once the stone spears Morax used to defeat his enemies. Over time, the gods' substance has seeped into the pillars that pin them down, lending them divine power. The pillars sometimes shed fragments of hatred and curses."
+      "description": "Каменные колонны, возвышающиеся среди каменного леса Гуюнь, - это каменные копья, которые использовал Моракс для победы над врагами. Со временем кровь богов впиталась в эти колонны, дав им божественные силы. Временами эти колонны проливают крупицы проклятий и ненависти."
     },
     {
       "key": "GuyunB",
       "name": "Блестящий камень Гуюнь",
-      "description": "The learned know that Guyun Stone Forest is far more than simply a miraculous sight on the sea to behold: It is the cemetery of the former gods of Liyue. Hatred and filth have periodically risen up from it, but all have been subdued by a demon-conquering young man."
+      "description": "Каменный лес Гуюнь - это не просто красивые места на фоне морского пейзажа, а кладбище бывших богов Ли Юэ.Периодически отсюда сочится презрение и порча, с которыми успешно справляется один героический юноша."
     },
     {
       "key": "GuyunC",
       "name": "Реликвия Гуюнь",
-      "description": "The stone spear has a glimmering core formed by the power of the defeated gods. Their hatred is not directed at Morax, however, for they have lost themselves a long time ago and are incapable of holding personal grudges."
+      "description": "Каменное копьё имеет мерцающее ядро, сформированное силой побеждённых богов. Их гнев не направлен на Моракса, ибо они давно потеряли рассудок и не могут более держать личные обиды."
     },
     {
       "key": "GuyunD",
       "name": "Останки богов Гуюнь",
-      "description": "That which lurks within and animates this relic are the divine remains of lamenting gods. They are unrealized ideals, designs for a prosperous humanity that could never be. They may now lie deep within stone and sea, but they will not go quietly into the night."
+      "description": "В этой реликвии таятся останки древних скорбящих богов. Это их нереализованные идеи и планы по процветанию человечества, которым никогда не суждено воплотиться. Они могут лежать на дне моря или глубоко недрах скалы, но они никогда не исчезнут с лица этого мира."
     },
     {
       "key": "ElixirA",
       "name": "Свинцовая пилюля Заоблачного моря",
-      "description": "Jueyun Karst is the realm of the mighty and illuminated adepti. But other than the ability to control the elements of the world, Jueyun Karst is also home to three other untold secrets: Alchemy, Sigils, and Sub-Space Creation."
+      "description": "Заоблачный предел - это дом могущественных Адептов, которые могут не только управлять элементами мира, но и хранят три других тайны: Даньдин (Алхимия), Фулу (Талисманы) и Вайцзинь (Сотворение подпространства)."
     },
     {
       "key": "ElixirB",
       "name": "Ртутная пилюля Заоблачного моря",
-      "description": "With Fulu (Sigils), the adepti can store their power in the form of symbols, and with Waijing (Sub-Space Creation) they can fashion a cosmic paradise with the power of their minds. The manufacture of elixirs, however, has always been shrouded in mystery, for certain death follows for any who swallow them."
+      "description": "С помощью Фулу (Талисманы) Адепты могут хранить свою силу в символах, а Вайцзинь (Сотворение подпространства) даёт им возможность сотворить космический рай при помощи силы разума. Лишь сотворение зелий покрыто вечной тайной, ибо выпившие их уже не могут ничего рассказать."
     },
     {
       "key": "ElixirC",
       "name": "Золотая пилюля Заоблачного моря",
-      "description": "Elixirs are in fact pills made from metal alloys. They were created by the adepti, and are able to grant weapons transcendent powers. However, they are rarely seen in the world due to the hubris of the practitioners of martial arts, who prized the ways of combat over the paths of the adepti."
+      "description": "На самом деле зелья - это пилюли, сделанные из металлических сплавов. Их производят Адепты для того, чтобы дать оружию трансцендентальные силы. Но в мире эти пилюли встретить очень тяжело из-за гордости людей, практикующих боевые искусства, которые ценят пути войны выше, чем пути Адептов."
     },
     {
       "key": "ElixirD",
       "name": "Примо эликсир Заоблачного моря",
-      "description": "An elixir of the highest quality. It embodies a state of intertwining order and chaos, and is said to mirror how the world was when it was first created. Of course, a certain someone knows that this was not the case."
+      "description": "Эликсир высочайшего качества. Он воплощает состояние переплетающегося порядка и хаоса и, как говорят, отражает то, каким был мир сразу после его сотворения. Но, конечно, некая личность прекрасно знает, что всё было не так."
     },
     {
       "key": "BorealWolfA",
       "name": "Молочный зуб арктического волка",
-      "description": "Andrius' wolf pack is its blessed honor guard, and even the milk teeth of a wolf cub possess great potential.\nIn the past, the gods had the responsibility to love all people. Andrius was therefore quite unusual in that he became leader of the wolves, while only welcoming abandoned babies and wanderers when it came to humans."
+      "description": "Волчья стая Андриуса - это его благословенный почётный караул, и даже молочные зубы волчат обладают огромной мощью.В древности долгом богов было любить людей. Андриус выделялся из их рядов, он принимал в свою стаю только брошенных детей и бродяг."
     },
     {
       "key": "BorealWolfB",
       "name": "Треснувший зуб арктического волка",
-      "description": "The life of a wolf is not without violence, broken bones or cracked teeth are nothing special.\nAndrius found humans to be a disappointment, but believed babies to be innocent. If both the wolf pack and the adopted children chose each other, then they become a Lupical, a fated family."
+      "description": "Волчья жизнь не проходит без насилия и жестокости. Нет ничего особенного в сломанных костях или выбитых зубах.Андриус разочаровался в людях и верил в детскую невинность. Если волчья стая и найдёныши принимали друг друга, то они становились Лупикал - семьёй, предназначенной судьбой."
     },
     {
       "key": "BorealWolfC",
       "name": "Сломанный клык арктического волка",
-      "description": "The wolf pack also understands that humans are not solitary creatures. The honorary broken tooth is a parting gift said to bring protection and luck.\nIn the legends of a far-off world, a female wolf once adopted two great humans. Their home was known as the Cave of Wolves, or Lupercal - that word meaning the same thing as Lupical does in this world."
+      "description": "Волчья стая понимает, что люди - не существа одиночества. Почётный сломанный зуб - это такой подарок на память, который приносит защиту и удачу.Легенды далёкого мира рассказывают историю о волчице, усыновившей двух великих людей. Их домой была волчья пещера, которую они называли словом Луперкал, имевшим то же значение в их мире, что и Лупикал в этом."
     },
     {
       "key": "BorealWolfD",
       "name": "Ностальгия арктического волка",
-      "description": "The Wolf King, believing himself to despise humans, thought himself unable to envision a happy life for humanity, making him unworthy of becoming the Lord of the Winds of the world. Therefore, he chose to disappear. Yet, in truth, he gazes on the ones abandoned by the world ever so gently."
+      "description": "Король волков, презирающий человеческий род, никогда не мог представить людей счастливыми, поэтому он был недостоин стать Владыкой ветров. Но, покинув этот мир, он всё же продолжил молчаливо оберегать тех, кого этот мир бросил на произвол судьбы."
     },
     {
       "key": "AerosideriteA",
       "name": "Зерно чёрного сидерита",
-      "description": "A black meteor once fell beyond Liyue's Sea of Clouds, said to have fallen to vanquish a monster. However, it was stained by powerful tainted blood, so this item no longer possesses the pure power of Rex Lapis."
+      "description": "Однажды за Облачным морем упал чёрный метеорит, который должен был уничтожить страшное чудовище. Этот метеорит был осквернён злой кровью чудовища, поэтому в нём больше не осталось божественных сил Властелина Камня."
     },
     {
       "key": "AerosideriteB",
       "name": "Кусочек чёрного сидерита",
-      "description": "Rumors of sea monsters are commonplace in Liyue, since the other shore is an unknown region that lies outside of Teyvat. Without the protection of The Seven, all that lies beyond is unknown chaos. Only power beyond the order of Teyvat is able to stain the power of Rex Lapis black."
+      "description": "В Ли Юэ часто ходят слухи о страшных морских чудовищах, ведь далеко за пределами Тейвата лежат неизвестные никому земли хаоса, за которыми не следят Семеро Архонтов. Только силы, лежащие далеко за пределами тейватского порядка, могут очернить божественную силу Властелина Камня."
     },
     {
       "key": "AerosideriteC",
       "name": "Осколок чёрного сидерита",
-      "description": "The coastal nations of Teyvat refer to the region beyond the protection of The Seven as the Dark Sea. It is said that many defeated gods refused to live under the new order of The Seven, so they fled to remote islands and became evil gods. However, their powers came from the same source as Rex Lapis, separate from this all-devouring darkness."
+      "description": "Народы, живущие на побережье Тейвата, называют регион, находящийся за пределами защиты Семерых Архонтов, Тёмным морем. Говорят, что там живут падшие боги, которые не хотели мириться с установленным Семерыми новым порядком. Они сбежали на отдалённые острова и стали злыми богами. Но, помимо всепоглощающей тьмы, их силы произошли из того же источника, что и Властелина Камня."
     },
     {
       "key": "AerosideriteD",
       "name": "Обломок чёрного сидерита",
-      "description": "When Khaenri'ah was destroyed, a great sinner created endless monsters with dark, alien blood flowing through their veins. They rampaged across the land, destroying all in their paths. They were mutated lifeforms, and the mutations were caused by powers from beyond this world. The black serpentine dragon Durin that attacked Mondstadt was one such mutated being."
+      "description": "С падением Каэнри'ах великий грешник создал чудовищ, по венам которых текла тёмная кровь. Они бесчинствовали по всей земле, уничтожая всё на своём пути. Их жизнью были мутации, вызванные силами не из этого мира. Такой мутацией был и змее-дракон Дурин, напавший на Мондштадт."
     },
     {
       "key": "GladiatorA",
       "name": "Кандалы львиного клыка",
-      "description": "It's a human thing to exaggerate a hero's story, even to the point of elevating the fetters that once bound the hero to the level of an enemy of true freedom.As a result, these fetters were granted extraordinary powers."
+      "description": "Люди любят преувеличивать подвиги героев, они даже освобождают их от оков, что делали их врагами.Поэтому этим оковам были даны необычайные силы."
     },
     {
       "key": "GladiatorB",
       "name": "Цепи львиного клыка",
-      "description": "The chains that once bound the great hero Vennessa. In truth, all gladiators would have worn chains in that era, and Vennessa was but one of many."
+      "description": "Оковы, что когда-то связывали великую героиню Веннессу. На самом деле в те времена все гладиаторы были закованы в цепи, а Веннесса всего лишь была одной из них."
     },
     {
       "key": "GladiatorC",
       "name": "Оковы львиного клыка",
-      "description": "Vennessa was not truly bound by her chains. If she had so wished, no ordinary physical constraints forged in Mondstadt could have held her, for the land there yielded no ore of exceptional quality, nor did it possess the divine flame of her ancestral home.She was only bound by her responsibility to take care of her tribespeople."
+      "description": "Эти оковы не смогли бы удержать Веннессу, ведь в Мондштадте не находили достаточно крепкую руду и не имели божественного пламени родины её предков.Она была связана лишь обещанием перед своими соплемениками."
     },
     {
       "key": "GladiatorD",
       "name": "Мечты львиного клыка",
-      "description": "Vennessa may have been freed from slavery, but she then found herself subject to many other, even greater forms of bondage. What began as a duty to her tribespeople extended to all of Mondstadt, then to the concept of freedom itself, and beyond a point even to the whole world.What she really hoped for, in truth, was that the world might grow stronger."
+      "description": "Веннесса освободилась от оков рабства, но ответственность которой она была связана, только росла и распространялась на весь мир... Её соплеменники, жители Мондштадта и сами принципы свободы.Она всего лишь хотела, чтобы мир стал сильнее."
     },
     {
       "key": "Crown of Insight",
       "name": "Корона прозрения",
-      "description": "A precious Talent Level-Up material.\nOnce a medium for the storage and transfer of wisdom in ancient times. Now, wisdom is found in ancient texts and in profound speech.\nNevertheless, this Crown of Insight must still be able to impart some transcendent power and wisdom to its bearer."
+      "description": "Ценный материал повышения таланта.\nВ древности она служила для передачи знаний. Теперь же мудрость черпают из старинных книг и глубокомысленных речей. Невзирая на это, Корона прозрения всё ещё может наделить её носителя великими силами и знанием."
     },
     {
       "key": "SacrificialKnifeA",
       "name": "Церемониальный нож охотника",
-      "description": "A sharp alloy weapon. Though its owner has been lost, it still reflects a disturbingly cold light."
+      "description": "Заточенное оружие из сплава. Хоть и без хозяина, оно всё ещё отражает беспокойно холодный свет."
     },
     {
       "key": "SacrificialKnifeB",
       "name": "Церемониальный нож агента",
-      "description": "An oddly-shaped weapon made with superior Snezhnayan technology that once belonged to a senior agent. Proper training is required for using this strange weapon."
+      "description": "Оружие необычной формы, сделанное при помощи продвинутой технологии Снежной, когда-то принадлежало старшему агенту. Без особой подготовки обычный человек это странное оружие использовать не сможет."
     },
     {
       "key": "SacrificialKnifeC",
       "name": "Церемониальный нож инспектора",
-      "description": "In the hands of its lord, this fierce weapon has handled many \"debts\". No-one has eyes in the back of their heads, and this weapon and its related techniques are designed around that weakness."
+      "description": "В руках своего хозяина, это яростное оружие разобралось со многими \"долгами\". Ни у кого нет глаз на затылке. Данное оружие и техники владения им созданы вокруг этой слабости."
     },
     {
       "key": "HornA",
       "name": "Тяжелый рог",
-      "description": "A crude horn used by hilichurls to warn each other. Given the damage to the horn, it won't be warning anyone any time soon."
+      "description": "Грубо сделанный рог, служащий инструментом для поднятия тревоги у хиличурлов.\nНо сейчас этот рог в таком состоянии, что он вряд ли сможет кого-то предупредить об угрозе."
     },
     {
       "key": "HornB",
       "name": "Черный бронзовый рог",
-      "description": "A metallic monster horn that can only be obtained from especially strong hilichurls, since blowing on the horn takes real strength."
+      "description": "Металлический рог демона.\nЕго обычно носят более сильные хиличурлы, у которых хватает сил, чтобы дуть в него."
     },
     {
       "key": "HornC",
       "name": "Черный кристаллический рог",
-      "description": "A metallic horn with an ominous shine decorated with black crystals of an unknown source. It has hardly been used at all. It is likely a ceremonial item of the hilichurls'."
+      "description": "Металлический рог, испускающий таинственный свет.\nДекорирован драгоценными камнями неизвестного происхождения. Выглядит новеньким. Скорее всего он использовался в таинственных ритуалах хиличурлов."
     },
     {
       "key": "ChaosA",
       "name": "Устройство хаоса",
-      "description": "Comes from ancient defunct relic structures. A part that once held the structure together. Its aesthetically-pleasing engineering is quite exquisite."
+      "description": "Часть древнего механического тела.\nРаньше она поддерживала его целостность. Выполнена с высоким мастерством."
     },
     {
       "key": "ChaosB",
       "name": "Цепь хаоса",
-      "description": "Comes from ancient defunct relic structures. Was once a logic circuit responsible for movement functions. Sadly, no-one is able to make sense of how it worked."
+      "description": "Часть древнего механического тела.\nЭто логическая схема, которая отвечала за его движение. В ней заключены великие знания, но, увы, ещё никто не смог их добыть."
     },
     {
       "key": "ChaosC",
       "name": "Ядро хаоса",
-      "description": "Comes from ancient defunct relic structures. The core that once drove a mechanical beast. Should you come to understand its workings and reproduce it, you could perhaps change the world."
+      "description": "Часть древнего механического тела.\nОна была источником его жизненной силы. Если бы кто-то постиг её тайны, то смог бы изменить весь мир."
     },
     {
       "key": "LeyLineA",
       "name": "Ветви артерий земли",
-      "description": "Fragile branches from deep within the earth. Even after years of aging, from beneath it's mottled surface you can see that its power is not yet entirely lost."
+      "description": "Хрупкие ветви из глубин земли.\nДаже спустя годы, из-под пятнистой поверхности видно, что их сила ещё не полностью утеряна."
     },
     {
       "key": "LeyLineB",
       "name": "Листья артерий земли",
-      "description": "A twig from deep within the earth. Though it is far from where it once lay, its leaves still pulsate with energy."
+      "description": "Ветви из глубин земной поверхности.\nХоть и далеко от того места, где когда-то лежали, они всё ещё пульсируют энергией."
     },
     {
       "key": "LeyLineC",
       "name": "Ростки артерий земли",
-      "description": "It is said that there was a great tree whose roots once spread out to every corner of the world, and this branch is said to be part of it. It is almost if it was never broken off and taken far away, for its vitality is such that it still sprouts new leaves even now."
+      "description": "Говорят, что гигантские корни мирового древа расползаются под поверхностью всей земли, и этот росток когда-то был их частью. Он полон жизненной силы, как будто всё ещё связан со своими материнскими корнями."
     },
     {
       "key": "MistGrassA",
       "name": "Пыльца туманной травы",
-      "description": "Strange spores created by Mist Grass in enclosed spaces. They are the Cicins' favorite food."
+      "description": "Туманная трава выделяет эти необычные споры, находясь в закрытом пространстве. Любимое лакомство цицинов."
     },
     {
       "key": "MistGrassB",
       "name": "Мешочек с туманной травой",
-      "description": "Well-preserved Mist Grass. Some would take advantage of the Cicins' love for the Mist Grass to control them."
+      "description": "Хорошо сохранившаяся туманная трава.\nНекоторые люди могут управлять цицинами, пользуясь их любовью к этой траве."
     },
     {
       "key": "MistGrassC",
       "name": "Пучок туманной травы",
-      "description": "A rare bundle of Mist Grass that gives off a faint glow. Those who carry it invite both the Cicins and misfortune."
+      "description": "Небольшой пучок туманной травы, испускающей мягкое свечение.\nТе, кто носит её, привлекают к себе цицинов и неудачу."
     },
     {
       "key": "BoneShardA",
       "name": "Хрупкие останки",
-      "description": "A bone shard once carried by a Geovishap.\nAlthough they are quite fragile, they seem to still harbor some indescribable power."
+      "description": "Осколок кости, найденный на теле геовишапа.\nЭти кости очень хрупкие, но они всё ещё содержат в себе неописуемую силу."
     },
     {
       "key": "BoneShardB",
       "name": "Креикие останки",
-      "description": "A fragment of an unknown creature's bones that appear to be prized by Geovishaps for some reason.\nThe fragment appears to be quite aged. Despite being dragon-like beasts with no spoken language, they still seem to have some sort of special affection for these bone shards."
+      "description": "Фрагмент костей неизвестного существа, которые очень любят геовишапы.\nФрагмент выглядит довольно древним. По каким-то причинам эти драконоподобные существа, не имеющие своего языка, испытывают особую привязанность к осколкам этих костей."
     },
     {
       "key": "BoneShardC",
       "name": "Окаменевшие останки",
-      "description": "A fossilized bone fragment sometimes found after defeating Geovishaps.\nGeovishaps all dream of growing into great dragons one day. They see these fossils as dragon bones and greatly cherish them, perhaps because they too hope to attain the dragons' longevity and power."
+      "description": "Окаменевший фрагмент кости, который иногда можно найти после победы над геовишапом.\nГеовишапы мечтают когда-нибудь стать великими драконами. Они бережно хранят эти костяные осколки, возможно, потому что они надеются получить силу и долголетие настоящих драконов."
     },
     {
       "key": "MaskA",
       "name": "Разбитая маска",
-      "description": "A broken bone mask that once belonged to some hilichurl.\nNow more broken than complete, it can no longer perform its primary function."
+      "description": "Разбитая костяная маска, давным-давно принадлежавшая какому-то хиличурлу.\nРазбита на мелкие осколки, поэтому не может выполнять свою основную функцию."
     },
     {
       "key": "MaskB",
       "name": "Грязная маска",
-      "description": "A bone mask, covered in unidentifiable stains, that emanates a mysterious odor.\nYet such is the devotion of hilichurls to masks that they will wear it nonetheless."
+      "description": "Костяная маска со слабым запахом, покрытая странными пятнами.\nХоть и предназначена для лица, но только хиличурл может носить подобное."
     },
     {
       "key": "MaskC",
       "name": "Зловещая маска",
-      "description": "A glossy bone mask with oil markings painted on it, meant to intimidate enemies.\nNo-one really knows why hilichurls are so fascinated with masks. Some say that it's because they don't want to see their own reflections in the water."
+      "description": "Покрытая узором костяная маска, предназначенная для запугивания врагов.\nНикто не знает, почему хиличурлы никогда не снимают свои маски. Есть версия, что они просто боятся своего отражения в воде."
     },
     {
       "key": "StatuetteA",
@@ -5348,127 +5348,127 @@
     {
       "key": "ScrollA",
       "name": "Свиток божественной магии",
-      "description": "A scroll that likely relates to some kind of magic. Exudes an inexplicable but ominous warmth."
+      "description": "Свиток, скорее всего относящийся к какой-то магии. Источает необъяснимое тепло."
     },
     {
       "key": "ScrollB",
       "name": "Свиток печати",
-      "description": "An old scroll lacking in detail and clarity. By following the images on it, some magical creatures can recreate a small part of its magic."
+      "description": "Старый свиток, которому не достаёт деталей и ясности. Магические существа могут воссоздать по рисункам часть магии, описанной в нём."
     },
     {
       "key": "ScrollC",
       "name": "Свиток запретного проклятия",
-      "description": "A scroll inscribed with ancient images. It is said that few can decipher its meaning, and the few scholars that have all went mad."
+      "description": "Свиток, исписанный древними изображениями. Говорят, немногие могут расшифровать их значение, и те немногие учёные, у которых получилось, сошли с ума."
     },
     {
       "key": "NectarA",
       "name": "Нектар попрыгуньи",
-      "description": "Nectar extracted from the stamen of a Whopperflower that contains trace amounts of elemental energy.\nThe taste of the nectar has a hint of Sweet Flower in it."
+      "description": "Нектар из цветов попрыгуньи с остаточным содержанием элементов.\nВкус нектара имеет нотки цветка-сахарка."
     },
     {
       "key": "NectarB",
       "name": "Мерцающий нектар",
-      "description": "Nectar that is full of pure elemental energy.\nScholars generally concur that Whopperflowers are advanced life forms among the elemental plants, but there has yet to be a satisfactory explanation regarding their predatory habits."
+      "description": "Нектар, наполненный чистыми элементами.\nУчёные сходятся во мнении, что попрыгунья является высшей формой жизни среди элементальных растений, но объяснения их хищному поведению у них ещё нет."
     },
     {
       "key": "NectarC",
       "name": "Элементальный нектар",
-      "description": "A thick and sticky honey that is full of energy.\nThe Whopperflower hunts by tricking its prey, a process it uses to possibly evolve into a more powerful and pure form."
+      "description": "Густой липкий мёд, наполненный энергией.\nПопрыгунья обманывает свою жертву и съедает её для того, чтобы эволюционировать в более сильную и чистую форму жизни."
     },
     {
       "key": "ArrowHeadA",
       "name": "Прочный наконечник стрелы",
-      "description": "A roughly produced arrowhead. Though unimpressive, neither it nor the bow should be underestimated, for even the bravest knight can be felled by an arrow from the rear."
+      "description": "Грубо изготовленный наконечник стрелы. Не сильно впечатляет, однако не стоит его недооценивать. Всё, что ему требуется, - это правильный момент."
     },
     {
       "key": "ArrowHeadB",
       "name": "Острый наконечник стрелы",
-      "description": "A well-made arrowhead. Sharp enough to penetrate armor with the ease of a rock through the surface of water."
+      "description": "Хорошо сделанный наконечник стрелы. Достаточно острый, чтобы проникнуть в тело с легкостью камня, проникающего сквозь поверхность воды."
     },
     {
       "key": "ArrowHeadC",
       "name": "Старый наконечник стрелы",
-      "description": "An old arrowhead coated in blood. The arrowhead has long since lost its sharpness and thus its use as a weapon.However, it represents the pride of a hunter and acts as both an amulet and a medal."
+      "description": "Старый наконечник стрелы, покрытый кровью. Он давно потерял свою остроту, и, следовательно, его нельзя использовать в качестве оружия. Однако этот наконечник является гордостью охотника и выполняет роль амулета или медали."
     },
     {
       "key": "CircularInsigniaA",
-      "name": "Печать “Похитителей сокровищ”",
-      "description": "A signet that proudly represents its owner's position as member of the Treasure Hoarders. The pursuit of treasure knows no bounds. That said... Is being a thief something to be proud of?"
+      "name": "Печать \"Похитителей сокровищ\"",
+      "description": "Печать члена Похитителей сокровищ, определяющая положение владельца в банде. Стремление за сокровищами не имеет границ. Но стоит ли гордиться тем, что ты вор…?"
     },
     {
       "key": "CircularInsigniaB",
       "name": "Печать серебряного ворона",
-      "description": "A raven insignia used by members of the Treasure Hoarders to identify each other. The Treasure Hoarders ask for no resume. Anyone who has an insatiable desire for treasure and is backed up by an equal amount of courage can become a worthy member."
+      "description": "Символ ворона, используемый членами банды Похитителей сокровищ для идентификации друг друга. Похитители сокровищ не спрашивают резюме. Любой, у кого есть непреодолимая жажда сокровищ, подкрепленная не меньшим количеством храбрости, может стать достойным членом банды."
     },
     {
       "key": "CircularInsigniaC",
       "name": "Печать золотого ворона",
-      "description": "A raven insignia that symbolizes the pride and the guiding principle of the Treasure Hoarders. Whether it's hidden amidst the vastness of the land or in the depths of the seas, as long as there are treasures to be hunted down, the spirit of Treasure Hoarders, who will stop at nothing to acquire them, will never die."
+      "description": "Печать ворона, символизирующая гордость и руководящий принцип Похитителей сокровищ. Если где-нибудь есть сокровище, которое можно похитить, неважно, скрыто ли оно среди земных просторов или же в морских глубинах, дух Похитителей сокровищ, которые не остановятся ни перед чем, чтобы их найти, не умрёт никогда."
     },
     {
       "key": "InsigniaA",
       "name": "Шеврон рядового",
-      "description": "An insignia to identify the recruits. Makes one wonder about what the ones joining the Fatui's war machine were thinking."
+      "description": "Знак определяющий рекрута. Интересно, у кого хватило мозгов стать частью военной машины Фатуи."
     },
     {
       "key": "InsigniaB",
       "name": "Шеврон сержанта",
-      "description": "An insignia with a different shape to distinguish the sergeants from new recruits. Perhaps there are complicated emotions behind it."
+      "description": "Знак, отличающий обычного рядового от сержанта. Наверное, за ним скрываются сложные эмоции."
     },
     {
       "key": "InsigniaC",
       "name": "Шеврон офицера",
-      "description": "An armband to identify officers. The Fatui possess a colossal army, so there must be something extraordinary about the ones who achieved this rank within the group."
+      "description": "Знак, определяющий офицера. Фатуи огромная армия, поэтому в человеке, дослужившимся до офицера, должно быть что-то особенное."
     },
     {
       "key": "SlimeA",
       "name": "Слизь слайма",
-      "description": "A thick coating found on slimes. Most commonly seen material in elemental workshops."
+      "description": "Толстый слой слизи, покрывающий слайма. Обычно используется в элементальных мастерских."
     },
     {
       "key": "SlimeB",
       "name": "Выделения слайма",
-      "description": "Mildly purified slime secretions. Harmful to the skin. Please avoid direct exposure."
+      "description": "Неочищенные выделения слайма. Пожалуйста, избегайте прямого контакта. При попадании на кожу смойте водой (выделения гидро слайма просто высушите на солнце)."
     },
     {
       "key": "SlimeC",
       "name": "Концентрат слайма",
-      "description": "Concentrated slime essence. When left alone, it will begin to move on its own."
+      "description": "Концентрированная эссенция слайма. Будучи оставленной надолго без присмотра, начинает двигаться сама по себе."
     },
     {
       "key": "Mora",
       "name": "Мора",
-      "description": "Common currency. The one language everybody speaks."
+      "description": "Повсеместная валюта. Международный язык общения."
     },
     {
       "key": "BasaltPillar",
       "name": "Базальтовая колонна",
-      "description": "A pillar formed by the shell of a Geo Hypostasis, composed of high-density Geo energy.\nIt is a testament to Geo's status as the heaviest of the elements. Maybe the reason a Geo Hypostasis creates this pillar out of its shell and raises itself is just to get closer to the sky, not to combat enemies."
+      "description": "Колонна, образованная из оболочки Гео гипостазиса и содержащая в себе концентрированную энергию Гео.\nЭто самый тяжелый компонент элемента Гео. После смерти Гео гипостазис создаёт эту колонну из своей оболочки вовсе не для боя, а всего лишь для того, чтобы стать ближе к небесам."
     },
     {
       "key": "CleansingHeart",
       "name": "Очищающее сердце",
-      "description": "A palmful of eternal water left by an oceanid.\nThough it has already diffused among the depths of the lake, its purity remains all the same. But why would a creature so pure and clean as an oceanid covet the appearance of a being that roams the land, and assume such a form with pure water? They need not breathe nor do they require sustenance..."
+      "description": "Вечные воды, оставленные духом океана.\nЭти воды уже давно растеклись по глубинам озёр, но они всё ещё сохраняют свою чистоту. Почему же существо столь чистое, как океан, принимает форму растения, рождённого на земле? Ведь им не нужно ни дыхание, ни питание..."
     },
     {
       "key": "EverflameSeed",
       "name": "Пылающее семя",
-      "description": "A seed that fuels the unending flames of the Pyro Regisvine. It emits Pyro energy as if it will burn all that has ever sprouted from the ground.Endless desires flow among turbulent energy deep within the earth. What desire could steadily hold such fire to the plants and long so eagerly to bathe everything in unquenchable flames?"
+      "description": "Семя, которое питает бесконечное пламя Пиро орхидеи. Оно излучает энергию Пиро настолько интенсивно, будто хочет сжечь всё, что когда-либо произрастало из земли.В глубинах земли среди бурных потоков энергии текут бесчисленные желания. Что же способно мечтать сжечь весь мир в своём неугасимом пламени?"
     },
     {
       "key": "HoarfrostCore",
       "name": "Инеевое ядро",
-      "description": "The exposed core of a defeated Cryo Regisvine. Pure Cryo energy is contained within it.\nEnergy and thoughts that swell deep within the earth will eventually erupt on the surface. Even the deathly silent frost will attach to living things on the ground, turning even ordinary vegetation like vines into huge, vicious predators."
+      "description": "Ядро побеждённого Крио папоротника, внутри которого содержатся чистые Крио элементы.\nЭнергия и мысли, которые копятся глубоко в земле, в конечном итоге вспыхнут на поверхности. Даже смертельно тихий мороз заставит лозы и ветви растительности стать огромными и жестокими, чтобы притянуть взгляд охотника."
     },
     {
       "key": "HurricaneSeed",
       "name": "Семя урагана",
-      "description": "The imploded form of an Anemo Hypostasis upon its defeat.Contains the essence of Anemo energy.\nIt is said that the power to create hurricanes resides within its seemingly fragile body. This butterfly of pure Anemo energy must surely be waiting for the day when it can conjure up storms once again."
+      "description": "Разрушенная форма Анемо гипостазиса, содержащая концентрированную энергию Анемо.\nГоворят, что в его, казалось бы, хрупком теле хранится способность создавать вихри. Эта бабочка из чистой энергии Анемо ждёт дня, когда снова сможет вызвать бурю."
     },
     {
       "key": "LightningPrism",
       "name": "Призма молнии",
-      "description": "An Electro Hypostasis channels nearby elemental energy to repair damaged elemental entities. Contains the essence of Electro energy.\nAn ordinary prism separates white light into its component colors; a Lightning Prism, however, channels flowing energy and weaves them into lightning. It will continue to do so even after the Electro Hypostasis has been defeated."
+      "description": "Электро гипостазис направляет окружающую его элементальную энергию на восстановление элементальных сущностей, и содержит в себе концентрированную энергию Электро.\nОбычная призма разделяет пропущенный сквозь неё свет на составляющие его цвета, а Электро призма превращает пропущенную сквозь неё энергию в молнию. Она не потеряет эту способность даже после смерти самого Электро гипостазиса."
     },
     {
       "key": "AgateA",
@@ -5478,37 +5478,37 @@
     {
       "key": "AgateB",
       "name": "Фрагмент агата Агнидус",
-      "description": "\"A pilgrimage for a wish; a battle to earn a name...\""
+      "description": "\"Паломничество за желанием; Битва за имя...\""
     },
     {
       "key": "AgateC",
       "name": "Кусок агата Агнидус",
-      "description": "\"A pilgrimage for a wish; a battle to earn a name...Burnt to cinders for a dream.\""
+      "description": "\"Паломничество за желанием; Битва за имя...Сгоревшие дотла за мечту\""
     },
     {
       "key": "AgateD",
       "name": "Драгоценный агат Агнидус",
-      "description": "\"A pilgrimage for a wish; a battle to earn a name...Burnt to cinders for a dream.\nIf the intention yet remains, achieved ██'s truth he has.\""
+      "description": "\"Паломничество за желанием; Битва за имя...Сгоревшие дотла за мечту.Намерения никуда не делись, и он добился истины██\""
     },
     {
       "key": "DiamondA",
       "name": "Осколок бриллианта",
-      "description": "\"Welcome to this world.\""
+      "description": "\"Добро пожаловать в мир!\""
     },
     {
       "key": "DiamondB",
       "name": "Фрагмент бриллианта",
-      "description": "\"Welcome to this world.\""
+      "description": "\"Добро пожаловать в мир!\""
     },
     {
       "key": "DiamondC",
       "name": "Кусок бриллианта",
-      "description": "\"Welcome to this world.\""
+      "description": "\"Добро пожаловать в мир!\""
     },
     {
       "key": "DiamondD",
       "name": "Драгоценный бриллиант",
-      "description": "\"Welcome to this world.\""
+      "description": "\"Добро пожаловать в мир!\""
     },
     {
       "key": "EmeraldA",
@@ -5538,17 +5538,17 @@
     {
       "key": "TopazB",
       "name": "Фрагмент топаза Притхива",
-      "description": "\"The currencies that flow through this land are my flesh and blood.\""
+      "description": "\"Валютой здесь является кровь.\""
     },
     {
       "key": "TopazC",
       "name": "Кусок топаза Притхива",
-      "description": "\"The currencies that flow through this land are my flesh and blood.\nFor thus did I become the guarantor of the people's hard work, wisdom, and future.\""
+      "description": "\"Валютой здесь является кровь.\nЯ гарант усердия, мудрости и будущего народа.\""
     },
     {
       "key": "TopazD",
       "name": "Драгоценный топаз Притхива",
-      "description": "\"The currencies that flow through this land are my flesh and blood.\nFor thus did I become the guarantor of the people's hard work, wisdom, and future.This is the trust I have placed in them. Betray it, and you taint my blood.\""
+      "description": "\"Валютой здесь является кровь.\nЯ гарант усердия, мудрости и будущего народа.Таково оказанное мной доверие. Предай его, и ты осквернишь мою кровь\""
     },
     {
       "key": "JadeA",
@@ -5558,17 +5558,17 @@
     {
       "key": "JadeB",
       "name": "Фрагмент нефрита Шивада",
-      "description": "\"Sorry...\""
+      "description": "\"...Прости...\""
     },
     {
       "key": "JadeC",
       "name": "Кусок нефрита Шивада",
-      "description": "\"Sorry...\"\"...to also have you shoulder the grievances of the world.\""
+      "description": "\"...Простите...\"\"Что заставил вас взять все обиды мира на себя.\""
     },
     {
       "key": "JadeD",
       "name": "Драгоценный нефрит Шивада",
-      "description": "\"Sorry... to also have you shoulder the grievances of the world.\"Since you could endure my bitter cold, you must have the desire to burn?\"Then, burn away the old world for me.\""
+      "description": "\"...Простите... Что заставила вас взять все обиды мира на себя. Вы выдержали мой жестокий холод, значит в вас буйствует желание жечь.Тогда сожгите для меня этот старый мир\""
     },
     {
       "key": "AmethystA",
@@ -5578,17 +5578,17 @@
     {
       "key": "AmethystB",
       "name": "Фрагмент аметиста Ваджрада",
-      "description": "\"This body is the noblest and most eminent of all in this world.\""
+      "description": "\"Это тело самое благородное и выдающееся из всех в этом мире.\""
     },
     {
       "key": "AmethystC",
       "name": "Кусок аметиста Ваджрада",
-      "description": "\"This body is the noblest and most eminent of all in this world.It should hold absolute control over this world.\""
+      "description": "\"Это тело самое благородное и выдающееся из всех в этом мире.Оно непременно должно властвовать над этим миром\""
     },
     {
       "key": "AmethystD",
       "name": "Драгоценный аметист Ваджрада",
-      "description": "\"This body is the noblest and most eminent of all in this world.\"It should hold absolute control over this world.\"It once promised its people a dream: the never-changing 'eternity.'\""
+      "description": "\"Это тело самое благородное и выдающееся из всех в этом мире.\"Оно непременно должно властвовать над этим миром.\"Однажды оно пообещало осуществить мечту народа - неизменную вечность\""
     },
     {
       "key": "LazuriteA",
@@ -5598,17 +5598,17 @@
     {
       "key": "LazuriteB",
       "name": "Фрагмент лазурита Варунада",
-      "description": "\"My ideals have no stains.\""
+      "description": "\"Мои идеалы кристально чисты!\""
     },
     {
       "key": "LazuriteC",
       "name": "Кусок лазурита Варунада",
-      "description": "\"My ideals have no stains.I must correct you. People here bear no sins in the eyes of the gods...\""
+      "description": "\"Мои идеалы кристально чисты! Позволь мне поправить тебя... В глазах божеств люди безгрешны...\""
     },
     {
       "key": "LazuriteD",
       "name": "Драгоценный лазурит Варунада",
-      "description": "\"My ideals have no stains.I must correct you. People here bear no sins in the eyes of the gods... Only laws and the Tribunal can judge someone.\nThey can judge even me. So praise my magnificence and purity.\""
+      "description": "\"Мои идеалы ничем не запятнаны! Я должен поправить тебя. Люди здесь не несут грехов в глазах богов... Только законы и Трибунал могут судить.Они могут судить даже меня. Так вознеси моё великолепие и непорочность\""
     },
     {
       "key": "TurquoiseA",
@@ -5618,202 +5618,202 @@
     {
       "key": "TurquoiseB",
       "name": "Фрагмент бирюзы Вайюда",
-      "description": "\"Still, the winds change direction.\""
+      "description": "\"Ветра могут поменять направление.\""
     },
     {
       "key": "TurquoiseC",
       "name": "Кусок бирюзы Вайюда",
-      "description": "\"Still, the winds change direction.Someday, they will blow towards a brighter future...\""
+      "description": "\"Ветра могут поменять направление. Когда-нибудь они будут дуть в сторону лучшего будущего...\""
     },
     {
       "key": "TurquoiseD",
       "name": "Драгоценная бирюза Вайюда",
-      "description": "\"Still, the winds change direction.\"Someday, they will blow towards a brighter future...\"Take my blessings and live leisurely from this day onward.\""
+      "description": "\"Ветра могут поменять направление.\"Когда-нибудь они будут дуть в сторону лучшего будущего...\"Прими мои благословения и живи свободно!\""
     },
     {
       "key": "CallaLily",
       "name": "Лилия калла",
-      "description": "A flower that grows near water sources. When cooked, the petals have a chunky texture, yet are sweet and a little bitter."
+      "description": "Цветок, растущий у воды. Его лепестки достаточно твёрдые, но после приготовления становятся мягкими, сладкими и немножко горьковатыми на вкус."
     },
     {
       "key": "Cecilia",
       "name": "Сесилия",
-      "description": "A beautiful flower with a name that suits its appearance. It only grows where harsh winds blow, and is just as intangible as the true heart of an unbound soul."
+      "description": "Цветы, такие же прекрасные как и их имя. Они растут только там, где дует резкий холодный ветер."
     },
     {
       "key": "CorLapis",
       "name": "Кор ляпис",
-      "description": "A precious crystal of condensed pure Geo element that usually grows along with other minerals. It's also commonly called \"Cor Petrae."
+      "description": "Кристаллизованные Гео элементы, которые растут вместе с другими минералами. Ещё их называют \"Каменным сердцем."
     },
     {
       "key": "DandelionSeed",
       "name": "Семена одуванчика",
-      "description": "A tiny seed that rides on the wind. Even without its feathered wings, it still holds the hope from afar within."
+      "description": "Крошечные семена, парящие на ветру. Даже без своих мнимых крыльев они продолжают мечтать о дальних краях."
     },
     {
       "key": "GlazeLily",
       "name": "Лилия глазурька",
-      "description": "An extremely ancient flower that was said to be commonly seen in Liyue. It transforms the memories of the land into its fragrance during florescence."
+      "description": "Это одно из древнейших растений, которое многие видят в окрестностях Ли Юэ. Во время цветения трансформирует память земли в приятный цветочный аромат."
     },
     {
       "key": "JueyunChili",
       "name": "Заоблачный перчик",
-      "description": "A spicy plant native to Liyue. Merely smelling it makes one hot and thirsty."
+      "description": "Острый плод, растущий в окрестностях Ли Юэ. Только одного запаха хватает, чтобы вызвать у остроту и сухость во рту."
     },
     {
       "key": "NoctilousJade",
       "name": "Полуночный нефрит",
-      "description": "A rare mineral that glimmers in the dark. It's said to be a mutated gemstone condensed from the flourishing elements of the world."
+      "description": "Редкий минерал, который блестит в темноте. Говорят, что это драгоценный камень видоизменённый под действием бурлящих элементов этого мира."
     },
     {
       "key": "PhilanemoMushroom",
       "name": "Гриб филанемо",
-      "description": "A fungus that grows in the warm caress of the wind. It is as everlasting as the wind, nourishing life."
+      "description": "Гриб, растущий под тёплыми бризами. Сам ветер питает жизнь в этих грибах."
     },
     {
       "key": "Qingxin",
       "name": "Цветок цинсинь",
-      "description": "A crimson flower that blooms like the rainbow clouds in Liyue. It can be made into silky-smooth fabric."
+      "description": "Полупрозрачный белый цветок, который растет только на высочайших горных вершинах. Он жертвует теплом и влагой полей, чтобы насладиться видом с одиноких горных вершин."
     },
     {
       "key": "SilkFlower",
       "name": "Шелковица",
-      "description": "A crimson flower that blooms like the rainbow clouds in Liyue. It can be made into silky-smooth fabric."
+      "description": "Цветы алого цвета. Во время цветения напоминают радужные облака Ли Юэ. Из них можно сделать шёлковую ткань."
     },
     {
       "key": "SmallLampGrass",
       "name": "Трава-светяшка",
-      "description": "A wild grass that emits light at night. Used in cooking to enhance other flavors."
+      "description": "Дикая трава, испускающая тусклый свет в ночи. Используется в качестве приправы к блюдам."
     },
     {
       "key": "Starconch",
       "name": "Звёздная ракушка",
-      "description": "Empty seashells brought ashore by the tides. Hold it close to your ear, and hear the longing calls of the sea."
+      "description": "Пустая ракушка, которую принесло на берег с приливом. Приложите её к уху и вы услышите зов тоскущего моря"
     },
     {
       "key": "Valberry",
       "name": "Валяшка",
-      "description": "A plump and translucent berry that has a fragrant smell and a sweet refreshing taste. In the past, the watchers of the storms found solace in the sweetness of the fruit and the hope for the city's security."
+      "description": "Мягкая полупрозрачная ягода, обладающая ярким ароматом и сладким вкусом. В прошлом Смотрители бури нашли утешение и надежду в сладости этой ягоды."
     },
     {
       "key": "Violetgrass",
       "name": "Стеклянные колокольчики",
-      "description": "A small flower with strong vitality. It was said its downward-blooming flower keeps its fragrance from dissipating."
+      "description": "Живучий маленький цветок. Говорят, его цветки наклонены, чтобы сохранить прекрасный аромат."
     },
     {
       "key": "WindwheelAster",
       "name": "Ветряная астра",
-      "description": "A plant that adores the wind. To the proud children of the wind, or the citizens of Mondstadt, the Windwheel Asters are \"the visible winds."
+      "description": "Растение, которое больше всего на свете любит ветер. Жители Мондштадта, гордый народ ветров, также называют ветряные астры\"ветром, который можно увидеть."
     },
     {
       "key": "Wolfhook",
       "name": "Волчий крюк",
-      "description": "A berry with thorns that often gets attached to a wolf's pelt. When you look at it, you can almost hear the echoing cries of the wolves in the woods."
+      "description": "Покрытая колючками ягода. Постоянно цепляется за волчью шерсть. Если долго смотреть на эту ягоду, то можно услышать волчий вой."
     },
     {
       "key": "EnhancementOreA",
       "name": "Обычная руда усиления",
-      "description": "Gives 400 EXP.\nA refined ingot with endless possibilities that can be used to enhance weapons."
+      "description": "400 очков опыта оружия.\nЭта руда обладает безграничными возможностями по улучшению вашего вооружения."
     },
     {
       "key": "EnhancementOreB",
       "name": "Превосходная руда усиления",
-      "description": "Gives 2,000 EXP.\nFor reasons unknown, this special and refined ore can be absorbed by weapons to greatly increase their strengths."
+      "description": "2000 очков опыта оружия.\nНеизвестно как, но эта руда способна сделать ваше оружие гораздо сильнее."
     },
     {
       "key": "EnhancementOreC",
       "name": "Волшебная руда усиления",
-      "description": "Gives 10,000 EXP.\nLegend has it that this refined ingot contains the memories of battles that had taken place in the land. The weapons that benefit from these memories naturally become sentient."
+      "description": "10000 очков опыта оружия.\nЕсли верить легенде, то этот кусок руды хранит в себе воспоминания о многих битвах прошлого. Оружие, усиленное этой рудой, становится более отзывчивым."
     },
     {
       "key": "CharExpA",
       "name": "Опыт странника",
-      "description": "Gives 1000 EXP.\nThese experiences are still beneficial even if one does not live in Teyvat."
+      "description": "1000 очков опыта персонажа.\nЭтот опыт пригодится даже тем, кто живёт вдали от Тейвата."
     },
     {
       "key": "CharExpB",
       "name": "Опыт искателя приключений",
-      "description": "Gives 5000 EXP.\nThese experiences are very beneficial for journeys into the unknown."
+      "description": "5000 очков опыта персонажа.\nЭтот опыт пригодится тем, кто собирается исследовать неизведанное."
     },
     {
       "key": "CharExpC",
       "name": "Опыт героя",
-      "description": "Gives 20000 EXP.\nThese experiences are extremely precious for a pilgrim traveling through Teyvat in order to be closer to Celestia."
+      "description": "20000 очков опыта персонажа.\nОсобенно ценный опыт, который способен приблизить путешественника к Селестии."
     },
     {
       "key": "JuvenileJade",
-      "name": "Juvenile Jade",
-      "description": "A crystalline substance taken from a Primo Geovishap. Within it is contained the potential to become a dragon.\nThese dull crystals are precipitated within the bodies of vishaps sleeping in the mountains. Liyue folklore holds that they will gather power over many years, after which this crystal will, at last, replace their original heart, and the vishap will become a true dragon — one that can shake the mountains and split the earth."
+      "name": "Незрелый нефрит",
+      "description": "Кристаллическая масса, добытая из древнего геовишапа. В ней заключена возможность стать драконом.\nЭти тёмные кристаллы выделяются в организме вишапов, спящих в горах. В легендах Ли Юэ говорится, что они годами собирают силу, и в конце концов кристалл заменяет сердце вишапа, после чего он становится настоящим драконом - драконом, который сотрясает горы и раздирает землю."
     },
     {
       "key": "Starsilver",
-      "name": "Starsilver",
-      "description": "A rare and precious ore formed by the unique geographical conditions and Ley Lines of Dragonspine."
+      "name": "Руда звёздного серебра",
+      "description": "Редкая и очень ценная руда, образовавшаяся благодаря географическим условиям и артериям земли Драконьего хребта"
     },
     {
       "key": "Vitalized Dragontooth",
-      "name": "Vitalized Dragontooth",
-      "description": "A Dragontooth infused with vitality. Just its luster and texture are enough to make one uneasy..."
+      "name": "Напитанный клык дракона",
+      "description": "Драконий клык, напитанный жизненной силой. Одно лишь прикосновение к нему заставляет вас почувствовать тревогу..."
     },
     {
       "key": "Iron Chunk",
-      "name": "Iron Chunk",
-      "description": "This iron chunk can be turned into a multitude of handy items in the hands of a skilled craftsman."
+      "name": "Обломок железа",
+      "description": "В руках опытного ремесленника эти обломки железной руды могут быть превращены в кучу разных полезных вещей."
     },
     {
       "key": "White Iron Chunk",
-      "name": "White Iron Chunk",
-      "description": "Skilled hands can make this into something brilliant."
+      "name": "Обломок белого железа",
+      "description": "Опытные руки могут превратить это во что-то прекрасное."
     },
     {
       "key": "Crystal Chunk",
-      "name": "Crystal Chunk",
-      "description": "An uncut crystal. Only professional craftsmanship can bring out its true value."
+      "name": "Обломок кристалла",
+      "description": "Необработанные кристаллы. Только профессиональный ремесленник может выявить его истинную ценность."
     },
     {
       "key": "Northlander Bow Billet",
-      "name": "Northlander Bow Billet",
-      "description": "Can be used to forge 4-star bows. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "name": "Заготовка лука Северянина",
+      "description": "Материал для ковки оружия. Может быть использован для создания стрелкового оружия 4★.Философы говорят, что любой кусок мрамора потенциально является прекрасной статуей. У этих форм тоже безграничный потенциал."
     },
     {
       "key": "Northlander Catalyst Billet",
-      "name": "Northlander Catalyst Billet",
-      "description": "Can be used to forge 4-star catalysts. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "name": "Заготовка катализатора Северянина",
+      "description": "Материал для ковки оружия. Может быть использован для создания катализатора 4★.Философы говорят, что любой кусок мрамора потенциально является прекрасной статуей. У этих форм тоже безграничный потенциал."
     },
     {
       "key": "Northlander Claymore Billet",
-      "name": "Northlander Claymore Billet",
-      "description": "Can be used to forge 4-star claymores. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "name": "Заготовка двуручного меча Северянина",
+      "description": "Материал для ковки оружия. Может быть использован для создания двуручного оружия 4★.Философы говорят, что любой кусок мрамора потенциально является прекрасной статуей. У этих прототипов тоже безграничный потенциал."
     },
     {
       "key": "Northlander Polearm Billet",
-      "name": "Northlander Polearm Billet",
-      "description": "Can be used to forge 4-star polearms. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "name": "Заготовка копья Северянина",
+      "description": "Материал для ковки оружия. Может быть использован для создания древкового оружия 4★.Философы говорят, что любой кусок мрамора потенциально является прекрасной статуей. У этих форм тоже безграничный потенциал."
     },
     {
       "key": "Northlander Sword Billet",
-      "name": "Northlander Sword Billet",
-      "description": "Can be used to forge 4-star swords. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "name": "Заготовка меча Северянина",
+      "description": "Материал для ковки оружия. Может быть использован для создания одноручного оружия 4★.Философы говорят, что любой кусок мрамора потенциально является прекрасной статуей. У этих форм тоже безграничный потенциал."
     },
     {
       "key": "Dust of Azoth",
-      "name": "Dust of Azoth",
-      "description": "A device that can transmute elemental Ascension Materials and change their Elemental Type.Its practical uses notwithstanding, alchemy is the study of the nature of matter and the rules that underpin its transformations, and ultimately it seeks to comprehend the working principles of the world and the flow of the ley lines\nIt is not known who would share alchemical achievements of this magnitude with the civilizations of the world and why. But although the power to fundamentally transmute elemental energy in its crystallized and inert form is a highly useful one, this device also conceals the grave danger of disrupting the elemental balance..."
+      "name": "Пыль Азота",
+      "description": "Инструмент, который может изменить элементальный атрибут элементальных материалов возвышения. Не говоря о практическом применении, алхимия - это наука, которая через изучение природы вещей и принципов их изменений стремится познать законы мира и течения артерий земли. Неизвестно, кто и зачем решил поделиться с цивилизациями мира таким выдающимся достижением алхимического искусства. Способность преобразовывать элементальную материю в её инертном кристаллизованном виде, конечно, крайне полезна, но в ней таится великая опасность нарушения элементального баланса."
     },
     {
       "key": "Magical Crystal Chunk",
-      "name": "Magical Crystal Chunk",
-      "description": "These crystal chunks can be refined into Weapon EXP materials by using Original Resin.\nCrystals from mines that were eroded by the energy of the Ley Lines cannot be processed by ordinary means."
+      "name": "Магический кристальный обломок",
+      "description": "Эти обломки кристаллов могут быть переработаны в материалы опыта оружия с помощью Первородной смолы.\nТакие кристаллы из шахт впитали энергию артерий земли и не могут быть обработаны обычными методами."
     },
     {
       "key": "Original Resin",
-      "name": "Original Resin",
-      "description": "Used to vitalize Petrified Trees and Ley Line Blossoms, allowing access to the treasures they hold. Energy regenerates over time.\nIt is said that the roots of all the Irminsul trees and blossoms in the world are intertwined at the deepest, most hidden place in the earth, and that the pattern the root system makes defines the Ley Lines of the world."
+      "name": "Первородная смола",
+      "description": "Оживляет Окаменевшее дерево или Цветок артерий земли для получения их сокровища. Их энергия восстанавливается с течением времени. Говорят, корневые системы всех серебряных древ и серебряных цветов переплетаются глубоко в скрытых от глаз недрах земли, чем определяют положение Лей линий в мире."
     },
     {
       "key": "Primogem",
-      "name": "Primogem",
-      "description": "A primordial crystalline gem that's beyond the mundane world. Shines with the condensed hopes and dreams of universes that once were."
+      "name": "Камень Истока",
+      "description": "Древний драгоценный кристалл из-за пределов обычного мира. Источает блеск несбывшихся надежд и желаний вселенной."
     }
   ],
   "debuffs": [
@@ -5934,15 +5934,15 @@
     },
     {
       "key": "Anemo Hypostasis",
-      "name": "Anemo Hypostasis"
+      "name": "Анемо гипостазис"
     },
     {
       "key": "Anemo Samachurl",
-      "name": "Anemo Samachurl"
+      "name": "Анемо шамачурл"
     },
     {
       "key": "Anemo Slime",
-      "name": "Anemo Slime"
+      "name": "Анемо слайм"
     },
     {
       "key": "Azhdaha",
@@ -5950,171 +5950,171 @@
     },
     {
       "key": "Blazing Axe Mitachurl",
-      "name": "Blazing Axe Mitachurl"
+      "name": "Митачурл с огненным топором"
     },
     {
       "key": "Childe",
-      "name": "Childe"
+      "name": "Чайльд"
     },
     {
       "key": "Cryo Abyss Mage",
-      "name": "Cryo Abyss Mage"
+      "name": "Крио маг Бездны"
     },
     {
       "key": "Cryo Cicin",
-      "name": "Cryo Cicin"
+      "name": "Крио цицин"
     },
     {
       "key": "Cryo Hilichurl Grenadier",
-      "name": "Cryo Hilichurl Grenadier"
+      "name": "Крио хиличурл гренадёр"
     },
     {
       "key": "Cryo Hilichurl Shooter",
-      "name": "Cryo Hilichurl Shooter"
+      "name": "Крио хиличурл стрелок"
     },
     {
       "key": "Cryo Hypostasis",
-      "name": "Cryo Hypostasis"
+      "name": "Крио гипостазис"
     },
     {
       "key": "Cryo Regisvine",
-      "name": "Cryo Regisvine"
+      "name": "Крио папоротник"
     },
     {
       "key": "Cryo Samachurl",
-      "name": "Cryo Samachurl"
+      "name": "Крио шамачурл"
     },
     {
       "key": "Cryo Slime",
-      "name": "Cryo Slime"
+      "name": "Крио слайм"
     },
     {
       "key": "Cryo Whopperflower",
-      "name": "Cryo Whopperflower"
+      "name": "Крио попрыгунья"
     },
     {
       "key": "Dendro Samachurl",
-      "name": "Dendro Samachurl"
+      "name": "Дендро шамачурл"
     },
     {
       "key": "Dendro Slime",
-      "name": "Dendro Slime"
+      "name": "Дендро слайм"
     },
     {
       "key": "Electro Cicin",
-      "name": "Electro Cicin"
+      "name": "Электро цицин"
     },
     {
       "key": "Electro Hilichurl Shooter",
-      "name": "Electro Hilichurl Shooter"
+      "name": "Электро хиличурл стрелок"
     },
     {
       "key": "Electro Hypostasis",
-      "name": "Electro Hypostasis"
+      "name": "Электро гипостазис"
     },
     {
       "key": "Electro Slime",
-      "name": "Electro Slime"
+      "name": "Электро слайм"
     },
     {
       "key": "Eye of the Storm",
-      "name": "Eye of the Storm"
+      "name": "Глаз бури"
     },
     {
       "key": "Fatui Cryo Cicin Mage",
-      "name": "Fatui Cryo Cicin Mage"
+      "name": "Фатуи: Маг Крио цицинов"
     },
     {
       "key": "Fatui Electro Cicin Mage",
-      "name": "Fatui Electro Cicin Mage"
+      "name": "Фатуи: Маг Электро цицинов"
     },
     {
       "key": "Fatui Pyro Agent",
-      "name": "Fatui Pyro Agent"
+      "name": "Фатуи: Пиро агент"
     },
     {
       "key": "Fatui Skirmisher - Anemoboxer Vanguard",
-      "name": "Fatui Skirmisher - Anemoboxer Vanguard"
+      "name": "Застрельщик Фатуи: Анемо борец"
     },
     {
       "key": "Fatui Skirmisher - Cryogunner Legionnaire",
-      "name": "Fatui Skirmisher - Cryogunner Legionnaire"
+      "name": "Застрельщик Фатуи: Крио бомбардир"
     },
     {
       "key": "Fatui Skirmisher - Electrohammer Vanguard",
-      "name": "Fatui Skirmisher - Electrohammer Vanguard"
+      "name": "Застрельщик Фатуи: Электро молотобоец"
     },
     {
       "key": "Fatui Skirmisher - Geochanter Bracer",
-      "name": "Fatui Skirmisher - Geochanter Bracer"
+      "name": "Застрельщик Фатуи: Гео заклинатель"
     },
     {
       "key": "Fatui Skirmisher - Hydrogunner Legionnaire",
-      "name": "Fatui Skirmisher - Hydrogunner Legionnaire"
+      "name": "Застрельщик Фатуи: Гидро бомбардир"
     },
     {
       "key": "Fatui Skirmisher - Pyroslinger Bracer",
-      "name": "Fatui Skirmisher - Pyroslinger Bracer"
+      "name": "Застрельщик Фатуи: Пиро мушкетёр"
     },
     {
       "key": "Frostarm Lawachurl",
-      "name": "Frostarm Lawachurl"
+      "name": "Лавачурл с инеевым панцирем"
     },
     {
       "key": "Geo Hypostasis",
-      "name": "Geo Hypostasis"
+      "name": "Гео гипостазис"
     },
     {
       "key": "Geo Samachurl",
-      "name": "Geo Samachurl"
+      "name": "Гео шамачурл"
     },
     {
       "key": "Geo Slime",
-      "name": "Geo Slime"
+      "name": "Гео слайм"
     },
     {
       "key": "Geovishap",
-      "name": "Geovishap"
+      "name": "Геовишап"
     },
     {
       "key": "Geovishap Hatchling",
-      "name": "Geovishap Hatchling"
+      "name": "Детёныш геовишапа"
     },
     {
       "key": "Hilichurl",
-      "name": "Hilichurl"
+      "name": "Хиличурл"
     },
     {
       "key": "Hilichurl Berserker",
-      "name": "Hilichurl Berserker"
+      "name": "Хиличурл берсерк"
     },
     {
       "key": "Hilichurl Fighter",
-      "name": "Hilichurl Fighter"
+      "name": "Хиличурл боец"
     },
     {
       "key": "Hilichurl Grenadier",
-      "name": "Hilichurl Grenadier"
+      "name": "Хиличурл-гренадёр"
     },
     {
       "key": "Hilichurl Shooter",
-      "name": "Hilichurl Shooter"
+      "name": "Хиличурл стрелок"
     },
     {
       "key": "Hydro Abyss Mage",
-      "name": "Hydro Abyss Mage"
+      "name": "Гидро маг Бездны"
     },
     {
       "key": "Hydro Cicin",
-      "name": "Hydro Cicin"
+      "name": "Гидро цицин"
     },
     {
       "key": "Hydro Samachurl",
-      "name": "Hydro Samachurl"
+      "name": "Гидро шамачурл"
     },
     {
       "key": "Hydro Slime",
-      "name": "Hydro Slime"
+      "name": "Гидро слайм"
     },
     {
       "key": "Ice Shield Hilichurl Guard",
@@ -6126,35 +6126,35 @@
     },
     {
       "key": "Large Anemo Slime",
-      "name": "Large Anemo Slime"
+      "name": "Большой анемо слайм"
     },
     {
       "key": "Large Cryo Slime",
-      "name": "Large Cryo Slime"
+      "name": "Большой крио слайм"
     },
     {
       "key": "Large Dendro Slime",
-      "name": "Large Dendro Slime"
+      "name": "Большой дендро слайм"
     },
     {
       "key": "Large Electro Slime",
-      "name": "Large Electro Slime"
+      "name": "Большой электро слайм"
     },
     {
       "key": "Large Geo Slime",
-      "name": "Large Geo Slime"
+      "name": "Большой гео слайм"
     },
     {
       "key": "Large Hydro Slime",
-      "name": "Large Hydro Slime"
+      "name": "Большой гидро слайм"
     },
     {
       "key": "Large Pyro Slime",
-      "name": "Large Pyro Slime"
+      "name": "Большой пиро слайм"
     },
     {
       "key": "Lupus Boreas, Dominator of Wolves",
-      "name": "Lupus Boreas, Dominator of Wolves"
+      "name": "Лупус Бореалис, Волчий лорд"
     },
     {
       "key": "Millelith Sergeant",
@@ -6166,63 +6166,63 @@
     },
     {
       "key": "Mutant Electro Slime",
-      "name": "Mutant Electro Slime"
+      "name": "Электро слайм-мутант"
     },
     {
       "key": "Oceanid",
-      "name": "Oceanid"
+      "name": "Океанид"
     },
     {
       "key": "Primo Geovishap",
-      "name": "Primo Geovishap"
+      "name": "Древний геовишап"
     },
     {
       "key": "Pyro Abyss Mage",
-      "name": "Pyro Abyss Mage"
+      "name": "Пиро маг Бездны"
     },
     {
       "key": "Pyro Hilichurl Shooter",
-      "name": "Pyro Hilichurl Shooter"
+      "name": "Пиро хиличурл стрелок"
     },
     {
       "key": "Pyro Regisvine",
-      "name": "Pyro Regisvine"
+      "name": "Пиро орхидея"
     },
     {
       "key": "Pyro Slime",
-      "name": "Pyro Slime"
+      "name": "Пиро слайм"
     },
     {
       "key": "Pyro Whopperflower",
-      "name": "Pyro Whopperflower"
+      "name": "Пиро попрыгунья"
     },
     {
       "key": "Rock Shield Hilichurl Guard",
-      "name": "Rock Shield Hilichurl Guard"
+      "name": "Хиличурл с каменным щитом"
     },
     {
       "key": "Rock Shieldwall Mitachurl",
-      "name": "Rock Shieldwall Mitachurl"
+      "name": "Митачурл с каменным щитом"
     },
     {
       "key": "Ruin Grader",
-      "name": "Ruin Grader"
+      "name": "Руинный молотильщик"
     },
     {
       "key": "Ruin Guard",
-      "name": "Ruin Guard"
+      "name": "Страж руин"
     },
     {
       "key": "Ruin Hunter",
-      "name": "Ruin Hunter"
+      "name": "Руинный охотник"
     },
     {
       "key": "Stonehide Lawachurl",
-      "name": "Stonehide Lawachurl"
+      "name": "Лавачурл с каменным панцирем"
     },
     {
       "key": "Stormterror",
-      "name": "Stormterror"
+      "name": "Ужас бури"
     },
     {
       "key": "Treasure Hoarders - Boss",
@@ -6234,7 +6234,7 @@
     },
     {
       "key": "Treasure Hoarders - Crusher",
-      "name": "Treasure Hoarders - Crusher"
+      "name": "Похитители сокровищ: Сокрушитель"
     },
     {
       "key": "Treasure Hoarders - Liuliu",
@@ -6242,11 +6242,11 @@
     },
     {
       "key": "Treasure Hoarders - Marksman",
-      "name": "Treasure Hoarders - Marksman"
+      "name": "Похитители сокровищ: Стрелок"
     },
     {
       "key": "Treasure Hoarders - Pugilist",
-      "name": "Treasure Hoarders - Pugilist"
+      "name": "Похитители сокровищ: Боксёр"
     },
     {
       "key": "Treasure Hoarders - Raptor",
@@ -6254,47 +6254,47 @@
     },
     {
       "key": "Treasure Hoarders - Scout",
-      "name": "Treasure Hoarders - Scout"
+      "name": "Похитители сокровищ: Разведчик"
     },
     {
       "key": "Treasure Hoarders - Seaman",
-      "name": "Treasure Hoarders - Seaman"
+      "name": "Похитители сокровищ: Морячок"
     },
     {
       "key": "Treasure Hoarders: Cryo Potioneer",
-      "name": "Treasure Hoarders: Cryo Potioneer"
+      "name": "Похитители сокровищ: Крио химик"
     },
     {
       "key": "Treasure Hoarders: Electro Potioneer",
-      "name": "Treasure Hoarders: Electro Potioneer"
+      "name": "Похитители сокровищ: Электро химик"
     },
     {
       "key": "Treasure Hoarders: Gravedigger",
-      "name": "Treasure Hoarders: Gravedigger"
+      "name": "Похитители сокровищ: Могильщик"
     },
     {
       "key": "Treasure Hoarders: Handyman",
-      "name": "Treasure Hoarders: Handyman"
+      "name": "Похитители сокровищ: Разнорабочий"
     },
     {
       "key": "Treasure Hoarders: Hydro Potioneer",
-      "name": "Treasure Hoarders: Hydro Potioneer"
+      "name": "Похитители сокровищ: Гидро химик"
     },
     {
       "key": "Treasure Hoarders: Pyro Potioneer",
-      "name": "Treasure Hoarders: Pyro Potioneer"
+      "name": "Похитители сокровищ: Пиро химик"
     },
     {
       "key": "Unusual Hilichurl",
-      "name": "Unusual Hilichurl"
+      "name": "Странный хиличурл"
     },
     {
       "key": "Wooden Shield Hilichurl Guard",
-      "name": "Wooden Shield Hilichurl Guard"
+      "name": "Хиличурл с деревянным щитом"
     },
     {
       "key": "Wooden Shieldwall Mitachurl",
-      "name": "Wooden Shieldwall Mitachurl"
+      "name": "Митачурл с деревянным щитом"
     }
   ]
 }

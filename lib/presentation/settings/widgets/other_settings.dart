@@ -53,6 +53,12 @@ class OtherSettings extends StatelessWidget {
                       value: settingsState.showWeaponDetails,
                       onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.showWeaponDetailsChanged(newValue: newVal)),
                     ),
+                    SwitchListTile(
+                      activeColor: theme.accentColor,
+                      title: Text(s.pressOnceAgainToExit),
+                      value: settingsState.doubleBackToClose,
+                      onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.doubleBackToCloseChanged(newValue: newVal)),
+                    ),
                     ListTile(
                       dense: true,
                       contentPadding: EdgeInsets.zero,

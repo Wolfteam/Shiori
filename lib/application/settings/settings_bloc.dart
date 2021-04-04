@@ -29,7 +29,6 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   ) async* {
     final s = await event.map(
       init: (_) async {
-        await _settingsService.init();
         final settings = _settingsService.appSettings;
         return SettingsState.loaded(
           currentTheme: settings.appTheme,
@@ -39,6 +38,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           showCharacterDetails: settings.showCharacterDetails,
           showWeaponDetails: settings.showWeaponDetails,
           serverResetTime: settings.serverResetTime,
+          doubleBackToClose: settings.doubleBackToClose,
         );
       },
       themeChanged: (event) async {
@@ -69,8 +69,14 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         _homeBloc.add(const HomeEvent.init());
         return currentState.copyWith.call(serverResetTime: event.newValue);
       },
+      doubleBackToCloseChanged: (event) async {
+        _settingsService.doubleBackToClose = event.newValue;
+        return currentState.copyWith.call(doubleBackToClose: event.newValue);
+      },
     );
 
     yield s;
   }
+
+  bool doubleBackToClose() => _settingsService.doubleBackToClose;
 }

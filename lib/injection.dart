@@ -26,7 +26,9 @@ Future<void> initInjection() async {
   final loggingService = LoggingServiceImpl(getIt<TelemetryService>(), deviceInfoService);
 
   getIt.registerSingleton<LoggingService>(loggingService);
-  getIt.registerSingleton<SettingsService>(SettingsServiceImpl(loggingService));
+  final settingsService = SettingsServiceImpl(loggingService);
+  await settingsService.init();
+  getIt.registerSingleton<SettingsService>(settingsService);
   getIt.registerSingleton<LocaleService>(LocaleServiceImpl(getIt<SettingsService>()));
   getIt.registerSingleton<GenshinService>(GenshinServiceImpl(getIt<LocaleService>()));
   getIt.registerSingleton<CalculatorService>(CalculatorServiceImpl(getIt<GenshinService>()));
