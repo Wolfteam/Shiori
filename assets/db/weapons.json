@@ -26434,7 +26434,7 @@
             {
               "quantity": 2,
               "materialType": "common",
-              "image": "treasure_hoarder_insignia.png"
+              "image": "recruits_insignia.png"
             },
             {
               "quantity": 5000,
@@ -26459,7 +26459,7 @@
             {
               "quantity": 8,
               "materialType": "common",
-              "image": "treasure_hoarder_insignia.png"
+              "image": "recruits_insignia.png"
             },
             {
               "quantity": 15000,
@@ -26484,7 +26484,7 @@
             {
               "quantity": 6,
               "materialType": "common",
-              "image": "silver_raven_insignia.png"
+              "image": "sergeants_insignia.png"
             },
             {
               "quantity": 20000,
@@ -26509,7 +26509,7 @@
             {
               "quantity": 9,
               "materialType": "common",
-              "image": "silver_raven_insignia.png"
+              "image": "sergeants_insignia.png"
             },
             {
               "quantity": 30000,
@@ -26534,7 +26534,7 @@
             {
               "quantity": 6,
               "materialType": "common",
-              "image": "golden_raven_insignia.png"
+              "image": "lieutenants_insignia.png"
             },
             {
               "quantity": 35000,
@@ -26559,7 +26559,7 @@
             {
               "quantity": 12,
               "materialType": "common",
-              "image": "golden_raven_insignia.png"
+              "image": "lieutenants_insignia.png"
             },
             {
               "quantity": 45000,
