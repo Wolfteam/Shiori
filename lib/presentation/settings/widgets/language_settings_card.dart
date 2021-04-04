@@ -75,7 +75,8 @@ class LanguageSettingsCard extends StatelessWidget {
 
   void _languageChanged(AppLanguageType newValue, BuildContext context) {
     final s = S.of(context);
-    ToastUtils.showInfoToast(s.restartMayBeNeeded);
+    final fToast = ToastUtils.of(context);
+    ToastUtils.showInfoToast(fToast, s.restartMayBeNeeded);
     context.read<SettingsBloc>().add(SettingsEvent.languageChanged(newValue: newValue));
   }
 }

@@ -90,6 +90,7 @@ class GameCodesPage extends StatelessWidget {
   }
 
   TableRow _buildRow(S s, BuildContext context, GameCodeModel model) {
+    final fToast = ToastUtils.of(context);
     final rewards = model.rewards.map((m) => WrappedAscensionMaterial(image: m.fullImagePath, quantity: m.quantity, size: 20)).toList();
     return TableRow(
       children: [
@@ -122,7 +123,7 @@ class GameCodesPage extends StatelessWidget {
                 splashRadius: 20,
                 icon: const Icon(Icons.copy),
                 onPressed: () => Clipboard.setData(ClipboardData(text: model.code)).then(
-                  (value) => ToastUtils.showInfoToast(s.codeXWasCopied(model.code)),
+                  (value) => ToastUtils.showInfoToast(fToast, s.codeXWasCopied(model.code)),
                 ),
               )
             ],

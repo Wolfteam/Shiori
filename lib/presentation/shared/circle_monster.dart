@@ -17,10 +17,11 @@ class CircleMonster extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final fToast = ToastUtils.of(context);
     return CircleItem(
       image: image,
       radius: radius,
-      onTap: (_) => ToastUtils.showWarningToast(s.comingSoon),
+      onTap: (_) => ToastUtils.showWarningToast(fToast, s.comingSoon),
     );
   }
 }
