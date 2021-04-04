@@ -289,5 +289,6 @@
   "fatui": "愚人众",
   "automaton": "自律机关",
   "droppedBy": "掉落于",
-  "pressOnceAgainToExit": "Press once again to exit"
+  "pressOnceAgainToExit": "Press once again to exit",
+  "discordServer": "Discord Server"
 }

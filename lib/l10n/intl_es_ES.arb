@@ -288,5 +288,6 @@
   "fatui": "Fatui",
   "automaton": "Automata",
   "droppedBy": "Dejado por",
-  "pressOnceAgainToExit": "Presiona una vez más para salir"
+  "pressOnceAgainToExit": "Presiona una vez más para salir",
+  "discordServer": "Servidor de Discord"
 }

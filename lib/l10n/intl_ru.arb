@@ -289,5 +289,6 @@
   "fatui": "Фатуи",
   "automaton": "Автоматоны",
   "droppedBy": "Где получить",
-  "pressOnceAgainToExit": "Press once again to exit"
+  "pressOnceAgainToExit": "Press once again to exit",
+  "discordServer": "Discord Server"
 }
