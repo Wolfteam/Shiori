@@ -287,5 +287,6 @@
   "hilichurl": "Hilichurl",
   "fatui": "Fatui",
   "automaton": "Automata",
-  "droppedBy": "Dejado por"
+  "droppedBy": "Dejado por",
+  "pressOnceAgainToExit": "Presiona una vez más para salir"
 }

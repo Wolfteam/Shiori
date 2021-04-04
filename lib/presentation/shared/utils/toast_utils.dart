@@ -9,6 +9,8 @@ enum ToastType {
 }
 
 class ToastUtils {
+  static Duration toastDuration = const Duration(seconds: 2);
+
   static FToast of(BuildContext context) {
     final fToast = FToast();
     fToast.init(context);
@@ -56,7 +58,7 @@ class ToastUtils {
     toast.showToast(
       child: widget,
       gravity: ToastGravity.BOTTOM,
-      toastDuration: const Duration(seconds: 2),
+      toastDuration: toastDuration,
     );
   }
 

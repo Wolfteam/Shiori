@@ -18,6 +18,7 @@ abstract class AppSettings implements _$AppSettings {
     @required bool showWeaponDetails,
     @required bool isFirstInstall,
     @required AppServerResetTimeType serverResetTime,
+    @required bool doubleBackToClose,
   }) = _AppSettings;
   const AppSettings._();
 
