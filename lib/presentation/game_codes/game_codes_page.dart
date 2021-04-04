@@ -64,9 +64,9 @@ class GameCodesPage extends StatelessWidget {
         padding: Styles.edgeInsetAll5,
         child: Table(
           columnWidths: const {
-            0: FractionColumnWidth(.25),
-            1: FractionColumnWidth(.45),
-            2: FractionColumnWidth(.25),
+            0: FractionColumnWidth(.3),
+            1: FractionColumnWidth(.4),
+            2: FractionColumnWidth(.3),
           },
           children: [
             TableRow(
@@ -101,6 +101,7 @@ class GameCodesPage extends StatelessWidget {
               child: Text(
                 model.code,
                 textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.subtitle2.copyWith(fontSize: 12),
               ),
             ),
           ),
@@ -110,7 +111,7 @@ class GameCodesPage extends StatelessWidget {
         ),
         CommonTableCell.child(
           child: Wrap(
-            alignment: WrapAlignment.end,
+            alignment: WrapAlignment.center,
             children: [
               IconButton(
                 tooltip: !model.isUsed ? s.markAsUsed : s.markAsUnused,
