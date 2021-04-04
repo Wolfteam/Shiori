@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:device_info/device_info.dart';
+import 'package:flutter_user_agent/flutter_user_agent.dart';
 import 'package:genshindb/domain/services/device_info_service.dart';
 import 'package:package_info/package_info.dart';
 
@@ -17,6 +20,9 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   String get version => _version;
 
   @override
+  String get userAgent => Platform.isWindows ? null : FlutterUserAgent.webViewUserAgent.replaceAll(RegExp(r'wv'), '');
+
+  @override
   Future<void> init() async {
     try {
       final deviceInfo = DeviceInfoPlugin();
@@ -29,6 +35,10 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
         'OsVersion': '${androidInfo.version.sdkInt}',
         'AppVersion': '${packageInfo.version}+${packageInfo.buildNumber}'
       };
+
+      if (!Platform.isWindows) {
+        await FlutterUserAgent.init();
+      }
     } catch (ex) {
       _deviceInfo = {'Model': 'N/A', 'OsVersion': 'N/A', 'AppVersion': 'N/A'};
       _version = _appName = 'N/A';

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_user_agent/flutter_user_agent.dart';
 
 import 'application/bloc.dart';
 import 'domain/services/calculator_service.dart';
@@ -18,7 +17,6 @@ import 'presentation/app_widget.dart';
 Future<void> main() async {
   //This is required by app center
   WidgetsFlutterBinding.ensureInitialized();
-  await FlutterUserAgent.init();
   await initInjection();
   runApp(MyApp());
 }
@@ -90,7 +88,8 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final networkService = getIt<NetworkService>();
             final telemetryService = getIt<TelemetryService>();
-            return UrlPageBloc(networkService, telemetryService);
+            final deviceInfoService = getIt<DeviceInfoService>();
+            return UrlPageBloc(networkService, telemetryService, deviceInfoService);
           },
         ),
         BlocProvider(
