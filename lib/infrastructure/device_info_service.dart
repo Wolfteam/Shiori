@@ -19,8 +19,9 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   @override
   String get version => _version;
 
+  //TODO: COMPLETE THIS
   @override
-  String get userAgent => Platform.isWindows ? null : FlutterUserAgent.webViewUserAgent.replaceAll(RegExp(r'wv'), '');
+  String get userAgent => Platform.isWindows ? '' : FlutterUserAgent.webViewUserAgent.replaceAll(RegExp(r'wv'), '');
 
   @override
   Future<void> init() async {
