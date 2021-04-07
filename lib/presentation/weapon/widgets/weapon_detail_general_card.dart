@@ -55,13 +55,12 @@ class WeaponDetailGeneralCard extends StatelessWidget {
           ),
           useColumn: false,
         ),
-        ItemDescription(
-          title: s.secondaryState,
+        ItemDescription.row(
           widget: Text(
-            s.translateStatType(statType, secondaryStatValue),
+            '${s.secondaryState}: ${s.translateStatType(statType, secondaryStatValue)}',
             style: const TextStyle(color: Colors.white),
+            overflow: TextOverflow.ellipsis,
           ),
-          useColumn: false,
         ),
         ItemDescription(
           title: s.location,

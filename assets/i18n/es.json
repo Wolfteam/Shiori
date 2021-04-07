@@ -2548,97 +2548,97 @@
     {
       "key": "Rosaria",
       "name": "Rosaria",
-      "description": "A sister of the church, though you wouldn't know it if it weren't for her attire. Known for her sharp, cold words and manner, she often works alone.",
+      "description": "Una monja que, aparte de por su ropa, nadie diría que pertenece al clero. Su frialdad hacia todo la hace extremadamente incisiva y siempre actúa en solitario.",
       "skills": [
         {
           "key": "s1",
-          "title": "Spear of the Church",
+          "title": "Lanza eclesiástica",
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to five consecutive spear strikes.",
+              "description": "Realiza hasta 5 ataques rápidos con lanza.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.",
+              "description": "Consume una cierta cantidad de Aguante para lanzarse al frente, infligiendo daño a los enemigos en el camino.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Ravaging Confession",
-          "description": "Rosaria swiftly shifts her position to appear behind her opponent, then stabs and slashes them with her polearm, dealing Cyro DMG.\nThis ability cannot be used to travel behind opponents of a larger build.",
+          "title": "Confesión impronunciable",
+          "description": "Rosaria se desplaza rápidamente hasta detrás de su objetivo, clavándole su lanza y realizando un tajo que inflige Daño Cryo.\nNo es posible ponerse hasta detrás de enemigos de gran tamaño con este movimiento.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Rites of Termination",
-          "description": "Rosaria's unique take on this prayer ritual: First, she swings her weapon to slash surrounding opponents; then, she summons a frigid Ice Lance that strikes the ground. Both actions deal Cryo DMG.\nWhile active, the Ice Lance periodically releases a blast of cold air, dealing Cryo DMG to surrounding opponents.",
+          "title": "Extremaunción",
+          "description": "Esta es la ceremonia de rezo dirigida exclusivamente por Rosaria. Tras empujar con su arma a los enemigos a su alrededor, concentra un frío extremo en su lanza helada para golpear el suelo e infligir Daño Cryo.\nMientras esté activa, la lanza helada emitirá intermitentemente un aire helado que inflige Daño Cryo a los enemigos cercanos.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Night Walk",
-          "description": "At night (18:00–6:00), increases the Movement SPD of your own party members by 10%.\nDoes not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects.",
+          "title": "Travesía nocturna",
+          "description": "La Vel. Movimiento de todos los miembros de tu equipo aumenta en un 10% por la noche (de 18:00 a 06:00). Este efecto no se activará en Dominios, Dominios de la cruzada y la Espiral del Abismo, y no se puede acumular con otros talentos pasivos que tengan los mismos efectos.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Regina Probationum",
-          "description": "When Rosaria strikes an opponent from behind using Ravaging Confession, Rosaria's CRIT Rate increases by 12% for 5s.",
+          "title": "Regina probatorum",
+          "description": "Cuando Rosaria ataca por la espalda a un objetivo con Confesión impronunciable, su Prob. CRIT aumenta en un 12% durante 5 s.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Shadow Samaritan",
-          "description": "Casting Rites of Termination increases CRIT Rate of all nearby party members (except Rosaria herself) by 15% of Rosaria's CRIT Rate for 10s.\nCRIT Rate Bonus gained this way cannot exceed 15%.",
+          "title": "Oscuridad expiatoria",
+          "description": "Al usar Extremaunción, la Prob. CRIT de todos los miembros del equipo (a excepción de Rosaria) aumenta durante 10 s en un 15% de la Prob. CRIT de Rosaria.\nEl aumento de Prob. CRIT conseguido de esta manera no podrá ser superior al 15%.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Unholy Revelation",
-          "description": "When Rosaria deals a CRIT Hit, her ATK SPD increases by 10% and her Normal Attack DMG increases by 10% for 4s.",
+          "title": "Guía de los pecadores",
+          "description": "Cuando Rosaria asesta un golpe CRIT, su Vel. de Ataque y el daño de su Ataque Normal aumentan en un 10% durante 4 s.",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Land Without Promise",
-          "description": "The duration of the Ice Lance created by Rites of Termination is increased by 4s.",
+          "title": "Tierra de los herejes",
+          "description": "Aumenta en 4 s la duración de la lanza helada creada mediante Extremaunción.",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "The Wages of Sin",
-          "description": "Increases the Level of Ravaging Confessionby 3. Maximum upgrade level is 15.",
+          "title": "Sacramento de la penitencia",
+          "description": "Aumenta el nivel de habilidad de Confesión impronunciable +3. Puede ser aumentado hasta Niv. 15.",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Painful Grace",
-          "description": "Ravaging Confession's Crit Hits regenerate 5 Energy for Rosaria. Can only be triggered once each time Ravaging Confession is cast.",
+          "title": "Consagración del sufrimiento",
+          "description": "Al asestar un golpe CRIT con Confesión impronunciable, Rosaria recupera 5 pts. de Energía Elemental. Este efecto solo puede activarse 1 vez con cada Confesión impronunciable.",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Last Rites",
-          "description": "Increases the Level of Rites of Termination by 3. Maximum upgrade level is 15.",
+          "title": "Oración final",
+          "description": "Aumenta el nivel de habilidad de Extremaunción +3. Puede ser aumentado hasta Niv. 15.",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Divine Retribution",
-          "description": "Rites of Termination' attack decreases opponents' Physical RES by 20% for 10s.",
+          "title": "Juicio divino",
+          "description": "Atacar a un enemigo con Extremaunción reduce su RES Física en un 20% durante 10 s.",
           "descriptions": []
         }
       ]

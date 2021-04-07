@@ -14689,8 +14689,8 @@
       "isNew": true,
       "isFemale": true,
       "region": "mondstadt",
-      "role": "na",
-      "tier": "a",
+      "role": "mainDps",
+      "tier": "b",
       "birthday": "01/24",
       "ascensionMaterials": [
         {
@@ -15082,7 +15082,94 @@
           ]
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "staff_of_homa.png",
+            "blackcliff_pole.png",
+            "primordial_jade_winged_spear.png",
+            "white_tassel.png"
+          ],
+          "artifacts": [
+            {
+              "one": "blizzard_walker_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "cryoDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery"
+          ]
+        },
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "crescent_pike.png",
+            "dragonspine_spear.png",
+            "staff_of_homa.png",
+            "blackcliff_pole.png"
+          ],
+          "artifacts": [
+            {
+              "one": "gladiators_finale_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery"
+          ]
+        },
+        {
+          "isSupport": true,
+          "weaponImages": [
+            "skyward_spine.png",
+            "favonius_lance.png",
+            "primordial_jade_winged_spear.png"
+          ],
+          "artifacts": [
+            {
+              "one": "noblesse_oblige_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "cryoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery"
+          ]
+        }
+      ],
       "skills": [
         {
           "key": "s1",
