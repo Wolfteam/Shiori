@@ -7,7 +7,7 @@
   "french": "Французский",
   "russian": "Русский",
   "simplifiedChinese": "Китайский (упрощённый)",
-  "portuguese": "Portuguese",
+  "portuguese": "Португальский",
   "bow": "Лук",
   "claymore": "Двуручный меч",
   "sword": "Меч",
@@ -130,7 +130,7 @@
   "disclaimerMsg": "Это приложение не связано с miHoYo и не поддерживается им. GenshinDb просто база данных для игры Genshin Impact",
   "restartMayBeNeeded": "Для внесения изменений может потребоваться повторный запуск",
   "youCanAlsoSendMeAnEmail": "Вы также можете отправить мне электронное письмо",
-  "partial": "Частичный",
+  "partial": "Неполный",
   "brandNew": "Новый",
   "noInternetConnection": "Подключение к Интернету отсутствует",
   "wishSimulator": "Симулятор Желаний",
@@ -289,6 +289,6 @@
   "fatui": "Фатуи",
   "automaton": "Автоматоны",
   "droppedBy": "Где получить",
-  "pressOnceAgainToExit": "Press once again to exit",
+  "pressOnceAgainToExit": "Нажмите еще раз, чтобы выйти",
   "discordServer": "Discord Server"
 }

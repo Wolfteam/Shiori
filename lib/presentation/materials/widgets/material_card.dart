@@ -135,7 +135,10 @@ class MaterialCard extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                             color: theme.accentColor.withOpacity(0.8),
                           ),
-                          child: Text(' - ${CurrencyUtils.formatNumber(usedQuantity)} '),
+                          child: Text(
+                            ' - ${CurrencyUtils.formatNumber(usedQuantity)} ',
+                            style: theme.textTheme.subtitle2.copyWith(color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
@@ -146,7 +149,7 @@ class MaterialCard extends StatelessWidget {
                   margin: const EdgeInsets.only(bottom: 5),
                   child: Text(
                     CurrencyUtils.formatNumber(quantity),
-                    style: theme.textTheme.subtitle2,
+                    style: theme.textTheme.subtitle2.copyWith(color: Colors.white),
                   ),
                 ),
               if (!withoutDetails && !isInQuantityMode)
@@ -191,6 +194,7 @@ class MaterialCard extends StatelessWidget {
       builder: (_) => ItemQuantityDialog(quantity: quantity),
     );
 
+    context.read<ItemQuantityFormBloc>().add(const ItemQuantityFormEvent.close());
     if (newValue == null) {
       return;
     }
