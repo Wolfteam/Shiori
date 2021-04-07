@@ -2,7 +2,9 @@ part of 'tier_list_bloc.dart';
 
 @freezed
 abstract class TierListEvent with _$TierListEvent {
-  const factory TierListEvent.init() = _Init;
+  const factory TierListEvent.init({
+    @Default(false) bool reset,
+  }) = _Init;
 
   const factory TierListEvent.rowTextChanged({
     @required int index,
@@ -51,4 +53,6 @@ abstract class TierListEvent with _$TierListEvent {
     dynamic ex,
     StackTrace trace,
   }) = _ScreenshotTaken;
+
+  const factory TierListEvent.close() = _Close;
 }

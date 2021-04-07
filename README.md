@@ -20,6 +20,8 @@
 
 [<img height="100" width="250" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" />](https://play.google.com/store/apps/details?id=com.miraisoft.genshindb)
 
+[<img height="100" width="250" src="https://static.wikia.nocookie.net/discordapp/images/d/dd/Discord.png/revision/latest?cb=20201124013658&path-prefix=es" />](https://discord.gg/A8SgudQMwP)
+
 ### Contributing
 
 > Before contributing, please ask me if whatever you are planning to do / add / improve is valid for this project.
@@ -68,11 +70,11 @@ The {{x}} is a placeholder and the value shouldn't be changed, but the position 
 
 Translating the app to other languages won't have been possible without the following contributors
 
-|Chinese |Russian|
-|---|---|
-|2O48#9733|SipTik#8026|
-| |KKTS#8567|
-| |KlimeLime#7577|
-| |Avantel#8880|
-| |чебилин#5968|
-| |Anixty#3279|
+|Chinese |Russian|Portuguese|
+|---|---|---|
+|2O48#9733|SipTik#8026|Brunoff#0261|
+| |KKTS#8567|DanPS#4336|
+| |KlimeLime#7577||
+| |Avantel#8880||
+| |чебилин#5968||
+| |Anixty#3279||

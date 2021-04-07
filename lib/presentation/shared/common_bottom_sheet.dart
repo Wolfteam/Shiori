@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/generated/l10n.dart';
 
 import 'bottom_sheet_title.dart';
+import 'common_bottom_sheet_buttons.dart';
 import 'modal_sheet_separator.dart';
 import 'styles.dart';
 
@@ -29,8 +29,6 @@ class CommonBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
-    final theme = Theme.of(context);
     return SingleChildScrollView(
       child: Container(
         margin: Styles.modalBottomSheetContainerMargin,
@@ -43,22 +41,12 @@ class CommonBottomSheet extends StatelessWidget {
             BottomSheetTitle(icon: titleIcon, title: title, iconSize: iconSize),
             child,
             if (showOkButton || showCancelButton)
-              ButtonBar(
-                buttonPadding: const EdgeInsets.symmetric(horizontal: 10),
-                children: <Widget>[
-                  if (showCancelButton)
-                    OutlineButton(
-                      onPressed: () => onCancel != null ? onCancel() : Navigator.pop(context),
-                      child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
-                    ),
-                  if (showOkButton)
-                    RaisedButton(
-                      color: theme.primaryColor,
-                      onPressed: () => onOk != null ? onOk() : Navigator.pop(context),
-                      child: Text(s.ok),
-                    )
-                ],
-              )
+              CommonButtonSheetButtons(
+                showOkButton: showOkButton,
+                showCancelButton: showCancelButton,
+                onCancel: onCancel,
+                onOk: onOk,
+              ),
           ],
         ),
       ),

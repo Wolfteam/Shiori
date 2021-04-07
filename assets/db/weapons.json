@@ -2898,7 +2898,7 @@
       "secondaryStat": "atkPercentage",
       "secondaryStatValue": 6.0,
       "location": "gacha",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "ascensionMaterials": [
         {
           "level": 20,
@@ -6794,7 +6794,7 @@
       "secondaryStat": "atkPercentage",
       "secondaryStatValue": 10.8,
       "location": "gacha",
-      "isComingSoon": false,
+      "isComingSoon": true,
       "ascensionMaterials": [
         {
           "level": 20,
@@ -7146,7 +7146,7 @@
       "secondaryStat": "elementaryMastery",
       "secondaryStatValue": 36,
       "location": "quest",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "ascensionMaterials": [
         {
           "level": 20,
@@ -7493,7 +7493,7 @@
       "secondaryStat": "energyRechargePercentage",
       "secondaryStatValue": 12,
       "location": "gacha",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "ascensionMaterials": [
         {
           "level": 20,
@@ -12872,7 +12872,7 @@
       "secondaryStat": "elementaryMastery",
       "secondaryStatValue": 12,
       "location": "gacha",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "ascensionMaterials": [
         {
           "level": 20,
@@ -13066,145 +13066,145 @@
         },
         {
           "level": 5,
-          "baseAtk": 63,
+          "baseAtk": 62,
           "isAnAscension": false,
           "specificValue": 14
         },
         {
           "level": 10,
-          "baseAtk": 86,
+          "baseAtk": 84,
           "isAnAscension": false,
           "specificValue": 16
         },
         {
           "level": 15,
-          "baseAtk": 110,
+          "baseAtk": 106,
           "isAnAscension": false,
           "specificValue": 19
         },
         {
           "level": 20,
-          "baseAtk": 134,
+          "baseAtk": 128,
           "isAnAscension": false,
           "specificValue": 21
         },
         {
           "level": 20,
-          "baseAtk": 160,
+          "baseAtk": 154,
           "isAnAscension": true,
           "specificValue": 21
         },
         {
           "level": 25,
-          "baseAtk": 185,
+          "baseAtk": 177,
           "isAnAscension": false,
           "specificValue": 24
         },
         {
           "level": 30,
-          "baseAtk": 210,
+          "baseAtk": 200,
           "isAnAscension": false,
           "specificValue": 26
         },
         {
           "level": 35,
-          "baseAtk": 235,
+          "baseAtk": 224,
           "isAnAscension": false,
           "specificValue": 28
         },
         {
           "level": 40,
-          "baseAtk": 261,
+          "baseAtk": 247,
           "isAnAscension": false,
           "specificValue": 31
         },
         {
           "level": 40,
-          "baseAtk": 287,
+          "baseAtk": 273,
           "isAnAscension": true,
           "specificValue": 31
         },
         {
           "level": 45,
-          "baseAtk": 313,
+          "baseAtk": 297,
           "isAnAscension": false,
           "specificValue": 33
         },
         {
           "level": 50,
-          "baseAtk": 340,
+          "baseAtk": 321,
           "isAnAscension": false,
           "specificValue": 36
         },
         {
           "level": 50,
-          "baseAtk": 366,
+          "baseAtk": 347,
           "isAnAscension": true,
           "specificValue": 36
         },
         {
           "level": 55,
-          "baseAtk": 392,
+          "baseAtk": 371,
           "isAnAscension": false,
           "specificValue": 38
         },
         {
           "level": 60,
-          "baseAtk": 419,
+          "baseAtk": 395,
           "isAnAscension": false,
           "specificValue": 41
         },
         {
           "level": 60,
-          "baseAtk": 445,
+          "baseAtk": 421,
           "isAnAscension": true,
           "specificValue": 41
         },
         {
           "level": 65,
-          "baseAtk": 472,
+          "baseAtk": 445,
           "isAnAscension": false,
           "specificValue": 43
         },
         {
           "level": 70,
-          "baseAtk": 499,
+          "baseAtk": 470,
           "isAnAscension": false,
           "specificValue": 45
         },
         {
           "level": 70,
-          "baseAtk": 525,
+          "baseAtk": 496,
           "isAnAscension": true,
           "specificValue": 45
         },
         {
           "level": 75,
-          "baseAtk": 552,
+          "baseAtk": 520,
           "isAnAscension": false,
           "specificValue": 48
         },
         {
           "level": 80,
-          "baseAtk": 579,
+          "baseAtk": 545,
           "isAnAscension": false,
           "specificValue": 50
         },
         {
           "level": 80,
-          "baseAtk": 605,
+          "baseAtk": 571,
           "isAnAscension": true,
           "specificValue": 50
         },
         {
           "level": 85,
-          "baseAtk": 633,
+          "baseAtk": 595,
           "isAnAscension": false,
           "specificValue": 53
         },
         {
           "level": 90,
-          "baseAtk": 660,
+          "baseAtk": 620,
           "isAnAscension": false,
           "specificValue": 55
         }
@@ -21391,7 +21391,7 @@
       "secondaryStat": "energyRechargePercentage",
       "secondaryStatValue": 6.7,
       "location": "gacha",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "ascensionMaterials": [
         {
           "level": 20,
@@ -26434,7 +26434,7 @@
             {
               "quantity": 2,
               "materialType": "common",
-              "image": "treasure_hoarder_insignia.png"
+              "image": "recruits_insignia.png"
             },
             {
               "quantity": 5000,
@@ -26459,7 +26459,7 @@
             {
               "quantity": 8,
               "materialType": "common",
-              "image": "treasure_hoarder_insignia.png"
+              "image": "recruits_insignia.png"
             },
             {
               "quantity": 15000,
@@ -26484,7 +26484,7 @@
             {
               "quantity": 6,
               "materialType": "common",
-              "image": "silver_raven_insignia.png"
+              "image": "sergeants_insignia.png"
             },
             {
               "quantity": 20000,
@@ -26509,7 +26509,7 @@
             {
               "quantity": 9,
               "materialType": "common",
-              "image": "silver_raven_insignia.png"
+              "image": "sergeants_insignia.png"
             },
             {
               "quantity": 30000,
@@ -26534,7 +26534,7 @@
             {
               "quantity": 6,
               "materialType": "common",
-              "image": "golden_raven_insignia.png"
+              "image": "lieutenants_insignia.png"
             },
             {
               "quantity": 35000,
@@ -26559,7 +26559,7 @@
             {
               "quantity": 12,
               "materialType": "common",
-              "image": "golden_raven_insignia.png"
+              "image": "lieutenants_insignia.png"
             },
             {
               "quantity": 45000,

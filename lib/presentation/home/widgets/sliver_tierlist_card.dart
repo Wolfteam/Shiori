@@ -30,5 +30,7 @@ class SliverTierList extends StatelessWidget {
     context.read<TierListBloc>().add(const TierListEvent.init());
     final route = MaterialPageRoute(builder: (c) => TierListPage());
     await Navigator.push(context, route);
+    await route.completed;
+    context.read<TierListBloc>().add(const TierListEvent.close());
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/extensions/focus_scope_node_extensions.dart';
+import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 
 import 'artifacts/artifacts_page.dart';
@@ -20,7 +21,8 @@ class MainTabPage extends StatefulWidget {
 class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStateMixin {
   bool _didChangeDependencies = false;
   TabController _tabController;
-  int _index = 2;
+  int _index;
+  final _defaultIndex = 2;
   final _pages = [
     const CharactersPage(),
     const WeaponsPage(),
@@ -29,8 +31,11 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
     MapPage(),
   ];
 
+  DateTime backButtonPressTime;
+
   @override
   void initState() {
+    _index = _defaultIndex;
     _tabController = TabController(
       initialIndex: _index,
       length: _pages.length,
@@ -51,6 +56,12 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
     context.read<ElementsBloc>().add(const ElementsEvent.init());
     context.read<SettingsBloc>().add(const SettingsEvent.init());
     context.read<GameCodesBloc>().add(const GameCodesEvent.init());
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
   }
 
   @override
@@ -80,13 +91,14 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
                 orElse: () => {},
               );
             },
-            builder: (context, state) {
-              return TabBarView(
+            builder: (context, state) => WillPopScope(
+              onWillPop: () => handleWillPop(context),
+              child: TabBarView(
                 controller: _tabController,
                 physics: const NeverScrollableScrollPhysics(),
                 children: _pages,
-              );
-            },
+              ),
+            ),
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -94,7 +106,7 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
           showUnselectedLabels: true,
           items: _buildBottomNavBars(),
           type: BottomNavigationBarType.fixed,
-          onTap: (newIndex) => context.read<MainTabBloc>().add(MainTabEvent.goToTab(index: newIndex)),
+          onTap: _gotoTab,
         ),
       ),
     );
@@ -111,11 +123,37 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
     ];
   }
 
+  void _gotoTab(int newIndex) => context.read<MainTabBloc>().add(MainTabEvent.goToTab(index: newIndex));
+
   void _changeCurrentTab(int index) {
     FocusScope.of(context).removeFocus();
     setState(() {
       _index = index;
       _tabController.index = index;
     });
+  }
+
+  Future<bool> handleWillPop(BuildContext context) async {
+    if (_tabController.index != _defaultIndex) {
+      _gotoTab(_defaultIndex);
+      return false;
+    }
+    final settings = context.read<SettingsBloc>();
+    if (!settings.doubleBackToClose()) {
+      return true;
+    }
+
+    final s = S.of(context);
+    final now = DateTime.now();
+    final mustWait = backButtonPressTime == null || now.difference(backButtonPressTime) > ToastUtils.toastDuration;
+
+    if (mustWait) {
+      backButtonPressTime = now;
+      final fToast = ToastUtils.of(context);
+      ToastUtils.showInfoToast(fToast, s.pressOnceAgainToExit);
+      return false;
+    }
+
+    return true;
   }
 }

@@ -7,5 +7,6 @@ abstract class UrlPageState with _$UrlPageState {
     @required String wishSimulatorUrl,
     @required String mapUrl,
     @required bool hasInternetConnection,
+    @required String userAgent,
   }) = _Loaded;
 }

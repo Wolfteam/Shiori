@@ -3,6 +3,7 @@ part of 'settings_bloc.dart';
 @freezed
 abstract class SettingsEvent with _$SettingsEvent {
   const factory SettingsEvent.init() = _Init;
+
   const factory SettingsEvent.themeChanged({
     @required AppThemeType newValue,
   }) = _ThemeChanged;
@@ -26,4 +27,8 @@ abstract class SettingsEvent with _$SettingsEvent {
   const factory SettingsEvent.serverResetTimeChanged({
     @required AppServerResetTimeType newValue,
   }) = _ServerResetTimeChanged;
+
+  const factory SettingsEvent.doubleBackToCloseChanged({
+    @required bool newValue,
+  }) = _DoubleBackToCloseChanged;
 }

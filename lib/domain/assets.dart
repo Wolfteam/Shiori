@@ -9,6 +9,7 @@ class Assets {
   static String materialsDbPath = '$dbPath/materials.json';
   static String elementsDbPath = '$dbPath/elements.json';
   static String gameCodesDbPath = '$dbPath/game_codes.json';
+  static String monstersDbPath = '$dbPath/monsters.json';
   static String translationsBasePath = 'assets/i18n';
 
   //General
@@ -44,6 +45,9 @@ class Assets {
   //Others
   static String otherImgsBasePath = 'assets/others';
 
+  //Monsters
+  static String monstersImgsBasePath = 'assets/monsters';
+
   static String getArtifactPath(String name) => '$artifactsBasePath/$name';
   static String getCharacterPath(String name) => '$charactersBasePath/$name';
   static String getCharacterFullPath(String name) => '$characterFullBasePath/$name';
@@ -55,6 +59,8 @@ class Assets {
   }
 
   static String getOtherImgsPath(String name) => '$otherImgsBasePath/$name';
+
+  static String getMonsterImgPath(String name) => '$monstersImgsBasePath/$name';
 
   static String getBowPath(String name) => '$bowsBasePath/$name';
   static String getCatalystPath(String name) => '$catalystBasePath/$name';
@@ -80,7 +86,7 @@ class Assets {
         return getCommonMaterialPath(name);
       case MaterialType.currency:
         return getCurrencyMaterialPath(name);
-      case MaterialType.elemental:
+      case MaterialType.elementalStone:
         return getElementalMaterialPath(name);
       case MaterialType.jewels:
         return getJewelMaterialPath(name);
@@ -106,16 +112,17 @@ class Assets {
 
   static String getTranslationPath(AppLanguageType languageType) {
     switch (languageType) {
+      case AppLanguageType.french:
       case AppLanguageType.english:
         return '$translationsBasePath/en.json';
       case AppLanguageType.spanish:
         return '$translationsBasePath/es.json';
-      case AppLanguageType.french:
-        return '$translationsBasePath/fr.json';
       case AppLanguageType.russian:
         return '$translationsBasePath/ru.json';
       case AppLanguageType.simplifiedChinese:
         return '$translationsBasePath/zh_CN.json';
+      case AppLanguageType.portuguese:
+        return '$translationsBasePath/pt.json';
       default:
         throw Exception('Invalid language = $languageType');
     }

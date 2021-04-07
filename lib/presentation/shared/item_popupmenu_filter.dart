@@ -25,11 +25,14 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final filterValues = exclude.isNotEmpty ? values.where((el) => !exclude.contains(el)) : values;
-    final valuesToUse = filterValues
-        .map((filter) => CheckedPopupMenuItem<TEnum>(
-              checked: selectedValue == filter,
-              value: filter,
-              child: Text(itemText(filter)),
+    final translatedValues = filterValues.map((filter) => _Item<TEnum>(filter, itemText(filter))).toList()
+      ..sort((x, y) => x.translation.compareTo(y.translation));
+
+    final valuesToUse = translatedValues
+        .map((e) => CheckedPopupMenuItem<TEnum>(
+              checked: selectedValue == e.enumValue,
+              value: e.enumValue,
+              child: Text(e.translation),
             ))
         .toList();
 
@@ -42,4 +45,11 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
       tooltip: tooltipText,
     );
   }
+}
+
+class _Item<TEnum> {
+  final TEnum enumValue;
+  final String translation;
+
+  _Item(this.enumValue, this.translation);
 }

@@ -16,7 +16,7 @@ class WeaponDetailBottom extends StatelessWidget {
   final String description;
   final int rarity;
   final StatType secondaryStatType;
-  final List<WeaponCraftedFileModel> craftingMaterials;
+  final List<ItemAscensionMaterialModel> craftingMaterials;
   final List<WeaponFileAscensionMaterial> ascensionMaterials;
   final List<WeaponFileRefinementModel> refinements;
   final List<WeaponFileStatModel> stats;

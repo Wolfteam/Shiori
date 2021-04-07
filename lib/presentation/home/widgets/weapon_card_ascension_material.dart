@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/circle_weapon.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:genshindb/presentation/shared/material_item_button.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 
 class WeaponCardAscensionMaterial extends StatelessWidget {
@@ -32,7 +33,7 @@ class WeaponCardAscensionMaterial extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(image, width: 120, height: 100),
+            MaterialItemButton(image: image, size: 100),
             Tooltip(
               message: name,
               child: Text(

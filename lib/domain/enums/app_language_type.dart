@@ -4,4 +4,5 @@ enum AppLanguageType {
   french,
   russian,
   simplifiedChinese,
+  portuguese,
 }

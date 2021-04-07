@@ -24,7 +24,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     CharactersEvent event,
   ) async* {
     final s = event.map(
-      init: (_) => _buildInitialState(elementTypes: ElementType.values, weaponTypes: WeaponType.values),
+      init: (e) => _buildInitialState(excludeKeys: e.excludeKeys, elementTypes: ElementType.values, weaponTypes: WeaponType.values),
       characterFilterTypeChanged: (e) => currentState.copyWith.call(tempCharacterFilterType: e.characterFilterType),
       elementTypeChanged: (e) {
         var types = <ElementType>[];
@@ -57,6 +57,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         sortDirectionType: currentState.sortDirectionType,
         weaponTypes: currentState.weaponTypes,
         roleType: currentState.tempRoleType,
+        excludeKeys: currentState.excludeKeys,
       ),
       applyFilterChanges: (_) => _buildInitialState(
         search: currentState.search,
@@ -67,6 +68,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         sortDirectionType: currentState.tempSortDirectionType,
         weaponTypes: currentState.tempWeaponTypes,
         roleType: currentState.tempRoleType,
+        excludeKeys: currentState.excludeKeys,
       ),
       cancelChanges: (_) => currentState.copyWith.call(
         tempCharacterFilterType: currentState.characterFilterType,
@@ -76,14 +78,15 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         tempSortDirectionType: currentState.sortDirectionType,
         tempWeaponTypes: currentState.weaponTypes,
         tempRoleType: currentState.roleType,
+        excludeKeys: currentState.excludeKeys,
       ),
     );
     yield s;
   }
 
-//TODO: FALTA UN DELAY EN EL SEARCH
   CharactersState _buildInitialState({
     String search,
+    List<String> excludeKeys = const [],
     List<WeaponType> weaponTypes = const [],
     List<ElementType> elementTypes = const [],
     int rarity = 0,
@@ -94,6 +97,9 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   }) {
     final isLoaded = state is _LoadedState;
     var characters = _genshinService.getCharactersForCard();
+    if (excludeKeys.isNotEmpty) {
+      characters = characters.where((el) => !excludeKeys.contains(el.key)).toList();
+    }
 
     if (!isLoaded) {
       final selectedWeaponTypes = WeaponType.values.toList();
@@ -117,6 +123,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         showCharacterDetails: _settingsService.showCharacterDetails,
         roleType: roleType,
         tempRoleType: roleType,
+        excludeKeys: excludeKeys,
       );
     }
 
@@ -171,6 +178,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
       tempCharacterFilterType: characterFilterType,
       sortDirectionType: sortDirectionType,
       tempSortDirectionType: sortDirectionType,
+      excludeKeys: excludeKeys,
     );
     return s;
   }

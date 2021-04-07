@@ -57,9 +57,7 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
         appBar: AppBar(
           title: Text(s.selectWeapon),
         ),
-        body: SafeArea(
-          child: child,
-        ),
+        body: child,
       );
     }
 

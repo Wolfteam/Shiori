@@ -66,11 +66,15 @@ class TelemetryServiceImpl implements TelemetryService {
 
   @override
   Future<void> trackUrlOpened(bool loadMap, bool loadWishSimulator, bool networkAvailable) async {
-    await trackEventAsync('Url-Opened', {
-      'Map': loadMap.toString(),
-      'WishSimulator': loadWishSimulator.toString(),
+    final props = {
       'NetworkAvailable': networkAvailable.toString(),
-    });
+    };
+
+    if (loadMap) {
+      await trackEventAsync('Map-Opened', props);
+    } else if (loadWishSimulator) {
+      await trackEventAsync('WishSimulator-Opened', props);
+    }
   }
 
   @override
@@ -93,6 +97,7 @@ class TelemetryServiceImpl implements TelemetryService {
       'ShowWeaponDetails': settings.showWeaponDetails.toString(),
       'IsFirstInstall': settings.isFirstInstall.toString(),
       'ServerResetTime': EnumToString.convertToString(settings.serverResetTime),
+      'DoubleBackToClose': settings.doubleBackToClose.toString(),
     });
   }
 
@@ -101,4 +106,34 @@ class TelemetryServiceImpl implements TelemetryService {
 
   @override
   Future<void> trackTierListBuilderScreenShootTaken() => trackEventAsync('TierListBuilder-ScreenShootTaken');
+
+  @override
+  Future<void> trackMaterialLoaded(String key, {bool loadedFromName = true}) async {
+    if (loadedFromName) {
+      await trackEventAsync('Material-FromName', {'Name': key});
+    } else {
+      await trackEventAsync('Material-FromImg', {'Image': key});
+    }
+  }
+
+  @override
+  Future<void> trackCalculatorAscMaterialsSessionsLoaded() => trackEventAsync('Calculator-Asc-Mat-Sessions-Loaded');
+
+  @override
+  Future<void> trackCalculatorAscMaterialsSessionsCreated() => trackEventAsync('Calculator-Asc-Mat-Sessions-Created');
+
+  @override
+  Future<void> trackCalculatorAscMaterialsSessionsUpdated() => trackEventAsync('Calculator-Asc-Mat-Sessions-Updated');
+
+  @override
+  Future<void> trackCalculatorAscMaterialsSessionsDeleted() => trackEventAsync('Calculator-Asc-Mat-Sessions-Deleted');
+
+  @override
+  Future<void> trackItemAddedToInventory(String key, int quantity) => trackEventAsync('MyInventory-Added', {'Key_Qty': '${key}_$quantity'});
+
+  @override
+  Future<void> trackItemDeletedFromInventory(String key) => trackEventAsync('MyInventory-Deleted', {'Key': key});
+
+  @override
+  Future<void> trackItemUpdatedInInventory(String key, int quantity) => trackEventAsync('MyInventory-Updated', {'Key_Qty': '${key}_$quantity'});
 }

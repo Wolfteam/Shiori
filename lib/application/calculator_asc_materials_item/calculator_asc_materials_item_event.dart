@@ -14,6 +14,7 @@ abstract class CalculatorAscMaterialsItemEvent with _$CalculatorAscMaterialsItem
     @required int desiredLevel,
     @required int currentAscensionLevel,
     @required int desiredAscensionLevel,
+    @required bool useMaterialsFromInventory,
     @required List<CharacterSkill> skills,
   }) = _LoadWith;
 
@@ -42,4 +43,8 @@ abstract class CalculatorAscMaterialsItemEvent with _$CalculatorAscMaterialsItem
     @required int index,
     @required int newValue,
   }) = _SkillDesiredLevelChanged;
+
+  const factory CalculatorAscMaterialsItemEvent.useMaterialsFromInventoryChanged({
+    @required bool useThem,
+  }) = _UseMaterialsFromInventoryChanged;
 }

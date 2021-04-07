@@ -23,15 +23,13 @@ class _TierListRowColorPickerState extends State<TierListRowColorPicker> {
     final s = S.of(context);
     return AlertDialog(
       title: Text(s.pickColor),
-      content: SingleChildScrollView(
-        child: BlockPicker(
-          pickerColor: widget.currentColor,
-          onColorChanged: (color) {
-            setState(() {
-              selectedColor = color;
-            });
-          },
-        ),
+      content: BlockPicker(
+        pickerColor: widget.currentColor,
+        onColorChanged: (color) {
+          setState(() {
+            selectedColor = color;
+          });
+        },
       ),
       actions: <Widget>[
         OutlineButton(

@@ -5,6 +5,7 @@ import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/artifacts/widgets/artifact_stats.dart';
 import 'package:genshindb/presentation/shared/circle_character.dart';
+import 'package:genshindb/presentation/shared/circle_monster.dart';
 import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
@@ -28,7 +29,7 @@ class ArtifactPage extends StatelessWidget {
                   clipBehavior: Clip.none,
                   children: [
                     _buildTop(s.name, s.rarityMax, s.image, context),
-                    _buildBottom(s.rarityMax, s.images, s.bonus, s.charImages, context),
+                    _buildBottom(s.rarityMax, s.images, s.bonus, s.charImages, s.droppedBy, context),
                   ],
                 ),
               );
@@ -100,6 +101,7 @@ class ArtifactPage extends StatelessWidget {
     List<String> images,
     List<ArtifactCardBonusModel> bonus,
     List<String> charImgs,
+    List<String> droppedBy,
     BuildContext context,
   ) {
     final s = S.of(context);
@@ -137,6 +139,15 @@ class ArtifactPage extends StatelessWidget {
                 body: Wrap(
                   alignment: WrapAlignment.center,
                   children: charImgs.map((e) => CircleCharacter(image: e)).toList(),
+                ),
+                textColor: rarity.getRarityColors().last,
+              ),
+            if (droppedBy.isNotEmpty)
+              ItemDescriptionDetail(
+                title: s.droppedBy,
+                body: Wrap(
+                  alignment: WrapAlignment.center,
+                  children: droppedBy.map((e) => CircleMonster(image: e)).toList(),
                 ),
                 textColor: rarity.getRarityColors().last,
               ),

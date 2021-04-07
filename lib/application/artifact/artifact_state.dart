@@ -12,5 +12,6 @@ abstract class ArtifactState with _$ArtifactState {
     @required List<ArtifactCardBonusModel> bonus,
     @required List<String> images,
     @required List<String> charImages,
+    @required List<String> droppedBy,
   }) = _LoadedState;
 }

@@ -6,10 +6,12 @@ import 'extensions/scroll_controller_extensions.dart';
 
 class SliverScaffoldWithFab extends StatefulWidget {
   final List<Widget> slivers;
+  final PreferredSizeWidget appbar;
 
   const SliverScaffoldWithFab({
     Key key,
     @required this.slivers,
+    this.appbar,
   }) : super(key: key);
 
   @override
@@ -40,9 +42,12 @@ class _SliverScaffoldWithFabState extends State<SliverScaffoldWithFab> with Sing
         FocusScope.of(context).removeFocus();
       },
       child: Scaffold(
-        body: CustomScrollView(
-          controller: _scrollController,
-          slivers: widget.slivers,
+        appBar: widget.appbar,
+        body: SafeArea(
+          child: CustomScrollView(
+            controller: _scrollController,
+            slivers: widget.slivers,
+          ),
         ),
         floatingActionButton: AppFab(
           hideFabAnimController: _hideFabAnimController,

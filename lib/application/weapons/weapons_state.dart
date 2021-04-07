@@ -19,5 +19,6 @@ abstract class WeaponsState with _$WeaponsState {
     @required StatType tempWeaponSubStatType,
     @required ItemLocationType weaponLocationType,
     @required ItemLocationType tempWeaponLocationType,
+    @Default(<String>[]) List<String> excludeKeys,
   }) = _LoadedState;
 }
