@@ -142,6 +142,14 @@ class SettingsServiceImpl extends SettingsService {
     try {
       _logger.info(runtimeType, '_getDefaultLangToUse: Trying to retrieve device lang...');
       final deviceLocale = await Devicelocale.currentAsLocale;
+      if (deviceLocale == null) {
+        _logger.warning(
+          runtimeType,
+          "_getDefaultLangToUse: Couldn't retrieve the device locale, falling back to english",
+        );
+        return AppLanguageType.english;
+      }
+
       final appLang = languagesMap.entries.firstWhere((val) => val.value.code == deviceLocale.languageCode, orElse: () => null);
       if (appLang == null) {
         _logger.info(

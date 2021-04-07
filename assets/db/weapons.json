@@ -35374,7 +35374,7 @@
             {
               "quantity": 3,
               "materialType": "weapon",
-              "image": "dead_ley_line_branch.png"
+              "image": "mist_grass_pollen.png"
             },
             {
               "quantity": 8,
@@ -35399,7 +35399,7 @@
             {
               "quantity": 12,
               "materialType": "weapon",
-              "image": "dead_ley_line_branch.png"
+              "image": "mist_grass_pollen.png"
             },
             {
               "quantity": 8,
@@ -35424,7 +35424,7 @@
             {
               "quantity": 6,
               "materialType": "weapon",
-              "image": "dead_ley_line_leaves.png"
+              "image": "mist_grass.png"
             },
             {
               "quantity": 6,
@@ -35449,7 +35449,7 @@
             {
               "quantity": 12,
               "materialType": "weapon",
-              "image": "dead_ley_line_leaves.png"
+              "image": "mist_grass.png"
             },
             {
               "quantity": 9,
@@ -35474,7 +35474,7 @@
             {
               "quantity": 9,
               "materialType": "weapon",
-              "image": "ley_line_sprout.png"
+              "image": "mist_grass_wick.png"
             },
             {
               "quantity": 6,
@@ -35499,7 +35499,7 @@
             {
               "quantity": 18,
               "materialType": "weapon",
-              "image": "ley_line_sprout.png"
+              "image": "mist_grass_wick.png"
             },
             {
               "quantity": 12,
