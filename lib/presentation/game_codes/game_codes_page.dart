@@ -6,7 +6,6 @@ import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/common_table_cell.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
-import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
 import 'package:genshindb/presentation/shared/wrapped_ascension_material.dart';
@@ -39,13 +38,11 @@ class GameCodesPage extends StatelessWidget {
               children: [
                 BlocBuilder<GameCodesBloc, GameCodesState>(
                   builder: (ctx, state) => state.map(
-                    loading: (_) => const Loading(useScaffold: false),
                     loaded: (state) => _buildTableCard(s.workingCodes, state.workingGameCodes, context),
                   ),
                 ),
                 BlocBuilder<GameCodesBloc, GameCodesState>(
                   builder: (ctx, state) => state.map(
-                    loading: (_) => const Loading(useScaffold: false),
                     loaded: (state) => _buildTableCard(s.expiredCodes, state.expiredGameCodes, context),
                   ),
                 ),
@@ -57,19 +54,19 @@ class GameCodesPage extends StatelessWidget {
     );
   }
 
-  Widget _buildTableCard(String title, List<GameCodeFileModel> codes, BuildContext context) {
+  Widget _buildTableCard(String title, List<GameCodeModel> codes, BuildContext context) {
     final s = S.of(context);
     final body = Card(
       elevation: Styles.cardTenElevation,
       margin: Styles.edgeInsetAll5,
       shape: Styles.cardShape,
       child: Padding(
-        padding: Styles.edgeInsetVertical5,
+        padding: Styles.edgeInsetAll5,
         child: Table(
           columnWidths: const {
-            0: FractionColumnWidth(.35),
-            1: FractionColumnWidth(.5),
-            2: FractionColumnWidth(.15),
+            0: FractionColumnWidth(.3),
+            1: FractionColumnWidth(.4),
+            2: FractionColumnWidth(.3),
           },
           children: [
             TableRow(
@@ -79,7 +76,7 @@ class GameCodesPage extends StatelessWidget {
                 Container(),
               ],
             ),
-            ...codes.map((e) => _buildRow(s, e)).toList(),
+            ...codes.map((e) => _buildRow(s, context, e)).toList(),
           ],
         ),
       ),
@@ -92,27 +89,47 @@ class GameCodesPage extends StatelessWidget {
     );
   }
 
-  TableRow _buildRow(S s, GameCodeFileModel model) {
-    final rewards = model.rewards.map((m) => WrappedAscensionMaterial(image: m.fullImagePath, quantity: m.quantity)).toList();
+  TableRow _buildRow(S s, BuildContext context, GameCodeModel model) {
+    final fToast = ToastUtils.of(context);
+    final rewards = model.rewards.map((m) => WrappedAscensionMaterial(image: m.fullImagePath, quantity: m.quantity, size: 20)).toList();
     return TableRow(
       children: [
         CommonTableCell.child(
-          padding: Styles.edgeInsetAll10,
-          child: Center(child: Tooltip(message: model.code, child: Text(model.code, overflow: TextOverflow.ellipsis))),
-        ),
-        CommonTableCell.child(
-          padding: Styles.edgeInsetAll5,
-          child: Wrap(alignment: WrapAlignment.center, children: rewards),
-        ),
-        CommonTableCell.child(
-          child: IconButton(
-            padding: EdgeInsets.zero,
-            icon: const Icon(Icons.copy),
-            onPressed: () => Clipboard.setData(ClipboardData(text: model.code)).then(
-              (value) => ToastUtils.showInfoToast(s.codeXWasCopied(model.code)),
+          child: Center(
+            child: Tooltip(
+              message: model.code,
+              child: Text(
+                model.code,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.subtitle2.copyWith(fontSize: 12),
+              ),
             ),
           ),
         ),
+        CommonTableCell.child(
+          child: Wrap(alignment: WrapAlignment.center, children: rewards),
+        ),
+        CommonTableCell.child(
+          child: Wrap(
+            alignment: WrapAlignment.center,
+            children: [
+              IconButton(
+                tooltip: !model.isUsed ? s.markAsUsed : s.markAsUnused,
+                splashRadius: 20,
+                icon: Icon(Icons.check, color: model.isUsed ? Colors.green : Colors.red),
+                onPressed: () => context.read<GameCodesBloc>().add(GameCodesEvent.markAsUsed(code: model.code, wasUsed: !model.isUsed)),
+              ),
+              IconButton(
+                tooltip: s.copy,
+                splashRadius: 20,
+                icon: const Icon(Icons.copy),
+                onPressed: () => Clipboard.setData(ClipboardData(text: model.code)).then(
+                  (value) => ToastUtils.showInfoToast(fToast, s.codeXWasCopied(model.code)),
+                ),
+              )
+            ],
+          ),
+        )
       ],
     );
   }

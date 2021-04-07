@@ -12,6 +12,7 @@ import 'add_edit_item_bottom_sheet.dart';
 import 'material_item.dart';
 
 class ItemCard extends StatelessWidget {
+  final int sessionKey;
   final int index;
   final String itemKey;
   final String name;
@@ -23,6 +24,7 @@ class ItemCard extends StatelessWidget {
 
   const ItemCard({
     Key key,
+    @required this.sessionKey,
     @required this.index,
     @required this.itemKey,
     @required this.name,
@@ -70,35 +72,20 @@ class ItemCard extends StatelessWidget {
                   color: Colors.black.withOpacity(0.5),
                 ),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Flexible(
-                          child: IconButton(
-                            icon: const Icon(Icons.edit),
-                            color: Colors.white,
-                            onPressed: () => _editItem(context),
-                          ),
+                    Tooltip(
+                      message: name,
+                      child: Container(
+                        margin: Styles.edgeInsetAll5,
+                        child: Text(
+                          name,
+                          style: theme.textTheme.headline6.copyWith(color: Colors.white),
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.center,
                         ),
-                        Flexible(
-                          child: Tooltip(
-                            message: name,
-                            child: Text(
-                              name,
-                              style: theme.textTheme.headline6.copyWith(color: Colors.white),
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          child: IconButton(
-                            icon: const Icon(Icons.delete),
-                            color: Colors.white,
-                            onPressed: () => _removeItem(context),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                     Text(
                       s.materials,
@@ -106,9 +93,9 @@ class ItemCard extends StatelessWidget {
                       style: theme.textTheme.subtitle2.copyWith(color: Colors.white),
                     ),
                     Container(
-                      margin: const EdgeInsets.only(bottom: 10),
+                      margin: const EdgeInsets.only(bottom: 12, right: 5, left: 5),
                       child: SizedBox(
-                        height: 80,
+                        height: 90,
                         child: ListView.builder(
                           itemCount: materials.length,
                           physics: const BouncingScrollPhysics(),
@@ -147,6 +134,7 @@ class ItemCard extends StatelessWidget {
             skills: currentData.skills,
             currentAscensionLevel: currentData.currentAscensionLevel,
             desiredAscensionLevel: currentData.desiredAscensionLevel,
+            useMaterialsFromInventory: currentData.useMaterialsFromInventory,
           ),
         );
 
@@ -155,9 +143,7 @@ class ItemCard extends StatelessWidget {
       shape: Styles.modalBottomSheetShape,
       isDismissible: true,
       isScrollControlled: true,
-      builder: (_) => AddEditItemBottomSheet.toEditItem(index: index, isAWeapon: isWeapon, isActive: isActive),
+      builder: (_) => AddEditItemBottomSheet.toEditItem(sessionKey: sessionKey, index: index, isAWeapon: isWeapon, isActive: isActive),
     );
   }
-
-  void _removeItem(BuildContext context) => context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.removeItem(index: index));
 }

@@ -2548,97 +2548,97 @@
     {
       "key": "Rosaria",
       "name": "Rosaria",
-      "description": "A nun who, outside of her garb, seems nothing at all like a person of the cloth. Known for her sharp, cold words and manner, she often works alone.",
+      "description": "Una monja que, aparte de por su ropa, nadie diría que pertenece al clero. Su frialdad hacia todo la hace extremadamente incisiva y siempre actúa en solitario.",
       "skills": [
         {
           "key": "s1",
-          "title": "Spear of Worship",
+          "title": "Lanza eclesiástica",
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to five consecutive spear strikes.",
+              "description": "Realiza hasta 5 ataques rápidos con lanza.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.",
+              "description": "Consume una cierta cantidad de Aguante para lanzarse al frente, infligiendo daño a los enemigos en el camino.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Ravaging Confession",
-          "description": "Rosaria swiftly shifts her position to appear behind her opponent, then stabs and slashes them with her polearm, dealing Cyro DMG.\nThis ability cannot be used to travel behind opponents of a larger build.",
+          "title": "Confesión impronunciable",
+          "description": "Rosaria se desplaza rápidamente hasta detrás de su objetivo, clavándole su lanza y realizando un tajo que inflige Daño Cryo.\nNo es posible ponerse hasta detrás de enemigos de gran tamaño con este movimiento.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Rites of Termination",
-          "description": "Rosaria's unique take on this prayer ritual: First, she swings her weapon to slash surrounding opponents; then, she summons a frigid Ice Lance that strikes the ground. Both actions deal Cryo DMG.\nWhile active, the Ice Lance periodically releases a blast of cold air, dealing Cryo DMG to surrounding opponents.",
+          "title": "Extremaunción",
+          "description": "Esta es la ceremonia de rezo dirigida exclusivamente por Rosaria. Tras empujar con su arma a los enemigos a su alrededor, concentra un frío extremo en su lanza helada para golpear el suelo e infligir Daño Cryo.\nMientras esté activa, la lanza helada emitirá intermitentemente un aire helado que inflige Daño Cryo a los enemigos cercanos.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Night Walk",
-          "description": "At night (18:00–6:00), increases the Movement SPD of your own party members by 10%.\nDoes not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects.",
+          "title": "Travesía nocturna",
+          "description": "La Vel. Movimiento de todos los miembros de tu equipo aumenta en un 10% por la noche (de 18:00 a 06:00). Este efecto no se activará en Dominios, Dominios de la cruzada y la Espiral del Abismo, y no se puede acumular con otros talentos pasivos que tengan los mismos efectos.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Extracted Confession",
-          "description": "When Rosaria strikes an opponent from behind using Ravaging Confession, Rosaria's CRIT Rate increases by 12% for 5s.",
+          "title": "Regina probatorum",
+          "description": "Cuando Rosaria ataca por la espalda a un objetivo con Confesión impronunciable, su Prob. CRIT aumenta en un 12% durante 5 s.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Shadow Samaritan",
-          "description": "Casting Rites of Termination increases CRIT Rate of all nearby party members (except Rosaria herself) by 15% of Rosaria's CRIT Rate for 10s.\nCRIT Rate Bonus gained this way cannot exceed 15%.",
+          "title": "Oscuridad expiatoria",
+          "description": "Al usar Extremaunción, la Prob. CRIT de todos los miembros del equipo (a excepción de Rosaria) aumenta durante 10 s en un 15% de la Prob. CRIT de Rosaria.\nEl aumento de Prob. CRIT conseguido de esta manera no podrá ser superior al 15%.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Unholy Revelation",
-          "description": "When Rosaria deals a CRIT Hit, her ATK SPD increases by 10% and her Normal Attack DMG increases by 10% for 4s.",
+          "title": "Guía de los pecadores",
+          "description": "Cuando Rosaria asesta un golpe CRIT, su Vel. de Ataque y el daño de su Ataque Normal aumentan en un 10% durante 4 s.",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Land Without Promise",
-          "description": "The duration of the Ice Lance created by Rites of Termination is increased by 4s.",
+          "title": "Tierra de los herejes",
+          "description": "Aumenta en 4 s la duración de la lanza helada creada mediante Extremaunción.",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Sacrament of Penance",
-          "description": "Increases the Level of Ravaging Confessionby 3. Maximum upgrade level is 15.",
+          "title": "Sacramento de la penitencia",
+          "description": "Aumenta el nivel de habilidad de Confesión impronunciable +3. Puede ser aumentado hasta Niv. 15.",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Amazing Disgrace",
-          "description": "Ravaging Confession's Crit Hits regenerate 5 Energy for Rosaria. Can only be triggered once each time Ravaging Confession is cast.",
+          "title": "Consagración del sufrimiento",
+          "description": "Al asestar un golpe CRIT con Confesión impronunciable, Rosaria recupera 5 pts. de Energía Elemental. Este efecto solo puede activarse 1 vez con cada Confesión impronunciable.",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Extreme Unction",
-          "description": "Increases the Level of Rites of Termination by 3. Maximum upgrade level is 15.",
+          "title": "Oración final",
+          "description": "Aumenta el nivel de habilidad de Extremaunción +3. Puede ser aumentado hasta Niv. 15.",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Divine Retribution",
-          "description": "Rites of Termination' attack decreases opponents' Physical RES by 20% for 10s.",
+          "title": "Juicio divino",
+          "description": "Atacar a un enemigo con Extremaunción reduce su RES Física en un 20% durante 10 s.",
           "descriptions": []
         }
       ]
@@ -5809,6 +5809,11 @@
       "key": "Original Resin",
       "name": "Original Resin",
       "description": "Used to vitalize Petrified Trees and Ley Line Blossoms, allowing access to the treasures they hold. Energy regenerates over time.\nIt is said that the roots of all the Irminsul trees and blossoms in the world are intertwined at the deepest, most hidden place in the earth, and that the pattern the root system makes defines the Ley Lines of the world."
+    },
+    {
+      "key": "Primogem",
+      "name": "Primogem",
+      "description": "A primordial crystalline gem that's beyond the mundane world. Shines with the condensed hopes and dreams of universes that once were."
     }
   ],
   "debuffs": [
@@ -5916,6 +5921,380 @@
       "name": "Cubierta Protectora",
       "effect": "Todas las RES elementales + 15%, RES Física + 15%.",
       "description": "Cualquiera de los 4 elementos únicos"
+    }
+  ],
+  "monsters": [
+    {
+      "key": "Abyss Herald: Wicked Torrents",
+      "name": "Abyss Herald: Wicked Torrents"
+    },
+    {
+      "key": "Abyss Lector: Violet Lightning",
+      "name": "Abyss Lector: Violet Lightning"
+    },
+    {
+      "key": "Anemo Hypostasis",
+      "name": "Anemo Hypostasis"
+    },
+    {
+      "key": "Anemo Samachurl",
+      "name": "Anemo Samachurl"
+    },
+    {
+      "key": "Anemo Slime",
+      "name": "Anemo Slime"
+    },
+    {
+      "key": "Azhdaha",
+      "name": "Azhdaha"
+    },
+    {
+      "key": "Blazing Axe Mitachurl",
+      "name": "Blazing Axe Mitachurl"
+    },
+    {
+      "key": "Childe",
+      "name": "Childe"
+    },
+    {
+      "key": "Cryo Abyss Mage",
+      "name": "Cryo Abyss Mage"
+    },
+    {
+      "key": "Cryo Cicin",
+      "name": "Cryo Cicin"
+    },
+    {
+      "key": "Cryo Hilichurl Grenadier",
+      "name": "Cryo Hilichurl Grenadier"
+    },
+    {
+      "key": "Cryo Hilichurl Shooter",
+      "name": "Cryo Hilichurl Shooter"
+    },
+    {
+      "key": "Cryo Hypostasis",
+      "name": "Cryo Hypostasis"
+    },
+    {
+      "key": "Cryo Regisvine",
+      "name": "Cryo Regisvine"
+    },
+    {
+      "key": "Cryo Samachurl",
+      "name": "Cryo Samachurl"
+    },
+    {
+      "key": "Cryo Slime",
+      "name": "Cryo Slime"
+    },
+    {
+      "key": "Cryo Whopperflower",
+      "name": "Cryo Whopperflower"
+    },
+    {
+      "key": "Dendro Samachurl",
+      "name": "Dendro Samachurl"
+    },
+    {
+      "key": "Dendro Slime",
+      "name": "Dendro Slime"
+    },
+    {
+      "key": "Electro Cicin",
+      "name": "Electro Cicin"
+    },
+    {
+      "key": "Electro Hilichurl Shooter",
+      "name": "Electro Hilichurl Shooter"
+    },
+    {
+      "key": "Electro Hypostasis",
+      "name": "Electro Hypostasis"
+    },
+    {
+      "key": "Electro Slime",
+      "name": "Electro Slime"
+    },
+    {
+      "key": "Eye of the Storm",
+      "name": "Eye of the Storm"
+    },
+    {
+      "key": "Fatui Cryo Cicin Mage",
+      "name": "Fatui Cryo Cicin Mage"
+    },
+    {
+      "key": "Fatui Electro Cicin Mage",
+      "name": "Fatui Electro Cicin Mage"
+    },
+    {
+      "key": "Fatui Pyro Agent",
+      "name": "Fatui Pyro Agent"
+    },
+    {
+      "key": "Fatui Skirmisher - Anemoboxer Vanguard",
+      "name": "Fatui Skirmisher - Anemoboxer Vanguard"
+    },
+    {
+      "key": "Fatui Skirmisher - Cryogunner Legionnaire",
+      "name": "Fatui Skirmisher - Cryogunner Legionnaire"
+    },
+    {
+      "key": "Fatui Skirmisher - Electrohammer Vanguard",
+      "name": "Fatui Skirmisher - Electrohammer Vanguard"
+    },
+    {
+      "key": "Fatui Skirmisher - Geochanter Bracer",
+      "name": "Fatui Skirmisher - Geochanter Bracer"
+    },
+    {
+      "key": "Fatui Skirmisher - Hydrogunner Legionnaire",
+      "name": "Fatui Skirmisher - Hydrogunner Legionnaire"
+    },
+    {
+      "key": "Fatui Skirmisher - Pyroslinger Bracer",
+      "name": "Fatui Skirmisher - Pyroslinger Bracer"
+    },
+    {
+      "key": "Frostarm Lawachurl",
+      "name": "Frostarm Lawachurl"
+    },
+    {
+      "key": "Geo Hypostasis",
+      "name": "Geo Hypostasis"
+    },
+    {
+      "key": "Geo Samachurl",
+      "name": "Geo Samachurl"
+    },
+    {
+      "key": "Geo Slime",
+      "name": "Geo Slime"
+    },
+    {
+      "key": "Geovishap",
+      "name": "Geovishap"
+    },
+    {
+      "key": "Geovishap Hatchling",
+      "name": "Geovishap Hatchling"
+    },
+    {
+      "key": "Hilichurl",
+      "name": "Hilichurl"
+    },
+    {
+      "key": "Hilichurl Berserker",
+      "name": "Hilichurl Berserker"
+    },
+    {
+      "key": "Hilichurl Fighter",
+      "name": "Hilichurl Fighter"
+    },
+    {
+      "key": "Hilichurl Grenadier",
+      "name": "Hilichurl Grenadier"
+    },
+    {
+      "key": "Hilichurl Shooter",
+      "name": "Hilichurl Shooter"
+    },
+    {
+      "key": "Hydro Abyss Mage",
+      "name": "Hydro Abyss Mage"
+    },
+    {
+      "key": "Hydro Cicin",
+      "name": "Hydro Cicin"
+    },
+    {
+      "key": "Hydro Samachurl",
+      "name": "Hydro Samachurl"
+    },
+    {
+      "key": "Hydro Slime",
+      "name": "Hydro Slime"
+    },
+    {
+      "key": "Ice Shield Hilichurl Guard",
+      "name": "Ice Shield Hilichurl Guard"
+    },
+    {
+      "key": "Ice Shieldwall Mitachurl",
+      "name": "Ice Shieldwall Mitachurl"
+    },
+    {
+      "key": "Large Anemo Slime",
+      "name": "Large Anemo Slime"
+    },
+    {
+      "key": "Large Cryo Slime",
+      "name": "Large Cryo Slime"
+    },
+    {
+      "key": "Large Dendro Slime",
+      "name": "Large Dendro Slime"
+    },
+    {
+      "key": "Large Electro Slime",
+      "name": "Large Electro Slime"
+    },
+    {
+      "key": "Large Geo Slime",
+      "name": "Large Geo Slime"
+    },
+    {
+      "key": "Large Hydro Slime",
+      "name": "Large Hydro Slime"
+    },
+    {
+      "key": "Large Pyro Slime",
+      "name": "Large Pyro Slime"
+    },
+    {
+      "key": "Lupus Boreas, Dominator of Wolves",
+      "name": "Lupus Boreas, Dominator of Wolves"
+    },
+    {
+      "key": "Millelith Sergeant",
+      "name": "Millelith Sergeant"
+    },
+    {
+      "key": "Millelith Soldier",
+      "name": "Millelith Soldier"
+    },
+    {
+      "key": "Mutant Electro Slime",
+      "name": "Mutant Electro Slime"
+    },
+    {
+      "key": "Oceanid",
+      "name": "Oceanid"
+    },
+    {
+      "key": "Primo Geovishap",
+      "name": "Primo Geovishap"
+    },
+    {
+      "key": "Pyro Abyss Mage",
+      "name": "Pyro Abyss Mage"
+    },
+    {
+      "key": "Pyro Hilichurl Shooter",
+      "name": "Pyro Hilichurl Shooter"
+    },
+    {
+      "key": "Pyro Regisvine",
+      "name": "Pyro Regisvine"
+    },
+    {
+      "key": "Pyro Slime",
+      "name": "Pyro Slime"
+    },
+    {
+      "key": "Pyro Whopperflower",
+      "name": "Pyro Whopperflower"
+    },
+    {
+      "key": "Rock Shield Hilichurl Guard",
+      "name": "Rock Shield Hilichurl Guard"
+    },
+    {
+      "key": "Rock Shieldwall Mitachurl",
+      "name": "Rock Shieldwall Mitachurl"
+    },
+    {
+      "key": "Ruin Grader",
+      "name": "Ruin Grader"
+    },
+    {
+      "key": "Ruin Guard",
+      "name": "Ruin Guard"
+    },
+    {
+      "key": "Ruin Hunter",
+      "name": "Ruin Hunter"
+    },
+    {
+      "key": "Stonehide Lawachurl",
+      "name": "Stonehide Lawachurl"
+    },
+    {
+      "key": "Stormterror",
+      "name": "Stormterror"
+    },
+    {
+      "key": "Treasure Hoarders - Boss",
+      "name": "Treasure Hoarders - Boss"
+    },
+    {
+      "key": "Treasure Hoarders - Carmen",
+      "name": "Treasure Hoarders - Carmen"
+    },
+    {
+      "key": "Treasure Hoarders - Crusher",
+      "name": "Treasure Hoarders - Crusher"
+    },
+    {
+      "key": "Treasure Hoarders - Liuliu",
+      "name": "Treasure Hoarders - Liuliu"
+    },
+    {
+      "key": "Treasure Hoarders - Marksman",
+      "name": "Treasure Hoarders - Marksman"
+    },
+    {
+      "key": "Treasure Hoarders - Pugilist",
+      "name": "Treasure Hoarders - Pugilist"
+    },
+    {
+      "key": "Treasure Hoarders - Raptor",
+      "name": "Treasure Hoarders - Raptor"
+    },
+    {
+      "key": "Treasure Hoarders - Scout",
+      "name": "Treasure Hoarders - Scout"
+    },
+    {
+      "key": "Treasure Hoarders - Seaman",
+      "name": "Treasure Hoarders - Seaman"
+    },
+    {
+      "key": "Treasure Hoarders: Cryo Potioneer",
+      "name": "Treasure Hoarders: Cryo Potioneer"
+    },
+    {
+      "key": "Treasure Hoarders: Electro Potioneer",
+      "name": "Treasure Hoarders: Electro Potioneer"
+    },
+    {
+      "key": "Treasure Hoarders: Gravedigger",
+      "name": "Treasure Hoarders: Gravedigger"
+    },
+    {
+      "key": "Treasure Hoarders: Handyman",
+      "name": "Treasure Hoarders: Handyman"
+    },
+    {
+      "key": "Treasure Hoarders: Hydro Potioneer",
+      "name": "Treasure Hoarders: Hydro Potioneer"
+    },
+    {
+      "key": "Treasure Hoarders: Pyro Potioneer",
+      "name": "Treasure Hoarders: Pyro Potioneer"
+    },
+    {
+      "key": "Unusual Hilichurl",
+      "name": "Unusual Hilichurl"
+    },
+    {
+      "key": "Wooden Shield Hilichurl Guard",
+      "name": "Wooden Shield Hilichurl Guard"
+    },
+    {
+      "key": "Wooden Shieldwall Mitachurl",
+      "name": "Wooden Shieldwall Mitachurl"
     }
   ]
 }

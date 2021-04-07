@@ -7304,7 +7304,7 @@
       "fullImage": "HuTao.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "liyue",
       "role": "mainDps",
@@ -14685,12 +14685,12 @@
       "image": "Rosaria.png",
       "fullImage": "Rosaria.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": true,
       "region": "mondstadt",
-      "role": "na",
-      "tier": "s",
+      "role": "mainDps",
+      "tier": "b",
       "birthday": "01/24",
       "ascensionMaterials": [
         {
@@ -15082,11 +15082,99 @@
           ]
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "staff_of_homa.png",
+            "blackcliff_pole.png",
+            "primordial_jade_winged_spear.png",
+            "white_tassel.png"
+          ],
+          "artifacts": [
+            {
+              "one": "blizzard_walker_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "cryoDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery"
+          ]
+        },
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "crescent_pike.png",
+            "dragonspine_spear.png",
+            "staff_of_homa.png",
+            "blackcliff_pole.png"
+          ],
+          "artifacts": [
+            {
+              "one": "gladiators_finale_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery"
+          ]
+        },
+        {
+          "isSupport": true,
+          "weaponImages": [
+            "skyward_spine.png",
+            "favonius_lance.png",
+            "primordial_jade_winged_spear.png"
+          ],
+          "artifacts": [
+            {
+              "one": "noblesse_oblige_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "cryoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage",
+            "elementaryMastery"
+          ]
+        }
+      ],
       "skills": [
         {
           "key": "s1",
           "type": "normalAttack",
+          "image": "normal_attack_rain_of_stone.png",
           "abilities": [
             {
               "key": "a1",
@@ -15104,54 +15192,65 @@
         },
         {
           "key": "s2",
-          "type": "elementalSkill"
+          "type": "elementalSkill",
+          "image": "ravaging_confession.png"
         },
         {
           "key": "s3",
-          "type": "elementalBurst"
+          "type": "elementalBurst",
+          "image": "rites_of_termination.png"
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "unlockedAt": -1
+          "unlockedAt": -1,
+          "image": "night_walk.png"
         },
         {
           "key": "p2",
-          "unlockedAt": 1
+          "unlockedAt": 1,
+          "image": "regina_probatium.png"
         },
         {
           "key": "p3",
-          "unlockedAt": 4
+          "unlockedAt": 4,
+          "image": "shadow_samaritan.png"
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "number": 1
+          "number": 1,
+          "image": "unholy_revelation.png"
         },
         {
           "key": "c2",
-          "number": 2
+          "number": 2,
+          "image": "land_without_promise.png"
         },
         {
           "key": "c3",
-          "number": 3
+          "number": 3,
+          "image": "ravaging_confession.png"
         },
         {
           "key": "c4",
-          "number": 4
+          "number": 4,
+          "image": "painful_grace.png"
         },
         {
           "key": "c5",
-          "number": 5
+          "number": 5,
+          "image": "rites_of_termination.png"
         },
         {
           "key": "c6",
-          "number": 6
+          "number": 6,
+          "image": "divine_retribution.png"
         }
       ],
-      "subStatType": "critDmgPercentage",
+      "subStatType": "atkPercentage",
       "stats": [
         {
           "level": 1,

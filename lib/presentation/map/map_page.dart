@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_user_agent/flutter_user_agent.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
@@ -85,11 +84,10 @@ class _MapPageState extends State<MapPage> {
         return state.map(
           loading: (_) => const Loading(),
           loaded: (state) {
-            final userAgent = FlutterUserAgent.webViewUserAgent.replaceAll(RegExp(r'wv'), '');
             if (state.hasInternetConnection) {
               return WebviewScaffold(
                 url: state.mapUrl,
-                userAgent: userAgent,
+                userAgent: state.userAgent,
                 ignoreSSLErrors: true,
                 withJavascript: true,
                 withLocalStorage: true,

@@ -7,7 +7,6 @@ import 'package:genshindb/presentation/shared/scaffold_with_fab.dart';
 import 'widgets/material_detail_bottom.dart';
 import 'widgets/material_detail_top.dart';
 
-//TODO: BOSSES
 class MaterialPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -32,6 +31,7 @@ class MaterialPage extends StatelessWidget {
                   weaponImgs: s.weaponImages,
                   obtainedFrom: s.obtainedFrom,
                   relatedTo: s.relatedMaterials,
+                  droppedBy: s.droppedBy,
                 ),
               ],
             ),

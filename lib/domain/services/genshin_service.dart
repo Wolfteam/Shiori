@@ -9,18 +9,23 @@ abstract class GenshinService {
   Future<void> initMaterials();
   Future<void> initElements();
   Future<void> initGameCodes();
+  Future<void> initMonsters();
   Future<void> initTranslations(AppLanguageType languageType);
 
   List<CharacterCardModel> getCharactersForCard();
+  CharacterCardModel getCharacterForCard(String key);
   CharacterFileModel getCharacter(String key);
   CharacterFileModel getCharacterByImg(String img);
   List<CharacterFileModel> getCharactersForBirthday(DateTime date);
   List<TierListRowModel> getDefaultCharacterTierList(List<int> colors);
+  List<String> getUpcomingCharactersKeys();
 
   List<WeaponCardModel> getWeaponsForCard();
+  WeaponCardModel getWeaponForCard(String key);
   WeaponCardModel getWeaponForCardByImg(String image);
   WeaponFileModel getWeapon(String key);
   WeaponFileModel getWeaponByImg(String img);
+  List<String> getUpcomingWeaponsKeys();
 
   List<ArtifactCardModel> getArtifactsForCard();
   ArtifactCardModel getArtifactForCardByImg(String image);
@@ -31,6 +36,8 @@ abstract class GenshinService {
   List<String> getCharacterImgsUsingMaterial(String key);
   List<String> getWeaponImgsUsingMaterial(String key);
   List<String> getRelatedMaterialImgsToMaterial(String key);
+  List<String> getRelatedMonsterImgsToMaterial(String key);
+  List<String> getRelatedMonsterImgsToArtifact(String key);
 
   TranslationArtifactFile getArtifactTranslation(String key);
   TranslationCharacterFile getCharacterTranslation(String key);
@@ -44,7 +51,8 @@ abstract class GenshinService {
   List<ElementReactionCardModel> getElementReactions();
   List<ElementReactionCardModel> getElementResonances();
 
-  List<MaterialCardModel> getAllMaterials();
+  List<MaterialCardModel> getAllMaterialsForCard();
+  MaterialCardModel getMaterialForCard(String key);
   MaterialFileModel getMaterial(String key);
   MaterialFileModel getMaterialByImage(String image);
   List<MaterialFileModel> getMaterials(MaterialType type);
@@ -52,4 +60,11 @@ abstract class GenshinService {
   int getServerDay(AppServerResetTimeType type);
 
   List<GameCodeFileModel> getAllGameCodes();
+
+  List<String> getUpcomingKeys();
+
+  MonsterFileModel getMonster(String key);
+  MonsterFileModel getMonsterByImg(String image);
+  List<MonsterCardModel> getAllMonstersForCard();
+  MonsterCardModel getMonsterForCardByImg(String image);
 }

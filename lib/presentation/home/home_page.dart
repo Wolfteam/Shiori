@@ -9,6 +9,9 @@ import 'widgets/sliver_characters_birthday_card.dart';
 import 'widgets/sliver_elements_card.dart';
 import 'widgets/sliver_game_codes_card.dart';
 import 'widgets/sliver_main_title.dart';
+import 'widgets/sliver_materials_card.dart';
+import 'widgets/sliver_monsters_card.dart';
+import 'widgets/sliver_my_inventory_card.dart';
 import 'widgets/sliver_settings_card.dart';
 import 'widgets/sliver_tierlist_card.dart';
 import 'widgets/sliver_today_char_ascension_materials.dart';
@@ -39,10 +42,14 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
         SliverTodayWeaponMaterials(),
         SliverMainTitle(title: s.elements),
         SliverElementsCard(),
-        // SliverMainTitle(title: s.materials),
-        // SliverMaterialsCard(),
+        SliverMainTitle(title: s.myInventory),
+        SliverMyInventoryCard(),
         SliverMainTitle(title: s.calculators),
         SliverCalculatorsCard(),
+        SliverMainTitle(title: s.materials),
+        SliverMaterialsCard(),
+        SliverMainTitle(title: s.monsters),
+        SliverMonstersCard(),
         SliverMainTitle(title: s.wishSimulator),
         SliverWishSimulatorCard(),
         SliverMainTitle(title: s.tierListBuilder),

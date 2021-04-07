@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
+import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/character/character_page.dart';
 import 'package:genshindb/presentation/shared/comingsoon_new_avatar.dart';
@@ -11,6 +11,7 @@ import 'package:genshindb/presentation/shared/extensions/element_type_extensions
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/rarity.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 import 'character_card_ascension_materials_bottom.dart';
@@ -42,6 +43,22 @@ class CharacterCard extends StatelessWidget {
     this.isInSelectionMode = false,
     this.showMaterials = true,
   }) : super(key: key);
+
+  CharacterCard.item({
+    Key key,
+    CharacterCardModel char,
+    this.isInSelectionMode = false,
+    this.showMaterials = true,
+  })  : keyName = char.key,
+        elementType = char.elementType,
+        isComingSoon = char.isComingSoon,
+        isNew = char.isNew,
+        image = char.logoName,
+        name = char.name,
+        rarity = char.stars,
+        weaponType = char.weaponType,
+        materials = char.materials,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -116,16 +133,9 @@ class CharacterCard extends StatelessWidget {
 
   Future<void> _gotoCharacterPage(BuildContext context) async {
     if (isComingSoon && !isInSelectionMode) {
-      final theme = Theme.of(context);
       final s = S.of(context);
-      Fluttertoast.showToast(
-        msg: s.comingSoon,
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.BOTTOM,
-        backgroundColor: theme.accentColor,
-        textColor: Colors.white,
-        fontSize: 16.0,
-      );
+      final fToast = ToastUtils.of(context);
+      ToastUtils.showWarningToast(fToast, s.comingSoon);
       return;
     }
 
@@ -138,6 +148,7 @@ class CharacterCard extends StatelessWidget {
     bloc.add(CharacterEvent.loadFromName(key: keyName));
     final route = MaterialPageRoute(builder: (c) => const CharacterPage());
     await Navigator.push(context, route);
+    await route.completed;
     bloc.pop();
   }
 }

@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:genshindb/application/common/pop_bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
+import 'package:genshindb/domain/services/data_service.dart';
 import 'package:genshindb/domain/services/genshin_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
 
@@ -14,8 +15,9 @@ part 'weapon_state.dart';
 class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
+  final DataService _dataService;
 
-  WeaponBloc(this._genshinService, this._telemetryService) : super(const WeaponState.loading());
+  WeaponBloc(this._genshinService, this._telemetryService, this._dataService) : super(const WeaponState.loading());
 
   @override
   WeaponEvent getEventForPop(String key) => WeaponEvent.loadFromName(key: key, addToQueue: false);
@@ -24,7 +26,10 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
   Stream<WeaponState> mapEventToState(
     WeaponEvent event,
   ) async* {
-    yield const WeaponState.loading();
+    if (event is! _AddedToInventory) {
+      yield const WeaponState.loading();
+    }
+
     final s = await event.when(
       loadFromImg: (img, addToQueue) async {
         final weapon = _genshinService.getWeaponByImg(img);
@@ -46,6 +51,18 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
         }
         return _buildInitialState(weapon, translation);
       },
+      addedToInventory: (key, wasAdded) async {
+        if (state is! _LoadedState) {
+          return state;
+        }
+
+        final currentState = state as _LoadedState;
+        if (currentState.key != key) {
+          return state;
+        }
+
+        return currentState.copyWith.call(isInInventory: wasAdded);
+      },
     );
 
     yield s;
@@ -54,6 +71,7 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
   WeaponState _buildInitialState(WeaponFileModel weapon, TranslationWeaponFile translation) {
     final charImgs = _genshinService.getCharacterImgsUsingWeapon(weapon.key);
     return WeaponState.loaded(
+      key: weapon.key,
       name: translation.name,
       weaponType: weapon.type,
       fullImage: weapon.fullImagePath,
@@ -63,6 +81,7 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
       secondaryStatValue: weapon.secondaryStatValue,
       description: translation.description,
       locationType: weapon.location,
+      isInInventory: _dataService.isItemInInventory(weapon.key, ItemType.weapon),
       ascensionMaterials: weapon.ascensionMaterials,
       refinements: weapon.refinements.map(
         (e) {

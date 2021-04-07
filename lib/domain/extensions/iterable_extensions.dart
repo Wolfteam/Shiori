@@ -10,3 +10,24 @@ extension IterableExtensions<E> on Iterable<E> {
     forEach((e) => f(e, i++));
   }
 }
+
+extension ListExtensions<E> on List<E> {
+  /// Moves the item in the [oldIndex] to the [newIndex]
+  List<E> moveTo(int oldIndex, int newIndex) {
+    final updatedItems = <E>[];
+    final item = elementAt(oldIndex);
+    for (int i = 0; i < length; i++) {
+      if (i == oldIndex) {
+        continue;
+      }
+
+      final item = this[i];
+      updatedItems.add(item);
+    }
+
+    final indexToUse = newIndex >= length ? length - 1 : newIndex;
+    updatedItems.insert(indexToUse, item);
+
+    return updatedItems;
+  }
+}

@@ -9,7 +9,9 @@ import 'package:genshindb/presentation/shared/loading.dart';
 import '../../character/widgets/character_detail.dart';
 
 class CharacterDetailTop extends StatelessWidget {
-  const CharacterDetailTop({Key key}) : super(key: key);
+  const CharacterDetailTop({
+    Key key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -73,12 +75,32 @@ class CharacterDetailTop extends StatelessWidget {
                 top: 0.0,
                 left: 0.0,
                 right: 0.0,
-                child: AppBar(backgroundColor: Colors.transparent, elevation: 0.0),
+                child: AppBar(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0.0,
+                  actions: [
+                    BlocBuilder<CharacterBloc, CharacterState>(
+                      builder: (ctx, state) => state.map(
+                        loading: (_) => const Loading(useScaffold: false),
+                        loaded: (state) => IconButton(
+                          icon: Icon(state.isInInventory ? Icons.favorite : Icons.favorite_border),
+                          color: Colors.red,
+                          onPressed: () => _favoriteCharacter(state.key, state.isInInventory, context),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  void _favoriteCharacter(String key, bool isInInventory, BuildContext context) {
+    final event = !isInInventory ? InventoryEvent.addCharacter(key: key) : InventoryEvent.deleteCharacter(key: key);
+    context.read<InventoryBloc>().add(event);
   }
 }

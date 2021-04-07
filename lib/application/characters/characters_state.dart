@@ -3,6 +3,7 @@ part of 'characters_bloc.dart';
 @freezed
 abstract class CharactersState with _$CharactersState {
   const factory CharactersState.loading() = _LoadingState;
+
   const factory CharactersState.loaded({
     @required List<CharacterCardModel> characters,
     String search,
@@ -21,5 +22,6 @@ abstract class CharactersState with _$CharactersState {
     @required SortDirectionType tempSortDirectionType,
     @required CharacterRoleType roleType,
     @required CharacterRoleType tempRoleType,
+    @Default(<String>[]) List<String> excludeKeys,
   }) = _LoadedState;
 }

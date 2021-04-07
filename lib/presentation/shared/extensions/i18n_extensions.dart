@@ -24,6 +24,8 @@ extension I18nExtensions on S {
         return '$russian ($partial)';
       case AppLanguageType.simplifiedChinese:
         return '$simplifiedChinese ($partial)';
+      case AppLanguageType.portuguese:
+        return '$portuguese ($partial)';
       default:
         throw Exception('The provided app lang = $lang is not valid');
     }
@@ -359,6 +361,8 @@ extension I18nExtensions on S {
         return name;
       case MaterialFilterType.rarity:
         return rarity;
+      case MaterialFilterType.grouped:
+        return grouped;
       default:
         throw Exception('Invalid material filter type = $type');
     }
@@ -392,6 +396,40 @@ extension I18nExtensions on S {
         return experience;
       default:
         throw Exception('Invalid material type = $type');
+    }
+  }
+
+  String translateMonsterType(MonsterType type) {
+    switch (type) {
+      case MonsterType.all:
+        return all;
+      case MonsterType.abyssOrder:
+        return abyssOrder;
+      case MonsterType.elementalLifeForm:
+        return elementalLifeForm;
+      case MonsterType.human:
+        return human;
+      case MonsterType.magicalBeast:
+        return magicalBeast;
+      case MonsterType.boss:
+        return boss;
+      case MonsterType.hilichurl:
+        return hilichurl;
+      case MonsterType.fatui:
+        return fatui;
+      case MonsterType.automaton:
+        return automaton;
+      default:
+        throw Exception('Invalid monster type = $type');
+    }
+  }
+
+  String translateMonsterFilterType(MonsterFilterType type) {
+    switch (type) {
+      case MonsterFilterType.name:
+        return name;
+      default:
+        throw Exception('Invalid monster filter type = $type');
     }
   }
 }
