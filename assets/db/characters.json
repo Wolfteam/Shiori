@@ -15087,9 +15087,10 @@
           "isSupport": false,
           "weaponImages": [
             "staff_of_homa.png",
+            "vortex_vanquisher.png",
+            "skyward_spine.png",
             "blackcliff_pole.png",
-            "primordial_jade_winged_spear.png",
-            "white_tassel.png"
+            "crescent_pike.png"
           ],
           "artifacts": [
             {
@@ -15105,20 +15106,19 @@
             }
           ],
           "subStatsToFocus": [
-            "critRatePercentage",
             "critDmgPercentage",
             "atkPercentage",
-            "energyRechargePercentage",
-            "elementaryMastery"
+            "critRatePercentage",
+            "energyRechargePercentage"
           ]
         },
         {
           "isSupport": false,
           "weaponImages": [
-            "crescent_pike.png",
-            "dragonspine_spear.png",
             "staff_of_homa.png",
-            "blackcliff_pole.png"
+            "primordial_jade_winged_spear.png",
+            "crescent_pike.png",
+            "dragonspine_spear.png"
           ],
           "artifacts": [
             {
@@ -15137,21 +15137,29 @@
             "critRatePercentage",
             "critDmgPercentage",
             "atkPercentage",
-            "energyRechargePercentage",
-            "elementaryMastery"
+            "energyRechargePercentage"
           ]
         },
         {
           "isSupport": true,
           "weaponImages": [
+            "staff_of_homa.png",
+            "primordial_jade_winged_spear.png",
             "skyward_spine.png",
-            "favonius_lance.png",
-            "primordial_jade_winged_spear.png"
+            "favonius_lance.png"
           ],
           "artifacts": [
             {
-              "one": "noblesse_oblige_4.png",
-              "multiples": [],
+              "multiples": [
+                {
+                  "quantity": 2,
+                  "image": "blizzard_walker_4.png"
+                },
+                {
+                  "quantity": 2,
+                  "image": "noblesse_oblige_4.png"
+                }
+              ],
               "stats": [
                 "hp",
                 "atk",
@@ -15165,8 +15173,7 @@
             "critRatePercentage",
             "critDmgPercentage",
             "atkPercentage",
-            "energyRechargePercentage",
-            "elementaryMastery"
+            "energyRechargePercentage"
           ]
         }
       ],
