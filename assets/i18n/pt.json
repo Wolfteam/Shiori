@@ -4735,6 +4735,12 @@
       "name": "Elegia do Suspiro Final",
       "description": "Um arco tão adorável quanto a lira de qualquer bardo, suas flechas perfuram o coração como um suspiro lamentável.",
       "refinement": "Uma parte do Concerto Milenar que flutua no vento. Aumenta a Proficiência Elemental em {{0}} pontos. Quando a Habilidade Elemental ou o Supremo atingir os inimigos, o personagem obterá um Símbolo das Lembranças, que pode ser ativado uma vez a cada 0.2s, mesmo quando o personagem não está no campo de batalha. Possuir 4 Símbolos das Lembranças faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música da Despedida\" por 12s: A Proficiência Elemental será aumentada em {{1}} pontos, entretanto o ATQ será aumentado em {{2}}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos das Lembranças de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+    },
+    {
+      "key": "Song of Broken Pines",
+      "name": "Song of Broken Pines",
+      "description": "A greatsword as light as the sigh of grass in the breeze, yet as merciless to the corrupt as a typhoon.",
+      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {{0}}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
     }
   ],
   "artifacts": [

@@ -4736,6 +4736,12 @@
       "name": "Элегия погибели",
       "description": "В изящности этот лук не уступает лире барда. Словно вздох печали, выпущенные из него стрелы разят точно в сердце.",
       "refinement": "С ветром доносится мотив Тысячелетней симфонии, которая увеличивает мастерство стихий на {{0}} ед. При попадании элементальным навыком или взрывом стихии по противнику персонаж получает один Талисман воспоминаний. Он может возникнуть раз в 0.2 сек., даже когда персонаж в отряде, но не активен. Четыре собранных Талисмана воспоминаний пропадают, на 12 сек. наделяя ближайших членов отряда эффектом Тысячелетняя симфония: Прощальный гимн. Их мастерство стихии повышается на {{1}} ед., а сила атаки - на {{2}}%. В течение 20 сек. после активации эффекта Талисманы воспоминаний появляться не будут. Тысячелетняя симфония с эффектами, влияющими на те же навыки, не складывается."
+    },
+    {
+      "key": "Song of Broken Pines",
+      "name": "Song of Broken Pines",
+      "description": "A greatsword as light as the sigh of grass in the breeze, yet as merciless to the corrupt as a typhoon.",
+      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {{0}}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
     }
   ],
   "artifacts": [
