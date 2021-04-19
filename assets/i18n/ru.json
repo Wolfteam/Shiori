@@ -979,6 +979,121 @@
       ]
     },
     {
+      "key": "Eula",
+      "name": "Eula",
+      "description": "The Spindrift Knight, a scion of the old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Favonius Bladework - Edel",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Perform up to 5 consecutive strikes.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": " Drains Stamina over time to perform continuous slashes.\nAt the end of the sequence, perform a more powerful slash.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Icetide Vortex",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Slashes swiftly, dealing Cryo DMG.\nWhen it hits an opponent, Eula gains a stack of Grimheart that stacks up to 2 times. These stacks can only be gained once every 0.3s.",
+              "descriptions": []
+            },
+            {
+              "name": "Grimheart",
+              "description": "Increases Eula's resistance to interruption and DEF.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Wielding her sword, Eula consumes all the stacks of Grimheart and lashes forward, dealing AoE Cryo DMG to opponents in front of her.\nIf Grimheart stacks are consumed, surrounding opponents will have their Physical RES and Cryo RES decreased.\nEach consumed stack of Grimheart will be converted into an Icewhirl Brand that deals Cryo DMG to nearby opponents.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Glacial Illumination",
+          "description": "Brandishes her greatsword, dealing Cryo DMG to nearby opponents and creating a Lightfall Sword that follows her around for a duration of up to 7s.\nWhile present, the Lightfall Sword increases Eula's resistance to interruption. When Eula's own Normal Attack, Elemental Skill, and Elemental Burst deal DMG to opponents, they will charge the Lightfall Sword, which can gain an energy stack once every 0.1s.\nOnce its duration ends, the Lightfall Sword will descend and explode violently, dealing Physical DMG to nearby opponents.\nThis DMG scales on the number of energy stacks the Lightfall Sword has accumulated.\nIf Eula leaves the field, the Lightfall Sword will explode immediately.",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Aristocratic Introspection",
+          "description": "When Eula crafts Character Talent Materials, she has a 10% chance to receive double the product.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Roiling Rime",
+          "description": "If 2 stacks of Grimheart are consumed upon unleashing the Holding Mode of Icetide Vortex, a Shattered Lightfall Sword will be created that will explode immediately, dealing 50% of the basic Physical DMG dealt by a Lightfall Sword created by Glacial Illumination.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Wellspring of War-Lust",
+          "description": "When Glacial Illumination is cast, the CD of Icetide Vortex is reset and Eula gains 1 stack of Grimheart.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Tidal Illusion",
+          "description": "Every time Icetide Vortex's Grimheart stacks are consumed, Eula's Physical DMG is increased by 30% for 6s.\nEach stack consumed will increase the duration of this effect by 6s up to a maximum of 18s.",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Lady of Seafoam",
+          "description": "#Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to {LAYOUT_MOBILE#Tapping}{LAYOUT_PC#Press}{LAYOUT_PS#Press} CD.",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Lawrence Pedigree",
+          "description": "Increases the Level of Glacial Illumination by 3.\nMaximum upgrade level is 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "The Obstinacy of One's Inferiors",
+          "description": "Lightfall Swords deal 25% increased DMG against opponents with less than 50% HP.",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Chivalric Quality",
+          "description": "Increases the Level of Icetide Vortex by 3.\nMaximum upgrade level is 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Noble Obligation",
+          "description": "Lightfall Swords created by Glacial Illumination start with 5 stacks of energy. Normal Attacks, Elemental Skills, and Elemental Bursts have a 50% chance to grant the Lightfall Sword an additional stack of energy.",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "Fischl",
       "name": "Фишль",
       "description": "Таинственная девушка, называющая себя «Принцессой осуждения» и путешествующая в сопровождении ворона по имени Оз.",
@@ -3711,6 +3826,118 @@
       ]
     },
     {
+      "key": "Yanfei",
+      "name": "Yanfei",
+      "description": "A well-known legal adviser active in Liyue Harbor. A brilliant young lady in whose veins runs the blood of an illuminated beast.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Seal of Approval",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Shoots fireballs that deal up to three counts of Pyro DMG.\nWhen Yanfei's Normal Attacks hit enemies, they will grant her a single Scarlet Seal. Yanfei may possess a maximum of 3 Scarlet Seals, and each time this effect is triggered, the duration of currently possessed Scarlet Seals will refresh.\nEach Scarlet Seal will decrease Yanfei's Stamina consumption and will disappear when she leaves the field.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Consumes Stamina and all Scarlet Seals before dealing AoE Pyro DMG to opponents after a short casting time.\nThis Charged Attack's AoE and DMG will increase according to the amount of Scarlet Seals consumed.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Signed Edict",
+          "description": "Summons blistering flames that deal AoE Pyro DMG.\nOpponents hit by the flames will grant Yanfei the maximum number of Scarlet Seals.",
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "Done Deal",
+          "description": "Triggers a spray of intense flames that rush at nearby opponents, dealing AoE Pyro DMG, granting Yanfei the maximum number of Scarlet Seals, and applying Brilliance to her.",
+          "abilities": [
+            {
+              "name": "Brilliance",
+              "description": "Has the following effects:",
+              "descriptions": [
+                "Grants Yanfei a Scarlet Seal at fixed intervals.",
+                "Increases the DMG dealt by her Charged Attacks.",
+                "The effects of Brilliance will end if Yanfei leaves the field or falls in battle."
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Encyclopedic Expertise",
+          "description": "Displays the location of nearby resources unique to Liyue on the mini-map.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Proviso",
+          "description": "When Yanfei consumes Scarlet Seals by using a Charged Attack, each Scarlet Seal will increase Yanfei's Pyro DMG Bonus by 5%. This effects lasts for 6s. When a Charged Attack is used again during the effect's duration, it will dispel the previous effect.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Blazing Eye",
+          "description": "When Yanfei's Charged Attack deals a CRIT Hit to opponents, she will deal an additional instance of AoE Pyro DMG equal to 80% of her ATK. This DMG counts as Charged Attack DMG.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "The Law Knows No Kindness",
+          "description": "When Yanfei uses her Charged Attack, each existing Scarlet Seal additionally reduces the stamina cost of this Charged Attack by 10% and increases resistance against interruption during its release.",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Right of Final Interpretation",
+          "description": "Increases Yanfei's Charged Attack CRIT Rate by 20% against enemies below 50% HP.",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Samadhi Fire-Forged",
+          "description": "Increases the Level of Signed Edict by 3.\nMaximum upgrade level is 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Supreme Amnesty",
+          "description": "When Done Deal is used:",
+          "descriptions": [
+            "Creates a shield that absorbs up to 45% of Yanfei's Max HP for 15s",
+            "This shield absorbs Pyro DMG 250% more effectively."
+          ]
+        },
+        {
+          "key": "c5",
+          "title": "Abiding Affidavit",
+          "description": "Increases the Level of Done Deal by 3.\nMaximum upgrade level is 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Extra Clause",
+          "description": "Increases the maximum number of Scarlet Seals by 1.",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "Zhongli",
       "name": "Чжун Ли",
       "description": "Приглашенный специалист ритуального бюро «Ваншэнэ».\nНеобычайно загадочен и сведущ во всех делах.",
@@ -5814,6 +6041,31 @@
       "key": "Primogem",
       "name": "Камень Истока",
       "description": "Древний драгоценный кристалл из-за пределов обычного мира. Источает блеск несбывшихся надежд и желаний вселенной."
+    },
+    {
+      "key": "Crystalline Bloom",
+      "name": "Crystalline Bloom",
+      "description": "An ice crystal of exceeding purity that is created in the frigid blooming of a Cryo Hypostasis.\nThese frosty crystals will continue to grow according to their own cold, rigid laws, till one day a flower of winter shall bloom and freeze everything. Perhaps it is stagnant time, that never-thawing bosom, that is the essence of this undying flower."
+    },
+    {
+      "key": "Dream Solvent",
+      "name": "Dream Solvent",
+      "description": "An item capable of changing Character Level-Up Materials obtained from memories and trials into whatever form is needed.\nPeople once believed that spirits and memories had some material form. If someone dreamed of heaven before waking up clutching a flower, then that blossom must have been made from such a fantasy. Dream Solvent dissolves that which is obtained from memory and transforms it into some other dream.\nIndeed, blows traded with the strong are stepping stones towards becoming stronger yourself."
+    },
+    {
+      "key": "Dragon Lord's Crown",
+      "name": "Dragon Lord's Crown",
+      "description": "Horns created from hardened jade crystallized over a thousand years are the natural crown of the dragon king.\nInfused with spirit and carved from bedrock, it was born from the mountain's heart to show the strength of the earth to the land amidst monoliths, and its long golden horns are the mark of its ancient strife with an ancient lord.\nFor a time, this horn was shattered and lost its luster, but now it gleams cold and gold as it sits in your palm."
+    },
+    {
+      "key": "Bloodjade Branch",
+      "name": "Bloodjade Branch",
+      "description": "Nurtured by the might of the dragon king, these bone branches glitter with strange, unique colors.\nHatred coursed through the natural streams and kissed the cold moonlight, and from them were these crystalline branches born and grown...\nEven though they were severed in battle, these branches steeped in dragon blood rustle as if eternally ill-at-ease."
+    },
+    {
+      "key": "Gilded Scale",
+      "name": "Gilded Scale",
+      "description": "Scaled armor that grows naturally over mystical stone, tough and silent, and filled with the strength of the dragon king.\nAcross the years as countless generations returned to the mulch of the earth, gold and obsidian embedded themselves into flesh and blood forged from bedrock before spreading and turning into scales.\nSearing agony, wordless cries... perhaps they will all vanish when the grudges that spawned them, too, finally come to an end."
     }
   ],
   "debuffs": [
@@ -5926,11 +6178,11 @@
   "monsters": [
     {
       "key": "Abyss Herald: Wicked Torrents",
-      "name": "Abyss Herald: Wicked Torrents"
+      "name": "Вестник Бездны: Злые течения"
     },
     {
       "key": "Abyss Lector: Violet Lightning",
-      "name": "Abyss Lector: Violet Lightning"
+      "name": "Чтец Бездны: Violet Lightning"
     },
     {
       "key": "Anemo Hypostasis",
@@ -5946,7 +6198,7 @@
     },
     {
       "key": "Azhdaha",
-      "name": "Azhdaha"
+      "name": "Аждаха"
     },
     {
       "key": "Blazing Axe Mitachurl",
@@ -6118,11 +6370,11 @@
     },
     {
       "key": "Ice Shield Hilichurl Guard",
-      "name": "Ice Shield Hilichurl Guard"
+      "name": "Хиличурл с ледяным щитом"
     },
     {
       "key": "Ice Shieldwall Mitachurl",
-      "name": "Ice Shieldwall Mitachurl"
+      "name": "Митачурл с ледяным щитом"
     },
     {
       "key": "Large Anemo Slime",
@@ -6158,11 +6410,11 @@
     },
     {
       "key": "Millelith Sergeant",
-      "name": "Millelith Sergeant"
+      "name": "Миллелит сержант"
     },
     {
       "key": "Millelith Soldier",
-      "name": "Millelith Soldier"
+      "name": "Миллелит воин"
     },
     {
       "key": "Mutant Electro Slime",
@@ -6226,11 +6478,11 @@
     },
     {
       "key": "Treasure Hoarders - Boss",
-      "name": "Treasure Hoarders - Boss"
+      "name": "Похитители сокровищ - босс"
     },
     {
       "key": "Treasure Hoarders - Carmen",
-      "name": "Treasure Hoarders - Carmen"
+      "name": "Похитители сокровищ - Кармен"
     },
     {
       "key": "Treasure Hoarders - Crusher",
@@ -6238,7 +6490,7 @@
     },
     {
       "key": "Treasure Hoarders - Liuliu",
-      "name": "Treasure Hoarders - Liuliu"
+      "name": "Похитители сокровищ - Liuliu"
     },
     {
       "key": "Treasure Hoarders - Marksman",
@@ -6250,7 +6502,7 @@
     },
     {
       "key": "Treasure Hoarders - Raptor",
-      "name": "Treasure Hoarders - Raptor"
+      "name": "Похитители сокровищ - Раптор"
     },
     {
       "key": "Treasure Hoarders - Scout",
