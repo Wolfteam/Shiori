@@ -1,3 +1,4 @@
+import 'package:darq/darq.dart';
 import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/assets.dart';
 import 'package:genshindb/domain/enums/enums.dart';
@@ -9,12 +10,16 @@ import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/calculator_service.dart';
 import 'package:genshindb/domain/services/data_service.dart';
 import 'package:genshindb/domain/services/genshin_service.dart';
+import 'package:genshindb/domain/services/locale_service.dart';
+import 'package:genshindb/domain/utils/date_utils.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class DataServiceImpl implements DataService {
   final GenshinService _genshinService;
   final CalculatorService _calculatorService;
+  final LocaleService _localeService;
+
   Box<CalculatorSession> _sessionBox;
   Box<CalculatorItem> _calcItemBox;
   Box<CalculatorCharacterSkill> _calcItemSkillBox;
@@ -22,8 +27,9 @@ class DataServiceImpl implements DataService {
   Box<InventoryUsedItem> _inventoryUsedItemsBox;
   Box<UsedGameCode> _usedGameCodesBox;
   Box<TierListItem> _tierListBox;
+  Box<Notification> _notificationsBox;
 
-  DataServiceImpl(this._genshinService, this._calculatorService);
+  DataServiceImpl(this._genshinService, this._calculatorService, this._localeService);
 
   Future<void> init() async {
     await Hive.initFlutter();
@@ -35,6 +41,7 @@ class DataServiceImpl implements DataService {
     _inventoryUsedItemsBox = await Hive.openBox<InventoryUsedItem>('inventoryUsedItems');
     _usedGameCodesBox = await Hive.openBox<UsedGameCode>('usedGameCodes');
     _tierListBox = await Hive.openBox<TierListItem>('tierList');
+    _notificationsBox = await Hive.openBox<Notification>('notifications');
   }
 
   @override
@@ -397,6 +404,58 @@ class DataServiceImpl implements DataService {
     await _tierListBox.deleteAll(keys);
   }
 
+  @override
+  List<NotificationItem> getAllNotifications() {
+    return _notificationsBox.values.map((e) => _mapToNotificationItem(e)).orderBy((el) => el.createdAt).toList();
+  }
+
+  @override
+  NotificationItem getNotification(int key) {
+    final item = _notificationsBox.values.firstWhere((el) => el.key == key);
+    return _mapToNotificationItem(item);
+  }
+
+  @override
+  Future<void> saveNotification(NotificationItem item) async {
+    final now = DateTime.now();
+    switch (item.type) {
+      case AppNotificationType.resin:
+        final diff = maxResinValue - item.currentResinValue;
+        return _notificationsBox.add(Notification.resin(
+          notificationId: item.notificationId,
+          type: item.type,
+          image: Assets.getCurrencyMaterialPath('fragile_resin.png'),
+          createdAt: now,
+          completesAt: now.add(Duration(minutes: diff * resinRefillsEach)),
+          showNotification: item.showNotification,
+          currentResinValue: item.currentResinValue,
+          note: item.note,
+        ));
+      case AppNotificationType.expedition:
+        return _notificationsBox.add(Notification.expedition(
+          notificationId: item.notificationId,
+          type: item.type,
+          image: Assets.getMaterialPathFromExpeditionType(item.expeditionType),
+          createdAt: now,
+          completesAt: now.add(getExpeditionDuration(item.expeditionTimeType)),
+          showNotification: item.showNotification,
+          withTimeReduction: item.withTimeReduction,
+          expeditionTimeType: item.expeditionTimeType,
+          expeditionType: item.expeditionType,
+          note: item.note,
+        ));
+      case AppNotificationType.item:
+        break;
+      default:
+        throw Exception('The provided notification type = ${item.type} is not valid');
+    }
+  }
+
+  @override
+  Future<void> deleteNotification(int key) {
+    return _notificationsBox.delete(key);
+  }
+
   void _registerAdapters() {
     Hive.registerAdapter(CalculatorCharacterSkillAdapter());
     Hive.registerAdapter(CalculatorItemAdapter());
@@ -405,6 +464,7 @@ class DataServiceImpl implements DataService {
     Hive.registerAdapter(InventoryUsedItemAdapter());
     Hive.registerAdapter(UsedGameCodeAdapter());
     Hive.registerAdapter(TierListItemAdapter());
+    Hive.registerAdapter(NotificationAdapter());
   }
 
   ItemAscensionMaterials _buildForCharacter(CalculatorItem item, {int calculatorItemKey, bool includeInventory = false}) {
@@ -570,6 +630,47 @@ class DataServiceImpl implements DataService {
     await _inventoryUsedItemsBox.deleteAll(usedItems);
     if (redistribute) {
       await redistributeAllInventoryMaterials();
+    }
+  }
+
+  NotificationItem _mapToNotificationItem(Notification e) {
+    final now = DateTime.now();
+    final remaining = e.completesAt.difference(now);
+    final locale = _localeService.getLocaleWithoutLang();
+    switch (e.type) {
+      case AppNotificationType.resin:
+        return NotificationItem.resin(
+          key: e.key as int,
+          type: e.type,
+          showNotification: e.showNotification,
+          createdAt: DateUtils.formatDate(e.createdAt, locale.code),
+          completesAt: DateUtils.formatDate(e.completesAt, locale.code),
+          notificationId: e.notificationId,
+          image: e.image,
+          note: e.note,
+          remaining: remaining,
+          currentResinValue: e.currentResinValue,
+        );
+      case AppNotificationType.expedition:
+        return NotificationItem.expedition(
+          key: e.key as int,
+          type: e.type,
+          showNotification: e.showNotification,
+          createdAt: DateUtils.formatDate(e.createdAt, locale.code),
+          completesAt: DateUtils.formatDate(e.completesAt, locale.code),
+          notificationId: e.notificationId,
+          image: e.image,
+          note: e.note,
+          remaining: remaining,
+          expeditionType: e.expeditionType,
+          expeditionTimeType: e.expeditionTimeType,
+          withTimeReduction: e.withTimeReduction,
+        );
+      case AppNotificationType.item:
+      // TODO: Handle this case.
+      //   break;
+      default:
+        throw Exception('Invalid notification type = ${e.type}');
     }
   }
 }
