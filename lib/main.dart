@@ -210,6 +210,18 @@ class MyApp extends StatelessWidget {
             return MonstersBloc(genshinService);
           },
         ),
+        BlocProvider(
+          create: (ctx) {
+            final dataService = getIt<DataService>();
+            return NotificationsBloc(dataService);
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final dataService = getIt<DataService>();
+            return NotificationBloc(dataService);
+          },
+        ),
       ],
       child: BlocBuilder<MainBloc, MainState>(
         builder: (ctx, state) => AppWidget(),

@@ -432,4 +432,45 @@ extension I18nExtensions on S {
         throw Exception('Invalid monster filter type = $type');
     }
   }
+
+  String translateAppNotificationType(AppNotificationType type) {
+    switch (type) {
+      case AppNotificationType.resin:
+        return resin;
+      case AppNotificationType.expedition:
+        return expedition;
+      case AppNotificationType.item:
+        return 'Item';
+      default:
+        throw Exception('Invalid app notification type = $type');
+    }
+  }
+
+  String translateExpeditionType(ExpeditionType type) {
+    switch (type) {
+      case ExpeditionType.mora:
+        return 'Mora';
+      case ExpeditionType.ingredient:
+        return ingredient;
+      case ExpeditionType.material:
+        return materials;
+      default:
+        throw Exception('Invalid expedition type = $type');
+    }
+  }
+
+  String translateExpeditionTimeType(ExpeditionTimeType type) {
+    switch (type) {
+      case ExpeditionTimeType.fourHours:
+        return xHours(4);
+      case ExpeditionTimeType.eightHours:
+        return xHours(8);
+      case ExpeditionTimeType.twelveHours:
+        return xHours(12);
+      case ExpeditionTimeType.twentyHours:
+        return xHours(20);
+      default:
+        throw Exception('Invalid expedition time type = $type');
+    }
+  }
 }

@@ -290,5 +290,12 @@
   "automaton": "Automaton",
   "droppedBy": "Dropped by",
   "pressOnceAgainToExit": "Press once again to exit",
-  "discordServer": "Discord Server"
+  "discordServer": "Discord Server",
+  "notificationType": "Notification Type",
+  "addNotification": "Add Notification",
+  "editNotification": "Edit Notification",
+  "xHours": "{value} hrs",
+  "showNotification": "Show notification",
+  "expedition": "Expedition",
+  "resin": "Resin"
 }

@@ -33,7 +33,7 @@ Future<void> initInjection() async {
   getIt.registerSingleton<GenshinService>(GenshinServiceImpl(getIt<LocaleService>()));
   getIt.registerSingleton<CalculatorService>(CalculatorServiceImpl(getIt<GenshinService>()));
 
-  final dataService = DataServiceImpl(getIt<GenshinService>(), getIt<CalculatorService>());
+  final dataService = DataServiceImpl(getIt<GenshinService>(), getIt<CalculatorService>(), getIt<LocaleService>());
   await dataService.init();
   getIt.registerSingleton<DataService>(dataService);
 }
