@@ -1,9 +1,9 @@
-//This order matches the one in the game, and the numbers represent each image
 import 'package:darq/darq.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 
 import 'models/models.dart';
 
+//This order matches the one in the game, and the numbers represent each image
 const artifactOrder = [4, 2, 5, 1, 3];
 
 const languagesMap = {
@@ -20,6 +20,10 @@ const int minAscensionLevel = 1;
 const int maxAscensionLevel = 6;
 const int minItemLevel = 1;
 const int maxItemLevel = 90;
+
+const minResinValue = 0;
+const maxResinValue = 160;
+const resinRefillsEach = 8;
 
 //key = ascension level
 //value = item level
@@ -284,4 +288,19 @@ List<MaterialCardModel> sortMaterialsByGrouping(List<MaterialCardModel> data, So
       local.orderByDescending((el) => el.rarity).toList() +
       currency.orderByDescending((el) => el.rarity).toList() +
       ingredients.orderByDescending((el) => el.rarity).toList();
+}
+
+Duration getExpeditionDuration(ExpeditionTimeType type) {
+  switch (type) {
+    case ExpeditionTimeType.fourHours:
+      return const Duration(hours: 4);
+    case ExpeditionTimeType.eightHours:
+      return const Duration(hours: 8);
+    case ExpeditionTimeType.twelveHours:
+      return const Duration(hours: 12);
+    case ExpeditionTimeType.twentyHours:
+      return const Duration(hours: 20);
+    default:
+      throw Exception('The provided expedition time type = $type is not valid');
+  }
 }

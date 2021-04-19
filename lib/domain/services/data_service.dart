@@ -69,4 +69,12 @@ abstract class DataService {
   Future<void> saveTierList(List<TierListRowModel> tierList);
 
   Future<void> deleteTierList();
+
+  List<NotificationItem> getAllNotifications();
+
+  NotificationItem getNotification(int key);
+
+  Future<void> saveNotification(NotificationItem item);
+
+  Future<void> deleteNotification(int key);
 }

@@ -1,3 +1,4 @@
+export '';
 export 'artifacts/artifact_card_model.dart';
 export 'calculator_asc_materials/ascension_materials_summary.dart';
 export 'calculator_asc_materials/calculator_session_model.dart';
@@ -41,6 +42,7 @@ export 'items/item_experience_model.dart';
 export 'language_model.dart';
 export 'materials/material_card_model.dart';
 export 'monsters/monster_card_model.dart';
+export 'notifications/notification_item.dart';
 export 'settings/app_settings.dart';
 export 'tierlist/tierlist_row_model.dart';
 export 'weapons/weapon_card_model.dart';

@@ -188,4 +188,17 @@ class Assets {
         throw Exception('Invalid artifact type = $type');
     }
   }
+
+  static String getMaterialPathFromExpeditionType(ExpeditionType type) {
+    switch (type) {
+      case ExpeditionType.mora:
+        return getCurrencyMaterialPath('mora.png');
+      case ExpeditionType.ingredient:
+        return getIngredientMaterialPath('fowl.png');
+      case ExpeditionType.material:
+        return getIngredientMaterialPath('crystal_chunk.png');
+      default:
+        throw Exception('Invalid expedition type = $type');
+    }
+  }
 }
