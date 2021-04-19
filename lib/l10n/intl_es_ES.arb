@@ -290,5 +290,7 @@
   "automaton": "Automata",
   "droppedBy": "Dejado por",
   "pressOnceAgainToExit": "Presiona una vez más para salir",
-  "discordServer": "Servidor de Discord"
+  "discordServer": "Servidor de Discord",
+  "usedItem": "Item usado",
+  "itemIsBeingUsedOnACalculation": "Este item está siendo usado en una o mas sesiones de la calculadora.\nLa cantidad usada es {quantity}"
 }

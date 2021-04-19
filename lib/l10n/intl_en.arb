@@ -290,5 +290,7 @@
   "automaton": "Automaton",
   "droppedBy": "Dropped by",
   "pressOnceAgainToExit": "Press once again to exit",
-  "discordServer": "Discord Server"
+  "discordServer": "Discord Server",
+  "usedItem": "Used item",
+  "itemIsBeingUsedOnACalculation": "This item is being used in one or more calculator sessions.\nThe used quantity is {quantity}"
 }
