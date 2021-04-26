@@ -4650,7 +4650,7 @@
       "key": "Crescent Pike",
       "name": "Crescent Pike",
       "description": "An exotic weapon with an extremely long blade on the top and a crescent blade at the bottom. It found its way into Liyue through foreign traders. With practice, it can deal heavy damage.",
-      "refinement": "After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal an additional {{0}}% ATK DMG for 5s."
+      "refinement": "After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal additional DMG equal to {{0}}% of ATK for 5s."
     },
     {
       "key": "Deathmatch",

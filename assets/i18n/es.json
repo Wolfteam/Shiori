@@ -981,114 +981,114 @@
     {
       "key": "Eula",
       "name": "Eula",
-      "description": "The Spindrift Knight, a scion of the old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
+      "description": "La Caballera de la Marea, procedente de una familia con un gran linaje y Capitana del Equipo de Reconocimiento de los Caballeros de Favonius. Aunque es descendiente de la antigua aristocracia, se unió a los Caballeros de Favonius, sus archienemigos, algo que sigue siendo un gran enigma para todo Mondstadt hasta hoy en día.",
       "skills": [
         {
           "key": "s1",
-          "title": "Favonius Bladework - Edel",
+          "title": "Técnica de espada Favonius - Nobleza",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 5 consecutive strikes.",
+              "description": "Realiza hasta 5 ataques consecutivos.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": " Drains Stamina over time to perform continuous slashes.\nAt the end of the sequence, perform a more powerful slash.",
+              "description": "Consume Aguante de manera constante para realizar golpes de espada continuos.\nCuando termina el Ataque Cargado, hará un golpe aún más poderoso.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Icetide Vortex",
+          "title": "Vórtice helado",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Slashes swiftly, dealing Cryo DMG.\nWhen it hits an opponent, Eula gains a stack of Grimheart that stacks up to 2 times. These stacks can only be gained once every 0.3s.",
+              "description": "Realiza un rápido tajo que inflige Daño Cryo.\n Al golpear a un enemigo, Eula obtiene una carga del efecto corazón impasible, el cual puede acumularse un máximo de 2 veces y obtenerse solo 1 vez cada 0.3 s.",
               "descriptions": []
             },
             {
-              "name": "Grimheart",
-              "description": "Increases Eula's resistance to interruption and DEF.",
+              "name": "Corazón impasible",
+              "description": "Aumenta la RES a interrupción y la DEF de Eula.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Wielding her sword, Eula consumes all the stacks of Grimheart and lashes forward, dealing AoE Cryo DMG to opponents in front of her.\nIf Grimheart stacks are consumed, surrounding opponents will have their Physical RES and Cryo RES decreased.\nEach consumed stack of Grimheart will be converted into an Icewhirl Brand that deals Cryo DMG to nearby opponents.",
+              "description": "Consume todas las cargas de corazón impasible y realiza un tajo de espada hacia delante, infligiendo Daño Cryo en el AdE a todos los enemigos frente a Eula.\n Al consumirse este efecto, la RES Física y la RES Cryo de los enemigos cercanos se reducirá.\n Cada carga de corazón impasible consumida se convertirá en una crioespada de vacío que inflige Daño Cryo a los enemigos cercanos.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Glacial Illumination",
-          "description": "Brandishes her greatsword, dealing Cryo DMG to nearby opponents and creating a Lightfall Sword that follows her around for a duration of up to 7s.\nWhile present, the Lightfall Sword increases Eula's resistance to interruption. When Eula's own Normal Attack, Elemental Skill, and Elemental Burst deal DMG to opponents, they will charge the Lightfall Sword, which can gain an energy stack once every 0.1s.\nOnce its duration ends, the Lightfall Sword will descend and explode violently, dealing Physical DMG to nearby opponents.\nThis DMG scales on the number of energy stacks the Lightfall Sword has accumulated.\nIf Eula leaves the field, the Lightfall Sword will explode immediately.",
+          "title": "Fulgor glacial",
+          "description": "Blande ferozmente su gran espada para infligir Daño Cryo a los enemigos alrededor y crear una espada luminosa que sigue a Eula durante un máximo de 7 s.\nMientras dure, la espada luminosa aumentará la RES a interrupción de Eula e irá acumulando energía cuando inflija daño a los enemigos con sus propios Ataques Normales, su Habilidad Elemental o su Habilidad Definitiva. Solo se puede acumular una carga de energía cada 0.1 s.\nAl terminar su duración, la espada descenderá y estallará violentamente, infligiendo Daño Físico a los enemigos alrededor.\nEste daño aumentará en función de las cargas de energía acumuladas en la espada.\nCuando Eula se retire del combate, la espada luminosa estallará inmediatamente.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Aristocratic Introspection",
-          "description": "When Eula crafts Character Talent Materials, she has a 10% chance to receive double the product.",
+          "title": "Introspección aristocrática",
+          "description": "Al crear materiales de talento de personaje, hay una probabilidad del 10% de recibir el doble.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Roiling Rime",
-          "description": "If 2 stacks of Grimheart are consumed upon unleashing the Holding Mode of Icetide Vortex, a Shattered Lightfall Sword will be created that will explode immediately, dealing 50% of the basic Physical DMG dealt by a Lightfall Sword created by Glacial Illumination.",
+          "title": "Escarcha turbulenta",
+          "description": "Si, al mantener pulsado Vórtice helado, se consumen de una vez las 2 cargas de corazón impasible, se creará un fragmento de espada luminosa que estallará inmediatamente, infligiendo Daño Físico en una cantidad equivalente al 50% del daño básico de la espada luminosa de Fulgor glacial.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Wellspring of War-Lust",
-          "description": "When Glacial Illumination is cast, the CD of Icetide Vortex is reset and Eula gains 1 stack of Grimheart.",
+          "title": "Ansia de guerra",
+          "description": "Usar Fulgor glacial reinicia el TdE de Vórtice helado y otorga a Eula una carga de corazón impasible.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Tidal Illusion",
-          "description": "Every time Icetide Vortex's Grimheart stacks are consumed, Eula's Physical DMG is increased by 30% for 6s.\nEach stack consumed will increase the duration of this effect by 6s up to a maximum of 18s.",
+          "title": "Ilusión de la marea",
+          "description": "Tras consumir las cargas de corazón impasible de Vórtice helado, Eula obtiene un 30% de Bono de Daño Físico durante 6 s.\nCada vez que se consuma una carga de corazón impasible, este efecto se prolongará durante 6 s más hasta un máximo de 18 s.",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Lady of Seafoam",
-          "description": "#Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to {LAYOUT_MOBILE#Tapping}{LAYOUT_PC#Press}{LAYOUT_PS#Press} CD.",
+          "title": "Hija del mar",
+          "description": "Reduce el TdE de mantener pulsado Vórtice helado hasta ser el mismo que el de {LAYOUT_MOBILE#tocar una vez}{LAYOUT_PC#pulsar una vez}{LAYOUT_PS#pulsar una vez}.",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Lawrence Pedigree",
-          "description": "Increases the Level of Glacial Illumination by 3.\nMaximum upgrade level is 15.",
+          "title": "Sangre Lawrence",
+          "description": "Aumenta el nivel de habilidad de Fulgor glacial +3.\nPuede ser aumentado hasta Niv. 15.",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "The Obstinacy of One's Inferiors",
-          "description": "Lightfall Swords deal 25% increased DMG against opponents with less than 50% HP.",
+          "title": "Obstinación de los plebeyos",
+          "description": "Aumenta en un 25% el daño que inflige la espada luminosa contra los enemigos con menos de un 50% de Vida.",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Chivalric Quality",
-          "description": "Increases the Level of Icetide Vortex by 3.\nMaximum upgrade level is 15.",
+          "title": "Virtud de caballera",
+          "description": "Aumenta el nivel de habilidad de Vórtice helado +3.\nPuede ser aumentado hasta Niv. 15.",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Noble Obligation",
-          "description": "Lightfall Swords created by Glacial Illumination start with 5 stacks of energy. Normal Attacks, Elemental Skills, and Elemental Bursts have a 50% chance to grant the Lightfall Sword an additional stack of energy.",
+          "title": "Deber aristocrático",
+          "description": "Otorga inmediatamente 5 cargas de energía a la espada luminosa creada mediante Fulgor glacial. Además, al usar Ataques Normales, la Habilidad Elemental o la Habilidad Definitiva para acumular cargas, hay una probabilidad del 50% de que la espada luminosa obtenga una carga adicional.",
           "descriptions": []
         }
       ]
@@ -3828,48 +3828,48 @@
     {
       "key": "Yanfei",
       "name": "Yanfei",
-      "description": "A well-known legal adviser active in Liyue Harbor. A brilliant young lady in whose veins runs the blood of an illuminated beast.",
+      "description": "Una reconocida asesora legal que vive en Liyue. Esta joven tan perspicaz tiene parte de sangre de bestia iluminada.",
       "skills": [
         {
           "key": "s1",
-          "title": "Seal of Approval",
+          "title": "Sello ígneo",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Shoots fireballs that deal up to three counts of Pyro DMG.\nWhen Yanfei's Normal Attacks hit enemies, they will grant her a single Scarlet Seal. Yanfei may possess a maximum of 3 Scarlet Seals, and each time this effect is triggered, the duration of currently possessed Scarlet Seals will refresh.\nEach Scarlet Seal will decrease Yanfei's Stamina consumption and will disappear when she leaves the field.",
+              "description": "Lanza bolas de fuego que infligen hasta tres golpes de Daño Pyro.\nAl golpear a un enemigo, Yanfei obtiene un sello escarlata. Inicialmente se puede tener un máximo de 3 sellos escarlatas y, cada vez que este efecto se active, la duración de los sellos que posea Yanfei en ese momento se reiniciará.\nCada sello reducirá el Coste de Aguante de Yanfei, pero desaparecerán cuando ella se retire del combate.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes Stamina and all Scarlet Seals before dealing AoE Pyro DMG to opponents after a short casting time.\nThis Charged Attack's AoE and DMG will increase according to the amount of Scarlet Seals consumed.",
+              "description": "Gasta Aguante para, tras un corto tiempo de canalización, consumir todos los sellos escarlatas e infligir Daño Pyro en el AdE a todos los enemigos frente a Yanfei.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.",
+              "description": "Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.\nEl AdE y el daño de este Ataque Cargado aumentará según la cantidad de sellos que se consuman.\nAl acumular poder Pyro, se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño Pyro en el AdE en el momento del impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Signed Edict",
-          "description": "Summons blistering flames that deal AoE Pyro DMG.\nOpponents hit by the flames will grant Yanfei the maximum number of Scarlet Seals.",
+          "title": "Trato cerrado",
+          "description": "Invoca unas llamas ardientes que infligen Daño Pyro en el AdE.\nAl golpear con ellas a sus enemigos, Yanfei obtiene el máximo de sellos escarlatas.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Done Deal",
-          "description": "Triggers a spray of intense flames that rush at nearby opponents, dealing AoE Pyro DMG, granting Yanfei the maximum number of Scarlet Seals, and applying Brilliance to her.",
+          "title": "Contrato vinculante",
+          "description": "Conjura unas explosivas e intensas llamas que lanza contra los enemigos cercanos, infligiendo Daño Pyro en el AdE y otorgando a Yanfei el máximo de sellos escarlatas, así como el efecto de resplandor.",
           "abilities": [
             {
-              "name": "Brilliance",
-              "description": "Has the following effects:",
+              "name": "Resplandor",
+              "description": "Tiene los siguientes efectos:",
               "descriptions": [
-                "Grants Yanfei a Scarlet Seal at fixed intervals.",
-                "Increases the DMG dealt by her Charged Attacks.",
-                "The effects of Brilliance will end if Yanfei leaves the field or falls in battle."
+                "Otorga a Yanfei un sello escarlata cada cierto intervalo de tiempo.",
+                "Aumenta el daño infligido con Ataque Cargado.",
+                "Resplandor se disipará cuando Yanfei se retire del combate o sea derrotada."
               ]
             }
           ]
@@ -3878,61 +3878,58 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Encyclopedic Expertise",
-          "description": "Displays the location of nearby resources unique to Liyue on the mini-map.",
+          "title": "Conocimiento enciclopédico",
+          "description": "Muestra la ubicación de los objetos típicos de Liyue cercanos en el minimapa.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Proviso",
-          "description": "When Yanfei consumes Scarlet Seals by using a Charged Attack, each Scarlet Seal will increase Yanfei's Pyro DMG Bonus by 5%. This effects lasts for 6s. When a Charged Attack is used again during the effect's duration, it will dispel the previous effect.",
+          "title": "Términos asociados",
+          "description": "Cuando Yanfei consume sellos escarlatas mediante un Ataque Cargado, su Bono de Daño Pyro aumenta en un 5% durante 6 s por cada sello consumido. Si mientras dura este efecto vuelve a realizarse un Ataque Cargado, el efecto anterior se eliminará.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Blazing Eye",
-          "description": "When Yanfei's Charged Attack deals a CRIT Hit to opponents, she will deal an additional instance of AoE Pyro DMG equal to 80% of her ATK. This DMG counts as Charged Attack DMG.",
+          "title": "Ojos justicieros",
+          "description": "Cuando Yanfei asesta un golpe crítico contra un enemigo con su Ataque Cargado, inflige adicionalmente Daño Pyro en el AdE equivalente al 80% de su ATQ. Este daño se considera daño de Ataque Cargado.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "The Law Knows No Kindness",
-          "description": "When Yanfei uses her Charged Attack, each existing Scarlet Seal additionally reduces the stamina cost of this Charged Attack by 10% and increases resistance against interruption during its release.",
+          "title": "Insisto, Señoría",
+          "description": "La RES a interrupción de Yanfei mientras canaliza un Ataque Cargado aumenta por cada sello escarlata que posea. Además, el Coste de Aguante de dicho Ataque Cargado se reduce en un 10% adicional por cada sello.",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Right of Final Interpretation",
-          "description": "Increases Yanfei's Charged Attack CRIT Rate by 20% against enemies below 50% HP.",
+          "title": "Derecho de interpretación final",
+          "description": "Aumenta en un 20% la Prob. CRIT del Ataque Cargado de Yanfei contra los enemigos con menos de un 50% de Vida.",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Samadhi Fire-Forged",
-          "description": "Increases the Level of Signed Edict by 3.\nMaximum upgrade level is 15.",
+          "title": "Sello pírico del samadhi",
+          "description": "Aumenta el nivel de habilidad de Trato cerrado +3.\nPuede ser aumentado hasta Niv. 15.",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Supreme Amnesty",
-          "description": "When Done Deal is used:",
-          "descriptions": [
-            "Creates a shield that absorbs up to 45% of Yanfei's Max HP for 15s",
-            "This shield absorbs Pyro DMG 250% more effectively."
-          ]
+          "title": "Absolución",
+          "description": "Al utilizar Contrato vinculante, se crea un escudo que dura 15 s y que absorbe daño en una cantidad equivalente al 45% de la Vida Máx. de Yanfei.\nEl escudo tiene un 250% de eficiencia de absorción de Daño Pyro.",
+          "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Abiding Affidavit",
-          "description": "Increases the Level of Done Deal by 3.\nMaximum upgrade level is 15.",
+          "title": "Declaración jurada",
+          "description": "Aumenta el nivel de habilidad de Contrato vinculante +3.\n Puede ser aumentado hasta Niv. 15.",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Extra Clause",
-          "description": "Increases the maximum number of Scarlet Seals by 1.",
+          "title": "Cláusula adicional",
+          "description": "Aumenta en 1 la cantidad máxima de sellos escarlatas que puede llevar Yanfei.",
           "descriptions": []
         }
       ]
@@ -4739,9 +4736,9 @@
     },
     {
       "key": "Song of Broken Pines",
-      "name": "Song of Broken Pines",
-      "description": "A greatsword as light as the sigh of grass in the breeze, yet as merciless to the corrupt as a typhoon.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {{0}}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "name": "Sátira de Levantamiento",
+      "description": "Un mandoble que juguetea con las plantas y los árboles como el soplido de una ligera brisa y, al mismo tiempo, es capaz de derribarlos como un abrumador tornado.",
+      "refinement": "Una parte del «Gran concierto milenario» que flota por los vientos. Aumenta el ATQ en un {{0}}%. Al atacar a un enemigo con un Ataque Normal o Cargado, el personaje obtiene un talismán susurrante que puede adquirirse una vez cada 0.3 s como máximo. Al obtener 4 talismanes susurrantes, estos se consumirán y otorgarán a todos los miembros del equipo cercanos el efecto de «Gran concierto milenario: Canción de la revelación» durante 12 s, el cual aumenta la Vel. de Ataque de los Ataques Normales en un {{1}}% y el ATQ en un {{2}}%. Tras activarse, no podrán obtenerse talismanes susurrantes durante 20 s. Los efectos de «Gran concierto milenario» no se acumularán con otros efectos del mismo tipo."
     }
   ],
   "artifacts": [
@@ -5193,11 +5190,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "HP increased by 20%."
+          "bonus": "Vida +20%."
         },
         {
           "key": "b2",
-          "bonus": "When an Elemental Skill hits an opponent, the ATK of all nearby party members is increased by 20% and their Shield Strength is increased by 30% for 3s. This effect can be triggered once every 0.5s. This effect can still be triggered even when the character who is using this artifact set is not on the field."
+          "bonus": "Cuando una Habilidad Elemental golpea a un enemigo, el ATQ de todos los personajes del equipo cercanos aumenta en un 20% y su Protección de Escudo aumenta en un 30% durante 3 s. Este efecto puede tener lugar cada 0.5 s y se activa incluso cuando el personaje que lleva equipado este conjunto de artefactos está en tu equipo pero no en combate."
         }
       ]
     },
@@ -5207,11 +5204,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Physical DMG is increased by 25%."
+          "bonus": "Daño Físico +25%."
         },
         {
           "key": "b2",
-          "bonus": "When an Elemental Skill hits an opponent, ATK is increased by 9% for 7s. This effect stacks up to 2 times and can be triggered once every 0.3s. Once 2 stacks are reached, the 2-set effect is increased by 100%."
+          "bonus": "Al atacar a un enemigo con una Habilidad Elemental, el ATQ aumenta en un 9% durante 7 s. Este efecto puede acumularse hasta 2 veces y activarse cada 0.3 s. Al alcanzar 2 acumulaciones, el efecto de dos piezas del conjunto aumenta en un 100%."
         }
       ]
     }
