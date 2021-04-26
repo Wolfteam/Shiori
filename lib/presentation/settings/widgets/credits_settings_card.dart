@@ -58,6 +58,7 @@ class CreditsSettingsCard extends StatelessWidget {
               children: const [
                 Expanded(child: BulletList(items: ["Brunoff#0261"], fontSize: 12)),
                 Expanded(child: BulletList(items: ["DanPS#4336"], fontSize: 12)),
+                Expanded(child: BulletList(items: ["JJlago#0406"], fontSize: 12)),
               ],
             ),
           ],
