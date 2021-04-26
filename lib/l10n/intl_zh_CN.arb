@@ -8,6 +8,7 @@
   "russian": "俄语",
   "simplifiedChinese": "中文（简体）",
   "portuguese": "葡萄牙语",
+  "italian": "Italian",
   "bow": "弓",
   "claymore": "双手剑",
   "sword": "单手剑",
@@ -290,5 +291,7 @@
   "automaton": "自律机关",
   "droppedBy": "掉落于",
   "pressOnceAgainToExit": "再点击一次退出",
-  "discordServer": "Discord 服务器"
+  "discordServer": "Discord 服务器",
+  "usedItem": "Used item",
+  "itemIsBeingUsedOnACalculation": "This item is being used in one or more calculator sessions.\nThe used quantity is {quantity}"
 }

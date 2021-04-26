@@ -41,19 +41,17 @@ class _ScaffoldWithFabState extends State<ScaffoldWithFab> with SingleTickerProv
       onPointerDown: (_) {
         FocusScope.of(context).removeFocus();
       },
-      child: SafeArea(
-        child: Scaffold(
-          appBar: widget.appbar,
-          body: SafeArea(
-            child: SingleChildScrollView(
-              controller: _scrollController,
-              child: widget.child,
-            ),
+      child: Scaffold(
+        appBar: widget.appbar,
+        body: SafeArea(
+          child: SingleChildScrollView(
+            controller: _scrollController,
+            child: widget.child,
           ),
-          floatingActionButton: AppFab(
-            hideFabAnimController: _hideFabAnimController,
-            scrollController: _scrollController,
-          ),
+        ),
+        floatingActionButton: AppFab(
+          hideFabAnimController: _hideFabAnimController,
+          scrollController: _scrollController,
         ),
       ),
     );

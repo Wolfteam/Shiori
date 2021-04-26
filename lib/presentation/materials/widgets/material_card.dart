@@ -203,13 +203,12 @@ class MaterialCard extends StatelessWidget {
   }
 
   Future<void> _showUsedItemsDialog(BuildContext context) async {
-    //TODO: COMPLETE THIS
     final s = S.of(context);
     await showDialog<int>(
       context: context,
       builder: (_) => AlertDialog(
-        title: Text('Used item'),
-        content: Text('This item is being used in one or more calculator sessions.\nThe used quantity is $usedQuantity.'),
+        title: Text(s.usedItem),
+        content: Text(s.itemIsBeingUsedOnACalculation(quantity)),
         actions: [
           ElevatedButton(
             onPressed: () => Navigator.of(context).pop(),

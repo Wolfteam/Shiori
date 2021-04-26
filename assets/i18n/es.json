@@ -979,6 +979,121 @@
       ]
     },
     {
+      "key": "Eula",
+      "name": "Eula",
+      "description": "La Caballera de la Marea, procedente de una familia con un gran linaje y Capitana del Equipo de Reconocimiento de los Caballeros de Favonius. Aunque es descendiente de la antigua aristocracia, se unió a los Caballeros de Favonius, sus archienemigos, algo que sigue siendo un gran enigma para todo Mondstadt hasta hoy en día.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Técnica de espada Favonius - Nobleza",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Realiza hasta 5 ataques consecutivos.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Consume Aguante de manera constante para realizar golpes de espada continuos.\nCuando termina el Ataque Cargado, hará un golpe aún más poderoso.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Vórtice helado",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Realiza un rápido tajo que inflige Daño Cryo.\n Al golpear a un enemigo, Eula obtiene una carga del efecto corazón impasible, el cual puede acumularse un máximo de 2 veces y obtenerse solo 1 vez cada 0.3 s.",
+              "descriptions": []
+            },
+            {
+              "name": "Corazón impasible",
+              "description": "Aumenta la RES a interrupción y la DEF de Eula.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Consume todas las cargas de corazón impasible y realiza un tajo de espada hacia delante, infligiendo Daño Cryo en el AdE a todos los enemigos frente a Eula.\n Al consumirse este efecto, la RES Física y la RES Cryo de los enemigos cercanos se reducirá.\n Cada carga de corazón impasible consumida se convertirá en una crioespada de vacío que inflige Daño Cryo a los enemigos cercanos.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Fulgor glacial",
+          "description": "Blande ferozmente su gran espada para infligir Daño Cryo a los enemigos alrededor y crear una espada luminosa que sigue a Eula durante un máximo de 7 s.\nMientras dure, la espada luminosa aumentará la RES a interrupción de Eula e irá acumulando energía cuando inflija daño a los enemigos con sus propios Ataques Normales, su Habilidad Elemental o su Habilidad Definitiva. Solo se puede acumular una carga de energía cada 0.1 s.\nAl terminar su duración, la espada descenderá y estallará violentamente, infligiendo Daño Físico a los enemigos alrededor.\nEste daño aumentará en función de las cargas de energía acumuladas en la espada.\nCuando Eula se retire del combate, la espada luminosa estallará inmediatamente.",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Introspección aristocrática",
+          "description": "Al crear materiales de talento de personaje, hay una probabilidad del 10% de recibir el doble.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Escarcha turbulenta",
+          "description": "Si, al mantener pulsado Vórtice helado, se consumen de una vez las 2 cargas de corazón impasible, se creará un fragmento de espada luminosa que estallará inmediatamente, infligiendo Daño Físico en una cantidad equivalente al 50% del daño básico de la espada luminosa de Fulgor glacial.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Ansia de guerra",
+          "description": "Usar Fulgor glacial reinicia el TdE de Vórtice helado y otorga a Eula una carga de corazón impasible.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Ilusión de la marea",
+          "description": "Tras consumir las cargas de corazón impasible de Vórtice helado, Eula obtiene un 30% de Bono de Daño Físico durante 6 s.\nCada vez que se consuma una carga de corazón impasible, este efecto se prolongará durante 6 s más hasta un máximo de 18 s.",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Hija del mar",
+          "description": "Reduce el TdE de mantener pulsado Vórtice helado hasta ser el mismo que el de {LAYOUT_MOBILE#tocar una vez}{LAYOUT_PC#pulsar una vez}{LAYOUT_PS#pulsar una vez}.",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Sangre Lawrence",
+          "description": "Aumenta el nivel de habilidad de Fulgor glacial +3.\nPuede ser aumentado hasta Niv. 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Obstinación de los plebeyos",
+          "description": "Aumenta en un 25% el daño que inflige la espada luminosa contra los enemigos con menos de un 50% de Vida.",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Virtud de caballera",
+          "description": "Aumenta el nivel de habilidad de Vórtice helado +3.\nPuede ser aumentado hasta Niv. 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Deber aristocrático",
+          "description": "Otorga inmediatamente 5 cargas de energía a la espada luminosa creada mediante Fulgor glacial. Además, al usar Ataques Normales, la Habilidad Elemental o la Habilidad Definitiva para acumular cargas, hay una probabilidad del 50% de que la espada luminosa obtenga una carga adicional.",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "Fischl",
       "name": "Fischl",
       "description": "Una chica misteriosa que se hace llamar \"Princesa del Juicio\". Siempre camina junto a un cuervo oscuro llamado Oz.",
@@ -3711,6 +3826,115 @@
       ]
     },
     {
+      "key": "Yanfei",
+      "name": "Yanfei",
+      "description": "Una reconocida asesora legal que vive en Liyue. Esta joven tan perspicaz tiene parte de sangre de bestia iluminada.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Sello ígneo",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Lanza bolas de fuego que infligen hasta tres golpes de Daño Pyro.\nAl golpear a un enemigo, Yanfei obtiene un sello escarlata. Inicialmente se puede tener un máximo de 3 sellos escarlatas y, cada vez que este efecto se active, la duración de los sellos que posea Yanfei en ese momento se reiniciará.\nCada sello reducirá el Coste de Aguante de Yanfei, pero desaparecerán cuando ella se retire del combate.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Gasta Aguante para, tras un corto tiempo de canalización, consumir todos los sellos escarlatas e infligir Daño Pyro en el AdE a todos los enemigos frente a Yanfei.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.\nEl AdE y el daño de este Ataque Cargado aumentará según la cantidad de sellos que se consuman.\nAl acumular poder Pyro, se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño Pyro en el AdE en el momento del impacto.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Trato cerrado",
+          "description": "Invoca unas llamas ardientes que infligen Daño Pyro en el AdE.\nAl golpear con ellas a sus enemigos, Yanfei obtiene el máximo de sellos escarlatas.",
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "Contrato vinculante",
+          "description": "Conjura unas explosivas e intensas llamas que lanza contra los enemigos cercanos, infligiendo Daño Pyro en el AdE y otorgando a Yanfei el máximo de sellos escarlatas, así como el efecto de resplandor.",
+          "abilities": [
+            {
+              "name": "Resplandor",
+              "description": "Tiene los siguientes efectos:",
+              "descriptions": [
+                "Otorga a Yanfei un sello escarlata cada cierto intervalo de tiempo.",
+                "Aumenta el daño infligido con Ataque Cargado.",
+                "Resplandor se disipará cuando Yanfei se retire del combate o sea derrotada."
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Conocimiento enciclopédico",
+          "description": "Muestra la ubicación de los objetos típicos de Liyue cercanos en el minimapa.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Términos asociados",
+          "description": "Cuando Yanfei consume sellos escarlatas mediante un Ataque Cargado, su Bono de Daño Pyro aumenta en un 5% durante 6 s por cada sello consumido. Si mientras dura este efecto vuelve a realizarse un Ataque Cargado, el efecto anterior se eliminará.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Ojos justicieros",
+          "description": "Cuando Yanfei asesta un golpe crítico contra un enemigo con su Ataque Cargado, inflige adicionalmente Daño Pyro en el AdE equivalente al 80% de su ATQ. Este daño se considera daño de Ataque Cargado.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Insisto, Señoría",
+          "description": "La RES a interrupción de Yanfei mientras canaliza un Ataque Cargado aumenta por cada sello escarlata que posea. Además, el Coste de Aguante de dicho Ataque Cargado se reduce en un 10% adicional por cada sello.",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Derecho de interpretación final",
+          "description": "Aumenta en un 20% la Prob. CRIT del Ataque Cargado de Yanfei contra los enemigos con menos de un 50% de Vida.",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Sello pírico del samadhi",
+          "description": "Aumenta el nivel de habilidad de Trato cerrado +3.\nPuede ser aumentado hasta Niv. 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Absolución",
+          "description": "Al utilizar Contrato vinculante, se crea un escudo que dura 15 s y que absorbe daño en una cantidad equivalente al 45% de la Vida Máx. de Yanfei.\nEl escudo tiene un 250% de eficiencia de absorción de Daño Pyro.",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Declaración jurada",
+          "description": "Aumenta el nivel de habilidad de Contrato vinculante +3.\n Puede ser aumentado hasta Niv. 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Cláusula adicional",
+          "description": "Aumenta en 1 la cantidad máxima de sellos escarlatas que puede llevar Yanfei.",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "Zhongli",
       "name": "Zhongli",
       "description": "Misterioso invitado de la Funeraria El Camino. Erudito con información sobre todo tipo de cosas",
@@ -4509,6 +4733,12 @@
       "name": "Elegía del Fin",
       "description": "Un arco tan bello como el instrumento de un bardo. Las flechas que dispara son como un suspiro capaz de atravesar el corazón de una persona.",
       "refinement": "Una parte del «Gran concierto milenario» que flota por los vientos. Aumenta en {{0}} pts. la Maestría Elemental. Cuando el personaje que lleva esta arma equipada ataca a un enemigo con una Habilidad Elemental o Definitiva, dicho personaje obtiene un talismán de reminiscencia que puede adquirirse una vez cada 0.2 s como máximo. Este efecto también puede ocurrir cuando el personaje que lleva equipada esta arma está en tu equipo pero no en combate. Al obtener 4 talismanes de reminiscencia, estos se consumirán y otorgarán a todos los miembros del equipo cercanos el efecto de «Gran concierto milenario: Canción del adiós» durante 12 s, el cual aumenta en {{1}} pts. la Maestría Elemental y el ATQ en un {{2}}%. Tras activarse este efecto, no podrán obtenerse talismanes de reminiscencia durante 20 s. Los efectos de «Gran concierto milenario» no se acumularán con otros efectos del mismo tipo."
+    },
+    {
+      "key": "Song of Broken Pines",
+      "name": "Sátira de Levantamiento",
+      "description": "Un mandoble que juguetea con las plantas y los árboles como el soplido de una ligera brisa y, al mismo tiempo, es capaz de derribarlos como un abrumador tornado.",
+      "refinement": "Una parte del «Gran concierto milenario» que flota por los vientos. Aumenta el ATQ en un {{0}}%. Al atacar a un enemigo con un Ataque Normal o Cargado, el personaje obtiene un talismán susurrante que puede adquirirse una vez cada 0.3 s como máximo. Al obtener 4 talismanes susurrantes, estos se consumirán y otorgarán a todos los miembros del equipo cercanos el efecto de «Gran concierto milenario: Canción de la revelación» durante 12 s, el cual aumenta la Vel. de Ataque de los Ataques Normales en un {{1}}% y el ATQ en un {{2}}%. Tras activarse, no podrán obtenerse talismanes susurrantes durante 20 s. Los efectos de «Gran concierto milenario» no se acumularán con otros efectos del mismo tipo."
     }
   ],
   "artifacts": [
@@ -4951,6 +5181,34 @@
         {
           "key": "b1",
           "bonus": "Reduce el tiempo afectado por Anemo un 40%."
+        }
+      ]
+    },
+    {
+      "key": "Tenacity of the Millelith",
+      "name": "Tenacity of the Millelith",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "Vida +20%."
+        },
+        {
+          "key": "b2",
+          "bonus": "Cuando una Habilidad Elemental golpea a un enemigo, el ATQ de todos los personajes del equipo cercanos aumenta en un 20% y su Protección de Escudo aumenta en un 30% durante 3 s. Este efecto puede tener lugar cada 0.5 s y se activa incluso cuando el personaje que lleva equipado este conjunto de artefactos está en tu equipo pero no en combate."
+        }
+      ]
+    },
+    {
+      "key": "Pale Flame",
+      "name": "Pale Flame",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "Daño Físico +25%."
+        },
+        {
+          "key": "b2",
+          "bonus": "Al atacar a un enemigo con una Habilidad Elemental, el ATQ aumenta en un 9% durante 7 s. Este efecto puede acumularse hasta 2 veces y activarse cada 0.3 s. Al alcanzar 2 acumulaciones, el efecto de dos piezas del conjunto aumenta en un 100%."
         }
       ]
     }
@@ -5814,6 +6072,31 @@
       "key": "Primogem",
       "name": "Primogem",
       "description": "A primordial crystalline gem that's beyond the mundane world. Shines with the condensed hopes and dreams of universes that once were."
+    },
+    {
+      "key": "Crystalline Bloom",
+      "name": "Crystalline Bloom",
+      "description": "An ice crystal of exceeding purity that is created in the frigid blooming of a Cryo Hypostasis.\nThese frosty crystals will continue to grow according to their own cold, rigid laws, till one day a flower of winter shall bloom and freeze everything. Perhaps it is stagnant time, that never-thawing bosom, that is the essence of this undying flower."
+    },
+    {
+      "key": "Dream Solvent",
+      "name": "Dream Solvent",
+      "description": "An item capable of changing Character Level-Up Materials obtained from memories and trials into whatever form is needed.\nPeople once believed that spirits and memories had some material form. If someone dreamed of heaven before waking up clutching a flower, then that blossom must have been made from such a fantasy. Dream Solvent dissolves that which is obtained from memory and transforms it into some other dream.\nIndeed, blows traded with the strong are stepping stones towards becoming stronger yourself."
+    },
+    {
+      "key": "Dragon Lord's Crown",
+      "name": "Dragon Lord's Crown",
+      "description": "Horns created from hardened jade crystallized over a thousand years are the natural crown of the dragon king.\nInfused with spirit and carved from bedrock, it was born from the mountain's heart to show the strength of the earth to the land amidst monoliths, and its long golden horns are the mark of its ancient strife with an ancient lord.\nFor a time, this horn was shattered and lost its luster, but now it gleams cold and gold as it sits in your palm."
+    },
+    {
+      "key": "Bloodjade Branch",
+      "name": "Bloodjade Branch",
+      "description": "Nurtured by the might of the dragon king, these bone branches glitter with strange, unique colors.\nHatred coursed through the natural streams and kissed the cold moonlight, and from them were these crystalline branches born and grown...\nEven though they were severed in battle, these branches steeped in dragon blood rustle as if eternally ill-at-ease."
+    },
+    {
+      "key": "Gilded Scale",
+      "name": "Gilded Scale",
+      "description": "Scaled armor that grows naturally over mystical stone, tough and silent, and filled with the strength of the dragon king.\nAcross the years as countless generations returned to the mulch of the earth, gold and obsidian embedded themselves into flesh and blood forged from bedrock before spreading and turning into scales.\nSearing agony, wordless cries... perhaps they will all vanish when the grudges that spawned them, too, finally come to an end."
     }
   ],
   "debuffs": [
