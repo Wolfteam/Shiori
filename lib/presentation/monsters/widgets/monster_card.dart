@@ -37,9 +37,10 @@ class MonsterCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
+    final fToast = ToastUtils.of(context);
     return InkWell(
       borderRadius: Styles.mainCardBorderRadius,
-      onTap: () => ToastUtils.showWarningToast(s.comingSoon),
+      onTap: () => ToastUtils.showWarningToast(fToast, s.comingSoon),
       child: Card(
         clipBehavior: Clip.hardEdge,
         shape: Styles.mainCardShape,

@@ -7,6 +7,7 @@
   "french": "French",
   "russian": "Russian",
   "simplifiedChinese": "Chinese (Simplified)",
+  "portuguese": "Portuguese",
   "italian": "Italian",
   "bow": "Bow",
   "claymore": "Claymore",
@@ -273,8 +274,8 @@
   "calcSessionInfoMsgA": "Sessions allows you to make calculations for specific characters or weapons.",
   "calcSessionInfoMsgB": "If you opted to use materials from your inventory, the order of the sessions will determine the priority in which they will be used.",
   "calcSessionInfoMsgC": "The order of the items inside a session is also considered as well.",
-  "calcSessionInfoMsgD": "Changing the session's priority will automatically redistribute the materials only if you selected the ' {useMaterialsFromInventory} ' option.",
-  "calcSessionInfoMsgE": "An indicator of the used materials by your sessions will be shown in the ' {myInventory} ' page",
+  "calcSessionInfoMsgD": "Changing the session's priority will automatically redistribute the materials only if you selected the \" {useMaterialsFromInventory} \" option.",
+  "calcSessionInfoMsgE": "An indicator of the used materials by your sessions will be shown in the \" {myInventory} \" page.",
   "grouped": "Grouped",
   "copy": "Copy",
   "markAsUsed": "Mark as used",
@@ -288,5 +289,9 @@
   "hilichurl": "Hilichurl",
   "fatui": "Fatui",
   "automaton": "Automaton",
-  "droppedBy": "Dropped by"
+  "droppedBy": "Dropped by",
+  "pressOnceAgainToExit": "Press once again to exit",
+  "discordServer": "Discord Server",
+  "usedItem": "Used item",
+  "itemIsBeingUsedOnACalculation": "This item is being used in one or more calculator sessions.\nThe used quantity is {quantity}"
 }

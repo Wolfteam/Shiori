@@ -25,5 +25,8 @@ abstract class SettingsService {
   AppServerResetTimeType get serverResetTime;
   set serverResetTime(AppServerResetTimeType time);
 
+  bool get doubleBackToClose;
+  set doubleBackToClose(bool value);
+
   Future<void> init();
 }

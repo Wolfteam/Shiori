@@ -979,6 +979,121 @@
       ]
     },
     {
+      "key": "Eula",
+      "name": "Eula",
+      "description": "The Spindrift Knight, a scion of the old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Favonius Bladework - Edel",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Perform up to 5 consecutive strikes.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": " Drains Stamina over time to perform continuous slashes.\nAt the end of the sequence, perform a more powerful slash.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Icetide Vortex",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Slashes swiftly, dealing Cryo DMG.\nWhen it hits an opponent, Eula gains a stack of Grimheart that stacks up to 2 times. These stacks can only be gained once every 0.3s.",
+              "descriptions": []
+            },
+            {
+              "name": "Grimheart",
+              "description": "Increases Eula's resistance to interruption and DEF.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Wielding her sword, Eula consumes all the stacks of Grimheart and lashes forward, dealing AoE Cryo DMG to opponents in front of her.\nIf Grimheart stacks are consumed, surrounding opponents will have their Physical RES and Cryo RES decreased.\nEach consumed stack of Grimheart will be converted into an Icewhirl Brand that deals Cryo DMG to nearby opponents.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Glacial Illumination",
+          "description": "Brandishes her greatsword, dealing Cryo DMG to nearby opponents and creating a Lightfall Sword that follows her around for a duration of up to 7s.\nWhile present, the Lightfall Sword increases Eula's resistance to interruption. When Eula's own Normal Attack, Elemental Skill, and Elemental Burst deal DMG to opponents, they will charge the Lightfall Sword, which can gain an energy stack once every 0.1s.\nOnce its duration ends, the Lightfall Sword will descend and explode violently, dealing Physical DMG to nearby opponents.\nThis DMG scales on the number of energy stacks the Lightfall Sword has accumulated.\nIf Eula leaves the field, the Lightfall Sword will explode immediately.",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Aristocratic Introspection",
+          "description": "When Eula crafts Character Talent Materials, she has a 10% chance to receive double the product.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Roiling Rime",
+          "description": "If 2 stacks of Grimheart are consumed upon unleashing the Holding Mode of Icetide Vortex, a Shattered Lightfall Sword will be created that will explode immediately, dealing 50% of the basic Physical DMG dealt by a Lightfall Sword created by Glacial Illumination.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Wellspring of War-Lust",
+          "description": "When Glacial Illumination is cast, the CD of Icetide Vortex is reset and Eula gains 1 stack of Grimheart.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Tidal Illusion",
+          "description": "Every time Icetide Vortex's Grimheart stacks are consumed, Eula's Physical DMG is increased by 30% for 6s.\nEach stack consumed will increase the duration of this effect by 6s up to a maximum of 18s.",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Lady of Seafoam",
+          "description": "#Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to {LAYOUT_MOBILE#Tapping}{LAYOUT_PC#Press}{LAYOUT_PS#Press} CD.",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Lawrence Pedigree",
+          "description": "Increases the Level of Glacial Illumination by 3.\nMaximum upgrade level is 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "The Obstinacy of One's Inferiors",
+          "description": "Lightfall Swords deal 25% increased DMG against opponents with less than 50% HP.",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Chivalric Quality",
+          "description": "Increases the Level of Icetide Vortex by 3.\nMaximum upgrade level is 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Noble Obligation",
+          "description": "Lightfall Swords created by Glacial Illumination start with 5 stacks of energy. Normal Attacks, Elemental Skills, and Elemental Bursts have a 50% chance to grant the Lightfall Sword an additional stack of energy.",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "Fischl",
       "name": "菲谢尔",
       "description": "自称「断罪之皇女」，与名为奥兹的漆黑夜鸦同行的神秘少女。",
@@ -2551,97 +2666,97 @@
     {
       "key": "Rosaria",
       "name": "罗莎莉亚",
-      "description": "A nun who, outside of her garb, seems nothing at all like a person of the cloth. Known for her sharp, cold words and manner, she often works alone.",
+      "description": "除了打扮哪里都不像神职人员的修女。冷淡的言行中透着锐利。总是单独行动。",
       "skills": [
         {
           "key": "s1",
-          "title": "Spear of Worship",
+          "title": "教会枪术",
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to five consecutive spear strikes.",
+              "description": "进行至多五段的连续枪击。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.",
+              "description": "消耗一定体力，向前方突进，对路径上的敌人造成伤害。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Ravaging Confession",
-          "description": "Rosaria swiftly shifts her position to appear behind her opponent, then stabs and slashes them with her polearm, dealing Cyro DMG.\nThis ability cannot be used to travel behind opponents of a larger build.",
+          "title": "噬罪的告解",
+          "description": "罗莎莉亚快速移动至目标敌人身后，进行长枪穿刺与挥砍，造成冰元素伤害。\n无法通过施放时的快速移动，转移至体型较大的敌人身后。",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Rites of Termination",
-          "description": "Rosaria's unique take on this prayer ritual: First, she swings her weapon to slash surrounding opponents; then, she summons a frigid Ice Lance that strikes the ground. Both actions deal Cryo DMG.\nWhile active, the Ice Lance periodically releases a blast of cold air, dealing Cryo DMG to surrounding opponents.",
+          "title": "终命的胜礼",
+          "description": "这是罗莎莉亚专属的领祷仪式。挥舞武器扫击身边的敌人后，凝聚极寒的冰枪击向地面，分别造成冰元素伤害。\n冰枪存在期间，会间歇性释放寒气，对附近的敌人造成冰元素伤害。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Night Walk",
-          "description": "At night (18:00–6:00), increases the Movement SPD of your own party members by 10%.\nDoes not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects.",
+          "title": "夜行",
+          "description": "在夜间（18时至6时），队伍中自己的角色移动速度提高10%。\n该效果在秘境、征讨领域、深境螺旋中无效，且无法与效果完全相同的固有天赋叠加。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Extracted Confession",
-          "description": "When Rosaria strikes an opponent from behind using Ravaging Confession, Rosaria's CRIT Rate increases by 12% for 5s.",
+          "title": "聆听忏悔的幽影",
+          "description": "噬罪的告解从技能目标的背后攻击时，罗莎莉亚的暴击率提升12%，持续5秒。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Shadow Samaritan",
-          "description": "Casting Rites of Termination increases CRIT Rate of all nearby party members (except Rosaria herself) by 15% of Rosaria's CRIT Rate for 10s.\nCRIT Rate Bonus gained this way cannot exceed 15%.",
+          "title": "暗中支援的黯色",
+          "description": "施放终命的圣礼时，基于自身暴击率的15%，提高附近的队伍中所有角色（不包括罗莎莉亚自己）的暴击率，持续10秒。\n通过这种方式获得的暴击率提升，无法超过15%。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Unholy Revelation",
-          "description": "When Rosaria deals a CRIT Hit, her ATK SPD increases by 10% and her Normal Attack DMG increases by 10% for 4s.",
+          "title": "罪之导引",
+          "description": "罗莎莉亚的攻击造成暴击后，自身攻击速度提升10%，普通攻击造成的伤害提升10%，持续4秒。",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Land Without Promise",
-          "description": "The duration of the Ice Lance created by Rites of Termination is increased by 4s.",
+          "title": "无福之地",
+          "description": "终命的圣礼创造的冰枪持续时间延长4秒。",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Sacrament of Penance",
-          "description": "Increases the Level of Ravaging Confessionby 3. Maximum upgrade level is 15.",
+          "title": "告解之仪",
+          "description": "噬罪的告解的技能等级提高3级。\n至多提升至15级。",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Amazing Disgrace",
-          "description": "Ravaging Confession's Crit Hits regenerate 5 Energy for Rosaria. Can only be triggered once each time Ravaging Confession is cast.",
+          "title": "苦痛恩典",
+          "description": "噬罪的告解造成暴击时，为罗莎莉亚自己恢复5点元素能量。\n每次噬罪的告解至多触发一次该效果。",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Extreme Unction",
-          "description": "Increases the Level of Rites of Termination by 3. Maximum upgrade level is 15.",
+          "title": "临终祈礼",
+          "description": "终命的圣礼的技能等级提高3级。\n至多提升至15级。",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Divine Retribution",
-          "description": "Rites of Termination' attack decreases opponents' Physical RES by 20% for 10s.",
+          "title": "代行裁判",
+          "description": "终命的圣礼的攻击会使敌人的物理抗性降低20%，持续10秒。",
           "descriptions": []
         }
       ]
@@ -3715,6 +3830,118 @@
       ]
     },
     {
+      "key": "Yanfei",
+      "name": "Yanfei",
+      "description": "A well-known legal adviser active in Liyue Harbor. A brilliant young lady in whose veins runs the blood of an illuminated beast.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Seal of Approval",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Shoots fireballs that deal up to three counts of Pyro DMG.\nWhen Yanfei's Normal Attacks hit enemies, they will grant her a single Scarlet Seal. Yanfei may possess a maximum of 3 Scarlet Seals, and each time this effect is triggered, the duration of currently possessed Scarlet Seals will refresh.\nEach Scarlet Seal will decrease Yanfei's Stamina consumption and will disappear when she leaves the field.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Consumes Stamina and all Scarlet Seals before dealing AoE Pyro DMG to opponents after a short casting time.\nThis Charged Attack's AoE and DMG will increase according to the amount of Scarlet Seals consumed.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Signed Edict",
+          "description": "Summons blistering flames that deal AoE Pyro DMG.\nOpponents hit by the flames will grant Yanfei the maximum number of Scarlet Seals.",
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "Done Deal",
+          "description": "Triggers a spray of intense flames that rush at nearby opponents, dealing AoE Pyro DMG, granting Yanfei the maximum number of Scarlet Seals, and applying Brilliance to her.",
+          "abilities": [
+            {
+              "name": "Brilliance",
+              "description": "Has the following effects:",
+              "descriptions": [
+                "Grants Yanfei a Scarlet Seal at fixed intervals.",
+                "Increases the DMG dealt by her Charged Attacks.",
+                "The effects of Brilliance will end if Yanfei leaves the field or falls in battle."
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Encyclopedic Expertise",
+          "description": "Displays the location of nearby resources unique to Liyue on the mini-map.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Proviso",
+          "description": "When Yanfei consumes Scarlet Seals by using a Charged Attack, each Scarlet Seal will increase Yanfei's Pyro DMG Bonus by 5%. This effects lasts for 6s. When a Charged Attack is used again during the effect's duration, it will dispel the previous effect.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Blazing Eye",
+          "description": "When Yanfei's Charged Attack deals a CRIT Hit to opponents, she will deal an additional instance of AoE Pyro DMG equal to 80% of her ATK. This DMG counts as Charged Attack DMG.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "The Law Knows No Kindness",
+          "description": "When Yanfei uses her Charged Attack, each existing Scarlet Seal additionally reduces the stamina cost of this Charged Attack by 10% and increases resistance against interruption during its release.",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Right of Final Interpretation",
+          "description": "Increases Yanfei's Charged Attack CRIT Rate by 20% against enemies below 50% HP.",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Samadhi Fire-Forged",
+          "description": "Increases the Level of Signed Edict by 3.\nMaximum upgrade level is 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Supreme Amnesty",
+          "description": "When Done Deal is used:",
+          "descriptions": [
+            "Creates a shield that absorbs up to 45% of Yanfei's Max HP for 15s",
+            "This shield absorbs Pyro DMG 250% more effectively."
+          ]
+        },
+        {
+          "key": "c5",
+          "title": "Abiding Affidavit",
+          "description": "Increases the Level of Done Deal by 3.\nMaximum upgrade level is 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Extra Clause",
+          "description": "Increases the maximum number of Scarlet Seals by 1.",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "Zhongli",
       "name": "钟离",
       "description": "被「往生堂」请来的神秘客人,知识渊博,对各种事物都颇有见地。",
@@ -3916,9 +4143,9 @@
     },
     {
       "key": "Alley Hunter",
-      "name": "Alley Hunter",
-      "description": "An intricate, opulent longbow. It once belonged to a gentleman thief who was never caught.",
-      "refinement": "While the character equipped with this weapon is in the party but not on the field, their DMG increases by {{0}}% every second up to a max of {{1}}%. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by {{2}}% per second until it reaches 0%."
+      "name": "暗巷猎手",
+      "description": "外形精巧奢华的长弓，曾属于某位从未被抓获的义贼。",
+      "refinement": "队伍中装备该武器的角色处于后台时，该角色造成的伤害每秒提升{{0}}%， 最高提升{{1}}%。 当该角色上场4秒后，上述增益每秒降低{{2}}%，直至该效果消失。"
     },
     {
       "key": "Blackcliff Warbow",
@@ -4036,9 +4263,9 @@
     },
     {
       "key": "Blackcliff Longsword",
-      "name": "Blackcliff Longsword",
-      "description": "A sword made of a material known as \"blackcliff.\" It has a dark crimson glow on its black blade.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "name": "黑岩斩刀",
+      "description": "坚韧无比的黑岩大刀,通体皆为玄赤之色。",
+      "refinement": "击败敌人后,攻击力提升{{0}}%，持续30秒。该效果至多叠加3层，每层持续时间独立。"
     },
     {
       "key": "Favonius Sword",
@@ -4078,9 +4305,9 @@
     },
     {
       "key": "The Alley Flash",
-      "name": "The Alley Flash",
-      "description": "A straight sword as black as the night. It once belonged to a thief who roamed the benighted streets.",
-      "refinement": "Increases DMG dealt by the character equipping this weapon by {{0}}%. Taking DMG disables this effect for 5s."
+      "name": "暗巷闪光",
+      "description": "有着黑夜颜色的笔直长剑，曾属于穿行于暗巷的盗贼。",
+      "refinement": "造成的伤害提升{{0}}%，受到伤害后的5秒内失效。"
     },
     {
       "key": "The Black Sword",
@@ -4222,9 +4449,9 @@
     },
     {
       "key": "Wine and Song",
-      "name": "Wine and Song",
-      "description": "A songbook from the bygone aristocratic era, whose composer has become forgotten. It chronicles the tale of a certain heroic outlaw.",
-      "refinement": "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by {{0}}% for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by {{1}}% for 5s."
+      "name": "暗巷的酒与诗",
+      "description": "过去贵族时代流行的歌谱，作者已无从考究。其中记载了某位侠盗的故事…",
+      "refinement": "普通攻击命中敌人后，冲刺或替代冲刺的能力消耗的体力降低{{0}}%，持续5秒。此外，使用冲刺或替代冲刺的能力后，攻击力提升{{1}}%，持续5秒。"
     },
     {
       "key": "Eye of Perception",
@@ -4504,15 +4731,21 @@
     },
     {
       "key": "Windblume Ode",
-      "name": "Windblume Ode",
-      "description": "A bow adorned with nameless flowers that bears the earnest hopes of an equally nameless person.",
-      "refinement": "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by {{0}}% for 6s."
+      "name": "风花之颂",
+      "description": "点缀以无名花朵的弓，承载着同样无名之人的殷切希望。",
+      "refinement": "施放元素战技时，获得风之花的悠古愿望加持，攻击力提升{{0}}%，持续6秒"
     },
     {
       "key": "Elegy for the End",
-      "name": "Elegy for the End",
-      "description": "A bow as lovely as any bard's lyre, its arrows pierce the heart like a lamenting sigh.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by {{0}}. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by {{1}} and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "name": "终末嗟叹之诗",
+      "description": "如同诗人的乐器一般优美的弓，放出的箭矢如同叹息声一般穿透人心。",
+      "refinement": "飘游风中的「千年的大乐章」的一部分。元素精通提高{{0}}点；元素战技或元素爆发命中敌人时，角色获得一枚追思之符，每0.2秒内至多触发一次，角色处于队伍后台也能触发。拥有4枚追思之符时，将消耗所有追思之符，使附近的队伍中所有角色获得持续12秒的「千年的大乐章·别离之歌」效果：元素精通提高{{1}}点，攻击力提升{{2}}%。触发后20秒内，无法再次获得追思之符。「千年的大乐章」触发的多种数值效果中，同类数值效果不可叠加。"
+    },
+    {
+      "key": "Song of Broken Pines",
+      "name": "Song of Broken Pines",
+      "description": "A greatsword as light as the sigh of grass in the breeze, yet as merciless to the corrupt as a typhoon.",
+      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {{0}}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
     }
   ],
   "artifacts": [
@@ -4955,6 +5188,34 @@
         {
           "key": "b1",
           "bonus": "Affected by Anemo for 40% less time."
+        }
+      ]
+    },
+    {
+      "key": "Tenacity of the Millelith",
+      "name": "Tenacity of the Millelith",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "HP increased by 20%."
+        },
+        {
+          "key": "b2",
+          "bonus": "When an Elemental Skill hits an opponent, the ATK of all nearby party members is increased by 20% and their Shield Strength is increased by 30% for 3s. This effect can be triggered once every 0.5s. This effect can still be triggered even when the character who is using this artifact set is not on the field."
+        }
+      ]
+    },
+    {
+      "key": "Pale Flame",
+      "name": "Pale Flame",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "Physical DMG is increased by 25%."
+        },
+        {
+          "key": "b2",
+          "bonus": "When an Elemental Skill hits an opponent, ATK is increased by 9% for 7s. This effect stacks up to 2 times and can be triggered once every 0.3s. Once 2 stacks are reached, the 2-set effect is increased by 100%."
         }
       ]
     }
@@ -5746,78 +6007,103 @@
     },
     {
       "key": "JuvenileJade",
-      "name": "Juvenile Jade",
+      "name": "未熟之玉",
       "description": "A crystalline substance taken from a Primo Geovishap. Within it is contained the potential to become a dragon.\nThese dull crystals are precipitated within the bodies of vishaps sleeping in the mountains. Liyue folklore holds that they will gather power over many years, after which this crystal will, at last, replace their original heart, and the vishap will become a true dragon — one that can shake the mountains and split the earth."
     },
     {
       "key": "Starsilver",
-      "name": "Starsilver",
+      "name": "星银矿石",
       "description": "A rare and precious ore formed by the unique geographical conditions and Ley Lines of Dragonspine."
     },
     {
       "key": "Vitalized Dragontooth",
-      "name": "Vitalized Dragontooth",
+      "name": "染血的龙牙",
       "description": "A Dragontooth infused with vitality. Just its luster and texture are enough to make one uneasy..."
     },
     {
       "key": "Iron Chunk",
-      "name": "Iron Chunk",
+      "name": "铁块",
       "description": "This iron chunk can be turned into a multitude of handy items in the hands of a skilled craftsman."
     },
     {
       "key": "White Iron Chunk",
-      "name": "White Iron Chunk",
+      "name": "白铁块",
       "description": "Skilled hands can make this into something brilliant."
     },
     {
       "key": "Crystal Chunk",
-      "name": "Crystal Chunk",
+      "name": "水晶块",
       "description": "An uncut crystal. Only professional craftsmanship can bring out its true value."
     },
     {
       "key": "Northlander Bow Billet",
-      "name": "Northlander Bow Billet",
+      "name": "北陆弓原胚",
       "description": "Can be used to forge 4-star bows. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
     },
     {
       "key": "Northlander Catalyst Billet",
-      "name": "Northlander Catalyst Billet",
+      "name": "北陆法器原胚",
       "description": "Can be used to forge 4-star catalysts. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
     },
     {
       "key": "Northlander Claymore Billet",
-      "name": "Northlander Claymore Billet",
+      "name": "北陆双手剑原胚",
       "description": "Can be used to forge 4-star claymores. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
     },
     {
       "key": "Northlander Polearm Billet",
-      "name": "Northlander Polearm Billet",
+      "name": "北陆长柄武器原胚",
       "description": "Can be used to forge 4-star polearms. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
     },
     {
       "key": "Northlander Sword Billet",
-      "name": "Northlander Sword Billet",
+      "name": "北陆单手剑原胚",
       "description": "Can be used to forge 4-star swords. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
     },
     {
       "key": "Dust of Azoth",
-      "name": "Dust of Azoth",
+      "name": "嬗变之尘",
       "description": "A device that can transmute elemental Ascension Materials and change their Elemental Type.Its practical uses notwithstanding, alchemy is the study of the nature of matter and the rules that underpin its transformations, and ultimately it seeks to comprehend the working principles of the world and the flow of the ley lines\nIt is not known who would share alchemical achievements of this magnitude with the civilizations of the world and why. But although the power to fundamentally transmute elemental energy in its crystallized and inert form is a highly useful one, this device also conceals the grave danger of disrupting the elemental balance..."
     },
     {
       "key": "Magical Crystal Chunk",
-      "name": "Magical Crystal Chunk",
+      "name": "魔晶块",
       "description": "These crystal chunks can be refined into Weapon EXP materials by using Original Resin.\nCrystals from mines that were eroded by the energy of the Ley Lines cannot be processed by ordinary means."
     },
     {
       "key": "Original Resin",
-      "name": "Original Resin",
+      "name": "原粹树脂",
       "description": "Used to vitalize Petrified Trees and Ley Line Blossoms, allowing access to the treasures they hold. Energy regenerates over time.\nIt is said that the roots of all the Irminsul trees and blossoms in the world are intertwined at the deepest, most hidden place in the earth, and that the pattern the root system makes defines the Ley Lines of the world."
     },
     {
       "key": "Primogem",
-      "name": "Primogem",
+      "name": "原石",
       "description": "A primordial crystalline gem that's beyond the mundane world. Shines with the condensed hopes and dreams of universes that once were."
+    },
+    {
+      "key": "Crystalline Bloom",
+      "name": "Crystalline Bloom",
+      "description": "An ice crystal of exceeding purity that is created in the frigid blooming of a Cryo Hypostasis.\nThese frosty crystals will continue to grow according to their own cold, rigid laws, till one day a flower of winter shall bloom and freeze everything. Perhaps it is stagnant time, that never-thawing bosom, that is the essence of this undying flower."
+    },
+    {
+      "key": "Dream Solvent",
+      "name": "Dream Solvent",
+      "description": "An item capable of changing Character Level-Up Materials obtained from memories and trials into whatever form is needed.\nPeople once believed that spirits and memories had some material form. If someone dreamed of heaven before waking up clutching a flower, then that blossom must have been made from such a fantasy. Dream Solvent dissolves that which is obtained from memory and transforms it into some other dream.\nIndeed, blows traded with the strong are stepping stones towards becoming stronger yourself."
+    },
+    {
+      "key": "Dragon Lord's Crown",
+      "name": "Dragon Lord's Crown",
+      "description": "Horns created from hardened jade crystallized over a thousand years are the natural crown of the dragon king.\nInfused with spirit and carved from bedrock, it was born from the mountain's heart to show the strength of the earth to the land amidst monoliths, and its long golden horns are the mark of its ancient strife with an ancient lord.\nFor a time, this horn was shattered and lost its luster, but now it gleams cold and gold as it sits in your palm."
+    },
+    {
+      "key": "Bloodjade Branch",
+      "name": "Bloodjade Branch",
+      "description": "Nurtured by the might of the dragon king, these bone branches glitter with strange, unique colors.\nHatred coursed through the natural streams and kissed the cold moonlight, and from them were these crystalline branches born and grown...\nEven though they were severed in battle, these branches steeped in dragon blood rustle as if eternally ill-at-ease."
+    },
+    {
+      "key": "Gilded Scale",
+      "name": "Gilded Scale",
+      "description": "Scaled armor that grows naturally over mystical stone, tough and silent, and filled with the strength of the dragon king.\nAcross the years as countless generations returned to the mulch of the earth, gold and obsidian embedded themselves into flesh and blood forged from bedrock before spreading and turning into scales.\nSearing agony, wordless cries... perhaps they will all vanish when the grudges that spawned them, too, finally come to an end."
     }
   ],
   "debuffs": [
@@ -5930,307 +6216,307 @@
   "monsters": [
     {
       "key": "Abyss Herald: Wicked Torrents",
-      "name": "Abyss Herald: Wicked Torrents"
+      "name": "深渊使徒·激流"
     },
     {
       "key": "Abyss Lector: Violet Lightning",
-      "name": "Abyss Lector: Violet Lightning"
+      "name": "深渊咏者"
     },
     {
       "key": "Anemo Hypostasis",
-      "name": "Anemo Hypostasis"
+      "name": "无相之风"
     },
     {
       "key": "Anemo Samachurl",
-      "name": "Anemo Samachurl"
+      "name": "风丘丘萨满"
     },
     {
       "key": "Anemo Slime",
-      "name": "Anemo Slime"
+      "name": "风史莱姆"
     },
     {
       "key": "Azhdaha",
-      "name": "Azhdaha"
+      "name": "若陀龙王"
     },
     {
       "key": "Blazing Axe Mitachurl",
-      "name": "Blazing Axe Mitachurl"
+      "name": "火斧丘丘暴徒"
     },
     {
       "key": "Childe",
-      "name": "Childe"
+      "name": "公子"
     },
     {
       "key": "Cryo Abyss Mage",
-      "name": "Cryo Abyss Mage"
+      "name": "冰深渊法师"
     },
     {
       "key": "Cryo Cicin",
-      "name": "Cryo Cicin"
+      "name": "冰萤"
     },
     {
       "key": "Cryo Hilichurl Grenadier",
-      "name": "Cryo Hilichurl Grenadier"
+      "name": "冰弹丘丘人"
     },
     {
       "key": "Cryo Hilichurl Shooter",
-      "name": "Cryo Hilichurl Shooter"
+      "name": "冰箭丘丘人"
     },
     {
       "key": "Cryo Hypostasis",
-      "name": "Cryo Hypostasis"
+      "name": "无相之冰"
     },
     {
       "key": "Cryo Regisvine",
-      "name": "Cryo Regisvine"
+      "name": "急冻树"
     },
     {
       "key": "Cryo Samachurl",
-      "name": "Cryo Samachurl"
+      "name": "冰丘丘萨满"
     },
     {
       "key": "Cryo Slime",
-      "name": "Cryo Slime"
+      "name": "冰史莱姆"
     },
     {
       "key": "Cryo Whopperflower",
-      "name": "Cryo Whopperflower"
+      "name": "冰霜骗骗花"
     },
     {
       "key": "Dendro Samachurl",
-      "name": "Dendro Samachurl"
+      "name": "草丘丘萨满"
     },
     {
       "key": "Dendro Slime",
-      "name": "Dendro Slime"
+      "name": "草史莱姆"
     },
     {
       "key": "Electro Cicin",
-      "name": "Electro Cicin"
+      "name": "雷萤"
     },
     {
       "key": "Electro Hilichurl Shooter",
-      "name": "Electro Hilichurl Shooter"
+      "name": "雷箭丘丘人"
     },
     {
       "key": "Electro Hypostasis",
-      "name": "Electro Hypostasis"
+      "name": "无相之雷"
     },
     {
       "key": "Electro Slime",
-      "name": "Electro Slime"
+      "name": "雷史莱姆"
     },
     {
       "key": "Eye of the Storm",
-      "name": "Eye of the Storm"
+      "name": "狂风之核"
     },
     {
       "key": "Fatui Cryo Cicin Mage",
-      "name": "Fatui Cryo Cicin Mage"
+      "name": "愚人众·冰萤术士"
     },
     {
       "key": "Fatui Electro Cicin Mage",
-      "name": "Fatui Electro Cicin Mage"
+      "name": "愚人众·雷萤术士"
     },
     {
       "key": "Fatui Pyro Agent",
-      "name": "Fatui Pyro Agent"
+      "name": "愚人众·火之债务处理人"
     },
     {
       "key": "Fatui Skirmisher - Anemoboxer Vanguard",
-      "name": "Fatui Skirmisher - Anemoboxer Vanguard"
+      "name": "愚人众先遣队·风拳前锋军"
     },
     {
       "key": "Fatui Skirmisher - Cryogunner Legionnaire",
-      "name": "Fatui Skirmisher - Cryogunner Legionnaire"
+      "name": "愚人众先遣队·冰铳重卫士"
     },
     {
       "key": "Fatui Skirmisher - Electrohammer Vanguard",
-      "name": "Fatui Skirmisher - Electrohammer Vanguard"
+      "name": "愚人众先遣队·雷锤前锋军"
     },
     {
       "key": "Fatui Skirmisher - Geochanter Bracer",
-      "name": "Fatui Skirmisher - Geochanter Bracer"
+      "name": "愚人众先遣队·岩使游击兵"
     },
     {
       "key": "Fatui Skirmisher - Hydrogunner Legionnaire",
-      "name": "Fatui Skirmisher - Hydrogunner Legionnaire"
+      "name": "愚人众先遣队·水铳重卫士"
     },
     {
       "key": "Fatui Skirmisher - Pyroslinger Bracer",
-      "name": "Fatui Skirmisher - Pyroslinger Bracer"
+      "name": "愚人众先遣队·火铳游击兵"
     },
     {
       "key": "Frostarm Lawachurl",
-      "name": "Frostarm Lawachurl"
+      "name": "丘丘霜铠王"
     },
     {
       "key": "Geo Hypostasis",
-      "name": "Geo Hypostasis"
+      "name": "无相之岩"
     },
     {
       "key": "Geo Samachurl",
-      "name": "Geo Samachurl"
+      "name": "岩丘丘萨满"
     },
     {
       "key": "Geo Slime",
-      "name": "Geo Slime"
+      "name": "岩史莱姆"
     },
     {
       "key": "Geovishap",
-      "name": "Geovishap"
+      "name": "岩龙蜥"
     },
     {
       "key": "Geovishap Hatchling",
-      "name": "Geovishap Hatchling"
+      "name": "幼岩龙蜥"
     },
     {
       "key": "Hilichurl",
-      "name": "Hilichurl"
+      "name": "岩盾丘丘人"
     },
     {
       "key": "Hilichurl Berserker",
-      "name": "Hilichurl Berserker"
+      "name": "冲锋丘丘人"
     },
     {
       "key": "Hilichurl Fighter",
-      "name": "Hilichurl Fighter"
+      "name": "打手丘丘人"
     },
     {
       "key": "Hilichurl Grenadier",
-      "name": "Hilichurl Grenadier"
+      "name": "爆弹丘丘人"
     },
     {
       "key": "Hilichurl Shooter",
-      "name": "Hilichurl Shooter"
+      "name": "射手丘丘人"
     },
     {
       "key": "Hydro Abyss Mage",
-      "name": "Hydro Abyss Mage"
+      "name": "水深渊法师"
     },
     {
       "key": "Hydro Cicin",
-      "name": "Hydro Cicin"
+      "name": "水萤"
     },
     {
       "key": "Hydro Samachurl",
-      "name": "Hydro Samachurl"
+      "name": "水丘丘萨满"
     },
     {
       "key": "Hydro Slime",
-      "name": "Hydro Slime"
+      "name": "水史莱姆"
     },
     {
       "key": "Ice Shield Hilichurl Guard",
-      "name": "Ice Shield Hilichurl Guard"
+      "name": "冰盾丘丘人"
     },
     {
       "key": "Ice Shieldwall Mitachurl",
-      "name": "Ice Shieldwall Mitachurl"
+      "name": "冰盾丘丘暴徒"
     },
     {
       "key": "Large Anemo Slime",
-      "name": "Large Anemo Slime"
+      "name": "大型风史莱姆"
     },
     {
       "key": "Large Cryo Slime",
-      "name": "Large Cryo Slime"
+      "name": "大型冰史莱姆"
     },
     {
       "key": "Large Dendro Slime",
-      "name": "Large Dendro Slime"
+      "name": "大型草史莱姆"
     },
     {
       "key": "Large Electro Slime",
-      "name": "Large Electro Slime"
+      "name": "大型雷史莱姆"
     },
     {
       "key": "Large Geo Slime",
-      "name": "Large Geo Slime"
+      "name": "大型岩史莱姆"
     },
     {
       "key": "Large Hydro Slime",
-      "name": "Large Hydro Slime"
+      "name": "大型水史莱姆"
     },
     {
       "key": "Large Pyro Slime",
-      "name": "Large Pyro Slime"
+      "name": "大型火史莱姆"
     },
     {
       "key": "Lupus Boreas, Dominator of Wolves",
-      "name": "Lupus Boreas, Dominator of Wolves"
+      "name": "北风的王狼"
     },
     {
       "key": "Millelith Sergeant",
-      "name": "Millelith Sergeant"
+      "name": "千岩军教头"
     },
     {
       "key": "Millelith Soldier",
-      "name": "Millelith Soldier"
+      "name": "千岩军士兵"
     },
     {
       "key": "Mutant Electro Slime",
-      "name": "Mutant Electro Slime"
+      "name": "变异雷史莱姆"
     },
     {
       "key": "Oceanid",
-      "name": "Oceanid"
+      "name": "纯水精灵"
     },
     {
       "key": "Primo Geovishap",
-      "name": "Primo Geovishap"
+      "name": "古岩龙蜥"
     },
     {
       "key": "Pyro Abyss Mage",
-      "name": "Pyro Abyss Mage"
+      "name": "火深渊法师"
     },
     {
       "key": "Pyro Hilichurl Shooter",
-      "name": "Pyro Hilichurl Shooter"
+      "name": "火箭丘丘人"
     },
     {
       "key": "Pyro Regisvine",
-      "name": "Pyro Regisvine"
+      "name": "爆炎树"
     },
     {
       "key": "Pyro Slime",
-      "name": "Pyro Slime"
+      "name": "火史莱姆"
     },
     {
       "key": "Pyro Whopperflower",
-      "name": "Pyro Whopperflower"
+      "name": "炽热骗骗花"
     },
     {
       "key": "Rock Shield Hilichurl Guard",
-      "name": "Rock Shield Hilichurl Guard"
+      "name": "岩盾丘丘人"
     },
     {
       "key": "Rock Shieldwall Mitachurl",
-      "name": "Rock Shieldwall Mitachurl"
+      "name": "岩盾丘丘暴徒"
     },
     {
       "key": "Ruin Grader",
-      "name": "Ruin Grader"
+      "name": "遗迹重机"
     },
     {
       "key": "Ruin Guard",
-      "name": "Ruin Guard"
+      "name": "遗迹守卫"
     },
     {
       "key": "Ruin Hunter",
-      "name": "Ruin Hunter"
+      "name": "遗迹猎者"
     },
     {
       "key": "Stonehide Lawachurl",
-      "name": "Stonehide Lawachurl"
+      "name": "丘丘岩盔王"
     },
     {
       "key": "Stormterror",
-      "name": "Stormterror"
+      "name": "风魔龙·特瓦林"
     },
     {
       "key": "Treasure Hoarders - Boss",
-      "name": "Treasure Hoarders - Boss"
+      "name": "盗宝团·大姐头"
     },
     {
       "key": "Treasure Hoarders - Carmen",
@@ -6238,67 +6524,67 @@
     },
     {
       "key": "Treasure Hoarders - Crusher",
-      "name": "Treasure Hoarders - Crusher"
+      "name": "盗宝团·粉碎者"
     },
     {
       "key": "Treasure Hoarders - Liuliu",
-      "name": "Treasure Hoarders - Liuliu"
+      "name": "盗宝团·「溜溜」"
     },
     {
       "key": "Treasure Hoarders - Marksman",
-      "name": "Treasure Hoarders - Marksman"
+      "name": "盗宝团·神射手"
     },
     {
       "key": "Treasure Hoarders - Pugilist",
-      "name": "Treasure Hoarders - Pugilist"
+      "name": "盗宝团·拳术师"
     },
     {
       "key": "Treasure Hoarders - Raptor",
-      "name": "Treasure Hoarders - Raptor"
+      "name": "盗宝团·怪鸟"
     },
     {
       "key": "Treasure Hoarders - Scout",
-      "name": "Treasure Hoarders - Scout"
+      "name": "盗宝团·斥候"
     },
     {
       "key": "Treasure Hoarders - Seaman",
-      "name": "Treasure Hoarders - Seaman"
+      "name": "盗宝团·海上男儿"
     },
     {
       "key": "Treasure Hoarders: Cryo Potioneer",
-      "name": "Treasure Hoarders: Cryo Potioneer"
+      "name": "盗宝团·水之药剂师"
     },
     {
       "key": "Treasure Hoarders: Electro Potioneer",
-      "name": "Treasure Hoarders: Electro Potioneer"
+      "name": "盗宝团·雷之药剂师"
     },
     {
       "key": "Treasure Hoarders: Gravedigger",
-      "name": "Treasure Hoarders: Gravedigger"
+      "name": "盗宝团·掘墓者"
     },
     {
       "key": "Treasure Hoarders: Handyman",
-      "name": "Treasure Hoarders: Handyman"
+      "name": "盗宝团·杂工"
     },
     {
       "key": "Treasure Hoarders: Hydro Potioneer",
-      "name": "Treasure Hoarders: Hydro Potioneer"
+      "name": "盗宝团·水之药剂师"
     },
     {
       "key": "Treasure Hoarders: Pyro Potioneer",
-      "name": "Treasure Hoarders: Pyro Potioneer"
+      "name": "盗宝团·火之药剂师"
     },
     {
       "key": "Unusual Hilichurl",
-      "name": "Unusual Hilichurl"
+      "name": "大伟丘"
     },
     {
       "key": "Wooden Shield Hilichurl Guard",
-      "name": "Wooden Shield Hilichurl Guard"
+      "name": "木盾丘丘人"
     },
     {
       "key": "Wooden Shieldwall Mitachurl",
-      "name": "Wooden Shieldwall Mitachurl"
+      "name": "木盾丘丘暴徒"
     }
   ]
 }

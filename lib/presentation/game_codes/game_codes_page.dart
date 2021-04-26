@@ -64,9 +64,9 @@ class GameCodesPage extends StatelessWidget {
         padding: Styles.edgeInsetAll5,
         child: Table(
           columnWidths: const {
-            0: FractionColumnWidth(.25),
-            1: FractionColumnWidth(.45),
-            2: FractionColumnWidth(.25),
+            0: FractionColumnWidth(.3),
+            1: FractionColumnWidth(.4),
+            2: FractionColumnWidth(.3),
           },
           children: [
             TableRow(
@@ -90,6 +90,7 @@ class GameCodesPage extends StatelessWidget {
   }
 
   TableRow _buildRow(S s, BuildContext context, GameCodeModel model) {
+    final fToast = ToastUtils.of(context);
     final rewards = model.rewards.map((m) => WrappedAscensionMaterial(image: m.fullImagePath, quantity: m.quantity, size: 20)).toList();
     return TableRow(
       children: [
@@ -100,6 +101,7 @@ class GameCodesPage extends StatelessWidget {
               child: Text(
                 model.code,
                 textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.subtitle2.copyWith(fontSize: 12),
               ),
             ),
           ),
@@ -109,7 +111,7 @@ class GameCodesPage extends StatelessWidget {
         ),
         CommonTableCell.child(
           child: Wrap(
-            alignment: WrapAlignment.end,
+            alignment: WrapAlignment.center,
             children: [
               IconButton(
                 tooltip: !model.isUsed ? s.markAsUsed : s.markAsUnused,
@@ -122,7 +124,7 @@ class GameCodesPage extends StatelessWidget {
                 splashRadius: 20,
                 icon: const Icon(Icons.copy),
                 onPressed: () => Clipboard.setData(ClipboardData(text: model.code)).then(
-                  (value) => ToastUtils.showInfoToast(s.codeXWasCopied(model.code)),
+                  (value) => ToastUtils.showInfoToast(fToast, s.codeXWasCopied(model.code)),
                 ),
               )
             ],

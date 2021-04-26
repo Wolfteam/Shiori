@@ -14,6 +14,7 @@ class SettingsServiceImpl extends SettingsService {
   final _showCharacterDetailsKey = 'ShowCharacterDetailsKey';
   final _showWeaponDetailsKey = 'ShowWeaponDetailsKey';
   final _serverResetTimeKey = 'ServerResetTimeKey';
+  final _doubleBackToCloseKey = 'DoubleBackToCloseKey';
 
   bool _initialized = false;
 
@@ -63,6 +64,12 @@ class SettingsServiceImpl extends SettingsService {
   set serverResetTime(AppServerResetTimeType time) => _prefs.setInt(_serverResetTimeKey, time.index);
 
   @override
+  bool get doubleBackToClose => _prefs.getBool(_doubleBackToCloseKey);
+
+  @override
+  set doubleBackToClose(bool value) => _prefs.setBool(_doubleBackToCloseKey, value);
+
+  @override
   AppSettings get appSettings => AppSettings(
         appTheme: appTheme,
         useDarkAmoled: false,
@@ -72,6 +79,7 @@ class SettingsServiceImpl extends SettingsService {
         showWeaponDetails: showWeaponDetails,
         isFirstInstall: isFirstInstall,
         serverResetTime: serverResetTime,
+        doubleBackToClose: doubleBackToClose,
       );
 
   SettingsServiceImpl(this._logger);
@@ -83,7 +91,7 @@ class SettingsServiceImpl extends SettingsService {
       return;
     }
 
-    _logger.info(runtimeType, 'Getting shared prefs instance...');
+    _logger.info(runtimeType, 'Initializing settings... Getting shared prefs instance...');
 
     _prefs = await SharedPreferences.getInstance();
 
@@ -121,6 +129,11 @@ class SettingsServiceImpl extends SettingsService {
       serverResetTime = AppServerResetTimeType.northAmerica;
     }
 
+    if (_prefs.get(_doubleBackToCloseKey) == null) {
+      _logger.info(runtimeType, 'Double back to close will be set to its default (false)');
+      doubleBackToClose = false;
+    }
+
     _initialized = true;
     _logger.info(runtimeType, 'Settings were initialized successfully');
   }
@@ -129,6 +142,14 @@ class SettingsServiceImpl extends SettingsService {
     try {
       _logger.info(runtimeType, '_getDefaultLangToUse: Trying to retrieve device lang...');
       final deviceLocale = await Devicelocale.currentAsLocale;
+      if (deviceLocale == null) {
+        _logger.warning(
+          runtimeType,
+          "_getDefaultLangToUse: Couldn't retrieve the device locale, falling back to english",
+        );
+        return AppLanguageType.english;
+      }
+
       final appLang = languagesMap.entries.firstWhere((val) => val.value.code == deviceLocale.languageCode, orElse: () => null);
       if (appLang == null) {
         _logger.info(

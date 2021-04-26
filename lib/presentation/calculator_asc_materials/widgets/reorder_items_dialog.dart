@@ -12,6 +12,7 @@ class ReorderItemsDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
+    final fToast = ToastUtils.of(context);
     return AlertDialog(
       title: Text(s.priority),
       content: Column(
@@ -34,7 +35,7 @@ class ReorderItemsDialog extends StatelessWidget {
                     return ListTile(
                       key: Key('$index'),
                       title: Text('#$position - ${item.name}', overflow: TextOverflow.ellipsis),
-                      onTap: () => ToastUtils.showInfoToast(s.holdToReorder),
+                      onTap: () => ToastUtils.showInfoToast(fToast, s.holdToReorder),
                     );
                   },
                   onReorder: (oldIndex, newIndex) => _onReorder(oldIndex, newIndex, context),
