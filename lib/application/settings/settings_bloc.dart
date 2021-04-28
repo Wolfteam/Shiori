@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:genshindb/application/url_page/url_page_bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/services/device_info_service.dart';
 import 'package:genshindb/domain/services/settings_service.dart';
@@ -18,8 +19,15 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   final DeviceInfoService _deviceInfoService;
   final MainBloc _mainBloc;
   final HomeBloc _homeBloc;
+  final UrlPageBloc _urlPageBloc;
 
-  SettingsBloc(this._settingsService, this._deviceInfoService, this._mainBloc, this._homeBloc) : super(const SettingsState.loading());
+  SettingsBloc(
+    this._settingsService,
+    this._deviceInfoService,
+    this._mainBloc,
+    this._homeBloc,
+    this._urlPageBloc,
+  ) : super(const SettingsState.loading());
 
   _LoadedState get currentState => state as _LoadedState;
 
@@ -39,6 +47,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           showWeaponDetails: settings.showWeaponDetails,
           serverResetTime: settings.serverResetTime,
           doubleBackToClose: settings.doubleBackToClose,
+          useOfficialMap: settings.useOfficialMap,
         );
       },
       themeChanged: (event) async {
@@ -72,6 +81,11 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
       doubleBackToCloseChanged: (event) async {
         _settingsService.doubleBackToClose = event.newValue;
         return currentState.copyWith.call(doubleBackToClose: event.newValue);
+      },
+      useOfficialMapChanged: (event) async {
+        _settingsService.useOfficialMap = event.newValue;
+        _urlPageBloc.add(const UrlPageEvent.init(loadMap: false, loadWishSimulator: false));
+        return currentState.copyWith.call(useOfficialMap: event.newValue);
       },
     );
 

@@ -19,6 +19,7 @@ abstract class AppSettings implements _$AppSettings {
     @required bool isFirstInstall,
     @required AppServerResetTimeType serverResetTime,
     @required bool doubleBackToClose,
+    @required bool useOfficialMap,
   }) = _AppSettings;
   const AppSettings._();
 

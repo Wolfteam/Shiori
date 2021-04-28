@@ -28,5 +28,8 @@ abstract class SettingsService {
   bool get doubleBackToClose;
   set doubleBackToClose(bool value);
 
+  bool get useOfficialMap;
+  set useOfficialMap(bool value);
+
   Future<void> init();
 }

@@ -292,5 +292,6 @@
   "pressOnceAgainToExit": "Presiona una vez más para salir",
   "discordServer": "Servidor de Discord",
   "usedItem": "Item usado",
-  "itemIsBeingUsedOnACalculation": "Este item está siendo usado en una o más sesiones de la calculadora.\nLa cantidad usada es {quantity}"
+  "itemIsBeingUsedOnACalculation": "Este item está siendo usado en una o más sesiones de la calculadora.\nLa cantidad usada es {quantity}",
+  "useOfficialMap": "Usar el mapa oficial"
 }
