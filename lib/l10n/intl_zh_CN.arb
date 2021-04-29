@@ -235,8 +235,8 @@
   "chooseALevel": "选择一个等级",
   "experience": "实验性",
   "approximate": "大约",
-  "active": "已启用",
-  "inactive": "未启用",
+  "active": "启用",
+  "inactive": "不启用",
   "gameCodes": "兑换代码",
   "codes": "代码",
   "rewards": "奖励",
@@ -267,7 +267,7 @@
   "addTheItemsYouGotInGame": "添加在游戏中获得的物品",
   "quantity": "数量",
   "useMaterialsFromInventory": "使用物品栏中的材料",
-  "information": "信息",
+  "information": "说明",
   "priority": "优先级",
   "holdToReorder": "按住并拖动以排序",
   "calcSessionInfoMsgA": "组别允许你对特殊角色或武器进行计算。",
@@ -289,6 +289,9 @@
   "fatui": "愚人众",
   "automaton": "自律机关",
   "droppedBy": "掉落于",
-  "pressOnceAgainToExit": "Press once again to exit",
-  "discordServer": "Discord Server"
+  "pressOnceAgainToExit": "再点击一次退出",
+  "discordServer": "Discord 服务器",
+  "usedItem": "Used item",
+  "itemIsBeingUsedOnACalculation": "This item is being used in one or more calculator sessions.\nThe used quantity is {quantity}",
+  "useOfficialMap": "Use the official map"
 }
