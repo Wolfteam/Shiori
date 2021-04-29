@@ -583,6 +583,135 @@
       "obtainedFrom": [],
       "droppedBy": [],
       "hasSiblings": false
+    },
+    {
+      "key": "Dragon Lord's Crown",
+      "rarity": 5,
+      "image": "dragon_lords_crown.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "bloodjade_branch.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "elementalStone",
+              "image": "dream_solvent.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "gilded_scale.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "elementalStone",
+              "image": "dream_solvent.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": false
+    },
+    {
+      "key": "Bloodjade Branch",
+      "rarity": 5,
+      "image": "bloodjade_branch.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "dragon_lords_crown.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "elementalStone",
+              "image": "dream_solvent.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "gilded_scale.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "elementalStone",
+              "image": "dream_solvent.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": false
+    },
+    {
+      "key": "Gilded Scale",
+      "rarity": 5,
+      "image": "gilded_scale.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "dragon_lords_crown.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "elementalStone",
+              "image": "dream_solvent.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "bloodjade_branch.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "elementalStone",
+              "image": "dream_solvent.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": false
     }
   ],
   "weapon": [
@@ -2204,6 +2333,34 @@
       "key": "JuvenileJade",
       "rarity": 4,
       "image": "juvenile_jade.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "elementalStone",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false
+    },
+    {
+      "key": "Dream Solvent",
+      "rarity": 4,
+      "image": "dream_solvent.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "elementalStone",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false
+    },
+    {
+      "key": "Crystalline Bloom",
+      "rarity": 4,
+      "image": "crystalline_bloom.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,

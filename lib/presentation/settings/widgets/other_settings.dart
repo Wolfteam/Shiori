@@ -59,6 +59,12 @@ class OtherSettings extends StatelessWidget {
                       value: settingsState.doubleBackToClose,
                       onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.doubleBackToCloseChanged(newValue: newVal)),
                     ),
+                    SwitchListTile(
+                      activeColor: theme.accentColor,
+                      title: Text(s.useOfficialMap),
+                      value: settingsState.useOfficialMap,
+                      onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.useOfficialMapChanged(newValue: newVal)),
+                    ),
                     ListTile(
                       dense: true,
                       contentPadding: EdgeInsets.zero,
