@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
@@ -66,6 +68,37 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
 
   @override
   Widget build(BuildContext context) {
+    final scaffold = Scaffold(
+      body: SafeArea(
+        child: BlocConsumer<MainTabBloc, MainTabState>(
+          listener: (ctx, state) async {
+            state.maybeMap(
+              initial: (s) => _changeCurrentTab(s.currentSelectedTab),
+              orElse: () => {},
+            );
+          },
+          builder: (context, state) => WillPopScope(
+            onWillPop: () => handleWillPop(context),
+            child: TabBarView(
+              controller: _tabController,
+              physics: const NeverScrollableScrollPhysics(),
+              children: _pages,
+            ),
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _index,
+        showUnselectedLabels: true,
+        items: _buildBottomNavBars(),
+        type: BottomNavigationBarType.fixed,
+        onTap: _gotoTab,
+      ),
+    );
+
+    if (Platform.isWindows) {
+      return scaffold;
+    }
     return RateMyAppBuilder(
       rateMyApp: RateMyApp(minDays: 7, minLaunches: 10, remindDays: 7, remindLaunches: 10),
       onInitialized: (ctx, rateMyApp) {
@@ -82,33 +115,7 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
           noButton: s.noThanks,
         );
       },
-      builder: (ctx) => Scaffold(
-        body: SafeArea(
-          child: BlocConsumer<MainTabBloc, MainTabState>(
-            listener: (ctx, state) async {
-              state.maybeMap(
-                initial: (s) => _changeCurrentTab(s.currentSelectedTab),
-                orElse: () => {},
-              );
-            },
-            builder: (context, state) => WillPopScope(
-              onWillPop: () => handleWillPop(context),
-              child: TabBarView(
-                controller: _tabController,
-                physics: const NeverScrollableScrollPhysics(),
-                children: _pages,
-              ),
-            ),
-          ),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _index,
-          showUnselectedLabels: true,
-          items: _buildBottomNavBars(),
-          type: BottomNavigationBarType.fixed,
-          onTap: _gotoTab,
-        ),
-      ),
+      builder: (ctx) => scaffold,
     );
   }
 

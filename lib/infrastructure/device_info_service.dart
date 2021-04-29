@@ -26,6 +26,17 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   @override
   Future<void> init() async {
     try {
+      if (!Platform.isAndroid) {
+        _version = 'N/A';
+        _appName = 'N/A';
+        _deviceInfo = {
+          'Model': 'N/A',
+          'OsVersion': 'N/A',
+          'AppVersion': 'N/A',
+        };
+        return;
+      }
+
       final deviceInfo = DeviceInfoPlugin();
       final androidInfo = await deviceInfo.androidInfo;
       final packageInfo = await PackageInfo.fromPlatform();
@@ -37,9 +48,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
         'AppVersion': '${packageInfo.version}+${packageInfo.buildNumber}'
       };
 
-      if (!Platform.isWindows) {
-        await FlutterUserAgent.init();
-      }
+      await FlutterUserAgent.init();
     } catch (ex) {
       _deviceInfo = {'Model': 'N/A', 'OsVersion': 'N/A', 'AppVersion': 'N/A'};
       _version = _appName = 'N/A';
