@@ -22759,11 +22759,11 @@
       "image": "Yanfei.png",
       "fullImage": "Yanfei.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": true,
       "region": "liyue",
-      "role": "na",
+      "role": "mainDps",
       "tier": "a",
       "birthday": "07/28",
       "ascensionMaterials": [
@@ -23156,7 +23156,48 @@
           ]
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "skyward_atlas.png",
+            "memory_of_dust.png",
+            "blackcliff_amulet.png",
+            "mappa_mare.png",
+            "everfrost_core.png"
+          ],
+          "artifacts": [
+            {
+              "one": "crimson_witch_of_flames_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "pyroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "one": "wanderers_troupe_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "pyroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "elementaryMastery"
+          ]
+        }
+      ],
       "skills": [
         {
           "key": "s1",
@@ -23179,51 +23220,62 @@
         },
         {
           "key": "s2",
+          "image": "signed_edict.png",
           "type": "elementalSkill"
         },
         {
           "key": "s3",
+          "image": "yanfei_c5.png",
           "type": "elementalBurst"
         }
       ],
       "passives": [
         {
           "key": "p1",
+          "image": "yanfei_p1.png",
           "unlockedAt": -1
         },
         {
           "key": "p2",
+          "image": "yanfei_p2.png",
           "unlockedAt": 1
         },
         {
           "key": "p3",
+          "image": "yanfei_p3.png",
           "unlockedAt": 4
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "number": 1
+          "number": 1,
+          "image": "yanfei_c1.png"
         },
         {
           "key": "c2",
-          "number": 2
+          "number": 2,
+          "image": "yanfei_c2.png"
         },
         {
           "key": "c3",
-          "number": 3
+          "number": 3,
+          "image": "yanfei_c3.png"
         },
         {
           "key": "c4",
-          "number": 4
+          "number": 4,
+          "image": "yanfei_c4.png"
         },
         {
           "key": "c5",
-          "number": 5
+          "number": 5,
+          "image": "yanfei_c5.png"
         },
         {
           "key": "c6",
-          "number": 6
+          "number": 6,
+          "image": "yanfei_c6.png"
         }
       ],
       "subStatType": "pyroDmgBonusPercentage",

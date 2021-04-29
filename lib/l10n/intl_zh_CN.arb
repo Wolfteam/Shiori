@@ -293,5 +293,6 @@
   "pressOnceAgainToExit": "再点击一次退出",
   "discordServer": "Discord 服务器",
   "usedItem": "Used item",
-  "itemIsBeingUsedOnACalculation": "This item is being used in one or more calculator sessions.\nThe used quantity is {quantity}"
+  "itemIsBeingUsedOnACalculation": "This item is being used in one or more calculator sessions.\nThe used quantity is {quantity}",
+  "useOfficialMap": "Use the official map"
 }

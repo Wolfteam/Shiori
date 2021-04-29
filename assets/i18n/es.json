@@ -4736,7 +4736,7 @@
     },
     {
       "key": "Song of Broken Pines",
-      "name": "Sátira de Levantamiento",
+      "name": "Oda de los Pinos",
       "description": "Un mandoble que juguetea con las plantas y los árboles como el soplido de una ligera brisa y, al mismo tiempo, es capaz de derribarlos como un abrumador tornado.",
       "refinement": "Una parte del «Gran concierto milenario» que flota por los vientos. Aumenta el ATQ en un {{0}}%. Al atacar a un enemigo con un Ataque Normal o Cargado, el personaje obtiene un talismán susurrante que puede adquirirse una vez cada 0.3 s como máximo. Al obtener 4 talismanes susurrantes, estos se consumirán y otorgarán a todos los miembros del equipo cercanos el efecto de «Gran concierto milenario: Canción de la revelación» durante 12 s, el cual aumenta la Vel. de Ataque de los Ataques Normales en un {{1}}% y el ATQ en un {{2}}%. Tras activarse, no podrán obtenerse talismanes susurrantes durante 20 s. Los efectos de «Gran concierto milenario» no se acumularán con otros efectos del mismo tipo."
     }
@@ -5186,7 +5186,7 @@
     },
     {
       "key": "Tenacity of the Millelith",
-      "name": "Tenacity of the Millelith",
+      "name": "Tenacidad de la Geoarmada",
       "bonus": [
         {
           "key": "b1",
@@ -5200,7 +5200,7 @@
     },
     {
       "key": "Pale Flame",
-      "name": "Pale Flame",
+      "name": "Llamas Albinas",
       "bonus": [
         {
           "key": "b1",
