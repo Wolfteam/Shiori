@@ -98,6 +98,7 @@ class TelemetryServiceImpl implements TelemetryService {
       'IsFirstInstall': settings.isFirstInstall.toString(),
       'ServerResetTime': EnumToString.convertToString(settings.serverResetTime),
       'DoubleBackToClose': settings.doubleBackToClose.toString(),
+      'UseOfficialMap': settings.useOfficialMap.toString(),
     });
   }
 

@@ -31,4 +31,8 @@ abstract class SettingsEvent with _$SettingsEvent {
   const factory SettingsEvent.doubleBackToCloseChanged({
     @required bool newValue,
   }) = _DoubleBackToCloseChanged;
+
+  const factory SettingsEvent.useOfficialMapChanged({
+    @required bool newValue,
+  }) = _UseOfficialMapChanged;
 }

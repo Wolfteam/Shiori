@@ -12,5 +12,6 @@ abstract class SettingsState with _$SettingsState {
     @required bool showWeaponDetails,
     @required AppServerResetTimeType serverResetTime,
     @required bool doubleBackToClose,
+    @required bool useOfficialMap,
   }) = _LoadedState;
 }

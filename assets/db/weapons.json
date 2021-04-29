@@ -31028,7 +31028,7 @@
       "secondaryStat": "physDmgPercentage",
       "secondaryStatValue": 4.5,
       "location": "gacha",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "ascensionMaterials": [
         {
           "level": 20,
