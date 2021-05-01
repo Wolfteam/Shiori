@@ -39,7 +39,7 @@
                 "Quando i nemici vengono colpiti nel suo AoE, l'Isotoma Solare crea un Fiore Momentaneo che infligge AoE Geo DMG. Il DMG inflitto scala sulla DEF di Albedo.",
                 "Il Fiore Momentaneo può essere generato solo ogni 2s.",
                 "Quando un personaggio si trova sull'Isotoma Solare, il potere Geo si accumula per formare una piattaforma cristallizzata che solleva il personaggio fino ad una certa altezza. Solo una piattaforma cristallizzata può esistere per volta.",
-                "L'Isotoma Solare è considerato una costruzione Geo ."
+                "L'Isotoma Solare è considerato una costruzione Geo."
               ]
             },
             {
@@ -270,7 +270,7 @@
             },
             {
               "key": "a2",
-              "description": "Consuma una certa quantità di Stamina per per infliggere AoE Hydro DMG.",
+              "description": "Consuma una certa quantità di Stamina per infliggere AoE Hydro DMG.",
               "descriptions": []
             },
             {
@@ -411,7 +411,7 @@
             },
             {
               "key": "a2",
-              "description": "Solleva la sua arma come uno scudo. Il Max DMG Absorption scala sul Max HP di Beidou. Infligge Electro DMG con l’energia accumulata nella Claymore finchè non viene rilasciata o l’abilità scade. Il DMG inflitto scala sul numero di colpi parati da Beidou mentre l’abilità è attiva. Se si scatena l'effetto per 2 volte, si raggiungerà il più alto DMG Bonus. Lo scudo possiede le seguenti proprietà:",
+              "description": "Solleva la sua arma come uno scudo. Il Max DMG Absorption scala sul Max HP di Beidou. Infligge Electro DMG con l’energia accumulata nella Claymore finché non viene rilasciata o l’abilità scade. Il DMG inflitto scala sul numero di colpi parati da Beidou mentre l’abilità è attiva. Se si scatena l'effetto per 2 volte, si raggiungerà il più alto DMG Bonus. Lo scudo possiede le seguenti proprietà:",
               "descriptions": [
                 "Ha Absorption Efficiency del 250% contro gli Electro DMG.",
                 "All'attivazione applica l'elemento Electro a Beidou."
@@ -711,7 +711,7 @@
         {
           "key": "c2",
           "title": "Rivoluzione Atmosferica",
-          "description": "Riduce del 15% il CD di Elemental Skills e Elemental Bursts generati all’interno del Campo della Lama Spiritica - Velo Gelato di Chonghua.",
+          "description": "Riduce del 15% il CD di Elemental Skills e Elemental Burst generati all’interno del Campo della Lama Spiritica - Velo Gelato di Chonghua.",
           "secondDescription": null,
           "descriptions": []
         },
@@ -981,114 +981,114 @@
     {
       "key": "Eula",
       "name": "Eula",
-      "description": "The Spindrift Knight, a scion of the old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
+      "description": "Lo Spindrift Knight, un rampollo della vecchia aristocrazia e Capitana della Compagnia di Ricognizione dei Cavalieri di Favonius. Il perché una discendente degli antichi nobili spodestati si sia unita ai Cavalieri è ancora oggi avvolta nel mistero.",
       "skills": [
         {
           "key": "s1",
-          "title": "Favonius Bladework - Edel",
+          "title": "Tecnica Favonius - Edel",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 5 consecutive strikes.",
+              "description": "Esegue 5 attacchi rapidi.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": " Drains Stamina over time to perform continuous slashes.\nAt the end of the sequence, perform a more powerful slash.",
+              "description": "Consuma Stamina nel tempo per eseguire continui attacchi concatenati.\nAlla fine della sequenza, infligge un colpo molto più potente.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Si lancia in picchiata da mezz'aria per colpire il terreno sottostante, danneggia i nemici lungo il percorso e assesta AoE DMG all'impatto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Icetide Vortex",
+          "title": "Vortice Assiderato",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Slashes swiftly, dealing Cryo DMG.\nWhen it hits an opponent, Eula gains a stack of Grimheart that stacks up to 2 times. These stacks can only be gained once every 0.3s.",
+              "description": "Infligge rapidi Cryo DMG.\nQuando colpisce un nemico, Eula ottiene uno stack di Cuore Nero cumulabile fino a 2. Questi stacks possono avvenire solo una volta ogni 0.3s.",
               "descriptions": []
             },
             {
-              "name": "Grimheart",
-              "description": "Increases Eula's resistance to interruption and DEF.",
+              "name": "Cuore Nero",
+              "description": "Aumenta la DEF e, all'interruzione, la RES di Eula.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Wielding her sword, Eula consumes all the stacks of Grimheart and lashes forward, dealing AoE Cryo DMG to opponents in front of her.\nIf Grimheart stacks are consumed, surrounding opponents will have their Physical RES and Cryo RES decreased.\nEach consumed stack of Grimheart will be converted into an Icewhirl Brand that deals Cryo DMG to nearby opponents.",
+              "description": "Brandendo la sua lama, Eula consuma tutti gli stacks di Cuore Nero e fende in avanti, infliggendo AoE Cryo DMG ai nemici che la incrociano.\nConsumare stacks di Cuore Nero riduce Physical RES e Cryo RES dei nemici circostanti.\nCiascuno stack consumato di Cuore Nero sarà convertito in uno Icewhirl Brand che infligge Cryo DMG ai nemici vicini.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Glacial Illumination",
-          "description": "Brandishes her greatsword, dealing Cryo DMG to nearby opponents and creating a Lightfall Sword that follows her around for a duration of up to 7s.\nWhile present, the Lightfall Sword increases Eula's resistance to interruption. When Eula's own Normal Attack, Elemental Skill, and Elemental Burst deal DMG to opponents, they will charge the Lightfall Sword, which can gain an energy stack once every 0.1s.\nOnce its duration ends, the Lightfall Sword will descend and explode violently, dealing Physical DMG to nearby opponents.\nThis DMG scales on the number of energy stacks the Lightfall Sword has accumulated.\nIf Eula leaves the field, the Lightfall Sword will explode immediately.",
+          "title": "Illuminazione Glaciale",
+          "description": "Brandisce il suo spadone, infliggendo Cryo DMG ai nemici vicini e creando una Spada del Crepuscolo che la segue fino a 7s di durata.\nMentre è presente, la Spada del Crepuscolo aumenta la RES di Eula all'interruzione. Quando gli Attacchi Normali, Abilità Elementali e Elemental Burst di Eula infliggono DMG ai nemici, la Spada del Crepuscolo si sovraccarica e può ottenere una certa quantità di Energy ogni 0.1s.\nQuando la sua durata finisce, la Spada del Crepuscolo precipita ed esplode con violenza all'impatto, infliggendo Physical DMG ai nemici vicini.\nQuesto DMG scala sulla quantità di Energy accumulata dalla Spada del Crepuscolo.\nSe Eula abbandona il campo di battaglia, la Spada del Crepuscolo esploderà immediatamente.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Aristocratic Introspection",
-          "description": "When Eula crafts Character Talent Materials, she has a 10% chance to receive double the product.",
+          "title": "Introspezione Aristocratica",
+          "description": "Quando Eula costruisce Materiali per i Talenti dei Personaggi, ha il 10% di possibilità di ottenere il doppio del prodotto.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Roiling Rime",
-          "description": "If 2 stacks of Grimheart are consumed upon unleashing the Holding Mode of Icetide Vortex, a Shattered Lightfall Sword will be created that will explode immediately, dealing 50% of the basic Physical DMG dealt by a Lightfall Sword created by Glacial Illumination.",
+          "title": "Brina Torbida",
+          "description": "Quando 2 stacks di Cuore Nero si consumano per aver trattenuto Vortice Assiderato, la Spada del Crepuscolo Frantumata che appare esploderà immediatamente, infliggendo il 50% del Physical DMG base inflitto da una Spada del Crepuscolo creata per Illuminazione Glaciale.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Wellspring of War-Lust",
-          "description": "When Glacial Illumination is cast, the CD of Icetide Vortex is reset and Eula gains 1 stack of Grimheart.",
+          "title": "Fonte della Brama di Guerra",
+          "description": "Quando Illuminazione Glaciale è in uso, il CD di Vortice Assiderato si resetta e Eula ottiene 1 stack di Cuore Nero.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Tidal Illusion",
-          "description": "Every time Icetide Vortex's Grimheart stacks are consumed, Eula's Physical DMG is increased by 30% for 6s.\nEach stack consumed will increase the duration of this effect by 6s up to a maximum of 18s.",
+          "title": "Illusione di marea",
+          "description": "Ogni volta che si cunsumano gli stacks di Cuore Nero del Vortice Assiderato, il Physical DMG di Eula aumenta del 30% per 6s.\nCiascuno stack consumato incrementa la durata di questo effetto di 6s fino a 18s al massimo.",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Lady of Seafoam",
-          "description": "Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to {LAYOUT_MOBILE#Tapping}{LAYOUT_PC#Press}{LAYOUT_PS#Press} CD.",
+          "title": "Signora della Schiuma di mare",
+          "description": "Riduce il CD della Modalità Trattenuta di Vortice Assiderato, rendendolo identico al CD di {LAYOUT_MOBILE#Tapping}{LAYOUT_PC#Press}{LAYOUT_PS#Press}.",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Lawrence Pedigree",
-          "description": "Increases the Level of Glacial Illumination by 3.\nMaximum upgrade level is 15.",
+          "title": "Lignaggio Lawrence",
+          "description": "Aumenta di 3 il livello di Illuminazione Glaciale.\nIl livello massimo di upgrade è 15.",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "The Obstinacy of One's Inferiors",
-          "description": "Lightfall Swords deal 25% increased DMG against opponents with less than 50% HP.",
+          "title": "L'Ostinazione di Chi è inferiore",
+          "description": "Spada del Crepuscolo infligge il 25% di DMG aggiuntivo contro nemici con HP inferiore al 50%.",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Chivalric Quality",
-          "description": "Increases the Level of Icetide Vortex by 3.\nMaximum upgrade level is 15.",
+          "title": "Qualità Cavalleresca",
+          "description": "Aumenta di 3 il livello di Vortice Assiderato.\nIl livello massimo di upgrade è 15.",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Noble Obligation",
-          "description": "Lightfall Swords created by Glacial Illumination start with 5 stacks of energy. Normal Attacks, Elemental Skills, and Elemental Bursts have a 50% chance to grant the Lightfall Sword an additional stack of energy.",
+          "title": "Doveri Nobili",
+          "description": "Spada del Crepuscolo creato da Illuminazione Glaciale parte con 5 stacks di energy. Attacchi Normali, Abilità Elementali e Elemental Bursts hanno il 50% di possibilità di conferire alla Spada del Crepuscolo uno stack di energy aggiuntivo.",
           "descriptions": []
         }
       ]
@@ -1840,7 +1840,7 @@
         {
           "key": "p1",
           "title": "Tutti i Miei Tesori!",
-          "description": "Mostra nella minimappa la posizione delle vicine risorse uniche a Mondstadt.",
+          "description": "Mostra nella minimappa la posizione delle vicine risorse uniche di Mondstadt.",
           "descriptions": []
         },
         {
@@ -3827,48 +3827,48 @@
     {
       "key": "Yanfei",
       "name": "Yanfei",
-      "description": "A well-known legal adviser active in Liyue Harbor. A brilliant young lady in whose veins runs the blood of an illuminated beast.",
+      "description": "Una nota consulente legale del Liyue Harbor. Una brillante e giovane donna nelle cui vene scorre il sangue di una creatura illuminata.",
       "skills": [
         {
           "key": "s1",
-          "title": "Seal of Approval",
+          "title": "Timbro di Approvazione",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Shoots fireballs that deal up to three counts of Pyro DMG.\nWhen Yanfei's Normal Attacks hit enemies, they will grant her a single Scarlet Seal. Yanfei may possess a maximum of 3 Scarlet Seals, and each time this effect is triggered, the duration of currently possessed Scarlet Seals will refresh.\nEach Scarlet Seal will decrease Yanfei's Stamina consumption and will disappear when she leaves the field.",
+              "description": "Lancia palle di fuoco che infliggono fino a 3 Pyro DMG simultanei.\nAll'impatto con il nemico, conferiscono a Yanfei un Sigillo Scarlatto. Yanfei può avere al massimo 3 Sigilli Scarlatti, e ogni volta che questo effetto accade, la durata dei Sigilli Scarlatti in possesso si aggiorna.\nCiascun Sigillo Scarlatto riduce il Consumo di Stamina di Yanfei, ma scompare quando abbandona il campo di battaglia.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes Stamina and all Scarlet Seals before dealing AoE Pyro DMG to opponents after a short casting time.\nThis Charged Attack's AoE and DMG will increase according to the amount of Scarlet Seals consumed.",
+              "description": "Consuma una certa quantità di Stamina e tutti i Sigilli Scarlatti per infliggere AoE Pyro DMG.\nAoE e DMG di questo Attacco Caricato aumentano in base alla quantità di Sigilli Scarlatti consumati.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.",
+              "description": "Concentrando il potere Pyro, Yanfei si lancia in picchiata da mezz'aria verso il terreno, danneggia i nemici lungo il percorso e assesta AoE Pyro DMG all'impatto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Signed Edict",
-          "description": "Summons blistering flames that deal AoE Pyro DMG.\nOpponents hit by the flames will grant Yanfei the maximum number of Scarlet Seals.",
+          "title": "Editto Firmato",
+          "description": "Evoca fiamme infuocate che infliggono AoE Pyro DMG.\nI nemici colpiti conferiscono Yanfei il massimo numero di Sigilli Scarlatti.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Done Deal",
-          "description": "Triggers a spray of intense flames that rush at nearby opponents, dealing AoE Pyro DMG, granting Yanfei the maximum number of Scarlet Seals, and applying Brilliance to her.",
+          "title": "Affare Fatto",
+          "description": "Concatena fiamme intense che investono i nemici vicini infliggendo AoE Pyro DMG, conferisce a Yanfei il numero massimo di Sigilli Scarlatti e gli effetti di Arguzia.",
           "abilities": [
             {
-              "name": "Brilliance",
-              "description": "Has the following effects:",
+              "name": "Arguzia",
+              "description": "Ha i seguenti effetti:",
               "descriptions": [
-                "Grants Yanfei a Scarlet Seal at fixed intervals.",
-                "Increases the DMG dealt by her Charged Attacks.",
-                "The effects of Brilliance will end if Yanfei leaves the field or falls in battle."
+                "Conferisce a Yanfei un Sigillo Scarlatto a intervalli regolari.",
+                "Aumenta il DMG inflitto dai suoi Attacchi Caricati.",
+                "Gli effetti di Arguzia svaniscono se Yanfei abbandona il campo o cade in battaglia."
               ]
             }
           ]
@@ -3877,61 +3877,61 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Encyclopedic Expertise",
-          "description": "Displays the location of nearby resources unique to Liyue on the mini-map.",
+          "title": "Competenza Enciclopedica",
+          "description": "Mostra nella minimappa la posizione delle vicine risorse uniche di Liyue.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Proviso",
-          "description": "When Yanfei consumes Scarlet Seals by using a Charged Attack, each Scarlet Seal will increase Yanfei's Pyro DMG Bonus by 5%. This effects lasts for 6s. When a Charged Attack is used again during the effect's duration, it will dispel the previous effect.",
+          "title": "Clausola",
+          "description": "Quando Yanfei consuma Sigilli Scarlatti in Attacchi Caricati, ciascun Sigillo Scarlatto consumato aumenta il Pyro DMG Bonus del 5%. Dura solo per 6s. Se si effettua un'altro Attacco Caricato, l'effetto in corso termina.",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Blazing Eye",
-          "description": "When Yanfei's Charged Attack deals a CRIT Hit to opponents, she will deal an additional instance of AoE Pyro DMG equal to 80% of her ATK. This DMG counts as Charged Attack DMG.",
+          "description": "Colpi CRIT di Attacchi Caricati infliggono AoE Pyro DMG aggiuntivo pari all'80% dell'ATK di Yanfei. Questo DMG conta come DMG di Attacco Caricato.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "The Law Knows No Kindness",
-          "description": "When Yanfei uses her Charged Attack, each existing Scarlet Seal additionally reduces the stamina cost of this Charged Attack by 10% and increases resistance against interruption during its release.",
+          "title": "La Legge è uguale per tutti",
+          "description": "Quando Yanfei effettua un'Attacco Caricato, ciascun Sigillo Scarlatto in possesso riduce di un ulteriore 10% il Consumo di Stamina di Attacchi Caricati e aumenta la RES mentre carica l'attacco.",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Right of Final Interpretation",
-          "description": "Increases Yanfei's Charged Attack CRIT Rate by 20% against enemies below 50% HP.",
+          "title": "Diritto di essere giudicati",
+          "description": "Il CRIT Rate di Attacchi Caricati aumenta del 20% contro nemici con HP 50%.",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Samadhi Fire-Forged",
-          "description": "Increases the Level of Signed Edict by 3.\nMaximum upgrade level is 15.",
+          "description": "Aumenta di 3 il livello di Editto Firmato.\nIl livello massimo di upgrade è 15.",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Supreme Amnesty",
-          "description": "When Done Deal is used:",
+          "title": "Amnestia Suprema",
+          "description": "Quando si usa Affare Fatto:",
           "descriptions": [
-            "Creates a shield that absorbs up to 45% of Yanfei's Max HP for 15s",
-            "This shield absorbs Pyro DMG 250% more effectively."
+            "Crea uno scudo che assorbe fino al 45% del Max HP di Yanfei per 15s",
+            "Lo scudo ha Absorption Efficiency del 250% contro i Pyro DMG."
           ]
         },
         {
           "key": "c5",
-          "title": "Abiding Affidavit",
-          "description": "Increases the Level of Done Deal by 3.\nMaximum upgrade level is 15.",
+          "title": "Solido Affidavit",
+          "description": "Aumenta di 3 il livello di Affare Fatto.\nIl livello massimo di upgrade è 15.",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Extra Clause",
-          "description": "Increases the maximum number of Scarlet Seals by 1.",
+          "title": "Clausola Aggiuntiva",
+          "description": "Aumenta di 1 il numero massimo di Sigilli Scarlatti.",
           "descriptions": []
         }
       ]
@@ -4081,6 +4081,7 @@
       ]
     }
   ],
+
   "weapons": [
     {
       "key": "Hunter’s Bow",
@@ -4727,20 +4728,20 @@
     {
       "key": "Windblume Ode",
       "name": "Windblume Ode",
-      "description": "A bow adorned with nameless flowers that bears the earnest hopes of an equally nameless person.",
-      "refinement": "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by {{0}}% for 6s."
+      "description": "Un arco decorato con fiori senza nome e che porta le con sé le sincere speranze di una persona altrettanto ignota.",
+      "refinement": "Dopo aver innescato un’Abilità Elementale, ricevi una benedizione dall’antico desiderio Windblume: l’ATK del {{0}}% per 6s."
     },
     {
       "key": "Elegy for the End",
       "name": "Elegy for the End",
-      "description": "A bow as lovely as any bard's lyre, its arrows pierce the heart like a lamenting sigh.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by {{0}}. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by {{1}} and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "description": "Un arco adorabile come la lira di un bardo, le sue frecce trafiggono il cuore come un lamentoso sospiro.",
+      "refinement": "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta l’Elemental Mastery di {{0}}. Quando le Abilità Elementali o gli Elemental Bursts del personaggio che lo impugna colpiscono nemici, questo personaggio ottiene un Sigil of Remembrance. L’effetto può essere innescato una volta ogni 0.2s e può accadere anche quando il personaggio non è sul campo. Quando possiedi 4 Sigils of Remembrance, ciascuno si consumerà, conferendo a tutti i membri del party vicini l’effetto \"Millennial Movement: Farewell Song\" per 12s. \"Millennial Movement: Farewell Song\" aumenta l’Elemental Mastery di {{1}} e aumenta l’ATK del {{2}}%. Quando si innesca, non potrai ottenere Sigils of Remembrance per 20s. Ai tanti effetti del \"Millennial Movement,\" i buff dello stesso tipo non si accumuleranno."
     },
     {
       "key": "Song of Broken Pines",
       "name": "Song of Broken Pines",
-      "description": "A greatsword as light as the sigh of grass in the breeze, yet as merciless to the corrupt as a typhoon.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {{0}}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "description": "Uno spadone leggero come il sospiro dell’erba nella brezza, ma spietato contro i corrotti come un tifone.",
+      "refinement": "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta l’ATK del {{0}}%, e quando Attacchi Normali e Caricati vanno a segno, il personaggio ottiene un Sigil of Whispers. L’effetto può essere innescato una volta ogni 0.3s. Quando possiedi 4 Sigils of Whispers, ciascuno si consumerà conferendo ai membri del party vicini l’effetto \"Millennial Movement: Banner-Hymn\" per 12s. \"Millennial Movement: Banner-Hymn\" aumenta il Normal ATK SPD del {{1}}% e aumenta l’ATK del {{2}}%. Quando si innesca, non potrai ottenere Sigils of Remembrance per 20s. Ai tanti effetti del \"Millennial Movement,\" i buff dello stesso tipo non si accumuleranno."
     }
   ],
   "artifacts": [
@@ -4810,7 +4811,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Gli elemental DMG ricevuti aumentano i corrispondenti Elemental RES del 30% per 10s. Può avvenire solo una volta ogni 10s."
+          "bonus": "Gli Elemental DMG ricevuti aumentano i corrispondenti Elemental RES del 30% per 10s. Può avvenire solo una volta ogni 10s."
         }
       ]
     },
@@ -4852,7 +4853,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Dopo aver usato una Elemental Skill, il DMG di Attacchi Normali e Caricati aumenta del 25% per 8s."
+          "bonus": "Dopo aver usato un’Abilità Elementale, il DMG di Attacchi Normali e Caricati aumenta del 25% per 8s."
         }
       ]
     },
@@ -4862,11 +4863,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Aumenta l'Elemental Skill DMG del 20%."
+          "bonus": "Aumenta il DMG dell’Abilità Elementale del 20%."
         },
         {
           "key": "b2",
-          "bonus": "Sconfiggere un nemico ha il  100% di possibilità di azzerare l'Elemental Skill CD. Può avvenire solo una volta ogni 15s."
+          "bonus": "Sconfiggere un nemico ha il 100% di possibilità di azzerare il CD dell’Abilità Elementale. Può avvenire solo una volta ogni 15s."
         }
       ]
     },
@@ -4880,7 +4881,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Ottenere Elemental Particles o Orbs conferisce 3 Energy a tutti i membri del party che usano un arco o un catalyst. Può avvenire solo una volta ogni 3s."
+          "bonus": "Ottenere Elemental Particles/Orbs conferisce 3 Energy a tutti i membri del party che usano un arco o un catalyst. Può avvenire solo una volta ogni 3s."
         }
       ]
     },
@@ -4936,7 +4937,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Aumenta il DMG di Overloaded, Electro-Charged and Superconduct del 40%. Attivare questi effetti riduce l' Elemental Skill CD di 1s. Può avvenire solo una volta ogni 0.8s."
+          "bonus": "Aumenta il DMG di Overloaded, Electro-Charged and Superconduct del 40%. Attivare questi effetti riduce di 1s il CD dell'Abilità Elementale. Può avvenire solo una volta ogni 0.8s."
         }
       ]
     },
@@ -4950,7 +4951,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Aumenta il DMG sui nemici afflitti da Electro del 35%."
+          "bonus": "Aumenta il DMG su nemici afflitti da Electro del 35%."
         }
       ]
     },
@@ -4974,11 +4975,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Character Healing Effectiveness +15%."
+          "bonus": "Healing Effectiveness del personaggio +15%."
         },
         {
           "key": "b2",
-          "bonus": "Elemental Skill o Burst aumenta le cure ricevute da tutti i membri del party del 20% per 10s."
+          "bonus": "Abilità Elementali o Elemental Burst aumentano le cure ricevute da tutti i membri del party del 20% per 10s."
         }
       ]
     },
@@ -5020,7 +5021,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Aumenta i DMG di Overloaded e Burning del 40%. Aumenta i DMG di Vaporize e Melt del 15%.L'Elemental Skill aumenta gli effetti dei 2-Piece Set del 50% per 10s. Massimo 3 stacks."
+          "bonus": "Aumenta i DMG di Overloaded e Burning del 40%. Aumenta i DMG di Vaporize e Melt del 15%. L'Abilità Elementale aumenta gli effetti di Set da 2 pezzi del 50% per 10s. Massimo 3 stacks."
         }
       ]
     },
@@ -5048,7 +5049,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Dopo aver sconfitto un nemico, i DMG di Attacchi Caricati aumentank del 50%, e riduce il costo di Stamina a 0 per 10s."
+          "bonus": "Dopo aver sconfitto un nemico, i DMG di Attacchi Caricati aumentano del 50% e il costo di Stamina si riduce a 0 per 10s."
         }
       ]
     },
@@ -5158,7 +5159,7 @@
         },
         {
           "key": "b2",
-          "bonus": "L'Elemental Skill, aumenta j DMG di Attacchi Normali e Caricati del 30% per 15s."
+          "bonus": "L'Abilità ELemenetale, aumenta i DMG di Attacchi Normali e Caricati del 30% per 15s."
         }
       ]
     },
@@ -5192,11 +5193,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "HP increased by 20%."
+          "bonus": "HP aumenta del 20%."
         },
         {
           "key": "b2",
-          "bonus": "When an Elemental Skill hits an opponent, the ATK of all nearby party members is increased by 20% and their Shield Strength is increased by 30% for 3s. This effect can be triggered once every 0.5s. This effect can still be triggered even when the character who is using this artifact set is not on the field."
+          "bonus": "Quando un'Abilità Elementale colpisce un nemico, l'ATK di tutti i membri del party vicini aumenta del 20% e il loro Shield Strength aumenta del 30% per 3s. Può accadere solo una volta ogni 0.5s. Può essere innescato anche se il personaggio che ha l'artefatto non è in uso."
         }
       ]
     },
@@ -5206,11 +5207,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Physical DMG is increased by 25%."
+          "bonus": "Physical DMG aumenta del 25%."
         },
         {
           "key": "b2",
-          "bonus": "When an Elemental Skill hits an opponent, ATK is increased by 9% for 7s. This effect stacks up to 2 times and can be triggered once every 0.3s. Once 2 stacks are reached, the 2-set effect is increased by 100%."
+          "bonus": "Quando un'Abilità Elementale colpisce un nemico, l'ATK aumenta del 9% per 7s. Massimo 2 stacks e si può innescare solo una volta ogni 0.3s. Quando si raggiungono 2 stacks, l'effetto del set da 2-pezzi aumenta del 100%."
         }
       ]
     }
@@ -6078,27 +6079,27 @@
     {
       "key": "Crystalline Bloom",
       "name": "Crystalline Bloom",
-      "description": "An ice crystal of exceeding purity that is created in the frigid blooming of a Cryo Hypostasis.\nThese frosty crystals will continue to grow according to their own cold, rigid laws, till one day a flower of winter shall bloom and freeze everything. Perhaps it is stagnant time, that never-thawing bosom, that is the essence of this undying flower."
+      "description": "Un cristallo di ghiaccio di straordinaria purezza, che si crea nella gelida fioritura di una Cryo Hypostasis.\nQuesti gelidi cristalli continueranno a crescere secondo le proprie fredde e rigide leggi, finché un giorno un fiore dell’inverno sboccerà e congelerà ogni cosa. Forse è proprio il suo tempo stagnante, quel cuore gelido che non si scioglie, la vera essenza di questo fiore immortale."
     },
     {
       "key": "Dream Solvent",
       "name": "Dream Solvent",
-      "description": "An item capable of changing Character Level-Up Materials obtained from memories and trials into whatever form is needed.\nPeople once believed that spirits and memories had some material form. If someone dreamed of heaven before waking up clutching a flower, then that blossom must have been made from such a fantasy. Dream Solvent dissolves that which is obtained from memory and transforms it into some other dream.\nIndeed, blows traded with the strong are stepping stones towards becoming stronger yourself."
+      "description": "Un oggetto in grado di cambiare i materiali per livellare un personaggio, ricavato da ricordi e sentenze in qualsiasi forma necessaria.\nLa gente credeva che gli spiriti e i ricordi avessero una forma materiale. Se qualcuno si sveglia stringendo un fiore dopo aver sognato il paradiso, tale fiore è frutto di questa fantasia. Dream Solvent dissolve ciò che si ottiene dalla memoria, trasformandolo in qualche altro sogno.\nInfatti, i colpi scambiati con il forte sono i primi passi per diventare te stesso più forte."
     },
     {
       "key": "Dragon Lord's Crown",
       "name": "Dragon Lord's Crown",
-      "description": "Horns created from hardened jade crystallized over a thousand years are the natural crown of the dragon king.\nInfused with spirit and carved from bedrock, it was born from the mountain's heart to show the strength of the earth to the land amidst monoliths, and its long golden horns are the mark of its ancient strife with an ancient lord.\nFor a time, this horn was shattered and lost its luster, but now it gleams cold and gold as it sits in your palm."
+      "description": "Corna create da Jade indurito cristallizzato in mille anni sono la corona naturale del Re Drago.\nInfusa di spirito e scolpita nella roccia, è nata dal cuore della montagna per mostrare la forza della terra alla landa tra i monoliti, e le sue lunga corna dorate sono il simbolo di un’antica diatriba con un antico signore.\nPer un po’ è stato frantumato perdendo così il suo splendore, ma ora risplende di freddo e d’oro come se risiedesse sul tuo palmo."
     },
     {
       "key": "Bloodjade Branch",
       "name": "Bloodjade Branch",
-      "description": "Nurtured by the might of the dragon king, these bone branches glitter with strange, unique colors.\nHatred coursed through the natural streams and kissed the cold moonlight, and from them were these crystalline branches born and grown...\nEven though they were severed in battle, these branches steeped in dragon blood rustle as if eternally ill-at-ease."
+      "description": "Nutriti dalla potenza del Re Drago, questi rami ossei brillano di colori strani e unici.\nL’odio scorreva attraverso i ruscelli naturali e baciava la fredda luce lunare; da loro sono nati e cresciuti questi rami cristallini...\nAnche se furono recisi in battaglia, questi rami intrisi di sangue di drago frusciano come se fossero eternamente affranti."
     },
     {
       "key": "Gilded Scale",
       "name": "Gilded Scale",
-      "description": "Scaled armor that grows naturally over mystical stone, tough and silent, and filled with the strength of the dragon king.\nAcross the years as countless generations returned to the mulch of the earth, gold and obsidian embedded themselves into flesh and blood forged from bedrock before spreading and turning into scales.\nSearing agony, wordless cries... perhaps they will all vanish when the grudges that spawned them, too, finally come to an end."
+      "description": "Armatura di scaglie che cresce naturalmente sulla pietra pietra mistica, robusta, silenziosa e piena di della forza del Re Drago.\nNel corso degli anni, mentre innumerevoli generazioni ritornavano al pacciame della terra, oro e ossidiana si fondevano nella carne e nel sangue forgiati dalla roccia, prima di espandersi e diventare scaglie.\nVirulenta agonia, pianti senza parole... forse svaniranno quando anche tutti i rancori che li hanno generati saranno finalmente scomparsi."
     }
   ],
   "debuffs": [
