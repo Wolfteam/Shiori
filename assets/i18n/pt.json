@@ -3818,7 +3818,7 @@
         {
           "key": "c6",
           "title": "Rockeando no inferno",
-          "description": "Diminui o Consumo de Stamina do Ataque Carregado de Xinyan em 30%. Ao usar Ataques Carregados, Xinyan ganha um Bonus de Ataque baseado em 50% de sua defesa.",
+          "description": "Diminui o Consumo de Stamina do Ataque Carregado de Xinyan em 30%. Ao usar Ataques Carregados, Xinyan ganha um Bônus de Ataque baseado em 50% de sua defesa.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3827,48 +3827,48 @@
     {
       "key": "Yanfei",
       "name": "Yanfei",
-      "description": "A well-known legal adviser active in Liyue Harbor. A brilliant young lady in whose veins runs the blood of an illuminated beast.",
+      "description": "Uma Consultora Jurídica animada que vive no Porto de Liyue, é uma garota esperta com sangue da Besta Iluminada.",
       "skills": [
         {
           "key": "s1",
-          "title": "Seal of Approval",
+          "title": "Selo Ardente",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Shoots fireballs that deal up to three counts of Pyro DMG.\nWhen Yanfei's Normal Attacks hit enemies, they will grant her a single Scarlet Seal. Yanfei may possess a maximum of 3 Scarlet Seals, and each time this effect is triggered, the duration of currently possessed Scarlet Seals will refresh.\nEach Scarlet Seal will decrease Yanfei's Stamina consumption and will disappear when she leaves the field.",
+              "description": "Dispara bolas de fogo continuamente, causando no máximo três Danos Pyro.\nQuando o Ataque Normal atinge os inimigos, Yanfei obtém uma Insígnia de Chamas. Inicialmente, pode ter no máximo três Insígnias de Chamas. A cada vez que o efeito ocorre, a duração da Insígnia de Chamas atual será renovada.\nCada Insígnia de Chamas reduzirá o consumo de Stamina de Yanfei e desaparecerá quando Yanfei sair do combate.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes Stamina and all Scarlet Seals before dealing AoE Pyro DMG to opponents after a short casting time.\nThis Charged Attack's AoE and DMG will increase according to the amount of Scarlet Seals consumed.",
+              "description": "Consome Stamina e, depois de cantar por um curto tempo, consome todas as Insígnias de Chamas e causa Dano Puro na AdE em sua frente.\nDe acordo com a quantidade de Insígnias de Chama consumidas, fortalece a Área e Dano do Ataque Carregado.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.",
+              "description": "Acumula energia Pyro, mergulha em pleno ar para golpear o chão, atingindo os inimigos em seu caminho e infligindo Dano Pyro na AdE quando impacta no chão.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Signed Edict",
-          "description": "Summons blistering flames that deal AoE Pyro DMG.\nOpponents hit by the flames will grant Yanfei the maximum number of Scarlet Seals.",
+          "title": "Édito Assinado",
+          "description": "Invoca as chamas, criando Dano Pyro na AdE.\nDepois de atingir o inimigo, Yanfei obtém uma grande quantidade de Insígnias de Chamas.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Done Deal",
-          "description": "Triggers a spray of intense flames that rush at nearby opponents, dealing AoE Pyro DMG, granting Yanfei the maximum number of Scarlet Seals, and applying Brilliance to her.",
+          "title": "Contrato Vinculativo",
+          "description": "Causa o lançamento de uma chama explosiva, atacando os inimigos ao redor e criando Dano Pyro na AdE e Yanfei obtém a quantidade máxima de Insígnias de Chamas e Efeito de Clarão.",
           "abilities": [
             {
-              "name": "Brilliance",
-              "description": "Has the following effects:",
+              "name": "Clarão",
+              "description": "Possui os seguintes efeitos:",
               "descriptions": [
-                "Grants Yanfei a Scarlet Seal at fixed intervals.",
-                "Increases the DMG dealt by her Charged Attacks.",
-                "The effects of Brilliance will end if Yanfei leaves the field or falls in battle."
+                "Yanfei obtém uma Insígnia de Chamas em cada intervalo de tempo.",
+                "Aumenta o Dano causado pelo Ataque Carregado.",
+                "O efeito de Clarão será eliminado quando Yanfei sair do combate ou for cair na batalha."
               ]
             }
           ]
@@ -3877,61 +3877,61 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Encyclopedic Expertise",
-          "description": "Displays the location of nearby resources unique to Liyue on the mini-map.",
+          "title": "Conhecimento Enciclopédico",
+          "description": "Mostra a localização de Especialidades de Liyue próximos no mapa.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Proviso",
-          "description": "When Yanfei consumes Scarlet Seals by using a Charged Attack, each Scarlet Seal will increase Yanfei's Pyro DMG Bonus by 5%. This effects lasts for 6s. When a Charged Attack is used again during the effect's duration, it will dispel the previous effect.",
+          "title": "Cláusulas Relacionais",
+          "description": "Quando o Ataque Carregado de Yanfei consumir uma Insígnia de Chama, cada Insígnia de Chama irá aumentar o Bonus de Dano Pyro de Yanfei em 5% por 6s. Ao lançar novamente o Ataque Carregado durante o período deste efeito, o efeito anterior será dissipado.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Blazing Eye",
-          "description": "When Yanfei's Charged Attack deals a CRIT Hit to opponents, she will deal an additional instance of AoE Pyro DMG equal to 80% of her ATK. This DMG counts as Charged Attack DMG.",
+          "title": "Olho de Xiezhi",
+          "description": "Quando o Ataque Carregado de Yanfei causa um Dano CRIT, ela causará um Dano Pyro Ade correspondente a 80% do seu Ataque. Este Dano é considerado como Dano de um Ataque Carregado.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "The Law Knows No Kindness",
-          "description": "When Yanfei uses her Charged Attack, each existing Scarlet Seal additionally reduces the stamina cost of this Charged Attack by 10% and increases resistance against interruption during its release.",
+          "title": "Insistir no Próprio Argumento",
+          "description": "Quando Yanfei realiza um Ataque Carregado, cada Insígnia de Chamas que ela possuir aumentar sua Resistência Contra Interrupção enquanto canta, e também reduz o consumo de Stamina deste Ataque Carregado em 10%.",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Right of Final Interpretation",
-          "description": "Increases Yanfei's Charged Attack CRIT Rate by 20% against enemies below 50% HP.",
+          "title": "Direito de Interpretação Final",
+          "description": "A Taxa CRIT de Yanfei aumenta em 20% contra inimigos com menos de 50% de Vida.",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Samadhi Fire-Forged",
-          "description": "Increases the Level of Signed Edict by 3.\nMaximum upgrade level is 15.",
+          "title": "Selado sobre Fogo",
+          "description": "Aumenta o nível da Habilidade Édito Assinado em 3.\nO nivel máximo é 15.",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Supreme Amnesty",
-          "description": "When Done Deal is used:",
+          "title": "Boa Autoridade",
+          "description": "Ao lançar o Contrato Vinculativo:",
           "descriptions": [
-            "Creates a shield that absorbs up to 45% of Yanfei's Max HP for 15s",
-            "This shield absorbs Pyro DMG 250% more effectively."
+            "Gera um Escudo que absorve Dano com base em 45% da Vida Máxima, com duração de 15s.",
+            "Esse Escudo tem eficiência de 250% contra Dano Pyro."
           ]
         },
         {
           "key": "c5",
-          "title": "Abiding Affidavit",
-          "description": "Increases the Level of Done Deal by 3.\nMaximum upgrade level is 15.",
+          "title": "Respeitando a Declaração Juramentada",
+          "description": "Aumenta o nível da Habilidade Contrato Vinculativo em 3.\nO Nível Máximo é 15.",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Extra Clause",
-          "description": "Increases the maximum number of Scarlet Seals by 1.",
+          "title": "Uma Cláusula Adicional",
+          "description": "Aumenta a capacidade máxima de Insígnia de Chamas que Yanfei pode ter em 1.",
           "descriptions": []
         }
       ]
@@ -5188,29 +5188,29 @@
     },
     {
       "key": "Tenacity of the Millelith",
-      "name": "Tenacity of the Millelith",
+      "name": "Millelith firmes",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "HP increased by 20%."
+          "bonus": "Aumenta a vida em 20%."
         },
         {
           "key": "b2",
-          "bonus": "When an Elemental Skill hits an opponent, the ATK of all nearby party members is increased by 20% and their Shield Strength is increased by 30% for 3s. This effect can be triggered once every 0.5s. This effect can still be triggered even when the character who is using this artifact set is not on the field."
+          "bonus": "Quando uma habilidade elemental atinge um oponente, o ATQ de todos os membros da equipe próximos aumenta em 20% e sua força do escudo aumenta em 30% por 3 S. Esse efeito pode ser ativado a cada 0.5s. Esse efeito ainda pode ser ativado mesmo quando o personagem que está usando esse conjunto não está em campo."
         }
       ]
     },
     {
       "key": "Pale Flame",
-      "name": "Pale Flame",
+      "name": "Chama pálida",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Physical DMG is increased by 25%."
+          "bonus": "Dano físico causado 25%."
         },
         {
           "key": "b2",
-          "bonus": "When an Elemental Skill hits an opponent, ATK is increased by 9% for 7s. This effect stacks up to 2 times and can be triggered once every 0.3s. Once 2 stacks are reached, the 2-set effect is increased by 100%."
+          "bonus": "Quando a habilidade elemental atinge um inimigo, o ataque aumenta em 9% por 7s. Esse efeito pode acumular até 2 vezes e pode ser desencadeado uma vez a cada 0.3s. Quando se possui 2 acúmulos, o efeito do conjunto de 2 artefatos é aumentado em 100%."
         }
       ]
     }
@@ -6227,7 +6227,7 @@
     },
     {
       "key": "Anemo Slime",
-      "name": "Slime Anemi"
+      "name": "Slime Anemo"
     },
     {
       "key": "Azhdaha",

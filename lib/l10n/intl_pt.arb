@@ -289,9 +289,9 @@
   "fatui": "Fatui",
   "automaton": "Autômato",
   "droppedBy": "Obtido de",
-  "pressOnceAgainToExit": "Press once again to exit",
-  "discordServer": "Discord Server",
-  "usedItem": "Used item",
-  "itemIsBeingUsedOnACalculation": "This item is being used in one or more calculator sessions.\nThe used quantity is {quantity}",
-  "useOfficialMap": "Use the official map"
+  "pressOnceAgainToExit": "Aperte novamente para sair",
+  "discordServer": "Servidor discord",
+  "usedItem": "Item usado",
+  "itemIsBeingUsedOnACalculation": "Este item está sendo usado em uma ou mais sessões de calculadora.\nA quantidade usada é {quantity}",
+  "useOfficialMap": "Use o mapa oficial"
 }

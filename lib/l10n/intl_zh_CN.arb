@@ -8,6 +8,7 @@
   "russian": "俄语",
   "simplifiedChinese": "中文（简体）",
   "portuguese": "葡萄牙语",
+  "italian": "意大利语",
   "bow": "弓",
   "claymore": "双手剑",
   "sword": "单手剑",
@@ -123,7 +124,7 @@
   "about": "关于",
   "aboutSummary": "只是一个原神数据库",
   "appInfo": "App 信息",
-  "support": "辅助",
+  "support": "支持",
   "supportMsg": "我用闲暇时间开发了这款App，同时也把它开源了。无论你是想提供帮助、提交 issue、有个想法、需要一个功能等等，都可以在我的 Github 上提交一个 issue：",
   "issues": "Issues",
   "disclaimer": "免责声明",
@@ -153,8 +154,8 @@
   "subStat": "属性",
   "na": "N/A",
   "mainDps": "主C",
-  "supportDps": "辅助",
-  "utility": "奶妈",
+  "supportDps": "副C",
+  "utility": "辅助",
   "normalAttack": "普通攻击",
   "elementalSkill": "元素战技",
   "elementalBurst": "元素爆发",
@@ -291,7 +292,7 @@
   "droppedBy": "掉落于",
   "pressOnceAgainToExit": "再点击一次退出",
   "discordServer": "Discord 服务器",
-  "usedItem": "Used item",
-  "itemIsBeingUsedOnACalculation": "This item is being used in one or more calculator sessions.\nThe used quantity is {quantity}",
-  "useOfficialMap": "Use the official map"
+  "usedItem": "已使用的物品",
+  "itemIsBeingUsedOnACalculation": "该物品已在一个或多个组别中使用。\n已使用数量：{quantity}",
+  "useOfficialMap": "使用官方地图"
 }
