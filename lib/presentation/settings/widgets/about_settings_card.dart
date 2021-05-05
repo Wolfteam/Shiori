@@ -60,7 +60,7 @@ class AboutSettingsCard extends StatelessWidget {
                     return state.map(
                       loading: (_) => const Loading(useScaffold: false),
                       loaded: (state) => Text(
-                        s.appVersion(state.appVersion),
+                        '${s.appVersion(state.appVersion)} - BETA',
                         textAlign: TextAlign.center,
                         style: textTheme.subtitle2,
                       ),
