@@ -979,6 +979,121 @@
       ]
     },
     {
+      "key": "Eula",
+      "name": "Eula",
+      "description": "The Spindrift Knight, a scion of the old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Favonius Bladework - Edel",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Perform up to 5 consecutive strikes.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": " Drains Stamina over time to perform continuous slashes.\nAt the end of the sequence, perform a more powerful slash.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Icetide Vortex",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Slashes swiftly, dealing Cryo DMG.\nWhen it hits an opponent, Eula gains a stack of Grimheart that stacks up to 2 times. These stacks can only be gained once every 0.3s.",
+              "descriptions": []
+            },
+            {
+              "name": "Grimheart",
+              "description": "Increases Eula's resistance to interruption and DEF.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Wielding her sword, Eula consumes all the stacks of Grimheart and lashes forward, dealing AoE Cryo DMG to opponents in front of her.\nIf Grimheart stacks are consumed, surrounding opponents will have their Physical RES and Cryo RES decreased.\nEach consumed stack of Grimheart will be converted into an Icewhirl Brand that deals Cryo DMG to nearby opponents.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Glacial Illumination",
+          "description": "Brandishes her greatsword, dealing Cryo DMG to nearby opponents and creating a Lightfall Sword that follows her around for a duration of up to 7s.\nWhile present, the Lightfall Sword increases Eula's resistance to interruption. When Eula's own Normal Attack, Elemental Skill, and Elemental Burst deal DMG to opponents, they will charge the Lightfall Sword, which can gain an energy stack once every 0.1s.\nOnce its duration ends, the Lightfall Sword will descend and explode violently, dealing Physical DMG to nearby opponents.\nThis DMG scales on the number of energy stacks the Lightfall Sword has accumulated.\nIf Eula leaves the field, the Lightfall Sword will explode immediately.",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Aristocratic Introspection",
+          "description": "When Eula crafts Character Talent Materials, she has a 10% chance to receive double the product.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Roiling Rime",
+          "description": "If 2 stacks of Grimheart are consumed upon unleashing the Holding Mode of Icetide Vortex, a Shattered Lightfall Sword will be created that will explode immediately, dealing 50% of the basic Physical DMG dealt by a Lightfall Sword created by Glacial Illumination.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Wellspring of War-Lust",
+          "description": "When Glacial Illumination is cast, the CD of Icetide Vortex is reset and Eula gains 1 stack of Grimheart.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Tidal Illusion",
+          "description": "Every time Icetide Vortex's Grimheart stacks are consumed, Eula's Physical DMG is increased by 30% for 6s.\nEach stack consumed will increase the duration of this effect by 6s up to a maximum of 18s.",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Lady of Seafoam",
+          "description": "#Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to {LAYOUT_MOBILE#Tapping}{LAYOUT_PC#Press}{LAYOUT_PS#Press} CD.",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Lawrence Pedigree",
+          "description": "Increases the Level of Glacial Illumination by 3.\nMaximum upgrade level is 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "The Obstinacy of One's Inferiors",
+          "description": "Lightfall Swords deal 25% increased DMG against opponents with less than 50% HP.",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Chivalric Quality",
+          "description": "Increases the Level of Icetide Vortex by 3.\nMaximum upgrade level is 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Noble Obligation",
+          "description": "Lightfall Swords created by Glacial Illumination start with 5 stacks of energy. Normal Attacks, Elemental Skills, and Elemental Bursts have a 50% chance to grant the Lightfall Sword an additional stack of energy.",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "Fischl",
       "name": "菲谢尔",
       "description": "自称「断罪之皇女」，与名为奥兹的漆黑夜鸦同行的神秘少女。",
@@ -3715,6 +3830,118 @@
       ]
     },
     {
+      "key": "Yanfei",
+      "name": "烟绯",
+      "description": "活跃在璃月港的知名律师咨询师，混有仙兽血脉的精明少女。",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "火漆制印",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "连续发射火球，造成最多三段的火元素伤害。普通攻击命中敌人时，会赋予烟绯一枚丹火印。初始最多持有三枚丹火印，每次触发都会刷新已有的丹火印持续时间。每枚丹火印都会降低烟绯的体力消耗，并会在烟绯退场时消失。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗体力，短暂咏唱后，消耗所有的丹火印，在前方造成火元素范围伤害。 根据被消耗的丹火印数量，强化这次重击的范围与伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "凝聚火元素的力量，从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成火元素范围伤害。",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "丹书立约",
+          "description": "唤出烈焰，造成火元素范围伤害。\n命中敌人后，会为烟赋予最大数量的丹火印以火烧制的印除了法律效应之外，还带着烟绯自己的附加条款。",
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "凭此结契",
+          "description": "引发喷薄爆发的烈火，冲击周围的敌人，造成火元素范围伤害，并为烟绯自己赋予最大数量的丹火印与灼灼效果。",
+          "abilities": [
+            {
+              "name": "灼灼",
+              "description": "具有如下效果：",
+              "descriptions": [
+                "每间隔一段时间，为烟绯赋予一枚丹火印。",
+                "提高重击造成的伤害。",
+                "灼灼效果会在烟绯退场与倒下时移除。"
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "博闻强记",
+          "description": "在小地图上显示周围的璃月区域特产的位置。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "关联条款",
+          "description": "烟绯通过重击消耗丹火印时，每枚丹火印会提升烟绯5%的火元素伤害加成，持续6秒。在该效果的持续时间内再次施放重击时，会先移除原有的效果。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "法兽灼眼",
+          "description": "烟绯主动施放的重击对敌人造成暴击时，会额外造成一次80%攻击力的火元素范围伤害。该伤害视为重击伤害。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "占理不饶人",
+          "description": "烟绯进行重击时，每持有一枚丹火印，都会提高烟绯在咏唱期间的抗打断能力，并额外降低本次重击10%的体力消耗。",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "最终解释权",
+          "description": "烟绯的重击对于生命值低于50%的敌人，暴击率提高20%。",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "真火炼宝印",
+          "description": "丹书立约的技能等级提高3级。\n至多提升至15级。",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "丹书金铁卷",
+          "description": "释放凭此结契时：",
+          "descriptions": [
+            "生成一个伤害吸收量等于生命值上限45%的护盾，持续15秒。",
+            "该护盾对火元素伤害有250%的吸收效果。"
+          ]
+        },
+        {
+          "key": "c5",
+          "title": "遵法切结书",
+          "description": "凭此结契的技能等级提高3级。\n至多提升至15级。",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "是额外条款",
+          "description": "烟绯持有的丹火印最大数量增加一枚。",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "Zhongli",
       "name": "钟离",
       "description": "被「往生堂」请来的神秘客人,知识渊博,对各种事物都颇有见地。",
@@ -4513,6 +4740,12 @@
       "name": "终末嗟叹之诗",
       "description": "如同诗人的乐器一般优美的弓，放出的箭矢如同叹息声一般穿透人心。",
       "refinement": "飘游风中的「千年的大乐章」的一部分。元素精通提高{{0}}点；元素战技或元素爆发命中敌人时，角色获得一枚追思之符，每0.2秒内至多触发一次，角色处于队伍后台也能触发。拥有4枚追思之符时，将消耗所有追思之符，使附近的队伍中所有角色获得持续12秒的「千年的大乐章·别离之歌」效果：元素精通提高{{1}}点，攻击力提升{{2}}%。触发后20秒内，无法再次获得追思之符。「千年的大乐章」触发的多种数值效果中，同类数值效果不可叠加。"
+    },
+    {
+      "key": "Song of Broken Pines",
+      "name": "松籁响起之时",
+      "description": "A greatsword as light as the sigh of grass in the breeze, yet as merciless to the corrupt as a typhoon.",
+      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {{0}}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
     }
   ],
   "artifacts": [
@@ -4955,6 +5188,34 @@
         {
           "key": "b1",
           "bonus": "Affected by Anemo for 40% less time."
+        }
+      ]
+    },
+    {
+      "key": "Tenacity of the Millelith",
+      "name": "千岩牢固",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "生命值提升20%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "元素战技命中敌人后，使队伍中附近的所有角色攻击力提升20%，护盾强效提升30%，持续3秒。该效果每0.5秒至多触发一次。装备此圣遗物套装效果的角色处于队伍后台时，依然能触发该效果。"
+        }
+      ]
+    },
+    {
+      "key": "Pale Flame",
+      "name": "苍白之火",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "造成的物理伤害提高25%。"
+        },
+        {
+          "key": "b2",
+          "bonus": "元素战技命中敌人后，攻击力提升9%。该效果持续7秒，至多叠加2层，每0.3秒至多触发一次。叠满2层时，2件套的效果提升100%。"
         }
       ]
     }
@@ -5818,6 +6079,31 @@
       "key": "Primogem",
       "name": "原石",
       "description": "A primordial crystalline gem that's beyond the mundane world. Shines with the condensed hopes and dreams of universes that once were."
+    },
+    {
+      "key": "Crystalline Bloom",
+      "name": "Crystalline Bloom",
+      "description": "An ice crystal of exceeding purity that is created in the frigid blooming of a Cryo Hypostasis.\nThese frosty crystals will continue to grow according to their own cold, rigid laws, till one day a flower of winter shall bloom and freeze everything. Perhaps it is stagnant time, that never-thawing bosom, that is the essence of this undying flower."
+    },
+    {
+      "key": "Dream Solvent",
+      "name": "Dream Solvent",
+      "description": "An item capable of changing Character Level-Up Materials obtained from memories and trials into whatever form is needed.\nPeople once believed that spirits and memories had some material form. If someone dreamed of heaven before waking up clutching a flower, then that blossom must have been made from such a fantasy. Dream Solvent dissolves that which is obtained from memory and transforms it into some other dream.\nIndeed, blows traded with the strong are stepping stones towards becoming stronger yourself."
+    },
+    {
+      "key": "Dragon Lord's Crown",
+      "name": "Dragon Lord's Crown",
+      "description": "Horns created from hardened jade crystallized over a thousand years are the natural crown of the dragon king.\nInfused with spirit and carved from bedrock, it was born from the mountain's heart to show the strength of the earth to the land amidst monoliths, and its long golden horns are the mark of its ancient strife with an ancient lord.\nFor a time, this horn was shattered and lost its luster, but now it gleams cold and gold as it sits in your palm."
+    },
+    {
+      "key": "Bloodjade Branch",
+      "name": "Bloodjade Branch",
+      "description": "Nurtured by the might of the dragon king, these bone branches glitter with strange, unique colors.\nHatred coursed through the natural streams and kissed the cold moonlight, and from them were these crystalline branches born and grown...\nEven though they were severed in battle, these branches steeped in dragon blood rustle as if eternally ill-at-ease."
+    },
+    {
+      "key": "Gilded Scale",
+      "name": "Gilded Scale",
+      "description": "Scaled armor that grows naturally over mystical stone, tough and silent, and filled with the strength of the dragon king.\nAcross the years as countless generations returned to the mulch of the earth, gold and obsidian embedded themselves into flesh and blood forged from bedrock before spreading and turning into scales.\nSearing agony, wordless cries... perhaps they will all vanish when the grudges that spawned them, too, finally come to an end."
     }
   ],
   "debuffs": [
@@ -5930,11 +6216,11 @@
   "monsters": [
     {
       "key": "Abyss Herald: Wicked Torrents",
-      "name": "Abyss Herald: Wicked Torrents"
+      "name": "深渊使徒·激流"
     },
     {
       "key": "Abyss Lector: Violet Lightning",
-      "name": "Abyss Lector: Violet Lightning"
+      "name": "深渊咏者"
     },
     {
       "key": "Anemo Hypostasis",
@@ -5950,7 +6236,7 @@
     },
     {
       "key": "Azhdaha",
-      "name": "Azhdaha"
+      "name": "若陀龙王"
     },
     {
       "key": "Blazing Axe Mitachurl",
@@ -6254,7 +6540,7 @@
     },
     {
       "key": "Treasure Hoarders - Raptor",
-      "name": "Treasure Hoarders - Raptor"
+      "name": "盗宝团·怪鸟"
     },
     {
       "key": "Treasure Hoarders - Scout",
@@ -6290,7 +6576,7 @@
     },
     {
       "key": "Unusual Hilichurl",
-      "name": "奇怪的丘丘人"
+      "name": "大伟丘"
     },
     {
       "key": "Wooden Shield Hilichurl Guard",

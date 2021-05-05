@@ -1,6 +1,57 @@
 {
   "gameCodes": [
     {
+      "dateAdded": "04/16/2021",
+      "isExpired": true,
+      "code": "ATPTUJPP53QH",
+      "rewards": [
+        {
+          "quantity": 100,
+          "materialType": "currency",
+          "image": "primogem.png"
+        },
+        {
+          "quantity": 50000,
+          "materialType": "currency",
+          "image": "mora.png"
+        }
+      ]
+    },
+    {
+      "dateAdded": "04/16/2021",
+      "isExpired": true,
+      "code": "4BNSD3675J8D",
+      "rewards": [
+        {
+          "quantity": 100,
+          "materialType": "currency",
+          "image": "primogem.png"
+        },
+        {
+          "quantity": 5,
+          "materialType": "expCharacter",
+          "image": "heros_wit.png"
+        }
+      ]
+    },
+    {
+      "dateAdded": "04/16/2021",
+      "isExpired": true,
+      "code": "FS6SU367M279",
+      "rewards": [
+        {
+          "quantity": 100,
+          "materialType": "currency",
+          "image": "primogem.png"
+        },
+        {
+          "quantity": 10,
+          "materialType": "expWeapon",
+          "image": "mystic_enchancement_ore.png"
+        }
+      ]
+    },
+    {
       "dateAdded": "03/22/2021",
       "isExpired": true,
       "code": "TT7BVJNPL249",
@@ -31,7 +82,7 @@
     },
     {
       "dateAdded": "03/18/2021",
-      "isExpired": true,
+      "isExpired": false,
       "code": "GS6ACJ775KNV",
       "rewards": [
         {

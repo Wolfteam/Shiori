@@ -520,7 +520,7 @@
       "key": "Geovishap",
       "image": "geovishap.png",
       "type": "magicalBeast",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "drops": []
     },
     {
@@ -849,7 +849,7 @@
       "key": "Primo Geovishap",
       "image": "primo_geovishap.png",
       "type": "magicalBeast",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "drops": []
     },
     {
@@ -1227,7 +1227,7 @@
       "key": "Unusual Hilichurl",
       "image": "unusual_hilichurl.png",
       "type": "hilichurl",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "drops": []
     },
     {

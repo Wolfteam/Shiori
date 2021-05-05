@@ -59,7 +59,7 @@ class ItemCard extends StatelessWidget {
                 height: 280,
                 placeholder: MemoryImage(kTransparentImage),
                 image: AssetImage(image),
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
               ),
               Container(
                 decoration: BoxDecoration(

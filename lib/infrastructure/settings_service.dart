@@ -15,6 +15,7 @@ class SettingsServiceImpl extends SettingsService {
   final _showWeaponDetailsKey = 'ShowWeaponDetailsKey';
   final _serverResetTimeKey = 'ServerResetTimeKey';
   final _doubleBackToCloseKey = 'DoubleBackToCloseKey';
+  final _useOfficialMapKey = 'UseOfficialMapKey';
 
   bool _initialized = false;
 
@@ -70,6 +71,12 @@ class SettingsServiceImpl extends SettingsService {
   set doubleBackToClose(bool value) => _prefs.setBool(_doubleBackToCloseKey, value);
 
   @override
+  bool get useOfficialMap => _prefs.getBool(_useOfficialMapKey);
+
+  @override
+  set useOfficialMap(bool value) => _prefs.setBool(_useOfficialMapKey, value);
+
+  @override
   AppSettings get appSettings => AppSettings(
         appTheme: appTheme,
         useDarkAmoled: false,
@@ -80,6 +87,7 @@ class SettingsServiceImpl extends SettingsService {
         isFirstInstall: isFirstInstall,
         serverResetTime: serverResetTime,
         doubleBackToClose: doubleBackToClose,
+        useOfficialMap: useOfficialMap,
       );
 
   SettingsServiceImpl(this._logger);
@@ -132,6 +140,11 @@ class SettingsServiceImpl extends SettingsService {
     if (_prefs.get(_doubleBackToCloseKey) == null) {
       _logger.info(runtimeType, 'Double back to close will be set to its default (false)');
       doubleBackToClose = false;
+    }
+
+    if (_prefs.get(_useOfficialMapKey) == null) {
+      _logger.info(runtimeType, 'Use the official map will be set to its default (false)');
+      useOfficialMap = false;
     }
 
     _initialized = true;
