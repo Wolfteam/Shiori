@@ -394,6 +394,11 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   int getServerDay(AppServerResetTimeType type) {
+    return getServerDate(type).weekday;
+  }
+
+  @override
+  DateTime getServerDate(AppServerResetTimeType type) {
     final now = DateTime.now();
     final nowUtc = now.toUtc();
     DateTime server;
@@ -415,14 +420,10 @@ class GenshinServiceImpl implements GenshinService {
     }
 
     if (server.hour >= resetHour) {
-      return server.weekday;
+      return server;
     }
 
-    if (server.weekday == DateTime.monday) {
-      return DateTime.sunday;
-    }
-
-    return server.weekday - 1;
+    return server.subtract(const Duration(days: 1));
   }
 
   @override
