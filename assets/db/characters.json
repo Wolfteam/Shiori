@@ -15036,13 +15036,26 @@
           "isSupport": false,
           "weaponImages": [
             "wolfs_gravestone.png",
+            "uprising_satire.png",
             "skyward_pride.png",
             "serpent_spine.png",
-            "prototype_aminus.png"
+            "prototype_aminus.png",
+            "snow_tombed_starsilver.png"
           ],
           "artifacts": [
             {
               "one": "gladiators_finale_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
+            {
+              "one": "pale_flame_4.png",
               "multiples": [],
               "stats": [
                 "hp",
@@ -23803,6 +23816,55 @@
         {
           "isSupport": false,
           "weaponImages": [
+            "crescent_pike.png",
+            "primordial_jade_winged_spear.png",
+            "vortex_vanquisher.png",
+            "lithic_spear.png"
+          ],
+          "artifacts": [
+            {
+              "multiples": [
+                {
+                  "quantity": 2,
+                  "image": "pale_flame_4.png"
+                },
+                {
+                  "quantity": 2,
+                  "image": "bloodstained_chivalry_4.png"
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
+            {
+              "one": "pale_flame_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "hpPercentage",
+            "energyRechargePercentage"
+          ]
+        },
+
+        {
+          "isSupport": false,
+          "weaponImages": [
             "primordial_jade_winged_spear.png",
             "vortex_vanquisher.png",
             "lithic_spear.png",
@@ -23852,7 +23914,7 @@
           "isSupport": true,
           "weaponImages": [
             "staff_of_homa.png",
-            "skyward_spine.png",
+            "deathmatch.png",
             "lithic_spear.png",
             "favonius_lance.png",
             "prototype_grudge.png"
@@ -23869,6 +23931,17 @@
                   "image": "noblesse_oblige_4.png"
                 }
               ],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "geoDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
+            {
+              "one": "tenacity_of_the_millelith_4.png",
+              "multiples": [],
               "stats": [
                 "hp",
                 "atk",
