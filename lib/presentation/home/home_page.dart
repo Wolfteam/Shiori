@@ -17,6 +17,7 @@ import 'widgets/sliver_elements_card.dart';
 import 'widgets/sliver_main_title.dart';
 import 'widgets/sliver_my_inventory_card.dart';
 import 'widgets/sliver_today_char_ascension_materials.dart';
+import 'widgets/sliver_today_main_title.dart';
 import 'widgets/sliver_today_weapon_materials.dart';
 
 class HomePage extends StatefulWidget {
@@ -36,7 +37,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
     return CustomScrollView(
       slivers: [
         SliverCharactersBirthdayCard(),
-        SliverMainTitle(title: s.todayAscensionMaterials),
+        const SliverTodayMainTitle(),
         _buildClickableTitle(s.forCharacters, s.seeAll, context, onClick: () => _gotoMaterialsPage(context)),
         SliverTodayCharAscensionMaterials(),
         _buildClickableTitle(s.forWeapons, s.seeAll, context, onClick: () => _gotoMaterialsPage(context)),
