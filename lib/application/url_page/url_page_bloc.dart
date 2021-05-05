@@ -15,6 +15,7 @@ class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
   final wishSimulatorUrl = 'https://gi-wish-simulator.uzairashraf.dev';
   final officialMapUrl = 'https://webstatic-sea.mihoyo.com/app/ys-map-sea/index.html';
   final unofficialMapUrl = 'https://genshin-impact-map.appsample.com';
+  final dailyCheckInUrl = 'https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481&lang=en-us';
 
   final NetworkService _networkService;
   final TelemetryService _telemetryService;
@@ -29,18 +30,17 @@ class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
   ) : super(const UrlPageState.loading());
 
   @override
-  Stream<UrlPageState> mapEventToState(
-    UrlPageEvent event,
-  ) async* {
+  Stream<UrlPageState> mapEventToState(UrlPageEvent event) async* {
     final s = await event.map(
       init: (e) async {
         final finalMapUrl = _settingsService.useOfficialMap ? officialMapUrl : unofficialMapUrl;
         final isInternetAvailable = await _networkService.isInternetAvailable();
-        await _telemetryService.trackUrlOpened(e.loadMap, e.loadWishSimulator, isInternetAvailable);
+        await _telemetryService.trackUrlOpened(e.loadMap, e.loadWishSimulator, e.loadDailyCheckIn, isInternetAvailable);
         return UrlPageState.loaded(
           hasInternetConnection: isInternetAvailable,
           mapUrl: finalMapUrl,
           wishSimulatorUrl: wishSimulatorUrl,
+          dailyCheckInUrl: dailyCheckInUrl,
           userAgent: _deviceInfoService.userAgent,
         );
       },

@@ -84,7 +84,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
       },
       useOfficialMapChanged: (event) async {
         _settingsService.useOfficialMap = event.newValue;
-        _urlPageBloc.add(const UrlPageEvent.init(loadMap: false, loadWishSimulator: false));
+        _urlPageBloc.add(const UrlPageEvent.init(loadMap: false, loadWishSimulator: false, loadDailyCheckIn: false));
         return currentState.copyWith.call(useOfficialMap: event.newValue);
       },
     );
