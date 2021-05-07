@@ -15035,8 +15035,8 @@
         {
           "isSupport": false,
           "weaponImages": [
-            "wolfs_gravestone.png",
             "uprising_satire.png",
+            "wolfs_gravestone.png",
             "skyward_pride.png",
             "serpent_spine.png",
             "prototype_aminus.png",
@@ -15044,7 +15044,7 @@
           ],
           "artifacts": [
             {
-              "one": "gladiators_finale_4.png",
+              "one": "pale_flame_4.png",
               "multiples": [],
               "stats": [
                 "hp",
@@ -15055,7 +15055,26 @@
               ]
             },
             {
-              "one": "pale_flame_4.png",
+              "multiples": [
+                {
+                  "quantity": 2,
+                  "image": "pale_flame_4.png"
+                },
+                {
+                  "quantity": 2,
+                  "image": "bloodstained_chivalry_4.png"
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
+            {
+              "one": "gladiators_finale_4.png",
               "multiples": [],
               "stats": [
                 "hp",
@@ -15070,7 +15089,6 @@
             "critRatePercentage",
             "critDmgPercentage",
             "atkPercentage",
-            "atk",
             "energyRechargePercentage"
           ]
         }
@@ -23861,7 +23879,6 @@
             "energyRechargePercentage"
           ]
         },
-
         {
           "isSupport": false,
           "weaponImages": [
