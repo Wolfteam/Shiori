@@ -293,5 +293,7 @@
   "discordServer": "Servidor de Discord",
   "usedItem": "Item usado",
   "itemIsBeingUsedOnACalculation": "Este item está siendo usado en una o más sesiones de la calculadora.\nLa cantidad usada es {quantity}",
-  "useOfficialMap": "Usar el mapa oficial"
+  "useOfficialMap": "Usar el mapa oficial",
+  "dailyCheckIn": "Inicio de Sesión Diario",
+  "dailyCheckInMsg": "¡ No olvides reclamar tus recompensas diarias aqui !"
 }

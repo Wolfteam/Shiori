@@ -6,6 +6,7 @@ abstract class UrlPageState with _$UrlPageState {
   const factory UrlPageState.loaded({
     @required String wishSimulatorUrl,
     @required String mapUrl,
+    @required String dailyCheckInUrl,
     @required bool hasInternetConnection,
     @required String userAgent,
   }) = _Loaded;

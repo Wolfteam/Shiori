@@ -8,11 +8,19 @@ import 'package:genshindb/presentation/materials/materials_page.dart';
 import 'sliver_card_item.dart';
 
 class SliverMaterialsCard extends StatelessWidget {
+  final bool iconToTheLeft;
+
+  const SliverMaterialsCard({
+    Key key,
+    @required this.iconToTheLeft,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
     return SliverCardItem(
+      iconToTheLeft: iconToTheLeft,
       onClick: _gotoMaterialsPage,
       icon: Image.asset(Assets.getOtherMaterialPath('bag.png'), width: 60, height: 60, color: theme.accentColor),
       children: [

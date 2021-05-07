@@ -8,12 +8,19 @@ import 'package:genshindb/presentation/tierlist/tier_list_page.dart';
 import 'sliver_card_item.dart';
 
 class SliverTierList extends StatelessWidget {
+  final bool iconToTheLeft;
+
+  const SliverTierList({
+    Key key,
+    @required this.iconToTheLeft,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
     return SliverCardItem(
-      iconToTheLeft: true,
+      iconToTheLeft: iconToTheLeft,
       onClick: _gotoTierListPage,
       icon: Icon(GenshinDb.hive_emblem, size: 60, color: theme.accentColor),
       children: [
