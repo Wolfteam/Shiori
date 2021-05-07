@@ -295,5 +295,5 @@
   "itemIsBeingUsedOnACalculation": "Этот предмет используется в одном или нескольких сеансах калькулятора.\nКоличество использованных: {quantity}",
   "useOfficialMap": "Использовать официальную карту",
   "dailyCheckIn": "Ежедневные отметки",
-  "dailyCheckInMsg": "Don't forget to claim your daily rewards here !"
+  "dailyCheckInMsg": "Не забудьте получить свою ежедневную награду здесь !"
 }
