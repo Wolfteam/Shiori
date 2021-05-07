@@ -296,13 +296,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_user_agent:
+  flutter_user_agentx:
     dependency: "direct main"
     description:
-      name: flutter_user_agent
+      name: flutter_user_agentx
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.2"
+    version: "1.2.4"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -733,13 +733,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
-  smooth_star_rating:
-    dependency: "direct main"
-    description:
-      name: smooth_star_rating
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.1"
   source_gen:
     dependency: transitive
     description:
@@ -931,4 +924,4 @@ packages:
     version: "3.1.0"
 sdks:
   dart: ">=2.12.0 <3.0.0"
-  flutter: ">=1.24.0-6.0.pre"
+  flutter: ">=2.0.0"
