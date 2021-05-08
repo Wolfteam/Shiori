@@ -4348,135 +4348,135 @@
     },
     {
       "key": "Apprentice’s Notes",
-      "name": "Apprentice’s Notes",
-      "description": "Notes left behind by a top student. Many useful spells are listed, and the handwriting is beautiful.",
+      "name": "生徒ノート",
+      "description": "ある優等生が残したノート。字がとても綺麗。実用性のあるまじないがたくさん記されている。",
       "refinement": null
     },
     {
       "key": "Pocket Grimoire",
-      "name": "Pocket Grimoire",
-      "description": "A carefully compiled notebook featuring the essentials needed to pass a magic exam.",
+      "name": "ポケット魔導書",
+      "description": "よくまとめられており、テストの要点だけが残された魔導参考ノート。",
       "refinement": null
     },
     {
       "key": "Amber Bead",
-      "name": "Amber Bead",
-      "description": "A catalyst carved out of amber that gains a warm halo under the sun.",
-      "refinement": "Normal Attack hits increase all Elemental DMG by {{0}}% for 6s. Max 2 stacks."
+      "name": "琥珀の玥",
+      "description": "琥珀で作られた法器。日差しの下に置くと暖かい光の輪が出現する。",
+      "refinement": "通常攻撃が命中した後、元素ダメージ +{{0}}%、継続時間6秒、最大2重まで。"
     },
     {
       "key": "Emerald Orb",
-      "name": "Emerald Orb",
-      "description": "A catalyst carved out of the hard jade from Jueyun Karst north of Liyue. It is small, light, and durable.",
-      "refinement": "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by {{0}}% for 12s."
+      "name": "翡玉法珠",
+      "description": "璃月北部にある絶雲の間の硬玉で出来た法器。小さくて軽い上、かなり長持ちする。",
+      "refinement": "蒸発、感電、凍結、または水元素拡散反応を起こした後12秒間、攻撃力 +{{0}}%。"
     },
     {
       "key": "Magic Guide",
-      "name": "Magic Guide",
-      "description": "Version 12. A reprint featuring corrections to Version 11 and brand-new additions based on recent developments.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Electro by {{0}}%."
+      "name": "魔導緒論",
+      "description": "Ver.12。時代発展などの内容が追加され、Ver.11の誤字を修正したもの。",
+      "refinement": "水元素または雷元素の影響を受けた敵に対するダメージ +{{0}}%。"
     },
     {
       "key": "Otherworldly Story",
-      "name": "Otherworldly Story",
-      "description": "A cheap fantasy novel with no value whatsoever. Any claim that it possesses the power of catalysis is also pure fantasy.",
-      "refinement": "Picking up an Elemental Energy Orb/Particle recovers {{0}}% HP."
+      "name": "異世界旅行記",
+      "description": "ファンタジー小説。参考の価値はない。法器としての力ももちろん幻想から来ている。",
+      "refinement": "元素オーブまたは元素粒子を獲得した時、HPを {{0}}% 回復する。"
     },
     {
       "key": "Thrilling Tales of Dragon Slayers",
-      "name": "Thrilling Tales of Dragon Slayers",
-      "description": "A fictional story of a band of five heroes who go off on a dragon hunt. It is poorly written and structurally incoherent. Its value lies in the many lessons that can be learned from failure.",
-      "refinement": "When switching characters, the new character taking the field has their ATK increased by {{0}}% for 10s. This effect can only occur once every 20s."
+      "name": "龍殺しの英傑譚",
+      "description": "5人の英雄がドラゴン討伐の旅に出るフィクション。文章は悪く、作りもかなり雑。失敗の教訓だけがこの本が持つ偉大な力。",
+      "refinement": "キャラを切り替えると、次に登場するキャラの攻撃力 +{{0}}%、継続時間10秒。20秒に1回のみ発動可能。"
     },
     {
       "key": "Twin Nephrite",
-      "name": "Twin Nephrite",
-      "description": "A jade pendant formed by piecing together two jade stones.",
-      "refinement": "Defeating an enemy increases Movement SPD and ATK by {{0}}% for 15s."
+      "name": "特級の宝玉",
+      "description": "二つの玉石でできた精巧な玉佩。",
+      "refinement": "敵を倒した後15秒間、移動速度と攻撃力 +{{0}}%。"
     },
     {
       "key": "Blackcliff Agate",
-      "name": "Blackcliff Agate",
-      "description": "A mysterious catalyst made of a material known as \"blackcliff.\" It has an ominous crimson glow that seems to pulse in synchronization with the tremors from deep within the earth.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "name": "黒岩の緋玉",
+      "description": "黒岩でできた不思議な法器。赤い光はまるで大地の奥にある動きと同調しているみたいだ。",
+      "refinement": "敵を倒した後、攻撃力 +{{0}}%、継続時間30秒。最大3重まで、継続時間は加算されず、重ごとに別カウントされる。"
     },
     {
       "key": "Favonius Codex",
-      "name": "Favonius Codex",
-      "description": "A secret tome that belonged to the scholars of the Knights of Favonius. It describes the logic and power of elements and matter.",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "name": "西風秘典",
+      "description": "	西風騎士団の錬金学者の間に伝わる秘典。物質の原則や力、それと別のものが記されている。",
+      "refinement": "会心攻撃をした時、{{0}}%の確率で少量の元素粒子を生成し、元素エネルギーを6回復する。{{1}}秒毎に1回のみ発動可能。"
     },
     {
       "key": "Mappa Mare",
-      "name": "Mappa Mare",
-      "description": "A nautical chart featuring nearby currents and climates that somehow found its way into Liyue via foreign traders.",
-      "refinement": "Triggering an Elemental reaction grants a {{0}}% Elemental DMG Bonus for 10s. Max 2 stacks."
+      "name": "万国諸海の図譜",
+      "description": "大陸周辺の海流気候を詳しく記載した海図、貿易ルートを経て異国から璃月に渡った。",
+      "refinement": "元素反応を起こした後、元素ダメージ +{{0}}%、継続時間10秒、最大2重まで。"
     },
     {
       "key": "Prototype Amber",
-      "name": "Prototype Amber",
-      "description": "A dully gilded catalyst secretly guarded in the Blackcliff Forge. It seems to glow with the very light from the sky.",
-      "refinement": "Using an Elemental Burst regenerates {{0}} Energy every 2s for 6s. All party members will regenerate {{1}}% HP every 2s for this duration."
+      "name": "金珀·試作",
+      "description": "黒岩場の中に隠されていた金珀法器。微かに太陽と月と星の光を放っている。",
+      "refinement": "元素爆発を発動した後の6秒間、2秒毎に元素エネルギーを {{0}} 回復し、チーム全員のHPを2秒毎に {{0}}% 回復する。"
     },
     {
       "key": "Royal Grimoire",
-      "name": "Royal Grimoire",
-      "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "name": "旧貴族秘法録",
+      "description": "かつてモンドを支配した貴族の配下であった魔導師が、記録した史話。",
+      "refinement": "攻撃が敵にダメージを与えた時、会心率 +{{0}}%、最大5重まで。攻撃会心発生時、効果をクリアにする。"
     },
     {
       "key": "Sacrificial Fragments",
-      "name": "Sacrificial Fragments",
-      "description": "A weathered script, the text of which is no longer legible. A cursed item eroded by the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s."
+      "name": "祭礼の断片",
+      "description": "長い年月を経た台本。書かれた台詞はもう読めなくなっている。時間の風による破壊の呪いの力を持つ。",
+      "refinement": "元素スキルが敵にダメージを与えた時、{{0}}% の確率で該当スキルのクールタイムをリセットする。{{1}}秒毎に1回のみ発動可能。"
     },
     {
       "key": "Solar Pearl",
-      "name": "Solar Pearl",
-      "description": "A dull, golden pearl made of an unknown substance that harbors the light of the sun and the moon, and pulses with a warm strength.",
-      "refinement": "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {{0}}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {{1}}% for 6s."
+      "name": "匣中日月",
+      "description": "素材の解析が難しい宝珠。太陽と月の光に満ちており、暖かい力が秘められている。",
+      "refinement": "通常攻撃が命中した後、6秒間元素スキルと元素爆発のダメージ +{{0}}%。元素スキルまたは元素爆発が命中した後、6秒間通常攻撃のダメージ +{{1}}%。"
     },
     {
       "key": "The Widsith",
-      "name": "The Widsith",
-      "description": "A heavy notebook filled with musical scores. Though suffering from moth damage and heavy wear-and-tear, there is still much power to be found among the hand-written words within.",
-      "refinement": "When the character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s. Recitative: ATK is increased by {{0}}%. Aria: Increases all Elemental DMG by {{1}}%. Interlude: Elemental Mastery is increased by {{2}}."
+      "name": "流浪楽章",
+      "description": "楽譜が記されているノート。風化と虫の侵食はあるが、それでも筆跡から力を感じられる。",
+      "refinement": "キャラ登場時、ランダムにテーマ曲を1つ獲得する、継続時間10秒。30秒毎に1回のみ発動可能。叙唱：攻撃力 +{{0}}%。詠唱：全元素ダメージ +{{1}}%。間奏曲：元素熟知 +{{2}}。"
     },
     {
       "key": "Wine and Song",
-      "name": "Wine and Song",
-      "description": "A songbook from the bygone aristocratic era, whose composer has become forgotten. It chronicles the tale of a certain heroic outlaw.",
-      "refinement": "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by {{0}}% for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by {{1}}% for 5s."
+      "name": "ダークアレイの酒と詩",
+      "description": "貴族時代に流行った楽譜、作曲家は不明。とある義賊のことを描いた物語である。",
+      "refinement": "通常攻撃が敵に命中すると、ダッシュまたはダッシュを代替する能力のスタミナ消費 -{{0}}%、持続時間5秒。また、ダッシュまたはダッシュを代替する能力を使用すると、攻撃力 +{{1}}%、持続時間5秒。"
     },
     {
       "key": "Eye of Perception",
-      "name": "Eye of Perception",
-      "description": "A dim black glaze pearl that is said to have the power to read the purity of one’s heart.",
-      "refinement": "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing {{0}}% ATK as DMG. This bolt can bounce between enemies a maximum of 4 times. This effect can occur once every {{1}}s."
+      "name": "昭心",
+      "description": "幽闇な琉璃宝玉。伝説によると、人の心を読める力を持っているらしい。",
+      "refinement": "通常攻撃と重撃が命中する時、50%の確率で昭心法珠を一つ発射し、敵に攻撃力の{{0}}%のダメージを与える。敵同士に最大4回跳ね返る。この効果は{{1}}秒毎に1回のみ発動可能。"
     },
     {
       "key": "Frostbearer",
-      "name": "Frostbearer",
-      "description": "A fruit that possesses a strange, frosty will. A faint sense of agony emanates from it.",
-      "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, dealing {{1}}% AoE ATK DMG. Can only occur once every 10s. Enemies affected by Cryo are dealt {{2}}% ATK DMG. Can only occur once every 10s."
+      "name": "冬忍びの実",
+      "description": "冷徹な意志がこもった奇妙な果実。微かな苦渋を醸し出している。",
+      "refinement": "通常攻撃と重撃が敵に命中した時、{{0}}%の確率で敵の上に恒氷晶核が作られ落下し、攻撃力の {{1}}% の範囲ダメージを与える。敵が氷元素の影響を受けている場合、攻撃力の {{2}}% のダメージを与える。この効果は10秒毎に1回のみ発動可能。"
     },
     {
       "key": "Lost Prayer to the Sacred Winds",
-      "name": "Lost Prayer to the Sacred Winds",
-      "description": "An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.",
-      "refinement": "Increases Movement SPD by 10%. When in battle, gain an {{0}}% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat."
+      "name": "四風原典",
+      "description": "風を信仰する先民たちが書いた教典。数千年を経て信仰は風の好意を得て、祝福の力に満ちている。",
+      "refinement": "移動速度+10%。フィールドにいる時、4秒毎に元素ダメージ +{{0}}%、最大4重まで。キャラが退場または戦闘不能まで有効。"
     },
     {
       "key": "Skyward Atlas",
-      "name": "Skyward Atlas",
-      "description": "A cloud atlas symbolizing Dvalin and its former master, the Anemo Archon. It details the winds and clouds of the northern regions and contains the powers of the sky and wind.",
-      "refinement": "Increases Elemental DMG Bonus by {{0}}%. Normal Attack hits have a 50% chance to earn the favor of the clouds, which actively seek out nearby enemies to attack for 15s, dealing {{1}}% ATK DMG. Can only occur once every 30s."
+      "name": "天空の巻",
+      "description": "風龍とその主である風の神を象徴した図表集。北の風と雲が詳しく記載されており、蒼空と長風の力が秘められている。",
+      "refinement": "元素ダメージ +{{0}}%。通常攻撃が命中した時、50%の確率で高天流雲の好意を獲得し、15秒以内に自分から周囲の敵を攻撃すると、攻撃力の {{1}}% 相当のダメージを与える。30秒毎に1回のみ発動可能。"
     },
     {
       "key": "Memory of Dust",
-      "name": "Memory of Dust",
-      "description": "A stone dumbbell containing distant memories. Its endless transformations reveal the power within.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "name": "浮世の錠",
+      "description": "ある遠い昔の記憶が秘められている石の錠。窮まりない変化の中からその力が伺える。",
+      "refinement": "シールド強化 +{{0}}%。攻撃が命中した8秒間、攻撃力 +{{1}}%。この効果は最大5重まで、0.3秒毎に1回のみ発動可能。また、シールド状態の時、攻撃力アップの効果量が2倍になる。"
     },
     {
       "key": "Waster Greatsword",
