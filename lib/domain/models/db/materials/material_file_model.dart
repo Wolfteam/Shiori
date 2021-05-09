@@ -30,6 +30,8 @@ abstract class MaterialFileModel implements _$MaterialFileModel {
     @required double level,
     @required List<ObtainedFromFileModel> obtainedFrom,
     @required bool hasSiblings,
+    @Default(true) bool isReadyToBeUsed,
+    @Default(false) bool canBeObtainedFromAnExpedition,
     Map<String, dynamic> attributes,
   }) = _MaterialFileModel;
 

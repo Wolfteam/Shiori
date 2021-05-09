@@ -15,4 +15,16 @@ class DateUtils {
     final formatted = formatter.format(date);
     return formatted;
   }
+
+  static String formatDateWithoutLocale(
+    DateTime date, [
+    String format = notificationFormat,
+  ]) {
+    if (date == null) {
+      return 'N/A';
+    }
+    final formatter = DateFormat(format);
+    final formatted = formatter.format(date);
+    return formatted;
+  }
 }

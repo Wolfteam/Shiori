@@ -43,6 +43,7 @@ abstract class GenshinService {
   TranslationCharacterFile getCharacterTranslation(String key);
   TranslationWeaponFile getWeaponTranslation(String key);
   TranslationMaterialFile getMaterialTranslation(String key);
+  List<MaterialFileModel> getAllMaterialsThatCanBeObtainedFromAnExpedition();
 
   List<TodayCharAscensionMaterialsModel> getCharacterAscensionMaterials(int day);
   List<TodayWeaponAscensionMaterialModel> getWeaponAscensionMaterials(int day);
@@ -67,4 +68,8 @@ abstract class GenshinService {
   MonsterFileModel getMonsterByImg(String image);
   List<MonsterCardModel> getAllMonstersForCard();
   MonsterCardModel getMonsterForCardByImg(String image);
+
+  String getItemImageFromNotificationType(String itemKey, AppNotificationType notificationType, {AppNotificationItemType notificationItemType});
+  String getItemImageFromNotificationItemType(String itemKey, AppNotificationItemType notificationItemType);
+  String getItemKeyFromNotificationType(String itemImage, AppNotificationType notificationType, {AppNotificationItemType notificationItemType});
 }

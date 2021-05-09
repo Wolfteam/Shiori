@@ -74,7 +74,37 @@ abstract class DataService {
 
   NotificationItem getNotification(int key);
 
-  Future<void> saveNotification(NotificationItem item);
+  Future<NotificationItem> saveResinNotification(
+    String itemKey,
+    String title,
+    String body,
+    int currentResinValue, {
+    String note,
+    bool showNotification = true,
+  });
+
+  Future<NotificationItem> saveExpeditionNotification(
+    String itemKey,
+    String title,
+    String body,
+    ExpeditionTimeType expeditionTimeType, {
+    String note,
+    bool showNotification = true,
+    bool withTimeReduction = false,
+  });
+
+  Future<NotificationItem> saveCustomNotification(
+    String itemKey,
+    String title,
+    String body,
+    DateTime createdAt,
+    DateTime completesAt,
+    AppNotificationItemType notificationItemType, {
+    String note,
+    bool showNotification = true,
+  });
 
   Future<void> deleteNotification(int key);
+
+  Future<NotificationItem> resetNotification(int key);
 }

@@ -7,75 +7,104 @@ part 'notification.g.dart';
 @HiveType(typeId: 8)
 class Notification extends HiveObject {
   @HiveField(0)
-  final String notificationId;
+  final int type;
 
   @HiveField(1)
-  final AppNotificationType type;
+  final String itemKey;
 
   @HiveField(2)
-  final String image;
-
-  @HiveField(3)
   final DateTime createdAt;
 
+  @HiveField(3)
+  final DateTime scheduledDate;
+
   @HiveField(4)
-  final DateTime completesAt;
+  DateTime completesAt;
 
   @HiveField(5)
-  final bool showNotification;
+  bool showNotification;
 
   @HiveField(6)
-  final String note;
+  String note;
 
+  //Expedition specific
   @HiveField(7)
-  final ExpeditionType expeditionType;
+  final int expeditionTimeType;
 
   @HiveField(8)
-  final ExpeditionTimeType expeditionTimeType;
-
-  @HiveField(9)
   final bool withTimeReduction;
 
-  @HiveField(10)
+  //Resin specific
+  @HiveField(9)
   final int currentResinValue;
 
+  //Item specific
+  @HiveField(10)
+  final int notificationItemType;
+
+  @HiveField(11)
+  String title;
+
+  @HiveField(12)
+  String body;
+
   Notification({
-    @required this.notificationId,
+    @required this.itemKey,
     @required this.type,
-    @required this.image,
     @required this.createdAt,
     @required this.completesAt,
     this.note,
     @required this.showNotification,
     @required this.currentResinValue,
-    @required this.expeditionType,
-    @required this.expeditionTimeType,
+    this.expeditionTimeType,
     @required this.withTimeReduction,
-  });
+    this.notificationItemType,
+    @required this.title,
+    @required this.body,
+  }) : scheduledDate = completesAt;
 
   Notification.resin({
-    @required this.notificationId,
-    @required this.type,
-    @required this.image,
+    @required this.itemKey,
     @required this.createdAt,
     @required this.completesAt,
     this.note,
     @required this.showNotification,
     @required this.currentResinValue,
-  })  : expeditionType = null,
+    @required this.title,
+    @required this.body,
+  })  : type = AppNotificationType.resin.index,
         expeditionTimeType = null,
-        withTimeReduction = false;
+        withTimeReduction = false,
+        notificationItemType = null,
+        scheduledDate = completesAt;
 
   Notification.expedition({
-    @required this.notificationId,
-    @required this.type,
-    @required this.image,
+    @required this.itemKey,
     @required this.createdAt,
     @required this.completesAt,
     this.note,
     @required this.showNotification,
-    @required this.expeditionType,
     @required this.expeditionTimeType,
     @required this.withTimeReduction,
-  }) : currentResinValue = 0;
+    @required this.title,
+    @required this.body,
+  })  : type = AppNotificationType.expedition.index,
+        currentResinValue = 0,
+        notificationItemType = null,
+        scheduledDate = completesAt;
+
+  Notification.custom({
+    @required this.itemKey,
+    @required this.createdAt,
+    @required this.completesAt,
+    this.note,
+    @required this.showNotification,
+    @required this.notificationItemType,
+    @required this.title,
+    @required this.body,
+  })  : type = AppNotificationType.custom.index,
+        currentResinValue = 0,
+        expeditionTimeType = null,
+        withTimeReduction = false,
+        scheduledDate = completesAt;
 }

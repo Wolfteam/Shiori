@@ -290,17 +290,24 @@ List<MaterialCardModel> sortMaterialsByGrouping(List<MaterialCardModel> data, So
       ingredients.orderByDescending((el) => el.rarity).toList();
 }
 
-Duration getExpeditionDuration(ExpeditionTimeType type) {
+Duration getExpeditionDuration(ExpeditionTimeType type, bool withTimeReduction) {
   switch (type) {
     case ExpeditionTimeType.fourHours:
-      return const Duration(hours: 4);
+      return _getExpeditionDuration(4, withTimeReduction);
     case ExpeditionTimeType.eightHours:
-      return const Duration(hours: 8);
+      return _getExpeditionDuration(8, withTimeReduction);
     case ExpeditionTimeType.twelveHours:
-      return const Duration(hours: 12);
+      return _getExpeditionDuration(12, withTimeReduction);
     case ExpeditionTimeType.twentyHours:
-      return const Duration(hours: 20);
+      return _getExpeditionDuration(20, withTimeReduction);
     default:
       throw Exception('The provided expedition time type = $type is not valid');
   }
+}
+
+Duration _getExpeditionDuration(int hours, bool withTimeReduction) {
+  const reductionPercentage = 0.25;
+  final totalMinutes = hours * 60;
+  final int reducedMinutes = (withTimeReduction ? totalMinutes * reductionPercentage : 0).toInt();
+  return Duration(minutes: totalMinutes - reducedMinutes);
 }

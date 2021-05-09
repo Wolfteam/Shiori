@@ -43,6 +43,7 @@ export 'language_model.dart';
 export 'materials/material_card_model.dart';
 export 'monsters/monster_card_model.dart';
 export 'notifications/notification_item.dart';
+export 'notifications/notification_item_image.dart';
 export 'settings/app_settings.dart';
 export 'tierlist/tierlist_row_model.dart';
 export 'weapons/weapon_card_model.dart';

@@ -1,7 +1,9 @@
+import 'package:genshindb/domain/extensions/string_extensions.dart';
+
 extension DurationExtensions on Duration {
-  String formatDuration() {
+  String formatDuration({String negativeText}) {
     if (isNegative) {
-      return '∞';
+      return negativeText.isNotNullEmptyOrWhitespace ? negativeText : '∞';
     }
     String twoDigits(num n) => n.toString().padLeft(2, '0');
     final twoDigitHour = twoDigits(inHours);
