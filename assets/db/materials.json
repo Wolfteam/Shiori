@@ -2213,7 +2213,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "canBeObtainedFromAnExpedition": true
     },
     {
       "key": "Original Resin",
@@ -5821,7 +5822,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "canBeObtainedFromAnExpedition": true
     },
     {
       "key": "White Iron Chunk",
@@ -5835,7 +5837,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "canBeObtainedFromAnExpedition": true
     },
     {
       "key": "Crystal Chunk",
@@ -5849,7 +5852,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "canBeObtainedFromAnExpedition": true
     },
     {
       "key": "Northlander Bow Billet",
@@ -5948,6 +5952,134 @@
       "obtainedFrom": [],
       "droppedBy": [],
       "hasSiblings": false
+    },
+    {
+      "key": "Bird Egg",
+      "rarity": 1,
+      "image": "bird_egg.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false,
+      "canBeObtainedFromAnExpedition": true
+    },
+    {
+      "key": "Carrot",
+      "rarity": 1,
+      "image": "carrot.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false,
+      "canBeObtainedFromAnExpedition": true
+    },
+    {
+      "key": "Fowl",
+      "rarity": 1,
+      "image": "fowl.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false,
+      "canBeObtainedFromAnExpedition": true
+    },
+    {
+      "key": "Radish",
+      "rarity": 1,
+      "image": "radish.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false,
+      "canBeObtainedFromAnExpedition": true
+    },
+    {
+      "key": "Raw Meat",
+      "rarity": 1,
+      "image": "raw_meat.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false,
+      "canBeObtainedFromAnExpedition": true
+    },
+    {
+      "key": "Sweet Flower",
+      "rarity": 1,
+      "image": "sweet_flower.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false,
+      "canBeObtainedFromAnExpedition": true
+    },
+    {
+      "key": "Lotus Head",
+      "rarity": 1,
+      "image": "lotus_head.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false,
+      "canBeObtainedFromAnExpedition": true
+    },
+    {
+      "key": "Matsutake",
+      "rarity": 1,
+      "image": "matsutake.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false,
+      "canBeObtainedFromAnExpedition": true
     }
   ]
 }
