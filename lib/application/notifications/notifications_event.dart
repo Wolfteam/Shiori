@@ -8,5 +8,9 @@ abstract class NotificationsEvent implements _$NotificationsEvent {
     @required int id,
   }) = _Delete;
 
+  const factory NotificationsEvent.reset({
+    @required int id,
+  }) = _Reset;
+
   const factory NotificationsEvent.close() = _Close;
 }

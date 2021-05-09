@@ -2,13 +2,26 @@ part of 'notification_bloc.dart';
 
 @freezed
 abstract class NotificationEvent implements _$NotificationEvent {
-  const factory NotificationEvent.init({
-    int key,
-  }) = _Init;
+  const factory NotificationEvent.add({
+    @required String defaultTitle,
+    @required String defaultBody,
+  }) = _Add;
+
+  const factory NotificationEvent.edit({
+    @required int key,
+  }) = _Edit;
 
   const factory NotificationEvent.typeChanged({
     @required AppNotificationType newValue,
   }) = _TypeChanged;
+
+  const factory NotificationEvent.titleChanged({
+    @required String newValue,
+  }) = _TitleChanged;
+
+  const factory NotificationEvent.bodyChanged({
+    @required String newValue,
+  }) = _BodyChanged;
 
   const factory NotificationEvent.noteChanged({
     @required String newValue,
@@ -22,13 +35,33 @@ abstract class NotificationEvent implements _$NotificationEvent {
     @required int newValue,
   }) = _ResinChanged;
 
-  const factory NotificationEvent.expeditionTypeChanged({
-    @required ExpeditionType newValue,
-  }) = _ExpeditionTypeChanged;
-
   const factory NotificationEvent.expeditionTimeTypeChanged({
     @required ExpeditionTimeType newValue,
   }) = _ExpeditionTimeTypeChanged;
+
+  const factory NotificationEvent.itemTypeChanged({
+    @required AppNotificationItemType newValue,
+  }) = _ItemTypeChanged;
+
+  const factory NotificationEvent.timeReductionChanged({
+    @required bool withTimeReduction,
+  }) = _TimeReductionChanged;
+
+  const factory NotificationEvent.showOtherImages({
+    @required bool show,
+  }) = _ShowOtherImages;
+
+  const factory NotificationEvent.imageChanged({
+    @required String newValue,
+  }) = _ImageChanged;
+
+  const factory NotificationEvent.keySelected({
+    @required String keyName,
+  }) = _KeySelected;
+
+  const factory NotificationEvent.customDateChanged({
+    @required DateTime newValue,
+  }) = _CustomDateChanged;
 
   const factory NotificationEvent.saveChanges() = _SaveChanges;
 }
