@@ -6,17 +6,24 @@ import 'package:genshindb/presentation/home/widgets/sliver_card_item.dart';
 import 'package:genshindb/presentation/notifications/notifications_page.dart';
 
 class SliverNotificationsCard extends StatelessWidget {
+  final bool iconToTheLeft;
+
+  const SliverNotificationsCard({
+    Key key,
+    @required this.iconToTheLeft,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
     return SliverCardItem(
       onClick: (context) => _goToNotificationsPage(context),
-      iconToTheLeft: true,
+      iconToTheLeft: iconToTheLeft,
       icon: Icon(Icons.notifications, color: theme.accentColor, size: 60),
       children: [
         Text(
-          'Create your custom notifications',
+          s.createYourCustomNotifications,
           style: theme.textTheme.subtitle2,
           textAlign: TextAlign.center,
         ),

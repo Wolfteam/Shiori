@@ -317,5 +317,6 @@
   "selectAnArtifact": "Select an artifact",
   "selectAMonster": "Select a monster",
   "selectAMaterial": "Select a material",
-  "custom": "Custom"
+  "custom": "Custom",
+  "createYourCustomNotifications": "Create your custom notifications"
 }

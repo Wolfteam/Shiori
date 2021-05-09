@@ -7,6 +7,7 @@ import 'package:genshindb/presentation/home/widgets/sliver_daily_check_in_card.d
 import 'package:genshindb/presentation/home/widgets/sliver_game_codes_card.dart';
 import 'package:genshindb/presentation/home/widgets/sliver_materials_card.dart';
 import 'package:genshindb/presentation/home/widgets/sliver_monsters_card.dart';
+import 'package:genshindb/presentation/home/widgets/sliver_notifications_card.dart';
 import 'package:genshindb/presentation/home/widgets/sliver_settings_card.dart';
 import 'package:genshindb/presentation/home/widgets/sliver_tierlist_card.dart';
 import 'package:genshindb/presentation/home/widgets/sliver_wish_simulator_card.dart';
@@ -16,7 +17,6 @@ import 'widgets/sliver_characters_birthday_card.dart';
 import 'widgets/sliver_elements_card.dart';
 import 'widgets/sliver_main_title.dart';
 import 'widgets/sliver_my_inventory_card.dart';
-import 'widgets/sliver_notifications_card.dart';
 import 'widgets/sliver_settings_card.dart';
 import 'widgets/sliver_tierlist_card.dart';
 import 'widgets/sliver_today_char_ascension_materials.dart';
@@ -58,12 +58,13 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
       s.myInventory: 1,
       s.calculators: 2,
       s.materials: 3,
-      s.monsters: 4,
-      s.dailyCheckIn: 5,
-      s.wishSimulator: 6,
-      s.tierListBuilder: 7,
-      s.gameCodes: 8,
-      s.settings: 9,
+      s.notifications: 4,
+      s.monsters: 5,
+      s.dailyCheckIn: 6,
+      s.wishSimulator: 7,
+      s.tierListBuilder: 8,
+      s.gameCodes: 9,
+      s.settings: 10,
     };
     final menu = <Widget>[];
 
@@ -84,16 +85,18 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
       case 3:
         return SliverMaterialsCard(iconToTheLeft: iconToTheLeft);
       case 4:
-        return SliverMonstersCard(iconToTheLeft: iconToTheLeft);
+        return SliverNotificationsCard(iconToTheLeft: iconToTheLeft);
       case 5:
-        return SliverDailyCheckInCard(iconToTheLeft: iconToTheLeft);
+        return SliverMonstersCard(iconToTheLeft: iconToTheLeft);
       case 6:
-        return SliverWishSimulatorCard(iconToTheLeft: iconToTheLeft);
+        return SliverDailyCheckInCard(iconToTheLeft: iconToTheLeft);
       case 7:
-        return SliverTierList(iconToTheLeft: iconToTheLeft);
+        return SliverWishSimulatorCard(iconToTheLeft: iconToTheLeft);
       case 8:
-        return SliverGameCodesCard(iconToTheLeft: iconToTheLeft);
+        return SliverTierList(iconToTheLeft: iconToTheLeft);
       case 9:
+        return SliverGameCodesCard(iconToTheLeft: iconToTheLeft);
+      case 10:
         return SliverSettingsCard(iconToTheLeft: iconToTheLeft);
       default:
         throw Exception('Invalid menu item card');
