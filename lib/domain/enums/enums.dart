@@ -1,5 +1,6 @@
 export 'app_accent_color_type.dart';
 export 'app_language_type.dart';
+export 'app_notification_item_type.dart';
 export 'app_notification_type.dart';
 export 'app_server_reset_time_type.dart';
 export 'app_theme_type.dart';
@@ -13,7 +14,6 @@ export 'character_skill_type.dart';
 export 'day_type.dart';
 export 'element_type.dart';
 export 'expedition_time_type.dart';
-export 'expedition_type.dart';
 export 'item_location_type.dart';
 export 'item_status_type.dart';
 export 'item_type.dart';

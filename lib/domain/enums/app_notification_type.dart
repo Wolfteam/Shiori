@@ -1,5 +1,9 @@
 enum AppNotificationType {
   resin,
   expedition,
-  item,
+  // gadget,
+  //TODO: REMOVE THIS
+  // parametricTransformer,
+  // portableWayPoint,
+  custom,
 }
