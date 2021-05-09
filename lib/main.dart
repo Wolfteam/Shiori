@@ -9,6 +9,7 @@ import 'domain/services/genshin_service.dart';
 import 'domain/services/locale_service.dart';
 import 'domain/services/logging_service.dart';
 import 'domain/services/network_service.dart';
+import 'domain/services/notification_service.dart';
 import 'domain/services/settings_service.dart';
 import 'domain/services/telemetry_service.dart';
 import 'injection.dart';
@@ -214,13 +215,18 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (ctx) {
             final dataService = getIt<DataService>();
-            return NotificationsBloc(dataService);
+            final notificationService = getIt<NotificationService>();
+            return NotificationsBloc(dataService, notificationService);
           },
         ),
         BlocProvider(
           create: (ctx) {
             final dataService = getIt<DataService>();
-            return NotificationBloc(dataService);
+            final notificationService = getIt<NotificationService>();
+            final genshinService = getIt<GenshinService>();
+            final localeService = getIt<LocaleService>();
+            final loggingService = getIt<LoggingService>();
+            return NotificationBloc(dataService, notificationService, genshinService, localeService, loggingService);
           },
         ),
       ],

@@ -16,6 +16,7 @@ class CircleItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //TODO: TRY ADDING A BACKGROUND WITH THE MATERIAL WIDGET
     final avatar = CircleAvatar(
       radius: radius,
       backgroundColor: Colors.transparent,

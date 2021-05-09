@@ -7,6 +7,7 @@ class NumberPickerDialog extends StatefulWidget {
   final int maxItemLevel;
   final int value;
 
+  //TODO: ALLOW CHANGING THE TEXT IN THE TITLE
   const NumberPickerDialog({
     Key key,
     @required this.minItemLevel,

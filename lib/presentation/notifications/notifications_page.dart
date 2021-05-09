@@ -17,13 +17,13 @@ class NotificationsPage extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     return Scaffold(
-      appBar: AppBar(title: Text('Notifications')),
+      appBar: AppBar(title: Text(s.notifications)),
       body: SafeArea(
         child: BlocBuilder<NotificationsBloc, NotificationsState>(
           builder: (ctx, state) => state.map(
             initial: (state) {
               if (state.notifications.isEmpty) {
-                return NothingFoundColumn(msg: 'Start by creating a notification');
+                return NothingFoundColumn(msg: s.startByCreatingANotification);
               }
 
               return GroupedListView<models.NotificationItem, String>(
@@ -33,10 +33,7 @@ class NotificationsPage extends StatelessWidget {
                 groupSeparatorBuilder: (type) => Container(
                   color: theme.accentColor.withOpacity(0.5),
                   padding: Styles.edgeInsetAll5,
-                  child: Text(
-                    type,
-                    style: theme.textTheme.headline6,
-                  ),
+                  child: Text(type, style: theme.textTheme.headline6),
                 ),
               );
             },
@@ -51,7 +48,8 @@ class NotificationsPage extends StatelessWidget {
   }
 
   Future<void> _showAddModal(BuildContext context) async {
-    context.read<NotificationBloc>().add(const NotificationEvent.init());
+    final s = S.of(context);
+    context.read<NotificationBloc>().add(NotificationEvent.add(defaultTitle: s.appName, defaultBody: s.notifications));
     await showModalBottomSheet(
       context: context,
       shape: Styles.modalBottomSheetShape,
@@ -59,5 +57,6 @@ class NotificationsPage extends StatelessWidget {
       isScrollControlled: true,
       builder: (_) => const AddEditNotificationBottomSheet(isInEditMode: false),
     );
+    context.read<NotificationsBloc>().add(const NotificationsEvent.init());
   }
 }

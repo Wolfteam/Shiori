@@ -439,23 +439,10 @@ extension I18nExtensions on S {
         return resin;
       case AppNotificationType.expedition:
         return expedition;
-      case AppNotificationType.item:
-        return 'Item';
+      case AppNotificationType.custom:
+        return custom;
       default:
         throw Exception('Invalid app notification type = $type');
-    }
-  }
-
-  String translateExpeditionType(ExpeditionType type) {
-    switch (type) {
-      case ExpeditionType.mora:
-        return 'Mora';
-      case ExpeditionType.ingredient:
-        return ingredient;
-      case ExpeditionType.material:
-        return materials;
-      default:
-        throw Exception('Invalid expedition type = $type');
     }
   }
 
@@ -471,6 +458,23 @@ extension I18nExtensions on S {
         return xHours(20);
       default:
         throw Exception('Invalid expedition time type = $type');
+    }
+  }
+
+  String translateAppNotificationItemType(AppNotificationItemType type) {
+    switch (type) {
+      case AppNotificationItemType.character:
+        return characters;
+      case AppNotificationItemType.weapon:
+        return weapons;
+      case AppNotificationItemType.artifact:
+        return artifacts;
+      case AppNotificationItemType.monster:
+        return monsters;
+      case AppNotificationItemType.material:
+        return materials;
+      default:
+        throw Exception('Invalid app notification item type = $type');
     }
   }
 }

@@ -84,6 +84,7 @@ flutter:
     - assets/characters/
     - assets/characters_full/
     - assets/elements/
+    - assets/gadgets/
     - assets/i18n/
     - assets/items/common/
     - assets/items/currency/
