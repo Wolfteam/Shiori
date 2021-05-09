@@ -374,7 +374,7 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   List<MaterialCardModel> getAllMaterialsForCard() {
-    return _materialsFile.materials.map((e) => _toMaterialForCard(e)).toList();
+    return _materialsFile.materials.where((el) => el.isReadyToBeUsed).map((e) => _toMaterialForCard(e)).toList();
   }
 
   @override
@@ -389,7 +389,7 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   List<MaterialFileModel> getMaterials(MaterialType type) {
-    return _materialsFile.materials.where((m) => m.type == type).toList();
+    return _materialsFile.materials.where((m) => m.type == type && m.isReadyToBeUsed).toList();
   }
 
   @override
@@ -566,6 +566,87 @@ class GenshinServiceImpl implements GenshinService {
       images.add(monster.fullImagePath);
     }
     return images;
+  }
+
+  @override
+  List<MaterialFileModel> getAllMaterialsThatCanBeObtainedFromAnExpedition() {
+    return _materialsFile.materials.where((el) => el.canBeObtainedFromAnExpedition).toList();
+  }
+
+  @override
+  String getItemImageFromNotificationType(
+    String itemKey,
+    AppNotificationType notificationType, {
+    AppNotificationItemType notificationItemType,
+  }) {
+    switch (notificationType) {
+      case AppNotificationType.resin:
+      case AppNotificationType.expedition:
+        final material = getMaterial(itemKey);
+        return material.fullImagePath;
+      case AppNotificationType.custom:
+        return getItemImageFromNotificationItemType(itemKey, notificationItemType);
+      default:
+        throw Exception('The provided notification type = $notificationType');
+    }
+  }
+
+  @override
+  String getItemImageFromNotificationItemType(String itemKey, AppNotificationItemType notificationItemType) {
+    switch (notificationItemType) {
+      case AppNotificationItemType.character:
+        final character = getCharacter(itemKey);
+        return character.fullImagePath;
+      case AppNotificationItemType.weapon:
+        final weapon = getWeapon(itemKey);
+        return weapon.fullImagePath;
+      case AppNotificationItemType.artifact:
+        final artifact = getArtifact(itemKey);
+        return artifact.fullImagePath;
+      case AppNotificationItemType.monster:
+        final monster = getMonster(itemKey);
+        return monster.fullImagePath;
+      case AppNotificationItemType.material:
+        final material = getMaterial(itemKey);
+        return material.fullImagePath;
+      default:
+        throw Exception('The provided notification item type = $notificationItemType');
+    }
+  }
+
+  @override
+  String getItemKeyFromNotificationType(
+    String itemImage,
+    AppNotificationType notificationType, {
+    AppNotificationItemType notificationItemType,
+  }) {
+    switch (notificationType) {
+      case AppNotificationType.resin:
+      case AppNotificationType.expedition:
+        final material = getMaterialByImage(itemImage);
+        return material.key;
+      case AppNotificationType.custom:
+        switch (notificationItemType) {
+          case AppNotificationItemType.character:
+            final character = getCharacterByImg(itemImage);
+            return character.key;
+          case AppNotificationItemType.weapon:
+            final weapon = getWeaponByImg(itemImage);
+            return weapon.key;
+          case AppNotificationItemType.artifact:
+            final artifact = getArtifactForCardByImg(itemImage);
+            return artifact.key;
+          case AppNotificationItemType.monster:
+            final monster = getMonsterByImg(itemImage);
+            return monster.key;
+          case AppNotificationItemType.material:
+            final material = getMaterialByImage(itemImage);
+            return material.key;
+          default:
+            throw Exception('The provided notification item type = $notificationItemType');
+        }
+    }
+    throw Exception('The provided notification type = $notificationType');
   }
 
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {

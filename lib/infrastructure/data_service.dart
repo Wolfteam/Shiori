@@ -11,7 +11,6 @@ import 'package:genshindb/domain/services/calculator_service.dart';
 import 'package:genshindb/domain/services/data_service.dart';
 import 'package:genshindb/domain/services/genshin_service.dart';
 import 'package:genshindb/domain/services/locale_service.dart';
-import 'package:genshindb/domain/utils/date_utils.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -416,44 +415,94 @@ class DataServiceImpl implements DataService {
   }
 
   @override
-  Future<void> saveNotification(NotificationItem item) async {
+  Future<NotificationItem> saveResinNotification(
+    String itemKey,
+    String title,
+    String body,
+    int currentResinValue, {
+    String note,
+    bool showNotification = true,
+  }) async {
     final now = DateTime.now();
-    switch (item.type) {
-      case AppNotificationType.resin:
-        final diff = maxResinValue - item.currentResinValue;
-        return _notificationsBox.add(Notification.resin(
-          notificationId: item.notificationId,
-          type: item.type,
-          image: Assets.getCurrencyMaterialPath('fragile_resin.png'),
-          createdAt: now,
-          completesAt: now.add(Duration(minutes: diff * resinRefillsEach)),
-          showNotification: item.showNotification,
-          currentResinValue: item.currentResinValue,
-          note: item.note,
-        ));
-      case AppNotificationType.expedition:
-        return _notificationsBox.add(Notification.expedition(
-          notificationId: item.notificationId,
-          type: item.type,
-          image: Assets.getMaterialPathFromExpeditionType(item.expeditionType),
-          createdAt: now,
-          completesAt: now.add(getExpeditionDuration(item.expeditionTimeType)),
-          showNotification: item.showNotification,
-          withTimeReduction: item.withTimeReduction,
-          expeditionTimeType: item.expeditionTimeType,
-          expeditionType: item.expeditionType,
-          note: item.note,
-        ));
-      case AppNotificationType.item:
-        break;
-      default:
-        throw Exception('The provided notification type = ${item.type} is not valid');
-    }
+    final diff = maxResinValue - currentResinValue;
+    final notification = Notification.resin(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: now.add(Duration(minutes: diff * resinRefillsEach)),
+      showNotification: showNotification,
+      currentResinValue: currentResinValue,
+      note: note,
+      title: title,
+      body: body,
+    );
+    final key = await _notificationsBox.add(notification);
+    return getNotification(key);
+  }
+
+  @override
+  Future<NotificationItem> saveExpeditionNotification(
+    String itemKey,
+    String title,
+    String body,
+    ExpeditionTimeType expeditionTimeType, {
+    String note,
+    bool showNotification = true,
+    bool withTimeReduction = false,
+  }) async {
+    final now = DateTime.now();
+    final notification = Notification.expedition(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: now.add(getExpeditionDuration(expeditionTimeType, withTimeReduction)),
+      showNotification: showNotification,
+      withTimeReduction: withTimeReduction,
+      expeditionTimeType: expeditionTimeType.index,
+      note: note,
+      title: title,
+      body: body,
+    );
+    final key = await _notificationsBox.add(notification);
+    return getNotification(key);
+  }
+
+  @override
+  Future<NotificationItem> saveCustomNotification(
+    String itemKey,
+    String title,
+    String body,
+    DateTime createdAt,
+    DateTime completesAt,
+    AppNotificationItemType notificationItemType, {
+    String note,
+    bool showNotification = true,
+  }) async {
+    final notification = Notification.custom(
+      itemKey: itemKey,
+      createdAt: createdAt,
+      completesAt: completesAt,
+      showNotification: showNotification,
+      note: note,
+      notificationItemType: notificationItemType.index,
+      title: title,
+      body: body,
+    );
+    final key = await _notificationsBox.add(notification);
+    return getNotification(key);
   }
 
   @override
   Future<void> deleteNotification(int key) {
     return _notificationsBox.delete(key);
+  }
+
+  @override
+  Future<NotificationItem> resetNotification(int key) async {
+    final item = _notificationsBox.values.firstWhere((el) => el.key == key);
+    final duration = item.scheduledDate.difference(item.createdAt);
+    item.completesAt = DateTime.now().add(duration);
+
+    await item.save();
+    return _mapToNotificationItem(item);
   }
 
   void _registerAdapters() {
@@ -634,43 +683,28 @@ class DataServiceImpl implements DataService {
   }
 
   NotificationItem _mapToNotificationItem(Notification e) {
+    final type = AppNotificationType.values[e.type];
+    final itemType = e.notificationItemType == null ? null : AppNotificationItemType.values[e.notificationItemType];
+    final expeditionType = e.expeditionTimeType == null ? null : ExpeditionTimeType.values[e.expeditionTimeType];
+    final image = _genshinService.getItemImageFromNotificationType(e.itemKey, type, notificationItemType: itemType);
     final now = DateTime.now();
     final remaining = e.completesAt.difference(now);
-    final locale = _localeService.getLocaleWithoutLang();
-    switch (e.type) {
-      case AppNotificationType.resin:
-        return NotificationItem.resin(
-          key: e.key as int,
-          type: e.type,
-          showNotification: e.showNotification,
-          createdAt: DateUtils.formatDate(e.createdAt, locale.code),
-          completesAt: DateUtils.formatDate(e.completesAt, locale.code),
-          notificationId: e.notificationId,
-          image: e.image,
-          note: e.note,
-          remaining: remaining,
-          currentResinValue: e.currentResinValue,
-        );
-      case AppNotificationType.expedition:
-        return NotificationItem.expedition(
-          key: e.key as int,
-          type: e.type,
-          showNotification: e.showNotification,
-          createdAt: DateUtils.formatDate(e.createdAt, locale.code),
-          completesAt: DateUtils.formatDate(e.completesAt, locale.code),
-          notificationId: e.notificationId,
-          image: e.image,
-          note: e.note,
-          remaining: remaining,
-          expeditionType: e.expeditionType,
-          expeditionTimeType: e.expeditionTimeType,
-          withTimeReduction: e.withTimeReduction,
-        );
-      case AppNotificationType.item:
-      // TODO: Handle this case.
-      //   break;
-      default:
-        throw Exception('Invalid notification type = ${e.type}');
-    }
+    return NotificationItem(
+      key: e.key as int,
+      image: image,
+      remaining: remaining,
+      createdAt: e.createdAt,
+      completesAt: e.completesAt,
+      type: AppNotificationType.values[e.type],
+      showNotification: e.showNotification,
+      currentResinValue: e.currentResinValue,
+      withTimeReduction: e.withTimeReduction,
+      notificationItemType: itemType,
+      expeditionTimeType: expeditionType,
+      note: e.note,
+      title: e.title,
+      body: e.body,
+      scheduledDate: e.scheduledDate,
+    );
   }
 }
