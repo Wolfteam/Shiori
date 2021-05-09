@@ -65,7 +65,7 @@ class TelemetryServiceImpl implements TelemetryService {
   }
 
   @override
-  Future<void> trackUrlOpened(bool loadMap, bool loadWishSimulator, bool networkAvailable) async {
+  Future<void> trackUrlOpened(bool loadMap, bool loadWishSimulator, bool loadDailyCheckIn, bool networkAvailable) async {
     final props = {
       'NetworkAvailable': networkAvailable.toString(),
     };
@@ -74,6 +74,8 @@ class TelemetryServiceImpl implements TelemetryService {
       await trackEventAsync('Map-Opened', props);
     } else if (loadWishSimulator) {
       await trackEventAsync('WishSimulator-Opened', props);
+    } else if (loadDailyCheckIn) {
+      await trackEventAsync('DailyCheckIn-Opened', props);
     }
   }
 

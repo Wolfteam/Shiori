@@ -295,6 +295,8 @@
   "usedItem": "已使用的物品",
   "itemIsBeingUsedOnACalculation": "该物品已在一个或多个组别中使用。\n已使用数量：{quantity}",
   "useOfficialMap": "使用官方地图",
+  "dailyCheckIn": "【原神】每日签到",
+  "dailyCheckInMsg": "Don't forget to claim your daily rewards here !",
   "notifications": "Notifications",
   "startByCreatingANotification": "Start by creating a notification",
   "notificationType": "Notification Type",

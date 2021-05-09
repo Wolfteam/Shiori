@@ -294,6 +294,8 @@
   "usedItem": "Использован предмет",
   "itemIsBeingUsedOnACalculation": "Этот предмет используется в одном или нескольких сеансах калькулятора.\nКоличество использованных: {quantity}",
   "useOfficialMap": "Использовать официальную карту",
+  "dailyCheckIn": "Ежедневные отметки",
+  "dailyCheckInMsg": "Не забудьте получить свою ежедневную награду здесь !",
   "notifications": "Notifications",
   "startByCreatingANotification": "Start by creating a notification",
   "notificationType": "Notification Type",

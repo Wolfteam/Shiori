@@ -32,7 +32,8 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             final settingsService = getIt<SettingsService>();
-            return HomeBloc(genshinService, settingsService);
+            final localeService = getIt<LocaleService>();
+            return HomeBloc(genshinService, settingsService, localeService);
           },
         ),
         BlocProvider(

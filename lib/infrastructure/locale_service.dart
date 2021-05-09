@@ -50,4 +50,24 @@ class LocaleServiceImpl implements LocaleService {
 
     return languagesMap.entries.firstWhere((kvp) => kvp.key == language).value;
   }
+
+  @override
+  String getDayNameFromDate(DateTime date) {
+    final locale = getFormattedLocale(_settingsService.language);
+    return DateFormat('EEEE', locale).format(date).toUpperCase();
+  }
+
+  @override
+  String getDayNameFromDay(int day) {
+    final dates = List.generate(7, (index) => DateTime.now().add(Duration(days: index)));
+
+    for (final date in dates) {
+      if (date.weekday != day) {
+        continue;
+      }
+      return getDayNameFromDate(date);
+    }
+
+    return 'N/A';
+  }
 }

@@ -113,20 +113,8 @@ class DataServiceImpl implements DataService {
   }
 
   @override
-  Future<ItemAscensionMaterials> addCalAscMatSessionItem(int sessionKey, ItemAscensionMaterials item) async {
-    final mappedItem = CalculatorItem(
-      sessionKey,
-      item.key,
-      item.position,
-      item.currentLevel,
-      item.desiredLevel,
-      item.currentAscensionLevel,
-      item.desiredAscensionLevel,
-      item.isCharacter,
-      item.isWeapon,
-      item.isActive,
-      item.useMaterialsFromInventory,
-    );
+  Future<ItemAscensionMaterials> addCalAscMatSessionItem(int sessionKey, ItemAscensionMaterials item, {bool redistribute = true}) async {
+    final mappedItem = _toCalculatorItem(sessionKey, item);
 
     final calculatorItemKey = await _calcItemBox.add(mappedItem);
     final skills = item.skills.map((e) => CalculatorCharacterSkill(calculatorItemKey, e.key, e.currentLevel, e.desiredLevel, e.position)).toList();
@@ -142,6 +130,9 @@ class DataServiceImpl implements DataService {
       await _useItemFromInventory(calculatorItemKey, mat.key, ItemType.material, material.quantity);
     }
 
+    if (!redistribute) {
+      return item;
+    }
     //Since we added a new item, we need to redistribute
     //the materials because the priority of this item could be higher than the others
     await redistributeAllInventoryMaterials();
@@ -176,13 +167,18 @@ class DataServiceImpl implements DataService {
   }
 
   @override
-  Future<ItemAscensionMaterials> updateCalAscMatSessionItem(int sessionKey, int position, ItemAscensionMaterials item) async {
-    await deleteCalAscMatSessionItem(sessionKey, item.position);
-    return addCalAscMatSessionItem(sessionKey, item);
+  Future<ItemAscensionMaterials> updateCalAscMatSessionItem(
+    int sessionKey,
+    int newItemPosition,
+    ItemAscensionMaterials item, {
+    bool redistribute = true,
+  }) async {
+    await deleteCalAscMatSessionItem(sessionKey, item.position, redistribute: false);
+    return addCalAscMatSessionItem(sessionKey, item.copyWith.call(position: newItemPosition), redistribute: redistribute);
   }
 
   @override
-  Future<void> deleteCalAscMatSessionItem(int sessionKey, int position) async {
+  Future<void> deleteCalAscMatSessionItem(int sessionKey, int position, {bool redistribute = true}) async {
     final calcItem = _calcItemBox.values.firstWhere((el) => el.sessionKey == sessionKey && el.position == position, orElse: () => null);
     if (calcItem == null) {
       return;
@@ -194,7 +190,7 @@ class DataServiceImpl implements DataService {
     //Make sure we delete the item before redistributing
     await _calcItemBox.delete(calcItemKey);
 
-    await _clearUsedInventoryItems(calcItemKey, redistribute: true);
+    await _clearUsedInventoryItems(calcItemKey, redistribute: redistribute);
   }
 
   @override
@@ -306,7 +302,7 @@ class DataServiceImpl implements DataService {
     for (final session in sessions) {
       final calcItems = _calcItemBox.values.where((el) => el.sessionKey == session.key).toList()..sort((x, y) => x.position.compareTo(y.position));
       for (final calItem in calcItems) {
-        if (!calItem.useMaterialsFromInventory) {
+        if (!calItem.useMaterialsFromInventory || !calItem.isActive) {
           continue;
         }
 
@@ -532,7 +528,7 @@ class DataServiceImpl implements DataService {
       skills,
     );
 
-    if (item.useMaterialsFromInventory && includeInventory && calculatorItemKey != null) {
+    if (item.useMaterialsFromInventory && item.isActive && includeInventory && calculatorItemKey != null) {
       materials = _considerMaterialsInInventory(calculatorItemKey, materials);
     }
 
@@ -588,7 +584,7 @@ class DataServiceImpl implements DataService {
       item.desiredAscensionLevel,
     );
 
-    if (item.useMaterialsFromInventory && includeInventory && calculatorItemKey != null) {
+    if (item.useMaterialsFromInventory && item.isActive && includeInventory && calculatorItemKey != null) {
       materials = _considerMaterialsInInventory(calculatorItemKey, materials);
     }
 
@@ -680,6 +676,22 @@ class DataServiceImpl implements DataService {
     if (redistribute) {
       await redistributeAllInventoryMaterials();
     }
+  }
+
+  CalculatorItem _toCalculatorItem(int sessionKey, ItemAscensionMaterials item) {
+    return CalculatorItem(
+      sessionKey,
+      item.key,
+      item.position,
+      item.currentLevel,
+      item.desiredLevel,
+      item.currentAscensionLevel,
+      item.desiredAscensionLevel,
+      item.isCharacter,
+      item.isWeapon,
+      item.isActive,
+      item.useMaterialsFromInventory,
+    );
   }
 
   NotificationItem _mapToNotificationItem(Notification e) {

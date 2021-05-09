@@ -59,6 +59,7 @@ abstract class GenshinService {
   List<MaterialFileModel> getMaterials(MaterialType type);
 
   int getServerDay(AppServerResetTimeType type);
+  DateTime getServerDate(AppServerResetTimeType type);
 
   List<GameCodeFileModel> getAllGameCodes();
 
