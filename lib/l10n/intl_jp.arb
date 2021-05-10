@@ -294,7 +294,7 @@
   "discordServer": "Discordサーバー",
   "usedItem": "使用したアイテム",
   "itemIsBeingUsedOnACalculation": "このアイテムは、1つ以上の計算機のセッションで使用されています。\n使用された数量は {quantity} です。",
-  "useOfficialMap": "公式マップを使用する"
+  "useOfficialMap": "公式マップを使用する",
   "dailyCheckIn": "デイリーチェックイン",
   "dailyCheckInMsg": "ここで毎日の報酬を受け取ることを忘れないでください。"
 }
