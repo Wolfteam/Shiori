@@ -126,119 +126,119 @@
     },
     {
       "key": "Amber",
-      "name": "Amber",
-      "description": "Always energetic and full of life, Amber’s the best - albeit only - Outrider of the Knights of Favonius.",
+      "name": "アンバー",
+      "description": "元気満々な女の子、騎士団で最も優秀で、最後の偵察騎士である。",
       "skills": [
         {
           "key": "s1",
-          "title": "Sharpshooter",
+          "title": "一流射手",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive shots with a bow.",
+              "description": "最高5段の連続射撃。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, flames accumulates on the arrowhead. A fully charged flaming arrow will deal Pyro DMG.",
+              "description": "ダメージがより高く、より正確な狙い撃ちを発動する。照準時、烈炎を矢先に凝集させ、烈炎に満ちた矢は的に炎ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "空中から矢の雨を放ち、凄まじいスピードで落下し地面に衝撃を与え、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Baron Bunny",
+          "title": "爆弾人形",
           "description": null,
           "abilities": [
             {
-              "name": "Baron Bunny",
+              "name": "ウサギ伯爵",
               "description": null,
               "descriptions": [
-                "Continuously taunts the enemy, drawing their fire.",
-                "Baron Bunny’s HP scales with Amber’s Max HP.",
-                "When destroyed or when its timer expires, Baron Bunny explodes, dealing AoE Pyro DMG."
+                "周囲の敵を嘲笑い続け、攻撃を吸い寄せる。",
+                "耐久度はアンバーをHPの一定の比例で受け継ぐ。",
+                "破壊された時または継続時間終了したときに爆発し、炎元素範囲ダメージを与える。"
               ]
             },
             {
               "key": "a2",
-              "description": "Adjusts the throwing direction of Baron Bunny.The longer the button is held, the further the throw.",
+              "description": "投擲方向を調整できる。投擲距離は長押しの時間によって増加する。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Fiery Rain",
-          "description": "Fires of a shower of arrows, dealing continuous AoE Pyro DMG.",
+          "title": "矢の雨",
+          "description": "前方に炎の矢の雨を出し、炎元素範囲ダメージを与え続ける。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Gliding Champion",
-          "description": "Decreases all party members’ gliding Stamina Consumption by 20%. The greatest effect out of all Talents of the same type prevails.",
+          "title": "飛行チャンピオン",
+          "description": "チーム内の自身のキャラクター全員が滑翔に消費するスタミナ-20%。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Every Arrow Finds Its Target",
-          "description": "Increases the CRIT Rate of Fiery Rain by 10% and widens its AoE by 30%.",
+          "title": "百発百中！",
+          "description": "矢の雨の会心率+10%、影響範囲+30%。キャラ突破Lv1で解放。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Precise Shot",
-          "description": "Aimed Shot hits on weak spots increase Base ATK by 15% for 10s.",
+          "title": "制圧射撃",
+          "description": "狙い撃ちが弱点に命中すると、攻撃力+15%、継続時間10秒。キャラ突破Lv4で解放。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "One Arrow to Rule Them All",
-          "description": "Fires 2 arrows per Aimed Shot. The second arrow deals 20% of the first arrow’s DMG.",
+          "title": "一挙双擒",
+          "description": "狙い撃ちする時、矢を連続2本放つ。2本目の矢は元の矢の20%のダメージを与える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Bunny Triggered",
-          "description": "Baron Bunny, new and improved! Hitting Baron Bunny’s foot with a fully-charged Aimed Shot manually detonates it. Explosion via manual detonation deals 200% additional DMG.",
+          "title": "一触即発",
+          "description": "ウサギ伯爵が改良された!フルチャージの狙い撃ちがウサギ伯爵の足に命中するとウサギ伯爵を直接起爆させられる。この形で自らウサギ伯爵を起爆させると、追加で200%のダメージを与える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "It Burns!",
-          "description": "Increases the Level of Fiery Rain by 3. Maximum upgrade level is 15.",
+          "title": "燃やせ!",
+          "description": "矢の雨のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "It’s Not Just Any Doll...",
-          "description": "Decreases Explosive Puppet’s CD by 20%. Adds 1 additional charge.",
+          "title": "ただの人形じゃない",
+          "description": "爆弾人形のクールタイム-20%、使用可能回数が1回増える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "It’s Baron Bunny!",
-          "description": "Increase the Level of Explosive Puppet by 3.Maximum upgrade level is 15.",
+          "title": "ウサギ伯爵だよ!",
+          "description": "爆弾人形のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Wildfire",
-          "description": "Fiery Rain increases Amber’s Movement SPD by 15% and Base ATK by 15% for 10s.",
+          "title": "野火の如く",
+          "description": "矢の雨を発動した10秒間、チーム全員の移動速度+15%、攻撃力+15%。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -247,190 +247,190 @@
     {
       "key": "Ayaka",
       "pending": true,
-      "name": "Ayaka",
-      "description": "The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated beast, flows within her veins.",
+      "name": "神里綾華",
+      "description": "稲妻名門「神里家」のお嬢様、高貴で優雅な美しい少女。",
       "skills": [],
       "passives": [],
       "constellations": []
     },
     {
       "key": "Barbara",
-      "name": "Barbara",
-      "description": "Every denizen of Mondstadt adores Barbara. However, she learned the word \"idol\" from a magazine.",
+      "name": "バーバラ",
+      "description": "モンドのみんなはバーバラが大好き。ちなみに「アイドル」という言葉は彼女が雑誌で見たものらしい。",
       "skills": [
         {
           "key": "s1",
-          "title": "Whisper of Water",
+          "title": "水の囁き",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 4 water splashes attacks that deal Hydro DMG.",
+              "description": "最大4段の連続攻撃を行い、水元素ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to deal AoE Hydro DMG after a short casting time.",
+              "description": "一定のスタミナを消費し、短い詠唱をした後、敵に水元素範囲ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the might of Hydro, Barbara plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Hydro DMG upon impact with the ground.",
+              "description": "空中から水元素の力を凝集しながら落下し、地面に衝撃を与える。経路上の敵を攻撃し、落下時に水元素範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Let the Show Begin",
-          "description": "Summons water droplets resembling musical notes that form a Melody Loop, dealing Hydro DMG to surrounding enemies and afflicting them with the Wet status.",
+          "title": "公演、開始♪",
+          "description": "躍動する歌声のような水の玉を召喚し、歌声の輪を作って周囲の敵に水元素ダメージを与え、さらに湿潤状態を付与する。",
           "abilities": [
             {
-              "name": "Melody Loop",
+              "name": "歌声の輪",
               "description": null,
               "descriptions": [
-                "Barbara's Normal Attacks heal all party members and nearby allied characters for a certain amount of HP, which scales with Barbara's Max HP.",
-                "Her Charged Attack generates 4 times the amount of healing.",
-                "Regenerates a certain amount of the current character’s HP at regular intervals.",
-                "Applies the Wet status to the character and enemies who come in contact with them."
+                "バーバラの通常攻撃が命中した時、チーム内の自身のキャラクター全員または付近の味方のHPを回復する。回復量はバーバラのHP上限によって決まる。",
+                "重撃が命中した時、回復量は4倍になる。",
+                "一定時間の間隔で、出場している自身のキャラクターのHPを回復する。",
+                "キャラクター、または接触した敵に湿潤状態を付与する。"
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Shining Miracle",
-          "description": "Heals friendly forces and all parties for a large amount of HP that scales with Barbara’s Max HP.",
+          "title": "シャイニングミラクル♪",
+          "description": "周囲にいる味方とチーム内の自身のキャラクター全員のHPを大量に回復する。回復量はバーバラのHP上限を基準とする。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "With My Whole Heart",
-          "description": "When a Perfect Cooking is achieved on a dish with restorative effects, there is a 12% chance to obtain double the product.",
+          "title": "気持ち♪注入",
+          "description": "回復系料理を完璧調理した時、12%の確率で料理を2倍獲得する。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Glorious Season",
-          "description": "The Stamina Consumption of characters within Let the Show Begin's Melody Loop is reduced by 12%.",
+          "title": "輝く季節",
+          "description": "公演、開始歌声の輪が継続している間、スタミナ消費-12%。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Encore",
-          "description": "When a character gains an Elemental Orb/Particle, the duration of Let the Show Begin’s Melody Loop is extended by 1s. The maximum extension is 5s.",
+          "title": "アンコール",
+          "description": "出場している自身のキャラクターが元素オーブまたは元素粒子を獲得した時、公演、開始の歌声の輪の継続時間+1秒。この方法で最大5秒まで延長可能。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Gleeful Songs",
-          "description": "Barbara regenerates 1 Energy every 10s.",
+          "title": "虹色の歌",
+          "description": "10秒毎に元素エネルギーを1回復する。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Vitality Burst",
-          "description": "Decreases the CD of Let the Show Begin by 15%. During the ability’s duration, the current character gains 15% Hydro DMG Bonus.",
+          "title": "元気溌剌",
+          "description": "公演、開始のクールタイム－15％。スキル継続中、出場している自身のキャラクターの与える水元素ダメージ+15％。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Star of Tomorrow",
-          "description": "Increases the Level of Shining Miracle by 3. Maximum upgrade level is 15.",
+          "title": "明日の星",
+          "description": "シャイニングミラクルのスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Attentiveness be My Power",
-          "description": "Every enemy hit by Barbara’s Charged Attack regenerates 1 Energy for her. A maximum of 5 energy can be regenerated in this manner with any one Charged Attack.",
+          "title": "努力が魔法なの",
+          "description": "重撃が敵に命中する度に、バーバラの元素エネルギーが1回復する。一回で最大元素エネルギーが5まで回復できる。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "The Purest Companionship",
-          "description": "Increases the Level of Let the Show Begin by 3.\nMaximum upgrade level is 15.",
+          "title": "純真な絆",
+          "description": "公演、開始のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Dedicating Everything to You",
-          "description": "When Barbara is not on the field, and the character in play falls:",
-          "secondDescription": "This effect can only occur once every 15 mins.",
+          "title": "美しいものをあなたに",
+          "description": "バーバラ待機中にチーム内の自身のキャラクターが戦闘不能になると、下記の効果が発動される:",
+          "secondDescription": "この効果は15分毎に1回のみ発動可能。",
           "descriptions": [
-            "Automatically revives this character.",
-            "Fully regenerates this character's HP by 100%."
+            "戦闘不能になったキャラクターを復活させる",
+            "該当キャラクターのHPが100%回復される。"
           ]
         }
       ]
     },
     {
       "key": "Beidou",
-      "name": "Beidou",
-      "description": "Beidou is the leader of the Crux — an armed fleet based in Liyue Harbor. An armed fleet means exactly what it sounds like: a fleet of ships armed to the teeth.",
+      "name": "北斗",
+      "description": "武装船隊「南十字」の頭領、豪快な姉貴。",
       "skills": [
         {
           "key": "s1",
-          "title": "Oceanborne",
+          "title": "征浪",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 successive strikes.",
+              "description": "最大5段の連続攻撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous slashes. At end of the sequence, perform a more powerful slash.",
+              "description": "持続的にスタミナを消費し、素早く連続攻撃を発動する。重撃が終了した時に、更に強力な攻撃を1回放つ。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Tidecaller",
-          "description": "Nothing to worry about. Should anyone raise a hand against her or her men, she will avenge it ten-fold with sword and thunder.",
+          "title": "浪追い",
+          "description": "雷の力を凝集させ、前方に大剣を振り、雷元素ダメージを与える。",
           "abilities": [
             {
               "key": "a1",
-              "description": "Accumulating the power of lightning, Beidou swings her blade forward fiercely, dealing Electro DMG.",
+              "description": "武器をシールドとして使う、ダメージ吸収量は北斗のHP上限によって決まる。/n手放すまたはスキル継続時間終了時、大剣を振り回して攻撃を行い、雷元素ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Lifts her weapon up as a shield. Max DMG absorbed scales off Beidou’s Max HP. Attacks using the energy stored within the greatsword upon release or once this ability’s duration expires, dealing Electro DMG. DMG dealt scales with the number of times Beidou is attacked in the skill’s duration. The greatest DMG Bonus will be attained once this effect is triggered twice. The shield possesses the following properties:",
+              "description": "スキル期間中に受けた攻撃の回数により、与えるダメージを最大2回までアップさせる。/nシールドには下記の効果がある。:",
               "descriptions": [
-                "Has 250% Electro DMG Absorption Efficiency.",
-                "Applies the Electro element to Beidou upon activation."
+                "雷元素ダメージに対して250%の吸収効果がある。",
+                "スキル発動時、北斗に雷元素付着効果を付与する。"
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Stormbreaker",
-          "description": "Recalling her slaying of the great beast Haishan. Beidou calls upon that monstrous strength and the lightning to create a Thunderbeast’s Targe around herself, dealing Electro DMG to nearby opponents.",
+          "title": "雷斫り",
+          "description": "巨獣海山との戦いを思い出した北斗は、巨獣と雷電の力を召喚し、雷獣の盾を作り、周囲の敵に雷元素ダメージを与える。",
           "abilities": [
             {
-              "name": "Thunderbeast’s Targe",
+              "name": "雷獣の盾",
               "description": null,
               "descriptions": [
-                "When Normal and Charged Attacks hit, they create a lightning discharge that can jump between enemies, dealing Electro DMG.",
-                "Increases the character’s resistance to interruption, and decreases DMG taken.",
-                "A maximum of 1 lightning discharge can be triggered per second."
+                "通常攻撃と重撃が近距離の敵に命中すると、雷の力で敵の間を跳躍する稲妻を発生させ、敵に雷元素ダメージを与える。",
+                "キャラクターの中断耐性をアップさせ、受けるダメージを軽減する。",
+                "稲妻発生の効果は1秒に1回のみ。"
               ]
             }
           ]
@@ -439,69 +439,69 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Conqueror of Tides",
-          "description": "Decreases all party member’s swimming Stamina consumption by 20%.",
+          "title": "怒濤踏み",
+          "description": "チーム内の自身のキャラクター全員が泳ぎに消費するスタミナ-20%。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Retribution",
-          "description": "Counterattacking with Tidecaller at the precise moment when the character is hit grants the maximum DMG Bonus.",
+          "title": "完全なる霊光",
+          "description": "攻撃された瞬間に発動した浪追いの反撃は最大ダメージアップ効果を得る。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Leviathan’s Protection",
-          "description": "Gain the following effects for 10s after unleashing Tidecaller with its maximum DMG Bonus:",
+          "title": "満天の霹靂",
+          "description": "最大ダメージアップ効果のある浪追いを発動した後の10秒間、下記の効果が発動される:",
           "descriptions": [
-            "DMG dealt by Normal and Charged Attacks is increased by 15%. ATK SPD of Normal and Charged Attacks is increased by 15%.",
-            "Greatly reduced delay before unleashing Charged Attacks."
+            "通常攻撃と重撃の攻撃速度+15%、攻撃ダメージ+15%。",
+            "重撃に必要な時間が大幅に減少する。"
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Sea Beast’s Scourge",
-          "description": "When Stormbreaker is used:",
+          "title": "四方に沈む魚龍",
+          "description": "雷斫り発動時:",
           "secondDescription": null,
           "descriptions": [
-            "Creates a shield that absorbs up to 16% of Beidou’s Max HP for 15s.",
-            "This shield absorbs Electro DMG 250% more effectively."
+            "HP上限16%相当のシールドを15秒間発動する。",
+            "該当シールドは雷元素ダメージに対して250%の吸収効果がある。"
           ]
         },
         {
           "key": "c2",
-          "title": "Upon the Turbulent Sea, the Thunder Arises",
-          "description": "Stormbreaker’s arc lightning can jump 2 additional targets.",
+          "title": "沸き上がる雷",
+          "description": "雷斫りの稲妻が2体の敵を追加で攻撃可能になる。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Summoner of Storm",
-          "description": "Increases the Level of Tidecaller by 3. Maximum upgrade level is 15.",
+          "title": "雷引きの潮",
+          "description": "浪追いのスキルLv.+3。最大15Lv.まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Stunning Revenge",
-          "description": "Within 10s of taking DMG, Beidou’s Normal Attacks gain 20% additional Electro DMG.",
+          "title": "星に導かれた岸線",
+          "description": "攻撃を受けた後の10秒間、北斗の通常攻撃に追加で20%の雷元素ダメージが付与される。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Crimson Tidewalker",
-          "description": "Increase the Level of Stormbreaker by 3. Maximum upgrade level is 15.",
+          "title": "白波に映る霞光",
+          "description": "雷斫りのスキルLv.+3。最大15Lv.まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Bane of Evil",
-          "description": "During the duration of Stormbreaker, the Electro RES of surrounding enemies is decreased by 15%.",
+          "title": "北斗の祓い",
+          "description": "雷斫り継続中、周囲の敵の雷元素耐性-15%",
           "secondDescription": null,
           "descriptions": []
         }
@@ -509,64 +509,64 @@
     },
     {
       "key": "Bennett",
-      "name": "Bennett",
-      "description": "A righteous and good-natured adventurer from Mondstadt who’s unfortunately extremely unlucky.",
+      "name": "ベネット",
+      "description": "モンドの冒険者少年、その優しさとそぐわない不運を持っている。",
       "skills": [
         {
           "key": "s1",
-          "title": "Strike of Fortune",
+          "title": "好運の剣",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 5 rapid strikes.",
+              "description": "剣による最大5段の連続攻撃。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword swings.",
+              "description": "一定のスタミナを消費し、前方に2回斬撃する。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Passion Overload",
-          "description": "Bennett puts all his fire and passion for adventuring into his sword. Results may vary based on how fired up he is.",
+          "title": "溢れる情熱",
+          "description": "ベネットが炎元素と冒険への情熱を剣に込めて⋯込めた情熱の多さによって、違う効果が現れる可能性がある。",
           "abilities": [
             {
               "key": "a1",
-              "description": "A single, swift flame strike that deals Pyro DMG.",
+              "description": "前方に素早く炎の一撃を仕掛け、炎ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Charges up, resulting in different effects when unleashed based on the Charge Level.",
-              "secondDescription": "Bennett takes no damage from being launched.",
+              "description": "長押しでチャージし、チャージ段数により効果が変わる。",
+              "secondDescription": "自身と敵を同時にノックバックする。ベネットがこれによりノックバックされた時、ダメージを受けることはない",
               "descriptions": [
-                "Level 1: Strikes twice, dealing Pyro DMG and launching enemies.",
-                "Level 2: Unleashes 3 consecutive attacks that deal impressive Pyro DMG, but the last attack triggers an explosion that launches both Bennet and the enemy."
+                "1段チャージ:二段攻撃を仕掛け、炎ダメージを与え、敵をノックバックする。",
+                "2段チャージ:三段攻撃を発動し、大量の炎ダメージを与え、最後の一撃に爆発が発生し、自身と敵を同時にノックバックする。"
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Fantastic Voyage",
-          "description": "Bennett leaps towards the enemy and performs a plunging attack, dealing Pyro DMG, creating an Inspiration Field.",
+          "title": "素晴らしい旅",
+          "description": "ベネットが敵の方にジャンプし、落下攻撃を仕掛け、炎ダメージを与え鼓舞エリアを生成する。",
           "abilities": [
             {
-              "name": "Inspiration Field",
+              "name": "鼓舞エリアは以下の特性を持つ",
               "description": null,
               "descriptions": [
-                "If the health of a character in the circle is equal to or falls below 70%, their health will continuously regenerate. Regeneration scales based on Bennett’s Max HP.",
-                "If the health of a character in the circle is higher than 70%, they gain an ATK Bonus that is based on Bennett’s Base ATK.",
-                "Applies the Pyro element to characters within the Field."
+                "エリア内のキャラのHPが最大値の70%を下回ると、HPが継続回復する。回復量はベネットのHP上限によって決まる。",
+                "エリア内のキャラのHPが最大値の70%以上の場合、ベネットの基礎攻撃力を基準に、一定比例の攻撃力がアップする。",
+                "エリア内のキャラに炎元素付着効果を付与する。"
               ]
             }
           ]
@@ -575,66 +575,66 @@
       "passives": [
         {
           "key": "p1",
-          "title": "It Should Be Safe...",
-          "description": "When dispatched on an expedition in Mondstadt, time consumed is reduced by 25%.",
+          "title": "多分安全",
+          "description": "モンドの探索任務の所要時間-25%。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Rekindle",
-          "description": "Decreases Passion Overload’s CD by 20%.",
+          "title": "情熱復活",
+          "description": "溢れる情熱のクールタイム-20%。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Fearnaught",
-          "description": "When inside the area created by Fantastic Voyage, Passion Overload takes on the following effects:",
+          "title": "恐れなき熱血",
+          "description": "素晴らしい旅エリア内にいると、溢れる情熱が以下の効果を持つ:",
           "descriptions": [
-            "CD is reduced by 50%.",
-            "Bennett will not be launched by the effects of Charge Level 2."
+            "クールタイム-50%",
+            "2段チャージによるベネット自身のノックバックは発生しない。"
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Grand Expectation",
-          "description": "Fantastic Voyage’s ATK increases no longer has an HP restriction, and gains an additional 20% Base ATK.",
+          "title": "冒険の憧れ",
+          "description": "「素晴らしい旅」の攻撃力アップ効果はHPによる制限がなくなり、更にベネットの基礎攻撃力の20%に当たる数値を追加。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Impasse Conqueror",
-          "description": "When Bennett’s HP falls below 70%, his Energy Recharge is increased by 30%.",
+          "title": "絶境踏破",
+          "description": "HPが70％以下になると、元素チャージ効率+30％。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Unstoppable Fervor",
-          "description": "Increases the Level of Passion Overload by 3. Maximum upgrade level is 15.",
+          "title": "炎のような情熱",
+          "description": "溢れる情熱のスキルLv.3、最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Unexpected Odyssey",
-          "description": "Using a Normal Attack when executing the second attack of Passion Overload’s Charge Level 1 allows an additional attack to be performed. This additional attack does 135% of the second attack’s DMG.",
+          "title": "消えない情熱",
+          "description": "1段チャージ溢れる情熱を発動する時、二段目攻撃中に通常攻撃をすると追加攻撃を発動できる。二段目攻撃の135％の追加ダメージを与える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "True Explorer",
-          "description": "Increase the Level of Fantastic Voyage by 3. Maximum upgrade level is 15.",
+          "title": "開拓の心意気",
+          "description": "素晴らしい旅のスキルLv.3、最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Fire Ventures with Me",
-          "description": "Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage’s radius gain a 15% Pyro DMG Bonus. Normal and Charged Attacks now do Pyro DMG.",
+          "title": "烈火と勇気",
+          "description": "素晴らしい旅エリア内の片手剣、両手剣、長柄武器キャラの炎ダメージ+15％、通常攻撃と重撃ダメージを炎ダメージに変換する。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -642,104 +642,104 @@
     },
     {
       "key": "Chongyun",
-      "name": "Chongyun",
-      "description": "A young exortcist from a family of exorcists. He does everything he can to suppress his pure positive energy.",
+      "name": "重雲",
+      "description": "妖魔退治一族の方士少年、自身の「純陽の体」を抑えるためにいろいろ苦労している。",
       "skills": [
         {
           "key": "s1",
-          "title": "Demonbane",
+          "title": "滅邪四式",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 consecutive strikes.",
+              "description": "最大4段の連続攻撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous swirling attacks against all nearby enemies. At end of the sequence, perform a more powerful slash.",
+              "description": "継続的にスタミナを消費し、大剣を振り回し周囲の敵を攻撃する。斬撃が終了した時に、更に強力な攻撃を1回放つ。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Spirit Blade - Chonghua’s Layered Frost",
-          "description": "Chongyun strikes the ground with his greatsword, causing a Cryo explosion in a circular AoE in front of him that deals Cryo DMG. After a short delay, the cold air created by the Cryo explosion will coalesce into a Chonghua Frost Field, within which all DMG done through Normal and Charged Attacks by Sword, Greatsword and Polearm-wielding characters will be converted to Cryo DMG.",
+          "title": "霊刃・重華積霜",
+          "description": "重雲が巨大な剣を振って地面を叩き、前方の円形範囲内に氷爆を発動し、敵に氷元素ダメージを与える。その後、氷爆による寒気が重華積霜エリアになり、エリア内の片手剣、大剣、長柄武器キャラの通常攻撃、重撃と落下攻撃ダメージは氷元素ダメージになる。",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Spirit Blade - Cloud-parting Star",
-          "description": "Performing the secret hand seals, Chongyun summons 3 giant spirit blades in mid-air that fall to the earth one by one after a short delay, exploding as they hit the ground. When the spirit blades explode, they will deal AoE Cryo DMG and launch enemies.",
+          "title": "霊刃・雲開星落",
+          "description": "重雲が印を結び、前方の空中に3本の巨大霊刃を召喚する。霊刃は短時間内に1本ずつ地面に落ちて爆裂する。霊刃が爆裂時、氷元素範囲ダメージを与え、敵を吹き飛ばす。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Gallant Journey",
-          "description": "When dispatched on an expedition in Liyue, time consumed is reduced by 25%.",
+          "title": "雲遊山海",
+          "description": "璃月の探索任務の所要時間が25%短縮する。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Steady Breathing",
-          "description": "Sword, Claymore, or Polearm-wielding characters within the field created by Spirit Blade - Chonghua’s Layered Frost have their Normal Attack SPD increased by 8%.",
+          "title": "吐納真定",
+          "description": "霊刃・重華積霜エリア内にいる時、片手剣、両手剣、長柄武器キャラの通常攻撃と攻撃速度が8%上昇する。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Rimechaser Blade",
-          "description": "When the field created by Spirit Blade - Chonghua’s Layered Frost disappears, another spirit will be summoned to strike nearby enemies, dealing 100% of Chonghua’s Layered Frost’s Skill DMG as AoE Cryo DMG. Enemies hit by this blade will have their Cryo RES decreased by 10% for 8s.",
+          "title": "追氷剣訣",
+          "description": "霊刃・重華積霜エリアが消えた時、自動的に付近の敵を攻撃する霊刃を召喚し、霊刃・重華積霜のスキルダメージ100%の氷範囲ダメージを与える。命中された敵の氷耐性が10%減少する、継続時間8秒。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Ice Unleashed",
-          "description": "The last attack of Chongyun’s Normal Attack combo releases 3 ice blades. Each blade deals 50% of Chongyun’s ATK as Cryo DMG to all enemies in its path.",
+          "title": "釈凌詠氷",
+          "description": "通常攻撃の最後の一撃が前方に3つの氷の刃を放ち、氷の刃は途中の敵に重雲の50%攻撃力の氷ダメージを与える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Atmospheric Revolution",
-          "description": "Elemental Skills and Elemental Bursts cast within the Frost Field created by Spirit Blade - Chongyun’s Layered Frost have their CD time decreased by 15%.",
+          "title": "周天の回転",
+          "description": "霊刃・重華積霜エリア内、元素スキルと元素爆発のクールタイムが15%減少する。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Cloudburst",
-          "description": "Increases the Level of Spirit Blade - Cloud-parting Star by 3. Maximum upgrade level is 15.",
+          "title": "浮雲霜天",
+          "description": "重雲のすべての攻撃が氷元素の影響を受けた敵に命中した時、自身の元素エネルギーを1回復。この効果は2秒毎に1回のみ発動可能。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Frozen Skies",
-          "description": "Chongyun regenerates 1 Energy every time he hits an enemy affected by Cold or Frozen status effects. This effect can only occur once every 2s.",
+          "title": "真道の正理",
+          "description": "霊刃・重華積霜のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "The True Path",
-          "description": "Increases the level of Spirit Blade - Chongyun’s Layered Frost by 3. Maximum upgrade level is 15.",
+          "title": "四霊の捧げ",
+          "description": "HPの割合が重雲より低い敵に霊刃・雲開星落が命中した時、ダメージ+15%。また、スキル発動時さらに追加で霊刃を1本を召喚する。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Rally of Four Blades",
-          "description": "Spirit Blade - Cloud-parting Star deals 15% more DMG to enemies with a lower percentage of their Max HP remaining than Chongyun. This skill will also summon 1 additional spirt blade.",
+          "title": "雲の果てに光あり",
+          "description": "霊刃・雲開星落のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         }
