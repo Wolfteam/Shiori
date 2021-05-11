@@ -747,104 +747,104 @@
     },
     {
       "key": "Diluc",
-      "name": "Diluc",
-      "description": "The tycoon of a winery empire in Mondstadt, unmatched in every possible way.",
+      "name": "ディルック",
+      "description": "モンドの半数以上の造酒業を掌握する貴公子、財力も人望も実力も見くびってはならない。",
       "skills": [
         {
           "key": "s1",
-          "title": "Tempered Sword",
+          "title": "百煉の剣",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 consecutive strikes.",
+              "description": "最大4段の連続攻撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous slashes. At the end of the sequence, perform a more powerful slash.",
+              "description": "継続的にスタミナを消費し、素早い連続攻撃を発動する。重撃が終了した時に、更に強力な攻撃を1回放つ。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Searing Onslaught",
-          "description": "Performs a forward slash that deals Pyro DMG. This skill can be used 3 times consecutively. Enters CD if not cast again within a short period.",
+          "title": "逆焔の刃",
+          "description": "前方に向かって大剣を振り、炎元素ダメージを与える。最大連続で3回使用可能。短時間内に連続で使用しなかった場合、クールタイムに入る。",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Dawn",
-          "description": "Releases intense flames to knock nearby enemies back, dealing Pyro DMG. The flames then converge into the weapon, summoning a Phoenix that flies forward and deals massive Pyro DMG to all enemies in its path. The Phoenix explodes upon reaching its destination, causing a large amount of AoE Pyro DMG. The searing flames that run down his blade cause Diluc’s Normal and Charged Attacks to deal Pyro DMG for a time.",
+          "title": "黎明",
+          "description": "烈焔の力を爆発させ、周囲の敵をノックバックし、炎元素ダメージを与える。その後、烈焔を大剣に集め、前方に飛行する炎の鳥を出し、経路上の敵に大量の炎元素ダメージを与える。炎の鳥は進行経路の終着点で爆発し、大量の炎元素範囲ダメージを与える。武器に凝集した烈焔により、ディルックは炎元素付与状態を獲得する。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Tradition of the Dawn Knight",
-          "description": "Refunds 15% of the ores used when crafting Claymore-type weapons.",
+          "title": "アカツキの伝統",
+          "description": "両手類武器を鍛造する時、消費した鉱石の15％が返還される。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Relentless",
-          "description": "Diluc’s Charged Attack Stamina Cost is decreased by 50%, and its duration is increased by 3s.",
+          "title": "ノンストップ",
+          "description": "重撃のスタミナ消費-50%、最大継続時間+3秒。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Blessing of Phoenix",
-          "description": "The Pyro Enchantment provided by Dawn lasts for 4s longer. Additionally, Diluc gains 20% Pyro DMG Bonus during the duration of this effect.",
+          "title": "溶融の翼",
+          "description": "黎明による炎元素付与の継続時間+4秒。さらに効果継続中にディルックの与える炎元素ダメージ+20%。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Conviction",
-          "description": "Diluc deals 15% more DMG to enemies whose HP is above 50%.",
+          "title": "罪の裁断",
+          "description": "HPが50%より上回る敵に対して、ディルックの与えるダメージ+15％。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Searing Ember",
-          "description": "When Diluc takes DMG, his Base ATK increases by 10% and his ATK SPD increases by 5%. Lasts for 10s. This effect can stack up to 3 times and can only occur once every 1.5s.",
+          "title": "灼熱余燼",
+          "description": "ディルックがダメージを受けると、攻撃力+10%、攻撃速度+5％、継続時間10秒。該当効果は最大3重まで、1.5秒に1回のみ発動可能。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Steel and Fire",
-          "description": "Increases the Level of Searing Onslaught by 3. Maximum upgrade level is 15.",
+          "title": "鋼鉄の熾焔",
+          "description": "逆焔の刃のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Flowing Flame",
-          "description": "Casting Searing Onslaught in sequence greatly increases damage dealt. Within 2s of using Searing Onslaught, casting the next Searing Onslaught in the combo deals 40% additional DMG. This effect lasts for the next 2s.",
+          "title": "流火焼灼",
+          "description": "リズム的に逆焔の刃を発動させることで、ダメージを大幅に上げることができる。逆焔の刃発動2秒後、次の逆焔の刃のダメージ+40％、継続時間2秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Phoenix, Harbinger of Dawn",
-          "description": "Increases the level of Dawn by 3. Maximum upgrade level is 15.",
+          "title": "朝を告げる炎の鳥",
+          "description": "黎明のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Flaming Sword, Nemesis of Dark",
-          "description": "After casting Searing Onslaught, the next 2 Normal Attacks within the next 6s will have their DMG and ATK SPD increased by 30%. Additionally, Searing Onslaught will not interrupt the Normal Attack combo.",
+          "title": "闇を清算する炎の剣",
+          "description": "逆焔の刃発動後、6秒以内の通常攻撃の攻撃速度+30％、攻撃ダメージ+30％、2回まで。逆焔の刃によって通常攻撃のコンボ数がリセットされることはなくなる。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -852,59 +852,59 @@
     },
     {
       "key": "Diona",
-      "name": "Diona",
-      "description": "A young lady who has inherited trace amounts of non-human blood. She is the incredible popular bartender of the Cat’s Tail tavern.",
+      "name": "ディオナ",
+      "description": "稀な「非人類」の血統を引いている少女、「キャッツテール」の超人気バーテンダー。",
       "skills": [
         {
           "key": "s1",
-          "title": "Katzlein Style",
+          "title": "狩人の射術",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive shots with a bow.",
+              "description": "最高5段の連続射撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, biting frost accumulates on the arrowhead. A fully charged frost arrow will deal Cryo DMG.",
+              "description": "ダメージがより高く、より精確的な狙い撃ちを発動する。照準時、氷霜の寒気が矢先に付着する。寒気に満ちた矢は敵に氷ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "空中から矢の雨を放ち、凄まじいスピードで落下し地面に衝撃を与え、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Icy Paws",
-          "description": "Fires an Icy Paw that deals Cryo DMG to opponents and forms a shield on hit. The shield’s DMG Absorption scales based on Diona’s Max HP, and its duration scales off the number of Icy Paws that hit their target.",
+          "title": "フリーズキャッツクロー",
+          "description": "フリーズキャッツクローを放ち、敵に氷ダメージを与え、さらに命中した場合シールドを生成する。シールドのダメージ吸収量はディオナのHP上限で、継続時間は命中したフリーズキャッツクローの数で決まる。",
           "abilities": [
             {
               "key": "a1",
-              "description": "Rapidly fires off 2 Icy Paws.",
+              "description": "素早くフリーズキャッツクローを2枚発射する。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Dashes back quickly before firing five Icy Paws. The shield created by a Hold attack will gain a 75% DMG Absorption Bonus. The shield has a 250% Cryo DMG Absorption Bonus, and will cause your active character to become affected by Cryo at the point of formation for a short duration.",
+              "description": "素早く後退し、フリーズキャッツクローを5枚発射する。長押しで生成したシールドのダメージ吸収量+75％。シールドは氷ダメージに対して、250％の吸収効果がある。また、シールド生成時、キャラクターに短時間の氷元素付着を与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Signature Mix",
-          "description": "Tosses out a special cold brew that deals AoE Cryo DMG and creates a Drunken Mist in an AoE.",
+          "title": "特製スピリッツ",
+          "description": "特製の氷入りスピリッツを投げ出し、氷範囲ダメージを与え、氷気の酒霧エリアを生成する。",
           "abilities": [
             {
-              "name": "Drunken Mist",
+              "name": "氷気の酒霧エリア",
               "description": null,
               "descriptions": [
-                "Deals continuous Cryo DMG to opponents within the AoE.",
-                "Continuously regenerates the HP of characters within the AoE."
+                "エリアにいる敵に継続して氷ダメージを与える",
+                "エリアにいるキャラクターのHPを継続して回復する。"
               ]
             }
           ]
@@ -913,74 +913,74 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Complimentary Bar Food",
-          "description": "When a Perfect Cooking is achieved on a dish with restorative effects, there is a 12% chance to obtain double the product.",
+          "title": "おまけのおつまみ",
+          "description": "回復系料理を完璧調理した時、12％の確率で料理を2倍獲得する。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Cat’s Tail Secret Menu",
-          "description": "Characters shielded by Icy Paws have their Movement SPD increased by 10% and their Stamina Consumption decreased by 10%.",
+          "title": "キャッツテールの裏メニュー",
+          "description": "フリーズキャッツクローのシールドが存在する時、キャラクターの移動速度+10％、スタミナ消費-10％。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Drunkard’s Farce",
-          "description": "Opponents who enter the AoE of Signature Mix have 10% decreased ATK for 15s.",
+          "title": "滑稽な酔態",
+          "description": "特製スピリッツのエリアに入った敵の攻撃力が15秒間-10％。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "A Lingering Flavor",
-          "description": "Regenerates 15 Energy for Diona after the effects of Signature Mix end.",
+          "title": "特製の余韻",
+          "description": "特製スピリッツの効果終了時、ディオナの元素エネルギーを15回復する。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Shaken, Not Purred",
-          "description": "Increases Icy Paws’ DMG by 15%, and increases its shield’s DMG Absorption by 15%. Additionally, when paws hit their targets, creates a shield for other nearby characters on the field with 50% of the Icy Paws shield’s DMG Absorption for 5s.",
+          "title": "クールキャッツクロー",
+          "description": "フリーズキャッツクローによるダメージ+15%、シールドのダメージ吸収量+15%。命中時、近くに出場しているキャラクターにフリーズキャッツクローの50％のダメージを吸収するシールドを付与する。継続時間5秒",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "A-Another Round?",
-          "description": "Increases the Level of Signature Mix by 3. Maximum upgrade level is 15.",
+          "title": "お、おかわり？",
+          "description": "特製スピリッツのスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Wine Industry Slayer",
-          "description": "Within the radius of Signature Mix, Diona’s charge time for aimed shots is reduced by 60%.",
+          "title": "「酒造業キラー」",
+          "description": "特製スピリッツのエリアにいる時、ディオナの狙い撃ちのチャージ時間が60%減少する。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Double Shot, On The Rocks",
-          "description": "Increases the level of Icy Paws by 3. Maximum upgrade level is 15.",
+          "title": "エクストラアイス",
+          "description": "フリーズキャッツクローのスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Cat’s Tail Closing Time",
-          "description": "Characters within Signature Mix’s radius will gain the following effects based on their HP amounts:",
+          "title": "キャッツテールが閉店の時",
+          "description": "特製スピリッツのエリアのいるキャラクターは自身の現在HPにより以下の効果を獲得する:",
           "secondDescription": null,
           "descriptions": [
-            "Increasing Incoming Healing Bonus by 30% when HP falls below or is equal to 50%.",
-            "Elemental Mastery is increased by 200 when HP is above 50%."
+            "HPが50％またその以下の時、被回復量が30％上昇。",
+            "HPが50％以上の時、元素熟知が200上昇。"
           ]
         }
       ]
     },
     {
       "key": "Eula",
-      "name": "Eula",
+      "name": "Eula*",
       "description": "The Spindrift Knight, a scion of the old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
       "skills": [
         {
@@ -1095,49 +1095,49 @@
     },
     {
       "key": "Fischl",
-      "name": "Fischl",
-      "description": "A mysterious girl who calls herself \"Prinzessia der Verurteilung\" and travels with a night raven named Oz.",
+      "name": "フィッシュル",
+      "description": "自称「断罪の皇女」、オズという漆黒の鴉とともに行動する謎の少女。",
       "skills": [
         {
           "key": "s1",
-          "title": "Bolts of Downfall",
+          "title": "罪滅ぼしの矢",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive shots with a bow.",
+              "description": "最大5段の連続射撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, the dark lightning spirits of Immernachtreich shall heed the call of their Prinzessin and indwell the enchanted arrowhead. When fully indwelt, the Rachsuchtig Blitz shall deal immense Electro DMG.",
+              "description": "ダメージがより高く、より精確な狙い撃ちを発動する。照準時、皇女の命令に従い、幽夜浄土の雷精霊が矢に憑依する。断罪の雷に満ちた矢は敵に高い雷元素ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "空中から矢の雨を放ち、凄まじいスピードで落下し地面に衝撃を与え、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Nightrider",
-          "description": "Summons Oz, the night raven forged of darkness and lightning descends upon the land, dealing Electro DMG in a small AoE. For the ability’s duration, Oz will continuously attack nearby enemies with Freikugel. Hold to adjust the location Oz will be summoned to. Press again any time during the ability’s duration to once again summon him to Fischl’s side.",
+          "title": "夜巡りの翼",
+          "description": "オズを召喚する。暗影と雷電によって構成された鴉が降臨する時、狭範囲の雷元素ダメージを与える。オズが存在する時、雷の魔弾を発射し、付近の敵を自動で攻撃する。長押しでスキルの発動位置を調整可能。オズが存在する間に再び一回押すとオズを自身の傍に呼び寄せる。",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Midnight Phantasmagoria",
-          "description": "Summons Oz to spread his twin swings of twilight and defend Fischl. Has the following properties during the ability’s duration:",
+          "title": "夜の幻現",
+          "description": "オズを召喚し、純粋なる夜色の翼を広げてフィッシュルを守る。継続期間中、下記の効果が発動する:",
           "abilities": [
             {
               "name": "",
               "description": null,
               "descriptions": [
-                "Fischl takes on Oz’s form, greatly increasing her Movement Speed.",
-                "Strikes nearby enemies with lightning, dealing Electro DMG to enemies she comes into contact with. Each enemy can only be struck once.",
-                "Once this ability’s effects end, Oz will remain on the battlefield and attack his Prinzessin’s foes. If Oz is already on the field, then this will reset the duration of his presence."
+                "フィッシュルはオズ形態で高速移動する。",
+                "付近の敵に落雷で攻撃し、雷元素ダメージを与える。落雷によるダメージは同じ敵に1回のみ有効。",
+                "効果終了時、オズは戦場に留まり、皇女の敵を攻撃する。発動前にオズがすでに戦場に存在してる場合は、オズの継続時間がリセットされる。"
               ]
             }
           ]
@@ -1146,63 +1146,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Mein Hausgarten",
-          "description": "When dispatched on an expedition in Mondstadt, time consumed is reduced by 25%.",
+          "title": "吾の裏庭",
+          "description": "モンドの探索任務の所要時間-25%。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Stellar Predator",
-          "description": "When Fischl hits Oz with a fully-charged Aimed Shot, Oz brings down Thundering Retribution, dealing AoE Electro DMG equal to 152.7% of the arrow’s DMG.",
+          "title": "星喰いの鴉",
+          "description": "フィッシュルのチャージした狙い撃ち射撃がオズに命中すると、オズは周囲の敵に聖裁の雷を放ち、射撃ダメージ152.7%分の雷元素範囲ダメージを与える。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Undone Be Thy Sinful Hex",
-          "description": "If a character triggers an Electro-related Elemental Reaction when Oz is on the field, the enemy shall be stricken with Thundering Retribution, dealing Electro DMG equal to 80% of Fischl’s ATK.",
+          "title": "断罪の雷影",
+          "description": "オズがフィールドにいる時、出場している自身のキャラクターの敵への攻撃が雷元素の関連反応を起こすと、敵に聖裁の雷を下し、フィッシュルの攻撃力80%分の雷元素ダメージを与える。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Gaze of the Deep",
-          "description": "Even when Oz is not present in combat, he can still watch over Fischl through his raven eyes. When Fischl attacks an enemy, Oz fires a joint attack, dealing 22% of ATK DMG.",
+          "title": "幽邃な鴉の目",
+          "description": "オズが戦場にいない時も、鴉の目を通してフィッシュルを守る。フィッシュルが敵に通常攻撃する時、オズは鴉の目を通して攻撃し、攻撃力22%分のダメージを与える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Devourer of All-Sins",
-          "description": "When Nightrider is used, it deals an additional 200% ATK as DMG, and its AoE is increased by 50%.",
+          "title": "聖裁の羽根",
+          "description": "夜巡りの翼発動時、攻撃力200%分の追加ダメージを与える、さらに影響範囲+50%。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Wings of Nightmare",
-          "description": "Increases the Level of Nightrider by 3. Maximum upgrade level is 15.",
+          "title": "黒き翼",
+          "description": "夜巡りの翼のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Her Pilgrimage of Bleak",
-          "description": "When Midnight Phatasmagoria is used, it deals 222% of ATK as Electro DMG to surrounding enemies. When the skill duration ends, Fischl regenerates 20% of her HP.",
+          "title": "皇女綺譚集",
+          "description": "夜の幻現発動時、周囲の敵に攻撃力222%分の雷元素ダメージを与える。スキル終了時、フィッシュルのHPを20%回復する。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Against the Fleeing Light",
-          "description": "Increase the Level of Midnight Phantasmagoria by 3. Maximum upgrade level is 15.",
+          "title": "夜の黙示録",
+          "description": "夜の幻現のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Evernight Raven",
-          "description": "Increases the duration of Oz’s summoning by 2s. Additionally, Oz attacks with the current character when present, dealing 30% of Fischl’s ATK as Electro DMG.",
+          "title": "永夜の禽",
+          "description": "オズの存在時間+2秒。オズは出場している自身のキャラクターと共に攻撃し、攻撃力30%分の雷元素ダメージを与える。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1210,116 +1210,116 @@
     },
     {
       "key": "Ganyu",
-      "name": "Ganyu",
-      "description": "The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated beast, flows within her veins.",
+      "name": "甘雨",
+      "description": "月海亭の秘書、その身には仙獣「麒麟」の血が流れている。",
       "skills": [
         {
           "key": "s1",
-          "title": "Liutian Archery",
+          "title": "流天射術",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 6 consecutive shots with a bow.",
+              "description": "最大6段の連続射撃を行う",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, an icy aura will accumulate on the arrowhead before the arrow is fired. Has different effects based on how long the energy has been charged:",
+              "description": "ダメージがより高く、より精確な狙い撃ちを発動する。照準時、氷寒の気が矢先に集まり、攻撃と共に発射される。チャージ時間により、異なる効果を発動する。",
               "descriptions": [
-                "Charge Level 1: Fires off an icy arrow that deals Cryo DMG.",
-                "Charge Level 2: Fires off a Frostflake Arrow that deals Cryo DMG. The Frostflake Arrow blooms after hitting its target, dealing AoE Cryo DMG."
+                "1段チャージ:氷寒の気が集まった矢を放ち、氷元素ダメージを与える。",
+                "2段チャージ:霜華の矢を放ち、氷元素ダメージを与える。命中後、霜華満開が発生し、さらに氷元素範囲ダメージを与える。"
               ]
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "空中から矢の雨を放ち凄まじいスピードで落下し地面に衝撃を与え、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Trail of the Qilin",
-          "description": "Leaving a single Ice Lotus behind, Ganyu dashes backward, shunning all impurity and dealing AoE Cryo DMG.",
+          "title": "山沢麟跡",
+          "description": "一度の氷蓮を残して後退し、全ての魑魅魍魎から離れ、氷元素範囲ダメージを与える。",
           "abilities": [
             {
-              "name": "Ice Lotus",
+              "name": "氷蓮",
               "descriptions": [
-                "Continuously taunts surrounding opponents, attracting them to attack it.",
-                "Endurance scales based on Ganyu's Max HP.",
-                "Blooms profusely when destroyed or once its duration ends, dealing AoE Cryo DMG."
+                "持続的に周囲の敵を挑発し、攻撃を引き付ける。",
+                "耐久度は甘雨のHP上限によって決まる。",
+                "破壊された時または継続時間終了後に激しく開花し、氷属性範囲ダメージを与える。"
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Celestial Shower",
-          "description": "Coalesces atmospheric frost and snow to summon a Sacred Cryo Pearl that exorcises evil.\n During its ability duration, the Sacred Cryo Pearl will continuously rain down shards of ice, striking opponents within an AoE and dealing Cryo DMG.",
+          "title": "降衆天華",
+          "description": "待機中の雪霜を集め、退魔の氷霊珠を召喚する。氷霊珠が存在している間、持続的に氷柱を降らし、範囲内の敵に氷元素ダメージを与える。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Preserved for the Hunt",
-          "description": "Refunds 15% of the ore used when crafting Bow-type weapons.",
+          "title": "弓蔵待命",
+          "description": "弓を鍛造する時、消費した鉱石の15%が返還される。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Undivided Heart",
-          "description": "After firing a Frostflake Arrow, the CRIT Rate of subsequent Frostflake Arrows and their resulting bloom effects is increased by 20% for 5s.",
+          "title": "唯一の心",
+          "description": "霜華の矢を放った後の5秒以内に放たれた霜華の矢と霜華満開の会心率+20%",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Harmony between Heaven and Earth",
-          "description": "Celestial Shower grants a 20% Cryo DMG Bonus to active party members in the AoE.",
+          "title": "天地安泰",
+          "description": "降衆天華エリア内のキャラクターの氷元素ダメージ+20%",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Dew-Drinker",
-          "description": "Taking DMG from a Charge Level 2 Frostflake Arrow or Frostflake Arrow Bloom decreases opponents' Cryo RES by 15% for 6s.\n A hit regenerates 2 Energy for Ganyu. This effect can only occur once per Charge Level 2 Frostflake Arrow, regardless if Frostflake Arrow itself or its Bloom hit the target.",
+          "title": "飲露",
+          "description": "二段チャージ重撃の霜華の矢または霜華満開が命中した時、敵の氷元素耐性-15%。継続時間6秒\n命中時に甘雨の元素エネルギーを2回復。二段チャージの重撃による元素エネルギーの回復効果は、1回の重撃で1度のみ発動可能。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "The Auspicious",
-          "description": "Trail of the Qilin gains 1 additional charge.",
+          "title": "獲麟",
+          "description": "山沢麟跡の発動回数+1。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Cloud-Strider",
-          "description": "Increases the Level of Celestial Shower by 3. Maximum upgrade level is 15.",
+          "title": "雲行",
+          "description": "降衆天華のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Westward Sojourn",
-          "description": "Opponents standing within the AoE of Celestial Shower take increased DMG. This effect strengthens over time.\nIncreased DMG taken begins at 5% and increases by 5% every 3s, up to a maximum of 25%.\nThe effect lingers for 3s after the opponent leaves the AoE.",
+          "title": "西狩",
+          "description": "降衆天華エリア内、敵の受けるダメージが増加する。受けるダメージの増加量は初期が5%、3秒毎に5%上昇し、最大25%まで上昇する。\nエリアを出た後、継続時間3秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "The Merciful",
-          "description": "Increases the Level of Trail of the Qilin by 3. Maximum upgrade level is 15.",
+          "title": "折草",
+          "description": "山沢麟跡のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "The Clement",
-          "description": "Using Trail of the Qilin causes the next Frostflake Arrow shot within 30s to not require charging.",
+          "title": "履虫",
+          "description": "山沢麟跡を発動すると、30秒以内に放つ最初の霜華の矢が、チャージせずに発動可能になる。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1327,178 +1327,178 @@
     },
     {
       "key": "HuTao",
-      "name": "Hu Tao",
-      "description": "The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.",
+      "name": "胡桃",
+      "description": "「往生堂」七十七代目堂主、若くして璃月の葬儀を仕切り、責任を持って執り行っている。",
       "skills": [
         {
           "key": "s1",
-          "title": "Secret Spear of Wangsheng",
+          "title": "往生秘伝槍法",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to six consecutive spear strikes.",
+              "description": "槍による最大6段の連続攻撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.",
+              "description": "一定のスタミナを消費して前方に突進し、経路上の敵にダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Guide to Afterlife",
-          "description": "Only an unwavering flame can cleanse the impurities of this world.\nHu Tao consumes a set portion of her HP to knock the surrounding enemies back and enter the Paramita Papilio state.",
+          "title": "蝶導来世",
+          "description": "燃え続ける炎のみが、この世の不浄を払うことができる。/n一定のHPを消費して、周囲の敵をノックバックし、冥蝶の舞状態に入る。",
           "abilities": [
             {
-              "name": "Paramita Papilio",
+              "name": "冥蝶の舞",
               "descriptions": [
-                "Increases Hu Tao's ATK based on her Max HP at the time of entering this state. ATK Bonus gained this way cannot exceed 400% of Hu Tao's Base ATK.",
-                "Converts attack DMG to Pyro DMG, which cannot be overridden by any other elemental infusion.",
-                "Charged Attacks apply the Blood Blossom effect to the enemies hit.",
-                "Increases Hu Tao's resistance to interruption."
+                "胡桃のHP上限を基準に攻撃力が上昇する。この効果で得られる攻撃力上昇の最大値は、胡桃の基礎攻撃力の400%まで。",
+                "攻撃ダメージは炎元素ダメージとなり、元素付与によって他の元素に変化することはない。",
+                "重撃は敵に血梅香効果を与える。",
+                "胡桃の中断耐性が上昇する。"
               ]
             },
             {
-              "name": "Blood Blossom",
-              "description": "Enemies affected by Blood Blossom will take Pyro DMG every 4s. This DMG is considered Elemental Skill DMG.\nEach enemy can be affected by only one Blood Blossom effect at a time, and its duration may only be refreshed by Hu Tao herself.\nParamita Papilio ends when its duration is over, or Hu Tao has left the battlefield or fallen.",
+              "name": "血梅香",
+              "description": "血梅香状態の敵は、4秒毎に1度、炎元素ダメージを受ける。このダメージは元素スキルダメージと見なされる。/n同一ターゲットに付与される血梅香効果は同時に最大1つまで。また、血梅香効果の継続時間は胡桃自身にのみリセットされることが可能。冥蝶の舞は継続時間終了時、または胡桃の退場や戦闘不能時に解除される。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Spirit Soother",
-          "description": "Commands a blazing spirit to attack, dealing Pyro DMG in a large AoE.\nUpon striking the enemy, regenerates a percentage of Hu Tao's Max HP. This effect can be triggered up to 5 times, based on the number of enemies hit.\nIf Hu Tao's HP is below or equal to 50% when the enemy is hit, both the DMG and HP Regeneration are increased.",
+          "title": "安神秘法",
+          "description": "灼熱の魂を振り回し、広範囲の炎元素ダメージを与える。/n敵に命中した時、胡桃のHP上限を基準にHPを回復する。この効果は、1体の敵に命中するごとに発動され、最大で5体まで効果が発動される。/n胡桃のHPが50%以下の時、より高いダメージと回復効果を持つ。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "The More the Merrier",
-          "description": "When Hu Tao cooks a dish perfectly, she has a 18% chance to receive an additional \"Suspicious\" dish of the same type.",
+          "title": "多々益善",
+          "description": "料理を完璧調理した時、18%の確率で「微妙な」品質の同一料理を獲得する。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Flutter By",
-          "description": "When a Paramita Papilio state activated by Guide to Afterlife ends, all allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 8s.",
+          "title": "蝶隠の時",
+          "description": "蝶導来世による冥蝶の舞状態終了後、チーム全員(胡桃自身を除く)の会心率+12%、継続時間8秒。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Sanguine Rouge",
-          "description": "When Hu Tao's HP is equal to or less than 50%, her Pyro DMG Bonus is increased by 33%.",
+          "title": "血のかまど",
+          "description": "胡桃のHPが50%以下の時、炎元素ダメージ+33%。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Crimson Bouquet",
-          "description": "While in a Paramita Papilio state activated by Guide to Afterlife, Hu Tao's Charge Attacks do not consume Stamina.",
+          "title": "朱色の花束",
+          "description": "蝶導来世による冥蝶の舞状態の時、胡桃の重撃はスタミナを消費しない。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Ominous Rainfall",
-          "description": "Increases the Blood Blossom DMG by an amount equal to 10% of Hu Tao's Max HP at the time the effect is applied.\nAdditionally, Spirit Soother will also apply the Blood Blossom effect.",
+          "title": "晴れのち雨",
+          "description": "血梅香のダメージ量が胡桃のHP上限の10%分上昇する。/nまた、安神秘法は命中した敵に血梅香効果を与える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Lingering Carmine",
-          "description": "Increases the Level of Guide to Afterlife by 3. Maximum upgrade level is 15.",
+          "title": "血色の儀",
+          "description": "蝶導来世のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Garden of Eternal Rest",
-          "description": "Upon defeating an enemy affected by a Blood Blossom that Hu Tao applied herself, all nearby allies in the party (excluding Hu Tao herself) will have their CRIT Rate increased by 12% for 15s.",
+          "title": "花室の添い寝",
+          "description": "胡桃自ら与えた血梅香状態の敵が倒されると、周囲のチーム全員(胡桃自身をを除く)の会心率+12%、継続時間15秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Floral Incense",
-          "description": "Increases the Level of Spirit Soother by 3. Maximum upgrade level is 15.",
+          "title": "漂う花の香り",
+          "description": "安神秘法のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Butterfly's Embrace",
-          "description": "Triggers when Hu Tao's HP drops below 25%, or when she suffers a lethal strike:",
+          "title": "冥蝶の抱擁",
+          "description": "胡桃のHPが25%以下、または戦闘不能に至るダメージを受けた時に発動:",
           "secondDescription": null,
           "descriptions": [
-            "Hu Tao will not fall as a result of the DMG sustained. Additionally, for the next 10s, all of her Elemental and Physical RES is increased by 200%, her CRIT Rate is increased by 100%, and her resistance to interruption is greatly increased.",
-            "This effect triggers automatically when Hu Tao has 1 HP left.",
-            "Can only occur once every 60s."
+            "このダメージで胡桃が戦闘不能になることはない。また、次の10秒間、胡桃の全元素耐性及び物理耐性+200%、会心率+100%、中断耐性大幅アップ。",
+            "この効果は胡桃のHPが1の時に自動で発動される。",
+            "60秒毎に1回のみ発動可能。"
           ]
         }
       ]
     },
     {
       "key": "Jean",
-      "name": "Jean",
-      "description": "The righteous and rigorous Dandelion Knight, and Acting Grand Master of the Knights of Favonius in Mondstadt.",
+      "name": "ジン",
+      "description": "正直で真面目な蒲公英騎士、モンド西風騎士団の代理団長。",
       "skills": [
         {
           "key": "s1",
-          "title": "Favonius Bladework",
+          "title": "西風剣術",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive strikes.",
+              "description": "剣による最大5段の連続攻撃。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to launch an enemy using the power of wind. Launched enemies will slowly fall to the ground.",
+              "description": "一定のスタミナを消費し、風の力に満ちた斬り上げ攻撃を発動される。斬り上げられた敵はゆっくりと降下する。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Gale Blade",
-          "description": "Focusing the might of the formless wind around her blade, Jean releases a miniature storm, launching enemies in the direction she aims at, dealing massive Anemo DMG.",
+          "title": "風圧剣",
+          "description": "形のない風を剣に集中させ、小型の嵐を放ち、敵を狙った方向にノックバックし、大量の風ダメージを与える。",
           "abilities": [
             {
               "key": "a1",
-              "description": "At the cost of continued Stamina consumption, Jean can command the whirlwind to pull surrounding enemies towards her front. Direction can be adjusted. Character is immobile during skill duration.",
+              "description": "スタミナを消費する代わりに、周囲の敵を目の前に吸い寄せることができる。方向の調整は可能。長押し中は移動できない。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Dandelion Breeze",
-          "description": "Calling upon the wind’s protection, Jean creates a swirling Dandelion Field, launching surrounding enemies and causing Anemo DMG. At the same time, she instantly regenerates a large amount of HP for nearby allied units and all party members. HP restored scale off Jean’s ATK.",
+          "title": "蒲公英の風",
+          "description": "風の加護を呼び、千風が流れる蒲公英エリアを作り出し、周囲の敵に風ダメージを与え、ノックバックする。ジンの攻撃力を基準にチームメンバーのHPを大量に回復する。",
           "abilities": [
             {
-              "name": "Dandelion Field",
+              "name": "蒲公英エリア",
               "description": null,
               "descriptions": [
-                "Continuously regenerates HP of characters within the AoE and continuously imbues them with Anemo.",
-                "Deals Anemo DMG to enemies entering or exiting the field."
+                "エリア内にいるキャラクターは継続的に風元素の影響を受ける。/nエリア内にいるキャラクターのHPを継続回復する。",
+                "エリアを出入りする敵に風ダメージを与える。"
               ]
             }
           ]
@@ -1507,63 +1507,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Guiding Breeze",
-          "description": "When a Perfect Cooking is achieved on a dish with restorative effects, there is a 12% chance to obtain double the product.",
+          "title": "導きの風",
+          "description": "回復系料理を完璧調理した時、12％の確率で料理を2倍獲得する。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Wind Companion",
-          "description": "Hits by Normal Attacks have a 50% chance to regenerate HP equal to 15% of Jean’s ATK for all party members.",
+          "title": "追い風が吹く",
+          "description": "ジンの通常攻撃が命中する時、50%の確率でチーム全員のHPを回復する。回復量はジンの攻撃力15%。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Let the Wind Lead",
-          "description": "Using Dandelion Breeze will regenerate 20% of its Energy.",
+          "title": "風の導くままに",
+          "description": "蒲公英の風発動後、元素エネルギーが20％回復する。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Spiraling Tempest",
-          "description": "Increases the pulling speed of Gale Blade after holding for more than 1s, and increases the DMG dealt by 40%.",
+          "title": "剣脊に流れる暴風",
+          "description": "風圧剣の長押しが1秒以上の時、吸い寄せる速度がアップし、与えるダメージ+40%。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "People’s Aegis",
-          "description": "When Jean picks up an Elemental Orb/Particle, all party members have their Movement SPD and ATK SPD increased by 15% for 15s.",
+          "title": "人々を守る盾",
+          "description": "元素オーブまたは元素粒子を獲得時、チームにいる全てのキャラの移動速度、攻撃速度+15%、継続時間15秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "When the West Wind Arises",
-          "description": "Increases the Level of Dandelion Breeze by 3. Maximum upgrade level is 15.",
+          "title": "西風が吹く時",
+          "description": "蒲公英の風のスキルLv.+3。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Lands of Dandelion",
-          "description": "Within the Field created by Dandelion Breeze, all enemies have their Anemo RES decreased by 40%.",
+          "title": "蒲公英の国土",
+          "description": "蒲公英の風エリア内、全ての敵の風元素耐性-40%。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Outbursting Gust",
-          "description": "Increase the Level of Gale Blade by 3. Maximum upgrade level is 15.",
+          "title": "しばしの烈風",
+          "description": "風圧剣のスキルLv.+3。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Lion’s Fang, Fair Protector of Mondstadt",
-          "description": "Incoming DMG is decreased by 35% within the Field created by Dandelion Breeze. Upon leaving the Dandelion Field, this effect lasts for 3 attacks or 10s.",
+          "title": "民を眷顧する獅子の牙",
+          "description": "蒲公英の風エリア内、キャラの受けるダメージ-35%。エリアを出た後、この効果は3回攻撃を受けた後、または10秒後に消える。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1571,107 +1571,107 @@
     },
     {
       "key": "Kaeya",
-      "name": "Kaeya",
-      "description": "A thinker in the Knights of Favonius with a somewhat exotic appearance.",
+      "name": "ガイア",
+      "description": "異国の顔を持つ剣士、西風騎士団の頭脳派である。",
       "skills": [
         {
           "key": "s1",
-          "title": "Ceremonial Bladework",
+          "title": "儀典の剣術",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive strikes.",
+              "description": "剣による最大5段の連続攻撃。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "一定のスタミナを消費し、前方に2回斬撃する。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemeies along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Frostgnaw",
-          "description": "Unleashes a frigit blast, dealing Cryo DMG to enemies in front of Kaeya.",
+          "title": "霜の衝撃",
+          "description": "急速に凍結する寒気を放ち、前方の敵に氷元素ダメージを与える。",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Glacial Waltz",
-          "description": "Coalescing the frost in the air, Kaeya summons 3 icicles that revolve around him. These icicles will follow the character around and deal Cryo DMG to enemies in their path for so long as they persist.",
+          "title": "凛冽なる輪舞",
+          "description": "空気中の寒霜を凝集させ、自身を囲む寒氷の柱を3本召喚する。スキル継続中、寒氷の柱はキャラと共に動き、経路上の敵に氷元素ダメージを与える。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Hidden Strength",
-          "description": "Decreases all party member’s sprinting Stamina consumption by 20%.",
+          "title": "秘められた実力",
+          "description": "チーム内の自身のキャラクター全員がダッシュに消費するスタミナ-20%。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Cold-Blooded Strike",
-          "description": "Every hit with Frostgnaw regenerates HP for Kaeya equal to 15% of ATK.",
+          "title": "冷血の剣",
+          "description": "霜の襲撃が敵1体に命中する度に、攻撃力の15%相当のHPを回復する。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Heart of the Abyss",
-          "description": "Enemies Frozen by Frostgnaw will drop additional Elemental Particles. Frostgnaw may only produce a maximum of 2 additional Elemental Particles per use.",
+          "title": "氷淵の心",
+          "description": "霜の襲撃が敵を凍結状態にした場合、凍結された敵から追加の元素粒子が落ちる。1回の霜襲は2つの元素粒子が追加で発生する。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Excellent Blood",
-          "description": "The CRIT Rate of Normal Attack and Charged Attack DMG against enemies affected by the Cold or Frozen status effects is increased by 15%.",
+          "title": "優れた血筋",
+          "description": "氷元素の影響を受けた敵に対して、ガイアの通常攻撃と重撃の会心率+15%",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Never-Ending Performance",
-          "description": "Every time Glacial Waltz defeats an enemy, its duration is increased by 2.5s, up to a maximum of 15s.",
+          "title": "無尽なる霜舞",
+          "description": "凛冽なる輪舞継続中に敵を撃破したとき、継続時間+2.5秒、最大15秒まで",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Dance of Frost",
-          "description": "Increases the Level of Frostgnaw by 3. Maximum upgrade level is 15.",
+          "title": "凛冽なる戯れ",
+          "description": "霜の襲撃のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Frozen Kiss",
-          "description": "Triggers automatically when Kaeya’s HP falls below 20%:",
+          "title": "極寒の口付け",
+          "description": "ガイアのHPが20％の時に自動発動される。",
           "secondDescription": null,
           "descriptions": [
-            "Creates a shield that absorbs damage equal to 30% of Kaeya’s Max HP. Lasts for 20s.",
-            "This shield absorbs Cryo DMG with 250% efficiency. Can only occur once every 60s."
+            "HP上限30％相当のシールドを吸収するシールド生成し、継続時間20秒。",
+            "シールドは氷元素ダメージに対して250％の吸収効果がある。60秒毎に1回のみ発動可能。"
           ]
         },
         {
           "key": "c5",
-          "title": "Frostbiting Embrace",
-          "description": "Increase the Level of Glacial Waltz by 3. Maximum upgrade level is 15.",
+          "title": "冷たい抱擁",
+          "description": "凛冽なる輪舞のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Glacial Whirlwind",
-          "description": "Glacial Waltz will generate 1 additional icicle, and will regenerate 15 Energy when cast.",
+          "title": "輪旋の氷",
+          "description": "凛冽なる輪舞の寒氷の柱が1本追加され、発動するときは元素エネルギーが15回復する。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1679,118 +1679,118 @@
     },
     {
       "key": "Keqing",
-      "name": "Keqing",
-      "description": "The Yuheng of the Liyue Qixing. Has much to say about Rex Lapis’ unilateral approach to policymaking in Liyue - but in truth, gods admire skeptics such as her quite a lot.",
+      "name": "刻晴",
+      "description": "璃月七星の一人である玉衡星。｢帝君の一言で動く璃月｣といった現状に少し不満がある。──でもこのような人間が神は結構気に入る。",
       "skills": [
         {
           "key": "s1",
-          "title": "Yunlai Swordsmanship",
+          "title": "雲来剣法",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 rapid strikes.",
+              "description": "剣による最大5段の連続攻撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "一定のスタミナを消費し、前方に斬撃を2回放つ。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemeies along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Stellar Restoration",
-          "description": "Hurls a Lightning Stiletto that annihilates her enemies like the swift thunder. When the Stiletto hits its target, it deals Electro DMG to enemies in a small AoE, and places a Stiletto Mark on the spot hit.",
+          "title": "星辰帰位",
+          "description": "雷楔を素早く投げ出し、疾雷の勢いで敵を殲滅する。雷楔が命中した時に狭範囲の敵に雷元素ダメージを与え、命中した位置に雷楔マークを残す。",
           "abilities": [
             {
               "key": "a1",
-              "description": "Hold to adjust the direction in which the Stiletto shall be thrown. Stilettos thrown by the Hold attack mode can be suspended in mid-air, allowing Keqing to jump to them when using Stellar Restoration a second time.",
+              "description": "長押しで雷楔マークを投げる方向を調整できる。長押しで投げ出した雷楔は空中に浮遊させることができる。刻晴が再び星辰帰位を発動する時、地形を無視できる。",
               "descriptions": []
             },
             {
-              "name": "Lightning Stiletto",
-              "description": "If Keqing uses Stellar Restoration again or uses a Charged Attack while its duration lasts, it will clear the Stiletto Mark and produce different effects:",
+              "name": "雷楔",
+              "description": "雷楔継続中、刻晴が再び星辰帰位または重撃を発動すると、雷楔マークは消され、異なる効果を発動できる:",
               "descriptions": [
-                "If she uses Stellar Restoration again, she will blink to the location of the Mark and unleashed one slashing attack that deals AoE Electro DMG. When blinking to a Stiletto that was thrown from a Holding attack, Keqing can leap across obstructing terrain.",
-                "If Keqing uses a Charged Attack, she will ignite a series of thundering cuts at the Mark’s location, dealing AoE Electro DMG."
+                "再び星辰帰位を発動すると、マークした位置に瞬間移動し斬撃を1回仕掛け、雷元素範囲ダメージを与える。長押しで投げ出した雷楔の位置に瞬間移動する場合は地形を無視する。",
+                "重撃を行った場合、マークした位置に暴雷連斬を引き起こし、数回の雷元素範囲ダメージを与える。"
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Starward Sword",
-          "description": "Keqing unleashes the power of lightning, dealing Electro DMG in an AoE. She then blends into the shadow of her blade, striking a series of thunderclap-blows to nearby enemies simultaneous that deal multiple instance of Electro DMG. The final attack deals massive AoE Electro DMG.",
+          "title": "天街巡遊",
+          "description": "雷電の力を爆発させ、雷元素範囲ダメージを与える。その後、剣影に隠れ、敵に迅雷の如き高速連斬を発動し、連続で雷元素ダメージを与える。最後の一撃は大量の雷元素範囲ダメージを与える。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Land’s Overseer",
-          "description": "When dispatched on an expedition in Liyue, time consumed is reduced by 25%.",
+          "title": "総務土地",
+          "description": "璃月の探索任務の所要時間-25%。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Thundering Penance",
-          "description": "Within 5s of recasting Stellar Restoration while a Lightning Stiletto is present, Keqing’s Normal and Charged Attacks are converted to Electro DMG.",
+          "title": "抵天の雷罰",
+          "description": "雷楔継続中に再び星辰帰位を発動すると、刻晴は雷元素付与状態を獲得する。継続時間5秒。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Aristocratic Dignity",
-          "description": "When casting Starward Sword, Keqing’s CRIT Rate is increased by 15%, and her Energy Recharge is increased by 15%. This effect lasts for 8s.",
+          "title": "玉衡の貴",
+          "description": "天街巡遊継続中、刻晴の会心率+15%、元素チャージ効率+15%、継続時間8秒。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Thundering Might",
-          "description": "Recasting Stellar Restoration while a Lightning Stiletto is present causes Keqing to deal 50% of her ATK as AoE Electro DMG at the start point and terminus of her Blink.",
+          "title": "迅雷",
+          "description": "雷楔継続中に再び星辰帰位を発動すると、刻晴は消失位置と出現位置に攻撃力の50%の雷元素範囲ダメージを与える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Keen Extraction",
-          "description": "When Keqing’s Normal and Charged Attack’s hit enemies affected by Electro, they have a 50% chance of producing an Elemental Particle. This effect can only occur once every 5s.",
+          "title": "苛捐",
+          "description": "刻晴の通常攻撃と重撃が雷元素の影響を受けた敵に命中した時、50%の確率で元素粒子を1個生成する。5秒毎に1回のみ発動可能。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Forseen Reformation",
-          "description": "Increases the Level of Starward Sword by 3. Maximum upgrade level is 15.",
+          "title": "登楼",
+          "description": "天街巡遊のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Attunement",
-          "description": "For 10s after Keqing triggers an Electro-related Elemental Reaction, her ATK is increased by 25%.",
+          "title": "調律",
+          "description": "刻晴が雷元素の関連反応を起こした10秒間、攻撃力+25%。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Beckoning Stars",
-          "description": "Increase the Level of Stellar Restoration by 3. Maximum upgrade level is 15.",
+          "title": "移燈",
+          "description": "星辰帰位のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Tenacious Star",
-          "description": "When initiating a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst, Keqing gains a 6% Electro DMG Bonus for 8s. Effects triggered by Normal Attacks, Charged Attacks, Elemental Skills and Elemental Bursts are considered independent entities.",
+          "title": "廉貞",
+          "description": "通常攻撃、重撃、元素スキルまたは元素爆発を発動する時、刻晴の与える雷元素ダメージ+6%、継続時間8秒。/n通常攻撃、重撃、元素スキルまたは元素爆発の発動による効果はそれぞれ別々でカウントされる。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1798,104 +1798,104 @@
     },
     {
       "key": "Klee",
-      "name": "Klee",
-      "description": "An explosives expert and a regular at the Knights of Favonius’ confinement room. Also known as Fleeing Sunlight.",
+      "name": "クレー",
+      "description": "西風騎士団反省室の常連、モンドの爆破スペシャリスト。人呼んで「逃げ回る太陽」。",
       "skills": [
         {
           "key": "s1",
-          "title": "Kaboom!",
+          "title": "バンバン",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Throws things that go boom when they hit things! Perform up to 3 explosive attacks, dealing AoE Pyro DMG.",
+              "description": "ぶつかると爆発するものを投げ出す！最大3段の爆弾攻撃、炎範囲ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina and deals Pyro DMG to enemies after a short casting time.",
+              "description": "一定のスタミナを消費し、短い詠唱の後、敵に炎範囲ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the power of Pyro, Klee plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Pyro DMG upon impact with the ground.",
+              "description": "烈焔の力を凝集し、空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に炎範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Jumpy Dumpty",
-          "description": "Jumpy Dumpty is tons of boom-bang-fun! When thrown, Jumpy Dumpty bounces thrice, igniting and dealing AoE Pyro DMG with every bounce. On the third bounce, the bomb splits into many mines. The mines will explode upon contact with enemies, or after a short period of time, dealing AoE Pyro DMG. Starts with 2 charges.",
+          "title": "ボンボン爆弾",
+          "description": "巨大な威力を持つボンボン爆弾を投げ出す！ボンボン爆弾連続で3回跳ね、1回毎に爆発を1回起こし、炎範囲ダメージを与える。3回跳ねた後、爆弾は数個のブービートラップに分裂する。ブービートラップは敵に触れるか、または一定時間後に爆発し、炎範囲ダメージを与える。初期使用可能回数2回。",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Sparks ’n’ Splash",
-          "description": "Klee’s Blazing Delight! For the duration of this ability, continuously summons Sparks ’n’ Splash to attack nearby enemies, dealing AoE Pyro DMG.",
+          "title": "ドッカン花火",
+          "description": "クレー火力全開！スキル継続中、ドッカン花火を召喚し続けて周囲の敵に攻撃し、炎範囲ダメージを与える。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "All Of My Treasures!",
-          "description": "Displays the location of nearby resources unique to Mondstadt on the mini-map.",
+          "title": "宝物揃い",
+          "description": "ミニマップで周囲のモンド地域の特産の位置を表示する。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Pounding Surprise",
-          "description": "When Jumpy Dumpty and Normal Attacks deal DMG, Klee has a 50% chance to obtain an Explosive Spark. This Explosive Spark is consumed by the next Charged Attack, which costs no Stamina and deals 50% increased DMG.",
+          "title": "こんこんプレゼント",
+          "description": "ボンボン爆弾と通常攻撃が敵にダメージを与える時、50%の確率でクレーが爆裂花火を獲得する。重撃を発動する時はスタミナの変わりに爆裂花火を優先的に消費し、さらに与えるダメージ+50%",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Sparkling Burst",
-          "description": "When a Charged Attack results in a CRIT, all party members gain 2 Elemental Energy.",
+          "title": "無限花火",
+          "description": "クレーの重撃が会心発生した後、チーム全員の元素エネルギーが2回復する。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Chained Reaction",
-          "description": "Attacks and Skills have a certain chance to summon a spark that bombards enemies, dealing DMG equal to 120% of Sparks ’n’ Splash’s DMG.",
+          "title": "ゴロゴロコンボ",
+          "description": "攻撃やスキル発動の際に、一定確率で花火を召喚し敵を攻撃、ドッカン花火攻撃力の120%ダメージを与える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Explosive Frags",
-          "description": "Being hit by Jumpy Dumpty’s mines decreases enemy DEF by 23% for 10s.",
+          "title": "弾丸の破片",
+          "description": "ボンボン爆弾ブービートラップダメージを受けた敵の防御力-23%、継続時間10秒",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Exquisite Compound",
-          "description": "Increases the Level of Jumpy Dumpty by 3. Maximum upgrade level is 15.",
+          "title": "クレー特製",
+          "description": "ボンボン爆弾のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Sparkly Explosion",
-          "description": "If Klee leaves the field during the duration of Sparks ’n’ Splash, her departure triggers an explosion that deals 555% of her ATK as AoE Pyro DMG.",
+          "title": "一触即発",
+          "description": "ドッカン花火継続中にキャラを切り替えると、爆発が発生し、攻撃力の555%の炎範囲ダメージを与える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Nova Burst",
-          "description": "Increase the Level of Sparks ’n’ Splash by 3. Maximum upgrade level is 15.",
+          "title": "轟撃の星",
+          "description": "ドッカン花火のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Blazing Delight",
-          "description": "While under the effects of Sparks ’n’ Splash, other members of the party will continuously regenerate Energy. When Sparks ’n’ Splash is used, all party members will gain 10% Pyro DMG Bonus for 25s.",
+          "title": "火力全開",
+          "description": "ドッカン花火状態中、クレーは3秒毎にチーム全員（クレーを除く）の元素エネルギーを3回復する。ドッカン花火発動後25秒間、チーム全員の炎ダメージ+10%。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -1903,118 +1903,118 @@
     },
     {
       "key": "Lisa",
-      "name": "Lisa",
-      "description": "The languid but knowledgeable Librarian of the Knights of Favonius who was deemed by Sumeru Academia to be their most distinguised graduate in the past two centuries.",
+      "name": "リサ",
+      "description": "無気力だが博学な図書司書。スメール教令院「200年に1人」の天才卒業生。",
       "skills": [
         {
           "key": "s1",
-          "title": "Lightning Touch",
+          "title": "指先の雷",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 4 lightning attacks that deal Electro DMG.",
+              "description": "雷電による最大4段の連続攻撃を行い、雷元素ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to deal AoE Electro DMG after a short casting time.",
+              "description": "一定のスタミナを消費し、短い詠唱をした後、雷元素範囲ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the might of Electro, Lisa plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Electro DMG upon impact with the ground.",
+              "description": "空中から雷電の力を凝集しながら落下し、地面に衝撃を与える。経路上の敵を攻撃し、落下時に雷元素範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Violet Arc",
-          "description": "Channels the power of lightning to sweep bothersome matters away.",
+          "title": "蒼雷",
+          "description": "雷の力で、面倒なものを全て綺麗に片付ける。",
           "abilities": [
             {
               "key": "a1",
-              "description": "Releases a homing Lightning Orb. On hit, it deals Electro DMG, and applies a stack of Conductive status (Max 3 stacks) to enemies in a small AoE.",
+              "description": "自動で索敵する球状の稲妻を放つ。命中後、標的に雷元素ダメージを与え、狭範囲の敵に最大3重までの誘雷効果を付与する。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "After an extended casting time, calls down lightning from the heavens, dealing massive Electro DMG to all nearby enemies. Deals great amounts of extra damage to enemies based on the number of Conductive stacks applied to them, and clears their Conductive status.",
+              "description": "短い詠唱をした後、雷を落下させ、周囲にいる全ての敵に雷元素ダメージを与える。敵が誘雷状態の場合、誘雷効果を解除し、重ねた回数をもとに追加ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Lightning Rose",
-          "description": "Summons a Lightning Rose that unleashes powerful lightning bolts, launching surrounding enemies and dealing Electro DMG. The Lightning Rose will continuously emit lightning to knock back enemies and deal Electro DMG for so long as it persists.",
+          "title": "薔薇の雷光",
+          "description": "薔薇の雷光を召喚し、強い雷の力で周囲の敵に雷元素ダメージを与え、ノックバックする。継続時間中、薔薇の雷光は周囲の敵を攻撃し、雷元素ダメージを与える。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "General Pharmaceutics",
-          "description": "When Lisa crafts a potion, she has a 20% chance to refund a portion of the crafting materials used.",
+          "title": "薬剤の知識",
+          "description": "薬剤を合成する時、20%の確率で材料が返還される。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Induced Aftershock",
-          "description": "Hits by charged Attacks apply Violet Arc’s Conductive status to enemies.",
+          "title": "感電余震",
+          "description": "重撃が命中した時、敵に蒼雷の誘雷効果を付与する。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Static Electricity Field",
-          "description": "Enemies hit by Lightning Rose have their DEF decreased by 15% for 10s.",
+          "title": "静電気フィールド",
+          "description": "薔薇の雷光攻撃を受けた敵の防御力-15%。継続時間10秒。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Infinite Circuit",
-          "description": "Lisa recovers 2 Energy for every opponent hit while holding Violet Arc. A maximum of 10 Energy can be regenerated in this manner at any one time.",
+          "title": "無限の電気回路",
+          "description": "蒼雷を長押しで発動した後、敵に命中する度にリサの元素エネルギーが2回復する。一回で最大10まで回復可能。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Electromagnetic Field",
-          "description": "Holding Violet Arc has the following effects:",
+          "title": "空間電位の結界",
+          "description": "蒼雷長押し時に下記の効果が付与される:",
           "secondDescription": null,
           "descriptions": [
-            "Increases DEF by 25%.",
-            "Increases Lisa’s resistance to interruption."
+            "防御力+25%。",
+            "リサの中断耐性をアップする。"
           ]
         },
         {
           "key": "c3",
-          "title": "Resonant Thunder",
-          "description": "Increases the Level of Lightning Rose by 3. Maximum upgrade level is 15.",
+          "title": "共振の雷光",
+          "description": "薔薇の雷光のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Plasma Eruption",
-          "description": "Increases the number of lightning bolts released by Lightning Rose by 1-3.",
+          "title": "雨の如くプラズマ",
+          "description": "薔薇の雷光が攻撃する時、放つ稲妻が1～3本に増加する。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Electrocute",
-          "description": "Increase the Level of Violet Arc by 3. Maximum upgrade level is 15.",
+          "title": "プラズマ落雷",
+          "description": "蒼雷のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Pulsating Witch",
-          "description": "When Lisa takes the field, she applies 3 stacks of Violet Arc’s Conductive status onto nearby enemies. This effect can only occur once every 5s.",
+          "title": "パルスの魔女",
+          "description": "登場時、周囲の敵に蒼雷の誘雷効果を3重付与する。この効果は5秒毎に1回のみ発動可能。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2022,80 +2022,80 @@
     },
     {
       "key": "Mona",
-      "name": "Mona",
-      "description": "A mysterious young astrologer who proclaims herself to be \"Astrologist Mona Megistus,\" and who possesses abilities to match the title.",
+      "name": "モナ",
+      "description": "神秘的な少女占星術師、「偉大な占星術師モナ」と自称する。その名にふさわしい実力の持ち主、博学で誇り高い。",
       "skills": [
         {
           "key": "s1",
-          "title": "Ripple of Fate",
+          "title": "因果点破",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 water splash attacks that deal Hydro DMG.",
+              "description": "最高4段の連続攻撃、水ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina and deals AoE Hydro DMG after a short casting time.",
+              "description": "一定のスタミナを消費し、短い詠唱した後、敵に水範囲ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the might of Hydro, Mona plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Hydro DMG upon impact with the ground.",
+              "description": "水元素の力を凝集し、空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に水範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Mirror Reflection of Doom",
-          "description": "Creates an illusory Phantom of fate from coalesced waterspouts.",
+          "title": "水中幻願",
+          "description": "水しぶきを集め、運命の虚影となる",
           "abilities": [
             {
-              "name": "",
-              "description": "The Phantom has the following special properties:",
+              "name": "虚影",
+              "description": "以下の特性を持つ",
               "descriptions": [
-                "Continuously taunts nearby enemies, attracting their fire.",
-                "Continuously deals Hydro DMG to nearby enemies.",
-                "When its duration expires, the Phantom explodes, dealing AoE Hydro DMG."
+                "継続的に敵を嘲笑し、攻撃を引き寄せる。",
+                "継続的に付近の敵に水範囲ダメージを与える。",
+                "継続時間終了時、虚影が破裂し、水範囲ダメージを与える。"
               ]
             },
             {
               "key": "a2",
-              "description": "Utilizes water currents to move backwards swiftly before conjuring a Phantom. Only one Phantom created by Mirror Reflection of Doom can exist at any time.",
+              "description": "水流の勢いを利用し、素早く後退する。水中幻影によって作られた虚影は同時に1つしか存在できない。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Stellaris Phantasm",
-          "description": "Mona summons the sparkling waves and creates a reflection of the starry sky, applying the Illusory Bubble status to opponents in a large AoE.",
+          "title": "星命定軌",
+          "description": "清らかなさざなみを集め、虚幻の星空を映し、広範囲の敵に泡影状態を与える。",
           "abilities": [
             {
-              "name": "Illusory Bubble",
-              "description": "Traps opponents inside a pocket of destiny and also makes them Wet. Renders weaker opponents immobile. When an opponent affected by Illusory Bubble sustains DMG, the following effects are produced:",
+              "name": "泡影",
+              "description": "星の泡で敵を拘束し、湿潤状態を付与する。/n比較的に弱い敵は泡影に拘束され、行動不能になる。/n泡影状態の敵がダメージを受けると、以下の効果を受ける:",
               "descriptions": [
-                "Applies an Omen to the opponent, which gives a DMG Bonus, also increasing the DMG of the attack that causes it.",
-                "Removes the Illusory Bubble, dealing Hydro Elemental DMG in the process. The DMG Bonus does not apply to the Hydro Elemental DMG dealt in this instance."
+                "星異デバフを与えられ、次受けるダメージをアップする。",
+                "泡影の効果は解除される。解除時、敵に水ダメージを与える。"
               ]
             },
             {
-              "name": "Omen",
-              "description": "During its duration, increases DMG taken by enemies.",
+              "name": "星異",
+              "description": "スキル継続中、受けるダメージをアップする",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s4",
-          "title": "Illusory Torrent",
+          "title": "虚実流動",
           "description": null,
           "abilities": [
             {
-              "name": "Alternate Spirit",
-              "description": "Mona cloaks herself within the water’s flow, consuming Stamina to move rapidly. When under the effect of Illusory Torrent, Mona can move at high speed on water. Applies the Wet status to nearby enemies when she reappears.",
+              "name": "ダッシュの代わりに発動する",
+              "description": "水流に隠れて、スタミナを消費して激流となり素早く移動する。虚実流動状態のモナは水面上を高速移動できる。虚実流動状態が終了し、姿を現した時に、周囲の敵に湿潤状態を与える。",
               "descriptions": []
             }
           ]
@@ -2104,68 +2104,68 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Principium of Astrology",
-          "description": "When Mona crafts Weapon Ascension Materials, she has a 25% chance to refund a portion of the crafting materials used.",
+          "title": "運行原理",
+          "description": "武器突破素材を合成する時、25%の確率で一部の材料が返還される。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Come ’n’ Get Me, Hag!",
-          "description": "After she has used Illusory Torrent for 2s, if there are any enemies nearby, Mona will automatically create a Phantom. A Phantom created in this manner lasts for 2s, and its explosion DMG is equal to 50% of Mirror Reflection of Doom.",
+          "title": "「おばば、私を捕まえられますか～」",
+          "description": "虚実流動状態に入った2秒後、周囲に敵がいる場合は自動的に虚影を1つ生成する。虚影は2秒間存在し破裂する。破裂ダメージは水中幻願のダメージの50%。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Waterborne Destiny",
-          "description": "Increases Mona’s Hydro DMG Bonus by a degree equivalent to 20% of her Energy Recharge rate.",
+          "title": "「運命の流れに任せましょう！」",
+          "description": "モナの与える水ダメージが増加する。増加量はモナの元素チャージ効率の20%に相当する。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Prophecy of Submersion",
-          "description": "The effects of Hydro-related Elemental Reactions are enhanced for 8s after a character hits an enemy affected by an Omen:",
+          "title": "沈没の予言",
+          "description": "チーム内の自身のキャラクターの攻撃が星異状態の敵に命中した8秒間、水元素の関連反応の効果が上昇する:",
           "secondDescription": null,
           "descriptions": [
-            "Electro-Charged DMG is increased by 15%.",
-            "Vaporize DMG is increased by 15%.",
-            "Hydro Swirl DMG is increased by 15%.",
-            "The duration for which enemies are Frozen is increased by 15%."
+            "感電反応ダメージ+15%。",
+            "蒸発反応ダメージ+15%。",
+            "水元素の拡散反応によるダメージ+15%。",
+            "凍結反応の継続時間+15%。"
           ]
         },
         {
           "key": "c2",
-          "title": "Lunar Chain",
-          "description": "When a Normal Attack hits, there is a 20% chance that it will be automatically followed by a Charged Attack. This effect can only occur once every 5s.",
+          "title": "星月の連珠",
+          "description": "通常攻撃が命中した時、20%の確率で自動的に重撃を発動する。5秒毎に一回のみ発動可能。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Restless Revolution",
-          "description": "Increases the Level of Stellaris Phantasm by 3. Maximum upgrade level is 15.",
+          "title": "果てしない天象",
+          "description": "星命定軌のスキルLv.+3。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Prophecy of Oblivion",
-          "description": "When a character attacks an enemy affected by the Omen status effect, their CRIT Rate is increased by 15%.",
+          "title": "絶滅の預言",
+          "description": "チーム内の自身のキャラクターが星異状態の敵を攻撃する時、会心率+15%。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Mockery of Fortuna",
-          "description": "Increase the Level of Mirror Reflection of Doom by 3. Maximum upgrade level is 15.",
+          "title": "運命の愚弄",
+          "description": "水中幻願のスキルLv.+3。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Rhetorics of Calamitas",
-          "description": "Upon entering Illusory Torrent, Mona gain a 60% increase to the DMG her next Charged Attack per second of movement. A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s.",
+          "title": "災厄の修辞",
+          "description": "モナが虚実流動状態に入った後、1秒移動する毎に、次の重撃ダメージ+60%。最大180%まで、継続時間8秒。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2173,113 +2173,113 @@
     },
     {
       "key": "Ningguang",
-      "name": "Ningguang",
-      "description": "The Tianquan of Liyue Qixing. Her wealth is unsurpassed in all of Teyvat.",
+      "name": "凝光",
+      "description": "「璃月七星」の一人、「天権」。富の多さで有名であり、全大陸で彼女に匹敵する者はまずいない。",
       "skills": [
         {
           "key": "s1",
-          "title": "Sparkling Scatter",
+          "title": "千金擲",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Shoots gems that deal Geo DMG. Upon hit, this grants Ningguang 1 Star Jade.",
+              "description": "宝石を発射し、岩元素ダメージを与える。命中した時、凝光に星璇を一枚付与する。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to fire off a giant gem that deals Geo DMG. If Ningguang has any Star Jades, unleashing a Charged Attack will cause the Star Jades to be fired at the enemy as well, dealing additional DMG.",
+              "description": "スタミナを消費して巨大な宝石を発射し、岩元素ダメージを与える。凝光に星璇がついている状態下で重撃を行うと、全ての星璇を一斉に発射し、さらにダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the might of Geo, Ningguang plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Geo DMG upon impact with the ground.",
+              "description": "空中から晶岩の力を凝集しながら落下し、地面に衝撃を与える。経路上の敵を攻撃し、落下時に岩元素範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Jade Screen",
-          "description": "Ningguang creates a Jade Screen out of gold, obsidian and her great opulence, dealing AoE Geo DMG.",
+          "title": "璇璣屏",
+          "description": "黄金、黒曜岩、強者の余裕で璇璣屏を作り、岩元素範囲ダメージを与える。",
           "abilities": [
             {
-              "name": "Jade Screen",
-              "description": "Jade Screen is considered a Geo Construct and can be used to block certain attacks, but cannot be climbed. Only one Jade Screen may exist at any one time.",
+              "name": "璇璣屏",
+              "description": "璇璣屏は岩元素創造物と見なされ、一部の攻撃を防ぐことができるが、璇璣屏に登ることはできない。同時に最大に１つまで存在可能。",
               "descriptions": [
-                "Blocks enemy projectiles.",
-                "Endurance scales based on Ningguang’s Max HP."
+                "敵の投擲攻撃を防御する。",
+                "耐久度は凝光のHPによって決まる。"
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Starshatter",
-          "description": "Gathering a great number of gems, Ningguang scatters them all at once, sending homing projectiles at her enemies that deal massive Geo DMG. If Starshatter is cast when a Jade Screen is nearby, the Jade Screen will fire additional gem projectiles at the same time.",
+          "title": "天権崩玉",
+          "description": "自身の周りに宝石を凝聚させ、それらを一気に放つ。自動索敵する宝石は周りの敵を攻撃し、大量の岩元素ダメージを与える。周りに璇璣屏が存在する時に天権崩玉を発動すると、璇璣屏から追加で宝石が放たれ、敵を攻撃する。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Trove of Marvelous Treasure",
-          "description": "Displays the location of nearby ore veins (Iron Ore, White Iron Ore, Crystal Ore, and Magical Crystal Ore) on the mini-map.",
+          "title": "奇石宝物録",
+          "description": "ミニマップで周囲の鉱脈(鉄鉱、白鉄鉱、水晶鉱、魔晶鉱、星銀鉱)の位置を表示する。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Backup Plan",
-          "description": "When Ningguang is in possession of Star Jades, her Charged Attack does not consume Stamina.",
+          "title": "物換星移",
+          "description": "星璇がついている間、凝光の重撃はスタミナを消費しない。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Strategic Reserve",
-          "description": "A character that passes through the Jade Screen will gain a 12% Geo DMG Bonus for 10s.",
+          "title": "備えあれば憂いなし",
+          "description": "璇璣屏を突き抜けたキャラクターの岩元素ダメージ+12%、継続時間10秒。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Piercing Fragments",
-          "description": "When a Normal Attack hits, it deals AoE DMG.",
+          "title": "散る星の破片",
+          "description": "通常攻撃が命中すると範囲ダメージを与える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Shock Effect",
-          "description": "When Jade Screen is shattered, its CD will reset. Can occur once every 6s.",
+          "title": "璇璣、崑崙を鎮める",
+          "description": "璇璣屏が破裂した時、クールタイムがリセットする。6秒毎に1回のみ発動可能。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Majesty be the Array of Stars",
-          "description": "Increases the Level of Starshatter by 3. Maximum upgrade level is 15.",
+          "title": "森羅星列の囲い",
+          "description": "王権崩玉のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Exquisite be the Jade, Outshining All the Beneath",
-          "description": "Jade Screen increases nearby characters’ Elemental RES by 10%.",
+          "title": "神機妙道の陣組み",
+          "description": "璇璣屏付近のキャラクターの全元素耐性+10%",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Invincible be the Jade Screen",
-          "description": "Increase the Level of Jade Screen by 3. Maximum upgrade level is 15.",
+          "title": "瓊屏と千扇の守り",
+          "description": "璇璣屏のスキルLv.+3最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Grandeur be the Seven Stars",
-          "description": "When Starshatter is used, Ningguang gains 7 Star Jades.",
+          "title": "燦々たる七星",
+          "description": "天権崩玉を放つ時、凝光に七枚の星璇を生成する。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2287,59 +2287,59 @@
     },
     {
       "key": "Noelle",
-      "name": "Noelle",
-      "description": "A maid in the service of the Knights of Favonius that dreams of joining their ranks someday.",
+      "name": "ノエル",
+      "description": "「西風騎士団」の頼もしいメイド、いつか本当の騎士になることを夢見る。",
       "skills": [
         {
           "key": "s1",
-          "title": "Favonius Bladework - Maid",
+          "title": "西風剣術・メイド",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 consecutive strikes.",
+              "description": "最大4段の連続攻撃。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous swirling attacks against all nearby enemies. At end of the sequence, perform a more powerful slash.",
+              "description": "継続的にスタミナを消費し、大剣を振り回し周囲の敵を攻撃する。斬撃が終了したときに、更に強力な攻撃を1回放つ",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "空中から閣下し、地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Breastplate",
-          "description": "Summons a protective stone armor, dealing Geo DMG to surrounding enemies and creating a shield. The shield’s DMG Absorption scaled based on Noelle’s DEF.",
+          "title": "護心鎧",
+          "description": "護身の岩鎧を召喚し、周囲の敵に岩ダメージを与え、シールドを生成する。ダメージ吸収量はノエルの防御力による。",
           "abilities": [
             {
               "name": "",
-              "description": "The shield has the following properties:",
+              "description": "シールドは下記の効果が発動する:",
               "descriptions": [
-                "When Noelle’s Normal and Charged Attacks hit a target, they have a certain chance to regenerate HP for all characters, both on and off the field. The amount of HP healed when regeneration is triggered scales based on Noelle’s DEF.",
-                "Applies the Geo element to the character.",
-                "Possesses 150% Absorption Efficiency against Geo DMG."
+                "ノエルの通常攻撃または重撃が命中したとき、確率でチーム全員のHPを回復する。",
+                "全元素ダメージと物理ダメージに対して、150%の吸収効果がある。",
+                "治療を発動する場合、治療量はノエルの防御力による。"
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Sweeping Time",
-          "description": "Gathering the strength of stone around her weapon, Noelle strikes the enemies surrounding her within a large AoE, dealing Geo DMG.",
+          "title": "大掃除",
+          "description": "盤石の力を集め、周囲の敵に衝撃を与え、広範囲攻撃を1回行い、岩ダメージを与える。",
           "abilities": [
             {
               "name": "",
-              "description": "Afterwards, Noelle gains the following effects:",
+              "description": "その後下記の効果が発動される:",
               "descriptions": [
-                "Larger attack AoE.",
-                "Converts attack DMG to Geo DMG.",
-                "Increased ATK that scales based on her DEF."
+                "ノエルの攻撃範囲が大幅にアップする。",
+                "攻撃ダメージは岩ダメージに変化され",
+                "ノエルの防御力を基準に攻撃力がアップする。"
               ]
             }
           ]
@@ -2348,63 +2348,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Maid’s Knighthood",
-          "description": "When a Perfect Cooking is achieved on a DEF-boosting dish, Noelle has a 12% chance to obtain double the product.",
+          "title": "メイドの仕草",
+          "description": "防御系料理を完璧調理したとき、12%の確率で料理を2倍獲得する。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Devotion",
-          "description": "When Noelle is in the party but not on the field, this ability triggers automatically when the active character’s HP falls below 30%: Creates a shield that lasts for 20s and absorbs DMG equal to 400% of Noelle’s DEF. This effect can only occur once every 60s.",
+          "title": "誠心誠意",
+          "description": "ノエルが待機時、出場中のキャラクターのHPが30%以下になると自動発動される：出場している自身のキャラクターに、ノエルの防御力400%相当のダメージを吸収シールドを付与する、継続時間20秒。該当効果は60秒毎に1回のみ発動する。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Nice and Clean",
-          "description": "Every 4 Normal or Charged Attack hits will decrease the CD of Breastplate by 1s. Hitting multiple enemies with a single attack is only counted as 1 hit.",
+          "title": "きれいさっぱり",
+          "description": "通常攻撃または重撃が4回命中するたびに、護心鎧のクールタイム-1秒。攻撃が同時に複数の敵に命中した場合は1回としてカウントされる",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "I Got Your Back",
-          "description": "While Sweeping Time and Breastplate are both in effect, the chance of Breastplate’s healing effects activating is increased to 100%.",
+          "title": "支援はお任せください",
+          "description": "同時に大掃除と護心鎧状態に居るとき、護心鎧のHP回復効果の発動率は100％になる",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Combat Maid",
-          "description": "Decreases the Stamina Consumption of Noelle’s Charged Attacks by 20% and increases her Charged Attack DMG by 15%.",
+          "title": "旋風のメイド",
+          "description": "ノエルの重撃によるスタミナ消費-20%、与えるダメージ+15%。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Invulnerable Maid",
-          "description": "Increases the Level of Breastplate by 3. Maximum upgrade level is 15.",
+          "title": "怪我はしません",
+          "description": "護心鎧のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "To Be Cleaned",
-          "description": "When Breastplate’s duration expires or it is destroyed by DMG, it will deal 400% ATK of Geo DMG to surrounding enemies.",
+          "title": "綺麗にしますから",
+          "description": "護心鎧の効果終了時、またはダメージによって破壊されたとき、周囲の敵に攻撃力の400%の岩ダメージを与える",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Favonius Sweeper Master",
-          "description": "Increase the Level of Sweeping Time by 3. Maximum upgrade level is 15.",
+          "title": "騎士団の掃除達人",
+          "description": "大掃除のスキルLv.+3。最大Lv.15まで",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Must Be Spotless",
-          "description": "Sweeping Time increases Noelle’s ATK by an additional 50% of her DEF. Additionally, every enemy defeated during the skill’s duration adds 1s to the duration, up to 10s.",
+          "title": "埃は許しません",
+          "description": "大掃除発動で、ノエルの防御力50%相当の攻撃力を追加でアップする。スキル継続中、敵1体倒すたびに、継続時間+1秒、最大10秒まで",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2412,55 +2412,55 @@
     },
     {
       "key": "Qiqi",
-      "name": "Qiqi",
-      "description": "An apprentice and herb-picker Bubu Pharmacy. An undead with a bone-white complexion, she seldom has much in the way of words or emotion.",
+      "name": "七七",
+      "description": "薬舗「不卜盧」の薬採り兼弟子、紙のように白い顔色で不死身。口数が少なく、あまり表情がない。",
       "skills": [
         {
           "key": "s1",
-          "title": "Ancient Sword Art",
+          "title": "雲来古剣法",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 rapid strikes.",
+              "description": "剣による最大5段の連続攻撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "一定のスタミナを消費し、前方に斬撃を2回放つ。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Adeptus Art: Herald of Frost",
-          "description": "Using the Icevein Talisman, Qiqi brings forth the Herald of Frost, dealing Cryo DMG to nearby enemies.",
+          "title": "仙法・寒病鬼差",
+          "description": "氷血がお札となり、寒病鬼差を召喚し、周囲の敵に氷元素ダメージを与える。",
           "abilities": [
             {
-              "name": "Herald of Frost",
+              "name": "寒病鬼差",
               "description": "",
               "descriptions": [
-                "When Qiqi hits a target with her Normal or Charged Attacks, she regenerates HP for all party members and all nearby allied characters. Healing scales based on Qiqi’s ATK.",
-                "Regenerates HP for current character at regular intervals.",
-                "Follows the character around, dealing Cryo DMG to enemies in its path."
+                "七七の通常攻撃と重撃が命中した時、チーム内の自身のキャラクター全員または付近の味方のHPを回復する。回復量は七七の攻撃力によって決まる。",
+                "一定時間の間隔で、出場している自身のキャラクターのHPを回復する。",
+                "キャラクターと共に行動し、経路上の敵に氷元素ダメージを与える。"
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Adeptus Art: Preserver of Fortune",
-          "description": "Qiqi releases the adeptus power sealed within her body, marking nearby enemies with a Fortune-Preserving Talisman that deals Cryo DMG.",
+          "title": "仙法・救苦度厄",
+          "description": "体内に封印された仙力を解放し、度厄のお札で付近の敵にマークをつけ、氷元素ダメージを与える。",
           "abilities": [
             {
-              "name": "Fortune-Preserving Talisman",
-              "description": "When enemies affected by this Talisman take DMG, the character that dealt this DMG regenerates HP.",
+              "name": "度厄のお札",
+              "description": "度厄のお札に影響された敵にダメージを与えた時、そのキャラクター自身のHPを回復する。",
               "descriptions": []
             }
           ]
@@ -2469,63 +2469,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Former Life Memories",
-          "description": "Displays the location of nearby resources unique to Liyue on the mini-map.",
+          "title": "往事記憶",
+          "description": "ミニマップで周囲の璃月地域の特産の位置を表示する。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Life-Prolonging Methods",
-          "description": "When a character under the effects of Adeptus Art: Herald of Frost triggers an Elemental Reaction, their Incoming Healing Bonus is increased by 20% for 8s.",
+          "title": "延命妙法",
+          "description": "仙法・寒病鬼差状態時のキャラクターが元素反応を起こした時、受ける回復量+20%、継続時間8秒。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "A Glimpse into Arcanum",
-          "description": "When Qiqi hits enemies with her Normal and Charged Attacks, she has a 50% chance to apply a Fortune-Preserving Talisman to them for 6s. This effect can only occur once every 30s.",
+          "title": "玉籤偶開",
+          "description": "七七の通常攻撃と重撃が敵に命中した時、50%の確率で敵に度厄のお札を1枚付与する、継続時間6秒、30秒毎に1回のみ発動可能。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Ascetics of Frost",
-          "description": "When the Herald of Frost hits an enemy marked by a Fortune-Preserving Talisman, Qiqi regenerates 2 Energy.",
+          "title": "寒苦回向",
+          "description": "度厄のお礼マークのがいている敵に寒病鬼差が命中した時、七七の元素エネルギーを2回復する。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Frozen to the Bone",
-          "description": "Qiqi’s Normal and Charge Attack DMG against enemies affected by Cryo is increased by 15%.",
+          "title": "氷寒蝕骨",
+          "description": "氷元素の影響を受けた敵に、七七の通常攻撃と重撃の与えるダメージ+15％。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Ascendant Praise",
-          "description": "Increases the Level of Adeptus Art: Preserver of Fortune by 3. Maximum upgrade level is 15.",
+          "title": "昇天宝誥",
+          "description": "仙法・救苦度厄のスキルLv.3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Divine Suppression",
-          "description": "Targets marked by the Fortune-Preserving Talisman have their ATK decreased by 20%.",
+          "title": "天威圧衆",
+          "description": "度厄のお札マークがついている敵の攻撃力-20％。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Crimson Lotus Bloom",
-          "description": "Increase the Level of Adeptus Art: Herald of Frost by 3. Maximum upgrade level is 15.",
+          "title": "紅蓮開花",
+          "description": "仙法・寒病鬼差のスキルLv.3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Rite of Resurrection",
-          "description": "Using Adeptus Art: Preserve of Fortune revives all nearby fallen characters and regenerates 50% of their HP. This effect can only occur once every 15 mins.",
+          "title": "起死回骸",
+          "description": "仙法·救苦度厄を発動する時、近くにいるチーム内全ての戦闘不能状態のキャラクターを復活させ、HPの50%まで回復する。この効果は15分毎に1回のみ発動可能。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2533,62 +2533,62 @@
     },
     {
       "key": "Razor",
-      "name": "Razor",
-      "description": "A boy who lives among the wolves in Wolvendom of Mondstadt, away from human civilization. As agile as lightning.",
+      "name": "レザー",
+      "description": "人間の町から離れて、モンド地域の奔狼領で狼と暮らす少年。勘が鋭く、動きが俊敏。",
       "skills": [
         {
           "key": "s1",
-          "title": "Steel Fang",
+          "title": "鋼の脊",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 consecutive strikes.",
+              "description": "最大4段の連続攻撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous swirling attacks against all nearby enemies. At end of the sequence, perform a more powerful slash.",
+              "description": "継続的にスタミナを消費し、大剣を振り回して周囲の敵を攻撃する。重撃が終了した時に、さらに強力な攻撃を1回放つ。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Claw and Thunder",
-          "description": "Hunts his prey using the techniques taught to him by his master and his Lupical.",
+          "title": "鋭い爪と蒼雷",
+          "description": "師匠と「家族」に教わった方法で、獲物を片付ける。",
           "abilities": [
             {
               "key": "a1",
-              "description": "Swings the Thunder Wolf Claw, dealing Electro DMG to enemies in front of Razor. Upon striking an enemy, Razor will gain an Electro Sigil, which increases his Energy Recharge rate. Razor can have up to 3 Electro Sigils simultaneously, and gaining a new Electro Sigil refreshes their duration.",
+              "description": "雷狼の爪を振り、前方の敵に雷元素ダメージを与える。敵に命中すると、雷の印を1つ蓄積し、レザーの元素チャージ効率がアップする。雷の印は同時に最大3つまで存在でき、新しい雷の印を獲得すると全ての雷の印の継続時間がリセットされる。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Gathers Electro energy to unleash a lightning storm over a small AoE, causing massive Electro DMG, and clears all of Razor’s Electro Sigils. Each Electro Sigil cleared in this manner will be converted into Energy for Razor.",
+              "description": "雷の力を集めて狭範囲の雷爆発を起こし、大量の雷元素ダメージを与える。同時に。レザーの雷の印を全て取り除く。取り除かれた雷の印は全てレザーの元素エネルギーに変換される。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Lightning Fang",
-          "description": "Summons the Wolf Within which deals Electro DMG to all nearby opponents. This clears all of Razor’s Electro Sigils, which will be converted into elemental energy for him. The Wolf Within will fight alongside Razor for the skill’s duration.",
+          "title": "雷牙",
+          "description": "無形の雷狼を召喚して自身を守り、周囲の敵に雷元素ダメージを与える。同時に、雷の印を消耗して、自身の元素エネルギーを回復する。雷狼が存在している間、レザーと共に戦う。",
           "abilities": [
             {
-              "name": "The Wolf Within",
-              "description": "These effects end when Razor leaves the battlefield. When Razor leaves the field, a maximum of 10 Energy will be returned to him based off the duration remaining on this skill.",
+              "name": "雷狼",
+              "description": "レザーが退場する時、効果が解除される。退場時、残り時間を基準に、元素エネルギーを最大10まで回復する。",
               "descriptions": [
-                "Strikes alongside Razor’s normal attacks, dealing Electro DMG.",
-                "Raises Razor’s ATK SPD and Electro RES.",
-                "Causes Razor to be immune to DMG inflicted by the Electro-Charged status.",
-                "Disables Razor’s Charged Attacks.",
-                "Increases Razor's resistance to interruption."
+                "レザーの通常攻撃に協力し、雷元素ダメージを与える。",
+                "レザーの攻撃速度と雷元素耐性をアップする。",
+                "感電反応によるダメージを無効化する。",
+                "重撃の発動が不可になる。",
+                "レザーの中断耐性がアップする。"
               ]
             }
           ]
@@ -2597,63 +2597,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Wolvensprint",
-          "description": "Decreases all party member’s sprinting Stamina Consumption by 20%.",
+          "title": "奔狼",
+          "description": "チーム内の自身のキャラクター全員がダッシュに消費するスタミナ-20%。同じ効果を持つ固有天賦との重ね掛け不可。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Awakening",
-          "description": "Decreases Claw and Thunder’s CD by 18%. Using Lightning Fang resets the CD of Claw and Thunder.",
+          "title": "覚醒",
+          "description": "鋭い爪と蒼雷のクールタイム-18％。雷牙を放つ時、鋭い爪と蒼雷のクールタイムをリセットする。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Hunger",
-          "description": "When Razor’s Energy is below 50%, increases Energy Recharge by 30%.",
+          "title": "飢餓",
+          "description": "レザーの元素エネルギーが50％以下になると、元素チャージ効率+30％。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Wolf’s Instinct",
-          "description": "Picking up an Elemental Orb or Particle increases Razor’s DMG by 10% for 8s.",
+          "title": "狼の性",
+          "description": "レザーが元素オーブまたは元素粒子を獲得した8秒間、与えるダメージ+10％。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Suppression",
-          "description": "Increases CRIT Rate against enemies with less than 30% HP by 10%.",
+          "title": "制圧",
+          "description": "HPが30％以下の敵を攻撃する時、会心率+10％。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Soul Companion",
-          "description": "Increases the Level of Lightning Fang by 3. Maximum upgrade level is 15.",
+          "title": "獣の魂",
+          "description": "雷牙のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Bite",
-          "description": "When casting Claw and Thunder (Press), enemies hit will have their DEF decreased by 15% for 7s.",
+          "title": "噛みつく",
+          "description": "鋭い爪と蒼雷の一回押しで攻撃した時、命中された敵の防御力-15%、継続時間7秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Sharpened Claws",
-          "description": "Increase the Level of Claw and Thunder by 3. Maximum upgrade level is 15.",
+          "title": "鋭い爪",
+          "description": "鋭い爪と蒼雷のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Lupus Fulguris",
-          "description": "Every 10s, Razor’s sword charges up, causing the next Normal Attack to release lightning that deals 100% of Razor’s ATK as Electro DMG. When Razor is not using Lightning Fang, a lightning strike on an enemy will grant Razor an Electro Sigil for Claw and Thunder.",
+          "title": "天狼",
+          "description": "10秒毎に、レザーの大剣が自動的にエネルギーを溜め、次の通常攻撃に落雷を引き起こし、攻撃力100％分の雷元素ダメージを与える。雷牙状態でない時、落雷が敵に命中すると、レザーに鋭い爪と蒼雷の雷の印を1重付与する。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2661,98 +2661,98 @@
     },
     {
       "key": "Rosaria",
-      "name": "Rosaria",
-      "description": "A sister of the church, though you wouldn't know it if it weren't for her attire. Known for her sharp, cold words and manner, she often works alone.",
+      "name": "ロサリア",
+      "description": "身にまとう服装以外、何ひとつとして聖職者とは思えないシスター。冷たい言動の中には、相手を見透かす鋭さが隠されている。また、いつも一人で行動をしている。",
       "skills": [
         {
           "key": "s1",
-          "title": "Spear of the Church",
+          "title": "教会槍術",
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to five consecutive spear strikes.",
+              "description": "槍による最大5段の連続攻撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.",
+              "description": "一定のスタミナを消費して前方に突進し、経路上の敵にダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Ravaging Confession",
-          "description": "Rosaria swiftly shifts her position to appear behind her opponent, then stabs and slashes them with her polearm, dealing Cyro DMG.\nThis ability cannot be used to travel behind opponents of a larger build.",
+          "title": "罪喰いの懺悔",
+          "description": "素早く敵の背後に回り込み、長槍で突きと振り降ろしを繰り出すことで、氷元素ダメージを与える。このスキルは、大きな体形を持つ敵の背後に回り込むことはできない。",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Rites of Termination",
-          "description": "Rosaria's unique take on this prayer ritual: First, she swings her weapon to slash surrounding opponents; then, she summons a frigid Ice Lance that strikes the ground. Both actions deal Cryo DMG.\nWhile active, the Ice Lance periodically releases a blast of cold air, dealing Cryo DMG to surrounding opponents.",
+          "title": "臨終の聖礼",
+          "description": "ロサリア専属の祈りの儀式。武器を振り周囲の敵を攻撃した後、極寒を蓄積した氷槍を地面に差し込み、氷元素ダメージを与える。氷槍が存在している間、定期的に冷気を発散し、近くの敵に氷元素ダメージを与える。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Night Walk",
-          "description": "At night (18:00–6:00), increases the Movement SPD of your own party members by 10%.\nDoes not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects.",
+          "title": "夜行",
+          "description": "夜間(18時から6時まで)になると、チーム内自身のキャラクターの移動速度+10%。この効果は秘境、征討領域、深境螺旋では発動されない。また、同じ効果を持つ固有天賦との重ね掛け不可。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Regina Probationum",
-          "description": "When Rosaria strikes an opponent from behind using Ravaging Confession, Rosaria's CRIT Rate increases by 12% for 5s.",
+          "title": "懺悔に耳を傾ける幻影",
+          "description": "罪喰いの懺悔で敵の背後から攻撃すると、ロサリアの会心率+12%、継続時間5秒。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Shadow Samaritan",
-          "description": "Casting Rites of Termination increases CRIT Rate of all nearby party members (except Rosaria herself) by 15% of Rosaria's CRIT Rate for 10s.\nCRIT Rate Bonus gained this way cannot exceed 15%.",
+          "title": "影から支える暗色",
+          "description": "臨終の聖礼発動時、自身の会心率の15%分、チーム全員(ロサリア自身を除く)の会心率をアップさせる、継続時間10秒。この方法で獲得できる会心率アップ効果は、最大15%まで。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Unholy Revelation",
-          "description": "When Rosaria deals a CRIT Hit, her ATK SPD increases by 10% and her Normal Attack DMG increases by 10% for 4s.",
+          "title": "罪の導き",
+          "description": "ロサリアの攻撃で会心が発生すると、攻撃速度+10%、通常攻撃のダメージ+10%、継続時間4秒。",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Land Without Promise",
-          "description": "The duration of the Ice Lance created by Rites of Termination is increased by 4s.",
+          "title": "無福の地",
+          "description": "臨終の聖礼で創られる氷槍の継続時間+4秒。",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "The Wages of Sin",
-          "description": "Increases the Level of Ravaging Confessionby 3. Maximum upgrade level is 15.",
+          "title": "懺悔の儀",
+          "description": "罪喰いの懺悔のスキルLv.+3。最大Lv.15まで。",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Painful Grace",
-          "description": "Ravaging Confession's Crit Hits regenerate 5 Energy for Rosaria. Can only be triggered once each time Ravaging Confession is cast.",
+          "title": "苦痛の恩典",
+          "description": "罪喰いの懺悔で会心が発生すると、ロサリア自身の元素エネルギーが5回復する。この効果は、1回の罪喰いの懺悔で1度のみ発動可能。",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Last Rites",
-          "description": "Increases the Level of Rites of Termination by 3. Maximum upgrade level is 15.",
+          "title": "臨終の祈り",
+          "description": "臨終の聖礼のスキルLv.+3。最大Lv.15まで。",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Divine Retribution",
-          "description": "Rites of Termination' attack decreases opponents' Physical RES by 20% for 10s.",
+          "title": "代行裁判",
+          "description": "臨終の聖礼の攻撃が敵に命中すると、敵の物理耐性-20%、継続時間10秒。",
           "descriptions": []
         }
       ]
@@ -4332,13 +4332,13 @@
       "key": "Aquila Favonia",
       "name": "風鷹剣",
       "description": "西風騎士団の魂。この剣を振り回していた女傑と同じように、千年経っても未だ正義の風を巻き起こし、悪を排除しようとする。",
-      "refinement": "攻撃力 +{{0}}%。ダメージを受けると発動：抗争の旗を高く掲げる西風の鷹の魂が蘇り、攻撃力の {{1}}%分のHPを回復し、周りの敵に攻撃力の {{2}}%のダメージを与える。15秒毎に1回のみ発動可能。"
+      "refinement": "攻撃力 +{{0}}%。ダメージを受けると発動:抗争の旗を高く掲げる西風の鷹の魂が蘇り、攻撃力の {{1}}%分のHPを回復し、周りの敵に攻撃力の {{2}}%のダメージを与える。15秒毎に1回のみ発動可能。"
     },
     {
       "key": "Skyward Blade",
       "name": "天空の刃",
       "description": "風龍の栄誉を象徴する騎士の剣。剣身には風の神の祝福があり、蒼空と風の力が含まれている。",
-      "refinement": "会心率 +{{0}}%。元素爆発を使用すると衝天の勢いを獲得する：移動速度+10%、攻撃速度+10%、通常攻撃と重撃が命中する際に、攻撃力の {{1}}%の追加ダメージを与える、継続時間12秒。"
+      "refinement": "会心率 +{{0}}%。元素爆発を使用すると衝天の勢いを獲得する:移動速度+10%、攻撃速度+10%、通常攻撃と重撃が命中する際に、攻撃力の {{1}}%の追加ダメージを与える、継続時間12秒。"
     },
     {
       "key": "Summit Shaper",
@@ -4440,7 +4440,7 @@
       "key": "The Widsith",
       "name": "流浪楽章",
       "description": "楽譜が記されているノート。風化と虫の侵食はあるが、それでも筆跡から力を感じられる。",
-      "refinement": "キャラ登場時、ランダムにテーマ曲を1つ獲得する、継続時間10秒。30秒毎に1回のみ発動可能。叙唱：攻撃力 +{{0}}%。詠唱：全元素ダメージ +{{1}}%。間奏曲：元素熟知 +{{2}}。"
+      "refinement": "キャラ登場時、ランダムにテーマ曲を1つ獲得する、継続時間10秒。30秒毎に1回のみ発動可能。叙唱:攻撃力 +{{0}}%。詠唱:全元素ダメージ +{{1}}%。間奏曲:元素熟知 +{{2}}。"
     },
     {
       "key": "Wine and Song",
@@ -4505,7 +4505,7 @@
     {
       "key": "Ferrous Shadow",
       "name": "鉄影段平",
-      "description": "この剣はかの光の獅子エドウインの佩剣の模造品。これを握って、伝説の英雄の力を感じよう！注意：妄想はほどほどに。",
+      "description": "この剣はかの光の獅子エドウインの佩剣の模造品。これを握って、伝説の英雄の力を感じよう！注意:妄想はほどほどに。",
       "refinement": "HPが {{0}}% 以下になると、重撃は中断されにくくなり、更に重撃ダメージ +{{1}}%。"
     },
     {
@@ -4734,13 +4734,13 @@
       "key": "Elegy for the End",
       "name": "終焉を嘆く詩",
       "description": "詩人の楽器のような美しい弓。放った矢は嘆き声のように心に響く。",
-      "refinement": "風と共に流れる「千年の大楽章」の一部。元素熟知 +{{0}}。元素スキルまたは元素爆発が敵に命中すると、追憶の欠片を1枚獲得する。この効果は0.2秒毎に一回のみ発動でき、待機中のキャラクターも発動できる。追憶の欠片を4枚集めると、全ての追憶の欠片を消費し、周囲のチーム全員に12秒継続する「千年の大楽章·別れの歌」効果を付与する：元素熟知 +{{1}}、攻撃力 +{{2}}%。発動後の20秒間、追憶の欠片を再度獲得することはできない。「千年の大楽章」のもたらす各効果中、同種類の効果は重ね掛け不可。"
+      "refinement": "風と共に流れる「千年の大楽章」の一部。元素熟知 +{{0}}。元素スキルまたは元素爆発が敵に命中すると、追憶の欠片を1枚獲得する。この効果は0.2秒毎に一回のみ発動でき、待機中のキャラクターも発動できる。追憶の欠片を4枚集めると、全ての追憶の欠片を消費し、周囲のチーム全員に12秒継続する「千年の大楽章·別れの歌」効果を付与する:元素熟知 +{{1}}、攻撃力 +{{2}}%。発動後の20秒間、追憶の欠片を再度獲得することはできない。「千年の大楽章」のもたらす各効果中、同種類の効果は重ね掛け不可。"
     },
     {
       "key": "Song of Broken Pines",
       "name": "松韻の響く頃",
       "description": "草木を撫でる風のように軽い大剣だが、その破壊力は木々を吹き飛ばす竜巻を想起させるほど強大なものである。",
-      "refinement": "風と共に流れる「千年の大楽章」の一部。攻撃力 +{{0}}%。通常攻撃または重撃が敵に命中すると、囁きの欠片を1枚獲得する。この効果は0.3秒毎に1回のみ発動できる。囁きの欠片を4枚集めると、全ての囁きの欠片を消費し、周囲のチーム全員に12秒継続する「千年の大楽章·旗掲げの歌」効果を付与する：通常攻撃速度 +{{1}}%、攻撃力 +{{2}}%。発動後の20秒間、囁きの欠片を再度獲得することはできない。「千年の大楽章」のもたらす各効果中、同種類の効果は重ね掛け不可。"
+      "refinement": "風と共に流れる「千年の大楽章」の一部。攻撃力 +{{0}}%。通常攻撃または重撃が敵に命中すると、囁きの欠片を1枚獲得する。この効果は0.3秒毎に1回のみ発動できる。囁きの欠片を4枚集めると、全ての囁きの欠片を消費し、周囲のチーム全員に12秒継続する「千年の大楽章·旗掲げの歌」効果を付与する:通常攻撃速度 +{{1}}%、攻撃力 +{{2}}%。発動後の20秒間、囁きの欠片を再度獲得することはできない。「千年の大楽章」のもたらす各効果中、同種類の効果は重ね掛け不可。"
     }
   ],
   "artifacts": [
