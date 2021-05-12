@@ -15,29 +15,20 @@ class SliverElementsCard extends StatelessWidget {
           clipBehavior: Clip.hardEdge,
           margin: Styles.edgeInsetAll15,
           shape: RoundedRectangleBorder(borderRadius: Styles.homeCardItemBorderRadius),
-          child: SizedBox(
-            height: 170,
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                _buildIcon(ElementType.anemo, const Offset(0, -1)),
-                _buildIcon(ElementType.cryo, const Offset(-1.4, -0.6)),
-                _buildIcon(ElementType.dendro, const Offset(-1.4, 0.6)),
-                _buildIcon(ElementType.geo, const Offset(0, 1)),
-                _buildIcon(ElementType.hydro, const Offset(1.4, -0.6)),
-                _buildIcon(ElementType.pyro, const Offset(1.4, 0.6)),
-              ],
+          child: Container(
+            margin: const EdgeInsets.symmetric(vertical: 10),
+            constraints: const BoxConstraints(minHeight: 80),
+            child: Wrap(
+              runAlignment: WrapAlignment.center,
+              alignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: ElementType.values
+                  .map((type) => Padding(padding: const EdgeInsets.symmetric(horizontal: 5), child: ElementImage.fromType(type: type)))
+                  .toList(),
             ),
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildIcon(ElementType type, Offset offset) {
-    return FractionalTranslation(
-      translation: offset,
-      child: ElementImage.fromType(type: type),
     );
   }
 
