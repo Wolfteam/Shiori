@@ -127,6 +127,7 @@ class MyApp extends StatelessWidget {
               ctx.read<WeaponsBloc>(),
               ctx.read<HomeBloc>(),
               ctx.read<ArtifactsBloc>(),
+              ctx.read<ElementsBloc>(),
             )..add(const MainEvent.init());
           },
         ),
