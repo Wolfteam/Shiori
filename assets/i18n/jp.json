@@ -2355,7 +2355,7 @@
         {
           "key": "p2",
           "title": "誠心誠意",
-          "description": "ノエルが待機時、出場中のキャラクターのHPが30%以下になると自動発動される：出場している自身のキャラクターに、ノエルの防御力400%相当のダメージを吸収シールドを付与する、継続時間20秒。該当効果は60秒毎に1回のみ発動する。",
+          "description": "ノエルが待機時、出場中のキャラクターのHPが30%以下になると自動発動される:出場している自身のキャラクターに、ノエルの防御力400%相当のダメージを吸収シールドを付与する、継続時間20秒。該当効果は60秒毎に1回のみ発動する。",
           "descriptions": []
         },
         {
@@ -2759,45 +2759,45 @@
     },
     {
       "key": "Sucrose",
-      "name": "Sucrose",
-      "description": "An alchemist filled with curiosity about all things. She researches bio-alchemy.",
+      "name": "スクロース",
+      "description": "この世界のありとあらゆるものに強い好奇心を抱く錬金術師。研究分野は「生物錬金」。",
       "skills": [
         {
           "key": "s1",
-          "title": "Wind Spirit Creation",
+          "title": "簡式風霊作成",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 attacks using Wind Spirits, dealing Anemo DMG.",
+              "description": "最高4段の連続攻撃、風ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina and deals AoE Anemo DMG after a short casting time.",
+              "description": "一定のスタミナを消費し、短い詠唱した後、敵に風範囲ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Calling upon the power of her Wind Spirits, Sucrose plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Anemo DMG upon impact with the ground.",
+              "description": "風霊の力を凝集し、空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に風範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Astable Anemohypostasis Creation - 6308",
-          "description": "Creates a small Wind Spirit that deals Anemo DMG to enemies in an AoE, pulling them towards the location of the Wind Spirit before launching them.",
+          "title": "風霊作成・六三〇八",
+          "description": "小型風霊を召喚し、敵と物体を風霊の位置に吸い寄せ、範囲内の敵をノックバックし、風ダメージを与える。",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Forbidden Creation - Isomer 75 / Type II",
-          "description": "Sucrose hurls an unstable concoction that creates a Large Wind Spirit. While it persists, the Large Wind Spirit will continuously pull and launch nearby enemies, dealing AoE Anemo DMG.",
+          "title": "禁・風霊作成・七五同構弐型",
+          "description": "スクロースが不安定なフラスコを投げ出し、大型風霊を生成する。風霊が存在している間に、継続的に付近の敵と物体を吸い寄せ、ノックバックし、風ダメージを与え続ける。",
           "abilities": [
             {
               "key": "a1",
-              "description": "If the Wind Spirit comes into contact with Hydro / Pyro / Cryo / Electro elements, it will deal additional DMG of that type. Elemental Absorption may only occur once per use.",
+              "description": "風霊がスキル継続中に水元素/炎元素/氷元素/雷元素に接触すると、接触した元素属性を獲得し、該当元素の付加ダメージを追加で与える。元素変化はスキル継続中に1回のみ発生する。",
               "descriptions": []
             }
           ]
@@ -2806,63 +2806,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Astable Invention",
-          "description": "When Sucrose crafts Character and Weapon Enhancement Materials, she has a 10% to obtain double the product.",
+          "title": "不安定な発見",
+          "description": "キャラクターと武器の育成素材を合成する時、10%の確率でアイテムを2倍獲得する。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Catalyst Conversion",
-          "description": "When Sucrose triggers a Swirl effect, characters in the party with the matching element have their Elemental Mastery increased by 50 for 8s.",
+          "title": "触媒置換術",
+          "description": "スクロースが拡散反応を起こした時、該当元素のチームメンバー全員（スクロース自身を除く）の元素熟知+50、継続時間8秒。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Mollis Favonius",
-          "description": "When Astable Anemohypostatis Creation - 6308 or Forbidden Creation - Isomer 75 / Type II hit an enemy, increases other party member’s Elemental Mastery based on 20% of Sucrose’s Elemental Mastery for 8s.",
+          "title": "小さな恵風",
+          "description": "「風霊作成·六三〇八」又は「禁·風霊作成·七五同構弐型」が敵に命中した時、スクロースの元素熟知の20%を基準に、チーム内キャラクター全員（スクロース自身を除く）の元素熟知を強化、継続時間8秒。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Clustered Vacuum Field",
-          "description": "Astable Anemohypostasis Creation - 6308 gains 1 additional charge.",
+          "title": "積み上げ真空域",
+          "description": "風霊作成・六三〇八の発動可能回数+1。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Beth - Unbound Form",
-          "description": "The duration of Forbidden Creation - Isomer 75 / Type II is increased by 2s.",
+          "title": "不羈型ベト",
+          "description": "禁・風霊作成・七五同構弐型のスキル継続時間+2秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Flawless Alchemistress",
-          "description": "Increases the Level of Astable Anemohypostasis Creation - 6308 by 3. Maximum upgrade level is 15.",
+          "title": "ゼロミス少女",
+          "description": "風霊作成・六三〇八のスキルLv.+3。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Alchemania",
-          "description": "Every 7 Normal and Charged Attacks, Sucrose will reduce the CD of Astable Anemohypostasis Creation - 6308 by 1-7s.",
+          "title": "錬金の偏執",
+          "description": "スクロースが通常攻撃または重撃を7回発動すると、風霊作成・六三0八のクールタイムはランダムに1～7秒減少する。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Caution: Standard Flask",
-          "description": "Increase the Level of Forbidden Creation - Isomer 75 / Type II by 3. Maximum upgrade level is 15.",
+          "title": "真面目な普通瓶",
+          "description": "禁・風霊作成・七五同構弐型のスキルLv.+3。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Chaotic Entropy",
-          "description": "If Forbidden Creation - Isomer 75 / Type II triggers an Elemental Absorption, all party members gain a 20% Elemental DMG Bonus for the corresponding absorbed element during its duration.",
+          "title": "混合熵増論",
+          "description": "禁・風霊作成・七五同構弐型に元素変化があった場合、スキル継続中にチーム全員の該当元素ダメージ+20%。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2870,79 +2870,79 @@
     },
     {
       "key": "Tartaglia",
-      "name": "Tartaglia",
-      "description": "No. 11 of The Harbingers, also known as \"Childe\". His name is highly feared on the battlefield.",
+      "name": "タルタリヤ",
+      "description": "ファトゥス第十一位、「公子」、その戦績や名前は広く知られている。",
       "skills": [
         {
           "key": "s1",
-          "title": "Cutting Torrent",
+          "title": "断雨",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 6 consecutive shots with a bow.",
+              "description": "最高6段の連続射撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, the power of Hydro will accumulate on the arrowhead. An arrow fully charged with the torrent will deal Hydro DMG and apply Riptide status..",
+              "description": "ダメージがより高く、より精確的な狙い撃ちを発動する。照準時、水元素の力が矢先に集まる。激流を込めた矢が敵に命中する時に水ダメージを与え、断流効果を付与する。",
               "descriptions": []
             },
             {
-              "name": "Riptide",
-              "description": "Opponents affected by Riptide will suffer from AoE Hydro DMG effects when attacked by Tartaglia in various ways. DMG dealt in this way is considered Normal Attack DMG.",
+              "name": "断流",
+              "description": "断流状態の敵がタルタリヤの攻撃を受けると、水範囲ダメージが発生する。これらの効果によるダメージは通常攻撃ダメージと見なされる。",
               "descriptions": [
-                "Riptide Flash: A fully-charged Aimed Shot that hits an opponent affected by Riptide deals consecutive bouts of AoE DMG. Can occur once every 0.7s.",
-                "Riptide Burst: Defeating an opponent affected by Riptide created a Hydro burst that inflicts the Riptide status on nearby opponents hit."
+                "・断流・閃:フルチャージの狙い撃ち攻撃が断流状態の敵に命中した場合、連続範囲ダメージが発生する。断流・閃は0.7秒毎に1回のみ発動可能。",
+                "・断流・破:断流効果の敵を倒した時にウォーターブルームを放ち、近くの敵に断流効果を付与する。"
               ]
             },
             {
               "key": "a4",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact. When Tartaglia is in Foul Legacy: Raging Tide’s Melee Stance, he cannot perform a plunging attack.",
+              "description": "空中から矢の雨を放ち、凄まじいスピードで落下し地面に衝撃を与え、落下時に範囲ダメージを与える。魔王の武装・荒波の近接モード時、落下攻撃をすることはできない。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Foul Legacy: Raging Tide",
-          "description": "Unleashes a set of weaponry made of pure water, dealing Hydro DMG to surrounding opponents and entering a Melee Stance. In this Stance, Tartaglia’s Normal and Charged Attacks change as follows:",
+          "title": "魔王の武装・荒波",
+          "description": "水で構成された武装を解放し、周囲の敵に水ダメージを与え、近接モードに入る。この状態の時、タルタリヤの通常攻撃と重撃は下記のように変化する:",
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 6 consecutive Hydro strikes.",
+              "description": "最大6段の水元素斬撃を発動する。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash a cross slash, dealing Hydro DMG.",
+              "description": "スタミナを消費して、前方に2回斬撃し、水ダメージを与える。",
               "descriptions": []
             },
             {
-              "name": "Riptide Slash",
-              "description": "Hitting an opponent affected by Riptide with a melee attack unleashes a Riptide Slash that deals AoE Hydro DMG. DMG dealt in this way is considered Elemental Skill DMG, and can only occur once every 1.5s. After 30s, or when the ability is unleashed again, this skill will end. Tartaglia will return to his Ranged Stance and this ability will enter CD. The longer Tartaglia stays in his Melee Stance, the longer the CD. If the return to a ranged stance occurs automatically after 30s, the CD is even longer.",
+              "name": "断流・斬",
+              "description": "近接攻撃が断流状態の敵に命中すると断流・斬を1回発動し、水範囲ダメージを与える。断流・斬が与えたダメージは元素スキルダメージと見なされ、1.5秒毎に1回のみ発動可能。スキル発動30秒後、または再びスキルを発動すると効果が解除され、遠隔モードに戻り、クールタイムに入る。近接モードの継続時間が長いほど、クールタイムは長くなる。30秒継続した後に自動的に遠隔モードに戻った場合、スキルのクールタイムは更に長くなる。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Havor: Obliteration",
-          "description": "Performs different attacks based on what stance Tartaglia is in when casting.",
+          "title": "極悪技・尽滅閃",
+          "description": "タルタリヤの戦闘モードによって、異なる攻撃を発動する。",
           "abilities": [
             {
-              "name": "Ranged Stance: Flash of Havoc",
-              "description": "Swiftly fires a Hydro-imbued magic arrow, dealing AoE Hydro DMG and applying the Riptide status. Returns a portion of its Energy Cost after use.",
+              "name": "遠隔モード・魔弾一閃",
+              "description": "前方に素早く水元素を込めた魔矢を放ち、水範囲ダメージを与え、敵に断流効果を付与する。発動後、元素エネルギーが一部返還される。",
               "descriptions": []
             },
             {
-              "name": "Melee Stance: Light Obliteration",
-              "description": "Performs a slash with a large AoE, dealing massive Hydro DMG to all surrounding opponents, which triggers Riptide Blast.",
+              "name": "近接モード・尽滅の水光",
+              "description": "広範囲の斬撃を1回仕掛け、周囲全ての敵に大量の水ダメージを与え、断流・爆を発動する。",
               "descriptions": []
             },
             {
-              "name": "Riptide Blast",
-              "description": "When the obliterating waters hit an opponent affected by Riptide, it clears their Riptide status and triggers a Hydro Explosion that deals AoE Hydro DMG. DMG dealt in this way is considered Elemental Burst DMG.",
+              "name": "断流・爆",
+              "description": "尽滅の水光が断流状態の敵に命中した場合、断流効果が消耗され、スチームバーストを発生させ、水範囲ダメージを与える。断流・爆が与えたダメージは元素爆発ダメージと見なされる。",
               "descriptions": []
             }
           ]
@@ -2951,63 +2951,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Master of Weaponry",
-          "description": "Increases your own party member’s Normal Attack Level by 1.",
+          "title": "武芸マスター",
+          "description": "チーム内の自身のキャラクター全員の通常攻撃Lv.+1。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Never Ending",
-          "description": "Extends Riptide duration by 8s.",
+          "title": "無尽蔵",
+          "description": "断流効果の継続時間が8秒延長する。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Sword of Torrents",
-          "description": "When Tartaglia is in Foul Legacy: Raging Tide’s Melee Stance, or if his Normal and Charged Attacks do CRIT DMG, they will apply the Riptide status effect on the hit enemy.",
+          "title": "水形剣",
+          "description": "魔王の武装・荒波の近接モード時、通常攻撃と重撃が会心を発生すると、命中した敵に断流効果を付与する。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Foul Legacy: Tide Withholder",
-          "description": "Decreases the CD of Foul Legacy: Raging Tide by 20%.",
+          "title": "魔王の武装・押波",
+          "description": "魔王の武装・荒波のクールタイムが20%減少する。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Foul Legacy: Understream",
-          "description": "When opponents affected by Riptide are defeated, Tartaglia regenerates 4 Elemental Energy.",
+          "title": "魔王の武装・暗流",
+          "description": "断流効果の影響を受けた敵が倒されると、タルタリヤの元素エネルギーが4回復する。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Abyssal Mayhem: Vortex of Turmoil",
-          "description": "Increases the Level of Foul Legacy: Raging Tide by 3. Maximum upgrade level is 15.",
+          "title": "淵の災い・紛争の源",
+          "description": "魔王の武装・荒波のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Abyssal Mayhem: Hydrospout",
-          "description": "If Tartaglia is in Foul Legacy: Raging Tide’s Melee Stance, triggers Riptide Slash against opponents on the field affected by Riptide every 4s, otherwise, triggers Riptide Flash. Riptide Slashes and Riptide Flashes triggered by this Constellation effect are not subject to the time intervals that would typically apply to these two Riptide effects, nor do they have any effect on those time intervals.",
+          "title": "淵の災い・復水放流",
+          "description": "4秒毎に、タルタリヤによって発動された断流効果がフィールドに存在する時、タルタリヤが魔王の武装・荒波の近接モードの場合、断流・斬を発動する。それ以外の場合、断流・閃を発動する。この効果によって発動された断流・斬と断流・閃は、この二つのスキル本来の発動時間制限を受けない。また、本来のスキルへの発動時間制限にも影響を与えない。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Havoc: Formless Blade",
-          "description": "Increase the Level of Havoc: Obliteration by 3. Maximum upgrade level is 15.",
+          "title": "極悪技・雨斬り",
+          "description": "極悪技・尽滅閃のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Havoc: Annihilation",
-          "description": "When Havoc: Obliteration is cast in Melee Stance, the CD of Foul Legacy: Raging Tide is reset. This effect will only take place once Tartaglia returns to his Ranged Stance.",
+          "title": "極悪技・天使の滅び",
+          "description": "極悪技・尽滅閃発動時、魔王の武装・荒波のクールタイムをリセットする。この効果は遠隔モードに戻った後に発動する。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3015,56 +3015,56 @@
     },
     {
       "key": "Traveler (Anemo)",
-      "name": "Traveler (Anemo)",
-      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
+      "name": "主人公 (風)",
+      "description": "世界の外から漂流してきた旅人。肉親が見知らぬ神に連れ去られたため、七神を探す旅に出た。",
       "skills": [
         {
           "key": "s1",
-          "title": "Foreign Ironwind",
+          "title": "異邦の鉄風",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive strikes.",
+              "description": "剣による最大5段の連続攻撃",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "一定のスタミナを消費し、前方に剣2本を出し攻撃する。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Palm Vortex",
-          "description": "Grasping the wind’s might, you form a vortex of vacuum in your palm, causing continuous Anemo DMG to enemies in front of you. The vacuum vortex explodes when the skill duration ends, causing a greater amount of Anemo DMG over a larger area.",
+          "title": "旋風の剣",
+          "description": "風の力を握りしめ、手のひらに真空の渦を集中させ、前方の敵に風ダメージを与え続ける。スキル終了時、真空の風は爆裂し、より広範囲で強力な風ダメージを与える。",
           "abilities": [
             {
               "key": "a1",
-              "description": "DMG and AoE will gradually increase",
+              "description": "ダメージと影響範囲が徐々に上がる。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "If the vortex comes in contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+              "description": "真空の渦がスキル継続中に水元素/炎元素/氷元素/雷元素に接触すると、接触した元素属性を獲得し、該当元素の付加ダメージを追加で与える。元素スキルはスキル継続中に1回のみ発生する。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Gust Surge",
-          "description": "Guiding the path of the wind currents, you summon a forward-moving tornado that pulls objects and opponents towards itself, dealing continuous Anemo DMG.",
+          "title": "激盪する風の息",
+          "description": "風の進む先を導き、前方に継続前進する竜巻を召喚し、途中の物体と敵を巻き込み、風ダメージを与え続ける。",
           "abilities": [
             {
               "key": "a1",
-              "description": "If the tornado comes in contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+              "description": "竜巻がスキル継続中に水元素/炎元素/氷元素/雷元素に接触すると、接触した元素属性を獲得し、該当元素の付加ダメージを追加で与える。元素スキルはスキル継続中に1回のみ発生する。",
               "descriptions": []
             }
           ]
@@ -3073,57 +3073,57 @@
       "passives": [
         {
           "key": "p2",
-          "title": "Slitting Wind",
-          "description": "The last hit of a Normal Attack combo unleashes a wind blade, dealing 60% of ATK as Anemo DMG to all opponents in its path.",
+          "title": "空を裂く風",
+          "description": "通常攻撃の最後の一撃が風の刃を放ち、風の刃は途中の敵に60%攻撃力の風ダメージを与える。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Second Wind",
-          "description": "Palm Vortex kills renegerate 2% HP for 5s. This effect can only occur once every 5s.",
+          "title": "蘇生の風",
+          "description": "旋風の剣で敵を倒した後、1秒毎にHPを2%回復する、継続時間5秒。5秒に1回のみ発動可能。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Raging Vortex",
-          "description": "Palm Vortex pulls in enemies within a 5m radius.",
+          "title": "回転する怒風",
+          "description": "旋風の剣は周囲5メートル以内の敵をゆっくりと自分の前に吸い寄せることができる。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Uprising Whirlwind",
-          "description": "Increases Energy Recharge by 16%.",
+          "title": "革新の旋風",
+          "description": "元素エネルギー回復効率+16%。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Sweeping Gust",
-          "description": "Increases the Level of Gust Surge by 3. Maximum upgrade level is 15.",
+          "title": "天地の剛風",
+          "description": "激風の息のスキルLv.+3、最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Cherishing Breezes",
-          "description": "Reduces DMG taken while casting Palm Vortex by 10%.",
+          "title": "恩眷の和風",
+          "description": "旋風の剣継続中、自身の受けるダメージ-10%。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Vortex Stellaris",
-          "description": "Increase the Level of Palm Vortex by 3. Maximum upgrade level is 15.",
+          "title": "群星の渦風",
+          "description": "旋風の剣のスキルLv.+3、最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Intertwined Winds",
-          "description": "Targets who take DMG from Gust Surge have their Anemo RES decreased by 20%. If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%.",
+          "title": "もつれる信風",
+          "description": "激風の息によるダメージを受けた目標の風耐性−20%。元素変化があった場合、該当の元素耐性-20%。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3131,104 +3131,104 @@
     },
     {
       "key": "Traveler (Geo)",
-      "name": "Traveler (Geo)",
-      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
+      "name": "主人公 (岩)",
+      "description": "世界の外から漂流してきた旅人。肉親が見知らぬ神に連れ去られたため、七神を探す旅に出た。",
       "skills": [
         {
           "key": "s1",
-          "title": "Foreign Rockblade",
+          "title": "異邦の岩峰",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive strikes.",
+              "description": "剣による最大5段の連続攻撃。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "一定のスタミナを消費し、前方に剣2本を出し攻撃する。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Starfell Sword",
-          "description": "You disgorge a meteorite from the depths of the earth, dealing AoE Geo DMG. The meteorite is considered a Geo Construct, and can be climbed or used to block attacks.",
+          "title": "星落としの剣",
+          "description": "大地の奥から荒星を上げ、爆発を起こし、岩範囲ダメージを与える。荒星は岩元素創造物と見なされ、攻撃を防ぐことができ、登ることもできる。",
           "abilities": [
             {
               "key": "a1",
-              "description": "The skill’s positioning may be adjusted.",
+              "description": "スキル発動位置を調整できる。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Wake of Earth",
-          "description": "Energizing the Geo elements deep underground, you set off expanding shockwaves. Launches surrounding enemies back and deals AoE Geo DMG. A stone wall is erected at the edges of the shockwave. The stone wall is considered a Geo Construct, and may be used to block attacks.",
+          "title": "岩潮幾重",
+          "description": "大地の奥にある岩元素を活性化させ、拡散する振動波を引き起こす。周囲の敵をノックバックし、岩範囲ダメージを与える。振動波の外側に突出した環状の岩の山を生成する。岩の山は岩元素創造物と見なされ、攻撃を防ぐことができる。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p2",
-          "title": "Shattered Darkrock",
-          "description": "Reduces Starfell Sword’s CD by 2s.",
+          "title": "敗れた断崖",
+          "description": "星落としの剣のクールタイム-2秒。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Frenzied Rockslide",
-          "description": "The final hit of a Normal Attack combo triggers a collapse, dealing 60% of ATK as AoE Geo DMG.",
+          "title": "狂乱の岩崩れ",
+          "description": "通常攻撃の最後1撃は岩崩れを発生され、範囲内の敵に攻撃力の60％の岩ダメージを与える。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Invincible Stonewall",
-          "description": "Allies within the radius of Wake of Earth have their CRIT Rate increased by 10% and have increased resistance against interruption.",
+          "title": "巍然たる青岩",
+          "description": "味方が岩潮幾重岩の山に包囲される時、会心率+10%、中断耐性がアップする。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Rockcore Meltdown",
-          "description": "When the meteorite created by Starfell Sword is destroyed, it will also explode, dealing additional AoE Geo DMG equal to the amount of damage dealt by Starfell Sword.",
+          "title": "不穏な溶岩",
+          "description": "星落としの剣の荒星が破壊される時爆破が再び発生し、周囲の敵に星落としの剣のダメージ相当の岩範囲ダメージを与える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Will of the Rock",
-          "description": "Increases the Level of Wake of Earth by 3. Maximum upgrade level is 15.",
+          "title": "八方の岩",
+          "description": "岩潮幾重のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Reaction Force",
-          "description": "The shockwave triggered by Wake of Earth regenerates 5 Energy for every enemy hit. A maximum of 25 Energy can be recovered in this manner at any one time.",
+          "title": "険しい重岩",
+          "description": "岩潮幾重が引き起こす振動波が敵に命中する度、元素エネルギーが5回復する。この方法で1回で最大25まで回復可能。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Meteorite Impact",
-          "description": "Increase the Level of Starfell Sword by 3. Maximum upgrade level is 15.",
+          "title": "天墜の岩",
+          "description": "星落としの剣のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Everlasting Boulder",
-          "description": "The barrier created by Wake of Earth lasts 5s longer. The meteorite created by Starfell Sword lasts 10s longer.",
+          "title": "永世の磐岩",
+          "description": "岩潮幾重の岩の山の継続時間+5秒、星落としの剣荒星の継続時間+10",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3236,56 +3236,56 @@
     },
     {
       "key": "Venti",
-      "name": "Venti",
-      "description": "One of the many bards of Mondstadt, who freely wanders the city’s streets and alleys.",
+      "name": "ウェンティ",
+      "description": "モンドの街にいる数多くの自由な吟遊詩人の一人。",
       "skills": [
         {
           "key": "s1",
-          "title": "Divine Marksmanship",
+          "title": "神代の射術",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 6 consecutive shots with a bow.",
+              "description": "最高6段の連続射撃。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, favorable winds will accumulate on the arrowhead. A fully charged arrow will deal Anemo DMG.",
+              "description": "ダメージがより高く、より正確な狙い撃ちを発動する。照準時、天地の風を矢先に凝集させ、風の力に満ちた矢は的に風ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "空中から矢の雨を放ち、凄まじいスピードで落下し地面に衝撃を与え、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Skyward Sonnet",
-          "description": "O wind upon which all hymns and songs fly, bear these earth-walkers up into the sky!",
+          "title": "高天の歌",
+          "description": "詩を奏でる風を呼び、塵泥の中を歩くものを高空まで届ける。",
           "abilities": [
             {
               "key": "a1",
-              "description": "Summons a Wind Domain at the enemy’s location, dealing AoE Anemo DMG and launching enemies into the air.",
+              "description": "目標の足もとに風域を召喚し、風元素範囲ダメージを与え、敵をノックバックする。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Summons an even larger Wind Domain with Venti as the epicenter, dealing AoE Anemo DMG and launching affected enemies into the air. After unleashing the Hold version of this ability, Venti rides the wind into the air. Enemies hit by Skyward Sonnet will fall to the ground slowly.",
+              "description": "自身を中心に更に大きい風域を召喚し、風元素範囲ダメージを与え、敵をノックバックする。長押しで発動した後、ウェンティは風に乗り空中へ飛ぶ。高天の歌にノックバックされた敵はゆっくりと落下する。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Wind’s Grand Ode",
-          "description": "Fires off an arrow made of countless coalesced winds, creating a huge Stormeye that sucks in objects and enemies along its path, dealing continuous Anemo DMG.",
+          "title": "風神の詩",
+          "description": "千の風を集めた矢を放ち、前方に巨大の暴風の目を作る。爆風は敵を巻き込み、風元素ダメージを持続的に与える。",
           "abilities": [
             {
               "key": "a1",
-              "description": "If the Stormeye comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+              "description": "暴風の目がスキル継続中に水元素/炎元素/氷元素/雷元素に接触すると、接触した元素の属性を獲得し、該当元素の付加ダメージを追加で与える元素変化はスキル継続中に1回のみ発生する。",
               "descriptions": []
             }
           ]
@@ -3294,63 +3294,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Windrider",
-          "description": "Decreases all party member’s gliding Stamina Consumption by 20%.",
+          "title": "恒風と共に",
+          "description": "チーム内の自身のキャラクター全員が滑翔に消費するスタミナ-20%。同じ効果を持つ固有天賦との重ね掛け不能。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Embrace of Winds",
-          "description": "Holding Skyward Sonnet creates an upcurrent that lasts for 20s.",
+          "title": "余風の抱擁",
+          "description": "高天の歌を長押しした後、上昇気流が発生する、継続時間20秒。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Stormeye",
-          "description": "Regenerates 15 Energy for Venti after the effects of Wind’s Grand Ode end. If an Elemental Absorption occurred, this also restores 15 Energy to all characters of that corresponding element.",
+          "title": "暴風の目",
+          "description": "風神の詩効果終了後、ウェンティの元素エネルギーを15回復する。元素変化があった場合、該当元素のチームメンバーの元素エネルギーを15回復する。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Splitting Gale",
-          "description": "Fires 2 additional arrows per Aimed Shot, each dealing 33% of the original arrow’s DMG.",
+          "title": "矢先の蒼風",
+          "description": "狙い撃ちする時、分裂した矢を追加で2本放つ。それぞれ元の矢の33％のダメージを与える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Breeze of Reminiscence",
-          "description": "Skyward Sonnet decreases enemy Anemo RES by 12% for 10s. Enemies launched by Skyward Sonnet suffer an additional 12% Anemo RES and Physical RES decrease while airborne.",
+          "title": "恋い焦がれるそよ風",
+          "description": "高天の歌発動後、敵の風耐性と物理耐性-12％、継続時間10秒。高天の歌によってノックバックされた敵は着地する前に、更に風耐性と物理耐性-12％。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Ode to Thousand Winds",
-          "description": "Increases the Level of Wind’s Grand Ode by 3. Maximum upgrade level is 15.",
+          "title": "千の風の詩",
+          "description": "風神の詩のスキルLv.3、最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Hurricane of Freedom",
-          "description": "When Venti picks up an Elemental Orb or Particle, he receives a 25% Anemo DMG Bonus for 10s.",
+          "title": "自由の凛風",
+          "description": "元素オーブまたは原素粒子を獲得した後、風ダメージ+25％、継続時間10秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Concierto dal Cielo",
-          "description": "Increase the Level of Skyward Sonnet by 3. Maximum upgrade level is 15.",
+          "title": "高天の協奏",
+          "description": "高天の歌のスキルLv.3、最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Storm of Defiance",
-          "description": "Targets who take DMG from Wind’s Grand Ode have their Anemo RES decreased by 20%. If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%.",
+          "title": "抗争の暴風",
+          "description": "風神の詩の影響を受ける敵の風耐性-20％。元素変化があった場合、変化した元素の耐性-20％。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3358,104 +3358,104 @@
     },
     {
       "key": "Xiangling",
-      "name": "Xiangling",
-      "description": "A renowned chef from Liyue. She’s extremely passionate about cooking and excels at making her signature hot and spicy dishes.",
+      "name": "香菱",
+      "description": "璃月出身で少し有名な料理人。料理に対して情熱があり、激辛料理が大の得意。",
       "skills": [
         {
           "key": "s1",
-          "title": "Dough-Fu",
+          "title": "料理技法",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive spear strikes.",
+              "description": "槍による最大5段の連続攻撃",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.",
+              "description": "一定のスタミナを消費し、前方に突進し、経路上の敵にダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Guoba Attack",
-          "description": "Summons Guoba the Panda. Guoba continuously breathes fire, dealing AoE Pyro DMG.",
+          "title": "グゥオパァー出陣",
+          "description": "火を噴くパンダ「グゥオパァー」を召喚し、継続期間中は敵に火を噴き続け、炎範囲ダメージを与える。",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Pyronado",
-          "description": "Displaying her mastery over both fire and polearms, Xiangling sends a Pyronado whirling around her. The Pyronado will move with your character for so long as the ability persists, dealing Pyro DMG to all enemies in its path.",
+          "title": "旋火輪",
+          "description": "炎と槍をコントロールするコツで自分を中心に素早く回転する旋火輪を投げ出す。旋火輪はキャラと共に移動し、経路上の敵に炎ダメージを与える。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Chef de Cuisine",
-          "description": "When Xiangling cooks an ATK-boosting dish perfectly, she has a 12% chance to receive double the product.",
+          "title": "万民堂のシェフ",
+          "description": "攻撃類料理を完璧調理した時、12%の確率で料理を2倍獲得する。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Crossfire",
-          "description": "Increases the flame range of Guoba by 20%.",
+          "title": "交差する炎",
+          "description": "グゥオパァーの噴火距離+20%",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Beware, It’s Super Hot!",
-          "description": "When Guoba Attack’s effect ends, Guoba leaves a chili pepper on the spot where it disappeared. Picking up a chili pepper increases ATK by 10% for 10s.",
+          "title": "激辛唐辛子",
+          "description": "グゥオパァー出撃効果終了時、グゥオパァーは消える位置に唐辛子を残す。唐辛子を拾うと、攻撃力+10%、継続時間10秒。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Crispy Outside, Tender Inside",
-          "description": "Enemies hit by Guoba’s attacks have their Pyro RES reduced by 15% for 6s.",
+          "title": "外カリ中フワ",
+          "description": "グゥオパァーに攻撃された敵の炎耐性-15％。継続時間6秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Oil Meets Fire",
-          "description": "The last attack in a Normal Attack sequence applies the Implode status onto the enemy for 2s. An explosion will occur once this duration ends, dealing 75% of Xiangling’s ATK as AoE Pyro DMG.",
+          "title": "強火と油",
+          "description": "通常攻撃の最後一撃で敵に2秒継続する爆縮効果を与える。効果終了時に爆発し、敵に75％の炎範囲ダメージを与える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Deepfry",
-          "description": "Increases the Level of Pyronado by 3. Maximum upgrade level is 15.",
+          "title": "武火調理",
+          "description": "旋火輪のスキルLv.3、最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Slowbake",
-          "description": "Pyronado’s duration is increased by 40%.",
+          "title": "弱火でじっくり",
+          "description": "旋火輪の継続時間+40％。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Guoba Mad",
-          "description": "Increase the Level of Guoba Attack by 3. Maximum upgrade level is 15.",
+          "title": "凶猛なグゥオパー",
+          "description": "グゥオパァー出陣のスキルLv.3、最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Condensed Pyronado",
-          "description": "For the duration of Pyronado, all party members receive a 15% Pyro DMG Bonus.",
+          "title": "竜巻旋火輪",
+          "description": "旋火輪継続中、チーム全員の炎ダメージ+15％。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3463,48 +3463,48 @@
     },
     {
       "key": "Xiao",
-      "name": "Xiao",
-      "description": "A yaksha adeptus who defends Liyue. Also heralded as the \"Conqueror of Demons\" or \"Vigilant Yaksha.\"",
+      "name": "魈",
+      "description": "璃月を守る仙人・「夜叉」。またの名を「降魔大聖」、「護法夜叉大将」。",
       "skills": [
         {
           "key": "s1",
-          "title": "Whirlwind Thrust",
+          "title": "微塵突進",
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 6 rapid strikes.",
+              "description": "槍による最大6段の連続攻撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to perform an upward thrust.",
+              "description": "一定のスタミナを消費し、斬り上げ攻撃を発動する。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.\nXiao does not take DMG from performing Plunging Attacks.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。魈が落下攻撃を行う時、落下ダメージを受けない。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Lemniscatic Wind Cycling",
-          "description": "Xiao lunges forward, dealing Anemo DMG to opponents in his path.\nCan be used in mid-air.\nStarts with 2 charges.",
+          "title": "風輪両立",
+          "description": "疾速突進し、経路上の敵に風元素ダメージを与える。空中での発動が可能。初期使用可能回数2回。",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Bane of All Evil",
-          "description": "Xiao dons the Yaksha Mask that set gods and demons trembling millennia ago.",
+          "title": "靖妖儺舞",
+          "description": "数千年前に妖魔たちに恐れられた夜叉の儺面を見せる。",
           "abilities": [
             {
-              "description": "Yaksha's Mask",
+              "description": "夜叉の儺面",
               "descriptions": [
-                "Greatly increases Xiao's jumping ability.",
-                "Increases his attack AoE and attack DMG.",
-                "Converts attack DMG into Anemo DMG, which cannot be overridden by any other elemental infusion. In this state, Xiao will continuously lose HP.",
-                "The effects of this skill end when Xiao leaves the field."
+                "魈のジャンプ力が大幅にアップする。",
+                "攻撃範囲が広がり、与えるダメージが上昇する。",
+                "攻撃ダメージは風元素ダメージとなり、元素付与によって他の元素に変化することはない。この状態の魈は、HPが持続的に減少する。",
+                "この効果は魈が退場する時に解除される。"
               ]
             }
           ]
@@ -3513,63 +3513,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Transcension: Gravity Defier",
-          "description": "Decreases climbing Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+          "title": "神通・空中自在法",
+          "description": "チーム内の自身のキャラクター全員が登りに消費するスタミナ-25%。/n同じ効果を持つ固有天賦との重ね掛け不可。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Conqueror of Evil: Tamer of Demons",
-          "description": "While under the effects of Bane of All Evil, all DMG dealt by Xiao increases by 5%. DMG increases by a further 5% for every 3s the ability persists.\nThe maximum DMG Bonus is 25%.",
+          "title": "降魔・平妖大聖",
+          "description": "靖妖儺舞状態の時、魈の与える全ダメージ+5%。また、スキル継続中、3秒毎に与える全ダメージが更に+5%。/n最大25%まで。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Dissolution Eon: Heaven Fall",
-          "description": "Using Lemniscatic Wind Cycling increases the DMG of subsequent uses of Lemniscatic Wind Cycling by 15%.\n This effect lasts for 7s, and has a maximum of 3 stacks. Gaining a new stack refreshes the effect's duration.",
+          "title": "壊却・国土砕き",
+          "description": "風輪両立発動後の7秒間、風輪両立によるダメージ+15%。/n継続時間7秒、最大3重まで、重複で発動すると継続時間がリセットされる。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Dissolution Eon: Destroyer of Worlds",
-          "description": "Increases Lemniscatic Wind Cycling’s charges by 1.",
+          "title": "壊却・三界破壊",
+          "description": "風輪両立の使用可能回数+1。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Annihilation Eon: Blossom of Kaleidos",
-          "description": "When in the party and not on the field, Xiao's Energy Recharge is increased by 25%.",
+          "title": "空却・虚空開敷の変",
+          "description": "フィールド上にいない時、魈自身の元素チャージ効率+25%。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Conqueror of Evil: Wrath Deity",
-          "description": "Increases the Level of Lemniscatic Wind Cycling by 3. Maximum upgrade level is 15.",
+          "title": "降魔・憤怒の相",
+          "description": "風輪両立のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Transcension: Extinction of Suffering",
-          "description": "When Xiao's HP falls below 50%, he gains a 100% DEF Bonus.",
+          "title": "神通・諸苦滅尽",
+          "description": "魈のHPが50%未満の時、防御力+100%。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Evolution Eon: Origin of Ignorance",
-          "description": "Increase the Level of Bane of All Evil by 3. Maximum upgrade level is 15.",
+          "title": "成却・無明増長",
+          "description": "靖妖儺舞のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Conqueror of Evil: Guardian Yaksha",
-          "description": "While under the effects of Bane of All Evil, hitting at least 2 opponents with Xiao's Plunging Attack will immediately grant him 1 charge of Lemniscatic Wind Cycling, and for the next 1s, he may use Lemniscatic Wind Cycling while ignoring its CD.",
+          "title": "降魔・護法夜叉",
+          "description": "靖妖儺舞状態の時、落下攻撃が2体以上の敵に命中すると、風輪両立の使用回数+1。その後の1秒間以内は、クールタイム関係なく風輪両立を発動できる。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3577,57 +3577,57 @@
     },
     {
       "key": "Xingqiu",
-      "name": "Xingqiu",
-      "description": "A young man carrying a longsword who is frequently seen at book booths. He has a chivalrous heart and yearns for justice and fairness for all.",
+      "name": "行秋",
+      "description": "よく本売り場で見かける少年。手には剣を、胸の中には義侠心を。",
       "skills": [
         {
           "key": "s1",
-          "title": "Guhua Style",
+          "title": "古華剣法",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive spear strikes.",
+              "description": "剣による最大5段の連続攻撃",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "一定のスタミナを消費し、前方に剣2本を出し攻撃する。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-aur to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Guhua Sword - Fatal Rainscreen",
-          "description": "Xingqiu performs twin strikes with his sword, dealing Hydro DMG. At the same time, this ability creates the maximum number of Rain Swords, which will orbit the character. 20% of Xingqiu’s Hydro DMG Bonus will be converted to additional DMG Reduction for the Rain Swords. The maximum amount of additional DMG Reduction that can be gained this way is 24%. The initial maximum number of Rain Swords is 3. Using this ability applies the Wet status onto the character.",
+          "title": "古華剣・画雨籠山",
+          "description": "行秋の水元素ダメージアップの20%分は「雨すだれの剣」のダメージ軽減効果に転換される。最大24%のダメージ軽減効果を得られる。「雨すだれの剣」の初期最大数は3本。発動した瞬間、キャラクターに湿潤状態を付与する。",
           "abilities": [
             {
-              "name": "",
-              "description": "The Rain Swords have the following properties:",
+              "name": "雨すだれの剣",
+              "description": "「雨すだれの剣」は以下の特性を持つ:",
               "descriptions": [
-                "When a character takes DMG, the Rain Sword will shatter, reducing the amount of DMG taken.",
-                "Increases the character’s resistance to interruption."
+                "・キャラクターが攻撃を受ける時、「雨すだれの剣」は破壊される代わりに、キャラクターが受けるダメージを減少させる。",
+                "・キャラクターの中断耐性をアップする。"
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Guhua Sword - Raincutter",
-          "description": "Initiate Rainbow Bladework and fight using an illusory sword rain, while creating the maximum number of Rain Swords.",
+          "title": "古華剣・裁雨留虹",
+          "description": "虹剣勢を展開し、幻影の剣雨を使い、キャラに最大数の雨すだれの剣を付与する。",
           "abilities": [
             {
-              "name": "Rainbow Bladework",
-              "description": "These effects carry over to other characters.",
+              "name": "虹剣勢",
+              "description": "虹剣勢は以下の特性を持つ。",
               "descriptions": [
-                "Normal Attacks will trigger consecutive sword rain attacks, dealing Hydro DMG.",
-                "Rain Swords will remain at the maximum number throughout the ability’s duration."
+                "出場している自身のキャラクターの通常攻撃時に剣雨攻撃を発動し、水ダメージを与える。",
+                "雨すだれの剣の数は終始最大数をキープする。"
               ]
             }
           ]
@@ -3636,63 +3636,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Flash of Genius",
-          "description": "When Xingqiu crafts Character Talent Materials, he has a 25% chance to refund a portion of the crafting materials used.",
+          "title": "靈光突如",
+          "description": "キャラクター天賦素材を合成する時、25％の確率で一部の材料が返還される。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Hydropathic",
-          "description": "When a Rain Sword is shattered or when its duration expires, it regenerates the current character’s HP based on 6% of Xingqiu’s Max HP.",
+          "title": "水生みの要訣",
+          "description": "雨すだれの剣が破壊、または継続時間終了時に、キャラクターのHPを行秋のHP上限の6％分回復する。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Blades Amidst Raindrops",
-          "description": "Xingqiu gains a 20% Hydro DMG Bonus.",
+          "title": "虚実の筆",
+          "description": "行秋の水元素ダメージ+20％。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "The Scent Remained",
-          "description": "Increases the maximum number of Rain Swords by 1.",
+          "title": "すだれの残香",
+          "description": "雨すだれの剣の最大本数+1。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Rainbow Upon the Azure Sky",
-          "description": "Extends the duration of Guhua Sword - Raincutter by 3s. Decreases the Hydro RES of enemies hit by sword rain attacks by 15% for 4s.",
+          "title": "青空の虹",
+          "description": "古華剣・裁雨留虹の継続時間+3秒。その他、剣雨攻撃を受けた敵の水耐性-15％、継続時間4秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Weaver of Verses",
-          "description": "Increases the Level of Guhua Sword - Raincutter by 3. Maximum upgrade level is 15.",
+          "title": "詩の錦",
+          "description": "古華剣・裁雨留虹のスキルLv.3,最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Evilsoother",
-          "description": "Throughout the duration of Guhua Sword: Raincutter, the DMG dealt by Guhua Sword: Fatal Rainscreen is increased by 50%.",
+          "title": "孤舟斬蛟",
+          "description": "古華剣・裁雨留虹継続中、古華剣・画雨籠山の与えるダメージ+50％。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Embrace of Rain",
-          "description": "Increase the Level of Guhua Sword - Fatal Rainscreen by 3. Maximum upgrade level is 15.",
+          "title": "雨深閉門",
+          "description": "古華剣・画雨籠山のスキルLv.3,最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Hence, Call Them My Own Verses",
-          "description": "Activating 2 of Guhua Sword - Raincutter’s sword rain attacks greatly increases the DMG of the third. Xingqiu regenerates 3 Energy when sword rain attacks hit enemies.",
+          "title": "万文ここにあり",
+          "description": "古華剣・裁雨留虹が剣雨攻撃を2回発動する度に、次の剣雨攻撃が大幅に強化され、敵に命中する時行秋の元素エネルギーを3回復する。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3700,125 +3700,125 @@
     },
     {
       "key": "Xinyan",
-      "name": "Xinyan",
-      "description": "Liyue’s sole rock ’n’ roll musician. She rebels against ossified prejudices using her music and passionate singing.",
+      "name": "辛炎",
+      "description": "璃月港唯一のロックミュージシャン。音楽と情熱で「先入観」への反抗を歌う。",
       "skills": [
         {
           "key": "s1",
-          "title": "Dance on Fire",
+          "title": "炎舞",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 consecutive strikes.",
+              "description": "最高4段の連続攻撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous spinning attacks against all nearby enemies. At the end of the sequence, perform a more powerful slash.",
+              "description": "継続的にスタミナを消費し、大剣を振り回し、周囲の敵を攻撃する。振り回しが終了すると、力を込めた斬撃を1回仕掛ける。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージ与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Sweeping Fervor",
-          "description": "Xinyan brandishes her instrument, dealing Pyro DMG on nearby enemies, forming a shield made out of her audience’s passion.",
+          "title": "情熱の薙ぎ払い",
+          "description": "辛炎が楽器を振り回し、周囲の敵に炎ダメージを与え、さらに「観客」の「情熱」でシールドを生成する。",
           "abilities": [
             {
               "name": "",
-              "description": "The shield’s DMG Absorption scales based on Xinyan’s DEF and on the number of enemies hit:",
+              "description": "シールドのダメージ吸収量は辛炎の防御力による、さらにシールドのレベルは命中した敵の数により変わる。",
               "descriptions": [
-                "Hitting 0-1 enemies grants Shield Level 1: Ad Lib.",
-                "Hitting 2 enemies grants Shield Level 2: Lead-In.",
-                "Hitting 3 or more enemies grants Shield Level 3: Rave, which will also deal intermittent Pyro DMG to nearby enemies."
+                "【0or1体に命中】Lv.1シールド・イントロのリズム。",
+                "【2体に命中】Lv.2シールド・指揮のリズム。",
+                "【3体以上に命中】Lv.3シールド・舞のリズムを生成する。"
               ]
             },
             {
               "name": "",
-              "description": "The shield has the following special properties:",
+              "description": "シールドは以下の特性を持つ:",
               "descriptions": [
-                "When unleashed, it infuses Xinyan with Pyro.",
-                "It has 250% DMG Absorption effectiveness against Pyro DMG."
+                "発動する時、辛炎に炎元素付着を与える。",
+                "炎ダメージに対して、250%の吸収効果がある。"
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Riff Revolution",
-          "description": "Strumming rapidly, Xinyan launches nearby enemies and deals Physical DMG to them, hyping up the crowd. The sheer intensity of the atmosphere will cause explosions that deal Pyro DMG to nearby enemies.",
+          "title": "反逆の弾き",
+          "description": "弦を素早く弾き、音波を放出し敵を敵を撃退する。周囲の敵に物理ダメージを与え、舞台の雰囲気を盛り上げる。雰囲気が熱すぎて烈焔を引き起こし、周囲の敵に継続して焔ダメージを与える。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "A Rad Recipe",
-          "description": "When a Perfect Cooking is achieved on an DEF-boosting dish, Xinyan has a 12% chance to obtain double the product.",
+          "title": "タフレシピ",
+          "description": "防御系料理を完璧調理した時、12%の確率で料理を2倍獲得する。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "\"The Show Goes On, Even Without an Audience...\"",
-          "description": "Decreases the number of enemies Sweeping Fervor must hit to trigger each level of shielding.",
+          "title": "「観客いなくても演奏するのだ…」",
+          "description": "情熱の薙ぎ払いのシールド発動に必要な命中数を減少する。",
           "descriptions": [
-            "Shield Level 2: Lead-In requirement reduced to 1 enemy hit.",
-            "Shield Level 3: Rave requirement reduced to 2 enemies hit or more."
+            "・Lv2シールド；指揮のリズム:1名の敵に命中する。",
+            "・Lv3シールド；舞のリズム:2名の敵に命中する。"
           ]
         },
         {
           "key": "p3",
-          "title": "\"...Now That’s Rock ’N’ Roll!\"",
-          "description": "Characters shielded by Sweeping Fervor deal 15% increased Physical DMG.",
+          "title": "「…これこそがロックだ！」",
+          "description": "情熱の薙ぎ払いのシールドが存在する時、キャラクターが与える物理ダメージが15%上昇する。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Fatal Acceleration",
-          "description": "Upon scoring a CRIT hit, increases ATK SPD of Xinyan’s Normal and Charged Attacks by 12% for 5s. Can only occur once every 5s.",
+          "title": "絶命の加速",
+          "description": "会心攻撃が発生した5秒間、通常攻撃と重撃の攻撃速度が12%上昇する。5秒毎に一回のみ発動可能。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Impromptu Opening",
-          "description": "Riff Revolution Physical DMG has its Crit rate increased by 100%, and will form a shield at Shield Level 3: Rave when cast.",
+          "title": "オープニング演出",
+          "description": "反逆の弾きによる物理ダメージの会心率を100%上昇させる。さらに発動する時にLv.3シールド・舞のリズムを生成する。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Double Stop",
-          "description": "Increases the Level of Sweeping Fervor by 3. Maximum upgrade level is 15.",
+          "title": "摭分の運指",
+          "description": "情熱の薙ぎ払いのスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Wildfire Rhythm",
-          "description": "Sweeping Fervor’s swing DMG decrease opponents Physical RES by 15% for 12s.",
+          "title": "リズムの電線",
+          "description": "情熱の薙ぎ払いの振り回しダメージを受けた敵の物理耐性が15%減少する。継続時間12秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Screamin’ for an Encore",
-          "description": "Increases the Level of Riff Revolution by 3. Maximum upgrade level is 15.",
+          "title": "アンコールの叫び",
+          "description": "反逆の弾きのスキルLv.3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Rockin’ in a Flaming World",
-          "description": "Decrease the stamina consumption of Xinyan Charged Attacks by 30%. Additionally, Xinyan Charged Attack gain an ATK bonus equal to 50% of her DEF.",
+          "title": "地獄のシェーク",
+          "description": "辛炎の重撃によるスタミナ消費-30%。重撃を発動する時、辛炎の防御力50%分の攻撃力が増加する。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3826,49 +3826,49 @@
     },
     {
       "key": "Yanfei",
-      "name": "Yanfei",
-      "description": "A well-known legal adviser active in Liyue Harbor. A brilliant young lady in whose veins runs the blood of an illuminated beast.",
+      "name": "煙緋",
+      "description": "仙獣の血が流れる聡明な少女。璃月港で有名な法律家として活躍している。",
       "skills": [
         {
           "key": "s1",
-          "title": "Seal of Approval",
+          "title": "封蝋の印",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Shoots fireballs that deal up to three counts of Pyro DMG.\nWhen Yanfei's Normal Attacks hit enemies, they will grant her a single Scarlet Seal. Yanfei may possess a maximum of 3 Scarlet Seals, and each time this effect is triggered, the duration of currently possessed Scarlet Seals will refresh.\nEach Scarlet Seal will decrease Yanfei's Stamina consumption and will disappear when she leaves the field.",
+              "description": "連続で火炎弾を繰り出し、最大3段の炎元素ダメージを与える。通常攻撃が敵に命中する度、煙緋に丹火の印を1枚付与する。初期状態では丹火の印を最大3枚所持できる、効果を発動する度に丹火の印の継続時間が更新される。丹火の印1枚ごとに煙緋のスタミナ消費を減少させる。丹火の印は煙緋が退場する時に消失する。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes Stamina and all Scarlet Seals before dealing AoE Pyro DMG to opponents after a short casting time.\nThis Charged Attack's AoE and DMG will increase according to the amount of Scarlet Seals consumed.",
+              "description": "スタミナを消費し、短い詠唱の後、すべての丹火の印を消費して前方の敵に炎元素範囲ダメージを与える。消費した丹火の印の数によって、重撃の範囲とダメージが強化される。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.",
+              "description": "空中から炎元素の力を凝集しながら落下し、地面に衝撃を与える。経路上の敵を攻撃し。落下時に炎元素範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Signed Edict",
-          "description": "Summons blistering flames that deal AoE Pyro DMG.\nOpponents hit by the flames will grant Yanfei the maximum number of Scarlet Seals.",
+          "title": "丹書契約",
+          "description": "炎を召喚し、炎元素範囲ダメージを与える。敵に命中すると、煙緋に最大数の丹火の印を付与する。",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Done Deal",
-          "description": "Triggers a spray of intense flames that rush at nearby opponents, dealing AoE Pyro DMG, granting Yanfei the maximum number of Scarlet Seals, and applying Brilliance to her.",
+          "title": "契約成立",
+          "description": "炎元素範囲ダメージを与え、煙緋に最大数の丹火の印と灼灼効果を付与する。灼灼効果は一定間隔で煙緋に丹火の印を付与する効果と、重撃ダメージをアップさせる効果を付与する。灼灼効果は煙緋が退場または戦闘不能で消失する。",
           "abilities": [
             {
-              "name": "Brilliance",
-              "description": "Has the following effects:",
+              "name": "灼灼",
+              "description": "下記の効果を発動する。",
               "descriptions": [
-                "Grants Yanfei a Scarlet Seal at fixed intervals.",
-                "Increases the DMG dealt by her Charged Attacks.",
-                "The effects of Brilliance will end if Yanfei leaves the field or falls in battle."
+                "一定間隔で、煙緋に丹火の印を付与する。",
+                "重撃ダメージをアップする。",
+                "灼灼効果は煙緋が退場または戦闘不能になった時に消失する。"
               ]
             }
           ]
@@ -3877,132 +3877,132 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Encyclopedic Expertise",
-          "description": "Displays the location of nearby resources unique to Liyue on the mini-map.",
+          "title": "関連条約",
+          "description": "煙緋が重撃で丹火の印を消費した時、丹火の印1枚につき炎元素ダメージ+5%、継続時間6秒。効果持続中に再び重撃を放つと、既存の効果が先にクリアされる。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Proviso",
-          "description": "When Yanfei consumes Scarlet Seals by using a Charged Attack, each Scarlet Seal will increase Yanfei's Pyro DMG Bonus by 5%. This effects lasts for 6s. When a Charged Attack is used again during the effect's duration, it will dispel the previous effect.",
+          "title": "法獣の灼眼",
+          "description": "煙緋が自ら発動した重撃が敵に対して会心した時、追加で自身の攻撃力80%分の炎元素範囲ダメージを与える。このダメージは重撃によるダメージとみなされる。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Blazing Eye",
-          "description": "When Yanfei's Charged Attack deals a CRIT Hit to opponents, she will deal an additional instance of AoE Pyro DMG equal to 80% of her ATK. This DMG counts as Charged Attack DMG.",
+          "title": "法律百科",
+          "description": "ミニマップで周囲の璃月地域の特産の位置を表示する。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "The Law Knows No Kindness",
-          "description": "When Yanfei uses her Charged Attack, each existing Scarlet Seal additionally reduces the stamina cost of this Charged Attack by 10% and increases resistance against interruption during its release.",
+          "title": "法からは逃れられない",
+          "description": "煙緋が丹火の印を1枚所持するごとに、重撃を詠唱している間の中断耐性がアップ、さらに重撃のスタミナ消費-10%。",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Right of Final Interpretation",
-          "description": "Increases Yanfei's Charged Attack CRIT Rate by 20% against enemies below 50% HP.",
+          "title": "最終解釈権",
+          "description": "煙緋の重撃がHP50%未満の敵に対して、会心率+20%。",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Samadhi Fire-Forged",
-          "description": "Increases the Level of Signed Edict by 3.\nMaximum upgrade level is 15.",
+          "title": "真火の宝印",
+          "description": "丹書契約のスキルLv.+3。最大Lv.15まで。",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Supreme Amnesty",
-          "description": "When Done Deal is used:",
+          "title": "丹書金鉄券",
+          "description": "契約成立を発動した時、下記の効果を発動する。",
           "descriptions": [
-            "Creates a shield that absorbs up to 45% of Yanfei's Max HP for 15s",
-            "This shield absorbs Pyro DMG 250% more effectively."
+            "ダメージ吸収量がHP上限の45%に相当するシールドを生成する。持続時間15秒。",
+            "このシールドは炎元素ダメージに対して250%の吸収効果がある。"
           ]
         },
         {
           "key": "c5",
-          "title": "Abiding Affidavit",
-          "description": "Increases the Level of Done Deal by 3.\nMaximum upgrade level is 15.",
+          "title": "遵法誓約書",
+          "description": "契約成立のスキルLv.+3。最大Lv.15まで。",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Extra Clause",
-          "description": "Increases the maximum number of Scarlet Seals by 1.",
+          "title": "追加条項だよ",
+          "description": "煙緋が所持できる丹火の印の最大枚数+1。",
           "descriptions": []
         }
       ]
     },
     {
       "key": "Zhongli",
-      "name": "Zhongli",
-      "description": "A mysterious guest invited by the Wangsheng Funeral Parlor. Extremely knowledgeable in all things.",
+      "name": "鍾離",
+      "description": "「往生堂」に招かれた謎の客卿、博識であり、あらゆることに精通している",
       "skills": [
         {
           "key": "s1",
-          "title": "Rain of Stone",
+          "title": "岩雨",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 6 consecutive spear strikes.",
+              "description": "槍による最大6段の連続攻撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to lunge forward, causing stone spears to fall along his path.",
+              "description": "一定のスタミナを消費して前方に疾行し、行動経路上と終着点に雨のような岩槍を投下する。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Dominus Lapidis",
-          "description": "Every mountain, rock and inch of land is filled with the power of Geo, but those who can wield such powers freely are few and far between.",
+          "title": "地心",
+          "description": "山脈の中、大地の上、盤石の間に岩の力が宿っている。しかしこの力を自由に扱える者は少ない。",
           "abilities": [
             {
               "key": "a1",
-              "description": "Commands the power of earth to create a Stone Stele.",
+              "description": "大地の至るところにある岩元素を積み上げ、岩柱を生成する。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Causes nearby Geo energy to explode, causing the following effects:",
+              "description": "付近の岩元素を爆発させ、下記の効果を発動する:",
               "descriptions": [
-                "If their maximum number hasn't been reached, creates a Stone Stele.",
-                "Creates a shield of jade. The shield's DMG Absorption scales based on Zhongli's Max HP.",
-                "Deals AoE Geo DMG.",
-                "If there are nearby targets with the Geo element, it will drain a large amount of Geo element from a maximum of 2 such targets. This effect does not cause DMG."
+                "岩柱が数の上限に達していない場合、岩柱を生成する。",
+                "玉璋シールドを生成する。シールドのダメージ吸収量は鍾離のHP上限によって決まる。",
+                "岩元素範囲ダメージを与える。",
+                "周りに岩元素を持つターゲットがいる場合、最大2つのターゲットの岩元素を大量に消耗させる。この効果によるダメージは発生しない。"
               ]
             },
             {
-              "name": "Stone Stele",
-              "description": "When created, deals AoE Geo DMG.\nAdditionally, it will intermittently resonate with other nearby Geo constructs, dealing Geo DMG to nearby opponents.\n1The Stone Stele is considered a Geo construct that can both be climbed and used to block attacks.\nOnly one Stele created by Zhongli himself may initially exist at any one time",
+              "name": "岩柱",
+              "description": "岩柱が生成された時、岩元素範囲ダメージを与える。/nまた、岩柱が存在している間、周囲の他の岩元素創造物と一定時間の間隔で原岩共鳴をし、持続的に周囲の敵に岩元素ダメージを与える。/n岩柱は岩元素创造物と見なされ、攻撃を防ぐことができ、登ることもできる。同時に最大1つまで存在可能。",
               "descriptions": []
             },
             {
-              "name": "Jade Shield",
-              "description": "Possesses 150% DMG Absorption against all Elemental and Physical DMG.\nCharacters protected by the Jade Shield will decrease the Elemental RES and Physical RES of opponents in a small AoE by 20%. This effect cannot be stacked.",
+              "name": "玉璋シールド",
+              "description": "全元素ダメージと物理ダメージに150%の吸収効果がある。/n玉璋シールドに守られたキャラクターは、付近範囲内の敵の全元素耐性と物理耐性-20%。この効果は重ねがけ不可。岩の堅きこと、物に於いて陥さざる無きなり。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Planet Befall",
-          "description": "Brings a falling meteor down to earth, dealing massive Geo DMG to opponents caught in its AoE and applying the Petrification status to them.",
+          "title": "天星",
+          "description": "巨大な星岩を落下させ、落下範囲内の敵に大きな岩元素ダメージを与え、石化する。",
           "abilities": [
             {
-              "name": "Petrification",
-              "description": "Opponents affected by the Petrification status cannot move.",
+              "name": "石化",
+              "description": "石化状態の敵は行動不能になる。",
               "descriptions": []
             }
           ]
@@ -4011,70 +4011,70 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Arcanum of Crystal",
-          "description": "Refunds 15% of the ores used when crafting Polearm-type weapons.",
+          "title": "結晶推命",
+          "description": "長柄武器を鍛造する時、消費した鉱石の15%が返還される。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Resonant Waves",
-          "description": "When the Jade Shield takes DMG, it will Fortify:",
+          "title": "岩の宸断",
+          "description": "玉璋シールドはダメージを受けた際に防御効果を発動する。",
           "descriptions": [
-            "Fortified characters have 5% increased Shield Strength.",
-            "Can stack up to 5 times, and lasts until the Jade Shield disappears."
+            "玉璋シールドに守られたキャラクターのシールド強化+5%。",
+            "シールドが消えるまで、最大5回強度を上げることができる。"
           ]
         },
         {
           "key": "p3",
-          "title": "Dominance of Earth",
-          "description": "Zhongli deals bonus DMG based on his Max HP:",
+          "title": "贅沢な食饌",
+          "description": "HP上限を基に、鍾離の下記攻撃のダメージが増加する。",
           "descriptions": [
-            "Normal Attack, Charged Attack, and Plunging Attack DMG is increased by 1.39% of Max HP.",
-            "Dominus Lapidis' Stone Stele, resonance, and hold DMG is increased by 1.9% of Max HP.",
-            "Planet Befall's DMG is increased by 33% of Max HP."
+            "通常攻撃、重撃と落下攻撃のダメージ増加量：HP上限の1.39%",
+            "地心の岩柱、共鳴と長押しダメージ増加量：HP上限の1.9%",
+            "天星ダメージ増加量：HP上限の33%"
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Rock, the Backbone of Earth",
-          "description": "Increases the maximum number of Stone Steles created by Dominus Lapidis that may exist simultaneously by 2.",
+          "title": "岩、天下の骨なり",
+          "description": "地心の岩柱が同時に最大2つまで存在可能になる。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Stone, the Cradle of Jade",
-          "description": "Planet Befall grants nearby characters on the field a Jade Shield when it descends.",
+          "title": "石、玉の揺りかご",
+          "description": "天星落下時、近くにいる出場中のキャラクターに玉璋シールドを付与する。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Jade, Shimmering through Darkness",
-          "description": "Increases the Level of Dominus Lapidis by 3. Maximum upgrade level is 15.",
+          "title": "圭璋、闇の中で輝く",
+          "description": "地心のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Topaz, Unbreakable and Fearless",
-          "description": "Increases Planet Befall’s AoE by 20% and increases the duration of Planet Befall’s Petrification effect by 2s.",
+          "title": "黄玉、破れぬ堅さ",
+          "description": "天星の影響範囲+20%。さらに天星の石化効果の継続時間+2秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Lazuli, Herald of the Order",
-          "description": "Increase the Level of Planet Befall by 3. Maximum upgrade level is 15.",
+          "title": "璧、天理を守る",
+          "description": "天星のスキルLv.+3。最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Chrysos, Bounty of Dominator",
-          "description": "When the Jade Shield takes DMG, 40% of that incoming DMG is converted to HP for the current character.\nA single instance of regeneration cannot exceed 8% of that character’s Max HP.",
+          "title": "金、天地の恵み",
+          "description": "玉璋シールドがダメージを受けた時、そのダメージ量の40%分のHPを回復する。一回の回復上限はキャラクターのHP上限の8%。",
           "secondDescription": null,
           "descriptions": []
         }
