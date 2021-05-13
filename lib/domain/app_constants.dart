@@ -13,6 +13,7 @@ const languagesMap = {
   AppLanguageType.simplifiedChinese: LanguageModel('zh', 'CN'),
   AppLanguageType.portuguese: LanguageModel('pt', 'PT'),
   AppLanguageType.italian: LanguageModel('it', 'IT'),
+  AppLanguageType.japanese: LanguageModel('ja', 'JA'),
 };
 
 const int minSkillLevel = 1;

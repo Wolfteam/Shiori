@@ -9,6 +9,7 @@
   "simplifiedChinese": "Cinese (Semplificato)",
   "portuguese": "Portoghese",
   "italian": "Italiano",
+  "japanese": "Japanese",
   "bow": "Arco",
   "claymore": "Claymore",
   "sword": "Spada",
@@ -294,5 +295,7 @@
   "discordServer": "Server Discord",
   "usedItem": "Item in uso",
   "itemIsBeingUsedOnACalculation": "Questo item è presente in una o più sessioni della calcolatrice.\nLa quantità usata è {quantity}",
-  "useOfficialMap": "Abilita la mappa ufficiale"
+  "useOfficialMap": "Abilita la mappa ufficiale",
+  "dailyCheckIn": "Check-In Giornaliero",
+  "dailyCheckInMsg": "Riscatta le tue ricompense giornaliere qui !"
 }
