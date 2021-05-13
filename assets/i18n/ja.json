@@ -3,7 +3,7 @@
     {
       "key": "Albedo",
       "name": "アルベド",
-      "description": "A genius known as the Kreideprinz, he is the Chief Alchemist and Captain of the Investigation Team of the Knights of Favonius.",
+      "description": "西風騎士団の首席錬金術師兼調査小隊隊長。「白亜の申し子」と呼ばれる天才。",
       "skills": [
         {
           "key": "s1",
@@ -980,115 +980,115 @@
     },
     {
       "key": "Eula",
-      "name": "Eula*",
-      "description": "The Spindrift Knight, a scion of the old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
+      "name": "エウルア",
+      "description": "古き一族出身の「波花騎士」、同時に西風騎士団の遊撃小隊隊長でもある。旧貴族の末裔でありながら、敵対関係にある西風騎士団に入団した理由は、未だ謎に包まれている。",
       "skills": [
         {
           "key": "s1",
-          "title": "Favonius Bladework - Edel",
+          "title": "西風剣術·旧貴族",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 5 consecutive strikes.",
+              "description": "最大5段の連続攻撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": " Drains Stamina over time to perform continuous slashes.\nAt the end of the sequence, perform a more powerful slash.",
+              "description": "持続的にスタミナを消費し、素早い連続攻撃を発動する。重撃が終了した時に、更に強力な攻撃を1回放つ。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Icetide Vortex",
+          "title": "氷潮の渦",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Slashes swiftly, dealing Cryo DMG.\nWhen it hits an opponent, Eula gains a stack of Grimheart that stacks up to 2 times. These stacks can only be gained once every 0.3s.",
+              "description": "素早く剣を振り、氷元素ダメージを与える。敵に命中すると、エウルアは冷酷な心を1つ獲得する。最大2つまで、0.3秒毎に1回のみ発動可能。",
               "descriptions": []
             },
             {
-              "name": "Grimheart",
-              "description": "Increases Eula's resistance to interruption and DEF.",
+              "name": "冷酷な心",
+              "description": "エウルアの防御力と中断耐性をアップさせる。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Wielding her sword, Eula consumes all the stacks of Grimheart and lashes forward, dealing AoE Cryo DMG to opponents in front of her.\nIf Grimheart stacks are consumed, surrounding opponents will have their Physical RES and Cryo RES decreased.\nEach consumed stack of Grimheart will be converted into an Icewhirl Brand that deals Cryo DMG to nearby opponents.",
+              "description": "冷酷な心を全て消費し、大剣を振り前方の敵に氷元素範囲ダメージを与える。冷酷な心を消費すると、周囲の敵の物理耐性および氷元素耐性をダウンさせる。消費した冷酷な心1つにつき氷渦の剣1本に変化し、近くの敵に氷元素ダメージを与える。「波花はこのように渦を巻き、高貴な冠を飲み込んだ。そして、冷たき波のしぶきに黄金の冠が映る。その一粒一粒が、光り輝いていた。」",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Glacial Illumination",
-          "description": "Brandishes her greatsword, dealing Cryo DMG to nearby opponents and creating a Lightfall Sword that follows her around for a duration of up to 7s.\nWhile present, the Lightfall Sword increases Eula's resistance to interruption. When Eula's own Normal Attack, Elemental Skill, and Elemental Burst deal DMG to opponents, they will charge the Lightfall Sword, which can gain an energy stack once every 0.1s.\nOnce its duration ends, the Lightfall Sword will descend and explode violently, dealing Physical DMG to nearby opponents.\nThis DMG scales on the number of energy stacks the Lightfall Sword has accumulated.\nIf Eula leaves the field, the Lightfall Sword will explode immediately.",
+          "title": "氷浪の光剣",
+          "description": "大剣を力強く振り、周囲の敵に氷元素ダメージを与え、7秒間自身に付き従う光臨の剣を創造する。光臨の剣の継続時間中、エウルアは中断耐性がアップする。また、通常攻撃、元素スキルまたは元素爆発が敵にダメージを与えた時、光臨の剣にエネルギーが蓄積される。エネルギーは0.1秒につき、1つのみ溜めることが可能。継続時間終了後、光臨の剣は爆発し周囲の敵に物理ダメージを与える。このダメージは光臨の剣に蓄積されたエネルギー量によって決まる。エウルアが退場した時、光臨の剣は直ちに爆発する。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Aristocratic Introspection",
-          "description": "When Eula crafts Character Talent Materials, she has a 10% chance to receive double the product.",
+          "title": "貴族の省察",
+          "description": "キャラクター天賦素材を合成する時、10%の確率でアイテムを2倍獲得する。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Roiling Rime",
-          "description": "If 2 stacks of Grimheart are consumed upon unleashing the Holding Mode of Icetide Vortex, a Shattered Lightfall Sword will be created that will explode immediately, dealing 50% of the basic Physical DMG dealt by a Lightfall Sword created by Glacial Illumination.",
+          "title": "氷の残剣",
+          "description": "長押しで氷潮の渦を発動した時、一度に冷酷な心を2つ消費すると、直ちに爆発する光臨の剣の欠片を創造する。光臨の剣の欠片は、氷浪の光剣で創造される光臨の剣の基礎ダメージ50%分の物理ダメージを与える。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Wellspring of War-Lust",
-          "description": "When Glacial Illumination is cast, the CD of Icetide Vortex is reset and Eula gains 1 stack of Grimheart.",
+          "title": "戦意の表れ",
+          "description": "氷浪の光剣を発動した時、氷潮の渦のクールタイムがリセットされ、冷酷な心を1つ獲得する。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Tidal Illusion",
-          "description": "Every time Icetide Vortex's Grimheart stacks are consumed, Eula's Physical DMG is increased by 30% for 6s.\nEach stack consumed will increase the duration of this effect by 6s up to a maximum of 18s.",
+          "title": "潮の幻像",
+          "description": "氷潮の渦の冷酷な心を消費するとエウルアの物理ダメージ+30%、継続時間6秒。冷酷な心を1つ消費するたびに、この効果の継続時間+6秒、最大18秒まで。",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Lady of Seafoam",
-          "description": "Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to {LAYOUT_MOBILE#Tapping}{LAYOUT_PC#Press}{LAYOUT_PS#Press} CD.",
+          "title": "波花の淑女",
+          "description": "氷潮の渦の長押しのクールタイムを短縮し、一回押しと同じクールタイムにする。",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Lawrence Pedigree",
-          "description": "Increases the Level of Glacial Illumination by 3.\nMaximum upgrade level is 15.",
+          "title": "ローレンスの血統",
+          "description": "氷浪の光剣のスキルLv.+3。最大Lv.15まで。",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "The Obstinacy of One's Inferiors",
-          "description": "Lightfall Swords deal 25% increased DMG against opponents with less than 50% HP.",
+          "title": "劣等感との戦い",
+          "description": "HP50%未満の敵に対する光臨の剣のダメージ+25%。",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Chivalric Quality",
-          "description": "Increases the Level of Icetide Vortex by 3.\nMaximum upgrade level is 15.",
+          "title": "騎士の素質",
+          "description": "氷潮の渦のスキルLv.+3。最大Lv.15まで。",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Noble Obligation",
-          "description": "Lightfall Swords created by Glacial Illumination start with 5 stacks of energy. Normal Attacks, Elemental Skills, and Elemental Bursts have a 50% chance to grant the Lightfall Sword an additional stack of energy.",
+          "title": "高貴なる者の義務",
+          "description": "氷浪の光剣で創造した光臨の剣は、直ちにエネルギーを5つ獲得する。通常攻撃、元素スキルまたは元素爆発によりエネルギーを獲得する際、50%の確率でさらに1つ獲得する。",
           "descriptions": []
         }
       ]
@@ -5973,7 +5973,7 @@
     {
       "key": "EnhancementOreA",
       "name": "仕上げ用雑鉱",
-      "description": "Gives 400 EXP.\nA refined ingot with endless possibilities that can be used to enhance weapons."
+      "description": "武器のLvUP用アイテム、使用すると経験値400を獲得できる。/n無限な可能性が秘められた精錬鉱石の塊。武器の強化に使える。"
     },
     {
       "key": "EnhancementOreB",
