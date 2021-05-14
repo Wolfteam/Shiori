@@ -12,6 +12,7 @@ const languagesMap = {
   AppLanguageType.russian: LanguageModel('ru', 'RU'),
   AppLanguageType.simplifiedChinese: LanguageModel('zh', 'CN'),
   AppLanguageType.portuguese: LanguageModel('pt', 'PT'),
+  AppLanguageType.italian: LanguageModel('it', 'IT'),
 };
 
 const int minSkillLevel = 1;
