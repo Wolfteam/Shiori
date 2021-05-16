@@ -16,12 +16,14 @@ abstract class NotificationItem with _$NotificationItem {
   @late
   Duration get duration => scheduledDate.difference(createdAt);
 
+  @late
+  Duration get remaining => completesAt.difference(DateTime.now());
+
   factory NotificationItem({
     @required int key,
     @required String title,
     @required String body,
     @required String image,
-    @required Duration remaining,
     @required DateTime createdAt,
     @required DateTime scheduledDate,
     @required DateTime completesAt,

@@ -10,7 +10,7 @@ class Notification extends HiveObject {
   final int type;
 
   @HiveField(1)
-  final String itemKey;
+  String itemKey;
 
   @HiveField(2)
   final DateTime createdAt;
@@ -29,18 +29,18 @@ class Notification extends HiveObject {
 
   //Expedition specific
   @HiveField(7)
-  final int expeditionTimeType;
+  int expeditionTimeType;
 
   @HiveField(8)
-  final bool withTimeReduction;
+  bool withTimeReduction;
 
   //Resin specific
   @HiveField(9)
-  final int currentResinValue;
+  int currentResinValue;
 
   //Item specific
   @HiveField(10)
-  final int notificationItemType;
+  int notificationItemType;
 
   @HiveField(11)
   String title;

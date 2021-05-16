@@ -115,4 +115,36 @@ abstract class DataService {
   Future<void> deleteNotification(int key);
 
   Future<NotificationItem> resetNotification(int key);
+
+  Future<NotificationItem> stopNotification(int key);
+
+  Future<NotificationItem> updateResinNotification(
+    int key,
+    String title,
+    String body,
+    int currentResinValue,
+    bool showNotification, {
+    String note,
+  });
+
+  Future<NotificationItem> updateExpeditionNotification(
+    int key,
+    ExpeditionTimeType expeditionTimeType,
+    String title,
+    String body,
+    bool showNotification,
+    bool withTimeReduction, {
+    String note,
+  });
+
+  Future<NotificationItem> updateCustomNotification(
+    int key,
+    String itemKey,
+    String title,
+    String body,
+    DateTime completesAt,
+    bool showNotification,
+    AppNotificationItemType notificationItemType, {
+    String note,
+  });
 }
