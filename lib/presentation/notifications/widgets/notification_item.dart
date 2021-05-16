@@ -52,6 +52,13 @@ class NotificationItem extends StatelessWidget {
       actionPane: const SlidableDrawerActionPane(),
       actions: [
         IconSlideAction(
+          caption: s.stop,
+          color: Colors.deepOrange,
+          icon: Icons.stop,
+          foregroundColor: Colors.white,
+          onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.stop(id: itemKey)),
+        ),
+        IconSlideAction(
           caption: s.delete,
           color: Colors.red,
           icon: Icons.delete,
@@ -59,13 +66,13 @@ class NotificationItem extends StatelessWidget {
         ),
       ],
       secondaryActions: [
-        // IconSlideAction(
-        //   caption: s.edit,
-        //   color: Colors.orange,
-        //   icon: Icons.edit,
-        //   foregroundColor: Colors.white,
-        //   onTap: () => _showEditModal(context),
-        // ),
+        IconSlideAction(
+          caption: s.edit,
+          color: Colors.orange,
+          icon: Icons.edit,
+          foregroundColor: Colors.white,
+          onTap: () => _showEditModal(context),
+        ),
         IconSlideAction(
           caption: s.reset,
           color: Colors.green,

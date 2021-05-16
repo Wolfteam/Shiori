@@ -63,50 +63,6 @@ class NotificationExpeditionForm extends StatelessWidget {
                 .toList(),
           ),
         ),
-        // Container(
-        //   margin: const EdgeInsets.only(top: 10),
-        //   child: Row(
-        //     children: [
-        //       Flexible(
-        //         flex: 45,
-        //         fit: FlexFit.tight,
-        //         child: DropdownButton<ExpeditionType>(
-        //           isExpanded: true,
-        //           hint: Text(s.chooseLanguage),
-        //           value: type,
-        //           onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.expeditionTypeChanged(newValue: v)),
-        //           items: ExpeditionType.values
-        //               .map<DropdownMenuItem<ExpeditionType>>(
-        //                 (type) => DropdownMenuItem<ExpeditionType>(
-        //                   value: type,
-        //                   child: Text(s.translateExpeditionType(type)),
-        //                 ),
-        //               )
-        //               .toList(),
-        //         ),
-        //       ),
-        //       const Spacer(flex: 10),
-        //       Flexible(
-        //         flex: 45,
-        //         fit: FlexFit.tight,
-        //         child: DropdownButton<ExpeditionTimeType>(
-        //           isExpanded: true,
-        //           hint: Text(s.chooseLanguage),
-        //           value: timeType,
-        //           onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.expeditionTimeTypeChanged(newValue: v)),
-        //           items: ExpeditionTimeType.values
-        //               .map<DropdownMenuItem<ExpeditionTimeType>>(
-        //                 (type) => DropdownMenuItem<ExpeditionTimeType>(
-        //                   value: type,
-        //                   child: Text(s.translateExpeditionTimeType(type)),
-        //                 ),
-        //               )
-        //               .toList(),
-        //         ),
-        //       ),
-        //     ],
-        //   ),
-        // ),
         NotificationTitleBody(title: title, body: body),
         NotificationNote(note: note),
         Row(

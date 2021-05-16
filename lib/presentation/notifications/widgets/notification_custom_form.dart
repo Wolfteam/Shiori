@@ -59,7 +59,7 @@ class NotificationCustomForm extends StatelessWidget {
                   isExpanded: true,
                   hint: Text(s.notificationType),
                   value: itemType,
-                  onChanged: isInEditMode ? null : (v) => context.read<NotificationBloc>().add(NotificationEvent.itemTypeChanged(newValue: v)),
+                  onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.itemTypeChanged(newValue: v)),
                   items: AppNotificationItemType.values
                       .map((type) => DropdownMenuItem(value: type, child: Text(s.translateAppNotificationItemType(type))))
                       .toList(),
