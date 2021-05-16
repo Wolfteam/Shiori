@@ -312,6 +312,7 @@
   "twentyFivePercentTimeReduction": "25% Time Reduction",
   "invalidDate": "Invalid date",
   "reset": "Reset",
+  "stop": "Detener",
   "completed": "Completed",
   "createdAtX": "Created at {date}",
   "completesAtX": "Completes at {date}",
