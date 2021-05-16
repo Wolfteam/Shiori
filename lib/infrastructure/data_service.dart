@@ -420,11 +420,10 @@ class DataServiceImpl implements DataService {
     bool showNotification = true,
   }) async {
     final now = DateTime.now();
-    final diff = maxResinValue - currentResinValue;
     final notification = Notification.resin(
       itemKey: itemKey,
       createdAt: now,
-      completesAt: now.add(Duration(minutes: diff * resinRefillsEach)),
+      completesAt: _getNotificationDateForResin(currentResinValue),
       showNotification: showNotification,
       currentResinValue: currentResinValue,
       note: note,
@@ -499,6 +498,77 @@ class DataServiceImpl implements DataService {
 
     await item.save();
     return _mapToNotificationItem(item);
+  }
+
+  @override
+  Future<NotificationItem> stopNotification(int key) async {
+    final item = _notificationsBox.values.firstWhere((el) => el.key == key);
+    item.completesAt = DateTime.now();
+
+    await item.save();
+    return _mapToNotificationItem(item);
+  }
+
+  @override
+  Future<NotificationItem> updateResinNotification(
+    int key,
+    String title,
+    String body,
+    int currentResinValue,
+    bool showNotification, {
+    String note,
+  }) {
+    final item = _notificationsBox.values.firstWhere((el) => el.key == key);
+    item.currentResinValue = currentResinValue;
+    if (currentResinValue != item.currentResinValue) {
+      item.completesAt = _getNotificationDateForResin(currentResinValue);
+    }
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateExpeditionNotification(
+    int key,
+    ExpeditionTimeType expeditionTimeType,
+    String title,
+    String body,
+    bool showNotification,
+    bool withTimeReduction, {
+    String note,
+  }) {
+    final item = _notificationsBox.values.firstWhere((el) => el.key == key);
+    if (item.expeditionTimeType != expeditionTimeType.index || item.withTimeReduction != withTimeReduction) {
+      final now = DateTime.now();
+      item.completesAt = now.add(getExpeditionDuration(expeditionTimeType, withTimeReduction));
+    }
+    item.expeditionTimeType = expeditionTimeType.index;
+    item.withTimeReduction = withTimeReduction;
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateCustomNotification(
+    int key,
+    String itemKey,
+    String title,
+    String body,
+    DateTime completesAt,
+    bool showNotification,
+    AppNotificationItemType notificationItemType, {
+    String note,
+  }) async {
+    final item = _notificationsBox.values.firstWhere((el) => el.key == key);
+    item
+      ..itemKey = itemKey
+      ..notificationItemType = notificationItemType.index;
+
+    if (item.completesAt != completesAt) {
+      item.completesAt = completesAt;
+    }
+
+    return _updateNotification(item, title, body, note, showNotification);
   }
 
   void _registerAdapters() {
@@ -699,15 +769,12 @@ class DataServiceImpl implements DataService {
     final itemType = e.notificationItemType == null ? null : AppNotificationItemType.values[e.notificationItemType];
     final expeditionType = e.expeditionTimeType == null ? null : ExpeditionTimeType.values[e.expeditionTimeType];
     final image = _genshinService.getItemImageFromNotificationType(e.itemKey, type, notificationItemType: itemType);
-    final now = DateTime.now();
-    final remaining = e.completesAt.difference(now);
     return NotificationItem(
       key: e.key as int,
       image: image,
-      remaining: remaining,
       createdAt: e.createdAt,
       completesAt: e.completesAt,
-      type: AppNotificationType.values[e.type],
+      type: type,
       showNotification: e.showNotification,
       currentResinValue: e.currentResinValue,
       withTimeReduction: e.withTimeReduction,
@@ -718,5 +785,21 @@ class DataServiceImpl implements DataService {
       body: e.body,
       scheduledDate: e.scheduledDate,
     );
+  }
+
+  DateTime _getNotificationDateForResin(int currentResinValue) {
+    final now = DateTime.now();
+    final diff = maxResinValue - currentResinValue;
+    return now.add(Duration(minutes: diff * resinRefillsEach));
+  }
+
+  Future<NotificationItem> _updateNotification(Notification notification, String title, String body, String note, bool showNotification) async {
+    notification
+      ..title = title
+      ..note = note
+      ..body = body
+      ..showNotification = showNotification;
+    await notification.save();
+    return getNotification(notification.key as int);
   }
 }
