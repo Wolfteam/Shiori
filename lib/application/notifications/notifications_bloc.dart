@@ -25,6 +25,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
       init: (_) async => _buildInitialState(),
       delete: (e) async => _deleteNotification(e.id),
       reset: (e) async => _resetNotification(e.id),
+      stop: (e) async => _stopNotification(e.id),
       close: (_) async => _initialState,
     );
     yield s;
@@ -40,7 +41,6 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     await _notificationService.cancelNotification(key);
     final notifications = [...state.notifications];
     notifications.removeWhere((el) => el.key == key);
-
     return state.copyWith.call(notifications: notifications);
   }
 
@@ -48,12 +48,20 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     final notif = await _dataService.resetNotification(key);
     await _notificationService.cancelNotification(notif.key);
     await _notificationService.scheduleNotification(key, notif.title, notif.body, notif.completesAt);
+    return _afterUpdatingNotification(notif);
+  }
 
-    final index = state.notifications.indexWhere((el) => el.key == key);
+  Future<NotificationsState> _stopNotification(int key) async {
+    final notif = await _dataService.stopNotification(key);
+    await _notificationService.cancelNotification(key);
+    return _afterUpdatingNotification(notif);
+  }
+
+  NotificationsState _afterUpdatingNotification(NotificationItem updated) {
+    final index = state.notifications.indexWhere((el) => el.key == updated.key);
     final notifications = [...state.notifications];
     notifications.removeAt(index);
-    notifications.insert(index, notif);
-
+    notifications.insert(index, updated);
     return state.copyWith.call(notifications: notifications);
   }
 }

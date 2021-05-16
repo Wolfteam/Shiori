@@ -53,17 +53,17 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       typeChanged: (e) async => _typeChanged(e.newValue),
       titleChanged: (e) async => state.copyWith.call(
         title: e.newValue,
-        isTitleValid: e.newValue.isValidLength(maxLength: maxTitleLength),
+        isTitleValid: _isTitleValid(e.newValue),
         isTitleDirty: true,
       ),
       bodyChanged: (e) async => state.copyWith.call(
         body: e.newValue,
-        isBodyValid: e.newValue.isValidLength(maxLength: maxBodyLength),
+        isBodyValid: _isBodyValid(e.newValue),
         isBodyDirty: true,
       ),
       noteChanged: (e) async => state.copyWith.call(
         note: e.newValue,
-        isNoteValid: e.newValue.isNullEmptyOrWhitespace || e.newValue.isValidLength(maxLength: maxNoteLength),
+        isNoteValid: _isNoteValid(e.newValue),
         isNoteDirty: true,
       ),
       showNotificationChanged: (e) async => state.copyWith.call(showNotification: e.show),
@@ -104,6 +104,12 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     yield s;
   }
 
+  bool _isTitleValid(String value) => value.isValidLength(maxLength: maxTitleLength);
+
+  bool _isBodyValid(String value) => value.isValidLength(maxLength: maxBodyLength);
+
+  bool _isNoteValid(String value) => value.isNullEmptyOrWhitespace || value.isValidLength(maxLength: maxNoteLength);
+
   NotificationState _buildAddState(String title, String body) {
     return _initialState.copyWith.call(title: title, body: body, isTitleValid: true, isBodyValid: true);
   }
@@ -112,6 +118,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     final item = _dataService.getNotification(key);
     switch (item.type) {
       case AppNotificationType.resin:
+        final images = [NotificationItemImage(image: item.image, isSelected: true)];
         return NotificationState.resin(
           key: item.key,
           type: item.type,
@@ -120,8 +127,16 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           note: item.note,
           title: item.title,
           body: item.body,
+          images: images,
+          isTitleValid: _isTitleValid(item.title),
+          isTitleDirty: item.title.isNotNullEmptyOrWhitespace,
+          isBodyValid: _isBodyValid(item.body),
+          isBodyDirty: item.body.isNotNullEmptyOrWhitespace,
+          isNoteValid: _isNoteValid(item.note),
+          isNoteDirty: item.note.isNotNullEmptyOrWhitespace,
         );
       case AppNotificationType.expedition:
+        final images = _getMaterialImagesForExpedition(selectedImage: item.image);
         return NotificationState.expedition(
           key: item.key,
           type: item.type,
@@ -131,6 +146,13 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           withTimeReduction: item.withTimeReduction,
           title: item.title,
           body: item.body,
+          images: images,
+          isTitleValid: _isTitleValid(item.title),
+          isTitleDirty: item.title.isNotNullEmptyOrWhitespace,
+          isBodyValid: _isBodyValid(item.body),
+          isBodyDirty: item.body.isNotNullEmptyOrWhitespace,
+          isNoteValid: _isNoteValid(item.note),
+          isNoteDirty: item.note.isNotNullEmptyOrWhitespace,
         );
       case AppNotificationType.custom:
         return NotificationState.custom(
@@ -143,12 +165,24 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           body: item.body,
           scheduledDate: item.completesAt,
           language: _localeService.getLocaleWithoutLang(),
+          images: _getMaterialImagesForCustom(selectedImage: item.image),
+          isTitleValid: _isTitleValid(item.title),
+          isTitleDirty: item.title.isNotNullEmptyOrWhitespace,
+          isBodyValid: _isBodyValid(item.body),
+          isBodyDirty: item.body.isNotNullEmptyOrWhitespace,
+          isNoteValid: _isNoteValid(item.note),
+          isNoteDirty: item.note.isNotNullEmptyOrWhitespace,
         );
     }
     throw Exception('Invalid notification type = ${item.type}');
   }
 
   NotificationState _typeChanged(AppNotificationType newValue) {
+    //We don't allow changing the type after the notification has been created
+    if (state.key != null) {
+      return state;
+    }
+
     switch (newValue) {
       case AppNotificationType.resin:
         return _initialState.copyWith.call(
@@ -164,12 +198,8 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           isNoteDirty: state.isNoteDirty,
         );
       case AppNotificationType.expedition:
-        final images = _genshinService
-            .getAllMaterialsThatCanBeObtainedFromAnExpedition()
-            .mapIndex((e, index) => NotificationItemImage(image: e.fullImagePath, isSelected: index == 0))
-            .toList();
         return NotificationState.expedition(
-          images: images,
+          images: _getMaterialImagesForExpedition(),
           showNotification: state.showNotification,
           expeditionTimeType: ExpeditionTimeType.twentyHours,
           withTimeReduction: false,
@@ -184,9 +214,8 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           isNoteDirty: state.isNoteDirty,
         );
       case AppNotificationType.custom:
-        final material = _genshinService.getAllMaterialsThatCanBeObtainedFromAnExpedition().first;
         return NotificationState.custom(
-          images: [NotificationItemImage(image: material.fullImagePath, isSelected: true)],
+          images: _getMaterialImagesForCustom(),
           itemType: AppNotificationItemType.material,
           showNotification: state.showNotification,
           title: state.title,
@@ -254,7 +283,6 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   Future<NotificationState> _saveChanges() async {
-    //TODO: IMPLEMENT EDITING THE NOTIFICATION
     //TODO: GET THE ITEM KEY WHILE SAVING
     try {
       await state.map(
@@ -273,6 +301,15 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   Future<void> _saveResinNotification(_ResinState s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
+      final updated = await _dataService.updateResinNotification(
+        s.key,
+        s.title,
+        s.body,
+        s.currentResin,
+        s.showNotification,
+        note: s.note,
+      );
+      await _afterNotificationWasUpdated(updated);
       return;
     }
 
@@ -293,6 +330,16 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   Future<void> _saveExpeditionNotification(_ExpeditionState s) async {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
+      final updated = await _dataService.updateExpeditionNotification(
+        s.key,
+        s.expeditionTimeType,
+        s.title,
+        s.body,
+        s.showNotification,
+        s.withTimeReduction,
+        note: s.note,
+      );
+      await _afterNotificationWasUpdated(updated);
       return;
     }
 
@@ -314,6 +361,17 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     final selectedItemKey = _getSelectedItemKey();
     final now = DateTime.now();
     if (s.key != null) {
+      final updated = await _dataService.updateCustomNotification(
+        s.key,
+        selectedItemKey,
+        s.title,
+        s.body,
+        s.scheduledDate,
+        s.showNotification,
+        s.itemType,
+        note: s.note,
+      );
+      await _afterNotificationWasUpdated(updated);
       return;
     }
 
@@ -339,5 +397,29 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       expedition: (_) => _genshinService.getItemKeyFromNotificationType(image, state.type),
       custom: (s) => _genshinService.getItemKeyFromNotificationType(image, state.type, notificationItemType: s.itemType),
     );
+  }
+
+  List<NotificationItemImage> _getMaterialImagesForExpedition({String selectedImage}) {
+    final materials = _genshinService.getAllMaterialsThatCanBeObtainedFromAnExpedition();
+    if (selectedImage.isNotNullEmptyOrWhitespace) {
+      return materials.mapIndex((e, index) => NotificationItemImage(image: e.fullImagePath, isSelected: selectedImage == e.fullImagePath)).toList();
+    }
+
+    return materials.mapIndex((e, index) => NotificationItemImage(image: e.fullImagePath, isSelected: index == 0)).toList();
+  }
+
+  List<NotificationItemImage> _getMaterialImagesForCustom({String selectedImage}) {
+    if (selectedImage.isNotNullEmptyOrWhitespace) {
+      return [NotificationItemImage(image: selectedImage, isSelected: true)];
+    }
+    final material = _genshinService.getAllMaterialsThatCanBeObtainedFromAnExpedition().first;
+    return [NotificationItemImage(image: material.fullImagePath, isSelected: true)];
+  }
+
+  Future<void> _afterNotificationWasUpdated(NotificationItem notif) async {
+    await _notificationService.cancelNotification(notif.key);
+    if (notif.showNotification && !notif.remaining.isNegative) {
+      await _notificationService.scheduleNotification(notif.key, notif.title, notif.body, notif.completesAt);
+    }
   }
 }
