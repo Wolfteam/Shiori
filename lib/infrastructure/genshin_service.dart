@@ -19,6 +19,8 @@ class GenshinServiceImpl implements GenshinService {
   ElementsFile _elementsFile;
   GameCodesFile _gameCodesFile;
   MonstersFile _monstersFile;
+  GadgetsFile _gadgetsFile;
+  FurnitureFile _furnitureFile;
 
   GenshinServiceImpl(this._localeService);
 
@@ -32,6 +34,8 @@ class GenshinServiceImpl implements GenshinService {
       initElements(),
       initGameCodes(),
       initMonsters(),
+      initGadgets(),
+      initFurniture(),
       initTranslations(languageType),
     ]);
   }
@@ -83,6 +87,20 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.monstersDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _monstersFile = MonstersFile.fromJson(json);
+  }
+
+  @override
+  Future<void> initGadgets() async {
+    final jsonStr = await rootBundle.loadString(Assets.gadgetsDbPath);
+    final json = jsonDecode(jsonStr) as Map<String, dynamic>;
+    _gadgetsFile = GadgetsFile.fromJson(json);
+  }
+
+  @override
+  Future<void> initFurniture() async {
+    final jsonStr = await rootBundle.loadString(Assets.furnitureDbPath);
+    final json = jsonDecode(jsonStr) as Map<String, dynamic>;
+    _furnitureFile = FurnitureFile.fromJson(json);
   }
 
   @override
@@ -575,6 +593,11 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
+  List<MaterialFileModel> getAllMaterialsThatHaveAFarmingRespawnDuration() {
+    return _materialsFile.materials.where((el) => el.farmingRespawnDuration != null).toList();
+  }
+
+  @override
   String getItemImageFromNotificationType(
     String itemKey,
     AppNotificationType notificationType, {
@@ -585,10 +608,22 @@ class GenshinServiceImpl implements GenshinService {
       case AppNotificationType.expedition:
         final material = getMaterial(itemKey);
         return material.fullImagePath;
+      case AppNotificationType.furniture:
+        final furniture = getFurniture(itemKey);
+        return furniture.fullImagePath;
+      case AppNotificationType.gadget:
+        final gadget = getGadget(itemKey);
+        return gadget.fullImagePath;
+      case AppNotificationType.farmingArtifacts:
+        final artifact = getArtifact(itemKey);
+        return artifact.fullImagePath;
+      case AppNotificationType.farmingMaterials:
+        final material = getMaterial(itemKey);
+        return material.fullImagePath;
       case AppNotificationType.custom:
         return getItemImageFromNotificationItemType(itemKey, notificationItemType);
       default:
-        throw Exception('The provided notification type = $notificationType');
+        throw Exception('The provided notification type = $notificationType is not valid');
     }
   }
 
@@ -626,6 +661,18 @@ class GenshinServiceImpl implements GenshinService {
       case AppNotificationType.expedition:
         final material = getMaterialByImage(itemImage);
         return material.key;
+      case AppNotificationType.farmingArtifacts:
+        final artifact = getArtifactForCardByImg(itemImage);
+        return artifact.key;
+      case AppNotificationType.farmingMaterials:
+        final material = getMaterialByImage(itemImage);
+        return material.key;
+      case AppNotificationType.gadget:
+        final gadget = getGadgetByImage(itemImage);
+        return gadget.key;
+      case AppNotificationType.furniture:
+        final furniture = getFurnitureByImage(itemImage);
+        return furniture.key;
       case AppNotificationType.custom:
         switch (notificationItemType) {
           case AppNotificationItemType.character:
@@ -648,6 +695,36 @@ class GenshinServiceImpl implements GenshinService {
         }
     }
     throw Exception('The provided notification type = $notificationType');
+  }
+
+  @override
+  List<GadgetFileModel> getAllGadgetsForNotifications() {
+    return _gadgetsFile.gadgets.where((el) => el.cooldownDuration != null).toList();
+  }
+
+  @override
+  GadgetFileModel getGadget(String key) {
+    return _gadgetsFile.gadgets.firstWhere((m) => m.key == key);
+  }
+
+  @override
+  GadgetFileModel getGadgetByImage(String image) {
+    return _gadgetsFile.gadgets.firstWhere((m) => m.fullImagePath == image);
+  }
+
+  @override
+  FurnitureFileModel getDefaultFurnitureForNotifications() {
+    return _furnitureFile.furniture.first;
+  }
+
+  @override
+  FurnitureFileModel getFurniture(String key) {
+    return _furnitureFile.furniture.firstWhere((m) => m.key == key);
+  }
+
+  @override
+  FurnitureFileModel getFurnitureByImage(String image) {
+    return _furnitureFile.furniture.firstWhere((m) => m.fullImagePath == image);
   }
 
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {

@@ -461,6 +461,101 @@ class DataServiceImpl implements DataService {
   }
 
   @override
+  Future<NotificationItem> saveGadgetNotification(
+    String itemKey,
+    Duration gadgetCooldownDuration,
+    String title,
+    String body, {
+    String note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    final completesAt = now.add(gadgetCooldownDuration);
+    final notification = Notification.gadget(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: completesAt,
+      showNotification: showNotification,
+      note: note,
+      title: title,
+      body: body,
+    );
+    final key = await _notificationsBox.add(notification);
+    return getNotification(key);
+  }
+
+  @override
+  Future<NotificationItem> saveFurnitureNotification(
+    String itemKey,
+    FurnitureCraftingTimeType type,
+    String title,
+    String body, {
+    String note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    final notification = Notification.gadget(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: now.add(getFurnitureDuration(type)),
+      showNotification: showNotification,
+      note: note,
+      title: title,
+      body: body,
+    );
+    final key = await _notificationsBox.add(notification);
+    return getNotification(key);
+  }
+
+  @override
+  Future<NotificationItem> saveFarmingArtifactNotification(
+    String itemKey,
+    ArtifactFarmingTimeType type,
+    String title,
+    String body, {
+    String note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    final completesAt = now.add(getArtifactFarmingCooldownDuration(type));
+    final notification = Notification.farmingArtifact(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: completesAt,
+      showNotification: showNotification,
+      note: note,
+      title: title,
+      body: body,
+      artifactFarmingTimeType: type.index,
+    );
+    final key = await _notificationsBox.add(notification);
+    return getNotification(key);
+  }
+
+  @override
+  Future<NotificationItem> saveFarmingMaterialNotification(
+    String itemKey,
+    String title,
+    String body, {
+    String note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    final completesAt = now.add(_genshinService.getMaterial(itemKey).farmingRespawnDuration);
+    final notification = Notification.farmingMaterials(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: completesAt,
+      showNotification: showNotification,
+      note: note,
+      title: title,
+      body: body,
+    );
+    final key = await _notificationsBox.add(notification);
+    return getNotification(key);
+  }
+
+  @override
   Future<NotificationItem> saveCustomNotification(
     String itemKey,
     String title,
@@ -493,7 +588,7 @@ class DataServiceImpl implements DataService {
   @override
   Future<NotificationItem> resetNotification(int key) async {
     final item = _notificationsBox.values.firstWhere((el) => el.key == key);
-    final duration = item.scheduledDate.difference(item.createdAt);
+    final duration = item.originalScheduledDate.difference(item.createdAt);
     item.completesAt = DateTime.now().add(duration);
 
     await item.save();
@@ -544,6 +639,74 @@ class DataServiceImpl implements DataService {
     }
     item.expeditionTimeType = expeditionTimeType.index;
     item.withTimeReduction = withTimeReduction;
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateFarmingMaterialNotification(
+    int key,
+    String itemKey,
+    String title,
+    String body,
+    bool showNotification, {
+    String note,
+  }) {
+    final item = _notificationsBox.values.firstWhere((el) => el.key == key);
+    if (item.itemKey != itemKey) {
+      final newDuration = _genshinService.getMaterial(itemKey).farmingRespawnDuration;
+      item.completesAt = DateTime.now().add(newDuration);
+    }
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateFarmingArtifactNotification(
+    int key,
+    ArtifactFarmingTimeType type,
+    String title,
+    String body,
+    bool showNotification, {
+    String note,
+  }) {
+    final item = _notificationsBox.values.firstWhere((el) => el.key == key);
+    if (type.index != item.artifactFarmingTimeType) {
+      final newDuration = getArtifactFarmingCooldownDuration(type);
+      item.completesAt = DateTime.now().add(newDuration);
+    }
+    item.artifactFarmingTimeType = type.index;
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateGadgetNotification(
+    int key,
+    String title,
+    String body,
+    bool showNotification, {
+    String note,
+  }) {
+    //TODO: SHOULD I ALLOW UPDATING THE GADGET ITEM?
+    final item = _notificationsBox.values.firstWhere((el) => el.key == key);
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateFurnitureNotification(
+    int key,
+    FurnitureCraftingTimeType type,
+    String title,
+    String body,
+    bool showNotification, {
+    String note,
+  }) {
+    final item = _notificationsBox.values.firstWhere((el) => el.key == key);
+    if (item.furnitureCraftingTimeType != type.index) {
+      item.furnitureCraftingTimeType = type.index;
+      item.completesAt = DateTime.now().add(getFurnitureDuration(type));
+    }
 
     return _updateNotification(item, title, body, note, showNotification);
   }
@@ -768,10 +931,10 @@ class DataServiceImpl implements DataService {
     final type = AppNotificationType.values[e.type];
     final itemType = e.notificationItemType == null ? null : AppNotificationItemType.values[e.notificationItemType];
     final expeditionType = e.expeditionTimeType == null ? null : ExpeditionTimeType.values[e.expeditionTimeType];
-    final image = _genshinService.getItemImageFromNotificationType(e.itemKey, type, notificationItemType: itemType);
+    final furnitureCraftingType = e.furnitureCraftingTimeType == null ? null : FurnitureCraftingTimeType.values[e.furnitureCraftingTimeType];
     return NotificationItem(
       key: e.key as int,
-      image: image,
+      image: _genshinService.getItemImageFromNotificationType(e.itemKey, type, notificationItemType: itemType),
       createdAt: e.createdAt,
       completesAt: e.completesAt,
       type: type,
@@ -783,7 +946,8 @@ class DataServiceImpl implements DataService {
       note: e.note,
       title: e.title,
       body: e.body,
-      scheduledDate: e.scheduledDate,
+      scheduledDate: e.originalScheduledDate,
+      furnitureCraftingTimeType: furnitureCraftingType,
     );
   }
 
