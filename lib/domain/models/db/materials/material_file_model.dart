@@ -18,6 +18,9 @@ abstract class MaterialFileModel implements _$MaterialFileModel {
   ExperienceMaterialAttributesModel get experienceAttributes =>
       isAnExperienceMaterial ? ExperienceMaterialAttributesModel.fromJson(attributes) : null;
 
+  @late
+  Duration get farmingRespawnDuration => farmingRespawnTime == null ? null : Duration(hours: farmingRespawnTime);
+
   factory MaterialFileModel({
     @required String key,
     @required int rarity,
@@ -32,6 +35,7 @@ abstract class MaterialFileModel implements _$MaterialFileModel {
     @required bool hasSiblings,
     @Default(true) bool isReadyToBeUsed,
     @Default(false) bool canBeObtainedFromAnExpedition,
+    int farmingRespawnTime,
     Map<String, dynamic> attributes,
   }) = _MaterialFileModel;
 

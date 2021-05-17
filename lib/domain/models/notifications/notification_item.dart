@@ -37,5 +37,9 @@ abstract class NotificationItem with _$NotificationItem {
     @Default(false) bool withTimeReduction,
     //Item specific
     AppNotificationItemType notificationItemType,
+    //Farming Artifact specific
+    ArtifactFarmingTimeType artifactFarmingTimeType,
+    //Furniture specific
+    FurnitureCraftingTimeType furnitureCraftingTimeType,
   }) = _NotificationItem;
 }

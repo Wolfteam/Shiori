@@ -16,7 +16,7 @@ class Notification extends HiveObject {
   final DateTime createdAt;
 
   @HiveField(3)
-  final DateTime scheduledDate;
+  final DateTime originalScheduledDate;
 
   @HiveField(4)
   DateTime completesAt;
@@ -48,6 +48,14 @@ class Notification extends HiveObject {
   @HiveField(12)
   String body;
 
+  //Farming - artifact specific
+  @HiveField(13)
+  int artifactFarmingTimeType;
+
+  //Furniture specific
+  @HiveField(14)
+  int furnitureCraftingTimeType;
+
   Notification({
     @required this.itemKey,
     @required this.type,
@@ -61,7 +69,9 @@ class Notification extends HiveObject {
     this.notificationItemType,
     @required this.title,
     @required this.body,
-  }) : scheduledDate = completesAt;
+    this.furnitureCraftingTimeType,
+    this.artifactFarmingTimeType,
+  }) : originalScheduledDate = completesAt;
 
   Notification.resin({
     @required this.itemKey,
@@ -76,7 +86,9 @@ class Notification extends HiveObject {
         expeditionTimeType = null,
         withTimeReduction = false,
         notificationItemType = null,
-        scheduledDate = completesAt;
+        furnitureCraftingTimeType = null,
+        artifactFarmingTimeType = null,
+        originalScheduledDate = completesAt;
 
   Notification.expedition({
     @required this.itemKey,
@@ -91,7 +103,77 @@ class Notification extends HiveObject {
   })  : type = AppNotificationType.expedition.index,
         currentResinValue = 0,
         notificationItemType = null,
-        scheduledDate = completesAt;
+        furnitureCraftingTimeType = null,
+        artifactFarmingTimeType = null,
+        originalScheduledDate = completesAt;
+
+  Notification.farmingArtifact({
+    @required this.itemKey,
+    @required this.artifactFarmingTimeType,
+    @required this.createdAt,
+    @required this.completesAt,
+    this.note,
+    @required this.showNotification,
+    @required this.title,
+    @required this.body,
+  })  : type = AppNotificationType.farmingArtifacts.index,
+        currentResinValue = 0,
+        notificationItemType = null,
+        expeditionTimeType = null,
+        withTimeReduction = false,
+        furnitureCraftingTimeType = null,
+        originalScheduledDate = completesAt;
+
+  Notification.farmingMaterials({
+    @required this.itemKey,
+    @required this.createdAt,
+    @required this.completesAt,
+    this.note,
+    @required this.showNotification,
+    @required this.title,
+    @required this.body,
+  })  : type = AppNotificationType.farmingMaterials.index,
+        currentResinValue = 0,
+        notificationItemType = null,
+        expeditionTimeType = null,
+        withTimeReduction = false,
+        furnitureCraftingTimeType = null,
+        artifactFarmingTimeType = null,
+        originalScheduledDate = completesAt;
+
+  Notification.gadget({
+    @required this.itemKey,
+    @required this.createdAt,
+    @required this.completesAt,
+    this.note,
+    @required this.showNotification,
+    @required this.title,
+    @required this.body,
+  })  : type = AppNotificationType.gadget.index,
+        currentResinValue = 0,
+        notificationItemType = null,
+        expeditionTimeType = null,
+        withTimeReduction = false,
+        furnitureCraftingTimeType = null,
+        artifactFarmingTimeType = null,
+        originalScheduledDate = completesAt;
+
+  Notification.furniture({
+    @required this.itemKey,
+    @required this.furnitureCraftingTimeType,
+    @required this.createdAt,
+    @required this.completesAt,
+    this.note,
+    @required this.showNotification,
+    @required this.title,
+    @required this.body,
+  })  : type = AppNotificationType.furniture.index,
+        currentResinValue = 0,
+        notificationItemType = null,
+        expeditionTimeType = null,
+        withTimeReduction = false,
+        artifactFarmingTimeType = null,
+        originalScheduledDate = completesAt;
 
   Notification.custom({
     @required this.itemKey,
@@ -106,5 +188,6 @@ class Notification extends HiveObject {
         currentResinValue = 0,
         expeditionTimeType = null,
         withTimeReduction = false,
-        scheduledDate = completesAt;
+        artifactFarmingTimeType = null,
+        originalScheduledDate = completesAt;
 }
