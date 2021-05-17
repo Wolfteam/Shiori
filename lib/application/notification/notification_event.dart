@@ -2,6 +2,7 @@ part of 'notification_bloc.dart';
 
 @freezed
 abstract class NotificationEvent implements _$NotificationEvent {
+  //Common
   const factory NotificationEvent.add({
     @required String defaultTitle,
     @required String defaultBody,
@@ -31,22 +32,6 @@ abstract class NotificationEvent implements _$NotificationEvent {
     @required bool show,
   }) = _ShowNotificationChanged;
 
-  const factory NotificationEvent.resinChanged({
-    @required int newValue,
-  }) = _ResinChanged;
-
-  const factory NotificationEvent.expeditionTimeTypeChanged({
-    @required ExpeditionTimeType newValue,
-  }) = _ExpeditionTimeTypeChanged;
-
-  const factory NotificationEvent.itemTypeChanged({
-    @required AppNotificationItemType newValue,
-  }) = _ItemTypeChanged;
-
-  const factory NotificationEvent.timeReductionChanged({
-    @required bool withTimeReduction,
-  }) = _TimeReductionChanged;
-
   const factory NotificationEvent.showOtherImages({
     @required bool show,
   }) = _ShowOtherImages;
@@ -55,6 +40,37 @@ abstract class NotificationEvent implements _$NotificationEvent {
     @required String newValue,
   }) = _ImageChanged;
 
+  const factory NotificationEvent.saveChanges() = _SaveChanges;
+
+  //Resin specific
+  const factory NotificationEvent.resinChanged({
+    @required int newValue,
+  }) = _ResinChanged;
+
+  //Expedition specific
+  const factory NotificationEvent.expeditionTimeTypeChanged({
+    @required ExpeditionTimeType newValue,
+  }) = _ExpeditionTimeTypeChanged;
+
+  const factory NotificationEvent.timeReductionChanged({
+    @required bool withTimeReduction,
+  }) = _TimeReductionChanged;
+
+  //Farming - Artifact specific
+  const factory NotificationEvent.artifactFarmingTimeTypeChanged({
+    @required ArtifactFarmingTimeType newValue,
+  }) = _ArtifactFarmingTimeTypeChanged;
+
+  //Furniture
+  const factory NotificationEvent.furnitureCraftingTimeTypeChanged({
+    @required FurnitureCraftingTimeType newValue,
+  }) = _FurnitureCraftingTimeTypeChanged;
+
+  //Custom specific
+  const factory NotificationEvent.itemTypeChanged({
+    @required AppNotificationItemType newValue,
+  }) = _ItemTypeChanged;
+
   const factory NotificationEvent.keySelected({
     @required String keyName,
   }) = _KeySelected;
@@ -62,6 +78,4 @@ abstract class NotificationEvent implements _$NotificationEvent {
   const factory NotificationEvent.customDateChanged({
     @required DateTime newValue,
   }) = _CustomDateChanged;
-
-  const factory NotificationEvent.saveChanges() = _SaveChanges;
 }
