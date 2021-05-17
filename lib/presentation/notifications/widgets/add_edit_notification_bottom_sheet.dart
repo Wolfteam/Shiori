@@ -6,6 +6,10 @@ import 'package:genshindb/presentation/shared/common_bottom_sheet.dart';
 
 import 'notification_custom_form.dart';
 import 'notification_expedition_form.dart';
+import 'notification_farming_artifact_form.dart';
+import 'notification_farming_material_form.dart';
+import 'notification_furniture_form.dart';
+import 'notification_gadget_form.dart';
 import 'notification_resin_form.dart';
 
 class AddEditNotificationBottomSheet extends StatelessWidget {
@@ -51,6 +55,44 @@ class AddEditNotificationBottomSheet extends StatelessWidget {
             withTimeReduction: state.withTimeReduction,
             images: state.images,
             showOtherImages: state.showOtherImages,
+          ),
+          farmingMaterial: (state) => NotificationFarmingMaterialForm(
+            title: state.title,
+            body: state.body,
+            note: state.note,
+            showNotification: state.showNotification,
+            isInEditMode: isInEditMode,
+            images: state.images,
+            showOtherImages: state.showOtherImages,
+          ),
+          farmingArtifact: (state) => NotificationFarmingArtifactForm(
+            title: state.title,
+            body: state.body,
+            note: state.note,
+            showNotification: state.showNotification,
+            isInEditMode: isInEditMode,
+            images: state.images,
+            showOtherImages: state.showOtherImages,
+            artifactFarmingTimeType: state.artifactFarmingTimeType,
+          ),
+          gadget: (state) => NotificationGadgetForm(
+            title: state.title,
+            body: state.body,
+            note: state.note,
+            showNotification: state.showNotification,
+            isInEditMode: isInEditMode,
+            images: state.images,
+            showOtherImages: state.showOtherImages,
+          ),
+          furniture: (state) => NotificationFurnitureForm(
+            title: state.title,
+            body: state.body,
+            note: state.note,
+            showNotification: state.showNotification,
+            isInEditMode: isInEditMode,
+            images: state.images,
+            showOtherImages: state.showOtherImages,
+            timeType: state.timeType,
           ),
           custom: (state) => NotificationCustomForm(
             itemType: state.itemType,

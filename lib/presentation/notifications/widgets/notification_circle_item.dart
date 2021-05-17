@@ -90,6 +90,16 @@ class NotificationCircleItem extends StatelessWidget {
       case AppNotificationType.expedition:
         _toggleShowOtherImages(context);
         break;
+      case AppNotificationType.farmingArtifacts:
+        break;
+      case AppNotificationType.farmingMaterials:
+        _toggleShowOtherImages(context);
+        break;
+      case AppNotificationType.gadget:
+        _toggleShowOtherImages(context);
+        break;
+      case AppNotificationType.furniture:
+        break;
       case AppNotificationType.custom:
         switch (itemType) {
           case AppNotificationItemType.character:

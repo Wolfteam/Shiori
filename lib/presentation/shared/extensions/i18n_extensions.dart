@@ -441,6 +441,14 @@ extension I18nExtensions on S {
         return resin;
       case AppNotificationType.expedition:
         return expedition;
+      case AppNotificationType.farmingMaterials:
+        return '$farming ($materials)';
+      case AppNotificationType.farmingArtifacts:
+        return '$farming ($artifacts)';
+      case AppNotificationType.gadget:
+        return gadget;
+      case AppNotificationType.furniture:
+        return furniture;
       case AppNotificationType.custom:
         return custom;
       default:
@@ -477,6 +485,30 @@ extension I18nExtensions on S {
         return materials;
       default:
         throw Exception('Invalid app notification item type = $type');
+    }
+  }
+
+  String translateArtifactFarmingTimeType(ArtifactFarmingTimeType type) {
+    switch (type) {
+      case ArtifactFarmingTimeType.twelveHours:
+        return xHours(12);
+      case ArtifactFarmingTimeType.twentyFourHours:
+        return xHours(24);
+      default:
+        throw Exception('Invalid artifact farming time type = $type');
+    }
+  }
+
+  String translateFurnitureCraftingTimeType(FurnitureCraftingTimeType type) {
+    switch (type) {
+      case FurnitureCraftingTimeType.twelveHours:
+        return xHours(12);
+      case FurnitureCraftingTimeType.fourteenHours:
+        return xHours(14);
+      case FurnitureCraftingTimeType.sixteenHours:
+        return xHours(16);
+      default:
+        throw Exception('Invalid furniture crafting time type = $type');
     }
   }
 }
