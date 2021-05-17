@@ -10,6 +10,8 @@ class Assets {
   static String elementsDbPath = '$dbPath/elements.json';
   static String gameCodesDbPath = '$dbPath/game_codes.json';
   static String monstersDbPath = '$dbPath/monsters.json';
+  static String gadgetsDbPath = '$dbPath/gadgets.json';
+  static String furnitureDbPath = '$dbPath/furniture.json';
   static String translationsBasePath = 'assets/i18n';
 
   //General
@@ -47,6 +49,12 @@ class Assets {
 
   //Monsters
   static String monstersImgsBasePath = 'assets/monsters';
+
+  //Gadgets
+  static String gadgetsBasePath = 'assets/gadgets';
+
+  //Furniture
+  static String furnitureBasePath = 'assets/furniture';
 
   static String getArtifactPath(String name) => '$artifactsBasePath/$name';
 
@@ -213,4 +221,8 @@ class Assets {
   static String getMoraPath() => Assets.getCurrencyMaterialPath('mora.png');
 
   static String getCrystalChunkPath() => getIngredientMaterialPath('crystal_chunk.png');
+
+  static String getGadgetPath(String image) => '$gadgetsBasePath/$image';
+
+  static String getFurniturePath(String image) => '$furnitureBasePath/$image';
 }

@@ -306,6 +306,30 @@ Duration getExpeditionDuration(ExpeditionTimeType type, bool withTimeReduction) 
   }
 }
 
+Duration getFurnitureDuration(FurnitureCraftingTimeType type) {
+  switch (type) {
+    case FurnitureCraftingTimeType.twelveHours:
+      return const Duration(hours: 12);
+    case FurnitureCraftingTimeType.fourteenHours:
+      return const Duration(hours: 14);
+    case FurnitureCraftingTimeType.sixteenHours:
+      return const Duration(hours: 16);
+    default:
+      throw Exception('The provided furniture creation type = $type is not valid');
+  }
+}
+
+Duration getArtifactFarmingCooldownDuration(ArtifactFarmingTimeType type) {
+  switch (type) {
+    case ArtifactFarmingTimeType.twelveHours:
+      return const Duration(hours: 12);
+    case ArtifactFarmingTimeType.twentyFourHours:
+      return const Duration(hours: 24);
+    default:
+      throw Exception('The provided artifact farming time type = $type is not valid');
+  }
+}
+
 Duration _getExpeditionDuration(int hours, bool withTimeReduction) {
   const reductionPercentage = 0.25;
   final totalMinutes = hours * 60;

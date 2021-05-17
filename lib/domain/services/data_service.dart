@@ -101,6 +101,41 @@ abstract class DataService {
     bool withTimeReduction = false,
   });
 
+  Future<NotificationItem> saveGadgetNotification(
+    String itemKey,
+    Duration gadgetCooldownDuration,
+    String title,
+    String body, {
+    String note,
+    bool showNotification = true,
+  });
+
+  Future<NotificationItem> saveFurnitureNotification(
+    String itemKey,
+    FurnitureCraftingTimeType type,
+    String title,
+    String body, {
+    String note,
+    bool showNotification = true,
+  });
+
+  Future<NotificationItem> saveFarmingArtifactNotification(
+    String itemKey,
+    ArtifactFarmingTimeType type,
+    String title,
+    String body, {
+    String note,
+    bool showNotification = true,
+  });
+
+  Future<NotificationItem> saveFarmingMaterialNotification(
+    String itemKey,
+    String title,
+    String body, {
+    String note,
+    bool showNotification = true,
+  });
+
   Future<NotificationItem> saveCustomNotification(
     String itemKey,
     String title,
@@ -134,6 +169,41 @@ abstract class DataService {
     String body,
     bool showNotification,
     bool withTimeReduction, {
+    String note,
+  });
+
+  Future<NotificationItem> updateFurnitureNotification(
+    int key,
+    FurnitureCraftingTimeType type,
+    String title,
+    String body,
+    bool showNotification, {
+    String note,
+  });
+
+  Future<NotificationItem> updateFarmingMaterialNotification(
+    int key,
+    String itemKey,
+    String title,
+    String body,
+    bool showNotification, {
+    String note,
+  });
+
+  Future<NotificationItem> updateFarmingArtifactNotification(
+    int key,
+    ArtifactFarmingTimeType type,
+    String title,
+    String body,
+    bool showNotification, {
+    String note,
+  });
+
+  Future<NotificationItem> updateGadgetNotification(
+    int key,
+    String title,
+    String body,
+    bool showNotification, {
     String note,
   });
 
