@@ -5405,7 +5405,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Cecilia",
@@ -5419,7 +5420,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "CorLapis",
@@ -5433,7 +5435,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "DandelionSeed",
@@ -5447,7 +5450,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "GlazeLily",
@@ -5461,7 +5465,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "JueyunChili",
@@ -5475,7 +5480,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "NoctilousJade",
@@ -5489,7 +5495,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "PhilanemoMushroom",
@@ -5503,7 +5510,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Qingxin",
@@ -5517,7 +5525,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "SilkFlower",
@@ -5531,7 +5540,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "SmallLampGrass",
@@ -5545,7 +5555,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Starconch",
@@ -5559,7 +5570,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Valberry",
@@ -5573,7 +5585,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Violetgrass",
@@ -5587,7 +5600,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "WindwheelAster",
@@ -5601,7 +5615,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Wolfhook",
@@ -5615,7 +5630,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     }
   ],
   "experience": [
@@ -5823,7 +5839,8 @@
       "obtainedFrom": [],
       "droppedBy": [],
       "hasSiblings": false,
-      "canBeObtainedFromAnExpedition": true
+      "canBeObtainedFromAnExpedition": true,
+      "farmingRespawnTime": 24
     },
     {
       "key": "White Iron Chunk",
@@ -5838,7 +5855,8 @@
       "obtainedFrom": [],
       "droppedBy": [],
       "hasSiblings": false,
-      "canBeObtainedFromAnExpedition": true
+      "canBeObtainedFromAnExpedition": true,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Crystal Chunk",
@@ -5853,7 +5871,8 @@
       "obtainedFrom": [],
       "droppedBy": [],
       "hasSiblings": false,
-      "canBeObtainedFromAnExpedition": true
+      "canBeObtainedFromAnExpedition": true,
+      "farmingRespawnTime": 72
     },
     {
       "key": "Northlander Bow Billet",
@@ -5951,7 +5970,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 72
     },
     {
       "key": "Bird Egg",
