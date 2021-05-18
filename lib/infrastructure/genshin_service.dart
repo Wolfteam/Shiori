@@ -215,8 +215,10 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  ArtifactCardModel getArtifactForCardByImg(String image) {
-    final artifact = _artifactsFile.artifacts.firstWhere((a) => a.image == image);
+  ArtifactCardModel getArtifactForCardByImg(String image, {bool searchByFullPath = false}) {
+    final artifact = searchByFullPath
+        ? _artifactsFile.artifacts.firstWhere((a) => a.fullImagePath == image)
+        : _artifactsFile.artifacts.firstWhere((a) => a.image == image);
     return _toArtifactForCard(artifact);
   }
 
@@ -662,7 +664,7 @@ class GenshinServiceImpl implements GenshinService {
         final material = getMaterialByImage(itemImage);
         return material.key;
       case AppNotificationType.farmingArtifacts:
-        final artifact = getArtifactForCardByImg(itemImage);
+        final artifact = getArtifactForCardByImg(itemImage, searchByFullPath: true);
         return artifact.key;
       case AppNotificationType.farmingMaterials:
         final material = getMaterialByImage(itemImage);
@@ -682,7 +684,7 @@ class GenshinServiceImpl implements GenshinService {
             final weapon = getWeaponByImg(itemImage);
             return weapon.key;
           case AppNotificationItemType.artifact:
-            final artifact = getArtifactForCardByImg(itemImage);
+            final artifact = getArtifactForCardByImg(itemImage, searchByFullPath: true);
             return artifact.key;
           case AppNotificationItemType.monster:
             final monster = getMonsterByImg(itemImage);

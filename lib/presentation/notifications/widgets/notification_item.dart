@@ -115,6 +115,7 @@ class NotificationItem extends StatelessWidget {
   }
 
   Future<void> _showEditModal(BuildContext context) async {
+    context.read<NotificationsBloc>().cancelTimer();
     context.read<NotificationBloc>().add(NotificationEvent.edit(key: itemKey));
     await showModalBottomSheet(
       context: context,

@@ -494,7 +494,7 @@ class DataServiceImpl implements DataService {
     bool showNotification = true,
   }) async {
     final now = DateTime.now();
-    final notification = Notification.gadget(
+    final notification = Notification.furniture(
       itemKey: itemKey,
       createdAt: now,
       completesAt: now.add(getFurnitureDuration(type)),
@@ -502,6 +502,7 @@ class DataServiceImpl implements DataService {
       note: note,
       title: title,
       body: body,
+      furnitureCraftingTimeType: type.index,
     );
     final key = await _notificationsBox.add(notification);
     return getNotification(key);
