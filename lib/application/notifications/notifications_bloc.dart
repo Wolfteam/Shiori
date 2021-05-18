@@ -11,11 +11,12 @@ part 'notifications_bloc.freezed.dart';
 part 'notifications_event.dart';
 part 'notifications_state.dart';
 
-const _initialState = NotificationsState.initial(notifications: []);
+const _initialState = NotificationsState.initial(notifications: [], ticks: 0);
 
 class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   final DataService _dataService;
   final NotificationService _notificationService;
+  Timer _timer;
 
   NotificationsBloc(this._dataService, this._notificationService) : super(_initialState);
 
@@ -26,14 +27,29 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
       delete: (e) async => _deleteNotification(e.id),
       reset: (e) async => _resetNotification(e.id),
       stop: (e) async => _stopNotification(e.id),
-      close: (_) async => _initialState,
+      refresh: (e) async => _refreshNotifications(e.ticks),
+      close: (_) async {
+        cancelTimer();
+        return _initialState;
+      },
     );
     yield s;
   }
 
+  void startTime() {
+    _timer = Timer.periodic(const Duration(seconds: 5), (timer) => add(NotificationsEvent.refresh(ticks: timer.tick)));
+  }
+
+  void cancelTimer() {
+    _timer?.cancel();
+    _timer = null;
+  }
+
   NotificationsState _buildInitialState() {
+    cancelTimer();
+    startTime();
     final notifications = _dataService.getAllNotifications();
-    return NotificationsState.initial(notifications: notifications);
+    return NotificationsState.initial(notifications: notifications, ticks: _timer.tick);
   }
 
   Future<NotificationsState> _deleteNotification(int key) async {
@@ -63,5 +79,13 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     notifications.removeAt(index);
     notifications.insert(index, updated);
     return state.copyWith.call(notifications: notifications);
+  }
+
+  NotificationsState _refreshNotifications(int ticks) {
+    if (state is _InitialState) {
+      final notifications = state.notifications.map((e) => e.copyWith.call()).toList();
+      return state.copyWith.call(notifications: notifications, ticks: ticks);
+    }
+    return state;
   }
 }

@@ -17,4 +17,8 @@ abstract class NotificationsEvent implements _$NotificationsEvent {
   }) = _Stop;
 
   const factory NotificationsEvent.close() = _Close;
+
+  const factory NotificationsEvent.refresh({
+    @required int ticks,
+  }) = _Refresh;
 }
