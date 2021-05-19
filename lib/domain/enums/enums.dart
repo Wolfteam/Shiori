@@ -23,6 +23,7 @@ export 'material_filter_type.dart';
 export 'material_type.dart';
 export 'monster_filter_type.dart';
 export 'monster_type.dart';
+export 'realm_rank_type.dart';
 export 'region_type.dart';
 export 'sort_direction_type.dart';
 export 'stat_type.dart';

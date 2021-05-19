@@ -56,6 +56,16 @@ class Notification extends HiveObject {
   @HiveField(14)
   int furnitureCraftingTimeType;
 
+  //Realm currency specific
+  @HiveField(15)
+  int realmTrustRank;
+
+  @HiveField(16)
+  int realmRankType;
+
+  @HiveField(17)
+  int realmCurrency;
+
   Notification({
     @required this.itemKey,
     @required this.type,
@@ -71,6 +81,9 @@ class Notification extends HiveObject {
     @required this.body,
     this.furnitureCraftingTimeType,
     this.artifactFarmingTimeType,
+    this.realmTrustRank,
+    this.realmRankType,
+    this.realmCurrency,
   }) : originalScheduledDate = completesAt;
 
   Notification.resin({
@@ -88,6 +101,9 @@ class Notification extends HiveObject {
         notificationItemType = null,
         furnitureCraftingTimeType = null,
         artifactFarmingTimeType = null,
+        realmTrustRank = null,
+        realmRankType = null,
+        realmCurrency = null,
         originalScheduledDate = completesAt;
 
   Notification.expedition({
@@ -122,6 +138,9 @@ class Notification extends HiveObject {
         expeditionTimeType = null,
         withTimeReduction = false,
         furnitureCraftingTimeType = null,
+        realmTrustRank = null,
+        realmRankType = null,
+        realmCurrency = null,
         originalScheduledDate = completesAt;
 
   Notification.farmingMaterials({
@@ -139,6 +158,9 @@ class Notification extends HiveObject {
         withTimeReduction = false,
         furnitureCraftingTimeType = null,
         artifactFarmingTimeType = null,
+        realmTrustRank = null,
+        realmRankType = null,
+        realmCurrency = null,
         originalScheduledDate = completesAt;
 
   Notification.gadget({
@@ -156,6 +178,9 @@ class Notification extends HiveObject {
         withTimeReduction = false,
         furnitureCraftingTimeType = null,
         artifactFarmingTimeType = null,
+        realmTrustRank = null,
+        realmRankType = null,
+        realmCurrency = null,
         originalScheduledDate = completesAt;
 
   Notification.furniture({
@@ -173,6 +198,49 @@ class Notification extends HiveObject {
         expeditionTimeType = null,
         withTimeReduction = false,
         artifactFarmingTimeType = null,
+        realmTrustRank = null,
+        realmRankType = null,
+        realmCurrency = null,
+        originalScheduledDate = completesAt;
+
+  Notification.realmCurrency({
+    @required this.itemKey,
+    @required this.createdAt,
+    @required this.completesAt,
+    @required this.realmCurrency,
+    @required this.realmRankType,
+    @required this.realmTrustRank,
+    this.note,
+    @required this.showNotification,
+    @required this.title,
+    @required this.body,
+  })  : type = AppNotificationType.weeklyBoss.index,
+        currentResinValue = 0,
+        notificationItemType = null,
+        expeditionTimeType = null,
+        withTimeReduction = false,
+        furnitureCraftingTimeType = null,
+        artifactFarmingTimeType = null,
+        originalScheduledDate = completesAt;
+
+  Notification.weeklyBoss({
+    @required this.itemKey,
+    @required this.createdAt,
+    @required this.completesAt,
+    this.note,
+    @required this.showNotification,
+    @required this.title,
+    @required this.body,
+  })  : type = AppNotificationType.weeklyBoss.index,
+        currentResinValue = 0,
+        notificationItemType = null,
+        expeditionTimeType = null,
+        withTimeReduction = false,
+        furnitureCraftingTimeType = null,
+        artifactFarmingTimeType = null,
+        realmTrustRank = null,
+        realmRankType = null,
+        realmCurrency = null,
         originalScheduledDate = completesAt;
 
   Notification.custom({

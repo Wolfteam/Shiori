@@ -5,5 +5,7 @@ enum AppNotificationType {
   farmingArtifacts,
   gadget,
   furniture,
+  realmCurrency,
+  weeklyBoss,
   custom,
 }

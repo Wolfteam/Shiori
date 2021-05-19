@@ -41,5 +41,9 @@ abstract class NotificationItem with _$NotificationItem {
     ArtifactFarmingTimeType artifactFarmingTimeType,
     //Furniture specific
     FurnitureCraftingTimeType furnitureCraftingTimeType,
+    //Realm Currency specific
+    int realmTrustRank,
+    RealmRankType realmRankType,
+    int realmCurrency,
   }) = _NotificationItem;
 }
