@@ -61,10 +61,23 @@ abstract class NotificationEvent implements _$NotificationEvent {
     @required ArtifactFarmingTimeType newValue,
   }) = _ArtifactFarmingTimeTypeChanged;
 
-  //Furniture
+  //Furniture specific
   const factory NotificationEvent.furnitureCraftingTimeTypeChanged({
     @required FurnitureCraftingTimeType newValue,
   }) = _FurnitureCraftingTimeTypeChanged;
+
+  //Realm currency specific
+  const factory NotificationEvent.realmCurrencyChanged({
+    @required int newValue,
+  }) = _RealmCurrencyChanged;
+
+  const factory NotificationEvent.realmRankTypeChanged({
+    @required RealmRankType newValue,
+  }) = _RealmRankTypeChanged;
+
+  const factory NotificationEvent.realmTrustRankLevelChanged({
+    @required int newValue,
+  }) = _RealmTrustRankLevelChanged;
 
   //Custom specific
   const factory NotificationEvent.itemTypeChanged({

@@ -144,6 +144,45 @@ abstract class NotificationState implements _$NotificationState {
   }) = _FurnitureState;
 
   @Implements(_CommonBaseState)
+  const factory NotificationState.realmCurrency({
+    int key,
+    @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
+    @Default(AppNotificationType.realmCurrency) AppNotificationType type,
+    @Default(RealmRankType.bareBones) RealmRankType currentRealmRankType,
+    @Default(1) int currentTrustRank,
+    @Default(0) int currentRealmCurrency,
+    @Default(true) bool showNotification,
+    @Default('') String title,
+    @Default('') String body,
+    @Default(false) bool isTitleValid,
+    @Default(false) bool isTitleDirty,
+    @Default(false) bool isBodyValid,
+    @Default(false) bool isBodyDirty,
+    @Default(true) bool isNoteValid,
+    @Default(false) bool isNoteDirty,
+    @Default('') String note,
+    @Default(false) bool showOtherImages,
+  }) = _RealmCurrencyState;
+
+  @Implements(_CommonBaseState)
+  const factory NotificationState.weeklyBoss({
+    int key,
+    @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
+    @Default(AppNotificationType.weeklyBoss) AppNotificationType type,
+    @Default(true) bool showNotification,
+    @Default('') String title,
+    @Default('') String body,
+    @Default(false) bool isTitleValid,
+    @Default(false) bool isTitleDirty,
+    @Default(false) bool isBodyValid,
+    @Default(false) bool isBodyDirty,
+    @Default(true) bool isNoteValid,
+    @Default(false) bool isNoteDirty,
+    @Default('') String note,
+    @Default(false) bool showOtherImages,
+  }) = _WeeklyBossState;
+
+  @Implements(_CommonBaseState)
   const factory NotificationState.custom({
     int key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,

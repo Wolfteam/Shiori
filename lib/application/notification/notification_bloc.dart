@@ -102,6 +102,18 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
         farmingArtifact: (state) => state.copyWith.call(artifactFarmingTimeType: e.newValue),
         orElse: () => state,
       ),
+      realmRankTypeChanged: (e) async => state.maybeMap(
+        realmCurrency: (state) => state.copyWith.call(currentRealmRankType: e.newValue),
+        orElse: () => state,
+      ),
+      realmCurrencyChanged: (e) async => state.maybeMap(
+        realmCurrency: (state) => state.copyWith.call(currentRealmCurrency: e.newValue),
+        orElse: () => state,
+      ),
+      realmTrustRankLevelChanged: (e) async => state.maybeMap(
+        realmCurrency: (state) => state.copyWith.call(currentTrustRank: e.newValue),
+        orElse: () => state,
+      ),
     );
 
     yield s;
@@ -145,6 +157,18 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       case AppNotificationType.furniture:
         images.addAll(_getImagesForFurnitureNotifications(selectedImage: item.image));
         state = NotificationState.furniture(timeType: item.furnitureCraftingTimeType);
+        break;
+      case AppNotificationType.realmCurrency:
+        images.addAll(_getImagesForRealmCurrencyNotifications(selectedImage: item.image));
+        state = NotificationState.realmCurrency(
+          currentTrustRank: item.realmTrustRank,
+          currentRealmCurrency: item.realmCurrency,
+          currentRealmRankType: item.realmRankType,
+        );
+        break;
+      case AppNotificationType.weeklyBoss:
+        images.addAll(_getImagesForWeeklyBossNotifications(selectedImage: item.image));
+        state = const NotificationState.weeklyBoss();
         break;
       case AppNotificationType.custom:
         images.addAll(_getImagesForCustomNotifications(selectedImage: item.image));
@@ -206,6 +230,14 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       case AppNotificationType.furniture:
         images.addAll(_getImagesForFurnitureNotifications());
         updatedState = const NotificationState.furniture();
+        break;
+      case AppNotificationType.realmCurrency:
+        images.addAll(_getImagesForRealmCurrencyNotifications());
+        updatedState = const NotificationState.realmCurrency();
+        break;
+      case AppNotificationType.weeklyBoss:
+        images.addAll(_getImagesForWeeklyBossNotifications());
+        updatedState = const NotificationState.weeklyBoss();
         break;
       case AppNotificationType.custom:
         images.addAll(_getImagesForCustomNotifications());
@@ -290,6 +322,8 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
         farmingMaterial: _saveFarmingMaterialNotification,
         gadget: _saveGadgetNotification,
         furniture: _saveFurnitureNotification,
+        weeklyBoss: _saveWeeklyBossNotification,
+        realmCurrency: _saveRealmCurrencyNotification,
       );
     } catch (e, s) {
       //TODO: SHOW AN ERROR IN THE UI
@@ -469,6 +503,65 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     }
   }
 
+  Future<void> _saveRealmCurrencyNotification(_RealmCurrencyState s) async {
+    final selectedItemKey = _getSelectedItemKey();
+    if (s.key != null) {
+      final updated = await _dataService.updateRealmCurrencyNotification(
+        s.key,
+        s.currentRealmRankType,
+        s.currentTrustRank,
+        s.currentRealmCurrency,
+        s.title,
+        s.body,
+        s.showNotification,
+        note: s.note,
+      );
+      await _afterNotificationWasUpdated(updated);
+      return;
+    }
+
+    final notif = await _dataService.saveRealmCurrencyNotification(
+      selectedItemKey,
+      s.currentRealmRankType,
+      s.currentTrustRank,
+      s.currentRealmCurrency,
+      s.title,
+      s.body,
+      note: s.note,
+      showNotification: s.showNotification,
+    );
+    if (notif.showNotification) {
+      await _notificationService.scheduleNotification(notif.key, notif.title, notif.body, notif.completesAt);
+    }
+  }
+
+  Future<void> _saveWeeklyBossNotification(_WeeklyBossState s) async {
+    final selectedItemKey = _getSelectedItemKey();
+    if (s.key != null) {
+      final updated = await _dataService.updateWeeklyBossNotification(
+        s.key,
+        selectedItemKey,
+        s.title,
+        s.body,
+        s.showNotification,
+        note: s.note,
+      );
+      await _afterNotificationWasUpdated(updated);
+      return;
+    }
+
+    final notif = await _dataService.saveWeeklyBossNotification(
+      selectedItemKey,
+      s.title,
+      s.body,
+      note: s.note,
+      showNotification: s.showNotification,
+    );
+    if (notif.showNotification) {
+      await _notificationService.scheduleNotification(notif.key, notif.title, notif.body, notif.completesAt);
+    }
+  }
+
   Future<void> _saveCustomNotification(_CustomState s) async {
     final selectedItemKey = _getSelectedItemKey();
     final now = DateTime.now();
@@ -555,6 +648,24 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return [NotificationItemImage(image: furniture.fullImagePath, isSelected: furniture.fullImagePath == selectedImage)];
     }
     return [NotificationItemImage(image: furniture.fullImagePath, isSelected: true)];
+  }
+
+  List<NotificationItemImage> _getImagesForRealmCurrencyNotifications({String selectedImage}) {
+    final materials = _genshinService.getMaterials(MaterialType.currency, onlyReadyToBeUsed: false);
+    //TODO: FIGURE OUT HOW CAN I REMOVE THIS KEY FROM HERE
+    return materials
+        .where((el) => el.key == 'RealmCurrency')
+        .mapIndex((e, i) => NotificationItemImage(image: e.fullImagePath, isSelected: i == 0))
+        .toList();
+  }
+
+  List<NotificationItemImage> _getImagesForWeeklyBossNotifications({String selectedImage}) {
+    final monsters = _genshinService.getMonsters(MonsterType.boss);
+    if (selectedImage.isNotNullEmptyOrWhitespace) {
+      return monsters.map((e) => NotificationItemImage(image: e.fullImagePath, isSelected: e.fullImagePath == selectedImage)).toList();
+    }
+
+    return monsters.mapIndex((e, i) => NotificationItemImage(image: e.fullImagePath, isSelected: i == 0)).toList();
   }
 
   List<NotificationItemImage> _getImagesForCustomNotifications({String selectedImage}) {
