@@ -295,5 +295,5 @@
   "itemIsBeingUsedOnACalculation": "Este item está sendo usado em uma ou mais sessões de calculadora.\nA quantidade usada é {quantity}",
   "useOfficialMap": "Use o mapa oficial",
   "dailyCheckIn": "Check-in diário",
-  "dailyCheckInMsg": "Don't forget to claim your daily rewards here !"
+  "dailyCheckInMsg": "Não se esqueça de reivindicar suas recompensas diárias aqui!"
 }

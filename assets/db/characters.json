@@ -5918,8 +5918,8 @@
       "image": "Eula.png",
       "fullImage": "Eula.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": true,
       "region": "mondstadt",
       "role": "mainDps",
@@ -6315,7 +6315,57 @@
           ]
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "uprising_satire.png",
+            "wolfs_gravestone.png",
+            "the_unforged.png",
+            "serpent_spine.png",
+            "snow_tombed_starsilver.png",
+            "prototype_aminus.png"
+          ],
+          "artifacts": [
+            {
+              "one": "pale_flame_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "multiples": [
+                {
+                  "quantity": 2,
+                  "image": "pale_flame_4.png"
+                },
+                {
+                  "quantity": 2,
+                  "image": "bloodstained_chivalry_4.png"
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage"
+          ]
+        }
+      ],
       "skills": [
         {
           "key": "s1",
@@ -6338,51 +6388,72 @@
         },
         {
           "key": "s2",
-          "type": "elementalSkill"
+          "type": "elementalSkill",
+          "image": "icetide_vortex.png",
+          "abilities": [
+            {
+              "key": "a1",
+              "type": "press"
+            },
+            {
+              "key": "a2",
+              "type": "hold"
+            }
+          ]
         },
         {
           "key": "s3",
-          "type": "elementalBurst"
+          "type": "elementalBurst",
+          "image": "burst_glacial_illumination.png"
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "unlockedAt": -1
+          "unlockedAt": -1,
+          "image": "eula_p1.png"
         },
         {
           "key": "p2",
-          "unlockedAt": 1
+          "unlockedAt": 1,
+          "image": "eula_p2.png"
         },
         {
           "key": "p3",
-          "unlockedAt": 4
+          "unlockedAt": 4,
+          "image": "eula_p3.png"
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "number": 1
+          "number": 1,
+          "image": "eula_c1.png"
         },
         {
           "key": "c2",
-          "number": 2
+          "number": 2,
+          "image": "eula_c2.png"
         },
         {
           "key": "c3",
-          "number": 3
+          "number": 3,
+          "image": "burst_glacial_illumination.png"
         },
         {
           "key": "c4",
-          "number": 4
+          "number": 4,
+          "image": "eula_c4.png"
         },
         {
           "key": "c5",
-          "number": 5
+          "number": 5,
+          "image": "icetide_vortex.png"
         },
         {
           "key": "c6",
-          "number": 6
+          "number": 6,
+          "image": "eula_c6.png"
         }
       ],
       "subStatType": "critDmgPercentage",
@@ -22791,7 +22862,7 @@
       "fullImage": "Yanfei.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "liyue",
       "role": "mainDps",
