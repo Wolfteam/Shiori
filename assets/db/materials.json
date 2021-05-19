@@ -2243,6 +2243,21 @@
       "obtainedFrom": [],
       "droppedBy": [],
       "hasSiblings": false
+    },
+    {
+      "key": "RealmCurrency",
+      "rarity": 3,
+      "image": "realm_currency.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "currency",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false
     }
   ],
   "elemental": [
