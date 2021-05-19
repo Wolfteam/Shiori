@@ -1064,7 +1064,7 @@
         {
           "key": "c2",
           "title": "Hija del mar",
-          "description": "Reduce el TdE de mantener pulsado Vórtice helado hasta ser el mismo que el de {LAYOUT_MOBILE#tocar una vez}{LAYOUT_PC#pulsar una vez}{LAYOUT_PS#pulsar una vez}.",
+          "description": "Reduce el TdE de mantener pulsado Vórtice helado hasta ser el mismo que el de pulsar una vez.",
           "descriptions": []
         },
         {
