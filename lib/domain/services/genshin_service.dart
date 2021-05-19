@@ -59,7 +59,7 @@ abstract class GenshinService {
   MaterialCardModel getMaterialForCard(String key);
   MaterialFileModel getMaterial(String key);
   MaterialFileModel getMaterialByImage(String image);
-  List<MaterialFileModel> getMaterials(MaterialType type);
+  List<MaterialFileModel> getMaterials(MaterialType type, {bool onlyReadyToBeUsed = true});
 
   int getServerDay(AppServerResetTimeType type);
   DateTime getServerDate(AppServerResetTimeType type);
@@ -72,6 +72,7 @@ abstract class GenshinService {
   MonsterFileModel getMonsterByImg(String image);
   List<MonsterCardModel> getAllMonstersForCard();
   MonsterCardModel getMonsterForCardByImg(String image);
+  List<MonsterFileModel> getMonsters(MonsterType type);
 
   String getItemImageFromNotificationType(String itemKey, AppNotificationType notificationType, {AppNotificationItemType notificationItemType});
   String getItemImageFromNotificationItemType(String itemKey, AppNotificationItemType notificationItemType);

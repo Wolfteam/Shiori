@@ -136,6 +136,25 @@ abstract class DataService {
     bool showNotification = true,
   });
 
+  Future<NotificationItem> saveRealmCurrencyNotification(
+    String itemKey,
+    RealmRankType realmRankType,
+    int currentTrustRankLevel,
+    int currentRealmCurrency,
+    String title,
+    String body, {
+    String note,
+    bool showNotification = true,
+  });
+
+  Future<NotificationItem> saveWeeklyBossNotification(
+    String itemKey,
+    String title,
+    String body, {
+    String note,
+    bool showNotification = true,
+  });
+
   Future<NotificationItem> saveCustomNotification(
     String itemKey,
     String title,
@@ -201,6 +220,26 @@ abstract class DataService {
 
   Future<NotificationItem> updateGadgetNotification(
     int key,
+    String title,
+    String body,
+    bool showNotification, {
+    String note,
+  });
+
+  Future<NotificationItem> updateRealmCurrencyNotification(
+    int key,
+    RealmRankType realmRankType,
+    int currentTrustRankLevel,
+    int currentRealmCurrency,
+    String title,
+    String body,
+    bool showNotification, {
+    String note,
+  });
+
+  Future<NotificationItem> updateWeeklyBossNotification(
+    int key,
+    String itemKey,
     String title,
     String body,
     bool showNotification, {

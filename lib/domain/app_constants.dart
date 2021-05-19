@@ -235,6 +235,36 @@ const weaponExp = [
   ItemExperienceModel.forWeapons(90, -1, 9064450),
 ];
 
+//Furnishing related
+//This one represents the amount of realm currency you can gather per rank level
+const trustRank = {
+  1: 300,
+  2: 600,
+  3: 900,
+  4: 1200,
+  5: 1400,
+  6: 1600,
+  7: 1800,
+  8: 2000,
+  9: 2200,
+  10: 2400,
+};
+
+//This one represents the ratio at which you gain realm currency
+//E.g: At level 1 you gain 4 realm currency per hour
+const increasingRatio = {
+  RealmRankType.bareBones: 4,
+  RealmRankType.humbleAbode: 8,
+  RealmRankType.cozy: 12,
+  RealmRankType.queenSize: 16,
+  RealmRankType.elegant: 20,
+  RealmRankType.exquisite: 22,
+  RealmRankType.extraordinary: 24,
+  RealmRankType.stately: 26,
+  RealmRankType.luxury: 28,
+  RealmRankType.fitForAKing: 30,
+};
+
 double getItemTotalExp(int currentLevel, int desiredLevel, bool forCharacters) {
   if (currentLevel > desiredLevel) {
     throw Exception('CurrentLevel = $currentLevel cannot be greater than DesiredLevel = $desiredLevel');
@@ -335,4 +365,13 @@ Duration _getExpeditionDuration(int hours, bool withTimeReduction) {
   final totalMinutes = hours * 60;
   final int reducedMinutes = (withTimeReduction ? totalMinutes * reductionPercentage : 0).toInt();
   return Duration(minutes: totalMinutes - reducedMinutes);
+}
+
+Duration getRealmCurrencyDuration(int currentRealmCurrency, int currentTrustRank, RealmRankType currentRealmRank) {
+  final maxRealmCurrency = trustRank.entries.firstWhere((kvp) => kvp.key == currentTrustRank).value;
+  final ratioPerHour = increasingRatio.entries.firstWhere((kvp) => kvp.key == currentRealmRank).value;
+
+  final remaining = maxRealmCurrency - currentRealmCurrency;
+  final hours = remaining ~/ ratioPerHour;
+  return Duration(hours: hours);
 }
