@@ -310,6 +310,7 @@
   "farming": "Farming",
   "gadget": "Gadget",
   "furniture": "Furniture",
+  "realmCurrency": "Realm Currency",
   "title": "Title",
   "body": "Body",
   "twentyFivePercentTimeReduction": "25% Time Reduction",
@@ -323,5 +324,15 @@
   "selectAMonster": "Select a monster",
   "selectAMaterial": "Select a material",
   "custom": "Custom",
-  "createYourCustomNotifications": "Create your custom notifications"
+  "createYourCustomNotifications": "Create your custom notifications",
+  "bareBones": "Bare Bones",
+  "humbleAbode": "Humble Abode",
+  "cozy": "Cozy",
+  "queenSize": "Queen Size",
+  "elegant": "Elegant",
+  "exquisite": "Exquisite",
+  "extraordinary": "Extraordinary",
+  "stately": "Stately",
+  "luxury": "Luxury",
+  "fitForAKing": "Fit For A King"
 }
