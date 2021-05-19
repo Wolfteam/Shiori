@@ -408,8 +408,11 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<MaterialFileModel> getMaterials(MaterialType type) {
-    return _materialsFile.materials.where((m) => m.type == type && m.isReadyToBeUsed).toList();
+  List<MaterialFileModel> getMaterials(MaterialType type, {bool onlyReadyToBeUsed = true}) {
+    if (onlyReadyToBeUsed) {
+      return _materialsFile.materials.where((m) => m.type == type && m.isReadyToBeUsed).toList();
+    }
+    return _materialsFile.materials.where((m) => m.type == type).toList();
   }
 
   @override
@@ -549,6 +552,11 @@ class GenshinServiceImpl implements GenshinService {
     return _toMonsterForCard(monster);
   }
 
+  @override
+  List<MonsterFileModel> getMonsters(MonsterType type) {
+    return _monstersFile.monsters.where((el) => el.type == type).toList();
+  }
+
   List<ItemAscensionMaterialModel> _getMaterialsToUse(
     List<ItemAscensionMaterialModel> materials, {
     List<MaterialType> ignore = const [MaterialType.currency],
@@ -608,6 +616,7 @@ class GenshinServiceImpl implements GenshinService {
     switch (notificationType) {
       case AppNotificationType.resin:
       case AppNotificationType.expedition:
+      case AppNotificationType.realmCurrency:
         final material = getMaterial(itemKey);
         return material.fullImagePath;
       case AppNotificationType.furniture:
@@ -622,6 +631,9 @@ class GenshinServiceImpl implements GenshinService {
       case AppNotificationType.farmingMaterials:
         final material = getMaterial(itemKey);
         return material.fullImagePath;
+      case AppNotificationType.weeklyBoss:
+        final monsters = getMonster(itemKey);
+        return monsters.fullImagePath;
       case AppNotificationType.custom:
         return getItemImageFromNotificationItemType(itemKey, notificationItemType);
       default:
@@ -661,6 +673,7 @@ class GenshinServiceImpl implements GenshinService {
     switch (notificationType) {
       case AppNotificationType.resin:
       case AppNotificationType.expedition:
+      case AppNotificationType.realmCurrency:
         final material = getMaterialByImage(itemImage);
         return material.key;
       case AppNotificationType.farmingArtifacts:
@@ -675,6 +688,9 @@ class GenshinServiceImpl implements GenshinService {
       case AppNotificationType.furniture:
         final furniture = getFurnitureByImage(itemImage);
         return furniture.key;
+      case AppNotificationType.weeklyBoss:
+        final monster = getMonsterByImg(itemImage);
+        return monster.key;
       case AppNotificationType.custom:
         switch (notificationItemType) {
           case AppNotificationItemType.character:

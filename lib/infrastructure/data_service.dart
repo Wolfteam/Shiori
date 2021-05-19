@@ -557,6 +557,59 @@ class DataServiceImpl implements DataService {
   }
 
   @override
+  Future<NotificationItem> saveRealmCurrencyNotification(
+    String itemKey,
+    RealmRankType realmRankType,
+    int currentTrustRankLevel,
+    int currentRealmCurrency,
+    String title,
+    String body, {
+    String note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    final completesAt = now.add(getRealmCurrencyDuration(currentRealmCurrency, currentTrustRankLevel, realmRankType));
+    final notification = Notification.realmCurrency(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: completesAt,
+      realmCurrency: currentRealmCurrency,
+      realmRankType: realmRankType.index,
+      realmTrustRank: currentTrustRankLevel,
+      showNotification: showNotification,
+      note: note,
+      title: title,
+      body: body,
+    );
+    final key = await _notificationsBox.add(notification);
+    return getNotification(key);
+  }
+
+  @override
+  Future<NotificationItem> saveWeeklyBossNotification(
+    String itemKey,
+    String title,
+    String body, {
+    String note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    //TODO: SHOULD I ADD A RESPAWN PROP TO EACH BOSS ?
+    final completesAt = now.add(const Duration(days: 7));
+    final notification = Notification.weeklyBoss(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: completesAt,
+      showNotification: showNotification,
+      note: note,
+      title: title,
+      body: body,
+    );
+    final key = await _notificationsBox.add(notification);
+    return getNotification(key);
+  }
+
+  @override
   Future<NotificationItem> saveCustomNotification(
     String itemKey,
     String title,
@@ -707,6 +760,43 @@ class DataServiceImpl implements DataService {
     if (item.furnitureCraftingTimeType != type.index) {
       item.furnitureCraftingTimeType = type.index;
       item.completesAt = DateTime.now().add(getFurnitureDuration(type));
+    }
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateRealmCurrencyNotification(
+    int key,
+    RealmRankType realmRankType,
+    int currentTrustRankLevel,
+    int currentRealmCurrency,
+    String title,
+    String body,
+    bool showNotification, {
+    String note,
+  }) {
+    final item = _notificationsBox.values.firstWhere((el) => el.key == key);
+    if (item.realmRankType != realmRankType.index || item.realmTrustRank != currentTrustRankLevel || item.realmCurrency != currentRealmCurrency) {
+      final duration = getRealmCurrencyDuration(currentRealmCurrency, currentTrustRankLevel, realmRankType);
+      item.completesAt = DateTime.now().add(duration);
+    }
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateWeeklyBossNotification(
+    int key,
+    String itemKey,
+    String title,
+    String body,
+    bool showNotification, {
+    String note,
+  }) {
+    final item = _notificationsBox.values.firstWhere((el) => el.key == key);
+    if (item.itemKey != itemKey) {
+      item.itemKey = itemKey;
     }
 
     return _updateNotification(item, title, body, note, showNotification);
