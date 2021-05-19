@@ -7,7 +7,7 @@ import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/common_bottom_sheet.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:numberpicker/numberpicker.dart';
+import 'package:genshindb/presentation/shared/number_picker_dialog.dart';
 
 import 'ascension_level.dart';
 import 'skill_item.dart';
@@ -183,21 +183,13 @@ class AddEditItemBottomSheet extends StatelessWidget {
   }
 
   Future<void> _showLevelPickerDialog(BuildContext context, int value, bool forCurrentLevel) async {
-    final theme = Theme.of(context);
-    final s = S.of(context);
     final newValue = await showDialog<int>(
       context: context,
-      builder: (BuildContext context) {
-        return NumberPickerDialog.integer(
-          minValue: minItemLevel,
-          maxValue: maxItemLevel,
-          title: Text(s.chooseALevel),
-          initialIntegerValue: value,
-          infiniteLoop: true,
-          cancelWidget: Text(s.cancel),
-          confirmWidget: Text(s.ok, style: TextStyle(color: theme.primaryColor)),
-        );
-      },
+      builder: (_) => NumberPickerDialog(
+        minItemLevel: minItemLevel,
+        maxItemLevel: maxItemLevel,
+        value: value,
+      ),
     );
 
     if (newValue == null) {

@@ -5,13 +5,20 @@ import 'package:genshindb/presentation/settings/settings_page.dart';
 import 'sliver_card_item.dart';
 
 class SliverSettingsCard extends StatelessWidget {
+  final bool iconToTheLeft;
+
+  const SliverSettingsCard({
+    Key key,
+    @required this.iconToTheLeft,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
     return SliverCardItem(
       onClick: _gotoSettingsPage,
-      iconToTheLeft: true,
+      iconToTheLeft: iconToTheLeft,
       icon: Icon(Icons.settings, size: 60, color: theme.accentColor),
       children: [
         Text(s.theme, style: theme.textTheme.subtitle2),

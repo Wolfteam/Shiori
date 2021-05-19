@@ -9,9 +9,9 @@ class SliverTodayCharAscensionMaterials extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
-        return state.when(
-          loading: () => const SliverLoading(),
-          loaded: (charAscMaterials, _, __) => SliverCharacterAscensionMaterials(charAscMaterials: charAscMaterials),
+        return state.map(
+          loading: (_) => const SliverLoading(),
+          loaded: (state) => SliverCharacterAscensionMaterials(charAscMaterials: state.charAscMaterials),
         );
       },
     );

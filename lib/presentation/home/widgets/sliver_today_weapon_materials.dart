@@ -9,9 +9,9 @@ class SliverTodayWeaponMaterials extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
-        return state.when(
-          loading: () => const SliverLoading(),
-          loaded: (_, weaponAscMaterials, __) => SliverWeaponAscensionMaterials(weaponAscMaterials: weaponAscMaterials),
+        return state.map(
+          loading: (_) => const SliverLoading(),
+          loaded: (state) => SliverWeaponAscensionMaterials(weaponAscMaterials: state.weaponAscMaterials),
         );
       },
     );

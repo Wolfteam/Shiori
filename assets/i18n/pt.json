@@ -979,6 +979,121 @@
       ]
     },
     {
+      "key": "Eula",
+      "name": "Eula",
+      "description": "The Spindrift Knight, a scion of the old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Favonius Bladework - Edel",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Perform up to 5 consecutive strikes.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": " Drains Stamina over time to perform continuous slashes.\nAt the end of the sequence, perform a more powerful slash.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Icetide Vortex",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Slashes swiftly, dealing Cryo DMG.\nWhen it hits an opponent, Eula gains a stack of Grimheart that stacks up to 2 times. These stacks can only be gained once every 0.3s.",
+              "descriptions": []
+            },
+            {
+              "name": "Grimheart",
+              "description": "Increases Eula's resistance to interruption and DEF.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Wielding her sword, Eula consumes all the stacks of Grimheart and lashes forward, dealing AoE Cryo DMG to opponents in front of her.\nIf Grimheart stacks are consumed, surrounding opponents will have their Physical RES and Cryo RES decreased.\nEach consumed stack of Grimheart will be converted into an Icewhirl Brand that deals Cryo DMG to nearby opponents.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Glacial Illumination",
+          "description": "Brandishes her greatsword, dealing Cryo DMG to nearby opponents and creating a Lightfall Sword that follows her around for a duration of up to 7s.\nWhile present, the Lightfall Sword increases Eula's resistance to interruption. When Eula's own Normal Attack, Elemental Skill, and Elemental Burst deal DMG to opponents, they will charge the Lightfall Sword, which can gain an energy stack once every 0.1s.\nOnce its duration ends, the Lightfall Sword will descend and explode violently, dealing Physical DMG to nearby opponents.\nThis DMG scales on the number of energy stacks the Lightfall Sword has accumulated.\nIf Eula leaves the field, the Lightfall Sword will explode immediately.",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Aristocratic Introspection",
+          "description": "When Eula crafts Character Talent Materials, she has a 10% chance to receive double the product.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Roiling Rime",
+          "description": "If 2 stacks of Grimheart are consumed upon unleashing the Holding Mode of Icetide Vortex, a Shattered Lightfall Sword will be created that will explode immediately, dealing 50% of the basic Physical DMG dealt by a Lightfall Sword created by Glacial Illumination.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Wellspring of War-Lust",
+          "description": "When Glacial Illumination is cast, the CD of Icetide Vortex is reset and Eula gains 1 stack of Grimheart.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Tidal Illusion",
+          "description": "Every time Icetide Vortex's Grimheart stacks are consumed, Eula's Physical DMG is increased by 30% for 6s.\nEach stack consumed will increase the duration of this effect by 6s up to a maximum of 18s.",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Lady of Seafoam",
+          "description": "#Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to {LAYOUT_MOBILE#Tapping}{LAYOUT_PC#Press}{LAYOUT_PS#Press} CD.",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Lawrence Pedigree",
+          "description": "Increases the Level of Glacial Illumination by 3.\nMaximum upgrade level is 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "The Obstinacy of One's Inferiors",
+          "description": "Lightfall Swords deal 25% increased DMG against opponents with less than 50% HP.",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Chivalric Quality",
+          "description": "Increases the Level of Icetide Vortex by 3.\nMaximum upgrade level is 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Noble Obligation",
+          "description": "Lightfall Swords created by Glacial Illumination start with 5 stacks of energy. Normal Attacks, Elemental Skills, and Elemental Bursts have a 50% chance to grant the Lightfall Sword an additional stack of energy.",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "Fischl",
       "name": "Fischl",
       "description": "Uma mulher misteriosa que se autointitula \"Princesa dos Pecados\", e viaja com um corvo chamado Oz.",
@@ -3703,8 +3818,120 @@
         {
           "key": "c6",
           "title": "Rockeando no inferno",
-          "description": "Diminui o Consumo de Stamina do Ataque Carregado de Xinyan em 30%. Ao usar Ataques Carregados, Xinyan ganha um Bonus de Ataque baseado em 50% de sua defesa.",
+          "description": "Diminui o Consumo de Stamina do Ataque Carregado de Xinyan em 30%. Ao usar Ataques Carregados, Xinyan ganha um Bônus de Ataque baseado em 50% de sua defesa.",
           "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Yanfei",
+      "name": "Yanfei",
+      "description": "Uma Consultora Jurídica animada que vive no Porto de Liyue, é uma garota esperta com sangue da Besta Iluminada.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Selo Ardente",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Dispara bolas de fogo continuamente, causando no máximo três Danos Pyro.\nQuando o Ataque Normal atinge os inimigos, Yanfei obtém uma Insígnia de Chamas. Inicialmente, pode ter no máximo três Insígnias de Chamas. A cada vez que o efeito ocorre, a duração da Insígnia de Chamas atual será renovada.\nCada Insígnia de Chamas reduzirá o consumo de Stamina de Yanfei e desaparecerá quando Yanfei sair do combate.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Consome Stamina e, depois de cantar por um curto tempo, consome todas as Insígnias de Chamas e causa Dano Puro na AdE em sua frente.\nDe acordo com a quantidade de Insígnias de Chama consumidas, fortalece a Área e Dano do Ataque Carregado.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Acumula energia Pyro, mergulha em pleno ar para golpear o chão, atingindo os inimigos em seu caminho e infligindo Dano Pyro na AdE quando impacta no chão.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Édito Assinado",
+          "description": "Invoca as chamas, criando Dano Pyro na AdE.\nDepois de atingir o inimigo, Yanfei obtém uma grande quantidade de Insígnias de Chamas.",
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "Contrato Vinculativo",
+          "description": "Causa o lançamento de uma chama explosiva, atacando os inimigos ao redor e criando Dano Pyro na AdE e Yanfei obtém a quantidade máxima de Insígnias de Chamas e Efeito de Clarão.",
+          "abilities": [
+            {
+              "name": "Clarão",
+              "description": "Possui os seguintes efeitos:",
+              "descriptions": [
+                "Yanfei obtém uma Insígnia de Chamas em cada intervalo de tempo.",
+                "Aumenta o Dano causado pelo Ataque Carregado.",
+                "O efeito de Clarão será eliminado quando Yanfei sair do combate ou for cair na batalha."
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Conhecimento Enciclopédico",
+          "description": "Mostra a localização de Especialidades de Liyue próximos no mapa.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Cláusulas Relacionais",
+          "description": "Quando o Ataque Carregado de Yanfei consumir uma Insígnia de Chama, cada Insígnia de Chama irá aumentar o Bonus de Dano Pyro de Yanfei em 5% por 6s. Ao lançar novamente o Ataque Carregado durante o período deste efeito, o efeito anterior será dissipado.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Olho de Xiezhi",
+          "description": "Quando o Ataque Carregado de Yanfei causa um Dano CRIT, ela causará um Dano Pyro Ade correspondente a 80% do seu Ataque. Este Dano é considerado como Dano de um Ataque Carregado.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Insistir no Próprio Argumento",
+          "description": "Quando Yanfei realiza um Ataque Carregado, cada Insígnia de Chamas que ela possuir aumentar sua Resistência Contra Interrupção enquanto canta, e também reduz o consumo de Stamina deste Ataque Carregado em 10%.",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Direito de Interpretação Final",
+          "description": "A Taxa CRIT de Yanfei aumenta em 20% contra inimigos com menos de 50% de Vida.",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Selado sobre Fogo",
+          "description": "Aumenta o nível da Habilidade Édito Assinado em 3.\nO nivel máximo é 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Boa Autoridade",
+          "description": "Ao lançar o Contrato Vinculativo:",
+          "descriptions": [
+            "Gera um Escudo que absorve Dano com base em 45% da Vida Máxima, com duração de 15s.",
+            "Esse Escudo tem eficiência de 250% contra Dano Pyro."
+          ]
+        },
+        {
+          "key": "c5",
+          "title": "Respeitando a Declaração Juramentada",
+          "description": "Aumenta o nível da Habilidade Contrato Vinculativo em 3.\nO Nível Máximo é 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Uma Cláusula Adicional",
+          "description": "Aumenta a capacidade máxima de Insígnia de Chamas que Yanfei pode ter em 1.",
           "descriptions": []
         }
       ]
@@ -4508,6 +4735,12 @@
       "name": "Elegia do Suspiro Final",
       "description": "Um arco tão adorável quanto a lira de qualquer bardo, suas flechas perfuram o coração como um suspiro lamentável.",
       "refinement": "Uma parte do Concerto Milenar que flutua no vento. Aumenta a Proficiência Elemental em {{0}} pontos. Quando a Habilidade Elemental ou o Supremo atingir os inimigos, o personagem obterá um Símbolo das Lembranças, que pode ser ativado uma vez a cada 0.2s, mesmo quando o personagem não está no campo de batalha. Possuir 4 Símbolos das Lembranças faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música da Despedida\" por 12s: A Proficiência Elemental será aumentada em {{1}} pontos, entretanto o ATQ será aumentado em {{2}}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos das Lembranças de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+    },
+    {
+      "key": "Song of Broken Pines",
+      "name": "Song of Broken Pines",
+      "description": "A greatsword as light as the sigh of grass in the breeze, yet as merciless to the corrupt as a typhoon.",
+      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {{0}}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
     }
   ],
   "artifacts": [
@@ -4950,6 +5183,34 @@
         {
           "key": "b1",
           "bonus": "Reduz a duração dos efeitos causados por Anemo em 40%."
+        }
+      ]
+    },
+    {
+      "key": "Tenacity of the Millelith",
+      "name": "Millelith firmes",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "Aumenta a vida em 20%."
+        },
+        {
+          "key": "b2",
+          "bonus": "Quando uma habilidade elemental atinge um oponente, o ATQ de todos os membros da equipe próximos aumenta em 20% e sua força do escudo aumenta em 30% por 3 S. Esse efeito pode ser ativado a cada 0.5s. Esse efeito ainda pode ser ativado mesmo quando o personagem que está usando esse conjunto não está em campo."
+        }
+      ]
+    },
+    {
+      "key": "Pale Flame",
+      "name": "Chama pálida",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "Dano físico causado 25%."
+        },
+        {
+          "key": "b2",
+          "bonus": "Quando a habilidade elemental atinge um inimigo, o ataque aumenta em 9% por 7s. Esse efeito pode acumular até 2 vezes e pode ser desencadeado uma vez a cada 0.3s. Quando se possui 2 acúmulos, o efeito do conjunto de 2 artefatos é aumentado em 100%."
         }
       ]
     }
@@ -5771,28 +6032,28 @@
     },
     {
       "key": "Northlander Bow Billet",
-      "name": "Northlander Bow Billet",
-      "description": "Can be used to forge 4-star bows. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "name": "Protótipo de Arco das Terras do Norte",
+      "description": "Pode ser usado para criar arcos 4 estrelas. Filósofos acreditam que o belo mármore poderia ser usado para esculpir uma bela estátua. Da mesma forma, esses protótipos tem o potencial de ser algo maior."
     },
     {
       "key": "Northlander Catalyst Billet",
-      "name": "Northlander Catalyst Billet",
-      "description": "Can be used to forge 4-star catalysts. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "name": "Protótipo de Catalisador das Terras do Norte",
+      "description": "Pode ser usado para criar catalisadores 4 estrelas. Filósofos acreditam que o belo mármore poderia ser usado para esculpir uma bela estátua. Da mesma forma, esses protótipos tem o potencial de ser algo maior."
     },
     {
       "key": "Northlander Claymore Billet",
-      "name": "Northlander Claymore Billet",
-      "description": "Can be used to forge 4-star claymores. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "name": "Protótipo de Espadão das Terras do Norte",
+      "description": "Pode ser usado para criar Espadões 4 estrelas. Filósofos acreditam que o belo mármore poderia ser usado para esculpir uma bela estátua. Da mesma forma, esses protótipos tem o potencial de ser algo maior."
     },
     {
       "key": "Northlander Polearm Billet",
-      "name": "Northlander Polearm Billet",
-      "description": "Can be used to forge 4-star polearms. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "name": "Protótipo de Lança das Terras do Norte",
+      "description": "Pode ser usado para criar lanças 4 estrelas. Filósofos acreditam que o belo mármore poderia ser usado para esculpir uma bela estátua. Da mesma forma, esses protótipos tem o potencial de ser algo maior."
     },
     {
       "key": "Northlander Sword Billet",
-      "name": "Northlander Sword Billet",
-      "description": "Can be used to forge 4-star swords. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "name": "Protótipo de Espada das Terras do Norte",
+      "description": "Pode ser usado para criar espadas 4 estrelas. Filósofos acreditam que o belo mármore poderia ser usado para esculpir uma bela estátua. Da mesma forma, esses protótipos tem o potencial de ser algo maior."
     },
     {
       "key": "Dust of Azoth",
@@ -5813,6 +6074,31 @@
       "key": "Primogem",
       "name": "Gema Essencial",
       "description": "Uma gema cristalina primordial que vai além da compreensão mundana. Seu brilho está cheio de esperanças e sonhos do universo em que esteve."
+    },
+    {
+      "key": "Crystalline Bloom",
+      "name": "Crystalline Bloom",
+      "description": "An ice crystal of exceeding purity that is created in the frigid blooming of a Cryo Hypostasis.\nThese frosty crystals will continue to grow according to their own cold, rigid laws, till one day a flower of winter shall bloom and freeze everything. Perhaps it is stagnant time, that never-thawing bosom, that is the essence of this undying flower."
+    },
+    {
+      "key": "Dream Solvent",
+      "name": "Dream Solvent",
+      "description": "An item capable of changing Character Level-Up Materials obtained from memories and trials into whatever form is needed.\nPeople once believed that spirits and memories had some material form. If someone dreamed of heaven before waking up clutching a flower, then that blossom must have been made from such a fantasy. Dream Solvent dissolves that which is obtained from memory and transforms it into some other dream.\nIndeed, blows traded with the strong are stepping stones towards becoming stronger yourself."
+    },
+    {
+      "key": "Dragon Lord's Crown",
+      "name": "Dragon Lord's Crown",
+      "description": "Horns created from hardened jade crystallized over a thousand years are the natural crown of the dragon king.\nInfused with spirit and carved from bedrock, it was born from the mountain's heart to show the strength of the earth to the land amidst monoliths, and its long golden horns are the mark of its ancient strife with an ancient lord.\nFor a time, this horn was shattered and lost its luster, but now it gleams cold and gold as it sits in your palm."
+    },
+    {
+      "key": "Bloodjade Branch",
+      "name": "Bloodjade Branch",
+      "description": "Nurtured by the might of the dragon king, these bone branches glitter with strange, unique colors.\nHatred coursed through the natural streams and kissed the cold moonlight, and from them were these crystalline branches born and grown...\nEven though they were severed in battle, these branches steeped in dragon blood rustle as if eternally ill-at-ease."
+    },
+    {
+      "key": "Gilded Scale",
+      "name": "Gilded Scale",
+      "description": "Scaled armor that grows naturally over mystical stone, tough and silent, and filled with the strength of the dragon king.\nAcross the years as countless generations returned to the mulch of the earth, gold and obsidian embedded themselves into flesh and blood forged from bedrock before spreading and turning into scales.\nSearing agony, wordless cries... perhaps they will all vanish when the grudges that spawned them, too, finally come to an end."
     }
   ],
   "debuffs": [
@@ -5925,7 +6211,7 @@
   "monsters": [
     {
       "key": "Abyss Herald: Wicked Torrents",
-      "name": "Abyss Herald: Wicked Torrents"
+      "name": "Apóstolo do Abismo - Corrente Torrencial"
     },
     {
       "key": "Abyss Lector: Violet Lightning",
@@ -5933,15 +6219,15 @@
     },
     {
       "key": "Anemo Hypostasis",
-      "name": "Anemo Hypostasis"
+      "name": "Hypostasis Anemo"
     },
     {
       "key": "Anemo Samachurl",
-      "name": "Anemo Samachurl"
+      "name": "Samachurl Anemo"
     },
     {
       "key": "Anemo Slime",
-      "name": "Anemo Slime"
+      "name": "Slime Anemo"
     },
     {
       "key": "Azhdaha",
@@ -5949,7 +6235,7 @@
     },
     {
       "key": "Blazing Axe Mitachurl",
-      "name": "Blazing Axe Mitachurl"
+      "name": "Mitachurl do Machado ardente"
     },
     {
       "key": "Childe",
@@ -5957,127 +6243,127 @@
     },
     {
       "key": "Cryo Abyss Mage",
-      "name": "Cryo Abyss Mage"
+      "name": "Mago do abismo Cryo"
     },
     {
       "key": "Cryo Cicin",
-      "name": "Cryo Cicin"
+      "name": "Cicin Cryo"
     },
     {
       "key": "Cryo Hilichurl Grenadier",
-      "name": "Cryo Hilichurl Grenadier"
+      "name": "Hilichurl Cryo Granadeiro"
     },
     {
       "key": "Cryo Hilichurl Shooter",
-      "name": "Cryo Hilichurl Shooter"
+      "name": "Hilichurl atirador Cryo"
     },
     {
       "key": "Cryo Hypostasis",
-      "name": "Cryo Hypostasis"
+      "name": "Hypostasis Cryo"
     },
     {
       "key": "Cryo Regisvine",
-      "name": "Cryo Regisvine"
+      "name": "Regisvine Cryo"
     },
     {
       "key": "Cryo Samachurl",
-      "name": "Cryo Samachurl"
+      "name": "Samachurl Cryo"
     },
     {
       "key": "Cryo Slime",
-      "name": "Cryo Slime"
+      "name": "Slime Cryo"
     },
     {
       "key": "Cryo Whopperflower",
-      "name": "Cryo Whopperflower"
+      "name": "Flor Gigante Cryo"
     },
     {
       "key": "Dendro Samachurl",
-      "name": "Dendro Samachurl"
+      "name": "Samachurl Dendro"
     },
     {
       "key": "Dendro Slime",
-      "name": "Dendro Slime"
+      "name": "Slime Dendro"
     },
     {
       "key": "Electro Cicin",
-      "name": "Electro Cicin"
+      "name": "Cicin Electro"
     },
     {
       "key": "Electro Hilichurl Shooter",
-      "name": "Electro Hilichurl Shooter"
+      "name": "Hilichurl Atirador Electro"
     },
     {
       "key": "Electro Hypostasis",
-      "name": "Electro Hypostasis"
+      "name": "Hypostasis Electro"
     },
     {
       "key": "Electro Slime",
-      "name": "Electro Slime"
+      "name": "Slime Electro"
     },
     {
       "key": "Eye of the Storm",
-      "name": "Eye of the Storm"
+      "name": "Olho da Tempestade"
     },
     {
       "key": "Fatui Cryo Cicin Mage",
-      "name": "Fatui Cryo Cicin Mage"
+      "name": "Fatui - Feiticeira Cicin Cryo"
     },
     {
       "key": "Fatui Electro Cicin Mage",
-      "name": "Fatui Electro Cicin Mage"
+      "name": "Fatui - Feiticeira Cicin Electro"
     },
     {
       "key": "Fatui Pyro Agent",
-      "name": "Fatui Pyro Agent"
+      "name": "Fatui - Agente Pyro"
     },
     {
       "key": "Fatui Skirmisher - Anemoboxer Vanguard",
-      "name": "Fatui Skirmisher - Anemoboxer Vanguard"
+      "name": "Soldado dos Fatui - Boxeador da Vanguarda Anemo"
     },
     {
       "key": "Fatui Skirmisher - Cryogunner Legionnaire",
-      "name": "Fatui Skirmisher - Cryogunner Legionnaire"
+      "name": "Soldado dos Fatui - Guarda de Canhão Cryo"
     },
     {
       "key": "Fatui Skirmisher - Electrohammer Vanguard",
-      "name": "Fatui Skirmisher - Electrohammer Vanguard"
+      "name": "Soldado dos Fatui - Vanguarda de Martelo Electro"
     },
     {
       "key": "Fatui Skirmisher - Geochanter Bracer",
-      "name": "Fatui Skirmisher - Geochanter Bracer"
+      "name": "Soldado dos Fatui - Guerrilheiro Geo"
     },
     {
       "key": "Fatui Skirmisher - Hydrogunner Legionnaire",
-      "name": "Fatui Skirmisher - Hydrogunner Legionnaire"
+      "name": "Soldado dos Fatui - Guarda de Canhão Hydro"
     },
     {
       "key": "Fatui Skirmisher - Pyroslinger Bracer",
-      "name": "Fatui Skirmisher - Pyroslinger Bracer"
+      "name": "Soldado dos Fatui - Guerrilheiro de Canhão Pyro"
     },
     {
       "key": "Frostarm Lawachurl",
-      "name": "Frostarm Lawachurl"
+      "name": "Lawachurl dos Braços congelantes"
     },
     {
       "key": "Geo Hypostasis",
-      "name": "Geo Hypostasis"
+      "name": "Hypostasis Geo"
     },
     {
       "key": "Geo Samachurl",
-      "name": "Geo Samachurl"
+      "name": "Samachurl Geo"
     },
     {
       "key": "Geo Slime",
-      "name": "Geo Slime"
+      "name": "Slime Geo"
     },
     {
       "key": "Geovishap",
-      "name": "Geovishap"
+      "name": "Dragarto Geo"
     },
     {
       "key": "Geovishap Hatchling",
-      "name": "Geovishap Hatchling"
+      "name": "Cria de Dragarto Geo"
     },
     {
       "key": "Hilichurl",
@@ -6089,83 +6375,83 @@
     },
     {
       "key": "Hilichurl Fighter",
-      "name": "Hilichurl Fighter"
+      "name": "Hilichurl Lutador"
     },
     {
       "key": "Hilichurl Grenadier",
-      "name": "Hilichurl Grenadier"
+      "name": "Hilichurl Grenadeiro"
     },
     {
       "key": "Hilichurl Shooter",
-      "name": "Hilichurl Shooter"
+      "name": "Hilichurl Atirador"
     },
     {
       "key": "Hydro Abyss Mage",
-      "name": "Hydro Abyss Mage"
+      "name": " Mago do Abismo Hydro"
     },
     {
       "key": "Hydro Cicin",
-      "name": "Hydro Cicin"
+      "name": "Cicin Hydro"
     },
     {
       "key": "Hydro Samachurl",
-      "name": "Hydro Samachurl"
+      "name": "Samachurl Hydro"
     },
     {
       "key": "Hydro Slime",
-      "name": "Hydro Slime"
+      "name": "Slime Hydro"
     },
     {
       "key": "Ice Shield Hilichurl Guard",
-      "name": "Ice Shield Hilichurl Guard"
+      "name": "Hilichurl Guarda com Escudo de Gelo"
     },
     {
       "key": "Ice Shieldwall Mitachurl",
-      "name": "Ice Shieldwall Mitachurl"
+      "name": "Mitachurl de Escudo de Gelo"
     },
     {
       "key": "Large Anemo Slime",
-      "name": "Large Anemo Slime"
+      "name": "Grande Slime Anemo"
     },
     {
       "key": "Large Cryo Slime",
-      "name": "Large Cryo Slime"
+      "name": "Grande Slime Cryo"
     },
     {
       "key": "Large Dendro Slime",
-      "name": "Large Dendro Slime"
+      "name": "Grande Slime Dendro"
     },
     {
       "key": "Large Electro Slime",
-      "name": "Large Electro Slime"
+      "name": "Grande Slime Electro"
     },
     {
       "key": "Large Geo Slime",
-      "name": "Large Geo Slime"
+      "name": "Grande Slime Geo"
     },
     {
       "key": "Large Hydro Slime",
-      "name": "Large Hydro Slime"
+      "name": "Grande Slime Hydro"
     },
     {
       "key": "Large Pyro Slime",
-      "name": "Large Pyro Slime"
+      "name": "Grande Slime Pyro"
     },
     {
       "key": "Lupus Boreas, Dominator of Wolves",
-      "name": "Lupus Boreas, Dominator of Wolves"
+      "name": "Lupus Boreas, Dominador de Lobos"
     },
     {
       "key": "Millelith Sergeant",
-      "name": "Millelith Sergeant"
+      "name": "Sargento Millelith"
     },
     {
       "key": "Millelith Soldier",
-      "name": "Millelith Soldier"
+      "name": "Soldado Millelith"
     },
     {
       "key": "Mutant Electro Slime",
-      "name": "Mutant Electro Slime"
+      "name": "Slime Electro Mutante"
     },
     {
       "key": "Oceanid",
@@ -6173,55 +6459,55 @@
     },
     {
       "key": "Primo Geovishap",
-      "name": "Primo Geovishap"
+      "name": "Dragarto Primordial"
     },
     {
       "key": "Pyro Abyss Mage",
-      "name": "Pyro Abyss Mage"
+      "name": "Mago do Abismo Pyro"
     },
     {
       "key": "Pyro Hilichurl Shooter",
-      "name": "Pyro Hilichurl Shooter"
+      "name": "Hilichurl Atirador Pyro"
     },
     {
       "key": "Pyro Regisvine",
-      "name": "Pyro Regisvine"
+      "name": "Árvore Queimada"
     },
     {
       "key": "Pyro Slime",
-      "name": "Pyro Slime"
+      "name": "Slime Pyro"
     },
     {
       "key": "Pyro Whopperflower",
-      "name": "Pyro Whopperflower"
+      "name": "Flor Gigante Pyro"
     },
     {
       "key": "Rock Shield Hilichurl Guard",
-      "name": "Rock Shield Hilichurl Guard"
+      "name": "Hilichur Guarda de Escudo de Pedra"
     },
     {
       "key": "Rock Shieldwall Mitachurl",
-      "name": "Rock Shieldwall Mitachurl"
+      "name": "Mitachurl de Escudo de Pedra"
     },
     {
       "key": "Ruin Grader",
-      "name": "Ruin Grader"
+      "name": "Colosso das Ruinas"
     },
     {
       "key": "Ruin Guard",
-      "name": "Ruin Guard"
+      "name": "Guarda das Ruínas"
     },
     {
       "key": "Ruin Hunter",
-      "name": "Ruin Hunter"
+      "name": "Caçador das Ruinas"
     },
     {
       "key": "Stonehide Lawachurl",
-      "name": "Stonehide Lawachurl"
+      "name": "Lawachurl da Pedra Oculta"
     },
     {
       "key": "Stormterror",
-      "name": "Stormterror"
+      "name": "Stormterror - Rompe-Céus"
     },
     {
       "key": "Treasure Hoarders - Boss",
@@ -6285,15 +6571,15 @@
     },
     {
       "key": "Unusual Hilichurl",
-      "name": "Unusual Hilichurl"
+      "name": "Hilichurl Estranho"
     },
     {
       "key": "Wooden Shield Hilichurl Guard",
-      "name": "Wooden Shield Hilichurl Guard"
+      "name": "Hilichurl Guarda de Escudo de Madeira"
     },
     {
       "key": "Wooden Shieldwall Mitachurl",
-      "name": "Wooden Shieldwall Mitachurl"
+      "name": "Mitachurl de Escudo de Madeira"
     }
   ]
 }

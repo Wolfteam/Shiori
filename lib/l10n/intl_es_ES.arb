@@ -8,6 +8,7 @@
   "russian": "Ruso",
   "simplifiedChinese": "Chino (Simplificado)",
   "portuguese": "Portugués",
+  "italian": "Italiano",
   "bow": "Arco",
   "claymore": "Mina",
   "sword": "Espada",
@@ -290,5 +291,10 @@
   "automaton": "Automata",
   "droppedBy": "Dejado por",
   "pressOnceAgainToExit": "Presiona una vez más para salir",
-  "discordServer": "Servidor de Discord"
+  "discordServer": "Servidor de Discord",
+  "usedItem": "Item usado",
+  "itemIsBeingUsedOnACalculation": "Este item está siendo usado en una o más sesiones de la calculadora.\nLa cantidad usada es {quantity}",
+  "useOfficialMap": "Usar el mapa oficial",
+  "dailyCheckIn": "Inicio de Sesión Diario",
+  "dailyCheckInMsg": "¡ No olvides reclamar tus recompensas diarias aqui !"
 }
