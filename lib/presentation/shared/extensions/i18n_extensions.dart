@@ -449,6 +449,10 @@ extension I18nExtensions on S {
         return gadget;
       case AppNotificationType.furniture:
         return furniture;
+      case AppNotificationType.realmCurrency:
+        return realmCurrency;
+      case AppNotificationType.weeklyBoss:
+        return boss;
       case AppNotificationType.custom:
         return custom;
       default:
@@ -509,6 +513,33 @@ extension I18nExtensions on S {
         return xHours(16);
       default:
         throw Exception('Invalid furniture crafting time type = $type');
+    }
+  }
+
+  String translateRealRankType(RealmRankType type) {
+    switch (type) {
+      case RealmRankType.bareBones:
+        return bareBones;
+      case RealmRankType.humbleAbode:
+        return humbleAbode;
+      case RealmRankType.cozy:
+        return cozy;
+      case RealmRankType.queenSize:
+        return queenSize;
+      case RealmRankType.elegant:
+        return elegant;
+      case RealmRankType.exquisite:
+        return exquisite;
+      case RealmRankType.extraordinary:
+        return extraordinary;
+      case RealmRankType.stately:
+        return stately;
+      case RealmRankType.luxury:
+        return luxury;
+      case RealmRankType.fitForAKing:
+        return fitForAKing;
+      default:
+        throw Exception('Invalid realm rank type = $type');
     }
   }
 }

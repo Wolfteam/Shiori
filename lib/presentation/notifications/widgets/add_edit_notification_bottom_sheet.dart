@@ -10,7 +10,9 @@ import 'notification_farming_artifact_form.dart';
 import 'notification_farming_material_form.dart';
 import 'notification_furniture_form.dart';
 import 'notification_gadget_form.dart';
+import 'notification_realm_currency_form.dart';
 import 'notification_resin_form.dart';
+import 'notification_weekly_boss_form.dart';
 
 class AddEditNotificationBottomSheet extends StatelessWidget {
   final bool isInEditMode;
@@ -93,6 +95,27 @@ class AddEditNotificationBottomSheet extends StatelessWidget {
             images: state.images,
             showOtherImages: state.showOtherImages,
             timeType: state.timeType,
+          ),
+          realmCurrency: (state) => NotificationRealmCurrency(
+            title: state.title,
+            body: state.body,
+            note: state.note,
+            showNotification: state.showNotification,
+            isInEditMode: isInEditMode,
+            images: state.images,
+            showOtherImages: state.showOtherImages,
+            currentRankLevel: state.currentTrustRank,
+            currentRankType: state.currentRealmRankType,
+            currentRealmCurrency: state.currentRealmCurrency,
+          ),
+          weeklyBoss: (state) => NotificationWeeklyBossForm(
+            title: state.title,
+            body: state.body,
+            note: state.note,
+            showNotification: state.showNotification,
+            isInEditMode: isInEditMode,
+            images: state.images,
+            showOtherImages: state.showOtherImages,
           ),
           custom: (state) => NotificationCustomForm(
             itemType: state.itemType,

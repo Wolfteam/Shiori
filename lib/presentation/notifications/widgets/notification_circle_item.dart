@@ -99,6 +99,10 @@ class NotificationCircleItem extends StatelessWidget {
         _toggleShowOtherImages(context);
         break;
       case AppNotificationType.furniture:
+      case AppNotificationType.realmCurrency:
+        break;
+      case AppNotificationType.weeklyBoss:
+        _toggleShowOtherImages(context);
         break;
       case AppNotificationType.custom:
         switch (itemType) {
