@@ -6,6 +6,7 @@ import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/utils/date_utils.dart' as utils;
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/notifications/widgets/notification_note.dart';
+import 'package:genshindb/presentation/shared/dropdown_button_with_title.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
 
@@ -49,34 +50,28 @@ class NotificationCustomForm extends StatelessWidget {
       children: [
         NotificationCircleItem.custom(itemType: itemType, images: images, showOtherImages: showOtherImages),
         NotificationDropdownType(selectedValue: AppNotificationType.custom, isInEditMode: isInEditMode),
-        Container(
-          margin: const EdgeInsets.symmetric(vertical: 15),
-          child: Row(
-            children: [
-              Expanded(
-                flex: 40,
-                child: DropdownButton<AppNotificationItemType>(
-                  isExpanded: true,
-                  hint: Text(s.notificationType),
-                  value: itemType,
-                  onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.itemTypeChanged(newValue: v)),
-                  items: AppNotificationItemType.values
-                      .map((type) => DropdownMenuItem(value: type, child: Text(s.translateAppNotificationItemType(type))))
-                      .toList(),
-                ),
+        Row(
+          children: [
+            Expanded(
+              flex: 40,
+              child: DropdownButtonWithTitle<AppNotificationItemType>(
+                title: s.type,
+                currentValue: itemType,
+                items: AppNotificationItemType.values,
+                itemBuilder: (type, _) => DropdownMenuItem(value: type, child: Text(s.translateAppNotificationItemType(type))),
+                onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.itemTypeChanged(newValue: v)),
               ),
-              const Spacer(flex: 10),
-              Expanded(
-                flex: 40,
-                child: OutlinedButton(
-                  onPressed: () => _showQuantityPickerDialog(context, 720),
-                  child: Text(utils.DateUtils.formatDateWithoutLocale(scheduledDate), textAlign: TextAlign.center),
-                ),
+            ),
+            const Spacer(flex: 10),
+            Expanded(
+              flex: 40,
+              child: OutlinedButton(
+                onPressed: () => _showQuantityPickerDialog(context, 720),
+                child: Text(utils.DateUtils.formatDateWithoutLocale(scheduledDate), textAlign: TextAlign.center),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-        //TODO: HOW WILL YOU RETRIEVE THE GADGET'S COOLDOWN ?
         NotificationTitleBody(title: title, body: body),
         NotificationNote(note: note),
         NotificationSwitch(showNotification: showNotification),

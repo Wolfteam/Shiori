@@ -6,13 +6,14 @@ class NumberPickerDialog extends StatefulWidget {
   final int minItemLevel;
   final int maxItemLevel;
   final int value;
+  final String title;
 
-  //TODO: ALLOW CHANGING THE TEXT IN THE TITLE
   const NumberPickerDialog({
     Key key,
     @required this.minItemLevel,
     @required this.maxItemLevel,
     @required this.value,
+    @required this.title,
   }) : super(key: key);
 
   @override
@@ -32,7 +33,7 @@ class _NumberPickerDialogState extends State<NumberPickerDialog> {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return AlertDialog(
-      title: Text(s.chooseALevel),
+      title: Text(widget.title),
       actions: [
         OutlinedButton(
           onPressed: () => Navigator.pop(context),

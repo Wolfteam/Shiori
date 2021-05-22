@@ -4,6 +4,7 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
+import 'package:genshindb/presentation/shared/dropdown_button_with_title.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 
 import 'notification_circle_item.dart';
@@ -45,18 +46,12 @@ class NotificationFurnitureForm extends StatelessWidget {
       children: [
         NotificationCircleItem(type: _type, images: images, showOtherImages: showOtherImages),
         NotificationDropdownType(selectedValue: _type, isInEditMode: isInEditMode),
-        Container(
-          margin: const EdgeInsets.symmetric(vertical: 15),
-          child: DropdownButton<FurnitureCraftingTimeType>(
-            isExpanded: true,
-            hint: Text(s.chooseLanguage),
-            value: timeType,
-            onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.furnitureCraftingTimeTypeChanged(newValue: v)),
-            items: FurnitureCraftingTimeType.values
-                .map<DropdownMenuItem<FurnitureCraftingTimeType>>(
-                    (type) => DropdownMenuItem<FurnitureCraftingTimeType>(value: type, child: Text(s.translateFurnitureCraftingTimeType(type))))
-                .toList(),
-          ),
+        DropdownButtonWithTitle<FurnitureCraftingTimeType>(
+          title: s.time,
+          currentValue: timeType,
+          items: FurnitureCraftingTimeType.values,
+          itemBuilder: (type, _) => DropdownMenuItem<FurnitureCraftingTimeType>(value: type, child: Text(s.translateFurnitureCraftingTimeType(type))),
+          onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.furnitureCraftingTimeTypeChanged(newValue: v)),
         ),
         NotificationTitleBody(title: title, body: body),
         NotificationNote(note: note),

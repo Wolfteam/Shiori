@@ -5,6 +5,7 @@ import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/notifications/widgets/notification_note.dart';
+import 'package:genshindb/presentation/shared/dropdown_button_with_title.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 
 import 'notification_circle_item.dart';
@@ -46,22 +47,12 @@ class NotificationExpeditionForm extends StatelessWidget {
       children: [
         NotificationCircleItem(type: AppNotificationType.expedition, images: images, showOtherImages: showOtherImages),
         NotificationDropdownType(selectedValue: AppNotificationType.expedition, isInEditMode: isInEditMode),
-        Container(
-          margin: const EdgeInsets.symmetric(vertical: 15),
-          child: DropdownButton<ExpeditionTimeType>(
-            isExpanded: true,
-            hint: Text(s.chooseLanguage),
-            value: timeType,
-            onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.expeditionTimeTypeChanged(newValue: v)),
-            items: ExpeditionTimeType.values
-                .map<DropdownMenuItem<ExpeditionTimeType>>(
-                  (type) => DropdownMenuItem<ExpeditionTimeType>(
-                    value: type,
-                    child: Text(s.translateExpeditionTimeType(type)),
-                  ),
-                )
-                .toList(),
-          ),
+        DropdownButtonWithTitle<ExpeditionTimeType>(
+          title: s.expeditionTime,
+          items: ExpeditionTimeType.values,
+          currentValue: timeType,
+          onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.expeditionTimeTypeChanged(newValue: v)),
+          itemBuilder: (type, _) => DropdownMenuItem<ExpeditionTimeType>(value: type, child: Text(s.translateExpeditionTimeType(type))),
         ),
         NotificationTitleBody(title: title, body: body),
         NotificationNote(note: note),

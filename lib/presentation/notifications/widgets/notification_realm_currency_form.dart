@@ -5,6 +5,7 @@ import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
+import 'package:genshindb/presentation/shared/dropdown_button_with_title.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/number_picker_dialog.dart';
 
@@ -26,7 +27,7 @@ class NotificationRealmCurrency extends StatelessWidget {
   final List<NotificationItemImage> images;
   final bool showOtherImages;
   final RealmRankType currentRankType;
-  final int currentRankLevel;
+  final int currentTrustRank;
 
   const NotificationRealmCurrency({
     Key key,
@@ -39,7 +40,7 @@ class NotificationRealmCurrency extends StatelessWidget {
     @required this.images,
     @required this.showOtherImages,
     @required this.currentRankType,
-    @required this.currentRankLevel,
+    @required this.currentTrustRank,
   }) : super(key: key);
 
   @override
@@ -68,18 +69,33 @@ class NotificationRealmCurrency extends StatelessWidget {
             ),
           ],
         ),
-        Container(
-          margin: const EdgeInsets.symmetric(vertical: 15),
-          child: DropdownButton<RealmRankType>(
-            isExpanded: true,
-            hint: Text(s.realmCurrency),
-            value: currentRankType,
-            onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.realmRankTypeChanged(newValue: v)),
-            items: RealmRankType.values
-                .map<DropdownMenuItem<RealmRankType>>(
-                    (type) => DropdownMenuItem<RealmRankType>(value: type, child: Text(s.translateRealRankType(type))))
-                .toList(),
-          ),
+        Row(
+          children: [
+            Expanded(
+              flex: 40,
+              child: DropdownButtonWithTitle<RealmRankType>(
+                title: s.realmRank,
+                currentValue: currentRankType,
+                items: RealmRankType.values,
+                itemBuilder: (type, index) => DropdownMenuItem<RealmRankType>(
+                  value: type,
+                  child: Text('# ${index + 1} - ${s.translateRealRankType(type)}'),
+                ),
+                onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.realmRankTypeChanged(newValue: v)),
+              ),
+            ),
+            const Spacer(flex: 10),
+            Expanded(
+              flex: 40,
+              child: DropdownButtonWithTitle<int>(
+                title: s.trustRank,
+                currentValue: currentTrustRank,
+                items: trustRank.keys,
+                itemBuilder: (level, _) => DropdownMenuItem<int>(value: level, child: Text('$level')),
+                onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.realmTrustRankLevelChanged(newValue: v)),
+              ),
+            ),
+          ],
         ),
         NotificationTitleBody(title: title, body: body),
         NotificationNote(note: note),
@@ -88,19 +104,23 @@ class NotificationRealmCurrency extends StatelessWidget {
     );
   }
 
-  //TODO: ADD A BUTTON TO SET THE CURRENT REALM CURRENCY
-  //TODO: IF YOU CHANGE THE VALUES TO A HIGHER ONE AND GO BACK TO A LOWER, THE CURRENT VALUE WILL STILL BE THE HIGHEST
   Future<void> _showRealmRankLevelPickerDialog(BuildContext context) async {
-    final max = trustRank.entries.firstWhere((el) => el.key == currentRankLevel).value;
+    final s = S.of(context);
+    final max = getMaxRealmCurrency(currentTrustRank);
     final newValue = await showDialog<int>(
       context: context,
-      builder: (_) => NumberPickerDialog(maxItemLevel: max, minItemLevel: 0, value: currentRealmCurrency),
+      builder: (_) => NumberPickerDialog(
+        maxItemLevel: max - 1,
+        minItemLevel: 0,
+        value: currentRealmCurrency,
+        title: s.realmCurrency,
+      ),
     );
 
     if (newValue == null) {
       return;
     }
 
-    context.read<NotificationBloc>().add(NotificationEvent.realmTrustRankLevelChanged(newValue: newValue));
+    context.read<NotificationBloc>().add(NotificationEvent.realmCurrencyChanged(newValue: newValue));
   }
 }

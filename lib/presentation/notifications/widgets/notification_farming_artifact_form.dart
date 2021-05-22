@@ -4,6 +4,7 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
+import 'package:genshindb/presentation/shared/dropdown_button_with_title.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 
 import 'notification_circle_item.dart';
@@ -45,18 +46,12 @@ class NotificationFarmingArtifactForm extends StatelessWidget {
       children: [
         NotificationCircleItem(type: _type, images: images, showOtherImages: showOtherImages),
         NotificationDropdownType(selectedValue: _type, isInEditMode: isInEditMode),
-        Container(
-          margin: const EdgeInsets.symmetric(vertical: 15),
-          child: DropdownButton<ArtifactFarmingTimeType>(
-            isExpanded: true,
-            hint: Text(s.chooseLanguage),
-            value: artifactFarmingTimeType,
-            onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.artifactFarmingTimeTypeChanged(newValue: v)),
-            items: ArtifactFarmingTimeType.values
-                .map<DropdownMenuItem<ArtifactFarmingTimeType>>(
-                    (type) => DropdownMenuItem<ArtifactFarmingTimeType>(value: type, child: Text(s.translateArtifactFarmingTimeType(type))))
-                .toList(),
-          ),
+        DropdownButtonWithTitle<ArtifactFarmingTimeType>(
+          title: s.time,
+          currentValue: artifactFarmingTimeType,
+          items: ArtifactFarmingTimeType.values,
+          itemBuilder: (type, _) => DropdownMenuItem<ArtifactFarmingTimeType>(value: type, child: Text(s.translateArtifactFarmingTimeType(type))),
+          onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.artifactFarmingTimeTypeChanged(newValue: v)),
         ),
         NotificationTitleBody(title: title, body: body),
         NotificationNote(note: note),

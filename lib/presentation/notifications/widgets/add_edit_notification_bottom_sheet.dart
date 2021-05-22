@@ -104,7 +104,7 @@ class AddEditNotificationBottomSheet extends StatelessWidget {
             isInEditMode: isInEditMode,
             images: state.images,
             showOtherImages: state.showOtherImages,
-            currentRankLevel: state.currentTrustRank,
+            currentTrustRank: state.currentTrustRank,
             currentRankType: state.currentRealmRankType,
             currentRealmCurrency: state.currentRealmCurrency,
           ),

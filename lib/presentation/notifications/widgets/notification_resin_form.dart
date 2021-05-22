@@ -69,9 +69,15 @@ class NotificationResinForm extends StatelessWidget {
   }
 
   Future<void> _showQuantityPickerDialog(BuildContext context, int value) async {
+    final s = S.of(context);
     final newValue = await showDialog<int>(
       context: context,
-      builder: (BuildContext context) => NumberPickerDialog(maxItemLevel: maxResinValue - 1, minItemLevel: minResinValue, value: value),
+      builder: (BuildContext context) => NumberPickerDialog(
+        maxItemLevel: maxResinValue - 1,
+        minItemLevel: minResinValue,
+        value: value,
+        title: s.resin,
+      ),
     );
 
     if (newValue == null) {
