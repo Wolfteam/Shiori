@@ -103,7 +103,6 @@ abstract class DataService {
 
   Future<NotificationItem> saveGadgetNotification(
     String itemKey,
-    Duration gadgetCooldownDuration,
     String title,
     String body, {
     String note,
@@ -174,6 +173,7 @@ abstract class DataService {
 
   Future<NotificationItem> updateResinNotification(
     int key,
+    String itemKey,
     String title,
     String body,
     int currentResinValue,
@@ -183,6 +183,7 @@ abstract class DataService {
 
   Future<NotificationItem> updateExpeditionNotification(
     int key,
+    String itemKey,
     ExpeditionTimeType expeditionTimeType,
     String title,
     String body,
@@ -193,6 +194,7 @@ abstract class DataService {
 
   Future<NotificationItem> updateFurnitureNotification(
     int key,
+    String itemKey,
     FurnitureCraftingTimeType type,
     String title,
     String body,
@@ -211,6 +213,7 @@ abstract class DataService {
 
   Future<NotificationItem> updateFarmingArtifactNotification(
     int key,
+    String itemKey,
     ArtifactFarmingTimeType type,
     String title,
     String body,
@@ -220,6 +223,7 @@ abstract class DataService {
 
   Future<NotificationItem> updateGadgetNotification(
     int key,
+    String itemKey,
     String title,
     String body,
     bool showNotification, {
@@ -228,6 +232,7 @@ abstract class DataService {
 
   Future<NotificationItem> updateRealmCurrencyNotification(
     int key,
+    String itemKey,
     RealmRankType realmRankType,
     int currentTrustRankLevel,
     int currentRealmCurrency,

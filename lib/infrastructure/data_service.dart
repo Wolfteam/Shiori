@@ -463,14 +463,14 @@ class DataServiceImpl implements DataService {
   @override
   Future<NotificationItem> saveGadgetNotification(
     String itemKey,
-    Duration gadgetCooldownDuration,
     String title,
     String body, {
     String note,
     bool showNotification = true,
   }) async {
     final now = DateTime.now();
-    final completesAt = now.add(gadgetCooldownDuration);
+    final gadget = _genshinService.getGadget(itemKey);
+    final completesAt = now.add(gadget.cooldownDuration);
     final notification = Notification.gadget(
       itemKey: itemKey,
       createdAt: now,
@@ -661,6 +661,7 @@ class DataServiceImpl implements DataService {
   @override
   Future<NotificationItem> updateResinNotification(
     int key,
+    String itemKey,
     String title,
     String body,
     int currentResinValue,
@@ -669,6 +670,7 @@ class DataServiceImpl implements DataService {
   }) {
     final item = _notificationsBox.values.firstWhere((el) => el.key == key);
     item.currentResinValue = currentResinValue;
+    item.itemKey = itemKey;
     if (currentResinValue != item.currentResinValue) {
       item.completesAt = _getNotificationDateForResin(currentResinValue);
     }
@@ -679,6 +681,7 @@ class DataServiceImpl implements DataService {
   @override
   Future<NotificationItem> updateExpeditionNotification(
     int key,
+    String itemKey,
     ExpeditionTimeType expeditionTimeType,
     String title,
     String body,
@@ -693,6 +696,7 @@ class DataServiceImpl implements DataService {
     }
     item.expeditionTimeType = expeditionTimeType.index;
     item.withTimeReduction = withTimeReduction;
+    item.itemKey = itemKey;
 
     return _updateNotification(item, title, body, note, showNotification);
   }
@@ -718,6 +722,7 @@ class DataServiceImpl implements DataService {
   @override
   Future<NotificationItem> updateFarmingArtifactNotification(
     int key,
+    String itemKey,
     ArtifactFarmingTimeType type,
     String title,
     String body,
@@ -730,6 +735,7 @@ class DataServiceImpl implements DataService {
       item.completesAt = DateTime.now().add(newDuration);
     }
     item.artifactFarmingTimeType = type.index;
+    item.itemKey = itemKey;
 
     return _updateNotification(item, title, body, note, showNotification);
   }
@@ -737,19 +743,27 @@ class DataServiceImpl implements DataService {
   @override
   Future<NotificationItem> updateGadgetNotification(
     int key,
+    String itemKey,
     String title,
     String body,
     bool showNotification, {
     String note,
   }) {
-    //TODO: SHOULD I ALLOW UPDATING THE GADGET ITEM?
     final item = _notificationsBox.values.firstWhere((el) => el.key == key);
+    final gadget = _genshinService.getGadget(item.itemKey);
+    if (item.itemKey != itemKey) {
+      final now = DateTime.now();
+      item.completesAt = now.add(gadget.cooldownDuration);
+      item.itemKey = itemKey;
+    }
+
     return _updateNotification(item, title, body, note, showNotification);
   }
 
   @override
   Future<NotificationItem> updateFurnitureNotification(
     int key,
+    String itemKey,
     FurnitureCraftingTimeType type,
     String title,
     String body,
@@ -757,6 +771,7 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsBox.values.firstWhere((el) => el.key == key);
+    item.itemKey = itemKey;
     if (item.furnitureCraftingTimeType != type.index) {
       item.furnitureCraftingTimeType = type.index;
       item.completesAt = DateTime.now().add(getFurnitureDuration(type));
@@ -768,6 +783,7 @@ class DataServiceImpl implements DataService {
   @override
   Future<NotificationItem> updateRealmCurrencyNotification(
     int key,
+    String itemKey,
     RealmRankType realmRankType,
     int currentTrustRankLevel,
     int currentRealmCurrency,
@@ -777,9 +793,13 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsBox.values.firstWhere((el) => el.key == key);
+    item.itemKey = itemKey;
     if (item.realmRankType != realmRankType.index || item.realmTrustRank != currentTrustRankLevel || item.realmCurrency != currentRealmCurrency) {
       final duration = getRealmCurrencyDuration(currentRealmCurrency, currentTrustRankLevel, realmRankType);
       item.completesAt = DateTime.now().add(duration);
+      item.realmRankType = realmRankType.index;
+      item.realmTrustRank = currentTrustRankLevel;
+      item.realmCurrency = currentRealmCurrency;
     }
 
     return _updateNotification(item, title, body, note, showNotification);
@@ -1023,6 +1043,8 @@ class DataServiceImpl implements DataService {
     final itemType = e.notificationItemType == null ? null : AppNotificationItemType.values[e.notificationItemType];
     final expeditionType = e.expeditionTimeType == null ? null : ExpeditionTimeType.values[e.expeditionTimeType];
     final furnitureCraftingType = e.furnitureCraftingTimeType == null ? null : FurnitureCraftingTimeType.values[e.furnitureCraftingTimeType];
+    final artifactFarmingType = e.artifactFarmingTimeType != null ? ArtifactFarmingTimeType.values[e.artifactFarmingTimeType] : null;
+    final realmRankType = e.realmRankType != null ? RealmRankType.values[e.realmRankType] : null;
     return NotificationItem(
       key: e.key as int,
       image: _genshinService.getItemImageFromNotificationType(e.itemKey, type, notificationItemType: itemType),
@@ -1039,6 +1061,10 @@ class DataServiceImpl implements DataService {
       body: e.body,
       scheduledDate: e.originalScheduledDate,
       furnitureCraftingTimeType: furnitureCraftingType,
+      artifactFarmingTimeType: artifactFarmingType,
+      realmCurrency: e.realmCurrency,
+      realmRankType: realmRankType,
+      realmTrustRank: e.realmTrustRank,
     );
   }
 

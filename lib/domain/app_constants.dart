@@ -368,10 +368,12 @@ Duration _getExpeditionDuration(int hours, bool withTimeReduction) {
 }
 
 Duration getRealmCurrencyDuration(int currentRealmCurrency, int currentTrustRank, RealmRankType currentRealmRank) {
-  final maxRealmCurrency = trustRank.entries.firstWhere((kvp) => kvp.key == currentTrustRank).value;
+  final maxRealmCurrency = getMaxRealmCurrency(currentTrustRank);
   final ratioPerHour = increasingRatio.entries.firstWhere((kvp) => kvp.key == currentRealmRank).value;
-
   final remaining = maxRealmCurrency - currentRealmCurrency;
-  final hours = remaining ~/ ratioPerHour;
-  return Duration(hours: hours);
+  final minutesLeft = remaining * 60 ~/ ratioPerHour;
+
+  return Duration(minutes: minutesLeft);
 }
+
+int getMaxRealmCurrency(int currentTrustRank) => trustRank.entries.firstWhere((kvp) => kvp.key == currentTrustRank).value;

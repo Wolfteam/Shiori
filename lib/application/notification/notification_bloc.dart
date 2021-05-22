@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/assets.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/extensions/iterable_extensions.dart';
@@ -111,7 +112,14 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
         orElse: () => state,
       ),
       realmTrustRankLevelChanged: (e) async => state.maybeMap(
-        realmCurrency: (state) => state.copyWith.call(currentTrustRank: e.newValue),
+        realmCurrency: (state) {
+          final max = getMaxRealmCurrency(e.newValue);
+          var currentRealmCurrency = state.currentRealmCurrency;
+          if (state.currentRealmCurrency > max) {
+            currentRealmCurrency = max - 1;
+          }
+          return state.copyWith.call(currentTrustRank: e.newValue, currentRealmCurrency: currentRealmCurrency);
+        },
         orElse: () => state,
       ),
     );
@@ -312,7 +320,6 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   Future<NotificationState> _saveChanges() async {
-    //TODO: GET THE ITEM KEY WHILE SAVING
     try {
       await state.map(
         resin: _saveResinNotification,
@@ -326,7 +333,6 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
         realmCurrency: _saveRealmCurrencyNotification,
       );
     } catch (e, s) {
-      //TODO: SHOW AN ERROR IN THE UI
       _loggingService.error(runtimeType, '_saveChanges: Unknown error while saving changes', e, s);
     }
 
@@ -338,6 +344,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     if (s.key != null) {
       final updated = await _dataService.updateResinNotification(
         s.key,
+        selectedItemKey,
         s.title,
         s.body,
         s.currentResin,
@@ -367,6 +374,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     if (s.key != null) {
       final updated = await _dataService.updateExpeditionNotification(
         s.key,
+        selectedItemKey,
         s.expeditionTimeType,
         s.title,
         s.body,
@@ -397,6 +405,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     if (s.key != null) {
       final updated = await _dataService.updateFarmingArtifactNotification(
         s.key,
+        selectedItemKey,
         s.artifactFarmingTimeType,
         s.title,
         s.body,
@@ -452,6 +461,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     if (s.key != null) {
       final updated = await _dataService.updateGadgetNotification(
         s.key,
+        selectedItemKey,
         s.title,
         s.body,
         s.showNotification,
@@ -461,10 +471,8 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       return;
     }
 
-    final gadget = _genshinService.getGadget(selectedItemKey);
     final notif = await _dataService.saveGadgetNotification(
       selectedItemKey,
-      gadget.cooldownDuration,
       s.title,
       s.body,
       note: s.note,
@@ -480,6 +488,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     if (s.key != null) {
       final updated = await _dataService.updateFurnitureNotification(
         s.key,
+        selectedItemKey,
         s.timeType,
         s.title,
         s.body,
@@ -508,6 +517,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     if (s.key != null) {
       final updated = await _dataService.updateRealmCurrencyNotification(
         s.key,
+        selectedItemKey,
         s.currentRealmRankType,
         s.currentTrustRank,
         s.currentRealmCurrency,

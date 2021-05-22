@@ -214,7 +214,7 @@ class Notification extends HiveObject {
     @required this.showNotification,
     @required this.title,
     @required this.body,
-  })  : type = AppNotificationType.weeklyBoss.index,
+  })  : type = AppNotificationType.realmCurrency.index,
         currentResinValue = 0,
         notificationItemType = null,
         expeditionTimeType = null,

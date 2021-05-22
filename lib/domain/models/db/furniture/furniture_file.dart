@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/domain/models/db/gadgets/gadget_file_model.dart';
 
 import 'furniture_file_model.dart';
 
