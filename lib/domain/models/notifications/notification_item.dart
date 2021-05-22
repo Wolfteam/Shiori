@@ -21,6 +21,7 @@ abstract class NotificationItem with _$NotificationItem {
 
   factory NotificationItem({
     @required int key,
+    @required String itemKey,
     @required String title,
     @required String body,
     @required String image,

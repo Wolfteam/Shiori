@@ -10,14 +10,12 @@ import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/calculator_service.dart';
 import 'package:genshindb/domain/services/data_service.dart';
 import 'package:genshindb/domain/services/genshin_service.dart';
-import 'package:genshindb/domain/services/locale_service.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class DataServiceImpl implements DataService {
   final GenshinService _genshinService;
   final CalculatorService _calculatorService;
-  final LocaleService _localeService;
 
   Box<CalculatorSession> _sessionBox;
   Box<CalculatorItem> _calcItemBox;
@@ -28,7 +26,7 @@ class DataServiceImpl implements DataService {
   Box<TierListItem> _tierListBox;
   Box<Notification> _notificationsBox;
 
-  DataServiceImpl(this._genshinService, this._calculatorService, this._localeService);
+  DataServiceImpl(this._genshinService, this._calculatorService);
 
   Future<void> init() async {
     await Hive.initFlutter();
@@ -1047,6 +1045,7 @@ class DataServiceImpl implements DataService {
     final realmRankType = e.realmRankType != null ? RealmRankType.values[e.realmRankType] : null;
     return NotificationItem(
       key: e.key as int,
+      itemKey: e.itemKey,
       image: _genshinService.getItemImageFromNotificationType(e.itemKey, type, notificationItemType: itemType),
       createdAt: e.createdAt,
       completesAt: e.completesAt,

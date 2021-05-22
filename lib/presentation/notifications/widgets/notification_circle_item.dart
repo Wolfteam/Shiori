@@ -128,29 +128,28 @@ class NotificationCircleItem extends StatelessWidget {
     }
   }
 
-  //TODO: EXCLUDE KEYS
   Future<void> _openCharactersPage(BuildContext context) async {
-    final keyName = await CharactersPage.forSelection(context);
+    final keyName = await CharactersPage.forSelection(context, excludeKeys: [selected.itemKey]);
     _onItemSelected(keyName, context);
   }
 
   Future<void> _openWeaponsPage(BuildContext context) async {
-    final keyName = await WeaponsPage.forSelection(context);
+    final keyName = await WeaponsPage.forSelection(context, excludeKeys: [selected.itemKey]);
     _onItemSelected(keyName, context);
   }
 
   Future<void> _openMonstersPage(BuildContext context) async {
-    final keyName = await MonstersPage.forSelection(context);
+    final keyName = await MonstersPage.forSelection(context, excludeKeys: [selected.itemKey]);
     _onItemSelected(keyName, context);
   }
 
   Future<void> _openArtifactsPage(BuildContext context) async {
-    final keyName = await ArtifactsPage.forSelection(context);
+    final keyName = await ArtifactsPage.forSelection(context, excludeKeys: [selected.itemKey]);
     _onItemSelected(keyName, context);
   }
 
   Future<void> _openMaterialsPage(BuildContext context) async {
-    final keyName = await MaterialsPage.forSelection(context);
+    final keyName = await MaterialsPage.forSelection(context, excludeKeys: [selected.itemKey]);
     _onItemSelected(keyName, context);
   }
 

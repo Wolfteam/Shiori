@@ -228,7 +228,8 @@ class MyApp extends StatelessWidget {
             final genshinService = getIt<GenshinService>();
             final localeService = getIt<LocaleService>();
             final loggingService = getIt<LoggingService>();
-            return NotificationBloc(dataService, notificationService, genshinService, localeService, loggingService);
+            final telemetryService = getIt<TelemetryService>();
+            return NotificationBloc(dataService, notificationService, genshinService, localeService, loggingService, telemetryService);
           },
         ),
       ],

@@ -218,10 +218,6 @@ class Assets {
 
   static String getOriginalResinPath() => Assets.getCurrencyMaterialPath('fragile_resin.png');
 
-  static String getMoraPath() => Assets.getCurrencyMaterialPath('mora.png');
-
-  static String getCrystalChunkPath() => getIngredientMaterialPath('crystal_chunk.png');
-
   static String getGadgetPath(String image) => '$gadgetsBasePath/$image';
 
   static String getFurniturePath(String image) => '$furnitureBasePath/$image';
