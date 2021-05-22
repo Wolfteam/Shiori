@@ -981,114 +981,114 @@
     {
       "key": "Eula",
       "name": "Eula",
-      "description": "The Spindrift Knight, a scion of the old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
+      "description": "A Cavaleira das Ondas, uma descendente da antiga aristocracia, e a Capità de Reconhecimento dos Cavaleiros de Favonius. A razão pela qual uma descendente dos antigos nobres poderia se juntar aos Cavaleiros permanece um grande mistério em Mondstadt até os dias de hoje.",
       "skills": [
         {
           "key": "s1",
-          "title": "Favonius Bladework - Edel",
+          "title": "Técnica da Espada de Favonius - Nobreza",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 5 consecutive strikes.",
+              "description": "Realiza até 5 golpes consecutivos.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": " Drains Stamina over time to perform continuous slashes.\nAt the end of the sequence, perform a more powerful slash.",
+              "description": " Drena Stamina ao longo do tempo para realizar cortes continuos.\nAo final da sequência, realiza um corte ainda mais poderoso.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Mergulha em pleno ar para golpear o chão, danificando inimigos em seu caminho e infligindo dano em uma AdE durante o impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Icetide Vortex",
+          "title": "Vórtice Gelado",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Slashes swiftly, dealing Cryo DMG.\nWhen it hits an opponent, Eula gains a stack of Grimheart that stacks up to 2 times. These stacks can only be gained once every 0.3s.",
+              "description": "Faz um golpe rápido que causa Dano Cryo.\nQuando acerta nos inimigos, Eula ganha 1 Coração Impassível que se acumula no máximo 2 vezes e só pode ser ativado 1 vez a cada 0.3s.",
               "descriptions": []
             },
             {
-              "name": "Grimheart",
-              "description": "Increases Eula's resistance to interruption and DEF.",
+              "name": "Coração Impassivel",
+              "description": "Aumenta a Resistência contra Interrupção e DEF de Eula.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Wielding her sword, Eula consumes all the stacks of Grimheart and lashes forward, dealing AoE Cryo DMG to opponents in front of her.\nIf Grimheart stacks are consumed, surrounding opponents will have their Physical RES and Cryo RES decreased.\nEach consumed stack of Grimheart will be converted into an Icewhirl Brand that deals Cryo DMG to nearby opponents.",
+              "description": "Balança a espada para fazer um golpe para a frente, causando Dano Cryo na AdE aos inimigos em frente, e eliminando o efeito de Coração Impassível de Eula.\nCaso o efeito do Coração Impassivel seja consumido, irá diminuir a RES Fisica e RES Cryo dos inimigos acertados. Cada Coração Impassível se converterá em uma Espada do Vórtice de Gelo, causando Dano Cryo nos inimigos ao redor.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Glacial Illumination",
-          "description": "Brandishes her greatsword, dealing Cryo DMG to nearby opponents and creating a Lightfall Sword that follows her around for a duration of up to 7s.\nWhile present, the Lightfall Sword increases Eula's resistance to interruption. When Eula's own Normal Attack, Elemental Skill, and Elemental Burst deal DMG to opponents, they will charge the Lightfall Sword, which can gain an energy stack once every 0.1s.\nOnce its duration ends, the Lightfall Sword will descend and explode violently, dealing Physical DMG to nearby opponents.\nThis DMG scales on the number of energy stacks the Lightfall Sword has accumulated.\nIf Eula leaves the field, the Lightfall Sword will explode immediately.",
+          "title": "Espada das Ondas Congeladas",
+          "description": "Eula brande seu Espadão, causando Dano Cryo e criando uma Espada Luminosa que a segue por uma duração de até 7s.\nEnquanto estiver presente, a Espada Luminosa aumenta a Resistência Contra Interrupção de Eula. Quando os Ataques Normais, Habilidades Elementais e Supremos de Eula causam Dano aos inimigos, eles carregarão a Espada Luminosa, que pode ganhar uma carga de energia a cada 0.1s.\nQuando sua duração encerrar, a Espada Luminosa explodirá, causando Dano Fisico para inimigos próximos.\nEsse Dano escala baseado no número de cargas de energia que a Espada Luminosa acumulou.\nSe Eula sair do campo, a Espada Luminosa explodirá imediatamente.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Aristocratic Introspection",
-          "description": "When Eula crafts Character Talent Materials, she has a 10% chance to receive double the product.",
+          "title": "Introspecção Aristocrática",
+          "description": "Quando sintetiza Materiais para aprimoramento de Talento do Personagem, tem uma chance de 10% de obter o dobro da Produção.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Roiling Rime",
-          "description": "If 2 stacks of Grimheart are consumed upon unleashing the Holding Mode of Icetide Vortex, a Shattered Lightfall Sword will be created that will explode immediately, dealing 50% of the basic Physical DMG dealt by a Lightfall Sword created by Glacial Illumination.",
+          "title": "Geada Turbulenta",
+          "description": "Se quando você mantiver pressionado para liberar o Vórtice Gelado e consumir 2 acúmulos de Corações Impassiveis de uma vez, criará uma Espada Luminosa fragmentada que explodirá imediatamente, causando Dano Físico em quantidade equivalente a 50% do Dano Básico da Espada Luminosa da Espada das Ondas Congelantes.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Wellspring of War-Lust",
-          "description": "When Glacial Illumination is cast, the CD of Icetide Vortex is reset and Eula gains 1 stack of Grimheart.",
+          "title": "Desejo de Lutar",
+          "description": "Quando a Espada das Ondas Congeladas é lançada, a Recarga do Vórtice Gelado é redefinida e Eula ganha 1 stack de Coração Impassível.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Tidal Illusion",
-          "description": "Every time Icetide Vortex's Grimheart stacks are consumed, Eula's Physical DMG is increased by 30% for 6s.\nEach stack consumed will increase the duration of this effect by 6s up to a maximum of 18s.",
+          "title": "Ilusão da Maré de Luz",
+          "description": "Após consumir o efeito de Coração Impassível de Vórtice Gelado, o Dano Adicional do Dano Físico de Eula aumenta em 30% por 6s.\nSempre que consumir uma carga de Coração Impassível essa duração de efeito prolongará 6s, no máximo não pode exceder os 18s.",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Lady of Seafoam",
-          "description": "#Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to {LAYOUT_MOBILE#Tapping}{LAYOUT_PC#Press}{LAYOUT_PS#Press} CD.",
+          "title": "Garota da Espuma do Mar",
+          "description": "Diminui o tempo de recarga ao manter pressionado Vórtice Gelado, tornando esse tempo igual ao tempo de recarga de tocar.",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Lawrence Pedigree",
-          "description": "Increases the Level of Glacial Illumination by 3.\nMaximum upgrade level is 15.",
+          "title": "Sangue de Lawrence",
+          "description": "Aumenta o nível da Habilidade Espada das Ondas Congeladas em 3.\nO nível máximo de aumento é 15.",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "The Obstinacy of One's Inferiors",
-          "description": "Lightfall Swords deal 25% increased DMG against opponents with less than 50% HP.",
+          "title": "A Obstinação da Sensação de Inferioridade",
+          "description": "A Espada Luminosa tem um aumento de 25% de Dano contra inimigos com menos de 50% de Vida.",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Chivalric Quality",
-          "description": "Increases the Level of Icetide Vortex by 3.\nMaximum upgrade level is 15.",
+          "title": "Qualidade de Cavaleira",
+          "description": "Aumenta o nível da Habilidade Vórtice Gelado em 3.\nO nível máximo de aumento é 15.",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Noble Obligation",
-          "description": "Lightfall Swords created by Glacial Illumination start with 5 stacks of energy. Normal Attacks, Elemental Skills, and Elemental Bursts have a 50% chance to grant the Lightfall Sword an additional stack of energy.",
+          "title": "Obrigações Aristocráticas",
+          "description": "A Espada Luminosa criada pela Espada das Ondas Congeladas faz obter imediatamente 5 acúmulos de Energia. Quando os Ataques Normais, Habilidades Elementais ou Supremos causam Dano, seus acúmulos tem uma chance de 50% de obter um acúmulo de Energia adicional.",
           "descriptions": []
         }
       ]
@@ -6105,34 +6105,34 @@
     {
       "key": "Engulfing Storm",
       "name": "Engulfing Storm",
-      "effect": "Continuously drains Energy Recharge."
+      "effect": "Drena continuamente a recarga de energía."
     },
     {
       "key": "Slowing Water",
       "name": "Slowing Water",
-      "effect": "Increases skill CD durations."
+      "effect": "Aumenta a duração do CD de habilidade."
     },
     {
       "key": "Smoldering Flames",
       "name": "Smoldering Flames",
-      "effect": "Continuously inflicts damage over time."
+      "effect": "Inflige danos continuamente ao longo do tempo."
     },
     {
       "key": "Condensed Ice",
       "name": "Condensed Ice",
-      "effect": "Increases stamina consumption."
+      "effect": "Aumenta o consumo da stamina."
     }
   ],
   "reactions": [
     {
       "key": "Burning",
-      "name": "Burning",
-      "effect": "Deals Pyro DMG over time."
+      "name": "Queimando",
+      "effect": "Causa dano de Pyro ao longo do tempo."
     },
     {
       "key": "Crystalize",
-      "name": "Crystalize",
-      "effect": "Creates a crystal that will provide a shield when picked up."
+      "name": "Cristalizar",
+      "effect": "Cria um cristal que fornecerá um escudo quando for recolhido."
     },
     {
       "key": "Electro-Charged",

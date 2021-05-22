@@ -980,8 +980,8 @@
     },
     {
       "key": "Eula",
-      "name": "Eula",
-      "description": "The Spindrift Knight, a scion of the old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
+      "name": "优菈",
+      "description": "古老家族出身的「浪花骑士」，西风骑士团游击小队队长。身为旧贵族后裔却加入了堪称死对头的西风骑士团，该事件至今仍是蒙德一大谜团。",
       "skills": [
         {
           "key": "s1",
@@ -1064,7 +1064,7 @@
         {
           "key": "c2",
           "title": "Lady of Seafoam",
-          "description": "#Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to {LAYOUT_MOBILE#Tapping}{LAYOUT_PC#Press}{LAYOUT_PS#Press} CD.",
+          "description": "Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to Tap CD.",
           "descriptions": []
         },
         {
