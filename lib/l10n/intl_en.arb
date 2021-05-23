@@ -304,6 +304,7 @@
   "editNotification": "Edit Notification",
   "xHours": "{value} hours",
   "inXHours": "In {value} hours",
+  "xEachHour": "{value} each hour",
   "showNotification": "Show notification",
   "expedition": "Expedition",
   "expeditionTime": "Expedition Time",
