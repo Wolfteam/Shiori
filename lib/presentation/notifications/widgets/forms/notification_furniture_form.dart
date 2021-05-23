@@ -13,24 +13,24 @@ import 'notification_note.dart';
 import 'notification_switch.dart';
 import 'notification_title_body.dart';
 
-const _type = AppNotificationType.farmingArtifacts;
+const _type = AppNotificationType.furniture;
 
-class NotificationFarmingArtifactForm extends StatelessWidget {
+class NotificationFurnitureForm extends StatelessWidget {
+  final FurnitureCraftingTimeType timeType;
   final String title;
   final String body;
   final String note;
-  final ArtifactFarmingTimeType artifactFarmingTimeType;
   final bool showNotification;
   final bool isInEditMode;
   final List<NotificationItemImage> images;
   final bool showOtherImages;
 
-  const NotificationFarmingArtifactForm({
+  const NotificationFurnitureForm({
     Key key,
+    @required this.timeType,
     @required this.title,
     @required this.body,
     @required this.note,
-    @required this.artifactFarmingTimeType,
     @required this.showNotification,
     @required this.isInEditMode,
     @required this.images,
@@ -46,12 +46,12 @@ class NotificationFarmingArtifactForm extends StatelessWidget {
       children: [
         NotificationCircleItem(type: _type, images: images, showOtherImages: showOtherImages),
         NotificationDropdownType(selectedValue: _type, isInEditMode: isInEditMode),
-        DropdownButtonWithTitle<ArtifactFarmingTimeType>(
+        DropdownButtonWithTitle<FurnitureCraftingTimeType>(
           title: s.time,
-          currentValue: artifactFarmingTimeType,
-          items: ArtifactFarmingTimeType.values,
-          itemBuilder: (type, _) => DropdownMenuItem<ArtifactFarmingTimeType>(value: type, child: Text(s.translateArtifactFarmingTimeType(type))),
-          onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.artifactFarmingTimeTypeChanged(newValue: v)),
+          currentValue: timeType,
+          items: FurnitureCraftingTimeType.values,
+          itemBuilder: (type, _) => Text(s.translateFurnitureCraftingTimeType(type), overflow: TextOverflow.ellipsis),
+          onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.furnitureCraftingTimeTypeChanged(newValue: v)),
         ),
         NotificationTitleBody(title: title, body: body),
         NotificationNote(note: note),

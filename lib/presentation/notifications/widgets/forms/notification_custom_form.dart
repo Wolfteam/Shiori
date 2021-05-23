@@ -5,7 +5,7 @@ import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/utils/date_utils.dart' as utils;
 import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/notifications/widgets/notification_note.dart';
+import 'package:genshindb/presentation/notifications/widgets/forms/notification_note.dart';
 import 'package:genshindb/presentation/shared/dropdown_button_with_title.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
@@ -58,7 +58,7 @@ class NotificationCustomForm extends StatelessWidget {
                 title: s.type,
                 currentValue: itemType,
                 items: AppNotificationItemType.values,
-                itemBuilder: (type, _) => DropdownMenuItem(value: type, child: Text(s.translateAppNotificationItemType(type))),
+                itemBuilder: (type, _) => Text(s.translateAppNotificationItemType(type), overflow: TextOverflow.ellipsis),
                 onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.itemTypeChanged(newValue: v)),
               ),
             ),

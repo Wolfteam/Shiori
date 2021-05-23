@@ -10,6 +10,7 @@ export 'entities/notifications/notification_expedition.dart';
 export 'entities/notifications/notification_farming_artifact.dart';
 export 'entities/notifications/notification_farming_material.dart';
 export 'entities/notifications/notification_furniture.dart';
+export 'entities/notifications/notification_gadget.dart';
 export 'entities/notifications/notification_realm_currency.dart';
 export 'entities/notifications/notification_resin.dart';
 export 'entities/notifications/notification_weekly_boss.dart';

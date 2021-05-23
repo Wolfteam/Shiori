@@ -77,10 +77,7 @@ class NotificationRealmCurrency extends StatelessWidget {
                 title: s.realmRank,
                 currentValue: currentRankType,
                 items: RealmRankType.values,
-                itemBuilder: (type, index) => DropdownMenuItem<RealmRankType>(
-                  value: type,
-                  child: Text('# ${index + 1} - ${s.translateRealRankType(type)}'),
-                ),
+                itemBuilder: (type, index) => Text('# ${index + 1} - ${s.translateRealRankType(type)}', overflow: TextOverflow.ellipsis),
                 onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.realmRankTypeChanged(newValue: v)),
               ),
             ),
@@ -90,8 +87,8 @@ class NotificationRealmCurrency extends StatelessWidget {
               child: DropdownButtonWithTitle<int>(
                 title: s.trustRank,
                 currentValue: currentTrustRank,
-                items: trustRank.keys,
-                itemBuilder: (level, _) => DropdownMenuItem<int>(value: level, child: Text('$level')),
+                items: realmTrustRank.keys,
+                itemBuilder: (level, _) => Text('$level', overflow: TextOverflow.ellipsis),
                 onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.realmTrustRankLevelChanged(newValue: v)),
               ),
             ),
@@ -106,7 +103,7 @@ class NotificationRealmCurrency extends StatelessWidget {
 
   Future<void> _showRealmRankLevelPickerDialog(BuildContext context) async {
     final s = S.of(context);
-    final max = getMaxRealmCurrency(currentTrustRank);
+    final max = getRealmMaxCurrency(currentTrustRank);
     final newValue = await showDialog<int>(
       context: context,
       builder: (_) => NumberPickerDialog(

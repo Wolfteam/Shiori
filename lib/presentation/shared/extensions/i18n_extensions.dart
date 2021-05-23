@@ -1,3 +1,5 @@
+import 'package:genshindb/domain/app_constants.dart';
+
 import '../../../domain/enums/enums.dart';
 import '../../../generated/l10n.dart';
 
@@ -516,30 +518,47 @@ extension I18nExtensions on S {
     }
   }
 
-  String translateRealRankType(RealmRankType type) {
+  String translateRealRankType(RealmRankType type, {bool showRatio = false}) {
+    var translation = '';
     switch (type) {
       case RealmRankType.bareBones:
-        return bareBones;
+        translation = bareBones;
+        break;
       case RealmRankType.humbleAbode:
-        return humbleAbode;
+        translation = humbleAbode;
+        break;
       case RealmRankType.cozy:
-        return cozy;
+        translation = cozy;
+        break;
       case RealmRankType.queenSize:
-        return queenSize;
+        translation = queenSize;
+        break;
       case RealmRankType.elegant:
-        return elegant;
+        translation = elegant;
+        break;
       case RealmRankType.exquisite:
-        return exquisite;
+        translation = exquisite;
+        break;
       case RealmRankType.extraordinary:
-        return extraordinary;
+        translation = extraordinary;
+        break;
       case RealmRankType.stately:
-        return stately;
+        translation = stately;
+        break;
       case RealmRankType.luxury:
-        return luxury;
+        translation = luxury;
+        break;
       case RealmRankType.fitForAKing:
-        return fitForAKing;
+        translation = fitForAKing;
+        break;
       default:
         throw Exception('Invalid realm rank type = $type');
     }
+    if (!showRatio) {
+      return translation;
+    }
+
+    final ratioInHours = '+${getRealmIncreaseRatio(type)}';
+    return '$translation (${xEachHour(ratioInHours)})';
   }
 }

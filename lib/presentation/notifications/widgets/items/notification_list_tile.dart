@@ -3,43 +3,37 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/application/notifications/notifications_bloc.dart';
+import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/extensions/duration_extensions.dart';
-import 'package:genshindb/domain/extensions/string_extensions.dart';
 import 'package:genshindb/domain/models/models.dart' as models;
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/circle_item.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 
-import 'add_edit_notification_bottom_sheet.dart';
+import '../add_edit_notification_bottom_sheet.dart';
 
-class NotificationItem extends StatelessWidget {
+class NotificationListTitle extends StatelessWidget {
   final int itemKey;
+  final AppNotificationType type;
   final String image;
   final Duration remaining;
-  final String createdAt;
-  final String completesAt;
+  final DateTime createdAt;
+  final DateTime completesAt;
   final String note;
   final bool showNotification;
 
-  const NotificationItem({
-    Key key,
-    @required this.itemKey,
-    @required this.image,
-    @required this.remaining,
-    @required this.createdAt,
-    @required this.completesAt,
-    this.note,
-    @required this.showNotification,
-  }) : super(key: key);
+  final Widget subtitle;
 
-  NotificationItem.item({
+  NotificationListTitle({
     Key key,
-    models.NotificationItem item,
+    @required models.NotificationItem item,
+    @required this.subtitle,
   })  : itemKey = item.key,
+        type = item.type,
         image = item.image,
         remaining = item.remaining,
-        createdAt = item.createdAtString,
-        completesAt = item.completesAtString,
+        createdAt = item.createdAt,
+        completesAt = item.completesAt,
         note = item.note,
         showNotification = item.showNotification,
         super(key: key);
@@ -56,13 +50,13 @@ class NotificationItem extends StatelessWidget {
           color: Colors.deepOrange,
           icon: Icons.stop,
           foregroundColor: Colors.white,
-          onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.stop(id: itemKey)),
+          onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.stop(id: itemKey, type: type)),
         ),
         IconSlideAction(
           caption: s.delete,
           color: Colors.red,
           icon: Icons.delete,
-          onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.delete(id: itemKey)),
+          onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.delete(id: itemKey, type: type)),
         ),
       ],
       secondaryActions: [
@@ -78,7 +72,7 @@ class NotificationItem extends StatelessWidget {
           color: Colors.green,
           icon: Icons.restore,
           foregroundColor: Colors.white,
-          onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.reset(id: itemKey)),
+          onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.reset(id: itemKey, type: type)),
         ),
       ],
       child: ListTile(
@@ -101,22 +95,14 @@ class NotificationItem extends StatelessWidget {
           ],
         ),
         title: Text(remaining.formatDuration(negativeText: s.completed), style: theme.textTheme.subtitle1),
-        subtitle: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            if (note.isNotNullEmptyOrWhitespace) Text(note, style: theme.textTheme.subtitle2),
-            Text(s.createdAtX(createdAt)),
-            Text(s.completesAtX(completesAt)),
-          ],
-        ),
+        subtitle: subtitle,
       ),
     );
   }
 
   Future<void> _showEditModal(BuildContext context) async {
     context.read<NotificationsBloc>().cancelTimer();
-    context.read<NotificationBloc>().add(NotificationEvent.edit(key: itemKey));
+    context.read<NotificationBloc>().add(NotificationEvent.edit(key: itemKey, type: type));
     await showModalBottomSheet(
       context: context,
       shape: Styles.modalBottomSheetShape,

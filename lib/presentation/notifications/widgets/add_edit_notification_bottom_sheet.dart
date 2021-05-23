@@ -4,15 +4,15 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/common_bottom_sheet.dart';
 
-import 'notification_custom_form.dart';
-import 'notification_expedition_form.dart';
-import 'notification_farming_artifact_form.dart';
-import 'notification_farming_material_form.dart';
-import 'notification_furniture_form.dart';
-import 'notification_gadget_form.dart';
-import 'notification_realm_currency_form.dart';
-import 'notification_resin_form.dart';
-import 'notification_weekly_boss_form.dart';
+import 'forms/notification_custom_form.dart';
+import 'forms/notification_expedition_form.dart';
+import 'forms/notification_farming_artifact_form.dart';
+import 'forms/notification_farming_material_form.dart';
+import 'forms/notification_furniture_form.dart';
+import 'forms/notification_gadget_form.dart';
+import 'forms/notification_realm_currency_form.dart';
+import 'forms/notification_resin_form.dart';
+import 'forms/notification_weekly_boss_form.dart';
 
 class AddEditNotificationBottomSheet extends StatelessWidget {
   final bool isInEditMode;

@@ -27,7 +27,7 @@ class NotificationDropdownType extends StatelessWidget {
       isExpanded: isExpanded,
       currentValue: selectedValue,
       items: AppNotificationType.values,
-      itemBuilder: (type, _) => DropdownMenuItem<AppNotificationType>(value: type, child: Text(s.translateAppNotificationType(type))),
+      itemBuilder: (type, _) => Text(s.translateAppNotificationType(type), overflow: TextOverflow.ellipsis),
       onChanged: isInEditMode ? null : (v) => context.read<NotificationBloc>().add(NotificationEvent.typeChanged(newValue: v)),
     );
   }

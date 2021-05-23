@@ -4,7 +4,7 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/notifications/widgets/notification_note.dart';
+import 'package:genshindb/presentation/notifications/widgets/forms/notification_note.dart';
 import 'package:genshindb/presentation/shared/dropdown_button_with_title.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 
@@ -51,8 +51,8 @@ class NotificationExpeditionForm extends StatelessWidget {
           title: s.expeditionTime,
           items: ExpeditionTimeType.values,
           currentValue: timeType,
+          itemBuilder: (type, _) => Text(s.translateExpeditionTimeType(type), overflow: TextOverflow.ellipsis),
           onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.expeditionTimeTypeChanged(newValue: v)),
-          itemBuilder: (type, _) => DropdownMenuItem<ExpeditionTimeType>(value: type, child: Text(s.translateExpeditionTimeType(type))),
         ),
         NotificationTitleBody(title: title, body: body),
         NotificationNote(note: note),
