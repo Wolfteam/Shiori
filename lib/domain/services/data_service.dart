@@ -80,7 +80,7 @@ abstract class DataService {
 
   List<NotificationItem> getAllNotifications();
 
-  NotificationItem getNotification(int key);
+  NotificationItem getNotification(int key, AppNotificationType type);
 
   Future<NotificationItem> saveResinNotification(
     String itemKey,
@@ -165,11 +165,11 @@ abstract class DataService {
     bool showNotification = true,
   });
 
-  Future<void> deleteNotification(int key);
+  Future<void> deleteNotification(int key, AppNotificationType type);
 
-  Future<NotificationItem> resetNotification(int key);
+  Future<NotificationItem> resetNotification(int key, AppNotificationType type);
 
-  Future<NotificationItem> stopNotification(int key);
+  Future<NotificationItem> stopNotification(int key, AppNotificationType type);
 
   Future<NotificationItem> updateResinNotification(
     int key,
