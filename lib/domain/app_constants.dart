@@ -237,7 +237,7 @@ const weaponExp = [
 
 //Furnishing related
 //This one represents the amount of realm currency you can gather per rank level
-const trustRank = {
+const realmTrustRank = {
   1: 300,
   2: 600,
   3: 900,
@@ -252,7 +252,7 @@ const trustRank = {
 
 //This one represents the ratio at which you gain realm currency
 //E.g: At level 1 you gain 4 realm currency per hour
-const increasingRatio = {
+const realmIncreasingRatio = {
   RealmRankType.bareBones: 4,
   RealmRankType.humbleAbode: 8,
   RealmRankType.cozy: 12,
@@ -321,6 +321,24 @@ List<MaterialCardModel> sortMaterialsByGrouping(List<MaterialCardModel> data, So
       ingredients.orderByDescending((el) => el.rarity).toList();
 }
 
+DateTime getNotificationDateForResin(int currentResinValue) {
+  final now = DateTime.now();
+  return now.add(getResinDuration(currentResinValue));
+}
+
+Duration getResinDuration(int currentResinValue) {
+  final diff = maxResinValue - currentResinValue;
+  return Duration(minutes: diff * resinRefillsEach);
+}
+
+int getCurrentResin(int initialResinValue, DateTime completesAt) {
+  final now = DateTime.now();
+  final createdAt = completesAt.subtract(getResinDuration(initialResinValue));
+  final elapsedMinutes = (now.difference(createdAt).inMinutes).abs();
+  final currentResinValue = (elapsedMinutes / resinRefillsEach).floor() + initialResinValue;
+  return currentResinValue > maxResinValue ? maxResinValue : currentResinValue;
+}
+
 Duration getExpeditionDuration(ExpeditionTimeType type, bool withTimeReduction) {
   switch (type) {
     case ExpeditionTimeType.fourHours:
@@ -368,12 +386,25 @@ Duration _getExpeditionDuration(int hours, bool withTimeReduction) {
 }
 
 Duration getRealmCurrencyDuration(int currentRealmCurrency, int currentTrustRank, RealmRankType currentRealmRank) {
-  final maxRealmCurrency = getMaxRealmCurrency(currentTrustRank);
-  final ratioPerHour = increasingRatio.entries.firstWhere((kvp) => kvp.key == currentRealmRank).value;
+  final maxRealmCurrency = getRealmMaxCurrency(currentTrustRank);
+  final ratioPerHour = getRealmIncreaseRatio(currentRealmRank);
   final remaining = maxRealmCurrency - currentRealmCurrency;
+  //each 60 minutes you produce an x ratio per hour
   final minutesLeft = remaining * 60 ~/ ratioPerHour;
 
   return Duration(minutes: minutesLeft);
 }
 
-int getMaxRealmCurrency(int currentTrustRank) => trustRank.entries.firstWhere((kvp) => kvp.key == currentTrustRank).value;
+int getCurrentRealmCurrency(int initialRealmCurrency, int currentTrustRank, RealmRankType currentRealmRank, DateTime completesAt) {
+  final now = DateTime.now();
+  final maxRealmCurrency = getRealmMaxCurrency(currentTrustRank);
+  final ratioPerHour = getRealmIncreaseRatio(currentRealmRank);
+  final createdAt = completesAt.subtract(getRealmCurrencyDuration(initialRealmCurrency, currentTrustRank, currentRealmRank));
+  final elapsedMinutes = (now.difference(createdAt).inMinutes).abs();
+  final currentRealmCurrency = (elapsedMinutes * ratioPerHour / 60).floor() + initialRealmCurrency;
+  return currentRealmCurrency > maxRealmCurrency ? maxRealmCurrency : currentRealmCurrency;
+}
+
+int getRealmMaxCurrency(int currentTrustRank) => realmTrustRank.entries.firstWhere((kvp) => kvp.key == currentTrustRank).value;
+
+int getRealmIncreaseRatio(RealmRankType type) => realmIncreasingRatio.entries.firstWhere((kvp) => kvp.key == type).value;
