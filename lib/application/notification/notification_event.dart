@@ -10,6 +10,7 @@ abstract class NotificationEvent implements _$NotificationEvent {
 
   const factory NotificationEvent.edit({
     @required int key,
+    @required AppNotificationType type,
   }) = _Edit;
 
   const factory NotificationEvent.typeChanged({

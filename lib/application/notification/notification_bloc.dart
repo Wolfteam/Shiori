@@ -54,7 +54,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     //TODO: HANDLE RECURRING NOTIFICATIONS
     final s = await event.map(
       add: (e) async => _buildAddState(e.defaultTitle, e.defaultBody),
-      edit: (e) async => _buildEditState(e.key),
+      edit: (e) async => _buildEditState(e.key, e.type),
       typeChanged: (e) async => _typeChanged(e.newValue),
       titleChanged: (e) async => state.copyWith.call(
         title: e.newValue,
@@ -117,7 +117,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       ),
       realmTrustRankLevelChanged: (e) async => state.maybeMap(
         realmCurrency: (state) {
-          final max = getMaxRealmCurrency(e.newValue);
+          final max = getRealmMaxCurrency(e.newValue);
           var currentRealmCurrency = state.currentRealmCurrency;
           if (state.currentRealmCurrency > max) {
             currentRealmCurrency = max - 1;
@@ -149,8 +149,8 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     );
   }
 
-  NotificationState _buildEditState(int key) {
-    final item = _dataService.getNotification(key);
+  NotificationState _buildEditState(int key, AppNotificationType type,) {
+    final item = _dataService.getNotification(key, type);
     NotificationState state;
     final images = <NotificationItemImage>[];
     switch (item.type) {

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/data_service.dart';
 import 'package:genshindb/domain/services/notification_service.dart';
@@ -24,9 +25,9 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   Stream<NotificationsState> mapEventToState(NotificationsEvent event) async* {
     final s = await event.map(
       init: (_) async => _buildInitialState(),
-      delete: (e) async => _deleteNotification(e.id),
-      reset: (e) async => _resetNotification(e.id),
-      stop: (e) async => _stopNotification(e.id),
+      delete: (e) async => _deleteNotification(e.id, e.type),
+      reset: (e) async => _resetNotification(e.id, e.type),
+      stop: (e) async => _stopNotification(e.id, e.type),
       refresh: (e) async => _refreshNotifications(e.ticks),
       close: (_) async {
         cancelTimer();
@@ -52,23 +53,23 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     return NotificationsState.initial(notifications: notifications, ticks: _timer.tick);
   }
 
-  Future<NotificationsState> _deleteNotification(int key) async {
-    await _dataService.deleteNotification(key);
+  Future<NotificationsState> _deleteNotification(int key, AppNotificationType type) async {
+    await _dataService.deleteNotification(key, type);
     await _notificationService.cancelNotification(key);
     final notifications = [...state.notifications];
     notifications.removeWhere((el) => el.key == key);
     return state.copyWith.call(notifications: notifications);
   }
 
-  Future<NotificationsState> _resetNotification(int key) async {
-    final notif = await _dataService.resetNotification(key);
+  Future<NotificationsState> _resetNotification(int key, AppNotificationType type) async {
+    final notif = await _dataService.resetNotification(key, type);
     await _notificationService.cancelNotification(notif.key);
     await _notificationService.scheduleNotification(key, notif.title, notif.body, notif.completesAt);
     return _afterUpdatingNotification(notif);
   }
 
-  Future<NotificationsState> _stopNotification(int key) async {
-    final notif = await _dataService.stopNotification(key);
+  Future<NotificationsState> _stopNotification(int key, AppNotificationType type) async {
+    final notif = await _dataService.stopNotification(key, type);
     await _notificationService.cancelNotification(key);
     return _afterUpdatingNotification(notif);
   }
