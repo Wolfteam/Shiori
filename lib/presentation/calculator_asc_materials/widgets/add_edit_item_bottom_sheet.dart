@@ -183,12 +183,14 @@ class AddEditItemBottomSheet extends StatelessWidget {
   }
 
   Future<void> _showLevelPickerDialog(BuildContext context, int value, bool forCurrentLevel) async {
+    final s = S.of(context);
     final newValue = await showDialog<int>(
       context: context,
       builder: (_) => NumberPickerDialog(
         minItemLevel: minItemLevel,
         maxItemLevel: maxItemLevel,
         value: value,
+        title: s.chooseALevel,
       ),
     );
 

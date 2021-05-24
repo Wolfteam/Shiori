@@ -6105,34 +6105,34 @@
     {
       "key": "Engulfing Storm",
       "name": "Engulfing Storm",
-      "effect": "Continuously drains Energy Recharge."
+      "effect": "Drena continuamente a recarga de energía."
     },
     {
       "key": "Slowing Water",
       "name": "Slowing Water",
-      "effect": "Increases skill CD durations."
+      "effect": "Aumenta a duração do CD de habilidade."
     },
     {
       "key": "Smoldering Flames",
       "name": "Smoldering Flames",
-      "effect": "Continuously inflicts damage over time."
+      "effect": "Inflige danos continuamente ao longo do tempo."
     },
     {
       "key": "Condensed Ice",
       "name": "Condensed Ice",
-      "effect": "Increases stamina consumption."
+      "effect": "Aumenta o consumo da stamina."
     }
   ],
   "reactions": [
     {
       "key": "Burning",
-      "name": "Burning",
-      "effect": "Deals Pyro DMG over time."
+      "name": "Queimando",
+      "effect": "Causa dano de Pyro ao longo do tempo."
     },
     {
       "key": "Crystalize",
-      "name": "Crystalize",
-      "effect": "Creates a crystal that will provide a shield when picked up."
+      "name": "Cristalizar",
+      "effect": "Cria um cristal que fornecerá um escudo quando for recolhido."
     },
     {
       "key": "Electro-Charged",

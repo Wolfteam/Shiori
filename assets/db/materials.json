@@ -2213,7 +2213,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "canBeObtainedFromAnExpedition": true
     },
     {
       "key": "Original Resin",
@@ -2242,6 +2243,21 @@
       "obtainedFrom": [],
       "droppedBy": [],
       "hasSiblings": false
+    },
+    {
+      "key": "RealmCurrency",
+      "rarity": 3,
+      "image": "realm_currency.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "currency",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false
     }
   ],
   "elemental": [
@@ -5404,7 +5420,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Cecilia",
@@ -5418,7 +5435,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "CorLapis",
@@ -5432,7 +5450,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "DandelionSeed",
@@ -5446,7 +5465,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "GlazeLily",
@@ -5460,7 +5480,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "JueyunChili",
@@ -5474,7 +5495,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "NoctilousJade",
@@ -5488,7 +5510,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "PhilanemoMushroom",
@@ -5502,7 +5525,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Qingxin",
@@ -5516,7 +5540,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "SilkFlower",
@@ -5530,7 +5555,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "SmallLampGrass",
@@ -5544,7 +5570,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Starconch",
@@ -5558,7 +5585,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Valberry",
@@ -5572,7 +5600,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Violetgrass",
@@ -5586,7 +5615,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "WindwheelAster",
@@ -5600,7 +5630,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Wolfhook",
@@ -5614,7 +5645,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     }
   ],
   "experience": [
@@ -5821,7 +5853,9 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "canBeObtainedFromAnExpedition": true,
+      "farmingRespawnTime": 24
     },
     {
       "key": "White Iron Chunk",
@@ -5835,7 +5869,9 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "canBeObtainedFromAnExpedition": true,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Crystal Chunk",
@@ -5849,7 +5885,9 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "canBeObtainedFromAnExpedition": true,
+      "farmingRespawnTime": 72
     },
     {
       "key": "Northlander Bow Billet",
@@ -5947,7 +5985,136 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 72
+    },
+    {
+      "key": "Bird Egg",
+      "rarity": 1,
+      "image": "bird_egg.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false,
+      "canBeObtainedFromAnExpedition": true
+    },
+    {
+      "key": "Carrot",
+      "rarity": 1,
+      "image": "carrot.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false,
+      "canBeObtainedFromAnExpedition": true
+    },
+    {
+      "key": "Fowl",
+      "rarity": 1,
+      "image": "fowl.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false,
+      "canBeObtainedFromAnExpedition": true
+    },
+    {
+      "key": "Radish",
+      "rarity": 1,
+      "image": "radish.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false,
+      "canBeObtainedFromAnExpedition": true
+    },
+    {
+      "key": "Raw Meat",
+      "rarity": 1,
+      "image": "raw_meat.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false,
+      "canBeObtainedFromAnExpedition": true
+    },
+    {
+      "key": "Sweet Flower",
+      "rarity": 1,
+      "image": "sweet_flower.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false,
+      "canBeObtainedFromAnExpedition": true
+    },
+    {
+      "key": "Lotus Head",
+      "rarity": 1,
+      "image": "lotus_head.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false,
+      "canBeObtainedFromAnExpedition": true
+    },
+    {
+      "key": "Matsutake",
+      "rarity": 1,
+      "image": "matsutake.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "isReadyToBeUsed": false,
+      "canBeObtainedFromAnExpedition": true
     }
   ]
 }

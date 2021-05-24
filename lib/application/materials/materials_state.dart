@@ -15,5 +15,6 @@ abstract class MaterialsState implements _$MaterialsState {
     @required MaterialType tempType,
     @required SortDirectionType sortDirectionType,
     @required SortDirectionType tempSortDirectionType,
+    @Default(<String>[]) List<String> excludeKeys,
   }) = _LoadedState;
 }

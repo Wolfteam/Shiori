@@ -1,3 +1,5 @@
+import 'package:genshindb/domain/app_constants.dart';
+
 import '../../../domain/enums/enums.dart';
 import '../../../generated/l10n.dart';
 
@@ -435,5 +437,130 @@ extension I18nExtensions on S {
       default:
         throw Exception('Invalid monster filter type = $type');
     }
+  }
+
+  String translateAppNotificationType(AppNotificationType type) {
+    switch (type) {
+      case AppNotificationType.resin:
+        return resin;
+      case AppNotificationType.expedition:
+        return expedition;
+      case AppNotificationType.farmingMaterials:
+        return '$farming ($materials)';
+      case AppNotificationType.farmingArtifacts:
+        return '$farming ($artifacts)';
+      case AppNotificationType.gadget:
+        return gadget;
+      case AppNotificationType.furniture:
+        return furnishing;
+      case AppNotificationType.realmCurrency:
+        return realmCurrency;
+      case AppNotificationType.weeklyBoss:
+        return boss;
+      case AppNotificationType.custom:
+        return custom;
+      default:
+        throw Exception('Invalid app notification type = $type');
+    }
+  }
+
+  String translateExpeditionTimeType(ExpeditionTimeType type) {
+    switch (type) {
+      case ExpeditionTimeType.fourHours:
+        return xHours(4);
+      case ExpeditionTimeType.eightHours:
+        return xHours(8);
+      case ExpeditionTimeType.twelveHours:
+        return xHours(12);
+      case ExpeditionTimeType.twentyHours:
+        return xHours(20);
+      default:
+        throw Exception('Invalid expedition time type = $type');
+    }
+  }
+
+  String translateAppNotificationItemType(AppNotificationItemType type) {
+    switch (type) {
+      case AppNotificationItemType.character:
+        return characters;
+      case AppNotificationItemType.weapon:
+        return weapons;
+      case AppNotificationItemType.artifact:
+        return artifacts;
+      case AppNotificationItemType.monster:
+        return monsters;
+      case AppNotificationItemType.material:
+        return materials;
+      default:
+        throw Exception('Invalid app notification item type = $type');
+    }
+  }
+
+  String translateArtifactFarmingTimeType(ArtifactFarmingTimeType type) {
+    switch (type) {
+      case ArtifactFarmingTimeType.twelveHours:
+        return xHours(12);
+      case ArtifactFarmingTimeType.twentyFourHours:
+        return xHours(24);
+      default:
+        throw Exception('Invalid artifact farming time type = $type');
+    }
+  }
+
+  String translateFurnitureCraftingTimeType(FurnitureCraftingTimeType type) {
+    switch (type) {
+      case FurnitureCraftingTimeType.twelveHours:
+        return xHours(12);
+      case FurnitureCraftingTimeType.fourteenHours:
+        return xHours(14);
+      case FurnitureCraftingTimeType.sixteenHours:
+        return xHours(16);
+      default:
+        throw Exception('Invalid furniture crafting time type = $type');
+    }
+  }
+
+  String translateRealRankType(RealmRankType type, {bool showRatio = false}) {
+    var translation = '';
+    switch (type) {
+      case RealmRankType.bareBones:
+        translation = bareBones;
+        break;
+      case RealmRankType.humbleAbode:
+        translation = humbleAbode;
+        break;
+      case RealmRankType.cozy:
+        translation = cozy;
+        break;
+      case RealmRankType.queenSize:
+        translation = queenSize;
+        break;
+      case RealmRankType.elegant:
+        translation = elegant;
+        break;
+      case RealmRankType.exquisite:
+        translation = exquisite;
+        break;
+      case RealmRankType.extraordinary:
+        translation = extraordinary;
+        break;
+      case RealmRankType.stately:
+        translation = stately;
+        break;
+      case RealmRankType.luxury:
+        translation = luxury;
+        break;
+      case RealmRankType.fitForAKing:
+        translation = fitForAKing;
+        break;
+      default:
+        throw Exception('Invalid realm rank type = $type');
+    }
+    if (!showRatio) {
+      return translation;
+    }
+
+    final ratioInHours = '+${getRealmIncreaseRatio(type)}';
+    return '$translation (${xEachHour(ratioInHours)})';
   }
 }

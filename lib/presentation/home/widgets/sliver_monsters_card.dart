@@ -34,7 +34,7 @@ class SliverMonstersCard extends StatelessWidget {
 
   Future<void> _goToMonstersPage(BuildContext context) async {
     context.read<MonstersBloc>().add(const MonstersEvent.init());
-    final route = MaterialPageRoute(builder: (c) => MonstersPage());
+    final route = MaterialPageRoute(builder: (c) => const MonstersPage());
     await Navigator.push(context, route);
     await route.completed;
     context.read<MonstersBloc>().add(const MonstersEvent.close());
