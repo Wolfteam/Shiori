@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
+import 'package:genshindb/domain/services/logging_service.dart';
 import 'package:genshindb/domain/services/notification_service.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
@@ -26,15 +27,23 @@ const _iOSPlatformChannelSpecifics = IOSNotificationDetails();
 const _platformChannelSpecifics = NotificationDetails(android: _androidPlatformChannelSpecifics, iOS: _iOSPlatformChannelSpecifics);
 
 class NotificationServiceImpl implements NotificationService {
+  final LoggingService _loggingService;
+
   final _flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
   tz.Location _location;
 
+  NotificationServiceImpl(this._loggingService);
+
   @override
   Future<void> init() async {
-    tz.initializeTimeZones();
-    final currentTimeZone = await FlutterNativeTimezone.getLocalTimezone();
-    _location = tz.getLocation(currentTimeZone) ?? tz.local;
-    tz.setLocalLocation(_location);
+    try {
+      tz.initializeTimeZones();
+      final currentTimeZone = await FlutterNativeTimezone.getLocalTimezone();
+      _location = tz.getLocation(currentTimeZone) ?? tz.local;
+      tz.setLocalLocation(_location);
+    } catch (e, s) {
+      _loggingService.error(runtimeType, 'init: Unknown error occurred', e, s);
+    }
   }
 
   @override
@@ -42,10 +51,14 @@ class NotificationServiceImpl implements NotificationService {
     DidReceiveLocalNotificationCallback onIosReceiveLocalNotification,
     SelectNotificationCallback onSelectNotification,
   }) async {
-    const initializationSettingsAndroid = AndroidInitializationSettings('ic_notification');
-    final initializationSettingsIOS = IOSInitializationSettings(onDidReceiveLocalNotification: onIosReceiveLocalNotification);
-    final initializationSettings = InitializationSettings(android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
-    await _flutterLocalNotificationsPlugin.initialize(initializationSettings, onSelectNotification: onSelectNotification);
+    try {
+      const initializationSettingsAndroid = AndroidInitializationSettings('ic_notification');
+      final initializationSettingsIOS = IOSInitializationSettings(onDidReceiveLocalNotification: onIosReceiveLocalNotification);
+      final initializationSettings = InitializationSettings(android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
+      await _flutterLocalNotificationsPlugin.initialize(initializationSettings, onSelectNotification: onSelectNotification);
+    } catch (e, s) {
+      _loggingService.error(runtimeType, 'registerCallBacks: Unknown error occurred', e, s);
+    }
   }
 
   @override

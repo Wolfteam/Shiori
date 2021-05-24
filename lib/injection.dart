@@ -38,8 +38,7 @@ Future<void> initInjection() async {
   await dataService.init();
   getIt.registerSingleton<DataService>(dataService);
 
-  final notificationService = NotificationServiceImpl();
+  final notificationService = NotificationServiceImpl(loggingService);
   await notificationService.init();
-  await notificationService.registerCallBacks();
   getIt.registerSingleton<NotificationService>(notificationService);
 }

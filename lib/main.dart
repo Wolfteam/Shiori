@@ -19,8 +19,17 @@ Future<void> main() async {
   //This is required by app center
   WidgetsFlutterBinding.ensureInitialized();
   await initInjection();
+  final notificationService = getIt<NotificationService>();
+  await notificationService.registerCallBacks(
+    onSelectNotification: _onSelectNotification,
+    onIosReceiveLocalNotification: _onDidReceiveLocalNotification,
+  );
   runApp(MyApp());
 }
+
+Future<dynamic> _onDidReceiveLocalNotification(int id, String title, String body, String payload) async {}
+
+Future<void> _onSelectNotification(String json) async {}
 
 class MyApp extends StatelessWidget {
   @override

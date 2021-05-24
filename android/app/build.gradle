@@ -79,6 +79,11 @@ android {
                     'proguard-rules.pro'
         }
     }
+
+    // Temporary workaround as per https://issuetracker.google.com/issues/158060799
+    lintOptions {
+        checkReleaseBuilds false
+    }
 }
 
 flutter {
