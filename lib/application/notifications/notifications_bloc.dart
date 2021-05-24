@@ -57,7 +57,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     await _dataService.deleteNotification(key, type);
     await _notificationService.cancelNotification(key);
     final notifications = [...state.notifications];
-    notifications.removeWhere((el) => el.key == key);
+    notifications.removeWhere((el) => el.key == key && el.type == type);
     return state.copyWith.call(notifications: notifications);
   }
 
@@ -75,7 +75,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   }
 
   NotificationsState _afterUpdatingNotification(NotificationItem updated) {
-    final index = state.notifications.indexWhere((el) => el.key == updated.key);
+    final index = state.notifications.indexWhere((el) => el.key == updated.key && el.type == updated.type);
     final notifications = [...state.notifications];
     notifications.removeAt(index);
     notifications.insert(index, updated);
