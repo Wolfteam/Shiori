@@ -76,23 +76,23 @@ class NotificationListTitle extends StatelessWidget {
         ),
       ],
       child: ListTile(
-        contentPadding: Styles.edgeInsetVertical5,
+        contentPadding: Styles.edgeInsetAll5,
+        minVerticalPadding: 10,
+        horizontalTitleGap: 10,
         onTap: () => _showEditModal(context),
-        horizontalTitleGap: 5,
-        leading: Stack(
-          children: [
-            CircleItem(
-              image: image,
-              radius: 40,
-              onTap: (_) {},
-            ),
-            if (showNotification)
-              Positioned(
-                top: 0,
-                right: 0,
-                child: Icon(Icons.notifications_active, color: theme.accentColor),
-              ),
-          ],
+        leading: Container(
+          constraints: BoxConstraints.tight(const Size.fromRadius(30)),
+          child: Stack(
+            children: [
+              CircleItem(image: image, forDrag: true),
+              if (showNotification)
+                Positioned(
+                  top: 0,
+                  right: 0,
+                  child: Icon(Icons.notifications_active, color: theme.accentColor),
+                ),
+            ],
+          ),
         ),
         title: Text(remaining.formatDuration(negativeText: s.completed), style: theme.textTheme.subtitle1),
         subtitle: subtitle,

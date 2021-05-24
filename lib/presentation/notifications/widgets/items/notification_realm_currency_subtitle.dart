@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/extensions/string_extensions.dart';
-import 'package:genshindb/domain/utils/date_utils.dart' as utils;
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
+
+import 'notification_list_subtitle.dart';
 
 class NotificationRealmCurrencySubtitle extends StatelessWidget {
   final int initialRealmCurrency;
@@ -29,16 +29,14 @@ class NotificationRealmCurrencySubtitle extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     final currentValue = getCurrentRealmCurrency(initialRealmCurrency, currentTrustRank, currentRankType, completesAt);
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+
+    return NotificationSubtitle(
+      createdAt: createdAt,
+      completesAt: completesAt,
       children: [
         Text('$currentValue / ${getRealmMaxCurrency(currentTrustRank)}', style: theme.textTheme.bodyText2),
         Text('${s.realmRank}: ${s.translateRealRankType(currentRankType, showRatio: true)}', style: theme.textTheme.caption),
         Text('${s.trustRank}: $currentTrustRank', style: theme.textTheme.caption),
-        if (note.isNotNullEmptyOrWhitespace) Text(note, style: theme.textTheme.subtitle2),
-        Text(s.createdAtX(utils.DateUtils.formatDateWithoutLocale(createdAt)), style: theme.textTheme.caption),
-        Text(s.completesAtX(utils.DateUtils.formatDateWithoutLocale(completesAt)), style: theme.textTheme.caption),
       ],
     );
   }

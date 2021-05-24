@@ -29,6 +29,7 @@ class CircleItem extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(3),
       child: InkWell(
+        radius: radius,
         borderRadius: BorderRadius.circular(radius),
         onTap: () => onTap != null ? onTap(image) : {},
         child: avatar,
