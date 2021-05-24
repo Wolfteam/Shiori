@@ -5,8 +5,8 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/app_fab.dart';
-import 'package:genshindb/presentation/shared/bullet_list.dart';
 import 'package:genshindb/presentation/shared/extensions/scroll_controller_extensions.dart';
+import 'package:genshindb/presentation/shared/info_dialog.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/nothing_found_column.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
@@ -117,18 +117,7 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
     ];
     await showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: Text(s.information),
-        content: SingleChildScrollView(
-          child: BulletList(items: explanations, fontSize: 14),
-        ),
-        actions: [
-          ElevatedButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: Text(s.ok),
-          )
-        ],
-      ),
+      builder: (context) => InfoDialog(explanations: explanations),
     );
   }
 }

@@ -5,6 +5,7 @@ import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart' as models;
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:genshindb/presentation/shared/info_dialog.dart';
 import 'package:genshindb/presentation/shared/nothing_found_column.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 import 'package:grouped_list/grouped_list.dart';
@@ -21,7 +22,12 @@ class NotificationsPage extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     return Scaffold(
-      appBar: AppBar(title: Text(s.notifications)),
+      appBar: AppBar(
+        title: Text(s.notifications),
+        actions: [
+          IconButton(icon: const Icon(Icons.info), onPressed: () => _showInfoDialog(context)),
+        ],
+      ),
       body: SafeArea(
         child: BlocBuilder<NotificationsBloc, NotificationsState>(
           builder: (ctx, state) => state.map(
@@ -91,5 +97,19 @@ class NotificationsPage extends StatelessWidget {
       builder: (_) => const AddEditNotificationBottomSheet(isInEditMode: false),
     );
     context.read<NotificationsBloc>().add(const NotificationsEvent.init());
+  }
+
+  Future<void> _showInfoDialog(BuildContext context) async {
+    final s = S.of(context);
+    final explanations = [
+      s.notifInfoMsgA,
+      s.notifInfoMsgB,
+      s.notifInfoMsgC,
+      s.swipeToSeeMoreOptions,
+    ];
+    await showDialog(
+      context: context,
+      builder: (context) => InfoDialog(explanations: explanations),
+    );
   }
 }
