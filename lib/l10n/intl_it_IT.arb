@@ -312,7 +312,7 @@
   "resin": "Resin",
   "farming": "Farming",
   "gadget": "Gadget",
-  "furniture": "Furniture",
+  "furnishing": "Furnishing",
   "realmCurrency": "Realm Currency",
   "realmRank": "Realm Rank",
   "trustRank": "Trust Rank",
@@ -339,5 +339,9 @@
   "extraordinary": "Extraordinary",
   "stately": "Stately",
   "luxury": "Luxury",
-  "fitForAKing": "Fit For A King"
+  "fitForAKing": "Fit For A King",
+  "notifInfoMsgA": "You can schedule notifications that reminds you particular things in the game.",
+  "notifInfoMsgB": "Some of these can be customized to suit your needs.",
+  "notifInfoMsgC": "The bell icon indicates that a notification is scheduled to be shown on your device even when the app is not running.",
+  "swipeToSeeMoreOptions": "You can swipe to the right or left to see more options on each item."
 }

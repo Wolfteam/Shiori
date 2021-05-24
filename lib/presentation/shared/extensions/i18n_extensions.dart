@@ -450,7 +450,7 @@ extension I18nExtensions on S {
       case AppNotificationType.gadget:
         return gadget;
       case AppNotificationType.furniture:
-        return furniture;
+        return furnishing;
       case AppNotificationType.realmCurrency:
         return realmCurrency;
       case AppNotificationType.weeklyBoss:
