@@ -515,7 +515,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Grève de la fortune",
+          "title": "Épée chanceuse",
           "description": null,
           "abilities": {
             "0": {
@@ -530,44 +530,44 @@
             },
             "2": {
               "key": "a3",
-              "description": "Plonge dans les airs pour frapper le sol en dessous, endommageant les ennemis le long du chemin et infligeant AoE DMG à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Surcharge de passion",
-          "description": "Bennett met tout son feu et sa passion pour l'aventure dans son épée. Les résultats peuvent varier en fonction de la façon dont il est excité.",
+          "title": "Surpassion",
+          "description": "Bennett concentre l'élément Pyro et sa passion pour l'aventure sur son épée. Différentes choses se produisent selon le niveau de passion atteint…",
           "abilities": {
             "0": {
               "key": "a1",
-              "description": "Une attaque de flamme unique et rapide qui inflige Pyro DMG.",
+              "description": "Bennett exécute un coup rapide de sa lame enflammée, qui inflige des DGT Pyro aux ennemis en face.",
               "descriptions": {}
             },
             "1": {
               "key": "a2",
-              "description": "Se charge, ce qui entraîne des effets différents lorsqu'il est déclenché en fonction du niveau de charge.",
-              "secondDescription": "Bennett ne subit aucun dommage d'être lancé.",
+              "description": "Bennett effecture une charge qui donne des résultats différents selon le niveau de charge. ",
+              "secondDescription": " Bennett ne subit pas de DGT lorsqu'il est projeté",
               "descriptions": {
-                "0": "Niveau 1: frappe deux fois, inflige Pyro DMG et lance des ennemis.",
-                "1": "Niveau 2: Déclenche 3 attaques consécutives qui infligent un Pyro DMG impressionnant, mais la dernière attaque déclenche une explosion qui lance à la fois Bennet et l'ennemi."
+                "0": "Niveau 1: Bennett exécute une seconde attaque, qui inflige des DGT Pyro et projette les ennemis en l'air.",
+                "1": "Niveau 2: Une troisième attaque complète l'enchaînement ; celle-ci inflige des DGT Pyro. L'attaque se termine par une explosion, qui projette simultanément Bennett et les ennemis dans les airs."
               }
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Voyage fantastique",
-          "description": "Bennett bondit vers l'ennemi et effectue une attaque plongeante, infligeant Pyro DMG, créant un champ d'inspiration.",
+          "title": "Merveilleux voyage",
+          "description": "Bennett bondit vers l'ennemi et effectue une attaque plongeante, infligeant Pyro DMG, créant un Champ vertueux.",
           "abilities": {
             "0": {
-              "name": "Champ d'inspiration",
+              "name": "Champ vertueux",
               "description": null,
               "descriptions": {
-                "0": "Si la santé d'un personnage du cercle est égale ou inférieure à 70%, sa santé se régénérera continuellement. Échelles de régénération basées sur les HP Max de Bennett.",
-                "1": "Si la santé d'un personnage dans le cercle est supérieure à 70%, il gagne un bonus d'ATK basé sur l'ATK de base de Bennett.",
-                "2": "Applique l'élément Pyro aux caractères dans le champ."
+                "0": "Les personnages se trouvant dans le champ et ayant moins de 70% de PV sont soignés d'une quantité de PV proportionnelle aux PV max de Bennett.",
+                "1": "Les personnages se trouvant dans le champ et ayant plus de 70% de PV obtiennent un bonus d'ATQ proportionnel à l'ATQ de base de Bennett.",
+                "2": "Le champ vertueux applique l'élément Pyro à tous les personnages qui s'y trouvent."
               }
             }
           }
@@ -576,66 +576,66 @@
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Cela devrait être sûr ...",
-          "description": "Lors d'une expédition en expédition à Mondstadt, le temps consommé est réduit de 25%.",
+          "title": "R.A.S.",
+          "description": "Réduit la durée d'une expédition de 25% lorsqu'elle se déroule à Mondstadt.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Raviver",
-          "description": "Diminue le CD de Passion Overload de 20%.",
+          "title": "Renouveau de la passion",
+          "description": "Réduit le TdR de Surpassion de 20%.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Fearnaught",
-          "description": "À l'intérieur de la zone créée par Fantastic Voyage, Passion Overload prend les effets suivants:",
+          "title": "Enthousiasme intrépide",
+          "description": "Dans le champ de Merveilleux voyage, Surpassion bénéficie des effets suivants : ",
           "descriptions": {
-            "0": "Le CD est réduit de 50%.",
-            "1": "Bennett ne sera pas lancé par les effets du niveau de charge 2."
+            "0": "Le TDR est réduit de 50%.",
+            "1": "ne projette pas Bennett en l'air en Niveau 2 de charge."
           }
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Grande attente",
-          "description": "L'augmentation de l'ATK de Fantastic Voyage n'a plus de restriction de HP et gagne 20% d'ATK de base supplémentaires.",
+          "title": "Perspective de voyage",
+          "description": "Le bonus d'ATQ conféré par Merveilleux voyage n'est plus soumis à la restriction de PV, et augmente numériquement l'ATQ de base de Bennett de 20%.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Impasse du conquérant",
-          "description": "Lorsque les PV de Bennett tombent en dessous de 70%, sa recharge d'énergie est augmentée de 30%.",
+          "title": "Brise-désespoir",
+          "description": "La recharge d'énergie de Bennett augmente de 30% lorsque ses PV tombent en dessous de 70%.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Ferveur imparable",
-          "description": "Augmente le niveau de surcharge de passion de 3. Le niveau de mise à niveau maximum est de 15.",
+          "title": "Passion ardente",
+          "description": "Augmente le niveau de Surpassion de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Odyssée inattendue",
-          "description": "Utiliser une attaque normale lors de l'exécution de la deuxième attaque du niveau de charge 1 de Passion Overload permet d'effectuer une attaque supplémentaire. Cette attaque supplémentaire fait 135% du DMG de la deuxième attaque.",
+          "title": "Enthousiasme éternel",
+          "description": "Une attaque supplémentaire est permise lorsque le deuxième coup de Surpassion en 1e charge est une attaque normale. Celle-ci inflige 135% des DGT du deuxième coup.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Véritable explorateur",
-          "description": "Augmentez le niveau du voyage fantastique de 3. Le niveau de mise à niveau maximum est de 15.",
+          "title": "Ouverture d'âme",
+          "description": "Augmentez le niveau de Merveilleux voyage de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Fire Ventures avec moi",
-          "description": "Les personnages à l'épée, à l'argile ou à l'arme polaire dans le rayon de Fantastic Voyage gagnent un bonus Pyro DMG de 15%. Les attaques normales et chargées font désormais Pyro DMG.",
+          "title": "Feu et courage",
+          "description": "Le champ de Merveilleux voyage confère à tous les personnages de l'équipe déployés et maniant une épée à une ou deux mains ou une arme d'hast qui s'y trouvent un bonus de DGT Pyro de 15%, ainsi qu'un enchantement Pyro.",
           "secondDescription": null,
           "descriptions": {}
         }
@@ -719,7 +719,7 @@
         "2": {
           "key": "c3",
           "title": "Trombe",
-          "description": "Augmente le niveau de Spirit Blade - Cloud-parting Star de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Spirit Blade - Cloud-parting Star de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -733,7 +733,7 @@
         "4": {
           "key": "c5",
           "title": "Le vrai chemin",
-          "description": "Augmente le niveau de Spirit Blade - Chongyun's Layered Frost de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Spirit Blade - Chongyun's Layered Frost de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -824,7 +824,7 @@
         "2": {
           "key": "c3",
           "title": "Acier et feu",
-          "description": "Augmente le niveau d'Assaut fulgurant de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau d'Assaut fulgurant de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -838,7 +838,7 @@
         "4": {
           "key": "c5",
           "title": "Phoenix, messager de l'aube",
-          "description": "Augmente le niveau de Dawn de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Dawn de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -949,7 +949,7 @@
         "2": {
           "key": "c3",
           "title": "A-Un autre tour?",
-          "description": "Augmente le niveau du mélange de signatures de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau du mélange de signatures de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -963,7 +963,7 @@
         "4": {
           "key": "c5",
           "title": "Double coup, sur les rochers",
-          "description": "Augmente le niveau de Icy Paws de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Icy Paws de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -1067,7 +1067,7 @@
         "2": {
           "key": "c3",
           "title": "Ailes du cauchemar",
-          "description": "Augmente le niveau de Nightrider de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Nightrider de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -1081,7 +1081,7 @@
         "4": {
           "key": "c5",
           "title": "Contre la lumière fuyante",
-          "description": "Augmentez le niveau de la fantasmagorie de minuit de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de la fantasmagorie de minuit de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -1184,7 +1184,7 @@
         "2": {
           "key": "c3",
           "title": "Cloud Strider",
-          "description": "Augmente le niveau de la douche céleste de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de la douche céleste de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -1198,7 +1198,7 @@
         "4": {
           "key": "c5",
           "title": "Le Miséricordieux",
-          "description": "Augmente le niveau de piste du Qilin de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de piste du Qilin de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -1305,7 +1305,7 @@
         "2": {
           "key": "c3",
           "title": "Carmine persistante",
-          "description": "Augmente le niveau de Guide de l'au-delà de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Guide de l'au-delà de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -1319,7 +1319,7 @@
         "4": {
           "key": "c5",
           "title": "Encens floral",
-          "description": "Augmente le niveau de Spirit Soother de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Spirit Soother de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -1429,7 +1429,7 @@
         "2": {
           "key": "c3",
           "title": "Quand le vent d'ouest se lève",
-          "description": "Augmente le niveau de brise de pissenlit de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de brise de pissenlit de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -1443,7 +1443,7 @@
         "4": {
           "key": "c5",
           "title": "Rafale éclatante",
-          "description": "Augmentez le niveau de la lame coup de vent de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de la lame coup de vent de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -1534,7 +1534,7 @@
         "2": {
           "key": "c3",
           "title": "Danse de givre",
-          "description": "Augmente le niveau de Frostgnaw de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Frostgnaw de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -1551,7 +1551,7 @@
         "4": {
           "key": "c5",
           "title": "Étreinte givrante",
-          "description": "Augmentez le niveau de valse glaciale de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de valse glaciale de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -1656,7 +1656,7 @@
         "2": {
           "key": "c3",
           "title": "Réforme prévue",
-          "description": "Augmente le niveau de Starward Sword de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Starward Sword de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -1670,7 +1670,7 @@
         "4": {
           "key": "c5",
           "title": "Faire signe aux étoiles",
-          "description": "Augmentez le niveau de restauration stellaire de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de restauration stellaire de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -1761,7 +1761,7 @@
         "2": {
           "key": "c3",
           "title": "Composé exquis",
-          "description": "Augmente le niveau de Jumpy Dumpty de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Jumpy Dumpty de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -1775,7 +1775,7 @@
         "4": {
           "key": "c5",
           "title": "Nova Burst",
-          "description": "Augmentez le niveau de Sparks ’n’ Splash de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de Sparks ’n’ Splash de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -1880,7 +1880,7 @@
         "2": {
           "key": "c3",
           "title": "Tonnerre résonnant",
-          "description": "Augmente le niveau de Lightning Rose de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Lightning Rose de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -1894,7 +1894,7 @@
         "4": {
           "key": "c5",
           "title": "Électrocuter",
-          "description": "Augmentez le niveau de l'arc violet de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de l'arc violet de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -2031,7 +2031,7 @@
         "2": {
           "key": "c3",
           "title": "Révolution sans repos",
-          "description": "Augmente le niveau de Stellaris Phantasm de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Stellaris Phantasm de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -2045,7 +2045,7 @@
         "4": {
           "key": "c5",
           "title": "Moquerie de Fortuna",
-          "description": "Augmentez le niveau de réflexion miroir de Doom de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de réflexion miroir de Doom de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -2145,7 +2145,7 @@
         "2": {
           "key": "c3",
           "title": "Majesté soit le tableau des étoiles",
-          "description": "Augmente le niveau de Starshatter de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Starshatter de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -2159,7 +2159,7 @@
         "4": {
           "key": "c5",
           "title": "Invincible soit l'écran de jade",
-          "description": "Augmentez le niveau de l'écran de jade de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de l'écran de jade de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -2270,7 +2270,7 @@
         "2": {
           "key": "c3",
           "title": "Pucelle invulnérable",
-          "description": "Augmente le niveau de cuirasse de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de cuirasse de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -2284,7 +2284,7 @@
         "4": {
           "key": "c5",
           "title": "Maître des balayeurs Favonius",
-          "description": "Augmentez le niveau de temps de balayage de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de temps de balayage de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -2391,7 +2391,7 @@
         "2": {
           "key": "c3",
           "title": "Ascendant Praise",
-          "description": "Augmente le niveau d'Adeptus Art: Preserver of Fortune de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau d'Adeptus Art: Preserver of Fortune de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -2405,7 +2405,7 @@
         "4": {
           "key": "c5",
           "title": "Fleur de lotus cramoisi",
-          "description": "Augmente le niveau d'Adeptus Art: Herald of Frost de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau d'Adeptus Art: Herald of Frost de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -2519,7 +2519,7 @@
         "2": {
           "key": "c3",
           "title": "Compagnon d'âme",
-          "description": "Augmente le niveau de Lightning Fang de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Lightning Fang de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -2533,7 +2533,7 @@
         "4": {
           "key": "c5",
           "title": "Griffes aiguisées",
-          "description": "Augmentez le niveau de Claw and Thunder de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de Claw and Thunder de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -2621,7 +2621,7 @@
         "2": {
           "key": "c3",
           "title": "Les salaires du péché",
-          "description": "Augmente le niveau de la confession ravageuse de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de la confession ravageuse de 3. Le niveau maximum est de 15.",
           "descriptions": {}
         },
         "3": {
@@ -2633,7 +2633,7 @@
         "4": {
           "key": "c5",
           "title": "Derniers sacrements",
-          "description": "Augmente le niveau des rites de résiliation de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau des rites de résiliation de 3. Le niveau maximum est de 15.",
           "descriptions": {}
         },
         "5": {
@@ -2728,7 +2728,7 @@
         "2": {
           "key": "c3",
           "title": "Alchimiste sans faille",
-          "description": "Augmente le niveau de création d'anémohypostase astable - 6308 de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de création d'anémohypostase astable - 6308 de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -2742,7 +2742,7 @@
         "4": {
           "key": "c5",
           "title": "Attention: flacon standard",
-          "description": "Augmentez le niveau de création interdite - Isomer 75 / Type II de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de création interdite - Isomer 75 / Type II de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -2873,7 +2873,7 @@
         "2": {
           "key": "c3",
           "title": "Chaos abyssal: Vortex de tourmente",
-          "description": "Augmente le niveau de l'héritage fâché: marée déchaînée de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de l'héritage fâché: marée déchaînée de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -2887,7 +2887,7 @@
         "4": {
           "key": "c5",
           "title": "Havoc: Lame sans forme",
-          "description": "Augmentez le niveau de ravage: Oblitération de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de ravage: Oblitération de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -2989,7 +2989,7 @@
         "2": {
           "key": "c3",
           "title": "Rafale de balayage",
-          "description": "Augmente le niveau de rafale de rafale de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de rafale de rafale de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -3003,7 +3003,7 @@
         "4": {
           "key": "c5",
           "title": "Vortex Stellaris",
-          "description": "Augmentez le niveau de Palm Vortex de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de Palm Vortex de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -3094,7 +3094,7 @@
         "2": {
           "key": "c3",
           "title": "Volonté du rocher",
-          "description": "Augmente le niveau d'éveil de la Terre de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau d'éveil de la Terre de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -3108,7 +3108,7 @@
         "4": {
           "key": "c5",
           "title": "Impact de météorite",
-          "description": "Augmentez le niveau de Starfell Sword de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de Starfell Sword de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -3216,7 +3216,7 @@
         "2": {
           "key": "c3",
           "title": "Ode aux mille vents",
-          "description": "Augmente le niveau de la Grand Ode du vent de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de la Grand Ode du vent de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -3230,7 +3230,7 @@
         "4": {
           "key": "c5",
           "title": "Concert dal Cielo",
-          "description": "Augmentez le niveau de Skyward Sonnet de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de Skyward Sonnet de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -3321,7 +3321,7 @@
         "2": {
           "key": "c3",
           "title": "Bien frit",
-          "description": "Augmente le niveau de Pyronado de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Pyronado de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -3335,7 +3335,7 @@
         "4": {
           "key": "c5",
           "title": "Guoba fou",
-          "description": "Augmente le niveau d'attaque de Guoba de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau d'attaque de Guoba de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -3435,7 +3435,7 @@
         "2": {
           "key": "c3",
           "title": "Conquérant du mal: Déité de la colère",
-          "description": "Augmente le niveau de cyclage du vent lemniscatique de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de cyclage du vent lemniscatique de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -3449,7 +3449,7 @@
         "4": {
           "key": "c5",
           "title": "Evolution Eon: Origine de l'ignorance",
-          "description": "Augmentez le niveau de fléau de tous les maux de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de fléau de tous les maux de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -3558,7 +3558,7 @@
         "2": {
           "key": "c3",
           "title": "Tisseur de vers",
-          "description": "Augmente le niveau de Guhua Sword - Raincutter de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Guhua Sword - Raincutter de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -3572,7 +3572,7 @@
         "4": {
           "key": "c5",
           "title": "Étreinte de la pluie",
-          "description": "Augmentez le niveau de Guhua Sword - Fatal Rainscreen de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de Guhua Sword - Fatal Rainscreen de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -3684,7 +3684,7 @@
         "2": {
           "key": "c3",
           "title": "Double arrêt",
-          "description": "Augmente le niveau de ferveur de balayage de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de ferveur de balayage de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -3698,7 +3698,7 @@
         "4": {
           "key": "c5",
           "title": "Screamin ’for an Encore",
-          "description": "Augmente le niveau de Riff Revolution de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Riff Revolution de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -3828,7 +3828,7 @@
         "2": {
           "key": "c3",
           "title": "Jade, scintillant à travers les ténèbres",
-          "description": "Augmente le niveau de Dominus Lapidis de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Dominus Lapidis de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
@@ -3842,7 +3842,7 @@
         "4": {
           "key": "c5",
           "title": "Lazuli, héraut de l'ordre",
-          "description": "Augmentez le niveau de Planet Befall de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmentez le niveau de Planet Befall de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
