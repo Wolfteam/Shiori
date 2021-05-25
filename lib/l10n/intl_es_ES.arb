@@ -324,8 +324,6 @@
   "reset": "Reiniciar",
   "stop": "Detener",
   "completed": "Completado",
-  "createdAtX": "Creado el {date}",
-  "completesAtX": "Completa el {date}",
   "selectAnArtifact": "Selecciona un artefacto",
   "selectAMonster": "Selecciona un monstruo",
   "selectAMaterial": "Selecciona un material",
