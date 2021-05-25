@@ -126,12 +126,12 @@
     },
     "1": {
       "key": "ambre",
-      "name": "ambre",
-      "description": "Toujours énergique et plein de vie, Amber est le meilleur - bien que le seul - Outrider des Chevaliers de Favonius.",
+      "name": "Amber",
+      "description": "TUne jeune fille pleine de vie et l'unique éclaireuse de l'Ordre de Favonius. Avec trois titres consécutifs de championne de planement aérien de Mondtsadt, cette discipline n'a plus de secrets pour elle. En tant qu'étoile montante de l'Ordre de Favonius, Amber brille toujours en première ligne ! ",
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Tireur d'élite",
+          "title": "Archerie revisitée",
           "description": null,
           "abilities": {
             "0": {
@@ -141,104 +141,104 @@
             },
             "1": {
               "key": "a2",
-              "description": "Effectuez un tir ciblé plus précis avec une DMG accrue. En visant, les flammes s'accumulent sur la pointe de la flèche. Une flèche enflammée complètement chargée infligera Pyro DMG.",
+              "description": "Effectue un tir visé plus précis infligeant davantage de DGT. Lors de la visée, la flèche se charge en élément Pyro, infligeant de considérables DGT Pyro quand elle est complètement chargée.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Tire une pluie de flèches dans les airs avant de tomber et de heurter le sol, infligeant AoE DMG à l'impact.",
+              "description": "Tire une pluie de flèches dans les airs avant de tomber et de heurter le sol, infligeant des DMG de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Baron Bunny",
-          "description": null,
+          "title": "Poupée explosive",
+          "description": "Le fidèle Baron Lapinou est déployé sur le terrain.",
           "abilities": {
             "0": {
-              "name": "Baron Bunny",
-              "description": null,
+              "name": "Poupée explosive",
+              "description": "Le fidèle Baron Lapinou est déployé sur le terrain.",
               "descriptions": {
-                "0": "Se moque continuellement de l'ennemi, attirant son feu.",
-                "1": "Les HP de Baron Bunny évoluent avec les HP Max d'Amber.",
-                "2": "Lorsqu'il est détruit ou lorsque son chronomètre expire, Baron Bunny explose, infligeant AoE Pyro DMG."
+                "0": "Le baron nargue les ennemis proches et attire leur attention.",
+                "1": "Ses PV sont proportionnels aux PC max d'Amber.",
+                "2": "Le baron explose à la fin ou s'il est détruit entre temps, et inflige des DGT Pyro de zone."
               }
             },
             "1": {
               "key": "a2",
-              "description": "Règle la direction de projection de Baron Bunny. Plus le bouton est maintenu longtemps, plus le lancer est éloigné.",
+              "description": "Ajuste la direction et la portée du jet. La lignée de Baron Lapinou est impressionnante, mais Amber a décidé d'arrêter de compter à partir du 893e Baron Lapinou.",
               "descriptions": {}
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Pluie ardente",
-          "description": "Les feux d'une pluie de flèches, infligeant continuellement AoE Pyro DMG.",
+          "title": "Pluie de flèches",
+          "description": "Tire une pluie de flèches qui inflige des DGT Pyro continus.",
           "abilities": {}
         }
       },
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Champion de vol à voile",
-          "description": "Diminue la consommation d'endurance de tous les membres du groupe de 20%. Le plus grand effet de tous les talents du même type prévaut.",
+          "title": "Championne de planage",
+          "description": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20 % lors du planage. Ne peut pas être cumulé avec d'autres aptitudes passives ayant les mêmes effets.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Chaque flèche trouve sa cible",
-          "description": "Augmente le taux CRIT de Fiery Rain de 10% et élargit son AoE de 30%.",
+          "title": "Dans le mille !",
+          "description": "Augmente le taux CRIT de Pluie de flèches de 10 % et la zone d'effet de 30 %.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
           "title": "Tir précis",
-          "description": "Les coups ciblés sur les points faibles augmentent l'ATQ de base de 15% pendant 10s.",
+          "description": "L'ATQ augmente de 15 % pendant 10 s lorsque le tir visé touche un point faible.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Une flèche pour les gouverner tous",
-          "description": "Tire 2 flèches par tir visé. La deuxième flèche traite 20% du DMG de la première flèche.",
+          "title": "Une flèche suffit !",
+          "description": "Tire 2 flèches consécutives à chaque tir visé. La seconde flèche inflige 20 % des DGT de la première.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Lapin déclenché",
-          "description": "Baron Bunny, nouveau et amélioré! Frapper le pied du baron Bunny avec un tir visé complètement chargé le fait exploser manuellement. L'explosion par détonation manuelle inflige 200% de DMG supplémentaires.",
+          "title": "Tout est prêt",
+          "description":  "Une toute nouvelle modification du Baron Lapinou ! Un tir visé à pleine charge aux pieds du Baron Lapinou, et ce dernier explose directement… Ce type d'explosion inflige 200 % de DGT supplémentaires.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
           "title": "Ça brûle!",
-          "description": "Augmente le niveau de Fiery Rain de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Pluie de flèches de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
           "title": "Ce n’est pas n'importe quelle poupée ...",
-          "description": "Diminue le CD de la marionnette explosive de 20%. Ajoute 1 frais supplémentaires.",
+          "description": "Réduit le TdR de Poupée explosive de 20 % et permet de l'utiliser 1 fois supplémentaire.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "C’est le baron Bunny!",
-          "description": "Augmentez le niveau de la marionnette explosive de 3, le niveau de mise à niveau maximum est de 15.",
+          "title": "Baron Lapinou !",
+          "description": "Augmentez le niveau de la Poupée explosive de 3, le maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Incendies",
-          "description": "Fiery Rain augmente la vitesse de déplacement d'Amber de 15% et l'ATQ de base de 15% pendant 10s.",
+          "title": "Feu sauvage",
+          "description": "Pluie de flèches augmente la VIT de déplacement de tous les personnages de l'équipe de 15 % et leur ATQ de 15 % pendant 10 s.",
           "secondDescription": null,
           "descriptions": {}
         }
