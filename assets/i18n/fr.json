@@ -22,7 +22,7 @@
             },
             "2": {
               "key": "a3",
-              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT de zone aux ennemis situés dans la zone d'impact.",
               "descriptions": {}
             }
           }
@@ -395,7 +395,7 @@
             },
             "2": {
               "key": "a3",
-              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT de zone aux ennemis situés dans la zone d'impact.",
               "descriptions": {}
             }
           }
@@ -530,7 +530,7 @@
             },
             "2": {
               "key": "a3",
-              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT de zone aux ennemis situés dans la zone d'impact.",
               "descriptions": {}
             }
           }
@@ -663,7 +663,7 @@
             },
             "2": {
               "key": "a3",
-              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT de zone aux ennemis situés dans la zone d'impact.",
               "descriptions": {}
             }
           }
@@ -768,7 +768,7 @@
             },
             "2": {
               "key": "a3",
-              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT de zone aux ennemis situés dans la zone d'impact.",
               "descriptions": {}
             }
           }
@@ -1205,7 +1205,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Lance secrète de Wangsheng",
+          "title": "Lame secrète de Wangsheng",
           "description": null,
           "abilities": {
             "0": {
@@ -1215,23 +1215,23 @@
             },
             "1": {
               "key": "a2",
-              "description": "Consomme une certaine quantité d'Endurance pour fendre vers l'avant, infligeant des dégâts aux adversaires en cours de route.",
+              "description": " Charge en ligne droite. Infligent l'effet Bourgeon de prunes aux ennemis si le Chaperon de la renaissance est actif. Les ennemis affectés par cet état subissent des DGT Pyro toutes les 4s ces DGT sont considérés comme des DGT de compétence élémentaire. Une même cible ne peut subit qu'une fois cet état et la durée ne peut être rafraichie.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Plonge dans les airs pour frapper le sol en dessous, endommageant les adversaires le long du chemin et infligeant AoE DMG à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT de zone aux ennemis situés dans la zone d'impact",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Guide de l'au-delà",
+          "title": "Chaperon de la renaissance",
           "description": "Seule une flamme inébranlable peut purifier les impuretés de ce monde.\nHu Tao consomme une partie fixe de ses PV pour repousser les ennemis environnants et entrer dans l'état de Paramita Papilio.",
           "abilities": {
             "0": {
-              "name": "Papillon Paramita",
+              "name": "Paramita Papilio",
               "descriptions": {
                 "0": "Augmente l'ATK de Hu Tao en fonction de ses PV max au moment d'entrer dans cet état. Le bonus d'ATK obtenu de cette manière ne peut pas dépasser 400% de l'ATK de base de Hu Tao.",
                 "1": "Convertit l'attaque DMG en Pyro DMG, qui ne peut être annulée par aucune autre infusion élémentaire.",
@@ -1240,7 +1240,7 @@
               }
             },
             "1": {
-              "name": "Fleur de sang",
+              "name": "Bourgeon de prune",
               "description": "Les ennemis affectés par Blood Blossom prendront Pyro DMG toutes les 4s. Ce DMG est considéré comme un DMG de compétence élémentaire.\nChaque ennemi ne peut être affecté que par un seul effet Blood Blossom à la fois, et sa durée ne peut être rafraîchie que par Hu Tao elle-même.\nParamita Papilio se termine lorsque sa durée est terminée ou que Hu Tao a quitté le champ de bataille ou est tombé.",
               "descriptions": {}
             }
@@ -1256,66 +1256,66 @@
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Plus on est de fous, plus on rit",
-          "description": "Lorsque Hu Tao cuisine parfaitement un plat, elle a 18% de chances de recevoir un plat \"suspect\" supplémentaire du même type.",
+          "title": "Plus il y en a, mieux c'est",
+          "description": "18% de chance d'obtenir un plat suspect du même type lorsque vous cuisinez un plat parfait.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Flutter par",
-          "description": "Lorsqu'un état Paramita Papilio activé par Guide to Afterlife prend fin, tous les alliés du groupe (à l'exception de Hu Tao elle-même) verront leur taux de CRIT augmenté de 12% pendant 8s.",
+          "title": "Chrysalide",
+          "description": "Le taux CRIT de tous les personnages de l'équipe (à l'exception d'Hu Tao) augmente de 12% pendant 8s lorsque l'état Paramita Papilio conféré par Chaperon de la renaissance prend fin.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Sanguine Rouge",
-          "description": "Lorsque les PV de Hu Tao sont égaux ou inférieurs à 50%, son bonus Pyro DMG est augmenté de 33%.",
+          "title": "Sang bouillant",
+          "description": "Hu Tao obtient un bonus de DGT Pyro de 33% lorsque ses PV sont inférieurs à 50%.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Bouquet cramoisi",
-          "description": "Dans un état Paramita Papilio activé par Guide to Afterlife, les attaques de charge de Hu Tao ne consomment pas d'endurance.",
+          "title": "Bouquet écarlate",
+          "description": "les attaques chargées d'Hu Tao ne consomment pas d'endurance tant qu'elle se trouve dans l'état Paramita Papilio conféré par Chaperon de la renaissance.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Pluie inquiétante",
-          "description": "Augmente les DEG de Fleur de sang d'un montant égal à 10% des PV max de Hu Tao au moment où l'effet est appliqué.\nDe plus, Spirit Soother appliquera également l'effet Blood Blossom.",
+          "title": "Sombres auspices",
+          "description": "Bourgeon de prune inflige un bonus de DGT équivalent à 10% des PV max de Hu Tao lorsqu'elle bénéficie de l'effet. Apaisement divin applique de plus l'effet Bourgeon de prune lorsqu'il touche.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Carmine persistante",
-          "description": "Augmente le niveau de Guide de l'au-delà de 3. Le niveau maximum est de 15.",
+          "title": "Rituel du sang",
+          "description": "Augmente le niveau de Chaperon de la renaissance de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
           "title": "Jardin du repos éternel",
-          "description": "Après avoir vaincu un ennemi affecté par une fleur de sang que Hu Tao s'est appliquée elle-même, tous les alliés proches du groupe (à l'exception de Hu Tao elle-même) verront leur taux de CRIT augmenté de 12% pendant 15s.",
+          "description": "Lorsqu'un ennemi affecté par Bourgeon de prune est vaincu, le taux de CRIT de tous les personnages de l'équipe proches (à l'exception d'Hu Tao) augmente de 12% pendant 15s.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
           "title": "Encens floral",
-          "description": "Augmente le niveau de Spirit Soother de 3. Le niveau maximum est de 15.",
+          "description": "Augmente le niveau de Apaisement divin de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Étreinte du papillon",
+          "title": "L'envol du papillon",
           "description": "Se déclenche lorsque les PV de Hu Tao tombent en dessous de 25%, ou lorsqu'elle subit une frappe mortelle:",
           "secondDescription": null,
           "descriptions": {
-            "0": "Hu Tao ne tombera pas en raison du DMG soutenu. De plus, pendant les 10 prochaines années, toutes ses RES élémentaires et physiques sont augmentées de 200%, son taux de CRIT est augmenté de 100% et sa résistance à l'interruption est considérablement augmentée.",
+            "0": "Hu Tao n'est pas vaincue cette fois ci. Pendant les 10s qui suivent, ses RES élémentaires et physiques augmentent de 200%, sont taux de CRIT augmente de 100%, et sa RES à l'interruption augmente considérablement.",
             "1": "Cet effet se déclenche automatiquement lorsque Hu Tao a encore 1 PV.",
             "2": "Ne peut se produire qu'une fois toutes les 60 secondes."
           }
