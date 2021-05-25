@@ -265,109 +265,110 @@
           "abilities": {
             "0": {
               "key": "a1",
-              "description": "Effectuez jusqu'à 4 attaques par éclaboussures d'eau qui infligent Hydro DMG.",
+              "description": "Effectuez jusqu'à 4 attaques par éclaboussures d'eau qui infligent DMG Hydro.",
               "descriptions": {}
             },
             "1": {
               "key": "a2",
-              "description": "Consomme une certaine quantité d'Endurance pour traiter AoE Hydro DMG après un court temps d'incantation.",
+              "description": "Consomme une certaine quantité d'Endurance pour infliger des DMG Hydro de zone après un court temps d'incantation.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Rassemblant la puissance d'Hydro, Barbara plonge vers le sol depuis les airs, endommageant tous les ennemis sur son passage. Traite AoE Hydro DMG lors de l'impact avec le sol.",
+              "description": "Plonge depuis les airs en concentrant ses pouvoirs Hydro, infligeant des DGT aux ennemis sur la route et des DGT Hydro de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Que le spectacle commence",
-          "description": "Invoque des gouttelettes d'eau ressemblant à des notes de musique qui forment une boucle de mélodie, infligeant Hydro DMG aux ennemis environnants et leur attribuant le statut Humide.",
+          "title": "C'est parti pour le show ♪",
+          "description": "Invoque des gouttelettes d'eau ressemblant à des notes de musique qui forment une boucle de mélodie, infligeant des DMG Hydro aux ennemis environnants et leur attribuant le statut Trempé.",
           "abilities": {
             "0": {
               "name": "Boucle de mélodie",
               "description": null,
               "descriptions": {
                 "0": "Les attaques normales de Barbara soignent tous les membres du groupe et les personnages alliés à proximité pour une certaine quantité de HP, qui évolue avec les HP Max de Barbara.",
-                "1": "Son attaque chargée génère 4 fois la quantité de soins.",
-                "2": "Régénère une certaine quantité de PV du personnage actuel à intervalles réguliers.",
-                "3": "Applique le statut Humide au personnage et aux ennemis qui entrent en contact avec eux."
+                "1": "L'effet des soins est multiplié par 4 avec les attaques chargées.",
+                "2": "Régénère à intervalles réguliers une certaine quantité de PV du personnage actuel .",
+                "3": "Barbara trempe les personnages et les ennemis avec qui elle entre en contact."
               }
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Miracle brillant",
-          "description": "Soigne les forces amies et toutes les parties pour une grande quantité de HP qui évolue avec les HP Max de Barbara.",
+          "title": "Miracle brillant ♪",
+          "description": "Restaure considérablement les PV des alliés et de vos personnages dans l'équipe ; la quantité de PV restaurés est proportionnelle aux PV max de Barbara. Soigner le cœur de chacun, telle est la force du chant de Barbara.",
           "abilities": {}
         }
       },
       "passives": {
         "0": {
           "key": "p1",
-          "title": "De tout mon coeur",
+          "title": "De tout mon cœur ♪",
           "description": "Lorsqu'une cuisson parfaite est réalisée sur un plat aux effets réparateurs, il y a 12% de chances d'obtenir le double du produit.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Saison glorieuse",
-          "description": "La consommation d'endurance des personnages dans la boucle de mélodie de Let the Show Begin est réduite de 12%.",
+          "title": "Splendide saison",
+          "description": "Les personnages situés dans le cercle de mélodie de C'est parti pour le show ♪ consomment 12 % d'énergie élémentaire en moins.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Encore",
-          "description": "Lorsqu'un personnage gagne un orbe / une particule élémentaire, la durée de la boucle de mélodie de Let the Show Begin est prolongée de 1s. L'extension maximale est de 5 s.",
+          "title": "Bis repetita",
+          "description": "Chaque orbe ou particule élémentaire obtenu(e) par votre personnage déployé prolonge le cercle de mélodie de C'est parti pour le show ♪ de 1 s. Durée max : 5 s.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Chansons joyeuses",
-          "description": "Barbara régénère 1 énergie toutes les 10s.",
+          "title": "Joyeuse ballade",
+          "description": "Barbara récupère 1 pt d'énergie élémentaire toutes les 10 s.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Explosion de vitalité",
-          "description": "Diminue le CD de Let the Show Begin de 15%. Pendant la durée de la capacité, le personnage actuel gagne 15% de bonus Hydro DMG.",
+          "title": "Éclat de vitalité",
+          "description": "Réduit le TdR de C'est parti pour le show ♪ de 15 %. Confère un bonus de 15 % DGT Hydro à votre personnage déployé tant que la compétence est active.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "L'étoile de demain",
-          "description": "Augmente le niveau de Shining Miracle de 3. Le niveau de mise à niveau maximum est de 15.",
+          "title": "Étoile du lendemain",
+          "description": "Augmente le niveau de Miracle brillant ♪ de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "L'attention soit mon pouvoir",
-          "description": "Chaque ennemi touché par l'attaque chargée de Barbara régénère 1 énergie pour elle. Un maximum de 5 énergies peut être régénéré de cette manière avec n'importe quelle attaque chargée.",
+          "title": "L'effort est la meilleure des magies",
+          "description": "À chaque ennemi touché par une attaque chargée, Barbara récupère 1 pt d'énergie élémentaire. 5 pts d'énergie maximum peuvent être régénérés après chaque attaque chargée.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Le compagnon le plus pur",
-          "description": "Augmente le niveau de Let the Show Begin de 3.\nLe niveau de mise à niveau maximum est de 15.",
+          "title": "Lien innocent",
+          "description": "Augmente le niveau de C'est parti pour le show ♪  de 3.\nLe niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Tout vous est dédié",
+          "title": "Toujours le meilleur pour vous",
           "description": "Lorsque Barbara n'est pas sur le terrain et que le personnage en jeu tombe:",
           "secondDescription": "Cet effet ne peut se produire qu'une fois toutes les 15 minutes.",
           "descriptions": {
-            "0": "Ravive automatiquement ce personnage.",
-            "1": "Régénère complètement les PV de ce personnage de 100%."
+            "0": "Barbara le réanime immédiatement.",
+            "1": "Les PV de ce personnage sont restaurés à 100 %.",
+            "2": "Cet effet peut être déclenché une fois toutes les 15 min."
           }
         }
       }
