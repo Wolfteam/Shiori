@@ -1248,8 +1248,8 @@
         },
         "2": {
           "key": "s3",
-          "title": "Sucette spirituelle",
-          "description": "Ordonne à un esprit flamboyant d'attaquer, infligeant Pyro DMG dans un grand AoE.\nEn frappant l'ennemi, régénère un pourcentage des PV max de Hu Tao. Cet effet peut être déclenché jusqu'à 5 fois, en fonction du nombre d'ennemis touchés.\nSi les PV de Hu Tao sont inférieurs ou égaux à 50% lorsque l'ennemi est touché, le DMG et la régénération de PV sont augmentés.",
+          "title": "Apaisement divin",
+          "description": "Hu Tao inflige des DGT Pyro dans une large zone. Hu Tao récupère à chaque ennemi touché (5 max) une quantité de PV proportionnelle à ses PV max. Les DGT infligés et les PV récupérés sont plus importants si les PV de Hu Tao sont inférieurs ou égaux à 50% lorsque la compétence touche.",
           "abilities": {}
         }
       },
