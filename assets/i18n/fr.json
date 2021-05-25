@@ -7,7 +7,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Lame Favonius - Weiss",
+          "title": "Escrime de Favonius - Blanche",
           "description": null,
           "abilities": {
             "0": {
@@ -22,24 +22,24 @@
             },
             "2": {
               "key": "a3",
-              "description": "Plonge dans les airs pour frapper le sol en dessous, endommageant les adversaires le long du chemin et infligeant AoE DMG à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Abiogenèse: isotome solaire",
+          "title": "Genèse:Aura solaire",
           "description": null,
           "abilities": {
             "0": {
-              "name": "Isotome solaire",
-              "description": "Albedo crée un isotome solaire en utilisant l'alchimie, qui traite AoE Geo DMG en apparence.",
+              "name": "Aura solaire",
+              "description": "Albedo crée une aura solaire en utilisant l'alchimie, qui traite AoE Geo DMG en apparence.",
               "descriptions": {
-                "0": "Lorsque des ennemis dans la zone de l'isotome solaire sont touchés, l'isotome solaire génère des fleurs transitoires qui traitent AoE Geo DMG. DMG a distribué des échelles de DEF d'Albedo.",
-                "1": "Les fleurs transitoires ne peuvent être générées qu'une fois toutes les 2s.",
-                "2": "Lorsqu'un personnage est situé au locus de l'isotome solaire, l'isotome solaire accumule de l'énergie géo pour former une plate-forme cristallisée qui élève le personnage jusqu'à une certaine hauteur. Une seule plate-forme cristallisée peut exister à la fois.",
-                "3": "L'isotome solaire est considéré comme une construction Geo."
+                "0": "Lorsque des ennemis dans la zone de l'aura solaire sont touchés, l'Aura solaire génère de Les Germes éphémères qui traitent AoE Geo DMG. DMG a distribué des échelles de DEF d'Albedo.",
+                "1": "Les Germes éphémères ne peuvent être générées qu'une fois toutes les 2s.",
+                "2": "Lorsqu'un personnage rejoint le centre de l'Aura solaire, l'énergie Géo présente se concentre pour générer un podium ascendant lui permettant de dominer le champ de bataille. Il ne peut exister qu'un seul podium à la fois.",
+                "3": "L'aura solaire est une construction Géo ; il ne peut exister qu'une seule Aura solaire créée par Albedo à la fois."
               }
             },
             "1": {
@@ -51,8 +51,8 @@
         },
         "2": {
           "key": "s3",
-          "title": "Rite de la progéniture: marée tectonique",
-          "description": "Sous le commandement d'Albedo, les cristaux Geo surgissent et éclatent, infligeant AoE Geo DMG devant lui.\nSi un isotome solaire créé par Albedo lui-même est sur le terrain, 7 fleurs fatales seront générées dans le champ de l'isotome solaire, éclatant violemment en fleur et affectant AoE Geo DMG.\nTecotonic Tide DMG et Fatal Blossom DMG ne généreront pas de fleurs transitoires.",
+          "title": "Transformation : Reflux Géo",
+          "description": "Sous le commandement d'Albedo, des cristaux Geo surgissent et éclatent, infligeant des DMG GEO de zone devant lui.\nSi une Aura solaire est sur le terrain, 7 Germes fatals seront générés dans la zone de l'aura solaire, éclatant violemment infligeant des dégats de zone Geo.\nLes DGT d'explosion et les DGT des Germes fatals ne génèrent pas de Germes éphémères.",
           "abilities": {}
         }
       },
@@ -60,19 +60,19 @@
         "0": {
           "key": "p1",
           "title": "Éclair de génie",
-          "description": "Quand Albedo fabrique des matériaux d'ascension d'arme, il a 10% de chances de recevoir le double du produit.",
+          "description": "Quand Albedo fabrique des matériaux d'ascension d'arme, il a 10% de chance de recevoir le double du produit.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Calcite Might",
-          "description": "Fleurs transitoires générées par l'abiogenèse: les isotomes solaires infligent 25% de DÉG en plus aux ennemis dont les PV sont inférieurs à 50%.",
+          "title": "Menace calcaire",
+          "description": "Les Germes éphémères générées par l'Aura solaire infligent 25% de DGT supplémentaires aux ennemis dont les PV sont inférieurs à 50%. Cet effet peut-être cumulé 5 fois maximum et dure jusqu'à la fin du bouclier.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Nature homonculaire",
-          "description": "Utiliser Rite of Progeniture: Tectonic Tide augmente la maîtrise élémentaire des membres du groupe à proximité de 125 pendant 10s.",
+          "title": "Sagesse en bouteille",
+          "description": "Utiliser Transformation : Reflux Géo augmente la maîtrise élémentaire des membres du groupe à proximité de 125 pendant 10s.",
           "descriptions": {}
         }
       },
@@ -80,45 +80,45 @@
         "0": {
           "key": "c1",
           "title": "Fleur d'Eden",
-          "description": "Les fleurs transitoires générées par l'abiogenèse d'albédo: l'isotome solaire régénère 1,2 énergie pour l'albédo.",
+          "description": "Albedo récupère 1,2 pts d'énergie élémentaire lorsqu'un Germe éphémère généré par Genèse : Aura solaire éclôt.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Ouverture de Phanerozoic",
-          "description": "Fleurs transitoires générées par Abiogenesis: Solar Isotoma accorde Albedo Fatal Reckoning pendant 30s:",
-          "secondDescription": "Libérer le rite de la progéniture: Tectonic Tide consomme toutes les piles de Fatal Reckoning, augmentant les DMG infligés par la marée tectonique et les fleurs fatales en fonction du nombre de piles consommées.",
+          "title": "Eon de l'avènement",
+          "description":"Génèse : Aura solaire confère pendant 30s l'effet Jugement dernier à Albedo lorsque des Germes éphémères sont générés :",
+          "secondDescription": "tous les cumuls de Jugement dernier sont consommés lors du lancement de Transformation : Reflux Géo, conférant aux germes éphémères et aux coups CRIT de cette aptitude un bonus de DGT proportionnel au nombre de cumuls.",
           "descriptions": {
-            "0": "Chaque stack de Fatal Reckoning augmente les DEG de la DEF d'Albedo.",
+            "0": "Chaque cumul de Jugement dernier confère un bonus de DGT équivalant à 30% de la DEF d'Albedo.",
             "1": "L'effet se cumule jusqu'à 4 fois."
           }
         },
         "2": {
           "key": "c3",
           "title": "Grâce d'Hélios",
-          "description": "Augmente le niveau d'Abiogenesis: Solar Isotoma de 3. Le niveau de mise à niveau maximum est de 15.",
+          "description": "Augmente le niveau de Génèse : Aura solaire de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Descente de la divinité",
-          "description": "L'isotome solaire augmente les DMG d'attaque plongeante de 30% pour les membres actifs du groupe au sein de la zone.",
+          "title": "Chute divine",
+          "description": "Les personnages déployés se trouvant dans la zone de l'Aura solaire infligent 30% de DGT d'attaque descendante supplémentaire.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Marée d'Hadaen",
-          "description": "Augmente le niveau de Rite of Progeniture: Tectonic Tide de 3. Le niveau de mise à niveau maximum est de 15.",
+          "title": "Flux antique",
+          "description": "Augmente le niveau de Transformation : Reflux de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Poussière de purification",
-          "description": "Si les membres actifs du groupe au sein de l'AoE sont protégés par un bouclier créé par Crystallize, Solar Isotoma augmente leur DMG de 17%.",
+          "title": "Pureté de la terre",
+          "description": "Les personnages déployés se trouvant dans la zone de l'Aura solaire infligent 17% de DGT supplémentaires lorsqu'ils sont sous la protection d'un bouclier généré par cristallisation.",
           "secondDescription": null,
           "descriptions": {}
         }
