@@ -644,11 +644,11 @@
     "6": {
       "key": "Chongyun",
       "name": "Chongyun",
-      "description": "Un jeune exortciste issu d'une famille d'exorcistes. Il fait tout ce qu'il peut pour supprimer sa pure énergie positive.",
+      "description": "Exorciste basé à Liyue, et exerçant ses activités de par le monde. Héritier de l'une des plus célèbres maisons de l'art, il a un talent dévastateur qu'il ne doit pas à l'enseignement de ses maîtres, mais à l'impressionnante quantité d'énergie en permanence au bord de l'implosion qui l'habite",
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Demonbane",
+          "title": "Fléau des démons",
           "description": null,
           "abilities": {
             "0": {
@@ -658,46 +658,46 @@
             },
             "1": {
               "key": "a2",
-              "description": "Draine l'endurance au fil du temps pour effectuer des attaques tourbillonnantes continues contre tous les ennemis proches. À la fin de la séquence, effectuez une barre oblique plus puissante.",
+              "description": "Exécute une succession d'attaque tournoyantes ; cette attaque consomme de l'endurance sur la durée. L'attaque chargée se termine sur un coup puissant.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Plonge dans les airs pour frapper le sol en dessous, endommageant les ennemis le long du chemin et infligeant AoE DMG à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Lame spirituelle - Givre en couches de Chonghua",
-          "description": "Chongyun frappe le sol avec son épée, provoquant une explosion Cryo dans une zone circulaire devant lui qui traite Cryo DMG. Après un court délai, l'air froid créé par l'explosion de Cryo se fondra dans un champ de givre de Chonghua, dans lequel tous les DMG effectués par des attaques normales et chargées par des personnages brandissant l'épée, l'espadon et l'arme polaire seront convertis en Cryo DMG.",
+          "title": "Lame de l'esprit : Givre superposé",
+          "description": "Chongyun abat violemment sa longue épée sur le sol, provoquant une explosion de glace qui inflige des DGT Cryo aux ennemis en face dans une zone circulaire. Après un court délai, les courants d'air froids de l'explosion se condensent en un champ de givre. Les DGT des attaques normales et chargées des personnages qui s'y trouvent et qui manient l'épée longue, à une main, ou une arme d'hast obtiennent un enchantement Cryo. « Lorsque les cloches sonnent, tout est calme et silencieux. Les eaux des lacs et des rivières ne s'écoulent plus, et les nuages sont couverts de givre épais. Les portes de l'autel s'ouvrent, tous les maux sont éliminés. »",
           "abilities": {}
         },
         "2": {
           "key": "s3",
-          "title": "Spirit Blade - Étoile de séparation des nuages",
-          "description": "En exécutant les sceaux à main secrets, Chongyun invoque 3 lames d'esprit géantes dans les airs qui tombent sur la terre une par une après un court délai, explosant lorsqu'elles touchent le sol. Lorsque les lames spirituelles exploseront, elles traiteront AoE Cryo DMG et lanceront des ennemis.",
+          "title": "Lame de l'esprit : Chute d'étoiles",
+          "description": "D'un geste rapide, Chongyun invoque en l'air 3 lames éthérées qui foncent au sol après un court délai. L'impact inflige des DGT Cryo de zone et projette les ennemis en l'air. « Ô lame du ciel et de la terre qui gèle tous les démons du monde… Entends mon appel ! »",
           "abilities": {}
         }
       },
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Voyage galant",
-          "description": "Lors d'une expédition en expédition à Liyue, le temps consommé est réduit de 25%.",
+          "title": "Périple alyzéen",
+          "description": "Réduit la durée d'une expédition de 25% lorsqu'elle se déroule à Liyue.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Respiration régulière",
-          "description": "Les personnages maniant Sword, Claymore ou Polearm dans le champ créé par Spirit Blade - Chonghua's Layered Frost voient leur SPD d'attaque normal augmenté de 8%.",
+          "title": "Respiration stable",
+          "description": "Dans le champs de Lame de l'esprit : Givre superposé, la VIT d'attaque normale des personnages maniant une épée à une ou deux mains ou une arme d'hast augmente de 8%.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Lame de Rimechaser",
-          "description": "Lorsque le champ créé par Spirit Blade - Chonghua's Layered Frost disparaît, un autre esprit sera invoqué pour frapper les ennemis proches, infligeant 100% de la compétence de Chonghua Layered Frost DMG en tant que AoE Cryo DMG. Les ennemis touchés par cette lame verront leur Cryo RES diminuée de 10% pendant 8s.",
+          "title": "Lame du chasseur de glace",
+          "description": "Une lame apparaît à la fin du champ de Lame de l'esprit : Givre superposé ; elle inflige des DGT Cryo de zone équivalent à 100% des DGT de Lame de l'esprit : Givre superposé aux ennemis proches. La RÉS Cryo des ennemis touchés est réduite de 10% pendant 8 s.",
           "descriptions": {}
         }
       },
@@ -705,42 +705,42 @@
         "0": {
           "key": "c1",
           "title": "Glace déchaînée",
-          "description": "La dernière attaque du combo Attaque normale de Chongyun libère 3 lames de glace. Chaque lame inflige 50% de l'ATK de Chongyun en tant que Cryo DMG à tous les ennemis sur son passage.",
+          "description": "Le dernier coup d'attaque normale libère 3 lames de glace vers l'avant ; chacune inflige une quantité de DGT Cryo équivalent à 50% de l'ATQ de Chongyun.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Révolution atmosphérique",
-          "description": "Les compétences élémentaires et les explosions élémentaires lancées dans le champ de givre créé par Spirit Blade - Chongyun's Layered Frost voient leur temps de CD réduit de 15%.",
+          "title": "Révolution astrale",
+          "description": "Lancer une compétence ou un déchaînement élémentaires dans le champ de Lame de l'esprit : Givre superposé réduit leur TdR de 15%.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Trombe",
-          "description": "Augmente le niveau de Spirit Blade - Cloud-parting Star de 3. Le niveau maximum est de 15.",
+          "title": "Étincellement des nuages",
+          "description": "Augmente le niveau de Lame de l'esprit : Chute d'étoiles de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Ciel gelé",
-          "description": "Chongyun régénère 1 énergie à chaque fois qu'il touche un ennemi affecté par les effets de statut froid ou gelé. Cet effet ne peut se produire qu'une fois toutes les 2s.",
+          "title": "Cieux givrés",
+          "description": "Chongyun récupère 1 pt d'énergie à chaque fois qu'il touche un ennemi affecté par Cryo. Cet effet peut être déclenché toutes les 2 s.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Le vrai chemin",
-          "description": "Augmente le niveau de Spirit Blade - Chongyun's Layered Frost de 3. Le niveau maximum est de 15.",
+          "title": "La Voie",
+          "description": "Augmente le niveau de Lame de l'esprit : Givre superposé de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Rallye des quatre lames",
-          "description": "Spirit Blade - L'étoile de séparation des nuages inflige 15% de DÉG de plus aux ennemis avec un pourcentage inférieur de leurs PV max restants à Chongyun. Cette compétence invoquera également 1 lame de spirt supplémentaire.",
+          "title": "Rassemblement des Quatre lames",
+          "description": "Lame de l'esprit : Chute d'étoiles inflige 15% de DGT supplémentaires aux ennemis dont les PV sont inférieurs à ceux de Chongyun. De plus, une lame supplémentaire est générée à l'activation de la compétence.",
           "secondDescription": null,
           "descriptions": {}
         }
