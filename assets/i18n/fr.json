@@ -763,12 +763,12 @@
             },
             "1": {
               "key": "a2",
-              "description": "Draine l'endurance au fil du temps pour effectuer des barres obliques continues. À la fin de la séquence, effectuez une barre oblique plus puissante.",
+              "description": "Exécute une succession d'entailles aussi rapides que tranchantes ; cette attaque consomme de l'endurance sur la durée. L'attaque chargée se termine sur un coup puissant.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Plonge du milieu des airs pour frapper le sol, endommageant les ennemis le long du chemin et infligeant AoE DMG à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
@@ -776,33 +776,33 @@
         "1": {
           "key": "s2",
           "title": "Assaut brûlant",
-          "description": "Effectue une barre oblique qui traite Pyro DMG. Cette compétence peut être utilisée 3 fois consécutivement. Entre le CD s'il n'est pas à nouveau lancé dans un court laps de temps.",
+          "description": "Diluc fait tournoyer sa lourde épée vers l'avant, infligeant des DGT Pyro. Cette attaque peut être enchaînée 3 fois de suite. Elle entre en TdR si l'enchaînement n'est pas assez rapide. Chacune de ces attaques représente les valeurs chères à Diluc : justice, courage et la responsabilité.",
           "abilities": {}
         },
         "2": {
           "key": "s3",
-          "title": "Aube",
-          "description": "Libère des flammes intenses pour repousser les ennemis proches, infligeant Pyro DMG. Les flammes convergent ensuite dans l'arme, invoquant un phénix qui vole vers l'avant et inflige un énorme Pyro DMG à tous les ennemis sur son chemin. Le Phoenix explose en atteignant sa destination, provoquant une grande quantité de AoE Pyro DMG. Les flammes brûlantes qui coulent sur sa lame font que les attaques normales et chargées de Diluc infligent Pyro DMG pendant un certain temps.",
+          "title": "Aurore",
+          "description": "Diluc érupte en une explosion de flammes qui repoussent les ennemis et leur infligent des DGT Pyro. Les flammes convergent ensuite sur son arme, pour renaître en un phénix qui inflige d'importants DGT Pyro et repousse les ennemis sur sa route. Le phénix explose lorsqu'il atteint sa destination et inflige d'importants DGT Pyro de zone. Les flammes confèrent à l'arme de Diluc un enchantement Pyro. Celui qui apporte la lumière doit marcher dans les ténèbres. Les flammes au loin ne sont que le prélude de l'aube à venir.",
           "abilities": {}
         }
       },
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Tradition du chevalier de l'aube",
-          "description": "Remboursement de 15% des minerais utilisés lors de la fabrication d'armes de type Claymore.",
+          "title": "Légende de l'aurore",
+          "description": "Lorsque vous forgez une épée à deux mains, 15% du minerai utilisé vous sera rendu.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Sans relâche",
-          "description": "Le coût d'endurance des attaques chargées de Diluc est réduit de 50% et sa durée est augmentée de 3s.",
+          "title": "Impitoyable",
+          "description": "Les attaques chargées de Diluc consomment 50% d'endurance en moins, et durent 3 s de plus.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Bénédiction de Phoenix",
-          "description": "L'enchantement Pyro fourni par Dawn dure 4s de plus. De plus, Diluc gagne 20% de bonus Pyro DMG pendant la durée de cet effet.",
+          "title": "Bénédiction du Phoenix",
+          "description": "Prolonge l'enchantement Pyro d'Aurore de 4 s. Diluc inflige 20% de DGT Pyro supplémentaires pendant la durée de cet effet.",
           "descriptions": {}
         }
       },
@@ -810,42 +810,42 @@
         "0": {
           "key": "c1",
           "title": "Conviction",
-          "description": "Diluc inflige 15% de DÉG en plus aux ennemis dont les PV sont supérieurs à 50%.",
+          "description": "Diluc inflige 15% de DÉG de plus aux ennemis dont les PV sont supérieurs à 50%.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Braise brûlante",
-          "description": "Lorsque Diluc prend DMG, son ATK de base augmente de 10% et son ATK SPD augmente de 5%. Dure 10 secondes. Cet effet peut se cumuler jusqu'à 3 fois et ne peut se produire qu'une fois toutes les 1,5 s.",
+          "title": "Chaleur des cendres",
+          "description": "L'ATQ de Diluc augmente de 10% et sa VIT d'attaque de 5% pendant 10 s lorsqu'il subit des DGT. 3 cumuls max. Cet effet peut être déclenché une fois toutes les 1,5 s.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Acier et feu",
-          "description": "Augmente le niveau d'Assaut fulgurant de 3. Le niveau maximum est de 15.",
+          "title": "Feu et acier",
+          "description": "Augmente le niveau d'Assaut brûlant de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Flamme qui coule",
-          "description": "Lancer Assaut brûlant en séquence augmente considérablement les dégâts infligés. Dans les 2 s après avoir utilisé Assaut incendiaire, lancer le prochain Assaut incendiaire dans le combo inflige 40% de DÉG supplémentaires. Cet effet dure pendant les 2 prochaines secondes.",
+          "title": "Flamme courante",
+          "description": "Exécuter Assaut brûlant en rythme augmente considérablement les DGT infligés. L'assut brûlant suivant un premier Assaut brûlant inflige 40% de DGT supplémentaires pendant 2 s lorsqu'il est exécuté dans les 2 s",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
           "title": "Phoenix, messager de l'aube",
-          "description": "Augmente le niveau de Dawn de 3. Le niveau maximum est de 15.",
+          "description": "Augmente le niveau d'Aurore de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Épée enflammée, Némésis des ténèbres",
-          "description": "Après avoir lancé Assaut fulgurant, les 2 prochaines attaques normales dans les 6 prochaines verront leur DMG et ATK SPD augmentés de 30%. De plus, Assaut fulgurant n'interrompra pas le combo d'attaque normale.",
+          "title": "L'épée des flammes brise-nuit",
+          "description": "Confère aux 2 attaques normales suivant dans les 6 s le lancement d'Assaut brûlant un bonus de 30% de DGT et de VIT d'attaque. De plus, Assaut brûlant n'interrompt plus les enchaînements d'attaques normales.",
           "secondDescription": null,
           "descriptions": {}
         }
