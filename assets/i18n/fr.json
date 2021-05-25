@@ -971,7 +971,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Éclair de chute",
+          "title": "Flèche de culpabilité",
           "description": null,
           "abilities": {
             "0": {
@@ -981,26 +981,26 @@
             },
             "1": {
               "key": "a2",
-              "description": "Effectuez un tir ciblé plus précis avec une DMG accrue. Tout en visant, les esprits sombres de la foudre d'Immernachtreich écouteront l'appel de leur Prinzessin et habiteront la pointe de flèche enchantée. Une fois pleinement habité, le Rachsuchtig Blitz traitera d'immenses Electro DMG.",
+              "description": "Effectue un tir visé plus précis et infligeant davantage de DGT. Lors de la visée, les ténébreux esprits de la nuit convergent sur la flèche. Celle-ci se charge en élément Électro, infligeant de considérables DGT Électro quand elle est complètement chargée.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Tire une pluie de flèches dans les airs avant de tomber et de heurter le sol, infligeant AoE DMG à l'impact.",
+              "description": "Tire une pluie de flèches dans les airs avant de tomber et plonge au sol, infligeant des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Coureur de nuit",
+          "title": "Ailes de surveillance nocturne",
           "description": "Invoque Oz, le corbeau de la nuit forgé des ténèbres et de la foudre descend sur la terre, infligeant Electro DMG dans un petit AoE. Pendant toute la durée de la capacité, Oz attaquera continuellement les ennemis proches avec Freikugel. Maintenez enfoncé pour ajuster l'emplacement où Oz sera convoqué. Appuyez à nouveau à tout moment pendant la durée de la capacité pour l'invoquer à nouveau aux côtés de Fischl.",
           "abilities": {}
         },
         "2": {
           "key": "s3",
-          "title": "Fantasmagorie de minuit",
-          "description": "Invoque Oz pour étendre ses jumelles de crépuscule et défendre Fischl. Possède les propriétés suivantes pendant la durée de la capacité:",
+          "title": "Incarnation de la nuit",
+          "description": "épondant à l'appel de Fischl, Oz vient protéger sa maîtresse de ses ailes tel un voile nocturne. Pendant la durée de la compétence : ",
           "abilities": {
             "0": {
               "name": "",
@@ -1008,7 +1008,7 @@
               "descriptions": {
                 "0": "Fischl prend la forme d'Oz, augmentant considérablement sa vitesse de déplacement.",
                 "1": "Frappe les ennemis proches avec la foudre, infligeant Electro DMG aux ennemis avec lesquels elle entre en contact. Chaque ennemi ne peut être frappé qu'une seule fois.",
-                "2": "Une fois les effets de cette capacité terminés, Oz restera sur le champ de bataille et attaquera les ennemis de son Prinzessin. Si Oz est déjà sur le terrain, cela réinitialisera la durée de sa présence."
+                "2": "Lorsque l'effet prend fin, Oz reste pour combattre les ennemis de sa maîtresse. Si Oz est déjà présent sur le terrain avant l'utilisation de cette compétence, son temps de présence sera remis à zéro. Restaure une partie de l'énergie élémentaire de Fischl une fois terminé. « … De toutes les bêtes suivant le sang maudit, seul le seigneur corbeau, dont les yeux ont été témoins de la destruction de mille mondes, était capable de comprendre sa grandeur. Et, la recouvrant d'un voile d'ébène, il fit le serment de la protéger à jamais. » — « Fleurs pour la princesse Fischl - Tome I : Apocalypse »"
               }
             }
           }
@@ -1017,63 +1017,63 @@
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Mon jardin à la maison",
-          "description": "Lors d'une expédition en expédition à Mondstadt, le temps consommé est réduit de 25%.",
+          "title": "Jardin secret",
+          "description": "Réduit la durée d'une expédition de 25% lorsqu'elle se déroule à Mondstadt.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Prédateur stellaire",
-          "description": "Lorsque Fischl frappe Oz avec un tir ciblé complètement chargé, Oz fait tomber la vengeance foudroyante, infligeant AoE Electro DMG égal à 152,7% du DMG de la flèche.",
+          "title": "Corbeau maléfique",
+          "description": "Oz libère sur les ennemis proches la foudre du jugement lorsque Fischl le touche d'une flèche complètement chargée, leur infligeant des DGT Électro de zone équivalent à 152,7% des DGT du tir.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Défaite, soit ton maléfice",
-          "description": "Si un personnage déclenche une réaction élémentaire liée à l’électro alors qu’Oz est sur le terrain, l’ennemi sera frappé par la vengeance foudroyante, infligeant de l’électro DMG égal à 80% de l’ATK de Fischl.",
+          "title": "Foudre divine",
+          "description": "Lorsque votre personnage déployé déclenche une réaction liée à l'élément Électro en la présence d'Oz, l'ennemi est frappé par la foudre du jugement divin, et subit des DGT Électro équivalent à 80% de l'ATQ de Fischl.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Regard des profondeurs",
-          "description": "Même quand Oz n'est pas présent au combat, il peut toujours surveiller Fischl à travers ses yeux de corbeau. Lorsque Fischl attaque un ennemi, Oz lance une attaque conjointe, infligeant 22% de l'ATK DMG.",
+          "title": "Œil du corbeau obscur",
+          "description": "Même quand Oz n'est pas présent au combat, il peut toujours surveiller Fischl à travers ses yeux de corbeau. Lorsque Fischl attaque un ennemi, Oz lance une attaque conjointe, infligeant 22% de l'ATK.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Dévoreur de tous les péchés",
-          "description": "Lorsque Nightrider est utilisé, il inflige 200% d'ATQ supplémentaires en tant que DMG, et sa zone d'Eau est augmentée de 50%.",
+          "title": "Plume de jugement",
+          "description": "Ailes de surveillance nocturne inflige un bonus de DGT équivalent à 200% de l'ATQ ; la zone d'effet augmente de 50%.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Ailes du cauchemar",
-          "description": "Augmente le niveau de Nightrider de 3. Le niveau maximum est de 15.",
+          "title": "Ailes noires de l'Abîme",
+          "description": "Augmente le niveau d'Ailes de surveillance nocturne de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Son pèlerinage de sombre",
-          "description": "Lorsque Midnight Phatasmagoria est utilisé, il inflige 222% de l'ATK en Electro DMG aux ennemis environnants. À la fin de la durée de la compétence, Fischl régénère 20% de ses PV.",
+          "title": "Les fantasmes de la princesse",
+          "description": "Incarnation de la nuit inflige un bonus de DGT Électro équivalent à 222% de l'ATQ aux ennemis proches. Fischl récupère 20% de PV à la fin de la compétence.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Contre la lumière fuyante",
-          "description": "Augmentez le niveau de la fantasmagorie de minuit de 3. Le niveau maximum est de 15.",
+          "title": "Apocalypse de la nuit",
+          "description": "Augmentez le niveau de l'Incarnation de la nuit de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Evernight Raven",
-          "description": "Augmente la durée de l'invocation d'Oz de 2s. De plus, Oz attaque avec le personnage actuel lorsqu'il est présent, traitant 30% de l'ATK de Fischl comme Electro DMG.",
+          "title": "Oiseau de la nuit éternelle",
+          "description": "Prolonge la durée d'Oz de 2 s. De plus, Oz attaque aux côtés de votre personnage déployé, infligeant des DGT Électro équivalent à 30% de l'ATQ de Fischl.",
           "secondDescription": null,
           "descriptions": {}
         }
