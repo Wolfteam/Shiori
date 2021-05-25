@@ -1086,7 +1086,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Tir à l'arc de Liutian",
+          "title": "Archerie Liutian",
           "description": null,
           "abilities": {
             "0": {
@@ -1096,58 +1096,59 @@
             },
             "1": {
               "key": "a2",
-              "description": "Effectuez un tir ciblé plus précis avec une DMG accrue. Lors de la visée, une aura glacée s'accumule sur la pointe de la flèche avant que la flèche ne soit tirée. A des effets différents en fonction de la durée de charge de l'énergie:",
+              "description": "Effectue un tir visé plus précis et infligeant davantage de DGT. Lors du tir visé, la puissance du froid vient se concentrer sur la pointe de la flèche. Les effets varient selon le nombre de charges : ",
               "descriptions": {
-                "0": "Niveau de charge 1: déclenche une flèche glacée qui inflige Cryo DMG.",
-                "1": "Niveau de charge 2: déclenche une flèche de flocon de givre qui inflige Cryo DMG. La flèche Frostflake fleurit après avoir atteint sa cible, infligeant AoE Cryo DMG."
+                "0": "Niveau de charge 1: Tire une flèche glaciale qui inflige des DGT Cryo.",
+                "1": "Niveau de charge 2: Tire une flèche de givre qui inflige des DGT Cryo. Le givre se répand lorsqu'il touche un ennemi, infligeant des DGT Cryo de zone."
               }
             },
             "2": {
               "key": "a3",
-              "description": "Tire une pluie de flèches dans les airs avant de tomber et de heurter le sol, infligeant AoE DMG à l'impact.",
+              "description": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Sentier du Qilin",
-          "description": "Laissant un seul Ice Lotus derrière, Ganyu se précipite en arrière, évitant toute impureté et traitant AoE Cryo DMG.",
+          "title": "Trace de Qilin",
+          "description": "Ganyu dépose un lotus de glace qui inflige des DGT Cryo de zone puis part vite en retraite.",
           "abilities": {
             "0": {
               "name": "Lotus de glace",
               "descriptions": {
-                "0": "Provoque continuellement les adversaires environnants, les attirant pour l'attaquer.",
-                "1": "Échelles d'endurance basées sur les PV max de Ganyu.",
-                "2": "Fleurit abondamment lorsqu'il est détruit ou une fois sa durée terminée, infligeant AoE Cryo DMG."
+                "0": "Le lotus nargue les ennemis et concentre leurs attaques.",
+                "1": "Ses PV sont proportionnels aux PV max de Ganyu.",
+                "2": "Le lotus explose à la fin ou s'il est détruit entre temps, et inflige des DGT Cryo de zone.",
+                "3": "« Vous m'avez aperçue ? Ça doit être une erreur, je suis restée tard au travail. »"
               }
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Douche céleste",
-          "description": "Fusionne le gel et la neige atmosphériques pour invoquer une Cryo Pearl sacrée qui exorcise le mal.\n Pendant la durée de sa capacité, la Perle Cryo Sacrée pleuvra continuellement des éclats de glace, frappant les adversaires dans une zone et infligeant Cryo DMG.",
+          "title": "Baptême céleste",
+          "description": "Condensant les particules présentes dans l'air, Ganyu invoque une perle de glace magique qui exorcise les démons. Tant qu'elle est active, la perle libère des éclats de glace en continu qui infligent des DGT Cryo de zone aux ennemis dans la zone. Ganyu sait bien sûr comment invoquer une bruine rafraîchissante ; mais quand il s'agit de combattre, la bruine se change en tempête de neige.",
           "abilities": {}
         }
       },
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Conservé pour la chasse",
-          "description": "Remboursement de 15% du minerai utilisé lors de la fabrication d'armes de type arc.",
+          "title": "Arc de réserve",
+          "description": "Lorsque vous forgez un arc, 15% du minerai utilisé vous sera rendu.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Cœur indivis",
-          "description": "Après avoir tiré une flèche flocon de givre, le taux de CRIT des flèches flocons de givre suivantes et leurs effets de floraison résultants sont augmentés de 20% pendant 5s.",
+          "title": "Cœur indivisible",
+          "description": "Tirer une Flèche de givre confère pendant 5 s aux Flèches de givres suivantes ainsi qu'aux zones de givre ainsi créées un bonus de 20% de taux CRIT.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Harmonie entre le ciel et la terre",
-          "description": "Celestial Shower accorde un bonus Cryo DMG de 20% aux membres actifs du groupe dans la zone.",
+          "title": "Harmonie du ciel et de la terre",
+          "description": "Les personnages déployés se trouvant dans la zone de Baptême céleste obtiennent un bonus de 20% de DGT Cryo supplémentaires.",
           "descriptions": {}
         }
       },
@@ -1155,42 +1156,42 @@
         "0": {
           "key": "c1",
           "title": "Buveur de rosée",
-          "description": "Prendre des DMG à partir d'une flèche de flocon de givre de niveau de charge 2 ou d'une flèche de flocon de givre réduit la Cryo RES de l'adversaire de 15% pendant 6s.\n Un coup régénère 2 points d'énergie pour Ganyu. Cet effet ne peut se produire qu'une fois par Flèche flocon de givre de niveau de charge 2, peu importe si Flèche flocon de givre elle-même ou sa fleur a touché la cible.",
+          "description": "La RÉS Cryo des ennemis touchés par le coup CRIT d'une Flèche de givre chargée 2 fois ou par la zone de givre est réduite de 15% pendant 6 s. De plus, toucher ainsi l'ennemi d'un coup CRIT grâce à une chargée restaure 2 pts d'énergie élémentaire à Ganyu. Cet effet ne peut être déclenché qu'une fois par flèche chargée.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Le bon augure",
-          "description": "La piste du Qilin gagne 1 charge supplémentaire.",
+          "title": "Auspices",
+          "description": "Confère une charge supplémentaire à Trace de Qilin.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Cloud Strider",
-          "description": "Augmente le niveau de la douche céleste de 3. Le niveau maximum est de 15.",
+          "title": "Mouvement des nuages",
+          "description": "Augmente le niveau de Baptême céleste de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Séjour vers l'ouest",
-          "description": "Les adversaires se trouvant dans la zone d'Eau de la douche céleste prennent plus de DMG. Cet effet se renforce avec le temps.\nL'augmentation des DEG pris commence à 5% et augmente de 5% toutes les 3s, jusqu'à un maximum de 25%.\nL'effet persiste pendant 3 secondes après que l'adversaire ait quitté la zone d'effet.",
+          "title": "Chasse vers l'ouest",
+          "description": "Baptême céleste inflige plus de DGT aux ennemis dans la zone d'effet ; cet effet se cumule avec le temps. Bonus de DGT initial : 5%. Ce bonus augmente de 5% toutes les 3 s (cumul max : 25%). L'effet perdure pendant 3 s après avoir quitté la zone.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Le Miséricordieux",
-          "description": "Augmente le niveau de piste du Qilin de 3. Le niveau maximum est de 15.",
+          "title": "Miséricorde",
+          "description": "Augmente le niveau de Trace de Qilin de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Le Clément",
-          "description": "L'utilisation de Trail of the Qilin fait que le prochain tir de Frostflake Arrow dans les 30 secondes ne nécessite pas de charge.",
+          "title": "Clémence",
+          "description": "La première Flèche de givre libérée dans les 30 s suivant l'activation de Trace de Qilin ne requiert pas de charge.",
           "secondDescription": null,
           "descriptions": {}
         }
