@@ -858,55 +858,40 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Le style de Katzlein",
-          "description": null,
+          "title": "Griffes Cryo",
+          "description": "Libère des griffes de chat Cryo qui infligent des DGT Cryo, et génèrent un bouclier lorsqu'elles touchent. Le bouclier peut absorber une quantité de DGT proportionnelle aux PV max de Diona, et sa durée dépend du nombre de cibles touchées.",
           "abilities": {
             "0": {
               "key": "a1",
-              "description": "Effectue jusqu'à 5 tirs consécutifs avec un arc.",
+              "description": "Exécute rapidement deux attaques consécutives de Griffes Cryo.",
               "descriptions": {}
             },
             "1": {
               "key": "a2",
-              "description": "Effectuez un tir ciblé plus précis avec une DMG accrue. Lors de la visée, du givre mordant s'accumule sur la pointe de la flèche. Une flèche de givre complètement chargée traitera Cryo DMG.",
-              "descriptions": {}
-            },
-            "2": {
-              "key": "a3",
-              "description": "Tire une pluie de flèches dans les airs avant de tomber et de heurter le sol, infligeant AoE DMG à l'impact.",
+              "description":"Effectuez un tir ciblé plus précis avec une DMG accrue. Lors de la visée, du givre mordant s'accumule sur la pointe de la flèche. Une flèche de givre complètement chargée traitera Cryo DMG.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Pattes glacées",
-          "description": "Tire une patte glacée qui inflige Cryo DMG aux adversaires et forme un bouclier en cas de coup. L'absorption de DMG du bouclier est basée sur les PV max de Diona, et sa durée varie en fonction du nombre de pattes glacées qui ont atteint leur cible.",
+          "title": "Cuvée spéciale",
+          "description": "Diona lance un cocktail gelé de sa fabrication, qui inflige des DGT Cryo de zone, et génère un champ de vapeur d'alcool.",
           "abilities": {
             "0": {
               "key": "a1",
-              "description": "Tire rapidement 2 pattes glacées.",
+              "description": "Inflige aux ennemis présents dans la zone des DGT Cryo continus",
               "descriptions": {}
             },
             "1": {
               "key": "a2",
-              "description": "Recule rapidement avant de tirer cinq pattes glacées. Le bouclier créé par une attaque Hold gagnera un bonus d'absorption de 75% de DMG. Le bouclier a un bonus d'absorption Cryo DMG de 250%, et votre personnage actif sera affecté par Cryo au point de formation pendant une courte durée.",
+              "description": "Restaure les PV des personnages présents dans la zone.",
               "descriptions": {}
-            }
-          }
-        },
-        "2": {
-          "key": "s3",
-          "title": "Mélange Signature",
-          "description": "Lance une infusion froide spéciale qui traite AoE Cryo DMG et crée une brume ivre dans un AoE.",
-          "abilities": {
-            "0": {
-              "name": "Brume ivre",
-              "description": null,
-              "descriptions": {
-                "0": "Inflige Cryo DMG en continu aux adversaires au sein de la zone.",
-                "1": "Régénère en continu les HP des personnages dans l'AoE."
-              }
+            },
+            "2": {
+              "key": "a3",
+              "description": "Une recette que même Diona juge inhumaine. L'avant-goût terrifiant est mieux laissé aux ennemis ; nous ne parlerons pas de l'arrière-goût particulièrement frais qui en découle.",
+              "descriptions": {}
             }
           }
         }
@@ -914,67 +899,67 @@
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Nourriture de bar gratuite",
-          "description": "Lorsqu'une cuisson parfaite est réalisée sur un plat aux effets réparateurs, il y a 12% de chances d'obtenir le double du produit.",
+          "title": "Apéritif offert",
+          "description": "12% de chance d'obtenir un plat supplémentaire lorsque vous cuisinez un plat de soins parfait.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
           "title": "Menu secret de la queue de chat",
-          "description": "Les personnages protégés par Icy Paws voient leur vitesse de déplacement augmentée de 10% et leur consommation d'endurance réduite de 10%.",
+          "description": "Augmente de 10% la VIT de déplacement des personnages sous la protection du bouclier généré par la Griffes Cryo. Leur coût d'endurance est de plus réduit de 10%.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Farce d'ivrogne",
-          "description": "Les adversaires qui entrent dans l'AoE de Signature Mix ont 10% de réduction d'ATK pendant 15s.",
+          "title": "Joyeuse ébriété",
+          "description": "Les ennemis entrant dans le champ de vapeur d'alcool de Cuvée spéciale voient leur ATQ baisse de 10% pendant 15 s.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Une saveur persistante",
-          "description": "Régénère 15 énergie pour Diona après la fin des effets de Signature Mix.",
+          "title": "Cocktail maison",
+          "description": "Diona récupère 15 pts d'énergie élémentaire à la fin de Cuvée spéciale.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Secoué, pas ronronné",
-          "description": "Augmente les DMG de Icy Paws de 15% et augmente l'absorption de DMG de son bouclier de 15%. De plus, lorsque les pattes touchent leurs cibles, crée un bouclier pour les autres personnages proches sur le terrain avec 50% de l'absorption de DMG du bouclier Icy Paws pendant 5s.",
+          "title": "On the rocks",
+          "description": "Les DGT infligés par Griffes Cryo augmentent de 15%, et le bouclier absorbe 15% de DGT en plus. De plus, la compétence confère pendant 5 s lorsqu'elle touche un bouclier aux autres personnages déployés à proximité, dont le pouvoir absorbant correspond à la moitié de celui de Griffes Cryo.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "A-Un autre tour?",
-          "description": "Augmente le niveau du mélange de signatures de 3. Le niveau maximum est de 15.",
+          "title": "Un dernier pour la route",
+          "description": "Augmente le niveau de Cuvée spéciale de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Tueur de l'industrie du vin",
-          "description": "Dans le rayon de Signature Mix, le temps de charge de Diona pour les tirs visés est réduit de 60%.",
+          "title": "Mixologie",
+          "description": "Le temps de recharge du tir visé de Diona est réduit de 60% lorsqu'elle se trouve dans le champ de vapeur d'alcool de Cuvée spéciale.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Double coup, sur les rochers",
-          "description": "Augmente le niveau de Icy Paws de 3. Le niveau maximum est de 15.",
+          "title": "Un double avec glaçons",
+          "description": "Augmente le niveau de Griffes Cryo de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Heure de fermeture de la queue du chat",
-          "description": "Les personnages dans le rayon de Signature Mix bénéficieront des effets suivants en fonction de leurs montants de HP:",
+          "title": "Dernière tournée",
+          "description": "Les personnages se trouvant dans le champ d'alcool de Cuvée spéciale bénéficient des effets suivants selon les PV qu'il leur reste :",
           "secondDescription": null,
           "descriptions": {
-            "0": "Augmentation du bonus de soins entrants de 30% lorsque les PV tombent en dessous ou sont égaux à 50%.",
-            "1": "La maîtrise élémentaire est augmentée de 200 lorsque les PV sont supérieurs à 50%."
+            "0": "Bonus de 30% de soins reçus si les PV sont à 50% ou en dessous.",
+            "1": "Maîtrise élémentaire augmentée de 200 si les PV sont au-dessus de 50%."
           }
         }
       }
