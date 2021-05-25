@@ -323,8 +323,6 @@
   "reset": "Reset",
   "stop": "Stop",
   "completed": "Completed",
-  "createdAtX": "Created at {date}",
-  "completesAtX": "Completes at {date}",
   "selectAnArtifact": "Select an artifact",
   "selectAMonster": "Select a monster",
   "selectAMaterial": "Select a material",
