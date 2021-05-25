@@ -380,7 +380,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Oceanborne",
+          "title": "Conquête des mers",
           "description": null,
           "abilities": {
             "0": {
@@ -390,48 +390,48 @@
             },
             "1": {
               "key": "a2",
-              "description": "Draine l'endurance au fil du temps pour effectuer des barres obliques continues. À la fin de la séquence, effectuez une barre oblique plus puissante.",
+              "description": "Exécute une succession d'entailles aussi rapides que tranchantes ; cette attaque consomme de l'endurance sur la durée. L'attaque chargée se termine sur un coup puissant.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Plonge du milieu des airs pour frapper le sol, endommageant les ennemis le long du chemin et infligeant AoE DMG à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Tidecaller",
-          "description": "Rien à craindre. Si quelqu'un lève la main contre elle ou ses hommes, elle la vengera dix fois par l'épée et le tonnerre.",
+          "title": "Invocation des marées",
+          "description": "N'ayez crainte. Que quelqu'un ose s'en prendre à Beidou ou aux siens, et sa lame et le tonnerre lui feront payer au centuple.",
           "abilities": {
             "0": {
               "key": "a1",
-              "description": "Accumulant la puissance de la foudre, Beidou balance violemment sa lame vers l'avant, infligeant Electro DMG.",
+              "description": "Beidou concentre le pouvoir de la foudre sur son épée, et exécute un coup violent qui inflige aux ennemis en face des DGT Électro.",
               "descriptions": {}
             },
             "1": {
               "key": "a2",
-              "description": "Lève son arme comme un bouclier. Max DMG a absorbé les échelles des HP Max de Beidou. Attaque utilisant l'énergie stockée dans l'épée à la sortie ou une fois la durée de cette capacité expirée, infligeant Electro DMG. DMG a traité des échelles avec le nombre de fois où Beidou est attaqué pendant la durée de la compétence. Le plus grand bonus DMG sera atteint une fois que cet effet sera déclenché deux fois. Le bouclier possède les propriétés suivantes:",
+              "description": "Beidou brandit son arme, qu'elle utilise comme bouclier. La quantité de DGT absorbés est proportionnelle aux PV max de Beidou. Lorsque vous relachez la compétence ou que celle-ci prend fin, Beidou brandit sa longue épée et effectue une contre-attaque libérant toute l'énergie accumulée, qui inflige des DGT Électro. Augmente considérablement les DGT infligés selon le nombre de coups portés lors de la durée de la conséquence. Deux coups minimum doivent être portés pour obtenir le bonus de DGT maximum. Bouclier : ",
               "descriptions": {
-                "0": "A une efficacité d'absorption Electro DMG de 250%.",
-                "1": "Applique l'élément Electro à Beidou lors de l'activation."
+                "0": "Le bouclier est efficace à 250% contre les DGT Électro.",
+                "1": "Applique l'élément Électro à Beidou."
               }
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Brise-tempête",
-          "description": "Rappelant son assassinat de la grande bête Haishan. Beidou fait appel à cette force monstrueuse et à la foudre pour créer une Targe Thunderbeast autour d'elle-même, infligeant Electro DMG aux adversaires proches.",
+          "title": "Brisure d'orage",
+          "description": "Se remémorant son combat contre Haishan, la bête géante, Beidou fait appel à la même force destructrice, et crée un bouclier de tonnerre qui inflige des DGT Électro aux ennemis à proximité.",
           "abilities": {
             "0": {
-              "name": "Targe de Thunderbeast",
+              "name": "Bouclier de tonnerre",
               "description": null,
               "descriptions": {
-                "0": "Lorsque les attaques normales et chargées frappent, elles créent une décharge de foudre qui peut sauter entre les ennemis, infligeant Electro DMG.",
-                "1": "Augmente la résistance du personnage à l'interruption et diminue les DÉG pris.",
-                "2": "Un maximum de 1 décharge de foudre peut être déclenché par seconde."
+                "0": "Les attaques normales et chargées, lorsqu'elles touchent, libèrent une décharge électrique qui se propage d'ennemi en ennemi et inflige des DGT Électro.",
+                "1": "Les actions de Beidou sont plus difficiles à interrompre et les DGT qu'elle reçoit diminuent tant que le bouclier est actif.",
+                "2": "Au maximum une décharge par seconde peut être libérée. Le plus puissant des éclairs peut fendre mers et montagnes."
               }
             }
           }
@@ -440,69 +440,69 @@
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Conquérant des marées",
-          "description": "Diminue la consommation d'endurance de natation de tous les membres du groupe de 20%.",
+          "title": "Braveuse de marée",
+          "description": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20% lors de la nage. Ne peut pas être cumulé avec d'autres aptitudes ayant les mêmes effets.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
           "title": "Châtiment",
-          "description": "Contre-attaquer avec Tidecaller au moment précis où le personnage est touché donne le bonus DMG maximum.",
+          "description": "La contre-attaque d'Invocation des marées inflige le maximum de DGT lorsqu'elle est exécutée juste après une attaque.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Protection du Léviathan",
-          "description": "Gagnez les effets suivants pendant 10s après avoir déclenché Tidecaller avec son bonus de DMG maximum:",
+          "title": "Tempête de coups de tonnerre",
+          "description": "Invocation des marées confère pendant 10 s les effets suivants lorsqu'il est exécuté avec le maximum de DGT : ",
           "descriptions": {
-            "0": "Les DÉG infligés par les attaques normales et chargées sont augmentés de 15%. La vitesse d'attaque des attaques normales et chargées est augmentée de 15%.",
-            "1": "Délai considérablement réduit avant de déclencher des attaques chargées."
+            "0": "Les attaques normales et chargées infligent 15% de DGT supplémentaires.",
+            "1": "Les attaques chargées se chargent beaucoup plus vite."
           }
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Fléau de la bête de mer",
-          "description": "Lorsque Stormbreaker est utilisé:",
+          "title": "Fléau des monstres marins",
+          "description": "L'activation de Brisure d'orage confère les effets suivants :",
           "secondDescription": null,
           "descriptions": {
-            "0": "Crée un bouclier qui absorbe jusqu'à 16% des PV max de Beidou pendant 15s.",
-            "1": "Ce bouclier absorbe Electro DMG 250% plus efficacement."
+            "0": "Génère un bouclier qui absorbe une quantité de DGT équivalent à 16% des PV max et dure 15 s.",
+            "1": "Le bouclier est efficace à 250% contre les DGT Électro."
           }
         },
         "1": {
           "key": "c2",
-          "title": "Sur la mer agitée, le tonnerre se lève",
-          "description": "La foudre en arc de Stormbreaker peut sauter 2 cibles supplémentaires.",
+          "title": "Sur la mer turbulente, le tonnerre gronde",
+          "description": "Les décharges de Brisure d'orage se propagent à 2 ennemis supplémentaires.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Invocateur de la tempête",
-          "description": "Augmente le niveau de Tidecaller de 3. Le niveau de mise à niveau maximum est de 15.",
+          "title": "Invocateur de tonnerre",
+          "description": "Augmente le niveau de Invocation des marées de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Vengeance époustouflante",
-          "description": "Dans les 10 secondes suivant la prise de DMG, les attaques normales de Beidou gagnent 20% de DMG Electro supplémentaires.",
+          "title": "Vengeance étonnante",
+          "description": "Les attaques normales de Beidou infligent 20% de DGT Électro supplémentaires pendant 10 s quand elle est touchée.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Marcheur des marées cramoisi",
-          "description": "Augmentez le niveau de Stormbreaker de 3. Le niveau de mise à niveau maximum est de 15.",
+          "title": "Marcheur de marée écarlate",
+          "description": "Augmentez le niveau de Brisure d'orage de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Fléau du mal",
-          "description": "Pendant la durée de Stormbreaker, la RES Electro des ennemis environnants est réduite de 15%.",
+          "title": "Chancre du mal",
+          "description": "La RÉS Électro des ennemis proches est réduite de 15% tant que Brisure d'orage est actif.",
           "secondDescription": null,
           "descriptions": {}
         }
