@@ -1329,7 +1329,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Lame de Favonius",
+          "title": "Escrime de Favonius",
           "description": null,
           "abilities": {
             "0": {
@@ -1339,24 +1339,24 @@
             },
             "1": {
               "key": "a2",
-              "description": "Consomme une certaine quantité d'Endurance pour lancer un ennemi en utilisant la puissance du vent. Les ennemis lancés tomberont lentement au sol.",
+              "description": "Libère une puissante attaque ascendante portée par les vents ; cette attaque consomme de l'endurance. Les ennemis projetés en l'air retombent lentement au sol.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Plonge dans les airs pour frapper le sol en dessous, endommageant les ennemis le long du chemin et infligeant AoE DMG à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Lame coup de vent",
-          "description": "Concentrant la puissance du vent informe autour de sa lame, Jean libère une tempête miniature, lançant des ennemis dans la direction qu'elle vise, infligeant un énorme Anemo DMG.",
+          "title": "Épée de tourbillon",
+          "description": "Concentrant l'énergie des vents dans son épée, Jean libère une tornade qui projette les ennemis dans la direction ciblée, infligeant d'importants DGT Anémo.",
           "abilities": {
             "0": {
               "key": "a1",
-              "description": "Au prix d'une consommation continue d'Endurance, Jean peut commander le tourbillon pour attirer les ennemis environnants vers son front. La direction peut être ajustée. Le personnage est immobile pendant la durée de la compétence.",
+              "description": "Au prix d'une consommation continue d'Endurance, Jean peut commander le tourbillon pour attirer les ennemis et objets proches. La direction peut être ajustée. Jean ne peut pas se déplacer tant que l'attaque dure.",
               "descriptions": {}
             }
           }
@@ -1370,8 +1370,9 @@
               "name": "Champ de pissenlit",
               "description": null,
               "descriptions": {
-                "0": "Régénère en permanence les PV des personnages dans l'AoE et les imprègne en permanence d'Anemo.",
-                "1": "Inflige Anemo DMG aux ennemis entrant ou sortant du terrain."
+                "0": "Le champ de pissenlits restaure en continu les PV des personnages dans la zone.",
+                "1": "Le champ leur applique également l'élément Anémo."
+                "2": "Inflige Anemo DMG aux ennemis entrant ou sortant du terrain."
               }
             }
           }
@@ -1380,63 +1381,63 @@
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Brise de guidage",
-          "description": "Lorsqu'une cuisson parfaite est réalisée sur un plat aux effets réparateurs, il y a 12% de chances d'obtenir le double du produit.",
+          "title": "Vent directeur",
+          "description": "12% de chance d'obtenir un plat supplémentaire lorsque vous cuisinez un plat de soins parfait.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Compagnon du vent",
-          "description": "Les attaques par attaques normales ont 50% de chances de régénérer des PV équivalents à 15% de l'ATK de Jean pour tous les membres du groupe.",
+          "title": "Charge critique",
+          "description": "Les attaques normales de Jean ont 50% de chance de restaurer une quantité de PV équivalent à 15% de l'ATQ de Jean à tous les personnages de l'équipe lorsqu'elles touchent.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Laissez le vent conduire",
-          "description": "Utiliser Dandelion Breeze régénérera 20% de son énergie.",
+          "title": "Que le vent vous guide",
+          "description": "Brise de pissenlit restaure 20% d'énergie élémentaire lorsqu'elle prend fin.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Tempête en spirale",
-          "description": "Augmente la vitesse de traction de Gale Blade après plus de 1 s et augmente le DMG infligé de 40%.",
+          "title": "Tourmente tranchante",
+          "description": "La VIT d'attraction et les DGT infligés par Épée de tourbillon augmentent de 40% lorsque la compétence reste activée plus d'une seconde.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Égide populaire",
-          "description": "Lorsque Jean ramasse un orbe / une particule élémentaire, tous les membres du groupe voient leur SPD de mouvement et leur SPD ATK augmentés de 15% pendant 15s.",
+          "title": "Égide du peuple",
+          "description": "La VIT de déplacement et d'attaque de tous les personnages de l'équipe augmente de 15% pendant 15 s lorsque Jean obtient un orbe ou une particule élémentaire.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Quand le vent d'ouest se lève",
-          "description": "Augmente le niveau de brise de pissenlit de 3. Le niveau maximum est de 15.",
+          "title": "Lorsque le vent d'ouest souffle",
+          "description": "Augmente le niveau de Brise de pissenlit de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Terres de pissenlit",
-          "description": "Dans le champ créé par Dandelion Breeze, tous les ennemis voient leur Anemo RES diminué de 40%.",
+          "title": "Territoire des pissenlits",
+          "description": "La RÉS Anémo des ennemis à l'intérieur du champ de Brise de pissenlit est réduite de 40%.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Rafale éclatante",
-          "description": "Augmentez le niveau de la lame coup de vent de 3. Le niveau maximum est de 15.",
+          "title": "Le moment du vent violent",
+          "description": "Augmentez le niveau de l'Épée de tourbillon de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Lion’s Fang, juste protecteur de Mondstadt",
-          "description": "Les DMG entrants sont réduits de 35% dans le champ créé par Dandelion Breeze. En quittant le champ de pissenlit, cet effet dure 3 attaques ou 10s.",
+          "title": "Croc de Lion, le protecteur de Mondstadt",
+          "description": "Les DGT subis par Jean lorsqu'elle se trouve dans le champ de Brise de pissenlitsont réduits de 35%. Cet effet disparaît dans les 10 s ou après avoir subi 3 attaques une fois que Jean a quitté le champ.",
           "secondDescription": null,
           "descriptions": {}
         }
