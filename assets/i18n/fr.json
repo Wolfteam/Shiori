@@ -1450,7 +1450,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Lames de cérémonie",
+          "title": "Passe d'armes",
           "description": null,
           "abilities": {
             "0": {
@@ -1460,26 +1460,26 @@
             },
             "1": {
               "key": "a2",
-              "description": "Consomme une certaine quantité d'Endurance pour déclencher 2 coups d'épée rapides.",
+              "description": "Consomme de l'endurance pour déclencher deux coups d'épée rapides.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Plonge du milieu des airs pour frapper le sol en dessous, endommageant les ennemis le long du chemin et infligeant AoE DMG lors de l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Frostgnaw",
-          "description": "Déclenche une explosion frigit, infligeant Cryo DMG aux ennemis devant Kaeya.",
+          "title": "Attaque givrée",
+          "description": "Libère un blizzard gelant qui inflige des DGT Cryo aux ennemis en face. Qui serait capable de faire fondre la glace qui se cache derrière ce masque aimable…'",
           "abilities": {}
         },
         "2": {
           "key": "s3",
-          "title": "Valse glaciaire",
-          "description": "Faisant fondre le givre dans l'air, Kaeya invoque 3 glaçons qui tournent autour de lui. Ces glaçons suivront le personnage et distribueront Cryo DMG aux ennemis sur leur chemin tant qu'ils persisteront.",
+          "title": "Valse glaciale",
+          "description": "Kaeya condense les particules dans l'air pour invoquer 3 stalactites tournoyantes. Les stalactites suivent le personnage, et infligent des DGT Cryo aux ennemis sur leur route. Ses dehors souriants, son ton agréable, et la glace qu'ils cachent : voici les armes de Kaeya.",
           "abilities": {}
         }
       },
@@ -1487,65 +1487,65 @@
         "0": {
           "key": "p1",
           "title": "Force cachée",
-          "description": "Diminue de 20% la consommation d’endurance de sprint de tous les membres du groupe.",
+          "description": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20 % lors du sprint.  Ne peut pas être cumulé avec d'autres aptitudes passives ayant les mêmes effets.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Frappe de sang-froid",
-          "description": "Chaque coup avec Frostgnaw régénère HP pour Kaeya égal à 15% de l'ATK.",
+          "title": "Épée de la cruauté",
+          "description": "Chaque fois qu'Attaque givrée touche un ennemi, Kaeya récupère une quantité de PV équivalent à 15 % de son ATQ.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Cœur des abysses",
-          "description": "Les ennemis gelés par Frostgnaw laisseront tomber des particules élémentaires supplémentaires. Frostgnaw ne peut produire qu'un maximum de 2 particules élémentaires supplémentaires par utilisation.",
+          "title": "Cœur de l'Abîme glacial",
+          "description": "Les ennemis gelés par Attaque givrée font tomber d'avantage de particules élémentaires. Jusqu'à 2 particules supplémentaires peuvent ainsi être obtenues par Attaque givrée.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Excellent sang",
-          "description": "Le taux de CRIT d'attaque normale et de DÉG d'attaque chargée contre les ennemis affectés par les effets de statut Froid ou Gelé est augmenté de 15%.",
+          "title": "Lignée de l'excellence",
+          "description": "Le taux de CRIT des attaques normales et chargées de Kaeya contre les ennemis affectés par Cryo augmente de 15 %.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Des performances sans fin",
-          "description": "Chaque fois que la Valse glaciale bat un ennemi, sa durée est augmentée de 2,5 s, jusqu'à un maximum de 15 s.",
+          "title": "Lignée de l'excellence",
+          "description": "Chaque ennemi éliminé pendant la durée de Valse glaciale prolonge la durée de la compétence de 2,5 s. Cumul max : 15 s.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Danse de givre",
-          "description": "Augmente le niveau de Frostgnaw de 3. Le niveau maximum est de 15.",
+          "title": "Ébats glacials",
+          "description": "Augmente le niveau d'Attaque givrée de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
           "title": "Baiser glacé",
-          "description": "Se déclenche automatiquement lorsque les HP de Kaeya tombent en dessous de 20%:",
+          "description": "Kaeya génère un bouclier lorsque ses PV sont inférieurs à 20 %.",
           "secondDescription": null,
           "descriptions": {
-            "0": "Crée un bouclier qui absorbe des dégâts égaux à 30% des PV max de Kaeya. Dure 20s.",
-            "1": "Ce bouclier absorbe Cryo DMG avec une efficacité de 250%. Ne peut se produire qu'une fois toutes les 60 secondes."
+            "0": "Le bouclier absorbe une quantité de DGT équivalent à 30 % des PV max et dure 20 s.",
+            "1": "Ce bouclier peut absorber jusqu'à 250 % de DGT Cryo. Cet effet peut être déclenché une fois toutes les 60 s."
           }
         },
         "4": {
           "key": "c5",
-          "title": "Étreinte givrante",
+          "title": "Étreinte glaciale",
           "description": "Augmentez le niveau de valse glaciale de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Tourbillon glaciaire",
-          "description": "Valse glaciale générera 1 glaçon supplémentaire et régénérera 15 points d'énergie lors de son lancement.",
+          "title": "Tourbillon glacial",
+          "description": "Génère une stalactite supplémentaire pendant Valse glaciale et restaure 15 pts d'énergie élémentaire.",
           "secondDescription": null,
           "descriptions": {}
         }
