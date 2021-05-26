@@ -1558,7 +1558,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Épée de Yunlai",
+          "title": "Escrime des nuages",
           "description": null,
           "abilities": {
             "0": {
@@ -1568,103 +1568,103 @@
             },
             "1": {
               "key": "a2",
-              "description": "Consomme une certaine quantité d'Endurance pour déclencher 2 coups d'épée rapides.",
+              "description": "Consomme de l'endurance pour déclencher deux coups d'épée rapides.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Plonge du milieu des airs pour frapper le sol en dessous, endommageant les ennemis le long du chemin et infligeant AoE DMG lors de l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Restauration stellaire",
-          "description": "Lance un Lightning Stiletto qui anéantit ses ennemis comme le tonnerre rapide. Lorsque le Stiletto atteint sa cible, il inflige Electro DMG aux ennemis dans un petit AoE et place un Stiletto Mark sur le coup.",
+          "title": "Retour des étoiles",
+          "description": "Keqing lance une Lame de foudre qui attaque ses ennemis avec la puissance des cieux. Lorsqu'une Lame de foudre touche sa cible, elle inflige des DGT Électro de zone et laisse une marque à l'endroit visé.",
           "abilities": {
             "0": {
               "key": "a1",
-              "description": "Maintenez enfoncé pour régler la direction dans laquelle le Stiletto doit être lancé. Les talons aiguilles lancés par le mode d'attaque Hold peuvent être suspendus dans les airs, permettant à Keqing de sauter dessus lors de l'utilisation de la restauration stellaire une deuxième fois.",
+              "description": "Ajuste la zone où la compétence sera lancée. Les Lames de foudre peuvent aussi être suspendues dans les airs ; activez à nouveau la compétence Retour des étoiles pour permettre à Keqing de s'y téléporter",
               "descriptions": {}
             },
             "1": {
-              "name": "Stiletto éclair",
-              "description": "Si Keqing utilise à nouveau la restauration stellaire ou utilise une attaque chargée pendant que sa durée dure, il effacera la marque Stiletto et produira différents effets:",
+              "name": "ame de foudre",
+              "description": "Lorsque la marque est activé, Keqing peut utiliser à nouveau Retour des étoiles pour se téléporter ou lancer une attaque chargée et la marque disparaîtra avec les effets suivants selon le cas : ",
               "descriptions": {
-                "0": "Si elle utilise à nouveau la restauration stellaire, elle clignotera à l'emplacement de la marque et déclenchera une attaque coupante qui inflige AoE Electro DMG. Lorsqu'il clignote des yeux sur un Stiletto qui a été lancé par une attaque de maintien, Keqing peut sauter à travers un terrain obstruant.",
-                "1": "Si Keqing utilise une attaque chargée, elle déclenchera une série de coupures tonitruantes à l'emplacement de la marque, infligeant AoE Electro DMG."
+                "0": "Réactivation de Retour des étoiles : Keqing se téléporte à l'emplacement de la marque et exécute une entaille qui inflige des DGT Électro de zone. Keqing passe à travers tous les obstacles topographiques lorsqu’elle se téléporte.",
+                "1": "Attaque chargée : une série de coups de tonnerre tranchants s'abat à l'emplacement de la marque, infligeant des DGT Électro de zone."
               }
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Épée étoilée",
-          "description": "Keqing libère la puissance de la foudre, infligeant Electro DMG dans un AoE. Elle se fond ensuite dans l'ombre de sa lame, frappant simultanément une série de coups de tonnerre sur les ennemis proches qui infligent plusieurs instances d'Electro DMG. L'attaque finale inflige un énorme AoE Electro DMG.",
+          "title": "Promenade céleste",
+          "description": "Keqing fait appel à la puissance de l'éclair, et inflige des DGT Électro de Zone. Se fondant ensuite dans l'ombre de son épée, elle libère une série de coups tranchants rapides, infligeant aux ennemis proches des DGT Électro. Le coup final inflige d'importants DGT Électro de zone.",
           "abilities": {}
         }
       },
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Surveillant de Land",
-          "description": "Lors d'une expédition en expédition à Liyue, le temps consommé est réduit de 25%.",
+          "title": "Agencement des terres",
+          "description": "Réduit la durée d'une expédition de 25% lorsqu'elle se déroule à Liyue.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Pénitence foudroyante",
-          "description": "Dans les 5 s suivant la refonte de la restauration stellaire alors qu’un Lightning Stiletto est présent, les attaques normales et chargées de Keqing sont converties en Electro DMG.",
+          "title": "Pénitence retentissante",
+          "description": "Keqing obtient pendant 5 s un enchantement Électro lorsqu'une Lame de foudre est active et que Retour des étoiles est lancé à nouveau.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Dignité aristocratique",
-          "description": "Lorsque vous lancez Starward Sword, le taux de CRIT de Keqing est augmenté de 15% et sa recharge d'énergie est augmentée de 15%. Cet effet dure 8s.",
+          "title": "Trésor de l'Alioth",
+          "description": "Keqing obtient pendant 8 s un bonus de taux CRIT et de recharge d'énergie de 15% lorsqu'elle libère Promenade céleste.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Puissance foudroyante",
-          "description": "La refonte de la restauration stellaire alors qu'un Lightning Stiletto est présent oblige Keqing à traiter 50% de son ATK en tant que AoE Electro DMG au point de départ et à la fin de son Blink.",
+          "title": "Force foudroyante",
+          "description": "Lorsque Keqing libère de nouveau Retour des étoiles lorsqu'une Lame de foudre est active, et inflige des DGT Électro de zone équivalent à 50% de son ATQ aux endroits où elle disparait et puis réapparait.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Extraction poussée",
-          "description": "Lorsque l’attaque normale et chargée de Keqing touche les ennemis affectés par l’électro, ils ont 50% de chances de produire une particule élémentaire. Cet effet ne peut se produire qu'une fois toutes les 5s.",
+          "title": "Taxation sévère",
+          "description": "Les attaques normales et chargées de Keqing touchant un ennemi affecté par l'élément Électro ont 50% de chance de générer une particule élémentaire. Cet effet peut être déclenché une fois toutes les 5 s.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Réforme prévue",
-          "description": "Augmente le niveau de Starward Sword de 3. Le niveau maximum est de 15.",
+          "title": "Formation anticipée",
+          "description": "Augmente le niveau de Promenade céleste de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Harmonisation",
-          "description": "Pendant 10s après que Keqing ait déclenché une réaction élémentaire liée à l'électro, son ATK est augmentée de 25%.",
+          "title": "Syntonie",
+          "description": "Lorsque Keqing déclenche une réaction liée à l'élément Électro, son ATQ augmente de 25% pendant 10 s.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Faire signe aux étoiles",
-          "description": "Augmentez le niveau de restauration stellaire de 3. Le niveau maximum est de 15.",
+          "title": "Lueur mouvante",
+          "description": "Augmentez le niveau de Retour des étoiles de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
           "title": "Étoile tenace",
-          "description": "Lorsqu'il lance une attaque normale, une attaque chargée, une compétence élémentaire ou une explosion élémentaire, Keqing gagne un bonus Electro DMG de 6% pendant 8s. Les effets déclenchés par les attaques normales, les attaques chargées, les compétences élémentaires et les explosions élémentaires sont considérés comme des entités indépendantes.",
+          "description": "Les attaques normales, attaques chargées, compétences élémentaires et déchaînements élementaires de Keqing lui confèrent un bonus de 6% de DGT Électro pendant 8 s. Les effets déclenchés sont différents selon le type d'attaque.",
           "secondDescription": null,
           "descriptions": {}
         }
