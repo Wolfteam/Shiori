@@ -5819,22 +5819,22 @@
   "debuffs": [
     {
       "key": "Engulfing Storm",
-      "name": "Tempête dévastatrice",
-      "effect": "Draine l'énergie élémentaire."
+      "name": "Tempête Dévastatrice",
+      "effect": "Draine l'énergie élémentaire en continu."
     },
     {
       "key": "Slowing Water",
-      "name": "Eau ralentissante",
-      "effect": "Augmente de TdR des compétences."
+      "name": "Eau Ralentissante",
+      "effect": "Augmente le TdR des compétences."
     },
     {
       "key": "Smoldering Flames",
-      "name": "Flammes dévoreuses",
-      "effect": "Inflige des DGT Pyro continus."
+      "name": "Flammes Dévoreuses",
+      "effect": "Inflige des DGT Pyro sur la durée."
     },
     {
       "key": "Condensed Ice",
-      "name": "Glace condensée",
+      "name": "Glace Condensée",
       "effect": "Augmente la consommation d'endurance."
     }
   ],
@@ -5842,107 +5842,107 @@
     {
       "key": "Burning",
       "name": "Brûlure",
-      "effect": "Inflige des DGT Pyro continus."
+      "effect": "Inflige des DGT Pyro sur la durée."
     },
     {
       "key": "Crystalize",
       "name": "Cristallisation",
-      "effect": "Génère des fragments élémentaires et vous protège à l'aide de différents types de boucliers élémentaires."
+      "effect": "Créé un fragment élémentaire à ramasser pour gagner un bouclier."
     },
     {
       "key": "Electro-Charged",
       "name": "Électrocution",
-      "effect": "Inflige des DGT Électro continus et rebondit sur les ennemis proches affectés par l'élément Hydro."
+      "effect": "Inflige des DGT Électro en continu et rebondit sur les ennemis proches affectés par l'élément Hydro."
     },
     {
       "key": "Frozen",
       "name": "Gel",
-      "effect": "Gèle la cible."
+      "effect": "Gèle la cible. La prochaine attaque inflige des DGT Physiques supplémentaires en plus de briser la glace."
     },
     {
       "key": "Melt",
       "name": "Fonte",
-      "effect": "Inflige des dégâts supplémentaire."
+      "effect": "Inflige des DGT supplémentaires. L’élément qui déclenche la réaction donne un Taux de DGT supplémentaire. 100% pour le Pyro, 50% pour le Cryo."
     },
     {
       "key": "Overloaded",
       "name": "Surcharge",
-      "effect": "Inflige des dégâts Pyro de zone."
+      "effect": "Déclenche une explosion de zone qui inflige des DGT Pyro de zone."
     },
     {
       "key": "Superconduct",
       "name": "Supraconduction",
-      "effect": "Inflige des dégâts Cryo de zone et réduit la RÉS physique de 50%."
+      "effect": "Inflige des DGT Cryo de zone et réduit la RÉS Physique de la cible de 50%."
     },
     {
       "key": "Swirl",
       "name": "Dispersion",
-      "effect": "Inflige des DGT de l'élément correspondant."
+      "effect": "Inflige des DGT supplémentaires en zone de l'élément dispersé, blessant les ennemies présents."
     },
     {
       "key": "Vaporize",
       "name": "Évaporation",
-      "effect": "Inflige des dégâts supplémentaire."
+      "effect": "Inflige des DGT supplémentaire. L’élément qui déclenche la réaction donne un Taux de DGT supplémentaire. 100% pour l'Hydro, 50% pour le Pyro."
     }
   ],
   "resonance": [
     {
       "key": "Enduring Rock",
-      "name": "Roc inamovible",
-      "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemeies will decrease their Geo RES by 20% for 15s."
+      "name": "Roc Inamovible",
+      "effect": "Augmente la force du bouclier de 15%. De plus, lorsqu'un personnage est sous la protection du bouclier, les effets suivants s'appliquent : les DGT infligés par le personnage augmentent de 15% ; la RÉS Géo de l'ennemi diminue de 20% pendant 15s lorsqu'il subit des DGT de la part du personnage."
     },
     {
       "key": "Fervent Flames",
-      "name": "Flammes de la ferveur",
-      "effect": "Réduit la durée des effets Cryo de 40% et augmente l'ATQ de 25%."
+      "name": "Flammes de la Ferveur",
+      "effect": "Réduit la durée des effets Cryo de 40%. Augmente l'ATQ de 25%."
     },
     {
       "key": "Soothing Waters",
-      "name": "Eau salvatrice",
-      "effect": "Réduit la durée des effets Pyro de 40% et augmente les soins reçus de 30%."
+      "name": "Eau Salvatrice",
+      "effect": "Réduit la durée des effets Pyro de 40%. Augmente les soins reçus de 30%."
     },
     {
       "key": "Impetuous Winds",
-      "name": "Vents de la célérité",
-      "effect": "Réduit le coût d'endurance de 15%, augmente la VIT de déplacement de 10% et réduit les TdR des compétences élémentaires de 5%."
+      "name": "Vents de la Célérité",
+      "effect": "Réduit la consommation d'endurance de 15%. Augmente la VIT de déplacement de 10%. Réduit le TdR des compétences élémentaires de 5%."
     },
     {
       "key": "High Voltage",
-      "name": "Tonnerre puissant",
-      "effect": "Réduit la durée des effets Hydro de 40%. 100% de chance de récupérer 1 particule élémentaire lorsque Supraconduction, Surcharge et Décharge électrique sont déclenchées. TdR : 5s."
+      "name": "Tonnerre Puissant",
+      "effect": "Réduit la durée des effets Hydro de 40%. 100% de chances de récupérer 1 particule élémentaire lorsque Supraconduction, Surcharge et Décharge électrique sont déclenchées (TdR : 5s)."
     },
     {
       "key": "Shattering Ice",
-      "name": "Gel Pulvarisateur",
-      "effect": "Réduit la durée des effets Électro de 40%. Augmente le taux Crit de 15% lorsque vous attaquez des ennemis gelés ou affectés par l'élément Cryo."
+      "name": "Gel Pulvérisateur",
+      "effect": "Réduit la durée des effets Électro de 40%. Augmente le Taux CRIT de 15% lorsque vous attaquez des ennemis gelés ou affectés par l'élément Cryo."
     },
     {
       "key": "Protective Canopy",
-      "name": "Lianes protectrices",
-      "effect": "Augmente toutes les RÉS élémentaires et RÉS physique de 15%.",
+      "name": "Lianes Protectrices",
+      "effect": "Augmente toutes les RÉS élémentaires et la RÉS physique de 15%.",
       "description": "4 éléments différents"
     }
   ],
   "monsters": [
     {
       "key": "Abyss Herald: Wicked Torrents",
-      "name": "Abyss Herald: Wicked Torrents"
+      "name": "Apôtre de l'Abîme – Torrent"
     },
     {
       "key": "Abyss Lector: Violet Lightning",
-      "name": "Abyss Lector: Violet Lightning"
+      "name": "Chantre de l'Abîme – Foudre pourpre"
     },
     {
       "key": "Anemo Hypostasis",
-      "name": "Anemo Hypostasis"
+      "name": "Hypostase Anémo"
     },
     {
       "key": "Anemo Samachurl",
-      "name": "Anemo Samachurl"
+      "name": "Brutoshaman Anémo"
     },
     {
       "key": "Anemo Slime",
-      "name": "Anemo Slime"
+      "name": "Anémoblob"
     },
     {
       "key": "Azhdaha",
@@ -5950,275 +5950,275 @@
     },
     {
       "key": "Blazing Axe Mitachurl",
-      "name": "Blazing Axe Mitachurl"
+      "name": "Brutoviandu avec hache Pyro"
     },
     {
       "key": "Childe",
-      "name": "Childe"
+      "name": "Tartaglia"
     },
     {
       "key": "Cryo Abyss Mage",
-      "name": "Cryo Abyss Mage"
+      "name": "Cryomage de l'Abîme"
     },
     {
       "key": "Cryo Cicin",
-      "name": "Cryo Cicin"
+      "name": "Cryoluciole"
     },
     {
       "key": "Cryo Hilichurl Grenadier",
-      "name": "Cryo Hilichurl Grenadier"
+      "name": "Brutocollinus givré"
     },
     {
       "key": "Cryo Hilichurl Shooter",
-      "name": "Cryo Hilichurl Shooter"
+      "name": "Arbalétrier Brutocollinus Cryo"
     },
     {
       "key": "Cryo Hypostasis",
-      "name": "Cryo Hypostasis"
+      "name": "Hypostase Cryo"
     },
     {
       "key": "Cryo Regisvine",
-      "name": "Cryo Regisvine"
+      "name": "Arbre congelé"
     },
     {
       "key": "Cryo Samachurl",
-      "name": "Cryo Samachurl"
+      "name": "Brutoshaman Cryo"
     },
     {
       "key": "Cryo Slime",
-      "name": "Cryo Slime"
+      "name": "Cryoblob"
     },
     {
       "key": "Cryo Whopperflower",
-      "name": "Cryo Whopperflower"
+      "name": "Fleur mensongère Cryo"
     },
     {
       "key": "Dendro Samachurl",
-      "name": "Dendro Samachurl"
+      "name": "Brutoshaman Dendro"
     },
     {
       "key": "Dendro Slime",
-      "name": "Dendro Slime"
+      "name": "Dendroblob"
     },
     {
       "key": "Electro Cicin",
-      "name": "Electro Cicin"
+      "name": "Électroluciole"
     },
     {
       "key": "Electro Hilichurl Shooter",
-      "name": "Electro Hilichurl Shooter"
+      "name": "Arbalétrier Brutocollinus Électro"
     },
     {
       "key": "Electro Hypostasis",
-      "name": "Electro Hypostasis"
+      "name": "Hypostase Électro"
     },
     {
       "key": "Electro Slime",
-      "name": "Electro Slime"
+      "name": "Électroblob"
     },
     {
       "key": "Eye of the Storm",
-      "name": "Eye of the Storm"
+      "name": "Noyau de tempête"
     },
     {
       "key": "Fatui Cryo Cicin Mage",
-      "name": "Fatui Cryo Cicin Mage"
+      "name": "Mage cryoluciole des Fatui"
     },
     {
       "key": "Fatui Electro Cicin Mage",
-      "name": "Fatui Electro Cicin Mage"
+      "name": "Mage électroluciole des Fatui"
     },
     {
       "key": "Fatui Pyro Agent",
-      "name": "Fatui Pyro Agent"
+      "name": "Usurier Pyro des Fatui"
     },
     {
       "key": "Fatui Skirmisher - Anemoboxer Vanguard",
-      "name": "Fatui Skirmisher - Anemoboxer Vanguard"
+      "name": "Tirailleur Fatui – Frappeur Anémo"
     },
     {
       "key": "Fatui Skirmisher - Cryogunner Legionnaire",
-      "name": "Fatui Skirmisher - Cryogunner Legionnaire"
+      "name": "Tirailleur Fatui – Mitrailleur Cryo"
     },
     {
       "key": "Fatui Skirmisher - Electrohammer Vanguard",
-      "name": "Fatui Skirmisher - Electrohammer Vanguard"
+      "name": "Tirailleur Fatui – Frappeur Électro"
     },
     {
       "key": "Fatui Skirmisher - Geochanter Bracer",
-      "name": "Fatui Skirmisher - Geochanter Bracer"
+      "name": "Tirailleur Fatui – Mercenaire Géo"
     },
     {
       "key": "Fatui Skirmisher - Hydrogunner Legionnaire",
-      "name": "Fatui Skirmisher - Hydrogunner Legionnaire"
+      "name": "Tirailleur Fatui – Mitrailleur Hydro"
     },
     {
       "key": "Fatui Skirmisher - Pyroslinger Bracer",
-      "name": "Fatui Skirmisher - Pyroslinger Bracer"
+      "name": "Tirailleur Fatui – Mercenaire Pyro"
     },
     {
       "key": "Frostarm Lawachurl",
-      "name": "Frostarm Lawachurl"
+      "name": "Chef Brutogivré"
     },
     {
       "key": "Geo Hypostasis",
-      "name": "Geo Hypostasis"
+      "name": "Hypostase Géo"
     },
     {
       "key": "Geo Samachurl",
-      "name": "Geo Samachurl"
+      "name": "Brutoshaman Géo"
     },
     {
       "key": "Geo Slime",
-      "name": "Geo Slime"
+      "name": "Géoblob"
     },
     {
       "key": "Geovishap",
-      "name": "Geovishap"
+      "name": "Géosaure"
     },
     {
       "key": "Geovishap Hatchling",
-      "name": "Geovishap Hatchling"
+      "name": "Jeune Géosaure"
     },
     {
       "key": "Hilichurl",
-      "name": "Hilichurl"
+      "name": "Brutocollinus"
     },
     {
       "key": "Hilichurl Berserker",
-      "name": "Hilichurl Berserker"
+      "name": "Berserker Brutocollinus"
     },
     {
       "key": "Hilichurl Fighter",
-      "name": "Hilichurl Fighter"
+      "name": "Guerrier Brutocollinus"
     },
     {
       "key": "Hilichurl Grenadier",
-      "name": "Hilichurl Grenadier"
+      "name": "Grenadier Brutocollinus"
     },
     {
       "key": "Hilichurl Shooter",
-      "name": "Hilichurl Shooter"
+      "name": "Arbalétrier Brutocollinus"
     },
     {
       "key": "Hydro Abyss Mage",
-      "name": "Hydro Abyss Mage"
+      "name": "Hydromage de l'Abîme"
     },
     {
       "key": "Hydro Cicin",
-      "name": "Hydro Cicin"
+      "name": "Hydroluciole"
     },
     {
       "key": "Hydro Samachurl",
-      "name": "Hydro Samachurl"
+      "name": "Brutoshaman Hydro"
     },
     {
       "key": "Hydro Slime",
-      "name": "Hydro Slime"
+      "name": "Hydroblob"
     },
     {
       "key": "Ice Shield Hilichurl Guard",
-      "name": "Ice Shield Hilichurl Guard"
+      "name": "Brutocollinus avec bouclier de glace"
     },
     {
       "key": "Ice Shieldwall Mitachurl",
-      "name": "Ice Shieldwall Mitachurl"
+      "name": "Brutoviandu avec bouclier de glace"
     },
     {
       "key": "Large Anemo Slime",
-      "name": "Large Anemo Slime"
+      "name": "Anémoblob géant"
     },
     {
       "key": "Large Cryo Slime",
-      "name": "Large Cryo Slime"
+      "name": "Cryoblob géant"
     },
     {
       "key": "Large Dendro Slime",
-      "name": "Large Dendro Slime"
+      "name": "Dendroblob géant"
     },
     {
       "key": "Large Electro Slime",
-      "name": "Large Electro Slime"
+      "name": "Électroblob géant"
     },
     {
       "key": "Large Geo Slime",
-      "name": "Large Geo Slime"
+      "name": "Géoblob géant"
     },
     {
       "key": "Large Hydro Slime",
-      "name": "Large Hydro Slime"
+      "name": "Hydroblob géant"
     },
     {
       "key": "Large Pyro Slime",
-      "name": "Large Pyro Slime"
+      "name": "Pyroblob géant"
     },
     {
       "key": "Lupus Boreas, Dominator of Wolves",
-      "name": "Lupus Boreas, Dominator of Wolves"
+      "name": "Loup du Nord, Seigneur du Territoire des loups"
     },
     {
       "key": "Millelith Sergeant",
-      "name": "Millelith Sergeant"
+      "name": "Sergent Millelithe"
     },
     {
       "key": "Millelith Soldier",
-      "name": "Millelith Soldier"
+      "name": "Soldat Millelithe"
     },
     {
       "key": "Mutant Electro Slime",
-      "name": "Mutant Electro Slime"
+      "name": "Électroblob mutant"
     },
     {
       "key": "Oceanid",
-      "name": "Oceanid"
+      "name": "Esprit des eaux"
     },
     {
       "key": "Primo Geovishap",
-      "name": "Primo Geovishap"
+      "name": "Géosaure antique"
     },
     {
       "key": "Pyro Abyss Mage",
-      "name": "Pyro Abyss Mage"
+      "name": "Pyromage de l'Abîme"
     },
     {
       "key": "Pyro Hilichurl Shooter",
-      "name": "Pyro Hilichurl Shooter"
+      "name": "Arbalétrier Brutocollinus Pyro"
     },
     {
       "key": "Pyro Regisvine",
-      "name": "Pyro Regisvine"
+      "name": "Arbre enflammé"
     },
     {
       "key": "Pyro Slime",
-      "name": "Pyro Slime"
+      "name": "Pyroblob"
     },
     {
       "key": "Pyro Whopperflower",
-      "name": "Pyro Whopperflower"
+      "name": "Fleur mensongère Pyro"
     },
     {
       "key": "Rock Shield Hilichurl Guard",
-      "name": "Rock Shield Hilichurl Guard"
+      "name": "Brutocollinus avec bouclier de pierre"
     },
     {
       "key": "Rock Shieldwall Mitachurl",
-      "name": "Rock Shieldwall Mitachurl"
+      "name": "Brutoviandu avec bouclier de pierre"
     },
     {
       "key": "Ruin Grader",
-      "name": "Ruin Grader"
+      "name": "Colosse des ruines"
     },
     {
       "key": "Ruin Guard",
-      "name": "Ruin Guard"
+      "name": "Gardien des ruines"
     },
     {
       "key": "Ruin Hunter",
-      "name": "Ruin Hunter"
+      "name": "Chasseur des ruines"
     },
     {
       "key": "Stonehide Lawachurl",
-      "name": "Stonehide Lawachurl"
+      "name": "Chef Brutorocheux"
     },
     {
       "key": "Stormterror",
@@ -6226,75 +6226,75 @@
     },
     {
       "key": "Treasure Hoarders - Boss",
-      "name": "Treasure Hoarders - Boss"
+      "name": "Boss des Pilleurs de trésors"
     },
     {
       "key": "Treasure Hoarders - Carmen",
-      "name": "Treasure Hoarders - Carmen"
+      "name": "Pilleur de trésors - Carmen"
     },
     {
       "key": "Treasure Hoarders - Crusher",
-      "name": "Treasure Hoarders - Crusher"
+      "name": "Écraseur des Pilleurs de trésors"
     },
     {
       "key": "Treasure Hoarders - Liuliu",
-      "name": "Treasure Hoarders - Liuliu"
+      "name": "Pilleur de trésors - Liuliu"
     },
     {
       "key": "Treasure Hoarders - Marksman",
-      "name": "Treasure Hoarders - Marksman"
+      "name": "Tireur des Pilleurs de trésors"
     },
     {
       "key": "Treasure Hoarders - Pugilist",
-      "name": "Treasure Hoarders - Pugilist"
+      "name": "Pugiliste des Pilleurs de trésors"
     },
     {
       "key": "Treasure Hoarders - Raptor",
-      "name": "Treasure Hoarders - Raptor"
+      "name": "Pilleur de trésors - Raptor"
     },
     {
       "key": "Treasure Hoarders - Scout",
-      "name": "Treasure Hoarders - Scout"
+      "name": "Guetteur des Pilleurs de trésors"
     },
     {
       "key": "Treasure Hoarders - Seaman",
-      "name": "Treasure Hoarders - Seaman"
+      "name": "Marin des Pilleurs de trésors"
     },
     {
       "key": "Treasure Hoarders: Cryo Potioneer",
-      "name": "Treasure Hoarders: Cryo Potioneer"
+      "name": "Cryochimiste des Pilleurs de trésors"
     },
     {
       "key": "Treasure Hoarders: Electro Potioneer",
-      "name": "Treasure Hoarders: Electro Potioneer"
+      "name": "Électrochimiste des Pilleurs de trésors"
     },
     {
       "key": "Treasure Hoarders: Gravedigger",
-      "name": "Treasure Hoarders: Gravedigger"
+      "name": "Déterreur des Pilleurs de trésors"
     },
     {
       "key": "Treasure Hoarders: Handyman",
-      "name": "Treasure Hoarders: Handyman"
+      "name": "Commis des Pilleurs de trésors"
     },
     {
       "key": "Treasure Hoarders: Hydro Potioneer",
-      "name": "Treasure Hoarders: Hydro Potioneer"
+      "name": "Hydrochimiste des Pilleurs de trésors"
     },
     {
       "key": "Treasure Hoarders: Pyro Potioneer",
-      "name": "Treasure Hoarders: Pyro Potioneer"
+      "name": "Pyrochimiste des Pilleurs de trésors"
     },
     {
       "key": "Unusual Hilichurl",
-      "name": "Unusual Hilichurl"
+      "name": "Brutocollinus étrange"
     },
     {
       "key": "Wooden Shield Hilichurl Guard",
-      "name": "Wooden Shield Hilichurl Guard"
+      "name": "Brutocollinus avec bouclier de bois"
     },
     {
       "key": "Wooden Shieldwall Mitachurl",
-      "name": "Wooden Shieldwall Mitachurl"
+      "name": "Brutoviandu avec bouclier de bois"
     }
   ]
 }
