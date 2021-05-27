@@ -2429,8 +2429,8 @@
       }
     },
     "21": {
-      "key": "Le rasoir",
-      "name": "Le rasoir",
+      "key": "Razor",
+      "name": "Razor",
       "description": "Un garçon qui vit parmi les loups à Wolvendom de Mondstadt, loin de la civilisation humaine. Aussi agile que la foudre.",
       "skills": {
         "0": {
@@ -2445,12 +2445,12 @@
             },
             "1": {
               "key": "a2",
-              "description": "Draine l'endurance au fil du temps pour effectuer des attaques tourbillonnantes continues contre tous les ennemis proches. À la fin de la séquence, effectuez une barre oblique plus puissante.",
+              "description": "Exécute une succession d'attaques tournoyantes ; cette attaque consomme de l'endurance sur la durée. L'attaque chargée se termine sur un coup puissant.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Plonge dans les airs pour frapper le sol en dessous, endommageant les ennemis le long du chemin et infligeant AoE DMG à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
@@ -2458,34 +2458,34 @@
         "1": {
           "key": "s2",
           "title": "Griffe et tonnerre",
-          "description": "Chasse sa proie en utilisant les techniques qui lui ont été enseignées par son maître et son lupical.",
+          "description": "Razor met à profit les enseignements de son maître et de son lupical pour chasser sa proie.",
           "abilities": {
             "0": {
               "key": "a1",
-              "description": "Swings the Thunder Wolf Claw, infligeant Electro DMG aux ennemis devant Razor. En frappant un ennemi, Razor gagnera un Electro Sigil, ce qui augmente son taux de recharge d'énergie. Razor peut avoir jusqu'à 3 Electro Sigils simultanément, et gagner un nouvel Electro Sigil actualise leur durée.",
+              "description": "D'un coup de griffe du loup du tonnerre, il inflige des DGT Électro aux ennemis en face. Razor obtient un sceau Électro lorsque cette attaque touche un ennemi ; chaque sceau lui confère un bonus de recharge d'énergie. Razor peut cumuler jusqu'à 3 sceaux Électro ; chaque nouveau sceau réinitialise leur durée..",
               "descriptions": {}
             },
             "1": {
               "key": "a2",
-              "description": "Rassemble l'énergie électro pour déclencher un orage sur un petit AoE, provoquant un énorme électro DMG, et efface tous les Electro Sigils de Razor. Chaque Electro Sigil effacé de cette manière sera converti en Énergie pour Razor.",
+              "description": "Amassant la puissance du tonnerre, Razor libère une explosion électrique, infligeant d'importants DGT Électro aux ennemis proches, et supprimant tous les sceaux Électro. Chaque sceau ainsi supprimé est converti en énergie élémentaire.",
               "descriptions": {}
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Croc de foudre",
-          "description": "Invoque le loup à l'intérieur qui inflige Electro DMG à tous les adversaires proches. Cela efface tous les Electro Sigils de Razor, qui seront convertis en énergie élémentaire pour lui. Le loup intérieur combattra aux côtés de Razor pendant toute la durée de la compétence.",
+          "title": "Croc éclair",
+          "description": "Le loup de tonnerre qui sommeille se réveille et vient à la rescousse, infligeant des DGT Électro aux ennemis proches",
           "abilities": {
             "0": {
-              "name": "Le loup intérieur",
+              "name": "Le loup de tonnerre",
               "description": "Ces effets prennent fin lorsque Razor quitte le champ de bataille. Lorsque Razor quitte le terrain, un maximum de 10 Énergie lui sera retourné en fonction de la durée restante de cette compétence.",
               "descriptions": {
-                "0": "Frappe à côté des attaques normales de Razor, infligeant Electro DMG.",
-                "1": "Lève ATK SPD et Electro RES de Razor.",
-                "2": "Permet à Razor d'être immunisé contre les DMG infligés par le statut Electro-Charged.",
+                "0": "Combat à coté de Razor, infligeant des DMG Electro.",
+                "1": "Augmente lavitesse d'attaque et la RES Electro de Razor.",
+                "2": "Permet à Razor d'être immunisé contre les DMG infligés par le statut Surcharge.",
                 "3": "Désactive les attaques chargées de Razor.",
-                "4": "Augmente la résistance du rasoir à l'interruption."
+                "4": "Augmente la résistance de Razor à l'interruption."
               }
             }
           }
@@ -2494,63 +2494,63 @@
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Wolfprint",
-          "description": "Diminue la consommation d'endurance de tous les membres du groupe de 20%.",
+          "title": "Vélocité lupine",
+          "description": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20 % lors du sprint. Ne peut pas être cumulé avec d'autres aptitudes ayant les mêmes effets..",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
           "title": "Éveil",
-          "description": "Diminue le CD de Claw and Thunder de 18%. L'utilisation de Lightning Fang réinitialise le CD de Claw and Thunder.",
+          "description": "Réduit le TdR de Griffe et tonnerre de 18 %. Croc éclair réinitialise le TdR de Griffe et tonnerre lorsqu'il est activé.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Faim",
-          "description": "Lorsque l'énergie du rasoir est inférieure à 50%, augmente la recharge d'énergie de 30%.",
+          "title": "Famine",
+          "description": "Razor bénéficie d'un bonus de recharge d'énergie de 30 % lorsque son énergie élémentaire est inférieure à 50 %.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Instinct de loup",
-          "description": "Ramasser un orbe ou une particule élémentaire augmente les DEG du rasoir de 10% pendant 8s.",
+          "title": "Nature du loup",
+          "description": "Razor inflige 10 % de DGT supplémentaires pendant 8 s lorsqu'il obtient un orbe ou une particule élémentaire.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Suppression",
-          "description": "Augmente le taux de CRIT contre les ennemis avec moins de 30% de PV de 10%.",
+          "title": "Répression",
+          "description": "Le taux de CRIT de Razor augmente de 10 % quand il attaque des ennemis ayant moins de 30 % de PV.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Compagnon d'âme",
-          "description": "Augmente le niveau de Lightning Fang de 3. Le niveau maximum est de 15.",
+          "title": "Âme de loup",
+          "description": "Augmente le niveau de Croc éclair de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Mordre",
-          "description": "Lorsque vous lancez Claw and Thunder (Press), les ennemis touchés verront leur DEF diminuée de 15% pendant 7s.",
+          "title": "Morsure",
+          "description": "L'appui simple de Griffe et tonnerre réduit la DÉF des cibles de 15 % pendant 7 s.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Griffes aiguisées",
-          "description": "Augmentez le niveau de Claw and Thunder de 3. Le niveau maximum est de 15.",
+          "title": "Griffes tranchantes",
+          "description": "Niveau de compétence Griffe et tonnerre +3. Niveau max : 15",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "loup foudre",
-          "description": "Toutes les 10s, l'épée de Razor se charge, provoquant la prochaine attaque normale à libérer la foudre qui inflige 100% de l'ATK de Razor comme Electro DMG. Lorsque Razor n'utilise pas Lightning Fang, un coup de foudre sur un ennemi donnera à Razor un Electro Sigil pour Claw and Thunder.",
+          "title": "Lupus Fulguris",
+          "description": "Toutes les 10 s, l'arme de Razor se charge d'énergie électrique pour infliger lors de la prochaine attaque normale des DGT Électro équivalent à 100 % de l'ATQ. Chaque ennemi touché confère à Razor un sceau électro de Griffe et tonnerre tant que Croc éclair n'est pas actif.",
           "secondDescription": null,
           "descriptions": {}
         }
