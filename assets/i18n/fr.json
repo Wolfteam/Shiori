@@ -2185,7 +2185,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Favonius Bladework - Femme de chambre",
+          "title": "Escrime de Favonius - Servante",
           "description": null,
           "abilities": {
             "0": {
@@ -2195,44 +2195,44 @@
             },
             "1": {
               "key": "a2",
-              "description": "Draine l'endurance au fil du temps pour effectuer des attaques tourbillonnantes continues contre tous les ennemis proches. À la fin de la séquence, effectuez une barre oblique plus puissante.",
+              "description": "Exécute une succession d'attaques tournoyantes ; cette attaque consomme de l'endurance sur la durée. L'attaque chargée se termine sur un coup puissant.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Plonge dans les airs pour frapper le sol en dessous, endommageant les ennemis le long du chemin et infligeant AoE DMG à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Pectoral",
-          "description": "Invoque une armure de pierre protectrice, infligeant Geo DMG aux ennemis environnants et créant un bouclier. L'absorption de DMG du bouclier a été mise à l'échelle en fonction du DEF de Noelle.",
+          "title": "Armure de cœur",
+          "description": "Invoque une armure de roche qui inflige des DGT Géo aux ennemis proches et génère un bouclier absorbant une quantité de DGT proportionnelle à la DÉF de Noëlle.",
           "abilities": {
             "0": {
               "name": "",
-              "description": "Le bouclier a les propriétés suivantes:",
+              "description": "L'armure de roche a les propriétés suivantes :",
               "descriptions": {
-                "0": "Lorsque les attaques normales et chargées de Noelle touchent une cible, elles ont une certaine chance de régénérer les PV pour tous les personnages, sur et hors du terrain. La quantité de PV guéris lorsque la régénération est déclenchée varie en fonction de la DEF de Noelle.",
-                "1": "Applique l'élément Geo au caractère.",
-                "2": "Possède une efficacité d'absorption de 150% contre Geo DMG."
+                "0": "Les attaques normales et chargées de Noëlle ont une chance de restaurer les PV de tous les personnages de l'équipe lorsqu'elles touchent un ennemi.",
+                "1": "L'armure est efficace à 250% contre les DGT Géo.",
+                "2": "Les soins reçus sont proportionnels à la DÉF de Noëlle."
               }
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Temps de balayage",
-          "description": "Rassemblant la force de la pierre autour de son arme, Noelle frappe les ennemis qui l'entourent dans un grand AoE, infligeant Geo DMG.",
+          "title": "Grand ménage",
+          "description": "Concentrant le pouvoir de la roche sur son arme, Noëlle exécute une puissante attaque circulaire qui inflige des DGT Géo aux ennemis proches.",
           "abilities": {
             "0": {
               "name": "",
-              "description": "Ensuite, Noelle gagne les effets suivants:",
+              "description": "Noëlle bénéficie ensuite des effets suivants : ",
               "descriptions": {
                 "0": "Une zone d'attaque plus importante.",
-                "1": "Convertit l'attaque DMG en Geo DMG.",
-                "2": "Augmentation de l'ATK qui évolue en fonction de sa DEF."
+                "1": "DGT d'attaque convertis en DGT Géo ne pouvant pas être enchantés.",
+                "2": "Bonus d'ATQ proportionnel à la DÉF de Noëlle."
               }
             }
           }
@@ -2241,63 +2241,66 @@
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Chevalier de la femme de chambre",
-          "description": "Lorsqu'une cuisson parfaite est réalisée sur un plat boostant le DEF, Noelle a 12% de chances d'obtenir le double du produit.",
+          "title": "À votre service",
+          "description": "12% de chance d'obtenir un plat supplémentaire lorsque vous cuisinez un plat qui renforce la DÉF.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Dévouement",
-          "description": "Lorsque Noelle est dans le groupe mais pas sur le terrain, cette capacité se déclenche automatiquement lorsque les PV du personnage actif tombe en dessous de 30%: Crée un bouclier qui dure 20s et absorbe les DÉG égaux à 400% de la DÉF de Noelle. Cet effet ne peut se produire qu'une fois toutes les 60 secondes.",
-          "descriptions": {}
+          "title": "Dévotion ultime",
+          "description": "Lorsque Noëlle est en réserve, l'effet suivant se déclenche automatiquement si les PV du personnage déployé tombent en dessous de 30% : Confère un bouclier au personnage déployé pouvant absorber des DGT équivalent à 400% de la DÉF de Noëlle pendant 20 s. ",
+          "descriptions": {
+            "0": "Le bouclier est efficace à 250% contre les DGT Géo.",
+            "1": "Le bouclier peut être déclenché une fois toutes les 60 s."
+          }
         },
         "2": {
           "key": "p3",
-          "title": "Agréable et propre",
-          "description": "Tous les 4 coups d'attaque normale ou chargée diminuera le CD de Plastron de 1s. Toucher plusieurs ennemis avec une seule attaque ne compte que pour 1 coup.",
+          "title": "Clair et net",
+          "description": "Le TdR d'Armure de cœur est réduit de 1 s tous les 4 coups d'attaques normales et chargées. Toucher simultanément plusieurs ennemis compte comme un seul coup.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Je couvre tes arrières",
-          "description": "Tant que le temps de balayage et le plastron sont tous deux actifs, les chances que les effets de guérison du plastron s’activent sont augmentés à 100%.",
+          "title": "J'assure vos arrières",
+          "description": "L'effet de restauration des PV d'Armure de cœur a 100% de chances d'être déclenché lorsque Grand ménage et Armure de cœur sont actifs en même temps",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Maid de combat",
-          "description": "Diminue la consommation d'endurance des attaques chargées de Noelle de 20% et augmente son DMG d'attaque chargée de 15%.",
+          "title": "Servante de tourbillon",
+          "description": "Les attaques chargées de Noëlle consomment 20% d'endurance en moins et infligent 15% de DGT supplémentaires.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Pucelle invulnérable",
-          "description": "Augmente le niveau de cuirasse de 3. Le niveau maximum est de 15.",
+          "title": "La servante ne sera jamais blessée",
+          "description": "Augmente le niveau d'Armure de cœur de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "À nettoyer",
-          "description": "Lorsque la durée de Breastplate expire ou qu'il est détruit par DMG, il infligera 400% d'ATK de Geo DMG aux ennemis environnants.",
+          "title": "Je vais nettoyer après",
+          "description": "Armure de cœur inflige une quantité de DGT Géo équivalent à 400% de l'ATQ aux ennemis proches lorsqu'elle prend fin ou que l'armure est détruite.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Maître des balayeurs Favonius",
-          "description": "Augmentez le niveau de temps de balayage de 3. Le niveau maximum est de 15.",
+          "title": "Maîtresse de ménage",
+          "description": "Augmentez le niveau de Grand ménage de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Doit être impeccable",
-          "description": "Le temps de balayage augmente l'ATK de Noelle de 50% supplémentaires de sa DEF. De plus, chaque ennemi vaincu pendant la durée de la compétence ajoute 1s à la durée, jusqu'à 10s.",
+          "title": "Aucune poussière",
+          "description": "Grand ménage augmente la DÉF de Noëlle de 50%. De plus, chaque ennemi vaincu pendant que la compétence est active prolonge sa durée d'1 s (10 s max).",
           "secondDescription": null,
           "descriptions": {}
         }
