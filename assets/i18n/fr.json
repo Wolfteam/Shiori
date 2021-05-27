@@ -2655,13 +2655,13 @@
       }
     },
     "23": {
-      "key": "Saccharose",
-      "name": "Saccharose",
-      "description": "Un alchimiste plein de curiosité pour tout. Elle fait des recherches sur la bio-alchimie.",
+      "key": "Sucrose",
+      "name": "Sucrose",
+      "description": "Une alchimiste plein de curiosité pour tout. Elle fait des recherches sur la bio-alchimie.",
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Création de l'esprit du vent",
+          "title": "Esprit du vent",
           "description": null,
           "abilities": {
             "0": {
@@ -2671,30 +2671,31 @@
             },
             "1": {
               "key": "a2",
-              "description": "Consomme une certaine quantité d'Endurance et inflige AoE Anemo DMG après un court temps d'incantation.",
+              "description": "Après un court délai, inflige des DGT Anémo de zone ; cette attaque consomme de l'endurance.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Invoquant la puissance de ses esprits du vent, Sucrose plonge vers le sol depuis les airs, endommageant tous les ennemis sur son passage. Inflige AoE Anemo DMG lors de l'impact avec le sol.",
+              "description": "Plonge depuis les airs en concentrant ses pouvoirs Anémo, infligeant des DGT aux ennemis sur la route et des DGT Anémo de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Création d'anémohypostase astable - 6308",
-          "description": "Crée un petit esprit du vent qui inflige Anemo DMG aux ennemis dans une zone, les attirant vers l'emplacement de l'esprit du vent avant de les lancer.",
+          "title": "Esprit du vent : Sujet 6308",
+          "description": "Sucrose invoque un Esprit du vent de taille réduite, qui attire les ennemis et les objets proches à lui, projetant les ennemis dans les airs et leur infligeant des DGT Anémo.",
           "abilities": {}
         },
         "2": {
           "key": "s3",
-          "title": "Création interdite - Isomère 75 / Type II",
-          "description": "Le saccharose lance une concoction instable qui crée un grand esprit du vent. Tant qu'il persiste, le Grand Esprit du vent attirera et lancera continuellement les ennemis proches, infligeant AoE Anemo DMG.",
+          "title": "Esprit du vent : Isomorphe 75 Type II",
+          "description": "Sucrose jette une concoction instable qui libère un Esprit du vent de grande taille. L'Esprit attire les ennemis proches à lui, projetant les ennemis dans les airs et leurs infligeant des DGT Anémo.",
           "abilities": {
             "0": {
               "key": "a1",
-              "description": "Si le Wind Spirit entre en contact avec des éléments Hydro / Pyro / Cryo / Electro, il infligera des DMG supplémentaires de ce type. L'absorption élémentaire ne peut se produire qu'une seule fois par utilisation.",
+              "title": "Absorption élémentaire",
+              "description": "L'Esprit du vent absorbe les éléments Hydro, Pyro, Cryo et Électro avec lesquels il entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant. Un seul élément peut être absorbé à la fois.",
               "descriptions": {}
             }
           }
@@ -2703,63 +2704,63 @@
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Invention astable",
-          "description": "Lorsque Sucrose fabrique des matériaux d'amélioration des caractères et des armes, elle a 10% pour obtenir le double du produit.",
+          "title": "Fragile découverte",
+          "description": "Sucrose a 10% de chance d'obtenir le double de produits lors de la synthèse de matériaux d'amélioration de personnage ou d'arme.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Conversion de catalyseur",
-          "description": "Lorsque Sucrose déclenche un effet de tourbillon, les personnages du groupe avec l'élément correspondant voient leur maîtrise élémentaire augmentée de 50 pendant 8s.",
+          "title": "Permutation de catalyste",
+          "description": "Tous les personnages de l'équipe du type élémentaire concerné (à l'exception de Sucrose) obtiennent un bonus de 50 pts de maîtrise élémentaire pendant 8 s lorsque Sucrose déclenche une Dispersion.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "vent doux",
-          "description": "Lorsque Astable Anemohypostatis Creation - 6308 ou Forbidden Creation - Isomer 75 / Type II frappe un ennemi, augmente la maîtrise élémentaire des autres membres du groupe en fonction de 20% de la maîtrise élémentaire de Sucrose pendant 8s.",
+          "title": "Mollis Favonius",
+          "description": "Lorsque Esprit du vent : Sujet 6308 ou Esprit du vent : Isomorphe 75 Type II touche un ennemi, tous les personnages (à l'exception de Sucrose) bénéficient pendant 8 s d'un bonus de maîtrise élémentaire équivalent à 20% de la maîtrise élémentaire de Sucrose.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Champ de vide groupé",
-          "description": "Création d'anémohypostase astable - 6308 gagne 1 charge supplémentaire.",
+          "title": "Champ du néant",
+          "description": "Confère une charge supplémentaire à Esprit du vent : Sujet 6308.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Beth - Forme non liée",
-          "description": "La durée de Création interdite - Isomère 75 / Type II est augmentée de 2s.",
+          "title": "Bett : Forme éthérée",
+          "description": "Prolonge la durée d'Esprit du vent : Isomorphe 75 Type II de 2 s.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Alchimiste sans faille",
-          "description": "Augmente le niveau de création d'anémohypostase astable - 6308 de 3. Le niveau maximum est de 15.",
+          "title": "Zéro défaut",
+          "description": "Augmente le niveau d'Esprit du vent : Sujet 6308 de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Alchimanie",
-          "description": "Toutes les 7 attaques normales et chargées, le saccharose réduira le CD de création d'anémohypostase astable - 6308 de 1 à 7s.",
+          "title": "Alchémania",
+          "description": "Réduit le TdR d'Esprit du vent : Sujet 6308 de 1 à 7 s toutes les 7 attaques normales et chargées que Sucrose inflige.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Attention: flacon standard",
-          "description": "Augmentez le niveau de création interdite - Isomer 75 / Type II de 3. Le niveau maximum est de 15.",
+          "title": "Flasque standard",
+          "description": "Augmentez le niveau d'Esprit du vent : Isomorphe 75 Type II de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Entropie chaotique",
-          "description": "Si Forbidden Creation - Isomer 75 / Type II déclenche une absorption élémentaire, tous les membres du groupe gagnent un bonus de 20% de DMG élémentaire pour l'élément absorbé correspondant pendant sa durée.",
+          "title": "Théorie de l'entropie",
+          "description": "En cas d'absorption élémentaire, Esprit du vent : Isomorphe 75 Type II confère à tous les personnages de l'équipe un bonus de DGT élémentaires de 20% tant que la compétence est active.",
           "secondDescription": null,
           "descriptions": {}
         }
