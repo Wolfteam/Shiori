@@ -3741,56 +3741,51 @@
             },
             "1": {
               "key": "a2",
-              "description": "Consomme une certaine quantité d'Endurance pour bondir en avant, faisant tomber des lances de pierre le long de son chemin.",
+              "description": "Charge vers l'avant, faisant pleuvoir des lances de roche sur sa route.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Plonge dans les airs pour frapper le sol en dessous, endommageant les adversaires le long du chemin et infligeant AoE DMG à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "la pierre",
-          "description": "Chaque montagne, rocher et pouce de terre est rempli du pouvoir de Geo, mais ceux qui peuvent exercer de tels pouvoirs librement sont rares.",
+          "title": "Dominus Lapidis",
+          "description": "Le pouvoir Géo est présent dans les montagnes, sur la terre comme dans les profondeurs, et jusque dans les fissures rocailleuses. Mais rares sont ceux capables de maîtriser une telle puissance.",
           "abilities": {
             "0": {
               "key": "a1",
-              "description": "Commande le pouvoir de la terre pour créer une stèle de pierre.",
+              "description": "Zhongli matérialise une Dorsale rocheuse qui inflige des DGT Géo de zone. La Dorsale entre en résonance avec les autres constructions Géo présentes. L'amas rocheux libère l'écho de la pierre originelle de façon intermittente, infligeant des DGT Géo aux ennemis à proximité. La Dorsale rocheuse est une construction Géo qui bloque les attaques et peut être escaladée. Il ne peut exister qu'une seule Dorsale à la fois.",
               "descriptions": {}
             },
             "1": {
               "key": "a2",
-              "description": "Fait exploser l'énergie Geo à proximité, provoquant les effets suivants:",
+              "description": "Zhongli fait exploser l'élément Géo contenu dans les environs, entraînant les effets suivants : ",
               "descriptions": {
-                "0": "Si leur nombre maximum n'a pas été atteint, crée une stèle de pierre.",
+                "0": "Un bouclier de jade capable d'absorber une quantité de DGT proportionnelle aux PV max de Zhongli est généré. Le bouclier est efficace à 250% contre les DGT Géo.",
                 "1": "Crée un bouclier de jade. Les échelles d'absorption DMG du bouclier sont basées sur les PV max de Zhongli.",
-                "2": "Offres AoE Geo DMG.",
-                "3": "S'il y a des cibles proches avec l'élément Geo, il drainera une grande quantité d'élément Geo d'un maximum de 2 de ces cibles. Cet effet ne cause pas de DMG."
+                "2": "Inflige des DGT Géo de zone ",
+                "3": "Absorbe l'élément Géo des cibles proches affectées par l'élément Géo (jusqu'à 2 cibles max). Cet effet n'inflige pas de DGT."
               }
             },
-            "2": {
-              "name": "Étoiles de pierre",
-              "description": "Une fois créé, traite AoE Geo DMG.\nDe plus, il résonnera par intermittence avec d'autres constructions Geo proches, infligeant Geo DMG aux adversaires proches.\n1La Stèle de pierre est considérée comme une construction Geo qui peut à la fois être escaladée et utilisée pour bloquer les attaques.\nUne seule stèle créée par Zhongli lui-même peut initialement exister à la fois",
-              "descriptions": {}
-            },
-            "3": {
+              "2": {
               "name": "Bouclier de jade",
-              "description": "Possède une absorption de 150% de DMG contre tous les DMG élémentaires et physiques.\nLes personnages protégés par le bouclier de jade réduiront de 20% la RES élémentaire et la RES physique des adversaires dans une petite zone. Cet effet ne peut pas être empilé.",
+              "description": "Possède une absorption de 150% de DMG contre tous les DMG élémentaires et physiques.\nLes personnages protégés par le bouclier de jade réduiront de 20% la RES élémentaire et la RES physique des adversaires dans une petite zone. Cet effet ne peut pas être cumulé.",
               "descriptions": {}
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Planète Befall",
-          "description": "Ramène un météore tombant sur Terre, infligeant une Géo DMG massive aux adversaires pris dans son AoE et leur appliquant le statut de Pétrification.",
+          "title": "Chute de météore",
+          "description": "Zhongli fait tomber des cieux un gigantesque météore, qui inflige d'importants DGT Géo à l'impact et pétrifie les ennemis.",
           "abilities": {
             "0": {
               "name": "Pétrification",
-              "description": "Les adversaires affectés par le statut de Pétrification ne peuvent pas bouger.",
+              "description": "Les ennemis pétrifiés sont immobilisés.",
               "descriptions": {}
             }
           }
@@ -3799,48 +3794,44 @@
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Arcane de cristal",
-          "description": "Remboursement de 15% des minerais utilisés lors de la fabrication d'armes de type Polearm.",
+          "title": "Cristal du destin",
+          "description": "Lorsque vous forgez une arme d'hast, 15% du minerai utilisé vous sera rendu.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
           "title": "Ondes résonnantes",
-          "description": "Lorsque le bouclier de jade prend DMG, il se fortifie:",
+          "description": "Chaque attaque touchant le bouclier de jade génère les effets suivants : ",
           "descriptions": {
-            "0": "Les personnages fortifiés ont 5% d'Augmentation de la Force du Bouclier.",
-            "1": "Peut s'empiler jusqu'à 5 fois et dure jusqu'à ce que le bouclier de jade disparaisse."
+            "0": "Augmente la force du bouclier de 5% .",
+            "1": "Cet effet peut être cumulé 5 fois maximum et dure jusqu'à la fin du bouclier."
           }
         },
         "2": {
           "key": "p3",
           "title": "Domination de la Terre",
-          "description": "Zhongli offre un bonus de DMG basé sur ses PV max:",
-          "descriptions": {
-            "0": "Les DÉG d'attaque normale, d'attaque chargée et d'attaque plongeante sont augmentés de 1,39% des PV max.",
-            "1": "La stèle de pierre, la résonance et la tenue de Dominus Lapidis sont augmentées de 1,9% des PV max.",
-            "2": "Le DMG de Planet Befall est augmenté de 33% des PV max."
-          }
+          "description": "Chute de météore inflige un bonus de DGT équivalent à 33% des PV max de Zhongli.",
+          "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Rock, l'épine dorsale de la Terre",
-          "description": "Augmente de 2 le nombre maximum de stèles de pierre créées par Dominus Lapidis pouvant exister simultanément.",
+          "title": "Roche, le squelette de la terre",
+          "description": "2 Dorsales de Dominus Lapidis peuvent exister en même temps.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Stone, le berceau du jade",
-          "description": "Planet Befall accorde aux personnages proches sur le terrain un bouclier de jade lors de sa descente.",
+          "title": "Pierre, le berceau du jade",
+          "description": "Les personnages déployés à proximité sont protégés par un bouclier de jade lors de Chute de météore.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Jade, scintillant à travers les ténèbres",
+          "title": "Jade, brillant à travers les ténèbres",
           "description": "Augmente le niveau de Dominus Lapidis de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
@@ -3848,21 +3839,21 @@
         "3": {
           "key": "c4",
           "title": "Topaze, incassable et intrépide",
-          "description": "Augmente l'AoE de Planet Befall de 20% et augmente la durée de l'effet de pétrification de Planet Befall de 2s.",
+          "description": "Augmente la zone d'effet de Chute de météore de 20%. Prolonge de plus la durée de la pétrification de 2 s.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Lazuli, héraut de l'ordre",
-          "description": "Augmentez le niveau de Planet Befall de 3. Le niveau maximum est de 15.",
+          "title": "Lazulite, le héraut de l'ordre divin",
+          "description": "Augmentez le niveau de Chute de météore de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Chrysos, générosité du dominateur",
-          "description": "Lorsque le bouclier de jade prend DMG, 40% de ces DMG entrants sont convertis en HP pour le personnage actuel.\nUne seule instance de régénération ne peut pas dépasser 8% des PV max de ce personnage.",
+          "title": "Or, la générosité du dominateur",
+          "description": "40% des DGT subis par le bouclier de jade sont convertis en PV pour le personnage déployé. La quantité de PV restaurés en une fois ne peut pas dépasser 8% des PV max du personnage.",
           "secondDescription": null,
           "descriptions": {}
         }
