@@ -1677,99 +1677,115 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Kaboom!",
+          "title": "Boum ! Boum !",
           "description": null,
           "abilities": {
             "0": {
               "key": "a1",
-              "description": "Jette des choses qui font boum quand elles frappent des choses! Effectuez jusqu'à 3 attaques explosives, infligeant AoE Pyro DMG.",
+              "description": "Une bombe qui explose au contact, ça c'est un bel objet ! Klee jette jusqu'à 3 bombes consécutives, qui infligent des DGT Pyro de zone.",
               "descriptions": {}
             },
             "1": {
               "key": "a2",
-              "description": "Consomme une certaine quantité d'Endurance et inflige Pyro DMG aux ennemis après un court temps d'incantation.",
+              "description": "Après un court délai, bombarde les ennemis et leur inflige des DGT Pyro de zone ; cette attaque consomme de l'endurance.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Rassemblant le pouvoir de Pyro, Klee plonge vers le sol depuis les airs, endommageant tous les ennemis sur son passage. Inflige AoE Pyro DMG lors de l'impact avec le sol.",
+              "description": "Plonge depuis lers airs en concentrant ses pouvoirs Pyro, infligeant des DGT aux ennemis sur la route et des DGT Pyro de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Jumpy Dumpty",
-          "description": "Jumpy Dumpty est des tonnes de boum-bang-fun! Lorsqu'il est lancé, Jumpy Dumpty rebondit trois fois, s'enflamme et inflige AoE Pyro DMG à chaque rebond. Au troisième rebond, la bombe se divise en plusieurs mines. Les mines exploseront au contact des ennemis, ou après une courte période de temps, infligeant AoE Pyro DMG. Commence avec 2 charges.",
-          "abilities": {}
+          "title": "Bombe rebondissante",
+          "description": "Boiing, boiing ! Klee lance une bombe qui pète de joie !",
+          "abilities": {
+            "0": {
+              "key": "a1",
+              "description": "La bombe rebondit 3 fois et explose à chaque rebond, infligeant des DGT Pyro de zone.",
+              "descriptions": {}
+            },
+            "1": {
+              "key": "a2",
+              "description": "Après le 3e rebond, la bombe se divise en plusieurs mines. Les mines explosent après un court délai ou au contact de l'ennemi, infligeant des DGT Pyro de zone. Klee commence avec 2 charges.",
+              "descriptions": {}
+            },
+            "2": {
+              "key": "a3",
+              "description": "La Bombe rebondissante est l'amie fidèle de Klee… Elle veut toujours la présenter à tout le monde.",
+              "descriptions": {}
+            }
+          }
         },
         "2": {
           "key": "s3",
-          "title": "Sparks 'n' Splash",
-          "description": "Le délice flamboyant de Klee! Pendant la durée de cette capacité, invoque continuellement Sparks 'n' Splash pour attaquer les ennemis proches, infligeant AoE Pyro DMG.",
+          "title": "Fleur bombardier",
+          "description": "Klee s'enflamme ! Invoque une Fleur bombardier qui harcèle les ennemis, infligeant des DGT Pyro de zone. Les membres de l'Ordre de Favonius sont convaincus qu'une bonne étoile veille sur Klee ; sinon, comment expliquer qu'elle ne se blesse jamais ?",
           "abilities": {}
         }
       },
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Tous mes trésors!",
-          "description": "Affiche l'emplacement des ressources à proximité uniques à Mondstadt sur la mini-carte.",
+          "title": "Des trésors partout !",
+          "description": "Affiche l'emplacement des produits de Mondstadt sur la mini-carte.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Surprise battante",
-          "description": "Lorsque Jumpy Dumpty et les attaques normales infligent des DÉG, Klee a 50% de chances d'obtenir une étincelle explosive. Cette étincelle explosive est consommée par la prochaine attaque chargée, qui ne coûte pas d'endurance et inflige 50% de DEG supplémentaires.",
+          "title": "Cadeau explosif",
+          "description": "Les attaques normales ainsi que Bombe rebondissante ont 50% de chance de conférer à Klee une étincelle explosive lorsqu'elles infligent des DGT. Cette dernière est consommée lors de la prochaine attaque chargée, qui inflige 50% de DGT supplémentaires sans consommer d'endurance.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Rafale étincelante",
-          "description": "Lorsqu'une attaque chargée aboutit à un CRIT, tous les membres du groupe gagnent 2 points d'énergie élémentaire.",
+          "title": "Étincelle infinie",
+          "description": "Lorsque Klee inflige des DGT CRIT avec des attaques chargées, l'énergie élémentaire de tous les membres de l'équipe est restaurée de 2 pts.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Réaction enchaînée",
-          "description": "Les attaques et les compétences ont une certaine chance d'invoquer une étincelle qui bombarde les ennemis, infligeant des DMG égaux à 120% des DMG de Sparks 'n' Splash.",
+          "title": "Bombardement continu",
+          "description": "Les attaques et aptitudes ont une chance de générer des étincelles qui bombardent les ennemis, infligeant 120% des DGT de Fleur bombardier.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Frags explosifs",
+          "title": "Éclats de bombe",
           "description": "Être touché par les mines de Jumpy Dumpty réduit la DEF ennemie de 23% pendant 10s.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Composé exquis",
-          "description": "Augmente le niveau de Jumpy Dumpty de 3. Le niveau maximum est de 15.",
+          "title": "Réglage spécial de Klee",
+          "description": "Augmente le niveau de Bombe rebondissante de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Explosion scintillante",
-          "description": "Si Klee quitte le terrain pendant la durée de Sparks 'n' Splash, son départ déclenche une explosion qui inflige 555% de son ATK en tant que AoE Pyro DMG.",
+          "title": "Tout est prêt",
+          "description": "Une explosion se produit lorsque Klee quitte le champ de bataille tant que Fleur bombardier est active. Cette explosion inflige 555% des l'ATQ en DGT Pyro de zone.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Nova Burst",
-          "description": "Augmentez le niveau de Sparks ’n’ Splash de 3. Le niveau maximum est de 15.",
+          "title": "Bombardement d'étoiles",
+          "description": "Augmentez le niveau de Fleur bombardier de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Délice flamboyant",
-          "description": "Sous les effets de Sparks ’n’ Splash, les autres membres du groupe régénéreront continuellement de l’énergie. Lorsque Sparks 'n' Splash est utilisé, tous les membres du groupe gagneront 10% de bonus Pyro DMG pendant 25s.",
+          "title": "À tout feu",
+          "description": "Klee restaure 3 pts d'énergie élémentaire à tous les membres de l'équipe (à l'exception de Klee) toutes les 3 s tant que Fleur bombardier est active. L'activation de Fleur bombardier confère un bonus de DGT Pyro de 10% pendant 25 s à tous les membres de l'équipe.",
           "secondDescription": null,
           "descriptions": {}
         }
