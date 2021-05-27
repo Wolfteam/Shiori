@@ -1371,7 +1371,7 @@
               "description": null,
               "descriptions": {
                 "0": "Le champ de pissenlits restaure en continu les PV des personnages dans la zone.",
-                "1": "Le champ leur applique également l'élément Anémo."
+                "1": "Le champ leur applique également l'élément Anémo.",
                 "2": "Inflige Anemo DMG aux ennemis entrant ou sortant du terrain."
               }
             }
@@ -3319,7 +3319,7 @@
         "0": {
           "key": "c1",
           "title": "Croustillant à l'extérieur, tendre à l'intérieur",
-          "description": "La RÉS Pyro des ennemis touchés par Gooba est réduite de 15% pendant 6 s."
+          "description": "La RÉS Pyro des ennemis touchés par Gooba est réduite de 15% pendant 6 s.",
           "descriptions": {}
         },
         "1": {
