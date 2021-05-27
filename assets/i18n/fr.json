@@ -3605,7 +3605,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Danse sur le feu",
+          "title": "Danse du feu",
           "description": null,
           "abilities": {
             "0": {
@@ -3615,58 +3615,58 @@
             },
             "1": {
               "key": "a2",
-              "description": "Draine l'endurance au fil du temps pour effectuer des attaques rotatives continues contre tous les ennemis proches. À la fin de la séquence, effectuez une barre oblique plus puissante.",
+              "description": "Exécute une succession d'attaques tournoyantes ; cette attaque consomme de l'endurance sur la durée. L'attaque chargée se termine sur un coup puissant.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Plonge du milieu des airs pour frapper le sol, endommageant les ennemis le long du chemin et infligeant AoE DMG à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Ferveur balayante",
-          "description": "Xinyan brandit son instrument, infligeant Pyro DMG aux ennemis proches, formant un bouclier fait de la passion de son public.",
+          "title": "Jeu fervent",
+          "description": "Xinyan brandit sa guitare, et inflige aux ennemis proches des DGT Pyro, et génère un bouclier grâce au soutien de l'audience.",
           "abilities": {
             "0": {
               "name": "",
-              "description": "Les échelles d'absorption de DMG du bouclier sont basées sur la DEF de Xinyan et sur le nombre d'ennemis touchés:",
+              "description": "Le bouclier absorbe une quantité de PV proportionnelle à la DÉF de Xinyan et aux ennemis touchés : ",
               "descriptions": {
-                "0": "Toucher 0-1 ennemis confère le niveau de bouclier 1: Ad Lib.",
-                "1": "Toucher 2 ennemis confère le niveau de bouclier 2: Introduction.",
-                "2": "Toucher 3 ennemis ou plus confère un niveau de bouclier 3: Rave, qui infligera également des DMG Pyro intermittents aux ennemis proches."
+                "0": "0 à 1 ennemi touché : Bouclier Niv. 1",
+                "1": "2 ennemis touchés : Bouclier Niv. 2",
+                "2": "3 ennemis touchés ou plus : Bouclier Niv. 3, qui inflige en plus des DGT Pyro continus aux ennemis proches."
               }
             },
             "1": {
               "name": "",
               "description": "Le bouclier a les propriétés spéciales suivantes:",
               "descriptions": {
-                "0": "Lorsqu'il est libéré, il infuse Xinyan avec Pyro.",
-                "1": "Il a une efficacité d'absorption de 250% de DMG contre Pyro DMG."
+                "0": "Applique au moment de sa création l'élément Pyro à Xinyan.",
+                "1": "Le bouclier est efficace à 250% contre les DGT Pyro."
               }
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Révolution Riff",
-          "description": "Grattant rapidement, Xinyan lance les ennemis proches et leur inflige des DÉG physiques, faisant monter la foule. L'intensité pure de l'atmosphère provoquera des explosions qui infligeront Pyro DMG aux ennemis proches.",
+          "title": "Riff rebelle",
+          "description": "Grattant son instrument avec passion, Xinyan libère une vague d'ondes qui repoussent les ennemis, et infligent aux ennemis proches des DGT physiques, au plus grand plaisir du public. L'ambiance se réchauffe tellement que des explosions ont lieu, infligeant aux ennemis proches des DGT Pyro.",
           "abilities": {}
         }
       },
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Une recette de rad",
-          "description": "Lorsqu'une cuisson parfaite est réalisée sur un plat boostant le DEF, Xinyan a 12% de chances d'obtenir le double du produit.",
+          "title": "Recette pour un tube",
+          "description": "12% de chance d'obtenir un plat supplémentaire lorsque vous cuisinez un plat parfait qui renforce la DÉF.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "\"Le spectacle continue, même sans public ...\"",
-          "description": "Diminue le nombre d'ennemis Sweeping Fervor doit toucher pour déclencher chaque niveau de bouclier.",
+          "title": "Le spectacle doit continuer, même sans audience...",
+          "description": "Réduit le nombre d'ennemis à toucher pour déclencher chaque niveau de bouclier de Jeu fervent de 1.",
           "descriptions": {
             "0": "Bouclier de niveau 2: l'exigence d'entrée réduite à 1 ennemi touché.",
             "1": "Bouclier niveau 3: l'exigence de Rave a été réduite à 2 ennemis touchés ou plus."
@@ -3674,8 +3674,8 @@
         },
         "2": {
           "key": "p3",
-          "title": "\"... Maintenant, c’est du rock’ n ’roll!\"",
-          "description": "Les personnages protégés par Ferveur balayante ont 15% d'Augmentation des DÉG physiques.",
+          "title": "...ça c'est du rock !",
+          "description": "Les DGT physiques infligés par les personnages sous la protection du bouclier généré par Jeu fervent augmentent de 15%.",
           "descriptions": {}
         }
       },
@@ -3683,42 +3683,42 @@
         "0": {
           "key": "c1",
           "title": "Accélération fatale",
-          "description": "En marquant un coup CRIT, augmente la SPD ATK des attaques normales et chargées de Xinyan de 12% pendant 5s. Ne peut se produire qu'une fois toutes les 5s.",
+          "description": "La VIT des attaques normales et chargées de Xinyan augmente de 12% pendant 5 s lorsque Xinyan inflige un coup CRIT. Cet effet ne peut être déclenché qu'une fois toutes les 5 s.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
           "title": "Ouverture impromptue",
-          "description": "Riff Revolution Physical DMG a son taux de critique augmenté de 100% et formera un bouclier au niveau de bouclier 3: Rave lorsqu'il est lancé.",
+          "description": "Le taux CRIT des DGT physiques de Riff rebelle augmente de 100%. Un bouclier Niv. 3 est de plus généré à l'activation.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Double arrêt",
-          "description": "Augmente le niveau de ferveur de balayage de 3. Le niveau maximum est de 15.",
+          "title": "Double corde",
+          "description": "Augmente le niveau de Jeu fervent de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Rythme des feux de forêt",
-          "description": "Les DMG de swing de Ferveur de balayage diminuent la RES physique des adversaires de 15% pendant 12s.",
+          "title": "Rythme irrésistible",
+          "description": "La RÉS physique des ennemis touchés par Xinyan au début de Jeu fervent est réduite de 15% pendant 2 s.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Screamin ’for an Encore",
-          "description": "Augmente le niveau de Riff Revolution de 3. Le niveau maximum est de 15.",
+          "title": "Rappel fervent",
+          "description": "Augmente le niveau de Riff rebelle de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Rockin 'dans un monde flamboyant",
-          "description": "Diminue la consommation d'endurance des attaques chargées de Xinyan de 30%. De plus, Xinyan Charged Attack gagne un bonus d'ATK égal à 50% de sa DEF.",
+          "title": "Rock infernal",
+          "description": "Réduit le coût d'endurance des attaques chargées de Xinyan de 30%. Xinyan obtient de plus un bonus d'ATQ équivalent à 50% de sa DÉF lorsqu'elle exécute une attaque chargée.",
           "secondDescription": null,
           "descriptions": {}
         }
