@@ -1798,7 +1798,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Toucher éclair",
+          "title": "Touche d'éclair",
           "description": null,
           "abilities": {
             "0": {
@@ -1808,57 +1808,62 @@
             },
             "1": {
               "key": "a2",
-              "description": "Consomme une certaine quantité d'Endurance pour traiter AoE Electro DMG après un court temps d'incantation.",
+              "description": "Après un court délai, inflige des DGT Électro de zone ; cette attaque consomme de l'endurance.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Rassemblant la puissance de l'Electro, Lisa plonge vers le sol depuis les airs, endommageant tous les ennemis sur son passage. Traite AoE Electro DMG lors de l'impact avec le sol.",
+              "description": "Plonge depuis les airs en concentrant ses pouvoirs Électro, infligeant des DGT Électro de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Violet Arc",
-          "description": "Canalisation de la puissance de la foudre pour balayer les choses gênantes.",
+          "title": "Arc fulminant",
+          "description": "Canalise le pouvoir de la foudre pour nettoyer un peu le champ de bataille.",
           "abilities": {
             "0": {
               "key": "a1",
-              "description": "Libère un orbe de foudre de référence. En cas de coup, il traite Electro DMG et applique une pile de statut Conducteur (max 3 piles) aux ennemis dans un petit AoE.",
+              "description": "Libère un orbe électrique à tête chercheur. Lorsqu'il touche une cible, l'orbe inflige des DGT Électro, ainsi que l'effet Conductivité aux ennemis proches, cumulable 3 fois.",
               "descriptions": {}
             },
             "1": {
               "key": "a2",
-              "description": "Après un temps d'incantation prolongé, appelle la foudre du ciel, infligeant d'énormes DÉG Electro à tous les ennemis proches. Inflige de grandes quantités de dégâts supplémentaires aux ennemis en fonction du nombre de charges conductrices qui leur sont appliquées et efface leur statut de conducteur.",
+              "description": "Après un court délai, des éclairs s'abattent des cieux et infligent des DGT Électro à tous les ennemis proches. Les ennemis affectés par Conductivité subissent des DGT supplémentaires proportionnels au nombre de cumuls.",
+              "descriptions": {}
+            },
+            "2": {
+              "key": "a3",
+              "description": "La couleur de la foudre est aussi la couleur de la Sorcière à la rose.",
               "descriptions": {}
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Rose éclair",
-          "description": "Invoque une rose éclair qui déclenche de puissants éclairs, lançant les ennemis environnants et infligeant Electro DMG. Le Lightning Rose émettra continuellement des éclairs pour repousser les ennemis et infliger Electro DMG tant qu'il persiste.",
+          "title": "Rose de foudre",
+          "description": "Invoque une rose de foudre qui libère une puissante énergie électrique repoussant les ennemis proches et leur infligeant des DGT Électro. La rose de foudre envoie des décharges électriques qui infligent des DGT Électro aux ennemis proches tant qu'elle est active.",
           "abilities": {}
         }
       },
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Pharmaceutique générale",
-          "description": "Lorsque Lisa fabrique une potion, elle a 20% de chances de rembourser une partie des matériaux d'artisanat utilisés.",
+          "title": "Connaissances médicinales",
+          "description": "Lorsque vous fabriquez des potions, il y a 20 % de chance qu'une partie des matières premières vous soit rendue.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Réplique induite",
-          "description": "Les coups des attaques chargées appliquent le statut Conducteur de Violet Arc aux ennemis.",
+          "title": "Relique d'électricité",
+          "description": "Les attaques chargées infligent l'effet Conductivité d'Arc fulminant aux ennemis lorsqu'elles touchent.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Champ d'électricité statique",
-          "description": "Les ennemis touchés par Lightning Rose voient leur DEF diminuée de 15% pendant 10s.",
+          "title": "Champ électrostatique",
+          "description": "Rose de foudre réduit la DÉF des ennemis qu'elle touche de 15 % pendant 10 s..",
           "descriptions": {}
         }
       },
@@ -1866,14 +1871,14 @@
         "0": {
           "key": "c1",
           "title": "Circuit infini",
-          "description": "Lisa récupère 2 Énergie pour chaque adversaire touché tout en maintenant Violet Arc. Un maximum de 10 Énergie peut être régénéré de cette manière à tout moment.",
+          "description": "Lisa regagne 2 pts d'énergie par ennemi touché tant qu'Arc fulminant reste activité. Jusqu'à 10 pts d'énergie élémentaire peuvent être restaurés de cette manière.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
           "title": "Champ électromagnétique",
-          "description": "Tenir Violet Arc a les effets suivants:",
+          "description": "Arc fulminant confère les effets suivants tant qu'il reste activé : ",
           "secondDescription": null,
           "descriptions": {
             "0": "Augmente la DEF de 25%.",
@@ -1883,28 +1888,28 @@
         "2": {
           "key": "c3",
           "title": "Tonnerre résonnant",
-          "description": "Augmente le niveau de Lightning Rose de 3. Le niveau maximum est de 15.",
+          "description": "Augmente le niveau de Rose de foudre de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
           "title": "Éruption de plasma",
-          "description": "Augmente de 1 à 3 le nombre d'éclairs émis par Lightning Rose.",
+          "description": "Rose de foudre libère 3 décharges au lieu d'une.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Électrocuter",
-          "description": "Augmentez le niveau de l'arc violet de 3. Le niveau maximum est de 15.",
+          "title": "Électrification",
+          "description": "Augmentez le niveau d'Arc fulminant de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Sorcière palpitante",
-          "description": "Lorsque Lisa entre sur le terrain, elle applique 3 charges du statut Conducteur de Violet Arc sur les ennemis proches. Cet effet ne peut se produire qu'une fois toutes les 5s.",
+          "title": "Sorcière de pulse",
+          "description": "Lisa inflige 3 cumuls de l'effet Conductivité d'Arc fulminant aux ennemis proches lorsqu'elle est déployée au combat. Cet effet peut être déclenché une fois toutes les 5 s.",
           "secondDescription": null,
           "descriptions": {}
         }
