@@ -1922,7 +1922,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Ondulation du destin",
+          "title": "Ondes du destin",
           "description": null,
           "abilities": {
             "0": {
@@ -1932,65 +1932,65 @@
             },
             "1": {
               "key": "a2",
-              "description": "Consomme une certaine quantité d'Endurance et inflige AoE Hydro DMG après un court temps d'incantation.",
+              "description": "Après un court délai, inflige des DGT Hydro de zone ; cette attaque consomme de l'endurance.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Rassemblant la puissance d'Hydro, Mona plonge vers le sol depuis les airs, endommageant tous les ennemis sur son passage. Traite AoE Hydro DMG lors de l'impact avec le sol.",
+              "description": "Plonge depuis les airs en concentrant ses pouvoirs Hydro, infligeant des DGT aux ennemis sur la route et des DGT Hydro de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Reflet miroir de Doom",
-          "description": "Crée un fantôme illusoire du destin à partir de trombes marines fusionnées.",
+          "title": "Mirage aqueux",
+          "description": "Mona invoque un mirage du destin créé à partir de projections aqueuses",
           "abilities": {
             "0": {
               "name": "",
-              "description": "Le Phantom possède les propriétés spéciales suivantes:",
+              "description": "Le mirage a les effets suivants : ",
               "descriptions": {
-                "0": "Provoque continuellement les ennemis proches, attirant leur feu.",
-                "1": "Inflige continuellement Hydro DMG aux ennemis proches.",
-                "2": "Lorsque sa durée expire, le Phantom explose, infligeant AoE Hydro DMG."
+                "0": "Provoque continuellement les ennemis proches, attirant leur attaque.",
+                "1": "Inflige des DGT Hydro continus aux ennemis proches",
+                "2": "Lorsque le mirage prend fin, il explose et inflige des DGT Hydro de zone."
               }
             },
             "1": {
               "key": "a2",
-              "description": "Utilise les courants d'eau pour reculer rapidement avant de conjurer un fantôme. Un seul Phantom créé par Mirror Reflection of Doom peut exister à tout moment.",
+              "description": "Mona utilise la puissance de l'eau pour se propulser rapidement en arrière et invoque un mirage du destin. Il ne peut exister qu'un seul mirage à la fois.",
               "descriptions": {}
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Fantasme de Stellaris",
-          "description": "Mona invoque les vagues étincelantes et crée un reflet du ciel étoilé, appliquant le statut de Bulle Illusoire aux adversaires dans une grande zone.",
+          "title": "Voie divine",
+          "description": "Mona invoque des vagues chatoyantes pour créer un reflet du ciel étoilé, qui inflige l'état Bulle nocturne aux ennemis dans une large zone d'effet.",
           "abilities": {
             "0": {
-              "name": "Bulle illusoire",
-              "description": "Piège les adversaires dans une poche de destin et les rend également humides. Rend les adversaires les plus faibles immobiles. Lorsqu'un adversaire affecté par Illusory Bubble subit DMG, les effets suivants sont produits:",
+              "name": "Bulle nocturne",
+              "description": "Emprisonne les ennemis, et les trempe. Les ennemis les plus faibles sont immobilisés. Lorsqu'un ennemi emprisonné subit des DGT, il subit également les effets suivants : ",
               "descriptions": {
-                "0": "Applique un présage à l'adversaire, ce qui donne un bonus de DMG, augmentant également le DEG de l'attaque qui la provoque.",
-                "1": "Supprime la bulle illusoire, ce qui inflige des DMG hydro élémentaires dans le processus. Le bonus DMG ne s'applique pas au DMG Hydro Elemental traité dans cette instance."
+                "0": "Un présage est appliqué à l'ennemi, qui subit alors une augmentation de DGT, y compris de l’attaque l'ayant provoqué",
+                "1": "L'effet Bulle nocturne disparaît, et inflige des DGT Hydro supplémentaires"
               }
             },
             "1": {
               "name": "Présage",
-              "description": "Pendant sa durée, augmente les DMG pris par les ennemis.",
+              "description": "Le présage augmente les DGT subis par l'ennemi tant qu'il est actif. C'est lorsque le regard des dieux dessina les étoiles que la notion de « destin » naquit.",
               "descriptions": {}
             }
           }
         },
         "3": {
           "key": "s4",
-          "title": "Torrent illusoire",
+          "title": "Vicissitude",
           "description": null,
           "abilities": {
             "0": {
-              "name": "Esprit alternatif",
-              "description": "Mona se cache dans le courant de l’eau, consommant de l’Endurance pour se déplacer rapidement. Sous l'effet d'Illusory Torrent, Mona peut se déplacer à grande vitesse sur l'eau. Applique le statut Humide aux ennemis proches lorsqu'elle réapparaît.",
+              "name": "Remplace le sprint",
+              "description": "Mona se transforme en un courant d'eau, consommant de l'endurance pour se déplacer aussi vite qu'un torrent. Dans l'état Vicissitude, Mona peut se déplacer rapidement sur l'eau. À la fin de l'état, Mona trempe les ennemis proches lorsqu'elle réapparaît. Voici une technique que Mona est capable d'effectuer, mais pas son maître. Ce n'est pas comme si cette dernière souhaitait apprendre quoi que ce soit au sujet de l’œil divin Hydro…",
               "descriptions": {}
             }
           }
@@ -1999,68 +1999,66 @@
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Le principe de l'astrologie",
-          "description": "Lorsque Mona fabrique des matériaux d'ascension d'arme, elle a 25% de chances de rembourser une partie des matériaux d'artisanat utilisés.",
+          "title": "Principes d'astromancie",
+          "description": "Lorsque vous fabriquez un matériau d'élévation d'arme, il y a 25% de chance qu'une partie des matières premières vous soit rendue.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Come 'n' Get Me, Hag!",
-          "description": "Après avoir utilisé Illusory Torrent pendant 2s, s'il y a des ennemis à proximité, Mona créera automatiquement un fantôme. Un fantôme créé de cette manière dure 2s, et son explosion DMG est égale à 50% de Reflet miroir de Doom.",
+          "title": "Leurre du fatum",
+          "description": "Entrer dans l'état Vicissitude invoque automatiquement un mirage après 2 s en cas de présence d'ennemis proches. Le mirage ainsi invoqué dure 2 s, et ses DGT d'explosion sont équivalents à 50% des DGT de Mirage aqueux.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Destin hydrique",
-          "description": "Augmente le bonus Hydro DMG de Mona d'un degré équivalent à 20% de son taux de recharge d'énergie.",
+          "title": "Que le destin décide",
+          "description": "Confère à Mona un bonus de DGT Hydro équivalent à 20% de sa recharge d'énergie.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Prophétie de la submersion",
-          "description": "Les effets des réactions élémentaires liées à l'hydro sont améliorés pendant 8s après qu'un personnage touche un ennemi affecté par un présage:",
+          "title": "Prophétie immersive",
+          "description": "Les effets des réactions liées à l'élément Hydro sont renforcés pendant 8 s lorsque l'attaque de vos personnages dans l'équipe touche un ennemi marqué par un présage : ",
           "secondDescription": null,
           "descriptions": {
-            "0": "La DMG électro-chargée est augmentée de 15%.",
-            "1": "Vaporiser DMG est augmenté de 15%.",
-            "2": "Hydro Swirl DMG est augmenté de 15%.",
-            "3": "La durée pendant laquelle les ennemis sont gelés est augmentée de 15%."
-          }
+            "0": "Les DGT d'Électrocution, d'Évaporation, de Dispersion Hydro augmentent de 15% ;",
+            "1": "La durée de Gel augmente de 15%."
+         }
         },
         "1": {
           "key": "c2",
           "title": "Chaîne lunaire",
-          "description": "Lorsqu'une attaque normale frappe, il y a 20% de chances qu'elle soit automatiquement suivie d'une attaque chargée. Cet effet ne peut se produire qu'une fois toutes les 5s.",
+          "description": "Les attaques normales ont 20% de chance d'être suivies par une attaque chargée. Cet effet peut être déclenché une fois toutes les 5 s.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Révolution sans repos",
-          "description": "Augmente le niveau de Stellaris Phantasm de 3. Le niveau maximum est de 15.",
+          "title": "Révolution éternelle",
+          "description": "Augmente le niveau de Voie divine de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Prophétie de l'oubli",
-          "description": "Lorsqu'un personnage attaque un ennemi affecté par l'effet de statut d'Omen, son taux de CRIT est augmenté de 15%.",
+          "title": "Prophétie de la fin",
+          "description": "Augmente le taux CRIT de 15% lorsque vos personnages dans l'équipe attaquent un ennemi marqué par un présage.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Moquerie de Fortuna",
-          "description": "Augmentez le niveau de réflexion miroir de Doom de 3. Le niveau maximum est de 15.",
+          "title": "Un tour du destin",
+          "description": "Augmentez le niveau de Mirage aqueux de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Rhétorique du désastre",
-          "description": "En entrant dans Illusory Torrent, Mona gagne une augmentation de 60% du DMG lors de sa prochaine attaque chargée par seconde de mouvement. Un bonus DMG maximum de 180% peut être atteint de cette manière. L'effet ne dure pas plus de 8 secondes.",
+          "title": "Rhétorique de l'adversité",
+          "description": "Dans l'état Vicissitude, Mona obtient un bonus de 60% DGT pour sa prochaine attaque chargée à chaque seconde passée à se déplacer. Cet effet est cumulable 3 fois max (bonus de 180%) et dure 8 s.",
           "secondDescription": null,
           "descriptions": {}
         }
