@@ -2563,7 +2563,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Lance de l'Église",
+          "title": "Lance expiatoire",
           "abilities": {
             "0": {
               "key": "a1",
@@ -2572,7 +2572,7 @@
             },
             "1": {
               "key": "a2",
-              "description": "Consomme une certaine quantité d'Endurance pour fendre vers l'avant, infligeant des dégâts aux adversaires en cours de route.",
+              "description": "Charge en ligne droite et inflige des dégâts aux ennemis sur sa route. Consomme de l'endurance.",
               "descriptions": {}
             },
             "2": {
@@ -2584,72 +2584,72 @@
         },
         "1": {
           "key": "s2",
-          "title": "Confession ravageuse",
-          "description": "Rosaria change rapidement de position pour apparaître derrière son adversaire, puis les poignarde et les coupe avec son bras d'arme, infligeant Cyro DMG.\nCette capacité ne peut pas être utilisée pour voyager derrière des adversaires d'une plus grande construction.",
+          "title": "Confession des péchés",
+          "description": "Rosaria change rapidement de position pour apparaître derrière son adversaire, puis les poignarde et les coupe avec son bras d'arme, infligeant Cyro DMG.\nCette capacité ne peut pas être utilisée pour voyager derrière des adversaires d'une plus grande construction.Rosalia se déplace rapidement derrière sa cible qu'elle transperce et tranche de sa lance, infligeant des DGT Cryo. Ce mouvement ne fonctionne pas avec les ennemis trop grands.",
           "abilities": {}
         },
         "2": {
           "key": "s3",
-          "title": "Rites de résiliation",
-          "description": "La vision unique de Rosaria sur ce rituel de prière: d'abord, elle balance son arme pour frapper les adversaires environnants; puis, elle invoque une glaciale lance de glace qui frappe le sol. Les deux actions concernent Cryo DMG.\nLorsqu'elle est active, la lance de glace libère périodiquement une explosion d'air froid, infligeant Cryo DMG aux adversaires environnants.",
+          "title": "Sacrement mortel",
+          "description": "Rosalia officie pour une prière pas comme les autres. Après avoir exécuté une attaque circulaire balayant les ennemis à proximité, Rosalia invoque une lance de glace qui frappe le sol. Les deux actions infligent des DGT Cryo. Tant que la lance de glace est active, elle émet de façon intermittente des ondes de froid, qui infligent des DGT Cryo aux ennemis à proximité.",
           "abilities": {}
         }
       },
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Marche nocturne",
-          "description": "La nuit (18: 00–6: 00), augmente le SPD de mouvement des membres de votre propre groupe de 10%.\nNe prend pas effet dans les domaines, les domaines Trounce ou Spiral Abyss. Non cumulable avec les talents passifs qui fournissent exactement les mêmes effets.",
+          "title": "Balade nocturne",
+          "description": "Augmente la VIT de déplacement des personnages de votre équipe pendant la nuit (de 18 h à 6 h) de 10 %. Cet effet ne s'applique ni dans les donjons, ni dans les Donjons de la conquête, ni dans les Profondeurs spiralées, et ne peut être cumulé avec d'autres aptitudes passives aux effets identiques.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "reine Probationum",
-          "description": "Lorsque Rosaria frappe un adversaire par derrière en utilisant Ravaging Confession, le taux de CRIT de Rosaria augmente de 12% pendant 5s.",
+          "title": "Confession forcée",
+          "description": "Le taux CRIT de Rosalia augmente de 12 % pendant 5 s lorsqu'elle frappe un ennemi de dos avec Confession des péchés.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
           "title": "Samaritain de l'ombre",
-          "description": "Lancer des rites de résiliation augmente le taux de CRIT de tous les membres du groupe à proximité (à l'exception de Rosaria elle-même) de 15% du taux de CRIT de Rosaria pendant 10s.\nLe bonus de taux CRIT obtenu de cette manière ne peut pas dépasser 15%.",
+          "description": "Exécuter Sacrement mortel confère à tous les personnages de l'équipe proches (hormis Rosalia) un bonus de taux CRIT équivalant à 15 % du taux CRIT de Rosalia pendant 10 s. Le bonus de taux CRIT ainsi obtenu ne peut pas excéder 15 %.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Révélation impie",
-          "description": "Lorsque Rosaria inflige un CRIT Hit, sa VITESSE ATQ augmente de 10% et son DMG d'attaque normale augmente de 10% pendant 4s.",
+          "title": "Guide du pécheur",
+          "description": "Lorsque les attaques de Rosalia infligent un coup CRIT, sa VIT d'attaque et les DGT des attaques normales augmentent de 10 % pendant 4 s.",
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Terre sans promesse",
-          "description": "La durée de la lance de glace créée par les rites de fin est augmentée de 4s.",
+          "title": "Terre sacrée",
+          "description": "La durée de la lance de glace de Sacrement mortel est augmentée de 4s.",
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Les salaires du péché",
-          "description": "Augmente le niveau de la confession ravageuse de 3. Le niveau maximum est de 15.",
+          "title": "Rite de confession",
+          "description": "Augmente le niveau de Confession des péchés de 3. Le niveau maximum est de 15.",
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Grâce douloureuse",
-          "description": "Les coups critiques de Ravaging Confession régénèrent 5 points d'énergie pour Rosaria. Ne peut être déclenché qu'une fois à chaque fois que Ravaging Confession est lancé.",
+          "title": "Souffrance bénie",
+          "description": "Rosalia récupère 5 pts d'énergie élémentaire lorsque Confession des péchés inflige un coup CRIT. Cet effet ne peut être déclenché qu'une fois par Confession des péchés.",
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Derniers sacrements",
-          "description": "Augmente le niveau des rites de résiliation de 3. Le niveau maximum est de 15.",
+          "title": "Prière agonisante",
+          "description": "Augmente le niveau de Sacrement mortel de 3. Le niveau maximum est de 15.",
           "descriptions": {}
         },
         "5": {
           "key": "c6",
           "title": "Châtiment divin",
-          "description": "L'attaque des rites de terminaison diminue la RES physique de l'adversaire de 20% pendant 10s.",
+          "description": "Les attaques de Sacrement mortel réduisent la RES physique des ennemis de 20 % pendant 10 s.",
           "descriptions": {}
         }
       }
@@ -2783,7 +2783,7 @@
             },
             "1": {
               "key": "a2",
-              "description": "Effectue un tir visé plus précis et infligeant davantage de DGT. Lors de la visée, la flèche se charge en élément Hydro, infligeant des DGT Hydro quand elle est complètement chargée et qu'elle touche ; elle inflige également aux ennemis touchés l'effet Contre-courant.",
+              "description": "Effectue un tir visé, inflige des DGT Hydro si la flèche se charge complètement en élément.",
               "descriptions": {}
             },
             "2": {
