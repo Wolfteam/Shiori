@@ -2918,7 +2918,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Ironwind étranger",
+          "title": "Vents étrangers",
           "description": null,
           "abilities": {
             "0": {
@@ -2940,7 +2940,7 @@
         },
         "1": {
           "key": "s2",
-          "title": "Palm Vortex",
+          "title": "Épée de vortex",
           "description": "En saisissant la puissance du vent, vous formez un vortex de vide dans votre paume, provoquant un Anemo DMG continu aux ennemis devant vous. Le vortex de vide explose lorsque la durée de la compétence se termine, provoquant une plus grande quantité d'Anemo DMG sur une plus grande zone.",
           "abilities": {
             "0": {
@@ -2950,19 +2950,19 @@
             },
             "1": {
               "key": "a2",
-              "description": "Si le vortex entre en contact avec des éléments Hydro / Pyro / Cryo / Electro, il traitera des DMG élémentaires supplémentaires de ce type. L'absorption élémentaire ne peut se produire qu'une seule fois par utilisation.",
+              "description": "Si le vortex entre en contact avec des éléments Hydro / Pyro / Cryo / Electro, il infligera des DMG élémentaires supplémentaires de ce type. L'absorption élémentaire ne peut se produire qu'une seule fois par utilisation.",
               "descriptions": {}
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Rafale",
+          "title": "Rafale de vent",
           "description": "En guidant le chemin des courants de vent, vous invoquez une tornade qui se déplace vers l'avant qui tire les objets et les adversaires vers elle-même, infligeant continuellement Anemo DMG.",
           "abilities": {
             "0": {
               "key": "a1",
-              "description": "Si la tornade entre en contact avec des éléments Hydro / Pyro / Cryo / Electro, elle traitera des DMG élémentaires supplémentaires de ce type. L'absorption élémentaire ne peut se produire qu'une seule fois par utilisation.",
+              "description": "Si la tornade entre en contact avec des éléments Hydro / Pyro / Cryo / Electro, elle infligera des DMG élémentaires supplémentaires de ce type. L'absorption élémentaire ne peut se produire qu'une seule fois par utilisation.",
               "descriptions": {}
             }
           }
@@ -2971,14 +2971,14 @@
       "passives": {
         "0": {
           "key": "p2",
-          "title": "Vent de fente",
-          "description": "Le dernier coup d'un combo d'attaque normale libère une lame de vent, infligeant 60% d'ATK en tant qu'Anemo DMG à tous les adversaires sur son passage.",
+          "title": "Vent du ciel déchiré",
+          "description": "Le dernier coup d'attaque normale libère une lame de vent, qui inflige une quantité de DGT Anémo équivalant à 60% de l'ATQ aux ennemis sur sa route.",
           "descriptions": {}
         },
         "1": {
           "key": "p3",
-          "title": "Second souffle",
-          "description": "Palm Vortex tue 2% de PV de renégociation pendant 5s. Cet effet ne peut se produire qu'une fois toutes les 5s.",
+          "title": "Vent de guérison",
+          "description": "Épée de vortex restaure 2% des PV par seconde pendant 5s lorsqu'elle élimine un ennemi. Cet effet peut être déclenché une fois toutes les 5s.",
           "descriptions": {}
         }
       },
@@ -2986,13 +2986,13 @@
         "0": {
           "key": "c1",
           "title": "Vortex déchaîné",
-          "description": "Palm Vortex attire les ennemis dans un rayon de 5 m.",
+          "description": "Épée de vortex attire les ennemis dans un rayon de 5 mètres autour du personnage.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Tourbillon de soulèvement",
+          "title": "Soulèvement de tourbillon",
           "description": "Augmente la recharge d'énergie de 16%.",
           "secondDescription": null,
           "descriptions": {}
@@ -3000,28 +3000,28 @@
         "2": {
           "key": "c3",
           "title": "Rafale de balayage",
-          "description": "Augmente le niveau de rafale de rafale de 3. Le niveau maximum est de 15.",
+          "description": "Augmente le niveau de Rafale de vent de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Chérir les brises",
-          "description": "Réduit de 10% les DMG pris lors du lancement de Palm Vortex.",
+          "title": "Prévenance de brise",
+          "description": "Épée de vortex dure 10% plus longtemps et les DGT subis sont réduits de 10%.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Vortex Stellaris",
-          "description": "Augmentez le niveau de Palm Vortex de 3. Le niveau maximum est de 15.",
+          "title": "Vortex stellaire",
+          "description": "Augmentez le niveau d'Épée de vortex de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Vents entrelacés",
-          "description": "Les cibles qui prennent DMG de Gust Surge voient leur Anemo RES diminué de 20%. Si une absorption élémentaire s'est produite, alors leur RES vers l'élément correspondant est également diminué de 20%.",
+          "title": "Vents enlacés",
+          "description": "La RÉS Anémo des ennemis touchés par Rafale de Vent est réduite de 20%. En cas d'absorption élémentaire, leur RÉS à l'élément correspondant est également réduite de 20%.",
           "secondDescription": null,
           "descriptions": {}
         }
@@ -3056,8 +3056,8 @@
         },
         "1": {
           "key": "s2",
-          "title": "Épée de Starfell",
-          "description": "Vous dégorgez une météorite des profondeurs de la terre, infligeant AoE Geo DMG. La météorite est considérée comme une géo-construction et peut être escaladée ou utilisée pour bloquer les attaques.",
+          "title": "Épée d'étoile déchue",
+          "description": "Fait jaillir une météorite qui inflige des DGT Géo de zone, bloque les attaques et peut être escaladée.",
           "abilities": {
             "0": {
               "key": "a1",
@@ -3068,65 +3068,65 @@
         },
         "2": {
           "key": "s3",
-          "title": "Wake of Earth",
-          "description": "En dynamisant les éléments Geo profondément sous terre, vous déclenchez des ondes de choc en expansion. Renvoie les ennemis environnants et traite AoE Geo DMG. Un mur de pierre est érigé aux bords de l'onde de choc. Le mur de pierre est considéré comme une Geo Construct et peut être utilisé pour bloquer les attaques.",
+          "title": "Réveil de la terre",
+          "description": "Vague d'ondes de choc qui repousse les ennemis proches et inflige des DGT Géo de zone. Un mur de roche s'érige, qui bloque les attaques et peut être escaladé.",
           "abilities": {}
         }
       },
       "passives": {
         "0": {
           "key": "p2",
-          "title": "Darkrock brisé",
-          "description": "Réduit le CD de Starfell Sword de 2s.",
+          "title": "Roche brisée",
+          "description": "Réduit le TdR d'Épée d'étoile déchue de 2s.",
           "descriptions": {}
         },
         "1": {
           "key": "p3",
-          "title": "Glissement de pierre frénétique",
-          "description": "Le coup final d'un combo d'attaque normale déclenche un effondrement, infligeant 60% d'ATK comme AoE Geo DMG.",
+          "title": "Roche turbulente",
+          "description": "Le dernier coup d'attaque normale provoque un effondrement, qui inflige une quantité de DGT Géo équivalant à 60% de l'ATQ aux ennemis dans la zone.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Mur de pierre invincible",
-          "description": "Les alliés dans le rayon de Wake of Earth voient leur taux de CRIT augmenté de 10% et ont une résistance accrue contre les interruptions.",
+          "title": "Mur de roche incassable",
+          "description": "Les alliés dans le rayon de Réveil de la terre ont leur chances de CRIT augmentés de 10% et sont plus résistant aux interruptions",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Rockcore Meltdown",
-          "description": "Lorsque la météorite créée par Starfell Sword est détruite, elle explosera également, infligeant AoE Geo DMG supplémentaire égal au montant des dégâts infligés par Starfell Sword.",
+          "title": "Enfondrement de lave",
+          "description": "Quand la météorité créée par Épée d'étoile déchue est détruite, elle explosera, infligeant des DGT Géo de zone équivalant à ceux infligés par Épée d'étoile déchue",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Volonté du rocher",
-          "description": "Augmente le niveau d'éveil de la Terre de 3. Le niveau maximum est de 15.",
+          "title": "Volonté de roche",
+          "description": "Augmente le niveau de Réveil de la terre de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
           "title": "Force de réaction",
-          "description": "L'onde de choc déclenchée par Wake of Earth régénère 5 points d'énergie pour chaque ennemi touché. Un maximum de 25 Énergie peut être récupéré de cette manière à tout moment.",
+          "description": "L'onde de choc déclenchée par Réveil de la terre régénère 5 énergie élémentaire pour chaque ennemi touché. Un maximum de 25 énergie élémentaire peut être récupéré de cette manière.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
           "title": "Impact de météorite",
-          "description": "Augmentez le niveau de Starfell Sword de 3. Le niveau maximum est de 15.",
+          "description": "Augmentez le niveau d'Épée d'étoile déchue de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Rocher éternel",
-          "description": "La barrière créée par Wake of Earth dure 5 s de plus. La météorite créée par Starfell Sword dure 10 secondes de plus.",
+          "title": "Rocher de l'éternité",
+          "description": "Le mur de roche créé par Réveil de la terre dure 5s de plus. La météorité créée par Épée d'étoile déchue dure 10s de plus.",
           "secondDescription": null,
           "descriptions": {}
         }
