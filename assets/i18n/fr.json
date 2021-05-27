@@ -2313,7 +2313,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Art d'épée antique",
+          "title": "Escrime ancienne des nuages",
           "description": null,
           "abilities": {
             "0": {
@@ -2323,40 +2323,41 @@
             },
             "1": {
               "key": "a2",
-              "description": "Consomme une certaine quantité d'Endurance pour déclencher 2 coups d'épée rapides.",
+              "description": "Consomme de l'endurance pour déclencher deux coups d'épée rapides.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Plonge dans les airs pour frapper le sol en dessous, endommageant les ennemis le long du chemin et infligeant AoE DMG à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Adeptus Art: Héraut de givre",
-          "description": "En utilisant le Talisman de la veine glacée, Qiqi produit le héraut de givre, infligeant Cryo DMG aux ennemis proches.",
+          "title": "Arcane d'Adepte : Héraut de givre",
+          "description": "Utilise un talisman formé de glace et de sang pour invoquer un Héraut de givre, infligeant des DGT Cryo aux ennemis à proximité.",
           "abilities": {
             "0": {
               "name": "Héraut de givre",
               "description": "",
               "descriptions": {
-                "0": "Lorsque Qiqi touche une cible avec ses attaques normales ou chargées, elle régénère les PV de tous les membres du groupe et de tous les personnages alliés proches. Échelles de guérison basées sur l'ATK de Qiqi.",
-                "1": "Régénère les PV du personnage actuel à intervalles réguliers.",
-                "2": "Suit le personnage, infligeant Cryo DMG aux ennemis sur son chemin."
+                "0": "Les attaques normales et chargées de Qiqi restaurent les PV de vos personnages dans l'équipe ainsi que des alliés proches lorsqu'elles touchent. La quantité de PV restaurée est proportionnelle à l'ATQ de Qiqi.",
+                "1": "Régénère les PV de votre personnage déployé sur la durée.",
+                "2": "Le héraut restaure périodiquement les PV de Qiqi.",
+                "3": "Le héraut se déplace en suivant Qiqi et inflige des DGT Cryo aux ennemis sur sa route."
               }
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Adeptus Art: Conservateur de Fortune",
-          "description": "Qiqi libère le pouvoir d'adeptus scellé dans son corps, marquant les ennemis proches avec un talisman de préservation de fortune qui traite Cryo DMG.",
+          "title": "Arcane d'Adepte : Talisman sacré",
+          "description": "Qiqi libère le pouvoir d'Adepte scellé en elle et marque les ennemis d'un talisman qui leur inflige des DGT Cryo.",
           "abilities": {
             "0": {
               "name": "Talisman de fortune",
-              "description": "Lorsque les ennemis affectés par ce Talisman prennent DMG, le personnage qui a infligé ce DMG régénère HP.",
+              "description": "Les personnages récupèrent des PV équivalents aux DGT subis par les ennemis marqués.",
               "descriptions": {}
             }
           }
@@ -2366,62 +2367,62 @@
         "0": {
           "key": "p1",
           "title": "Anciens souvenirs de vie",
-          "description": "Affiche l'emplacement des ressources à proximité uniques à Liyue sur la mini-carte.",
+          "description": "Affiche l'emplacement des ressources uniques de Liyue à proximité  sur la mini-carte.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Méthodes qui prolongent la vie",
-          "description": "Lorsqu'un personnage sous les effets d'Adeptus Art: Herald of Frost déclenche une réaction élémentaire, son bonus de soins entrants est augmenté de 20% pendant 8s.",
+          "title": "Survie en milieu hostile",
+          "description": "Arcane d'Adepte : Héraut de givre confère un bonus de 20% de soins pendant 8 s lorsque le personnage déclenche une réaction élémentaire.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Un aperçu de l'Arcane",
-          "description": "Lorsque Qiqi frappe des ennemis avec ses attaques normales et chargées, elle a 50% de chances de leur appliquer un talisman de préservation de fortune pendant 6s. Cet effet ne peut se produire qu'une fois toutes les 30 secondes.",
+          "title": "Ouverture des arcanes",
+          "description": "Les attaques normales et chargées de Qiqi ont 50% de chance de marquer l'ennemi touché d'un talisman pendant 6 s. Cet effet peut se déclencher une fois toutes les 30 s.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Ascétique de givre",
-          "description": "Lorsque le héraut de givre frappe un ennemi marqué par un talisman de fortune, Qiqi régénère 2 points d'énergie.",
+          "title": "Ascèse du givre",
+          "description": "Qiqi récupère 2 pts d'énergie élémentaire à chaque fois que son Héraut de givre touche un ennemi marqué par un talisman.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Gelé jusqu'aux os",
-          "description": "Les DMG d'attaque normale et de charge de Qiqi contre les ennemis affectés par Cryo sont augmentés de 15%.",
+          "title": "Gelé jusqu'à l'os",
+          "description": "Les attaques normales et chargées de Qiqi infligent 15% de DGT supplémentaires contre les ennemis affactés par Cryo.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Ascendant Praise",
-          "description": "Augmente le niveau d'Adeptus Art: Preserver of Fortune de 3. Le niveau maximum est de 15.",
+          "title": "Louange vers le ciel",
+          "description": "Augmente le niveau d'Arcane d'Adepte : Talisman sacré: de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Suppression divine",
-          "description": "L'ATK des cibles marquées par le talisman de préservation de fortune a été réduite de 20%.",
+          "title": "Répression divine",
+          "description": "L'ATQ des cibles marquées par un talisman est réduite de 20%.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Fleur de lotus cramoisi",
-          "description": "Augmente le niveau d'Adeptus Art: Herald of Frost de 3. Le niveau maximum est de 15.",
+          "title": "Éclosion du lotus rouge",
+          "description": "Augmente le niveau d'Arcane d'Adepte : Héraut de givre de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Rite de la résurrection",
-          "description": "Utiliser Adeptus Art: Preserve of Fortune ravive tous les personnages tombés à proximité et régénère 50% de leurs PV. Cet effet ne peut se produire qu'une fois toutes les 15 minutes.",
+          "title": "Symbole de la renaissance",
+          "description": "L'activation d'Arcane d'Adepte : Talisman sacré réanime tous les personnages de l'équipe à proximité et restaure 50% de leurs PV. Cet effet peut être déclenché une fois toutes les 15 min.",
           "secondDescription": null,
           "descriptions": {}
         }
