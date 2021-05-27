@@ -3494,37 +3494,40 @@
             },
             "2": {
               "key": "a3",
-              "description": "Plonge de mi-aur pour frapper le sol en dessous, endommageant les ennemis le long du chemin et infligeant AoE DMG à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Guhua Sword - Écran de pluie fatal",
-          "description": "Xingqiu effectue deux frappes avec son épée, traitant Hydro DMG. Dans le même temps, cette capacité crée le nombre maximum d'épées de pluie, qui orbiteront autour du personnage. 20% du bonus Hydro DMG de Xingqiu sera converti en réduction supplémentaire de DMG pour les épées de pluie. Le montant maximum de réduction de DMG supplémentaire pouvant être obtenu de cette manière est de 24%. Le nombre maximum initial d'épées de pluie est de 3. L'utilisation de cette capacité applique le statut Humide au personnage.",
+          "title": "Épée Guhua : Pluie battante",
+          "description": "Lance une succession de 2 coups d'épée qui infligent des DGT Hydro aux ennemis en face. Dans le même temps, le personnage déployé s'entoure du nombre maximum d'épées de pluie. Les épées de pluie ont les propriétés suivantes : ",
           "abilities": {
             "0": {
               "name": "",
               "description": "Les épées de pluie ont les propriétés suivantes:",
               "descriptions": {
-                "0": "Lorsqu'un personnage prend de la DMG, l'épée de pluie se brisera, réduisant la quantité de DMG prise.",
-                "1": "Augmente la résistance du personnage à l'interruption."
+                "0": "Les épées se brisent lorsque Xingqiu subit des DGT et ce faisant réduisent les DGT subis.",
+                "1": "Les actions de Xingqiu sont plus difficiles à interrompre.",
+                "2": "20% du bonus de DGT Hydro de Xingqiu est converti en réduction de DGT supplémentaire par les épées de pluie.",
+                "3": "Jusqu'à 24% de réduction de DGT supplémentaire peut être obtenue de cette manière.",
+                "4": "Xingqiu commence avec 3 épées de pluie maximum. Applique l'état Trempé à Xingqiu lors du lancement."
               }
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Guhua Sword-Raincutter",
-          "description": "Lancez Rainbow Bladework et combattez en utilisant une pluie d'épée illusoire, tout en créant le nombre maximum d'épées de pluie.",
+          "title": "Épée Guhua : Pluie et arc-en-ciel",
+          "description": "Xingqiu fait appel à un déluge d'épées et combat avec une lame arc-en-ciel ; il s'entoure de plus du nombre maximum d'épées de pluie.",
           "abilities": {
             "0": {
               "name": "Lame arc-en-ciel",
               "description": "Ces effets se répercutent sur d'autres personnages.",
               "descriptions": {
-                "0": "Les attaques normales déclencheront des attaques consécutives de pluie d'épée, infligeant Hydro DMG.",
-                "1": "Les épées de pluie resteront au nombre maximum pendant toute la durée de la capacité."
+                "0": "Les attaques normales infligées par votre personnage déployé libèrent un déluge d'épées et infligent des DGT Hydro.",
+                "1": "Le nombre d'épées de pluie ne diminue pas."
               }
             }
           }
@@ -3533,14 +3536,14 @@
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Éclair de génie",
-          "description": "Lorsque Xingqiu fabrique des matériaux de talent de personnage, il a 25% de chances de rembourser une partie des matériaux de fabrication utilisés.",
+          "title": "Illumination",
+          "description": "Vous avez 25% de chance de récupérer des matériaux de synthèse lors de la synthèse de matériaux d'aptitude.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Hydrothérapique",
-          "description": "Lorsqu'une épée de pluie est brisée ou lorsque sa durée expire, elle régénère les PV du personnage actuel sur la base de 6% des PV max de Xingqiu.",
+          "title": "Clé d'invocation d'eau",
+          "description": "Lorsque l'épée de rideau pluvial est brisée par des attaques ou se termine, elle restaure les PV du personnage déployé basés sur 6% des PV max de Xingqiu.",
           "descriptions": {}
         },
         "2": {
@@ -3553,7 +3556,7 @@
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Le parfum est resté",
+          "title": "Le parfum est demeuré",
           "description": "Augmente le nombre maximum d'épées de pluie de 1.",
           "secondDescription": null,
           "descriptions": {}
@@ -3561,35 +3564,35 @@
         "1": {
           "key": "c2",
           "title": "Arc-en-ciel sur le ciel azur",
-          "description": "Prolonge la durée de Guhua Sword - Raincutter de 3s. Diminue l'Hydro RES des ennemis touchés par les attaques de pluie d'épée de 15% pendant 4s.",
+          "description": "Prolonge la durée d'Épée Guhua : Pluie et arc-en-ciel de 3 s. De plus, les épées de pluie réduisent la RÉS Hydro des ennemis qu'elles touchent de 15% pendant 4 s.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
           "title": "Tisseur de vers",
-          "description": "Augmente le niveau de Guhua Sword - Raincutter de 3. Le niveau maximum est de 15.",
+          "description": "Augmente le niveau de Épée Guhua : Pluie et arc-en-ciel de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Evilsoother",
-          "description": "Pendant toute la durée de Guhua Sword: Raincutter, le DMG infligé par Guhua Sword: Fatal Rainscreen est augmenté de 50%.",
+          "title": "Conquérant du dragon",
+          "description": "Épée Guhua : Pluie et arc-en-ciel inflige 50% de DGT supplémentaires lorsque Épée Guhua : Pluie battante est active.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
           "title": "Étreinte de la pluie",
-          "description": "Augmentez le niveau de Guhua Sword - Fatal Rainscreen de 3. Le niveau maximum est de 15.",
+          "description": "Augmentez le niveau d'Épée Guhua : Pluie battante de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Par conséquent, appelez-les mes propres versets",
-          "description": "Activer 2 de Guhua Sword - Les attaques de pluie à l'épée de Raincutter augmentent considérablement le DEG du troisième. Xingqiu régénère 3 points d'énergie lorsque les attaques de pluie d'épée touchent les ennemis.",
+          "title": "Rassemblement d'articles",
+          "description": "es DGT du déluge d'épées d'Épée Guhua : Pluie et arc-en-ciel augmentent considérablement tous les 2 pluies d'épées ; Xingqiu récupère de plus 3 pts d'énergie élémentaire.",
           "secondDescription": null,
           "descriptions": {}
         }
