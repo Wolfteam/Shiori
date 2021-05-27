@@ -22,7 +22,7 @@ abstract class TelemetryService {
 
   Future<void> trackAscensionMaterialsOpened();
 
-  Future<void> trackUrlOpened(bool loadMap, bool loadWishSimulator, bool networkAvailable);
+  Future<void> trackUrlOpened(bool loadMap, bool loadWishSimulator, bool loadDailyCheckIn, bool networkAvailable);
 
   Future<void> trackCalculatorItemAscMaterialLoaded(String item);
 

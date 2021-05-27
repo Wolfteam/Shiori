@@ -31,7 +31,8 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             final settingsService = getIt<SettingsService>();
-            return HomeBloc(genshinService, settingsService);
+            final localeService = getIt<LocaleService>();
+            return HomeBloc(genshinService, settingsService, localeService);
           },
         ),
         BlocProvider(
@@ -89,7 +90,8 @@ class MyApp extends StatelessWidget {
             final networkService = getIt<NetworkService>();
             final telemetryService = getIt<TelemetryService>();
             final deviceInfoService = getIt<DeviceInfoService>();
-            return UrlPageBloc(networkService, telemetryService, deviceInfoService);
+            final settingsService = getIt<SettingsService>();
+            return UrlPageBloc(networkService, telemetryService, deviceInfoService, settingsService);
           },
         ),
         BlocProvider(
@@ -125,6 +127,7 @@ class MyApp extends StatelessWidget {
               ctx.read<WeaponsBloc>(),
               ctx.read<HomeBloc>(),
               ctx.read<ArtifactsBloc>(),
+              ctx.read<ElementsBloc>(),
             )..add(const MainEvent.init());
           },
         ),
@@ -132,7 +135,7 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final settingsService = getIt<SettingsService>();
             final deviceInfoService = getIt<DeviceInfoService>();
-            return SettingsBloc(settingsService, deviceInfoService, ctx.read<MainBloc>(), ctx.read<HomeBloc>());
+            return SettingsBloc(settingsService, deviceInfoService, ctx.read<MainBloc>(), ctx.read<HomeBloc>(), ctx.read<UrlPageBloc>());
           },
         ),
         BlocProvider(

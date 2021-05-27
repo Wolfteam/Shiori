@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 
@@ -17,6 +18,7 @@ class MainTitle extends StatelessWidget {
       child: Text(
         title,
         style: theme.textTheme.headline6.copyWith(fontWeight: FontWeight.bold),
+        overflow: TextOverflow.ellipsis,
       ),
     );
   }

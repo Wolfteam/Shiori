@@ -19,15 +19,23 @@ abstract class DataService {
   ///
   /// If [item.useMaterialsFromInventory] is set to false, the same item will be returned without changes.
   /// Otherwise, it will be returned with [item.materials] property updated.
-  Future<ItemAscensionMaterials> addCalAscMatSessionItem(int sessionKey, ItemAscensionMaterials item);
+  Future<ItemAscensionMaterials> addCalAscMatSessionItem(int sessionKey, ItemAscensionMaterials item, {bool redistribute = true});
 
-  /// Updates the provided item in the specified [itemIndex] associated to the session [sessionKey]
+  /// Updates the provided item associated to the session [sessionKey]
+  ///
+  /// The item will be retrieved using the current value of [item.position]
+  /// and it will also be updated to the new position provided by [newItemPosition]
   ///
   /// If [item.useMaterialsFromInventory] is set to false, the same item will be returned without changes.
   /// Otherwise, it will be returned with [item.materials] property updated.
-  Future<ItemAscensionMaterials> updateCalAscMatSessionItem(int sessionKey, int itemIndex, ItemAscensionMaterials item);
+  Future<ItemAscensionMaterials> updateCalAscMatSessionItem(
+    int sessionKey,
+    int newItemPosition,
+    ItemAscensionMaterials item, {
+    bool redistribute = true,
+  });
 
-  Future<void> deleteCalAscMatSessionItem(int sessionKey, int itemIndex);
+  Future<void> deleteCalAscMatSessionItem(int sessionKey, int itemIndex, {bool redistribute = true});
 
   List<CharacterCardModel> getAllCharactersInInventory();
 

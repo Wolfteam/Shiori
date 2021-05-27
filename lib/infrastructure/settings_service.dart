@@ -15,6 +15,7 @@ class SettingsServiceImpl extends SettingsService {
   final _showWeaponDetailsKey = 'ShowWeaponDetailsKey';
   final _serverResetTimeKey = 'ServerResetTimeKey';
   final _doubleBackToCloseKey = 'DoubleBackToCloseKey';
+  final _useOfficialMapKey = 'UseOfficialMapKey';
 
   bool _initialized = false;
 
@@ -70,6 +71,12 @@ class SettingsServiceImpl extends SettingsService {
   set doubleBackToClose(bool value) => _prefs.setBool(_doubleBackToCloseKey, value);
 
   @override
+  bool get useOfficialMap => _prefs.getBool(_useOfficialMapKey);
+
+  @override
+  set useOfficialMap(bool value) => _prefs.setBool(_useOfficialMapKey, value);
+
+  @override
   AppSettings get appSettings => AppSettings(
         appTheme: appTheme,
         useDarkAmoled: false,
@@ -80,6 +87,7 @@ class SettingsServiceImpl extends SettingsService {
         isFirstInstall: isFirstInstall,
         serverResetTime: serverResetTime,
         doubleBackToClose: doubleBackToClose,
+        useOfficialMap: useOfficialMap,
       );
 
   SettingsServiceImpl(this._logger);
@@ -134,6 +142,11 @@ class SettingsServiceImpl extends SettingsService {
       doubleBackToClose = false;
     }
 
+    if (_prefs.get(_useOfficialMapKey) == null) {
+      _logger.info(runtimeType, 'Use the official map will be set to its default (false)');
+      useOfficialMap = false;
+    }
+
     _initialized = true;
     _logger.info(runtimeType, 'Settings were initialized successfully');
   }
@@ -142,6 +155,14 @@ class SettingsServiceImpl extends SettingsService {
     try {
       _logger.info(runtimeType, '_getDefaultLangToUse: Trying to retrieve device lang...');
       final deviceLocale = await Devicelocale.currentAsLocale;
+      if (deviceLocale == null) {
+        _logger.warning(
+          runtimeType,
+          "_getDefaultLangToUse: Couldn't retrieve the device locale, falling back to english",
+        );
+        return AppLanguageType.english;
+      }
+
       final appLang = languagesMap.entries.firstWhere((val) => val.value.code == deviceLocale.languageCode, orElse: () => null);
       if (appLang == null) {
         _logger.info(

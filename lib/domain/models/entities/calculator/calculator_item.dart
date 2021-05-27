@@ -11,7 +11,7 @@ class CalculatorItem extends HiveObject {
   final String itemKey;
 
   @HiveField(2)
-  final int position;
+  int position;
 
   @HiveField(3)
   final int currentLevel;

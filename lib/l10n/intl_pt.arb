@@ -8,6 +8,7 @@
   "russian": "Russo",
   "simplifiedChinese": "Chinês (Simplificado)",
   "portuguese": "Português",
+  "italian": "Italiano",
   "bow": "Arco",
   "claymore": "Espadão",
   "sword": "Espada",
@@ -289,6 +290,11 @@
   "fatui": "Fatui",
   "automaton": "Autômato",
   "droppedBy": "Obtido de",
-  "pressOnceAgainToExit": "Press once again to exit",
-  "discordServer": "Discord Server"
+  "pressOnceAgainToExit": "Aperte novamente para sair",
+  "discordServer": "Servidor discord",
+  "usedItem": "Item usado",
+  "itemIsBeingUsedOnACalculation": "Este item está sendo usado em uma ou mais sessões de calculadora.\nA quantidade usada é {quantity}",
+  "useOfficialMap": "Use o mapa oficial",
+  "dailyCheckIn": "Check-in diário",
+  "dailyCheckInMsg": "Não se esqueça de reivindicar suas recompensas diárias aqui!"
 }
