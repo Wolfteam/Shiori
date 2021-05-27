@@ -3133,13 +3133,13 @@
       }
     },
     "27": {
-      "key": "Vingt",
-      "name": "Vingt",
+      "key": "Venti",
+      "name": "Venti",
       "description": "L’un des nombreux bardes de Mondstadt, qui déambule librement dans les rues et les ruelles de la ville.",
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Compétence divine",
+          "title": "Archerie divine",
           "description": null,
           "abilities": {
             "0": {
@@ -3149,41 +3149,42 @@
             },
             "1": {
               "key": "a2",
-              "description": "Effectuez un tir ciblé plus précis avec une DMG accrue. Lors de la visée, des vents favorables s'accumulent sur la pointe de la flèche. Une flèche complètement chargée traitera Anemo DMG.",
+              "description": "Effectue un tir visé plus précis infligeant davantage de DGT. Lors de la visée, la flèche se charge en élément Anémo, infligeant de considérables DGT Anémo quand elle est complètement chargée.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Tire une pluie de flèches dans les airs avant de tomber et de heurter le sol, infligeant AoE DMG à l'impact.",
+              "description": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Skyward Sonnet",
+          "title": "Sonnet des Vents célestes",
           "description": "O vent sur lequel volent tous les hymnes et les chants, portez ces marcheurs de la terre dans le ciel!",
           "abilities": {
             "0": {
               "key": "a1",
-              "description": "Invoque un domaine du vent à l'emplacement de l'ennemi, infligeant AoE Anemo DMG et lançant des ennemis dans les airs.",
+              "description": "Venti invoque une bourrasque sur la position de l'ennemi, qui inflige des DGT Anémo de zone et projette les ennemis en l'air.",
               "descriptions": {}
             },
             "1": {
               "key": "a2",
-              "description": "Invoque un domaine de vent encore plus grand avec Venti comme épicentre, infligeant AoE Anemo DMG et lançant les ennemis affectés dans les airs. Après avoir libéré la version Hold de cette capacité, Venti chevauche le vent dans les airs. Les ennemis touchés par Skyward Sonnet tomberont lentement au sol.",
+              "description": "Venti invoque une bourrasque plus puissante sur sa position, qui inflige des DGT Anémo de zone et projette les ennemis proches en l'air. L'appui long permet à Venti de voler dans les airs. Les ennemis projetés en l'air retombent lentement au sol.",
               "descriptions": {}
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Grand Ode du vent",
-          "description": "Tire une flèche composée d'innombrables vents fusionnés, créant un énorme Stormeye qui aspire les objets et les ennemis le long de son chemin, infligeant continuellement Anemo DMG.",
+          "title": "Ode au Vent",
+          "description": "Venti tire une flèche porteuse de la puissance de mille vents et de l'Œil de la tempête. Ce dernier attire les ennemis en son centre, et inflige des DGT Anémo continus.",
           "abilities": {
             "0": {
               "key": "a1",
-              "description": "Si le Stormeye entre en contact avec des éléments Hydro / Pyro / Cryo / Electro, il traitera du DMG élémentaire supplémentaire de ce type. L'absorption élémentaire ne peut se produire qu'une seule fois par utilisation.",
+              "title": "bsorption élémentaire",
+              "description": "L'Œil de la tempête absorbe les éléments Hydro, Pyro, Cryo et Électro avec lesquels il entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant.",
               "descriptions": {}
             }
           }
@@ -3192,63 +3193,63 @@
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Coureur du vent",
-          "description": "Diminue la consommation d'endurance de tous les membres du groupe de 20%.",
+          "title": "Chevaucheur du vent",
+          "description": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20% lors du planage. Ne peut être cumulé avec d'autres aptitudes passives ayant les mêmes effets.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
           "title": "Étreinte des vents",
-          "description": "Tenir Skyward Sonnet crée un courant ascendant qui dure 20s.",
+          "description": "L'appui long de Sonnet des Vents célestes génère une bourrasque ascendante qui dure 20 s.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Stormeye",
-          "description": "Régénère 15 points d'énergie pour Venti après la fin des effets de la Grand Ode du vent. Si une absorption élémentaire a eu lieu, cela restaure également 15 énergie à tous les personnages de cet élément correspondant.",
+          "title": "Œil de la tempête",
+          "description": "Venti récupère 15 pts d'énergie élémentaire à la fin d'Ode au Vent. En cas d'absorption élémentaire, les personnages de l'élément correspondant récupèrent également 15 pts d'énergie élémentaire.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Coup de vent",
-          "description": "Tire 2 flèches supplémentaires par tir visé, chacune infligeant 33% du DEG de la flèche d'origine.",
+          "title": "Vent violent fractionné",
+          "description": "Le tir visé tire 2 flèches supplémentaires, chacune infligeant 33% des DGT de la flèche d'origine.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Brise de réminiscence",
-          "description": "Skyward Sonnet réduit Anemo RES ennemi de 12% pendant 10s. Les ennemis lancés par Skyward Sonnet subissent une diminution supplémentaire de 12% de la RES Anemo et de la RES physique en vol.",
+          "title": "Bise de réminiscence",
+          "description": "Sonnet des Vents célestes réduit la RÉS Anémo et la RÉS physique des ennemis de 12% pendant 10 s. La RÉS Anémo et la RÉS physique des ennemis projetés en l'air par Sonnet des Vents célestes sont réduites de 12% tant qu'ils sont en l'air.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Ode aux mille vents",
-          "description": "Augmente le niveau de la Grand Ode du vent de 3. Le niveau maximum est de 15.",
+          "title": "L'Ode aux mille vents",
+          "description": "Augmente le niveau d'Ode au Vent de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Ouragan de la liberté",
-          "description": "Lorsque Venti récupère un orbe ou une particule élémentaire, il reçoit un bonus Anemo DMG de 25% pendant 10s.",
+          "title": "Vent glacial de liberté",
+          "description": "Venti inflige 25% DGT Anémo supplémentaires pendant 10 s lorsqu'il obtient un orbe ou une particule élémentaire.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Concert dal Cielo",
-          "description": "Augmentez le niveau de Skyward Sonnet de 3. Le niveau maximum est de 15.",
+          "title": "Concerto céleste",
+          "description": "Augmentez le niveau de Sonnet des Vents célestesde 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Tempête de défi",
-          "description": "Les cibles qui prennent DMG de la Grand Ode de Wind voient leur Anemo RES diminué de 20%. Si une absorption élémentaire s'est produite, alors leur RES vers l'élément correspondant est également diminué de 20%.",
+          "title": "Tempête de résistance",
+          "description": "La RÉS Anémo des ennemis touchés par Ode au Vent est réduite de 20%. En cas d'absorption élémentaire, leur RÉS à l'élément correspondant est également réduite de 20%.",
           "secondDescription": null,
           "descriptions": {}
         }
