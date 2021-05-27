@@ -3262,7 +3262,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Pâte-Fu",
+          "title": "Cuisine-fu",
           "description": null,
           "abilities": {
             "0": {
@@ -3272,46 +3272,46 @@
             },
             "1": {
               "key": "a2",
-              "description": "Consomme une certaine quantité d'Endurance pour fendre vers l'avant, infligeant des dégâts aux ennemis en cours de route.",
+              "description": " Charge en ligne droite et inflige des DGT aux ennemis sur sa route ; cette attaque consomme de l'endurance.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Plonge dans les airs pour frapper le sol en dessous, endommageant les ennemis le long du chemin et infligeant AoE DMG à l'impact.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Attaque de Guoba",
-          "description": "Invoque Guoba le Panda. Guoba respire continuellement le feu, infligeant AoE Pyro DMG.",
+          "title": "Attaque Gooba",
+          "description": "Xiangling invoque le panda Gooba. Tant que Gooba est actif, il crache du feu sur les ennemis, leur infligeant des DGT pyro de zone continus.",
           "abilities": {}
         },
         "2": {
           "key": "s3",
-          "title": "Pyronado",
-          "description": "Montrant sa maîtrise à la fois du feu et des armes à feu, Xiangling envoie un Pyronado tourbillonner autour d'elle. Le Pyronado se déplacera avec votre personnage tant que la capacité persiste, infligeant Pyro DMG à tous les ennemis sur son chemin.",
+          "title": "Pyrotation",
+          "description": "Montrant sa maîtrise à Démontrant à nouveau sa maîtrise du feu et des armes, Xiangling libère une tornade de feu qui tournoie autour d'elle. La tornade suit le personnage tant qu'elle est active, infligeant des DGT Pyro aux ennemis sur sa route.",
           "abilities": {}
         }
       },
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Chef de Cuisine",
-          "description": "Lorsque Xiangling cuisine parfaitement un plat boostant l'ATK, elle a 12% de chances de recevoir le double du produit.",
+          "title": "Cheffe cuisinière",
+          "description": "12 % de chance d'obtenir un plat supplémentaire lorsque vous cuisinez un plat parfait qui renforce l'ATQ.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
           "title": "Feux croisés",
-          "description": "Augmente la portée des flammes de Guoba de 20%.",
+          "description": "Augmente la portée des jets de feu de Gooba de 20 %.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Attention, il fait très chaud!",
-          "description": "Lorsque l’effet de Guoba Attack prend fin, Guoba laisse un piment à l’endroit où il a disparu. Ramasser un piment augmente l'ATK de 10% pendant 10s.",
+          "title": "Attention, ça pique",
+          "description": "À la fin d'Attaque Gooba, le gentil petit Gooba laisse quelques piments sur sa position avant de disparaître. Ces piments confèrent un bonus de 10 % d'ATQ pendant 10 s.",
           "descriptions": {}
         }
       },
@@ -3319,42 +3319,41 @@
         "0": {
           "key": "c1",
           "title": "Croustillant à l'extérieur, tendre à l'intérieur",
-          "description": "Les ennemis touchés par les attaques de Guoba voient leur Pyro RES réduite de 15% pendant 6s.",
-          "secondDescription": null,
+          "description": "La RÉS Pyro des ennemis touchés par Gooba est réduite de 15% pendant 6 s."
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "L'huile rencontre le feu",
-          "description": "La dernière attaque d'une séquence d'attaque normale applique le statut Implode à l'ennemi pendant 2s. Une explosion se produira une fois cette durée terminée, infligeant 75% de l'ATK de Xiangling en AoE Pyro DMG.",
+          "title": "L'huile sur le feu",
+          "description": "Le dernier coup d'attaque normale inflige pendant 2 s un effet d'implosion aux ennemis. Au bout de ce délai, ils explosent, infligeant des DGT Pyro de zone équivalent à 75% de l'ATQ.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
           "title": "Bien frit",
-          "description": "Augmente le niveau de Pyronado de 3. Le niveau maximum est de 15.",
+          "description": "Augmente le niveau de Pyrotation  de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Slowbake",
+          "title": "Douce cuisine",
           "description": "La durée de Pyronado est augmentée de 40%.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Guoba fou",
+          "title": "Colère de Gooba",
           "description": "Augmente le niveau d'attaque de Guoba de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Pyronado condensé",
-          "description": "Pendant toute la durée de Pyronado, tous les membres du groupe reçoivent un bonus Pyro DMG de 15%.",
+          "title": "Pyrotation condensée",
+          "description": "Les DGT Pyro de tous les personnages de l'équipe augmentent de 15% tant que Pyrotation est active.",
           "secondDescription": null,
           "descriptions": {}
         }
