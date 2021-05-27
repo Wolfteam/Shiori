@@ -3366,7 +3366,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Poussée tourbillon",
+          "title": "Coup de tourbillon",
           "abilities": {
             "0": {
               "key": "a1",
@@ -3375,34 +3375,34 @@
             },
             "1": {
               "key": "a2",
-              "description": "Consomme une certaine quantité d'Endurance pour effectuer une poussée ascendante.",
+              "description": "Consomme de l'endurance pour exécuter une attaque ascendante.",
               "descriptions": {}
             },
             "2": {
               "key": "a3",
-              "description": "Plonge dans les airs pour frapper le sol en dessous, endommageant les ennemis le long du chemin et infligeant AoE DMG à l'impact.\nXiao n'empêche pas DMG d'effectuer des attaques plongeantes.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact. Xiao ne suvit pas de DGT lorsqu'il exécute une attaque descendante.",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Cyclisme à vent lemniscatique",
-          "description": "Xiao se précipite en avant, infligeant Anemo DMG aux adversaires sur son chemin.\nPeut être utilisé dans les airs.\nCommence avec 2 charges.",
+          "title": "Cycle du vent lemniscatique",
+          "description": "Xiao se précipite vers l'avant, infligeant des DGT Anémo aux ennemis sur sa route. Fonctionne aussi dans les airs. Xiao commence avec 2 charges.",
           "abilities": {}
         },
         "2": {
           "key": "s3",
-          "title": "Fléau de tout le mal",
-          "description": "Xiao enfile le masque de Yaksha qui a fait trembler les dieux et les démons il y a des millénaires.",
+          "title": "Fléau du mal",
+          "description": "Xiao arbore le Masque du Yaksha, qui, il y a bien longtemps, fit trembler dieux et démons.",
           "abilities": {
             "0": {
-              "description": "Masque de Yaksha",
+              "description": "Masque du Yaksha",
               "descriptions": {
-                "0": "Augmente considérablement la capacité de saut de Xiao.",
-                "1": "Augmente sa zone d'attaque et attaque DMG.",
-                "2": "Convertit l'attaque DMG en Anemo DMG, qui ne peut être annulée par aucune autre infusion élémentaire. Dans cet état, Xiao perdra continuellement des HP.",
-                "3": "Les effets de cette compétence prennent fin lorsque Xiao quitte le terrain."
+                "0": "Améliore considérablement la capacité de saut de Xiao.",
+                "1": "Augmente la portée et les DGT d'attaque.",
+                "2": "Les DGT d'attaque sont convertis en DGT Anémo ne pouvant pas être enchantés.",
+                "3": "Cet effet consomme des PV de façon continue. L'état prend fin lorsque Xiao est vaincu ou quitte le champ de bataille.ain."
               }
             }
           }
@@ -3411,63 +3411,62 @@
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Transcension: Gravity Defier",
-          "description": "Diminue de 20% la consommation d'endurance ascendante des membres de votre propre groupe.\nNon cumulable avec les talents passifs qui fournissent exactement les mêmes effets.",
+          "title": "Transcendance : Contrôleur de gravité",
+          "description": "Réduit la consommation d'endurance des personnages de l'équipe de 20% lors de l'escalade.  Ne peut pas être cumulé avec d'autres aptitudes passives ayant les mêmes effets.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Conquérant du mal: Dompteur des démons",
-          "description": "Sous les effets de Bane of All Evil, tous les DMG infligés par Xiao augmentent de 5%. Les DEG augmentent de 5% supplémentaires toutes les 3 secondes de persistance de la capacité.\nLe bonus DMG maximum est de 25%.",
+          "title": "Fléau du mal : Dompteur des démons",
+          "description": "Sous les effets de Fléau du mal, tous les DMG infligés par Xiao augmentent de 5%. Les DEG augmentent de 5% supplémentaires toutes les 3 secondes de persistance de la capacité.\nLe bonus DMG maximum est de 25%.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Dissolution Eon: Heaven Fall",
-          "description": "L'utilisation de Lemniscatic Wind Cycling augmente la DMG des utilisations ultérieures de Lemniscatic Wind Cycling de 15%.\n Cet effet dure 7s et a un maximum de 3 cumuls. Gagner une nouvelle pile actualise la durée de l'effet.",
+          "title": "Dissolution d'éon : Chute des cieux",
+          "description": "Cycle du vent lemniscatique inflige 15% de DGT en plus lorsqu'il est relancé dans les 7 s. Cet effet dure 7 s et peut être cumulé 3 fois au maximum. Le délai est réinitialisé à chaque nouveau cumul.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Dissolution Eon: Destructeur des mondes",
-          "description": "Augmente de 1 les frais de Lemniscatic Wind Cycling.",
+          "title": "Dissolution d'éon : Destructeur de mondes",
+          "description": "Confère une charge supplémentaire pour Cycle du vent lemniscatique.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Annihilation Eon: Fleur de Kaleidos",
-          "description": "Lorsque vous êtes en groupe et non sur le terrain, la recharge d'énergie de Xiao est augmentée de 25%.",
+          "title": "Annihilation d'éon : Fleur du kaléidoscope",
+          "description": "La recharge d'énergie de Xiao augmente de 25% lorsqu'il fait partie de l'équipe mais n'est pas déployé.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Conquérant du mal: Déité de la colère",
+          "title": "Dompteur de démons: Dieu de la colère",
           "description": "Augmente le niveau de cyclage du vent lemniscatique de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Transcension: extinction de la souffrance",
-          "description": "Lorsque les PV de Xiao tombent en dessous de 50%, il gagne un bonus DEF de 100%.",
+          "title": "Transcendance : Extinction de la souffrance",
+          "description": "Xiao bénéficie d'un bonus de DÉF de 100% quand ses PV tombent en dessous de 50%.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Evolution Eon: Origine de l'ignorance",
-          "description": "Augmentez le niveau de fléau de tous les maux de 3. Le niveau maximum est de 15.",
+          "title": "Évolution d'éon : Origine de l'ignorance",
+          "description": "Augmentez le niveau de Fléau du mal de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Conquérant du mal: Gardien Yaksha",
-          "description": "Sous les effets de Bane of All Evil, frapper au moins 2 adversaires avec l'attaque plongeante de Xiao lui accordera immédiatement 1 charge de Lemniscatic Wind Cycling, et pour les 1s suivants, il peut utiliser Lemniscatic Wind Cycling tout en ignorant son CD.",
+          "title": "Dompteur de démons : Gardien YakshaLorsque Fléau du mal est actif, les attaques descendantes touchant au moins 2 ennemis confèrent immédiatement une charge de Cycle du vent lemniscatique supplémentaires, qui peut être activée dans la seconde qui suit, même s'il n'est pas entièrement rechargé.",
           "secondDescription": null,
           "descriptions": {}
         }
