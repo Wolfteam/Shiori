@@ -2773,7 +2773,7 @@
       "skills": {
         "0": {
           "key": "s1",
-          "title": "Torrent de coupe",
+          "title": "Taille du torrent",
           "description": null,
           "abilities": {
             "0": {
@@ -2783,28 +2783,28 @@
             },
             "1": {
               "key": "a2",
-              "description": "Effectuez un tir ciblé plus précis avec une DMG accrue. Lors de la visée, la puissance de l'Hydro s'accumule sur la pointe de la flèche. Une flèche complètement chargée avec le torrent traitera Hydro DMG et appliquera le statut Riptide.",
+              "description": "Effectue un tir visé plus précis et infligeant davantage de DGT. Lors de la visée, la flèche se charge en élément Hydro, infligeant des DGT Hydro quand elle est complètement chargée et qu'elle touche ; elle inflige également aux ennemis touchés l'effet Contre-courant.",
               "descriptions": {}
             },
             "2": {
               "name": "contre-courant",
-              "description": "Les adversaires affectés par Riptide souffriront des effets AoE Hydro DMG lorsqu'ils sont attaqués par Tartaglia de différentes manières. Les DMG traités de cette manière sont considérés comme des DMG d'attaque normale.",
+              "description": "Les ennemis affectés par cet effet subissent l'un des types de DGT Hydro de zone suivants lorsque Tartaglia attaque ; les DGT infligés par ces effets comptent comme les DGT d'une attaque normale.",
               "descriptions": {
-                "0": "Riptide Flash: un tir ciblé entièrement chargé qui frappe un adversaire affecté par Riptide inflige des combats consécutifs d'AoE DMG. Peut se produire une fois toutes les 0,7 s.",
-                "1": "Riptide Burst: vaincre un adversaire affecté par Riptide a créé une explosion Hydro qui inflige le statut Riptide aux adversaires proches touchés."
+                "0": "Contre-courant : Flash : Les tirs visés complètement chargés touchant les ennemis affectés par Contre-courant infligent des DGT de zone consécutifs. Contre-courant : Flas peut être déclenché une fois toutes les 0,7 s.",
+                "1": "Contre-courant : Éclat : Vaincre un ennemi affecté par Contre-courant provoque une onde qui inflige l'effet Contre-courant aux ennemis proches."
               }
             },
             "3": {
               "key": "a4",
-              "description": "Tire une pluie de flèches dans les airs avant de tomber et de heurter le sol, infligeant AoE DMG à l'impact. Lorsque Tartaglia est dans Foul Legacy: Raging Tide's Melee Stance, il ne peut pas effectuer d'attaque plongeante.",
+              "description": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact. Impossible d'utiliser l'attaque descendante lors de l'activation de Posture du démon : Marée déchaînée (état de mêlée).",
               "descriptions": {}
             }
           }
         },
         "1": {
           "key": "s2",
-          "title": "Foul Legacy: Raging Tide",
-          "description": "Libère un ensemble d'armes faites d'eau pure, infligeant Hydro DMG aux adversaires environnants et entrant dans une posture de mêlée. Dans cette posture, les attaques normales et chargées de Tartaglia changent comme suit:",
+          "title": "Posture du démon : Marée déchaînée",
+          "description": "Tartaglia invoque un arsenal d'armes exploitant la puissance de l'eau pure et infligeant des DGT Hydro aux ennemis proches ; Tartaglia entre en état de mêlée. En état de mêlée, les attaques normales et chargées de Tartaglia sont converties en DGT Hydro ne pouvant pas être enchantés, et changent :",
           "abilities": {
             "0": {
               "key": "a1",
@@ -2813,34 +2813,34 @@
             },
             "1": {
               "key": "a2",
-              "description": "Consomme une certaine quantité d'Endurance pour déclencher une barre oblique croisée, infligeant Hydro DMG.",
+              "description": "Exécute une frappe croisée rapide et inflige des DGT Hydro ; cette attaque consomme de l'endurance.",
               "descriptions": {}
             },
             "2": {
-              "name": "Riptide Slash",
-              "description": "Frapper un adversaire affecté par Riptide avec une attaque de mêlée déclenche un Riptide Slash qui inflige AoE Hydro DMG. Les DMG traités de cette manière sont considérés comme des DMG de compétence élémentaire et ne peuvent se produire qu'une fois toutes les 1,5s. Après 30s, ou lorsque la capacité est à nouveau libérée, cette compétence prend fin. Tartaglia retournera à sa position à distance et cette capacité entrera dans le CD. Plus Tartaglia reste longtemps dans sa position de mêlée, plus le CD est long. Si le retour à une position à distance se produit automatiquement après 30s, le CD est encore plus long.",
+              "name": "Contre-courant : Entaille",
+              "description": "Les attaques de mêlée appliquent à nouveau l'effet Contre-courant lorsqu'elles touchent un ennemi affecté par Contre-courant. Ceci inflige des DGT Hydro de zone. Les DGT infligés par Contre-courant : Entaille comptent comme des DGT de compétence élémentaire. Contre-courant : Entaille peut être déclenché une fois toutes les 1,5 s. La compétence prend fin après 30 s, ou lorsque vous appuyez dessus à nouveau. Tartaglia repasse alors en état de distance ; le TdR de la compétence est réinitialisé, et dure plus longtemps si l'état de mêlée a perduré. L'état de mêlée ne peut exéder 30 s. Au bout de cette durée, Tartaglia repasse automatiquement à l'état de distance.",
               "descriptions": {}
             }
           }
         },
         "2": {
           "key": "s3",
-          "title": "Saveur: Oblitération",
-          "description": "Effectue différentes attaques en fonction de la position de Tartaglia lors du lancement.",
+          "title": "Ravage : Oblitération",
+          "description": "Tartaglia effectue différentes attaques selon l'état dans lequel il se trouve :",
           "abilities": {
             "0": {
-              "name": "Position à distance: Flash of Havoc",
-              "description": "Tire rapidement une flèche magique imprégnée d'hydro, infligeant AoE Hydro DMG et appliquant le statut Riptide. Renvoie une partie de son coût énergétique après utilisation.",
+              "name": "État à distance : Éclair de balle maléfique",
+              "description": "Tire rapidement devant lui une flèche gorgée de magie Hydro, qui inflige des DGT Hydro de zone ainsi que l'effet Contre-courant aux ennemis en face. Restaure une partie de l'énergie élémentaire à la fin de l'attaque.",
               "descriptions": {}
             },
             "1": {
-              "name": "Posture de mêlée: Oblitération légère",
-              "description": "Effectue un slash avec un grand AoE, infligeant un énorme Hydro DMG à tous les adversaires environnants, ce qui déclenche Riptide Blast.",
+              "name": "État de mêlée : Lumière d'élimination",
+              "description": "Exécute une large entaille circulaire, qui inflige d'importants DGT Hydro à tous les ennemis proches et peut générer l'effet Torrent.",
               "descriptions": {}
             },
             "2": {
-              "name": "Riptide Blast",
-              "description": "Lorsque les eaux oblitérantes touchent un adversaire affecté par Riptide, cela efface son statut de Riptide et déclenche une Hydro Explosion qui inflige AoE Hydro DMG. Le DMG traité de cette manière est considéré comme un DMG Elemental Burst.",
+              "name": "Contre-courant : Torrent",
+              "description": "Lorsqu'elle touche un ennemi affecté par Contre-courant, Lumière d'élimination consomme cet effet et inflige des DGT Hydro de zone. Les DGT infligés par Contre-courant : Torrent comptent comme les DGT d'un déchaînement élémentaire.",
               "descriptions": {}
             }
           }
@@ -2849,63 +2849,63 @@
       "passives": {
         "0": {
           "key": "p1",
-          "title": "Maître de l'armement",
-          "description": "Augmente le niveau d'attaque normal de votre propre membre de 1.",
+          "title": "Maîtrise de l'armement",
+          "description": "Augmente le niveau des attaques normales des personnages de votre équipe de 1.",
           "descriptions": {}
         },
         "1": {
           "key": "p2",
-          "title": "Sans fin",
-          "description": "Prolonge la durée de Riptide de 8 s.",
+          "title": "Fin infinie",
+          "description": "L'effet Contre-courant est prolongé de 8 s.",
           "descriptions": {}
         },
         "2": {
           "key": "p3",
-          "title": "Épée des torrents",
-          "description": "Lorsque Tartaglia est dans Foul Legacy: Raging Tide's Melee Stance, ou si ses attaques normales et chargées font CRIT DMG, ils appliqueront l'effet de statut Riptide à l'ennemi touché.",
+          "title": "Épée hydromorphe",
+          "description": "Les ennemis subissant des coups CRIT lors d'attaques normales et chargées sont aussi affectés par l'effet Contre-courant tant que l'état de mêlée de Posture du démon : Marée déchaînée est actif.",
           "descriptions": {}
         }
       },
       "constellations": {
         "0": {
           "key": "c1",
-          "title": "Foul Legacy: Tide Withholder",
-          "description": "Diminue le CD de Foul Legacy: Raging Tide de 20%.",
+          "title": "Posture du démon : Vague au calme",
+          "description": "Réduit le TdR de Posture du démon : Marée déchaînée de 20%.",
           "secondDescription": null,
           "descriptions": {}
         },
         "1": {
           "key": "c2",
-          "title": "Foul Legacy: Understream",
-          "description": "Lorsque les adversaires affectés par Riptide sont vaincus, Tartaglia régénère 4 Énergie élémentaire.",
+          "title": "Posture du démon : Courant souterrain",
+          "description": "Vaincre un ennemi affecté par Contre-courant restaure 4 pts d'énergie élémentaire à Tartaglia.",
           "secondDescription": null,
           "descriptions": {}
         },
         "2": {
           "key": "c3",
-          "title": "Chaos abyssal: Vortex de tourmente",
-          "description": "Augmente le niveau de l'héritage fâché: marée déchaînée de 3. Le niveau maximum est de 15.",
+          "title": "Chaos de l'Abîme : Vortex d'agitation",
+          "description": "Augmente le niveau de Posture du démon : Marée déchaînée de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "3": {
           "key": "c4",
-          "title": "Chaos abyssal: Hydrospout",
-          "description": "Si Tartaglia est dans Foul Legacy: Raging Tide's Melee Stance, déclenche Riptide Slash contre des adversaires sur le terrain touché par Riptide toutes les 4s, sinon, déclenche Riptide Flash. Les Riptide Slashes et Riptide Flashs déclenchés par cet effet Constellation ne sont pas soumis aux intervalles de temps qui s'appliqueraient généralement à ces deux effets Riptide et n'ont aucun effet sur ces intervalles de temps.",
+          "title": "Chaos de l'Abîme : Fleur de l'eau condensée",
+          "description": "Lorsque Tartaglia est dans l'état de mêlée de Posture du démon : Marée déchaînée, un Contre-courant : Entaille est déclenché contre les ennemis affectés par l'effet Contre-courant toutes les 4 s ; sinon, il déclenche un Contre-courant : Flash. Les Contre-courant : Entaille et Contre-courant : Flash déclenchés par cette constellation ne sont pas influencés par les intervalles de déclenchement de ces deux effets Contre-courant, et n'affectent pas leur propre intervalle de déclenchement.",
           "secondDescription": null,
           "descriptions": {}
         },
         "4": {
           "key": "c5",
-          "title": "Havoc: Lame sans forme",
-          "description": "Augmentez le niveau de ravage: Oblitération de 3. Le niveau maximum est de 15.",
+          "title": "Ravage : Lame sans forme",
+          "description": "Augmentez le niveau de Ravage : Oblitération de 3. Le niveau maximum est de 15.",
           "secondDescription": null,
           "descriptions": {}
         },
         "5": {
           "key": "c6",
-          "title": "Havoc: Annihilation",
-          "description": "Lorsque Havoc: Obliteration est lancé en Melee Stance, le CD de Foul Legacy: Raging Tide est réinitialisé. Cet effet ne se produira qu'une fois que Tartaglia reviendra à sa position à distance.",
+          "title": "Ravage : Annihilation",
+          "description": "En état de mêlée, l'activation de Ravage : Oblitération supprime le TdR de Posture du démon : Marée déchaînée. Cet effet se produit après le retour à l'état de distance.",
           "secondDescription": null,
           "descriptions": {}
         }
