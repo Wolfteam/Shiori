@@ -4564,7 +4564,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Augmente le taux CRIT des attaques chargées de 30%."
+          "bonus": "Augmente le Taux CRIT des attaques chargées de 30%."
         }
       ]
     },
@@ -4658,11 +4658,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Augmente le taux CRIT de 12%."
+          "bonus": "Augmente le Taux CRIT de 12%."
         },
         {
           "key": "b2",
-          "bonus": "Augmente le taux CRIT de 24% lorsque les PV sont inférieurs à 70%."
+          "bonus": "Augmente le Taux CRIT de 24% lorsque les PV sont inférieurs à 70%."
         }
       ]
     },
@@ -4780,7 +4780,7 @@
     },
     {
       "key": "Crimson Witch of Flames",
-      "name": "Sorcière des flammes ardentes%",
+      "name": "Sorcière des flammes ardentes",
       "bonus": [
         {
           "key": "b1",
@@ -4794,7 +4794,7 @@
     },
     {
       "key": "Lavawalker",
-      "name": "Marcheur de feu",
+      "name": "Marcheur du feu",
       "bonus": [
         {
           "key": "b1",
@@ -4864,7 +4864,7 @@
     },
     {
       "key": "Prayers for Illumination",
-      "name": "Sacrificieur Pyro",
+      "name": "Sacrifieur Pyro",
       "bonus": [
         {
           "key": "b1",
@@ -4874,7 +4874,7 @@
     },
     {
       "key": "Prayers for Destiny",
-      "name": "Sacrificieur Hydro",
+      "name": "Sacrifieur Hydro",
       "bonus": [
         {
           "key": "b1",
@@ -4884,7 +4884,7 @@
     },
     {
       "key": "Prayers for Wisdom",
-      "name": "Sacrificieur Électro",
+      "name": "Sacrifieur Électro",
       "bonus": [
         {
           "key": "b1",
@@ -4894,7 +4894,7 @@
     },
     {
       "key": "Prayers to Springtime",
-      "name": "Sacrificieur Cryo",
+      "name": "Sacrifieur Cryo",
       "bonus": [
         {
           "key": "b1",
@@ -4912,7 +4912,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Augmente le taux CRIT de 20% lorsque le personnage attaque un ennemi affecté par l'élément Cryo. Confère un bonus supplémentaire de 20% de taux CRIT si l'ennemi est gelé."
+          "bonus": "Augmente le Taux CRIT de 20% lorsque le personnage attaque un ennemi affecté par l'élément Cryo. Confère un bonus supplémentaire de 20% de Taux CRIT si l'ennemi est gelé."
         }
       ]
     },
@@ -4932,21 +4932,21 @@
     },
     {
       "key": "Glacier and Snowfield",
-      "name": "Glacier and Snowfield",
+      "name": "Neige et glace",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Cryo DMG Bonus +15%."
+          "bonus": "Confère un bonus de DGT Cryo de 15%"
         },
         {
           "key": "b2",
-          "bonus": "Increases Superconduct DMG by 100%. Increases Melt DMG by 15%. Using an Elemental Burst increases Cryo DMG Bonus by 30% for 10s."
+          "bonus": "Augmente les DGT infligés par Supraconduction de 100% et ceux de Fonte de 15%. Le déchaînement élémentaire augmente le bonus de DGT Cryo de 30% pendant 10s."
         }
       ]
     },
     {
       "key": "Prayers to the Firmament",
-      "name": "Sacrificieur Anémo",
+      "name": "Sacrifieur Anémo",
       "bonus": [
         {
           "key": "b1",
