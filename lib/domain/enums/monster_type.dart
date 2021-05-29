@@ -8,4 +8,5 @@ enum MonsterType {
   hilichurl,
   fatui,
   automaton,
+  na,
 }

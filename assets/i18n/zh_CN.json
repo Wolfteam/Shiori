@@ -1686,7 +1686,7 @@
     },
     {
       "key": "Kazuha",
-      "name": "Kazuha",
+      "name": "Kaedehara Kazuha",
       "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens.",
       "skills": [
         {
@@ -6634,6 +6634,42 @@
     {
       "key": "Wooden Shieldwall Mitachurl",
       "name": "木盾丘丘暴徒"
+    },
+    {
+      "key": "Maguu Kenki",
+      "name": "Maguu Kenki"
+    },
+    {
+      "key": "Hydro Mimic Boar",
+      "name": "Hydro Mimic Boar"
+    },
+    {
+      "key": "Hydro Mimic Crab",
+      "name": "Hydro Mimic Crab"
+    },
+    {
+      "key": "Hydro Mimic Crane",
+      "name": "Hydro Mimic Crane"
+    },
+    {
+      "key": "Hydro Mimic Ferret",
+      "name": "Hydro Mimic Ferret"
+    },
+    {
+      "key": "Hydro Mimic Finch",
+      "name": "Hydro Mimic Finch"
+    },
+    {
+      "key": "Hydro Mimic Frog",
+      "name": "Hydro Mimic Frog"
+    },
+    {
+      "key": "Hydro Mimic Mallard",
+      "name": "Hydro Mimic Mallard"
+    },
+    {
+      "key": "Hydro Mimic Raptor",
+      "name": "Hydro Mimic Raptor"
     }
   ]
 }
