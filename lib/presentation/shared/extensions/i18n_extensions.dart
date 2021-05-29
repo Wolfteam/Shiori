@@ -30,6 +30,8 @@ extension I18nExtensions on S {
         return '$portuguese ($partial)';
       case AppLanguageType.italian:
         return '$italian ($partial)';
+      case AppLanguageType.japanese:
+        return '$japanese ($partial)';
       default:
         throw Exception('The provided app lang = $lang is not valid');
     }
@@ -423,6 +425,8 @@ extension I18nExtensions on S {
         return fatui;
       case MonsterType.automaton:
         return automaton;
+      case MonsterType.na:
+        return na;
       default:
         throw Exception('Invalid monster type = $type');
     }
