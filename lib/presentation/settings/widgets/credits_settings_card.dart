@@ -75,6 +75,14 @@ class CreditsSettingsCard extends StatelessWidget {
                 Expanded(child: BulletList(items: ["Septenebris#7356"], fontSize: 12)),
               ],
             ),
+            Container(
+              margin: const EdgeInsets.only(top: 10),
+              child: Text(
+                s.japanese,
+                style: textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+              ),
+            ),
+            const BulletList(items: ["𝕽𝖚𝖗𝖎#3080"], fontSize: 12),
           ],
         ),
       ),
