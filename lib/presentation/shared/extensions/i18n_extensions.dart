@@ -425,6 +425,8 @@ extension I18nExtensions on S {
         return fatui;
       case MonsterType.automaton:
         return automaton;
+      case MonsterType.na:
+        return na;
       default:
         throw Exception('Invalid monster type = $type');
     }

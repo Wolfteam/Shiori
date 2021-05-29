@@ -196,7 +196,7 @@ class GenshinServiceImpl implements GenshinService {
   List<String> getCharacterImgsUsingWeapon(String key) {
     final weapon = getWeapon(key);
     final imgs = <String>[];
-    for (final char in _charactersFile.characters) {
+    for (final char in _charactersFile.characters.where((el) => !el.isComingSoon)) {
       for (final build in char.builds) {
         final isBeingUsed = build.weaponImages.contains(weapon.image);
         final img = Assets.getCharacterPath(char.image);
@@ -231,7 +231,7 @@ class GenshinServiceImpl implements GenshinService {
   List<String> getCharacterImgsUsingArtifact(String key) {
     final artifact = getArtifact(key);
     final imgs = <String>[];
-    for (final char in _charactersFile.characters) {
+    for (final char in _charactersFile.characters.where((el) => !el.isComingSoon)) {
       for (final build in char.builds) {
         final isBeingUsed = build.artifacts.any((a) => a.one == artifact.image || a.multiples.any((m) => m.image == artifact.image));
 

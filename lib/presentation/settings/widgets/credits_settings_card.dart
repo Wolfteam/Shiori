@@ -55,9 +55,9 @@ class CreditsSettingsCard extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                Expanded(child: BulletList(items: ["Brunoff#0261"], fontSize: 12)),
-                Expanded(child: BulletList(items: ["DanPS#4336"], fontSize: 12)),
+                Expanded(child: BulletList(items: ["Brunoff#0261", "DanPS#4336"], fontSize: 12)),
                 Expanded(child: BulletList(items: ["JJlago#0406"], fontSize: 12)),
               ],
             ),
@@ -75,6 +75,14 @@ class CreditsSettingsCard extends StatelessWidget {
                 Expanded(child: BulletList(items: ["Septenebris#7356"], fontSize: 12)),
               ],
             ),
+            Container(
+              margin: const EdgeInsets.only(top: 10),
+              child: Text(
+                s.japanese,
+                style: textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+              ),
+            ),
+            const BulletList(items: ["Ruri#3080"], fontSize: 12),
           ],
         ),
       ),
