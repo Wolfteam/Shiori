@@ -1678,6 +1678,33 @@
       ]
     },
     {
+      "key": "Kazuha",
+      "name": "Kazuha",
+      "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Garyu Bladework",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "Chihayafuru",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "Manyou no Ittou",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
+    },
+    {
       "key": "Keqing",
       "name": "刻晴",
       "description": "璃月七星の一人である玉衡星。｢帝君の一言で動く璃月｣といった現状に少し不満がある。──でもこのような人間が神は結構気に入る。",
@@ -4741,6 +4768,18 @@
       "name": "松韻の響く頃",
       "description": "草木を撫でる風のように軽い大剣だが、その破壊力は木々を吹き飛ばす竜巻を想起させるほど強大なものである。",
       "refinement": "風と共に流れる「千年の大楽章」の一部。攻撃力 +{{0}}%。通常攻撃または重撃が敵に命中すると、囁きの欠片を1枚獲得する。この効果は0.3秒毎に1回のみ発動できる。囁きの欠片を4枚集めると、全ての囁きの欠片を消費し、周囲のチーム全員に12秒継続する「千年の大楽章·旗掲げの歌」効果を付与する:通常攻撃速度 +{{1}}%、攻撃力 +{{2}}%。発動後の20秒間、囁きの欠片を再度獲得することはできない。「千年の大楽章」のもたらす各効果中、同種類の効果は重ね掛け不可。"
+    },
+    {
+      "key": "Freedom-Sworn",
+      "name": "Freedom-Sworn",
+      "description": "A straight sword, azure as antediluvian song, and as keen as the oaths of freedom taken in the Land of Wind.",
+      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {{0}}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+    },
+    {
+      "key": "Mitternachts Waltz",
+      "name": "Mitternachts Waltz",
+      "description": "A bow painted the color of sin and nights of wild fantasy.",
+      "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {{0}}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {{1}}% for 5s."
     }
   ],
   "artifacts": [
@@ -6099,6 +6138,16 @@
       "key": "Gilded Scale",
       "name": "鍍金の鱗",
       "description": "玄岩から自然と生まれた鱗の鎧は、強靭かつ沈黙で、「龍王」の力が潜めている。\n虫けらがどもが腐った大地に帰る歳月の中、黄金や黒曜石が岩に埋め込まれてできた血と肉が蔓延り、鎧となった。\n燃える痛みも、無言の叫びも、おそらく怨念が終結する瞬間に消えてしまうだろう。"
+    },
+    {
+      "key": "Maguu Kishin",
+      "name": "Maguu Kishin",
+      "description": "This core can power the inorganic Maguu Kenki and cause it to wield a blade like a living being.\nFlesh decays, and with it decays all martial art and memory, no matter how masterful or lovely.\nPerhaps only by converting one's four limbs and body into sturdy mechanical parts, and by at last sacrificing one's very own heart for a sophisticated mechanical one, can one transcend transient flesh and approach the everlasting..."
+    },
+    {
+      "key": "Sea Ganoderma",
+      "name": "Sea Ganoderma",
+      "description": "A species that only grows in certain special regions of the ocean and islands. It looks like a fungus of some sort, but it is in fact the result of the secretion and proliferation of certain soft-bodied organisms."
     }
   ],
   "debuffs": [

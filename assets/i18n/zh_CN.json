@@ -980,8 +980,8 @@
     },
     {
       "key": "Eula",
-      "name": "Eula",
-      "description": "The Spindrift Knight, a scion of the old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
+      "name": "优菈",
+      "description": "古老家族出身的「浪花骑士」，西风骑士团游击小队队长。身为旧贵族后裔却加入了堪称死对头的西风骑士团，该事件至今仍是蒙德一大谜团。",
       "skills": [
         {
           "key": "s1",
@@ -1064,7 +1064,7 @@
         {
           "key": "c2",
           "title": "Lady of Seafoam",
-          "description": "#Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to {LAYOUT_MOBILE#Tapping}{LAYOUT_PC#Press}{LAYOUT_PS#Press} CD.",
+          "description": "Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to Tap CD.",
           "descriptions": []
         },
         {
@@ -1683,6 +1683,33 @@
           "descriptions": []
         }
       ]
+    },
+    {
+      "key": "Kazuha",
+      "name": "Kazuha",
+      "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Garyu Bladework",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "Chihayafuru",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "Manyou no Ittou",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
     },
     {
       "key": "Keqing",
@@ -4746,6 +4773,18 @@
       "name": "松籁响起之时",
       "description": "A greatsword as light as the sigh of grass in the breeze, yet as merciless to the corrupt as a typhoon.",
       "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {{0}}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+    },
+    {
+      "key": "Freedom-Sworn",
+      "name": "Freedom-Sworn",
+      "description": "A straight sword, azure as antediluvian song, and as keen as the oaths of freedom taken in the Land of Wind.",
+      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {{0}}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+    },
+    {
+      "key": "Mitternachts Waltz",
+      "name": "Mitternachts Waltz",
+      "description": "A bow painted the color of sin and nights of wild fantasy.",
+      "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {{0}}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {{1}}% for 5s."
     }
   ],
   "artifacts": [
@@ -6104,6 +6143,16 @@
       "key": "Gilded Scale",
       "name": "Gilded Scale",
       "description": "Scaled armor that grows naturally over mystical stone, tough and silent, and filled with the strength of the dragon king.\nAcross the years as countless generations returned to the mulch of the earth, gold and obsidian embedded themselves into flesh and blood forged from bedrock before spreading and turning into scales.\nSearing agony, wordless cries... perhaps they will all vanish when the grudges that spawned them, too, finally come to an end."
+    },
+    {
+      "key": "Maguu Kishin",
+      "name": "Maguu Kishin",
+      "description": "This core can power the inorganic Maguu Kenki and cause it to wield a blade like a living being.\nFlesh decays, and with it decays all martial art and memory, no matter how masterful or lovely.\nPerhaps only by converting one's four limbs and body into sturdy mechanical parts, and by at last sacrificing one's very own heart for a sophisticated mechanical one, can one transcend transient flesh and approach the everlasting..."
+    },
+    {
+      "key": "Sea Ganoderma",
+      "name": "Sea Ganoderma",
+      "description": "A species that only grows in certain special regions of the ocean and islands. It looks like a fungus of some sort, but it is in fact the result of the secretion and proliferation of certain soft-bodied organisms."
     }
   ],
   "debuffs": [
