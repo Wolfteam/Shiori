@@ -2370,6 +2370,20 @@
       "obtainedFrom": [],
       "droppedBy": [],
       "hasSiblings": false
+    },
+    {
+      "key": "Maguu Kishin",
+      "rarity": 4,
+      "image": "maguu_kishin.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "elementalStone",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false
     }
   ],
   "jewels": [
@@ -5606,6 +5620,20 @@
       "key": "Wolfhook",
       "rarity": 1,
       "image": "wolfhook.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false
+    },
+    {
+      "key": "Sea Ganoderma",
+      "rarity": 1,
+      "image": "sea_ganoderma.png",
       "isFromBoss": false,
       "isForCharacters": true,
       "isForWeapons": false,

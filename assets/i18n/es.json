@@ -1679,6 +1679,33 @@
       ]
     },
     {
+      "key": "Kazuha",
+      "name": "Kazuha",
+      "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Garyu Bladework",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "Chihayafuru",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "Manyou no Ittou",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
+    },
+    {
       "key": "Keqing",
       "name": "Keching",
       "description": "El Equilibrio Terrenal de las Siete Estrellas de Liyue. Tiene su opinión sobre el gobierno de Rex Lapis en Liyue, pero, en verdad, a los dioses les gustan bastante los escépticos como ella.",
@@ -4739,6 +4766,18 @@
       "name": "Oda de los Pinos",
       "description": "Un mandoble que juguetea con las plantas y los árboles como el soplido de una ligera brisa y, al mismo tiempo, es capaz de derribarlos como un abrumador tornado.",
       "refinement": "Una parte del «Gran concierto milenario» que flota por los vientos. Aumenta el ATQ en un {{0}}%. Al atacar a un enemigo con un Ataque Normal o Cargado, el personaje obtiene un talismán susurrante que puede adquirirse una vez cada 0.3 s como máximo. Al obtener 4 talismanes susurrantes, estos se consumirán y otorgarán a todos los miembros del equipo cercanos el efecto de «Gran concierto milenario: Canción de la revelación» durante 12 s, el cual aumenta la Vel. de Ataque de los Ataques Normales en un {{1}}% y el ATQ en un {{2}}%. Tras activarse, no podrán obtenerse talismanes susurrantes durante 20 s. Los efectos de «Gran concierto milenario» no se acumularán con otros efectos del mismo tipo."
+    },
+    {
+      "key": "Freedom-Sworn",
+      "name": "Freedom-Sworn",
+      "description": "A straight sword, azure as antediluvian song, and as keen as the oaths of freedom taken in the Land of Wind.",
+      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {{0}}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+    },
+    {
+      "key": "Mitternachts Waltz",
+      "name": "Mitternachts Waltz",
+      "description": "A bow painted the color of sin and nights of wild fantasy.",
+      "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {{0}}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {{1}}% for 5s."
     }
   ],
   "artifacts": [
@@ -6097,6 +6136,16 @@
       "key": "Gilded Scale",
       "name": "Gilded Scale",
       "description": "Scaled armor that grows naturally over mystical stone, tough and silent, and filled with the strength of the dragon king.\nAcross the years as countless generations returned to the mulch of the earth, gold and obsidian embedded themselves into flesh and blood forged from bedrock before spreading and turning into scales.\nSearing agony, wordless cries... perhaps they will all vanish when the grudges that spawned them, too, finally come to an end."
+    },
+    {
+      "key": "Maguu Kishin",
+      "name": "Engranaje Oni",
+      "description": "El núcleo que permite al Oni Espadachín, una máquina sin vida propia, moverse y blandir su espada como alguien vivo.\nPor muy diestro que sea en las artes marciales o por muchos bellos recuerdos que conserve, este núcleo siempre acabará deteriorándose, igual que cualquier cuerpo humano.\nSolo será posible estar más cerca de la eternidad si las cuatro extremidades y el cuerpo se convirtien en una resistente máquina y el corazón en un preciso engranaje."
+    },
+    {
+      "key": "Sea Ganoderma",
+      "name": "Hongo marino",
+      "description": "Una curiosa especie natural que solo crece en algunos mares e islas. Aunque por su aspecto parece un hongo, en realidad está compuesto por la acumulación de secreciones de algunos seres vivos de cuerpo blando."
     }
   ],
   "debuffs": [
