@@ -67,13 +67,14 @@ class NotificationListTitle extends StatelessWidget {
           foregroundColor: Colors.white,
           onTap: () => _showEditModal(context),
         ),
-        IconSlideAction(
-          caption: s.reset,
-          color: Colors.green,
-          icon: Icons.restore,
-          foregroundColor: Colors.white,
-          onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.reset(id: itemKey, type: type)),
-        ),
+        if (type != AppNotificationType.custom)
+          IconSlideAction(
+            caption: s.reset,
+            color: Colors.green,
+            icon: Icons.restore,
+            foregroundColor: Colors.white,
+            onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.reset(id: itemKey, type: type)),
+          ),
       ],
       child: ListTile(
         contentPadding: Styles.edgeInsetAll5,
