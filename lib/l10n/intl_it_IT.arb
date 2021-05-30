@@ -342,5 +342,7 @@
   "notifInfoMsgA": "Puoi programmare notifiche che ti ricordino (di fare) determinate cose nel gioco.",
   "notifInfoMsgB": "Alcune notifiche si possono personalizzare in base alle proprie esigenze.",
   "notifInfoMsgC": "La campanellina indica che la notifica è programmata per apparire nel tuo dispositivo anche quando l’app non è in esecuzione.",
+  "notifInfoMsgD": "Some notifications allows you to change the image showed in the list",
+  "notifInfoMsgE": "Some Android OEMs have their own customized Android OS that can prevent applications from running in the background.\n Consequently, scheduled notifications may not work when the application is in the background on certain devices (e.g. by Xiaomi, Huawei).\nSo if you encounter this problem, you may have to look for a setting that allows you to control which applications run in the background.",
   "swipeToSeeMoreOptions": "Scorri a destra o a sinistra per visualizzare più opzioni per ciascun item."
 }

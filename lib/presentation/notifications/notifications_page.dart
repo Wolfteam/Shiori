@@ -105,6 +105,8 @@ class NotificationsPage extends StatelessWidget {
       s.notifInfoMsgA,
       s.notifInfoMsgB,
       s.notifInfoMsgC,
+      s.notifInfoMsgD,
+      s.notifInfoMsgE,
       s.swipeToSeeMoreOptions,
     ];
     await showDialog(
