@@ -613,14 +613,14 @@ class DataServiceImpl implements DataService {
   @override
   Future<NotificationItem> saveWeeklyBossNotification(
     String itemKey,
+    AppServerResetTimeType serverResetTimeType,
     String title,
     String body, {
     String note,
     bool showNotification = true,
   }) async {
     final now = DateTime.now();
-    //TODO: SHOULD I ADD A RESPAWN PROP TO EACH BOSS ?
-    final completesAt = now.add(const Duration(days: 7));
+    final completesAt = _genshinService.getNextDateForWeeklyBoss(serverResetTimeType);
     final notification = NotificationWeeklyBoss(
       itemKey: itemKey,
       createdAt: now,
@@ -685,12 +685,60 @@ class DataServiceImpl implements DataService {
   }
 
   @override
-  Future<NotificationItem> resetNotification(int key, AppNotificationType type) async {
-    final item = _getNotification(key, type);
-    final duration = item.originalScheduledDate.difference(item.createdAt);
-    item.completesAt = DateTime.now().add(duration);
-    await (item as HiveObject).save();
-    return _mapToNotificationItem(item);
+  Future<NotificationItem> resetNotification(int key, AppNotificationType type, AppServerResetTimeType serverResetTimeType) async {
+    switch (type) {
+      case AppNotificationType.resin:
+        final item = _getNotification<NotificationResin>(key, type);
+        item.currentResinValue = 0;
+        item.completesAt = getNotificationDateForResin(item.currentResinValue);
+        await item.save();
+        return _mapToNotificationItem(item);
+      case AppNotificationType.expedition:
+        final item = _getNotification<NotificationExpedition>(key, type);
+        final duration = getExpeditionDuration(ExpeditionTimeType.values[item.expeditionTimeType], item.withTimeReduction);
+        item.completesAt = DateTime.now().add(duration);
+        await item.save();
+        return _mapToNotificationItem(item);
+      case AppNotificationType.farmingMaterials:
+        final item = _getNotification<NotificationFarmingMaterial>(key, type);
+        item.completesAt = DateTime.now().add(_genshinService.getMaterial(item.itemKey).farmingRespawnDuration);
+        await item.save();
+        return _mapToNotificationItem(item);
+      case AppNotificationType.farmingArtifacts:
+        final item = _getNotification<NotificationFarmingArtifact>(key, type);
+        item.completesAt = DateTime.now().add(getArtifactFarmingCooldownDuration(ArtifactFarmingTimeType.values[item.artifactFarmingTimeType]));
+        await item.save();
+        return _mapToNotificationItem(item);
+      case AppNotificationType.gadget:
+        final item = _getNotification<NotificationGadget>(key, type);
+        item.completesAt = DateTime.now().add(_genshinService.getGadget(item.itemKey).cooldownDuration);
+        await item.save();
+        return _mapToNotificationItem(item);
+      case AppNotificationType.furniture:
+        final item = _getNotification<NotificationFurniture>(key, type);
+        item.completesAt = DateTime.now().add(getFurnitureDuration(FurnitureCraftingTimeType.values[item.furnitureCraftingTimeType]));
+        await item.save();
+        return _mapToNotificationItem(item);
+      case AppNotificationType.realmCurrency:
+        final item = _getNotification<NotificationRealmCurrency>(key, type);
+        item.realmCurrency = 0;
+        item.completesAt = DateTime.now().add(getRealmCurrencyDuration(
+          item.realmCurrency,
+          item.realmTrustRank,
+          RealmRankType.values[item.realmRankType],
+        ));
+        await item.save();
+        return _mapToNotificationItem(item);
+      case AppNotificationType.weeklyBoss:
+        final item = _getNotification<NotificationWeeklyBoss>(key, type);
+        item.completesAt = _genshinService.getNextDateForWeeklyBoss(serverResetTimeType);
+        await item.save();
+        return _mapToNotificationItem(item);
+      case AppNotificationType.custom:
+        break;
+    }
+
+    throw Exception('The provided app notification type = $type is not valid for a reset');
   }
 
   @override
@@ -1089,26 +1137,26 @@ class DataServiceImpl implements DataService {
     );
   }
 
-  NotificationBase _getNotification(int key, AppNotificationType type) {
+  T _getNotification<T extends NotificationBase>(int key, AppNotificationType type) {
     switch (type) {
       case AppNotificationType.resin:
-        return _notificationsResinBox.values.firstWhere((el) => el.key == key);
+        return _notificationsResinBox.values.firstWhere((el) => el.key == key) as T;
       case AppNotificationType.expedition:
-        return _notificationsExpeditionBox.values.firstWhere((el) => el.key == key);
+        return _notificationsExpeditionBox.values.firstWhere((el) => el.key == key) as T;
       case AppNotificationType.farmingMaterials:
-        return _notificationsFarmingMaterialBox.values.firstWhere((el) => el.key == key);
+        return _notificationsFarmingMaterialBox.values.firstWhere((el) => el.key == key) as T;
       case AppNotificationType.farmingArtifacts:
-        return _notificationsFarmingArtifactBox.values.firstWhere((el) => el.key == key);
+        return _notificationsFarmingArtifactBox.values.firstWhere((el) => el.key == key) as T;
       case AppNotificationType.gadget:
-        return _notificationsGadgetBox.values.firstWhere((el) => el.key == key);
+        return _notificationsGadgetBox.values.firstWhere((el) => el.key == key) as T;
       case AppNotificationType.furniture:
-        return _notificationsFurnitureBox.values.firstWhere((el) => el.key == key);
+        return _notificationsFurnitureBox.values.firstWhere((el) => el.key == key) as T;
       case AppNotificationType.realmCurrency:
-        return _notificationsRealmCurrencyBox.values.firstWhere((el) => el.key == key);
+        return _notificationsRealmCurrencyBox.values.firstWhere((el) => el.key == key) as T;
       case AppNotificationType.weeklyBoss:
-        return _notificationsWeeklyBossBox.values.firstWhere((el) => el.key == key);
+        return _notificationsWeeklyBossBox.values.firstWhere((el) => el.key == key) as T;
       case AppNotificationType.custom:
-        return _notificationsCustomBox.values.firstWhere((el) => el.key == key);
+        return _notificationsCustomBox.values.firstWhere((el) => el.key == key) as T;
     }
 
     throw Exception('Invalid notification type = $type');

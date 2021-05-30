@@ -6,6 +6,7 @@ import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/data_service.dart';
 import 'package:genshindb/domain/services/notification_service.dart';
+import 'package:genshindb/domain/services/settings_service.dart';
 import 'package:meta/meta.dart';
 
 part 'notifications_bloc.freezed.dart';
@@ -17,9 +18,11 @@ const _initialState = NotificationsState.initial(notifications: [], ticks: 0);
 class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   final DataService _dataService;
   final NotificationService _notificationService;
+  final SettingsService _settingsService;
+
   Timer _timer;
 
-  NotificationsBloc(this._dataService, this._notificationService) : super(_initialState);
+  NotificationsBloc(this._dataService, this._notificationService, this._settingsService) : super(_initialState);
 
   @override
   Stream<NotificationsState> mapEventToState(NotificationsEvent event) async* {
@@ -62,7 +65,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   }
 
   Future<NotificationsState> _resetNotification(int key, AppNotificationType type) async {
-    final notif = await _dataService.resetNotification(key, type);
+    final notif = await _dataService.resetNotification(key, type, _settingsService.serverResetTime);
     await _notificationService.cancelNotification(notif.key);
     await _notificationService.scheduleNotification(key, notif.title, notif.body, notif.completesAt);
     return _afterUpdatingNotification(notif);

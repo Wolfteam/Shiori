@@ -27,6 +27,10 @@ const minResinValue = 0;
 const maxResinValue = 160;
 const resinRefillsEach = 8;
 
+// According to this page, the server reset happens at 4 am
+// https://game8.co/games/Genshin-Impact/archives/301599
+const serverResetHour = 4;
+
 //key = ascension level
 //value = item level
 //Remember that you can be level 80 but that doesn't mean you have ascended to level 6
