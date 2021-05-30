@@ -80,12 +80,11 @@ class NotificationCustomForm extends StatelessWidget {
   }
 
   Future<void> _showQuantityPickerDialog(BuildContext context, int value) async {
-    final s = S.of(context);
     final now = DateTime.now();
     final locale = Locale(language.code, language.countryCode);
     final date = await showDatePicker(
       context: context,
-      initialDate: now,
+      initialDate: scheduledDate,
       firstDate: now,
       lastDate: now.add(const Duration(days: 30)),
       locale: locale,
@@ -100,12 +99,12 @@ class NotificationCustomForm extends StatelessWidget {
       return;
     }
 
-    final scheduledDate = date.add(Duration(hours: time.hour, minutes: time.minute));
-
-    if (scheduledDate.isBefore(DateTime.now().add(const Duration(minutes: 5)))) {
+    final finalScheduledDate = date.add(Duration(hours: time.hour, minutes: time.minute));
+    if (finalScheduledDate.isBefore(DateTime.now().add(const Duration(minutes: 5)))) {
+      final s = S.of(context);
       ToastUtils.showInfoToast(ToastUtils.of(context), s.invalidDate);
       return;
     }
-    context.read<NotificationBloc>().add(NotificationEvent.customDateChanged(newValue: scheduledDate));
+    context.read<NotificationBloc>().add(NotificationEvent.customDateChanged(newValue: finalScheduledDate));
   }
 }
