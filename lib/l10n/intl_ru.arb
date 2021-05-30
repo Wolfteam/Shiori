@@ -342,7 +342,7 @@
   "notifInfoMsgA": "Вы можете запланировать уведомления, которые напомнят вам об определенных вещах в игре.",
   "notifInfoMsgB": "Некоторые из них можно настроить в соответствии с вашими потребностями.",
   "notifInfoMsgC": "Значок колокольчика указывает на то, что на вашем устройстве запланировано отображение уведомления, даже если приложение не запущено.",
-  "notifInfoMsgD": "Some notifications allows you to change the image showed in the list",
-  "notifInfoMsgE": "Some Android OEMs have their own customized Android OS that can prevent applications from running in the background.\n Consequently, scheduled notifications may not work when the application is in the background on certain devices (e.g. by Xiaomi, Huawei).\nSo if you encounter this problem, you may have to look for a setting that allows you to control which applications run in the background.",
+  "notifInfoMsgD": "Some notifications allows you to change the showed image on the list",
+  "notifInfoMsgE": "Some Android OEMs have their own customized Android OS that can prevent applications from running in the background.\nConsequently, scheduled notifications may not work when the application is in the background on certain devices (e.g. by Xiaomi, Huawei).\nSo if you encounter this problem, you may have to look for a setting that allows you to control which applications run in the background.",
   "swipeToSeeMoreOptions": "Вы можете свайпнуть вправо или влево, чтобы увидеть дополнительные параметры для каждого элемента."
 }
