@@ -51,16 +51,25 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         );
       },
       themeChanged: (event) async {
+        if (event.newValue == _settingsService.appTheme) {
+          return currentState;
+        }
         _settingsService.appTheme = event.newValue;
         _mainBloc.add(MainEvent.themeChanged(newValue: event.newValue));
         return currentState.copyWith.call(currentTheme: event.newValue);
       },
       accentColorChanged: (event) async {
+        if (event.newValue == _settingsService.accentColor) {
+          return currentState;
+        }
         _settingsService.accentColor = event.newValue;
         _mainBloc.add(MainEvent.accentColorChanged(newValue: event.newValue));
         return currentState.copyWith.call(currentAccentColor: event.newValue);
       },
       languageChanged: (event) async {
+        if (event.newValue == _settingsService.language) {
+          return currentState;
+        }
         _settingsService.language = event.newValue;
         _mainBloc.add(MainEvent.languageChanged(newValue: event.newValue));
         return currentState.copyWith.call(currentLanguage: event.newValue);
@@ -74,6 +83,9 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         return currentState.copyWith.call(showWeaponDetails: event.newValue);
       },
       serverResetTimeChanged: (event) async {
+        if (event.newValue == _settingsService.serverResetTime) {
+          return currentState;
+        }
         _settingsService.serverResetTime = event.newValue;
         _homeBloc.add(const HomeEvent.init());
         return currentState.copyWith.call(serverResetTime: event.newValue);
