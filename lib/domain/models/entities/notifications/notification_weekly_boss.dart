@@ -53,14 +53,4 @@ class NotificationWeeklyBoss extends HiveObject implements NotificationBase {
     @required this.body,
   })  : type = AppNotificationType.weeklyBoss.index,
         originalScheduledDate = completesAt;
-
-  @override
-  Future<void> updateNotification(String title, String body, String note, bool showNotification) {
-    this.title = title;
-    this.note = note;
-    this.body = body;
-    this.showNotification = showNotification;
-
-    return save();
-  }
 }

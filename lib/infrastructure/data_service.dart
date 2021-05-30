@@ -451,9 +451,9 @@ class DataServiceImpl implements DataService {
       completesAt: getNotificationDateForResin(currentResinValue),
       showNotification: showNotification,
       currentResinValue: currentResinValue,
-      note: note,
-      title: title,
-      body: body,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
     );
     final key = await _notificationsResinBox.add(notification);
     return getNotification(key, AppNotificationType.resin);
@@ -477,9 +477,9 @@ class DataServiceImpl implements DataService {
       showNotification: showNotification,
       withTimeReduction: withTimeReduction,
       expeditionTimeType: expeditionTimeType.index,
-      note: note,
-      title: title,
-      body: body,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
     );
     final key = await _notificationsExpeditionBox.add(notification);
     return getNotification(key, AppNotificationType.expedition);
@@ -501,9 +501,9 @@ class DataServiceImpl implements DataService {
       createdAt: now,
       completesAt: completesAt,
       showNotification: showNotification,
-      note: note,
-      title: title,
-      body: body,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
     );
     final key = await _notificationsGadgetBox.add(notification);
     return getNotification(key, AppNotificationType.gadget);
@@ -524,9 +524,9 @@ class DataServiceImpl implements DataService {
       createdAt: now,
       completesAt: now.add(getFurnitureDuration(type)),
       showNotification: showNotification,
-      note: note,
-      title: title,
-      body: body,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
       furnitureCraftingTimeType: type.index,
     );
     final key = await _notificationsFurnitureBox.add(notification);
@@ -549,9 +549,9 @@ class DataServiceImpl implements DataService {
       createdAt: now,
       completesAt: completesAt,
       showNotification: showNotification,
-      note: note,
-      title: title,
-      body: body,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
       artifactFarmingTimeType: type.index,
     );
     final key = await _notificationsFarmingArtifactBox.add(notification);
@@ -573,9 +573,9 @@ class DataServiceImpl implements DataService {
       createdAt: now,
       completesAt: completesAt,
       showNotification: showNotification,
-      note: note,
-      title: title,
-      body: body,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
     );
     final key = await _notificationsFarmingMaterialBox.add(notification);
     return getNotification(key, AppNotificationType.farmingMaterials);
@@ -602,9 +602,9 @@ class DataServiceImpl implements DataService {
       realmRankType: realmRankType.index,
       realmTrustRank: currentTrustRankLevel,
       showNotification: showNotification,
-      note: note,
-      title: title,
-      body: body,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
     );
     final key = await _notificationsRealmCurrencyBox.add(notification);
     return getNotification(key, AppNotificationType.realmCurrency);
@@ -626,9 +626,9 @@ class DataServiceImpl implements DataService {
       createdAt: now,
       completesAt: completesAt,
       showNotification: showNotification,
-      note: note,
-      title: title,
-      body: body,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
     );
     final key = await _notificationsWeeklyBossBox.add(notification);
     return getNotification(key, AppNotificationType.weeklyBoss);
@@ -650,10 +650,10 @@ class DataServiceImpl implements DataService {
       createdAt: createdAt,
       completesAt: completesAt,
       showNotification: showNotification,
-      note: note,
       notificationItemType: notificationItemType.index,
-      title: title,
-      body: body,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
     );
     final key = await _notificationsCustomBox.add(notification);
     return getNotification(key, AppNotificationType.custom);
@@ -1250,9 +1250,9 @@ class DataServiceImpl implements DataService {
   }
 
   Future<NotificationItem> _updateNotification(NotificationBase notification, String title, String body, String note, bool showNotification) async {
-    notification.title = title;
-    notification.note = note;
-    notification.body = body;
+    notification.title = title.trim();
+    notification.note = note?.trim();
+    notification.body = body.trim();
     notification.showNotification = showNotification;
 
     final hiveObject = notification as HiveObject;

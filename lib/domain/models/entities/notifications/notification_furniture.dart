@@ -57,14 +57,4 @@ class NotificationFurniture extends HiveObject implements NotificationBase {
     @required this.furnitureCraftingTimeType,
   })  : type = AppNotificationType.furniture.index,
         originalScheduledDate = completesAt;
-
-  @override
-  Future<void> updateNotification(String title, String body, String note, bool showNotification) {
-    this.title = title;
-    this.note = note;
-    this.body = body;
-    this.showNotification = showNotification;
-
-    return save();
-  }
 }
