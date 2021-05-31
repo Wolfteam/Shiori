@@ -3858,657 +3858,657 @@
   "weapons": [
     {
       "key": "Hunter’s Bow",
-      "name": "Hunter’s Bow",
-      "description": "A hunter’s music consists of but two sounds: the twang of the bowstring and the whoosh of soaring arrows.",
+      "name": "Arc de chasse",
+      "description": "La musique jouée par les chasseurs combine deux mélodies : la tension de l’arc et le sifflements des flèches.",
       "refinement": null
     },
     {
       "key": "Seasoned Hunter’s Bow",
-      "name": "Seasoned Hunter’s Bow",
-      "description": "A bow that has been well-polished by time and meticulously cared for by its owner. It feels almost like an extension of the archer’s arm.",
+      "name": "Arc de chasse aguerri",
+      "description": "Un arc ancien, mais bien entretenu. Il ne fait qu'un avec l'archer qui le tend.",
       "refinement": null
     },
     {
       "key": "Ebony Bow",
-      "name": "Ebony Bow",
-      "description": "A longbow made of ebony wood with stiffer limbs than ordinary bows. It is also a far more powerful weapon.",
-      "refinement": "Increases DMG against mechanoid Ruin enemies by {{0}}%"
+      "name": "Arc en ébène",
+      "description": "Un arc long en ébène, ce qui le rend plus résistant que les arcs ordinaires et augmente considérablement sa force tir.",
+      "refinement": "Augmente les DGT infligés aux ennemis mécaniques des ruines de {{0}}%."
     },
     {
       "key": "Messenger",
-      "name": "Messenger",
-      "description": "A basic wooden bow. It is said to have once been used as a tool for long-distance communication.",
-      "refinement": "Charged Attack hits on weak points deal an additional {{0}}% ATK DMG as CRIT DMG. Can only occur once every 10s."
+      "name": "Messager",
+      "description": "Un simple arc en bois. On raconte qu'il était autrefois utilisé pour la communiquer à distance.",
+      "refinement": "Les attaques chargées touchant les points faibles infligent un bonus de DGT CRIT équivalant à {{0}}% de l'ATQ. Cet effet peut être déclenché une fois toutes les 10s."
     },
     {
       "key": "Raven Bow",
-      "name": "Raven Bow",
-      "description": "Ravens are known to be the ferrymen of the dead. This bow’s limb is decorated with raven feathers, which forebode the imminent death of its target.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Pyro by {{0}}%"
+      "name": "Arc du corbeau",
+      "description": "Les corbeaux sont les messagers de la mort dans de nombreuses légendes. Leurs plumes décorent cet arc qui annonce la mort imminente de toute proie.",
+      "refinement": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Pyro de {{0}}%."
     },
     {
       "key": "Recurve Bow",
-      "name": "Recurve Bow",
-      "description": "It is said that this bow can shoot down eagles in flight, but ultimately how true that is depends on the skill of the archer.",
-      "refinement": "Defeating an opponent restores {{0}}% HP"
+      "name": "Arc courbé",
+      "description": "Avec cet arc de chasse, vous devriez pouvoir abattre un aigle en plein vol. Bien évidemment, le résultat dépend entièrement de la technique de l'archer.",
+      "refinement": "Restaure {{0}}% des PV après la défaite d'un ennemi."
     },
     {
       "key": "Sharpshooter’s Oath",
-      "name": "Sharpshooter’s Oath",
-      "description": "This superior bow once belonged to a master archer. However, it gives off a strong scent, thus making it unsuitable for hunting.",
-      "refinement": "Increases DMG against weak spots by {{0}}%"
+      "name": "Serment de l'archer",
+      "description": "Cet arc de haute qualité aurait appartenu à un maître archer. La forte odeur qu'il dégage le rend inadapté pour la chasse.",
+      "refinement": "Augmente les DGT de {{0}}% si les points faibles de l'ennemi sont visés."
     },
     {
       "key": "Slingshot",
-      "name": "Slingshot",
-      "description": "A bow, despite the name. After countless experiments and improvements to the design, the creator of the ultimate slingshot found himself to have made what was actually a bow.",
-      "refinement": "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by {{0}}%. Otherwise, decreases DMG by 10%."
+      "name": "Lance-pierres",
+      "description": "C'est bien un arc ! Après de nombreuses modifications et améliorations, l'inventeur du lance-pierres ultime s'est finalement retrouvé avec un arc.",
+      "refinement": "Les DGT infligés par les flèches des attaques normales et chargées infligent {{0}}% de DGT supplémentaires lorsqu'elles touchent dans les 0,3s après le tir. Dans le cas contraire, elles infligent 10% de DGT en moins."
     },
     {
       "key": "The Stringless",
-      "name": "The Stringless",
-      "description": "A bow that once served as an extraordinary instrument. It is no longer capable of getting people up and dancing.",
-      "refinement": "Increases Elemental Skill and Elemental Burst DMG by {{0}}%."
+      "name": "Dernière corde",
+      "description": "Un arc qui était autrefois un extraordinaire instrument de musique. Il ne fait plus danser personne aujourd'hui.",
+      "refinement": "Augmente les DGT infligés par les compétences élémentaires et les déchaînements élémentaires de {{0}}%."
     },
     {
       "key": "Alley Hunter",
-      "name": "Alley Hunter",
-      "description": "An intricate, opulent longbow. It once belonged to a gentleman thief who was never caught.",
-      "refinement": "While the character equipped with this weapon is in the party but not on the field, their DMG increases by {{0}}% every second up to a max of {{1}}%. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by {{2}}% per second until it reaches 0%."
+      "name": "Traqueur des impasses",
+      "description": "Un arc long somptueux et délicat qui appartenait autrefois à un brigand au grand cœur qui n'a jamais été capturé.",
+      "refinement": "Lorsque le personnage équipé de cette arme fait partie de l'équipe mais n'est pas déployé, ses DGT augmentent de {{0}}% toutes les 1s, jusqu'à {{1}}% max. 4s après le déploiement du personnage, l'effet diminue de {{2}}% toutes les 1s, jusqu'à atteindre 0%."
     },
     {
       "key": "Blackcliff Warbow",
-      "name": "Blackcliff Warbow",
-      "description": "A bow made of blackcliff that features extremely sturdy bow limbs. It requires an archer with a strong bow arm to use.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "name": "Arc de guerre de Rochenoire",
+      "description": "Un arc de roche noire, à la courbure d'une solidité à toute épreuve. Seul un archer aux bras robustes peut le manier.",
+      "refinement": "Augmente l'ATQ de {{0}}% pendant 30s après avoir vaincu un ennemi. Cet effet peut être cumulé 3 fois et la durée de chaque cumul peut varier."
     },
     {
       "key": "Compound Bow",
-      "name": "Compound Bow",
-      "description": "An exotic metallic bow from a distant land. Though extremely difficult to maintain, it is easy to nock and fires with tremendous force.",
-      "refinement": "Normal Attack and Charged Attack hits increase ATK by {{0}}% and Normal ATK SPD by {{1}}% for 6s. Max 4 stacks. Can only occur once every 0.3s."
+      "name": "Arc à poulies",
+      "description": "Un arc en alliage de métal, dont la corde est tendue par des poulies. Son étrange design le rend difficile à manier, mais une fois la flèche est partie, celle-ci s'abat sur la proie avec une force impressionnante.",
+      "refinement": "Les attaques normales et chargées confèrent un bonus d'ATQ de {{0}}% ainsi qu'un bonus de VIT d'attaque normale de {{1}}% pendant 6s lorsqu'elles touchent. Cet effet peut être cumulé 4 fois au maximum et peut être déclenché une fois toutes les 0,3s."
     },
     {
       "key": "Favonius Warbow",
-      "name": "Favonius Warbow",
-      "description": "A standard-issue recurve bow of the Knights of Favonius. Only the best archers can unleash its full potential.",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "name": "Arc de chasse de Favonius",
+      "description": "Un arc manié par les chevaliers de l'Ordre de Favonius. Seuls les meilleurs archers pourront tirer le maximum de son potentiel.",
+      "refinement": "Les coups CRIT des attaques ont {{0}}% de chance de générer une faible quantité de particules élémentaire qui restaurent 6 pts d'énergie. Cet effet peut être déclenché 1 fois toutes les {{1}}s."
     },
     {
       "key": "Prototype Crescent",
-      "name": "Prototype Crescent",
-      "description": "A prototype longbow discovered in the Blackcliff Forge. The arrow fired from this bow glimmers like a ray of moonlight.",
-      "refinement": "Charged Attack hits on weak points increase Movement SPD by 10% and ATK by {{0}}% for 10s."
+      "name": "Lune paisible (prototype)",
+      "description": "Un prototype d'arc long découvert à la Forge de Rochenoire. Les flèches qu'il décoche sont aussi brillantes que le clair de lune.",
+      "refinement": "Les attaques chargées touchant les points faibles augmentent la VIT de déplacement de 10 % et l'ATQ de {{0}}% pendant 10s."
     },
     {
       "key": "Royal Bow",
-      "name": "Royal Bow",
-      "description": "An old royal longbow that belonged to the erstwhile rulers of Mondstadt. Countless generations later, the bowstring is still tight and can still fire arrows with great force.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "name": "Arc royal",
+      "description": "Un arc long qui appartenait jadis aux dirigeants de Mondstadt. Après avoir connu bien des générations, sa corde légère est toujours capable de décocher des flèches à une vitesse impressionnante.",
+      "refinement": "Augmente le Taux CRIT de {{0}}% à chaque attaque qui cause des DGT à un ennemi. Cet effet peut être cumulé 5 fois au maximum, et est réinitialisé lors d'un coup CRIT."
     },
     {
       "key": "Rust",
-      "name": "Rust",
-      "description": "A completely rusted iron greatbow. The average person would lack the strength to even lift it, let alone fire it.",
-      "refinement": "Increases Normal Attack DMG by {{0}}% but decreases Charged Attack DMG by 10%."
+      "name": "Arc rouillé",
+      "description": "Un grand arc en fer complètement recouvert de rouille. Le soulever ou le manier est impossible sans posséder une force hors du commun.",
+      "refinement": "Augmente les DGT infligés par les attaques normales de {{0}}% et réduit les DGT infligés par les attaques chargées de 10%."
     },
     {
       "key": "Sacrificial Bow",
-      "name": "Sacrificial Bow",
-      "description": "A ceremonial hunting bow that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s"
+      "name": "Arc rituel",
+      "description": "Un arc de chasse ornemental qui a été pétrifié par le temps et dont on peut encore distinguer les décorations. Avec lui, son manieur sera capable d'affronter l'épreuve du temps.",
+      "refinement": "Les compétences élémentaires ont {{0}}% de chance de réinitialiser leur propre TdR lorsqu'elles infligent des DGT. Cet effet peut être déclenché une fois toutes les {{1}}s."
     },
     {
       "key": "The Viridescent Hunt",
-      "name": "The Viridescent Hunt",
-      "description": "A pure green hunting bow. This once belonged to a certain hunter whose home was the forest.",
-      "refinement": "Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding enemies, dealing {{0}}% of ATK as DMG to these enemies every 0.5s for 4s. This effect can only occur once every {{1}}s"
+      "name": "Arc de chasse verdoyant",
+      "description": "Un arc noble de couleur verte qui appartenait autrefois à un chasseur.",
+      "refinement": "Les attaques normales et chargées ont 50% de chances lorsqu'elles touchent de générer un cyclone qui attire les ennemis et leur inflige des DGT équivalant à {{0}}% de l'ATQ toutes les 0,5s pendant 4s. Cet effet peut être déclenché une fois toutes les {{1}}s."
     },
     {
       "key": "Skyward Harp",
-      "name": "Skyward Harp",
-      "description": "A greatbow that symbolizes Dvalin’s affiliation with the Anemo Archon. The sound of the bow firing is music to the Anemo Archon’s ears. It contains the power of the sky and wind within.",
-      "refinement": "Increases CRIT DMG by {{0}}%. Hits have a {{1}}% chance to inflict a small AoE attack, dealing 125% Physical ATK DMG. Can only occur once every {{2}}s."
+      "name": "Ailes de la Voûte d'Azur",
+      "description": "Un grand arc qui symbolise l'affiliation de Dvalin à Barbatos. Fort de la puissance du ciel et du vent, le son qu'il produit lors de la libération de la flèche est une vraie musique aux oreilles de l'Archon Anémo.",
+      "refinement": "Augmente les DGT CRIT de {{0}}%. Toucher un ennemi a {{1}}% de chance d'infliger des DGT physiques équivalant à 125% de l'ATQ dans une zone restreinte. Cet effet peut être déclenché une fois toutes les {{2}}s."
     },
     {
       "key": "Amos’ Bow",
-      "name": "Amos’ Bow",
-      "description": "An extremely ancient bow that has retained its power despite its original master being long gone. It draws power from everyone and everything in the world, and the further away you are from that which your heart desires, the more powerful it is.",
-      "refinement": "Increases Normal and Charged Attack DMG by {{0}}%. Normal and Charged Attack DMG increases by {{1}}% every 0.1s for up to 5 times."
+      "name": "Arc d'Amos",
+      "description": "Un arc extrêmement ancien. Même si son maître d'origine n'est plus, on sent encore son pouvoir, drainé de tous les êtres de ce monde. Plus l'objet de vos désirs se trouve loin, et meilleure est sa puissance.",
+      "refinement": "Augmente les DGT infligés par les attaques normales et les attaques chargées de {{0}}%. Les DGT augmentent de {{1}}% toutes les 0,1s après avoir tiré une flèche d'attaque normale ou chargée. Cet effet est cumulable 5 fois maximum."
     },
     {
       "key": "Dreams of Dragonfell",
       "name": "Dreams of Dragonfell",
-      "description": "A great bow that once shot clean through a giant dragon. Once released, the impetus of its bowstring resembles a peal of thunder.",
+      "description": "[TRADUCTION À VENIR]\nA great bow that once shot clean through a giant dragon. Once released, the impetus of its bowstring resembles a peal of thunder.",
       "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
     },
     {
       "key": "Dull Blade",
-      "name": "Dull Blade",
-      "description": "Youthful dreams and the thrill of adventure. If this isn’t enough, then make it up with valiance.",
+      "name": "Épée émoussée",
+      "description": "Si les rêves de jeunesse et la soif d'aventure ne suffisent pas, compensez avec beaucoup de courage.",
       "refinement": null
     },
     {
       "key": "Silver Sword",
-      "name": "Silver Sword",
-      "description": "A sword for exorcising demons. Everyone knows it’s made of a silver alloy, not pure silver.",
+      "name": "Épée en argent",
+      "description": "Une épée faite pour chasser les démons. Par contre, tout le monde sait qu'elle a été forgée avec un alliage d'argent et non avec de l'argent pur.",
       "refinement": null
     },
     {
       "key": "Cool Steel",
-      "name": "Cool Steel",
-      "description": "A reliable steel-forged weapon that serves as a testament to the great adventures of its old master.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Cryo by {{0}}%"
+      "name": "Lame froide",
+      "description": "Une arme faite dans un acier travaillé à maintes reprises, qui témoigne des aventures de son précédent propriétaire.",
+      "refinement": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Cryo de {{0}}%."
     },
     {
       "key": "Dark Iron Sword",
-      "name": "Dark Iron Sword",
-      "description": "A perfectly ordinary iron sword, just slightly darker than most.",
-      "refinement": "Upon causing an Overloaded, Superconduct, Electro-Charged, or an Electro-infused Swirl reaction, ATK is increased by {{0}}% for 12s."
+      "name": "Épée en fer noir",
+      "description": "Une épée en fer légèrement noirci.",
+      "refinement": "Augmente l'ATQ de {{0}}% pendant 12s après avoir déclenché Surcharge, Supraconduction, Électrocution ou Dispersion Électro."
     },
     {
       "key": "Fillet Blade",
-      "name": "Fillet Blade",
-      "description": "A sharp filleting knife. The blade is long, thin, and incredibly sharp.",
-      "refinement": "On hit, has a 50% chance to deal {{0}}% ATK DMG to a single enemy. Can only occur once every {{1}}s."
+      "name": "Couteau à filets",
+      "description": "Un couteau de pêche à la lame tranchante. Il est très acéré.",
+      "refinement": "Les attaques ont 50% de chances d'infliger {{0}}% de DGT d'ATQ à un ennemi lorsqu'elles touchent. Cet effet peut être déclenché 1 fois toutes les {{1}}s."
     },
     {
       "key": "Harbinger of Dawn",
-      "name": "Harbinger of Dawn",
-      "description": "A sword that once shone like the sun. The wielder of this sword will be blessed with a \"feel-good\" buff. The reflective material on the blade has long worn off.",
-      "refinement": "When HP is above 90%, increases CRIT Rate by {{0}}%."
+      "name": "Messager de l'Aube",
+      "description": "La lame de cette épée luisait jadis comme le soleil, mais ce n'est plus le cas aujourd'hui. Celui qui manie cette arme se sent au sommet de sa forme.",
+      "refinement": "Augmente le Taux CRIT de {{0}}% quand les PV sont supérieurs à 90%."
     },
     {
       "key": "Skyrider Sword",
-      "name": "Skyrider Sword",
-      "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword...",
-      "refinement": "Using an Elemental Burst grants a {{0}}% increase in ATK and Movement SPD for 15s."
+      "name": "Épée céleste",
+      "description": "Une solide épée en acier. On raconte que quelqu'un a essayé de s'en servir comme moyen de transport...",
+      "refinement": "Augmente l'ATQ et la VIT de déplacement de {{0}}% pendant 15s après un déchaînement élémentaire."
     },
     {
       "key": "Traveler’s Handy Sword",
-      "name": "Traveler’s Handy Sword",
-      "description": "A handy steel sword which contains scissors, a magnifying glass, tinder, and other useful items in its sheath.",
-      "refinement": "Each Elemental Orb or Particle collected restores {{0}}% HP."
+      "name": "Épée du voyageur",
+      "description": "Une épée en acier facile à manier. Une paire de ciseaux, une loupe et d'autres gadgets se trouvent dans son fourreau.",
+      "refinement": "Chaque orbe ou particule élémentaire obtenu(e) restaure {{0}}% des PV."
     },
     {
       "key": "Blackcliff Longsword",
-      "name": "Blackcliff Longsword",
-      "description": "A sword made of a material known as \"blackcliff.\" It has a dark crimson glow on its black blade.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "name": "Épée longue de Rochenoire",
+      "description": "Une épée fabriquée en roche noire. Sa sombre lame brille d'une lueur rouge.",
+      "refinement": "Augmente l'ATQ de {{0}}% pendant 30s après avoir vaincu un ennemi. Cet effet peut être cumulé 3 fois et la durée de chaque cumul peut varier."
     },
     {
       "key": "Favonius Sword",
-      "name": "Favonius Sword",
-      "description": "A standard-issue longsword of the Knights of Favonius. When you’re armed with this agile and sharp weapon, channeling the power of the elements has never been so easy!",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "name": "Épée de Favonius",
+      "description": "Une longue épée généralement maniée par les chevaliers de l'Ordre de Favonius. Invoquer les éléments est un jeu d'enfant avec cette arme légère et tranchante !",
+      "refinement": "Les coups CRIT des attaques ont {{0}}% de chance de générer une faible quantité de particules élémentaire qui restaurent 6 pts d'énergie. Cet effet peut être déclenché 1 fois toutes les {{1}}s."
     },
     {
       "key": "Iron Sting",
-      "name": "Iron Sting",
-      "description": "An exotic long-bladed rapier that somehow found its way into Liyue via foreign traders. It is light, agile, and sharp.",
-      "refinement": "Dealing Elemental DMG increases all DMG by {{0}}% for 6s. Max 2 stacks. Can occur once every 1s."
+      "name": "Piqûre de fer",
+      "description": "Une longue rapière exotique qui a été introduite à Liyue par des commerçants étrangers. Légère et tranchante.",
+      "refinement": "Lorsque vous infligez des DGT élémentaires à vos ennemis, tous les DGT infligés par ce personnage augmentent de {{0}}% pendant 6s. Cet effet peut être cumulé 2 fois et déclenché une fois toutes les secondes."
     },
     {
       "key": "Lion’s Roar",
-      "name": "Lion’s Roar",
-      "description": "A sharp blade with extravagant carvings that somehow does not compromise on durability and sharpness. It roars like a lion as it cuts through the air.",
-      "refinement": "Increases DMG against enemies affected by Pyro or Electro by {{0}}%"
+      "name": "Rugissement du Lion",
+      "description": "Une lame tranchante ornée de sculptures luxueuses mais qui n'influent en rien sur sa durabilité et sa finesse. Elle rugit à la manière du lion lorsqu'elle est dégainée.",
+      "refinement": "Augmente les DGT infligés aux ennemis affectés par les éléments Pyro ou Électro de {{0}}%."
     },
     {
       "key": "Prototype Rancour",
-      "name": "Prototype Rancour",
-      "description": "An ancient longsword discovered in the Blackcliff Forge that cuts through rocks like a hot knife through butter.",
-      "refinement": "On hit, Normal or Charged Attacks increase ATK and DEF by {{0}}% for 6s. Max 4 stacks. This effect can only occur once every 0.3s."
+      "name": "Tailleur de pierre (prototype)",
+      "description": "Une ancienne épée longue trouvée à la Forge de Rochenoire, capable de pénétrer la roche comme dans du beurre.",
+      "refinement": "Les attaques normales et chargées augmentent l'ATQ et la DÉF de {{0}}% pendant 6s. Cet effet peut être cumulé 4 fois au maximum, et peut être déclenché 1 fois toutes les 0,3s."
     },
     {
       "key": "Royal Longsword",
-      "name": "Royal Longsword",
-      "description": "An old longsword that belonged to the erstwhile rulers of Mondstadt. Exquisitely crafted, the carvings and embellishments testify to the stature of its owner.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "name": "Épée longue royale",
+      "description": "Une épée longue assez ancienne qui appartenait jadis aux dirigeants de Mondstadt. Sa lame est d'une excellente facture et ses ornements sont révélateurs du statut social de son propriétaire.",
+      "refinement": "Augmente le Taux CRIT de {{0}}% à chaque attaque qui cause des DGT à un ennemi. Cet effet peut être cumulé 5 fois au maximum, et est réinitialisé lors d'un coup CRIT."
     },
     {
       "key": "Sacrificial Sword",
-      "name": "Sacrificial Sword",
-      "description": "A ceremonial sword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s"
+      "name": "Épée rituelle",
+      "description": "Une épée ornementale qui a été pétrifiée par le temps, dont on peut encore distinguer les décorations. Avec elle, son manieur sera capable d'affronter l'épreuve du temps.",
+      "refinement": "Les compétences élémentaires ont {{0}}% de chance de réinitialiser leur propre TdR lorsqu'elles infligent des DGT. Cet effet peut être déclenché une fois toutes les {{1}}s."
     },
     {
       "key": "The Alley Flash",
-      "name": "The Alley Flash",
-      "description": "A straight sword as black as the night. It once belonged to a thief who roamed the benighted streets.",
-      "refinement": "Increases DMG dealt by the character equipping this weapon by {{0}}%. Taking DMG disables this effect for 5s."
+      "name": "Éclair des impasses",
+      "description": "Une épée droite et noire comme la nuit. Elle appartenait autrefois à un voleur qui rôdait dans les ruelles sombres.",
+      "refinement": "Augmente les DGT infligés par le personnage de {{0}}%. Cet effet disparaît pendant 5s lorsque le personnage subit des DGT."
     },
     {
       "key": "The Black Sword",
-      "name": "The Black Sword",
-      "description": "A pitch-black longsword that thirsts for violence and conflict. It is said that this weapon can cause its user to become drunk on the red wine of slaughter.",
-      "refinement": "Increases DMG dealt by Normal and Charged Attacks by {{0}}%. Additionally, regenerates {{1}}% of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s."
+      "name": "Épée noire",
+      "description": "Une épée qui a soif de violence et de conflit. Cette arme aurait le pouvoir d'exciter la soif de sang de son propriétaire.",
+      "refinement": "Augmente les DGT infligés par les attaques normales et chargées de {{0}}% et restaure {{1}}% de l'ATQ en PV en cas de coup CRIT. Cet effet peut être déclenché toutes les 5s."
     },
     {
       "key": "The Flute",
-      "name": "The Flute",
-      "description": "Beneath its rusty exterior is a lavishly decorated thin blade. It swings as swiftly as the wind.",
-      "refinement": "Normal or Charged Attacks grant a Harmonic on hits. Gaining 5 Harmonics triggers the power of music and deals {{0}}% ATK DMG to surrounding enemies. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s."
+      "name": "Flûte",
+      "description": "En dessous de la rouille se cache une lame fine ornée de somptueuses décorations. Elle est aussi légère qu'une plume.",
+      "refinement": "Les attaques normales et chargées confèrent une harmonie à chaque fois qu'elles touchent. Au bout de 5 harmonies, le pouvoir de la musique est libéré, et inflige {{0}}% de DGT d'ATQ aux ennemis proches. Les harmonies durent jusqu'à 30s, et une harmonie peut être obtenue toutes les 0,5s max."
     },
     {
       "key": "Sword of Descension",
-      "name": "Sword of Descension",
-      "description": "A sword of unique craftsmanship. It does not appear to belong to this world.",
-      "refinement": "Hitting opponents with Normal and Charged Attacks grants a {{0}}% chance to deal 200% ATK as DMG in a small AoE. This effect can only occur once every 10s. Additionally, if the Traveler equips the Sword of Descension, their ATK is increased by {{1}}."
+      "name": "Épée de la descente",
+      "description": "Une épée à l'apparence particulière qui ne semble pas appartenir à ce monde.",
+      "refinement": "Les attaques normales et chargées ont {{0}}% de chance lorsqu'elles touchent d'infliger des DGT équivalant à 200% de l'ATQ dans une zone restreinte. Cet effet peut être déclenché une fois toutes les 10s. L'ATQ du Voyageur augmente de {{1}} pts lorsque Épée de la descente est équipée."
     },
     {
       "key": "Festering Desire",
-      "name": "Festering Desire",
-      "description": "A creepy straight sword that almost seems to yearn for life. It drips with a shriveling venom that could even corrupt a mighty dragon.",
-      "refinement": "Increases Elemental Skill DMG by {{0}}% and Elemental Skill CRIT Rate by {{1}}%."
+      "name": "Croc suppurant",
+      "description": "Une épée droite maléfique qui a soif de vie. Elle renferme un poison qui aurait le pouvoir de neutraliser un dragon.",
+      "refinement": "Augmente les DGT de la compétence élémentaire de {{0}}% et son Taux CRIT de {{1}}%."
     },
     {
       "key": "Aquila Favonia",
-      "name": "Aquila Favonia",
-      "description": "The soul of the Knights of Favonius. Millennia later, it still calls on the winds of swift justice to vanquish all evil  just like the last heroine who wielded it.",
-      "refinement": "ATK is increased by {{0}}%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {{1}}% of ATK and dealing {{2}}% of ATK as DMG to surrounding enemies. This effect can only occur once every 15s."
+      "name": "Épée du faucon",
+      "description": "L'âme de l'Ordre de Favonius. Même après des millénaires, elle continue d'appeler le vent de la justice pour venir à bout du mal – tout comme la dernière héroïne à qui elle appartenait.",
+      "refinement": "Les DGT subis augmentent l'ATQ de {{0}}%. L'âme du Faucon de l'Ouest se réveille en brandissant l'étendard de la résistance, restaure {{1}}% de l'ATQ en PV, et inflige des DGT équivalant à {{2}}% de l'ATQ aux ennemis à proximité. Cet effet peut être déclenché 1 fois toutes les 15s."
     },
     {
       "key": "Skyward Blade",
-      "name": "Skyward Blade",
-      "description": "The sword of a knight that symbolizes the restored honor of Dvalin. The blessings of the Anemo Archon rest on the fuller of the blade, imbuing the sword with the powers of the sky and the wind.",
-      "refinement": "CRIT Rate increased by {{0}}%. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by 10%, increases ATK SPD by 10%, and increases the DMG of Normal and Charged Attack hits by {{1}}% for 12s."
+      "name": "Lame de la Voûte d'Azur",
+      "description": "Une épée de chevalier symbolisant l'honneur retrouvé de Dvalin. La bénédiction de l'Archon du Vent est inscrite sur le dos de la lame, lui conférant la puissance du ciel et du vent.",
+      "refinement": "Augmente le Taux CRIT de {{0}}%. Le déchaînement élémentaire confère pendant 12s l'effet Croc du Perceur de ciel: la VIT de déplacement augmente de 10%, la VIT d'ATQ augmente de 10%, et les attaques normales et chargées infligent {{1}}% de DGT d'ATQ supplémentaires lorsqu'elles touchent."
     },
     {
       "key": "Summit Shaper",
-      "name": "Summit Shaper",
-      "description": "A symbol of a legendary pact, this sharp blade once cut off the peak of a mountain.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "name": "Tranche-sommets",
+      "description": "Le symbole d'un pacte légendaire. Sa lame tranchante coupa jadis le sommet d'une montagne.",
+      "refinement": "Augmente la force du bouclier de {{0}}%. Toucher un ennemi augmente l'ATQ de {{1}}% pendant 8s. Cet effet peut être cumulé 5 fois au maximum et peut être déclenché une fois toutes les 0,3s. Lorsque vous êtes protégé par un bouclier, l'augmentation d'ATQ de cet effet est de 100%."
     },
     {
       "key": "Apprentice’s Notes",
-      "name": "Apprentice’s Notes",
-      "description": "Notes left behind by a top student. Many useful spells are listed, and the handwriting is beautiful.",
+      "name": "Notes de l'Apprenti",
+      "description": "Des notes laissées par un élève brillant contenant des sortilèges efficaces, rédigés dans une belle écriture.",
       "refinement": null
     },
     {
       "key": "Pocket Grimoire",
-      "name": "Pocket Grimoire",
-      "description": "A carefully compiled notebook featuring the essentials needed to pass a magic exam.",
+      "name": "Grimoire de poche",
+      "description": "Un petit carnet rempli de notes concernant un examen de magie.",
       "refinement": null
     },
     {
       "key": "Amber Bead",
-      "name": "Amber Bead",
-      "description": "A catalyst carved out of amber that gains a warm halo under the sun.",
-      "refinement": "Normal Attack hits increase all Elemental DMG by {{0}}% for 6s. Max 2 stacks."
+      "name": "Catalyseur en ambre",
+      "description": "Un catalyseur magique taillé dans l'ambre, qui scintille au soleil.",
+      "refinement": "Les attaques normales confèrent un bonus de DGT élémentaires de {{0}}% pendant 6s lorsqu'elles touchent. Cet effet peut être cumulé 2 fois au maximum."
     },
     {
       "key": "Emerald Orb",
-      "name": "Emerald Orb",
-      "description": "A catalyst carved out of the hard jade from Jueyun Karst north of Liyue. It is small, light, and durable.",
-      "refinement": "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by {{0}}% for 12s."
+      "name": "Orbe jadien",
+      "description": "Un catalyseur sculpté dans la jadéite, produit au Karst Jueyun, au nord de Liyue. Petit et léger, résistant et durable, les gens l'appellent souvent «Boulette de jade».",
+      "refinement": "Augmente l'ATQ de {{0}}% pendant 12s après avoir déclenché Évaporation, Électrocution, Gel ou Dispersion Hydro."
     },
     {
       "key": "Magic Guide",
-      "name": "Magic Guide",
-      "description": "Version 12. A reprint featuring corrections to Version 11 and brand-new additions based on recent developments.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Electro by {{0}}%."
+      "name": "Guide de magie",
+      "description": "12e édition. Comprend les corrections apportées à la 11e édition, ainsi que des ajouts justifiés par les récents progrès dans le domaine.",
+      "refinement": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Électro de {{0}}%."
     },
     {
       "key": "Otherworldly Story",
-      "name": "Otherworldly Story",
-      "description": "A cheap fantasy novel with no value whatsoever. Any claim that it possesses the power of catalysis is also pure fantasy.",
-      "refinement": "Picking up an Elemental Energy Orb/Particle recovers {{0}}% HP."
+      "name": "Conte d'un autre monde",
+      "description": "Un roman fantastique sans aucune valeur. Toute affirmation comme quoi il possèderait un pouvoir catalysant n'est qu'affabulation.",
+      "refinement": "Chaque orbe élémentaire ou particule élémentaire obtenue restaure {{0}}% des PV."
     },
     {
       "key": "Thrilling Tales of Dragon Slayers",
-      "name": "Thrilling Tales of Dragon Slayers",
-      "description": "A fictional story of a band of five heroes who go off on a dragon hunt. It is poorly written and structurally incoherent. Its value lies in the many lessons that can be learned from failure.",
-      "refinement": "When switching characters, the new character taking the field has their ATK increased by {{0}}% for 10s. This effect can only occur once every 20s."
+      "name": "Histoire des chasseurs de dragon",
+      "description": "L'histoire de cinq héros partant à la chasse au dragon. L'ouvrage est mal écrit et particulièrement incohérent. Sa valeur réside dans les nombreuses leçons que l'on peut tirer de l'échec.",
+      "refinement": "Augmente l'ATQ de {{0}}% pendant 10s après un changement de personnage. Cet effet peut être déclenché une fois toutes les 20s."
     },
     {
       "key": "Twin Nephrite",
-      "name": "Twin Nephrite",
-      "description": "A jade pendant formed by piecing together two jade stones.",
-      "refinement": "Defeating an enemy increases Movement SPD and ATK by {{0}}% for 15s."
+      "name": "Néphrite jumelle",
+      "description": "Un pendentif exquis composé de deux pièces de jade assemblées.",
+      "refinement": "Augmente la VIT de déplacement et l'ATQ de {{0}}% pendant 15s après la défaite d'un ennemi."
     },
     {
       "key": "Blackcliff Agate",
-      "name": "Blackcliff Agate",
-      "description": "A mysterious catalyst made of a material known as \"blackcliff.\" It has an ominous crimson glow that seems to pulse in synchronization with the tremors from deep within the earth.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "name": "Agate de Rochenoire",
+      "description": "Un mystérieux catalyseur en roche noire. La lueur rouge qui en émane résonne en harmonie avec les entrailles de la terre.",
+      "refinement": "Augmente l'ATQ de {{0}}% pendant 30s après avoir vaincu un ennemi. Cet effet peut être cumulé 3 fois et la durée de chaque cumul peut varier."
     },
     {
       "key": "Favonius Codex",
-      "name": "Favonius Codex",
-      "description": "A secret tome that belonged to the scholars of the Knights of Favonius. It describes the logic and power of elements and matter.",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "name": "Code de Favonius",
+      "description": "Un ouvrage autrefois utilisé par les savants de l'Ordre de Favonius. Il décrit la logique régissant les éléments et la matière, ainsi que leur puissance.",
+      "refinement": "Les coups CRIT des attaques ont {{0}}% de chance de générer une faible quantité de particules élémentaire qui restaurent 6 pts d'énergie. Cet effet peut être déclenché 1 fois toutes les {{1}}s."
     },
     {
       "key": "Mappa Mare",
-      "name": "Mappa Mare",
-      "description": "A nautical chart featuring nearby currents and climates that somehow found its way into Liyue via foreign traders.",
-      "refinement": "Triggering an Elemental reaction grants a {{0}}% Elemental DMG Bonus for 10s. Max 2 stacks."
+      "name": "Atlas des terres et des mers",
+      "description": "Une carte marine très détaillée des courants et du climat de Teyvat. Un document étonnant, arrivé à Liyue par voie commerciale.",
+      "refinement": "Augmente les DGT élémentaires de {{0}}% pendant 10s après le déclenchement de toute réaction élémentaire.  Cet effet peut être cumulé 2 fois."
     },
     {
       "key": "Prototype Amber",
-      "name": "Prototype Amber",
-      "description": "A dully gilded catalyst secretly guarded in the Blackcliff Forge. It seems to glow with the very light from the sky.",
-      "refinement": "Using an Elemental Burst regenerates {{0}} Energy every 2s for 6s. All party members will regenerate {{1}}% HP every 2s for this duration."
+      "name": "Malice (prototype)",
+      "description": "Un catalyseur magique découvert à la Forge de Rochenoire. La lumière du soleil, de la lune et des étoiles semble s'en dégager.",
+      "refinement": "Restaure {{0}} pts d'énergie élémentaire toutes les 2s pendant 6s après l'utilisation d'un déchaînement élémentaire. Tous les personnages de l'équipe récupèrent {{1}}% de leurs PV toutes les 2s."
     },
     {
       "key": "Royal Grimoire",
-      "name": "Royal Grimoire",
-      "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "name": "Grimoire royal",
+      "description": "Ce grimoire appartenait autrefois à un mage de la cour royale de Mondstadt. Il contient des témoignages historiques authentiques ainsi que des sorts.",
+      "refinement": "Augmente le Taux CRIT de {{0}}% à chaque attaque qui cause des DGT à un ennemi. Cet effet peut être cumulé 5 fois au maximum, et est réinitialisé lors d'un coup CRIT."
     },
     {
       "key": "Sacrificial Fragments",
-      "name": "Sacrificial Fragments",
-      "description": "A weathered script, the text of which is no longer legible. A cursed item eroded by the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s."
+      "name": "Mémoires de rituels",
+      "description": "Un manuscrit aussi endommagé qu'illisible, objet maudit par les sables du temps.",
+      "refinement": "Les compétences élémentaires ont {{0}}% de chance de réinitialiser leur propre TdR lorsqu'elles infligent des DGT. Cet effet peut être déclenché une fois toutes les {{1}}s."
     },
     {
       "key": "Solar Pearl",
-      "name": "Solar Pearl",
-      "description": "A dull, golden pearl made of an unknown substance that harbors the light of the sun and the moon, and pulses with a warm strength.",
-      "refinement": "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {{0}}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {{1}}% for 6s."
+      "name": "Perle solaire",
+      "description": "Une précieuse perle dorée et mate abritant la lumière du soleil et de la lune, dont la matière est inconnue. Une force chaleureuse s'en dégage.",
+      "refinement": "Les attaques normales augmentent pendant 6s les DGT des compétences et des déchaînements élémentaires de {{0}}% lorsqu'elles touchent. Les compétences et déchaînements élémentaires augmentent pendant 6s les DGT des attaques normales de {{1}}% lorsqu'elles touchent."
     },
     {
       "key": "The Widsith",
-      "name": "The Widsith",
-      "description": "A heavy notebook filled with musical scores. Though suffering from moth damage and heavy wear-and-tear, there is still much power to be found among the hand-written words within.",
-      "refinement": "When the character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s. Recitative: ATK is increased by {{0}}%. Aria: Increases all Elemental DMG by {{1}}%. Interlude: Elemental Mastery is increased by {{2}}."
+      "name": "Mouvement vagabond",
+      "description": "Un épais carnet couvert de notes. Bien qu'il soit abîmé et rongé par les vers, un grand pouvoir existe dans les mots couchés à la main.",
+      "refinement": "Le personnage obtient pendant 10s une mélodie aléatoire lorsqu'il est déployé au combat ; cet effet peut être déclenché toutes les 30s. Récital: augmente l'ATQ de {{0}}% ; Aria: augmente les DGT élémentaires de {{1}}% ; Interlude: augmente la maîtrise élémentaire de {{2}} pts."
     },
     {
       "key": "Wine and Song",
-      "name": "Wine and Song",
-      "description": "A songbook from the bygone aristocratic era, whose composer has become forgotten. It chronicles the tale of a certain heroic outlaw.",
-      "refinement": "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by {{0}}% for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by {{1}}% for 5s."
+      "name": "Vins et chants",
+      "description": "Un recueil de chansons de l'époque aristocratique dont le compositeur est tombé dans l'oubli. Certaines d'entre elles relatent l'histoire d'un certain brigand héroïque...",
+      "refinement": "Lorsqu'une attaque normale touche un ennemi, la consommation d'endurance du sprint ou de l'aptitude qui le remplace est réduite de {{0}}% pendant 5s. De plus, après l'utilisation du sprint ou de l'aptitude qui le remplace, l'ATQ augmente de {{1}}% pendant 5s."
     },
     {
       "key": "Eye of Perception",
-      "name": "Eye of Perception",
-      "description": "A dim black glaze pearl that is said to have the power to read the purity of one’s heart.",
-      "refinement": "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing {{0}}% ATK as DMG. This bolt can bounce between enemies a maximum of 4 times. This effect can occur once every {{1}}s."
+      "name": "Œil de la perception",
+      "description": "Un orbe en verre sombre qui aurait le pouvoir de voir à travers le cœur des gens et de le purifier.",
+      "refinement": "Les attaques normales et chargées ont 50% de chances lorsqu'elles touchent de tirer une balle illuminatrice d'esprit qui inflige des DGT équivalant à {{0}}% de l'ATQ. La balle peut rebondir jusqu'à 4 fois maximum. Cet effet peut être déclenché une fois toutes les {{1}}s."
     },
     {
       "key": "Frostbearer",
-      "name": "Frostbearer",
-      "description": "A fruit that possesses a strange, frosty will. A faint sense of agony emanates from it.",
-      "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, dealing {{1}}% AoE ATK DMG. Can only occur once every 10s. Enemies affected by Cryo are dealt {{2}}% ATK DMG. Can only occur once every 10s."
+      "name": "Fruit du permafrost",
+      "description": "Un fruit dont s'échappe une volonté aussi étrange que gelée. Une vague impression d'agonie en émane.",
+      "refinement": "Les attaques normales et chargées ont {{0}}% de chance lorsqu'elles touchent de générer une stalactite de glace qui inflige des DGT de zone équivalant à {{1}}% de l'ATQ. Si l'ennemi est affecté par l'élément Cryo, la stalactite inflige alors {{2}}% de l'ATQ. Cet effet se déclenche une fois toutes les 10s."
     },
     {
       "key": "Lost Prayer to the Sacred Winds",
-      "name": "Lost Prayer to the Sacred Winds",
-      "description": "An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.",
-      "refinement": "Increases Movement SPD by 10%. When in battle, gain an {{0}}% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat."
+      "name": "L'origine des Quatre Vents",
+      "description": "Un ouvrage religieux rédigé par les premiers serviteurs de l'Archon Anémo. L'œuvre, qui a porté le message de l'Archon et sa bienveillance à travers le millénaire, a reçu la bénédiction des vents.",
+      "refinement": "Augmente la VIT de déplacement de 10%. Confère un bonus de DGT élémentaires de {{0}}% toutes les 4s tant que le personnage est en combat. Cet effet peut être cumulé 4 fois au maximum, et perdure jusqu'à ce que le personnage soit vaincu ou quitte le combat."
     },
     {
       "key": "Skyward Atlas",
-      "name": "Skyward Atlas",
-      "description": "A cloud atlas symbolizing Dvalin and its former master, the Anemo Archon. It details the winds and clouds of the northern regions and contains the powers of the sky and wind.",
-      "refinement": "Increases Elemental DMG Bonus by {{0}}%. Normal Attack hits have a 50% chance to earn the favor of the clouds, which actively seek out nearby enemies to attack for 15s, dealing {{1}}% ATK DMG. Can only occur once every 30s."
+      "name": "Atlas de la Voûte d'Azur",
+      "description": "Un atlas représentant Dvalin et son ancien maître, l'Archon Anémo. Il décrit en détails les vents et les nuages au nord de Teyvat et renferme la puissance des cieux et des vents.",
+      "refinement": "Augmente les DGT élémentaires de {{0}}%. Les attaques normales ont 50% de chances lorsqu'elles touchent d'obtenir pendant 15s la faveur des cieux, qui attaque automatiquement les ennemis proches, et leur inflige {{1}}% des DGT d'ATQ. Cet effet peut être déclenché une fois toutes les 30s."
     },
     {
       "key": "Memory of Dust",
-      "name": "Memory of Dust",
-      "description": "A stone dumbbell containing distant memories. Its endless transformations reveal the power within.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "name": "Chaînes mortelles",
+      "description": "Une arme en pierre lourde et porteuse de souvenirs lointains. Ses transformations incessantes révèlent la puissance qui l'habite.",
+      "refinement": "Augmente la force du bouclier de {{0}}%. Toucher un ennemi augmente l'ATQ de {{1}}% pendant 8s. Cet effet peut être cumulé 5 fois au maximum et peut être déclenché une fois toutes les 0,3s. Lorsque vous êtes protégé par un bouclier, l'augmentation d'ATQ de cet effet est de 100%."
     },
     {
       "key": "Waster Greatsword",
-      "name": "Waster Greatsword",
-      "description": "A sturdy sheet of iron that may be powerful enough to break apart mountains if wielded with enough willpower.",
+      "name": "Épée d'entraînement",
+      "description": "Une épée façonnée à partir d'une lame de fer épaisse et solide. Capable de briser des montagnes si son propriétaire est suffisamment motivé.",
       "refinement": null
     },
     {
       "key": "Old Merc’s Pal",
-      "name": "Old Merc’s Pal",
-      "description": "A battle-tested greatsword that has seen better days and worse.",
+      "name": "Lame du mercenaire",
+      "description": "Un espadon qui a fait des ravages sur bien des champs de bataille. Il a vu des jours meilleurs, mais aussi bien pires.",
       "refinement": null
     },
     {
       "key": "Bloodtainted Greatsword",
-      "name": "Bloodtainted Greatsword",
-      "description": "A steel sword that is said to have been coated with dragon blood, rendering it invulnerable to damage. This effect is not extended to its wielder, however.",
-      "refinement": "Increases DMG dealt against enemies affected by Pyro or Electro by {{0}}%"
+      "name": "Épée sanglante",
+      "description": "Une épée en acier qui fut trempée dans du sang de dragon, la rendant invulnérable. On ne peut pas forcément en dire autant de la personne qui la manie.",
+      "refinement": "Augmente les DGT infligés aux ennemis affectés par les éléments Pyro ou Électro de {{0}}%."
     },
     {
       "key": "Debate Club",
-      "name": "Debate Club",
-      "description": "A handy club made of fine steel. The most persuasive line of reasoning in any debater’s arsenal.",
-      "refinement": "After using an Elemental Skill, Normal or Charged Attacks, on hit, deal an additional {{0}}% ATK DMG in a small area. Effect lasts 15s. DMG can only occur once every 3s."
+      "name": "Épée de la raison",
+      "description": "Une grande massue en acier fin qui répond bien ; le meilleurs recours lors d'une argumentation agitée.",
+      "refinement": "Les attaques normales et chargées infligent {{0}}% de DGT d'ATQ supplémentaires dans une zone restreinte après l'utilisation d'une compétence élémentaire lorsqu'elles touchent. Cet effet dure 15s, et peut être déclenché une fois toutes les 3s."
     },
     {
       "key": "Ferrous Shadow",
-      "name": "Ferrous Shadow",
-      "description": "A replica of the famed sword of Arundolyn, the Lion of Light. Feel the power of a legendary hero as you hold this sword in your hand! Imagine yourself as the great warrior himself! Note: Daydreaming not recommended in live combat.",
-      "refinement": "When HP falls below {{0}}%, increases Charged Attack DMG by {{1}}% and Charged Attacks become harder to interrupt."
+      "name": "Ombre ferreuse",
+      "description": "Une imitation de la célèbre épée d'Arundolyn, le Lion de lumière. Libérez le héros légendaire qui sommeille en vous ! Remarque: Ne rêvassez pas trop.",
+      "refinement": "Les attaques chargées sont plus difficiles à interrompre si les PV sont inférieurs à {{0}}%, et les DGT infligés par les attaques chargées augmentent de {{1}}%."
     },
     {
       "key": "Quartz",
-      "name": "Quartz",
-      "description": "A simple but heavy greatsword made of polished black quartz with a golden gilt. It has an air of elegance and dignity about it.",
-      "refinement": "Upon causing an Overloaded, Melt, Burning, Vaporize, or a Pyro-infused Swirl reaction, ATK is increased by {{0}}% for 12s."
+      "name": "Grande épée en quartz",
+      "description": "Une ancienne grande épée simple mais lourde sculptée et aiguisée dans un quartz noir solide, ornée de motifs dorés qui la rendent digne et élégante.",
+      "refinement": "Augmente l'ATQ de {{0}}% pendant 12s après avoir déclenché Surcharge, Fonte, Brûlure, Évaporation ou Dispersion Pyro."
     },
     {
       "key": "Skyrider Greatsword",
-      "name": "Skyrider Greatsword",
-      "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword... for the second time.",
-      "refinement": "On hit, Normal or Charged Attacks increase ATK by {{0}}% for 6s. Max 4 stacks. Can occur once every 0.5s."
+      "name": "Grande épée céleste",
+      "description": "Une grande épée fiable. On raconte que quelqu'un a essayé de s'en servir comme moyen de transport en montant dessus... pour la deuxième fois.",
+      "refinement": "Les attaques normales et chargées augmentent l'ATQ de {{0}}% pendant 6s lorsqu'elles touchent. Cet effet peut être cumulé 4 fois au maximum, et peut être déclenché une fois toutes les 0,5s."
     },
     {
       "key": "White Iron Greatsword",
-      "name": "White Iron Greatsword",
-      "description": "A claymore made from white iron. Lightweight without compromising on power. Effective even when wielded by one of average strength, it is extremely deadly in the hands of a physically stronger wielder.",
-      "refinement": "Defeating an opponent restores {{0}}% HP."
+      "name": "Grande épée en fer blanc",
+      "description": "Une épée à deux mains fabriquée dans du fer blanc, ce qui ajoute à la puissance à l'arme tout en réduisant son poids. Elle peut être maniée par tous, mais sa force reflète celle de la personne qui l'utilise.",
+      "refinement": "Restaure {{0}}% des PV après la défaite d'un ennemi."
     },
     {
       "key": "Blackcliff Slasher",
-      "name": "Blackcliff Slasher",
-      "description": "An extremely sturdy greatsword from the Blackcliff Forge. It has a dark crimson color from the blade to pommel.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "name": "Trancheuse de Rochenoire",
+      "description": "Un espadon très résistant fabriqué à la Forge de Rochenoire. Sa lame sombre brille d'une lueur rouge.",
+      "refinement": "Augmente l'ATQ de {{0}}% pendant 30s après avoir vaincu un ennemi. Cet effet peut être cumulé 3 fois et la durée de chaque cumul peut varier."
     },
     {
       "key": "Favonius Greatsword",
-      "name": "Favonius Greatsword",
-      "description": "A heavy ceremonial sword of the Knights of Favonius. It channels elemental power easily and is highly destructive.",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "name": "Espadon de Favonius",
+      "description": "Un espadon généralement manié par les chevaliers de l'Ordre de Favonius. Invoquer les éléments est un jeu d'enfant avec cette arme au pouvoir destructeur.",
+      "refinement": "Les coups CRIT des attaques ont {{0}}% de chance de générer une faible quantité de particules élémentaire qui restaurent 6 pts d'énergie. Cet effet peut être déclenché 1 fois toutes les {{1}}s."
     },
     {
       "key": "Lithic Blade",
-      "name": "Lithic Blade",
-      "description": "A greatsword carved and chiseled from the very bedrock of Liyue.",
-      "refinement": "For every character in the party who hails from Liyue, the character who equips this weapon gains a {{0}}% ATK increase and a {{1}}% CRIT Rate increase. This effect stacks up to 4 times."
+      "name": "Épée antique des Millelithes",
+      "description": "Une grande épée qui a été taillée à partir du substrat rocheux de Liyue.",
+      "refinement": "Pour chaque personnage de Liyue présent dans l'équipe, le personnage équipé de cette arme bénéficie de {{0}}% de bonus d'ATQ et de {{1}}% de bonus de Taux CRIT pour chaque personnage de l'équipe provenant de Liyue. Ces bonus peuvent être cumulés 4 fois au maximum."
     },
     {
       "key": "Prototype Archaic",
-      "name": "Prototype Archaic",
-      "description": "An ancient greatsword discovered in the Blackcliff Forge. It swings with such an immense force that one feels it could cut straight through reality itself.",
-      "refinement": "On hit, Normal or Charged Attacks have a 50% chance to deal an additional {{0}}% ATK DMG to enemies within a small AoE. Can only occur once every 15s."
+      "name": "Espadon (prototype)",
+      "description": "Un prototype d'espadon ancien découvert dans la Forge de Rochenoire. La force qui s'en dégage lorsqu'on le manie laisse supposer qu'il serait capable de couper même à travers le tissu de la réalité.",
+      "refinement": "Les attaques normales et chargées ont 50% de chances d'infliger {{0}}% de DGT d'ATQ supplémentaires dans une zone restreinte lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les 15s."
     },
     {
       "key": "Rainslasher",
-      "name": "Rainslasher",
-      "description": "A fluorescent greatsword with no sharp edge that crushes enemies with brute force and raw power.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Electro by {{0}}%"
+      "name": "Fluorescence",
+      "description": "Une grande épée sans tranchant qui dégage une pâle lueur fluorescente. Idéale ceux qui aiment utiliser la force brute pour écraser leurs ennemis.",
+      "refinement": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Électro de {{0}}%."
     },
     {
       "key": "Royal Greatsword",
-      "name": "Royal Greatsword",
-      "description": "An old greatsword that belonged to the erstwhile rulers of Mondstadt. It is made from the finest-quality materials and has stood the test of time. A weapon for use by royals only.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "name": "Espadon royal",
+      "description": "Un espadon assez ancien qui appartenait jadis aux dirigeants de Mondstadt. Il a été fabriqué à partir d'un matériau de qualité qui a su résister à l'épreuve du temps. Cette arme a été conçue pour la noblesse.",
+      "refinement": "Augmente le Taux CRIT de {{0}}% à chaque attaque qui cause des DGT à un ennemi. Cet effet peut être cumulé 5 fois au maximum, et est réinitialisé lors d'un coup CRIT."
     },
     {
       "key": "Serpent Spine",
-      "name": "Serpent Spine",
-      "description": "A rare weapon whose origin is the ancient ocean. One can hear the sound of the ageless waves as one swings it.",
-      "refinement": "Every 4s a character is on the field, they will deal {{0}}% more DMG and take {{1}}% more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG."
+      "name": "Ossature du dragon",
+      "description": "Une épée rare venue des mers anciennes. Celui qui la manie peut presque entendre les vagues déferler.",
+      "refinement": "Les DGT infligés augmentent de {{0}}% et les DGT reçus de {{1}}% toutes les 4s tant que le personnage est en combat ; cet effet peut être cumulé 5 fois maximum. Il ne se réinitialise pas si le personnage quitte le combat, mais sera réduit d'un cumul si le personnage subit des DGT."
     },
     {
       "key": "The Bell",
-      "name": "The Bell",
-      "description": "A heavy greatsword. A clock is embedded within it, though its internal mechanisms have long been damaged.",
-      "refinement": "Taking DMG generates a shield which absorbs DMG up to {{0}}% of Max HP. This shield lasts for 10s or until broken, and can only be triggered once every 45s. While protected by the shield, the character gains {{1}}% increased DMG."
+      "name": "Épée-horloge",
+      "description": "Une grande épée lourde équipée d'une cloche, mais dont le mécanisme de chronométrage a été détruit il y a bien longtemps.",
+      "refinement": "Subir des DGT génère un bouclier qui absorbe jusqu'à {{0}}% des PV max pendant 10s. Peut être déclenché une fois toutes les 45s. Lorsque le personnage est sous la protection du bouclier, les DGT infligés augmentent de {{1}}%."
     },
     {
       "key": "Whiteblind",
-      "name": "Whiteblind",
-      "description": "An exotic sword with one section of the blade left blunt. It made its way into Liyue via the hands of foreign traders. Incredibly powerful in the hands of someone who knows how to use it.",
-      "refinement": "On hit, Normal or Charged Attacks increase ATK and DEF by {{0}}% for 6s. Max 4 stacks. This effect can only occur once every 0.5s."
+      "name": "Ombre immaculée",
+      "description": "Une épée d'origine étrangère avec une section émoussée. Elle fut introduite par les voies commerciales à Liyue, et est un instrument de destruction puissant entre les bonnes mains.",
+      "refinement": "Les attaques normales et chargées augmentent l'ATQ et la DÉF de {{0}}% pendant 6s lorsqu'elles touchent. Cet effet peut être cumulé 4 fois au maximum, et peut être déclenché une fois toutes les 0,5s."
     },
     {
       "key": "Sacrificial Greatsword",
-      "name": "Sacrificial Greatsword",
-      "description": "A ceremonial greatsword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s."
+      "name": "Espadon rituel",
+      "description": "Un espadon ornemental que le temps a pétrifié, mais dont les ornements sont toujours visibles. Cette arme confère à son possesseur le pouvoir d'affronter les vents du temps.",
+      "refinement": "Les compétences élémentaires ont {{0}}% de chance de réinitialiser leur propre TdR lorsqu'elles infligent des DGT. Cet effet peut être déclenché une fois toutes les {{1}}s."
     },
     {
       "key": "Snow-Tombed Starsilver",
-      "name": "Snow-Tombed Starsilver",
-      "description": "An ancient greatsword that was stored between frescoes. Forged from Starsilver, it has the power to cleave through ice and snow.",
-      "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, dealing {{1}}% AoE ATK DMG. Can only occur once every 10s. Enemies affected by Cryo are dealt {{2}}% ATK DMG. Can only occur once every 10s."
+      "name": "Tombe-neige en argétoile",
+      "description": "Un espadon antique autrefois dissimulé entre des fresques. Forgée en argétoile, cette arme a le pouvoir de fendre la neige et la glace.",
+      "refinement": "Les attaques normales et chargées ont {{0}}% de chance lorsqu'elles touchent de générer une stalactite de glace qui inflige des DGT de zone équivalant à {{1}}% de l'ATQ. Si l'ennemi est affecté par l'élément Cryo, la stalactite inflige alors {{2}}% de l'ATQ. Cet effet se déclenche une fois toutes les 10s."
     },
     {
       "key": "Skyward Pride",
-      "name": "Skyward Pride",
-      "description": "A claymore that symbolizes the pride of Dvalin soaring through the skies. When swung, it emits a deep hum as the full force of Dvalin’s command of the sky and the wind is unleashed.",
-      "refinement": "Increases all DMG by {{0}}%. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does {{1}}% of ATK as DMG to enemies along its path. Lasts for 20s or 8 vacuum blades."
+      "name": "Fierté de la Voûte d'Azur",
+      "description": "Une épée à deux mains symbolisant le fier envol de Dvalin dans les cieux. Elle émet un son grave lorsqu'on la brandit, invoquant la puissance du dragon Anémo qui déchaîne les vents.",
+      "refinement": "Augmente tous les DGT infligés de {{0}}%. Après un déchaînement élémentaire, les attaques normales et chargées génèrent une lame de vide qui inflige {{1}}% de DGT d'ATQ aux ennemis sur sa route. Cet effet dure 20s ou 8 lames."
     },
     {
       "key": "Wolf’s Gravestone",
-      "name": "Wolf’s Gravestone",
-      "description": "A longsword used by the Wolf Knight. Originally just a heavy sheet of iron given to the knight by a blacksmith from the city, it became endowed with legendary power owing to his friendship with the wolves.",
-      "refinement": "Increases ATK by {{0}}%. On hit, attacks against enemies with less than 30% HP increase all party members’ ATK by {{1}}% for 12s. Can only occur once every 30s."
+      "name": "Mort-du-loup",
+      "description": "Une épée longue appartenant au chevalier aux loups. Il ne s'agissait au départ que d'une épaisse plaque de fer offerte par le forgeron de la ville, mais elle a acquis un pouvoir légendaire au côté des loups.",
+      "refinement": "Augmente l'ATQ de {{0}}%. Les attaques touchant les ennemis ayant moins de 30% de PV augmentent l'ATQ de tous les membres de l'équipe de {{1}}% pendant 12s. Cet effet peut être déclenché une fois toutes les 30s."
     },
     {
       "key": "The Unforged",
-      "name": "The Unforged",
-      "description": "Capable of driving away evil spirits and wicked people alike, this edgeless claymore seems to possess divine might.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "name": "Lame brute",
+      "description": "Capable d'éloigner les esprits et les individus mal intentionnés, cette épée à deux mains dénuée de tranchant est habitée par une puissance divine.",
+      "refinement": "Augmente la force du bouclier de {{0}}%. Toucher un ennemi augmente l'ATQ de {{1}}% pendant 8s. Cet effet peut être cumulé 5 fois au maximum et peut être déclenché une fois toutes les 0,3s. Lorsque vous êtes protégé par un bouclier, l'augmentation d'ATQ de cet effet est de 100%."
     },
     {
       "key": "Beginner’s Protector",
-      "name": "Beginner’s Protector",
-      "description": "A polearm as straight as a flag pole. Well suited to most combat situations, it has an imposing presence when swung.",
+      "name": "Lance du débutant",
+      "description": "Une lance droite comme un mât, idéale en situation de combat. Elle dégage une présence imposante.",
       "refinement": null
     },
     {
       "key": "Iron Point",
-      "name": "Iron Point",
-      "description": "Sharp and pointy at one end, it is a balanced weapon that is quite popular among travelers.",
+      "name": "Pointe de fer",
+      "description": "Pointue à l'extrémité, cette épée convient aussi à l'attaque qu'à la défense et est très prisée des voyageurs.",
       "refinement": null
     },
     {
       "key": "Black Tassel",
-      "name": "Black Tassel",
-      "description": "An exceptionally powerful polearm that also offers a simple but elegant solution to the issue of the easily stained white tassel.",
-      "refinement": "Increases DMG against slimes by {{0}}%"
+      "name": "Pampille noire",
+      "description": "Une arme d'hast puissante, qui offre une solution élégante au problème de salissement des pampilles blanches.",
+      "refinement": "Augmente les DGT infligés aux Blobs de {{0}}%."
     },
     {
       "key": "Halberd",
-      "name": "Halberd",
-      "description": "A polearm with an axe blade mounted on top that can deal quite a lot of damage. It’s favored by the Millelith officers.",
-      "refinement": "Normal Attacks deal an additional {{0}}% DMG. Can only occur once every 10s."
+      "name": "Hallebarde",
+      "description": "Une hampe à l'extrémité de laquelle se trouve un fer de hache. Cette arme puissante est l'une des favorite des officiers des Millelithes.",
+      "refinement": "Les attaques normales infligent {{0}}% de DGT d'ATQ supplémentaires lorsqu'elles touchent. Cet effet peut être déclenché une fois toutes les 10s."
     },
     {
       "key": "White Tassel",
-      "name": "White Tassel",
-      "description": "A standard-issue weapon of the Millelith soldiers. It has a sturdy shaft and sharp spearhead. It’s a reliable weapon.",
-      "refinement": "Increases Normal Attack DMG by {{0}}%."
+      "name": "Pampille blanche",
+      "description": "Une lance dont les Millelithes sont souvent équipés. La hampe solide et la lame tranchante de cette arme en font une valeur sûre.",
+      "refinement": "Augmente les DGT infligés par des attaques normales de {{0}}%."
     },
     {
       "key": "Blackcliff Pole",
-      "name": "Blackcliff Pole",
-      "description": "A weapon made of blackcliff and aerosiderite. There is a dark crimson glow on its cold black sheen.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "name": "Lance de Rochenoire",
+      "description": "Une lance fabriquée en roche noire et aérosidérite. Son fer sombre brille d'une lueur rouge.",
+      "refinement": "Augmente l'ATQ de {{0}}% pendant 30s après avoir vaincu un ennemi. Cet effet peut être cumulé 3 fois et la durée de chaque cumul peut varier."
     },
     {
       "key": "Crescent Pike",
-      "name": "Crescent Pike",
-      "description": "An exotic weapon with an extremely long blade on the top and a crescent blade at the bottom. It found its way into Liyue through foreign traders. With practice, it can deal heavy damage.",
-      "refinement": "After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal an additional {{0}}% ATK DMG for 5s."
+      "name": "Pique du croissant de lune",
+      "description": "Cette lance d'origine étrangère, arrivée à Liyue par les voies commerciales, possède une lame en forme de croissant à l'extrémité d'un manche fin et long. Avec un peu de pratique, vous devriez pouvoir libérer sa puissance destructrice.",
+      "refinement": "Chaque orbe ou particule élémentaire obtenu(e) confère pendant 5s un bonus de DGT équivalant à {{0}}% de l'ATQ."
     },
     {
       "key": "Deathmatch",
-      "name": "Deathmatch",
-      "description": "A sharp crimson polearm that was once a gladiator’s priceless treasure. Its awl has been stained by the blood of countless beasts and men.",
-      "refinement": "If are there at least 2 enemies nearby, ATK is increased by {{0}}% and DEF is increased by {{1}}%. If there are less than 2 enemies nearby, ATK is increased by {{2}}%"
+      "name": "Scion de la victoire",
+      "description": "Une lance rouge tranchante qui fut autrefois l'arme chérie d'un gladiateur. Le sang d'innombrables ennemis, hommes et bêtes, a teinté sa lame.",
+      "refinement": "Augmente l'ATQ de {{0}}% et la DÉF de {{1}}% si 2 ennemis ou plus se trouvent à proximité ; augmente l'ATQ de {{2}}% dans le cas contraire."
     },
     {
       "key": "Dragon’s Bane",
-      "name": "Dragon’s Bane",
-      "description": "A polearm decorated with an entwining golden dragon. Light and sharp, this weapon may very well kill dragons with ease.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Pyro by {{0}}%"
+      "name": "Fléau du dragon",
+      "description": "Une lance aussi légère que pointue sur laquelle s'enroule un dragon d'or. Légère et affûtée, cette arme pourrait fort bien être capable de tuer des dragons.",
+      "refinement": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Pyro de {{0}}%."
     },
     {
       "key": "Lithic Spear",
-      "name": "Lithic Spear",
-      "description": "A spear forged from the rocks of the Guyun Stone Forest. Its hardness knows no equal.",
-      "refinement": "For every character in the party who hails from Liyue, the character who equips this weapon gains a {{0}}% ATK increase and a {{1}}% CRIT Rate increase. This effect stacks up to 4 times."
+      "name": "Lance des Millelithes",
+      "description": "Une lance forgée à partir des rochers de la Forêt de pierre de Guyun. Sa pointe est d'une solidité sans pareille.",
+      "refinement": "Pour chaque personnage de Liyue présent dans l'équipe, le personnage équipé de cette arme bénéficie de {{0}}% de bonus d'ATQ et de {{1}}% de bonus de Taux CRIT pour chaque personnage de l'équipe provenant de Liyue. Ces bonus peuvent être cumulés 4 fois au maximum."
     },
     {
       "key": "Prototype Starglitter",
-      "name": "Prototype Starglitter",
-      "description": "A grudge discovered in the Blackcliff Forge. The glimmers along the sharp edge are like stars in the night.",
-      "refinement": "After using an Elemental Skill, increases Normal and Charged Attack DMG by {{0}}% for 12s. Max 2 stacks."
+      "name": "Guisarme stellaire (prototype)",
+      "description": "Une guisarme découverte à la Forge de Rochenoire. L'éclat à la pointe de son fer est aussi brillant qu'une étoile.",
+      "refinement": "Après l'utilisation d'une compétence élémentaire, augmente les DGT des attaques normales et chargées de {{0}}% pendant 12s. Cet effet peut être cumulé 2 fois au maximum."
     },
     {
       "key": "Favonius Lance",
-      "name": "Favonius Lance",
-      "description": "A polearm made in the style of the Knights of Favonius. Its shaft is straight, and its tip flows lightly like the wind.",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "name": "Lance de Favonius",
+      "description": "Une longue lance généralement maniée par les chevaliers de l'Ordre de Favonius. Une douce brise caresse la pointe de sa lame qui est attachée à une hampe droite.",
+      "refinement": "Les coups CRIT des attaques ont {{0}}% de chance de générer une faible quantité de particules élémentaire qui restaurent 6 pts d'énergie. Cet effet peut être déclenché 1 fois toutes les {{1}}s."
     },
     {
       "key": "Royal Spear",
-      "name": "Royal Spear",
-      "description": "This polearm was once cherished by a member of the old nobility that governed Mondstadt long ago. Although it has never seen the light of day, it is still incomparably sharp.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "name": "Lance de chasse royale",
+      "description": "Cette arme d'hast était autrefois chérie par l'un des nobles gouvernant Mondstadt, il y a de cela longtemps. Elle n'a sans doute jamais vu la lumière du jour, et est toujours particulièrement aiguisée.",
+      "refinement": "Augmente le Taux CRIT de {{0}}% à chaque attaque qui cause des DGT à un ennemi. Cet effet peut être cumulé 5 fois au maximum, et est réinitialisé lors d'un coup CRIT."
     },
     {
       "key": "Dragonspine Spear",
-      "name": "Dragonspine Spear",
-      "description": "A spear created from the fang of a dragon. It is oddly warm to the touch.",
-      "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, dealing {{1}}% AoE ATK DMG. Can only occur once every 10s. Enemies affected by Cryo are dealt {{2}}% ATK DMG. Can only occur once every 10s."
+      "name": "Lance Dosdragon",
+      "description": "Une lance fabriquée à partir d'un croc de dragon. Une certaine chaleur en émane.",
+      "refinement": "Les attaques normales et chargées ont {{0}}% de chance lorsqu'elles touchent de générer une stalactite de glace qui inflige des DGT de zone équivalant à {{1}}% de l'ATQ. Si l'ennemi est affecté par l'élément Cryo, la stalactite inflige alors {{2}}% de l'ATQ. Cet effet se déclenche une fois toutes les 10s."
     },
     {
       "key": "Vortex Vanquisher",
-      "name": "Vortex Vanquisher",
-      "description": "This sharp polearm can seemingly pierce through anything. When swung, one can almost see the rift it tears in the air.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "name": "Perceur prismatique",
+      "description": "Cette lance aiguisée semble pouvoir tout transpercer. Puissante et rapide, on dit qu'elle est capable de fendre l'arc-en-ciel.",
+      "refinement": "Augmente la force du bouclier de {{0}}%. Toucher un ennemi augmente l'ATQ de {{1}}% pendant 8s. Cet effet peut être cumulé 5 fois au maximum et peut être déclenché une fois toutes les 0,3s. Lorsque vous êtes protégé par un bouclier, l'augmentation d'ATQ de cet effet est de 100%."
     },
     {
       "key": "Primordial Jade Winged-Spear",
-      "name": "Primordial Jade Winged-Spear",
-      "description": "A jade polearm made by the archons, capable of slaying ancient beasts.",
-      "refinement": "On hit, increases ATK by {{0}}% for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by {{1}}%."
+      "name": "Lance de jade ailée",
+      "description": "Une lance longue et pointue en jade ensorcelé, avec laquelle vous pourriez vaincre les puissants monstres marins des temps préhistoriques.",
+      "refinement": "Les ennemis touchés confèrent un bonus d'ATQ de {{0}}% pendant 6s. Cet effet peut être déclenché une fois toutes les 0,3s, et peut être cumulé 7 fois au maximum. Lorsque les cumuls sont au max, les DGT augmentent de {{1}}%."
     },
     {
       "key": "Skyward Spine",
-      "name": "Skyward Spine",
-      "description": "A polearm that symbolizes Dvalin’s firm resolve. The upright shaft of this weapon points towards the heavens, clad in the might of sky and wind.",
-      "refinement": "Increases CRIT Rate by {{0}}% and increases Normal ATK SPD by 12%. Additionally, Normal and Charged Attacks hits on enemies have a 50% chance to trigger a vacuum blade that deals {{1}}% of ATK as DMG in a small AoE. This effect can occur no more than once every 2s."
+      "name": "Berge de la Voûte d'Azur",
+      "description": "Une lance symbolisant la farouche détermination de Stormterror. Sa hampe se dresse fière vers l'azur, infusée de la volonté des cieux et du pouvoir des vents.",
+      "refinement": "Augmente le Taux CRIT de {{0}}% et la VIT de l'attaque normale de 12%. Les attaques normales et chargées ont 50% de chance lorsqu'elles touchent de générer une lame de vide qui inflige des DGT équivalant à {{1}}% de l'ATQ. Cet effet se déclenche une fois toutes les 2s."
     },
     {
       "key": "Primordial Jade Cutter",
-      "name": "Primordial Jade Cutter",
-      "description": "A ceremonial sword masterfully carved from pure jade. There almost seems to be an audible sigh in the wind as it is swung.",
-      "refinement": "HP increased by {{0}}%. Additionally, provides an ATK Bonus based on {{1}}% of the wielder's Max HP."
+      "name": "Coupeur de jade primordial",
+      "description": "Une épée cérémonielle taillée dans le jade le plus pur. On peut presque entendre son soupir lorsqu'elle tourne dans le vent.",
+      "refinement": "Les PV sont augmentés de {{0}}%. Le personnage équipé de l'arme obtient également un bonus d'ATQ équivalant à {{1}}% de ses PV max."
     },
     {
       "key": "Staff of Homa",
-      "name": "Staff of Homa",
-      "description": "A \"firewood staff\" that was once used in ancient and long-lost rituals.",
-      "refinement": "HP increased by {{0}}%. Additionally, provides an ATK Bonus based on {{1}}% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional {{2}}% of Max HP."
+      "name": "Bâton de Homa",
+      "description": "Un «bâton de feu» utilisé il y a bien longtemps dans quelque rituel ancien aujourd'hui disparu.",
+      "refinement": "Les PV sont augmentés de {{0}}%. Le personnage équipé de l'arme obtient également un bonus d'ATQ équivalant à {{1}}% de ses PV max, et lorsque ses PV sont inférieurs à 50 %, il obtient un bonus d'ATQ supplémentaire équivalant à {{2}}% de ses PV max."
     },
     {
       "key": "Windblume Ode",
-      "name": "Windblume Ode",
-      "description": "A bow adorned with nameless flowers that bears the earnest hopes of an equally nameless person.",
-      "refinement": "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by {{0}}% for 6s."
+      "name": "Ode aux alizées",
+      "description": "Un arc ornementé de fleurs sans nom, portant également le poids des espoirs ardents d'un inconnu.",
+      "refinement": "Libérer une compétence élémentaire confère la faveur des alizées. L'ATQ augmente de {{0}}% pendant 6s."
     },
     {
       "key": "Elegy for the End",
-      "name": "Elegy for the End",
-      "description": "A bow as lovely as any bard's lyre, its arrows pierce the heart like a lamenting sigh.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by {{0}}. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by {{1}} and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "name": "Ultime soupir",
+      "description": "Un arc aussi élégant qu'une lyre de barde ; les flèches qu'il décoche transpercent le cœur à la manière d'un doux soupir.",
+      "refinement": "Partie du «Concert du millénaire». Augmente la maîtrise élémentaire de {{0}} pts. Lorsque le personnage équipé de cette arme touche un ennemi avec sa compétence ou son déchaînement élémentaire, il obtient un talisman de réminiscence, à raison d'un talisman toutes les 0,2s max, même s'il n'est plus déployé. Une fois 4 talismans cumulés, ils sont consommés et font bénéficier pendant 12s tous les membres de l'équipe à proximité de l'effet «Concert du millénaire - Chant d'adieu», ce qui augmente leur maîtrise élémentaire de {{1}} pts et leur ATQ de {{2}}%. Il n'est plus possible de gagner de talismans de réminiscence pendant 20s après activation de cet effet. Les différents effets du «Concert du millénaire» ne peuvent pas être cumulés."
     }
   ],
   "artifacts": [
