@@ -26,6 +26,7 @@ class NotificationCustomForm extends StatelessWidget {
   final bool showOtherImages;
   final DateTime scheduledDate;
   final LanguageModel language;
+  final bool useTwentyFourHoursFormat;
 
   const NotificationCustomForm({
     Key key,
@@ -39,6 +40,7 @@ class NotificationCustomForm extends StatelessWidget {
     @required this.showOtherImages,
     @required this.scheduledDate,
     @required this.language,
+    @required this.useTwentyFourHoursFormat,
   }) : super(key: key);
 
   @override
@@ -66,8 +68,11 @@ class NotificationCustomForm extends StatelessWidget {
             Expanded(
               flex: 40,
               child: OutlinedButton(
-                onPressed: () => _showQuantityPickerDialog(context, 720),
-                child: Text(utils.DateUtils.formatDateWithoutLocale(scheduledDate), textAlign: TextAlign.center),
+                onPressed: () => _showDatePickerDialog(context),
+                child: Text(
+                  utils.DateUtils.formatDateMilitaryTime(scheduledDate, useTwentyFourHoursFormat: useTwentyFourHoursFormat),
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
           ],
@@ -79,7 +84,7 @@ class NotificationCustomForm extends StatelessWidget {
     );
   }
 
-  Future<void> _showQuantityPickerDialog(BuildContext context, int value) async {
+  Future<void> _showDatePickerDialog(BuildContext context) async {
     final now = DateTime.now();
     final locale = Locale(language.code, language.countryCode);
     final date = await showDatePicker(
@@ -94,12 +99,20 @@ class NotificationCustomForm extends StatelessWidget {
       return;
     }
 
-    final time = await showTimePicker(context: context, initialTime: TimeOfDay.now());
+    final time = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.fromDateTime(scheduledDate),
+      builder: (context, child) => MediaQuery(
+        data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: useTwentyFourHoursFormat),
+        child: child,
+      ),
+    );
     if (time == null) {
       return;
     }
 
-    final finalScheduledDate = date.add(Duration(hours: time.hour, minutes: time.minute));
+    //Here the time of day returned is always in 24hrs format
+    final finalScheduledDate = DateTime(date.year, date.month, date.day, time.hour, time.minute);
     if (finalScheduledDate.isBefore(DateTime.now().add(const Duration(minutes: 5)))) {
       final s = S.of(context);
       ToastUtils.showInfoToast(ToastUtils.of(context), s.invalidDate);

@@ -48,6 +48,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           serverResetTime: settings.serverResetTime,
           doubleBackToClose: settings.doubleBackToClose,
           useOfficialMap: settings.useOfficialMap,
+          useTwentyFourHoursFormat: settings.useTwentyFourHoursFormat,
         );
       },
       themeChanged: (event) async {
@@ -98,6 +99,10 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         _settingsService.useOfficialMap = event.newValue;
         _urlPageBloc.add(const UrlPageEvent.init(loadMap: false, loadWishSimulator: false, loadDailyCheckIn: false));
         return currentState.copyWith.call(useOfficialMap: event.newValue);
+      },
+      useTwentyFourHoursFormat: (event) async {
+        _settingsService.useTwentyFourHoursFormat = event.newValue;
+        return currentState.copyWith.call(useTwentyFourHoursFormat: event.newValue);
       },
     );
 

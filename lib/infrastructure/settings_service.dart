@@ -16,6 +16,7 @@ class SettingsServiceImpl extends SettingsService {
   final _serverResetTimeKey = 'ServerResetTimeKey';
   final _doubleBackToCloseKey = 'DoubleBackToCloseKey';
   final _useOfficialMapKey = 'UseOfficialMapKey';
+  final _useTwentyFourHoursFormatKey = 'UseTwentyFourHoursFormat';
 
   bool _initialized = false;
 
@@ -77,6 +78,12 @@ class SettingsServiceImpl extends SettingsService {
   set useOfficialMap(bool value) => _prefs.setBool(_useOfficialMapKey, value);
 
   @override
+  bool get useTwentyFourHoursFormat => _prefs.getBool(_useTwentyFourHoursFormatKey);
+
+  @override
+  set useTwentyFourHoursFormat(bool value) => _prefs.setBool(_useTwentyFourHoursFormatKey, value);
+
+  @override
   AppSettings get appSettings => AppSettings(
         appTheme: appTheme,
         useDarkAmoled: false,
@@ -88,6 +95,7 @@ class SettingsServiceImpl extends SettingsService {
         serverResetTime: serverResetTime,
         doubleBackToClose: doubleBackToClose,
         useOfficialMap: useOfficialMap,
+        useTwentyFourHoursFormat: useTwentyFourHoursFormat,
       );
 
   SettingsServiceImpl(this._logger);
@@ -145,6 +153,11 @@ class SettingsServiceImpl extends SettingsService {
     if (_prefs.get(_useOfficialMapKey) == null) {
       _logger.info(runtimeType, 'Use the official map will be set to its default (false)');
       useOfficialMap = false;
+    }
+
+    if (_prefs.getBool(_useTwentyFourHoursFormatKey) == null) {
+      _logger.info(runtimeType, 'The default date format will be set to its default (false)');
+      useTwentyFourHoursFormat = false;
     }
 
     _initialized = true;

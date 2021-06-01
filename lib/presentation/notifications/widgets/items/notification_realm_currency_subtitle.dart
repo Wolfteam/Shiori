@@ -13,6 +13,7 @@ class NotificationRealmCurrencySubtitle extends StatelessWidget {
   final DateTime createdAt;
   final DateTime completesAt;
   final String note;
+  final bool useTwentyFourHoursFormat;
 
   const NotificationRealmCurrencySubtitle({
     Key key,
@@ -21,6 +22,7 @@ class NotificationRealmCurrencySubtitle extends StatelessWidget {
     @required this.currentTrustRank,
     @required this.createdAt,
     @required this.completesAt,
+    @required this.useTwentyFourHoursFormat,
     this.note,
   }) : super(key: key);
 
@@ -33,6 +35,7 @@ class NotificationRealmCurrencySubtitle extends StatelessWidget {
     return NotificationSubtitle(
       createdAt: createdAt,
       completesAt: completesAt,
+      useTwentyFourHoursFormat: useTwentyFourHoursFormat,
       children: [
         Text('$currentValue / ${getRealmMaxCurrency(currentTrustRank)}', style: theme.textTheme.bodyText2),
         Text('${s.realmRank}: ${s.translateRealRankType(currentRankType, showRatio: true)}', style: theme.textTheme.caption),

@@ -52,9 +52,13 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
 
   NotificationsState _buildInitialState() {
     cancelTimer();
-    startTime();
     final notifications = _dataService.getAllNotifications();
-    return NotificationsState.initial(notifications: notifications, ticks: _timer.tick);
+    startTime();
+    return NotificationsState.initial(
+      notifications: notifications,
+      ticks: _timer.tick,
+      useTwentyFourHoursFormat: _settingsService.useTwentyFourHoursFormat,
+    );
   }
 
   Future<NotificationsState> _deleteNotification(int key, AppNotificationType type) async {

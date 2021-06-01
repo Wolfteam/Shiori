@@ -8,11 +8,13 @@ class NotificationSubtitle extends StatelessWidget {
   final DateTime completesAt;
   final String note;
   final List<Widget> children;
+  final bool useTwentyFourHoursFormat;
 
   const NotificationSubtitle({
     Key key,
     @required this.createdAt,
     @required this.completesAt,
+    @required this.useTwentyFourHoursFormat,
     this.note,
     this.children = const [],
   }) : super(key: key);
@@ -31,7 +33,11 @@ class NotificationSubtitle extends StatelessWidget {
             style: theme.textTheme.subtitle2,
             overflow: TextOverflow.ellipsis,
           ),
-        NotificationListSubtitleDates(createdAt: createdAt, completesAt: completesAt),
+        NotificationListSubtitleDates(
+          createdAt: createdAt,
+          completesAt: completesAt,
+          useTwentyFourHoursFormat: useTwentyFourHoursFormat,
+        ),
       ],
     );
   }

@@ -8,12 +8,14 @@ class NotificationResinSubtitle extends StatelessWidget {
   final DateTime createdAt;
   final DateTime completesAt;
   final String note;
+  final bool useTwentyFourHoursFormat;
 
   const NotificationResinSubtitle({
     Key key,
     @required this.initialResin,
     @required this.createdAt,
     @required this.completesAt,
+    @required this.useTwentyFourHoursFormat,
     this.note,
   }) : super(key: key);
 
@@ -24,6 +26,7 @@ class NotificationResinSubtitle extends StatelessWidget {
     return NotificationSubtitle(
       createdAt: createdAt,
       completesAt: completesAt,
+      useTwentyFourHoursFormat: useTwentyFourHoursFormat,
       children: [
         Text('$currentValue / $maxResinValue', style: theme.textTheme.bodyText2),
       ],

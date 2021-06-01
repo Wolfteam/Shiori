@@ -199,6 +199,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           itemType: item.notificationItemType,
           scheduledDate: item.completesAt,
           language: _localeService.getLocaleWithoutLang(),
+          useTwentyFourHoursFormat: _settingsService.useTwentyFourHoursFormat,
         );
         break;
       default:
@@ -268,6 +269,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           itemType: AppNotificationItemType.material,
           scheduledDate: DateTime.now().add(const Duration(days: 1)),
           language: _localeService.getLocaleWithoutLang(),
+          useTwentyFourHoursFormat: _settingsService.useTwentyFourHoursFormat,
         );
         break;
       default:
