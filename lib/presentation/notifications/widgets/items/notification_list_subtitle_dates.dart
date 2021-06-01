@@ -4,11 +4,13 @@ import 'package:genshindb/domain/utils/date_utils.dart' as utils;
 class NotificationListSubtitleDates extends StatelessWidget {
   final DateTime createdAt;
   final DateTime completesAt;
+  final bool useTwentyFourHoursFormat;
 
   const NotificationListSubtitleDates({
     Key key,
     @required this.createdAt,
     @required this.completesAt,
+    @required this.useTwentyFourHoursFormat,
   }) : super(key: key);
 
   @override
@@ -26,7 +28,7 @@ class NotificationListSubtitleDates extends StatelessWidget {
               ),
               Expanded(
                 child: Text(
-                  utils.DateUtils.formatDateWithoutLocale(createdAt),
+                  utils.DateUtils.formatDateMilitaryTime(createdAt, useTwentyFourHoursFormat: useTwentyFourHoursFormat),
                   style: theme.textTheme.caption,
                 ),
               ),
@@ -43,7 +45,7 @@ class NotificationListSubtitleDates extends StatelessWidget {
               ),
               Expanded(
                 child: Text(
-                  utils.DateUtils.formatDateWithoutLocale(completesAt),
+                  utils.DateUtils.formatDateMilitaryTime(completesAt, useTwentyFourHoursFormat: useTwentyFourHoursFormat),
                   style: theme.textTheme.caption,
                 ),
               ),

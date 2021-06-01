@@ -8,6 +8,7 @@ import 'package:genshindb/domain/extensions/duration_extensions.dart';
 import 'package:genshindb/domain/models/models.dart' as models;
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/circle_item.dart';
+import 'package:genshindb/presentation/shared/number_picker_dialog.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 
 import '../add_edit_notification_bottom_sheet.dart';
@@ -67,13 +68,22 @@ class NotificationListTitle extends StatelessWidget {
           foregroundColor: Colors.white,
           onTap: () => _showEditModal(context),
         ),
-        IconSlideAction(
-          caption: s.reset,
-          color: Colors.green,
-          icon: Icons.restore,
-          foregroundColor: Colors.white,
-          onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.reset(id: itemKey, type: type)),
-        ),
+        if (type != AppNotificationType.custom)
+          IconSlideAction(
+            caption: s.reset,
+            color: Colors.green,
+            icon: Icons.restore,
+            foregroundColor: Colors.white,
+            onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.reset(id: itemKey, type: type)),
+          ),
+        if (remaining.inHours > 1 && type != AppNotificationType.resin && type != AppNotificationType.realmCurrency)
+          IconSlideAction(
+            caption: s.reduceTime,
+            color: Colors.purpleAccent,
+            icon: Icons.timelapse,
+            foregroundColor: Colors.white,
+            onTap: () => _showReduceTimeModal(context),
+          ),
       ],
       child: ListTile(
         contentPadding: Styles.edgeInsetAll5,
@@ -111,5 +121,27 @@ class NotificationListTitle extends StatelessWidget {
       builder: (_) => const AddEditNotificationBottomSheet(isInEditMode: true),
     );
     context.read<NotificationsBloc>().add(const NotificationsEvent.init());
+  }
+
+  Future<void> _showReduceTimeModal(BuildContext context) async {
+    final s = S.of(context);
+    context.read<NotificationsBloc>().cancelTimer();
+    final hoursToReduce = await showDialog<int>(
+      context: context,
+      builder: (_) => NumberPickerDialog(
+        title: s.reduceTime,
+        minItemLevel: 1,
+        maxItemLevel: remaining.inHours,
+        value: 1,
+        itemBuilder: (value) => s.inXHours(value),
+      ),
+    );
+
+    context.read<NotificationsBloc>().add(const NotificationsEvent.init());
+    if (hoursToReduce == null) {
+      return;
+    }
+
+    context.read<NotificationsBloc>().add(NotificationsEvent.reduceHours(id: itemKey, type: type, hoursToReduce: hoursToReduce));
   }
 }

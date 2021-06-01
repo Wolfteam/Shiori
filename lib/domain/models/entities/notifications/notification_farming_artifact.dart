@@ -57,14 +57,4 @@ class NotificationFarmingArtifact extends HiveObject implements NotificationBase
     @required this.artifactFarmingTimeType,
   })  : type = AppNotificationType.farmingArtifacts.index,
         originalScheduledDate = completesAt;
-
-  @override
-  Future<void> updateNotification(String title, String body, String note, bool showNotification) {
-    this.title = title;
-    this.note = note;
-    this.body = body;
-    this.showNotification = showNotification;
-
-    return save();
-  }
 }

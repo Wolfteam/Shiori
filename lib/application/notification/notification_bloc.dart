@@ -13,6 +13,7 @@ import 'package:genshindb/domain/services/genshin_service.dart';
 import 'package:genshindb/domain/services/locale_service.dart';
 import 'package:genshindb/domain/services/logging_service.dart';
 import 'package:genshindb/domain/services/notification_service.dart';
+import 'package:genshindb/domain/services/settings_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
 
 part 'notification_bloc.freezed.dart';
@@ -33,6 +34,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   final LocaleService _localeService;
   final LoggingService _loggingService;
   final TelemetryService _telemetryService;
+  final SettingsService _settingsService;
 
   static int get maxTitleLength => 40;
 
@@ -47,6 +49,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     this._localeService,
     this._loggingService,
     this._telemetryService,
+    this._settingsService,
   ) : super(_initialState);
 
   @override
@@ -149,7 +152,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     );
   }
 
-  NotificationState _buildEditState(int key, AppNotificationType type,) {
+  NotificationState _buildEditState(int key, AppNotificationType type) {
     final item = _dataService.getNotification(key, type);
     NotificationState state;
     final images = <NotificationItemImage>[];
@@ -196,6 +199,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           itemType: item.notificationItemType,
           scheduledDate: item.completesAt,
           language: _localeService.getLocaleWithoutLang(),
+          useTwentyFourHoursFormat: _settingsService.useTwentyFourHoursFormat,
         );
         break;
       default:
@@ -265,6 +269,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           itemType: AppNotificationItemType.material,
           scheduledDate: DateTime.now().add(const Duration(days: 1)),
           language: _localeService.getLocaleWithoutLang(),
+          useTwentyFourHoursFormat: _settingsService.useTwentyFourHoursFormat,
         );
         break;
       default:
@@ -578,6 +583,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
 
     final notif = await _dataService.saveWeeklyBossNotification(
       selectedItemKey,
+      _settingsService.serverResetTime,
       s.title,
       s.body,
       note: s.note,

@@ -227,7 +227,8 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final dataService = getIt<DataService>();
             final notificationService = getIt<NotificationService>();
-            return NotificationsBloc(dataService, notificationService);
+            final settingsService = getIt<SettingsService>();
+            return NotificationsBloc(dataService, notificationService, settingsService);
           },
         ),
         BlocProvider(
@@ -238,7 +239,16 @@ class MyApp extends StatelessWidget {
             final localeService = getIt<LocaleService>();
             final loggingService = getIt<LoggingService>();
             final telemetryService = getIt<TelemetryService>();
-            return NotificationBloc(dataService, notificationService, genshinService, localeService, loggingService, telemetryService);
+            final settingsService = getIt<SettingsService>();
+            return NotificationBloc(
+              dataService,
+              notificationService,
+              genshinService,
+              localeService,
+              loggingService,
+              telemetryService,
+              settingsService,
+            );
           },
         ),
       ],

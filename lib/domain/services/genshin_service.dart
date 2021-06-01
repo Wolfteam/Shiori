@@ -63,6 +63,7 @@ abstract class GenshinService {
 
   int getServerDay(AppServerResetTimeType type);
   DateTime getServerDate(AppServerResetTimeType type);
+  Duration getDurationUntilServerResetDate(AppServerResetTimeType type);
 
   List<GameCodeFileModel> getAllGameCodes();
 
@@ -85,4 +86,6 @@ abstract class GenshinService {
   FurnitureFileModel getDefaultFurnitureForNotifications();
   FurnitureFileModel getFurniture(String key);
   FurnitureFileModel getFurnitureByImage(String image);
+
+  DateTime getNextDateForWeeklyBoss(AppServerResetTimeType type);
 }

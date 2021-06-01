@@ -108,7 +108,11 @@ class NotificationServiceImpl implements NotificationService {
 
   @override
   Future<void> scheduleNotification(int id, String title, String body, DateTime toBeDeliveredOn) async {
-    await init();
+    final now = DateTime.now();
+    if (toBeDeliveredOn.isBefore(now) || toBeDeliveredOn.isAtSameMomentAs(now)) {
+      await showNotification(id, title, body);
+      return;
+    }
     final scheduledDate = tz.TZDateTime.from(toBeDeliveredOn, _location);
     return _flutterLocalNotificationsPlugin.zonedSchedule(
       id,

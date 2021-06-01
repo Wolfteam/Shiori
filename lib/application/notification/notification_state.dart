@@ -201,5 +201,6 @@ abstract class NotificationState implements _$NotificationState {
     @Default(false) bool showOtherImages,
     @required DateTime scheduledDate,
     @required LanguageModel language,
+    @Default(false) bool useTwentyFourHoursFormat,
   }) = _CustomState;
 }

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/assets.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/extensions/string_extensions.dart';
@@ -427,7 +428,6 @@ class GenshinServiceImpl implements GenshinService {
     DateTime server;
     // According to this page, the server reset happens at 4 am
     // https://game8.co/games/Genshin-Impact/archives/301599
-    const resetHour = 4;
     switch (type) {
       case AppServerResetTimeType.northAmerica:
         server = nowUtc.subtract(const Duration(hours: 5));
@@ -442,11 +442,20 @@ class GenshinServiceImpl implements GenshinService {
         throw Exception('Invalid server reset type');
     }
 
-    if (server.hour >= resetHour) {
+    if (server.hour >= serverResetHour) {
       return server;
     }
 
     return server.subtract(const Duration(days: 1));
+  }
+
+  @override
+  Duration getDurationUntilServerResetDate(AppServerResetTimeType type) {
+    final serverDate = getServerDate(type);
+    //Here the utc part is important, otherwise the difference will be calculated using the local time
+    final serverResetDate = DateTime.utc(serverDate.year, serverDate.month, serverDate.day, serverResetHour);
+    final dateToUse = serverDate.isBefore(serverResetDate) ? serverDate : serverDate.subtract(const Duration(days: 1));
+    return serverResetDate.difference(dateToUse);
   }
 
   @override
@@ -743,6 +752,18 @@ class GenshinServiceImpl implements GenshinService {
   @override
   FurnitureFileModel getFurnitureByImage(String image) {
     return _furnitureFile.furniture.firstWhere((m) => m.fullImagePath == image);
+  }
+
+  @override
+  DateTime getNextDateForWeeklyBoss(AppServerResetTimeType type) {
+    final durationUntilServerReset = getDurationUntilServerResetDate(type);
+    var finalDate = DateTime.now().add(durationUntilServerReset);
+
+    while (finalDate.weekday != DateTime.monday) {
+      finalDate = finalDate.add(const Duration(days: 1));
+    }
+
+    return finalDate;
   }
 
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {

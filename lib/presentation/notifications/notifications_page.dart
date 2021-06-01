@@ -39,7 +39,7 @@ class NotificationsPage extends StatelessWidget {
               return GroupedListView<models.NotificationItem, String>(
                 elements: state.notifications,
                 groupBy: (item) => s.translateAppNotificationType(item.type),
-                itemBuilder: (context, element) => _buildNotificationItem(element),
+                itemBuilder: (context, element) => _buildNotificationItem(state.useTwentyFourHoursFormat, element),
                 groupSeparatorBuilder: (type) => Container(
                   color: theme.accentColor.withOpacity(0.5),
                   padding: Styles.edgeInsetAll5,
@@ -57,7 +57,7 @@ class NotificationsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildNotificationItem(models.NotificationItem element) {
+  Widget _buildNotificationItem(bool useTwentyFourHoursFormat, models.NotificationItem element) {
     Widget subtitle;
     switch (element.type) {
       case AppNotificationType.resin:
@@ -66,6 +66,7 @@ class NotificationsPage extends StatelessWidget {
           completesAt: element.completesAt,
           note: element.note,
           initialResin: element.currentResinValue,
+          useTwentyFourHoursFormat: useTwentyFourHoursFormat,
         );
         break;
       case AppNotificationType.realmCurrency:
@@ -76,10 +77,16 @@ class NotificationsPage extends StatelessWidget {
           initialRealmCurrency: element.realmCurrency,
           currentRankType: element.realmRankType,
           currentTrustRank: element.realmTrustRank,
+          useTwentyFourHoursFormat: useTwentyFourHoursFormat,
         );
         break;
       default:
-        subtitle = NotificationSubtitle(createdAt: element.createdAt, completesAt: element.completesAt, note: element.note);
+        subtitle = NotificationSubtitle(
+          createdAt: element.createdAt,
+          completesAt: element.completesAt,
+          note: element.note,
+          useTwentyFourHoursFormat: useTwentyFourHoursFormat,
+        );
         break;
     }
 
@@ -105,7 +112,9 @@ class NotificationsPage extends StatelessWidget {
       s.notifInfoMsgA,
       s.notifInfoMsgB,
       s.notifInfoMsgC,
+      s.notifInfoMsgD,
       s.swipeToSeeMoreOptions,
+      s.notifInfoMsgE,
     ];
     await showDialog(
       context: context,

@@ -304,7 +304,7 @@
   "addNotification": "Add Notification",
   "editNotification": "Edit Notification",
   "xHours": "{value} hours",
-  "inXHours": "In {value} hours",
+  "inXHours": "In {value} hour(s)",
   "xEachHour": "{value} each hour",
   "showNotification": "Show notification",
   "expedition": "Expedition",
@@ -342,5 +342,9 @@
   "notifInfoMsgA": "You can schedule notifications that reminds you particular things in the game.",
   "notifInfoMsgB": "Some of these can be customized to suit your needs.",
   "notifInfoMsgC": "The bell icon indicates that a notification is scheduled to be shown on your device even when the app is not running.",
-  "swipeToSeeMoreOptions": "You can swipe to the right or left to see more options on each item."
+  "notifInfoMsgD": "Some notifications allows you to change the showed image on the list",
+  "notifInfoMsgE": "Some Android OEMs have their own customized Android OS that can prevent applications from running in the background.\nConsequently, scheduled notifications may not work when the application is in the background on certain devices (e.g. by Xiaomi, Huawei).\nSo if you encounter this problem, you may have to look for a setting that allows you to control which applications run in the background.",
+  "swipeToSeeMoreOptions": "You can swipe to the right or left to see more options on each item.",
+  "reduceTime": "Reduce Time",
+  "use24HourFormatOnDates": "Use 24 hour format on dates"
 }

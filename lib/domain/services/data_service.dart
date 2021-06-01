@@ -148,6 +148,7 @@ abstract class DataService {
 
   Future<NotificationItem> saveWeeklyBossNotification(
     String itemKey,
+    AppServerResetTimeType serverResetTimeType,
     String title,
     String body, {
     String note,
@@ -167,7 +168,7 @@ abstract class DataService {
 
   Future<void> deleteNotification(int key, AppNotificationType type);
 
-  Future<NotificationItem> resetNotification(int key, AppNotificationType type);
+  Future<NotificationItem> resetNotification(int key, AppNotificationType type, AppServerResetTimeType serverResetTimeType);
 
   Future<NotificationItem> stopNotification(int key, AppNotificationType type);
 
@@ -261,4 +262,6 @@ abstract class DataService {
     AppNotificationItemType notificationItemType, {
     String note,
   });
+
+  Future<NotificationItem> reduceNotificationHours(int key, AppNotificationType type, int hours);
 }

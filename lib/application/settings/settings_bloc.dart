@@ -48,19 +48,29 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           serverResetTime: settings.serverResetTime,
           doubleBackToClose: settings.doubleBackToClose,
           useOfficialMap: settings.useOfficialMap,
+          useTwentyFourHoursFormat: settings.useTwentyFourHoursFormat,
         );
       },
       themeChanged: (event) async {
+        if (event.newValue == _settingsService.appTheme) {
+          return currentState;
+        }
         _settingsService.appTheme = event.newValue;
         _mainBloc.add(MainEvent.themeChanged(newValue: event.newValue));
         return currentState.copyWith.call(currentTheme: event.newValue);
       },
       accentColorChanged: (event) async {
+        if (event.newValue == _settingsService.accentColor) {
+          return currentState;
+        }
         _settingsService.accentColor = event.newValue;
         _mainBloc.add(MainEvent.accentColorChanged(newValue: event.newValue));
         return currentState.copyWith.call(currentAccentColor: event.newValue);
       },
       languageChanged: (event) async {
+        if (event.newValue == _settingsService.language) {
+          return currentState;
+        }
         _settingsService.language = event.newValue;
         _mainBloc.add(MainEvent.languageChanged(newValue: event.newValue));
         return currentState.copyWith.call(currentLanguage: event.newValue);
@@ -74,6 +84,9 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         return currentState.copyWith.call(showWeaponDetails: event.newValue);
       },
       serverResetTimeChanged: (event) async {
+        if (event.newValue == _settingsService.serverResetTime) {
+          return currentState;
+        }
         _settingsService.serverResetTime = event.newValue;
         _homeBloc.add(const HomeEvent.init());
         return currentState.copyWith.call(serverResetTime: event.newValue);
@@ -86,6 +99,10 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         _settingsService.useOfficialMap = event.newValue;
         _urlPageBloc.add(const UrlPageEvent.init(loadMap: false, loadWishSimulator: false, loadDailyCheckIn: false));
         return currentState.copyWith.call(useOfficialMap: event.newValue);
+      },
+      useTwentyFourHoursFormat: (event) async {
+        _settingsService.useTwentyFourHoursFormat = event.newValue;
+        return currentState.copyWith.call(useTwentyFourHoursFormat: event.newValue);
       },
     );
 

@@ -24,4 +24,10 @@ abstract class NotificationsEvent implements _$NotificationsEvent {
   const factory NotificationsEvent.refresh({
     @required int ticks,
   }) = _Refresh;
+
+  const factory NotificationsEvent.reduceHours({
+    @required int id,
+    @required AppNotificationType type,
+    @required int hoursToReduce,
+  }) = _ReduceHour;
 }

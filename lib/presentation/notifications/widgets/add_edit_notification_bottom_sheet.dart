@@ -128,6 +128,7 @@ class AddEditNotificationBottomSheet extends StatelessWidget {
             showOtherImages: state.showOtherImages,
             scheduledDate: state.scheduledDate,
             language: state.language,
+            useTwentyFourHoursFormat: state.useTwentyFourHoursFormat,
           ),
         ),
       ),
