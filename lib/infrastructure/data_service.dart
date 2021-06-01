@@ -936,6 +936,23 @@ class DataServiceImpl implements DataService {
     return _updateNotification(item, title, body, note, showNotification);
   }
 
+  @override
+  Future<NotificationItem> reduceNotificationHours(int key, AppNotificationType type, int hours) {
+    final notSupportedTypes = [AppNotificationType.realmCurrency, AppNotificationType.resin];
+    assert(!notSupportedTypes.contains(type));
+
+    final item = _getNotification(key, type);
+    final now = DateTime.now();
+    var completesAt = item.completesAt.subtract(Duration(hours: hours));
+
+    if (completesAt.isBefore(now)) {
+      completesAt = now;
+    }
+
+    item.completesAt = completesAt;
+    return _updateNotification(item, item.title, item.body, item.note, item.showNotification);
+  }
+
   void _registerAdapters() {
     Hive.registerAdapter(CalculatorCharacterSkillAdapter());
     Hive.registerAdapter(CalculatorItemAdapter());

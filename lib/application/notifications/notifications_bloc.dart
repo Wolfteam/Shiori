@@ -36,6 +36,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
         cancelTimer();
         return _initialState;
       },
+      reduceHours: (e) async => _reduceHours(e.id, e.type, e.hoursToReduce),
     );
     yield s;
   }
@@ -91,5 +92,11 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
       return state.copyWith.call(notifications: notifications, ticks: ticks);
     }
     return state;
+  }
+
+  Future<NotificationsState> _reduceHours(int key, AppNotificationType type, int hours) async {
+    final notif = await _dataService.reduceNotificationHours(key, type, hours);
+    await _notificationService.cancelNotification(key);
+    return _afterUpdatingNotification(notif);
   }
 }

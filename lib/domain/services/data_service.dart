@@ -262,4 +262,6 @@ abstract class DataService {
     AppNotificationItemType notificationItemType, {
     String note,
   });
+
+  Future<NotificationItem> reduceNotificationHours(int key, AppNotificationType type, int hours);
 }

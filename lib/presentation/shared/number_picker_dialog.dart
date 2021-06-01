@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:numberpicker/numberpicker.dart';
 
+typedef ItemBuilder = String Function(String);
+
 class NumberPickerDialog extends StatefulWidget {
   final int minItemLevel;
   final int maxItemLevel;
   final int value;
   final String title;
+  final ItemBuilder itemBuilder;
 
   const NumberPickerDialog({
     Key key,
@@ -14,6 +17,7 @@ class NumberPickerDialog extends StatefulWidget {
     @required this.maxItemLevel,
     @required this.value,
     @required this.title,
+    this.itemBuilder,
   }) : super(key: key);
 
   @override
@@ -48,6 +52,7 @@ class _NumberPickerDialogState extends State<NumberPickerDialog> {
         minValue: widget.minItemLevel,
         maxValue: widget.maxItemLevel,
         value: _currentValue,
+        textMapper: widget.itemBuilder,
         infiniteLoop: true,
         onChanged: (newValue) => setState(() {
           _currentValue = newValue;

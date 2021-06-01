@@ -346,5 +346,6 @@
   "notifInfoMsgC": "ベルのアイコンは、アプリが実行されていないときでも、デバイスに通知が表示されるようにスケジュールされていることを示します。",
   "notifInfoMsgD": "Some notifications allows you to change the showed image on the list",
   "notifInfoMsgE": "Some Android OEMs have their own customized Android OS that can prevent applications from running in the background.\nConsequently, scheduled notifications may not work when the application is in the background on certain devices (e.g. by Xiaomi, Huawei).\nSo if you encounter this problem, you may have to look for a setting that allows you to control which applications run in the background.",
-  "swipeToSeeMoreOptions": "右または左にスワイプすると、各項目の詳細オプションが表示されます。"
+  "swipeToSeeMoreOptions": "右または左にスワイプすると、各項目の詳細オプションが表示されます。",
+  "reduceTime": "Reduce Time"
 }
