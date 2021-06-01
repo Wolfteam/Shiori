@@ -345,5 +345,6 @@
   "notifInfoMsgD": "Alcune notifiche permettono di cambiare immagine di anteprima nella lista",
   "notifInfoMsgE": "Alcuni Android OEMs (dispositivi) hanno un Sistema Operativo Android che impedisce di eseguire l’applicazione in background.\nDi conseguenza, alcune notifiche programmate potrebbero non funzionare su alcuni dispositivi (es. Xiaomi, Huawei) quando l’applicazione è in funzione in background.\nSe riscontri questo problema, dovresti cercare l’impostazione che regola la gestione delle applicazioni in background.",
   "swipeToSeeMoreOptions": "Scorri a destra o a sinistra per visualizzare più opzioni per ciascun item.",
-  "reduceTime": "Reduce Time"
+  "reduceTime": "Reduce Time",
+  "use24HourFormatOnDates": "Use 24 hour format on dates"
 }

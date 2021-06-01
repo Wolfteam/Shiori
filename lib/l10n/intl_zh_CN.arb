@@ -345,5 +345,6 @@
   "notifInfoMsgD": "部分通知允许你修改列表中显示的图片",
   "notifInfoMsgE": "部分 Android 厂商的系统会阻止应用在后台运行。\n因此，当应用在后台运行时，通知在某些设备（如小米、华为）上不会正常工作。\n如果你遇到了这个问题，你可能需要在设置中打开“允许该应用在后台运行”选项。",
   "swipeToSeeMoreOptions": "左滑或右滑可查看每条通知的更多选项。",
-  "reduceTime": "Reduce Time"
+  "reduceTime": "Reduce Time",
+  "use24HourFormatOnDates": "Use 24 hour format on dates"
 }

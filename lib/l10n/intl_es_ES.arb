@@ -345,5 +345,6 @@
   "notifInfoMsgD": "Algunas notificaciones te permiten cambiar la imagen que se muestra en la lista",
   "notifInfoMsgE": "Algunos fabricantes de equipos con Android tienen su propia versión personalizada de Android lo cual puede evitar que aplicaciones corran en segundo plano.\nPor ende, las notificaciones programdas podrian no funcionar cuando la aplicación esta en segundo plano en ciertos dispositivos (por ejemplo: Xiaomi, Huawei).\nSi presentas este problema, puede que debas buscar una configuración que te permita controlar que aplicaciones corren en segundo plano.",
   "swipeToSeeMoreOptions": "Puedes delizar hacia la derecha o izquierda para ver más opciones en cada item.",
-  "reduceTime": "Reducir Tiempo"
+  "reduceTime": "Reducir Tiempo",
+  "use24HourFormatOnDates": "Usar formato de 24 horas en fechas"
 }
