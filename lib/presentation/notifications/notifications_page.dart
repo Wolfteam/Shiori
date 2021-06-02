@@ -4,7 +4,9 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart' as models;
 import 'package:genshindb/generated/l10n.dart';
+import 'package:genshindb/presentation/shared/app_fab.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:genshindb/presentation/shared/extensions/scroll_controller_extensions.dart';
 import 'package:genshindb/presentation/shared/info_dialog.dart';
 import 'package:genshindb/presentation/shared/nothing_found_column.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
@@ -16,7 +18,29 @@ import 'widgets/items/notification_list_tile.dart';
 import 'widgets/items/notification_realm_currency_subtitle.dart';
 import 'widgets/items/notification_resin_list_subtitle.dart';
 
-class NotificationsPage extends StatelessWidget {
+class NotificationsPage extends StatefulWidget {
+  @override
+  _NotificationsPageState createState() => _NotificationsPageState();
+}
+
+class _NotificationsPageState extends State<NotificationsPage> with SingleTickerProviderStateMixin {
+  ScrollController _scrollController;
+  AnimationController _hideFabAnimController;
+  int _numberOfItems = 0;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _scrollController = ScrollController();
+    _hideFabAnimController = AnimationController(
+      vsync: this,
+      duration: kThemeAnimationDuration,
+      value: 1, // initially visible
+    );
+    _scrollController.addListener(() => _scrollController.handleScrollForFab(_hideFabAnimController, hideOnTop: false));
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -25,11 +49,21 @@ class NotificationsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(s.notifications),
         actions: [
-          IconButton(icon: const Icon(Icons.info), onPressed: () => _showInfoDialog(context)),
+          IconButton(
+            tooltip: s.information,
+            icon: const Icon(Icons.info),
+            onPressed: () => _showInfoDialog(context),
+          ),
         ],
       ),
       body: SafeArea(
-        child: BlocBuilder<NotificationsBloc, NotificationsState>(
+        child: BlocConsumer<NotificationsBloc, NotificationsState>(
+          listener: (ctx, state) {
+            if (_numberOfItems != state.notifications.length) {
+              _hideFabAnimController.forward();
+            }
+            _numberOfItems = state.notifications.length;
+          },
           builder: (ctx, state) => state.map(
             initial: (state) {
               if (state.notifications.isEmpty) {
@@ -38,6 +72,7 @@ class NotificationsPage extends StatelessWidget {
 
               return GroupedListView<models.NotificationItem, String>(
                 elements: state.notifications,
+                controller: _scrollController,
                 groupBy: (item) => s.translateAppNotificationType(item.type),
                 itemBuilder: (context, element) => _buildNotificationItem(state.useTwentyFourHoursFormat, element),
                 groupSeparatorBuilder: (type) => Container(
@@ -50,11 +85,21 @@ class NotificationsPage extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: AppFab(
         onPressed: () => _showAddModal(context),
-        child: const Icon(Icons.add),
+        icon: const Icon(Icons.add),
+        hideFabAnimController: _hideFabAnimController,
+        scrollController: _scrollController,
+        mini: false,
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    _hideFabAnimController.dispose();
+    super.dispose();
   }
 
   Widget _buildNotificationItem(bool useTwentyFourHoursFormat, models.NotificationItem element) {

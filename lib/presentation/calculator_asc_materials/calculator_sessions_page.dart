@@ -23,6 +23,7 @@ class CalculatorSessionsPage extends StatefulWidget {
 class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with SingleTickerProviderStateMixin {
   ScrollController _scrollController;
   AnimationController _hideFabAnimController;
+  int _numberOfItems = 0;
 
   @override
   void initState() {
@@ -40,7 +41,18 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return BlocBuilder<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
+    return BlocConsumer<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
+      listener: (ctx, state) {
+        state.maybeMap(
+          loaded: (state) {
+            if (_numberOfItems != state.sessions.length) {
+              _hideFabAnimController.forward();
+            }
+            _numberOfItems = state.sessions.length;
+          },
+          orElse: () {},
+        );
+      },
       builder: (ctx, state) => Scaffold(
         appBar: state.map(
           loading: (_) => null,
@@ -49,10 +61,12 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
             actions: [
               if (state.sessions.length > 1)
                 IconButton(
+                  tooltip: s.priority,
                   icon: const Icon(Icons.unfold_more),
                   onPressed: () => _showReorderDialog(state.sessions, context),
                 ),
               IconButton(
+                tooltip: s.information,
                 icon: const Icon(Icons.info),
                 onPressed: () => _showInfoDialog(context),
               ),
@@ -78,7 +92,7 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
                 return ListView.separated(
                   controller: _scrollController,
                   itemCount: state.sessions.length,
-                  separatorBuilder: (ctx, index) => const Divider(),
+                  separatorBuilder: (ctx, index) => const Divider(height: 1),
                   itemBuilder: (ctx, index) => SessionListItem(session: state.sessions[index]),
                 );
               },
