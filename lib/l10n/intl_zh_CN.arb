@@ -297,5 +297,12 @@
   "itemIsBeingUsedOnACalculation": "该物品已在一个或多个组别中使用。\n已使用数量：{quantity}",
   "useOfficialMap": "使用官方地图",
   "dailyCheckIn": "【原神】每日签到",
-  "dailyCheckInMsg": "别忘了来这里看看你的每日奖励！"
+  "dailyCheckInMsg": "别忘了来这里看看你的每日奖励！",
+  "noGameCodesHaveBeenLoaded": "No game codes have been loaded yet",
+  "addedOn": "Added on: {date}",
+  "expiredOn": "Expired on: {date}",
+  "validUntil": "Valid until: {date}",
+  "internetIsRequiredToRefreshItems": "To refresh the content you need an internet connection",
+  "pullToRefreshItems": "Pull to refresh the content" ,
+  "onlyX": "Only {value}"
 }
