@@ -17,7 +17,6 @@ export 'db/characters/characters_file.dart';
 export 'db/elements/element_debuff_file_model.dart';
 export 'db/elements/element_reaction_file_model.dart';
 export 'db/elements/elements_file.dart';
-export 'db/game_codes/game_codes_file.dart';
 export 'db/materials/material_file_model.dart';
 export 'db/materials/materials_file.dart';
 export 'db/monsters/monster_file_model.dart';

@@ -297,5 +297,12 @@
   "itemIsBeingUsedOnACalculation": "This item is being used in one or more calculator sessions.\nThe used quantity is {quantity}",
   "useOfficialMap": "Use the official map",
   "dailyCheckIn": "Daily Check-In",
-  "dailyCheckInMsg": "Don't forget to claim your daily rewards here !"
+  "dailyCheckInMsg": "Don't forget to claim your daily rewards here !",
+  "noGameCodesHaveBeenLoaded": "No game codes have been loaded yet",
+  "addedOn": "Added on: {date}",
+  "expiredOn": "Expired on: {date}",
+  "validUntil": "Valid until: {date}",
+  "internetIsRequiredToRefreshItems": "To refresh the content you need an internet connection",
+  "pullToRefreshItems": "Pull to refresh the content" ,
+  "onlyX": "Only {value}"
 }
