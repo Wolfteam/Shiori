@@ -1,4 +1,5 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:genshindb/domain/enums/enums.dart';
 
 abstract class NotificationService {
   void init();
@@ -11,15 +12,11 @@ abstract class NotificationService {
 
   Future<bool> requestIOSPermissions();
 
-  Future<void> showNotification(int id, String title, String body, {String payload});
+  Future<void> showNotification(int id, AppNotificationType type, String title, String body, {String payload});
 
-  Future<void> cancelNotification(int id);
+  Future<void> cancelNotification(int id, AppNotificationType type);
 
   Future<void> cancelAllNotifications();
 
-  Future<void> scheduleNotification(int id, String title, String body, DateTime toBeDeliveredOn);
-
-  Future<void> scheduleDailyNotification(int id, String title, String body);
-
-  Future<void> scheduleWeeklyNotification(int id, String title, String body, DateTime startingFrom);
+  Future<void> scheduleNotification(int id, AppNotificationType type, String title, String body, DateTime toBeDeliveredOn);
 }
