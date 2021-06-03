@@ -1,6 +1,8 @@
+import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
+import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/services/logging_service.dart';
 import 'package:genshindb/domain/services/notification_service.dart';
 import 'package:timezone/data/latest.dart' as tz;
@@ -10,21 +12,6 @@ const _channelId = 'genshindb_channel';
 const _channelName = 'Notifications';
 const _channelDescription = 'Notifications from the app';
 const _largeIcon = 'genshin_db';
-
-const _androidPlatformChannelSpecifics = AndroidNotificationDetails(
-  _channelId,
-  _channelName,
-  _channelDescription,
-  importance: Importance.max,
-  priority: Priority.high,
-  enableLights: true,
-  color: Colors.red,
-  largeIcon: DrawableResourceAndroidBitmap(_largeIcon),
-);
-
-const _iOSPlatformChannelSpecifics = IOSNotificationDetails();
-
-const _platformChannelSpecifics = NotificationDetails(android: _androidPlatformChannelSpecifics, iOS: _iOSPlatformChannelSpecifics);
 
 class NotificationServiceImpl implements NotificationService {
   final LoggingService _loggingService;
@@ -74,31 +61,19 @@ class NotificationServiceImpl implements NotificationService {
   }
 
   @override
-  Future<void> showNotification(int id, String title, String body, {String payload}) {
+  Future<void> showNotification(int id, AppNotificationType type, String title, String body, {String payload}) {
+    final specifics = _getPlatformChannelSpecifics(type, body);
+
     if (body.length < 40) {
-      return _flutterLocalNotificationsPlugin.show(id, title, body, _platformChannelSpecifics, payload: payload);
+      return _flutterLocalNotificationsPlugin.show(id, title, body, specifics, payload: payload);
     }
 
-    final androidPlatformChannelSpecificsBigStyle = AndroidNotificationDetails(
-      _channelId,
-      _channelName,
-      _channelDescription,
-      importance: Importance.max,
-      priority: Priority.high,
-      enableLights: true,
-      color: Colors.red,
-      styleInformation: BigTextStyleInformation(body),
-      largeIcon: const DrawableResourceAndroidBitmap(_largeIcon),
-    );
-
-    final platformChannelSpecifics = NotificationDetails(android: androidPlatformChannelSpecificsBigStyle, iOS: _iOSPlatformChannelSpecifics);
-
-    return _flutterLocalNotificationsPlugin.show(id, title, body, platformChannelSpecifics, payload: payload);
+    return _flutterLocalNotificationsPlugin.show(id, title, body, specifics, payload: payload);
   }
 
   @override
-  Future<void> cancelNotification(int id) {
-    return _flutterLocalNotificationsPlugin.cancel(id);
+  Future<void> cancelNotification(int id, AppNotificationType type) {
+    return _flutterLocalNotificationsPlugin.cancel(id, tag: _getTagFromNotificationType(type));
   }
 
   @override
@@ -107,51 +82,46 @@ class NotificationServiceImpl implements NotificationService {
   }
 
   @override
-  Future<void> scheduleNotification(int id, String title, String body, DateTime toBeDeliveredOn) async {
+  Future<void> scheduleNotification(int id, AppNotificationType type, String title, String body, DateTime toBeDeliveredOn) async {
     final now = DateTime.now();
     if (toBeDeliveredOn.isBefore(now) || toBeDeliveredOn.isAtSameMomentAs(now)) {
-      await showNotification(id, title, body);
+      await showNotification(id, type, title, body);
       return;
     }
+    final specifics = _getPlatformChannelSpecifics(type, body);
     final scheduledDate = tz.TZDateTime.from(toBeDeliveredOn, _location);
     return _flutterLocalNotificationsPlugin.zonedSchedule(
       id,
       title,
       body,
       scheduledDate,
-      _platformChannelSpecifics,
+      specifics,
       uiLocalNotificationDateInterpretation: null,
       androidAllowWhileIdle: true,
     );
   }
 
-  @override
-  Future<void> scheduleDailyNotification(int id, String title, String body) async {
-    final now = DateTime.now();
-    //Here we set now so the notification will appear starting from tomorrow
-    return _flutterLocalNotificationsPlugin.zonedSchedule(
-      id,
-      title,
-      body,
-      tz.TZDateTime.from(now, _location),
-      _platformChannelSpecifics,
-      uiLocalNotificationDateInterpretation: null,
-      androidAllowWhileIdle: true,
-      matchDateTimeComponents: DateTimeComponents.time,
+  NotificationDetails _getPlatformChannelSpecifics(AppNotificationType type, String body) {
+    final style = body.length < 40 ? null : BigTextStyleInformation(body);
+    final _androidPlatformChannelSpecifics = AndroidNotificationDetails(
+      _channelId,
+      _channelName,
+      _channelDescription,
+      importance: Importance.max,
+      priority: Priority.high,
+      enableLights: true,
+      color: Colors.red,
+      styleInformation: style,
+      largeIcon: const DrawableResourceAndroidBitmap(_largeIcon),
+      tag: _getTagFromNotificationType(type),
     );
+
+    const _iOSPlatformChannelSpecifics = IOSNotificationDetails();
+
+    return NotificationDetails(android: _androidPlatformChannelSpecifics, iOS: _iOSPlatformChannelSpecifics);
   }
 
-  @override
-  Future<void> scheduleWeeklyNotification(int id, String title, String body, DateTime startingFrom) async {
-    return _flutterLocalNotificationsPlugin.zonedSchedule(
-      id,
-      title,
-      body,
-      tz.TZDateTime.from(startingFrom, _location),
-      _platformChannelSpecifics,
-      uiLocalNotificationDateInterpretation: null,
-      androidAllowWhileIdle: true,
-      matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime,
-    );
+  String _getTagFromNotificationType(AppNotificationType type) {
+    return EnumToString.convertToString(type);
   }
 }

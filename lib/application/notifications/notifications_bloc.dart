@@ -63,7 +63,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
 
   Future<NotificationsState> _deleteNotification(int key, AppNotificationType type) async {
     await _dataService.deleteNotification(key, type);
-    await _notificationService.cancelNotification(key);
+    await _notificationService.cancelNotification(key, type);
     final notifications = [...state.notifications];
     notifications.removeWhere((el) => el.key == key && el.type == type);
     return state.copyWith.call(notifications: notifications);
@@ -71,14 +71,14 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
 
   Future<NotificationsState> _resetNotification(int key, AppNotificationType type) async {
     final notif = await _dataService.resetNotification(key, type, _settingsService.serverResetTime);
-    await _notificationService.cancelNotification(notif.key);
-    await _notificationService.scheduleNotification(key, notif.title, notif.body, notif.completesAt);
+    await _notificationService.cancelNotification(key, type);
+    await _notificationService.scheduleNotification(key, type, notif.title, notif.body, notif.completesAt);
     return _afterUpdatingNotification(notif);
   }
 
   Future<NotificationsState> _stopNotification(int key, AppNotificationType type) async {
     final notif = await _dataService.stopNotification(key, type);
-    await _notificationService.cancelNotification(key);
+    await _notificationService.cancelNotification(key, type);
     return _afterUpdatingNotification(notif);
   }
 
@@ -100,7 +100,8 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
 
   Future<NotificationsState> _reduceHours(int key, AppNotificationType type, int hours) async {
     final notif = await _dataService.reduceNotificationHours(key, type, hours);
-    await _notificationService.cancelNotification(key);
+    await _notificationService.cancelNotification(key, type);
+    await _notificationService.scheduleNotification(key, type, notif.title, notif.body, notif.completesAt);
     return _afterUpdatingNotification(notif);
   }
 }

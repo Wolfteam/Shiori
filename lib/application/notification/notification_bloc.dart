@@ -386,7 +386,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     );
 
     if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.title, notif.body, notif.completesAt);
+      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
     }
   }
 
@@ -417,7 +417,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       withTimeReduction: s.withTimeReduction,
     );
     if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.title, notif.body, notif.completesAt);
+      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
     }
   }
 
@@ -446,7 +446,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       showNotification: s.showNotification,
     );
     if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.title, notif.body, notif.completesAt);
+      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
     }
   }
 
@@ -473,7 +473,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       showNotification: s.showNotification,
     );
     if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.title, notif.body, notif.completesAt);
+      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
     }
   }
 
@@ -500,7 +500,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       showNotification: s.showNotification,
     );
     if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.title, notif.body, notif.completesAt);
+      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
     }
   }
 
@@ -529,7 +529,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       showNotification: s.showNotification,
     );
     if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.title, notif.body, notif.completesAt);
+      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
     }
   }
 
@@ -562,7 +562,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       showNotification: s.showNotification,
     );
     if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.title, notif.body, notif.completesAt);
+      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
     }
   }
 
@@ -590,7 +590,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       showNotification: s.showNotification,
     );
     if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.title, notif.body, notif.completesAt);
+      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
     }
   }
 
@@ -623,7 +623,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       showNotification: s.showNotification,
     );
     if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.title, notif.body, notif.completesAt);
+      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
     }
   }
 
@@ -718,9 +718,9 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   Future<void> _afterNotificationWasUpdated(NotificationItem notif) async {
-    await _notificationService.cancelNotification(notif.key);
+    await _notificationService.cancelNotification(notif.key, notif.type);
     if (notif.showNotification && !notif.remaining.isNegative) {
-      await _notificationService.scheduleNotification(notif.key, notif.title, notif.body, notif.completesAt);
+      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
     }
   }
 }
