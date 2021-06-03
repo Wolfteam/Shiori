@@ -37,7 +37,6 @@ class DataServiceImpl implements DataService {
     _gameCodesBox = await Hive.openBox<GameCode>('gameCodes');
     _gameCodeRewardsBox = await Hive.openBox<GameCodeReward>('gameCodeRewards');
     _tierListBox = await Hive.openBox<TierListItem>('tierList');
-    await _gameCodesBox.clear();
   }
 
   @override
