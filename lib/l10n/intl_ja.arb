@@ -331,8 +331,6 @@
   "reset": "リセット",
   "stop": "ストップ",
   "completed": "完了",
-  "createdAtX": "{date}に作成",
-  "completesAtX": "{date}に完了",
   "selectAnArtifact": "アーティファクトを選択します",
   "selectAMonster": "モンスターを選ぶ",
   "selectAMaterial": "材料を選択してください",
