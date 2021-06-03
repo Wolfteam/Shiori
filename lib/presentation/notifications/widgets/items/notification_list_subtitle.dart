@@ -26,13 +26,13 @@ class NotificationSubtitle extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        ...children,
         if (note.isNotNullEmptyOrWhitespace)
           Text(
             note,
             style: theme.textTheme.subtitle2,
             overflow: TextOverflow.ellipsis,
           ),
+        ...children,
         NotificationListSubtitleDates(
           createdAt: createdAt,
           completesAt: completesAt,

@@ -36,6 +36,7 @@ class NotificationRealmCurrencySubtitle extends StatelessWidget {
       createdAt: createdAt,
       completesAt: completesAt,
       useTwentyFourHoursFormat: useTwentyFourHoursFormat,
+      note: note,
       children: [
         Text('$currentValue / ${getRealmMaxCurrency(currentTrustRank)}', style: theme.textTheme.bodyText2),
         Text('${s.realmRank}: ${s.translateRealRankType(currentRankType, showRatio: true)}', style: theme.textTheme.caption),
