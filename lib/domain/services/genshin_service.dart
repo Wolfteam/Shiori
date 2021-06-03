@@ -8,7 +8,6 @@ abstract class GenshinService {
   Future<void> initArtifacts();
   Future<void> initMaterials();
   Future<void> initElements();
-  Future<void> initGameCodes();
   Future<void> initMonsters();
   Future<void> initGadgets();
   Future<void> initFurniture();
@@ -64,8 +63,6 @@ abstract class GenshinService {
   int getServerDay(AppServerResetTimeType type);
   DateTime getServerDate(AppServerResetTimeType type);
   Duration getDurationUntilServerResetDate(AppServerResetTimeType type);
-
-  List<GameCodeFileModel> getAllGameCodes();
 
   List<String> getUpcomingKeys();
 

@@ -22,7 +22,8 @@ class DataServiceImpl implements DataService {
   Box<CalculatorCharacterSkill> _calcItemSkillBox;
   Box<InventoryItem> _inventoryBox;
   Box<InventoryUsedItem> _inventoryUsedItemsBox;
-  Box<UsedGameCode> _usedGameCodesBox;
+  Box<GameCode> _gameCodesBox;
+  Box<GameCodeReward> _gameCodeRewardsBox;
   Box<TierListItem> _tierListBox;
 
   Box<NotificationCustom> _notificationsCustomBox;
@@ -45,7 +46,8 @@ class DataServiceImpl implements DataService {
     _calcItemSkillBox = await Hive.openBox<CalculatorCharacterSkill>('calculatorSessionsItemsSkills');
     _inventoryBox = await Hive.openBox<InventoryItem>('inventory');
     _inventoryUsedItemsBox = await Hive.openBox<InventoryUsedItem>('inventoryUsedItems');
-    _usedGameCodesBox = await Hive.openBox<UsedGameCode>('usedGameCodes');
+    _gameCodesBox = await Hive.openBox<GameCode>('gameCodes');
+    _gameCodeRewardsBox = await Hive.openBox<GameCodeReward>('gameCodeRewards');
     _tierListBox = await Hive.openBox<TierListItem>('tierList');
 
     _notificationsCustomBox = await Hive.openBox('notificationsCustom');
@@ -372,28 +374,68 @@ class DataServiceImpl implements DataService {
 
   @override
   List<GameCodeModel> getAllGameCodes() {
-    final usedCodes = getAllUsedGameCodes();
-    return _genshinService.getAllGameCodes().map((e) {
-      final isUsed = usedCodes.contains(e.code);
-      return GameCodeModel(code: e.code, isExpired: e.isExpired, isUsed: isUsed, rewards: e.rewards);
+    return _gameCodesBox.values.map((e) {
+      final rewards = _gameCodeRewardsBox.values.where((el) => el.gameCodeKey == e.key).map((reward) {
+        final material = _genshinService.getMaterial(reward.itemKey);
+        return ItemAscensionMaterialModel(quantity: reward.quantity, image: material.image, materialType: material.type);
+      }).toList();
+      return GameCodeModel(
+        code: e.code,
+        isExpired: e.isExpired,
+        expiredOn: e.expiredOn,
+        discoveredOn: e.discoveredOn,
+        isUsed: e.usedOn != null,
+        rewards: rewards,
+        region: e.region != null ? AppServerResetTimeType.values[e.region] : null,
+      );
     }).toList();
   }
 
   @override
-  List<String> getAllUsedGameCodes() {
-    return _usedGameCodesBox.values.map((e) => e.code).toList();
+  Future<void> saveGameCodes(List<GameCodeModel> itemsFromApi) async {
+    final itemsOnDb = _gameCodesBox.values.toList();
+
+    for (final item in itemsFromApi) {
+      final gcOnDb = itemsOnDb.firstWhere((el) => el.code == item.code, orElse: () => null);
+      if (gcOnDb != null) {
+        gcOnDb.isExpired = item.isExpired;
+        gcOnDb.expiredOn = item.expiredOn;
+        gcOnDb.discoveredOn = item.discoveredOn;
+        gcOnDb.region = item.region?.index;
+        await gcOnDb.save();
+        await deleteAllGameCodeRewards(gcOnDb.key as int);
+        await saveGameCodeRewards(gcOnDb.key as int, item.rewards);
+      } else {
+        final gc = GameCode(item.code, null, item.discoveredOn, item.expiredOn, item.isExpired, item.region?.index);
+        await _gameCodesBox.add(gc);
+        //This line shouldn't be necessary, though for testing purposes I'll leave it here
+        await deleteAllGameCodeRewards(gc.key as int);
+        await saveGameCodeRewards(gc.key as int, item.rewards);
+      }
+    }
+  }
+
+  @override
+  Future<void> saveGameCodeRewards(int gameCodeKey, List<ItemAscensionMaterialModel> rewards) {
+    final rewardsToSave = rewards
+        .map(
+          (e) => GameCodeReward(gameCodeKey, _genshinService.getMaterialByImage(e.fullImagePath).key, e.quantity),
+        )
+        .toList();
+    return _gameCodeRewardsBox.addAll(rewardsToSave);
+  }
+
+  @override
+  Future<void> deleteAllGameCodeRewards(int gameCodeKey) {
+    final keys = _gameCodeRewardsBox.values.where((el) => el.gameCodeKey == gameCodeKey).map((e) => e.key).toList();
+    return _gameCodeRewardsBox.deleteAll(keys);
   }
 
   @override
   Future<void> markCodeAsUsed(String code, {bool wasUsed = true}) async {
-    final usedGameCode = _usedGameCodesBox.values.firstWhere((el) => el.code == code, orElse: () => null);
-    if (usedGameCode != null) {
-      await _usedGameCodesBox.delete(usedGameCode.key);
-    }
-
-    if (wasUsed) {
-      await _usedGameCodesBox.add(UsedGameCode(code, DateTime.now()));
-    }
+    final usedGameCode = _gameCodesBox.values.firstWhere((el) => el.code == code, orElse: () => null);
+    usedGameCode.usedOn = wasUsed ? DateTime.now() : null;
+    await usedGameCode.save();
   }
 
   @override
@@ -959,7 +1001,8 @@ class DataServiceImpl implements DataService {
     Hive.registerAdapter(CalculatorSessionAdapter());
     Hive.registerAdapter(InventoryItemAdapter());
     Hive.registerAdapter(InventoryUsedItemAdapter());
-    Hive.registerAdapter(UsedGameCodeAdapter());
+    Hive.registerAdapter(GameCodeAdapter());
+    Hive.registerAdapter(GameCodeRewardAdapter());
     Hive.registerAdapter(TierListItemAdapter());
     Hive.registerAdapter(NotificationCustomAdapter());
     Hive.registerAdapter(NotificationExpeditionAdapter());

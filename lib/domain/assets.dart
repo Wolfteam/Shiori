@@ -8,7 +8,6 @@ class Assets {
   static String artifactsDbPath = '$dbPath/artifacts.json';
   static String materialsDbPath = '$dbPath/materials.json';
   static String elementsDbPath = '$dbPath/elements.json';
-  static String gameCodesDbPath = '$dbPath/game_codes.json';
   static String monstersDbPath = '$dbPath/monsters.json';
   static String gadgetsDbPath = '$dbPath/gadgets.json';
   static String furnitureDbPath = '$dbPath/furniture.json';
@@ -46,6 +45,7 @@ class Assets {
 
   //Others
   static String otherImgsBasePath = 'assets/others';
+  static String noImageAvailablePath = '$othersBasePath/$noImageAvailableName';
 
   //Monsters
   static String monstersImgsBasePath = 'assets/monsters';

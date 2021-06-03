@@ -18,7 +18,6 @@ class GenshinServiceImpl implements GenshinService {
   ArtifactsFile _artifactsFile;
   MaterialsFile _materialsFile;
   ElementsFile _elementsFile;
-  GameCodesFile _gameCodesFile;
   MonstersFile _monstersFile;
   GadgetsFile _gadgetsFile;
   FurnitureFile _furnitureFile;
@@ -33,7 +32,6 @@ class GenshinServiceImpl implements GenshinService {
       initArtifacts(),
       initMaterials(),
       initElements(),
-      initGameCodes(),
       initMonsters(),
       initGadgets(),
       initFurniture(),
@@ -74,13 +72,6 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.elementsDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _elementsFile = ElementsFile.fromJson(json);
-  }
-
-  @override
-  Future<void> initGameCodes() async {
-    final jsonStr = await rootBundle.loadString(Assets.gameCodesDbPath);
-    final json = jsonDecode(jsonStr) as Map<String, dynamic>;
-    _gameCodesFile = GameCodesFile.fromJson(json);
   }
 
   @override
@@ -457,9 +448,6 @@ class GenshinServiceImpl implements GenshinService {
     final dateToUse = serverDate.isBefore(serverResetDate) ? serverDate : serverDate.subtract(const Duration(days: 1));
     return serverResetDate.difference(dateToUse);
   }
-
-  @override
-  List<GameCodeFileModel> getAllGameCodes() => _gameCodesFile.gameCodes;
 
   @override
   List<String> getCharacterImgsUsingMaterial(String key) {

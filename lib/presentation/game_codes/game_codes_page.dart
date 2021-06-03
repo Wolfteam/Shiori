@@ -1,20 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/common_table_cell.dart';
+import 'package:genshindb/presentation/shared/bullet_list.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/shared/nothing_found_column.dart';
 import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
-import 'package:genshindb/presentation/shared/wrapped_ascension_material.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class GameCodesPage extends StatelessWidget {
+import 'widgets/game_code_list_item.dart';
+
+class GameCodesPage extends StatefulWidget {
   const GameCodesPage({
     Key key,
   }) : super(key: key);
+
+  @override
+  _GameCodesPageState createState() => _GameCodesPageState();
+}
+
+class _GameCodesPageState extends State<GameCodesPage> {
+  final RefreshController _refreshController = RefreshController(initialRefresh: false);
 
   @override
   Widget build(BuildContext context) {
@@ -26,111 +34,75 @@ class GameCodesPage extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.open_in_new),
             onPressed: () => _launchUrl('https://genshin.mihoyo.com/en/gift'),
-          )
+          ),
+          IconButton(
+            icon: const Icon(Icons.info),
+            onPressed: () => _showInfoDialog(context),
+          ),
         ],
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: Styles.edgeInsetAll10,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                BlocBuilder<GameCodesBloc, GameCodesState>(
-                  builder: (ctx, state) => state.map(
-                    loaded: (state) => _buildTableCard(s.workingCodes, state.workingGameCodes, context),
+        child: SmartRefresher(
+          header: const MaterialClassicHeader(),
+          controller: _refreshController,
+          onRefresh: () {
+            context.read<GameCodesBloc>().add(const GameCodesEvent.refresh());
+          },
+          child: BlocConsumer<GameCodesBloc, GameCodesState>(
+            listener: (ctx, state) {
+              if (!state.isBusy) {
+                _refreshController.refreshCompleted();
+              }
+
+              if (state.isInternetAvailable == false) {
+                ToastUtils.showWarningToast(ToastUtils.of(context), s.noInternetConnection);
+              }
+            },
+            builder: (ctx, state) => state.expiredGameCodes.isEmpty && state.workingGameCodes.isEmpty
+                ? state.isBusy
+                    ? const Center(child: CircularProgressIndicator())
+                    : NothingFoundColumn(msg: '${s.noGameCodesHaveBeenLoaded}\n${s.pullToRefreshItems}', icon: Icons.refresh)
+                : SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(top: 10),
+                          child: _buildTableCard(s.workingCodes, state.isBusy, state.workingGameCodes, context),
+                        ),
+                        _buildTableCard(s.expiredCodes, state.isBusy, state.expiredGameCodes, context),
+                      ],
+                    ),
                   ),
-                ),
-                BlocBuilder<GameCodesBloc, GameCodesState>(
-                  builder: (ctx, state) => state.map(
-                    loaded: (state) => _buildTableCard(s.expiredCodes, state.expiredGameCodes, context),
-                  ),
-                ),
-              ],
-            ),
           ),
         ),
       ),
     );
   }
 
-  Widget _buildTableCard(String title, List<GameCodeModel> codes, BuildContext context) {
-    final s = S.of(context);
-    final body = Card(
-      elevation: Styles.cardTenElevation,
-      margin: Styles.edgeInsetAll5,
-      shape: Styles.cardShape,
-      child: Padding(
-        padding: Styles.edgeInsetAll5,
-        child: Table(
-          columnWidths: const {
-            0: FractionColumnWidth(.3),
-            1: FractionColumnWidth(.4),
-            2: FractionColumnWidth(.3),
-          },
-          children: [
-            TableRow(
-              children: [
-                CommonTableCell(text: s.codes, padding: Styles.edgeInsetAll10),
-                CommonTableCell(text: s.rewards, padding: Styles.edgeInsetAll10),
-                Container(),
-              ],
-            ),
-            ...codes.map((e) => _buildRow(s, context, e)).toList(),
-          ],
-        ),
-      ),
-    );
+  @override
+  void dispose() {
+    _refreshController.dispose();
+    super.dispose();
+  }
 
+  Widget _buildTableCard(String title, bool isBusy, List<GameCodeModel> codes, BuildContext context) {
+    if (isBusy) {
+      return ItemDescriptionDetail(
+        title: title,
+        body: const SizedBox(height: 200, child: Center(child: CircularProgressIndicator())),
+        textColor: Theme.of(context).accentColor,
+      );
+    }
     return ItemDescriptionDetail(
       title: title,
-      body: body,
       textColor: Theme.of(context).accentColor,
-    );
-  }
-
-  TableRow _buildRow(S s, BuildContext context, GameCodeModel model) {
-    final fToast = ToastUtils.of(context);
-    final rewards = model.rewards.map((m) => WrappedAscensionMaterial(image: m.fullImagePath, quantity: m.quantity, size: 20)).toList();
-    return TableRow(
-      children: [
-        CommonTableCell.child(
-          child: Center(
-            child: Tooltip(
-              message: model.code,
-              child: Text(
-                model.code,
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.subtitle2.copyWith(fontSize: 12),
-              ),
+      body: codes.isEmpty
+          ? Container()
+          : Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: codes.map((e) => GameCodeListItem(item: e)).toList(),
             ),
-          ),
-        ),
-        CommonTableCell.child(
-          child: Wrap(alignment: WrapAlignment.center, children: rewards),
-        ),
-        CommonTableCell.child(
-          child: Wrap(
-            alignment: WrapAlignment.center,
-            children: [
-              IconButton(
-                tooltip: !model.isUsed ? s.markAsUsed : s.markAsUnused,
-                splashRadius: 20,
-                icon: Icon(Icons.check, color: model.isUsed ? Colors.green : Colors.red),
-                onPressed: () => context.read<GameCodesBloc>().add(GameCodesEvent.markAsUsed(code: model.code, wasUsed: !model.isUsed)),
-              ),
-              IconButton(
-                tooltip: s.copy,
-                splashRadius: 20,
-                icon: const Icon(Icons.copy),
-                onPressed: () => Clipboard.setData(ClipboardData(text: model.code)).then(
-                  (value) => ToastUtils.showInfoToast(fToast, s.codeXWasCopied(model.code)),
-                ),
-              )
-            ],
-          ),
-        )
-      ],
     );
   }
 
@@ -138,5 +110,28 @@ class GameCodesPage extends StatelessWidget {
     if (await canLaunch(url)) {
       await launch(url);
     }
+  }
+
+  Future<void> _showInfoDialog(BuildContext context) async {
+    final s = S.of(context);
+    //TODO: SWIPE TO SEE MORE
+    final explanations = [
+      s.internetIsRequiredToRefreshItems,
+    ];
+    await showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(s.information),
+        content: SingleChildScrollView(
+          child: BulletList(items: explanations, fontSize: 14),
+        ),
+        actions: [
+          ElevatedButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text(s.ok),
+          )
+        ],
+      ),
+    );
   }
 }
