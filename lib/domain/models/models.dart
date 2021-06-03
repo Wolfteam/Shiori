@@ -22,7 +22,6 @@ export 'db/furniture/furniture_file.dart';
 export 'db/furniture/furniture_file_model.dart';
 export 'db/gadgets/gadget_file_model.dart';
 export 'db/gadgets/gadgets_file.dart';
-export 'db/game_codes/game_codes_file.dart';
 export 'db/materials/material_file_model.dart';
 export 'db/materials/materials_file.dart';
 export 'db/monsters/monster_file_model.dart';
