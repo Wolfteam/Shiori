@@ -5,9 +5,9 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/app_fab.dart';
-import 'package:genshindb/presentation/shared/extensions/scroll_controller_extensions.dart';
 import 'package:genshindb/presentation/shared/info_dialog.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
+import 'package:genshindb/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:genshindb/presentation/shared/nothing_found_column.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 
@@ -20,23 +20,13 @@ class CalculatorSessionsPage extends StatefulWidget {
   _CalculatorSessionsPageState createState() => _CalculatorSessionsPageState();
 }
 
-class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with SingleTickerProviderStateMixin {
-  ScrollController _scrollController;
-  AnimationController _hideFabAnimController;
+class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with SingleTickerProviderStateMixin, AppFabMixin {
   int _numberOfItems = 0;
+  @override
+  bool get isInitiallyVisible => true;
 
   @override
-  void initState() {
-    super.initState();
-
-    _scrollController = ScrollController();
-    _hideFabAnimController = AnimationController(
-      vsync: this,
-      duration: kThemeAnimationDuration,
-      value: 1, // initially visible
-    );
-    _scrollController.addListener(() => _scrollController.handleScrollForFab(_hideFabAnimController, hideOnTop: false));
-  }
+  bool get hideOnTop => false;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +36,7 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
         state.maybeMap(
           loaded: (state) {
             if (_numberOfItems != state.sessions.length) {
-              _hideFabAnimController.forward();
+              hideFabAnimController.forward();
             }
             _numberOfItems = state.sessions.length;
           },
@@ -76,8 +66,8 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
         floatingActionButton: AppFab(
           onPressed: () => _showAddSessionDialog(context),
           icon: const Icon(Icons.add),
-          hideFabAnimController: _hideFabAnimController,
-          scrollController: _scrollController,
+          hideFabAnimController: hideFabAnimController,
+          scrollController: scrollController,
           mini: false,
         ),
         body: SafeArea(
@@ -90,7 +80,7 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
                   return NothingFoundColumn(msg: s.noSessionsHaveBeenCreated);
                 }
                 return ListView.separated(
-                  controller: _scrollController,
+                  controller: scrollController,
                   itemCount: state.sessions.length,
                   separatorBuilder: (ctx, index) => const Divider(height: 1),
                   itemBuilder: (ctx, index) => SessionListItem(session: state.sessions[index]),
@@ -101,13 +91,6 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    _hideFabAnimController.dispose();
-    super.dispose();
   }
 
   Future<void> _showAddSessionDialog(BuildContext context) async {
