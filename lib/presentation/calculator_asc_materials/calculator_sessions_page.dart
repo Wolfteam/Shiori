@@ -21,7 +21,6 @@ class CalculatorSessionsPage extends StatefulWidget {
 }
 
 class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with SingleTickerProviderStateMixin, AppFabMixin {
-  int _numberOfItems = 0;
   @override
   bool get isInitiallyVisible => true;
 
@@ -31,18 +30,7 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return BlocConsumer<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
-      listener: (ctx, state) {
-        state.maybeMap(
-          loaded: (state) {
-            if (_numberOfItems != state.sessions.length) {
-              hideFabAnimController.forward();
-            }
-            _numberOfItems = state.sessions.length;
-          },
-          orElse: () {},
-        );
-      },
+    return BlocBuilder<CalculatorAscMaterialsSessionsBloc, CalculatorAscMaterialsSessionsState>(
       builder: (ctx, state) => Scaffold(
         appBar: state.map(
           loading: (_) => null,
