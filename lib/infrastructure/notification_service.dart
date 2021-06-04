@@ -63,12 +63,8 @@ class NotificationServiceImpl implements NotificationService {
   @override
   Future<void> showNotification(int id, AppNotificationType type, String title, String body, {String payload}) {
     final specifics = _getPlatformChannelSpecifics(type, body);
-
-    if (body.length < 40) {
-      return _flutterLocalNotificationsPlugin.show(id, title, body, specifics, payload: payload);
-    }
-
-    return _flutterLocalNotificationsPlugin.show(id, title, body, specifics, payload: payload);
+    final newId = _generateUniqueId(id, type);
+    return _flutterLocalNotificationsPlugin.show(newId, title, body, specifics, payload: payload);
   }
 
   @override
@@ -84,20 +80,23 @@ class NotificationServiceImpl implements NotificationService {
   @override
   Future<void> scheduleNotification(int id, AppNotificationType type, String title, String body, DateTime toBeDeliveredOn) async {
     final now = DateTime.now();
+    final payload = '${id}_${_getTagFromNotificationType(type)}';
     if (toBeDeliveredOn.isBefore(now) || toBeDeliveredOn.isAtSameMomentAs(now)) {
-      await showNotification(id, type, title, body);
+      await showNotification(id, type, title, body, payload: payload);
       return;
     }
+    final newId = _generateUniqueId(id, type);
     final specifics = _getPlatformChannelSpecifics(type, body);
     final scheduledDate = tz.TZDateTime.from(toBeDeliveredOn, _location);
     return _flutterLocalNotificationsPlugin.zonedSchedule(
-      id,
+      newId,
       title,
       body,
       scheduledDate,
       specifics,
       uiLocalNotificationDateInterpretation: null,
       androidAllowWhileIdle: true,
+      payload: payload,
     );
   }
 
@@ -115,7 +114,6 @@ class NotificationServiceImpl implements NotificationService {
       largeIcon: const DrawableResourceAndroidBitmap(_largeIcon),
       tag: _getTagFromNotificationType(type),
     );
-
     const _iOSPlatformChannelSpecifics = IOSNotificationDetails();
 
     return NotificationDetails(android: _androidPlatformChannelSpecifics, iOS: _iOSPlatformChannelSpecifics);
@@ -123,5 +121,39 @@ class NotificationServiceImpl implements NotificationService {
 
   String _getTagFromNotificationType(AppNotificationType type) {
     return EnumToString.convertToString(type);
+  }
+
+  // For some reason I need to provide a unique id even if I'm providing a custom tag
+  // That's why we generate this id here
+  int _generateUniqueId(int id, AppNotificationType type) {
+    final prefix = _getIdPrefix(type).toString();
+    final newId = '$prefix$id';
+    return int.parse(newId);
+  }
+
+  int _getIdPrefix(AppNotificationType type) {
+    switch (type) {
+      case AppNotificationType.resin:
+        return 10;
+      case AppNotificationType.expedition:
+        return 20;
+      case AppNotificationType.farmingMaterials:
+        return 30;
+      case AppNotificationType.farmingArtifacts:
+        return 40;
+      case AppNotificationType.gadget:
+        return 50;
+      case AppNotificationType.furniture:
+        return 60;
+      case AppNotificationType.realmCurrency:
+        return 70;
+      case AppNotificationType.weeklyBoss:
+        return 80;
+      case AppNotificationType.custom:
+        return 90;
+      case AppNotificationType.dailyCheckIn:
+        return 100;
+    }
+    throw Exception('The provided type =  $type is not a valid notification type');
   }
 }

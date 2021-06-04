@@ -5,6 +5,7 @@ import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/common_bottom_sheet.dart';
 
 import 'forms/notification_custom_form.dart';
+import 'forms/notification_daily_checkin_form.dart';
 import 'forms/notification_expedition_form.dart';
 import 'forms/notification_farming_artifact_form.dart';
 import 'forms/notification_farming_material_form.dart';
@@ -129,6 +130,15 @@ class AddEditNotificationBottomSheet extends StatelessWidget {
             scheduledDate: state.scheduledDate,
             language: state.language,
             useTwentyFourHoursFormat: state.useTwentyFourHoursFormat,
+          ),
+          dailyCheckIn: (state) => NotificationDailyCheckIn(
+            title: state.title,
+            body: state.body,
+            note: state.note,
+            showNotification: state.showNotification,
+            isInEditMode: isInEditMode,
+            images: state.images,
+            showOtherImages: state.showOtherImages,
           ),
         ),
       ),

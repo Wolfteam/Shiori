@@ -125,6 +125,8 @@ class NotificationCircleItem extends StatelessWidget {
             throw Exception('Invalid app notification type = $type');
         }
         break;
+      case AppNotificationType.dailyCheckIn:
+        break;
     }
   }
 

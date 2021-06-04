@@ -681,15 +681,15 @@ class DataServiceImpl implements DataService {
     String itemKey,
     String title,
     String body,
-    DateTime createdAt,
     DateTime completesAt,
     AppNotificationItemType notificationItemType, {
     String note,
     bool showNotification = true,
   }) async {
+    final now = DateTime.now();
     final notification = NotificationCustom(
       itemKey: itemKey,
-      createdAt: createdAt,
+      createdAt: now,
       completesAt: completesAt,
       showNotification: showNotification,
       notificationItemType: notificationItemType.index,
@@ -699,6 +699,28 @@ class DataServiceImpl implements DataService {
     );
     final key = await _notificationsCustomBox.add(notification);
     return getNotification(key, AppNotificationType.custom);
+  }
+
+  @override
+  Future<NotificationItem> saveDailyCheckInNotification(
+    String itemKey,
+    String title,
+    String body, {
+    String note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    final notification = NotificationCustom.forDailyCheckIn(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: now.add(dailyCheckInResetDuration),
+      showNotification: showNotification,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
+    );
+    final key = await _notificationsCustomBox.add(notification);
+    return getNotification(key, AppNotificationType.dailyCheckIn);
   }
 
   @override
@@ -721,6 +743,7 @@ class DataServiceImpl implements DataService {
       case AppNotificationType.weeklyBoss:
         return _notificationsWeeklyBossBox.delete(key);
       case AppNotificationType.custom:
+      case AppNotificationType.dailyCheckIn:
         return _notificationsCustomBox.delete(key);
     }
     throw Exception('Invalid notification type = $type');
@@ -778,6 +801,11 @@ class DataServiceImpl implements DataService {
         return _mapToNotificationItem(item);
       case AppNotificationType.custom:
         break;
+      case AppNotificationType.dailyCheckIn:
+        final item = _getNotification<NotificationCustom>(key, type);
+        item.completesAt = DateTime.now().add(const Duration(hours: 24));
+        await item.save();
+        return _mapToNotificationItem(item);
     }
 
     throw Exception('The provided app notification type = $type is not valid for a reset');
@@ -803,7 +831,8 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsResinBox.values.firstWhere((el) => el.key == key);
-    if (currentResinValue != item.currentResinValue) {
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    if (currentResinValue != item.currentResinValue || isCompleted) {
       item.completesAt = getNotificationDateForResin(currentResinValue);
     }
     item.itemKey = itemKey;
@@ -823,7 +852,8 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsExpeditionBox.values.firstWhere((el) => el.key == key);
-    if (item.expeditionTimeType != expeditionTimeType.index || item.withTimeReduction != withTimeReduction) {
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    if (item.expeditionTimeType != expeditionTimeType.index || item.withTimeReduction != withTimeReduction || isCompleted) {
       final now = DateTime.now();
       item.completesAt = now.add(getExpeditionDuration(expeditionTimeType, withTimeReduction));
     }
@@ -844,7 +874,8 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsFarmingMaterialBox.values.firstWhere((el) => el.key == key);
-    if (item.itemKey != itemKey) {
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    if (item.itemKey != itemKey || isCompleted) {
       final newDuration = _genshinService.getMaterial(itemKey).farmingRespawnDuration;
       item.completesAt = DateTime.now().add(newDuration);
     }
@@ -863,7 +894,8 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsFarmingArtifactBox.values.firstWhere((el) => el.key == key);
-    if (type.index != item.artifactFarmingTimeType) {
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    if (type.index != item.artifactFarmingTimeType || isCompleted) {
       final newDuration = getArtifactFarmingCooldownDuration(type);
       item.completesAt = DateTime.now().add(newDuration);
     }
@@ -883,8 +915,9 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsGadgetBox.values.firstWhere((el) => el.key == key);
-    final gadget = _genshinService.getGadget(item.itemKey);
-    if (item.itemKey != itemKey) {
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    if (item.itemKey != itemKey || isCompleted) {
+      final gadget = _genshinService.getGadget(item.itemKey);
       final now = DateTime.now();
       item.completesAt = now.add(gadget.cooldownDuration);
       item.itemKey = itemKey;
@@ -904,8 +937,9 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsFurnitureBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
     item.itemKey = itemKey;
-    if (item.furnitureCraftingTimeType != type.index) {
+    if (item.furnitureCraftingTimeType != type.index || isCompleted) {
       item.furnitureCraftingTimeType = type.index;
       item.completesAt = DateTime.now().add(getFurnitureDuration(type));
     }
@@ -926,8 +960,12 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsRealmCurrencyBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
     item.itemKey = itemKey;
-    if (item.realmRankType != realmRankType.index || item.realmTrustRank != currentTrustRankLevel || item.realmCurrency != currentRealmCurrency) {
+    if (item.realmRankType != realmRankType.index ||
+        item.realmTrustRank != currentTrustRankLevel ||
+        item.realmCurrency != currentRealmCurrency ||
+        isCompleted) {
       final duration = getRealmCurrencyDuration(currentRealmCurrency, currentTrustRankLevel, realmRankType);
       item.completesAt = DateTime.now().add(duration);
       item.realmRankType = realmRankType.index;
@@ -941,6 +979,7 @@ class DataServiceImpl implements DataService {
   @override
   Future<NotificationItem> updateWeeklyBossNotification(
     int key,
+    AppServerResetTimeType serverResetTimeType,
     String itemKey,
     String title,
     String body,
@@ -948,8 +987,12 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsWeeklyBossBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
     if (item.itemKey != itemKey) {
       item.itemKey = itemKey;
+    }
+    if (isCompleted) {
+      item.completesAt = _genshinService.getNextDateForWeeklyBoss(serverResetTimeType);
     }
 
     return _updateNotification(item, title, body, note, showNotification);
@@ -973,6 +1016,26 @@ class DataServiceImpl implements DataService {
 
     if (item.completesAt != completesAt) {
       item.completesAt = completesAt;
+    }
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateDailyCheckInNotification(
+    int key,
+    String itemKey,
+    String title,
+    String body,
+    bool showNotification, {
+    String note,
+  }) async {
+    final item = _notificationsCustomBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    item.itemKey = itemKey;
+
+    if (isCompleted) {
+      item.completesAt = DateTime.now().add(dailyCheckInResetDuration);
     }
 
     return _updateNotification(item, title, body, note, showNotification);
@@ -1216,6 +1279,7 @@ class DataServiceImpl implements DataService {
       case AppNotificationType.weeklyBoss:
         return _notificationsWeeklyBossBox.values.firstWhere((el) => el.key == key) as T;
       case AppNotificationType.custom:
+      case AppNotificationType.dailyCheckIn:
         return _notificationsCustomBox.values.firstWhere((el) => el.key == key) as T;
     }
 
@@ -1242,6 +1306,7 @@ class DataServiceImpl implements DataService {
       case AppNotificationType.weeklyBoss:
         return _mapToNotificationItemFromWeeklyBoss(e as NotificationWeeklyBoss);
       case AppNotificationType.custom:
+      case AppNotificationType.dailyCheckIn:
         return _mapToNotificationItemFromCustom(e as NotificationCustom);
     }
     throw Exception('Invalid notification type = $type');

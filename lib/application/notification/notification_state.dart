@@ -203,4 +203,22 @@ abstract class NotificationState implements _$NotificationState {
     @required LanguageModel language,
     @Default(false) bool useTwentyFourHoursFormat,
   }) = _CustomState;
+
+  @Implements(_CommonBaseState)
+  const factory NotificationState.dailyCheckIn({
+    int key,
+    @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
+    @Default(AppNotificationType.dailyCheckIn) AppNotificationType type,
+    @Default(true) bool showNotification,
+    @Default('') String title,
+    @Default('') String body,
+    @Default(false) bool isTitleValid,
+    @Default(false) bool isTitleDirty,
+    @Default(false) bool isBodyValid,
+    @Default(false) bool isBodyDirty,
+    @Default(true) bool isNoteValid,
+    @Default(false) bool isNoteDirty,
+    @Default('') String note,
+    @Default(false) bool showOtherImages,
+  }) = _DailyCheckInState;
 }

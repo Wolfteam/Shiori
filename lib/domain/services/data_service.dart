@@ -163,9 +163,16 @@ abstract class DataService {
     String itemKey,
     String title,
     String body,
-    DateTime createdAt,
     DateTime completesAt,
     AppNotificationItemType notificationItemType, {
+    String note,
+    bool showNotification = true,
+  });
+
+  Future<NotificationItem> saveDailyCheckInNotification(
+    String itemKey,
+    String title,
+    String body, {
     String note,
     bool showNotification = true,
   });
@@ -249,6 +256,7 @@ abstract class DataService {
 
   Future<NotificationItem> updateWeeklyBossNotification(
     int key,
+    AppServerResetTimeType serverResetTimeType,
     String itemKey,
     String title,
     String body,
@@ -264,6 +272,15 @@ abstract class DataService {
     DateTime completesAt,
     bool showNotification,
     AppNotificationItemType notificationItemType, {
+    String note,
+  });
+
+  Future<NotificationItem> updateDailyCheckInNotification(
+    int key,
+    String itemKey,
+    String title,
+    String body,
+    bool showNotification, {
     String note,
   });
 

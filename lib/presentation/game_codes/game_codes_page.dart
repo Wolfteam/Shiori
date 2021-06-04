@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/bullet_list.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
+import 'package:genshindb/presentation/shared/loading.dart';
+import 'package:genshindb/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:genshindb/presentation/shared/nothing_found_column.dart';
 import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -21,8 +22,14 @@ class GameCodesPage extends StatefulWidget {
   _GameCodesPageState createState() => _GameCodesPageState();
 }
 
-class _GameCodesPageState extends State<GameCodesPage> {
-  final RefreshController _refreshController = RefreshController(initialRefresh: false);
+class _GameCodesPageState extends State<GameCodesPage> with SingleTickerProviderStateMixin, AppFabMixin {
+  RefreshController _refreshController;
+
+  @override
+  void initState() {
+    super.initState();
+    _refreshController = RefreshController();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,38 +48,63 @@ class _GameCodesPageState extends State<GameCodesPage> {
           ),
         ],
       ),
+      floatingActionButton: getAppFab(),
       body: SafeArea(
-        child: SmartRefresher(
-          header: const MaterialClassicHeader(),
-          controller: _refreshController,
-          onRefresh: () {
-            context.read<GameCodesBloc>().add(const GameCodesEvent.refresh());
-          },
-          child: BlocConsumer<GameCodesBloc, GameCodesState>(
-            listener: (ctx, state) {
-              if (!state.isBusy) {
-                _refreshController.refreshCompleted();
-              }
+        child: BlocConsumer<GameCodesBloc, GameCodesState>(
+          listener: (ctx, state) {
+            if (!state.isBusy) {
+              _refreshController.refreshCompleted();
+            }
 
-              if (state.isInternetAvailable == false) {
-                ToastUtils.showWarningToast(ToastUtils.of(context), s.noInternetConnection);
-              }
+            if (state.isInternetAvailable == false) {
+              ToastUtils.showWarningToast(ToastUtils.of(context), s.noInternetConnection);
+            }
+          },
+          builder: (ctx, state) => SmartRefresher(
+            header: const MaterialClassicHeader(),
+            controller: _refreshController,
+            onRefresh: () {
+              context.read<GameCodesBloc>().add(const GameCodesEvent.refresh());
             },
-            builder: (ctx, state) => state.expiredGameCodes.isEmpty && state.workingGameCodes.isEmpty
+            child: state.expiredGameCodes.isEmpty && state.workingGameCodes.isEmpty
                 ? state.isBusy
-                    ? const Center(child: CircularProgressIndicator())
+                    ? const Loading(useScaffold: false)
                     : NothingFoundColumn(msg: '${s.noGameCodesHaveBeenLoaded}\n${s.pullToRefreshItems}', icon: Icons.refresh)
-                : SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(top: 10),
-                          child: _buildTableCard(s.workingCodes, state.isBusy, state.workingGameCodes, context),
+                : CustomScrollView(
+                    controller: scrollController,
+                    slivers: [
+                      if (state.workingGameCodes.isNotEmpty)
+                        SliverToBoxAdapter(
+                          child: Container(
+                            margin: const EdgeInsets.only(top: 10),
+                            child: ItemDescriptionDetail(
+                              title: s.workingCodes,
+                              textColor: Theme.of(context).accentColor,
+                              body: Container(),
+                            ),
+                          ),
                         ),
-                        _buildTableCard(s.expiredCodes, state.isBusy, state.expiredGameCodes, context),
-                      ],
-                    ),
+                      SliverList(
+                        delegate: SliverChildBuilderDelegate(
+                          (_, index) => GameCodeListItem(item: state.workingGameCodes[index]),
+                          childCount: state.workingGameCodes.length,
+                        ),
+                      ),
+                      if (state.expiredGameCodes.isNotEmpty)
+                        SliverToBoxAdapter(
+                          child: ItemDescriptionDetail(
+                            title: s.expiredCodes,
+                            textColor: Theme.of(context).accentColor,
+                            body: Container(),
+                          ),
+                        ),
+                      SliverList(
+                        delegate: SliverChildBuilderDelegate(
+                          (_, index) => GameCodeListItem(item: state.expiredGameCodes[index]),
+                          childCount: state.expiredGameCodes.length,
+                        ),
+                      ),
+                    ],
                   ),
           ),
         ),
@@ -84,26 +116,6 @@ class _GameCodesPageState extends State<GameCodesPage> {
   void dispose() {
     _refreshController.dispose();
     super.dispose();
-  }
-
-  Widget _buildTableCard(String title, bool isBusy, List<GameCodeModel> codes, BuildContext context) {
-    if (isBusy) {
-      return ItemDescriptionDetail(
-        title: title,
-        body: const SizedBox(height: 200, child: Center(child: CircularProgressIndicator())),
-        textColor: Theme.of(context).accentColor,
-      );
-    }
-    return ItemDescriptionDetail(
-      title: title,
-      textColor: Theme.of(context).accentColor,
-      body: codes.isEmpty
-          ? Container()
-          : Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: codes.map((e) => GameCodeListItem(item: e)).toList(),
-            ),
-    );
   }
 
   Future<void> _launchUrl(String url) async {

@@ -632,10 +632,10 @@ class GenshinServiceImpl implements GenshinService {
         final monsters = getMonster(itemKey);
         return monsters.fullImagePath;
       case AppNotificationType.custom:
+      case AppNotificationType.dailyCheckIn:
         return getItemImageFromNotificationItemType(itemKey, notificationItemType);
-      default:
-        throw Exception('The provided notification type = $notificationType is not valid');
     }
+    throw Exception('The provided notification type = $notificationType is not valid');
   }
 
   @override
@@ -656,9 +656,8 @@ class GenshinServiceImpl implements GenshinService {
       case AppNotificationItemType.material:
         final material = getMaterial(itemKey);
         return material.fullImagePath;
-      default:
-        throw Exception('The provided notification item type = $notificationItemType');
     }
+    throw Exception('The provided notification item type = $notificationItemType');
   }
 
   @override
@@ -688,6 +687,9 @@ class GenshinServiceImpl implements GenshinService {
       case AppNotificationType.weeklyBoss:
         final monster = getMonsterByImg(itemImage);
         return monster.key;
+      case AppNotificationType.dailyCheckIn:
+        final material = getMaterialByImage(itemImage);
+        return material.key;
       case AppNotificationType.custom:
         switch (notificationItemType) {
           case AppNotificationItemType.character:
