@@ -249,6 +249,7 @@ abstract class DataService {
 
   Future<NotificationItem> updateWeeklyBossNotification(
     int key,
+    AppServerResetTimeType serverResetTimeType,
     String itemKey,
     String title,
     String body,

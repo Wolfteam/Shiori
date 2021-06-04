@@ -571,6 +571,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     if (s.key != null) {
       final updated = await _dataService.updateWeeklyBossNotification(
         s.key,
+        _settingsService.serverResetTime,
         selectedItemKey,
         s.title,
         s.body,

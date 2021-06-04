@@ -803,7 +803,8 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsResinBox.values.firstWhere((el) => el.key == key);
-    if (currentResinValue != item.currentResinValue) {
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    if (currentResinValue != item.currentResinValue || isCompleted) {
       item.completesAt = getNotificationDateForResin(currentResinValue);
     }
     item.itemKey = itemKey;
@@ -823,7 +824,8 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsExpeditionBox.values.firstWhere((el) => el.key == key);
-    if (item.expeditionTimeType != expeditionTimeType.index || item.withTimeReduction != withTimeReduction) {
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    if (item.expeditionTimeType != expeditionTimeType.index || item.withTimeReduction != withTimeReduction || isCompleted) {
       final now = DateTime.now();
       item.completesAt = now.add(getExpeditionDuration(expeditionTimeType, withTimeReduction));
     }
@@ -844,7 +846,8 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsFarmingMaterialBox.values.firstWhere((el) => el.key == key);
-    if (item.itemKey != itemKey) {
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    if (item.itemKey != itemKey || isCompleted) {
       final newDuration = _genshinService.getMaterial(itemKey).farmingRespawnDuration;
       item.completesAt = DateTime.now().add(newDuration);
     }
@@ -863,7 +866,8 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsFarmingArtifactBox.values.firstWhere((el) => el.key == key);
-    if (type.index != item.artifactFarmingTimeType) {
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    if (type.index != item.artifactFarmingTimeType || isCompleted) {
       final newDuration = getArtifactFarmingCooldownDuration(type);
       item.completesAt = DateTime.now().add(newDuration);
     }
@@ -883,8 +887,9 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsGadgetBox.values.firstWhere((el) => el.key == key);
-    final gadget = _genshinService.getGadget(item.itemKey);
-    if (item.itemKey != itemKey) {
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    if (item.itemKey != itemKey || isCompleted) {
+      final gadget = _genshinService.getGadget(item.itemKey);
       final now = DateTime.now();
       item.completesAt = now.add(gadget.cooldownDuration);
       item.itemKey = itemKey;
@@ -904,8 +909,9 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsFurnitureBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
     item.itemKey = itemKey;
-    if (item.furnitureCraftingTimeType != type.index) {
+    if (item.furnitureCraftingTimeType != type.index || isCompleted) {
       item.furnitureCraftingTimeType = type.index;
       item.completesAt = DateTime.now().add(getFurnitureDuration(type));
     }
@@ -926,8 +932,12 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsRealmCurrencyBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
     item.itemKey = itemKey;
-    if (item.realmRankType != realmRankType.index || item.realmTrustRank != currentTrustRankLevel || item.realmCurrency != currentRealmCurrency) {
+    if (item.realmRankType != realmRankType.index ||
+        item.realmTrustRank != currentTrustRankLevel ||
+        item.realmCurrency != currentRealmCurrency ||
+        isCompleted) {
       final duration = getRealmCurrencyDuration(currentRealmCurrency, currentTrustRankLevel, realmRankType);
       item.completesAt = DateTime.now().add(duration);
       item.realmRankType = realmRankType.index;
@@ -941,6 +951,7 @@ class DataServiceImpl implements DataService {
   @override
   Future<NotificationItem> updateWeeklyBossNotification(
     int key,
+    AppServerResetTimeType serverResetTimeType,
     String itemKey,
     String title,
     String body,
@@ -948,8 +959,12 @@ class DataServiceImpl implements DataService {
     String note,
   }) {
     final item = _notificationsWeeklyBossBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
     if (item.itemKey != itemKey) {
       item.itemKey = itemKey;
+    }
+    if (isCompleted) {
+      item.completesAt = _genshinService.getNextDateForWeeklyBoss(serverResetTimeType);
     }
 
     return _updateNotification(item, title, body, note, showNotification);
