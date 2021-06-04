@@ -681,15 +681,15 @@ class DataServiceImpl implements DataService {
     String itemKey,
     String title,
     String body,
-    DateTime createdAt,
     DateTime completesAt,
     AppNotificationItemType notificationItemType, {
     String note,
     bool showNotification = true,
   }) async {
+    final now = DateTime.now();
     final notification = NotificationCustom(
       itemKey: itemKey,
-      createdAt: createdAt,
+      createdAt: now,
       completesAt: completesAt,
       showNotification: showNotification,
       notificationItemType: notificationItemType.index,
@@ -699,6 +699,28 @@ class DataServiceImpl implements DataService {
     );
     final key = await _notificationsCustomBox.add(notification);
     return getNotification(key, AppNotificationType.custom);
+  }
+
+  @override
+  Future<NotificationItem> saveDailyCheckInNotification(
+    String itemKey,
+    String title,
+    String body, {
+    String note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    final notification = NotificationCustom.forDailyCheckIn(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: now.add(dailyCheckInResetDuration),
+      showNotification: showNotification,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
+    );
+    final key = await _notificationsCustomBox.add(notification);
+    return getNotification(key, AppNotificationType.dailyCheckIn);
   }
 
   @override
@@ -721,6 +743,7 @@ class DataServiceImpl implements DataService {
       case AppNotificationType.weeklyBoss:
         return _notificationsWeeklyBossBox.delete(key);
       case AppNotificationType.custom:
+      case AppNotificationType.dailyCheckIn:
         return _notificationsCustomBox.delete(key);
     }
     throw Exception('Invalid notification type = $type');
@@ -778,6 +801,11 @@ class DataServiceImpl implements DataService {
         return _mapToNotificationItem(item);
       case AppNotificationType.custom:
         break;
+      case AppNotificationType.dailyCheckIn:
+        final item = _getNotification<NotificationCustom>(key, type);
+        item.completesAt = DateTime.now().add(const Duration(hours: 24));
+        await item.save();
+        return _mapToNotificationItem(item);
     }
 
     throw Exception('The provided app notification type = $type is not valid for a reset');
@@ -988,6 +1016,26 @@ class DataServiceImpl implements DataService {
 
     if (item.completesAt != completesAt) {
       item.completesAt = completesAt;
+    }
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateDailyCheckInNotification(
+    int key,
+    String itemKey,
+    String title,
+    String body,
+    bool showNotification, {
+    String note,
+  }) async {
+    final item = _notificationsCustomBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    item.itemKey = itemKey;
+
+    if (isCompleted) {
+      item.completesAt = DateTime.now().add(dailyCheckInResetDuration);
     }
 
     return _updateNotification(item, title, body, note, showNotification);
@@ -1231,6 +1279,7 @@ class DataServiceImpl implements DataService {
       case AppNotificationType.weeklyBoss:
         return _notificationsWeeklyBossBox.values.firstWhere((el) => el.key == key) as T;
       case AppNotificationType.custom:
+      case AppNotificationType.dailyCheckIn:
         return _notificationsCustomBox.values.firstWhere((el) => el.key == key) as T;
     }
 
@@ -1257,6 +1306,7 @@ class DataServiceImpl implements DataService {
       case AppNotificationType.weeklyBoss:
         return _mapToNotificationItemFromWeeklyBoss(e as NotificationWeeklyBoss);
       case AppNotificationType.custom:
+      case AppNotificationType.dailyCheckIn:
         return _mapToNotificationItemFromCustom(e as NotificationCustom);
     }
     throw Exception('Invalid notification type = $type');

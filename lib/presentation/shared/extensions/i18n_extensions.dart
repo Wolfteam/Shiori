@@ -461,9 +461,10 @@ extension I18nExtensions on S {
         return boss;
       case AppNotificationType.custom:
         return custom;
-      default:
-        throw Exception('Invalid app notification type = $type');
+      case AppNotificationType.dailyCheckIn:
+        return dailyCheckIn;
     }
+    throw Exception('Invalid app notification type = $type');
   }
 
   String translateExpeditionTimeType(ExpeditionTimeType type) {

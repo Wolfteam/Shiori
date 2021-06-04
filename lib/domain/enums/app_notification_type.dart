@@ -8,4 +8,5 @@ enum AppNotificationType {
   realmCurrency,
   weeklyBoss,
   custom,
+  dailyCheckIn,
 }

@@ -151,8 +151,9 @@ class NotificationServiceImpl implements NotificationService {
         return 80;
       case AppNotificationType.custom:
         return 90;
-      default:
-        throw Exception('The provided type =  $type is not a valid notification type');
+      case AppNotificationType.dailyCheckIn:
+        return 100;
     }
+    throw Exception('The provided type =  $type is not a valid notification type');
   }
 }

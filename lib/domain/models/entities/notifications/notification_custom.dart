@@ -57,4 +57,16 @@ class NotificationCustom extends HiveObject implements NotificationBase {
     @required this.notificationItemType,
   })  : type = AppNotificationType.custom.index,
         originalScheduledDate = completesAt;
+
+  NotificationCustom.forDailyCheckIn({
+    @required this.itemKey,
+    @required this.createdAt,
+    @required this.completesAt,
+    this.note,
+    @required this.showNotification,
+    @required this.title,
+    @required this.body,
+  })  : type = AppNotificationType.dailyCheckIn.index,
+        notificationItemType = AppNotificationItemType.material.index,
+        originalScheduledDate = completesAt;
 }

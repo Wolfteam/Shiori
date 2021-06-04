@@ -202,6 +202,10 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           useTwentyFourHoursFormat: _settingsService.useTwentyFourHoursFormat,
         );
         break;
+      case AppNotificationType.dailyCheckIn:
+        images.addAll(_getImagesForDailyCheckIn(itemKey: item.itemKey, selectedImage: item.image));
+        state = const NotificationState.dailyCheckIn();
+        break;
       default:
         throw Exception('Invalid notification type = ${item.type}');
     }
@@ -271,6 +275,10 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           language: _localeService.getLocaleWithoutLang(),
           useTwentyFourHoursFormat: _settingsService.useTwentyFourHoursFormat,
         );
+        break;
+      case AppNotificationType.dailyCheckIn:
+        images.addAll(_getImagesForDailyCheckIn());
+        updatedState = const NotificationState.dailyCheckIn();
         break;
       default:
         throw Exception('The provided app notification type = $newValue is not valid');
@@ -348,6 +356,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
         furniture: _saveFurnitureNotification,
         weeklyBoss: _saveWeeklyBossNotification,
         realmCurrency: _saveRealmCurrencyNotification,
+        dailyCheckIn: _saveDailyCheckInNotification,
       );
 
       if (state.key == null) {
@@ -384,10 +393,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       note: s.note,
       showNotification: s.showNotification,
     );
-
-    if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
-    }
+    await _afterNotificationWasCreated(notif);
   }
 
   Future<void> _saveExpeditionNotification(_ExpeditionState s) async {
@@ -416,9 +422,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       showNotification: s.showNotification,
       withTimeReduction: s.withTimeReduction,
     );
-    if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
-    }
+    await _afterNotificationWasCreated(notif);
   }
 
   Future<void> _saveFarmingArtifactNotification(_FarmingArtifactState s) async {
@@ -445,9 +449,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       note: s.note,
       showNotification: s.showNotification,
     );
-    if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
-    }
+    await _afterNotificationWasCreated(notif);
   }
 
   Future<void> _saveFarmingMaterialNotification(_FarmingMaterialState s) async {
@@ -472,9 +474,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       note: s.note,
       showNotification: s.showNotification,
     );
-    if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
-    }
+    await _afterNotificationWasCreated(notif);
   }
 
   Future<void> _saveGadgetNotification(_GadgetState s) async {
@@ -499,9 +499,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       note: s.note,
       showNotification: s.showNotification,
     );
-    if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
-    }
+    await _afterNotificationWasCreated(notif);
   }
 
   Future<void> _saveFurnitureNotification(_FurnitureState s) async {
@@ -528,9 +526,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       note: s.note,
       showNotification: s.showNotification,
     );
-    if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
-    }
+    await _afterNotificationWasCreated(notif);
   }
 
   Future<void> _saveRealmCurrencyNotification(_RealmCurrencyState s) async {
@@ -561,9 +557,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       note: s.note,
       showNotification: s.showNotification,
     );
-    if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
-    }
+    await _afterNotificationWasCreated(notif);
   }
 
   Future<void> _saveWeeklyBossNotification(_WeeklyBossState s) async {
@@ -590,14 +584,11 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       note: s.note,
       showNotification: s.showNotification,
     );
-    if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
-    }
+    await _afterNotificationWasCreated(notif);
   }
 
   Future<void> _saveCustomNotification(_CustomState s) async {
     final selectedItemKey = _getSelectedItemKey();
-    final now = DateTime.now();
     if (s.key != null) {
       final updated = await _dataService.updateCustomNotification(
         s.key,
@@ -617,15 +608,37 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
       selectedItemKey,
       s.title,
       s.body,
-      now,
       s.scheduledDate,
       s.itemType,
       note: s.note,
       showNotification: s.showNotification,
     );
-    if (notif.showNotification) {
-      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
+    await _afterNotificationWasCreated(notif);
+  }
+
+  Future<void> _saveDailyCheckInNotification(_DailyCheckInState s) async {
+    final selectedItemKey = _getSelectedItemKey();
+    if (s.key != null) {
+      final updated = await _dataService.updateDailyCheckInNotification(
+        s.key,
+        selectedItemKey,
+        s.title,
+        s.body,
+        s.showNotification,
+        note: s.note,
+      );
+      await _afterNotificationWasUpdated(updated);
+      return;
     }
+
+    final notif = await _dataService.saveDailyCheckInNotification(
+      selectedItemKey,
+      s.title,
+      s.body,
+      note: s.note,
+      showNotification: s.showNotification,
+    );
+    await _afterNotificationWasCreated(notif);
   }
 
   String _getSelectedItemKey() {
@@ -716,6 +729,22 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     }
     final material = _genshinService.getAllMaterialsThatCanBeObtainedFromAnExpedition().first;
     return [NotificationItemImage(itemKey: material.key, image: material.fullImagePath, isSelected: true)];
+  }
+
+  List<NotificationItemImage> _getImagesForDailyCheckIn({String itemKey, String selectedImage}) {
+    if (selectedImage.isNotNullEmptyOrWhitespace) {
+      return [NotificationItemImage(itemKey: itemKey, image: selectedImage, isSelected: true)];
+    }
+    //TODO: FIGURE OUT HOW CAN I REMOVE THIS KEY FROM HERE
+    final materials = _genshinService.getMaterials(MaterialType.currency);
+    final material = materials.firstWhere((el) => el.key == 'Primogem');
+    return [NotificationItemImage(itemKey: material.key, image: material.fullImagePath, isSelected: true)];
+  }
+
+  Future<void> _afterNotificationWasCreated(NotificationItem notif) async {
+    if (notif.showNotification) {
+      await _notificationService.scheduleNotification(notif.key, notif.type, notif.title, notif.body, notif.completesAt);
+    }
   }
 
   Future<void> _afterNotificationWasUpdated(NotificationItem notif) async {
