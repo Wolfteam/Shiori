@@ -5,13 +5,16 @@ import 'package:flutter_native_timezone/flutter_native_timezone.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/services/logging_service.dart';
 import 'package:genshindb/domain/services/notification_service.dart';
-import 'package:timezone/data/latest.dart' as tz;
+import 'package:timezone/data/latest_all.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 
 const _channelId = 'genshindb_channel';
 const _channelName = 'Notifications';
 const _channelDescription = 'Notifications from the app';
 const _largeIcon = 'genshin_db';
+
+//Here we use this one in particular cause this tz uses UTC and does not use any kind of dst.
+const _fallbackTimeZone = 'Africa/Accra';
 
 class NotificationServiceImpl implements NotificationService {
   final LoggingService _loggingService;
@@ -29,7 +32,11 @@ class NotificationServiceImpl implements NotificationService {
       _location = tz.getLocation(currentTimeZone) ?? tz.local;
       tz.setLocalLocation(_location);
     } catch (e, s) {
-      _loggingService.error(runtimeType, 'init: Unknown error occurred', e, s);
+      //https://github.com/srawlins/timezone/issues/92
+      _loggingService.error(runtimeType, 'init: Failed to get timezone or device is GMT or UTC, assigning the generic one...', e, s);
+      _location = tz.getLocation(_fallbackTimeZone);
+      assert(_location != null);
+      tz.setLocalLocation(_location);
     }
   }
 
@@ -85,6 +92,7 @@ class NotificationServiceImpl implements NotificationService {
       await showNotification(id, type, title, body, payload: payload);
       return;
     }
+    assert(_location != null);
     final newId = _generateUniqueId(id, type);
     final specifics = _getPlatformChannelSpecifics(type, body);
     final scheduledDate = tz.TZDateTime.from(toBeDeliveredOn, _location);
