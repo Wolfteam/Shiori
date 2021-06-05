@@ -16,6 +16,7 @@ class CircleItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //TODO: TRY ADDING A BACKGROUND WITH THE MATERIAL WIDGET
     final avatar = CircleAvatar(
       radius: radius,
       backgroundColor: Colors.transparent,
@@ -28,6 +29,7 @@ class CircleItem extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(3),
       child: InkWell(
+        radius: radius,
         borderRadius: BorderRadius.circular(radius),
         onTap: () => onTap != null ? onTap(image) : {},
         child: avatar,

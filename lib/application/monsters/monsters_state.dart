@@ -13,5 +13,6 @@ abstract class MonstersState implements _$MonstersState {
     @required MonsterType tempType,
     @required SortDirectionType sortDirectionType,
     @required SortDirectionType tempSortDirectionType,
+    @Default(<String>[]) List<String> excludeKeys,
   }) = _LoadedState;
 }

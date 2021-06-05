@@ -1,3 +1,4 @@
+import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 
 abstract class TelemetryService {
@@ -52,4 +53,6 @@ abstract class TelemetryService {
   Future<void> trackItemUpdatedInInventory(String key, int quantity);
 
   Future<void> trackItemDeletedFromInventory(String key);
+
+  Future<void> trackNotificationCreated(AppNotificationType type);
 }

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'app_fab.dart';
 import 'extensions/focus_scope_node_extensions.dart';
-import 'extensions/scroll_controller_extensions.dart';
+import 'mixins/app_fab_mixin.dart';
 
 class SliverScaffoldWithFab extends StatefulWidget {
   final List<Widget> slivers;
@@ -18,23 +17,7 @@ class SliverScaffoldWithFab extends StatefulWidget {
   _SliverScaffoldWithFabState createState() => _SliverScaffoldWithFabState();
 }
 
-class _SliverScaffoldWithFabState extends State<SliverScaffoldWithFab> with SingleTickerProviderStateMixin {
-  ScrollController _scrollController;
-  AnimationController _hideFabAnimController;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _scrollController = ScrollController();
-    _hideFabAnimController = AnimationController(
-      vsync: this,
-      duration: kThemeAnimationDuration,
-      value: 0, // initially not visible
-    );
-    _scrollController.addListener(() => _scrollController.handleScrollForFab(_hideFabAnimController));
-  }
-
+class _SliverScaffoldWithFabState extends State<SliverScaffoldWithFab> with SingleTickerProviderStateMixin, AppFabMixin {
   @override
   Widget build(BuildContext context) {
     return Listener(
@@ -45,22 +28,12 @@ class _SliverScaffoldWithFabState extends State<SliverScaffoldWithFab> with Sing
         appBar: widget.appbar,
         body: SafeArea(
           child: CustomScrollView(
-            controller: _scrollController,
+            controller: scrollController,
             slivers: widget.slivers,
           ),
         ),
-        floatingActionButton: AppFab(
-          hideFabAnimController: _hideFabAnimController,
-          scrollController: _scrollController,
-        ),
+        floatingActionButton: getAppFab(),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    _hideFabAnimController.dispose();
-    super.dispose();
   }
 }

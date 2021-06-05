@@ -22,7 +22,7 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
   @override
   Stream<MonstersState> mapEventToState(MonstersEvent event) async* {
     final s = event.map(
-      init: (e) => _buildInitialState(),
+      init: (e) => _buildInitialState(excludeKeys: e.excludeKeys),
       sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
       typeChanged: (e) => currentState.copyWith.call(tempType: e.type),
       filterTypeChanged: (e) => currentState.copyWith.call(tempFilterType: e.type),
@@ -51,12 +51,16 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
 
   MonstersState _buildInitialState({
     String search,
+    List<String> excludeKeys = const [],
     MonsterType type = MonsterType.all,
     MonsterFilterType filterType = MonsterFilterType.name,
     SortDirectionType sortDirectionType = SortDirectionType.asc,
   }) {
     final isLoaded = state is _LoadedState;
     var data = _genshinService.getAllMonstersForCard();
+    if (excludeKeys.isNotEmpty) {
+      data = data.where((el) => !excludeKeys.contains(el.key)).toList();
+    }
 
     if (!isLoaded) {
       return MonstersState.loaded(
@@ -68,6 +72,7 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
         tempFilterType: filterType,
         sortDirectionType: sortDirectionType,
         tempSortDirectionType: sortDirectionType,
+        excludeKeys: excludeKeys,
       );
     }
 
@@ -88,6 +93,7 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
       tempFilterType: filterType,
       sortDirectionType: sortDirectionType,
       tempSortDirectionType: sortDirectionType,
+      excludeKeys: excludeKeys,
     );
     return s;
   }

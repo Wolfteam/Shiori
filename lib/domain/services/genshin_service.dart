@@ -8,8 +8,9 @@ abstract class GenshinService {
   Future<void> initArtifacts();
   Future<void> initMaterials();
   Future<void> initElements();
-  Future<void> initGameCodes();
   Future<void> initMonsters();
+  Future<void> initGadgets();
+  Future<void> initFurniture();
   Future<void> initTranslations(AppLanguageType languageType);
 
   List<CharacterCardModel> getCharactersForCard();
@@ -43,6 +44,8 @@ abstract class GenshinService {
   TranslationCharacterFile getCharacterTranslation(String key);
   TranslationWeaponFile getWeaponTranslation(String key);
   TranslationMaterialFile getMaterialTranslation(String key);
+  List<MaterialFileModel> getAllMaterialsThatCanBeObtainedFromAnExpedition();
+  List<MaterialFileModel> getAllMaterialsThatHaveAFarmingRespawnDuration();
 
   List<TodayCharAscensionMaterialsModel> getCharacterAscensionMaterials(int day);
   List<TodayWeaponAscensionMaterialModel> getWeaponAscensionMaterials(int day);
@@ -55,12 +58,11 @@ abstract class GenshinService {
   MaterialCardModel getMaterialForCard(String key);
   MaterialFileModel getMaterial(String key);
   MaterialFileModel getMaterialByImage(String image);
-  List<MaterialFileModel> getMaterials(MaterialType type);
+  List<MaterialFileModel> getMaterials(MaterialType type, {bool onlyReadyToBeUsed = true});
 
   int getServerDay(AppServerResetTimeType type);
   DateTime getServerDate(AppServerResetTimeType type);
-
-  List<GameCodeFileModel> getAllGameCodes();
+  Duration getDurationUntilServerResetDate(AppServerResetTimeType type);
 
   List<String> getUpcomingKeys();
 
@@ -68,4 +70,19 @@ abstract class GenshinService {
   MonsterFileModel getMonsterByImg(String image);
   List<MonsterCardModel> getAllMonstersForCard();
   MonsterCardModel getMonsterForCardByImg(String image);
+  List<MonsterFileModel> getMonsters(MonsterType type);
+
+  String getItemImageFromNotificationType(String itemKey, AppNotificationType notificationType, {AppNotificationItemType notificationItemType});
+  String getItemImageFromNotificationItemType(String itemKey, AppNotificationItemType notificationItemType);
+  String getItemKeyFromNotificationType(String itemImage, AppNotificationType notificationType, {AppNotificationItemType notificationItemType});
+
+  List<GadgetFileModel> getAllGadgetsForNotifications();
+  GadgetFileModel getGadget(String key);
+  GadgetFileModel getGadgetByImage(String image);
+
+  FurnitureFileModel getDefaultFurnitureForNotifications();
+  FurnitureFileModel getFurniture(String key);
+  FurnitureFileModel getFurnitureByImage(String image);
+
+  DateTime getNextDateForWeeklyBoss(AppServerResetTimeType type);
 }

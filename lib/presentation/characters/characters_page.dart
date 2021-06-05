@@ -16,6 +16,19 @@ import 'widgets/character_card.dart';
 class CharactersPage extends StatefulWidget {
   final bool isInSelectionMode;
 
+  static Future<String> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
+    final bloc = context.read<CharactersBloc>();
+    bloc.add(CharactersEvent.init(excludeKeys: excludeKeys));
+
+    final route = MaterialPageRoute<String>(builder: (ctx) => const CharactersPage(isInSelectionMode: true));
+    final keyName = await Navigator.of(context).push(route);
+    await route.completed;
+
+    bloc.add(const CharactersEvent.init());
+
+    return keyName;
+  }
+
   const CharactersPage({
     Key key,
     this.isInSelectionMode = false,

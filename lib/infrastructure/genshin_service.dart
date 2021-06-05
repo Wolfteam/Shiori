@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/assets.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/extensions/string_extensions.dart';
@@ -17,8 +18,9 @@ class GenshinServiceImpl implements GenshinService {
   ArtifactsFile _artifactsFile;
   MaterialsFile _materialsFile;
   ElementsFile _elementsFile;
-  GameCodesFile _gameCodesFile;
   MonstersFile _monstersFile;
+  GadgetsFile _gadgetsFile;
+  FurnitureFile _furnitureFile;
 
   GenshinServiceImpl(this._localeService);
 
@@ -30,8 +32,9 @@ class GenshinServiceImpl implements GenshinService {
       initArtifacts(),
       initMaterials(),
       initElements(),
-      initGameCodes(),
       initMonsters(),
+      initGadgets(),
+      initFurniture(),
       initTranslations(languageType),
     ]);
   }
@@ -72,17 +75,24 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  Future<void> initGameCodes() async {
-    final jsonStr = await rootBundle.loadString(Assets.gameCodesDbPath);
-    final json = jsonDecode(jsonStr) as Map<String, dynamic>;
-    _gameCodesFile = GameCodesFile.fromJson(json);
-  }
-
-  @override
   Future<void> initMonsters() async {
     final jsonStr = await rootBundle.loadString(Assets.monstersDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _monstersFile = MonstersFile.fromJson(json);
+  }
+
+  @override
+  Future<void> initGadgets() async {
+    final jsonStr = await rootBundle.loadString(Assets.gadgetsDbPath);
+    final json = jsonDecode(jsonStr) as Map<String, dynamic>;
+    _gadgetsFile = GadgetsFile.fromJson(json);
+  }
+
+  @override
+  Future<void> initFurniture() async {
+    final jsonStr = await rootBundle.loadString(Assets.furnitureDbPath);
+    final json = jsonDecode(jsonStr) as Map<String, dynamic>;
+    _furnitureFile = FurnitureFile.fromJson(json);
   }
 
   @override
@@ -178,7 +188,7 @@ class GenshinServiceImpl implements GenshinService {
   List<String> getCharacterImgsUsingWeapon(String key) {
     final weapon = getWeapon(key);
     final imgs = <String>[];
-    for (final char in _charactersFile.characters) {
+    for (final char in _charactersFile.characters.where((el) => !el.isComingSoon)) {
       for (final build in char.builds) {
         final isBeingUsed = build.weaponImages.contains(weapon.image);
         final img = Assets.getCharacterPath(char.image);
@@ -197,8 +207,10 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  ArtifactCardModel getArtifactForCardByImg(String image) {
-    final artifact = _artifactsFile.artifacts.firstWhere((a) => a.image == image);
+  ArtifactCardModel getArtifactForCardByImg(String image, {bool searchByFullPath = false}) {
+    final artifact = searchByFullPath
+        ? _artifactsFile.artifacts.firstWhere((a) => a.fullImagePath == image)
+        : _artifactsFile.artifacts.firstWhere((a) => a.image == image);
     return _toArtifactForCard(artifact);
   }
 
@@ -211,7 +223,7 @@ class GenshinServiceImpl implements GenshinService {
   List<String> getCharacterImgsUsingArtifact(String key) {
     final artifact = getArtifact(key);
     final imgs = <String>[];
-    for (final char in _charactersFile.characters) {
+    for (final char in _charactersFile.characters.where((el) => !el.isComingSoon)) {
       for (final build in char.builds) {
         final isBeingUsed = build.artifacts.any((a) => a.one == artifact.image || a.multiples.any((m) => m.image == artifact.image));
 
@@ -374,7 +386,7 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   List<MaterialCardModel> getAllMaterialsForCard() {
-    return _materialsFile.materials.map((e) => _toMaterialForCard(e)).toList();
+    return _materialsFile.materials.where((el) => el.isReadyToBeUsed).map((e) => _toMaterialForCard(e)).toList();
   }
 
   @override
@@ -388,7 +400,10 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<MaterialFileModel> getMaterials(MaterialType type) {
+  List<MaterialFileModel> getMaterials(MaterialType type, {bool onlyReadyToBeUsed = true}) {
+    if (onlyReadyToBeUsed) {
+      return _materialsFile.materials.where((m) => m.type == type && m.isReadyToBeUsed).toList();
+    }
     return _materialsFile.materials.where((m) => m.type == type).toList();
   }
 
@@ -404,7 +419,6 @@ class GenshinServiceImpl implements GenshinService {
     DateTime server;
     // According to this page, the server reset happens at 4 am
     // https://game8.co/games/Genshin-Impact/archives/301599
-    const resetHour = 4;
     switch (type) {
       case AppServerResetTimeType.northAmerica:
         server = nowUtc.subtract(const Duration(hours: 5));
@@ -419,7 +433,7 @@ class GenshinServiceImpl implements GenshinService {
         throw Exception('Invalid server reset type');
     }
 
-    if (server.hour >= resetHour) {
+    if (server.hour >= serverResetHour) {
       return server;
     }
 
@@ -427,7 +441,13 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<GameCodeFileModel> getAllGameCodes() => _gameCodesFile.gameCodes;
+  Duration getDurationUntilServerResetDate(AppServerResetTimeType type) {
+    final serverDate = getServerDate(type);
+    //Here the utc part is important, otherwise the difference will be calculated using the local time
+    final serverResetDate = DateTime.utc(serverDate.year, serverDate.month, serverDate.day, serverResetHour);
+    final dateToUse = serverDate.isBefore(serverResetDate) ? serverDate : serverDate.subtract(const Duration(days: 1));
+    return serverResetDate.difference(dateToUse);
+  }
 
   @override
   List<String> getCharacterImgsUsingMaterial(String key) {
@@ -529,6 +549,11 @@ class GenshinServiceImpl implements GenshinService {
     return _toMonsterForCard(monster);
   }
 
+  @override
+  List<MonsterFileModel> getMonsters(MonsterType type) {
+    return _monstersFile.monsters.where((el) => el.type == type).toList();
+  }
+
   List<ItemAscensionMaterialModel> _getMaterialsToUse(
     List<ItemAscensionMaterialModel> materials, {
     List<MaterialType> ignore = const [MaterialType.currency],
@@ -567,6 +592,168 @@ class GenshinServiceImpl implements GenshinService {
       images.add(monster.fullImagePath);
     }
     return images;
+  }
+
+  @override
+  List<MaterialFileModel> getAllMaterialsThatCanBeObtainedFromAnExpedition() {
+    return _materialsFile.materials.where((el) => el.canBeObtainedFromAnExpedition).toList();
+  }
+
+  @override
+  List<MaterialFileModel> getAllMaterialsThatHaveAFarmingRespawnDuration() {
+    return _materialsFile.materials.where((el) => el.farmingRespawnDuration != null).toList();
+  }
+
+  @override
+  String getItemImageFromNotificationType(
+    String itemKey,
+    AppNotificationType notificationType, {
+    AppNotificationItemType notificationItemType,
+  }) {
+    switch (notificationType) {
+      case AppNotificationType.resin:
+      case AppNotificationType.expedition:
+      case AppNotificationType.realmCurrency:
+        final material = getMaterial(itemKey);
+        return material.fullImagePath;
+      case AppNotificationType.furniture:
+        final furniture = getFurniture(itemKey);
+        return furniture.fullImagePath;
+      case AppNotificationType.gadget:
+        final gadget = getGadget(itemKey);
+        return gadget.fullImagePath;
+      case AppNotificationType.farmingArtifacts:
+        final artifact = getArtifact(itemKey);
+        return artifact.fullImagePath;
+      case AppNotificationType.farmingMaterials:
+        final material = getMaterial(itemKey);
+        return material.fullImagePath;
+      case AppNotificationType.weeklyBoss:
+        final monsters = getMonster(itemKey);
+        return monsters.fullImagePath;
+      case AppNotificationType.custom:
+      case AppNotificationType.dailyCheckIn:
+        return getItemImageFromNotificationItemType(itemKey, notificationItemType);
+    }
+    throw Exception('The provided notification type = $notificationType is not valid');
+  }
+
+  @override
+  String getItemImageFromNotificationItemType(String itemKey, AppNotificationItemType notificationItemType) {
+    switch (notificationItemType) {
+      case AppNotificationItemType.character:
+        final character = getCharacter(itemKey);
+        return character.fullImagePath;
+      case AppNotificationItemType.weapon:
+        final weapon = getWeapon(itemKey);
+        return weapon.fullImagePath;
+      case AppNotificationItemType.artifact:
+        final artifact = getArtifact(itemKey);
+        return artifact.fullImagePath;
+      case AppNotificationItemType.monster:
+        final monster = getMonster(itemKey);
+        return monster.fullImagePath;
+      case AppNotificationItemType.material:
+        final material = getMaterial(itemKey);
+        return material.fullImagePath;
+    }
+    throw Exception('The provided notification item type = $notificationItemType');
+  }
+
+  @override
+  String getItemKeyFromNotificationType(
+    String itemImage,
+    AppNotificationType notificationType, {
+    AppNotificationItemType notificationItemType,
+  }) {
+    switch (notificationType) {
+      case AppNotificationType.resin:
+      case AppNotificationType.expedition:
+      case AppNotificationType.realmCurrency:
+        final material = getMaterialByImage(itemImage);
+        return material.key;
+      case AppNotificationType.farmingArtifacts:
+        final artifact = getArtifactForCardByImg(itemImage, searchByFullPath: true);
+        return artifact.key;
+      case AppNotificationType.farmingMaterials:
+        final material = getMaterialByImage(itemImage);
+        return material.key;
+      case AppNotificationType.gadget:
+        final gadget = getGadgetByImage(itemImage);
+        return gadget.key;
+      case AppNotificationType.furniture:
+        final furniture = getFurnitureByImage(itemImage);
+        return furniture.key;
+      case AppNotificationType.weeklyBoss:
+        final monster = getMonsterByImg(itemImage);
+        return monster.key;
+      case AppNotificationType.dailyCheckIn:
+        final material = getMaterialByImage(itemImage);
+        return material.key;
+      case AppNotificationType.custom:
+        switch (notificationItemType) {
+          case AppNotificationItemType.character:
+            final character = getCharacterByImg(itemImage);
+            return character.key;
+          case AppNotificationItemType.weapon:
+            final weapon = getWeaponByImg(itemImage);
+            return weapon.key;
+          case AppNotificationItemType.artifact:
+            final artifact = getArtifactForCardByImg(itemImage, searchByFullPath: true);
+            return artifact.key;
+          case AppNotificationItemType.monster:
+            final monster = getMonsterByImg(itemImage);
+            return monster.key;
+          case AppNotificationItemType.material:
+            final material = getMaterialByImage(itemImage);
+            return material.key;
+          default:
+            throw Exception('The provided notification item type = $notificationItemType');
+        }
+    }
+    throw Exception('The provided notification type = $notificationType');
+  }
+
+  @override
+  List<GadgetFileModel> getAllGadgetsForNotifications() {
+    return _gadgetsFile.gadgets.where((el) => el.cooldownDuration != null).toList();
+  }
+
+  @override
+  GadgetFileModel getGadget(String key) {
+    return _gadgetsFile.gadgets.firstWhere((m) => m.key == key);
+  }
+
+  @override
+  GadgetFileModel getGadgetByImage(String image) {
+    return _gadgetsFile.gadgets.firstWhere((m) => m.fullImagePath == image);
+  }
+
+  @override
+  FurnitureFileModel getDefaultFurnitureForNotifications() {
+    return _furnitureFile.furniture.first;
+  }
+
+  @override
+  FurnitureFileModel getFurniture(String key) {
+    return _furnitureFile.furniture.firstWhere((m) => m.key == key);
+  }
+
+  @override
+  FurnitureFileModel getFurnitureByImage(String image) {
+    return _furnitureFile.furniture.firstWhere((m) => m.fullImagePath == image);
+  }
+
+  @override
+  DateTime getNextDateForWeeklyBoss(AppServerResetTimeType type) {
+    final durationUntilServerReset = getDurationUntilServerResetDate(type);
+    var finalDate = DateTime.now().add(durationUntilServerReset);
+
+    while (finalDate.weekday != DateTime.monday) {
+      finalDate = finalDate.add(const Duration(days: 1));
+    }
+
+    return finalDate;
   }
 
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {
