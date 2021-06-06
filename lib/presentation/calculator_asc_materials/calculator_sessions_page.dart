@@ -5,7 +5,7 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/app_fab.dart';
-import 'package:genshindb/presentation/shared/bullet_list.dart';
+import 'package:genshindb/presentation/shared/info_dialog.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:genshindb/presentation/shared/nothing_found_column.dart';
@@ -39,10 +39,12 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
             actions: [
               if (state.sessions.length > 1)
                 IconButton(
+                  tooltip: s.priority,
                   icon: const Icon(Icons.unfold_more),
                   onPressed: () => _showReorderDialog(state.sessions, context),
                 ),
               IconButton(
+                tooltip: s.information,
                 icon: const Icon(Icons.info),
                 onPressed: () => _showInfoDialog(context),
               ),
@@ -68,7 +70,7 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
                 return ListView.separated(
                   controller: scrollController,
                   itemCount: state.sessions.length,
-                  separatorBuilder: (ctx, index) => const Divider(),
+                  separatorBuilder: (ctx, index) => const Divider(height: 1),
                   itemBuilder: (ctx, index) => SessionListItem(session: state.sessions[index]),
                 );
               },
@@ -100,18 +102,7 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
     ];
     await showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        title: Text(s.information),
-        content: SingleChildScrollView(
-          child: BulletList(items: explanations, fontSize: 14),
-        ),
-        actions: [
-          ElevatedButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: Text(s.ok),
-          )
-        ],
-      ),
+      builder: (context) => InfoDialog(explanations: explanations),
     );
   }
 }

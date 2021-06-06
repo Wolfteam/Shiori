@@ -5,7 +5,6 @@ import 'package:genshindb/presentation/inventory/widgets/materials_inventory_tab
 import 'package:genshindb/presentation/inventory/widgets/weapons_inventory_tab_page.dart';
 import 'package:genshindb/presentation/shared/genshin_db_icons.dart';
 
-//TODO: CHANGE THE ITEM ICONS
 class InventoryPage extends StatelessWidget {
   final tabs = const [
     Tab(icon: Icon(Icons.people)),

@@ -10,6 +10,7 @@ import 'domain/services/genshin_service.dart';
 import 'domain/services/locale_service.dart';
 import 'domain/services/logging_service.dart';
 import 'domain/services/network_service.dart';
+import 'domain/services/notification_service.dart';
 import 'domain/services/settings_service.dart';
 import 'domain/services/telemetry_service.dart';
 import 'injection.dart';
@@ -19,8 +20,17 @@ Future<void> main() async {
   //This is required by app center
   WidgetsFlutterBinding.ensureInitialized();
   await initInjection();
+  final notificationService = getIt<NotificationService>();
+  await notificationService.registerCallBacks(
+    onSelectNotification: _onSelectNotification,
+    onIosReceiveLocalNotification: _onDidReceiveLocalNotification,
+  );
   runApp(MyApp());
 }
+
+Future<dynamic> _onDidReceiveLocalNotification(int id, String title, String body, String payload) async {}
+
+Future<void> _onSelectNotification(String json) async {}
 
 class MyApp extends StatelessWidget {
   @override
@@ -214,6 +224,34 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             return MonstersBloc(genshinService);
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final dataService = getIt<DataService>();
+            final notificationService = getIt<NotificationService>();
+            final settingsService = getIt<SettingsService>();
+            return NotificationsBloc(dataService, notificationService, settingsService);
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final dataService = getIt<DataService>();
+            final notificationService = getIt<NotificationService>();
+            final genshinService = getIt<GenshinService>();
+            final localeService = getIt<LocaleService>();
+            final loggingService = getIt<LoggingService>();
+            final telemetryService = getIt<TelemetryService>();
+            final settingsService = getIt<SettingsService>();
+            return NotificationBloc(
+              dataService,
+              notificationService,
+              genshinService,
+              localeService,
+              loggingService,
+              telemetryService,
+              settingsService,
+            );
           },
         ),
       ],

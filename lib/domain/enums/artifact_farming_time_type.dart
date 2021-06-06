@@ -1,0 +1,4 @@
+enum ArtifactFarmingTimeType {
+  twelveHours,
+  twentyFourHours,
+}

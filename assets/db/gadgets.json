@@ -1,0 +1,18 @@
+{
+  "gadgets": [
+    {
+      "key": "Parametric Transformer",
+      "rarity": 4,
+      "image": "parametric_transformer.png",
+      "cooldown": 166,
+      "obtainedFrom": []
+    },
+    {
+      "key": "Portable Waypoint",
+      "rarity": 4,
+      "image": "portable_waypoint.png",
+      "cooldown": 168,
+      "obtainedFrom": []
+    }
+  ]
+}

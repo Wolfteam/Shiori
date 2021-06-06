@@ -13,8 +13,24 @@ import 'widgets/material_bottom_sheet.dart';
 import 'widgets/material_card.dart';
 
 class MaterialsPage extends StatelessWidget {
+  final bool isInSelectionMode;
+
+  static Future<String> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
+    final bloc = context.read<MaterialsBloc>();
+    bloc.add(MaterialsEvent.init(excludeKeys: excludeKeys));
+
+    final route = MaterialPageRoute<String>(builder: (ctx) => const MaterialsPage(isInSelectionMode: true));
+    final keyName = await Navigator.of(context).push(route);
+    await route.completed;
+
+    bloc.add(const MaterialsEvent.init());
+
+    return keyName;
+  }
+
   const MaterialsPage({
     Key key,
+    this.isInSelectionMode = false,
   }) : super(key: key);
 
   @override
@@ -26,7 +42,7 @@ class MaterialsPage extends StatelessWidget {
         return state.map(
           loading: (_) => const Loading(),
           loaded: (state) => SliverScaffoldWithFab(
-            appbar: AppBar(title: Text(s.materials)),
+            appbar: AppBar(title: Text(isInSelectionMode ? s.selectAMaterial : s.materials)),
             slivers: [
               SliverPageFilter(
                 search: state.search,
@@ -39,7 +55,7 @@ class MaterialsPage extends StatelessWidget {
                   padding: Styles.edgeInsetHorizontal5,
                   sliver: SliverStaggeredGrid.countBuilder(
                     crossAxisCount: isPortrait ? 3 : 5,
-                    itemBuilder: (ctx, index) => MaterialCard.item(item: state.materials[index]),
+                    itemBuilder: (ctx, index) => MaterialCard.item(item: state.materials[index], isInSelectionMode: isInSelectionMode),
                     itemCount: state.materials.length,
                     crossAxisSpacing: isPortrait ? 10 : 5,
                     mainAxisSpacing: 5,

@@ -6,6 +6,7 @@ import 'package:genshindb/domain/services/genshin_service.dart';
 import 'package:genshindb/domain/services/locale_service.dart';
 import 'package:genshindb/domain/services/logging_service.dart';
 import 'package:genshindb/domain/services/network_service.dart';
+import 'package:genshindb/domain/services/notification_service.dart';
 import 'package:genshindb/domain/services/settings_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
 import 'package:genshindb/infrastructure/infrastructure.dart';
@@ -39,4 +40,8 @@ Future<void> initInjection() async {
   getIt.registerSingleton<DataService>(dataService);
 
   getIt.registerSingleton<GameCodeService>(GameCodeServiceImpl(getIt<LoggingService>(), getIt<GenshinService>()));
+
+  final notificationService = NotificationServiceImpl(loggingService);
+  await notificationService.init();
+  getIt.registerSingleton<NotificationService>(notificationService);
 }
