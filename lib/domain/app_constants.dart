@@ -1,9 +1,9 @@
-//This order matches the one in the game, and the numbers represent each image
 import 'package:darq/darq.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 
 import 'models/models.dart';
 
+//This order matches the one in the game, and the numbers represent each image
 const artifactOrder = [4, 2, 5, 1, 3];
 
 const languagesMap = {
@@ -22,6 +22,16 @@ const int minAscensionLevel = 1;
 const int maxAscensionLevel = 6;
 const int minItemLevel = 1;
 const int maxItemLevel = 90;
+
+const minResinValue = 0;
+const maxResinValue = 160;
+const resinRefillsEach = 8;
+
+// According to this page, the server reset happens at 4 am
+// https://game8.co/games/Genshin-Impact/archives/301599
+const serverResetHour = 4;
+
+const dailyCheckInResetDuration = Duration(hours: 24);
 
 //key = ascension level
 //value = item level
@@ -564,6 +574,36 @@ const weaponExp1Star = [
   ItemExperienceModel.forWeapons(70, -1, 719875)
 ];
 
+//Furnishing related
+//This one represents the amount of realm currency you can gather per rank level
+const realmTrustRank = {
+  1: 300,
+  2: 600,
+  3: 900,
+  4: 1200,
+  5: 1400,
+  6: 1600,
+  7: 1800,
+  8: 2000,
+  9: 2200,
+  10: 2400,
+};
+
+//This one represents the ratio at which you gain realm currency
+//E.g: At level 1 you gain 4 realm currency per hour
+const realmIncreasingRatio = {
+  RealmRankType.bareBones: 4,
+  RealmRankType.humbleAbode: 8,
+  RealmRankType.cozy: 12,
+  RealmRankType.queenSize: 16,
+  RealmRankType.elegant: 20,
+  RealmRankType.exquisite: 22,
+  RealmRankType.extraordinary: 24,
+  RealmRankType.stately: 26,
+  RealmRankType.luxury: 28,
+  RealmRankType.fitForAKing: 30,
+};
+
 double getItemTotalExp(int currentLevel, int desiredLevel, int rarity, bool forCharacters) {
   if (currentLevel > desiredLevel) {
     throw Exception('CurrentLevel = $currentLevel cannot be greater than DesiredLevel = $desiredLevel');
@@ -644,3 +684,91 @@ List<MaterialCardModel> sortMaterialsByGrouping(List<MaterialCardModel> data, So
       currency.orderByDescending((el) => el.rarity).toList() +
       ingredients.orderByDescending((el) => el.rarity).toList();
 }
+
+DateTime getNotificationDateForResin(int currentResinValue) {
+  final now = DateTime.now();
+  return now.add(getResinDuration(currentResinValue));
+}
+
+Duration getResinDuration(int currentResinValue) {
+  final diff = maxResinValue - currentResinValue;
+  return Duration(minutes: diff * resinRefillsEach);
+}
+
+int getCurrentResin(int initialResinValue, DateTime completesAt) {
+  final now = DateTime.now();
+  final createdAt = completesAt.subtract(getResinDuration(initialResinValue));
+  final elapsedMinutes = (now.difference(createdAt).inMinutes).abs();
+  final currentResinValue = (elapsedMinutes / resinRefillsEach).floor() + initialResinValue;
+  return currentResinValue > maxResinValue ? maxResinValue : currentResinValue;
+}
+
+Duration getExpeditionDuration(ExpeditionTimeType type, bool withTimeReduction) {
+  switch (type) {
+    case ExpeditionTimeType.fourHours:
+      return _getExpeditionDuration(4, withTimeReduction);
+    case ExpeditionTimeType.eightHours:
+      return _getExpeditionDuration(8, withTimeReduction);
+    case ExpeditionTimeType.twelveHours:
+      return _getExpeditionDuration(12, withTimeReduction);
+    case ExpeditionTimeType.twentyHours:
+      return _getExpeditionDuration(20, withTimeReduction);
+    default:
+      throw Exception('The provided expedition time type = $type is not valid');
+  }
+}
+
+Duration getFurnitureDuration(FurnitureCraftingTimeType type) {
+  switch (type) {
+    case FurnitureCraftingTimeType.twelveHours:
+      return const Duration(hours: 12);
+    case FurnitureCraftingTimeType.fourteenHours:
+      return const Duration(hours: 14);
+    case FurnitureCraftingTimeType.sixteenHours:
+      return const Duration(hours: 16);
+    default:
+      throw Exception('The provided furniture creation type = $type is not valid');
+  }
+}
+
+Duration getArtifactFarmingCooldownDuration(ArtifactFarmingTimeType type) {
+  switch (type) {
+    case ArtifactFarmingTimeType.twelveHours:
+      return const Duration(hours: 12);
+    case ArtifactFarmingTimeType.twentyFourHours:
+      return const Duration(hours: 24);
+    default:
+      throw Exception('The provided artifact farming time type = $type is not valid');
+  }
+}
+
+Duration _getExpeditionDuration(int hours, bool withTimeReduction) {
+  const reductionPercentage = 0.25;
+  final totalMinutes = hours * 60;
+  final int reducedMinutes = (withTimeReduction ? totalMinutes * reductionPercentage : 0).toInt();
+  return Duration(minutes: totalMinutes - reducedMinutes);
+}
+
+Duration getRealmCurrencyDuration(int currentRealmCurrency, int currentTrustRank, RealmRankType currentRealmRank) {
+  final maxRealmCurrency = getRealmMaxCurrency(currentTrustRank);
+  final ratioPerHour = getRealmIncreaseRatio(currentRealmRank);
+  final remaining = maxRealmCurrency - currentRealmCurrency;
+  //each 60 minutes you produce an x ratio per hour
+  final minutesLeft = remaining * 60 ~/ ratioPerHour;
+
+  return Duration(minutes: minutesLeft);
+}
+
+int getCurrentRealmCurrency(int initialRealmCurrency, int currentTrustRank, RealmRankType currentRealmRank, DateTime completesAt) {
+  final now = DateTime.now();
+  final maxRealmCurrency = getRealmMaxCurrency(currentTrustRank);
+  final ratioPerHour = getRealmIncreaseRatio(currentRealmRank);
+  final createdAt = completesAt.subtract(getRealmCurrencyDuration(initialRealmCurrency, currentTrustRank, currentRealmRank));
+  final elapsedMinutes = (now.difference(createdAt).inMinutes).abs();
+  final currentRealmCurrency = (elapsedMinutes * ratioPerHour / 60).floor() + initialRealmCurrency;
+  return currentRealmCurrency > maxRealmCurrency ? maxRealmCurrency : currentRealmCurrency;
+}
+
+int getRealmMaxCurrency(int currentTrustRank) => realmTrustRank.entries.firstWhere((kvp) => kvp.key == currentTrustRank).value;
+
+int getRealmIncreaseRatio(RealmRankType type) => realmIncreasingRatio.entries.firstWhere((kvp) => kvp.key == type).value;

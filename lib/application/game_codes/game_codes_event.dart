@@ -9,5 +9,7 @@ abstract class GameCodesEvent with _$GameCodesEvent {
     @required bool wasUsed,
   }) = _MarkAsUsed;
 
+  const factory GameCodesEvent.refresh() = _Refresh;
+
   const factory GameCodesEvent.close() = _Close;
 }

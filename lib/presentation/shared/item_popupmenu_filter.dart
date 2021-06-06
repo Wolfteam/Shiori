@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'utils/enum_utils.dart';
+
 typedef PopupMenuItemText<T> = String Function(T value);
 
 class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
@@ -24,9 +26,7 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final filterValues = exclude.isNotEmpty ? values.where((el) => !exclude.contains(el)) : values;
-    final translatedValues = filterValues.map((filter) => _Item<TEnum>(filter, itemText(filter))).toList()
-      ..sort((x, y) => x.translation.compareTo(y.translation));
+    final translatedValues = EnumUtils.getTranslatedAndSortedEnum<TEnum>(values, itemText, exclude: exclude);
 
     final valuesToUse = translatedValues
         .map((e) => CheckedPopupMenuItem<TEnum>(
@@ -45,11 +45,4 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
       tooltip: tooltipText,
     );
   }
-}
-
-class _Item<TEnum> {
-  final TEnum enumValue;
-  final String translation;
-
-  _Item(this.enumValue, this.translation);
 }

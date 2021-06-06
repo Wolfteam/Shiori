@@ -13,5 +13,6 @@ abstract class SettingsState with _$SettingsState {
     @required AppServerResetTimeType serverResetTime,
     @required bool doubleBackToClose,
     @required bool useOfficialMap,
+    @required bool useTwentyFourHoursFormat,
   }) = _LoadedState;
 }
