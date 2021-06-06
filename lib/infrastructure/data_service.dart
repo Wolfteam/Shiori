@@ -687,7 +687,7 @@ class DataServiceImpl implements DataService {
     bool showNotification = true,
   }) async {
     final now = DateTime.now();
-    final notification = NotificationCustom(
+    final notification = NotificationCustom.custom(
       itemKey: itemKey,
       createdAt: now,
       completesAt: completesAt,

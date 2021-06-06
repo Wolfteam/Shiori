@@ -46,7 +46,22 @@ class NotificationCustom extends HiveObject implements NotificationBase {
   @HiveField(9)
   int notificationItemType;
 
+  //Since I'm using 2 diff constructors, I need to keep this one in order
+  //for the adapter to work properly(the adapter uses this one)
   NotificationCustom({
+    @required this.itemKey,
+    @required this.createdAt,
+    @required this.completesAt,
+    this.note,
+    @required this.showNotification,
+    @required this.title,
+    @required this.body,
+    @required this.notificationItemType,
+    @required this.type,
+    @required this.originalScheduledDate,
+  });
+
+  NotificationCustom.custom({
     @required this.itemKey,
     @required this.createdAt,
     @required this.completesAt,
