@@ -126,9 +126,9 @@ class _GameCodesPageState extends State<GameCodesPage> with SingleTickerProvider
 
   Future<void> _showInfoDialog(BuildContext context) async {
     final s = S.of(context);
-    //TODO: SWIPE TO SEE MORE
     final explanations = [
       s.internetIsRequiredToRefreshItems,
+      s.swipeToSeeMoreOptions,
     ];
     await showDialog(
       context: context,

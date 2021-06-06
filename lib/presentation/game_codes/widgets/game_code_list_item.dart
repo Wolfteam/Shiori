@@ -56,78 +56,79 @@ class GameCodeListItem extends StatelessWidget {
           caption: s.copy,
           icon: Icons.copy,
           color: Colors.blueAccent,
-          onTap: () => Clipboard.setData(ClipboardData(text: code)).then(
-            (value) => ToastUtils.showInfoToast(ToastUtils.of(context), s.codeXWasCopied(code)),
-          ),
+          onTap: () => _copyToClipboard(context),
         ),
       ],
-      child: Container(
-        margin: Styles.edgeInsetVertical16,
-        padding: Styles.edgeInsetHorizontal16,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Center(
-                    child: Text(
-                      code,
-                      style: textCodeStyle,
-                      overflow: TextOverflow.ellipsis,
+      child: InkWell(
+        onTap: () => _copyToClipboard(context),
+        child: Container(
+          margin: Styles.edgeInsetVertical16,
+          padding: Styles.edgeInsetHorizontal16,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Center(
+                      child: Text(
+                        code,
+                        style: textCodeStyle,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
-                  ),
-                  Wrap(
-                    alignment: WrapAlignment.center,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: rewards.map((m) => WrappedAscensionMaterial(image: m.fullImagePath, quantity: m.quantity, size: 25)).toList(),
-                  ),
-                  if (region != null)
                     Wrap(
                       alignment: WrapAlignment.center,
                       crossAxisAlignment: WrapCrossAlignment.center,
-                      children: [
-                        Icon(
-                          region != null ? Icons.lock_outlined : Icons.lock_open_outlined,
-                          color: theme.accentColor,
-                          size: 15,
-                        ),
-                        Text(
-                          s.onlyX(s.translateServerResetTimeType(region)),
-                          style: theme.textTheme.caption,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ],
-                    )
-                ],
+                      children: rewards.map((m) => WrappedAscensionMaterial(image: m.fullImagePath, quantity: m.quantity, size: 25)).toList(),
+                    ),
+                    if (region != null)
+                      Wrap(
+                        alignment: WrapAlignment.center,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          Icon(
+                            region != null ? Icons.lock_outlined : Icons.lock_open_outlined,
+                            color: theme.accentColor,
+                            size: 15,
+                          ),
+                          Text(
+                            s.onlyX(s.translateServerResetTimeType(region)),
+                            style: theme.textTheme.caption,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
+                      )
+                  ],
+                ),
               ),
-            ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _buildDateInfoRow(
-                    s.addedOn(utils.DateUtils.formatDate(discoveredOn, format: utils.DateUtils.dayMonthYearFormat)),
-                    context,
-                  ),
-                  if (isExpired)
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
                     _buildDateInfoRow(
-                      s.expiredOn(utils.DateUtils.formatDate(expiredOn, format: utils.DateUtils.dayMonthYearFormat)),
+                      s.addedOn(utils.DateUtils.formatDate(discoveredOn, format: utils.DateUtils.dayMonthYearFormat)),
                       context,
                     ),
-                  if (!isExpired && expiredOn != null)
-                    _buildDateInfoRow(
-                      s.validUntil(utils.DateUtils.formatDate(expiredOn, format: utils.DateUtils.dayMonthYearFormat)),
-                      context,
-                    ),
-                  if (!isExpired && expiredOn == null) _buildDateInfoRow(s.validUntil(s.na), context),
-                ],
+                    if (isExpired)
+                      _buildDateInfoRow(
+                        s.expiredOn(utils.DateUtils.formatDate(expiredOn, format: utils.DateUtils.dayMonthYearFormat)),
+                        context,
+                      ),
+                    if (!isExpired && expiredOn != null)
+                      _buildDateInfoRow(
+                        s.validUntil(utils.DateUtils.formatDate(expiredOn, format: utils.DateUtils.dayMonthYearFormat)),
+                        context,
+                      ),
+                    if (!isExpired && expiredOn == null) _buildDateInfoRow(s.validUntil(s.na), context),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -152,5 +153,10 @@ class GameCodeListItem extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void _copyToClipboard(BuildContext context) {
+    final s = S.of(context);
+    Clipboard.setData(ClipboardData(text: code)).then((value) => ToastUtils.showInfoToast(ToastUtils.of(context), s.codeXWasCopied(code)));
   }
 }
