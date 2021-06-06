@@ -4232,9 +4232,9 @@
     },
     {
       "key": "Dreams of Dragonfell",
-      "name": "Dreams of Dragonfell",
-      "description": "[TRADUCTION À VENIR]\nA great bow that once shot clean through a giant dragon. Once released, the impetus of its bowstring resembles a peal of thunder.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "name": "Majesté dorée (?)",
+      "description": "Un grand arc en veine de dragon fait par le maître forgeron Kunwu. Il est si puissant qu'il peut même tuer un dragon. Lorsque une flèche est tirée de l'arc, elle sort avec la force du tonnerre.",
+      "refinement": "Augmente la force du bouclier de {{0}}%. Toucher un ennemi augmente l'ATQ de {{1}}% pendant 8s. Cet effet peut être cumulé 5 fois au maximum et peut être déclenché une fois toutes les 0,3s. Lorsque vous êtes protégé par un bouclier, l'augmentation d'ATQ de cet effet est de 100%."
     },
     {
       "key": "Dull Blade",
@@ -4750,7 +4750,7 @@
       "key": "Staff of Homa",
       "name": "Bâton de Homa",
       "description": "Un «bâton de feu» utilisé il y a bien longtemps dans quelque rituel ancien aujourd'hui disparu.",
-      "refinement": "Les PV sont augmentés de {{0}}%. Le personnage équipé de l'arme obtient également un bonus d'ATQ équivalant à {{1}}% de ses PV max, et lorsque ses PV sont inférieurs à 50 %, il obtient un bonus d'ATQ supplémentaire équivalant à {{2}}% de ses PV max."
+      "refinement": "Les PV sont augmentés de {{0}}%. Le personnage équipé de l'arme obtient également un bonus d'ATQ équivalant à {{1}}% de ses PV max, et lorsque ses PV sont inférieurs à 50%, il obtient un bonus d'ATQ supplémentaire équivalant à {{2}}% de ses PV max."
     },
     {
       "key": "Windblume Ode",
@@ -4766,21 +4766,21 @@
     },
     {
       "key": "Song of Broken Pines",
-      "name": "Song of Broken Pines",
-      "description": "A greatsword as light as the sigh of grass in the breeze, yet as merciless to the corrupt as a typhoon.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {{0}}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "name": "Ode au chant du vent (?)",
+      "description": "Un espadon aussi léger que la brise soufflant sur l'herbe, mais aussi puissant qu'un ouragan.",
+      "refinement": "Partie du «Concert du millénaire». Augmente l'ATQ de {{0}}%, et lorsque les attaques normales ou chargées touchent un ennemi, le personnage obtient un charme des murmures, à raison d'un charme toutes les 0,3s max. Une fois 4 charmes obtenus, ils sont consommés et tous les personnages de l'équipe à proximité bénéficient de l'effet «Concert du millénaire - Hymne du drapeau» pendant 12s, ce qui augmente la VIT des attaques normales de {{1}}%, et l'ATQ de {{2}}%. Il n'est plus possible d'obtenir de charmes des murmures pendant 20s après avoir déclenché cet effet. Parmi les nombreux effets du «Concert du millénaire», les améliorations du même type ne se cumulent pas."
     },
     {
       "key": "Freedom-Sworn",
-      "name": "Freedom-Sworn",
-      "description": "A straight sword, azure as antediluvian song, and as keen as the oaths of freedom taken in the Land of Wind.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {{0}}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "name": "Serment de la liberté",
+      "description": "Une épée droite à lame bleue, aussi inébranlable que le serment de la liberté du Royaume du Vent.",
+      "refinement": "Partie du «Concert du millénaire». Augmente les dégâts infligés de {{0}}%. Si le personnage déclenche une réaction élémentaire, il obtient un talisman de résistance, à raison d'un talisman toutes les 0,5s max, même s'il n'est plus déployé. Une fois 2 talismans cumulés, ils sont consommés et font bénéficier pendant 12s tous les membres de l'équipe à proximité de l'effet «Concert du millénaire - Ode à la révolte», ce qui augmente les dégâts infligés par les attaques normales, les attaques chargées et les attaques plongeantes de {{1}}% et l'ATQ de {{2}}%. Il n'est plus possible de gagner de talismans de résistance pendant 20s après l'activation de cet effet. Les différents effets du «Concert du millénaire» ne peuvent pas être cumulés."
     },
     {
       "key": "Mitternachts Waltz",
-      "name": "Mitternachts Waltz",
-      "description": "A bow painted the color of sin and nights of wild fantasy.",
-      "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {{0}}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {{1}}% for 5s."
+      "name": "Valse nocturne",
+      "description": "Un arc peint de la couleur des nuits de péché et de fantaisie.",
+      "refinement": "Lorsque vous touchez des ennemis avec des attaques normales, les DGT infligés par les compétences élémentaires sont augmentés de {{0}}% pendant 5s. Lorsque vous touchez des ennemis avec des compétences élémentaires, les DGT infligés par les attaques normales sont augmentés de {{1}}% pendant 5s."
     }
   ],
   "artifacts": [
@@ -5032,7 +5032,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Losque vous obtenez un cristal issu d'une Cristallisation, tous les personnages de l'équipe reçoivent un bonus de DGT du second élément de la réaction de 35% pendant 10s. Cet effet ne peut s'appliquer qu'à une seul élément à la fois"
+          "bonus": "Losque vous obtenez un cristal issu d'une Cristallisation, tous les personnages de l'équipe reçoivent un bonus de DGT du second élément de la réaction de 35% pendant 10s. Cet effet ne peut s'appliquer qu'à une seul élément à la fois."
         }
       ]
     },
@@ -5150,7 +5150,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Réduit la durée des effets Hydro subis de 40."
+          "bonus": "Réduit la durée des effets Hydro subis de 40%."
         }
       ]
     },
@@ -5160,7 +5160,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Réduit la durée des effets Électro subis de 40."
+          "bonus": "Réduit la durée des effets Électro subis de 40%."
         }
       ]
     },
@@ -5170,7 +5170,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Réduit la durée des effets Cryo subis de 40."
+          "bonus": "Réduit la durée des effets Cryo subis de 40%."
         }
       ]
     },
@@ -5208,7 +5208,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Confère un bonus de DGT Cryo de 15%"
+          "bonus": "Confère un bonus de DGT Cryo de 15%."
         },
         {
           "key": "b2",
@@ -5228,29 +5228,29 @@
     },
     {
       "key": "Tenacity of the Millelith",
-      "name": "Tenacity of the Millelith",
+      "name": "Ténacité du Millelithe",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "HP increased by 20%."
+          "bonus": "Les PV sont augmentés de 20%."
         },
         {
           "key": "b2",
-          "bonus": "When an Elemental Skill hits an opponent, the ATK of all nearby party members is increased by 20% and their Shield Strength is increased by 30% for 3s. This effect can be triggered once every 0.5s. This effect can still be triggered even when the character who is using this artifact set is not on the field."
+          "bonus": "Lorsqu'une compétence élémentaire touche un ennemi, l'ATQ de tous les personnages de l'équipe à proximité augmente de 20% et la force de leur bouclier augmente de 30% pendant 3s. Cet effet peut être déclenché une fois toutes les 0,5s, même si le personnage équipé de ce set d'artéfacts fait partie de l'équipe mais n'est pas déployé."
         }
       ]
     },
     {
       "key": "Pale Flame",
-      "name": "Pale Flame",
+      "name": "Flamme blême",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Physical DMG is increased by 25%."
+          "bonus": "Augmente les DGT physiques de 25%."
         },
         {
           "key": "b2",
-          "bonus": "When an Elemental Skill hits an opponent, ATK is increased by 9% for 7s. This effect stacks up to 2 times and can be triggered once every 0.3s. Once 2 stacks are reached, the 2-set effect is increased by 100%."
+          "bonus": "Lorsqu'une compétence élémentaire touche un ennemi, l'ATQ augmente de 9% pendant 7s. Cet effet peut être cumulé jusqu'à 2 fois et déclenché une fois toutes les 0,3s. Une fois 2 cumuls atteints, l'effet du set de 2 pièces augmente de 100%."
         }
       ]
     }
@@ -6633,39 +6633,39 @@
     },
     {
       "key": "Maguu Kenki",
-      "name": "Maguu Kenki"
+      "name": "Lame Oni"
     },
     {
       "key": "Hydro Mimic Boar",
-      "name": "Hydro Mimic Boar"
+      "name": "Mimique – Sanglier Hydro"
     },
     {
       "key": "Hydro Mimic Crab",
-      "name": "Hydro Mimic Crab"
+      "name": "Mimique – Crabe Hydro"
     },
     {
       "key": "Hydro Mimic Crane",
-      "name": "Hydro Mimic Crane"
+      "name": "Mimique – Grue Hydro"
     },
     {
       "key": "Hydro Mimic Ferret",
-      "name": "Hydro Mimic Ferret"
+      "name": "Mimique – Écureuil Hydro"
     },
     {
       "key": "Hydro Mimic Finch",
-      "name": "Hydro Mimic Finch"
+      "name": "Mimique – Pinson Hydro"
     },
     {
       "key": "Hydro Mimic Frog",
-      "name": "Hydro Mimic Frog"
+      "name": "Mimique – Grenouille Hydro"
     },
     {
       "key": "Hydro Mimic Mallard",
-      "name": "Hydro Mimic Mallard"
+      "name": "Mimique – Canard Hydro"
     },
     {
       "key": "Hydro Mimic Raptor",
-      "name": "Hydro Mimic Raptor"
+      "name": "Mimique – Rapace Hydro"
     }
   ]
 }
