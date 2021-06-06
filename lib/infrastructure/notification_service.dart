@@ -76,7 +76,8 @@ class NotificationServiceImpl implements NotificationService {
 
   @override
   Future<void> cancelNotification(int id, AppNotificationType type) {
-    return _flutterLocalNotificationsPlugin.cancel(id, tag: _getTagFromNotificationType(type));
+    final realId = _generateUniqueId(id, type);
+    return _flutterLocalNotificationsPlugin.cancel(realId, tag: _getTagFromNotificationType(type));
   }
 
   @override
@@ -162,6 +163,6 @@ class NotificationServiceImpl implements NotificationService {
       case AppNotificationType.dailyCheckIn:
         return 100;
     }
-    throw Exception('The provided type =  $type is not a valid notification type');
+    throw Exception('The provided type = $type is not a valid notification type');
   }
 }
