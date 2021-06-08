@@ -39,7 +39,7 @@ class CommonButtonSheetButtons extends StatelessWidget {
         if (showOkButton)
           RaisedButton(
             color: theme.primaryColor,
-            onPressed: () => onOk != null ? onOk() : Navigator.pop(context),
+            onPressed: onOk != null ? () => onOk() : null,
             child: Text(ok),
           )
       ],
