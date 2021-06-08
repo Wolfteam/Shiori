@@ -46,7 +46,7 @@ class GameCodeServiceImpl implements GameCodeService {
           continue;
         }
 
-        final isExpired = cells[3].attributes.containsValue('background-color:#F99;');
+        final isExpired = cells[3].attributes.values.any((val) => val.contains('background-color:#F99'));
         DateTime discoveredOn;
         DateTime expiredOn;
         for (final node in cells[3].nodes) {
