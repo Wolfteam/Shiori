@@ -4773,13 +4773,13 @@
       "key": "Freedom-Sworn",
       "name": "Freedom-Sworn",
       "description": "A straight sword, azure as antediluvian song, and as keen as the oaths of freedom taken in the Land of Wind.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {{0}}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "refinement": "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta il DMG del {{0}}%. Quando si innesca una Reazione Elementale si ottiene un Sigil of Rebellion. Questo effetto può avvenire solo una volta ogni 0.5, anche quando il personaggio che impugna l’arma non è sul campo. Quando si possiedono 2 Sigils of Rebellion, ciascuno si consuma conferendo ai membri vicini del party \"Millennial Movement: Song of Resistance\" per 12s. \"Millennial Movement: Song of Resistance\" aumenta il DMG di Attacchi Normali, Caricati e in Picchiata del {{1}}% e aumenta l’ATK del {{2}}%. Quando accade, non potrai ottenere Sigils of Rebellion per 20s. Tra i tanti effetti del \"Millennial Movement,\" buffs dello stesso tipo non sono cumulativi."
     },
     {
       "key": "Mitternachts Waltz",
       "name": "Mitternachts Waltz",
-      "description": "A bow painted the color of sin and nights of wild fantasy.",
-      "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {{0}}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {{1}}% for 5s."
+      "description": "Un arco intriso dei colori del peccato e della notte della fantasia più recondita.",
+      "refinement": "Attacchi Normali aumentano gli Elemental Skill DMG del {{0}}% per 5s. I colpi da Elemental Skill aumentano il DMG di Attacchi Normali del {{1}}% per 5s."
     }
   ],
   "artifacts": [
@@ -6142,12 +6142,12 @@
     {
       "key": "Maguu Kishin",
       "name": "Maguu Kishin",
-      "description": "This core can power the inorganic Maguu Kenki and cause it to wield a blade like a living being.\nFlesh decays, and with it decays all martial art and memory, no matter how masterful or lovely.\nPerhaps only by converting one's four limbs and body into sturdy mechanical parts, and by at last sacrificing one's very own heart for a sophisticated mechanical one, can one transcend transient flesh and approach the everlasting..."
+      "description": "Questo nucleo può animare un Maguu Kenki inorganico e portarlo a brandire la lama come un essere vivente.\nLa carne si decompone, e con essa anche tutte le arti marziali e i ricordi, magistrali o adorabili che siano.\nForse, solo sostituendo i 4 arti e il corpo con robuste parti meccaniche e, infine, sacrificando il proprio cuore per uno meccanizzato si potrà trascendere la carne mortale e attingere all’eterno..."
     },
     {
       "key": "Sea Ganoderma",
       "name": "Sea Ganoderma",
-      "description": "A species that only grows in certain special regions of the ocean and islands. It looks like a fungus of some sort, but it is in fact the result of the secretion and proliferation of certain soft-bodied organisms."
+      "description": "Una specie che gresce solo in speciali regioni dell’oceano e delle isole. Sembra un fungo di qualche tipo, ma in reaItà è il risultato della secrezione e proliferazione di particolari organismi dal corpo molle."
     }
   ],
   "debuffs": [
