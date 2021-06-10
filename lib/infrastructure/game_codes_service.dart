@@ -1,4 +1,5 @@
 import 'package:darq/darq.dart';
+import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/game_code_service.dart';
@@ -64,29 +65,14 @@ class GameCodeServiceImpl implements GameCodeService {
       }
 
       final isExpired = cells[3].attributes.values.any((val) => val.contains('background-color:#F99'));
-      final format = DateFormat('MMMM d, yyyy');
 
       DateTime discoveredOn;
       DateTime expiredOn;
       for (final node in cells[3].nodes) {
         final nodeText = node.text.replaceAll('\n', '').trim();
 
-        if (nodeText.contains('Discovered')) {
-          final x = nodeText.replaceAll('Discovered', '').replaceAll(':', '').trim();
-          discoveredOn = format.parse(x);
-        }
-
-        if (nodeText.contains('Expired')) {
-          final y = nodeText.replaceAll('Expired', '').replaceAll(':', '').trim();
-          if (y.isNotEmpty) {
-            expiredOn = format.parse(y);
-          }
-        }
-
-        if (nodeText.contains('Valid') && !nodeText.contains('indefinite')) {
-          final z = nodeText.split(' ').last;
-          expiredOn = DateTime.tryParse(z.split(' ').first);
-        }
+        discoveredOn ??= _parseDate(nodeText, discovered: true);
+        expiredOn ??= _parseDate(nodeText, expired: true);
       }
 
       final rewards = _parseRewards(cells[2].nodes);
@@ -115,9 +101,13 @@ class GameCodeServiceImpl implements GameCodeService {
         }
 
         final wikiName = node.text.trim();
+        final type = _getMaterialType(wikiName);
+        if (type == null) {
+          continue;
+        }
+
         final quantityString = cellNodes[i + 1].text.trim().replaceAll('\n', '').replaceAll(',', '');
         final quantity = int.parse(quantityRegex.allMatches(quantityString).first.group(0));
-        final type = _getMaterialType(wikiName);
         final image = _getMaterialImage(wikiName, type);
         rewards.add(ItemAscensionMaterialModel(quantity: quantity, materialType: type, image: image));
       } catch (e, s) {
@@ -141,9 +131,7 @@ class GameCodeServiceImpl implements GameCodeService {
       case "Adventurer's Experience":
         return MaterialType.expCharacter;
       default:
-        final msg = 'The provided material wiki name = $wikiName is not mapped';
-        _logger.error(runtimeType, msg);
-        throw Exception(msg);
+        return null;
     }
   }
 
@@ -178,5 +166,40 @@ class GameCodeServiceImpl implements GameCodeService {
       default:
         return null;
     }
+  }
+
+  DateTime _parseDate(
+    String nodeText, {
+    bool discovered = false,
+    bool expired = false,
+  }) {
+    try {
+      //Since the page is in english, we must use english, otherwise date format will try to use the system's one
+      final locale = languagesMap.entries.firstWhere((el) => el.key == AppLanguageType.english).value;
+      final format = DateFormat('MMMM d, yyyy', '${locale.code}_${locale.countryCode}');
+      //Discovered: June 8, 2021
+      if (discovered && nodeText.contains('Discovered')) {
+        final x = nodeText.replaceAll('Discovered', '').replaceAll(':', '').trim();
+        return format.parse(x);
+      }
+
+      //Expired June 9, 2021
+      if (expired && nodeText.contains('Expired')) {
+        final y = nodeText.replaceAll('Expired', '').replaceAll(':', '').trim();
+        if (y.isNotEmpty) {
+          return format.parse(y);
+        }
+      }
+
+      //Valid: June 9, 2021
+      if (expired && nodeText.contains('Valid') && !nodeText.contains('indefinite')) {
+        final z = nodeText.replaceAll('Valid', '').replaceAll(':', '').trim();
+        return format.parse(z);
+      }
+    } catch (e, s) {
+      _logger.error(runtimeType, 'Unknown error parsing date. NodeText = $nodeText - Discovered = $discovered - Expired = $expired', e, s);
+    }
+
+    return null;
   }
 }
