@@ -6,16 +6,15 @@ part 'monster_file_model.freezed.dart';
 part 'monster_file_model.g.dart';
 
 @freezed
-abstract class MonsterFileModel implements _$MonsterFileModel {
-  @late
+class MonsterFileModel with _$MonsterFileModel {
   String get fullImagePath => Assets.getMonsterImgPath(image);
 
   factory MonsterFileModel({
-    @required String key,
-    @required String image,
-    @required MonsterType type,
-    @required bool isComingSoon,
-    @required List<String> drops,
+    required String key,
+    required String image,
+    required MonsterType type,
+    required bool isComingSoon,
+    required List<String> drops,
   }) = _MonsterFileModel;
 
   MonsterFileModel._();

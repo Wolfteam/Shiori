@@ -72,9 +72,9 @@ abstract class GenshinService {
   MonsterCardModel getMonsterForCardByImg(String image);
   List<MonsterFileModel> getMonsters(MonsterType type);
 
-  String getItemImageFromNotificationType(String itemKey, AppNotificationType notificationType, {AppNotificationItemType notificationItemType});
+  String getItemImageFromNotificationType(String itemKey, AppNotificationType notificationType, {AppNotificationItemType? notificationItemType});
   String getItemImageFromNotificationItemType(String itemKey, AppNotificationItemType notificationItemType);
-  String getItemKeyFromNotificationType(String itemImage, AppNotificationType notificationType, {AppNotificationItemType notificationItemType});
+  String getItemKeyFromNotificationType(String itemImage, AppNotificationType notificationType, {AppNotificationItemType? notificationItemType});
 
   List<GadgetFileModel> getAllGadgetsForNotifications();
   GadgetFileModel getGadget(String key);

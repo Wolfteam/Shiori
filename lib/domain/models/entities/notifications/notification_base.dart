@@ -1,19 +1,24 @@
 abstract class NotificationBase {
   int get type;
 
-  String itemKey;
+  String get itemKey;
 
   DateTime get createdAt;
 
   DateTime get originalScheduledDate;
 
-  DateTime completesAt;
+  DateTime get completesAt;
+  set completesAt(DateTime value);
 
-  bool showNotification;
+  bool get showNotification;
+  set showNotification(bool value);
 
-  String note;
+  String? get note;
+  set note(String? value);
 
-  String title;
+  String get title;
+  set title(String value);
 
-  String body;
+  String get body;
+  set body(String value);
 }

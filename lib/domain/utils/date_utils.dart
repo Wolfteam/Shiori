@@ -6,8 +6,8 @@ class DateUtils {
   static const String dayMonthYearFormat = 'dd/MM/yyyy';
 
   static String formatDate(
-    DateTime date, {
-    String locale,
+    DateTime? date, {
+    String? locale,
     String format = defaultFormat,
   }) {
     if (date == null) {

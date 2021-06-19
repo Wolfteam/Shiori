@@ -62,7 +62,7 @@ class Assets {
 
   static String getCharacterFullPath(String name) => '$characterFullBasePath/$name';
 
-  static String getSkillPath(String name) {
+  static String getSkillPath(String? name) {
     if (name.isNullEmptyOrWhitespace) {
       return '$othersBasePath/$noImageAvailableName';
     }

@@ -5,9 +5,9 @@ part 'gadgets_file.freezed.dart';
 part 'gadgets_file.g.dart';
 
 @freezed
-abstract class GadgetsFile implements _$GadgetsFile {
+class GadgetsFile with _$GadgetsFile {
   factory GadgetsFile({
-    @required List<GadgetFileModel> gadgets,
+    required List<GadgetFileModel> gadgets,
   }) = _GadgetsFile;
 
   GadgetsFile._();

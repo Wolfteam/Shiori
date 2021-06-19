@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/entities/notifications/notification_base.dart';
 import 'package:hive/hive.dart';
@@ -33,7 +32,7 @@ class NotificationCustom extends HiveObject implements NotificationBase {
 
   @override
   @HiveField(6)
-  String note;
+  String? note;
 
   @override
   @HiveField(7)
@@ -49,39 +48,39 @@ class NotificationCustom extends HiveObject implements NotificationBase {
   //Since I'm using 2 diff constructors, I need to keep this one in order
   //for the adapter to work properly(the adapter uses this one)
   NotificationCustom({
-    @required this.itemKey,
-    @required this.createdAt,
-    @required this.completesAt,
+    required this.itemKey,
+    required this.createdAt,
+    required this.completesAt,
     this.note,
-    @required this.showNotification,
-    @required this.title,
-    @required this.body,
-    @required this.notificationItemType,
-    @required this.type,
-    @required this.originalScheduledDate,
+    required this.showNotification,
+    required this.title,
+    required this.body,
+    required this.notificationItemType,
+    required this.type,
+    required this.originalScheduledDate,
   });
 
   NotificationCustom.custom({
-    @required this.itemKey,
-    @required this.createdAt,
-    @required this.completesAt,
+    required this.itemKey,
+    required this.createdAt,
+    required this.completesAt,
     this.note,
-    @required this.showNotification,
-    @required this.title,
-    @required this.body,
-    @required this.notificationItemType,
-  })  : type = AppNotificationType.custom.index,
+    required this.showNotification,
+    required this.title,
+    required this.body,
+    required this.notificationItemType,
+  })   : type = AppNotificationType.custom.index,
         originalScheduledDate = completesAt;
 
   NotificationCustom.forDailyCheckIn({
-    @required this.itemKey,
-    @required this.createdAt,
-    @required this.completesAt,
+    required this.itemKey,
+    required this.createdAt,
+    required this.completesAt,
     this.note,
-    @required this.showNotification,
-    @required this.title,
-    @required this.body,
-  })  : type = AppNotificationType.dailyCheckIn.index,
+    required this.showNotification,
+    required this.title,
+    required this.body,
+  })   : type = AppNotificationType.dailyCheckIn.index,
         notificationItemType = AppNotificationItemType.material.index,
         originalScheduledDate = completesAt;
 }
