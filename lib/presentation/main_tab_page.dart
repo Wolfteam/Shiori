@@ -30,7 +30,8 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
     const WeaponsPage(),
     HomePage(),
     const ArtifactsPage(),
-    MapPage(),
+    //TODO: MAP ON WINDOWS
+    if (!Platform.isWindows) MapPage(),
   ];
 
   DateTime? backButtonPressTime;
@@ -95,6 +96,7 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
       ),
     );
 
+    //TODO: RATE THE APP ON WINDOWS
     if (Platform.isWindows) {
       return scaffold;
     }
@@ -125,7 +127,8 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
       BottomNavigationBarItem(label: s.weapons, icon: const Icon(GenshinDb.crossed_swords)),
       BottomNavigationBarItem(label: s.home, icon: const Icon(Icons.home)),
       BottomNavigationBarItem(label: s.artifacts, icon: const Icon(GenshinDb.overmind)),
-      BottomNavigationBarItem(label: s.map, icon: const Icon(Icons.map)),
+      //TODO: MAP ON WINDOWS
+      if (!Platform.isWindows) BottomNavigationBarItem(label: s.map, icon: const Icon(Icons.map)),
     ];
   }
 

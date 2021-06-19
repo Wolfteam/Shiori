@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
@@ -58,10 +60,11 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
       s.myInventory: 1,
       s.calculators: 2,
       s.materials: 3,
-      s.notifications: 4,
+      //TODO: THESE MENUS ON WINDOWS
+      if (!Platform.isWindows) s.notifications: 4,
       s.monsters: 5,
-      s.dailyCheckIn: 6,
-      s.wishSimulator: 7,
+      if (!Platform.isWindows) s.dailyCheckIn: 6,
+      if (!Platform.isWindows) s.wishSimulator: 7,
       s.tierListBuilder: 8,
       s.gameCodes: 9,
       s.settings: 10,

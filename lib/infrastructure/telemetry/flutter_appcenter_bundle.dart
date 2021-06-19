@@ -65,7 +65,7 @@ class AppCenter {
   /// Get app center installation id
   static Future<String> getInstallIdAsync() async {
     if (Platform.isWindows) {
-      return null;
+      return 'N/A';
     }
     return _methodChannel.invokeMethod('getInstallId').then((r) => r as String);
   }
