@@ -20,7 +20,7 @@ class NotificationServiceImpl implements NotificationService {
   final LoggingService _loggingService;
 
   final _flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
-  tz.Location _location;
+  late tz.Location _location;
 
   NotificationServiceImpl(this._loggingService);
 
@@ -29,21 +29,20 @@ class NotificationServiceImpl implements NotificationService {
     try {
       tz.initializeTimeZones();
       final currentTimeZone = await FlutterNativeTimezone.getLocalTimezone();
-      _location = tz.getLocation(currentTimeZone) ?? tz.local;
+      _location = tz.getLocation(currentTimeZone);
       tz.setLocalLocation(_location);
     } catch (e, s) {
       //https://github.com/srawlins/timezone/issues/92
       _loggingService.error(runtimeType, 'init: Failed to get timezone or device is GMT or UTC, assigning the generic one...', e, s);
       _location = tz.getLocation(_fallbackTimeZone);
-      assert(_location != null);
       tz.setLocalLocation(_location);
     }
   }
 
   @override
   Future<void> registerCallBacks({
-    DidReceiveLocalNotificationCallback onIosReceiveLocalNotification,
-    SelectNotificationCallback onSelectNotification,
+    DidReceiveLocalNotificationCallback? onIosReceiveLocalNotification,
+    SelectNotificationCallback? onSelectNotification,
   }) async {
     try {
       const initializationSettingsAndroid = AndroidInitializationSettings('ic_notification');
@@ -68,7 +67,7 @@ class NotificationServiceImpl implements NotificationService {
   }
 
   @override
-  Future<void> showNotification(int id, AppNotificationType type, String title, String body, {String payload}) {
+  Future<void> showNotification(int id, AppNotificationType type, String title, String body, {String? payload}) {
     final specifics = _getPlatformChannelSpecifics(type, body);
     final newId = _generateUniqueId(id, type);
     return _flutterLocalNotificationsPlugin.show(newId, title, body, specifics, payload: payload);
@@ -93,7 +92,6 @@ class NotificationServiceImpl implements NotificationService {
       await showNotification(id, type, title, body, payload: payload);
       return;
     }
-    assert(_location != null);
     final newId = _generateUniqueId(id, type);
     final specifics = _getPlatformChannelSpecifics(type, body);
     final scheduledDate = tz.TZDateTime.from(toBeDeliveredOn, _location);
@@ -103,7 +101,7 @@ class NotificationServiceImpl implements NotificationService {
       body,
       scheduledDate,
       specifics,
-      uiLocalNotificationDateInterpretation: null,
+      uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
       androidAllowWhileIdle: true,
       payload: payload,
     );
@@ -162,7 +160,8 @@ class NotificationServiceImpl implements NotificationService {
         return 90;
       case AppNotificationType.dailyCheckIn:
         return 100;
+      default:
+        throw Exception('The provided type = $type is not a valid notification type');
     }
-    throw Exception('The provided type = $type is not a valid notification type');
   }
 }

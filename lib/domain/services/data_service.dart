@@ -265,7 +265,7 @@ abstract class DataService {
   });
 
   Future<NotificationItem> updateCustomNotification(
-    int? key,
+    int key,
     String itemKey,
     String title,
     String body,

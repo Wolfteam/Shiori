@@ -591,7 +591,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     final selectedItemKey = _getSelectedItemKey();
     if (s.key != null) {
       final updated = await _dataService.updateCustomNotification(
-        s.key,
+        s.key!,
         selectedItemKey,
         s.title,
         s.body,

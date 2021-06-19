@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart' show IterableExtension;
 import 'package:darq/darq.dart';
 import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/assets.dart';
@@ -17,24 +18,24 @@ class DataServiceImpl implements DataService {
   final GenshinService _genshinService;
   final CalculatorService _calculatorService;
 
-  Box<CalculatorSession> _sessionBox;
-  Box<CalculatorItem> _calcItemBox;
-  Box<CalculatorCharacterSkill> _calcItemSkillBox;
-  Box<InventoryItem> _inventoryBox;
-  Box<InventoryUsedItem> _inventoryUsedItemsBox;
-  Box<GameCode> _gameCodesBox;
-  Box<GameCodeReward> _gameCodeRewardsBox;
-  Box<TierListItem> _tierListBox;
+  late Box<CalculatorSession> _sessionBox;
+  late Box<CalculatorItem> _calcItemBox;
+  late Box<CalculatorCharacterSkill> _calcItemSkillBox;
+  late Box<InventoryItem> _inventoryBox;
+  late Box<InventoryUsedItem> _inventoryUsedItemsBox;
+  late Box<GameCode> _gameCodesBox;
+  late Box<GameCodeReward> _gameCodeRewardsBox;
+  late Box<TierListItem> _tierListBox;
 
-  Box<NotificationCustom> _notificationsCustomBox;
-  Box<NotificationExpedition> _notificationsExpeditionBox;
-  Box<NotificationFarmingArtifact> _notificationsFarmingArtifactBox;
-  Box<NotificationFarmingMaterial> _notificationsFarmingMaterialBox;
-  Box<NotificationFurniture> _notificationsFurnitureBox;
-  Box<NotificationGadget> _notificationsGadgetBox;
-  Box<NotificationRealmCurrency> _notificationsRealmCurrencyBox;
-  Box<NotificationResin> _notificationsResinBox;
-  Box<NotificationWeeklyBoss> _notificationsWeeklyBossBox;
+  late Box<NotificationCustom> _notificationsCustomBox;
+  late Box<NotificationExpedition> _notificationsExpeditionBox;
+  late Box<NotificationFarmingArtifact> _notificationsFarmingArtifactBox;
+  late Box<NotificationFarmingMaterial> _notificationsFarmingMaterialBox;
+  late Box<NotificationFurniture> _notificationsFurnitureBox;
+  late Box<NotificationGadget> _notificationsGadgetBox;
+  late Box<NotificationRealmCurrency> _notificationsRealmCurrencyBox;
+  late Box<NotificationResin> _notificationsResinBox;
+  late Box<NotificationWeeklyBoss> _notificationsWeeklyBossBox;
 
   DataServiceImpl(this._genshinService, this._calculatorService);
 
@@ -104,7 +105,7 @@ class DataServiceImpl implements DataService {
 
   @override
   Future<void> updateCalAscMatSession(int sessionKey, String name, int position, {bool redistributeMaterials = false}) async {
-    final session = _sessionBox.get(sessionKey);
+    final session = _sessionBox.get(sessionKey)!;
     session.name = name;
     session.position = position;
     await session.save();
@@ -170,9 +171,8 @@ class DataServiceImpl implements DataService {
         return e;
       }
       final usedQuantity = usedInventoryItems
-              .firstWhere(
+              .firstWhereOrNull(
                 (el) => el.calculatorItemKey == calculatorItemKey && el.itemKey == material.key && el.type == ItemType.material.index,
-                orElse: () => null,
               )
               ?.usedQuantity ??
           e.quantity;
@@ -196,8 +196,8 @@ class DataServiceImpl implements DataService {
   }
 
   @override
-  Future<void> deleteCalAscMatSessionItem(int sessionKey, int position, {bool redistribute = true}) async {
-    final calcItem = _calcItemBox.values.firstWhere((el) => el.sessionKey == sessionKey && el.position == position, orElse: () => null);
+  Future<void> deleteCalAscMatSessionItem(int sessionKey, int? position, {bool redistribute = true}) async {
+    final calcItem = _calcItemBox.values.firstWhereOrNull((el) => el.sessionKey == sessionKey && el.position == position);
     if (calcItem == null) {
       return;
     }
@@ -327,11 +327,10 @@ class DataServiceImpl implements DataService {
         //If we hit this point, that means that itemKey COULD be being used, so we need to update the used values accordingly
         final item = calItem.isCharacter ? _buildForCharacter(calItem) : _buildForWeapon(calItem);
         final material = _genshinService.getMaterial(itemKey);
-        final desiredQuantityToUse = item.materials.firstWhere((el) => el.fullImagePath == material.fullImagePath, orElse: () => null)?.quantity ?? 0;
+        final desiredQuantityToUse = item.materials.firstWhereOrNull((el) => el.fullImagePath == material.fullImagePath)?.quantity ?? 0;
 
         //Next, we check if there is a used item for this calculator item
-        var usedInInventory =
-            _inventoryUsedItemsBox.values.firstWhere((el) => el.calculatorItemKey == calItem.key && el.itemKey == itemKey, orElse: () => null);
+        var usedInInventory = _inventoryUsedItemsBox.values.firstWhereOrNull((el) => el.calculatorItemKey == calItem.key && el.itemKey == itemKey);
 
         //If no used item was found, lets check if this calc. item could benefit from this itemKey
         if (usedInInventory == null) {
@@ -386,7 +385,7 @@ class DataServiceImpl implements DataService {
         discoveredOn: e.discoveredOn,
         isUsed: e.usedOn != null,
         rewards: rewards,
-        region: e.region != null ? AppServerResetTimeType.values[e.region] : null,
+        region: e.region != null ? AppServerResetTimeType.values[e.region!] : null,
       );
     }).toList();
   }
@@ -396,7 +395,7 @@ class DataServiceImpl implements DataService {
     final itemsOnDb = _gameCodesBox.values.toList();
 
     for (final item in itemsFromApi) {
-      final gcOnDb = itemsOnDb.firstWhere((el) => el.code == item.code, orElse: () => null);
+      final gcOnDb = itemsOnDb.firstWhereOrNull((el) => el.code == item.code);
       if (gcOnDb != null) {
         gcOnDb.isExpired = item.isExpired;
         gcOnDb.expiredOn = item.expiredOn;
@@ -433,7 +432,7 @@ class DataServiceImpl implements DataService {
 
   @override
   Future<void> markCodeAsUsed(String code, {bool wasUsed = true}) async {
-    final usedGameCode = _gameCodesBox.values.firstWhere((el) => el.code == code, orElse: () => null);
+    final usedGameCode = _gameCodesBox.values.firstWhereOrNull((el) => el.code == code)!;
     usedGameCode.usedOn = wasUsed ? DateTime.now() : null;
     await usedGameCode.save();
   }
@@ -483,7 +482,7 @@ class DataServiceImpl implements DataService {
     String title,
     String body,
     int currentResinValue, {
-    String note,
+    String? note,
     bool showNotification = true,
   }) async {
     final now = DateTime.now();
@@ -507,7 +506,7 @@ class DataServiceImpl implements DataService {
     String title,
     String body,
     ExpeditionTimeType expeditionTimeType, {
-    String note,
+    String? note,
     bool showNotification = true,
     bool withTimeReduction = false,
   }) async {
@@ -532,12 +531,12 @@ class DataServiceImpl implements DataService {
     String itemKey,
     String title,
     String body, {
-    String note,
+    String? note,
     bool showNotification = true,
   }) async {
     final now = DateTime.now();
     final gadget = _genshinService.getGadget(itemKey);
-    final completesAt = now.add(gadget.cooldownDuration);
+    final completesAt = now.add(gadget.cooldownDuration!);
     final notification = NotificationGadget(
       itemKey: itemKey,
       createdAt: now,
@@ -557,7 +556,7 @@ class DataServiceImpl implements DataService {
     FurnitureCraftingTimeType type,
     String title,
     String body, {
-    String note,
+    String? note,
     bool showNotification = true,
   }) async {
     final now = DateTime.now();
@@ -581,7 +580,7 @@ class DataServiceImpl implements DataService {
     ArtifactFarmingTimeType type,
     String title,
     String body, {
-    String note,
+    String? note,
     bool showNotification = true,
   }) async {
     final now = DateTime.now();
@@ -605,11 +604,11 @@ class DataServiceImpl implements DataService {
     String itemKey,
     String title,
     String body, {
-    String note,
+    String? note,
     bool showNotification = true,
   }) async {
     final now = DateTime.now();
-    final completesAt = now.add(_genshinService.getMaterial(itemKey).farmingRespawnDuration);
+    final completesAt = now.add(_genshinService.getMaterial(itemKey).farmingRespawnDuration!);
     final notification = NotificationFarmingMaterial(
       itemKey: itemKey,
       createdAt: now,
@@ -631,7 +630,7 @@ class DataServiceImpl implements DataService {
     int currentRealmCurrency,
     String title,
     String body, {
-    String note,
+    String? note,
     bool showNotification = true,
   }) async {
     final now = DateTime.now();
@@ -658,7 +657,7 @@ class DataServiceImpl implements DataService {
     AppServerResetTimeType serverResetTimeType,
     String title,
     String body, {
-    String note,
+    String? note,
     bool showNotification = true,
   }) async {
     final now = DateTime.now();
@@ -683,7 +682,7 @@ class DataServiceImpl implements DataService {
     String body,
     DateTime completesAt,
     AppNotificationItemType notificationItemType, {
-    String note,
+    String? note,
     bool showNotification = true,
   }) async {
     final now = DateTime.now();
@@ -706,7 +705,7 @@ class DataServiceImpl implements DataService {
     String itemKey,
     String title,
     String body, {
-    String note,
+    String? note,
     bool showNotification = true,
   }) async {
     final now = DateTime.now();
@@ -745,8 +744,9 @@ class DataServiceImpl implements DataService {
       case AppNotificationType.custom:
       case AppNotificationType.dailyCheckIn:
         return _notificationsCustomBox.delete(key);
+      default:
+        throw Exception('Invalid notification type = $type');
     }
-    throw Exception('Invalid notification type = $type');
   }
 
   @override
@@ -766,7 +766,7 @@ class DataServiceImpl implements DataService {
         return _mapToNotificationItem(item);
       case AppNotificationType.farmingMaterials:
         final item = _getNotification<NotificationFarmingMaterial>(key, type);
-        item.completesAt = DateTime.now().add(_genshinService.getMaterial(item.itemKey).farmingRespawnDuration);
+        item.completesAt = DateTime.now().add(_genshinService.getMaterial(item.itemKey).farmingRespawnDuration!);
         await item.save();
         return _mapToNotificationItem(item);
       case AppNotificationType.farmingArtifacts:
@@ -776,7 +776,7 @@ class DataServiceImpl implements DataService {
         return _mapToNotificationItem(item);
       case AppNotificationType.gadget:
         final item = _getNotification<NotificationGadget>(key, type);
-        item.completesAt = DateTime.now().add(_genshinService.getGadget(item.itemKey).cooldownDuration);
+        item.completesAt = DateTime.now().add(_genshinService.getGadget(item.itemKey).cooldownDuration!);
         await item.save();
         return _mapToNotificationItem(item);
       case AppNotificationType.furniture:
@@ -828,7 +828,7 @@ class DataServiceImpl implements DataService {
     String body,
     int currentResinValue,
     bool showNotification, {
-    String note,
+    String? note,
   }) {
     final item = _notificationsResinBox.values.firstWhere((el) => el.key == key);
     final isCompleted = item.completesAt.isBefore(DateTime.now());
@@ -849,7 +849,7 @@ class DataServiceImpl implements DataService {
     String body,
     bool showNotification,
     bool withTimeReduction, {
-    String note,
+    String? note,
   }) {
     final item = _notificationsExpeditionBox.values.firstWhere((el) => el.key == key);
     final isCompleted = item.completesAt.isBefore(DateTime.now());
@@ -871,12 +871,12 @@ class DataServiceImpl implements DataService {
     String title,
     String body,
     bool showNotification, {
-    String note,
+    String? note,
   }) {
     final item = _notificationsFarmingMaterialBox.values.firstWhere((el) => el.key == key);
     final isCompleted = item.completesAt.isBefore(DateTime.now());
     if (item.itemKey != itemKey || isCompleted) {
-      final newDuration = _genshinService.getMaterial(itemKey).farmingRespawnDuration;
+      final newDuration = _genshinService.getMaterial(itemKey).farmingRespawnDuration!;
       item.completesAt = DateTime.now().add(newDuration);
     }
 
@@ -891,7 +891,7 @@ class DataServiceImpl implements DataService {
     String title,
     String body,
     bool showNotification, {
-    String note,
+    String? note,
   }) {
     final item = _notificationsFarmingArtifactBox.values.firstWhere((el) => el.key == key);
     final isCompleted = item.completesAt.isBefore(DateTime.now());
@@ -912,14 +912,14 @@ class DataServiceImpl implements DataService {
     String title,
     String body,
     bool showNotification, {
-    String note,
+    String? note,
   }) {
     final item = _notificationsGadgetBox.values.firstWhere((el) => el.key == key);
     final isCompleted = item.completesAt.isBefore(DateTime.now());
     if (item.itemKey != itemKey || isCompleted) {
       final gadget = _genshinService.getGadget(item.itemKey);
       final now = DateTime.now();
-      item.completesAt = now.add(gadget.cooldownDuration);
+      item.completesAt = now.add(gadget.cooldownDuration!);
       item.itemKey = itemKey;
     }
 
@@ -934,7 +934,7 @@ class DataServiceImpl implements DataService {
     String title,
     String body,
     bool showNotification, {
-    String note,
+    String? note,
   }) {
     final item = _notificationsFurnitureBox.values.firstWhere((el) => el.key == key);
     final isCompleted = item.completesAt.isBefore(DateTime.now());
@@ -957,7 +957,7 @@ class DataServiceImpl implements DataService {
     String title,
     String body,
     bool showNotification, {
-    String note,
+    String? note,
   }) {
     final item = _notificationsRealmCurrencyBox.values.firstWhere((el) => el.key == key);
     final isCompleted = item.completesAt.isBefore(DateTime.now());
@@ -984,7 +984,7 @@ class DataServiceImpl implements DataService {
     String title,
     String body,
     bool showNotification, {
-    String note,
+    String? note,
   }) {
     final item = _notificationsWeeklyBossBox.values.firstWhere((el) => el.key == key);
     final isCompleted = item.completesAt.isBefore(DateTime.now());
@@ -1007,7 +1007,7 @@ class DataServiceImpl implements DataService {
     DateTime completesAt,
     bool showNotification,
     AppNotificationItemType notificationItemType, {
-    String note,
+    String? note,
   }) async {
     final item = _notificationsCustomBox.values.firstWhere((el) => el.key == key);
     item
@@ -1028,7 +1028,7 @@ class DataServiceImpl implements DataService {
     String title,
     String body,
     bool showNotification, {
-    String note,
+    String? note,
   }) async {
     final item = _notificationsCustomBox.values.firstWhere((el) => el.key == key);
     final isCompleted = item.completesAt.isBefore(DateTime.now());
@@ -1078,7 +1078,7 @@ class DataServiceImpl implements DataService {
     Hive.registerAdapter(NotificationWeeklyBossAdapter());
   }
 
-  ItemAscensionMaterials _buildForCharacter(CalculatorItem item, {int calculatorItemKey, bool includeInventory = false}) {
+  ItemAscensionMaterials _buildForCharacter(CalculatorItem item, {int? calculatorItemKey, bool includeInventory = false}) {
     final character = _genshinService.getCharacter(item.itemKey);
     final translation = _genshinService.getCharacterTranslation(item.itemKey);
     final skills = _calcItemSkillBox.values
@@ -1139,7 +1139,7 @@ class DataServiceImpl implements DataService {
     );
   }
 
-  ItemAscensionMaterials _buildForWeapon(CalculatorItem item, {int calculatorItemKey, bool includeInventory = false}) {
+  ItemAscensionMaterials _buildForWeapon(CalculatorItem item, {int? calculatorItemKey, bool includeInventory = false}) {
     final weapon = _genshinService.getWeapon(item.itemKey);
     final translation = _genshinService.getWeaponTranslation(item.itemKey);
     var materials = _calculatorService.getWeaponMaterialsToUse(
@@ -1185,9 +1185,8 @@ class DataServiceImpl implements DataService {
       }
 
       final usedQuantity = _inventoryUsedItemsBox.values
-              .firstWhere(
+              .firstWhereOrNull(
                 (el) => el.calculatorItemKey == calculatorItemKey && el.itemKey == material.key && el.type == ItemType.material.index,
-                orElse: () => null,
               )
               ?.usedQuantity ??
           0;
@@ -1198,8 +1197,8 @@ class DataServiceImpl implements DataService {
     }).toList();
   }
 
-  InventoryItem _getItemFromInventory(String key, ItemType type) {
-    return _inventoryBox.values.firstWhere((el) => el.itemKey == key && el.type == type.index, orElse: () => null);
+  InventoryItem? _getItemFromInventory(String key, ItemType type) {
+    return _inventoryBox.values.firstWhereOrNull((el) => el.itemKey == key && el.type == type.index);
   }
 
   Future<void> _useItemFromInventory(int calculatorItemKey, String itemKey, ItemType type, int quantityToUse) async {
@@ -1209,7 +1208,7 @@ class DataServiceImpl implements DataService {
 
     final used = getNumberOfItemsUsed(itemKey, type);
 
-    final item = _getItemFromInventory(itemKey, type);
+    final item = _getItemFromInventory(itemKey, type)!;
     final available = item.quantity - used;
     final toUse = available - quantityToUse < 0 ? available : quantityToUse;
     if (toUse == 0) {
@@ -1231,7 +1230,7 @@ class DataServiceImpl implements DataService {
     await redistributeAllInventoryMaterials();
   }
 
-  Future<void> _clearUsedInventoryItems(int calculatorItemKey, {String onlyItemKey, bool redistribute = false}) async {
+  Future<void> _clearUsedInventoryItems(int calculatorItemKey, {String? onlyItemKey, bool redistribute = false}) async {
     final usedItems = onlyItemKey.isNullEmptyOrWhitespace
         ? _inventoryUsedItemsBox.values.where((el) => el.calculatorItemKey == calculatorItemKey).map((e) => e.key).toList()
         : _inventoryUsedItemsBox.values
@@ -1281,9 +1280,9 @@ class DataServiceImpl implements DataService {
       case AppNotificationType.custom:
       case AppNotificationType.dailyCheckIn:
         return _notificationsCustomBox.values.firstWhere((el) => el.key == key) as T;
+      default:
+        throw Exception('Invalid notification type = $type');
     }
-
-    throw Exception('Invalid notification type = $type');
   }
 
   NotificationItem _mapToNotificationItem(NotificationBase e) {
@@ -1308,22 +1307,23 @@ class DataServiceImpl implements DataService {
       case AppNotificationType.custom:
       case AppNotificationType.dailyCheckIn:
         return _mapToNotificationItemFromCustom(e as NotificationCustom);
+      default:
+        throw Exception('Invalid notification type = $type');
     }
-    throw Exception('Invalid notification type = $type');
   }
 
   NotificationItem _mapToNotificationItemFromCustom(NotificationCustom e) {
-    final itemType = e.notificationItemType == null ? null : AppNotificationItemType.values[e.notificationItemType];
+    final itemType = AppNotificationItemType.values[e.notificationItemType];
     return _mapToNotificationItemFromBase(e, notificationItemType: itemType).copyWith.call(notificationItemType: itemType);
   }
 
   NotificationItem _mapToNotificationItemFromExpedition(NotificationExpedition e) {
-    final expeditionType = e.expeditionTimeType == null ? null : ExpeditionTimeType.values[e.expeditionTimeType];
+    final expeditionType = ExpeditionTimeType.values[e.expeditionTimeType];
     return _mapToNotificationItemFromBase(e).copyWith.call(expeditionTimeType: expeditionType, withTimeReduction: e.withTimeReduction);
   }
 
   NotificationItem _mapToNotificationItemFromFarmingArtifact(NotificationFarmingArtifact e) {
-    final artifactFarmingType = e.artifactFarmingTimeType != null ? ArtifactFarmingTimeType.values[e.artifactFarmingTimeType] : null;
+    final artifactFarmingType = ArtifactFarmingTimeType.values[e.artifactFarmingTimeType];
     return _mapToNotificationItemFromBase(e).copyWith.call(artifactFarmingTimeType: artifactFarmingType);
   }
 
@@ -1340,7 +1340,7 @@ class DataServiceImpl implements DataService {
   }
 
   NotificationItem _mapToNotificationItemFromRealmCurrency(NotificationRealmCurrency e) {
-    final realmRankType = e.realmRankType != null ? RealmRankType.values[e.realmRankType] : null;
+    final realmRankType = RealmRankType.values[e.realmRankType];
     return _mapToNotificationItemFromBase(e).copyWith.call(
           realmTrustRank: e.realmTrustRank,
           realmRankType: realmRankType,
@@ -1356,7 +1356,7 @@ class DataServiceImpl implements DataService {
     return _mapToNotificationItemFromBase(e);
   }
 
-  NotificationItem _mapToNotificationItemFromBase(NotificationBase e, {AppNotificationItemType notificationItemType}) {
+  NotificationItem _mapToNotificationItemFromBase(NotificationBase e, {AppNotificationItemType? notificationItemType}) {
     final type = AppNotificationType.values[e.type];
     final hiveObject = e as HiveObject;
     return NotificationItem(
@@ -1374,7 +1374,7 @@ class DataServiceImpl implements DataService {
     );
   }
 
-  Future<NotificationItem> _updateNotification(NotificationBase notification, String title, String body, String note, bool showNotification) async {
+  Future<NotificationItem> _updateNotification(NotificationBase notification, String title, String body, String? note, bool showNotification) async {
     notification.title = title.trim();
     notification.note = note?.trim();
     notification.body = body.trim();

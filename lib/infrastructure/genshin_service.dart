@@ -12,15 +12,15 @@ import 'package:genshindb/domain/services/locale_service.dart';
 class GenshinServiceImpl implements GenshinService {
   final LocaleService _localeService;
 
-  CharactersFile _charactersFile;
-  WeaponsFile _weaponsFile;
-  TranslationFile _translationFile;
-  ArtifactsFile _artifactsFile;
-  MaterialsFile _materialsFile;
-  ElementsFile _elementsFile;
-  MonstersFile _monstersFile;
-  GadgetsFile _gadgetsFile;
-  FurnitureFile _furnitureFile;
+  late CharactersFile _charactersFile;
+  late WeaponsFile _weaponsFile;
+  late TranslationFile _translationFile;
+  late ArtifactsFile _artifactsFile;
+  late MaterialsFile _materialsFile;
+  late ElementsFile _elementsFile;
+  late MonstersFile _monstersFile;
+  late GadgetsFile _gadgetsFile;
+  late FurnitureFile _furnitureFile;
 
   GenshinServiceImpl(this._localeService);
 
@@ -276,7 +276,7 @@ class GenshinServiceImpl implements GenshinService {
         var specialAscMaterial = false;
         if (char.multiTalentAscensionMaterials != null) {
           final keyword = e.image.split('_').last;
-          final materials = char.multiTalentAscensionMaterials
+          final materials = char.multiTalentAscensionMaterials!
               .expand((m) => m.materials)
               .expand((m) => m.materials)
               .where((m) => m.materialType == MaterialType.talents)
@@ -456,7 +456,7 @@ class GenshinServiceImpl implements GenshinService {
 
     for (final char in _charactersFile.characters.where((c) => !c.isComingSoon)) {
       final multiTalentAscensionMaterials =
-          (char.multiTalentAscensionMaterials?.expand((e) => e.materials)?.expand((e) => e.materials) ?? <ItemAscensionMaterialModel>[]).toList();
+          (char.multiTalentAscensionMaterials?.expand((e) => e.materials).expand((e) => e.materials) ?? <ItemAscensionMaterialModel>[]).toList();
 
       final ascensionMaterial = char.ascensionMaterials.expand((e) => e.materials).toList();
       final talentMaterial = char.talentAscensionMaterials.expand((e) => e.materials).toList();
@@ -608,7 +608,7 @@ class GenshinServiceImpl implements GenshinService {
   String getItemImageFromNotificationType(
     String itemKey,
     AppNotificationType notificationType, {
-    AppNotificationItemType notificationItemType,
+    AppNotificationItemType? notificationItemType,
   }) {
     switch (notificationType) {
       case AppNotificationType.resin:
@@ -633,9 +633,10 @@ class GenshinServiceImpl implements GenshinService {
         return monsters.fullImagePath;
       case AppNotificationType.custom:
       case AppNotificationType.dailyCheckIn:
-        return getItemImageFromNotificationItemType(itemKey, notificationItemType);
+        return getItemImageFromNotificationItemType(itemKey, notificationItemType!);
+      default:
+        throw Exception('The provided notification type = $notificationType is not valid');
     }
-    throw Exception('The provided notification type = $notificationType is not valid');
   }
 
   @override
@@ -656,15 +657,16 @@ class GenshinServiceImpl implements GenshinService {
       case AppNotificationItemType.material:
         final material = getMaterial(itemKey);
         return material.fullImagePath;
+      default:
+        throw Exception('The provided notification item type = $notificationItemType');
     }
-    throw Exception('The provided notification item type = $notificationItemType');
   }
 
   @override
   String getItemKeyFromNotificationType(
     String itemImage,
     AppNotificationType notificationType, {
-    AppNotificationItemType notificationItemType,
+    AppNotificationItemType? notificationItemType,
   }) {
     switch (notificationType) {
       case AppNotificationType.resin:
@@ -710,8 +712,9 @@ class GenshinServiceImpl implements GenshinService {
           default:
             throw Exception('The provided notification item type = $notificationItemType');
         }
+      default:
+        throw Exception('The provided notification type = $notificationType');
     }
-    throw Exception('The provided notification type = $notificationType');
   }
 
   @override
@@ -720,7 +723,7 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  GadgetFileModel getGadget(String key) {
+  GadgetFileModel getGadget(String? key) {
     return _gadgetsFile.gadgets.firstWhere((m) => m.key == key);
   }
 

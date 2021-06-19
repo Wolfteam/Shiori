@@ -51,7 +51,7 @@ class GameCodeServiceImpl implements GameCodeService {
     return items;
   }
 
-  GameCodeModel _parseGameCode(Element row) {
+  GameCodeModel? _parseGameCode(Element row) {
     try {
       final cells = row.getElementsByTagName('td');
       if (cells.isEmpty) {
@@ -66,10 +66,10 @@ class GameCodeServiceImpl implements GameCodeService {
 
       final isExpired = cells[3].attributes.values.any((val) => val.contains('background-color:#F99'));
 
-      DateTime discoveredOn;
-      DateTime expiredOn;
+      DateTime? discoveredOn;
+      DateTime? expiredOn;
       for (final node in cells[3].nodes) {
-        final nodeText = node.text.replaceAll('\n', '').trim();
+        final nodeText = node.text!.replaceAll('\n', '').trim();
 
         discoveredOn ??= _parseDate(nodeText, discovered: true);
         expiredOn ??= _parseDate(nodeText, expired: true);
@@ -96,18 +96,18 @@ class GameCodeServiceImpl implements GameCodeService {
     for (var i = 0; i < cellNodes.length; i++) {
       try {
         final node = cellNodes[i];
-        if (node.text.trim().isEmpty) {
+        if (node.text!.trim().isEmpty) {
           continue;
         }
 
-        final wikiName = node.text.trim();
+        final wikiName = node.text!.trim();
         final type = _getMaterialType(wikiName);
         if (type == null) {
           continue;
         }
 
-        final quantityString = cellNodes[i + 1].text.trim().replaceAll('\n', '').replaceAll(',', '');
-        final quantity = int.parse(quantityRegex.allMatches(quantityString).first.group(0));
+        final quantityString = cellNodes[i + 1].text!.trim().replaceAll('\n', '').replaceAll(',', '');
+        final quantity = int.parse(quantityRegex.allMatches(quantityString).first.group(0)!);
         final image = _getMaterialImage(wikiName, type);
         rewards.add(ItemAscensionMaterialModel(quantity: quantity, materialType: type, image: image));
       } catch (e, s) {
@@ -119,7 +119,7 @@ class GameCodeServiceImpl implements GameCodeService {
     return rewards;
   }
 
-  MaterialType _getMaterialType(String wikiName) {
+  MaterialType? _getMaterialType(String wikiName) {
     switch (wikiName) {
       case 'Primogem':
       case 'Mora':
@@ -154,8 +154,8 @@ class GameCodeServiceImpl implements GameCodeService {
     return map.entries.orderBy((el) => el.value).last.key;
   }
 
-  AppServerResetTimeType _getRegion(String wikiServer) {
-    switch (wikiServer?.toLowerCase()?.trim()) {
+  AppServerResetTimeType? _getRegion(String? wikiServer) {
+    switch (wikiServer?.toLowerCase().trim()) {
       case 'europe':
         return AppServerResetTimeType.europe;
       case 'america':
@@ -168,7 +168,7 @@ class GameCodeServiceImpl implements GameCodeService {
     }
   }
 
-  DateTime _parseDate(
+  DateTime? _parseDate(
     String nodeText, {
     bool discovered = false,
     bool expired = false,
