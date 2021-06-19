@@ -6,16 +6,16 @@ class DropdownButtonWithTitle<T> extends StatelessWidget {
   final T currentValue;
   final bool isExpanded;
   final Iterable<T> items;
-  final void Function(T) onChanged;
+  final void Function(T)? onChanged;
   final Widget Function(T, int) itemBuilder;
   final EdgeInsets margin;
 
   const DropdownButtonWithTitle({
-    Key key,
-    @required this.title,
-    @required this.currentValue,
-    @required this.items,
-    @required this.itemBuilder,
+    Key? key,
+    required this.title,
+    required this.currentValue,
+    required this.items,
+    required this.itemBuilder,
     this.onChanged,
     this.isExpanded = true,
     this.margin = const EdgeInsets.only(bottom: 15, top: 10),
@@ -38,7 +38,7 @@ class DropdownButtonWithTitle<T> extends StatelessWidget {
             isExpanded: isExpanded,
             hint: Text(title),
             value: currentValue,
-            onChanged: onChanged != null ? (v) => onChanged(v) : null,
+            onChanged: onChanged != null ? (v) => onChanged!(v!) : null,
             items: items.mapIndex((item, index) => DropdownMenuItem<T>(value: item, child: itemBuilder(item, index))).toList(),
           ),
         ],

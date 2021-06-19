@@ -13,24 +13,24 @@ import 'package:genshindb/presentation/weapons/weapons_page.dart';
 
 class NotificationCircleItem extends StatelessWidget {
   final AppNotificationType type;
-  final AppNotificationItemType itemType;
+  final AppNotificationItemType? itemType;
   final bool showOtherImages;
   final List<NotificationItemImage> images;
 
   NotificationItemImage get selected => images.firstWhere((el) => el.isSelected);
 
   const NotificationCircleItem({
-    Key key,
-    @required this.type,
-    @required this.images,
+    Key? key,
+    required this.type,
+    required this.images,
     this.showOtherImages = false,
   })  : itemType = null,
         super(key: key);
 
   const NotificationCircleItem.custom({
-    Key key,
-    @required this.itemType,
-    @required this.images,
+    Key? key,
+    required this.itemType,
+    required this.images,
     this.showOtherImages = false,
   })  : type = AppNotificationType.custom,
         super(key: key);
@@ -155,12 +155,12 @@ class NotificationCircleItem extends StatelessWidget {
     _onItemSelected(keyName, context);
   }
 
-  void _onItemSelected(String keyName, BuildContext context) {
+  void _onItemSelected(String? keyName, BuildContext context) {
     if (keyName.isNullEmptyOrWhitespace) {
       return;
     }
 
-    context.read<NotificationBloc>().add(NotificationEvent.keySelected(keyName: keyName));
+    context.read<NotificationBloc>().add(NotificationEvent.keySelected(keyName: keyName!));
   }
 
   void _changeSelectedImg(String newValue, BuildContext context) =>

@@ -16,7 +16,7 @@ import 'widgets/weapon_card.dart';
 class WeaponsPage extends StatefulWidget {
   final bool isInSelectionMode;
 
-  static Future<String> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
+  static Future<String?> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
     final bloc = context.read<WeaponsBloc>();
     bloc.add(WeaponsEvent.init(excludeKeys: excludeKeys));
 
@@ -30,7 +30,7 @@ class WeaponsPage extends StatefulWidget {
   }
 
   const WeaponsPage({
-    Key key,
+    Key? key,
     this.isInSelectionMode = false,
   }) : super(key: key);
 

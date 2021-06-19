@@ -4,14 +4,14 @@ import 'package:genshindb/generated/l10n.dart';
 typedef SearchChanged = void Function(String val);
 
 class SearchBox extends StatefulWidget {
-  final String value;
+  final String? value;
   final bool showClearButton;
   final SearchChanged searchChanged;
 
   const SearchBox({
-    Key key,
-    @required this.value,
-    @required this.searchChanged,
+    Key? key,
+    this.value,
+    required this.searchChanged,
     this.showClearButton = true,
   }) : super(key: key);
 
@@ -21,7 +21,7 @@ class SearchBox extends StatefulWidget {
 
 class _SearchBoxState extends State<SearchBox> {
   final _searchFocusNode = FocusNode();
-  TextEditingController _searchBoxTextController;
+  late TextEditingController _searchBoxTextController;
 
   @override
   void initState() {

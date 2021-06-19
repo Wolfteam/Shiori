@@ -18,7 +18,7 @@ class TelemetryServiceImpl implements TelemetryService {
   }
 
   @override
-  Future<void> trackEventAsync(String name, [Map<String, String> properties]) {
+  Future<void> trackEventAsync(String name, [Map<String, String>? properties]) {
     properties ??= {};
     properties.addAll(_deviceInfoService.deviceInfo);
     return AppCenter.trackEventAsync(name, properties);

@@ -10,13 +10,13 @@ class MaterialItem extends StatelessWidget {
   final app.MaterialType type;
   final String image;
   final int quantity;
-  final Color textColor;
+  final Color? textColor;
 
   const MaterialItem({
-    Key key,
-    @required this.type,
-    @required this.image,
-    @required this.quantity,
+    Key? key,
+    required this.type,
+    required this.image,
+    required this.quantity,
     this.textColor,
   }) : super(key: key);
 
@@ -37,7 +37,7 @@ class MaterialItem extends StatelessWidget {
           Text(
             type == app.MaterialType.currency ? CurrencyUtils.formatNumber(quantity) : '$quantity',
             textAlign: TextAlign.center,
-            style: textColor != null ? theme.textTheme.subtitle2.copyWith(color: textColor) : theme.textTheme.subtitle2,
+            style: textColor != null ? theme.textTheme.subtitle2!.copyWith(color: textColor) : theme.textTheme.subtitle2,
           ),
         if (quantity == 0) const Icon(Icons.check, color: Colors.green, size: 18),
       ],

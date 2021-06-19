@@ -15,7 +15,7 @@ import 'widgets/material_card.dart';
 class MaterialsPage extends StatelessWidget {
   final bool isInSelectionMode;
 
-  static Future<String> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
+  static Future<String?> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
     final bloc = context.read<MaterialsBloc>();
     bloc.add(MaterialsEvent.init(excludeKeys: excludeKeys));
 
@@ -29,7 +29,7 @@ class MaterialsPage extends StatelessWidget {
   }
 
   const MaterialsPage({
-    Key key,
+    Key? key,
     this.isInSelectionMode = false,
   }) : super(key: key);
 

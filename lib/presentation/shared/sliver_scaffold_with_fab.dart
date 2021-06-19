@@ -5,11 +5,11 @@ import 'mixins/app_fab_mixin.dart';
 
 class SliverScaffoldWithFab extends StatefulWidget {
   final List<Widget> slivers;
-  final PreferredSizeWidget appbar;
+  final PreferredSizeWidget? appbar;
 
   const SliverScaffoldWithFab({
-    Key key,
-    @required this.slivers,
+    Key? key,
+    required this.slivers,
     this.appbar,
   }) : super(key: key);
 

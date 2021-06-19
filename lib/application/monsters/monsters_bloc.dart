@@ -50,7 +50,7 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
   }
 
   MonstersState _buildInitialState({
-    String search,
+    String? search,
     List<String> excludeKeys = const [],
     MonsterType type = MonsterType.all,
     MonsterFilterType filterType = MonsterFilterType.name,

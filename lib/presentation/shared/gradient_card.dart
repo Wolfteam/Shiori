@@ -4,18 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class GradientCard extends StatelessWidget {
-  final ShapeBorder shape;
+  final ShapeBorder? shape;
   final Clip clipBehavior;
   final EdgeInsetsGeometry margin;
   final bool semanticContainer;
-  final Widget child;
+  final Widget? child;
   final LinearGradient gradient;
-  final double elevation;
-  final Color shadowColor;
+  final double? elevation;
+  final Color? shadowColor;
 
   const GradientCard({
-    Key key,
-    @required this.gradient,
+    Key? key,
+    required this.gradient,
     this.shape,
     this.margin = const EdgeInsets.all(4),
     this.clipBehavior = Clip.none,
@@ -38,7 +38,7 @@ class GradientCard extends StatelessWidget {
         shape: shape ?? const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4))),
         clipBehavior: clipBehavior,
         child: Container(
-          margin: margin ?? const EdgeInsets.all(4),
+          margin: margin,
           decoration: ShapeDecoration(
             shape: shape ?? const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4))),
             gradient: gradient,

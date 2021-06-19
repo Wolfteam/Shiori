@@ -21,10 +21,10 @@ class WeaponCard extends StatelessWidget {
   final String image;
   final String name;
   final int rarity;
-  final int baseAtk;
-  final WeaponType type;
-  final StatType subStatType;
-  final double subStatValue;
+  final int? baseAtk;
+  final WeaponType? type;
+  final StatType? subStatType;
+  final double? subStatValue;
   final bool isComingSoon;
 
   final double imgWidth;
@@ -34,16 +34,16 @@ class WeaponCard extends StatelessWidget {
   final bool withElevation;
 
   const WeaponCard({
-    Key key,
-    @required this.keyName,
-    @required this.image,
-    @required this.name,
-    @required this.rarity,
-    @required this.baseAtk,
-    @required this.type,
-    @required this.subStatType,
-    @required this.subStatValue,
-    @required this.isComingSoon,
+    Key? key,
+    required this.keyName,
+    required this.image,
+    required this.name,
+    required this.rarity,
+    required this.baseAtk,
+    required this.type,
+    required this.subStatType,
+    required this.subStatValue,
+    required this.isComingSoon,
     this.imgWidth = 160,
     this.imgHeight = 140,
     this.isInSelectionMode = false,
@@ -52,12 +52,12 @@ class WeaponCard extends StatelessWidget {
         super(key: key);
 
   const WeaponCard.withoutDetails({
-    Key key,
-    @required this.keyName,
-    @required this.image,
-    @required this.name,
-    @required this.rarity,
-    @required this.isComingSoon,
+    Key? key,
+    required this.keyName,
+    required this.image,
+    required this.name,
+    required this.rarity,
+    required this.isComingSoon,
     this.imgWidth = 80,
     this.imgHeight = 70,
   })  : type = null,
@@ -70,8 +70,8 @@ class WeaponCard extends StatelessWidget {
         super(key: key);
 
   WeaponCard.item({
-    Key key,
-    WeaponCardModel weapon,
+    Key? key,
+    required WeaponCardModel weapon,
     this.imgWidth = 160,
     this.imgHeight = 140,
     this.isInSelectionMode = false,
@@ -132,7 +132,7 @@ class WeaponCard extends StatelessWidget {
                     child: Text(
                       name,
                       overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                      style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                     ),
                   ),
                 ),
@@ -157,13 +157,13 @@ class WeaponCard extends StatelessWidget {
                               style: const TextStyle(color: Colors.white),
                             ),
                             Text(
-                              '${s.type}: ${s.translateWeaponType(type)}',
+                              '${s.type}: ${s.translateWeaponType(type!)}',
                               textAlign: TextAlign.center,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(color: Colors.white),
                             ),
                             Text(
-                              '${s.subStat}: ${s.translateStatType(subStatType, subStatValue)}',
+                              '${s.subStat}: ${s.translateStatType(subStatType!, subStatValue!)}',
                               textAlign: TextAlign.center,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(color: Colors.white),

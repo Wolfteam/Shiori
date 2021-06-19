@@ -7,12 +7,12 @@ import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/characters/characters_page.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/genshin_db_icons.dart';
+import 'package:genshindb/presentation/shared/hawk_fab_menu.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
 import 'package:genshindb/presentation/shared/nothing_found_column.dart';
 import 'package:genshindb/presentation/shared/sliver_row_grid.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 import 'package:genshindb/presentation/weapons/weapons_page.dart';
-import 'package:hawk_fab_menu/hawk_fab_menu.dart';
 
 import 'widgets/add_edit_item_bottom_sheet.dart';
 import 'widgets/ascension_materials_summary.dart';
@@ -23,8 +23,8 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
   final int sessionKey;
 
   const CalculatorAscensionMaterialsPage({
-    Key key,
-    @required this.sessionKey,
+    Key? key,
+    required this.sessionKey,
   }) : super(key: key);
 
   @override
@@ -149,7 +149,7 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
       return;
     }
 
-    context.read<CalculatorAscMaterialsItemBloc>().add(CalculatorAscMaterialsItemEvent.load(key: keyName, isCharacter: true));
+    context.read<CalculatorAscMaterialsItemBloc>().add(CalculatorAscMaterialsItemEvent.load(key: keyName!, isCharacter: true));
 
     await showModalBottomSheet(
       context: context,
@@ -172,7 +172,7 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
       return;
     }
 
-    context.read<CalculatorAscMaterialsItemBloc>().add(CalculatorAscMaterialsItemEvent.load(key: keyName, isCharacter: false));
+    context.read<CalculatorAscMaterialsItemBloc>().add(CalculatorAscMaterialsItemEvent.load(key: keyName!, isCharacter: false));
 
     await showModalBottomSheet<bool>(
       context: context,

@@ -20,14 +20,14 @@ class NotificationWeeklyBossForm extends StatelessWidget {
   final bool showOtherImages;
 
   const NotificationWeeklyBossForm({
-    Key key,
-    @required this.title,
-    @required this.body,
-    @required this.note,
-    @required this.showNotification,
-    @required this.isInEditMode,
-    @required this.images,
-    @required this.showOtherImages,
+    Key? key,
+    required this.title,
+    required this.body,
+    required this.note,
+    required this.showNotification,
+    required this.isInEditMode,
+    required this.images,
+    required this.showOtherImages,
   }) : super(key: key);
 
   @override

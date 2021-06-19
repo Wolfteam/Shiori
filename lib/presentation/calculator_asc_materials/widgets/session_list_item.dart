@@ -12,8 +12,8 @@ class SessionListItem extends StatelessWidget {
   final CalculatorSessionModel session;
 
   const SessionListItem({
-    Key key,
-    @required this.session,
+    Key? key,
+    required this.session,
   }) : super(key: key);
 
   @override

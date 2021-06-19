@@ -29,14 +29,14 @@ abstract class _CommonBaseState {
 }
 
 @freezed
-abstract class NotificationState implements _$NotificationState {
+class NotificationState with _$NotificationState {
   @Implements(_CommonBaseState)
   const factory NotificationState.resin({
-    int key,
+    int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
     @Default(AppNotificationType.resin) AppNotificationType type,
     @Default(true) bool showNotification,
-    @required int currentResin,
+    required int currentResin,
     @Default('') String title,
     @Default('') String body,
     @Default(false) bool isTitleValid,
@@ -51,12 +51,12 @@ abstract class NotificationState implements _$NotificationState {
 
   @Implements(_CommonBaseState)
   const factory NotificationState.expedition({
-    int key,
+    int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
     @Default(AppNotificationType.expedition) AppNotificationType type,
     @Default(true) bool showNotification,
-    @required ExpeditionTimeType expeditionTimeType,
-    @required bool withTimeReduction,
+    required ExpeditionTimeType expeditionTimeType,
+    required bool withTimeReduction,
     @Default('') String title,
     @Default('') String body,
     @Default(false) bool isTitleValid,
@@ -71,7 +71,7 @@ abstract class NotificationState implements _$NotificationState {
 
   @Implements(_CommonBaseState)
   const factory NotificationState.farmingArtifact({
-    int key,
+    int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
     @Default(AppNotificationType.farmingArtifacts) AppNotificationType type,
     @Default(ArtifactFarmingTimeType.twelveHours) ArtifactFarmingTimeType artifactFarmingTimeType,
@@ -90,7 +90,7 @@ abstract class NotificationState implements _$NotificationState {
 
   @Implements(_CommonBaseState)
   const factory NotificationState.farmingMaterial({
-    int key,
+    int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
     @Default(AppNotificationType.farmingMaterials) AppNotificationType type,
     @Default(true) bool showNotification,
@@ -108,7 +108,7 @@ abstract class NotificationState implements _$NotificationState {
 
   @Implements(_CommonBaseState)
   const factory NotificationState.gadget({
-    int key,
+    int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
     @Default(AppNotificationType.gadget) AppNotificationType type,
     @Default(true) bool showNotification,
@@ -126,7 +126,7 @@ abstract class NotificationState implements _$NotificationState {
 
   @Implements(_CommonBaseState)
   const factory NotificationState.furniture({
-    int key,
+    int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
     @Default(AppNotificationType.furniture) AppNotificationType type,
     @Default(FurnitureCraftingTimeType.fourteenHours) FurnitureCraftingTimeType timeType,
@@ -145,7 +145,7 @@ abstract class NotificationState implements _$NotificationState {
 
   @Implements(_CommonBaseState)
   const factory NotificationState.realmCurrency({
-    int key,
+    int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
     @Default(AppNotificationType.realmCurrency) AppNotificationType type,
     @Default(RealmRankType.bareBones) RealmRankType currentRealmRankType,
@@ -166,7 +166,7 @@ abstract class NotificationState implements _$NotificationState {
 
   @Implements(_CommonBaseState)
   const factory NotificationState.weeklyBoss({
-    int key,
+    int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
     @Default(AppNotificationType.weeklyBoss) AppNotificationType type,
     @Default(true) bool showNotification,
@@ -184,11 +184,11 @@ abstract class NotificationState implements _$NotificationState {
 
   @Implements(_CommonBaseState)
   const factory NotificationState.custom({
-    int key,
+    int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
     @Default(AppNotificationType.custom) AppNotificationType type,
     @Default(true) bool showNotification,
-    @required AppNotificationItemType itemType,
+    required AppNotificationItemType itemType,
     @Default('') String title,
     @Default('') String body,
     @Default(false) bool isTitleValid,
@@ -199,14 +199,14 @@ abstract class NotificationState implements _$NotificationState {
     @Default(false) bool isNoteDirty,
     @Default('') String note,
     @Default(false) bool showOtherImages,
-    @required DateTime scheduledDate,
-    @required LanguageModel language,
+    required DateTime scheduledDate,
+    required LanguageModel language,
     @Default(false) bool useTwentyFourHoursFormat,
   }) = _CustomState;
 
   @Implements(_CommonBaseState)
   const factory NotificationState.dailyCheckIn({
-    int key,
+    int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
     @Default(AppNotificationType.dailyCheckIn) AppNotificationType type,
     @Default(true) bool showNotification,

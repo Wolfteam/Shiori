@@ -5,15 +5,15 @@ import 'package:genshindb/domain/enums/material_type.dart';
 part 'material_card_model.freezed.dart';
 
 @freezed
-abstract class MaterialCardModel implements _$MaterialCardModel {
+class MaterialCardModel with _$MaterialCardModel {
   const factory MaterialCardModel.item({
-    @required String key,
-    @required String name,
-    @required int rarity,
-    @required String image,
-    @required MaterialType type,
-    @required double level,
-    @required bool hasSiblings,
+    required String key,
+    required String name,
+    required int rarity,
+    required String image,
+    required MaterialType type,
+    required double level,
+    required bool hasSiblings,
     @Default(0) int quantity,
     @Default(0) int usedQuantity,
   }) = _Item;

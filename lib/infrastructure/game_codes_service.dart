@@ -1,4 +1,5 @@
 import 'package:darq/darq.dart';
+import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/game_code_service.dart';
@@ -7,6 +8,7 @@ import 'package:genshindb/domain/services/logging_service.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 
 const _wikiPage = 'https://genshin-impact.fandom.com/wiki/Promotional_Codes';
 
@@ -35,51 +37,12 @@ class GameCodeServiceImpl implements GameCodeService {
 
       final rows = tables.first.getElementsByTagName('tr');
       for (final row in rows) {
-        final cells = row.getElementsByTagName('td');
-        if (cells.isEmpty) {
+        final gameCode = _parseGameCode(row);
+        if (gameCode == null) {
           continue;
         }
 
-        final region = _getRegion(cells[1].innerHtml);
-        final code = cells.first.text.trim().split('[').first.trim();
-        if (code.split(' ').length > 1) {
-          continue;
-        }
-
-        final isExpired = cells[3].attributes.containsValue('background-color:#F99;');
-        DateTime discoveredOn;
-        DateTime expiredOn;
-        for (final node in cells[3].nodes) {
-          final nodeText = node.text.replaceAll('\n', '').trim();
-
-          if (nodeText.contains('Discovered')) {
-            final x = nodeText.split(' ').last;
-            discoveredOn = DateTime.parse(x.split(' ').first);
-          }
-
-          if (nodeText.contains('Expired')) {
-            final y = nodeText.replaceAll('Expired', '').trim();
-            if (y.isNotEmpty) {
-              expiredOn = DateTime.parse(y.split(' ').first);
-            }
-          }
-
-          if (nodeText.contains('Valid') && !nodeText.contains('indefinite')) {
-            final z = nodeText.split(' ').last;
-            expiredOn = DateTime.parse(z.split(' ').first);
-          }
-        }
-
-        final rewards = _parseRewards(cells[2].nodes);
-        items.add(GameCodeModel(
-          code: code,
-          expiredOn: expiredOn,
-          isExpired: isExpired,
-          isUsed: false,
-          rewards: rewards,
-          discoveredOn: discoveredOn,
-          region: region,
-        ));
+        items.add(gameCode);
       }
     } catch (e, s) {
       _logger.error(runtimeType, 'Unknown error occurred', e, s);
@@ -88,23 +51,67 @@ class GameCodeServiceImpl implements GameCodeService {
     return items;
   }
 
+  GameCodeModel? _parseGameCode(Element row) {
+    try {
+      final cells = row.getElementsByTagName('td');
+      if (cells.isEmpty) {
+        return null;
+      }
+
+      final region = _getRegion(cells[1].innerHtml);
+      final code = cells.first.text.trim().split('[').first.trim();
+      if (code.split(' ').length > 1) {
+        return null;
+      }
+
+      final isExpired = cells[3].attributes.values.any((val) => val.contains('background-color:#F99'));
+
+      DateTime? discoveredOn;
+      DateTime? expiredOn;
+      for (final node in cells[3].nodes) {
+        final nodeText = node.text!.replaceAll('\n', '').trim();
+
+        discoveredOn ??= _parseDate(nodeText, discovered: true);
+        expiredOn ??= _parseDate(nodeText, expired: true);
+      }
+
+      final rewards = _parseRewards(cells[2].nodes);
+      return GameCodeModel(
+        code: code,
+        expiredOn: expiredOn,
+        isExpired: isExpired,
+        isUsed: false,
+        rewards: rewards,
+        discoveredOn: discoveredOn,
+        region: region,
+      );
+    } catch (e, s) {
+      _logger.error(runtimeType, '_parseGameCode: Unknown error occurred', e, s);
+    }
+    return null;
+  }
+
   List<ItemAscensionMaterialModel> _parseRewards(NodeList cellNodes) {
     final rewards = <ItemAscensionMaterialModel>[];
     for (var i = 0; i < cellNodes.length; i++) {
       try {
         final node = cellNodes[i];
-        if (node.text.trim().isEmpty) {
+        if (node.text!.trim().isEmpty) {
           continue;
         }
 
-        final wikiName = node.text.trim();
-        final quantityString = cellNodes[i + 1].text.trim().replaceAll('\n', '').replaceAll(',', '');
-        final quantity = int.parse(quantityRegex.allMatches(quantityString).first.group(0));
+        final wikiName = node.text!.trim();
         final type = _getMaterialType(wikiName);
+        if (type == null) {
+          continue;
+        }
+
+        final quantityString = cellNodes[i + 1].text!.trim().replaceAll('\n', '').replaceAll(',', '');
+        final quantity = int.parse(quantityRegex.allMatches(quantityString).first.group(0)!);
         final image = _getMaterialImage(wikiName, type);
         rewards.add(ItemAscensionMaterialModel(quantity: quantity, materialType: type, image: image));
       } catch (e, s) {
-        _logger.error(runtimeType, 'Unknown error parsing rewards', e, s);
+        _logger.error(runtimeType, '_parseRewards: Unknown error', e, s);
       }
 
       i++;
@@ -112,20 +119,19 @@ class GameCodeServiceImpl implements GameCodeService {
     return rewards;
   }
 
-  MaterialType _getMaterialType(String wikiName) {
+  MaterialType? _getMaterialType(String wikiName) {
     switch (wikiName) {
       case 'Primogem':
       case 'Mora':
         return MaterialType.currency;
       case 'Mystic Enhancement Ore':
+      case 'Fine Enhancement Ore':
         return MaterialType.expWeapon;
       case "Hero's Wit":
       case "Adventurer's Experience":
         return MaterialType.expCharacter;
       default:
-        final msg = 'The provided material wiki name = $wikiName is not mapped';
-        _logger.error(runtimeType, msg);
-        throw Exception(msg);
+        return null;
     }
   }
 
@@ -148,8 +154,8 @@ class GameCodeServiceImpl implements GameCodeService {
     return map.entries.orderBy((el) => el.value).last.key;
   }
 
-  AppServerResetTimeType _getRegion(String wikiServer) {
-    switch (wikiServer?.toLowerCase()?.trim()) {
+  AppServerResetTimeType? _getRegion(String? wikiServer) {
+    switch (wikiServer?.toLowerCase().trim()) {
       case 'europe':
         return AppServerResetTimeType.europe;
       case 'america':
@@ -160,5 +166,40 @@ class GameCodeServiceImpl implements GameCodeService {
       default:
         return null;
     }
+  }
+
+  DateTime? _parseDate(
+    String nodeText, {
+    bool discovered = false,
+    bool expired = false,
+  }) {
+    try {
+      //Since the page is in english, we must use english, otherwise date format will try to use the system's one
+      final locale = languagesMap.entries.firstWhere((el) => el.key == AppLanguageType.english).value;
+      final format = DateFormat('MMMM d, yyyy', '${locale.code}_${locale.countryCode}');
+      //Discovered: June 8, 2021
+      if (discovered && nodeText.contains('Discovered')) {
+        final x = nodeText.replaceAll('Discovered', '').replaceAll(':', '').trim();
+        return format.parse(x);
+      }
+
+      //Expired June 9, 2021
+      if (expired && nodeText.contains('Expired')) {
+        final y = nodeText.replaceAll('Expired', '').replaceAll(':', '').trim();
+        if (y.isNotEmpty) {
+          return format.parse(y);
+        }
+      }
+
+      //Valid: June 9, 2021
+      if (expired && nodeText.contains('Valid') && !nodeText.contains('indefinite')) {
+        final z = nodeText.replaceAll('Valid', '').replaceAll(':', '').trim();
+        return format.parse(z);
+      }
+    } catch (e, s) {
+      _logger.error(runtimeType, 'Unknown error parsing date. NodeText = $nodeText - Discovered = $discovered - Expired = $expired', e, s);
+    }
+
+    return null;
   }
 }

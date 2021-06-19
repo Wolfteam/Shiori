@@ -5,7 +5,7 @@ import 'widgets/character_detail.dart';
 import 'widgets/character_detail_top.dart';
 
 class CharacterPage extends StatelessWidget {
-  const CharacterPage({Key key}) : super(key: key);
+  const CharacterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

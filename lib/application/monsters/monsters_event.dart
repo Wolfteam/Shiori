@@ -1,11 +1,11 @@
 part of 'monsters_bloc.dart';
 
 @freezed
-abstract class MonstersEvent implements _$MonstersEvent {
+class MonstersEvent with _$MonstersEvent {
   const factory MonstersEvent.init({@Default(<String>[]) List<String> excludeKeys}) = _Init;
 
   const factory MonstersEvent.searchChanged({
-    @required String search,
+    required String search,
   }) = _SearchChanged;
 
   const factory MonstersEvent.typeChanged(MonsterType type) = _TypeChanged;

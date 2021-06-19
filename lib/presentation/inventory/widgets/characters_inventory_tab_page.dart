@@ -64,6 +64,6 @@ class _CharactersInventoryTabPageState extends State<CharactersInventoryTabPage>
       return;
     }
 
-    inventoryBloc.add(InventoryEvent.addCharacter(key: keyName));
+    inventoryBloc.add(InventoryEvent.addCharacter(key: keyName!));
   }
 }

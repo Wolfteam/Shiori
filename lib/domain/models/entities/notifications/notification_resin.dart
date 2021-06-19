@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/entities.dart';
 import 'package:hive/hive.dart';
@@ -33,7 +32,7 @@ class NotificationResin extends HiveObject implements NotificationBase {
 
   @override
   @HiveField(6)
-  String note;
+  String? note;
 
   @override
   @HiveField(7)
@@ -47,14 +46,14 @@ class NotificationResin extends HiveObject implements NotificationBase {
   int currentResinValue;
 
   NotificationResin({
-    @required this.itemKey,
-    @required this.createdAt,
-    @required this.completesAt,
+    required this.itemKey,
+    required this.createdAt,
+    required this.completesAt,
     this.note,
-    @required this.showNotification,
-    @required this.currentResinValue,
-    @required this.title,
-    @required this.body,
-  })  : type = AppNotificationType.resin.index,
+    required this.showNotification,
+    required this.currentResinValue,
+    required this.title,
+    required this.body,
+  })   : type = AppNotificationType.resin.index,
         originalScheduledDate = completesAt;
 }

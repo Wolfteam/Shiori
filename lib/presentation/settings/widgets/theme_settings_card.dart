@@ -51,7 +51,7 @@ class ThemeSettingsCard extends StatelessWidget {
                       height: 0,
                       color: Colors.transparent,
                     ),
-                    onChanged: (v) => _appThemeChanged(v, context),
+                    onChanged: (v) => _appThemeChanged(v!, context),
                     items: AppThemeType.values
                         .map<DropdownMenuItem<AppThemeType>>(
                           (theme) => DropdownMenuItem<AppThemeType>(

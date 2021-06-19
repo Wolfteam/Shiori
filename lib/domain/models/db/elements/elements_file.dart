@@ -6,11 +6,11 @@ part 'elements_file.freezed.dart';
 part 'elements_file.g.dart';
 
 @freezed
-abstract class ElementsFile implements _$ElementsFile {
+class ElementsFile with _$ElementsFile {
   factory ElementsFile({
-    @required List<ElementDebuffFileModel> debuffs,
-    @required List<ElementReactionFileModel> reactions,
-    @required List<ElementReactionFileModel> resonance,
+    required List<ElementDebuffFileModel> debuffs,
+    required List<ElementReactionFileModel> reactions,
+    required List<ElementReactionFileModel> resonance,
   }) = _ElementsFile;
 
   ElementsFile._();

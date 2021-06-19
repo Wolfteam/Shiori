@@ -8,10 +8,10 @@ class ElementDebuffCard extends StatelessWidget {
   final String effect;
 
   const ElementDebuffCard({
-    Key key,
-    @required this.image,
-    @required this.name,
-    @required this.effect,
+    Key? key,
+    required this.image,
+    required this.name,
+    required this.effect,
   }) : super(key: key);
 
   @override
@@ -29,7 +29,7 @@ class ElementDebuffCard extends StatelessWidget {
             Text(
               name,
               textAlign: TextAlign.center,
-              style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+              style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
             ),
             Text(effect, textAlign: TextAlign.center)
           ],

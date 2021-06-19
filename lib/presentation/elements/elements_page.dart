@@ -23,7 +23,7 @@ class ElementsPage extends StatelessWidget {
                   [
                     Text(
                       s.elementalDebuffs,
-                      style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                      style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
                     ),
                     Text(s.elementalDebuffsExplained)
                   ],
@@ -37,7 +37,7 @@ class ElementsPage extends StatelessWidget {
                 delegate: SliverChildListDelegate.fixed([
                   Text(
                     s.elementalReactions,
-                    style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                    style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
                   ),
                   Text(s.elementalReactionsExplained),
                 ]),
@@ -50,7 +50,7 @@ class ElementsPage extends StatelessWidget {
                 delegate: SliverChildListDelegate.fixed([
                   Text(
                     s.elementalResonances,
-                    style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                    style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
                   ),
                   Text(s.elementalResonancesExplained),
                 ]),

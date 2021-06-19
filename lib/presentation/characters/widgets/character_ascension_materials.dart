@@ -6,8 +6,8 @@ class CharacterAscensionMaterials extends StatelessWidget {
   final List<String> images;
 
   const CharacterAscensionMaterials({
-    Key key,
-    @required this.images,
+    Key? key,
+    required this.images,
   }) : super(key: key);
 
   @override

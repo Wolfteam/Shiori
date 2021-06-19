@@ -11,16 +11,16 @@ class ElementImage extends StatelessWidget {
   final double radius;
 
   ElementImage.fromType({
-    Key key,
-    @required this.type,
+    Key? key,
+    required this.type,
     this.useDarkForBackgroundColor = false,
     this.radius = 25,
   })  : path = type.getElementAsssetPath(),
         super(key: key);
 
   ElementImage.fromPath({
-    Key key,
-    @required this.path,
+    Key? key,
+    required this.path,
     this.useDarkForBackgroundColor = false,
     this.radius = 25,
   })  : type = Assets.getElementTypeFromPath(path),

@@ -6,13 +6,13 @@ abstract class NotificationService {
 
   //TODO: REMOVE THE PLUGIN DEPENDENCY FROM THIS LAYER
   Future<void> registerCallBacks({
-    DidReceiveLocalNotificationCallback onIosReceiveLocalNotification,
-    SelectNotificationCallback onSelectNotification,
+    DidReceiveLocalNotificationCallback? onIosReceiveLocalNotification,
+    SelectNotificationCallback? onSelectNotification,
   });
 
   Future<bool> requestIOSPermissions();
 
-  Future<void> showNotification(int id, AppNotificationType type, String title, String body, {String payload});
+  Future<void> showNotification(int id, AppNotificationType type, String title, String body, {String? payload});
 
   Future<void> cancelNotification(int id, AppNotificationType type);
 

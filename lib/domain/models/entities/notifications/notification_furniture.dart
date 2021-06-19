@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/entities.dart';
 import 'package:hive/hive.dart';
@@ -33,7 +32,7 @@ class NotificationFurniture extends HiveObject implements NotificationBase {
 
   @override
   @HiveField(6)
-  String note;
+  String? note;
 
   @override
   @HiveField(7)
@@ -47,14 +46,14 @@ class NotificationFurniture extends HiveObject implements NotificationBase {
   int furnitureCraftingTimeType;
 
   NotificationFurniture({
-    @required this.itemKey,
-    @required this.createdAt,
-    @required this.completesAt,
+    required this.itemKey,
+    required this.createdAt,
+    required this.completesAt,
     this.note,
-    @required this.showNotification,
-    @required this.title,
-    @required this.body,
-    @required this.furnitureCraftingTimeType,
-  })  : type = AppNotificationType.furniture.index,
+    required this.showNotification,
+    required this.title,
+    required this.body,
+    required this.furnitureCraftingTimeType,
+  })   : type = AppNotificationType.furniture.index,
         originalScheduledDate = completesAt;
 }

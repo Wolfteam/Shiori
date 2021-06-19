@@ -85,7 +85,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   }
 
   CharactersState _buildInitialState({
-    String search,
+    String? search,
     List<String> excludeKeys = const [],
     List<WeaponType> weaponTypes = const [],
     List<ElementType> elementTypes = const [],

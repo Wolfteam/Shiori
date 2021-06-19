@@ -16,7 +16,7 @@ import 'widgets/character_card.dart';
 class CharactersPage extends StatefulWidget {
   final bool isInSelectionMode;
 
-  static Future<String> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
+  static Future<String?> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
     final bloc = context.read<CharactersBloc>();
     bloc.add(CharactersEvent.init(excludeKeys: excludeKeys));
 
@@ -30,7 +30,7 @@ class CharactersPage extends StatefulWidget {
   }
 
   const CharactersPage({
-    Key key,
+    Key? key,
     this.isInSelectionMode = false,
   }) : super(key: key);
 

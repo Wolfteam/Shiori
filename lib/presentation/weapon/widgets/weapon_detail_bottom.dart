@@ -23,15 +23,15 @@ class WeaponDetailBottom extends StatelessWidget {
   final List<String> charImgs;
 
   const WeaponDetailBottom({
-    Key key,
-    @required this.description,
-    @required this.rarity,
-    @required this.secondaryStatType,
-    @required this.craftingMaterials,
-    @required this.ascensionMaterials,
-    @required this.refinements,
-    @required this.stats,
-    @required this.charImgs,
+    Key? key,
+    required this.description,
+    required this.rarity,
+    required this.secondaryStatType,
+    required this.craftingMaterials,
+    required this.ascensionMaterials,
+    required this.refinements,
+    required this.stats,
+    required this.charImgs,
   }) : super(key: key);
 
   @override

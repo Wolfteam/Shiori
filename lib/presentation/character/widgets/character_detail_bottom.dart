@@ -10,7 +10,7 @@ import 'package:genshindb/presentation/shared/styles.dart';
 import 'character_detail.dart';
 
 class CharacterDetailBottom extends StatelessWidget {
-  const CharacterDetailBottom({Key key}) : super(key: key);
+  const CharacterDetailBottom({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -61,9 +61,9 @@ class CharacterDetailBottom extends StatelessWidget {
                     talentAscensionMaterials: state.talentAscensionsMaterials,
                     elementType: state.elementType,
                   ),
-                if (state.multiTalentAscensionMaterials != null && state.multiTalentAscensionMaterials.isNotEmpty)
+                if (state.multiTalentAscensionMaterials != null && state.multiTalentAscensionMaterials!.isNotEmpty)
                   CharacterDetailTalentAscensionMaterialsCard.withMultiTalents(
-                    multiTalentAscensionMaterials: state.multiTalentAscensionMaterials,
+                    multiTalentAscensionMaterials: state.multiTalentAscensionMaterials!,
                     elementType: state.elementType,
                   ),
                 CharacterDetailPassiveCard(elementType: state.elementType, passives: state.passives),

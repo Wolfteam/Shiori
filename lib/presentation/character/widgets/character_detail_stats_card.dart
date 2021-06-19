@@ -14,10 +14,10 @@ class CharacterDetailStatsCard extends StatelessWidget {
   final List<CharacterFileStatModel> stats;
 
   const CharacterDetailStatsCard({
-    Key key,
-    @required this.subStatType,
-    @required this.elementType,
-    @required this.stats,
+    Key? key,
+    required this.subStatType,
+    required this.elementType,
+    required this.stats,
   }) : super(key: key);
 
   @override

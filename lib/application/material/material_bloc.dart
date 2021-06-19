@@ -20,7 +20,7 @@ class MaterialBloc extends PopBloc<MaterialEvent, MaterialState> {
   MaterialBloc(this._genshinService, this._telemetryService) : super(const MaterialState.loading());
 
   @override
-  MaterialEvent getEventForPop(String key) => MaterialEvent.loadFromName(key: key, addToQueue: false);
+  MaterialEvent getEventForPop(String? key) => MaterialEvent.loadFromName(key: key!, addToQueue: false);
 
   @override
   Stream<MaterialState> mapEventToState(MaterialEvent event) async* {

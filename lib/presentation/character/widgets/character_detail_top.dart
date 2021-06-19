@@ -10,7 +10,7 @@ import '../../character/widgets/character_detail.dart';
 
 class CharacterDetailTop extends StatelessWidget {
   const CharacterDetailTop({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

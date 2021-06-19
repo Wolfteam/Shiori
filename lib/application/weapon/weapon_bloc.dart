@@ -20,7 +20,7 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
   WeaponBloc(this._genshinService, this._telemetryService, this._dataService) : super(const WeaponState.loading());
 
   @override
-  WeaponEvent getEventForPop(String key) => WeaponEvent.loadFromName(key: key, addToQueue: false);
+  WeaponEvent getEventForPop(String? key) => WeaponEvent.loadFromName(key: key!, addToQueue: false);
 
   @override
   Stream<WeaponState> mapEventToState(
@@ -85,7 +85,7 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
       ascensionMaterials: weapon.ascensionMaterials,
       refinements: weapon.refinements.map(
         (e) {
-          var description = translation.refinement;
+          var description = translation.refinement ?? '';
           for (var i = 0; i < e.values.length; i++) {
             description = description.replaceFirst('{{$i}}', '${e.values[i]}');
           }
