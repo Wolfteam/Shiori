@@ -9,11 +9,11 @@ class CircleWeapon extends StatelessWidget {
   final String image;
   final double radius;
   final bool forDrag;
-  final Function(String) onTap;
+  final Function(String)? onTap;
 
   const CircleWeapon({
-    Key key,
-    @required this.image,
+    Key? key,
+    required this.image,
     this.radius = 30,
     this.forDrag = false,
     this.onTap,
@@ -25,7 +25,7 @@ class CircleWeapon extends StatelessWidget {
       image: image,
       radius: radius,
       forDrag: forDrag,
-      onTap: (img) => onTap != null ? onTap(img) : _gotoWeaponPage(context),
+      onTap: (img) => onTap != null ? onTap!(img) : _gotoWeaponPage(context),
     );
   }
 

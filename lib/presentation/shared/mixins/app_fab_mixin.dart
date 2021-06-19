@@ -3,8 +3,8 @@ import 'package:genshindb/presentation/shared/app_fab.dart';
 import 'package:genshindb/presentation/shared/extensions/scroll_controller_extensions.dart';
 
 mixin AppFabMixin<T extends StatefulWidget> on State<T>, SingleTickerProviderStateMixin<T> {
-  ScrollController scrollController;
-  AnimationController hideFabAnimController;
+  late ScrollController scrollController;
+  late AnimationController hideFabAnimController;
   bool isInitiallyVisible = false;
   bool hideOnTop = true;
 

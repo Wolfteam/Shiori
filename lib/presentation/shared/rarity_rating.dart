@@ -8,9 +8,9 @@ class RarityRating extends StatelessWidget {
   final Function(int) onRated;
 
   const RarityRating({
-    Key key,
-    @required this.rarity,
-    @required this.onRated,
+    Key? key,
+    required this.rarity,
+    required this.onRated,
     this.size = 35.0,
     this.stars = 5,
   }) : super(key: key);
@@ -22,7 +22,7 @@ class RarityRating extends StatelessWidget {
       child: SmoothStarRating(
         rating: rarity.toDouble(),
         allowHalfRating: false,
-        onRated: (v) => onRated(v.toInt()),
+        onRated: (v) => onRated(v!.toInt()),
         size: size,
         color: Colors.yellow,
         starCount: stars,

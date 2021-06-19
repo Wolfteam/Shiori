@@ -8,11 +8,11 @@ class SettingsCardContent extends StatelessWidget {
   final Widget child;
 
   const SettingsCardContent({
-    Key key,
-    @required this.title,
-    @required this.subTitle,
-    @required this.icon,
-    @required this.child,
+    Key? key,
+    required this.title,
+    required this.subTitle,
+    required this.icon,
+    required this.child,
   }) : super(key: key);
 
   @override

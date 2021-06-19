@@ -11,8 +11,8 @@ class AscensionMaterialsSummaryWidget extends StatelessWidget {
   final AscensionMaterialsSummary summary;
 
   const AscensionMaterialsSummaryWidget({
-    Key key,
-    @required this.summary,
+    Key? key,
+    required this.summary,
   }) : super(key: key);
 
   @override
@@ -26,7 +26,7 @@ class AscensionMaterialsSummaryWidget extends StatelessWidget {
           children: [
             Text(
               s.translateAscensionSummaryType(summary.type),
-              style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+              style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
             ),
             Wrap(
               alignment: WrapAlignment.center,
@@ -63,7 +63,7 @@ class AscensionMaterialsSummaryWidget extends StatelessWidget {
       if (materials.isNotEmpty)
         Text(
           s.translateDays(materials.expand((e) => e.days).toSet().toList()),
-          style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+          style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
         ),
       if (materials.isNotEmpty)
         Wrap(

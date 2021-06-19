@@ -13,21 +13,21 @@ const _type = AppNotificationType.gadget;
 class NotificationGadgetForm extends StatelessWidget {
   final String title;
   final String body;
-  final String note;
+  final String? note;
   final bool showNotification;
   final bool isInEditMode;
   final List<NotificationItemImage> images;
   final bool showOtherImages;
 
   const NotificationGadgetForm({
-    Key key,
-    this.title,
-    this.body,
+    Key? key,
+    required this.title,
+    required this.body,
     this.note,
-    this.showNotification,
-    this.isInEditMode,
-    this.images,
-    this.showOtherImages,
+    required this.showNotification,
+    required this.isInEditMode,
+    required this.images,
+    required this.showOtherImages,
   }) : super(key: key);
 
   @override

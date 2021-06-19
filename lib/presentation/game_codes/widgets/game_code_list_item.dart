@@ -15,18 +15,18 @@ import 'package:genshindb/presentation/shared/wrapped_ascension_material.dart';
 
 class GameCodeListItem extends StatelessWidget {
   final String code;
-  final DateTime discoveredOn;
-  final DateTime expiredOn;
+  final DateTime? discoveredOn;
+  final DateTime? expiredOn;
   final bool isUsed;
   final bool isExpired;
-  final AppServerResetTimeType region;
+  final AppServerResetTimeType? region;
 
   final List<ItemAscensionMaterialModel> rewards;
 
   GameCodeListItem({
-    Key key,
-    @required GameCodeModel item,
-  })  : code = item.code,
+    Key? key,
+    required GameCodeModel item,
+  })   : code = item.code,
         discoveredOn = item.discoveredOn,
         expiredOn = item.expiredOn,
         isUsed = item.isUsed,
@@ -41,7 +41,7 @@ class GameCodeListItem extends StatelessWidget {
     final theme = Theme.of(context);
     final textCodeStyle = !isUsed
         ? theme.textTheme.subtitle1
-        : theme.textTheme.subtitle1.copyWith(decoration: TextDecoration.lineThrough, decorationColor: theme.accentColor, decorationThickness: 2);
+        : theme.textTheme.subtitle1!.copyWith(decoration: TextDecoration.lineThrough, decorationColor: theme.accentColor, decorationThickness: 2);
 
     return Slidable(
       actionPane: const SlidableDrawerActionPane(),
@@ -90,12 +90,12 @@ class GameCodeListItem extends StatelessWidget {
                         crossAxisAlignment: WrapCrossAlignment.center,
                         children: [
                           Icon(
-                            region != null ? Icons.lock_outlined : Icons.lock_open_outlined,
+                            Icons.lock_outlined,
                             color: theme.accentColor,
                             size: 15,
                           ),
                           Text(
-                            s.onlyX(s.translateServerResetTimeType(region)),
+                            s.onlyX(s.translateServerResetTimeType(region!)),
                             style: theme.textTheme.caption,
                             overflow: TextOverflow.ellipsis,
                           ),

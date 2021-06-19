@@ -14,17 +14,17 @@ class CharacterDetailTalentAscensionMaterialsCard extends StatelessWidget {
   final List<CharacterFileMultiTalentAscensionMaterialModel> multiTalentAscensionMaterials;
 
   const CharacterDetailTalentAscensionMaterialsCard.withTalents({
-    Key key,
-    @required this.elementType,
-    @required this.talentAscensionMaterials,
-  })  : multiTalentAscensionMaterials = const [],
+    Key? key,
+    required this.elementType,
+    required this.talentAscensionMaterials,
+  })   : multiTalentAscensionMaterials = const [],
         super(key: key);
 
   const CharacterDetailTalentAscensionMaterialsCard.withMultiTalents({
-    Key key,
-    @required this.elementType,
-    @required this.multiTalentAscensionMaterials,
-  })  : talentAscensionMaterials = const [],
+    Key? key,
+    required this.elementType,
+    required this.multiTalentAscensionMaterials,
+  })   : talentAscensionMaterials = const [],
         super(key: key);
 
   @override

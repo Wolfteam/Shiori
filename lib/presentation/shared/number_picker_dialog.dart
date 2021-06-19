@@ -9,14 +9,14 @@ class NumberPickerDialog extends StatefulWidget {
   final int maxItemLevel;
   final int value;
   final String title;
-  final ItemBuilder itemBuilder;
+  final ItemBuilder? itemBuilder;
 
   const NumberPickerDialog({
-    Key key,
-    @required this.minItemLevel,
-    @required this.maxItemLevel,
-    @required this.value,
-    @required this.title,
+    Key? key,
+    required this.minItemLevel,
+    required this.maxItemLevel,
+    required this.value,
+    required this.title,
     this.itemBuilder,
   }) : super(key: key);
 

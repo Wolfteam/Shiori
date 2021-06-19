@@ -8,9 +8,9 @@ class NotificationTitleBody extends StatefulWidget {
   final String body;
 
   const NotificationTitleBody({
-    Key key,
-    @required this.title,
-    @required this.body,
+    Key? key,
+    required this.title,
+    required this.body,
   }) : super(key: key);
 
   @override
@@ -18,11 +18,11 @@ class NotificationTitleBody extends StatefulWidget {
 }
 
 class _NotificationTitleBodyState extends State<NotificationTitleBody> {
-  TextEditingController _titleController;
-  TextEditingController _bodyController;
+  late TextEditingController _titleController;
+  late TextEditingController _bodyController;
 
-  String _title;
-  String _body;
+  late String _title;
+  late String _body;
 
   @override
   void initState() {

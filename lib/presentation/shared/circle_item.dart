@@ -4,11 +4,11 @@ class CircleItem extends StatelessWidget {
   final String image;
   final double radius;
   final bool forDrag;
-  final Function(String) onTap;
+  final Function(String)? onTap;
 
   const CircleItem({
-    Key key,
-    @required this.image,
+    Key? key,
+    required this.image,
     this.radius = 35,
     this.forDrag = false,
     this.onTap,
@@ -31,7 +31,7 @@ class CircleItem extends StatelessWidget {
       child: InkWell(
         radius: radius,
         borderRadius: BorderRadius.circular(radius),
-        onTap: () => onTap != null ? onTap(image) : {},
+        onTap: () => onTap != null ? onTap!(image) : {},
         child: avatar,
       ),
     );

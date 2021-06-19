@@ -15,7 +15,7 @@ import 'widgets/game_code_list_item.dart';
 
 class GameCodesPage extends StatefulWidget {
   const GameCodesPage({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -23,7 +23,7 @@ class GameCodesPage extends StatefulWidget {
 }
 
 class _GameCodesPageState extends State<GameCodesPage> with SingleTickerProviderStateMixin, AppFabMixin {
-  RefreshController _refreshController;
+  late RefreshController _refreshController;
 
   @override
   void initState() {

@@ -6,8 +6,8 @@ class SliverCharacterAscensionMaterials extends StatelessWidget {
   final List<TodayCharAscensionMaterialsModel> charAscMaterials;
 
   const SliverCharacterAscensionMaterials({
-    Key key,
-    @required this.charAscMaterials,
+    Key? key,
+    required this.charAscMaterials,
   }) : super(key: key);
 
   @override

@@ -31,7 +31,7 @@ class GenshinDb {
   GenshinDb._();
 
   static const _kFontFam = 'GenshinDb';
-  static const String _kFontPkg = null;
+  static const String? _kFontPkg = null;
 
   static const IconData male = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData female = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);

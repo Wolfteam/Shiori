@@ -15,15 +15,15 @@ class SkillItem extends StatelessWidget {
   final bool isDesiredDecEnabled;
 
   const SkillItem({
-    Key key,
-    @required this.index,
-    @required this.name,
-    @required this.currentLevel,
-    @required this.desiredLevel,
-    @required this.isCurrentIncEnabled,
-    @required this.isCurrentDecEnabled,
-    @required this.isDesiredIncEnabled,
-    @required this.isDesiredDecEnabled,
+    Key? key,
+    required this.index,
+    required this.name,
+    required this.currentLevel,
+    required this.desiredLevel,
+    required this.isCurrentIncEnabled,
+    required this.isCurrentDecEnabled,
+    required this.isDesiredIncEnabled,
+    required this.isDesiredDecEnabled,
   }) : super(key: key);
 
   @override

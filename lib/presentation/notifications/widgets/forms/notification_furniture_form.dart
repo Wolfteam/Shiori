@@ -26,15 +26,15 @@ class NotificationFurnitureForm extends StatelessWidget {
   final bool showOtherImages;
 
   const NotificationFurnitureForm({
-    Key key,
-    @required this.timeType,
-    @required this.title,
-    @required this.body,
-    @required this.note,
-    @required this.showNotification,
-    @required this.isInEditMode,
-    @required this.images,
-    @required this.showOtherImages,
+    Key? key,
+    required this.timeType,
+    required this.title,
+    required this.body,
+    required this.note,
+    required this.showNotification,
+    required this.isInEditMode,
+    required this.images,
+    required this.showOtherImages,
   }) : super(key: key);
 
   @override

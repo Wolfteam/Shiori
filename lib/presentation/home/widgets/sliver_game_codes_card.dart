@@ -10,8 +10,8 @@ class SliverGameCodesCard extends StatelessWidget {
   final bool iconToTheLeft;
 
   const SliverGameCodesCard({
-    Key key,
-    @required this.iconToTheLeft,
+    Key? key,
+    required this.iconToTheLeft,
   }) : super(key: key);
 
   @override

@@ -8,9 +8,9 @@ class SliverRowGrid extends StatelessWidget {
   final Widget Function(int) builder;
 
   const SliverRowGrid({
-    Key key,
-    @required this.itemsCount,
-    @required this.builder,
+    Key? key,
+    required this.itemsCount,
+    required this.builder,
     this.crossAxisCount = 2,
     this.crossAxisSpacing = 5,
   }) : super(key: key);

@@ -8,10 +8,10 @@ class SliverCardItem extends StatelessWidget {
   final Function(BuildContext) onClick;
 
   const SliverCardItem({
-    Key key,
-    @required this.icon,
-    @required this.onClick,
-    @required this.children,
+    Key? key,
+    required this.icon,
+    required this.onClick,
+    required this.children,
     this.iconToTheLeft = false,
   }) : super(key: key);
 

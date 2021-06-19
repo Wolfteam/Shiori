@@ -10,9 +10,9 @@ class WeaponDetailRefinementsCard extends StatelessWidget {
   final List<WeaponFileRefinementModel> refinements;
 
   const WeaponDetailRefinementsCard({
-    Key key,
-    @required this.rarityColor,
-    @required this.refinements,
+    Key? key,
+    required this.rarityColor,
+    required this.refinements,
   }) : super(key: key);
 
   @override

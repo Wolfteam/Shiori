@@ -9,11 +9,11 @@ class CircleCharacter extends StatelessWidget {
   final String image;
   final double radius;
   final bool forDrag;
-  final Function(String) onTap;
+  final Function(String)? onTap;
 
   const CircleCharacter({
-    Key key,
-    @required this.image,
+    Key? key,
+    required this.image,
     this.radius = 35,
     this.forDrag = false,
     this.onTap,
@@ -24,7 +24,7 @@ class CircleCharacter extends StatelessWidget {
     return CircleItem(
       image: image,
       forDrag: forDrag,
-      onTap: (img) => onTap != null ? onTap(img) : _gotoCharacterPage(context),
+      onTap: (img) => onTap != null ? onTap!(img) : _gotoCharacterPage(context),
       radius: radius,
     );
   }

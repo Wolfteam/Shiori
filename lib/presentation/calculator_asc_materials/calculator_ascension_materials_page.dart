@@ -23,8 +23,8 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
   final int sessionKey;
 
   const CalculatorAscensionMaterialsPage({
-    Key key,
-    @required this.sessionKey,
+    Key? key,
+    required this.sessionKey,
   }) : super(key: key);
 
   @override
@@ -149,7 +149,7 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
       return;
     }
 
-    context.read<CalculatorAscMaterialsItemBloc>().add(CalculatorAscMaterialsItemEvent.load(key: keyName, isCharacter: true));
+    context.read<CalculatorAscMaterialsItemBloc>().add(CalculatorAscMaterialsItemEvent.load(key: keyName!, isCharacter: true));
 
     await showModalBottomSheet(
       context: context,
@@ -172,7 +172,7 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
       return;
     }
 
-    context.read<CalculatorAscMaterialsItemBloc>().add(CalculatorAscMaterialsItemEvent.load(key: keyName, isCharacter: false));
+    context.read<CalculatorAscMaterialsItemBloc>().add(CalculatorAscMaterialsItemEvent.load(key: keyName!, isCharacter: false));
 
     await showModalBottomSheet<bool>(
       context: context,
