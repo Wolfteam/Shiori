@@ -5,14 +5,14 @@ import 'styles.dart';
 
 class ItemDescriptionDetail extends StatelessWidget {
   final String title;
-  final Widget body;
+  final Widget? body;
   final Color textColor;
 
   const ItemDescriptionDetail({
-    Key key,
-    @required this.title,
-    @required this.body,
-    @required this.textColor,
+    Key? key,
+    required this.title,
+    this.body,
+    required this.textColor,
   }) : super(key: key);
 
   @override
@@ -37,7 +37,7 @@ class ItemDescriptionDetail extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: theme.textTheme.headline5.copyWith(color: textColor, fontWeight: FontWeight.bold),
+                    style: theme.textTheme.headline5!.copyWith(color: textColor, fontWeight: FontWeight.bold),
                     overflow: TextOverflow.ellipsis,
                   ),
                   Divider(color: textColor, thickness: 2),
@@ -46,7 +46,7 @@ class ItemDescriptionDetail extends StatelessWidget {
             ),
           ),
         ),
-        if (body != null) body
+        if (body != null) body!
       ],
     );
   }

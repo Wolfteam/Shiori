@@ -8,8 +8,8 @@ class ItemDescriptionCard extends StatelessWidget {
   final List<Widget> widgets;
 
   const ItemDescriptionCard({
-    Key key,
-    @required this.description,
+    Key? key,
+    required this.description,
     this.widgets = const [],
   }) : super(key: key);
 
@@ -32,7 +32,7 @@ class ItemDescriptionCard extends StatelessWidget {
               contentPadding: EdgeInsets.zero,
               title: Transform.translate(
                 offset: Styles.listItemWithIconOffset,
-                child: Text(s.description, style: theme.textTheme.headline6.copyWith(color: Colors.amber)),
+                child: Text(s.description, style: theme.textTheme.headline6!.copyWith(color: Colors.amber)),
               ),
             ),
             Text(description, style: const TextStyle(fontSize: 12)),

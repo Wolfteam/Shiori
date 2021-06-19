@@ -6,8 +6,8 @@ class Rarity extends StatelessWidget {
   final MainAxisAlignment alignment;
 
   const Rarity({
-    Key key,
-    @required this.stars,
+    Key? key,
+    required this.stars,
     this.starSize = 20,
     this.alignment = MainAxisAlignment.center,
   }) : super(key: key);

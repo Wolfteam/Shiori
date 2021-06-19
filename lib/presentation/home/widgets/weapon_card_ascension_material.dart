@@ -12,11 +12,11 @@ class WeaponCardAscensionMaterial extends StatelessWidget {
   final List<String> weapons;
 
   const WeaponCardAscensionMaterial({
-    Key key,
-    @required this.name,
-    @required this.image,
-    @required this.days,
-    @required this.weapons,
+    Key? key,
+    required this.name,
+    required this.image,
+    required this.days,
+    required this.weapons,
   }) : super(key: key);
 
   @override
@@ -40,7 +40,7 @@ class WeaponCardAscensionMaterial extends StatelessWidget {
                 name,
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
             Tooltip(
@@ -49,7 +49,7 @@ class WeaponCardAscensionMaterial extends StatelessWidget {
                 obtainOn,
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.visible,
-                style: theme.textTheme.subtitle2.copyWith(fontSize: 12),
+                style: theme.textTheme.subtitle2!.copyWith(fontSize: 12),
               ),
             ),
             SizedBox(

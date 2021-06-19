@@ -17,7 +17,7 @@ import 'widgets/artifact_info_card.dart';
 class ArtifactsPage extends StatefulWidget {
   final bool isInSelectionMode;
 
-  static Future<String> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
+  static Future<String?> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
     final bloc = context.read<ArtifactsBloc>();
     bloc.add(ArtifactsEvent.init(excludeKeys: excludeKeys));
 
@@ -31,7 +31,7 @@ class ArtifactsPage extends StatefulWidget {
   }
 
   const ArtifactsPage({
-    Key key,
+    Key? key,
     this.isInSelectionMode = false,
   }) : super(key: key);
 

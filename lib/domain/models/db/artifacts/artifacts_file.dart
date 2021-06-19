@@ -6,9 +6,9 @@ part 'artifacts_file.freezed.dart';
 part 'artifacts_file.g.dart';
 
 @freezed
-abstract class ArtifactsFile implements _$ArtifactsFile {
+class ArtifactsFile with _$ArtifactsFile {
   factory ArtifactsFile({
-    @required List<ArtifactFileModel> artifacts,
+    required List<ArtifactFileModel> artifacts,
   }) = _ArtifactsFile;
 
   const ArtifactsFile._();

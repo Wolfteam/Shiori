@@ -7,8 +7,8 @@ class SliverDailyCheckInCard extends StatelessWidget {
   final bool iconToTheLeft;
 
   const SliverDailyCheckInCard({
-    Key key,
-    @required this.iconToTheLeft,
+    Key? key,
+    required this.iconToTheLeft,
   }) : super(key: key);
 
   @override

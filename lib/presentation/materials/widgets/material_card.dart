@@ -17,7 +17,7 @@ const double defaultHeight = 60;
 
 class MaterialCard extends StatelessWidget {
   final String keyName;
-  final String name;
+  final String? name;
   final String image;
   final int rarity;
   final double imgWidth;
@@ -31,12 +31,12 @@ class MaterialCard extends StatelessWidget {
   final int usedQuantity;
 
   const MaterialCard({
-    Key key,
-    @required this.keyName,
-    @required this.name,
-    @required this.image,
-    @required this.rarity,
-    @required this.type,
+    Key? key,
+    required this.keyName,
+    required this.name,
+    required this.image,
+    required this.rarity,
+    required this.type,
     this.imgWidth = defaultWidth,
     this.imgHeight = defaultHeight,
     this.withElevation = true,
@@ -48,8 +48,8 @@ class MaterialCard extends StatelessWidget {
         super(key: key);
 
   MaterialCard.item({
-    Key key,
-    @required MaterialCardModel item,
+    Key? key,
+    required MaterialCardModel item,
     this.imgWidth = defaultWidth,
     this.imgHeight = defaultHeight,
     this.withElevation = true,
@@ -66,11 +66,11 @@ class MaterialCard extends StatelessWidget {
         super(key: key);
 
   const MaterialCard.withoutDetails({
-    Key key,
-    @required this.keyName,
-    @required this.image,
-    @required this.rarity,
-    @required this.type,
+    Key? key,
+    required this.keyName,
+    required this.image,
+    required this.rarity,
+    required this.type,
     this.isInSelectionMode = false,
   })  : name = null,
         imgWidth = defaultWidth,
@@ -83,8 +83,8 @@ class MaterialCard extends StatelessWidget {
         super(key: key);
 
   MaterialCard.quantity({
-    Key key,
-    @required MaterialCardModel item,
+    Key? key,
+    required MaterialCardModel item,
     this.isInSelectionMode = false,
   })  : keyName = item.key,
         name = item.name,
@@ -137,7 +137,7 @@ class MaterialCard extends StatelessWidget {
                           ),
                           child: Text(
                             ' - ${CurrencyUtils.formatNumber(usedQuantity)} ',
-                            style: theme.textTheme.subtitle2.copyWith(color: Colors.white),
+                            style: theme.textTheme.subtitle2!.copyWith(color: Colors.white),
                           ),
                         ),
                       ),
@@ -149,17 +149,17 @@ class MaterialCard extends StatelessWidget {
                   margin: const EdgeInsets.only(bottom: 5),
                   child: Text(
                     CurrencyUtils.formatNumber(quantity),
-                    style: theme.textTheme.subtitle2.copyWith(color: Colors.white),
+                    style: theme.textTheme.subtitle2!.copyWith(color: Colors.white),
                   ),
                 ),
               if (!withoutDetails && !isInQuantityMode)
                 Center(
                   child: Tooltip(
-                    message: name,
+                    message: name!,
                     child: Text(
-                      name,
+                      name!,
                       textAlign: TextAlign.center,
-                      style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                      style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),

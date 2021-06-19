@@ -21,12 +21,12 @@ class CharacterDetailBuildCard extends StatelessWidget {
   final replaceDigitRegex = RegExp(r'\d{1}');
 
   CharacterDetailBuildCard({
-    Key key,
-    @required this.elementType,
-    @required this.isForSupport,
-    @required this.weapons,
-    @required this.artifacts,
-    @required this.subStatsToFocus,
+    Key? key,
+    required this.elementType,
+    required this.isForSupport,
+    required this.weapons,
+    required this.artifacts,
+    required this.subStatsToFocus,
   }) : super(key: key);
 
   @override
@@ -44,13 +44,13 @@ class CharacterDetailBuildCard extends StatelessWidget {
           children: [
             Text(
               isForSupport ? s.support : s.dps,
-              style: theme.textTheme.headline6.copyWith(color: elementType.getElementColorFromContext(context)),
+              style: theme.textTheme.headline6!.copyWith(color: elementType.getElementColorFromContext(context)),
             ),
             Container(
               margin: Styles.edgeInsetAll5,
               child: Text(
                 s.weapons,
-                style: theme.textTheme.subtitle2.copyWith(fontWeight: FontWeight.bold),
+                style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
             _buildWeapons(context),
@@ -58,7 +58,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
               margin: Styles.edgeInsetAll5,
               child: Text(
                 s.artifacts,
-                style: theme.textTheme.subtitle2.copyWith(fontWeight: FontWeight.bold),
+                style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
             if (subStatsToFocus.isNotEmpty) _buildSubStatsToFocus(context),
@@ -125,12 +125,12 @@ class CharacterDetailBuildCard extends StatelessWidget {
     final items = artifactOrder.mapIndex(
       (digit, index) {
         final stat = artifact.stats[index];
-        final path = artifact.one.image.replaceFirst(replaceDigitRegex, '$digit');
+        final path = artifact.one!.image.replaceFirst(replaceDigitRegex, '$digit');
         return ArtifactCard.withoutDetails(
           name: s.translateStatTypeWithoutValue(stat),
           image: path,
-          rarity: artifact.one.rarity,
-          keyName: artifact.one.key,
+          rarity: artifact.one!.rarity,
+          keyName: artifact.one!.key,
         );
       },
     ).toList();
@@ -199,7 +199,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
         child: Text(
           s.or,
           textAlign: TextAlign.center,
-          style: theme.textTheme.subtitle2.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+          style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
     );
@@ -230,7 +230,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
       margin: Styles.edgeInsetHorizontal5,
       child: Text(
         '${s.subStats}: $text',
-        style: theme.textTheme.subtitle2.copyWith(
+        style: theme.textTheme.subtitle2!.copyWith(
           fontWeight: FontWeight.bold,
           color: elementType.getElementColorFromContext(context),
           fontSize: 12,

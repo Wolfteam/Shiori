@@ -8,8 +8,8 @@ class MaterialItemButton extends StatelessWidget {
   final double size;
 
   const MaterialItemButton({
-    Key key,
-    @required this.image,
+    Key? key,
+    required this.image,
     this.size = 30,
   }) : super(key: key);
 

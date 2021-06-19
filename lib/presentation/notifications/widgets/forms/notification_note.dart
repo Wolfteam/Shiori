@@ -4,17 +4,17 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
 
 class NotificationNote extends StatefulWidget {
-  final String note;
+  final String? note;
 
-  const NotificationNote({Key key, @required this.note}) : super(key: key);
+  const NotificationNote({Key? key, required this.note}) : super(key: key);
 
   @override
   _NotificationNoteState createState() => _NotificationNoteState();
 }
 
 class _NotificationNoteState extends State<NotificationNote> {
-  TextEditingController _textController;
-  String _currentValue;
+  late TextEditingController _textController;
+  String? _currentValue;
 
   @override
   void initState() {

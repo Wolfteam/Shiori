@@ -9,24 +9,24 @@ class ElementReactionCard extends StatelessWidget {
   final List<String> secondary;
   final bool showPlusIcon;
   final bool showImages;
-  final String description;
+  final String? description;
 
   const ElementReactionCard.withImages({
-    Key key,
-    @required this.name,
-    @required this.effect,
-    @required this.principal,
-    @required this.secondary,
+    Key? key,
+    required this.name,
+    required this.effect,
+    required this.principal,
+    required this.secondary,
     this.showPlusIcon = true,
   })  : showImages = true,
         description = null,
         super(key: key);
 
   const ElementReactionCard.withoutImage({
-    Key key,
-    @required this.name,
-    @required this.effect,
-    @required this.description,
+    Key? key,
+    required this.name,
+    required this.effect,
+    required this.description,
     this.showPlusIcon = true,
   })  : principal = const [],
         secondary = const [],
@@ -57,19 +57,19 @@ class ElementReactionCard extends StatelessWidget {
               ),
             if (!showImages)
               Text(
-                description,
+                description!,
                 textAlign: TextAlign.center,
-                style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
               ),
             Text(
               name,
               textAlign: TextAlign.center,
-              style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+              style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
             ),
             Text(
               effect,
               textAlign: TextAlign.center,
-              style: theme.textTheme.subtitle2.copyWith(fontSize: 12),
+              style: theme.textTheme.subtitle2!.copyWith(fontSize: 12),
             )
           ],
         ),

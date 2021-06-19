@@ -9,8 +9,8 @@ class SliverMyInventoryCard extends StatelessWidget {
   final bool iconToTheLeft;
 
   const SliverMyInventoryCard({
-    Key key,
-    @required this.iconToTheLeft,
+    Key? key,
+    required this.iconToTheLeft,
   }) : super(key: key);
 
   @override

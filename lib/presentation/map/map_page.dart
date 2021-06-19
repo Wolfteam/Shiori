@@ -89,11 +89,7 @@ class _MapPageState extends State<MapPage> {
                 url: state.mapUrl,
                 userAgent: state.userAgent,
                 ignoreSSLErrors: true,
-                withJavascript: true,
-                withLocalStorage: true,
                 appCacheEnabled: true,
-                clearCookies: false,
-                clearCache: false,
                 initialChild: const Center(
                   child: CircularProgressIndicator(),
                 ),

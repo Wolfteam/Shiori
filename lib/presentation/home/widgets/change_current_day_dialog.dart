@@ -5,8 +5,8 @@ class ChangeCurrentDayDialog extends StatefulWidget {
   final int currentSelectedDay;
 
   const ChangeCurrentDayDialog({
-    Key key,
-    @required this.currentSelectedDay,
+    Key? key,
+    required this.currentSelectedDay,
   }) : super(key: key);
 
   @override
@@ -14,7 +14,7 @@ class ChangeCurrentDayDialog extends StatefulWidget {
 }
 
 class _ChangeCurrentDayDialogState extends State<ChangeCurrentDayDialog> {
-  int currentSelectedDay;
+  late int currentSelectedDay;
 
   @override
   void initState() {

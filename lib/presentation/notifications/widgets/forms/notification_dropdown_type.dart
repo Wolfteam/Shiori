@@ -13,9 +13,9 @@ class NotificationDropdownType extends StatelessWidget {
   final bool isExpanded;
 
   const NotificationDropdownType({
-    Key key,
-    @required this.selectedValue,
-    @required this.isInEditMode,
+    Key? key,
+    required this.selectedValue,
+    required this.isInEditMode,
     this.isExpanded = true,
   }) : super(key: key);
 

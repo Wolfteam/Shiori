@@ -11,11 +11,11 @@ class IncrementButton extends StatelessWidget {
   final Function(int) onAdd;
 
   const IncrementButton({
-    Key key,
-    @required this.title,
-    @required this.value,
-    @required this.onMinus,
-    @required this.onAdd,
+    Key? key,
+    required this.title,
+    required this.value,
+    required this.onMinus,
+    required this.onAdd,
     this.incrementIsDisabled = false,
     this.decrementIsDisabled = false,
   }) : super(key: key);

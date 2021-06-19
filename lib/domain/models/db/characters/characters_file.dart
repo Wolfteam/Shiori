@@ -7,9 +7,9 @@ part 'characters_file.freezed.dart';
 part 'characters_file.g.dart';
 
 @freezed
-abstract class CharactersFile implements _$CharactersFile {
+class CharactersFile with _$CharactersFile {
   factory CharactersFile({
-    @required List<CharacterFileModel> characters,
+    required List<CharacterFileModel> characters,
   }) = _CharactersFile;
 
   factory CharactersFile.fromJson(Map<String, dynamic> json) => _$CharactersFileFromJson(json);

@@ -6,7 +6,7 @@ class AppPathUtils {
   //internal memory/android/data/com.miraisoft.genshindb/files/logs
   static Future<String> get logsPath async {
     final dir = await getExternalStorageDirectory();
-    final dirPath = '${dir.path}/Logs';
+    final dirPath = '${dir!.path}/Logs';
     await _generateDirectoryIfItDoesntExist(dirPath);
     return dirPath;
   }

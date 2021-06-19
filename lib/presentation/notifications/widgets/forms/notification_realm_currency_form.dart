@@ -30,17 +30,17 @@ class NotificationRealmCurrency extends StatelessWidget {
   final int currentTrustRank;
 
   const NotificationRealmCurrency({
-    Key key,
-    @required this.title,
-    @required this.body,
-    @required this.currentRealmCurrency,
-    @required this.note,
-    @required this.showNotification,
-    @required this.isInEditMode,
-    @required this.images,
-    @required this.showOtherImages,
-    @required this.currentRankType,
-    @required this.currentTrustRank,
+    Key? key,
+    required this.title,
+    required this.body,
+    required this.currentRealmCurrency,
+    required this.note,
+    required this.showNotification,
+    required this.isInEditMode,
+    required this.images,
+    required this.showOtherImages,
+    required this.currentRankType,
+    required this.currentTrustRank,
   }) : super(key: key);
 
   @override

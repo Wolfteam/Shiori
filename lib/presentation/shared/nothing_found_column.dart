@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'nothing_found.dart';
 
 class NothingFoundColumn extends StatelessWidget {
-  final String msg;
+  final String? msg;
   final IconData icon;
   final EdgeInsets padding;
 

@@ -9,24 +9,24 @@ class CharCardAscensionMaterial extends StatelessWidget {
   final String name;
   final String image;
   final List<String> charImgs;
-  final String bossName;
+  final String? bossName;
   final List<int> days;
 
   const CharCardAscensionMaterial.fromDays({
-    Key key,
-    @required this.name,
-    @required this.image,
-    @required this.days,
-    @required this.charImgs,
+    Key? key,
+    required this.name,
+    required this.image,
+    required this.days,
+    required this.charImgs,
   })  : bossName = null,
         super(key: key);
 
   const CharCardAscensionMaterial.fromBoss({
-    Key key,
-    @required this.name,
-    @required this.image,
-    @required this.bossName,
-    @required this.charImgs,
+    Key? key,
+    required this.name,
+    required this.image,
+    required this.bossName,
+    required this.charImgs,
   })  : days = const [],
         super(key: key);
 
@@ -35,7 +35,7 @@ class CharCardAscensionMaterial extends StatelessWidget {
     final s = S.of(context);
     final theme = Theme.of(context);
     final chars = charImgs.map((e) => CircleCharacter(image: e)).toList();
-    final obtainOn = days.isNotEmpty ? s.translateDays(days) : bossName;
+    final obtainOn = days.isNotEmpty ? s.translateDays(days) : bossName!;
 
     return Card(
       margin: Styles.edgeInsetAll10,
@@ -58,7 +58,7 @@ class CharCardAscensionMaterial extends StatelessWidget {
                       name,
                       textAlign: TextAlign.center,
                       overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                      style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
                     ),
                   ),
                   Tooltip(
@@ -66,7 +66,7 @@ class CharCardAscensionMaterial extends StatelessWidget {
                     child: Text(
                       obtainOn,
                       textAlign: TextAlign.center,
-                      style: theme.textTheme.subtitle2.copyWith(fontSize: 12),
+                      style: theme.textTheme.subtitle2!.copyWith(fontSize: 12),
                     ),
                   ),
                 ],

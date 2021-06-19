@@ -14,29 +14,29 @@ import 'skill_item.dart';
 
 class AddEditItemBottomSheet extends StatelessWidget {
   final int sessionKey;
-  final int index;
-  final String keyName;
+  final int? index;
+  final String? keyName;
   final bool isInEditMode;
   final bool isAWeapon;
   final bool isActive;
 
   const AddEditItemBottomSheet.toAddItem({
-    Key key,
-    @required this.sessionKey,
-    @required this.keyName,
-    @required this.isAWeapon,
-  })  : index = null,
+    Key? key,
+    required this.sessionKey,
+    required this.keyName,
+    required this.isAWeapon,
+  })   : index = null,
         isInEditMode = false,
         isActive = true,
         super(key: key);
 
   const AddEditItemBottomSheet.toEditItem({
-    Key key,
-    @required this.sessionKey,
-    @required this.index,
-    @required this.isAWeapon,
-    @required this.isActive,
-  })  : keyName = null,
+    Key? key,
+    required this.sessionKey,
+    required this.index,
+    required this.isAWeapon,
+    required this.isActive,
+  })   : keyName = null,
         isInEditMode = true,
         super(key: key);
 
@@ -60,18 +60,18 @@ class AddEditItemBottomSheet extends StatelessWidget {
               Text(
                 s.level,
                 textAlign: TextAlign.center,
-                style: theme.textTheme.subtitle2.copyWith(fontWeight: FontWeight.bold),
+                style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
               ),
               Container(
                 margin: const EdgeInsets.only(bottom: 5),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    OutlineButton(
+                    OutlinedButton(
                       onPressed: () => _showLevelPickerDialog(context, state.currentLevel, true),
                       child: Text(s.currentX(state.currentLevel)),
                     ),
-                    OutlineButton(
+                    OutlinedButton(
                       onPressed: () => _showLevelPickerDialog(context, state.desiredLevel, false),
                       child: Text(s.desiredX(state.desiredLevel)),
                     ),
@@ -98,7 +98,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
                 children: [
                   Text(
                     s.useMaterialsFromInventory,
-                    style: theme.textTheme.subtitle2.copyWith(fontWeight: FontWeight.bold),
+                    style: theme.textTheme.subtitle2!.copyWith(fontWeight: FontWeight.bold),
                   ),
                   Container(
                     margin: const EdgeInsets.only(top: 5),
@@ -118,17 +118,17 @@ class AddEditItemBottomSheet extends StatelessWidget {
               ButtonBar(
                 buttonPadding: const EdgeInsets.symmetric(horizontal: 10),
                 children: <Widget>[
-                  OutlineButton(
+                  OutlinedButton(
                     onPressed: () => Navigator.pop(context),
                     child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
                   ),
                   if (isInEditMode)
-                    OutlineButton(
+                    OutlinedButton(
                       onPressed: () => _removeItem(context),
                       child: Text(s.delete, style: TextStyle(color: theme.primaryColor)),
                     ),
                   if (isInEditMode)
-                    OutlineButton(
+                    OutlinedButton(
                       onPressed: () => isAWeapon
                           ? _applyChangesForWeapon(
                               state.currentLevel,
@@ -151,8 +151,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
                             ),
                       child: Text(isActive ? s.inactive : s.active, style: TextStyle(color: theme.primaryColor)),
                     ),
-                  RaisedButton(
-                    color: theme.primaryColor,
+                  ElevatedButton(
                     onPressed: () => isAWeapon
                         ? _applyChangesForWeapon(
                             state.currentLevel,
@@ -216,7 +215,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
     final event = !isInEditMode
         ? CalculatorAscMaterialsEvent.addWeapon(
             sessionKey: sessionKey,
-            key: keyName,
+            key: keyName!,
             currentLevel: currentLevel,
             desiredLevel: desiredLevel,
             currentAscensionLevel: currentAscensionLevel,
@@ -225,7 +224,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
           )
         : CalculatorAscMaterialsEvent.updateWeapon(
             sessionKey: sessionKey,
-            index: index,
+            index: index!,
             currentLevel: currentLevel,
             desiredLevel: desiredLevel,
             currentAscensionLevel: currentAscensionLevel,
@@ -250,7 +249,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
     final event = !isInEditMode
         ? CalculatorAscMaterialsEvent.addCharacter(
             sessionKey: sessionKey,
-            key: keyName,
+            key: keyName!,
             currentLevel: currentLevel,
             desiredLevel: desiredLevel,
             skills: skills,
@@ -260,7 +259,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
           )
         : CalculatorAscMaterialsEvent.updateCharacter(
             sessionKey: sessionKey,
-            index: index,
+            index: index!,
             currentLevel: currentLevel,
             desiredLevel: desiredLevel,
             skills: skills,
@@ -274,7 +273,7 @@ class AddEditItemBottomSheet extends StatelessWidget {
   }
 
   void _removeItem(BuildContext context) {
-    context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.removeItem(sessionKey: sessionKey, index: index));
+    context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.removeItem(sessionKey: sessionKey, index: index!));
     Navigator.pop(context);
   }
 

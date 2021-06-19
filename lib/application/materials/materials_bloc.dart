@@ -55,7 +55,7 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
   }
 
   MaterialsState _buildInitialState({
-    String search,
+    String? search,
     List<String> excludeKeys = const [],
     int rarity = 0,
     MaterialType type = MaterialType.all,

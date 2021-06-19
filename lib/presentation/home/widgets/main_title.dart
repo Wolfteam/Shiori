@@ -6,8 +6,8 @@ class MainTitle extends StatelessWidget {
   final String title;
 
   const MainTitle({
-    Key key,
-    @required this.title,
+    Key? key,
+    required this.title,
   }) : super(key: key);
 
   @override
@@ -17,7 +17,7 @@ class MainTitle extends StatelessWidget {
       margin: Styles.edgeInsetHorizontal16,
       child: Text(
         title,
-        style: theme.textTheme.headline6.copyWith(fontWeight: FontWeight.bold),
+        style: theme.textTheme.headline6!.copyWith(fontWeight: FontWeight.bold),
         overflow: TextOverflow.ellipsis,
       ),
     );

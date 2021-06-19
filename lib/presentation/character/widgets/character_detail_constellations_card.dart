@@ -12,9 +12,9 @@ class CharacterDetailConstellationsCard extends StatelessWidget {
   final List<CharacterConstellationModel> constellations;
 
   const CharacterDetailConstellationsCard({
-    Key key,
-    @required this.elementType,
-    @required this.constellations,
+    Key? key,
+    required this.elementType,
+    required this.constellations,
   }) : super(key: key);
 
   @override
@@ -48,7 +48,7 @@ class CharacterDetailConstellationsCard extends StatelessWidget {
             ),
             Text(
               model.title,
-              style: theme.textTheme.subtitle1.copyWith(color: elementType.getElementColorFromContext(context)),
+              style: theme.textTheme.subtitle1!.copyWith(color: elementType.getElementColorFromContext(context)),
               textAlign: TextAlign.center,
             ),
             Text(
@@ -61,7 +61,7 @@ class CharacterDetailConstellationsCard extends StatelessWidget {
               child: Text(
                 model.description,
                 textAlign: TextAlign.center,
-                style: theme.textTheme.bodyText2.copyWith(fontSize: 12),
+                style: theme.textTheme.bodyText2!.copyWith(fontSize: 12),
               ),
             ),
             if (model.descriptions.isNotEmpty) BulletList(items: model.descriptions),
@@ -69,9 +69,9 @@ class CharacterDetailConstellationsCard extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(top: 10),
                 child: Text(
-                  model.secondDescription,
+                  model.secondDescription!,
                   textAlign: TextAlign.center,
-                  style: theme.textTheme.bodyText2.copyWith(fontSize: 12),
+                  style: theme.textTheme.bodyText2!.copyWith(fontSize: 12),
                 ),
               ),
           ],

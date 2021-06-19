@@ -9,8 +9,8 @@ class SliverWishSimulatorCard extends StatelessWidget {
   final bool iconToTheLeft;
 
   const SliverWishSimulatorCard({
-    Key key,
-    @required this.iconToTheLeft,
+    Key? key,
+    required this.iconToTheLeft,
   }) : super(key: key);
 
   @override

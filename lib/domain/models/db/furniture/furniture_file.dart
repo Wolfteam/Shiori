@@ -6,9 +6,9 @@ part 'furniture_file.freezed.dart';
 part 'furniture_file.g.dart';
 
 @freezed
-abstract class FurnitureFile implements _$FurnitureFile {
+class FurnitureFile with _$FurnitureFile {
   factory FurnitureFile({
-    @required List<FurnitureFileModel> furniture,
+    required List<FurnitureFileModel> furniture,
   }) = _FurnitureFile;
 
   FurnitureFile._();

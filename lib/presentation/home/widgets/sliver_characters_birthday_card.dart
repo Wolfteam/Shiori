@@ -45,7 +45,7 @@ class SliverCharactersBirthdayCard extends StatelessWidget {
                                     message: s.happyBirthday,
                                     child: Text(
                                       s.happyBirthday,
-                                      style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                                      style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
                                       textAlign: TextAlign.center,
                                       overflow: TextOverflow.ellipsis,
                                     ),

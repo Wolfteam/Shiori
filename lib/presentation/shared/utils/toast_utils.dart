@@ -62,7 +62,7 @@ class ToastUtils {
     );
   }
 
-  static Widget _buildToast(String msg, Color textColor, Color bgColor, Icon icon, BuildContext context) {
+  static Widget _buildToast(String msg, Color textColor, Color bgColor, Icon icon, BuildContext? context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
       decoration: BoxDecoration(

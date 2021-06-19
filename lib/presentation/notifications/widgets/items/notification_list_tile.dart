@@ -20,16 +20,16 @@ class NotificationListTitle extends StatelessWidget {
   final Duration remaining;
   final DateTime createdAt;
   final DateTime completesAt;
-  final String note;
+  final String? note;
   final bool showNotification;
 
   final Widget subtitle;
 
   NotificationListTitle({
-    Key key,
-    @required models.NotificationItem item,
-    @required this.subtitle,
-  })  : itemKey = item.key,
+    Key? key,
+    required models.NotificationItem item,
+    required this.subtitle,
+  })   : itemKey = item.key,
         type = item.type,
         image = item.image,
         remaining = item.remaining,

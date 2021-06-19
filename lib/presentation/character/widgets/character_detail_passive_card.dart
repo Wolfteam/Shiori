@@ -12,9 +12,9 @@ class CharacterDetailPassiveCard extends StatelessWidget {
   final List<CharacterPassiveTalentModel> passives;
 
   const CharacterDetailPassiveCard({
-    Key key,
-    @required this.elementType,
-    @required this.passives,
+    Key? key,
+    required this.elementType,
+    required this.passives,
   }) : super(key: key);
 
   @override
@@ -49,7 +49,7 @@ class CharacterDetailPassiveCard extends StatelessWidget {
             ),
             Text(
               model.title,
-              style: theme.textTheme.subtitle1.copyWith(color: elementType.getElementColorFromContext(context)),
+              style: theme.textTheme.subtitle1!.copyWith(color: elementType.getElementColorFromContext(context)),
               textAlign: TextAlign.center,
             ),
             Text(
@@ -62,7 +62,7 @@ class CharacterDetailPassiveCard extends StatelessWidget {
               child: Text(
                 model.description,
                 textAlign: TextAlign.center,
-                style: theme.textTheme.bodyText2.copyWith(fontSize: 12),
+                style: theme.textTheme.bodyText2!.copyWith(fontSize: 12),
               ),
             ),
             if (model.descriptions.isNotEmpty) BulletList(items: model.descriptions)

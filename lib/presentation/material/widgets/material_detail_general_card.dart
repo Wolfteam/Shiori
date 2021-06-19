@@ -14,11 +14,11 @@ class MaterialDetailGeneralCard extends StatelessWidget {
   final List<int> days;
 
   const MaterialDetailGeneralCard({
-    Key key,
-    @required this.name,
-    @required this.rarity,
-    @required this.type,
-    @required this.days,
+    Key? key,
+    required this.name,
+    required this.rarity,
+    required this.type,
+    required this.days,
   }) : super(key: key);
 
   @override
@@ -30,7 +30,7 @@ class MaterialDetailGeneralCard extends StatelessWidget {
       children: [
         Text(
           name,
-          style: theme.textTheme.headline5.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+          style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         Rarity(stars: rarity, starSize: 25, alignment: MainAxisAlignment.start),
         ItemDescription(
