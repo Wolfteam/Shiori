@@ -95,7 +95,7 @@ class CalculatorServiceImpl implements CalculatorService {
     int desiredAscensionLevel,
     List<CharacterSkill> skills,
   ) {
-    final expMaterials = _getItemExperienceMaterials(currentLevel, desiredLevel, true);
+    final expMaterials = _getItemExperienceMaterials(currentLevel, desiredLevel, char.rarity, true);
 
     final ascensionMaterials = char.ascensionMaterials
         .where((m) => m.rank > currentAscensionLevel && m.rank <= desiredAscensionLevel)
@@ -144,7 +144,7 @@ class CalculatorServiceImpl implements CalculatorService {
     int currentAscensionLevel,
     int desiredAscensionLevel,
   ) {
-    final expMaterials = _getItemExperienceMaterials(currentLevel, desiredLevel, false);
+    final expMaterials = _getItemExperienceMaterials(currentLevel, desiredLevel, weapon.rarity, false);
     final materials = weapon.ascensionMaterials
         .where((m) => m.level > _mapToWeaponLevel(currentAscensionLevel) && m.level <= _mapToWeaponLevel(desiredAscensionLevel))
         .expand((m) => m.materials)
@@ -336,12 +336,12 @@ class CalculatorServiceImpl implements CalculatorService {
     }
   }
 
-  List<ItemAscensionMaterialModel> _getItemExperienceMaterials(int currentLevel, int desiredLevel, bool forCharacters) {
+  List<ItemAscensionMaterialModel> _getItemExperienceMaterials(int currentLevel, int desiredLevel, int rarity, bool forCharacters) {
     final materials = <ItemAscensionMaterialModel>[];
     //Here we order the exp materials in a way that the one that gives more exp is first and so on
     final expMaterials = _genshinService.getMaterials(forCharacters ? MaterialType.expCharacter : MaterialType.expWeapon)
       ..sort((x, y) => (y.experienceAttributes.experience - x.experienceAttributes.experience).round());
-    var requiredExp = getItemTotalExp(currentLevel, desiredLevel, forCharacters);
+    var requiredExp = getItemTotalExp(currentLevel, desiredLevel, rarity, forCharacters);
     final moraMaterial = _genshinService.getMaterials(MaterialType.currency).first;
 
     for (final material in expMaterials) {

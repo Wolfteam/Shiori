@@ -7,13 +7,20 @@ import 'package:genshindb/presentation/home/widgets/sliver_card_item.dart';
 import 'package:genshindb/presentation/monsters/monsters_page.dart';
 
 class SliverMonstersCard extends StatelessWidget {
+  final bool iconToTheLeft;
+
+  const SliverMonstersCard({
+    Key key,
+    @required this.iconToTheLeft,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
     return SliverCardItem(
       onClick: (context) => _goToMonstersPage(context),
-      iconToTheLeft: true,
+      iconToTheLeft: iconToTheLeft,
       icon: Image.asset(Assets.getOtherMaterialPath('monster.png'), width: 60, height: 60, color: theme.accentColor),
       children: [
         Text(
@@ -27,7 +34,7 @@ class SliverMonstersCard extends StatelessWidget {
 
   Future<void> _goToMonstersPage(BuildContext context) async {
     context.read<MonstersBloc>().add(const MonstersEvent.init());
-    final route = MaterialPageRoute(builder: (c) => MonstersPage());
+    final route = MaterialPageRoute(builder: (c) => const MonstersPage());
     await Navigator.push(context, route);
     await route.completed;
     context.read<MonstersBloc>().add(const MonstersEvent.close());

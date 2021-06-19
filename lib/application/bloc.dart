@@ -18,6 +18,8 @@ export 'main_tab/main_tab_bloc.dart';
 export 'material/material_bloc.dart';
 export 'materials/materials_bloc.dart';
 export 'monsters/monsters_bloc.dart';
+export 'notification/notification_bloc.dart';
+export 'notifications/notifications_bloc.dart';
 export 'settings/settings_bloc.dart';
 export 'tier_list_form/tier_list_form_bloc.dart';
 export 'tierlist/tier_list_bloc.dart';

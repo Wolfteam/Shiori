@@ -20,6 +20,7 @@ abstract class AppSettings implements _$AppSettings {
     @required AppServerResetTimeType serverResetTime,
     @required bool doubleBackToClose,
     @required bool useOfficialMap,
+    @required bool useTwentyFourHoursFormat,
   }) = _AppSettings;
   const AppSettings._();
 

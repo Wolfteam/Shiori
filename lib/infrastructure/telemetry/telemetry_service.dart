@@ -1,4 +1,5 @@
 import 'package:enum_to_string/enum_to_string.dart';
+import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/device_info_service.dart';
 import 'package:genshindb/domain/services/telemetry_service.dart';
@@ -65,7 +66,7 @@ class TelemetryServiceImpl implements TelemetryService {
   }
 
   @override
-  Future<void> trackUrlOpened(bool loadMap, bool loadWishSimulator, bool networkAvailable) async {
+  Future<void> trackUrlOpened(bool loadMap, bool loadWishSimulator, bool loadDailyCheckIn, bool networkAvailable) async {
     final props = {
       'NetworkAvailable': networkAvailable.toString(),
     };
@@ -74,6 +75,8 @@ class TelemetryServiceImpl implements TelemetryService {
       await trackEventAsync('Map-Opened', props);
     } else if (loadWishSimulator) {
       await trackEventAsync('WishSimulator-Opened', props);
+    } else if (loadDailyCheckIn) {
+      await trackEventAsync('DailyCheckIn-Opened', props);
     }
   }
 
@@ -137,4 +140,9 @@ class TelemetryServiceImpl implements TelemetryService {
 
   @override
   Future<void> trackItemUpdatedInInventory(String key, int quantity) => trackEventAsync('MyInventory-Updated', {'Key_Qty': '${key}_$quantity'});
+
+  @override
+  Future<void> trackNotificationCreated(AppNotificationType type) => trackEventAsync('Notification-Created', {
+        'Type': EnumToString.convertToString(type),
+      });
 }

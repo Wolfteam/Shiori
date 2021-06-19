@@ -1742,122 +1742,163 @@
         }
       ],
       "builds": [],
-      "skills": [],
+      "skills": [
+        {
+          "key": "s1",
+          "image": null,
+          "type": "normalAttack",
+          "abilities": [
+            {
+              "key": "a1",
+              "type": "normalAttack"
+            },
+            {
+              "key": "a2",
+              "type": "chargedAttack"
+            },
+            {
+              "key": "a3",
+              "type": "plungingAttack"
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "image": null,
+          "type": "elementalSkill",
+          "abilities": [
+            {
+              "key": "a2",
+              "type": "hold"
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "image": null,
+          "type": "elementalBurst"
+        },
+        {
+          "key": "s4",
+          "image": null,
+          "type": "others"
+        }
+      ],
       "passives": [],
       "constellations": [],
-      "subStatType": "cryoDmgBonusPercentage",
+      "subStatType": "critDmgPercentage",
       "stats": [
         {
           "level": 1,
-          "baseHp": 1058,
-          "baseAtk": 23,
+          "baseHp": 1001,
+          "baseAtk": 27,
           "baseDef": 61,
           "isAnAscension": false,
-          "specificValue": 0
+          "specificValue": 50
         },
         {
           "level": 20,
-          "baseHp": 2745,
-          "baseAtk": 59,
+          "baseHp": 2597,
+          "baseAtk": 69,
           "baseDef": 158,
           "isAnAscension": false,
-          "specificValue": 0
+          "specificValue": 50
         },
         {
           "level": 20,
-          "baseHp": 3652,
-          "baseAtk": 78,
+          "baseHp": 3455,
+          "baseAtk": 92,
           "baseDef": 211,
           "isAnAscension": true,
-          "specificValue": 0
+          "specificValue": 50
         },
         {
           "level": 40,
-          "baseHp": 5465,
-          "baseAtk": 117,
+          "baseHp": 5170,
+          "baseAtk": 138,
           "baseDef": 315,
           "isAnAscension": false,
-          "specificValue": 0
+          "specificValue": 50
         },
         {
           "level": 40,
-          "baseHp": 6110,
-          "baseAtk": 131,
+          "baseHp": 5779,
+          "baseAtk": 154,
           "baseDef": 352,
           "isAnAscension": true,
-          "specificValue": 7.2
+          "specificValue": 59.6
         },
         {
           "level": 50,
-          "baseHp": 7029,
-          "baseAtk": 151,
+          "baseHp": 6649,
+          "baseAtk": 177,
           "baseDef": 405,
           "isAnAscension": false,
-          "specificValue": 7.2
+          "specificValue": 59.6
         },
         {
           "level": 50,
-          "baseHp": 7889,
-          "baseAtk": 169,
+          "baseHp": 7462,
+          "baseAtk": 198,
           "baseDef": 455,
           "isAnAscension": true,
-          "specificValue": 14.4
+          "specificValue": 69.2
         },
         {
           "level": 60,
-          "baseHp": 8818,
-          "baseAtk": 189,
+          "baseHp": 8341,
+          "baseAtk": 222,
           "baseDef": 509,
           "isAnAscension": false,
-          "specificValue": 14.4
+          "specificValue": 69.2
         },
         {
           "level": 60,
-          "baseHp": 9462,
-          "baseAtk": 203,
+          "baseHp": 8951,
+          "baseAtk": 238,
           "baseDef": 546,
           "isAnAscension": true,
-          "specificValue": 14.4
+          "specificValue": 69.2
         },
         {
           "level": 70,
-          "baseHp": 10400,
-          "baseAtk": 223,
+          "baseHp": 9838,
+          "baseAtk": 262,
           "baseDef": 600,
           "isAnAscension": false,
-          "specificValue": 14.4
+          "specificValue": 69.2
         },
         {
           "level": 70,
-          "baseHp": 11045,
-          "baseAtk": 237,
+          "baseHp": 10448,
+          "baseAtk": 278,
           "baseDef": 637,
           "isAnAscension": true,
-          "specificValue": 21.6
+          "specificValue": 78.8
         },
         {
           "level": 80,
-          "baseHp": 11993,
-          "baseAtk": 257,
+          "baseHp": 11345,
+          "baseAtk": 302,
           "baseDef": 692,
           "isAnAscension": false,
-          "specificValue": 21.6
+          "specificValue": 78.8
         },
         {
           "level": 80,
-          "baseHp": 12637,
-          "baseAtk": 271,
+          "baseHp": 11954,
+          "baseAtk": 318,
           "baseDef": 729,
           "isAnAscension": true,
-          "specificValue": 28.8
+          "specificValue": 88.4
         },
         {
           "level": 90,
-          "baseHp": 13593,
-          "baseAtk": 292,
+          "baseHp": 12858,
+          "baseAtk": 342,
           "baseDef": 784,
           "isAnAscension": false,
-          "specificValue": 28.8
+          "specificValue": 88.4
         }
       ]
     },
@@ -5918,8 +5959,8 @@
       "image": "Eula.png",
       "fullImage": "Eula.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": true,
       "region": "mondstadt",
       "role": "mainDps",
@@ -6315,7 +6356,57 @@
           ]
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "uprising_satire.png",
+            "wolfs_gravestone.png",
+            "the_unforged.png",
+            "serpent_spine.png",
+            "snow_tombed_starsilver.png",
+            "prototype_aminus.png"
+          ],
+          "artifacts": [
+            {
+              "one": "pale_flame_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "multiples": [
+                {
+                  "quantity": 2,
+                  "image": "pale_flame_4.png"
+                },
+                {
+                  "quantity": 2,
+                  "image": "bloodstained_chivalry_4.png"
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage"
+          ]
+        }
+      ],
       "skills": [
         {
           "key": "s1",
@@ -6338,51 +6429,72 @@
         },
         {
           "key": "s2",
-          "type": "elementalSkill"
+          "type": "elementalSkill",
+          "image": "icetide_vortex.png",
+          "abilities": [
+            {
+              "key": "a1",
+              "type": "press"
+            },
+            {
+              "key": "a2",
+              "type": "hold"
+            }
+          ]
         },
         {
           "key": "s3",
-          "type": "elementalBurst"
+          "type": "elementalBurst",
+          "image": "burst_glacial_illumination.png"
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "unlockedAt": -1
+          "unlockedAt": -1,
+          "image": "eula_p1.png"
         },
         {
           "key": "p2",
-          "unlockedAt": 1
+          "unlockedAt": 1,
+          "image": "eula_p2.png"
         },
         {
           "key": "p3",
-          "unlockedAt": 4
+          "unlockedAt": 4,
+          "image": "eula_p3.png"
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "number": 1
+          "number": 1,
+          "image": "eula_c1.png"
         },
         {
           "key": "c2",
-          "number": 2
+          "number": 2,
+          "image": "eula_c2.png"
         },
         {
           "key": "c3",
-          "number": 3
+          "number": 3,
+          "image": "burst_glacial_illumination.png"
         },
         {
           "key": "c4",
-          "number": 4
+          "number": 4,
+          "image": "eula_c4.png"
         },
         {
           "key": "c5",
-          "number": 5
+          "number": 5,
+          "image": "icetide_vortex.png"
         },
         {
           "key": "c6",
-          "number": 6
+          "number": 6,
+          "image": "eula_c6.png"
         }
       ],
       "subStatType": "critDmgPercentage",
@@ -7180,7 +7292,7 @@
       "isNew": false,
       "isFemale": true,
       "region": "liyue",
-      "role": "supportDps",
+      "role": "mainDps",
       "tier": "s",
       "birthday": "12/02",
       "ascensionMaterials": [
@@ -9908,6 +10020,678 @@
           "baseDef": 792,
           "isAnAscension": false,
           "specificValue": 26.7
+        }
+      ]
+    },
+    {
+      "key": "Kazuha",
+      "rarity": 5,
+      "weaponType": "sword",
+      "elementType": "anemo",
+      "image": "Kazuha.png",
+      "fullImage": "Kazuha.png",
+      "secondFullImage": null,
+      "isComingSoon": true,
+      "isNew": false,
+      "isFemale": false,
+      "region": "inazuma",
+      "role": "supportDps",
+      "tier": "a",
+      "birthday": "10/29",
+      "ascensionMaterials": [
+        {
+          "rank": 1,
+          "level": 20,
+          "materials": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_sliver.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "local",
+              "image": "sea_ganoderma.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "treasure_hoarder_insignia.png"
+            },
+            {
+              "quantity": 20000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "level": 40,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_fragment.png"
+            },
+            {
+              "quantity": 2,
+              "materialType": "elementalStone",
+              "image": "maguu_kishin.png"
+            },
+            {
+              "quantity": 10,
+              "materialType": "local",
+              "image": "sea_ganoderma.png"
+            },
+            {
+              "quantity": 15,
+              "materialType": "common",
+              "image": "treasure_hoarder_insignia.png"
+            },
+            {
+              "quantity": 40000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "level": 50,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_fragment.png"
+            },
+            {
+              "quantity": 4,
+              "materialType": "elementalStone",
+              "image": "maguu_kishin.png"
+            },
+            {
+              "quantity": 20,
+              "materialType": "local",
+              "image": "sea_ganoderma.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "silver_raven_insignia.png"
+            },
+            {
+              "quantity": 60000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "level": 60,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_chunk.png"
+            },
+            {
+              "quantity": 8,
+              "materialType": "elementalStone",
+              "image": "maguu_kishin.png"
+            },
+            {
+              "quantity": 30,
+              "materialType": "local",
+              "image": "sea_ganoderma.png"
+            },
+            {
+              "quantity": 18,
+              "materialType": "common",
+              "image": "silver_raven_insignia.png"
+            },
+            {
+              "quantity": 80000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "level": 70,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_chunk.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "elementalStone",
+              "image": "maguu_kishin.png"
+            },
+            {
+              "quantity": 45,
+              "materialType": "local",
+              "image": "sea_ganoderma.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "golden_raven_insignia.png"
+            },
+            {
+              "quantity": 100000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "level": 80,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "jewels",
+              "image": "vayuda_turquoise_gemstone.png"
+            },
+            {
+              "quantity": 20,
+              "materialType": "elementalStone",
+              "image": "maguu_kishin.png"
+            },
+            {
+              "quantity": 60,
+              "materialType": "local",
+              "image": "sea_ganoderma.png"
+            },
+            {
+              "quantity": 24,
+              "materialType": "common",
+              "image": "golden_raven_insignia.png"
+            },
+            {
+              "quantity": 120000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        }
+      ],
+      "talentAscensionMaterials": [
+        {
+          "level": 2,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "teaching_of_diligence.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "treasure_hoarder_insignia.png"
+            },
+            {
+              "quantity": 12500,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "materials": [
+            {
+              "quantity": 2,
+              "materialType": "talents",
+              "image": "guide_to_diligence.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "silver_raven_insignia.png"
+            },
+            {
+              "quantity": 17500,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "materials": [
+            {
+              "quantity": 4,
+              "materialType": "talents",
+              "image": "guide_to_diligence.png"
+            },
+            {
+              "quantity": 4,
+              "materialType": "common",
+              "image": "silver_raven_insignia.png"
+            },
+            {
+              "quantity": 25000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "talents",
+              "image": "guide_to_diligence.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "silver_raven_insignia.png"
+            },
+            {
+              "quantity": 30000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "materials": [
+            {
+              "quantity": 9,
+              "materialType": "talents",
+              "image": "guide_to_diligence.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "silver_raven_insignia.png"
+            },
+            {
+              "quantity": 35000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "materials": [
+            {
+              "quantity": 4,
+              "materialType": "talents",
+              "image": "philosophies_of_diligence.png"
+            },
+            {
+              "quantity": 4,
+              "materialType": "common",
+              "image": "golden_raven_insignia.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "gilded_scale.png"
+            },
+            {
+              "quantity": 120000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "talents",
+              "image": "philosophies_of_diligence.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "golden_raven_insignia.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "gilded_scale.png"
+            },
+            {
+              "quantity": 260000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "materials": [
+            {
+              "quantity": 12,
+              "materialType": "talents",
+              "image": "philosophies_of_diligence.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "golden_raven_insignia.png"
+            },
+            {
+              "quantity": 2,
+              "materialType": "talents",
+              "image": "gilded_scale.png"
+            },
+            {
+              "quantity": 450000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "materials": [
+            {
+              "quantity": 16,
+              "materialType": "talents",
+              "image": "philosophies_of_diligence.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "golden_raven_insignia.png"
+            },
+            {
+              "quantity": 2,
+              "materialType": "talents",
+              "image": "gilded_scale.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "crown_of_sagehood.png"
+            },
+            {
+              "quantity": 700000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        }
+      ],
+      "builds": [
+        {
+          "isSupport": true,
+          "weaponImages": [
+            "primordial_jade_cutter.png",
+            "freedom_sworn.png",
+            "the_alley_flash.png",
+            "lions_roar.png",
+            "blackcliff_longsword.png"
+          ],
+          "artifacts": [
+            {
+              "one": "viridescent_venerer_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "anemoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "one": "viridescent_venerer_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "elementaryMastery",
+                "elementaryMastery",
+                "elementaryMastery"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "elementaryMastery",
+            "atkPercentage",
+            "energyRechargePercentage"
+          ]
+        },
+        {
+          "isSupport": true,
+          "weaponImages": [
+            "freedom_sworn.png",
+            "iron_sting.png",
+            "the_alley_flash.png"
+          ],
+          "artifacts": [
+            {
+              "one": "viridescent_venerer_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "elementaryMastery",
+                "elementaryMastery",
+                "elementaryMastery"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "elementaryMastery",
+            "atkPercentage",
+            "energyRechargePercentage"
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "key": "s1",
+          "image": null,
+          "type": "normalAttack",
+          "abilities": [
+            {
+              "key": "a1",
+              "type": "normalAttack"
+            },
+            {
+              "key": "a2",
+              "type": "chargedAttack"
+            },
+            {
+              "key": "a3",
+              "type": "plungingAttack"
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "image": null,
+          "type": "elementalSkill",
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "image": null,
+          "type": "elementalBurst",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "image": null,
+          "unlockedAt": -1
+        },
+        {
+          "key": "p2",
+          "image": null,
+          "unlockedAt": 1
+        },
+        {
+          "key": "p3",
+          "image": null,
+          "unlockedAt": 4
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": null
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": null
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": null
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": null
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": null
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": null
+        }
+      ],
+      "subStatType": "elementaryMastery",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1039,
+          "baseAtk": 23,
+          "baseDef": 63,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2695,
+          "baseAtk": 60,
+          "baseDef": 163,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3586,
+          "baseAtk": 80,
+          "baseDef": 217,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5366,
+          "baseAtk": 119,
+          "baseDef": 324,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5999,
+          "baseAtk": 133,
+          "baseDef": 363,
+          "isAnAscension": true,
+          "specificValue": 28.8
+        },
+        {
+          "level": 50,
+          "baseHp": 6902,
+          "baseAtk": 153,
+          "baseDef": 417,
+          "isAnAscension": false,
+          "specificValue": 28.8
+        },
+        {
+          "level": 50,
+          "baseHp": 7747,
+          "baseAtk": 172,
+          "baseDef": 468,
+          "isAnAscension": true,
+          "specificValue": 57.6
+        },
+        {
+          "level": 60,
+          "baseHp": 8659,
+          "baseAtk": 192,
+          "baseDef": 523,
+          "isAnAscension": false,
+          "specificValue": 57.6
+        },
+        {
+          "level": 60,
+          "baseHp": 9292,
+          "baseAtk": 206,
+          "baseDef": 562,
+          "isAnAscension": true,
+          "specificValue": 57.6
+        },
+        {
+          "level": 70,
+          "baseHp": 10213,
+          "baseAtk": 227,
+          "baseDef": 617,
+          "isAnAscension": false,
+          "specificValue": 57.6
+        },
+        {
+          "level": 70,
+          "baseHp": 10846,
+          "baseAtk": 241,
+          "baseDef": 656,
+          "isAnAscension": true,
+          "specificValue": 86.4
+        },
+        {
+          "level": 80,
+          "baseHp": 11777,
+          "baseAtk": 262,
+          "baseDef": 712,
+          "isAnAscension": false,
+          "specificValue": 86.4
+        },
+        {
+          "level": 80,
+          "baseHp": 12410,
+          "baseAtk": 276,
+          "baseDef": 750,
+          "isAnAscension": true,
+          "specificValue": 115.2
+        },
+        {
+          "level": 90,
+          "baseHp": 13348,
+          "baseAtk": 297,
+          "baseDef": 807,
+          "isAnAscension": false,
+          "specificValue": 115.2
         }
       ]
     },
@@ -15035,12 +15819,44 @@
         {
           "isSupport": false,
           "weaponImages": [
+            "uprising_satire.png",
             "wolfs_gravestone.png",
             "skyward_pride.png",
             "serpent_spine.png",
-            "prototype_aminus.png"
+            "prototype_aminus.png",
+            "snow_tombed_starsilver.png"
           ],
           "artifacts": [
+            {
+              "one": "pale_flame_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
+            {
+              "multiples": [
+                {
+                  "quantity": 2,
+                  "image": "pale_flame_4.png"
+                },
+                {
+                  "quantity": 2,
+                  "image": "bloodstained_chivalry_4.png"
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
             {
               "one": "gladiators_finale_4.png",
               "multiples": [],
@@ -15057,7 +15873,6 @@
             "critRatePercentage",
             "critDmgPercentage",
             "atkPercentage",
-            "atk",
             "energyRechargePercentage"
           ]
         }
@@ -22760,7 +23575,7 @@
       "fullImage": "Yanfei.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "liyue",
       "role": "mainDps",
@@ -23803,6 +24618,54 @@
         {
           "isSupport": false,
           "weaponImages": [
+            "crescent_pike.png",
+            "primordial_jade_winged_spear.png",
+            "vortex_vanquisher.png",
+            "lithic_spear.png"
+          ],
+          "artifacts": [
+            {
+              "multiples": [
+                {
+                  "quantity": 2,
+                  "image": "pale_flame_4.png"
+                },
+                {
+                  "quantity": 2,
+                  "image": "bloodstained_chivalry_4.png"
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
+            {
+              "one": "pale_flame_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "hpPercentage",
+            "energyRechargePercentage"
+          ]
+        },
+        {
+          "isSupport": false,
+          "weaponImages": [
             "primordial_jade_winged_spear.png",
             "vortex_vanquisher.png",
             "lithic_spear.png",
@@ -23852,7 +24715,7 @@
           "isSupport": true,
           "weaponImages": [
             "staff_of_homa.png",
-            "skyward_spine.png",
+            "deathmatch.png",
             "lithic_spear.png",
             "favonius_lance.png",
             "prototype_grudge.png"
@@ -23869,6 +24732,17 @@
                   "image": "noblesse_oblige_4.png"
                 }
               ],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "geoDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
+            {
+              "one": "tenacity_of_the_millelith_4.png",
+              "multiples": [],
               "stats": [
                 "hp",
                 "atk",

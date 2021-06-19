@@ -16,6 +16,12 @@ part 'character_file_model.g.dart';
 
 @freezed
 abstract class CharacterFileModel implements _$CharacterFileModel {
+  @late
+  String get fullCharacterImagePath => Assets.getCharacterFullPath(image);
+
+  @late
+  String get fullImagePath => Assets.getCharacterPath(image);
+
   factory CharacterFileModel({
     @required String key,
     @required int rarity,
@@ -42,7 +48,7 @@ abstract class CharacterFileModel implements _$CharacterFileModel {
     @required List<CharacterFileStatModel> stats,
   }) = _CharacterFileModel;
 
-  const CharacterFileModel._();
+  CharacterFileModel._();
 
   factory CharacterFileModel.fromJson(Map<String, dynamic> json) => _$CharacterFileModelFromJson(json);
 }

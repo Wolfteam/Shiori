@@ -248,8 +248,33 @@
       "key": "Ayaka",
       "pending": true,
       "name": "神里绫华",
-      "description": "The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated beast, flows within her veins.",
-      "skills": [],
+      "description": "The princess of the renowned House Kamisato of Inazuma. She's the embodiment of nobility and elegance.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Kamisato Art · Naname",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "Kamisato Art · Hyouka",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "Kamisato Art · Senho",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s4",
+          "title": "Kamisato Art · Soumetsu",
+          "description": null,
+          "abilities": []
+        }
+      ],
       "passives": [],
       "constellations": []
     },
@@ -980,8 +1005,8 @@
     },
     {
       "key": "Eula",
-      "name": "Eula",
-      "description": "The Spindrift Knight, a scion of the old aristocracy, and the Captain of the Knights of Favonius Reconnaissance Company. The reason for which a descendant of the ancient nobles might join the Knights remains a great mystery in Mondstadt to this very day.",
+      "name": "优菈",
+      "description": "古老家族出身的「浪花骑士」，西风骑士团游击小队队长。身为旧贵族后裔却加入了堪称死对头的西风骑士团，该事件至今仍是蒙德一大谜团。",
       "skills": [
         {
           "key": "s1",
@@ -1064,7 +1089,7 @@
         {
           "key": "c2",
           "title": "Lady of Seafoam",
-          "description": "#Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to {LAYOUT_MOBILE#Tapping}{LAYOUT_PC#Press}{LAYOUT_PS#Press} CD.",
+          "description": "Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to Tap CD.",
           "descriptions": []
         },
         {
@@ -1683,6 +1708,33 @@
           "descriptions": []
         }
       ]
+    },
+    {
+      "key": "Kazuha",
+      "name": "Kaedehara Kazuha",
+      "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Garyu Bladework",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "Chihayafuru",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "Manyou no Ittou",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
     },
     {
       "key": "Keqing",
@@ -3831,49 +3883,49 @@
     },
     {
       "key": "Yanfei",
-      "name": "Yanfei",
-      "description": "A well-known legal adviser active in Liyue Harbor. A brilliant young lady in whose veins runs the blood of an illuminated beast.",
+      "name": "烟绯",
+      "description": "活跃在璃月港的知名律师咨询师，混有仙兽血脉的精明少女。",
       "skills": [
         {
           "key": "s1",
-          "title": "Seal of Approval",
+          "title": "火漆制印",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Shoots fireballs that deal up to three counts of Pyro DMG.\nWhen Yanfei's Normal Attacks hit enemies, they will grant her a single Scarlet Seal. Yanfei may possess a maximum of 3 Scarlet Seals, and each time this effect is triggered, the duration of currently possessed Scarlet Seals will refresh.\nEach Scarlet Seal will decrease Yanfei's Stamina consumption and will disappear when she leaves the field.",
+              "description": "连续发射火球，造成最多三段的火元素伤害。普通攻击命中敌人时，会赋予烟绯一枚丹火印。初始最多持有三枚丹火印，每次触发都会刷新已有的丹火印持续时间。每枚丹火印都会降低烟绯的体力消耗，并会在烟绯退场时消失。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes Stamina and all Scarlet Seals before dealing AoE Pyro DMG to opponents after a short casting time.\nThis Charged Attack's AoE and DMG will increase according to the amount of Scarlet Seals consumed.",
+              "description": "消耗体力，短暂咏唱后，消耗所有的丹火印，在前方造成火元素范围伤害。 根据被消耗的丹火印数量，强化这次重击的范围与伤害。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.",
+              "description": "凝聚火元素的力量，从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成火元素范围伤害。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Signed Edict",
-          "description": "Summons blistering flames that deal AoE Pyro DMG.\nOpponents hit by the flames will grant Yanfei the maximum number of Scarlet Seals.",
+          "title": "丹书立约",
+          "description": "唤出烈焰，造成火元素范围伤害。\n命中敌人后，会为烟赋予最大数量的丹火印以火烧制的印除了法律效应之外，还带着烟绯自己的附加条款。",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Done Deal",
-          "description": "Triggers a spray of intense flames that rush at nearby opponents, dealing AoE Pyro DMG, granting Yanfei the maximum number of Scarlet Seals, and applying Brilliance to her.",
+          "title": "凭此结契",
+          "description": "引发喷薄爆发的烈火，冲击周围的敌人，造成火元素范围伤害，并为烟绯自己赋予最大数量的丹火印与灼灼效果。",
           "abilities": [
             {
-              "name": "Brilliance",
-              "description": "Has the following effects:",
+              "name": "灼灼",
+              "description": "具有如下效果：",
               "descriptions": [
-                "Grants Yanfei a Scarlet Seal at fixed intervals.",
-                "Increases the DMG dealt by her Charged Attacks.",
-                "The effects of Brilliance will end if Yanfei leaves the field or falls in battle."
+                "每间隔一段时间，为烟绯赋予一枚丹火印。",
+                "提高重击造成的伤害。",
+                "灼灼效果会在烟绯退场与倒下时移除。"
               ]
             }
           ]
@@ -3882,61 +3934,61 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Encyclopedic Expertise",
-          "description": "Displays the location of nearby resources unique to Liyue on the mini-map.",
+          "title": "博闻强记",
+          "description": "在小地图上显示周围的璃月区域特产的位置。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Proviso",
-          "description": "When Yanfei consumes Scarlet Seals by using a Charged Attack, each Scarlet Seal will increase Yanfei's Pyro DMG Bonus by 5%. This effects lasts for 6s. When a Charged Attack is used again during the effect's duration, it will dispel the previous effect.",
+          "title": "关联条款",
+          "description": "烟绯通过重击消耗丹火印时，每枚丹火印会提升烟绯5%的火元素伤害加成，持续6秒。在该效果的持续时间内再次施放重击时，会先移除原有的效果。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Blazing Eye",
-          "description": "When Yanfei's Charged Attack deals a CRIT Hit to opponents, she will deal an additional instance of AoE Pyro DMG equal to 80% of her ATK. This DMG counts as Charged Attack DMG.",
+          "title": "法兽灼眼",
+          "description": "烟绯主动施放的重击对敌人造成暴击时，会额外造成一次80%攻击力的火元素范围伤害。该伤害视为重击伤害。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "The Law Knows No Kindness",
-          "description": "When Yanfei uses her Charged Attack, each existing Scarlet Seal additionally reduces the stamina cost of this Charged Attack by 10% and increases resistance against interruption during its release.",
+          "title": "占理不饶人",
+          "description": "烟绯进行重击时，每持有一枚丹火印，都会提高烟绯在咏唱期间的抗打断能力，并额外降低本次重击10%的体力消耗。",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Right of Final Interpretation",
-          "description": "Increases Yanfei's Charged Attack CRIT Rate by 20% against enemies below 50% HP.",
+          "title": "最终解释权",
+          "description": "烟绯的重击对于生命值低于50%的敌人，暴击率提高20%。",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Samadhi Fire-Forged",
-          "description": "Increases the Level of Signed Edict by 3.\nMaximum upgrade level is 15.",
+          "title": "真火炼宝印",
+          "description": "丹书立约的技能等级提高3级。\n至多提升至15级。",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Supreme Amnesty",
-          "description": "When Done Deal is used:",
+          "title": "丹书金铁卷",
+          "description": "释放凭此结契时：",
           "descriptions": [
-            "Creates a shield that absorbs up to 45% of Yanfei's Max HP for 15s",
-            "This shield absorbs Pyro DMG 250% more effectively."
+            "生成一个伤害吸收量等于生命值上限45%的护盾，持续15秒。",
+            "该护盾对火元素伤害有250%的吸收效果。"
           ]
         },
         {
           "key": "c5",
-          "title": "Abiding Affidavit",
-          "description": "Increases the Level of Done Deal by 3.\nMaximum upgrade level is 15.",
+          "title": "遵法切结书",
+          "description": "凭此结契的技能等级提高3级。\n至多提升至15级。",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Extra Clause",
-          "description": "Increases the maximum number of Scarlet Seals by 1.",
+          "title": "是额外条款",
+          "description": "烟绯持有的丹火印最大数量增加一枚。",
           "descriptions": []
         }
       ]
@@ -4084,6 +4136,87 @@
           "descriptions": []
         }
       ]
+    },
+    {
+      "key": "Yoimiya",
+      "name": "Yoimiya",
+      "description": "N/A",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
+    },
+    {
+      "key": "Sayu",
+      "name": "Sayu",
+      "description": "N/A",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
+    },
+    {
+      "key": "Traveler (Electro)",
+      "name": "Traveler (Electro)",
+      "description": "N/A",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
     }
   ],
   "weapons": [
@@ -4743,9 +4876,27 @@
     },
     {
       "key": "Song of Broken Pines",
-      "name": "Song of Broken Pines",
+      "name": "松籁响起之时",
       "description": "A greatsword as light as the sigh of grass in the breeze, yet as merciless to the corrupt as a typhoon.",
       "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {{0}}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+    },
+    {
+      "key": "Freedom-Sworn",
+      "name": "Freedom-Sworn",
+      "description": "A straight sword, azure as antediluvian song, and as keen as the oaths of freedom taken in the Land of Wind.",
+      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {{0}}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+    },
+    {
+      "key": "Mitternachts Waltz",
+      "name": "Mitternachts Waltz",
+      "description": "A bow painted the color of sin and nights of wild fantasy.",
+      "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {{0}}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {{1}}% for 5s."
+    },
+    {
+      "key": "Dodoco Tales",
+      "name": "Dodoco Tales",
+      "description": "A children's book filled with childish short stories at which one cannot help but laugh.\nEven those readers who have long reached adulthood cannot help but be absorbed by the innocent, naive little adventures portrayed within.",
+      "refinement": "Normal Attack hits on opponents increase Charged Attack DMG by {{0}} for 6s. Charged Attack hits on opponents increase ATK by {{1}} for 6s."
     }
   ],
   "artifacts": [
@@ -4849,7 +5000,7 @@
     },
     {
       "key": "Martial Artist",
-      "name": "被怜爱的少女",
+      "name": "武人",
       "bonus": [
         {
           "key": "b1",
@@ -5193,29 +5344,29 @@
     },
     {
       "key": "Tenacity of the Millelith",
-      "name": "Tenacity of the Millelith",
+      "name": "千岩牢固",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "HP increased by 20%."
+          "bonus": "生命值提升20%。"
         },
         {
           "key": "b2",
-          "bonus": "When an Elemental Skill hits an opponent, the ATK of all nearby party members is increased by 20% and their Shield Strength is increased by 30% for 3s. This effect can be triggered once every 0.5s. This effect can still be triggered even when the character who is using this artifact set is not on the field."
+          "bonus": "元素战技命中敌人后，使队伍中附近的所有角色攻击力提升20%，护盾强效提升30%，持续3秒。该效果每0.5秒至多触发一次。装备此圣遗物套装效果的角色处于队伍后台时，依然能触发该效果。"
         }
       ]
     },
     {
       "key": "Pale Flame",
-      "name": "Pale Flame",
+      "name": "苍白之火",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Physical DMG is increased by 25%."
+          "bonus": "造成的物理伤害提高25%。"
         },
         {
           "key": "b2",
-          "bonus": "When an Elemental Skill hits an opponent, ATK is increased by 9% for 7s. This effect stacks up to 2 times and can be triggered once every 0.3s. Once 2 stacks are reached, the 2-set effect is increased by 100%."
+          "bonus": "元素战技命中敌人后，攻击力提升9%。该效果持续7秒，至多叠加2层，每0.3秒至多触发一次。叠满2层时，2件套的效果提升100%。"
         }
       ]
     }
@@ -6104,6 +6255,16 @@
       "key": "Gilded Scale",
       "name": "Gilded Scale",
       "description": "Scaled armor that grows naturally over mystical stone, tough and silent, and filled with the strength of the dragon king.\nAcross the years as countless generations returned to the mulch of the earth, gold and obsidian embedded themselves into flesh and blood forged from bedrock before spreading and turning into scales.\nSearing agony, wordless cries... perhaps they will all vanish when the grudges that spawned them, too, finally come to an end."
+    },
+    {
+      "key": "Maguu Kishin",
+      "name": "Maguu Kishin",
+      "description": "This core can power the inorganic Maguu Kenki and cause it to wield a blade like a living being.\nFlesh decays, and with it decays all martial art and memory, no matter how masterful or lovely.\nPerhaps only by converting one's four limbs and body into sturdy mechanical parts, and by at last sacrificing one's very own heart for a sophisticated mechanical one, can one transcend transient flesh and approach the everlasting..."
+    },
+    {
+      "key": "Sea Ganoderma",
+      "name": "Sea Ganoderma",
+      "description": "A species that only grows in certain special regions of the ocean and islands. It looks like a fungus of some sort, but it is in fact the result of the secretion and proliferation of certain soft-bodied organisms."
     }
   ],
   "debuffs": [
@@ -6585,6 +6746,42 @@
     {
       "key": "Wooden Shieldwall Mitachurl",
       "name": "木盾丘丘暴徒"
+    },
+    {
+      "key": "Maguu Kenki",
+      "name": "Maguu Kenki"
+    },
+    {
+      "key": "Hydro Mimic Boar",
+      "name": "Hydro Mimic Boar"
+    },
+    {
+      "key": "Hydro Mimic Crab",
+      "name": "Hydro Mimic Crab"
+    },
+    {
+      "key": "Hydro Mimic Crane",
+      "name": "Hydro Mimic Crane"
+    },
+    {
+      "key": "Hydro Mimic Ferret",
+      "name": "Hydro Mimic Ferret"
+    },
+    {
+      "key": "Hydro Mimic Finch",
+      "name": "Hydro Mimic Finch"
+    },
+    {
+      "key": "Hydro Mimic Frog",
+      "name": "Hydro Mimic Frog"
+    },
+    {
+      "key": "Hydro Mimic Mallard",
+      "name": "Hydro Mimic Mallard"
+    },
+    {
+      "key": "Hydro Mimic Raptor",
+      "name": "Hydro Mimic Raptor"
     }
   ]
 }

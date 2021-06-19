@@ -35,4 +35,8 @@ abstract class SettingsEvent with _$SettingsEvent {
   const factory SettingsEvent.useOfficialMapChanged({
     @required bool newValue,
   }) = _UseOfficialMapChanged;
+
+  const factory SettingsEvent.useTwentyFourHoursFormat({
+    @required bool newValue,
+  }) = _UseTwentyFourHoursFormat;
 }

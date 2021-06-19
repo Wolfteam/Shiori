@@ -1,9 +1,9 @@
 import 'dart:io';
 
-import 'package:device_info/device_info.dart';
-import 'package:flutter_user_agent/flutter_user_agent.dart';
+import 'package:device_info_plus/device_info_plus.dart';
+import 'package:flutter_user_agentx/flutter_user_agent.dart';
 import 'package:genshindb/domain/services/device_info_service.dart';
-import 'package:package_info/package_info.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 class DeviceInfoServiceImpl implements DeviceInfoService {
   Map<String, String> _deviceInfo;
@@ -40,12 +40,12 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
       final deviceInfo = DeviceInfoPlugin();
       final androidInfo = await deviceInfo.androidInfo;
       final packageInfo = await PackageInfo.fromPlatform();
-      _version = packageInfo.version;
+      _version = '${packageInfo.version}+${packageInfo.buildNumber}';
       _appName = packageInfo.appName;
       _deviceInfo = {
         'Model': androidInfo.model,
         'OsVersion': '${androidInfo.version.sdkInt}',
-        'AppVersion': '${packageInfo.version}+${packageInfo.buildNumber}'
+        'AppVersion': _version,
       };
 
       await FlutterUserAgent.init();

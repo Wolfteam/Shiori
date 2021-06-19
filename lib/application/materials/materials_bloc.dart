@@ -56,6 +56,7 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
 
   MaterialsState _buildInitialState({
     String search,
+    List<String> excludeKeys = const [],
     int rarity = 0,
     MaterialType type = MaterialType.all,
     MaterialFilterType filterType = MaterialFilterType.grouped,
@@ -63,6 +64,9 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
   }) {
     final isLoaded = state is _LoadedState;
     var data = _genshinService.getAllMaterialsForCard();
+    if (excludeKeys.isNotEmpty) {
+      data = data.where((el) => !excludeKeys.contains(el.key)).toList();
+    }
 
     if (!isLoaded) {
       return MaterialsState.loaded(
@@ -76,6 +80,7 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
         tempFilterType: filterType,
         sortDirectionType: sortDirectionType,
         tempSortDirectionType: sortDirectionType,
+        excludeKeys: excludeKeys,
       );
     }
 
@@ -114,6 +119,7 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
       tempFilterType: filterType,
       sortDirectionType: sortDirectionType,
       tempSortDirectionType: sortDirectionType,
+      excludeKeys: excludeKeys,
     );
     return s;
   }
