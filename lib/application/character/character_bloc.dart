@@ -28,7 +28,7 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
   ) : super(const CharacterState.loading());
 
   @override
-  CharacterEvent getEventForPop(String key) => CharacterEvent.loadFromName(key: key, addToQueue: false);
+  CharacterEvent getEventForPop(String? key) => CharacterEvent.loadFromName(key: key!, addToQueue: false);
 
   @override
   Stream<CharacterState> mapEventToState(
@@ -85,7 +85,7 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
       role: char.role,
       isFemale: char.isFemale,
       fullImage: Assets.getCharacterFullPath(char.fullImage),
-      secondFullImage: char.secondFullImage != null ? Assets.getCharacterFullPath(char.secondFullImage) : null,
+      secondFullImage: char.secondFullImage != null ? Assets.getCharacterFullPath(char.secondFullImage!) : null,
       description: translation.description,
       rarity: char.rarity,
       birthday: _localeService.formatCharBirthDate(char.birthday),
@@ -98,7 +98,7 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
         final skill = char.skills.firstWhere((s) => s.key == e.key);
         final abilities = e.abilities.map((a) {
           final type =
-              skill.abilities != null && skill.abilities.any((x) => x.key == a.key) ? skill.abilities.firstWhere((x) => x.key == a.key).type : null;
+              skill.abilities != null && skill.abilities!.any((x) => x.key == a.key) ? skill.abilities!.firstWhere((x) => x.key == a.key).type : null;
           return CharacterSkillAbilityModel(
             type: type,
             name: a.name,
@@ -144,7 +144,7 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
           weapons: build.weaponImages.map((e) => _genshinService.getWeaponForCardByImg(e)).toList(),
           artifacts: build.artifacts.map(
             (e) {
-              final one = e.one != null ? _genshinService.getArtifactForCardByImg(e.one) : null;
+              final one = e.one != null ? _genshinService.getArtifactForCardByImg(e.one!) : null;
               final multiples = e.multiples
                   .map((m) => CharacterBuildMultipleArtifactModel(
                         quantity: m.quantity,

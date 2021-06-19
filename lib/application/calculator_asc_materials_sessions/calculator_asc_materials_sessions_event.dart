@@ -1,20 +1,20 @@
 part of 'calculator_asc_materials_sessions_bloc.dart';
 
 @freezed
-abstract class CalculatorAscMaterialsSessionsEvent implements _$CalculatorAscMaterialsSessionsEvent {
+class CalculatorAscMaterialsSessionsEvent with _$CalculatorAscMaterialsSessionsEvent {
   const factory CalculatorAscMaterialsSessionsEvent.init() = _Init;
 
   const factory CalculatorAscMaterialsSessionsEvent.createSession({
-    @required String name,
+    required String name,
   }) = _CreateSession;
 
   const factory CalculatorAscMaterialsSessionsEvent.updateSession({
-    @required int key,
-    @required String name,
+    required int key,
+    required String name,
   }) = _UpdateSession;
 
   const factory CalculatorAscMaterialsSessionsEvent.deleteSession({
-    @required int key,
+    required int key,
   }) = _DeleteSession;
 
   const factory CalculatorAscMaterialsSessionsEvent.close() = _Close;

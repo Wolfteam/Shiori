@@ -1,11 +1,11 @@
 part of 'materials_bloc.dart';
 
 @freezed
-abstract class MaterialsEvent implements _$MaterialsEvent {
+class MaterialsEvent with _$MaterialsEvent {
   const factory MaterialsEvent.init({@Default(<String>[]) List<String> excludeKeys}) = _Init;
 
   const factory MaterialsEvent.searchChanged({
-    @required String search,
+    required String search,
   }) = _SearchChanged;
 
   const factory MaterialsEvent.rarityChanged(int rarity) = _RarityChanged;

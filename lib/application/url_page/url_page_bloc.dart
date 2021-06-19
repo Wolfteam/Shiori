@@ -41,7 +41,7 @@ class UrlPageBloc extends Bloc<UrlPageEvent, UrlPageState> {
           mapUrl: finalMapUrl,
           wishSimulatorUrl: wishSimulatorUrl,
           dailyCheckInUrl: dailyCheckInUrl,
-          userAgent: _deviceInfoService.userAgent,
+          userAgent: _deviceInfoService.userAgent!,
         );
       },
     );
