@@ -80,6 +80,7 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
                 hidden: true,
                 clearCache: true,
                 clearCookies: true,
+                initialChild: const Loading(useScaffold: false),
               );
             }
             return PageMessage(text: s.noInternetConnection);

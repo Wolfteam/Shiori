@@ -76,6 +76,7 @@ class _DailyCheckInPageState extends State<DailyCheckInPage> {
                   appBar: AppBar(title: Text(s.dailyCheckIn)),
                   url: state.dailyCheckInUrl,
                   hidden: true,
+                  initialChild: const Loading(useScaffold: false),
                 );
               }
               return PageMessage(text: s.noInternetConnection);
