@@ -87,7 +87,6 @@ class _MapPageState extends State<MapPage> {
             if (state.hasInternetConnection) {
               return WebviewScaffold(
                 url: state.mapUrl,
-                userAgent: state.userAgent,
                 ignoreSSLErrors: true,
                 appCacheEnabled: true,
                 hidden: true,
