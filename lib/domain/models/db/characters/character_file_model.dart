@@ -15,37 +15,35 @@ part 'character_file_model.freezed.dart';
 part 'character_file_model.g.dart';
 
 @freezed
-abstract class CharacterFileModel implements _$CharacterFileModel {
-  @late
+class CharacterFileModel with _$CharacterFileModel {
   String get fullCharacterImagePath => Assets.getCharacterFullPath(image);
 
-  @late
   String get fullImagePath => Assets.getCharacterPath(image);
 
   factory CharacterFileModel({
-    @required String key,
-    @required int rarity,
-    @required WeaponType weaponType,
-    @required ElementType elementType,
-    @required String image,
-    @required String fullImage,
-    String secondFullImage,
-    @required RegionType region,
-    @required bool isFemale,
-    @required bool isComingSoon,
-    @required bool isNew,
-    @required CharacterRoleType role,
-    @required String tier,
-    String birthday,
-    @required List<CharacterFileAscensionMaterialModel> ascensionMaterials,
-    @required List<CharacterFileTalentAscensionMaterialModel> talentAscensionMaterials,
-    List<CharacterFileMultiTalentAscensionMaterialModel> multiTalentAscensionMaterials,
-    @required List<CharacterFileBuild> builds,
-    @required List<CharacterFileSkillModel> skills,
-    @required List<CharacterFilePassiveModel> passives,
-    @required List<CharacterFileConstellationModel> constellations,
-    @required StatType subStatType,
-    @required List<CharacterFileStatModel> stats,
+    required String key,
+    required int rarity,
+    required WeaponType weaponType,
+    required ElementType elementType,
+    required String image,
+    required String fullImage,
+    String? secondFullImage,
+    required RegionType region,
+    required bool isFemale,
+    required bool isComingSoon,
+    required bool isNew,
+    required CharacterRoleType role,
+    required String tier,
+    String? birthday,
+    required List<CharacterFileAscensionMaterialModel> ascensionMaterials,
+    required List<CharacterFileTalentAscensionMaterialModel> talentAscensionMaterials,
+    List<CharacterFileMultiTalentAscensionMaterialModel>? multiTalentAscensionMaterials,
+    required List<CharacterFileBuild> builds,
+    required List<CharacterFileSkillModel> skills,
+    required List<CharacterFilePassiveModel> passives,
+    required List<CharacterFileConstellationModel> constellations,
+    required StatType subStatType,
+    required List<CharacterFileStatModel> stats,
   }) = _CharacterFileModel;
 
   CharacterFileModel._();
@@ -54,11 +52,11 @@ abstract class CharacterFileModel implements _$CharacterFileModel {
 }
 
 @freezed
-abstract class CharacterFileAscensionMaterialModel implements _$CharacterFileAscensionMaterialModel {
+class CharacterFileAscensionMaterialModel with _$CharacterFileAscensionMaterialModel {
   factory CharacterFileAscensionMaterialModel({
-    @required int rank,
-    @required int level,
-    @required List<ItemAscensionMaterialModel> materials,
+    required int rank,
+    required int level,
+    required List<ItemAscensionMaterialModel> materials,
   }) = _CharacterFileAscensionMaterialModel;
 
   const CharacterFileAscensionMaterialModel._();
@@ -67,10 +65,10 @@ abstract class CharacterFileAscensionMaterialModel implements _$CharacterFileAsc
 }
 
 @freezed
-abstract class CharacterFileTalentAscensionMaterialModel implements _$CharacterFileTalentAscensionMaterialModel {
+class CharacterFileTalentAscensionMaterialModel with _$CharacterFileTalentAscensionMaterialModel {
   factory CharacterFileTalentAscensionMaterialModel({
-    @required int level,
-    @required List<ItemAscensionMaterialModel> materials,
+    required int level,
+    required List<ItemAscensionMaterialModel> materials,
   }) = _CharacterFileTalentAscensionMaterialModel;
 
   const CharacterFileTalentAscensionMaterialModel._();
@@ -79,10 +77,10 @@ abstract class CharacterFileTalentAscensionMaterialModel implements _$CharacterF
 }
 
 @freezed
-abstract class CharacterFileMultiTalentAscensionMaterialModel implements _$CharacterFileMultiTalentAscensionMaterialModel {
+class CharacterFileMultiTalentAscensionMaterialModel with _$CharacterFileMultiTalentAscensionMaterialModel {
   factory CharacterFileMultiTalentAscensionMaterialModel({
-    @required int number,
-    @required List<CharacterFileTalentAscensionMaterialModel> materials,
+    required int number,
+    required List<CharacterFileTalentAscensionMaterialModel> materials,
   }) = _CharacterFileMultiTalentAscensionMaterialModel;
 
   const CharacterFileMultiTalentAscensionMaterialModel._();
@@ -92,12 +90,12 @@ abstract class CharacterFileMultiTalentAscensionMaterialModel implements _$Chara
 }
 
 @freezed
-abstract class CharacterFileBuild implements _$CharacterFileBuild {
+class CharacterFileBuild with _$CharacterFileBuild {
   factory CharacterFileBuild({
-    @required bool isSupport,
-    @required List<String> weaponImages,
-    @required List<CharacterFileArtifactBuild> artifacts,
-    @required List<StatType> subStatsToFocus,
+    required bool isSupport,
+    required List<String> weaponImages,
+    required List<CharacterFileArtifactBuild> artifacts,
+    required List<StatType> subStatsToFocus,
   }) = _CharacterFileBuild;
 
   const CharacterFileBuild._();
@@ -106,14 +104,13 @@ abstract class CharacterFileBuild implements _$CharacterFileBuild {
 }
 
 @freezed
-abstract class CharacterFileArtifactBuild implements _$CharacterFileArtifactBuild {
-  @late
-  String get fullImagePath => one != null ? Assets.getArtifactPath(one) : null;
+class CharacterFileArtifactBuild with _$CharacterFileArtifactBuild {
+  String? get fullImagePath => one != null ? Assets.getArtifactPath(one!) : null;
 
   factory CharacterFileArtifactBuild({
-    String one,
-    @required List<CharacterFileArtifactMultipleBuild> multiples,
-    @required List<StatType> stats,
+    String? one,
+    required List<CharacterFileArtifactMultipleBuild> multiples,
+    required List<StatType> stats,
   }) = _CharacterFileArtifactBuild;
 
   CharacterFileArtifactBuild._();
@@ -122,13 +119,12 @@ abstract class CharacterFileArtifactBuild implements _$CharacterFileArtifactBuil
 }
 
 @freezed
-abstract class CharacterFileArtifactMultipleBuild implements _$CharacterFileArtifactMultipleBuild {
-  @late
+class CharacterFileArtifactMultipleBuild with _$CharacterFileArtifactMultipleBuild {
   String get fullImagePath => Assets.getArtifactPath(image);
 
   factory CharacterFileArtifactMultipleBuild({
-    @required int quantity,
-    @required String image,
+    required int quantity,
+    required String image,
   }) = _CharacterFileArtifactMultipleBuild;
 
   CharacterFileArtifactMultipleBuild._();
@@ -137,15 +133,14 @@ abstract class CharacterFileArtifactMultipleBuild implements _$CharacterFileArti
 }
 
 @freezed
-abstract class CharacterFileSkillModel implements _$CharacterFileSkillModel {
-  @late
+class CharacterFileSkillModel with _$CharacterFileSkillModel {
   String get fullImagePath => Assets.getSkillPath(image);
 
   factory CharacterFileSkillModel({
-    @required String key,
-    @required CharacterSkillType type,
-    String image,
-    List<CharacterFileSkillAbilityModel> abilities,
+    required String key,
+    required CharacterSkillType type,
+    String? image,
+    List<CharacterFileSkillAbilityModel>? abilities,
   }) = _CharacterFileSkillModel;
 
   CharacterFileSkillModel._();
@@ -154,10 +149,10 @@ abstract class CharacterFileSkillModel implements _$CharacterFileSkillModel {
 }
 
 @freezed
-abstract class CharacterFileSkillAbilityModel implements _$CharacterFileSkillAbilityModel {
+class CharacterFileSkillAbilityModel with _$CharacterFileSkillAbilityModel {
   factory CharacterFileSkillAbilityModel({
-    @required String key,
-    @required CharacterSkillAbilityType type,
+    required String key,
+    required CharacterSkillAbilityType type,
   }) = _CharacterFileSkillAbilityModel;
 
   CharacterFileSkillAbilityModel._();
@@ -166,14 +161,13 @@ abstract class CharacterFileSkillAbilityModel implements _$CharacterFileSkillAbi
 }
 
 @freezed
-abstract class CharacterFilePassiveModel implements _$CharacterFilePassiveModel {
-  @late
+class CharacterFilePassiveModel with _$CharacterFilePassiveModel {
   String get fullImagePath => Assets.getSkillPath(image);
 
   factory CharacterFilePassiveModel({
-    @required String key,
-    @required int unlockedAt,
-    String image,
+    required String key,
+    required int unlockedAt,
+    String? image,
   }) = _CharacterFilePassiveModel;
 
   CharacterFilePassiveModel._();
@@ -182,14 +176,13 @@ abstract class CharacterFilePassiveModel implements _$CharacterFilePassiveModel 
 }
 
 @freezed
-abstract class CharacterFileConstellationModel implements _$CharacterFileConstellationModel {
-  @late
+class CharacterFileConstellationModel with _$CharacterFileConstellationModel {
   String get fullImagePath => Assets.getSkillPath(image);
 
   factory CharacterFileConstellationModel({
-    @required String key,
-    @required int number,
-    String image,
+    required String key,
+    required int number,
+    String? image,
   }) = _CharacterFileConstellationModel;
 
   CharacterFileConstellationModel._();
@@ -198,14 +191,14 @@ abstract class CharacterFileConstellationModel implements _$CharacterFileConstel
 }
 
 @freezed
-abstract class CharacterFileStatModel implements _$CharacterFileStatModel {
+class CharacterFileStatModel with _$CharacterFileStatModel {
   factory CharacterFileStatModel({
-    @required int level,
-    @required double baseHp,
-    @required double baseAtk,
-    @required double baseDef,
-    @required bool isAnAscension,
-    @required double specificValue,
+    required int level,
+    required double baseHp,
+    required double baseAtk,
+    required double baseDef,
+    required bool isAnAscension,
+    required double specificValue,
   }) = _CharacterFileStatModel;
 
   const CharacterFileStatModel._();

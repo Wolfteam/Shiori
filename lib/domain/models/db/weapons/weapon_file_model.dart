@@ -11,24 +11,23 @@ part 'weapon_file_model.freezed.dart';
 part 'weapon_file_model.g.dart';
 
 @freezed
-abstract class WeaponFileModel implements _$WeaponFileModel {
-  @late
+class WeaponFileModel with _$WeaponFileModel {
   String get fullImagePath => Assets.getWeaponPath(image, type);
 
   factory WeaponFileModel({
-    @required String key,
-    @required String image,
-    @required WeaponType type,
-    @required int atk,
-    @required int rarity,
-    @required StatType secondaryStat,
-    @required double secondaryStatValue,
-    @required ItemLocationType location,
-    @required bool isComingSoon,
-    @required List<WeaponFileAscensionMaterial> ascensionMaterials,
-    @required List<WeaponFileRefinement> refinements,
-    @required List<WeaponFileStatModel> stats,
-    List<ItemAscensionMaterialModel> craftingMaterials,
+    required String key,
+    required String image,
+    required WeaponType type,
+    required int atk,
+    required int rarity,
+    required StatType secondaryStat,
+    required double secondaryStatValue,
+    required ItemLocationType location,
+    required bool isComingSoon,
+    required List<WeaponFileAscensionMaterial> ascensionMaterials,
+    required List<WeaponFileRefinement> refinements,
+    required List<WeaponFileStatModel> stats,
+    List<ItemAscensionMaterialModel>? craftingMaterials,
   }) = _WeaponFileModel;
 
   WeaponFileModel._();
@@ -37,10 +36,10 @@ abstract class WeaponFileModel implements _$WeaponFileModel {
 }
 
 @freezed
-abstract class WeaponFileAscensionMaterial implements _$WeaponFileAscensionMaterial {
+class WeaponFileAscensionMaterial with _$WeaponFileAscensionMaterial {
   factory WeaponFileAscensionMaterial({
-    @required int level,
-    @required List<ItemAscensionMaterialModel> materials,
+    required int level,
+    required List<ItemAscensionMaterialModel> materials,
   }) = _WeaponFileAscensionMaterial;
 
   const WeaponFileAscensionMaterial._();
@@ -49,10 +48,10 @@ abstract class WeaponFileAscensionMaterial implements _$WeaponFileAscensionMater
 }
 
 @freezed
-abstract class WeaponFileRefinement implements _$WeaponFileRefinement {
+class WeaponFileRefinement with _$WeaponFileRefinement {
   factory WeaponFileRefinement({
-    @required int level,
-    @required List<double> values,
+    required int level,
+    required List<double> values,
   }) = _WeaponFileRefinement;
 
   const WeaponFileRefinement._();
@@ -61,12 +60,12 @@ abstract class WeaponFileRefinement implements _$WeaponFileRefinement {
 }
 
 @freezed
-abstract class WeaponFileStatModel implements _$WeaponFileStatModel {
+class WeaponFileStatModel with _$WeaponFileStatModel {
   factory WeaponFileStatModel({
-    @required int level,
-    @required double baseAtk,
-    @required bool isAnAscension,
-    @required double specificValue,
+    required int level,
+    required double baseAtk,
+    required bool isAnAscension,
+    required double specificValue,
   }) = _WeaponFileStatModel;
 
   const WeaponFileStatModel._();

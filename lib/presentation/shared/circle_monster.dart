@@ -7,11 +7,11 @@ import 'circle_item.dart';
 class CircleMonster extends StatelessWidget {
   final String image;
   final double radius;
-  final Function(String) onTap;
+  final Function(String)? onTap;
 
   const CircleMonster({
-    Key key,
-    @required this.image,
+    Key? key,
+    required this.image,
     this.radius = 35,
     this.onTap,
   }) : super(key: key);
@@ -23,7 +23,7 @@ class CircleMonster extends StatelessWidget {
     return CircleItem(
       image: image,
       radius: radius,
-      onTap: (_) => onTap != null ? onTap(image) : ToastUtils.showWarningToast(fToast, s.comingSoon),
+      onTap: (_) => onTap != null ? onTap!(image) : ToastUtils.showWarningToast(fToast, s.comingSoon),
     );
   }
 }

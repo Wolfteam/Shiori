@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 
 class MonsterCardModel {
@@ -9,10 +8,10 @@ class MonsterCardModel {
   final bool isComingSoon;
 
   MonsterCardModel({
-    @required this.key,
-    @required this.image,
-    @required this.name,
-    @required this.type,
-    @required this.isComingSoon,
+    required this.key,
+    required this.image,
+    required this.name,
+    required this.type,
+    required this.isComingSoon,
   });
 }

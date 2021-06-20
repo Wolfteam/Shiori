@@ -7,10 +7,10 @@ class NotificationListSubtitleDates extends StatelessWidget {
   final bool useTwentyFourHoursFormat;
 
   const NotificationListSubtitleDates({
-    Key key,
-    @required this.createdAt,
-    @required this.completesAt,
-    @required this.useTwentyFourHoursFormat,
+    Key? key,
+    required this.createdAt,
+    required this.completesAt,
+    required this.useTwentyFourHoursFormat,
   }) : super(key: key);
 
   @override

@@ -7,8 +7,8 @@ class SliverWeaponAscensionMaterials extends StatelessWidget {
   final List<TodayWeaponAscensionMaterialModel> weaponAscMaterials;
 
   const SliverWeaponAscensionMaterials({
-    Key key,
-    @required this.weaponAscMaterials,
+    Key? key,
+    required this.weaponAscMaterials,
   }) : super(key: key);
 
   @override

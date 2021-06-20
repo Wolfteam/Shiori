@@ -5,8 +5,8 @@ class ChildItemDisabled extends StatelessWidget {
   final bool isDisabled;
 
   const ChildItemDisabled({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.isDisabled = true,
   }) : super(key: key);
 

@@ -7,15 +7,15 @@ class NotificationResinSubtitle extends StatelessWidget {
   final int initialResin;
   final DateTime createdAt;
   final DateTime completesAt;
-  final String note;
+  final String? note;
   final bool useTwentyFourHoursFormat;
 
   const NotificationResinSubtitle({
-    Key key,
-    @required this.initialResin,
-    @required this.createdAt,
-    @required this.completesAt,
-    @required this.useTwentyFourHoursFormat,
+    Key? key,
+    required this.initialResin,
+    required this.createdAt,
+    required this.completesAt,
+    required this.useTwentyFourHoursFormat,
     this.note,
   }) : super(key: key);
 

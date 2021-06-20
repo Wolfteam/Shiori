@@ -5,9 +5,9 @@ part 'monsters_file.freezed.dart';
 part 'monsters_file.g.dart';
 
 @freezed
-abstract class MonstersFile implements _$MonstersFile {
+class MonstersFile with _$MonstersFile {
   factory MonstersFile({
-    @required List<MonsterFileModel> monsters,
+    required List<MonsterFileModel> monsters,
   }) = _MonstersFile;
 
   MonstersFile._();

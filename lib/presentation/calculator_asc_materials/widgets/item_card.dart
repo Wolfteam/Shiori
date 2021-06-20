@@ -23,16 +23,16 @@ class ItemCard extends StatelessWidget {
   final bool isActive;
 
   const ItemCard({
-    Key key,
-    @required this.sessionKey,
-    @required this.index,
-    @required this.itemKey,
-    @required this.name,
-    @required this.image,
-    @required this.rarity,
-    @required this.isWeapon,
-    @required this.materials,
-    @required this.isActive,
+    Key? key,
+    required this.sessionKey,
+    required this.index,
+    required this.itemKey,
+    required this.name,
+    required this.image,
+    required this.rarity,
+    required this.isWeapon,
+    required this.materials,
+    required this.isActive,
   }) : super(key: key);
 
   @override
@@ -81,7 +81,7 @@ class ItemCard extends StatelessWidget {
                         margin: Styles.edgeInsetAll5,
                         child: Text(
                           name,
-                          style: theme.textTheme.headline6.copyWith(color: Colors.white),
+                          style: theme.textTheme.headline6!.copyWith(color: Colors.white),
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.center,
                         ),
@@ -90,7 +90,7 @@ class ItemCard extends StatelessWidget {
                     Text(
                       s.materials,
                       textAlign: TextAlign.center,
-                      style: theme.textTheme.subtitle2.copyWith(color: Colors.white),
+                      style: theme.textTheme.subtitle2!.copyWith(color: Colors.white),
                     ),
                     Container(
                       margin: const EdgeInsets.only(bottom: 12, right: 5, left: 5),

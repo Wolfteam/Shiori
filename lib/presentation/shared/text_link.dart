@@ -7,9 +7,9 @@ class TextLink extends StatelessWidget {
   final String url;
 
   const TextLink({
-    Key key,
-    @required this.text,
-    @required this.url,
+    Key? key,
+    required this.text,
+    required this.url,
   }) : super(key: key);
 
   @override

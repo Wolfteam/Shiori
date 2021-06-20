@@ -12,17 +12,17 @@ class NotificationRealmCurrencySubtitle extends StatelessWidget {
   final int currentTrustRank;
   final DateTime createdAt;
   final DateTime completesAt;
-  final String note;
+  final String? note;
   final bool useTwentyFourHoursFormat;
 
   const NotificationRealmCurrencySubtitle({
-    Key key,
-    @required this.initialRealmCurrency,
-    @required this.currentRankType,
-    @required this.currentTrustRank,
-    @required this.createdAt,
-    @required this.completesAt,
-    @required this.useTwentyFourHoursFormat,
+    Key? key,
+    required this.initialRealmCurrency,
+    required this.currentRankType,
+    required this.currentTrustRank,
+    required this.createdAt,
+    required this.completesAt,
+    required this.useTwentyFourHoursFormat,
     this.note,
   }) : super(key: key);
 

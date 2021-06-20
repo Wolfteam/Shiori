@@ -13,9 +13,9 @@ class CharacterDetailAscensionMaterialsCard extends StatelessWidget {
   final List<CharacterFileAscensionMaterialModel> ascensionMaterials;
 
   const CharacterDetailAscensionMaterialsCard({
-    Key key,
-    @required this.elementType,
-    @required this.ascensionMaterials,
+    Key? key,
+    required this.elementType,
+    required this.ascensionMaterials,
   }) : super(key: key);
 
   @override

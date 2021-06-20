@@ -19,8 +19,8 @@ class AddEditNotificationBottomSheet extends StatelessWidget {
   final bool isInEditMode;
 
   const AddEditNotificationBottomSheet({
-    Key key,
-    @required this.isInEditMode,
+    Key? key,
+    required this.isInEditMode,
   }) : super(key: key);
 
   @override

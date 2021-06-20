@@ -20,7 +20,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   final NotificationService _notificationService;
   final SettingsService _settingsService;
 
-  Timer _timer;
+  Timer? _timer;
 
   NotificationsBloc(this._dataService, this._notificationService, this._settingsService) : super(_initialState);
 
@@ -56,7 +56,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     startTime();
     return NotificationsState.initial(
       notifications: notifications,
-      ticks: _timer.tick,
+      ticks: _timer?.tick ?? 0,
       useTwentyFourHoursFormat: _settingsService.useTwentyFourHoursFormat,
     );
   }

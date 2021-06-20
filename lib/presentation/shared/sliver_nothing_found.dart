@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'nothing_found_column.dart';
 
 class SliverNothingFound extends StatelessWidget {
-  final String msg;
+  final String? msg;
   final IconData icon;
   final EdgeInsets padding;
 

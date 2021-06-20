@@ -24,12 +24,12 @@ class ArtifactCard extends StatelessWidget {
   final bool isInSelectionMode;
 
   const ArtifactCard({
-    Key key,
-    @required this.keyName,
-    @required this.name,
-    @required this.image,
-    @required this.rarity,
-    @required this.bonus,
+    Key? key,
+    required this.keyName,
+    required this.name,
+    required this.image,
+    required this.rarity,
+    required this.bonus,
     this.imgWidth = 140,
     this.imgHeight = 120,
     this.withElevation = true,
@@ -38,11 +38,11 @@ class ArtifactCard extends StatelessWidget {
         super(key: key);
 
   const ArtifactCard.withoutDetails({
-    Key key,
-    @required this.keyName,
-    @required this.name,
-    @required this.image,
-    @required this.rarity,
+    Key? key,
+    required this.keyName,
+    required this.name,
+    required this.image,
+    required this.rarity,
     this.isInSelectionMode = false,
   })  : imgWidth = 70,
         imgHeight = 60,
@@ -52,8 +52,8 @@ class ArtifactCard extends StatelessWidget {
         super(key: key);
 
   ArtifactCard.item({
-    Key key,
-    @required ArtifactCardModel item,
+    Key? key,
+    required ArtifactCardModel item,
     this.imgWidth = 140,
     this.imgHeight = 120,
     this.withElevation = true,
@@ -94,12 +94,12 @@ class ArtifactCard extends StatelessWidget {
                       ? Text(
                           name,
                           textAlign: TextAlign.center,
-                          style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                          style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                         )
                       : Text(
                           name,
                           textAlign: TextAlign.center,
-                          style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                          style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
                           overflow: TextOverflow.ellipsis,
                         ),
                 ),

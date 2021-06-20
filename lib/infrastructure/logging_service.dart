@@ -14,8 +14,8 @@ class LoggingServiceImpl implements LoggingService {
   LoggingServiceImpl(this._telemetryService, this._deviceInfoService);
 
   @override
-  void info(Type type, String msg, [List<Object> args]) {
-    assert(type != null && !msg.isNullEmptyOrWhitespace);
+  void info(Type type, String msg, [List<Object>? args]) {
+    assert(!msg.isNullEmptyOrWhitespace);
 
     if (args != null && args.isNotEmpty) {
       _logger.i('$type - ${sprintf(msg, args)}');
@@ -25,8 +25,8 @@ class LoggingServiceImpl implements LoggingService {
   }
 
   @override
-  void warning(Type type, String msg, [dynamic ex, StackTrace trace]) {
-    assert(type != null && !msg.isNullEmptyOrWhitespace);
+  void warning(Type type, String msg, [dynamic ex, StackTrace? trace]) {
+    assert(!msg.isNullEmptyOrWhitespace);
     final tag = type.toString();
     _logger.w('$tag - ${_formatEx(msg, ex)}', ex, trace);
 
@@ -36,8 +36,8 @@ class LoggingServiceImpl implements LoggingService {
   }
 
   @override
-  void error(Type type, String msg, [dynamic ex, StackTrace trace]) {
-    assert(type != null && !msg.isNullEmptyOrWhitespace);
+  void error(Type type, String msg, [dynamic ex, StackTrace? trace]) {
+    assert(!msg.isNullEmptyOrWhitespace);
     final tag = type.toString();
     _logger.e('$tag - ${_formatEx(msg, ex)}', ex, trace);
 
@@ -53,20 +53,20 @@ class LoggingServiceImpl implements LoggingService {
     return '$msg \n No exception available';
   }
 
-  void _trackError(String tag, String msg, [dynamic ex, StackTrace trace]) {
+  void _trackError(String tag, String msg, [dynamic ex, StackTrace? trace]) {
     final map = _buildError(tag, msg, ex, trace);
     _telemetryService.trackEventAsync('Error - ${DateTime.now()}', map);
   }
 
-  void _trackWarning(String tag, String msg, [dynamic ex, StackTrace trace]) {
+  void _trackWarning(String tag, String msg, [dynamic ex, StackTrace? trace]) {
     final map = _buildError(tag, msg, ex, trace);
     _telemetryService.trackEventAsync('Warning - ${DateTime.now()}', map);
   }
 
-  Map<String, String> _buildError(String tag, String msg, [dynamic ex, StackTrace trace]) {
+  Map<String, String> _buildError(String tag, String msg, [dynamic ex, StackTrace? trace]) {
     final map = {
       'tag': tag,
-      'msg': msg ?? 'No message available',
+      'msg': msg,
       'ex': ex?.toString() ?? 'No exception available',
       'trace': trace?.toString() ?? 'No trace available',
     };

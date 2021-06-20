@@ -6,9 +6,9 @@ class ComingSoonNewAvatar extends StatelessWidget {
   final bool isComingSoon;
 
   const ComingSoonNewAvatar({
-    Key key,
-    @required this.isNew,
-    @required this.isComingSoon,
+    Key? key,
+    required this.isNew,
+    required this.isComingSoon,
   }) : super(key: key);
 
   @override

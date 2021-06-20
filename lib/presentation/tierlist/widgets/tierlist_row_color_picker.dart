@@ -6,8 +6,8 @@ class TierListRowColorPicker extends StatefulWidget {
   final Color currentColor;
 
   const TierListRowColorPicker({
-    Key key,
-    @required this.currentColor,
+    Key? key,
+    required this.currentColor,
   }) : super(key: key);
 
   @override
@@ -15,7 +15,7 @@ class TierListRowColorPicker extends StatefulWidget {
 }
 
 class _TierListRowColorPickerState extends State<TierListRowColorPicker> {
-  Color selectedColor;
+  Color? selectedColor;
 
   @override
   Widget build(BuildContext context) {
@@ -32,16 +32,15 @@ class _TierListRowColorPickerState extends State<TierListRowColorPicker> {
         },
       ),
       actions: <Widget>[
-        OutlineButton(
+        OutlinedButton(
           onPressed: () => Navigator.of(context).pop(widget.currentColor),
           child: Text(
             s.cancel,
             style: TextStyle(color: theme.primaryColor),
           ),
         ),
-        RaisedButton(
+        ElevatedButton(
           onPressed: () => Navigator.of(context).pop(selectedColor ?? widget.currentColor),
-          color: theme.accentColor,
           child: Text(s.ok),
         ),
       ],

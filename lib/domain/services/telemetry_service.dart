@@ -4,7 +4,7 @@ import 'package:genshindb/domain/models/models.dart';
 abstract class TelemetryService {
   Future<void> initTelemetry();
 
-  Future<void> trackEventAsync(String name, [Map<String, String> properties]);
+  Future<void> trackEventAsync(String name, [Map<String, String>? properties]);
 
   Future<void> trackCharacterLoaded(
     String value, {

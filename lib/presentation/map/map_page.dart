@@ -87,16 +87,10 @@ class _MapPageState extends State<MapPage> {
             if (state.hasInternetConnection) {
               return WebviewScaffold(
                 url: state.mapUrl,
-                userAgent: state.userAgent,
                 ignoreSSLErrors: true,
-                withJavascript: true,
-                withLocalStorage: true,
                 appCacheEnabled: true,
-                clearCookies: false,
-                clearCache: false,
-                initialChild: const Center(
-                  child: CircularProgressIndicator(),
-                ),
+                hidden: true,
+                initialChild: const Loading(useScaffold: false),
               );
             }
             return PageMessage(text: s.noInternetConnection);

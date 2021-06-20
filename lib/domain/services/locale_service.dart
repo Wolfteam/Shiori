@@ -8,9 +8,9 @@ abstract class LocaleService {
 
   String getFormattedLocale(AppLanguageType language);
 
-  DateTime getCharBirthDate(String birthday);
+  DateTime getCharBirthDate(String? birthday);
 
-  String formatCharBirthDate(String birthday);
+  String formatCharBirthDate(String? birthday);
 
   String getDayNameFromDate(DateTime date);
 

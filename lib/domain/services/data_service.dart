@@ -91,7 +91,7 @@ abstract class DataService {
     String title,
     String body,
     int currentResinValue, {
-    String note,
+    String? note,
     bool showNotification = true,
   });
 
@@ -100,7 +100,7 @@ abstract class DataService {
     String title,
     String body,
     ExpeditionTimeType expeditionTimeType, {
-    String note,
+    String? note,
     bool showNotification = true,
     bool withTimeReduction = false,
   });
@@ -109,7 +109,7 @@ abstract class DataService {
     String itemKey,
     String title,
     String body, {
-    String note,
+    String? note,
     bool showNotification = true,
   });
 
@@ -118,7 +118,7 @@ abstract class DataService {
     FurnitureCraftingTimeType type,
     String title,
     String body, {
-    String note,
+    String? note,
     bool showNotification = true,
   });
 
@@ -127,7 +127,7 @@ abstract class DataService {
     ArtifactFarmingTimeType type,
     String title,
     String body, {
-    String note,
+    String? note,
     bool showNotification = true,
   });
 
@@ -135,7 +135,7 @@ abstract class DataService {
     String itemKey,
     String title,
     String body, {
-    String note,
+    String? note,
     bool showNotification = true,
   });
 
@@ -146,7 +146,7 @@ abstract class DataService {
     int currentRealmCurrency,
     String title,
     String body, {
-    String note,
+    String? note,
     bool showNotification = true,
   });
 
@@ -155,7 +155,7 @@ abstract class DataService {
     AppServerResetTimeType serverResetTimeType,
     String title,
     String body, {
-    String note,
+    String? note,
     bool showNotification = true,
   });
 
@@ -165,7 +165,7 @@ abstract class DataService {
     String body,
     DateTime completesAt,
     AppNotificationItemType notificationItemType, {
-    String note,
+    String? note,
     bool showNotification = true,
   });
 
@@ -173,7 +173,7 @@ abstract class DataService {
     String itemKey,
     String title,
     String body, {
-    String note,
+    String? note,
     bool showNotification = true,
   });
 
@@ -190,7 +190,7 @@ abstract class DataService {
     String body,
     int currentResinValue,
     bool showNotification, {
-    String note,
+    String? note,
   });
 
   Future<NotificationItem> updateExpeditionNotification(
@@ -201,7 +201,7 @@ abstract class DataService {
     String body,
     bool showNotification,
     bool withTimeReduction, {
-    String note,
+    String? note,
   });
 
   Future<NotificationItem> updateFurnitureNotification(
@@ -211,7 +211,7 @@ abstract class DataService {
     String title,
     String body,
     bool showNotification, {
-    String note,
+    String? note,
   });
 
   Future<NotificationItem> updateFarmingMaterialNotification(
@@ -220,7 +220,7 @@ abstract class DataService {
     String title,
     String body,
     bool showNotification, {
-    String note,
+    String? note,
   });
 
   Future<NotificationItem> updateFarmingArtifactNotification(
@@ -230,7 +230,7 @@ abstract class DataService {
     String title,
     String body,
     bool showNotification, {
-    String note,
+    String? note,
   });
 
   Future<NotificationItem> updateGadgetNotification(
@@ -239,7 +239,7 @@ abstract class DataService {
     String title,
     String body,
     bool showNotification, {
-    String note,
+    String? note,
   });
 
   Future<NotificationItem> updateRealmCurrencyNotification(
@@ -251,7 +251,7 @@ abstract class DataService {
     String title,
     String body,
     bool showNotification, {
-    String note,
+    String? note,
   });
 
   Future<NotificationItem> updateWeeklyBossNotification(
@@ -261,7 +261,7 @@ abstract class DataService {
     String title,
     String body,
     bool showNotification, {
-    String note,
+    String? note,
   });
 
   Future<NotificationItem> updateCustomNotification(
@@ -272,7 +272,7 @@ abstract class DataService {
     DateTime completesAt,
     bool showNotification,
     AppNotificationItemType notificationItemType, {
-    String note,
+    String? note,
   });
 
   Future<NotificationItem> updateDailyCheckInNotification(
@@ -281,7 +281,7 @@ abstract class DataService {
     String title,
     String body,
     bool showNotification, {
-    String note,
+    String? note,
   });
 
   Future<NotificationItem> reduceNotificationHours(int key, AppNotificationType type, int hours);

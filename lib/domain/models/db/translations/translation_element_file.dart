@@ -4,12 +4,12 @@ part 'translation_element_file.freezed.dart';
 part 'translation_element_file.g.dart';
 
 @freezed
-abstract class TranslationElementFile implements _$TranslationElementFile {
+class TranslationElementFile with _$TranslationElementFile {
   factory TranslationElementFile({
-    @required String key,
-    @required String name,
-    @required String effect,
-    String description,
+    required String key,
+    required String name,
+    required String effect,
+    String? description,
   }) = _TranslationElementFile;
 
   const TranslationElementFile._();

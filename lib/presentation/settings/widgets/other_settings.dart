@@ -81,7 +81,7 @@ class OtherSettings extends StatelessWidget {
                           hint: Text(s.chooseServer),
                           value: settingsState.serverResetTime,
                           underline: Container(height: 0, color: Colors.transparent),
-                          onChanged: (v) => context.read<SettingsBloc>().add(SettingsEvent.serverResetTimeChanged(newValue: v)),
+                          onChanged: (v) => context.read<SettingsBloc>().add(SettingsEvent.serverResetTimeChanged(newValue: v!)),
                           items: AppServerResetTimeType.values
                               .map((type) => DropdownMenuItem<AppServerResetTimeType>(value: type, child: Text(s.translateServerResetTimeType(type))))
                               .toList(),

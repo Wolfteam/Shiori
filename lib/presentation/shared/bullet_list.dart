@@ -6,12 +6,12 @@ import 'styles.dart';
 class BulletList extends StatelessWidget {
   final List<String> items;
   final Widget icon;
-  final Widget Function(int) iconResolver;
+  final Widget Function(int)? iconResolver;
   final double fontSize;
 
   const BulletList({
-    Key key,
-    @required this.items,
+    Key? key,
+    required this.items,
     this.icon = const Icon(Icons.fiber_manual_record, size: 15),
     this.iconResolver,
     this.fontSize = 11,
@@ -26,9 +26,8 @@ class BulletList extends StatelessWidget {
         (e, index) {
           var leading = icon;
           if (iconResolver != null) {
-            leading = iconResolver(index);
+            leading = iconResolver!(index);
           }
-          assert(leading != null);
 
           return ListTile(
             dense: true,
@@ -37,7 +36,7 @@ class BulletList extends StatelessWidget {
             leading: leading,
             title: Transform.translate(
               offset: Styles.listItemWithIconOffset,
-              child: Tooltip(message: e, child: Text(e, style: theme.textTheme.bodyText2.copyWith(fontSize: fontSize))),
+              child: Tooltip(message: e, child: Text(e, style: theme.textTheme.bodyText2!.copyWith(fontSize: fontSize))),
             ),
           );
         },

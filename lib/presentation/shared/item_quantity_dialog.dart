@@ -8,8 +8,8 @@ class ItemQuantityDialog extends StatefulWidget {
   final int quantityLength;
 
   const ItemQuantityDialog({
-    Key key,
-    @required this.quantity,
+    Key? key,
+    required this.quantity,
     this.quantityLength = 10,
   }) : super(key: key);
 
@@ -18,8 +18,8 @@ class ItemQuantityDialog extends StatefulWidget {
 }
 
 class _ItemQuantityDialogState extends State<ItemQuantityDialog> {
-  TextEditingController _textEditingController;
-  String _currentValue;
+  late TextEditingController _textEditingController;
+  late String _currentValue;
 
   @override
   void initState() {

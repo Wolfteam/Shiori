@@ -6,8 +6,8 @@ class PageMessage extends StatelessWidget {
   final List<Widget> children;
 
   const PageMessage({
-    Key key,
-    @required this.text,
+    Key? key,
+    required this.text,
     this.useScaffold = true,
     this.children = const [],
   }) : super(key: key);

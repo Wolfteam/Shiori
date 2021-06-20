@@ -8,7 +8,7 @@ import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 
 class SliverTodayMainTitle extends StatelessWidget {
-  const SliverTodayMainTitle({Key key}) : super(key: key);
+  const SliverTodayMainTitle({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class SliverTodayMainTitle extends StatelessWidget {
               child: RichText(
                 text: TextSpan(
                   text: s.todayAscensionMaterials,
-                  style: theme.textTheme.headline6.copyWith(fontWeight: FontWeight.bold),
+                  style: theme.textTheme.headline6!.copyWith(fontWeight: FontWeight.bold),
                   children: <TextSpan>[
                     TextSpan(
                       text: ' [ ${state.dayName} ]',

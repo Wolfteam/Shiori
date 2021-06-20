@@ -1,5 +1,3 @@
-import 'package:flutter/widgets.dart';
-
 import '../../enums/enums.dart';
 
 class CharacterCardModel {
@@ -15,14 +13,14 @@ class CharacterCardModel {
   final CharacterRoleType roleType;
 
   const CharacterCardModel({
-    @required this.key,
-    @required this.logoName,
-    @required this.name,
-    @required this.stars,
-    @required this.weaponType,
-    @required this.elementType,
-    @required this.materials,
-    @required this.roleType,
+    required this.key,
+    required this.logoName,
+    required this.name,
+    required this.stars,
+    required this.weaponType,
+    required this.elementType,
+    required this.materials,
+    required this.roleType,
     this.isNew = false,
     this.isComingSoon = false,
   });

@@ -11,8 +11,8 @@ class SliverMaterialsCard extends StatelessWidget {
   final bool iconToTheLeft;
 
   const SliverMaterialsCard({
-    Key key,
-    @required this.iconToTheLeft,
+    Key? key,
+    required this.iconToTheLeft,
   }) : super(key: key);
 
   @override
