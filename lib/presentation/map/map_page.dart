@@ -90,9 +90,8 @@ class _MapPageState extends State<MapPage> {
                 userAgent: state.userAgent,
                 ignoreSSLErrors: true,
                 appCacheEnabled: true,
-                initialChild: const Center(
-                  child: CircularProgressIndicator(),
-                ),
+                hidden: true,
+                initialChild: const Loading(useScaffold: false),
               );
             }
             return PageMessage(text: s.noInternetConnection);
