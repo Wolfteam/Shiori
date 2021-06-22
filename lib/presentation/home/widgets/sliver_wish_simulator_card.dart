@@ -30,5 +30,6 @@ class SliverWishSimulatorCard extends StatelessWidget {
   Future<void> _gotoWishSimulatorPage(BuildContext context) async {
     final route = MaterialPageRoute(builder: (c) => WishSimulatorPage());
     await Navigator.push(context, route);
+    await route.completed;
   }
 }
