@@ -285,7 +285,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Whisper of Water",
+          "title": "Giọng Ca Của Nước",
           "description": null,
           "abilities": [
             {
@@ -1240,7 +1240,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Liutian Archery",
+          "title": "Lưu Thiên Xạ Thuật",
           "description": null,
           "abilities": [
             {
@@ -4468,7 +4468,7 @@
     },
     {
       "key": "Skyward Blade",
-      "name": "Skyward Blade",
+      "name": "Thiên Không Kiếm",
       "description": "Thanh kiếm kỵ sĩ, tượng trưng cho danh dự của Phong Long. Lưỡi kiếm toát ra lời chúc phúc của thần gió, chứa đựng sức mạnh của bầu trời và ngàn ngọn gió.",
       "refinement": "Tỉ lệ bạo kích tăng {{0}}%. khi thi triển kỹ năng nộ, nhận khí thế phá hủy trên không: Tốc độ di chuyển tăng 10%, tốc độ tấn công tăng 10%, khi tấn công thường và trọng kích đánh trúng, sẽ tạo thêm ST bằng {{1}}% lực công. Kéo dài 12s."
     },
@@ -5418,12 +5418,12 @@
     },
     {
       "key": "ResistanceB",
-      "name": "Guide to Resistance",
+      "name": "Hướng Dẫn Của \"Kháng Chiến\"",
       "description": "Nền tảng đất nước của gió là kháng chiến.\nLịch sử của Mondstadt là lịch sử của kháng chiến. Kháng chiến là để người dân Mondstadt có thể tự do, như việc Phong Thần thổi tan những đám băng, như Vennessa đứng lên kháng chiến."
     },
     {
       "key": "ResistanceC",
-      "name": "Philosophies of Resistance",
+      "name": "Triết Học Của \"Kháng Chiến\"",
       "description": "Nền tảng đất nước của gió là kháng chiến.\nLịch sử của Mondstadt là lịch sử của kháng chiến. Kháng chiến là vì thơ văn trong tương lai của Mondstadt, cũng có thể tự do như ngọn gió, bay đến nơi xa."
     },
     {
