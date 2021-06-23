@@ -83,6 +83,14 @@ class CreditsSettingsCard extends StatelessWidget {
               ),
             ),
             const BulletList(items: ['Ruri#3080'], fontSize: 12),
+            Container(
+              margin: const EdgeInsets.only(top: 10),
+              child: Text(
+                s.vietnamese,
+                style: textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+              ),
+            ),
+            const BulletList(items: ['Ren Toky#5263'], fontSize: 12),
           ],
         ),
       ),
