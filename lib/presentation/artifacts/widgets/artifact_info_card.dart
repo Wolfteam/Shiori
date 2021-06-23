@@ -22,7 +22,7 @@ class ArtifactInfoCard extends StatelessWidget {
     final theme = Theme.of(context);
     final considerations = <String>[];
 
-    final hp = s.translateStatTypeWithoutValue(StatType.hpPercentage, removeExtraSigns: true);
+    final hp = s.translateStatTypeWithoutValue(StatType.hp, removeExtraSigns: true);
     final hpPercentage = s.translateStatTypeWithoutValue(StatType.hpPercentage);
     final atkPercentage = s.translateStatTypeWithoutValue(StatType.atkPercentage);
     final atk = s.translateStatTypeWithoutValue(StatType.atk);
