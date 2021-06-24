@@ -2812,7 +2812,7 @@
     {
       "key": "Sucrose",
       "name": "Sucrose",
-      "description": "An alchemist filled with curiosity about all things. She researches bio-alchemy.",
+      "description": "Seorang alkemis dipenuhi dengan rasa ingin tahu tentang semua hal. Dia meneliti bio-alkimia.",
       "skills": [
         {
           "key": "s1",
@@ -2821,17 +2821,17 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 attacks using Wind Spirits, dealing Anemo DMG.",
+              "description": "Melancarkan maks. 4 serangan angin yang mengakibatkan Anemo DMG.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina and deals AoE Anemo DMG after a short casting time.",
+              "description": "Mengonsumsi sejumlah Stamina untuk mengakibatkan Anemo DMG area setelah jeda singkat.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Calling upon the power of her Wind Spirits, Sucrose plunges towards the ground from mid-air, damaging all enemies in her path. Deals AoE Anemo DMG upon impact with the ground.",
+              "description": "Mengumpulkan kekuatan Anemo dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan Anemo DMG area saat mendarat.",
               "descriptions": []
             }
           ]
@@ -2839,17 +2839,17 @@
         {
           "key": "s2",
           "title": "Astable Anemohypostasis Creation - 6308",
-          "description": "Creates a small Wind Spirit that deals Anemo DMG to enemies in an AoE, pulling them towards the location of the Wind Spirit before launching them.",
+          "description": "Menciptakan Wind Spirit kecil yang menarik musuh dan obyek ke lokasi Wind Spirit sebelum menghempas musuh di area tersebut; juga mengakibatkan Anemo DMG.",
           "abilities": []
         },
         {
           "key": "s3",
           "title": "Forbidden Creation - Isomer 75 / Type II",
-          "description": "Sucrose hurls an unstable concoction that creates a Large Wind Spirit. While it persists, the Large Wind Spirit will continuously pull and launch nearby enemies, dealing AoE Anemo DMG.",
+          "description": "Sucrose melemparkan sebuah ramuan yang menciptakan Large Wind Spirit. Selama ramuan itu ada, Large Wind Spirit akan terus-menerus menarik musuh dan obyek yang ada di sekitar, menghasilkan Anemo DMG.",
           "abilities": [
             {
               "key": "a1",
-              "description": "If the Wind Spirit comes into contact with Hydro / Pyro / Cryo / Electro elements, it will deal additional DMG of that type. Elemental Absorption may only occur once per use.",
+              "description": "Ketika Wind Spirit bersentuhan dengan elemen Hydro / Pyro / Cryo / Electro, maka akan mengakibatkan elemental DMG tambahan dari tipe tersebut. Elemental Absorption hanya dapat muncul satu kali dalam sekali penggunaan.",
               "descriptions": []
             }
           ]
@@ -2859,19 +2859,19 @@
         {
           "key": "p1",
           "title": "Astable Invention",
-          "description": "When Sucrose crafts Character and Weapon Enhancement Materials, she has a 10% to obtain double the product.",
+          "description": "Saat Sucrose membuat Material Penguatan Senjata dan Karakter, memiliki 10% kemungkinan untuk mendapatkan hasil 2 kali lipat.",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Catalyst Conversion",
-          "description": "When Sucrose triggers a Swirl effect, characters in the party with the matching element have their Elemental Mastery increased by 50 for 8s.",
+          "description": "Ketika Sucrose memicu Swirl, akan meningkatkan Elemental Mastery anggota party dengan tipe elemen yang sama (tidak termasuk Sucrose sendiri) sebesar 50, berlangsung selama 8 detik.",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Mollis Favonius",
-          "description": "When Astable Anemohypostatis Creation - 6308 or Forbidden Creation - Isomer 75 / Type II hit an enemy, increases other party member’s Elemental Mastery based on 20% of Sucrose’s Elemental Mastery for 8s.",
+          "description": "Ketika skill Astable Anemohypostasis Creation - 6308 atau Forbidden Creation - Isomer 75 / Type II mengenai musuh, akan meningkatkan Elemental Mastery seluruh anggota party (tidak termasuk Sucrose sendiri) sebanyak 20% dari Elemental Mastery Sucrose selama 8 detik.",
           "descriptions": []
         }
       ],
@@ -2879,42 +2879,42 @@
         {
           "key": "c1",
           "title": "Clustered Vacuum Field",
-          "description": "Astable Anemohypostasis Creation - 6308 gains 1 additional charge.",
+          "description": "Meningkatkan 1 charge Astable Anemohypostasis Creation-6308.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Beth - Unbound Form",
-          "description": "The duration of Forbidden Creation - Isomer 75 / Type II is increased by 2s.",
+          "description": "Durasi Forbidden Creation - Isomer 75 / Type II bertambah 2 detik.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Flawless Alchemistress",
-          "description": "Increases the Level of Astable Anemohypostasis Creation - 6308 by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Astable Anemohypostasis Creation - 6308. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Alchemania",
-          "description": "Every 7 Normal and Charged Attacks, Sucrose will reduce the CD of Astable Anemohypostasis Creation - 6308 by 1-7s.",
+          "description": "Setiap 7 Normal dan Charged Attack, CD Astable Anemohypostasis Creation- 6308 milik Sucrose akan berkurang 1-7 detik.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Caution: Standard Flask",
-          "description": "Increase the Level of Forbidden Creation - Isomer 75 / Type II by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Forbidden Creation - Isomer 75 / Type II. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Chaotic Entropy",
-          "description": "If Forbidden Creation - Isomer 75 / Type II triggers an Elemental Absorption, all party members gain a 20% Elemental DMG Bonus for the corresponding absorbed element during its duration.",
+          "description": "Jika Forbidden Creation - Isomer 75 / Type II memicu Elemental Absorption, seluruh anggota party mendapatkan 20% Elemental DMG Bonus untuk elemen sesuai yang diserap selama durasinya.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -2923,7 +2923,7 @@
     {
       "key": "Tartaglia",
       "name": "Tartaglia",
-      "description": "No. 11 of The Harbingers, also known as \"Childe\". His name is highly feared on the battlefield.",
+      "description": "Anggota ke-11 dari Eleven Harbingers, juga dikenal dengan nama \"Childe\". Ketenaran namanya saja dapat menghantar ketakutan di medan perang.",
       "skills": [
         {
           "key": "s1",
@@ -2932,25 +2932,25 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 6 consecutive shots with a bow.",
+              "description": "Melancarkan maks. 6 serangan berturut-turut dengan menggunakan busur.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, the power of Hydro will accumulate on the arrowhead. An arrow fully charged with the torrent will deal Hydro DMG and apply Riptide status..",
+              "description": "Melancarkan sebuah Serangan Membidik yang lebih akurat untuk mengakibatkan DMG lebih besar. Saat membidik, air akan berkumpul di ujung anak panah. Panah dengan air yang terkumpul penuh akan mengakibatkan Hydro DMG dan menyebabkan efek Riptide.",
               "descriptions": []
             },
             {
               "name": "Riptide",
-              "description": "Opponents affected by Riptide will suffer from AoE Hydro DMG effects when attacked by Tartaglia in various ways. DMG dealt in this way is considered Normal Attack DMG.",
+              "description": "Musuh yang terpengaruh Riptide akan menerima berbagai efek Hydro DMG area saat diserang oleh Tartaglia. Efek-efek ini dihitung sebagai Normal Attack.",
               "descriptions": [
-                "Riptide Flash: A fully-charged Aimed Shot that hits an opponent affected by Riptide deals consecutive bouts of AoE DMG. Can occur once every 0.7s.",
-                "Riptide Burst: Defeating an opponent affected by Riptide created a Hydro burst that inflicts the Riptide status on nearby opponents hit."
+                "Riptide Flash: Serangan Membidik yang terisi penuh dan mengenai musuh yang terpengaruh efek Riptide akan mengakibatkan DiMG area berturut-turut. Riptide Flash dapat terpicu setiap 0,7 detik.",
+                "Riptide Burst: Mengalahkan musuh yang terkena efek Riptide akan menciptakan ledakan Hydro yang menyebabkan efek Riptide pada musuh di sekitar."
               ]
             },
             {
               "key": "a4",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact. When Tartaglia is in Foul Legacy: Raging Tide’s Melee Stance, he cannot perform a plunging attack.",
+              "description": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG area saat mendarat. Saat Tartaglia sedang menggunakan mode jarak dekat Foul Legacy: Raging Tide, dia tidak bisa menggunakan Plunging Attack.",
               "descriptions": []
             }
           ]
@@ -2958,21 +2958,21 @@
         {
           "key": "s2",
           "title": "Foul Legacy: Raging Tide",
-          "description": "Unleashes a set of weaponry made of pure water, dealing Hydro DMG to surrounding opponents and entering a Melee Stance. In this Stance, Tartaglia’s Normal and Charged Attacks change as follows:",
+          "description": "Mengerahkan sejumlah senjata yang terbuat dari air untuk mengakibatkan Hydro DMG ke musuh di sekitar dan memasuki mode jarak dekat. Dalam Mode ini, Normal Attack dan Charged Attack milik Tartaglia berubah menjadi Hydro DMG yang tidak dapat ditimpa oleh Elemental Infusion lain dan efek berikut akan muncul:",
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 6 consecutive Hydro strikes.",
+              "description": "Melakukan maks. 6 serangan Hydro berturut-turut.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash a cross slash, dealing Hydro DMG.",
+              "description": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan silang yang mengakibatkan Hydro DMG.",
               "descriptions": []
             },
             {
               "name": "Riptide Slash",
-              "description": "Hitting an opponent affected by Riptide with a melee attack unleashes a Riptide Slash that deals AoE Hydro DMG. DMG dealt in this way is considered Elemental Skill DMG, and can only occur once every 1.5s. After 30s, or when the ability is unleashed again, this skill will end. Tartaglia will return to his Ranged Stance and this ability will enter CD. The longer Tartaglia stays in his Melee Stance, the longer the CD. If the return to a ranged stance occurs automatically after 30s, the CD is even longer.",
+              "description": "Memukul musuh yang terkena efek Riptide dengan serangan jarak dekat akan menimbulkan Riptide Slash yang mengakibatkan Hydro DMG area. DMG yang diakibatkan oleh Riptide Slash terhitung sebagai DMG Elemental Skill, dapat terpicu setiap 1,5 detik. Setelah 30 detik atau saat skill ini digunakan lagi, efek skill ini akan berakhir dan Tartaglia kembali ke mode jarak jauh. Skill ini kemudian akan memasuki cooldown. Semakin lama Tartaglia menggunakan mode jarak dekat, waktu cooldown skill juga akan menjadi semakin panjang. Bila Tartaglia kembali menjadi mode jarak jauh secara otomatis dalam waktu 30 detik, waktu cooldown skill akan menjadi semakin panjang lagi.",
               "descriptions": []
             }
           ]
@@ -2980,21 +2980,21 @@
         {
           "key": "s3",
           "title": "Havor: Obliteration",
-          "description": "Performs different attacks based on what stance Tartaglia is in when casting.",
+          "description": "Melancarkan serangan yang berbeda-beda sesuai dengan mode bertarung yang sedang digunakan Targtalia:",
           "abilities": [
             {
-              "name": "Ranged Stance: Flash of Havoc",
-              "description": "Swiftly fires a Hydro-imbued magic arrow, dealing AoE Hydro DMG and applying the Riptide status. Returns a portion of its Energy Cost after use.",
+              "name": "Mode Jarak Jauh: Flash of Havoc",
+              "description": "Menembakkan panah sihir yang mengandung elemen Hydro dengan cepat, mengakibatkan Hydro DMG area dan menyebabkan efek Riptide. Mengembalikan sejumlah Energy yang dikonsumsi setelah skill ini digunakan.",
               "descriptions": []
             },
             {
-              "name": "Melee Stance: Light Obliteration",
-              "description": "Performs a slash with a large AoE, dealing massive Hydro DMG to all surrounding opponents, which triggers Riptide Blast.",
+              "name": "Mode Jarak Dekat: Light of Obliteration",
+              "description": "Menebas musuh dalam area yang luas dan mengakibatkan Hydro DMG yang besar, juga dapat memicu Riptide Blast.",
               "descriptions": []
             },
             {
               "name": "Riptide Blast",
-              "description": "When the obliterating waters hit an opponent affected by Riptide, it clears their Riptide status and triggers a Hydro Explosion that deals AoE Hydro DMG. DMG dealt in this way is considered Elemental Burst DMG.",
+              "description": "Saat skill Havoc Obliteration mengenai musuh dengan status Riptide, status Riptide tersebut akan dihapuskan dan memicu ledakan Riptide Blast yang mengakibatkan Hydro DMG area. DMG dari Riptide Blast terhitung sebagai DMG Elemental Burst.",
               "descriptions": []
             }
           ]
@@ -3004,19 +3004,19 @@
         {
           "key": "p1",
           "title": "Master of Weaponry",
-          "description": "Increases your own party member’s Normal Attack Level by 1.",
+          "description": "Meningkatkan 1 level Normal Attack anggota party sendiri.",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Never Ending",
-          "description": "Extends Riptide duration by 8s.",
+          "description": "Memperpanjang durasi Riptide selama 8 detik.",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Sword of Torrents",
-          "description": "When Tartaglia is in Foul Legacy: Raging Tide’s Melee Stance, or if his Normal and Charged Attacks do CRIT DMG, they will apply the Riptide status effect on the hit enemy.",
+          "description": "Saat Tartaglia berada dalam Mode Jarak Dekat Foul Legacy: Raging Tide, Normal atau Charged Attack akan menyebabkan efek Riptide saat CRIT.",
           "descriptions": []
         }
       ],
@@ -3024,42 +3024,42 @@
         {
           "key": "c1",
           "title": "Foul Legacy: Tide Withholder",
-          "description": "Decreases the CD of Foul Legacy: Raging Tide by 20%.",
+          "description": "Mengurangi 20% CD Foul Legacy: Raging Tide.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Foul Legacy: Understream",
-          "description": "When opponents affected by Riptide are defeated, Tartaglia regenerates 4 Elemental Energy.",
+          "description": "Saat musuh yang terkena efek Riptide dikalahkan, Tartaglia memulihkan 4 Energy.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Abyssal Mayhem: Vortex of Turmoil",
-          "description": "Increases the Level of Foul Legacy: Raging Tide by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Foul Legacy: Raging Tide. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Abyssal Mayhem: Hydrospout",
-          "description": "If Tartaglia is in Foul Legacy: Raging Tide’s Melee Stance, triggers Riptide Slash against opponents on the field affected by Riptide every 4s, otherwise, triggers Riptide Flash. Riptide Slashes and Riptide Flashes triggered by this Constellation effect are not subject to the time intervals that would typically apply to these two Riptide effects, nor do they have any effect on those time intervals.",
+          "description": "Bila ada musuh yang terkena efek Riptide milik Tartaglia dan Tartaglia sedang menggunakan mode jarak dekat dari Foul Legacy: Raging Tide, maka Tartaglia akan memicu Riptide Slash setiap 4 detik; bila tidak, akan memicu Riptide Flash. Riptide Slash dan Riptide Flash yang terpicu dari Konstelasi ini tidak dibatasi oleh jeda waktu masing-masing skill, juga tidak memengaruhi jeda waktu masing-masing skill.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Havoc: Formless Blade",
-          "description": "Increase the Level of Havoc: Obliteration by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Havoc - Obliteration. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Havoc: Annihilation",
-          "description": "When Havoc: Obliteration is cast in Melee Stance, the CD of Foul Legacy: Raging Tide is reset. This effect will only take place once Tartaglia returns to his Ranged Stance.",
+          "description": "Saat Havoc: Obliteration dilancarkan dalam keadaan mode jarak dekat, maka CD dari Foul Legacy: Raging Tide akan direset. Efek ini hanya akan terjadi begitu Tartaglia kembali ke mode jarak jauh.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3068,7 +3068,7 @@
     {
       "key": "Traveler (Anemo)",
       "name": "Traveler (Anemo)",
-      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
+      "description": "Seorang pengembara yang berasal dari dunia lain, saudara satu-satunya yang ia miliki dirampas dari hadapannya oleh sesosok dewa, dan kini ia mengembara untuk mencari The Seven.",
       "skills": [
         {
           "key": "s1",
@@ -3077,17 +3077,17 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive strikes.",
+              "description": "Melancarkan maks. 5 serangan berturut-turut.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat.",
               "descriptions": []
             }
           ]
@@ -3095,16 +3095,16 @@
         {
           "key": "s2",
           "title": "Palm Vortex",
-          "description": "Grasping the wind’s might, you form a vortex of vacuum in your palm, causing continuous Anemo DMG to enemies in front of you. The vacuum vortex explodes when the skill duration ends, causing a greater amount of Anemo DMG over a larger area.",
+          "description": "Menggenggam kekuatan angin, kamu menciptakan pusaran hampa di telapak tanganmu, yang terus mengakibatkan Anemo DMG ke musuh di depan. Pusaran hampa itu meledak saat durasi skill berakhir untuk mengakibatkan Anemo DMG yang lebih besar lagi dalam area luas.",
           "abilities": [
             {
               "key": "a1",
-              "description": "DMG and AoE will gradually increase",
+              "description": "DMG dan area akan terus membesar.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "If the vortex comes in contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+              "description": "Jika pusarannya bersentuhan dengan elemen Hydro/Pyro/Cryo/Electro, ia akan mengakibatkan tambahan Elemental DMG dengan tipe tersebut. Elemental Absorption hanya dapat terjadi sekali untuk setiap penggunaan skill.",
               "descriptions": []
             }
           ]
@@ -3112,11 +3112,11 @@
         {
           "key": "s3",
           "title": "Gust Surge",
-          "description": "Guiding the path of the wind currents, you summon a forward-moving tornado that pulls objects and opponents towards itself, dealing continuous Anemo DMG.",
+          "description": "Memandu jalur aliran angin, kamu memanggil topan yang terus maju ke depan. Topannya menghisap masuk benda-benda dan musuh ke dalam serta mengakibatkan Anemo DMG berkelanjutan.",
           "abilities": [
             {
               "key": "a1",
-              "description": "If the tornado comes in contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+              "description": "Jika topan bersentuhan dengan elemen Hydro/Pyro/Cryo/Electro, ia akan mengakibatkan tambahan Elemental DMG dengan tipe tersebut. Elemental Absorption hanya dapat terjadi sekali untuk setiap penggunaan skill.",
               "descriptions": []
             }
           ]
@@ -3126,13 +3126,13 @@
         {
           "key": "p2",
           "title": "Slitting Wind",
-          "description": "The last hit of a Normal Attack combo unleashes a wind blade, dealing 60% of ATK as Anemo DMG to all opponents in its path.",
+          "description": "Serangan tahap terakhir Normal Attack akan menciptakan sebuah gelombang angin yang mengakibatkan Anemo DMG sebesar 60% ATK.",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Second Wind",
-          "description": "Palm Vortex kills renegerate 2% HP for 5s. This effect can only occur once every 5s.",
+          "description": "Mengalahkan musuh dengan skill Palm Vortex akan memulihkan 2% HP setiap detik selama 5 detik. Efek ini dapat terpicu setiap 5 detik.",
           "descriptions": []
         }
       ],
@@ -3140,42 +3140,42 @@
         {
           "key": "c1",
           "title": "Raging Vortex",
-          "description": "Palm Vortex pulls in enemies within a 5m radius.",
+          "description": "Palm Vortex menarik musuh dan objek di dalam radius 5 meter.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Uprising Whirlwind",
-          "description": "Increases Energy Recharge by 16%.",
+          "description": "Meningkatkan 16% Energy Recharge.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Sweeping Gust",
-          "description": "Increases the Level of Gust Surge by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Gust Surge. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Cherishing Breezes",
-          "description": "Reduces DMG taken while casting Palm Vortex by 10%.",
+          "description": "Mengurangi 10% DMG yang diterima saat melancarkan Palm Vortex.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Vortex Stellaris",
-          "description": "Increase the Level of Palm Vortex by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Palm Vortex. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Intertwined Winds",
-          "description": "Targets who take DMG from Gust Surge have their Anemo RES decreased by 20%. If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%.",
+          "description": "Mengurangi 20% Anemo RES musuh yang menerima DMG skill Gust Surge. Jika Elemental Absorption muncul, maka RES terhadap elemen yang bersangkutan juga berkurang 20%.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3184,7 +3184,7 @@
     {
       "key": "Traveler (Geo)",
       "name": "Traveler (Geo)",
-      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
+      "description": "Seorang pengembara yang berasal dari dunia lain, saudara satu-satunya yang ia miliki dirampas dari hadapannya oleh sesosok dewa, dan kini ia mengembara untuk mencari The Seven.",
       "skills": [
         {
           "key": "s1",
@@ -3193,17 +3193,17 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive strikes.",
+              "description": "Melancarkan maks. 5 serangan berturut-turut.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat.",
               "descriptions": []
             }
           ]
@@ -3211,11 +3211,11 @@
         {
           "key": "s2",
           "title": "Starfell Sword",
-          "description": "You disgorge a meteorite from the depths of the earth, dealing AoE Geo DMG. The meteorite is considered a Geo Construct, and can be climbed or used to block attacks.",
+          "description": "Kamu membangkitkan sebongkah batu meteor dari dalam tanah untuk mengakibatkan Geo DMG Area. Batu meteor tersebut dianggap sebagai sebuah Geo Construct dan dapat dipanjat atau digunakan untuk memblokir serangan.",
           "abilities": [
             {
               "key": "a1",
-              "description": "The skill’s positioning may be adjusted.",
+              "description": "Posisi skill ini dapat diubah.",
               "descriptions": []
             }
           ]
@@ -3223,7 +3223,7 @@
         {
           "key": "s3",
           "title": "Wake of Earth",
-          "description": "Energizing the Geo elements deep underground, you set off expanding shockwaves. Launches surrounding enemies back and deals AoE Geo DMG. A stone wall is erected at the edges of the shockwave. The stone wall is considered a Geo Construct, and may be used to block attacks.",
+          "description": "Dengan memberikan energi kepada elemen Geo yang jauh di bawah tanah, kamu menciptakan gelombang yang meluas. Menghempas musuh di sekitar ke belakang dan mengakibatkan Geo DMG area. Sebuah dinding batu akan didirikan di ujung gelombangnya. Dinding batu ini dianggap sebagai sebuah Geo Construct dan dapat digunakan untuk memblokir serangan.",
           "abilities": []
         }
       ],
@@ -3231,13 +3231,13 @@
         {
           "key": "p2",
           "title": "Shattered Darkrock",
-          "description": "Reduces Starfell Sword’s CD by 2s.",
+          "description": "Mengurangi 2 detik CD Starfell Sword.",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Frenzied Rockslide",
-          "description": "The final hit of a Normal Attack combo triggers a collapse, dealing 60% of ATK as AoE Geo DMG.",
+          "description": "Serangan tahap terakhir Normal Attack menimbulkan kehancuran yang mengakibatkan Geo DMG sebesar 60% ATK ke musuh di sekitar.",
           "descriptions": []
         }
       ],
@@ -3245,42 +3245,42 @@
         {
           "key": "c1",
           "title": "Invincible Stonewall",
-          "description": "Allies within the radius of Wake of Earth have their CRIT Rate increased by 10% and have increased resistance against interruption.",
+          "description": "Meningkatkan ketahanan terhadap interupsi dan 10% CRIT Rate untuk anggota party yang berada dalam radius Wake of Earth.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Rockcore Meltdown",
-          "description": "When the meteorite created by Starfell Sword is destroyed, it will also explode, dealing additional AoE Geo DMG equal to the amount of damage dealt by Starfell Sword.",
+          "description": "Saat meteorit yang dibuat oleh Starfell Sword hancur, akan terjadi ledakan yang mengakibatkan Geo DMG area tambahan setara dengan DMG yang dihasilkan Starfell Sword.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Will of the Rock",
-          "description": "Increases the Level of Wake of Earth by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Wake of Earth. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Reaction Force",
-          "description": "The shockwave triggered by Wake of Earth regenerates 5 Energy for every enemy hit. A maximum of 25 Energy can be recovered in this manner at any one time.",
+          "description": "Serangan gelombang Wake of Earth memulihkan 5 Energy untuk setiap musuh yang terkena DMG. Maksimum dapat memulihkan 25 Energy dengan cara ini setiap kalinya.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Meteorite Impact",
-          "description": "Increase the Level of Starfell Sword by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Starfell Sword. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Everlasting Boulder",
-          "description": "The barrier created by Wake of Earth lasts 5s longer. The meteorite created by Starfell Sword lasts 10s longer.",
+          "description": "Tembok batu yang diciptakan oleh Wake of Earth bertahan 5 detik lebih lama. Meteorit yang dibuat oleh Starfell Sword bertahan 10 detik lebih lama.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3289,7 +3289,7 @@
     {
       "key": "Venti",
       "name": "Venti",
-      "description": "One of the many bards of Mondstadt, who freely wanders the city’s streets and alleys.",
+      "description": "Salah satu penyair Mondstadt yang dengan bebas berkeliling di antara lorong-lorong Mondstadt.",
       "skills": [
         {
           "key": "s1",
@@ -3298,17 +3298,17 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 6 consecutive shots with a bow.",
+              "description": "Melancarkan maks. 6 serangan berturut-turut menggunakan busur.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG. While aiming, favorable winds will accumulate on the arrowhead. A fully charged arrow will deal Anemo DMG.",
+              "description": "Melancarkan sebuah Serangan Membidik yang lebih akurat untuk mengakibatkan DMG lebih besar. Saat membidik, angin akan berkumpul di ujung anak panah. Panah dengan angin yang terkumpul penuh akan mengakibatkan Anemo DMG.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG area saat mendarat.",
               "descriptions": []
             }
           ]
@@ -3316,16 +3316,16 @@
         {
           "key": "s2",
           "title": "Skyward Sonnet",
-          "description": "O wind upon which all hymns and songs fly, bear these earth-walkers up into the sky!",
+          "description": "Wahai angin tempat semua nyanyian dan pujian dilantunkan, sanggupkan pejalan kaki bumi ini naik ke langit.",
           "abilities": [
             {
               "key": "a1",
-              "description": "Summons a Wind Domain at the enemy’s location, dealing AoE Anemo DMG and launching enemies into the air.",
+              "description": "Memanggil sebuah Wind Domain di lokasi musuh yang mengakibatkan Anemo DMG area dan menghempas musuh ke udara.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Summons an even larger Wind Domain with Venti as the epicenter, dealing AoE Anemo DMG and launching affected enemies into the air. After unleashing the Hold version of this ability, Venti rides the wind into the air. Enemies hit by Skyward Sonnet will fall to the ground slowly.",
+              "description": "Memanggil Wind Domain yang lebih besar lagi dengan Venti di tengahnya. Mengakibatkan Anemo DMG area dan menghempas musuh ke udara. Setelah mengerahkan Wind Domain yang lebih besar, Venti mengendarai angin ke udara. Musuh yang terkena oleh Skyward Sonnet akan jatuh ke tanah dengan pelan.",
               "descriptions": []
             }
           ]
@@ -3333,11 +3333,11 @@
         {
           "key": "s3",
           "title": "Wind’s Grand Ode",
-          "description": "Fires off an arrow made of countless coalesced winds, creating a huge Stormeye that sucks in objects and enemies along its path, dealing continuous Anemo DMG.",
+          "description": "Menembakkan panah yang terbuat dari angin gabungan yang tak terhitung jumlahnya. Membuat Stormeye raksasa yang menarik musuh; mengakibatkan Anemo DMG berkelanjutan.",
           "abilities": [
             {
               "key": "a1",
-              "description": "If the Stormeye comes into contact with Hydro/Pyro/Cryo/Electro elements, it will deal additional elemental DMG of that type. Elemental Absorption may only occur once per use.",
+              "description": "Jika Stormeye bersentuhan dengan elemen Hydro/Pyro/Cryo/Electro, ia akan mengakibatkan tambahan Elemental DMG dengan tipe tersebut. Elemental Absorption hanya dapat terjadi sekali untuk setiap penggunaan skill.",
               "descriptions": []
             }
           ]
@@ -3347,19 +3347,19 @@
         {
           "key": "p1",
           "title": "Windrider",
-          "description": "Decreases all party member’s gliding Stamina Consumption by 20%.",
+          "description": "Mengurangi 20% konsumsi Stamina karakter sendiri saat terbang. Efek tidak dapat ditumpuk dengan Talenta Pasif lain yang memiliki efek yang sama.",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Embrace of Winds",
-          "description": "Holding Skyward Sonnet creates an upcurrent that lasts for 20s.",
+          "description": "Menahan tombol skill Skyward Sonnet akan menciptakan arus angin yang berlangsung selama 20 detik.",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Stormeye",
-          "description": "Regenerates 15 Energy for Venti after the effects of Wind’s Grand Ode end. If an Elemental Absorption occurred, this also restores 15 Energy to all characters of that corresponding element.",
+          "description": "Memulihkan 15 Energy Venti saat Wind's Grand Ode berakhir. Jika terjadi Elemental Absorption, juga akan memulihkan 15 Energy kepada anggota party yang memiliki elemen tersebut.",
           "descriptions": []
         }
       ],
@@ -3367,42 +3367,42 @@
         {
           "key": "c1",
           "title": "Splitting Gale",
-          "description": "Fires 2 additional arrows per Aimed Shot, each dealing 33% of the original arrow’s DMG.",
+          "description": "Menembakkan 2 anak panah tambahan setiap Serangan Membidik, yang masing-masing mengakibatkan 33% DMG dari panah utama.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Breeze of Reminiscence",
-          "description": "Skyward Sonnet decreases enemy Anemo RES by 12% for 10s. Enemies launched by Skyward Sonnet suffer an additional 12% Anemo RES and Physical RES decrease while airborne.",
+          "description": "Skyward Sonnet mengurangi 12% Anemo RES dan Physical RES musuh selama 10 detik. Anemo RES dan Physical RES musuh yang terhempas oleh Skyward Sonnet berkurang lagi 12% saat di udara.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Ode to Thousand Winds",
-          "description": "Increases the Level of Wind’s Grand Ode by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Wind's Grand Ode. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Hurricane of Freedom",
-          "description": "When Venti picks up an Elemental Orb or Particle, he receives a 25% Anemo DMG Bonus for 10s.",
+          "description": "Saat Venti mengambil sebuah Elemental Orb atau Particle, dia akan menerima 25% Anemo DMG Bonus selama 10 detik.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Concierto dal Cielo",
-          "description": "Increase the Level of Skyward Sonnet by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level skill Skyward Sonnet. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Storm of Defiance",
-          "description": "Targets who take DMG from Wind’s Grand Ode have their Anemo RES decreased by 20%. If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%.",
+          "description": "Musuh yang menerima DMG dari Wind's Grand Ode akan mendapat pengurangan Anemo RES sebanyak 20%. Jika Elemental Absorption muncul, maka RES terhadap elemen yang bersangkutan juga berkurang 20%.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3411,7 +3411,7 @@
     {
       "key": "Xiangling",
       "name": "Xiangling",
-      "description": "A renowned chef from Liyue. She’s extremely passionate about cooking and excels at making her signature hot and spicy dishes.",
+      "description": "Seorang koki ternama dari Liyue. Memiliki cinta yang mendalam akan seni masak-memasak, sangat pandai memasak masakan andalannya dengan rasa yang pedas dan gurih.",
       "skills": [
         {
           "key": "s1",
@@ -3420,17 +3420,17 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive spear strikes.",
+              "description": "Melancarkan maks. 5 serangan berturut-turut.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to lunge forward, dealing damage to enemies along the way.",
+              "description": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalurnya.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat.",
               "descriptions": []
             }
           ]
@@ -3438,13 +3438,13 @@
         {
           "key": "s2",
           "title": "Guoba Attack",
-          "description": "Summons Guoba the Panda. Guoba continuously breathes fire, dealing AoE Pyro DMG.",
+          "description": "Memanggil Guoba si Panda. Guoba terus menghembuskan api ke musuh, mengakibatkan Pyro DMG area.",
           "abilities": []
         },
         {
           "key": "s3",
           "title": "Pyronado",
-          "description": "Displaying her mastery over both fire and polearms, Xiangling sends a Pyronado whirling around her. The Pyronado will move with your character for so long as the ability persists, dealing Pyro DMG to all enemies in its path.",
+          "description": "Xiangling menunjukkan keahilannya dengan api dan tombak, dia membuat Pyronado yang berputar di sekitarnya. Pyrnado akan bergerak mengikuti karaktermu selama durasinya dan mengakibatkan Pyro DMG ke semua musuh di jalurnya.",
           "abilities": []
         }
       ],
@@ -3452,19 +3452,19 @@
         {
           "key": "p1",
           "title": "Chef de Cuisine",
-          "description": "When Xiangling cooks an ATK-boosting dish perfectly, she has a 12% chance to receive double the product.",
+          "description": "Saat masakan jenis penyerangan dimasak dengan sempurna, terdapat 12% kemungkinan mendapatkan hasil 2 kali lipat.",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Crossfire",
-          "description": "Increases the flame range of Guoba by 20%.",
+          "description": "Meningkatkan 20% jarak semburan api Guoba.",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Beware, It’s Super Hot!",
-          "description": "When Guoba Attack’s effect ends, Guoba leaves a chili pepper on the spot where it disappeared. Picking up a chili pepper increases ATK by 10% for 10s.",
+          "description": "Saat durasi skill Guoba Attack selesai, Guoba akan meninggalkan sebuah cabai di lantai. Mengambil cabai tersebut meningkatkan 10% ATK selama 10 detik.",
           "descriptions": []
         }
       ],
@@ -3472,42 +3472,42 @@
         {
           "key": "c1",
           "title": "Crispy Outside, Tender Inside",
-          "description": "Enemies hit by Guoba’s attacks have their Pyro RES reduced by 15% for 6s.",
+          "description": "Saat Guoba Attack mengenai musuh, akan mengurangi 15% Pyro RES mereka selama 6 detik.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Oil Meets Fire",
-          "description": "The last attack in a Normal Attack sequence applies the Implode status onto the enemy for 2s. An explosion will occur once this duration ends, dealing 75% of Xiangling’s ATK as AoE Pyro DMG.",
+          "description": "Serangan terakhir dari Normal Attack mengakibatkan Implode pada musuh selama 2 detik. Saat durasi Implode selesai, menimbulkan ledakan yang mengakibatkan 75% dari ATK Xiangling sebagai Pyro DMG area.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Deepfry",
-          "description": "Increases the Level of Pyronado by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level skill Pyronado. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Slowbake",
-          "description": "Pyronado’s duration is increased by 40%.",
+          "description": "Meningkatkan 40% durasi Pyronado.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Guoba Mad",
-          "description": "Increase the Level of Guoba Attack by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Guoba Attack. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Condensed Pyronado",
-          "description": "For the duration of Pyronado, all party members receive a 15% Pyro DMG Bonus.",
+          "description": "Saat Pyronado aktif, seluruh anggota party menerima peningkatan 15% Pyro DMG Bonus.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3516,7 +3516,7 @@
     {
       "key": "Xiao",
       "name": "Xiao",
-      "description": "A yaksha adeptus who defends Liyue. Also heralded as the \"Conqueror of Demons\" or \"Vigilant Yaksha.\"",
+      "description": "Yaksha, sesosok makhluk abadi yang juga memiliki julukan \"Conqueror of Demons\" atau \"Guardian Yaksha\".",
       "skills": [
         {
           "key": "s1",
@@ -3524,17 +3524,17 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 6 rapid strikes.",
+              "description": "Melancarkan maks. 6 serangan berturut-turut.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to perform an upward thrust.",
+              "description": "Mengonsumsi sejumlah Stamina untuk melakukan serangan melompat.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.\nXiao does not take DMG from performing Plunging Attacks.",
+              "description": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat.\nSaat melakukan Plunging Attack, Xiao tidak akan terkena DMG karena terjatuh dari ketinggian.",
               "descriptions": []
             }
           ]
@@ -3542,21 +3542,21 @@
         {
           "key": "s2",
           "title": "Lemniscatic Wind Cycling",
-          "description": "Xiao lunges forward, dealing Anemo DMG to opponents in his path.\nCan be used in mid-air.\nStarts with 2 charges.",
+          "description": "Xiao menerjang ke depan dan mengakibatkan Anemo DMG pada musuh di jalur terjangan.\nDapat digunakan di tengah udara.\nDimulai dengan 2 kali penggunaan.",
           "abilities": []
         },
         {
           "key": "s3",
           "title": "Bane of All Evil",
-          "description": "Xiao dons the Yaksha Mask that set gods and demons trembling millennia ago.",
+          "description": "Menjelma menjadi wujud Yaksha yang ditakuti oleh para iblis dan juga Archon sejak ribuan tahun lalu.",
           "abilities": [
             {
               "description": "Yaksha's Mask",
               "descriptions": [
-                "Greatly increases Xiao's jumping ability.",
-                "Increases his attack AoE and attack DMG.",
-                "Converts attack DMG into Anemo DMG, which cannot be overridden by any other elemental infusion. In this state, Xiao will continuously lose HP.",
-                "The effects of this skill end when Xiao leaves the field."
+                "Meningkatkan kekuatan loncatan Xiao secara drastis.",
+                "Meningkatkan DMG dan area serangan.",
+                "Mengonversi DMG serangan menjadi Anemo DMG, konversi ini tidak dapat ditimpa oleh Elemental Infusion lainnya. Dalam kondisi ini, Xiao akan terus kehilangan HP.",
+                "Efek dari skill berakhir saat Xiao keluar dari medan pertempuran."
               ]
             }
           ]
@@ -3566,19 +3566,19 @@
         {
           "key": "p1",
           "title": "Transcension: Gravity Defier",
-          "description": "Decreases climbing Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+          "description": "Mengurangi 20% konsumsi Stamina saat memanjat untuk anggota party sendiri.\nTidak dapat ditumpuk dengan Talenta Pasif dengan efek yang sama.",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Conqueror of Evil: Tamer of Demons",
-          "description": "While under the effects of Bane of All Evil, all DMG dealt by Xiao increases by 5%. DMG increases by a further 5% for every 3s the ability persists.\nThe maximum DMG Bonus is 25%.",
+          "description": "Meningkatkan 5% DMG Xiao saat berada dalam kondisi Bane of All Evil. Selama durasi skill, DMG Xiao akan terus meningkat sebesar 5% setiap 3 detik.\nBatas peningkatan DMG Talenta: 25%.",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Dissolution Eon: Heaven Fall",
-          "description": "Using Lemniscatic Wind Cycling increases the DMG of subsequent uses of Lemniscatic Wind Cycling by 15%.\n This effect lasts for 7s, and has a maximum of 3 stacks. Gaining a new stack refreshes the effect's duration.",
+          "description": "Menggunakan skill Lemniscatic Wind Cycling akan meningkatkan 15% DMG Lemniscatic Wind Cycling selanjutnya selama 7 detik.\nMaksimum ditumpuk 3 lapis. Durasi terulang setiap tumpukan baru ditambahkan.",
           "descriptions": []
         }
       ],
@@ -3586,42 +3586,42 @@
         {
           "key": "c1",
           "title": "Dissolution Eon: Destroyer of Worlds",
-          "description": "Increases Lemniscatic Wind Cycling’s charges by 1.",
+          "description": "Meningkatkan 1 charge Lemniscatic Wind Cycling",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Annihilation Eon: Blossom of Kaleidos",
-          "description": "When in the party and not on the field, Xiao's Energy Recharge is increased by 25%.",
+          "description": "Ketika Xiao berada di dalam party namun tidak sedang bertempur, Energy Recharge Xiao meningkat 25%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Conqueror of Evil: Wrath Deity",
-          "description": "Increases the Level of Lemniscatic Wind Cycling by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Lemniscatic Wind Cycling. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Transcension: Extinction of Suffering",
-          "description": "When Xiao's HP falls below 50%, he gains a 100% DEF Bonus.",
+          "description": "Saat HP Xiao kurang dari 50%,mendapatkan 100% Bonus DEF.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Evolution Eon: Origin of Ignorance",
-          "description": "Increase the Level of Bane of All Evil by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Bane of All Evil. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Conqueror of Evil: Guardian Yaksha",
-          "description": "While under the effects of Bane of All Evil, hitting at least 2 opponents with Xiao's Plunging Attack will immediately grant him 1 charge of Lemniscatic Wind Cycling, and for the next 1s, he may use Lemniscatic Wind Cycling while ignoring its CD.",
+          "description": "Saat berada dalam kondisi Bane of All Evil, Xiao akan mendapatkan 1 charge Lemniscatic Wind Cycling bila menyerang 2 musuh atau lebih dengan menggunakan Plunging Attack. Selain itu, Xiao bisa menggunakan Lemniscatic Wind Cycling terus-menerus tanpa mempedulikan waktu CD selama 1 detik berikutnya.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3630,7 +3630,7 @@
     {
       "key": "Xingqiu",
       "name": "Xingqiu",
-      "description": "A young man carrying a longsword who is frequently seen at book booths. He has a chivalrous heart and yearns for justice and fairness for all.",
+      "description": "Seorang pria muda yang membawa sebilah pedang panjang, sering terlihat di kios buku. Memiliki hati mulia yang menjunjung tinggi keadilan dan kebenaran.",
       "skills": [
         {
           "key": "s1",
@@ -3639,17 +3639,17 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive spear strikes.",
+              "description": "Melancarkan maks. 5 serangan berturut-turut.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Mengonsumsi sejumlah Stamina untuk melancarkan dua tebasan pedang.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-aur to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat.",
               "descriptions": []
             }
           ]
@@ -3657,14 +3657,14 @@
         {
           "key": "s2",
           "title": "Guhua Sword - Fatal Rainscreen",
-          "description": "Xingqiu performs twin strikes with his sword, dealing Hydro DMG. At the same time, this ability creates the maximum number of Rain Swords, which will orbit the character. 20% of Xingqiu’s Hydro DMG Bonus will be converted to additional DMG Reduction for the Rain Swords. The maximum amount of additional DMG Reduction that can be gained this way is 24%. The initial maximum number of Rain Swords is 3. Using this ability applies the Wet status onto the character.",
+          "description": "Xingqiu mengayunkan pedangnya dua kali, mengakibatkan Hydro DMG kepada musuh di hadapannya. Pada saat bersamaan, skill ini akan menciptakan Rain Sword dalam jumlah maksimum yang akan mengitari karakter. Sebanyak 20% dari Hydro DMG Bonus milik Xingqiu akan dikonversi menjadi DMG Reduction tambahan untuk Rain Sword. Jumlah maksimum DMG Reduction tambahan yang bisa didapatkan dengan cara ini adalah 24%. Jumlah maksimum Rain Sword di awal adalah 3. Menggunakan skill ini akan mengenakan efek Wet pada karakter.",
           "abilities": [
             {
               "name": "",
-              "description": "The Rain Swords have the following properties:",
+              "description": "Rain Sword memiliki karakteristik berikut:",
               "descriptions": [
-                "When a character takes DMG, the Rain Sword will shatter, reducing the amount of DMG taken.",
-                "Increases the character’s resistance to interruption."
+                "Saat karakter menerima DMG, Rain Sword akan hancur dan mengurangi DMG yang diterima;",
+                "Meningkatkan ketahanan karakter terhadap interupsi."
               ]
             }
           ]
@@ -3672,14 +3672,14 @@
         {
           "key": "s3",
           "title": "Guhua Sword - Raincutter",
-          "description": "Initiate Rainbow Bladework and fight using an illusory sword rain, while creating the maximum number of Rain Swords.",
+          "description": "Memulai Rainbow Bladework dan bertarung menggunakan hujanan pedang ilusi sambil menciptakan Rain Sword dalam jumlah maksimum.",
           "abilities": [
             {
               "name": "Rainbow Bladework",
-              "description": "These effects carry over to other characters.",
+              "description": "Efek ini terbawa ke karakter lain.",
               "descriptions": [
-                "Normal Attacks will trigger consecutive sword rain attacks, dealing Hydro DMG.",
-                "Rain Swords will remain at the maximum number throughout the ability’s duration."
+                "Normal Attack dari karakter yang sedang digunakan akan meluncurkan pedang air yang menyerang berturut-turut dan mengakibatkan Hydro DMG.",
+                "Jumlah Rain Sword akan terus berada dalam jumlah maksimum selama durasi skill."
               ]
             }
           ]
@@ -3689,19 +3689,19 @@
         {
           "key": "p1",
           "title": "Flash of Genius",
-          "description": "When Xingqiu crafts Character Talent Materials, he has a 25% chance to refund a portion of the crafting materials used.",
+          "description": "Xingqiu memiliki 25% kemungkinan untuk mendapatkan kembali material yang digunakan untuk membuat Material Talenta Karakter.",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Hydropathic",
-          "description": "When a Rain Sword is shattered or when its duration expires, it regenerates the current character’s HP based on 6% of Xingqiu’s Max HP.",
+          "description": "Saat sebuah Rain Sword hancur atau durasinya berakhir, memulihkan HP karakter saat ini sebesar 6% Max HP Xingqiu.",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Blades Amidst Raindrops",
-          "description": "Xingqiu gains a 20% Hydro DMG Bonus.",
+          "description": "Xingqiu memperoleh 20% Hydro DMG Bonus.",
           "descriptions": []
         }
       ],
@@ -3709,42 +3709,42 @@
         {
           "key": "c1",
           "title": "The Scent Remained",
-          "description": "Increases the maximum number of Rain Swords by 1.",
+          "description": "Meningkatkan 1 jumlah maksimum Rain Sword",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Rainbow Upon the Azure Sky",
-          "description": "Extends the duration of Guhua Sword - Raincutter by 3s. Decreases the Hydro RES of enemies hit by sword rain attacks by 15% for 4s.",
+          "description": "Memperpanjang 3 detik durasi Guhua Sword: Raincutter. dan mengurangi 15% Hydro RES musuh yang terkena serangan Sword Rain selama 4 detik.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Weaver of Verses",
-          "description": "Increases the Level of Guhua Sword - Raincutter by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan level skill Guhua Sword: Raincutter sebanyak 3 level. Max. Lv: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Evilsoother",
-          "description": "Throughout the duration of Guhua Sword: Raincutter, the DMG dealt by Guhua Sword: Fatal Rainscreen is increased by 50%.",
+          "description": "Pada durasi Guhua Sword: Raincutter, DMG yang dihasilkan oleh Guhua Sword: Fatal Rainscreen meningkat 50%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Embrace of Rain",
-          "description": "Increase the Level of Guhua Sword - Fatal Rainscreen by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan level skill Guhua Sword: Fatal Rainscreen sebanyak 3 level. Max. Lv: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Hence, Call Them My Own Verses",
-          "description": "Activating 2 of Guhua Sword - Raincutter’s sword rain attacks greatly increases the DMG of the third. Xingqiu regenerates 3 Energy when sword rain attacks hit enemies.",
+          "description": "Mengaktifkan 2 dari Guhua Sword: Raincutter Sword Rain akan meningkatkan DMG ketiganya. Xingqiu akan mendapatkan 3 Energy saat Sword Rain mengenai musuh.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3753,7 +3753,7 @@
     {
       "key": "Xinyan",
       "name": "Xinyan",
-      "description": "Liyue’s sole rock ’n’ roll musician. She rebels against ossified prejudices using her music and passionate singing.",
+      "description": "Musisi rock 'n' roll satu-satunya di Liyue, kecintaannya yang unik terhadap musik dapat memutarbalikkan pemahaman-pemahaman masyarakat yang kaku.",
       "skills": [
         {
           "key": "s1",
@@ -3762,17 +3762,17 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 consecutive strikes.",
+              "description": "Melancarkan maks. 4 tebasan berturut-turut.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous spinning attacks against all nearby enemies. At the end of the sequence, perform a more powerful slash.",
+              "description": "Terus menguras Stamina untuk melancarkan serangan berputar yang mengakibatkan DMG ke musuh di sekitar. Diakhiri dengan sebuah tebasan yang kuat.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Menerjang dari udara untuk menghatam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat.",
               "descriptions": []
             }
           ]
@@ -3780,23 +3780,23 @@
         {
           "key": "s2",
           "title": "Sweeping Fervor",
-          "description": "Xinyan brandishes her instrument, dealing Pyro DMG on nearby enemies, forming a shield made out of her audience’s passion.",
+          "description": "Xinyan mengayunkan instrumennya, mengakibatkan Pyro DMG terhadap semua musuh di dekatnya, dan membentuk sebuah perisai yang terbuat dari hasrat pendengarnya.",
           "abilities": [
             {
               "name": "",
-              "description": "The shield’s DMG Absorption scales based on Xinyan’s DEF and on the number of enemies hit:",
+              "description": "skala penahanan DMG didasarkan pada DEF Xinyan dan jumlah musuh yang terkena skill ini.",
               "descriptions": [
-                "Hitting 0-1 enemies grants Shield Level 1: Ad Lib.",
-                "Hitting 2 enemies grants Shield Level 2: Lead-In.",
-                "Hitting 3 or more enemies grants Shield Level 3: Rave, which will also deal intermittent Pyro DMG to nearby enemies."
+                "Memukul 0-1 musuh memberikan Perisai Level 1: Ad Lib.",
+                "Memukul 2 musuh memberikan Perisai Level 2: Lead-In.",
+                "Memukul 3 musuh memberikan Perisai Level 3: Rave, yang juga akan mengakibatkan Pyro DMG secara berkala terhadap semua musuh di dekatnya."
               ]
             },
             {
               "name": "",
-              "description": "The shield has the following special properties:",
+              "description": "Perisai memiliki sifat khusus berikut:",
               "descriptions": [
-                "When unleashed, it infuses Xinyan with Pyro.",
-                "It has 250% DMG Absorption effectiveness against Pyro DMG."
+                "Ketika dilancarkan, perisai memberikan efek Pyro untuk Xinyan.",
+                "Perisai memiliki 250% efisiensi menahan Pyro DMG."
               ]
             }
           ]
@@ -3804,7 +3804,7 @@
         {
           "key": "s3",
           "title": "Riff Revolution",
-          "description": "Strumming rapidly, Xinyan launches nearby enemies and deals Physical DMG to them, hyping up the crowd. The sheer intensity of the atmosphere will cause explosions that deal Pyro DMG to nearby enemies.",
+          "description": "Menggesek senarnya secara cepat dan menimbulkan bunyi kasar yang bisa menghempas musuh, serta mengakibatkan Physical DMG dan efek hipnotis terhadap mereka. Intensitas atmosfer yang tipis akan menyebabkan ledakan yang mengakibatkan Pyro DMG ke musuh di sekitarnya.",
           "abilities": []
         }
       ],
@@ -3812,22 +3812,22 @@
         {
           "key": "p1",
           "title": "A Rad Recipe",
-          "description": "When a Perfect Cooking is achieved on an DEF-boosting dish, Xinyan has a 12% chance to obtain double the product.",
+          "description": "Saat masakan jenis pertahanan dimasak dengan sempurna, terdapat 12% kemungkinan mendapatkan hasil 2 kali lipat.",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "\"The Show Goes On, Even Without an Audience...\"",
-          "description": "Decreases the number of enemies Sweeping Fervor must hit to trigger each level of shielding.",
+          "description": "Mengurangi jumlah musuh yang harus diserang Sweeping Fervor untuk memicu setiap level perisai.",
           "descriptions": [
-            "Shield Level 2: Lead-In requirement reduced to 1 enemy hit.",
-            "Shield Level 3: Rave requirement reduced to 2 enemies hit or more."
+            "Perisai Level 2: syarat Lead-In dikurangi menjadi 1 musuh.",
+            "Perisai Level 3: syarat Rave dikurangi menjadi 2 musuh atau lebih."
           ]
         },
         {
           "key": "p3",
           "title": "\"...Now That’s Rock ’N’ Roll!\"",
-          "description": "Characters shielded by Sweeping Fervor deal 15% increased Physical DMG.",
+          "description": "Meningkatkan 15% Physical DMG karakter yang dilindungi oleh perisai dari Sweeping Fervor.",
           "descriptions": []
         }
       ],
@@ -3835,42 +3835,42 @@
         {
           "key": "c1",
           "title": "Fatal Acceleration",
-          "description": "Upon scoring a CRIT hit, increases ATK SPD of Xinyan’s Normal and Charged Attacks by 12% for 5s. Can only occur once every 5s.",
+          "description": "Setelah melakukan serangan CRIT, meningkatkan ATK SPD dari Normal dan Charged Attack Xinyan sebesar 12% selama 5 detik. Terpicu setiap 5 detik.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Impromptu Opening",
-          "description": "Riff Revolution Physical DMG has its Crit rate increased by 100%, and will form a shield at Shield Level 3: Rave when cast.",
+          "description": "Meningkatkan 100% CRIT Rate serangan Physical DMG Riff Revolution, dan saat dilancarkan, akan membentuk Perisai Level 3: Rave.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Double Stop",
-          "description": "Increases the Level of Sweeping Fervor by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Sweeping Fervor. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Wildfire Rhythm",
-          "description": "Sweeping Fervor’s swing DMG decrease opponents Physical RES by 15% for 12s.",
+          "description": "Swing DMG Sweeping Fervor mengurangi Physical RES musuh sebesar 15% selama 12 detik.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Screamin’ for an Encore",
-          "description": "Increases the Level of Riff Revolution by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Riff Revolution. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Rockin’ in a Flaming World",
-          "description": "Decrease the stamina consumption of Xinyan Charged Attacks by 30%. Additionally, Xinyan Charged Attack gain an ATK bonus equal to 50% of her DEF.",
+          "description": "Mengurangi Konsumsi Stamina Charged Attack Xinyan sebesar 30%, Selain itu, Xinyan mendapatkan Bonus ATK sebesar 50% DEF saat melakukan Charged Attack.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3879,7 +3879,7 @@
     {
       "key": "Yanfei",
       "name": "Yanfei",
-      "description": "A well-known legal adviser active in Liyue Harbor. A brilliant young lady in whose veins runs the blood of an illuminated beast.",
+      "description": "Seorang konsultan hukum yang terkenal di Liyue, di tubuh gadis muda ini juga mengalir darah Adeptus.",
       "skills": [
         {
           "key": "s1",
@@ -3888,17 +3888,17 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Shoots fireballs that deal up to three counts of Pyro DMG.\nWhen Yanfei's Normal Attacks hit enemies, they will grant her a single Scarlet Seal. Yanfei may possess a maximum of 3 Scarlet Seals, and each time this effect is triggered, the duration of currently possessed Scarlet Seals will refresh.\nEach Scarlet Seal will decrease Yanfei's Stamina consumption and will disappear when she leaves the field.",
+              "description": "Melancarkan maks. 3 serangan bola api yang mengakibatkan Pyro DMG.\nKetika Normal Attack Yanfei mengenai musuh, Yanfei akan mendapatkan 1 Scarlet Seal. Scarlet Seal maksimum yang bisa dikumpulkan Yanfei adalah 3 buah. Setiap kali efek ini terpicu, durasi dari Scarlet Seal yang telah terkumpul akan diperbarui. Setiap Scarlet Seal akan mengurangi konsumsi Stamina Yanfei dan akan menghilang jika Yanfei meninggalkan medan pertempuran.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes Stamina and all Scarlet Seals before dealing AoE Pyro DMG to opponents after a short casting time.\nThis Charged Attack's AoE and DMG will increase according to the amount of Scarlet Seals consumed.",
+              "description": "Mengonsumsi Stamina dan semua Scarlet Seal untuk mengakibatkan Pyro DMG area setelah jeda singkat.\nArea dan DMG dari Charged Attack ini akan meluas dan meningkat sesuai dengan jumlah Scarlet Seal yang dikonsumsi.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.",
+              "description": "Mengumpulkan kekuatan Pyro dan menerjang tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan Pyro DMG area saat mendarat.",
               "descriptions": []
             }
           ]
@@ -3906,21 +3906,21 @@
         {
           "key": "s2",
           "title": "Signed Edict",
-          "description": "Summons blistering flames that deal AoE Pyro DMG.\nOpponents hit by the flames will grant Yanfei the maximum number of Scarlet Seals.",
+          "description": "Memanggil api yang mengakibatkan Pyro DMG Area.\nYanfei akan mendapatkan Scarlet Seal dalam jumlah maksimum saat Signed Edict mengenai musuh.",
           "abilities": []
         },
         {
           "key": "s3",
           "title": "Done Deal",
-          "description": "Triggers a spray of intense flames that rush at nearby opponents, dealing AoE Pyro DMG, granting Yanfei the maximum number of Scarlet Seals, and applying Brilliance to her.",
+          "description": "Memicu semburan api dahsyat yang menyerbu musuh di sekitar dan mengakibatkan Pyro DMG Area, serta memberikan Scarlet Seal dalam jumlah maksimum dan efek Brilliance pada Yanfei.",
           "abilities": [
             {
               "name": "Brilliance",
-              "description": "Has the following effects:",
+              "description": "Memiliki efek berikut:",
               "descriptions": [
-                "Grants Yanfei a Scarlet Seal at fixed intervals.",
-                "Increases the DMG dealt by her Charged Attacks.",
-                "The effects of Brilliance will end if Yanfei leaves the field or falls in battle."
+                "Memberikan Scarlet Seal pada Yanfei setiap beberapa saat.",
+                "Meningkatkan DMG yang diakibatkan oleh Charged Attack.",
+                "Efek Brilliance akan berakhir saat Yanfei meninggalkan medan pertempuran atau gugur."
               ]
             }
           ]
@@ -3930,19 +3930,19 @@
         {
           "key": "p1",
           "title": "Encyclopedic Expertise",
-          "description": "Displays the location of nearby resources unique to Liyue on the mini-map.",
+          "description": "Memperlihatkan lokasi produk khas Liyue di sekitar pada mini-map.",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Proviso",
-          "description": "When Yanfei consumes Scarlet Seals by using a Charged Attack, each Scarlet Seal will increase Yanfei's Pyro DMG Bonus by 5%. This effects lasts for 6s. When a Charged Attack is used again during the effect's duration, it will dispel the previous effect.",
+          "description": "Saat Yanfei mengonsumsi Scarlet Seal dengan menggunakan Charged Attack, setiap Scarlet Seal akan meningkatkan 5% Bonus Pyro DMG Yanfei selama 6 detik. Jika Yanfei menggunakan Charged Attack sekali lagi selama durasi masih berlangsung, maka efek sebelumnya akan hilang.",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Blazing Eye",
-          "description": "When Yanfei's Charged Attack deals a CRIT Hit to opponents, she will deal an additional instance of AoE Pyro DMG equal to 80% of her ATK. This DMG counts as Charged Attack DMG.",
+          "description": "Saat Charged Attack Yanfei mengakibatkan CRIT pada musuh, Yanfei akan mengakibatkan Pyro DMG Area tambahan sebesar 80% ATK Yanfei. DMG ini terhitung sebagai DMG Charged Attack.",
           "descriptions": []
         }
       ],
@@ -3950,40 +3950,40 @@
         {
           "key": "c1",
           "title": "The Law Knows No Kindness",
-          "description": "When Yanfei uses her Charged Attack, each existing Scarlet Seal additionally reduces the stamina cost of this Charged Attack by 10% and increases resistance against interruption during its release.",
+          "description": "Saat Yanfei menggunakan Charged Attack, setiap Scarlet Seal yang terkumpul akan mengurangi 10% konsumsi stamina Charged Attack dan meningkatkan ketahanan terhadap interupsi selama Charged Attack berlangsung.",
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Right of Final Interpretation",
-          "description": "Increases Yanfei's Charged Attack CRIT Rate by 20% against enemies below 50% HP.",
+          "description": "Meningkatkan 20% CRIT Rate Charged Attack Yanfei terhadap musuh dengan HP kurang dari 50%.",
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Samadhi Fire-Forged",
-          "description": "Increases the Level of Signed Edict by 3.\nMaximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Signed Edict.\nLevel maksimum adalah level 15.",
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Supreme Amnesty",
-          "description": "When Done Deal is used:",
+          "description": "Saat Done Deal digunakan:",
           "descriptions": [
-            "Creates a shield that absorbs up to 45% of Yanfei's Max HP for 15s",
-            "This shield absorbs Pyro DMG 250% more effectively."
+            "Menciptakan perisai yang dapat menahan DMG hingga 45% dari Max HP Yanfei selama 15 detik.",
+            "Perisai ini dapat menahan Pyro DMG 250% lebih efektif."
           ]
         },
         {
           "key": "c5",
           "title": "Abiding Affidavit",
-          "description": "Increases the Level of Done Deal by 3.\nMaximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Done Deal.\nLevel maksimum adalah level 15.",
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Extra Clause",
-          "description": "Increases the maximum number of Scarlet Seals by 1.",
+          "description": "Meningkatkan jumlah maksimum Scarlet Seal sebanyak 1.",
           "descriptions": []
         }
       ]
@@ -3991,7 +3991,7 @@
     {
       "key": "Zhongli",
       "name": "Zhongli",
-      "description": "A mysterious guest invited by the Wangsheng Funeral Parlor. Extremely knowledgeable in all things.",
+      "description": "Seorang tamu misterius yang diundang Wangsheng Funeral Parlor, memiliki pengetahuan mendalam akan banyak hal.",
       "skills": [
         {
           "key": "s1",
@@ -4000,17 +4000,17 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 6 consecutive spear strikes.",
+              "description": "Melancarkan maks. 6 serangan tombak beruntun.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to lunge forward, causing stone spears to fall along his path.",
+              "description": "Mengonsumsi Stamina dalam jumlah tertentu untuk menyerang maju, menyebabkan tombak batu yang berjatuhan pada jalurnya.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Menerjang dari udara untuk menghantam tanah, mengakibatkan DMG pada musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat.",
               "descriptions": []
             }
           ]
@@ -4018,31 +4018,31 @@
         {
           "key": "s2",
           "title": "Dominus Lapidis",
-          "description": "Every mountain, rock and inch of land is filled with the power of Geo, but those who can wield such powers freely are few and far between.",
+          "description": "Gunung, tanah, batu, semuanya berisi kekuatan Geo. Namun sedikit sekali orang yang bisa menggunakan kekuatannya dengan bebas.",
           "abilities": [
             {
               "key": "a1",
-              "description": "Commands the power of earth to create a Stone Stele.",
+              "description": "Memerintahkan elemen Geo di permukaan tanah untuk berkumpul dan membentuk sebuah Stone Stele.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Causes nearby Geo energy to explode, causing the following effects:",
+              "description": "Mengakibatkan elemen Geo di sekitar meledak, menyebabkan efek berikut:",
               "descriptions": [
-                "If their maximum number hasn't been reached, creates a Stone Stele.",
-                "Creates a shield of jade. The shield's DMG Absorption scales based on Zhongli's Max HP.",
-                "Deals AoE Geo DMG.",
-                "If there are nearby targets with the Geo element, it will drain a large amount of Geo element from a maximum of 2 such targets. This effect does not cause DMG."
+                "Bila jumlah Stone Stele yang terbentuk belum mencapai batas maksimum, Stone Stele dapat tercipta.",
+                "Menciptakan sebuah Jade Shield yang dapat menyerap DMG sesuai dengan Max HP Zhongli.",
+                "Mengakibatkan Geo DMG Area.",
+                "Bila di sekeliling karakter terdapat musuh dengan elemen Geo, maka Zhongli dapat mengonsumsi sejumlah besar elemen Geo, maksimum dari 2 musuh. Efek ini tidak mengakibatkan DMG."
               ]
             },
             {
               "name": "Stone Stele",
-              "description": "When created, deals AoE Geo DMG.\nAdditionally, it will intermittently resonate with other nearby Geo constructs, dealing Geo DMG to nearby opponents.\n1The Stone Stele is considered a Geo construct that can both be climbed and used to block attacks.\nOnly one Stele created by Zhongli himself may initially exist at any one time",
+              "description": "yang tercipta akan mengakibatkan Geo DMG Area.\nSelain itu, Stone Stele akan beresonansi dengan Geo Construct di sekitarnya, mengakibatkan Geo DMG ke musuh di sekitar.\nStone Stele dianggap sebagai sebuah Geo Construct, dapat digunakan untuk menghalangi serangan dan juga dapat dipanjat.\nAwalnya, Stone Stele yang diciptakan oleh Zhongli, hanya bisa ada satu dalam satu waktu.",
               "descriptions": []
             },
             {
               "name": "Jade Shield",
-              "description": "Possesses 150% DMG Absorption against all Elemental and Physical DMG.\nCharacters protected by the Jade Shield will decrease the Elemental RES and Physical RES of opponents in a small AoE by 20%. This effect cannot be stacked.",
+              "description": "Memiliki bonus 150% efek penyerapan terhadap semua Elemental DMG dan Pysical DMG.\nKarakter yang berada dalam perlindungan Jade Shield akan menyebabkan semua Elemental RES dan Physical RES musuh di area kecil sekitarnya berkurang 20%. Efek tersebut tidak dapat ditumpuk.",
               "descriptions": []
             }
           ]
@@ -4050,11 +4050,11 @@
         {
           "key": "s3",
           "title": "Planet Befall",
-          "description": "Brings a falling meteor down to earth, dealing massive Geo DMG to opponents caught in its AoE and applying the Petrification status to them.",
+          "description": "Menjatuhkan sebuah meteor ke bumi untuk mengakibatkan Geo DMG yang besar serta menyebabkan efek Petrification kepada musuh di dalam area skill.",
           "abilities": [
             {
               "name": "Petrification",
-              "description": "Opponents affected by the Petrification status cannot move.",
+              "description": "Musuh yang terkena efek Petrification tidak dapat bergerak.",
               "descriptions": []
             }
           ]
@@ -4064,26 +4064,26 @@
         {
           "key": "p1",
           "title": "Arcanum of Crystal",
-          "description": "Refunds 15% of the ores used when crafting Polearm-type weapons.",
+          "description": "Mengembalikan 15% jumlah Ore yang digunakan saat membuat senjata tipe Polearm.",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Resonant Waves",
-          "description": "When the Jade Shield takes DMG, it will Fortify:",
+          "description": "Jade Shield akan menjadi lebih kuat setelah menerima DMG:",
           "descriptions": [
-            "Fortified characters have 5% increased Shield Strength.",
-            "Can stack up to 5 times, and lasts until the Jade Shield disappears."
+            "Meningkatkan 5% kekuatan perisai milik karakter yang dilindungi Jade Shield.",
+            "Efek ini dapat ditumpuk sebanyak 5 kali dan akan bertahan sampai Jade Shield hilang."
           ]
         },
         {
           "key": "p3",
           "title": "Dominance of Earth",
-          "description": "Zhongli deals bonus DMG based on his Max HP:",
+          "description": "Zhongli menghasilkan bonus DMG berdasarkan Max HP miliknya:",
           "descriptions": [
-            "Normal Attack, Charged Attack, and Plunging Attack DMG is increased by 1.39% of Max HP.",
-            "Dominus Lapidis' Stone Stele, resonance, and hold DMG is increased by 1.9% of Max HP.",
-            "Planet Befall's DMG is increased by 33% of Max HP."
+            "Meningkatkan DMG Normal Attack, Charged Attack, dan Plunging Attack sebesar 1,39% dari Max HP Zhongli.",
+            "Meningkatkan DMG Dominus Lapidis Stone Stele, resonansi, dan DMG tekan sebesar 1,9% Max HP Zhongli.",
+            "Meningkatkan DMG Planet Befall sebesar 33% Max HP Zhongli."
           ]
         }
       ],
@@ -4091,42 +4091,42 @@
         {
           "key": "c1",
           "title": "Rock, the Backbone of Earth",
-          "description": "Increases the maximum number of Stone Steles created by Dominus Lapidis that may exist simultaneously by 2.",
+          "description": "Jumlah Stone Stele yang dapat diciptakan oleh Dominus Lapidis meningkat menjadi 2.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "Stone, the Cradle of Jade",
-          "description": "Planet Befall grants nearby characters on the field a Jade Shield when it descends.",
+          "description": "Saat Planet Befall dilancarkan, sebuah Jade Shield akan tercipta untuk Karakter yang berada di dekatnya.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "Jade, Shimmering through Darkness",
-          "description": "Increases the Level of Dominus Lapidis by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Dominus Lapidis. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "Topaz, Unbreakable and Fearless",
-          "description": "Increases Planet Befall’s AoE by 20% and increases the duration of Planet Befall’s Petrification effect by 2s.",
+          "description": "Meningkatkan radius Planet Befall sebesar 20% dan meningkatkan durasi dari efek Petrification Planet Befall sebanyak 2 detik.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "Lazuli, Herald of the Order",
-          "description": "Increase the Level of Planet Befall by 3. Maximum upgrade level is 15.",
+          "description": "Meningkatkan 3 level Planet Befall. Level maksimum adalah level 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Chrysos, Bounty of Dominator",
-          "description": "When the Jade Shield takes DMG, 40% of that incoming DMG is converted to HP for the current character.\nA single instance of regeneration cannot exceed 8% of that character’s Max HP.",
+          "description": "Saat Jade Shield aktif, 40% DMG yang diterima akan dikonversi menjadi pemulihan HP. Jumlah pemulihan yang diterima dalam satu kali konversi tidak dapat melebihi 8% dari Max HP karakter tersebut.",
           "secondDescription": null,
           "descriptions": []
         }
