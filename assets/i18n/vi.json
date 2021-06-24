@@ -1679,7 +1679,7 @@
         {
           "key": "c4",
           "title": "Nụ Hôn Giá Lạnh",
-          "description": "Tự dộng kích hoạt khi HP của Kaeya dưới 20%:",
+          "description": "Tự động kích hoạt khi HP của Kaeya dưới 20%:",
           "secondDescription": null,
           "descriptions": [
             "Tạo thành khiên hấp thụ sát thương bằng 30% giới hạn HP, kéo dài 20s.",
@@ -2075,7 +2075,7 @@
     {
       "key": "Mona",
       "name": "Mona",
-      "description": "Thuật sĩ thần bí, tự xung6 là nhà chiêm tinh vĩ đại, có thực lực bất phàm, thông minh cao ngạo.",
+      "description": "Thuật sĩ thần bí, tự xưng là nhà chiêm tinh vĩ đại, có thực lực bất phàm, thông minh cao ngạo.",
       "skills": [
         {
           "key": "s1",
