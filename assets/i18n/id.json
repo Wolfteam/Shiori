@@ -4218,680 +4218,680 @@
     {
       "key": "Hunter’s Bow",
       "name": "Hunter’s Bow",
-      "description": "A hunter’s music consists of but two sounds: the twang of the bowstring and the whoosh of soaring arrows.",
+      "description": "Bagi seorang pemburu, lagu terindah adalah suara tali busur yang ditariknya, dan suara anak panah yang melaju dengan kencang.",
       "refinement": null
     },
     {
       "key": "Seasoned Hunter’s Bow",
       "name": "Seasoned Hunter’s Bow",
-      "description": "A bow that has been well-polished by time and meticulously cared for by its owner. It feels almost like an extension of the archer’s arm.",
+      "description": "Busur yang terasah dengan baik oleh waktu dan tangan pemburu. Terasa seperti kepanjangan tangan dari seorang pemburu handal.",
       "refinement": null
     },
     {
       "key": "Ebony Bow",
       "name": "Ebony Bow",
-      "description": "A longbow made of ebony wood with stiffer limbs than ordinary bows. It is also a far more powerful weapon.",
-      "refinement": "Increases DMG against mechanoid Ruin enemies by {{0}}%"
+      "description": "Busur yang terbuat dari kayu hitam, tubuhnya lebih kaku dari busur biasa. Tetapi tentunya juga lebih kuat.",
+      "refinement": "Meningkatkan {{0}}% DMG terhadap musuh Ruins."
     },
     {
       "key": "Messenger",
       "name": "Messenger",
-      "description": "A basic wooden bow. It is said to have once been used as a tool for long-distance communication.",
-      "refinement": "Charged Attack hits on weak points deal an additional {{0}}% ATK DMG as CRIT DMG. Can only occur once every 10s."
+      "description": "Busur kayu yang sederhana. Konon busur ini biasanya digunakan hanya untuk mengirimkan pesan surat.",
+      "refinement": "Saat Charged Attack mengenai titik kelemahan musuh, akan mengakibatkan tambahan DMG sebesar {{0}}% ATK sebagai CRIT DMG. Dapat terpicu setiap 10 detik."
     },
     {
       "key": "Raven Bow",
       "name": "Raven Bow",
-      "description": "Ravens are known to be the ferrymen of the dead. This bow’s limb is decorated with raven feathers, which forebode the imminent death of its target.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Pyro by {{0}}%"
+      "description": "Burung gagak diketahui sebagai pengantar kematian. Tubuh busur ini dihiasi dengan bulu burung gagak yang menandakan kematian bagi mangsa yang diincarnya.",
+      "refinement": "Meningkatkan {{0}}% DMG terhadap musuh yang terpengaruh Hydro atau Pyro."
     },
     {
       "key": "Recurve Bow",
       "name": "Recurve Bow",
-      "description": "It is said that this bow can shoot down eagles in flight, but ultimately how true that is depends on the skill of the archer.",
-      "refinement": "Defeating an opponent restores {{0}}% HP"
+      "description": "Konon busur ini dapat mengenai burung elang yang sedang terbang, tetapi tentunya juga harus mengandalkan kemahiran dari sang pemburu.",
+      "refinement": "Memulihkan {{0}}% HP saat mengalahkan satu musuh."
     },
     {
       "key": "Sharpshooter’s Oath",
       "name": "Sharpshooter’s Oath",
-      "description": "This superior bow once belonged to a master archer. However, it gives off a strong scent, thus making it unsuitable for hunting.",
-      "refinement": "Increases DMG against weak spots by {{0}}%"
+      "description": "Busur kuat yang pernah dimiliki oleh seorang pemanah terbaik. Tetapi aura kuat yang terpancar dari busur ini membuatnya tidak cocok dipakai untuk berburu.",
+      "refinement": "Meningkatkan {{0}}% DMG serangan yang mengenai titik kelemahan musuh."
     },
     {
       "key": "Slingshot",
       "name": "Slingshot",
-      "description": "A bow, despite the name. After countless experiments and improvements to the design, the creator of the ultimate slingshot found himself to have made what was actually a bow.",
-      "refinement": "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by {{0}}%. Otherwise, decreases DMG by 10%."
+      "description": "Selepas namanya, ini adalah sebuah busur. Setelah percobaan dan peningkatan yang tak terhitung jumlahnya, orang yang membuat Slingshot baru menyadari bahwa yang terbentuk adalah sebuah busur.",
+      "refinement": "Jika Normal atau Charged Attack mengenai target dalam waktu 0,3 detik setelah dilancarkan, DMG meningkat sebesar {{0}}%. Sebaliknya jika tidak, maka DMG menurun sebesar 10%."
     },
     {
       "key": "The Stringless",
       "name": "The Stringless",
-      "description": "A bow that once served as an extraordinary instrument. It is no longer capable of getting people up and dancing.",
-      "refinement": "Increases Elemental Skill and Elemental Burst DMG by {{0}}%."
+      "description": "Sebuah busur yang dulunya merupakan instrumen luar biasa. Kini tak mampu lagi untuk membuat orang menari.",
+      "refinement": "Meningkatkan {{0}}% DMG Elemental Skill dan Elemental Burst."
     },
     {
       "key": "Alley Hunter",
       "name": "Alley Hunter",
-      "description": "An intricate, opulent longbow. It once belonged to a gentleman thief who was never caught.",
-      "refinement": "While the character equipped with this weapon is in the party but not on the field, their DMG increases by {{0}}% every second up to a max of {{1}}%. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by {{2}}% per second until it reaches 0%."
+      "description": "Busur panjang yang indah, dulunya digunakan oleh seorang pencuri ulung yang tidak pernah tertangkap.",
+      "refinement": "Saat Karakter yang menggunakan senjata ini ada dalam party tapi tidak berada di medan pertempuran, DMG Karakter tersebut akan meningkat {{0}}% setiap detik, hingga maksimal {{1}}%. Saat Karakter tersebut memasuki medan pertempuran selama lebih dari 4 detik, peningkatan DMG akan berkurang {{2}}% setiap detik, sampai kembali ke 0%."
     },
     {
       "key": "Blackcliff Warbow",
       "name": "Blackcliff Warbow",
-      "description": "A bow made of blackcliff that features extremely sturdy bow limbs. It requires an archer with a strong bow arm to use.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "description": "Sebuah busur yang dibuat dari blackstone, sangat kokoh. Membutuhkan seorang pemanah dengan lengan yang kuat untuk menggunakannya.",
+      "refinement": "Setelah mengalahkan musuh, meningkatkan {{0}}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
     },
     {
       "key": "Compound Bow",
       "name": "Compound Bow",
-      "description": "An exotic metallic bow from a distant land. Though extremely difficult to maintain, it is easy to nock and fires with tremendous force.",
-      "refinement": "Normal Attack and Charged Attack hits increase ATK by {{0}}% and Normal ATK SPD by {{1}}% for 6s. Max 4 stacks. Can only occur once every 0.3s."
+      "description": "Busur indah yang terbuat dari logam. Sangat sulit untuk dirawat, tetapi sangat mudah untuk digunakan dan memiliki kekuatan yang mengejutkan.",
+      "refinement": "Saat Normal Attack dan Charged Attack mengenai musuh maka akan meningkatkan ATK sebesar {{0}}% dan Normal ATK SPD sebesar {{1}}% selama 6 detik. Maks. 4 lapis. Dapat terpicu setiap 0,3 detik."
     },
     {
       "key": "Favonius Warbow",
       "name": "Favonius Warbow",
-      "description": "A standard-issue recurve bow of the Knights of Favonius. Only the best archers can unleash its full potential.",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "description": "Recurve Bow sederhana yang digunakan oleh Knights of Favonius. Hanya pemanah terhandal yang dapat menggunakan busur ini sampai ke potensi terbesarnya.",
+      "refinement": "Serangan CRIT memiliki {{0}}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {{1}} detik."
     },
     {
       "key": "Prototype Crescent",
       "name": "Prototype Crescent",
-      "description": "A prototype longbow discovered in the Blackcliff Forge. The arrow fired from this bow glimmers like a ray of moonlight.",
-      "refinement": "Charged Attack hits on weak points increase Movement SPD by 10% and ATK by {{0}}% for 10s."
+      "description": "Sebuah prototipe busur yang ditemukan di Blackcliff Forge. Anak panah yang ditembakkan dari busur ini bercahaya bagaikan cahaya rembulan.",
+      "refinement": "Saat Charged Attack mengenai titik kelemahan musuh, akan meningkatkan Movement SPD sebanyak 10% dan ATK sebesar {{0}}% selama 10 detik."
     },
     {
       "key": "Royal Bow",
       "name": "Royal Bow",
-      "description": "An old royal longbow that belonged to the erstwhile rulers of Mondstadt. Countless generations later, the bowstring is still tight and can still fire arrows with great force.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "description": "Busur tua yang pernah digunakan oleh para bangsawan penguasa Mondstadt di zaman dahulu. Setelah generasi demi generasi berlalu, busur ini masih dapat menembakkan panah dengan sangat cepat.",
+      "refinement": "Saat mengakibatkan DMG pada musuh, meningkatkan {{0}}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang."
     },
     {
       "key": "Rust",
       "name": "Rust",
-      "description": "A completely rusted iron greatbow. The average person would lack the strength to even lift it, let alone fire it.",
-      "refinement": "Increases Normal Attack DMG by {{0}}% but decreases Charged Attack DMG by 10%."
+      "description": "Busur besar yang terbuat dari perak, tetapi kini telah tertutup penuh oleh karat. Orang biasa jangankan menembakkan panah, mengangkatnya pun tidak sanggup.",
+      "refinement": "Meningkatkan DMG Normal Attack sebesar {{0}}% tapi menurunkan DMG Charged Attack sebesar 10%."
     },
     {
       "key": "Sacrificial Bow",
       "name": "Sacrificial Bow",
-      "description": "A ceremonial hunting bow that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s"
+      "description": "Busur berburu dekorasi yang telah membatu oleh waktu. Dekorasi yang ada di atasnya masih terlihat dengan jelas. Memberikan kekuatan melawan angin waktu bagi penggunanya.",
+      "refinement": "Setelah Elemental Skill mengakibatkan DMG, terdapat {{0}}% persentase CD Skill langsung selesai. Dapat terpicu setiap {{1}} detik."
     },
     {
       "key": "The Viridescent Hunt",
       "name": "The Viridescent Hunt",
-      "description": "A pure green hunting bow. This once belonged to a certain hunter whose home was the forest.",
-      "refinement": "Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding enemies, dealing {{0}}% of ATK as DMG to these enemies every 0.5s for 4s. This effect can only occur once every {{1}}s"
+      "description": "Busur berburu warna hijau tua, dulunya milik seorang pemburu hutan.",
+      "refinement": "Saat Normal atau Charged Attack mengenai musuh, memiliki 50% persentase untuk menciptakan Cyclone yang akan menarik musuh di sekitar dan mengakibatkan {{0}}% DMG setiap 0,5 detik. Efek ini berlangsung selama 4 detik. Dapat dipicu setiap {{1}} detik."
     },
     {
       "key": "Skyward Harp",
       "name": "Skyward Harp",
-      "description": "A greatbow that symbolizes Dvalin’s affiliation with the Anemo Archon. The sound of the bow firing is music to the Anemo Archon’s ears. It contains the power of the sky and wind within.",
-      "refinement": "Increases CRIT DMG by {{0}}%. Hits have a {{1}}% chance to inflict a small AoE attack, dealing 125% Physical ATK DMG. Can only occur once every {{2}}s."
+      "description": "Busur besar yang melambangkan hubungan erat antara Dvalin dan Archon Anemo. Suara yang ditimbulkan busur ini bagaikan musik di telinga Archon Anemo, di dalamnya terdapat kekuatan angin dan angkasa.",
+      "refinement": "Meningkatkan {{0}}% CRIT DMG. Saat serangan mengenai musuh, memiliki {{1}}% persentase untuk mengakibatkan DMG pada area kecil sebesar 125% ATK. Dapat terpicu setiap {{2}} detik."
     },
     {
       "key": "Amos’ Bow",
       "name": "Amos’ Bow",
-      "description": "An extremely ancient bow that has retained its power despite its original master being long gone. It draws power from everyone and everything in the world, and the further away you are from that which your heart desires, the more powerful it is.",
-      "refinement": "Increases Normal and Charged Attack DMG by {{0}}%. Normal and Charged Attack DMG increases by {{1}}% every 0.1s for up to 5 times."
+      "description": "Busur kuno yang masih menyimpan kekuatan walaupun pemiliknya telah lama hilang. Menarik kekuatan dari semua orang dan segala yang ada di dunia, dan semakin jauh seseorang dari keinginan hatinya, semakin kuat pula busur tersebut.",
+      "refinement": "Meningkatkan DMG dari Normal dan Charged Attack sebesar {{0}}%. DMG Normal dan Charged Attack meningkat sebesar {{1}}% setiap 0,1 detik sampai 5 kali."
     },
     {
       "key": "Dreams of Dragonfell",
       "name": "Dreams of Dragonfell",
-      "description": "A great bow that once shot clean through a giant dragon. Once released, the impetus of its bowstring resembles a peal of thunder.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "description": "Busur besar yang pernah ditembakkan menembus naga raksasa. Setelah dilepaskan, dorongan tali busurnya menyerupai gemuruh guntur.",
+      "refinement": "Meningkatkan Kekuatan Perisai sebesar {{0}}%. Mencetak hit pada lawan meningkatkan ATK sebesar {{1}}% selama 8 detik. Maks 5 tumpukan. Hanya dapat terjadi sekali setiap 0,3 detik. Saat dilindungi oleh perisai, efek peningkatan ATK ini meningkat sebesar 100%."
     },
     {
       "key": "Dull Blade",
       "name": "Dull Blade",
-      "description": "Youthful dreams and the thrill of adventure. If this isn’t enough, then make it up with valiance.",
+      "description": "Mimpi masa muda dan semangat petualang, kalau dua hal itu tidak cukup tajam, tambahkanlah keberanian!",
       "refinement": null
     },
     {
       "key": "Silver Sword",
       "name": "Silver Sword",
-      "description": "A sword for exorcising demons. Everyone knows it’s made of a silver alloy, not pure silver.",
+      "description": "Pedang perak yang ditakuti iblis. Tapi semua orang tahu, sebenarnya ini bukan perak murni, melainkan perak campuran.",
       "refinement": null
     },
     {
       "key": "Cool Steel",
       "name": "Cool Steel",
-      "description": "A reliable steel-forged weapon that serves as a testament to the great adventures of its old master.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Cryo by {{0}}%"
+      "description": "Senjata yang dibentuk dari banyak lapisan baja, juga menjadi tanda akan petualangan-petualangan besar pemiliknya.",
+      "refinement": "Meningkatkan {{0}}% DMG terhadap musuh yang terkena elemen Hydro atau Cryo."
     },
     {
       "key": "Dark Iron Sword",
       "name": "Dark Iron Sword",
-      "description": "A perfectly ordinary iron sword, just slightly darker than most.",
-      "refinement": "Upon causing an Overloaded, Superconduct, Electro-Charged, or an Electro-infused Swirl reaction, ATK is increased by {{0}}% for 12s."
+      "description": "Sebenarnya, hanya sebilah pedang yang sedikit lebih gelap dari Iron Sword.",
+      "refinement": "Saat Overloaded, Superconduct, Electro-Charged, atau reaksi Swirl dengan elemen Electro terpicu, meningkatkan ATK sebesar {{0}}% selama 12 detik."
     },
     {
       "key": "Fillet Blade",
       "name": "Fillet Blade",
-      "description": "A sharp filleting knife. The blade is long, thin, and incredibly sharp.",
-      "refinement": "On hit, has a 50% chance to deal {{0}}% ATK DMG to a single enemy. Can only occur once every {{1}}s."
+      "description": "Pedang tajam yang digunakan untuk memotong ikan, mata pedangnya panjang dan sangat tajam.",
+      "refinement": "Saat mengenai, memiliki 50% persentase untuk mengakibatkan {{0}}% ATK DMG ke suatu target. Dapat terpicu setiap {{1}} detik."
     },
     {
       "key": "Harbinger of Dawn",
       "name": "Harbinger of Dawn",
-      "description": "A sword that once shone like the sun. The wielder of this sword will be blessed with a \"feel-good\" buff. The reflective material on the blade has long worn off.",
-      "refinement": "When HP is above 90%, increases CRIT Rate by {{0}}%."
+      "description": "Pedang yang sebelumnya bersinar seterang matahari. Memberikan buff dan efek \"Feel-good\". Bahan yang memantulkan cahaya telah pudar dari permukaannya.",
+      "refinement": "Saat HP lebih dari 90%, CRIT Rate meningkat {{0}}%."
     },
     {
       "key": "Skyrider Sword",
       "name": "Skyrider Sword",
-      "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword...",
-      "refinement": "Using an Elemental Burst grants a {{0}}% increase in ATK and Movement SPD for 15s."
+      "description": "Pedang baja yang dapat diandalkan. Konon, Skyrider yang terkenal pernah mencoba meminjam kekuatannya untuk terbang...",
+      "refinement": "Menggunakan Elemental Burst meningkatkan {{0}}% ATK dan Movement SPD selama 15 detik."
     },
     {
       "key": "Traveler’s Handy Sword",
       "name": "Traveler’s Handy Sword",
-      "description": "A handy steel sword which contains scissors, a magnifying glass, tinder, and other useful items in its sheath.",
-      "refinement": "Each Elemental Orb or Particle collected restores {{0}}% HP."
+      "description": "Pedang baja yang nyaman untuk digenggam, di dalamnya tersembunyi gunting, kaca pembesar, kayu bakar, dan berbagai kebutuhan bertualang lainnya.",
+      "refinement": "Mengambil Elemental Energy Orb/Particle memulihkan {{0}}% HP."
     },
     {
       "key": "Blackcliff Longsword",
       "name": "Blackcliff Longsword",
-      "description": "A sword made of a material known as \"blackcliff.\" It has a dark crimson glow on its black blade.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "description": "Sebuah pedang yang dibuat dari blackstone. Mempunyai cahaya merah tua pada bilahnya.",
+      "refinement": "Setelah mengalahkan musuh, meningkatkan {{0}}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
     },
     {
       "key": "Favonius Sword",
       "name": "Favonius Sword",
-      "description": "A standard-issue longsword of the Knights of Favonius. When you’re armed with this agile and sharp weapon, channeling the power of the elements has never been so easy!",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "description": "Pedang panjang yang digunakan oleh para anggota Knights of Favonius. Ringan dan tajam, juga dapat dialirkan kekuatan elemen dengan mudah.",
+      "refinement": "Serangan CRIT memiliki {{0}}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {{1}} detik."
     },
     {
       "key": "Iron Sting",
       "name": "Iron Sting",
-      "description": "An exotic long-bladed rapier that somehow found its way into Liyue via foreign traders. It is light, agile, and sharp.",
-      "refinement": "Dealing Elemental DMG increases all DMG by {{0}}% for 6s. Max 2 stacks. Can occur once every 1s."
+      "description": "Pedang panjang eksotis yang mencapai Liyue melalui perdagangan antar bangsa. Beratnya ringan, mudah diayunkan, dan sangat tajam.",
+      "refinement": "Mengakibatkan Elemental DMG akan meningkatkan {{0}}% DMG selama 6 detik. Maksimum 2 lapis. Dapat terpicu setiap 1 detik."
     },
     {
       "key": "Lion’s Roar",
       "name": "Lion’s Roar",
-      "description": "A sharp blade with extravagant carvings that somehow does not compromise on durability and sharpness. It roars like a lion as it cuts through the air.",
-      "refinement": "Increases DMG against enemies affected by Pyro or Electro by {{0}}%"
+      "description": "Pedang dengan ukiran dan desain yang mewah, tetapi sama sekali tidak memengaruhi ketajaman dan ketahanan pedang ini. Suara dari tebasannya menyerupai suara amarah singa.",
+      "refinement": "Meningkatkan {{0}}% DMG terhadap musuh yang terpengaruh Pyro atau Electro."
     },
     {
       "key": "Prototype Rancour",
       "name": "Prototype Rancour",
-      "description": "An ancient longsword discovered in the Blackcliff Forge that cuts through rocks like a hot knife through butter.",
-      "refinement": "On hit, Normal or Charged Attacks increase ATK and DEF by {{0}}% for 6s. Max 4 stacks. This effect can only occur once every 0.3s."
+      "description": "Pedang panjang kuno yang ditemukan di Blackcliff Forge. Dapat dengan mudah memotong batu bagaikan pisau memotong batangan mentega.",
+      "refinement": "Saat Normal atau Charged Attack mengenai musuh, meningkatkan {{0}}% ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,3 detik."
     },
     {
       "key": "Royal Longsword",
       "name": "Royal Longsword",
-      "description": "An old longsword that belonged to the erstwhile rulers of Mondstadt. Exquisitely crafted, the carvings and embellishments testify to the stature of its owner.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "description": "Pedang panjang tua milik bangsawan Mondstadt di masa lampau. Memiliki ukiran dan ornamen yang elegan yang melambangkan status dari pemiliknya.",
+      "refinement": "Saat mengakibatkan DMG pada musuh, meningkatkan {{0}}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang."
     },
     {
       "key": "Sacrificial Sword",
       "name": "Sacrificial Sword",
-      "description": "A ceremonial sword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s"
+      "description": "Pedang dekoratif yang telah membatu karena usianya yang sangat tua, tetapi perhiasan yang tertanam di dalamnya masih dapat terlihat. Memberikan kekuatan berkat akan angin waktu kepada pemegangnya.",
+      "refinement": "Setelah Elemental Skill mengakibatkan DMG, terdapat {{0}}% persentase CD Skill langsung selesai. Dapat terpicu setiap {{1}} detik."
     },
     {
       "key": "The Alley Flash",
       "name": "The Alley Flash",
-      "description": "A straight sword as black as the night. It once belonged to a thief who roamed the benighted streets.",
-      "refinement": "Increases DMG dealt by the character equipping this weapon by {{0}}%. Taking DMG disables this effect for 5s."
+      "description": "Longsword sehitam langit malam. Dulunya milik pencuri yang senang berkeliaran di lorong-lorong gelap.",
+      "refinement": "Meningkatkan {{0}}% DMG yang diakibatkan Karakter. Efek akan menghilang selama 5 detik bila Karakter menerima DMG."
     },
     {
       "key": "The Black Sword",
       "name": "The Black Sword",
-      "description": "A pitch-black longsword that thirsts for violence and conflict. It is said that this weapon can cause its user to become drunk on the red wine of slaughter.",
-      "refinement": "Increases DMG dealt by Normal and Charged Attacks by {{0}}%. Additionally, regenerates {{1}}% of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s."
+      "description": "Longsword hitam yang haus akan konflik dan pertempuran. Dikatakan bahwa pedang ini bisa membuat pemiliknya menjadi haus darah dan pembantaian.",
+      "refinement": "Meningkatkan {{0}}% DMG Normal dan Charged Attack. Selain itu saat Normal dan Charged Attack menghasilkan CRIT, akan memulihkan HP sebanyak {{1}}% dari ATK. Dapat terpicu setiap 5 detik."
     },
     {
       "key": "The Flute",
       "name": "The Flute",
-      "description": "Beneath its rusty exterior is a lavishly decorated thin blade. It swings as swiftly as the wind.",
-      "refinement": "Normal or Charged Attacks grant a Harmonic on hits. Gaining 5 Harmonics triggers the power of music and deals {{0}}% ATK DMG to surrounding enemies. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s."
+      "description": "Di balik karatnya, terdapat pedang dengan dekorasi mewah. Dapat diayunkan cepat dengan sangat mudah.",
+      "refinement": "Saat mengenai, Normal atau Charged Attack akan memberikan 1 Harmonic. Setiap 5 Harmonic akan memicu kekuatan lagu, mengakibatkan {{0}}% ATK DMG kepada musuh di sekitar. Setiap Harmonic dapat tersimpan selama 30 detik, dan dapat terciptakan setiap 0,5 detik."
     },
     {
       "key": "Sword of Descension",
       "name": "Sword of Descension",
-      "description": "A sword of unique craftsmanship. It does not appear to belong to this world.",
-      "refinement": "Hitting opponents with Normal and Charged Attacks grants a {{0}}% chance to deal 200% ATK as DMG in a small AoE. This effect can only occur once every 10s. Additionally, if the Traveler equips the Sword of Descension, their ATK is increased by {{1}}."
+      "description": "Sebilah pedang dengan bentuk yang unik, sepertinya bukan berasal dari dunia ini.",
+      "refinement": "Saat mengenai, Normal dan Charged Attack memiliki {{0}}% persentase untuk mengakibatkan DMG area sebesar 200% ATK dalam radius kecil. Efek ini dapat terpicu setiap 10 detik. Saat Traveler menggunakan Sword of Descension, ATK meningkat {{1}}."
     },
     {
       "key": "Festering Desire",
       "name": "Festering Desire",
-      "description": "A creepy straight sword that almost seems to yearn for life. It drips with a shriveling venom that could even corrupt a mighty dragon.",
-      "refinement": "Increases Elemental Skill DMG by {{0}}% and Elemental Skill CRIT Rate by {{1}}%."
+      "description": "Sebilah pedang mengerikan yang seakan-akan haus akan nyawa. Pedang ini dilapisi oleh racun mematikan yang bisa melukai seekor naga sekalipun.",
+      "refinement": "Meningkatkan DMG Elemental Skill sebanyak {{0}}%, dan meningkatkan CRIT Rate Elemental Skill sebanyak {{1}}%."
     },
     {
       "key": "Aquila Favonia",
       "name": "Aquila Favonia",
-      "description": "The soul of the Knights of Favonius. Millennia later, it still calls on the winds of swift justice to vanquish all evil  just like the last heroine who wielded it.",
-      "refinement": "ATK is increased by {{0}}%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {{1}}% of ATK and dealing {{2}}% of ATK as DMG to surrounding enemies. This effect can only occur once every 15s."
+      "description": "Lambang jiwa dan raga dari Knights of Favonius. Ribuan tahun berlalu pun, pedang ini masih akan menghembuskan angin keadilan, dan membasmi kejahatan, seperti pahlawan wanita yang terakhir menggenggamnya.",
+      "refinement": "Saat menerima DMG dapat memicu peningkatan ATK sebesar {{0}}%. Jiwa dari Falcon of the West bangkit dan membangkitkan bendera pertahanan. Memulihkan HP {{1}}% dari ATK dan mengakibatkan {{2}}% DMG pada musuh di sekitarnya. Dapat terpicu setiap 15 detik."
     },
     {
       "key": "Skyward Blade",
       "name": "Skyward Blade",
-      "description": "The sword of a knight that symbolizes the restored honor of Dvalin. The blessings of the Anemo Archon rest on the fuller of the blade, imbuing the sword with the powers of the sky and the wind.",
-      "refinement": "CRIT Rate increased by {{0}}%. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by 10%, increases ATK SPD by 10%, and increases the DMG of Normal and Charged Attack hits by {{1}}% for 12s."
+      "description": "Pedang Knight yang melambangkan kemuliaan Dvalin yang sudah terpulihkan. Berkat Archon Anemo berinar di atas mata pedangnya, memberikan kekuatan langit dan angin.",
+      "refinement": "Saat melakukan Elemental Burst akan meningkatkan CRIT Rate sebesar {{0}}%, meningkatkan Movement SPD sebesar 10%, dan ATK SPD sebesar 10%. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG {{1}}% ATK selama 12 detik."
     },
     {
       "key": "Summit Shaper",
       "name": "Summit Shaper",
-      "description": "A symbol of a legendary pact, this sharp blade once cut off the peak of a mountain.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "description": "Sebuah pedang legenda yang menjadi simbol sebuah kontrak bertepi tajam, konon pedang ini pernah memotong puncak dari suatu gunung.",
+      "refinement": "Meningkatkan kekuatan perisai sebesar {{0}}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {{1}}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%."
     },
     {
       "key": "Apprentice’s Notes",
       "name": "Apprentice’s Notes",
-      "description": "Notes left behind by a top student. Many useful spells are listed, and the handwriting is beautiful.",
+      "description": "Catatan milik salah satu murid terbaik, di dalamnya terdapat berbagai sihir yang sangat berguna, dan tulisan tangannya sangat indah.",
       "refinement": null
     },
     {
       "key": "Pocket Grimoire",
       "name": "Pocket Grimoire",
-      "description": "A carefully compiled notebook featuring the essentials needed to pass a magic exam.",
+      "description": "Buku catatan yang disusun dengan hati-hati, berisi hal-hal penting yang berguna untuk lulus ujian sihir.",
       "refinement": null
     },
     {
       "key": "Amber Bead",
       "name": "Amber Bead",
-      "description": "A catalyst carved out of amber that gains a warm halo under the sun.",
-      "refinement": "Normal Attack hits increase all Elemental DMG by {{0}}% for 6s. Max 2 stacks."
+      "description": "Catalyst yang terbentuk dari batu amber, memancarkan aura hangat saat berada di bawah sinar matahari.",
+      "refinement": "Normal Attack meningkatkan {{0}}% Elemental DMG selama 6 detik. Maks. 2 lapis."
     },
     {
       "key": "Emerald Orb",
       "name": "Emerald Orb",
-      "description": "A catalyst carved out of the hard jade from Jueyun Karst north of Liyue. It is small, light, and durable.",
-      "refinement": "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by {{0}}% for 12s."
+      "description": "Sebuah Catalyst yang dibentuk dari giok keras yang berasal dari Jueyun Karst di Utara Liyue. Bentuknya kecil, ringan, dan memiliki ketahanan yang kuat.",
+      "refinement": "Saat memicu Vaporize, Electro-Charged, Frozen, atau reaksi Swirl berbasis Pyro, meningkatkan {{0}}% ATK selama 12 detik."
     },
     {
       "key": "Magic Guide",
       "name": "Magic Guide",
-      "description": "Version 12. A reprint featuring corrections to Version 11 and brand-new additions based on recent developments.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Electro by {{0}}%."
+      "description": "Jilid ke-12. Edisi ini merupakan revisi jilid ke-11 dengan beberapa perbaikan dan penambahan berdasarkan perkembangan terkini.",
+      "refinement": "Meningkatkan {{0}}% DMG terhadap musuh yang terpengaruh Hydro atau Electro."
     },
     {
       "key": "Otherworldly Story",
       "name": "Otherworldly Story",
-      "description": "A cheap fantasy novel with no value whatsoever. Any claim that it possesses the power of catalysis is also pure fantasy.",
-      "refinement": "Picking up an Elemental Energy Orb/Particle recovers {{0}}% HP."
+      "description": "Novel yang menceritakan sebuah kisah fantasi tanpa nilai moral apa pun. Kekuatannya sebagai Catalyst juga tentunya, hanyalah fantasi.",
+      "refinement": "Mengambil Elemental Energy Orb/Particle memulihkan {{0}}% HP."
     },
     {
       "key": "Thrilling Tales of Dragon Slayers",
       "name": "Thrilling Tales of Dragon Slayers",
-      "description": "A fictional story of a band of five heroes who go off on a dragon hunt. It is poorly written and structurally incoherent. Its value lies in the many lessons that can be learned from failure.",
-      "refinement": "When switching characters, the new character taking the field has their ATK increased by {{0}}% for 10s. This effect can only occur once every 20s."
+      "description": "Kisah fiksi tentang kelompok beranggotakan 5 pahlawan yang tengah dalam perjalanan memburu naga. Penulisannya sangat buruk dan tidak memiliki struktur yang jelas. Tetapi buku ini kaya akan pelajaran untuk tidak membuat kesalahan.",
+      "refinement": "Saat berganti karakter, ATK karakter tersebut meningkat {{0}}% selama 10 detik. Efek ini dapat terpicu setiap 20 detik."
     },
     {
       "key": "Twin Nephrite",
       "name": "Twin Nephrite",
-      "description": "A jade pendant formed by piecing together two jade stones.",
-      "refinement": "Defeating an enemy increases Movement SPD and ATK by {{0}}% for 15s."
+      "description": "Sebuah kalung giok yang disatukan oleh dua potong giok.",
+      "refinement": "Mengalahkan musuh meningkatkan {{0}}% Movement SPD dan ATK selama 15 detik."
     },
     {
       "key": "Blackcliff Agate",
       "name": "Blackcliff Agate",
-      "description": "A mysterious catalyst made of a material known as \"blackcliff.\" It has an ominous crimson glow that seems to pulse in synchronization with the tremors from deep within the earth.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "description": "Catalyst misterius yang terbuat dari material Blackstone. Memiliki cahaya merah tua yang berpendar bagaikan getaran inti bumi.",
+      "refinement": "Setelah mengalahkan musuh, meningkatkan {{0}}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
     },
     {
       "key": "Favonius Codex",
       "name": "Favonius Codex",
-      "description": "A secret tome that belonged to the scholars of the Knights of Favonius. It describes the logic and power of elements and matter.",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "description": "Kitab rahasia milik para sarjana Knights of Favonius. Di dalamnya tercatat logika dan kekuatan akan elemen dan materi alam.",
+      "refinement": "Serangan CRIT memiliki {{0}}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {{1}} detik."
     },
     {
       "key": "Mappa Mare",
       "name": "Mappa Mare",
-      "description": "A nautical chart featuring nearby currents and climates that somehow found its way into Liyue via foreign traders.",
-      "refinement": "Triggering an Elemental reaction grants a {{0}}% Elemental DMG Bonus for 10s. Max 2 stacks."
+      "description": "Grafik petunjuk untuk berlayar di laut, menunjukkan arus dan iklim di sekitar, mencapai Liyue melalui tangan para pedagang.",
+      "refinement": "Memicu Elemental reaction akan meningkatkan Elemental DMG sebanyak {{0}}% selama 10 detik. Efek ini dapat ditumpuk maksimum 2 lapis."
     },
     {
       "key": "Prototype Amber",
       "name": "Prototype Amber",
-      "description": "A dully gilded catalyst secretly guarded in the Blackcliff Forge. It seems to glow with the very light from the sky.",
-      "refinement": "Using an Elemental Burst regenerates {{0}} Energy every 2s for 6s. All party members will regenerate {{1}}% HP every 2s for this duration."
+      "description": "Catalyst yang dilapisi dengan emas, tersembunyi dan dijaga di dalam Blackcliff Forge, sepertinya benda ini dapat menampung cahaya dari langit.",
+      "refinement": "Setelah melancarkan Elemental Burst, memulihkan {{0}} Energy setiap 2 detik dan memulihkan {{1}}% HP kepada seluruh anggota party setiap 2 detik."
     },
     {
       "key": "Royal Grimoire",
       "name": "Royal Grimoire",
-      "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "description": "Buku yang sebelumnya dimiliki oleh penyihir istana di Mondstadt. Di dalamnya tercatat kebenaran sejarah dan berbagai sihir.",
+      "refinement": "Saat mengakibatkan DMG pada musuh, meningkatkan {{0}}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang."
     },
     {
       "key": "Sacrificial Fragments",
       "name": "Sacrificial Fragments",
-      "description": "A weathered script, the text of which is no longer legible. A cursed item eroded by the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s."
+      "description": "Naskah yang sudah tua dan lapuk, tulisannya tidak lagi dapat dibaca. Benda terkutuk yang telah terkikis oleh angin waktu.",
+      "refinement": "Setelah Elemental Skill mengakibatkan DMG, terdapat {{0}}% persentase CD Skill langsung selesai. Dapat terpicu setiap {{1}} detik."
     },
     {
       "key": "Solar Pearl",
       "name": "Solar Pearl",
-      "description": "A dull, golden pearl made of an unknown substance that harbors the light of the sun and the moon, and pulses with a warm strength.",
-      "refinement": "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {{0}}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {{1}}% for 6s."
+      "description": "Mutiara emas yang terbuat dari benda yang menyimpan cahaya matahari dan bulan, memancarkan kekuatan hangat.",
+      "refinement": "Saat Normal Attack mengenai musuh, meningkatkan {{0}}% DMG Elemental Skill dan Elemental Burst selama 6 detik. Sebaliknya, saat Elemental Skill atau Elemental Burst mengenai musuh, meningkatkan {{1}}% DMG Normal Attack selama 6 detik."
     },
     {
       "key": "The Widsith",
       "name": "The Widsith",
-      "description": "A heavy notebook filled with musical scores. Though suffering from moth damage and heavy wear-and-tear, there is still much power to be found among the hand-written words within.",
-      "refinement": "When the character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s. Recitative: ATK is increased by {{0}}%. Aria: Increases all Elemental DMG by {{1}}%. Interlude: Elemental Mastery is increased by {{2}}."
+      "description": "Sebuah buku catatan tebal yang berisi beragam tulisan lagu. Meskipun sudah tua dan dimakan ngengat, di dalam tulisannya masih tersimpan kekuatan yang besar.",
+      "refinement": "Saat memasuki pertempuran, memulai sebuah musik secara acak selama 10 detik. Dapat terpicu setiap 30 detik. Recitative: Meningkatkan {{0}}% ATK. Aria: Meningkatkan {{1}}% Elemental DMG. Interlude: Meningkatkan {{2}} Elemental Mastery."
     },
     {
       "key": "Wine and Song",
       "name": "Wine and Song",
-      "description": "A songbook from the bygone aristocratic era, whose composer has become forgotten. It chronicles the tale of a certain heroic outlaw.",
-      "refinement": "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by {{0}}% for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by {{1}}% for 5s."
+      "description": "Lagu yang sangat populer di era kebangsawanan. Penulisnya tak diketahui. Menceritakan kisah seorang bandit...",
+      "refinement": "Setelah Normal Attack mengenai musuh, konsumsi Stamina saat Berlari atau Alternate Sprint berkurang {{0}}% selama 5 detik. Lalu, setelah Berlari atau Alternate Sprint, ATK meningkat {{1}}% selama 5 detik."
     },
     {
       "key": "Eye of Perception",
       "name": "Eye of Perception",
-      "description": "A dim black glaze pearl that is said to have the power to read the purity of one’s heart.",
-      "refinement": "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing {{0}}% ATK as DMG. This bolt can bounce between enemies a maximum of 4 times. This effect can occur once every {{1}}s."
+      "description": "Bola kristal gelap yang memiliki kekuatan legendaris untuk melihat isi hati seseorang yang sebenarnya.",
+      "refinement": "Saat melancarkan Normal atau Charged Attack, memiliki 50% persentase untuk melancarkan Bolt of Perception, mengakibatkan {{0}}% DMG. Bolt ini dapat terpantulkan 4 kali di antara musuh. Dapat terpicu setiap {{1}} detik."
     },
     {
       "key": "Frostbearer",
       "name": "Frostbearer",
-      "description": "A fruit that possesses a strange, frosty will. A faint sense of agony emanates from it.",
-      "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, dealing {{1}}% AoE ATK DMG. Can only occur once every 10s. Enemies affected by Cryo are dealt {{2}}% ATK DMG. Can only occur once every 10s."
+      "description": "Buah unik yang seakan memiliki sebuah keinginan sendiri. Senjata ini memancarkan sebuah aura kepedihan yang samar.",
+      "refinement": "Saat Normal atau Charged Attack mengenai musuh, memiliki {{0}}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {{1}}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {{2}}% ATK. Efek ini dapat terpicu setiap 10 detik."
     },
     {
       "key": "Lost Prayer to the Sacred Winds",
       "name": "Lost Prayer to the Sacred Winds",
-      "description": "An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.",
-      "refinement": "Increases Movement SPD by 10%. When in battle, gain an {{0}}% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat."
+      "description": "Kitab pembelajaran yang ditulis oleh pemuja Anemo tanpa nama dari zaman dahulu. Diberkati oleh angin untuk kesetiaan dan pengaruh yang telah ditunjukkannya.",
+      "refinement": "Meningkatkan 10% Movement SPD. Saat di dalam pertarungan, meningkatkan {{0}}% Elemental DMG setiap 4 detik. Maksimum 4 lapis. Efek bertahan sampai karakter gugur atau meninggalkan pertarungan."
     },
     {
       "key": "Skyward Atlas",
       "name": "Skyward Atlas",
-      "description": "A cloud atlas symbolizing Dvalin and its former master, the Anemo Archon. It details the winds and clouds of the northern regions and contains the powers of the sky and wind.",
-      "refinement": "Increases Elemental DMG Bonus by {{0}}%. Normal Attack hits have a 50% chance to earn the favor of the clouds, which actively seek out nearby enemies to attack for 15s, dealing {{1}}% ATK DMG. Can only occur once every 30s."
+      "description": "Atlas awan yang melambangkan Dvalin dan tuannya, Archon Anemo. Menunjukkan secara rinci awan dan angin di daerah Utara, mengandung kekuatan angin dan angkasa.",
+      "refinement": "Meningkatkan {{0}}% Elemental DMG Bonus. Saat Normal Attack mengenai musuh, memiliki 50% persentase untuk mendapatkan bantuan dari awan yang mengincar musuh terdekat selama 15 detik, dan mengakibatkan DMG sebesar {{1}}% ATK. Dapat terpicu setiap 30 detik."
     },
     {
       "key": "Memory of Dust",
       "name": "Memory of Dust",
-      "description": "A stone dumbbell containing distant memories. Its endless transformations reveal the power within.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "description": "Kunci batu yang berisi memori dari masa lalu, dapat mengeluarkan kekuatan seiring dengan perubahannya yang tidak terbatas.",
+      "refinement": "Meningkatkan kekuatan perisai sebesar {{0}}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {{1}}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%."
     },
     {
       "key": "Waster Greatsword",
       "name": "Waster Greatsword",
-      "description": "A sturdy sheet of iron that may be powerful enough to break apart mountains if wielded with enough willpower.",
+      "description": "Lempengan besi tebal yang sangat kokoh, dengan tekad yang cukup kuat, pedang ini terlihat dapat membelah bahkan gunung sekalipun.",
       "refinement": null
     },
     {
       "key": "Old Merc’s Pal",
       "name": "Old Merc’s Pal",
-      "description": "A battle-tested greatsword that has seen better days and worse.",
+      "description": "Pedang besar kuno yang telah diuji oleh waktu, telah melalui api dan badai perang yang tak terhitung jumlahnya.",
       "refinement": null
     },
     {
       "key": "Bloodtainted Greatsword",
       "name": "Bloodtainted Greatsword",
-      "description": "A steel sword that is said to have been coated with dragon blood, rendering it invulnerable to damage. This effect is not extended to its wielder, however.",
-      "refinement": "Increases DMG dealt against enemies affected by Pyro or Electro by {{0}}%"
+      "description": "Pedang baja yang konon pernah dimandikan dengan darah naga oleh pahlawan dari Utara, membuatnya tidak dapat dihancurkan. Sayangnya efek perlindungan ini nampaknya tidak tersalurkan pada penggunanya.",
+      "refinement": "Meningkatkan {{0}}% DMG terhadap musuh yang terpengaruh Pyro atau Electro."
     },
     {
       "key": "Debate Club",
       "name": "Debate Club",
-      "description": "A handy club made of fine steel. The most persuasive line of reasoning in any debater’s arsenal.",
-      "refinement": "After using an Elemental Skill, Normal or Charged Attacks, on hit, deal an additional {{0}}% ATK DMG in a small area. Effect lasts 15s. DMG can only occur once every 3s."
+      "description": "Tongkat praktis yang terbuat dari baja berkualitas. Ini adalah perlengkapan dasar yang diperlukan untuk memiliki debat yang rasional.",
+      "refinement": "Setelah mengerahkan Elemental Skill, Normal, atau Charged Attack, serangan mengakibatkan DMG tambahan sebesar {{0}}% ATK di area kecil, efek bertahan selama 15 detik. Dapat terpicu setiap 3 detik."
     },
     {
       "key": "Ferrous Shadow",
       "name": "Ferrous Shadow",
-      "description": "A replica of the famed sword of Arundolyn, the Lion of Light. Feel the power of a legendary hero as you hold this sword in your hand! Imagine yourself as the great warrior himself! Note: Daydreaming not recommended in live combat.",
-      "refinement": "When HP falls below {{0}}%, increases Charged Attack DMG by {{1}}% and Charged Attacks become harder to interrupt."
+      "description": "Replika dari pedang terkenal Arundolyn, Lion of Light. Genggam dan rasakan kekuatan pahlawan legendaris! Perhatian: Terlalu banyak berkhayal dapat membawa dampak buruk!",
+      "refinement": "Saat HP kurang dari {{0}}%, Charged Attack menjadi lebih sulit untuk diinterupsi, dan DMG Charged Attack meningkat {{1}}%."
     },
     {
       "key": "Quartz",
       "name": "Quartz",
-      "description": "A simple but heavy greatsword made of polished black quartz with a golden gilt. It has an air of elegance and dignity about it.",
-      "refinement": "Upon causing an Overloaded, Melt, Burning, Vaporize, or a Pyro-infused Swirl reaction, ATK is increased by {{0}}% for 12s."
+      "description": "Pedang besar yang sederhana, tapi sangat berat. Terbuat dari kuart yang diasah dan memiliki ukiran emas yang indah. Meningkatkan karisma dan keanggunan saat digenggam.",
+      "refinement": "Saat Overloaded, Melt, Burning, Vaporize, atau reaksi Swirl yang terpengaruh Pyro terpicu, meningkatkan {{0}}% ATK selama 12 detik."
     },
     {
       "key": "Skyrider Greatsword",
       "name": "Skyrider Greatsword",
-      "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword... for the second time.",
-      "refinement": "On hit, Normal or Charged Attacks increase ATK by {{0}}% for 6s. Max 4 stacks. Can occur once every 0.5s."
+      "description": "Pedang besar yang dapat diandalkan. Konon, Skyrider terkenal pernah mencoba meminjam kekuatannya untuk terbang, untuk yang kedua kalinya...",
+      "refinement": "Saat Normal or Charged Attack mengenai musuh, meningkatkan {{0}}% ATK selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik."
     },
     {
       "key": "White Iron Greatsword",
       "name": "White Iron Greatsword",
-      "description": "A claymore made from white iron. Lightweight without compromising on power. Effective even when wielded by one of average strength, it is extremely deadly in the hands of a physically stronger wielder.",
-      "refinement": "Defeating an opponent restores {{0}}% HP."
+      "description": "Claymore yang terbuat dari besi putih, mengandalkan berat untuk meningkatkan daya hancur. Semakin kuat penggunanya, semakin besar daya hancur yang diakibatkannya.",
+      "refinement": "Memulihkan {{0}}% HP saat mengalahkan satu musuh."
     },
     {
       "key": "Blackcliff Slasher",
       "name": "Blackcliff Slasher",
-      "description": "An extremely sturdy greatsword from the Blackcliff Forge. It has a dark crimson color from the blade to pommel.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "description": "Pedang yang sangat kokoh dan kuat dari Blackcliff Forge. Berwarna merah gelap di sepanjang bilahnya.",
+      "refinement": "Setelah mengalahkan musuh, meningkatkan {{0}}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
     },
     {
       "key": "Favonius Greatsword",
       "name": "Favonius Greatsword",
-      "description": "A heavy ceremonial sword of the Knights of Favonius. It channels elemental power easily and is highly destructive.",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "description": "Pedang ritual milik Knights of Favonius. Dapat mengalirkan kekuatan elemen dengan mudah, dan memiliki daya hancur yang besar.",
+      "refinement": "Serangan CRIT memiliki {{0}}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {{1}} detik."
     },
     {
       "key": "Lithic Blade",
       "name": "Lithic Blade",
-      "description": "A greatsword carved and chiseled from the very bedrock of Liyue.",
-      "refinement": "For every character in the party who hails from Liyue, the character who equips this weapon gains a {{0}}% ATK increase and a {{1}}% CRIT Rate increase. This effect stacks up to 4 times."
+      "description": "Pedang tebal dan berat, terbuat dari batu Liyue.",
+      "refinement": "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan {{0}}% ATK dan {{1}}% CRIT Rate. Efek ini dapat ditumpuk maks. 4 lapis."
     },
     {
       "key": "Prototype Archaic",
       "name": "Prototype Archaic",
-      "description": "An ancient greatsword discovered in the Blackcliff Forge. It swings with such an immense force that one feels it could cut straight through reality itself.",
-      "refinement": "On hit, Normal or Charged Attacks have a 50% chance to deal an additional {{0}}% ATK DMG to enemies within a small AoE. Can only occur once every 15s."
+      "description": "Sebuah greatsword kuno yang ditemukan di Blackcliff Forge. Mempunyai kekuatan ayunan yang luar biasa seolah dapat membelah dimensi.",
+      "refinement": "Saat mengenai musuh, Normal atau Charged Attack memiliki 50% persentase untuk mengakibatkan DMG tambahan sebesar {{0}}% ATK di area kecil. Dapat terpicu setiap 15 detik"
     },
     {
       "key": "Rainslasher",
       "name": "Rainslasher",
-      "description": "A fluorescent greatsword with no sharp edge that crushes enemies with brute force and raw power.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Electro by {{0}}%"
+      "description": "Pedang besar tanpa mata pedang yang bersinar gelap. Meremukkan musuh-musuhnya dengan kekuatan yang besar.",
+      "refinement": "Meningkatkan {{0}}% DMG terhadap musuh yang terpengaruh Hydro atau Electro."
     },
     {
       "key": "Royal Greatsword",
       "name": "Royal Greatsword",
-      "description": "An old greatsword that belonged to the erstwhile rulers of Mondstadt. It is made from the finest-quality materials and has stood the test of time. A weapon for use by royals only.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "description": "Pedang panjang tua milik bangsawan Mondstadt di masa lampau. Terbuat dari bahan dengan kualitas terbaik, dan telah melalui ujian waktu. Pedang yang digunakan oleh keluarga kerajaan.",
+      "refinement": "Saat mengakibatkan DMG pada musuh, meningkatkan {{0}}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang."
     },
     {
       "key": "Serpent Spine",
       "name": "Serpent Spine",
-      "description": "A rare weapon whose origin is the ancient ocean. One can hear the sound of the ageless waves as one swings it.",
-      "refinement": "Every 4s a character is on the field, they will deal {{0}}% more DMG and take {{1}}% more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG."
+      "description": "Senjata kuno langka yang berasal dari laut, suaranya bagaikan suara ombak di masa lampau.",
+      "refinement": "Saat karakter bertarung, setiap 4 detik meningkatkan {{0}}% DMG yang diakibatkan dan {{1}}% DMG yang diterima. Efek ini dapat ditumpuk maksimum 5 lapis, dan akan berkurang 1 lapis saat menerima DMG. Efek tidak akan hilang saat karakter bertarung digantikan."
     },
     {
       "key": "The Bell",
       "name": "The Bell",
-      "description": "A heavy greatsword. A clock is embedded within it, though its internal mechanisms have long been damaged.",
-      "refinement": "Taking DMG generates a shield which absorbs DMG up to {{0}}% of Max HP. This shield lasts for 10s or until broken, and can only be triggered once every 45s. While protected by the shield, the character gains {{1}}% increased DMG."
+      "description": "Greatsword yang besar dengan sebuah jam tertanam di tengahnya, tetapi mesin di dalamnya telah rusak sejak lama.",
+      "refinement": "Saat menerima DMG, menciptakan sebuah perisai yang dapat menahan DMG sebesar {{0}}% dari Max HP. Perisai ini bertahan selama 10 detik, atau sampai terhancurkan. Perisai dapat terpicu setiap 45 detik. Saat terlindungi oleh perisai, karakter memperoleh peningkatan {{1}}% DMG."
     },
     {
       "key": "Whiteblind",
       "name": "Whiteblind",
-      "description": "An exotic sword with one section of the blade left blunt. It made its way into Liyue via the hands of foreign traders. Incredibly powerful in the hands of someone who knows how to use it.",
-      "refinement": "On hit, Normal or Charged Attacks increase ATK and DEF by {{0}}% for 6s. Max 4 stacks. This effect can only occur once every 0.5s."
+      "description": "Pedang indah yang memiliki bagian tumpul di mata pedangnya. Mencapai Liyue setelah melewati tangan beberapa pedagang. Dapat menjadi senjata mematikan di tangan orang yang dapat menggunakannya.",
+      "refinement": "Saat mengenai musuh, Normal atau Charged Attack meningkatkan {{0}}% ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik."
     },
     {
       "key": "Sacrificial Greatsword",
       "name": "Sacrificial Greatsword",
-      "description": "A ceremonial greatsword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {{0}}% chance to end its own CD. Can only occur once every {{1}}s."
+      "description": "Pedang dekorasi yang telah membatu oleh waktu, tetapi perhiasan di dalamnya masih dapat terlihat jelas. Memberikan kekuatan melawan angin waktu bagi penggunanya.",
+      "refinement": "Setelah Elemental Skill mengakibatkan DMG, terdapat {{0}}% persentase CD Skill langsung selesai. Dapat terpicu setiap {{1}} detik."
     },
     {
       "key": "Snow-Tombed Starsilver",
       "name": "Snow-Tombed Starsilver",
-      "description": "An ancient greatsword that was stored between frescoes. Forged from Starsilver, it has the power to cleave through ice and snow.",
-      "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, dealing {{1}}% AoE ATK DMG. Can only occur once every 10s. Enemies affected by Cryo are dealt {{2}}% ATK DMG. Can only occur once every 10s."
+      "description": "Pedang besar kuno yang tersimpan di antara mural. Ditempa dari Starsilver, mempunyai kekuatan untuk membelah es dan salju.",
+      "refinement": "Saat Normal atau Charged Attack mengenai musuh, memiliki {{0}}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {{1}}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {{2}}% ATK. Efek ini dapat terpicu setiap 10 detik."
     },
     {
       "key": "Skyward Pride",
       "name": "Skyward Pride",
-      "description": "A claymore that symbolizes the pride of Dvalin soaring through the skies. When swung, it emits a deep hum as the full force of Dvalin’s command of the sky and the wind is unleashed.",
-      "refinement": "Increases all DMG by {{0}}%. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does {{1}}% of ATK as DMG to enemies along its path. Lasts for 20s or 8 vacuum blades."
+      "description": "Claymore yang melambangkan keagungan Dvalin yang mengumandang di bentang angkasa. Saat diayunkan, terdengar kekuatan Dvalin dan Anemo dalam suara yang ditimbulkannya.",
+      "refinement": "Meningkatkan {{0}}% DMG. Setelah menggunakan Elemental Burst: Normal atau Charged Attack yang mengenai musuh akan menciptakan tebasan vakum yang mengakibatkan DMG sebesar {{1}}% ATK kepada musuh di jalurnya. Bertahan selama 20 detik, atau 8 tebasan vakum."
     },
     {
       "key": "Wolf’s Gravestone",
       "name": "Wolf’s Gravestone",
-      "description": "A longsword used by the Wolf Knight. Originally just a heavy sheet of iron given to the knight by a blacksmith from the city, it became endowed with legendary power owing to his friendship with the wolves.",
-      "refinement": "Increases ATK by {{0}}%. On hit, attacks against enemies with less than 30% HP increase all party members’ ATK by {{1}}% for 12s. Can only occur once every 30s."
+      "description": "Pedang panjang yang digunakan oleh Wolf Knight. Dibentuk menggunakan selempeng besi yang biasa saja oleh seorang blacksmith kota. Tetapi persahabatannya dengan para serigala memberikan kekuatan yang spesial di dalam karya ini.",
+      "refinement": "Meningkatkan {{0}}% ATK. Saat berhasil mengenai musuh dengan HP kurang dari 30%, meningkatkan {{1}}% ATK seluruh anggota party selama 12 detik. Dapat terpicu setiap 30 detik."
     },
     {
       "key": "The Unforged",
       "name": "The Unforged",
-      "description": "Capable of driving away evil spirits and wicked people alike, this edgeless claymore seems to possess divine might.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "description": "Pedang tanpa ujung yang memiliki kekuatan hebat untuk mengusir iblis.",
+      "refinement": "Meningkatkan kekuatan perisai sebesar {{0}}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {{1}}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%."
     },
     {
       "key": "Beginner’s Protector",
       "name": "Beginner’s Protector",
-      "description": "A polearm as straight as a flag pole. Well suited to most combat situations, it has an imposing presence when swung.",
+      "description": "Sebuah polearm yang sangat lurus seperti sebuah tiang bendera. Cocok digunakan di berbagai situasi.",
       "refinement": null
     },
     {
       "key": "Iron Point",
       "name": "Iron Point",
-      "description": "Sharp and pointy at one end, it is a balanced weapon that is quite popular among travelers.",
+      "description": "Mata pedangnya sangat tajam, sebuah senjata dengan keseimbangan yang baik, senjata ini populer di kalangan para petualang.",
       "refinement": null
     },
     {
       "key": "Black Tassel",
       "name": "Black Tassel",
-      "description": "An exceptionally powerful polearm that also offers a simple but elegant solution to the issue of the easily stained white tassel.",
-      "refinement": "Increases DMG against slimes by {{0}}%"
+      "description": "Warnanya yang hitam memberikan solusi pada White Tassel yang mudah kotor.",
+      "refinement": "Meningkatkan {{0}}% DMG terhadap Slime."
     },
     {
       "key": "Halberd",
       "name": "Halberd",
-      "description": "A polearm with an axe blade mounted on top that can deal quite a lot of damage. It’s favored by the Millelith officers.",
-      "refinement": "Normal Attacks deal an additional {{0}}% DMG. Can only occur once every 10s."
+      "description": "Sebuah polearm dengan sebilah kapak terpasang di atasnya yang bisa menyebabkan DMG luar biasa. Senjata yang sangat disukai oleh prajurit Millelith.",
+      "refinement": "Normal Attack mengakibatkan serangan tambahan sebesar {{0}}% ATK pada musuh. Hanya dapat terpicu setiap 10 detik."
     },
     {
       "key": "White Tassel",
       "name": "White Tassel",
-      "description": "A standard-issue weapon of the Millelith soldiers. It has a sturdy shaft and sharp spearhead. It’s a reliable weapon.",
-      "refinement": "Increases Normal Attack DMG by {{0}}%."
+      "description": "Senjata standar milik prajurit Millelith dengan poros yang kokoh dan ujung tombak yang tajam. Sebuah senjata yang dapat diandalkan.",
+      "refinement": "Meningkatkan DMG Normal Attack sebesar {{0}}%."
     },
     {
       "key": "Blackcliff Pole",
       "name": "Blackcliff Pole",
-      "description": "A weapon made of blackcliff and aerosiderite. There is a dark crimson glow on its cold black sheen.",
-      "refinement": "After defeating an enemy, ATK is increased by {{0}}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "description": "Senjata yang terbuat dari blackstone dan aerosiderite. Bercahaya merah tua pada bilah hitamnya.",
+      "refinement": "Setelah mengalahkan musuh, meningkatkan {{0}}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
     },
     {
       "key": "Crescent Pike",
       "name": "Crescent Pike",
-      "description": "An exotic weapon with an extremely long blade on the top and a crescent blade at the bottom. It found its way into Liyue through foreign traders. With practice, it can deal heavy damage.",
-      "refinement": "After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal additional DMG equal to {{0}}% of ATK for 5s."
+      "description": "Senjata indah dengan mata pedang yang sangat panjang di bagian atas, dan sabit di bagian bawah. Mencapai di Liyue setelah melalui tangan beberapa tangan pedagang. Dengan latihan, ini bisa menjadi senjata mematikan.",
+      "refinement": "Setelah mengambil Elemental Orb atau Particle, Normal dan Charged Attack mendapatkan {{0}}% DMG tambahan selama 5 detik."
     },
     {
       "key": "Deathmatch",
       "name": "Deathmatch",
-      "description": "A sharp crimson polearm that was once a gladiator’s priceless treasure. Its awl has been stained by the blood of countless beasts and men.",
-      "refinement": "If are there at least 2 enemies nearby, ATK is increased by {{0}}% and DEF is increased by {{1}}%. If there are less than 2 enemies nearby, ATK is increased by {{2}}%"
+      "description": "Tombak tajam berwarna merah darah yang sangat berharga bagi seorang gladiator di masa lalu. Ujungnya diwarnai dengan darah binatang buas dan manusia yang tak terhitung jumlahnya.",
+      "refinement": "Meningkatkan {{0}}% ATK dan {{1}}% DEF ketika terdapat 2 musuh atau lebih di sekitar karakter; Jika jumlah musuh di sekitar karakter kurang dari 2, meningkatkan {{2}}% ATK."
     },
     {
       "key": "Dragon’s Bane",
       "name": "Dragon’s Bane",
-      "description": "A polearm decorated with an entwining golden dragon. Light and sharp, this weapon may very well kill dragons with ease.",
-      "refinement": "Increases DMG against enemies affected by Hydro or Pyro by {{0}}%"
+      "description": "Tombak dengan ukiran naga emas yang membelit menjadi satu. Ringan dan tajam, mungkin senjata ini sungguh dapat membunuh naga.",
+      "refinement": "Meningkatkan {{0}}% DMG terhadap musuh yang terkena elemen Hydro atau Pyro."
     },
     {
       "key": "Lithic Spear",
       "name": "Lithic Spear",
-      "description": "A spear forged from the rocks of the Guyun Stone Forest. Its hardness knows no equal.",
-      "refinement": "For every character in the party who hails from Liyue, the character who equips this weapon gains a {{0}}% ATK increase and a {{1}}% CRIT Rate increase. This effect stacks up to 4 times."
+      "description": "Tombak panjang yang ditempa dari bebatuan di Guyun Stone Forest. Tingkat kekerasan tombak ini sungguh tiada duanya.",
+      "refinement": "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan {{0}}% ATK dan {{1}}% CRIT Rate. Efek ini dapat ditumpuk maks. 4 lapis."
     },
     {
       "key": "Prototype Starglitter",
       "name": "Prototype Starglitter",
-      "description": "A grudge discovered in the Blackcliff Forge. The glimmers along the sharp edge are like stars in the night.",
-      "refinement": "After using an Elemental Skill, increases Normal and Charged Attack DMG by {{0}}% for 12s. Max 2 stacks."
+      "description": "Sebuah glaive yang ditemukan di Blackcliff Forge. Kilatan cahaya di ujungnya yang tajam bagaikan bintang di malam hari.",
+      "refinement": "Setelah melancarkan Elemental Skill, meningkatkan {{0}}% Normal dan Charged Attack selama 12 detik. Efek ini dapat ditumpuk maksimum 2 lapis."
     },
     {
       "key": "Favonius Lance",
       "name": "Favonius Lance",
-      "description": "A polearm made in the style of the Knights of Favonius. Its shaft is straight, and its tip flows lightly like the wind.",
-      "refinement": "CRIT Hits have a {{0}}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {{1}}s."
+      "description": "Polearm yang dibuat berdasarkan gaya dari Knights of Favonius. Gagangnya lurus dan panjang, dan mata pedangnya ringan seperti angin.",
+      "refinement": "Serangan CRIT memiliki {{0}}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {{1}} detik."
     },
     {
       "key": "Royal Spear",
       "name": "Royal Spear",
-      "description": "This polearm was once cherished by a member of the old nobility that governed Mondstadt long ago. Although it has never seen the light of day, it is still incomparably sharp.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {{0}}%. Max 5 stacks. A CRIT hit removes all stacks."
+      "description": "Tombak yang dulu dipuja-puja oleh bangsawan kuno yang pernah menjajah Mondstadt. Tombak ini sudah lama tidak digunakan, tetapi masih tajam tiada banding.",
+      "refinement": "Saat mengakibatkan DMG pada musuh, meningkatkan {{0}}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang."
     },
     {
       "key": "Dragonspine Spear",
       "name": "Dragonspine Spear",
-      "description": "A spear created from the fang of a dragon. It is oddly warm to the touch.",
-      "refinement": "Hitting an enemy with Normal and Charged Attacks has a {{0}}% chance of forming and dropping an Everfrost Icicle above them, dealing {{1}}% AoE ATK DMG. Can only occur once every 10s. Enemies affected by Cryo are dealt {{2}}% ATK DMG. Can only occur once every 10s."
+      "description": "Sebuah tombak yang dibuat dari gigi naga. Anehnya, tombak ini terasa hangat saat disentuh.",
+      "refinement": "Saat Normal atau Charged Attack mengenai musuh, memiliki {{0}}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {{1}}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {{2}}% ATK. Efek ini dapat terpicu setiap 10 detik."
     },
     {
       "key": "Vortex Vanquisher",
       "name": "Vortex Vanquisher",
-      "description": "This sharp polearm can seemingly pierce through anything. When swung, one can almost see the rift it tears in the air.",
-      "refinement": "Increases Shield Strength by {{0}}%. Scoring hits on opponents increases ATK by {{1}}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "description": "Tombak tajam yang seakan-akan bisa menusuk segalanya. Saat tombak ini diayunkan, ujung tombak seakan-akan membuat retakan di udara.",
+      "refinement": "Meningkatkan kekuatan perisai sebesar {{0}}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {{1}}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%."
     },
     {
       "key": "Primordial Jade Winged-Spear",
       "name": "Primordial Jade Winged-Spear",
-      "description": "A jade polearm made by the archons, capable of slaying ancient beasts.",
-      "refinement": "On hit, increases ATK by {{0}}% for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by {{1}}%."
+      "description": "Sebuah polearm giok yang diciptakan oleh para Archon, memiliki kekuatan untuk membunuh monster laut legenda.",
+      "refinement": "Saat mengenai musuh, meningkatkan {{0}}% ATK selama 6 detik. Maks. 7 lapis. Dapat terpicu setiap 0,3 detik. Saat tumpukan penuh, meningkatkan {{1}}% DMG."
     },
     {
       "key": "Skyward Spine",
       "name": "Skyward Spine",
-      "description": "A polearm that symbolizes Dvalin’s firm resolve. The upright shaft of this weapon points towards the heavens, clad in the might of sky and wind.",
-      "refinement": "Increases CRIT Rate by {{0}}% and increases Normal ATK SPD by 12%. Additionally, Normal and Charged Attacks hits on enemies have a 50% chance to trigger a vacuum blade that deals {{1}}% of ATK as DMG in a small AoE. This effect can occur no more than once every 2s."
+      "description": "Tombak polearm yang melambangkan kebulatan hati Dvalin. Bagian atas gagangnya menengadah ke langit, dan terbelah di hadapan kekuatan angin dan langit.",
+      "refinement": "Meningkatkan {{0}}% CRIT Rate dan 12% Normal ATK SPD. Selain itu, saat mengenai musuh, Normal dan Charged Attack memiliki 50% persentase untuk memicu pisau hampa yang mengakibatkan DMG di area kecil sebesar {{1}}% ATK. Efek ini dapat terpicu setiap 2 detik."
     },
     {
       "key": "Primordial Jade Cutter",
       "name": "Primordial Jade Cutter",
-      "description": "A ceremonial sword masterfully carved from pure jade. There almost seems to be an audible sigh in the wind as it is swung.",
-      "refinement": "HP increased by {{0}}%. Additionally, provides an ATK Bonus based on {{1}}% of the wielder's Max HP."
+      "description": "Pedang upacara yang diukir dari giok murni. Suara ayunannya seperti suara desahan napas yang samar.",
+      "refinement": "Meningkatkan {{0}}% Max HP, dan memberikan Bonus ATK sebesar {{1}}% dari Max HP pengguna."
     },
     {
       "key": "Staff of Homa",
       "name": "Staff of Homa",
-      "description": "A \"firewood staff\" that was once used in ancient and long-lost rituals.",
-      "refinement": "HP increased by {{0}}%. Additionally, provides an ATK Bonus based on {{1}}% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional {{2}}% of Max HP."
+      "description": "Sebuah \"tongkat kayu bakar\" yang pernah digunakan dalam ritual kuno dan telah lama hilang.",
+      "refinement": "Meningkatkan 20% Max HP, dan memberikan Bonus ATK sebesar {{0}}% dari Max HP pengguna. Saat HP pengguna kurang dari {{1}}%, maka pengguna akan mendapatkan Bonus ATK tambahan sebesar {{2}}% dari Max HP."
     },
     {
       "key": "Windblume Ode",
       "name": "Windblume Ode",
-      "description": "A bow adorned with nameless flowers that bears the earnest hopes of an equally nameless person.",
-      "refinement": "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by {{0}}% for 6s."
+      "description": "Sebuah busur yang dihiasi dengan bunga tanpa nama, bunga tersebut mengandung harapan dari orang-orang yang juga tidak pernah berkesempatan memiliki sebuah nama.",
+      "refinement": "Saat menggunakan Elemental Skill, pengguna busur ini akan mendapatkan berkat dari harapan kuno Windblume, meningkatkan {{0}}% ATK selama 6 detik."
     },
     {
       "key": "Elegy for the End",
       "name": "Elegy for the End",
-      "description": "A bow as lovely as any bard's lyre, its arrows pierce the heart like a lamenting sigh.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by {{0}}. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by {{1}} and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "description": "Sebuah busur seanggun alat musik penyair, panah yang ditembakkan menghasilkan suara merdu yang mampu menembus hati seseorang.",
+      "refinement": "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan {{0}} Elemental Mastery, dan saat Elemental Skill atau Elemental Burst dari pengguna senjata ini mengenai musuh, Karakter akan mendapatkan Sigil of Remembrance. Efek ini dapat terpicu setiap 0,2 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di medan bertarung. Saat kamu mempunyai 4 Sigil of Remembrance, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Farewell Song\" selama 12 detik. \"Millennial Movement: Farewell Song\" meningkatkan {{1}} Elemental Mastery dan {{2}}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Remembrance selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk."
     },
     {
       "key": "Song of Broken Pines",
       "name": "Song of Broken Pines",
-      "description": "A greatsword as light as the sigh of grass in the breeze, yet as merciless to the corrupt as a typhoon.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {{0}}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "description": "Pedang besar seringan angin yang meniup dedaunan dengan lembut, tapi juga bagaikan angin topan yang ganas dan tanpa ampun bagi mereka yang korup.",
+      "refinement": "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan {{0}}% ATK; Saat Normal atau Charged Attack mengenai musuh, Karakter akan mendapatkan satu Sigil of Whispers. Efek ini dapat terpicu setiap 0,3 detik. Saat kamu mempunyai 4 Sigil of Whispers, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Banner-Hymn\" selama 12 detik. \"Millennial Movement: Banner-Hymn\" akan meningkatkan {{1}}% Normal ATK SPD dan meningkatkan {{2}}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Whispers lagi selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk."
     },
     {
       "key": "Freedom-Sworn",
       "name": "Freedom-Sworn",
-      "description": "A straight sword, azure as antediluvian song, and as keen as the oaths of freedom taken in the Land of Wind.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {{0}}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "description": "Pedang biru langit yang mengingatkan pada lagu lama, senjata tajam seperti sumpah kebebasan di bangsa milik Dewa Angin.",
+      "refinement": "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan DMG sebesar {{0}}%, dan saat Karakter yang menggunakan senjata ini memicu Reaksi Elemental, Karakter akan mendapatkan Sigil of Rebellion. Efek ini dapat terpicu setiap 0,5 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di lapangan. Saat kamu mempunyai 2 Sigil of Rebellion, semuanya akan terkonsumsi dan semua anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Song of Resistance\" selama 12 detik. \"Millennial Movement: Song of Resistance\" meningkatkan {{1}}% DMG Normal, Charged dan Plunging Attack, serta meningkatkan {{2}}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigils of Rebellion lagi selama 20 detik. Dari sekian banyak efek \"Millennial Movement\", efek dengan jenis yang sama tidak bisa ditumpuk."
     },
     {
       "key": "Mitternachts Waltz",
       "name": "Mitternachts Waltz",
-      "description": "A bow painted the color of sin and nights of wild fantasy.",
-      "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {{0}}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {{1}}% for 5s."
+      "description": "Busur yang diwarnai dengan warna kelam bagaikan dosa dan malam hari pada imajinasi yang liar.",
+      "refinement": "Saat Normal Attack mengenai musuh, meningkatkan {{0}}% DMG Elemental Skill selama 5 detik; Saat Elemental Skill mengenai musuh, meningkatkan {{1}}% DMG Normal Attack selama 5 detik."
     },
     {
       "key": "Dodoco Tales",
       "name": "Dodoco Tales",
-      "description": "A children's book filled with childish short stories at which one cannot help but laugh.\nEven those readers who have long reached adulthood cannot help but be absorbed by the innocent, naive little adventures portrayed within.",
-      "refinement": "Normal Attack hits on opponents increase Charged Attack DMG by {{0}} for 6s. Charged Attack hits on opponents increase ATK by {{1}} for 6s."
+      "description": "Buku anak-anak yang penuh dengan cerita pendek anak-anak yang bisa membuat pembacanya tertawa.\nMereka yang sudah dewasa sekalipun akan terpukau dengan kepolosan, kesucian petualangan kecil yang tergambarkan di dalamnya.",
+      "refinement": "Saat Normal Attack mengenai musuh, meningkatkan {{0}}% DMG Charged Attack selama 6 detik. Saat Charged Attack mengenai musuh, meningkatkan {{1}}% ATK selama 6 detik."
     }
   ],
   "artifacts": [
