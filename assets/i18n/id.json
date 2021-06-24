@@ -4901,11 +4901,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Max HP increased by 1000."
+          "bonus": "Max HP +1000."
         },
         {
           "key": "b2",
-          "bonus": "Opening a chest regenerates 30% Max HP over 5s."
+          "bonus": "Membuka setiap jenis peti memulihkan 30% HP dalam waktu 5 detik."
         }
       ]
     },
@@ -4915,11 +4915,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Increases incoming healing by 20%."
+          "bonus": "Efek pemulihan yang diterima meningkat 20%."
         },
         {
           "key": "b2",
-          "bonus": "Using Elemental Burst restores 20% HP."
+          "bonus": "Menggunakan Elemental Burst memulihkan 20% HP."
         }
       ]
     },
@@ -4929,11 +4929,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "DEF increased by 100."
+          "bonus": "DEF +100."
         },
         {
           "key": "b2",
-          "bonus": "Picking up Mora restores 300 HP."
+          "bonus": "Mengambil Mora memulihkan 300 HP."
         }
       ]
     },
@@ -4947,7 +4947,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Increases Charged Attack CRIT Rate by 30%."
+          "bonus": "Meningkatkan 30% CRIT Rate dari Charged Attack."
         }
       ]
     },
@@ -4957,11 +4957,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "All Elemental RES increased by 20%."
+          "bonus": "Elemental RES +20%."
         },
         {
           "key": "b2",
-          "bonus": "Incoming elemental DMG increases corresponding Elemental RES by 30% for 10s. Can only occur once every 10s."
+          "bonus": "Saat menerima DMG elemen tertentu, meningkatkan 30% Elemental RES terhadap elemen tersebut selama 10 detik. Dapat terpicu setiap 10 detik."
         }
       ]
     },
@@ -4975,7 +4975,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Increases DMG by 30% against enemies with more than 50% HP."
+          "bonus": "Meningkatkan 30% DMG terhadap musuh dengan HP lebih dari 50%."
         }
       ]
     },
@@ -4989,7 +4989,7 @@
         },
         {
           "key": "b2",
-          "bonus": "For each different element present in your own party, the wearer’s Elemental RES to that corresponding element is increased by 30%."
+          "bonus": "Meningkatkan 30% Elemental RES diri sendiri untuk setiap jenis elemen karakter di dalam party."
         }
       ]
     },
@@ -4999,11 +4999,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Increases Normal Attack and Charged Attack DMG by 15%."
+          "bonus": "Meningkatkan 15% DMG Normal Attack dan Charged Attack."
         },
         {
           "key": "b2",
-          "bonus": "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 25% for 8s."
+          "bonus": "Setelah melancarkan Elemental Skill, meningkatkan 25% DMG Normal dan Charged Attack selama 8 detik."
         }
       ]
     },
@@ -5013,11 +5013,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Increases Elemental Skill DMG by 20%."
+          "bonus": "Meningkatkan 20% DMG Elemental Skill."
         },
         {
           "key": "b2",
-          "bonus": "Defeating an enemy has a 100% chance to remove Elemental Skill CD. Can only occur once every 15s."
+          "bonus": "Mengalahkan musuh memiliki 100% persentase CD Elemental Skill akan langsung selesai. Dapat terpicu setiap 15 detik."
         }
       ]
     },
@@ -5031,7 +5031,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Gaining Elemental Particles or Orbs gives 3 Energy to all party members who have a bow or a catalyst equipped. Can only occur once every 3s."
+          "bonus": "Mendapatkan Elemental Particle/Orb akan memberikan 3 Energy kepada seluruh anggota party yang mengenakan bow atau catalyst. Dapat terpicu setiap 3 detik."
         }
       ]
     },
@@ -5045,7 +5045,7 @@
         },
         {
           "key": "b2",
-          "bonus": "When HP is below 70%, CRIT Rate increases by an additional 24%."
+          "bonus": "Saat HP kurang dari 70%, CRIT Rate meningkat 24%."
         }
       ]
     },
@@ -5055,11 +5055,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Increases Elemental Mastery by 80."
+          "bonus": "Elemental Mastery +80."
         },
         {
           "key": "b2",
-          "bonus": "Upon triggering an Elemental Reaction, increases all party members’ Elemental Mastery by 120 for 8s."
+          "bonus": "Setelah memicu Reaksi Elemental, akan meningkatkan 120 Elemental Mastery seluruh anggota party selama 8 detik."
         }
       ]
     },
@@ -5073,7 +5073,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Using an Elemental Burst regenerates 2 Energy for all party members (excluding the wearer) every 2s for 6s. This effect cannot stack."
+          "bonus": "Penggunaan Elemental Burst memulihkan 2 Energy seluruh anggota party (tidak termasuk diri sendiri) setiap 2 detik selama 6 detik. Efek ini tidak dapat ditumpuk."
         }
       ]
     },
@@ -5087,7 +5087,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Increases damage caused by Overloaded, Electro-Charged and Superconduct by 40%. Triggering such effects decreases Elemental Skill CD by 1s. Can only occur once every 0.8s."
+          "bonus": "Meningkatkan 40% DMG yang diakibatkan Overloaded, Electro-Charged, dan Superconduct. Memicu efek-efek tersebut mengurangi 1 detik CD Elemental Skill. Dapat terpicu setiap 0,8 detik."
         }
       ]
     },
@@ -5097,11 +5097,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Electro RES increased by 40%."
+          "bonus": "Electro RES +40%."
         },
         {
           "key": "b2",
-          "bonus": "Increases DMG against enemies affected by Electro by 35%."
+          "bonus": "Meningkatkan 35% DMG terhadap musuh yang terpengaruh Electro."
         }
       ]
     },
@@ -5115,7 +5115,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Increases Swirl DMG by 60%. Decreases opponent’s Elemental RES to the element infused in the Swirl by 40% for 10s."
+          "bonus": "Meningkatkan 60% Swirl DMG. Mengurangi 40% Elemental RES musuh sesuai elemen yang terkandung dalam swirl selama 10 detik."
         }
       ]
     },
@@ -5125,11 +5125,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Character Healing Effectiveness +15%."
+          "bonus": "Meningkatkan 15% efek pemulihan karakter."
         },
         {
           "key": "b2",
-          "bonus": "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s."
+          "bonus": "Menggunakan Elemental Skill atau Elemental Burst meningkatkan 20% pemulihan yang diterima seluruh anggota party selama 10 detik."
         }
       ]
     },
@@ -5139,11 +5139,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Gain a 15% Geo DMG Bonus."
+          "bonus": "Geo DMG Bonus +15%."
         },
         {
           "key": "b2",
-          "bonus": "Upon obtaining an Elemental Shard created through a Crystallize Reaction, all party members gain a 35% DMG Bonus for that particular element for 10s. Only one form of Elemental DMG Bonus can be gained in this manner at any one time."
+          "bonus": "Saat memperoleh Elemental Shard yang terbentuk dari Reaksi Elemental Crystallize, seluruh anggota party memperoleh 35% peningkatan Elemental DMG terhadap elemen tersebut selama 10 detik. Hanya satu jenis Elemental DMG dapat diperoleh dengan cara ini."
         }
       ]
     },
@@ -5153,11 +5153,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Increases Shield Strength by 35%."
+          "bonus": "Meningkatkan 35% kekuatan perisai."
         },
         {
           "key": "b2",
-          "bonus": "While protected by a shield, gain an additional 40% Normal and Charged Attack DMG."
+          "bonus": "Meningkatkan 40% Normal dan Charged Attack saat perisai aktif."
         }
       ]
     },
@@ -5171,7 +5171,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Increases Overloaded and Burning DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using an Elemental Skill increases 2-Piece Set effects by 50% for 10s. Max 3 stacks."
+          "bonus": "Meningkatkan 40% DMG Overloaded dan Burning. Meningkatkan 15% DMG Vaporize dan Melt. Setelah menggunakan Elemental Skill, meningkatkan 50% efek 2-Piece Set selama 10 detik. Maksimum 3 lapis."
         }
       ]
     },
@@ -5181,11 +5181,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Pyro RES increased by 40%."
+          "bonus": "Pyro RES +40%."
         },
         {
           "key": "b2",
-          "bonus": "Increases DMG against enemies affected by Pyro by 35%."
+          "bonus": "Meningkatkan 35% DMG terhadap musuh yang terpengaruh Pyro."
         }
       ]
     },
@@ -5195,11 +5195,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Physical DMG +25%."
+          "bonus": "Meningkatkan 25% Physical DMG."
         },
         {
           "key": "b2",
-          "bonus": "After defeating an opponent, increases Charged Attack DMG by 50%, and reduces its Stamina cost to 0 for 10s."
+          "bonus": "Dalam 10 detik setelah mengalahkan musuh, meningkatkan 50% DMG Charged Attack dan mengurangi konsumsi Stamina Charged Attack menjadi 0."
         }
       ]
     },
@@ -5209,11 +5209,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Elemental Burst DMG +20%."
+          "bonus": "Meningkatkan 20% DMG Elemental Burst."
         },
         {
           "key": "b2",
-          "bonus": "Using an Elemental Burst increases all party members’ ATK by 20% for 12s. This effect cannot stack."
+          "bonus": "Setelah melancarkan Elemental Burst, meningkatkan ATK 20% semua anggota party selama 12 detik. Efek ini tidak dapat ditumpuk."
         }
       ]
     },
@@ -5227,7 +5227,7 @@
         },
         {
           "key": "b2",
-          "bonus": "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%."
+          "bonus": "Meningkatkan 35% DMG Normal Attack karakter yang menggunakan Sword, Claymore, Polearm."
         }
       ]
     },
@@ -5237,11 +5237,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Increases Elemental Mastery by 80."
+          "bonus": "Elemental Mastery +80."
         },
         {
           "key": "b2",
-          "bonus": "Increases Charged Attack DMG by 35% if the character uses a Catalyst or a Bow."
+          "bonus": "Meningkatkan 35% DMG Charged Attack karakter yang menggunakan Catalyst, Bow."
         }
       ]
     },
@@ -5251,7 +5251,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Affected by Pyro for 40% less time."
+          "bonus": "Mengurangi 40% durasi efek Pyro yang diterima."
         }
       ]
     },
@@ -5261,7 +5261,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Affected by Hydro for 40% less time."
+          "bonus": "Mengurangi 40% durasi efek Hydro yang diterima."
         }
       ]
     },
@@ -5271,7 +5271,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Affected by Electro for 40% less time."
+          "bonus": "Mengurangi 40% durasi efek Electro yang diterima."
         }
       ]
     },
@@ -5281,7 +5281,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Affected by Cryo for 40% less time."
+          "bonus": "Mengurangi 40% durasi efek Cryo yang diterima."
         }
       ]
     },
@@ -5295,7 +5295,7 @@
         },
         {
           "key": "b2",
-          "bonus": "When a character attacks an enemy affected by Cryo, their CRIT Rate is increased by 20%. If the enemy is Frozen, CRIT Rate is increased by an additional 20%."
+          "bonus": "Saat karakter memukul musuh yang terkena efek Cryo, CRIT Rate meningkat 20%. Jika musuh terkena Frozen, CRIT Rate meningkat lagi 20%."
         }
       ]
     },
@@ -5309,7 +5309,7 @@
         },
         {
           "key": "b2",
-          "bonus": "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 30% for 15s."
+          "bonus": "Setelah melancarkan Elemental Skill, meningkatkan 30% DMG Normal dan Charged Attack selama 15 detik."
         }
       ]
     },
@@ -5323,7 +5323,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Increases Superconduct DMG by 100%. Increases Melt DMG by 15%. Using an Elemental Burst increases Cryo DMG Bonus by 30% for 10s."
+          "bonus": "Meningkatkan 100% DMG yang diakibatkan Superconduct, meningkatkan 15% DMG yang diakibatkan Melt. Setelah melancarkan Elemental Burst, meningkatkan 30% Cryo DMG selama 10 detik."
         }
       ]
     },
@@ -5333,7 +5333,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Affected by Anemo for 40% less time."
+          "bonus": "Mengurangi 40% durasi efek Anemo yang diterima."
         }
       ]
     },
@@ -5343,11 +5343,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "HP increased by 20%."
+          "bonus": "HP +20%"
         },
         {
           "key": "b2",
-          "bonus": "When an Elemental Skill hits an opponent, the ATK of all nearby party members is increased by 20% and their Shield Strength is increased by 30% for 3s. This effect can be triggered once every 0.5s. This effect can still be triggered even when the character who is using this artifact set is not on the field."
+          "bonus": "Saat Elemental Skill mengenai musuh, meningkatkan 20% ATK dan 30% kekuatan perisai seluruh anggota party di sekitar selama 3 detik. Efek ini hanya dapat terpicu setiap 0,5 detik. Efek tetap dapat terpicu meskipun Karakter yang mengenakan set Artefak ini tidak berada di medan pertempuran."
         }
       ]
     },
@@ -5357,11 +5357,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Physical DMG is increased by 25%."
+          "bonus": "Meningkatkan 25% Physical DMG."
         },
         {
           "key": "b2",
-          "bonus": "When an Elemental Skill hits an opponent, ATK is increased by 9% for 7s. This effect stacks up to 2 times and can be triggered once every 0.3s. Once 2 stacks are reached, the 2-set effect is increased by 100%."
+          "bonus": "Saat Elemental Skill mengenai musuh, meningkatkan 9% ATK selama 7 detik. Efek ini dapat ditumpuk hingga 2 lapis dan dapat terpicu setiap 0,3 detik. Setelah menumpuk 2 lapis, efek dari Set 2 Bagian akan meningkat 100%."
         }
       ]
     }
