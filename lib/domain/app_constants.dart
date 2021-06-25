@@ -15,6 +15,7 @@ const languagesMap = {
   AppLanguageType.italian: LanguageModel('it', 'IT'),
   AppLanguageType.japanese: LanguageModel('ja', 'JA'),
   AppLanguageType.vietnamese: LanguageModel('vi', 'VI'),
+  AppLanguageType.indonesian: LanguageModel('id', 'ID'),
 };
 
 const int minSkillLevel = 1;
