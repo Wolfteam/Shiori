@@ -4766,7 +4766,7 @@
     },
     {
       "key": "Song of Broken Pines",
-      "name": "Ode au chant du vent (?)",
+      "name": "Ode au chant du vent",
       "description": "Un espadon aussi léger que la brise soufflant sur l'herbe, mais aussi puissant qu'un ouragan.",
       "refinement": "Partie du «Concert du millénaire». Augmente l'ATQ de {{0}}%, et lorsque les attaques normales ou chargées touchent un ennemi, le personnage obtient un charme des murmures, à raison d'un charme toutes les 0,3s max. Une fois 4 charmes obtenus, ils sont consommés et tous les personnages de l'équipe à proximité bénéficient de l'effet «Concert du millénaire - Hymne du drapeau» pendant 12s, ce qui augmente la VIT des attaques normales de {{1}}%, et l'ATQ de {{2}}%. Il n'est plus possible d'obtenir de charmes des murmures pendant 20s après avoir déclenché cet effet. Parmi les nombreux effets du «Concert du millénaire», les améliorations du même type ne se cumulent pas."
     },
@@ -5259,516 +5259,516 @@
     {
       "key": "FreedomA",
       "name": "Enseignement de la Liberté",
-      "description": "Freedom is the spirit of the land of the wind.\nThe freedom to live is one of such. It is the freedom to live freely and healthily without concerns of one's own safety."
+      "description": "L'esprit du Royaume du Vent est défini par plusieurs libertés.\nLa liberté de vivre est une d'entre elles, c'est-à-dire, être libre de vivre en bonne santé et sans jamais se soucier du danger."
     },
     {
       "key": "FreedomB",
       "name": "Guide de la Liberté",
-      "description": "Freedom is the spirit of the land of the wind.\nThe freedom of travel is one of such. It is the freedom to traverse the land freely without being obstructed."
+      "description": "L'esprit du Royaume du Vent est défini par plusieurs libertés.\nLa liberté de voyager est une d'entre elles, c'est-à-dire, être libre de circuler à travers les terres sans aucune obstruction."
     },
     {
       "key": "FreedomC",
       "name": "Philosophie de la Liberté",
-      "description": "Freedom is the spirit of the land of the wind.\nTo sing is one such freedom. To sing on the land created by the Anemo Archon is to send your heart away with the song on the wind."
+      "description": "L'esprit du Royaume du Vent est défini par plusieurs libertés.\nLa liberté de chanter est une d'entre elles, c'est-à-dire, être libre de fredonner sur l'air du vent les terres de l'Archon Anémo."
     },
     {
       "key": "ProsperityA",
       "name": "Enseignement de la Prospérité",
-      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is the blessing of Liyue, it is the foundation of the great city built by the gods and the people of Liyue, and it is the source of the peace and safety of the land."
+      "description": "Le Pays de la Roche aspire à la prospérité.\nElle assure la paix et la sécurité de Liyue, cité bâtie conjointement par les dieux et par les hommes."
     },
     {
       "key": "ProsperityB",
       "name": "Guide de la Prospérité",
-      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is the promise made by Liyue to its children: To repay the hard-working laborers with enough gold to brighten up this land."
+      "description": "Le Pays de la Roche aspire à la prospérité.\nRécompenser le labeur avec de l'or, telle était la promesse faite aux enfants de Liyue."
     },
     {
       "key": "ProsperityC",
       "name": "Philosophie de la Prospérité",
-      "description": "Prosperity is the people's pursuit in the land of Geo.\nProsperity is Liyue's past, present, and future. This prosperity is unmatched and unobtainable by any other nations — it all belongs to Liyue and its inhabitants."
+      "description": "Le Pays de la Roche aspire à la prospérité.\nElle incarne le passé, le présent et le futur de Liyue. La cité possède toutes les richesses que nulle autre nation peut oser espérer obtenir."
     },
     {
       "key": "DilligenceA",
       "name": "Enseignement de la Diligence",
-      "description": "Industriousness is the foundation of the land of Geo.\nDiligence is having the bravery and the strength to conquer mountains and seas and to pursue gold and prosperity through honest, hard work."
+      "description": "Le goût du travail représente l'essence du Pays de la Roche.\nConquérir les montagnes et les mers, aspirer à la richesse et à la prospérité... Tout est possible lorsqu'on travaille dur pour atteindre son objectif."
     },
     {
       "key": "DilligenceB",
       "name": "Guide de la Diligence",
-      "description": "Industriousness is the foundation of the land of Geo.\nIndustriousness is the catalyst that flows in the blood of the people of Liyue, able to turn rocks into gold. It is what lies behind the greatness of its great commercial port."
+      "description": "Le goût du travail représente l'essence du Pays de la Roche.\nIl coule dans les veines des Liyuéens, qui deviennent capables de transformer la roche en or grâce à lui. La prospérité de son port commercial n'est guère étonnante."
     },
     {
       "key": "DilligenceC",
       "name": "Philosophie de la Diligence",
-      "description": "Industriousness is the foundation of the land of Geo.\nIndustriousness is believing in one's own ability to earn a place in the land of the gods through sweat, wisdom, and power."
+      "description": "Le goût du travail représente l'essence du Pays de la Roche.\nLes Liyuéens croient que chacun peut se faire une place sur la terre des dieux grâce à sa sagesse et à sa force, mais aussi à la sueur de son front."
     },
     {
       "key": "ResistanceA",
       "name": "Enseignement de la Résistance",
-      "description": "Resistance is the backbone of the land of the wind.\nThe history of Mondstadt is one of resistances. People rose up to prevent past conflicts from ever being forgotten, like sprouts breaking through the soil, like the eternal wind eroding through stone walls."
+      "description": "La résistance constitue l'échine du Royaume du Vent.\nElle a marqué son histoire à travers les âges. Certains se sont soulevés pour que les injustices passées ne tombent pas dans l'oubli, comme des pousses qui jaillissent du sol et le vent qui souffle à travers les murs de pierre."
     },
     {
       "key": "ResistanceB",
       "name": "Guide de la Résistance",
-      "description": "Resistance is the backbone of the city of Wind.\nThe history of Mondstadt is one of resistances. People rose up to grant the citizens of Mondstadt the freedom they now enjoy, like the Anemo Archon blowing away the snow, or like Vennessa rising up to fight."
+      "description": "La résistance constitue l'échine du Royaume du Vent.\nElle a marqué son histoire à travers les âges. Certains ont agi pour que le peuple jouisse de sa liberté actuelle, comme Barbatos qui a dispersé la neige et Vennessa qui s'est rebellée."
     },
     {
       "key": "ResistanceC",
       "name": "Philosophie de la Résistance",
-      "description": "Resistance is the backbone of the land of the wind.\nThe history of Mondstadt is one of resistances. People rose up to allow the future Mondstadt's poetry to freely be that of the wind and be spread across the land."
+      "description": "La résistance constitue l'échine du Royaume du Vent.\nElle a marqué son histoire à travers les âges. Certains se sont soulevé pour que la poésie de Mondstadt se répande aussi librement que le vent à travers les terres."
     },
     {
       "key": "BalladA",
       "name": "Enseignement de la Poésie",
-      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of beautiful feelings. On a beautiful day, the breezes carry with them poetry that touches the heart of people like the wind caressing the leaves."
+      "description": "L'âme du Royaume du Vent réside dans la poésie.\nElle existe pour exprimer la beauté. La brise transporte les mots doux lors des beaux jours. Ils touchent le cœur des gens comme elle caresse les feuilles d'un arbre."
     },
     {
       "key": "BalladB",
       "name": "Guide de la Poésie",
-      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of the will to encourage. In the dark days, the gales in the streets and alleyways whisper words of fury, like the battle drums, like the low rumbling before the storm."
+      "description": "L'âme du Royaume du Vent réside dans la poésie.\nElle existe pour donner du courage à ceux qui en ont besoin. Pendant les jours sombres, les bourrasques soufflaient des mots de colère dans les rues, comme des tambours de guerre qui annoncent une tempête à venir"
     },
     {
       "key": "BalladC",
       "name": "Philosophie de la Poésie",
-      "description": "Poetry is the soul of the land of the wind.\nPoetry is the manifestations of the desire to spread the word. Though nothing is eternal, though nothing will be the same, the wind's poetry will still spread beyond the skies, the land, the seas to every corner of the world."
+      "description": "L'âme du Royaume du Vent réside dans la poésie.\nElle existe pour être transmise à travers les générations. Bien que rien ne soit éternel, le vent soufflera toujours ces mots doux au-delà des cieux, à travers les terres et les mers du monde entier."
     },
     {
       "key": "GoldA",
       "name": "Enseignement de l'Or",
-      "description": "Gold is the symbol of the land of Geo.\nGold is the blood that flows deep within Liyue's veins, the muscle that makes up Liyue's beating heart, and the bones that make Liyue stand proud."
+      "description": "L'or est le symbole du Pays de la Roche.\nAbondant sous ses terres, il est le nerf de la guerre de Liyue qui tient debout grâce à lui."
     },
     {
       "key": "GoldB",
       "name": "Guide de l'Or",
-      "description": "Gold is the symbol of the land of Geo.\nGold symbolizes conversion. This is the unspoken understanding between Liyue's mountains, land, city, and people. In Liyue, industriousness is converted into gold, and gold into prosperity."
+      "description": "L'or est le symbole du Pays de la Roche.\nIl représente la transformation et le lien unissant le port, les monts, les terres et les hommes de Liyue : le travail se transforme en or, et ce dernier apporte la prospérité en retour."
     },
     {
       "key": "GoldC",
       "name": "Philosophie de l'Or",
-      "description": "Gold is the symbol of the land of Geo.\nGold is the wealth of Liyue, but Liyue's true wealth is the hearts of its people that shine like gold."
+      "description": "L'or est le symbole du Pays de la Roche.\nLiyue n'en manque pas, mais sa véritable richesse se trouve dans le cœur de ses habitants."
     },
     {
       "key": "Tail of Boreas",
-      "name": "Queue de Boréas",
-      "description": "A handful of tail scales from the Great Wolf King of the North.\nEven without his physical body and beyond death, Boreas still possesses extraordinary powers. He took a form comprised of ice and wind to embrace a new challenge, but even such a form could not house all of his power. The ice scales that fell during the battle still retain some of their spiritual energy.",
+      "name": "Queue de Borée",
+      "description": "Un fragment de la queue du Grand Roi Loup du Nord.\nBien qu’il soit réduit à un esprit, la puissance de Borée n’est pas à sous-estimer. Le Roi Loup essaya de se construire un corps à l’aide de feu et de glace afin de combattre un ennemi, mais ce ne fut pas suffisant pour contenir ses pouvoirs. Les écailles givrées qui s’en sont détachées lors de l’affrontement ont conservé leur énergie spirituelle",
       "bossName": "Andros"
     },
     {
       "key": "Ring of Boreas",
-      "name": "Anneau de Boréas",
-      "description": "A bit of crystallized ice from the Great Wolf King of the North.\nThis land was once a realm of freezing-cold blizzards and ice storms filled with razor-sharp ice shards, all at the command of Boreas. Though his power may have diminished, he could still freeze the land in an instant.",
+      "name": "Vertèbre de Borée",
+      "description": "Un peu de glace provenant du corps du Grand Roi Loup du Nord.\nIl déclenchait des blizzards et des tempêtes de neige à la grêle si acérée qu’elle pouvait couper la chair. Ses pouvoirs ne sont plus ceux d’antan, mais il possède encore la puissance de recouvrir ses terres de neige.",
       "bossName": "Andros"
     },
     {
       "key": "Spirit Locket of Boreas",
-      "name": "Esprit de Boréas",
-      "description": "A bit of the Great Wolf King of the North's power drawn from its soul.\nThis land was once a realm of freezing-cold blizzards and ice storms filled with razor-sharp ice shards, all at the command of Boreas. In his final moments, he finally realized the chilling north wind could only extinguish life, not nurture it. Therefore, Boreas let his powers freely flow into the land to protect it and its inhabitants.",
+      "name": "Esprit de Borée",
+      "description": "Un fragment d’âme obtenu du Grand Roi Loup du Nord.\nCe dernier déclenchait des blizzards et des tempêtes de neige. Cependant, à la fin de sa vie, il comprit enfin que ses vents froids et violents ne pouvaient qu’éteindre la vie et non la nourrir. Il laissa donc ses pouvoirs se répandre sur les terres pour leur apporter bénédiction et protection éternelles",
       "bossName": "Andros"
     },
     {
       "key": "Dvalin's Plume",
       "name": "Plume de Stormterror",
-      "description": "A feather from the tail of the Dragon of the East.\nAs a dragon's feather it has experienced more than a thousand years' worth of winds. One senses within it a yearning for freedom so strong that it could whip up a light breeze to rescue it from its current confines. Its former owner's recognition of you is what makes it content to stay in your hands.",
+      "description": "Une plume provenant du Dragon de l’Est\nSoufflée par les vents pendant pas moins d’un millénaire elle invoquerait presque une brise pour la libérer de votre sac, mais son propriétaire l’a confiée en gage de reconnaissance",
       "bossName": "Dvalin"
     },
     {
       "key": "Dvalin's Claw",
       "name": "Griffe de Stormterror",
-      "description": "A claw from the Dragon of the East.\nIt once contained the shadow dragon Durin's vile poison, having torn through the latter's flesh in battle. Thanks to your purification and healing, it is no longer toxic.",
+      "description": "Une griffe provenant du Dragon de l'Est.\nElle fut contaminée par le sang de Durin, le Dragon des Ténèbres, mais grâce à vos efforts, elle n'est plus empoisonnée.",
       "bossName": "Dvalin"
     },
     {
       "key": "Dvalin's Sigh",
       "name": "Souffle de Stormterror",
-      "description": "A bit of power taken from the whirlwinds evoked by the Dragon of the East.\nBeautiful and transparent, both trade winds and tornadoes will work in his name. The winds move as his companion, his voice, and his freedom.His enemies are the thousands who stand against the wind.",
+      "description": "Un peu de pouvoir provenant des bourrasques du Dragon de l'Est.\nTransparent, mais beau, il permet d'invoquer les tornades et les alizés. Le vent est son compagnon, sa voix et sa liberté.\nTous ceux qui se tiennent en travers de son chemin sont ses ennemis.",
       "bossName": "Dvalin"
     },
     {
       "key": "Tusk of Monoceros Caeli",
-      "name": "Corne de Monoceros",
-      "description": "The horn of a whale that you obtained from defeating Childe, who had unleashed the might of his Delusion.\nIt is said that the shape of one's constellation determines one's character. The image of a whale cruising across the celestial heights represents a solipsism that seeks to crush and devour all in its path.\nEmbracing this aspect of himself, Childe gleefully summoned one such beast before throwing himself into battle against you.",
+      "name": "Corne de Monoceros Caeli",
+      "description": "La corne d'une baleine que vous avez obtenue en battant Tartaglia, qui avait libéré la puissance de son œil maléfique.\nD'aucuns prétendent que le caractère d'une personne est défini par la forme de sa constellation. L'image d'une baleine traversant le firmament est une allégorie de la destruction réduisant tout à néant sur son chemin.\nC'est une bête similaire qu'il invoqua lors de votre combat.",
       "bossName": "Tartaglia"
     },
     {
       "key": "Shard of a Foul Legacy",
       "name": "Fragment du démon",
-      "description": "The shard of a weapon that you obtained from defeating Childe, who had unleashed the might of his Delusion.\nIt is stained with a profound color that is not of this world, no doubt due to the land of endless darkness that the young boy saw with his own two eyes.\nPerhaps it has nothing to do with the power of a Delusion, but as they say, the weapon reflects its user...",
+      "description": "Fragment d'arme que vous avez obtenu en battant Tartaglia, qui avait libéré la puissance de son œil maléfique.\nL'objet est couvert d'une couleur qui n'est pas de ce monde, sans doute due aux ténèbres sans fin que le jeune garçon a vu de ses propres yeux.\nPeut-être n'a-t-il rien à voir avec la puissance d'un œil divin, mais comme on dit : l'arme est le reflet de celui qui la manie...",
       "bossName": "Tartaglia"
     },
     {
       "key": "Shadow of the Warrior",
       "name": "Ombre du guerrier",
-      "description": "A fragment of power that you obtained from defeating Childe, who had unleashed the might of his Delusion.\nIt is the product of a will to fight that has been honed over countless slaughters.\nIf humans do indeed have destinies, then his must surely have been twisted by such deeds. Why else, then, would he always be at the heart of every conflict?",
+      "description": "Un fragment de pouvoir que vous avez obtenu en battant Tartaglia, qui avait libéré la puissance de son œil maléfique.\nCet objet est le résultat d'une volonté de combattre qui s'est aiguisée au cours d'innombrables massacres.\nSi le destin existe pour les hommes, alors le sien a sans nul doute été affecté par ces actions. Sinon, comment expliquer qu'il se retrouve toujours au centre de chaque conflit ?",
       "bossName": "Tartaglia"
     },
     {
       "key": "DecarabianA",
       "name": "Tuile casssée de Décabarian",
-      "description": "The place now known as Stormterror's Lair was once the capital city of Decarabian, the God of Storms. Since this dream of prosperity was created entirely by his divine might, the broken pieces left behind by the shattering of that dream still possess great power."
+      "description": "L'endroit qu'on nomme l'Antre de Stormterror aujourd'hui était autrefois une cité construite par Décabarian, le Seigneur des Rafales. Ce beau rêve prospère a été créé par le pouvoir de l'Archon, et même après sa destruction, les tuiles cassées et les fragments dispersés laissés derrière possèdent toujours une grande puissance."
     },
     {
       "key": "DecarabianB",
       "name": "Mur abattu de Décabarian",
-      "description": "Decarabian, the God of Storms, was content with the capital city he had raised, and accepted the worship of the people from atop his tower. But he knew not that the people did not bow to him out of respect or adoration."
+      "description": "Décabarian, fier de son œuvre, était vénéré du haut de sa tour. Cependant, il ignorait que le peuple ne se prosternait pas ni par respect ni par admiration."
     },
     {
       "key": "DecarabianC",
       "name": "Fragment dispersé de Décabarian",
-      "description": "Andrius once declared war upon Decarabian, but failed to even scratch the capital of the Lord of the Tower. If it were not for the song of freedom that shattered the city in an instant, Decarabian's dream would have gone on forever."
+      "description": "Andrios déclara la guerre au Seigneur de la Tour, mais ne put infliger une seule égratignure aux rempats de sa cité. Hélas, la douce mélodie de la liberté mit fin au rêve du tyran en un instant."
     },
     {
       "key": "DecarabianD",
       "name": "Rêve brisé de Décabarian",
-      "description": "The people did not bow to Decarabian out of respect or adoration, but because the harsh winds had laid them low. This was the shattered dream and ambition of the Anemo Archon before the rise of Barbatos.He tried so hard to make his dream come true, and so the fragments of that dream are still mighty."
+      "description": "Le peuple ne révérrait pas le Seigneur de la Tour par respect ou par admiration, mais par peur de la tempête qui s'abattrait sur eux. Cet objet représente son ambition brisée par Barbatos.\nDécabarian avait déloyé des moyens démesurés pour réaliser son rêve. Même brisé, il reste puissant."
     },
     {
       "key": "GuyunA",
       "name": "Sable lumineux de Guyun",
-      "description": "The stone pillars that tower amid Guyun Stone Forest were once the stone spears Morax used to defeat his enemies. Over time, the gods' substance has seeped into the pillars that pin them down, lending them divine power. The pillars sometimes shed fragments of hatred and curses."
+      "description": "La Forêt de pierre de Guyun se dresse sur l'endroit où la lance de Morax a transpercé ses ennemis. Avec le temps, les piliers de pierre s'imprégnèrent de l'esprit de ces derniers à un tel point que certains résidus maudits se déposent dessus."
     },
     {
       "key": "GuyunB",
       "name": "Roche lustrée de Guyun",
-      "description": "The learned know that Guyun Stone Forest is far more than simply a miraculous sight on the sea to behold: It is the cemetery of the former gods of Liyue. Hatred and filth have periodically risen up from it, but all have been subdued by a demon-conquering young man."
+      "description": "La Forêt de pierre de Guyun n'est pas un simple endroit avec vue agréable sur la mer ; il s'agit d'un cimetière où gît d'anciennes divinités maléfiques de Liyue. Des miasmes envahissaient les lieux de manière récurrente, jusqu'à l'arrivée d'un certain jeune homme."
     },
     {
       "key": "GuyunC",
       "name": "Squelette sacré de Guyun",
-      "description": "The stone spear has a glimmering core formed by the power of the defeated gods. Their hatred is not directed at Morax, however, for they have lost themselves a long time ago and are incapable of holding personal grudges."
+      "description": "La lance de pierre possède une sphère lumineuse formé par le pouvoir des ennemis du Souverain de la Roche. Il n'était pas l'objet de leur haine, car corrompus depuis bien longtemps, elle faisait désormais naturellement partie d'eux."
     },
     {
       "key": "GuyunD",
       "name": "Corps divin de Guyun",
-      "description": "That which lurks within and animates this relic are the divine remains of lamenting gods. They are unrealized ideals, designs for a prosperous humanity that could never be. They may now lie deep within stone and sea, but they will not go quietly into the night."
+      "description": "Les esprits de divinités oubliées animent cette relique. Ils incarnent des idéaux pour l'humanité qui ne virent jamais le jour, et reposent maintenant dans la pierre et les mers, sans jamais pouvoir disparaître vraiment."
     },
     {
       "key": "ElixirA",
-      "name": "Élixir de plomb brumeux",
-      "description": "Jueyun Karst is the realm of the mighty and illuminated adepti. But other than the ability to control the elements of the world, Jueyun Karst is also home to three other untold secrets: Alchemy, Sigils, and Sub-Space Creation."
+      "name": "Plomb karstique",
+      "description": "Le Karst Jueyun est la demeure des Adeptes puissants et éclairés qui maîtrisent les arts occultes."
     },
     {
       "key": "ElixirB",
-      "name": "Élixir de mercure",
-      "description": "With Fulu (Sigils), the adepti can store their power in the form of symbols, and with Waijing (Sub-Space Creation) they can fashion a cosmic paradise with the power of their minds. The manufacture of elixirs, however, has always been shrouded in mystery, for certain death follows for any who swallow them."
+      "name": "Mercure karstique",
+      "description": "Grâce aux talismans, les Adeptes peuvent insuffler une quantité de leurs pouvoirs sous forme de symboles. L'illusion leur permet de créer une projection cosmique grâce à leur esprit. La fabrication de ce type de matière est un art secret ; n'importe qui assez fou pour ingérer ces billes le regretterait fortement."
     },
     {
       "key": "ElixirC",
-      "name": "Élixir d'or brumeux",
-      "description": "Elixirs are in fact pills made from metal alloys. They were created by the adepti, and are able to grant weapons transcendent powers. However, they are rarely seen in the world due to the hubris of the practitioners of martial arts, who prized the ways of combat over the paths of the adepti."
+      "name": "Argent karstique",
+      "description": "Une bille de métal fabriquée par les Adeptes grâce à l'art des herbes.\nCette matière confère des pouvoirs exceptionnels à une arme, mais vous ne verrez jamais un artiste martial utiliser ce genre d'objet."
     },
     {
       "key": "ElixirD",
-      "name": "Élixir de primordialité de la brume voilée",
-      "description": "An elixir of the highest quality. It embodies a state of intertwining order and chaos, and is said to mirror how the world was when it was first created. Of course, a certain someone knows that this was not the case."
+      "name": "Or karstique",
+      "description": "Une pilule en métal d'une qualité exceptionnelle qui simule un état où l'ordre et le chaos s'entremêlent, et qui aurait été à l'origine du monde. Hélas, les choses ne sont pas aussi simples en réalité."
     },
     {
       "key": "BorealWolfA",
       "name": "Dent de lait du Loup boréal",
-      "description": "Andrius' wolf pack is its blessed honor guard, and even the milk teeth of a wolf cub possess great potential.\nIn the past, the gods had the responsibility to love all people. Andrius was therefore quite unusual in that he became leader of the wolves, while only welcoming abandoned babies and wanderers when it came to humans."
+      "description": "Fidèles vassaux d'Andros, les loups sont bénis d'une grande vigueur. Une simple dent de lait de louveteau renferme donc des pouvoirs considérables \nLes Archons avaient pour devoir d'aimer l'humanité entière, mais le Roi Loup montrait de la considération qu'envers les parias et les nourrissons."
     },
     {
       "key": "BorealWolfB",
       "name": "Croc brisé du Loup boréal",
-      "description": "The life of a wolf is not without violence, broken bones or cracked teeth are nothing special.\nAndrius found humans to be a disappointment, but believed babies to be innocent. If both the wolf pack and the adopted children chose each other, then they become a Lupical, a fated family."
+      "description": "La violence fait partie du quotidien des loups. Les fractures et les blessures sont courantes.\nAndros perdit sa foi en l'humanité, mais les nourrissons étaient encore innocents à ses yeux. Lorsque ces derniers sont adoptés par les loups, ils forment ensemble un lupical ; une famille que le destin leur a donné."
     },
     {
       "key": "BorealWolfC",
       "name": "Croc fendu du Loup boréal",
-      "description": "The wolf pack also understands that humans are not solitary creatures. The honorary broken tooth is a parting gift said to bring protection and luck.\nIn the legends of a far-off world, a female wolf once adopted two great humans. Their home was known as the Cave of Wolves, or Lupercal - that word meaning the same thing as Lupical does in this world."
+      "description": "Les loups savent que les humains ont besoin de vivre avec les leurs. un croc brisé est un cadeau d'adieu qui apporte bonheur et protection.\nUn légende d'un monde lointain raconte qu'un loup adopta des jumelles. Leur foyer était surnommé la Cave aux loups ou «lupercal» ; ce mot s'apparente à «lupical» dans ce monde."
     },
     {
       "key": "BorealWolfD",
       "name": "Nostalgie du Loup boréal",
-      "description": "The Wolf King, believing himself to despise humans, thought himself unable to envision a happy life for humanity, making him unworthy of becoming the Lord of the Winds of the world. Therefore, he chose to disappear. Yet, in truth, he gazes on the ones abandoned by the world ever so gently."
+      "description": "Le Roi Loup décida de se retirer du monde, se pensant indigne de devenir le Roi des Vents. En raison de son mépris pour l'humanité, il s'estimait incapable de contribuer à leur bonheur, mais sa bienveillance envers les parias démontrait bien le contraire."
     },
     {
       "key": "AerosideriteA",
-      "name": "Grain d'aerosidérite",
-      "description": "A black meteor once fell beyond Liyue's Sea of Clouds, said to have fallen to vanquish a monster. However, it was stained by powerful tainted blood, so this item no longer possesses the pure power of Rex Lapis."
+      "name": "Grain d'aérosidérite noire",
+      "description": "D'après la légende, une météorite noire tombée à travers la Mer de nuages de Liyue terrassa un monstre. Elle fut cependant souillée par le sang impur de la créature et perdit le pouvoir divin que lui avait insufflé le Souverain de la Roche."
     },
     {
       "key": "AerosideriteB",
-      "name": "Éclat d'aerosidérite",
-      "description": "Rumors of sea monsters are commonplace in Liyue, since the other shore is an unknown region that lies outside of Teyvat. Without the protection of The Seven, all that lies beyond is unknown chaos. Only power beyond the order of Teyvat is able to stain the power of Rex Lapis black."
+      "name": "Éclat d'aérosidérite noire",
+      "description": "Ce qu'il se trouve au-delà de la mer est un mystère pour les Liyuéens, si bien que les rumeurs de monstres marins sont monnaie courante dans la cité portuaire. Après tout, le chaos ne peut qu'y régner sans la protection des Sept Archons. Seule une force extérieure à Teyvat pourrait réduire les pouvoirs du Souverain de la Roche à néant."
     },
     {
       "key": "AerosideriteC",
-      "name": "Fragment d'aerosidérite",
-      "description": "The coastal nations of Teyvat refer to the region beyond the protection of The Seven as the Dark Sea. It is said that many defeated gods refused to live under the new order of The Seven, so they fled to remote islands and became evil gods. However, their powers came from the same source as Rex Lapis, separate from this all-devouring darkness."
+      "name": "Fragment d'aérosidérite noire",
+      "description": "«Outre-mer» est le surnom des terres inconnues qui s'étendent au-delà de la côte de Teyvat. Jadis, de nombreuses anciennes divinités refusèrent de vivre sous l'ordre des Sept Archons et se réfugièrent dans des régions lointaines et devinrent maléfiques. Bien que l'histoire en soit ainsi, la source de leurs pouvoirs était la même que celle du Souverain de la Roche."
     },
     {
       "key": "AerosideriteD",
-      "name": "Morceau d'aerosidérite",
-      "description": "When Khaenri'ah was destroyed, a great sinner created endless monsters with dark, alien blood flowing through their veins. They rampaged across the land, destroying all in their paths. They were mutated lifeforms, and the mutations were caused by powers from beyond this world. The black serpentine dragon Durin that attacked Mondstadt was one such mutated being."
+      "name": "Morceau d'aérosidérite noire",
+      "description": "près la chute de Khaenri'ah, un hérétique créa une armée de monstres au sang noir en faisant appel à des forces maléfiques d'un autre monde. Ceux-ci détruisirent et pillèrent tout ce qui se dressait devant eux. Durin, le dragon serpentin étaient une de ces abominations."
     },
     {
       "key": "GladiatorA",
       "name": "Entraves du Chevalier de Croc de Lion",
-      "description": "It's a human thing to exaggerate a hero's story, even to the point of elevating the fetters that once bound the hero to the level of an enemy of true freedom.As a result, these fetters were granted extraordinary powers."
+      "description": "Les humains aiment exagérer les exploits de leurs héros, au point de faire de simples entraves de véritables ennemis de la liberté.\nCelles-ci ont été donc bénies par des pouvoirs extraordinaires pour cette raison."
     },
     {
       "key": "GladiatorB",
       "name": "Chaînes du Chevalier de Croc de Lion",
-      "description": "The chains that once bound the great hero Vennessa. In truth, all gladiators would have worn chains in that era, and Vennessa was but one of many."
+      "description": "Des chaînes qui ont entravé la grande Vennessa lorsqu'elle n'était qu'une gladiatrice parmi les autres."
     },
     {
       "key": "GladiatorC",
       "name": "Menottes du Chevalier de Croc de Lion",
-      "description": "Vennessa was not truly bound by her chains. If she had so wished, no ordinary physical constraints forged in Mondstadt could have held her, for the land there yielded no ore of exceptional quality, nor did it possess the divine flame of her ancestral home.She was only bound by her responsibility to take care of her tribespeople."
+      "description": "Vennessa ne fut jamais véritablement entravée par ses chaînes. Contrairement à sa terre natale, Mondstadt ne possédait pas le minerai ou le feu pour forger des entraves susceptibles de l'enchaîner indéfiniment.\nLa seule chose qui la retenait en ce lieu était la responsabilité qu'elle avait envers les siens."
     },
     {
       "key": "GladiatorD",
       "name": "Idéaux du Chevalier de Croc de Lion",
-      "description": "Vennessa may have been freed from slavery, but she then found herself subject to many other, even greater forms of bondage. What began as a duty to her tribespeople extended to all of Mondstadt, then to the concept of freedom itself, and beyond a point even to the whole world.What she really hoped for, in truth, was that the world might grow stronger."
+      "description": "Lorsque Vennessa fut affranchie, ses responsabilités ne furent que plus grandes au fil du temps. Incarnation de la liberté, elle tint successivement sur ses épaules le bien-être de tribu, puis celui de Mondstadt tout entière et enfin du monde entier.\nSon vœu le plus cher était celui d'un monde plus fort et indépendant."
     },
     {
       "key": "Crown of Insight",
       "name": "Couronne de la sagesse",
-      "description": "A precious Talent Level-Up material.\nOnce a medium for the storage and transfer of wisdom in ancient times. Now, wisdom is found in ancient texts and in profound speech.\nNevertheless, this Crown of Insight must still be able to impart some transcendent power and wisdom to its bearer."
+      "description": "Un support utilisé dans les temps anciens pour conserver et transmettre le savoir. Bien que de nos jours les connaissances se transmettent de différentes manières, autant orales qu'écrites, cet artéfact n'a pas perdu la moindre once de son pouvoir d'antan."
     },
     {
       "key": "SacrificialKnifeA",
       "name": "Dague de chasse rituelle",
-      "description": "A sharp alloy weapon. Though its owner has been lost, it still reflects a disturbingly cold light."
+      "description": "Une arme tranchante en alliage. Elle n'a plus de propriétaire depuis longtemps, mais sa lame brille toujours d'un éclat menaçant."
     },
     {
       "key": "SacrificialKnifeB",
-      "name": "Dague rituelle de l'Agent",
-      "description": "An oddly-shaped weapon made with superior Snezhnayan technology that once belonged to a senior agent. Proper training is required for using this strange weapon."
+      "name": "Dague rituelle de l'Usurier",
+      "description": "Une arme à la forme étrange, fabriquée grâce à une technologie de pointe snezhnayienne. Il est impossible de la manier sans avoir effectué un entraînement spécial."
     },
     {
       "key": "SacrificialKnifeC",
       "name": "Grande dague de l'Inspecteur",
-      "description": "In the hands of its lord, this fierce weapon has handled many \"debts\". No-one has eyes in the back of their heads, and this weapon and its related techniques are designed around that weakness."
+      "description": "Une arme qui a servi à «régler des comptes». Personne n'a les yeux derrière la tête, alors cette dague et ses techniques de maniement ont spécifiquement été conçues pour palier à cette faiblesse."
     },
     {
       "key": "HornA",
       "name": "Corne lourde",
-      "description": "A crude horn used by hilichurls to warn each other. Given the damage to the horn, it won't be warning anyone any time soon."
+      "description": "Une corne utilisée par les Brutocollinus pour prévenir leurs alliés d'un danger imminent. Bien que cet objet soit déjà bien endommagé, il n'est pas prêt de rendre l'âme."
     },
     {
       "key": "HornB",
       "name": "Corne en bronze noir",
-      "description": "A metallic monster horn that can only be obtained from especially strong hilichurls, since blowing on the horn takes real strength."
+      "description": "Une corne de démon en métal. Elle peut souvent être obtenue des Brutocollinus musclés en raison de son poids."
     },
     {
       "key": "HornC",
       "name": "Corne en cristal noir",
-      "description": "A metallic horn with an ominous shine decorated with black crystals of an unknown source. It has hardly been used at all. It is likely a ceremonial item of the hilichurls'."
+      "description": "Une corne en métal ornée d'un cristal noir. Probablement utilisée par les Brutocollinus lors de rituels, elle se trouve dans un état quasiment neuf."
     },
     {
       "key": "ChaosA",
       "name": "Dispositif du chaos",
-      "description": "Comes from ancient defunct relic structures. A part that once held the structure together. Its aesthetically-pleasing engineering is quite exquisite."
+      "description": "Une pièce qui effectuait la maintenance d'une structure antique. Son mécanisme est un plaisir pour les yeux et relève d'une ingénierie exquise."
     },
     {
       "key": "ChaosB",
       "name": "Circuit du chaos",
-      "description": "Comes from ancient defunct relic structures. Was once a logic circuit responsible for movement functions. Sadly, no-one is able to make sense of how it worked."
+      "description": "Un circuit qui commandait les mouvements d'une structure antique. De nos jours, personne ne sait comment il fonctionne."
     },
     {
       "key": "ChaosC",
       "name": "Noyau du chaos",
-      "description": "Comes from ancient defunct relic structures. The core that once drove a mechanical beast. Should you come to understand its workings and reproduce it, you could perhaps change the world."
+      "description": "Un noyau qui faisait fonctionner une structure antique. Le monde ne serait plus le même si une telle technologie parvenait à être reproduite."
     },
     {
       "key": "LeyLineA",
-      "name": "Branche morte des lignes",
-      "description": "Fragile branches from deep within the earth. Even after years of aging, from beneath it's mottled surface you can see that its power is not yet entirely lost."
+      "name": "Branche morte des lignes énergétiques",
+      "description": "Branche fragile provenant des profondeurs de la terre. Malgré son piteux état, elle a survécu à l'épreuve du temps et a conservé une once de ses pouvoirs."
     },
     {
       "key": "LeyLineB",
-      "name": "Feuilles mortes des lignes",
-      "description": "A twig from deep within the earth. Though it is far from where it once lay, its leaves still pulsate with energy."
+      "name": "Feuilles mortes des lignes énergétiques",
+      "description": "Ces feuilles proviennent des profondeurs de la terre. Une énergie vitale émane d'elles comme si elles étaient encore rattachées à leur arbre."
     },
     {
       "key": "LeyLineC",
-      "name": "Pousse des lignes",
-      "description": "It is said that there was a great tree whose roots once spread out to every corner of the world, and this branch is said to be part of it. It is almost if it was never broken off and taken far away, for its vitality is such that it still sprouts new leaves even now."
+      "name": "Pousse des lignes énergétiques",
+      "description": "Cette pousse a été extraite à partir d'énormes racines qui poussent sous terre. Elle déborde de vitalité comme si elle était encore rattachée à la racine mère et déploie de nouvelles feuilles."
     },
     {
       "key": "MistGrassA",
       "name": "Pollen d'herbe brumeuse",
-      "description": "Strange spores created by Mist Grass in enclosed spaces. They are the Cicins' favorite food."
+      "description": "De mystérieuses spores produites par l'herbe brumeuse lorsqu'elles sont dans un espace confiné. Il s'agit de la nourriture préférée des lucioles."
     },
     {
       "key": "MistGrassB",
       "name": "Herbes brumeuses",
-      "description": "Well-preserved Mist Grass. Some would take advantage of the Cicins' love for the Mist Grass to control them."
+      "description": "Entièrement bien conservée. Les Lucioles Électro ont un goût prononcé pour ces herbes, ce qui permet de les contrôler."
     },
     {
       "key": "MistGrassC",
       "name": "Mèches d'herbe brumeuse",
-      "description": "A rare bundle of Mist Grass that gives off a faint glow. Those who carry it invite both the Cicins and misfortune."
+      "description": "Un bouquet d'herbe brumeuse rare qui dégage une lueur blême, il risque d'attirer les lucioles."
     },
     {
       "key": "BoneShardA",
       "name": "Fragment d'os fragile",
-      "description": "A bone shard once carried by a Geovishap.\nAlthough they are quite fragile, they seem to still harbor some indescribable power."
+      "description": "Fragment d'os retrouvé sur le corps d'un Élémentosaure.\nMalgré sa fragilité, une mystérieuse puissance semble s'en dégager."
     },
     {
       "key": "BoneShardB",
       "name": "Fragment d'os solide",
-      "description": "A fragment of an unknown creature's bones that appear to be prized by Geovishaps for some reason.\nThe fragment appears to be quite aged. Despite being dragon-like beasts with no spoken language, they still seem to have some sort of special affection for these bone shards."
+      "description": "Fragment d'os qui semble très apprécié des Élémentosaures.\nL'os doit être assez ancien. Ces créatures cousines du dragon ont beau n'avoir pas de langage à proprement parler, elles semblent malgré tout être très attachées à ce type d'objet."
     },
     {
       "key": "BoneShardC",
       "name": "Fragment d'os fossilisé",
-      "description": "A fossilized bone fragment sometimes found after defeating Geovishaps.\nGeovishaps all dream of growing into great dragons one day. They see these fossils as dragon bones and greatly cherish them, perhaps because they too hope to attain the dragons' longevity and power."
+      "description": "Fragment d'os obtenu parfois après avoir vaincu des Élémentosaures.\nTous les Élémentosaures rêvent de devenir un jour dragon, et vénèrent avec passion ce type de fossile ; peut-être pensent-ils bénéficier ainsi de la longévité et de la puissance des vrais dragons."
     },
     {
       "key": "MaskA",
       "name": "Masque endommagé",
-      "description": "A broken bone mask that once belonged to some hilichurl.\nNow more broken than complete, it can no longer perform its primary function."
+      "description": "Un masque en os fissuré qui a appartenu à un Brutocollinus.\nIl est tellement endommagé qu'on ne peut plus vraiment appeler ça un masque."
     },
     {
       "key": "MaskB",
       "name": "Masque sale",
-      "description": "A bone mask, covered in unidentifiable stains, that emanates a mysterious odor.\nYet such is the devotion of hilichurls to masks that they will wear it nonetheless."
+      "description": "Un masque en os taché par une substance non identifiée qui dégage une odeur étrange.\nUn Brutocollinus le porterait même dans cet état."
     },
     {
       "key": "MaskC",
       "name": "Masque sinistre",
-      "description": "A glossy bone mask with oil markings painted on it, meant to intimidate enemies.\nNo-one really knows why hilichurls are so fascinated with masks. Some say that it's because they don't want to see their own reflections in the water."
+      "description": "Un masque en os d'une grande qualité sur lequel un visage terrifiant est peint pour effrayer vos ennemis.\nLes Brutocollinus sont très attachés à ce genre d'objet pour une raison mystérieuse. Certaines sources attribuent le port du masque à leur peur de voir leur propre reflet dans l'eau."
     },
     {
       "key": "StatuetteA",
-      "name": "Gloomy Statuette",
-      "description": "A vague portrayal of some unknown person. Even though it has seen many days, it still has not been damaged in any way."
+      "name": "Statuette sinistre",
+      "description": "Une petite statue à l'effigie d'une personne inconnue. Après tout ce temps, elle est restée en parfait état."
     },
     {
       "key": "StatuetteB",
-      "name": "Dark Statuette",
-      "description": "A carved idol representing an unknown person. Contaminated with a dark and unfathomable power, simply holding it makes you feel uneasy."
+      "name": "Statuette maudite",
+      "description": "Une petite statue à l'effigie d'une personne inconnue. Imprégnée d'un pouvoir obscur et maléfique, la tenir dans vos mains donne la chair de poule."
     },
     {
       "key": "StatuetteC",
-      "name": "Deathly Statuette",
-      "description": "A carving that emanates an evil energy, with no indication of what it's truly made of. Simply focusing on it evokes dark whispering inside your very soul."
+      "name": "Statuette maléfique",
+      "description": "Une statuette sculptée dans une matière inconnue qui dégage une énergie maléfique. Ne la contemplez pas trop longtemps ou vous commencerez à entendre des voix inquiétantes vous chuchoter à l'oreille..."
     },
     {
       "key": "ScrollA",
       "name": "Parchemin divinatoire",
-      "description": "A scroll that likely relates to some kind of magic. Exudes an inexplicable but ominous warmth."
+      "description": "Un parchemin qui semble parler de magie. Il dégage une étrange chaleur."
     },
     {
       "key": "ScrollB",
-      "name": "Parchemin sigilé",
-      "description": "An old scroll lacking in detail and clarity. By following the images on it, some magical creatures can recreate a small part of its magic."
+      "name": "Parchemin sigillé",
+      "description": "Un ancien parchemin aux dessins étranges. En reproduisant les gestes des personnages, il est possible de recréer une certaine magie miraculeuse."
     },
     {
       "key": "ScrollC",
       "name": "Parchemin maudit",
-      "description": "A scroll inscribed with ancient images. It is said that few can decipher its meaning, and the few scholars that have all went mad."
+      "description": "Un parchemin ancien très difficile à déchiffrer. Ceux qui y sont parvenus sont tous devenus fous."
     },
     {
       "key": "NectarA",
-      "name": "Nectar léger",
-      "description": "Nectar extracted from the stamen of a Whopperflower that contains trace amounts of elemental energy.\nThe taste of the nectar has a hint of Sweet Flower in it."
+      "name": "Nectar de Fleur mensongère",
+      "description": "Nectar extrait du pistil d'une Fleur mensongère. Il contient des traces d'éléments.\nSon goût rappelle celui de la fleur sucrante."
     },
     {
       "key": "NectarB",
       "name": "Nectar miroitant",
-      "description": "Nectar that is full of pure elemental energy.\nScholars generally concur that Whopperflowers are advanced life forms among the elemental plants, but there has yet to be a satisfactory explanation regarding their predatory habits."
+      "description": "Un nectar de Fleur mensongère concentré en éléments.\nToute la communauté scientifique s'accorde généralement sur le fait que les Fleurs mensongères occupent une place à part parmi les plantes élémentaires, mais nombre d'interrogations demeurent quant à ses habitudes prédatrices."
     },
     {
       "key": "NectarC",
       "name": "Nectar élémentaire",
-      "description": "A thick and sticky honey that is full of energy.\nThe Whopperflower hunts by tricking its prey, a process it uses to possibly evolve into a more powerful and pure form."
+      "description": "Un nectar de Fleur mensongère épais et collant, empli d'énergie.\nLa Fleur mensongère, comme son nom l'indique, trompe sa proie pour s'alimenter – peut-être dans le but d'évoluer vers une forme plus puissante ?"
     },
     {
       "key": "ArrowHeadA",
       "name": "Pointe de flèche robuste",
-      "description": "A roughly produced arrowhead. Though unimpressive, neither it nor the bow should be underestimated, for even the bravest knight can be felled by an arrow from the rear."
+      "description": "Une pointe de flèche rudimentaire. Bien que son état laisse à désirer, elle peut se révéler mortelle si la flèche est tirée au bon moment."
     },
     {
       "key": "ArrowHeadB",
       "name": "Pointe de flèche aiguisée",
-      "description": "A well-made arrowhead. Sharp enough to penetrate armor with the ease of a rock through the surface of water."
+      "description": "Une pointe de flèche de haute qualité. Parfaitement aiguisée, elle traverse aisément la chair."
     },
     {
       "key": "ArrowHeadC",
       "name": "Pointe de flèche usée",
-      "description": "An old arrowhead coated in blood. The arrowhead has long since lost its sharpness and thus its use as a weapon.However, it represents the pride of a hunter and acts as both an amulet and a medal."
+      "description": "Une vieille pointe de flèche recouverte de sang. Elle a perdu son tranchant depuis longtemps et ne sert plus d'arme.\nCependant, les chasseurs la portent fièrement à leur cou comme une amulette ou une médaille."
     },
     {
       "key": "CircularInsigniaA",
-      "name": "Insigne de Pilleur",
-      "description": "A signet that proudly represents its owner's position as member of the Treasure Hoarders. The pursuit of treasure knows no bounds. That said... Is being a thief something to be proud of?"
+      "name": "Insigne du Pilleur",
+      "description": "Un insigne porté avec fierté et qui indique le rang de son propriétaire au sein des Pilleurs de trésors. Leur soif de richesse ne pourra jamais être assouvie... Ceci dit, depuis quand peut-on se vanter d'être un voleur ?"
     },
     {
       "key": "CircularInsigniaB",
       "name": "Insigne de corbeau en argent",
-      "description": "A raven insignia used by members of the Treasure Hoarders to identify each other. The Treasure Hoarders ask for no resume. Anyone who has an insatiable desire for treasure and is backed up by an equal amount of courage can become a worthy member."
+      "description": "Un insigne en forme de corbeau porté par les Pilleurs de trésors pour se reconnaître entre eux. Pas besoin d'entretien pour adhérer à leur groupe, tant qu'on est suffisamment motivé par le gain et que le courage ne nous fait pas défaut."
     },
     {
       "key": "CircularInsigniaC",
       "name": "Insigne de corbeau en or",
-      "description": "A raven insignia that symbolizes the pride and the guiding principle of the Treasure Hoarders. Whether it's hidden amidst the vastness of the land or in the depths of the seas, as long as there are treasures to be hunted down, the spirit of Treasure Hoarders, who will stop at nothing to acquire them, will never die."
+      "description": "Un insigne qui représente la fierté des Pilleurs de trésors. Ils ne reculeront jamais devant rien pour s'emparer du moindre trésor, qu'il soit enfoui sous de vastes plaines ou sous l'océan."
     },
     {
       "key": "InsigniaA",
       "name": "Insigne de nouvelle recrue",
-      "description": "An insignia to identify the recruits. Makes one wonder about what the ones joining the Fatui's war machine were thinking."
+      "description": "Un insigne servant à identifier les nouvelles recrues. Personne ne sait ni à qui il appartient, ni pourquoi cette personne a décidé de rejoindre l'armée des Fatui."
     },
     {
       "key": "InsigniaB",
       "name": "Insigne de sergent",
-      "description": "An insignia with a different shape to distinguish the sergeants from new recruits. Perhaps there are complicated emotions behind it."
+      "description": "Un insigne servant à identifier les sergents. Il est sans doute porteur d'émotions complexes."
     },
     {
       "key": "InsigniaC",
       "name": "Insigne d'officier",
-      "description": "An armband to identify officers. The Fatui possess a colossal army, so there must be something extraordinary about the ones who achieved this rank within the group."
+      "description": "Un insigne servant à identifier les officiers. Compte tenu de la taille de l'armée des Fatui, ceux qui parviennent à atteindre le rang d'officier doivent sûrement être un minimum doués."
     },
     {
       "key": "SlimeA",
       "name": "Bave de Blob",
-      "description": "A thick coating found on slimes. Most commonly seen material in elemental workshops."
+      "description": "Liquide épais que l'on trouve sur les Blobs. Il s'agit d'un matériau commun utilisé chez les forgerons élémentaires."
     },
     {
       "key": "SlimeB",
       "name": "Mucus de Blob",
-      "description": "Mildly purified slime secretions. Harmful to the skin. Please avoid direct exposure."
+      "description": "Substance légèrement purifiée, sécrétée par un Blob. Éviter tout contact avec la peau."
     },
     {
       "key": "SlimeC",
       "name": "Essence de Blob",
-      "description": "Concentrated slime essence. When left alone, it will begin to move on its own."
+      "description": "Concentré de Blob. Il peut se déplacer tout seul sans surveillance de votre part."
     },
     {
       "key": "Mora",
       "name": "Mora",
-      "description": "Common currency. The one language everybody speaks."
+      "description": "La devise commune de Teyvat. S'il y a bien un mot que tout le monde comprend, c'est celui-là."
     },
     {
       "key": "BasaltPillar",
       "name": "Pilier de basalte",
-      "description": "A pillar formed by the shell of a Geo Hypostasis, composed of high-density Geo energy.\nIt is a testament to Geo's status as the heaviest of the elements. Maybe the reason a Geo Hypostasis creates this pillar out of its shell and raises itself is just to get closer to the sky, not to combat enemies."
+      "description": "Un pilier formé avec une carapace d'Hypostase Géo et que de l'énergie Géo intense parcourt.\nCe monument est une preuve que l'élément Géo est le plus lourd d'entre tous. L'Hypostase Géo voulait peut-être se rapprocher du ciel plutôt que de combattre ses ennemis..."
     },
     {
       "key": "CleansingHeart",
-      "name": "Cœur d\"eau pure",
-      "description": "A palmful of eternal water left by an oceanid.\nThough it has already diffused among the depths of the lake, its purity remains all the same. But why would a creature so pure and clean as an oceanid covet the appearance of a being that roams the land, and assume such a form with pure water? They need not breathe nor do they require sustenance..."
+      "name": "Cœur d'eau pure",
+      "description": "Un noyau d'eau pure, récupéré auprès d'une Océanide.\nMême tombé au milieu d'un lac, il ne perd rien de sa pureté. Les Océanides sont des créatures d'une extrême pureté, dont le désir de ressembler aux êtres vivant sur la terre ferme est très puissant. Elles prennent alors forme terrestre – après tout, elles n'ont ni besoin de respirer, ni besoin de se sustenter..."
     },
     {
       "key": "EverflameSeed",
       "name": "Graine de feu",
-      "description": "A seed that fuels the unending flames of the Pyro Regisvine. It emits Pyro energy as if it will burn all that has ever sprouted from the ground.Endless desires flow among turbulent energy deep within the earth. What desire could steadily hold such fire to the plants and long so eagerly to bathe everything in unquenchable flames?"
+      "description": "Graine qui anime tout Arbre enflammé. Une chaleur qu'on devine prête à consumer la flore du monde semble s'en dégager.\nLe noyau de la terre regorge d'énergie sans cesse mouvante, aux désirs sans fond. S'emparant des plantes et arbres, elle les consume sous un feu éternel, et les soumets à sa volonté de détruire tout sur son passage. Tu parles d'un rêve."
     },
     {
       "key": "HoarfrostCore",
       "name": "Duramen de glace",
-      "description": "The exposed core of a defeated Cryo Regisvine. Pure Cryo energy is contained within it.\nEnergy and thoughts that swell deep within the earth will eventually erupt on the surface. Even the deathly silent frost will attach to living things on the ground, turning even ordinary vegetation like vines into huge, vicious predators."
+      "description": "Duramen d'un Arbre congelé. Une forte énergie Cryo s'en dégage.\nL'énergie et les pensées qui pullulent au fond de la terre finissent tôt ou tard par émerger à la surface. Le givre froid et endeuillé finit alors par s'attacher aux créatures qu'il rencontre ; et même les plantes et arbres deviennent alors gigantesques et menaçants."
     },
     {
       "key": "HurricaneSeed",
       "name": "Graine d'ouragan",
-      "description": "The imploded form of an Anemo Hypostasis upon its defeat.Contains the essence of Anemo energy.\nIt is said that the power to create hurricanes resides within its seemingly fragile body. This butterfly of pure Anemo energy must surely be waiting for the day when it can conjure up storms once again."
+      "description": "La forme effondrée d'une Hypostase Anémo après avoir été vaincue. Elle contient un pouvoir Anémo d'une grande pureté.\nLa légende raconte qu'un petit papillon fragile possède également le pouvoir de provoquer un ouragan. Ce papillon fait partie du vent pur, attendant avec patience le jour pour invoquer à nouveau l'ouragan."
     },
     {
       "key": "LightningPrism",
       "name": "Prisme d'éclair",
-      "description": "An Electro Hypostasis channels nearby elemental energy to repair damaged elemental entities. Contains the essence of Electro energy.\nAn ordinary prism separates white light into its component colors; a Lightning Prism, however, channels flowing energy and weaves them into lightning. It will continue to do so even after the Electro Hypostasis has been defeated."
+      "description": "Un matériel élémentaire utilisé par des Hypostases Électro pour faire converger les éléments à proximité et réparer les dommages. Il contient un pouvoir Électro d'une grande pureté.\nUn prisme commun peut distinguer les couleurs qui composent la lumière blanche, tandis que un prisme d'éclair peut faire converger les flux énergiques en un pur éclair. Bien que l'Hypostase Électro a été vaincue, les éléments Électro continuent de converger vers ce prisme."
     },
     {
       "key": "AgateA",
@@ -5778,37 +5778,37 @@
     {
       "key": "AgateB",
       "name": "Fragment d'agate agnidus",
-      "description": "\"A pilgrimage for a wish; a battle to earn a name...\""
+      "description": "«Aller en pèlerinage pour le désir, et se battre pour la réputation...»"
     },
     {
       "key": "AgateC",
       "name": "Morceau d'agate agnidus",
-      "description": "\"A pilgrimage for a wish; a battle to earn a name...Burnt to cinders for a dream.\""
+      "description": "«Aller en pèlerinage pour le désir, et se battre pour la réputation...» \n«Le rêve a tout brûlé en cendre à la fin.»"
     },
     {
       "key": "AgateD",
       "name": "Pierre d'agate agnidus",
-      "description": "\"A pilgrimage for a wish; a battle to earn a name...Burnt to cinders for a dream.\nIf the intention yet remains, achieved ██'s truth he has.\""
+      "description": "«Aller en pèlerinage pour le désir, et se battre pour la réputation...»\n«Si son vrai cœur originel peut être laissé dans les cendres, il a réussi à atteindre la vérité de ██.»"
     },
     {
       "key": "DiamondA",
       "name": "Éclat de diamant scintillant",
-      "description": "\"Welcome to this world.\""
+      "description": "«Bienvenue au monde»"
     },
     {
       "key": "DiamondB",
       "name": "Fragment de diamant scintillant",
-      "description": "\"Welcome to this world.\""
+      "description": "«Bienvenue au monde»"
     },
     {
       "key": "DiamondC",
       "name": "Morceau de diamant scintillant",
-      "description": "\"Welcome to this world.\""
+      "description": "«Bienvenue au monde»"
     },
     {
       "key": "DiamondD",
       "name": "Diamant scintillant",
-      "description": "\"Welcome to this world.\""
+      "description": "«Bienvenue au monde»"
     },
     {
       "key": "EmeraldA",
@@ -5818,17 +5818,17 @@
     {
       "key": "EmeraldB",
       "name": "Fragment d'émeraude nagadus",
-      "description": "\"In the end, life opened its closed fist...\""
+      "description": "«La vie a lâché ses mains à la fin...»"
     },
     {
       "key": "EmeraldC",
       "name": "Morceau d'émeraude nagadus",
-      "description": "\"In the end, life opened its closed fist...\""
+      "description": "«La vie a lâché ses mains à la fin...»\n«et donne la liberté à tout le monde.»"
     },
     {
       "key": "EmeraldD",
       "name": "Pierre d'émeraude nagadus",
-      "description": "\"In the end, life opened its closed fist...granting freedom of life to all.\""
+      "description": "«La vie a lâché ses mains à la fin...»\n«et donne la liberté à tout le monde.»\n«Les hommes et les animaux peuvent tous s'exprimer, mais les plantes ne peuvent pas. C'est pourquoi qu'ils ont besoin d'un porte-parole.»"
     },
     {
       "key": "TopazA",
@@ -5838,17 +5838,17 @@
     {
       "key": "TopazB",
       "name": "Fragment de topaze prithiva",
-      "description": "\"The currencies that flow through this land are my flesh and blood.\""
+      "description": "«Toutes les monnaies qui circulent sur le continent font partie de mon corps.»"
     },
     {
       "key": "TopazC",
       "name": "Morceau de topaze prithiva",
-      "description": "\"The currencies that flow through this land are my flesh and blood.\nFor thus did I become the guarantor of the people's hard work, wisdom, and future.\""
+      "description": "«Toutes les monnaies qui circulent sur le continent font partie de mon corps.»\n«Je garantis la sueur, la sagesse et l'avenir des humains de cette manière.»"
     },
     {
       "key": "TopazD",
       "name": "Pierre de topaze prithiva",
-      "description": "\"The currencies that flow through this land are my flesh and blood.\nFor thus did I become the guarantor of the people's hard work, wisdom, and future.This is the trust I have placed in them. Betray it, and you taint my blood.\""
+      "description": "«Toutes les monnaies qui circulent sur le continent font partie de mon corps.»\n«Je garantis la sueur, la sagesse et l'avenir des humains de cette manière.»\n«C'est la confiance que je place en vous. Si vous la trahissez, vous tacherez mon sang.»"
     },
     {
       "key": "JadeA",
@@ -5858,17 +5858,17 @@
     {
       "key": "JadeB",
       "name": "Fragment de jade shivada",
-      "description": "\"Sorry...\""
+      "description": "«Pardon...»"
     },
     {
       "key": "JadeC",
       "name": "Morceau de jade shivada",
-      "description": "\"Sorry...\"\"...to also have you shoulder the grievances of the world.\""
+      "description": "«Pardon...»\n«Je vous laisse partager la tristesse du monde entier avec moi.»"
     },
     {
       "key": "JadeD",
       "name": "Pierre de jade shivada",
-      "description": "\"Sorry... to also have you shoulder the grievances of the world.\"Since you could endure my bitter cold, you must have the desire to burn?\"Then, burn away the old world for me.\""
+      "description": "«Pardon...»\n«Je vous laisse partager la tristesse du monde entier avec moi.»\n«Puisque vous pourriez supporter mon froid glacial, vous devez avoir un fort désir au fond du cœur.»"
     },
     {
       "key": "AmethystA",
@@ -5878,17 +5878,17 @@
     {
       "key": "AmethystB",
       "name": "Fragment d'améthyste vajrada",
-      "description": "\"This body is the noblest and most eminent of all in this world.\""
+      "description": "«Ce corps est le plus noble et le plus éminent du monde.»"
     },
     {
       "key": "AmethystC",
       "name": "Morceau d'améthyste vajrada",
-      "description": "\"This body is the noblest and most eminent of all in this world.It should hold absolute control over this world.\""
+      "description": "«Ce corps est le plus noble et le plus éminent du monde.»\n«Il devrait gouverner le monde.»"
     },
     {
       "key": "AmethystD",
       "name": "Pierre d'améthyste vajrada",
-      "description": "\"This body is the noblest and most eminent of all in this world.\"It should hold absolute control over this world.\"It once promised its people a dream: the never-changing 'eternity.'\""
+      "description": "«Ce corps est le plus noble et le plus éminent du monde.»\n«Il devrait gouverner le monde.»\n«Il a promis une fois un beau rêve à son peuple : une éternité qui ne change jamais.»"
     },
     {
       "key": "LazuriteA",
@@ -5898,17 +5898,17 @@
     {
       "key": "LazuriteB",
       "name": "Fragment de lazurite varunada",
-      "description": "\"My ideals have no stains.\""
+      "description": "«Mes idéaux sont purs.»"
     },
     {
       "key": "LazuriteC",
       "name": "Morceau de lazurite varunada",
-      "description": "\"My ideals have no stains.I must correct you. People here bear no sins in the eyes of the gods...\""
+      "description": "«Mes idéaux sont purs.»\n«Je me dois de te corriger : personne ici n'est impur aux yeux des dieux...»"
     },
     {
       "key": "LazuriteD",
       "name": "Pierre de lazurite varunada",
-      "description": "\"My ideals have no stains.I must correct you. People here bear no sins in the eyes of the gods... Only laws and the Tribunal can judge someone.\nThey can judge even me. So praise my magnificence and purity.\""
+      "description": "«Mes idéaux sont purs.»\n«Je me dois de te corriger : personne ici n'est impur aux yeux des dieux, et seuls les lois et le tribunal peuvent déclarer un jugement.»\n«Ils peuvent même me juger. Louez donc ma grandeur et ma pureté.»"
     },
     {
       "key": "TurquoiseA",
@@ -5918,237 +5918,237 @@
     {
       "key": "TurquoiseB",
       "name": "Fragment de turquoise vayuda",
-      "description": "\"Still, the winds change direction.\""
+      "description": "«Le vent change toujours de direction.»"
     },
     {
       "key": "TurquoiseC",
       "name": "Morceau de turquoise vayuda",
-      "description": "\"Still, the winds change direction.Someday, they will blow towards a brighter future...\""
+      "description": "«Le vent change toujours de direction.»\n«Un jour, il soufflera vers un meilleur avenir.»"
     },
     {
       "key": "TurquoiseD",
       "name": "Pierre de turquoise vayuda",
-      "description": "\"Still, the winds change direction.\"Someday, they will blow towards a brighter future...\"Take my blessings and live leisurely from this day onward.\""
+      "description": "«Le vent change toujours de direction»\n«Un jour, il soufflera vers un meilleur avenir.»\n«À partir de cet instant, je te donne ma bénédiction.»"
     },
     {
       "key": "CallaLily",
       "name": "Lys calla",
-      "description": "A flower that grows near water sources. When cooked, the petals have a chunky texture, yet are sweet and a little bitter."
+      "description": "Une fleur qui pousse près des points d'eaux. Ses pétales dodus ont un goût sucré et amer lorsqu'ils sont cuisinés."
     },
     {
       "key": "Cecilia",
       "name": "Cécilia",
-      "description": "A beautiful flower with a name that suits its appearance. It only grows where harsh winds blow, and is just as intangible as the true heart of an unbound soul."
+      "description": "Une belle fleur qui porte un nom aussi beau que son apparence, et que l'on trouve seulement où soufflent les vents violents, et est aussi intangible que le cœur d'un vagabond."
     },
     {
       "key": "CorLapis",
       "name": "Cœur de lapis",
-      "description": "A precious crystal of condensed pure Geo element that usually grows along with other minerals. It's also commonly called \"Cor Petrae."
+      "description": "Un cristal précieux condensé par l'élément Géo pur qui se développe souvent avec d'autres minéraux. On l'appelle aussi «cœur de rocher»."
     },
     {
       "key": "DandelionSeed",
-      "name": "Graine de pissenlit",
-      "description": "A tiny seed that rides on the wind. Even without its feathered wings, it still holds the hope from afar within."
+      "name": "Graines de pissenlit",
+      "description": "Des graines qui volent au gré du vent. Même dépourvues d'aigrettes, elles désirent être emportées très loin."
     },
     {
       "key": "GlazeLily",
       "name": "Lys verni",
-      "description": "An extremely ancient flower that was said to be commonly seen in Liyue. It transforms the memories of the land into its fragrance during florescence."
+      "description": "Une fleur qui pousse à Liyue depuis les temps anciens. Elle rassemble les souvenirs de la terre pour les libèrer sous forme de parfum à sa fleuraison."
     },
     {
       "key": "JueyunChili",
       "name": "Piment de Jueyun",
-      "description": "A spicy plant native to Liyue. Merely smelling it makes one hot and thirsty."
+      "description": "Une plante épicée originaire de Liyue. La sentir suffit à faire monter en flèche votre température interne et à vous assoiffer."
     },
     {
       "key": "NoctilousJade",
       "name": "Jade noctiluque",
-      "description": "A rare mineral that glimmers in the dark. It's said to be a mutated gemstone condensed from the flourishing elements of the world."
+      "description": "Un minerai rare qui brille dans l'obscurité. On dit qu'il s'agit du fruit de la condensation des éléments fluctuants entre le ciel et la terre."
     },
     {
       "key": "PhilanemoMushroom",
       "name": "Champignon anémophile",
-      "description": "A fungus that grows in the warm caress of the wind. It is as everlasting as the wind, nourishing life."
+      "description": "Un champignon qui grandit sous les caresses de la brise. Il prospère comme le vent qui souffle toujours, nourrissant la vie."
     },
     {
       "key": "Qingxin",
       "name": "Fleur de Qingxin",
-      "description": "A crimson flower that blooms like the rainbow clouds in Liyue. It can be made into silky-smooth fabric."
+      "description": "Une fleur blanche translucide qui ne pousse que sur les sommets des montagnes les plus hautes. Au lieu de grandir dans les plaines riches et humides, elle choisit de regarder au loin depuis les sommets des montagnes les plus solitaires."
     },
     {
       "key": "SilkFlower",
       "name": "Fleur de soie",
-      "description": "A crimson flower that blooms like the rainbow clouds in Liyue. It can be made into silky-smooth fabric."
+      "description": "Une plante qui fleurit à la manière des nuages arc-en-ciel de Liyue. Elle peut être utilisée pour fabriquer des tissus extrêmement lisses et soyeux."
     },
     {
       "key": "SmallLampGrass",
       "name": "Herbe à lampe",
-      "description": "A wild grass that emits light at night. Used in cooking to enhance other flavors."
+      "description": "Une plante sauvage qui produit de la lumière une fois la nuit tombée."
     },
     {
       "key": "Starconch",
-      "name": "conque d'étoile",
-      "description": "Empty seashells brought ashore by the tides. Hold it close to your ear, and hear the longing calls of the sea."
+      "name": "Conque d'étoile",
+      "description": "Un coquillage creux échoué sur la plage. Plaquez-le contre votre oreille et vous entendrez l'appel de la mer."
     },
     {
       "key": "Valberry",
       "name": "Tombaie",
-      "description": "A plump and translucent berry that has a fragrant smell and a sweet refreshing taste. In the past, the watchers of the storms found solace in the sweetness of the fruit and the hope for the city's security."
+      "description": "Une baie juteuse laissant un goût sucré et rafraîchissant en bouche. Dans le passé, ce fruit offrait quelque réconfort à ceux qui surveillaient les tempêtes."
     },
     {
       "key": "Violetgrass",
       "name": "Muguet bleu",
-      "description": "A small flower with strong vitality. It was said its downward-blooming flower keeps its fragrance from dissipating."
+      "description": "Une petite fleur qui possède une forte vitalité. On dit qu'elle fleurit vers le bas pour que son parfum dure plus longtemps."
     },
     {
       "key": "WindwheelAster",
       "name": "Chrysanthème à aubes",
-      "description": "A plant that adores the wind. To the proud children of the wind, or the citizens of Mondstadt, the Windwheel Asters are \"the visible winds."
+      "description": "Une plante qui aime le vent. Pour les habitants de Mondstadt qui vénèrent le vent et la liberté, les chrysanthèmes à aubes sont les «vents visibles»."
     },
     {
       "key": "Wolfhook",
       "name": "Baie à crochet",
-      "description": "A berry with thorns that often gets attached to a wolf's pelt. When you look at it, you can almost hear the echoing cries of the wolves in the woods."
+      "description": "Une baie à crochet qui s'attache souvent aux poils des loups. Si vous la regardez, vous pouvez presque entendre les hurlements des loups dans les bois."
     },
     {
       "key": "EnhancementOreA",
-      "name": "Enhancement Ore",
-      "description": "Gives 400 EXP.\nA refined ingot with endless possibilities that can be used to enhance weapons."
+      "name": "Minerai de renforcement",
+      "description": "Confère 400 pts d'EXP.\nC'est un minéral raffiné qui a un potentiel illimité. Il peut être utilisé pour renforcer des armes."
     },
     {
       "key": "EnhancementOreB",
-      "name": "Fine Enhancement Ore",
-      "description": "Gives 2,000 EXP.\nFor reasons unknown, this special and refined ore can be absorbed by weapons to greatly increase their strengths."
+      "name": "Minerai de renforcement raffiné",
+      "description": "Confère 2 000 pts d'EXP.\nPour une raison inconnue, les armes peuvent absorber ce minéral raffiné spécial pour devenir plus puissantes."
     },
     {
       "key": "EnhancementOreC",
-      "name": "Mystic Enhancement Ore",
-      "description": "Gives 10,000 EXP.\nLegend has it that this refined ingot contains the memories of battles that had taken place in the land. The weapons that benefit from these memories naturally become sentient."
+      "name": "Minerai de renforcement mystique",
+      "description": "Confère 10 000 pts d'EXP.\nLa légende dit que les souvenirs des batailles se sont condensés dans des minéraux raffinés. Si vous reforcez une arme avec ces matériaux, elle pourra avoir sa propre âme."
     },
     {
       "key": "CharExpA",
-      "name": "Wanderer's Advice",
-      "description": "Gives 1000 EXP.\nThese experiences are still beneficial even if one does not live in Teyvat."
+      "name": "Astuces du voyageur",
+      "description": "Confère 1 000 pts d'EXP.\nCes astuces vous seront toujours utiles si vous ne vivez pas en Teyvat."
     },
     {
       "key": "CharExpB",
-      "name": "Adventurer's Experience",
-      "description": "Gives 5000 EXP.\nThese experiences are very beneficial for journeys into the unknown."
+      "name": "Conseils de l'aventurier",
+      "description": "Confère 5 000 pts d'EXP.\nCes conseils sont indispensables si vous vous aventurez dans des contrées inconnues."
     },
     {
       "key": "CharExpC",
-      "name": "Hero's Wit",
-      "description": "Gives 20000 EXP.\nThese experiences are extremely precious for a pilgrim traveling through Teyvat in order to be closer to Celestia."
+      "name": "Leçons du héros",
+      "description": "Confère 20 000 pts d'EXP.\nCes leçons vous seront précieuses pour un pélerinage de Teyvat à Celestia."
     },
     {
       "key": "JuvenileJade",
-      "name": "Juvenile Jade",
-      "description": "A crystalline substance taken from a Primo Geovishap. Within it is contained the potential to become a dragon.\nThese dull crystals are precipitated within the bodies of vishaps sleeping in the mountains. Liyue folklore holds that they will gather power over many years, after which this crystal will, at last, replace their original heart, and the vishap will become a true dragon — one that can shake the mountains and split the earth."
+      "name": "Jade juvénile",
+      "description": "Une substance cristalline prélevée sur un Géosaure antique. En elle réside le pouvoir de se transformer en dragon.\nCes cristaux ternes se développent dans les corps des Élémentosaures qui sommeillent dans les montagnes. On raconte à Liyue qu'ils finissent par prendre la place du cœur de leur hôte une fois qu'ils ont accumulé suffisamment d'énergie, l'Élémentosaure d'origine devenant alors un véritable dragon, capable d'ébranler les montagnes et d'ouvrir la terre."
     },
     {
       "key": "Starsilver",
-      "name": "Starsilver",
-      "description": "A rare and precious ore formed by the unique geographical conditions and Ley Lines of Dragonspine."
+      "name": "Minerai d'argétoile",
+      "description": "Ce minerai précieux est le produit des lignes énergétiques et de l'environnement particulier des Monts Dosdragon."
     },
     {
       "key": "Vitalized Dragontooth",
-      "name": "Vitalized Dragontooth",
-      "description": "A Dragontooth infused with vitality. Just its luster and texture are enough to make one uneasy..."
+      "name": "Croc de dragon infusé de vitalité",
+      "description": "Un croc de dragon infusé de force vitale. Sa brillance et sa texture suffisent à éveiller l'inquiétude de celui qui l'observe..."
     },
     {
       "key": "Iron Chunk",
-      "name": "Iron Chunk",
-      "description": "This iron chunk can be turned into a multitude of handy items in the hands of a skilled craftsman."
+      "name": "Morceau de fer",
+      "description": "Un morceau de fer que les mains expertes d'un bon forgeron peuvent transformer en objet."
     },
     {
       "key": "White Iron Chunk",
-      "name": "White Iron Chunk",
-      "description": "Skilled hands can make this into something brilliant."
+      "name": "Morceau de fer blanc",
+      "description": "Un morceau de fer blanc que les mains expertes d'un bon forgeron peuvent transformer en objet."
     },
     {
       "key": "Crystal Chunk",
-      "name": "Crystal Chunk",
-      "description": "An uncut crystal. Only professional craftsmanship can bring out its true value."
+      "name": "Morceau de cristal",
+      "description": "Cristal brut. Seul un professionnel pourra faire ressortir sa vraie valeur."
     },
     {
       "key": "Northlander Bow Billet",
-      "name": "Northlander Bow Billet",
-      "description": "Can be used to forge 4-star bows. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "name": "Base d'arc du nord",
+      "description": "Un matériau qui peut être forgé en arc 4★.\nD'après les philosophes, le marbre a le potentiel de donner naissance à une belle sculpture. Ce matériau possède également des possibilités infinies qui n'attendent que vous pour être explorées."
     },
     {
       "key": "Northlander Catalyst Billet",
-      "name": "Northlander Catalyst Billet",
-      "description": "Can be used to forge 4-star catalysts. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "name": "Base de catalyseur du nord",
+      "description": "Un matériau qui peut être forgé en catalyseur 4★.\nD'après les philosophes, le marbre a le potentiel de donner naissance une belle sculpture. Ce matériau possède également des possibilités infinies qui n'attendent que vous pour être explorées."
     },
     {
       "key": "Northlander Claymore Billet",
-      "name": "Northlander Claymore Billet",
-      "description": "Can be used to forge 4-star claymores. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "name": "Base d'épée à deux mains du nord",
+      "description": "Un matériau qui peut être forgé en épée à deux mains 4★.\nD'après les philosophes, le marbre a le potentiel de donner naissance une belle sculpture. Ce matériau possède également des possibilités infinies qui n'attendent que vous pour être explorées."
     },
     {
       "key": "Northlander Polearm Billet",
-      "name": "Northlander Polearm Billet",
-      "description": "Can be used to forge 4-star polearms. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "name": "Base de lance du nord",
+      "description": "Un matériau qui peut être forgé en arme d'hast 4★.\nD'après les philosophes, le marbre a le potentiel de donner naissance une belle sculpture. Ce matériau possède également des possibilités infinies qui n'attendent que vous pour être explorées."
     },
     {
       "key": "Northlander Sword Billet",
-      "name": "Northlander Sword Billet",
-      "description": "Can be used to forge 4-star swords. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "name": "Base d'épée du nord",
+      "description": "Un matériau qui peut être forgé en épée à une main 4★.\nD'après les philosophes, le marbre a le potentiel de donner naissance une belle sculpture. Ce matériau possède également des possibilités infinies qui n'attendent que vous pour être explorées."
     },
     {
       "key": "Dust of Azoth",
-      "name": "Dust of Azoth",
-      "description": "A device that can transmute elemental Ascension Materials and change their Elemental Type.Its practical uses notwithstanding, alchemy is the study of the nature of matter and the rules that underpin its transformations, and ultimately it seeks to comprehend the working principles of the world and the flow of the ley lines\nIt is not known who would share alchemical achievements of this magnitude with the civilizations of the world and why. But although the power to fundamentally transmute elemental energy in its crystallized and inert form is a highly useful one, this device also conceals the grave danger of disrupting the elemental balance..."
+      "name": "Poudre d'Azoth",
+      "description": "Un dispositif permettant de transmuter les matériaux d'élévation et de modifier leur attribut élémentaire.\nEn dépit de ses utilisations pratiques, l'alchimie est l'étude de la matière et des règles qui sous-tendent ses modifications. Elle pointe vers des lois qui gouvernent les cycles de ce monde et les mouvements des lignes énergétiques.\nQuelqu'un a distribué ces merveilles alchimiques un peu partout sur le contient. Bien qu'elles soient pratiques et utiles, elles recèlent néanmoins le pouvoir de déstabiliser l'équilibre des éléments..."
     },
     {
       "key": "Magical Crystal Chunk",
-      "name": "Magical Crystal Chunk",
-      "description": "These crystal chunks can be refined into Weapon EXP materials by using Original Resin.\nCrystals from mines that were eroded by the energy of the Ley Lines cannot be processed by ordinary means."
+      "name": "Éclat de cristal magique",
+      "description": "Ces éclats peuvent être raffinés en EXP d'arme avec de la Résine originelle.\nLe travail de ces cristaux, formés sous l'influence des lignes énergétiques, requiert un grand savoir-faire."
     },
     {
       "key": "Original Resin",
-      "name": "Original Resin",
-      "description": "Used to vitalize Petrified Trees and Ley Line Blossoms, allowing access to the treasures they hold. Energy regenerates over time.\nIt is said that the roots of all the Irminsul trees and blossoms in the world are intertwined at the deepest, most hidden place in the earth, and that the pattern the root system makes defines the Ley Lines of the world."
+      "name": "Résine originelle",
+      "description": "Peut être utilisée pour activer des Arbres pétrifiés et des Fleurs des lignes énergétiques et en obtenir ainsi les récompenses.\nLa légende raconte que les racines des anciens arbres pétrifiés et les Fleurs des lignes énergétiques s'entrelacent dans les profondeurs de la terre. Leurs connexions dessinent les trajectoires que prennent les lignes énergétiques."
     },
     {
       "key": "Primogem",
-      "name": "Primogem",
-      "description": "A primordial crystalline gem that's beyond the mundane world. Shines with the condensed hopes and dreams of universes that once were."
+      "name": "Primo-gemme",
+      "description": "Une gemme cristalline originelle qui brille grâce à la condensation des espoirs et des rêves des univers d'autrefois."
     },
     {
       "key": "Crystalline Bloom",
-      "name": "Crystalline Bloom",
-      "description": "An ice crystal of exceeding purity that is created in the frigid blooming of a Cryo Hypostasis.\nThese frosty crystals will continue to grow according to their own cold, rigid laws, till one day a flower of winter shall bloom and freeze everything. Perhaps it is stagnant time, that never-thawing bosom, that is the essence of this undying flower."
+      "name": "Fleur cristalline",
+      "description": "Un cristal de glace d'une extrême pureté qui s'est formé à partir de la floraison d'une Hypostase Cryo.\nLes cristaux glacés grandissent et fleurissent selon leurs propres lois du froid, jusqu'à ce qu'un jour une fleur hivernale éclose et gèle tout. Peut-être est-ce le temps stagnant et ce cœur qui ne fond jamais qui sont l'essence de cette fleur éternelle."
     },
     {
       "key": "Dream Solvent",
-      "name": "Dream Solvent",
-      "description": "An item capable of changing Character Level-Up Materials obtained from memories and trials into whatever form is needed.\nPeople once believed that spirits and memories had some material form. If someone dreamed of heaven before waking up clutching a flower, then that blossom must have been made from such a fantasy. Dream Solvent dissolves that which is obtained from memory and transforms it into some other dream.\nIndeed, blows traded with the strong are stepping stones towards becoming stronger yourself."
+      "name": "Solvant de rêve",
+      "description": "Un objet capable de modifier un matériau d'amélioration de personnage obtenu lors de réminiscences ou d'épreuves en ce qui est nécessaire.\nLes gens pensaient autrefois que l'âme et les souvenirs avaient une forme matérielle. Si quelqu'un rêvait de paradis avant de s'éveiller agrippant une fleur, alors cette fleur provenait de cette rêverie. Les solvants de rêve peuvent dissoudre ce qui vient de la mémoire et le transformer en un autre rêve.\nLes souvenirs de lutte contre les forts pavent le chemin vers une plus grande force pour son propre compte."
     },
     {
       "key": "Dragon Lord's Crown",
-      "name": "Dragon Lord's Crown",
-      "description": "Horns created from hardened jade crystallized over a thousand years are the natural crown of the dragon king.\nInfused with spirit and carved from bedrock, it was born from the mountain's heart to show the strength of the earth to the land amidst monoliths, and its long golden horns are the mark of its ancient strife with an ancient lord.\nFor a time, this horn was shattered and lost its luster, but now it gleams cold and gold as it sits in your palm."
+      "name": "Couronne du roi dragon",
+      "description": "Ces cornes créées à partir de jade durci et cristallisé pendant des milliers d'années forment la couronne du roi dragon.\nInfusé par les esprits et sculpté dans la roche, il est né au cœur de la montagne pour montrer la force de la terre face aux étendues de monolithes, et ses longues cornes dorées sont la marque de sa lutte contre un roi du passé.\nCette corne avait, pendant un temps, été brisée et avait perdu de son éclat, mais désormais, elle brille d'une lueur froide et dorée, pendant que vous la tenez dans la paume de votre main."
     },
     {
       "key": "Bloodjade Branch",
-      "name": "Bloodjade Branch",
-      "description": "Nurtured by the might of the dragon king, these bone branches glitter with strange, unique colors.\nHatred coursed through the natural streams and kissed the cold moonlight, and from them were these crystalline branches born and grown...\nEven though they were severed in battle, these branches steeped in dragon blood rustle as if eternally ill-at-ease."
+      "name": "Branche de jade cramoisi",
+      "description": "Nourrie par la puissance du roi dragon, cette branche osseuse scintille de mille couleurs étranges et uniques.\nLa haine qui parcourait les sources naturelles a embrassé le clair de lune froid, et c'est ainsi que sont nées et qu'ont poussé ces branches cristallines...\nMême si elles sont tranchées au cours de la bataille, ces branches imprégnées du sang du dragon continuent de bruisser comme si elles ne pouvaient jamais trouver la paix."
     },
     {
       "key": "Gilded Scale",
-      "name": "Gilded Scale",
-      "description": "Scaled armor that grows naturally over mystical stone, tough and silent, and filled with the strength of the dragon king.\nAcross the years as countless generations returned to the mulch of the earth, gold and obsidian embedded themselves into flesh and blood forged from bedrock before spreading and turning into scales.\nSearing agony, wordless cries... perhaps they will all vanish when the grudges that spawned them, too, finally come to an end."
+      "name": "Écaille dorée",
+      "description": "Armure d'écaille qui pousse naturellement sur la pierre mystique. Robustes et silencieuses, ces écailles renferment la force du roi dragon.\nAu fil des années, à mesure que d'innombrables générations revenaient à la poussière de la terre, l'or et l'obsidienne se sont incrustés dans la chair et le sang créés par la roche avant de se répandre et de former des écailles.\nL'agonie fulgurante, les pleurs silencieux... Tout cela se dissipera peut-être une fois que la rancune aura pris fin."
     },
     {
       "key": "Maguu Kishin",
-      "name": "Maguu Kishin",
-      "description": "This core can power the inorganic Maguu Kenki and cause it to wield a blade like a living being.\nFlesh decays, and with it decays all martial art and memory, no matter how masterful or lovely.\nPerhaps only by converting one's four limbs and body into sturdy mechanical parts, and by at last sacrificing one's very own heart for a sophisticated mechanical one, can one transcend transient flesh and approach the everlasting..."
+      "name": "Mécanisme oni",
+      "description": "Un noyau pouvant alimenter le mécanisme de la Lame oni, et lui permettant de manier une épée tel un être autonome.\nLa chair se décompose, et avec elle le souvenir des arts martiaux, quels qu'en soient la maîtrise et le raffinement.\nPeut-être qu'est-ce seulement en convertissant ses quatre membres et son corps en pièces mécaniques, et en sacrifiant son cœur pour un mécanisme sophistiqué que l'on peut transcender la chair et approcher l'éternité..."
     },
     {
       "key": "Sea Ganoderma",
-      "name": "Sea Ganoderma",
-      "description": "A species that only grows in certain special regions of the ocean and islands. It looks like a fungus of some sort, but it is in fact the result of the secretion and proliferation of certain soft-bodied organisms."
+      "name": "Ganoderma marin",
+      "description": "Une espèce qui ne pousse que dans certaines régions spéciales de l'océan et des îles. On dirait une sorte de champignon, mais c'est en fait le résultat de la sécrétion et de la prolifération de certains organismes à corps mou."
     }
   ],
   "debuffs": [
