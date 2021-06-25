@@ -95,9 +95,9 @@ class _NotificationsPageState extends State<NotificationsPage> with SingleTicker
           createdAt: element.createdAt,
           completesAt: element.completesAt,
           note: element.note,
-          initialRealmCurrency: element.realmCurrency,
-          currentRankType: element.realmRankType,
-          currentTrustRank: element.realmTrustRank,
+          initialRealmCurrency: element.realmCurrency!,
+          currentRankType: element.realmRankType!,
+          currentTrustRank: element.realmTrustRank!,
           useTwentyFourHoursFormat: useTwentyFourHoursFormat,
         );
         break;

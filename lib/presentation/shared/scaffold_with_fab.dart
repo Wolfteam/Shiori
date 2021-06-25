@@ -5,11 +5,11 @@ import 'mixins/app_fab_mixin.dart';
 
 class ScaffoldWithFab extends StatefulWidget {
   final Widget child;
-  final PreferredSizeWidget appbar;
+  final PreferredSizeWidget? appbar;
 
   const ScaffoldWithFab({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.appbar,
   }) : super(key: key);
 

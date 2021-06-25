@@ -12,23 +12,23 @@ class LocaleServiceImpl implements LocaleService {
   LocaleServiceImpl(this._settingsService);
 
   @override
-  DateTime getCharBirthDate(String birthday) {
+  DateTime getCharBirthDate(String? birthday) {
     if (birthday.isNullEmptyOrWhitespace) {
       throw Exception('Character birthday must not be null');
     }
     final locale = getFormattedLocale(_settingsService.language);
     final format = DateFormat('MM/dd', locale);
-    return format.parse(birthday);
+    return format.parse(birthday!);
   }
 
   @override
-  String formatCharBirthDate(String birthday) {
+  String formatCharBirthDate(String? birthday) {
     if (birthday.isNullEmptyOrWhitespace) {
       return '';
     }
     final locale = getFormattedLocale(_settingsService.language);
     final birthdayDate = getCharBirthDate(birthday);
-    return toBeginningOfSentenceCase(DateFormat('MMMM d', locale).format(birthdayDate));
+    return toBeginningOfSentenceCase(DateFormat('MMMM d', locale).format(birthdayDate)) ?? '';
   }
 
   @override

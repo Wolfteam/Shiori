@@ -1,4 +1,3 @@
-export '';
 export 'artifacts/artifact_card_model.dart';
 export 'calculator_asc_materials/ascension_materials_summary.dart';
 export 'calculator_asc_materials/calculator_session_model.dart';

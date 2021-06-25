@@ -13,10 +13,10 @@ class WeaponDetailStatsCard extends StatelessWidget {
   final List<WeaponFileStatModel> stats;
 
   const WeaponDetailStatsCard({
-    Key key,
-    @required this.secondaryStatType,
-    @required this.rarityColor,
-    @required this.stats,
+    Key? key,
+    required this.secondaryStatType,
+    required this.rarityColor,
+    required this.stats,
   }) : super(key: key);
 
   @override

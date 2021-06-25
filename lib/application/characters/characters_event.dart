@@ -1,13 +1,13 @@
 part of 'characters_bloc.dart';
 
 @freezed
-abstract class CharactersEvent with _$CharactersEvent {
+class CharactersEvent with _$CharactersEvent {
   const factory CharactersEvent.init({
     @Default(<String>[]) List<String> excludeKeys,
   }) = _Init;
 
   const factory CharactersEvent.searchChanged({
-    @required String search,
+    required String search,
   }) = _SearchChanged;
 
   const factory CharactersEvent.weaponTypeChanged(WeaponType weaponType) = _WeaponTypesChanged;

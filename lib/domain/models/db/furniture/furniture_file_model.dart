@@ -5,14 +5,13 @@ part 'furniture_file_model.freezed.dart';
 part 'furniture_file_model.g.dart';
 
 @freezed
-abstract class FurnitureFileModel implements _$FurnitureFileModel {
-  @late
+class FurnitureFileModel with _$FurnitureFileModel {
   String get fullImagePath => Assets.getFurniturePath(image);
 
   factory FurnitureFileModel({
-    @required String key,
-    @required int rarity,
-    @required String image,
+    required String key,
+    required int rarity,
+    required String image,
   }) = _FurnitureFileModel;
 
   FurnitureFileModel._();

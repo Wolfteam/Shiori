@@ -247,9 +247,34 @@
     {
       "key": "Ayaka",
       "pending": true,
-      "name": "Ayaka",
-      "description": "The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated beast, flows within her veins.",
-      "skills": [],
+      "name": "Kamisato Ayaka",
+      "description": "The princess of the renowned House Kamisato of Inazuma. She's the embodiment of nobility and elegance.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Kamisato Art · Naname",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "Kamisato Art · Hyouka",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "Kamisato Art · Senho",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s4",
+          "title": "Kamisato Art · Soumetsu",
+          "description": null,
+          "abilities": []
+        }
+      ],
       "passives": [],
       "constellations": []
     },
@@ -4104,6 +4129,87 @@
           "descriptions": []
         }
       ]
+    },
+    {
+      "key": "Yoimiya",
+      "name": "Yoimiya",
+      "description": "N/A",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
+    },
+    {
+      "key": "Sayu",
+      "name": "Sayu",
+      "description": "N/A",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
+    },
+    {
+      "key": "Traveler (Electro)",
+      "name": "Traveler (Electro)",
+      "description": "N/A",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
     }
   ],
   "weapons": [
@@ -4769,15 +4875,21 @@
     },
     {
       "key": "Freedom-Sworn",
-      "name": "Freedom-Sworn",
-      "description": "A straight sword, azure as antediluvian song, and as keen as the oaths of freedom taken in the Land of Wind.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {{0}}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "name": "Juramento por la Libertad",
+      "description": "Una espada azul celeste que recuerda a una canción de la antigüedad. Es tan tajante como el juramento por la libertad del Reino del Viento.",
+      "refinement": "Una parte del «Gran concierto milenario» que flota por los vientos. Aumenta en un {{0}} el daño infligido. Al causar una Reacción Elemental, el personaje obtiene un talismán de insurrección que puede adquirirse una vez cada 0.5 s como máximo. Este efecto también puede ocurrir cuando el personaje que lleva equipada esta arma está en tu equipo pero no en combate. Al obtener 2 talismanes de insurrección, estos se consumirán y otorgarán a todos los miembros del equipo cercanos el efecto de «Gran concierto milenario: Canción de la resistencia» durante 12 s, el cual aumenta en un {{1}} el daño de los Ataques Normales, Cargados y Descendentes, y en un {{2}} el ATQ. Tras activarse este efecto, no podrán obtenerse talismanes de insurrección durante 20 s. Los efectos de «Gran concierto milenario» no se acumularán con otros efectos del mismo tipo."
     },
     {
       "key": "Mitternachts Waltz",
-      "name": "Mitternachts Waltz",
-      "description": "A bow painted the color of sin and nights of wild fantasy.",
-      "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {{0}}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {{1}}% for 5s."
+      "name": "Vals Nocturno",
+      "description": "Un arco pintado del color de los pecados y las fantasías de la noche.",
+      "refinement": "Tras atacar a un enemigo con un Ataque Normal, el daño infligido por la Habilidad Elemental aumenta en un {{0}} durante 5 s. Cuando se golpea a un enemigo con la Habilidad Elemental, el daño de Ataque Normal aumenta en un {{1}} durante 5 s."
+    },
+    {
+      "key": "Dodoco Tales",
+      "name": "Cuentos de Dodoco",
+      "description": "Un libro infantil con una bella portada. Todo su contenido son relatos cortos infantiles que harán reír a cualquier lector.\nNi los adultos podrán evitar sentirse fascinados al leer sus inocentes historias de aventuras.",
+      "refinement": "Al golpear a un enemigo con un Ataque Normal, el daño infligido con Ataque Cargado aumenta en un {{0}} durante 6 s. Además, tras golpear a un objetivo con un Ataque Cargado, el ATQ aumenta en un {{1}} durante 6 s."
     }
   ],
   "artifacts": [

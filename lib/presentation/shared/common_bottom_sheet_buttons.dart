@@ -4,14 +4,14 @@ import 'package:genshindb/generated/l10n.dart';
 class CommonButtonSheetButtons extends StatelessWidget {
   final bool showCancelButton;
   final bool showOkButton;
-  final Function onOk;
-  final Function onCancel;
+  final Function? onOk;
+  final Function? onCancel;
 
-  final String cancelText;
-  final String okText;
+  final String? cancelText;
+  final String? okText;
 
   const CommonButtonSheetButtons({
-    Key key,
+    Key? key,
     this.showCancelButton = true,
     this.showOkButton = true,
     this.onOk,
@@ -32,14 +32,13 @@ class CommonButtonSheetButtons extends StatelessWidget {
       buttonPadding: const EdgeInsets.symmetric(horizontal: 10),
       children: <Widget>[
         if (showCancelButton)
-          OutlineButton(
-            onPressed: () => onCancel != null ? onCancel() : Navigator.pop(context),
+          OutlinedButton(
+            onPressed: () => onCancel != null ? onCancel!() : Navigator.pop(context),
             child: Text(cancel, style: TextStyle(color: theme.primaryColor)),
           ),
         if (showOkButton)
-          RaisedButton(
-            color: theme.primaryColor,
-            onPressed: onOk != null ? () => onOk() : null,
+          ElevatedButton(
+            onPressed: onOk != null ? () => onOk!() : null,
             child: Text(ok),
           )
       ],

@@ -50,7 +50,7 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
   }
 
   ArtifactsState _buildInitialState({
-    String search,
+    String? search,
     List<String> excludeKeys = const [],
     int rarity = 0,
     ArtifactFilterType artifactFilterType = ArtifactFilterType.name,

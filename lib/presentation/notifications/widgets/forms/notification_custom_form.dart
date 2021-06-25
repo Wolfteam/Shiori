@@ -29,18 +29,18 @@ class NotificationCustomForm extends StatelessWidget {
   final bool useTwentyFourHoursFormat;
 
   const NotificationCustomForm({
-    Key key,
-    @required this.itemType,
-    @required this.title,
-    @required this.body,
-    @required this.note,
-    @required this.showNotification,
-    @required this.isInEditMode,
-    @required this.images,
-    @required this.showOtherImages,
-    @required this.scheduledDate,
-    @required this.language,
-    @required this.useTwentyFourHoursFormat,
+    Key? key,
+    required this.itemType,
+    required this.title,
+    required this.body,
+    required this.note,
+    required this.showNotification,
+    required this.isInEditMode,
+    required this.images,
+    required this.showOtherImages,
+    required this.scheduledDate,
+    required this.language,
+    required this.useTwentyFourHoursFormat,
   }) : super(key: key);
 
   @override
@@ -104,7 +104,7 @@ class NotificationCustomForm extends StatelessWidget {
       initialTime: TimeOfDay.fromDateTime(scheduledDate),
       builder: (context, child) => MediaQuery(
         data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: useTwentyFourHoursFormat),
-        child: child,
+        child: child!,
       ),
     );
     if (time == null) {

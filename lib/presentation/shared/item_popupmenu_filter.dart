@@ -14,12 +14,12 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
   final PopupMenuItemText<TEnum> itemText;
 
   const ItemPopupMenuFilter({
-    Key key,
-    @required this.tooltipText,
-    @required this.selectedValue,
-    @required this.values,
-    @required this.onSelected,
-    @required this.itemText,
+    Key? key,
+    required this.tooltipText,
+    required this.selectedValue,
+    required this.values,
+    required this.onSelected,
+    required this.itemText,
     this.exclude = const [],
     this.icon = const Icon(Icons.filter_list),
   }) : super(key: key);

@@ -28,13 +28,13 @@ class TierListRow extends StatelessWidget {
   final bool isTheLastRow;
 
   const TierListRow({
-    Key key,
-    @required this.index,
-    @required this.title,
-    @required this.color,
-    @required this.images,
-    @required this.numberOfRows,
-    @required this.isTheLastRow,
+    Key? key,
+    required this.index,
+    required this.title,
+    required this.color,
+    required this.images,
+    required this.numberOfRows,
+    required this.isTheLastRow,
     this.showButtons = true,
     this.isUpButtonEnabled = true,
     this.isDownButtonEnabled = true,
@@ -44,7 +44,7 @@ class TierListRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     return DragTarget<String>(
-      builder: (BuildContext context, List<String> incoming, List<dynamic> rejected) => Column(
+      builder: (BuildContext context, List<String?> incoming, List<dynamic> rejected) => Column(
         children: [
           IntrinsicHeight(
             child: Row(

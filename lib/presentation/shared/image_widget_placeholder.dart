@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class ImageWidgetPlaceholder extends StatelessWidget {
   final ImageProvider image;
-  final Widget placeholder;
+  final Widget? placeholder;
 
   const ImageWidgetPlaceholder({
-    Key key,
-    this.image,
+    Key? key,
+    required this.image,
     this.placeholder,
   }) : super(key: key);
 

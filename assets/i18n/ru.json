@@ -247,9 +247,34 @@
     {
       "key": "Ayaka",
       "pending": true,
-      "name": "Аяка",
-      "description": "Секретарь павильона Юэхай.  В ее жилах течет кровь цилинь, озаренного зверя.",
-      "skills": [],
+      "name": "Камисато Аяка",
+      "description": "Принцесса известной в Инадзуме семьи Камисато. Она воплощает элегантность и аристократичность.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Kamisato Art · Naname",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "Kamisato Art · Hyouka",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "Kamisato Art · Senho",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s4",
+          "title": "Kamisato Art · Soumetsu",
+          "description": null,
+          "abilities": []
+        }
+      ],
       "passives": [],
       "constellations": []
     },
@@ -4107,6 +4132,87 @@
           "descriptions": []
         }
       ]
+    },
+    {
+      "key": "Yoimiya",
+      "name": "Yoimiya",
+      "description": "N/A",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
+    },
+    {
+      "key": "Sayu",
+      "name": "Sayu",
+      "description": "N/A",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
+    },
+    {
+      "key": "Traveler (Electro)",
+      "name": "Traveler (Electro)",
+      "description": "N/A",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
     }
   ],
   "weapons": [
@@ -4781,6 +4887,12 @@
       "name": "Mitternachts Waltz",
       "description": "A bow painted the color of sin and nights of wild fantasy.",
       "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {{0}}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {{1}}% for 5s."
+    },
+    {
+      "key": "Dodoco Tales",
+      "name": "Dodoco Tales",
+      "description": "A children's book filled with childish short stories at which one cannot help but laugh.\nEven those readers who have long reached adulthood cannot help but be absorbed by the innocent, naive little adventures portrayed within.",
+      "refinement": "Normal Attack hits on opponents increase Charged Attack DMG by {{0}} for 6s. Charged Attack hits on opponents increase ATK by {{1}} for 6s."
     }
   ],
   "artifacts": [
@@ -6265,7 +6377,7 @@
     },
     {
       "key": "Abyss Lector: Violet Lightning",
-      "name": "Чтец Бездны: Violet Lightning"
+      "name": "Чтец Бездны: Пурпурная молния"
     },
     {
       "key": "Anemo Hypostasis",

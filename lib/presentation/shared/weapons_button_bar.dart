@@ -10,8 +10,8 @@ class WeaponsButtonBar extends StatelessWidget {
   final Function(WeaponType) onClick;
 
   const WeaponsButtonBar({
-    Key key,
-    @required this.onClick,
+    Key? key,
+    required this.onClick,
     this.selectedValues = const [],
   }) : super(key: key);
 

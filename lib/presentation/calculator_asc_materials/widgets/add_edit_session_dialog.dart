@@ -4,19 +4,19 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
 
 class AddEditSessionDialog extends StatefulWidget {
-  final int sessionKey;
-  final String name;
+  final int? sessionKey;
+  final String? name;
 
   const AddEditSessionDialog.create({
-    Key key,
+    Key? key,
   })  : sessionKey = null,
         name = '',
         super(key: key);
 
   const AddEditSessionDialog.update({
-    Key key,
-    @required this.sessionKey,
-    @required this.name,
+    Key? key,
+    required this.sessionKey,
+    required this.name,
   }) : super(key: key);
 
   @override
@@ -24,8 +24,8 @@ class AddEditSessionDialog extends StatefulWidget {
 }
 
 class _AddEditSessionDialogState extends State<AddEditSessionDialog> {
-  TextEditingController _textEditingController;
-  String _currentValue;
+  late TextEditingController _textEditingController;
+  String? _currentValue;
 
   @override
   void initState() {
@@ -82,7 +82,7 @@ class _AddEditSessionDialogState extends State<AddEditSessionDialog> {
       return;
     }
     _currentValue = _textEditingController.text;
-    context.read<CalculatorAscMaterialsSessionFormBloc>().add(CalculatorAscMaterialsSessionFormEvent.nameChanged(name: _currentValue));
+    context.read<CalculatorAscMaterialsSessionFormBloc>().add(CalculatorAscMaterialsSessionFormEvent.nameChanged(name: _currentValue!));
   }
 
   void _saveSession() {
@@ -100,7 +100,7 @@ class _AddEditSessionDialogState extends State<AddEditSessionDialog> {
 
   void _updateSession() => context
       .read<CalculatorAscMaterialsSessionsBloc>()
-      .add(CalculatorAscMaterialsSessionsEvent.updateSession(key: widget.sessionKey, name: _textEditingController.text));
+      .add(CalculatorAscMaterialsSessionsEvent.updateSession(key: widget.sessionKey!, name: _textEditingController.text));
 
   void _close() => Navigator.pop(context);
 }

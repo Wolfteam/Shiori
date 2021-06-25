@@ -7,12 +7,12 @@ class ItemExpansionPanel extends StatelessWidget {
   final Widget body;
   final Icon icon;
   final bool isCollapsed;
-  final Function(bool) expansionCallback;
+  final Function(bool)? expansionCallback;
 
   const ItemExpansionPanel({
-    Key key,
-    @required this.title,
-    @required this.body,
+    Key? key,
+    required this.title,
+    required this.body,
     this.icon = const Icon(Icons.settings),
     this.isCollapsed = false,
     this.expansionCallback,
@@ -41,7 +41,7 @@ class ItemExpansionPanel extends StatelessWidget {
                     message: title,
                     child: Text(
                       title,
-                      style: theme.textTheme.headline6.copyWith(color: theme.accentColor),
+                      style: theme.textTheme.headline6!.copyWith(color: theme.accentColor),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),

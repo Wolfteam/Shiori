@@ -1,9 +1,9 @@
 part of 'calculator_asc_materials_session_form_bloc.dart';
 
 @freezed
-abstract class CalculatorAscMaterialsSessionFormEvent implements _$CalculatorAscMaterialsSessionFormEvent {
+class CalculatorAscMaterialsSessionFormEvent with _$CalculatorAscMaterialsSessionFormEvent {
   const factory CalculatorAscMaterialsSessionFormEvent.nameChanged({
-    @required String name,
+    required String name,
   }) = _NameChanged;
 
   const factory CalculatorAscMaterialsSessionFormEvent.close() = _Close;

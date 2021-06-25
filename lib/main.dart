@@ -28,9 +28,9 @@ Future<void> main() async {
   runApp(MyApp());
 }
 
-Future<dynamic> _onDidReceiveLocalNotification(int id, String title, String body, String payload) async {}
+Future<dynamic> _onDidReceiveLocalNotification(int id, String? title, String? body, String? payload) async {}
 
-Future<void> _onSelectNotification(String json) async {}
+Future<void> _onSelectNotification(String? json) async {}
 
 class MyApp extends StatelessWidget {
   @override

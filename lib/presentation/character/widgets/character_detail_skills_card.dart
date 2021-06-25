@@ -15,9 +15,9 @@ class CharacterDetailSkillsCard extends StatelessWidget {
   final List<CharacterSkillCardModel> skills;
 
   const CharacterDetailSkillsCard({
-    Key key,
-    @required this.elementType,
-    @required this.skills,
+    Key? key,
+    required this.elementType,
+    required this.skills,
   }) : super(key: key);
 
   @override
@@ -54,7 +54,7 @@ class CharacterDetailSkillsCard extends StatelessWidget {
             child: Text(
               model.title,
               overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.headline6.copyWith(color: elementType.getElementColorFromContext(context)),
+              style: theme.textTheme.headline6!.copyWith(color: elementType.getElementColorFromContext(context)),
             ),
           ),
           Tooltip(
@@ -70,7 +70,7 @@ class CharacterDetailSkillsCard extends StatelessWidget {
 
     final widgets = <Widget>[];
     if (model.description != null) {
-      widgets.add(Text(model.description, style: theme.textTheme.bodyText2.copyWith(fontSize: 12)));
+      widgets.add(Text(model.description!, style: theme.textTheme.bodyText2!.copyWith(fontSize: 12)));
     }
 
     if (model.abilities.isNotEmpty) {
@@ -82,14 +82,14 @@ class CharacterDetailSkillsCard extends StatelessWidget {
               children: [
                 if (e.hasCommonTranslation || e.name.isNotNullEmptyOrWhitespace)
                   Text(
-                    e.hasCommonTranslation ? s.translateCharacterSkillAbilityType(e.type) : e.name,
+                    e.hasCommonTranslation ? s.translateCharacterSkillAbilityType(e.type!) : e.name!,
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.center,
-                    style: theme.textTheme.subtitle1.copyWith(color: elementType.getElementColorFromContext(context)),
+                    style: theme.textTheme.subtitle1!.copyWith(color: elementType.getElementColorFromContext(context)),
                   ),
-                if (e.description != null) Text(e.description, style: theme.textTheme.bodyText2.copyWith(fontSize: 12)),
+                if (e.description != null) Text(e.description!, style: theme.textTheme.bodyText2!.copyWith(fontSize: 12)),
                 if (e.descriptions.isNotEmpty) BulletList(items: e.descriptions),
-                if (e.secondDescription != null) Text(e.secondDescription, style: theme.textTheme.bodyText2.copyWith(fontSize: 12)),
+                if (e.secondDescription != null) Text(e.secondDescription!, style: theme.textTheme.bodyText2!.copyWith(fontSize: 12)),
               ],
             ),
           ),

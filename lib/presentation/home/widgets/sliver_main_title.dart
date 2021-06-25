@@ -6,8 +6,8 @@ class SliverMainTitle extends StatelessWidget {
   final String title;
 
   const SliverMainTitle({
-    Key key,
-    @required this.title,
+    Key? key,
+    required this.title,
   }) : super(key: key);
 
   @override

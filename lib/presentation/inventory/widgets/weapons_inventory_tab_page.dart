@@ -64,6 +64,6 @@ class _WeaponsInventoryTabPageState extends State<WeaponsInventoryTabPage> with 
       return;
     }
 
-    inventoryBloc.add(InventoryEvent.addWeapon(key: keyName));
+    inventoryBloc.add(InventoryEvent.addWeapon(key: keyName!));
   }
 }

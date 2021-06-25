@@ -32,6 +32,10 @@ extension I18nExtensions on S {
         return '$italian ($partial)';
       case AppLanguageType.japanese:
         return '$japanese ($partial)';
+      case AppLanguageType.vietnamese:
+        return '$vietnamese ($partial)';
+      case AppLanguageType.indonesian:
+        return '$indonesian ($partial)';
       default:
         throw Exception('The provided app lang = $lang is not valid');
     }
@@ -463,8 +467,9 @@ extension I18nExtensions on S {
         return custom;
       case AppNotificationType.dailyCheckIn:
         return dailyCheckIn;
+      default:
+        throw Exception('Invalid app notification type = $type');
     }
-    throw Exception('Invalid app notification type = $type');
   }
 
   String translateExpeditionTimeType(ExpeditionTimeType type) {

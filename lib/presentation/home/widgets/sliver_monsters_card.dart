@@ -10,8 +10,8 @@ class SliverMonstersCard extends StatelessWidget {
   final bool iconToTheLeft;
 
   const SliverMonstersCard({
-    Key key,
-    @required this.iconToTheLeft,
+    Key? key,
+    required this.iconToTheLeft,
   }) : super(key: key);
 
   @override

@@ -16,18 +16,18 @@ class MonsterCard extends StatelessWidget {
   final bool isInSelectionMode;
 
   const MonsterCard({
-    Key key,
-    @required this.itemKey,
-    @required this.image,
-    @required this.name,
-    @required this.type,
-    @required this.isComingSoon,
+    Key? key,
+    required this.itemKey,
+    required this.image,
+    required this.name,
+    required this.type,
+    required this.isComingSoon,
     this.isInSelectionMode = false,
   }) : super(key: key);
 
   MonsterCard.item({
-    Key key,
-    @required MonsterCardModel item,
+    Key? key,
+    required MonsterCardModel item,
     this.isInSelectionMode = false,
   })  : itemKey = item.key,
         type = item.type,
@@ -72,7 +72,7 @@ class MonsterCard extends StatelessWidget {
                   child: Text(
                     name,
                     textAlign: TextAlign.center,
-                    style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                    style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
                   ),
                 ),
               ),

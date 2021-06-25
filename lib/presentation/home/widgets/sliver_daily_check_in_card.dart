@@ -7,8 +7,8 @@ class SliverDailyCheckInCard extends StatelessWidget {
   final bool iconToTheLeft;
 
   const SliverDailyCheckInCard({
-    Key key,
-    @required this.iconToTheLeft,
+    Key? key,
+    required this.iconToTheLeft,
   }) : super(key: key);
 
   @override
@@ -16,7 +16,7 @@ class SliverDailyCheckInCard extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     return SliverCardItem(
-      onClick: _gotoSettingsPage,
+      onClick: _goToPageDailyCheckInPage,
       iconToTheLeft: iconToTheLeft,
       icon: Icon(Icons.rotate_right_sharp, size: 60, color: theme.accentColor),
       children: [
@@ -25,8 +25,9 @@ class SliverDailyCheckInCard extends StatelessWidget {
     );
   }
 
-  Future<void> _gotoSettingsPage(BuildContext context) async {
+  Future<void> _goToPageDailyCheckInPage(BuildContext context) async {
     final route = MaterialPageRoute(builder: (c) => DailyCheckInPage());
     await Navigator.push(context, route);
+    await route.completed;
   }
 }

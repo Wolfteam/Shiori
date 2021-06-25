@@ -74,7 +74,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
   }
 
   WeaponsState _buildInitialState({
-    String search,
+    String? search,
     List<String> excludeKeys = const [],
     List<WeaponType> weaponTypes = const [],
     int rarity = 0,

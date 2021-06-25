@@ -11,8 +11,8 @@ class SliverTierList extends StatelessWidget {
   final bool iconToTheLeft;
 
   const SliverTierList({
-    Key key,
-    @required this.iconToTheLeft,
+    Key? key,
+    required this.iconToTheLeft,
   }) : super(key: key);
 
   @override

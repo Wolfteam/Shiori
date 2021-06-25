@@ -8,11 +8,11 @@ import 'package:genshindb/presentation/shared/item_expansion_panel.dart';
 
 class ArtifactInfoCard extends StatelessWidget {
   final bool isCollapsed;
-  final Function(bool) expansionCallback;
+  final Function(bool)? expansionCallback;
 
   const ArtifactInfoCard({
-    Key key,
-    @required this.isCollapsed,
+    Key? key,
+    required this.isCollapsed,
     this.expansionCallback,
   }) : super(key: key);
 
@@ -22,11 +22,10 @@ class ArtifactInfoCard extends StatelessWidget {
     final theme = Theme.of(context);
     final considerations = <String>[];
 
-    final hp = s.translateStatTypeWithoutValue(StatType.hpPercentage, removeExtraSigns: true);
+    final hp = s.translateStatTypeWithoutValue(StatType.hp, removeExtraSigns: true);
     final hpPercentage = s.translateStatTypeWithoutValue(StatType.hpPercentage);
     final atkPercentage = s.translateStatTypeWithoutValue(StatType.atkPercentage);
     final atk = s.translateStatTypeWithoutValue(StatType.atk);
-    final def = s.translateStatTypeWithoutValue(StatType.defPercentage, removeExtraSigns: true);
     final defPercentage = s.translateStatTypeWithoutValue(StatType.defPercentage);
     final energyRecharge = s.translateStatTypeWithoutValue(StatType.energyRechargePercentage, removeExtraSigns: true);
     final elementaryMastery = s.translateStatTypeWithoutValue(StatType.elementaryMastery);
@@ -39,7 +38,7 @@ class ArtifactInfoCard extends StatelessWidget {
       '${s.clock}: $atkPercentage / $defPercentage / $hpPercentage / $energyRecharge / $elementaryMastery',
     );
     considerations.add(
-      '${s.goblet}: $atkPercentage / $defPercentage / $hpPercentage / $elementaryMastery / ${s.elementalDmgPercentage} (${s.translateElementType(ElementType.electro)}, ${s.translateElementType(ElementType.hydro)}...)',
+      '${s.goblet}: $atkPercentage / $defPercentage / $hpPercentage / $elementaryMastery / ${s.physDmgPercentage('').trim()} / ${s.elementalDmgPercentage} (${s.translateElementType(ElementType.electro)}, ${s.translateElementType(ElementType.hydro)}...)',
     );
     considerations.add(
       '${s.crown}: $atkPercentage / $defPercentage / $hpPercentage / $critRate / $critDmg / $elementaryMastery / ${s.healingBonus}',

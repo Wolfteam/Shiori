@@ -1,13 +1,13 @@
 part of 'artifacts_bloc.dart';
 
 @freezed
-abstract class ArtifactsEvent with _$ArtifactsEvent {
+class ArtifactsEvent with _$ArtifactsEvent {
   const factory ArtifactsEvent.init({@Default(<String>[]) List<String> excludeKeys}) = _Init;
 
-  const factory ArtifactsEvent.collapseNotes({@required bool collapse}) = _CollapseNotesChanged;
+  const factory ArtifactsEvent.collapseNotes({required bool collapse}) = _CollapseNotesChanged;
 
   const factory ArtifactsEvent.searchChanged({
-    @required String search,
+    required String search,
   }) = _SearchChanged;
 
   const factory ArtifactsEvent.rarityChanged(int rarity) = _RarityChanged;

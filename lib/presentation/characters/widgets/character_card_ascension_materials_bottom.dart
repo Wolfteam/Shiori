@@ -15,9 +15,9 @@ class CharacterCardAscensionMaterialsBottom extends StatelessWidget {
   final List<String> materials;
 
   const CharacterCardAscensionMaterialsBottom({
-    Key key,
-    @required this.weaponType,
-    @required this.materials,
+    Key? key,
+    required this.weaponType,
+    required this.materials,
   }) : super(key: key);
 
   @override

@@ -26,7 +26,7 @@ class TodayMaterialsPage extends StatelessWidget {
                     sliver: SliverToBoxAdapter(
                       child: Text(
                         s.forCharacters,
-                        style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                        style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
@@ -36,7 +36,7 @@ class TodayMaterialsPage extends StatelessWidget {
                     sliver: SliverToBoxAdapter(
                       child: Text(
                         s.forWeapons,
-                        style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                        style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),

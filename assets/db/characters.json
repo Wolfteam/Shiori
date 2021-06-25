@@ -1741,123 +1741,227 @@
           ]
         }
       ],
-      "builds": [],
-      "skills": [],
+      "builds": [
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "primordial_jade_cutter.png",
+            "the_black_sword.png"
+          ],
+          "artifacts": [
+            {
+              "one": "blizzard_walker_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "cryoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "energyRechargePercentage"
+          ]
+        },
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "the_widsith.png",
+            "skyward_atlas.png",
+            "mappa_mare.png",
+            "thrilling_tales_of_dragon_slayers.png"
+          ],
+          "artifacts": [
+            {
+              "multiples": [
+                {
+                  "quantity": 2,
+                  "image": "blizzard_walker_4.png"
+                },
+                {
+                  "quantity": 2,
+                  "image": "gladiators_finale_4.png"
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "cryoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "energyRechargePercentage"
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "key": "s1",
+          "image": null,
+          "type": "normalAttack",
+          "abilities": [
+            {
+              "key": "a1",
+              "type": "normalAttack"
+            },
+            {
+              "key": "a2",
+              "type": "chargedAttack"
+            },
+            {
+              "key": "a3",
+              "type": "plungingAttack"
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "image": null,
+          "type": "elementalSkill",
+          "abilities": [
+            {
+              "key": "a2",
+              "type": "hold"
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "image": null,
+          "type": "elementalBurst"
+        },
+        {
+          "key": "s4",
+          "image": null,
+          "type": "others"
+        }
+      ],
       "passives": [],
       "constellations": [],
-      "subStatType": "cryoDmgBonusPercentage",
+      "subStatType": "critDmgPercentage",
       "stats": [
         {
           "level": 1,
-          "baseHp": 1058,
-          "baseAtk": 23,
+          "baseHp": 1001,
+          "baseAtk": 27,
           "baseDef": 61,
           "isAnAscension": false,
-          "specificValue": 0
+          "specificValue": 50
         },
         {
           "level": 20,
-          "baseHp": 2745,
-          "baseAtk": 59,
+          "baseHp": 2597,
+          "baseAtk": 69,
           "baseDef": 158,
           "isAnAscension": false,
-          "specificValue": 0
+          "specificValue": 50
         },
         {
           "level": 20,
-          "baseHp": 3652,
-          "baseAtk": 78,
+          "baseHp": 3455,
+          "baseAtk": 92,
           "baseDef": 211,
           "isAnAscension": true,
-          "specificValue": 0
+          "specificValue": 50
         },
         {
           "level": 40,
-          "baseHp": 5465,
-          "baseAtk": 117,
+          "baseHp": 5170,
+          "baseAtk": 138,
           "baseDef": 315,
           "isAnAscension": false,
-          "specificValue": 0
+          "specificValue": 50
         },
         {
           "level": 40,
-          "baseHp": 6110,
-          "baseAtk": 131,
+          "baseHp": 5779,
+          "baseAtk": 154,
           "baseDef": 352,
           "isAnAscension": true,
-          "specificValue": 7.2
+          "specificValue": 59.6
         },
         {
           "level": 50,
-          "baseHp": 7029,
-          "baseAtk": 151,
+          "baseHp": 6649,
+          "baseAtk": 177,
           "baseDef": 405,
           "isAnAscension": false,
-          "specificValue": 7.2
+          "specificValue": 59.6
         },
         {
           "level": 50,
-          "baseHp": 7889,
-          "baseAtk": 169,
+          "baseHp": 7462,
+          "baseAtk": 198,
           "baseDef": 455,
           "isAnAscension": true,
-          "specificValue": 14.4
+          "specificValue": 69.2
         },
         {
           "level": 60,
-          "baseHp": 8818,
-          "baseAtk": 189,
+          "baseHp": 8341,
+          "baseAtk": 222,
           "baseDef": 509,
           "isAnAscension": false,
-          "specificValue": 14.4
+          "specificValue": 69.2
         },
         {
           "level": 60,
-          "baseHp": 9462,
-          "baseAtk": 203,
+          "baseHp": 8951,
+          "baseAtk": 238,
           "baseDef": 546,
           "isAnAscension": true,
-          "specificValue": 14.4
+          "specificValue": 69.2
         },
         {
           "level": 70,
-          "baseHp": 10400,
-          "baseAtk": 223,
+          "baseHp": 9838,
+          "baseAtk": 262,
           "baseDef": 600,
           "isAnAscension": false,
-          "specificValue": 14.4
+          "specificValue": 69.2
         },
         {
           "level": 70,
-          "baseHp": 11045,
-          "baseAtk": 237,
+          "baseHp": 10448,
+          "baseAtk": 278,
           "baseDef": 637,
           "isAnAscension": true,
-          "specificValue": 21.6
+          "specificValue": 78.8
         },
         {
           "level": 80,
-          "baseHp": 11993,
-          "baseAtk": 257,
+          "baseHp": 11345,
+          "baseAtk": 302,
           "baseDef": 692,
           "isAnAscension": false,
-          "specificValue": 21.6
+          "specificValue": 78.8
         },
         {
           "level": 80,
-          "baseHp": 12637,
-          "baseAtk": 271,
+          "baseHp": 11954,
+          "baseAtk": 318,
           "baseDef": 729,
           "isAnAscension": true,
-          "specificValue": 28.8
+          "specificValue": 88.4
         },
         {
           "level": 90,
-          "baseHp": 13593,
-          "baseAtk": 292,
+          "baseHp": 12858,
+          "baseAtk": 342,
           "baseDef": 784,
           "isAnAscension": false,
-          "specificValue": 28.8
+          "specificValue": 88.4
         }
       ]
     },
@@ -3597,34 +3701,16 @@
         {
           "isSupport": false,
           "weaponImages": [
-            "festering_fang.png",
+            "primordial_jade_cutter.png",
+            "aquila_favonia.png",
             "skyward_blade.png",
-            "favonius_sword.png",
-            "lions_roar.png"
+            "festering_fang.png",
+            "iron_sting.png"
           ],
           "artifacts": [
             {
-              "one": "gladiators_finale_4.png",
+              "one": "crimson_witch_of_flames_4.png",
               "multiples": [],
-              "stats": [
-                "hp",
-                "atk",
-                "atkPercentage",
-                "pyroDmgBonusPercentage",
-                "critRatePercentage"
-              ]
-            },
-            {
-              "multiples": [
-                {
-                  "quantity": 2,
-                  "image": "crimson_witch_of_flames_4.png"
-                },
-                {
-                  "quantity": 2,
-                  "image": "gladiators_finale_4.png"
-                }
-              ],
               "stats": [
                 "hp",
                 "atk",
@@ -3637,18 +3723,17 @@
           "subStatsToFocus": [
             "critRatePercentage",
             "critDmgPercentage",
-            "energyRechargePercentage",
-            "atkPercentage",
-            "elementaryMastery"
+            "elementaryMastery",
+            "atkPercentage"
           ]
         },
         {
           "isSupport": true,
           "weaponImages": [
-            "festering_fang.png",
+            "aquila_favonia.png",
+            "the_alley_flash.png",
             "skyward_blade.png",
-            "favonius_sword.png",
-            "lions_roar.png"
+            "festering_fang.png"
           ],
           "artifacts": [
             {
@@ -3658,16 +3743,16 @@
                 "hp",
                 "atk",
                 "energyRechargePercentage",
-                "hpPercentage",
-                "healingBonusPercentage"
+                "pyroDmgBonusPercentage",
+                "critRatePercentage"
               ]
             }
           ],
           "subStatsToFocus": [
-            "hpPercentage",
-            "energyRechargePercentage",
             "critRatePercentage",
-            "elementaryMastery"
+            "critDmgPercentage",
+            "energyRechargePercentage",
+            "atk"
           ]
         }
       ],
@@ -4990,33 +5075,13 @@
                 "pyroDmgBonusPercentage",
                 "critDmgPercentage"
               ]
-            },
-            {
-              "multiples": [
-                {
-                  "quantity": 2,
-                  "image": "gladiators_finale_4.png"
-                },
-                {
-                  "quantity": 2,
-                  "image": "crimson_witch_of_flames_4.png"
-                }
-              ],
-              "stats": [
-                "hp",
-                "atk",
-                "atkPercentage",
-                "pyroDmgBonusPercentage",
-                "critDmgPercentage"
-              ]
             }
           ],
           "subStatsToFocus": [
             "critRatePercentage",
             "critDmgPercentage",
             "atkPercentage",
-            "elementaryMastery",
-            "energyRechargePercentage"
+            "elementaryMastery"
           ]
         }
       ],
@@ -6984,6 +7049,7 @@
             "skyward_harp.png",
             "amos_bow.png",
             "rust.png",
+            "mitternachts_waltz.png",
             "compound_bow.png"
           ],
           "artifacts": [
@@ -11772,6 +11838,7 @@
           "weaponImages": [
             "lost_prayer_to_the_sacred_winds.png",
             "skyward_atlas.png",
+            "dodoco_tales.png",
             "the_widsith.png",
             "solar_pearl.png"
           ],
@@ -12421,9 +12488,9 @@
           "isSupport": false,
           "weaponImages": [
             "lost_prayer_to_the_sacred_winds.png",
+            "the_widsith.png",
             "solar_pearl.png",
-            "eye_of_perception.png",
-            "the_widsith.png"
+            "eye_of_perception.png"
           ],
           "artifacts": [
             {
@@ -12434,7 +12501,7 @@
                 "atk",
                 "atkPercentage",
                 "electroDmgBonusPercentage",
-                "critDmgPercentage"
+                "critRatePercentage"
               ]
             }
           ],
@@ -12442,7 +12509,7 @@
             "critRatePercentage",
             "critDmgPercentage",
             "atkPercentage",
-            "elementaryMastery"
+            "energyRechargePercentage"
           ]
         },
         {
@@ -12462,7 +12529,7 @@
                 "atk",
                 "atkPercentage",
                 "electroDmgBonusPercentage",
-                "critDmgPercentage"
+                "critRatePercentage"
               ]
             }
           ],
@@ -12470,7 +12537,7 @@
             "critRatePercentage",
             "critDmgPercentage",
             "atkPercentage",
-            "elementaryMastery"
+            "energyRechargePercentage"
           ]
         }
       ],
@@ -13762,7 +13829,8 @@
             "memory_of_dust.png",
             "lost_prayer_to_the_sacred_winds.png",
             "skyward_atlas.png",
-            "solar_pearl.png"
+            "solar_pearl.png",
+            "dodoco_tales.png"
           ],
           "artifacts": [
             {
@@ -23934,9 +24002,10 @@
         {
           "isSupport": false,
           "weaponImages": [
+            "lost_prayer_to_the_sacred_winds.png",
             "skyward_atlas.png",
-            "memory_of_dust.png",
-            "blackcliff_amulet.png",
+            "dodoco_tales.png",
+            "the_widsith.png",
             "mappa_mare.png",
             "everfrost_core.png"
           ],

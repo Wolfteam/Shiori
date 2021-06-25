@@ -62,7 +62,7 @@ class Assets {
 
   static String getCharacterFullPath(String name) => '$characterFullBasePath/$name';
 
-  static String getSkillPath(String name) {
+  static String getSkillPath(String? name) {
     if (name.isNullEmptyOrWhitespace) {
       return '$othersBasePath/$noImageAvailableName';
     }
@@ -152,6 +152,10 @@ class Assets {
         return '$translationsBasePath/it.json';
       case AppLanguageType.japanese:
         return '$translationsBasePath/ja.json';
+      case AppLanguageType.vietnamese:
+        return '$translationsBasePath/vi.json';
+      case AppLanguageType.indonesian:
+        return '$translationsBasePath/id.json';
       default:
         throw Exception('Invalid language = $languageType');
     }

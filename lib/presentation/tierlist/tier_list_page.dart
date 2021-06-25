@@ -119,7 +119,7 @@ class _TierListPageState extends State<TierListPage> {
       }
 
       final bytes = await screenshotController.capture(pixelRatio: 1.5);
-      ImageGallerySaver.saveImage(bytes, quality: 100);
+      await ImageGallerySaver.saveImage(bytes!, quality: 100);
       ToastUtils.showSucceedToast(fToast, s.imgSavedSuccessfully);
       bloc.add(const TierListEvent.screenshotTaken(succeed: true));
     } catch (e, trace) {

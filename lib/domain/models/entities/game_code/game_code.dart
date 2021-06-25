@@ -8,19 +8,19 @@ class GameCode extends HiveObject {
   final String code;
 
   @HiveField(1)
-  DateTime usedOn;
+  DateTime? usedOn;
 
   @HiveField(2)
-  DateTime discoveredOn;
+  DateTime? discoveredOn;
 
   @HiveField(3)
-  DateTime expiredOn;
+  DateTime? expiredOn;
 
   @HiveField(4)
   bool isExpired;
 
   @HiveField(5)
-  int region;
+  int? region;
 
   GameCode(this.code, this.usedOn, this.discoveredOn, this.expiredOn, this.isExpired, this.region);
 }

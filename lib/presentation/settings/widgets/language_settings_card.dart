@@ -54,7 +54,7 @@ class LanguageSettingsCard extends StatelessWidget {
                       height: 0,
                       color: Colors.transparent,
                     ),
-                    onChanged: (v) => _languageChanged(v, context),
+                    onChanged: (v) => _languageChanged(v!, context),
                     items: languages
                         .map<DropdownMenuItem<AppLanguageType>>(
                           (lang) => DropdownMenuItem<AppLanguageType>(

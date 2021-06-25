@@ -15,7 +15,7 @@ import 'widgets/monster_card.dart';
 class MonstersPage extends StatelessWidget {
   final bool isInSelectionMode;
 
-  static Future<String> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
+  static Future<String?> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
     final bloc = context.read<MonstersBloc>();
     bloc.add(MonstersEvent.init(excludeKeys: excludeKeys));
 
@@ -29,7 +29,7 @@ class MonstersPage extends StatelessWidget {
   }
 
   const MonstersPage({
-    Key key,
+    Key? key,
     this.isInSelectionMode = false,
   }) : super(key: key);
 

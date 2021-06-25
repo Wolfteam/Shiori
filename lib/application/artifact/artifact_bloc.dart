@@ -19,7 +19,7 @@ class ArtifactBloc extends PopBloc<ArtifactEvent, ArtifactState> {
   ArtifactBloc(this._genshinService, this._telemetryService) : super(const ArtifactState.loading());
 
   @override
-  ArtifactEvent getEventForPop(String key) => ArtifactEvent.loadArtifact(key: key, addToQueue: false);
+  ArtifactEvent getEventForPop(String? key) => ArtifactEvent.loadArtifact(key: key!, addToQueue: false);
 
   @override
   Stream<ArtifactState> mapEventToState(

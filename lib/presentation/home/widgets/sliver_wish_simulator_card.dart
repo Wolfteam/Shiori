@@ -9,8 +9,8 @@ class SliverWishSimulatorCard extends StatelessWidget {
   final bool iconToTheLeft;
 
   const SliverWishSimulatorCard({
-    Key key,
-    @required this.iconToTheLeft,
+    Key? key,
+    required this.iconToTheLeft,
   }) : super(key: key);
 
   @override
@@ -30,5 +30,6 @@ class SliverWishSimulatorCard extends StatelessWidget {
   Future<void> _gotoWishSimulatorPage(BuildContext context) async {
     final route = MaterialPageRoute(builder: (c) => WishSimulatorPage());
     await Navigator.push(context, route);
+    await route.completed;
   }
 }
