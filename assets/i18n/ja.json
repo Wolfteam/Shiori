@@ -1705,23 +1705,23 @@
     {
       "key": "Kazuha",
       "name": "楓原万葉",
-      "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens.",
+      "description": "稲妻より訪れし浪人。今は璃月の「南十字」武装船隊と行動を共にしている。穏やかで浮世離れした性格、過去に経験した様々な出来事を心の内に秘めている。",
       "skills": [
         {
           "key": "s1",
-          "title": "Garyu Bladework",
+          "title": "我流剣術",
           "description": null,
           "abilities": []
         },
         {
           "key": "s2",
-          "title": "Chihayafuru",
+          "title": "千早振る",
           "description": null,
           "abilities": []
         },
         {
           "key": "s2",
-          "title": "Manyou no Ittou",
+          "title": "万葉の一刀",
           "description": null,
           "abilities": []
         }
@@ -4134,7 +4134,7 @@
     },
     {
       "key": "Yoimiya",
-      "name": "Yoimiya",
+      "name": "宵宮",
       "description": "N/A",
       "skills": [
         {
@@ -4161,7 +4161,7 @@
     },
     {
       "key": "Sayu",
-      "name": "Sayu",
+      "name": "早柚",
       "description": "N/A",
       "skills": [
         {
@@ -4188,7 +4188,7 @@
     },
     {
       "key": "Traveler (Electro)",
-      "name": "Traveler (Electro)",
+      "ravname": "旅人 (雷)",
       "description": "N/A",
       "skills": [
         {
@@ -4877,20 +4877,20 @@
     },
     {
       "key": "Freedom-Sworn",
-      "name": "Freedom-Sworn",
-      "description": "A straight sword, azure as antediluvian song, and as keen as the oaths of freedom taken in the Land of Wind.",
+      "name": "蒼古なる自由への誓い",
+      "description": "悠久なる歌声のように青く、真っすぐな直剣。風の国を代表する自由の誓いのように、その切っ先は鋭い。",
       "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {{0}}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
     },
     {
       "key": "Mitternachts Waltz",
-      "name": "Mitternachts Waltz",
-      "description": "A bow painted the color of sin and nights of wild fantasy.",
+      "name": "幽夜のワルツ",
+      "description": "罪と幻想の夜を想起させる色をした弓。",
       "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {{0}}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {{1}}% for 5s."
     },
     {
       "key": "Dodoco Tales",
-      "name": "Dodoco Tales",
-      "description": "A children's book filled with childish short stories at which one cannot help but laugh.\nEven those readers who have long reached adulthood cannot help but be absorbed by the innocent, naive little adventures portrayed within.",
+      "name": "ドドコの物語",
+      "description": "豪華な表紙の児童書、子供向けの短いストーリーで構成されている。読むと心がリラックスできるものばかり。\nその無邪気な冒険物語を読めば、たとえ大人でも夢中になるだろう。",
       "refinement": "Normal Attack hits on opponents increase Charged Attack DMG by {{0}} for 6s. Charged Attack hits on opponents increase ATK by {{1}} for 6s."
     }
   ],
@@ -6253,13 +6253,13 @@
     },
     {
       "key": "Maguu Kishin",
-      "name": "Maguu Kishin",
-      "description": "This core can power the inorganic Maguu Kenki and cause it to wield a blade like a living being.\nFlesh decays, and with it decays all martial art and memory, no matter how masterful or lovely.\nPerhaps only by converting one's four limbs and body into sturdy mechanical parts, and by at last sacrificing one's very own heart for a sophisticated mechanical one, can one transcend transient flesh and approach the everlasting..."
+      "name": "魔偶の芯",
+      "description": "無機化合物である廣偶剣鬼を生きているかのように剣を振るわせる芯。\nどんなに優れた武術も、どんなに美しい思い出も、いすれ肉体と共に消えてしまう。\n生身の時よりも永遠に近づくためには、手足胴体を全て頑丈なからくりへと変え、心臓を精密な「芯」に置き換えるしかないだろう..."
     },
     {
       "key": "Sea Ganoderma",
-      "name": "Sea Ganoderma",
-      "description": "A species that only grows in certain special regions of the ocean and islands. It looks like a fungus of some sort, but it is in fact the result of the secretion and proliferation of certain soft-bodied organisms."
+      "name": "ウミレイシ",
+      "description": "特定の海域や島でしか育たない特殊な品種。キノコ類のように見えるが、実際は軟体動物の分泌と増殖から生まれたものである。"
     }
   ],
   "debuffs": [
@@ -6744,39 +6744,39 @@
     },
     {
       "key": "Maguu Kenki",
-      "name": "Maguu Kenki"
+      "name": "魔偶剣鬼"
     },
     {
       "key": "Hydro Mimic Boar",
-      "name": "Hydro Mimic Boar"
+      "name": "幻形イノシシ·水"
     },
     {
       "key": "Hydro Mimic Crab",
-      "name": "Hydro Mimic Crab"
+      "name": "幻形カニ·水"
     },
     {
       "key": "Hydro Mimic Crane",
-      "name": "Hydro Mimic Crane"
+      "name": "幻形ツル·水"
     },
     {
       "key": "Hydro Mimic Ferret",
-      "name": "Hydro Mimic Ferret"
+      "name": "幻形リス·水"
     },
     {
       "key": "Hydro Mimic Finch",
-      "name": "Hydro Mimic Finch"
+      "name": "幻形スズメ·水"
     },
     {
       "key": "Hydro Mimic Frog",
-      "name": "Hydro Mimic Frog"
+      "name": "幻形カエル·水"
     },
     {
       "key": "Hydro Mimic Mallard",
-      "name": "Hydro Mimic Mallard"
+      "name": "幻形アヒル·水"
     },
     {
       "key": "Hydro Mimic Raptor",
-      "name": "Hydro Mimic Raptor"
+      "name": "幻形トビ·水"
     }
   ]
 }
