@@ -1705,8 +1705,8 @@
     },
     {
       "key": "Kazuha",
-      "name": "Kaedehara Kazuha",
-      "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens.",
+      "name": "Кадзуха",
+      "description": "Ронин-самурай из Инадзумы, который нашёл приют на флоте Южного креста в Ли Юэ. Этот добрый и беззаботный молодой человек многое пережил в прошлом.",
       "skills": [
         {
           "key": "s1",
@@ -4878,21 +4878,21 @@
     },
     {
       "key": "Freedom-Sworn",
-      "name": "Freedom-Sworn",
-      "description": "A straight sword, azure as antediluvian song, and as keen as the oaths of freedom taken in the Land of Wind.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {{0}}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "name": "Клятва свободы",
+      "description": "Цвет этого меча напоминает о древних песнопениях, а его острота подобна словам данной в царстве ветров клятвы свободы.",
+      "refinement": "Часть Тысячелетней симфонии, что блуждает среди ветров. Увеличивает наносимый урон на {{0}}%. Вызов элементальной реакции даёт персонажу один Талисман воодушевления. Он может возникнуть раз в 0.5 сек., даже когда персонаж в отряде, но не активен. Два собранных Талисмана воодушевления пропадают, на 12 сек. наделяя ближайших членов отряда эффектом «Тысячелетняя симфония: Гимн восстания», который увеличивает урон, наносимый обычной атакой, заряженной атакой и атакой в падении, на {{1}}%, а силу атаки - на {{2}}%. В течение 20 сек. после активации эффекта Талисманы воодушевления появляться не будут. Тысячелетняя симфония с эффектами, влияющими на те же навыки, не складывается. "
     },
     {
       "key": "Mitternachts Waltz",
-      "name": "Mitternachts Waltz",
-      "description": "A bow painted the color of sin and nights of wild fantasy.",
-      "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {{0}}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {{1}}% for 5s."
+      "name": "Вальс Нирваны Ночи",
+      "description": "Лук, окрашенный в цвета греха и диких ночных фантазий.",
+      "refinement": "Попадания обычной атакой увеличивают урон элементального навыка на {{0}}% в течение 5 сек., а попадания элементальным навыком увеличивают урон обычной атаки на {{1}}% в течение 5 сек."
     },
     {
       "key": "Dodoco Tales",
-      "name": "Dodoco Tales",
-      "description": "A children's book filled with childish short stories at which one cannot help but laugh.\nEven those readers who have long reached adulthood cannot help but be absorbed by the innocent, naive little adventures portrayed within.",
-      "refinement": "Normal Attack hits on opponents increase Charged Attack DMG by {{0}} for 6s. Charged Attack hits on opponents increase ATK by {{1}} for 6s."
+      "name": "Истории Додоко",
+      "description": "Книга, состоящая из увлекательных детских историй, которые невольно вызывают улыбку на лице.\nДаже взрослые читатели не могут не погрузиться с головой в рассказанные здесь невинные и наивные маленькие приключения.",
+      "refinement": "Попадания обычной атакой увеличивают урон заряженной атаки на {{0}}% в течение 6 сек., а попадания заряженной атакой увеличивают силу атаки на {{1}}% в течение 6 сек."
     }
   ],
   "artifacts": [
@@ -6749,35 +6749,35 @@
     },
     {
       "key": "Hydro Mimic Boar",
-      "name": "Hydro Mimic Boar"
+      "name": "Гидро мимик: Кабан"
     },
     {
       "key": "Hydro Mimic Crab",
-      "name": "Hydro Mimic Crab"
+      "name": "Гидро мимик: Краб"
     },
     {
       "key": "Hydro Mimic Crane",
-      "name": "Hydro Mimic Crane"
+      "name": "Гидро мимик: Журавль"
     },
     {
       "key": "Hydro Mimic Ferret",
-      "name": "Hydro Mimic Ferret"
+      "name": "Гидро мимик: Хорек"
     },
     {
       "key": "Hydro Mimic Finch",
-      "name": "Hydro Mimic Finch"
+      "name": "Гидро мимик: Воробей"
     },
     {
       "key": "Hydro Mimic Frog",
-      "name": "Hydro Mimic Frog"
+      "name": "Гидро мимик: Лягушка"
     },
     {
       "key": "Hydro Mimic Mallard",
-      "name": "Hydro Mimic Mallard"
+      "name": "Гидро мимик: Утка"
     },
     {
       "key": "Hydro Mimic Raptor",
-      "name": "Hydro Mimic Raptor"
+      "name": "Гидро мимик: Ястреб"
     }
   ]
 }
