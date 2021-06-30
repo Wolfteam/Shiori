@@ -1714,22 +1714,22 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 5 rapid strikes.",
+              "description": "剣による最大5段の連続攻撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "一定のスタミナを消費し、前方に斬撃を2回放つ。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact. If this Plunging Attack is triggered by Chihayaburu, it will be converted to Plunging Attack: Midare Ranzan.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。千早振る後の落下攻撃は、落下攻撃・乱れ嵐斬へと変わる。",
               "descriptions": []
             },
             {
-              "name": "Plunging Attack: Midare Ranzan",
-              "description": "When a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to Anemo DMG and will create a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents.",
+              "name": "落下攻撃・乱れ嵐斬",
+              "description": "元素スキル・千早振る後の落下攻撃のダメージは風元素ダメージに変わる。落下時に秘剣で風穴を生成し、近くの敵と物体を引き寄せる。",
               "descriptions": []
             }
           ]
@@ -1737,21 +1737,21 @@
         {
           "key": "s2",
           "title": "千早振る",
-          "description": "Unleashes a secret technique as fierce as the rushing wind that pulls objects and opponents towards Kazuha's current position before launching opponents within the AoE, dealing Anemo DMG and lifting Kazuha into the air on a rushing gust of wind.\nWithin 10s of remaining airborne after casting Chihayaburu, Kazuha can unleash a powerful Plunging Attack known as Midare Ranzan.",
+          "description": "旋風の如く秘剣を振り、敵と物体を引き寄せる。範囲内の敵をノックバックし、風元素ダメージを与え、気流に乗って空中に舞い上がる。\n楓原万葉が元素スキル・千早振るによる効果で空中に舞い上がった後、落下攻撃を10秒以内に放つと強力な落下攻撃・乱れ嵐斬へと変わる。",
           "abilities": [
             {
               "key": "a1",
-              "description": "Can be used in mid-air.",
+              "description": "空中でも発動可能。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Charges up before unleashing greater Anemo DMG over a larger AoE than Press Mode.",
+              "description": "力を溜めた後に発動する。一回押しより広い範囲に、より高威力の属元素ダメージを与える。",
               "descriptions": []
             },
             {
-              "name": "Plunging Attack: Midare Ranzan",
-              "description": "When a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to Anemo DMG. On landing, Kazuha creates a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents.\nMidare Ranzan's DMG is considered Plunging Attack DMG.",
+              "name": "落下攻撃・乱れ嵐斬",
+              "description": "元素スキル・千早振る後の落下攻撃のダメージは風元素ダメージへと変わる。落下時に秘剣で風穴を生成し、近くの敵と物体を引き寄せる。\n乱れ嵐斬のダメージは落下攻撃によるダメージとみなされる。",
               "descriptions": []
             }
 
@@ -1760,11 +1760,11 @@
         {
           "key": "s3",
           "title": "万葉の一刀",
-          "description": "The signature technique of Kazuha's self-styled bladework — a single slash that strikes with the force of the first winds of autumn, dealing AoE Anemo DMG.\nThe blade's passage will leave behind a field named \"Autumn Whirlwind\" that periodically deals AoE Anemo DMG to opponents within its range.",
+          "description": "我流の奥義で嵐のような一振りを繰り出し、風元素範囲ダメージを与える。太刀風は「流風秋野」と呼ばれる領域を創り出し、中にいる敵に風元素ダメージを一定間隔で与える。",
           "abilities": [
             {
-              "name": "Elemental Absorption",
-              "description": "If Autumn Whirlwind comes into contact with Hydro / Pyro / Cryo / Electro, it will deal additional elemental DMG of that type.\nElemental Absorption may only occur once per use.",
+              "name": "元素変化",
+              "description": "流風秋野の継続時間中に水元素/炎元素/氷元素/雷元素に接触すると、接触した元素の属性を獲得し、該当元素の付加ダメージを追加で与える。\n元素変化はスキル継続中に1回のみ発生する。",
               "descriptions": []
             }
           ]
@@ -1773,69 +1773,69 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Cloud Strider",
-          "description": "Decreases sprinting Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+          "title": "霞立つ松風",
+          "description": "チーム内の自身のキャラクター全員がダッシュに消費するスタミナ-20%。\n同じ効果を持つ固有天賦との重ね掛け不可。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Soumon Swordsmanship",
-          "description": "If Chihayaburu comes into contact with Hydro / Pyro / Cryo / Electro when cast, Chihayaburu will absorb that element and if Plunging Attack: Midare Ranzan is used before the effect expires, it will deal an additional 200% ATK of the absorbed elemental type as DMG. This will be considered Plunging Attack DMG.\nElemental Absorption may only occur once per use of Chihayaburu.",
+          "title": "相聞剣法",
+          "description": "千早振るを発動時、水元素/炎元素/氷元素/雷元素と接触した場合、その千早振る後の落下攻撃・乱れ嵐斬に元素変化が起き、攻撃力200%分の該当元素ダメージを追加で与える。このダメージは落下攻撃とみなされる。千早振るのスキル効果中、元素変化は1回のみ発生する。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Poetics of Fuubutsu",
-          "description": "Upon triggering a Swirl reaction, Kaedehara Kazuha will grant teammates a 0.04% Elemental DMG Bonus to their corresponding Element for every point of Elemental Mastery he has for 8s. Bonuses for different elements obtained through this method can co-exist.",
+          "title": "風物の詩吟",
+          "description": "楓原万葉が拡散反応を起こした後、楓原万葉の元素熟知の数値が1につき、チーム全員の該当元素ダメージ+0.04%、継続時間8秒。この方法で獲得した異なる元素ダメージアップ効果は共存する。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Scarlet Hills",
-          "description": "Decreases Chihayaburu's CD by 10%.\nUsing Kazuha Slash resets the CD of Chihayaburu.",
+          "title": "千山紅葉",
+          "description": "干早振るのクールタイム-10%。万葉の一刀を発動した時、干早振るのクールタイムがリセットされる。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Yamaarashi Tailwind",
-          "description": "The Autumn Whirlwind field created by Kazuha Slash has the following effects:",
-          "secondDescription": "The Elemental Mastery-increasing effects of this Constellation do not stack.",
+          "title": "山嵐残心",
+          "description": "万葉の一刀の流風秋野で下記の効果を発動する。",
+          "secondDescription": "この命ノ星座による元素熟知アップ効果は重ね掛けできない。",
           "descriptions": [
-            "Increases Kaedehara Kazuha's own Elemental Mastery by 200.",
-            "Increases the Elemental Mastery of characters within the field by 200."
+            "継続時間内、楓原万葉自身の元素熟知+200。",
+            "流風秋野の中にいるフィールド上キャラクターの元素熟知+200。"
           ]
         },
         {
           "key": "c3",
-          "title": "Maple Monogatari",
-          "description": "Increases the level of Chihayaburu by 3.\nMaximum upgrade level is 15.",
+          "title": "楓袖奇譚",
+          "description": "干早振るのスキルLv.+30。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Oozora Genpou",
-          "description": "When Kaedehara Kazuha's Energy is lower than 45, he obtains the following effects:",
+          "title": "大空幻法",
+          "description": "楓原万葉の元素エネルギーが45以下の時、下記の効果を獲得する。",
           "secondDescription": null,
           "descriptions": [
-            "Pressing or Holding Chihayaburu regenerates 3 or 4 Energy for Kaedehara Kazuha, respectively.",
-            "When gliding, Kaedehara Kazuha regenerates 2 Energy per second."
+            "一回押し/長押しで干早振るを発動した時、元素エネルギーを3/4回復する。",
+            "滑期状態のとき、1秒毎に元素エネルギーを2回復する。"
           ]
         },
         {
           "key": "c5",
-          "title": "Wisdom of Bansei",
-          "description": "Increases the level of Kazuha Slash by 3.\nMaximum upgrade level is 15.",
+          "title": "万世集",
+          "description": "万葉の一刀のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Crimson Momiji",
-          "description": "After using Chihayaburu or Kazuha Slash, Kaedehara Kazuha gains an Anemo Infusion for 5s. Additionally, each point of Elemental Mastery will increase the DMG dealt by Kaedehara Kazuha's Normal, Charged, and Plunging Attack by 0.2%.",
+          "title": "血赤の紅葉",
+          "description": "楓原万葉が干早振るまたは万葉の一刀を発動した後の5秒間、風元素付与を獲得する、また楓原万葉の元素熟知の数値が1につき、自身の通常攻撃、重撃、落下攻撃のダメージ",
           "secondDescription": null,
           "descriptions": []
         }
@@ -4991,19 +4991,19 @@
       "key": "Freedom-Sworn",
       "name": "蒼古なる自由への誓い",
       "description": "悠久なる歌声のように青く、真っすぐな直剣。風の国を代表する自由の誓いのように、その切っ先は鋭い。",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {{0}}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "refinement": "風と共に流れる「千年の大楽章」の一部。与えるダメージ +{{0}}%。元素反応を起こすと、奮起の欠片を1枚獲得する。この効果は0.3秒毎に1回のみ発動でき、待機中のキャラクターも発動できる。\n奮起の欠片を2枚集めると、全ての奮起の欠片を消費し、周囲のチーム全員に12秒継続する「千年の大楽章・抗争の歌」効果を付与する：通常攻撃、重撃、落下攻撃のダメージ +{{1}}%、攻撃力 +{{2}}%。発動後の20秒間、奮起の欠片を再度獲得することはできない。\n「千年の大楽章」のもたらす各効果中、同種類の効果は重ね掛け不可。"
     },
     {
       "key": "Mitternachts Waltz",
       "name": "幽夜のワルツ",
       "description": "罪と幻想の夜を想起させる色をした弓。",
-      "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {{0}}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {{1}}% for 5s."
+      "refinement": "通常攻撃が敵に命中した後の5秒間、元素スキルのダメージ+ {{0}}%。\n元素スキルが敵に命中した後の5秒間、通常攻撃のダメージ+ {{1}}%。"
     },
     {
       "key": "Dodoco Tales",
       "name": "ドドコの物語",
       "description": "豪華な表紙の児童書、子供向けの短いストーリーで構成されている。読むと心がリラックスできるものばかり。\nその無邪気な冒険物語を読めば、たとえ大人でも夢中になるだろう。",
-      "refinement": "Normal Attack hits on opponents increase Charged Attack DMG by {{0}}% for 6s. Charged Attack hits on opponents increase ATK by {{1}}% for 6s."
+      "refinement": "通常攻撃が敵に命中した後の6秒間、重撃ダメージ+ {{0}}%。\n重撃が敵に命中した後の6秒間、攻撃力+ {{1}}%。"
     }
   ],
   "artifacts": [
