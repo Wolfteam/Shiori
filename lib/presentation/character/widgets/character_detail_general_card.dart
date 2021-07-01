@@ -23,17 +23,17 @@ class CharacterDetailGeneralCard extends StatelessWidget {
   final RegionType region;
   final String role;
   final bool isFemale;
-  final String birthday;
+  final String? birthday;
 
   const CharacterDetailGeneralCard({
-    Key key,
-    @required this.name,
-    @required this.rarity,
-    @required this.elementType,
-    @required this.weaponType,
-    @required this.region,
-    @required this.role,
-    @required this.isFemale,
+    Key? key,
+    required this.name,
+    required this.rarity,
+    required this.elementType,
+    required this.weaponType,
+    required this.region,
+    required this.role,
+    required this.isFemale,
     this.birthday,
   }) : super(key: key);
 
@@ -52,7 +52,7 @@ class CharacterDetailGeneralCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(name, style: theme.textTheme.headline5.copyWith(fontWeight: FontWeight.bold, color: Colors.white)),
+            Text(name, style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold, color: Colors.white)),
             Rarity(stars: rarity, starSize: 25, alignment: MainAxisAlignment.start),
             ItemDescription(
               title: s.element,
@@ -88,7 +88,7 @@ class CharacterDetailGeneralCard extends StatelessWidget {
             if (birthday.isNotNullEmptyOrWhitespace)
               ItemDescription(
                 title: s.birthday,
-                widget: Text(birthday, style: const TextStyle(color: Colors.white)),
+                widget: Text(birthday!, style: const TextStyle(color: Colors.white)),
                 useColumn: false,
               ),
           ],

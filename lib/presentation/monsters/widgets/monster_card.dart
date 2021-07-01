@@ -13,19 +13,22 @@ class MonsterCard extends StatelessWidget {
   final String name;
   final MonsterType type;
   final bool isComingSoon;
+  final bool isInSelectionMode;
 
   const MonsterCard({
-    Key key,
-    @required this.itemKey,
-    @required this.image,
-    @required this.name,
-    @required this.type,
-    @required this.isComingSoon,
+    Key? key,
+    required this.itemKey,
+    required this.image,
+    required this.name,
+    required this.type,
+    required this.isComingSoon,
+    this.isInSelectionMode = false,
   }) : super(key: key);
 
   MonsterCard.item({
-    Key key,
-    @required MonsterCardModel item,
+    Key? key,
+    required MonsterCardModel item,
+    this.isInSelectionMode = false,
   })  : itemKey = item.key,
         type = item.type,
         name = item.name,
@@ -36,11 +39,9 @@ class MonsterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final s = S.of(context);
-    final fToast = ToastUtils.of(context);
     return InkWell(
       borderRadius: Styles.mainCardBorderRadius,
-      onTap: () => ToastUtils.showWarningToast(fToast, s.comingSoon),
+      onTap: () => _onTap(context),
       child: Card(
         clipBehavior: Clip.hardEdge,
         shape: Styles.mainCardShape,
@@ -71,7 +72,7 @@ class MonsterCard extends StatelessWidget {
                   child: Text(
                     name,
                     textAlign: TextAlign.center,
-                    style: theme.textTheme.subtitle1.copyWith(fontWeight: FontWeight.bold),
+                    style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
@@ -80,5 +81,16 @@ class MonsterCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _onTap(BuildContext context) {
+    if (isInSelectionMode) {
+      Navigator.pop(context, itemKey);
+      return;
+    }
+
+    final fToast = ToastUtils.of(context);
+    final s = S.of(context);
+    ToastUtils.showWarningToast(fToast, s.comingSoon);
   }
 }

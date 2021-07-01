@@ -5,10 +5,12 @@ import 'application/bloc.dart';
 import 'domain/services/calculator_service.dart';
 import 'domain/services/data_service.dart';
 import 'domain/services/device_info_service.dart';
+import 'domain/services/game_code_service.dart';
 import 'domain/services/genshin_service.dart';
 import 'domain/services/locale_service.dart';
 import 'domain/services/logging_service.dart';
 import 'domain/services/network_service.dart';
+import 'domain/services/notification_service.dart';
 import 'domain/services/settings_service.dart';
 import 'domain/services/telemetry_service.dart';
 import 'injection.dart';
@@ -18,8 +20,17 @@ Future<void> main() async {
   //This is required by app center
   WidgetsFlutterBinding.ensureInitialized();
   await initInjection();
+  final notificationService = getIt<NotificationService>();
+  await notificationService.registerCallBacks(
+    onSelectNotification: _onSelectNotification,
+    onIosReceiveLocalNotification: _onDidReceiveLocalNotification,
+  );
   runApp(MyApp());
 }
+
+Future<dynamic> _onDidReceiveLocalNotification(int id, String? title, String? body, String? payload) async {}
+
+Future<void> _onSelectNotification(String? json) async {}
 
 class MyApp extends StatelessWidget {
   @override
@@ -31,7 +42,8 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             final settingsService = getIt<SettingsService>();
-            return HomeBloc(genshinService, settingsService);
+            final localeService = getIt<LocaleService>();
+            return HomeBloc(genshinService, settingsService, localeService);
           },
         ),
         BlocProvider(
@@ -89,7 +101,8 @@ class MyApp extends StatelessWidget {
             final networkService = getIt<NetworkService>();
             final telemetryService = getIt<TelemetryService>();
             final deviceInfoService = getIt<DeviceInfoService>();
-            return UrlPageBloc(networkService, telemetryService, deviceInfoService);
+            final settingsService = getIt<SettingsService>();
+            return UrlPageBloc(networkService, telemetryService, deviceInfoService, settingsService);
           },
         ),
         BlocProvider(
@@ -103,7 +116,9 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final dataService = getIt<DataService>();
             final telemetryService = getIt<TelemetryService>();
-            return GameCodesBloc(dataService, telemetryService);
+            final gameCodeService = getIt<GameCodeService>();
+            final networkService = getIt<NetworkService>();
+            return GameCodesBloc(dataService, telemetryService, gameCodeService, networkService);
           },
         ),
         BlocProvider(
@@ -125,6 +140,7 @@ class MyApp extends StatelessWidget {
               ctx.read<WeaponsBloc>(),
               ctx.read<HomeBloc>(),
               ctx.read<ArtifactsBloc>(),
+              ctx.read<ElementsBloc>(),
             )..add(const MainEvent.init());
           },
         ),
@@ -132,7 +148,7 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final settingsService = getIt<SettingsService>();
             final deviceInfoService = getIt<DeviceInfoService>();
-            return SettingsBloc(settingsService, deviceInfoService, ctx.read<MainBloc>(), ctx.read<HomeBloc>());
+            return SettingsBloc(settingsService, deviceInfoService, ctx.read<MainBloc>(), ctx.read<HomeBloc>(), ctx.read<UrlPageBloc>());
           },
         ),
         BlocProvider(
@@ -208,6 +224,34 @@ class MyApp extends StatelessWidget {
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
             return MonstersBloc(genshinService);
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final dataService = getIt<DataService>();
+            final notificationService = getIt<NotificationService>();
+            final settingsService = getIt<SettingsService>();
+            return NotificationsBloc(dataService, notificationService, settingsService);
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final dataService = getIt<DataService>();
+            final notificationService = getIt<NotificationService>();
+            final genshinService = getIt<GenshinService>();
+            final localeService = getIt<LocaleService>();
+            final loggingService = getIt<LoggingService>();
+            final telemetryService = getIt<TelemetryService>();
+            final settingsService = getIt<SettingsService>();
+            return NotificationBloc(
+              dataService,
+              notificationService,
+              genshinService,
+              localeService,
+              loggingService,
+              telemetryService,
+              settingsService,
+            );
           },
         ),
       ],

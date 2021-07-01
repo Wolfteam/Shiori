@@ -59,6 +59,18 @@ class OtherSettings extends StatelessWidget {
                       value: settingsState.doubleBackToClose,
                       onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.doubleBackToCloseChanged(newValue: newVal)),
                     ),
+                    SwitchListTile(
+                      activeColor: theme.accentColor,
+                      title: Text(s.useOfficialMap),
+                      value: settingsState.useOfficialMap,
+                      onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.useOfficialMapChanged(newValue: newVal)),
+                    ),
+                    SwitchListTile(
+                      activeColor: theme.accentColor,
+                      title: Text(s.use24HourFormatOnDates),
+                      value: settingsState.useTwentyFourHoursFormat,
+                      onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.useTwentyFourHoursFormat(newValue: newVal)),
+                    ),
                     ListTile(
                       dense: true,
                       contentPadding: EdgeInsets.zero,
@@ -69,7 +81,7 @@ class OtherSettings extends StatelessWidget {
                           hint: Text(s.chooseServer),
                           value: settingsState.serverResetTime,
                           underline: Container(height: 0, color: Colors.transparent),
-                          onChanged: (v) => context.read<SettingsBloc>().add(SettingsEvent.serverResetTimeChanged(newValue: v)),
+                          onChanged: (v) => context.read<SettingsBloc>().add(SettingsEvent.serverResetTimeChanged(newValue: v!)),
                           items: AppServerResetTimeType.values
                               .map((type) => DropdownMenuItem<AppServerResetTimeType>(value: type, child: Text(s.translateServerResetTimeType(type))))
                               .toList(),

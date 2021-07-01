@@ -22,7 +22,7 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
     ArtifactsEvent event,
   ) async* {
     final s = event.map(
-      init: (_) => _buildInitialState(),
+      init: (e) => _buildInitialState(excludeKeys: e.excludeKeys),
       artifactFilterTypeChanged: (e) => currentState.copyWith.call(tempArtifactFilterType: e.artifactFilterType),
       rarityChanged: (e) => currentState.copyWith.call(tempRarity: e.rarity),
       sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
@@ -50,13 +50,17 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
   }
 
   ArtifactsState _buildInitialState({
-    String search,
+    String? search,
+    List<String> excludeKeys = const [],
     int rarity = 0,
     ArtifactFilterType artifactFilterType = ArtifactFilterType.name,
     SortDirectionType sortDirectionType = SortDirectionType.asc,
   }) {
     final isLoaded = state is _LoadedState;
     var data = _genshinService.getArtifactsForCard();
+    if (excludeKeys.isNotEmpty) {
+      data = data.where((el) => !excludeKeys.contains(el.key)).toList();
+    }
 
     if (!isLoaded) {
       _sortData(data, artifactFilterType, sortDirectionType);
@@ -70,6 +74,7 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
         tempArtifactFilterType: artifactFilterType,
         sortDirectionType: sortDirectionType,
         tempSortDirectionType: sortDirectionType,
+        excludeKeys: excludeKeys,
       );
     }
 
@@ -92,6 +97,7 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
       tempArtifactFilterType: artifactFilterType,
       sortDirectionType: sortDirectionType,
       tempSortDirectionType: sortDirectionType,
+      excludeKeys: excludeKeys,
     );
     return s;
   }

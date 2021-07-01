@@ -10,8 +10,8 @@ class ElementsButtonBar extends StatelessWidget {
   final Function(ElementType) onClick;
 
   const ElementsButtonBar({
-    Key key,
-    @required this.onClick,
+    Key? key,
+    required this.onClick,
     this.selectedValues = const [],
   }) : super(key: key);
 

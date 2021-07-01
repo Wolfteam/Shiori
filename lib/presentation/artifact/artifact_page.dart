@@ -166,7 +166,7 @@ class ArtifactPage extends StatelessWidget {
     final details = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(name, style: theme.textTheme.headline5.copyWith(fontWeight: FontWeight.bold, color: Colors.white)),
+        Text(name, style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold, color: Colors.white)),
         Rarity(stars: rarity, starSize: 25, alignment: MainAxisAlignment.start),
       ],
     );

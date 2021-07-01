@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:genshindb/application/url_page/url_page_bloc.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/services/device_info_service.dart';
 import 'package:genshindb/domain/services/settings_service.dart';
@@ -18,8 +19,15 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   final DeviceInfoService _deviceInfoService;
   final MainBloc _mainBloc;
   final HomeBloc _homeBloc;
+  final UrlPageBloc _urlPageBloc;
 
-  SettingsBloc(this._settingsService, this._deviceInfoService, this._mainBloc, this._homeBloc) : super(const SettingsState.loading());
+  SettingsBloc(
+    this._settingsService,
+    this._deviceInfoService,
+    this._mainBloc,
+    this._homeBloc,
+    this._urlPageBloc,
+  ) : super(const SettingsState.loading());
 
   _LoadedState get currentState => state as _LoadedState;
 
@@ -39,19 +47,30 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           showWeaponDetails: settings.showWeaponDetails,
           serverResetTime: settings.serverResetTime,
           doubleBackToClose: settings.doubleBackToClose,
+          useOfficialMap: settings.useOfficialMap,
+          useTwentyFourHoursFormat: settings.useTwentyFourHoursFormat,
         );
       },
       themeChanged: (event) async {
+        if (event.newValue == _settingsService.appTheme) {
+          return currentState;
+        }
         _settingsService.appTheme = event.newValue;
         _mainBloc.add(MainEvent.themeChanged(newValue: event.newValue));
         return currentState.copyWith.call(currentTheme: event.newValue);
       },
       accentColorChanged: (event) async {
+        if (event.newValue == _settingsService.accentColor) {
+          return currentState;
+        }
         _settingsService.accentColor = event.newValue;
         _mainBloc.add(MainEvent.accentColorChanged(newValue: event.newValue));
         return currentState.copyWith.call(currentAccentColor: event.newValue);
       },
       languageChanged: (event) async {
+        if (event.newValue == _settingsService.language) {
+          return currentState;
+        }
         _settingsService.language = event.newValue;
         _mainBloc.add(MainEvent.languageChanged(newValue: event.newValue));
         return currentState.copyWith.call(currentLanguage: event.newValue);
@@ -65,6 +84,9 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         return currentState.copyWith.call(showWeaponDetails: event.newValue);
       },
       serverResetTimeChanged: (event) async {
+        if (event.newValue == _settingsService.serverResetTime) {
+          return currentState;
+        }
         _settingsService.serverResetTime = event.newValue;
         _homeBloc.add(const HomeEvent.init());
         return currentState.copyWith.call(serverResetTime: event.newValue);
@@ -72,6 +94,15 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
       doubleBackToCloseChanged: (event) async {
         _settingsService.doubleBackToClose = event.newValue;
         return currentState.copyWith.call(doubleBackToClose: event.newValue);
+      },
+      useOfficialMapChanged: (event) async {
+        _settingsService.useOfficialMap = event.newValue;
+        _urlPageBloc.add(const UrlPageEvent.init(loadMap: false, loadWishSimulator: false, loadDailyCheckIn: false));
+        return currentState.copyWith.call(useOfficialMap: event.newValue);
+      },
+      useTwentyFourHoursFormat: (event) async {
+        _settingsService.useTwentyFourHoursFormat = event.newValue;
+        return currentState.copyWith.call(useTwentyFourHoursFormat: event.newValue);
       },
     );
 

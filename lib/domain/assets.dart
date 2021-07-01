@@ -8,8 +8,9 @@ class Assets {
   static String artifactsDbPath = '$dbPath/artifacts.json';
   static String materialsDbPath = '$dbPath/materials.json';
   static String elementsDbPath = '$dbPath/elements.json';
-  static String gameCodesDbPath = '$dbPath/game_codes.json';
   static String monstersDbPath = '$dbPath/monsters.json';
+  static String gadgetsDbPath = '$dbPath/gadgets.json';
+  static String furnitureDbPath = '$dbPath/furniture.json';
   static String translationsBasePath = 'assets/i18n';
 
   //General
@@ -44,14 +45,24 @@ class Assets {
 
   //Others
   static String otherImgsBasePath = 'assets/others';
+  static String noImageAvailablePath = '$othersBasePath/$noImageAvailableName';
 
   //Monsters
   static String monstersImgsBasePath = 'assets/monsters';
 
+  //Gadgets
+  static String gadgetsBasePath = 'assets/gadgets';
+
+  //Furniture
+  static String furnitureBasePath = 'assets/furniture';
+
   static String getArtifactPath(String name) => '$artifactsBasePath/$name';
+
   static String getCharacterPath(String name) => '$charactersBasePath/$name';
+
   static String getCharacterFullPath(String name) => '$characterFullBasePath/$name';
-  static String getSkillPath(String name) {
+
+  static String getSkillPath(String? name) {
     if (name.isNullEmptyOrWhitespace) {
       return '$othersBasePath/$noImageAvailableName';
     }
@@ -63,21 +74,35 @@ class Assets {
   static String getMonsterImgPath(String name) => '$monstersImgsBasePath/$name';
 
   static String getBowPath(String name) => '$bowsBasePath/$name';
+
   static String getCatalystPath(String name) => '$catalystBasePath/$name';
+
   static String getClaymorePath(String name) => '$claymoresBasePath/$name';
+
   static String getPolearmPath(String name) => '$polearmsBasePath/$name';
+
   static String getSwordPath(String name) => '$swordsBasePath/$name';
 
   static String getCommonMaterialPath(String name) => '$commonBasePath/$name';
+
   static String getElementalMaterialPath(String name) => '$elementalBasePath/$name';
+
   static String getJewelMaterialPath(String name) => '$jewelsBasePath/$name';
+
   static String getLocalMaterialPath(String name) => '$localBasePath/$name';
+
   static String getTalentMaterialPath(String name) => '$talentBasePath/$name';
+
   static String getWeaponMaterialPath(String name) => '$weaponBasePath/$name';
+
   static String getWeaponPrimaryMaterialPath(String name) => '$weaponPrimaryBasePath/$name';
+
   static String getCurrencyMaterialPath(String name) => '$currencyBasePath/$name';
+
   static String getOtherMaterialPath(String name) => '$othersBasePath/$name';
+
   static String getIngredientMaterialPath(String name) => '$ingredientsBasePath/$name';
+
   static String getExperienceMaterialPath(String name) => '$experienceBasePath/$name';
 
   static String getMaterialPath(String name, MaterialType type) {
@@ -123,6 +148,14 @@ class Assets {
         return '$translationsBasePath/zh_CN.json';
       case AppLanguageType.portuguese:
         return '$translationsBasePath/pt.json';
+      case AppLanguageType.italian:
+        return '$translationsBasePath/it.json';
+      case AppLanguageType.japanese:
+        return '$translationsBasePath/ja.json';
+      case AppLanguageType.vietnamese:
+        return '$translationsBasePath/vi.json';
+      case AppLanguageType.indonesian:
+        return '$translationsBasePath/id.json';
       default:
         throw Exception('Invalid language = $languageType');
     }
@@ -188,4 +221,10 @@ class Assets {
         throw Exception('Invalid artifact type = $type');
     }
   }
+
+  static String getOriginalResinPath() => Assets.getCurrencyMaterialPath('fragile_resin.png');
+
+  static String getGadgetPath(String image) => '$gadgetsBasePath/$image';
+
+  static String getFurniturePath(String image) => '$furnitureBasePath/$image';
 }

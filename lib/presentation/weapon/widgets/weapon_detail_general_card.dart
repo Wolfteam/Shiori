@@ -17,14 +17,14 @@ class WeaponDetailGeneralCard extends StatelessWidget {
   final ItemLocationType locationType;
 
   const WeaponDetailGeneralCard({
-    Key key,
-    @required this.name,
-    @required this.atk,
-    @required this.rarity,
-    @required this.statType,
-    @required this.secondaryStatValue,
-    @required this.type,
-    @required this.locationType,
+    Key? key,
+    required this.name,
+    required this.atk,
+    required this.rarity,
+    required this.statType,
+    required this.secondaryStatValue,
+    required this.type,
+    required this.locationType,
   }) : super(key: key);
 
   @override
@@ -36,7 +36,7 @@ class WeaponDetailGeneralCard extends StatelessWidget {
       children: [
         Text(
           name,
-          style: theme.textTheme.headline5.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+          style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         Rarity(stars: rarity, starSize: 25, alignment: MainAxisAlignment.start),
         ItemDescription(
@@ -55,13 +55,12 @@ class WeaponDetailGeneralCard extends StatelessWidget {
           ),
           useColumn: false,
         ),
-        ItemDescription(
-          title: s.secondaryState,
+        ItemDescription.row(
           widget: Text(
-            s.translateStatType(statType, secondaryStatValue),
+            '${s.secondaryState}: ${s.translateStatType(statType, secondaryStatValue)}',
             style: const TextStyle(color: Colors.white),
+            overflow: TextOverflow.ellipsis,
           ),
-          useColumn: false,
         ),
         ItemDescription(
           title: s.location,

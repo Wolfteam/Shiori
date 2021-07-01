@@ -16,8 +16,21 @@ import 'widgets/weapon_card.dart';
 class WeaponsPage extends StatefulWidget {
   final bool isInSelectionMode;
 
+  static Future<String?> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
+    final bloc = context.read<WeaponsBloc>();
+    bloc.add(WeaponsEvent.init(excludeKeys: excludeKeys));
+
+    final route = MaterialPageRoute<String>(builder: (ctx) => const WeaponsPage(isInSelectionMode: true));
+    final keyName = await Navigator.of(context).push(route);
+    await route.completed;
+
+    bloc.add(const WeaponsEvent.init());
+
+    return keyName;
+  }
+
   const WeaponsPage({
-    Key key,
+    Key? key,
     this.isInSelectionMode = false,
   }) : super(key: key);
 

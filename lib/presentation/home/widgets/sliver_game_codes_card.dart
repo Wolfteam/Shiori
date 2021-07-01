@@ -7,11 +7,19 @@ import 'package:genshindb/presentation/game_codes/game_codes_page.dart';
 import 'sliver_card_item.dart';
 
 class SliverGameCodesCard extends StatelessWidget {
+  final bool iconToTheLeft;
+
+  const SliverGameCodesCard({
+    Key? key,
+    required this.iconToTheLeft,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
     return SliverCardItem(
+      iconToTheLeft: iconToTheLeft,
       onClick: _showGameCodesDialog,
       icon: Icon(Icons.code, size: 60, color: theme.accentColor),
       children: [

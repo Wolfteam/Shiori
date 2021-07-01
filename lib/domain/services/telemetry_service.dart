@@ -1,9 +1,10 @@
+import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 
 abstract class TelemetryService {
   Future<void> initTelemetry();
 
-  Future<void> trackEventAsync(String name, [Map<String, String> properties]);
+  Future<void> trackEventAsync(String name, [Map<String, String>? properties]);
 
   Future<void> trackCharacterLoaded(
     String value, {
@@ -22,7 +23,7 @@ abstract class TelemetryService {
 
   Future<void> trackAscensionMaterialsOpened();
 
-  Future<void> trackUrlOpened(bool loadMap, bool loadWishSimulator, bool networkAvailable);
+  Future<void> trackUrlOpened(bool loadMap, bool loadWishSimulator, bool loadDailyCheckIn, bool networkAvailable);
 
   Future<void> trackCalculatorItemAscMaterialLoaded(String item);
 
@@ -52,4 +53,6 @@ abstract class TelemetryService {
   Future<void> trackItemUpdatedInInventory(String key, int quantity);
 
   Future<void> trackItemDeletedFromInventory(String key);
+
+  Future<void> trackNotificationCreated(AppNotificationType type);
 }

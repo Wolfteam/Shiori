@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart' show IterableExtension;
+import 'package:darq/darq.dart';
 import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/assets.dart';
 import 'package:genshindb/domain/enums/enums.dart';
@@ -15,13 +17,25 @@ import 'package:hive_flutter/hive_flutter.dart';
 class DataServiceImpl implements DataService {
   final GenshinService _genshinService;
   final CalculatorService _calculatorService;
-  Box<CalculatorSession> _sessionBox;
-  Box<CalculatorItem> _calcItemBox;
-  Box<CalculatorCharacterSkill> _calcItemSkillBox;
-  Box<InventoryItem> _inventoryBox;
-  Box<InventoryUsedItem> _inventoryUsedItemsBox;
-  Box<UsedGameCode> _usedGameCodesBox;
-  Box<TierListItem> _tierListBox;
+
+  late Box<CalculatorSession> _sessionBox;
+  late Box<CalculatorItem> _calcItemBox;
+  late Box<CalculatorCharacterSkill> _calcItemSkillBox;
+  late Box<InventoryItem> _inventoryBox;
+  late Box<InventoryUsedItem> _inventoryUsedItemsBox;
+  late Box<GameCode> _gameCodesBox;
+  late Box<GameCodeReward> _gameCodeRewardsBox;
+  late Box<TierListItem> _tierListBox;
+
+  late Box<NotificationCustom> _notificationsCustomBox;
+  late Box<NotificationExpedition> _notificationsExpeditionBox;
+  late Box<NotificationFarmingArtifact> _notificationsFarmingArtifactBox;
+  late Box<NotificationFarmingMaterial> _notificationsFarmingMaterialBox;
+  late Box<NotificationFurniture> _notificationsFurnitureBox;
+  late Box<NotificationGadget> _notificationsGadgetBox;
+  late Box<NotificationRealmCurrency> _notificationsRealmCurrencyBox;
+  late Box<NotificationResin> _notificationsResinBox;
+  late Box<NotificationWeeklyBoss> _notificationsWeeklyBossBox;
 
   DataServiceImpl(this._genshinService, this._calculatorService);
 
@@ -33,8 +47,19 @@ class DataServiceImpl implements DataService {
     _calcItemSkillBox = await Hive.openBox<CalculatorCharacterSkill>('calculatorSessionsItemsSkills');
     _inventoryBox = await Hive.openBox<InventoryItem>('inventory');
     _inventoryUsedItemsBox = await Hive.openBox<InventoryUsedItem>('inventoryUsedItems');
-    _usedGameCodesBox = await Hive.openBox<UsedGameCode>('usedGameCodes');
+    _gameCodesBox = await Hive.openBox<GameCode>('gameCodes');
+    _gameCodeRewardsBox = await Hive.openBox<GameCodeReward>('gameCodeRewards');
     _tierListBox = await Hive.openBox<TierListItem>('tierList');
+
+    _notificationsCustomBox = await Hive.openBox('notificationsCustom');
+    _notificationsExpeditionBox = await Hive.openBox('notificationsExpedition');
+    _notificationsFarmingArtifactBox = await Hive.openBox('notificationsFarmingArtifact');
+    _notificationsFarmingMaterialBox = await Hive.openBox('notificationsFarmingMaterial');
+    _notificationsFurnitureBox = await Hive.openBox('notificationsFurniture');
+    _notificationsGadgetBox = await Hive.openBox('notificationsGadget');
+    _notificationsRealmCurrencyBox = await Hive.openBox('notificationsRealmCurrency');
+    _notificationsResinBox = await Hive.openBox('notificationsResin');
+    _notificationsWeeklyBossBox = await Hive.openBox('notificationsWeeklyBoss');
   }
 
   @override
@@ -80,7 +105,7 @@ class DataServiceImpl implements DataService {
 
   @override
   Future<void> updateCalAscMatSession(int sessionKey, String name, int position, {bool redistributeMaterials = false}) async {
-    final session = _sessionBox.get(sessionKey);
+    final session = _sessionBox.get(sessionKey)!;
     session.name = name;
     session.position = position;
     await session.save();
@@ -107,20 +132,8 @@ class DataServiceImpl implements DataService {
   }
 
   @override
-  Future<ItemAscensionMaterials> addCalAscMatSessionItem(int sessionKey, ItemAscensionMaterials item) async {
-    final mappedItem = CalculatorItem(
-      sessionKey,
-      item.key,
-      item.position,
-      item.currentLevel,
-      item.desiredLevel,
-      item.currentAscensionLevel,
-      item.desiredAscensionLevel,
-      item.isCharacter,
-      item.isWeapon,
-      item.isActive,
-      item.useMaterialsFromInventory,
-    );
+  Future<ItemAscensionMaterials> addCalAscMatSessionItem(int sessionKey, ItemAscensionMaterials item, {bool redistribute = true}) async {
+    final mappedItem = _toCalculatorItem(sessionKey, item);
 
     final calculatorItemKey = await _calcItemBox.add(mappedItem);
     final skills = item.skills.map((e) => CalculatorCharacterSkill(calculatorItemKey, e.key, e.currentLevel, e.desiredLevel, e.position)).toList();
@@ -136,6 +149,9 @@ class DataServiceImpl implements DataService {
       await _useItemFromInventory(calculatorItemKey, mat.key, ItemType.material, material.quantity);
     }
 
+    if (!redistribute) {
+      return item;
+    }
     //Since we added a new item, we need to redistribute
     //the materials because the priority of this item could be higher than the others
     await redistributeAllInventoryMaterials();
@@ -155,9 +171,8 @@ class DataServiceImpl implements DataService {
         return e;
       }
       final usedQuantity = usedInventoryItems
-              .firstWhere(
+              .firstWhereOrNull(
                 (el) => el.calculatorItemKey == calculatorItemKey && el.itemKey == material.key && el.type == ItemType.material.index,
-                orElse: () => null,
               )
               ?.usedQuantity ??
           e.quantity;
@@ -170,14 +185,19 @@ class DataServiceImpl implements DataService {
   }
 
   @override
-  Future<ItemAscensionMaterials> updateCalAscMatSessionItem(int sessionKey, int position, ItemAscensionMaterials item) async {
-    await deleteCalAscMatSessionItem(sessionKey, item.position);
-    return addCalAscMatSessionItem(sessionKey, item);
+  Future<ItemAscensionMaterials> updateCalAscMatSessionItem(
+    int sessionKey,
+    int newItemPosition,
+    ItemAscensionMaterials item, {
+    bool redistribute = true,
+  }) async {
+    await deleteCalAscMatSessionItem(sessionKey, item.position, redistribute: false);
+    return addCalAscMatSessionItem(sessionKey, item.copyWith.call(position: newItemPosition), redistribute: redistribute);
   }
 
   @override
-  Future<void> deleteCalAscMatSessionItem(int sessionKey, int position) async {
-    final calcItem = _calcItemBox.values.firstWhere((el) => el.sessionKey == sessionKey && el.position == position, orElse: () => null);
+  Future<void> deleteCalAscMatSessionItem(int sessionKey, int? position, {bool redistribute = true}) async {
+    final calcItem = _calcItemBox.values.firstWhereOrNull((el) => el.sessionKey == sessionKey && el.position == position);
     if (calcItem == null) {
       return;
     }
@@ -188,7 +208,7 @@ class DataServiceImpl implements DataService {
     //Make sure we delete the item before redistributing
     await _calcItemBox.delete(calcItemKey);
 
-    await _clearUsedInventoryItems(calcItemKey, redistribute: true);
+    await _clearUsedInventoryItems(calcItemKey, redistribute: redistribute);
   }
 
   @override
@@ -300,18 +320,17 @@ class DataServiceImpl implements DataService {
     for (final session in sessions) {
       final calcItems = _calcItemBox.values.where((el) => el.sessionKey == session.key).toList()..sort((x, y) => x.position.compareTo(y.position));
       for (final calItem in calcItems) {
-        if (!calItem.useMaterialsFromInventory) {
+        if (!calItem.useMaterialsFromInventory || !calItem.isActive) {
           continue;
         }
 
         //If we hit this point, that means that itemKey COULD be being used, so we need to update the used values accordingly
         final item = calItem.isCharacter ? _buildForCharacter(calItem) : _buildForWeapon(calItem);
         final material = _genshinService.getMaterial(itemKey);
-        final desiredQuantityToUse = item.materials.firstWhere((el) => el.fullImagePath == material.fullImagePath, orElse: () => null)?.quantity ?? 0;
+        final desiredQuantityToUse = item.materials.firstWhereOrNull((el) => el.fullImagePath == material.fullImagePath)?.quantity ?? 0;
 
         //Next, we check if there is a used item for this calculator item
-        var usedInInventory =
-            _inventoryUsedItemsBox.values.firstWhere((el) => el.calculatorItemKey == calItem.key && el.itemKey == itemKey, orElse: () => null);
+        var usedInInventory = _inventoryUsedItemsBox.values.firstWhereOrNull((el) => el.calculatorItemKey == calItem.key && el.itemKey == itemKey);
 
         //If no used item was found, lets check if this calc. item could benefit from this itemKey
         if (usedInInventory == null) {
@@ -354,28 +373,68 @@ class DataServiceImpl implements DataService {
 
   @override
   List<GameCodeModel> getAllGameCodes() {
-    final usedCodes = getAllUsedGameCodes();
-    return _genshinService.getAllGameCodes().map((e) {
-      final isUsed = usedCodes.contains(e.code);
-      return GameCodeModel(code: e.code, isExpired: e.isExpired, isUsed: isUsed, rewards: e.rewards);
+    return _gameCodesBox.values.map((e) {
+      final rewards = _gameCodeRewardsBox.values.where((el) => el.gameCodeKey == e.key).map((reward) {
+        final material = _genshinService.getMaterial(reward.itemKey);
+        return ItemAscensionMaterialModel(quantity: reward.quantity, image: material.image, materialType: material.type);
+      }).toList();
+      return GameCodeModel(
+        code: e.code,
+        isExpired: e.isExpired,
+        expiredOn: e.expiredOn,
+        discoveredOn: e.discoveredOn,
+        isUsed: e.usedOn != null,
+        rewards: rewards,
+        region: e.region != null ? AppServerResetTimeType.values[e.region!] : null,
+      );
     }).toList();
   }
 
   @override
-  List<String> getAllUsedGameCodes() {
-    return _usedGameCodesBox.values.map((e) => e.code).toList();
+  Future<void> saveGameCodes(List<GameCodeModel> itemsFromApi) async {
+    final itemsOnDb = _gameCodesBox.values.toList();
+
+    for (final item in itemsFromApi) {
+      final gcOnDb = itemsOnDb.firstWhereOrNull((el) => el.code == item.code);
+      if (gcOnDb != null) {
+        gcOnDb.isExpired = item.isExpired;
+        gcOnDb.expiredOn = item.expiredOn;
+        gcOnDb.discoveredOn = item.discoveredOn;
+        gcOnDb.region = item.region?.index;
+        await gcOnDb.save();
+        await deleteAllGameCodeRewards(gcOnDb.key as int);
+        await saveGameCodeRewards(gcOnDb.key as int, item.rewards);
+      } else {
+        final gc = GameCode(item.code, null, item.discoveredOn, item.expiredOn, item.isExpired, item.region?.index);
+        await _gameCodesBox.add(gc);
+        //This line shouldn't be necessary, though for testing purposes I'll leave it here
+        await deleteAllGameCodeRewards(gc.key as int);
+        await saveGameCodeRewards(gc.key as int, item.rewards);
+      }
+    }
+  }
+
+  @override
+  Future<void> saveGameCodeRewards(int gameCodeKey, List<ItemAscensionMaterialModel> rewards) {
+    final rewardsToSave = rewards
+        .map(
+          (e) => GameCodeReward(gameCodeKey, _genshinService.getMaterialByImage(e.fullImagePath).key, e.quantity),
+        )
+        .toList();
+    return _gameCodeRewardsBox.addAll(rewardsToSave);
+  }
+
+  @override
+  Future<void> deleteAllGameCodeRewards(int gameCodeKey) {
+    final keys = _gameCodeRewardsBox.values.where((el) => el.gameCodeKey == gameCodeKey).map((e) => e.key).toList();
+    return _gameCodeRewardsBox.deleteAll(keys);
   }
 
   @override
   Future<void> markCodeAsUsed(String code, {bool wasUsed = true}) async {
-    final usedGameCode = _usedGameCodesBox.values.firstWhere((el) => el.code == code, orElse: () => null);
-    if (usedGameCode != null) {
-      await _usedGameCodesBox.delete(usedGameCode.key);
-    }
-
-    if (wasUsed) {
-      await _usedGameCodesBox.add(UsedGameCode(code, DateTime.now()));
-    }
+    final usedGameCode = _gameCodesBox.values.firstWhereOrNull((el) => el.code == code)!;
+    usedGameCode.usedOn = wasUsed ? DateTime.now() : null;
+    await usedGameCode.save();
   }
 
   @override
@@ -397,17 +456,629 @@ class DataServiceImpl implements DataService {
     await _tierListBox.deleteAll(keys);
   }
 
+  @override
+  List<NotificationItem> getAllNotifications() {
+    final notifications = _notificationsCustomBox.values.map((e) => _mapToNotificationItem(e)).toList() +
+        _notificationsExpeditionBox.values.map((e) => _mapToNotificationItem(e)).toList() +
+        _notificationsFarmingArtifactBox.values.map((e) => _mapToNotificationItem(e)).toList() +
+        _notificationsFarmingMaterialBox.values.map((e) => _mapToNotificationItem(e)).toList() +
+        _notificationsFurnitureBox.values.map((e) => _mapToNotificationItem(e)).toList() +
+        _notificationsGadgetBox.values.map((e) => _mapToNotificationItem(e)).toList() +
+        _notificationsRealmCurrencyBox.values.map((e) => _mapToNotificationItem(e)).toList() +
+        _notificationsResinBox.values.map((e) => _mapToNotificationItem(e)).toList() +
+        _notificationsWeeklyBossBox.values.map((e) => _mapToNotificationItem(e)).toList();
+    return notifications.orderBy((el) => el.createdAt).toList();
+  }
+
+  @override
+  NotificationItem getNotification(int key, AppNotificationType type) {
+    final item = _getNotification(key, type);
+    return _mapToNotificationItem(item);
+  }
+
+  @override
+  Future<NotificationItem> saveResinNotification(
+    String itemKey,
+    String title,
+    String body,
+    int currentResinValue, {
+    String? note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    final notification = NotificationResin(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: getNotificationDateForResin(currentResinValue),
+      showNotification: showNotification,
+      currentResinValue: currentResinValue,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
+    );
+    final key = await _notificationsResinBox.add(notification);
+    return getNotification(key, AppNotificationType.resin);
+  }
+
+  @override
+  Future<NotificationItem> saveExpeditionNotification(
+    String itemKey,
+    String title,
+    String body,
+    ExpeditionTimeType expeditionTimeType, {
+    String? note,
+    bool showNotification = true,
+    bool withTimeReduction = false,
+  }) async {
+    final now = DateTime.now();
+    final notification = NotificationExpedition(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: now.add(getExpeditionDuration(expeditionTimeType, withTimeReduction)),
+      showNotification: showNotification,
+      withTimeReduction: withTimeReduction,
+      expeditionTimeType: expeditionTimeType.index,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
+    );
+    final key = await _notificationsExpeditionBox.add(notification);
+    return getNotification(key, AppNotificationType.expedition);
+  }
+
+  @override
+  Future<NotificationItem> saveGadgetNotification(
+    String itemKey,
+    String title,
+    String body, {
+    String? note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    final gadget = _genshinService.getGadget(itemKey);
+    final completesAt = now.add(gadget.cooldownDuration!);
+    final notification = NotificationGadget(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: completesAt,
+      showNotification: showNotification,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
+    );
+    final key = await _notificationsGadgetBox.add(notification);
+    return getNotification(key, AppNotificationType.gadget);
+  }
+
+  @override
+  Future<NotificationItem> saveFurnitureNotification(
+    String itemKey,
+    FurnitureCraftingTimeType type,
+    String title,
+    String body, {
+    String? note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    final notification = NotificationFurniture(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: now.add(getFurnitureDuration(type)),
+      showNotification: showNotification,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
+      furnitureCraftingTimeType: type.index,
+    );
+    final key = await _notificationsFurnitureBox.add(notification);
+    return getNotification(key, AppNotificationType.furniture);
+  }
+
+  @override
+  Future<NotificationItem> saveFarmingArtifactNotification(
+    String itemKey,
+    ArtifactFarmingTimeType type,
+    String title,
+    String body, {
+    String? note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    final completesAt = now.add(getArtifactFarmingCooldownDuration(type));
+    final notification = NotificationFarmingArtifact(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: completesAt,
+      showNotification: showNotification,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
+      artifactFarmingTimeType: type.index,
+    );
+    final key = await _notificationsFarmingArtifactBox.add(notification);
+    return getNotification(key, AppNotificationType.farmingArtifacts);
+  }
+
+  @override
+  Future<NotificationItem> saveFarmingMaterialNotification(
+    String itemKey,
+    String title,
+    String body, {
+    String? note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    final completesAt = now.add(_genshinService.getMaterial(itemKey).farmingRespawnDuration!);
+    final notification = NotificationFarmingMaterial(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: completesAt,
+      showNotification: showNotification,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
+    );
+    final key = await _notificationsFarmingMaterialBox.add(notification);
+    return getNotification(key, AppNotificationType.farmingMaterials);
+  }
+
+  @override
+  Future<NotificationItem> saveRealmCurrencyNotification(
+    String itemKey,
+    RealmRankType realmRankType,
+    int currentTrustRankLevel,
+    int currentRealmCurrency,
+    String title,
+    String body, {
+    String? note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    final completesAt = now.add(getRealmCurrencyDuration(currentRealmCurrency, currentTrustRankLevel, realmRankType));
+    final notification = NotificationRealmCurrency(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: completesAt,
+      realmCurrency: currentRealmCurrency,
+      realmRankType: realmRankType.index,
+      realmTrustRank: currentTrustRankLevel,
+      showNotification: showNotification,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
+    );
+    final key = await _notificationsRealmCurrencyBox.add(notification);
+    return getNotification(key, AppNotificationType.realmCurrency);
+  }
+
+  @override
+  Future<NotificationItem> saveWeeklyBossNotification(
+    String itemKey,
+    AppServerResetTimeType serverResetTimeType,
+    String title,
+    String body, {
+    String? note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    final completesAt = _genshinService.getNextDateForWeeklyBoss(serverResetTimeType);
+    final notification = NotificationWeeklyBoss(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: completesAt,
+      showNotification: showNotification,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
+    );
+    final key = await _notificationsWeeklyBossBox.add(notification);
+    return getNotification(key, AppNotificationType.weeklyBoss);
+  }
+
+  @override
+  Future<NotificationItem> saveCustomNotification(
+    String itemKey,
+    String title,
+    String body,
+    DateTime completesAt,
+    AppNotificationItemType notificationItemType, {
+    String? note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    final notification = NotificationCustom.custom(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: completesAt,
+      showNotification: showNotification,
+      notificationItemType: notificationItemType.index,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
+    );
+    final key = await _notificationsCustomBox.add(notification);
+    return getNotification(key, AppNotificationType.custom);
+  }
+
+  @override
+  Future<NotificationItem> saveDailyCheckInNotification(
+    String itemKey,
+    String title,
+    String body, {
+    String? note,
+    bool showNotification = true,
+  }) async {
+    final now = DateTime.now();
+    final notification = NotificationCustom.forDailyCheckIn(
+      itemKey: itemKey,
+      createdAt: now,
+      completesAt: now.add(dailyCheckInResetDuration),
+      showNotification: showNotification,
+      note: note?.trim(),
+      title: title.trim(),
+      body: body.trim(),
+    );
+    final key = await _notificationsCustomBox.add(notification);
+    return getNotification(key, AppNotificationType.dailyCheckIn);
+  }
+
+  @override
+  Future<void> deleteNotification(int key, AppNotificationType type) {
+    switch (type) {
+      case AppNotificationType.resin:
+        return _notificationsResinBox.delete(key);
+      case AppNotificationType.expedition:
+        return _notificationsExpeditionBox.delete(key);
+      case AppNotificationType.farmingMaterials:
+        return _notificationsFarmingMaterialBox.delete(key);
+      case AppNotificationType.farmingArtifacts:
+        return _notificationsFarmingArtifactBox.delete(key);
+      case AppNotificationType.gadget:
+        return _notificationsGadgetBox.delete(key);
+      case AppNotificationType.furniture:
+        return _notificationsFurnitureBox.delete(key);
+      case AppNotificationType.realmCurrency:
+        return _notificationsRealmCurrencyBox.delete(key);
+      case AppNotificationType.weeklyBoss:
+        return _notificationsWeeklyBossBox.delete(key);
+      case AppNotificationType.custom:
+      case AppNotificationType.dailyCheckIn:
+        return _notificationsCustomBox.delete(key);
+      default:
+        throw Exception('Invalid notification type = $type');
+    }
+  }
+
+  @override
+  Future<NotificationItem> resetNotification(int key, AppNotificationType type, AppServerResetTimeType serverResetTimeType) async {
+    switch (type) {
+      case AppNotificationType.resin:
+        final item = _getNotification<NotificationResin>(key, type);
+        item.currentResinValue = 0;
+        item.completesAt = getNotificationDateForResin(item.currentResinValue);
+        await item.save();
+        return _mapToNotificationItem(item);
+      case AppNotificationType.expedition:
+        final item = _getNotification<NotificationExpedition>(key, type);
+        final duration = getExpeditionDuration(ExpeditionTimeType.values[item.expeditionTimeType], item.withTimeReduction);
+        item.completesAt = DateTime.now().add(duration);
+        await item.save();
+        return _mapToNotificationItem(item);
+      case AppNotificationType.farmingMaterials:
+        final item = _getNotification<NotificationFarmingMaterial>(key, type);
+        item.completesAt = DateTime.now().add(_genshinService.getMaterial(item.itemKey).farmingRespawnDuration!);
+        await item.save();
+        return _mapToNotificationItem(item);
+      case AppNotificationType.farmingArtifacts:
+        final item = _getNotification<NotificationFarmingArtifact>(key, type);
+        item.completesAt = DateTime.now().add(getArtifactFarmingCooldownDuration(ArtifactFarmingTimeType.values[item.artifactFarmingTimeType]));
+        await item.save();
+        return _mapToNotificationItem(item);
+      case AppNotificationType.gadget:
+        final item = _getNotification<NotificationGadget>(key, type);
+        item.completesAt = DateTime.now().add(_genshinService.getGadget(item.itemKey).cooldownDuration!);
+        await item.save();
+        return _mapToNotificationItem(item);
+      case AppNotificationType.furniture:
+        final item = _getNotification<NotificationFurniture>(key, type);
+        item.completesAt = DateTime.now().add(getFurnitureDuration(FurnitureCraftingTimeType.values[item.furnitureCraftingTimeType]));
+        await item.save();
+        return _mapToNotificationItem(item);
+      case AppNotificationType.realmCurrency:
+        final item = _getNotification<NotificationRealmCurrency>(key, type);
+        item.realmCurrency = 0;
+        item.completesAt = DateTime.now().add(getRealmCurrencyDuration(
+          item.realmCurrency,
+          item.realmTrustRank,
+          RealmRankType.values[item.realmRankType],
+        ));
+        await item.save();
+        return _mapToNotificationItem(item);
+      case AppNotificationType.weeklyBoss:
+        final item = _getNotification<NotificationWeeklyBoss>(key, type);
+        item.completesAt = _genshinService.getNextDateForWeeklyBoss(serverResetTimeType);
+        await item.save();
+        return _mapToNotificationItem(item);
+      case AppNotificationType.custom:
+        break;
+      case AppNotificationType.dailyCheckIn:
+        final item = _getNotification<NotificationCustom>(key, type);
+        item.completesAt = DateTime.now().add(const Duration(hours: 24));
+        await item.save();
+        return _mapToNotificationItem(item);
+    }
+
+    throw Exception('The provided app notification type = $type is not valid for a reset');
+  }
+
+  @override
+  Future<NotificationItem> stopNotification(int key, AppNotificationType type) async {
+    final item = _getNotification(key, type);
+    item.completesAt = DateTime.now();
+
+    await (item as HiveObject).save();
+    return _mapToNotificationItem(item);
+  }
+
+  @override
+  Future<NotificationItem> updateResinNotification(
+    int key,
+    String itemKey,
+    String title,
+    String body,
+    int currentResinValue,
+    bool showNotification, {
+    String? note,
+  }) {
+    final item = _notificationsResinBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    if (currentResinValue != item.currentResinValue || isCompleted) {
+      item.completesAt = getNotificationDateForResin(currentResinValue);
+    }
+    item.itemKey = itemKey;
+    item.currentResinValue = currentResinValue;
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateExpeditionNotification(
+    int key,
+    String itemKey,
+    ExpeditionTimeType expeditionTimeType,
+    String title,
+    String body,
+    bool showNotification,
+    bool withTimeReduction, {
+    String? note,
+  }) {
+    final item = _notificationsExpeditionBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    if (item.expeditionTimeType != expeditionTimeType.index || item.withTimeReduction != withTimeReduction || isCompleted) {
+      final now = DateTime.now();
+      item.completesAt = now.add(getExpeditionDuration(expeditionTimeType, withTimeReduction));
+    }
+    item.expeditionTimeType = expeditionTimeType.index;
+    item.withTimeReduction = withTimeReduction;
+    item.itemKey = itemKey;
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateFarmingMaterialNotification(
+    int key,
+    String itemKey,
+    String title,
+    String body,
+    bool showNotification, {
+    String? note,
+  }) {
+    final item = _notificationsFarmingMaterialBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    if (item.itemKey != itemKey || isCompleted) {
+      final newDuration = _genshinService.getMaterial(itemKey).farmingRespawnDuration!;
+      item.completesAt = DateTime.now().add(newDuration);
+    }
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateFarmingArtifactNotification(
+    int key,
+    String itemKey,
+    ArtifactFarmingTimeType type,
+    String title,
+    String body,
+    bool showNotification, {
+    String? note,
+  }) {
+    final item = _notificationsFarmingArtifactBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    if (type.index != item.artifactFarmingTimeType || isCompleted) {
+      final newDuration = getArtifactFarmingCooldownDuration(type);
+      item.completesAt = DateTime.now().add(newDuration);
+    }
+    item.artifactFarmingTimeType = type.index;
+    item.itemKey = itemKey;
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateGadgetNotification(
+    int key,
+    String itemKey,
+    String title,
+    String body,
+    bool showNotification, {
+    String? note,
+  }) {
+    final item = _notificationsGadgetBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    if (item.itemKey != itemKey || isCompleted) {
+      final gadget = _genshinService.getGadget(item.itemKey);
+      final now = DateTime.now();
+      item.completesAt = now.add(gadget.cooldownDuration!);
+      item.itemKey = itemKey;
+    }
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateFurnitureNotification(
+    int key,
+    String itemKey,
+    FurnitureCraftingTimeType type,
+    String title,
+    String body,
+    bool showNotification, {
+    String? note,
+  }) {
+    final item = _notificationsFurnitureBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    item.itemKey = itemKey;
+    if (item.furnitureCraftingTimeType != type.index || isCompleted) {
+      item.furnitureCraftingTimeType = type.index;
+      item.completesAt = DateTime.now().add(getFurnitureDuration(type));
+    }
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateRealmCurrencyNotification(
+    int key,
+    String itemKey,
+    RealmRankType realmRankType,
+    int currentTrustRankLevel,
+    int currentRealmCurrency,
+    String title,
+    String body,
+    bool showNotification, {
+    String? note,
+  }) {
+    final item = _notificationsRealmCurrencyBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    item.itemKey = itemKey;
+    if (item.realmRankType != realmRankType.index ||
+        item.realmTrustRank != currentTrustRankLevel ||
+        item.realmCurrency != currentRealmCurrency ||
+        isCompleted) {
+      final duration = getRealmCurrencyDuration(currentRealmCurrency, currentTrustRankLevel, realmRankType);
+      item.completesAt = DateTime.now().add(duration);
+      item.realmRankType = realmRankType.index;
+      item.realmTrustRank = currentTrustRankLevel;
+      item.realmCurrency = currentRealmCurrency;
+    }
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateWeeklyBossNotification(
+    int key,
+    AppServerResetTimeType serverResetTimeType,
+    String itemKey,
+    String title,
+    String body,
+    bool showNotification, {
+    String? note,
+  }) {
+    final item = _notificationsWeeklyBossBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    if (item.itemKey != itemKey) {
+      item.itemKey = itemKey;
+    }
+    if (isCompleted) {
+      item.completesAt = _genshinService.getNextDateForWeeklyBoss(serverResetTimeType);
+    }
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateCustomNotification(
+    int key,
+    String itemKey,
+    String title,
+    String body,
+    DateTime completesAt,
+    bool showNotification,
+    AppNotificationItemType notificationItemType, {
+    String? note,
+  }) async {
+    final item = _notificationsCustomBox.values.firstWhere((el) => el.key == key);
+    item
+      ..itemKey = itemKey
+      ..notificationItemType = notificationItemType.index;
+
+    if (item.completesAt != completesAt) {
+      item.completesAt = completesAt;
+    }
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> updateDailyCheckInNotification(
+    int key,
+    String itemKey,
+    String title,
+    String body,
+    bool showNotification, {
+    String? note,
+  }) async {
+    final item = _notificationsCustomBox.values.firstWhere((el) => el.key == key);
+    final isCompleted = item.completesAt.isBefore(DateTime.now());
+    item.itemKey = itemKey;
+
+    if (isCompleted) {
+      item.completesAt = DateTime.now().add(dailyCheckInResetDuration);
+    }
+
+    return _updateNotification(item, title, body, note, showNotification);
+  }
+
+  @override
+  Future<NotificationItem> reduceNotificationHours(int key, AppNotificationType type, int hours) {
+    final notSupportedTypes = [AppNotificationType.realmCurrency, AppNotificationType.resin];
+    assert(!notSupportedTypes.contains(type));
+
+    final item = _getNotification(key, type);
+    final now = DateTime.now();
+    var completesAt = item.completesAt.subtract(Duration(hours: hours));
+
+    if (completesAt.isBefore(now)) {
+      completesAt = now;
+    }
+
+    item.completesAt = completesAt;
+    return _updateNotification(item, item.title, item.body, item.note, item.showNotification);
+  }
+
   void _registerAdapters() {
     Hive.registerAdapter(CalculatorCharacterSkillAdapter());
     Hive.registerAdapter(CalculatorItemAdapter());
     Hive.registerAdapter(CalculatorSessionAdapter());
     Hive.registerAdapter(InventoryItemAdapter());
     Hive.registerAdapter(InventoryUsedItemAdapter());
-    Hive.registerAdapter(UsedGameCodeAdapter());
+    Hive.registerAdapter(GameCodeAdapter());
+    Hive.registerAdapter(GameCodeRewardAdapter());
     Hive.registerAdapter(TierListItemAdapter());
+    Hive.registerAdapter(NotificationCustomAdapter());
+    Hive.registerAdapter(NotificationExpeditionAdapter());
+    Hive.registerAdapter(NotificationFarmingArtifactAdapter());
+    Hive.registerAdapter(NotificationFarmingMaterialAdapter());
+    Hive.registerAdapter(NotificationFurnitureAdapter());
+    Hive.registerAdapter(NotificationGadgetAdapter());
+    Hive.registerAdapter(NotificationRealmCurrencyAdapter());
+    Hive.registerAdapter(NotificationResinAdapter());
+    Hive.registerAdapter(NotificationWeeklyBossAdapter());
   }
 
-  ItemAscensionMaterials _buildForCharacter(CalculatorItem item, {int calculatorItemKey, bool includeInventory = false}) {
+  ItemAscensionMaterials _buildForCharacter(CalculatorItem item, {int? calculatorItemKey, bool includeInventory = false}) {
     final character = _genshinService.getCharacter(item.itemKey);
     final translation = _genshinService.getCharacterTranslation(item.itemKey);
     final skills = _calcItemSkillBox.values
@@ -423,7 +1094,7 @@ class DataServiceImpl implements DataService {
       skills,
     );
 
-    if (item.useMaterialsFromInventory && includeInventory && calculatorItemKey != null) {
+    if (item.useMaterialsFromInventory && item.isActive && includeInventory && calculatorItemKey != null) {
       materials = _considerMaterialsInInventory(calculatorItemKey, materials);
     }
 
@@ -468,7 +1139,7 @@ class DataServiceImpl implements DataService {
     );
   }
 
-  ItemAscensionMaterials _buildForWeapon(CalculatorItem item, {int calculatorItemKey, bool includeInventory = false}) {
+  ItemAscensionMaterials _buildForWeapon(CalculatorItem item, {int? calculatorItemKey, bool includeInventory = false}) {
     final weapon = _genshinService.getWeapon(item.itemKey);
     final translation = _genshinService.getWeaponTranslation(item.itemKey);
     var materials = _calculatorService.getWeaponMaterialsToUse(
@@ -479,7 +1150,7 @@ class DataServiceImpl implements DataService {
       item.desiredAscensionLevel,
     );
 
-    if (item.useMaterialsFromInventory && includeInventory && calculatorItemKey != null) {
+    if (item.useMaterialsFromInventory && item.isActive && includeInventory && calculatorItemKey != null) {
       materials = _considerMaterialsInInventory(calculatorItemKey, materials);
     }
 
@@ -514,9 +1185,8 @@ class DataServiceImpl implements DataService {
       }
 
       final usedQuantity = _inventoryUsedItemsBox.values
-              .firstWhere(
+              .firstWhereOrNull(
                 (el) => el.calculatorItemKey == calculatorItemKey && el.itemKey == material.key && el.type == ItemType.material.index,
-                orElse: () => null,
               )
               ?.usedQuantity ??
           0;
@@ -527,8 +1197,8 @@ class DataServiceImpl implements DataService {
     }).toList();
   }
 
-  InventoryItem _getItemFromInventory(String key, ItemType type) {
-    return _inventoryBox.values.firstWhere((el) => el.itemKey == key && el.type == type.index, orElse: () => null);
+  InventoryItem? _getItemFromInventory(String key, ItemType type) {
+    return _inventoryBox.values.firstWhereOrNull((el) => el.itemKey == key && el.type == type.index);
   }
 
   Future<void> _useItemFromInventory(int calculatorItemKey, String itemKey, ItemType type, int quantityToUse) async {
@@ -538,7 +1208,7 @@ class DataServiceImpl implements DataService {
 
     final used = getNumberOfItemsUsed(itemKey, type);
 
-    final item = _getItemFromInventory(itemKey, type);
+    final item = _getItemFromInventory(itemKey, type)!;
     final available = item.quantity - used;
     final toUse = available - quantityToUse < 0 ? available : quantityToUse;
     if (toUse == 0) {
@@ -560,7 +1230,7 @@ class DataServiceImpl implements DataService {
     await redistributeAllInventoryMaterials();
   }
 
-  Future<void> _clearUsedInventoryItems(int calculatorItemKey, {String onlyItemKey, bool redistribute = false}) async {
+  Future<void> _clearUsedInventoryItems(int calculatorItemKey, {String? onlyItemKey, bool redistribute = false}) async {
     final usedItems = onlyItemKey.isNullEmptyOrWhitespace
         ? _inventoryUsedItemsBox.values.where((el) => el.calculatorItemKey == calculatorItemKey).map((e) => e.key).toList()
         : _inventoryUsedItemsBox.values
@@ -571,5 +1241,147 @@ class DataServiceImpl implements DataService {
     if (redistribute) {
       await redistributeAllInventoryMaterials();
     }
+  }
+
+  CalculatorItem _toCalculatorItem(int sessionKey, ItemAscensionMaterials item) {
+    return CalculatorItem(
+      sessionKey,
+      item.key,
+      item.position,
+      item.currentLevel,
+      item.desiredLevel,
+      item.currentAscensionLevel,
+      item.desiredAscensionLevel,
+      item.isCharacter,
+      item.isWeapon,
+      item.isActive,
+      item.useMaterialsFromInventory,
+    );
+  }
+
+  T _getNotification<T extends NotificationBase>(int key, AppNotificationType type) {
+    switch (type) {
+      case AppNotificationType.resin:
+        return _notificationsResinBox.values.firstWhere((el) => el.key == key) as T;
+      case AppNotificationType.expedition:
+        return _notificationsExpeditionBox.values.firstWhere((el) => el.key == key) as T;
+      case AppNotificationType.farmingMaterials:
+        return _notificationsFarmingMaterialBox.values.firstWhere((el) => el.key == key) as T;
+      case AppNotificationType.farmingArtifacts:
+        return _notificationsFarmingArtifactBox.values.firstWhere((el) => el.key == key) as T;
+      case AppNotificationType.gadget:
+        return _notificationsGadgetBox.values.firstWhere((el) => el.key == key) as T;
+      case AppNotificationType.furniture:
+        return _notificationsFurnitureBox.values.firstWhere((el) => el.key == key) as T;
+      case AppNotificationType.realmCurrency:
+        return _notificationsRealmCurrencyBox.values.firstWhere((el) => el.key == key) as T;
+      case AppNotificationType.weeklyBoss:
+        return _notificationsWeeklyBossBox.values.firstWhere((el) => el.key == key) as T;
+      case AppNotificationType.custom:
+      case AppNotificationType.dailyCheckIn:
+        return _notificationsCustomBox.values.firstWhere((el) => el.key == key) as T;
+      default:
+        throw Exception('Invalid notification type = $type');
+    }
+  }
+
+  NotificationItem _mapToNotificationItem(NotificationBase e) {
+    final type = AppNotificationType.values[e.type];
+    switch (type) {
+      case AppNotificationType.resin:
+        return _mapToNotificationItemFromResin(e as NotificationResin);
+      case AppNotificationType.expedition:
+        return _mapToNotificationItemFromExpedition(e as NotificationExpedition);
+      case AppNotificationType.farmingMaterials:
+        return _mapToNotificationItemFromFarmingMaterial(e as NotificationFarmingMaterial);
+      case AppNotificationType.farmingArtifacts:
+        return _mapToNotificationItemFromFarmingArtifact(e as NotificationFarmingArtifact);
+      case AppNotificationType.gadget:
+        return _mapToNotificationItemFromGadget(e as NotificationGadget);
+      case AppNotificationType.furniture:
+        return _mapToNotificationItemFromFurniture(e as NotificationFurniture);
+      case AppNotificationType.realmCurrency:
+        return _mapToNotificationItemFromRealmCurrency(e as NotificationRealmCurrency);
+      case AppNotificationType.weeklyBoss:
+        return _mapToNotificationItemFromWeeklyBoss(e as NotificationWeeklyBoss);
+      case AppNotificationType.custom:
+      case AppNotificationType.dailyCheckIn:
+        return _mapToNotificationItemFromCustom(e as NotificationCustom);
+      default:
+        throw Exception('Invalid notification type = $type');
+    }
+  }
+
+  NotificationItem _mapToNotificationItemFromCustom(NotificationCustom e) {
+    final itemType = AppNotificationItemType.values[e.notificationItemType];
+    return _mapToNotificationItemFromBase(e, notificationItemType: itemType).copyWith.call(notificationItemType: itemType);
+  }
+
+  NotificationItem _mapToNotificationItemFromExpedition(NotificationExpedition e) {
+    final expeditionType = ExpeditionTimeType.values[e.expeditionTimeType];
+    return _mapToNotificationItemFromBase(e).copyWith.call(expeditionTimeType: expeditionType, withTimeReduction: e.withTimeReduction);
+  }
+
+  NotificationItem _mapToNotificationItemFromFarmingArtifact(NotificationFarmingArtifact e) {
+    final artifactFarmingType = ArtifactFarmingTimeType.values[e.artifactFarmingTimeType];
+    return _mapToNotificationItemFromBase(e).copyWith.call(artifactFarmingTimeType: artifactFarmingType);
+  }
+
+  NotificationItem _mapToNotificationItemFromFarmingMaterial(NotificationFarmingMaterial e) {
+    return _mapToNotificationItemFromBase(e);
+  }
+
+  NotificationItem _mapToNotificationItemFromFurniture(NotificationFurniture e) {
+    return _mapToNotificationItemFromBase(e).copyWith.call(furnitureCraftingTimeType: FurnitureCraftingTimeType.values[e.furnitureCraftingTimeType]);
+  }
+
+  NotificationItem _mapToNotificationItemFromGadget(NotificationGadget e) {
+    return _mapToNotificationItemFromBase(e);
+  }
+
+  NotificationItem _mapToNotificationItemFromRealmCurrency(NotificationRealmCurrency e) {
+    final realmRankType = RealmRankType.values[e.realmRankType];
+    return _mapToNotificationItemFromBase(e).copyWith.call(
+          realmTrustRank: e.realmTrustRank,
+          realmRankType: realmRankType,
+          realmCurrency: e.realmCurrency,
+        );
+  }
+
+  NotificationItem _mapToNotificationItemFromResin(NotificationResin e) {
+    return _mapToNotificationItemFromBase(e).copyWith.call(currentResinValue: e.currentResinValue);
+  }
+
+  NotificationItem _mapToNotificationItemFromWeeklyBoss(NotificationWeeklyBoss e) {
+    return _mapToNotificationItemFromBase(e);
+  }
+
+  NotificationItem _mapToNotificationItemFromBase(NotificationBase e, {AppNotificationItemType? notificationItemType}) {
+    final type = AppNotificationType.values[e.type];
+    final hiveObject = e as HiveObject;
+    return NotificationItem(
+      key: hiveObject.key as int,
+      itemKey: e.itemKey,
+      image: _genshinService.getItemImageFromNotificationType(e.itemKey, type, notificationItemType: notificationItemType),
+      createdAt: e.createdAt,
+      completesAt: e.completesAt,
+      type: type,
+      showNotification: e.showNotification,
+      note: e.note,
+      title: e.title,
+      body: e.body,
+      scheduledDate: e.originalScheduledDate,
+    );
+  }
+
+  Future<NotificationItem> _updateNotification(NotificationBase notification, String title, String body, String? note, bool showNotification) async {
+    notification.title = title.trim();
+    notification.note = note?.trim();
+    notification.body = body.trim();
+    notification.showNotification = showNotification;
+
+    final hiveObject = notification as HiveObject;
+    await hiveObject.save();
+    return getNotification(hiveObject.key as int, AppNotificationType.values[notification.type]);
   }
 }

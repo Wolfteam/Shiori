@@ -7,21 +7,21 @@ typedef OnPressed = void Function();
 
 class SliverPageFilter extends StatelessWidget {
   final String title;
-  final String search;
+  final String? search;
   final OnPressed onPressed;
   final Function(String) searchChanged;
 
   const SliverPageFilter({
-    Key key,
-    @required this.title,
-    @required this.search,
-    @required this.onPressed,
-    @required this.searchChanged,
+    Key? key,
+    required this.title,
+    this.search,
+    required this.onPressed,
+    required this.searchChanged,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final showClearButton = search != null && search.isNotEmpty;
+    final showClearButton = search != null && search!.isNotEmpty;
     return SliverToBoxAdapter(
       child: Column(
         children: [

@@ -14,7 +14,7 @@ import 'package:genshindb/presentation/shared/sort_direction_popupmenu_filter.da
 import 'package:genshindb/presentation/shared/weapons_button_bar.dart';
 
 class CharacterBottomSheet extends StatelessWidget {
-  const CharacterBottomSheet({Key key}) : super(key: key);
+  const CharacterBottomSheet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

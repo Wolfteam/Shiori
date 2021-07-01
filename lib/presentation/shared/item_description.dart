@@ -4,17 +4,25 @@ import 'styles.dart';
 
 class ItemDescription extends StatelessWidget {
   final String title;
-  final String subTitle;
+  final String? subTitle;
   final bool useColumn;
-  final Widget widget;
+  final Widget? widget;
 
   const ItemDescription({
-    Key key,
-    @required this.title,
+    Key? key,
+    required this.title,
     this.useColumn = true,
     this.subTitle,
     this.widget,
   }) : super(key: key);
+
+  const ItemDescription.row({
+    Key? key,
+    this.widget,
+  })  : title = '',
+        useColumn = false,
+        subTitle = null,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,29 +36,33 @@ class ItemDescription extends StatelessWidget {
               child: Text(
                 title,
                 overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.subtitle2.copyWith(color: Colors.white),
+                style: theme.textTheme.subtitle2!.copyWith(color: Colors.white),
               ),
             ),
             Center(
-              child: Text(subTitle, style: theme.textTheme.bodyText2.copyWith(fontSize: 12)),
+              child: Text(subTitle!, style: theme.textTheme.bodyText2!.copyWith(fontSize: 12)),
             ),
           ],
         ),
       );
     }
 
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 2),
-      child: Row(
-        children: [
-          Text(
-            '$title: ',
-            style: theme.textTheme.subtitle2.copyWith(color: Colors.white),
-            overflow: TextOverflow.ellipsis,
-          ),
-          widget,
-        ],
-      ),
-    );
+    if (title.isNotEmpty) {
+      return Container(
+        margin: const EdgeInsets.symmetric(vertical: 2),
+        child: Row(
+          children: [
+            Text(
+              '$title: ',
+              style: theme.textTheme.subtitle2!.copyWith(color: Colors.white),
+              overflow: TextOverflow.ellipsis,
+            ),
+            widget!,
+          ],
+        ),
+      );
+    }
+
+    return Container(margin: const EdgeInsets.symmetric(vertical: 2), child: widget);
   }
 }

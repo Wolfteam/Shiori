@@ -4,16 +4,16 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'character_skill.freezed.dart';
 
 @freezed
-abstract class CharacterSkill with _$CharacterSkill {
+class CharacterSkill with _$CharacterSkill {
   const factory CharacterSkill.skill({
-    @required String key,
-    @required int position,
-    @required String name,
-    @required int currentLevel,
-    @required int desiredLevel,
-    @required bool isCurrentIncEnabled,
-    @required bool isCurrentDecEnabled,
-    @required bool isDesiredIncEnabled,
-    @required bool isDesiredDecEnabled,
+    required String key,
+    required int position,
+    required String name,
+    required int currentLevel,
+    required int desiredLevel,
+    required bool isCurrentIncEnabled,
+    required bool isCurrentDecEnabled,
+    required bool isDesiredIncEnabled,
+    required bool isDesiredDecEnabled,
   }) = _CharacterSkill;
 }

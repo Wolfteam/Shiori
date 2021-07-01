@@ -6,11 +6,19 @@ import 'package:genshindb/presentation/home/widgets/sliver_card_item.dart';
 import 'package:genshindb/presentation/inventory/inventory_page.dart';
 
 class SliverMyInventoryCard extends StatelessWidget {
+  final bool iconToTheLeft;
+
+  const SliverMyInventoryCard({
+    Key? key,
+    required this.iconToTheLeft,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
     return SliverCardItem(
+      iconToTheLeft: iconToTheLeft,
       icon: Icon(Icons.inventory, size: 60, color: theme.accentColor),
       onClick: _goToInventoryPage,
       children: [

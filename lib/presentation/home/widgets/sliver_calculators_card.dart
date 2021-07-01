@@ -7,13 +7,20 @@ import 'package:genshindb/presentation/calculator_asc_materials/calculator_sessi
 import 'sliver_card_item.dart';
 
 class SliverCalculatorsCard extends StatelessWidget {
+  final bool iconToTheLeft;
+
+  const SliverCalculatorsCard({
+    Key? key,
+    required this.iconToTheLeft,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
     return SliverCardItem(
       onClick: _gotoSessionsPage,
-      iconToTheLeft: true,
+      iconToTheLeft: iconToTheLeft,
       icon: Icon(Icons.calculate, size: 60, color: theme.accentColor),
       children: [
         Text(

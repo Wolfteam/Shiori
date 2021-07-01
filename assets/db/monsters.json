@@ -4,14 +4,14 @@
       "key": "Abyss Herald: Wicked Torrents",
       "image": "abyss_herald_wicked_torrents.png",
       "type": "abyssOrder",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "drops": []
     },
     {
       "key": "Abyss Lector: Violet Lightning",
       "image": "abyss_lector_violet_lightning.png",
       "type": "abyssOrder",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "drops": []
     },
     {
@@ -65,8 +65,38 @@
       "key": "Azhdaha",
       "image": "azhdaha.png",
       "type": "boss",
-      "isComingSoon": true,
-      "drops": []
+      "isComingSoon": false,
+      "drops": [
+        "dream_solvent.png",
+        "adventure_exp.png",
+        "companionship_exp.png",
+        "instructor.png",
+        "berserker.png",
+        "the_exile.png",
+        "mora.png",
+        "agnidus_agate_chunk.png",
+        "agnidus_agate_fragment.png",
+        "agnidus_agate_gemstone.png",
+        "agnidus_agate_sliver.png",
+        "northlander_bow_prototype.png",
+        "northlander_catalyst_prototype.png",
+        "northlander_claymore_prototype.png",
+        "northlander_polearm_prototype.png",
+        "northlander_sword_prototype.png",
+        "prithiva_topaz_chunk.png",
+        "prithiva_topaz_fragment.png",
+        "prithiva_topaz_gemstone.png",
+        "prithiva_topaz_sliver.png",
+        "shivada_jade_chunk.png",
+        "shivada_jade_fragment.png",
+        "shivada_jade_gemstone.png",
+        "shivada_jade_sliver.png",
+        "gladiators_finale.png",
+        "wanderers_troupe.png",
+        "bloodjade_branch.png",
+        "dragon_lords_crown.png",
+        "gilded_scale.png"
+      ]
     },
     {
       "key": "Blazing Axe Mitachurl",
@@ -92,6 +122,7 @@
       "type": "boss",
       "isComingSoon": false,
       "drops": [
+        "dream_solvent.png",
         "adventure_exp.png",
         "berserker.png",
         "companionship_exp.png",
@@ -145,7 +176,7 @@
       "key": "Cryo Cicin",
       "image": "cryo_cicin.png",
       "type": "magicalBeast",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "drops": []
     },
     {
@@ -177,7 +208,7 @@
       "key": "Cryo Hypostasis",
       "image": "cryo_hypostasis.png",
       "type": "elementalLifeForm",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "drops": []
     },
     {
@@ -268,7 +299,7 @@
       "key": "Electro Cicin",
       "image": "electro_cicin.png",
       "type": "magicalBeast",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "drops": []
     },
     {
@@ -520,7 +551,7 @@
       "key": "Geovishap",
       "image": "geovishap.png",
       "type": "magicalBeast",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "drops": []
     },
     {
@@ -618,7 +649,63 @@
       "key": "Hydro Cicin",
       "image": "hydro_cicin.png",
       "type": "magicalBeast",
-      "isComingSoon": true,
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "Hydro Mimic Boar",
+      "image": "hydro_mimic.png",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "Hydro Mimic Crab",
+      "image": "hydro_mimic.png",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "Hydro Mimic Crane",
+      "image": "hydro_mimic.png",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "Hydro Mimic Ferret",
+      "image": "hydro_mimic.png",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "Hydro Mimic Finch",
+      "image": "hydro_mimic.png",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "Hydro Mimic Frog",
+      "image": "hydro_mimic.png",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "Hydro Mimic Mallard",
+      "image": "hydro_mimic.png",
+      "type": "na",
+      "isComingSoon": false,
+      "drops": []
+    },
+    {
+      "key": "Hydro Mimic Raptor",
+      "image": "hydro_mimic.png",
+      "type": "na",
+      "isComingSoon": false,
       "drops": []
     },
     {
@@ -758,6 +845,7 @@
       "type": "boss",
       "isComingSoon": false,
       "drops": [
+        "dream_solvent.png",
         "adventure_exp.png",
         "agnidus_agate_chunk.png",
         "agnidus_agate_fragment.png",
@@ -788,6 +876,13 @@
         "travelling_doctor.png",
         "wanderers_troupe.png"
       ]
+    },
+    {
+      "key": "Maguu Kenki",
+      "image": "maguu_kenki.png",
+      "type": "human",
+      "isComingSoon": true,
+      "drops": []
     },
     {
       "key": "Millelith Sergeant",
@@ -849,8 +944,39 @@
       "key": "Primo Geovishap",
       "image": "primo_geovishap.png",
       "type": "magicalBeast",
-      "isComingSoon": true,
-      "drops": []
+      "isComingSoon": false,
+      "drops": [
+        "berserker.png",
+        "gladiators_finale.png",
+        "wanderers_troupe.png",
+        "instructor.png",
+        "prayers_of_destiny.png",
+        "prayers_of_illumination.png",
+        "prayers_of_springtime.png",
+        "prayers_of_wisdom.png",
+        "the_exile.png",
+        "juvenile_jade.png",
+        "agnidus_agate_chunk.png",
+        "agnidus_agate_fragment.png",
+        "agnidus_agate_gemstone.png",
+        "agnidus_agate_sliver.png",
+        "prithiva_topaz_chunk.png",
+        "prithiva_topaz_fragment.png",
+        "prithiva_topaz_gemstone.png",
+        "prithiva_topaz_sliver.png",
+        "shivada_jade_chunk.png",
+        "shivada_jade_fragment.png",
+        "shivada_jade_gemstone.png",
+        "shivada_jade_sliver.png",
+        "vajrada_amethyst_chunk.png",
+        "vajrada_amethyst_fragment.png",
+        "vajrada_amethyst_gemstone.png",
+        "vajrada_amethyst_sliver.png",
+        "varunada_lazurite_chunk.png",
+        "varunada_lazurite_fragment.png",
+        "varunada_lazurite_gemstone.png",
+        "varunada_lazurite_sliver.png"
+      ]
     },
     {
       "key": "Pyro Abyss Mage",
@@ -1027,6 +1153,7 @@
       "type": "boss",
       "isComingSoon": false,
       "drops": [
+        "dream_solvent.png",
         "adventure_exp.png",
         "berserker.png",
         "companionship_exp.png",
@@ -1227,7 +1354,7 @@
       "key": "Unusual Hilichurl",
       "image": "unusual_hilichurl.png",
       "type": "hilichurl",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "drops": []
     },
     {

@@ -4,10 +4,10 @@ part 'translation_monster_file.freezed.dart';
 part 'translation_monster_file.g.dart';
 
 @freezed
-abstract class TranslationMonsterFile implements _$TranslationMonsterFile {
+class TranslationMonsterFile with _$TranslationMonsterFile {
   factory TranslationMonsterFile({
-    @required String key,
-    @required String name,
+    required String key,
+    required String name,
   }) = _TranslationMonsterFile;
 
   const TranslationMonsterFile._();

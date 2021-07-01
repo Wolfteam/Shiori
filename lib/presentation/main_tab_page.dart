@@ -20,18 +20,18 @@ class MainTabPage extends StatefulWidget {
 
 class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStateMixin {
   bool _didChangeDependencies = false;
-  TabController _tabController;
-  int _index;
+  late TabController _tabController;
+  late int _index;
   final _defaultIndex = 2;
   final _pages = [
     const CharactersPage(),
     const WeaponsPage(),
     HomePage(),
-    ArtifactsPage(),
+    const ArtifactsPage(),
     MapPage(),
   ];
 
-  DateTime backButtonPressTime;
+  DateTime? backButtonPressTime;
 
   @override
   void initState() {
@@ -55,7 +55,6 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
     context.read<ArtifactsBloc>().add(const ArtifactsEvent.init());
     context.read<ElementsBloc>().add(const ElementsEvent.init());
     context.read<SettingsBloc>().add(const SettingsEvent.init());
-    context.read<GameCodesBloc>().add(const GameCodesEvent.init());
   }
 
   @override
@@ -145,7 +144,7 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
 
     final s = S.of(context);
     final now = DateTime.now();
-    final mustWait = backButtonPressTime == null || now.difference(backButtonPressTime) > ToastUtils.toastDuration;
+    final mustWait = backButtonPressTime == null || now.difference(backButtonPressTime!) > ToastUtils.toastDuration;
 
     if (mustWait) {
       backButtonPressTime = now;

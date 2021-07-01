@@ -108,13 +108,26 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
         return currentState.copyWith.call(items: items, summary: _calculatorService.generateSummary(materialsForSummary));
       },
       removeItem: (e) async {
-        final items = [...currentState.items];
-        items.removeAt(e.index);
-        await _dataService.deleteCalAscMatSessionItem(e.sessionKey, e.index);
-        final materialsForSummary = _buildMaterialsForSummary(items);
+        final itemsToLoop = [...currentState.items];
+        //The saved position may be different, so that's why we don't use the index to delete
+        //this item
+        final itemPosition = itemsToLoop.elementAt(e.index).position;
+        itemsToLoop.removeAt(e.index);
+
+        await _dataService.deleteCalAscMatSessionItem(e.sessionKey, itemPosition, redistribute: false);
+
+        for (var i = 0; i < itemsToLoop.length; i++) {
+          final item = itemsToLoop[i];
+          await _dataService.updateCalAscMatSessionItem(e.sessionKey, i, item, redistribute: false);
+        }
+
+        await _dataService.redistributeAllInventoryMaterials();
+
+        final session = _dataService.getCalcAscMatSession(e.sessionKey);
+        final materialsForSummary = _buildMaterialsForSummary(session.items);
 
         _notifyParent();
-        return currentState.copyWith.call(items: items, summary: _calculatorService.generateSummary(materialsForSummary));
+        return currentState.copyWith.call(items: session.items, summary: _calculatorService.generateSummary(materialsForSummary));
       },
       updateCharacter: (e) async {
         final currentChar = currentState.items.elementAt(e.index);

@@ -65,6 +65,8 @@ class CalculatorServiceImpl implements CalculatorService {
           case MaterialType.expCharacter:
             key = AscensionMaterialSummaryType.exp;
             break;
+          case MaterialType.all:
+            throw Exception('Material type ${material.type} should not be here');
         }
         newValue = MaterialSummary.others(
           key: material.key,
@@ -75,12 +77,12 @@ class CalculatorServiceImpl implements CalculatorService {
       }
 
       if (summary.containsKey(key)) {
-        summary[key].add(newValue);
+        summary[key]!.add(newValue);
       } else {
         summary.putIfAbsent(key, () => [newValue]);
       }
 
-      summary[key].sort((x, y) => x.key.compareTo(y.key));
+      summary[key]!.sort((x, y) => x.key.compareTo(y.key));
     }
 
     return summary.entries.map((entry) => AscensionMaterialsSummary(type: entry.key, materials: entry.value)).toList();
@@ -95,7 +97,7 @@ class CalculatorServiceImpl implements CalculatorService {
     int desiredAscensionLevel,
     List<CharacterSkill> skills,
   ) {
-    final expMaterials = _getItemExperienceMaterials(currentLevel, desiredLevel, true);
+    final expMaterials = _getItemExperienceMaterials(currentLevel, desiredLevel, char.rarity, true);
 
     final ascensionMaterials = char.ascensionMaterials
         .where((m) => m.rank > currentAscensionLevel && m.rank <= desiredAscensionLevel)
@@ -115,12 +117,12 @@ class CalculatorServiceImpl implements CalculatorService {
 
         skillMaterials.addAll(materials);
       }
-    } else if (char.multiTalentAscensionMaterials != null && char.multiTalentAscensionMaterials.isNotEmpty) {
+    } else if (char.multiTalentAscensionMaterials != null && char.multiTalentAscensionMaterials!.isNotEmpty) {
       //The traveler has different materials depending on the skill, that's why we need to retrieve the right amount for the provided skill
       //Also, we are assuming that the skill's order are fixed
       var talentNumber = 1;
       for (final skill in skills) {
-        final materials = char.multiTalentAscensionMaterials
+        final materials = char.multiTalentAscensionMaterials!
             .where((mt) => mt.number == talentNumber)
             .expand((mt) => mt.materials)
             .where((m) => m.level > skill.currentLevel && m.level <= skill.desiredLevel)
@@ -144,7 +146,7 @@ class CalculatorServiceImpl implements CalculatorService {
     int currentAscensionLevel,
     int desiredAscensionLevel,
   ) {
-    final expMaterials = _getItemExperienceMaterials(currentLevel, desiredLevel, false);
+    final expMaterials = _getItemExperienceMaterials(currentLevel, desiredLevel, weapon.rarity, false);
     final materials = weapon.ascensionMaterials
         .where((m) => m.level > _mapToWeaponLevel(currentAscensionLevel) && m.level <= _mapToWeaponLevel(desiredAscensionLevel))
         .expand((m) => m.materials)
@@ -336,12 +338,12 @@ class CalculatorServiceImpl implements CalculatorService {
     }
   }
 
-  List<ItemAscensionMaterialModel> _getItemExperienceMaterials(int currentLevel, int desiredLevel, bool forCharacters) {
+  List<ItemAscensionMaterialModel> _getItemExperienceMaterials(int currentLevel, int desiredLevel, int rarity, bool forCharacters) {
     final materials = <ItemAscensionMaterialModel>[];
     //Here we order the exp materials in a way that the one that gives more exp is first and so on
     final expMaterials = _genshinService.getMaterials(forCharacters ? MaterialType.expCharacter : MaterialType.expWeapon)
-      ..sort((x, y) => (y.experienceAttributes.experience - x.experienceAttributes.experience).round());
-    var requiredExp = getItemTotalExp(currentLevel, desiredLevel, forCharacters);
+      ..sort((x, y) => (y.experienceAttributes!.experience - x.experienceAttributes!.experience).round());
+    var requiredExp = getItemTotalExp(currentLevel, desiredLevel, rarity, forCharacters);
     final moraMaterial = _genshinService.getMaterials(MaterialType.currency).first;
 
     for (final material in expMaterials) {
@@ -349,7 +351,7 @@ class CalculatorServiceImpl implements CalculatorService {
         break;
       }
 
-      final matExp = material.experienceAttributes.experience;
+      final matExp = material.experienceAttributes!.experience;
       final quantity = (requiredExp / matExp).floor();
       if (quantity == 0) {
         continue;
@@ -357,7 +359,7 @@ class CalculatorServiceImpl implements CalculatorService {
       materials.add(ItemAscensionMaterialModel(quantity: quantity, image: material.image, materialType: material.type));
       requiredExp -= quantity * matExp;
 
-      final requiredMora = quantity * material.experienceAttributes.pricePerUsage;
+      final requiredMora = quantity * material.experienceAttributes!.pricePerUsage;
       materials.add(ItemAscensionMaterialModel(quantity: requiredMora.round(), image: moraMaterial.image, materialType: moraMaterial.type));
     }
 

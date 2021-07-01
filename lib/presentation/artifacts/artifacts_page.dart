@@ -15,6 +15,26 @@ import 'widgets/artifact_card.dart';
 import 'widgets/artifact_info_card.dart';
 
 class ArtifactsPage extends StatefulWidget {
+  final bool isInSelectionMode;
+
+  static Future<String?> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
+    final bloc = context.read<ArtifactsBloc>();
+    bloc.add(ArtifactsEvent.init(excludeKeys: excludeKeys));
+
+    final route = MaterialPageRoute<String>(builder: (ctx) => const ArtifactsPage(isInSelectionMode: true));
+    final keyName = await Navigator.of(context).push(route);
+    await route.completed;
+
+    bloc.add(const ArtifactsEvent.init());
+
+    return keyName;
+  }
+
+  const ArtifactsPage({
+    Key? key,
+    this.isInSelectionMode = false,
+  }) : super(key: key);
+
   @override
   _ArtifactsPageState createState() => _ArtifactsPageState();
 }
@@ -33,6 +53,7 @@ class _ArtifactsPageState extends State<ArtifactsPage> with AutomaticKeepAliveCl
         return state.map(
           loading: (_) => const Loading(),
           loaded: (state) => SliverScaffoldWithFab(
+            appbar: !widget.isInSelectionMode ? null : AppBar(title: Text(s.selectAnArtifact)),
             slivers: [
               SliverPageFilter(
                 search: state.search,
@@ -40,10 +61,11 @@ class _ArtifactsPageState extends State<ArtifactsPage> with AutomaticKeepAliveCl
                 onPressed: () => _showFiltersModal(context),
                 searchChanged: (v) => context.read<ArtifactsBloc>().add(ArtifactsEvent.searchChanged(search: v)),
               ),
-              ArtifactInfoCard(
-                isCollapsed: state.collapseNotes,
-                expansionCallback: (v) => context.read<ArtifactsBloc>().add(ArtifactsEvent.collapseNotes(collapse: v)),
-              ),
+              if (!widget.isInSelectionMode)
+                ArtifactInfoCard(
+                  isCollapsed: state.collapseNotes,
+                  expansionCallback: (v) => context.read<ArtifactsBloc>().add(ArtifactsEvent.collapseNotes(collapse: v)),
+                ),
               if (state.artifacts.isNotEmpty) _buildGrid(state.artifacts, context) else const SliverNothingFound(),
             ],
           ),
@@ -58,16 +80,7 @@ class _ArtifactsPageState extends State<ArtifactsPage> with AutomaticKeepAliveCl
       padding: const EdgeInsets.symmetric(horizontal: 5),
       sliver: SliverStaggeredGrid.countBuilder(
         crossAxisCount: isPortrait ? 2 : 3,
-        itemBuilder: (ctx, index) {
-          final item = artifacts[index];
-          return ArtifactCard(
-            keyName: item.key,
-            name: item.name,
-            image: item.image,
-            rarity: item.rarity,
-            bonus: item.bonus,
-          );
-        },
+        itemBuilder: (ctx, index) => ArtifactCard.item(item: artifacts[index], isInSelectionMode: widget.isInSelectionMode),
         itemCount: artifacts.length,
         crossAxisSpacing: isPortrait ? 10 : 5,
         mainAxisSpacing: 5,

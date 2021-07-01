@@ -9,12 +9,12 @@ class AppFab extends StatelessWidget {
   final AnimationController hideFabAnimController;
   final Widget icon;
   final bool mini;
-  final OnClick onPressed;
+  final OnClick? onPressed;
 
   const AppFab({
-    Key key,
-    @required this.scrollController,
-    @required this.hideFabAnimController,
+    Key? key,
+    required this.scrollController,
+    required this.hideFabAnimController,
     this.icon = const Icon(Icons.arrow_upward),
     this.mini = true,
     this.onPressed,
@@ -29,7 +29,7 @@ class AppFab extends StatelessWidget {
         child: FloatingActionButton(
           backgroundColor: Theme.of(context).primaryColor,
           mini: mini,
-          onPressed: () => onPressed != null ? onPressed() : scrollController.goToTheTop(),
+          onPressed: () => onPressed != null ? onPressed!() : scrollController.goToTheTop(),
           heroTag: null,
           child: icon,
         ),

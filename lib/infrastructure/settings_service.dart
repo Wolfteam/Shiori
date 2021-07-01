@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart' show IterableExtension;
 import 'package:devicelocale/devicelocale.dart';
 import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/enums/enums.dart';
@@ -15,59 +16,73 @@ class SettingsServiceImpl extends SettingsService {
   final _showWeaponDetailsKey = 'ShowWeaponDetailsKey';
   final _serverResetTimeKey = 'ServerResetTimeKey';
   final _doubleBackToCloseKey = 'DoubleBackToCloseKey';
+  final _useOfficialMapKey = 'UseOfficialMapKey';
+  final _useTwentyFourHoursFormatKey = 'UseTwentyFourHoursFormat';
 
   bool _initialized = false;
 
-  SharedPreferences _prefs;
+  late SharedPreferences _prefs;
   final LoggingService _logger;
 
   @override
-  AppThemeType get appTheme => AppThemeType.values[(_prefs.getInt(_appThemeKey))];
+  AppThemeType get appTheme => AppThemeType.values[_prefs.getInt(_appThemeKey)!];
 
   @override
   set appTheme(AppThemeType theme) => _prefs.setInt(_appThemeKey, theme.index);
 
   @override
-  AppAccentColorType get accentColor => AppAccentColorType.values[_prefs.getInt(_accentColorKey)];
+  AppAccentColorType get accentColor => AppAccentColorType.values[_prefs.getInt(_accentColorKey)!];
 
   @override
   set accentColor(AppAccentColorType accentColor) => _prefs.setInt(_accentColorKey, accentColor.index);
 
   @override
-  AppLanguageType get language => AppLanguageType.values[_prefs.getInt(_appLanguageKey)];
+  AppLanguageType get language => AppLanguageType.values[_prefs.getInt(_appLanguageKey)!];
 
   @override
   set language(AppLanguageType lang) => _prefs.setInt(_appLanguageKey, lang.index);
 
   @override
-  bool get isFirstInstall => _prefs.getBool(_firstInstallKey);
+  bool get isFirstInstall => _prefs.getBool(_firstInstallKey)!;
 
   @override
   set isFirstInstall(bool itIs) => _prefs.setBool(_firstInstallKey, itIs);
 
   @override
-  bool get showCharacterDetails => _prefs.getBool(_showCharacterDetailsKey);
+  bool get showCharacterDetails => _prefs.getBool(_showCharacterDetailsKey)!;
 
   @override
   set showCharacterDetails(bool show) => _prefs.setBool(_showCharacterDetailsKey, show);
 
   @override
-  bool get showWeaponDetails => _prefs.getBool(_showWeaponDetailsKey);
+  bool get showWeaponDetails => _prefs.getBool(_showWeaponDetailsKey)!;
 
   @override
   set showWeaponDetails(bool show) => _prefs.setBool(_showWeaponDetailsKey, show);
 
   @override
-  AppServerResetTimeType get serverResetTime => AppServerResetTimeType.values[_prefs.getInt(_serverResetTimeKey)];
+  AppServerResetTimeType get serverResetTime => AppServerResetTimeType.values[_prefs.getInt(_serverResetTimeKey)!];
 
   @override
   set serverResetTime(AppServerResetTimeType time) => _prefs.setInt(_serverResetTimeKey, time.index);
 
   @override
-  bool get doubleBackToClose => _prefs.getBool(_doubleBackToCloseKey);
+  bool get doubleBackToClose => _prefs.getBool(_doubleBackToCloseKey)!;
 
   @override
   set doubleBackToClose(bool value) => _prefs.setBool(_doubleBackToCloseKey, value);
+
+  @override
+  bool get useOfficialMap => _prefs.getBool(_useOfficialMapKey)!;
+
+  @override
+  set useOfficialMap(bool value) => _prefs.setBool(_useOfficialMapKey, value);
+
+  @override
+  bool get useTwentyFourHoursFormat => _prefs.getBool(_useTwentyFourHoursFormatKey)!;
+
+  @override
+  set useTwentyFourHoursFormat(bool value) => _prefs.setBool(_useTwentyFourHoursFormatKey, value);
 
   @override
   AppSettings get appSettings => AppSettings(
@@ -80,6 +95,8 @@ class SettingsServiceImpl extends SettingsService {
         isFirstInstall: isFirstInstall,
         serverResetTime: serverResetTime,
         doubleBackToClose: doubleBackToClose,
+        useOfficialMap: useOfficialMap,
+        useTwentyFourHoursFormat: useTwentyFourHoursFormat,
       );
 
   SettingsServiceImpl(this._logger);
@@ -134,6 +151,16 @@ class SettingsServiceImpl extends SettingsService {
       doubleBackToClose = false;
     }
 
+    if (_prefs.get(_useOfficialMapKey) == null) {
+      _logger.info(runtimeType, 'Use the official map will be set to its default (false)');
+      useOfficialMap = false;
+    }
+
+    if (_prefs.getBool(_useTwentyFourHoursFormatKey) == null) {
+      _logger.info(runtimeType, 'The default date format will be set to its default (false)');
+      useTwentyFourHoursFormat = false;
+    }
+
     _initialized = true;
     _logger.info(runtimeType, 'Settings were initialized successfully');
   }
@@ -142,7 +169,15 @@ class SettingsServiceImpl extends SettingsService {
     try {
       _logger.info(runtimeType, '_getDefaultLangToUse: Trying to retrieve device lang...');
       final deviceLocale = await Devicelocale.currentAsLocale;
-      final appLang = languagesMap.entries.firstWhere((val) => val.value.code == deviceLocale.languageCode, orElse: () => null);
+      if (deviceLocale == null) {
+        _logger.warning(
+          runtimeType,
+          "_getDefaultLangToUse: Couldn't retrieve the device locale, falling back to english",
+        );
+        return AppLanguageType.english;
+      }
+
+      final appLang = languagesMap.entries.firstWhereOrNull((val) => val.value.code == deviceLocale.languageCode);
       if (appLang == null) {
         _logger.info(
           runtimeType,

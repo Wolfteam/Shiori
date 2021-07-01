@@ -13,6 +13,26 @@ import 'widgets/monster_bottom_sheet.dart';
 import 'widgets/monster_card.dart';
 
 class MonstersPage extends StatelessWidget {
+  final bool isInSelectionMode;
+
+  static Future<String?> forSelection(BuildContext context, {List<String> excludeKeys = const []}) async {
+    final bloc = context.read<MonstersBloc>();
+    bloc.add(MonstersEvent.init(excludeKeys: excludeKeys));
+
+    final route = MaterialPageRoute<String>(builder: (ctx) => const MonstersPage(isInSelectionMode: true));
+    final keyName = await Navigator.of(context).push(route);
+    await route.completed;
+
+    bloc.add(const MonstersEvent.init());
+
+    return keyName;
+  }
+
+  const MonstersPage({
+    Key? key,
+    this.isInSelectionMode = false,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
@@ -22,7 +42,7 @@ class MonstersPage extends StatelessWidget {
         return state.map(
           loading: (_) => const Loading(),
           loaded: (state) => SliverScaffoldWithFab(
-            appbar: AppBar(title: Text(s.monsters)),
+            appbar: AppBar(title: Text(isInSelectionMode ? s.selectAMonster : s.monsters)),
             slivers: [
               SliverPageFilter(
                 search: state.search,
@@ -35,7 +55,7 @@ class MonstersPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 5),
                   sliver: SliverStaggeredGrid.countBuilder(
                     crossAxisCount: isPortrait ? 3 : 5,
-                    itemBuilder: (ctx, index) => MonsterCard.item(item: state.monsters[index]),
+                    itemBuilder: (ctx, index) => MonsterCard.item(item: state.monsters[index], isInSelectionMode: isInSelectionMode),
                     itemCount: state.monsters.length,
                     crossAxisSpacing: isPortrait ? 10 : 5,
                     mainAxisSpacing: 5,

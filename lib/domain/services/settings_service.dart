@@ -28,5 +28,11 @@ abstract class SettingsService {
   bool get doubleBackToClose;
   set doubleBackToClose(bool value);
 
+  bool get useOfficialMap;
+  set useOfficialMap(bool value);
+
+  bool get useTwentyFourHoursFormat;
+  set useTwentyFourHoursFormat(bool value);
+
   Future<void> init();
 }

@@ -10,7 +10,7 @@ abstract class PopBloc<Event, State> extends Bloc<Event, State> {
 
   PopBloc(State initialState) : super(initialState);
 
-  Event getEventForPop(String key);
+  Event getEventForPop(String? key);
 
   void pop() {
     final key = _popAndGetLastKey();
@@ -20,7 +20,7 @@ abstract class PopBloc<Event, State> extends Bloc<Event, State> {
     }
   }
 
-  String _popAndGetLastKey() {
+  String? _popAndGetLastKey() {
     if (currentItemsInStack.isEmpty) {
       return null;
     }

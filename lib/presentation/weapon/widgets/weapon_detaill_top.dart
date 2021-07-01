@@ -21,15 +21,15 @@ class WeaponDetailTop extends StatelessWidget {
   final String image;
 
   const WeaponDetailTop({
-    Key key,
-    @required this.name,
-    @required this.atk,
-    @required this.rarity,
-    @required this.secondaryStatType,
-    @required this.secondaryStatValue,
-    @required this.type,
-    @required this.locationType,
-    @required this.image,
+    Key? key,
+    required this.name,
+    required this.atk,
+    required this.rarity,
+    required this.secondaryStatType,
+    required this.secondaryStatValue,
+    required this.type,
+    required this.locationType,
+    required this.image,
   }) : super(key: key);
 
   @override

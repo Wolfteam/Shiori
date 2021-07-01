@@ -4,11 +4,11 @@ class CircleItem extends StatelessWidget {
   final String image;
   final double radius;
   final bool forDrag;
-  final Function(String) onTap;
+  final Function(String)? onTap;
 
   const CircleItem({
-    Key key,
-    @required this.image,
+    Key? key,
+    required this.image,
     this.radius = 35,
     this.forDrag = false,
     this.onTap,
@@ -16,6 +16,7 @@ class CircleItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //TODO: TRY ADDING A BACKGROUND WITH THE MATERIAL WIDGET
     final avatar = CircleAvatar(
       radius: radius,
       backgroundColor: Colors.transparent,
@@ -28,8 +29,9 @@ class CircleItem extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(3),
       child: InkWell(
+        radius: radius,
         borderRadius: BorderRadius.circular(radius),
-        onTap: () => onTap != null ? onTap(image) : {},
+        onTap: () => onTap != null ? onTap!(image) : {},
         child: avatar,
       ),
     );
