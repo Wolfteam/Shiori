@@ -964,6 +964,121 @@
         }
       ]
     },
+    {
+      "key": "Eula",
+      "name": "Eula",
+      "description": "Le Chevalier Spindrift, un descendant de la vieille aristocratie, et le Capitaine des Chevaliers de la Compagnie de Reconnaissance Favonius. La raison pour laquelle un descendant des anciens nobles pourrait a rejoint les Chevaliers reste un grand mystère à Mondstadt à ce jour.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Escrime de Favonius - Aristocratie",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Enchaîne jusqu'à 5 coups d'épée.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Succession d'entailles circulaire qui se termine sur un coup puissant.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT de zone aux ennemis situés dans la zone d'impact.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Vortex des mers glacées",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Eula exécute une frappe rapide qui inflige des DGT Cryo. Si elle touche, un ennemi, Eula gagne une charge de Cœur de glace (jusqu'a 2 max). Eula peut gagner une charge toutes les 0.3s max.",
+              "descriptions": []
+            },
+            {
+              "name": "Cœur de glace",
+              "description": "Améliore la RES à l'interruption et la DEF d'Eula.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Eula consomme toutes les charges de Cœur de glace pour infliger des DGT Cryo de zone aux ennemis en face. Si des charges de Cœur de glace sont consommées, la RES physique et la RES cryo des ennemis proches diminuent. Chaque charge de Cœur de glace et convertie en épée vortex de glace, qui inflige de DGT Cryo aux ennemis proches.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Lame de fond",
+          "description": "Eula inflige des DGT Cryo aux ennemis proches, et crée une épee de lumière qui la suit pendant 7s max. Tant qu'elle est active, l'épée de lumière augmente la RES à l'interruption d'Eula. Losque Eula inflige des DGT à des ennemis avec son attaque normale, sa compétence ou son déchainement élémentaire, elle accumule des charges d'énergie pour l'épée de lumière. Une charge d'énergie peut être cumulée toutes les 0.1s. Lorsque la durée de l'épée de lumière est écoulée ou que Eula quitte le champ de bataille, l'épée explose infligeant des DGT Physiques aux ennemis proches. Les DGT augmentent en fonction du nombre de charges d'énergie accumulées.",
+          "abilities": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Gratification aristocratique",
+          "description": "10% de chances d'obtenir le double de produits lors de la synthèse de matériaux d'aptitude de personnage.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Maelström de glace",
+          "description": "Lorsque vous consommez 2 charges de Cœur de glace lors de l'appui long de Vortex des mers glacées, une brève épée de lumière est créée. Cette dernière explose immédiatement, infligeant des DGT Physiques équivalant à 50% des DGT de base de Lame de fond.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Esprit belligérant",
+          "description": "Le TdR de Vortex des mers glacées est réinitialisé lors de l'utilisation de Lame de fond, et Eula obtient une charge de Cœur de glace.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Illusion des marées",
+          "description": "A chaque fois qu'une charge de Cœur de glace de Vortex des mers glacées est consommée, Eula gagne un bonus de DGT Physiques de 30% pendant 6s. Chaque charge de Cœur de glace consommée prolonge la durée de l'effet de 6s, jusqu'à un maximum de 18s.",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Fille d'écume de mer",
+          "description": "Diminue le TdR de l'appui long de Vortex des mers glacées pour correspondre à celui de l'appui simple.",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Le sang des Lawrence",
+          "description": "Niveau de compétence Lame de fond +3. Le niveau maximum est de 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Emergence de la plèbe",
+          "description": "Augmente de 25% les DGT infligés par l'épée de lumière aux ennemis ayant moins de 50% de PV.",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Honneur de la chevalerie",
+          "description": "Niveau de compétence Vortex des mers glacées +3. Le niveau maximum est de 15.",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Obligations aristocratiques",
+          "description": "Confère immédiatement 5 charges d'énergie créée par Lame de fond. De plus, lorsque vous utilisez des attaques normales, la compétence ou le déchainement élémentaire pour cumuler des charges, vous avez 50% de chances de gagner une charge supplémentaire.",
+          "descriptions": []
+        }
+      ]
+    },
      {
       "key": "Fischl",
       "name": "Fischl",
@@ -1554,7 +1669,7 @@
     {
       "key": "Kazuha",
       "name": "Kaedehara Kazuha",
-      "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens from the past.",
+      "description": "Un samouraï errant d’Inazuma qui est actuellement avec la flotte Crux de Liyue. Une âme douce et insouciante dont le cœur cache beaucoup de fardeaux du passé.",
       "skills": [
         {
           "key": "s1",
