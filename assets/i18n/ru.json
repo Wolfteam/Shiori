@@ -4995,9 +4995,9 @@
     },
     {
       "key": "Mitternachts Waltz",
-      "name": "Mitternachts Waltz",
-      "description": "A bow painted the color of sin and nights of wild fantasy.",
-      "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {{0}}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {{1}}% for 5s."
+      "name": "Вальс Нирваны Ночи",
+      "description": "Лук, окрашенный в цвета греха и диких ночных фантазий.",
+      "refinement": "Попадания обычной атакой увеличивают урон элементального навыка на {{0}}% в течение 5 сек., а попадания элементальным навыком увеличивают урон обычной атаки на {{1}}% в течение 5 сек."
     },
     {
       "key": "Dodoco Tales",
