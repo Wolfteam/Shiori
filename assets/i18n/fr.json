@@ -12,7 +12,7 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Enchaine jusqu'à 5 coups d'épée.",
+              "description": "Enchaîne jusqu'à 5 coups d'épée.",
               "descriptions": []
             },
             {
@@ -36,7 +36,7 @@
               "name": "Aura solaire",
               "description": "Génère une Aura solaire, qui inflige des DGT Géo de zone.",
               "descriptions": [
-                "Un Germe éphémère est créé lorsque les ennemis se trouvant dans la zone subissent des dégâts, infligeant des DGT Géo de zone proportionelles à la DÉF d'Albedo.",
+                "Un Germe éphémère est créé lorsque les ennemis se trouvant dans la zone subissent des dégâts, infligeant des DGT Géo de zone proportionnelles à la DÉF d'Albedo.",
                 "Un Germe éphémère peut être généré toutes les 2s.",
                 "Lorsqu'un personnage rejoint le centre de l'Aura solaire, l'énergie Géo présente se concentre pour générer un podium ascendant lui permettant de dominer le champ de bataille. Il ne peut exister qu'un seul podium à la fois.",
                 "L'Aura solaire est considérée comme une construction Géo."
@@ -88,7 +88,7 @@
           "key": "c2",
           "title": "Éon de l'avènement",
           "description": "Genèse: Aura solaire confère pendant 30s l'effet jugement fatal à Albedo lorsque des Germes éphémères sont générés:",
-          "secondDescription": "Tous les cumuls de jugement dernier sont consomées lors consoméés lors du lancement de Transformation: Reflux Géo, conférant aux Germes éphémères et aux DGT d'explosion de cette aptitude un bonus de DGT proportionel au nombre de cumuls.",
+          "secondDescription": "Tous les cumuls de jugement dernier sont consommées du lancement de Transformation: Reflux Géo, conférant aux Germes éphémères et aux DGT d'explosion de cette aptitude un bonus de DGT proportionnel au nombre de cumuls.",
           "descriptions": [
             "Chaque cumul de Jugement dernier confère un bonus de DGT équivalant à 30% de la DÉF d'Albedo.",
             "Cet effet peut être cumulé 4 fois maximum."
@@ -141,7 +141,7 @@
             },
             {
               "key": "a2",
-              "description": "Effectue un tir visé plus précis infligeant davantage de DGT. Lors de la visée, la flèche se charge en élément pyro ingligeant de considérables DGT Pyro quand elle est complètement chargée.",
+              "description": "Effectue un tir visé plus précis infligeant davantage de DGT. Lors de la visée, la flèche se charge en élément pyro infligeant de considérables DGT Pyro quand elle est complètement chargée.",
               "descriptions": []
             },
             {
@@ -162,7 +162,7 @@
               "descriptions": [
                 "Le Baron nargue les ennemis proches et attire leur attention.",
                 "Ses PV sont proportionnels aux PV max d'Amber.",
-                "Le Baron explose à la fin ou s'il est détruit entre temps, et inflige des DGT Pyro de zone."
+                "Le Baron explose à la fin ou s'il est détruit entre-temps, et inflige des DGT Pyro de zone."
               ]
             },
             {
@@ -283,7 +283,7 @@
         {
           "key": "s2",
           "title": "C'est parti pour le show!",
-          "description": "Invoque des goutelettes dansantes qui forment un cercle de mélodie infligeant des DGT Hydro et trempant les ennemis proches.",
+          "description": "Invoque des gouttelettes dansantes qui forment un cercle de mélodie infligeant des DGT Hydro et trempant les ennemis proches.",
           "abilities": [
             {
               "name": "Cercle de mélodie",
