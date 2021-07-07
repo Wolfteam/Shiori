@@ -12,7 +12,7 @@
           "abilities": [
              {
               "key": "a1",
-              "description": "Effectuez jusqu'à 5 frappes rapides.",
+              "description": "Enchaîne jusqu'à 5 coups d'épée.",
               "descriptions": []
             },
              {
@@ -160,10 +160,10 @@
               "name": "Poupée explosive",
               "description": "Le fidèle Baron Lapinou est déployé sur le terrain.",
               "descriptions": [
-                 "Le baron nargue les ennemis proches et attire leur attention.",
-                 "Ses PV sont proportionnels aux PC max d'Amber.",
-                 "Le baron explose à la fin ou s'il est détruit entre temps, et inflige des DGT Pyro de zone."
-                ]
+                "Le Baron nargue les ennemis proches et attire leur attention.",
+                "Ses PV sont proportionnels aux PV max d'Amber.",
+                "Le Baron explose à la fin ou s'il est détruit entre-temps, et inflige des DGT Pyro de zone."
+              ]
             },
              {
               "key": "a2",

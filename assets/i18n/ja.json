@@ -1705,29 +1705,141 @@
     {
       "key": "Kazuha",
       "name": "楓原万葉",
-      "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens.",
+      "description": "稲妻より訪れし浪人。今は璃月の「南十字」武装船隊と行動を共にしている。穏やかで浮世離れした性格、過去に経験した様々な出来事を心の内に秘めている。",
       "skills": [
         {
           "key": "s1",
-          "title": "Garyu Bladework",
+          "title": "我流剣術",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "剣による最大5段の連続攻撃を行う。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "一定のスタミナを消費し、前方に斬撃を2回放つ。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。千早振る後の落下攻撃は、落下攻撃・乱れ嵐斬へと変わる。",
+              "descriptions": []
+            },
+            {
+              "name": "落下攻撃・乱れ嵐斬",
+              "description": "元素スキル・千早振る後の落下攻撃のダメージは風元素ダメージに変わる。落下時に秘剣で風穴を生成し、近くの敵と物体を引き寄せる。",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "Chihayafuru",
-          "description": null,
-          "abilities": []
+          "title": "千早振る",
+          "description": "旋風の如く秘剣を振り、敵と物体を引き寄せる。範囲内の敵をノックバックし、風元素ダメージを与え、気流に乗って空中に舞い上がる。\n楓原万葉が元素スキル・千早振るによる効果で空中に舞い上がった後、落下攻撃を10秒以内に放つと強力な落下攻撃・乱れ嵐斬へと変わる。",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "空中でも発動可能。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "力を溜めた後に発動する。一回押しより広い範囲に、より高威力の属元素ダメージを与える。",
+              "descriptions": []
+            },
+            {
+              "name": "落下攻撃・乱れ嵐斬",
+              "description": "元素スキル・千早振る後の落下攻撃のダメージは風元素ダメージへと変わる。落下時に秘剣で風穴を生成し、近くの敵と物体を引き寄せる。\n乱れ嵐斬のダメージは落下攻撃によるダメージとみなされる。",
+              "descriptions": []
+            }
+
+          ]
         },
         {
-          "key": "s2",
-          "title": "Manyou no Ittou",
-          "description": null,
-          "abilities": []
+          "key": "s3",
+          "title": "万葉の一刀",
+          "description": "我流の奥義で嵐のような一振りを繰り出し、風元素範囲ダメージを与える。太刀風は「流風秋野」と呼ばれる領域を創り出し、中にいる敵に風元素ダメージを一定間隔で与える。",
+          "abilities": [
+            {
+              "name": "元素変化",
+              "description": "流風秋野の継続時間中に水元素/炎元素/氷元素/雷元素に接触すると、接触した元素の属性を獲得し、該当元素の付加ダメージを追加で与える。\n元素変化はスキル継続中に1回のみ発生する。",
+              "descriptions": []
+            }
+          ]
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "霞立つ松風",
+          "description": "チーム内の自身のキャラクター全員がダッシュに消費するスタミナ-20%。\n同じ効果を持つ固有天賦との重ね掛け不可。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "相聞剣法",
+          "description": "千早振るを発動時、水元素/炎元素/氷元素/雷元素と接触した場合、その千早振る後の落下攻撃・乱れ嵐斬に元素変化が起き、攻撃力200%分の該当元素ダメージを追加で与える。このダメージは落下攻撃とみなされる。千早振るのスキル効果中、元素変化は1回のみ発生する。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "風物の詩吟",
+          "description": "楓原万葉が拡散反応を起こした後、楓原万葉の元素熟知の数値が1につき、チーム全員の該当元素ダメージ+0.04%、継続時間8秒。この方法で獲得した異なる元素ダメージアップ効果は共存する。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "千山紅葉",
+          "description": "干早振るのクールタイム-10%。万葉の一刀を発動した時、干早振るのクールタイムがリセットされる。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "山嵐残心",
+          "description": "万葉の一刀の流風秋野で下記の効果を発動する。",
+          "secondDescription": "この命ノ星座による元素熟知アップ効果は重ね掛けできない。",
+          "descriptions": [
+            "継続時間内、楓原万葉自身の元素熟知+200。",
+            "流風秋野の中にいるフィールド上キャラクターの元素熟知+200。"
+          ]
+        },
+        {
+          "key": "c3",
+          "title": "楓袖奇譚",
+          "description": "干早振るのスキルLv.+30。\n最大Lv.15まで。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "大空幻法",
+          "description": "楓原万葉の元素エネルギーが45以下の時、下記の効果を獲得する。",
+          "secondDescription": null,
+          "descriptions": [
+            "一回押し/長押しで干早振るを発動した時、元素エネルギーを3/4回復する。",
+            "滑期状態のとき、1秒毎に元素エネルギーを2回復する。"
+          ]
+        },
+        {
+          "key": "c5",
+          "title": "万世集",
+          "description": "万葉の一刀のスキルLv.+3。\n最大Lv.15まで。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "血赤の紅葉",
+          "description": "楓原万葉が干早振るまたは万葉の一刀を発動した後の5秒間、風元素付与を獲得する、また楓原万葉の元素熟知の数値が1につき、自身の通常攻撃、重撃、落下攻撃のダメージ",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
     },
     {
       "key": "Keqing",
@@ -4134,7 +4246,7 @@
     },
     {
       "key": "Yoimiya",
-      "name": "Yoimiya",
+      "name": "宵宮",
       "description": "N/A",
       "skills": [
         {
@@ -4161,7 +4273,7 @@
     },
     {
       "key": "Sayu",
-      "name": "Sayu",
+      "name": "早柚",
       "description": "N/A",
       "skills": [
         {
@@ -4188,7 +4300,7 @@
     },
     {
       "key": "Traveler (Electro)",
-      "name": "Traveler (Electro)",
+      "name": "旅人 (雷)",
       "description": "N/A",
       "skills": [
         {
@@ -4877,21 +4989,21 @@
     },
     {
       "key": "Freedom-Sworn",
-      "name": "Freedom-Sworn",
-      "description": "A straight sword, azure as antediluvian song, and as keen as the oaths of freedom taken in the Land of Wind.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {{0}}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "name": "蒼古なる自由への誓い",
+      "description": "悠久なる歌声のように青く、真っすぐな直剣。風の国を代表する自由の誓いのように、その切っ先は鋭い。",
+      "refinement": "風と共に流れる「千年の大楽章」の一部。与えるダメージ +{{0}}%。元素反応を起こすと、奮起の欠片を1枚獲得する。この効果は0.3秒毎に1回のみ発動でき、待機中のキャラクターも発動できる。\n奮起の欠片を2枚集めると、全ての奮起の欠片を消費し、周囲のチーム全員に12秒継続する「千年の大楽章・抗争の歌」効果を付与する：通常攻撃、重撃、落下攻撃のダメージ +{{1}}%、攻撃力 +{{2}}%。発動後の20秒間、奮起の欠片を再度獲得することはできない。\n「千年の大楽章」のもたらす各効果中、同種類の効果は重ね掛け不可。"
     },
     {
       "key": "Mitternachts Waltz",
-      "name": "Mitternachts Waltz",
-      "description": "A bow painted the color of sin and nights of wild fantasy.",
-      "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {{0}}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {{1}}% for 5s."
+      "name": "幽夜のワルツ",
+      "description": "罪と幻想の夜を想起させる色をした弓。",
+      "refinement": "通常攻撃が敵に命中した後の5秒間、元素スキルのダメージ+ {{0}}%。\n元素スキルが敵に命中した後の5秒間、通常攻撃のダメージ+ {{1}}%。"
     },
     {
       "key": "Dodoco Tales",
-      "name": "Dodoco Tales",
-      "description": "A children's book filled with childish short stories at which one cannot help but laugh.\nEven those readers who have long reached adulthood cannot help but be absorbed by the innocent, naive little adventures portrayed within.",
-      "refinement": "Normal Attack hits on opponents increase Charged Attack DMG by {{0}} for 6s. Charged Attack hits on opponents increase ATK by {{1}} for 6s."
+      "name": "ドドコの物語",
+      "description": "豪華な表紙の児童書、子供向けの短いストーリーで構成されている。読むと心がリラックスできるものばかり。\nその無邪気な冒険物語を読めば、たとえ大人でも夢中になるだろう。",
+      "refinement": "通常攻撃が敵に命中した後の6秒間、重撃ダメージ+ {{0}}%。\n重撃が敵に命中した後の6秒間、攻撃力+ {{1}}%。"
     }
   ],
   "artifacts": [
@@ -6253,13 +6365,13 @@
     },
     {
       "key": "Maguu Kishin",
-      "name": "Maguu Kishin",
-      "description": "This core can power the inorganic Maguu Kenki and cause it to wield a blade like a living being.\nFlesh decays, and with it decays all martial art and memory, no matter how masterful or lovely.\nPerhaps only by converting one's four limbs and body into sturdy mechanical parts, and by at last sacrificing one's very own heart for a sophisticated mechanical one, can one transcend transient flesh and approach the everlasting..."
+      "name": "魔偶の芯",
+      "description": "無機化合物である廣偶剣鬼を生きているかのように剣を振るわせる芯。\nどんなに優れた武術も、どんなに美しい思い出も、いすれ肉体と共に消えてしまう。\n生身の時よりも永遠に近づくためには、手足胴体を全て頑丈なからくりへと変え、心臓を精密な「芯」に置き換えるしかないだろう..."
     },
     {
       "key": "Sea Ganoderma",
-      "name": "Sea Ganoderma",
-      "description": "A species that only grows in certain special regions of the ocean and islands. It looks like a fungus of some sort, but it is in fact the result of the secretion and proliferation of certain soft-bodied organisms."
+      "name": "ウミレイシ",
+      "description": "特定の海域や島でしか育たない特殊な品種。キノコ類のように見えるが、実際は軟体動物の分泌と増殖から生まれたものである。"
     }
   ],
   "debuffs": [
@@ -6744,39 +6856,39 @@
     },
     {
       "key": "Maguu Kenki",
-      "name": "Maguu Kenki"
+      "name": "魔偶剣鬼"
     },
     {
       "key": "Hydro Mimic Boar",
-      "name": "Hydro Mimic Boar"
+      "name": "幻形イノシシ·水"
     },
     {
       "key": "Hydro Mimic Crab",
-      "name": "Hydro Mimic Crab"
+      "name": "幻形カニ·水"
     },
     {
       "key": "Hydro Mimic Crane",
-      "name": "Hydro Mimic Crane"
+      "name": "幻形ツル·水"
     },
     {
       "key": "Hydro Mimic Ferret",
-      "name": "Hydro Mimic Ferret"
+      "name": "幻形リス·水"
     },
     {
       "key": "Hydro Mimic Finch",
-      "name": "Hydro Mimic Finch"
+      "name": "幻形スズメ·水"
     },
     {
       "key": "Hydro Mimic Frog",
-      "name": "Hydro Mimic Frog"
+      "name": "幻形カエル·水"
     },
     {
       "key": "Hydro Mimic Mallard",
-      "name": "Hydro Mimic Mallard"
+      "name": "幻形アヒル·水"
     },
     {
       "key": "Hydro Mimic Raptor",
-      "name": "Hydro Mimic Raptor"
+      "name": "幻形トビ·水"
     }
   ]
 }

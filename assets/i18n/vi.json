@@ -1705,29 +1705,141 @@
     {
       "key": "Kazuha",
       "name": "Kaedehara Kazuha",
-      "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens.",
+      "description": "Ronin Samurai đến từ Inazuma, nay đã gia nhập đội thuyền \"Nam Thập Tự\" Liyue. Tính tình ôn hòa, hào sảng, trong lòng chất chứa nhiều chuyện xưa.",
       "skills": [
         {
           "key": "s1",
-          "title": "Garyu Bladework",
+          "title": "Kiếm Thuật Garyuu",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Tiêu hao thể lực nhất định, đánh ra 2 kiếm về phía trước trong chớp mắt.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Đáp xuống đất từ trên không, tấn công địch trên đường và gây ST phạm vi khi chạm đất. Nếu lần tấn công khi đáp này được thi triển từ Chihayaburu, thì sẽ chuyển thành Tấn Công Khi Đáp - Xua Tan Mây Mù",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp - Xua Tan Mây Mù",
+              "description": "ST gây ra bởi tấn công khi đáp khi thi triển thông qua Kỹ Năng Nguyên Tố - Chihayaburu sẽ chuyển thành ST Phong, và khi chạm đất, thi triển bí kiếm tạo ra một hang gió nhỏ, kéo các vật thể và địch ở gần vào.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "Chihayafuru",
-          "description": null,
-          "abilities": []
+          "title": "Chihayaburu",
+          "description": "Thi triển bí kiếm mạnh mẽ như gió, kéo địch và ma vật đến gần rồi đánh bay, gây ST Phong, và bay lên không trung nhờ vào dòng khí phun ra.\nTrong vòng 10s sau khi Kaedehara Kazuha bay lên nhờ kỹ năng nguyên tố - Chihayaburu và liên tục ở trên không, nếu thực hiện tấn công khi đáp sẽ thi triển Tấn Công Khi Đáp - Xua Tan Mây Mù cực mạnh.",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Có thể thi triển trên không.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Tích lũy sức mạnh rồi thi triển, so với nhấn, gây ST phong cao hơn và phạm vi rộng hơn.",
+              "descriptions": []
+            },
+            {
+              "name": "Tấn Công Khi Đáp - Xua Tan Mây Mù",
+              "description": "WST gây ra bởi tấn công khi đáp khi thi triển thông qua Kỹ Năng Nguyên Tố - Chihayaburu sẽ chuyển thành ST Phong, và khi chạm đất, thi triển bí kiếm tạo ra một hang gió nhỏ, kéo các vật thể và địch ở gần vào.\nST Xua Tan Mây Mù gây ra xem như ST tấn công khi đáp.",
+              "descriptions": []
+            }
+
+          ]
         },
         {
-          "key": "s2",
-          "title": "Manyou no Ittou",
-          "description": null,
-          "abilities": []
+          "key": "s3",
+          "title": "Kazuha Nhất Đao Trảm",
+          "description": "Thi triển bí thuật, chém ra một luồng kiếm khí, gây ST Phong diện rộng.\nKỹ năng này để lại một khu vực mang tên \"Một Khắc Gió Thu\", gây ST Phong ngắt quãng cho địch trong đó.",
+          "abilities": [
+            {
+              "name": "Chuyển hóa nguyên tố",
+              "description": "Trong thời gian Một Khắc Gió Thu tồn tại, nếu tiếp xúc Nguyên tố Thủy/Hỏa/Băng/Lôi sẽ nhận được thuộc tính nguyên tố tương ứng, gây thêm ST kèm theo của nguyên tố này.\nLoại chuyển hóa này chỉ phát sinh một lần trong thời gian duy trì kỹ năng.",
+              "descriptions": []
+            }
+          ]
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Cuốn Theo Chiều Gió",
+          "description": "Giảm 20% tiêu hao thể lực cho toàn đội khi xung kích. Không cộng dồn với thiên phú nhân vật khác.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Kiếm Pháp Soumon",
+          "description": "Khi Chihayaburu đang thi triển, nếu tiếp xúc Nguyên Tố Thủy/Hỏa/Băng/Lôi sẽ khiến Tấn Công Khi Đáp - Xua Tan Mây Mù lần này của Chihayaburu xảy ra chuyển hóa nguyên tố, kèm ST Nguyên Tố bằng 200% tấn công, ST này được xem như ST tấn công khi đáp.\nMỗi lần kỹ năng Chihayaburu đang có hiệu lực, chỉ xảy ra 1 lần chuyển hóa nguyên tố.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Cảnh Vật Thì Thầm",
+          "description": "Kazuha sau khi kích hoạt phản ứng khuếch tán, mỗi điểm tinh thông nguyên tố của Kazuha sẽ tăng cho tấn cả nhân vật trong đội 0.04% ST nguyên tố tương ứng, duy trì 8s. ST nguyên tố tăng thêm khác nhau nhận từ cách này có thể cùng tồn tại.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Sắc Đỏ Vạn Dặm",
+          "description": "Thời gian CD Chihayaburu giảm 10%.\nKhi thi triển Kazuha Nhất Đao Trảm, làm mới thời gian CD Chihayaburu.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Bão Tố Yamaarashi",
+          "description": "Một Khắc Gió Thu của Kazuha Nhất Đao Trảm có hiệu quả sau:",
+          "secondDescription": "Hiệu quả tăng Tinh Thông Nguyên Tố mà cung mệnh này mang đến sẽ không cộng dồn.",
+          "descriptions": [
+            "Tinh Thông Nguyên Tố của Kazuha tăng 200 điểm trong thời gian duy trì.",
+            "Tinh Thông Nguyên Tố của nhân vật ra trận tăng 200 điểm."
+          ]
+        },
+        {
+          "key": "c3",
+          "title": "Phong Tụ Kỳ Đàm",
+          "description": "Cấp kỹ năng Chihayaburu +3.\nTăng tối đa đến cấp 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Oozora Genpou",
+          "description": "Khi năng lượng nguyên tố của Kazuha thấp hơn 45 sẽ có những hiệu quả sau:",
+          "secondDescription": null,
+          "descriptions": [
+            "Nhấn, nhấn giữ thi triển Chihayaburu sẽ hồi phục cho Kazuha lần lượt là 3, 4 năng lượng nguyên tố.",
+            "Khi trong trạng thái lướt, mỗi giây sẽ giúp Kazuha hồi phục 2 năng lượng nguyên tố."
+          ]
+        },
+        {
+          "key": "c5",
+          "title": "Trí Tuệ Bansei",
+          "description": "Cấp kỹ năng Kazuha Nhất Đao Trảm +3.\nTăng tối đa đến cấp 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Lá Phong Đỏ Thẫm",
+          "description": "Trong 5s sau khi tri triển Chihayaburu hoặc Kazuha Nhất Đao Trảm sẽ nhận được đính kèm nguyên tố Phong, hơn nữa mỗi điểm tinh thông nguyên tố của Kazuha sẽ khiến ST tạo thành từ đánh thường, trọng kích, tấn công khi đáp của anh ấy tăng 0.2%.",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
     },
     {
       "key": "Keqing",
@@ -4890,7 +5002,7 @@
       "key": "Dodoco Tales",
       "name": "Tuyển tập các câu chuyện về Dodoco",
       "description": "Một cuốn sách thiếu nhi với trang bìa lộng lẫy, nội dung toàn là truyện ngắn với ngôn từ trẻ em, khiến người đọc không kìm được cảm xúc (ý là cười chết ấy).\nNgay cả nhưng độc giả trưởng thành khi đọc những câu chuyện phiêu lưu hồn nhiên và ngây thơ trong cuốn sách cũng không thể không bị cuốn hút.",
-      "refinement": "Trong 6s sau khi tấn công thường đánh trúng địch, ST trọng kích tạo thành tăng {{0}}. Trong 6s sau khi trọng kích đánh trúng địch, tấn công tăng{{1}}."
+      "refinement": "Trong 6s sau khi tấn công thường đánh trúng địch, ST trọng kích tạo thành tăng {{0}}%. Trong 6s sau khi trọng kích đánh trúng địch, tấn công tăng{{1}}%."
     }
   ],
   "artifacts": [
