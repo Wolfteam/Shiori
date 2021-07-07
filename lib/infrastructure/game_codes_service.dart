@@ -191,9 +191,9 @@ class GameCodeServiceImpl implements GameCodeService {
         }
       }
 
-      //Valid: June 9, 2021
+      //Valid: June 9, 2021 or Valid until July 21, 2021
       if (expired && nodeText.contains('Valid') && !nodeText.contains('indefinite')) {
-        final z = nodeText.replaceAll('Valid', '').replaceAll(':', '').trim();
+        final z = nodeText.replaceAll('Valid', '').replaceAll('until', '').replaceAll(':', '').trim();
         return format.parse(z);
       }
     } catch (e, s) {

@@ -5984,7 +5984,7 @@
       "fullImage": "Eula.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "mondstadt",
       "role": "mainDps",
@@ -10056,8 +10056,8 @@
       "image": "Kazuha.png",
       "fullImage": "Kazuha.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": false,
       "region": "inazuma",
       "role": "supportDps",
@@ -10461,7 +10461,8 @@
             "freedom_sworn.png",
             "the_alley_flash.png",
             "lions_roar.png",
-            "blackcliff_longsword.png"
+            "blackcliff_longsword.png",
+            "iron_sting.png"
           ],
           "artifacts": [
             {
@@ -10473,17 +10474,6 @@
                 "atkPercentage",
                 "anemoDmgBonusPercentage",
                 "critRatePercentage"
-              ]
-            },
-            {
-              "one": "viridescent_venerer_4.png",
-              "multiples": [],
-              "stats": [
-                "hp",
-                "atk",
-                "elementaryMastery",
-                "elementaryMastery",
-                "elementaryMastery"
               ]
             }
           ],
@@ -10525,7 +10515,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": null,
+          "image": "normal_attack_guhua_style.png",
           "type": "normalAttack",
           "abilities": [
             {
@@ -10544,13 +10534,22 @@
         },
         {
           "key": "s2",
-          "image": null,
+          "image": "chihayaburu.png",
           "type": "elementalSkill",
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "type": "press"
+            },
+            {
+              "key": "a2",
+              "type": "hold"
+            }
+          ]
         },
         {
           "key": "s3",
-          "image": null,
+          "image": "kazuha_c5.png",
           "type": "elementalBurst",
           "abilities": []
         }
@@ -10558,17 +10557,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": null,
+          "image": "kazuha_p1.png",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": null,
+          "image": "kazuha_p2.png",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": null,
+          "image": "kazuha_p3.png",
           "unlockedAt": 4
         }
       ],
@@ -10576,32 +10575,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": null
+          "image": "kazuha_c1.png"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": null
+          "image": "kazuha_c2.png"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": null
+          "image": "kazuha_c3.png"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": null
+          "image": "kazuha_c4.png"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": null
+          "image": "kazuha_c5.png"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": null
+          "image": "kazuha_c6.png"
         }
       ],
       "subStatType": "elementaryMastery",

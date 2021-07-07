@@ -1010,110 +1010,110 @@
       "skills": [
         {
           "key": "s1",
-          "title": "Favonius Bladework - Edel",
+          "title": "西风剑术·宗室",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 5 consecutive strikes.",
+              "description": "进行至多五段的连续挥砍。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": " Drains Stamina over time to perform continuous slashes.\nAt the end of the sequence, perform a more powerful slash.",
+              "description": " 持续消耗体力，快速进行连续的斩击。\n重击结束时，会进行一次格外有力的挥砍。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Icetide Vortex",
+          "title": "冰潮的涡旋",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Slashes swiftly, dealing Cryo DMG.\nWhen it hits an opponent, Eula gains a stack of Grimheart that stacks up to 2 times. These stacks can only be gained once every 0.3s.",
+              "description": "快速挥斩，造成冰元素伤害。\n命中敌人时，优菈自己获得一层冷酷之心效果，最多叠加2次，每0.3秒内只能触发1次。",
               "descriptions": []
             },
             {
-              "name": "Grimheart",
-              "description": "Increases Eula's resistance to interruption and DEF.",
+              "name": "冷酷之心",
+              "description": "提高优菈的抗打断能力和防御力。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Wielding her sword, Eula consumes all the stacks of Grimheart and lashes forward, dealing AoE Cryo DMG to opponents in front of her.\nIf Grimheart stacks are consumed, surrounding opponents will have their Physical RES and Cryo RES decreased.\nEach consumed stack of Grimheart will be converted into an Icewhirl Brand that deals Cryo DMG to nearby opponents.",
+              "description": "消耗所有的冷酷之心效果，并挥舞大剑向前挥砍，对前方的敌人造成冰元素范围伤害。若消耗了冷酷之心效果，会使身边的敌人的物理抗性与冰元素抗性降低。每一层被消耗的冷酷之心会转化为一柄冰涡之剑，对附近的敌人造成冰元素伤害。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Glacial Illumination",
-          "description": "Brandishes her greatsword, dealing Cryo DMG to nearby opponents and creating a Lightfall Sword that follows her around for a duration of up to 7s.\nWhile present, the Lightfall Sword increases Eula's resistance to interruption. When Eula's own Normal Attack, Elemental Skill, and Elemental Burst deal DMG to opponents, they will charge the Lightfall Sword, which can gain an energy stack once every 0.1s.\nOnce its duration ends, the Lightfall Sword will descend and explode violently, dealing Physical DMG to nearby opponents.\nThis DMG scales on the number of energy stacks the Lightfall Sword has accumulated.\nIf Eula leaves the field, the Lightfall Sword will explode immediately.",
+          "title": "凝浪之光剑",
+          "description": "猛烈挥舞大剑，对周围的敌人造成冰元素伤害，并创造一柄跟随自己，至多持续存在7秒的光降之剑。\n在持续期间内，光降之剑会提高优菈自己的抗打断能力，并在优菈自己的普通攻击、元素战技或元素爆发对敌人造成伤害时，为光降之剑积蓄能量。每0.1秒只能积攒一层能量。\n持续时间结束后，光降之剑会降下并猛烈爆发，对周围的敌人造成物理伤害。\n此伤害受益于光降之剑积蓄的能量层数。\n优菈退场时，光降之剑会立即爆发。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Aristocratic Introspection",
-          "description": "When Eula crafts Character Talent Materials, she has a 10% chance to receive double the product.",
+          "title": "贵族的自省",
+          "description": "合成天赋材料时，有10%的概率获得2倍产出。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Roiling Rime",
-          "description": "If 2 stacks of Grimheart are consumed upon unleashing the Holding Mode of Icetide Vortex, a Shattered Lightfall Sword will be created that will explode immediately, dealing 50% of the basic Physical DMG dealt by a Lightfall Sword created by Glacial Illumination.",
+          "title": "潮卷冰削",
+          "description": "长按施放冰潮的涡旋时，若一次性消耗了2层冷酷之心效果，则创造会立即爆发的残缺光降之剑，造成相当于凝浪之光剑的光降之剑基础伤害50%的物理伤害。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Wellspring of War-Lust",
-          "description": "When Glacial Illumination is cast, the CD of Icetide Vortex is reset and Eula gains 1 stack of Grimheart.",
+          "title": "战欲涌现",
+          "description": "释放凝浪之光剑时，重置冰潮的涡旋的冷却时间，并为优菈赋予一层冷酷之心效果。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Tidal Illusion",
-          "description": "Every time Icetide Vortex's Grimheart stacks are consumed, Eula's Physical DMG is increased by 30% for 6s.\nEach stack consumed will increase the duration of this effect by 6s up to a maximum of 18s.",
+          "title": "光潮的幻象",
+          "description": "消耗冰潮的涡旋的冷酷之心效果后，优菈的物理伤害加成提高30%，持续6秒，\n每消耗一层冷酷之心，都会使这个效果的持续时间延长6秒，最多不会超过18秒。",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Lady of Seafoam",
-          "description": "Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to Tap CD.",
+          "title": "海沫的少女",
+          "description": "缩短冰潮的涡旋长按的冷却时间，\n使其降低至与点按的冷却时间相同。",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Lawrence Pedigree",
-          "description": "Increases the Level of Glacial Illumination by 3.\nMaximum upgrade level is 15.",
+          "title": "劳伦斯的血脉",
+          "description": "凝浪之光剑的技能等级提高3级。\n至多提升至15级。",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "The Obstinacy of One's Inferiors",
-          "description": "Lightfall Swords deal 25% increased DMG against opponents with less than 50% HP.",
+          "title": "自卑者的逞强",
+          "description": "对生命值低于50%的敌人，光降之剑造成的伤害提高25%。",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Chivalric Quality",
-          "description": "Increases the Level of Icetide Vortex by 3.\nMaximum upgrade level is 15.",
+          "title": "骑士的素质",
+          "description": "冰潮的涡旋的技能等级提高3级。\n至多提升至15级。",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Noble Obligation",
-          "description": "Lightfall Swords created by Glacial Illumination start with 5 stacks of energy. Normal Attacks, Elemental Skills, and Elemental Bursts have a 50% chance to grant the Lightfall Sword an additional stack of energy.",
+          "title": "高贵者的义务",
+          "description": "凝浪之光剑创造的光降之剑立即获得5层能量。普通攻击、元素战技或元素爆发造成伤害使其积蓄能量层数时，有50%的概率额外获得一层。",
           "descriptions": []
         }
       ]
@@ -1711,30 +1711,141 @@
     },
     {
       "key": "Kazuha",
-      "name": "Kaedehara Kazuha",
-      "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens.",
+      "name": "枫原万叶",
+      "description": "来自稻妻的浪人武士，如今栖身于璃月船队「南十字」中。性情温和而洒脱，心中埋藏着许多往事。",
       "skills": [
         {
           "key": "s1",
-          "title": "Garyu Bladework",
+          "title": "我流剑术",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续剑击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，瞬间向前方挥出两剑。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。若这次下落攻击经由千早振施放，则会转为施放下落攻击·乱岚拨止。",
+              "descriptions": []
+            },
+            {
+              "name": "下落攻击·乱岚拨止",
+              "description": "通过元素战技•千早振施放的下落攻击，造成的伤害将转化为风元素伤害，并在落地时施展秘剑产生小型的风穴，牵引附近的物体与敌人。",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "Chihayafuru",
-          "description": null,
-          "abilities": []
+          "title": "千早振",
+          "description": "施展如同冲风般激昂的秘剑，将敌人与物体牵引至所在位置，击飞范围内的敌人，造成风元素伤害，并借由喷薄的气流如登泷般腾空而起。\n枫原万叶因元素战技•千早振而升空后的10秒内并持续处于空中时，若进行下落攻击，则会施展格外强劲的下落攻击•乱岚拨止。",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "可以在空中施放。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "积蓄力量后施展，相对于点按，在更大的范围内造成更高的风元素伤害。",
+              "descriptions": []
+            },
+            {
+              "name": "下落攻击·乱岚拨止",
+              "description": "通过元素战技·千早振施放的下落攻击，造成的伤害将转化为风元素伤害，并在落地时施展秘剑产生小型的风穴，牵引附近的物体与敌人。\n乱岚拨止造成的伤害视为下落攻击伤害。",
+              "descriptions": []
+            }
+          ]
         },
         {
-          "key": "s2",
-          "title": "Manyou no Ittou",
-          "description": null,
-          "abilities": []
+          "key": "s3",
+          "title": "万叶之一刀",
+          "description": "施展我流的奥义，斩出初岚般的一刀，造成风元素范围伤害。\n刀风会留下名为「流风秋野」的领域，对其中的敌人造成间歇的风元素伤害。",
+          "abilities": [
+            {
+              "name": "元素转化",
+              "description": "若流风秋野在持续期间接触了水元素/火元素/冰元素/雷元素，则会获得对应元素属性，额外造成该元素附加伤害。\n这种转化在技能持续期间仅会发生一次。",
+              "descriptions": []
+            }
+          ]
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "松风霞立",
+          "description": "队伍中自己的角色冲刺消耗的体力降低20%。\n无法与效果完全相同的固有天赋叠加。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "相闻之剑法",
+          "description": "千早振在施放时，如果接触了水元素/火元素/冰元素/雷元素，则会使这次千早振的下落攻击·乱岚拨止发生元素转化，将附加200%攻击力的对应元素伤害，该伤害视为下落攻击伤害。每次千早振的技能效果中，元素转化仅会发生一次。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "风物之诗咏",
+          "description": "枫原万叶触发扩散反应后，枫原万叶的每点元素精通，会为队伍中所有角色提供0.04%对应元素伤害加成，持续8秒。通过这种方式获得的不同元素伤害加成可以共存。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "千山红遍",
+          "description": "千早振的冷却时间减少10%。\n施放万叶之一刀时，重置千早振的冷却时间。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "山岚残芯",
+          "description": "万叶之一刀的流风秋野具有以下效果：",
+          "secondDescription": "该命之座提供的元素精通提升效果无法叠加。",
+          "descriptions": [
+            "持续期间内，枫原万叶自己的元素精通提升200点；",
+            "其中的场上角色的元素精通提升200点。"
+          ]
+        },
+        {
+          "key": "c3",
+          "title": "枫袖奇谭",
+          "description": "千早振的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "大空幻法",
+          "description": "当枫原万叶的元素能量低于45点时，具有如下效果：",
+          "secondDescription": null,
+          "descriptions": [
+            "点按、长按施放千早振时，将分别为枫原万叶恢复3、4点元素能量；",
+            "处于滑翔状态下时，每秒为枫原万叶恢复2点元素能量。"
+          ]
+        },
+        {
+          "key": "c5",
+          "title": "万世之集",
+          "description": "万叶之一刀的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "血赤叶红",
+          "description": "枫原万叶施放千早振或万叶之一刀后的5秒内，获得风元素附魔，并且枫原万叶的每点元素精通，都会使他的普通攻击、重击、下落攻击造成的伤害提高0.2%。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
     },
     {
       "key": "Keqing",
@@ -4896,7 +5007,7 @@
       "key": "Dodoco Tales",
       "name": "Dodoco Tales",
       "description": "A children's book filled with childish short stories at which one cannot help but laugh.\nEven those readers who have long reached adulthood cannot help but be absorbed by the innocent, naive little adventures portrayed within.",
-      "refinement": "Normal Attack hits on opponents increase Charged Attack DMG by {{0}} for 6s. Charged Attack hits on opponents increase ATK by {{1}} for 6s."
+      "refinement": "Normal Attack hits on opponents increase Charged Attack DMG by {{0}}% for 6s. Charged Attack hits on opponents increase ATK by {{1}}% for 6s."
     }
   ],
   "artifacts": [

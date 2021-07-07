@@ -1706,29 +1706,141 @@
     {
       "key": "Kazuha",
       "name": "Kaedehara Kazuha",
-      "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens.",
+      "description": "Un samurái errante de Inazuma que actualmente se hospeda en la Flota Crux Meridianam de Liyue. El corazón de este amable y libre joven encierra sus muchas cargas del pasado.",
       "skills": [
         {
           "key": "s1",
-          "title": "Garyu Bladework",
+          "title": "Técnica de espada Garyu",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Realiza hasta 5 ataques rápidos.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Consume una cierta cantidad de Aguante para lanzar un golpe de espada cruzado.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto. Si el Ataque Descendente se activa debido a Vehemencia estremecedora, se convertirá en Ataque Descendente: Contención del caos.",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Descendente: Contención del caos",
+              "description": "Al utilizar la Habilidad Elemental, Vehemencia estremecedora, para realizar un Ataque Descendente, el daño que inflige el Ataque Descendente se convertirá en Daño Anemo y, al aterrizar, creará un pequeño túnel de viento que atrae a los objetos y enemigos cercanos.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "Chihayafuru",
-          "description": null,
-          "abilities": []
+          "title": "Vehemencia estremecedora",
+          "description": "Usa una técnica secreta para crear un fuerte vendaval que atrae a los enemigos y los objetos hacia la ubicación actual de Kazuha, los lanza por los aires y les inflige Daño Anemo. Además, Kazuha alzará el vuelo gracias a la corriente de aire generada mediante esta habilidad.\nEn los 10 s siguientes de alzar el vuelo tras usar Vehemencia estremecedora, y también al permanecer en el aire gracias al efecto de esta habilidad, si Kazuha realiza un Ataque Descendente, este se convertirá en un poderoso Ataque Descendente: Contención del caos.",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Puede ejecutarse estando en el aire.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Reúne fuerzas para realizar la habilidad, la cual infligirá más Daño Anemo y en una AdE más grande que la de pulsar una vez.",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Descendente: Contención del caos",
+              "description": "Al realizar un Ataque Descendente mediante la Habilidad Elemental, Vehemencia estremecedora, el daño que inflige el Ataque Descendente se convertirá en Daño Anemo y, al aterrizar, creará un pequeño túnel de viento que atrae a los objetos y enemigos cercanos.\nEl daño de Contención del caos se considera daño de Ataque Descendente.",
+              "descriptions": []
+            }
+
+          ]
         },
         {
-          "key": "s2",
-          "title": "Manyou no Ittou",
-          "description": null,
-          "abilities": []
+          "key": "s3",
+          "title": "Filo de las diez mil hojas",
+          "description": "Ejecuta la técnica Garyu definitiva para realizar un corte de tormenta que inflige Daño Anemo en el AdE.\nEl viento generado por la espada creará un área llamada “viento del otoño”, que infligirá regularmente Daño Anemo a los enemigos dentro de ella.",
+          "abilities": [
+            {
+              "name": "Cambio elemental",
+              "description": "Si viento del otoño entra en contacto con Hydro/Pyro/Cryo/Electro mientras dure, infligirá un bono de Daño Elemental adicional de ese tipo.\nEl cambio elemental solo puede ocurrir una vez durante la habilidad.",
+              "descriptions": []
+            }
+          ]
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Viento arrebol",
+          "description": "Disminuye en un 20% el Coste de Aguante al esprintar de todos los miembros de tu equipo.\\nNo se puede acumular con otros talentos pasivos que tengan los mismos efectos.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Espada de la erosión",
+          "description": "Si al usar Vehemencia estremecedora, esta entra en contacto con Hydro/Pyro/Cryo/Electro, el siguiente Ataque Descendente: Contención del caos realizado gracias a Vehemencia estremecedora experimentará un cambio elemental e infligirá adicionalmente un 200% de daño del elemento al que cambió. Este daño se considera daño de Ataque Descendente. El cambio elemental solo puede ocurrir una vez por cada efecto de Vehemencia estremecedora.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Haiku de la brisa",
+          "description": "Cuando Kaedehara Kazuha provoca una reacción de Torbellino, otorga durante 5 s a todos los miembros del equipo un 0.04% de Bono de Daño Elemental del elemento correspondiente por cada punto de Maestría Elemental que él tenga. Puede haber al mismo tiempo distintos Bonos de Daño Elemental obtenidos de esta manera.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Rubor de las montañas",
+          "description": "Reduce en un 10% el TdE de Vehemencia estremecedora.\nAdemás, el TdE de esta habilidad se reiniciará al usar Filo de las diez mil hojas.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Viento en las colinas",
+          "description": "Dentro del área de viento del otoño creada mediante Filo de las diez mil hojas ocurren los siguientes efectos:",
+          "secondDescription": "Los efectos de incremento de Maestría Elemental que proporciona esta constelación no son acumulables.",
+          "descriptions": [
+            "Mientras dure el área, la Maestría Elemental de Kaedehara Kazuha aumenta 200 pts.",
+            "La Maestría Elemental de los personajes dentro del área de viento del otoño aumenta 200 pts."
+          ]
+        },
+        {
+          "key": "c3",
+          "title": "Leyenda de los arces",
+          "description": "Aumenta el nivel de habilidad de Vehemencia estremecedora +3.\nPuede ser aumentado hasta Niv. 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Ilusión de la nada",
+          "description": "Cuando la Energía Elemental de Kaedehara Kazuha está por debajo de 45 pts., obtiene los siguientes efectos:",
+          "secondDescription": null,
+          "descriptions": [
+            "Al pulsar una vez Vehemencia estremecedora, recupera 3 pts. de energía. Al mantener pulsado, recupera 4 pts.",
+            "Mientras vuela, Kazuha recupera 2 pts. de Energía Elemental por segundo."
+          ]
+        },
+        {
+          "key": "c5",
+          "title": "Sabiduría eterna",
+          "description": "Aumenta el nivel de habilidad de Filo de las diez mil hojas +3.\nPuede ser aumentado hasta Niv. 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Hojas escarlata",
+          "description": "Tras utilizar Vehemencia estremecedora o Filo de las diez mil hojas, Kazuha se imbuye del elemento Anemo durante 5 s. Además, el daño que inflige con sus Ataques Normales, Cargados y Descendentes aumenta en un 0.2% por cada punto de Maestría Elemental que tenga.",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
     },
     {
       "key": "Keqing",
@@ -4889,7 +5001,7 @@
       "key": "Dodoco Tales",
       "name": "Cuentos de Dodoco",
       "description": "Un libro infantil con una bella portada. Todo su contenido son relatos cortos infantiles que harán reír a cualquier lector.\nNi los adultos podrán evitar sentirse fascinados al leer sus inocentes historias de aventuras.",
-      "refinement": "Al golpear a un enemigo con un Ataque Normal, el daño infligido con Ataque Cargado aumenta en un {{0}} durante 6 s. Además, tras golpear a un objetivo con un Ataque Cargado, el ATQ aumenta en un {{1}} durante 6 s."
+      "refinement": "Al golpear a un enemigo con un Ataque Normal, el daño infligido con Ataque Cargado aumenta en un {{0}}% durante 6 s. Además, tras golpear a un objetivo con un Ataque Cargado, el ATQ aumenta en un {{1}}% durante 6 s."
     }
   ],
   "artifacts": [
