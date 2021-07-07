@@ -1741,7 +1741,70 @@
           ]
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "primordial_jade_cutter.png",
+            "the_black_sword.png"
+          ],
+          "artifacts": [
+            {
+              "one": "blizzard_walker_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "cryoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "energyRechargePercentage"
+          ]
+        },
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "the_widsith.png",
+            "skyward_atlas.png",
+            "mappa_mare.png",
+            "thrilling_tales_of_dragon_slayers.png"
+          ],
+          "artifacts": [
+            {
+              "multiples": [
+                {
+                  "quantity": 2,
+                  "image": "blizzard_walker_4.png"
+                },
+                {
+                  "quantity": 2,
+                  "image": "gladiators_finale_4.png"
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "cryoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "energyRechargePercentage"
+          ]
+        }
+      ],
       "skills": [
         {
           "key": "s1",
@@ -3638,34 +3701,16 @@
         {
           "isSupport": false,
           "weaponImages": [
-            "festering_fang.png",
+            "primordial_jade_cutter.png",
+            "aquila_favonia.png",
             "skyward_blade.png",
-            "favonius_sword.png",
-            "lions_roar.png"
+            "festering_fang.png",
+            "iron_sting.png"
           ],
           "artifacts": [
             {
-              "one": "gladiators_finale_4.png",
+              "one": "crimson_witch_of_flames_4.png",
               "multiples": [],
-              "stats": [
-                "hp",
-                "atk",
-                "atkPercentage",
-                "pyroDmgBonusPercentage",
-                "critRatePercentage"
-              ]
-            },
-            {
-              "multiples": [
-                {
-                  "quantity": 2,
-                  "image": "crimson_witch_of_flames_4.png"
-                },
-                {
-                  "quantity": 2,
-                  "image": "gladiators_finale_4.png"
-                }
-              ],
               "stats": [
                 "hp",
                 "atk",
@@ -3678,18 +3723,17 @@
           "subStatsToFocus": [
             "critRatePercentage",
             "critDmgPercentage",
-            "energyRechargePercentage",
-            "atkPercentage",
-            "elementaryMastery"
+            "elementaryMastery",
+            "atkPercentage"
           ]
         },
         {
           "isSupport": true,
           "weaponImages": [
-            "festering_fang.png",
+            "aquila_favonia.png",
+            "the_alley_flash.png",
             "skyward_blade.png",
-            "favonius_sword.png",
-            "lions_roar.png"
+            "festering_fang.png"
           ],
           "artifacts": [
             {
@@ -3699,16 +3743,16 @@
                 "hp",
                 "atk",
                 "energyRechargePercentage",
-                "hpPercentage",
-                "healingBonusPercentage"
+                "pyroDmgBonusPercentage",
+                "critRatePercentage"
               ]
             }
           ],
           "subStatsToFocus": [
-            "hpPercentage",
-            "energyRechargePercentage",
             "critRatePercentage",
-            "elementaryMastery"
+            "critDmgPercentage",
+            "energyRechargePercentage",
+            "atk"
           ]
         }
       ],
@@ -5031,33 +5075,13 @@
                 "pyroDmgBonusPercentage",
                 "critDmgPercentage"
               ]
-            },
-            {
-              "multiples": [
-                {
-                  "quantity": 2,
-                  "image": "gladiators_finale_4.png"
-                },
-                {
-                  "quantity": 2,
-                  "image": "crimson_witch_of_flames_4.png"
-                }
-              ],
-              "stats": [
-                "hp",
-                "atk",
-                "atkPercentage",
-                "pyroDmgBonusPercentage",
-                "critDmgPercentage"
-              ]
             }
           ],
           "subStatsToFocus": [
             "critRatePercentage",
             "critDmgPercentage",
             "atkPercentage",
-            "elementaryMastery",
-            "energyRechargePercentage"
+            "elementaryMastery"
           ]
         }
       ],
@@ -5960,7 +5984,7 @@
       "fullImage": "Eula.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "mondstadt",
       "role": "mainDps",
@@ -7025,6 +7049,7 @@
             "skyward_harp.png",
             "amos_bow.png",
             "rust.png",
+            "mitternachts_waltz.png",
             "compound_bow.png"
           ],
           "artifacts": [
@@ -10031,8 +10056,8 @@
       "image": "Kazuha.png",
       "fullImage": "Kazuha.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": false,
       "region": "inazuma",
       "role": "supportDps",
@@ -10436,7 +10461,8 @@
             "freedom_sworn.png",
             "the_alley_flash.png",
             "lions_roar.png",
-            "blackcliff_longsword.png"
+            "blackcliff_longsword.png",
+            "iron_sting.png"
           ],
           "artifacts": [
             {
@@ -10448,17 +10474,6 @@
                 "atkPercentage",
                 "anemoDmgBonusPercentage",
                 "critRatePercentage"
-              ]
-            },
-            {
-              "one": "viridescent_venerer_4.png",
-              "multiples": [],
-              "stats": [
-                "hp",
-                "atk",
-                "elementaryMastery",
-                "elementaryMastery",
-                "elementaryMastery"
               ]
             }
           ],
@@ -10500,7 +10515,7 @@
       "skills": [
         {
           "key": "s1",
-          "image": null,
+          "image": "normal_attack_guhua_style.png",
           "type": "normalAttack",
           "abilities": [
             {
@@ -10519,13 +10534,22 @@
         },
         {
           "key": "s2",
-          "image": null,
+          "image": "chihayaburu.png",
           "type": "elementalSkill",
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "type": "press"
+            },
+            {
+              "key": "a2",
+              "type": "hold"
+            }
+          ]
         },
         {
           "key": "s3",
-          "image": null,
+          "image": "kazuha_c5.png",
           "type": "elementalBurst",
           "abilities": []
         }
@@ -10533,17 +10557,17 @@
       "passives": [
         {
           "key": "p1",
-          "image": null,
+          "image": "kazuha_p1.png",
           "unlockedAt": -1
         },
         {
           "key": "p2",
-          "image": null,
+          "image": "kazuha_p2.png",
           "unlockedAt": 1
         },
         {
           "key": "p3",
-          "image": null,
+          "image": "kazuha_p3.png",
           "unlockedAt": 4
         }
       ],
@@ -10551,32 +10575,32 @@
         {
           "key": "c1",
           "number": 1,
-          "image": null
+          "image": "kazuha_c1.png"
         },
         {
           "key": "c2",
           "number": 2,
-          "image": null
+          "image": "kazuha_c2.png"
         },
         {
           "key": "c3",
           "number": 3,
-          "image": null
+          "image": "kazuha_c3.png"
         },
         {
           "key": "c4",
           "number": 4,
-          "image": null
+          "image": "kazuha_c4.png"
         },
         {
           "key": "c5",
           "number": 5,
-          "image": null
+          "image": "kazuha_c5.png"
         },
         {
           "key": "c6",
           "number": 6,
-          "image": null
+          "image": "kazuha_c6.png"
         }
       ],
       "subStatType": "elementaryMastery",
@@ -11813,6 +11837,7 @@
           "weaponImages": [
             "lost_prayer_to_the_sacred_winds.png",
             "skyward_atlas.png",
+            "dodoco_tales.png",
             "the_widsith.png",
             "solar_pearl.png"
           ],
@@ -12462,9 +12487,9 @@
           "isSupport": false,
           "weaponImages": [
             "lost_prayer_to_the_sacred_winds.png",
+            "the_widsith.png",
             "solar_pearl.png",
-            "eye_of_perception.png",
-            "the_widsith.png"
+            "eye_of_perception.png"
           ],
           "artifacts": [
             {
@@ -12475,7 +12500,7 @@
                 "atk",
                 "atkPercentage",
                 "electroDmgBonusPercentage",
-                "critDmgPercentage"
+                "critRatePercentage"
               ]
             }
           ],
@@ -12483,7 +12508,7 @@
             "critRatePercentage",
             "critDmgPercentage",
             "atkPercentage",
-            "elementaryMastery"
+            "energyRechargePercentage"
           ]
         },
         {
@@ -12503,7 +12528,7 @@
                 "atk",
                 "atkPercentage",
                 "electroDmgBonusPercentage",
-                "critDmgPercentage"
+                "critRatePercentage"
               ]
             }
           ],
@@ -12511,7 +12536,7 @@
             "critRatePercentage",
             "critDmgPercentage",
             "atkPercentage",
-            "elementaryMastery"
+            "energyRechargePercentage"
           ]
         }
       ],
@@ -13803,7 +13828,8 @@
             "memory_of_dust.png",
             "lost_prayer_to_the_sacred_winds.png",
             "skyward_atlas.png",
-            "solar_pearl.png"
+            "solar_pearl.png",
+            "dodoco_tales.png"
           ],
           "artifacts": [
             {
@@ -23975,9 +24001,10 @@
         {
           "isSupport": false,
           "weaponImages": [
+            "lost_prayer_to_the_sacred_winds.png",
             "skyward_atlas.png",
-            "memory_of_dust.png",
-            "blackcliff_amulet.png",
+            "dodoco_tales.png",
+            "the_widsith.png",
             "mappa_mare.png",
             "everfrost_core.png"
           ],

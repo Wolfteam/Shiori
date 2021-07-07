@@ -32,6 +32,10 @@ extension I18nExtensions on S {
         return '$italian ($partial)';
       case AppLanguageType.japanese:
         return '$japanese ($partial)';
+      case AppLanguageType.vietnamese:
+        return '$vietnamese ($partial)';
+      case AppLanguageType.indonesian:
+        return '$indonesian ($partial)';
       default:
         throw Exception('The provided app lang = $lang is not valid');
     }

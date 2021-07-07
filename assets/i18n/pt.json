@@ -1705,29 +1705,141 @@
     {
       "key": "Kazuha",
       "name": "Kaedehara Kazuha",
-      "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens.",
+      "description": "Um samurai errante de Inazuma que atualmente está com a Frota Crux de Liyue. Uma alma gentil e livre cujo coração esconde muitas feridas.",
       "skills": [
         {
           "key": "s1",
-          "title": "Garyu Bladework",
+          "title": "Técnica da Espada de Garyu",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Realiza até 5 golpes rápidos.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Consome uma certa quantidade de Stamina para desferir 2 golpes rápidos com a espada.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto. Caso o Ataque Imersivo seja lançado por Chihayaburu, infligirá um Ataque Imersivo: Ranzan Aéreo.",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo: Ranzan Aéreo",
+              "description": "Quando Chihayaburu lança um Ataque Imersivo com habilidade elemental, o Dano causado pelo Ataque Imersivo será convertido em Dano Anemo, e quando cair no chão irá criar uma pequena corrente de vento com uma técnica secreta, atraindo os objetos e inimigos ao redor.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "Chihayafuru",
-          "description": null,
-          "abilities": []
+          "title": "Chihayaburu",
+          "description": "Lança uma técnica secreta feroz como o vento que puxa objetos e inimigos rumo a Kazuha antes de lançá-los voando dentro da AdE, causando Dano Anemo e levantando Kazuha no ar com uma corrente de vento.\nDentro dos 10s após Kiryu Kazuha ascender no ar devido à Habilidade Elemental Chihayaburu, e enquanto permanecer no ar, se lançar um Ataque Imersivo, será lançado um Ataque Imersivo muito poderoso: Ranzan Aéreo.",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Pode ser utilizado enquanto está no ar.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Carrega antes de lançar Dano Anemo numa AdE ainda maior que Pressionar.",
+              "descriptions": []
+            },
+            {
+              "name": "Ataque Imersivo: Ranzan Aéreo",
+              "description": "O Dano dos Ataques Imersivos lançados através da Habilidade Elemental Chihayaburu é convertido em Dano Anemo e criará um túnel em miniatura através de uma técnica secreta que puxa objetos e inimigos próximos.\nO Dano de Ranzan Aéreo é considerado Dano de Ataque Imersivo.",
+              "descriptions": []
+            }
+
+          ]
         },
         {
-          "key": "s2",
-          "title": "Manyou no Ittou",
-          "description": null,
-          "abilities": []
+          "key": "s3",
+          "title": "Lâmina de Kazuha",
+          "description": "A derradeira técnica de Garyuu - um simples corte semelhante a uma tempestade que se avizinha que causa Dano em uma AdE Anemo.\nA passagem da lâmina deixa um campo chamado,\"Redemoinho do Outono\" que causa Dano Anemo intermitente aos inimigos nela.",
+          "abilities": [
+            {
+              "name": "Absorção Elemental",
+              "description": "Se o Redemoinho do Outono entrar em contato com os elementos Hydro / Pyro / Cryo / Electro, ele irá causar Dano elemental adicional daquele tipo.\nAbsorção Elemental pode ocorrer apenas uma vez por uso.",
+              "descriptions": []
+            }
+          ]
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Caminhador das Nuvens",
+          "description": "Diminui o consumo de Stamina ao Correr de todos os seus personagens em 20%.\nNão acumulável com Talentos Passivos que concedem exatamente os mesmos efeitos.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Esgrima Soumon",
+          "description": "Quando Chihayaburu é lançado, se entrar em contato com Hydro/Pyro/Cryo/Electro fará com que o Ataque Imersivo - Ranzan Aéreo de Chihayaburu cause Conversão Elemental, gerando 200% de Dano Elemental adicional correspondente, e esse Dano é considerado um Dano de Ataque Imersivo.\nA Conversão Elemental só pode acontecer uma vez por cada vez do efeito da Habilidade Chihayaburu.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Poesia de Fuubutsu",
+          "description": "Depois de Kaedehara Kazuha causar uma Reação de Redemoinho, cada ponto de sua Proficiencia Elemental fornecerá a todos os membros da Equipe um aumento de 0.04% de Dano Adicional Elemental por 8s. Podem existir simultaneamente distintos Bônus de Dano Elemental obtidos desta maneira.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Cordilheiras Avermelhadas",
+          "description": "Reduz o Tempo de Recarga de Chihayaburu em 10%.\nAo lançar Lâmina de Kazuha. redefine o Tempo de Recarga de Chihayaburu.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Vento das Montanhas",
+          "description": "O campo de Redemoinho do Outono criado por Lâmina de Kazuha tem as seguintes propriedades:",
+          "secondDescription": "Os efeitos de aumento de Proficiência Elemental desta Constelação não se acumulam.",
+          "descriptions": [
+            "Aumenta a Proficiencia Elemental de Kaedehara Kazuha em 200.",
+            "Aumenta a Proficiencia Elemental dos personagens no campo em 200."
+          ]
+        },
+        {
+          "key": "c3",
+          "title": "Bordo Monogatari",
+          "description": "Aumenta o nivel do Chihayaburu em 3.\nO nivel máximo de elevação é 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Magia Ilusória",
+          "description": "Quando a Energia Elemental de Kaedehara Kazuha está em menos que 45, ele possui os seguintes efeitos:",
+          "secondDescription": null,
+          "descriptions": [
+            "Ao Pressionar e Manter Pressionado Chihayaburu, ele recupera 3 e 4 de Energia Elemental respectivamente.",
+            "Kaedehara Kazuha recupera 2 pontos de Energia Elemental por cada segundo que passa Planando."
+          ]
+        },
+        {
+          "key": "c5",
+          "title": "Sabedoria de Bansei",
+          "description": "Aumenta o nivel da Habilidade Lámina de Kazuha em 3.\nO nivel máximo de elevação é 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Momiji Escarlate",
+          "description": "Nos 5 segundos após Kaedehara Kazuha lançar Chihayaburu ou Lâmina de Kazuha, ele obtém Encantamento Anemo. Cada ponto da Proficiencia Elemental de Kaedehara Kazuha sera utilizado nos seus Ataques Normais, Ataques Carregados, Ataques Imersivos e Ataque Imersivo Ranzan Aéreo, causando um Aumento de Dano de 0.2%.",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
     },
     {
       "key": "Keqing",
@@ -4891,7 +5003,7 @@
       "key": "Dodoco Tales",
       "name": "Dodoco Tales",
       "description": "A children's book filled with childish short stories at which one cannot help but laugh.\nEven those readers who have long reached adulthood cannot help but be absorbed by the innocent, naive little adventures portrayed within.",
-      "refinement": "Normal Attack hits on opponents increase Charged Attack DMG by {{0}} for 6s. Charged Attack hits on opponents increase ATK by {{1}} for 6s."
+      "refinement": "Normal Attack hits on opponents increase Charged Attack DMG by {{0}}% for 6s. Charged Attack hits on opponents increase ATK by {{1}}% for 6s."
     }
   ],
   "artifacts": [
