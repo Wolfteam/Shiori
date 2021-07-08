@@ -52,7 +52,7 @@
         {
           "key": "s3",
           "title": "Rite of Progeniture: Tectonic Tide",
-          "description": "Under Albedo's command, Geo crystals surge and burst forth, dealing AoE Geo DMG in front of him.\nIf a Solar Isotoma created by Albedo himself is on the field, 7 Fatal Blossoms will be generated in the Solar Isotoma field, bursting violently into bloom and dealing AoE Geo DMG.\nTecotonic Tide DMG and Fatal Blossom DMG will not generate Transient Blossoms.",
+          "description": "Under Albedo's command, Geo crystals surge and burst forth, dealing AoE Geo DMG in front of him.\nIf a Solar Isotoma created by Albedo himself is on the field, 7 Fatal Blossoms will be generated in the Solar Isotoma field, bursting violently into bloom and dealing AoE Geo DMG.\nTectonic Tide DMG and Fatal Blossom DMG will not generate Transient Blossoms.",
           "abilities": []
         }
       ],
