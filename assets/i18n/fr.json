@@ -1,7 +1,7 @@
 {
   "characters": [
      {
-      "key": "Albédo",
+      "key": "Albedo",
       "name": "Albédo",
       "description": "Génie connu sous le nom de Kreideprinz, il est le chef alchimiste et le capitaine de l'équipe d'enquête des chevaliers de Favonius.",
       "skills": [
@@ -125,7 +125,7 @@
       ]
     },
      {
-      "key": "ambre",
+      "key": "Amber",
       "name": "Amber",
       "description": "TUne jeune fille pleine de vie et l'unique éclaireuse de l'Ordre de Favonius. Avec trois titres consécutifs de championne de planement aérien de Mondtsadt, cette discipline n'a plus de secrets pour elle. En tant qu'étoile montante de l'Ordre de Favonius, Amber brille toujours en première ligne ! ",
       "skills": [
@@ -747,8 +747,8 @@
       ]
     },
      {
-      "key": "diluc",
-      "name": "diluc",
+      "key": "Diluc",
+      "name": "Diluc",
       "description": "Le magnat d'un empire viticole à Mondstadt, inégalé à tous égards.",
       "skills": [
          {
@@ -3167,7 +3167,7 @@
       ]
     },
      {
-      "key": "Voyageur (Anemo)",
+      "key": "Traveler (Anemo)",
       "name": "Voyageur (Anemo)",
       "description": "Un voyageur d'un autre monde à qui on a emmené leurs seuls parents, les forçant à entreprendre un voyage pour trouver les Sept.",
       "skills": [
@@ -3283,7 +3283,7 @@
       ]
     },
      {
-      "key": "Voyageur (Geo)",
+      "key": "Traveler (Geo)",
       "name": "Voyageur (Geo)",
       "description": "Un voyageur d'un autre monde à qui on a emmené leurs seuls parents, les forçant à entreprendre un voyage pour trouver les Sept.",
       "skills": [
@@ -4229,247 +4229,247 @@
   ],
   "weapons": [
      {
-      "key": "Arc du chasseur",
+      "key": "Hunter’s Bow",
       "name": "Arc du chasseur",
       "description": "La musique d’un chasseur ne se compose que de deux sons: le tintement de la corde de l’arc et le sifflement des flèches.",
       "refinement": null
     },
      {
-      "key": "Arc de chasseur chevronné",
+      "key": "Seasoned Hunter’s Bow",
       "name": "Arc de chasseur chevronné",
       "description": "Un arc bien poli par le temps et méticuleusement soigné par son propriétaire. Cela ressemble presque à une extension du bras de l'archer.",
       "refinement": null
     },
      {
-      "key": "Arc en ébène",
+      "key": "Ebony Bow",
       "name": "Arc en ébène",
       "description": "Un arc long en bois d'ébène avec des membres plus rigides que les arcs ordinaires. C'est aussi une arme beaucoup plus puissante.",
       "refinement": "Augmente les DEG contre les ennemis mécanoïdes des ruines de {{0}}%"
     },
      {
-      "key": "Messager",
+      "key": "Messenger",
       "name": "Messager",
       "description": "Un arc en bois de base. On dit qu'il a déjà été utilisé comme outil de communication longue distance.",
       "refinement": "Les attaques chargées sur les points faibles infligent {{0}}% de DÉG d'ATQ supplémentaires en tant que DÉG CRIT. Ne peut se produire qu'une fois toutes les 10 secondes."
     },
      {
-      "key": "Arc de corbeau",
+      "key": "Raven Bow",
       "name": "Arc de corbeau",
       "description": "Les corbeaux sont connus pour être les passeurs des morts. La branche de cet arc est décorée de plumes de corbeau, qui annoncent la mort imminente de sa cible.",
       "refinement": "Augmente les DEG contre les ennemis affectés par Hydro ou Pyro de {{0}}%"
     },
      {
-      "key": "Arc classique",
+      "key": "Recurve Bow",
       "name": "Arc classique",
       "description": "On dit que cet arc peut abattre des aigles en vol, mais en fin de compte, la véracité de cela dépend de l'habileté de l'archer.",
       "refinement": "Vaincre un adversaire restaure {{0}}% de PV"
     },
      {
-      "key": "Serment du tireur d'élite",
+      "key": "Sharpshooter’s Oath",
       "name": "Serment du tireur d'élite",
       "description": "Cet arc supérieur appartenait autrefois à un maître archer. Cependant, il dégage un fort parfum, le rendant ainsi impropre à la chasse.",
       "refinement": "Augmente le DMG contre les points faibles de {{0}}%"
     },
      {
-      "key": "Lance-pierres",
+      "key": "Slingshot",
       "name": "Lance-pierres",
       "description": "Un arc, malgré le nom. Après d'innombrables expériences et améliorations de la conception, le créateur de la fronde ultime s'est retrouvé en train de fabriquer ce qui était en fait un arc.",
       "refinement": "Si une attaque normale ou chargée touche une cible dans les 0,3 s après avoir été tirée, augmente les DEG de {{0}}%. Sinon, diminue le DMG de 10%."
     },
      {
-      "key": "Le sans fil",
-      "name": "Le sans fil",
+      "key": "The Stringless",
+      "name": "Dernière corde",
       "description": "Un archet qui servait autrefois d'instrument extraordinaire. Il n'est plus capable de faire monter les gens et de danser.",
       "refinement": "Augmente de {{0}}% la compétence élémentaire et la explosion élémentaire DMG."
     },
      {
-      "key": "Chasseur de ruelle",
-      "name": "Chasseur de ruelle",
+      "key": "Alley Hunter",
+      "name": "Traqueur des impasses",
       "description": "Un arc long complexe et opulent. Il appartenait autrefois à un voleur de gentleman qui n'a jamais été attrapé.",
       "refinement": "Tant que le personnage équipé de cette arme est dans le groupe mais pas sur le terrain, son DMG augmente de {{0}}% par seconde jusqu'à un maximum de {{1}}%. Lorsque le personnage est sur le terrain pendant plus de 4s, le buff DMG susmentionné diminue de {{2}}% par seconde jusqu'à ce qu'il atteigne 0%."
     },
      {
-      "key": "Arc de guerre Blackcliff",
-      "name": "Arc de guerre Blackcliff",
-      "description": "Un arc en blackcliff qui présente des membres d'arc extrêmement robustes. Il nécessite un archer avec un bras d'arc solide à utiliser.",
+      "key": "Blackcliff Warbow",
+      "name": "Arc de guerre de Rochenoire",
+      "description": "Un arc en Rochenoire qui présente des membres d'arc extrêmement robustes. Il nécessite un archer avec un bras d'arc solide à utiliser.",
       "refinement": "Après avoir vaincu un ennemi, l'ATK est augmentée de {{0}}% pendant 30s. Cet effet a un maximum de 3 piles, et la durée de chaque pile est indépendante des autres."
     },
      {
-      "key": "Arc à poulies",
+      "key": "Compound Bow",
       "name": "Arc à poulies",
       "description": "Un arc métallique exotique venu d'un pays lointain. Bien qu'extrêmement difficile à entretenir, il est facile à encocher et à tirer avec une force énorme.",
       "refinement": "Les coups d'attaque normale et d'attaque chargée augmentent l'ATK de {{0}}% et la SPD d'ATQ normale de {{1}}% pendant 6s. Max 4 piles. Ne peut se produire qu'une fois toutes les 0,3 s."
     },
      {
-      "key": "Arc de guerre Favonius",
+      "key": "Favonius Warbow",
       "name": "Arc de guerre Favonius",
       "description": "Un arc classique des Chevaliers de Favonius. Seuls les meilleurs archers peuvent libérer tout son potentiel.",
       "refinement": "Les CRIT Hits ont {{0}}% de chances de générer une petite quantité de particules élémentaires, qui régénéreront 6 points d'énergie pour le personnage. Ne peut se produire qu'une fois toutes les {{1}} s."
     },
      {
-      "key": "Croissant Prototype",
+      "key": "Prototype Crescent",
       "name": "Croissant Prototype",
-      "description": "Un prototype d'arc long découvert dans la forge de Blackcliff. La flèche tirée de cet arc scintille comme un rayon de lune.",
+      "description": "Un prototype d'arc long découvert dans la forge de Rochenoire. La flèche tirée de cet arc scintille comme un rayon de lune.",
       "refinement": "Les attaques chargées sur les points faibles augmentent la SPD de mouvement de 10% et l'ATK de {{0}}% pendant 10s."
     },
      {
-      "key": "Arc royal",
+      "key": "Royal Bow",
       "name": "Arc royal",
       "description": "Un vieil arc royal qui appartenait aux anciens dirigeants de Mondstadt. D'innombrables générations plus tard, la corde d'arc est toujours serrée et peut encore tirer des flèches avec une grande force.",
       "refinement": "En infligeant des dégâts à un adversaire, augmente le taux de CRIT de {{0}}%. Max 5 piles. Un coup CRIT supprime toutes les piles."
     },
      {
-      "key": "Rouiller",
-      "name": "Rouiller",
+      "key": "Rust",
+      "name": "Arc Rouillé",
       "description": "Un arc en fer complètement rouillé. La personne moyenne n'aurait même pas la force de la soulever, et encore moins de la tirer.",
       "refinement": "Augmente les DÉG d'attaque normale de {{0}}% mais diminue les DÉG d'attaque chargée de 10%."
     },
      {
-      "key": "Arc sacrificiel",
+      "key": "Sacrificial Bow",
       "name": "Arc sacrificiel",
       "description": "Un arc de chasse de cérémonie qui s'est pétrifié au fil du temps. Les bibelots dessus sont toujours visibles. Il accorde au porteur le pouvoir de résister aux vents du temps.",
       "refinement": "Après avoir endommagé un adversaire avec une compétence élémentaire, la compétence a {{0}}% de chances de terminer son propre CD. Ne peut se produire qu'une fois toutes les {{1}} s"
     },
      {
-      "key": "La chasse viridescente",
-      "name": "La chasse viridescente",
+      "key": "The Viridescent Hunt",
+      "name": "Arc de chasse verdoyant",
       "description": "Un arc de chasse vert pur. Cela appartenait autrefois à un certain chasseur dont la maison était la forêt.",
       "refinement": "Lorsqu'elles sont touchées, les attaques par tir normal et ciblé ont 50% de chances de générer un cyclone, qui attirera continuellement les ennemis environnants, infligeant {{0}}% d'ATK sous forme de DÉG à ces ennemis toutes les 0,5s pendant 4s. Cet effet ne peut se produire qu'une fois toutes les {{1}} s"
     },
      {
-      "key": "Harpe céleste",
-      "name": "Harpe céleste",
+      "key": "Skyward Harp",
+      "name": "Ailes de la Voûte d'Azur",
       "description": "Un grand arc qui symbolise l'affiliation de Dvalin avec l'Anemo Archon. Le son du tir de l’arc est une musique aux oreilles de l’Anemo Archon. Il contient la puissance du ciel et du vent à l'intérieur.",
       "refinement": "Augmente CRIT DMG de {{0}}%. Les coups ont {{1}}% de chances d'infliger une petite attaque de zone, infligeant 125% de DÉG d'ATQ physique. Ne peut se produire qu'une fois toutes les {{2}} s."
     },
      {
-      "key": "Arc d'Amos",
+      "key": "Amos’ Bow",
       "name": "Arc d'Amos",
       "description": "Un arc extrêmement ancien qui a conservé sa puissance malgré la disparition de son maître d'origine. Il tire le pouvoir de tout le monde et de tout dans le monde, et plus vous vous éloignez de ce que votre cœur désire, plus il est puissant.",
       "refinement": "Augmente les DÉG d'attaque normale et chargée de {{0}}%. Les DÉG d'attaque normale et chargée augmentent de {{1}}% toutes les 0,1 s jusqu'à 5 fois."
     },
      {
-      "key": "Rêves de Dragonfell",
-      "name": "Rêves de Dragonfell",
+      "key": "Dreams of Dragonfell",
+      "name": "Wyrmbane de Kunwu",
       "description": "Un grand arc qui a jadis tiré à travers un dragon géant. Une fois relâché, l'élan de sa corde ressemble à un coup de tonnerre.",
       "refinement": "Augmente la force du bouclier de {{0}}%. Le fait de marquer des coups sur des adversaires augmente l'ATK de {{1}}% pendant 8s. Max 5 piles. Ne peut se produire qu'une fois toutes les 0,3 s. Lorsqu'il est protégé par un bouclier, cet effet d'augmentation d'ATK est augmenté de 100%."
     },
      {
-      "key": "Lame terne",
+      "key": "Dull Blade",
       "name": "Lame terne",
       "description": "Rêves de jeunesse et frisson de l'aventure. Si cela ne suffit pas, rattrapez-le avec bravoure.",
       "refinement": null
     },
      {
-      "key": "Épée d'argent",
+      "key": "Silver Sword",
       "name": "Épée d'argent",
       "description": "Une épée pour exorciser les démons. Tout le monde sait qu’il est fait d’un alliage d’argent et non d’argent pur.",
       "refinement": null
     },
      {
-      "key": "Acier frais",
-      "name": "Acier frais",
+      "key": "Cool Steel",
+      "name": "Acier froid",
       "description": "Une arme fiable forgée en acier qui témoigne des grandes aventures de son ancien maître.",
       "refinement": "Augmente les DEG contre les ennemis affectés par Hydro ou Cryo de {{0}}%"
     },
      {
-      "key": "Épée en sombrefer",
+      "key": "Dark Iron Sword",
       "name": "Épée en sombrefer",
       "description": "Une épée de fer parfaitement ordinaire, juste un peu plus sombre que la plupart.",
       "refinement": "En provoquant une réaction de turbulence surchargée, supraconductrice, électrochargée ou électro-infusée, l'ATK est augmentée de {{0}}% pendant 12s."
     },
      {
-      "key": "Lame de filet",
+      "key": "Fillet Blade",
       "name": "Lame de filet",
       "description": "Un couteau à filets bien aiguisé. La lame est longue, fine et incroyablement tranchante.",
       "refinement": "En cas de coup, a 50% de chances d'infliger {{0}}% de DÉG d'ATQ à un seul ennemi. Ne peut se produire qu'une fois toutes les {{1}} s."
     },
      {
-      "key": "Messager de l'aube",
+      "key": "Harbinger of Dawn",
       "name": "Messager de l'aube",
       "description": "Une épée qui brillait autrefois comme le soleil. Le porteur de cette épée sera béni avec un buff \"de bien-être\". Le matériau réfléchissant de la lame est usé depuis longtemps.",
       "refinement": "Lorsque HP est supérieur à 90%, augmente le taux de CRIT de {{0}}%."
     },
      {
-      "key": "Épée de Skyrider",
+      "key": "Skyrider Sword",
       "name": "Épée de Skyrider",
       "description": "Une épée en acier fiable. Le légendaire Skyrider a une fois essayé de le monter comme une épée volante ...",
       "refinement": "Utiliser une explosion élémentaire augmente de {{0}}% l'ATK et la SPD de mouvement pendant 15s."
     },
      {
-      "key": "Épée pratique du voyageur",
+      "key": "Traveler’s Handy Sword",
       "name": "Épée pratique du voyageur",
       "description": "Une épée en acier pratique qui contient des ciseaux, une loupe, de l'amadou et d'autres objets utiles dans son fourreau.",
       "refinement": "Chaque orbe ou particule élémentaire collecté restaure {{0}}% de PV."
     },
      {
-      "key": "Épée longue Blackcliff",
-      "name": "Épée longue Blackcliff",
-      "description": "Une épée faite d'un matériau connu sous le nom de «blackcliff». Il a une lueur cramoisie sombre sur sa lame noire.",
+      "key": "Blackcliff Longsword",
+      "name": "Épée longue Rochenoire",
+      "description": "Une épée faite d'un matériau connu sous le nom de «Rochenoire». Il a une lueur cramoisie sombre sur sa lame noire.",
       "refinement": "Après avoir vaincu un ennemi, l'ATK est augmentée de {{0}}% pendant 30s. Cet effet a un maximum de 3 piles, et la durée de chaque pile est indépendante des autres."
     },
      {
-      "key": "Épée de Favonius",
+      "key": "Favonius Sword",
       "name": "Épée de Favonius",
       "description": "Une épée longue standard des Chevaliers de Favonius. Lorsque vous êtes armé de cette arme agile et tranchante, canaliser la puissance des éléments n’a jamais été aussi simple!",
       "refinement": "Les CRIT Hits ont {{0}}% de chances de générer une petite quantité de particules élémentaires, qui régénéreront 6 points d'énergie pour le personnage. Ne peut se produire qu'une fois toutes les {{1}} s."
     },
      {
-      "key": "Piqûre de fer",
+      "key": "Iron Sting",
       "name": "Piqûre de fer",
       "description": "Une rapière exotique à longue lame qui a en quelque sorte trouvé son chemin dans Liyue via des commerçants étrangers. Il est léger, agile et pointu.",
       "refinement": "Dealing Elemental DMG augmente tous les DMG de {{0}}% pendant 6s. Max 2 piles. Peut se produire une fois toutes les 1s."
     },
      {
-      "key": "Rugissement du lion",
+      "key": "Lion’s Roar",
       "name": "Rugissement du lion",
       "description": "Une lame tranchante avec des sculptures extravagantes qui ne font aucun compromis sur la durabilité et la netteté. Il rugit comme un lion en traversant l'air.",
       "refinement": "Augmente les DEG contre les ennemis affectés par Pyro ou Electro de {{0}}%"
     },
      {
-      "key": "Prototype Rancœur",
+      "key": "Prototype Rancour",
       "name": "Prototype Rancœur",
-      "description": "Une ancienne épée longue découverte dans la forge de Blackcliff qui traverse les rochers comme un couteau chaud dans le beurre.",
+      "description": "Une ancienne épée longue découverte dans la forge de Rochenoire qui traverse les rochers comme un couteau chaud dans le beurre.",
       "refinement": "En cas de coup, les attaques normales ou chargées augmentent l'ATK et la DEF de {{0}}% pendant 6s. Max 4 piles. Cet effet ne peut se produire qu'une fois toutes les 0,3 s."
     },
      {
-      "key": "Épée longue royale",
+      "key": "Royal Longsword",
       "name": "Épée longue royale",
       "description": "Une vieille épée longue qui appartenait aux anciens dirigeants de Mondstadt. D'une fabrication exquise, les sculptures et les embellissements témoignent de la stature de son propriétaire.",
       "refinement": "En infligeant des dégâts à un adversaire, augmente le taux de CRIT de {{0}}%. Max 5 piles. Un coup CRIT supprime toutes les piles."
     },
      {
-      "key": "Épée sacrificielle",
+      "key": "Sacrificial Sword",
       "name": "Épée sacrificielle",
       "description": "Une épée de cérémonie qui s'est pétrifiée au fil du temps. Les bibelots dessus sont toujours visibles. Il accorde au porteur le pouvoir de résister aux vents du temps.",
       "refinement": "Après avoir endommagé un adversaire avec une compétence élémentaire, la compétence a {{0}}% de chances de terminer son propre CD. Ne peut se produire qu'une fois toutes les {{1}} s"
     },
      {
-      "key": "Le flash de ruelle",
+      "key": "The Alley Flash",
       "name": "Le flash de ruelle",
       "description": "Une épée droite aussi noire que la nuit. Il appartenait autrefois à un voleur qui parcourait les rues obscures.",
       "refinement": "Augmente les DÉG infligés par le personnage équipé de cette arme de {{0}}%. Prendre DMG désactive cet effet pendant 5s."
     },
      {
-      "key": "L'épée noire",
+      "key": "The Black Sword",
       "name": "L'épée noire",
       "description": "Une épée longue noire qui a soif de violence et de conflit. On dit que cette arme peut amener son utilisateur à s'enivrer du vin rouge d'abattage.",
       "refinement": "Augmente les DÉG infligés par les attaques normales et chargées de {{0}}%. De plus, régénère {{1}}% de l'ATK en HP lorsque les Attaques Normales et Chargées obtiennent un CRIT. Cet effet peut se produire une fois toutes les 5s."
     },
      {
-      "key": "La flûte",
+      "key": "The Flute",
       "name": "La flûte",
       "description": "Sous son extérieur rouillé se trouve une lame mince richement décorée. Il oscille aussi vite que le vent.",
       "refinement": "Les attaques normales ou chargées confèrent un harmonique sur les coups. Gagner 5 harmoniques déclenche la puissance de la musique et inflige {{0}}% de DÉG d'ATQ aux ennemis environnants. Les harmoniques durent jusqu'à 30 s, et un maximum de 1 peut être gagné toutes les 0,5 s."
     },
      {
-      "key": "Épée de descension",
-      "name": "Épée de descension",
+      "key": "Sword of Descension",
+      "name": "Épée de la descente",
       "description": "Une épée d'un savoir-faire unique. Il ne semble pas appartenir à ce monde.",
       "refinement": "Frapper des adversaires avec des attaques normales et chargées confère {{0}}% de chances d'infliger 200% d'ATQ en tant que DMG dans une petite zone. Cet effet ne peut se produire qu'une fois toutes les 10 secondes. De plus, si le Voyageur équipe l'Épée de Descension, son ATK est augmentée de {{1}}."
     },
      {
-      "key": "Désir purulent",
+      "key": "Festering Desire",
       "name": "Désir purulent",
       "description": "Une épée droite effrayante qui semble presque aspirer à la vie. Il dégouline d'un venin ratatiné qui pourrait même corrompre un puissant dragon.",
       "refinement": "Augmente les DMG des compétences élémentaires de {{0}}% et le taux de CRIT des compétences élémentaires de {{1}}%."
@@ -4481,166 +4481,10 @@
       "refinement": "L'ATK est augmenté de {{0}}%. Déclencheurs lors de la prise de DMG: l'âme du Faucon de l'Ouest se réveille, tenant la bannière de la résistance en l'air, régénérant des PV égaux à {{1}}% d'ATK et infligeant {{2}}% d'ATK sous forme de DMG aux ennemis environnants. Cet effet ne peut se produire qu'une fois toutes les 15 secondes."
     },
      {
-      "key": "Lame vers le ciel",
+      "key": "Skyward Blade",
       "name": "Lame vers le ciel",
       "description": "L'épée d'un chevalier qui symbolise l'honneur restauré de Dvalin. Les bénédictions de l'Anemo Archon reposent sur le plus plein de la lame, imprégnant l'épée des pouvoirs du ciel et du vent.",
       "refinement": "Le taux CRIT a augmenté de {{0}}%. Gagne de la puissance de Skypiercing en utilisant une explosion élémentaire: augmente la SPD de mouvement de 10%, augmente la SPD d'ATQ de 10% et augmente le DEG des attaques normales et chargées de {{1}}% pendant 12s."
-=======
-    {
-      "key": "Hunter’s Bow",
-      "name": "Arc de chasse",
-      "description": "La musique jouée par les chasseurs combine deux mélodies : la tension de l’arc et le sifflements des flèches.",
-      "refinement": null
-    },
-    {
-      "key": "Seasoned Hunter’s Bow",
-      "name": "Arc de chasse aguerri",
-      "description": "Un arc ancien, mais bien entretenu. Il ne fait qu'un avec l'archer qui le tend.",
-      "refinement": null
-    },
-    {
-      "key": "Ebony Bow",
-      "name": "Arc en ébène",
-      "description": "Un arc long en ébène, ce qui le rend plus résistant que les arcs ordinaires et augmente considérablement sa force tir.",
-      "refinement": "Augmente les DGT infligés aux ennemis mécaniques des ruines de {{0}}%."
-    },
-    {
-      "key": "Messenger",
-      "name": "Messager",
-      "description": "Un simple arc en bois. On raconte qu'il était autrefois utilisé pour la communiquer à distance.",
-      "refinement": "Les attaques chargées touchant les points faibles infligent un bonus de DGT CRIT équivalant à {{0}}% de l'ATQ. Cet effet peut être déclenché une fois toutes les 10s."
-    },
-    {
-      "key": "Raven Bow",
-      "name": "Arc du corbeau",
-      "description": "Les corbeaux sont les messagers de la mort dans de nombreuses légendes. Leurs plumes décorent cet arc qui annonce la mort imminente de toute proie.",
-      "refinement": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Pyro de {{0}}%."
-    },
-    {
-      "key": "Recurve Bow",
-      "name": "Arc courbé",
-      "description": "Avec cet arc de chasse, vous devriez pouvoir abattre un aigle en plein vol. Bien évidemment, le résultat dépend entièrement de la technique de l'archer.",
-      "refinement": "Restaure {{0}}% des PV après la défaite d'un ennemi."
-    },
-    {
-      "key": "Sharpshooter’s Oath",
-      "name": "Serment de l'archer",
-      "description": "Cet arc de haute qualité aurait appartenu à un maître archer. La forte odeur qu'il dégage le rend inadapté pour la chasse.",
-      "refinement": "Augmente les DGT de {{0}}% si les points faibles de l'ennemi sont visés."
-    },
-    {
-      "key": "Slingshot",
-      "name": "Lance-pierres",
-      "description": "C'est bien un arc ! Après de nombreuses modifications et améliorations, l'inventeur du lance-pierres ultime s'est finalement retrouvé avec un arc.",
-      "refinement": "Les DGT infligés par les flèches des attaques normales et chargées infligent {{0}}% de DGT supplémentaires lorsqu'elles touchent dans les 0,3s après le tir. Dans le cas contraire, elles infligent 10% de DGT en moins."
-    },
-    {
-      "key": "The Stringless",
-      "name": "Dernière corde",
-      "description": "Un arc qui était autrefois un extraordinaire instrument de musique. Il ne fait plus danser personne aujourd'hui.",
-      "refinement": "Augmente les DGT infligés par les compétences élémentaires et les déchaînements élémentaires de {{0}}%."
-    },
-    {
-      "key": "Alley Hunter",
-      "name": "Traqueur des impasses",
-      "description": "Un arc long somptueux et délicat qui appartenait autrefois à un brigand au grand cœur qui n'a jamais été capturé.",
-      "refinement": "Lorsque le personnage équipé de cette arme fait partie de l'équipe mais n'est pas déployé, ses DGT augmentent de {{0}}% toutes les 1s, jusqu'à {{1}}% max. 4s après le déploiement du personnage, l'effet diminue de {{2}}% toutes les 1s, jusqu'à atteindre 0%."
-    },
-    {
-      "key": "Blackcliff Warbow",
-      "name": "Arc de guerre de Rochenoire",
-      "description": "Un arc de roche noire, à la courbure d'une solidité à toute épreuve. Seul un archer aux bras robustes peut le manier.",
-      "refinement": "Augmente l'ATQ de {{0}}% pendant 30s après avoir vaincu un ennemi. Cet effet peut être cumulé 3 fois et la durée de chaque cumul peut varier."
-    },
-    {
-      "key": "Compound Bow",
-      "name": "Arc à poulies",
-      "description": "Un arc en alliage de métal, dont la corde est tendue par des poulies. Son étrange design le rend difficile à manier, mais une fois la flèche est partie, celle-ci s'abat sur la proie avec une force impressionnante.",
-      "refinement": "Les attaques normales et chargées confèrent un bonus d'ATQ de {{0}}% ainsi qu'un bonus de VIT d'attaque normale de {{1}}% pendant 6s lorsqu'elles touchent. Cet effet peut être cumulé 4 fois au maximum et peut être déclenché une fois toutes les 0,3s."
-    },
-    {
-      "key": "Favonius Warbow",
-      "name": "Arc de chasse de Favonius",
-      "description": "Un arc manié par les chevaliers de l'Ordre de Favonius. Seuls les meilleurs archers pourront tirer le maximum de son potentiel.",
-      "refinement": "Les coups CRIT des attaques ont {{0}}% de chance de générer une faible quantité de particules élémentaire qui restaurent 6 pts d'énergie. Cet effet peut être déclenché 1 fois toutes les {{1}}s."
-    },
-    {
-      "key": "Prototype Crescent",
-      "name": "Lune paisible (prototype)",
-      "description": "Un prototype d'arc long découvert à la Forge de Rochenoire. Les flèches qu'il décoche sont aussi brillantes que le clair de lune.",
-      "refinement": "Les attaques chargées touchant les points faibles augmentent la VIT de déplacement de 10 % et l'ATQ de {{0}}% pendant 10s."
-    },
-    {
-      "key": "Royal Bow",
-      "name": "Arc royal",
-      "description": "Un arc long qui appartenait jadis aux dirigeants de Mondstadt. Après avoir connu bien des générations, sa corde légère est toujours capable de décocher des flèches à une vitesse impressionnante.",
-      "refinement": "Augmente le Taux CRIT de {{0}}% à chaque attaque qui cause des DGT à un ennemi. Cet effet peut être cumulé 5 fois au maximum, et est réinitialisé lors d'un coup CRIT."
-    },
-    {
-      "key": "Rust",
-      "name": "Arc rouillé",
-      "description": "Un grand arc en fer complètement recouvert de rouille. Le soulever ou le manier est impossible sans posséder une force hors du commun.",
-      "refinement": "Augmente les DGT infligés par les attaques normales de {{0}}% et réduit les DGT infligés par les attaques chargées de 10%."
-    },
-    {
-      "key": "Sacrificial Bow",
-      "name": "Arc rituel",
-      "description": "Un arc de chasse ornemental qui a été pétrifié par le temps et dont on peut encore distinguer les décorations. Avec lui, son manieur sera capable d'affronter l'épreuve du temps.",
-      "refinement": "Les compétences élémentaires ont {{0}}% de chance de réinitialiser leur propre TdR lorsqu'elles infligent des DGT. Cet effet peut être déclenché une fois toutes les {{1}}s."
-    },
-    {
-      "key": "The Viridescent Hunt",
-      "name": "Arc de chasse verdoyant",
-      "description": "Un arc noble de couleur verte qui appartenait autrefois à un chasseur.",
-      "refinement": "Les attaques normales et chargées ont 50% de chances lorsqu'elles touchent de générer un cyclone qui attire les ennemis et leur inflige des DGT équivalant à {{0}}% de l'ATQ toutes les 0,5s pendant 4s. Cet effet peut être déclenché une fois toutes les {{1}}s."
-    },
-    {
-      "key": "Skyward Harp",
-      "name": "Ailes de la Voûte d'Azur",
-      "description": "Un grand arc qui symbolise l'affiliation de Dvalin à Barbatos. Fort de la puissance du ciel et du vent, le son qu'il produit lors de la libération de la flèche est une vraie musique aux oreilles de l'Archon Anémo.",
-      "refinement": "Augmente les DGT CRIT de {{0}}%. Toucher un ennemi a {{1}}% de chance d'infliger des DGT physiques équivalant à 125% de l'ATQ dans une zone restreinte. Cet effet peut être déclenché une fois toutes les {{2}}s."
-    },
-    {
-      "key": "Amos’ Bow",
-      "name": "Arc d'Amos",
-      "description": "Un arc extrêmement ancien. Même si son maître d'origine n'est plus, on sent encore son pouvoir, drainé de tous les êtres de ce monde. Plus l'objet de vos désirs se trouve loin, et meilleure est sa puissance.",
-      "refinement": "Augmente les DGT infligés par les attaques normales et les attaques chargées de {{0}}%. Les DGT augmentent de {{1}}% toutes les 0,1s après avoir tiré une flèche d'attaque normale ou chargée. Cet effet est cumulable 5 fois maximum."
-    },
-    {
-      "key": "Dreams of Dragonfell",
-      "name": "Majesté dorée (?)",
-      "description": "Un grand arc en veine de dragon fait par le maître forgeron Kunwu. Il est si puissant qu'il peut même tuer un dragon. Lorsque une flèche est tirée de l'arc, elle sort avec la force du tonnerre.",
-      "refinement": "Augmente la force du bouclier de {{0}}%. Toucher un ennemi augmente l'ATQ de {{1}}% pendant 8s. Cet effet peut être cumulé 5 fois au maximum et peut être déclenché une fois toutes les 0,3s. Lorsque vous êtes protégé par un bouclier, l'augmentation d'ATQ de cet effet est de 100%."
-    },
-    {
-      "key": "Dull Blade",
-      "name": "Épée émoussée",
-      "description": "Si les rêves de jeunesse et la soif d'aventure ne suffisent pas, compensez avec beaucoup de courage.",
-      "refinement": null
-    },
-    {
-      "key": "Silver Sword",
-      "name": "Épée en argent",
-      "description": "Une épée faite pour chasser les démons. Par contre, tout le monde sait qu'elle a été forgée avec un alliage d'argent et non avec de l'argent pur.",
-      "refinement": null
-    },
-    {
-      "key": "Cool Steel",
-      "name": "Lame froide",
-      "description": "Une arme faite dans un acier travaillé à maintes reprises, qui témoigne des aventures de son précédent propriétaire.",
-      "refinement": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Cryo de {{0}}%."
-    },
-    {
-      "key": "Dark Iron Sword",
-      "name": "Épée en fer noir",
-      "description": "Une épée en fer légèrement noirci.",
-      "refinement": "Augmente l'ATQ de {{0}}% pendant 12s après avoir déclenché Surcharge, Supraconduction, Électrocution ou Dispersion Électro."
-    },
-    {
-      "key": "Fillet Blade",
-      "name": "Couteau à filets",
-      "description": "Un couteau de pêche à la lame tranchante. Il est très acéré.",
-      "refinement": "Les attaques ont 50% de chances d'infliger {{0}}% de DGT d'ATQ à un ennemi lorsqu'elles touchent. Cet effet peut être déclenché 1 fois toutes les {{1}}s."
     },
     {
       "key": "Harbinger of Dawn",
@@ -5158,11 +5002,23 @@
       "name": "Valse nocturne",
       "description": "Un arc peint de la couleur des nuits de péché et de fantaisie.",
       "refinement": "Lorsque vous touchez des ennemis avec des attaques normales, les DGT infligés par les compétences élémentaires sont augmentés de {{0}}% pendant 5s. Lorsque vous touchez des ennemis avec des compétences élémentaires, les DGT infligés par les attaques normales sont augmentés de {{1}}% pendant 5s."
+    },
+      {
+      "key": "Windblume Ode",
+      "name": "Ode aux alizées",
+      "description": "Un arc orné de fleurs sans nom qui porte les espoirs sincères d'une personne également sans nom.",
+      "refinement": "Après avoir utilisé une compétence élémentaire, recevez un avantage de l'ancien souhait du Windblume, augmentant l'ATK de {{0}}% pendant 6s."
+    },
+     {
+      "key": "Elegy for the End",
+      "name": "Ultime soupir",
+      "description": "Un arc aussi beau qu'une lyre de barde, ses flèches transpercent le cœur comme un soupir lamentable.",
+      "refinement": "Une partie du «mouvement millénaire» qui erre au milieu des vents. Augmente la maîtrise élémentaire de {{0}}. Lorsque les compétences élémentaires ou les explosions élémentaires du personnage utilisant cette arme touchent des adversaires, ce personnage gagne un sceau de souvenir. Cet effet peut être déclenché une fois toutes les 0,2s et peut être déclenché même si ledit personnage n'est pas sur le terrain. Lorsque vous possédez 4 Sigils of Remembrance, tous seront consommés et tous les membres du groupe à proximité obtiendront l'effet \"Millennial Movement: Farewell Song\" pendant 12s. \"Millennial Movement: Farewell Song\" augmente la maîtrise élémentaire de {{1}} et l'ATK de {{2}}%. Une fois cet effet déclenché, vous ne gagnerez pas de Sigils de souvenir pendant 20s. Parmi les nombreux effets du «mouvement millénaire», les buffs du même type ne se cumulent pas."
     }
   ],
   "artifacts": [
      {
-      "key": "Aventurier",
+      "key": "Adventurer",
       "name": "Aventurier",
       "bonus": [
          {
@@ -5176,7 +5032,7 @@
       ]
     },
      {
-      "key": "Médecin itinérant",
+      "key": "Traveling Doctor",
       "name": "Médecin itinérant",
       "bonus": [
          {
@@ -5190,7 +5046,7 @@
       ]
     },
      {
-      "key": "Chien chanceux",
+      "key": "Lucky Dog",
       "name": "Chien chanceux",
       "bonus": [
          {
@@ -5205,7 +5061,7 @@
     },
      {
       "key": "Résolution de Sojourner",
-      "name": "Résolution de Sojourner",
+      "name": "Coeur du voyageur",
       "bonus": [
          {
           "key": "b1",
@@ -5218,7 +5074,7 @@
       ]
     },
      {
-      "key": "Petit miracle",
+      "key": "Tiny Miracle",
       "name": "Petit miracle",
       "bonus": [
          {
@@ -5232,7 +5088,7 @@
       ]
     },
      {
-      "key": "Un cœur brave",
+      "key": "Brave Heart",
       "name": "Un cœur brave",
       "bonus": [
          {
@@ -5246,7 +5102,7 @@
       ]
     },
      {
-      "key": "Volonté du défenseur",
+      "key": "Defender’s Will",
       "name": "Volonté du défenseur",
       "bonus": [
          {
@@ -5260,7 +5116,7 @@
       ]
     },
      {
-      "key": "Artiste martial",
+      "key": "Martial Artist",
       "name": "Artiste martial",
       "bonus": [
          {
@@ -5274,8 +5130,8 @@
       ]
     },
      {
-      "key": "Joueur",
-      "name": "Joueur",
+      "key": "Gambler",
+      "name": "Parieur",
       "bonus": [
          {
           "key": "b1",
@@ -5288,7 +5144,7 @@
       ]
     },
      {
-      "key": "Savant",
+      "key": "Scholar",
       "name": "Savant",
       "bonus": [
          {
@@ -5317,7 +5173,7 @@
       ]
     },
      {
-      "key": "Instructeur",
+      "key": "Instructor",
       "name": "Instructeur",
       "bonus": [
          {
@@ -5331,7 +5187,7 @@
       ]
     },
      {
-      "key": "L'exil",
+      "key": "The Exile",
       "name": "L'exil",
       "bonus": [
          {
@@ -5345,7 +5201,7 @@
       ]
     },
      {
-      "key": "Fureur foudroyante",
+      "key": "Thundering Fury",
       "name": "Fureur foudroyante",
       "bonus": [
          {
@@ -5373,7 +5229,7 @@
       ]
     },
      {
-      "key": "viridescent venir",
+      "key": "Viridescent Venerer",
       "name": "viridescent venir",
       "bonus": [
          {
@@ -5387,8 +5243,8 @@
       ]
     },
      {
-      "key": "Maiden bien-aimée",
-      "name": "Maiden bien-aimée",
+      "key": "Maiden Beloved",
+      "name": "Servante bien-aimée",
       "bonus": [
          {
           "key": "b1",
@@ -5401,7 +5257,7 @@
       ]
     },
      {
-      "key": "Petra archaïque",
+      "key": "Archaic Petra",
       "name": "Petra archaïque",
       "bonus": [
          {
@@ -5458,7 +5314,7 @@
       ]
     },
      {
-      "key": "Chevalerie tachée de sang",
+      "key": "Bloodstained Chivalry",
       "name": "Chevalerie tachée de sang",
       "bonus": [
          {
@@ -5486,7 +5342,7 @@
       ]
     },
      {
-      "key": "Finale du gladiateur",
+      "key": "Gladiator’s Finale",
       "name": "Finale du gladiateur",
       "bonus": [
          {
@@ -5500,7 +5356,7 @@
       ]
     },
      {
-      "key": "Troupe du vagabond",
+      "key": "Wanderer’s Troupe",
       "name": "Troupe du vagabond",
       "bonus": [
          {
@@ -5523,9 +5379,9 @@
         }
       ]
     },
-    {
+     {
       "key": "Prayers for Destiny",
-      "name": "Sacrifieur Hydro",
+      "name": "Prières pour le destin",
       "bonus": [
          {
           "key": "b1",
@@ -5533,10 +5389,9 @@
         }
       ]
     },
-    {
+     {
       "key": "Prayers for Wisdom",
-      "name": "Sacrifieur Électro",
-
+      "name": "Prières pour la sagesse",
       "bonus": [
          {
           "key": "b1",
@@ -5544,9 +5399,9 @@
         }
       ]
     },
-    {
+     {
       "key": "Prayers to Springtime",
-      "name": "Sacrifieur Cryo",
+      "name": "Prières au printemps",
       "bonus": [
          {
           "key": "b1",
@@ -5569,7 +5424,7 @@
       ]
     },
      {
-      "key": "Cœur de profondeur",
+      "key": "Heart of Depth",
       "name": "Cœur de profondeur",
       "bonus": [
          {
@@ -5596,9 +5451,9 @@
         }
       ]
     },
-    {
+     {
       "key": "Prayers to the Firmament",
-      "name": "Sacrifieur Anémo",
+      "name": "Prières au firmament",
       "bonus": [
          {
           "key": "b1",
@@ -5681,30 +5536,30 @@
       "name": "Philosophie de la Diligence",
       "description": "Le goût du travail représente l'essence du Pays de la Roche.\nLes Liyuéens croient que chacun peut se faire une place sur la terre des dieux grâce à sa sagesse et à sa force, mais aussi à la sueur de son front."
     },
-    {
+     {
       "key": "ResistanceA",
-      "name": "Enseignement de la Résistance",
-      "description": "La résistance constitue l'échine du Royaume du Vent.\nElle a marqué son histoire à travers les âges. Certains se sont soulevés pour que les injustices passées ne tombent pas dans l'oubli, comme des pousses qui jaillissent du sol et le vent qui souffle à travers les murs de pierre."
+      "name": "Enseignements de la résistance",
+      "description": "La résistance est l'épine dorsale du pays du vent.\nL'histoire de Mondstadt est une histoire de résistances. Les gens se sont levés pour empêcher que les conflits du passé ne soient jamais oubliés, comme des pousses traversant le sol, comme le vent éternel érodant à travers les murs de pierre."
     },
-    {
+     {
       "key": "ResistanceB",
-      "name": "Guide de la Résistance",
-      "description": "La résistance constitue l'échine du Royaume du Vent.\nElle a marqué son histoire à travers les âges. Certains ont agi pour que le peuple jouisse de sa liberté actuelle, comme Barbatos qui a dispersé la neige et Vennessa qui s'est rebellée."
+      "name": "Guide de la résistance",
+      "description": "La résistance est l'épine dorsale de la ville du vent.\nL'histoire de Mondstadt est une histoire de résistances. Les gens se sont levés pour accorder aux citoyens de Mondstadt la liberté dont ils jouissent maintenant, comme l'Anemo Archon soufflant la neige, ou comme Vennessa se levant pour se battre."
     },
-    {
+     {
       "key": "ResistanceC",
-      "name": "Philosophie de la Résistance",
-      "description": "La résistance constitue l'échine du Royaume du Vent.\nElle a marqué son histoire à travers les âges. Certains se sont soulevé pour que la poésie de Mondstadt se répande aussi librement que le vent à travers les terres."
+      "name": "Philosophies de la résistance",
+      "description": "La résistance est l'épine dorsale du pays du vent.\nL'histoire de Mondstadt est une histoire de résistances. Les gens se sont levés pour permettre à la future poésie de Mondstadt d'être librement celle du vent et de se répandre à travers le pays."
     },
-    {
+     {
       "key": "BalladA",
-      "name": "Enseignement de la Poésie",
-      "description": "L'âme du Royaume du Vent réside dans la poésie.\nElle existe pour exprimer la beauté. La brise transporte les mots doux lors des beaux jours. Ils touchent le cœur des gens comme elle caresse les feuilles d'un arbre."
+      "name": "Enseignements de la ballade",
+      "description": "La poésie est l'âme du pays du vent.\nLa poésie est la manifestation de beaux sentiments. Par une belle journée, les brises emportent avec elles une poésie qui touche le cœur des gens comme le vent caressant les feuilles."
     },
-    {
+     {
       "key": "BalladB",
-      "name": "Guide de la Poésie",
-      "description": "L'âme du Royaume du Vent réside dans la poésie.\nElle existe pour donner du courage à ceux qui en ont besoin. Pendant les jours sombres, les bourrasques soufflaient des mots de colère dans les rues, comme des tambours de guerre qui annoncent une tempête à venir"
+      "name": "Guide de la ballade",
+      "description": "La poésie est l'âme du pays du vent.\nLa poésie est la manifestation de la volonté d'encourager. Dans les jours sombres, les coups de vent dans les rues et les ruelles murmurent des mots de fureur, comme les tambours de bataille, comme le grondement sourd avant la tempête."
     },
     {
       "key": "BalladC",
@@ -5727,79 +5582,79 @@
       "name": "Philosophie de l'Or",
       "description": "L'or est le symbole du Pays de la Roche.\nLiyue n'en manque pas, mais sa véritable richesse se trouve dans le cœur de ses habitants."
     },
-    {
+     {
       "key": "Tail of Boreas",
       "name": "Queue de Borée",
       "description": "Un fragment de la queue du Grand Roi Loup du Nord.\nBien qu’il soit réduit à un esprit, la puissance de Borée n’est pas à sous-estimer. Le Roi Loup essaya de se construire un corps à l’aide de feu et de glace afin de combattre un ennemi, mais ce ne fut pas suffisant pour contenir ses pouvoirs. Les écailles givrées qui s’en sont détachées lors de l’affrontement ont conservé leur énergie spirituelle",
       "bossName": "Andros"
     },
-    {
+     {
       "key": "Ring of Boreas",
-      "name": "Vertèbre de Borée",
-      "description": "Un peu de glace provenant du corps du Grand Roi Loup du Nord.\nIl déclenchait des blizzards et des tempêtes de neige à la grêle si acérée qu’elle pouvait couper la chair. Ses pouvoirs ne sont plus ceux d’antan, mais il possède encore la puissance de recouvrir ses terres de neige.",
-      "bossName": "Andros"
+      "name": "Anneau de Borée",
+      "description": "Un peu de glace cristallisée du Grand Wolf King of the North.\nCette terre était autrefois un royaume de blizzards glacés et de tempêtes de verglas remplis d'éclats de glace acérés comme des rasoirs, le tout sous les ordres de Boreas. Bien que son pouvoir ait diminué, il pouvait encore geler la terre en un instant.",
+      "bossName": "Andrius"
     },
-    {
+     {
       "key": "Spirit Locket of Boreas",
-      "name": "Esprit de Borée",
-      "description": "Un fragment d’âme obtenu du Grand Roi Loup du Nord.\nCe dernier déclenchait des blizzards et des tempêtes de neige. Cependant, à la fin de sa vie, il comprit enfin que ses vents froids et violents ne pouvaient qu’éteindre la vie et non la nourrir. Il laissa donc ses pouvoirs se répandre sur les terres pour leur apporter bénédiction et protection éternelles",
-      "bossName": "Andros"
+      "name": "Médaillon spirituel de Borée",
+      "description": "Un peu de la puissance du Grand Loup Roi du Nord tirée de son âme.\nCette terre était autrefois un royaume de blizzards glacés et de tempêtes de verglas remplis d'éclats de glace acérés comme des rasoirs, le tout sous les ordres de Boreas. Dans ses derniers instants, il réalisa enfin que le vent glacial du nord ne pouvait qu'éteindre la vie, pas la nourrir. Par conséquent, Borée a laissé ses pouvoirs affluer librement dans la terre pour la protéger ainsi que ses habitants.",
+      "bossName": "Andrius"
     },
-    {
+     {
       "key": "Dvalin's Plume",
-      "name": "Plume de Stormterror",
-      "description": "Une plume provenant du Dragon de l’Est\nSoufflée par les vents pendant pas moins d’un millénaire elle invoquerait presque une brise pour la libérer de votre sac, mais son propriétaire l’a confiée en gage de reconnaissance",
+      "name": "Le panache de Dvalin",
+      "description": "Une plume de la queue du Dragon de l'Est.\nEn tant que plume de dragon, elle a subi plus de mille ans de vents. On sent en lui une aspiration à la liberté si forte qu'elle pourrait attiser une légère brise pour la sauver de ses limites actuelles. La reconnaissance de vous par son ancien propriétaire est ce qui le rend heureux de rester entre vos mains.",
       "bossName": "Dvalin"
     },
-    {
+     {
       "key": "Dvalin's Claw",
-      "name": "Griffe de Stormterror",
-      "description": "Une griffe provenant du Dragon de l'Est.\nElle fut contaminée par le sang de Durin, le Dragon des Ténèbres, mais grâce à vos efforts, elle n'est plus empoisonnée.",
+      "name": "Griffe de Dvalin",
+      "description": "Une griffe du Dragon de l'Est.\nIl contenait autrefois le vil poison du dragon de l'ombre Durin, ayant déchiré la chair de ce dernier au combat. Grâce à votre purification et à votre guérison, il n'est plus toxique.",
       "bossName": "Dvalin"
     },
-    {
+     {
       "key": "Dvalin's Sigh",
-      "name": "Souffle de Stormterror",
-      "description": "Un peu de pouvoir provenant des bourrasques du Dragon de l'Est.\nTransparent, mais beau, il permet d'invoquer les tornades et les alizés. Le vent est son compagnon, sa voix et sa liberté.\nTous ceux qui se tiennent en travers de son chemin sont ses ennemis.",
+      "name": "Le soupir de Dvalin",
+      "description": "Un peu de puissance tirée des tourbillons évoqués par le Dragon de l'Est.\nBeau et transparent, les alizés et les tornades travailleront en son nom. Les vents bougent comme son compagnon, sa voix et sa liberté. Ses ennemis sont les milliers qui se dressent contre le vent.",
       "bossName": "Dvalin"
     },
-    {
+     {
       "key": "Tusk of Monoceros Caeli",
-      "name": "Corne de Monoceros Caeli",
-      "description": "La corne d'une baleine que vous avez obtenue en battant Tartaglia, qui avait libéré la puissance de son œil maléfique.\nD'aucuns prétendent que le caractère d'une personne est défini par la forme de sa constellation. L'image d'une baleine traversant le firmament est une allégorie de la destruction réduisant tout à néant sur son chemin.\nC'est une bête similaire qu'il invoqua lors de votre combat.",
-      "bossName": "Tartaglia"
-    },
-    {
-      "key": "Shard of a Foul Legacy",
-      "name": "Fragment du démon",
-      "description": "Fragment d'arme que vous avez obtenu en battant Tartaglia, qui avait libéré la puissance de son œil maléfique.\nL'objet est couvert d'une couleur qui n'est pas de ce monde, sans doute due aux ténèbres sans fin que le jeune garçon a vu de ses propres yeux.\nPeut-être n'a-t-il rien à voir avec la puissance d'un œil divin, mais comme on dit : l'arme est le reflet de celui qui la manie...",
+      "name": "Défense de Caelum",
+      "description": "La corne d'une baleine que vous avez obtenue en battant Childe, qui avait libéré la puissance de son illusion.\nOn dit que la forme de sa constellation détermine son caractère. L'image d'une baleine traversant les hauteurs célestes représente un solipsisme qui cherche à écraser et dévorer tout sur son passage.\nEmbrassant cet aspect de lui-même, Childe invoqua joyeusement l'une de ces bêtes avant de se lancer dans la bataille contre vous.",
       "bossName": "Tartaglia"
     },
      {
-      "key": "Ombre du guerrier",
+      "key": "Shard of a Foul Legacy",
+      "name": "Éclat d'un héritage infect",
+      "description": "L'éclat d'une arme que vous avez obtenu en battant Childe, qui avait libéré la puissance de son illusion.\nIl est taché d'une couleur profonde qui n'est pas de ce monde, sans doute à cause du pays des ténèbres sans fin que le jeune garçon a vu de ses propres yeux.\nPeut-être que cela n'a rien à voir avec la puissance d'une illusion, mais comme on dit, l'arme reflète son utilisateur ...",
+      "bossName": "Tartaglia"
+    },
+     {
+      "key": "Shadow of the Warrior",
       "name": "Ombre du guerrier",
       "description": "Un fragment de pouvoir que vous avez obtenu en battant Tartaglia, qui avait libéré la puissance de son œil maléfique.\nCet objet est le résultat d'une volonté de combattre qui s'est aiguisée au cours d'innombrables massacres.\nSi le destin existe pour les hommes, alors le sien a sans nul doute été affecté par ces actions. Sinon, comment expliquer qu'il se retrouve toujours au centre de chaque conflit ?",
       "bossName": "Tartaglia"
     },
-    {
+     {
       "key": "DecarabianA",
-      "name": "Tuile casssée de Décabarian",
-      "description": "L'endroit qu'on nomme l'Antre de Stormterror aujourd'hui était autrefois une cité construite par Décabarian, le Seigneur des Rafales. Ce beau rêve prospère a été créé par le pouvoir de l'Archon, et même après sa destruction, les tuiles cassées et les fragments dispersés laissés derrière possèdent toujours une grande puissance."
+      "name": "Tuile de la tour décarabienne",
+      "description": "L'endroit maintenant connu sous le nom de Stormterror's Lair était autrefois la capitale de Decarabian, le dieu des tempêtes. Puisque ce rêve de prospérité a été entièrement créé par sa puissance divine, les morceaux brisés laissés par l'éclatement de ce rêve possèdent toujours un grand pouvoir."
     },
-    {
+     {
       "key": "DecarabianB",
-      "name": "Mur abattu de Décabarian",
-      "description": "Décabarian, fier de son œuvre, était vénéré du haut de sa tour. Cependant, il ignorait que le peuple ne se prosternait pas ni par respect ni par admiration."
+      "name": "Débris de la ville décarabienne",
+      "description": "Décarabien, le dieu des tempêtes, se contenta de la capitale qu'il avait élevée et accepta le culte du peuple du haut de sa tour. Mais il ne savait pas que les gens ne se prosternaient pas devant lui par respect ou par adoration."
     },
-    {
+     {
       "key": "DecarabianC",
-      "name": "Fragment dispersé de Décabarian",
-      "description": "Andrios déclara la guerre au Seigneur de la Tour, mais ne put infliger une seule égratignure aux rempats de sa cité. Hélas, la douce mélodie de la liberté mit fin au rêve du tyran en un instant."
+      "name": "Fragment de l'épopée décarabienne",
+      "description": "Andrius a déclaré une fois la guerre à Décarabe, mais n'a même pas réussi à gratter la capitale du Seigneur de la Tour. Sans le chant de la liberté qui a brisé la ville en un instant, le rêve de Decarabian aurait duré pour toujours."
     },
-    {
+     {
       "key": "DecarabianD",
-      "name": "Rêve brisé de Décabarian",
-      "description": "Le peuple ne révérrait pas le Seigneur de la Tour par respect ou par admiration, mais par peur de la tempête qui s'abattrait sur eux. Cet objet représente son ambition brisée par Barbatos.\nDécabarian avait déloyé des moyens démesurés pour réaliser son rêve. Même brisé, il reste puissant."
+      "name": "Fragment épars du rêve décarabien",
+      "description": "Les gens ne se sont pas inclinés devant Decarabian par respect ou par adoration, mais parce que les vents violents les avaient abaissés. C'était le rêve et l'ambition brisés de l'Anemo Archon avant la montée de Barbatos.Il a essayé si dur de réaliser son rêve, et ainsi les fragments de ce rêve sont toujours puissants."
     },
      {
       "key": "GuyunA",
@@ -5999,19 +5854,19 @@
       "description": "Fragment d'os obtenu parfois après avoir vaincu des Élémentosaures.\nTous les Élémentosaures rêvent de devenir un jour dragon, et vénèrent avec passion ce type de fossile ; peut-être pensent-ils bénéficier ainsi de la longévité et de la puissance des vrais dragons."
     },
      {
-      "key": "MasqueA",
+      "key": "MaskA",
       "name": "Masque endommagé",
       "description": "Un masque en os fissuré qui a appartenu à un Brutocollinus.\nIl est tellement endommagé qu'on ne peut plus vraiment appeler ça un masque."
     },
-    {
+     {
       "key": "MaskB",
-      "name": "Masque sale",
-      "description": "Un masque en os taché par une substance non identifiée qui dégage une odeur étrange.\nUn Brutocollinus le porterait même dans cet état."
+      "name": "Masque taché",
+      "description": "Un masque en os, couvert de taches non identifiables, qui dégage une odeur mystérieuse.\nPourtant, telle est la dévotion des hilichurls aux masques qu'ils le porteront néanmoins."
     },
-    {
+     {
       "key": "MaskC",
-      "name": "Masque sinistre",
-      "description": "Un masque en os d'une grande qualité sur lequel un visage terrifiant est peint pour effrayer vos ennemis.\nLes Brutocollinus sont très attachés à ce genre d'objet pour une raison mystérieuse. Certaines sources attribuent le port du masque à leur peur de voir leur propre reflet dans l'eau."
+      "name": "Masque menaçant",
+      "description": "Un masque en os brillant avec des marques d'huile peintes dessus, destiné à intimider les ennemis.\nPersonne ne sait vraiment pourquoi les hilichurls sont si fascinés par les masques. Certains disent que c'est parce qu'ils ne veulent pas voir leurs propres reflets dans l'eau."
     },
      {
       "key": "StatuetteA",
@@ -6028,25 +5883,25 @@
       "name": "Statuette maléfique",
       "description": "Une statuette sculptée dans une matière inconnue qui dégage une énergie maléfique. Ne la contemplez pas trop longtemps ou vous commencerez à entendre des voix inquiétantes vous chuchoter à l'oreille..."
     },
-    {
+     {
       "key": "ScrollA",
-      "name": "Parchemin divinatoire",
-      "description": "Un parchemin qui semble parler de magie. Il dégage une étrange chaleur."
+      "name": "Parchemin divin",
+      "description": "Un parchemin qui est probablement lié à une sorte de magie. Dégage une chaleur inexplicable mais inquiétante."
     },
-    {
+     {
       "key": "ScrollB",
-      "name": "Parchemin sigillé",
-      "description": "Un ancien parchemin aux dessins étranges. En reproduisant les gestes des personnages, il est possible de recréer une certaine magie miraculeuse."
+      "name": "Parchemin scellé",
+      "description": "Un vieux parchemin manquant de détails et de clarté. En suivant les images dessus, certaines créatures magiques peuvent recréer une petite partie de sa magie."
     },
      {
       "key": "ScrollC",
       "name": "Parchemin maudit",
       "description": "Un parchemin ancien très difficile à déchiffrer. Ceux qui y sont parvenus sont tous devenus fous."
     },
-    {
+     {
       "key": "NectarA",
-      "name": "Nectar de Fleur mensongère",
-      "description": "Nectar extrait du pistil d'une Fleur mensongère. Il contient des traces d'éléments.\nSon goût rappelle celui de la fleur sucrante."
+      "name": "Nectar de Whopperflower",
+      "description": "Nectar extrait de l'étamine d'une Whopperflower qui contient des traces d'énergie élémentaire.\nLe goût du nectar contient un soupçon de fleur sucrée."
     },
      {
       "key": "NectarB",
@@ -6079,7 +5934,7 @@
       "description": "Un insigne porté avec fierté et qui indique le rang de son propriétaire au sein des Pilleurs de trésors. Leur soif de richesse ne pourra jamais être assouvie... Ceci dit, depuis quand peut-on se vanter d'être un voleur ?"
     },
      {
-      "key": "CirculaireInsigniaB",
+      "key": "CircularInsigniaB",
       "name": "Insigne de corbeau en argent",
       "description": "Un insigne en forme de corbeau porté par les Pilleurs de trésors pour se reconnaître entre eux. Pas besoin d'entretien pour adhérer à leur groupe, tant qu'on est suffisamment motivé par le gain et que le courage ne nous fait pas défaut."
     },
@@ -6094,7 +5949,7 @@
       "description": "Un insigne servant à identifier les nouvelles recrues. Personne ne sait ni à qui il appartient, ni pourquoi cette personne a décidé de rejoindre l'armée des Fatui."
     },
      {
-      "key": "InsigneB",
+      "key": "InsigniaB",
       "name": "Insigne de sergent",
       "description": "Un insigne servant à identifier les sergents. Il est sans doute porteur d'émotions complexes."
     },
@@ -6124,7 +5979,7 @@
       "description": "La devise commune de Teyvat. S'il y a bien un mot que tout le monde comprend, c'est celui-là."
     },
      {
-      "key": "BasaltePillar",
+      "key": "BasaltPillar",
       "name": "Pilier de basalte",
       "description": "Un pilier formé avec une carapace d'Hypostase Géo et que de l'énergie Géo intense parcourt.\nCe monument est une preuve que l'élément Géo est le plus lourd d'entre tous. L'Hypostase Géo voulait peut-être se rapprocher du ciel plutôt que de combattre ses ennemis..."
     },
@@ -6144,7 +5999,7 @@
       "description": "Duramen d'un Arbre congelé. Une forte énergie Cryo s'en dégage.\nL'énergie et les pensées qui pullulent au fond de la terre finissent tôt ou tard par émerger à la surface. Le givre froid et endeuillé finit alors par s'attacher aux créatures qu'il rencontre ; et même les plantes et arbres deviennent alors gigantesques et menaçants."
     },
      {
-      "key": "Ouragan",
+      "key": "HurricaneSeed",
       "name": "Graine d'ouragan",
       "description": "La forme effondrée d'une Hypostase Anémo après avoir été vaincue. Elle contient un pouvoir Anémo d'une grande pureté.\nLa légende raconte qu'un petit papillon fragile possède également le pouvoir de provoquer un ouragan. Ce papillon fait partie du vent pur, attendant avec patience le jour pour invoquer à nouveau l'ouragan."
     },
@@ -6214,24 +6069,24 @@
       "description": "«La vie a lâché ses mains à la fin...»\n«et donne la liberté à tout le monde.»\n«Les hommes et les animaux peuvent tous s'exprimer, mais les plantes ne peuvent pas. C'est pourquoi qu'ils ont besoin d'un porte-parole.»"
     },
      {
-      "key": "TopazeA",
+      "key": "TopazA",
       "name": "Ruban de topaze Prithiva",
       "description": null
     },
-    {
+     {
       "key": "TopazB",
-      "name": "Fragment de topaze prithiva",
-      "description": "«Toutes les monnaies qui circulent sur le continent font partie de mon corps.»"
+      "name": "Fragment de topaze Prithiva",
+      "description": "\"Les devises qui traversent cette terre sont ma chair et mon sang.\""
     },
-    {
+     {
       "key": "TopazC",
-      "name": "Morceau de topaze prithiva",
-      "description": "«Toutes les monnaies qui circulent sur le continent font partie de mon corps.»\n«Je garantis la sueur, la sagesse et l'avenir des humains de cette manière.»"
+      "name": "Morceau de topaze Prithiva",
+      "description": "«Les devises qui traversent ce pays sont ma chair et mon sang.\nCar c'est ainsi que je suis devenu le garant du travail acharné, de la sagesse et de l'avenir du peuple. \""
     },
-    {
+     {
       "key": "TopazD",
-      "name": "Pierre de topaze prithiva",
-      "description": "«Toutes les monnaies qui circulent sur le continent font partie de mon corps.»\n«Je garantis la sueur, la sagesse et l'avenir des humains de cette manière.»\n«C'est la confiance que je place en vous. Si vous la trahissez, vous tacherez mon sang.»"
+      "name": "Pierre précieuse de topaze de Prithiva",
+      "description": "«Les devises qui traversent ce pays sont ma chair et mon sang.\nCar c'est ainsi que je suis devenu le garant du travail acharné, de la sagesse et de l'avenir du peuple, c'est la confiance que je lui ai placée. Trahissez-le, et vous souillez mon sang. \""
     },
      {
       "key": "JadeA",
@@ -6248,31 +6103,30 @@
       "name": "Morceau de jade shivada",
       "description": "«Pardon...»\n«Je vous laisse partager la tristesse du monde entier avec moi.»"
     },
-    {
+     {
       "key": "JadeD",
-      "name": "Pierre de jade shivada",
-      "description": "«Pardon...»\n«Je vous laisse partager la tristesse du monde entier avec moi.»\n«Puisque vous pourriez supporter mon froid glacial, vous devez avoir un fort désir au fond du cœur.»"
-
+      "name": "Pierre précieuse de jade de Shivada",
+      "description": "\"Désolé ... de t'avoir aussi porté les griefs du monde.\" Puisque tu as pu supporter mon froid glacial, tu dois avoir le désir de brûler? \"Alors, brûle le vieux monde pour moi.\""
     },
      {
-      "key": "AméthysteA",
+      "key": "AmethystA",
       "name": "Ruban d'améthyste Vajrada",
       "description": null
     },
-    {
+     {
       "key": "AmethystB",
-      "name": "Fragment d'améthyste vajrada",
-      "description": "«Ce corps est le plus noble et le plus éminent du monde.»"
+      "name": "Fragment d'améthyste Vajrada",
+      "description": "\"Ce corps est le plus noble et le plus éminent de tous dans ce monde.\""
     },
-    {
+     {
       "key": "AmethystC",
-      "name": "Morceau d'améthyste vajrada",
-      "description": "«Ce corps est le plus noble et le plus éminent du monde.»\n«Il devrait gouverner le monde.»"
+      "name": "Morceau d'améthyste Vajrada",
+      "description": "\"Ce corps est le plus noble et le plus éminent de tous dans ce monde. Il devrait détenir un contrôle absolu sur ce monde.\""
     },
-    {
+     {
       "key": "AmethystD",
-      "name": "Pierre d'améthyste vajrada",
-      "description": "«Ce corps est le plus noble et le plus éminent du monde.»\n«Il devrait gouverner le monde.»\n«Il a promis une fois un beau rêve à son peuple : une éternité qui ne change jamais.»"
+      "name": "Gemme améthyste Vajrada",
+      "description": "\"Ce corps est le plus noble et le plus éminent de tous dans ce monde.\" Il devrait détenir un contrôle absolu sur ce monde. \"Il a promis un jour à son peuple un rêve:\" l'éternité \"qui ne change jamais.\""
     },
      {
       "key": "LazuriteA",
@@ -6360,7 +6214,7 @@
       "description": "Une fleur blanche translucide qui ne pousse que sur les sommets des montagnes les plus hautes. Au lieu de grandir dans les plaines riches et humides, elle choisit de regarder au loin depuis les sommets des montagnes les plus solitaires."
     },
      {
-      "key": "SoieFleur",
+      "key": "SilkFlower",
       "name": "Fleur de soie",
       "description": "Une plante qui fleurit à la manière des nuages arc-en-ciel de Liyue. Elle peut être utilisée pour fabriquer des tissus extrêmement lisses et soyeux."
     },
@@ -6948,8 +6802,8 @@
       "name": "Chef Brutorocheux"
     },
      {
-      "key": "Terreur de tempête",
-      "name": "Terreur de tempête"
+      "key": "Stormterror",
+      "name": "Stormterror"
     },
      {
       "key": "Treasure Hoarders - Boss",
@@ -7022,7 +6876,7 @@
     },
     {
       "key": "Wooden Shieldwall Mitachurl",
-      "name": "Brutoviandu avec bouclier de bois"
+      "name": "Brutocollinus avec bouclier de bois"
     },
     {
       "key": "Maguu Kenki",
