@@ -7,6 +7,7 @@ import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/domain/services/data_service.dart';
 import 'package:genshindb/domain/services/notification_service.dart';
 import 'package:genshindb/domain/services/settings_service.dart';
+import 'package:genshindb/domain/services/telemetry_service.dart';
 import 'package:meta/meta.dart';
 
 part 'notifications_bloc.freezed.dart';
@@ -19,10 +20,11 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   final DataService _dataService;
   final NotificationService _notificationService;
   final SettingsService _settingsService;
+  final TelemetryService _telemetryService;
 
   Timer? _timer;
 
-  NotificationsBloc(this._dataService, this._notificationService, this._settingsService) : super(_initialState);
+  NotificationsBloc(this._dataService, this._notificationService, this._settingsService, this._telemetryService) : super(_initialState);
 
   @override
   Stream<NotificationsState> mapEventToState(NotificationsEvent event) async* {
@@ -66,6 +68,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     await _notificationService.cancelNotification(key, type);
     final notifications = [...state.notifications];
     notifications.removeWhere((el) => el.key == key && el.type == type);
+    await _telemetryService.trackNotificationDeleted(type);
     return state.copyWith.call(notifications: notifications);
   }
 
@@ -73,12 +76,14 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     final notif = await _dataService.resetNotification(key, type, _settingsService.serverResetTime);
     await _notificationService.cancelNotification(key, type);
     await _notificationService.scheduleNotification(key, type, notif.title, notif.body, notif.completesAt);
+    await _telemetryService.trackNotificationRestarted(type);
     return _afterUpdatingNotification(notif);
   }
 
   Future<NotificationsState> _stopNotification(int key, AppNotificationType type) async {
     final notif = await _dataService.stopNotification(key, type);
     await _notificationService.cancelNotification(key, type);
+    await _telemetryService.trackNotificationStopped(type);
     return _afterUpdatingNotification(notif);
   }
 

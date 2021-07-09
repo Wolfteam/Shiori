@@ -142,7 +142,22 @@ class TelemetryServiceImpl implements TelemetryService {
   Future<void> trackItemUpdatedInInventory(String key, int quantity) => trackEventAsync('MyInventory-Updated', {'Key_Qty': '${key}_$quantity'});
 
   @override
-  Future<void> trackNotificationCreated(AppNotificationType type) => trackEventAsync('Notification-Created', {
-        'Type': EnumToString.convertToString(type),
-      });
+  Future<void> trackNotificationCreated(AppNotificationType type) =>
+      trackEventAsync('Notification-Created', {'Type': EnumToString.convertToString(type)});
+
+  @override
+  Future<void> trackNotificationDeleted(AppNotificationType type) =>
+      trackEventAsync('Notification-Deleted', {'Type': EnumToString.convertToString(type)});
+
+  @override
+  Future<void> trackNotificationRestarted(AppNotificationType type) =>
+      trackEventAsync('Notification-Restarted', {'Type': EnumToString.convertToString(type)});
+
+  @override
+  Future<void> trackNotificationStopped(AppNotificationType type) =>
+      trackEventAsync('Notification-Stopped', {'Type': EnumToString.convertToString(type)});
+
+  @override
+  Future<void> trackNotificationUpdated(AppNotificationType type) =>
+      trackEventAsync('Notification-Updated', {'Type': EnumToString.convertToString(type)});
 }
