@@ -10,6 +10,7 @@ import 'package:genshindb/presentation/shared/item_popupmenu_filter.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/rarity_rating.dart';
 import 'package:genshindb/presentation/shared/sort_direction_popupmenu_filter.dart';
+import 'package:genshindb/presentation/shared/styles.dart';
 import 'package:genshindb/presentation/shared/weapons_button_bar.dart';
 
 class WeaponBottomSheet extends StatelessWidget {
@@ -31,18 +32,12 @@ class WeaponBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-
+    final theme = Theme.of(context);
     return CommonBottomSheet(
       titleIcon: GenshinDb.filter,
       title: s.filters,
-      onOk: () {
-        context.read<WeaponsBloc>().add(const WeaponsEvent.applyFilterChanges());
-        Navigator.pop(context);
-      },
-      onCancel: () {
-        context.read<WeaponsBloc>().add(const WeaponsEvent.cancelChanges());
-        Navigator.pop(context);
-      },
+      showOkButton: false,
+      showCancelButton: false,
       child: BlocBuilder<WeaponsBloc, WeaponsState>(
         builder: (context, state) => state.map(
           loading: (_) => const Loading(),
@@ -90,6 +85,32 @@ class WeaponBottomSheet extends StatelessWidget {
                   SortDirectionPopupMenuFilter(
                     selectedSortDirection: state.tempSortDirectionType,
                     onSelected: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.sortDirectionTypeChanged(v)),
+                  )
+                ],
+              ),
+              ButtonBar(
+                buttonPadding: Styles.edgeInsetHorizontal10,
+                children: <Widget>[
+                  OutlinedButton(
+                    onPressed: () {
+                      context.read<WeaponsBloc>().add(const WeaponsEvent.cancelChanges());
+                      Navigator.pop(context);
+                    },
+                    child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+                  ),
+                  OutlinedButton(
+                    onPressed: () {
+                      context.read<WeaponsBloc>().add(const WeaponsEvent.resetFilters());
+                      Navigator.pop(context);
+                    },
+                    child: Text(s.reset, style: TextStyle(color: theme.primaryColor)),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      context.read<WeaponsBloc>().add(const WeaponsEvent.applyFilterChanges());
+                      Navigator.pop(context);
+                    },
+                    child: Text(s.ok),
                   )
                 ],
               ),

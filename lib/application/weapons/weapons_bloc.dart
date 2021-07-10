@@ -68,6 +68,10 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
         tempWeaponLocationType: currentState.weaponLocationType,
         excludeKeys: currentState.excludeKeys,
       ),
+      resetFilters: (_) => _buildInitialState(
+        excludeKeys: state.maybeMap(loaded: (state) => state.excludeKeys, orElse: () => []),
+        weaponTypes: WeaponType.values,
+      ),
     );
 
     yield s;
