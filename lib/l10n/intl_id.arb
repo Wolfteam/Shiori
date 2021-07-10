@@ -355,5 +355,6 @@
   "notifInfoMsgE": "Beberapa OEM Android memiliki OS Android khusu mereka sendiri yang dapat mencegah aplikasi berjalan di belakang layar.\nAkibatnya, notifikasi yang terjadwal mungkin tidak berjalan saat aplikasi berada di belakang layar pada perangkat tertentu (misalnya Xiaomi, Huawei).\nJadi, jika kamu mengalami masalah ini, kamu mungkin harus mencari pengaturan yang memungkinkan kamu mengontrol aplikasi mana yang dapat berjalan di belakang layar.",
   "swipeToSeeMoreOptions": "Kamu dapat menggeser ke kanan atau kiri untuk melihat lebih banyak opsi pada setiap item.",
   "reduceTime": "Kurangi Waktu",
-  "use24HourFormatOnDates": "Gunakan format waktu 24 jam pada tanggal"
+  "use24HourFormatOnDates": "Gunakan format waktu 24 jam pada tanggal",
+  "ps4": "PS4"
 }
