@@ -49,6 +49,8 @@ abstract class DataService {
 
   Future<void> deleteItemFromInventory(String key, ItemType type);
 
+  Future<void> deleteItemsFromInventory(ItemType type);
+
   bool isItemInInventory(String key, ItemType type);
 
   /// This method redistributes all the materials in the inventory by calling [redistributeInventoryMaterial]

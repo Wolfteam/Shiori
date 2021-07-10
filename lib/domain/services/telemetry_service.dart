@@ -54,6 +54,8 @@ abstract class TelemetryService {
 
   Future<void> trackItemDeletedFromInventory(String key);
 
+  Future<void> trackItemsDeletedFromInventory(ItemType type);
+
   Future<void> trackNotificationCreated(AppNotificationType type);
 
   Future<void> trackNotificationUpdated(AppNotificationType type);
