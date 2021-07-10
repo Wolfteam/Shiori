@@ -229,6 +229,29 @@ class DataServiceImpl implements DataService {
   }
 
   @override
+  Future<void> deleteItemsFromInventory(ItemType type) async {
+    switch (type) {
+      case ItemType.character:
+      case ItemType.weapon:
+      case ItemType.artifact:
+        final toDeleteKeys = _inventoryBox.values.where((el) => el.type == type.index).map((e) => e.key).toList();
+        if (toDeleteKeys.isNotEmpty) {
+          await _inventoryBox.deleteAll(toDeleteKeys);
+        }
+        break;
+      case ItemType.material:
+        final materialsInInventory = _inventoryBox.values.where((el) => el.type == ItemType.material.index && el.quantity > 0).toList();
+        for (final material in materialsInInventory) {
+          material.quantity = 0;
+          await material.save();
+        }
+        final usedItemKeys = _inventoryUsedItemsBox.values.map((e) => e.key).toList();
+        _inventoryUsedItemsBox.deleteAll(usedItemKeys);
+        break;
+    }
+  }
+
+  @override
   List<CharacterCardModel> getAllCharactersInInventory() {
     final characters = _inventoryBox.values
         .where((el) => el.type == ItemType.character.index)
