@@ -130,7 +130,8 @@ class TelemetryServiceImpl implements TelemetryService {
   Future<void> trackCalculatorAscMaterialsSessionsUpdated() => trackEventAsync('Calculator-Asc-Mat-Sessions-Updated');
 
   @override
-  Future<void> trackCalculatorAscMaterialsSessionsDeleted() => trackEventAsync('Calculator-Asc-Mat-Sessions-Deleted');
+  Future<void> trackCalculatorAscMaterialsSessionsDeleted({bool all = false}) =>
+      trackEventAsync('Calculator-Asc-Mat-Sessions-Deleted${all ? '-All' : ''}');
 
   @override
   Future<void> trackItemAddedToInventory(String key, int quantity) => trackEventAsync('MyInventory-Added', {'Key_Qty': '${key}_$quantity'});

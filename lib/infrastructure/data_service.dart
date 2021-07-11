@@ -125,6 +125,24 @@ class DataServiceImpl implements DataService {
   }
 
   @override
+  Future<void> deleteAllCalAscMatSession() async {
+    //First we clear the used items in the inventory (if any)
+    await deleteAllUsedInventoryItems();
+
+    //Then we delete all the child items inside each session
+    final childrenItemKeys = _calcItemBox.values.map((e) => e.key).toList();
+    await _calcItemSkillBox.deleteAll(childrenItemKeys);
+
+    //Including skills
+    final skillsKeys = _calcItemSkillBox.values.map((e) => e.key).toList();
+    await _calcItemBox.delete(skillsKeys);
+
+    //Finally, we delete all the sessions
+    final keys = _sessionBox.values.map((e) => e.key).toList();
+    await _sessionBox.deleteAll(keys);
+  }
+
+  @override
   Future<void> addCalAscMatSessionItems(int sessionKey, List<ItemAscensionMaterials> items) async {
     for (final item in items) {
       await addCalAscMatSessionItem(sessionKey, item);
@@ -196,7 +214,7 @@ class DataServiceImpl implements DataService {
   }
 
   @override
-  Future<void> deleteCalAscMatSessionItem(int sessionKey, int? position, {bool redistribute = true}) async {
+  Future<void> deleteCalAscMatSessionItem(int sessionKey, int position, {bool redistribute = true}) async {
     final calcItem = _calcItemBox.values.firstWhereOrNull((el) => el.sessionKey == sessionKey && el.position == position);
     if (calcItem == null) {
       return;
@@ -209,6 +227,28 @@ class DataServiceImpl implements DataService {
     await _calcItemBox.delete(calcItemKey);
 
     await _clearUsedInventoryItems(calcItemKey, redistribute: redistribute);
+  }
+
+  @override
+  Future<void> deleteAllCalAscMatSessionItems(int sessionKey) async {
+    final calcItems = _calcItemBox.values.where((el) => el.sessionKey == sessionKey).map((e) => e.key as int).toList();
+
+    if (calcItems.isEmpty) {
+      return;
+    }
+
+    for (final calcItemKey in calcItems) {
+      final skillsKeys = _calcItemSkillBox.values.where((el) => el.calculatorItemKey == calcItemKey).map((e) => e.key).toList();
+      await _calcItemSkillBox.deleteAll(skillsKeys);
+
+      //Make sure we delete the item before redistributing
+      await _calcItemBox.delete(calcItemKey);
+
+      await _clearUsedInventoryItems(calcItemKey);
+    }
+
+    //Only redistribute at the end of the process
+    await redistributeAllInventoryMaterials();
   }
 
   @override
@@ -234,20 +274,39 @@ class DataServiceImpl implements DataService {
       case ItemType.character:
       case ItemType.weapon:
       case ItemType.artifact:
-        final toDeleteKeys = _inventoryBox.values.where((el) => el.type == type.index).map((e) => e.key).toList();
-        if (toDeleteKeys.isNotEmpty) {
-          await _inventoryBox.deleteAll(toDeleteKeys);
-        }
+        await deleteAllItemsInInventoryExceptMaterials(type);
         break;
       case ItemType.material:
-        final materialsInInventory = _inventoryBox.values.where((el) => el.type == ItemType.material.index && el.quantity > 0).toList();
-        for (final material in materialsInInventory) {
-          material.quantity = 0;
-          await material.save();
-        }
-        final usedItemKeys = _inventoryUsedItemsBox.values.map((e) => e.key).toList();
-        _inventoryUsedItemsBox.deleteAll(usedItemKeys);
+        deleteAllUsedMaterialItems();
         break;
+    }
+  }
+
+  Future<void> deleteAllItemsInInventoryExceptMaterials(ItemType? type) async {
+    if (type == ItemType.material) {
+      throw Exception('Material type is not valid here');
+    }
+    final toDeleteKeys = type == null
+        ? _inventoryBox.values.where((el) => el.type != ItemType.material.index).map((e) => e.key).toList()
+        : _inventoryBox.values.where((el) => el.type == type.index).map((e) => e.key).toList();
+    if (toDeleteKeys.isNotEmpty) {
+      await _inventoryBox.deleteAll(toDeleteKeys);
+    }
+  }
+
+  Future<void> deleteAllUsedMaterialItems() async {
+    final materialsInInventory = _inventoryBox.values.where((el) => el.type == ItemType.material.index && el.quantity > 0).toList();
+    for (final material in materialsInInventory) {
+      material.quantity = 0;
+      await material.save();
+    }
+    await deleteAllUsedInventoryItems();
+  }
+
+  Future<void> deleteAllUsedInventoryItems() async {
+    final usedItemKeys = _inventoryUsedItemsBox.values.map((e) => e.key).toList();
+    if (usedItemKeys.isNotEmpty) {
+      await _inventoryUsedItemsBox.deleteAll(usedItemKeys);
     }
   }
 
@@ -329,7 +388,6 @@ class DataServiceImpl implements DataService {
   @override
   Future<void> redistributeAllInventoryMaterials() async {
     //Here we just redistribute what we got based on what we have
-    //This method should only be called
     final materialsInInventory = _inventoryBox.values.where((el) => el.type == ItemType.material.index && el.quantity > 0).toList();
     for (final material in materialsInInventory) {
       await redistributeInventoryMaterial(material.itemKey, material.quantity);
@@ -1242,15 +1300,17 @@ class DataServiceImpl implements DataService {
     await _inventoryUsedItemsBox.add(usedItem);
   }
 
-  Future<void> _clearUsedInventoryItemsInSession(int sessionKey) async {
-    final calcItems = _calcItemBox.values.where((el) => el.sessionKey == sessionKey).toList();
+  Future<void> _clearUsedInventoryItemsInSession(int? sessionKey, {bool redistribute = false}) async {
+    final calcItems = sessionKey == null ? _calcItemBox.values.toList() : _calcItemBox.values.where((el) => el.sessionKey == sessionKey).toList();
     for (final calcItem in calcItems) {
       if (calcItem.useMaterialsFromInventory) {
         await _clearUsedInventoryItems(calcItem.key as int);
       }
     }
 
-    await redistributeAllInventoryMaterials();
+    if (redistribute) {
+      await redistributeAllInventoryMaterials();
+    }
   }
 
   Future<void> _clearUsedInventoryItems(int calculatorItemKey, {String? onlyItemKey, bool redistribute = false}) async {
