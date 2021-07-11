@@ -13,6 +13,8 @@ abstract class DataService {
 
   Future<void> deleteCalAscMatSession(int sessionKey);
 
+  Future<void> deleteAllCalAscMatSession();
+
   Future<void> addCalAscMatSessionItems(int sessionKey, List<ItemAscensionMaterials> items);
 
   /// Adds a new calc. item to the provided session by using the [sessionKey].
@@ -36,6 +38,8 @@ abstract class DataService {
   });
 
   Future<void> deleteCalAscMatSessionItem(int sessionKey, int itemIndex, {bool redistribute = true});
+
+  Future<void> deleteAllCalAscMatSessionItems(int sessionKey);
 
   List<CharacterCardModel> getAllCharactersInInventory();
 

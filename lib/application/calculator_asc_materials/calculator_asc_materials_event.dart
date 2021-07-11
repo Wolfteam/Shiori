@@ -56,4 +56,6 @@ class CalculatorAscMaterialsEvent with _$CalculatorAscMaterialsEvent {
   }) = _RemoveItem;
 
   const factory CalculatorAscMaterialsEvent.close() = _Close;
+
+  const factory CalculatorAscMaterialsEvent.clearAllItems(int sessionKey) = _ClearAllItems;
 }
