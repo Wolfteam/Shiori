@@ -359,5 +359,7 @@
   "ps4": "PS4",
   "deleteAllSessions": "Delete all sessions",
   "deleteAllItems": "Delete all items",
-  "confirmQuestion": "Are you sure you wanna proceed ?"
+  "confirmQuestion": "Are you sure you wanna proceed ?",
+  "gameSpecific": "Game specific",
+  "tools": "Tools"
 }

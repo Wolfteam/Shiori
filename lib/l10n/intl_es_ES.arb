@@ -359,5 +359,7 @@
   "ps4": "PS4",
   "deleteAllSessions": "Borrar todas las sesiones",
   "deleteAllItems": "Borrar todos los items",
-  "confirmQuestion": "¿ Estás seguro que deseas continuar ?"
+  "confirmQuestion": "¿ Estás seguro que deseas continuar ?",
+  "gameSpecific": "Específicos del juego",
+  "tools": "Herramientas"
 }
