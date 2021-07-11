@@ -356,5 +356,8 @@
   "swipeToSeeMoreOptions": "You can swipe to the right or left to see more options on each item.",
   "reduceTime": "Reduce Time",
   "use24HourFormatOnDates": "Use 24 hour format on dates",
-  "ps4": "PS4"
+  "ps4": "PS4",
+  "deleteAllSessions": "Delete all sessions",
+  "deleteAllItems": "Delete all items",
+  "confirmQuestion": "Are you sure you wanna proceed ?"
 }

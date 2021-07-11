@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
+import 'package:genshindb/presentation/shared/extensions/media_query_extensions.dart';
 import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
 
 const double _itemHeight = 50;
@@ -25,7 +26,7 @@ class ReorderSessionsDialog extends StatelessWidget {
               final heightToUse = desiredHeight >= _maxHeight ? _maxHeight : desiredHeight;
               return SizedBox(
                 height: heightToUse,
-                width: double.maxFinite,
+                width: MediaQuery.of(context).getWidthForDialogs(),
                 child: ReorderableListView.builder(
                   shrinkWrap: true,
                   itemCount: state.sessions.length,

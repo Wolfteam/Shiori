@@ -356,5 +356,8 @@
   "swipeToSeeMoreOptions": "Вы можете свайпнуть вправо или влево, чтобы увидеть дополнительные параметры для каждого элемента.",
   "reduceTime": "Сократить время",
   "use24HourFormatOnDates": "Использовать 24 - часовой формат времени",
-  "ps4": "PS4"
+  "ps4": "PS4",
+  "deleteAllSessions": "Delete all sessions",
+  "deleteAllItems": "Delete all items",
+  "confirmQuestion": "Are you sure you wanna proceed ?"
 }
