@@ -4,12 +4,12 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/calculator_asc_materials/calculator_sessions_page.dart';
 
-import 'sliver_card_item.dart';
+import 'card_item.dart';
 
-class SliverCalculatorsCard extends StatelessWidget {
+class CalculatorsCard extends StatelessWidget {
   final bool iconToTheLeft;
 
-  const SliverCalculatorsCard({
+  const CalculatorsCard({
     Key? key,
     required this.iconToTheLeft,
   }) : super(key: key);
@@ -18,7 +18,8 @@ class SliverCalculatorsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
-    return SliverCardItem(
+    return CardItem(
+      title: s.calculators,
       onClick: _gotoSessionsPage,
       iconToTheLeft: iconToTheLeft,
       icon: Icon(Icons.calculate, size: 60, color: theme.accentColor),

@@ -4,12 +4,12 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/game_codes/game_codes_page.dart';
 
-import 'sliver_card_item.dart';
+import 'card_item.dart';
 
-class SliverGameCodesCard extends StatelessWidget {
+class GameCodesCard extends StatelessWidget {
   final bool iconToTheLeft;
 
-  const SliverGameCodesCard({
+  const GameCodesCard({
     Key? key,
     required this.iconToTheLeft,
   }) : super(key: key);
@@ -18,7 +18,8 @@ class SliverGameCodesCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
-    return SliverCardItem(
+    return CardItem(
+      title: s.gameCodes,
       iconToTheLeft: iconToTheLeft,
       onClick: _showGameCodesDialog,
       icon: Icon(Icons.code, size: 60, color: theme.accentColor),

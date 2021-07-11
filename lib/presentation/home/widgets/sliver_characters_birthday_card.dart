@@ -13,7 +13,6 @@ class SliverCharactersBirthdayCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final theme = Theme.of(context);
     return SliverToBoxAdapter(
       child: BlocBuilder<HomeBloc, HomeState>(
         builder: (ctx, state) => state.map(
@@ -26,50 +25,66 @@ class SliverCharactersBirthdayCard extends StatelessWidget {
                       margin: const EdgeInsets.only(top: 10),
                       child: MainTitle(title: s.todayBirthdays),
                     ),
-                    Card(
-                      margin: Styles.edgeInsetAll10,
-                      shape: Styles.cardShape,
-                      child: Row(
-                        children: [
-                          Flexible(
-                            flex: 50,
-                            fit: FlexFit.tight,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Image.asset(Assets.getOtherMaterialPath('cake.png'), width: 140, height: 140),
-                                //The cake has some space in the top and bottom, that's why we used this offset here
-                                FractionalTranslation(
-                                  translation: const Offset(0, -0.5),
-                                  child: Tooltip(
-                                    message: s.happyBirthday,
-                                    child: Text(
-                                      s.happyBirthday,
-                                      style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
-                                      textAlign: TextAlign.center,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Flexible(
-                            flex: 50,
-                            fit: FlexFit.tight,
-                            child: Wrap(
-                              crossAxisAlignment: WrapCrossAlignment.center,
-                              alignment: WrapAlignment.center,
-                              children: state.characterImgBirthday.map((e) => CircleCharacter(image: e, radius: 60)).toList(),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
+                    _CakeCard(characterImgs: state.characterImgBirthday),
                   ],
                 )
               : Container(),
         ),
+      ),
+    );
+  }
+}
+
+class _CakeCard extends StatelessWidget {
+  final List<String> characterImgs;
+
+  const _CakeCard({
+    Key? key,
+    required this.characterImgs,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final theme = Theme.of(context);
+    return Card(
+      margin: Styles.edgeInsetAll10,
+      shape: Styles.cardShape,
+      child: Row(
+        children: [
+          Flexible(
+            flex: 50,
+            fit: FlexFit.tight,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Image.asset(Assets.getOtherMaterialPath('cake.png'), width: 140, height: 140),
+                //The cake has some space in the top and bottom, that's why we used this offset here
+                FractionalTranslation(
+                  translation: const Offset(0, -0.5),
+                  child: Tooltip(
+                    message: s.happyBirthday,
+                    child: Text(
+                      s.happyBirthday,
+                      style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Flexible(
+            flex: 50,
+            fit: FlexFit.tight,
+            child: Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              alignment: WrapAlignment.center,
+              children: characterImgs.map((e) => CircleCharacter(image: e, radius: 60)).toList(),
+            ),
+          )
+        ],
       ),
     );
   }

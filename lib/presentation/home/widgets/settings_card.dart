@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/settings/settings_page.dart';
 
-import 'sliver_card_item.dart';
+import 'card_item.dart';
 
-class SliverSettingsCard extends StatelessWidget {
+class SettingsCard extends StatelessWidget {
   final bool iconToTheLeft;
 
-  const SliverSettingsCard({
+  const SettingsCard({
     Key? key,
     required this.iconToTheLeft,
   }) : super(key: key);
@@ -16,7 +16,8 @@ class SliverSettingsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
-    return SliverCardItem(
+    return CardItem(
+      title: s.settings,
       onClick: _gotoSettingsPage,
       iconToTheLeft: iconToTheLeft,
       icon: Icon(Icons.settings, size: 60, color: theme.accentColor),
