@@ -28,16 +28,19 @@ class CardItem extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: Styles.homeCardItemBorderRadius),
         child: Container(
           width: 300,
+          height: 100,
           padding: Styles.edgeInsetAll15,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(
-                title,
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
-              ),
+              if (title.isNotEmpty)
+                Text(
+                  title,
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                ),
               if (iconToTheLeft) _LeftLayout(icon: icon, children: children) else _RightLayout(icon: icon, children: children),
             ],
           ),

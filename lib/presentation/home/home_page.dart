@@ -37,58 +37,55 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
     super.build(context);
 
     final s = S.of(context);
-    return CustomScrollView(
-      slivers: [
-        SliverCharactersBirthdayCard(),
-        const SliverTodayMainTitle(),
-        _buildClickableTitle(s.forCharacters, s.seeAll, context, onClick: () => _gotoMaterialsPage(context)),
-        SliverTodayCharAscensionMaterials(),
-        _buildClickableTitle(s.forWeapons, s.seeAll, context, onClick: () => _gotoMaterialsPage(context)),
-        SliverTodayWeaponMaterials(),
-        SliverMainTitle(title: s.gameSpecific),
-        SliverToBoxAdapter(
-          child: SizedBox(
-            height: 160,
-            child: ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              itemCount: 3,
-              itemBuilder: (context, index) => _buildGameSectionMenus(index),
+    return ResponsiveBuilder(
+      builder: (ctx, size) => CustomScrollView(
+        slivers: [
+          SliverCharactersBirthdayCard(),
+          const SliverTodayMainTitle(),
+          _buildClickableTitle(s.forCharacters, s.seeAll, context, onClick: () => _gotoMaterialsPage(context)),
+          SliverTodayCharAscensionMaterials(),
+          _buildClickableTitle(s.forWeapons, s.seeAll, context, onClick: () => _gotoMaterialsPage(context)),
+          SliverTodayWeaponMaterials(),
+          SliverMainTitle(title: s.gameSpecific),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 160,
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                itemCount: 3,
+                itemBuilder: (context, index) => _buildGameSectionMenus(index),
+              ),
             ),
           ),
-        ),
-        SliverMainTitle(title: s.tools),
-        SliverToBoxAdapter(
-          child: SizedBox(
-            height: 160,
-            child: ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              itemCount: 4,
-              itemBuilder: (context, index) => _buildToolsSectionMenu(index),
+          SliverMainTitle(title: s.tools),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 160,
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                itemCount: 4,
+                itemBuilder: (context, index) => _buildToolsSectionMenu(index),
+              ),
             ),
           ),
-        ),
-        SliverMainTitle(title: s.others),
-        SliverToBoxAdapter(
-          child: SizedBox(
-            height: 160,
-            child: ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.horizontal,
-              itemCount: 3,
-              itemBuilder: (context, index) => _buildOthersSectionMenu(index),
+          SliverMainTitle(title: s.others),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 160,
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                itemCount: 3,
+                itemBuilder: (context, index) => _buildOthersSectionMenu(index),
+              ),
             ),
           ),
-        ),
-        SliverToBoxAdapter(
-          child: ResponsiveBuilder(
-            builder: (ctx, size) => size.deviceScreenType == DeviceScreenType.desktop || size.deviceScreenType == DeviceScreenType.tablet
-                ? const SizedBox(height: 1)
-                : const SettingsCard(iconToTheLeft: true),
-          ),
-        ),
-      ],
+          if (size.deviceScreenType == DeviceScreenType.mobile) SliverMainTitle(title: s.settings),
+          if (size.deviceScreenType == DeviceScreenType.mobile) const SliverToBoxAdapter(child: SettingsCard(iconToTheLeft: true)),
+        ],
+      ),
     );
   }
 

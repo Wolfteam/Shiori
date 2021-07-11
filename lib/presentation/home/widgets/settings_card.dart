@@ -17,7 +17,7 @@ class SettingsCard extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     return CardItem(
-      title: s.settings,
+      title: '',
       onClick: _gotoSettingsPage,
       iconToTheLeft: iconToTheLeft,
       icon: Icon(Icons.settings, size: 60, color: theme.accentColor),
