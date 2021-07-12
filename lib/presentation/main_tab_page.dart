@@ -69,7 +69,7 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
       builder: (ctx) => WillPopScope(
         onWillPop: () => handleWillPop(),
         child: ResponsiveBuilder(
-          builder: (ctx, size) => size.deviceScreenType == DeviceScreenType.desktop || size.deviceScreenType == DeviceScreenType.tablet
+          builder: (ctx, size) => size.isDesktop || size.isTablet
               ? DesktopTabletScaffold(defaultIndex: _defaultIndex, tabController: _tabController)
               : MobileScaffold(defaultIndex: _defaultIndex, tabController: _tabController),
         ),

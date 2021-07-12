@@ -82,8 +82,8 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
               ),
             ),
           ),
-          if (size.deviceScreenType == DeviceScreenType.mobile) SliverMainTitle(title: s.settings),
-          if (size.deviceScreenType == DeviceScreenType.mobile) const SliverToBoxAdapter(child: SettingsCard(iconToTheLeft: true)),
+          if (size.isMobile) SliverMainTitle(title: s.settings),
+          if (size.isMobile) const SliverToBoxAdapter(child: SettingsCard(iconToTheLeft: true)),
         ],
       ),
     );

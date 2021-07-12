@@ -9,6 +9,7 @@ import 'package:genshindb/presentation/shared/sliver_nothing_found.dart';
 import 'package:genshindb/presentation/shared/sliver_page_filter.dart';
 import 'package:genshindb/presentation/shared/sliver_scaffold_with_fab.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/shared/utils/grid_utils.dart';
 
 import 'widgets/artifact_bottom_sheet.dart';
 import 'widgets/artifact_card.dart';
@@ -79,7 +80,7 @@ class _ArtifactsPageState extends State<ArtifactsPage> with AutomaticKeepAliveCl
     return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       sliver: SliverStaggeredGrid.countBuilder(
-        crossAxisCount: isPortrait ? 2 : 3,
+        crossAxisCount: GridUtils.getCrossAxisCount(context),
         itemBuilder: (ctx, index) => ArtifactCard.item(item: artifacts[index], isInSelectionMode: widget.isInSelectionMode),
         itemCount: artifacts.length,
         crossAxisSpacing: isPortrait ? 10 : 5,

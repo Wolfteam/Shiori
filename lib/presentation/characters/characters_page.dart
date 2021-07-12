@@ -9,6 +9,7 @@ import 'package:genshindb/presentation/shared/sliver_nothing_found.dart';
 import 'package:genshindb/presentation/shared/sliver_page_filter.dart';
 import 'package:genshindb/presentation/shared/sliver_scaffold_with_fab.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/shared/utils/grid_utils.dart';
 
 import 'widgets/character_bottom_sheet.dart';
 import 'widgets/character_card.dart';
@@ -82,12 +83,12 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
     return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       sliver: SliverStaggeredGrid.countBuilder(
-        crossAxisCount: isPortrait ? 2 : 3,
+        crossAxisCount: GridUtils.getCrossAxisCount(context),
         itemBuilder: (ctx, index) => CharacterCard.item(char: characters[index], isInSelectionMode: widget.isInSelectionMode),
         itemCount: characters.length,
         crossAxisSpacing: isPortrait ? 10 : 5,
         mainAxisSpacing: 5,
-        staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
+        staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
       ),
     );
   }
