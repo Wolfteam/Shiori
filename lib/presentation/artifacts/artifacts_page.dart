@@ -80,7 +80,7 @@ class _ArtifactsPageState extends State<ArtifactsPage> with AutomaticKeepAliveCl
     return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       sliver: SliverStaggeredGrid.countBuilder(
-        crossAxisCount: GridUtils.getCrossAxisCount(context),
+        crossAxisCount: GridUtils.getCrossAxisCountForGrids(context),
         itemBuilder: (ctx, index) => ArtifactCard.item(item: artifacts[index], isInSelectionMode: widget.isInSelectionMode),
         itemCount: artifacts.length,
         crossAxisSpacing: isPortrait ? 10 : 5,

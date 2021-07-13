@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class GridUtils {
-  static int getCrossAxisCount(BuildContext context) {
+  static int getCrossAxisCountForGrids(BuildContext context, {int? forPortrait, int? forLandscape}) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     final size = MediaQuery.of(context).size;
     final deviceType = getDeviceType(size);
@@ -10,10 +10,10 @@ class GridUtils {
     int crossAxisCount = 2;
     switch (deviceType) {
       case DeviceScreenType.mobile:
-        crossAxisCount = isPortrait ? 2 : 3;
+        crossAxisCount = isPortrait ? forPortrait ?? 2 : forLandscape ?? 3;
         break;
       case DeviceScreenType.tablet:
-        crossAxisCount = isPortrait ? 3 : 5;
+        crossAxisCount = isPortrait ? forPortrait ?? 3 : forLandscape ?? 5;
         break;
       case DeviceScreenType.desktop:
         switch (refinedSize) {

@@ -83,7 +83,7 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
     return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       sliver: SliverStaggeredGrid.countBuilder(
-        crossAxisCount: GridUtils.getCrossAxisCount(context),
+        crossAxisCount: GridUtils.getCrossAxisCountForGrids(context),
         itemBuilder: (ctx, index) {
           final weapon = weapons[index];
           return WeaponCard(
