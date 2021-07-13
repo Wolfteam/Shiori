@@ -63,8 +63,8 @@ class AccentColorSettingsCard extends StatelessWidget {
       xs: 2,
       sm: 2,
       md: 1,
-      lg: 1,
-      xl: 1,
+      lg: 2,
+      xl: 2,
       child: InkWell(
         onTap: () => _accentColorChanged(current, context),
         child: Container(
