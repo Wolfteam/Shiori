@@ -50,7 +50,8 @@ class CharacterDetailGeneralCard extends StatelessWidget {
       child: Padding(
         padding: Styles.edgeInsetAll10,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(name, style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold, color: Colors.white)),
             Rarity(stars: rarity, starSize: 25, alignment: MainAxisAlignment.start),
@@ -85,12 +86,11 @@ class CharacterDetailGeneralCard extends StatelessWidget {
               widget: Icon(isFemale ? GenshinDb.female : GenshinDb.male, color: isFemale ? Colors.pink : Colors.blue),
               useColumn: false,
             ),
-            if (birthday.isNotNullEmptyOrWhitespace)
-              ItemDescription(
-                title: s.birthday,
-                widget: Text(birthday!, style: const TextStyle(color: Colors.white)),
-                useColumn: false,
-              ),
+            ItemDescription(
+              title: s.birthday,
+              widget: Text(birthday.isNotNullEmptyOrWhitespace ? birthday! : s.na, style: const TextStyle(color: Colors.white)),
+              useColumn: false,
+            ),
           ],
         ),
       ),

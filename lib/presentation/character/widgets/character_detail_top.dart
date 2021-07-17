@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
+import 'package:genshindb/presentation/character/widgets/character_detail.dart';
+import 'package:genshindb/presentation/character/widgets/character_detail_general_card.dart';
 import 'package:genshindb/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
-
-import '../../character/widgets/character_detail.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class CharacterDetailTop extends StatelessWidget {
   const CharacterDetailTop({
@@ -18,47 +19,35 @@ class CharacterDetailTop extends StatelessWidget {
     final s = S.of(context);
     final mediaQuery = MediaQuery.of(context);
     final isPortrait = mediaQuery.orientation == Orientation.portrait;
-    final descriptionWidth = mediaQuery.size.width / (isPortrait ? 1.2 : 2);
-    //TODO: IM NOT SURE HOW THIS WILL LOOK LIKE IN BIGGER DEVICES
-    // final padding = mediaQuery.padding;
-    // final screenHeight = mediaQuery.size.height - padding.top - padding.bottom;
+    final imgHeight = mediaQuery.size.height;
+    final device = getDeviceType(mediaQuery.size);
+    final descriptionWidth = (mediaQuery.size.width / (isPortrait ? 1 : 2)) / (device == DeviceScreenType.mobile ? 1.2 : 2);
 
     return BlocBuilder<CharacterBloc, CharacterState>(
       builder: (ctx, state) => state.map(
         loading: (_) => const Loading(useScaffold: false),
         loaded: (state) => Container(
+          height: isPortrait ? getTopHeightForPortrait(context) : null,
           color: state.elementType.getElementColorFromContext(context),
           child: Stack(
             fit: StackFit.passthrough,
             alignment: Alignment.center,
             children: <Widget>[
+              ShadowImage(fullImage: state.fullImage, secondFullImage: state.secondFullImage),
               Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  transform: Matrix4.translationValues(60, -30, 0.0),
-                  child: Opacity(
-                    opacity: 0.5,
-                    child: Image.asset(
-                      state.secondFullImage ?? state.fullImage,
-                      width: 350,
-                      height: imgHeight,
-                    ),
-                  ),
-                ),
-              ),
-              Align(
-                alignment: Alignment.topLeft,
+                alignment: Alignment.bottomLeft,
                 child: Image.asset(
                   state.fullImage,
-                  width: 340,
-                  height: imgHeight,
+                  fit: BoxFit.fill,
+                  width: isPortrait ? 340 : null,
+                  height: isPortrait ? imgHeight : null,
                 ),
               ),
               Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
+                alignment: isPortrait ? Alignment.center : Alignment.bottomCenter,
+                child: SizedBox(
+                  height: charDescriptionHeight,
                   width: descriptionWidth,
-                  margin: const EdgeInsets.symmetric(horizontal: 30),
                   child: CharacterDetailGeneralCard(
                     elementType: state.elementType,
                     isFemale: state.isFemale,
@@ -102,5 +91,54 @@ class CharacterDetailTop extends StatelessWidget {
   void _favoriteCharacter(String key, bool isInInventory, BuildContext context) {
     final event = !isInInventory ? InventoryEvent.addCharacter(key: key) : InventoryEvent.deleteCharacter(key: key);
     context.read<InventoryBloc>().add(event);
+  }
+}
+
+class ShadowImage extends StatelessWidget {
+  final String fullImage;
+  final String? secondFullImage;
+
+  const ShadowImage({
+    Key? key,
+    required this.fullImage,
+    this.secondFullImage,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+    final isPortrait = mediaQuery.orientation == Orientation.portrait;
+    final imgHeight = mediaQuery.size.height;
+    if (!isPortrait) {
+      return Positioned(
+        top: 0,
+        right: -40,
+        bottom: 30,
+        child: Opacity(
+          opacity: 0.5,
+          child: Image.asset(
+            secondFullImage ?? fullImage,
+            fit: BoxFit.fill,
+            width: isPortrait ? 350 : null,
+            height: isPortrait ? imgHeight : null,
+          ),
+        ),
+      );
+    }
+    return Align(
+      alignment: Alignment.bottomRight,
+      child: Container(
+        transform: Matrix4.translationValues(60, -30, 0.0),
+        child: Opacity(
+          opacity: 0.5,
+          child: Image.asset(
+            secondFullImage ?? fullImage,
+            fit: BoxFit.fill,
+            width: isPortrait ? 350 : null,
+            height: isPortrait ? imgHeight : null,
+          ),
+        ),
+      ),
+    );
   }
 }
