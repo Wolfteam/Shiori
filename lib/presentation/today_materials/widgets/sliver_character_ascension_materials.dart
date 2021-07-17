@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/presentation/home/widgets/char_card_ascension_material.dart';
+import 'package:genshindb/presentation/shared/styles.dart';
 
 class SliverCharacterAscensionMaterials extends StatelessWidget {
   final List<TodayCharAscensionMaterialsModel> charAscMaterials;
@@ -14,9 +15,8 @@ class SliverCharacterAscensionMaterials extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: SizedBox(
-        height: 250,
+        height: Styles.materialCardHeight,
         child: ListView.builder(
-          shrinkWrap: true,
           itemCount: charAscMaterials.length,
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
