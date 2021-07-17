@@ -28,7 +28,7 @@ class AscensionMaterialItemCard extends StatelessWidget {
       margin: Styles.edgeInsetAll10,
       shape: Styles.cardShape,
       child: Container(
-        width: 250,
+        width: Styles.materialCardWidth,
         padding: Styles.edgeInsetAll5,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

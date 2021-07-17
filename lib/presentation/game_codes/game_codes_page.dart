@@ -112,15 +112,51 @@ class _Layout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return working.isEmpty && expired.isEmpty
         ? isBusy
             ? const Loading(useScaffold: false)
-            : NothingFoundColumn(msg: '${s.noGameCodesHaveBeenLoaded}\n${s.pullToRefreshItems}', icon: Icons.refresh)
+            : const _NothingHasBeenLoaded()
         : isPortrait
             ? _PortraitLayout(working: working, expired: expired, scrollController: scrollController)
             : _LandScapeLayout(working: working, expired: expired, scrollController: scrollController);
+  }
+}
+
+class _NothingHasBeenLoaded extends StatefulWidget {
+  const _NothingHasBeenLoaded({Key? key}) : super(key: key);
+
+  @override
+  __NothingHasBeenLoadedState createState() => __NothingHasBeenLoadedState();
+}
+
+class __NothingHasBeenLoadedState extends State<_NothingHasBeenLoaded> {
+  late RefreshController _refreshController;
+
+  @override
+  void initState() {
+    super.initState();
+    _refreshController = RefreshController();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    return SmartRefresher(
+      header: const MaterialClassicHeader(),
+      controller: _refreshController,
+      onRefresh: () => context.read<GameCodesBloc>().add(const GameCodesEvent.refresh()),
+      child: NothingFoundColumn(
+        msg: '${s.noGameCodesHaveBeenLoaded}\n${s.pullToRefreshItems}',
+        icon: Icons.refresh,
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _refreshController.dispose();
+    super.dispose();
   }
 }
 

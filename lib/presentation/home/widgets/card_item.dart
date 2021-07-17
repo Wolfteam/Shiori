@@ -27,7 +27,7 @@ class CardItem extends StatelessWidget {
         margin: Styles.edgeInsetAll15,
         shape: RoundedRectangleBorder(borderRadius: Styles.homeCardItemBorderRadius),
         child: Container(
-          width: 300,
+          width: Styles.homeCardWidth,
           height: 100,
           padding: Styles.edgeInsetAll15,
           child: Column(

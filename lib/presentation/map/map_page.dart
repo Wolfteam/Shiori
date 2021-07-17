@@ -34,6 +34,12 @@ class _MapPageState extends State<MapPage> {
           if (document.getElementsByClassName("fixed-bottom").length > 0)
             document.getElementsByClassName("fixed-bottom")[0].remove();
       }
+      
+      total = document.getElementsByClassName("sidebar-footer").length;
+      for (let index = 0; index < total; index++) {
+          if (document.getElementsByClassName("sidebar-footer").length > 0)
+            document.getElementsByClassName("sidebar-footer")[0].remove();
+      }
     }
     setTimeout(removeAds, 500);
     setTimeout(removeAds, 1000);

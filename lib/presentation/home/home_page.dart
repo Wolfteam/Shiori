@@ -12,6 +12,7 @@ import 'package:genshindb/presentation/home/widgets/notifications_card.dart';
 import 'package:genshindb/presentation/home/widgets/settings_card.dart';
 import 'package:genshindb/presentation/home/widgets/tierlist_card.dart';
 import 'package:genshindb/presentation/home/widgets/wish_simulator_card.dart';
+import 'package:genshindb/presentation/shared/styles.dart';
 import 'package:genshindb/presentation/today_materials/today_materials_page.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -49,7 +50,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
           SliverMainTitle(title: s.gameSpecific),
           SliverToBoxAdapter(
             child: SizedBox(
-              height: 160,
+              height: Styles.homeCardHeight,
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
@@ -61,7 +62,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
           SliverMainTitle(title: s.tools),
           SliverToBoxAdapter(
             child: SizedBox(
-              height: 160,
+              height: Styles.homeCardHeight,
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
@@ -73,7 +74,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
           SliverMainTitle(title: s.others),
           SliverToBoxAdapter(
             child: SizedBox(
-              height: 160,
+              height: Styles.homeCardHeight,
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
@@ -83,7 +84,18 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
             ),
           ),
           if (size.isMobile) SliverMainTitle(title: s.settings),
-          if (size.isMobile) const SliverToBoxAdapter(child: SettingsCard(iconToTheLeft: true)),
+          if (size.isMobile)
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: Styles.homeCardHeight,
+                child: ListView.builder(
+                  physics: const BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 1,
+                  itemBuilder: (context, index) => const SettingsCard(iconToTheLeft: true),
+                ),
+              ),
+            ),
         ],
       ),
     );

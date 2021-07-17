@@ -47,4 +47,10 @@ class Styles {
       topLeft: Radius.circular(30),
     ),
   );
+
+  static const double materialCardHeight = 250;
+  static const double materialCardWidth = 220;
+  static const double homeCardHeight = 160;
+  static const double homeCardWidth = 250;
+  static const double birthdayCardWidth = 300;
 }

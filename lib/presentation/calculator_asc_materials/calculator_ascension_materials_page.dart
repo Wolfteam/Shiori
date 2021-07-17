@@ -212,6 +212,7 @@ class _PortraitLayout extends StatelessWidget {
               children: items
                   .mapIndex(
                     (e, index) => ResponsiveGridCol(
+                      xs: 6,
                       sm: 4,
                       md: 4,
                       lg: 3,

@@ -6,6 +6,7 @@ class SliverRowGrid extends StatelessWidget {
   final int crossAxisCount;
   final double crossAxisSpacing;
   final Widget Function(int) builder;
+  final bool useSliverList;
 
   const SliverRowGrid({
     Key? key,
@@ -13,6 +14,7 @@ class SliverRowGrid extends StatelessWidget {
     required this.builder,
     this.crossAxisCount = 2,
     this.crossAxisSpacing = 5,
+    this.useSliverList = true,
   }) : super(key: key);
 
   @override
@@ -44,7 +46,9 @@ class SliverRowGrid extends StatelessWidget {
       rows.add(Row(children: children));
     }
 
-    return SliverList(delegate: SliverChildListDelegate(rows));
+    return useSliverList
+        ? SliverList(delegate: SliverChildListDelegate(rows))
+        : IntrinsicHeight(child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: rows));
   }
 
   Widget _buildDummyItem(bool useExpanded) {
