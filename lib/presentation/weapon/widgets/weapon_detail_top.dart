@@ -37,7 +37,7 @@ class WeaponDetailTop extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     final isPortrait = mediaQuery.orientation == Orientation.portrait;
-    return CommonDetailTopLayout(
+    return DetailTopLayout(
       fullImage: image,
       secondFullImage: image,
       decoration: BoxDecoration(gradient: rarity.getRarityGradient()),

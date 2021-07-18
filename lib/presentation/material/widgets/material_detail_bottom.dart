@@ -111,7 +111,7 @@ class _PortraitLayout extends StatelessWidget {
     final s = S.of(context);
     final double size = getDeviceType(MediaQuery.of(context).size) == DeviceScreenType.mobile ? 35 : 70;
     final rarityColor = rarity.getRarityColors().last;
-    return CommonDetailBottomPortraitLayout(
+    return DetailBottomPortraitLayout(
       children: [
         if (description.isNotNullEmptyOrWhitespace)
           Container(
@@ -216,7 +216,7 @@ class _LandscapeLayout extends StatelessWidget {
     }
     final double size = getDeviceType(MediaQuery.of(context).size) == DeviceScreenType.mobile ? 35 : 70;
     final rarityColor = rarity.getRarityColors().last;
-    return CommonDetailTabLandscapeLayout(
+    return DetailTabLandscapeLayout(
       color: rarityColor,
       tabs: tabs,
       children: [

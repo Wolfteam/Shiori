@@ -3,10 +3,10 @@ import 'package:genshindb/presentation/character/widgets/character_detail.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-class CommonDetailBottomPortraitLayout extends StatelessWidget {
+class DetailBottomPortraitLayout extends StatelessWidget {
   final List<Widget> children;
 
-  const CommonDetailBottomPortraitLayout({
+  const DetailBottomPortraitLayout({
     Key? key,
     required this.children,
   }) : super(key: key);

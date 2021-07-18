@@ -90,7 +90,7 @@ class _PortraitLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final rarityColor = rarity.getRarityColors().last;
-    return CommonDetailBottomPortraitLayout(
+    return DetailBottomPortraitLayout(
       children: [
         Container(
           margin: const EdgeInsets.only(bottom: 10),
@@ -173,7 +173,7 @@ class _LandscapeLayout extends StatelessWidget {
       tabs.add(s.stats);
     }
     final rarityColor = rarity.getRarityColors().last;
-    return CommonDetailTabLandscapeLayout(
+    return DetailTabLandscapeLayout(
       color: rarityColor,
       tabs: tabs,
       children: [

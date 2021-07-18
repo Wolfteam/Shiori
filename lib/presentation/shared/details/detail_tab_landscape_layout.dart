@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CommonDetailTabLandscapeLayout extends StatelessWidget {
+class DetailTabLandscapeLayout extends StatelessWidget {
   final Color color;
   final List<String> tabs;
   final List<Widget> children;
   final EdgeInsets padding;
 
-  const CommonDetailTabLandscapeLayout({
+  const DetailTabLandscapeLayout({
     Key? key,
     required this.color,
     required this.tabs,

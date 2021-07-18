@@ -42,7 +42,7 @@ class _PortraitLayout extends StatelessWidget {
     return BlocBuilder<CharacterBloc, CharacterState>(
       builder: (ctx, state) => state.map(
         loading: (_) => const Loading(useScaffold: false),
-        loaded: (state) => CommonDetailBottomPortraitLayout(
+        loaded: (state) => DetailBottomPortraitLayout(
           children: [
             Container(
               margin: const EdgeInsets.only(bottom: 10),
@@ -115,7 +115,7 @@ class _LandscapeLayout extends StatelessWidget {
     return BlocBuilder<CharacterBloc, CharacterState>(
       builder: (ctx, state) => state.map(
         loading: (_) => const Loading(),
-        loaded: (state) => CommonDetailTabLandscapeLayout(
+        loaded: (state) => DetailTabLandscapeLayout(
           color: state.elementType.getElementColorFromContext(context),
           tabs: tabs,
           children: [

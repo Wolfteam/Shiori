@@ -48,7 +48,7 @@ double? _getHeightToUse(
   return isAnSmallImage ? value / 2 : value;
 }
 
-class CommonDetailTopLayout extends StatelessWidget {
+class DetailTopLayout extends StatelessWidget {
   final String fullImage;
   final String? secondFullImage;
   final Color? color;
@@ -67,7 +67,7 @@ class CommonDetailTopLayout extends StatelessWidget {
 
   final double charDescriptionHeight;
 
-  const CommonDetailTopLayout({
+  const DetailTopLayout({
     Key? key,
     required this.fullImage,
     this.secondFullImage,

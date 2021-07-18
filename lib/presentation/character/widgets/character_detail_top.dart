@@ -20,7 +20,7 @@ class CharacterDetailTop extends StatelessWidget {
     return BlocBuilder<CharacterBloc, CharacterState>(
       builder: (ctx, state) => state.map(
         loading: (_) => const Loading(useScaffold: false),
-        loaded: (state) => CommonDetailTopLayout(
+        loaded: (state) => DetailTopLayout(
           color: state.elementType.getElementColorFromContext(context),
           fullImage: state.fullImage,
           secondFullImage: state.secondFullImage,

@@ -26,7 +26,7 @@ class MaterialDetailTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CommonDetailTopLayout(
+    return DetailTopLayout(
       fullImage: image,
       charDescriptionHeight: 160,
       isAnSmallImage: MediaQuery.of(context).orientation == Orientation.portrait,

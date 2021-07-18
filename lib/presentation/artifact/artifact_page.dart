@@ -46,7 +46,7 @@ class _PortraitLayout extends StatelessWidget {
                 clipBehavior: Clip.none,
                 alignment: Alignment.topCenter,
                 children: [
-                  CommonDetailTopLayout(
+                  DetailTopLayout(
                     color: rarityColor,
                     fullImage: state.image,
                     charDescriptionHeight: 120,
@@ -58,7 +58,7 @@ class _PortraitLayout extends StatelessWidget {
                       color: rarityColor,
                     ),
                   ),
-                  CommonDetailBottomPortraitLayout(
+                  DetailBottomPortraitLayout(
                     children: [
                       Container(
                         margin: const EdgeInsets.only(bottom: 10),
@@ -144,7 +144,7 @@ class _LandscapeLayout extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
-                    child: CommonDetailTopLayout(
+                    child: DetailTopLayout(
                       color: rarityColor,
                       appBar: const DetailAppBar(),
                       fullImage: state.image,
@@ -158,7 +158,7 @@ class _LandscapeLayout extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                    child: CommonDetailTabLandscapeLayout(
+                    child: DetailTabLandscapeLayout(
                       color: rarityColor,
                       tabs: tabs,
                       children: [
