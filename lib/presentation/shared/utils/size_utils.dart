@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-class GridUtils {
-  static int getCrossAxisCountForGrids(BuildContext context, {int? forPortrait, int? forLandscape}) {
+class SizeUtils {
+  static int getCrossAxisCountForGrids(
+    BuildContext context, {
+    int? forPortrait,
+    int? forLandscape,
+    bool itemIsSmall = false,
+  }) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     final size = MediaQuery.of(context).size;
     final deviceType = getDeviceType(size);
@@ -34,6 +39,24 @@ class GridUtils {
       default:
         break;
     }
-    return crossAxisCount;
+    return itemIsSmall ? (crossAxisCount + (crossAxisCount * 0.3).round()) : crossAxisCount;
+  }
+
+  static double getSizeForCircleImages(BuildContext context, {double? defaultValue, bool smallImage = false}) {
+    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    final size = MediaQuery.of(context).size;
+    final deviceType = getDeviceType(size);
+    switch (deviceType) {
+      case DeviceScreenType.mobile:
+        return 35;
+      case DeviceScreenType.tablet:
+      case DeviceScreenType.desktop:
+        if (smallImage) {
+          return 40;
+        }
+        return isPortrait ? 50 : 70;
+      default:
+        return defaultValue ?? 35;
+    }
   }
 }
