@@ -269,7 +269,7 @@ class _LandscapeLayout extends StatelessWidget {
     return Row(
       children: [
         Flexible(
-          flex: 70,
+          flex: 60,
           fit: FlexFit.tight,
           child: CustomScrollView(
             slivers: [
@@ -314,7 +314,7 @@ class _LandscapeLayout extends StatelessWidget {
           ),
         ),
         Flexible(
-          flex: 30,
+          flex: 40,
           fit: FlexFit.tight,
           child: CustomScrollView(
             slivers: [
