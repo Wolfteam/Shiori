@@ -90,6 +90,11 @@ class CommonDetailTopLayout extends StatelessWidget {
     final isPortrait = mediaQuery.orientation == Orientation.portrait;
     final device = getDeviceType(mediaQuery.size);
     final descriptionWidth = (mediaQuery.size.width / (isPortrait ? 1 : 2)) / (device == DeviceScreenType.mobile ? 1.2 : 2);
+    final imgAlignment = showShadowImage
+        ? isPortrait
+            ? Alignment.centerLeft
+            : Alignment.bottomLeft
+        : Alignment.center;
     return Container(
       height: isPortrait ? getTopHeightForPortrait(context) : null,
       color: color,

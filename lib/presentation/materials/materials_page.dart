@@ -8,6 +8,7 @@ import 'package:genshindb/presentation/shared/sliver_nothing_found.dart';
 import 'package:genshindb/presentation/shared/sliver_page_filter.dart';
 import 'package:genshindb/presentation/shared/sliver_scaffold_with_fab.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/shared/utils/size_utils.dart';
 
 import 'widgets/material_bottom_sheet.dart';
 import 'widgets/material_card.dart';
@@ -54,7 +55,7 @@ class MaterialsPage extends StatelessWidget {
                 SliverPadding(
                   padding: Styles.edgeInsetHorizontal5,
                   sliver: SliverStaggeredGrid.countBuilder(
-                    crossAxisCount: isPortrait ? 3 : 5,
+                    crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context, itemIsSmall: true),
                     itemBuilder: (ctx, index) => MaterialCard.item(item: state.materials[index], isInSelectionMode: isInSelectionMode),
                     itemCount: state.materials.length,
                     crossAxisSpacing: isPortrait ? 10 : 5,

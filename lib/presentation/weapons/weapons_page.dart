@@ -9,7 +9,7 @@ import 'package:genshindb/presentation/shared/sliver_nothing_found.dart';
 import 'package:genshindb/presentation/shared/sliver_page_filter.dart';
 import 'package:genshindb/presentation/shared/sliver_scaffold_with_fab.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/shared/utils/grid_utils.dart';
+import 'package:genshindb/presentation/shared/utils/size_utils.dart';
 
 import 'widgets/weapon_bottom_sheet.dart';
 import 'widgets/weapon_card.dart';
@@ -83,7 +83,7 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
     return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       sliver: SliverStaggeredGrid.countBuilder(
-        crossAxisCount: GridUtils.getCrossAxisCountForGrids(context),
+        crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context),
         itemBuilder: (ctx, index) {
           final weapon = weapons[index];
           return WeaponCard(
