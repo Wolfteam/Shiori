@@ -83,7 +83,7 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
     return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       sliver: SliverStaggeredGrid.countBuilder(
-        crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context),
+        crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context, isOnMainPage: !widget.isInSelectionMode),
         itemBuilder: (ctx, index) => CharacterCard.item(char: characters[index], isInSelectionMode: widget.isInSelectionMode),
         itemCount: characters.length,
         crossAxisSpacing: isPortrait ? 10 : 5,

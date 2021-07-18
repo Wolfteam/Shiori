@@ -7,6 +7,7 @@ class SizeUtils {
     int? forPortrait,
     int? forLandscape,
     bool itemIsSmall = false,
+    bool isOnMainPage = false,
   }) {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     final size = MediaQuery.of(context).size;
@@ -18,21 +19,32 @@ class SizeUtils {
         crossAxisCount = isPortrait ? forPortrait ?? 2 : forLandscape ?? 3;
         break;
       case DeviceScreenType.tablet:
-        crossAxisCount = isPortrait ? forPortrait ?? 3 : forLandscape ?? 5;
+        switch (refinedSize) {
+          case RefinedSize.small:
+            crossAxisCount = isPortrait ? forPortrait ?? 3 : forLandscape ?? (isOnMainPage ? 4 : 5);
+            break;
+          case RefinedSize.normal:
+          case RefinedSize.large:
+            crossAxisCount = isPortrait ? forPortrait ?? 4 : forLandscape ?? (isOnMainPage ? 5 : 6);
+            break;
+          case RefinedSize.extraLarge:
+            crossAxisCount = isPortrait ? forPortrait ?? 5 : forLandscape ?? (isOnMainPage ? 6 : 7);
+            break;
+        }
         break;
       case DeviceScreenType.desktop:
         switch (refinedSize) {
           case RefinedSize.small:
-            crossAxisCount = 2;
+            crossAxisCount = isPortrait ? 2 : 3;
             break;
           case RefinedSize.normal:
-            crossAxisCount = 3;
+            crossAxisCount = isPortrait ? 3 : 5;
             break;
           case RefinedSize.large:
-            crossAxisCount = 5;
+            crossAxisCount = isPortrait ? 5 : 7;
             break;
           case RefinedSize.extraLarge:
-            crossAxisCount = 7;
+            crossAxisCount = isPortrait ? 7 : 9;
             break;
         }
         break;
