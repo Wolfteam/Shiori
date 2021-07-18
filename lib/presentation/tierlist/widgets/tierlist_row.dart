@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/circle_character.dart';
+import 'package:genshindb/presentation/shared/utils/size_utils.dart';
 
 import 'rename_tierlist_dialog.dart';
 import 'tierlist_row_color_picker.dart';
@@ -74,7 +75,7 @@ class TierListRow extends StatelessWidget {
                     children: images
                         .map((e) => CircleCharacter(
                               image: e,
-                              radius: 30,
+                              radius: SizeUtils.getSizeForCircleImages(context),
                               onTap: (img) => context.read<TierListBloc>().add(TierListEvent.deleteCharacterFromRow(index: index, charImg: e)),
                             ))
                         .toList(),
