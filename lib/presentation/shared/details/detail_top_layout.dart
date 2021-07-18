@@ -11,14 +11,18 @@ double? _getWidthToUse(
 }) {
   final mediaQuery = MediaQuery.of(context);
   final isPortrait = mediaQuery.orientation == Orientation.portrait;
-  final size = getDeviceType(mediaQuery.size);
+  // final size = getDeviceType(mediaQuery.size);
   if (isPortrait) {
     final value = widthOnPortrait ?? _imageWidthOnPortrait;
-    return size == DeviceScreenType.mobile
-        ? !isAnSmallImage
-            ? value
-            : (value / 2)
-        : value;
+    // final newValue = size == DeviceScreenType.mobile
+    //     ? !isAnSmallImage
+    //         ? value
+    //         : (value / 2)
+    //     : value;
+    // if (isAnSmallImage && newValue > 250) {
+    //   return 250;
+    // }
+    return value;
   }
 
   final value = widthOnLandscape ?? _imageWidthOnPortrait;
@@ -33,15 +37,20 @@ double? _getHeightToUse(
 }) {
   final mediaQuery = MediaQuery.of(context);
   final isPortrait = mediaQuery.orientation == Orientation.portrait;
-  final size = getDeviceType(mediaQuery.size);
+  // final size = getDeviceType(mediaQuery.size);
   final imgHeight = mediaQuery.size.height;
   if (isPortrait) {
     final value = heightOnPortrait ?? imgHeight;
-    return size == DeviceScreenType.mobile
-        ? !isAnSmallImage
-            ? value
-            : (value / 2)
-        : value;
+    // final newValue = size == DeviceScreenType.mobile
+    //     ? !isAnSmallImage
+    //         ? value
+    //         : (value / 2)
+    //     : value;
+
+    // if (isAnSmallImage && newValue > 250) {
+    //   return 250;
+    // }
+    return value;
   }
 
   final value = heightOnLandscape ?? imgHeight;
@@ -110,6 +119,8 @@ class DetailTopLayout extends StatelessWidget {
               widthOnLandscape: widthOnLandscape,
               heightOnLandscape: heightOnLandscape,
               isAnSmallImage: isAnSmallImage,
+              heightOnPortrait: heightOnPortrait,
+              widthOnPortrait: widthOnPortrait,
             ),
           Align(
             alignment: imgAlignment,

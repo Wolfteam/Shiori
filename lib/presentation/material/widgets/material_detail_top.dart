@@ -26,9 +26,12 @@ class MaterialDetailTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return DetailTopLayout(
       fullImage: image,
       charDescriptionHeight: 160,
+      heightOnPortrait: isPortrait ? 250 : null,
+      widthOnPortrait: isPortrait ? 250 : null,
       isAnSmallImage: MediaQuery.of(context).orientation == Orientation.portrait,
       heightOnLandscape: MediaQuery.of(context).size.height * 0.7,
       decoration: BoxDecoration(gradient: rarity.getRarityGradient()),

@@ -44,6 +44,9 @@ class WeaponDetailTop extends StatelessWidget {
       heightOnLandscape: mediaQuery.size.height * 0.8,
       showShadowImage: isPortrait,
       charDescriptionHeight: 200,
+      widthOnPortrait: isPortrait ? 250 : null,
+      heightOnPortrait: isPortrait ? 350 : null,
+      isAnSmallImage: isPortrait,
       generalCard: WeaponDetailGeneralCard(
         type: type,
         atk: atk,

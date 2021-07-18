@@ -50,6 +50,8 @@ class _PortraitLayout extends StatelessWidget {
                     color: rarityColor,
                     fullImage: state.image,
                     charDescriptionHeight: 120,
+                    widthOnPortrait: 240,
+                    heightOnPortrait: 240,
                     appBar: const DetailAppBar(),
                     isAnSmallImage: true,
                     generalCard: DetailGeneralCard(
