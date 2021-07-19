@@ -132,9 +132,9 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
   Widget _buildOthersSectionMenu(int index) {
     switch (index) {
       case 0:
-        return const GameCodesCard(iconToTheLeft: true);
-      case 1:
         return const DailyCheckInCard(iconToTheLeft: true);
+      case 1:
+        return const GameCodesCard(iconToTheLeft: true);
       case 2:
         return const WishSimulatorCard(iconToTheLeft: true);
       default:
