@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 import 'widgets/about_settings_card.dart';
 import 'widgets/accent_color_settings_card.dart';
@@ -13,22 +14,71 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       appBar: AppBar(title: Text(s.settings)),
       body: SafeArea(
-        child: ListView(
-          padding: Styles.edgeInsetAll10,
-          shrinkWrap: true,
-          children: [
-            ThemeSettingsCard(),
-            AccentColorSettingsCard(),
-            LanguageSettingsCard(),
-            OtherSettings(),
-            AboutSettingsCard(),
-            CreditsSettingsCard(),
-          ],
+        child: ResponsiveBuilder(
+          builder: (ctx, size) => isPortrait ? const _MobileLayout() : const _DesktopTabletLayout(),
         ),
       ),
+    );
+  }
+}
+
+class _MobileLayout extends StatelessWidget {
+  const _MobileLayout({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      padding: Styles.edgeInsetAll10,
+      shrinkWrap: true,
+      children: [
+        ThemeSettingsCard(),
+        AccentColorSettingsCard(),
+        LanguageSettingsCard(),
+        OtherSettings(),
+        AboutSettingsCard(),
+        CreditsSettingsCard(),
+      ],
+    );
+  }
+}
+
+class _DesktopTabletLayout extends StatelessWidget {
+  const _DesktopTabletLayout({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      padding: Styles.edgeInsetAll10,
+      shrinkWrap: true,
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: Column(
+                children: [
+                  ThemeSettingsCard(),
+                  AccentColorSettingsCard(),
+                  LanguageSettingsCard(),
+                  AboutSettingsCard(),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  OtherSettings(),
+                  CreditsSettingsCard(),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

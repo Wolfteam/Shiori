@@ -10,6 +10,7 @@ import 'package:genshindb/presentation/shared/info_dialog.dart';
 import 'package:genshindb/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:genshindb/presentation/shared/nothing_found_column.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:grouped_list/grouped_list.dart';
 
 import 'widgets/add_edit_notification_bottom_sheet.dart';
@@ -68,12 +69,15 @@ class _NotificationsPageState extends State<NotificationsPage> with SingleTicker
           ),
         ),
       ),
-      floatingActionButton: AppFab(
-        onPressed: () => _showAddModal(context),
-        icon: const Icon(Icons.add),
-        hideFabAnimController: hideFabAnimController,
-        scrollController: scrollController,
-        mini: false,
+      //we use a builder here to get the scaffold context
+      floatingActionButton: Builder(
+        builder: (ctx) => AppFab(
+          onPressed: () => _showAddModal(ctx),
+          icon: const Icon(Icons.add),
+          hideFabAnimController: hideFabAnimController,
+          scrollController: scrollController,
+          mini: false,
+        ),
       ),
     );
   }
@@ -117,12 +121,10 @@ class _NotificationsPageState extends State<NotificationsPage> with SingleTicker
   Future<void> _showAddModal(BuildContext context) async {
     final s = S.of(context);
     context.read<NotificationBloc>().add(NotificationEvent.add(defaultTitle: s.appName, defaultBody: s.notifications));
-    await showModalBottomSheet(
-      context: context,
-      shape: Styles.modalBottomSheetShape,
-      isDismissible: true,
-      isScrollControlled: true,
-      builder: (_) => const AddEditNotificationBottomSheet(isInEditMode: false),
+    await ModalBottomSheetUtils.showAppModalBottomSheet(
+      context,
+      EndDrawerItemType.notifications,
+      args: AddEditNotificationBottomSheet.buildNavigationArgs(),
     );
     context.read<NotificationsBloc>().add(const NotificationsEvent.init());
   }

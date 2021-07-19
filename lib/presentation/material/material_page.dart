@@ -10,12 +10,25 @@ import 'widgets/material_detail_top.dart';
 class MaterialPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    return isPortrait ? const _PortraitLayout() : const _LandscapeLayout();
+  }
+}
+
+class _PortraitLayout extends StatelessWidget {
+  const _PortraitLayout({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return ScaffoldWithFab(
       child: BlocBuilder<bloc.MaterialBloc, bloc.MaterialState>(
         builder: (context, state) {
           return state.map(
             loading: (_) => const Loading(useScaffold: false),
             loaded: (s) => Stack(
+              fit: StackFit.passthrough,
+              clipBehavior: Clip.none,
+              alignment: Alignment.topCenter,
               children: [
                 MaterialDetailTop(
                   name: s.name,
@@ -37,6 +50,47 @@ class MaterialPage extends StatelessWidget {
             ),
           );
         },
+      ),
+    );
+  }
+}
+
+class _LandscapeLayout extends StatelessWidget {
+  const _LandscapeLayout({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: BlocBuilder<bloc.MaterialBloc, bloc.MaterialState>(
+          builder: (ctx, state) => state.map(
+            loading: (_) => const Loading(useScaffold: false),
+            loaded: (state) => Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: MaterialDetailTop(
+                    name: state.name,
+                    image: state.fullImage,
+                    type: state.type,
+                    rarity: state.rarity,
+                    days: state.days,
+                  ),
+                ),
+                Expanded(
+                  child: MaterialDetailBottom(
+                    rarity: state.rarity,
+                    charImgs: state.charImages,
+                    weaponImgs: state.weaponImages,
+                    obtainedFrom: state.obtainedFrom,
+                    relatedTo: state.relatedMaterials,
+                    droppedBy: state.droppedBy,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

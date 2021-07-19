@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/page_message.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 import 'loading.dart';
 
@@ -39,7 +40,7 @@ class _AppWebViewState extends State<AppWebView> {
     if (widget.isLoading) {
       return const Loading();
     }
-
+    final device = getDeviceType(MediaQuery.of(context).size);
     return Stack(
       children: [
         Scaffold(
@@ -51,7 +52,8 @@ class _AppWebViewState extends State<AppWebView> {
                 useHybridComposition: true,
               ),
               crossPlatform: InAppWebViewOptions(
-                preferredContentMode: UserPreferredContentMode.MOBILE,
+                preferredContentMode: device == DeviceScreenType.mobile ? UserPreferredContentMode.MOBILE : UserPreferredContentMode.RECOMMENDED,
+                //This may fail on weird devices (chinese ones ?)...
                 userAgent: widget.userAgent,
                 transparentBackground: true,
               ),

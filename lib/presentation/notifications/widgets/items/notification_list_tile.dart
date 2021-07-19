@@ -10,6 +10,7 @@ import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/circle_item.dart';
 import 'package:genshindb/presentation/shared/number_picker_dialog.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 
 import '../add_edit_notification_bottom_sheet.dart';
 
@@ -29,7 +30,7 @@ class NotificationListTitle extends StatelessWidget {
     Key? key,
     required models.NotificationItem item,
     required this.subtitle,
-  })   : itemKey = item.key,
+  })  : itemKey = item.key,
         type = item.type,
         image = item.image,
         remaining = item.remaining,
@@ -113,12 +114,10 @@ class NotificationListTitle extends StatelessWidget {
   Future<void> _showEditModal(BuildContext context) async {
     context.read<NotificationsBloc>().cancelTimer();
     context.read<NotificationBloc>().add(NotificationEvent.edit(key: itemKey, type: type));
-    await showModalBottomSheet(
-      context: context,
-      shape: Styles.modalBottomSheetShape,
-      isDismissible: true,
-      isScrollControlled: true,
-      builder: (_) => const AddEditNotificationBottomSheet(isInEditMode: true),
+    ModalBottomSheetUtils.showAppModalBottomSheet(
+      context,
+      EndDrawerItemType.notifications,
+      args: AddEditNotificationBottomSheet.buildNavigationArgs(isInEditMode: true),
     );
     context.read<NotificationsBloc>().add(const NotificationsEvent.init());
   }

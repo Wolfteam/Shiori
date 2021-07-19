@@ -6,6 +6,7 @@ import 'package:genshindb/presentation/shared/bullet_list.dart';
 import 'package:genshindb/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:responsive_grid/responsive_grid.dart';
 
 class CharacterDetailPassiveCard extends StatelessWidget {
   final ElementType elementType;
@@ -20,11 +21,18 @@ class CharacterDetailPassiveCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final items = passives.map((e) => _buildPassiveCard(e, context)).toList();
-    final body = Wrap(alignment: WrapAlignment.center, children: items);
     return ItemDescriptionDetail(
       title: s.passives,
-      body: body,
+      body: ResponsiveGridRow(
+        children: passives
+            .map((e) => ResponsiveGridCol(
+                  md: 6,
+                  lg: 6,
+                  xl: 6,
+                  child: _buildPassiveCard(e, context),
+                ))
+            .toList(),
+      ),
       textColor: elementType.getElementColorFromContext(context),
     );
   }

@@ -5,6 +5,7 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/presentation/materials/widgets/material_card.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/mixins/app_fab_mixin.dart';
+import 'package:genshindb/presentation/shared/utils/size_utils.dart';
 
 class MaterialsInventoryTabPage extends StatefulWidget {
   @override
@@ -24,7 +25,7 @@ class _MaterialsInventoryTabPageState extends State<MaterialsInventoryTabPage> w
             loading: (_) => const Loading(useScaffold: false),
             loaded: (state) => StaggeredGridView.countBuilder(
               controller: scrollController,
-              crossAxisCount: isPortrait ? 3 : 5,
+              crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context, itemIsSmall: true),
               itemBuilder: (ctx, index) => MaterialCard.quantity(item: state.materials[index]),
               itemCount: state.materials.length,
               crossAxisSpacing: isPortrait ? 10 : 5,

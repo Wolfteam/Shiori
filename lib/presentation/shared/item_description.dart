@@ -40,7 +40,10 @@ class ItemDescription extends StatelessWidget {
               ),
             ),
             Center(
-              child: Text(subTitle!, style: theme.textTheme.bodyText2!.copyWith(fontSize: 12)),
+              child: Text(
+                subTitle!,
+                style: theme.textTheme.bodyText2!.copyWith(fontSize: 12),
+              ),
             ),
           ],
         ),

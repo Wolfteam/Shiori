@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/home/widgets/sliver_card_item.dart';
+import 'package:genshindb/presentation/home/widgets/card_item.dart';
 import 'package:genshindb/presentation/notifications/notifications_page.dart';
 
-class SliverNotificationsCard extends StatelessWidget {
+class NotificationsCard extends StatelessWidget {
   final bool iconToTheLeft;
 
-  const SliverNotificationsCard({
+  const NotificationsCard({
     Key? key,
     required this.iconToTheLeft,
   }) : super(key: key);
@@ -17,7 +17,8 @@ class SliverNotificationsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
-    return SliverCardItem(
+    return CardItem(
+      title: s.notifications,
       onClick: (context) => _goToNotificationsPage(context),
       iconToTheLeft: iconToTheLeft,
       icon: Icon(Icons.notifications, color: theme.accentColor, size: 60),

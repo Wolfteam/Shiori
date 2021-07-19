@@ -8,11 +8,13 @@ import 'extensions/i18n_extensions.dart';
 class ElementsButtonBar extends StatelessWidget {
   final List<ElementType> selectedValues;
   final Function(ElementType) onClick;
+  final double iconSize;
 
   const ElementsButtonBar({
     Key? key,
     required this.onClick,
     this.selectedValues = const [],
+    this.iconSize = 24,
   }) : super(key: key);
 
   @override
@@ -30,6 +32,7 @@ class ElementsButtonBar extends StatelessWidget {
   Widget _buildIconButton(ElementType value, String tooltip) {
     final isSelected = selectedValues.isEmpty || !selectedValues.contains(value);
     return IconButton(
+      iconSize: iconSize,
       icon: Opacity(
         opacity: !isSelected ? 1 : 0.2,
         child: Image.asset(value.getElementAsssetPath()),
