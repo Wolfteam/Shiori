@@ -355,5 +355,9 @@
   "notifInfoMsgE": "Alcuni Android OEMs (dispositivi) hanno un Sistema Operativo Android che impedisce di eseguire l’applicazione in background.\nAlcune notifiche programmate potrebbero non funzionare su alcuni dispositivi (es. Xiaomi, Huawei).\nSe riscontri questo problema cerca l’impostazione che regola la gestione delle applicazioni in background.",
   "swipeToSeeMoreOptions": "Scorri a destra o a sinistra per visualizzare più opzioni.",
   "reduceTime": "Riduci tempo",
-  "use24HourFormatOnDates": "Utilizza formato a 24 ore"
+  "use24HourFormatOnDates": "Utilizza formato a 24 ore",
+  "ps4": "PS4",
+  "deleteAllSessions": "Delete all sessions",
+  "deleteAllItems": "Delete all items",
+  "confirmQuestion": "Are you sure you wanna proceed ?"
 }

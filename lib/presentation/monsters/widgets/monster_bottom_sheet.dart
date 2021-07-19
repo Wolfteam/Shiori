@@ -9,23 +9,19 @@ import 'package:genshindb/presentation/shared/genshin_db_icons.dart';
 import 'package:genshindb/presentation/shared/item_popupmenu_filter.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/sort_direction_popupmenu_filter.dart';
+import 'package:genshindb/presentation/shared/styles.dart';
 
 class MonsterBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final theme = Theme.of(context);
 
     return CommonBottomSheet(
       titleIcon: GenshinDb.filter,
       title: s.filters,
-      onOk: () {
-        context.read<MonstersBloc>().add(const MonstersEvent.applyFilterChanges());
-        Navigator.pop(context);
-      },
-      onCancel: () {
-        context.read<MonstersBloc>().add(const MonstersEvent.cancelChanges());
-        Navigator.pop(context);
-      },
+      showCancelButton: false,
+      showOkButton: false,
       child: BlocBuilder<MonstersBloc, MonstersState>(
         builder: (context, state) => state.map(
           loading: (_) => const Loading(),
@@ -54,6 +50,32 @@ class MonsterBottomSheet extends StatelessWidget {
                   SortDirectionPopupMenuFilter(
                     selectedSortDirection: state.tempSortDirectionType,
                     onSelected: (v) => context.read<MonstersBloc>().add(MonstersEvent.sortDirectionTypeChanged(v)),
+                  )
+                ],
+              ),
+              ButtonBar(
+                buttonPadding: Styles.edgeInsetHorizontal10,
+                children: <Widget>[
+                  OutlinedButton(
+                    onPressed: () {
+                      context.read<MonstersBloc>().add(const MonstersEvent.cancelChanges());
+                      Navigator.pop(context);
+                    },
+                    child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
+                  ),
+                  OutlinedButton(
+                    onPressed: () {
+                      context.read<MonstersBloc>().add(const MonstersEvent.resetFilters());
+                      Navigator.pop(context);
+                    },
+                    child: Text(s.reset, style: TextStyle(color: theme.primaryColor)),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      context.read<MonstersBloc>().add(const MonstersEvent.applyFilterChanges());
+                      Navigator.pop(context);
+                    },
+                    child: Text(s.ok),
                   )
                 ],
               ),

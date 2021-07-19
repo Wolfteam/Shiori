@@ -76,6 +76,8 @@ extension I18nExtensions on S {
         return quest;
       case ItemLocationType.all:
         return all;
+      case ItemLocationType.ps4:
+        return ps4;
       default:
         throw Exception('The provided location type = $type is not valid');
     }

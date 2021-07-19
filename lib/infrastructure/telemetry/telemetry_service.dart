@@ -130,7 +130,8 @@ class TelemetryServiceImpl implements TelemetryService {
   Future<void> trackCalculatorAscMaterialsSessionsUpdated() => trackEventAsync('Calculator-Asc-Mat-Sessions-Updated');
 
   @override
-  Future<void> trackCalculatorAscMaterialsSessionsDeleted() => trackEventAsync('Calculator-Asc-Mat-Sessions-Deleted');
+  Future<void> trackCalculatorAscMaterialsSessionsDeleted({bool all = false}) =>
+      trackEventAsync('Calculator-Asc-Mat-Sessions-Deleted${all ? '-All' : ''}');
 
   @override
   Future<void> trackItemAddedToInventory(String key, int quantity) => trackEventAsync('MyInventory-Added', {'Key_Qty': '${key}_$quantity'});
@@ -140,6 +141,10 @@ class TelemetryServiceImpl implements TelemetryService {
 
   @override
   Future<void> trackItemUpdatedInInventory(String key, int quantity) => trackEventAsync('MyInventory-Updated', {'Key_Qty': '${key}_$quantity'});
+
+  @override
+  Future<void> trackItemsDeletedFromInventory(ItemType type) =>
+      trackEventAsync('MyInventory-Clear-All', {'Type': EnumToString.convertToString(type)});
 
   @override
   Future<void> trackNotificationCreated(AppNotificationType type) =>

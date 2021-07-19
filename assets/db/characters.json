@@ -5695,8 +5695,16 @@
           ],
           "artifacts": [
             {
-              "one": "maiden_beloved_4.png",
-              "multiples": [],
+              "multiples": [
+                {
+                  "image": "maiden_beloved_4.png",
+                  "quantity": 2
+                },
+                {
+                  "image": "tenacity_of_the_millelith_4.png",
+                  "quantity": 2
+                }
+              ],
               "stats": [
                 "hp",
                 "atk",

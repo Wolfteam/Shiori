@@ -5,6 +5,7 @@ import 'package:genshindb/domain/extensions/string_extensions.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/characters/characters_page.dart';
+import 'package:genshindb/presentation/shared/confirm_dialog.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/genshin_db_icons.dart';
 import 'package:genshindb/presentation/shared/hawk_fab_menu.dart';
@@ -42,6 +43,14 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
                 ? IconButton(
                     icon: const Icon(Icons.unfold_more),
                     onPressed: () => _showReorderDialog(state.items, context),
+                  )
+                : Container(),
+          ),
+          BlocBuilder<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
+            builder: (context, state) => state.items.isNotEmpty
+                ? IconButton(
+                    icon: const Icon(Icons.clear_all),
+                    onPressed: () => _showDeleteAllDialog(context),
                   )
                 : Container(),
           ),
@@ -83,7 +92,6 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
                           child: ItemDescriptionDetail(
                             title: '${s.characters} / ${s.weapons}',
                             textColor: theme.accentColor,
-                            body: null,
                           ),
                         ),
                       ),
@@ -186,5 +194,17 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
   Future<void> _showReorderDialog(List<ItemAscensionMaterials> items, BuildContext context) async {
     context.read<CalculatorAscMaterialsOrderBloc>().add(CalculatorAscMaterialsOrderEvent.init(sessionKey: sessionKey, items: items));
     await showDialog(context: context, builder: (_) => ReorderItemsDialog());
+  }
+
+  Future<void> _showDeleteAllDialog(BuildContext context) async {
+    final s = S.of(context);
+    await showDialog(
+      context: context,
+      builder: (_) => ConfirmDialog(
+        title: s.deleteAllItems,
+        content: s.confirmQuestion,
+        onOk: () => context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.clearAllItems(sessionKey)),
+      ),
+    );
   }
 }

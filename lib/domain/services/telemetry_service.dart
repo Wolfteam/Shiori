@@ -46,13 +46,15 @@ abstract class TelemetryService {
 
   Future<void> trackCalculatorAscMaterialsSessionsUpdated();
 
-  Future<void> trackCalculatorAscMaterialsSessionsDeleted();
+  Future<void> trackCalculatorAscMaterialsSessionsDeleted({bool all = false});
 
   Future<void> trackItemAddedToInventory(String key, int quantity);
 
   Future<void> trackItemUpdatedInInventory(String key, int quantity);
 
   Future<void> trackItemDeletedFromInventory(String key);
+
+  Future<void> trackItemsDeletedFromInventory(ItemType type);
 
   Future<void> trackNotificationCreated(AppNotificationType type);
 

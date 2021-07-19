@@ -24,7 +24,11 @@ class CharactersEvent with _$CharactersEvent {
 
   const factory CharactersEvent.roleTypeChanged(CharacterRoleType roleType) = _CharacterTypeChanged;
 
+  const factory CharactersEvent.regionTypeChanged(RegionType? regionType) = _RegionTypeChanged;
+
   const factory CharactersEvent.applyFilterChanges() = _ApplyFilterChanges;
 
   const factory CharactersEvent.cancelChanges() = _CancelChanges;
+
+  const factory CharactersEvent.resetFilters() = _ResetFilters;
 }

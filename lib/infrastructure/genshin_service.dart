@@ -791,6 +791,7 @@ class GenshinServiceImpl implements GenshinService {
       isComingSoon: character.isComingSoon,
       isNew: character.isNew,
       roleType: character.role,
+      regionType: character.region,
     );
   }
 
