@@ -6,6 +6,7 @@ class BottomSheetTitle extends StatelessWidget {
   final String title;
   final IconData icon;
   final double iconSize;
+
   const BottomSheetTitle({
     Key? key,
     required this.title,

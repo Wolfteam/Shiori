@@ -53,4 +53,14 @@ class Styles {
   static const double homeCardHeight = 160;
   static const double homeCardWidth = 250;
   static const double birthdayCardWidth = 300;
+
+  static const endDrawerFilterItemMargin = EdgeInsets.only(top: 20);
+  static const double endDrawerIconSize = 40;
+
+  static double getIconSizeForItemPopupMenuFilter(bool forEndDrawer, bool forDefaultIcons) {
+    if (forDefaultIcons) {
+      return forEndDrawer ? 36 : 24;
+    }
+    return forEndDrawer ? 26 : 18;
+  }
 }
