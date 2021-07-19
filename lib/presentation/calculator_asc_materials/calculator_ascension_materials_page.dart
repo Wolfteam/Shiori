@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
+import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/extensions/iterable_extensions.dart';
 import 'package:genshindb/domain/extensions/string_extensions.dart';
 import 'package:genshindb/domain/models/models.dart';
@@ -13,6 +14,7 @@ import 'package:genshindb/presentation/shared/hawk_fab_menu.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
 import 'package:genshindb/presentation/shared/nothing_found_column.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:genshindb/presentation/weapons/weapons_page.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:responsive_grid/responsive_grid.dart';
@@ -32,10 +34,7 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final s = S.of(context);
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
-    final size = getDeviceType(MediaQuery.of(context).size);
 
     return Scaffold(
       appBar: AppBar(
@@ -60,49 +59,79 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
         ],
       ),
       body: SafeArea(
-        child: HawkFabMenu(
-          icon: AnimatedIcons.menu_arrow,
-          fabColor: theme.accentColor,
-          iconColor: Colors.white,
-          items: [
-            HawkFabMenuItem(
-              label: s.addCharacter,
-              ontap: () => _openCharacterPage(context),
-              icon: const Icon(Icons.people),
-              color: theme.accentColor,
-              labelColor: theme.accentColor,
-            ),
-            HawkFabMenuItem(
-              label: s.addWeapon,
-              ontap: () => _openWeaponPage(context),
-              icon: const Icon(GenshinDb.crossed_swords),
-              color: theme.accentColor,
-              labelColor: theme.accentColor,
-            ),
-          ],
-          body: BlocBuilder<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
-            builder: (context, state) {
-              return state.map(
-                initial: (state) {
-                  if (state.items.isEmpty) {
-                    return NothingFoundColumn(msg: s.startByAddingMsg, icon: Icons.add_circle_outline);
-                  }
-                  final summary = _buildSummary(s, state.summary);
-                  switch (size) {
-                    case DeviceScreenType.mobile:
-                    case DeviceScreenType.tablet:
-                    case DeviceScreenType.desktop:
-                      if (isPortrait) {
-                        return _PortraitLayout(sessionKey: sessionKey, items: state.items, summary: summary);
-                      }
-                      return _LandscapeLayout(sessionKey: sessionKey, items: state.items, summary: summary);
-                    default:
-                      return _PortraitLayout(sessionKey: sessionKey, items: state.items, summary: summary);
-                  }
-                },
-              );
-            },
-          ),
+        child: _FabMenu(sessionKey: sessionKey),
+      ),
+    );
+  }
+
+  Future<void> _showReorderDialog(List<ItemAscensionMaterials> items, BuildContext context) async {
+    context.read<CalculatorAscMaterialsOrderBloc>().add(CalculatorAscMaterialsOrderEvent.init(sessionKey: sessionKey, items: items));
+    await showDialog(context: context, builder: (_) => ReorderItemsDialog());
+  }
+
+  Future<void> _showDeleteAllDialog(BuildContext context) async {
+    final s = S.of(context);
+    await showDialog(
+      context: context,
+      builder: (_) => ConfirmDialog(
+        title: s.deleteAllItems,
+        content: s.confirmQuestion,
+        onOk: () => context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.clearAllItems(sessionKey)),
+      ),
+    );
+  }
+}
+
+class _FabMenu extends StatelessWidget {
+  final int sessionKey;
+
+  const _FabMenu({Key? key, required this.sessionKey}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final s = S.of(context);
+    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    final size = getDeviceType(MediaQuery.of(context).size);
+    return HawkFabMenu(
+      icon: AnimatedIcons.menu_arrow,
+      fabColor: theme.accentColor,
+      iconColor: Colors.white,
+      items: [
+        HawkFabMenuItem(
+          label: s.addCharacter,
+          ontap: () => _openCharacterPage(context),
+          icon: const Icon(Icons.people),
+          color: theme.accentColor,
+          labelColor: theme.accentColor,
+        ),
+        HawkFabMenuItem(
+          label: s.addWeapon,
+          ontap: () => _openWeaponPage(context),
+          icon: const Icon(GenshinDb.crossed_swords),
+          color: theme.accentColor,
+          labelColor: theme.accentColor,
+        ),
+      ],
+      body: BlocBuilder<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
+        builder: (context, state) => state.map(
+          initial: (state) {
+            if (state.items.isEmpty) {
+              return NothingFoundColumn(msg: s.startByAddingMsg, icon: Icons.add_circle_outline);
+            }
+            final summary = _buildSummary(s, state.summary);
+            switch (size) {
+              case DeviceScreenType.mobile:
+              case DeviceScreenType.tablet:
+              case DeviceScreenType.desktop:
+                if (isPortrait) {
+                  return _PortraitLayout(sessionKey: sessionKey, items: state.items, summary: summary);
+                }
+                return _LandscapeLayout(sessionKey: sessionKey, items: state.items, summary: summary);
+              default:
+                return _PortraitLayout(sessionKey: sessionKey, items: state.items, summary: summary);
+            }
+          },
         ),
       ),
     );
@@ -128,12 +157,10 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
 
     context.read<CalculatorAscMaterialsItemBloc>().add(CalculatorAscMaterialsItemEvent.load(key: keyName!, isCharacter: true));
 
-    await showModalBottomSheet(
-      context: context,
-      shape: Styles.modalBottomSheetShape,
-      isDismissible: true,
-      isScrollControlled: true,
-      builder: (_) => AddEditItemBottomSheet.toAddItem(sessionKey: sessionKey, keyName: keyName, isAWeapon: false),
+    await ModalBottomSheetUtils.showAppModalBottomSheet(
+      context,
+      EndDrawerItemType.calculatorAscMaterialsAdd,
+      args: AddEditItemBottomSheet.buildNavigationArgsToAddItem(sessionKey, keyName),
     );
   }
 
@@ -151,29 +178,10 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
 
     context.read<CalculatorAscMaterialsItemBloc>().add(CalculatorAscMaterialsItemEvent.load(key: keyName!, isCharacter: false));
 
-    await showModalBottomSheet<bool>(
-      context: context,
-      shape: Styles.modalBottomSheetShape,
-      isDismissible: true,
-      isScrollControlled: true,
-      builder: (_) => AddEditItemBottomSheet.toAddItem(sessionKey: sessionKey, keyName: keyName, isAWeapon: true),
-    );
-  }
-
-  Future<void> _showReorderDialog(List<ItemAscensionMaterials> items, BuildContext context) async {
-    context.read<CalculatorAscMaterialsOrderBloc>().add(CalculatorAscMaterialsOrderEvent.init(sessionKey: sessionKey, items: items));
-    await showDialog(context: context, builder: (_) => ReorderItemsDialog());
-  }
-
-  Future<void> _showDeleteAllDialog(BuildContext context) async {
-    final s = S.of(context);
-    await showDialog(
-      context: context,
-      builder: (_) => ConfirmDialog(
-        title: s.deleteAllItems,
-        content: s.confirmQuestion,
-        onOk: () => context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.clearAllItems(sessionKey)),
-      ),
+    await ModalBottomSheetUtils.showAppModalBottomSheet(
+      context,
+      EndDrawerItemType.calculatorAscMaterialsAdd,
+      args: AddEditItemBottomSheet.buildNavigationArgsToAddItem(sessionKey, keyName, isAWeapon: true),
     );
   }
 }
