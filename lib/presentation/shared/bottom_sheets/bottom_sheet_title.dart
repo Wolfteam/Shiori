@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'styles.dart';
+import '../styles.dart';
 
 class BottomSheetTitle extends StatelessWidget {
   final String title;
