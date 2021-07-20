@@ -4250,7 +4250,7 @@
     },
     {
       "key": "Yoimiya",
-      "name": "Yoimiya",
+      "name": "宵宫",
       "description": "N/A",
       "skills": [
         {
@@ -4304,7 +4304,7 @@
     },
     {
       "key": "Traveler (Electro)",
-      "name": "Traveler (Electro)",
+      "name": "旅行者（雷）",
       "description": "N/A",
       "skills": [
         {
@@ -4988,26 +4988,26 @@
     {
       "key": "Song of Broken Pines",
       "name": "松籁响起之时",
-      "description": "A greatsword as light as the sigh of grass in the breeze, yet as merciless to the corrupt as a typhoon.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {{0}}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "description": "如同翻弄草木的息吹一般轻盈的大剑,如同吹倒树木的飓风一般摧枯拉朽的武器。",
+      "refinement": "飘游风中的「千年的大乐章」的一部分。攻击力提升{{0}}%，普通攻击或重击命中敌人时，角色获得一枚低语之符，每0.3秒内至多触发一次。拥有4枚低语之符时，将消耗所有低语之符，使附近队伍中所有角色获得持续12秒的「千年的大乐章·揭旗之歌」效果：普通攻击速度提升{{1}}%，攻击力提升{{2}}%。触发后20秒内，无法再次获得低语之符。「千年的大乐章」触发的多种数值效果中，同类数值效果不可叠加。"
     },
     {
       "key": "Freedom-Sworn",
-      "name": "Freedom-Sworn",
-      "description": "A straight sword, azure as antediluvian song, and as keen as the oaths of freedom taken in the Land of Wind.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {{0}}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {{1}}% and increases ATK by {{2}}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "name": "苍古自由之誓",
+      "description": "如同悠古的歌声一般苍蓝的直剑，如同风之国土自由的誓言一般锐利的武器。",
+      "refinement": "飘游风中的「千年的大乐章」的一部分。伤害提升{{0}}%；触发元素反应时，角色获得一枚奋起之符，每0.5秒内至多触发一次，角色处于队伍后台也能触发。拥有2枚奋起之符时，将消耗所有奋起之符，使附近队伍中所有角色获得持续12秒的「千年的大乐章·抗争之歌」效果：普通攻击、重击、下落攻击造成的伤害提升{{1}}%，攻击力提升{{2}}%。触发后20秒内，无法再次获得奋起之符。「千年的大乐章」触发的多种数值效果中，同类数值效果不可叠加。"
     },
     {
       "key": "Mitternachts Waltz",
-      "name": "Mitternachts Waltz",
-      "description": "A bow painted the color of sin and nights of wild fantasy.",
-      "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {{0}}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {{1}}% for 5s."
+      "name": "幽夜华尔兹",
+      "description": "有着如同罪与幻想之夜一般颜色的弓。",
+      "refinement": "普通攻击命中敌人后的5秒内，元素战技造成的伤害提升{{0}}%；元素战技命中敌人后的5秒内，普通攻击造成的伤害提升{{1}}%。"
     },
     {
       "key": "Dodoco Tales",
-      "name": "Dodoco Tales",
-      "description": "A children's book filled with childish short stories at which one cannot help but laugh.\nEven those readers who have long reached adulthood cannot help but be absorbed by the innocent, naive little adventures portrayed within.",
-      "refinement": "Normal Attack hits on opponents increase Charged Attack DMG by {{0}}% for 6s. Charged Attack hits on opponents increase ATK by {{1}}% for 6s."
+      "name": "嘟嘟可故事集",
+      "description": "一本封面华丽的童书，内容皆是童言无忌的短小故事，读之令人忍俊不住。\n即使业已成年的读者,读到书中天真无邪的冒险故事，也会忍不住神往吧。",
+      "refinement": "普通攻击命中敌人后的6秒内，重击造成的伤害提升{{0}}%；重击命中敌人后的6秒内，攻击力提升{{1}}%。"
     }
   ],
   "artifacts": [
@@ -6344,37 +6344,37 @@
     },
     {
       "key": "Crystalline Bloom",
-      "name": "Crystalline Bloom",
+      "name": "晶凝之华",
       "description": "An ice crystal of exceeding purity that is created in the frigid blooming of a Cryo Hypostasis.\nThese frosty crystals will continue to grow according to their own cold, rigid laws, till one day a flower of winter shall bloom and freeze everything. Perhaps it is stagnant time, that never-thawing bosom, that is the essence of this undying flower."
     },
     {
       "key": "Dream Solvent",
-      "name": "Dream Solvent",
+      "name": "异梦溶媒",
       "description": "An item capable of changing Character Level-Up Materials obtained from memories and trials into whatever form is needed.\nPeople once believed that spirits and memories had some material form. If someone dreamed of heaven before waking up clutching a flower, then that blossom must have been made from such a fantasy. Dream Solvent dissolves that which is obtained from memory and transforms it into some other dream.\nIndeed, blows traded with the strong are stepping stones towards becoming stronger yourself."
     },
     {
       "key": "Dragon Lord's Crown",
-      "name": "Dragon Lord's Crown",
+      "name": "龙王之冕",
       "description": "Horns created from hardened jade crystallized over a thousand years are the natural crown of the dragon king.\nInfused with spirit and carved from bedrock, it was born from the mountain's heart to show the strength of the earth to the land amidst monoliths, and its long golden horns are the mark of its ancient strife with an ancient lord.\nFor a time, this horn was shattered and lost its luster, but now it gleams cold and gold as it sits in your palm."
     },
     {
       "key": "Bloodjade Branch",
-      "name": "Bloodjade Branch",
+      "name": "血玉之枝",
       "description": "Nurtured by the might of the dragon king, these bone branches glitter with strange, unique colors.\nHatred coursed through the natural streams and kissed the cold moonlight, and from them were these crystalline branches born and grown...\nEven though they were severed in battle, these branches steeped in dragon blood rustle as if eternally ill-at-ease."
     },
     {
       "key": "Gilded Scale",
-      "name": "Gilded Scale",
+      "name": "鎏金之鳞",
       "description": "Scaled armor that grows naturally over mystical stone, tough and silent, and filled with the strength of the dragon king.\nAcross the years as countless generations returned to the mulch of the earth, gold and obsidian embedded themselves into flesh and blood forged from bedrock before spreading and turning into scales.\nSearing agony, wordless cries... perhaps they will all vanish when the grudges that spawned them, too, finally come to an end."
     },
     {
       "key": "Maguu Kishin",
-      "name": "Maguu Kishin",
+      "name": "魔偶机心",
       "description": "This core can power the inorganic Maguu Kenki and cause it to wield a blade like a living being.\nFlesh decays, and with it decays all martial art and memory, no matter how masterful or lovely.\nPerhaps only by converting one's four limbs and body into sturdy mechanical parts, and by at last sacrificing one's very own heart for a sophisticated mechanical one, can one transcend transient flesh and approach the everlasting..."
     },
     {
       "key": "Sea Ganoderma",
-      "name": "Sea Ganoderma",
+      "name": "海灵芝",
       "description": "A species that only grows in certain special regions of the ocean and islands. It looks like a fungus of some sort, but it is in fact the result of the secretion and proliferation of certain soft-bodied organisms."
     }
   ],
@@ -6860,39 +6860,39 @@
     },
     {
       "key": "Maguu Kenki",
-      "name": "Maguu Kenki"
+      "name": "魔偶剑鬼"
     },
     {
       "key": "Hydro Mimic Boar",
-      "name": "Hydro Mimic Boar"
+      "name": "幻形豕兽·水"
     },
     {
       "key": "Hydro Mimic Crab",
-      "name": "Hydro Mimic Crab"
+      "name": "幻形蟹·水"
     },
     {
       "key": "Hydro Mimic Crane",
-      "name": "Hydro Mimic Crane"
+      "name": "幻形鹤·水"
     },
     {
       "key": "Hydro Mimic Ferret",
-      "name": "Hydro Mimic Ferret"
+      "name": "幻形花鼠·水"
     },
     {
       "key": "Hydro Mimic Finch",
-      "name": "Hydro Mimic Finch"
+      "name": "幻形雀·水"
     },
     {
       "key": "Hydro Mimic Frog",
-      "name": "Hydro Mimic Frog"
+      "name": "幻形蛙·水"
     },
     {
       "key": "Hydro Mimic Mallard",
-      "name": "Hydro Mimic Mallard"
+      "name": "幻形游禽·水"
     },
     {
       "key": "Hydro Mimic Raptor",
-      "name": "Hydro Mimic Raptor"
+      "name": "幻形飞鹰·水"
     }
   ]
 }
