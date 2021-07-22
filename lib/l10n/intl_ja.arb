@@ -357,9 +357,9 @@
   "reduceTime": "時間を短縮",
   "use24HourFormatOnDates": "日付に 24 時間形式を使用する",
   "ps4": "PS4",
-  "deleteAllSessions": "Delete all sessions",
-  "deleteAllItems": "Delete all items",
-  "confirmQuestion": "Are you sure you wanna proceed ?",
-  "gameSpecific": "Game specific",
-  "tools": "Tools"
+  "deleteAllSessions": "すべてのセッションを削除します",
+  "deleteAllItems": "すべてのアイテムを削除します",
+  "confirmQuestion": "続行してもよろしいですか？",
+  "gameSpecific": "ゲーム固有",
+  "tools": "ツール"
 }
