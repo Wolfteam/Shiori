@@ -3,12 +3,12 @@ import 'package:genshindb/domain/assets.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/wish_simulator/wish_simulator_page.dart';
 
-import 'sliver_card_item.dart';
+import 'card_item.dart';
 
-class SliverWishSimulatorCard extends StatelessWidget {
+class WishSimulatorCard extends StatelessWidget {
   final bool iconToTheLeft;
 
-  const SliverWishSimulatorCard({
+  const WishSimulatorCard({
     Key? key,
     required this.iconToTheLeft,
   }) : super(key: key);
@@ -17,7 +17,8 @@ class SliverWishSimulatorCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
-    return SliverCardItem(
+    return CardItem(
+      title: s.wishSimulator,
       iconToTheLeft: iconToTheLeft,
       onClick: _gotoWishSimulatorPage,
       icon: Image.asset(Assets.getOtherMaterialPath('gacha.png'), width: 60, height: 60, color: theme.accentColor),

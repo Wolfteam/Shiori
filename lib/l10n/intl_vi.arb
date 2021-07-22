@@ -355,5 +355,11 @@
   "notifInfoMsgE": "Một số thiết bị có thể ngăn ứng dụng chạy trong nền.\nDo đó các thông báo đã cài đặt sẽ không thể hoạt động trên những thiết bị này.\nNếu bạn gặp vấn đề này thì tìm cài đặt cho phép ứng dụng chạy trong nền là được.",
   "swipeToSeeMoreOptions": "Bạn có thể vuốt sang trái hoặc phải đế xem thêm các tùy chọn.",
   "reduceTime": "Giảm Thời Gian",
-  "use24HourFormatOnDates": "Sử dụng định dạng 24h"
+  "use24HourFormatOnDates": "Sử dụng định dạng 24h",
+  "ps4": "PS4",
+  "deleteAllSessions": "Delete all sessions",
+  "deleteAllItems": "Delete all items",
+  "confirmQuestion": "Are you sure you wanna proceed ?",
+  "gameSpecific": "Game specific",
+  "tools": "Tools"
 }

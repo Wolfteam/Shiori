@@ -361,6 +361,8 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
 
       if (state.key == null) {
         await _telemetryService.trackNotificationCreated(state.type);
+      }else{
+        await _telemetryService.trackNotificationUpdated(state.type);
       }
     } catch (e, s) {
       _loggingService.error(runtimeType, '_saveChanges: Unknown error while saving changes', e, s);

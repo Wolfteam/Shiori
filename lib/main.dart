@@ -231,7 +231,8 @@ class MyApp extends StatelessWidget {
             final dataService = getIt<DataService>();
             final notificationService = getIt<NotificationService>();
             final settingsService = getIt<SettingsService>();
-            return NotificationsBloc(dataService, notificationService, settingsService);
+            final telemetryService = getIt<TelemetryService>();
+            return NotificationsBloc(dataService, notificationService, settingsService, telemetryService);
           },
         ),
         BlocProvider(

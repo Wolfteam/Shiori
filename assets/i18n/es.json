@@ -3770,14 +3770,17 @@
         {
           "key": "s2",
           "title": "Espada Guhua: Lluvia torrencial mortal",
-          "description": "Xingchiu realiza golpes gemelos con su espada, infligiendo Daño Hydro. Al mismo tiempo, esta habilidad crea la cantidad máxima de Espadas de lluvia, que orbitarán alrededor del personaje.\n20% del Bono de Daño Hydro de Xingchiu se convertirá en reducción de Daño adicional para las Espadas de lluvia.\nLa cantidad máxima de reducción de Daño que se puede obtener de esta manera es del 24%.",
+          "description": "Xingchiu realiza golpes gemelos con su espada, infligiendo Daño Hydro. Al mismo tiempo, esta habilidad crea la cantidad máxima de Espadas de lluvia, que orbitarán alrededor del personaje.",
           "abilities": [
             {
               "name": "",
               "description": "Las Espadas de lluvia tienen las siguientes propiedades:",
               "descriptions": [
                 "Cuando el personaje recibe Daño, una Espada de lluvia se romperá, reduciendo la cantidad de Daño recibido.",
-                "Aumenta la RES a interrupción del personaje."
+                "Aumenta la RES a interrupción del personaje.",
+                "20% del Bono de Daño Hydro de Xingchiu se convertirá en reducción de Daño adicional para las Espadas de lluvia.",
+                "La cantidad máxima de reducción de Daño que se puede obtener de esta manera es del 24%.",
+                "El uso de esta habilidad aplica el estado de Mojado sobre el personaje."
               ]
             }
           ]

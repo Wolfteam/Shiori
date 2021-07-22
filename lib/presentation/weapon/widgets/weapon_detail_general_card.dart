@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/generated/l10n.dart';
+import 'package:genshindb/presentation/shared/details/detail_general_card.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:genshindb/presentation/shared/item_description.dart';
-import 'package:genshindb/presentation/shared/rarity.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
 
 class WeaponDetailGeneralCard extends StatelessWidget {
   final String name;
@@ -30,20 +29,17 @@ class WeaponDetailGeneralCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final theme = Theme.of(context);
-    final details = Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return DetailGeneralCard(
+      itemName: name,
+      color: rarity.getRarityColors().first,
+      rarity: rarity,
       children: [
-        Text(
-          name,
-          style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-        ),
-        Rarity(stars: rarity, starSize: 25, alignment: MainAxisAlignment.start),
         ItemDescription(
           title: s.type,
           widget: Text(
             s.translateWeaponType(type),
             style: const TextStyle(color: Colors.white),
+            overflow: TextOverflow.ellipsis,
           ),
           useColumn: false,
         ),
@@ -52,6 +48,7 @@ class WeaponDetailGeneralCard extends StatelessWidget {
           widget: Text(
             '$atk',
             style: const TextStyle(color: Colors.white),
+            overflow: TextOverflow.ellipsis,
           ),
           useColumn: false,
         ),
@@ -67,18 +64,11 @@ class WeaponDetailGeneralCard extends StatelessWidget {
           widget: Text(
             s.translateItemLocationType(locationType),
             style: const TextStyle(color: Colors.white),
+            overflow: TextOverflow.ellipsis,
           ),
           useColumn: false,
         ),
       ],
-    );
-
-    return Card(
-      color: rarity.getRarityColors().first.withOpacity(0.1),
-      elevation: Styles.cardTenElevation,
-      margin: Styles.edgeInsetAll10,
-      shape: Styles.cardShape,
-      child: Padding(padding: Styles.edgeInsetAll10, child: details),
     );
   }
 }

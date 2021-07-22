@@ -8,6 +8,7 @@ import 'package:genshindb/presentation/characters/widgets/character_card.dart';
 import 'package:genshindb/presentation/shared/app_fab.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/mixins/app_fab_mixin.dart';
+import 'package:genshindb/presentation/shared/utils/size_utils.dart';
 
 class CharactersInventoryTabPage extends StatefulWidget {
   @override
@@ -39,7 +40,7 @@ class _CharactersInventoryTabPageState extends State<CharactersInventoryTabPage>
             loading: (_) => const Loading(useScaffold: false),
             loaded: (state) => StaggeredGridView.countBuilder(
               controller: scrollController,
-              crossAxisCount: isPortrait ? 2 : 3,
+              crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context),
               itemBuilder: (ctx, index) => CharacterCard.item(char: state.characters[index]),
               itemCount: state.characters.length,
               crossAxisSpacing: isPortrait ? 10 : 5,

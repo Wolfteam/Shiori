@@ -70,11 +70,11 @@ The {{x}} is a placeholder and the value shouldn't be changed, but the position 
 
 Translating the app to other languages won't have been possible without the following contributors
 
-|Chinese |Russian|Portuguese|Italian|Japanese|
-|---|---|---|---|---|
-|2O48#9733|SipTik#8026|Brunoff#0261|Reniel [Skidex ツ]#7982|𝕽𝖚𝖗𝖎#3080|
-| |KKTS#8567|DanPS#4336|Septenebris#7356||
-| |KlimeLime#7577||||
-| |Avantel#8880||||
-| |чебилин#5968||||
-| |Anixty#3279||||
+|Chinese |Russian|Portuguese|Italian|Japanese|Vietnamese|Indonesian|
+|---|---|---|---|---|---|---|
+|2O48#9733|SipTik#8026|Brunoff#0261|Reniel [Skidex ツ]#7982|𝕽𝖚𝖗𝖎#3080|Ren Toky#5263|Arctara#7162|
+| |KKTS#8567|DanPS#4336|Septenebris#7356||||
+| |KlimeLime#7577||||||
+| |Avantel#8880||||||
+| |чебилин#5968||||||
+| |Anixty#3279||||||

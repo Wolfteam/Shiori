@@ -19,4 +19,6 @@ class ArtifactsEvent with _$ArtifactsEvent {
   const factory ArtifactsEvent.applyFilterChanges() = _ApplyFilterChanges;
 
   const factory ArtifactsEvent.cancelChanges() = _CancelChanges;
+
+  const factory ArtifactsEvent.resetFilters() = _ResetFilters;
 }

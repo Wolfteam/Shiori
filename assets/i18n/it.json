@@ -5013,7 +5013,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Max HP aumenta di 1000."
+          "bonus": "Max HP +1000."
         },
         {
           "key": "b2",
@@ -5041,7 +5041,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "DEF aumenta di 100."
+          "bonus": "DEF +100."
         },
         {
           "key": "b2",
@@ -5059,7 +5059,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Aumenta del 30% il CRIT Rate degli Attacchi Caricati."
+          "bonus": "CRIT Rate di Attacchi Caricati +30%."
         }
       ]
     },
@@ -5069,11 +5069,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Tutti gli Elemental RES aumentano del 20%."
+          "bonus": "Tutti gli Elemental RES +20%."
         },
         {
           "key": "b2",
-          "bonus": "Gli Elemental DMG ricevuti aumentano i corrispondenti Elemental RES del 30% per 10s. Può avvenire solo una volta ogni 10s."
+          "bonus": "Subire Elemental DMG aumenta i corrispondenti Elemental RES del 30% per 10s. Può avvenire solo una volta ogni 10s."
         }
       ]
     },
@@ -5087,7 +5087,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Aumenta il DMG del 30% contro nemici con HP maggiore del 50%."
+          "bonus": "DMG +30% contro nemici con HP > 50%."
         }
       ]
     },
@@ -5101,7 +5101,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Per ciascun elemento nel tuo party, l'Elemental RES del personaggio per quel determinato elemento aumenta del 30%."
+          "bonus": "Elemental RES +30% per ciascun elemento del party."
         }
       ]
     },
@@ -5111,11 +5111,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Aumenta il DMG di Attacchi Normali e Caricati del 15%."
+          "bonus": "DMG di Attacchi Normali e Caricati +15%."
         },
         {
           "key": "b2",
-          "bonus": "Dopo aver usato un’Abilità Elementale, il DMG di Attacchi Normali e Caricati aumenta del 25% per 8s."
+          "bonus": "DMG di Attacchi Normali e Caricati +25% per 8s dopo aver usato un'Abilità Elementale."
         }
       ]
     },
@@ -5125,7 +5125,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Aumenta il DMG dell’Abilità Elementale del 20%."
+          "bonus": "DMG dell'Abilità Elementale +20%."
         },
         {
           "key": "b2",
@@ -5143,7 +5143,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Ottenere Elemental Particles/Orbs conferisce 3 Energy a tutti i membri del party che usano un arco o un catalyst. Può avvenire solo una volta ogni 3s."
+          "bonus": "Raccogliere Elemental Particles/Orbs conferisce 3 Energy a tutti i personaggi del party che usano arco o catalyst. Può avvenire solo una volta ogni 3s."
         }
       ]
     },
@@ -5157,7 +5157,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Quando l'HP è inferiore al 70%, il CRIT Rate aumenta di un ulteriore 24%."
+          "bonus": "Quando HP < 70%, il CRIT Rate aumenta di un ulteriore 24%."
         }
       ]
     },
@@ -5167,11 +5167,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Aumenta l'Elemental Mastery di 80."
+          "bonus": "Elemental Mastery +80."
         },
         {
           "key": "b2",
-          "bonus": "Quando si attiva una Reazione Elementale, aumenta l'Elemental Mastery di tutti i membri del party di 120 per 8s."
+          "bonus": "Quando si innesca una reazione Elementale, tutti i personaggi del party ottengono Elemental Mastery +120 per 8s."
         }
       ]
     },
@@ -5185,7 +5185,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Un Elemental Burst rigenera 2 Energy per tutti i membri del party (tranne chi lo detiene) ogni 2s per 6s. Questo effetto non è cumulativo."
+          "bonus": "L’Elemental Burst rigenera 2 Energy per tutti i personaggi del party (tranne chi lo ha equipaggiato) ogni 2s per 6s. Questo effetto non è cumulativo."
         }
       ]
     },
@@ -5199,7 +5199,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Aumenta il DMG di Overloaded, Electro-Charged and Superconduct del 40%. Attivare questi effetti riduce di 1s il CD dell'Abilità Elementale. Può avvenire solo una volta ogni 0.8s."
+          "bonus": "DMG +40% per le reazioni Overloaded, Electro-Charged e Superconduct. Innescare queste reazioni riduce di 1s il CD dell'Abilità Elementale. Può avvenire solo una volta ogni 0.8s."
         }
       ]
     },
@@ -5209,11 +5209,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Electro RES aumenta del 40%."
+          "bonus": "Electro RES +40%."
         },
         {
           "key": "b2",
-          "bonus": "Aumenta il DMG su nemici afflitti da Electro del 35%."
+          "bonus": "DMG +35% contro nemici afflitti da Electro."
         }
       ]
     },
@@ -5227,7 +5227,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Aumenta il Swirl DMG del 60%. Riduce l'Elemental RES dei nemici per l'elemento infuso nello Swirl del 40% per 10s."
+          "bonus": "Swirl DMG +60%. L'Elemental RES dei nemici per l'elemento infuso nello Swirl diminuisce del 40% per 10s."
         }
       ]
     },
@@ -5241,7 +5241,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Abilità Elementali o Elemental Burst aumentano le cure ricevute da tutti i membri del party del 20% per 10s."
+          "bonus": "Abilità Elementali o Elemental Burst aumentano le cure ricevute da tutti i personaggi del party del 20% per 10s."
         }
       ]
     },
@@ -5251,11 +5251,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Ottiene il 15% di Geo DMG Bonus."
+          "bonus": "Geo DMG Bonus +15%."
         },
         {
           "key": "b2",
-          "bonus": "Quando si ottiene un Elemental Shard attraverso una Reazione Crystallize, tutti i membri del party ottengono il 35% DMG Bonus per quel particolare elemento per 10s. Si può ottenere solo una forma di Elemental DMG Bonus per volta."
+          "bonus": "L’Elemental Shard creato per reazione Crystallize conferisce a tutti i personaggi del party un Elemental DMG Bonus +35% per 10s solo per quel particolare elemento. È valida solo una forma di Elemental DMG Bonus per volta."
         }
       ]
     },
@@ -5265,11 +5265,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Aumenta lo Shield Strength del 35%."
+          "bonus": "Shield Strength +35%."
         },
         {
           "key": "b2",
-          "bonus": "Mentre si è protetti da uno scudo, gli Attacchi Normali e Caricati ottengono un ulteriore 40% DMG."
+          "bonus": "DMG di Attacchi Normali e Caricati +40% mentre si è protetti da uno Scudo."
         }
       ]
     },
@@ -5283,7 +5283,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Aumenta i DMG di Overloaded e Burning del 40%. Aumenta i DMG di Vaporize e Melt del 15%. L'Abilità Elementale aumenta gli effetti di Set da 2 pezzi del 50% per 10s. Massimo 3 stacks."
+          "bonus": "DMG +40% per le reazioni Overloaded e Burning. DMG +15% per le reazioni Vaporize e Melt. Usare un'Abilità Elementale aumenta il Pyro DMG Bonus del Set-2 pezzi del 50% per 10s. Massimo 3 stacks."
         }
       ]
     },
@@ -5293,11 +5293,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Pyro RES aumenta del 40%."
+          "bonus": "Pyro RES +40%."
         },
         {
           "key": "b2",
-          "bonus": "Aumenta i DMG sui nemici afflitti da Pyro del 35%."
+          "bonus": "DMG +35% contro nemici afflitti da Pyro."
         }
       ]
     },
@@ -5311,7 +5311,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Dopo aver sconfitto un nemico, i DMG di Attacchi Caricati aumentano del 50% e il costo di Stamina si riduce a 0 per 10s."
+          "bonus": "DMG di Attacchi Caricati +50% e nessun consumo di Stamina per 10s dopo aver sconfitto un nemico."
         }
       ]
     },
@@ -5325,7 +5325,7 @@
         },
         {
           "key": "b2",
-          "bonus": "L'Elemental Burst aumenta l'ATK di tutti i membri del party del 20% per 12s. Questo effetto non è cumulativo."
+          "bonus": "Dopo un Elemental Burst tutti i personaggi del party ottengono ATK +20% per 12s. Questo effetto non è cumulativo."
         }
       ]
     },
@@ -5339,7 +5339,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Se il detentore di questo artefatto usa Spada, Claymore o Polearm, i DMG di Attacchi Normali aumentano del 35%."
+          "bonus": "DMG di Attacchi Normali +35% se il personaggio usa Spada, Claymore o Polearm."
         }
       ]
     },
@@ -5349,11 +5349,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Aumenta l'Elemental Mastery di 80."
+          "bonus": "Elemental Mastery +80."
         },
         {
           "key": "b2",
-          "bonus": "I DMG di Attacchi Caricati aumentano del 35% se il personaggio usa un Catalyst o un Arco."
+          "bonus": " DMG di Attacchi Caricati +35% se il personaggio usa Catalyst o Arco."
         }
       ]
     },
@@ -5363,7 +5363,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Afflitto da Pyro per un tempo 40% in meno."
+          "bonus": "Si è afflitti da Pyro per il 40% di tempo in meno."
         }
       ]
     },
@@ -5373,7 +5373,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Afflitto da Hydro per un tempo 40% in meno."
+          "bonus": "Si è afflitti da Hydro per il 40% di tempo in meno."
         }
       ]
     },
@@ -5383,7 +5383,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Afflitto da Electro per un tempo 40% in meno."
+          "bonus": "Si è afflitti da Electro per il 40% di tempo in meno."
         }
       ]
     },
@@ -5393,7 +5393,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Afflitto da Cryo per un tempo 40% in meno."
+          "bonus": "Si è afflitti da Cryo per il 40% di tempo in meno."
         }
       ]
     },
@@ -5407,7 +5407,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Quando un personaggio attacca un nemico afflitto Cryo, il CRIT Rate aumenta 20%. Se il nemico è Congelato, il CRIT Rate aumenta di un ulteriore 20%."
+          "bonus": "CRIT Rate +20% contro nemici afflitti da Cryo. Se il nemico è Congelato il CRIT Rate aumenta di un ulteriore 20%."
         }
       ]
     },
@@ -5421,13 +5421,13 @@
         },
         {
           "key": "b2",
-          "bonus": "L'Abilità ELemenetale, aumenta i DMG di Attacchi Normali e Caricati del 30% per 15s."
+          "bonus": "L'Abilità Elementale aumenta i DMG di Attacchi Normali e Caricati del 30% per 15s."
         }
       ]
     },
     {
       "key": "Glacier and Snowfield",
-      "name": "Glacier and Snowfield",
+      "name": "Glacier and Snowfield (Non rilasciato)",
       "bonus": [
         {
           "key": "b1",
@@ -5435,7 +5435,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Aumenta il Superconduct DMG del 100%. Aumenta il Melt DMG del 15%. L'Elemental Burst aumenta il Cryo DMG Bonus del 30% per 10s."
+          "bonus": "DMG +100% per la reazione Superconduct DMG. DMG +15% per la reazione Melt. L'Elemental Burst aumenta il Cryo DMG Bonus del 30% per 10s."
         }
       ]
     },
@@ -5445,7 +5445,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Afflitto da Anemo per un tempo 40% in meno."
+          "bonus": "Si è afflitti da Anemo per il 40% di tempo in meno."
         }
       ]
     },
@@ -5455,11 +5455,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "HP aumenta del 20%."
+          "bonus": "HP +20%."
         },
         {
           "key": "b2",
-          "bonus": "Quando un'Abilità Elementale colpisce un nemico, l'ATK di tutti i membri del party vicini aumenta del 20% e il loro Shield Strength aumenta del 30% per 3s. Può accadere solo una volta ogni 0.5s. Può essere innescato anche se il personaggio che ha l'artefatto non è in uso."
+          "bonus": "Quando un'Abilità Elementale colpisce un nemico, tutti i personaggi vicini del party ottengono ATK +20% e Shield Strength +30% per 3s. Può accadere solo una volta ogni 0.5s. Può essere innescato anche se il personaggio che ha l'artefatto non è in uso."
         }
       ]
     },
@@ -5469,11 +5469,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Physical DMG aumenta del 25%."
+          "bonus": "Physical DMG +25%."
         },
         {
           "key": "b2",
-          "bonus": "Quando un'Abilità Elementale colpisce un nemico, l'ATK aumenta del 9% per 7s. Massimo 2 stacks e si può innescare solo una volta ogni 0.3s. Quando si raggiungono 2 stacks, l'effetto del set da 2-pezzi aumenta del 100%."
+          "bonus": "Quando un'Abilità Elementale colpisce un nemico, si ottiene ATK +9% per 7s. Si può innescare solo una volta ogni 0.3s. Max 2 stacks raggiunti i quali il Physical DMG bonus del Set-2 pezzi aumenta del 100%."
         }
       ]
     }
@@ -6383,17 +6383,17 @@
     {
       "key": "Slowing Water",
       "name": "Slowing Water",
-      "effect": "Aumenta il CD delle abilità."
+      "effect": "Rallenta il CD delle abilità."
     },
     {
       "key": "Smoldering Flames",
       "name": "Smoldering Flames",
-      "effect": "Infligge continui DMG nel tempo."
+      "effect": "Infligge/subisci continui DMG nel tempo."
     },
     {
       "key": "Condensed Ice",
       "name": "Condensed Ice",
-      "effect": "Aumenta il consumo di Stamina."
+      "effect": "Aumenta il consumo di Stamina e rallenta i movimenti."
     }
   ],
   "reactions": [

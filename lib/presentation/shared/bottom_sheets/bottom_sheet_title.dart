@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'styles.dart';
+import '../styles.dart';
 
 class BottomSheetTitle extends StatelessWidget {
   final String title;
   final IconData icon;
   final double iconSize;
+
   const BottomSheetTitle({
     Key? key,
     required this.title,

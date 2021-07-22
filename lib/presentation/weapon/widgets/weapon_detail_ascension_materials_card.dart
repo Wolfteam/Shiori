@@ -3,6 +3,7 @@ import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/shared/utils/size_utils.dart';
 import 'package:genshindb/presentation/shared/wrapped_ascension_material.dart';
 
 class WeaponDetailAscensionMaterialsCard extends StatelessWidget {
@@ -18,6 +19,7 @@ class WeaponDetailAscensionMaterialsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final size = SizeUtils.getSizeForCircleImages(context, smallImage: true);
     final body = Card(
       elevation: Styles.cardTenElevation,
       shape: Styles.cardShape,
@@ -46,15 +48,21 @@ class WeaponDetailAscensionMaterialsCard extends StatelessWidget {
               ),
             ],
           ),
-          ...ascensionMaterials.map((e) => _buildStatProgressionRow(e)).toList(),
+          ...ascensionMaterials.map((e) => _buildStatProgressionRow(e, size)).toList(),
         ],
       ),
     );
     return ItemDescriptionDetail(title: s.ascensionMaterials, body: body, textColor: rarityColor);
   }
 
-  TableRow _buildStatProgressionRow(WeaponFileAscensionMaterial model) {
-    final materials = model.materials.map((m) => WrappedAscensionMaterial(image: m.fullImagePath, quantity: m.quantity)).toList();
+  TableRow _buildStatProgressionRow(WeaponFileAscensionMaterial model, double size) {
+    final materials = model.materials
+        .map((m) => WrappedAscensionMaterial(
+              image: m.fullImagePath,
+              quantity: m.quantity,
+              size: size,
+            ))
+        .toList();
     return TableRow(children: [
       TableCell(
         verticalAlignment: TableCellVerticalAlignment.middle,

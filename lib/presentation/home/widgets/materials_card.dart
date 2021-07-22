@@ -5,12 +5,12 @@ import 'package:genshindb/domain/assets.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/materials/materials_page.dart';
 
-import 'sliver_card_item.dart';
+import 'card_item.dart';
 
-class SliverMaterialsCard extends StatelessWidget {
+class MaterialsCard extends StatelessWidget {
   final bool iconToTheLeft;
 
-  const SliverMaterialsCard({
+  const MaterialsCard({
     Key? key,
     required this.iconToTheLeft,
   }) : super(key: key);
@@ -19,7 +19,8 @@ class SliverMaterialsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
-    return SliverCardItem(
+    return CardItem(
+      title: s.materials,
       iconToTheLeft: iconToTheLeft,
       onClick: _gotoMaterialsPage,
       icon: Image.asset(Assets.getOtherMaterialPath('bag.png'), width: 60, height: 60, color: theme.accentColor),

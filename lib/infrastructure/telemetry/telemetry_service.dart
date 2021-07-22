@@ -130,7 +130,8 @@ class TelemetryServiceImpl implements TelemetryService {
   Future<void> trackCalculatorAscMaterialsSessionsUpdated() => trackEventAsync('Calculator-Asc-Mat-Sessions-Updated');
 
   @override
-  Future<void> trackCalculatorAscMaterialsSessionsDeleted() => trackEventAsync('Calculator-Asc-Mat-Sessions-Deleted');
+  Future<void> trackCalculatorAscMaterialsSessionsDeleted({bool all = false}) =>
+      trackEventAsync('Calculator-Asc-Mat-Sessions-Deleted${all ? '-All' : ''}');
 
   @override
   Future<void> trackItemAddedToInventory(String key, int quantity) => trackEventAsync('MyInventory-Added', {'Key_Qty': '${key}_$quantity'});
@@ -142,7 +143,26 @@ class TelemetryServiceImpl implements TelemetryService {
   Future<void> trackItemUpdatedInInventory(String key, int quantity) => trackEventAsync('MyInventory-Updated', {'Key_Qty': '${key}_$quantity'});
 
   @override
-  Future<void> trackNotificationCreated(AppNotificationType type) => trackEventAsync('Notification-Created', {
-        'Type': EnumToString.convertToString(type),
-      });
+  Future<void> trackItemsDeletedFromInventory(ItemType type) =>
+      trackEventAsync('MyInventory-Clear-All', {'Type': EnumToString.convertToString(type)});
+
+  @override
+  Future<void> trackNotificationCreated(AppNotificationType type) =>
+      trackEventAsync('Notification-Created', {'Type': EnumToString.convertToString(type)});
+
+  @override
+  Future<void> trackNotificationDeleted(AppNotificationType type) =>
+      trackEventAsync('Notification-Deleted', {'Type': EnumToString.convertToString(type)});
+
+  @override
+  Future<void> trackNotificationRestarted(AppNotificationType type) =>
+      trackEventAsync('Notification-Restarted', {'Type': EnumToString.convertToString(type)});
+
+  @override
+  Future<void> trackNotificationStopped(AppNotificationType type) =>
+      trackEventAsync('Notification-Stopped', {'Type': EnumToString.convertToString(type)});
+
+  @override
+  Future<void> trackNotificationUpdated(AppNotificationType type) =>
+      trackEventAsync('Notification-Updated', {'Type': EnumToString.convertToString(type)});
 }

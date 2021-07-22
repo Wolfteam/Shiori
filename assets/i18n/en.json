@@ -52,7 +52,7 @@
         {
           "key": "s3",
           "title": "Rite of Progeniture: Tectonic Tide",
-          "description": "Under Albedo's command, Geo crystals surge and burst forth, dealing AoE Geo DMG in front of him.\nIf a Solar Isotoma created by Albedo himself is on the field, 7 Fatal Blossoms will be generated in the Solar Isotoma field, bursting violently into bloom and dealing AoE Geo DMG.\nTecotonic Tide DMG and Fatal Blossom DMG will not generate Transient Blossoms.",
+          "description": "Under Albedo's command, Geo crystals surge and burst forth, dealing AoE Geo DMG in front of him.\nIf a Solar Isotoma created by Albedo himself is on the field, 7 Fatal Blossoms will be generated in the Solar Isotoma field, bursting violently into bloom and dealing AoE Geo DMG.\nTectonic Tide DMG and Fatal Blossom DMG will not generate Transient Blossoms.",
           "abilities": []
         }
       ],
@@ -3769,14 +3769,18 @@
         {
           "key": "s2",
           "title": "Guhua Sword - Fatal Rainscreen",
-          "description": "Xingqiu performs twin strikes with his sword, dealing Hydro DMG. At the same time, this ability creates the maximum number of Rain Swords, which will orbit the character. 20% of Xingqiu’s Hydro DMG Bonus will be converted to additional DMG Reduction for the Rain Swords. The maximum amount of additional DMG Reduction that can be gained this way is 24%. The initial maximum number of Rain Swords is 3. Using this ability applies the Wet status onto the character.",
+          "description": "Xingqiu performs twin strikes with his sword, dealing Hydro DMG. At the same time, this ability creates the maximum number of Rain Swords, which will orbit the character.",
           "abilities": [
             {
               "name": "",
               "description": "The Rain Swords have the following properties:",
               "descriptions": [
                 "When a character takes DMG, the Rain Sword will shatter, reducing the amount of DMG taken.",
-                "Increases the character’s resistance to interruption."
+                "Increases the character’s resistance to interruption.",
+                "20% of Xingqiu's Hydro DMG Bonus will be converted to additional DMG Reduction for the Rain Swords.",
+                "The maximum amount of additional DMG Reduction that can be gained this way is 24%.",
+                "The initial maximum number of Rain Swords is 3.",
+                "Using this ability applies the Wet status onto the character."
               ]
             }
           ]

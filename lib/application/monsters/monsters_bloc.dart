@@ -44,6 +44,9 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
         tempType: currentState.type,
       ),
       close: (e) => currentState.copyWith.call(monsters: []),
+      resetFilters: (_) => _buildInitialState(
+        excludeKeys: state.maybeMap(loaded: (state) => state.excludeKeys, orElse: () => []),
+      ),
     );
 
     yield s;

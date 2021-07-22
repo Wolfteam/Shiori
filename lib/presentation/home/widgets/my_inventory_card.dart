@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/home/widgets/sliver_card_item.dart';
+import 'package:genshindb/presentation/home/widgets/card_item.dart';
 import 'package:genshindb/presentation/inventory/inventory_page.dart';
 
-class SliverMyInventoryCard extends StatelessWidget {
+class MyInventoryCard extends StatelessWidget {
   final bool iconToTheLeft;
 
-  const SliverMyInventoryCard({
+  const MyInventoryCard({
     Key? key,
     required this.iconToTheLeft,
   }) : super(key: key);
@@ -17,7 +17,8 @@ class SliverMyInventoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
-    return SliverCardItem(
+    return CardItem(
+      title: s.myInventory,
       iconToTheLeft: iconToTheLeft,
       icon: Icon(Icons.inventory, size: 60, color: theme.accentColor),
       onClick: _goToInventoryPage,

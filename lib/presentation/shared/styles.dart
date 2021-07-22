@@ -28,6 +28,7 @@ class Styles {
   static const edgeInsetHorizontal5 = EdgeInsets.symmetric(horizontal: 5);
   static const edgeInsetVertical16 = EdgeInsets.symmetric(vertical: 16);
   static const edgeInsetVertical10 = EdgeInsets.symmetric(vertical: 10);
+  static const edgeInsetHorizontal10 = EdgeInsets.symmetric(horizontal: 10);
 
   static const modalBottomSheetShape = RoundedRectangleBorder(
     borderRadius: BorderRadius.only(
@@ -46,4 +47,20 @@ class Styles {
       topLeft: Radius.circular(30),
     ),
   );
+
+  static const double materialCardHeight = 250;
+  static const double materialCardWidth = 220;
+  static const double homeCardHeight = 160;
+  static const double homeCardWidth = 250;
+  static const double birthdayCardWidth = 300;
+
+  static const endDrawerFilterItemMargin = EdgeInsets.only(top: 20);
+  static const double endDrawerIconSize = 40;
+
+  static double getIconSizeForItemPopupMenuFilter(bool forEndDrawer, bool forDefaultIcons) {
+    if (forDefaultIcons) {
+      return forEndDrawer ? 36 : 24;
+    }
+    return forEndDrawer ? 26 : 18;
+  }
 }

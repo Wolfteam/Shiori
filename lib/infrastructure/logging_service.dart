@@ -65,10 +65,10 @@ class LoggingServiceImpl implements LoggingService {
 
   Map<String, String> _buildError(String tag, String msg, [dynamic ex, StackTrace? trace]) {
     final map = {
-      'tag': tag,
-      'msg': msg,
-      'ex': ex?.toString() ?? 'No exception available',
-      'trace': trace?.toString() ?? 'No trace available',
+      'Tag': tag,
+      'Msg': msg,
+      'Ex': ex?.toString() ?? 'No exception available',
+      'Trace': trace?.toString() ?? 'No trace available',
     };
 
     map.addAll(_deviceInfoService.deviceInfo);

@@ -10,6 +10,7 @@ import 'package:genshindb/domain/utils/date_utils.dart' as utils;
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/shared/utils/size_utils.dart';
 import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
 import 'package:genshindb/presentation/shared/wrapped_ascension_material.dart';
 
@@ -26,7 +27,7 @@ class GameCodeListItem extends StatelessWidget {
   GameCodeListItem({
     Key? key,
     required GameCodeModel item,
-  })   : code = item.code,
+  })  : code = item.code,
         discoveredOn = item.discoveredOn,
         expiredOn = item.expiredOn,
         isUsed = item.isUsed,
@@ -82,7 +83,13 @@ class GameCodeListItem extends StatelessWidget {
                     Wrap(
                       alignment: WrapAlignment.center,
                       crossAxisAlignment: WrapCrossAlignment.center,
-                      children: rewards.map((m) => WrappedAscensionMaterial(image: m.fullImagePath, quantity: m.quantity, size: 25)).toList(),
+                      children: rewards
+                          .map((m) => WrappedAscensionMaterial(
+                                image: m.fullImagePath,
+                                quantity: m.quantity,
+                                size: SizeUtils.getSizeForCircleImages(context) * 0.6,
+                              ))
+                          .toList(),
                     ),
                     if (region != null)
                       Wrap(
@@ -92,7 +99,7 @@ class GameCodeListItem extends StatelessWidget {
                           Icon(
                             Icons.lock_outlined,
                             color: theme.accentColor,
-                            size: 15,
+                            size: SizeUtils.getSizeForCircleImages(context) * 0.45,
                           ),
                           Text(
                             s.onlyX(s.translateServerResetTimeType(region!)),
@@ -106,7 +113,7 @@ class GameCodeListItem extends StatelessWidget {
               ),
               Expanded(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     _buildDateInfoRow(
