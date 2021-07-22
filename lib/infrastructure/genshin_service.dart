@@ -44,6 +44,10 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.charactersDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _charactersFile = CharactersFile.fromJson(json);
+    assert(
+      _charactersFile.characters.map((e) => e.key).toSet().length == _charactersFile.characters.length,
+      'All the character keys must be unique',
+    );
   }
 
   @override
@@ -51,6 +55,10 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.weaponsDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _weaponsFile = WeaponsFile.fromJson(json);
+    assert(
+      _weaponsFile.weapons.map((e) => e.key).toSet().length == _weaponsFile.weapons.length,
+      'All the weapon keys must be unique',
+    );
   }
 
   @override
@@ -58,6 +66,10 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.artifactsDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _artifactsFile = ArtifactsFile.fromJson(json);
+    assert(
+      _artifactsFile.artifacts.map((e) => e.key).toSet().length == _artifactsFile.artifacts.length,
+      'All the artifact keys must be unique',
+    );
   }
 
   @override
@@ -65,6 +77,10 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.materialsDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _materialsFile = MaterialsFile.fromJson(json);
+    assert(
+      _materialsFile.materials.map((e) => e.key).toSet().length == _materialsFile.materials.length,
+      'All the material keys must be unique',
+    );
   }
 
   @override
@@ -79,6 +95,10 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.monstersDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _monstersFile = MonstersFile.fromJson(json);
+    assert(
+      _monstersFile.monsters.map((e) => e.key).toSet().length == _monstersFile.monsters.length,
+      'All the monster keys must be unique',
+    );
   }
 
   @override
@@ -86,6 +106,10 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.gadgetsDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _gadgetsFile = GadgetsFile.fromJson(json);
+    assert(
+      _gadgetsFile.gadgets.map((e) => e.key).toSet().length == _gadgetsFile.gadgets.length,
+      'All the gadgets keys must be unique',
+    );
   }
 
   @override
@@ -93,6 +117,10 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.furnitureDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _furnitureFile = FurnitureFile.fromJson(json);
+    assert(
+      _furnitureFile.furniture.map((e) => e.key).toSet().length == _furnitureFile.furniture.length,
+      'All the furniture keys must be unique',
+    );
   }
 
   @override
