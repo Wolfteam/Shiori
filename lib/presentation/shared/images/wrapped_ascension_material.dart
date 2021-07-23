@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'material_item_button.dart';
+import '../material_item_button.dart';
 
 class WrappedAscensionMaterial extends StatelessWidget {
   final String image;

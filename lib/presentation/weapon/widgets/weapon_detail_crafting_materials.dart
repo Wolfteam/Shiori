@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
+import 'package:genshindb/presentation/shared/images/wrapped_ascension_material.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
 import 'package:genshindb/presentation/shared/utils/size_utils.dart';
-import 'package:genshindb/presentation/shared/wrapped_ascension_material.dart';
 
 class WeaponCraftingMaterials extends StatelessWidget {
   final List<ItemAscensionMaterialModel> materials;

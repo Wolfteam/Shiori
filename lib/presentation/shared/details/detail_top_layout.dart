@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
+import 'constants.dart';
+
 const double _imageWidthOnPortrait = 350;
 
 double? _getWidthToUse(
@@ -98,14 +100,14 @@ class DetailTopLayout extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context);
     final isPortrait = mediaQuery.orientation == Orientation.portrait;
     final device = getDeviceType(mediaQuery.size);
-    final descriptionWidth = (mediaQuery.size.width / (isPortrait ? 1 : 2)) / (device == DeviceScreenType.mobile ? 1.2 : 2);
+    final descriptionWidth = (mediaQuery.size.width / (isPortrait ? 1 : 2)) / (device == DeviceScreenType.mobile ? 1.2 : 1.5);
     final imgAlignment = showShadowImage
         ? isPortrait
             ? Alignment.centerLeft
             : Alignment.bottomLeft
         : Alignment.center;
     return Container(
-      height: isPortrait ? getTopHeightForPortrait(context) : null,
+      height: isPortrait ? getTopHeightForPortrait(context, isAnSmallImage) : null,
       color: color,
       decoration: decoration,
       child: Stack(
@@ -158,10 +160,6 @@ class DetailTopLayout extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  double getTopHeightForPortrait(BuildContext context) {
-    return MediaQuery.of(context).size.height * 0.7;
   }
 }
 

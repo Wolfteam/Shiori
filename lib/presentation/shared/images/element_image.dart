@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:genshindb/domain/assets.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 
-import 'extensions/element_type_extensions.dart';
+import '../extensions/element_type_extensions.dart';
 
 class ElementImage extends StatelessWidget {
   final ElementType type;

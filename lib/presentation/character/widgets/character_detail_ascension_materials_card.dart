@@ -4,9 +4,9 @@ import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/common_table_cell.dart';
 import 'package:genshindb/presentation/shared/extensions/element_type_extensions.dart';
+import 'package:genshindb/presentation/shared/images/wrapped_ascension_material.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/shared/wrapped_ascension_material.dart';
 
 class CharacterDetailAscensionMaterialsCard extends StatelessWidget {
   final ElementType elementType;

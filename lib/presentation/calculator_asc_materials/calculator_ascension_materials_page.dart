@@ -7,7 +7,7 @@ import 'package:genshindb/domain/extensions/string_extensions.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/characters/characters_page.dart';
-import 'package:genshindb/presentation/shared/confirm_dialog.dart';
+import 'package:genshindb/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/genshin_db_icons.dart';
 import 'package:genshindb/presentation/shared/hawk_fab_menu.dart';

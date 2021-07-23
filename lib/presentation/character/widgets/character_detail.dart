@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 export 'character_detail_ascension_materials_card.dart';
 export 'character_detail_bottom.dart';
 export 'character_detail_build_card.dart';
@@ -14,7 +12,3 @@ export 'character_detail_top.dart';
 const double imgSize = 28;
 const double imgHeight = 550;
 const double charDescriptionHeight = 240;
-
-double getTopHeightForPortrait(BuildContext context) {
-  return MediaQuery.of(context).size.height * 0.7;
-}
