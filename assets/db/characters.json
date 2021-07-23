@@ -3073,6 +3073,7 @@
         {
           "isSupport": false,
           "weaponImages": [
+            "mistsplitter_reforged.png",
             "primordial_jade_cutter.png",
             "aquila_favonia.png",
             "skyward_blade.png",
@@ -3102,6 +3103,7 @@
         {
           "isSupport": true,
           "weaponImages": [
+            "mistsplitter_reforged.png",
             "aquila_favonia.png",
             "the_alley_flash.png",
             "skyward_blade.png",
@@ -6430,6 +6432,7 @@
             "amos_bow.png",
             "rust.png",
             "mitternachts_waltz.png",
+            "hamayumi.png",
             "compound_bow.png"
           ],
           "artifacts": [
@@ -7095,8 +7098,8 @@
           "isSupport": false,
           "weaponImages": [
             "amos_bow.png",
-            "sacrificial_bow.png",
             "the_viridescent_hunt.png",
+            "hamayumi.png",
             "prototype_crescent.png"
           ],
           "artifacts": [
@@ -7815,6 +7818,7 @@
             "staff_of_homa.png",
             "dragons_bane.png",
             "primordial_jade_winged_spear.png",
+            "kitain_cross_spear.png",
             "white_tassel.png"
           ],
           "artifacts": [
@@ -9171,6 +9175,7 @@
         {
           "isSupport": false,
           "weaponImages": [
+            "mistsplitter_reforged.png",
             "aquila_favonia.png",
             "the_black_sword.png",
             "the_flute.png",
@@ -11874,7 +11879,8 @@
             "lost_prayer_to_the_sacred_winds.png",
             "the_widsith.png",
             "solar_pearl.png",
-            "eye_of_perception.png"
+            "eye_of_perception.png",
+            "hakushin_ring.png"
           ],
           "artifacts": [
             {
@@ -12570,6 +12576,7 @@
           "weaponImages": [
             "the_widsith.png",
             "mappa_mare.png",
+            "hakushin_ring.png",
             "favonius_codex.png"
           ],
           "artifacts": [
@@ -17269,7 +17276,8 @@
             "skyward_harp.png",
             "rust.png",
             "amos_bow.png",
-            "the_viridescent_hunt.png"
+            "the_viridescent_hunt.png",
+            "hamayumi.png"
           ],
           "artifacts": [
             {
@@ -20735,7 +20743,8 @@
             "crescent_pike.png",
             "primordial_jade_winged_spear.png",
             "skyward_spine.png",
-            "vortex_vanquisher.png"
+            "vortex_vanquisher.png",
+            "kitain_cross_spear.png"
           ],
           "artifacts": [
             {
@@ -20771,7 +20780,8 @@
             "staff_of_homa.png",
             "dragons_bane.png",
             "lithic_spear.png",
-            "favonius_lance.png"
+            "favonius_lance.png",
+            "kitain_cross_spear.png"
           ],
           "artifacts": [
             {
