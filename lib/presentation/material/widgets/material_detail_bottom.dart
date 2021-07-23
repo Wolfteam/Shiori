@@ -40,6 +40,7 @@ class MaterialDetailBottom extends StatelessWidget {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return isPortrait
         ? _PortraitLayout(
+            description: description,
             rarity: rarity,
             charImgs: charImgs,
             weaponImgs: weaponImgs,
@@ -48,6 +49,7 @@ class MaterialDetailBottom extends StatelessWidget {
             droppedBy: droppedBy,
           )
         : _LandscapeLayout(
+            description: description,
             rarity: rarity,
             charImgs: charImgs,
             weaponImgs: weaponImgs,

@@ -85,6 +85,7 @@ class _LandscapeLayout extends StatelessWidget {
                     obtainedFrom: state.obtainedFrom,
                     relatedTo: state.relatedMaterials,
                     droppedBy: state.droppedBy,
+                    description: state.description,
                   ),
                 ),
               ],

@@ -43,6 +43,7 @@ class _PortraitLayout extends StatelessWidget {
       builder: (ctx, state) => state.map(
         loading: (_) => const Loading(useScaffold: false),
         loaded: (state) => DetailBottomPortraitLayout(
+          isAnSmallImage: false,
           children: [
             Container(
               margin: const EdgeInsets.only(bottom: 10),
