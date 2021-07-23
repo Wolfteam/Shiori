@@ -7,7 +7,7 @@ import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/extensions/duration_extensions.dart';
 import 'package:genshindb/domain/models/models.dart' as models;
 import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/circle_item.dart';
+import 'package:genshindb/presentation/shared/images/circle_item.dart';
 import 'package:genshindb/presentation/shared/number_picker_dialog.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 import 'package:genshindb/presentation/shared/utils/modal_bottom_sheet_utils.dart';

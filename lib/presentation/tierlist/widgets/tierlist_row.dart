@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/circle_character.dart';
+import 'package:genshindb/presentation/shared/images/circle_character.dart';
 import 'package:genshindb/presentation/shared/utils/size_utils.dart';
 
 import 'rename_tierlist_dialog.dart';

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/elements/elements_page.dart';
-import 'package:genshindb/presentation/shared/element_image.dart';
+import 'package:genshindb/presentation/shared/images/element_image.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 
 class ElementsCard extends StatelessWidget {

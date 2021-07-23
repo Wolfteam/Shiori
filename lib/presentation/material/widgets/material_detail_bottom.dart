@@ -4,15 +4,15 @@ import 'package:genshindb/domain/extensions/iterable_extensions.dart';
 import 'package:genshindb/domain/extensions/string_extensions.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/circle_character.dart';
-import 'package:genshindb/presentation/shared/circle_monster.dart';
-import 'package:genshindb/presentation/shared/circle_weapon.dart';
 import 'package:genshindb/presentation/shared/details/detail_bottom_portrait_layout.dart';
 import 'package:genshindb/presentation/shared/details/detail_tab_landscape_layout.dart';
 import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
+import 'package:genshindb/presentation/shared/images/circle_character.dart';
+import 'package:genshindb/presentation/shared/images/circle_monster.dart';
+import 'package:genshindb/presentation/shared/images/circle_weapon.dart';
+import 'package:genshindb/presentation/shared/images/wrapped_ascension_material.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
 import 'package:genshindb/presentation/shared/material_item_button.dart';
-import 'package:genshindb/presentation/shared/wrapped_ascension_material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class MaterialDetailBottom extends StatelessWidget {
