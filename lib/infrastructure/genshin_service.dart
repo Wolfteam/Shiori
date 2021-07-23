@@ -161,6 +161,11 @@ class GenshinServiceImpl implements GenshinService {
   List<TierListRowModel> getDefaultCharacterTierList(List<int> colors) {
     assert(colors.length == 5);
 
+    final ssTier = _charactersFile.characters
+        .where((char) => !char.isComingSoon && char.tier == 'ss')
+        .map((char) => Assets.getCharacterPath(char.image))
+        .toList();
+
     final sTier = _charactersFile.characters
         .where((char) => !char.isComingSoon && char.tier == 's')
         .map((char) => Assets.getCharacterPath(char.image))
@@ -183,6 +188,7 @@ class GenshinServiceImpl implements GenshinService {
         .toList();
 
     return <TierListRowModel>[
+      TierListRowModel.row(tierText: 'SS', tierColor: colors.first, charImgs: ssTier),
       TierListRowModel.row(tierText: 'S', tierColor: colors.first, charImgs: sTier),
       TierListRowModel.row(tierText: 'A', tierColor: colors[1], charImgs: aTier),
       TierListRowModel.row(tierText: 'B', tierColor: colors[2], charImgs: bTier),
