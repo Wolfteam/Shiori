@@ -362,7 +362,7 @@
   "confirmQuestion": "続行してもよろしいですか？",
   "gameSpecific": "ゲーム固有",
   "tools": "ツール",
-  "privacy": "Privacy",
-  "privacyMsgA": "This app does not collect any personal data or information that could be used to track or identify the user.",
-  "privacyMsgB": "The only collected data are crashes and app usage. This information is useful for identifying and fixing bugs. It also useful to identify which features are the most used within the app and which ones should be prioritized."
+  "privacy": "プライバシー",
+  "privacyMsgA": "このアプリは、ユーザーの追跡や識別に使用される可能性のある個人データや情報を収集しません。",
+  "privacyMsgB": "収集されるデータは、クラッシュとアプリの使用状況のみです。 この情報は、バグの特定と修正に役立ちます。 また、アプリ内で最も使用されている機能と、優先すべき機能を特定することも役立ちます。"
 }
