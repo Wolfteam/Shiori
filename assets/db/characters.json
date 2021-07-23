@@ -27011,6 +27011,7 @@
         {
           "key": "s1",
           "type": "normalAttack",
+          "image": "normal_attack_foreign_ironwind.png",
           "abilities": [
             {
               "key": "a1",
@@ -27029,47 +27030,57 @@
         {
           "key": "s2",
           "type": "elementalSkill",
+          "image": "traveler_electro_c5.png",
           "abilities": []
         },
         {
           "key": "s3",
-          "type": "elementalBurst"
+          "type": "elementalBurst",
+          "image": "bellowing_thunder.png"
         }
       ],
       "passives": [
         {
           "key": "p2",
-          "unlockedAt": 1
+          "unlockedAt": 1,
+          "image": "traveler_electro_p2.png"
         },
         {
           "key": "p3",
-          "unlockedAt": 4
+          "unlockedAt": 4,
+          "image": "traveler_electro_p3.png"
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "number": 1
+          "number": 1,
+          "image": "traveler_electro_c1.png"
         },
         {
           "key": "c2",
-          "number": 2
+          "number": 2,
+          "image": "traveler_electro_c2.png"
         },
         {
           "key": "c3",
-          "number": 3
+          "number": 3,
+          "image": "traveler_electro_c3.png"
         },
         {
           "key": "c4",
-          "number": 4
+          "number": 4,
+          "image": "traveler_electro_c4.png"
         },
         {
           "key": "c5",
-          "number": 5
+          "number": 5,
+          "image": "traveler_electro_c5.png"
         },
         {
           "key": "c6",
-          "number": 6
+          "number": 6,
+          "image": "traveler_electro_c6.png"
         }
       ],
       "subStatType": "atkPercentage",
