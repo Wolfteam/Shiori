@@ -530,7 +530,7 @@
         },
         {
             "key": "Shimenawa's Reminiscence",
-            "image": "shimenawas_reminiscence4.png",
+            "image": "shimenawas_reminiscence_4.png",
             "rarityMin": 4,
             "rarityMax": 5,
             "bonus": [
@@ -546,7 +546,7 @@
         },
         {
             "key": "Emblem of Severed Fate",
-            "image": "emblem_of_severed_fate4.png",
+            "image": "emblem_of_severed_fate_4.png",
             "rarityMin": 4,
             "rarityMax": 5,
             "bonus": [

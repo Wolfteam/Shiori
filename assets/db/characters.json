@@ -26213,7 +26213,7 @@
       "isNew": true,
       "isFemale": false,
       "region": "anotherWorld",
-      "role": "utility",
+      "role": "supportDps",
       "tier": "b",
       "ascensionMaterials": [
         {
@@ -27006,7 +27006,47 @@
           ]
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isSupport": true,
+          "weaponImages": [
+            "sacrificial_sword.png",
+            "favonius_sword.png",
+            "festering_fang.png",
+            "amenoma_kageuchi.png"
+          ],
+          "artifacts": [
+            {
+              "one": "emblem_of_severed_fate_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "electroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "one": "noblesse_oblige_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "electroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "energyRechargePercentage"
+          ]
+        }
+      ],
       "skills": [
         {
           "key": "s1",
