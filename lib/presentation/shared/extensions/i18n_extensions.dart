@@ -61,7 +61,7 @@ extension I18nExtensions on S {
   String translateItemLocationType(ItemLocationType type) {
     switch (type) {
       case ItemLocationType.na:
-        return 'N/A';
+        return na;
       case ItemLocationType.gacha:
         return gacha;
       case ItemLocationType.crafting:
@@ -77,7 +77,7 @@ extension I18nExtensions on S {
       case ItemLocationType.all:
         return all;
       case ItemLocationType.ps4:
-        return ps4;
+        return playstation;
       default:
         throw Exception('The provided location type = $type is not valid');
     }
