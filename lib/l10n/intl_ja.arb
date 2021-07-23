@@ -356,10 +356,13 @@
   "swipeToSeeMoreOptions": "右または左にスワイプすると、各項目の詳細オプションが表示されます。",
   "reduceTime": "時間を短縮",
   "use24HourFormatOnDates": "日付に 24 時間形式を使用する",
-  "ps4": "PS4",
+  "playstation": "PlayStation",
   "deleteAllSessions": "すべてのセッションを削除します",
   "deleteAllItems": "すべてのアイテムを削除します",
   "confirmQuestion": "続行してもよろしいですか？",
   "gameSpecific": "ゲーム固有",
-  "tools": "ツール"
+  "tools": "ツール",
+  "privacy": "Privacy",
+  "privacyMsgA": "This app does not collect any personal data or information that could be used to track or identify the user.",
+  "privacyMsgB": "The only collected data are crashes and app usage. This information is useful for identifying and fixing bugs. It also useful to identify which features are the most used within the app and which ones should be prioritized."
 }

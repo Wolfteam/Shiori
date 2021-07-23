@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'primogem_icon.dart';
+import 'images/primogem_icon.dart';
 import 'styles.dart';
 
 class ItemDescriptionDetail extends StatelessWidget {

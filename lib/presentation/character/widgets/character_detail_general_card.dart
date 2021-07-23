@@ -4,10 +4,10 @@ import 'package:genshindb/domain/extensions/string_extensions.dart';
 import 'package:genshindb/domain/extensions/weapon_type_extensions.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/details/detail_general_card.dart';
-import 'package:genshindb/presentation/shared/element_image.dart';
 import 'package:genshindb/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/genshin_db_icons.dart';
+import 'package:genshindb/presentation/shared/images/element_image.dart';
 import 'package:genshindb/presentation/shared/item_description.dart';
 
 import 'character_detail.dart';

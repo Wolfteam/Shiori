@@ -7,8 +7,8 @@ import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
 import 'package:genshindb/presentation/shared/bottom_sheets/right_bottom_sheet.dart';
+import 'package:genshindb/presentation/shared/dialogs/number_picker_dialog.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:genshindb/presentation/shared/number_picker_dialog.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'ascension_level.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:genshindb/presentation/home/widgets/ascension_material_item_card.dart';
-import 'package:genshindb/presentation/shared/circle_character.dart';
+import 'package:genshindb/presentation/shared/images/circle_character.dart';
 
 class CharCardAscensionMaterial extends StatelessWidget {
   final String name;

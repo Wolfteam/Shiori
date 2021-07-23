@@ -356,10 +356,13 @@
   "swipeToSeeMoreOptions": "Bạn có thể vuốt sang trái hoặc phải đế xem thêm các tùy chọn.",
   "reduceTime": "Giảm Thời Gian",
   "use24HourFormatOnDates": "Sử dụng định dạng 24h",
-  "ps4": "PS4",
+  "playstation": "PlayStation",
   "deleteAllSessions": "Delete all sessions",
   "deleteAllItems": "Delete all items",
   "confirmQuestion": "Are you sure you wanna proceed ?",
   "gameSpecific": "Game specific",
-  "tools": "Tools"
+  "tools": "Tools",
+  "privacy": "Privacy",
+  "privacyMsgA": "This app does not collect any personal data or information that could be used to track or identify the user.",
+  "privacyMsgB": "The only collected data are crashes and app usage. This information is useful for identifying and fixing bugs. It also useful to identify which features are the most used within the app and which ones should be prioritized."
 }
