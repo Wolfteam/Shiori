@@ -18,7 +18,7 @@ class ElementsCard extends StatelessWidget {
         margin: Styles.edgeInsetAll15,
         shape: RoundedRectangleBorder(borderRadius: Styles.homeCardItemBorderRadius),
         child: Container(
-          margin: const EdgeInsets.symmetric(vertical: 10),
+          margin: const EdgeInsets.symmetric(vertical: 5),
           constraints: const BoxConstraints(minHeight: 80, maxWidth: 340),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
