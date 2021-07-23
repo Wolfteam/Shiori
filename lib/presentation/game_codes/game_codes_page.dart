@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/bullet_list.dart';
+import 'package:genshindb/presentation/shared/info_dialog.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/mixins/app_fab_mixin.dart';
@@ -78,21 +78,7 @@ class _GameCodesPageState extends State<GameCodesPage> with SingleTickerProvider
       s.internetIsRequiredToRefreshItems,
       s.swipeToSeeMoreOptions,
     ];
-    await showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(s.information),
-        content: SingleChildScrollView(
-          child: BulletList(items: explanations, fontSize: 14),
-        ),
-        actions: [
-          ElevatedButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: Text(s.ok),
-          )
-        ],
-      ),
-    );
+    await showDialog(context: context, builder: (context) => InfoDialog(explanations: explanations));
   }
 }
 
