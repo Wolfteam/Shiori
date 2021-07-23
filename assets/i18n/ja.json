@@ -3145,7 +3145,7 @@
     },
     {
       "key": "Traveler (Anemo)",
-      "name": "主人公 (風)",
+      "name": "旅人 (風)",
       "description": "世界の外から漂流してきた旅人。肉親が見知らぬ神に連れ去られたため、七神を探す旅に出た。",
       "skills": [
         {
@@ -3261,7 +3261,7 @@
     },
     {
       "key": "Traveler (Geo)",
-      "name": "主人公 (岩)",
+      "name": "旅人 (岩)",
       "description": "世界の外から漂流してきた旅人。肉親が見知らぬ神に連れ去られたため、七神を探す旅に出た。",
       "skills": [
         {
@@ -4213,61 +4213,62 @@
     {
       "key": "Ayaka",
       "name": "神里綾華",
-      "description": "稲妻名門「神里家」のお嬢様、高貴で優雅な美しい少女。",
+      "description": "稲妻「社奉行」神里家の令嬢。容姿端麗で品行方正な人物。",
       "skills": [
         {
           "key": "s1",
-          "title": "Kamisato Art - Kabuki",
+          "title": "神里流・傾き",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 5 rapid strikes.",
+              "description": "剣による最大5段の連続攻撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash a continuous stream of sword ki.",
+              "description": "一定のスタミナを消費し、居合で連続した剣風を放つ。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に広範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
+          "title": "神里流・氷華",
+          "description": "氷の華を咲かせ、周囲の敵をノックバックし氷元素範囲ダメージを与える。",
           "title": "Kamisato Art: Hyouka",
-          "description": "Summons blooming ice to launch nearby opponents, dealing Cryo DMG.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Kamisato Art: Soumetsu",
-          "description": "Summons up the frost with flawless poise, unleashing a Souken Gate that travels forward continuously.",
+          "title": "神里流·霜滅",
+          "description": "艶やかな立ち姿で氷霜を集め、持続的に前進する霜見雪関扉を発動する。",
           "abilities": [
             {
-              "name": "Frostflake Seki no To",
+              "name": "霜見雪関扉",
               "descriptions": [
-                "A storm of whirling icy winds that slashes repeatedly at opponents it touches, dealing Cryo DMG.",
-                "Blooms once its duration ends, dealing AoE Cryo DMG."
+                "鋭い刃のような霜風で敵に斬撃を与え続け、氷元素ダメージを与える。",
+                "継続時間終了時に咲き、氷元素範囲ダメージを与える。"
               ]
             }
           ]
         },
         {
           "key": "s4",
-          "title": "Kamisato Art: Senho",
+          "title": "神里流·霰歩",
           "description": null,
           "abilities": [
             {
-              "name": "Alternate Sprint",
-              "description": "Ayaka consumes Stamina and cloaks herself in frozen fog that moves with her. In Senho form, she moves at high speed on water. When she reappears, the following effects occur:",
+              "name": "ダッシュの代わりに発動する",
+              "description": "氷流に隠れて激流となり、スタミナを消費して素早く移動する。\nこの状態の神里綾華は水面上を高速移動できる。\n霰歩が終了し、姿を現した時に、下記の効果が発動される。",
               "descriptions": [
-                "Ayaka unleashes frigid energy to apply Cryo on nearby opponents.",
-                "Cold congeals along Ayaka's blade, infusing her attacks with Cryo for a brief period."
+                "氷霜の力を放ち、周囲の敵に氷元素付着を与える。",
+                "氷の力を剣に集中させ、一定時間氷元素付与を獲得する。"
               ]
             }
           ]
@@ -4276,66 +4277,66 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Fruits of Shinsa",
-          "description": "When Ayaka crafts Weapon Ascension Materials, she has a 10% chance to receive double the product.",
+          "title": "鑑査の心得",
+          "description": "武器突破素材を合成する時、10%の確率でアイテムを2倍獲得する。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Amatsumi Kunitsumi Sanctification",
-          "description": "After using Kamisato Art: Hyouka, Kamisato Ayaka's Normal and Charged Attacks deal 30% increased DMG for 6s.",
+          "title": "天つ罪・国つ罪の鎮詞",
+          "description": "神里流・氷華を発動した後の6秒間、神里綾華の通常攻撃と重撃のダメージ+30%。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Kanten Senmyou Blessing",
-          "description": "When the Cryo application at the end of Kamisato Art: Senho hits an opponent, Kamisato Ayaka gains the following effects:",
+          "title": "寒空の宣命祝詞",
+          "description": "神里流・霰歩終了後に発生する氷が敵に命中すると、神里綾華は下記効果を獲得する。",
           "descriptions": [
-            "Restores 10 Stamina",
-            "Gains 18% Cryo DMG Bonus for 10s."
+            "スタミナを10ポイント回復する。",
+            "氷元素ダメージ+18%、継続時間10秒。"
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Snowswept Sakura",
-          "description": "When Kamisato Ayaka's Normal or Charged Attacks deal Cryo DMG to opponents, it has a 50% chance of decreasing the CD of Kamisato Art: Hyouka by 0.3s. This effect can occur once every 0.1s.",
+          "title": "霜枯れの墨染櫻",
+          "description": "神里綾華の通常攻撃または重撃が敵に氷元素ダメージを与えた時、50%の確率で神里流 • 氷華のクールタイム-0.3秒。この効果は0.1秒毎に1回のみ発動可能。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Blizzard Blade Seki no To",
-          "description": "When casting Kamisato Art: Soumetsu, unleashes 2 smaller additional Frostflake Seki no To, each dealing 20% of the original storm's DMG.",
+          "title": "三重雪関扉",
+          "description": "神里流 • 霜滅発動時、追加で2つの小さい霜見雪関扉を放ち、それぞれ本来の20%分のダメージを与える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Frostbloom Kamifubuki",
-          "description": "Increases the Level of Kamisato Art: Soumetsu by 3.\nMaximum upgrade level is 15.",
+          "title": "花白錦画紙吹雪",
+          "description": "神里流 • 霜滅のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Ebb and Flow",
-          "description": "Opponents damaged by Kamisato Art: Soumetsu's Frostflake Seki no To will have their DEF decreased by 30% for 6s.",
+          "title": "栄枯盛衰",
+          "description": "神里流 • 霜滅の霜見雪関扉のダメージを受けた敵の防御力-30%、継続時間6秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Blossom Cloud Irutsuki",
-          "description": "Increases the Level of Kamisato Art: Hyouka by 3.\nMaximum upgrade level is 15.",
+          "title": "花雲鐘入月",
+          "description": "神里流 • 氷華のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Dance of Suigetsu",
-          "description": "Kamisato Ayaka gains Usurahi Butou every 10s, increasing her Charged Attack DMG by 298%. This buff will be cleared 0.5s after Ayaka's Charged ATK hits an opponent, after which the timer for this ability will restart.",
+          "title": "間水月",
+          "description": "10秒毎に、神里綾華は「薄氷の舞」状態を獲得し、重撃ダメージが298%アップする。重撃が敵に命中してから0.5秒後、「薄氷の舞」の効果はクリアされ、クールタイムのカウントが開始される。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -4398,53 +4399,53 @@
     {
       "key": "Traveler (Electro)",
       "name": "旅人 (雷)",
-      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
+      "description": "世界の外から漂流してきた旅人。肉親が見知らぬ神に連れ去られたため、七神を探す旅に出た。",
       "skills": [
         {
           "key": "s1",
-          "title": "Foreign Thundershock",
+          "title": "異邦の落雷",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 rapid strikes.",
+              "description": "剣による最大5段の連続攻撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "一定のスタミナを消費し、前方に斬撃を2回放つ。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Lightning Blade",
-          "description": "Unleashes three swift thunder shadows that deal Electro DMG to opponents and leave an Abundance Amulet behind after hitting an opponent.\n2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.",
+          "title": "雷影剣",
+          "description": "迅速の雷影を3つ放つ。雷影は敵に雷元素ダメージを与え、命中時に豊穣の勾玉を残す。\n初期状態では豊穣の勾玉を最大2つまで生成できる。スキルを発動すると、自身が生成した豊穣の勾玉がクリアされる。キャラクターが近寄ると、豊穣の勾玉を吸収し、下記効果を獲得する。元素エネルギーが回復する。継続時間内、元素チャージ効率がアップする。",
           "abilities": [
             {
-              "name": "Abundance Amulets",
-              "description": "When a character is near an Abundance Amulet, they will absorb it and obtain the following effects:",
+              "name": "豊穰の勾玉",
+              "description": "キャラクターが近寄ると、豊穰の勾玉を吸収し、下記効果を獲得する。",
               "descriptions": [
-                "Restores Elemental Energy",
-                "Increases Energy Recharge during the Abundance Amulet's duration."
+                "元素エネルギーが回復する。",
+                "継続時間内、元素チャージ効率がアップする。"
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Bellowing Thunder",
-          "description": "You call upon the protection of lightning, knocking nearby opponents back and dealing Electro DMG to them.",
+          "title": "電光雷轟",
+          "description": "身に纏う雷霆を召喚し、加護を得る。周囲の敵をノックバックし、雷元素ダメージを与える。",
           "abilities": [
             {
-              "name": "Lightning Shroud",
-              "description": "When your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing Electro DMG.\nWhen Falling Thunder hits opponents, it will regenerate Energy for that character.\nOne instance of Falling Thunder can be generated every 0.5s.",
+              "name": "身に纏う雷霆",
+              "description": "出場している自身のキャラクターの通常攻撃または重撃が敵に命中すると、威光の落雷が発動し、敵に雷元素ダメージを与える。\n威光の落雷が敵に命中すると、該当キャラクターの元素エネルギーを回復する。\n威光の落雷の発生は0.5秒毎に1回のみ可能。",
               "descriptions": []
             }
           ]
@@ -4453,57 +4454,57 @@
       "passives": [
         {
           "key": "p2",
-          "title": "Thunderflash",
-          "description": "When another nearby character in the party obtains an Abundance Amulet created by Lightning Blade, Lightning Blade's CD is decreased by 1.5s.",
+          "title": "転瞬の迅雷",
+          "description": "周囲のチームメンバー（旅人自身を除く）が雷影剣で生成された豊穰の勾玉を拾うと、雷影剣のクールタイム-1.5秒。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Resounding Roar",
-          "description": "Increases the Energy Recharge effect granted by Lightning Blade's Abundance Amulet by 10% of the Traveler's Energy Recharge.",
+          "title": "轟く雷鳴",
+          "description": "旅人自身の元素チャージ効率の10%を基準に、雷影剣が生成した豊穰の勾玉による元素チャージ効率をアップする。",
           "descriptions": []
         }
       ],
       "constellations":  [
         {
           "key": "c1",
-          "title": "Spring Thunder of Fertility",
-          "description": "The number of Abundance Amulets that can be generated using Lightning Blade is increased to 3.",
+          "title": "豊穣の春雷",
+          "description": "雷影剣発動時に生成する豊穣の勾玉の数を3つにアップ。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Violet Vehemence",
-          "description": "When Falling Thunder created by Bellowing Thunder hits an opponent, it will decrease their Electro RES by 15% for 8s.",
+          "title": "激怒の蒼雷",
+          "description": "電光雷轟の威光の落雷が敵に命中すると、敵の雷元素耐性=15%、継続時間8秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Distant Crackling",
-          "description": "Increases the Level of Bellowing Thunder by 3.\nMaximum upgrade level is 15.",
+          "title": "連延の遠雷",
+          "description": "電光雷轟のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Fickle Cloudstrike",
-          "description": "When a character obtains Abundance Amulets generated by Lightning Blade, if this character's Energy is less than 35%, the Energy restored by the Abundance Amulets is increased by 100%.",
+          "title": "予測不能な雷雲",
+          "description": "キャラクターが雷影剣で生成した豊穣の勾玉を獲得した時、該当キャラクターの元素エネルギーが35%未満の場合、豊穣の勾玉で回復できる元素エネルギー+100%。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Clamor in the Wilds",
-          "description": "Increases the Level of Lightning Blade by 3..\nMaximum upgrade level is 15.",
+          "title": "荒野の雷鳴",
+          "description": "雷影剣のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "World-Shaker",
-          "description": "Every 2 Falling Thunder attacks triggered by Bellowing Thunder will increase the DMG dealt by the next Falling Thunder by 100%, and will restore an additional 1 Energy to the current character.",
+          "title": "世を揺るがす神雷",
+          "description": "電光雷轟が威光の落雷を2回引き起こすたびに、次回の威光の落雷のダメージ+100%。さらに現在のキャラクターの元素エネルギーを1ポイント回復する。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -5191,39 +5192,39 @@
     },
     {
       "key": "Amenoma Kageuchi",
-      "name": "Amenoma Kageuchi",
-      "description": "A blade custom made for a famed samurai who could strike down a tengu warrior, known for their incredible agility, in midair.",
-      "refinement": "After casting an Elemental Skill, gain 1 Succession Seed. This effect can be triggered once every 5s. The Succession Seed lasts for 30s. Up to 3 Succession Seeds may exist simultaneously. After using an Elemental Burst, all Succession Seeds are consumed and after 2s, the character regenerates {{0}} Energy for each seed consumed."
+      "name": "天目影打",
+      "description": "神速で名を馳せる天狗をも斬り墜とすという伝説を持つ、名士が発注した刀。",
+      "refinement": "元素スキルを発動した後、継続時間30秒の継承の印を1つ獲得する。この効果は5秒毎に1回のみ発動可能で、継承の印は同時に最大3つまで存在可能。元素爆発を発動すると、所持している継承の印を全て消費し、消費した継承の印1つにつき、2秒後に該当キャラクターの元素エネルギーを {{0}} ポイント回復する。"
     },
     {
       "key": "Mistsplitter Reforged",
-      "name": "Mistsplitter Reforged",
-      "description": "A sword that blazes with a fierce violet light. The name \"Reforged\" comes from it having been broken once before.",
-      "refinement": "Gain a {{0}}% Elemental DMG Bonus for all element and receive the might of the Mistsplitter's Emblem. At stack levels 1/2/3, the Mistsplitter's Emblem provides a {{1}}/{{2}}/{{3}}% Elemental DMG Bonus for the character's Elemental Type. The character will obtain 1 stack of Mistsplitter's Emblem in each of the following scenarios: Normal Attack deals Elemental DMG (stack lasts 5s), casting Elemental Burst (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently."
+      "name": "霧切の廻光",
+      "description": "烈々たる紫の光に輝く太刀。「廻光」という名は、かつて砕かれた過去に由来している。",
+      "refinement": "全ての元素ダメージ +{{0}}%、「霧切の巴紋」を獲得する。霧切の巴紋を1/2/3層有する時、自身の元素タイプの元素ダメージ +{{1}}/{{2}}/{{3}}% 。霧切の巴紋は次の各状況において獲得できる。通常攻撃で元素ダメージを与えた時、継続時間5秒の霧切の巴紋を1層獲得する。元素爆発を発動した時、継続時間10秒の霧切の巴紋を1層獲得する。また、キャラクターの元素エネルギーが100%未満の場合、霧切の巴紋を1層獲得する、この霧切の巴紋は元素エネルギーが満タンになると消失する。霧切の巴紋の継続時間は層ごとに独立している。"
     },
     {
       "key": "Katsuragikiri Nagamasa",
-      "name": "Katsuragikiri Nagamasa",
-      "description": "A blade that was once made in Tatarasuna. Heavy and tough.",
-      "refinement": "Increases Elemental Skill DMG by {{0}}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {{1}} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field."
+      "name": "桂木斬長正",
+      "description": "たたら砂で鍛えられた刀。重くて強靭である。",
+      "refinement": "元素スキルのダメージ +{{0}}%。元素スキルが命中した時、キャラクターは元素エネルギーを3ポイント失う。その後の6秒間、2秒毎に元素エネルギーを {{1}} ポイント獲得する。この効果は10秒毎に1回のみ発動でき、待機中のキャラクターも発動できる。"
     },
     {
       "key": "Kitain Cross Spear",
-      "name": "Kitain Cross Spear",
-      "description": "A special lance that was once used by a famed warrior who guarded the Tatarigami on Yashiori Island.",
-      "refinement": "Increases Elemental Skill DMG by {{0}}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {{1}} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field."
+      "name": "喜多院十文字槍",
+      "description": "ヤシオリ島で「祟り神」を見守る槍術の名士が使っていた特殊な長槍。",
+      "refinement": "元素スキルのダメージ +{{0}}%。元素スキルが命中した時、キャラクターは元素エネルギーを3ポイント失う。その後の6秒間、2秒毎に元素エネルギーを {{1}} ポイント獲得する。この効果は10秒毎に1回のみ発動でき、待機中のキャラクターも発動できる。"
     },
     {
       "key": "Hamayumi",
-      "name": "Hamayumi",
-      "description": "A certain shrine maiden once owned this warbow. It was made with surpassing skill, and is both intricate and sturdy.",
-      "refinement": "Increases Normal Attack DMG by {{0}}% and Charged Attack DMG by {{1}}%. When the equipping character's Energy reaches 100%, this effect is increased by 100%."
+      "name": "破魔の弓",
+      "description": "ある巫々の所有物だった戦弓。優れた技術で作られ、精巧で強靭である。",
+      "refinement": "通常攻撃のダメージ +{{0}}%、重撃のダメージ +{{1}}%。この武器を装備したキャラクターの元素エネルギーが満タンの場合、該当効果が2倍になる。"
     },
     {
       "key": "Hakushin Ring",
-      "name": "Hakushin Ring",
-      "description": "A catalyst that carries the memory of the Kitsune Saiguu of ancient times. However, this device is but an impoverished vessel for the full breadth of her thought.",
-      "refinement": "After the character equipped with this weapon triggers an Electro elemental reaction, nearby party members of an Elemental Type involved in the elemental reaction receive a {{0}}% Elemental DMG Bonus for their element, lasting 6s. Elemental Bonuses gained in this way cannot be stacked."
+      "name": "白辰の輪",
+      "description": "過去の「狐斎宮」の想いが込められた法器。しかし、彼女の想いの大きさでは、この小さな器に入りきらない。",
+      "refinement": "この武器を装備したキャラクターが雷元素に関連する反応を起こした時、周囲チーム内にてその反応に関わった元素タイプのキャラクターは強化効果を獲得する。強化効果：該当元素タイプの元素ダメージ +{{0}}%、継続時間6秒。この方式で獲得する元素ダメージアップ効果は重ね掛けできない。"
     }
   ],
   "artifacts": [
@@ -5699,29 +5700,29 @@
     },
     {
       "key": "Shimenawa's Reminiscence",
-      "name": "Shimenawa's Reminiscence",
+      "name": "追憶の注連縄",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "ATK +18%."
+          "bonus": "攻撃力+18%"
         },
         {
           "key": "b2",
-          "bonus": "When casting an Elemental Skill, if the character has 15 or more Energy, they lose 15 Energy and Normal/Charged/ Plunging Attack DMG is increased by 50% for 10s."
+          "bonus": "元素スキルを発動した時、キャラクターの元素エネルギーが15以上の場合、元素エネルギーを15消費し、次の10秒間通常攻撃、重撃、落下攻撃ダメージ+50%"
         }
       ]
     },
     {
       "key": "Emblem of Severed Fate",
-      "name": "Emblem of Severed Fate",
+      "name": "絶縁の旗印",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Energy Recharge +20%"
+          "bonus": "元素チャージ効率+20%"
         },
         {
           "key": "b2",
-          "bonus": "Increases Elemental Burst DMG by 25% of Energy Recharge. A maximum of 75% bonus DMG can be obtained in this way."
+          "bonus": "元素チャージ効率の25%を基準に、元素爆発ダメージがアップする。この方式でアップできるダメージは最大75%まで。"
         }
       ]
     }
@@ -6623,178 +6624,178 @@
     },
     {
       "key": "TransienceA",
-      "name": "Teachings of Transience",
-      "description": "Transience is the dream of the nation of thunder.\nFleeting glories are the highest expression of mortal beauty, for are we mortals not like the flashing lightning itself? Like a lovely dream or blossoming spark, we shall leave a gorgeous mark on the eternal night sky."
+      "name": "「浮世」の教え",
+      "description": "雷の国が抱く夢は浮世である。\n浮世の栄華は人生の美しさを表す最高の表現。人の一生、この世にとっては迅雷の如く。夢や花火のように、瞬く間に消えてしまうが、永遠なる夜空に、その輝かしい痕跡を残すことができる。"
     },
     {
       "key": "TransienceB",
-      "name": "Guide to Transience",
-      "description": "Transience is the dream of the nation of thunder.\nWe find the greatest joys in mortal life in transient dreams, for is life itself not like the shadow of the thunder? Pursue your dreams into the clouds if you wish, and enjoy the unexpected silence of the dim lamp-lit nights."
+      "name": "「浮世」の導き",
+      "description": "雷の国が抱く夢は浮世である。\n浮世の追求は人生の美しさの価値。人の一生、この世にとっては驚雷の如く。手を伸ばして追求すれば、雲の上に飛んで行ってしまうが、心を落ち着かせれば、知らないうちにやってくる。"
     },
     {
       "key": "TransienceC",
-      "name": "Philosophies of Transience",
-      "description": "Transience is the dream of the nation of thunder.\nThe fleeting nature of this mortal world is the essence of beauty, for are our lives in this world not akin to the levin flash? Yet the might of the divine comes suddenly, and before the roar of eternity, who can stand?"
+      "name": "「浮世」の哲学",
+      "description": "雷の国が抱く夢は浮世である。\n浮世の儚さは人生の美しさの本質。人の一生、この世にとっては稲光の如く。神威は刹那に顕現する。だが、その永遠の威圧に耐えられる者はこの世にいるのだろうか？"
     },
     {
       "key": "EleganceA",
-      "name": "Teachings of Elegance",
-      "description": "Elegance is the form of the nation of thunder.\nElegance brooks no flattery, and the elegant are ever noble. They are like the sea eagles who soar on high to contend with the resounding storms. They will not cater to philistine vulgarity, as one would not cast a flower crown into the mud, staining its dignity."
+      "name": "「風雅」の教え",
+      "description": "雷の国が表す姿は風雅である。\n風雅とは、媚びぬこと。風雅たる者は常に高貴である。大空を翔け、雷雨に立ち向かう高貴なる鷹のように。低俗に迎合して花冠を泥に染めても、自らの尊厳を汚すだけである。"
     },
     {
       "key": "EleganceB",
-      "name": "Guide to Elegance",
-      "description": "Elegance is the form of the nation of thunder.\nElegance shuns arrogance. The elegant are ever humble, and only by discarding vanity and sloth may one see clearly — and is there not beauty and loveliness even in the basest of appearances?"
+      "name": "「風雅」の導き",
+      "description": "雷の国が表す姿は風雅である。\n風雅とは、傲慢にならぬこと。風雅たる者は常に謙虚である。虚飾と怠惰を排除すれば、人は目を輝かせ、どんなに見苦しい外観からでも真の美しさと優雅を求めることができる。"
     },
     {
       "key": "EleganceC",
-      "name": "Philosophies of Elegance",
-      "description": "Elegance is the form of the nation of thunder.\nElegance abhors vulgarity, and the elegant ever walk alone. Resisting base evils, unmoved by base loves, never taking refuge in base ignorance — that is how one perceives the chasm between the elegant and the contemptuous."
+      "name": "「風雅」の哲学",
+      "description": "雷の国が表す姿は風雅である。\n風雅とは、俗に染まらぬこと。風雅たる者は群れない。俗世の悪に屈せず、俗世の愛に心動かず、俗世の無知から逃れぬことで、優雅さと醜さを見極めることができる。"
     },
     {
       "key": "LightA",
-      "name": "Teachings of Light",
-      "description": "Light is the yearning of the land of thunder.\nThe ruler who claims to have perceived all forever aims to hoard celestial glory. But this vision that cannot be shared only leads people to long for it more fiercely, like moths diving into the flame."
+      "name": "「天光」の教え",
+      "description": "雷の国が求めるのは天光である。\n全てを知り尽くしていると思い込んだ大君は、常に高天の光彩を手中に収めることを企む。しかし刹那しか生きられない者たちは、炎に向かう蛾のように、自らの共感されぬ願いを熱烈に追求する。 is the yearning of the land of thunder.\nThe ruler who claims to have perceived all forever aims to hoard celestial glory. But this vision that cannot be shared only leads people to long for it more fiercely, like moths diving into the flame."
     },
     {
       "key": "LightB",
-      "name": "Guide to Light",
-      "description": "Light is the yearning of the land of thunder.\nThough the sun rays themselves should be blocked by layers upon layers of clouds, there are still those in the thunder god's land who dream of piercing that wrathful sea of lightning to pursue the glory of the divine, fearing not that they shall be cruelly struck down."
+      "name": "「天光」の導き",
+      "description": "雷の国が求めるのは天光である。\n太陽の光が雷雲に覆われていても、鳴神の志士は冷酷たる死を恐れず。雲雀のように雷光と険しき空を突き破り、天光の痕跡を追い求める。"
     },
     {
       "key": "LightC",
-      "name": "Philosophies of Light",
-      "description": "Light is the yearning of the land of thunder.\nThough they must live forever on the earth, humanity will always reach for the light. Mortals will pursue and surpass, and they will never stop. A sealed eternity may, perhaps, look magnificent, but its essence is death."
+      "name": "「天光」の哲学",
+      "description": "雷の国が求めるのは天光である。\nたとえ永遠に地下に住みついていても、人は天光へ祈る。人は常に超越を望んでおり、それを止めることはできない。閉鎖された静寂の永遠も壮麗だが、その本質は死と同然だ。"
     },
     {
       "key": "Sakura Bloom",
-      "name": "Sakura Bloom",
-      "description": "Blossoms from the Sacred Sakura at the Grand Narukami Shrine, filled with a fondness for Inazuma."
+      "name": "緋櫻毬",
+      "description": "鳴神大社の神櫻から落ちる花びら。稲妻の地の恵みを受けている。"
     },
     {
       "key": "Crystal Marrow",
-      "name": "Crystal Marrow",
-      "description": "A crystal that contains a sliver of Tatarigami power. Adding this material during smelting will greatly increase the strength and toughness of metals."
+      "name": "晶化骨髄",
+      "description": "「祟り神」の力を宿した結晶体。鍛冶時にこの物質を加えると、鋼鉄製品の強度と靭性を大幅に向上させることができる。"
     },
     {
       "key": "Naku Weed",
-      "name": "Naku Weed",
-      "description": "Even on windless days, this plant will tremble lightly amid the cries of thunder. The part of it that resembles petals are in fact extensions of the leaves meant to protect the fragile flower."
+      "name": "鳴草",
+      "description": "風のない日でも、雷鳴に反応し微かに揺れ動く植物。花びらのように見える構造は、実は葉っぱであり、脆弱な花を守っている。"
     },
     {
       "key": "HandguardA",
-      "name": "Old Handguard",
-      "description": "A battle-worn handguard that was once mounted on an Inazuman blade.\nFor those adept in the art of the sword, the tsuba is a defense from the edge of an opponent's blade. For beginners, it is a defense made for their own right hand, to protect it from itself."
+      "name": "古びた鍔",
+      "description": "稲妻の刀についている防具。多くの戦いを経験している。\n剣術の達人にとって、鍔は相手の刃から手を守ってくれる物。新人にとっては、誤って手が柄から刀身へと滑らないよう守ってくれる物だ。"
     },
     {
       "key": "HandguardB",
-      "name": "Kageuchi Handguard",
-      "description": "A handguard mounded upon a sword of some distinction.\nInazuma has a long tradition of sword-making. When making swords, smiths will often make several different weapons at once, before choosing from among them the \"shinuchi,\" or the best weapon, while the others are known as \"kageuchi.\""
+      "name": "影打の鍔",
+      "description": "優れた刀に使われる防具。\n稲妻には、刀鍛冶の長き伝統がある。刀工が刀を鍛える時、必ず何本か刀を打ち、その中で一番出来の良い物を「真打」として選び、残りは「影打」と呼ぶ。"
     },
     {
       "key": "HandguardC",
-      "name": "Famed Handguard",
-      "description": "An intricately-made handguard that was mounted upon a famed weapon.\nSome believe that swords have souls and lives of their own, and thus deserve their own names. Those who love their blades will be acknowledged by them in turn. But those who see their swords as friends or even lovers should be warned that this relationship is built on death and bloodshed. The passions of those who dance with their blade amid crimson showers must surely be cooled someday by fickle steel."
+      "name": "名刀の鍔",
+      "description": "名刀に取り付けられた美しい防具。\n刀には魂が宿り、命が存在すると人々は信じている。刀に名前を付けるのも、そのためである。刀を大切にする者は、刀にも報われる。しかし、刀と親友に、ひいては恋人にまでなった者は、その感情は殺伐を伴うことを肝に銘じておかなければならない。血を浴び、常に刀と踊ってきた者の熱血は、いずれ無情の鋼鉄によって冷めてしまう。"
     },
     {
       "key": "Chaos2A",
-      "name": "Chaos Gear",
-      "description": "Comes from a now-inactive ancient Ruin machine.\nThis is the energy source of that biomimetic mechanism."
+      "name": "混沌の機関",
+      "description": "すでに動かなくなった古代遺跡機械からとったもの。\nあのようなからくりの動力源であるようだ。"
     },
     {
       "key": "Chaos2B",
-      "name": "Chaos Axis",
-      "description": "Comes from a now-inactive ancient Ruin machine.\nEven the great techniques and unknown power of this device must come to nothing should the machine that contained them ever fail to maintain structural integrity."
+      "name": "混沌の中枢",
+      "description": "すでに動かなくなった古代遺跡機械。\n今はその構造すら維持できなくなったからくり。内部に仕組まれた、偉大な技術と未知の力も価値を失ってしまった。"
     },
     {
       "key": "Chaos2C",
-      "name": "Chaos Oculus",
-      "description": "Comes from a now-inactive ancient Ruin machine.\nThe \"Ruin\" part of the name comes from the areas where they are most active. However, Ruin machines actually have little in common with the detritus in which they are often found.\nIn the ancient past, these ruins were once part of a civilization mighty enough to almost touch the dome of the firmament, while \"ruin\" still waits in the deep places of the earth, awaiting the order to arise and tread all kingdoms underfoot."
+      "name": "混沌の真眼",
+      "description": "すでに動かなくなった古代遺跡機械からとったもの。\nその名にある「遺跡」は、彼らがよく出没するエリアを由来としている。しかし実際、彼らとその「遺跡」の間にはあまり共通点がなかった。\n遠い昔、遺跡は天空の頂点にも届く偉大なる文明に属していた。しかし、その「遺跡」は大地の深部に身を置き、国々を葬る命令を待ち続けている。"
     },
     {
       "key": "PrismA",
-      "name": "Dismal Prism",
-      "description": "This was once a prism that could polarize light, but has grown dull through the passing of years."
+      "name": "暗色プリズム",
+      "description": "本来は光を屈折させるプリズムだったが、長い歳月の間、徐々に暗澹となった。"
     },
     {
       "key": "PrismB",
-      "name": "Crystal Prism",
-      "description": "A prism that can bend light.\nIllusory images can be made using such prisms, giving such devices — in a manner of speaking — the power to sway human hearts."
+      "name": "水晶プリズム",
+      "description": "光を屈折させるプリズム。実際に存在しない虚像を作り出すことができる。ある意味、人の心を操る力をも持っている。"
     },
     {
       "key": "PrismC",
-      "name": "Polarizing Prism",
-      "description": "A prism that can bend light.\nIn the darkness, these prisms can spread thin light into a wider area. Perhaps this is due to this quirk that these prisms can grant a measure of peace to those whose hearts are oft shrouded in darkness."
+      "name": "偏光プリズム",
+      "description": "光を屈折させるプリズム。暗闇の中でも、微かな光をより広い範囲に拡散させる。この特性が原因か、このようなプリズムは心に闇を抱えている人を少し安心させる力がある。"
     },
     {
       "key": "Perpetual Heart",
-      "name": "Perpetual Heart",
-      "description": "The core that powers the autonomous movements of the Perpetual Mechanical Array.\nSome theorize that the symbols on these cores have knowledge and logic inscribed upon them in a language that eyes cannot perceive. Some go a step further and believe that these unique Ruin machines autonomously decided to forsake a biomimetic form to pursue strength of function on account of their especially large cores and complex inscriptions."
+      "name": "恒常からくりの芯",
+      "description": "恒常からくり陣形の自律行動を維持するコア。一説によると、コアの模様の中には肉眼で読むことができない言語で、知能とロジックが書かれている。別の説によると、この大きなコアと複雑な模様を持つ遺跡機械は、自発的に生物の姿を捨て、強大な性能を求めたらしい。"
     },
     {
       "key": "Smoldering Pearl",
-      "name": "Smoldering Pearl",
-      "description": "A crystallization of a Pyro Hypostasis that constantly emits heat.\nEven the burning flames shall one day grow cold, and even the ashen firewood can will itself back into a raging blaze. It must then be the will of the world that Pyro Hypostases should constantly cool down and heat up, much like the universe teems with endless life... until the fated darkness shall one day descend and bring it all to naught."
+      "name": "陰燃の珠",
+      "description": "無相の炎が凝縮した結晶で、熱を放ち続けている。灼熱の炎はいつか消え、焚火は自分の意志で再び燃え上がる。無相の炎の絶え間ない消滅と再燃、拡散と凝縮もまた、万物の生気と同様に、世界の意志の一部なのだろう。暗黒の運命が訪れ、森羅万象を無と化す日が来るまで。"
     },
     {
       "key": "BranchOfDistantSeaA",
-      "name": "Coral Branch of a Distant Sea",
-      "description": "Watatsumi Island is the furthest from Narukami Island in the Inazuman island chain, and its name means \"the god of the oceans\" in the island's ancient tongue. Legend has it that when the great serpent first arose within the abyssal nation of ever-night, its fluorescent body was covered in myriad-colored coral."
+      "name": "遠海夷地の瑚枝",
+      "description": "武器に突破の力を付与する材料。\n稲妻列島の中で鳴神島と最も遠い「海祇」は、海祇島の古語で「海を統治する大神」という意味を持つ。常夜の深淵の国に大蛇が現れた時、その体は四色の珊瑚で覆われ、光を発していたという。"
     },
     {
       "key": "BranchOfDistantSeaB",
-      "name": "Jeweled Branch of a Distant Sea",
-      "description": "This coral cannot be found anywhere in Teyvat, but was a gift that the great serpent obtained when it broke into the Dark Sea. For that abyssal snake, to be filled with coral was to be mighty, and its power would be shaved away as those corals were lost. In other words, those corals contain power far beyond the norm."
+      "name": "遠海夷地の石枝",
+      "description": "武器に突破の力を付与する材料。\nこの珊瑚はテイワット大陸のものではなく、大蛇が「闇の外海」に入るときに授かった物。そのため、深海の大蛇にとって、珊瑚枝を持つことは力の象徴であり、それを失うと力も弱まってしまう。つまり、折れた珊瑚の枝にも並々ならぬ力が宿っているのだ。"
     },
     {
       "key": "BranchOfDistantSeaC",
-      "name": "Jade Branch of a Distant Sea",
-      "description": "Fleeing into the Dark Sea, the god that had lost everything met the abandoned people who had nothing within the ocean depths. Thus it elected to remain and become their \"Orobashi no Mikoto,\" their \"Watatsumi Omikami.\"\nIt is said that the great snake god once broke off all the coral branches on its body to give light to the children who were curled up in the darkness. They also say that it used these coral branches to create a huge ladder to allow those children to once again reach the surface and see the light of day."
+      "name": "遠海夷地の玉枝",
+      "description": "武器に突破の力を付与する材料。\nすべてを失い、闇の外海へと逃げ込んだ魔神は、海の深淵で無一文の棄民たちと出会い、彼らの「オロバシノミコト」と「海祇大御神」となることにした。\n大蛇神は、暗闇の中でうずくまっている子供たちに光を与えるために、自分の体の珊瑚枝をすべて折ってしまったという伝説がある。また、子供たちが再び地上に戻って太陽の光を浴びることができるように、へし折った珊瑚枝を使い、ハシゴを作ったという噂もある。"
     },
     {
       "key": "BranchOfDistantSeaD",
-      "name": "Golden Branch of a Distant Sea",
-      "description": "The meaning that lies behind the name \"Watatsumi\" is simply the unrequited hopes that the abandoned people who dwelt in the deep sea pinned upon the serpent god that led them.\nAnd it was also because the serpent god now had people who worshiped it that it stayed in the world it should have long fled, breaking off the coral branches that adorned its body, treading upon land where it should not have, and facing a foe it could never hope to match — till at last, its divine form was sundered along with the mountains, its ichor turned into plasma, and its will and power became a curse that could never be extinguished: Tatarigami."
+      "name": "遠海夷地の金枝",
+      "description": "武器に突破の力を付与する材料。\n「海祇」という名は、結局のところ、かつて深海に棲んでいた棄民たちが、自分たちを導いてくれた蛇神を求めた独りよがりの期待に由来する。\n自分を敬う民がいたからこそ、蛇神は本来逃げ出すべき世界に留まることを選択した。自分の身の珊瑚枝を折り、踏み入れてはならない土地に入り、神体が山々と共に切り落とされるまで、敵わぬ敵と戦った。その血はプラズマとなり、意志と力は永遠に消えることのない「祟り神」となった。"
     },
     {
       "key": "NarukamisA",
-      "name": "Narukami's Wisdom",
-      "description": "In the past, the ancients would climb the peak now known as Mt. Yougou and bend wood that had been charred by lightning into a hook to offer as an effigy unto the thundering force that lit up the skies and shook the earth. This shape would eventually become the \"Electro Mitsudomoe\" symbol, symbolizing the favor, wisdom, and might of Electro, and also the people who represent these values."
+      "name": "鳴神御霊の恩恵",
+      "description": "武器に突破の力を付与する材料。\nその昔、先人たちは今や影向山と呼ばれる高峰に登り、雷に焼かれた木を鉤形に彫り、闇夜を照らし、大地を振るわす雷に造型を与えた。この形が長い時を経て、「雷の三つ巴」の模様となった。雷の恩恵、知恵、力、およびそれらを象徴する者を表している。"
     },
     {
       "key": "NarukamisB",
-      "name": "Narukami's Joy",
-      "description": "Those who belong to the Shogunate Commissions are those who administer and exercise power. In the monster-filled tales of the ancient past, those who were deeply trusted by the Shogun would bear talismans with this hooked design on their person, and just as the word \"commission\" means to \"joyfully serve\" in the old tongue, those who received her favor would return it with love and loyalty. Yet, after a certain point in time, nothing would be as it was before."
+      "name": "鳴神御霊の歓喜",
+      "description": "武器に突破の力を付与する材料。\n鳴神の幕府には奉行というものがあり、あらゆる事柄の管理と執行を行っている。古き妖物の話では、将軍様に信頼された者は、曲がった鉤の形をしたこのお守りを身につける。そして奉行の名は喜びの奉仕の意味から取られており、殿下に好かれた者は、愛と忠誠をもって仕える。しかし、ある時期を過ぎてから、何もかもが本来の姿でなくなってしまった。"
     },
     {
       "key": "NarukamisC",
-      "name": "Narukami's Affection",
-      "description": "All demons who wander in the wilderness or live amongst mortals will be attracted by the sight of the Almighty Narukami Ogosho, represented by the Electro Mitsudomoe. Though their lives may be longer than any creature, they will at last come to their end. If those with limited lifespans hanker after eternity, then they can only pray that \"Eternity\" remembers them. And she did indeed answer their prayers, remembering them all, friend and foe alike, in her heart. No matter whether it was the demon owls who resided amidst the fog and ripped through the skies, the bake-danuki who dared to trespass her imperial gardens, or that female oni, lovely as the moon and mighty in battle, yet who would eventually come to blows with her... Whether it was the tengu who soared on dark wings or the Kitsune Saiguu who once walked by her side, but who eventually disappeared forever...\nThese countless tales have come to rest within her heart, and someday, they will surely shine again in the eternal paradise of her dreams."
+      "name": "鳴神御霊の親愛",
+      "description": "武器に突破の力を付与する材料。\n荒野を徘徊する、あるいは人間と共存する魑魅魍魎は、「雷の三つ巴」に代表される御建鳴神主尊に引き寄せられる。人間に比べてはるかに長い寿命であっても、終わりは必ず訪れる。限りある命の中で永遠や無限を求めるには、「永遠」が自らのことを覚えてくれるのを願うしかない。彼女はその願いに応え、敵も友もすべて心に刻んだ。霧に棲み空を裂く魔性のフクロウ、あえて皇居に侵入する化け狸、凄腕で月のような美貌だが、最後には牙を見せる鬼族の少女。かつて黒い翼を広げて空を自由に歩いた天狗、そして彼女と共に歩み、最後は永遠に消えてしまった「狐斎宮様」…\n彼女の心の中に静かに眠っていた数々の物語は、いつか彼女が夢見る永遠なる浄土の中で、明るく燃え上がるだろう。"
     },
     {
       "key": "NarukamisD",
-      "name": "Narukami's Valor",
-      "description": "The treasure of the lord of thunder is her majesty, and that majesty is embodied in her valor and wrath. Her wrath comes from the love that persists in her heart, and her valor supports that anger. Thus, whomsoever should block the path towards eternity or lay a finger on Inazuma's people shall become her foe.\nThey say that there were four great spirits, three divine foxes, and two great swords — but that the symbol of Her Excellency, the Almighty Narukami Ogosho, could only be a single strike, unsurpassed and brilliant as a meteor."
+      "name": "鳴神御霊の勇武",
+      "description": "武器に突破の力を付与する材料。\n雷電の神の重宝は威厳であり、その威厳は勇武と激怒によって具現化される。激怒は愛と執着から生まれ、勇武は怒りの表れである。その結果、永遠を見つめる眼差しを邪魔する者、稲妻の民を傷つける者は、彼女の敵となる。\n御霊の魂は四つ、仙狐は三匹、名刀は二本あると言われている。あの御建鳴神主尊大御所様の威厳は、流星光底のような無想の一線として現れる。"
     },
     {
       "key": "MaskOfTheA",
-      "name": "Mask of the Wicked Lieutenant",
-      "description": "Folktales tell that once upon a time, there lived an oni named Torachiyo. Torachiyo was a highly skilled warrior, such that it was once said the Torachiyo might dance amid a thousand blades, juunihitoe robes becoming shredded like falling violet petals, and yet not receive a single wound. Yet this oni would eventually betray the Shogun and revolt, becoming shorn of an arm and a horn in the battle before fleeing and slaying itself in a fit of furious madness.\nHearsay holds that the stubborn oni often hold fear and distress in their hearts. That they should fantasize about eternity yet fear the moment, and are apt to become swallowed by terror or anger is their just reward. This mask depicts Torachiyo, fangs bared."
+      "name": "今昔劇画の悪尉",
+      "description": "武器に突破の力を付与する材料。\n民間に伝わる伝説によると、過去には「虎千代」という名の鬼人がいた。彼は武術に長けており、かつては千本の刀の中で乱舞し、十二単の衣が菫花のように切り裂かれても、無傷だったという。しかし後に、将軍に牙を剥き、反逆を起こしたが、腕と角を切られて逃亡し、やがて発狂して自刃した。\n誇大な妄想を抱く鬼の内心は、怯え悩むことが多い。永遠を妄想しながらも刹那を恐れ、恐怖と怨念に飲み込まれる。それも自業自得であろう。このようなお面は、牙を剝き出しにした虎千代を象徴している。"
     },
     {
       "key": "MaskOfTheB",
-      "name": "Mask of the Tiger's Bite",
-      "description": "\"Sumirezome Sangetsu Kogetsukan\" depicts the fierce oni Torachiyo shattering the Shogun's naginata with a single bite, thus gaining the upper hand for a time. As such, masks that are based on him have finely crafted fangs.\nIn the denouement of this tale, the wounded oni fled into the forest, deathly afraid of showing himself even to the cold moonlight. The wind that whispers through the alleys and valleys can be said to resemble his quiet cries of agony, and so there is a poetic seasonal expression for this in Inazuma: \"Torachiyo's Wind.\""
+      "name": "今昔劇画の虎牙",
+      "description": "武器に突破の力を付与する材料。\n『菫染山月虎牙鑑』に描かれた鬼人「虎千代」は、かつて将軍の薙刀を鋭い牙で砕き、一時的に優位に立ったことがある。そのため、彼を模して作られたお面には、精巧に彫刻された牙が付いていることが多い。\nこの物語の結末では、傷ついた鬼は獣のように森に逃げ隠れ、涼しい月明かりにも姿を見せないようにしていた。路地や峡谷を吹き抜ける風の音は、まるで傷ついた亡霊の唸り声であることから、「虎千代の風」という季語が生まれた。"
     },
     {
       "key": "MaskOfTheC",
-      "name": "Mask of the One-Horned",
-      "description": "In the lost songs of the oni nursemaids, Torachiyo was an elegant young man, strong of body and fair of face. He was once a beloved lieutenant of the Shogun, and he followed her into the dark abyssal realms to repel the defiled ones, winning renown for the oni, whose blood thinned with each passing day.\nNone now sing these songs, but the mask of a horned oni, even in a different form, still possesses power beyond the norm."
+      "name": "今昔劇画の隻角",
+      "description": "武器に突破の力を付与する材料。\n鬼族の失われた子守奉公の子守歌では、鬼人「虎千代」は、優雅で勇ましい身体と華やかな容姿を持つ少年であった。彼は元々将軍の信頼できる将であり、忠実に彼女に付き従い、暗黒の深淵に深入りしてまで邪悪を撃退し、血筋が薄くなっている鬼族のために手柄を立てていた。\n今では歌われなくなったが、別の形で伝わってきた角を持つ鬼の形象は、今でも並みならぬ力を持っている。"
     },
     {
       "key": "MaskOfTheD",
-      "name": "Mask of the Kijin",
-      "description": "Chiyo, a warrior of the oni tribe with the Electro Mitsudomoe emblem emblazoned on her back, was once swallowed whole by a beast from beyond this world that had a tiger's body and a serpent's tail while holding back the forces of darkness. At last, she tore the creature's innards apart from within, breaking free.\nThis is the origin of the phrase \"Chiyo the Tiger-Bite,\" and would be changed over many years to \"Torachiyo.\"\nBut within the belly of the beast, she was stained by a deep sin and saw her comrades ripped to shreds by those blood-red teeth. Steeped in darkness as far as the eye could see, she would eventually draw her sword upon the Almighty Narukami Ogosho. Her sword-arm and one horn would be cloven, and she would flee from the city into the forest like a wounded beast. There, they say that she was taken for some unknown monster and slain by the tengu, or perhaps by the Shiyuumatsu-Ban — or perhaps by a scion of the Iwakura Clan training deep in the mountains, for her features had been twisted by hatred and the agony of her wounds. Or perhaps she even met the oni-masked, sword-bearing doll near the corpse of the giant serpent, and there ended her life's journey.\nFew among those who fought against the abyss in those days were spared pitch-dark dreams. Those who slew monsters and then became them were hardly the minority. The border between worlds grows fragile, and corruption of this kind is perhaps not merely monodirectional."
+      "name": "今昔劇画の鬼人",
+      "description": "武器に突破の力を付与する材料。\n「雷の三つ巴」の紋章を背負う「千代」という名の鬼族の女武者が漆黒の軍隊に立ち向かった時、虎の体と蛇の尾を持つ、この世のものでない獣に飲み込まれた。最後、彼女は魔獣の胸腔を切り裂き、辛うじて生き延びた。\nこれが「虎牙の千代」の名の由来である。その後、名前は徐々に簡略化され「虎千代」と呼ばれるようになった。\nしかし深淵の獣の腹の中で、彼女は罪深き黒に染まり、緋色の牙から仲間が引き裂かれる光景を目に焼き付けた。漆黒の光景に溺れた彼女は、ついに御建鳴神主尊に剣を抜いた。その後、剣を振るう腕と鋭い角を切り落とされた彼女は、傷ついた獣のように森の荒野へと逃げて行った。その後は天狗、もしくは終末番、もしくは山で修行していた岩蔵の胤に得体のしれぬ化け物として始末された。何故ならその美しき容貌は既に漆黒の恨みと痛みによって、ねじ曲がっていたからだ。あるいは大蛇の遺骸にいる鬼面の人形に出会い、運命の旅を終えたのかもしれない。\nかつて深淵と戦ったことのある者は、どうしても漆黒の劇画を夢に見てしまう。魔獣と戦い、自身も魔と化した人間は決して少なくはない。世の端は脆く壊れやすくなっている。このような侵食は、決して単一方向のものではないのかもしれない。"
     }
   ],
   "debuffs": [
