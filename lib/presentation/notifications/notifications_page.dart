@@ -6,7 +6,7 @@ import 'package:genshindb/domain/models/models.dart' as models;
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/app_fab.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:genshindb/presentation/shared/info_dialog.dart';
+import 'package:genshindb/presentation/shared/dialogs/info_dialog.dart';
 import 'package:genshindb/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:genshindb/presentation/shared/nothing_found_column.dart';
 import 'package:genshindb/presentation/shared/styles.dart';

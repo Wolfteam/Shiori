@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/app_webview.dart';
-import 'package:genshindb/presentation/shared/info_dialog.dart';
+import 'package:genshindb/presentation/shared/dialogs/info_dialog.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 
 class DailyCheckInPage extends StatefulWidget {
