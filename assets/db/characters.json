@@ -25637,7 +25637,7 @@
     },
     {
       "key": "Sayu",
-      "rarity": 5,
+      "rarity": 4,
       "weaponType": "claymore",
       "elementType": "anemo",
       "image": "Sayu.png",
@@ -26085,7 +26085,7 @@
       ],
       "passives": [],
       "constellations": [],
-      "subStatType": "critRatePercentage",
+      "subStatType": "elementaryMastery",
       "stats": [
         {
           "level": 1,
