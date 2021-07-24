@@ -4214,61 +4214,61 @@
     {
       "key": "Ayaka",
       "name": "Kamisato Ayaka",
-      "description": "Daughter of the Yashiro Commission's Kamisato Clan. Dignified and elegant, as well as wise and strong.",
+      "description": "La hija del clan Kamisato, perteneciente a la Comisión Yashiro de Inazuma. Una persona solemne, refinada, inteligente y tenaz.",
       "skills": [
         {
           "key": "s1",
-          "title": "Kamisato Art - Kabuki",
+          "title": "Estilo Kamisato - Elegancia",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 5 rapid strikes.",
+              "description": "Realiza hasta 5 ataques rápidos.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash a continuous stream of sword ki.",
+              "description": "Consume una cierta cantidad de Aguante para desatar un ráfaga con su espada.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Kamisato Art: Hyouka",
-          "description": "Summons blooming ice to launch nearby opponents, dealing Cryo DMG.",
+          "title": "Estilo Kamisato: Flor del hielo",
+          "description": "Invoca una flor de escarcha que lanza por los aires a los enemigos cercanos e inflige Daño Cryo en el AdE.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Kamisato Art: Soumetsu",
-          "description": "Summons up the frost with flawless poise, unleashing a Souken Gate that travels forward continuously.",
+          "title": "Estilo Kamisato: Devastación glacial",
+          "description": "Adopta una magnífica pose para invocar la escarcha y liberar una ráfaga de ventisca",
           "abilities": [
             {
-              "name": "Frostflake Seki no To",
+              "name": "Ráfaga de ventisca",
               "descriptions": [
-                "A storm of whirling icy winds that slashes repeatedly at opponents it touches, dealing Cryo DMG.",
-                "Blooms once its duration ends, dealing AoE Cryo DMG."
+                "Mediante un viento gélido y cortante como una afilada espada, realiza continuamente cortes contra los enemigos y les inflige Daño Cryo.",
+                "Al terminar la duración, se provoca una explosión que inflige Daño Cryo en el AdE."
               ]
             }
           ]
         },
         {
           "key": "s4",
-          "title": "Kamisato Art: Senho",
+          "title": "Estilo Kamisato: Senda de escarcha",
           "description": null,
           "abilities": [
             {
-              "name": "Alternate Sprint",
-              "description": "Ayaka consumes Stamina and cloaks herself in frozen fog that moves with her. In Senho form, she moves at high speed on water. When she reappears, the following effects occur:",
+              "name": "Reemplaza a Esprintar",
+              "description": "Ayaka se oculta bajo un torrente de hielo, consumiendo su Aguante para moverse rápidamente.\nCuando está bajo el efecto de Senda de escarcha, puede moverse a gran velocidad sobre el agua.\nAl reaparecer, produce los siguientes efectos:",
               "descriptions": [
-                "Ayaka unleashes frigid energy to apply Cryo on nearby opponents.",
-                "Cold congeals along Ayaka's blade, infusing her attacks with Cryo for a brief period."
+                "Libera el gélido poder del hielo para aplicar el elemento Cryo sobre los enemigos cercanos.",
+                "Condensa el frío en su espada, lo que la imbuye del elemento Cryo durante un breve periodo de tiempo."
               ]
             }
           ]
@@ -4277,59 +4277,59 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Fruits of Shinsa",
-          "description": "When Ayaka crafts Weapon Ascension Materials, she has a 10% chance to receive double the product.",
+          "title": "Los frutos de la reflexión",
+          "description": "Al crear materiales de ascensión de arma, hay una probabilidad del 10% de recibir el doble.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Amatsumi Kunitsumi Sanctification",
-          "description": "After using Kamisato Art: Hyouka, Kamisato Ayaka's Normal and Charged Attacks deal 30% increased DMG for 6s.",
+          "title": "Supresión de lo impuro",
+          "description": "Tras realizar Estilo Kamisato: Flor del hielo, el daño de los Ataques Normales y Cargados de Kamisato Ayaka aumenta en un 30% durante 6 s.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Kanten Senmyou Blessing",
-          "description": "When the Cryo application at the end of Kamisato Art: Senho hits an opponent, Kamisato Ayaka gains the following effects:",
+          "title": "Edicto helado",
+          "description": "Si el hielo que se libera al terminar Estilo Kamisato: Senda de escarcha golpea a un enemigo, se producen los siguientes efectos:",
           "descriptions": [
-            "Restores 10 Stamina",
-            "Gains 18% Cryo DMG Bonus for 10s."
+            "Kamisato Ayaka recupera 10 pts. de Aguante.",
+            "Obtiene un 18% de Bono de Daño Cryo durante 10 s."
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Snowswept Sakura",
-          "description": "When Kamisato Ayaka's Normal or Charged Attacks deal Cryo DMG to opponents, it has a 50% chance of decreasing the CD of Kamisato Art: Hyouka by 0.3s. This effect can occur once every 0.1s.",
+          "title": "Cerezo de escarcha",
+          "description": "Cuando Kamisato Ayaka inflige Daño Cryo contra un enemigo con su Ataque Normal o Cargado, hay un 50% de probabilidad de reducir en 0.3 s el TdE de Estilo Kamisato: Flor del hielo. Este efecto puede ocurrir una vez cada 0.1 s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Blizzard Blade Seki no To",
-          "description": "When casting Kamisato Art: Soumetsu, unleashes 2 smaller additional Frostflake Seki no To, each dealing 20% of the original storm's DMG.",
+          "title": "Pasaje níveo",
+          "description": "Al realizar Estilo Kamisato: Devastación glacial, se liberan dos pequeñas ráfagas de ventisca adicionales, cada una de las cuales inflige un 20% del daño original.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Frostbloom Kamifubuki",
-          "description": "Increases the Level of Kamisato Art: Soumetsu by 3.\nMaximum upgrade level is 15.",
+          "title": "Nieve inmaculada",
+          "description": "Aumenta el nivel de habilidad de Estilo Kamisato: Devastación glacial +3.\n Puede ser aumentado hasta Niv. 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Ebb and Flow",
-          "description": "Opponents damaged by Kamisato Art: Soumetsu's Frostflake Seki no To will have their DEF decreased by 30% for 6s.",
+          "title": "Retorno preeminente",
+          "description": "La DEF de los enemigos se reduce en un 30% durante 6 s al recibir daño mediante la ráfaga de ventisca creada por medio de Estilo Kamisato: Devastación glacial.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Blossom Cloud Irutsuki",
-          "description": "Increases the Level of Kamisato Art: Hyouka by 3.\nMaximum upgrade level is 15.",
+          "title": "Luna entre las nubes",
+          "description": "Aumenta el nivel de habilidad de Estilo Kamisato: Flor del hielo +3.\nPuede ser aumentado hasta Niv. 15.",
           "secondDescription": null,
           "descriptions": []
         },
@@ -4399,53 +4399,53 @@
     {
       "key": "Traveler (Electro)",
       "name": "Traveler (Electro)",
-      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
+      "description": "Una viajera de otro mundo a quien arrebataron a su único familiar, y que se vio obligada a embarcarse en un viaje en busca de los Siete.",
       "skills": [
         {
           "key": "s1",
-          "title": "Foreign Thundershock",
+          "title": "Relámpago extranjero",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 rapid strikes.",
+              "description": "Realiza hasta 5 ataques rápidos.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Consume una cierta cantidad de Aguante para lanzar un golpe de espada cruzado.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Lightning Blade",
-          "description": "Unleashes three swift thunder shadows that deal Electro DMG to opponents and leave an Abundance Amulet behind after hitting an opponent.\n2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.",
+          "title": "Espada electrosombría",
+          "description": "Libera tres rápidos relámpagos sombríos, los cuales infligen Daño Electro contra los enemigos y, al golpearlos, colocan un abalorio de la profusión.\nOriginalmente solo se pueden crear un máximo de 2 abalorios de la profusión. Al usar esta habilidad se reiniciarán todos los abalorios ya creados.",
           "abilities": [
             {
-              "name": "Abundance Amulets",
-              "description": "When a character is near an Abundance Amulet, they will absorb it and obtain the following effects:",
+              "name": "Abalorio de la profusión",
+              "description": "Cuando un personaje esté cerca de un abalorio de la profusión, lo absorberá y obtendrá los siguientes efectos:",
               "descriptions": [
-                "Restores Elemental Energy",
-                "Increases Energy Recharge during the Abundance Amulet's duration."
+                "Recuperará Energía Elemental.",
+                "Aumentará la Recarga de Energía."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Bellowing Thunder",
-          "description": "You call upon the protection of lightning, knocking nearby opponents back and dealing Electro DMG to them.",
+          "title": "Estallido atronador",
+          "description": "Invocas el velo del relámpago para empujar e infligir Daño Electro a los enemigos a tu alrededor.",
           "abilities": [
             {
-              "name": "Lightning Shroud",
-              "description": "When your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing Electro DMG.\nWhen Falling Thunder hits opponents, it will regenerate Energy for that character.\nOne instance of Falling Thunder can be generated every 0.5s.",
+              "name": "Velo del relámpago",
+              "description": "Cuando tu personaje en uso golpea a un enemigo con sus Ataques Normales o Cargados, caerá un rayo temible que inflige Daño Electro.\nAl golpear al enemigo, el rayo hará que dicho personaje recupere Energía Elemental.\nSolo puede caer un rayo temible cada 0.5 s.",
               "descriptions": []
             }
           ]
@@ -4454,57 +4454,57 @@
       "passives": [
         {
           "key": "p2",
-          "title": "Thunderflash",
-          "description": "When another nearby character in the party obtains an Abundance Amulet created by Lightning Blade, Lightning Blade's CD is decreased by 1.5s.",
+          "title": "Trueno centelleante",
+          "description": "Cuando otro personaje cercano del equipo absorbe un abalorio de la profusión creado mediante Espada electrosombría, el TdE de esta habilidad se reduce en 1.5 s.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Resounding Roar",
-          "description": "Increases the Energy Recharge effect granted by Lightning Blade's Abundance Amulet by 10% of the Traveler's Energy Recharge.",
+          "title": "Relámpago resonante",
+          "description": "Aumenta la Energía recargada por el abalorio de la profusión creado mediante Espada electrosombría en una cantidad proporcional al 10% de la Recarga de Energía de la viajera.",
           "descriptions": []
         }
       ],
       "constellations":  [
         {
           "key": "c1",
-          "title": "Spring Thunder of Fertility",
-          "description": "The number of Abundance Amulets that can be generated using Lightning Blade is increased to 3.",
+          "title": "Trueno de la cosecha primaveral",
+          "description": "Aumenta a 3 la cantidad de abalorios de la profusión que se pueden crear mediante Espada electrosombría.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Violet Vehemence",
-          "description": "When Falling Thunder created by Bellowing Thunder hits an opponent, it will decrease their Electro RES by 15% for 8s.",
+          "title": "Rayo vehemente",
+          "description": "Cuando un enemigo es golpeado por el rayo temible de Estallido atronador, su RES Electro se reduce en un 15% durante 8 s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Distant Crackling",
-          "description": "Increases the Level of Bellowing Thunder by 3.\nMaximum upgrade level is 15.",
+          "title": "Restallido lejano",
+          "description": "Aumenta el nivel de habilidad de Estallido atronador +3.\nPuede ser aumentado hasta Niv. 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Fickle Cloudstrike",
-          "description": "When a character obtains Abundance Amulets generated by Lightning Blade, if this character's Energy is less than 35%, the Energy restored by the Abundance Amulets is increased by 100%.",
+          "title": "Relámpago súbito",
+          "description": "Si la Energía Elemental de un personaje está por debajo del 35% cuando absorbe un abalorio de la profusión creado con Espada electrosombría, la cantidad de Energía recuperada por medio del abalorio aumenta en un 100%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Clamor in the Wilds",
-          "description": "Increases the Level of Lightning Blade by 3..\nMaximum upgrade level is 15.",
+          "title": "Naturaleza eléctrica",
+          "description": "Aumenta el nivel de habilidad de Espada electrosombría +3.\nPuede ser aumentado hasta Niv. 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "World-Shaker",
-          "description": "Every 2 Falling Thunder attacks triggered by Bellowing Thunder will increase the DMG dealt by the next Falling Thunder by 100%, and will restore an additional 1 Energy to the current character.",
+          "title": "Sacudida celestial",
+          "description": "Tras provocar dos rayos temibles con Estallido atronador, el daño del siguiente rayo temible aumentará en un 100% y regenerará 1 pt. adicional de Energía Elemental para el personaje en uso.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -5192,39 +5192,39 @@
     },
     {
       "key": "Amenoma Kageuchi",
-      "name": "Amenoma Kageuchi",
-      "description": "A blade custom made for a famed samurai who could strike down a tengu warrior, known for their incredible agility, in midair.",
-      "refinement": "After casting an Elemental Skill, gain 1 Succession Seed. This effect can be triggered once every 5s. The Succession Seed lasts for 30s. Up to 3 Succession Seeds may exist simultaneously. After using an Elemental Burst, all Succession Seeds are consumed and after 2s, the character regenerates {{0}} Energy for each seed consumed."
+      "name": "Espada Amenoma Gemela",
+      "description": "Una espada que, según la leyenda, fue forjada a medida bajo petición de un famoso samurái que podía incluso clavársela a un guerrero tengu, conocidos por ser extremadamente veloces, en el aire.",
+      "refinement": "Al lanzar una Habilidad Elemental, el personaje obtiene una semilla de la sucesión. Este efecto puede activarse como máximo una vez cada 5 s, dura 30 s y pueden poseerse 3 semillas de la sucesión al mismo tiempo. Al lanzar una Habilidad Definitiva, se consumirán todas las semillas disponibles y, 2 s después, el personaje que lleva esta arma equipada regenerará {{0}} pts. de Energía Elemental por cada semilla consumida."
     },
     {
       "key": "Mistsplitter Reforged",
-      "name": "Mistsplitter Reforged",
-      "description": "A sword that blazes with a fierce violet light. The name \"Reforged\" comes from it having been broken once before.",
-      "refinement": "Gain a {{0}}% Elemental DMG Bonus for all element and receive the might of the Mistsplitter's Emblem. At stack levels 1/2/3, the Mistsplitter's Emblem provides a {{1}}/{{2}}/{{3}}% Elemental DMG Bonus for the character's Elemental Type. The character will obtain 1 stack of Mistsplitter's Emblem in each of the following scenarios: Normal Attack deals Elemental DMG (stack lasts 5s), casting Elemental Burst (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently."
+      "name": "Reflejo de las Tinieblas",
+      "description": "Una espada que centellea con una fría e intensa luz violeta. La palabra “reflejo” de su nombre se debe a los fragmentos del pasado que se reflejan en ella.",
+      "refinement": "Otorga un {{0}}% de Bono de todos los tipos de Daño Elemental, así como el poder de los emblemas cortatinieblas. Dependiendo de si tiene 1, 2 o 3 emblemas cortatinieblas, el personaje obtiene un {{1}}/{{2}}/{{3}}% de Bono de Daño Elemental perteneciente a su tipo elemental. En las siguientes situaciones, el personaje obtiene un emblema: al infligir Daño Elemental con Ataques Normales. El emblema dura 5 s; al realizar la Habilidad Definitiva. El emblema dura 10 s; cuando la Energía Elemental del personaje está por debajo del 100%. El emblema cortatinieblas obtenido de esta manera dura hasta que el personaje regenere toda su Energía Elemental. La duración de cada emblema cortatinieblas se calcula de manera independiente."
     },
     {
       "key": "Katsuragikiri Nagamasa",
-      "name": "Katsuragikiri Nagamasa",
-      "description": "A blade that was once made in Tatarasuna. Heavy and tough.",
-      "refinement": "Increases Elemental Skill DMG by {{0}}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {{1}} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field."
+      "name": "Asesinato de Katsuragi",
+      "description": "Una pesada y tenaz espada forjada en Tatarasuna.",
+      "refinement": "Aumenta en un {{0}}% el daño infligido por la Habilidad Elemental. Al realizar dicha habilidad, el personaje pierde 3 pts. de Energía Elemental, pero recupera {{1}} pts. cada 2 s durante 6 s. Este efecto puede ocurrir una vez cada 10 s incluso cuando el personaje está en tu equipo pero no en combate."
     },
     {
       "key": "Kitain Cross Spear",
-      "name": "Kitain Cross Spear",
-      "description": "A special lance that was once used by a famed warrior who guarded the Tatarigami on Yashiori Island.",
-      "refinement": "Increases Elemental Skill DMG by {{0}}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {{1}} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field."
+      "name": "Cruz de Kitain",
+      "description": "El arma utilizada por el famoso lancero que custodiaba a los tatarigami en la Isla Yashiori.",
+      "refinement": "Aumenta en un {{0}}% el daño infligido por la Habilidad Elemental. Al realizar dicha habilidad, el personaje pierde 3 pts. de Energía Elemental, pero recupera {{1}} pts. cada 2 s durante 6 s. Este efecto puede ocurrir una vez cada 10 s incluso cuando el personaje está en tu equipo pero no en combate."
     },
     {
       "key": "Hamayumi",
-      "name": "Hamayumi",
-      "description": "A certain shrine maiden once owned this warbow. It was made with surpassing skill, and is both intricate and sturdy.",
-      "refinement": "Increases Normal Attack DMG by {{0}}% and Charged Attack DMG by {{1}}%. When the equipping character's Energy reaches 100%, this effect is increased by 100%."
+      "name": "Masacrademonios",
+      "description": "El arco de guerra que perteneció a una miko del pasado. Exquisito y resistente, fue fabricado con una técnica inigualable.",
+      "refinement": "Aumenta en un {{0}} 16% el daño infligido con Ataques Normales y en un {{1}}% el infligido con Ataques Cargados. Este efecto aumenta en un 100% cuando el personaje que equipa esta arma tiene restaurada toda su Energía Elemental."
     },
     {
       "key": "Hakushin Ring",
-      "name": "Hakushin Ring",
-      "description": "A catalyst that carries the memory of the Kitsune Saiguu of ancient times. However, this device is but an impoverished vessel for the full breadth of her thought.",
-      "refinement": "After the character equipped with this weapon triggers an Electro elemental reaction, nearby party members of an Elemental Type involved in the elemental reaction receive a {{0}}% Elemental DMG Bonus for their element, lasting 6s. Elemental Bonuses gained in this way cannot be stacked."
+      "name": "Anillo de Hakushin",
+      "description": "Un catalizador que conserva los antiguos pensamientos de la Sacerdotisa Kitsune. Sin embargo, estos pensamientos eran tantos que no fue posible que todos cupieran en este objeto.",
+      "refinement": "Cuando el personaje que lleva esta arma equipada causa una Reacción Elemental relacionada con Electro, los personajes del equipo cercanos cuyo tipo elemental coincida con los elementos implicados en la reacción obtienen un {{0}}% de su respectivo Bono de Daño Elemental durante 6 s. Los bonos elementales obtenidos de esta manera no se pueden acumular."
     }
   ],
   "artifacts": [
@@ -5700,29 +5700,29 @@
     },
     {
       "key": "Shimenawa's Reminiscence",
-      "name": "Shimenawa's Reminiscence",
+      "name": "Reminiscencia de la purificación",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "ATK +18%."
+          "bonus": "ATQ +18%."
         },
         {
           "key": "b2",
-          "bonus": "When casting an Elemental Skill, if the character has 15 or more Energy, they lose 15 Energy and Normal/Charged/ Plunging Attack DMG is increased by 50% for 10s."
+          "bonus": "Si el personaje tiene 15 pts. de Energía Elemental o más, perderá 15 pts. al realizar una Habilidad Elemental y el daño infligido con los Ataques Normales, Cargados y Descendentes aumentará en un 50% durante 10 s."
         }
       ]
     },
     {
       "key": "Emblem of Severed Fate",
-      "name": "Emblem of Severed Fate",
+      "name": "Emblema de la ruptura",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Energy Recharge +20%"
+          "bonus": "Recarga de Energía +20%."
         },
         {
           "key": "b2",
-          "bonus": "Increases Elemental Burst DMG by 25% of Energy Recharge. A maximum of 75% bonus DMG can be obtained in this way."
+          "bonus": "Aumenta el daño infligido con la Habilidad Definitiva en una cantidad equivalente al 25% de la Recarga de Energía. Se puede obtener un aumento del 75% como máximo."
         }
       ]
     }

@@ -2971,7 +2971,7 @@
         {
           "key": "c3",
           "title": "Alchimista Impeccabile",
-          "description": "Aumenta di 3 i livelli di Creazione Anemohypostasis Instabile - 6308. Il livello massimo di upgrade è 15.",
+          "description": "Aumenta di 3 i livelli di Creazione Anemo Hypostasis Instabile - 6308. Il livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
@@ -4213,7 +4213,7 @@
     {
       "key": "Ayaka",
       "name": "Kamisato Ayaka",
-      "description": "Principessa del rinomato Clan Kamisato di Inazuma. Lei è l’incarnazione della nobiltà e dell’eleganza.",
+      "description": "Figlia del Clan Kamisato della Yashiro Commission. Dignitosa ed elegante, così come saggia e forte.",
       "skills": [
         {
           "key": "s1",
@@ -4222,17 +4222,17 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 5 rapid strikes.",
+              "description": "Esegue fino a 5 attacchi rapidi.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash a continuous stream of sword ki.",
+              "description": "Consuma una certa quantità di Stamina per scatenare un flusso continuo di ki con la spada.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Si lancia in picchiata da mezz'aria per colpire il terreno sottostante e danneggiare i nemici lungo la via assestando AoE DMG all'impatto.",
               "descriptions": []
             }
           ]
@@ -4240,19 +4240,19 @@
         {
           "key": "s2",
           "title": "Kamisato Art: Hyouka",
-          "description": "Summons blooming ice to launch nearby opponents, dealing Cryo DMG.",
+          "description": "Evoca del ghiaccio facendolo sbocciare per lanciarlo contro dei nemici vicini, infliggendo Cryo DMG.",
           "abilities": []
         },
         {
           "key": "s3",
           "title": "Kamisato Art: Soumetsu",
-          "description": "Summons up the frost with flawless poise, unleashing a Souken Gate that travels forward continuously.",
+          "description": "Evoca la brina con impeccabile portamento, scatenando un Souken Gate che viaggia continuamente verso l’avanti.",
           "abilities": [
             {
-              "name": "Frostflake Seki no To",
+              "name": "Fiocco di Ghiaccio Seki no To",
               "descriptions": [
-                "A storm of whirling icy winds that slashes repeatedly at opponents it touches, dealing Cryo DMG.",
-                "Blooms once its duration ends, dealing AoE Cryo DMG."
+                "Una tempesta di ghiaccio vorticoso che taglia ripetutamente i nemici quando entrano in contatto con questa, infliggendo Cryo DMG.",
+                "Fiorisce quando la sua durata finisce, infliggendo AoE Cryo DMG."
               ]
             }
           ]
@@ -4263,11 +4263,11 @@
           "description": null,
           "abilities": [
             {
-              "name": "Alternate Sprint",
-              "description": "Ayaka consumes Stamina and cloaks herself in frozen fog that moves with her. In Senho form, she moves at high speed on water. When she reappears, the following effects occur:",
+              "name": "Sprint Alternativo",
+              "description": "Ayaka consuma Stamina e si copre con della nebbia ghiacciata che si muove con lei. Durante la forma Senho si muove molto velocemente sull’acqua. Quando riappare, si verificano i seguenti effetti:",
               "descriptions": [
-                "Ayaka unleashes frigid energy to apply Cryo on nearby opponents.",
-                "Cold congeals along Ayaka's blade, infusing her attacks with Cryo for a brief period."
+                "Ayaka scatena energia gelida per applicare lo stato Cryo ai nemici nelle vicinanze.",
+                "Il freddo congela la lunga lama di Ayaka, infondendo i suoi attacchi con lo stato Cryo per un breve periodo."
               ]
             }
           ]
@@ -4276,66 +4276,66 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Fruits of Shinsa",
-          "description": "When Ayaka crafts Weapon Ascension Materials, she has a 10% chance to receive double the product.",
+          "title": "Frutti di Shinsa",
+          "description": "Quando Ayaka costruisce Materiali per il potenziamento di Armi, ha il 10% di possibilità di ottenere il doppio del prodotto.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Amatsumi Kunitsumi Sanctification",
-          "description": "After using Kamisato Art: Hyouka, Kamisato Ayaka's Normal and Charged Attacks deal 30% increased DMG for 6s.",
+          "title": "Santificazione di Amatsumi Kunitsumi",
+          "description": "Dopo aver usato Kamisato Art: Hyouka, l’Attacco Normale e Caricato di  Kamisato Ayaka infligge il 30% in più di DMG per 6s.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Kanten Senmyou Blessing",
-          "description": "When the Cryo application at the end of Kamisato Art: Senho hits an opponent, Kamisato Ayaka gains the following effects:",
+          "title": "Benedizione di Kanten",
+          "description": "Quando l’energia gelida che applica l’effetto Cryo alla fine di Kamisato Art: Senho colpisce un nemico, Kamisato Ayaka guadagna i seguenti effetti:",
           "descriptions": [
-            "Restores 10 Stamina",
-            "Gains 18% Cryo DMG Bonus for 10s."
+            "Ristora 10 Stamina",
+            "Guadagna 18% Cryo DMG Bonus per 10s."
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Snowswept Sakura",
-          "description": "When Kamisato Ayaka's Normal or Charged Attacks deal Cryo DMG to opponents, it has a 50% chance of decreasing the CD of Kamisato Art: Hyouka by 0.3s. This effect can occur once every 0.1s.",
+          "title": "Sakura Spazzato dalla Neve",
+          "description": "Quando l’Attacco Normale o Caricato di Kamisato Ayaka infligge Cryo DMG ai nemici, questo ha il 50% di possibilità di diminuire la CD di Kamisato Art: Hyouka di 0.3s.  Questo effetto può avvenire solo una volta ogni 0.1s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Blizzard Blade Seki no To",
-          "description": "When casting Kamisato Art: Soumetsu, unleashes 2 smaller additional Frostflake Seki no To, each dealing 20% of the original storm's DMG.",
+          "title": "Lama della Bufera Seki no To",
+          "description": "Mentre casta Kamisato Art: Soumetsu, rilascia 2 addizionali Fiocchi di Ghiaccio Seki no To più piccoli, entrambi dei quali infliggono il 20% dell’originale DMG della tempesta.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Frostbloom Kamifubuki",
-          "description": "Increases the Level of Kamisato Art: Soumetsu by 3.\nMaximum upgrade level is 15.",
+          "title": "Gelata Kamifubuki",
+          "description": "Aumenta di 3 il livello di Kamisato Art: Soumetsu.\nIl livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Ebb and Flow",
-          "description": "Opponents damaged by Kamisato Art: Soumetsu's Frostflake Seki no To will have their DEF decreased by 30% for 6s.",
+          "title": "Flusso e Riflusso",
+          "description": "I nemici danneggiati dal Fiocco di Ghiaccio Seki no To della Kamisato Art: Soumetsu avranno la loro DEF diminuita del 30% per 6s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Blossom Cloud Irutsuki",
-          "description": "Increases the Level of Kamisato Art: Hyouka by 3.\nMaximum upgrade level is 15.",
+          "title": "Fioritura della Nuvola Irutsuki",
+          "description": "Aumenta di 3 il livello di Kamisato Art: Hyouka.\nIl livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Dance of Suigetsu",
-          "description": "Kamisato Ayaka gains Usurahi Butou every 10s, increasing her Charged Attack DMG by 298%. This buff will be cleared 0.5s after Ayaka's Charged ATK hits an opponent, after which the timer for this ability will restart.",
+          "title": "Danza di Suigetsu",
+          "description": "Kamisato Ayaka guadagna \"Usurahi Butou\" ogni 10s, aumentando il suo DMG dell’Attacco Caricato del 298%. Questo buff verrà tolto 0.5s dopo che il Charged ATK di  Ayaka colpirà un nemico, dopo il quale il CD per questa abilità ripartirà.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -4398,53 +4398,53 @@
     {
       "key": "Traveler (Electro)",
       "name": "Traveler (Electro)",
-      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
+      "description": "Un traveler da un altro mondo; Il suo unico familiare gli è stato portato via e ora entrambi devono imbarcarsi in un viaggio per trovare I Sette.",
       "skills": [
         {
           "key": "s1",
-          "title": "Foreign Thundershock",
+          "title": "Colpo di Fulmine Straniero",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 rapid strikes.",
+              "description": "Esegue fino a 5 attacchi rapidi.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Consuma una certa quantità di Stamina per scatenare 2 fendenti rapidi.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Si lancia in picchiata da mezz'aria per colpire il terreno sottostante e danneggiare i nemici lungo la via assestando AoE DMG all'impatto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Lightning Blade",
-          "description": "Unleashes three swift thunder shadows that deal Electro DMG to opponents and leave an Abundance Amulet behind after hitting an opponent.\n2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.",
+          "title": "Lama del Fulmine",
+          "description": "Rilascia 3 veloci ombre di fulmini che infliggono Electro DMG ai nemici e lasciano un \"Abundance Amulet\" dietro di loro dopo aver colpito un nemico.\n2 Abundance Amulet possono essere creati inizialmente. Usare ulteriormente questa abilità resetterà ogni Abundance Amulet che era stato generato.",
           "abilities": [
             {
-              "name": "Abundance Amulets",
-              "description": "When a character is near an Abundance Amulet, they will absorb it and obtain the following effects:",
+              "name": "Abundance Amulet",
+              "description": "Quando un personaggio è vicino ad un Abundance Amulet, lo assorbirà e otterrà i seguenti effetti:",
               "descriptions": [
-                "Restores Elemental Energy",
-                "Increases Energy Recharge during the Abundance Amulet's duration."
+                "Ristora l’Elemental Energy",
+                "Aumenta l’Energy Recharge durante la durata dell’Abundance Amulet."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Bellowing Thunder",
-          "description": "You call upon the protection of lightning, knocking nearby opponents back and dealing Electro DMG to them.",
+          "title": "Tuono Ruggente",
+          "description": "Richiami su di te la protezione del fulmine, stordendo tutti i nemici nelle vicinanze e infliggendo loro Electro DMG.",
           "abilities": [
             {
-              "name": "Lightning Shroud",
-              "description": "When your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing Electro DMG.\nWhen Falling Thunder hits opponents, it will regenerate Energy for that character.\nOne instance of Falling Thunder can be generated every 0.5s.",
+              "name": "Velo di Fulmini",
+              "description": "Quando l’Attacco Normale o Caricato del tuo personaggio in uso colpisce dei nemici, questi richiameranno \"Tuoni Cadenti\" che causano Electro DMG.\nQuando Tuoni Cadenti colpisce nemici, rigenererà Energy per quel personaggio.\nSolo un’istanza di Tuoni Cadenti può essere generata ogni 0.5s.",
               "descriptions": []
             }
           ]
@@ -4453,57 +4453,57 @@
       "passives": [
         {
           "key": "p2",
-          "title": "Thunderflash",
-          "description": "When another nearby character in the party obtains an Abundance Amulet created by Lightning Blade, Lightning Blade's CD is decreased by 1.5s.",
+          "title": "Lampo di Tuoni",
+          "description": "Quando un altro personaggio del party nelle vicinanze ottiene un Abundance Amulet creato da Lama del Fulmine, il CD di Lama del Fulmine diminuisce di 1.5s.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Resounding Roar",
-          "description": "Increases the Energy Recharge effect granted by Lightning Blade's Abundance Amulet by 10% of the Traveler's Energy Recharge.",
+          "title": "Ruggito Risuonante",
+          "description": "Aumenta l’effetto di Energy Recharge garantito dall’Abundance Amulet di Lama del Fulmine di 10% dell’Energy Recharge del Traveler.",
           "descriptions": []
         }
       ],
       "constellations":  [
         {
           "key": "c1",
-          "title": "Spring Thunder of Fertility",
-          "description": "The number of Abundance Amulets that can be generated using Lightning Blade is increased to 3.",
+          "title": "Tuono primaverile di Fertilità",
+          "description": "Il numero degli Abundance Amulet che possono essere generati da Lama del Fulmine aumenta a 3.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Violet Vehemence",
-          "description": "When Falling Thunder created by Bellowing Thunder hits an opponent, it will decrease their Electro RES by 15% for 8s.",
+          "title": "Veemenza Viola",
+          "description": "Quando un Tuono Cadente creato da Tuono Ruggente colpisce un nemico, diminuirà la loro Electro RES di 15% per 8s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Distant Crackling",
-          "description": "Increases the Level of Bellowing Thunder by 3.\nMaximum upgrade level is 15.",
+          "title": "Crepitio Distante",
+          "description": "Aumenta di 3 il livello di Tuono Ruggente.\nIl livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Fickle Cloudstrike",
-          "description": "When a character obtains Abundance Amulets generated by Lightning Blade, if this character's Energy is less than 35%, the Energy restored by the Abundance Amulets is increased by 100%.",
+          "title": "Colpo di Nuvole Mutevole",
+          "description": "Quando un personaggio ottiene degli Abundance Amulet generati dalla Lama del Fulmine, se l’Energy del personaggio è inferiore al 35%, l’Energy restaurata dagli Abundance Amulet aumenta del 100%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Clamor in the Wilds",
-          "description": "Increases the Level of Lightning Blade by 3..\nMaximum upgrade level is 15.",
+          "title": "Clamore nella Natura",
+          "description": "Aumenta di 3 il livello di Lama del Fulmine.\nIl livello massimo di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "World-Shaker",
-          "description": "Every 2 Falling Thunder attacks triggered by Bellowing Thunder will increase the DMG dealt by the next Falling Thunder by 100%, and will restore an additional 1 Energy to the current character.",
+          "title": "Scuoti-Mondo",
+          "description": "Ogni 2 attacchi di Tuoni Cadenti attivati da Tuono Ruggente, il DMG inferto dal prossimo Tuoni Cadenti aumenterà 100% e ripristinerà un ulteriore 1 Energy al personaggio corrente.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -5192,38 +5192,38 @@
     {
       "key": "Amenoma Kageuchi",
       "name": "Amenoma Kageuchi",
-      "description": "A blade custom made for a famed samurai who could strike down a tengu warrior, known for their incredible agility, in midair.",
-      "refinement": "After casting an Elemental Skill, gain 1 Succession Seed. This effect can be triggered once every 5s. The Succession Seed lasts for 30s. Up to 3 Succession Seeds may exist simultaneously. After using an Elemental Burst, all Succession Seeds are consumed and after 2s, the character regenerates {{0}} Energy for each seed consumed."
+      "description": "Una lama forgiata su misura per un famoso samurai capace di abbattere un guerriero tengu, noti per la loro incredibile agilità, a mezz’aria..",
+      "refinement": "Dopo aver scatenato un’Abilità Elementale ottieni 1 \"Succession Seed\". L’effetto può avvenire una volta ogni 5s. Il Succession Seed dura per 30s. Massimo 3 Succession Seeds possono esistere contemporaneamente. Dopo aver usato un Elemental Burst, tutti i Succession Seeds si consumano e dopo 2s il personaggio rigenera {{0}} Energy per ciascun Seed consumato."
     },
     {
       "key": "Mistsplitter Reforged",
       "name": "Mistsplitter Reforged",
-      "description": "A sword that blazes with a fierce violet light. The name \"Reforged\" comes from it having been broken once before.",
-      "refinement": "Gain a {{0}}% Elemental DMG Bonus for all element and receive the might of the Mistsplitter's Emblem. At stack levels 1/2/3, the Mistsplitter's Emblem provides a {{1}}/{{2}}/{{3}}% Elemental DMG Bonus for the character's Elemental Type. The character will obtain 1 stack of Mistsplitter's Emblem in each of the following scenarios: Normal Attack deals Elemental DMG (stack lasts 5s), casting Elemental Burst (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently."
+      "description": "Una spada che risplende di una feroce luce viola. Il titolo \"Reforged\" deriva dal fatto che è stato distrutto già una volta.",
+      "refinement": "Ottieni il {{0}}% di Elemental DMG Bonus per tutti gli elementi e ricevi il potere del \"Mistsplitter's Emblem\". Ai corrispondenti livelli di stack 1/2/3, il Mistsplitter's Emblem fornisce un {{1}}/{{2}}/{{3}}% di Elemental DMG Bonus per l’elemento del personaggio. Il personaggio otterrà 1 stack di Mistsplitter's Emblem in ciascuno dei seguenti scenari: quando un Attacco Normale infligge Elemental DMG (lo stack durerà 5s), quando si scatena un Elemental Burst (lo stack durerà 10s) e quando l’Energy < 100% (lo stack svanisce quando l’Energy è piena). La durata di ciascuno stack calcolato è indipendente dalle altre."
     },
     {
       "key": "Katsuragikiri Nagamasa",
       "name": "Katsuragikiri Nagamasa",
-      "description": "A blade that was once made in Tatarasuna. Heavy and tough.",
-      "refinement": "Increases Elemental Skill DMG by {{0}}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {{1}} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field."
+      "description": "Una lama che è stata forgiata a Tatarasuna. Pesante e resistente.",
+      "refinement": "Aumenta l’Elemental Skill DMG del {{0}}%. Quando l’Elemental Skill colpisce nemici, il personaggio perde 3 Energy ma ne rigenera {{1}} ogni 2s per i prossimi 6s. L’effetto può avvenire solo una volta ogni 10s. Si può scatenare anche quando il personaggio che lo impugna non è sul campo."
     },
     {
       "key": "Kitain Cross Spear",
       "name": "Kitain Cross Spear",
-      "description": "A special lance that was once used by a famed warrior who guarded the Tatarigami on Yashiori Island.",
-      "refinement": "Increases Elemental Skill DMG by {{0}}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {{1}} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field."
+      "description": "Una speciale lancia che un tempo era usata da un famoso guerriero che proteggeva Tatarigami sull’Isola Yashiori.",
+      "refinement": "Aumenta l’Elemental Skill DMG del {{0}}%. Quando l’Elemental Skill colpisce nemici, il personaggio perde 3 Energy ma ne rigenera {{1}} ogni 2s per i prossimi 6s. L’effetto può avvenire solo una volta ogni 10s. Si può scatenare anche quando il personaggio che lo impugna non è sul campo."
     },
     {
       "key": "Hamayumi",
       "name": "Hamayumi",
-      "description": "A certain shrine maiden once owned this warbow. It was made with surpassing skill, and is both intricate and sturdy.",
-      "refinement": "Increases Normal Attack DMG by {{0}}% and Charged Attack DMG by {{1}}%. When the equipping character's Energy reaches 100%, this effect is increased by 100%."
+      "description": "Quest’arco da guerra una volta apparteneva a una certa nubile fanciulla del santuario. È stato realizzato con insuperabile maestria, è sia intricato che robusto.",
+      "refinement": "Aumenta il DMG di Attacchi Normali del {{0}}% e il DMG di Attacchi Caricati del {{1}}%. Quando il personaggio che lo equipaggia raggiunge Energy 100%, questo potenziamento aumenta del 100%."
     },
     {
       "key": "Hakushin Ring",
       "name": "Hakushin Ring",
-      "description": "A catalyst that carries the memory of the Kitsune Saiguu of ancient times. However, this device is but an impoverished vessel for the full breadth of her thought.",
-      "refinement": "After the character equipped with this weapon triggers an Electro elemental reaction, nearby party members of an Elemental Type involved in the elemental reaction receive a {{0}}% Elemental DMG Bonus for their element, lasting 6s. Elemental Bonuses gained in this way cannot be stacked."
+      "description": "Un catalyst che racchiude in sé il ricordo dei tempi antichi di Kitsune Saiguu. Tuttavia, questo dispositivo non è altro che un impoverito vascello dell’intera vastità del suo pensiero.",
+      "refinement": "Quando il personaggio che lo equipaggia scatena una Reazione Elementale Electro, i vicini membri del party il cui elemento viene coinvolto nella reazione elementale ricevono un {{0}}% di Elemental DMG Bonus per il loro elemento; dura 6s. Ulteriori Elemental Bonus ottenuti in questo modo non sono sommabili."
     }
   ],
   "artifacts": [
@@ -5707,7 +5707,7 @@
         },
         {
           "key": "b2",
-          "bonus": "When casting an Elemental Skill, if the character has 15 or more Energy, they lose 15 Energy and Normal/Charged/ Plunging Attack DMG is increased by 50% for 10s."
+          "bonus": "Quando si usa un'Abilità Elementale e si possiedono 15 o più Energy, 15 Energy saranno consumati per aumentare il DMG di Attacchi Normali/Caricati/in Picchiata del 50% per 10s."
         }
       ]
     },
@@ -5721,7 +5721,7 @@
         },
         {
           "key": "b2",
-          "bonus": "Increases Elemental Burst DMG by 25% of Energy Recharge. A maximum of 75% bonus DMG can be obtained in this way."
+          "bonus": "Aumenta l’Elemental Burst DMG del 25% di Energy Recharge. Il massimo DMG bonus ottenibile in questo modo è del 75%."
         }
       ]
     }

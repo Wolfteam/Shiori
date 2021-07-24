@@ -4213,61 +4213,61 @@
     {
       "key": "Ayaka",
       "name": "Kamisato Ayaka",
-      "description": "Daughter of the Yashiro Commission's Kamisato Clan. Dignified and elegant, as well as wise and strong.",
+      "description": "Filha do Clá Kamisato da Comissão Yashiro. Solene e elegante, e também sábia e forte.",
       "skills": [
         {
           "key": "s1",
-          "title": "Kamisato Art - Kabuki",
+          "title": "Arte Kamisato: Naname",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 5 rapid strikes.",
+              "description": "Realiza até 5 golpes rápidos.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash a continuous stream of sword ki.",
+              "description": "Consome certa quantidade de Stamina para liberar o vento continuo da espada.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Mergulha do ar para atingir o chão abaixo, causando Dano aos inimigos ao longo do caminho e causando Dano de AdE no impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Kamisato Art: Hyouka",
-          "description": "Summons blooming ice to launch nearby opponents, dealing Cryo DMG.",
+          "title": "Arte Kamisato: Hyouka",
+          "description": "Invoca uma flor gélida que lança os inimigos próximos para o ar, causando Dano Cryo em uma AdE.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Kamisato Art: Soumetsu",
-          "description": "Summons up the frost with flawless poise, unleashing a Souken Gate that travels forward continuously.",
+          "title": "Arte Kamisato: Soumetsu",
+          "description": "Ayaka acumula geada com uma pose perfeita, liberando um Granizo Seki no To que avança continuamente para frente.",
           "abilities": [
             {
               "name": "Frostflake Seki no To",
               "descriptions": [
-                "A storm of whirling icy winds that slashes repeatedly at opponents it touches, dealing Cryo DMG.",
-                "Blooms once its duration ends, dealing AoE Cryo DMG."
+                "Causa Dano Cryo ao cortar continuamente o inimigos que toca com ventos gélidos e afiados como láminas.",
+                "Explode após sua duração encerrar, causando Dano Cryo em uma AdE."
               ]
             }
           ]
         },
         {
           "key": "s4",
-          "title": "Kamisato Art: Senho",
+          "title": "Arte Kamisato: Senho",
           "description": null,
           "abilities": [
             {
               "name": "Alternate Sprint",
-              "description": "Ayaka consumes Stamina and cloaks herself in frozen fog that moves with her. In Senho form, she moves at high speed on water. When she reappears, the following effects occur:",
+              "description": "Ayaka consome Stamina para se esconder dentro de um rápido fluxo de granizo que se move à medida que ela se movimenta. Na forma Senho, ela se move em alta velocidade na água. Quando ela reaparece, os seguintes efeitos são produzidos:",
               "descriptions": [
-                "Ayaka unleashes frigid energy to apply Cryo on nearby opponents.",
-                "Cold congeals along Ayaka's blade, infusing her attacks with Cryo for a brief period."
+                "Libera uma energia fria e aplica Cryo aos oponentes ao redor.",
+                "O frio condensa ao longo da lâmina da Kamisato Ayaka, obtendo por um breve periodo Encantamento Cryo."
               ]
             }
           ]
@@ -4276,66 +4276,66 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Fruits of Shinsa",
-          "description": "When Ayaka crafts Weapon Ascension Materials, she has a 10% chance to receive double the product.",
+          "title": "Frutos de Shinsa",
+          "description": "Quando Ayaka fabrica Materiais de Ascensão de Armas, ele tem 10% de chance de receber o dobro do produto.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Amatsumi Kunitsumi Sanctification",
-          "description": "After using Kamisato Art: Hyouka, Kamisato Ayaka's Normal and Charged Attacks deal 30% increased DMG for 6s.",
+          "title": "Amatsutsumi Kunitsutsumi Chinshi",
+          "description": "Depois de usar Arte Kamisato: Hyouka, os danos causados pelos Ataques Normais e Carregados da Kamisato Ayaka ganham um aumento de 30% durante 6s.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Kanten Senmyou Blessing",
-          "description": "When the Cryo application at the end of Kamisato Art: Senho hits an opponent, Kamisato Ayaka gains the following effects:",
+          "title": "Bênção de Kanten Senmyou",
+          "description": "Quando a aplicação de Cryo no final da Arte Kamisato: Senho acerta um oponente, Kamisato Ayaka ganha os seguintes efeitos:",
           "descriptions": [
-            "Restores 10 Stamina",
-            "Gains 18% Cryo DMG Bonus for 10s."
+            "Recupera 10 de Stamina",
+            "Ganha 18% de Bônus de Dano Cryo por 10s."
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Snowswept Sakura",
-          "description": "When Kamisato Ayaka's Normal or Charged Attacks deal Cryo DMG to opponents, it has a 50% chance of decreasing the CD of Kamisato Art: Hyouka by 0.3s. This effect can occur once every 0.1s.",
+          "title": "Sosai Sumizome Sakura",
+          "description": "Quando os Ataques Normal ou Carregado de Kamisato Ayaka infligem Dano Cryo aos inimigos, têm uma chance de 50% de diminuir a Recarga de Arte Kamisato: Hyouka em 0.3s. Esse efeito só pode ocorrer uma vez a cada 0.1s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Blizzard Blade Seki no To",
-          "description": "When casting Kamisato Art: Soumetsu, unleashes 2 smaller additional Frostflake Seki no To, each dealing 20% of the original storm's DMG.",
+          "title": "Lâmina da Nevasca Seki no To",
+          "description": "Ao lançar Arte Kamisato: Soumetsu, lança 2 Portões Souken pequenos adicionais, cada uma causando 20% do Dano da tempestade.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Frostbloom Kamifubuki",
-          "description": "Increases the Level of Kamisato Art: Soumetsu by 3.\nMaximum upgrade level is 15.",
+          "title": "Flor Congelada Kamifubuki",
+          "description": "Aumenta o nível de Arte Kamisato: Soumetsu em 3.\nO nível máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Ebb and Flow",
-          "description": "Opponents damaged by Kamisato Art: Soumetsu's Frostflake Seki no To will have their DEF decreased by 30% for 6s.",
+          "title": "Eiki Ryuhan",
+          "description": "Inimigos atingidos pelo Granizo Seki no To de Arte Kamisato: Soumetsu terão seu DEF reduzido em 30% por 6s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Blossom Cloud Irutsuki",
-          "description": "Increases the Level of Kamisato Art: Hyouka by 3.\nMaximum upgrade level is 15.",
+          "title": "Nuvem de Flores Irutsuki",
+          "description": "Aumenta o nível de Arte Kamisato: Hyouka em 3.\nO nível máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Dance of Suigetsu",
-          "description": "Kamisato Ayaka gains Usurahi Butou every 10s, increasing her Charged Attack DMG by 298%. This buff will be cleared 0.5s after Ayaka's Charged ATK hits an opponent, after which the timer for this ability will restart.",
+          "title": "Dança de Suigetsu",
+          "description": "Kamisato Ayaka ganha Usuhari Butou a cada 10s, aumentando o Dano causado pelo seu Ataque Carregado em 298%. Esse bônus será dissipado 0.5s após o Ataque Carregado de Ayaka atingir um inimigo, em que o Tempo de Recarga dessa habilidade reiniciara.",
           "secondDescription": null,
           "descriptions": []
         }

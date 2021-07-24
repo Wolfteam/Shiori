@@ -4212,62 +4212,62 @@
     },
     {
       "key": "Ayaka",
-      "name": "Камисато Аяка",
-      "description": "Секретарь павильона Юэхай.  В ее жилах течет кровь цилинь, озаренного зверя.",
+      "name": "Аяка",
+      "description": "Наследница клана Камисато комиссии Ясиро. Благородна и изящна, мудра и сильна.",
       "skills": [
         {
           "key": "s1",
-          "title": "Kamisato Art - Kabuki",
+          "title": "Искусство Камисато: Нанамэ",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 5 rapid strikes.",
+              "description": "До пяти быстрых ударов мечом.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash a continuous stream of sword ki.",
+              "description": "Создаёт продолжительный град из клинков, для которого тратится определённое количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Kamisato Art: Hyouka",
-          "description": "Summons blooming ice to launch nearby opponents, dealing Cryo DMG.",
+          "title": "Искусство Камисато: Хёка",
+          "description": "Призывает цветущий лёд, который подбрасывает ближайших противников в воздух и наносит им Крио урон",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Kamisato Art: Soumetsu",
-          "description": "Summons up the frost with flawless poise, unleashing a Souken Gate that travels forward continuously.",
+          "title": "Искусство Камисато: Сомэцу",
+          "description": "Безупречным движением вызывает снежную бурю и выпускает непрерывно движущийся вперёд Морозный сэки но то.",
           "abilities": [
             {
-              "name": "Frostflake Seki no To",
+              "name": "Морозный сэки но то:",
               "descriptions": [
-                "A storm of whirling icy winds that slashes repeatedly at opponents it touches, dealing Cryo DMG.",
-                "Blooms once its duration ends, dealing AoE Cryo DMG."
+                "Пронзающий холодный ветер непрерывно кромсает противников и наносит им Крио урон",
+                "По истечении времени действия взрывается и наносит Крио урон по площади"
               ]
             }
           ]
         },
         {
           "key": "s4",
-          "title": "Kamisato Art: Senho",
+          "title": "Искусство Камисато: Сэнхо",
           "description": null,
           "abilities": [
             {
-              "name": "Alternate Sprint",
-              "description": "Ayaka consumes Stamina and cloaks herself in frozen fog that moves with her. In Senho form, she moves at high speed on water. When she reappears, the following effects occur:",
+              "name": "Альтернативный спринт",
+              "description": "Аяка потребляет выносливость и скрывается в стремительном потоке мокрого снега, который движется вместе с ней. Форма Сэнхо позволяет ей двигаться по воде с большой скоростью. После окончания формы Сэнхо и при повторном появлении происходят следующие эффекты:",
               "descriptions": [
-                "Ayaka unleashes frigid energy to apply Cryo on nearby opponents.",
-                "Cold congeals along Ayaka's blade, infusing her attacks with Cryo for a brief period."
+                "Высвобождается холодная энергия, которая накладывает эффект Крио на ближайших противников.",
+                "Холод собирается вдоль лезвия Аяки, на короткое время наделяя её атаки инфузией Крио."
               ]
             }
           ]
@@ -4276,66 +4276,66 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Fruits of Shinsa",
-          "description": "When Ayaka crafts Weapon Ascension Materials, she has a 10% chance to receive double the product.",
+          "title": "Плоды синса",
+          "description": "При создании материалов возвышения оружия имеет 10% шанс создать дополнительный предмет.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Amatsumi Kunitsumi Sanctification",
-          "description": "After using Kamisato Art: Hyouka, Kamisato Ayaka's Normal and Charged Attacks deal 30% increased DMG for 6s.",
+          "title": "Освящение амауми куницуми",
+          "description": "После использования навыка Искусство Камисато: Хёка урон обычных и заряженных атак Аяки увеличивается на 30% в течение 6 сек.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Kanten Senmyou Blessing",
-          "description": "When the Cryo application at the end of Kamisato Art: Senho hits an opponent, Kamisato Ayaka gains the following effects:",
+          "title": "Благословение кантэн сэммё",
+          "description": "Когда Крио эффект в конце действия навыка Искусство Камисато: Сэнхо поражает противника, Камисато Аяка получает следующие эффекты:",
           "descriptions": [
-            "Restores 10 Stamina",
-            "Gains 18% Cryo DMG Bonus for 10s."
+            "Восстанавливает 10 ед. энергии.",
+            "Получает 18% Бонус Крио урона на 10 сек."
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Snowswept Sakura",
-          "description": "When Kamisato Ayaka's Normal or Charged Attacks deal Cryo DMG to opponents, it has a 50% chance of decreasing the CD of Kamisato Art: Hyouka by 0.3s. This effect can occur once every 0.1s.",
+          "title": "Укутанная снегом сакура",
+          "description": "Когда обычные атаки или заряженные атаки Аяки наносят Крио урон противникам, есть 50% шанс уменьшить время отката навыка Искусство Камисато: Хёка на 0.3 сек. Этот эффект может возникнуть раз в 0.1 сек.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Blizzard Blade Seki no To",
-          "description": "When casting Kamisato Art: Soumetsu, unleashes 2 smaller additional Frostflake Seki no To, each dealing 20% of the original storm's DMG.",
+          "title": "Лезвие бури сэки но то",
+          "description": "Навык Искусство Камисато: Сомэцу создаёт два дополнительных Морозных сэки но то поменьше, каждый из которых наносит урон, равный 20% от основного урона.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Frostbloom Kamifubuki",
-          "description": "Increases the Level of Kamisato Art: Soumetsu by 3.\nMaximum upgrade level is 15.",
+          "title": "Ледяной цветок камифубуки",
+          "description": "Увеличивает уровень навыка Искусство Камисато: Сомэцу на 3.\nМакс. Ур.: 15",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Ebb and Flow",
-          "description": "Opponents damaged by Kamisato Art: Soumetsu's Frostflake Seki no To will have their DEF decreased by 30% for 6s.",
+          "title": "Приливы и отливы",
+          "description": "Понижает защиту, получивших урон от Морозного сэки но то навыка Искусство Камисато: Сомэцу, на 30% в течение 6 сек.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Blossom Cloud Irutsuki",
-          "description": "Increases the Level of Kamisato Art: Hyouka by 3.\nMaximum upgrade level is 15.",
+          "title": "Цветущее облако ируцуки",
+          "description": "Увеличивает уровень навыка Искусство Камисато: Хёка на 3.\nМакс. Ур.: 15",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Dance of Suigetsu",
-          "description": "Kamisato Ayaka gains Usurahi Butou every 10s, increasing her Charged Attack DMG by 298%. This buff will be cleared 0.5s after Ayaka's Charged ATK hits an opponent, after which the timer for this ability will restart.",
+          "title": "Танец суигэцу",
+          "description": "Каждые 10 сек. Камисато Аяка получает эффект Усурахи буто, который повышает урон её заряженных атак на 298%. Через 0.5 сек после попадания заряженной атакой по врагу этот эффект пропадает, и отсчёт начинается заново.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -4343,7 +4343,7 @@
     },
     {
       "key": "Yoimiya",
-      "name": "Yoimiya",
+      "name": "Ёимия",
       "description": "N/A",
       "skills": [
         {
@@ -4397,54 +4397,54 @@
     },
     {
       "key": "Traveler (Electro)",
-      "name": "Traveler (Electro)",
+      "name": "Путешественник (Электро)",
       "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
       "skills": [
         {
           "key": "s1",
-          "title": "Foreign Thundershock",
+          "title": "Иноземный гром",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 rapid strikes.",
+              "description": "До пяти быстрых ударов мечом.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Два быстрых взмаха мечом, для которых тратится определённое количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Lightning Blade",
-          "description": "Unleashes three swift thunder shadows that deal Electro DMG to opponents and leave an Abundance Amulet behind after hitting an opponent.\n2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.",
+          "title": "Клинок молнии",
+          "description": "Выпускает три стремительные громовые тени, которые наносят Электро урон противникам и при успешном ударе оставляют после себя Амулеты изобилия.\nИзначально можно создать только два Амулета изобилия. Использование навыка сбросит все созданные Амулеты изобилия.",
           "abilities": [
             {
-              "name": "Abundance Amulets",
-              "description": "When a character is near an Abundance Amulet, they will absorb it and obtain the following effects:",
+              "name": "Амулеты изобилия",
+              "description": "Когда персонаж находится рядом с Амулетом изобилия, он поглощает его и получает следующие эффекты:",
               "descriptions": [
-                "Restores Elemental Energy",
-                "Increases Energy Recharge during the Abundance Amulet's duration."
+                "Восстанавливает элементальную энергию",
+                "Повышает восстановление энергии"
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Bellowing Thunder",
-          "description": "You call upon the protection of lightning, knocking nearby opponents back and dealing Electro DMG to them.",
+          "title": "Раскаты грома",
+          "description": "Вы взываете к защите молнии, которые отбрасывают окружающих врагов и наносит им Электро урон.",
           "abilities": [
             {
-              "name": "Lightning Shroud",
-              "description": "When your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing Electro DMG.\nWhen Falling Thunder hits opponents, it will regenerate Energy for that character.\nOne instance of Falling Thunder can be generated every 0.5s.",
+              "name": "Завеса молнии",
+              "description": "Когда обычная или заряженная атака активного персонажа попадает по врагу, генерируется Нисходящий гром, который наносит Электро урон.\nКогда Нисходящий гром попадает по врагу, он восстанавливает энергию этого персонажа.\nТолько один удар Нисходящего грома может генерироваться раз в 0.5 сек.",
               "descriptions": []
             }
           ]
@@ -4453,22 +4453,22 @@
       "passives": [
         {
           "key": "p2",
-          "title": "Thunderflash",
-          "description": "When another nearby character in the party obtains an Abundance Amulet created by Lightning Blade, Lightning Blade's CD is decreased by 1.5s.",
+          "title": "Вспышка молнии",
+          "description": "Когда другой ближайший персонаж в отряде получает Амулет изобилия, созданный навыком Клинок молнии, время отката этого навыка уменьшается на 1.5 сек.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Resounding Roar",
-          "description": "Increases the Energy Recharge effect granted by Lightning Blade's Abundance Amulet by 10% of the Traveler's Energy Recharge.",
+          "title": "Сокрушительный рокот",
+          "description": "Увеличивает эффект восстановления энергии, даруемый Амулетом изобилия навыка Клинок молнии, на 10% от восстановления энергии путешественницы.",
           "descriptions": []
         }
       ],
-      "constellations":  [
+      "constellations": [
         {
           "key": "c1",
-          "title": "Spring Thunder of Fertility",
-          "description": "The number of Abundance Amulets that can be generated using Lightning Blade is increased to 3.",
+          "title": "Гром весеннего урожая",
+          "description": "Количество Амулетов изобилия, которые ",
           "secondDescription": null,
           "descriptions": []
         },
@@ -5187,7 +5187,7 @@
       "key": "Dodoco Tales",
       "name": "Истории Додоко",
       "description": "Книга, состоящая из увлекательных детских историй, которые невольно вызывают улыбку на лице.\nДаже взрослые читатели не могут не погрузиться с головой в рассказанные здесь невинные и наивные маленькие приключения.",
-      "refinement": "Попадания обычной атакой увеличивают урон заряженной атаки на {{0}}% в течение 6 сек., а попадания заряженной атакой увеличивают силу атаки на {{1}}% в течение 6 сек."
+      "refinement": "Попадания обычной атакой увеличивают урон заряженной атаки на {0}% в течение 6 сек., а попадания заряженной атакой увеличивают силу атаки на {{1}}% в течение 6 сек."
     },
     {
       "key": "Amenoma Kageuchi",
@@ -5699,29 +5699,29 @@
     },
     {
       "key": "Shimenawa's Reminiscence",
-      "name": "Shimenawa's Reminiscence",
+      "name": "Воспоминания Симэнавы",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "ATK +18%."
+          "bonus": "Увеличивает силу атаки на 18%"
         },
         {
           "key": "b2",
-          "bonus": "When casting an Elemental Skill, if the character has 15 or more Energy, they lose 15 Energy and Normal/Charged/ Plunging Attack DMG is increased by 50% for 10s."
+          "bonus": "При использовании элементального навыка, если у персонажа 15 или более единиц элементальной энергии, он теряет 15 единиц элементальной энергии; при этом его урон обычной атаки, заряженной атаки и атаки в падении на 10 сек. увеличивается на 50%."
         }
       ]
     },
     {
       "key": "Emblem of Severed Fate",
-      "name": "Emblem of Severed Fate",
+      "name": "Эмблема рассечённой судьбы",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Energy Recharge +20%"
+          "bonus": "Увеличивает скорость восстановления энергии +20%."
         },
         {
           "key": "b2",
-          "bonus": "Increases Elemental Burst DMG by 25% of Energy Recharge. A maximum of 75% bonus DMG can be obtained in this way."
+          "bonus": "Увеличивает урон взрыва стихии на величину, зависящую от значения восстановления энергии. Эффект можно увеличить максимум до 75%"
         }
       ]
     }
