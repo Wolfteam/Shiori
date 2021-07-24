@@ -23,7 +23,7 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
   @override
   Stream<MaterialsState> mapEventToState(MaterialsEvent event) async* {
     final s = event.map(
-      init: (e) => _buildInitialState(),
+      init: (e) => _buildInitialState(excludeKeys: e.excludeKeys),
       rarityChanged: (e) => currentState.copyWith.call(tempRarity: e.rarity),
       sortDirectionTypeChanged: (e) => currentState.copyWith.call(tempSortDirectionType: e.sortDirectionType),
       typeChanged: (e) => currentState.copyWith.call(tempType: e.type),
@@ -49,6 +49,9 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
         tempType: currentState.type,
       ),
       close: (e) => currentState.copyWith.call(materials: []),
+      resetFilters: (_) => _buildInitialState(
+        excludeKeys: state.maybeMap(loaded: (state) => state.excludeKeys, orElse: () => []),
+      ),
     );
 
     yield s;

@@ -1,9 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/circle_character.dart';
-import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:genshindb/presentation/shared/material_item_button.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/home/widgets/ascension_material_item_card.dart';
+import 'package:genshindb/presentation/shared/images/circle_character.dart';
 
 class CharCardAscensionMaterial extends StatelessWidget {
   final String name;
@@ -32,56 +30,21 @@ class CharCardAscensionMaterial extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
-    final theme = Theme.of(context);
-    final chars = charImgs.map((e) => CircleCharacter(image: e)).toList();
-    final obtainOn = days.isNotEmpty ? s.translateDays(days) : bossName!;
-
-    return Card(
-      margin: Styles.edgeInsetAll10,
-      shape: Styles.cardShape,
+    return AscensionMaterialItemCard(
+      name: name,
+      image: image,
+      days: days,
       child: Container(
-        padding: Styles.edgeInsetAll5,
-        child: Row(
-          children: [
-            Flexible(
-              fit: FlexFit.tight,
-              flex: 35,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  MaterialItemButton(image: image, size: 100),
-                  Tooltip(
-                    message: name,
-                    child: Text(
-                      name,
-                      textAlign: TextAlign.center,
-                      overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Tooltip(
-                    message: obtainOn,
-                    child: Text(
-                      obtainOn,
-                      textAlign: TextAlign.center,
-                      style: theme.textTheme.subtitle2!.copyWith(fontSize: 12),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Flexible(
-              fit: FlexFit.tight,
-              flex: 65,
-              child: Wrap(
-                crossAxisAlignment: WrapCrossAlignment.center,
-                alignment: WrapAlignment.center,
-                children: chars,
-              ),
-            ),
-          ],
+        margin: const EdgeInsets.only(top: 10),
+        child: SizedBox(
+          height: 70,
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemCount: charImgs.length,
+            physics: const BouncingScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (ctx, index) => CircleCharacter(image: charImgs[index]),
+          ),
         ),
       ),
     );

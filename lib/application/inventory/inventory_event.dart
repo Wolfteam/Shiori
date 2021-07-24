@@ -26,4 +26,10 @@ class InventoryEvent with _$InventoryEvent {
   }) = _AddMaterial;
 
   const factory InventoryEvent.close() = _Close;
+
+  const factory InventoryEvent.clearAllCharacters() = _ClearAllCharacters;
+
+  const factory InventoryEvent.clearAllWeapons() = _ClearAllWeapons;
+
+  const factory InventoryEvent.clearAllMaterials() = _ClearAllMaterials;
 }

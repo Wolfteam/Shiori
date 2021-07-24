@@ -69,6 +69,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         weaponTypes: currentState.tempWeaponTypes,
         roleType: currentState.tempRoleType,
         excludeKeys: currentState.excludeKeys,
+        regionType: currentState.tempRegionType,
       ),
       cancelChanges: (_) => currentState.copyWith.call(
         tempCharacterFilterType: currentState.characterFilterType,
@@ -79,6 +80,13 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         tempWeaponTypes: currentState.weaponTypes,
         tempRoleType: currentState.roleType,
         excludeKeys: currentState.excludeKeys,
+        tempRegionType: currentState.regionType,
+      ),
+      regionTypeChanged: (e) => currentState.copyWith.call(tempRegionType: e.regionType),
+      resetFilters: (_) => _buildInitialState(
+        excludeKeys: state.maybeMap(loaded: (state) => state.excludeKeys, orElse: () => []),
+        elementTypes: ElementType.values,
+        weaponTypes: WeaponType.values,
       ),
     );
     yield s;
@@ -94,6 +102,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     CharacterFilterType characterFilterType = CharacterFilterType.name,
     SortDirectionType sortDirectionType = SortDirectionType.asc,
     CharacterRoleType roleType = CharacterRoleType.all,
+    RegionType? regionType,
   }) {
     final isLoaded = state is _LoadedState;
     var characters = _genshinService.getCharactersForCard();
@@ -124,6 +133,8 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         roleType: roleType,
         tempRoleType: roleType,
         excludeKeys: excludeKeys,
+        regionType: regionType,
+        tempRegionType: regionType,
       );
     }
 
@@ -145,6 +156,10 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
 
     if (roleType != CharacterRoleType.all) {
       characters = characters.where((el) => el.roleType == roleType).toList();
+    }
+
+    if (regionType != null) {
+      characters = characters.where((el) => el.regionType == regionType).toList();
     }
 
     switch (statusType) {
@@ -179,6 +194,10 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
       sortDirectionType: sortDirectionType,
       tempSortDirectionType: sortDirectionType,
       excludeKeys: excludeKeys,
+      roleType: roleType,
+      tempRoleType: roleType,
+      regionType: regionType,
+      tempRegionType: regionType,
     );
     return s;
   }

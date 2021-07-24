@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:genshindb/domain/enums/enums.dart' as enums;
+import 'package:genshindb/presentation/shared/details/detail_appbar.dart';
+import 'package:genshindb/presentation/shared/details/detail_top_layout.dart';
 import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
 
 import 'material_detail_general_card.dart';
@@ -24,61 +26,21 @@ class MaterialDetailTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context);
-    final isPortrait = mediaQuery.orientation == Orientation.portrait;
-    final descriptionWidth = mediaQuery.size.width / (isPortrait ? 1.2 : 2);
-    //TODO: IM NOT SURE HOW THIS WILL LOOK LIKE IN BIGGER DEVICES
-    // final padding = mediaQuery.padding;
-    // final screenHeight = mediaQuery.size.height - padding.top - padding.bottom;
-
-    return Container(
+    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    return DetailTopLayout(
+      fullImage: image,
+      charDescriptionHeight: 160,
+      heightOnPortrait: isPortrait ? 250 : null,
+      widthOnPortrait: isPortrait ? 250 : null,
+      isAnSmallImage: MediaQuery.of(context).orientation == Orientation.portrait,
+      heightOnLandscape: MediaQuery.of(context).size.height * 0.7,
       decoration: BoxDecoration(gradient: rarity.getRarityGradient()),
-      child: Stack(
-        fit: StackFit.passthrough,
-        alignment: Alignment.center,
-        children: <Widget>[
-          Align(
-            alignment: Alignment.topRight,
-            child: Container(
-              transform: Matrix4.translationValues(80, -30, 0.0),
-              child: Opacity(
-                opacity: 0.5,
-                child: Image.asset(
-                  image,
-                  width: 350,
-                  height: imageHeight,
-                ),
-              ),
-            ),
-          ),
-          Align(
-            alignment: Alignment.topLeft,
-            child: Image.asset(
-              image,
-              width: 340,
-              height: imageHeight,
-            ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              width: descriptionWidth,
-              margin: const EdgeInsets.symmetric(horizontal: 30),
-              child: MaterialDetailGeneralCard(
-                type: type,
-                name: name,
-                rarity: rarity,
-                days: days,
-              ),
-            ),
-          ),
-          Positioned(
-            top: 0.0,
-            left: 0.0,
-            right: 0.0,
-            child: AppBar(backgroundColor: Colors.transparent, elevation: 0.0),
-          ),
-        ],
+      appBar: const DetailAppBar(),
+      generalCard: MaterialDetailGeneralCard(
+        type: type,
+        name: name,
+        rarity: rarity,
+        days: days,
       ),
     );
   }

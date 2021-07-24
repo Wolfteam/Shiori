@@ -25,4 +25,6 @@ class WeaponsEvent with _$WeaponsEvent {
   const factory WeaponsEvent.weaponLocationTypeChanged(ItemLocationType locationType) = _WeaponLocationTypeChanged;
 
   const factory WeaponsEvent.cancelChanges() = _CancelChanges;
+
+  const factory WeaponsEvent.resetFilters() = _ResetFilters;
 }

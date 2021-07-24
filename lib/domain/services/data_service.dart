@@ -13,6 +13,8 @@ abstract class DataService {
 
   Future<void> deleteCalAscMatSession(int sessionKey);
 
+  Future<void> deleteAllCalAscMatSession();
+
   Future<void> addCalAscMatSessionItems(int sessionKey, List<ItemAscensionMaterials> items);
 
   /// Adds a new calc. item to the provided session by using the [sessionKey].
@@ -37,6 +39,8 @@ abstract class DataService {
 
   Future<void> deleteCalAscMatSessionItem(int sessionKey, int itemIndex, {bool redistribute = true});
 
+  Future<void> deleteAllCalAscMatSessionItems(int sessionKey);
+
   List<CharacterCardModel> getAllCharactersInInventory();
 
   List<WeaponCardModel> getAllWeaponsInInventory();
@@ -48,6 +52,8 @@ abstract class DataService {
   Future<void> updateItemInInventory(String key, ItemType type, int quantity);
 
   Future<void> deleteItemFromInventory(String key, ItemType type);
+
+  Future<void> deleteItemsFromInventory(ItemType type);
 
   bool isItemInInventory(String key, ItemType type);
 

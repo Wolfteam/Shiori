@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:genshindb/application/bloc.dart';
+import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/sliver_nothing_found.dart';
 import 'package:genshindb/presentation/shared/sliver_page_filter.dart';
 import 'package:genshindb/presentation/shared/sliver_scaffold_with_fab.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/shared/utils/modal_bottom_sheet_utils.dart';
+import 'package:genshindb/presentation/shared/utils/size_utils.dart';
 
-import 'widgets/character_bottom_sheet.dart';
 import 'widgets/character_card.dart';
 
 class CharactersPage extends StatefulWidget {
@@ -46,35 +47,23 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
   Widget build(BuildContext context) {
     super.build(context);
     final s = S.of(context);
-    final child = BlocBuilder<CharactersBloc, CharactersState>(
-      builder: (context, state) {
-        return state.map(
-          loading: (_) => const Loading(),
-          loaded: (state) => SliverScaffoldWithFab(
-            slivers: [
-              SliverPageFilter(
-                search: state.search,
-                title: s.characters,
-                onPressed: () => _showFiltersModal(context),
-                searchChanged: (v) => context.read<CharactersBloc>().add(CharactersEvent.searchChanged(search: v)),
-              ),
-              if (state.characters.isNotEmpty) _buildGrid(state.characters, context) else const SliverNothingFound(),
-            ],
-          ),
-        );
-      },
-    );
-
-    if (widget.isInSelectionMode) {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text(s.selectCharacter),
+    return BlocBuilder<CharactersBloc, CharactersState>(
+      builder: (context, state) => state.map(
+        loading: (_) => const Loading(),
+        loaded: (state) => SliverScaffoldWithFab(
+          appbar: widget.isInSelectionMode ? AppBar(title: Text(s.selectCharacter)) : null,
+          slivers: [
+            SliverPageFilter(
+              search: state.search,
+              title: s.characters,
+              onPressed: () => ModalBottomSheetUtils.showAppModalBottomSheet(context, EndDrawerItemType.characters),
+              searchChanged: (v) => context.read<CharactersBloc>().add(CharactersEvent.searchChanged(search: v)),
+            ),
+            if (state.characters.isNotEmpty) _buildGrid(state.characters, context) else const SliverNothingFound(),
+          ],
         ),
-        body: child,
-      );
-    }
-
-    return child;
+      ),
+    );
   }
 
   Widget _buildGrid(List<CharacterCardModel> characters, BuildContext context) {
@@ -82,23 +71,13 @@ class _CharactersPageState extends State<CharactersPage> with AutomaticKeepAlive
     return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       sliver: SliverStaggeredGrid.countBuilder(
-        crossAxisCount: isPortrait ? 2 : 3,
+        crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context, isOnMainPage: !widget.isInSelectionMode),
         itemBuilder: (ctx, index) => CharacterCard.item(char: characters[index], isInSelectionMode: widget.isInSelectionMode),
         itemCount: characters.length,
         crossAxisSpacing: isPortrait ? 10 : 5,
         mainAxisSpacing: 5,
-        staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
+        staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
       ),
-    );
-  }
-
-  Future<void> _showFiltersModal(BuildContext context) async {
-    await showModalBottomSheet(
-      context: context,
-      shape: Styles.modalBottomSheetShape,
-      isDismissible: true,
-      isScrollControlled: true,
-      builder: (_) => const CharacterBottomSheet(),
     );
   }
 }

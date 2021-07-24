@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:responsive_grid/responsive_grid.dart';
 
 import 'element_reaction_card.dart';
 
@@ -13,22 +14,27 @@ class SliverElementReactions extends StatelessWidget {
       builder: (context, state) {
         return state.when(
           loading: () => const SliverToBoxAdapter(child: Loading(useScaffold: false)),
-          loaded: (_, reactions, __) => SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (ctx, index) {
-                final e = reactions[index];
-                return Padding(
-                  padding: Styles.edgeInsetAll5,
-                  child: ElementReactionCard.withImages(
-                    key: Key('reaction_$index'),
-                    name: e.name,
-                    effect: e.effect,
-                    principal: e.principal,
-                    secondary: e.secondary,
-                  ),
-                );
-              },
-              childCount: reactions.length,
+          loaded: (_, reactions, __) => SliverToBoxAdapter(
+            child: ResponsiveGridRow(
+              children: reactions
+                  .map(
+                    (e) => ResponsiveGridCol(
+                      sm: 6,
+                      md: 6,
+                      lg: 4,
+                      child: Padding(
+                        padding: Styles.edgeInsetAll5,
+                        child: ElementReactionCard.withImages(
+                          key: Key(e.name),
+                          name: e.name,
+                          effect: e.effect,
+                          principal: e.principal,
+                          secondary: e.secondary,
+                        ),
+                      ),
+                    ),
+                  )
+                  .toList(),
             ),
           ),
         );

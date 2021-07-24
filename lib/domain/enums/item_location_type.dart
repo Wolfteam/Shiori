@@ -7,4 +7,5 @@ enum ItemLocationType {
   starglitterExchange,
   bpBounty,
   quest,
+  ps4,
 }

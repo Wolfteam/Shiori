@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
+import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/child_item_disabled.dart';
 import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 import 'add_edit_item_bottom_sheet.dart';
@@ -138,12 +140,10 @@ class ItemCard extends StatelessWidget {
           ),
         );
 
-    await showModalBottomSheet<bool>(
-      context: context,
-      shape: Styles.modalBottomSheetShape,
-      isDismissible: true,
-      isScrollControlled: true,
-      builder: (_) => AddEditItemBottomSheet.toEditItem(sessionKey: sessionKey, index: index, isAWeapon: isWeapon, isActive: isActive),
+    await ModalBottomSheetUtils.showAppModalBottomSheet(
+      context,
+      EndDrawerItemType.calculatorAscMaterialsEdit,
+      args: AddEditItemBottomSheet.buildNavigationArgsToEditItem(sessionKey, index, isActive, isAWeapon: isWeapon),
     );
   }
 }

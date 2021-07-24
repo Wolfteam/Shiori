@@ -355,5 +355,14 @@
   "notifInfoMsgE": "Beberapa OEM Android memiliki OS Android khusu mereka sendiri yang dapat mencegah aplikasi berjalan di belakang layar.\nAkibatnya, notifikasi yang terjadwal mungkin tidak berjalan saat aplikasi berada di belakang layar pada perangkat tertentu (misalnya Xiaomi, Huawei).\nJadi, jika kamu mengalami masalah ini, kamu mungkin harus mencari pengaturan yang memungkinkan kamu mengontrol aplikasi mana yang dapat berjalan di belakang layar.",
   "swipeToSeeMoreOptions": "Kamu dapat menggeser ke kanan atau kiri untuk melihat lebih banyak opsi pada setiap item.",
   "reduceTime": "Kurangi Waktu",
-  "use24HourFormatOnDates": "Gunakan format waktu 24 jam pada tanggal"
+  "use24HourFormatOnDates": "Gunakan format waktu 24 jam pada tanggal",
+  "playstation": "PlayStation",
+  "deleteAllSessions": "Delete all sessions",
+  "deleteAllItems": "Delete all items",
+  "confirmQuestion": "Are you sure you wanna proceed ?",
+  "gameSpecific": "Game specific",
+  "tools": "Tools",
+  "privacy": "Privacy",
+  "privacyMsgA": "This app does not collect any personal data or information that could be used to track or identify the user.",
+  "privacyMsgB": "The only collected data are crashes and app usage. This information is useful for identifying and fixing bugs. It also useful to identify which features are the most used within the app and which ones should be prioritized."
 }
