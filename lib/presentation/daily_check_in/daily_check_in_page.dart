@@ -21,6 +21,10 @@ class _DailyCheckInPageState extends State<DailyCheckInPage> {
           backButton[0].remove();
           shareButton[0].remove();
       }
+      
+      if (document.querySelectorAll("div[class*='left'")) {
+        document.querySelectorAll("div[class*='left'")[0].replaceChildren("");
+      }
     }
     
     setTimeout(removeButtons, 300);
