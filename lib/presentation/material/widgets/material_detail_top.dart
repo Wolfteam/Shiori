@@ -29,7 +29,7 @@ class MaterialDetailTop extends StatelessWidget {
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return DetailTopLayout(
       fullImage: image,
-      charDescriptionHeight: 160,
+      charDescriptionHeight: 170,
       heightOnPortrait: isPortrait ? 250 : null,
       widthOnPortrait: isPortrait ? 250 : null,
       isAnSmallImage: MediaQuery.of(context).orientation == Orientation.portrait,

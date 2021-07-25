@@ -51,7 +51,7 @@ class Styles {
   static const double materialCardHeight = 270;
   static const double materialCardWidth = 220;
   static const double homeCardHeight = 160;
-  static const double homeCardWidth = 250;
+  static const double homeCardWidth = 280;
   static const double birthdayCardWidth = 300;
 
   static const endDrawerFilterItemMargin = EdgeInsets.only(top: 20);

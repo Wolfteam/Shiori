@@ -43,7 +43,7 @@ class WeaponDetailTop extends StatelessWidget {
       decoration: BoxDecoration(gradient: rarity.getRarityGradient()),
       heightOnLandscape: mediaQuery.size.height * 0.8,
       showShadowImage: isPortrait,
-      charDescriptionHeight: 200,
+      charDescriptionHeight: 220,
       widthOnPortrait: isPortrait ? 250 : null,
       heightOnPortrait: isPortrait ? 350 : null,
       isAnSmallImage: isPortrait,
