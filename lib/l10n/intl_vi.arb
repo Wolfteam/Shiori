@@ -357,12 +357,12 @@
   "reduceTime": "Giảm Thời Gian",
   "use24HourFormatOnDates": "Sử dụng định dạng 24h",
   "playstation": "PlayStation",
-  "deleteAllSessions": "Delete all sessions",
-  "deleteAllItems": "Delete all items",
-  "confirmQuestion": "Are you sure you wanna proceed ?",
-  "gameSpecific": "Game specific",
-  "tools": "Tools",
-  "privacy": "Privacy",
-  "privacyMsgA": "This app does not collect any personal data or information that could be used to track or identify the user.",
-  "privacyMsgB": "The only collected data are crashes and app usage. This information is useful for identifying and fixing bugs. It also useful to identify which features are the most used within the app and which ones should be prioritized."
+  "deleteAllSessions": "Xóa tất cả phiên",
+  "deleteAllItems": "Xóa tất cả vật phẩm",
+  "confirmQuestion": "Bạn chắc chắn muốn tiếp tục ?",
+  "gameSpecific": "Thông tin chung",
+  "tools": "Công cụ hỗ trợ",
+  "privacy": "Quyền riêng tư",
+  "privacyMsgA": "Ứng dụng này không thu thập bất kì thông tin nào của bạn nhằm mục đính theo dõi.",
+  "privacyMsgB": "Dữ liệu thu thập duy nhất là những thông tin về sự cố và việc sử dụng ứng dụng. Những thông tin này cần thiết cho việc xác định lỗi hoặc tính năng ứng dụng nào được sử dụng nhiều để đưa ra những thay đổi phù hợp yêu cầu người dùng."
 }

@@ -4212,61 +4212,61 @@
     {
       "key": "Ayaka",
       "name": "Kamisato Ayaka",
-      "description": "Daughter of the Yashiro Commission's Kamisato Clan. Dignified and elegant, as well as wise and strong.",
+      "description": "Đại tiểu thư nhà Kamisato thuộc \"Hiệp Hội Yashiro\" Inazuma. Đoan trang thanh lịch, thông minh và mạnh mẽ.",
       "skills": [
         {
           "key": "s1",
-          "title": "Kamisato Art - Kabuki",
+          "title": "Trường Phái Kamisato: Naname",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 5 rapid strikes.",
+              "description": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash a continuous stream of sword ki.",
+              "description": "Tiêu hao thể lực nhất định, liên tiếp phóng ra kiếm gió ở chính giữa.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging enemies along the path and dealing AoE DMG upon impact.",
+              "description": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Kamisato Art: Hyouka",
-          "description": "Summons blooming ice to launch nearby opponents, dealing Cryo DMG.",
+          "title": "Trường Phái Kamisato - Hyouka",
+          "description": "Đánh thức đóa hoa băng nở rộ, đánh bay kẻ địch bên cạnh và gây ST Băng diện rộng.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Kamisato Art: Soumetsu",
-          "description": "Summons up the frost with flawless poise, unleashing a Souken Gate that travels forward continuously.",
+          "title": "Trường Phái Kamisato - Soumetsu",
+          "description": "Triệu hồi băng giá với dáng vẻ hoàn hảo, thi triển Cổng Băng Tuyết liên tục về phía trước.",
           "abilities": [
             {
-              "name": "Frostflake Seki no To",
+              "name": "Cổng Băng Tuyết",
               "descriptions": [
-                "A storm of whirling icy winds that slashes repeatedly at opponents it touches, dealing Cryo DMG.",
-                "Blooms once its duration ends, dealing AoE Cryo DMG."
+                "Dùng gió tuyết sắc như đao nhọn chém liên tục vào kẻ địch tiếp xúc, gây ST Băng.",
+                "Khi hết thời gian sẽ bung tỏa, gây ST Băng diện rộng."
               ]
             }
           ]
         },
         {
           "key": "s4",
-          "title": "Kamisato Art: Senho",
+          "title": "Trường Phái Kamisato - Senho",
           "description": null,
           "abilities": [
             {
-              "name": "Alternate Sprint",
-              "description": "Ayaka consumes Stamina and cloaks herself in frozen fog that moves with her. In Senho form, she moves at high speed on water. When she reappears, the following effects occur:",
+              "name": "Thay thế xung kích",
+              "description": "Ẩn vào vụn băng, tiêu hao thể lực để hóa thành dòng chảy cực nhanh. Ở trạng thái Senho, Kamisato Ayaka có thể di chuyển nhanh trên mặt nước. Khi dừng trạng thái Senho và hiện thân, sẽ sinh ra hiệu quả sau:",
               "descriptions": [
-                "Ayaka unleashes frigid energy to apply Cryo on nearby opponents.",
-                "Cold congeals along Ayaka's blade, infusing her attacks with Cryo for a brief period."
+                "Thi triển sức mạnh hàn băng, đính kèm Nguyên tố Băng lên kẻ địch xung quanh.",
+                "Ngưng tụ khí lạnh trên kiếm, khiến Kamisato Ayaka nhận Nguyên Tố Băng đính kèm trong thời gian ngắn."
               ]
             }
           ]
@@ -4275,66 +4275,66 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Fruits of Shinsa",
-          "description": "When Ayaka crafts Weapon Ascension Materials, she has a 10% chance to receive double the product.",
+          "title": "Bí Kíp Kiểm Tra",
+          "description": "Khi ghép nguyên liệu đột phá vũ khí sẽ có 10% tỷ lệ nhận x2 thành phẩm.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Amatsumi Kunitsumi Sanctification",
-          "description": "After using Kamisato Art: Hyouka, Kamisato Ayaka's Normal and Charged Attacks deal 30% increased DMG for 6s.",
+          "title": "Amatsumi Kunitsumi Ihahigoto",
+          "description": "Trong vòng 6s sau khi thi triển Trường Phái Kamisato - Hyouka, sát thương gây ra bởi tấn công thường và trọng kích của Kamisato Ayaka tăng 30%.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Kanten Senmyou Blessing",
-          "description": "When the Cryo application at the end of Kamisato Art: Senho hits an opponent, Kamisato Ayaka gains the following effects:",
+          "title": "Kanten Senmyou Norito",
+          "description": "Khi Trường Phái Kamisato - Senho kết thúc sẽ thi triển hàn băng, nếu đánh trúng địch, Kamisato Ayaka sẽ nhận hiệu quả sau:",
           "descriptions": [
-            "Restores 10 Stamina",
-            "Gains 18% Cryo DMG Bonus for 10s."
+            "Hồi 10 điểm thể lực.",
+            "Nhận 18% buff ST Băng, duy trì 10s."
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Snowswept Sakura",
-          "description": "When Kamisato Ayaka's Normal or Charged Attacks deal Cryo DMG to opponents, it has a 50% chance of decreasing the CD of Kamisato Art: Hyouka by 0.3s. This effect can occur once every 0.1s.",
+          "title": "Anh Đào Sương Giá",
+          "description": "Khi tấn công thường hoặc trọng kích của Kamisato Ayaka gây ST Băng cho địch, có 50% tỷ lệ giảm 0.3s CD của Trường Phái Kamisato - Hyouka. Hiệu quả này mỗi 0.1s chỉ kích hoạt 1 lần.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Blizzard Blade Seki no To",
-          "description": "When casting Kamisato Art: Soumetsu, unleashes 2 smaller additional Frostflake Seki no To, each dealing 20% of the original storm's DMG.",
+          "title": "Tam Trùng Tuyết Môn",
+          "description": "Khi thi triển Trường Phái Kamisato - Soumetsu sẽ thi triển thêm 2 Cổng Băng Tuyết với quy mô rất nhỏ, mỗi cổng gây sát thương bằng 20% sát thương ban đầu.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Frostbloom Kamifubuki",
-          "description": "Increases the Level of Kamisato Art: Soumetsu by 3.\nMaximum upgrade level is 15.",
+          "title": "Bạch Hoa Cầm Họa",
+          "description": "Cấp kỹ năng Trường Phái Kamisato - Soumetsu +3.\nTăng tối đa đến cấp 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Ebb and Flow",
-          "description": "Opponents damaged by Kamisato Art: Soumetsu's Frostflake Seki no To will have their DEF decreased by 30% for 6s.",
+          "title": "Doanh Khuyết Lưu Phản",
+          "description": "Sau khi kẻ địch chịu sát thương do Cổng Băng Tuyết của Trường Phái Kamisato - Soumetsu gây ra, phòng ngự của địch sẽ giảm 30%, kéo dài 6s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Blossom Cloud Irutsuki",
-          "description": "Increases the Level of Kamisato Art: Hyouka by 3.\nMaximum upgrade level is 15.",
+          "title": "Hoa Vân Chung Nhập Nguyệt",
+          "description": "Cấp kỹ năng Trường Phái Kamisato - Hyouka +3.\nTăng tối đa đến cấp 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Dance of Suigetsu",
-          "description": "Kamisato Ayaka gains Usurahi Butou every 10s, increasing her Charged Attack DMG by 298%. This buff will be cleared 0.5s after Ayaka's Charged ATK hits an opponent, after which the timer for this ability will restart.",
+          "title": "Gian Thủy Nguyệt",
+          "description": "Mỗi 10s, Kamisato Ayaka sẽ nhận được Usurahi Butou, khiến sát thương trọng kích gây ra tăng 298%. Hiệu quả Usurahi Butou sẽ mất sau 0.5s trọng kích trúng kẻ địch, và bắt đầu tính giờ lại.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -4396,54 +4396,54 @@
     },
     {
       "key": "Traveler (Electro)",
-      "name": "Traveler (Electro)",
-      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
+      "name": "Traveler (Lôi)",
+      "description": "Nhà Lữ Hành lưu lạc đến đây từ thế giới khác, bị Thần cướp mất người thân, từ đó bước vào con đường đi tìm 7 vị thần.",
       "skills": [
         {
           "key": "s1",
-          "title": "Foreign Thundershock",
+          "title": "Tiếng Sấm Dị Bang",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 rapid strikes.",
+              "description": "Thực hiện tối đa 5 lần đánh kiếm liên tiếp.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Tiêu hao thể lực nhất định, đánh ra hai kiếm về phía trước trong chớp mắt.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây ST diện rộng khi chạm đất.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Lightning Blade",
-          "description": "Unleashes three swift thunder shadows that deal Electro DMG to opponents and leave an Abundance Amulet behind after hitting an opponent.\n2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.",
+          "title": "Lôi Ảnh Kiếm",
+          "description": "Chém ra ba đường lôi ảnh chớp nhoáng. Lôi ảnh sẽ gây cho địch sát thương Nguyên Tố Lôi, đồng thời khi đánh trúng địch sẽ để lại Khuyết Ngọc Dậy Sóng.  Ban đầu sẽ sinh ra tối đa 2 Khuyết Ngọc Dậy Sóng. Khi thi triển kỹ năng sẽ xóa bỏ Khuyết Ngọc Dậy Sóng của bản thân.",
           "abilities": [
             {
-              "name": "Abundance Amulets",
-              "description": "When a character is near an Abundance Amulet, they will absorb it and obtain the following effects:",
+              "name": "Khuyết Ngọc Dậy Sóng",
+              "description": "Khi nhân vật đến gần sẽ hấp thụ Khuyết Ngọc Dậy Sóng, nhận hiệu quả sau đây:",
               "descriptions": [
-                "Restores Elemental Energy",
-                "Increases Energy Recharge during the Abundance Amulet's duration."
+                "Hồi Năng Lượng Nguyên Tố",
+                "Trong thời gian duy trì, tăng hiệu suất Nạp Nguyên Tố."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Bellowing Thunder",
-          "description": "You call upon the protection of lightning, knocking nearby opponents back and dealing Electro DMG to them.",
+          "title": "Xung Điện Sấm Rền",
+          "description": "Kêu gọi sự bảo vệ của sấm sét, đánh lui kẻ địch xung quanh và gây sát thương Nguyên Tố Lôi.",
           "abilities": [
             {
-              "name": "Lightning Shroud",
-              "description": "When your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing Electro DMG.\nWhen Falling Thunder hits opponents, it will regenerate Energy for that character.\nOne instance of Falling Thunder can be generated every 0.5s.",
+              "name": "Sấm Sét Bao Vây",
+              "description": "Khi tấn công thường hoặc trọng kích của nhân vật trong trận đánh trúng địch sẽ triệu hồi Sấm Sét Uy Vũ gây sát thương Nguyên Tố Lôi cho địch.\n Khi Sấm Sét Uy Vũ đánh trúng địch sẽ hồi Năng Lượng Nguyên Tố cho nhân vật này.\n Mỗi 0.5s tối đa sinh ra Sấm Sét Uy Vũ 1 lần.",
               "descriptions": []
             }
           ]
@@ -4452,57 +4452,57 @@
       "passives": [
         {
           "key": "p2",
-          "title": "Thunderflash",
-          "description": "When another nearby character in the party obtains an Abundance Amulet created by Lightning Blade, Lightning Blade's CD is decreased by 1.5s.",
+          "title": "Tia Chớp",
+          "description": "Khi các nhân vật khác trong đội nhận Khuyết Ngọc Dậy Sóng do Lôi Ảnh Kiếm sinh ra, CD của Lôi Ảnh Kiếm sẽ giảm 1.5s.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Resounding Roar",
-          "description": "Increases the Energy Recharge effect granted by Lightning Blade's Abundance Amulet by 10% of the Traveler's Energy Recharge.",
+          "title": "Sấm Rền",
+          "description": "Tăng hiệu quả Nạp Nguyên Tố do Khuyết Ngọc Dậy Sóng của Lôi Ảnh Kiếm cung cấp theo 10% hiệu quả Nạp Nguyên Tố của Nhà Lữ Hành.",
           "descriptions": []
         }
       ],
       "constellations":  [
         {
           "key": "c1",
-          "title": "Spring Thunder of Fertility",
-          "description": "The number of Abundance Amulets that can be generated using Lightning Blade is increased to 3.",
+          "title": "Sấm Sét Bội Thu",
+          "description": "Số lượng Khuyết Ngọc Dậy Sóng có thể sinh ra khi thi triển Lôi Ảnh Kiếm tăng đến 3.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Violet Vehemence",
-          "description": "When Falling Thunder created by Bellowing Thunder hits an opponent, it will decrease their Electro RES by 15% for 8s.",
+          "title": "Như Sấm Thịnh Nộ",
+          "description": "Sau khi Sấm Sét Uy Vũ của Xung Điện Sấm Rền đánh trúng địch, sẽ làm giảm 15% Kháng Nguyên Tố Lôi của địch, duy trì 8s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Distant Crackling",
-          "description": "Increases the Level of Bellowing Thunder by 3.\nMaximum upgrade level is 15.",
+          "title": "Sấp Chớp Liên Miên",
+          "description": "Cấp kỹ năng Xung Điện Sấm Rền +3.\nTăng tối đa đến cấp 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Fickle Cloudstrike",
-          "description": "When a character obtains Abundance Amulets generated by Lightning Blade, if this character's Energy is less than 35%, the Energy restored by the Abundance Amulets is increased by 100%.",
+          "title": "Mây Sét Khó Lường",
+          "description": "Khi nhân vật nhận được Khuyết Ngọc Dậy Sóng sinh ra từ Lôi Ảnh Kiếm, nếu Năng Lượng Nguyên Tố hiện tại của nhân vật này dưới 35%, thì Năng Lượng Nguyên Tố mà Khuyết Ngọc Dậy Sóng hồi phục sẽ tăng 100%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Clamor in the Wilds",
-          "description": "Increases the Level of Lightning Blade by 3..\nMaximum upgrade level is 15.",
+          "title": "Tiếng Sấm Giữa Đồng Hoang",
+          "description": "Cấp kỹ năng Lôi Ảnh Kiếm +3.\nTăng tối đa đến cấp 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "World-Shaker",
-          "description": "Every 2 Falling Thunder attacks triggered by Bellowing Thunder will increase the DMG dealt by the next Falling Thunder by 100%, and will restore an additional 1 Energy to the current character.",
+          "title": "Thần Lôi Chấn Thế",
+          "description": "Mỗi khi Xung Điện Sấm Rền tạo ra 2 lần Sấm Sét Uy Vũ sẽ tăng 100% sát thương do Sấm Sét Uy Vũ gây ra ở lần sau, đồng thời hồi thêm 1 điểm Năng Lượng Nguyên Tố cho nhân vật hiện tại.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -5190,39 +5190,39 @@
     },
     {
       "key": "Amenoma Kageuchi",
-      "name": "Amenoma Kageuchi",
-      "description": "A blade custom made for a famed samurai who could strike down a tengu warrior, known for their incredible agility, in midair.",
-      "refinement": "After casting an Elemental Skill, gain 1 Succession Seed. This effect can be triggered once every 5s. The Succession Seed lasts for 30s. Up to 3 Succession Seeds may exist simultaneously. After using an Elemental Burst, all Succession Seeds are consumed and after 2s, the character regenerates {{0}} Energy for each seed consumed."
+      "name": "Đoản Đao Amenoma",
+      "description": "Thanh kiếm chế tạo theo lệnh của một samurai nổi tiếng. Theo truyền thuyết có thể nhanh chóng hạ gục ngay cả chiến binh Tengu thần tốc..",
+      "refinement": "Sau khi thi triển Kỹ Năng Nguyên Tố, nhận 1 Âm Chủng, hiệu quả này mỗi 5s nhiều nhất kích hoạt 1 lần. Âm Chủng kéo dài 30s, cùng lúc có thể tồn tại nhiều nhất 3 cái. Sau khi thi triển Kỹ Năng Nộ, sẽ xóa tất cả Âm Chủng có, và 2s sau đó sẽ dựa vào số Âm Chủng tiêu hao mà hồi {{0}} điểm năng lượng nguyên tố cho nhân vật đó."
     },
     {
       "key": "Mistsplitter Reforged",
-      "name": "Mistsplitter Reforged",
-      "description": "A sword that blazes with a fierce violet light. The name \"Reforged\" comes from it having been broken once before.",
-      "refinement": "Gain a {{0}}% Elemental DMG Bonus for all element and receive the might of the Mistsplitter's Emblem. At stack levels 1/2/3, the Mistsplitter's Emblem provides a {{1}}/{{2}}/{{3}}% Elemental DMG Bonus for the character's Elemental Type. The character will obtain 1 stack of Mistsplitter's Emblem in each of the following scenarios: Normal Attack deals Elemental DMG (stack lasts 5s), casting Elemental Burst (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently."
+      "name": "Ánh Sáng Đêm Sương Mù",
+      "description": "Một thanh kiếm rực lên với ánh sáng tím. Cái tên \"Ánh Sáng\" gợi nhớ quá khứ từng tan vỡ.",
+      "refinement": "Tăng {{0}}% Sát Thương Nguyên Tố, đồng thời nhận lấy sức mạnh \"Vết Cắt Sương Mù\". Khi Vết Cắt Sương Mù ở tầng 1/2/3 sẽ tăng Sát Thương Nguyên Tố cùng loại với bản thân, tương ứng là {{1}}/{{2}}/{{3}}%. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sương Mù khi: Tấn Công Thường tạo thành Sát Thương Nguyên Tố tồn tại trong 5 giây; Thi triển Kỹ Năng Nộ tồn tại trong 10 giây; Ngoài ra, Năng Lượng Nguyên Tố của nhân vật khi thấp hơn 100%, sẽ tạo ra một tầng Vết Cắt Sương Mù, Vết Cắt Sương Mù của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sương Mù được tính độc lập với nhau."
     },
     {
       "key": "Katsuragikiri Nagamasa",
-      "name": "Katsuragikiri Nagamasa",
-      "description": "A blade that was once made in Tatarasuna. Heavy and tough.",
-      "refinement": "Increases Elemental Skill DMG by {{0}}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {{1}} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field."
+      "name": "Trường Đao Katsuragi",
+      "description": "Thanh kiếm được Tatarasuna rèn, tuy nặng nề nhưng vô cùng sắc bén.",
+      "refinement": "Tăng sát thương Kỹ Năng Nguyên Tố {{0}}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {{1}} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt."
     },
     {
       "key": "Kitain Cross Spear",
-      "name": "Kitain Cross Spear",
-      "description": "A special lance that was once used by a famed warrior who guarded the Tatarigami on Yashiori Island.",
-      "refinement": "Increases Elemental Skill DMG by {{0}}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {{1}} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field."
+      "name": "Giáo Thập Tự Kitain",
+      "description": "Một cây thương đặc biệt đã từng được sử dụng bởi một chiến binh nổi tiếng, người bảo vệ đảo Yashiori khỏi Họa Thần.",
+      "refinement": "Tăng sát thương Kỹ Năng Nguyên Tố {{0}}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {{1}} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt."
     },
     {
       "key": "Hamayumi",
-      "name": "Hamayumi",
-      "description": "A certain shrine maiden once owned this warbow. It was made with surpassing skill, and is both intricate and sturdy.",
-      "refinement": "Increases Normal Attack DMG by {{0}}% and Charged Attack DMG by {{1}}%. When the equipping character's Energy reaches 100%, this effect is increased by 100%."
+      "name": "Cung Trừ Ma",
+      "description": "Cây cung từng thuộc về một pháp sư nào đó, tạo hình tinh xảo nhưng rất dễ sử dụng.",
+      "refinement": "Tăng {{0}}% sát thương tấn công thường, tăng {{1}}%. sát thương trọng kích. Khi Năng Lượng Nguyên Tố đạt 100%, tăng 100% hiệu quả cho nhân vật trang bị vũ khí này."
     },
     {
       "key": "Hakushin Ring",
-      "name": "Hakushin Ring",
-      "description": "A catalyst that carries the memory of the Kitsune Saiguu of ancient times. However, this device is but an impoverished vessel for the full breadth of her thought.",
-      "refinement": "After the character equipped with this weapon triggers an Electro elemental reaction, nearby party members of an Elemental Type involved in the elemental reaction receive a {{0}}% Elemental DMG Bonus for their element, lasting 6s. Elemental Bonuses gained in this way cannot be stacked."
+      "name": "Vòng Bạch Thần",
+      "description": "Pháp khí kế thừa ý niệm của Ngài Kitsune. Chỉ có điều ý niệm của ngài lớn mạnh như vậy vật nhỏ bé này chẳng thể chứa đựng được hết.",
+      "refinement": "Mỗi khi nhân vật trang bị vũ khí này kích hoạt phản ứng liên quan đến nguyên tố lôi, thì nhân vật lân cận trong đội có thuộc tính nguyên tố gây ra các phản ứng liên quan sẽ tăng {{0}}% Sát Thương Nguyên Tố của nguyên tố tương ứng và kéo dài 6 giây. Nhân vật được tăng Sát Thương Nguyên Tố bằng hình thức này sẽ không được cộng dồn."
     }
   ],
   "artifacts": [
@@ -5664,7 +5664,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Thời gian duy trì hiệu quả nguyên tố Phong kèm theo giảm 40%.."
+          "bonus": "Thời gian duy trì hiệu quả nguyên tố Phong kèm theo giảm 40%."
         }
       ]
     },
@@ -5698,29 +5698,29 @@
     },
     {
       "key": "Shimenawa's Reminiscence",
-      "name": "Shimenawa's Reminiscence",
+      "name": "Dòng Hồi Ức Bất Tận",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "ATK +18%."
+          "bonus": "Tấn công tăng 18%."
         },
         {
           "key": "b2",
-          "bonus": "When casting an Elemental Skill, if the character has 15 or more Energy, they lose 15 Energy and Normal/Charged/ Plunging Attack DMG is increased by 50% for 10s."
+          "bonus": "Khi thi triển Kỹ Năng Nguyên Tố, nhân vật có Năng Lượng Nguyên Tố cao hơn hoặc bằng 15 điểm thì sẽ mất đi 15 điểm để tăng 50% sát thương tấn công thường, trọng kích và tấn công khi đáp trong 10 giây."
         }
       ]
     },
     {
       "key": "Emblem of Severed Fate",
-      "name": "Emblem of Severed Fate",
+      "name": "Dấu Ấn Ngăn Cách",
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Energy Recharge +20%"
+          "bonus": "Hiệu Quả Nạp Nguyên Tố tăng 20%"
         },
         {
           "key": "b2",
-          "bonus": "Increases Elemental Burst DMG by 25% of Energy Recharge. A maximum of 75% bonus DMG can be obtained in this way."
+          "bonus": "Tăng sát thương Kỹ Năng Nộ dựa trên 25% Hiệu Quả Nạp Nguyên Tố. Chỉ có thể tăng tối đa 75% thông qua cách này."
         }
       ]
     }
@@ -5993,7 +5993,7 @@
     {
       "key": "Crown of Insight",
       "name": "Vương Miện Trí Thức",
-      "description": "Nguyên liệu quý để tăng thiên phú.\nDụng cụ nghi thức dùng để chứa và truyền thụ tri thức ở thời viễn cổ. Cho dù ngày nay, trí tuệ đã được truyền thụ lại trong ngôn ngữ và điển tịch, nhưng sức mạnh và trí tuệ tàn dư trong \"Vương Miện Trí Thức\" vẫn mang đến cho con người thời nay những đột phá vô cùng vĩ đại.."
+      "description": "Nguyên liệu quý để tăng thiên phú.\nDụng cụ nghi thức dùng để chứa và truyền thụ tri thức ở thời viễn cổ. Cho dù ngày nay, trí tuệ đã được truyền thụ lại trong ngôn ngữ và điển tịch, nhưng sức mạnh và trí tuệ tàn dư trong \"Vương Miện Trí Thức\" vẫn mang đến cho con người thời nay những đột phá vô cùng vĩ đại."
     },
     {
       "key": "SacrificialKnifeA",
@@ -6622,178 +6622,178 @@
     },
     {
       "key": "TransienceA",
-      "name": "Teachings of Transience",
-      "description": "Transience is the dream of the nation of thunder.\nFleeting glories are the highest expression of mortal beauty, for are we mortals not like the flashing lightning itself? Like a lovely dream or blossoming spark, we shall leave a gorgeous mark on the eternal night sky."
+      "name": "Bài Giảng Của \"Vĩnh Hằng\"",
+      "description": "Ước mơ của Lôi Quốc là sự vĩnh hằng.\nVĩnh hằng chính là nét đẹp hoàn mỹ nhất của con người, cũng giống như sấm sét vậy! Thật mong muốn lưu lại khoảnh khắc vĩnh hằng tuyệt vời này như trong giấc mộng và bầu trời đầy pháo hoa."
     },
     {
       "key": "TransienceB",
-      "name": "Guide to Transience",
-      "description": "Transience is the dream of the nation of thunder.\nWe find the greatest joys in mortal life in transient dreams, for is life itself not like the shadow of the thunder? Pursue your dreams into the clouds if you wish, and enjoy the unexpected silence of the dim lamp-lit nights."
+      "name": "Hướng Dẫn Của \"Vĩnh Hằng\"",
+      "description": "Ước mơ của Lôi Quốc là sự vĩnh hằng.\nGiá trị của sự vĩnh hằng nằm ở nét đẹp của con người, cũng như sấm sét vậy! Càng theo đuổi sẽ càng xa tầm tay, và cũng sẽ đột nhiên đến trong những thời khắc ánh đèn leo lắt."
     },
     {
       "key": "TransienceC",
-      "name": "Philosophies of Transience",
-      "description": "Transience is the dream of the nation of thunder.\nThe fleeting nature of this mortal world is the essence of beauty, for are our lives in this world not akin to the levin flash? Yet the might of the divine comes suddenly, and before the roar of eternity, who can stand?"
+      "name": "Triết Học Của \"Vĩnh Hằng\"",
+      "description": "Ước mơ của Lôi Quốc là sự vĩnh hằng.\nSự ngắn ngủi của vĩnh hằng chất chứa vẻ đẹp của con người. Không phải con người trên thế giới cũng tương tự như ánh sáng sao? Thời điểm thần lực xuất hiện là vĩnh hằng, nhưng ai có thể chịu được uy danh vĩnh hằng này đây?"
     },
     {
       "key": "EleganceA",
-      "name": "Teachings of Elegance",
-      "description": "Elegance is the form of the nation of thunder.\nElegance brooks no flattery, and the elegant are ever noble. They are like the sea eagles who soar on high to contend with the resounding storms. They will not cater to philistine vulgarity, as one would not cast a flower crown into the mud, staining its dignity."
+      "name": "Bài Giảng Của \"Nhã Nhặn\"",
+      "description": "Dung mạo của Lôi quốc là sự nhã nhặn.\nNgười nhã nhặn sẽ luôn cao quý, giống như chim đại bàng biển chỉ muốn bay cao và chống chọi với giông bão; Nghênh tiếp sự thô thiển cũng giống như đặt một tràng hoa xuống bùn, chỉ làm vấy bẩn đi nhân phẩm."
     },
     {
       "key": "EleganceB",
-      "name": "Guide to Elegance",
-      "description": "Elegance is the form of the nation of thunder.\nElegance shuns arrogance. The elegant are ever humble, and only by discarding vanity and sloth may one see clearly — and is there not beauty and loveliness even in the basest of appearances?"
+      "name": "Hướng Dẫn Của \"Nhã Nhặn\"",
+      "description": "Dung mạo của Lôi quốc là sự nhã nhặn.\nNhã nhặn không phải kiêu ngạo, người nhã nhặn luôn khiêm tốn. Chỉ bằng cách loại bỏ sự phù phiếm và sự cẩu thả, bản thân mới có thể nhìn thấu và tìm kiếm cảnh giới thực sự của vẻ đẹp thanh lịch ngay cả khi vẻ ngoài khó coi nhất."
     },
     {
       "key": "EleganceC",
-      "name": "Philosophies of Elegance",
-      "description": "Elegance is the form of the nation of thunder.\nElegance abhors vulgarity, and the elegant ever walk alone. Resisting base evils, unmoved by base loves, never taking refuge in base ignorance — that is how one perceives the chasm between the elegant and the contemptuous."
+      "name": "Triết Học Của \"Nhã Nhặn\"",
+      "description": "Dung mạo của Lôi quốc là sự nhã nhặn.\nNhã nhặn không tầm thường. Một người nhã nhặn sẽ luôn bước đi một mình. Chỉ bằng cách không khuất phục trước cái ác của cái tầm thường, không bị lay động bởi tình yêu của cái tầm thường, hoặc thoát khỏi sự ngu dốt của cái tầm thường, thì mới có thể phân biệt được giữa tao nhã và tầm thường."
     },
     {
       "key": "LightA",
-      "name": "Teachings of Light",
-      "description": "Light is the yearning of the land of thunder.\nThe ruler who claims to have perceived all forever aims to hoard celestial glory. But this vision that cannot be shared only leads people to long for it more fiercely, like moths diving into the flame."
+      "name": "Bài Giảng Của \"Ánh Sáng\"",
+      "description": "Ước nguyện của Lôi quốc là ánh sáng.\nVị quân tử tự cho mình là thông suốt sẽ luôn cố gắng gặt hái vinh quang trên trời cao. Tuy nhiên, viễn cảnh tham vọng sẽ khiến những người cần nó theo đuổi quyết liệt hơn, giống như những con thiêu thân lao vào lửa."
     },
     {
       "key": "LightB",
-      "name": "Guide to Light",
-      "description": "Light is the yearning of the land of thunder.\nThough the sun rays themselves should be blocked by layers upon layers of clouds, there are still those in the thunder god's land who dream of piercing that wrathful sea of lightning to pursue the glory of the divine, fearing not that they shall be cruelly struck down."
+      "name": "Hướng Dẫn Của \"Ánh Sáng\"",
+      "description": "Ước nguyện của Lôi quốc là ánh sáng.\nNgay cả khi ánh sáng bị mây dông bao phủ, vẫn có những con người ở vùng đất Narukami với lý tưởng cao cả sẽ vượt qua sấm sét cuồng nộ của bầu trời để theo đuổi ánh sáng, dù cho có bị hủy diệt một cách lạnh lùng."
     },
     {
       "key": "LightC",
-      "name": "Philosophies of Light",
-      "description": "Light is the yearning of the land of thunder.\nThough they must live forever on the earth, humanity will always reach for the light. Mortals will pursue and surpass, and they will never stop. A sealed eternity may, perhaps, look magnificent, but its essence is death."
+      "name": "Triết Học Của \"Ánh Sáng\"",
+      "description": "Ước nguyện của Lôi quốc là ánh sáng.\nDù có sống mãi dưới đất, con người vẫn kiên cường theo đuổi ánh sáng. Mọi người vẫn luôn muốn đuổi theo và vượt qua, không thể ngừng lại được. Sự vĩnh hằng tĩnh lặng và khép kín cũng thật tráng lệ, nhưng bản chất của nó suy cho cùng là cái chết."
     },
     {
       "key": "Sakura Bloom",
-      "name": "Sakura Bloom",
-      "description": "Blossoms from the Sacred Sakura at the Grand Narukami Shrine, filled with a fondness for Inazuma."
+      "name": "Tú Cầu Anh Đào",
+      "description": "Cánh hoa rơi từ cây Anh Đào Thần ở Đền Narukami, mang theo sự phù hộ của Inazuma."
     },
     {
       "key": "Crystal Marrow",
-      "name": "Crystal Marrow",
-      "description": "A crystal that contains a sliver of Tatarigami power. Adding this material during smelting will greatly increase the strength and toughness of metals."
+      "name": "Tủy Pha Lê",
+      "description": "Tinh thể chứa sức mạnh của Họa Thần, nếu dùng loại vật chất này trong khi tinh luyện sẽ có thể nâng cao độ bền và sức chống đỡ của các sản phẩm thép."
     },
     {
       "key": "Naku Weed",
-      "name": "Naku Weed",
-      "description": "Even on windless days, this plant will tremble lightly amid the cries of thunder. The part of it that resembles petals are in fact extensions of the leaves meant to protect the fragile flower."
+      "name": "Cỏ Naku",
+      "description": "Dù là ngày không gió, loại thực vật này cũng sẽ đung đưa theo tiếng sấm. Trông có vẻ giống kết cấu của cánh hoa, nhưng thật ra là lá vươn dài ra để bảo vệ những đóa hoa yếu ớt."
     },
     {
       "key": "HandguardA",
-      "name": "Old Handguard",
-      "description": "A battle-worn handguard that was once mounted on an Inazuman blade.\nFor those adept in the art of the sword, the tsuba is a defense from the edge of an opponent's blade. For beginners, it is a defense made for their own right hand, to protect it from itself."
+      "name": "Kiếm Cách Cũ Nát",
+      "description": "Vật phòng hộ trên thanh kiếm, chứng kiến qua vô vàn trận chiến.\nĐối với những người thuần thục kiếm thuật, kiếm cách dùng để chặn lưỡi kiếm của đối phương; Còn đối với những kiếm sĩ mới tập, kiếm cách là chìa khóa để bảo vệ tay phải của họ."
     },
     {
       "key": "HandguardB",
-      "name": "Kageuchi Handguard",
-      "description": "A handguard mounded upon a sword of some distinction.\nInazuma has a long tradition of sword-making. When making swords, smiths will often make several different weapons at once, before choosing from among them the \"shinuchi,\" or the best weapon, while the others are known as \"kageuchi.\""
+      "name": "Kiếm Cách Bản Sao",
+      "description": "Vật phòng hộ trên thanh kiếm.\nThợ rèn Inazuma khi rèn kiếm sẽ luôn làm ra vài thanh cùng loại. Từ đó chọn ra thanh ưu tú nhất để làm \"bản chính\", những thanh còn lại được xem là \"bản sao\"."
     },
     {
       "key": "HandguardC",
-      "name": "Famed Handguard",
-      "description": "An intricately-made handguard that was mounted upon a famed weapon.\nSome believe that swords have souls and lives of their own, and thus deserve their own names. Those who love their blades will be acknowledged by them in turn. But those who see their swords as friends or even lovers should be warned that this relationship is built on death and bloodshed. The passions of those who dance with their blade amid crimson showers must surely be cooled someday by fickle steel."
+      "name": "Kiếm Cách Trứ Danh",
+      "description": "Vật phòng hộ tinh xảo của các loại danh kiếm.\nCó người tin chắc rằng đao kiếm có linh hồn và sự sống riêng, đó là lý do tại sao người ta lại đặt tên cho kiếm. Những ai yêu thích đao kiếm cũng sẽ có được sự đền đáp. Nhưng những ai trở thành bạn thân hoặc thậm chí xem kiếm như người yêu đều phải biết rằng thứ tình cảm này được nuôi dưỡng bởi sự giết chóc và chặt chém. Những người thường tắm máu và múa kiếm, máu của họ cuối cùng cũng sẽ bị phủ lên những thanh kiếm vô tình này."
     },
     {
       "key": "Chaos2A",
-      "name": "Chaos Gear",
-      "description": "Comes from a now-inactive ancient Ruin machine.\nThis is the energy source of that biomimetic mechanism."
+      "name": "Cơ Quan Hỗn Độn",
+      "description": "Thuộc về cơ quan di tích cổ đại không còn hoạt động nữa.\nNó dường như là nguồn năng lượng của cỗ máy này."
     },
     {
       "key": "Chaos2B",
-      "name": "Chaos Axis",
-      "description": "Comes from a now-inactive ancient Ruin machine.\nEven the great techniques and unknown power of this device must come to nothing should the machine that contained them ever fail to maintain structural integrity."
+      "name": "Đầu Nối Hỗn Độn",
+      "description": "Thuộc về cơ quan di tích cổ đại không còn hoạt động nữa.\nKhi không thể duy trì kết cấu của cơ quan, công nghệ tuyệt vời và sức mạnh vô danh ẩn chứa trong đó cũng mất đi ý nghĩa."
     },
     {
       "key": "Chaos2C",
-      "name": "Chaos Oculus",
-      "description": "Comes from a now-inactive ancient Ruin machine.\nThe \"Ruin\" part of the name comes from the areas where they are most active. However, Ruin machines actually have little in common with the detritus in which they are often found.\nIn the ancient past, these ruins were once part of a civilization mighty enough to almost touch the dome of the firmament, while \"ruin\" still waits in the deep places of the earth, awaiting the order to arise and tread all kingdoms underfoot."
+      "name": "Con Ngươi Hỗn Độn",
+      "description": "Đến từ cơ quan di tích cổ không còn hoạt động nữa.\nNguồn gốc tên gọi của những \"di tích\" này đến từ khu vực mà chúng hoạt động. Nhưng cũng không có nhiều điểm chung lắm giữa các di tích này và nơi chúng có mặt.\nTrong quá khứ xa xôi, di tích từng thuộc về nền văn minh vĩ đại gần như có thể chạm được tới trời, còn \"di tích\" thì vẫn luôn sẵn sàng chờ lệnh để san bằng bất kỳ quốc gia nào."
     },
     {
       "key": "PrismA",
-      "name": "Dismal Prism",
-      "description": "This was once a prism that could polarize light, but has grown dull through the passing of years."
+      "name": "Lăng Kính Ảm Đạm",
+      "description": "Vốn là lăng kính có thể làm chuyển hướng ánh sáng, nhưng thời gian đã khiến lăng kính trở nên vẩn đục."
     },
     {
       "key": "PrismB",
-      "name": "Crystal Prism",
-      "description": "A prism that can bend light.\nIllusory images can be made using such prisms, giving such devices — in a manner of speaking — the power to sway human hearts."
+      "name": "Lăng Kính Pha Lê",
+      "description": "Lăng kính có thể làm lệch hướng ánh sáng.\nLợi dụng nó sẽ có thể tạo ra ảo ảnh. Ở một khía cạnh nào đó, nó cũng có sức mạnh thao túng lòng người."
     },
     {
       "key": "PrismC",
-      "name": "Polarizing Prism",
-      "description": "A prism that can bend light.\nIn the darkness, these prisms can spread thin light into a wider area. Perhaps this is due to this quirk that these prisms can grant a measure of peace to those whose hearts are oft shrouded in darkness."
+      "name": "Lăng Kính Phân Cực",
+      "description": "Lăng kính có thể làm lệch hướng ánh sáng.\nTrong bóng tối, lăng kính có thể biến tia sáng nhỏ thành một vùng sáng lớn hơn. Có lẽ vì đặc điểm đó mà loại lăng kính này có sức mạnh khiến những người có trái tim bị bao phủ bởi bóng tối cảm thấy thanh thản hơn."
     },
     {
       "key": "Perpetual Heart",
-      "name": "Perpetual Heart",
-      "description": "The core that powers the autonomous movements of the Perpetual Mechanical Array.\nSome theorize that the symbols on these cores have knowledge and logic inscribed upon them in a language that eyes cannot perceive. Some go a step further and believe that these unique Ruin machines autonomously decided to forsake a biomimetic form to pursue strength of function on account of their especially large cores and complex inscriptions."
+      "name": "Lõi Động Cơ Vĩnh Cửu",
+      "description": "Hạt nhân thúc đẩy cơ chế hoạt động của Mô Hình Động Cơ Vĩnh Cửu.\nCó người nghĩ rằng những văn tự trên đó có trí thông minh và tính logic riêng, nhưng cũng có người cho rằng chính vì chúng phức tạp như vậy nên chúng đã tự chuyển hóa để truy cầu những tính năng to lớn hơn."
     },
     {
       "key": "Smoldering Pearl",
-      "name": "Smoldering Pearl",
-      "description": "A crystallization of a Pyro Hypostasis that constantly emits heat.\nEven the burning flames shall one day grow cold, and even the ashen firewood can will itself back into a raging blaze. It must then be the will of the world that Pyro Hypostases should constantly cool down and heat up, much like the universe teems with endless life... until the fated darkness shall one day descend and bring it all to naught."
+      "name": "Ngọc Lửa Âm Ỉ",
+      "description": "Kết tinh của Hỏa Nguyên Bản, tỏa ra nhiệt lượng không ngừng.\nMột ngày nào đó ngọn lửa rực cháy sẽ nguội đi, và ngọn lửa đã tắt sẽ bùng cháy trở lại với ý chí. Sự nguội lạnh và hồi sinh liên tục, tiêu tan và ngưng tụ của Hỏa Nguyên Bản cũng là một phần ý chí của thế giới này, giống như sự sống vô tận của vạn vật trong vũ trụ. Cho đến một ngày định mệnh, toàn bộ thế giới sẽ bị xóa sổ."
     },
     {
       "key": "BranchOfDistantSeaA",
-      "name": "Coral Branch of a Distant Sea",
-      "description": "Watatsumi Island is the furthest from Narukami Island in the Inazuman island chain, and its name means \"the god of the oceans\" in the island's ancient tongue. Legend has it that when the great serpent first arose within the abyssal nation of ever-night, its fluorescent body was covered in myriad-colored coral."
+      "name": "Nhánh San Hô Của Biển Xa",
+      "description": "Nơi \"Watatsumi\" xa xôi nhất của Đảo Narukami, cái tên gọi Watatsumi có nghĩa là \"Thần thống trị biển cả\". Tương truyền, khi con mãng xà lần đầu tiên xuất hiện ở vùng đất dưới vực thẳm đêm đen, trên thân nó được bao phủ bởi những nhánh san hô ngũ sắc, tỏa ra ánh huỳnh quang rực rỡ."
     },
     {
       "key": "BranchOfDistantSeaB",
-      "name": "Jeweled Branch of a Distant Sea",
-      "description": "This coral cannot be found anywhere in Teyvat, but was a gift that the great serpent obtained when it broke into the Dark Sea. For that abyssal snake, to be filled with coral was to be mighty, and its power would be shaved away as those corals were lost. In other words, those corals contain power far beyond the norm."
+      "name": "Nhánh Ngọc Của Biển Xa",
+      "description": "Loại san hô này không thể nhìn thấy được trên vùng đất Teyvat, và nó là món quà mà con rắn có được khi nó đột nhập vào \"Biển Đen\". Vì vậy, đối với loài rắn lớn dưới biển sâu, mang theo một nhánh san hô là biểu tượng của sức mạnh, khi nhánh san hô bị mất đi thì sức mạnh cũng sẽ mất đi. Nói cách khác, nhánh san hô bị gãy cũng ẩn chứa sức mạnh phi thường."
     },
     {
       "key": "BranchOfDistantSeaC",
-      "name": "Jade Branch of a Distant Sea",
-      "description": "Fleeing into the Dark Sea, the god that had lost everything met the abandoned people who had nothing within the ocean depths. Thus it elected to remain and become their \"Orobashi no Mikoto,\" their \"Watatsumi Omikami.\"\nIt is said that the great snake god once broke off all the coral branches on its body to give light to the children who were curled up in the darkness. They also say that it used these coral branches to create a huge ladder to allow those children to once again reach the surface and see the light of day."
+      "name": "Nhánh Quỳnh Ngọc Của Biển Xa",
+      "description": "Ma thần đã mất tất cả và chạy trốn đến vùng Biển Đen, nhìn thấy những người bị bỏ rơi không còn gì trong vực thẳm, nên đã quyết định ở lại và trở thành \"Orobashi no Mikoto\" và \"Watatsumi Omikami\" của họ.\nTương truyền, rắn thần từng bẻ hết cành san hô trên người, để tạo ra ánh sáng cho những đứa trẻ. Một số người khác nói rằng nó đã sử dụng những cành san hô bị gãy để tạo ra một cái thang, để các con của nó có thể quay trở lại mặt đất một lần nữa và nhìn thấy ánh mặt trời."
     },
     {
       "key": "BranchOfDistantSeaD",
-      "name": "Golden Branch of a Distant Sea",
-      "description": "The meaning that lies behind the name \"Watatsumi\" is simply the unrequited hopes that the abandoned people who dwelt in the deep sea pinned upon the serpent god that led them.\nAnd it was also because the serpent god now had people who worshiped it that it stayed in the world it should have long fled, breaking off the coral branches that adorned its body, treading upon land where it should not have, and facing a foe it could never hope to match — till at last, its divine form was sundered along with the mountains, its ichor turned into plasma, and its will and power became a curse that could never be extinguished: Tatarigami."
+      "name": "Nhánh Vàng Của Biển Xa",
+      "description": "Ý nghĩa đằng sau cái tên \"Watatsumi\" chỉ đơn giản là niềm hy vọng của những người dân đã từng nương thân dưới biển sâu gửi gắm vào vị thần rắn đã dẫn dắt họ.\nCũng chính vì những người tôn thờ mình, nên thần rắn phải ở lại thế giới mà lẽ ra hắn phải trốn thoát, bẻ gãy những nhánh san hô tô điểm trên người, xâm chiếm vùng đất mà đáng lẽ ra không nên đặt chân đến, chiến đấu với những đối thủ mà bản thân không bao giờ hy vọng có thể sánh kịp, cho đến khi thân thể thần thánh bị chặt đứt tựa như ngọn núi đổ xuống; cho đến khi máu tươi biến thành lôi điện; cho đến khi ý chí và sức mạnh chuyển hóa thành \"Họa Thần\" mãi mãi không bao giờ tiêu tan."
     },
     {
       "key": "NarukamisA",
-      "name": "Narukami's Wisdom",
-      "description": "In the past, the ancients would climb the peak now known as Mt. Yougou and bend wood that had been charred by lightning into a hook to offer as an effigy unto the thundering force that lit up the skies and shook the earth. This shape would eventually become the \"Electro Mitsudomoe\" symbol, symbolizing the favor, wisdom, and might of Electro, and also the people who represent these values."
+      "name": "Trí Tuệ Của Narukami",
+      "description": "Trong quá khứ, tổ tiên sẽ leo lên đỉnh núi mà ngày nay được gọi là Núi Yougou, điêu khắc những cái cây bị sấm sét đốt cháy thành hình móc cong, tạo ra hình dạng của tia chớp sáng rực bầu trời và tiếng sấm rung chuyển mặt đất. Trải qua nhiều năm tích lũy, hình tượng này cuối cùng đã phát triển thành hình mẫu \"Tam Trùng Lôi\", tượng trưng cho sự ưu ái, trí tuệ và quyền lực của Lôi, cũng như những người thực hiện sự ưu ái, trí tuệ và quyền lực này."
     },
     {
       "key": "NarukamisB",
-      "name": "Narukami's Joy",
-      "description": "Those who belong to the Shogunate Commissions are those who administer and exercise power. In the monster-filled tales of the ancient past, those who were deeply trusted by the Shogun would bear talismans with this hooked design on their person, and just as the word \"commission\" means to \"joyfully serve\" in the old tongue, those who received her favor would return it with love and loyalty. Yet, after a certain point in time, nothing would be as it was before."
+      "name": "Sở Thích Của Narukami",
+      "description": "Hiệp hội của thời Narukami là những người quản lý và thực thi các công việc khác nhau. Trong những câu chuyện về yêu ma cổ xưa kia, những người thân cận được tướng quân tin cậy thì mới đeo loại bùa hình móc câu này, và những người được ưu ái cũng sẽ đền đáp lại bằng tình yêu và lòng trung thành. Và từ một thời điểm nào đó, mọi thứ không còn như ban đầu nữa."
     },
     {
       "key": "NarukamisC",
-      "name": "Narukami's Affection",
-      "description": "All demons who wander in the wilderness or live amongst mortals will be attracted by the sight of the Almighty Narukami Ogosho, represented by the Electro Mitsudomoe. Though their lives may be longer than any creature, they will at last come to their end. If those with limited lifespans hanker after eternity, then they can only pray that \"Eternity\" remembers them. And she did indeed answer their prayers, remembering them all, friend and foe alike, in her heart. No matter whether it was the demon owls who resided amidst the fog and ripped through the skies, the bake-danuki who dared to trespass her imperial gardens, or that female oni, lovely as the moon and mighty in battle, yet who would eventually come to blows with her... Whether it was the tengu who soared on dark wings or the Kitsune Saiguu who once walked by her side, but who eventually disappeared forever...\nThese countless tales have come to rest within her heart, and someday, they will surely shine again in the eternal paradise of her dreams."
+      "name": "Tình Yêu Của Narukami",
+      "description": "Quái vật đi lang thang trong vùng hoang dã hoặc sống chung với con người sẽ bị thu hút bởi Tôn Chủ Narukami Ogosho của \"Tam Trùng Lôi\". Ngay cả khi tuổi thọ của chúng dài hơn nhiều so với tuổi thọ của tất cả, nhưng cũng sẽ có ngày kết thúc. Để đạt được sự vĩnh cửu và vô hạn, chỉ có thể hy vọng rằng \"sự vĩnh hằng\" có thể ghi nhớ họ. Và cô cũng đáp lại mong muốn của họ, ghi nhớ tất cả những kẻ thù và bạn bè trong lòng. Người ta kể rằng không biết có phải là con cú quỷ sống trong sương mù xé trời, con gấu kỳ dị dám xâm phạm vườn ngự uyển, hay ma nữ võ công tuyệt thế nhan sắc tuyệt trần nhưng cuối cùng lại để lộ răng nanh của cô ấy. Cho dù là Tengu có ở trên bầu trời đi nữa thì \"Đại Nhân Kitsune Saiguu\", người đi cùng cô ấy cũng đã biến mất vĩnh viễn...\nVô số câu chuyện đang lặng lẽ ngủ yên trong lòng cô, rồi một ngày nào đó, chúng sẽ tỏa sáng ở cõi thanh tịnh vĩnh hằng mà cô hằng mơ ước."
     },
     {
       "key": "NarukamisD",
-      "name": "Narukami's Valor",
-      "description": "The treasure of the lord of thunder is her majesty, and that majesty is embodied in her valor and wrath. Her wrath comes from the love that persists in her heart, and her valor supports that anger. Thus, whomsoever should block the path towards eternity or lay a finger on Inazuma's people shall become her foe.\nThey say that there were four great spirits, three divine foxes, and two great swords — but that the symbol of Her Excellency, the Almighty Narukami Ogosho, could only be a single strike, unsurpassed and brilliant as a meteor."
+      "name": "Uy Dũng Của Narukami",
+      "description": "Bảo bối của sấm sét là sự uy nghiêm, uy nghiêm là hiện thân của dũng khí và thịnh nộ, thịnh nộ bắt nguồn từ tình yêu và sự bền bỉ trong trái tim, và dũng cảm là sức mạnh của thịnh nộ. Cuối cùng, bất kể là ai, chỉ cần dám ngăn cản tầm nhìn của vĩnh hằng, hay chỉ cần làm tổn thương người của Inazuma, thì sẽ trở thành kẻ thù của nàng.\nNgười ta đồn rằng ngự linh có bốn hồn, tiên hồ có ba con, đao có hai thanh. Vẻ ngoài uy nghiêm của Tôn Chủ Narukami Ogosho đại nhân sẽ chỉ xuất hiện như một dòng suy nghĩ vô hồn dưới ánh sáng của thiên thạch."
     },
     {
       "key": "MaskOfTheA",
-      "name": "Mask of the Wicked Lieutenant",
-      "description": "Folktales tell that once upon a time, there lived an oni named Torachiyo. Torachiyo was a highly skilled warrior, such that it was once said the Torachiyo might dance amid a thousand blades, juunihitoe robes becoming shredded like falling violet petals, and yet not receive a single wound. Yet this oni would eventually betray the Shogun and revolt, becoming shorn of an arm and a horn in the battle before fleeing and slaying itself in a fit of furious madness.\nHearsay holds that the stubborn oni often hold fear and distress in their hearts. That they should fantasize about eternity yet fear the moment, and are apt to become swallowed by terror or anger is their just reward. This mask depicts Torachiyo, fangs bared."
+      "name": "Tà Ác Của Gekiga",
+      "description": "Trong truyền thuyết dân gian, ngày xưa có một hồn ma nổi tiếng tên là \"Torachiyo\". Võ công cao cường, cơ thể bất hoại. Sau đó, hắn nhe nanh với tướng quân, rút kiếm làm loạn, bị chém đứt một tay một sừng rồi bỏ trốn, cuối cùng trở nên điên loạn và tự sát.\nMộng tưởng sự vĩnh hằng nhưng lại bị sự hoảng sợ trong phút chốc nuốt chửng, âu cũng là tự làm tự chịu. Mặt nạ này mô tả Torachiyo với những chiếc nanh của nó."
     },
     {
       "key": "MaskOfTheB",
-      "name": "Mask of the Tiger's Bite",
-      "description": "\"Sumirezome Sangetsu Kogetsukan\" depicts the fierce oni Torachiyo shattering the Shogun's naginata with a single bite, thus gaining the upper hand for a time. As such, masks that are based on him have finely crafted fangs.\nIn the denouement of this tale, the wounded oni fled into the forest, deathly afraid of showing himself even to the cold moonlight. The wind that whispers through the alleys and valleys can be said to resemble his quiet cries of agony, and so there is a poetic seasonal expression for this in Inazuma: \"Torachiyo's Wind.\""
+      "name": "Nanh Cọp Của Gekiga",
+      "description": "\"Torachiyo\" trong \"Sumirezome Sangetsu Kogetsukan\" từng nghiền nát thanh kiếm của tướng quân với hàm răng sắc nhọn, và giành được thế thượng phong trong một thời gian. Do đó, những chiếc mặt nạ được làm ra thường có những chiếc răng nanh được chạm khắc cẩn thận.\nCuối cùng, con thú bị thương chạy vào rừng, ngay cả ánh trăng mát lành cũng sợ hãi lảng tránh. Tiếng gió luồn qua những con ngõ nhỏ và hẻm núi tựa như tiếng thì thầm của những hồn ma bi thương, từ đó trở thành câu nói giao mùa: \"Ngọn Gió Torachiyo\"."
     },
     {
       "key": "MaskOfTheC",
-      "name": "Mask of the One-Horned",
-      "description": "In the lost songs of the oni nursemaids, Torachiyo was an elegant young man, strong of body and fair of face. He was once a beloved lieutenant of the Shogun, and he followed her into the dark abyssal realms to repel the defiled ones, winning renown for the oni, whose blood thinned with each passing day.\nNone now sing these songs, but the mask of a horned oni, even in a different form, still possesses power beyond the norm."
+      "name": "Sừng Của Gekiga",
+      "description": "Trong những lời ca, \"Torachiyo\" từng là một chàng trai dũng mãnh với vẻ ngoài hào hoa. Anh vốn là một ái tướng dưới quyền tướng quân, đã từng trung thành theo cô vào sâu trong vực thẳm tăm tối, đẩy lùi cái ác, đấu tranh cho số phận của ma tộc đang ngày càng hao mòn.\nNgay cả khi không còn ai hát một bản nhạc như vậy nữa, hình ảnh khuôn mặt ma có sừng được truyền lại vẫn có sức mạnh phi thường."
     },
     {
       "key": "MaskOfTheD",
-      "name": "Mask of the Kijin",
-      "description": "Chiyo, a warrior of the oni tribe with the Electro Mitsudomoe emblem emblazoned on her back, was once swallowed whole by a beast from beyond this world that had a tiger's body and a serpent's tail while holding back the forces of darkness. At last, she tore the creature's innards apart from within, breaking free.\nThis is the origin of the phrase \"Chiyo the Tiger-Bite,\" and would be changed over many years to \"Torachiyo.\"\nBut within the belly of the beast, she was stained by a deep sin and saw her comrades ripped to shreds by those blood-red teeth. Steeped in darkness as far as the eye could see, she would eventually draw her sword upon the Almighty Narukami Ogosho. Her sword-arm and one horn would be cloven, and she would flee from the city into the forest like a wounded beast. There, they say that she was taken for some unknown monster and slain by the tengu, or perhaps by the Shiyuumatsu-Ban — or perhaps by a scion of the Iwakura Clan training deep in the mountains, for her features had been twisted by hatred and the agony of her wounds. Or perhaps she even met the oni-masked, sword-bearing doll near the corpse of the giant serpent, and there ended her life's journey.\nFew among those who fought against the abyss in those days were spared pitch-dark dreams. Those who slew monsters and then became them were hardly the minority. The border between worlds grows fragile, and corruption of this kind is perhaps not merely monodirectional."
+      "name": "Con Quỷ Của Gekiga",
+      "description": "Nữ võ sĩ mang tên \"Chiyo\" với hoa văn \"Tam Trùng Lôi\" trên lưng, khi đối diện với thế lực hắc ám, đã bị con thú nửa hổ nửa rắn nuốt chửng. Cuối cùng cô ta xé toạc bụng của ma thú để thoát ra và sống sót.\nĐó là lai lịch của \"Chiyo Nanh Cọp\". Dần theo năm tháng, danh hiệu đó được rút gọn thành \"Torachiyo\".\nNhưng khi ở sâu trong bụng con thú, cô ấy đã nhiễm chất độc của sự tà ác, cũng như thấy được đồng đội của mình hy sinh, cuối cùng cô ấy đã giơ kiếm nhắm vào Tôn Chủ Narukami Ogosho. Sau khi bị chặt đứt một tay một sừng, cô ấy chạy trốn vào rừng như một con thú bị thương, để rồi không để lại tung tích gì cả. Số mệnh của một khuôn mặt đẹp trở nên gớm ghiếc và méo mó vì bóng tối của lòng thù hận đã kết thúc từ đó.\nNhững người từng chiến đấu với vực thẳm sẽ luôn mang trong mình những ác mộng, một số bị giết và thậm chí trở thành một trong số chúng. Ranh giới của thế giới đã trở nên mong manh hơn, và sự xói mòn này có thể không phải là một sớm một chiều."
     }
   ],
   "debuffs": [
@@ -6846,7 +6846,7 @@
     },
     {
       "key": "Overloaded",
-      "name": "Overloaded",
+      "name": "Quá Tải",
       "effect": "Gây vụ nổ ST lớn. Có thể phá hủy vài vật thể kiên cố (khiên tay của quái, giáp)."
     },
     {
