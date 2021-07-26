@@ -4177,8 +4177,12 @@
          {
           "key": "p3",
           "title": "Domination de la Terre",
-          "description": "Chute de météore inflige un bonus de DGT équivalent à 33% des PV max de Zhongli.",
-          "descriptions": []
+          "description": "Augmente les DGT infligés par les attaques de Zhongli en fonction de ses PV max : ",
+          "descriptions": [
+            "1,39% pour les attaques normales, chargées et descendantes .",
+            "1,9% pour les dorsales rocheuses, DGT de résonance et de DGT de l'appui long de Dominus Lapidis",
+            "33% pour Chute de météore."
+          ]
         }
       ],
       "constellations": [
