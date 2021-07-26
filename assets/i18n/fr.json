@@ -3635,7 +3635,7 @@
             },
              {
               "key": "a3",
-              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact. Xiao ne suvit pas de DGT lorsqu'il exécute une attaque descendante.",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact. Xiao ne subit pas de DGT lorsqu'il exécute une attaque descendante.",
               "descriptions": []
             }
           ]
@@ -3721,9 +3721,9 @@
         },
          {
           "key": "c6",
-          "title": "Dompteur de démons : Gardien YakshaLorsque Fléau du mal est actif, les attaques descendantes touchant au moins 2 ennemis confèrent immédiatement une charge de Cycle du vent lemniscatique supplémentaires, qui peut être activée dans la seconde qui suit, même s'il n'est pas entièrement rechargé.",
+          "title": "Dompteur de démons : Gardien Yaksha",
           "secondDescription": null,
-          "descriptions": []
+          "descriptions": " Lorsque Fléau du mal est actif, les attaques descendantes touchant au moins 2 ennemis confèrent immédiatement une charge de Cycle du vent lemniscatique supplémentaire. Elle peut être activée dans la seconde qui suit, même s'il n'est pas entièrement rechargé."
         }
       ]
     },
