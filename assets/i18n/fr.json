@@ -856,8 +856,30 @@
       "name": "Diona",
       "description": "Une jeune femme qui a hérité de traces de sang non humain. Elle est l'incroyable barman populaire de la taverne Cat’s Tail.",
       "skills": [
-         {
+        {
           "key": "s1",
+          "title": "Archerie de chasse",
+          "description": null,
+          "abilities": [
+             {
+              "key": "a1",
+              "description": "Effectue jusqu'à 5 tirs consécutifs.",
+              "descriptions": []
+            },
+             {
+              "key": "a2",
+              "description": "Effectue un tir visé, inflige des DGT Cryo si la flèche se charge complètement en élément.",
+              "descriptions": []
+            },
+             {
+              "key": "a3",
+              "description": "Tire une pluie de flèches depuis les airs et plonge au sol, infligeant des DGT de zone à l'impact.",
+              "descriptions": []
+            }
+          ]
+        },
+         {
+          "key": "s2",
           "title": "Griffes Cryo",
           "description": "Libère des griffes de chat Cryo qui infligent des DGT Cryo, et génèrent un bouclier lorsqu'elles touchent. Le bouclier peut absorber une quantité de DGT proportionnelle aux PV max de Diona, et sa durée dépend du nombre de cibles touchées.",
           "abilities": [
@@ -874,7 +896,7 @@
           ]
         },
          {
-          "key": "s2",
+          "key": "s3",
           "title": "Cuvée spéciale",
           "description": "Diona lance un cocktail gelé de sa fabrication, qui inflige des DGT Cryo de zone, et génère un champ de vapeur d'alcool.",
           "abilities": [
