@@ -6927,6 +6927,20 @@
       "hasSiblings": false,
       "isReadyToBeUsed": false,
       "canBeObtainedFromAnExpedition": true
+    },
+    {
+      "key": "Amethyst Lump",
+      "rarity": 1,
+      "image": "amethyst_lump.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false
     }
   ]
 }
