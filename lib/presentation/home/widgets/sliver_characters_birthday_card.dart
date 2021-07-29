@@ -58,7 +58,7 @@ class _CakeCard extends StatelessWidget {
     return SizedBox(
       width: Styles.birthdayCardWidth,
       child: Card(
-        margin: Styles.edgeInsetAll10,
+        margin: Styles.edgeInsetAll5,
         shape: Styles.cardShape,
         child: Row(
           children: [
