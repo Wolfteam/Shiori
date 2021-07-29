@@ -901,19 +901,13 @@
           "description": "Diona lance un cocktail gelé de sa fabrication, qui inflige des DGT Cryo de zone, et génère un champ de vapeur d'alcool.",
           "abilities": [
              {
-              "key": "a1",
-              "description": "Inflige aux ennemis présents dans la zone des DGT Cryo continus",
-              "descriptions": []
-            },
-             {
-              "key": "a2",
-              "description": "Restaure les PV des personnages présents dans la zone.",
-              "descriptions": []
-            },
-             {
-              "key": "a3",
-              "description": "Une recette que même Diona juge inhumaine. L'avant-goût terrifiant est mieux laissé aux ennemis ; nous ne parlerons pas de l'arrière-goût particulièrement frais qui en découle.",
-              "descriptions": []
+              "name": "Vapeur d'Alcool",
+              "description": null,
+              "descriptions": [
+                "Inflige aux ennemis présents dans la zone des DGT Cryo continus",
+                "Restaure les PV des personnages présents dans la zone",
+                "Une recette que même Diona juge inhumaine. L'avant-goût terrifiant est mieux laissé aux ennemis ; nous ne parlerons pas de l'arrière-goût particulièrement frais qui en découle."
+              ]                       
             }
           ]
         }
@@ -3744,8 +3738,9 @@
          {
           "key": "c6",
           "title": "Dompteur de démons : Gardien Yaksha",
+          "description": " Lorsque Fléau du mal est actif, les attaques descendantes touchant au moins 2 ennemis confèrent immédiatement une charge de Cycle du vent lemniscatique supplémentaire. Elle peut être activée dans la seconde qui suit, même s'il n'est pas entièrement rechargé.",
           "secondDescription": null,
-          "descriptions": " Lorsque Fléau du mal est actif, les attaques descendantes touchant au moins 2 ennemis confèrent immédiatement une charge de Cycle du vent lemniscatique supplémentaire. Elle peut être activée dans la seconde qui suit, même s'il n'est pas entièrement rechargé."
+          "descriptions": []
         }
       ]
     },
@@ -4004,48 +3999,48 @@
     {
       "key": "Yanfei",
       "name": "Yanfei",
-      "description": "A well-known legal adviser active in Liyue Harbor. A brilliant young lady in whose veins runs the blood of an illuminated beast.",
+      "description": "Yanfei — une conseillère juridique mi-femme, mi-Adepte inégalée. Oscillant entre respecter la loi et savoir s’adapter aux circonstances, Yanfei a trouvé son propre point d’équilibre. Son statut unique de conseillère juridique ainsi que ses méthodes particulières lui permettent de protéger au mieux l’harmonie de Liyue",
       "skills": [
         {
           "key": "s1",
-          "title": "Seal of Approval",
+          "title": "Sceau embrasé",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Shoots fireballs that deal up to three counts of Pyro DMG.\nWhen Yanfei's Normal Attacks hit enemies, they will grant her a single Scarlet Seal. Yanfei may possess a maximum of 3 Scarlet Seals, and each time this effect is triggered, the duration of currently possessed Scarlet Seals will refresh.\nEach Scarlet Seal will decrease Yanfei's Stamina consumption and will disappear when she leaves the field.",
+              "description": "Tire des boules de feu qui infligent jusqu'à 3 vagues de DGT Pyro. Yanfei peut détenir un maximum de 3 sceaux écarlates qu'elle gagne quand une de ses attaques touche. Chaque fois que cet effet se déclenche, la durée des sceaux en sa possession est réinitialisée. Chaque sceau écarlate diminue la consommation d'endurance de Yanfei, et disparaît lorsque Yanfei quitte le champ de bataille.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes Stamina and all Scarlet Seals before dealing AoE Pyro DMG to opponents after a short casting time.\nThis Charged Attack's AoE and DMG will increase according to the amount of Scarlet Seals consumed.",
+              "description": "Consomme de l'endurance et tous les sceaux écarlates pour infliger des DGT Pyro de zone aux ennemis en face de Yanfei après un court délai. La portée et l'intensité de ces DGT Pyro de zone augmentent avec le nombre de sceaux écarlates consommés.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the power of Pyro, Yanfei plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Pyro DMG upon impact with the ground.",
+              "description": "Rassemblant la puissance de Pyro, Yanfei plonge vers le sol, endommageant tous les adversaires sur son chemin. Crée une zone de dommage Pyro, lors de l’impact au sol",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Signed Edict",
-          "description": "Summons blistering flames that deal AoE Pyro DMG.\nOpponents hit by the flames will grant Yanfei the maximum number of Scarlet Seals.",
+          "title": "Pacte des flammes",
+          "description": "Yanfei en appelle aux flammes dévastatrices, infligeant des DGT Pyro de zone. Lorsque des ennemis sont touchés, Yanfei gagne le nombre maximum de sceaux écarlates.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Done Deal",
-          "description": "Triggers a spray of intense flames that rush at nearby opponents, dealing AoE Pyro DMG, granting Yanfei the maximum number of Scarlet Seals, and applying Brilliance to her.",
+          "title": "Application des peines",
+          "description": "Invoque une explosion de flammes intenses qui jaillit vers les ennemis proches, infligeant des DGT Pyro de zone et conférant à Yanfei le nombre maximum de sceaux écarlates, tout en appliquant l'effet Brillance.",
           "abilities": [
             {
-              "name": "Brilliance",
-              "description": "Has the following effects:",
+              "name": "Brillance",
+              "description": "Procure les effets suivants:",
               "descriptions": [
-                "Grants Yanfei a Scarlet Seal at fixed intervals.",
-                "Increases the DMG dealt by her Charged Attacks.",
-                "The effects of Brilliance will end if Yanfei leaves the field or falls in battle."
+                "Brillance Confère à Yanfei un sceau écarlate à intervalles réguliers.",
+                "Augmente les DGT infligés par ses attaques chargées.",
+                "Les effets de Brillance se dissipent lorsque Yanfei quitte le champ de bataille ou qu'elle est vaincue."
               ]
             }
           ]
@@ -4054,61 +4049,61 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Encyclopedic Expertise",
-          "description": "Displays the location of nearby resources unique to Liyue on the mini-map.",
+          "title": "Connaissance du terrain",
+          "description": "Affiche l'emplacement des produits de Liyue sur la mini-carte.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Proviso",
-          "description": "When Yanfei consumes Scarlet Seals by using a Charged Attack, each Scarlet Seal will increase Yanfei's Pyro DMG Bonus by 5%. This effects lasts for 6s. When a Charged Attack is used again during the effect's duration, it will dispel the previous effect.",
+          "title": "Dispositions supplémentaires",
+          "description": "Lorsque Yanfei consomme un sceau écarlate en utilisant une attaque chargée, chaque sceau écarlate augmente le bonus de DGT Pyro de Yanfei de 5 % pour 6 s. Utiliser une attaque chargée avant la fin de la durée d'un effet dissipe l'effet précédent.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Blazing Eye",
-          "description": "When Yanfei's Charged Attack deals a CRIT Hit to opponents, she will deal an additional instance of AoE Pyro DMG equal to 80% of her ATK. This DMG counts as Charged Attack DMG.",
+          "title": "Oeil de la justice",
+          "description": "Quand les attaques chargées de Yanfei infligent des coups CRIT aux ennemis, elle inflige des DGT Pyro de zone supplémentaires équivalant à 80 % de son ATQ. Ces DGT comptent comme des DGT d'attaque chargée.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "The Law Knows No Kindness",
-          "description": "When Yanfei uses her Charged Attack, each existing Scarlet Seal additionally reduces the stamina cost of this Charged Attack by 10% and increases resistance against interruption during its release.",
+          "title": "Plaidoyer convaincant",
+          "description": "Lorsque Yanfei utilise une attaque chargée, chaque sceau écarlate existant réduit sa consommation d'endurance de 10 % supplémentaire et augmente la RÉS à l'interruption lors de son déclenchement.",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Right of Final Interpretation",
-          "description": "Increases Yanfei's Charged Attack CRIT Rate by 20% against enemies below 50% HP.",
+          "title": "Verdict final",
+          "description": "Le taux CRIT des attaques chargées de Yanfei augmente de 20 % lorsqu'elles touchent des ennemis ayant moins de 50 % de PV",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Samadhi Fire-Forged",
-          "description": "Increases the Level of Signed Edict by 3.\nMaximum upgrade level is 15.",
+          "title": "Mise sous scellés",
+          "description": "Niveau d'aptitude Pacte des flammes +3. Niveau max: 15",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Supreme Amnesty",
-          "description": "When Done Deal is used:",
+          "title": "Droit commun",
+          "description": "Application des peines confère les effets suivants :",
           "descriptions": [
-            "Creates a shield that absorbs up to 45% of Yanfei's Max HP for 15s",
-            "This shield absorbs Pyro DMG 250% more effectively."
+            "Génère un bouclier qui absorbe une quantité de DGT équivalant à 45 % des PV max et dure 15 s.",
+            "Le bouclier est efficace à 250 % contre les DGT Pyro."
           ]
         },
         {
           "key": "c5",
-          "title": "Abiding Affidavit",
-          "description": "Increases the Level of Done Deal by 3.\nMaximum upgrade level is 15.",
+          "title": "Déclaration sous serment",
+          "description": "Niveau d'aptitude Application des peines +3. Niveau max: 15",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Extra Clause",
-          "description": "Increases the maximum number of Scarlet Seals by 1.",
+          "title": "Clause complémentaire",
+          "description": "Augmente le nombre max de sceaux écarlates de 1.",
           "descriptions": []
         }
       ]
