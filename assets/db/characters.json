@@ -27238,6 +27238,1423 @@
           "specificValue": 24
         }
       ]
+    },
+    {
+      "key": "Aloy",
+      "rarity": 5,
+      "weaponType": "bow",
+      "elementType": "cryo",
+      "image": "Aloy.png",
+      "fullImage": "Aloy.png",
+      "secondFullImage": null,
+      "isComingSoon": true,
+      "isNew": false,
+      "isFemale": true,
+      "region": "anotherWorld",
+      "role": "supportDps",
+      "tier": "a",
+      "birthday": "04/04",
+      "ascensionMaterials": [
+        {
+          "rank": 1,
+          "level": 20,
+          "materials": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "shivada_jade_sliver.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "local",
+              "image": "crystal_marrow.png"
+            },
+            {
+              "quantity": 20000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "level": 40,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "shivada_jade_fragment.png"
+            },
+            {
+              "quantity": 2,
+              "materialType": "elementalStone",
+              "image": "crystalline_bloom.png"
+            },
+            {
+              "quantity": 10,
+              "materialType": "local",
+              "image": "crystal_marrow.png"
+            },
+            {
+              "quantity": 40000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "level": 50,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "jewels",
+              "image": "shivada_jade_fragment.png"
+            },
+            {
+              "quantity": 4,
+              "materialType": "elementalStone",
+              "image": "crystalline_bloom.png"
+            },
+            {
+              "quantity": 20,
+              "materialType": "local",
+              "image": "crystal_marrow.png"
+            },
+            {
+              "quantity": 60000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "level": 60,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "shivada_jade_chunk.png"
+            },
+            {
+              "quantity": 8,
+              "materialType": "elementalStone",
+              "image": "crystalline_bloom.png"
+            },
+            {
+              "quantity": 30,
+              "materialType": "local",
+              "image": "crystal_marrow.png"
+            },
+            {
+              "quantity": 80000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "level": 70,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "jewels",
+              "image": "shivada_jade_chunk.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "elementalStone",
+              "image": "crystalline_bloom.png"
+            },
+            {
+              "quantity": 45,
+              "materialType": "local",
+              "image": "crystal_marrow.png"
+            },
+            {
+              "quantity": 100000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "level": 80,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "jewels",
+              "image": "shivada_jade_gemstone.png"
+            },
+            {
+              "quantity": 20,
+              "materialType": "elementalStone",
+              "image": "crystalline_bloom.png"
+            },
+            {
+              "quantity": 60,
+              "materialType": "local",
+              "image": "crystal_marrow.png"
+            },
+            {
+              "quantity": 120000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        }
+      ],
+      "talentAscensionMaterials": [
+        {
+          "level": 2,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "teaching_of_freedom.png"
+            },
+            {
+              "quantity": 12500,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "materials": [
+            {
+              "quantity": 2,
+              "materialType": "talents",
+              "image": "guide_to_freedom.png"
+            },
+            {
+              "quantity": 17500,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "materials": [
+            {
+              "quantity": 4,
+              "materialType": "talents",
+              "image": "guide_to_freedom.png"
+            },
+            {
+              "quantity": 25000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "talents",
+              "image": "guide_to_freedom.png"
+            },
+            {
+              "quantity": 30000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "materials": [
+            {
+              "quantity": 9,
+              "materialType": "talents",
+              "image": "guide_to_freedom.png"
+            },
+            {
+              "quantity": 35000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "materials": [
+            {
+              "quantity": 4,
+              "materialType": "talents",
+              "image": "philosophies_of_freedom.png"
+            },
+            {
+              "quantity": 120000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "talents",
+              "image": "philosophies_of_freedom.png"
+            },
+            {
+              "quantity": 260000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "materials": [
+            {
+              "quantity": 12,
+              "materialType": "talents",
+              "image": "philosophies_of_freedom.png"
+            },
+            {
+              "quantity": 450000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "materials": [
+            {
+              "quantity": 16,
+              "materialType": "talents",
+              "image": "philosophies_of_freedom.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "crown_of_sagehood.png"
+            },
+            {
+              "quantity": 700000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        }
+      ],
+      "builds": [],
+      "skills": [
+        {
+          "key": "s1",
+          "image": null,
+          "type": "normalAttack",
+          "abilities": [
+            {
+              "key": "a1",
+              "type": "normalAttack"
+            },
+            {
+              "key": "a2",
+              "type": "chargedAttack"
+            },
+            {
+              "key": "a3",
+              "type": "plungingAttack"
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "image": null,
+          "type": "elementalSkill",
+          "abilities": [
+            {
+              "key": "a2",
+              "type": "hold"
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "image": null,
+          "type": "elementalBurst"
+        },
+        {
+          "key": "s4",
+          "image": null,
+          "type": "others"
+        }
+      ],
+      "passives": [],
+      "constellations": [],
+      "subStatType": "cryoDmgBonusPercentage",
+      "stats": []
+    },
+    {
+      "key": "SangonomiyaKokomi",
+      "rarity": 5,
+      "weaponType": "catalyst",
+      "elementType": "hydro",
+      "image": "SangonomiyaKokomi.png",
+      "fullImage": "SangonomiyaKokomi.png",
+      "secondFullImage": null,
+      "isComingSoon": true,
+      "isNew": false,
+      "isFemale": true,
+      "region": "inazuma",
+      "role": "supportDps",
+      "tier": "a",
+      "birthday": "02/22",
+      "ascensionMaterials": [
+        {
+          "rank": 1,
+          "level": 20,
+          "materials": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_sliver.png"
+            },
+            {
+              "quantity": 20000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "level": 40,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_fragment.png"
+            },
+            {
+              "quantity": 40000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "level": 50,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_fragment.png"
+            },
+            {
+              "quantity": 60000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "level": 60,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_chunk.png"
+            },
+            {
+              "quantity": 80000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "level": 70,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_chunk.png"
+            },
+            {
+              "quantity": 100000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "level": 80,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "jewels",
+              "image": "varunada_lazurite_gemstone.png"
+            },
+            {
+              "quantity": 120000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        }
+      ],
+      "talentAscensionMaterials": [
+        {
+          "level": 2,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "teachings_of_transience.png"
+            },
+            {
+              "quantity": 12500,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "materials": [
+            {
+              "quantity": 2,
+              "materialType": "talents",
+              "image": "guide_of_transience.png"
+            },
+            {
+              "quantity": 17500,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "materials": [
+            {
+              "quantity": 4,
+              "materialType": "talents",
+              "image": "guide_of_transience.png"
+            },
+            {
+              "quantity": 25000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "talents",
+              "image": "guide_of_transience.png"
+            },
+            {
+              "quantity": 30000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "materials": [
+            {
+              "quantity": 9,
+              "materialType": "talents",
+              "image": "guide_of_transience.png"
+            },
+            {
+              "quantity": 35000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "materials": [
+            {
+              "quantity": 4,
+              "materialType": "talents",
+              "image": "philosophies_of_transience.png"
+            },
+            {
+              "quantity": 120000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "talents",
+              "image": "philosophies_of_transience.png"
+            },
+            {
+              "quantity": 260000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "materials": [
+            {
+              "quantity": 12,
+              "materialType": "talents",
+              "image": "philosophies_of_transience.png"
+            },
+            {
+              "quantity": 450000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "materials": [
+            {
+              "quantity": 16,
+              "materialType": "talents",
+              "image": "philosophies_of_transience.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "crown_of_sagehood.png"
+            },
+            {
+              "quantity": 700000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        }
+      ],
+      "builds": [],
+      "skills": [
+        {
+          "key": "s1",
+          "image": null,
+          "type": "normalAttack",
+          "abilities": [
+            {
+              "key": "a1",
+              "type": "normalAttack"
+            },
+            {
+              "key": "a2",
+              "type": "chargedAttack"
+            },
+            {
+              "key": "a3",
+              "type": "plungingAttack"
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "image": null,
+          "type": "elementalSkill",
+          "abilities": [
+            {
+              "key": "a2",
+              "type": "hold"
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "image": null,
+          "type": "elementalBurst"
+        },
+        {
+          "key": "s4",
+          "image": null,
+          "type": "others"
+        }
+      ],
+      "passives": [],
+      "constellations": [],
+      "subStatType": "hydroDmgBonusPercentage",
+      "stats": []
+    },
+    {
+      "key": "KujouSara",
+      "rarity": 4,
+      "weaponType": "bow",
+      "elementType": "electro",
+      "image": "KujouSara.png",
+      "fullImage": "KujouSara.png",
+      "secondFullImage": null,
+      "isComingSoon": true,
+      "isNew": false,
+      "isFemale": true,
+      "region": "inazuma",
+      "role": "supportDps",
+      "tier": "a",
+      "birthday": "07/14",
+      "ascensionMaterials": [
+        {
+          "rank": 1,
+          "level": 20,
+          "materials": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_sliver.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "damaged_mask.png"
+            },
+            {
+              "quantity": 20000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "level": 40,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_fragment.png"
+            },
+            {
+              "quantity": 15,
+              "materialType": "common",
+              "image": "damaged_mask.png"
+            },
+            {
+              "quantity": 40000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "level": 50,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_fragment.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "stained_mask.png"
+            },
+            {
+              "quantity": 60000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "level": 60,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_chunk.png"
+            },
+            {
+              "quantity": 18,
+              "materialType": "common",
+              "image": "stained_mask.png"
+            },
+            {
+              "quantity": 80000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "level": 70,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_chunk.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "ominous_mask.png"
+            },
+            {
+              "quantity": 100000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "level": 80,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_gemstone.png"
+            },
+            {
+              "quantity": 24,
+              "materialType": "common",
+              "image": "ominous_mask.png"
+            },
+            {
+              "quantity": 120000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        }
+      ],
+      "talentAscensionMaterials": [
+        {
+          "level": 2,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "teaching_of_diligence.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "damaged_mask.png"
+            },
+            {
+              "quantity": 12500,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "materials": [
+            {
+              "quantity": 2,
+              "materialType": "talents",
+              "image": "guide_of_elegance.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "stained_mask.png"
+            },
+            {
+              "quantity": 17500,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "materials": [
+            {
+              "quantity": 4,
+              "materialType": "talents",
+              "image": "guide_of_elegance.png"
+            },
+            {
+              "quantity": 4,
+              "materialType": "common",
+              "image": "stained_mask.png"
+            },
+            {
+              "quantity": 25000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "talents",
+              "image": "guide_of_elegance.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "stained_mask.png"
+            },
+            {
+              "quantity": 30000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "materials": [
+            {
+              "quantity": 9,
+              "materialType": "talents",
+              "image": "guide_of_elegance.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "stained_mask.png"
+            },
+            {
+              "quantity": 35000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "materials": [
+            {
+              "quantity": 4,
+              "materialType": "talents",
+              "image": "philosophies_of_elegance.png"
+            },
+            {
+              "quantity": 4,
+              "materialType": "common",
+              "image": "ominous_mask.png"
+            },
+            {
+              "quantity": 120000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "talents",
+              "image": "philosophies_of_elegance.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "ominous_mask.png"
+            },
+            {
+              "quantity": 260000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "materials": [
+            {
+              "quantity": 12,
+              "materialType": "talents",
+              "image": "philosophies_of_elegance.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "ominous_mask.png"
+            },
+            {
+              "quantity": 450000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "materials": [
+            {
+              "quantity": 16,
+              "materialType": "talents",
+              "image": "philosophies_of_elegance.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "ominous_mask.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "crown_of_sagehood.png"
+            },
+            {
+              "quantity": 700000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        }
+      ],
+      "builds": [],
+      "skills": [
+        {
+          "key": "s1",
+          "image": null,
+          "type": "normalAttack",
+          "abilities": [
+            {
+              "key": "a1",
+              "type": "normalAttack"
+            },
+            {
+              "key": "a2",
+              "type": "chargedAttack"
+            },
+            {
+              "key": "a3",
+              "type": "plungingAttack"
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "image": null,
+          "type": "elementalSkill",
+          "abilities": [
+            {
+              "key": "a2",
+              "type": "hold"
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "image": null,
+          "type": "elementalBurst"
+        },
+        {
+          "key": "s4",
+          "image": null,
+          "type": "others"
+        }
+      ],
+      "passives": [],
+      "constellations": [],
+      "subStatType": "atkPercentage",
+      "stats": []
+    },
+    {
+      "key": "RaidenShogun",
+      "rarity": 5,
+      "weaponType": "polearm",
+      "elementType": "electro",
+      "image": "RaidenShogun.png",
+      "fullImage": "RaidenShogun.png",
+      "secondFullImage": null,
+      "isComingSoon": true,
+      "isNew": false,
+      "isFemale": true,
+      "region": "inazuma",
+      "role": "supportDps",
+      "tier": "a",
+      "birthday": "06/26",
+      "ascensionMaterials": [
+        {
+          "rank": 1,
+          "level": 20,
+          "materials": [
+            {
+              "quantity": 1,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_sliver.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "old_handguard.png"
+            },
+            {
+              "quantity": 20000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "level": 40,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_fragment.png"
+            },
+            {
+              "quantity": 15,
+              "materialType": "common",
+              "image": "old_handguard.png"
+            },
+            {
+              "quantity": 40000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "level": 50,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_fragment.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "kageuchi_handguard.png"
+            },
+            {
+              "quantity": 60000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "level": 60,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_chunk.png"
+            },
+            {
+              "quantity": 18,
+              "materialType": "common",
+              "image": "kageuchi_handguard.png"
+            },
+            {
+              "quantity": 80000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "level": 70,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_chunk.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "famed_handguard.png"
+            },
+            {
+              "quantity": 100000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "level": 80,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "jewels",
+              "image": "vajrada_amethyst_gemstone.png"
+            },
+            {
+              "quantity": 24,
+              "materialType": "common",
+              "image": "famed_handguard.png"
+            },
+            {
+              "quantity": 120000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        }
+      ],
+      "talentAscensionMaterials": [
+        {
+          "level": 2,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "teachings_of_light.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "old_handguard.png"
+            },
+            {
+              "quantity": 12500,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "materials": [
+            {
+              "quantity": 2,
+              "materialType": "talents",
+              "image": "guide_of_light.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "kageuchi_handguard.png"
+            },
+            {
+              "quantity": 17500,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "materials": [
+            {
+              "quantity": 4,
+              "materialType": "talents",
+              "image": "guide_of_light.png"
+            },
+            {
+              "quantity": 4,
+              "materialType": "common",
+              "image": "kageuchi_handguard.png"
+            },
+            {
+              "quantity": 25000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "talents",
+              "image": "guide_of_light.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "kageuchi_handguard.png"
+            },
+            {
+              "quantity": 30000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "materials": [
+            {
+              "quantity": 9,
+              "materialType": "talents",
+              "image": "guide_of_light.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "kageuchi_handguard.png"
+            },
+            {
+              "quantity": 35000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "materials": [
+            {
+              "quantity": 4,
+              "materialType": "talents",
+              "image": "philosophies_of_light.png"
+            },
+            {
+              "quantity": 4,
+              "materialType": "common",
+              "image": "famed_handguard.png"
+            },
+            {
+              "quantity": 120000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "talents",
+              "image": "philosophies_of_light.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "famed_handguard.png"
+            },
+            {
+              "quantity": 260000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "materials": [
+            {
+              "quantity": 12,
+              "materialType": "talents",
+              "image": "philosophies_of_light.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "famed_handguard.png"
+            },
+            {
+              "quantity": 450000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "materials": [
+            {
+              "quantity": 16,
+              "materialType": "talents",
+              "image": "philosophies_of_light.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "famed_handguard.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "crown_of_sagehood.png"
+            },
+            {
+              "quantity": 700000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        }
+      ],
+      "builds": [],
+      "skills": [
+        {
+          "key": "s1",
+          "image": null,
+          "type": "normalAttack",
+          "abilities": [
+            {
+              "key": "a1",
+              "type": "normalAttack"
+            },
+            {
+              "key": "a2",
+              "type": "chargedAttack"
+            },
+            {
+              "key": "a3",
+              "type": "plungingAttack"
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "image": null,
+          "type": "elementalSkill",
+          "abilities": [
+            {
+              "key": "a2",
+              "type": "hold"
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "image": null,
+          "type": "elementalBurst"
+        },
+        {
+          "key": "s4",
+          "image": null,
+          "type": "others"
+        }
+      ],
+      "passives": [],
+      "constellations": [],
+      "subStatType": "electroDmgBonusPercentage",
+      "stats": []
     }
   ]
 }

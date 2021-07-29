@@ -4512,6 +4512,114 @@
           "descriptions": []
         }
       ]
+    },
+    {
+      "key": "Aloy",
+      "name": "Aloy",
+      "description": "N/A",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "N/A - S1",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "N/A - S2",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "N/A - S3",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
+    },
+    {
+      "key": "SangonomiyaKokomi",
+      "name": "Sangonomiya Kokomi",
+      "description": "N/A",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "N/A - S1",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "N/A - S2",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "N/A - S3",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
+    },
+    {
+      "key": "KujouSara",
+      "name": "Kujou Sara",
+      "description": "N/A",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "N/A - S1",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "N/A - S2",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "N/A - S3",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
+    },
+    {
+      "key": "RaidenShogun",
+      "name": "Raiden Shogun",
+      "description": "N/A",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "N/A - S1",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "N/A - S2",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "N/A - S3",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
     }
   ],
   "weapons": [
