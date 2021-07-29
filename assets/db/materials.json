@@ -6416,7 +6416,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Sakura Bloom",
@@ -6430,7 +6431,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Crystal Marrow",
@@ -6444,7 +6446,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     },
     {
       "key": "Naku Weed",
@@ -6458,7 +6461,8 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     }
   ],
   "experience": [
