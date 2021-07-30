@@ -21,14 +21,16 @@ class InventoryBloc extends Bloc<InventoryEvent, InventoryState> {
   final CharacterBloc _characterBloc;
   final WeaponBloc _weaponBloc;
 
-  _LoadedState get currentState => state as _LoadedState;
-
-  InventoryBloc(this._genshinService, this._dataService, this._telemetryService, this._characterBloc, this._weaponBloc)
-      : super(const InventoryState.loading());
+  InventoryBloc(
+    this._genshinService,
+    this._dataService,
+    this._telemetryService,
+    this._characterBloc,
+    this._weaponBloc,
+  ) : super(const InventoryState.loading());
 
   @override
   Stream<InventoryState> mapEventToState(InventoryEvent event) async* {
-    final bool isLoading = state is _LoadingState;
     final s = await event.map(
       init: (_) async {
         final characters = _dataService.getAllCharactersInInventory();
@@ -42,61 +44,78 @@ class InventoryBloc extends Bloc<InventoryEvent, InventoryState> {
         await _dataService.addItemToInventory(e.key, ItemType.character, 1);
         _characterBloc.add(CharacterEvent.addedToInventory(key: e.key, wasAdded: true));
 
-        if (isLoading) {
-          return state;
-        }
-
-        final characters = _dataService.getAllCharactersInInventory();
-        return currentState.copyWith.call(characters: characters);
+        return state.map(
+          loading: (state) => state,
+          loaded: (state) => state.copyWith.call(characters: _dataService.getAllCharactersInInventory()),
+        );
       },
       addWeapon: (e) async {
         await _telemetryService.trackItemAddedToInventory(e.key, 1);
         await _dataService.addItemToInventory(e.key, ItemType.weapon, 1);
         _weaponBloc.add(WeaponEvent.addedToInventory(key: e.key, wasAdded: true));
 
-        if (isLoading) {
-          return state;
-        }
-
-        final weapons = _dataService.getAllWeaponsInInventory();
-        return currentState.copyWith.call(weapons: weapons);
+        return state.map(
+          loading: (state) => state,
+          loaded: (state) => state.copyWith.call(weapons: _dataService.getAllWeaponsInInventory()),
+        );
       },
       deleteCharacter: (e) async {
         await _telemetryService.trackItemDeletedFromInventory(e.key);
         await _dataService.deleteItemFromInventory(e.key, ItemType.character);
         _characterBloc.add(CharacterEvent.addedToInventory(key: e.key, wasAdded: false));
 
-        if (isLoading) {
-          return state;
-        }
-
-        final characters = _dataService.getAllCharactersInInventory();
-        return currentState.copyWith.call(characters: characters);
+        return state.map(
+          loading: (state) => state,
+          loaded: (state) => state.copyWith.call(characters: _dataService.getAllCharactersInInventory()),
+        );
       },
       deleteWeapon: (e) async {
         await _telemetryService.trackItemDeletedFromInventory(e.key);
         await _dataService.deleteItemFromInventory(e.key, ItemType.weapon);
         _weaponBloc.add(WeaponEvent.addedToInventory(key: e.key, wasAdded: false));
 
-        if (isLoading) {
-          return state;
-        }
-
-        final weapons = _dataService.getAllWeaponsInInventory();
-        return currentState.copyWith.call(weapons: weapons);
+        return state.map(
+          loading: (state) => state,
+          loaded: (state) => state.copyWith.call(weapons: _dataService.getAllWeaponsInInventory()),
+        );
       },
       updateMaterial: (e) async {
         await _telemetryService.trackItemUpdatedInInventory(e.key, e.quantity);
         await _dataService.updateItemInInventory(e.key, ItemType.material, e.quantity);
 
-        if (isLoading) {
-          return state;
-        }
-
-        final materials = _dataService.getAllMaterialsInInventory();
-        return currentState.copyWith.call(materials: materials);
+        return state.map(
+          loading: (state) => state,
+          loaded: (state) => state.copyWith.call(materials: _dataService.getAllMaterialsInInventory()),
+        );
       },
       close: (_) async => const InventoryState.loaded(characters: [], weapons: [], materials: []),
+      clearAllCharacters: (_) async {
+        await _telemetryService.trackItemsDeletedFromInventory(ItemType.character);
+        await _dataService.deleteItemsFromInventory(ItemType.character);
+
+        return state.map(
+          loading: (state) => state,
+          loaded: (state) => state.copyWith.call(characters: []),
+        );
+      },
+      clearAllWeapons: (_) async {
+        await _telemetryService.trackItemsDeletedFromInventory(ItemType.weapon);
+        await _dataService.deleteItemsFromInventory(ItemType.weapon);
+
+        return state.map(
+          loading: (state) => state,
+          loaded: (state) => state.copyWith.call(weapons: []),
+        );
+      },
+      clearAllMaterials: (_) async {
+        await _telemetryService.trackItemsDeletedFromInventory(ItemType.material);
+        await _dataService.deleteItemsFromInventory(ItemType.material);
+
+        return state.map(
+          loading: (state) => state,
+          loaded: (state) => state.copyWith.call(materials: _dataService.getAllMaterialsInInventory()),
+        );
+      },
     );
 
     yield s;
@@ -104,10 +123,9 @@ class InventoryBloc extends Bloc<InventoryEvent, InventoryState> {
 
   List<String> getItemsKeysToExclude() {
     final upcoming = _genshinService.getUpcomingKeys();
-    if (state is _LoadedState) {
-      return currentState.characters.map((e) => e.key).toList() + currentState.weapons.map((e) => e.key).toList() + upcoming;
-    }
-
-    return upcoming;
+    return state.maybeMap(
+      loaded: (state) => state.characters.map((e) => e.key).toList() + state.weapons.map((e) => e.key).toList() + upcoming,
+      orElse: () => upcoming,
+    );
   }
 }

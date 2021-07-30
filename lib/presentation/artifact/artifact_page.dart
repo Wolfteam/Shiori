@@ -1,181 +1,229 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/artifacts/widgets/artifact_stats.dart';
-import 'package:genshindb/presentation/shared/circle_character.dart';
-import 'package:genshindb/presentation/shared/circle_monster.dart';
+import 'package:genshindb/presentation/shared/details/detail_appbar.dart';
+import 'package:genshindb/presentation/shared/details/detail_bottom_portrait_layout.dart';
+import 'package:genshindb/presentation/shared/details/detail_general_card.dart';
+import 'package:genshindb/presentation/shared/details/detail_tab_landscape_layout.dart';
+import 'package:genshindb/presentation/shared/details/detail_top_layout.dart';
 import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
+import 'package:genshindb/presentation/shared/images/circle_character.dart';
+import 'package:genshindb/presentation/shared/images/circle_monster.dart';
 import 'package:genshindb/presentation/shared/item_description_detail.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:genshindb/presentation/shared/rarity.dart';
+import 'package:genshindb/presentation/shared/scaffold_with_fab.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/shared/utils/size_utils.dart';
 
 class ArtifactPage extends StatelessWidget {
   final double imgHeight = 350;
 
   @override
   Widget build(BuildContext context) {
+    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    return isPortrait ? const _PortraitLayout() : const _LandscapeLayout();
+  }
+}
+
+class _PortraitLayout extends StatelessWidget {
+  const _PortraitLayout({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    return ScaffoldWithFab(
+      child: BlocBuilder<ArtifactBloc, ArtifactState>(
+        builder: (context, state) {
+          return state.map(
+            loading: (_) => const Loading(useScaffold: false),
+            loaded: (state) {
+              final rarityColor = state.rarityMax.getRarityColors().last;
+              final size = SizeUtils.getSizeForCircleImages(context);
+              return Stack(
+                fit: StackFit.passthrough,
+                clipBehavior: Clip.none,
+                alignment: Alignment.topCenter,
+                children: [
+                  DetailTopLayout(
+                    color: rarityColor,
+                    fullImage: state.image,
+                    charDescriptionHeight: 120,
+                    widthOnPortrait: 240,
+                    heightOnPortrait: 240,
+                    appBar: const DetailAppBar(),
+                    isAnSmallImage: true,
+                    generalCard: DetailGeneralCard(
+                      rarity: state.rarityMax,
+                      itemName: state.name,
+                      color: rarityColor,
+                    ),
+                  ),
+                  DetailBottomPortraitLayout(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 10),
+                        child: ItemDescriptionDetail(
+                          title: s.bonus,
+                          body: Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 5),
+                            child: ArtifactStats(bonus: state.bonus),
+                          ),
+                          textColor: rarityColor,
+                        ),
+                      ),
+                      ItemDescriptionDetail(
+                        title: s.pieces,
+                        body: Wrap(
+                          alignment: WrapAlignment.center,
+                          children: state.images
+                              .map((e) => Container(
+                                    margin: Styles.edgeInsetAll5,
+                                    child: Image.asset(e, width: size * 2, height: size * 2),
+                                  ))
+                              .toList(),
+                        ),
+                        textColor: rarityColor,
+                      ),
+                      if (state.charImages.isNotEmpty)
+                        ItemDescriptionDetail(
+                          title: s.builds,
+                          body: Wrap(
+                            alignment: WrapAlignment.center,
+                            children: state.charImages.map((e) => CircleCharacter(image: e, radius: size)).toList(),
+                          ),
+                          textColor: rarityColor,
+                        ),
+                      if (state.droppedBy.isNotEmpty)
+                        ItemDescriptionDetail(
+                          title: s.droppedBy,
+                          body: Wrap(
+                            alignment: WrapAlignment.center,
+                            children: state.droppedBy.map((e) => CircleMonster(image: e, radius: size)).toList(),
+                          ),
+                          textColor: rarityColor,
+                        ),
+                    ],
+                  ),
+                ],
+              );
+            },
+          );
+        },
+      ),
+    );
+  }
+}
+
+class _LandscapeLayout extends StatelessWidget {
+  const _LandscapeLayout({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: BlocBuilder<ArtifactBloc, ArtifactState>(
-            builder: (context, state) {
-              return state.map(
-                loading: (_) => const Loading(useScaffold: false),
-                loaded: (s) => Stack(
-                  fit: StackFit.passthrough,
-                  clipBehavior: Clip.none,
-                  children: [
-                    _buildTop(s.name, s.rarityMax, s.image, context),
-                    _buildBottom(s.rarityMax, s.images, s.bonus, s.charImages, s.droppedBy, context),
-                  ],
-                ),
+        child: BlocBuilder<ArtifactBloc, ArtifactState>(
+          builder: (ctx, state) => state.map(
+            loading: (_) => const Loading(useScaffold: false),
+            loaded: (state) {
+              final rarityColor = state.rarityMax.getRarityColors().last;
+              final tabs = [
+                s.description,
+              ];
+
+              if (state.charImages.isNotEmpty) {
+                tabs.add(s.builds);
+              }
+
+              if (state.droppedBy.isNotEmpty) {
+                tabs.add(s.droppedBy);
+              }
+              final imgSize = SizeUtils.getSizeForCircleImages(context);
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: DetailTopLayout(
+                      color: rarityColor,
+                      appBar: const DetailAppBar(),
+                      fullImage: state.image,
+                      charDescriptionHeight: 120,
+                      heightOnLandscape: size.height * 0.7,
+                      generalCard: DetailGeneralCard(
+                        rarity: state.rarityMax,
+                        itemName: state.name,
+                        color: rarityColor,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: DetailTabLandscapeLayout(
+                      color: rarityColor,
+                      tabs: tabs,
+                      children: [
+                        SingleChildScrollView(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(bottom: 10),
+                                child: ItemDescriptionDetail(
+                                  title: s.bonus,
+                                  body: Container(
+                                    margin: const EdgeInsets.symmetric(horizontal: 5),
+                                    child: ArtifactStats(bonus: state.bonus),
+                                  ),
+                                  textColor: rarityColor,
+                                ),
+                              ),
+                              ItemDescriptionDetail(
+                                title: s.pieces,
+                                body: Wrap(
+                                  alignment: WrapAlignment.center,
+                                  children: state.images
+                                      .map((e) =>
+                                          Container(margin: Styles.edgeInsetAll5, child: Image.asset(e, width: imgSize * 2, height: imgSize * 2)))
+                                      .toList(),
+                                ),
+                                textColor: rarityColor,
+                              ),
+                            ],
+                          ),
+                        ),
+                        if (state.charImages.isNotEmpty)
+                          SingleChildScrollView(
+                            child: ItemDescriptionDetail(
+                              title: s.builds,
+                              body: Wrap(
+                                alignment: WrapAlignment.center,
+                                children: state.charImages.map((e) => CircleCharacter(image: e, radius: imgSize)).toList(),
+                              ),
+                              textColor: rarityColor,
+                            ),
+                          ),
+                        if (state.droppedBy.isNotEmpty)
+                          SingleChildScrollView(
+                            child: ItemDescriptionDetail(
+                              title: s.droppedBy,
+                              body: Wrap(
+                                alignment: WrapAlignment.center,
+                                children: state.droppedBy.map((e) => CircleMonster(image: e, radius: imgSize)).toList(),
+                              ),
+                              textColor: rarityColor,
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                ],
               );
             },
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildTop(
-    String name,
-    int rarity,
-    String image,
-    BuildContext context,
-  ) {
-    final mediaQuery = MediaQuery.of(context);
-    final isPortrait = mediaQuery.orientation == Orientation.portrait;
-    final descriptionWidth = mediaQuery.size.width / (isPortrait ? 1.2 : 2);
-    //TODO: IM NOT SURE HOW THIS WILL LOOK LIKE IN BIGGER DEVICES
-    // final padding = mediaQuery.padding;
-    // final screenHeight = mediaQuery.size.height - padding.top - padding.bottom;
-
-    return Container(
-      color: rarity.getRarityColors().last,
-      child: Stack(
-        fit: StackFit.passthrough,
-        alignment: Alignment.center,
-        children: <Widget>[
-          Align(
-            alignment: Alignment.topRight,
-            child: Container(
-              transform: Matrix4.translationValues(60, -30, 0.0),
-              child: Opacity(
-                opacity: 0.5,
-                child: Image.asset(image, width: imgHeight),
-              ),
-            ),
-          ),
-          Align(
-            alignment: Alignment.topLeft,
-            child: Image.asset(
-              image,
-              width: 340,
-              height: imgHeight,
-            ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              width: descriptionWidth,
-              margin: const EdgeInsets.symmetric(horizontal: 30),
-              child: _buildGeneralCard(name, rarity, context),
-            ),
-          ),
-          Positioned(
-            top: 0.0,
-            left: 0.0,
-            right: 0.0,
-            child: AppBar(backgroundColor: Colors.transparent, elevation: 0.0),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildBottom(
-    int rarity,
-    List<String> images,
-    List<ArtifactCardBonusModel> bonus,
-    List<String> charImgs,
-    List<String> droppedBy,
-    BuildContext context,
-  ) {
-    final s = S.of(context);
-    final items = images.map((e) => Container(margin: Styles.edgeInsetAll5, child: Image.asset(e, width: 90, height: 90))).toList();
-    return Card(
-      margin: const EdgeInsets.only(top: 300, right: 10, left: 10),
-      shape: Styles.cardItemDetailShape,
-      child: Padding(
-        padding: Styles.edgeInsetAll10,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(
-              margin: const EdgeInsets.only(bottom: 10),
-              child: ItemDescriptionDetail(
-                title: s.bonus,
-                body: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 5),
-                  child: ArtifactStats(bonus: bonus),
-                ),
-                textColor: rarity.getRarityColors().last,
-              ),
-            ),
-            ItemDescriptionDetail(
-              title: s.pieces,
-              body: Wrap(
-                alignment: WrapAlignment.center,
-                children: items,
-              ),
-              textColor: rarity.getRarityColors().last,
-            ),
-            if (charImgs.isNotEmpty)
-              ItemDescriptionDetail(
-                title: s.builds,
-                body: Wrap(
-                  alignment: WrapAlignment.center,
-                  children: charImgs.map((e) => CircleCharacter(image: e)).toList(),
-                ),
-                textColor: rarity.getRarityColors().last,
-              ),
-            if (droppedBy.isNotEmpty)
-              ItemDescriptionDetail(
-                title: s.droppedBy,
-                body: Wrap(
-                  alignment: WrapAlignment.center,
-                  children: droppedBy.map((e) => CircleMonster(image: e)).toList(),
-                ),
-                textColor: rarity.getRarityColors().last,
-              ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildGeneralCard(
-    String name,
-    int rarity,
-    BuildContext context,
-  ) {
-    final theme = Theme.of(context);
-    final details = Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(name, style: theme.textTheme.headline5!.copyWith(fontWeight: FontWeight.bold, color: Colors.white)),
-        Rarity(stars: rarity, starSize: 25, alignment: MainAxisAlignment.start),
-      ],
-    );
-    return Card(
-      color: rarity.getRarityColors().last.withOpacity(0.1),
-      elevation: Styles.cardTenElevation,
-      margin: Styles.edgeInsetAll5,
-      shape: Styles.cardShape,
-      child: Padding(padding: Styles.edgeInsetAll10, child: details),
     );
   }
 }

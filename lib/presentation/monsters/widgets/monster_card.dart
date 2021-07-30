@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/comingsoon_new_avatar.dart';
+import 'package:genshindb/presentation/shared/images/comingsoon_new_avatar.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
 import 'package:transparent_image/transparent_image.dart';

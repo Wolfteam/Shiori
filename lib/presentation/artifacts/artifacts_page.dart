@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:genshindb/application/bloc.dart';
+import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/sliver_nothing_found.dart';
 import 'package:genshindb/presentation/shared/sliver_page_filter.dart';
 import 'package:genshindb/presentation/shared/sliver_scaffold_with_fab.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:genshindb/presentation/shared/utils/modal_bottom_sheet_utils.dart';
+import 'package:genshindb/presentation/shared/utils/size_utils.dart';
 
-import 'widgets/artifact_bottom_sheet.dart';
 import 'widgets/artifact_card.dart';
 import 'widgets/artifact_info_card.dart';
 
@@ -49,28 +50,26 @@ class _ArtifactsPageState extends State<ArtifactsPage> with AutomaticKeepAliveCl
 
     final s = S.of(context);
     return BlocBuilder<ArtifactsBloc, ArtifactsState>(
-      builder: (context, state) {
-        return state.map(
-          loading: (_) => const Loading(),
-          loaded: (state) => SliverScaffoldWithFab(
-            appbar: !widget.isInSelectionMode ? null : AppBar(title: Text(s.selectAnArtifact)),
-            slivers: [
-              SliverPageFilter(
-                search: state.search,
-                title: s.artifacts,
-                onPressed: () => _showFiltersModal(context),
-                searchChanged: (v) => context.read<ArtifactsBloc>().add(ArtifactsEvent.searchChanged(search: v)),
+      builder: (context, state) => state.map(
+        loading: (_) => const Loading(),
+        loaded: (state) => SliverScaffoldWithFab(
+          appbar: !widget.isInSelectionMode ? null : AppBar(title: Text(s.selectAnArtifact)),
+          slivers: [
+            SliverPageFilter(
+              search: state.search,
+              title: s.artifacts,
+              onPressed: () => ModalBottomSheetUtils.showAppModalBottomSheet(context, EndDrawerItemType.artifacts),
+              searchChanged: (v) => context.read<ArtifactsBloc>().add(ArtifactsEvent.searchChanged(search: v)),
+            ),
+            if (!widget.isInSelectionMode)
+              ArtifactInfoCard(
+                isCollapsed: state.collapseNotes,
+                expansionCallback: (v) => context.read<ArtifactsBloc>().add(ArtifactsEvent.collapseNotes(collapse: v)),
               ),
-              if (!widget.isInSelectionMode)
-                ArtifactInfoCard(
-                  isCollapsed: state.collapseNotes,
-                  expansionCallback: (v) => context.read<ArtifactsBloc>().add(ArtifactsEvent.collapseNotes(collapse: v)),
-                ),
-              if (state.artifacts.isNotEmpty) _buildGrid(state.artifacts, context) else const SliverNothingFound(),
-            ],
-          ),
-        );
-      },
+            if (state.artifacts.isNotEmpty) _buildGrid(state.artifacts, context) else const SliverNothingFound(),
+          ],
+        ),
+      ),
     );
   }
 
@@ -79,23 +78,13 @@ class _ArtifactsPageState extends State<ArtifactsPage> with AutomaticKeepAliveCl
     return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
       sliver: SliverStaggeredGrid.countBuilder(
-        crossAxisCount: isPortrait ? 2 : 3,
+        crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context, isOnMainPage: !widget.isInSelectionMode),
         itemBuilder: (ctx, index) => ArtifactCard.item(item: artifacts[index], isInSelectionMode: widget.isInSelectionMode),
         itemCount: artifacts.length,
         crossAxisSpacing: isPortrait ? 10 : 5,
         mainAxisSpacing: 5,
         staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
       ),
-    );
-  }
-
-  Future<void> _showFiltersModal(BuildContext context) async {
-    await showModalBottomSheet(
-      context: context,
-      shape: Styles.modalBottomSheetShape,
-      isDismissible: true,
-      isScrollControlled: true,
-      builder: (_) => ArtifactBottomSheet(),
     );
   }
 }

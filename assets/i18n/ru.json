@@ -245,40 +245,6 @@
       ]
     },
     {
-      "key": "Ayaka",
-      "pending": true,
-      "name": "Камисато Аяка",
-      "description": "Секретарь павильона Юэхай.  В ее жилах течет кровь цилинь, озаренного зверя.",
-      "skills": [
-        {
-          "key": "s1",
-          "title": "Kamisato Art · Naname",
-          "description": null,
-          "abilities": []
-        },
-        {
-          "key": "s2",
-          "title": "Kamisato Art · Hyouka",
-          "description": null,
-          "abilities": []
-        },
-        {
-          "key": "s3",
-          "title": "Kamisato Art · Senho",
-          "description": null,
-          "abilities": []
-        },
-        {
-          "key": "s4",
-          "title": "Kamisato Art · Soumetsu",
-          "description": null,
-          "abilities": []
-        }
-      ],
-      "passives": [],
-      "constellations": []
-    },
-    {
       "key": "Barbara",
       "name": "Барбара",
       "description": "Все жители Мондштадта боготворят Барбару, но слово «кумир» она узнала из модного журнала.",
@@ -4245,25 +4211,156 @@
       ]
     },
     {
+      "key": "Ayaka",
+      "name": "Аяка",
+      "description": "Наследница клана Камисато комиссии Ясиро. Благородна и изящна, мудра и сильна.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Искусство Камисато: Нанамэ",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "До пяти быстрых ударов мечом.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Создаёт продолжительный град из клинков, для которого тратится определённое количество выносливости.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Искусство Камисато: Хёка",
+          "description": "Призывает цветущий лёд, который подбрасывает ближайших противников в воздух и наносит им Крио урон",
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "Искусство Камисато: Сомэцу",
+          "description": "Безупречным движением вызывает снежную бурю и выпускает непрерывно движущийся вперёд Морозный сэки но то.",
+          "abilities": [
+            {
+              "name": "Морозный сэки но то:",
+              "descriptions": [
+                "Пронзающий холодный ветер непрерывно кромсает противников и наносит им Крио урон",
+                "По истечении времени действия взрывается и наносит Крио урон по площади"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s4",
+          "title": "Искусство Камисато: Сэнхо",
+          "description": null,
+          "abilities": [
+            {
+              "name": "Альтернативный спринт",
+              "description": "Аяка потребляет выносливость и скрывается в стремительном потоке мокрого снега, который движется вместе с ней. Форма Сэнхо позволяет ей двигаться по воде с большой скоростью. После окончания формы Сэнхо и при повторном появлении происходят следующие эффекты:",
+              "descriptions": [
+                "Высвобождается холодная энергия, которая накладывает эффект Крио на ближайших противников.",
+                "Холод собирается вдоль лезвия Аяки, на короткое время наделяя её атаки инфузией Крио."
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Плоды синса",
+          "description": "При создании материалов возвышения оружия имеет 10% шанс создать дополнительный предмет.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Освящение амауми куницуми",
+          "description": "После использования навыка Искусство Камисато: Хёка урон обычных и заряженных атак Аяки увеличивается на 30% в течение 6 сек.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Благословение кантэн сэммё",
+          "description": "Когда Крио эффект в конце действия навыка Искусство Камисато: Сэнхо поражает противника, Камисато Аяка получает следующие эффекты:",
+          "descriptions": [
+            "Восстанавливает 10 ед. энергии.",
+            "Получает 18% Бонус Крио урона на 10 сек."
+          ]
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Укутанная снегом сакура",
+          "description": "Когда обычные атаки или заряженные атаки Аяки наносят Крио урон противникам, есть 50% шанс уменьшить время отката навыка Искусство Камисато: Хёка на 0.3 сек. Этот эффект может возникнуть раз в 0.1 сек.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Лезвие бури сэки но то",
+          "description": "Навык Искусство Камисато: Сомэцу создаёт два дополнительных Морозных сэки но то поменьше, каждый из которых наносит урон, равный 20% от основного урона.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Ледяной цветок камифубуки",
+          "description": "Увеличивает уровень навыка Искусство Камисато: Сомэцу на 3.\nМакс. Ур.: 15",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Приливы и отливы",
+          "description": "Понижает защиту, получивших урон от Морозного сэки но то навыка Искусство Камисато: Сомэцу, на 30% в течение 6 сек.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Цветущее облако ируцуки",
+          "description": "Увеличивает уровень навыка Искусство Камисато: Хёка на 3.\nМакс. Ур.: 15",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Танец суигэцу",
+          "description": "Каждые 10 сек. Камисато Аяка получает эффект Усурахи буто, который повышает урон её заряженных атак на 298%. Через 0.5 сек после попадания заряженной атакой по врагу этот эффект пропадает, и отсчёт начинается заново.",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "Yoimiya",
-      "name": "Yoimiya",
+      "name": "Ёимия",
       "description": "N/A",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
+          "title": "Firework Flare-Up",
           "description": null,
           "abilities": []
         },
         {
           "key": "s2",
-          "title": "NA",
+          "title": "Niwabi Fire-Dance",
           "description": null,
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "NA",
+          "title": "Ryuukin Saxifrage",
           "description": null,
           "abilities": []
         }
@@ -4278,19 +4375,19 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
+          "title": "Shiyuumatsu-Ban Ninja Blade",
           "description": null,
           "abilities": []
         },
         {
           "key": "s2",
-          "title": "NA",
+          "title": "Yoohoo Art: Fuuin Dash",
           "description": null,
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "NA",
+          "title": "Yoohoo Art: Mujina Flurry",
           "description": null,
           "abilities": []
         }
@@ -4300,24 +4397,219 @@
     },
     {
       "key": "Traveler (Electro)",
-      "name": "Traveler (Electro)",
+      "name": "Путешественник (Электро)",
+      "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "Иноземный гром",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "До пяти быстрых ударов мечом.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Два быстрых взмаха мечом, для которых тратится определённое количество выносливости.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "Клинок молнии",
+          "description": "Выпускает три стремительные громовые тени, которые наносят Электро урон противникам и при успешном ударе оставляют после себя Амулеты изобилия.\nИзначально можно создать только два Амулета изобилия. Использование навыка сбросит все созданные Амулеты изобилия.",
+          "abilities": [
+            {
+              "name": "Амулеты изобилия",
+              "description": "Когда персонаж находится рядом с Амулетом изобилия, он поглощает его и получает следующие эффекты:",
+              "descriptions": [
+                "Восстанавливает элементальную энергию",
+                "Повышает восстановление энергии"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "Раскаты грома",
+          "description": "Вы взываете к защите молнии, которые отбрасывают окружающих врагов и наносит им Электро урон.",
+          "abilities": [
+            {
+              "name": "Завеса молнии",
+              "description": "Когда обычная или заряженная атака активного персонажа попадает по врагу, генерируется Нисходящий гром, который наносит Электро урон.\nКогда Нисходящий гром попадает по врагу, он восстанавливает энергию этого персонажа.\nТолько один удар Нисходящего грома может генерироваться раз в 0.5 сек.",
+              "descriptions": []
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p2",
+          "title": "Вспышка молнии",
+          "description": "Когда другой ближайший персонаж в отряде получает Амулет изобилия, созданный навыком Клинок молнии, время отката этого навыка уменьшается на 1.5 сек.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Сокрушительный рокот",
+          "description": "Увеличивает эффект восстановления энергии, даруемый Амулетом изобилия навыка Клинок молнии, на 10% от восстановления энергии путешественницы.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Гром весеннего урожая",
+          "description": "Количество Амулетов изобилия, которые ",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Violet Vehemence",
+          "description": "When Falling Thunder created by Bellowing Thunder hits an opponent, it will decrease their Electro RES by 15% for 8s.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Distant Crackling",
+          "description": "Increases the Level of Bellowing Thunder by 3.\nMaximum upgrade level is 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Fickle Cloudstrike",
+          "description": "When a character obtains Abundance Amulets generated by Lightning Blade, if this character's Energy is less than 35%, the Energy restored by the Abundance Amulets is increased by 100%.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Clamor in the Wilds",
+          "description": "Increases the Level of Lightning Blade by 3..\nMaximum upgrade level is 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "World-Shaker",
+          "description": "Every 2 Falling Thunder attacks triggered by Bellowing Thunder will increase the DMG dealt by the next Falling Thunder by 100%, and will restore an additional 1 Energy to the current character.",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Aloy",
+      "name": "Aloy",
       "description": "N/A",
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
+          "title": "N/A - S1",
           "description": null,
           "abilities": []
         },
         {
           "key": "s2",
-          "title": "NA",
+          "title": "N/A - S2",
           "description": null,
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "NA",
+          "title": "N/A - S3",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
+    },
+    {
+      "key": "SangonomiyaKokomi",
+      "name": "Sangonomiya Kokomi",
+      "description": "N/A",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "N/A - S1",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "N/A - S2",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "N/A - S3",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
+    },
+    {
+      "key": "KujouSara",
+      "name": "Kujou Sara",
+      "description": "N/A",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "N/A - S1",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "N/A - S2",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "N/A - S3",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
+    },
+    {
+      "key": "RaidenShogun",
+      "name": "Raiden Shogun",
+      "description": "N/A",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "N/A - S1",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s2",
+          "title": "N/A - S2",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "N/A - S3",
           "description": null,
           "abilities": []
         }
@@ -4901,7 +5193,7 @@
       "key": "Deathmatch",
       "name": "Смертельный бой",
       "description": "Один гладиатор очень дорожил этим копьём. Остриё его познало кровь бесчисленного множества людей и тварей.",
-      "refinement": "Если рядом 2 врага и более, сила атаки и защита увеличиваются на {{0}}%; если рядом менее 2 врагов, сила атаки увеличивается на {{1}}%."
+      "refinement": "Если рядом 2 врага и более, сила атаки и защита увеличиваются на {{0}}%; если рядом менее 2 врагов, сила атаки увеличивается на {{2}}%."
     },
     {
       "key": "Dragon’s Bane",
@@ -5003,7 +5295,43 @@
       "key": "Dodoco Tales",
       "name": "Истории Додоко",
       "description": "Книга, состоящая из увлекательных детских историй, которые невольно вызывают улыбку на лице.\nДаже взрослые читатели не могут не погрузиться с головой в рассказанные здесь невинные и наивные маленькие приключения.",
-      "refinement": "Попадания обычной атакой увеличивают урон заряженной атаки на {0}% в течение 6 сек., а попадания заряженной атакой увеличивают силу атаки на {1}% в течение 6 сек."
+      "refinement": "Попадания обычной атакой увеличивают урон заряженной атаки на {0}% в течение 6 сек., а попадания заряженной атакой увеличивают силу атаки на {{1}}% в течение 6 сек."
+    },
+    {
+      "key": "Amenoma Kageuchi",
+      "name": "Amenoma Kageuchi",
+      "description": "A blade custom made for a famed samurai who could strike down a tengu warrior, known for their incredible agility, in midair.",
+      "refinement": "After casting an Elemental Skill, gain 1 Succession Seed. This effect can be triggered once every 5s. The Succession Seed lasts for 30s. Up to 3 Succession Seeds may exist simultaneously. After using an Elemental Burst, all Succession Seeds are consumed and after 2s, the character regenerates {{0}} Energy for each seed consumed."
+    },
+    {
+      "key": "Mistsplitter Reforged",
+      "name": "Mistsplitter Reforged",
+      "description": "A sword that blazes with a fierce violet light. The name \"Reforged\" comes from it having been broken once before.",
+      "refinement": "Gain a {{0}}% Elemental DMG Bonus for all element and receive the might of the Mistsplitter's Emblem. At stack levels 1/2/3, the Mistsplitter's Emblem provides a {{1}}/{{2}}/{{3}}% Elemental DMG Bonus for the character's Elemental Type. The character will obtain 1 stack of Mistsplitter's Emblem in each of the following scenarios: Normal Attack deals Elemental DMG (stack lasts 5s), casting Elemental Burst (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently."
+    },
+    {
+      "key": "Katsuragikiri Nagamasa",
+      "name": "Katsuragikiri Nagamasa",
+      "description": "A blade that was once made in Tatarasuna. Heavy and tough.",
+      "refinement": "Increases Elemental Skill DMG by {{0}}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {{1}} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field."
+    },
+    {
+      "key": "Kitain Cross Spear",
+      "name": "Kitain Cross Spear",
+      "description": "A special lance that was once used by a famed warrior who guarded the Tatarigami on Yashiori Island.",
+      "refinement": "Increases Elemental Skill DMG by {{0}}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {{1}} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field."
+    },
+    {
+      "key": "Hamayumi",
+      "name": "Hamayumi",
+      "description": "A certain shrine maiden once owned this warbow. It was made with surpassing skill, and is both intricate and sturdy.",
+      "refinement": "Increases Normal Attack DMG by {{0}}% and Charged Attack DMG by {{1}}%. When the equipping character's Energy reaches 100%, this effect is increased by 100%."
+    },
+    {
+      "key": "Hakushin Ring",
+      "name": "Hakushin Ring",
+      "description": "A catalyst that carries the memory of the Kitsune Saiguu of ancient times. However, this device is but an impoverished vessel for the full breadth of her thought.",
+      "refinement": "After the character equipped with this weapon triggers an Electro elemental reaction, nearby party members of an Elemental Type involved in the elemental reaction receive a {{0}}% Elemental DMG Bonus for their element, lasting 6s. Elemental Bonuses gained in this way cannot be stacked."
     }
   ],
   "artifacts": [
@@ -5474,6 +5802,34 @@
         {
           "key": "b2",
           "bonus": "Когда элементальный навык попадает по врагам, атака увеличивается на 9% в течение 7 сек. Эффект может складываться до 2 раз и возникнуть не чаще 1 раза за 0.3 сек. На 2 уровне эффект набора из 2 вещей увеличивается на 100%."
+        }
+      ]
+    },
+    {
+      "key": "Shimenawa's Reminiscence",
+      "name": "Воспоминания Симэнавы",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "Увеличивает силу атаки на 18%"
+        },
+        {
+          "key": "b2",
+          "bonus": "При использовании элементального навыка, если у персонажа 15 или более единиц элементальной энергии, он теряет 15 единиц элементальной энергии; при этом его урон обычной атаки, заряженной атаки и атаки в падении на 10 сек. увеличивается на 50%."
+        }
+      ]
+    },
+    {
+      "key": "Emblem of Severed Fate",
+      "name": "Эмблема рассечённой судьбы",
+      "bonus": [
+        {
+          "key": "b1",
+          "bonus": "Увеличивает скорость восстановления энергии +20%."
+        },
+        {
+          "key": "b2",
+          "bonus": "Увеличивает урон взрыва стихии на величину, зависящую от значения восстановления энергии. Эффект можно увеличить максимум до 75%"
         }
       ]
     }
@@ -6372,6 +6728,186 @@
       "key": "Sea Ganoderma",
       "name": "Sea Ganoderma",
       "description": "A species that only grows in certain special regions of the ocean and islands. It looks like a fungus of some sort, but it is in fact the result of the secretion and proliferation of certain soft-bodied organisms."
+    },
+    {
+      "key": "TransienceA",
+      "name": "Teachings of Transience",
+      "description": "Transience is the dream of the nation of thunder.\nFleeting glories are the highest expression of mortal beauty, for are we mortals not like the flashing lightning itself? Like a lovely dream or blossoming spark, we shall leave a gorgeous mark on the eternal night sky."
+    },
+    {
+      "key": "TransienceB",
+      "name": "Guide to Transience",
+      "description": "Transience is the dream of the nation of thunder.\nWe find the greatest joys in mortal life in transient dreams, for is life itself not like the shadow of the thunder? Pursue your dreams into the clouds if you wish, and enjoy the unexpected silence of the dim lamp-lit nights."
+    },
+    {
+      "key": "TransienceC",
+      "name": "Philosophies of Transience",
+      "description": "Transience is the dream of the nation of thunder.\nThe fleeting nature of this mortal world is the essence of beauty, for are our lives in this world not akin to the levin flash? Yet the might of the divine comes suddenly, and before the roar of eternity, who can stand?"
+    },
+    {
+      "key": "EleganceA",
+      "name": "Teachings of Elegance",
+      "description": "Elegance is the form of the nation of thunder.\nElegance brooks no flattery, and the elegant are ever noble. They are like the sea eagles who soar on high to contend with the resounding storms. They will not cater to philistine vulgarity, as one would not cast a flower crown into the mud, staining its dignity."
+    },
+    {
+      "key": "EleganceB",
+      "name": "Guide to Elegance",
+      "description": "Elegance is the form of the nation of thunder.\nElegance shuns arrogance. The elegant are ever humble, and only by discarding vanity and sloth may one see clearly — and is there not beauty and loveliness even in the basest of appearances?"
+    },
+    {
+      "key": "EleganceC",
+      "name": "Philosophies of Elegance",
+      "description": "Elegance is the form of the nation of thunder.\nElegance abhors vulgarity, and the elegant ever walk alone. Resisting base evils, unmoved by base loves, never taking refuge in base ignorance — that is how one perceives the chasm between the elegant and the contemptuous."
+    },
+    {
+      "key": "LightA",
+      "name": "Teachings of Light",
+      "description": "Light is the yearning of the land of thunder.\nThe ruler who claims to have perceived all forever aims to hoard celestial glory. But this vision that cannot be shared only leads people to long for it more fiercely, like moths diving into the flame."
+    },
+    {
+      "key": "LightB",
+      "name": "Guide to Light",
+      "description": "Light is the yearning of the land of thunder.\nThough the sun rays themselves should be blocked by layers upon layers of clouds, there are still those in the thunder god's land who dream of piercing that wrathful sea of lightning to pursue the glory of the divine, fearing not that they shall be cruelly struck down."
+    },
+    {
+      "key": "LightC",
+      "name": "Philosophies of Light",
+      "description": "Light is the yearning of the land of thunder.\nThough they must live forever on the earth, humanity will always reach for the light. Mortals will pursue and surpass, and they will never stop. A sealed eternity may, perhaps, look magnificent, but its essence is death."
+    },
+    {
+      "key": "Sakura Bloom",
+      "name": "Sakura Bloom",
+      "description": "Blossoms from the Sacred Sakura at the Grand Narukami Shrine, filled with a fondness for Inazuma."
+    },
+    {
+      "key": "Crystal Marrow",
+      "name": "Crystal Marrow",
+      "description": "A crystal that contains a sliver of Tatarigami power. Adding this material during smelting will greatly increase the strength and toughness of metals."
+    },
+    {
+      "key": "Naku Weed",
+      "name": "Naku Weed",
+      "description": "Even on windless days, this plant will tremble lightly amid the cries of thunder. The part of it that resembles petals are in fact extensions of the leaves meant to protect the fragile flower."
+    },
+    {
+      "key": "HandguardA",
+      "name": "Old Handguard",
+      "description": "A battle-worn handguard that was once mounted on an Inazuman blade.\nFor those adept in the art of the sword, the tsuba is a defense from the edge of an opponent's blade. For beginners, it is a defense made for their own right hand, to protect it from itself."
+    },
+    {
+      "key": "HandguardB",
+      "name": "Kageuchi Handguard",
+      "description": "A handguard mounded upon a sword of some distinction.\nInazuma has a long tradition of sword-making. When making swords, smiths will often make several different weapons at once, before choosing from among them the \"shinuchi,\" or the best weapon, while the others are known as \"kageuchi.\""
+    },
+    {
+      "key": "HandguardC",
+      "name": "Famed Handguard",
+      "description": "An intricately-made handguard that was mounted upon a famed weapon.\nSome believe that swords have souls and lives of their own, and thus deserve their own names. Those who love their blades will be acknowledged by them in turn. But those who see their swords as friends or even lovers should be warned that this relationship is built on death and bloodshed. The passions of those who dance with their blade amid crimson showers must surely be cooled someday by fickle steel."
+    },
+    {
+      "key": "Chaos2A",
+      "name": "Chaos Gear",
+      "description": "Comes from a now-inactive ancient Ruin machine.\nThis is the energy source of that biomimetic mechanism."
+    },
+    {
+      "key": "Chaos2B",
+      "name": "Chaos Axis",
+      "description": "Comes from a now-inactive ancient Ruin machine.\nEven the great techniques and unknown power of this device must come to nothing should the machine that contained them ever fail to maintain structural integrity."
+    },
+    {
+      "key": "Chaos2C",
+      "name": "Chaos Oculus",
+      "description": "Comes from a now-inactive ancient Ruin machine.\nThe \"Ruin\" part of the name comes from the areas where they are most active. However, Ruin machines actually have little in common with the detritus in which they are often found.\nIn the ancient past, these ruins were once part of a civilization mighty enough to almost touch the dome of the firmament, while \"ruin\" still waits in the deep places of the earth, awaiting the order to arise and tread all kingdoms underfoot."
+    },
+    {
+      "key": "PrismA",
+      "name": "Dismal Prism",
+      "description": "This was once a prism that could polarize light, but has grown dull through the passing of years."
+    },
+    {
+      "key": "PrismB",
+      "name": "Crystal Prism",
+      "description": "A prism that can bend light.\nIllusory images can be made using such prisms, giving such devices — in a manner of speaking — the power to sway human hearts."
+    },
+    {
+      "key": "PrismC",
+      "name": "Polarizing Prism",
+      "description": "A prism that can bend light.\nIn the darkness, these prisms can spread thin light into a wider area. Perhaps this is due to this quirk that these prisms can grant a measure of peace to those whose hearts are oft shrouded in darkness."
+    },
+    {
+      "key": "Perpetual Heart",
+      "name": "Perpetual Heart",
+      "description": "The core that powers the autonomous movements of the Perpetual Mechanical Array.\nSome theorize that the symbols on these cores have knowledge and logic inscribed upon them in a language that eyes cannot perceive. Some go a step further and believe that these unique Ruin machines autonomously decided to forsake a biomimetic form to pursue strength of function on account of their especially large cores and complex inscriptions."
+    },
+    {
+      "key": "Smoldering Pearl",
+      "name": "Smoldering Pearl",
+      "description": "A crystallization of a Pyro Hypostasis that constantly emits heat.\nEven the burning flames shall one day grow cold, and even the ashen firewood can will itself back into a raging blaze. It must then be the will of the world that Pyro Hypostases should constantly cool down and heat up, much like the universe teems with endless life... until the fated darkness shall one day descend and bring it all to naught."
+    },
+    {
+      "key": "BranchOfDistantSeaA",
+      "name": "Coral Branch of a Distant Sea",
+      "description": "Watatsumi Island is the furthest from Narukami Island in the Inazuman island chain, and its name means \"the god of the oceans\" in the island's ancient tongue. Legend has it that when the great serpent first arose within the abyssal nation of ever-night, its fluorescent body was covered in myriad-colored coral."
+    },
+    {
+      "key": "BranchOfDistantSeaB",
+      "name": "Jeweled Branch of a Distant Sea",
+      "description": "This coral cannot be found anywhere in Teyvat, but was a gift that the great serpent obtained when it broke into the Dark Sea. For that abyssal snake, to be filled with coral was to be mighty, and its power would be shaved away as those corals were lost. In other words, those corals contain power far beyond the norm."
+    },
+    {
+      "key": "BranchOfDistantSeaC",
+      "name": "Jade Branch of a Distant Sea",
+      "description": "Fleeing into the Dark Sea, the god that had lost everything met the abandoned people who had nothing within the ocean depths. Thus it elected to remain and become their \"Orobashi no Mikoto,\" their \"Watatsumi Omikami.\"\nIt is said that the great snake god once broke off all the coral branches on its body to give light to the children who were curled up in the darkness. They also say that it used these coral branches to create a huge ladder to allow those children to once again reach the surface and see the light of day."
+    },
+    {
+      "key": "BranchOfDistantSeaD",
+      "name": "Golden Branch of a Distant Sea",
+      "description": "The meaning that lies behind the name \"Watatsumi\" is simply the unrequited hopes that the abandoned people who dwelt in the deep sea pinned upon the serpent god that led them.\nAnd it was also because the serpent god now had people who worshiped it that it stayed in the world it should have long fled, breaking off the coral branches that adorned its body, treading upon land where it should not have, and facing a foe it could never hope to match — till at last, its divine form was sundered along with the mountains, its ichor turned into plasma, and its will and power became a curse that could never be extinguished: Tatarigami."
+    },
+    {
+      "key": "NarukamisA",
+      "name": "Narukami's Wisdom",
+      "description": "In the past, the ancients would climb the peak now known as Mt. Yougou and bend wood that had been charred by lightning into a hook to offer as an effigy unto the thundering force that lit up the skies and shook the earth. This shape would eventually become the \"Electro Mitsudomoe\" symbol, symbolizing the favor, wisdom, and might of Electro, and also the people who represent these values."
+    },
+    {
+      "key": "NarukamisB",
+      "name": "Narukami's Joy",
+      "description": "Those who belong to the Shogunate Commissions are those who administer and exercise power. In the monster-filled tales of the ancient past, those who were deeply trusted by the Shogun would bear talismans with this hooked design on their person, and just as the word \"commission\" means to \"joyfully serve\" in the old tongue, those who received her favor would return it with love and loyalty. Yet, after a certain point in time, nothing would be as it was before."
+    },
+    {
+      "key": "NarukamisC",
+      "name": "Narukami's Affection",
+      "description": "All demons who wander in the wilderness or live amongst mortals will be attracted by the sight of the Almighty Narukami Ogosho, represented by the Electro Mitsudomoe. Though their lives may be longer than any creature, they will at last come to their end. If those with limited lifespans hanker after eternity, then they can only pray that \"Eternity\" remembers them. And she did indeed answer their prayers, remembering them all, friend and foe alike, in her heart. No matter whether it was the demon owls who resided amidst the fog and ripped through the skies, the bake-danuki who dared to trespass her imperial gardens, or that female oni, lovely as the moon and mighty in battle, yet who would eventually come to blows with her... Whether it was the tengu who soared on dark wings or the Kitsune Saiguu who once walked by her side, but who eventually disappeared forever...\nThese countless tales have come to rest within her heart, and someday, they will surely shine again in the eternal paradise of her dreams."
+    },
+    {
+      "key": "NarukamisD",
+      "name": "Narukami's Valor",
+      "description": "The treasure of the lord of thunder is her majesty, and that majesty is embodied in her valor and wrath. Her wrath comes from the love that persists in her heart, and her valor supports that anger. Thus, whomsoever should block the path towards eternity or lay a finger on Inazuma's people shall become her foe.\nThey say that there were four great spirits, three divine foxes, and two great swords — but that the symbol of Her Excellency, the Almighty Narukami Ogosho, could only be a single strike, unsurpassed and brilliant as a meteor."
+    },
+    {
+      "key": "MaskOfTheA",
+      "name": "Mask of the Wicked Lieutenant",
+      "description": "Folktales tell that once upon a time, there lived an oni named Torachiyo. Torachiyo was a highly skilled warrior, such that it was once said the Torachiyo might dance amid a thousand blades, juunihitoe robes becoming shredded like falling violet petals, and yet not receive a single wound. Yet this oni would eventually betray the Shogun and revolt, becoming shorn of an arm and a horn in the battle before fleeing and slaying itself in a fit of furious madness.\nHearsay holds that the stubborn oni often hold fear and distress in their hearts. That they should fantasize about eternity yet fear the moment, and are apt to become swallowed by terror or anger is their just reward. This mask depicts Torachiyo, fangs bared."
+    },
+    {
+      "key": "MaskOfTheB",
+      "name": "Mask of the Tiger's Bite",
+      "description": "\"Sumirezome Sangetsu Kogetsukan\" depicts the fierce oni Torachiyo shattering the Shogun's naginata with a single bite, thus gaining the upper hand for a time. As such, masks that are based on him have finely crafted fangs.\nIn the denouement of this tale, the wounded oni fled into the forest, deathly afraid of showing himself even to the cold moonlight. The wind that whispers through the alleys and valleys can be said to resemble his quiet cries of agony, and so there is a poetic seasonal expression for this in Inazuma: \"Torachiyo's Wind.\""
+    },
+    {
+      "key": "MaskOfTheC",
+      "name": "Mask of the One-Horned",
+      "description": "In the lost songs of the oni nursemaids, Torachiyo was an elegant young man, strong of body and fair of face. He was once a beloved lieutenant of the Shogun, and he followed her into the dark abyssal realms to repel the defiled ones, winning renown for the oni, whose blood thinned with each passing day.\nNone now sing these songs, but the mask of a horned oni, even in a different form, still possesses power beyond the norm."
+    },
+    {
+      "key": "MaskOfTheD",
+      "name": "Mask of the Kijin",
+      "description": "Chiyo, a warrior of the oni tribe with the Electro Mitsudomoe emblem emblazoned on her back, was once swallowed whole by a beast from beyond this world that had a tiger's body and a serpent's tail while holding back the forces of darkness. At last, she tore the creature's innards apart from within, breaking free.\nThis is the origin of the phrase \"Chiyo the Tiger-Bite,\" and would be changed over many years to \"Torachiyo.\"\nBut within the belly of the beast, she was stained by a deep sin and saw her comrades ripped to shreds by those blood-red teeth. Steeped in darkness as far as the eye could see, she would eventually draw her sword upon the Almighty Narukami Ogosho. Her sword-arm and one horn would be cloven, and she would flee from the city into the forest like a wounded beast. There, they say that she was taken for some unknown monster and slain by the tengu, or perhaps by the Shiyuumatsu-Ban — or perhaps by a scion of the Iwakura Clan training deep in the mountains, for her features had been twisted by hatred and the agony of her wounds. Or perhaps she even met the oni-masked, sword-bearing doll near the corpse of the giant serpent, and there ended her life's journey.\nFew among those who fought against the abyss in those days were spared pitch-dark dreams. Those who slew monsters and then became them were hardly the minority. The border between worlds grows fragile, and corruption of this kind is perhaps not merely monodirectional."
+    },
+    {
+      "key": "Amethyst Lump",
+      "name": "Amethyst Lump",
+      "description": "An uncut crystal that can only be found in Inazuma. Some professional craftsmanship will bring out its true value."
     }
   ],
   "debuffs": [

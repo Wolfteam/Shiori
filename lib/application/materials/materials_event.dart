@@ -21,4 +21,6 @@ class MaterialsEvent with _$MaterialsEvent {
   const factory MaterialsEvent.cancelChanges() = _CancelChanges;
 
   const factory MaterialsEvent.close() = _Close;
+
+  const factory MaterialsEvent.resetFilters() = _ResetFilters;
 }

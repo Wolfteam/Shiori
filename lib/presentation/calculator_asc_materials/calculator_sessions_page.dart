@@ -5,7 +5,8 @@ import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/app_fab.dart';
-import 'package:genshindb/presentation/shared/info_dialog.dart';
+import 'package:genshindb/presentation/shared/dialogs/confirm_dialog.dart';
+import 'package:genshindb/presentation/shared/dialogs/info_dialog.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:genshindb/presentation/shared/nothing_found_column.dart';
@@ -42,6 +43,12 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
                   tooltip: s.priority,
                   icon: const Icon(Icons.unfold_more),
                   onPressed: () => _showReorderDialog(state.sessions, context),
+                ),
+              if (state.sessions.isNotEmpty)
+                IconButton(
+                  tooltip: s.delete,
+                  icon: const Icon(Icons.clear_all),
+                  onPressed: () => _showDeleteAllSessionsDialog(context),
                 ),
               IconButton(
                 tooltip: s.information,
@@ -103,6 +110,18 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
     await showDialog(
       context: context,
       builder: (context) => InfoDialog(explanations: explanations),
+    );
+  }
+
+  Future<void> _showDeleteAllSessionsDialog(BuildContext context) async {
+    final s = S.of(context);
+    await showDialog(
+      context: context,
+      builder: (_) => ConfirmDialog(
+        title: s.deleteAllSessions,
+        content: s.confirmQuestion,
+        onOk: () => context.read<CalculatorAscMaterialsSessionsBloc>().add(const CalculatorAscMaterialsSessionsEvent.deleteAllSessions()),
+      ),
     );
   }
 }

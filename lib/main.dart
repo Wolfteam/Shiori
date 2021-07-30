@@ -1,5 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:genshindb/presentation/shared/utils/size_utils.dart';
+import 'package:window_size/window_size.dart';
 
 import 'application/bloc.dart';
 import 'domain/services/calculator_service.dart';
@@ -20,6 +24,10 @@ Future<void> main() async {
   //This is required by app center
   WidgetsFlutterBinding.ensureInitialized();
   await initInjection();
+  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+    setWindowMinSize(SizeUtils.minSizeOnDesktop);
+    setWindowMaxSize(Size.infinite);
+  }
   final notificationService = getIt<NotificationService>();
   await notificationService.registerCallBacks(
     onSelectNotification: _onSelectNotification,
@@ -231,7 +239,8 @@ class MyApp extends StatelessWidget {
             final dataService = getIt<DataService>();
             final notificationService = getIt<NotificationService>();
             final settingsService = getIt<SettingsService>();
-            return NotificationsBloc(dataService, notificationService, settingsService);
+            final telemetryService = getIt<TelemetryService>();
+            return NotificationsBloc(dataService, notificationService, settingsService, telemetryService);
           },
         ),
         BlocProvider(

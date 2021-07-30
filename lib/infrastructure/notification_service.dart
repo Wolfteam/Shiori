@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -27,15 +29,21 @@ class NotificationServiceImpl implements NotificationService {
   @override
   Future<void> init() async {
     try {
+      //TODO: TIMEZONES ON WINDWS
+      if (Platform.isWindows) {
+        return;
+      }
       tz.initializeTimeZones();
       final currentTimeZone = await FlutterNativeTimezone.getLocalTimezone();
       _location = tz.getLocation(currentTimeZone);
       tz.setLocalLocation(_location);
-    } catch (e, s) {
+    } on tz.LocationNotFoundException catch (e) {
       //https://github.com/srawlins/timezone/issues/92
+      _loggingService.info(runtimeType, 'init: ${e.msg}, assigning the generic one...');
+      _setDefaultTimeZone();
+    } catch (e, s) {
       _loggingService.error(runtimeType, 'init: Failed to get timezone or device is GMT or UTC, assigning the generic one...', e, s);
-      _location = tz.getLocation(_fallbackTimeZone);
-      tz.setLocalLocation(_location);
+      _setDefaultTimeZone();
     }
   }
 
@@ -105,6 +113,11 @@ class NotificationServiceImpl implements NotificationService {
       androidAllowWhileIdle: true,
       payload: payload,
     );
+  }
+
+  void _setDefaultTimeZone() {
+    _location = tz.getLocation(_fallbackTimeZone);
+    tz.setLocalLocation(_location);
   }
 
   NotificationDetails _getPlatformChannelSpecifics(AppNotificationType type, String body) {

@@ -44,6 +44,7 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
         tempSortDirectionType: currentState.sortDirectionType,
       ),
       collapseNotes: (e) => currentState.copyWith.call(collapseNotes: e.collapse),
+      resetFilters: (_) => _buildInitialState(excludeKeys: state.maybeMap(loaded: (state) => state.excludeKeys, orElse: () => [])),
     );
 
     yield s;

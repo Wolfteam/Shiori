@@ -355,5 +355,14 @@
   "notifInfoMsgE": "Một số thiết bị có thể ngăn ứng dụng chạy trong nền.\nDo đó các thông báo đã cài đặt sẽ không thể hoạt động trên những thiết bị này.\nNếu bạn gặp vấn đề này thì tìm cài đặt cho phép ứng dụng chạy trong nền là được.",
   "swipeToSeeMoreOptions": "Bạn có thể vuốt sang trái hoặc phải đế xem thêm các tùy chọn.",
   "reduceTime": "Giảm Thời Gian",
-  "use24HourFormatOnDates": "Sử dụng định dạng 24h"
+  "use24HourFormatOnDates": "Sử dụng định dạng 24h",
+  "playstation": "PlayStation",
+  "deleteAllSessions": "Xóa tất cả phiên",
+  "deleteAllItems": "Xóa tất cả vật phẩm",
+  "confirmQuestion": "Bạn chắc chắn muốn tiếp tục ?",
+  "gameSpecific": "Thông tin chung",
+  "tools": "Công cụ hỗ trợ",
+  "privacy": "Quyền riêng tư",
+  "privacyMsgA": "Ứng dụng này không thu thập bất kì thông tin nào của bạn nhằm mục đính theo dõi.",
+  "privacyMsgB": "Dữ liệu thu thập duy nhất là những thông tin về sự cố và việc sử dụng ứng dụng. Những thông tin này cần thiết cho việc xác định lỗi hoặc tính năng ứng dụng nào được sử dụng nhiều để đưa ra những thay đổi phù hợp yêu cầu người dùng."
 }

@@ -22,6 +22,8 @@ class CharactersState with _$CharactersState {
     required SortDirectionType tempSortDirectionType,
     required CharacterRoleType roleType,
     required CharacterRoleType tempRoleType,
+    RegionType? regionType,
+    RegionType? tempRegionType,
     @Default(<String>[]) List<String> excludeKeys,
   }) = _LoadedState;
 }

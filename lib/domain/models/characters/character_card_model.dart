@@ -11,6 +11,7 @@ class CharacterCardModel {
   final bool isComingSoon;
   final List<String> materials;
   final CharacterRoleType roleType;
+  final RegionType regionType;
 
   const CharacterCardModel({
     required this.key,
@@ -21,6 +22,7 @@ class CharacterCardModel {
     required this.elementType,
     required this.materials,
     required this.roleType,
+    required this.regionType,
     this.isNew = false,
     this.isComingSoon = false,
   });

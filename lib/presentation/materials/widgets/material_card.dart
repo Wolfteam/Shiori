@@ -6,9 +6,9 @@ import 'package:genshindb/domain/models/materials/material_card_model.dart';
 import 'package:genshindb/domain/utils/currency_utils.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/material/material_page.dart' as mp;
+import 'package:genshindb/presentation/shared/dialogs/item_quantity_dialog.dart';
 import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:genshindb/presentation/shared/gradient_card.dart';
-import 'package:genshindb/presentation/shared/item_quantity_dialog.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 import 'package:transparent_image/transparent_image.dart';
 

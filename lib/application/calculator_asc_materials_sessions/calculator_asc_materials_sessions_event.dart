@@ -18,4 +18,6 @@ class CalculatorAscMaterialsSessionsEvent with _$CalculatorAscMaterialsSessionsE
   }) = _DeleteSession;
 
   const factory CalculatorAscMaterialsSessionsEvent.close() = _Close;
+
+  const factory CalculatorAscMaterialsSessionsEvent.deleteAllSessions() = _DeleteAllSessions;
 }

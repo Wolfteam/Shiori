@@ -712,6 +712,228 @@
       ],
       "droppedBy": [],
       "hasSiblings": false
+    },
+    {
+      "key": "TransienceA",
+      "rarity": 2,
+      "image": "teachings_of_transience.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": [
+        1,
+        4,
+        7
+      ],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "TransienceB",
+      "rarity": 3,
+      "image": "guide_of_transience.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "talents",
+      "days": [
+        1,
+        4,
+        7
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "teachings_of_transience.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "TransienceC",
+      "rarity": 4,
+      "image": "philosophies_of_transience.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "talents",
+      "days": [
+        1,
+        4,
+        7
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "guide_of_transience.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "EleganceA",
+      "rarity": 2,
+      "image": "teachings_of_elegance.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": [
+        2,
+        5,
+        7
+      ],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "EleganceB",
+      "rarity": 3,
+      "image": "guide_of_elegance.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "talents",
+      "days": [
+        2,
+        5,
+        7
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "teachings_of_elegance.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "EleganceC",
+      "rarity": 4,
+      "image": "philosophies_of_elegance.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "talents",
+      "days": [
+        2,
+        5,
+        7
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "guide_of_elegance.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "LightA",
+      "image": "teachings_of_light.png",
+      "rarity": 2,
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": [
+        3,
+        6,
+        7
+      ],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "LightB",
+      "rarity": 3,
+      "image": "guide_of_light.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 1,
+      "type": "talents",
+      "days": [
+        3,
+        6,
+        7
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "teachings_of_light.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "LightC",
+      "rarity": 4,
+      "image": "philosophies_of_light.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 2,
+      "type": "talents",
+      "days": [
+        3,
+        6,
+        7
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "talents",
+              "image": "guide_of_light.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
     }
   ],
   "weapon": [
@@ -1080,6 +1302,130 @@
               "quantity": 3,
               "materialType": "weapon",
               "image": "sturdy_bone_shard.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "Chaos2A",
+      "rarity": 2,
+      "image": "chaos_gear.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weapon",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "Chaos2B",
+      "rarity": 3,
+      "image": "chaos_axis.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weapon",
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "chaos_gear.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "Chaos2C",
+      "rarity": 4,
+      "image": "chaos_oculus.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weapon",
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "chaos_axis.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "PrismA",
+      "rarity": 2,
+      "image": "dismal_prism.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weapon",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "PrismB",
+      "rarity": 3,
+      "image": "crystal_prism.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weapon",
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "dismal_prism.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "PrismC",
+      "rarity": 4,
+      "image": "polarizing_prism.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weapon",
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "crystal_prism.png"
             }
           ]
         }
@@ -1700,6 +2046,312 @@
       ],
       "droppedBy": [],
       "hasSiblings": true
+    },
+    {
+      "key": "BranchOfDistantSeaA",
+      "rarity": 2,
+      "image": "coral_branch_of_a_distant_sea.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weaponPrimary",
+      "days": [
+        1,
+        4,
+        7
+      ],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "BranchOfDistantSeaB",
+      "rarity": 3,
+      "image": "jeweled_branch_of_a_distant_sea.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weaponPrimary",
+      "days": [
+        1,
+        4,
+        7
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "coral_branch_of_a_distant_sea.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "BranchOfDistantSeaC",
+      "rarity": 4,
+      "image": "jade_branch_of_a_distant_sea.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weaponPrimary",
+      "days": [
+        1,
+        4,
+        7
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "jeweled_branch_of_a_distant_sea.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "BranchOfDistantSeaD",
+      "rarity": 5,
+      "image": "golden_branch_of_a_distant_sea.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 3,
+      "type": "weaponPrimary",
+      "days": [
+        1,
+        4,
+        7
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "jade_branch_of_a_distant_sea.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "NarukamisA",
+      "rarity": 2,
+      "image": "narukamis_wisdom.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weaponPrimary",
+      "days": [
+        2,
+        5,
+        7
+      ],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "NarukamisB",
+      "rarity": 3,
+      "image": "narukamis_joy.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weaponPrimary",
+      "days": [
+        2,
+        5,
+        7
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "narukamis_wisdom.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "NarukamisC",
+      "rarity": 4,
+      "image": "narukamis_affection.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weaponPrimary",
+      "days": [
+        2,
+        5,
+        7
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "narukamis_joy.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "NarukamisD",
+      "rarity": 5,
+      "image": "narukamis_valor.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 3,
+      "type": "weaponPrimary",
+      "days": [
+        2,
+        5,
+        7
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "narukamis_affection.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "MaskOfTheA",
+      "rarity": 2,
+      "image": "mask_of_the_wicked_lieutenant.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "weaponPrimary",
+      "days": [
+        3,
+        6,
+        7
+      ],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "MaskOfTheB",
+      "rarity": 3,
+      "image": "mask_of_the_tigers_bite.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "weaponPrimary",
+      "days": [
+        3,
+        6,
+        7
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "mask_of_the_wicked_lieutenant.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "MaskOfTheC",
+      "rarity": 4,
+      "image": "mask_of_the_one_horned.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "weaponPrimary",
+      "days": [
+        3,
+        6,
+        7
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "mask_of_the_tigers_bite.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "MaskOfTheD",
+      "rarity": 5,
+      "image": "mask_of_the_kijin.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 3,
+      "type": "weaponPrimary",
+      "days": [
+        3,
+        6,
+        7
+      ],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "mask_of_the_one_horned.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
     }
   ],
   "common": [
@@ -2198,6 +2850,68 @@
       ],
       "droppedBy": [],
       "hasSiblings": true
+    },
+    {
+      "key": "HandguardA",
+      "rarity": 1,
+      "image": "old_handguard.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "common",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "HandguardB",
+      "rarity": 2,
+      "image": "kageuchi_handguard.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "common",
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "old_handguard.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "HandguardC",
+      "rarity": 3,
+      "image": "famed_handguard.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "common",
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "kageuchi_handguard.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
     }
   ],
   "currency": [
@@ -2391,6 +3105,34 @@
       "key": "Maguu Kishin",
       "rarity": 4,
       "image": "maguu_kishin.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "elementalStone",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false
+    },
+    {
+      "key": "Perpetual Heart",
+      "rarity": 4,
+      "image": "perpetual_heart.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "elementalStone",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false
+    },
+    {
+      "key": "Smoldering Pearl",
+      "rarity": 4,
+      "image": "smoldering_pearl.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
@@ -5674,7 +6416,53 @@
       "days": [],
       "obtainedFrom": [],
       "droppedBy": [],
-      "hasSiblings": false
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
+    },
+    {
+      "key": "Sakura Bloom",
+      "rarity": 1,
+      "image": "sakura_bloom.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
+    },
+    {
+      "key": "Crystal Marrow",
+      "rarity": 1,
+      "image": "crystal_marrow.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
+    },
+    {
+      "key": "Naku Weed",
+      "rarity": 1,
+      "image": "naku_weed.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     }
   ],
   "experience": [
@@ -6143,6 +6931,20 @@
       "hasSiblings": false,
       "isReadyToBeUsed": false,
       "canBeObtainedFromAnExpedition": true
+    },
+    {
+      "key": "Amethyst Lump",
+      "rarity": 1,
+      "image": "amethyst_lump.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "ingredient",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false
     }
   ]
 }

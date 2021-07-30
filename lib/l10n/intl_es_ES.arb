@@ -355,5 +355,14 @@
   "notifInfoMsgE": "Algunos fabricantes de equipos con Android tienen su propia versión personalizada de Android lo cual puede evitar que aplicaciones corran en segundo plano.\nPor ende, las notificaciones programdas podrian no funcionar cuando la aplicación esta en segundo plano en ciertos dispositivos (por ejemplo: Xiaomi, Huawei).\nSi presentas este problema, puede que debas buscar una configuración que te permita controlar que aplicaciones corren en segundo plano.",
   "swipeToSeeMoreOptions": "Puedes delizar hacia la derecha o izquierda para ver más opciones en cada item.",
   "reduceTime": "Reducir Tiempo",
-  "use24HourFormatOnDates": "Usar formato de 24 horas en fechas"
+  "use24HourFormatOnDates": "Usar formato de 24 horas en fechas",
+  "playstation": "PlayStation",
+  "deleteAllSessions": "Borrar todas las sesiones",
+  "deleteAllItems": "Borrar todos los items",
+  "confirmQuestion": "¿ Estás seguro que deseas continuar ?",
+  "gameSpecific": "Específicos del juego",
+  "tools": "Herramientas",
+  "privacy": "Privacidad",
+  "privacyMsgA": "Esta aplicación no colecta ninguna información o data personal que pudiese ser usada para localizar o identificar al usuario.",
+  "privacyMsgB": "La única data colectada son los crashes y uso de la aplicación. Esta información es util al momento de identificar y corregir errores. También es usada para saber que secciones son las más usadas y cuales deberian recibir más prioridad en la aplicación."
 }
