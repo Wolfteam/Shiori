@@ -4407,54 +4407,54 @@
     },
     {
       "key": "Traveler (Electro)",
-      "name": "Traveler (Electro)",
+      "name": "Voyageur (Electro)",
       "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
       "skills": [
         {
           "key": "s1",
-          "title": "Foreign Thundershock",
+          "title": "Tonnerre venu d'ailleurs",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 rapid strikes.",
+              "description": "Effectuez jusqu’à cinq frappes rapides",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.",
+              "description": "Consomme une certaine quantité d’endurance pour déclencher deux coups d’épée rapides",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Plonge dans les airs pour frapper le sol en dessous, blessant les adversaires le long du chemin et infligeant des dégâts de zone à l’impact",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Lightning Blade",
-          "description": "Unleashes three swift thunder shadows that deal Electro DMG to opponents and leave an Abundance Amulet behind after hitting an opponent.\n2 Abundance Amulets can be created initially. Using this skill will reset any Abundance Amulets that were generated.",
+          "title": "Lame d'éclair",
+          "description": "Libère trois ombres de foudre rapides qui infligent des dégâts électriques aux adversaires et laissent une amulette d’abondance.\nDeux amulettes d’abondance peuvent être créées initialement. \nL’utilisation de cette compétence réinitialisera toutes les amulettes d’abondance générées.",
           "abilities": [
             {
-              "name": "Abundance Amulets",
-              "description": "When a character is near an Abundance Amulet, they will absorb it and obtain the following effects:",
+              "name": "Amulettes d'abondance",
+              "description": "Lorsqu’un personnage se trouve à proximité d’une Amulette d’Abondance, il l’absorbe et obtient les effets suivants :",
               "descriptions": [
-                "Restores Elemental Energy",
-                "Increases Energy Recharge during the Abundance Amulet's duration."
+                "Restaurer l’énergie élémentaire",
+                "Augmenter la recharge énergétique"
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Bellowing Thunder",
-          "description": "You call upon the protection of lightning, knocking nearby opponents back and dealing Electro DMG to them.",
+          "title": "Tonnerre hurlant",
+          "description": "Vous faites appel à la protection contre la foudre, repoussant les adversaires proches et leur infligeant des dégâts électriques.",
           "abilities": [
             {
-              "name": "Lightning Shroud",
-              "description": "When your active character's Normal or Charged Attacks hit opponents, they will call Falling Thunder forth, dealing Electro DMG.\nWhen Falling Thunder hits opponents, it will regenerate Energy for that character.\nOne instance of Falling Thunder can be generated every 0.5s.",
+              "name": "Voile de foudre",
+              "description": "Les attaques normales ou chargées de votre personnage actif font pleuvoir la foudre majestueuse lorsqu'elles touchent infligeant des dommages Electro un ennemi et fait récuperer de l'énergie élémentaire au personnage. \nLa foudre majestueuse peut se déclencher toutes les 0,5 secondes.",
               "descriptions": []
             }
           ]
@@ -4463,57 +4463,57 @@
       "passives": [
         {
           "key": "p2",
-          "title": "Thunderflash",
-          "description": "When another nearby character in the party obtains an Abundance Amulet created by Lightning Blade, Lightning Blade's CD is decreased by 1.5s.",
+          "title": "Eclair soudain",
+          "description": "Lorsqu’un autre personnage proche du groupe obtient une amulette d’abondance créée par Lame d'éclair, le temps de recharge de Lame d'éclair est réduit de 1,5 seconde.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Resounding Roar",
-          "description": "Increases the Energy Recharge effect granted by Lightning Blade's Abundance Amulet by 10% of the Traveler's Energy Recharge.",
+          "title": "Tonnerre rententissant",
+          "description": "Augmente les effets de recharge d’énergie accordés par l’amulette d’abondance de Lame d'éclair de 10% de la recharge d’énergie du voyageur.",
           "descriptions": []
         }
       ],
       "constellations":  [
         {
           "key": "c1",
-          "title": "Spring Thunder of Fertility",
-          "description": "The number of Abundance Amulets that can be generated using Lightning Blade is increased to 3.",
+          "title": "Tonnerre de la récolte de printemps",
+          "description": "Le nombre d’amulettes d’abondance pouvant être générées à l’aide de Lame d'eclair est porté à trois.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Violet Vehemence",
-          "description": "When Falling Thunder created by Bellowing Thunder hits an opponent, it will decrease their Electro RES by 15% for 8s.",
+          "title": "Véhémence pourpre",
+          "description": "Lorsque Tonnerre hurlant créé par Foudre majestueuse frappe un adversaire, cela réduira sa résistance électro de 15% pendant huit secondes",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Distant Crackling",
-          "description": "Increases the Level of Bellowing Thunder by 3.\nMaximum upgrade level is 15.",
+          "title": "Grondement lointain",
+          "description": " Augmente le niveau de Foudre majestueuse de 3. \nLe niveau maximum passe à 15",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Fickle Cloudstrike",
-          "description": "When a character obtains Abundance Amulets generated by Lightning Blade, if this character's Energy is less than 35%, the Energy restored by the Abundance Amulets is increased by 100%.",
+          "title": "Cumulonimbus imprévisible",
+          "description": "Lorsqu’un personnage obtient une Amulette Abondance générée par Lame de Foudre, si l’Energie de ce personnage est inférieure à 35%, l’Energie restituée par les Amulettes Abondance est augmentée de 100%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Clamor in the Wilds",
-          "description": "Increases the Level of Lightning Blade by 3..\nMaximum upgrade level is 15.",
+          "title": "Clameur de la nature",
+          "description": "Augmente le niveau de Lame d'eclair de 3.\nLe niveau maximum passe à 15",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "World-Shaker",
-          "description": "Every 2 Falling Thunder attacks triggered by Bellowing Thunder will increase the DMG dealt by the next Falling Thunder by 100%, and will restore an additional 1 Energy to the current character.",
+          "title": "Secousse céleste",
+          "description": "Toutes les 2 Foudre majestueuse déclenchées par Tonnerre hurlant augmenteront les dégâts infligés par la prochaine Foudre majestueuse de 100% et redonne 1 point d'énergie supplémentaire au personnage actuel.",
           "secondDescription": null,
           "descriptions": []
         }
