@@ -5302,52 +5302,46 @@
       "refinement": "Lorsque vous touchez des ennemis avec des attaques normales, les DGT infligés par les compétences élémentaires sont augmentés de {{0}}% pendant 5s. Lorsque vous touchez des ennemis avec des compétences élémentaires, les DGT infligés par les attaques normales sont augmentés de {{1}}% pendant 5s."
     },
     {
-      "key": "Mitternachts Waltz",
-      "name": "Mitternachts Waltz",
-      "description": "A bow painted the color of sin and nights of wild fantasy.",
-      "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {{0}}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {{1}}% for 5s."
-    },
-    {
       "key": "Dodoco Tales",
-      "name": "Dodoco Tales",
-      "description": "A children's book filled with childish short stories at which one cannot help but laugh.\nEven those readers who have long reached adulthood cannot help but be absorbed by the innocent, naive little adventures portrayed within.",
-      "refinement": "Normal Attack hits on opponents increase Charged Attack DMG by {{0}}% for 6s. Charged Attack hits on opponents increase ATK by {{1}}% for 6s."
+      "name": "Contes de Dodoco",
+      "description": "Un livre de contes rempli d’histoires enfantines qui font sourire petits et grands. Même les lecteurs passés depuis longtemps à l’âge adulte ne peuvent s’empêcher d’être absorbés par les petites aventures innocentes et naïves qui y sont dépeintes.",
+      "refinement": "Lorsque vous touchez des ennemis avec des attaques normales, les DGT infligés par les attaques chargées sont augmentés de 16% pendant 6 s. \nLorsque vous touchez des ennemis avec des attaques chargées, l’ATQ est augmentée de 8% pendant 6 s."
     },
     {
       "key": "Amenoma Kageuchi",
-      "name": "Amenoma Kageuchi",
-      "description": "A blade custom made for a famed samurai who could strike down a tengu warrior, known for their incredible agility, in midair.",
-      "refinement": "After casting an Elemental Skill, gain 1 Succession Seed. This effect can be triggered once every 5s. The Succession Seed lasts for 30s. Up to 3 Succession Seeds may exist simultaneously. After using an Elemental Burst, all Succession Seeds are consumed and after 2s, the character regenerates {{0}} Energy for each seed consumed."
+      "name": "Lame kageuchi d'Amenoma",
+      "description": "Une lame qui aurait été fabriquée sur commande pour un célèbre samouraï capable de trancher même le plus robuste des guerriers tengu, célèbres pour leur habileté à utiliser leur incroyable vitesse pour fendre les airs.",
+      "refinement": "L'utilisation d'une compétence élémentaire accorde 1 graine d'héritage. Cet effet peut être déclenché une fois toutes les 5 secondes. Chaque graine d'héritage dure 30 secondes et un maximum de 3 graines d'héritage peuvent être cumulées simultanément. Après avoir utilisé un déchaînement élémentaire, toutes les graines d'héritage sont consommées et après 2 secondes, le personnage récupère {{0}} points d'énergie élémentaire pour chaque graine consommée."
     },
     {
       "key": "Mistsplitter Reforged",
-      "name": "Mistsplitter Reforged",
-      "description": "A sword that blazes with a fierce violet light. The name \"Reforged\" comes from it having been broken once before.",
-      "refinement": "Gain a {{0}}% Elemental DMG Bonus for all element and receive the might of the Mistsplitter's Emblem. At stack levels 1/2/3, the Mistsplitter's Emblem provides a {{1}}/{{2}}/{{3}}% Elemental DMG Bonus for the character's Elemental Type. The character will obtain 1 stack of Mistsplitter's Emblem in each of the following scenarios: Normal Attack deals Elemental DMG (stack lasts 5s), casting Elemental Burst (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently."
+      "name": "Reflet de tranche-brume",
+      "description": "Une épée qui flamboie d'une vive lumière violacée. Son nom de « Reflet » lui vient des étincelles qu'elle a une fois projetées dans les airs lorsqu'un malheureux choc la brisa autrefois.",
+      "refinement": "Accorde {{0}}% de bonus de dégâts élémentaires pour tous les éléments et confère la puissance du sceau de tranche-brume. 1/2/3 charges du sceau de tranche-brume accordent au personnage respectivement {{1}}/{{2}}/{{3}}% de bonus de DGT de son élément. Le personnage peut obtenir 1 charge de sceau dans chacune des situations suivantes : \nsi son attaque normale inflige des DGT élémentaires alors il obtient une charge de 5 secondes \ns'il utilise son déchaînement élémentaire alors il obtient une charge de 10 secondes \nsi son énergie élémentaire est inférieure à 100% alors il obtient une charge qui disparaît lorsque l'énergie redevient pleine. \nLa durée de chaque charge est calculée indépendamment."
     },
     {
       "key": "Katsuragikiri Nagamasa",
-      "name": "Katsuragikiri Nagamasa",
-      "description": "A blade that was once made in Tatarasuna. Heavy and tough.",
-      "refinement": "Increases Elemental Skill DMG by {{0}}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {{1}} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field."
+      "name": "Espadon de Nagamasa",
+      "description": "Une lame qui était autrefois fabriquée à Tatarasuna. Lourde et résistante.",
+      "refinement": "Augmente les DGT infligés par les compétences élémentaires de {{0}}%. Lorsqu'une compétence élémentaire touche un ennemi, le personnage perd 3 points d'énergie élémentaire, mais récupère {{1}} points d'énergie toutes les 2 secondes pendant 6 secondes. Cet effet peut-être déclenché une fois toutes les 10 secondes, même si le personnage fait partie de l'équipe mais n'est pas déployé."
     },
     {
       "key": "Kitain Cross Spear",
-      "name": "Kitain Cross Spear",
-      "description": "A special lance that was once used by a famed warrior who guarded the Tatarigami on Yashiori Island.",
-      "refinement": "Increases Elemental Skill DMG by {{0}}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {{1}} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field."
+      "name": "Lance en croix de Kitain",
+      "description": "Une lance spéciale qui était autrefois utilisée par un célèbre guerrier qui gardait le Tatarigami sur l'Île de Yashiori.",
+      "refinement": "Augmente les DGT infligés par les compétences élémentaires de {{0}}%. Lorsqu'une compétence élémentaire touche un ennemi, le personnage perd 3 points d'énergie élémentaire, mais récupère {{1}} points d'énergie toutes les 2 secondes pendant 6 secondes. Cet effet peut-être déclenché une fois toutes les 10 secondes, même si le personnage fait partie de l'équipe mais n'est pas déployé."
     },
     {
       "key": "Hamayumi",
-      "name": "Hamayumi",
-      "description": "A certain shrine maiden once owned this warbow. It was made with surpassing skill, and is both intricate and sturdy.",
-      "refinement": "Increases Normal Attack DMG by {{0}}% and Charged Attack DMG by {{1}}%. When the equipping character's Energy reaches 100%, this effect is increased by 100%."
+      "name": "Arc d'exorcisme",
+      "description": "Cet arc de guerre appartenait autrefois à une certaine prêtresse. Il a été fabriqué avec un doigté exceptionnel, et est à la fois complexe et robuste.",
+      "refinement": "Augmente les DGT infligés par les attaques normales de {{0}}% et ceux des attaques chargées de {{1}}%. Lorsque l'énergie élémentaire du personnage équipé de l'arme atteint 100%, cet effet augmente de 100%."
     },
     {
       "key": "Hakushin Ring",
-      "name": "Hakushin Ring",
-      "description": "A catalyst that carries the memory of the Kitsune Saiguu of ancient times. However, this device is but an impoverished vessel for the full breadth of her thought.",
-      "refinement": "After the character equipped with this weapon triggers an Electro elemental reaction, nearby party members of an Elemental Type involved in the elemental reaction receive a {{0}}% Elemental DMG Bonus for their element, lasting 6s. Elemental Bonuses gained in this way cannot be stacked."
+      "name": "Anneau des Hakushin",
+      "description": "Un catalyseur qui contient les mémoires de la Kitsune Saiguu. Cependant, ses pensées étaient si nombreuses qu'il n'était pas possible de toutes les faire tenir dans cet objet.",
+      "refinement": "Lorsqu'un personnage équipé de cette arme déclenche une réaction liée à l'élément Electro, tous les personnages de l'équipe à proximité dont l'élément est impliqué dans cette réaction élémentaire obtiennent un bonus de DGT de leur élément de {{0}}%  pendant 6 secondes. Les bonus de DGT élémentaires obtenus de cette manière ne se cumulent pas."
     }
   ],
   "artifacts": [
