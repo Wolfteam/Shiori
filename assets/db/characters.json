@@ -13915,9 +13915,10 @@
         {
           "isSupport": false,
           "weaponImages": [
+            "serpent_s1pine.png",
             "skyward_pride.png",
-            "serpent_spine.png",
             "wolfs_gravestone.png",
+            "the_unforged.png",
             "whiteblind.png"
           ],
           "artifacts": [
