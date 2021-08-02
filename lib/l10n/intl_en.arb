@@ -26,7 +26,7 @@
   "critRate": "{value} CRIT Rate",
   "critRatePercentage": "{value} CRIT Rate %",
   "critDmgPercentage": "{value} CRIT DMG %",
-  "elementaryMastery": "{value} Elementary Mastery",
+  "elementaryMastery": "{value} Elemental Mastery",
   "hpPercentage": "{value} HP %",
   "physDmgPercentage": "{value} PHYS DMG %",
   "physDmgBonus": "{value} PHYS DMG Bonus",
