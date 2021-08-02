@@ -5302,10 +5302,16 @@
       "refinement": "Lorsque vous touchez des ennemis avec des attaques normales, les DGT infligés par les compétences élémentaires sont augmentés de {{0}}% pendant 5s. Lorsque vous touchez des ennemis avec des compétences élémentaires, les DGT infligés par les attaques normales sont augmentés de {{1}}% pendant 5s."
     },
     {
+      "key": "Mitternachts Waltz",
+      "name": "Valse nocturne",
+      "description": "Un arc peint de la couleur des nuits de péché et de fantaisie.",
+      "refinement": "Lorsque vous touchez des ennemis avec des attaques normales, les DGT infligés par les compétences élémentaires sont augmentés de {{0}}% pendant 5s. Lorsque vous touchez des ennemis avec des compétences élémentaires, les DGT infligés par les attaques normales sont augmentés de {{1}}% pendant 5s."
+    },
+    {
       "key": "Dodoco Tales",
       "name": "Contes de Dodoco",
       "description": "Un livre de contes rempli d’histoires enfantines qui font sourire petits et grands. Même les lecteurs passés depuis longtemps à l’âge adulte ne peuvent s’empêcher d’être absorbés par les petites aventures innocentes et naïves qui y sont dépeintes.",
-      "refinement": "Lorsque vous touchez des ennemis avec des attaques normales, les DGT infligés par les attaques chargées sont augmentés de 16% pendant 6 s. \nLorsque vous touchez des ennemis avec des attaques chargées, l’ATQ est augmentée de 8% pendant 6 s."
+      "refinement": "Lorsque vous touchez des ennemis avec des attaques normales, les DGT infligés par les attaques chargées sont augmentés de {{0}}% pendant 6 s. \nLorsque vous touchez des ennemis avec des attaques chargées, l’ATQ est augmentée de 8% pendant 6 s."
     },
     {
       "key": "Amenoma Kageuchi",
