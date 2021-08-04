@@ -5579,7 +5579,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "Obtém 15% de Bônus de Dano Geo."
+          "bonus": "Bônus de Dano Geo +15%"
         },
         {
           "key": "b2",
@@ -5811,7 +5811,7 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "ATK +18%."
+          "bonus": "Ataque +18%."
         },
         {
           "key": "b2",
