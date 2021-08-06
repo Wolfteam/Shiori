@@ -24816,25 +24816,7 @@
                 "cryoDmgBonusPercentage",
                 "critDmgPercentage"
               ]
-            }
-          ],
-          "subStatsToFocus": [
-            "critDmgPercentage",
-            "critRatePercentage",
-            "atkPercentage",
-            "energyRechargePercentage"
-          ]
-        },
-        {
-          "isSupport": false,
-          "weaponImages": [
-            "mistsplitter_reforged.png",
-            "primordial_jade_cutter.png",
-            "blackcliff_longsword.png",
-            "the_black_sword.png",
-            "amenoma_kageuchi.png"
-          ],
-          "artifacts": [
+            },
             {
               "multiples": [
                 {
