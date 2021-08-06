@@ -14,16 +14,21 @@ class DailyCheckInPage extends StatefulWidget {
 class _DailyCheckInPageState extends State<DailyCheckInPage> {
   final script = '''
     function removeButtons() {
-      const backButton = document.querySelectorAll('div[class*="back"]');
-      const shareButton = document.querySelectorAll('div[class*="share"]');
-  
-      if (backButton && shareButton) {
-          backButton[0].remove();
-          shareButton[0].remove();
+      if (document.querySelectorAll('div[class*="back"]').length > 0 && document.querySelectorAll('div[class*="share"]').length > 0) {
+          document.querySelectorAll('div[class*="back"]')[0].remove();
+          document.querySelectorAll('div[class*="share"]')[0].remove();
       }
       
-      if (document.querySelectorAll("div[class*='left'")) {
+      if (document.querySelectorAll("div[class*='left'").length > 0) {
         document.querySelectorAll("div[class*='left'")[0].replaceChildren("");
+      }
+      
+      if (document.getElementsByClassName("bbs-qr").length > 0){
+        document.getElementsByClassName("bbs-qr")[0].remove();
+      }
+      
+      if (document.getElementsByClassName("mhy-hoyolab-app-header").length > 0){
+        document.getElementsByClassName("mhy-hoyolab-app-header")[0].remove();
       }
     }
     
