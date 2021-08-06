@@ -10,15 +10,13 @@ class NetworkServiceImpl implements NetworkService {
     final address = [
       InternetAddress('8.8.8.8', type: InternetAddressType.IPv4), // Google
       InternetAddress('2001:4860:4860::8888', type: InternetAddressType.IPv6), // Google
-      InternetAddress('1.1.1.1', type: InternetAddressType.IPv4), // CloudFlare
       InternetAddress('2606:4700:4700::1111', type: InternetAddressType.IPv6), // CloudFlare
-      InternetAddress('208.67.222.222', type: InternetAddressType.IPv4), // OpenDNS
       InternetAddress('2620:0:ccc::2', type: InternetAddressType.IPv6), // OpenDNS
       InternetAddress('180.76.76.76', type: InternetAddressType.IPv4), // Baidu
       InternetAddress('2400:da00::6666', type: InternetAddressType.IPv6), // Baidu
     ].map((e) => AddressCheckOptions(e)).toList();
 
-    CustomInternetConnectionChecker.DEFAULT_ADDRESSES.addAll(address);
+    CustomInternetConnectionChecker().addresses = [...CustomInternetConnectionChecker.DEFAULT_ADDRESSES] + address;
   }
 
   @override
@@ -34,7 +32,6 @@ class CustomInternetConnectionChecker {
   /// This is a singleton that can be accessed like a regular constructor
   /// i.e. InternetConnectionChecker() always returns the same instance.
   factory CustomInternetConnectionChecker() => _instance;
-
   CustomInternetConnectionChecker._() {
     // immediately perform an initial check so we know the last status?
     // connectionStatus.then((status) => _lastStatus = status);
@@ -92,32 +89,34 @@ class CustomInternetConnectionChecker {
   /// | 8.8.4.4        | Google     | https://developers.google.com/speed/public-dns/ |
   /// | 208.67.222.222 | OpenDNS    | https://use.opendns.com/                        |
   /// | 208.67.220.220 | OpenDNS    | https://use.opendns.com/                        |
-  static final List<AddressCheckOptions> DEFAULT_ADDRESSES = <AddressCheckOptions>[
-    AddressCheckOptions(
-      InternetAddress(
-        '1.1.1.1', // CloudFlare
-        type: InternetAddressType.IPv4,
+  static final List<AddressCheckOptions> DEFAULT_ADDRESSES = List<AddressCheckOptions>.unmodifiable(
+    <AddressCheckOptions>[
+      AddressCheckOptions(
+        InternetAddress(
+          '1.1.1.1', // CloudFlare
+          type: InternetAddressType.IPv4,
+        ),
+        port: DEFAULT_PORT,
+        timeout: DEFAULT_TIMEOUT,
       ),
-      port: DEFAULT_PORT,
-      timeout: DEFAULT_TIMEOUT,
-    ),
-    AddressCheckOptions(
-      InternetAddress(
-        '8.8.4.4', // Google
-        type: InternetAddressType.IPv4,
+      AddressCheckOptions(
+        InternetAddress(
+          '8.8.4.4', // Google
+          type: InternetAddressType.IPv4,
+        ),
+        port: DEFAULT_PORT,
+        timeout: DEFAULT_TIMEOUT,
       ),
-      port: DEFAULT_PORT,
-      timeout: DEFAULT_TIMEOUT,
-    ),
-    AddressCheckOptions(
-      InternetAddress(
-        '208.67.222.222', // OpenDNS
-        type: InternetAddressType.IPv4,
-      ), // OpenDNS
-      port: DEFAULT_PORT,
-      timeout: DEFAULT_TIMEOUT,
-    ),
-  ];
+      AddressCheckOptions(
+        InternetAddress(
+          '208.67.222.222', // OpenDNS
+          type: InternetAddressType.IPv4,
+        ), // OpenDNS
+        port: DEFAULT_PORT,
+        timeout: DEFAULT_TIMEOUT,
+      ),
+    ],
+  );
 
   /// A list of internet addresses (with port and timeout) to ping.
   ///
@@ -161,43 +160,31 @@ class CustomInternetConnectionChecker {
     }
   }
 
-  /// Returns the results from the last check.
-  ///
-  /// The list is populated only when [hasConnection]
-  /// (or [connectionStatus]) is called.
-  List<AddressCheckResult> get lastTryResults => _lastTryResults;
-  List<AddressCheckResult> _lastTryResults = <AddressCheckResult>[];
-
   /// Initiates a request to each address in [addresses].
   /// If at least one of the addresses is reachable
   /// we assume an internet connection is available and return `true`.
   /// `false` otherwise.
   Future<bool> get hasConnection async {
-    List<Future<AddressCheckResult>> requests = <Future<AddressCheckResult>>[];
+    final Completer<bool> result = Completer<bool>();
+    int length = addresses.length;
 
     for (AddressCheckOptions addressOptions in addresses) {
-      requests.add(
-        isHostReachable(
-          addressOptions,
-        ),
+      isHostReachable(addressOptions).then(
+        (AddressCheckResult request) {
+          length -= 1;
+          if (!result.isCompleted) {
+            if (request.isSuccess) {
+              print('completed with ${addressOptions.address}');
+              result.complete(true);
+            } else if (length == 0) {
+              result.complete(false);
+            }
+          }
+        },
       );
     }
-    _lastTryResults = List<AddressCheckResult>.unmodifiable(
-      await Future.wait(
-        requests,
-      ),
-    );
 
-    return _lastTryResults
-        .map(
-          (
-            AddressCheckResult result,
-          ) =>
-              result.isSuccess,
-        )
-        .contains(
-          true,
-        );
+    return result.future;
   }
 
   /// Initiates a request to each address in [addresses].
