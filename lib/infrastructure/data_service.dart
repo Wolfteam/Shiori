@@ -459,7 +459,7 @@ class DataServiceImpl implements DataService {
         final material = _genshinService.getMaterial(reward.itemKey);
         return ItemAscensionMaterialModel(quantity: reward.quantity, image: material.image, materialType: material.type);
       }).toList();
-      //I should not be saving the isExpired bool
+      //Some codes don't have an expiration date, that's why we use this boolean here
       final expired = e.isExpired || (e.expiredOn?.isBefore(DateTime.now()) ?? false);
       return GameCodeModel(
         code: e.code,
