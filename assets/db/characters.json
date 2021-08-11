@@ -1064,6 +1064,7 @@
         {
           "isSupport": false,
           "weaponImages": [
+            "thundering_pulse.png",
             "amos_bow.png",
             "the_viridescent_hunt.png",
             "prototype_crescent.png"
@@ -1091,6 +1092,7 @@
         {
           "isSupport": true,
           "weaponImages": [
+            "thundering_pulse.png",
             "skyward_harp.png",
             "the_stringless.png",
             "prototype_crescent.png"
@@ -6467,6 +6469,7 @@
         {
           "isSupport": true,
           "weaponImages": [
+            "thundering_pulse.png",
             "the_stringless.png",
             "favonius_warbow.png"
           ],
@@ -17274,6 +17277,7 @@
         {
           "isSupport": false,
           "weaponImages": [
+            "thundering_pulse.png",
             "skyward_harp.png",
             "rust.png",
             "amos_bow.png",
@@ -17323,6 +17327,7 @@
         {
           "isSupport": false,
           "weaponImages": [
+            "thundering_pulse.png",
             "skyward_harp.png",
             "rust.png",
             "amos_bow.png",
@@ -24399,7 +24404,7 @@
       "fullImage": "Ayaka.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "inazuma",
       "role": "mainDps",
@@ -25060,8 +25065,8 @@
       "image": "Yoimiya.png",
       "fullImage": "Yoimiya.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": true,
       "region": "inazuma",
       "role": "mainDps",
@@ -25457,11 +25462,80 @@
           ]
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "thundering_pulse.png",
+            "rust.png",
+            "amos_bow.png",
+            "the_viridescent_hunt.png",
+            "hamayumi.png"
+          ],
+          "artifacts": [
+            {
+              "multiples": [
+                {
+                  "quantity": 2,
+                  "image": "gladiators_finale_4.png"
+                },
+                {
+                  "quantity": 2,
+                  "image": "crimson_witch_of_flames_4.png"
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "pyroDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
+            {
+              "multiples": [
+                {
+                  "quantity": 2,
+                  "image": "gladiators_finale_4.png"
+                },
+                {
+                  "quantity": 2,
+                  "image": "shimenawas_reminiscence_4.png"
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "pyroDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
+            {
+              "one": "shimenawas_reminiscence_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "pyroDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "energyRechargePercentage",
+            "atkPercentage",
+            "elementaryMastery"
+          ]
+        }
+      ],
       "skills": [
         {
           "key": "s1",
-          "image": null,
+          "image": "normal_attack_divine_marksmanship.png",
           "type": "normalAttack",
           "abilities": [
             {
@@ -25480,28 +25554,64 @@
         },
         {
           "key": "s2",
-          "image": null,
-          "type": "elementalSkill",
-          "abilities": [
-            {
-              "key": "a2",
-              "type": "hold"
-            }
-          ]
+          "image": "yoimiya_s2.png",
+          "type": "elementalSkill"
         },
         {
           "key": "s3",
-          "image": null,
+          "image": "yoimiya_s3.png",
           "type": "elementalBurst"
-        },
-        {
-          "key": "s4",
-          "image": null,
-          "type": "others"
         }
       ],
-      "passives": [],
-      "constellations": [],
+      "passives": [
+        {
+          "key": "p1",
+          "unlockedAt": -1,
+          "image": "yoimiya_p1.png"
+        },
+        {
+          "key": "p2",
+          "unlockedAt": 1,
+          "image": "yoimiya_p2.png"
+        },
+        {
+          "key": "p3",
+          "unlockedAt": 4,
+          "image": "yoimiya_p3.png"
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": "yoimiya_c1.png"
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": "yoimiya_c2.png"
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": "yoimiya_s2.png"
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": "yoimiya_c4.png"
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": "yoimiya_s3.png"
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": "yoimiya_c6.png"
+        }
+      ],
       "subStatType": "critRatePercentage",
       "stats": [
         {
@@ -25626,8 +25736,8 @@
       "image": "Sayu.png",
       "fullImage": "Sayu.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": true,
       "region": "inazuma",
       "role": "supportDps",
@@ -26023,11 +26133,67 @@
           ]
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isSupport": true,
+          "weaponImages": [
+            "rainslasher.png",
+            "bloodtainted_greatsword.png",
+            "katsuragikiri_nagamasa.png"
+          ],
+          "artifacts": [
+            {
+              "one": "viridescent_venerer_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "elementaryMastery",
+                "elementaryMastery"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "elementaryMastery",
+            "critDmgPercentage",
+            "critRatePercentage",
+            "energyRechargePercentage"
+          ]
+        },
+        {
+          "isSupport": true,
+          "weaponImages": [
+            "wolfs_gravestone.png",
+            "skyward_pride.png",
+            "serpent_spine.png",
+            "katsuragikiri_nagamasa.png"
+          ],
+          "artifacts": [
+            {
+              "one": "viridescent_venerer_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "anemoDmgBonusPercentage",
+                "atkPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "energyRechargePercentage"
+          ]
+        }
+      ],
       "skills": [
         {
           "key": "s1",
-          "image": null,
+          "image": "normal_attack_steel_fang.png",
           "type": "normalAttack",
           "abilities": [
             {
@@ -26046,9 +26212,13 @@
         },
         {
           "key": "s2",
-          "image": null,
+          "image": "sayu_s2.png",
           "type": "elementalSkill",
           "abilities": [
+            {
+              "key": "a1",
+              "type": "press"
+            },
             {
               "key": "a2",
               "type": "hold"
@@ -26057,17 +26227,59 @@
         },
         {
           "key": "s3",
-          "image": null,
+          "image": "sayu_s3.png",
           "type": "elementalBurst"
-        },
-        {
-          "key": "s4",
-          "image": null,
-          "type": "others"
         }
       ],
-      "passives": [],
-      "constellations": [],
+      "passives": [
+        {
+          "key": "p1",
+          "unlockedAt": -1,
+          "image": "sayu_p1.png"
+        },
+        {
+          "key": "p2",
+          "unlockedAt": 1,
+          "image": "sayu_p2.png"
+        },
+        {
+          "key": "p3",
+          "unlockedAt": 4,
+          "image": "sayu_p3.png"
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": "sayu_c1.png"
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": "sayu_c2.png"
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": "sayu_s3.png"
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": "sayu_c4.png"
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": "sayu_s2.png"
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": "sayu_c6.png"
+        }
+      ],
       "subStatType": "elementaryMastery",
       "stats": [
         {
