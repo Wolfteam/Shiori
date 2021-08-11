@@ -4348,56 +4348,261 @@
     {
       "key": "Yoimiya",
       "name": "宵宫",
-      "description": "N/A",
+      "description": "Owner of Naganohara Fireworks. Known as \"Queen of the Summer Festival,\" she excels in her craft of creating fireworks that symbolize people's hopes and dreams.",
       "skills": [
         {
           "key": "s1",
-          "title": "烟火打扬",
+          "title": "Firework Flare-Up",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Performs up to 5 consecutive shots with a bow.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Performs a more precise Aimed Shot with increased DMG.\nWhile aiming, flames will accumulate on the arrowhead before being fired off as an attack. Has different effects based on how long the energy has been charged:",
+              "descriptions": [
+                "Charge Level 1: Fires off a flaming arrow that deals Pyro DMG.",
+                "Charge Level 2: Generates a maximum of 3 Kindling Arrows based on time spent charging, releasing them as part of this Aimed Shot. Kindling Arrows will home in on nearby opponents, dealing Pyro DMG on hit."
+              ]
+            },
+            {
+              "key": "a3",
+              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "焰硝庭火舞",
-          "description": null,
-          "abilities": []
+          "title": "Niwabi Fire-Dance",
+          "description": "Yoimiya waves a sparkler and causes a ring of saltpeter to surround her.",
+          "abilities": [
+            {
+              "name": "Niwabi Enshou",
+              "description": "During this time, arrows fired by Yoimiya's Normal Attack will be Blazing Arrows, and their DMG will be increased and converted to Pyro DMG. During this time, Normal Attack: Firework Flare-Up will not generate Kindling Arrows at Charge Level 2.\nThis effect will deactivate when Yoimiya leaves the field.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s3",
-          "title": "琉金云间草",
-          "description": null,
-          "abilities": []
+          "title": "Ryuukin Saxifrage",
+          "description": "Yoimiya leaps into the air along with her original creation, the \"Ryuukin Saxifrage,\" and fires forth blazing rockets bursting with surprises that deal AoE Pyro DMG and mark one of the hit opponents with Aurous Blaze.",
+          "abilities": [
+            {
+              "name": "Aurous Blaze",
+              "description": "All Normal/Charged/Plunging Attacks, Elemental Skills, and Elemental Bursts by any party member other than Yoimiya that hit an opponent marked by Aurous Blaze will trigger an explosion, dealing AoE Pyro DMG.\nWhen an opponent affected by Aurous Blaze is defeated before its duration expires, the effect will pass on to another nearby opponent, who will inherit the remaining duration.\nOne Aurous Blaze explosion can be triggered every 2s. When Yoimiya is down, Aurous Blaze effects created through her skills will be deactivated.",
+              "descriptions": []
+            }
+          ]
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Blazing Match",
+          "description": "When Yoimiya crafts Decoration, Ornament, and Landscape-type Furnishings, she has a 100% chance to refund a portion of the materials used.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Tricks of the Trouble-Maker",
+          "description": "During Niwabi Fire-Dance, shots from Yoimiya's Normal Attack will increase her Pyro DMG Bonus by 2% on hit. This effect lasts for 3s and can have a maximum of 10 stacks.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Summer Night's Dawn",
+          "description": "Using Ryuukin Saxifrage causes nearby party members (not including Yoimiya) to gain a 10% ATK increase for 15s. Additionally, a further ATK Bonus will be added on based on the number of \"Tricks of the Trouble-Maker\" stacks Yoimiya possesses when using Ryuukin Saxifrage. Each stack increases this ATK Bonus by 1%.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Agate Ryuukin",
+          "description": "The Aurous Blaze created by Ryuukin Saxifrage lasts for an extra 4s.\nAdditionally, when an opponent affected by Aurous Blaze is defeated within its duration, Yoimiya's ATK is increased by 20% for 20s.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "A Procession of Bonfires",
+          "description": "When Yoimiya's Pyro DMG scores a CRIT Hit, Yoimiya will gain a 25% Pyro DMG Bonus for 6s.\nThis effect can be triggered even when Yoimiya is not the active character.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Trickster's Flare",
+          "description": "Increases the Level of Niwabi Fire-Dance by 3.\nMaximum upgrade level is 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Pyrotechnic Professional",
+          "description": "When Yoimiya's own Aurous Blaze triggers an explosion, Niwabi Fire-Dance's CD is decreased by 1.2s.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "A Summer Festival's Eve",
+          "description": "Increases the Level of Ryuukin Saxifrage by 3.\nMaximum upgrade level is 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Naganohara Meteor Swarm",
+          "description": "During Niwabi Fire-Dance, Yoimiya's Normal Attacks have a 50% chance of firing an extra Kindling Arrow that deals 60% of its original DMG. This DMG is considered Normal Attack DMG.",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
     },
     {
       "key": "Sayu",
       "name": "早柚",
-      "description": "N/A",
+      "description": "A pint-sized ninja attached to the Shuumatsuban, who always seems sleep-deprived.",
       "skills": [
         {
           "key": "s1",
-          "title": "Shiyuumatsu-Ban Ninja Blade",
+          "title": "Shuumatsuban Ninja Blade",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Performs up to 4 consecutive strikes.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.\nAt the end of the sequence, perform a more powerful slash. ",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
           "title": "Yoohoo Art: Fuuin Dash",
-          "description": null,
-          "abilities": []
+          "description": "The special technique of the Yoohoo Ninja Arts!\nSayu curls up into a rolling Fuufuu Windwheel and smashes into opponents at high speed, dealing Anemo DMG. When the duration ends, she unleashes a Fuufuu Whirlwind Kick, dealing AoE Anemo DMG.",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Enters the Fuufuu Windwheel state, rolling forward a short distance before using the Fuufuu Whirlwind Kick.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Rolls about continuously in the Fuufuu Windwheel state, increasing Sayu's resistance to interruption while within that state.\nDuring this time, Sayu can control the direction of her roll, and can use the skill again to end her Windwheel state early and unleash a stronger version of the Fuufuu Whirlwind Kick.\nThe Hold version of this skill can trigger Elemental Absorption.\nThis skill has a maximum duration of 10s and enters CD once its effects end. The longer Sayu remains in her Windwheel state, the longer the CD.",
+              "descriptions": []
+            },
+            {
+              "name": "Elemental Absorption",
+              "description": "If Sayu comes into contact with Hydro/Pyro/Cryo/Electro while in her Windwheel state, she will deal additional elemental DMG of that type.\nElemental Absorption may only occur once per use of this skill.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s3",
           "title": "Yoohoo Art: Mujina Flurry",
-          "description": null,
-          "abilities": []
+          "description": "The other super special technique of the Yoohoo Ninja Arts! It summons a pair of helping hands for Sayu.\nDeals Anemo DMG to nearby opponents and heals all nearby party members. The amount of HP restored is based on Sayu's ATK. This skill then summons a Muji-Muji Daruma.",
+          "abilities": [
+            {
+              "name": "Muji-Muji Daruma",
+              "description": "At specific intervals, the Daruma will take one of several actions based on the situation around it:",
+              "descriptions": [
+                "If the HP of nearby characters is above 70%, it will attack a nearby opponent, dealing Anemo DMG.",
+                "If there are active characters with 70% or less HP nearby, it will heal the active character with the lowest percentage HP left. If there are no opponents nearby, it will heal active characters nearby even if they have 70% HP or more."
+              ]
+            }
+          ]
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Yoohoo Art: Silencer's Secret",
+          "description": "When Sayu is in the party, your characters will not startle Crystalflies and certain other animals when getting near them.\nCheck the \"Other\" sub-category of the \"Living Beings / Wildlife\" section in the Archive for creatures this skill works on.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Someone More Capable",
+          "description": "When Sayu triggers a Swirl reaction while active, she heals all your characters and nearby allies for 300 HP. She will also heal an additional 1.2 HP for every point of Elemental Mastery she has.\nThis effect can be triggered once every 2s.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "No Work Today!",
+          "description": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Flurry gains the following effects:",
+          "descriptions": [
+            "When healing a character, it will also heal characters near that healed character for 20% the amount of HP.",
+            "Increases the AoE of its attack against opponents."
+          ]
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Multi-Task no Jutsu",
+          "description": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Flurry will ignore HP limits and can simultaneously attack nearby opponents and heal characters.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Egress Prep",
+          "description": "Yoohoo Art: Fuuin Dash gains the following effects:",
+          "secondDescription": null,
+          "descriptions": [
+            "DMG of Fuufuu Whirlwind Kick in Press Mode increased by 3.3%.",
+            "Every 0.5s in the Fuufuu Windwheel state will increase the DMG of this Fuufuu Whirlwind Kick by 3.3%. The maximum DMG increase possible through this method is 66%."
+          ]
+        },
+        {
+          "key": "c3",
+          "title": "Eh, the Bunshin Can Handle It",
+          "description": "Increases the Level of Yoohoo Art: Mujina Flurry by 3.\nMaximum upgrade level is 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Skiving: New and Improved",
+          "description": "Sayu recovers 1.2 Energy when she triggers a Swirl reaction.\nThis effect occurs once every 2s.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Speed Comes First",
+          "description": "Increases the Level of Yoohoo Art: Fuuin Dash by 3.\nMaximum upgrade level is 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Sleep O'Clock",
+          "description": "The Muji-Muji Daruma created by Sayu's Yoohoo Art: Mujina Flurry will now also benefit from her Elemental Mastery. Each point of Sayu's Elemental Mastery will produce the following effects:",
+          "secondDescription": null,
+          "descriptions": [
+            "Increases the damage dealt by the Muji-Muji Daruma's attacks by 0.2% ATK. A maximum of 400% ATK can be gained via this method.",
+            "Increases the HP restored by the Muji-Muji Daruma by 3. A maximum of 6,000 additional HP can be restored in this manner."
+          ]
+        }
+      ]
     },
     {
       "key": "Traveler (Electro)",
@@ -5336,6 +5541,12 @@
       "name": "白辰之环",
       "description": "承载着过去的「狐斋宫」思念的法器。但她的思念之大，是无法完全装进这样小小的器物当中的。",
       "refinement": "装备该武器的角色触发雷元素相关反应后，队伍中附近的与该元素反应相关的元素类型的角色，获得 10% 对应元素的元素伤害加成，持续 6 秒。通过这种方式，角色获得的元素伤害加成无法叠加。"
+    },
+    {
+      "key": "Thundering Pulse",
+      "name": "Thundering Pulse",
+      "description": "A longbow that was a gift from the Shogun. Eternal lightning crackles all around it.",
+      "refinement": "Increases ATK by {{0}}% and grants the might of the Thunder Emblem. At stack levels 1/2/3, the Thunder Emblem increases Normal Attack DMG by {{1}}/{{2}}/{{3}}%. The character will obtain 1 stack of Thunder Emblem in each of the following scenarios: Normal Attack deals DMG (stack lasts 5s), casting Elemental Skill (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently."
     }
   ],
   "artifacts": [

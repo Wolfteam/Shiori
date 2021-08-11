@@ -174,7 +174,6 @@ class CustomInternetConnectionChecker {
           length -= 1;
           if (!result.isCompleted) {
             if (request.isSuccess) {
-              print('completed with ${addressOptions.address}');
               result.complete(true);
             } else if (length == 0) {
               result.complete(false);

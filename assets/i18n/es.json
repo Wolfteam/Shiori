@@ -4345,56 +4345,261 @@
     {
       "key": "Yoimiya",
       "name": "Yoimiya",
-      "description": "N/A",
+      "description": "La dueña de la tienda Pirotecnia Naganohara y Reina del Festival de Verano. Deposita los deseos de la gente en sus artesanales fuegos artificiales.",
       "skills": [
         {
           "key": "s1",
-          "title": "Firework Flare-Up",
+          "title": "Pirotecnia",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Realiza hasta 5 disparos consecutivos con arco.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Realiza un Disparo Preciso que inflige mayor daño y tiene mayor precisión.\nMientras se apunta, unas llamas se acumularán en la punta de la flecha antes de que esta sea disparada. Sus efectos serán distintos dependiendo de durante cuánto tiempo se haya cargado:",
+              "descriptions": [
+                "Carga 1: Dispara una flecha ardiente que inflige Daño Pyro.",
+                "Carga 2: Dependiendo del tiempo de carga, dispara hasta un máximo de 3 flechas abrasadoras que son liberadas cuando Yoimiya ejecuta este Disparo Preciso. Las flechas abrasadoras perseguirán por sí solas a los enemigos cercanos y, al alcanzarlos, infligirán Daño Pyro contra ellos."
+              ]
+            },
+            {
+              "key": "a3",
+              "description": "Dispara una lluvia de flechas desde el aire mientras desciende rápidamente, infligiendo Daño en el AdE al impactar contra el suelo.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "Niwabi Fire-Dance",
-          "description": null,
-          "abilities": []
+          "title": "Danza de la pólvora",
+          "description": "Yoimiya agita una bengala para que un anillo chispeante la rodee.",
+          "abilities": [
+            {
+              "name": "Nitrofogata",
+              "description": "Mientras este efecto esté activo, las flechas que dispara Yoimiya con sus Ataques Normales se convierten en flechas flamígeras cuyo daño no solo aumenta, sino que también se convierte en Daño Pyro. Mientras dure la nitrofogata, las flechas disparadas con la Carga 2 de Ataque Normal: Pirotecnia no generarán flechas abrasadoras.\nEste efecto se disipará una vez que Yoimiya sea retirada de combate.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s3",
-          "title": "Ryuukin Saxifrage",
-          "description": null,
-          "abilities": []
+          "title": "Saxifraga de oro",
+          "description": "Tras lanzar hacia el cielo su creación, la saxifraga de oro, Yoimiya dispara cohetes ardientes sorpresa que infligen Daño Pyro en el AdE y que aplican el efecto de ascua dorada sobre uno de los enemigos golpeados.",
+          "abilities": [
+            {
+              "name": "Ascua dorada",
+              "description": "Cuando cualquier personaje del equipo (a excepción de Yoimiya) ataca al enemigo afectado por ascua dorada con Ataques Normales, Cargados o Descendentes o con la Habilidad Elemental o Definitiva, ocurrirá una explosión que inflige Daño Pyro en el AdE.\nSi un enemigo afectado por ascua dorada es derrotado, este efecto pasará a otro enemigo cercano, el cual heredará la duración restante.\nSolo se puede generar una explosión cada 2 s con ascua dorada y, cuando Yoimiya es derrotada, dicho efecto aplicado por ella misma se disipará.",
+              "descriptions": []
+            }
+          ]
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Ornamentación flagrante",
+          "description": "Al fabricar decoraciones, artículos decorativos y decoraciones de paisaje, hay una probabilidad del 100% de recuperar parte de los materiales usados.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Truco ígneo",
+          "description": "Mientras está activo el efecto de Danza de la pólvora, si Yoimiya golpea a un enemigo con un Ataque Normal, obtiene un 2% de Bono de Daño Pyro durante 3 s. Este efecto puede acumularse hasta 10 veces.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Sofoco estival",
+          "description": "Tras realizar Saxifraga de oro, el ATQ de todos los miembros del equipo (a excepción de Yoimiya) aumenta en un 10% durante 15 s. Además, en función del número de acumulaciones de Truco ígneo en el momento de ejecutar Saxifraga de oro, el ATQ aumentará aún más, concretamente, un 1% por cada acumulación.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Cornalina dorada",
+          "description": "Aumenta en 4 s la duración de la ascua dorada aplicada mediante Saxifraga de oro.\nAdemás, cuando un enemigo afectado por ascua dorada es derrotado, el ATQ de Yoimiya aumenta en un 20% durante 20 s.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Procesión de las antorchas",
+          "description": "Cuando Yoimiya asesta un golpe CRIT de Daño Pyro, obtiene un 25% de Bono de Daño Pyro durante 6 s.\nSi Yoimiya está en tu equipo pero no en combate, podrá seguir recibiendo este bono.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Llama de la astucia",
+          "description": "Aumenta el nivel de habilidad de Danza de la pólvora +3.\nPuede ser aumentado hasta Niv. 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Conocimiento pirotécnico",
+          "description": "Cada explosión de ascua dorada de Yoimiya reduce en 1.2 s el TdE de Danza de la pólvora.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Noche del festival de verano",
+          "description": "Aumenta el nivel de habilidad de Saxifraga de oro +3.\nPuede ser aumentado hasta Niv. 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Lluvia de meteoros Naganohara",
+          "description": "Cuando Yoimiya realiza un Ataque Normal mientras Danza de la pólvora está activa, hay una probabilidad del 50% de disparar una flecha flamígera adicional, la cual inflige un 60% del daño original. Este daño se considera daño de Ataque Normal.",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
     },
     {
       "key": "Sayu",
       "name": "Sayu",
-      "description": "N/A",
+      "description": "Una ninja perteneciente a Los Ocelos. Muy bajita y siempre con aspecto de no haber dormido suficiente.",
       "skills": [
         {
           "key": "s1",
-          "title": "Shiyuumatsu-Ban Ninja Blade",
+          "title": "Sable ninja de Los Ocelos",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Realiza hasta 4 tajos de espada consecutivos.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Consume Aguante de manera constante para realizar golpes de espada giratorios contra los enemigos cercanos.\nAl final del Ataque Cargado, realizará un golpe de espada más poderoso.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "Yoohoo Art: Fuuin Dash",
-          "description": null,
-          "abilities": []
+          "title": "Técnica “¡Yujuuu!”: Colisión de viento",
+          "description": "¡La técnica ninja especial “Yujuuu”! ¡Una técnica veloz como el rayo para rodar por todo el campo de batalla!\nSe transforma en una rápida rueda de viento que inflige Daño Anemo al chocar contra un enemigo. Al terminar la duración, ejecuta una tornadopatada que inflige Daño Anemo en el AdE.",
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Se transforma en una rueda de viento para rodar una pequeña distancia y ejecutar una tornadopatada.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Se transforma en una rueda de viento para rodar continuamente y aumentar la RES a interrupción de Sayu.\nMientras está en este estado, Sayu puede controlar la dirección en la que rueda y, al dejar de pulsar, terminará su duración y ejecutará una tornadopatada más poderosa que la de pulsar una vez.\n Si se mantiene pulsada esta habilidad, podrá ocurrir un cambio elemental.\nLa rueda de viento tiene una duración máxima de 10 s y, al finalizar, la habilidad entrará en TdE. Cuanto más tiempo esté transformada en la rueda de viento, más largo será dicho TdE.",
+              "descriptions": []
+            },
+            {
+              "name": "Cambio elemental",
+              "description": "Si Sayu entra en contacto con Hydro/Pyro/Cryo/Electro estando transformada en la rueda de viento, tanto dicha rueda como la tornadopatada infligirán un bono de Daño Elemental adicional de ese tipo.\nEl cambio elemental solo puede ocurrir una vez durante la habilidad.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s3",
-          "title": "Yoohoo Art: Mujina Flurry",
-          "description": null,
-          "abilities": []
+          "title": "Técnica “¡Yujuuu!”: Frenesí tejón",
+          "description": "¡La otra técnica ninja especial “Yujuuu”! Sirve para crear un ayudante que trabaje por Sayu.\nInflige Daño Anemo contra los enemigos alrededor, recupera Vida para todos los personajes cercanos del equipo en una cantidad proporcional al ATQ de Sayu e invoca un tejón daruma.",
+          "abilities": [
+            {
+              "name": "Tejón daruma",
+              "description": "Realiza alguna de las siguientes acciones dependiendo de la situación de su entorno:",
+              "descriptions": [
+                "Si la Vida de todos los personajes cercanos es superior al 70%, el tejón daruma atacará a un enemigo cercano, infligiendo Daño Anemo.",
+                "Si en las cercanías hay personajes con una Vida igual o inferior al 70%, curará al personaje con el menor porcentaje de Vida. La cantidad regenerada será proporcional al ATQ de Sayu. Si no hay ningún enemigo cerca, curará a los personajes incluso aunque su Vida esté por encima del 70%."
+              ]
+            }
+          ]
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Técnica “¡Yujuuu!”: Secreto del sigilo",
+          "description": "Cuando Sayu está en el equipo, tus personajes no asustarán a los cristalópteros u otras criaturas.\nPuedes consultar cuáles son estas criaturas en Archivo - Seres vivos - Fauna - Otros.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "¡Déjame en paz!",
+          "description": "Cuando Sayu causa una reacción de Torbellino mientras está en combate, todos los miembros de tu equipo y los aliados cercanos recuperan 300 pts. de Vida, además de 1.2 pts. de Vida adicionales por cada punto de Maestría Elemental de Sayu.\nEste efecto solo puede ocurrir una vez cada 2 s.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "¡Sayu no trabaja!",
+          "description": "El tejón daruma invocado con Técnica “¡Yujuuu!”: Frenesí tejón obtiene los siguientes efectos:",
+          "descriptions": [
+            "Al curar a un personaje, los demás personajes cercanos a él y que estén en combate recuperan una cantidad de Vida equivalente al 20% de la recuperada por el primer personaje.",
+            "Aumenta el AdE del ataque ejecutado por el tejón daruma contra los enemigos."
+          ]
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Técnica multitarea",
+          "description": "Las acciones del tejón daruma invocado con Técnica “¡Yujuuu!”: Frenesí tejón ya no están limitadas por la Vida de los personajes, sino que atacará a los enemigos cercanos y, al mismo tiempo, curará a los miembros del equipo.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "¡Fuera de mi camino!",
+          "description": "Técnica “¡Yujuuu!”: Colisión de viento obtiene los siguientes efectos:",
+          "secondDescription": null,
+          "descriptions": [
+            "Aumenta en un 3.3% el daño de la tornadopatada al pulsar una vez.",
+            "Al mantener pulsado para transformarse en una rueda de viento, el daño de la siguiente tornadopatada aumenta en un 3.3% cada 0.5 s. El daño máximo de la tornadopatada alcanzado de esta manera solo podrá ser del 66%."
+          ]
+        },
+        {
+          "key": "c3",
+          "title": "Déjaselo al tejón",
+          "description": "Aumenta el nivel de habilidad de Técnica “¡Yujuuu!”: Frenesí tejón +3.\nPuede ser aumentado hasta Niv. 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Holgazanería innovadora",
+          "description": "Cuando Sayu causa una reacción de Torbellino, recupera 1.2 pts. de Energía Elemental.\nEsto puede ocurrir una vez cada 2 s.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "La velocidad es lo primero",
+          "description": "Aumenta el nivel de habilidad de Técnica “¡Yujuuu!”: Colisión de viento +3.\nPuede ser aumentado hasta Niv. 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Cinco minutos más...",
+          "description": "El ATQ y la curación del tejón daruma invocado por Sayu mediante Técnica “¡Yujuuu!”: Frenesí tejón aumentan en proporción a su Maestría Elemental. Cada punto de Maestría Elemental de Sayu produce los siguientes efectos:",
+          "secondDescription": null,
+          "descriptions": [
+            "El daño infligido por el tejón daruma aumenta en un 0.2% adicional del ATQ. Solo se puede infligir un máximo de 400% de daño adicional de esta manera.",
+            "Aumenta en 3 pts. la cantidad de Vida que cura el tejón. Solo se puede curar un máximo de 6000 pts. de Vida de esta manera."
+          ]
+        }
+      ]
     },
     {
       "key": "Traveler (Electro)",
@@ -5333,6 +5538,12 @@
       "name": "Anillo de Hakushin",
       "description": "Un catalizador que conserva los antiguos pensamientos de la Sacerdotisa Kitsune. Sin embargo, estos pensamientos eran tantos que no fue posible que todos cupieran en este objeto.",
       "refinement": "Cuando el personaje que lleva esta arma equipada causa una Reacción Elemental relacionada con Electro, los personajes del equipo cercanos cuyo tipo elemental coincida con los elementos implicados en la reacción obtienen un {{0}}% de su respectivo Bono de Daño Elemental durante 6 s. Los bonos elementales obtenidos de esta manera no se pueden acumular."
+    },
+    {
+      "key": "Thundering Pulse",
+      "name": "Agitador del Relámpago",
+      "description": "Un arco que la Shogun le otorgó a alguien. Emite unos destellos eléctricos que nunca se apagarán.",
+      "refinement": "Aumenta el ATQ en un {{0}}% y otorga el poder de los emblemas del trueno. Dependiendo de si se tienen 1, 2 o 3 emblemas del trueno, el daño infligido con los Ataques Normales aumenta en un {{1}}/{{2}}/{{3}}%. En las siguientes situaciones, el personaje obtiene un emblema: al infligir daño con Ataques Normales. El emblema dura 5 s; al realizar una Habilidad Elemental. El emblema dura 10 s; cuando la Energía Elemental del personaje está por debajo del 100%. El emblema del trueno obtenido de esta manera dura hasta que el personaje regenere toda su Energía Elemental. La duración de cada emblema del trueno se calcula de manera independiente."
     }
   ],
   "artifacts": [
