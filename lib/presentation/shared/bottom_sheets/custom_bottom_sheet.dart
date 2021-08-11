@@ -272,9 +272,15 @@ class _ModalBottomSheetLayout extends SingleChildLayoutDelegate {
     final extended = MediaQuery.of(context).orientation != Orientation.portrait;
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+
+    var widthToUse = extended ? width * 0.45 : width * 0.6;
+
+    if (widthToUse > 600) {
+      widthToUse = 600;
+    }
     return BoxConstraints(
-      minWidth: extended ? width * 0.45 : width * 0.6,
-      maxWidth: extended ? width * 0.45 : width * 0.6,
+      minWidth: widthToUse,
+      maxWidth: widthToUse,
       minHeight: height,
       maxHeight: height,
     );
