@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:genshindb/generated/l10n.dart';
 
+import 'common_button_bar.dart';
+
 class CommonButtonSheetButtons extends StatelessWidget {
   final bool showCancelButton;
   final bool showOkButton;
@@ -28,8 +30,7 @@ class CommonButtonSheetButtons extends StatelessWidget {
     final cancel = cancelText ?? s.cancel;
     final ok = okText ?? s.ok;
 
-    return ButtonBar(
-      buttonPadding: const EdgeInsets.symmetric(horizontal: 10),
+    return CommonButtonBar(
       children: <Widget>[
         if (showCancelButton)
           OutlinedButton(
