@@ -4348,53 +4348,53 @@
     {
       "key": "Yoimiya",
       "name": "宵宫",
-      "description": "Owner of Naganohara Fireworks. Known as \"Queen of the Summer Festival,\" she excels in her craft of creating fireworks that symbolize people's hopes and dreams.",
+      "description": "「长野原烟花店」店长，「夏祭的女王」，将人们的愿望寄托于烟花中的能工巧匠。",
       "skills": [
         {
           "key": "s1",
-          "title": "Firework Flare-Up",
+          "title": "烟火打扬",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive shots with a bow.",
+              "description": "进行至多五段的连续弓箭射击。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Performs a more precise Aimed Shot with increased DMG.\nWhile aiming, flames will accumulate on the arrowhead before being fired off as an attack. Has different effects based on how long the energy has been charged:",
+              "description": "进行伤害更高、更为精准的瞄准攻击。\n瞄准时，火焰会在箭矢上持续积聚，并随攻击发射出去。根据蓄力时间长短，能造成不同的效果：",
               "descriptions": [
-                "Charge Level 1: Fires off a flaming arrow that deals Pyro DMG.",
-                "Charge Level 2: Generates a maximum of 3 Kindling Arrows based on time spent charging, releasing them as part of this Aimed Shot. Kindling Arrows will home in on nearby opponents, dealing Pyro DMG on hit."
+                "一段蓄力：射出富有烈焰的箭矢，造成火元素伤害；",
+                "二段蓄力：依据蓄力时间，产生之多3枚焰硝矢，随宵宫这次瞄准射击释放。焰硝矢会自行追踪附近的敌人，并在命中时造成火元素伤害。"
               ]
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "从空中射出箭雨，并迅速下坠冲击地面，在落地时造成范围伤害。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Niwabi Fire-Dance",
-          "description": "Yoimiya waves a sparkler and causes a ring of saltpeter to surround her.",
+          "title": "焰硝庭火舞",
+          "description": "舞动线香烟火，让用于烟火的焰硝环绕在宵宫的身边。",
           "abilities": [
             {
-              "name": "Niwabi Enshou",
-              "description": "During this time, arrows fired by Yoimiya's Normal Attack will be Blazing Arrows, and their DMG will be increased and converted to Pyro DMG. During this time, Normal Attack: Firework Flare-Up will not generate Kindling Arrows at Charge Level 2.\nThis effect will deactivate when Yoimiya leaves the field.",
+              "name": "庭火焰硝",
+              "description": "在持续期间内，将宵宫的普通攻击发射的箭矢转为炽焰箭，造成的伤害转为火元素伤害，并提高普通攻击造成的伤害；「普通攻击·烟火打扬」的二段蓄力在持续期间无法再产生焰硝矢。\n效果在宵宫退场时解除。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Ryuukin Saxifrage",
-          "description": "Yoimiya leaps into the air along with her original creation, the \"Ryuukin Saxifrage,\" and fires forth blazing rockets bursting with surprises that deal AoE Pyro DMG and mark one of the hit opponents with Aurous Blaze.",
+          "title": "琉金云间草",
+          "description": "宵宫随着自创的烟火「琉金云间草」腾跃至空中，向前发射满载惊喜的焰火箭，造成火元素范围伤害，并对命中的其中一名敌人附上「琉金火光」。",
           "abilities": [
             {
-              "name": "Aurous Blaze",
-              "description": "All Normal/Charged/Plunging Attacks, Elemental Skills, and Elemental Bursts by any party member other than Yoimiya that hit an opponent marked by Aurous Blaze will trigger an explosion, dealing AoE Pyro DMG.\nWhen an opponent affected by Aurous Blaze is defeated before its duration expires, the effect will pass on to another nearby opponent, who will inherit the remaining duration.\nOne Aurous Blaze explosion can be triggered every 2s. When Yoimiya is down, Aurous Blaze effects created through her skills will be deactivated.",
+              "name": "琉金火光",
+              "description": "队伍中所有角色（不包括宵宫自己）的普通攻击、重击、下落攻击、元素战技、元素爆发命中处于琉金火光影响下的敌人，会引发爆炸，造成火元素范围伤害。\n处于琉金火光影响下的敌人在持续期间内被击败时，琉金火光将转移至附近另一名敌人，并继承持续时间。\n琉金火光每2秒之多引发一次爆炸。宵宫倒下时，由宵宫自己的技能产生的琉金火光效果会解除。",
               "descriptions": []
             }
           ]
@@ -4403,63 +4403,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Blazing Match",
-          "description": "When Yoimiya crafts Decoration, Ornament, and Landscape-type Furnishings, she has a 100% chance to refund a portion of the materials used.",
+          "title": "炎色配比法",
+          "description": "制作装潢、摆件、景观类摆设时，有100%概率返还部分材料。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Tricks of the Trouble-Maker",
-          "description": "During Niwabi Fire-Dance, shots from Yoimiya's Normal Attack will increase her Pyro DMG Bonus by 2% on hit. This effect lasts for 3s and can have a maximum of 10 stacks.",
+          "title": "袖火百景图",
+          "description": "在焰硝庭火舞的持续期间内，宵宫的普通攻击命中后，将为宵宫提供2%火元素伤害加成。该效果持续3秒，至多叠加10次。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Summer Night's Dawn",
-          "description": "Using Ryuukin Saxifrage causes nearby party members (not including Yoimiya) to gain a 10% ATK increase for 15s. Additionally, a further ATK Bonus will be added on based on the number of \"Tricks of the Trouble-Maker\" stacks Yoimiya possesses when using Ryuukin Saxifrage. Each stack increases this ATK Bonus by 1%.",
+          "title": "炎昼风物诗",
+          "description": "释放琉金云间草后的15秒内，附近的队伍中所有其它角色（不包括宵宫自己）攻击力提高10%。此外，依据宵宫自己释放琉金云间草时固有天赋「袖火百景图」的叠加层数，将额外提升上述的攻击力效果，每层提升1%攻击力。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Agate Ryuukin",
-          "description": "The Aurous Blaze created by Ryuukin Saxifrage lasts for an extra 4s.\nAdditionally, when an opponent affected by Aurous Blaze is defeated within its duration, Yoimiya's ATK is increased by 20% for 20s.",
+          "title": "赤玉琉金",
+          "description": "琉金云间草的琉金火光持续时间延长4秒。\n此外，处于宵宫自己的琉金火光影响下的敌人在持续期间内被击败时，宵宫的攻击力提高20%，持续20秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "A Procession of Bonfires",
-          "description": "When Yoimiya's Pyro DMG scores a CRIT Hit, Yoimiya will gain a 25% Pyro DMG Bonus for 6s.\nThis effect can be triggered even when Yoimiya is not the active character.",
+          "title": "万灯送火",
+          "description": "宵宫的火元素伤害造成暴击后的6秒内，宵宫获得25%火元素伤害加成。\n宵宫处于队伍后台时，同样能获得该效果。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Trickster's Flare",
-          "description": "Increases the Level of Niwabi Fire-Dance by 3.\nMaximum upgrade level is 15.",
+          "title": "鼠火戏法",
+          "description": "焰硝庭火舞的技能等级提高3级。\n至多提升至15级。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Pyrotechnic Professional",
-          "description": "When Yoimiya's own Aurous Blaze triggers an explosion, Niwabi Fire-Dance's CD is decreased by 1.2s.",
+          "title": "花火职人心得",
+          "description": "宵宫自己的琉金火光发生爆炸时，焰硝庭火舞的冷却时间减少1.2秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "A Summer Festival's Eve",
-          "description": "Increases the Level of Ryuukin Saxifrage by 3.\nMaximum upgrade level is 15.",
+          "title": "真夏宵祭锦绘",
+          "description": "琉金云间草的技能等级提高3级。\n至多提升至15级。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Naganohara Meteor Swarm",
-          "description": "During Niwabi Fire-Dance, Yoimiya's Normal Attacks have a 50% chance of firing an extra Kindling Arrow that deals 60% of its original DMG. This DMG is considered Normal Attack DMG.",
+          "title": "长野原龙势流星群",
+          "description": "在焰硝庭火舞的持续期间内，宵宫主动进行普通攻击时，有50%几率发射一枚额外的炽焰箭，造成原本60%的伤害。该伤害视为普通攻击伤害。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -4468,63 +4468,63 @@
     {
       "key": "Sayu",
       "name": "早柚",
-      "description": "A pint-sized ninja attached to the Shuumatsuban, who always seems sleep-deprived.",
+      "description": "属于「终末番」的忍者。身形小巧，总像没睡饱一样。",
       "skills": [
         {
           "key": "s1",
-          "title": "Shuumatsuban Ninja Blade",
+          "title": "忍刀·终末番",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 consecutive strikes.",
+              "description": "进行至多四段的连续挥砍。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.\nAt the end of the sequence, perform a more powerful slash. ",
+              "description": "持续消耗体力，旋转大剑攻击周围的敌人。\n停止旋转时，会进行一次格外有力的挥砍。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Yoohoo Art: Fuuin Dash",
-          "description": "The special technique of the Yoohoo Ninja Arts!\nSayu curls up into a rolling Fuufuu Windwheel and smashes into opponents at high speed, dealing Anemo DMG. When the duration ends, she unleashes a Fuufuu Whirlwind Kick, dealing AoE Anemo DMG.",
+          "title": "呜呼流·风隐急进",
+          "description": "忍法·呜呼流的独创奥义！以风驰电掣之势席卷战场的绝技！\n蜷缩成高速滚动的风风轮，冲撞触及的敌人造成风元素伤害，并在结束时使出风风轮舞踢，造成风元素范围伤害。",
           "abilities": [
             {
               "key": "a1",
-              "description": "Enters the Fuufuu Windwheel state, rolling forward a short distance before using the Fuufuu Whirlwind Kick.",
+              "description": "进入风风轮状态，向前滚动一小段距离，并使出风风轮舞踢。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Rolls about continuously in the Fuufuu Windwheel state, increasing Sayu's resistance to interruption while within that state.\nDuring this time, Sayu can control the direction of her roll, and can use the skill again to end her Windwheel state early and unleash a stronger version of the Fuufuu Whirlwind Kick.\nThe Hold version of this skill can trigger Elemental Absorption.\nThis skill has a maximum duration of 10s and enters CD once its effects end. The longer Sayu remains in her Windwheel state, the longer the CD.",
+              "description": "以风风轮之姿持续滚动，并在该状态下提高早柚的抗打断能力。\n期间，早柚可以控制滚动的方向，并能通过再次施放技能，提前结束状态使出相比点按更为强大的风风轮舞踢。\n该技能通过长按施放时，能发生元素转化。\n持续至多10秒。效果结束时，技能将进入冷却。在风风轮状态下持续的时间越长，冷却时间越长。",
               "descriptions": []
             },
             {
-              "name": "Elemental Absorption",
-              "description": "If Sayu comes into contact with Hydro/Pyro/Cryo/Electro while in her Windwheel state, she will deal additional elemental DMG of that type.\nElemental Absorption may only occur once per use of this skill.",
+              "name": "元素转化",
+              "description": "若早柚在风风轮状态下，接触了水元素/火元素/冰元素/雷元素，则会获得对应元素属性，使风风轮与风风轮舞踢额外造成该元素的附加伤害。\n元素转化在技能持续期间仅会发生一次。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Yoohoo Art: Mujina Flurry",
-          "description": "The other super special technique of the Yoohoo Ninja Arts! It summons a pair of helping hands for Sayu.\nDeals Anemo DMG to nearby opponents and heals all nearby party members. The amount of HP restored is based on Sayu's ATK. This skill then summons a Muji-Muji Daruma.",
+          "title": "呜呼流·影貉缭乱",
+          "description": "忍法 • 呜呼流的另一个独创奥义！能创造出替早柚干活的帮手！\n对身边的敌人造成风元素伤害，为队伍中附近的所有角色恢复生命值，回复量受益于早柚的攻击力，并召唤出「不倒貉貉」。",
           "abilities": [
             {
-              "name": "Muji-Muji Daruma",
-              "description": "At specific intervals, the Daruma will take one of several actions based on the situation around it:",
+              "name": "不倒貉貉",
+              "description": "周期性地根据附近的状况，采取其中一种行动：",
               "descriptions": [
-                "If the HP of nearby characters is above 70%, it will attack a nearby opponent, dealing Anemo DMG.",
-                "If there are active characters with 70% or less HP nearby, it will heal the active character with the lowest percentage HP left. If there are no opponents nearby, it will heal active characters nearby even if they have 70% HP or more."
+                "附近的角色如果生命值均高于70%，不倒貉貉会攻击附近的一名敌人，造成风元素伤害；",
+                "附近场上如果存在生命值低于或等于70%的角色，会为附近场上生命值百分比最低的角色恢复生命值，回复量受益于早柚的攻击力。若附近不存在敌人，即使角色的生命值均高于70%，也会为角色恢复生命值。"
               ]
             }
           ]
@@ -4533,73 +4533,73 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Yoohoo Art: Silencer's Secret",
-          "description": "When Sayu is in the party, your characters will not startle Crystalflies and certain other animals when getting near them.\nCheck the \"Other\" sub-category of the \"Living Beings / Wildlife\" section in the Archive for creatures this skill works on.",
+          "title": "呜呼流·屏息秘传",
+          "description": "早柚在队伍中时，队伍中自己的角色接近晶蝶等部分生物时，不会惊动它们。\n有效对象可参考图鉴中「生物志/野生动物」的「其他」分类。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Someone More Capable",
-          "description": "When Sayu triggers a Swirl reaction while active, she heals all your characters and nearby allies for 300 HP. She will also heal an additional 1.2 HP for every point of Elemental Mastery she has.\nThis effect can be triggered once every 2s.",
+          "title": "更加合适的人选",
+          "description": "早柚在场上触发扩散反应时，为队伍中自己的角色以及附近的友方角色恢复300点生命值。除此之外，早柚的每点元素精通将额外恢复1.2点生命值。\n该效果每2秒只能触发一次。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "No Work Today!",
-          "description": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Flurry gains the following effects:",
+          "title": "早柚不用工作啦",
+          "description": "呜呼流·影貉缭乱的不倒貉貉获得如下效果：",
           "descriptions": [
-            "When healing a character, it will also heal characters near that healed character for 20% the amount of HP.",
-            "Increases the AoE of its attack against opponents."
+            "为角色恢复生命值时，将为该角色身边的其他场上角色恢复相当于回复量20%的生命值；",
+            "攻击敌人时，扩大造成伤害的范围。"
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Multi-Task no Jutsu",
-          "description": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Flurry will ignore HP limits and can simultaneously attack nearby opponents and heal characters.",
+          "title": "一心二用之术",
+          "description": "呜呼流·影貉缭乱的不倒貉貉的行动将忽视生命值限制，能同时攻击附近的敌人并为角色恢复生命值。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Egress Prep",
-          "description": "Yoohoo Art: Fuuin Dash gains the following effects:",
+          "title": "理清逃跑路线",
+          "description": "呜呼流·风隐急进获得如下效果：",
           "secondDescription": null,
           "descriptions": [
-            "DMG of Fuufuu Whirlwind Kick in Press Mode increased by 3.3%.",
-            "Every 0.5s in the Fuufuu Windwheel state will increase the DMG of this Fuufuu Whirlwind Kick by 3.3%. The maximum DMG increase possible through this method is 66%."
+            "点按施放时，风风轮舞踢造成的伤害提高3.3%；",
+            "处于长按施放后的风风轮状态下时，每0.5秒，就会使这次施展的风风轮舞造成的伤害提高3.3%。通过这种方式，风风轮舞踢造成的伤害至多可以提高66%。"
           ]
         },
         {
           "key": "c3",
-          "title": "Eh, the Bunshin Can Handle It",
-          "description": "Increases the Level of Yoohoo Art: Mujina Flurry by 3.\nMaximum upgrade level is 15.",
+          "title": "都交给分身吧",
+          "description": "呜呼流·影貉缭乱的技能等级提高3级。\n至多提升至15级。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Skiving: New and Improved",
-          "description": "Sayu recovers 1.2 Energy when she triggers a Swirl reaction.\nThis effect occurs once every 2s.",
+          "title": "偷懒的新方法",
+          "description": "早柚在场上触发扩散反应时，将恢复1.2点元素能量。\n该效果每2秒只能触发一次。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Speed Comes First",
-          "description": "Increases the Level of Yoohoo Art: Fuuin Dash by 3.\nMaximum upgrade level is 15.",
+          "title": "快是第一奥义",
+          "description": "呜呼流·风隐急进的技能等级提高3级。\n至多提升至15级。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Sleep O'Clock",
-          "description": "The Muji-Muji Daruma created by Sayu's Yoohoo Art: Mujina Flurry will now also benefit from her Elemental Mastery. Each point of Sayu's Elemental Mastery will produce the following effects:",
+          "title": "呼呼大睡时间",
+          "description": "早柚自己通过呜呼流·影貉缭乱召唤的不倒貉貉的攻击与回复量，受益于早柚的元素精通。早柚每点元素精通能产生如下效果：",
           "secondDescription": null,
           "descriptions": [
-            "Increases the damage dealt by the Muji-Muji Daruma's attacks by 0.2% ATK. A maximum of 400% ATK can be gained via this method.",
-            "Increases the HP restored by the Muji-Muji Daruma by 3. A maximum of 6,000 additional HP can be restored in this manner."
+            "使不倒貉貉的攻击额外造成0.2%的伤害。通过这种方式至多额外造成400%攻击力的伤害；",
+            "使不倒貉貉的回复量提高3点。通过这种方式，至多提高6000点回复量。"
           ]
         }
       ]
@@ -4673,7 +4673,7 @@
           "descriptions": []
         }
       ],
-      "constellations":  [
+      "constellations": [
         {
           "key": "c1",
           "title": "丰穰的春雷",
@@ -4720,7 +4720,7 @@
     },
     {
       "key": "Aloy",
-      "name": "Aloy",
+      "name": "埃洛伊",
       "description": "N/A",
       "skills": [
         {
@@ -4747,7 +4747,7 @@
     },
     {
       "key": "SangonomiyaKokomi",
-      "name": "Sangonomiya Kokomi",
+      "name": "珊瑚宫心海",
       "description": "N/A",
       "skills": [
         {
@@ -4774,7 +4774,7 @@
     },
     {
       "key": "KujouSara",
-      "name": "Kujou Sara",
+      "name": "九条裟罗",
       "description": "N/A",
       "skills": [
         {
@@ -4801,7 +4801,7 @@
     },
     {
       "key": "RaidenShogun",
-      "name": "Raiden Shogun",
+      "name": "雷电将军",
       "description": "N/A",
       "skills": [
         {
@@ -7107,7 +7107,7 @@
     {
       "key": "MaskOfTheB",
       "name": "今昔剧画的虎啮",
-      "description":"《董染山月虎啮鉴》中描绘的鬼人「虎千代」，曾以利齿咬碎将军的蘺刀，取得过一时的上风。因此以他为原型制造的面具上往往有精心雕琢的尖牙。\n在其结局中，负伤之兽般遁入林野，连清凉的月光也避之唯恐不及。穿过窄巷与峡谷的风声像是受伤的鬼在低声哀嚎，因此也有「虎千代风」这一季语。"
+      "description": "《董染山月虎啮鉴》中描绘的鬼人「虎千代」，曾以利齿咬碎将军的蘺刀，取得过一时的上风。因此以他为原型制造的面具上往往有精心雕琢的尖牙。\n在其结局中，负伤之兽般遁入林野，连清凉的月光也避之唯恐不及。穿过窄巷与峡谷的风声像是受伤的鬼在低声哀嚎，因此也有「虎千代风」这一季语。"
     },
     {
       "key": "MaskOfTheC",
@@ -7121,8 +7121,8 @@
     },
     {
       "key": "Amethyst Lump",
-      "name": "Amethyst Lump",
-      "description": "An uncut crystal that can only be found in Inazuma. Some professional craftsmanship will bring out its true value."
+      "name": "紫晶块",
+      "description": "未经削切的矿物晶体，仅在稻妻列岛上产生。经过专门处理后，能展现其真正的价值。"
     }
   ],
   "debuffs": [
