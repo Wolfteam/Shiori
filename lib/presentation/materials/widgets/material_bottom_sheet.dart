@@ -5,6 +5,7 @@ import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/enums/material_type.dart' as mat;
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
+import 'package:genshindb/presentation/shared/bottom_sheets/common_button_bar.dart';
 import 'package:genshindb/presentation/shared/bottom_sheets/right_bottom_sheet.dart';
 import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:genshindb/presentation/shared/genshin_db_icons.dart';
@@ -104,8 +105,8 @@ class _OtherFilters extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return ButtonBar(
-      alignment: MainAxisAlignment.spaceEvenly,
+    return CommonButtonBar(
+      alignment: WrapAlignment.spaceEvenly,
       children: [
         ItemPopupMenuFilter<mat.MaterialType>(
           tooltipText: s.secondaryState,
@@ -140,8 +141,7 @@ class _ButtonBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
-    return ButtonBar(
-      buttonPadding: Styles.edgeInsetHorizontal10,
+    return CommonButtonBar(
       children: <Widget>[
         OutlinedButton(
           onPressed: () {

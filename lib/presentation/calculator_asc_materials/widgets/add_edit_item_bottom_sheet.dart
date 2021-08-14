@@ -6,6 +6,7 @@ import 'package:genshindb/domain/extensions/iterable_extensions.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
+import 'package:genshindb/presentation/shared/bottom_sheets/common_button_bar.dart';
 import 'package:genshindb/presentation/shared/bottom_sheets/right_bottom_sheet.dart';
 import 'package:genshindb/presentation/shared/dialogs/number_picker_dialog.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
@@ -310,9 +311,8 @@ class _ButtonBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
-    return ButtonBar(
-      buttonPadding: const EdgeInsets.symmetric(horizontal: 10),
-      children: <Widget>[
+    return CommonButtonBar(
+      children: [
         OutlinedButton(
           onPressed: () => Navigator.pop(context),
           child: Text(s.cancel, style: TextStyle(color: theme.primaryColor)),
