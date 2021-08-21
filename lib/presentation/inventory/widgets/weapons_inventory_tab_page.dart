@@ -6,6 +6,7 @@ import 'package:genshindb/domain/extensions/string_extensions.dart';
 import 'package:genshindb/presentation/shared/app_fab.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:genshindb/presentation/shared/mixins/app_fab_mixin.dart';
+import 'package:genshindb/presentation/shared/utils/size_utils.dart';
 import 'package:genshindb/presentation/weapons/weapons_page.dart';
 import 'package:genshindb/presentation/weapons/widgets/weapon_card.dart';
 
@@ -39,7 +40,7 @@ class _WeaponsInventoryTabPageState extends State<WeaponsInventoryTabPage> with 
             loading: (_) => const Loading(useScaffold: false),
             loaded: (state) => StaggeredGridView.countBuilder(
               controller: scrollController,
-              crossAxisCount: isPortrait ? 2 : 3,
+              crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context),
               itemBuilder: (ctx, index) => WeaponCard.item(weapon: state.weapons[index]),
               itemCount: state.weapons.length,
               crossAxisSpacing: isPortrait ? 10 : 5,

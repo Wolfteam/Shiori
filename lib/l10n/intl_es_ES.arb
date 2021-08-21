@@ -356,8 +356,13 @@
   "swipeToSeeMoreOptions": "Puedes delizar hacia la derecha o izquierda para ver más opciones en cada item.",
   "reduceTime": "Reducir Tiempo",
   "use24HourFormatOnDates": "Usar formato de 24 horas en fechas",
-  "ps4": "PS4",
+  "playstation": "PlayStation",
   "deleteAllSessions": "Borrar todas las sesiones",
   "deleteAllItems": "Borrar todos los items",
-  "confirmQuestion": "¿ Estás seguro que deseas continuar ?"
+  "confirmQuestion": "¿ Estás seguro que deseas continuar ?",
+  "gameSpecific": "Específicos del juego",
+  "tools": "Herramientas",
+  "privacy": "Privacidad",
+  "privacyMsgA": "Esta aplicación no colecta ninguna información o data personal que pudiese ser usada para localizar o identificar al usuario.",
+  "privacyMsgB": "La única data colectada son los crashes y uso de la aplicación. Esta información es util al momento de identificar y corregir errores. También es usada para saber que secciones son las más usadas y cuales deberian recibir más prioridad en la aplicación."
 }

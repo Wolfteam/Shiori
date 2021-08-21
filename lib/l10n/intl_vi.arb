@@ -356,8 +356,13 @@
   "swipeToSeeMoreOptions": "Bạn có thể vuốt sang trái hoặc phải đế xem thêm các tùy chọn.",
   "reduceTime": "Giảm Thời Gian",
   "use24HourFormatOnDates": "Sử dụng định dạng 24h",
-  "ps4": "PS4",
-  "deleteAllSessions": "Delete all sessions",
-  "deleteAllItems": "Delete all items",
-  "confirmQuestion": "Are you sure you wanna proceed ?"
+  "playstation": "PlayStation",
+  "deleteAllSessions": "Xóa tất cả phiên",
+  "deleteAllItems": "Xóa tất cả vật phẩm",
+  "confirmQuestion": "Bạn chắc chắn muốn tiếp tục ?",
+  "gameSpecific": "Thông tin chung",
+  "tools": "Công cụ hỗ trợ",
+  "privacy": "Quyền riêng tư",
+  "privacyMsgA": "Ứng dụng này không thu thập bất kì thông tin nào của bạn nhằm mục đính theo dõi.",
+  "privacyMsgB": "Dữ liệu thu thập duy nhất là những thông tin về sự cố và việc sử dụng ứng dụng. Những thông tin này cần thiết cho việc xác định lỗi hoặc tính năng ứng dụng nào được sử dụng nhiều để đưa ra những thay đổi phù hợp yêu cầu người dùng."
 }

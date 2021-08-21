@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/presentation/shared/element_image.dart';
+import 'package:genshindb/presentation/shared/images/element_image.dart';
 import 'package:genshindb/presentation/shared/styles.dart';
 
 class ElementDebuffCard extends StatelessWidget {
@@ -17,22 +17,25 @@ class ElementDebuffCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Card(
-      shape: Styles.cardShape,
-      child: Container(
-        padding: Styles.edgeInsetAll5,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ElementImage.fromPath(path: image),
-            Text(
-              name,
-              textAlign: TextAlign.center,
-              style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
-            ),
-            Text(effect, textAlign: TextAlign.center)
-          ],
+    return Padding(
+      padding: Styles.edgeInsetAll5,
+      child: Card(
+        shape: Styles.cardShape,
+        child: Container(
+          padding: Styles.edgeInsetAll5,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ElementImage.fromPath(path: image),
+              Text(
+                name,
+                textAlign: TextAlign.center,
+                style: theme.textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+              ),
+              Text(effect, textAlign: TextAlign.center, style: theme.textTheme.subtitle2!.copyWith(fontSize: 12))
+            ],
+          ),
         ),
       ),
     );

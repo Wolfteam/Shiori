@@ -13,7 +13,7 @@ class WishSimulatorPage extends StatefulWidget {
 class _WishSimulatorPageState extends State<WishSimulatorPage> {
   final script = '''
     function closeModal(){
-      if (!document.getElementsByClassName("modal-container"))
+      if (document.getElementsByClassName("modal-container").length === 0)
         return;
       let modal = document.getElementsByClassName("modal-container")[0];
       if (!modal)

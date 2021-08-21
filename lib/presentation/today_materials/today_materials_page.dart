@@ -30,7 +30,7 @@ class TodayMaterialsPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SliverCharacterAscensionMaterials(charAscMaterials: charsMaterials),
+                  SliverCharacterAscensionMaterials(charAscMaterials: charsMaterials, useListView: false),
                   SliverPadding(
                     padding: const EdgeInsets.only(left: 10, top: 10),
                     sliver: SliverToBoxAdapter(
@@ -40,7 +40,7 @@ class TodayMaterialsPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SliverWeaponAscensionMaterials(weaponAscMaterials: weaponMaterials),
+                  SliverWeaponAscensionMaterials(weaponAscMaterials: weaponMaterials, useListView: false),
                 ],
               ),
             ),

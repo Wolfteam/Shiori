@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:genshindb/application/bloc.dart';
 import 'package:genshindb/generated/l10n.dart';
 import 'package:genshindb/presentation/shared/app_webview.dart';
+import 'package:genshindb/presentation/shared/dialogs/info_dialog.dart';
 import 'package:genshindb/presentation/shared/loading.dart';
 
 class DailyCheckInPage extends StatefulWidget {
@@ -13,12 +14,21 @@ class DailyCheckInPage extends StatefulWidget {
 class _DailyCheckInPageState extends State<DailyCheckInPage> {
   final script = '''
     function removeButtons() {
-      const backButton = document.querySelectorAll('div[class*="back"]');
-      const shareButton = document.querySelectorAll('div[class*="share"]');
-  
-      if (backButton && shareButton) {
-          backButton[0].remove();
-          shareButton[0].remove();
+      if (document.querySelectorAll('div[class*="back"]').length > 0 && document.querySelectorAll('div[class*="share"]').length > 0) {
+          document.querySelectorAll('div[class*="back"]')[0].remove();
+          document.querySelectorAll('div[class*="share"]')[0].remove();
+      }
+      
+      if (document.querySelectorAll("div[class*='left'").length > 0) {
+        document.querySelectorAll("div[class*='left'")[0].replaceChildren("");
+      }
+      
+      if (document.getElementsByClassName("bbs-qr").length > 0){
+        document.getElementsByClassName("bbs-qr")[0].remove();
+      }
+      
+      if (document.getElementsByClassName("mhy-hoyolab-app-header").length > 0){
+        document.getElementsByClassName("mhy-hoyolab-app-header")[0].remove();
       }
     }
     
@@ -43,7 +53,15 @@ class _DailyCheckInPageState extends State<DailyCheckInPage> {
           return state.map(
             loading: (_) => const Loading(),
             loaded: (state) => AppWebView(
-              appBar: AppBar(title: Text(s.dailyCheckIn)),
+              appBar: AppBar(
+                title: Text(s.dailyCheckIn),
+                actions: [
+                  IconButton(
+                    icon: const Icon(Icons.info),
+                    onPressed: () => _showInfoDialog(context),
+                  ),
+                ],
+              ),
               url: state.dailyCheckInUrl,
               userAgent: state.userAgent,
               hasInternetConnection: state.hasInternetConnection,
@@ -53,5 +71,14 @@ class _DailyCheckInPageState extends State<DailyCheckInPage> {
         },
       ),
     );
+  }
+
+  Future<void> _showInfoDialog(BuildContext context) async {
+    final s = S.of(context);
+    final explanations = [
+      s.loginIssuesMsgA,
+      s.loginIssuesMsgB,
+    ];
+    await showDialog(context: context, builder: (context) => InfoDialog(explanations: explanations));
   }
 }

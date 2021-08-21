@@ -84,6 +84,23 @@ class AboutSettingsCard extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.only(top: 10),
                   child: Text(
+                    s.privacy,
+                    style: textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(s.privacyMsgA),
+                      Text(s.privacyMsgB),
+                    ],
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 10),
+                  child: Text(
                     s.support,
                     style: textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
                   ),

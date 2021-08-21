@@ -19,22 +19,26 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   @override
   String get version => _version;
 
+  //TODO: COMPLETE THIS
   @override
   String? get userAgent => Platform.isWindows ? null : FlutterUserAgent.webViewUserAgent!.replaceAll(RegExp(r'wv'), '');
 
   @override
   Future<void> init() async {
     try {
-      final deviceInfo = DeviceInfoPlugin();
-      final androidInfo = await deviceInfo.androidInfo;
+      //TODO: BUILDNUMBER NOT SHOWING UP ON WINDOWS
+      //TODO: VERSION DOES NOT MATCH THE ONE ON THE PUBSPEC
       final packageInfo = await PackageInfo.fromPlatform();
-      _version = '${packageInfo.version}+${packageInfo.buildNumber}';
       _appName = packageInfo.appName;
-      _deviceInfo = {
-        'Model': androidInfo.model ?? 'N/A',
-        'OsVersion': '${androidInfo.version.sdkInt}',
-        'AppVersion': _version,
-      };
+      _version = '${packageInfo.version}+${packageInfo.buildNumber}';
+
+      if (Platform.isAndroid) {
+        await _initForAndroid();
+      }
+
+      if (Platform.isWindows) {
+        await _initForWindows();
+      }
 
       if (!Platform.isWindows) {
         await FlutterUserAgent.init();
@@ -47,5 +51,25 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
       };
       _version = _appName = 'N/A';
     }
+  }
+
+  Future<void> _initForWindows() async {
+    final deviceInfo = DeviceInfoPlugin();
+    final info = await deviceInfo.windowsInfo;
+    _deviceInfo = {
+      'Model': info.computerName,
+      'OsVersion': 'N/A',
+      'AppVersion': _version,
+    };
+  }
+
+  Future<void> _initForAndroid() async {
+    final deviceInfo = DeviceInfoPlugin();
+    final info = await deviceInfo.androidInfo;
+    _deviceInfo = {
+      'Model': info.model ?? 'N/A',
+      'OsVersion': '${info.version.sdkInt}',
+      'AppVersion': _version,
+    };
   }
 }

@@ -8,7 +8,7 @@ import 'package:genshindb/presentation/artifacts/artifacts_page.dart';
 import 'package:genshindb/presentation/characters/characters_page.dart';
 import 'package:genshindb/presentation/materials/materials_page.dart';
 import 'package:genshindb/presentation/monsters/monsters_page.dart';
-import 'package:genshindb/presentation/shared/circle_item.dart';
+import 'package:genshindb/presentation/shared/images/circle_item.dart';
 import 'package:genshindb/presentation/weapons/weapons_page.dart';
 
 class NotificationCircleItem extends StatelessWidget {

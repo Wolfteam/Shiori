@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -27,6 +29,10 @@ class NotificationServiceImpl implements NotificationService {
   @override
   Future<void> init() async {
     try {
+      //TODO: TIMEZONES ON WINDWS
+      if (Platform.isWindows) {
+        return;
+      }
       tz.initializeTimeZones();
       final currentTimeZone = await FlutterNativeTimezone.getLocalTimezone();
       _location = tz.getLocation(currentTimeZone);

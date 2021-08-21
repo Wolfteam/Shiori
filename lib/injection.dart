@@ -15,7 +15,9 @@ import 'package:get_it/get_it.dart';
 final GetIt getIt = GetIt.instance;
 
 Future<void> initInjection() async {
-  getIt.registerSingleton<NetworkService>(NetworkServiceImpl());
+  final networkService = NetworkServiceImpl();
+  networkService.init();
+  getIt.registerSingleton<NetworkService>(networkService);
 
   final deviceInfoService = DeviceInfoServiceImpl();
   getIt.registerSingleton<DeviceInfoService>(deviceInfoService);

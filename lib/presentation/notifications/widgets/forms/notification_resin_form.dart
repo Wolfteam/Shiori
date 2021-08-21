@@ -5,7 +5,7 @@ import 'package:genshindb/domain/app_constants.dart';
 import 'package:genshindb/domain/enums/enums.dart';
 import 'package:genshindb/domain/models/models.dart';
 import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/number_picker_dialog.dart';
+import 'package:genshindb/presentation/shared/dialogs/number_picker_dialog.dart';
 
 import 'notification_circle_item.dart';
 import 'notification_dropdown_type.dart';

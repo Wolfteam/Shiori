@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:genshindb/generated/l10n.dart';
+import 'package:genshindb/presentation/shared/extensions/media_query_extensions.dart';
 
 class ChangeCurrentDayDialog extends StatefulWidget {
   final int currentSelectedDay;
@@ -39,7 +40,7 @@ class _ChangeCurrentDayDialogState extends State<ChangeCurrentDayDialog> {
     return AlertDialog(
       title: Text(s.day),
       content: SizedBox(
-        width: double.maxFinite,
+        width: MediaQuery.of(context).getWidthForDialogs(),
         child: ListView.builder(
           shrinkWrap: true,
           itemCount: days.entries.length,

@@ -47,4 +47,20 @@ class Styles {
       topLeft: Radius.circular(30),
     ),
   );
+
+  static const double materialCardHeight = 270;
+  static const double materialCardWidth = 220;
+  static const double homeCardHeight = 170;
+  static const double homeCardWidth = 280;
+  static const double birthdayCardWidth = 300;
+
+  static const endDrawerFilterItemMargin = EdgeInsets.only(top: 20);
+  static const double endDrawerIconSize = 40;
+
+  static double getIconSizeForItemPopupMenuFilter(bool forEndDrawer, bool forDefaultIcons) {
+    if (forDefaultIcons) {
+      return forEndDrawer ? 36 : 24;
+    }
+    return forEndDrawer ? 26 : 18;
+  }
 }
