@@ -65,9 +65,9 @@ class _MobileScaffoldState extends State<MobileScaffold> with SingleTickerProvid
         showUnselectedLabels: true,
         items: [
           BottomNavigationBarItem(label: s.characters, icon: const Icon(Icons.people)),
-          BottomNavigationBarItem(label: s.weapons, icon: const Icon(GenshinDb.crossed_swords)),
+          BottomNavigationBarItem(label: s.weapons, icon: const Icon(Shiori.crossed_swords)),
           BottomNavigationBarItem(label: s.home, icon: const Icon(Icons.home)),
-          BottomNavigationBarItem(label: s.artifacts, icon: const Icon(GenshinDb.overmind)),
+          BottomNavigationBarItem(label: s.artifacts, icon: const Icon(Shiori.overmind)),
           BottomNavigationBarItem(label: s.map, icon: const Icon(Icons.map)),
         ],
         type: BottomNavigationBarType.fixed,

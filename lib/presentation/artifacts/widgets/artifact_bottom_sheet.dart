@@ -26,7 +26,7 @@ class ArtifactBottomSheet extends StatelessWidget {
     final forEndDrawer = getDeviceType(MediaQuery.of(context).size) != DeviceScreenType.mobile;
     if (!forEndDrawer) {
       return CommonBottomSheet(
-        titleIcon: GenshinDb.filter,
+        titleIcon: Shiori.filter,
         title: s.filters,
         showCancelButton: false,
         showOkButton: false,

@@ -63,8 +63,8 @@ class _DesktopTabletScaffoldState extends State<DesktopTabletScaffold> {
                     label: Text(s.characters),
                   ),
                   NavigationRailDestination(
-                    icon: const Icon(GenshinDb.crossed_swords),
-                    selectedIcon: const Icon(GenshinDb.crossed_swords),
+                    icon: const Icon(Shiori.crossed_swords),
+                    selectedIcon: const Icon(Shiori.crossed_swords),
                     label: Text(s.weapons),
                   ),
                   NavigationRailDestination(
@@ -73,8 +73,8 @@ class _DesktopTabletScaffoldState extends State<DesktopTabletScaffold> {
                     label: Text(s.home),
                   ),
                   NavigationRailDestination(
-                    icon: const Icon(GenshinDb.overmind),
-                    selectedIcon: const Icon(GenshinDb.overmind),
+                    icon: const Icon(Shiori.overmind),
+                    selectedIcon: const Icon(Shiori.overmind),
                     label: Text(s.artifacts),
                   ),
                   NavigationRailDestination(

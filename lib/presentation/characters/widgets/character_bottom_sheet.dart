@@ -26,7 +26,7 @@ class CharacterBottomSheet extends StatelessWidget {
     final forEndDrawer = getDeviceType(MediaQuery.of(context).size) != DeviceScreenType.mobile;
     if (!forEndDrawer) {
       return CommonBottomSheet(
-        titleIcon: GenshinDb.filter,
+        titleIcon: Shiori.filter,
         title: s.filters,
         showCancelButton: false,
         showOkButton: false,
@@ -138,7 +138,7 @@ class _OtherFilters extends StatelessWidget {
           values: ItemStatusType.values,
           selectedValue: tempStatusType,
           onSelected: (v) => context.read<CharactersBloc>().add(CharactersEvent.itemStatusChanged(v)),
-          icon: Icon(GenshinDb.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
+          icon: Icon(Shiori.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
           itemText: (val) => s.translateReleasedUnreleasedType(val),
         ),
         ItemPopupMenuFilter<CharacterRoleType>(
@@ -147,7 +147,7 @@ class _OtherFilters extends StatelessWidget {
           selectedValue: tempRoleType,
           onSelected: (v) => context.read<CharactersBloc>().add(CharactersEvent.roleTypeChanged(v)),
           itemText: (val) => s.translateCharacterType(val),
-          icon: Icon(GenshinDb.trefoil_lily, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
+          icon: Icon(Shiori.trefoil_lily, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
         ItemPopupMenuFilterWithAllValue(
           tooltipText: s.region,
@@ -155,7 +155,7 @@ class _OtherFilters extends StatelessWidget {
           selectedValue: tempRegionType?.index,
           onAllOrValueSelected: (v) => context.read<CharactersBloc>().add(CharactersEvent.regionTypeChanged(v == null ? null : RegionType.values[v])),
           itemText: (val) => s.translateRegionType(RegionType.values[val]),
-          icon: Icon(GenshinDb.reactor, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
+          icon: Icon(Shiori.reactor, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
         ItemPopupMenuFilter<CharacterFilterType>(
           tooltipText: s.sortBy,

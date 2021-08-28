@@ -9,8 +9,8 @@ import 'package:shiori/presentation/shared/shiori_icons.dart';
 class InventoryPage extends StatelessWidget {
   final tabs = const [
     Tab(icon: Icon(Icons.people)),
-    Tab(icon: Icon(GenshinDb.crossed_swords)),
-    Tab(icon: Icon(GenshinDb.cubes)),
+    Tab(icon: Icon(Shiori.crossed_swords)),
+    Tab(icon: Icon(Shiori.cubes)),
   ];
 
   @override

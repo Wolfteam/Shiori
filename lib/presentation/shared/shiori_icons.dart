@@ -27,8 +27,8 @@
 ///
 import 'package:flutter/widgets.dart';
 
-class GenshinDb {
-  GenshinDb._();
+class Shiori {
+  Shiori._();
 
   static const _kFontFam = 'Shiori';
   static const String? _kFontPkg = null;

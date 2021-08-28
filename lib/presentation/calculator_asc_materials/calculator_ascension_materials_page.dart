@@ -108,7 +108,7 @@ class _FabMenu extends StatelessWidget {
         HawkFabMenuItem(
           label: s.addWeapon,
           ontap: () => _openWeaponPage(context),
-          icon: const Icon(GenshinDb.crossed_swords),
+          icon: const Icon(Shiori.crossed_swords),
           color: theme.accentColor,
           labelColor: theme.accentColor,
         ),

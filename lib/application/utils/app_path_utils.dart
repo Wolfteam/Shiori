@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 
 class AppPathUtils {
-  //internal memory/android/data/com.miraisoft.genshindb/files/logs
+  //internal memory/android/data/com.miraisoft.shiori/files/logs
   static Future<String> get logsPath async {
     final dir = await getExternalStorageDirectory();
     final dirPath = '${dir!.path}/Logs';

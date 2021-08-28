@@ -32,7 +32,7 @@ class MaterialBottomSheet extends StatelessWidget {
 
     if (!forEndDrawer) {
       return CommonBottomSheet(
-        titleIcon: GenshinDb.filter,
+        titleIcon: Shiori.filter,
         title: s.filters,
         showOkButton: false,
         showCancelButton: false,
@@ -114,7 +114,7 @@ class _OtherFilters extends StatelessWidget {
           selectedValue: tempType,
           values: mat.MaterialType.values.where((el) => !_ignoredSubStats.contains(el)).toList(),
           itemText: (val) => s.translateMaterialType(val),
-          icon: Icon(GenshinDb.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
+          icon: Icon(Shiori.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
         ItemPopupMenuFilter<MaterialFilterType>(
           tooltipText: s.sortBy,

@@ -40,7 +40,7 @@ class WeaponBottomSheet extends StatelessWidget {
     final forEndDrawer = getDeviceType(MediaQuery.of(context).size) != DeviceScreenType.mobile;
     if (!forEndDrawer) {
       return CommonBottomSheet(
-        titleIcon: GenshinDb.filter,
+        titleIcon: Shiori.filter,
         title: s.filters,
         showOkButton: false,
         showCancelButton: false,
@@ -145,7 +145,7 @@ class _OtherFilters extends StatelessWidget {
           selectedValue: tempWeaponSubStatType,
           values: StatType.values.where((el) => !_ignoredSubStats.contains(el)).toList(),
           itemText: (val) => s.translateStatTypeWithoutValue(val),
-          icon: Icon(GenshinDb.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
+          icon: Icon(Shiori.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
         ItemPopupMenuFilter<WeaponFilterType>(
           tooltipText: s.sortBy,

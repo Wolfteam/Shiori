@@ -41,7 +41,7 @@ class SliverPageFilter extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline6,
                 ),
                 IconButton(
-                  icon: const Icon(GenshinDb.filter, size: 20),
+                  icon: const Icon(Shiori.filter, size: 20),
                   onPressed: () => onPressed(),
                 ),
               ],

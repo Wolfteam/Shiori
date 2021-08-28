@@ -13,7 +13,7 @@ class RightBottomSheet extends StatelessWidget {
     Key? key,
     required this.children,
     required this.bottom,
-    this.icon = GenshinDb.filter,
+    this.icon = Shiori.filter,
     this.title,
   }) : super(key: key);
 

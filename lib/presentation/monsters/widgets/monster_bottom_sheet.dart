@@ -24,7 +24,7 @@ class MonsterBottomSheet extends StatelessWidget {
 
     if (!forEndDrawer) {
       return CommonBottomSheet(
-        titleIcon: GenshinDb.filter,
+        titleIcon: Shiori.filter,
         title: s.filters,
         showCancelButton: false,
         showOkButton: false,

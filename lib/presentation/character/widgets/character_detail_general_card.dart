@@ -72,7 +72,7 @@ class CharacterDetailGeneralCard extends StatelessWidget {
         ),
         ItemDescription(
           title: s.gender,
-          widget: Icon(isFemale ? GenshinDb.female : GenshinDb.male, color: isFemale ? Colors.pink : Colors.blue),
+          widget: Icon(isFemale ? Shiori.female : Shiori.male, color: isFemale ? Colors.pink : Colors.blue),
           useColumn: false,
         ),
         ItemDescription(

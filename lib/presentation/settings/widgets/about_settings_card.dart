@@ -109,7 +109,7 @@ class AboutSettingsCard extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 5),
                   child: Text(s.supportMsg),
                 ),
-                const TextLink(text: 'GitHub', url: 'https://github.com/Wolfteam/GenshinDb/issues'),
+                const TextLink(text: 'GitHub', url: 'https://github.com/Wolfteam/Shiori/issues'),
                 Container(
                   margin: const EdgeInsets.only(top: 5),
                   child: Text('${s.youCanAlsoSendMeAnEmail}:', textAlign: TextAlign.center),
