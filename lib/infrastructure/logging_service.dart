@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
-import 'package:genshindb/domain/extensions/string_extensions.dart';
-import 'package:genshindb/domain/services/device_info_service.dart';
-import 'package:genshindb/domain/services/logging_service.dart';
-import 'package:genshindb/domain/services/telemetry_service.dart';
 import 'package:logger/logger.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
+import 'package:shiori/domain/services/device_info_service.dart';
+import 'package:shiori/domain/services/logging_service.dart';
+import 'package:shiori/domain/services/telemetry_service.dart';
 import 'package:sprintf/sprintf.dart';
 
 class LoggingServiceImpl implements LoggingService {

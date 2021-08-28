@@ -1,11 +1,11 @@
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:devicelocale/devicelocale.dart';
-import 'package:genshindb/domain/app_constants.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/domain/services/logging_service.dart';
-import 'package:genshindb/domain/services/settings_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/logging_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
 
 class SettingsServiceImpl extends SettingsService {
   final _appThemeKey = 'AppTheme';

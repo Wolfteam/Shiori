@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/presentation/shared/utils/size_utils.dart';
+import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:window_size/window_size.dart';
 
 import 'application/bloc.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/presentation/shared/app_fab.dart';
-import 'package:genshindb/presentation/shared/extensions/scroll_controller_extensions.dart';
+import 'package:shiori/presentation/shared/app_fab.dart';
+import 'package:shiori/presentation/shared/extensions/scroll_controller_extensions.dart';
 
 mixin AppFabMixin<T extends StatefulWidget> on State<T>, SingleTickerProviderStateMixin<T> {
   late ScrollController scrollController;

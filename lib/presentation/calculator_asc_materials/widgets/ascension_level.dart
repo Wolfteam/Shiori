@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/app_constants.dart';
-import 'package:genshindb/domain/assets.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/assets.dart';
 
 class AscensionLevel extends StatelessWidget {
   final bool isCurrentLevel;

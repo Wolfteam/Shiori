@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/presentation/shared/images/element_image.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/images/element_image.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class ElementReactionCard extends StatelessWidget {
   final String name;

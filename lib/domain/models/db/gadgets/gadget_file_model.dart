@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/domain/assets.dart';
-import 'package:genshindb/domain/models/models.dart';
+import 'package:shiori/domain/assets.dart';
+import 'package:shiori/domain/models/models.dart';
 
 part 'gadget_file_model.freezed.dart';
 part 'gadget_file_model.g.dart';

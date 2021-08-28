@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/application/url_page/url_page_bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/services/device_info_service.dart';
-import 'package:genshindb/domain/services/settings_service.dart';
+import 'package:shiori/application/url_page/url_page_bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/services/device_info_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
 
 import '../bloc.dart';
 

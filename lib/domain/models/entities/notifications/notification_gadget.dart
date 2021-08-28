@@ -1,6 +1,6 @@
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/entities.dart';
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/entities.dart';
 
 part 'notification_gadget.g.dart';
 
@@ -50,6 +50,6 @@ class NotificationGadget extends HiveObject implements NotificationBase {
     required this.showNotification,
     required this.title,
     required this.body,
-  })   : type = AppNotificationType.gadget.index,
+  })  : type = AppNotificationType.gadget.index,
         originalScheduledDate = completesAt;
 }

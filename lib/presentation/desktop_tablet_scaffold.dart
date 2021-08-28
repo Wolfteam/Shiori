@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/artifacts/artifacts_page.dart';
-import 'package:genshindb/presentation/characters/characters_page.dart';
-import 'package:genshindb/presentation/home/home_page.dart';
-import 'package:genshindb/presentation/map/map_page.dart';
-import 'package:genshindb/presentation/settings/settings_page.dart';
-import 'package:genshindb/presentation/shared/extensions/focus_scope_node_extensions.dart';
-import 'package:genshindb/presentation/shared/genshin_db_icons.dart';
-import 'package:genshindb/presentation/weapons/weapons_page.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/artifacts/artifacts_page.dart';
+import 'package:shiori/presentation/characters/characters_page.dart';
+import 'package:shiori/presentation/home/home_page.dart';
+import 'package:shiori/presentation/map/map_page.dart';
+import 'package:shiori/presentation/settings/settings_page.dart';
+import 'package:shiori/presentation/shared/extensions/focus_scope_node_extensions.dart';
+import 'package:shiori/presentation/shared/shiori_icons.dart';
+import 'package:shiori/presentation/weapons/weapons_page.dart';
 
 typedef OnWillPop = Future<bool> Function();
 

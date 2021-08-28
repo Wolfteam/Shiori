@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/extensions/iterable_extensions.dart';
+import 'package:shiori/domain/extensions/iterable_extensions.dart';
 
 class DropdownButtonWithTitle<T> extends StatelessWidget {
   final String title;

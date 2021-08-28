@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/presentation/shared/images/rarity.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/images/rarity.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class DetailGeneralCard extends StatelessWidget {
   final String itemName;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/home/widgets/card_item.dart';
-import 'package:genshindb/presentation/notifications/notifications_page.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/home/widgets/card_item.dart';
+import 'package:shiori/presentation/notifications/notifications_page.dart';
 
 class NotificationsCard extends StatelessWidget {
   final bool iconToTheLeft;

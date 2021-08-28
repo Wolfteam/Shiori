@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/app_fab.dart';
-import 'package:genshindb/presentation/shared/dialogs/confirm_dialog.dart';
-import 'package:genshindb/presentation/shared/dialogs/info_dialog.dart';
-import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:genshindb/presentation/shared/mixins/app_fab_mixin.dart';
-import 'package:genshindb/presentation/shared/nothing_found_column.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/app_fab.dart';
+import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
+import 'package:shiori/presentation/shared/dialogs/info_dialog.dart';
+import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
+import 'package:shiori/presentation/shared/nothing_found_column.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 import 'widgets/add_edit_session_dialog.dart';
 import 'widgets/reoder_sessions_dialog.dart';

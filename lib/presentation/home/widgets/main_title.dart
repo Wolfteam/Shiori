@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class MainTitle extends StatelessWidget {
   final String title;

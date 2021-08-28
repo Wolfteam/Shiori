@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/extensions/string_extensions.dart';
-import 'package:genshindb/domain/extensions/weapon_type_extensions.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/details/detail_general_card.dart';
-import 'package:genshindb/presentation/shared/extensions/element_type_extensions.dart';
-import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:genshindb/presentation/shared/genshin_db_icons.dart';
-import 'package:genshindb/presentation/shared/images/element_image.dart';
-import 'package:genshindb/presentation/shared/item_description.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
+import 'package:shiori/domain/extensions/weapon_type_extensions.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/details/detail_general_card.dart';
+import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/images/element_image.dart';
+import 'package:shiori/presentation/shared/item_description.dart';
+import 'package:shiori/presentation/shared/shiori_icons.dart';
 
 import 'character_detail.dart';
 

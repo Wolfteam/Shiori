@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/models.dart' as models;
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/app_fab.dart';
-import 'package:genshindb/presentation/shared/dialogs/info_dialog.dart';
-import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:genshindb/presentation/shared/mixins/app_fab_mixin.dart';
-import 'package:genshindb/presentation/shared/nothing_found_column.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:grouped_list/grouped_list.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/models.dart' as models;
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/app_fab.dart';
+import 'package:shiori/presentation/shared/dialogs/info_dialog.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
+import 'package:shiori/presentation/shared/nothing_found_column.dart';
+import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 
 import 'widgets/add_edit_notification_bottom_sheet.dart';
 import 'widgets/items/notification_list_subtitle.dart';

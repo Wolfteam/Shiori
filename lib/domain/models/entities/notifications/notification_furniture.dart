@@ -1,6 +1,6 @@
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/entities.dart';
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/entities.dart';
 
 part 'notification_furniture.g.dart';
 
@@ -54,6 +54,6 @@ class NotificationFurniture extends HiveObject implements NotificationBase {
     required this.title,
     required this.body,
     required this.furnitureCraftingTimeType,
-  })   : type = AppNotificationType.furniture.index,
+  })  : type = AppNotificationType.furniture.index,
         originalScheduledDate = completesAt;
 }

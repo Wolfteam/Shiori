@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/assets.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/domain/services/calculator_service.dart';
-import 'package:genshindb/domain/services/data_service.dart';
-import 'package:genshindb/domain/services/genshin_service.dart';
-import 'package:genshindb/domain/services/telemetry_service.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/assets.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/calculator_service.dart';
+import 'package:shiori/domain/services/data_service.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'calculator_asc_materials_bloc.freezed.dart';
 part 'calculator_asc_materials_event.dart';

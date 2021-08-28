@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/presentation/character/widgets/character_detail.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:shiori/presentation/character/widgets/character_detail.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 import 'constants.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/generated/l10n.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/generated/l10n.dart';
 
 import 'extensions/element_type_extensions.dart';
 import 'extensions/i18n_extensions.dart';

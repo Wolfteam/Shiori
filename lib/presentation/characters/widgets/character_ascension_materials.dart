@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/generated/l10n.dart';
+import 'package:shiori/generated/l10n.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class CharacterAscensionMaterials extends StatelessWidget {

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/presentation/artifacts/widgets/artifact_bottom_sheet.dart' as artifacts;
-import 'package:genshindb/presentation/calculator_asc_materials/widgets/add_edit_item_bottom_sheet.dart' as calc_asc_mat;
-import 'package:genshindb/presentation/characters/widgets/character_bottom_sheet.dart' as characters;
-import 'package:genshindb/presentation/materials/widgets/material_bottom_sheet.dart' as materials;
-import 'package:genshindb/presentation/monsters/widgets/monster_bottom_sheet.dart' as monsters;
-import 'package:genshindb/presentation/notifications/widgets/add_edit_notification_bottom_sheet.dart' as notifications;
-import 'package:genshindb/presentation/shared/bottom_sheets/custom_bottom_sheet.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/weapons/widgets/weapon_bottom_sheet.dart' as weapons;
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/presentation/artifacts/widgets/artifact_bottom_sheet.dart' as artifacts;
+import 'package:shiori/presentation/calculator_asc_materials/widgets/add_edit_item_bottom_sheet.dart' as calc_asc_mat;
+import 'package:shiori/presentation/characters/widgets/character_bottom_sheet.dart' as characters;
+import 'package:shiori/presentation/materials/widgets/material_bottom_sheet.dart' as materials;
+import 'package:shiori/presentation/monsters/widgets/monster_bottom_sheet.dart' as monsters;
+import 'package:shiori/presentation/notifications/widgets/add_edit_notification_bottom_sheet.dart' as notifications;
+import 'package:shiori/presentation/shared/bottom_sheets/custom_bottom_sheet.dart';
+import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/weapons/widgets/weapon_bottom_sheet.dart' as weapons;
 
 class ModalBottomSheetUtils {
   static Widget getBottomSheetFromEndDrawerItemType(EndDrawerItemType? type, {Map<String, dynamic>? args}) {

@@ -1,6 +1,6 @@
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/entities.dart';
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/entities.dart';
 
 part 'notification_expedition.g.dart';
 
@@ -58,6 +58,6 @@ class NotificationExpedition extends HiveObject implements NotificationBase {
     required this.body,
     required this.expeditionTimeType,
     required this.withTimeReduction,
-  })   : type = AppNotificationType.expedition.index,
+  })  : type = AppNotificationType.expedition.index,
         originalScheduledDate = completesAt;
 }

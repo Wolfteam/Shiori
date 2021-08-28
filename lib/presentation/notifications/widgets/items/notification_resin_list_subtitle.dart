@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/app_constants.dart';
+import 'package:shiori/domain/app_constants.dart';
 
 import 'notification_list_subtitle.dart';
 

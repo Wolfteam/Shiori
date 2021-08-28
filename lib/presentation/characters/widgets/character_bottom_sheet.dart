@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/common_button_bar.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/right_bottom_sheet.dart';
-import 'package:genshindb/presentation/shared/elements_button_bar.dart';
-import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:genshindb/presentation/shared/genshin_db_icons.dart';
-import 'package:genshindb/presentation/shared/item_popupmenu_filter.dart';
-import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:genshindb/presentation/shared/rarity_rating.dart';
-import 'package:genshindb/presentation/shared/sort_direction_popupmenu_filter.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/shared/weapons_button_bar.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/common_button_bar.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/right_bottom_sheet.dart';
+import 'package:shiori/presentation/shared/elements_button_bar.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/item_popupmenu_filter.dart';
+import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/rarity_rating.dart';
+import 'package:shiori/presentation/shared/shiori_icons.dart';
+import 'package:shiori/presentation/shared/sort_direction_popupmenu_filter.dart';
+import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/weapons_button_bar.dart';
 
 class CharacterBottomSheet extends StatelessWidget {
   const CharacterBottomSheet({Key? key}) : super(key: key);

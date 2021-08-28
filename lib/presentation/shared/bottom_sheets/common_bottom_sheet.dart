@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/bottom_sheet_title.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/common_bottom_sheet_buttons.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/modal_sheet_separator.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/bottom_sheet_title.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/common_bottom_sheet_buttons.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/modal_sheet_separator.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class CommonBottomSheet extends StatelessWidget {
   final String title;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/bottom_sheet_title.dart';
-import 'package:genshindb/presentation/shared/genshin_db_icons.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/bottom_sheet_title.dart';
+import 'package:shiori/presentation/shared/shiori_icons.dart';
 
 class RightBottomSheet extends StatelessWidget {
   final List<Widget> children;

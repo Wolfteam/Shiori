@@ -1,18 +1,18 @@
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:darq/darq.dart';
-import 'package:genshindb/domain/app_constants.dart';
-import 'package:genshindb/domain/assets.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/enums/item_type.dart';
-import 'package:genshindb/domain/extensions/iterable_extensions.dart';
-import 'package:genshindb/domain/extensions/string_extensions.dart';
-import 'package:genshindb/domain/models/entities.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/domain/services/calculator_service.dart';
-import 'package:genshindb/domain/services/data_service.dart';
-import 'package:genshindb/domain/services/genshin_service.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/assets.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/enums/item_type.dart';
+import 'package:shiori/domain/extensions/iterable_extensions.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
+import 'package:shiori/domain/models/entities.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/calculator_service.dart';
+import 'package:shiori/domain/services/data_service.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
 
 class DataServiceImpl implements DataService {
   final GenshinService _genshinService;

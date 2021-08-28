@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/domain/enums/material_type.dart';
+import 'package:shiori/domain/enums/material_type.dart';
 
 part 'material_card_model.freezed.dart';
 
