@@ -1,4 +1,4 @@
-# GenshinDb
+# Shiori
 <p align="center">
   <img height="120px" src="assets/icon/icon.png">
 </p>
