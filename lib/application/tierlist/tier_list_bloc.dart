@@ -22,6 +22,8 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
   final LoggingService _loggingService;
   final List<int> defaultColors = [
     0xfff44336,
+    0xfff56c62,
+    0xffff7d06,
     0xffff9800,
     0xffffc107,
     0xffffeb3b,
