@@ -69,6 +69,7 @@ class _LandscapeLayout extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
+                  flex: 40,
                   child: MaterialDetailTop(
                     name: state.name,
                     image: state.fullImage,
@@ -78,6 +79,7 @@ class _LandscapeLayout extends StatelessWidget {
                   ),
                 ),
                 Expanded(
+                  flex: 60,
                   child: MaterialDetailBottom(
                     rarity: state.rarity,
                     charImgs: state.charImages,

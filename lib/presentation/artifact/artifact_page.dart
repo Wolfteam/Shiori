@@ -50,8 +50,6 @@ class _PortraitLayout extends StatelessWidget {
                     color: rarityColor,
                     fullImage: state.image,
                     charDescriptionHeight: 120,
-                    widthOnPortrait: 240,
-                    heightOnPortrait: 240,
                     appBar: const DetailAppBar(),
                     isAnSmallImage: true,
                     generalCard: DetailGeneralCard(
@@ -122,7 +120,6 @@ class _LandscapeLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: BlocBuilder<ArtifactBloc, ArtifactState>(
@@ -146,12 +143,12 @@ class _LandscapeLayout extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
+                    flex: 40,
                     child: DetailTopLayout(
                       color: rarityColor,
                       appBar: const DetailAppBar(),
                       fullImage: state.image,
                       charDescriptionHeight: 120,
-                      heightOnLandscape: size.height * 0.7,
                       generalCard: DetailGeneralCard(
                         rarity: state.rarityMax,
                         itemName: state.name,
@@ -160,6 +157,7 @@ class _LandscapeLayout extends StatelessWidget {
                     ),
                   ),
                   Expanded(
+                    flex: 60,
                     child: DetailTabLandscapeLayout(
                       color: rarityColor,
                       tabs: tabs,

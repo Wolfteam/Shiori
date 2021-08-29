@@ -64,6 +64,13 @@ class CharacterCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
+    final size = MediaQuery.of(context).size;
+    var height = size.height / 2.5;
+    if (height > 600) {
+      height = 600;
+    } else if (height < 280) {
+      height = 280;
+    }
     return InkWell(
       borderRadius: Styles.mainCardBorderRadius,
       onTap: () => _gotoCharacterPage(context),
@@ -80,11 +87,17 @@ class CharacterCard extends StatelessWidget {
               alignment: AlignmentDirectional.topCenter,
               fit: StackFit.passthrough,
               children: [
-                FadeInImage(
-                  height: 280,
-                  placeholder: MemoryImage(kTransparentImage),
-                  image: AssetImage(image),
-                  fit: BoxFit.cover,
+                SizedBox(
+                  height: height,
+                  child: FittedBox(
+                    fit: BoxFit.cover,
+                    alignment: Alignment.topCenter,
+                    clipBehavior: Clip.hardEdge,
+                    child: FadeInImage(
+                      placeholder: MemoryImage(kTransparentImage),
+                      image: AssetImage(image),
+                    ),
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
