@@ -42,7 +42,13 @@ class ItemCard extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     final cardColor = rarity.getRarityColors().last;
-
+    final size = MediaQuery.of(context).size;
+    var height = size.height / 2.5;
+    if (height > 500) {
+      height = 500;
+    } else if (height < 280) {
+      height = 280;
+    }
     return InkWell(
       borderRadius: Styles.mainCardBorderRadius,
       onTap: () => _editItem(context),
@@ -57,11 +63,17 @@ class ItemCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FadeInImage(
-                height: 280,
-                placeholder: MemoryImage(kTransparentImage),
-                image: AssetImage(image),
-                fit: BoxFit.cover,
+              SizedBox(
+                height: height,
+                child: FittedBox(
+                  fit: BoxFit.cover,
+                  alignment: Alignment.topCenter,
+                  clipBehavior: Clip.hardEdge,
+                  child: FadeInImage(
+                    placeholder: MemoryImage(kTransparentImage),
+                    image: AssetImage(image),
+                  ),
+                ),
               ),
               Container(
                 decoration: BoxDecoration(
