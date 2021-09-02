@@ -4718,29 +4718,116 @@
     {
       "key": "Aloy",
       "name": "Aloy",
-      "description": "N/A",
+      "description": "Formerly an outcast, now a hunter of unparalleled aptitude. Ready to do the right thing with her bow at any given time.",
       "skills": [
         {
           "key": "s1",
-          "title": "N/A - S1",
+          "title": "Rapid Fire",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Perform up to 4 consecutive shots with a bow.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Perform a more precise Aimed Shot with increased DMG.\nWhile aiming, biting frost will accumulate on the arrowhead. A fully charged frost arrow will deal Cryo DMG.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "N/A - S2",
-          "description": null,
-          "abilities": []
+          "title": "Frozen Wilds",
+          "description": "Aloy throws a Freeze Bomb in the targeted direction that explodes on impact, dealing Cryo DMG. After it explodes, the Freeze Bomb will split up into many Chillwater Bomblets that explode on contact with opponents or after a short delay, dealing Cryo DMG.\nWhen a Freeze Bomb or Chillwater Bomblet hits an opponent, the opponent's ATK is decreased and Aloy receives 1 Coil stack.\nAloy can gain up to 1 Coil stack every 0.1s.",
+          "abilities": [
+            {
+              "name": "Coil",
+              "description": null,
+              "descriptions": [
+                "Each stack increases Aloy's Normal Attack DMG.",
+                "When Aloy has 4 Coil stacks, all stacks of Coil are cleared. She then enters the Rushing Ice state, which further increases the DMG dealt by her Normal Attacks and converts her Normal Attack DMG to Cryo DMG.\nWhile in the Rushing Ice state, Aloy cannot obtain new Coil stacks.\nCoil effects will be cleared 30s after Aloy leaves the field."
+              ]
+            }
+          ]
         },
         {
           "key": "s3",
-          "title": "N/A - S3",
-          "description": null,
+          "title": "Prophecies of Dawn",
+          "description": "Aloy throws a Power Cell filled with Cryo in the targeted direction, then detonates it with an arrow, dealing AoE Cryo DMG.",
           "abilities": []
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Easy Does It",
+          "description": "When Aloy is in the party, animals who produce Fowl, Raw Meat, or Chilled Meat will not be startled when party members approach them.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Combat Override",
+          "description": "When Aloy receives the Coil effect from Frozen Wilds, her ATK is increased by 16%, while nearby party members' ATK is increased by 8%. This effect lasts 10s.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Strong Strike",
+          "description": "When Aloy is in the Rushing Ice state conferred by Frozen Wilds, her Cryo DMG Bonus increases by 3.5% every 1s. A maximum Cryo DMG Bonus increase of 35% can be gained in this way.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Star of Another World",
+          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Star of Another World",
+          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Star of Another World",
+          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Star of Another World",
+          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Star of Another World",
+          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Star of Another World",
+          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
     },
     {
       "key": "SangonomiyaKokomi",
@@ -4772,56 +4859,232 @@
     {
       "key": "KujouSara",
       "name": "Kujou Sara",
-      "description": "N/A",
+      "description": "A general of the Tenryou Commission. Bold, decisive, and skilled in battle.",
       "skills": [
         {
           "key": "s1",
-          "title": "N/A - S1",
+          "title": "Tengu Bowmanship",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Perform up to 5 consecutive shots with a bow.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Perform a more precise Aimed Shot with increased DMG.\nWhile aiming, crackling lightning will accumulate on the arrowhead. An arrow fully charged with the storm's might will deal Electro DMG.\nWhen in the Crowfeather Cover state, a fully-charged arrow will leave a Crowfeather behind after it hits.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "N/A - S2",
-          "description": null,
+          "title": "Tengu Stormcall",
+          "description": "Retreats rapidly with the speed of a tengu, summoning the protection of the Crowfeather.\nGains Crowfeather Cover for 18s, and when Kujou Sara fires a fully-charged Aimed Shot, Crowfeather Cover will be consumed, and will leave a Crowfeather at the target location.\nCrowfeathers will trigger Tengu Juurai: Ambush after a short time, dealing Electro DMG and granting the active character within its AoE an ATK Bonus based on Kujou Sara's Base ATK.\nThe ATK Bonuses from different Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "N/A - S3",
-          "description": null,
+          "title": "Subjugation: Koukou Sendou",
+          "description": "Casts down Tengu Juurai: Titanbreaker, dealing AoE Electro DMG. Afterwards, Tengu Juurai: Titanbreaker spreads out into 4 consecutive bouts of Tengu Juurai: Stormcluster, dealing AoE Electro DMG.\nTengu Juurai: Titanbreaker and Tengu Juurai: Stormcluster can provide the active character within their AoE with the same ATK Bonus as given by the Elemental Skill, Tengu Stormcall.\nThe ATK Bonus provided by various kinds of Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
           "abilities": []
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Land Survey",
+          "description": "When dispatched on an expedition in Inazuma, time consumed is reduced by 25%.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Immovable Will",
+          "description": "While in the Crowfeather Cover state provided by Tengu Stormcall, Aimed Shot charge times are decreased by 60%.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Decorum",
+          "description": "When Tengu Juurai: Ambush hits opponents, Kujou Sara will restore 1.2 Energy to all party members for every 100% Energy Recharge she has. This effect can be triggered once every 3s.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Crow's Eye",
+          "description": "When Tengu Juurai grant characters ATK Bonuses or hits opponents, the CD of Tengu Stormcall is decreased by 1s.\nThis effect can be triggered once every 3s.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Dark Wings",
+          "description": "Unleashing Tengu Stormcall will leave a weaker Crowfeather at Kujou Sara's original position that will deal 30% of its original DMG.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "The War Within",
+          "description": "Increases the Level of Subjugation: Koukou Sendou by 3.\nMaximum upgrade level is 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Conclusive Proof",
+          "description": "The number of Tengu Juurai: Stormcluster released by Subjugation: Koukou Sendou is increased to 6.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Spellsinger",
+          "description": "Increases the Level of Tengu Stormcall by 3.\nMaximum upgrade level is 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Sin of Pride",
+          "description": "The Electro DMG of characters who have had their ATK increased by Tengu Juurai has its Crit DMG increased by 60%.",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
     },
     {
       "key": "RaidenShogun",
       "name": "Raiden Shogun",
-      "description": "N/A",
+      "description": "Her Excellency, the Almighty Narukami Ogosho, who promised the people of Inazuma an unchanging Eternity.",
       "skills": [
         {
           "key": "s1",
-          "title": "N/A - S1",
+          "title": "Origin",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Performs up to 5 consecutive spear strikes.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Consumes a certain amount of Stamina to perform an upward slash.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "N/A - S2",
-          "description": null,
-          "abilities": []
+          "title": "Baleful Omen",
+          "description": "The Raiden Shogun unveils a shard of her Euthymia, dealing Electro DMG to nearby opponents, and granting nearby party members the Eye of Stormy Judgment.",
+          "abilities": [
+            {
+              "name": "Eye of Stormy Judgment",
+              "description": "When characters with this buff attack and hit opponents, the Eye will unleash a coordinated attack, dealing AoE Electro DMG at the opponent's position.\nThe Eye can initiate one coordinated attack every 0.9s per party.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s3",
-          "title": "N/A - S3",
-          "description": null,
-          "abilities": []
+          "title": "Secret Art: Musou Shinsetsu",
+          "description": "Gathering truths unnumbered and wishes uncounted, the Raiden Shogun unleashes the Musou no Hitotachi and deals AoE Electro DMG, using Musou Isshin in combat for a certain duration afterward. The DMG dealt by Musou no Hitotachi and Musou Isshin's attacks is based on the number of Shogan Byakugen no Rin's Resolve stacks consumed when this skill is used.",
+          "abilities": [
+            {
+              "name": "Musou Isshin",
+              "description": "While in this state, the Raiden Shogun will wield her tachi in battle, while her Normal, Charged, and Plunging Attacks will be infused with Electro DMG, which cannot be overridden. When such attacks hit opponents, she will regenerate Energy for all nearby party members. Energy can be restored this way once every 1s, and this effect can be triggered 5 times throughout this skill's duration.\nWhile in this state, the Raiden Shogun's resistance to interruption is increased, and she is immune to Electro-Charged reaction DMG.",
+              "descriptions": []
+            },
+            {
+              "name": "Shogan Byakugen no Rin",
+              "description": "When nearby party members use their Elemental Bursts, the Raiden Shogun will build up Resolve based on the amount of Energy they consume.\nThe maximum amount of Resolve stacks is 60.",
+              "descriptions": []
+            }
+          ]
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "All-Preserver",
+          "description": "Mora expended when ascending Swords and Polearms is decreased by 50%.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Wishes Unnumbered",
+          "description": "When nearby party members gain Elemental Orbs or Particles, Chakra Desiderata gains 2 Resolve stacks.\nThis effect can occur once every 3s.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Enlightened One",
+          "description": "Each 1% above 100% Energy Recharge that the Raiden Shogun possesses grants her:",
+          "descriptions": [
+            "0.6% greater Energy restoration from Musou Isshin",
+            "0.4% Electro DMG Bonus."
+          ]
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Ominous Inscription",
+          "description": "Chakra Desiderata will gather Resolve even faster. When Electro characters use their Elemental Bursts, the Resolve gained is increased by 80%. When characters of other Elemental Types use their Elemental Bursts, the Resolve gained is increased by 20%.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Steelbreaker",
+          "description": "Secret Art: Musou Shinsetsu's Musou no Hitotachi and Musou Isshin attacks will ignore 60% of opponents' DEF.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Shinkage Bygones",
+          "description": "Increases the Level of Secret Art: Musou Shinsetsu by 3.\nMaximum upgrade level is 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Pledge of Propriety",
+          "description": "When the Musou Isshin state applied by Secret Art: Musou Shinsetsu expires, all nearby party members (excluding the Raiden Shogun) gain 30% bonus ATK for 10s.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Shogun's Descent",
+          "description": "Increases the Level of Transcendence: Baleful Omen by 3.\nMaximum upgrade level is 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Wishbearer",
+          "description": "While in the Musou Isshin state applied by Secret Art: Musou Shinsetsu, the Raiden Shogun's Normal, Charged, and Plunging Attacks will decrease all nearby party members' (but not including the Raiden Shogun herself) Elemental Burst CD by 1s when they hit opponents.\nThis effect can trigger once every 1s, and can trigger a total of 5 times during the state's duration.",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
     }
   ],
   "weapons": [
@@ -5544,6 +5807,18 @@
       "name": "Agitador del Relámpago",
       "description": "Un arco que la Shogun le otorgó a alguien. Emite unos destellos eléctricos que nunca se apagarán.",
       "refinement": "Aumenta el ATQ en un {{0}}% y otorga el poder de los emblemas del trueno. Dependiendo de si se tienen 1, 2 o 3 emblemas del trueno, el daño infligido con los Ataques Normales aumenta en un {{1}}/{{2}}/{{3}}%. En las siguientes situaciones, el personaje obtiene un emblema: al infligir daño con Ataques Normales. El emblema dura 5 s; al realizar una Habilidad Elemental. El emblema dura 10 s; cuando la Energía Elemental del personaje está por debajo del 100%. El emblema del trueno obtenido de esta manera dura hasta que el personaje regenere toda su Energía Elemental. La duración de cada emblema del trueno se calcula de manera independiente."
+    },
+    {
+      "key": "Engulfing Lightning",
+      "name": "Engulfing Lightning",
+      "description": "A naginata used to \"cut grass.\" Any army that stands before this weapon will probably be likewise cut down...",
+      "refinement": "ATK increased by {{0}}% of Energy Recharge over the base 100%. You can gain a maximum bonus of {{1}}% ATK. Gain {{2}}% Energy Recharge for 12s after using an Elemental Burst."
+    },
+    {
+      "key": "The Catch",
+      "name": "The Catch",
+      "description": "In the distant past, this was the beloved spear of a famed Inazuman bandit.",
+      "refinement": "Increases Elemental Burst DMG by {{0}}% and Elemental Burst CRIT Rate by {{1}}%"
     }
   ],
   "artifacts": [
@@ -7120,6 +7395,66 @@
       "key": "Amethyst Lump",
       "name": "Trozo de amatista",
       "description": "Cristal mineral bruto. Obtenible únicamente en las islas de Inazuma. Solo un profesional podrá sacar su auténtico valor."
+    },
+    {
+      "key": "SpectralA",
+      "name": "Spectral Husk",
+      "description": "An energy core that allows the Specters to float. It contains a small amount of elemental energy.\nMost of the rest has already dispersed."
+    },
+    {
+      "key": "SpectralB",
+      "name": "Spectral Heart",
+      "description": "An energy core that allows the Specters to float.\nThese elemental life-forms have strange behavioral patterns and will periodically surge in number before disappearing."
+    },
+    {
+      "key": "SpectralC",
+      "name": "Spectral Nucleus",
+      "description": "A complete energy core that can sometimes be found after defeating Specters.\nThere is a debate among those who just have to divide the world into winners and losers: what floats better — a Specter or an Anemo Slime?"
+    },
+    {
+      "key": "Dew of Repudiation",
+      "name": "Dew of Repudiation",
+      "description": "A strange water droplet left behind by the collapse of the Hydro Hypostasis.\nIt has strong rejection properties, and this forms the basis of one of the Hydro Hypostasis' attack patterns as well. They say that water contains memories and willpower, and that these things can grow when bodies of water meld together. However, the waves conjured by the Hydro Hypostasis are incompatible with the currents that flow above and below ground. Even if it were to flow into the surpassingly pure waters of Petrichor, this drop of water will likely resist assimilation as strongly as mercury."
+    },
+    {
+      "key": "Storm Beads",
+      "name": "Storm Beads",
+      "description": "Crackling Electro pearls left behind by the Thunder Manifestation.\nIt is said that Thunder Manifestations will only descend upon lands where powerful hatred dwells. The singers say that it is the unbearable disappointments and sufferings of life that drive them to forever wander the broken earth, unleashing sky-searing lightning as they go."
+    },
+    {
+      "key": "Sango Pearl",
+      "name": "Sango Pearl",
+      "description": "A precious pearl that grows in the coral of Watatsumi. Gives of a cool sheen like that of the moonlight."
+    },
+    {
+      "key": "Dew of Repudiation",
+      "name": "Dew of Repudiation",
+      "description": "A strange water droplet left behind by the collapse of the Hydro Hypostasis.\nIt has strong rejection properties, and this forms the basis of one of the Hydro Hypostasis' attack patterns as well. They say that water contains memories and willpower, and that these things can grow when bodies of water meld together. However, the waves conjured by the Hydro Hypostasis are incompatible with the currents that flow above and below ground. Even if it were to flow into the surpassingly pure waters of Petrichor, this drop of water will likely resist assimilation as strongly as mercury."
+    },
+    {
+      "key": "Dendrobium",
+      "name": "Dendrobium",
+      "description": "A vibrant plant that has also been named the \"lycoris\" by the poets. It was once thought extinct in the Inazuman archipelago, only to re-emerge now upon the battlefields. It is said that it blooms most enchantingly where much blood was spilled."
+    },
+    {
+      "key": "Amakumo Fruit",
+      "name": "Amakumo Fruit",
+      "description": "The fruit of the Amakumo Grass, which grows on Seirai Island. You can hear it crackling with a tiny current if you hold it up to your ear."
+    },
+    {
+      "key": "Molten Moment",
+      "name": "Molten Moment",
+      "description": "A certain deformed fragment containing great might. You obtained this from defeating Signora, who unleashed her original power.\n\"I had a long, long dream.\n\"I dreamed that you and I met again in the pure white world that we created.\n\"But I woke up at last, having long been consumed by the raging flames, while you had long returned to the earth along with that poisoned blood.\n\"But none of it matters anymore. I must continue forging ahead. I must incinerate everything behind me. I must believe in that pure, spotless, everlasting realm that he spoke of — that I saw in the 'delusion' he let me see, at the end of the horizon of Her Majesty's dreams.\""
+    },
+    {
+      "key": "Hellfire Butterfly",
+      "name": "Hellfire Butterfly",
+      "description": "A warped shard that houses great might. You obtained this from defeating Signora, who unleashed her original power.\nThe seal of ice was broken under duress, and as her former will surged forth from its pale white prison and she remembered her old name once more, the undying butterfly danced amidst burning flesh and blood. And she remembered her past, wandering the land, spreading the flame, burning away all evil — and she recalled the face of the person she could never meet again."
+    },
+    {
+      "key": "Ashen Heart",
+      "name": "Ashen Heart",
+      "description": "A deformed fragment that contains powerful emotions. You obtained this from defeating Signora, who unleashed her original power.\nEven tears cannot extinguish the flames. Molten-hot agony and rage rush through her veins, oozing from her tear ducts.\nThe First Fatuus found her just before her heart could be destroyed by the eternal blaze. He understood that only deeper hate and obsession could quench the fire that devoured her and make her his ally..."
     }
   ],
   "debuffs": [
