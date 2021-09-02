@@ -72,6 +72,7 @@ class _LandscapeLayout extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
+                  flex: 40,
                   child: WeaponDetailTop(
                     name: state.name,
                     atk: state.atk,
@@ -84,6 +85,7 @@ class _LandscapeLayout extends StatelessWidget {
                   ),
                 ),
                 Expanded(
+                  flex: 60,
                   child: WeaponDetailBottom(
                     rarity: state.rarity,
                     description: state.description,

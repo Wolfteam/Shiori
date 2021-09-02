@@ -6,8 +6,6 @@ import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 
 import 'material_detail_general_card.dart';
 
-const double imageHeight = 320;
-
 class MaterialDetailTop extends StatelessWidget {
   final String name;
   final int rarity;
@@ -26,14 +24,10 @@ class MaterialDetailTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return DetailTopLayout(
       fullImage: image,
       charDescriptionHeight: 170,
-      heightOnPortrait: isPortrait ? 250 : null,
-      widthOnPortrait: isPortrait ? 250 : null,
       isAnSmallImage: MediaQuery.of(context).orientation == Orientation.portrait,
-      heightOnLandscape: MediaQuery.of(context).size.height * 0.7,
       decoration: BoxDecoration(gradient: rarity.getRarityGradient()),
       appBar: const DetailAppBar(),
       generalCard: MaterialDetailGeneralCard(

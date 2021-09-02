@@ -147,13 +147,13 @@ class SettingsServiceImpl extends SettingsService {
     }
 
     if (_prefs.get(_doubleBackToCloseKey) == null) {
-      _logger.info(runtimeType, 'Double back to close will be set to its default (false)');
-      doubleBackToClose = false;
+      _logger.info(runtimeType, 'Double back to close will be set to its default (true)');
+      doubleBackToClose = true;
     }
 
     if (_prefs.get(_useOfficialMapKey) == null) {
-      _logger.info(runtimeType, 'Use the official map will be set to its default (false)');
-      useOfficialMap = false;
+      _logger.info(runtimeType, 'Use the official map will be set to its default (true)');
+      useOfficialMap = true;
     }
 
     if (_prefs.getBool(_useTwentyFourHoursFormatKey) == null) {

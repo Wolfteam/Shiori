@@ -13,7 +13,7 @@
       "isFemale": false,
       "region": "mondstadt",
       "role": "supportDps",
-      "tier": "s",
+      "tier": "a",
       "birthday": "09/13",
       "ascensionMaterials": [
         {
@@ -2679,7 +2679,7 @@
       "isFemale": false,
       "region": "mondstadt",
       "role": "utility",
-      "tier": "ss",
+      "tier": "sss",
       "birthday": "02/29",
       "ascensionMaterials": [
         {
@@ -3351,7 +3351,7 @@
       "isFemale": false,
       "region": "liyue",
       "role": "supportDps",
-      "tier": "a",
+      "tier": "b",
       "birthday": "09/07",
       "ascensionMaterials": [
         {
@@ -8073,7 +8073,7 @@
       "isFemale": true,
       "region": "mondstadt",
       "role": "utility",
-      "tier": "s",
+      "tier": "a",
       "birthday": "03/14",
       "ascensionMaterials": [
         {
@@ -9452,7 +9452,7 @@
       "isFemale": false,
       "region": "inazuma",
       "role": "supportDps",
-      "tier": "s",
+      "tier": "sss",
       "birthday": "10/29",
       "ascensionMaterials": [
         {
@@ -10123,7 +10123,7 @@
       "isFemale": true,
       "region": "liyue",
       "role": "mainDps",
-      "tier": "s",
+      "tier": "a",
       "birthday": "11/20",
       "ascensionMaterials": [
         {
@@ -12153,7 +12153,7 @@
       "isFemale": true,
       "region": "mondstadt",
       "role": "supportDps",
-      "tier": "s",
+      "tier": "ss",
       "birthday": "08/31",
       "ascensionMaterials": [
         {
@@ -14214,7 +14214,7 @@
       "isFemale": true,
       "region": "liyue",
       "role": "utility",
-      "tier": "a",
+      "tier": "b",
       "birthday": "03/03",
       "ascensionMaterials": [
         {
@@ -16214,7 +16214,7 @@
       "isFemale": true,
       "region": "mondstadt",
       "role": "utility",
-      "tier": "s",
+      "tier": "ss",
       "birthday": "11/26",
       "ascensionMaterials": [
         {
@@ -16881,7 +16881,7 @@
       "isFemale": false,
       "region": "snezhnaya",
       "role": "mainDps",
-      "tier": "s",
+      "tier": "ss",
       "birthday": "07/20",
       "ascensionMaterials": [
         {
@@ -19701,7 +19701,7 @@
       "isFemale": false,
       "region": "mondstadt",
       "role": "utility",
-      "tier": "ss",
+      "tier": "sss",
       "birthday": "06/16",
       "ascensionMaterials": [
         {
@@ -20350,7 +20350,7 @@
       "isFemale": true,
       "region": "liyue",
       "role": "supportDps",
-      "tier": "s",
+      "tier": "ss",
       "birthday": "11/02",
       "ascensionMaterials": [
         {
@@ -21027,7 +21027,7 @@
       "isFemale": false,
       "region": "liyue",
       "role": "mainDps",
-      "tier": "s",
+      "tier": "ss",
       "birthday": "04/17",
       "ascensionMaterials": [
         {
@@ -21679,7 +21679,7 @@
       "isFemale": false,
       "region": "liyue",
       "role": "supportDps",
-      "tier": "ss",
+      "tier": "sss",
       "birthday": "10/09",
       "ascensionMaterials": [
         {
@@ -24408,7 +24408,7 @@
       "isFemale": true,
       "region": "inazuma",
       "role": "mainDps",
-      "tier": "s",
+      "tier": "ss",
       "birthday": "09/28",
       "ascensionMaterials": [
         {
@@ -25066,11 +25066,11 @@
       "fullImage": "Yoimiya.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "inazuma",
       "role": "mainDps",
-      "tier": "s",
+      "tier": "a",
       "birthday": "06/21",
       "ascensionMaterials": [
         {
@@ -25737,11 +25737,11 @@
       "fullImage": "Sayu.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "inazuma",
       "role": "supportDps",
-      "tier": "a",
+      "tier": "s",
       "birthday": "10/19",
       "ascensionMaterials": [
         {
@@ -26405,11 +26405,11 @@
       "fullImage": "Traveler_Female.png",
       "secondFullImage": "Traveler_Male.png",
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": false,
       "region": "anotherWorld",
       "role": "supportDps",
-      "tier": "b",
+      "tier": "c",
       "ascensionMaterials": [
         {
           "rank": 1,
@@ -27442,12 +27442,12 @@
       "image": "Aloy.png",
       "fullImage": "Aloy.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": true,
       "region": "anotherWorld",
-      "role": "supportDps",
-      "tier": "a",
+      "role": "mainDps",
+      "tier": "b",
       "birthday": "04/04",
       "ascensionMaterials": [
         {
@@ -27463,6 +27463,11 @@
               "quantity": 3,
               "materialType": "local",
               "image": "crystal_marrow.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "spectral_husk.png"
             },
             {
               "quantity": 20000,
@@ -27491,6 +27496,11 @@
               "image": "crystal_marrow.png"
             },
             {
+              "quantity": 15,
+              "materialType": "common",
+              "image": "spectral_husk.png"
+            },
+            {
               "quantity": 40000,
               "materialType": "currency",
               "image": "mora.png"
@@ -27515,6 +27525,11 @@
               "quantity": 20,
               "materialType": "local",
               "image": "crystal_marrow.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "spectral_heart.png"
             },
             {
               "quantity": 60000,
@@ -27543,6 +27558,11 @@
               "image": "crystal_marrow.png"
             },
             {
+              "quantity": 18,
+              "materialType": "common",
+              "image": "spectral_heart.png"
+            },
+            {
               "quantity": 80000,
               "materialType": "currency",
               "image": "mora.png"
@@ -27567,6 +27587,11 @@
               "quantity": 45,
               "materialType": "local",
               "image": "crystal_marrow.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "spectral_nucleus.png"
             },
             {
               "quantity": 100000,
@@ -27595,6 +27620,11 @@
               "image": "crystal_marrow.png"
             },
             {
+              "quantity": 24,
+              "materialType": "common",
+              "image": "spectral_nucleus.png"
+            },
+            {
               "quantity": 120000,
               "materialType": "currency",
               "image": "mora.png"
@@ -27612,6 +27642,11 @@
               "image": "teaching_of_freedom.png"
             },
             {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "spectral_husk.png"
+            },
+            {
               "quantity": 12500,
               "materialType": "currency",
               "image": "mora.png"
@@ -27625,6 +27660,11 @@
               "quantity": 2,
               "materialType": "talents",
               "image": "guide_to_freedom.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "spectral_heart.png"
             },
             {
               "quantity": 17500,
@@ -27642,6 +27682,11 @@
               "image": "guide_to_freedom.png"
             },
             {
+              "quantity": 4,
+              "materialType": "common",
+              "image": "spectral_heart.png"
+            },
+            {
               "quantity": 25000,
               "materialType": "currency",
               "image": "mora.png"
@@ -27655,6 +27700,11 @@
               "quantity": 6,
               "materialType": "talents",
               "image": "guide_to_freedom.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "spectral_heart.png"
             },
             {
               "quantity": 30000,
@@ -27672,6 +27722,11 @@
               "image": "guide_to_freedom.png"
             },
             {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "spectral_heart.png"
+            },
+            {
               "quantity": 35000,
               "materialType": "currency",
               "image": "mora.png"
@@ -27685,6 +27740,16 @@
               "quantity": 4,
               "materialType": "talents",
               "image": "philosophies_of_freedom.png"
+            },
+            {
+              "quantity": 4,
+              "materialType": "common",
+              "image": "spectral_nucleus.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "molten_moment.png"
             },
             {
               "quantity": 120000,
@@ -27702,6 +27767,16 @@
               "image": "philosophies_of_freedom.png"
             },
             {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "spectral_nucleus.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "molten_moment.png"
+            },
+            {
               "quantity": 260000,
               "materialType": "currency",
               "image": "mora.png"
@@ -27715,6 +27790,16 @@
               "quantity": 12,
               "materialType": "talents",
               "image": "philosophies_of_freedom.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "spectral_nucleus.png"
+            },
+            {
+              "quantity": 2,
+              "materialType": "talents",
+              "image": "molten_moment.png"
             },
             {
               "quantity": 450000,
@@ -27732,6 +27817,16 @@
               "image": "philosophies_of_freedom.png"
             },
             {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "spectral_nucleus.png"
+            },
+            {
+              "quantity": 2,
+              "materialType": "talents",
+              "image": "molten_moment.png"
+            },
+            {
               "quantity": 1,
               "materialType": "talents",
               "image": "crown_of_sagehood.png"
@@ -27744,11 +27839,39 @@
           ]
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "thundering_pulse.png",
+            "amos_bow.png",
+            "rust.png",
+            "prototype_crescent.png"
+          ],
+          "artifacts": [
+            {
+              "one": "blizzard_walker_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "cryoDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "atkPercentage",
+            "critDmgPercentage",
+            "critRatePercentage"
+          ]
+        }
+      ],
       "skills": [
         {
           "key": "s1",
-          "image": null,
+          "image": "normal_attack_liutian_archery.png",
           "type": "normalAttack",
           "abilities": [
             {
@@ -27767,7 +27890,7 @@
         },
         {
           "key": "s2",
-          "image": null,
+          "image": "aloy_s2.png",
           "type": "elementalSkill",
           "abilities": [
             {
@@ -27778,19 +27901,174 @@
         },
         {
           "key": "s3",
-          "image": null,
+          "image": "aloy_s3.png",
           "type": "elementalBurst"
-        },
-        {
-          "key": "s4",
-          "image": null,
-          "type": "others"
         }
       ],
-      "passives": [],
-      "constellations": [],
+      "passives": [
+        {
+          "key": "p1",
+          "unlockedAt": -1,
+          "image": "aloy_p1.png"
+        },
+        {
+          "key": "p2",
+          "unlockedAt": 1,
+          "image": "aloy_p2.png"
+        },
+        {
+          "key": "p3",
+          "unlockedAt": 4,
+          "image": "aloy_p3.png"
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": "aloy_c1.png"
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": "aloy_c1.png"
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": "aloy_c1.png"
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": "aloy_c1.png"
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": "aloy_c1.png"
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": "aloy_c1.png"
+        }
+      ],
       "subStatType": "cryoDmgBonusPercentage",
-      "stats": []
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 848,
+          "baseAtk": 18,
+          "baseDef": 53,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2201,
+          "baseAtk": 47,
+          "baseDef": 137,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2928,
+          "baseAtk": 63,
+          "baseDef": 182,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4382,
+          "baseAtk": 94,
+          "baseDef": 272,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4899,
+          "baseAtk": 105,
+          "baseDef": 304,
+          "isAnAscension": true,
+          "specificValue": 7.2
+        },
+        {
+          "level": 50,
+          "baseHp": 5636,
+          "baseAtk": 121,
+          "baseDef": 350,
+          "isAnAscension": false,
+          "specificValue": 7.2
+        },
+        {
+          "level": 50,
+          "baseHp": 6325,
+          "baseAtk": 136,
+          "baseDef": 393,
+          "isAnAscension": true,
+          "specificValue": 14.4
+        },
+        {
+          "level": 60,
+          "baseHp": 7070,
+          "baseAtk": 152,
+          "baseDef": 439,
+          "isAnAscension": false,
+          "specificValue": 14.4
+        },
+        {
+          "level": 60,
+          "baseHp": 7587,
+          "baseAtk": 163,
+          "baseDef": 471,
+          "isAnAscension": true,
+          "specificValue": 14.4
+        },
+        {
+          "level": 70,
+          "baseHp": 8339,
+          "baseAtk": 179,
+          "baseDef": 517,
+          "isAnAscension": false,
+          "specificValue": 14.4
+        },
+        {
+          "level": 70,
+          "baseHp": 8856,
+          "baseAtk": 190,
+          "baseDef": 550,
+          "isAnAscension": true,
+          "specificValue": 21.6
+        },
+        {
+          "level": 80,
+          "baseHp": 9616,
+          "baseAtk": 206,
+          "baseDef": 597,
+          "isAnAscension": false,
+          "specificValue": 21.6
+        },
+        {
+          "level": 80,
+          "baseHp": 10133,
+          "baseAtk": 217,
+          "baseDef": 629,
+          "isAnAscension": true,
+          "specificValue": 28.8
+        },
+        {
+          "level": 90,
+          "baseHp": 10899,
+          "baseAtk": 234,
+          "baseDef": 676,
+          "isAnAscension": false,
+          "specificValue": 28.8
+        }
+      ]
     },
     {
       "key": "SangonomiyaKokomi",
@@ -27818,6 +28096,16 @@
               "image": "varunada_lazurite_sliver.png"
             },
             {
+              "quantity": 3,
+              "materialType": "local",
+              "image": "sango_pearl.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "spectral_husk.png"
+            },
+            {
               "quantity": 20000,
               "materialType": "currency",
               "image": "mora.png"
@@ -27832,6 +28120,21 @@
               "quantity": 3,
               "materialType": "jewels",
               "image": "varunada_lazurite_fragment.png"
+            },
+            {
+              "quantity": 2,
+              "materialType": "elementalStone",
+              "image": "dew_of_repudiation.png"
+            },
+            {
+              "quantity": 10,
+              "materialType": "local",
+              "image": "sango_pearl.png"
+            },
+            {
+              "quantity": 15,
+              "materialType": "common",
+              "image": "spectral_husk.png"
             },
             {
               "quantity": 40000,
@@ -27850,6 +28153,21 @@
               "image": "varunada_lazurite_fragment.png"
             },
             {
+              "quantity": 4,
+              "materialType": "elementalStone",
+              "image": "dew_of_repudiation.png"
+            },
+            {
+              "quantity": 20,
+              "materialType": "local",
+              "image": "sango_pearl.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "spectral_heart.png"
+            },
+            {
               "quantity": 60000,
               "materialType": "currency",
               "image": "mora.png"
@@ -27864,6 +28182,21 @@
               "quantity": 3,
               "materialType": "jewels",
               "image": "varunada_lazurite_chunk.png"
+            },
+            {
+              "quantity": 8,
+              "materialType": "elementalStone",
+              "image": "dew_of_repudiation.png"
+            },
+            {
+              "quantity": 30,
+              "materialType": "local",
+              "image": "sango_pearl.png"
+            },
+            {
+              "quantity": 18,
+              "materialType": "common",
+              "image": "spectral_heart.png"
             },
             {
               "quantity": 80000,
@@ -27882,6 +28215,21 @@
               "image": "varunada_lazurite_chunk.png"
             },
             {
+              "quantity": 12,
+              "materialType": "elementalStone",
+              "image": "dew_of_repudiation.png"
+            },
+            {
+              "quantity": 45,
+              "materialType": "local",
+              "image": "sango_pearl.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "spectral_nucleus.png"
+            },
+            {
               "quantity": 100000,
               "materialType": "currency",
               "image": "mora.png"
@@ -27896,6 +28244,21 @@
               "quantity": 6,
               "materialType": "jewels",
               "image": "varunada_lazurite_gemstone.png"
+            },
+            {
+              "quantity": 20,
+              "materialType": "elementalStone",
+              "image": "dew_of_repudiation.png"
+            },
+            {
+              "quantity": 60,
+              "materialType": "local",
+              "image": "sango_pearl.png"
+            },
+            {
+              "quantity": 24,
+              "materialType": "common",
+              "image": "spectral_nucleus.png"
             },
             {
               "quantity": 120000,
@@ -27915,6 +28278,11 @@
               "image": "teachings_of_transience.png"
             },
             {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "spectral_husk.png"
+            },
+            {
               "quantity": 12500,
               "materialType": "currency",
               "image": "mora.png"
@@ -27928,6 +28296,11 @@
               "quantity": 2,
               "materialType": "talents",
               "image": "guide_of_transience.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "spectral_heart.png"
             },
             {
               "quantity": 17500,
@@ -27945,6 +28318,11 @@
               "image": "guide_of_transience.png"
             },
             {
+              "quantity": 4,
+              "materialType": "common",
+              "image": "spectral_heart.png"
+            },
+            {
               "quantity": 25000,
               "materialType": "currency",
               "image": "mora.png"
@@ -27958,6 +28336,11 @@
               "quantity": 6,
               "materialType": "talents",
               "image": "guide_of_transience.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "spectral_heart.png"
             },
             {
               "quantity": 30000,
@@ -27975,6 +28358,11 @@
               "image": "guide_of_transience.png"
             },
             {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "spectral_heart.png"
+            },
+            {
               "quantity": 35000,
               "materialType": "currency",
               "image": "mora.png"
@@ -27988,6 +28376,16 @@
               "quantity": 4,
               "materialType": "talents",
               "image": "philosophies_of_transience.png"
+            },
+            {
+              "quantity": 4,
+              "materialType": "common",
+              "image": "spectral_nucleus.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "hellfire_butterfly.png"
             },
             {
               "quantity": 120000,
@@ -28005,6 +28403,16 @@
               "image": "philosophies_of_transience.png"
             },
             {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "spectral_nucleus.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "hellfire_butterfly.png"
+            },
+            {
               "quantity": 260000,
               "materialType": "currency",
               "image": "mora.png"
@@ -28020,6 +28428,16 @@
               "image": "philosophies_of_transience.png"
             },
             {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "spectral_nucleus.png"
+            },
+            {
+              "quantity": 2,
+              "materialType": "talents",
+              "image": "hellfire_butterfly.png"
+            },
+            {
               "quantity": 450000,
               "materialType": "currency",
               "image": "mora.png"
@@ -28033,6 +28451,16 @@
               "quantity": 16,
               "materialType": "talents",
               "image": "philosophies_of_transience.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "spectral_nucleus.png"
+            },
+            {
+              "quantity": 2,
+              "materialType": "talents",
+              "image": "hellfire_butterfly.png"
             },
             {
               "quantity": 1,
@@ -28083,15 +28511,41 @@
           "key": "s3",
           "image": null,
           "type": "elementalBurst"
-        },
-        {
-          "key": "s4",
-          "image": null,
-          "type": "others"
         }
       ],
       "passives": [],
-      "constellations": [],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": "sangonomiya_kokomi_c1.png"
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": "sangonomiya_kokomi_c2.png"
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": "sangonomiya_kokomi_c3.png"
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": "sangonomiya_kokomi_c4.png"
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": "sangonomiya_kokomi_c5.png"
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": "sangonomiya_kokomi_c6.png"
+        }
+      ],
       "subStatType": "hydroDmgBonusPercentage",
       "stats": []
     },
@@ -28103,8 +28557,8 @@
       "image": "KujouSara.png",
       "fullImage": "KujouSara.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": true,
       "region": "inazuma",
       "role": "supportDps",
@@ -28119,6 +28573,11 @@
               "quantity": 1,
               "materialType": "jewels",
               "image": "vajrada_amethyst_sliver.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "local",
+              "image": "dendrobium.png"
             },
             {
               "quantity": 3,
@@ -28142,6 +28601,16 @@
               "image": "vajrada_amethyst_fragment.png"
             },
             {
+              "quantity": 2,
+              "materialType": "elementalStone",
+              "image": "storm_beads.png"
+            },
+            {
+              "quantity": 10,
+              "materialType": "local",
+              "image": "dendrobium.png"
+            },
+            {
               "quantity": 15,
               "materialType": "common",
               "image": "damaged_mask.png"
@@ -28163,6 +28632,16 @@
               "image": "vajrada_amethyst_fragment.png"
             },
             {
+              "quantity": 4,
+              "materialType": "elementalStone",
+              "image": "storm_beads.png"
+            },
+            {
+              "quantity": 20,
+              "materialType": "local",
+              "image": "dendrobium.png"
+            },
+            {
               "quantity": 12,
               "materialType": "common",
               "image": "stained_mask.png"
@@ -28182,6 +28661,16 @@
               "quantity": 3,
               "materialType": "jewels",
               "image": "vajrada_amethyst_chunk.png"
+            },
+            {
+              "quantity": 8,
+              "materialType": "elementalStone",
+              "image": "storm_beads.png"
+            },
+            {
+              "quantity": 30,
+              "materialType": "local",
+              "image": "dendrobium.png"
             },
             {
               "quantity": 18,
@@ -28206,6 +28695,16 @@
             },
             {
               "quantity": 12,
+              "materialType": "elementalStone",
+              "image": "storm_beads.png"
+            },
+            {
+              "quantity": 45,
+              "materialType": "local",
+              "image": "dendrobium.png"
+            },
+            {
+              "quantity": 12,
               "materialType": "common",
               "image": "ominous_mask.png"
             },
@@ -28224,6 +28723,16 @@
               "quantity": 6,
               "materialType": "jewels",
               "image": "vajrada_amethyst_gemstone.png"
+            },
+            {
+              "quantity": 20,
+              "materialType": "elementalStone",
+              "image": "storm_beads.png"
+            },
+            {
+              "quantity": 60,
+              "materialType": "local",
+              "image": "dendrobium.png"
             },
             {
               "quantity": 24,
@@ -28353,6 +28862,11 @@
               "image": "ominous_mask.png"
             },
             {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "ashen_heart.png"
+            },
+            {
               "quantity": 120000,
               "materialType": "currency",
               "image": "mora.png"
@@ -28371,6 +28885,11 @@
               "quantity": 6,
               "materialType": "common",
               "image": "ominous_mask.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "ashen_heart.png"
             },
             {
               "quantity": 260000,
@@ -28393,6 +28912,11 @@
               "image": "ominous_mask.png"
             },
             {
+              "quantity": 2,
+              "materialType": "talents",
+              "image": "ashen_heart.png"
+            },
+            {
               "quantity": 450000,
               "materialType": "currency",
               "image": "mora.png"
@@ -28413,6 +28937,11 @@
               "image": "ominous_mask.png"
             },
             {
+              "quantity": 2,
+              "materialType": "talents",
+              "image": "ashen_heart.png"
+            },
+            {
               "quantity": 1,
               "materialType": "talents",
               "image": "crown_of_sagehood.png"
@@ -28425,11 +28954,52 @@
           ]
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isSupport": true,
+          "weaponImages": [
+            "skyward_harp.png",
+            "amos_bow.png",
+            "blackcliff_warbow.png",
+            "the_stringless.png",
+            "prototype_crescent.png"
+          ],
+          "artifacts": [
+            {
+              "one": "emblem_of_severed_fate_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "electroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "one": "noblesse_oblige_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "electroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage"
+          ]
+        }
+      ],
       "skills": [
         {
           "key": "s1",
-          "image": null,
+          "image": "normal_attack_cutting_torrent.png",
           "type": "normalAttack",
           "abilities": [
             {
@@ -28450,28 +29020,178 @@
           "key": "s2",
           "image": null,
           "type": "elementalSkill",
-          "abilities": [
-            {
-              "key": "a2",
-              "type": "hold"
-            }
-          ]
+          "abilities": []
         },
         {
           "key": "s3",
           "image": null,
           "type": "elementalBurst"
-        },
-        {
-          "key": "s4",
-          "image": null,
-          "type": "others"
         }
       ],
-      "passives": [],
-      "constellations": [],
+      "passives": [
+        {
+          "key": "p1",
+          "unlockedAt": -1,
+          "image": "kujou_sara_p1.png"
+        },
+        {
+          "key": "p2",
+          "unlockedAt": 1,
+          "image": "kujou_sara_c1.png"
+        },
+        {
+          "key": "p3",
+          "unlockedAt": 4,
+          "image": null
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": "kujou_sara_c1.png"
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": "kujou_sara_c2.png"
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": null
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": null
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": null
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": null
+        }
+      ],
       "subStatType": "atkPercentage",
-      "stats": []
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 802,
+          "baseAtk": 16,
+          "baseDef": 53,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2061,
+          "baseAtk": 42,
+          "baseDef": 135,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2661,
+          "baseAtk": 54,
+          "baseDef": 175,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 3985,
+          "baseAtk": 81,
+          "baseDef": 262,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 4411,
+          "baseAtk": 90,
+          "baseDef": 289,
+          "isAnAscension": true,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5074,
+          "baseAtk": 104,
+          "baseDef": 333,
+          "isAnAscension": false,
+          "specificValue": 6
+        },
+        {
+          "level": 50,
+          "baseHp": 5642,
+          "baseAtk": 115,
+          "baseDef": 370,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 6305,
+          "baseAtk": 129,
+          "baseDef": 414,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 60,
+          "baseHp": 6731,
+          "baseAtk": 137,
+          "baseDef": 442,
+          "isAnAscension": true,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 7393,
+          "baseAtk": 151,
+          "baseDef": 485,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 70,
+          "baseHp": 7818,
+          "baseAtk": 160,
+          "baseDef": 513,
+          "isAnAscension": true,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 8481,
+          "baseAtk": 173,
+          "baseDef": 556,
+          "isAnAscension": false,
+          "specificValue": 18
+        },
+        {
+          "level": 80,
+          "baseHp": 8907,
+          "baseAtk": 182,
+          "baseDef": 584,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 90,
+          "baseHp": 9570,
+          "baseAtk": 195,
+          "baseDef": 628,
+          "isAnAscension": false,
+          "specificValue": 24
+        }
+      ]
     },
     {
       "key": "RaidenShogun",
@@ -28481,12 +29201,12 @@
       "image": "RaidenShogun.png",
       "fullImage": "RaidenShogun.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": true,
       "region": "inazuma",
-      "role": "supportDps",
-      "tier": "a",
+      "role": "mainDps",
+      "tier": "s",
       "birthday": "06/26",
       "ascensionMaterials": [
         {
@@ -28497,6 +29217,11 @@
               "quantity": 1,
               "materialType": "jewels",
               "image": "vajrada_amethyst_sliver.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "local",
+              "image": "amakumo_fruit.png"
             },
             {
               "quantity": 3,
@@ -28520,6 +29245,16 @@
               "image": "vajrada_amethyst_fragment.png"
             },
             {
+              "quantity": 2,
+              "materialType": "elementalStone",
+              "image": "storm_beads.png"
+            },
+            {
+              "quantity": 10,
+              "materialType": "local",
+              "image": "amakumo_fruit.png"
+            },
+            {
               "quantity": 15,
               "materialType": "common",
               "image": "old_handguard.png"
@@ -28541,6 +29276,16 @@
               "image": "vajrada_amethyst_fragment.png"
             },
             {
+              "quantity": 4,
+              "materialType": "elementalStone",
+              "image": "storm_beads.png"
+            },
+            {
+              "quantity": 20,
+              "materialType": "local",
+              "image": "amakumo_fruit.png"
+            },
+            {
               "quantity": 12,
               "materialType": "common",
               "image": "kageuchi_handguard.png"
@@ -28560,6 +29305,16 @@
               "quantity": 3,
               "materialType": "jewels",
               "image": "vajrada_amethyst_chunk.png"
+            },
+            {
+              "quantity": 8,
+              "materialType": "elementalStone",
+              "image": "storm_beads.png"
+            },
+            {
+              "quantity": 30,
+              "materialType": "local",
+              "image": "amakumo_fruit.png"
             },
             {
               "quantity": 18,
@@ -28584,6 +29339,16 @@
             },
             {
               "quantity": 12,
+              "materialType": "elementalStone",
+              "image": "storm_beads.png"
+            },
+            {
+              "quantity": 45,
+              "materialType": "local",
+              "image": "amakumo_fruit.png"
+            },
+            {
+              "quantity": 12,
               "materialType": "common",
               "image": "famed_handguard.png"
             },
@@ -28602,6 +29367,16 @@
               "quantity": 6,
               "materialType": "jewels",
               "image": "vajrada_amethyst_gemstone.png"
+            },
+            {
+              "quantity": 20,
+              "materialType": "elementalStone",
+              "image": "storm_beads.png"
+            },
+            {
+              "quantity": 60,
+              "materialType": "local",
+              "image": "amakumo_fruit.png"
             },
             {
               "quantity": 24,
@@ -28731,6 +29506,11 @@
               "image": "famed_handguard.png"
             },
             {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "molten_moment.png"
+            },
+            {
               "quantity": 120000,
               "materialType": "currency",
               "image": "mora.png"
@@ -28749,6 +29529,11 @@
               "quantity": 6,
               "materialType": "common",
               "image": "famed_handguard.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "molten_moment.png"
             },
             {
               "quantity": 260000,
@@ -28771,6 +29556,11 @@
               "image": "famed_handguard.png"
             },
             {
+              "quantity": 2,
+              "materialType": "talents",
+              "image": "molten_moment.png"
+            },
+            {
               "quantity": 450000,
               "materialType": "currency",
               "image": "mora.png"
@@ -28791,6 +29581,11 @@
               "image": "famed_handguard.png"
             },
             {
+              "quantity": 2,
+              "materialType": "talents",
+              "image": "molten_moment.png"
+            },
+            {
               "quantity": 1,
               "materialType": "talents",
               "image": "crown_of_sagehood.png"
@@ -28803,11 +29598,40 @@
           ]
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "engulfing_lightning.png",
+            "the_catch.png",
+            "staff_of_homa.png",
+            "skyward_harp.png"
+          ],
+          "artifacts": [
+            {
+              "one": "emblem_of_severed_fate_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "electroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage"
+          ]
+        }
+      ],
       "skills": [
         {
           "key": "s1",
-          "image": null,
+          "image": "normal_attack_rain_of_stone.png",
           "type": "normalAttack",
           "abilities": [
             {
@@ -28826,30 +29650,179 @@
         },
         {
           "key": "s2",
-          "image": null,
-          "type": "elementalSkill",
-          "abilities": [
-            {
-              "key": "a2",
-              "type": "hold"
-            }
-          ]
+          "image": "raiden_shogun_c5.png",
+          "type": "elementalSkill"
         },
         {
           "key": "s3",
-          "image": null,
+          "image": "raiden_shogun_c3.png",
           "type": "elementalBurst"
-        },
-        {
-          "key": "s4",
-          "image": null,
-          "type": "others"
         }
       ],
-      "passives": [],
-      "constellations": [],
-      "subStatType": "electroDmgBonusPercentage",
-      "stats": []
+      "passives": [
+        {
+          "key": "p1",
+          "unlockedAt": -1,
+          "image": "raiden_shogun_p1.png"
+        },
+        {
+          "key": "p2",
+          "unlockedAt": 1,
+          "image": "raiden_shogun_p2.png"
+        },
+        {
+          "key": "p3",
+          "unlockedAt": 4,
+          "image": "raiden_shogun_p3.png"
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": "raiden_shogun_c1.png"
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": "raiden_shogun_c2.png"
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": "raiden_shogun_c3.png"
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": "raiden_shogun_c4.png"
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": "raiden_shogun_c5.png"
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": "raiden_shogun_c6.png"
+        }
+      ],
+      "subStatType": "energyRechargePercentage",
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1005,
+          "baseAtk": 26,
+          "baseDef": 61,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2606,
+          "baseAtk": 68,
+          "baseDef": 159,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3468,
+          "baseAtk": 91,
+          "baseDef": 212,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5189,
+          "baseAtk": 136,
+          "baseDef": 317,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5801,
+          "baseAtk": 152,
+          "baseDef": 355,
+          "isAnAscension": true,
+          "specificValue": 8
+        },
+        {
+          "level": 50,
+          "baseHp": 6675,
+          "baseAtk": 174,
+          "baseDef": 408,
+          "isAnAscension": false,
+          "specificValue": 8
+        },
+        {
+          "level": 50,
+          "baseHp": 7491,
+          "baseAtk": 196,
+          "baseDef": 458,
+          "isAnAscension": true,
+          "specificValue": 16
+        },
+        {
+          "level": 60,
+          "baseHp": 8373,
+          "baseAtk": 219,
+          "baseDef": 512,
+          "isAnAscension": false,
+          "specificValue": 16
+        },
+        {
+          "level": 60,
+          "baseHp": 8985,
+          "baseAtk": 235,
+          "baseDef": 549,
+          "isAnAscension": true,
+          "specificValue": 16
+        },
+        {
+          "level": 70,
+          "baseHp": 9875,
+          "baseAtk": 258,
+          "baseDef": 604,
+          "isAnAscension": false,
+          "specificValue": 16
+        },
+        {
+          "level": 70,
+          "baseHp": 10487,
+          "baseAtk": 274,
+          "baseDef": 641,
+          "isAnAscension": true,
+          "specificValue": 24
+        },
+        {
+          "level": 80,
+          "baseHp": 11388,
+          "baseAtk": 298,
+          "baseDef": 696,
+          "isAnAscension": false,
+          "specificValue": 24
+        },
+        {
+          "level": 80,
+          "baseHp": 12000,
+          "baseAtk": 314,
+          "baseDef": 734,
+          "isAnAscension": true,
+          "specificValue": 32
+        },
+        {
+          "level": 90,
+          "baseHp": 12907,
+          "baseAtk": 337,
+          "baseDef": 789,
+          "isAnAscension": false,
+          "specificValue": 32
+        }
+      ]
     }
   ]
 }

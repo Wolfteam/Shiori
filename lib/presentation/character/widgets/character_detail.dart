@@ -10,5 +10,4 @@ export 'character_detail_talent_ascension_materials_card.dart';
 export 'character_detail_top.dart';
 
 const double imgSize = 28;
-const double imgHeight = 550;
 const double charDescriptionHeight = 240;

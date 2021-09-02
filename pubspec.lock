@@ -357,9 +357,11 @@ packages:
   flutter_staggered_grid_view:
     dependency: "direct main"
     description:
-      name: flutter_staggered_grid_view
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "."
+      ref: master
+      resolved-ref: "8a2e14ab3c19c80f53608c4d25926f67bcc3ef94"
+      url: "git://github.com/bladeofgod/flutter_staggered_grid_view.git"
+    source: git
     version: "0.4.0"
   flutter_test:
     dependency: "direct dev"
