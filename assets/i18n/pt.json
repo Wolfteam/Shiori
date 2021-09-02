@@ -1720,7 +1720,6 @@
               "description": "O Dano dos Ataques Imersivos lançados através da Habilidade Elemental Chihayaburu é convertido em Dano Anemo e criará um túnel em miniatura através de uma técnica secreta que puxa objetos e inimigos próximos.\nO Dano de Ranzan Aéreo é considerado Dano de Ataque Imersivo.",
               "descriptions": []
             }
-
           ]
         },
         {
@@ -4344,29 +4343,29 @@
     {
       "key": "Yoimiya",
       "name": "Yoimiya",
-      "description": "Owner of Naganohara Fireworks. Known as \"Queen of the Summer Festival,\" she excels in her craft of creating fireworks that symbolize people's hopes and dreams.",
+      "description": "Dona da Fogos de Artificio Naganohara. Conhecida como \"Rainha do Festival de Verão\", ela é excelente na criação de fogos de artificio que simbolizam a esperança e sonhos das pessoas.",
       "skills": [
         {
           "key": "s1",
-          "title": "Firework Flare-Up",
+          "title": "Pirotecnia",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive shots with a bow.",
+              "description": "Realiza até 5 disparos consecutivos com um arco.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Performs a more precise Aimed Shot with increased DMG.\nWhile aiming, flames will accumulate on the arrowhead before being fired off as an attack. Has different effects based on how long the energy has been charged:",
+              "description": "Realiza um Disparo com Mira mais preciso com Dano aumentado.\nAo mirar, uma aura flamejante acumulará na ponta da flecha antes de ser disparada. Tem diferentes efeitos baseados em quanto tempo a energia foi carregada:",
               "descriptions": [
-                "Charge Level 1: Fires off a flaming arrow that deals Pyro DMG.",
-                "Charge Level 2: Generates a maximum of 3 Kindling Arrows based on time spent charging, releasing them as part of this Aimed Shot. Kindling Arrows will home in on nearby opponents, dealing Pyro DMG on hit."
+                "Carga Nivel 1: Dispara uma Flecha Flamejante que causa Dano Pyro",
+                "Carga Nível 2: Gera um máximo de 3 Flechas Abrasadoras com base no tempo decorrido no carregamento, liberando-as como parte do Disparo com Mira. Flechas Abrasadoras irão perseguir os alvos próximos, causando Dano Pyro ao atingir um inimigo."
               ]
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "Dispara uma chuva de flechas durante o ar antes de cair e atingir o chão, causando Dano em AdE no impacto.",
               "descriptions": []
             }
           ]
@@ -4374,23 +4373,23 @@
         {
           "key": "s2",
           "title": "Niwabi Fire-Dance",
-          "description": "Yoimiya waves a sparkler and causes a ring of saltpeter to surround her.",
+          "description": "Com o fogo de artificio de incenso explodindo no ar, um anel de salitre rodeia Yoimiya.",
           "abilities": [
             {
               "name": "Niwabi Enshou",
-              "description": "During this time, arrows fired by Yoimiya's Normal Attack will be Blazing Arrows, and their DMG will be increased and converted to Pyro DMG. During this time, Normal Attack: Firework Flare-Up will not generate Kindling Arrows at Charge Level 2.\nThis effect will deactivate when Yoimiya leaves the field.",
+              "description": "Durante o intervalo de tempo, as flechas disparadas pelo Ataque Normal de Yoimiya serão Flechas Ardentes, causando Dano Pyro, e aumentando o dano causado pelo Ataque Normal. A Carga Nivel 2 do Ataque Normal: Pirotecnia não irá causar Flechas Ardentes durante este tempo.\nO efeito será desativado quando Yoimiya sair do campo.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Ryuukin Saxifrage",
-          "description": "Yoimiya leaps into the air along with her original creation, the \"Ryuukin Saxifrage,\" and fires forth blazing rockets bursting with surprises that deal AoE Pyro DMG and mark one of the hit opponents with Aurous Blaze.",
+          "title": "Saxifraga Ryuukin",
+          "description": "Quando sua criação original, a \"Saxifraga Ryuukin\" voa no ar, Yoimiya dispara mísseis flamejantes repletos de surpresas que causam Dano Pyro em uma AdE e marca um dos inimigos atingidos com uma Flama Dourada.",
           "abilities": [
             {
               "name": "Aurous Blaze",
-              "description": "All Normal/Charged/Plunging Attacks, Elemental Skills, and Elemental Bursts by any party member other than Yoimiya that hit an opponent marked by Aurous Blaze will trigger an explosion, dealing AoE Pyro DMG.\nWhen an opponent affected by Aurous Blaze is defeated before its duration expires, the effect will pass on to another nearby opponent, who will inherit the remaining duration.\nOne Aurous Blaze explosion can be triggered every 2s. When Yoimiya is down, Aurous Blaze effects created through her skills will be deactivated.",
+              "description": "Todos os Ataques Normais, Ataques Carregados, Ataques Imersivos, Habilidades Elementais e Supremos lançados por todos os personagens na equipe (exceto a própria Yoimiya) que acertem em inimigos sob a influência da Flama Dourada causarão uma explosão, causando Dano Pyro em uma AdE. Quando um inimigo é derrotado sob a influência da Flama Dourada durante o tempo do efeito, o efeito passará para outro inimigo ao redor, que herdará a duração restante.\nA Flama Dourada pode ser ativada uma vez a cada 2s. Quando Yoimiya for derrotada, os efeitos da Flama Dourada criados através das suas habilidades serão desativados.",
               "descriptions": []
             }
           ]
@@ -4399,63 +4398,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Blazing Match",
-          "description": "When Yoimiya crafts Decoration, Ornament, and Landscape-type Furnishings, she has a 100% chance to refund a portion of the materials used.",
+          "title": "Correspondencia Flamejante",
+          "description": "Quando Yoimiya cria uma Decoração, Item de Decoração e Paisagem, ela tem 100% de chance de reembolsar uma parte dos materiais utilizados.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Tricks of the Trouble-Maker",
-          "description": "During Niwabi Fire-Dance, shots from Yoimiya's Normal Attack will increase her Pyro DMG Bonus by 2% on hit. This effect lasts for 3s and can have a maximum of 10 stacks.",
+          "title": "Truque da Encrenqueira",
+          "description": "Enquanto a Dança de Fogo Niwabi estiver presente, acertos com o Ataque Normal da Yoimiya, irão aumentar 2% do Bônus de Dano Pyro. O efeito dura por 3s e pode ser acumulado em até 10 vezes.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Summer Night's Dawn",
-          "description": "Using Ryuukin Saxifrage causes nearby party members (not including Yoimiya) to gain a 10% ATK increase for 15s. Additionally, a further ATK Bonus will be added on based on the number of \"Tricks of the Trouble-Maker\" stacks Yoimiya possesses when using Ryuukin Saxifrage. Each stack increases this ATK Bonus by 1%.",
+          "title": "Queimadura de Verão",
+          "description": "Todos os personagens da equipe (com exceção da própria Yoimiya) ganharão um aumento de 10% no ATQ por 15s após usar a Saxifraga Ryuukin. Além disso, um bônus adicional de ATQ será adicionado com base no número de cargas do \"Truque da Encrenqueira\" que Yoimiya possui ao usar a Saxifraga Ryuukin. Cada carga aumenta 1% de ATQ.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Agate Ryuukin",
-          "description": "The Aurous Blaze created by Ryuukin Saxifrage lasts for an extra 4s.\nAdditionally, when an opponent affected by Aurous Blaze is defeated within its duration, Yoimiya's ATK is increased by 20% for 20s.",
+          "title": "Agata Ryuukin",
+          "description": "A Flama Dourada criada pela Saxifraga Ryuukin ganha um aumento de 4s de duração.\nAlém disso, quando um inimigo afetado pela Flama Dourada é derrotado, o ATQ da Yoimiya é aumentado em 20% por 20s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "A Procession of Bonfires",
-          "description": "When Yoimiya's Pyro DMG scores a CRIT Hit, Yoimiya will gain a 25% Pyro DMG Bonus for 6s.\nThis effect can be triggered even when Yoimiya is not the active character.",
+          "title": "Procissão de Fogueiras",
+          "description": "Dentro de 6s após Yoimiya causar CRIT com o Dano Pyro, Yoimiya obtém 25% de Dano Pyro Adicional.\nYoimiya pode obter esse efeito mesmo fora de campo.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Trickster's Flare",
-          "description": "Increases the Level of Niwabi Fire-Dance by 3.\nMaximum upgrade level is 15.",
+          "title": "Chamas da Malandra",
+          "description": "Aumenta o nivel da Dança de Fogo Niwabi em 3 níveis.\nSendo o nivel máximo de elevação 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Pyrotechnic Professional",
-          "description": "When Yoimiya's own Aurous Blaze triggers an explosion, Niwabi Fire-Dance's CD is decreased by 1.2s.",
+          "title": "Profissional Pirotécnica",
+          "description": "Quando a Flama Dourada da Yoimiya explode, restaura a Recarga da Dança de Fogo Niwabi em 1.2s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "A Summer Festival's Eve",
-          "description": "Increases the Level of Ryuukin Saxifrage by 3.\nMaximum upgrade level is 15.",
+          "title": "Véspera de um Festival de Verão",
+          "description": "Aumenta o nível da Saxifraga Ryuukin em 3 niveis.\nSendo o nível máximo de elevação 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Naganohara Meteor Swarm",
-          "description": "During Niwabi Fire-Dance, Yoimiya's Normal Attacks have a 50% chance of firing an extra Kindling Arrow that deals 60% of its original DMG. This DMG is considered Normal Attack DMG.",
+          "title": "Chuva de Meteoros de Nagonahara",
+          "description": "Durante a Dança de Fogo Niwabi, os Ataques Normais de Yoimiya têm 50% de chance de disparar uma Flecha Ardente extra que causa 60% de seu Dano original. Este Dano é considerado Dano de Ataque Normal.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -4464,63 +4463,63 @@
     {
       "key": "Sayu",
       "name": "Sayu",
-      "description": "A pint-sized ninja attached to the Shuumatsuban, who always seems sleep-deprived.",
+      "description": "Uma Ninja pertencente ao Shiyuumatsu-Ban que parece sempre estar cansada.",
       "skills": [
         {
           "key": "s1",
-          "title": "Shuumatsuban Ninja Blade",
+          "title": "Lâmina de Ninja Shiyuumatsu-Ban",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 consecutive strikes.",
+              "description": "Realiza até 4 golpes consecutivos.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.\nAt the end of the sequence, perform a more powerful slash. ",
+              "description": "Drena Stamina ao longo do tempo para realizar um ataque giratório continuo contra todos os inimigos próximos. Ao final da sequência, realiza um corte poderoso.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos em seu caminho e infligindo Dano em uma AdE durante o impacto.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Yoohoo Art: Fuuin Dash",
-          "description": "The special technique of the Yoohoo Ninja Arts!\nSayu curls up into a rolling Fuufuu Windwheel and smashes into opponents at high speed, dealing Anemo DMG. When the duration ends, she unleashes a Fuufuu Whirlwind Kick, dealing AoE Anemo DMG.",
+          "title": "Arte Yoohoo: Ataque Fuuin",
+          "description": "A técnica especial das Artes Ninja Yohoo!\nUma técnica veloz como um raio que circula por todo o campo!\nForma uma Roda Fuufuu e colide nos inimigos em alta velocidade, causando Dano Anemo. Quando a duração termina, lança um Chute da Roda Fuufuu, causando Dano Anemo em uma AdE.",
           "abilities": [
             {
               "key": "a1",
-              "description": "Enters the Fuufuu Windwheel state, rolling forward a short distance before using the Fuufuu Whirlwind Kick.",
+              "description": "Entra no estado da Roda Fuufuu, rebola para a frente em uma distância curta antes de usar o Chute da Roda Fuufuu.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Rolls about continuously in the Fuufuu Windwheel state, increasing Sayu's resistance to interruption while within that state.\nDuring this time, Sayu can control the direction of her roll, and can use the skill again to end her Windwheel state early and unleash a stronger version of the Fuufuu Whirlwind Kick.\nThe Hold version of this skill can trigger Elemental Absorption.\nThis skill has a maximum duration of 10s and enters CD once its effects end. The longer Sayu remains in her Windwheel state, the longer the CD.",
+              "description": "Gira continuamente no estado da Roda Fuufuu, aumentando a resistència de Sayu à interrupção durante esse estado.\nDurante este tempo, Sayu pode controlar a direção da Roda e pode usar a habilidade novamente para terminar seu estado de Roda e liberar uma versão mais forte do Chute da Roda Fuufuu.\nA versão dessa habilidade com Manter Pressionado pode desencadear uma Absorção Elemental.\nDura até 10s, ao final do efeito, a habilidade entará em Recarga. Quanto maior o tempo sob o estado da Roda Fuufuu, maior será a Recarga.",
               "descriptions": []
             },
             {
-              "name": "Elemental Absorption",
-              "description": "If Sayu comes into contact with Hydro/Pyro/Cryo/Electro while in her Windwheel state, she will deal additional elemental DMG of that type.\nElemental Absorption may only occur once per use of this skill.",
+              "name": "Absorção Elemental",
+              "description": "Se Sayu entrar em contato com os elementos Hydro/Pyro/Cryo/Electro durante seu estado de Roda, ela irá causar Dano elemental adicional baseado naquele tipo.\nAbsorção Elemental pode ocorrer apenas uma vez por uso.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Yoohoo Art: Mujina Flurry",
-          "description": "The other super special technique of the Yoohoo Ninja Arts! It summons a pair of helping hands for Sayu.\nDeals Anemo DMG to nearby opponents and heals all nearby party members. The amount of HP restored is based on Sayu's ATK. This skill then summons a Muji-Muji Daruma.",
+          "title": "Arte Yoohoo: Agitação Mujina",
+          "description": "Outra técnica muito especial das Artes Ninja Yoohoo! Ela invoca um par de mãos ajudantes para Sayu.\nInflige Dano Anemo aos inimigos ao redor e cura todos os personagens da equipe ao redor. A quantidade de Vida restaurada é baseada no ATQ de Sayu. A habilidade invoca então Daruma Muji-Muji.",
           "abilities": [
             {
-              "name": "Muji-Muji Daruma",
-              "description": "At specific intervals, the Daruma will take one of several actions based on the situation around it:",
+              "name": "Daruma Muji-Muji",
+              "description": "Em intervalos específicos, Daruma irá tomar uma das muitas ações com base na situação ao seu redor:",
               "descriptions": [
-                "If the HP of nearby characters is above 70%, it will attack a nearby opponent, dealing Anemo DMG.",
-                "If there are active characters with 70% or less HP nearby, it will heal the active character with the lowest percentage HP left. If there are no opponents nearby, it will heal active characters nearby even if they have 70% HP or more."
+                "Se houver personagens ativos ao redor com mais de 70% de Vida, Daruma irá atacar um inimigo por perto infligindo Dano Anemo.",
+                "Se houver personagens ativos por perto com 70% ou menos de Vida, Daruma irá curar o personagem ativo com menos porcentagem de Vida. Se não houver oponentes ao redor e os personagens tiverem mais de 70% de Vida, ele irá curar os personagens."
               ]
             }
           ]
@@ -4529,73 +4528,73 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Yoohoo Art: Silencer's Secret",
-          "description": "When Sayu is in the party, your characters will not startle Crystalflies and certain other animals when getting near them.\nCheck the \"Other\" sub-category of the \"Living Beings / Wildlife\" section in the Archive for creatures this skill works on.",
+          "title": "Arte Yoohoo: Segredo da Dissimulação",
+          "description": "Quando Sayu estiver na equipe, seus personagens não irão assustar as Borboletas de Cristais e alguns outros animais ao chegar perto deles. Cheque a sub-categoria \"Outros\" da seção \"Seres Vivos/Animais Selvagens\" do Arquivo, para descobrir quais criaturas esta habilidade funciona.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Someone More Capable",
-          "description": "When Sayu triggers a Swirl reaction while active, she heals all your characters and nearby allies for 300 HP. She will also heal an additional 1.2 HP for every point of Elemental Mastery she has.\nThis effect can be triggered once every 2s.",
+          "title": "Alguém Mais Adequado",
+          "description": "Quando Sayu desencadeia uma reação de Redemoinho enquanto ela estiver no campo de batalha, ela cura todos os seus personagens e aliados próximos em 300 de Vida. Ela também curará um adicional de 1.2 de Vida para cada ponto de Proficiència Elemental que ela possuir.\nEsse efeito pode ocorrer uma vez a cada 2s.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "No Work Today!",
-          "description": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Flurry gains the following effects:",
+          "title": "Não Tem Trabalho Hoje!",
+          "description": "O Daruma Muji-Muji invocado pela Arte Yoohoo: Agitação Mujina ganha os seguintes efeitos:",
           "descriptions": [
-            "When healing a character, it will also heal characters near that healed character for 20% the amount of HP.",
-            "Increases the AoE of its attack against opponents."
+            "Quando um personagem é curado, outros personagens próximos a ele e em combate recuperam uma quantidade de Vida de 20% do que foi recuperado pelo primeiro personagem.",
+            "Aumenta a área de Danos durante o ataque contra inimigos."
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Multi-Task no Jutsu",
-          "description": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Flurry will ignore HP limits and can simultaneously attack nearby opponents and heal characters.",
+          "title": "Técnica de Multitarefa",
+          "description": "O Daruma Muji-Muji criado por Arte Yoohoo: Agitação Mujina ignora os limites de Vida e pode simultaneamente atacar inimigos próximos e curar personagens.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Egress Prep",
-          "description": "Yoohoo Art: Fuuin Dash gains the following effects:",
+          "title": "Fora do Meu Caminho!",
+          "description": "Arte Yoohoo: Ataque Fuuin obtém os seguintes efeitos:",
           "secondDescription": null,
           "descriptions": [
-            "DMG of Fuufuu Whirlwind Kick in Press Mode increased by 3.3%.",
-            "Every 0.5s in the Fuufuu Windwheel state will increase the DMG of this Fuufuu Whirlwind Kick by 3.3%. The maximum DMG increase possible through this method is 66%."
+            "Quando pressiona para lançar, o Dano causado por Chute da Roda Fuufuu aumenta 3.3%.",
+            "A cada 0.5s no estado da Roda Fuufuu aumenta o Dano de Chute da Roda Fuufuu por 3.3%. O aumento máximo de Dano através deste método é 66%."
           ]
         },
         {
           "key": "c3",
-          "title": "Eh, the Bunshin Can Handle It",
-          "description": "Increases the Level of Yoohoo Art: Mujina Flurry by 3.\nMaximum upgrade level is 15.",
+          "title": "Deixe para o Bunshin",
+          "description": "Aumenta o nivel da Arte Yoohoo: Agitação Mujina em 3 níveis.\nO nível máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Skiving: New and Improved",
-          "description": "Sayu recovers 1.2 Energy when she triggers a Swirl reaction.\nThis effect occurs once every 2s.",
+          "title": "Novo Método de Ser Preguiçosa",
+          "description": "Sayu regenera 1.2 de Energia quando ela desencadeia uma reação de Redemoinho.\nEste efeito ocorre uma vez a cada 2s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Speed Comes First",
-          "description": "Increases the Level of Yoohoo Art: Fuuin Dash by 3.\nMaximum upgrade level is 15.",
+          "title": "A Velocidade Vem Primeiro",
+          "description": "Aumenta o nivel da Arte Yoohoo: Ataque Fuuin em 3 níveis.\nO nivel máximo de elevação é 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Sleep O'Clock",
-          "description": "The Muji-Muji Daruma created by Sayu's Yoohoo Art: Mujina Flurry will now also benefit from her Elemental Mastery. Each point of Sayu's Elemental Mastery will produce the following effects:",
+          "title": "Só Mais Cinco Minutinhos",
+          "description": "O Ataque e Recuperação de Daruma Muji-Muji criado por Arte Yoohoo: Agitação Mujina de Sayu agora beneficiam também de sua Proficiencia Elemental. Cada ponto de Proficiência Elemental irá produzir os seguintes efeitos:",
           "secondDescription": null,
           "descriptions": [
-            "Increases the damage dealt by the Muji-Muji Daruma's attacks by 0.2% ATK. A maximum of 400% ATK can be gained via this method.",
-            "Increases the HP restored by the Muji-Muji Daruma by 3. A maximum of 6,000 additional HP can be restored in this manner."
+            "Aumenta o dano causado pelos Ataques de Muji-Muji Daruma em 0.2% de ATQ. Um máximo de 400% de ATQ pode ser obtido através desse método.",
+            "A quantidade de HP restaurada por Muji-Muji Daruma é aumentada em 3. Um máximo de 6000 HP pode ser restaurado desse forma."
           ]
         }
       ]
@@ -4669,7 +4668,7 @@
           "descriptions": []
         }
       ],
-      "constellations":  [
+      "constellations": [
         {
           "key": "c1",
           "title": "Spring Thunder of Fertility",
@@ -4717,29 +4716,116 @@
     {
       "key": "Aloy",
       "name": "Aloy",
-      "description": "N/A",
+      "description": "Formerly an outcast, now a hunter of unparalleled aptitude. Ready to do the right thing with her bow at any given time.",
       "skills": [
         {
           "key": "s1",
-          "title": "N/A - S1",
+          "title": "Rapid Fire",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Perform up to 4 consecutive shots with a bow.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Perform a more precise Aimed Shot with increased DMG.\nWhile aiming, biting frost will accumulate on the arrowhead. A fully charged frost arrow will deal Cryo DMG.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "N/A - S2",
-          "description": null,
-          "abilities": []
+          "title": "Frozen Wilds",
+          "description": "Aloy throws a Freeze Bomb in the targeted direction that explodes on impact, dealing Cryo DMG. After it explodes, the Freeze Bomb will split up into many Chillwater Bomblets that explode on contact with opponents or after a short delay, dealing Cryo DMG.\nWhen a Freeze Bomb or Chillwater Bomblet hits an opponent, the opponent's ATK is decreased and Aloy receives 1 Coil stack.\nAloy can gain up to 1 Coil stack every 0.1s.",
+          "abilities": [
+            {
+              "name": "Coil",
+              "description": null,
+              "descriptions": [
+                "Each stack increases Aloy's Normal Attack DMG.",
+                "When Aloy has 4 Coil stacks, all stacks of Coil are cleared. She then enters the Rushing Ice state, which further increases the DMG dealt by her Normal Attacks and converts her Normal Attack DMG to Cryo DMG.\nWhile in the Rushing Ice state, Aloy cannot obtain new Coil stacks.\nCoil effects will be cleared 30s after Aloy leaves the field."
+              ]
+            }
+          ]
         },
         {
           "key": "s3",
-          "title": "N/A - S3",
-          "description": null,
+          "title": "Prophecies of Dawn",
+          "description": "Aloy throws a Power Cell filled with Cryo in the targeted direction, then detonates it with an arrow, dealing AoE Cryo DMG.",
           "abilities": []
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Easy Does It",
+          "description": "When Aloy is in the party, animals who produce Fowl, Raw Meat, or Chilled Meat will not be startled when party members approach them.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Combat Override",
+          "description": "When Aloy receives the Coil effect from Frozen Wilds, her ATK is increased by 16%, while nearby party members' ATK is increased by 8%. This effect lasts 10s.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Strong Strike",
+          "description": "When Aloy is in the Rushing Ice state conferred by Frozen Wilds, her Cryo DMG Bonus increases by 3.5% every 1s. A maximum Cryo DMG Bonus increase of 35% can be gained in this way.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Star of Another World",
+          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Star of Another World",
+          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Star of Another World",
+          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Star of Another World",
+          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Star of Another World",
+          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Star of Another World",
+          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
     },
     {
       "key": "SangonomiyaKokomi",
@@ -4771,56 +4857,232 @@
     {
       "key": "KujouSara",
       "name": "Kujou Sara",
-      "description": "N/A",
+      "description": "A general of the Tenryou Commission. Bold, decisive, and skilled in battle.",
       "skills": [
         {
           "key": "s1",
-          "title": "N/A - S1",
+          "title": "Tengu Bowmanship",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Perform up to 5 consecutive shots with a bow.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Perform a more precise Aimed Shot with increased DMG.\nWhile aiming, crackling lightning will accumulate on the arrowhead. An arrow fully charged with the storm's might will deal Electro DMG.\nWhen in the Crowfeather Cover state, a fully-charged arrow will leave a Crowfeather behind after it hits.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "N/A - S2",
-          "description": null,
+          "title": "Tengu Stormcall",
+          "description": "Retreats rapidly with the speed of a tengu, summoning the protection of the Crowfeather.\nGains Crowfeather Cover for 18s, and when Kujou Sara fires a fully-charged Aimed Shot, Crowfeather Cover will be consumed, and will leave a Crowfeather at the target location.\nCrowfeathers will trigger Tengu Juurai: Ambush after a short time, dealing Electro DMG and granting the active character within its AoE an ATK Bonus based on Kujou Sara's Base ATK.\nThe ATK Bonuses from different Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "N/A - S3",
-          "description": null,
+          "title": "Subjugation: Koukou Sendou",
+          "description": "Casts down Tengu Juurai: Titanbreaker, dealing AoE Electro DMG. Afterwards, Tengu Juurai: Titanbreaker spreads out into 4 consecutive bouts of Tengu Juurai: Stormcluster, dealing AoE Electro DMG.\nTengu Juurai: Titanbreaker and Tengu Juurai: Stormcluster can provide the active character within their AoE with the same ATK Bonus as given by the Elemental Skill, Tengu Stormcall.\nThe ATK Bonus provided by various kinds of Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
           "abilities": []
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "Land Survey",
+          "description": "When dispatched on an expedition in Inazuma, time consumed is reduced by 25%.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Immovable Will",
+          "description": "While in the Crowfeather Cover state provided by Tengu Stormcall, Aimed Shot charge times are decreased by 60%.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Decorum",
+          "description": "When Tengu Juurai: Ambush hits opponents, Kujou Sara will restore 1.2 Energy to all party members for every 100% Energy Recharge she has. This effect can be triggered once every 3s.",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Crow's Eye",
+          "description": "When Tengu Juurai grant characters ATK Bonuses or hits opponents, the CD of Tengu Stormcall is decreased by 1s.\nThis effect can be triggered once every 3s.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Dark Wings",
+          "description": "Unleashing Tengu Stormcall will leave a weaker Crowfeather at Kujou Sara's original position that will deal 30% of its original DMG.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "The War Within",
+          "description": "Increases the Level of Subjugation: Koukou Sendou by 3.\nMaximum upgrade level is 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Conclusive Proof",
+          "description": "The number of Tengu Juurai: Stormcluster released by Subjugation: Koukou Sendou is increased to 6.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Spellsinger",
+          "description": "Increases the Level of Tengu Stormcall by 3.\nMaximum upgrade level is 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Sin of Pride",
+          "description": "The Electro DMG of characters who have had their ATK increased by Tengu Juurai has its Crit DMG increased by 60%.",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
     },
     {
       "key": "RaidenShogun",
       "name": "Raiden Shogun",
-      "description": "N/A",
+      "description": "Her Excellency, the Almighty Narukami Ogosho, who promised the people of Inazuma an unchanging Eternity.",
       "skills": [
         {
           "key": "s1",
-          "title": "N/A - S1",
+          "title": "Origin",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Performs up to 5 consecutive spear strikes.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Consumes a certain amount of Stamina to perform an upward slash.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "N/A - S2",
-          "description": null,
-          "abilities": []
+          "title": "Baleful Omen",
+          "description": "The Raiden Shogun unveils a shard of her Euthymia, dealing Electro DMG to nearby opponents, and granting nearby party members the Eye of Stormy Judgment.",
+          "abilities": [
+            {
+              "name": "Eye of Stormy Judgment",
+              "description": "When characters with this buff attack and hit opponents, the Eye will unleash a coordinated attack, dealing AoE Electro DMG at the opponent's position.\nThe Eye can initiate one coordinated attack every 0.9s per party.",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s3",
-          "title": "N/A - S3",
-          "description": null,
-          "abilities": []
+          "title": "Secret Art: Musou Shinsetsu",
+          "description": "Gathering truths unnumbered and wishes uncounted, the Raiden Shogun unleashes the Musou no Hitotachi and deals AoE Electro DMG, using Musou Isshin in combat for a certain duration afterward. The DMG dealt by Musou no Hitotachi and Musou Isshin's attacks is based on the number of Shogan Byakugen no Rin's Resolve stacks consumed when this skill is used.",
+          "abilities": [
+            {
+              "name": "Musou Isshin",
+              "description": "While in this state, the Raiden Shogun will wield her tachi in battle, while her Normal, Charged, and Plunging Attacks will be infused with Electro DMG, which cannot be overridden. When such attacks hit opponents, she will regenerate Energy for all nearby party members. Energy can be restored this way once every 1s, and this effect can be triggered 5 times throughout this skill's duration.\nWhile in this state, the Raiden Shogun's resistance to interruption is increased, and she is immune to Electro-Charged reaction DMG.",
+              "descriptions": []
+            },
+            {
+              "name": "Shogan Byakugen no Rin",
+              "description": "When nearby party members use their Elemental Bursts, the Raiden Shogun will build up Resolve based on the amount of Energy they consume.\nThe maximum amount of Resolve stacks is 60.",
+              "descriptions": []
+            }
+          ]
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "All-Preserver",
+          "description": "Mora expended when ascending Swords and Polearms is decreased by 50%.",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "Wishes Unnumbered",
+          "description": "When nearby party members gain Elemental Orbs or Particles, Chakra Desiderata gains 2 Resolve stacks.\nThis effect can occur once every 3s.",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "Enlightened One",
+          "description": "Each 1% above 100% Energy Recharge that the Raiden Shogun possesses grants her:",
+          "descriptions": [
+            "0.6% greater Energy restoration from Musou Isshin",
+            "0.4% Electro DMG Bonus."
+          ]
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Ominous Inscription",
+          "description": "Chakra Desiderata will gather Resolve even faster. When Electro characters use their Elemental Bursts, the Resolve gained is increased by 80%. When characters of other Elemental Types use their Elemental Bursts, the Resolve gained is increased by 20%.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "Steelbreaker",
+          "description": "Secret Art: Musou Shinsetsu's Musou no Hitotachi and Musou Isshin attacks will ignore 60% of opponents' DEF.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "Shinkage Bygones",
+          "description": "Increases the Level of Secret Art: Musou Shinsetsu by 3.\nMaximum upgrade level is 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "Pledge of Propriety",
+          "description": "When the Musou Isshin state applied by Secret Art: Musou Shinsetsu expires, all nearby party members (excluding the Raiden Shogun) gain 30% bonus ATK for 10s.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "Shogun's Descent",
+          "description": "Increases the Level of Transcendence: Baleful Omen by 3.\nMaximum upgrade level is 15.",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "Wishbearer",
+          "description": "While in the Musou Isshin state applied by Secret Art: Musou Shinsetsu, the Raiden Shogun's Normal, Charged, and Plunging Attacks will decrease all nearby party members' (but not including the Raiden Shogun herself) Elemental Burst CD by 1s when they hit opponents.\nThis effect can trigger once every 1s, and can trigger a total of 5 times during the state's duration.",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
     }
   ],
   "weapons": [
@@ -5543,6 +5805,18 @@
       "name": "Thundering Pulse",
       "description": "A longbow that was a gift from the Shogun. Eternal lightning crackles all around it.",
       "refinement": "Increases ATK by {{0}}% and grants the might of the Thunder Emblem. At stack levels 1/2/3, the Thunder Emblem increases Normal Attack DMG by {{1}}/{{2}}/{{3}}%. The character will obtain 1 stack of Thunder Emblem in each of the following scenarios: Normal Attack deals DMG (stack lasts 5s), casting Elemental Skill (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently."
+    },
+    {
+      "key": "Engulfing Lightning",
+      "name": "Engulfing Lightning",
+      "description": "A naginata used to \"cut grass.\" Any army that stands before this weapon will probably be likewise cut down...",
+      "refinement": "ATK increased by {{0}}% of Energy Recharge over the base 100%. You can gain a maximum bonus of {{1}}% ATK. Gain {{2}}% Energy Recharge for 12s after using an Elemental Burst."
+    },
+    {
+      "key": "The Catch",
+      "name": "The Catch",
+      "description": "In the distant past, this was the beloved spear of a famed Inazuman bandit.",
+      "refinement": "Increases Elemental Burst DMG by {{0}}% and Elemental Burst CRIT Rate by {{1}}%"
     }
   ],
   "artifacts": [
@@ -7119,6 +7393,66 @@
       "key": "Amethyst Lump",
       "name": "Amethyst Lump",
       "description": "An uncut crystal that can only be found in Inazuma. Some professional craftsmanship will bring out its true value."
+    },
+    {
+      "key": "SpectralA",
+      "name": "Spectral Husk",
+      "description": "An energy core that allows the Specters to float. It contains a small amount of elemental energy.\nMost of the rest has already dispersed."
+    },
+    {
+      "key": "SpectralB",
+      "name": "Spectral Heart",
+      "description": "An energy core that allows the Specters to float.\nThese elemental life-forms have strange behavioral patterns and will periodically surge in number before disappearing."
+    },
+    {
+      "key": "SpectralC",
+      "name": "Spectral Nucleus",
+      "description": "A complete energy core that can sometimes be found after defeating Specters.\nThere is a debate among those who just have to divide the world into winners and losers: what floats better — a Specter or an Anemo Slime?"
+    },
+    {
+      "key": "Dew of Repudiation",
+      "name": "Dew of Repudiation",
+      "description": "A strange water droplet left behind by the collapse of the Hydro Hypostasis.\nIt has strong rejection properties, and this forms the basis of one of the Hydro Hypostasis' attack patterns as well. They say that water contains memories and willpower, and that these things can grow when bodies of water meld together. However, the waves conjured by the Hydro Hypostasis are incompatible with the currents that flow above and below ground. Even if it were to flow into the surpassingly pure waters of Petrichor, this drop of water will likely resist assimilation as strongly as mercury."
+    },
+    {
+      "key": "Storm Beads",
+      "name": "Storm Beads",
+      "description": "Crackling Electro pearls left behind by the Thunder Manifestation.\nIt is said that Thunder Manifestations will only descend upon lands where powerful hatred dwells. The singers say that it is the unbearable disappointments and sufferings of life that drive them to forever wander the broken earth, unleashing sky-searing lightning as they go."
+    },
+    {
+      "key": "Sango Pearl",
+      "name": "Sango Pearl",
+      "description": "A precious pearl that grows in the coral of Watatsumi. Gives of a cool sheen like that of the moonlight."
+    },
+    {
+      "key": "Dew of Repudiation",
+      "name": "Dew of Repudiation",
+      "description": "A strange water droplet left behind by the collapse of the Hydro Hypostasis.\nIt has strong rejection properties, and this forms the basis of one of the Hydro Hypostasis' attack patterns as well. They say that water contains memories and willpower, and that these things can grow when bodies of water meld together. However, the waves conjured by the Hydro Hypostasis are incompatible with the currents that flow above and below ground. Even if it were to flow into the surpassingly pure waters of Petrichor, this drop of water will likely resist assimilation as strongly as mercury."
+    },
+    {
+      "key": "Dendrobium",
+      "name": "Dendrobium",
+      "description": "A vibrant plant that has also been named the \"lycoris\" by the poets. It was once thought extinct in the Inazuman archipelago, only to re-emerge now upon the battlefields. It is said that it blooms most enchantingly where much blood was spilled."
+    },
+    {
+      "key": "Amakumo Fruit",
+      "name": "Amakumo Fruit",
+      "description": "The fruit of the Amakumo Grass, which grows on Seirai Island. You can hear it crackling with a tiny current if you hold it up to your ear."
+    },
+    {
+      "key": "Molten Moment",
+      "name": "Molten Moment",
+      "description": "A certain deformed fragment containing great might. You obtained this from defeating Signora, who unleashed her original power.\n\"I had a long, long dream.\n\"I dreamed that you and I met again in the pure white world that we created.\n\"But I woke up at last, having long been consumed by the raging flames, while you had long returned to the earth along with that poisoned blood.\n\"But none of it matters anymore. I must continue forging ahead. I must incinerate everything behind me. I must believe in that pure, spotless, everlasting realm that he spoke of — that I saw in the 'delusion' he let me see, at the end of the horizon of Her Majesty's dreams.\""
+    },
+    {
+      "key": "Hellfire Butterfly",
+      "name": "Hellfire Butterfly",
+      "description": "A warped shard that houses great might. You obtained this from defeating Signora, who unleashed her original power.\nThe seal of ice was broken under duress, and as her former will surged forth from its pale white prison and she remembered her old name once more, the undying butterfly danced amidst burning flesh and blood. And she remembered her past, wandering the land, spreading the flame, burning away all evil — and she recalled the face of the person she could never meet again."
+    },
+    {
+      "key": "Ashen Heart",
+      "name": "Ashen Heart",
+      "description": "A deformed fragment that contains powerful emotions. You obtained this from defeating Signora, who unleashed her original power.\nEven tears cannot extinguish the flames. Molten-hot agony and rage rush through her veins, oozing from her tear ducts.\nThe First Fatuus found her just before her heart could be destroyed by the eternal blaze. He understood that only deeper hate and obsession could quench the fire that devoured her and make her his ally..."
     }
   ],
   "debuffs": [

@@ -8,9 +8,6 @@ import 'package:genshindb/presentation/shared/loading.dart';
 
 import 'weapon_detail_general_card.dart';
 
-const double imageHeight = 320;
-const double imgSize = 28;
-
 class WeaponDetailTop extends StatelessWidget {
   final String name;
   final int atk;
@@ -41,11 +38,8 @@ class WeaponDetailTop extends StatelessWidget {
       fullImage: image,
       secondFullImage: image,
       decoration: BoxDecoration(gradient: rarity.getRarityGradient()),
-      heightOnLandscape: mediaQuery.size.height * 0.8,
       showShadowImage: isPortrait,
       charDescriptionHeight: 220,
-      widthOnPortrait: isPortrait ? 250 : null,
-      heightOnPortrait: isPortrait ? 350 : null,
       isAnSmallImage: isPortrait,
       generalCard: WeaponDetailGeneralCard(
         type: type,
