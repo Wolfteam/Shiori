@@ -4717,26 +4717,26 @@
     {
       "key": "Aloy",
       "name": "Элой",
-      "description": "Formerly an outcast, now a hunter of unparalleled aptitude. Ready to do the right thing with her bow at any given time.",
+      "description": "В прошлом изгой, а теперь охотник с непревзойденным чутьём. Её лук всегда наготове ради правого дела.",
       "skills": [
         {
           "key": "s1",
-          "title": "Rapid Fire",
+          "title": "Скоростная стрельба ",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 4 consecutive shots with a bow.",
+              "description": "До четырёх выстрелов из лука.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG.\nWhile aiming, biting frost will accumulate on the arrowhead. A fully charged frost arrow will deal Cryo DMG.",
+              "description": "Во время прицеливания наконечник стрелы заряжается холодом. Полностью заряженная холодом стрела наносит Крио урон.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "Выпускает град стрел в воздухе, которые при приземлении персонажа наносят урон по площади.",
               "descriptions": []
             }
           ]
@@ -4744,85 +4744,85 @@
         {
           "key": "s2",
           "title": "Frozen Wilds",
-          "description": "Aloy throws a Freeze Bomb in the targeted direction that explodes on impact, dealing Cryo DMG. After it explodes, the Freeze Bomb will split up into many Chillwater Bomblets that explode on contact with opponents or after a short delay, dealing Cryo DMG.\nWhen a Freeze Bomb or Chillwater Bomblet hits an opponent, the opponent's ATK is decreased and Aloy receives 1 Coil stack.\nAloy can gain up to 1 Coil stack every 0.1s.",
+          "description": "Элой бросает в цель Морозильную бомбу, которая взрывается при столкновении и наносит Крио урон. После взрыва Морозильная бомба делится на множество Ледяных бомбочек, которые взрываются при контакте с противником или после небольшой задержки и наносят Крио урон.\nКогда Морозильная бомба или Ледяная бомбочка поражают противника, его сила атаки понижается и Элой получает один уровень Спирали.\nЭлой может получить до 1 уровня Спирали каждые 0.1 сек.",
           "abilities": [
             {
-              "name": "Coil",
+              "name": "Спирали",
               "description": null,
               "descriptions": [
-                "Each stack increases Aloy's Normal Attack DMG.",
-                "When Aloy has 4 Coil stacks, all stacks of Coil are cleared. She then enters the Rushing Ice state, which further increases the DMG dealt by her Normal Attacks and converts her Normal Attack DMG to Cryo DMG.\nWhile in the Rushing Ice state, Aloy cannot obtain new Coil stacks.\nCoil effects will be cleared 30s after Aloy leaves the field."
+                "Каждый уровень Спирали повышает урон обычной атаки Элой.",
+                "Когда Элой набирает 4 уровня Спирали, все уровни Спирали сбрасываются, а она входит в состояние Стремительного льда, которое повышает урон её обычной атаки и конвертирует его в Крио урон.\nНаходясь в состоянии Стремительного льда, Элой не может накапливать уровни Спирали.\nЭффекты Спирали сбросятся через 30 сек. после того, как Элой покинет бой."
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Prophecies of Dawn",
-          "description": "Aloy throws a Power Cell filled with Cryo in the targeted direction, then detonates it with an arrow, dealing AoE Cryo DMG.",
+          "title": "Пророчества рассвета",
+          "description": "Элой бросает в цель Топливный элемент, наполненный элементом Крио, затем детонирует его стрелой, нанося Крио урон по площади.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Easy Does It",
-          "description": "When Aloy is in the party, animals who produce Fowl, Raw Meat, or Chilled Meat will not be startled when party members approach them.",
+          "title": "Охотник пустоши",
+          "description": "Когда Элой в отряде, мелкие животные, у которых можно добыть мясо птицы, сырое мясо и цельномороженое мясо, больше вас не пугаются.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Combat Override",
-          "description": "When Aloy receives the Coil effect from Frozen Wilds, her ATK is increased by 16%, while nearby party members' ATK is increased by 8%. This effect lasts 10s.",
+          "title": "Боевой перехват",
+          "description": "Когда Элой получает эффект Спирали навыка Ледяная пустошь, её сила атаки повышается на 16%, а сила атаки других окружающих членов отряда повышается на 8%. Этот эффект длится 10 сек.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Strong Strike",
-          "description": "When Aloy is in the Rushing Ice state conferred by Frozen Wilds, her Cryo DMG Bonus increases by 3.5% every 1s. A maximum Cryo DMG Bonus increase of 35% can be gained in this way.",
+          "title": "Сильная атака",
+          "description": "Когда Элой находится в состоянии Стремительного льда навыка Ледяная пустошь, её бонус Крио урона увеличивается на 3.5% каждую секунду. Подобным способом можно получить до 35% бонуса Крио урона.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Star of Another World",
-          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "title": "Чужеземная звезда",
+          "description": "Момент осветить звёздное небо этого человека ещё не настал.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Star of Another World",
-          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "title": "Чужеземная звезда",
+          "description": "Момент осветить звёздное небо этого человека ещё не настал.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Star of Another World",
-          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "title": "Чужеземная звезда",
+          "description": "Момент осветить звёздное небо этого человека ещё не настал.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Star of Another World",
-          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "title": "Чужеземная звезда",
+          "description": "Момент осветить звёздное небо этого человека ещё не настал.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Star of Another World",
-          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "title": "Чужеземная звезда",
+          "description": "Момент осветить звёздное небо этого человека ещё не настал.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Star of Another World",
-          "description": "The time has not yet come for this person's corner of the night sky to light up.",
+          "title": "Чужеземная звезда",
+          "description": "Момент осветить звёздное небо этого человека ещё не настал.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -4858,103 +4858,103 @@
     {
       "key": "KujouSara",
       "name": "Кудзё Сара",
-      "description": "A general of the Tenryou Commission. Bold, decisive, and skilled in battle.",
+      "description": "Действующий генерал комиссии Тэнрё. Решительный убийца и храбрый воин.",
       "skills": [
         {
           "key": "s1",
-          "title": "Tengu Bowmanship",
+          "title": "Стрелковое искусство тэнгу",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 5 consecutive shots with a bow.",
+              "description": "До пяти выстрелов из лука.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG.\nWhile aiming, crackling lightning will accumulate on the arrowhead. An arrow fully charged with the storm's might will deal Electro DMG.\nWhen in the Crowfeather Cover state, a fully-charged arrow will leave a Crowfeather behind after it hits.",
+              "description": "Более меткий прицельный выстрел с увеличенным уроном.\nВо время прицеливания наконечник стрелы заряжается потрескивающей молнией. Полностью заряженная силой грозы стрела наносит Электро урон.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "Выпускает град стрел в воздухе, которые при приземлении персонажа наносят урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Tengu Stormcall",
-          "description": "Retreats rapidly with the speed of a tengu, summoning the protection of the Crowfeather.\nGains Crowfeather Cover for 18s, and when Kujou Sara fires a fully-charged Aimed Shot, Crowfeather Cover will be consumed, and will leave a Crowfeather at the target location.\nCrowfeathers will trigger Tengu Juurai: Ambush after a short time, dealing Electro DMG and granting the active character within its AoE an ATK Bonus based on Kujou Sara's Base ATK.\nThe ATK Bonuses from different Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
+          "title": "Призыв грозы тэнгу",
+          "description": "Быстро отступает со скоростью тэнгу и призывает защиту Вороньего пера.Кудзё Сара получает Укрытие вороньего пера на 18 сек., и когда она совершает полностью заряженный прицельный выстрел, Укрытие вороньего пера тратится и оставляет на месте цели Воронье перо.Через короткое время Вороньи перья активируют Тэнгу дзюрай: Засада, которые наносят противникам в зоне действия Электро урон и дают активному персонажу, находящемуся в зоне действия, бонус атаки, зависящий от базовой атаки Кудзё Сары.Бонусы атаки от разных Тэнгу дзюрай не складываются, а их эффекты и длительность считаются по последнему появившемуся Тэнгу дзюрай.",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Subjugation: Koukou Sendou",
-          "description": "Casts down Tengu Juurai: Titanbreaker, dealing AoE Electro DMG. Afterwards, Tengu Juurai: Titanbreaker spreads out into 4 consecutive bouts of Tengu Juurai: Stormcluster, dealing AoE Electro DMG.\nTengu Juurai: Titanbreaker and Tengu Juurai: Stormcluster can provide the active character within their AoE with the same ATK Bonus as given by the Elemental Skill, Tengu Stormcall.\nThe ATK Bonus provided by various kinds of Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
+          "title": "Подчинение: Коко сэндо",
+          "description": "По позиции цели бьёт Тэнгу дзюрай: Крушитель титанов, который наносит Электро урон по площади. После этого Тэнгу дзюрай: Крушитель титанов разделяется на 4 линии последовательных Тэнгу дзюрай: Громокластер, которые наносят Электро урон по площади.Тэнгу дзюрай: Крушитель титанов и Тэнгу дзюрай: Громокластер позволяют активному персонажу в зоне действия получить тот же бонус атаки, что и во время элементального навыка Призыв грозы тэнгу.Бонусы атаки от разных Тэнгу дзюрай не складываются, а их эффекты и длительность считаются по последнему появившемуся Тэнгу дзюрай.",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Land Survey",
-          "description": "When dispatched on an expedition in Inazuma, time consumed is reduced by 25%.",
+          "title": "Обзор местности",
+          "description": "Уменьшает длительность экспедиций в Инадзуме на 25%.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Immovable Will",
-          "description": "While in the Crowfeather Cover state provided by Tengu Stormcall, Aimed Shot charge times are decreased by 60%.",
+          "title": "Недвижимая воля",
+          "description": "Нахождение в состоянии Укрытия вороньего пера навыка Призыв грозы тэнгу уменьшает время заряда прицельного выстрела на 60%.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Decorum",
-          "description": "When Tengu Juurai: Ambush hits opponents, Kujou Sara will restore 1.2 Energy to all party members for every 100% Energy Recharge she has. This effect can be triggered once every 3s.",
+          "title": "Этикет",
+          "description": "Когда Тэнгу дзюрай: Засада попадает атакой по противнику, Кудзё Сара восстанавливает 1.2 ед. энергии всем членам отряда за каждые 100% своего показателя восстановления энергии.Этот эффект может возникнуть только 1 раз каждые 3 сек.",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Crow's Eye",
-          "description": "When Tengu Juurai grant characters ATK Bonuses or hits opponents, the CD of Tengu Stormcall is decreased by 1s.\nThis effect can be triggered once every 3s.",
+          "title": "Глаз ворона",
+          "description": "Когда Тэнгу дзюрай дают персонажам бонус атаки или попадают по противнику, время отката навыка Призыв грозы тэнгу уменьшается на 1 сек.Этот эффект может возникнуть только 1 раз каждые 3 сек.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Dark Wings",
-          "description": "Unleashing Tengu Stormcall will leave a weaker Crowfeather at Kujou Sara's original position that will deal 30% of its original DMG.",
+          "title": "Тёмные крылья",
+          "description": "Активация навыка Призыв грозы тэнгу оставляет на месте Кудзё Сары Воронье перо, которое призывает слабое Тэнгу дзюрай: Засада, наносящее 30% изначального урона.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "The War Within",
-          "description": "Increases the Level of Subjugation: Koukou Sendou by 3.\nMaximum upgrade level is 15.",
+          "title": "Внутренняя война",
+          "description": "Увеличивает уровень навыка Подчинение: Коко сэндо на 3.\nМакс. уровень: 15",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Conclusive Proof",
-          "description": "The number of Tengu Juurai: Stormcluster released by Subjugation: Koukou Sendou is increased to 6.",
+          "title": "Неоспоримое доказательство",
+          "description": "Количество призванных навыком Подчинение: Коко сэндо Тэнгу дзюрай: Громокластер увеличено до 6.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Spellsinger",
-          "description": "Increases the Level of Tengu Stormcall by 3.\nMaximum upgrade level is 15.",
+          "title": "Заклинательная песнь",
+          "description": "Увеличивает уровень навыка Призыв грозы тэнгу на 3.\nМакс. уровень: 15",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Sin of Pride",
-          "description": "The Electro DMG of characters who have had their ATK increased by Tengu Juurai has its Crit DMG increased by 60%.",
+          "title": "Грех гордыни",
+          "description": "Крит. урон Электро урона персонажей, получивших бонус атаки от Тэнгу дзюрай, увеличивается на 60%.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -4963,7 +4963,7 @@
     {
       "key": "RaidenShogun",
       "name": "Сёгун Райдэн",
-      "description": "Her Excellency, the Almighty Narukami Ogosho, who promised the people of Inazuma an unchanging Eternity.",
+      "description": "Её Превосходительство Наруками Огосё, пообещавшая неизменную вечность для жителей Инадзумы.",
       "skills": [
         {
           "key": "s1",
@@ -4972,49 +4972,46 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive spear strikes.",
+              "description": "Обычная атака:До пяти быстрых ударов копьём..",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to perform an upward slash.",
+              "description": "Заряженная атака:Проводит атаку вверх, для которой тратится определённое количество выносливости.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "Атака в падении:Стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Transcendence: Baleful Omen",
-          "description": "The Raiden Shogun unveils a shard of her Euthymia, dealing Electro DMG to nearby opponents, and granting nearby party members the Eye of Stormy Judgment.",
+          "title": "Превосходство: Зловещее знамение",
+          "description": "Сёгун Райдэн приоткрывает своё Царство и наносит окружающим врагам Электро урон, после чего даёт всем окружающим членам отряда Глаз грозового наказания.",
           "abilities": [
             {
-              "name": "Eye of Stormy Judgment",
-              "description": null,
-              "descriptions": [
-                "When characters with this buff attack and hit opponents, the Eye will unleash a coordinated attack, dealing AoE Electro DMG at the opponent's position.",
-                "Characters who gain the Eye of Stormy Judgment will have their Elemental Burst DMG increased based on the Energy Cost of the Elemental Burst during the Eye's duration.\nThe Eye can initiate one coordinated attack every 0.9s per party.\nCoordinated attacks generated by characters not controlled by you deal 20% of the normal DMG."
-              ]
+              "name": "Глаз грозового наказания",
+              "description": "Когда персонажи с этим усилением атакуют и наносят урон противнику, Глаз грозового наказания проводит совместную атаку и наносит на месте врага Электро урон по площади.\n· Глаз грозового наказания увеличивает урон взрыва стихии персонажа в зависимости от стоимости энергии взрыва стихии во время действия Глаза грозового наказания.Глаз грозового наказания может провести только одну совместную атаку на отряд в течение 0.9 сек.Совместные атаки, вызванные персонажами, которых контролируете не вы, наносят 20% от обычного урона.",
+              "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Secret Art: Musou Shinsetsu",
-          "description": "Gathering truths unnumbered and wishes uncounted, the Raiden Shogun unleashes the Musou no Hitotachi and deals AoE Electro DMG, using Musou Isshin in combat for a certain duration afterward. The DMG dealt by Musou no Hitotachi and Musou Isshin's attacks is based on the number of Shogan Byakugen no Rin's Resolve stacks consumed when this skill is used.",
+          "title": "Тайное искусство: Мусо синсэцу",
+          "description": "Собрав несметные истины и бесчисленные мечты, сёгун Райдэн проводит атаку Мусо но хитотати и наносит Электро урон по площади, после чего ещё некоторое время использует Мусо иссин в бою. Урон, наносимый атаками Мусо но хитотати и Мусо иссин, увеличивается в зависимости от количества потраченных при активации навыка уровней Решимости Чакры вожделения.",
           "abilities": [
             {
-              "name": "Musou Isshin",
-              "description": "While in this state, the Raiden Shogun will wield her tachi in battle, while her Normal, Charged, and Plunging Attacks will be infused with Electro DMG, which cannot be overridden. When such attacks hit opponents, she will regenerate Energy for all nearby party members. Energy can be restored this way once every 1s, and this effect can be triggered 5 times throughout this skill's duration.\nWhile in this state, the Raiden Shogun's resistance to interruption is increased, and she is immune to Electro-Charged reaction DMG.\nWhile Musou Isshin is active, the Raiden Shogun's Normal, Charged, and Plunging Attack DMG will be considered Elemental Burst DMG.\nThe effects of Musou Isshin will be cleared when the Raiden Shogun leaves the field.",
+              "name": "Мусо иссин",
+              "description": "В этом состоянии сёгун Райдэн использует в бою свой меч, а её обычные атаки, заряженные атаки и атаки в падении получают инфузию Электро, которая не может быть отменена какой-либо другой элементальной инфузией. Когда эти атаки попадают по противнику, сёгун Райдэн восстанавливает энергию всем окружающим членам отряда. Энергия может восстановиться таким способом только раз в 1 сек., и этот эффект может быть активирован до 5 раз во время действия навыка.В этом состоянии повышается сопротивление прерыванию сёгуна Райдэн, и она получает иммунитет к урону от реакции Заряжен. Когда Мусо иссин активен, урон обычной атаки, заряженной атаки и атаки в падении будет считаться уроном взрыва стихии.Эффект навыка Мусо иссин исчезает, когда сёгун Райдэн покидает бой.",
               "descriptions": []
             },
             {
-              "name": "Chakra Desiderata",
-              "description": "When nearby party members (excluding the Raiden Shogun herself) use their Elemental Bursts, the Raiden Shogun will build up Resolve stacks based on the Energy Cost of these Elemental Bursts.\nThe maximum number of Resolve stacks is 60.\nThe Resolve gained by Chakra Desiderata will be cleared 300s after the Raiden Shogun leaves the field.",
+              "name": "Чакра вожделения",
+              "description": "Когда окружающие члены отряда (кроме самого сёгуна Райдэн) используют взрыв стихии, сёгун Райдэн накапливает уровни Решимости пропорционально стоимости энергии этих взрывов стихии.Решимость может складываться до 60 раз.Полученная с помощью Чакры вожделения Решимость сбросится через 300 сек. после окончания боя..",
               "descriptions": []
             }
           ]
@@ -5023,20 +5020,20 @@
       "passives": [
         {
           "key": "p1",
-          "title": "All-Preserver",
-          "description": "Mora expended when ascending Swords and Polearms is decreased by 50%.",
+          "title": "Хранитель всего сущего",
+          "description": "При возвышении одноручного и древкового оружия тратится на 50% меньше моры.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Wishes Unnumbered",
-          "description": "When nearby party members gain Elemental Orbs or Particles, Chakra Desiderata gains 2 Resolve stacks.\nThis effect can occur once every 3s.",
+          "title": "Бесчисленные мечты",
+          "description": "Когда окружающие члены отряда получают элементальные сферы или частицы, Чакра вожделения получает 2 уровня Решимости.Может возникнуть только 1 раз каждые 3 сек.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Enlightened One",
-          "description": "Each 1% above 100% Energy Recharge that the Raiden Shogun possesses grants her:",
+          "title": "Просветлённая",
+          "description": "Каждый 1% свыше 100% восстановления энергии сёгуна Райдэн даёт ей следующие эффекты:· Увеличивает восстановление энергии от Мусо иссин на 0.6%.· Увеличивает бонус Электро урона на 0.4%.",
           "descriptions": [
             "0.6% greater Energy restoration from Musou Isshin",
             "0.4% Electro DMG Bonus."
@@ -5046,43 +5043,43 @@
       "constellations": [
         {
           "key": "c1",
-          "title": "Ominous Inscription",
-          "description": "Chakra Desiderata will gather Resolve even faster. When Electro characters use their Elemental Bursts, the Resolve gained is increased by 80%. When characters of other Elemental Types use their Elemental Bursts, the Resolve gained is increased by 20%.",
+          "title": "Зловещая надпись",
+          "description": "Чакра вожделения набирает Решимость ещё быстрее. Когда Электро персонажи используют свой взрыв стихии, получаемая Решимость увеличивается на 80%. Когда персонажи других элементальных типов используют свой взрыв стихии, получаемая Решимость увеличивается на 20%.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Steelbreaker",
-          "description": "Secret Art: Musou Shinsetsu's Musou no Hitotachi and Musou Isshin attacks will ignore 60% of opponents' DEF.",
+          "title": "Разрушитель стали",
+          "description": "Атаки Мусо но хитотати и Мусо иссин навыка Тайное искусство: Мусо синсэцу  игнорируют 60% от защиты противника.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Shinkage Bygones",
-          "description": "Increases the Level of Secret Art: Musou Shinsetsu by 3.\nMaximum upgrade level is 15.",
+          "title": "Синкагэ минувших дней",
+          "description": "Увеличивает уровень навыка Тайное искусство: Мусо синсэцу на 3.\nМакс. уровень: 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Pledge of Propriety",
-          "description": "When the Musou Isshin state applied by Secret Art: Musou Shinsetsu expires, all nearby party members (excluding the Raiden Shogun) gain 30% bonus ATK for 10s.",
+          "title": "Клятва истинности",
+          "description": "Когда состояние Мусо иссин навыка Тайное искусство: Мусо синсэцу заканчивается, все окружающие члены отряда (кроме сёгуна Райдэн) получают 30% бонус силы атаки на 10 сек.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Shogun's Descent",
-          "description": "Increases the Level of Transcendence: Baleful Omen by 3.\nMaximum upgrade level is 15.",
+          "title": "Нисхождение сёгуна",
+          "description": "Увеличивает уровень навыка Превосходство: Зловещее знамение на 3.\nМакс. уровень: 15",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Wishbearer",
-          "description": "While in the Musou Isshin state applied by Secret Art: Musou Shinsetsu, the Raiden Shogun's Normal, Charged, and Plunging Attacks will decrease all nearby party members' (but not including the Raiden Shogun herself) Elemental Burst CD by 1s when they hit opponents.\nThis effect can trigger once every 1s, and can trigger a total of 5 times during the state's duration.",
+          "title": "Хранитель желаний",
+          "description": "В состоянии Мусо иссин навыка Тайное искусство: Мусо синсэцу атаки сёгуна Райдэн, урон которых считается уроном взрыва стихии, при попадании уменьшают время отката взрывов стихии всех окружающих членов отряда (кроме самой сёгуна Райдэн) на 1 сек.Этот эффект может активироваться только раз в 1 сек. до 5 раз за время действия состояния Мусо иссин.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -5090,7 +5087,7 @@
     },
     {
       "key": "Thoma",
-      "name": "Thoma",
+      "name": "Тома",
       "description": "",
       "skills": [
         {
@@ -5861,15 +5858,15 @@
     },
     {
       "key": "The Catch",
-      "name": "The Catch",
-      "description": "In the distant past, this was the beloved spear of a famed Inazuman bandit.",
-      "refinement": "Increases Elemental Burst DMG by {{0}}% and Elemental Burst CRIT Rate by {{1}}%"
+      "name": "Улов",
+      "description": "В далёком прошлом это копьё принадлежало знаменитому инадзумскому разбойнику.",
+      "refinement": "Повышает урон взрыва стихии на {{0}}% и его шанс крит. попадания на {{1}}%"
     },
     {
       "key": "Predator",
-      "name": "Predator",
-      "description": "A uniquely-designed bow. This should not belong in this world.",
-      "refinement": "Exclusively available when playing on \"Playstation Network.\"\nDealing Cryo DMG to opponents increases this character's Normal and Charged Attack DMG by {{0}}% for 6s. This effect can have a maximum of 2 stacks. Additionally, when Aloy equips Predator, ATK is increased by {{1}}."
+      "name": "Хищник",
+      "description": "Конструкция этого лука абсолютно уникальна, словно бы он не принадлежит этому миру.",
+      "refinement": "Действует только для игроков PlayStation Нанесённый противникам Крио урон повышает урон обычной и заряженной атаки персонажа на {{0}}% в течение 6 сек. Эффект может складываться до 2 раз. Так же, когда Хищником экипирована Элой, сила атаки повышается на  {{1}} ед."
     }
   ],
   "artifacts": [
@@ -6724,7 +6721,7 @@
     },
     {
       "key": "BoneShardB",
-      "name": "Крепкие останки",
+      "name": "Креикие останки",
       "description": "Фрагмент костей неизвестного существа, которые очень любят геовишапы.\nФрагмент выглядит довольно древним. По каким-то причинам эти драконоподобные существа, не имеющие своего языка, испытывают особую привязанность к осколкам этих костей."
     },
     {
@@ -7444,68 +7441,68 @@
     },
     {
       "key": "Amethyst Lump",
-      "name": "Amethyst Lump",
-      "description": "An uncut crystal that can only be found in Inazuma. Some professional craftsmanship will bring out its true value."
+      "name": "Кусок аметиста",
+      "description": "Необработанные кристаллы, которые встречаются только в Инадзуме. Только профессиональный ремесленник может выявить его истинную ценность."
     },
     {
       "key": "SpectralA",
-      "name": "Spectral Husk",
-      "description": "An energy core that allows the Specters to float. It contains a small amount of elemental energy.\nMost of the rest has already dispersed."
+      "name": "Призрачная оболочка",
+      "description": "Энергетическое ядро, которое позволяет призракам парить. Оно содержит небольшое количество элементальной энергии.\nБольшая часть остальной энергии уже рассеялась."
     },
     {
       "key": "SpectralB",
-      "name": "Spectral Heart",
-      "description": "An energy core that allows the Specters to float.\nThese elemental life-forms have strange behavioral patterns and will periodically surge in number before disappearing."
+      "name": "Призрачное сердце",
+      "description": "Энергетическое ядро, которое позволяет призракам парить.\nЭти элементальные формы жизни весьма необычны. Иногда их резко становится больше, а потом они вдруг исчезают."
     },
     {
       "key": "SpectralC",
-      "name": "Spectral Nucleus",
-      "description": "A complete energy core that can sometimes be found after defeating Specters.\nThere is a debate among those who just have to divide the world into winners and losers: what floats better — a Specter or an Anemo Slime?"
+      "name": "Призрачное ядро",
+      "description": "Цельное энергетическое ядро, которое иногда можно получить после победы над призраками.\nСреди тех, кому просто необходимо разделить мир на победителей и проигравших, идёт спор: что лучше парит - призрак или Анемо слайм?"
     },
     {
       "key": "Dew of Repudiation",
-      "name": "Dew of Repudiation",
-      "description": "A strange water droplet left behind by the collapse of the Hydro Hypostasis.\nIt has strong rejection properties, and this forms the basis of one of the Hydro Hypostasis' attack patterns as well. They say that water contains memories and willpower, and that these things can grow when bodies of water meld together. However, the waves conjured by the Hydro Hypostasis are incompatible with the currents that flow above and below ground. Even if it were to flow into the surpassingly pure waters of Petrichor, this drop of water will likely resist assimilation as strongly as mercury."
+      "name": "Роса отречения",
+      "description": "Странная капля воды, оставшаяся после распада Гидро гипостазиса.\nОна словно бы обладает собственной волей, не дающей ей смешаться с водой из других источников. Это странное отторжение можно использовать в атаке против Гидро гипостазиса. Говорят, что вода содержит воспоминания и силу воли и при слиянии вод их память и воля тоже объединяются. Но волны, создаваемые Гидро гипостазисами, несовместимы ни с поверхностными, ни с подземными водными течениями. Даже непревзойденно чистые воды Петрикор, скорее всего, не смогли бы поглотить эту каплю, словно бы она сделана не из воды, а из ртути."
     },
     {
       "key": "Storm Beads",
-      "name": "Storm Beads",
-      "description": "Crackling Electro pearls left behind by the Thunder Manifestation.\nIt is said that Thunder Manifestations will only descend upon lands where powerful hatred dwells. The singers say that it is the unbearable disappointments and sufferings of life that drive them to forever wander the broken earth, unleashing sky-searing lightning as they go."
+      "name": "Штормовой жемчуг",
+      "description": "Издающая легкий треск жемчужина, оставшаяся от манифестации грома.\nГоворят, что манифестации грома спускаются только на земли, где обитает сильная ненависть. Сказания бардов гласят, что именно невыносимое страдание и разочарование в жизни обрекают их на вечное скитание по земле, наполненное разрядами молний."
     },
     {
       "key": "Sango Pearl",
-      "name": "Sango Pearl",
-      "description": "A precious pearl that grows in the coral of Watatsumi. Gives of a cool sheen like that of the moonlight."
+      "name": "Жемчужина Санго",
+      "description": "Драгоценная жемчужина с берегов Ватацуми. Излучает мягкую лунную прохладу."
     },
     {
       "key": "Dew of Repudiation",
-      "name": "Dew of Repudiation",
-      "description": "A strange water droplet left behind by the collapse of the Hydro Hypostasis.\nIt has strong rejection properties, and this forms the basis of one of the Hydro Hypostasis' attack patterns as well. They say that water contains memories and willpower, and that these things can grow when bodies of water meld together. However, the waves conjured by the Hydro Hypostasis are incompatible with the currents that flow above and below ground. Even if it were to flow into the surpassingly pure waters of Petrichor, this drop of water will likely resist assimilation as strongly as mercury."
+      "name": "Роса отречения",
+      "description": "Странная капля воды, оставшаяся после распада Гидро гипостазиса.\nОна словно бы обладает собственной волей, не дающей ей смешаться с водой из других источников. Это странное отторжение можно использовать в атаке против Гидро гипостазиса. Говорят, что вода содержит воспоминания и силу воли и при слиянии вод их память и воля тоже объединяются. Но волны, создаваемые Гидро гипостазисами, несовместимы ни с поверхностными, ни с подземными водными течениями. Даже непревзойденно чистые воды Петрикор, скорее всего, не смогли бы поглотить эту каплю, словно бы она сделана не из воды, а из ртути."
     },
     {
       "key": "Dendrobium",
-      "name": "Dendrobium",
-      "description": "A vibrant plant that has also been named the \"lycoris\" by the poets. It was once thought extinct in the Inazuman archipelago, only to re-emerge now upon the battlefields. It is said that it blooms most enchantingly where much blood was spilled."
+      "name": "Кровоцвет",
+      "description": "Это яркое растение, прозванное поэтами и писателями «багряный бутон», однажды исчезло с островов Инадзумы, но недавно начало появляться вновь на полях сражений. Говорят, оно цветёт особенно пышно там, где пролилась кровь."
     },
     {
       "key": "Amakumo Fruit",
-      "name": "Amakumo Fruit",
-      "description": "The fruit of the Amakumo Grass, which grows on Seirai Island. You can hear it crackling with a tiny current if you hold it up to your ear."
+      "name": "Плод облачной травы",
+      "description": "Плод облачной травы, которая растёт на острове Сэйрай. Если поднести его к уху, можно услышать слабое потрескивание тока."
     },
     {
       "key": "Molten Moment",
-      "name": "Molten Moment",
-      "description": "A certain deformed fragment containing great might. You obtained this from defeating Signora, who unleashed her original power.\n\"I had a long, long dream.\n\"I dreamed that you and I met again in the pure white world that we created.\n\"But I woke up at last, having long been consumed by the raging flames, while you had long returned to the earth along with that poisoned blood.\n\"But none of it matters anymore. I must continue forging ahead. I must incinerate everything behind me. I must believe in that pure, spotless, everlasting realm that he spoke of — that I saw in the 'delusion' he let me see, at the end of the horizon of Her Majesty's dreams.\""
+      "name": "Расплавленный миг",
+      "description": "Фрагмент странной формы, в котором заключена великая мощь. Вы получили его после победы над Синьорой, выпустившей на волю свою изначальную силу.\n«Мне снился долгий, долгий сон.\nМне снилось, что мы с тобой снова встретились в чистом белом мире, который мы создали.\nНо наконец я проснулась. Меня уже давно поглотило бушующее пламя. Ты давно вернулся на землю вместе с отравленной кровью.\nНо всё это уже не важно. Я должна продолжать идти вперёд. Я должна сжечь всё позади себя. Я должна верить в то чистое, безупречное, вечное царство, о котором он говорил. Царство, которое я видела в «бреду». Царство, которое он позволил мне увидеть, в конце горизонта, в снах Её Величества»."
     },
     {
-      "key": "Hellfire Butterfly",
-      "name": "Hellfire Butterfly",
-      "description": "A warped shard that houses great might. You obtained this from defeating Signora, who unleashed her original power.\nThe seal of ice was broken under duress, and as her former will surged forth from its pale white prison and she remembered her old name once more, the undying butterfly danced amidst burning flesh and blood. And she remembered her past, wandering the land, spreading the flame, burning away all evil — and she recalled the face of the person she could never meet again."
+      "key":"Hellfire Butterfly",
+      "name": "Бабочка адского пламени",
+      "description": "Фрагмент странной формы, в котором заключена великая мощь. Вы получили его после победы над Синьорой, выпустившей на волю свою изначальную силу.\nЛедяная печать была сломана под давлением. Когда её прежняя воля вырвалась из своей бледной тюрьмы, она вспомнила своё прежнее имя Бессмертная бабочка начала свой танец среди горящей плоти и крови. Она вспомнила своё прошлое, в котором она странствовала по земле, распространяя пламя, сжигая всё зло. А ещё она вспомнила лицо человека, с которым ей не суждено больше встретиться."
     },
     {
       "key": "Ashen Heart",
-      "name": "Ashen Heart",
-      "description": "A deformed fragment that contains powerful emotions. You obtained this from defeating Signora, who unleashed her original power.\nEven tears cannot extinguish the flames. Molten-hot agony and rage rush through her veins, oozing from her tear ducts.\nThe First Fatuus found her just before her heart could be destroyed by the eternal blaze. He understood that only deeper hate and obsession could quench the fire that devoured her and make her his ally..."
+      "name": "Пепельное сердце",
+      "description": "Фрагмент странной формы, в котором заключена великая мощь. Вы получили его после победы над Синьорой, выпустившей на волю свою изначальную силу.\nДаже слёзы не могут погасить пламя. Расплавленная агония и ярость бурлят в её жилах, сочатся из глаз.\nПервый Фатуи нашёл её как раз перед тем, как вечное пламя изготовилось сжечь её сердце. Он понял, что только глубокая ненависть и одержимость могут погасить пожирающий её огонь, и сделал её своим союзником..."
     }
   ],
   "debuffs": [
