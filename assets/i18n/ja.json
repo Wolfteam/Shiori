@@ -5083,6 +5083,49 @@
           "descriptions": []
         }
       ]
+    },
+    {
+      "key": "Thoma",
+      "name": "Thoma",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA - S1",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "Perform up to 5 consecutive shots with a bow.",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "Perform a more precise Aimed Shot with increased DMG.\nWhile aiming, crackling lightning will accumulate on the arrowhead. An arrow fully charged with the storm's might will deal Electro DMG.\nWhen in the Crowfeather Cover state, a fully-charged arrow will leave a Crowfeather behind after it hits.",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "NA - S2",
+          "description": null,
+          "abilities": []
+        },
+        {
+          "key": "s3",
+          "title": "NA - S3",
+          "description": null,
+          "abilities": []
+        }
+      ],
+      "passives": [],
+      "constellations": []
     }
   ],
   "weapons": [
@@ -5817,6 +5860,12 @@
       "name": "「漁獲」",
       "description": "遠い昔、稲妻に名を轟かせた大泥棒が愛用していた槍。",
       "refinement": "元素爆発ダメージ +{{0}}%、元素爆発の会心率 +{{１}}%。"
+    },
+    {
+      "key": "Predator",
+      "name": "Predator",
+      "description": "A uniquely-designed bow. This should not belong in this world.",
+      "refinement": "Exclusively available when playing on \"Playstation Network.\"\nDealing Cryo DMG to opponents increases this character's Normal and Charged Attack DMG by {{0}}% for 6s. This effect can have a maximum of 2 stacks. Additionally, when Aloy equips Predator, ATK is increased by {{1}}."
     }
   ],
   "artifacts": [

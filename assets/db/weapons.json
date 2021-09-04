@@ -8923,6 +8923,329 @@
           "specificValue": 66.2
         }
       ]
+    },
+    {
+      "key": "Predator",
+      "image": "predator.png",
+      "type": "bow",
+      "atk": 42,
+      "rarity": 4,
+      "secondaryStat": "atkPercentage",
+      "secondaryStatValue": 9,
+      "location": "ps4",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "narukamis_wisdom.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "dismal_prism.png"
+            },
+            {
+              "quantity": 2,
+              "materialType": "common",
+              "image": "firm_arrowhead.png"
+            },
+            {
+              "quantity": 5000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "narukamis_joy.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "weapon",
+              "image": "dismal_prism.png"
+            },
+            {
+              "quantity": 8,
+              "materialType": "common",
+              "image": "firm_arrowhead.png"
+            },
+            {
+              "quantity": 15000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "weaponPrimary",
+              "image": "narukamis_joy.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "weapon",
+              "image": "crystal_prism.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "sharp_arrowhead.png"
+            },
+            {
+              "quantity": 20000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "narukamis_affection.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "weapon",
+              "image": "crystal_prism.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "sharp_arrowhead.png"
+            },
+            {
+              "quantity": 30000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "weaponPrimary",
+              "image": "narukamis_affection.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "weapon",
+              "image": "polarizing_prism.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "weathered_arrowhead.png"
+            },
+            {
+              "quantity": 35000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "quantity": 4,
+              "materialType": "weaponPrimary",
+              "image": "narukamis_valor.png"
+            },
+            {
+              "quantity": 18,
+              "materialType": "weapon",
+              "image": "polarizing_prism.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "weathered_arrowhead.png"
+            },
+            {
+              "quantity": 45000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        }
+      ],
+      "refinements": [
+        {
+          "level": 1,
+          "values": [
+            10, 66
+          ]
+        }
+      ],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 42,
+          "isAnAscension": false,
+          "specificValue": 9
+        },
+        {
+          "level": 5,
+          "baseAtk": 56,
+          "isAnAscension": false,
+          "specificValue": 10.5
+        },
+        {
+          "level": 10,
+          "baseAtk": 74,
+          "isAnAscension": false,
+          "specificValue": 12.3
+        },
+        {
+          "level": 15,
+          "baseAtk": 91,
+          "isAnAscension": false,
+          "specificValue": 14.1
+        },
+        {
+          "level": 20,
+          "baseAtk": 109,
+          "isAnAscension": false,
+          "specificValue": 15.9
+        },
+        {
+          "level": 20,
+          "baseAtk": 135,
+          "isAnAscension": true,
+          "specificValue": 15.9
+        },
+        {
+          "level": 25,
+          "baseAtk": 152,
+          "isAnAscension": false,
+          "specificValue": 17.7
+        },
+        {
+          "level": 30,
+          "baseAtk": 170,
+          "isAnAscension": false,
+          "specificValue": 19.5
+        },
+        {
+          "level": 35,
+          "baseAtk": 187,
+          "isAnAscension": false,
+          "specificValue": 21.4
+        },
+        {
+          "level": 40,
+          "baseAtk": 205,
+          "isAnAscension": false,
+          "specificValue": 23.2
+        },
+        {
+          "level": 40,
+          "baseAtk": 231,
+          "isAnAscension": true,
+          "specificValue": 23.2
+        },
+        {
+          "level": 45,
+          "baseAtk": 248,
+          "isAnAscension": false,
+          "specificValue": 25
+        },
+        {
+          "level": 50,
+          "baseAtk": 266,
+          "isAnAscension": false,
+          "specificValue": 26.8
+        },
+        {
+          "level": 50,
+          "baseAtk": 292,
+          "isAnAscension": true,
+          "specificValue": 26.8
+        },
+        {
+          "level": 55,
+          "baseAtk": 309,
+          "isAnAscension": false,
+          "specificValue": 28.6
+        },
+        {
+          "level": 60,
+          "baseAtk": 327,
+          "isAnAscension": false,
+          "specificValue": 30.4
+        },
+        {
+          "level": 60,
+          "baseAtk": 353,
+          "isAnAscension": true,
+          "specificValue": 30.4
+        },
+        {
+          "level": 65,
+          "baseAtk": 370,
+          "isAnAscension": false,
+          "specificValue": 32.3
+        },
+        {
+          "level": 70,
+          "baseAtk": 388,
+          "isAnAscension": false,
+          "specificValue": 34.1
+        },
+        {
+          "level": 70,
+          "baseAtk": 414,
+          "isAnAscension": true,
+          "specificValue": 34.1
+        },
+        {
+          "level": 75,
+          "baseAtk": 431,
+          "isAnAscension": false,
+          "specificValue": 35.9
+        },
+        {
+          "level": 80,
+          "baseAtk": 449,
+          "isAnAscension": false,
+          "specificValue": 37.7
+        },
+        {
+          "level": 80,
+          "baseAtk": 475,
+          "isAnAscension": true,
+          "specificValue": 37.7
+        },
+        {
+          "level": 85,
+          "baseAtk": 492,
+          "isAnAscension": false,
+          "specificValue": 39.5
+        },
+        {
+          "level": 90,
+          "baseAtk": 510,
+          "isAnAscension": false,
+          "specificValue": 41.3
+        }
+      ]
     }
   ],
   "swords": [
