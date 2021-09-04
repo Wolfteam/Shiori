@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/presentation/settings/widgets/settings_card.dart';
+import 'package:shiori/presentation/settings/widgets/settings_card.dart';
 
 class SettingsCardContent extends StatelessWidget {
   final String title;

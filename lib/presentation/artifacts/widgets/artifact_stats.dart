@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/generated/l10n.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/generated/l10n.dart';
 
 class ArtifactStats extends StatelessWidget {
   final List<ArtifactCardBonusModel> bonus;

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/common_button_bar.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/right_bottom_sheet.dart';
-import 'package:genshindb/presentation/shared/elements_button_bar.dart';
-import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:genshindb/presentation/shared/genshin_db_icons.dart';
-import 'package:genshindb/presentation/shared/item_popupmenu_filter.dart';
-import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:genshindb/presentation/shared/rarity_rating.dart';
-import 'package:genshindb/presentation/shared/sort_direction_popupmenu_filter.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/shared/weapons_button_bar.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/common_button_bar.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/right_bottom_sheet.dart';
+import 'package:shiori/presentation/shared/elements_button_bar.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/item_popupmenu_filter.dart';
+import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/rarity_rating.dart';
+import 'package:shiori/presentation/shared/shiori_icons.dart';
+import 'package:shiori/presentation/shared/sort_direction_popupmenu_filter.dart';
+import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/weapons_button_bar.dart';
 
 class CharacterBottomSheet extends StatelessWidget {
   const CharacterBottomSheet({Key? key}) : super(key: key);
@@ -26,7 +26,7 @@ class CharacterBottomSheet extends StatelessWidget {
     final forEndDrawer = getDeviceType(MediaQuery.of(context).size) != DeviceScreenType.mobile;
     if (!forEndDrawer) {
       return CommonBottomSheet(
-        titleIcon: GenshinDb.filter,
+        titleIcon: Shiori.filter,
         title: s.filters,
         showCancelButton: false,
         showOkButton: false,
@@ -138,7 +138,7 @@ class _OtherFilters extends StatelessWidget {
           values: ItemStatusType.values,
           selectedValue: tempStatusType,
           onSelected: (v) => context.read<CharactersBloc>().add(CharactersEvent.itemStatusChanged(v)),
-          icon: Icon(GenshinDb.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
+          icon: Icon(Shiori.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
           itemText: (val) => s.translateReleasedUnreleasedType(val),
         ),
         ItemPopupMenuFilter<CharacterRoleType>(
@@ -147,7 +147,7 @@ class _OtherFilters extends StatelessWidget {
           selectedValue: tempRoleType,
           onSelected: (v) => context.read<CharactersBloc>().add(CharactersEvent.roleTypeChanged(v)),
           itemText: (val) => s.translateCharacterType(val),
-          icon: Icon(GenshinDb.trefoil_lily, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
+          icon: Icon(Shiori.trefoil_lily, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
         ItemPopupMenuFilterWithAllValue(
           tooltipText: s.region,
@@ -155,7 +155,7 @@ class _OtherFilters extends StatelessWidget {
           selectedValue: tempRegionType?.index,
           onAllOrValueSelected: (v) => context.read<CharactersBloc>().add(CharactersEvent.regionTypeChanged(v == null ? null : RegionType.values[v])),
           itemText: (val) => s.translateRegionType(RegionType.values[val]),
-          icon: Icon(GenshinDb.reactor, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
+          icon: Icon(Shiori.reactor, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
         ItemPopupMenuFilter<CharacterFilterType>(
           tooltipText: s.sortBy,

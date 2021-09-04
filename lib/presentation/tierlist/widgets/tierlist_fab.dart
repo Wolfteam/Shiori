@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/presentation/shared/images/circle_character.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/presentation/shared/images/circle_character.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class TierListFab extends StatelessWidget {
   @override

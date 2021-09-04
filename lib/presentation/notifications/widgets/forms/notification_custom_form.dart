@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/domain/utils/date_utils.dart' as utils;
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/notifications/widgets/forms/notification_note.dart';
-import 'package:genshindb/presentation/shared/dropdown_button_with_title.dart';
-import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/utils/date_utils.dart' as utils;
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/notifications/widgets/forms/notification_note.dart';
+import 'package:shiori/presentation/shared/dropdown_button_with_title.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
 import 'notification_circle_item.dart';
 import 'notification_dropdown_type.dart';

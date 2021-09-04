@@ -1,8 +1,8 @@
-import 'package:genshindb/domain/app_constants.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/domain/services/calculator_service.dart';
-import 'package:genshindb/domain/services/genshin_service.dart';
+import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/calculator_service.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:tuple/tuple.dart';
 
 class CalculatorServiceImpl implements CalculatorService {

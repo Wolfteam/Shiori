@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/extensions/string_extensions.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class CommonTableCell extends StatelessWidget {
   final EdgeInsets padding;

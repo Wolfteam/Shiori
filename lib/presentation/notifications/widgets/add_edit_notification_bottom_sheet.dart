@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/common_bottom_sheet_buttons.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/right_bottom_sheet.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/common_bottom_sheet_buttons.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/right_bottom_sheet.dart';
 
 import 'forms/notification_custom_form.dart';
 import 'forms/notification_daily_checkin_form.dart';

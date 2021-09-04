@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/domain/assets.dart';
+import 'package:shiori/domain/assets.dart';
 
 part 'furniture_file_model.freezed.dart';
 part 'furniture_file_model.g.dart';

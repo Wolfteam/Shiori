@@ -1,6 +1,6 @@
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/entities.dart';
-import 'package:genshindb/domain/models/models.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/entities.dart';
+import 'package:shiori/domain/models/models.dart';
 
 abstract class DataService {
   List<CalculatorSessionModel> getAllCalAscMatSessions();

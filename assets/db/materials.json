@@ -6712,6 +6712,21 @@
       "droppedBy": [],
       "hasSiblings": false,
       "farmingRespawnTime": 48
+    },
+    {
+      "key": "Sango Pearl",
+      "rarity": 1,
+      "image": "sango_pearl.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
     }
   ],
   "experience": [

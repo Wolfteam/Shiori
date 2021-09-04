@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/generated/l10n.dart';
+import 'package:shiori/generated/l10n.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 typedef ItemBuilder = String Function(String);

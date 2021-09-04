@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/domain/extensions/string_extensions.dart';
 import 'package:meta/meta.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
 
 part 'tier_list_form_bloc.freezed.dart';
 part 'tier_list_form_event.dart';

@@ -4,16 +4,16 @@ import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/services/logging_service.dart';
-import 'package:genshindb/domain/services/notification_service.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/services/logging_service.dart';
+import 'package:shiori/domain/services/notification_service.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 
-const _channelId = 'genshindb_channel';
+const _channelId = 'shiori_channel';
 const _channelName = 'Notifications';
 const _channelDescription = 'Notifications from the app';
-const _largeIcon = 'genshin_db';
+const _largeIcon = 'shiori';
 
 //Here we use this one in particular cause this tz uses UTC and does not use any kind of dst.
 const _fallbackTimeZone = 'Africa/Accra';

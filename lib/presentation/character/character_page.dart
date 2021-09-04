@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/presentation/shared/scaffold_with_fab.dart';
+import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
 
 import 'widgets/character_detail.dart';
 import 'widgets/character_detail_top.dart';

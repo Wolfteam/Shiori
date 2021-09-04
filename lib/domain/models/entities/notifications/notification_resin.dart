@@ -1,6 +1,6 @@
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/entities.dart';
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/entities.dart';
 
 part 'notification_resin.g.dart';
 
@@ -54,6 +54,6 @@ class NotificationResin extends HiveObject implements NotificationBase {
     required this.currentResinValue,
     required this.title,
     required this.body,
-  })   : type = AppNotificationType.resin.index,
+  })  : type = AppNotificationType.resin.index,
         originalScheduledDate = completesAt;
 }

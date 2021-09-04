@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:genshindb/generated/l10n.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:shiori/generated/l10n.dart';
 
 typedef SearchChanged = void Function(String val);
 

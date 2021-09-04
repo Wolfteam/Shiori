@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter_user_agentx/flutter_user_agent.dart';
-import 'package:genshindb/domain/services/device_info_service.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:shiori/domain/services/device_info_service.dart';
 
 class DeviceInfoServiceImpl implements DeviceInfoService {
   late Map<String, String> _deviceInfo;

@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/services/device_info_service.dart';
-import 'package:genshindb/domain/services/network_service.dart';
-import 'package:genshindb/domain/services/settings_service.dart';
-import 'package:genshindb/domain/services/telemetry_service.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/services/device_info_service.dart';
+import 'package:shiori/domain/services/network_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
+import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'url_page_bloc.freezed.dart';
 part 'url_page_event.dart';

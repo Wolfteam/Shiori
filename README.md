@@ -1,11 +1,11 @@
-# GenshinDb
+# Shiori
 <p align="center">
   <img height="120px" src="assets/icon/icon.png">
 </p>
 
 > A Genshin Impact database kinda app
 
-> This app is not affiliated with or endorsed by miHoYo. GenshinDb is just a database app for the Genshin Impact game
+> This app is not affiliated with or endorsed by miHoYo. Shiori is just a database app for the Genshin Impact game
 <p align="center">
   <img src="images/banner.png">
 </p>
@@ -18,7 +18,7 @@
 * Materials
 * And many more to come
 
-[<img height="100" width="250" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" />](https://play.google.com/store/apps/details?id=com.miraisoft.genshindb)
+[<img height="100" width="250" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" />](https://play.google.com/store/apps/details?id=com.miraisoft.shiori)
 
 [<img height="100" width="250" src="https://static.wikia.nocookie.net/discordapp/images/d/dd/Discord.png/revision/latest?cb=20201124013658&path-prefix=es" />](https://discord.gg/A8SgudQMwP)
 
@@ -43,10 +43,10 @@ Currently the app supports English and Spanish (There are some folks working on 
 If you want to help me with the translations, I encourage you to check the following files:
 
 * The main one (where all the data of the characters / artifacts / etc. are stored):
-[Main](https://github.com/Wolfteam/GenshinDb/blob/develop/assets/i18n/en.json)
+[Main](https://github.com/Wolfteam/Shiori/blob/develop/assets/i18n/en.json)
 
 * The general one (where common strings are stored [not related specifically to the game]):
-[General](https://github.com/Wolfteam/GenshinDb/blob/develop/lib/l10n/intl_en.arb)
+[General](https://github.com/Wolfteam/Shiori/blob/develop/lib/l10n/intl_en.arb)
 
 To translate the general one is very simple, create a copy of the file, keeping the keys and translate the values:
 E.g (in spanish) : "dark" :"Oscuro"

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
-import 'package:genshindb/generated/l10n.dart';
+import 'package:shiori/generated/l10n.dart';
 
 class TierListRowColorPicker extends StatefulWidget {
   final Color currentColor;

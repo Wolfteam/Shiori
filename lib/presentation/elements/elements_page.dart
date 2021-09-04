@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 import 'widgets/sliver_element_debuffs.dart';
 import 'widgets/sliver_element_reactions.dart';

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/extensions/iterable_extensions.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
-import 'package:genshindb/presentation/tierlist/widgets/tierlist_fab.dart';
-import 'package:genshindb/presentation/tierlist/widgets/tierlist_row.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:screenshot/screenshot.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/extensions/iterable_extensions.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/utils/toast_utils.dart';
+import 'package:shiori/presentation/tierlist/widgets/tierlist_fab.dart';
+import 'package:shiori/presentation/tierlist/widgets/tierlist_row.dart';
 
 class TierListPage extends StatefulWidget {
   @override

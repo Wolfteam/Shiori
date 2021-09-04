@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/app_constants.dart';
-import 'package:genshindb/domain/extensions/iterable_extensions.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/common_button_bar.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/right_bottom_sheet.dart';
-import 'package:genshindb/presentation/shared/dialogs/number_picker_dialog.dart';
-import 'package:genshindb/presentation/shared/loading.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/extensions/iterable_extensions.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/common_button_bar.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/right_bottom_sheet.dart';
+import 'package:shiori/presentation/shared/dialogs/number_picker_dialog.dart';
+import 'package:shiori/presentation/shared/loading.dart';
 
 import 'ascension_level.dart';
 import 'skill_item.dart';

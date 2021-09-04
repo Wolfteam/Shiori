@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/domain/services/data_service.dart';
-import 'package:genshindb/domain/services/genshin_service.dart';
-import 'package:genshindb/domain/services/logging_service.dart';
-import 'package:genshindb/domain/services/telemetry_service.dart';
 import 'package:meta/meta.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/data_service.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/logging_service.dart';
+import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'tier_list_bloc.freezed.dart';
 part 'tier_list_event.dart';

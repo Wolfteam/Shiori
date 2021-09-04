@@ -1,16 +1,16 @@
-import 'package:genshindb/domain/services/calculator_service.dart';
-import 'package:genshindb/domain/services/data_service.dart';
-import 'package:genshindb/domain/services/device_info_service.dart';
-import 'package:genshindb/domain/services/game_code_service.dart';
-import 'package:genshindb/domain/services/genshin_service.dart';
-import 'package:genshindb/domain/services/locale_service.dart';
-import 'package:genshindb/domain/services/logging_service.dart';
-import 'package:genshindb/domain/services/network_service.dart';
-import 'package:genshindb/domain/services/notification_service.dart';
-import 'package:genshindb/domain/services/settings_service.dart';
-import 'package:genshindb/domain/services/telemetry_service.dart';
-import 'package:genshindb/infrastructure/infrastructure.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shiori/domain/services/calculator_service.dart';
+import 'package:shiori/domain/services/data_service.dart';
+import 'package:shiori/domain/services/device_info_service.dart';
+import 'package:shiori/domain/services/game_code_service.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/services/logging_service.dart';
+import 'package:shiori/domain/services/network_service.dart';
+import 'package:shiori/domain/services/notification_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
+import 'package:shiori/domain/services/telemetry_service.dart';
+import 'package:shiori/infrastructure/infrastructure.dart';
 
 final GetIt getIt = GetIt.instance;
 

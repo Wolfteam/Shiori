@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/presentation/material/material_page.dart' as mp;
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/presentation/material/material_page.dart' as mp;
 
 class MaterialItemButton extends StatelessWidget {
   final String image;

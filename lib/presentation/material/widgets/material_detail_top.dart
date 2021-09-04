@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/enums/enums.dart' as enums;
-import 'package:genshindb/presentation/shared/details/detail_appbar.dart';
-import 'package:genshindb/presentation/shared/details/detail_top_layout.dart';
-import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
+import 'package:shiori/domain/enums/enums.dart' as enums;
+import 'package:shiori/presentation/shared/details/detail_appbar.dart';
+import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
+import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 
 import 'material_detail_general_card.dart';
 

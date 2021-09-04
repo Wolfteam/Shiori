@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class SettingsCard extends StatelessWidget {
   final Widget child;

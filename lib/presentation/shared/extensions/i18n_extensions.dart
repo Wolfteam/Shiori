@@ -1,4 +1,4 @@
-import 'package:genshindb/domain/app_constants.dart';
+import 'package:shiori/domain/app_constants.dart';
 
 import '../../../domain/enums/enums.dart';
 import '../../../generated/l10n.dart';

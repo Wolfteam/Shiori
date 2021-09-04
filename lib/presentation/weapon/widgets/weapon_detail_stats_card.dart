@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/db/weapons/weapon_file_model.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/common_table_cell.dart';
-import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:genshindb/presentation/shared/item_description_detail.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/db/weapons/weapon_file_model.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/common_table_cell.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/item_description_detail.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class WeaponDetailStatsCard extends StatelessWidget {
   final StatType secondaryStatType;

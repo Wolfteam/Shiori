@@ -43,7 +43,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.miraisoft.genshindb"
+        applicationId "com.miraisoft.shiori"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()

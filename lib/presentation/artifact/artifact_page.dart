@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/artifacts/widgets/artifact_stats.dart';
-import 'package:genshindb/presentation/shared/details/detail_appbar.dart';
-import 'package:genshindb/presentation/shared/details/detail_bottom_portrait_layout.dart';
-import 'package:genshindb/presentation/shared/details/detail_general_card.dart';
-import 'package:genshindb/presentation/shared/details/detail_tab_landscape_layout.dart';
-import 'package:genshindb/presentation/shared/details/detail_top_layout.dart';
-import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:genshindb/presentation/shared/images/circle_character.dart';
-import 'package:genshindb/presentation/shared/images/circle_monster.dart';
-import 'package:genshindb/presentation/shared/item_description_detail.dart';
-import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:genshindb/presentation/shared/scaffold_with_fab.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/shared/utils/size_utils.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/artifacts/widgets/artifact_stats.dart';
+import 'package:shiori/presentation/shared/details/detail_appbar.dart';
+import 'package:shiori/presentation/shared/details/detail_bottom_portrait_layout.dart';
+import 'package:shiori/presentation/shared/details/detail_general_card.dart';
+import 'package:shiori/presentation/shared/details/detail_tab_landscape_layout.dart';
+import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
+import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
+import 'package:shiori/presentation/shared/images/circle_character.dart';
+import 'package:shiori/presentation/shared/images/circle_monster.dart';
+import 'package:shiori/presentation/shared/item_description_detail.dart';
+import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
+import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/size_utils.dart';
 
 class ArtifactPage extends StatelessWidget {
   final double imgHeight = 350;

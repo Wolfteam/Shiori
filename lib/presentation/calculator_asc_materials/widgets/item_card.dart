@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/child_item_disabled.dart';
-import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/shared/utils/modal_bottom_sheet_utils.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/child_item_disabled.dart';
+import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
+import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 import 'add_edit_item_bottom_sheet.dart';
@@ -42,7 +42,13 @@ class ItemCard extends StatelessWidget {
     final theme = Theme.of(context);
     final s = S.of(context);
     final cardColor = rarity.getRarityColors().last;
-
+    final size = MediaQuery.of(context).size;
+    var height = size.height / 2.5;
+    if (height > 500) {
+      height = 500;
+    } else if (height < 280) {
+      height = 280;
+    }
     return InkWell(
       borderRadius: Styles.mainCardBorderRadius,
       onTap: () => _editItem(context),
@@ -57,11 +63,17 @@ class ItemCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FadeInImage(
-                height: 280,
-                placeholder: MemoryImage(kTransparentImage),
-                image: AssetImage(image),
-                fit: BoxFit.cover,
+              SizedBox(
+                height: height,
+                child: FittedBox(
+                  fit: BoxFit.cover,
+                  alignment: Alignment.topCenter,
+                  clipBehavior: Clip.hardEdge,
+                  child: FadeInImage(
+                    placeholder: MemoryImage(kTransparentImage),
+                    image: AssetImage(image),
+                  ),
+                ),
               ),
               Container(
                 decoration: BoxDecoration(

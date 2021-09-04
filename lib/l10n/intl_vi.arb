@@ -1,5 +1,5 @@
 {
-  "appName": "GenshinDb",
+  "appName": "Shiori",
   "dark": "Tối",
   "light": "Sáng",
   "english": "Tiếng Anh",
@@ -131,7 +131,7 @@
   "supportMsg": "Tôi tạo ứng dụng này trong thời gian rảnh và nó cũng ở dạng mã nguồn mở. Nếu bạn muốn giúp đỡ tôi, báo cáo sự cố, có ý tưởng, muốn một tính năng mới,... hãy đăng thông tin lên Github của tôi:",
   "issues": "Issues",
   "disclaimer": "Tuyên bố từ chối trách nhiệm",
-  "disclaimerMsg": "Ứng dụng này không liên kết hoặc được xác nhận bởi miHoYo. GenshinDb chỉ là một cơ sở dữ liệu của trò chơi Genshin Impact",
+  "disclaimerMsg": "Ứng dụng này không liên kết hoặc được xác nhận bởi miHoYo. Shiori chỉ là một cơ sở dữ liệu của trò chơi Genshin Impact",
   "restartMayBeNeeded": "Có thể cần khởi động lại để áp dụng những thay đổi",
   "youCanAlsoSendMeAnEmail": "Bạn có thể gửi vấn đề đến email của tôi:",
   "partial": "Partial",

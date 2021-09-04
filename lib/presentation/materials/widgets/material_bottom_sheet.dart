@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/enums/material_type.dart' as mat;
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/common_button_bar.dart';
-import 'package:genshindb/presentation/shared/bottom_sheets/right_bottom_sheet.dart';
-import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:genshindb/presentation/shared/genshin_db_icons.dart';
-import 'package:genshindb/presentation/shared/item_popupmenu_filter.dart';
-import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:genshindb/presentation/shared/rarity_rating.dart';
-import 'package:genshindb/presentation/shared/sort_direction_popupmenu_filter.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/enums/material_type.dart' as mat;
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/common_button_bar.dart';
+import 'package:shiori/presentation/shared/bottom_sheets/right_bottom_sheet.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/item_popupmenu_filter.dart';
+import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/rarity_rating.dart';
+import 'package:shiori/presentation/shared/shiori_icons.dart';
+import 'package:shiori/presentation/shared/sort_direction_popupmenu_filter.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 final _ignoredSubStats = [
   mat.MaterialType.others,
@@ -32,7 +32,7 @@ class MaterialBottomSheet extends StatelessWidget {
 
     if (!forEndDrawer) {
       return CommonBottomSheet(
-        titleIcon: GenshinDb.filter,
+        titleIcon: Shiori.filter,
         title: s.filters,
         showOkButton: false,
         showCancelButton: false,
@@ -114,7 +114,7 @@ class _OtherFilters extends StatelessWidget {
           selectedValue: tempType,
           values: mat.MaterialType.values.where((el) => !_ignoredSubStats.contains(el)).toList(),
           itemText: (val) => s.translateMaterialType(val),
-          icon: Icon(GenshinDb.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
+          icon: Icon(Shiori.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
         ItemPopupMenuFilter<MaterialFilterType>(
           tooltipText: s.sortBy,

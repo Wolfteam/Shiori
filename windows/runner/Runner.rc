@@ -92,10 +92,10 @@ BEGIN
             VALUE "CompanyName", "com.miraisoft" "\0"
             VALUE "FileDescription", "A new Flutter project." "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "genshindb" "\0"
+            VALUE "InternalName", "shiori" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2021 com.miraisoft. All rights reserved." "\0"
-            VALUE "OriginalFilename", "genshindb.exe" "\0"
-            VALUE "ProductName", "genshindb" "\0"
+            VALUE "OriginalFilename", "shiori.exe" "\0"
+            VALUE "ProductName", "shiori" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

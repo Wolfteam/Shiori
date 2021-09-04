@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/extensions/string_extensions.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
 
 import 'notification_list_subtitle_dates.dart';
 
