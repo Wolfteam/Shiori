@@ -52,16 +52,26 @@ class MonsterCard extends StatelessWidget {
               alignment: AlignmentDirectional.topCenter,
               fit: StackFit.passthrough,
               children: [
-                FadeInImage(
-                  placeholder: MemoryImage(kTransparentImage),
-                  image: AssetImage(image),
+                SizedBox(
+                  height: 200,
+                  width: 200,
+                  child: FittedBox(
+                    fit: BoxFit.cover,
+                    alignment: Alignment.topCenter,
+                    clipBehavior: Clip.hardEdge,
+                    child: FadeInImage(
+                      placeholder: MemoryImage(kTransparentImage),
+                      image: AssetImage(image),
+                    ),
+                  ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ComingSoonNewAvatar(isNew: false, isComingSoon: isComingSoon),
-                  ],
-                ),
+                if (isComingSoon)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      ComingSoonNewAvatar(isNew: false, isComingSoon: true),
+                    ],
+                  ),
               ],
             ),
             Container(
