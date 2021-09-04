@@ -8103,6 +8103,14 @@
     {
       "key": "Hydro Specter",
       "name": "Hydro Specter"
+    },
+    {
+      "key": "Anemo Specter",
+      "name": "Anemo Specter"
+    },
+    {
+      "key": "Geo Specter",
+      "name": "Geo Specter"
     }
   ]
 }

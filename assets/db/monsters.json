@@ -1674,6 +1674,28 @@
         "spectral_heart.png",
         "spectral_nucleus.png"
       ]
+    },
+    {
+      "key": "Anemo Specter",
+      "image": "anemo_specter.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "spectral_husk.png",
+        "spectral_heart.png",
+        "spectral_nucleus.png"
+      ]
+    },
+    {
+      "key": "Geo Specter",
+      "image": "geo_specter.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "spectral_husk.png",
+        "spectral_heart.png",
+        "spectral_nucleus.png"
+      ]
     }
   ]
 }
