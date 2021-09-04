@@ -1663,6 +1663,17 @@
         "kageuchi_handguard.png",
         "famed_handguard.png"
       ]
+    },
+    {
+      "key": "Hydro Specter",
+      "image": "hydro_specter.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "spectral_husk.png",
+        "spectral_heart.png",
+        "spectral_nucleus.png"
+      ]
     }
   ]
 }
