@@ -681,13 +681,13 @@
         {
           "key": "p2",
           "title": "吐納真定",
-          "description": "霊刃 ・重華積霜エリア内にいる時、片手剣、両手剣、長柄武器キャラクターの通常攻撃の攻撃速度+8%。",
+          "description": "霊刃・重華積霜エリア内にいる時、片手剣、両手剣、長柄武器キャラクターの通常攻撃の攻撃速度+8%。",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "追氷剣訣",
-          "description": "霊刃 ・重華積霜エリアが消えた時、自動的に付近の敵を攻撃する霊刃を召喚し、霊刃 ・重華積霜のスキルダメージ100%分の氷元素範囲ダメージを与える。命中した敵の氷元素耐性-10%、継続時間8秒。",
+          "description": "霊刃・重華積霜エリアが消えた時、自動的に付近の敵を攻撃する霊刃を召喚し、霊刃・重華積霜のスキルダメージ100%分の氷元素範囲ダメージを与える。命中した敵の氷元素耐性-10%、継続時間8秒。",
           "descriptions": []
         }
       ],
@@ -702,14 +702,14 @@
         {
           "key": "c2",
           "title": "周天の回転",
-          "description": "霊刃 ・重華積霜エリア内で発動した元素スキルと元素爆発のクールタイム-15%。",
+          "description": "霊刃・重華積霜エリア内で発動した元素スキルと元素爆発のクールタイム-15%。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "雲の果てに光あり",
-          "description": "霊刃 ・雲開星落のスキルLv.+3。\n最大Lv.15まで。",
+          "description": "霊刃・雲開星落のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
@@ -723,14 +723,14 @@
         {
           "key": "c5",
           "title": "真道の正理",
-          "description": "霊刃 ・重華積霜のスキルLv.+3。\n最大Lv.15まで。",
+          "description": "霊刃・重華積霜のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "四霊の捧げ",
-          "description": "HPの割合が重雲より低い敵に霊刃 ・雲開星落が命中した時、ダメージ+15%。\nまた、スキル発動時さらに追加で霊刃を1本を召喚する。",
+          "description": "HPの割合が重雲より低い敵に霊刃・雲開星落が命中した時、ダメージ+15%。\nまた、スキル発動時さらに追加で霊刃を1本を召喚する。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -3101,7 +3101,7 @@
         {
           "key": "c1",
           "title": "魔王の武装・押波",
-          "description": "魔王の武装 ・荒波のクールタイム-20%。",
+          "description": "魔王の武装・荒波のクールタイム-20%。",
           "secondDescription": null,
           "descriptions": []
         },
@@ -3115,28 +3115,28 @@
         {
           "key": "c3",
           "title": "淵の災い・紛争の源",
-          "description": "魔王の武装 ・荒波のスキルLv.+3。\n最大Lv.15まで。",
+          "description": "魔王の武装・荒波のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "淵の災い・復水放流",
-          "description": "4秒毎に、タルタリヤによって発動された断流效果がフィールドに存在する時、タルタリヤが魔王の武装 ・荒波の近接モードの場合、断流 ・斬を発動する。それ以外の場合、断流 ・閃を発動する。\nこの効果によって発動された断流 ・斬と断流 ・閃は、この二つのスキル本来の発動時間制限を受けない。また、本来のスキルへの発動時間制限にも影響を与えない。",
+          "description": "4秒毎に、タルタリヤによって発動された断流效果がフィールドに存在する時、タルタリヤが魔王の武装・荒波の近接モードの場合、断流・斬を発動する。それ以外の場合、断流・閃を発動する。\nこの効果によって発動された断流・斬と断流・閃は、この二つのスキル本来の発動時間制限を受けない。また、本来のスキルへの発動時間制限にも影響を与えない。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "極悪技・雨斬り",
-          "description": "極悪技 ・尽滅閃のスキルLv.+3。\n最大Lv.15まで。",
+          "description": "極悪技・尽滅閃のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "極悪技・天使の滅び",
-          "description": "極悪技 ・尽滅閃発動時、魔王の武装 ・荒波のクールタイムをリセットする。\nこの効果は遠隔モードに戻った後に発動する。",
+          "description": "極悪技・尽滅閃発動時、魔王の武装・荒波のクールタイムをリセットする。\nこの効果は遠隔モードに戻った後に発動する。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -4299,35 +4299,35 @@
         {
           "key": "c1",
           "title": "霜枯れの墨染櫻",
-          "description": "神里綾華の通常攻撃または重撃が敵に氷元素ダメージを与えた時、50%の確率で神里流 • 氷華のクールタイム-0.3秒。この効果は0.1秒毎に1回のみ発動可能。",
+          "description": "神里綾華の通常攻撃または重撃が敵に氷元素ダメージを与えた時、50%の確率で神里流・氷華のクールタイム-0.3秒。この効果は0.1秒毎に1回のみ発動可能。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "三重雪関扉",
-          "description": "神里流 • 霜滅発動時、追加で2つの小さい霜見雪関扉を放ち、それぞれ本来の20%分のダメージを与える。",
+          "description": "神里流・霜滅発動時、追加で2つの小さい霜見雪関扉を放ち、それぞれ本来の20%分のダメージを与える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
           "title": "花白錦画紙吹雪",
-          "description": "神里流 • 霜滅のスキルLv.+3。\n最大Lv.15まで。",
+          "description": "神里流・霜滅のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "栄枯盛衰",
-          "description": "神里流 • 霜滅の霜見雪関扉のダメージを受けた敵の防御力-30%、継続時間6秒。",
+          "description": "神里流・霜滅の霜見雪関扉のダメージを受けた敵の防御力-30%、継続時間6秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "花雲鐘入月",
-          "description": "神里流 • 氷華のスキルLv.+3。\n最大Lv.15まで。",
+          "description": "神里流・氷華のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
@@ -4377,7 +4377,7 @@
           "abilities": [
             {
               "name": "庭火の焔硝",
-              "description": "継続時間内、宵宮の通常攻撃で発射した矢は熾焔の矢となる。炎元素ダメージに変化し、通常攻撃のダメージがアップする。継続時間中、「通常攻撃 • 打ち上げ花火」の2段チャージで焔硝の矢を生成できなくなる。\nこの効果は宵宮が退場する時に解除される。",
+              "description": "継続時間内、宵宮の通常攻撃で発射した矢は熾焔の矢となる。炎元素ダメージに変化し、通常攻撃のダメージがアップする。継続時間中、「通常攻撃・打ち上げ花火」の2段チャージで焔硝の矢を生成できなくなる。\nこの効果は宵宮が退場する時に解除される。",
               "descriptions": []
             }
           ]
@@ -4490,21 +4490,21 @@
         {
           "key": "s2",
           "title": "嗚呼流·風隠急進",
-          "description": "忍法・嗚呼流の独創奥義！疾風の如く速さで戦場を馳せる！\n体を丸め、高速回転する風々輪となり突進する。命中した敵に風元素ダメージを与え、スキル終了時に風々輪 • 旋舞蹴を繰り出し、風元素範囲ダメージを与える。",
+          "description": "忍法・嗚呼流の独創奥義！疾風の如く速さで戦場を馳せる！\n体を丸め、高速回転する風々輪となり突進する。命中した敵に風元素ダメージを与え、スキル終了時に風々輪・旋舞蹴を繰り出し、風元素範囲ダメージを与える。",
           "abilities": [
             {
               "key": "a1",
-              "description": "風々輪状態になり、前方へ転がり、風々輪 • 旋舞蹴を繰り出す。",
+              "description": "風々輪状態になり、前方へ転がり、風々輪・旋舞蹴を繰り出す。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "風々輪状態で転がり続ける。早柚の中断耐性がアップする。\n継続時間中、早柚は突進方向を変えることができ、再び発動することでスキルを早めに終了して、一回押しより強力な風々輪 • 旋舞蹴を繰り出す。\n長押しによって発動した時、元素変化が起きる。\n最大10秒継続することが可能。スキル終了時にクールタイムに入る。風々輪状態の継続時間が長いほど、クールタイムは長くなる。",
+              "description": "風々輪状態で転がり続ける。早柚の中断耐性がアップする。\n継続時間中、早柚は突進方向を変えることができ、再び発動することでスキルを早めに終了して、一回押しより強力な風々輪・旋舞蹴を繰り出す。\n長押しによって発動した時、元素変化が起きる。\n最大10秒継続することが可能。スキル終了時にクールタイムに入る。風々輪状態の継続時間が長いほど、クールタイムは長くなる。",
               "descriptions": []
             },
             {
               "name": "元素変化",
-              "description": "風々輪状態の早柚が水元素/炎元素/氷元素/雷元素に接触すると、接触した元素の属性を獲得し、風々輪と風々輪 • 旋舞蹴は該当元素ダメージを追加で与える。\n元素変化はスキル継続中に1回のみ発生する。",
+              "description": "風々輪状態の早柚が水元素/炎元素/氷元素/雷元素に接触すると、接触した元素の属性を獲得し、風々輪と風々輪・旋舞蹴は該当元素ダメージを追加で与える。\n元素変化はスキル継続中に1回のみ発生する。",
               "descriptions": []
             }
           ]
@@ -4541,7 +4541,7 @@
         {
           "key": "p3",
           "title": "仕事をサボるのだ",
-          "description": "嗚呼流 ・影貉繚乱のむじむじだるまは下記効果を獲得する。",
+          "description": "嗚呼流・影貉繚乱のむじむじだるまは下記効果を獲得する。",
           "descriptions": [
             "キャラクターのHPを回復する時、該当キャラクターの近くに出場している他キャラクターも回復量20%に相当するHPを回復する。",
             "敵を攻撃する時、与えるダメージの範囲を拡大する。"
@@ -4552,24 +4552,24 @@
         {
           "key": "c1",
           "title": "一心二用の術",
-          "description": "嗚呼流 ・影貉繚乱のむじむじだるまは、キャラクターのHPを無視し、周囲の敵への攻撃とキャラクターへのHP回復行動の2つを同時に行う。",
+          "description": "嗚呼流・影貉繚乱のむじむじだるまは、キャラクターのHPを無視し、周囲の敵への攻撃とキャラクターへのHP回復行動の2つを同時に行う。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "逃げ道確保",
-          "description": "嗚呼流 ・風隠急進で下記効果を獲得する。",
+          "description": "嗚呼流・風隠急進で下記効果を獲得する。",
           "secondDescription": null,
           "descriptions": [
-            "一回押し時の風々輪 ・旋舞蹴のダメージ+3.3%。",
-            "長押しの風々輪状態では、0.5秒毎に風々輪 ・旋舞蹴のダメージ+3.3%。この方式でアップできる風々輪 ・旋舞蹴のダメージは66%まで。"
+            "一回押し時の風々輪・旋舞蹴のダメージ+3.3%。",
+            "長押しの風々輪状態では、0.5秒毎に風々輪・旋舞蹴のダメージ+3.3%。この方式でアップできる風々輪・旋舞蹴のダメージは66%まで。"
           ]
         },
         {
           "key": "c3",
           "title": "分身に任せる",
-          "description": "嗚呼流 ・影貉繚乱のスキルLv.+3。\n最大Lv.15まで。",
+          "description": "嗚呼流・影貉繚乱のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
@@ -4583,14 +4583,14 @@
         {
           "key": "c5",
           "title": "素早さ最優先",
-          "description": "嗚呼流 ・風隠急進のスキルLv.+3。\n最大Lv.15まで。",
+          "description": "嗚呼流・風隠急進のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "ぐーたら寝る時間",
-          "description": "早柚自身の嗚呼流 ・影貉繚乱によって召喚されたむじむじだるまの攻撃力と回復量は、早柚の元素熟知によって決まる。早柚の元素熟知の数値が1につき、下記効果が発動する。",
+          "description": "早柚自身の嗚呼流・影貉繚乱によって召喚されたむじむじだるまの攻撃力と回復量は、早柚の元素熟知によって決まる。早柚の元素熟知の数値が1につき、下記効果が発動する。",
           "secondDescription": null,
           "descriptions": [
             "むじむじだるまのダメージは攻撃力0.2%分アップする。この方式でアップできるダメージは攻撃力400%分まで。",
@@ -4716,69 +4716,69 @@
     {
       "key": "Aloy",
       "name": "アーロイ",
-      "description": "Formerly an outcast, now a hunter of unparalleled aptitude. Ready to do the right thing with her bow at any given time.",
+      "description": "かつては異端者であったが、今は機敏で腕の立つ狩人。いついかなる時も、正確無比な矢を放つことができる。",
       "skills": [
         {
           "key": "s1",
-          "title": "Rapid Fire",
+          "title": "ラピッドファイア",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 4 consecutive shots with a bow.",
+              "description": "最大4段の連続射撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG.\nWhile aiming, biting frost will accumulate on the arrowhead. A fully charged frost arrow will deal Cryo DMG.",
+              "description": "ダメージがより高く、より精確な狙い撃ちを発動する。\n照準時、氷霜の寒気が矢先に付着する。寒気に満ちた矢は敵に氷元素ダメージを与える。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "空中から矢の雨を放ち、凄まじいスピードで落下し地面に衝撃を与え、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Frozen Wilds",
-          "description": "Aloy throws a Freeze Bomb in the targeted direction that explodes on impact, dealing Cryo DMG. After it explodes, the Freeze Bomb will split up into many Chillwater Bomblets that explode on contact with opponents or after a short delay, dealing Cryo DMG.\nWhen a Freeze Bomb or Chillwater Bomblet hits an opponent, the opponent's ATK is decreased and Aloy receives 1 Coil stack.\nAloy can gain up to 1 Coil stack every 0.1s.",
+          "title": "凍てついた大地",
+          "description": "目標方向へ氷の爆弾を投げる、命中後に爆発し氷元素ダメージを与える。爆発後、氷の爆弾は複数の冷凍爆弾に分裂する。冷凍爆弾は敵に触れる、または一定時間後に爆発し、氷元素ダメージを与える。\n氷の爆弾または冷凍爆弾が敵に命中すると、敵の攻撃力がダウンし、アーロイに「コイル」効果を1層与える。\nコイル効果は0.1秒毎に最大1層獲得可能。",
           "abilities": [
             {
-              "name": "Coil",
+              "name": "コイル",
               "description": null,
               "descriptions": [
-                "Each stack increases Aloy's Normal Attack DMG.",
-                "When Aloy has 4 Coil stacks, all stacks of Coil are cleared. She then enters the Rushing Ice state, which further increases the DMG dealt by her Normal Attacks and converts her Normal Attack DMG to Cryo DMG.\nWhile in the Rushing Ice state, Aloy cannot obtain new Coil stacks.\nCoil effects will be cleared 30s after Aloy leaves the field."
+                "層数を基準に、アーロイの通常攻撃ダメージをアップさせる。",
+                "コイルを4層所有する時、アーロイのコイル効果は全てクリアされ、「アイスラッシュ」を獲得する。通常攻撃ダメージをさらにアップさせ、通常攻撃が氷元素ダメージに変化する。\nアイスラッシュ状態継続時間中、アーロイはコイル効果を獲得できなくなる。\n戦闘状態が解除されてから30秒後、コイル効果はクリアされる。"
               ]
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Prophecies of Dawn",
-          "description": "Aloy throws a Power Cell filled with Cryo in the targeted direction, then detonates it with an arrow, dealing AoE Cryo DMG.",
+          "title": "ドーンプロフェシー",
+          "description": "目標方向へ氷元素に満ちた動力源を投げ、弓矢で爆発させることにより氷元素範囲ダメージを与える。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Easy Does It",
-          "description": "When Aloy is in the party, animals who produce Fowl, Raw Meat, or Chilled Meat will not be startled when party members approach them.",
+          "title": "まあまあ落ち着け",
+          "description": "アーロイがチーム内にいる時、チーム内の自身のキャラクターが鳥肉、獣肉、冷製鮮肉をドロップする動物に近づいても気付かれなくなる。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Combat Override",
-          "description": "When Aloy receives the Coil effect from Frozen Wilds, her ATK is increased by 16%, while nearby party members' ATK is increased by 8%. This effect lasts 10s.",
+          "title": "戦闘オーバーライド",
+          "description": "アーロイが凍てついた大地のコイル効果を獲得した時、アーロイの攻撃力+16%、周囲にいるチーム内他のキャラクターの攻撃力+8%、持続時間10秒。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Strong Strike",
-          "description": "When Aloy is in the Rushing Ice state conferred by Frozen Wilds, her Cryo DMG Bonus increases by 3.5% every 1s. A maximum Cryo DMG Bonus increase of 35% can be gained in this way.",
+          "title": "強打",
+          "description": "アーロイは凍てついた大地のアイスラッシュ状態にある時、1秒毎に氷元素ダメージ+3.5%、この方式での氷元素ダメージアップ効果は35%まで。",
           "descriptions": []
         }
       ],
@@ -4857,103 +4857,103 @@
     {
       "key": "KujouSara",
       "name": "九条裟羅",
-      "description": "A general of the Tenryou Commission. Bold, decisive, and skilled in battle.",
+      "description": "「天領奉行」の大将。果敢かつ勇猛である。",
       "skills": [
         {
           "key": "s1",
-          "title": "Tengu Bowmanship",
+          "title": "天狗伝弓術",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Perform up to 5 consecutive shots with a bow.",
+              "description": "最大5段の連続射撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Perform a more precise Aimed Shot with increased DMG.\nWhile aiming, crackling lightning will accumulate on the arrowhead. An arrow fully charged with the storm's might will deal Electro DMG.\nWhen in the Crowfeather Cover state, a fully-charged arrow will leave a Crowfeather behind after it hits.",
+              "description": "ダメージがより高く、より精確な狙い撃ちを発動する。\n照準時、雷霆の力が矢先に凝集する。雷霆の力に満ちた矢は、敵に雷元素ダメージを与える。\n「烏羽護持」状態の時、フルチャージを終えた矢は命中時に「烏羽」を残す。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "空中から矢の雨を放ち、凄まじいスピードで落下し地面に衝撃を与え、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Tengu Stormcall",
-          "description": "Retreats rapidly with the speed of a tengu, summoning the protection of the Crowfeather.\nGains Crowfeather Cover for 18s, and when Kujou Sara fires a fully-charged Aimed Shot, Crowfeather Cover will be consumed, and will leave a Crowfeather at the target location.\nCrowfeathers will trigger Tengu Juurai: Ambush after a short time, dealing Electro DMG and granting the active character within its AoE an ATK Bonus based on Kujou Sara's Base ATK.\nThe ATK Bonuses from different Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
+          "title": "烏天狗雷霆召呪",
+          "description": "天狗の神速で後方へ移動し、烏羽の加護を呼びかける。\n18秒間続く「烏羽護持」を獲得する。九条裟羅がフルチャージを終えた矢を放つと、「烏羽護持」を消費し、命中した位置に「烏羽」を残す。\n「烏羽」は短時間後に天狗呪雷・伏を引き起こし、範囲内の敵に雷元素ダメージを与え、範囲内のフィールド上キャラクターの攻撃力を、九条裟羅の基礎攻撃力を基準にアップさせる。\n各種天狗呪雷による攻撃力アップ効果は重ね掛けできず、効果と継続時間は最後に発動したものを基準とする。",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "Subjugation: Koukou Sendou",
-          "description": "Casts down Tengu Juurai: Titanbreaker, dealing AoE Electro DMG. Afterwards, Tengu Juurai: Titanbreaker spreads out into 4 consecutive bouts of Tengu Juurai: Stormcluster, dealing AoE Electro DMG.\nTengu Juurai: Titanbreaker and Tengu Juurai: Stormcluster can provide the active character within their AoE with the same ATK Bonus as given by the Elemental Skill, Tengu Stormcall.\nThe ATK Bonus provided by various kinds of Tengu Juurai will not stack, and their effects and duration will be determined by the last Tengu Juurai to take effect.",
+          "title": "煌煌千道鎮式",
+          "description": "目標位置に天狗呪雷・金剛破を下し、雷元素範囲ダメージを与える。その後、天狗呪雷・金剛破は4つの連続する天狗呪雷・雷礫に分裂し、雷元素範囲ダメージを与える。\n天狗呪雷・金剛破と天狗呪雷・雷礫は、範囲内のフィールド上キャラクターに、元素スキル「烏天狗雷霆召呪」に相当する攻撃力アップ効果を与える。\n各種天狗呪雷による攻撃力アップ効果は重ね掛けできず、効果と継続時間は最後に発動したものを基準とする。",
           "abilities": []
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Land Survey",
-          "description": "When dispatched on an expedition in Inazuma, time consumed is reduced by 25%.",
+          "title": "検地",
+          "description": "稲妻の探索任務の所要時間-25%。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Immovable Will",
-          "description": "While in the Crowfeather Cover state provided by Tengu Stormcall, Aimed Shot charge times are decreased by 60%.",
+          "title": "不動心",
+          "description": "烏天狗雷霆召呪による「烏羽護持」の時、狙い撃ちのチャージ時間-60%。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Decorum",
-          "description": "When Tengu Juurai: Ambush hits opponents, Kujou Sara will restore 1.2 Energy to all party members for every 100% Energy Recharge she has. This effect can be triggered once every 3s.",
+          "title": "御公儀",
+          "description": "天狗呪雷・伏は敵に命中すると、九条裟羅の元素チャージ効率を基準にし、その100%の元素チャージ効率毎に、チーム全員の元素エネルギーを1.2回復する。この効果は3秒毎に1回のみ発動可能。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Crow's Eye",
-          "description": "When Tengu Juurai grant characters ATK Bonuses or hits opponents, the CD of Tengu Stormcall is decreased by 1s.\nThis effect can be triggered once every 3s.",
+          "title": "烏目",
+          "description": "天狗呪雷はキャラクターに攻撃力アップ効果を付与し、または敵に命中すると、烏天狗雷霆召呪のクールタイム-1秒。\nこの効果は3秒毎に1回のみ発動可能。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Dark Wings",
-          "description": "Unleashing Tengu Stormcall will leave a weaker Crowfeather at Kujou Sara's original position that will deal 30% of its original DMG.",
+          "title": "鴉の羽",
+          "description": "烏天狗雷霆召呪を発動した時、九条裟羅が元々いた位置に微弱な天狗呪雷・伏の「烏羽」を発動し、本来の30%のダメージを与える。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "The War Within",
-          "description": "Increases the Level of Subjugation: Koukou Sendou by 3.\nMaximum upgrade level is 15.",
+          "title": "心魔",
+          "description": "煌煌千道鎮式のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Conclusive Proof",
-          "description": "The number of Tengu Juurai: Stormcluster released by Subjugation: Koukou Sendou is increased to 6.",
+          "title": "徹証",
+          "description": "煌煌千道鎮式による天狗呪雷・雷礫の数が6つに増加する。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Spellsinger",
-          "description": "Increases the Level of Tengu Stormcall by 3.\nMaximum upgrade level is 15.",
+          "title": "呪詠",
+          "description": "烏天狗雷霆召呪のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Sin of Pride",
-          "description": "The Electro DMG of characters who have had their ATK increased by Tengu Juurai has its Crit DMG increased by 60%.",
+          "title": "我界",
+          "description": "天狗呪雷による攻撃力アップ状態のキャラクターは、雷元素ダメージの会心ダメージ+60%。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -4962,55 +4962,55 @@
     {
       "key": "RaidenShogun",
       "name": "雷電将軍",
-      "description": "Her Excellency, the Almighty Narukami Ogosho, who promised the people of Inazuma an unchanging Eternity.",
+      "description": "御建鳴神主尊大御所様。永劫不変の「永遠」を稲妻の民に約束する。",
       "skills": [
         {
           "key": "s1",
-          "title": "Origin",
+          "title": "源流",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive spear strikes.",
+              "description": "槍による最大5段の連続攻撃を行う。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to perform an upward slash.",
+              "description": "一定のスタミナを消費し、斬り上げ攻撃を発動する。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Baleful Omen",
-          "description": "The Raiden Shogun unveils a shard of her Euthymia, dealing Electro DMG to nearby opponents, and granting nearby party members the Eye of Stormy Judgment.",
+          "title": "悪曜開眼",
+          "description": "雷電将軍が浄土の一角を展開し、周囲の敵に雷元素ダメージを与え、周囲のチーム全員に「雷罰悪曜の眼」を授ける。",
           "abilities": [
             {
-              "name": "Eye of Stormy Judgment",
-              "description": "When characters with this buff attack and hit opponents, the Eye will unleash a coordinated attack, dealing AoE Electro DMG at the opponent's position.\nThe Eye can initiate one coordinated attack every 0.9s per party.",
+              "name": "雷罰悪曜の眼",
+              "description": "雷罰悪曜の眼を持つキャラクターの攻撃が敵にダメージを与えると、雷罰悪曜の眼は連携攻撃を行い、敵の位置に雷元素範囲ダメージを与える。\n雷罰悪曜の眼を持つキャラクターは継続時間内に、元素爆発の元素エネルギーを基準に、元素爆発ダメージがアップする。\nチーム毎の雷罰悪曜の眼は、0.9秒毎に1回のみ連携攻撃を行う。\nチーム内自身以外のキャラクターが連携攻撃を発動した場合、与えるダメージは本来のダメージの20%となる。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Secret Art: Musou Shinsetsu",
-          "description": "Gathering truths unnumbered and wishes uncounted, the Raiden Shogun unleashes the Musou no Hitotachi and deals AoE Electro DMG, using Musou Isshin in combat for a certain duration afterward. The DMG dealt by Musou no Hitotachi and Musou Isshin's attacks is based on the number of Shogan Byakugen no Rin's Resolve stacks consumed when this skill is used.",
+          "title": "奥義·夢想真説",
+          "description": "無数の真言を集結し、諸願百目の願力を尽くす。全ての呪詛を切り裂く夢想の一太刀を繰り出し、雷元素範囲ダメージを与える。その後一定時間内、「夢想の一心」を使用して戦う。発動時に消費した諸願百目の輪の願力層数を基準に、夢想の一太刀と夢想の一心の攻撃によるダメージをアップさせる。",
           "abilities": [
             {
-              "name": "Musou Isshin",
-              "description": "While in this state, the Raiden Shogun will wield her tachi in battle, while her Normal, Charged, and Plunging Attacks will be infused with Electro DMG, which cannot be overridden. When such attacks hit opponents, she will regenerate Energy for all nearby party members. Energy can be restored this way once every 1s, and this effect can be triggered 5 times throughout this skill's duration.\nWhile in this state, the Raiden Shogun's resistance to interruption is increased, and she is immune to Electro-Charged reaction DMG.",
+              "name": "夢想の一心",
+              "description": "この状態の雷電将軍は刀で攻撃を行う。通常攻撃、重撃、落下攻撃のダメージは、元素付与によって他の元素に変化しない雷元素ダメージへと変わる。さらに、攻撃が敵に命中すると、周囲のチーム全員の元素エネルギーを回復する。この方式での元素エネルギー回復は1秒毎に1回のみ可能で、継続時間内に最大5回まで発動可能。\nこの状態の雷電将軍は中断耐性がアップし、感電反応のダメージを受けなくなる。\n夢想の一心状態の時、雷電将軍の通常攻撃、重撃、落下攻撃のダメージは元素爆発ダメージと見なされる。\n夢想の一心による効果は雷電将軍が退場する時に解除される。",
               "descriptions": []
             },
             {
-              "name": "Shogan Byakugen no Rin",
-              "description": "When nearby party members use their Elemental Bursts, the Raiden Shogun will build up Resolve based on the amount of Energy they consume.\nThe maximum amount of Resolve stacks is 60.",
+              "name": "諸願百目の輪",
+              "description": "周囲のチーム全員（雷電将軍自身を除く）が元素爆発を発動すると、元素爆発の元素エネルギーを基に、雷電将軍の諸願百目の輪に願力を蓄積する。\n蓄積できる願力は最大60層まで。\n戦闘状態が解除されてから300秒後、諸願百目の輪に蓄積した願力はクリアされる。",
               "descriptions": []
             }
           ]
@@ -5019,66 +5019,66 @@
       "passives": [
         {
           "key": "p1",
-          "title": "All-Preserver",
-          "description": "Mora expended when ascending Swords and Polearms is decreased by 50%.",
+          "title": "天下名物狩り",
+          "description": "片手剣と長柄武器を突破する時、消費するモラ-50%。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Wishes Unnumbered",
-          "description": "When nearby party members gain Elemental Orbs or Particles, Chakra Desiderata gains 2 Resolve stacks.\nThis effect can occur once every 3s.",
+          "title": "千万の願望",
+          "description": "周囲にいるチーム中キャラクターが元素オーブまたは元素粒子を獲得した時、諸願百目の輪に願力を2層蓄積する。\nこの効果は3秒毎に1回のみ発動可能。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Enlightened One",
-          "description": "Each 1% above 100% Energy Recharge that the Raiden Shogun possesses grants her:",
+          "title": "殊勝な御体",
+          "description": "元素チャージ効率が100%を超えている場合、超えた分1%につき、雷電将軍は下記の効果を獲得する。",
           "descriptions": [
-            "0.6% greater Energy restoration from Musou Isshin",
-            "0.4% Electro DMG Bonus."
+            "夢想の一心状態で提供する元素エネルギー回復+0.6%。",
+            "雷元素ダメージ+0.4%。"
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Ominous Inscription",
-          "description": "Chakra Desiderata will gather Resolve even faster. When Electro characters use their Elemental Bursts, the Resolve gained is increased by 80%. When characters of other Elemental Types use their Elemental Bursts, the Resolve gained is increased by 20%.",
+          "title": "悪曜の呪詛",
+          "description": "諸願百目の輪の願力をより早く蓄積できるようになる。雷元素タイプのキャラクターによる元素爆発が蓄積する願力+80%。他の元素タイプのキャラクターによる元素爆発が蓄積する願力+20%。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Steelbreaker",
-          "description": "Secret Art: Musou Shinsetsu's Musou no Hitotachi and Musou Isshin attacks will ignore 60% of opponents' DEF.",
+          "title": "斬鉄断金",
+          "description": "奥義・夢想真説の夢想の一太刀と夢想の一心による攻撃は敵の防御力60%を無視する。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Shinkage Bygones",
-          "description": "Increases the Level of Secret Art: Musou Shinsetsu by 3.\nMaximum upgrade level is 15.",
+          "title": "眞影旧事",
+          "description": "奥義・夢想真説のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Pledge of Propriety",
-          "description": "When the Musou Isshin state applied by Secret Art: Musou Shinsetsu expires, all nearby party members (excluding the Raiden Shogun) gain 30% bonus ATK for 10s.",
+          "title": "常道への誓い",
+          "description": "奥義・夢想真説による夢想の一心状態終了後、周囲のチーム全員（雷電将軍自身を除く）の攻撃力+30%、持続時間10秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Shogun's Descent",
-          "description": "Increases the Level of Transcendence: Baleful Omen by 3.\nMaximum upgrade level is 15.",
+          "title": "凶将の顕現",
+          "description": "神変・悪曜開眼のスキルLv.+3。\n最大Lv.15まで。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Wishbearer",
-          "description": "While in the Musou Isshin state applied by Secret Art: Musou Shinsetsu, the Raiden Shogun's Normal, Charged, and Plunging Attacks will decrease all nearby party members' (but not including the Raiden Shogun herself) Elemental Burst CD by 1s when they hit opponents.\nThis effect can trigger once every 1s, and can trigger a total of 5 times during the state's duration.",
+          "title": "願いの代行者",
+          "description": "奥義・夢想真説による夢想の一心状態の時、雷電将軍の通常攻撃、重撃、落下攻撃が敵に命中すると、周囲チーム全員（雷電将軍自身を除く）の元素爆発のクールタイム-1秒。\nこの効果は1秒毎に1回のみ可能で、継続時間内に最大5回まで発動可能。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -5808,15 +5808,15 @@
     },
     {
       "key": "Engulfing Lightning",
-      "name": "Engulfing Lightning",
-      "description": "A naginata used to \"cut grass.\" Any army that stands before this weapon will probably be likewise cut down...",
-      "refinement": "ATK increased by {{0}}% of Energy Recharge over the base 100%. You can gain a maximum bonus of {{1}}% ATK. Gain {{2}}% Energy Recharge for 12s after using an Elemental Burst."
+      "name": "草薙の稲光",
+      "description": "「草斬り」に使われる薙刀。この武器の前に立ちはだかる軍隊は、草のように刈られるだろう…",
+      "refinement": "元素チャージ効率が100%を超えている場合、その超えた部分の {{0}}% 分、攻撃力がアップする。この方式でアップできる攻撃力は最大 {{１}}% まで。元素爆発を発動した後の12秒間、元素チャージ効率 +{{２}}%。"
     },
     {
       "key": "The Catch",
-      "name": "The Catch",
-      "description": "In the distant past, this was the beloved spear of a famed Inazuman bandit.",
-      "refinement": "Increases Elemental Burst DMG by {{0}}% and Elemental Burst CRIT Rate by {{1}}%"
+      "name": "「漁獲」",
+      "description": "遠い昔、稲妻に名を轟かせた大泥棒が愛用していた槍。",
+      "refinement": "元素爆発ダメージ +{{0}}%、元素爆発の会心率 +{{１}}%。"
     }
   ],
   "artifacts": [
@@ -7396,63 +7396,63 @@
     },
     {
       "key": "SpectralA",
-      "name": "Spectral Husk",
-      "description": "An energy core that allows the Specters to float. It contains a small amount of elemental energy.\nMost of the rest has already dispersed."
+      "name": "フライムの乾核",
+      "description": "フライムを浮遊させるエネルギー核。中には微かな元素が含まれている。\n多くのエネルギーは逸散していったようだ。"
     },
     {
       "key": "SpectralB",
-      "name": "Spectral Heart",
-      "description": "An energy core that allows the Specters to float.\nThese elemental life-forms have strange behavioral patterns and will periodically surge in number before disappearing."
+      "name": "フライムの幽核",
+      "description": "フライムを浮遊させるエネルギー核。\nこの元素生物は特殊な習性を持っているようで、周期的に大量に現れたり、消えたりしている。"
     },
     {
       "key": "SpectralC",
-      "name": "Spectral Nucleus",
-      "description": "A complete energy core that can sometimes be found after defeating Specters.\nThere is a debate among those who just have to divide the world into winners and losers: what floats better — a Specter or an Anemo Slime?"
+      "name": "フライムの晶化核",
+      "description": "フライムを倒すと、たまに見つけられる完全なエネルギー核。\n物事の雌雄を決させたい人たちの間では、よくこんな議論がある。フライムと風スライムの浮かぶ力、一体どちらが上なのか。"
     },
     {
       "key": "Dew of Repudiation",
-      "name": "Dew of Repudiation",
-      "description": "A strange water droplet left behind by the collapse of the Hydro Hypostasis.\nIt has strong rejection properties, and this forms the basis of one of the Hydro Hypostasis' attack patterns as well. They say that water contains memories and willpower, and that these things can grow when bodies of water meld together. However, the waves conjured by the Hydro Hypostasis are incompatible with the currents that flow above and below ground. Even if it were to flow into the surpassingly pure waters of Petrichor, this drop of water will likely resist assimilation as strongly as mercury."
+      "name": "排他の露",
+      "description": "無相の水が凝縮した後、残された奇妙な水玉。\n強烈な排他本能を持つことも、無相の水の攻撃手段の一つである。水の中に記憶と意志が含まれ、水との融合と共に成長していくそうだ。だが、無相の水が召喚した波は、あらゆる湧いている物と相容れない。たとえペトリックの純粋な水の中に落ちても、この水玉は水銀のように、周りとの融合を拒絶するだろう。"
     },
     {
       "key": "Storm Beads",
-      "name": "Storm Beads",
-      "description": "Crackling Electro pearls left behind by the Thunder Manifestation.\nIt is said that Thunder Manifestations will only descend upon lands where powerful hatred dwells. The singers say that it is the unbearable disappointments and sufferings of life that drive them to forever wander the broken earth, unleashing sky-searing lightning as they go."
+      "name": "雷霆の念珠",
+      "description": "雷音権現が残した電気が秘められた雷の念珠。\n伝説によると、雷音権現は雷霆につれて、強大な怨恨に満ちた場所でのみ降り立つそうだ。それを駆動し、砕かれた大地で永遠に徘徊させ、貫天の雷を放つようにした者は、歌人のストーリーでは命が耐えられない失望と苦痛である。"
     },
     {
       "key": "Sango Pearl",
-      "name": "Sango Pearl",
-      "description": "A precious pearl that grows in the coral of Watatsumi. Gives of a cool sheen like that of the moonlight."
+      "name": "珊瑚真珠",
+      "description": "海祇の珊瑚と共に生み出された宝珠。触れると月明かりのような涼しさを感じる。"
     },
     {
       "key": "Dew of Repudiation",
-      "name": "Dew of Repudiation",
-      "description": "A strange water droplet left behind by the collapse of the Hydro Hypostasis.\nIt has strong rejection properties, and this forms the basis of one of the Hydro Hypostasis' attack patterns as well. They say that water contains memories and willpower, and that these things can grow when bodies of water meld together. However, the waves conjured by the Hydro Hypostasis are incompatible with the currents that flow above and below ground. Even if it were to flow into the surpassingly pure waters of Petrichor, this drop of water will likely resist assimilation as strongly as mercury."
+      "name": "排他の露",
+      "description": "無相の水が凝縮した後、残された奇妙な水玉。\n強烈な排他本能を持つことも、無相の水の攻撃手段の一つである。水の中に記憶と意志が含まれ、水との融合と共に成長していくそうだ。だが、無相の水が召喚した波は、あらゆる湧いている物と相容れない。たとえペトリックの純粋な水の中に落ちても、この水玉は水銀のように、周りとの融合を拒絶するだろう。"
     },
     {
       "key": "Dendrobium",
-      "name": "Dendrobium",
-      "description": "A vibrant plant that has also been named the \"lycoris\" by the poets. It was once thought extinct in the Inazuman archipelago, only to re-emerge now upon the battlefields. It is said that it blooms most enchantingly where much blood was spilled."
+      "name": "血石華",
+      "description": "詩の中で「赤蕊」と呼ばれている鮮やかな植物。稲妻列島で一度は絶滅したが、戦場で再び姿を現した。血塗られた戦場ではひときわ輝きを放つと言われている。"
     },
     {
       "key": "Amakumo Fruit",
-      "name": "Amakumo Fruit",
-      "description": "The fruit of the Amakumo Grass, which grows on Seirai Island. You can hear it crackling with a tiny current if you hold it up to your ear."
+      "name": "天雲草の実",
+      "description": "セイライ島にある天雲草が結んだ実。耳もとに置くと微かな電流の音が聞こえる。"
     },
     {
       "key": "Molten Moment",
-      "name": "Molten Moment",
-      "description": "A certain deformed fragment containing great might. You obtained this from defeating Signora, who unleashed her original power.\n\"I had a long, long dream.\n\"I dreamed that you and I met again in the pure white world that we created.\n\"But I woke up at last, having long been consumed by the raging flames, while you had long returned to the earth along with that poisoned blood.\n\"But none of it matters anymore. I must continue forging ahead. I must incinerate everything behind me. I must believe in that pure, spotless, everlasting realm that he spoke of — that I saw in the 'delusion' he let me see, at the end of the horizon of Her Majesty's dreams.\""
+      "name": "獄炎の蝶",
+      "description": "本来の力を発揮した「淑女」を倒して獲得した、大きな力を秘めた異形の欠片。\n氷の封印が解かれ、過去の意志が蒼白の牢獄を突き破った。彼女が再び元の名前を思い出した時、不死蝶は血肉の灰塵と共に飛び散っていく。そして彼女も、大地を徘徊し、烈炎を放ち、罪を燃やし尽くした過去と二度と会えなかった人物の顔を思い出した。"
     },
     {
       "key": "Hellfire Butterfly",
-      "name": "Hellfire Butterfly",
-      "description": "A warped shard that houses great might. You obtained this from defeating Signora, who unleashed her original power.\nThe seal of ice was broken under duress, and as her former will surged forth from its pale white prison and she remembered her old name once more, the undying butterfly danced amidst burning flesh and blood. And she remembered her past, wandering the land, spreading the flame, burning away all evil — and she recalled the face of the person she could never meet again."
+      "name": "獄炎の蝶",
+      "description": "本来の力を発揮した「淑女」を倒して獲得した、大きな力を秘めた異形の欠片。\n氷の封印が解かれ、過去の意志が蒼白の牢獄を突き破った。彼女が再び元の名前を思い出した時、不死蝶は血肉の灰塵と共に飛び散っていく。そして彼女も、大地を徘徊し、烈炎を放ち、罪を燃やし尽くした過去と二度と会えなかった人物の顔を思い出した。"
     },
     {
       "key": "Ashen Heart",
-      "name": "Ashen Heart",
-      "description": "A deformed fragment that contains powerful emotions. You obtained this from defeating Signora, who unleashed her original power.\nEven tears cannot extinguish the flames. Molten-hot agony and rage rush through her veins, oozing from her tear ducts.\nThe First Fatuus found her just before her heart could be destroyed by the eternal blaze. He understood that only deeper hate and obsession could quench the fire that devoured her and make her his ally..."
+      "name": "灰燼の心",
+      "description": "本来の力を発揮した「淑女」を倒して手に入れた、大きな力を秘めた異形の欠片。\n涙でさえも炎をかき消すことはできない。熔銑の如く熱い悲しみと怒りが血管を駆け巡り、涙腺からあふれ出る。\n彼女の心が永遠の火に焼かれる前に、最初の愚者が彼女を見つけ出した。彼は分かっていた。より深い憎しみと妄念のみが、彼女を蝕む炎を消し去り、彼女を仲間にすることができると…"
     }
   ],
   "debuffs": [
