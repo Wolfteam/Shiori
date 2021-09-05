@@ -8022,91 +8022,87 @@
     },
     {
       "key": "Electro Abyss Mage",
-      "name": "Electro Abyss Mage"
+      "name": "アビスの魔術師·雷"
     },
     {
       "key": "La Signora",
-      "name": "La Signora"
+      "name": "「淑女」"
     },
     {
       "key": "Ruin Cruiser",
-      "name": "Ruin Cruiser"
+      "name": "遺跡巡視者"
     },
     {
       "key": "Ruin Destroyer",
-      "name": "Ruin Destroyer"
+      "name": "遺跡殲滅者"
     },
     {
       "key": "Ruin Defender",
-      "name": "Ruin Defender"
+      "name": "遺跡防衛者"
     },
     {
       "key": "Ruin Scout",
-      "name": "Ruin Scout"
+      "name": "遺跡偵察者"
     },
     {
       "key": "Thunderhelm Lawachurl",
-      "name": "Thunderhelm Lawachurl"
+      "name": "ヒルチャール·雷兜の王"
     },
     {
       "key": "Fatui Mirror Maiden",
-      "name": "Fatui Mirror Maiden"
+      "name": "ファデュイ·ミラーメイデン"
     },
     {
       "key": "Perpetual Mechanical Array",
-      "name": "Perpetual Mechanical Array"
+      "name": "恒常からくり陣形"
     },
     {
       "key": "Hydro Hypostasis",
-      "name": "Hydro Hypostasis"
+      "name": "無相の水"
     },
     {
       "key": "Thunder Manifestation",
-      "name": "Thunder Manifestation"
+      "name": "雷音権現"
     },
     {
       "key": "Pyro Hypostasis",
-      "name": "Pyro Hypostasis"
+      "name": "無相の炎"
     },
     {
       "key": "Electro Samachurl",
-      "name": "Electro Samachurl"
-    },
-    {
-      "key": "Kairagi: Dancing Thunder",
-      "name": "Kairagi: Dancing Thunder"
+      "name": "ヒルチャールシャーマン·雷"
     },
     {
       "key": "Nobushi: Hitsukeban",
-      "name": "Nobushi: Hitsukeban"
+      "name": "野伏·火付番"
     },
     {
       "key": "Nobushi: Jintouban",
-      "name": "Nobushi: Jintouban"
+      "name": "野伏·陣刀番"
     },
     {
       "key": "Nobushi: Kikouban",
-      "name": "Nobushi: Kikouban"
+      "name": "野伏·機巧番"
     },
     {
       "key": "Kairagi: Fiery Might",
-      "name": "Kairagi: Fiery Might"
+      "name": "海乱鬼·炎威"
     },
     {
       "key": "Kairagi: Dancing Thunder",
-      "name": "Kairagi: Dancing Thunder"
+      "name": "海乱鬼·雷騰"
     },
     {
       "key": "Hydro Specter",
-      "name": "Hydro Specter"
+      "name": "水フライム"
     },
     {
       "key": "Anemo Specter",
-      "name": "Anemo Specter"
+      "name": "風フライム"
     },
     {
       "key": "Geo Specter",
-      "name": "Geo Specter"
+      "name": "岩フライム"
     }
   ]
 }
