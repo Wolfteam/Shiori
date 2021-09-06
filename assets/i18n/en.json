@@ -7584,7 +7584,7 @@
     {
       "key": "Enduring Rock",
       "name": "Enduring Rock",
-      "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemeies will decrease their Geo RES by 20% for 15s."
+      "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemies will decrease their Geo RES by 20% for 15s."
     },
     {
       "key": "Fervent Flames",
