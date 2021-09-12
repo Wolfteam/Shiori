@@ -28962,7 +28962,7 @@
             "skyward_harp.png",
             "amos_bow.png",
             "blackcliff_warbow.png",
-            "the_stringless.png",
+            "sacrificial_bow.png",
             "prototype_crescent.png"
           ],
           "artifacts": [
@@ -29207,7 +29207,7 @@
       "isFemale": true,
       "region": "inazuma",
       "role": "mainDps",
-      "tier": "s",
+      "tier": "ss",
       "birthday": "06/26",
       "ascensionMaterials": [
         {
@@ -29604,8 +29604,8 @@
           "isSupport": false,
           "weaponImages": [
             "engulfing_lightning.png",
-            "the_catch.png",
             "staff_of_homa.png",
+            "the_catch.png",
             "skyward_spine.png"
           ],
           "artifacts": [
@@ -29617,6 +29617,17 @@
                 "atk",
                 "atkPercentage",
                 "electroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "one": "emblem_of_severed_fate_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "atkPercentage",
                 "critRatePercentage"
               ]
             }
