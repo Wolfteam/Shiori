@@ -140,7 +140,7 @@ class _FabMenu extends StatelessWidget {
   List<AscensionMaterialsSummaryWidget> _buildSummary(S s, List<AscensionMaterialsSummary> items) {
     items.sort((x, y) => s.translateAscensionSummaryType(x.type).compareTo(s.translateAscensionSummaryType(y.type)));
 
-    return items.map((e) => AscensionMaterialsSummaryWidget(summary: e)).toList();
+    return items.map((e) => AscensionMaterialsSummaryWidget(summary: e, sessionKey: sessionKey)).toList();
   }
 
   Future<void> _openCharacterPage(BuildContext context) async {

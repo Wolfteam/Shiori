@@ -346,6 +346,18 @@ class DataServiceImpl implements DataService {
   }
 
   @override
+  MaterialCardModel getMaterialFromInventoryByImage(String image) {
+    final material = _genshinService.getMaterialByImage(image);
+    final materialForCard = _genshinService.getMaterialForCard(material.key);
+    final materialInInventory = _inventoryBox.values.firstWhereOrNull((m) => m.itemKey == material.key);
+    if (materialInInventory == null) {
+      return materialForCard.copyWith.call(quantity: 0);
+    }
+
+    return materialForCard.copyWith.call(quantity: materialInInventory.quantity);
+  }
+
+  @override
   List<WeaponCardModel> getAllWeaponsInInventory() {
     final weapons = _inventoryBox.values
         .where((el) => el.type == ItemType.weapon.index)
