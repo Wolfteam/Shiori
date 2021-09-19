@@ -9090,7 +9090,8 @@
         {
           "level": 1,
           "values": [
-            10, 66
+            10,
+            66
           ]
         }
       ],
@@ -26715,6 +26716,358 @@
           "image": "white_iron_chunk.png"
         }
       ]
+    },
+    {
+      "key": "Everlasting Moonglow",
+      "image": "everlasting_moonglow.png",
+      "type": "catalyst",
+      "atk": 46,
+      "rarity": 5,
+      "secondaryStat": "hpPercentage",
+      "secondaryStatValue": 10.8,
+      "location": "gacha",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "quantity": 5,
+              "materialType": "weaponPrimary",
+              "image": "coral_branch_of_a_distant_sea.png"
+            },
+            {
+              "quantity": 5,
+              "materialType": "weapon",
+              "image": "dismal_prism.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "spectral_husk.png"
+            },
+            {
+              "quantity": 10000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "quantity": 5,
+              "materialType": "weaponPrimary",
+              "image": "jeweled_branch_of_a_distant_sea.png"
+            },
+            {
+              "quantity": 18,
+              "materialType": "weapon",
+              "image": "dismal_prism.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "spectral_husk.png"
+            },
+            {
+              "quantity": 20000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "quantity": 9,
+              "materialType": "weaponPrimary",
+              "image": "jeweled_branch_of_a_distant_sea.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "weapon",
+              "image": "crystal_prism.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "spectral_heart.png"
+            },
+            {
+              "quantity": 30000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "quantity": 5,
+              "materialType": "weaponPrimary",
+              "image": "jade_branch_of_a_distant_sea.png"
+            },
+            {
+              "quantity": 18,
+              "materialType": "weapon",
+              "image": "crystal_prism.png"
+            },
+            {
+              "quantity": 14,
+              "materialType": "common",
+              "image": "spectral_heart.png"
+            },
+            {
+              "quantity": 45000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "quantity": 9,
+              "materialType": "weaponPrimary",
+              "image": "jade_branch_of_a_distant_sea.png"
+            },
+            {
+              "quantity": 14,
+              "materialType": "weapon",
+              "image": "polarizing_prism.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "spectral_nucleus.png"
+            },
+            {
+              "quantity": 55000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "weaponPrimary",
+              "image": "golden_branch_of_a_distant_sea.png"
+            },
+            {
+              "quantity": 27,
+              "materialType": "weapon",
+              "image": "polarizing_prism.png"
+            },
+            {
+              "quantity": 18,
+              "materialType": "common",
+              "image": "spectral_nucleus.png"
+            },
+            {
+              "quantity": 65000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        }
+      ],
+      "refinements": [
+        {
+          "level": 1,
+          "values": [
+            10,
+            1
+          ]
+        },
+        {
+          "level": 2,
+          "values": [
+            12.5,
+            1.5
+          ]
+        },
+        {
+          "level": 3,
+          "values": [
+            15,
+            2
+          ]
+        },
+        {
+          "level": 4,
+          "values": [
+            17.5,
+            2.5
+          ]
+        },
+        {
+          "level": 5,
+          "values": [
+            20,
+            3
+          ]
+        }
+      ],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 46,
+          "isAnAscension": false,
+          "specificValue": 10.8
+        },
+        {
+          "level": 5,
+          "baseAtk": 62,
+          "isAnAscension": false,
+          "specificValue": 12.5
+        },
+        {
+          "level": 10,
+          "baseAtk": 82,
+          "isAnAscension": false,
+          "specificValue": 14.7
+        },
+        {
+          "level": 15,
+          "baseAtk": 102,
+          "isAnAscension": false,
+          "specificValue": 16.9
+        },
+        {
+          "level": 20,
+          "baseAtk": 122,
+          "isAnAscension": false,
+          "specificValue": 19.1
+        },
+        {
+          "level": 20,
+          "baseAtk": 153,
+          "isAnAscension": true,
+          "specificValue": 19.1
+        },
+        {
+          "level": 25,
+          "baseAtk": 173,
+          "isAnAscension": false,
+          "specificValue": 21.3
+        },
+        {
+          "level": 30,
+          "baseAtk": 194,
+          "isAnAscension": false,
+          "specificValue": 23.4
+        },
+        {
+          "level": 35,
+          "baseAtk": 214,
+          "isAnAscension": false,
+          "specificValue": 25.6
+        },
+        {
+          "level": 40,
+          "baseAtk": 235,
+          "isAnAscension": false,
+          "specificValue": 27.8
+        },
+        {
+          "level": 40,
+          "baseAtk": 266,
+          "isAnAscension": true,
+          "specificValue": 27.8
+        },
+        {
+          "level": 45,
+          "baseAtk": 287,
+          "isAnAscension": false,
+          "specificValue": 30
+        },
+        {
+          "level": 50,
+          "baseAtk": 308,
+          "isAnAscension": false,
+          "specificValue": 32.2
+        },
+        {
+          "level": 50,
+          "baseAtk": 340,
+          "isAnAscension": true,
+          "specificValue": 32.2
+        },
+        {
+          "level": 55,
+          "baseAtk": 361,
+          "isAnAscension": false,
+          "specificValue": 34.4
+        },
+        {
+          "level": 60,
+          "baseAtk": 382,
+          "isAnAscension": false,
+          "specificValue": 36.5
+        },
+        {
+          "level": 60,
+          "baseAtk": 414,
+          "isAnAscension": true,
+          "specificValue": 36.5
+        },
+        {
+          "level": 65,
+          "baseAtk": 435,
+          "isAnAscension": false,
+          "specificValue": 38.7
+        },
+        {
+          "level": 70,
+          "baseAtk": 457,
+          "isAnAscension": false,
+          "specificValue": 40.9
+        },
+        {
+          "level": 70,
+          "baseAtk": 488,
+          "isAnAscension": true,
+          "specificValue": 40.9
+        },
+        {
+          "level": 75,
+          "baseAtk": 510,
+          "isAnAscension": false,
+          "specificValue": 43.1
+        },
+        {
+          "level": 80,
+          "baseAtk": 532,
+          "isAnAscension": false,
+          "specificValue": 45.3
+        },
+        {
+          "level": 80,
+          "baseAtk": 563,
+          "isAnAscension": true,
+          "specificValue": 45.3
+        },
+        {
+          "level": 85,
+          "baseAtk": 586,
+          "isAnAscension": false,
+          "specificValue": 47.4
+        },
+        {
+          "level": 90,
+          "baseAtk": 608,
+          "isAnAscension": false,
+          "specificValue": 49.6
+        }
+      ]
     }
   ],
   "claymores": [
@@ -34949,6 +35302,358 @@
           "image": "white_iron_chunk.png"
         }
       ]
+    },
+    {
+      "key": "Luxurious Sea-Lord",
+      "image": "luxurious_sea-lord.png",
+      "type": "claymore",
+      "atk": 41,
+      "rarity": 4,
+      "secondaryStat": "atkPercentage",
+      "secondaryStatValue": 12,
+      "location": "quest",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "grain_of_aerosiderite.png"
+            },
+            {
+              "quantity": 3,
+              "materialType": "weapon",
+              "image": "fragile_bone_shard.png"
+            },
+            {
+              "quantity": 2,
+              "materialType": "common",
+              "image": "slime_condensate.png"
+            },
+            {
+              "quantity": 5000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "piece_of_aerosiderite.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "weapon",
+              "image": "fragile_bone_shard.png"
+            },
+            {
+              "quantity": 8,
+              "materialType": "common",
+              "image": "slime_condensate.png"
+            },
+            {
+              "quantity": 15000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "weaponPrimary",
+              "image": "piece_of_aerosiderite.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "weapon",
+              "image": "sturdy_bone_shard.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "slime_secretions.png"
+            },
+            {
+              "quantity": 20000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "quantity": 3,
+              "materialType": "weaponPrimary",
+              "image": "bit_of_aerosiderite.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "weapon",
+              "image": "sturdy_bone_shard.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "common",
+              "image": "slime_secretions.png"
+            },
+            {
+              "quantity": 30000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "quantity": 6,
+              "materialType": "weaponPrimary",
+              "image": "bit_of_aerosiderite.png"
+            },
+            {
+              "quantity": 9,
+              "materialType": "weapon",
+              "image": "fossilized_bone_shard.png"
+            },
+            {
+              "quantity": 6,
+              "materialType": "common",
+              "image": "slime_concentrate.png"
+            },
+            {
+              "quantity": 35000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "quantity": 4,
+              "materialType": "weaponPrimary",
+              "image": "chunk_of_aerosiderite.png"
+            },
+            {
+              "quantity": 18,
+              "materialType": "weapon",
+              "image": "fossilized_bone_shard.png"
+            },
+            {
+              "quantity": 12,
+              "materialType": "common",
+              "image": "slime_concentrate.png"
+            },
+            {
+              "quantity": 45000,
+              "materialType": "currency",
+              "image": "mora.png"
+            }
+          ]
+        }
+      ],
+      "refinements": [
+        {
+          "level": 1,
+          "values": [
+            12,
+            100
+          ]
+        },
+        {
+          "level": 2,
+          "values": [
+            15,
+            125
+          ]
+        },
+        {
+          "level": 3,
+          "values": [
+            18,
+            150
+          ]
+        },
+        {
+          "level": 4,
+          "values": [
+            21,
+            175
+          ]
+        },
+        {
+          "level": 5,
+          "values": [
+            24,
+            200
+          ]
+        }
+      ],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 41,
+          "isAnAscension": false,
+          "specificValue": 12
+        },
+        {
+          "level": 5,
+          "baseAtk": 54,
+          "isAnAscension": false,
+          "specificValue": 13.9
+        },
+        {
+          "level": 10,
+          "baseAtk": 69,
+          "isAnAscension": false,
+          "specificValue": 16.4
+        },
+        {
+          "level": 15,
+          "baseAtk": 84,
+          "isAnAscension": false,
+          "specificValue": 18.8
+        },
+        {
+          "level": 20,
+          "baseAtk": 99,
+          "isAnAscension": false,
+          "specificValue": 21.2
+        },
+        {
+          "level": 20,
+          "baseAtk": 125,
+          "isAnAscension": true,
+          "specificValue": 21.2
+        },
+        {
+          "level": 25,
+          "baseAtk": 140,
+          "isAnAscension": false,
+          "specificValue": 23.6
+        },
+        {
+          "level": 30,
+          "baseAtk": 155,
+          "isAnAscension": false,
+          "specificValue": 26.1
+        },
+        {
+          "level": 35,
+          "baseAtk": 169,
+          "isAnAscension": false,
+          "specificValue": 28.5
+        },
+        {
+          "level": 40,
+          "baseAtk": 184,
+          "isAnAscension": false,
+          "specificValue": 30.9
+        },
+        {
+          "level": 40,
+          "baseAtk": 210,
+          "isAnAscension": true,
+          "specificValue": 30.9
+        },
+        {
+          "level": 45,
+          "baseAtk": 224,
+          "isAnAscension": false,
+          "specificValue": 33.3
+        },
+        {
+          "level": 50,
+          "baseAtk": 238,
+          "isAnAscension": false,
+          "specificValue": 35.7
+        },
+        {
+          "level": 50,
+          "baseAtk": 264,
+          "isAnAscension": true,
+          "specificValue": 35.7
+        },
+        {
+          "level": 55,
+          "baseAtk": 278,
+          "isAnAscension": false,
+          "specificValue": 38.2
+        },
+        {
+          "level": 60,
+          "baseAtk": 293,
+          "isAnAscension": false,
+          "specificValue": 40.6
+        },
+        {
+          "level": 60,
+          "baseAtk": 319,
+          "isAnAscension": true,
+          "specificValue": 40.6
+        },
+        {
+          "level": 65,
+          "baseAtk": 333,
+          "isAnAscension": false,
+          "specificValue": 43
+        },
+        {
+          "level": 70,
+          "baseAtk": 347,
+          "isAnAscension": false,
+          "specificValue": 45.4
+        },
+        {
+          "level": 70,
+          "baseAtk": 373,
+          "isAnAscension": true,
+          "specificValue": 45.4
+        },
+        {
+          "level": 75,
+          "baseAtk": 387,
+          "isAnAscension": false,
+          "specificValue": 47.9
+        },
+        {
+          "level": 80,
+          "baseAtk": 401,
+          "isAnAscension": false,
+          "specificValue": 50.3
+        },
+        {
+          "level": 80,
+          "baseAtk": 427,
+          "isAnAscension": true,
+          "specificValue": 50.3
+        },
+        {
+          "level": 85,
+          "baseAtk": 440,
+          "isAnAscension": false,
+          "specificValue": 52.7
+        },
+        {
+          "level": 90,
+          "baseAtk": 454,
+          "isAnAscension": false,
+          "specificValue": 55.1
+        }
+      ]
     }
   ],
   "polearms": [
@@ -41962,31 +42667,36 @@
         {
           "level": 1,
           "values": [
-            16,6
+            16,
+            6
           ]
         },
         {
           "level": 2,
           "values": [
-            20,7.5
+            20,
+            7.5
           ]
         },
         {
           "level": 3,
           "values": [
-            24, 9
+            24,
+            9
           ]
         },
         {
           "level": 4,
           "values": [
-            28, 10.5
+            28,
+            10.5
           ]
         },
         {
           "level": 5,
           "values": [
-            32,12
+            32,
+            12
           ]
         }
       ],
