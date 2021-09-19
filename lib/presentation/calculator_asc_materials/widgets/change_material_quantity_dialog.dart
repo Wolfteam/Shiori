@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
-import 'package:shiori/application/calculator_asc_materials_item/calculator_asc_materials_in_inventory_bloc.dart';
 import 'package:shiori/presentation/shared/dialogs/item_quantity_dialog.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 
@@ -15,7 +14,7 @@ class ChangeMaterialQuantityDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<CalculatorAscMaterialsInInventoryBloc, CalculatorAscMaterialsInInventoryState>(
+    return BlocConsumer<CalculatorAscMaterialsItemUpdateQuantityBloc, CalculatorAscMaterialsItemUpdateQuantityState>(
       listener: (ctx, state) {
         state.maybeMap(
           saved: (_) {
@@ -23,7 +22,7 @@ class ChangeMaterialQuantityDialog extends StatelessWidget {
             if (sessionKey != null) {
               context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.init(sessionKey: sessionKey!));
             }
-            context.read<CalculatorAscMaterialsInInventoryBloc>().add(const CalculatorAscMaterialsInInventoryEvent.close());
+            context.read<CalculatorAscMaterialsItemUpdateQuantityBloc>().add(const CalculatorAscMaterialsItemUpdateQuantityEvent.close());
             Navigator.of(context).pop();
           },
           orElse: () => {},
@@ -49,6 +48,8 @@ class ChangeMaterialQuantityDialog extends StatelessWidget {
   }
 
   void _onSave(String key, int newQuantity, BuildContext context) {
-    context.read<CalculatorAscMaterialsInInventoryBloc>().add(CalculatorAscMaterialsInInventoryEvent.update(key: key, quantity: newQuantity));
+    context
+        .read<CalculatorAscMaterialsItemUpdateQuantityBloc>()
+        .add(CalculatorAscMaterialsItemUpdateQuantityEvent.update(key: key, quantity: newQuantity));
   }
 }
