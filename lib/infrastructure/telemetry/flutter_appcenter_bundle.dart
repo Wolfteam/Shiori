@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 
-const _methodChannelName = 'com.github.wolfteam.genshindb';
+const _methodChannelName = 'com.github.wolfteam.shiori';
 const _methodChannel = MethodChannel(_methodChannelName);
 
 /// Static class that provides AppCenter APIs

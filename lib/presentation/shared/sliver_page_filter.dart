@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'genshin_db_icons.dart';
 import 'search_box.dart';
+import 'shiori_icons.dart';
 
 typedef OnPressed = void Function();
 
@@ -41,7 +41,7 @@ class SliverPageFilter extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline6,
                 ),
                 IconButton(
-                  icon: const Icon(GenshinDb.filter, size: 20),
+                  icon: const Icon(Shiori.filter, size: 20),
                   onPressed: () => onPressed(),
                 ),
               ],

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart' as enums;
-import 'package:genshindb/domain/models/materials/material_card_model.dart';
-import 'package:genshindb/domain/utils/currency_utils.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/material/material_page.dart' as mp;
-import 'package:genshindb/presentation/shared/dialogs/item_quantity_dialog.dart';
-import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:genshindb/presentation/shared/gradient_card.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/enums/enums.dart' as enums;
+import 'package:shiori/domain/models/materials/material_card_model.dart';
+import 'package:shiori/domain/utils/currency_utils.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/material/material_page.dart' as mp;
+import 'package:shiori/presentation/shared/dialogs/item_quantity_dialog.dart';
+import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
+import 'package:shiori/presentation/shared/gradient_card.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 const double defaultWidth = 70;

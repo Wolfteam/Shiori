@@ -4348,53 +4348,53 @@
     {
       "key": "Yoimiya",
       "name": "宵宫",
-      "description": "Owner of Naganohara Fireworks. Known as \"Queen of the Summer Festival,\" she excels in her craft of creating fireworks that symbolize people's hopes and dreams.",
+      "description": "「长野原烟花店」店长，「夏祭的女王」，将人们的愿望寄托于烟花中的能工巧匠。",
       "skills": [
         {
           "key": "s1",
-          "title": "Firework Flare-Up",
+          "title": "烟火打扬",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 5 consecutive shots with a bow.",
+              "description": "进行至多五段的连续弓箭射击。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Performs a more precise Aimed Shot with increased DMG.\nWhile aiming, flames will accumulate on the arrowhead before being fired off as an attack. Has different effects based on how long the energy has been charged:",
+              "description": "进行伤害更高、更为精准的瞄准攻击。\n瞄准时，火焰会在箭矢上持续积聚，并随攻击发射出去。根据蓄力时间长短，能造成不同的效果：",
               "descriptions": [
-                "Charge Level 1: Fires off a flaming arrow that deals Pyro DMG.",
-                "Charge Level 2: Generates a maximum of 3 Kindling Arrows based on time spent charging, releasing them as part of this Aimed Shot. Kindling Arrows will home in on nearby opponents, dealing Pyro DMG on hit."
+                "一段蓄力：射出富有烈焰的箭矢，造成火元素伤害；",
+                "二段蓄力：依据蓄力时间，产生之多3枚焰硝矢，随宵宫这次瞄准射击释放。焰硝矢会自行追踪附近的敌人，并在命中时造成火元素伤害。"
               ]
             },
             {
               "key": "a3",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+              "description": "从空中射出箭雨，并迅速下坠冲击地面，在落地时造成范围伤害。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Niwabi Fire-Dance",
-          "description": "Yoimiya waves a sparkler and causes a ring of saltpeter to surround her.",
+          "title": "焰硝庭火舞",
+          "description": "舞动线香烟火，让用于烟火的焰硝环绕在宵宫的身边。",
           "abilities": [
             {
-              "name": "Niwabi Enshou",
-              "description": "During this time, arrows fired by Yoimiya's Normal Attack will be Blazing Arrows, and their DMG will be increased and converted to Pyro DMG. During this time, Normal Attack: Firework Flare-Up will not generate Kindling Arrows at Charge Level 2.\nThis effect will deactivate when Yoimiya leaves the field.",
+              "name": "庭火焰硝",
+              "description": "在持续期间内，将宵宫的普通攻击发射的箭矢转为炽焰箭，造成的伤害转为火元素伤害，并提高普通攻击造成的伤害；「普通攻击·烟火打扬」的二段蓄力在持续期间无法再产生焰硝矢。\n效果在宵宫退场时解除。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Ryuukin Saxifrage",
-          "description": "Yoimiya leaps into the air along with her original creation, the \"Ryuukin Saxifrage,\" and fires forth blazing rockets bursting with surprises that deal AoE Pyro DMG and mark one of the hit opponents with Aurous Blaze.",
+          "title": "琉金云间草",
+          "description": "宵宫随着自创的烟火「琉金云间草」腾跃至空中，向前发射满载惊喜的焰火箭，造成火元素范围伤害，并对命中的其中一名敌人附上「琉金火光」。",
           "abilities": [
             {
-              "name": "Aurous Blaze",
-              "description": "All Normal/Charged/Plunging Attacks, Elemental Skills, and Elemental Bursts by any party member other than Yoimiya that hit an opponent marked by Aurous Blaze will trigger an explosion, dealing AoE Pyro DMG.\nWhen an opponent affected by Aurous Blaze is defeated before its duration expires, the effect will pass on to another nearby opponent, who will inherit the remaining duration.\nOne Aurous Blaze explosion can be triggered every 2s. When Yoimiya is down, Aurous Blaze effects created through her skills will be deactivated.",
+              "name": "琉金火光",
+              "description": "队伍中所有角色（不包括宵宫自己）的普通攻击、重击、下落攻击、元素战技、元素爆发命中处于琉金火光影响下的敌人，会引发爆炸，造成火元素范围伤害。\n处于琉金火光影响下的敌人在持续期间内被击败时，琉金火光将转移至附近另一名敌人，并继承持续时间。\n琉金火光每2秒之多引发一次爆炸。宵宫倒下时，由宵宫自己的技能产生的琉金火光效果会解除。",
               "descriptions": []
             }
           ]
@@ -4403,63 +4403,63 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Blazing Match",
-          "description": "When Yoimiya crafts Decoration, Ornament, and Landscape-type Furnishings, she has a 100% chance to refund a portion of the materials used.",
+          "title": "炎色配比法",
+          "description": "制作装潢、摆件、景观类摆设时，有100%概率返还部分材料。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Tricks of the Trouble-Maker",
-          "description": "During Niwabi Fire-Dance, shots from Yoimiya's Normal Attack will increase her Pyro DMG Bonus by 2% on hit. This effect lasts for 3s and can have a maximum of 10 stacks.",
+          "title": "袖火百景图",
+          "description": "在焰硝庭火舞的持续期间内，宵宫的普通攻击命中后，将为宵宫提供2%火元素伤害加成。该效果持续3秒，至多叠加10次。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Summer Night's Dawn",
-          "description": "Using Ryuukin Saxifrage causes nearby party members (not including Yoimiya) to gain a 10% ATK increase for 15s. Additionally, a further ATK Bonus will be added on based on the number of \"Tricks of the Trouble-Maker\" stacks Yoimiya possesses when using Ryuukin Saxifrage. Each stack increases this ATK Bonus by 1%.",
+          "title": "炎昼风物诗",
+          "description": "释放琉金云间草后的15秒内，附近的队伍中所有其它角色（不包括宵宫自己）攻击力提高10%。此外，依据宵宫自己释放琉金云间草时固有天赋「袖火百景图」的叠加层数，将额外提升上述的攻击力效果，每层提升1%攻击力。",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Agate Ryuukin",
-          "description": "The Aurous Blaze created by Ryuukin Saxifrage lasts for an extra 4s.\nAdditionally, when an opponent affected by Aurous Blaze is defeated within its duration, Yoimiya's ATK is increased by 20% for 20s.",
+          "title": "赤玉琉金",
+          "description": "琉金云间草的琉金火光持续时间延长4秒。\n此外，处于宵宫自己的琉金火光影响下的敌人在持续期间内被击败时，宵宫的攻击力提高20%，持续20秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "A Procession of Bonfires",
-          "description": "When Yoimiya's Pyro DMG scores a CRIT Hit, Yoimiya will gain a 25% Pyro DMG Bonus for 6s.\nThis effect can be triggered even when Yoimiya is not the active character.",
+          "title": "万灯送火",
+          "description": "宵宫的火元素伤害造成暴击后的6秒内，宵宫获得25%火元素伤害加成。\n宵宫处于队伍后台时，同样能获得该效果。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Trickster's Flare",
-          "description": "Increases the Level of Niwabi Fire-Dance by 3.\nMaximum upgrade level is 15.",
+          "title": "鼠火戏法",
+          "description": "焰硝庭火舞的技能等级提高3级。\n至多提升至15级。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Pyrotechnic Professional",
-          "description": "When Yoimiya's own Aurous Blaze triggers an explosion, Niwabi Fire-Dance's CD is decreased by 1.2s.",
+          "title": "花火职人心得",
+          "description": "宵宫自己的琉金火光发生爆炸时，焰硝庭火舞的冷却时间减少1.2秒。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "A Summer Festival's Eve",
-          "description": "Increases the Level of Ryuukin Saxifrage by 3.\nMaximum upgrade level is 15.",
+          "title": "真夏宵祭锦绘",
+          "description": "琉金云间草的技能等级提高3级。\n至多提升至15级。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Naganohara Meteor Swarm",
-          "description": "During Niwabi Fire-Dance, Yoimiya's Normal Attacks have a 50% chance of firing an extra Kindling Arrow that deals 60% of its original DMG. This DMG is considered Normal Attack DMG.",
+          "title": "长野原龙势流星群",
+          "description": "在焰硝庭火舞的持续期间内，宵宫主动进行普通攻击时，有50%几率发射一枚额外的炽焰箭，造成原本60%的伤害。该伤害视为普通攻击伤害。",
           "secondDescription": null,
           "descriptions": []
         }
@@ -4468,63 +4468,63 @@
     {
       "key": "Sayu",
       "name": "早柚",
-      "description": "A pint-sized ninja attached to the Shuumatsuban, who always seems sleep-deprived.",
+      "description": "属于「终末番」的忍者。身形小巧，总像没睡饱一样。",
       "skills": [
         {
           "key": "s1",
-          "title": "Shuumatsuban Ninja Blade",
+          "title": "忍刀·终末番",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 4 consecutive strikes.",
+              "description": "进行至多四段的连续挥砍。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.\nAt the end of the sequence, perform a more powerful slash. ",
+              "description": "持续消耗体力，旋转大剑攻击周围的敌人。\n停止旋转时，会进行一次格外有力的挥砍。",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Yoohoo Art: Fuuin Dash",
-          "description": "The special technique of the Yoohoo Ninja Arts!\nSayu curls up into a rolling Fuufuu Windwheel and smashes into opponents at high speed, dealing Anemo DMG. When the duration ends, she unleashes a Fuufuu Whirlwind Kick, dealing AoE Anemo DMG.",
+          "title": "呜呼流·风隐急进",
+          "description": "忍法·呜呼流的独创奥义！以风驰电掣之势席卷战场的绝技！\n蜷缩成高速滚动的风风轮，冲撞触及的敌人造成风元素伤害，并在结束时使出风风轮舞踢，造成风元素范围伤害。",
           "abilities": [
             {
               "key": "a1",
-              "description": "Enters the Fuufuu Windwheel state, rolling forward a short distance before using the Fuufuu Whirlwind Kick.",
+              "description": "进入风风轮状态，向前滚动一小段距离，并使出风风轮舞踢。",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Rolls about continuously in the Fuufuu Windwheel state, increasing Sayu's resistance to interruption while within that state.\nDuring this time, Sayu can control the direction of her roll, and can use the skill again to end her Windwheel state early and unleash a stronger version of the Fuufuu Whirlwind Kick.\nThe Hold version of this skill can trigger Elemental Absorption.\nThis skill has a maximum duration of 10s and enters CD once its effects end. The longer Sayu remains in her Windwheel state, the longer the CD.",
+              "description": "以风风轮之姿持续滚动，并在该状态下提高早柚的抗打断能力。\n期间，早柚可以控制滚动的方向，并能通过再次施放技能，提前结束状态使出相比点按更为强大的风风轮舞踢。\n该技能通过长按施放时，能发生元素转化。\n持续至多10秒。效果结束时，技能将进入冷却。在风风轮状态下持续的时间越长，冷却时间越长。",
               "descriptions": []
             },
             {
-              "name": "Elemental Absorption",
-              "description": "If Sayu comes into contact with Hydro/Pyro/Cryo/Electro while in her Windwheel state, she will deal additional elemental DMG of that type.\nElemental Absorption may only occur once per use of this skill.",
+              "name": "元素转化",
+              "description": "若早柚在风风轮状态下，接触了水元素/火元素/冰元素/雷元素，则会获得对应元素属性，使风风轮与风风轮舞踢额外造成该元素的附加伤害。\n元素转化在技能持续期间仅会发生一次。",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Yoohoo Art: Mujina Flurry",
-          "description": "The other super special technique of the Yoohoo Ninja Arts! It summons a pair of helping hands for Sayu.\nDeals Anemo DMG to nearby opponents and heals all nearby party members. The amount of HP restored is based on Sayu's ATK. This skill then summons a Muji-Muji Daruma.",
+          "title": "呜呼流·影貉缭乱",
+          "description": "忍法 • 呜呼流的另一个独创奥义！能创造出替早柚干活的帮手！\n对身边的敌人造成风元素伤害，为队伍中附近的所有角色恢复生命值，回复量受益于早柚的攻击力，并召唤出「不倒貉貉」。",
           "abilities": [
             {
-              "name": "Muji-Muji Daruma",
-              "description": "At specific intervals, the Daruma will take one of several actions based on the situation around it:",
+              "name": "不倒貉貉",
+              "description": "周期性地根据附近的状况，采取其中一种行动：",
               "descriptions": [
-                "If the HP of nearby characters is above 70%, it will attack a nearby opponent, dealing Anemo DMG.",
-                "If there are active characters with 70% or less HP nearby, it will heal the active character with the lowest percentage HP left. If there are no opponents nearby, it will heal active characters nearby even if they have 70% HP or more."
+                "附近的角色如果生命值均高于70%，不倒貉貉会攻击附近的一名敌人，造成风元素伤害；",
+                "附近场上如果存在生命值低于或等于70%的角色，会为附近场上生命值百分比最低的角色恢复生命值，回复量受益于早柚的攻击力。若附近不存在敌人，即使角色的生命值均高于70%，也会为角色恢复生命值。"
               ]
             }
           ]
@@ -4533,73 +4533,73 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Yoohoo Art: Silencer's Secret",
-          "description": "When Sayu is in the party, your characters will not startle Crystalflies and certain other animals when getting near them.\nCheck the \"Other\" sub-category of the \"Living Beings / Wildlife\" section in the Archive for creatures this skill works on.",
+          "title": "呜呼流·屏息秘传",
+          "description": "早柚在队伍中时，队伍中自己的角色接近晶蝶等部分生物时，不会惊动它们。\n有效对象可参考图鉴中「生物志/野生动物」的「其他」分类。",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Someone More Capable",
-          "description": "When Sayu triggers a Swirl reaction while active, she heals all your characters and nearby allies for 300 HP. She will also heal an additional 1.2 HP for every point of Elemental Mastery she has.\nThis effect can be triggered once every 2s.",
+          "title": "更加合适的人选",
+          "description": "早柚在场上触发扩散反应时，为队伍中自己的角色以及附近的友方角色恢复300点生命值。除此之外，早柚的每点元素精通将额外恢复1.2点生命值。\n该效果每2秒只能触发一次。",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "No Work Today!",
-          "description": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Flurry gains the following effects:",
+          "title": "早柚不用工作啦",
+          "description": "呜呼流·影貉缭乱的不倒貉貉获得如下效果：",
           "descriptions": [
-            "When healing a character, it will also heal characters near that healed character for 20% the amount of HP.",
-            "Increases the AoE of its attack against opponents."
+            "为角色恢复生命值时，将为该角色身边的其他场上角色恢复相当于回复量20%的生命值；",
+            "攻击敌人时，扩大造成伤害的范围。"
           ]
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Multi-Task no Jutsu",
-          "description": "The Muji-Muji Daruma created by Yoohoo Art: Mujina Flurry will ignore HP limits and can simultaneously attack nearby opponents and heal characters.",
+          "title": "一心二用之术",
+          "description": "呜呼流·影貉缭乱的不倒貉貉的行动将忽视生命值限制，能同时攻击附近的敌人并为角色恢复生命值。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Egress Prep",
-          "description": "Yoohoo Art: Fuuin Dash gains the following effects:",
+          "title": "理清逃跑路线",
+          "description": "呜呼流·风隐急进获得如下效果：",
           "secondDescription": null,
           "descriptions": [
-            "DMG of Fuufuu Whirlwind Kick in Press Mode increased by 3.3%.",
-            "Every 0.5s in the Fuufuu Windwheel state will increase the DMG of this Fuufuu Whirlwind Kick by 3.3%. The maximum DMG increase possible through this method is 66%."
+            "点按施放时，风风轮舞踢造成的伤害提高3.3%；",
+            "处于长按施放后的风风轮状态下时，每0.5秒，就会使这次施展的风风轮舞造成的伤害提高3.3%。通过这种方式，风风轮舞踢造成的伤害至多可以提高66%。"
           ]
         },
         {
           "key": "c3",
-          "title": "Eh, the Bunshin Can Handle It",
-          "description": "Increases the Level of Yoohoo Art: Mujina Flurry by 3.\nMaximum upgrade level is 15.",
+          "title": "都交给分身吧",
+          "description": "呜呼流·影貉缭乱的技能等级提高3级。\n至多提升至15级。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Skiving: New and Improved",
-          "description": "Sayu recovers 1.2 Energy when she triggers a Swirl reaction.\nThis effect occurs once every 2s.",
+          "title": "偷懒的新方法",
+          "description": "早柚在场上触发扩散反应时，将恢复1.2点元素能量。\n该效果每2秒只能触发一次。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Speed Comes First",
-          "description": "Increases the Level of Yoohoo Art: Fuuin Dash by 3.\nMaximum upgrade level is 15.",
+          "title": "快是第一奥义",
+          "description": "呜呼流·风隐急进的技能等级提高3级。\n至多提升至15级。",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Sleep O'Clock",
-          "description": "The Muji-Muji Daruma created by Sayu's Yoohoo Art: Mujina Flurry will now also benefit from her Elemental Mastery. Each point of Sayu's Elemental Mastery will produce the following effects:",
+          "title": "呼呼大睡时间",
+          "description": "早柚自己通过呜呼流·影貉缭乱召唤的不倒貉貉的攻击与回复量，受益于早柚的元素精通。早柚每点元素精通能产生如下效果：",
           "secondDescription": null,
           "descriptions": [
-            "Increases the damage dealt by the Muji-Muji Daruma's attacks by 0.2% ATK. A maximum of 400% ATK can be gained via this method.",
-            "Increases the HP restored by the Muji-Muji Daruma by 3. A maximum of 6,000 additional HP can be restored in this manner."
+            "使不倒貉貉的攻击额外造成0.2%的伤害。通过这种方式至多额外造成400%攻击力的伤害；",
+            "使不倒貉貉的回复量提高3点。通过这种方式，至多提高6000点回复量。"
           ]
         }
       ]
@@ -4720,34 +4720,121 @@
     },
     {
       "key": "Aloy",
-      "name": "Aloy",
-      "description": "N/A",
+      "name": "埃洛伊",
+      "description": "曾经是流放者，如今则是无比机敏的猎手。随时准备着为了正当之事而挽弓放箭。",
       "skills": [
         {
           "key": "s1",
-          "title": "N/A - S1",
+          "title": "Rapid Fire",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多四段的连续弓箭射击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "进行伤害更高、更为精准的瞄准射击。\n瞄准时，冰霜散发的寒气会凭附在箭矢上。聚满了寒气的箭矢会造成冰元素伤害。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中射出箭雨，并迅速下坠冲击地面，在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "N/A - S2",
-          "description": null,
-          "abilities": []
+          "title": "冰尘雪野",
+          "description": "向目标方向投掷一枚冰尘弹，在命中后引发爆炸，造成冰元素伤害。爆炸后，冰尘弹将分裂成许多冷冻炸弹，在接触到敌人或一段时间后爆炸，造成冰元素伤害。\n冰尘弹或冷冻炸弹命中敌人后，会使敌人的攻击力降低，并为埃洛伊赋予1层「线圈」效果。\n每0.1秒至多获得1层线圈效果。",
+          "abilities": [
+            {
+              "name": "Coil",
+              "description": null,
+              "descriptions": [
+                "依据层数，提高埃洛伊的普通攻击造成的伤害；",
+                "拥有4层线圈时，埃洛伊清除所有的线圈效果，并获得「冰驰」，进一步提高普通攻击造成的伤害，并将普通攻击造成的伤害转为冰元素伤害。\n处于冰驰状态下时，埃洛伊无法获得线圈效果。\n线圈效果会在脱离战斗30秒后清除。"
+              ]
+            }
+          ]
         },
         {
           "key": "s3",
-          "title": "N/A - S3",
-          "description": null,
+          "title": "曙光预言",
+          "description": "向目标方向投掷冰元素满溢的蓄能容器，并用弓箭引爆，造成冰元素范围伤害。",
           "abilities": []
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "荒野猎手",
+          "description": "埃洛伊在队伍中时，队伍中自己的角色接近产出禽肉、兽肉与冷鲜肉的小动物时，不会轻易惊动它们。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "战斗覆盖",
+          "description": "冰尘雪野的线圈效果时，埃洛伊的攻击力提升16%，队伍中附近的其他角色的攻击力提升8%，持续10秒。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "强力攻击",
+          "description": "埃洛伊处于冰尘雪野的冰驰状态下时，每1秒提升3.5%冰元素伤害加成，通过这种方式至多获得35%冰元素伤害加成。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "异界之星",
+          "description": "点亮此人一方星空之刻尚未到来",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "异界之星",
+          "description": "点亮此人一方星空之刻尚未到来",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "异界之星",
+          "description": "点亮此人一方星空之刻尚未到来",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "异界之星",
+          "description": "点亮此人一方星空之刻尚未到来",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "异界之星",
+          "description": "点亮此人一方星空之刻尚未到来",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "异界之星",
+          "description": "点亮此人一方星空之刻尚未到来",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
     },
     {
       "key": "SangonomiyaKokomi",
-      "name": "Sangonomiya Kokomi",
+      "name": "珊瑚宫心海",
       "description": "N/A",
       "skills": [
         {
@@ -4774,51 +4861,273 @@
     },
     {
       "key": "KujouSara",
-      "name": "Kujou Sara",
-      "description": "N/A",
+      "name": "九条裟罗",
+      "description": "「天领奉行」的大将，杀伐果断，骁勇善战。",
       "skills": [
         {
           "key": "s1",
-          "title": "N/A - S1",
+          "title": "天狗传弓术",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续弓箭射击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "进行伤害更高、更为精准的瞄准射击。\n瞄准时，雷霆的力量会汇聚到她的箭矢上。聚满了雷霆之力的箭矢在命中敌人时造成雷元素伤害。\n处于「乌鸦护持」状态下时，蓄力完成的箭矢会在命中时留下「乌羽」。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中射出箭雨，并迅速下坠冲击地面，在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "N/A - S2",
-          "description": null,
+          "title": "鸦羽天狗霆雷召咒",
+          "description": "以天狗之神速小幅转移，并唤来乌羽的守护。\n获得持续18秒的「乌羽护持」，当九条裟罗发射完成蓄力的箭矢时，会消耗「乌羽护持」，并在命中的位置留下「乌羽」。\n「乌羽」会在短时间后引发天狗咒雷•伏，对范围内敌人造成雷元素伤害，并使其范围内的当前场上当前角色基于九条裟罗的基础攻击力，以一定比例获得攻击力加成。\n各种天狗咒雷提供的攻击力提升不能叠加，效果与持续时间由后生效的为准。",
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "N/A - S3",
-          "description": null,
+          "title": "煌煌千道镇式",
+          "description": "在目标的位置降下天狗咒雷•金刚坏，造成雷元素范围伤害。此后，天狗咒雷•金刚坏将扩散转为4道连续的天狗咒雷•雷砾，造成雷元素范围伤害。\n天狗咒雷•金刚坏与天狗咒雷•雷砾会使其范围内的当前场上角色获得与元素战技「鸦羽天狗霆雷召咒」相同的攻击力加成。\n各种天狗咒雷提供的攻击力提升不能叠加，效果与持续时间由后生效的为准。",
           "abilities": []
         }
       ],
-      "passives": [],
-      "constellations": []
+      "passives": [
+        {
+          "key": "p1",
+          "title": "检地",
+          "description": "在稻妻执行探索派遣任务时，消耗的时间缩短25%。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "不动心",
+          "description": "处于鸦羽天狗霆雷召咒的「乌羽护持」状态下时，瞄准射击的所需的蓄力时间减少60%。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "御公仪",
+          "description": "天狗咒雷•伏命中敌人后，将基于九条裟罗的元素充能效率，每100%为队伍中所有角色恢复1.2点元素能量。该效果每3秒至多触发一次。",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "Crow's Eye乌眼",
+          "description": "天狗咒雷为角色施加攻击力提升效果或命中敌人后，鸦羽天狗霆雷召咒的冷却时间减少1秒。\n该效果每3秒至多触发一次。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "鸦羽",
+          "description": "施放鸦羽天狗霆雷召咒时，会在九条裟罗原本的位置留下能引发一次较弱的天狗咒雷•伏的「乌羽」，造成原本30%的伤害。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "心魔",
+          "description": "煌煌千道镇式的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "彻证",
+          "description": "煌煌千道镇式释放的天狗咒雷•雷砾增加至6道。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "咒咏",
+          "description": "鸦羽天狗霆雷召咒的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "我界",
+          "description": "处于天狗咒雷带来的攻击力提升效果状态下的角色，其雷元素伤害的暴击伤害60%。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
     },
     {
       "key": "RaidenShogun",
-      "name": "Raiden Shogun",
-      "description": "N/A",
+      "name": "雷电将军",
+      "description": "其身为御建鸣神主尊大御所大人，许稻妻人民以亘古不变的「永恒」。",
       "skills": [
         {
           "key": "s1",
-          "title": "N/A - S1",
+          "title": "源流",
           "description": null,
-          "abilities": []
+          "abilities": [
+            {
+              "key": "a1",
+              "description": "进行至多五段的连续枪击。",
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": "消耗一定体力，进行向上的挑斩攻击。",
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": "从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。",
+              "descriptions": []
+            }
+          ]
         },
         {
           "key": "s2",
-          "title": "N/A - S2",
+          "title": "神变•恶曜开眼",
+          "description": "雷电将军展开净土的一角，对周围的敌人造成雷元素伤害，为队伍中附近的所有角色授以「雷罚恶曜之眼」。",
+          "abilities": [
+            {
+              "name": "雷罚恶曜之眼",
+              "description": null,
+              "descriptions": [
+                "获授雷罚恶曜之眼的角色的攻击对敌人造成伤害时，雷罚恶曜之眼会进行协同攻击，在敌人的位置造成雷元素范围伤害。",
+                "雷罚恶曜之眼的角色在持续期间内，元素爆发造成的伤害获得提升，提升程度基于元素爆发的元素能量。\n每个队伍的雷罚恶曜之眼，每0.9秒至多进行一次协同攻击。\n由队伍中自已的角色以外的角色触发的协同攻击攻击造成的伤害为原本的20%。"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "title": "奥义•梦想真说",
+          "description": "汇聚万千真言，竭尽诸愿百眼之愿力，展出粉碎一切诅咒的梦想一刀，造成雷元素范围伤害；并在接下来的一段时间内，使用「梦想一心」战斗。依据施放消耗的诸愿百眼之愿力层数，增加梦想一刀与梦想一心的攻击造成的伤害。",
+          "abilities": [
+            {
+              "name": "梦想一心",
+              "description": "在此状态下，雷电将军将使用刀进行攻击，并将普通攻击、重击与下落攻击造成的伤害转为无法被附魔覆盖的雷元素伤害，并在这些攻击命中敌人时，为队伍中附近的所有角色恢复元素能量。每1秒至多通过这种方式恢复一次元素能量。在持续期间内至多触发5次。\n在此状态下，雷电将军的抗打断能力提高，并免疫感电反应的伤害。\n梦想一心状态下，雷电将军的普通攻击、重击与下落攻击造成的伤害，视为元素爆发伤害。\n梦想一心的效果将在雷电将军退场时解除。",
+              "descriptions": []
+            },
+            {
+              "name": "诸愿百眼之轮",
+              "description": "队伍中附近的角色（不包括雷电将军自己）施放元素爆发时，会依据元素爆发的元素能量，为雷电将军的诸愿百眼之轮积攒愿力。\n至多积攒60层愿力。\n诸愿百眼之轮中积攒的愿力，会在脱离战斗300秒后清除。",
+              "descriptions": []
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "天下名物狩",
+          "description": "突破单手剑和长柄武器时，消耗的摩拉数量减少50%。",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "万千的愿望",
+          "description": "队伍中附近的角色获得元素晶球或微粒时，会为诸愿百眼之轮积攒2层愿力。\n该效果每3秒至多触发一次。",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "殊胜之御体",
+          "description": "基于元素充能效率超过100%的部分，每1%使雷电将军获得下列效果：",
+          "descriptions": [
+            "梦想一心状态提供的元素能量恢复提高0.6%；",
+            "雷元素伤害加成提升0.4%。"
+          ]
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "恶曜卜词",
+          "description": "诸愿百眼之轮能更加迅速地积攒愿力。元素类型为雷元素的角色释放元素爆发后，积攒的愿力提升80%；其他元素类型的角色施放元素爆发后，积攒的愿力提升20%。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "斩铁断金",
+          "description": "奥义•梦想真说的梦想一刀与梦想一心将无视敌人60%的防御力。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "真影旧事",
+          "description": "奥义•梦想真说的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "誓奉常道",
+          "description": "奥义•梦想真说施加的梦想一心状态结束后，附近的队伍中所有角色（不包括雷电将军自己）的攻击力提升30%，持续10秒。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "凶将显形",
+          "description": "神变•恶曜开眼的技能等级提高3级。\n至多提升至15级。",
+          "secondDescription": null,
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "复愿前行",
+          "description": "处于奥义•梦想真说施加的梦想一心状态下时，雷电将军的元素爆发伤害命中敌人时，使附近的队伍中所有角色（不包括雷电将军自己）元素爆发的冷却时间缩短1秒。\n该效果每1秒至多触发一次，在持续期间内至多触发5次。",
+          "secondDescription": null,
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "Thoma",
+      "name": "托马",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA - S1",
+          "description": null,
+          "abilities": [
+            {
+              "key": "a1",
+              "description": null,
+              "descriptions": []
+            },
+            {
+              "key": "a2",
+              "description": null,
+              "descriptions": []
+            },
+            {
+              "key": "a3",
+              "description": null,
+              "descriptions": []
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "title": "NA - S2",
           "description": null,
           "abilities": []
         },
         {
           "key": "s3",
-          "title": "N/A - S3",
+          "title": "NA - S3",
           "description": null,
           "abilities": []
         }
@@ -5544,9 +5853,27 @@
     },
     {
       "key": "Thundering Pulse",
-      "name": "Thundering Pulse",
-      "description": "A longbow that was a gift from the Shogun. Eternal lightning crackles all around it.",
-      "refinement": "Increases ATK by {{0}}% and grants the might of the Thunder Emblem. At stack levels 1/2/3, the Thunder Emblem increases Normal Attack DMG by {{1}}/{{2}}/{{3}}%. The character will obtain 1 stack of Thunder Emblem in each of the following scenarios: Normal Attack deals DMG (stack lasts 5s), casting Elemental Skill (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently."
+      "name": "飞雷之弦振",
+      "description": "曾由将军御赐的长弓，闪烁着永不熄灭的雷光。",
+      "refinement": "攻击力提高{{0}}%，并能获得「飞雷之巴印」的威势。飞雷之巴印：持有1/2/3层飞雷之巴印时，普通攻击造成的伤害提高{{1}}/{{2}}/{{3}}%。在下列情况下，角色将各获得1层飞雷之巴印：普通攻击造成伤害时，持续5秒；施放元素战技时，持续10秒；此外，角色元素能量低于100%时，将获得1层飞雷之巴印，此飞雷之巴印会在角色的元素能量充满时消失。每层飞雷之巴印的持续时间独立计算。"
+    },
+    {
+      "key": "Engulfing Lightning",
+      "name": "薙草之稻光",
+      "description": "用于「斩草」的薙tì刀。对向此物之军势，也会如苇草般倒下吧…",
+      "refinement": "攻击力获得提升，提升程度相当于元素充能效率超出100%部分的{{0}}%，至多通过这种方式提升{{1}}%。施放元素爆发后的12秒内，元素充能效率提升{{2}}%。"
+    },
+    {
+      "key": "The Catch",
+      "name": "「渔获」",
+      "description": "在久远的过去，曾经闻名稻妻的大盗爱用的枪。",
+      "refinement": "元素爆发造成的伤害提升{{0}}%，元素爆发的暴击率提升{{1}}%。"
+    },
+    {
+      "key": "Predator",
+      "name": "掠食者",
+      "description": "设计风格相当独特的弓。应该不属于这个世界。",
+      "refinement": "仅在「PlayStation NetWork」游玩时生效。\n对敌人造成冰元素伤害后，普通攻击与重击造成的伤害提高{{0}}%效果持续6秒，至多叠加2次；此外，埃洛伊装备掠食者时，攻击力提升{{1}}点。"
     }
   ],
   "artifacts": [
@@ -5654,11 +5981,11 @@
       "bonus": [
         {
           "key": "b1",
-          "bonus": "角色造成的治疗效果提升15%。"
+          "bonus": "普通攻击与重击造成的伤害提高15%；"
         },
         {
           "key": "b2",
-          "bonus": "施放元素战技或元素爆发后的10秒内，队伍中所有角色受治疗效果加成提高20%。"
+          "bonus": "施放元素战技后的8秒内，普通攻击和重击造成的伤害提升25%。"
         }
       ]
     },
@@ -6867,37 +7194,37 @@
     {
       "key": "Northlander Bow Billet",
       "name": "北陆弓原胚",
-      "description": "Can be used to forge 4-star bows. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "description": "生产武器的原材料。通过锻造，可以生产出4星的弓。\n哲学中认为大理石蕴藏着成为美丽雕塑的潜能。这些原胚也孕育了无限可能。真让人期待。"
     },
     {
       "key": "Northlander Catalyst Billet",
       "name": "北陆法器原胚",
-      "description": "Can be used to forge 4-star catalysts. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "description": "生产武器的原材料。通过锻造，可以生产出4星的法器。\n哲学中认为大理石蕴藏着成为美丽雕塑的潜能。这些原胚也孕育了无限可能。真让人期待。"
     },
     {
       "key": "Northlander Claymore Billet",
       "name": "北陆双手剑原胚",
-      "description": "Can be used to forge 4-star claymores. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "description": "生产武器的原材料。通过锻造，可以生产出4星的双手剑。\n哲学中认为大理石蕴藏着成为美丽雕塑的潜能。这些原胚也孕育了无限可能。真让人期待。"
     },
     {
       "key": "Northlander Polearm Billet",
       "name": "北陆长柄武器原胚",
-      "description": "Can be used to forge 4-star polearms. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "description": "生产武器的原材料。通过锻造，可以生产出4星的长柄武器。\n哲学中认为大理石蕴藏着成为美丽雕塑的潜能。这些原胚也孕育了无限可能。真让人期待。"
     },
     {
       "key": "Northlander Sword Billet",
       "name": "北陆单手剑原胚",
-      "description": "Can be used to forge 4-star swords. Philosophers believe marble has the potential to be sculpted into a beautiful statue. Likewise, these billets have the potential to become something greater."
+      "description": "生产武器的原材料。通过锻造，可以生产出4星的单手剑。\n哲学中认为大理石蕴藏着成为美丽雕塑的潜能。这些原胚也孕育了无限可能。真让人期待。"
     },
     {
       "key": "Dust of Azoth",
       "name": "嬗变之尘",
-      "description": "A device that can transmute elemental Ascension Materials and change their Elemental Type.Its practical uses notwithstanding, alchemy is the study of the nature of matter and the rules that underpin its transformations, and ultimately it seeks to comprehend the working principles of the world and the flow of the ley lines\nIt is not known who would share alchemical achievements of this magnitude with the civilizations of the world and why. But although the power to fundamentally transmute elemental energy in its crystallized and inert form is a highly useful one, this device also conceals the grave danger of disrupting the elemental balance..."
+      "description": "能够使元素突破材料发生变质，转变其元素属性的道具。\n刨除实用目的的话，炼金术实际上是研讨物质本质与其变化规律的学科，最终通向的是世界运转、地脉流通的规律。\n不知何者出于何种目的，在地上的文明当中散布的这种炼金术的极高成就产物，具有扭转完全惰性化结晶后的元素物质的能力。虽然相当便利实用，但也隐藏着打破平衡的巨大危险性…"
     },
     {
       "key": "Magical Crystal Chunk",
       "name": "魔晶块",
-      "description": "These crystal chunks can be refined into Weapon EXP materials by using Original Resin.\nCrystals from mines that were eroded by the energy of the Ley Lines cannot be processed by ordinary means."
+      "description": "可以通过「委托锻造」，利用原粹树脂，提炼成武器经验材料。\n受地脉的能量侵蚀的水晶矿，寻常手段无法处理。"
     },
     {
       "key": "Original Resin",
@@ -7121,8 +7448,63 @@
     },
     {
       "key": "Amethyst Lump",
-      "name": "Amethyst Lump",
-      "description": "An uncut crystal that can only be found in Inazuma. Some professional craftsmanship will bring out its true value."
+      "name": "紫晶块",
+      "description": "未经削切的矿物晶体，仅在稻妻列岛上产生。经过专门处理后，能展现其真正的价值。"
+    },
+    {
+      "key": "SpectralA",
+      "name": "浮游干核",
+      "description": "能让飘浮灵浮游的能量核，其中含有些微的元素。\n大部分的能量似乎已经逸散了。"
+    },
+    {
+      "key": "SpectralB",
+      "name": "浮游幽核",
+      "description": "能让飘浮灵浮游的能量核。\n这种元素生物似乎有奇异的习性，会周期性大量涌现、消失。"
+    },
+    {
+      "key": "SpectralC",
+      "name": "浮游晶化核",
+      "description": "击败飘浮灵后有时能发现的完整的能量核。\n在热衷于给任何事物都分个高下的人当中，经常发生这样的争论：飘浮灵和风史莱姆的浮力，究竟孰高孰低。"
+    },
+    {
+      "key": "Storm Beads",
+      "name": "雷霆数珠",
+      "description": "雷音权现留下的，蕴含电气的雷之珠。\n传说雷音权现只会随着雷霆降生在遗留着强大忿恨的土地上。驱使它永远地徘徊在破碎的土地上，释放贯天之雷的，在歌人的故事中往往是生命无法承受的失望与痛苦。"
+    },
+    {
+      "key": "Sango Pearl",
+      "name": "珊瑚真珠",
+      "description": "与海祇的珊瑚相伴而生的宝珠，散发着月光般的丝丝凉意。"
+    },
+    {
+      "key": "Dew of Repudiation",
+      "name": "排异之露",
+      "description": "无相之水坍缩后，留下的奇异水珠。\n具有强烈的排异本能，也是无相之水的攻击手段之一。据说水中蕴含着记忆与意志，也能随水体的融合获得成长。然而无相之水唤出的浪潮，与地上地下一切湍流之物皆不相容。哪怕落入佩特莉可那无比纯粹的水中，这滴水也会像水银一般抗拒着周遭的融合吧。"
+    },
+    {
+      "key": "Dendrobium",
+      "name": "血斛",
+      "description": "在诗文中也被称为「赤蕊」的鲜艳植物，一度在稻妻列岛绝迹，如今在战场上再度重现。传说在血腥的战场上，它们开得格外妖艳。"
+    },
+    {
+      "key": "Amakumo Fruit",
+      "name": "天云草实",
+      "description": "生长在清籁岛的天云草结成的果实，贴在耳畔能听见微弱的电流声。"
+    },
+    {
+      "key": "Molten Moment",
+      "name": "熔毁之刻",
+      "description": "战胜解放了原本力量的「女士」后，得到的某种蕴含着强大力量的畸形碎片。\n「我做了一个很长的梦。\n「我梦见我与你，在我们缔造的纯白世界中再会。\n「但我终于醒来了。我早已经被烈火吞没。你早已与毒血一同回归大地。\n「不过都无所谓了。要不断往前走，就要烧毁身后的一切，就要相信他所说的永远纯白无暇的国度，在地平线的尽头，『陛下』的梦中，在他让我看见的『妄念』里。」"
+    },
+    {
+      "key": "Hellfire Butterfly",
+      "name": "狱火之蝶",
+      "description": "战胜解放了原本力量的「女士」后，得到的某种蕴含着温暖的力量的畸形碎片。\n应激的冰之封印被打破，过往的意志冲破苍白的囚牢，她再度想起自己原本的名字时，不死蝶会随着血肉焚毁一同逸散飞舞。而她也想起了漫游大地，散布烈焰，烧尽一切罪恶的过去，以及自己未能再见的那个人的面貌。"
+    },
+    {
+      "key": "Ashen Heart",
+      "name": "灰烬之心",
+      "description": "战胜解放了原本力量的「女士」后，得到的某种蕴含着强大思念的畸形碎片。\n即使是泪水也无法使火焰熄灭。铁水般炽热的哀伤与愤怒在她的血管中奔涌，从泪腺中迸发。\n在她的心脏被永恒之火烧尽前，最初的愚者找到了她。他明白，只有更加深刻的仇恨与妄执，才能熄灭吞噬她的火焰，让她成为自己的同伴…"
     }
   ],
   "debuffs": [
@@ -7640,6 +8022,90 @@
     {
       "key": "Hydro Mimic Raptor",
       "name": "幻形飞鹰·水"
+    },
+    {
+      "key": "Electro Abyss Mage",
+      "name": "Electro Abyss Mage"
+    },
+    {
+      "key": "La Signora",
+      "name": "La Signora"
+    },
+    {
+      "key": "Ruin Cruiser",
+      "name": "Ruin Cruiser"
+    },
+    {
+      "key": "Ruin Destroyer",
+      "name": "Ruin Destroyer"
+    },
+    {
+      "key": "Ruin Defender",
+      "name": "Ruin Defender"
+    },
+    {
+      "key": "Ruin Scout",
+      "name": "Ruin Scout"
+    },
+    {
+      "key": "Thunderhelm Lawachurl",
+      "name": "Thunderhelm Lawachurl"
+    },
+    {
+      "key": "Fatui Mirror Maiden",
+      "name": "Fatui Mirror Maiden"
+    },
+    {
+      "key": "Perpetual Mechanical Array",
+      "name": "Perpetual Mechanical Array"
+    },
+    {
+      "key": "Hydro Hypostasis",
+      "name": "Hydro Hypostasis"
+    },
+    {
+      "key": "Thunder Manifestation",
+      "name": "Thunder Manifestation"
+    },
+    {
+      "key": "Pyro Hypostasis",
+      "name": "Pyro Hypostasis"
+    },
+    {
+      "key": "Electro Samachurl",
+      "name": "Electro Samachurl"
+    },
+    {
+      "key": "Nobushi: Hitsukeban",
+      "name": "Nobushi: Hitsukeban"
+    },
+    {
+      "key": "Nobushi: Jintouban",
+      "name": "Nobushi: Jintouban"
+    },
+    {
+      "key": "Nobushi: Kikouban",
+      "name": "Nobushi: Kikouban"
+    },
+    {
+      "key": "Kairagi: Fiery Might",
+      "name": "Kairagi: Fiery Might"
+    },
+    {
+      "key": "Kairagi: Dancing Thunder",
+      "name": "Kairagi: Dancing Thunder"
+    },
+    {
+      "key": "Hydro Specter",
+      "name": "Hydro Specter"
+    },
+    {
+      "key": "Anemo Specter",
+      "name": "Anemo Specter"
+    },
+    {
+      "key": "Geo Specter",
+      "name": "Geo Specter"
     }
   ]
 }

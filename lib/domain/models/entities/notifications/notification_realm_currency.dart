@@ -1,6 +1,6 @@
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/entities.dart';
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/entities.dart';
 
 part 'notification_realm_currency.g.dart';
 
@@ -62,6 +62,6 @@ class NotificationRealmCurrency extends HiveObject implements NotificationBase {
     required this.realmTrustRank,
     required this.realmRankType,
     required this.realmCurrency,
-  })   : type = AppNotificationType.realmCurrency.index,
+  })  : type = AppNotificationType.realmCurrency.index,
         originalScheduledDate = completesAt;
 }

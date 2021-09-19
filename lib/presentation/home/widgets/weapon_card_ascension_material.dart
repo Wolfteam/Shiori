@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/presentation/home/widgets/ascension_material_item_card.dart';
-import 'package:genshindb/presentation/shared/images/circle_weapon.dart';
+import 'package:shiori/presentation/home/widgets/ascension_material_item_card.dart';
+import 'package:shiori/presentation/shared/images/circle_weapon.dart';
 
 class WeaponCardAscensionMaterial extends StatelessWidget {
   final String name;

@@ -1,6 +1,6 @@
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/entities.dart';
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/entities.dart';
 
 part 'notification_farming_artifact.g.dart';
 
@@ -54,6 +54,6 @@ class NotificationFarmingArtifact extends HiveObject implements NotificationBase
     required this.title,
     required this.body,
     required this.artifactFarmingTimeType,
-  })   : type = AppNotificationType.farmingArtifacts.index,
+  })  : type = AppNotificationType.farmingArtifacts.index,
         originalScheduledDate = completesAt;
 }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/details/detail_general_card.dart';
-import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:genshindb/presentation/shared/item_description.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/details/detail_general_card.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
+import 'package:shiori/presentation/shared/item_description.dart';
 
 class WeaponDetailGeneralCard extends StatelessWidget {
   final String name;

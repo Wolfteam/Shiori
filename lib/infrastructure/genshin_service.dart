@@ -1,13 +1,13 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:genshindb/domain/app_constants.dart';
-import 'package:genshindb/domain/assets.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/extensions/string_extensions.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/domain/services/genshin_service.dart';
-import 'package:genshindb/domain/services/locale_service.dart';
+import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/assets.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/locale_service.dart';
 
 class GenshinServiceImpl implements GenshinService {
   final LocaleService _localeService;
@@ -159,7 +159,12 @@ class GenshinServiceImpl implements GenshinService {
 
   @override
   List<TierListRowModel> getDefaultCharacterTierList(List<int> colors) {
-    assert(colors.length == 5);
+    assert(colors.length == 7);
+
+    final sssTier = _charactersFile.characters
+        .where((char) => !char.isComingSoon && char.tier == 'sss')
+        .map((char) => Assets.getCharacterPath(char.image))
+        .toList();
 
     final ssTier = _charactersFile.characters
         .where((char) => !char.isComingSoon && char.tier == 'ss')
@@ -188,11 +193,12 @@ class GenshinServiceImpl implements GenshinService {
         .toList();
 
     return <TierListRowModel>[
-      TierListRowModel.row(tierText: 'SS', tierColor: colors.first, charImgs: ssTier),
-      TierListRowModel.row(tierText: 'S', tierColor: colors.first, charImgs: sTier),
-      TierListRowModel.row(tierText: 'A', tierColor: colors[1], charImgs: aTier),
-      TierListRowModel.row(tierText: 'B', tierColor: colors[2], charImgs: bTier),
-      TierListRowModel.row(tierText: 'C', tierColor: colors[3], charImgs: cTier),
+      TierListRowModel.row(tierText: 'SSS', tierColor: colors.first, charImgs: sssTier),
+      TierListRowModel.row(tierText: 'SS', tierColor: colors[1], charImgs: ssTier),
+      TierListRowModel.row(tierText: 'S', tierColor: colors[2], charImgs: sTier),
+      TierListRowModel.row(tierText: 'A', tierColor: colors[3], charImgs: aTier),
+      TierListRowModel.row(tierText: 'B', tierColor: colors[4], charImgs: bTier),
+      TierListRowModel.row(tierText: 'C', tierColor: colors[5], charImgs: cTier),
       TierListRowModel.row(tierText: 'D', tierColor: colors.last, charImgs: dTier),
     ];
   }

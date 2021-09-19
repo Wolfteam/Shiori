@@ -1,10 +1,10 @@
-import 'package:genshindb/domain/app_constants.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/extensions/string_extensions.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/domain/services/locale_service.dart';
-import 'package:genshindb/domain/services/settings_service.dart';
 import 'package:intl/intl.dart';
+import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
 
 class LocaleServiceImpl implements LocaleService {
   final SettingsService _settingsService;

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:genshindb/presentation/shared/sliver_nothing_found.dart';
-import 'package:genshindb/presentation/shared/sliver_page_filter.dart';
-import 'package:genshindb/presentation/shared/sliver_scaffold_with_fab.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/shared/utils/modal_bottom_sheet_utils.dart';
-import 'package:genshindb/presentation/shared/utils/size_utils.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/sliver_nothing_found.dart';
+import 'package:shiori/presentation/shared/sliver_page_filter.dart';
+import 'package:shiori/presentation/shared/sliver_scaffold_with_fab.dart';
+import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
+import 'package:shiori/presentation/shared/utils/size_utils.dart';
 
 import 'widgets/material_card.dart';
 

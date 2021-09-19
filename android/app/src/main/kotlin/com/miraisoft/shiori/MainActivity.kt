@@ -1,4 +1,4 @@
-package com.example.genshindb
+package com.miraisoft.shiori
 
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +12,7 @@ import io.flutter.plugin.common.MethodChannel
 
 class MainActivity : FlutterActivity() {
     companion object {
-        const val methodChannelName = "com.github.wolfteam.genshindb"
+        const val methodChannelName = "com.github.wolfteam.shiori"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +21,7 @@ class MainActivity : FlutterActivity() {
     }
 
     private fun onMethodCall(@NonNull call: MethodCall, @NonNull result: MethodChannel.Result) {
-        Log.d("onMethodCall", "[${methodChannelName}] ${call.method}")
+        Log.d("onMethodCall", "[$methodChannelName] ${call.method}")
         try {
             when (call.method) {
                 "start" -> {

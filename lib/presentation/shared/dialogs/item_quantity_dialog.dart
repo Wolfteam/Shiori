@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/generated/l10n.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/generated/l10n.dart';
 
 class ItemQuantityDialog extends StatefulWidget {
   final int quantity;
   final int quantityLength;
+  final void Function(int)? onSave;
+  final VoidCallback? onClose;
 
   const ItemQuantityDialog({
     Key? key,
     required this.quantity,
     this.quantityLength = 10,
+    this.onSave,
+    this.onClose,
   }) : super(key: key);
 
   @override
@@ -81,7 +85,19 @@ class _ItemQuantityDialogState extends State<ItemQuantityDialog> {
     context.read<ItemQuantityFormBloc>().add(ItemQuantityFormEvent.quantityChanged(quantity: quantity));
   }
 
-  void _onSave() => Navigator.pop(context, int.parse(_currentValue));
+  void _onSave() {
+    if (widget.onSave != null) {
+      widget.onSave!(int.parse(_currentValue));
+      return;
+    }
+    Navigator.pop(context, int.parse(_currentValue));
+  }
 
-  void _close() => Navigator.pop(context);
+  void _close() {
+    if (widget.onClose != null) {
+      widget.onClose!();
+      return;
+    }
+    Navigator.pop(context);
+  }
 }

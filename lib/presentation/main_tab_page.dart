@@ -2,13 +2,13 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/desktop_tablet_scaffold.dart';
-import 'package:genshindb/presentation/mobile_scaffold.dart';
-import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/desktop_tablet_scaffold.dart';
+import 'package:shiori/presentation/mobile_scaffold.dart';
+import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
 class MainTabPage extends StatefulWidget {
   @override

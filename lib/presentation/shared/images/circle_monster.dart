@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
 import 'circle_item.dart';
 

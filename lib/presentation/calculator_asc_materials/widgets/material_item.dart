@@ -1,16 +1,22 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart' as app;
-import 'package:genshindb/domain/utils/currency_utils.dart';
-import 'package:genshindb/presentation/material/material_page.dart' as mp;
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/application/calculator_asc_materials_item/calculator_asc_materials_in_inventory_bloc.dart';
+import 'package:shiori/domain/enums/enums.dart' as app;
+import 'package:shiori/domain/utils/currency_utils.dart';
+import 'package:shiori/presentation/material/material_page.dart' as mp;
+
+import 'change_material_quantity_dialog.dart';
+
 
 class MaterialItem extends StatelessWidget {
   final app.MaterialType type;
   final String image;
   final int quantity;
   final Color? textColor;
+  final int? sessionKey;
 
   const MaterialItem({
     Key? key,
@@ -18,6 +24,7 @@ class MaterialItem extends StatelessWidget {
     required this.image,
     required this.quantity,
     this.textColor,
+    this.sessionKey,
   }) : super(key: key);
 
   @override
@@ -26,12 +33,16 @@ class MaterialItem extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        IconButton(
-          icon: Image.asset(image),
-          iconSize: 45,
-          splashRadius: 30,
-          constraints: const BoxConstraints(),
-          onPressed: () => _gotoMaterialPage(context),
+        InkWell(
+            onLongPress: () => _showQuantityPickerDialog(context),
+            borderRadius: BorderRadius.circular(30),
+            child: IconButton(
+              icon: Image.asset(image),
+              iconSize: 45,
+              splashRadius: 30,
+              constraints: const BoxConstraints(),
+              onPressed: () => _gotoMaterialPage(context),
+            )
         ),
         if (quantity > 0)
           Text(
@@ -41,6 +52,14 @@ class MaterialItem extends StatelessWidget {
           ),
         if (quantity == 0) const Icon(Icons.check, color: Colors.green, size: 18),
       ],
+    );
+  }
+
+  Future<void> _showQuantityPickerDialog(BuildContext context) async {
+    context.read<CalculatorAscMaterialsInInventoryBloc>().add(CalculatorAscMaterialsInInventoryEvent.load(image: image));
+    await showDialog<int>(
+      context: context,
+      builder: (_) => ChangeMaterialQuantityDialog(sessionKey: sessionKey),
     );
   }
 

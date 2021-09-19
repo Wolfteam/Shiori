@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/daily_check_in/daily_check_in_page.dart';
-import 'package:genshindb/presentation/home/widgets/card_item.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/daily_check_in/daily_check_in_page.dart';
+import 'package:shiori/presentation/home/widgets/card_item.dart';
 
 class DailyCheckInCard extends StatelessWidget {
   final bool iconToTheLeft;

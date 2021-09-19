@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/extensions/media_query_extensions.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/extensions/media_query_extensions.dart';
 
 class ChangeCurrentDayDialog extends StatefulWidget {
   final int currentSelectedDay;

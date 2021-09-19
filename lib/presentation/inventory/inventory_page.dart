@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/inventory/widgets/characters_inventory_tab_page.dart';
-import 'package:genshindb/presentation/inventory/widgets/clear_all_dialog.dart';
-import 'package:genshindb/presentation/inventory/widgets/materials_inventory_tab_page.dart';
-import 'package:genshindb/presentation/inventory/widgets/weapons_inventory_tab_page.dart';
-import 'package:genshindb/presentation/shared/genshin_db_icons.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/inventory/widgets/characters_inventory_tab_page.dart';
+import 'package:shiori/presentation/inventory/widgets/clear_all_dialog.dart';
+import 'package:shiori/presentation/inventory/widgets/materials_inventory_tab_page.dart';
+import 'package:shiori/presentation/inventory/widgets/weapons_inventory_tab_page.dart';
+import 'package:shiori/presentation/shared/shiori_icons.dart';
 
 class InventoryPage extends StatelessWidget {
   final tabs = const [
     Tab(icon: Icon(Icons.people)),
-    Tab(icon: Icon(GenshinDb.crossed_swords)),
-    Tab(icon: Icon(GenshinDb.cubes)),
+    Tab(icon: Icon(Shiori.crossed_swords)),
+    Tab(icon: Icon(Shiori.cubes)),
   ];
 
   @override

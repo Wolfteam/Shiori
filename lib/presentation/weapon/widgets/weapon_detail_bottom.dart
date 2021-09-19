@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/details/detail_bottom_portrait_layout.dart';
-import 'package:genshindb/presentation/shared/details/detail_tab_landscape_layout.dart';
-import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:genshindb/presentation/shared/images/circle_character.dart';
-import 'package:genshindb/presentation/shared/item_description_detail.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/shared/utils/size_utils.dart';
-import 'package:genshindb/presentation/weapon/widgets/weapon_detail_stats_card.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/details/detail_bottom_portrait_layout.dart';
+import 'package:shiori/presentation/shared/details/detail_tab_landscape_layout.dart';
+import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
+import 'package:shiori/presentation/shared/images/circle_character.dart';
+import 'package:shiori/presentation/shared/item_description_detail.dart';
+import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/size_utils.dart';
+import 'package:shiori/presentation/weapon/widgets/weapon_detail_stats_card.dart';
 
 import 'weapon_detail_ascension_materials_card.dart';
 import 'weapon_detail_crafting_materials.dart';

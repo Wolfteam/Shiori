@@ -1,5 +1,5 @@
 import 'package:darq/darq.dart';
-import 'package:genshindb/domain/enums/enums.dart';
+import 'package:shiori/domain/enums/enums.dart';
 
 import 'models/models.dart';
 

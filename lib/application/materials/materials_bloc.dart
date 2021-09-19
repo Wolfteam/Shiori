@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/domain/app_constants.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/enums/material_type.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/domain/services/genshin_service.dart';
+import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/enums/material_type.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
 
 part 'materials_bloc.freezed.dart';
 part 'materials_event.dart';

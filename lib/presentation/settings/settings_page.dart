@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 import 'widgets/about_settings_card.dart';
 import 'widgets/accent_color_settings_card.dart';

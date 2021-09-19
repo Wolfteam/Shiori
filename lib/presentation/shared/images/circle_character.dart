@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/presentation/character/character_page.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/presentation/character/character_page.dart';
 
 import 'circle_item.dart';
 

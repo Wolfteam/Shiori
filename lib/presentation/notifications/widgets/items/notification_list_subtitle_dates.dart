@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/utils/date_utils.dart' as utils;
+import 'package:shiori/domain/utils/date_utils.dart' as utils;
 
 class NotificationListSubtitleDates extends StatelessWidget {
   final DateTime createdAt;

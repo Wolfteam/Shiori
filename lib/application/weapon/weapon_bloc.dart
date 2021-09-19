@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/application/common/pop_bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/domain/services/data_service.dart';
-import 'package:genshindb/domain/services/genshin_service.dart';
-import 'package:genshindb/domain/services/telemetry_service.dart';
+import 'package:shiori/application/common/pop_bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/data_service.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'weapon_bloc.freezed.dart';
 part 'weapon_event.dart';

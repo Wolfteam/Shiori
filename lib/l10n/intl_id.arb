@@ -1,5 +1,5 @@
 {
-  "appName": "GenshinDb",
+  "appName": "Shiori",
   "dark": "Gelap",
   "light": "Terang",
   "english": "Inggris",
@@ -131,7 +131,7 @@
   "supportMsg": "Saya membuat aplikasi ini pada waktu luang dan juga Open Source. Jika kamu ingin membantu, melaporkan masalah, memiliki ide, ingin menambahkan fitur, dll, silahkan buka issue di GitHub saya:",
   "issues": "Issues",
   "disclaimer": "Disclaimer",
-  "disclaimerMsg": "Aplikasi ini tidak berafiliasi dengan atau didukung oleh MiHoYo. GenshinDb hanya aplikasi database untuk game Genshin Impact",
+  "disclaimerMsg": "Aplikasi ini tidak berafiliasi dengan atau didukung oleh MiHoYo. Shiori hanya aplikasi database untuk game Genshin Impact",
   "restartMayBeNeeded": "Restart mungkin diperlukan untuk menerapkan perubahan",
   "youCanAlsoSendMeAnEmail": "Kamu juga dapat mengirim saya email",
   "partial": "Sebagian",

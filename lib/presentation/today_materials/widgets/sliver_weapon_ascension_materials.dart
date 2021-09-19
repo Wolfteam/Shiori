@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/presentation/home/widgets/weapon_card_ascension_material.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:responsive_grid/responsive_grid.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/presentation/home/widgets/weapon_card_ascension_material.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class SliverWeaponAscensionMaterials extends StatelessWidget {
   final List<TodayWeaponAscensionMaterialModel> weaponAscMaterials;

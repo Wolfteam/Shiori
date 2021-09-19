@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/extensions/string_extensions.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/presentation/artifacts/artifacts_page.dart';
-import 'package:genshindb/presentation/characters/characters_page.dart';
-import 'package:genshindb/presentation/materials/materials_page.dart';
-import 'package:genshindb/presentation/monsters/monsters_page.dart';
-import 'package:genshindb/presentation/shared/images/circle_item.dart';
-import 'package:genshindb/presentation/weapons/weapons_page.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/presentation/artifacts/artifacts_page.dart';
+import 'package:shiori/presentation/characters/characters_page.dart';
+import 'package:shiori/presentation/materials/materials_page.dart';
+import 'package:shiori/presentation/monsters/monsters_page.dart';
+import 'package:shiori/presentation/shared/images/circle_item.dart';
+import 'package:shiori/presentation/weapons/weapons_page.dart';
 
 class NotificationCircleItem extends StatelessWidget {
   final AppNotificationType type;

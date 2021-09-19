@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:genshindb/presentation/shared/scaffold_with_fab.dart';
-import 'package:genshindb/presentation/weapon/widgets/weapon_detail_bottom.dart';
-import 'package:genshindb/presentation/weapon/widgets/weapon_detail_top.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
+import 'package:shiori/presentation/weapon/widgets/weapon_detail_bottom.dart';
+import 'package:shiori/presentation/weapon/widgets/weapon_detail_top.dart';
 
 class WeaponPage extends StatelessWidget {
   @override
@@ -72,6 +72,7 @@ class _LandscapeLayout extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
+                  flex: 40,
                   child: WeaponDetailTop(
                     name: state.name,
                     atk: state.atk,
@@ -84,6 +85,7 @@ class _LandscapeLayout extends StatelessWidget {
                   ),
                 ),
                 Expanded(
+                  flex: 60,
                   child: WeaponDetailBottom(
                     rarity: state.rarity,
                     description: state.description,

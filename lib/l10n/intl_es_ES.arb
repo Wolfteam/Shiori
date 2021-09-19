@@ -1,5 +1,5 @@
 {
-  "appName": "GenshinDb",
+  "appName": "Shiori",
   "dark": "Oscuro",
   "light": "Claro",
   "english": "Inglés",
@@ -131,7 +131,7 @@
   "supportMsg": "Hice esta aplicación en mi tiempo libre y también es de código abierto. Si deseas ayudarme, informar de un problema, tienes una idea, deseas que se implemente una funcionalidad, etc., crea un issue en mi Github:",
   "issues": "Inconvenientes",
   "disclaimer": "Disclaimer",
-  "disclaimerMsg": "Esta app no está afiliada ni asociada a miHoYo. GenshinDb es solo una aplicación de tipo base de datos para el juego Genshin Impact",
+  "disclaimerMsg": "Esta app no está afiliada ni asociada a miHoYo. Shiori es solo una aplicación de tipo base de datos para el juego Genshin Impact",
   "restartMayBeNeeded": "Puede ser necesario reiniciar la app para que los cambios tomen efecto",
   "youCanAlsoSendMeAnEmail": "También puedes enviarme un correo",
   "partial": "Parcial",

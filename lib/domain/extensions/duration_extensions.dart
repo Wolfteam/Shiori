@@ -1,4 +1,4 @@
-import 'package:genshindb/domain/extensions/string_extensions.dart';
+import 'package:shiori/domain/extensions/string_extensions.dart';
 
 extension DurationExtensions on Duration {
   String formatDuration({String? negativeText}) {

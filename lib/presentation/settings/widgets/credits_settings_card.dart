@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/bullet_list.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/bullet_list.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 import 'settings_card_content.dart';
 

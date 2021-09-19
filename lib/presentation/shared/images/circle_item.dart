@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class CircleItem extends StatelessWidget {
   final String image;
@@ -20,8 +21,18 @@ class CircleItem extends StatelessWidget {
     final avatar = CircleAvatar(
       radius: radius,
       backgroundColor: Colors.transparent,
-      backgroundImage: AssetImage(image),
+      child: ClipOval(
+        child: FadeInImage(
+          placeholder: MemoryImage(kTransparentImage),
+          image: AssetImage(image),
+          fit: BoxFit.cover,
+          alignment: Alignment.topCenter,
+          height: radius * 2,
+          width: radius * 2,
+        ),
+      ),
     );
+
     if (forDrag) {
       return avatar;
     }

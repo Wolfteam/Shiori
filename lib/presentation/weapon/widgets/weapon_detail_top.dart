@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/presentation/shared/details/detail_top_layout.dart';
-import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:genshindb/presentation/shared/loading.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
+import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
+import 'package:shiori/presentation/shared/loading.dart';
 
 import 'weapon_detail_general_card.dart';
-
-const double imageHeight = 320;
-const double imgSize = 28;
 
 class WeaponDetailTop extends StatelessWidget {
   final String name;
@@ -41,11 +38,8 @@ class WeaponDetailTop extends StatelessWidget {
       fullImage: image,
       secondFullImage: image,
       decoration: BoxDecoration(gradient: rarity.getRarityGradient()),
-      heightOnLandscape: mediaQuery.size.height * 0.8,
       showShadowImage: isPortrait,
       charDescriptionHeight: 220,
-      widthOnPortrait: isPortrait ? 250 : null,
-      heightOnPortrait: isPortrait ? 350 : null,
       isAnSmallImage: isPortrait,
       generalCard: WeaponDetailGeneralCard(
         type: type,

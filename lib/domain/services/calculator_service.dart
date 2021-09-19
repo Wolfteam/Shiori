@@ -1,4 +1,4 @@
-import 'package:genshindb/domain/models/models.dart';
+import 'package:shiori/domain/models/models.dart';
 import 'package:tuple/tuple.dart';
 
 abstract class CalculatorService {

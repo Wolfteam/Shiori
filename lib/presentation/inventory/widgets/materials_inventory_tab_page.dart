@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/presentation/materials/widgets/material_card.dart';
-import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:genshindb/presentation/shared/mixins/app_fab_mixin.dart';
-import 'package:genshindb/presentation/shared/utils/size_utils.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/presentation/materials/widgets/material_card.dart';
+import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
+import 'package:shiori/presentation/shared/utils/size_utils.dart';
 
 class MaterialsInventoryTabPage extends StatefulWidget {
   @override

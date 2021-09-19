@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/character/character_page.dart';
-import 'package:genshindb/presentation/shared/extensions/element_type_extensions.dart';
-import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:genshindb/presentation/shared/images/comingsoon_new_avatar.dart';
-import 'package:genshindb/presentation/shared/images/element_image.dart';
-import 'package:genshindb/presentation/shared/images/rarity.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/character/character_page.dart';
+import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/images/comingsoon_new_avatar.dart';
+import 'package:shiori/presentation/shared/images/element_image.dart';
+import 'package:shiori/presentation/shared/images/rarity.dart';
+import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 import 'character_card_ascension_materials_bottom.dart';
@@ -64,6 +64,13 @@ class CharacterCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
+    final size = MediaQuery.of(context).size;
+    var height = size.height / 2.5;
+    if (height > 600) {
+      height = 600;
+    } else if (height < 280) {
+      height = 280;
+    }
     return InkWell(
       borderRadius: Styles.mainCardBorderRadius,
       onTap: () => _gotoCharacterPage(context),
@@ -80,11 +87,17 @@ class CharacterCard extends StatelessWidget {
               alignment: AlignmentDirectional.topCenter,
               fit: StackFit.passthrough,
               children: [
-                FadeInImage(
-                  height: 280,
-                  placeholder: MemoryImage(kTransparentImage),
-                  image: AssetImage(image),
-                  fit: BoxFit.cover,
+                SizedBox(
+                  height: height,
+                  child: FittedBox(
+                    fit: BoxFit.cover,
+                    alignment: Alignment.topCenter,
+                    clipBehavior: Clip.hardEdge,
+                    child: FadeInImage(
+                      placeholder: MemoryImage(kTransparentImage),
+                      image: AssetImage(image),
+                    ),
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

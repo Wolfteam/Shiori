@@ -2,18 +2,18 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
-import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:genshindb/presentation/shared/gradient_card.dart';
-import 'package:genshindb/presentation/shared/images/comingsoon_new_avatar.dart';
-import 'package:genshindb/presentation/shared/images/rarity.dart';
-import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/weapon/weapon_page.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
+import 'package:shiori/presentation/shared/gradient_card.dart';
+import 'package:shiori/presentation/shared/images/comingsoon_new_avatar.dart';
+import 'package:shiori/presentation/shared/images/rarity.dart';
+import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/weapon/weapon_page.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class WeaponCard extends StatelessWidget {

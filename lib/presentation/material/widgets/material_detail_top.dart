@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/enums/enums.dart' as enums;
-import 'package:genshindb/presentation/shared/details/detail_appbar.dart';
-import 'package:genshindb/presentation/shared/details/detail_top_layout.dart';
-import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
+import 'package:shiori/domain/enums/enums.dart' as enums;
+import 'package:shiori/presentation/shared/details/detail_appbar.dart';
+import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
+import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 
 import 'material_detail_general_card.dart';
-
-const double imageHeight = 320;
 
 class MaterialDetailTop extends StatelessWidget {
   final String name;
@@ -26,14 +24,10 @@ class MaterialDetailTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return DetailTopLayout(
       fullImage: image,
       charDescriptionHeight: 170,
-      heightOnPortrait: isPortrait ? 250 : null,
-      widthOnPortrait: isPortrait ? 250 : null,
       isAnSmallImage: MediaQuery.of(context).orientation == Orientation.portrait,
-      heightOnLandscape: MediaQuery.of(context).size.height * 0.7,
       decoration: BoxDecoration(gradient: rarity.getRarityGradient()),
       appBar: const DetailAppBar(),
       generalCard: MaterialDetailGeneralCard(

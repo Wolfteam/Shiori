@@ -1,14 +1,14 @@
 import 'package:darq/darq.dart';
-import 'package:genshindb/domain/app_constants.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/domain/services/game_code_service.dart';
-import 'package:genshindb/domain/services/genshin_service.dart';
-import 'package:genshindb/domain/services/logging_service.dart';
 import 'package:html/dom.dart';
 import 'package:html/parser.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
+import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/game_code_service.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/logging_service.dart';
 
 const _wikiPage = 'https://genshin-impact.fandom.com/wiki/Promotional_Codes';
 

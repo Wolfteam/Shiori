@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart' as bloc;
-import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:genshindb/presentation/shared/scaffold_with_fab.dart';
+import 'package:shiori/application/bloc.dart' as bloc;
+import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
 
 import 'widgets/material_detail_bottom.dart';
 import 'widgets/material_detail_top.dart';
@@ -69,6 +69,7 @@ class _LandscapeLayout extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
+                  flex: 40,
                   child: MaterialDetailTop(
                     name: state.name,
                     image: state.fullImage,
@@ -78,6 +79,7 @@ class _LandscapeLayout extends StatelessWidget {
                   ),
                 ),
                 Expanded(
+                  flex: 60,
                   child: MaterialDetailBottom(
                     rarity: state.rarity,
                     charImgs: state.charImages,

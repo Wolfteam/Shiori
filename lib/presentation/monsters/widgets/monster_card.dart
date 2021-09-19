@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/images/comingsoon_new_avatar.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/shared/utils/toast_utils.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/images/comingsoon_new_avatar.dart';
+import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class MonsterCard extends StatelessWidget {
@@ -52,16 +52,26 @@ class MonsterCard extends StatelessWidget {
               alignment: AlignmentDirectional.topCenter,
               fit: StackFit.passthrough,
               children: [
-                FadeInImage(
-                  placeholder: MemoryImage(kTransparentImage),
-                  image: AssetImage(image),
+                SizedBox(
+                  height: 200,
+                  width: 200,
+                  child: FittedBox(
+                    fit: BoxFit.cover,
+                    alignment: Alignment.topCenter,
+                    clipBehavior: Clip.hardEdge,
+                    child: FadeInImage(
+                      placeholder: MemoryImage(kTransparentImage),
+                      image: AssetImage(image),
+                    ),
+                  ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ComingSoonNewAvatar(isNew: false, isComingSoon: isComingSoon),
-                  ],
-                ),
+                if (isComingSoon)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      ComingSoonNewAvatar(isNew: false, isComingSoon: true),
+                    ],
+                  ),
               ],
             ),
             Container(

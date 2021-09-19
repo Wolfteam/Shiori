@@ -1,4 +1,4 @@
-import 'package:genshindb/domain/enums/enums.dart';
+import 'package:shiori/domain/enums/enums.dart';
 
 import '../../enums/stat_type.dart';
 import '../../enums/weapon_type.dart';

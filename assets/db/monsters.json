@@ -881,7 +881,7 @@
       "key": "Maguu Kenki",
       "image": "maguu_kenki.png",
       "type": "human",
-      "isComingSoon": true,
+      "isComingSoon": false,
       "drops": []
     },
     {
@@ -1384,6 +1384,317 @@
         "stained_mask.png",
         "the_exile.png",
         "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Electro Abyss Mage",
+      "image": "electro_abyss_mage.png",
+      "type": "abyssOrder",
+      "isComingSoon": false,
+      "drops": [
+        "berserker.png",
+        "dark_statuette.png",
+        "dead_ley_line_branch.png",
+        "dead_ley_line_leaves.png",
+        "deathly_statuette.png",
+        "gloomy_statuette.png",
+        "instructor.png",
+        "ley_line_sprout.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "La Signora",
+      "image": "signora.png",
+      "type": "boss",
+      "isComingSoon": false,
+      "drops": [
+        "shivada_jade_sliver.png",
+        "shivada_jade_fragment.png",
+        "shivada_jade_chunk.png",
+        "shivada_jade_gemstone.png",
+        "agnidus_agate_sliver.png",
+        "agnidus_agate_fragment.png",
+        "agnidus_agate_chunk.png",
+        "agnidus_agate_gemstone.png",
+        "ashen_heart.png",
+        "hellfire_butterfly.png",
+        "molten_moment.png",
+        "berserker.png",
+        "instructor.png",
+        "the_exile.png",
+        "gladiators_finale.png"
+      ]
+    },
+    {
+      "key": "Ruin Cruiser",
+      "image": "ruin_cruiser.png",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": [
+        "chaos_gear.png",
+        "chaos_axis.png",
+        "chaos_oculus.png",
+        "berserker.png",
+        "instructor.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Ruin Destroyer",
+      "image": "ruin_destroyer.png",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": [
+        "chaos_gear.png",
+        "chaos_axis.png",
+        "chaos_oculus.png",
+        "berserker.png",
+        "instructor.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Ruin Defender",
+      "image": "ruin_defender.png",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": [
+        "chaos_gear.png",
+        "chaos_axis.png",
+        "chaos_oculus.png",
+        "berserker.png",
+        "instructor.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Ruin Scout",
+      "image": "ruin_scout.png",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": [
+        "chaos_gear.png",
+        "chaos_axis.png",
+        "chaos_oculus.png",
+        "berserker.png",
+        "instructor.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Fatui Mirror Maiden",
+      "image": "fatui_mirror_maiden.png",
+      "type": "fatui",
+      "isComingSoon": false,
+      "drops": [
+        "dismal_prism.png",
+        "crystal_prism.png",
+        "polarizing_prism.png",
+        "berserker.png",
+        "instructor.png",
+        "the_exile.png",
+        "travelling_doctor.png"
+      ]
+    },
+    {
+      "key": "Perpetual Mechanical Array",
+      "image": "perpetual_mechanical_array.png",
+      "type": "automaton",
+      "isComingSoon": false,
+      "drops": [
+        "perpetual_heart.png",
+        "prithiva_topaz_sliver.png",
+        "prithiva_topaz_fragment.png",
+        "prithiva_topaz_chunk.png",
+        "prithiva_topaz_gemstone.png",
+        "shivada_jade_sliver.png",
+        "shivada_jade_fragment.png",
+        "shivada_jade_chunk.png",
+        "shivada_jade_gemstone.png",
+        "lucky_dog.png",
+        "the_exile.png",
+        "berserker.png",
+        "instructor.png",
+        "prayers_of_springtime.png",
+        "the_exile.png",
+        "gladiators_finale.png",
+        "wanderers_troupe.png"
+      ]
+    },
+    {
+      "key": "Hydro Hypostasis",
+      "image": "hydro_hypostasis.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "dew_of_repudiation.png",
+        "varunada_lazurite_sliver.png",
+        "varunada_lazurite_fragment.png",
+        "varunada_lazurite_chunk.png",
+        "varunada_lazurite_gemstone.png",
+        "prayers_of_wisdom.png",
+        "adventure_exp.png",
+        "berserker.png",
+        "companionship_exp.png",
+        "gladiators_finale.png",
+        "instructor.png",
+        "mora.png",
+        "the_exile.png",
+        "travelling_doctor.png",
+        "wanderers_troupe.png"
+      ]
+    },
+    {
+      "key": "Thunder Manifestation",
+      "image": "thunder_manifestation.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "adventure_exp.png",
+        "berserker.png",
+        "prayers_of_wisdom.png",
+        "companionship_exp.png",
+        "gladiators_finale.png",
+        "instructor.png",
+        "mora.png",
+        "the_exile.png",
+        "travelling_doctor.png",
+        "vajrada_amethyst_sliver.png",
+        "vajrada_amethyst_fragment.png",
+        "vajrada_amethyst_chunk.png",
+        "vajrada_amethyst_gemstone.png",
+        "wanderers_troupe.png"
+      ]
+    },
+    {
+      "key": "Pyro Hypostasis",
+      "image": "pyro_hypostasis.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "smoldering_pearl.png",
+        "agnidus_agate_sliver.png",
+        "agnidus_agate_fragment.png",
+        "agnidus_agate_chunk.png",
+        "agnidus_agate_gemstone.png",
+        "prayers_of_illumination.png",
+        "adventure_exp.png",
+        "berserker.png",
+        "companionship_exp.png",
+        "gladiators_finale.png",
+        "instructor.png",
+        "mora.png",
+        "the_exile.png",
+        "travelling_doctor.png",
+        "wanderers_troupe.png"
+      ]
+    },
+    {
+      "key": "Electro Samachurl",
+      "image": "electro_samachurl.png",
+      "type": "hilichurl",
+      "isComingSoon": false,
+      "drops": [
+        "damaged_mask.png",
+        "divining_scroll.png",
+        "forbidden_curse_scroll.png",
+        "ominous_mask.png",
+        "sealed_scroll.png",
+        "stained_mask.png"
+      ]
+    },
+    {
+      "key": "Nobushi: Hitsukeban",
+      "image": "nobushi_hitsukeban.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "old_handguard.png",
+        "kageuchi_handguard.png",
+        "famed_handguard.png"
+      ]
+    },
+    {
+      "key": "Nobushi: Jintouban",
+      "image": "nobushi_jintouban.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "old_handguard.png",
+        "kageuchi_handguard.png",
+        "famed_handguard.png"
+      ]
+    },
+    {
+      "key": "Nobushi: Kikouban",
+      "image": "nobushi_kikouban.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "old_handguard.png",
+        "kageuchi_handguard.png",
+        "famed_handguard.png"
+      ]
+    },
+    {
+      "key": "Kairagi: Fiery Might",
+      "image": "kairagi_fiery_might.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "old_handguard.png",
+        "kageuchi_handguard.png",
+        "famed_handguard.png"
+      ]
+    },
+    {
+      "key": "Kairagi: Dancing Thunder",
+      "image": "kairagi_dancing_thunder.png",
+      "type": "human",
+      "isComingSoon": false,
+      "drops": [
+        "old_handguard.png",
+        "kageuchi_handguard.png",
+        "famed_handguard.png"
+      ]
+    },
+    {
+      "key": "Hydro Specter",
+      "image": "hydro_specter.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "spectral_husk.png",
+        "spectral_heart.png",
+        "spectral_nucleus.png"
+      ]
+    },
+    {
+      "key": "Anemo Specter",
+      "image": "anemo_specter.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "spectral_husk.png",
+        "spectral_heart.png",
+        "spectral_nucleus.png"
+      ]
+    },
+    {
+      "key": "Geo Specter",
+      "image": "geo_specter.png",
+      "type": "elementalLifeForm",
+      "isComingSoon": false,
+      "drops": [
+        "spectral_husk.png",
+        "spectral_heart.png",
+        "spectral_nucleus.png"
       ]
     }
   ]

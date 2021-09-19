@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/app_constants.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 
 import 'notification_list_subtitle.dart';
 

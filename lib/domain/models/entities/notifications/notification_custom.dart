@@ -1,6 +1,6 @@
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/entities/notifications/notification_base.dart';
 import 'package:hive/hive.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/entities/notifications/notification_base.dart';
 
 part 'notification_custom.g.dart';
 
@@ -69,7 +69,7 @@ class NotificationCustom extends HiveObject implements NotificationBase {
     required this.title,
     required this.body,
     required this.notificationItemType,
-  })   : type = AppNotificationType.custom.index,
+  })  : type = AppNotificationType.custom.index,
         originalScheduledDate = completesAt;
 
   NotificationCustom.forDailyCheckIn({
@@ -80,7 +80,7 @@ class NotificationCustom extends HiveObject implements NotificationBase {
     required this.showNotification,
     required this.title,
     required this.body,
-  })   : type = AppNotificationType.dailyCheckIn.index,
+  })  : type = AppNotificationType.dailyCheckIn.index,
         notificationItemType = AppNotificationItemType.material.index,
         originalScheduledDate = completesAt;
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/elements/elements_page.dart';
-import 'package:genshindb/presentation/shared/images/element_image.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/elements/elements_page.dart';
+import 'package:shiori/presentation/shared/images/element_image.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class ElementsCard extends StatelessWidget {
   @override

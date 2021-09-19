@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/domain/services/genshin_service.dart';
-import 'package:genshindb/domain/services/settings_service.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
 
 part 'characters_bloc.freezed.dart';
 part 'characters_event.dart';

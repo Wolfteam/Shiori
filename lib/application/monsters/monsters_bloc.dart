@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/domain/services/genshin_service.dart';
 import 'package:meta/meta.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
 
 part 'monsters_bloc.freezed.dart';
 part 'monsters_event.dart';

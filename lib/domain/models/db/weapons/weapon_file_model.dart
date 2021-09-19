@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/domain/enums/enums.dart';
+import 'package:shiori/domain/enums/enums.dart';
 
 import '../../../assets.dart';
 import '../../../enums/item_location_type.dart';

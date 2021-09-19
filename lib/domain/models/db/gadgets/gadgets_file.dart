@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/domain/models/db/gadgets/gadget_file_model.dart';
+import 'package:shiori/domain/models/db/gadgets/gadget_file_model.dart';
 
 part 'gadgets_file.freezed.dart';
 part 'gadgets_file.g.dart';

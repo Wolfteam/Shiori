@@ -934,6 +934,135 @@
       ],
       "droppedBy": [],
       "hasSiblings": true
+    },
+    {
+      "key": "Ashen Heart",
+      "rarity": 5,
+      "image": "ashen_heart.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "molten_moment.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "elementalStone",
+              "image": "dream_solvent.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "hellfire_butterfly.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "elementalStone",
+              "image": "dream_solvent.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": false
+    },
+    {
+      "key": "Molten Moment",
+      "rarity": 5,
+      "image": "molten_moment.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "ashen_heart.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "elementalStone",
+              "image": "dream_solvent.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "hellfire_butterfly.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "elementalStone",
+              "image": "dream_solvent.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": false
+    },
+    {
+      "key": "Hellfire Butterfly",
+      "rarity": 5,
+      "image": "hellfire_butterfly.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "talents",
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "ashen_heart.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "elementalStone",
+              "image": "dream_solvent.png"
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "quantity": 1,
+              "materialType": "talents",
+              "image": "molten_moment.png"
+            },
+            {
+              "quantity": 1,
+              "materialType": "elementalStone",
+              "image": "dream_solvent.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": false
     }
   ],
   "weapon": [
@@ -2912,6 +3041,68 @@
       ],
       "droppedBy": [],
       "hasSiblings": true
+    },
+    {
+      "key": "SpectralA",
+      "rarity": 1,
+      "image": "spectral_husk.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 0,
+      "type": "common",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "SpectralB",
+      "rarity": 2,
+      "image": "spectral_heart.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 1,
+      "type": "common",
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "spectral_husk.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
+    },
+    {
+      "key": "SpectralC",
+      "rarity": 3,
+      "image": "spectral_nucleus.png",
+      "isFromBoss": false,
+      "isForCharacters": true,
+      "isForWeapons": true,
+      "level": 2,
+      "type": "common",
+      "days": [],
+      "obtainedFrom": [
+        {
+          "items": [
+            {
+              "quantity": 3,
+              "materialType": "common",
+              "image": "spectral_heart.png"
+            }
+          ]
+        }
+      ],
+      "droppedBy": [],
+      "hasSiblings": true
     }
   ],
   "currency": [
@@ -3133,6 +3324,34 @@
       "key": "Smoldering Pearl",
       "rarity": 4,
       "image": "smoldering_pearl.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "elementalStone",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false
+    },
+    {
+      "key": "Storm Beads",
+      "rarity": 4,
+      "image": "storm_beads.png",
+      "isFromBoss": true,
+      "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "elementalStone",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false
+    },
+    {
+      "key": "Dew of Repudiation",
+      "rarity": 4,
+      "image": "dew_of_repudiation.png",
       "isFromBoss": true,
       "isForCharacters": true,
       "isForWeapons": false,
@@ -6455,6 +6674,51 @@
       "image": "naku_weed.png",
       "isFromBoss": false,
       "isForCharacters": true,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
+    },
+    {
+      "key": "Dendrobium",
+      "rarity": 1,
+      "image": "dendrobium.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
+    },
+    {
+      "key": "Amakumo Fruit",
+      "rarity": 1,
+      "image": "amakumo_fruit.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
+      "isForWeapons": false,
+      "level": 0,
+      "type": "local",
+      "days": [],
+      "obtainedFrom": [],
+      "droppedBy": [],
+      "hasSiblings": false,
+      "farmingRespawnTime": 48
+    },
+    {
+      "key": "Sango Pearl",
+      "rarity": 1,
+      "image": "sango_pearl.png",
+      "isFromBoss": false,
+      "isForCharacters": false,
       "isForWeapons": false,
       "level": 0,
       "type": "local",

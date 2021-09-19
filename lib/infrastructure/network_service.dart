@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:genshindb/domain/services/network_service.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:shiori/domain/services/network_service.dart';
 
 class NetworkServiceImpl implements NetworkService {
   @override

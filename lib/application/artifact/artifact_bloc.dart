@@ -1,12 +1,12 @@
 import 'dart:async';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/application/common/pop_bloc.dart';
-import 'package:genshindb/domain/app_constants.dart';
-import 'package:genshindb/domain/assets.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/domain/services/genshin_service.dart';
-import 'package:genshindb/domain/services/telemetry_service.dart';
+import 'package:shiori/application/common/pop_bloc.dart';
+import 'package:shiori/domain/app_constants.dart';
+import 'package:shiori/domain/assets.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/telemetry_service.dart';
 
 part 'artifact_bloc.freezed.dart';
 part 'artifact_event.dart';

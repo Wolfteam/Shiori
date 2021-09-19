@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/application/notifications/notifications_bloc.dart';
-import 'package:genshindb/domain/enums/enums.dart';
-import 'package:genshindb/domain/extensions/duration_extensions.dart';
-import 'package:genshindb/domain/models/models.dart' as models;
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/dialogs/number_picker_dialog.dart';
-import 'package:genshindb/presentation/shared/images/circle_item.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/shared/utils/modal_bottom_sheet_utils.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/application/notifications/notifications_bloc.dart';
+import 'package:shiori/domain/enums/enums.dart';
+import 'package:shiori/domain/extensions/duration_extensions.dart';
+import 'package:shiori/domain/models/models.dart' as models;
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/dialogs/number_picker_dialog.dart';
+import 'package:shiori/presentation/shared/images/circle_item.dart';
+import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 
 import '../add_edit_notification_bottom_sheet.dart';
 

@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:genshindb/domain/assets.dart';
-import 'package:genshindb/domain/models/models.dart';
-import 'package:genshindb/domain/services/genshin_service.dart';
-import 'package:genshindb/domain/services/locale_service.dart';
-import 'package:genshindb/domain/services/settings_service.dart';
+import 'package:shiori/domain/assets.dart';
+import 'package:shiori/domain/models/models.dart';
+import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:shiori/domain/services/locale_service.dart';
+import 'package:shiori/domain/services/settings_service.dart';
 
 part 'home_bloc.freezed.dart';
 part 'home_event.dart';

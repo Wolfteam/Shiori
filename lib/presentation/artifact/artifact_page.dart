@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/artifacts/widgets/artifact_stats.dart';
-import 'package:genshindb/presentation/shared/details/detail_appbar.dart';
-import 'package:genshindb/presentation/shared/details/detail_bottom_portrait_layout.dart';
-import 'package:genshindb/presentation/shared/details/detail_general_card.dart';
-import 'package:genshindb/presentation/shared/details/detail_tab_landscape_layout.dart';
-import 'package:genshindb/presentation/shared/details/detail_top_layout.dart';
-import 'package:genshindb/presentation/shared/extensions/rarity_extensions.dart';
-import 'package:genshindb/presentation/shared/images/circle_character.dart';
-import 'package:genshindb/presentation/shared/images/circle_monster.dart';
-import 'package:genshindb/presentation/shared/item_description_detail.dart';
-import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:genshindb/presentation/shared/scaffold_with_fab.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/shared/utils/size_utils.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/artifacts/widgets/artifact_stats.dart';
+import 'package:shiori/presentation/shared/details/detail_appbar.dart';
+import 'package:shiori/presentation/shared/details/detail_bottom_portrait_layout.dart';
+import 'package:shiori/presentation/shared/details/detail_general_card.dart';
+import 'package:shiori/presentation/shared/details/detail_tab_landscape_layout.dart';
+import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
+import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
+import 'package:shiori/presentation/shared/images/circle_character.dart';
+import 'package:shiori/presentation/shared/images/circle_monster.dart';
+import 'package:shiori/presentation/shared/item_description_detail.dart';
+import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/scaffold_with_fab.dart';
+import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/size_utils.dart';
 
 class ArtifactPage extends StatelessWidget {
   final double imgHeight = 350;
@@ -50,8 +50,6 @@ class _PortraitLayout extends StatelessWidget {
                     color: rarityColor,
                     fullImage: state.image,
                     charDescriptionHeight: 120,
-                    widthOnPortrait: 240,
-                    heightOnPortrait: 240,
                     appBar: const DetailAppBar(),
                     isAnSmallImage: true,
                     generalCard: DetailGeneralCard(
@@ -122,7 +120,6 @@ class _LandscapeLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: BlocBuilder<ArtifactBloc, ArtifactState>(
@@ -146,12 +143,12 @@ class _LandscapeLayout extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
+                    flex: 40,
                     child: DetailTopLayout(
                       color: rarityColor,
                       appBar: const DetailAppBar(),
                       fullImage: state.image,
                       charDescriptionHeight: 120,
-                      heightOnLandscape: size.height * 0.7,
                       generalCard: DetailGeneralCard(
                         rarity: state.rarityMax,
                         itemName: state.name,
@@ -160,6 +157,7 @@ class _LandscapeLayout extends StatelessWidget {
                     ),
                   ),
                   Expanded(
+                    flex: 60,
                     child: DetailTabLandscapeLayout(
                       color: rarityColor,
                       tabs: tabs,

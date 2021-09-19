@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/assets.dart';
+import 'package:shiori/domain/assets.dart';
 
 class PrimoGemIcon extends StatelessWidget {
   @override

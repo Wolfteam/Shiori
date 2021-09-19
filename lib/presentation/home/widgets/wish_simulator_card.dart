@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:genshindb/domain/assets.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/wish_simulator/wish_simulator_page.dart';
+import 'package:shiori/domain/assets.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/wish_simulator/wish_simulator_page.dart';
 
 import 'card_item.dart';
 

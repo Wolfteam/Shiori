@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:genshindb/application/bloc.dart';
-import 'package:genshindb/generated/l10n.dart';
-import 'package:genshindb/presentation/shared/loading.dart';
-import 'package:genshindb/presentation/shared/styles.dart';
-import 'package:genshindb/presentation/shared/text_link.dart';
+import 'package:shiori/application/bloc.dart';
+import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/text_link.dart';
 
 import 'settings_card.dart';
 
@@ -109,7 +109,7 @@ class AboutSettingsCard extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 5),
                   child: Text(s.supportMsg),
                 ),
-                const TextLink(text: 'GitHub', url: 'https://github.com/Wolfteam/GenshinDb/issues'),
+                const TextLink(text: 'GitHub', url: 'https://github.com/Wolfteam/Shiori/issues'),
                 Container(
                   margin: const EdgeInsets.only(top: 5),
                   child: Text('${s.youCanAlsoSendMeAnEmail}:', textAlign: TextAlign.center),
