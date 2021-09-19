@@ -121,6 +121,7 @@ class ItemCard extends StatelessWidget {
                               image: item.fullImagePath,
                               quantity: item.quantity,
                               textColor: Colors.white,
+                              sessionKey: sessionKey,
                             );
                           },
                         ),

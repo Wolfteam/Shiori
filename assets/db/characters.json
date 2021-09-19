@@ -1748,6 +1748,7 @@
         {
           "isSupport": true,
           "weaponImages": [
+            "everlasting_moonglow.png",
             "prototype_malice.png",
             "thrilling_tales_of_dragon_slayers.png"
           ],
@@ -27443,7 +27444,7 @@
       "fullImage": "Aloy.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "anotherWorld",
       "role": "mainDps",
@@ -28079,8 +28080,8 @@
       "image": "SangonomiyaKokomi.png",
       "fullImage": "SangonomiyaKokomi.png",
       "secondFullImage": null,
-      "isComingSoon": true,
-      "isNew": false,
+      "isComingSoon": false,
+      "isNew": true,
       "isFemale": true,
       "region": "inazuma",
       "role": "supportDps",
@@ -28476,11 +28477,65 @@
           ]
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isSupport": false,
+          "weaponImages": [
+            "everlasting_moonglow.png",
+            "thrilling_tales_of_dragon_slayers.png",
+            "prototype_malice.png"
+          ],
+          "artifacts": [
+            {
+              "one": "depth_of_heart_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "hydroDmgBonusPercentage",
+                "hpPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "hpPercentage",
+            "energyRechargePercentage",
+            "atkPercentage",
+            "hp"
+          ]
+        },
+        {
+          "isSupport": true,
+          "weaponImages": [
+            "thrilling_tales_of_dragon_slayers.png",
+            "everlasting_moonglow.png"
+          ],
+          "artifacts": [
+            {
+              "one": "tenacity_of_the_millelith_4.png",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "hydroDmgBonusPercentage",
+                "hpPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "hpPercentage",
+            "energyRechargePercentage",
+            "atkPercentage",
+            "hp"
+          ]
+        }
+      ],
       "skills": [
         {
           "key": "s1",
-          "image": null,
+          "image": "normal_attack_sparkling_scatter.png",
           "type": "normalAttack",
           "abilities": [
             {
@@ -28499,22 +28554,38 @@
         },
         {
           "key": "s2",
-          "image": null,
+          "image": "sangonomiya_kokomi_c5.png",
           "type": "elementalSkill",
-          "abilities": [
-            {
-              "key": "a2",
-              "type": "hold"
-            }
-          ]
+          "abilities": []
         },
         {
           "key": "s3",
-          "image": null,
+          "image": "sangonomiya_kokomi_c3.png",
           "type": "elementalBurst"
         }
       ],
-      "passives": [],
+      "passives": [
+        {
+          "key": "p1",
+          "unlockedAt": 1,
+          "image": "sangonomiya_kokomi_p1.png"
+        },
+        {
+          "key": "p2",
+          "unlockedAt": 4,
+          "image": "sangonomiya_kokomi_p2.png"
+        },
+        {
+          "key": "p3",
+          "unlockedAt": -1,
+          "image": "sangonomiya_kokomi_p3.png"
+        },
+        {
+          "key": "p4",
+          "unlockedAt": -1,
+          "image": "sangonomiya_kokomi_p4.png"
+        }
+      ],
       "constellations": [
         {
           "key": "c1",
@@ -28548,7 +28619,120 @@
         }
       ],
       "subStatType": "hydroDmgBonusPercentage",
-      "stats": []
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1049,
+          "baseAtk": 18,
+          "baseDef": 51,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 2720,
+          "baseAtk": 47,
+          "baseDef": 133,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 20,
+          "baseHp": 3619,
+          "baseAtk": 63,
+          "baseDef": 177,
+          "isAnAscension": true,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 5416,
+          "baseAtk": 94,
+          "baseDef": 264,
+          "isAnAscension": false,
+          "specificValue": 0
+        },
+        {
+          "level": 40,
+          "baseHp": 6055,
+          "baseAtk": 105,
+          "baseDef": 295,
+          "isAnAscension": true,
+          "specificValue": 7.2
+        },
+        {
+          "level": 50,
+          "baseHp": 6966,
+          "baseAtk": 121,
+          "baseDef": 340,
+          "isAnAscension": false,
+          "specificValue": 7.2
+        },
+        {
+          "level": 50,
+          "baseHp": 7818,
+          "baseAtk": 136,
+          "baseDef": 381,
+          "isAnAscension": true,
+          "specificValue": 14.4
+        },
+        {
+          "level": 60,
+          "baseHp": 8738,
+          "baseAtk": 152,
+          "baseDef": 426,
+          "isAnAscension": false,
+          "specificValue": 14.4
+        },
+        {
+          "level": 60,
+          "baseHp": 9377,
+          "baseAtk": 163,
+          "baseDef": 457,
+          "isAnAscension": true,
+          "specificValue": 14.4
+        },
+        {
+          "level": 70,
+          "baseHp": 10306,
+          "baseAtk": 179,
+          "baseDef": 503,
+          "isAnAscension": false,
+          "specificValue": 14.4
+        },
+        {
+          "level": 70,
+          "baseHp": 10945,
+          "baseAtk": 190,
+          "baseDef": 534,
+          "isAnAscension": true,
+          "specificValue": 21.6
+        },
+        {
+          "level": 80,
+          "baseHp": 11885,
+          "baseAtk": 207,
+          "baseDef": 580,
+          "isAnAscension": false,
+          "specificValue": 21.6
+        },
+        {
+          "level": 80,
+          "baseHp": 12524,
+          "baseAtk": 218,
+          "baseDef": 611,
+          "isAnAscension": true,
+          "specificValue": 28.8
+        },
+        {
+          "level": 90,
+          "baseHp": 13471,
+          "baseAtk": 234,
+          "baseDef": 657,
+          "isAnAscension": false,
+          "specificValue": 28.8
+        }
+      ]
     },
     {
       "key": "KujouSara",
@@ -28559,7 +28743,7 @@
       "fullImage": "KujouSara.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "inazuma",
       "role": "supportDps",
@@ -29203,7 +29387,7 @@
       "fullImage": "RaidenShogun.png",
       "secondFullImage": null,
       "isComingSoon": false,
-      "isNew": true,
+      "isNew": false,
       "isFemale": true,
       "region": "inazuma",
       "role": "mainDps",
@@ -29841,8 +30025,8 @@
       "rarity": 4,
       "weaponType": "polearm",
       "elementType": "pyro",
-      "image": "Thoma.jpg",
-      "fullImage": "Thoma.jpg",
+      "image": "Thoma.png",
+      "fullImage": "Thoma.png",
       "secondFullImage": null,
       "isComingSoon": true,
       "isNew": false,
