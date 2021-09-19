@@ -481,22 +481,6 @@
             ]
         },
         {
-            "key": "Glacier and Snowfield",
-            "image": "glacier_and_snowfield_4.png",
-            "rarityMin": 4,
-            "rarityMax": 5,
-            "bonus": [
-                {
-                    "key": "b1",
-                    "pieces": 2
-                },
-                {
-                    "key": "b2",
-                    "pieces": 4
-                }
-            ]
-        },
-        {
             "key": "Tenacity of the Millelith",
             "image": "tenacity_of_the_millelith_4.png",
             "rarityMin": 4,
