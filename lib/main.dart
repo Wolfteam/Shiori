@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shiori/application/calculator_asc_materials_item/calculator_asc_materials_in_inventory_bloc.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:window_size/window_size.dart';
 
@@ -262,6 +263,13 @@ class MyApp extends StatelessWidget {
               settingsService,
             );
           },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final dataService = getIt<DataService>();
+            final telemetryService = getIt<TelemetryService>();
+            return CalculatorAscMaterialsInInventoryBloc(dataService, telemetryService);
+          }
         ),
       ],
       child: BlocBuilder<MainBloc, MainState>(

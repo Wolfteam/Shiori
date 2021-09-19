@@ -8,10 +8,12 @@ import 'package:shiori/presentation/shared/styles.dart';
 import 'material_item.dart';
 
 class AscensionMaterialsSummaryWidget extends StatelessWidget {
+  final int sessionKey;
   final AscensionMaterialsSummary summary;
 
   const AscensionMaterialsSummaryWidget({
     Key? key,
+    required this.sessionKey,
     required this.summary,
   }) : super(key: key);
 
@@ -31,7 +33,7 @@ class AscensionMaterialsSummaryWidget extends StatelessWidget {
             Wrap(
               alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
-              children: summary.materials.map((m) => MaterialItem(image: m.fullImagePath, quantity: m.quantity, type: m.materialType)).toList(),
+              children: summary.materials.map((m) => MaterialItem(image: m.fullImagePath, quantity: m.quantity, type: m.materialType, sessionKey: sessionKey)).toList(),
             )
           ],
         ),
@@ -69,7 +71,7 @@ class AscensionMaterialsSummaryWidget extends StatelessWidget {
         Wrap(
           alignment: WrapAlignment.center,
           crossAxisAlignment: WrapCrossAlignment.center,
-          children: materials.map((m) => MaterialItem(image: m.fullImagePath, quantity: m.quantity, type: m.materialType)).toList(),
+          children: materials.map((m) => MaterialItem(image: m.fullImagePath, quantity: m.quantity, type: m.materialType, sessionKey: sessionKey)).toList(),
         ),
     ];
   }
