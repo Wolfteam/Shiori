@@ -4834,7 +4834,7 @@
     {
       "key": "SangonomiyaKokomi",
       "name": "Sangonomiya Kokomi",
-      "description": "The Divine Priestess of Watatsumi Island. All of the island's affairs are at this young lady's fingertips.",
+      "description": "La Sacerdotessa Divina di Watatsumi Island. A questa giovane donna, tutte le questioni dell’isola sono a portata di mano.",
       "skills": [
         {
           "key": "s1",
@@ -4843,17 +4843,17 @@
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 3 consecutive attacks that take the form of swimming fish, dealing Hydro DMG.",
+              "description": "Lancia 3 attacchi d’acqua a forma di pesce che infliggono Hydro DMG.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to deal AoE Hydro DMG after a short casting time.",
+              "description": "Consuma una certa quantità di Stamina per infliggere AoE Hydro DMG.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the might of Hydro, Kokomi plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Hydro DMG upon impact with the ground.",
+              "description": "Concentrando il potere Hydro, Kokomi si lancia in picchiata da mezz'aria e assesta AoE Hydro DMG all'impatto con il terreno.",
               "descriptions": []
             }
           ]
@@ -4861,11 +4861,11 @@
         {
           "key": "s2",
           "title": "Kurage's Oath",
-          "description": "Summons a \"bake-kurage\" created from water that can heal her allies.\nUsing this skill will apply the Wet status to Sangonomiya Kokomi.",
+          "description": "Dall’acqua evoca un \"bake-kurage\" che può curare gli alleati.\nUsare questa Skill applica Wet status a Sangonomiya Kokomi.",
           "abilities": [
             {
               "name": "Bake-Kurage",
-              "description": "Deals Hydro DMG to surrounding opponents and heal nearby active characters at fixed intervals. This healing is based on Kokomi's Max HP.",
+              "description": "Infligge Hydro DMG ai nemici circostanti e cura i personaggi vicini a intervalli regolari. La cura scala sui Max HP di Kokomi.",
               "descriptions": []
             }
           ]
@@ -4873,16 +4873,16 @@
         {
           "key": "s3",
           "title": "Nereid's Ascension",
-          "description": "The might of Watatsumi descends, dealing Hydro DMG to surrounding opponents, before robing Kokomi in a Ceremonial Garment made from the flowing waters of Sangonomiya.",
+          "description": "La forza di Watatsumi discende infliggendo Hydro DMG e riveste Kokomi di un \"Ceremonial Garment\" realizzato con le acque che scorrono a Sangonomiya.",
           "abilities": [
             {
               "name": "Ceremonial Garment",
               "description": null,
               "descriptions": [
-                "Sangonomiya Kokomi's Normal Attack, Charged Attack and Bake-Kurage DMG are increased based on her Max HP.",
-                "When her Normal and Charged Attacks hit opponents, Kokomi will restore HP for all nearby party members, and the amount restored is based on her Max HP.",
-                "Increases Sangonomiya Kokomi's resistance to interruption and allows her to move on the water's surface.",
-                "These effects will be cleared once Sangonomiya Kokomi leaves the field."
+                "I danni di Attacchi Normali, Caricati e Bake-Kurage di Sangonomiya Kokomi aumentano in base ai suoi Max HP.",
+                "Quando i suoi Attacchi Normali e Caricati colpiscono nemici, Kokomi ripristina HP a tutti i membri del party in base alla quantità dei suoi Max HP.",
+                "Aumenta la RES ai Contraccolpi di Sangonomiya Kokomi e gli permette di muoversi sulla superficie dell’acqua.",
+                "Questi effetti svaniscono quando Sangonomiya Kokomi abbandona il campo."
               ]
             }
           ]
@@ -4892,25 +4892,25 @@
         {
           "key": "p1",
           "title": "Tamanooya's Casket",
-          "description": "If Sangonomiya Kokomi's own Bake-Kurage are on the field when she uses Nereid's Ascension, the Bake-Kurage's duration will be refreshed.",
+          "description": "Se è già presente un Bake-Kurage quando Sangonomiya Kokomi usa Nereid's Ascension, la durata di Bake-Kurage si aggiorna.",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Song of Pearls",
-          "description": "While donning the Ceremonial Garment created by Nereid's Ascension, the Normal and Charged Attack DMG Bonus Sangonomiya Kokomi gains based on her Max HP will receive a further increase based on 15% of her Healing Bonus.",
+          "description": "Mentre indossa il Ceremonial Garment, i potenziamenti al danno di Attacchi Normali e Caricati ricevono un ulteriore aumento pari al 15% del suo Healing Bonus.",
           "descriptions": []
         },
         {
           "key": "p3",
           "title": "Princess of Watatsumi",
-          "description": "Decreases swimming Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+          "description": "Riduce del 20% il consumo di Stamina di tutti i membri del party mentre si nuota.\nL’effetto non è sommabile alle altre Skill Passive che forniscono lo stesso effetto.",
           "descriptions": []
         },
         {
           "key": "p4",
           "title": "Flawless Strategy",
-          "description": "Sangonomiya Kokomi has a 25% Healing Bonus, but a 100% decrease in CRIT Rate.",
+          "description": "Sangonomiya Kokomi ha Healing Bonus +25%, ma CRIT Rate -100%.",
           "descriptions": []
         }
       ],
@@ -4918,45 +4918,45 @@
         {
           "key": "c1",
           "title": "At Water's Edge",
-          "description": "While donning the Ceremonial Garment created by Nereid's Ascension, the final Normal Attack in Sangonomiya Kokomi's combo will unleash a swimming fish to deal 30% of her Max HP as Hydro DMG.\nThis DMG is not considered Normal Attack DMG.",
+          "description": "Mentre indossa il Ceremonial Garment, l’Attacco Normale finale di una combo di Sangonomiya Kokomi evoca un pesce che nuota infliggendo Hydro DMG pari al 30% dei suoi Max HP.\nQuesto danno non è considerato danno di Attacco Normale.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
           "title": "The Clouds Like Waves Rippling",
-          "description": "Sangonomiya Kokomi gains the following Healing Bonuses with regard to characters with 50% or less HP via the following methods:",
+          "description": "Se ci sono personaggi con HP </= 50%, Sangonomiya Kokomi ottiene i seguenti Healing Bonuses attraverso i seguenti metodi:",
           "secondDescription": null,
           "descriptions": [
-            "Kurage's Oath Bake-Kurage: 4.5% of Kokomi's Max HP.",
-            "Nereid's Ascension Normal and Charged Attacks: 0.6% of Kokomi's Max HP."
+            "Usando Kurage's Oath Bake-Kurage: Healing Bonus +4.5%, basato sui Max HP di Kokomi.",
+            "Eseguendo Attacchi Normali e Caricati di Nereid's Ascension: Healing Bonus +0.6%, basato sui Max HP di Kokomi."
           ]
         },
         {
           "key": "c3",
           "title": "The Moon, A Ship O'er the Seas",
-          "description": "Increases the Level of Nereid's Ascension by 3.\nMaximum upgrade level is 15.",
+          "description": "Aumenta di 3 il livello di Nereid's Ascension.\nIl massimo livello di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
           "title": "The Moon Overlooks the Waters",
-          "description": "While donning the Ceremonial Garment created by Nereid's Ascension, Sangonomiya Kokomi's Normal Attack SPD is increased by 10%, and Normal Attacks that hit opponents will restore 0.8 Energy for her.\nThis effect can occur once every 0.2s.",
+          "description": "Mentre indossa Cerimonial Garment, Sangonomiya Kokomi riceve Attack SPD +10% e 0.8 Energy quando i suoi Attacchi Normali colpiscono nemici.\nQuesto effetto può avvenire solo una volta ogni 0.2s.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
           "title": "All Streams Flow to the Sea",
-          "description": "Increases the Level of Kurage's Oath by 3.\nMaximum upgrade level is 15.",
+          "description": "Aumenta di 3 il livello di Kurage's Oath.\nIl massimo livello di upgrade è 15.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
           "title": "Sango Isshin",
-          "description": "While donning the Ceremonial Garment created by Nereid's Ascension, Sangonomiya Kokomi gains a 40% Hydro DMG Bonus for 4s after her Normal and Charged Attacks heal a character with 80% or more HP.",
+          "description": "Mentre indossa Cerimonial Garment, Sangonomiya Kokomi ottiene Hydro DMG Bonus +40% per 4s dopo aver curato un personaggio con HP =/> 80% attraverso Attacchi Normali e Caricati.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -5097,7 +5097,7 @@
         {
           "key": "s2",
           "title": "Transcendence: Baleful Omen",
-          "description": "Il ilRaiden Shogun svela un frammento della sua Euthymia infliggendo Electro DMG ai nemici vicini e dona ai membri vicini del party un \"Eye of Stormy Judgment\".",
+          "description": "Il Raiden Shogun svela un frammento della sua Euthymia infliggendo Electro DMG ai nemici vicini e dona ai membri vicini del party un \"Eye of Stormy Judgment\".",
           "abilities": [
             {
               "name": "Eye of Stormy Judgment",
@@ -5981,14 +5981,14 @@
     {
       "key": "Luxurious Sea-Lord",
       "name": "Luxurious Sea-Lord",
-      "description": "The great king of the ocean. Having been air-dried, it makes for a fine weapon as well as emergency sustenance.",
-      "refinement": "Increases Elemental Burst DMG by {{0}}%. When Elemental Burst hits opponents, there is a 100% chance of summoning a titanic tuna that charges and deals {{1}}% ATK as AoE DMG. This effect can occur once every 15s."
+      "description": "Il grande Re dell’oceano. Dopo averlo essiccato all’aria, è un’arma eccellente e anche \"cibo di emergenza\".",
+      "refinement": "Aumenta gli Elemental Burst DMG del {{0}}%. Quando un’Elemental Burst colpisce nemici, c’è il 100% di probabilità di evocare un tonno titanico che carica e infligge AoE DMG pari al {{1}}% dell’ATK. Questo effetto può avvenire solo una volta ogni 15s."
     },
     {
       "key": "Everlasting Moonglow",
       "name": "Everlasting Moonglow",
-      "description": "A string of lovely jasper from the deep sea. It shines with a pure radiance like that of the moon, and just as ever-distant.",
-      "refinement": "Healing Bonus increased by {{0}}%, Normal Attack DMG is increased by {{1}}% of the Max HP of the character equipping this weapon. For 12s after using an Elemental Burst, Normal Attacks that hit opponents will restore 0.6 Energy. Energy can be restored this way once every 0.1s."
+      "description": "Un insieme di adorabili diaspri dalle profondità del mare. Sempre altrettanto distante, brilla dello stesso splendore puro della Luna.",
+      "refinement": "L’Healing Bonus aumenta del {{0}}%, il DMG di Attacchi Normali aumenta del {{1}}% dei Max HP del personaggio che lo equipaggia. Dopo un’Elemental Burst, per 12s gli Attacchi Normali che colpiscono nemici rigenerano 0.6 Energy. Questa rigenerazione può avvenire solo una volta ogni 0.1s."
     }
   ],
   "artifacts": [

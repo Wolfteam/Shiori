@@ -4743,7 +4743,7 @@
         },
         {
           "key": "s2",
-          "title": "Frozen Wilds",
+          "title": "Ледяная пустошь",
           "description": "Элой бросает в цель Морозильную бомбу, которая взрывается при столкновении и наносит Крио урон. После взрыва Морозильная бомба делится на множество Ледяных бомбочек, которые взрываются при контакте с противником или после небольшой задержки и наносят Крио урон.\nКогда Морозильная бомба или Ледяная бомбочка поражают противника, его сила атаки понижается и Элой получает один уровень Спирали.\nЭлой может получить до 1 уровня Спирали каждые 0.1 сек.",
           "abilities": [
             {
@@ -4831,55 +4831,55 @@
     {
       "key": "SangonomiyaKokomi",
       "name": "Сангономия Кокоми",
-      "description": "The Divine Priestess of Watatsumi Island. All of the island's affairs are at this young lady's fingertips.",
+      "description": "Жемчужина мудрости",
       "skills": [
         {
           "key": "s1",
-          "title": "The Shape of Water",
+          "title": "Форма воды",
           "description": null,
           "abilities": [
             {
               "key": "a1",
-              "description": "Performs up to 3 consecutive attacks that take the form of swimming fish, dealing Hydro DMG.",
+              "description": "Запускает до трёх иллюзорных рыбок, которые наносят Гидро урон.",
               "descriptions": []
             },
             {
               "key": "a2",
-              "description": "Consumes a certain amount of Stamina to deal AoE Hydro DMG after a short casting time.",
+              "description": "После прочтения краткого заклинания, на которое тратится определённое количество выносливости, наносит Гидро урон по площади.",
               "descriptions": []
             },
             {
               "key": "a3",
-              "description": "Gathering the might of Hydro, Kokomi plunges towards the ground from mid-air, damaging all opponents in her path. Deals AoE Hydro DMG upon impact with the ground.",
+              "description": "Накопив энергию воды, стремительно падает на землю, атакуя всех врагов на пути. Приземлившись, наносит Гидро урон по площади.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s2",
-          "title": "Kurage's Oath",
-          "description": "Summons a \"bake-kurage\" created from water that can heal her allies.\nUsing this skill will apply the Wet status to Sangonomiya Kokomi.",
+          "title": "Клятва курагэ",
+          "description": "Призывает созданного из воды Бакэ-курагэ, который может лечить союзников.Использование этого навыка накладывает на Сангономию Кокоми статус Мокрый.",
           "abilities": [
             {
-              "name": "Bake-Kurage",
-              "description": "Deals Hydro DMG to surrounding opponents and heal nearby active characters at fixed intervals. This healing is based on Kokomi's Max HP.",
+              "name": "Бакэ-курагэ",
+              "description": "Наносит Гидро урон окружающим противникам и интервалами лечит активных персонажей поблизости. Объём лечения зависит от макс. HP Сангономии Кокоми.",
               "descriptions": []
             }
           ]
         },
         {
           "key": "s3",
-          "title": "Nereid's Ascension",
-          "description": "The might of Watatsumi descends, dealing Hydro DMG to surrounding opponents, before robing Kokomi in a Ceremonial Garment made from the flowing waters of Sangonomiya.",
+          "title": "Вознесение нереиды",
+          "description": "Сила Ватацуми нисходит на поле боя, наносит Гидро урон окружающим противникам и облачает Кокоми в Церемониальное одеяние, сотканное из текущих вод Сангономии.",
           "abilities": [
             {
-              "name": "Ceremonial Garment",
+              "name": "Церемониальное одеяние",
               "description": null,
               "descriptions": [
-                "Sangonomiya Kokomi's Normal Attack, Charged Attack and Bake-Kurage DMG are increased based on her Max HP.",
-                "When her Normal and Charged Attacks hit opponents, Kokomi will restore HP for all nearby party members, and the amount restored is based on her Max HP.",
-                "Increases Sangonomiya Kokomi's resistance to interruption and allows her to move on the water's surface.",
-                "These effects will be cleared once Sangonomiya Kokomi leaves the field."
+                "Урон обычной атаки, заряженной атаки и Бакэ-курагэ элементального навыка Сангономии Кокоми увеличивается пропорционально её макс. HP",
+                "При попадании обычной или заряженной атакой Кокоми восстанавливает HP всем окружающим членам отряда. Количество восстановленного HP пропорционально макс. HP Кокоми.",
+                "Повышает сопротивление прерыванию Сангономии Кокоми и позволяет ей двигаться по водной поверхности.",
+                "Эффекты пропадают, когда Сангономия Кокоми покидает бой."
               ]
             }
           ]
@@ -4888,72 +4888,71 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Tamanooya's Casket",
-          "description": "If Sangonomiya Kokomi's own Bake-Kurage are on the field when she uses Nereid's Ascension, the Bake-Kurage's duration will be refreshed.",
+          "title": "Шкатулка таманои",
+          "description": "Активация навыка Вознесение нереиды в то время, когда на поле боя есть собственный Бакэ-курагэ Сангономии Кокоми, обновляет длительность этого Бакэ-курагэ.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Song of Pearls",
-          "description": "While donning the Ceremonial Garment created by Nereid's Ascension, the Normal and Charged Attack DMG Bonus Sangonomiya Kokomi gains based on her Max HP will receive a further increase based on 15% of her Healing Bonus.",
+          "title": "Песнь о жемчуге",
+          "description": "Когда Сангономия Кокоми облачена в Церемониальное одеяние навыка Вознесение нереиды, бонус урона обычной и заряженной атаки пропорциональный макс. HP Сангономии Кокоми увеличивается ещё на 15% от её бонуса лечения.",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Princess of Watatsumi",
-          "description": "Decreases swimming Stamina consumption for your own party members by 20%.\nNot stackable with Passive Talents that provide the exact same effects.",
+          "title": "Принцесса Ватацуми",
+          "description": "Уменьшает потребление выносливости собственных персонажей во время плавания на 20%.\nНе суммируется с пассивными талантами, дающими точно такие же эффекты.",
           "descriptions": []
         },
         {
           "key": "p4",
-          "title": "Flawless Strategy",
-          "description": "Sangonomiya Kokomi has a 25% Healing Bonus, but a 100% decrease in CRIT Rate.",
+          "title": "Безупречная стратегия",
+          "description": "Увеличивает бонус лечения Сангономии Кокоми на 25%, но понижает её шанс крит. попадания на 100%",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "At Water's Edge",
-          "description": "While donning the Ceremonial Garment created by Nereid's Ascension, the final Normal Attack in Sangonomiya Kokomi's combo will unleash a swimming fish to deal 30% of her Max HP as Hydro DMG.\nThis DMG is not considered Normal Attack DMG.",
+          "title": "Когда Сангономия Кокоми облачена в Церемониальное одеяние навыка **Вознесение нереиды**, последний удар её обычной атаки создаёт плавающую рыбу, которая наносит Гидро урон, равный 30% от её макс. HP.\nЭтот урон не считается уроном обычной атаки.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "The Clouds Like Waves Rippling",
-          "description": "Sangonomiya Kokomi gains the following Healing Bonuses with regard to characters with 50% or less HP via the following methods:",
+          "title": "Волны моря облаков",
+          "description": "Сангономия Кокоми получает следующие бонусы лечения по отношению к персонажам, HP которых равно или меньше 50%:",
           "secondDescription": null,
           "descriptions": [
-            "Kurage's Oath Bake-Kurage: 4.5% of Kokomi's Max HP.",
-            "Nereid's Ascension Normal and Charged Attacks: 0.6% of Kokomi's Max HP."
+            "Бакэ-курагэ навыка Клятва курагэ: 4.5% от макс. HP.",
+            "Обычные и заряженные атаки навыка Вознесение нереиды: 0.6% от макс. HP."
           ]
         },
         {
           "key": "c3",
-          "title": "The Moon, A Ship O'er the Seas",
-          "description": "Increases the Level of Nereid's Ascension by 3.\nMaximum upgrade level is 15.",
+          "title": "Лунный челн средь вод",
+          "description": "Увеличивает уровень навыка Вознесение нереиды на 3.\nМакс. уровень: 15",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "The Moon Overlooks the Waters",
-          "description": "While donning the Ceremonial Garment created by Nereid's Ascension, Sangonomiya Kokomi's Normal Attack SPD is increased by 10%, and Normal Attacks that hit opponents will restore 0.8 Energy for her.\nThis effect can occur once every 0.2s.",
+          "title": "Луна взирает на ручьи",
+          "description": "Когда Сангономия Кокоми облачена в Церемониальное одеяние навыка Вознесение нереиды, скорость её обычной атаки увеличивается на 10%, а попадания обычной атакой восстанавливают ей 0.8 ед. энергии.\nЭтот эффект может возникнуть только раз в 0.2 сек.",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "All Streams Flow to the Sea",
-          "description": "Increases the Level of Kurage's Oath by 3.\nMaximum upgrade level is 15.",
+          "title": "Все реки впадают в море",
+          "description": "Увеличивает уровень навыка Клятва курагэ на 3.\nМакс. уровень: 15",
           "secondDescription": null,
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Sango Isshin",
-          "description": "While donning the Ceremonial Garment created by Nereid's Ascension, Sangonomiya Kokomi gains a 40% Hydro DMG Bonus for 4s after her Normal and Charged Attacks heal a character with 80% or more HP.",
+          "title": "Санго иссин",
+          "description": "Когда Сангономия Кокоми облачена в Церемониальное одеяние навыка Вознесение нереиды, она получает 40% бонус Гидро урона на 4 сек. после того, как её обычные или заряженные атаки лечат персонажа с HP, равным или выше 80%.",
           "secondDescription": null,
           "descriptions": []
         }
@@ -5580,7 +5579,7 @@
       "key": "Sacrificial Fragments",
       "name": "Церемониальные мемуары",
       "description": "Ветхий том, текст которого уже, увы, не прочитать. Проклятая вещь, изъеденная ветрами времени.",
-      "refinement": "Попадания Элементальным навыков могут с {{0}}% вероятностью моментально восстановить собственный откат. Может возникнуть раз в {{0}} сек."
+      "refinement": "Попадания Элементальным навыков могут с {{0}}% вероятностью моментально восстановить собственный откат. Может возникнуть раз в {{1}} сек."
     },
     {
       "key": "Solar Pearl",
@@ -5688,7 +5687,7 @@
       "key": "Favonius Greatsword",
       "name": "Двуручный меч Фавония",
       "description": "Тяжёлый церемониальный меч Ордо Фавониус. С лёгкостью направляет элементальную энергию и обладает высокой разрушительной силой.",
-      "refinement": "Критические атаки имеют {{0}}% шанс создать элементальные частицы, которые восстанавливают 6 ед. энергии. Возникает раз в {{0}} сек."
+      "refinement": "Критические атаки имеют {{0}}% шанс создать элементальные частицы, которые восстанавливают 6 ед. энергии. Возникает раз в {{1}} сек."
     },
     {
       "key": "Lithic Blade",
@@ -5700,7 +5699,7 @@
       "key": "Prototype Archaic",
       "name": "Прототип: Архаичный",
       "description": "Древний двуручный меч, обнаруженный в кузнице Черногорья. Он производит впечатление меча, который может разрубить пополам саму реальность.",
-      "refinement": "При попадании обычной или заряженной атакой имеет 50% шанс нанести дополнительные {{0}}%% урона в небольшом радиусе. Может возникнуть раз в 15 сек."
+      "refinement": "При попадании обычной или заряженной атакой имеет 50% шанс нанести дополнительные {{0}}% урона в небольшом радиусе. Может возникнуть раз в 15 сек."
     },
     {
       "key": "Rainslasher",
@@ -5952,13 +5951,13 @@
       "key": "Thundering Pulse",
       "name": "Громовой пульс",
       "description": "Лук, дарованный сёгуном. Его окружают непрестанно потрескивающие молнии.",
-      "refinement": "Увеличивает силу атаки на {{0%}} и дарует мощь Громовой эмблемы. На уровнях эмблемы 1, 2 или 3 урон обычной атаки увеличивается на {{1%}} соответственно. Персонаж получает 1 уровень Громовой эмблемы в каждом из следующих случаев: при нанесении элементального урона обычной атакой, эмблема действует 5 сек.; при применении взрыва стихии, эмблема действует 10 сек.; когда элементальная энергия персонажа ниже 100%, полученная таким образом эмблема действует до тех пор, пока персонаж не восстановит всю свою элементальную энергию. Продолжительность действия каждого уровня эмблемы рассчитывается индивидуально."
+      "refinement": "Увеличивает силу атаки на {{0}}% и дарует мощь Громовой эмблемы. На уровнях эмблемы 1, 2 или 3 урон обычной атаки увеличивается на {{1}}% соответственно. Персонаж получает 1 уровень Громовой эмблемы в каждом из следующих случаев:при применении обычных выстрелов, эмблема действует 5 сек.; при использовании Элементального навыка, эмблема действует 10 сек.; когда энергия персонажа ниже 100%, полученная таким образом эмблема действует до тех пор, пока персонаж не восстановит всю свою элементальную энергию. Продолжительность действия каждого уровня эмблемы рассчитывается индивидуально."
     },
     {
       "key": "Engulfing Lightning",
-      "name": "Engulfing Lightning",
-      "description": "A naginata used to \"cut grass.\" Any army that stands before this weapon will probably be likewise cut down...",
-      "refinement": "ATK increased by {{0}}% of Energy Recharge over the base 100%. You can gain a maximum bonus of {{1}}% ATK. Gain {{2}}% Energy Recharge for 12s after using an Elemental Burst."
+      "name": "Сияющая жатва",
+      "description": "Нагината для лёгкого «срезания травы». С такой же лёгкостью соберёт свою жатву с вражеской армии.",
+      "refinement": "Увеличивает силу атаки на {{0}}% от показателя восстановления энергии свыше 100%. Вы можете получить бонус силы атаки до {{1}}%. Также даёт {{2}}% восстановления энергии на 12 сек. после активации взрыва стихии."
     },
     {
       "key": "The Catch",
@@ -5974,15 +5973,15 @@
     },
     {
       "key": "Luxurious Sea-Lord",
-      "name": "Luxurious Sea-Lord",
-      "description": "The great king of the ocean. Having been air-dried, it makes for a fine weapon as well as emergency sustenance.",
-      "refinement": "Increases Elemental Burst DMG by {{0}}%. When Elemental Burst hits opponents, there is a 100% chance of summoning a titanic tuna that charges and deals {{1}}% ATK as AoE DMG. This effect can occur once every 15s."
+      "name": "Благодатный владыка вод",
+      "description": "Великий владыка океана. После просушки становится отличным оружием или живой консервой.",
+      "refinement": "Увеличивает урон взрыва стихии на {{0}}%. При попадании взрывом стихии по противнику с вероятностью в 100% призывается Титанический тунец, который совершает атаку и наносит урон по площади, равный {{1}}% от силы атаки. Может возникнуть раз в 15 сек."
     },
     {
       "key": "Everlasting Moonglow",
-      "name": "Everlasting Moonglow",
-      "description": "A string of lovely jasper from the deep sea. It shines with a pure radiance like that of the moon, and just as ever-distant.",
-      "refinement": "Healing Bonus increased by {{0}}%, Normal Attack DMG is increased by {{1}}% of the Max HP of the character equipping this weapon. For 12s after using an Elemental Burst, Normal Attacks that hit opponents will restore 0.6 Energy. Energy can be restored this way once every 0.1s."
+      "name": "Вечное лунное сияние",
+      "description": "Яшма из морских глубин. Камень сияет прозрачным светом, подобно луне. И подобно луне, ведёт свою историю с давних времён.",
+      "refinement": "Увеличивает бонус лечения на {{0}}%, также повышает урон обычной атаки на {{1}}% от макс. HP экипированного этим оружием персонажа. В течение 12 сек. после использования взрыва стихии попадания обычной атакой по противнику восстанавливают 0.6 ед. энергии. Энергию можно восстановить не чаще, чем раз в 0.1 сек."
     }
   ],
   "artifacts": [
