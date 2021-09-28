@@ -42,7 +42,7 @@ class CreditsSettingsCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: const [
-                Expanded(child: BulletList(items: ['SipTik#8026', 'KKTS#8567', 'KlimeLime#7577'], fontSize: 12)),
+                Expanded(child: BulletList(items: ['SipTik#1171', 'KKTS#8567', 'KlimeLime#7577'], fontSize: 12)),
                 Expanded(child: BulletList(items: ['Avantel#8880', 'чебилин#5968', 'Anixty#3279'], fontSize: 12)),
               ],
             ),
