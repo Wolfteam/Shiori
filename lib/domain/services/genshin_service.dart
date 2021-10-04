@@ -32,13 +32,13 @@ abstract class GenshinService {
   ArtifactCardModel getArtifactForCardByImg(String image);
   ArtifactFileModel getArtifact(String key);
 
-  List<String> getCharacterImgsUsingWeapon(String key);
-  List<String> getCharacterImgsUsingArtifact(String key);
-  List<String> getCharacterImgsUsingMaterial(String key);
-  List<String> getWeaponImgsUsingMaterial(String key);
-  List<String> getRelatedMaterialImgsToMaterial(String key);
-  List<String> getRelatedMonsterImgsToMaterial(String key);
-  List<String> getRelatedMonsterImgsToArtifact(String key);
+  //TODO: RENAME THIS METHODS
+  List<ItemCommon> getCharacterImgsUsingWeapon(String key);
+  List<ItemCommon> getCharacterImgsUsingArtifact(String key);
+  List<ItemCommon> getCharacterImgsUsingMaterial(String key);
+  List<ItemCommon> getWeaponImgsUsingMaterial(String key);
+  List<ItemCommon> getRelatedMonsterImgsToMaterial(String key);
+  List<ItemCommon> getRelatedMonsterImgsToArtifact(String key);
 
   TranslationArtifactFile getArtifactTranslation(String key);
   TranslationCharacterFile getCharacterTranslation(String key);
@@ -59,6 +59,8 @@ abstract class GenshinService {
   MaterialFileModel getMaterial(String key);
   MaterialFileModel getMaterialByImage(String image);
   List<MaterialFileModel> getMaterials(MaterialType type, {bool onlyReadyToBeUsed = true});
+  MaterialFileModel getMoraMaterial();
+  String getMaterialImg(String key);
 
   int getServerDay(AppServerResetTimeType type);
   DateTime getServerDate(AppServerResetTimeType type);

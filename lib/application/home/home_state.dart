@@ -8,6 +8,6 @@ class HomeState with _$HomeState {
     required List<TodayWeaponAscensionMaterialModel> weaponAscMaterials,
     required int day,
     required String dayName,
-    @Default([]) List<String> characterImgBirthday,
+    @Default([]) List<ItemCommon> characterImgBirthday,
   }) = _LoadedState;
 }

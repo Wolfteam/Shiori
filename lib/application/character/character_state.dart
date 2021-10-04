@@ -3,6 +3,7 @@ part of 'character_bloc.dart';
 @freezed
 class CharacterState with _$CharacterState {
   const factory CharacterState.loading() = _LoadingState;
+
   const factory CharacterState.loaded({
     required String key,
     required String name,
@@ -17,9 +18,9 @@ class CharacterState with _$CharacterState {
     required bool isFemale,
     String? birthday,
     required bool isInInventory,
-    required List<CharacterFileAscensionMaterialModel> ascensionMaterials,
-    required List<CharacterFileTalentAscensionMaterialModel> talentAscensionsMaterials,
-    List<CharacterFileMultiTalentAscensionMaterialModel>? multiTalentAscensionMaterials,
+    required List<CharacterAscensionModel> ascensionMaterials,
+    required List<CharacterTalentAscensionModel> talentAscensionsMaterials,
+    @Default(<CharacterMultiTalentAscensionModel>[]) List<CharacterMultiTalentAscensionModel> multiTalentAscensionMaterials,
     required List<CharacterSkillCardModel> skills,
     required List<CharacterPassiveTalentModel> passives,
     required List<CharacterConstellationModel> constellations,

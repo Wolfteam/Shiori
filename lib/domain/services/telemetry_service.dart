@@ -6,20 +6,11 @@ abstract class TelemetryService {
 
   Future<void> trackEventAsync(String name, [Map<String, String>? properties]);
 
-  Future<void> trackCharacterLoaded(
-    String value, {
-    bool loadedFromName = true,
-  });
+  Future<void> trackCharacterLoaded(String value);
 
-  Future<void> trackWeaponLoaded(
-    String value, {
-    bool loadedFromName = true,
-  });
+  Future<void> trackWeaponLoaded(String value);
 
-  Future<void> trackArtifactLoaded(
-    String value, {
-    bool loadedFromName = true,
-  });
+  Future<void> trackArtifactLoaded(String value);
 
   Future<void> trackAscensionMaterialsOpened();
 
@@ -35,10 +26,7 @@ abstract class TelemetryService {
 
   Future<void> trackTierListBuilderScreenShootTaken();
 
-  Future<void> trackMaterialLoaded(
-    String key, {
-    bool loadedFromName = true,
-  });
+  Future<void> trackMaterialLoaded(String key);
 
   Future<void> trackCalculatorAscMaterialsSessionsLoaded();
 

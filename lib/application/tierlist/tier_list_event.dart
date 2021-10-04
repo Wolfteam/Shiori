@@ -38,12 +38,12 @@ class TierListEvent with _$TierListEvent {
 
   const factory TierListEvent.addCharacterToRow({
     required int index,
-    required String charImg,
+    required ItemCommon item,
   }) = _AddCharacterToRow;
 
   const factory TierListEvent.deleteCharacterFromRow({
     required int index,
-    required String charImg,
+    required ItemCommon item,
   }) = _DeleteCharacterFromRow;
 
   const factory TierListEvent.readyToSave({required bool ready}) = _ReadyToSave;

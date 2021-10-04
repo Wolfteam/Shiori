@@ -222,7 +222,7 @@ class Assets {
     }
   }
 
-  static String getOriginalResinPath() => Assets.getCurrencyMaterialPath('fragile_resin.png');
+  static String getOriginalResinPath() => Assets.getCurrencyMaterialPath('fragile-resin.png');
 
   static String getGadgetPath(String image) => '$gadgetsBasePath/$image';
 

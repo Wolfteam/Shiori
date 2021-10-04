@@ -2,15 +2,10 @@ part of 'weapon_bloc.dart';
 
 @freezed
 class WeaponEvent with _$WeaponEvent {
-  const factory WeaponEvent.loadFromName({
+  const factory WeaponEvent.loadFromKey({
     required String key,
     @Default(true) bool addToQueue,
   }) = _LoadWeaponFromName;
-
-  const factory WeaponEvent.loadFromImg({
-    required String image,
-    @Default(true) bool addToQueue,
-  }) = _LoadWeaponFromImg;
 
   const factory WeaponEvent.addedToInventory({
     required String key,
