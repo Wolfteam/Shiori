@@ -14,10 +14,22 @@ class MonsterFileModel with _$MonsterFileModel {
     required String image,
     required MonsterType type,
     required bool isComingSoon,
-    required List<String> drops,
+    required List<MonsterDropFileModel> drops,
   }) = _MonsterFileModel;
 
   MonsterFileModel._();
 
   factory MonsterFileModel.fromJson(Map<String, dynamic> json) => _$MonsterFileModelFromJson(json);
+}
+
+@freezed
+class MonsterDropFileModel with _$MonsterDropFileModel {
+  factory MonsterDropFileModel({
+    required String key,
+    required MonsterDropType type,
+  }) = _MonsterDropFileModel;
+
+  MonsterDropFileModel._();
+
+  factory MonsterDropFileModel.fromJson(Map<String, dynamic> json) => _$MonsterDropFileModelFromJson(json);
 }

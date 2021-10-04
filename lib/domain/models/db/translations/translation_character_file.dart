@@ -31,10 +31,7 @@ class TranslationCharacterSkillFile with _$TranslationCharacterSkillFile {
 
 @freezed
 class TranslationCharacterAbilityFile with _$TranslationCharacterAbilityFile {
-  bool get hasCommonTranslation => key != null;
-
   factory TranslationCharacterAbilityFile({
-    String? key,
     String? name,
     String? description,
     String? secondDescription,

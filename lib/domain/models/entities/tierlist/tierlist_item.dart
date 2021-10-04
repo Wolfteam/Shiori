@@ -14,7 +14,7 @@ class TierListItem extends HiveObject {
   final int position;
 
   @HiveField(3)
-  final List<String> charsImgs;
+  final List<String> charKeys;
 
-  TierListItem(this.text, this.color, this.position, this.charsImgs);
+  TierListItem(this.text, this.color, this.position, this.charKeys);
 }

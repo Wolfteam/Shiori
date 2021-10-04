@@ -1,4 +1,4 @@
-import '../items/item_ascension_material_model.dart';
+import 'package:shiori/domain/models/models.dart';
 
 class CharacterAscensionModel {
   final int rank;

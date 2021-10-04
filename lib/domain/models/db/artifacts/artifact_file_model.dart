@@ -12,24 +12,11 @@ class ArtifactFileModel with _$ArtifactFileModel {
   factory ArtifactFileModel({
     required String key,
     required String image,
-    required int rarityMin,
-    required int rarityMax,
-    required List<ArtifactFileBonusModel> bonus,
+    required int minRarity,
+    required int maxRarity,
   }) = _ArtifactFileModel;
 
   ArtifactFileModel._();
 
   factory ArtifactFileModel.fromJson(Map<String, dynamic> json) => _$ArtifactFileModelFromJson(json);
-}
-
-@freezed
-class ArtifactFileBonusModel with _$ArtifactFileBonusModel {
-  factory ArtifactFileBonusModel({
-    required String key,
-    required int pieces,
-  }) = _ArtifactFileBonusModel;
-
-  ArtifactFileBonusModel._();
-
-  factory ArtifactFileBonusModel.fromJson(Map<String, dynamic> json) => _$ArtifactFileBonusModelFromJson(json);
 }

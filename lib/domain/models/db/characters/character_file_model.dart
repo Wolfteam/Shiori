@@ -4,7 +4,6 @@ import 'package:shiori/domain/enums/enums.dart';
 
 import '../../../assets.dart';
 import '../../../enums/character_role_type.dart';
-import '../../../enums/character_skill_ability_type.dart';
 import '../../../enums/character_skill_type.dart';
 import '../../../enums/element_type.dart';
 import '../../../enums/region_type.dart';
@@ -56,7 +55,7 @@ class CharacterFileAscensionMaterialModel with _$CharacterFileAscensionMaterialM
   factory CharacterFileAscensionMaterialModel({
     required int rank,
     required int level,
-    required List<ItemAscensionMaterialModel> materials,
+    required List<ItemAscensionMaterialFileModel> materials,
   }) = _CharacterFileAscensionMaterialModel;
 
   const CharacterFileAscensionMaterialModel._();
@@ -68,7 +67,7 @@ class CharacterFileAscensionMaterialModel with _$CharacterFileAscensionMaterialM
 class CharacterFileTalentAscensionMaterialModel with _$CharacterFileTalentAscensionMaterialModel {
   factory CharacterFileTalentAscensionMaterialModel({
     required int level,
-    required List<ItemAscensionMaterialModel> materials,
+    required List<ItemAscensionMaterialFileModel> materials,
   }) = _CharacterFileTalentAscensionMaterialModel;
 
   const CharacterFileTalentAscensionMaterialModel._();
@@ -140,24 +139,11 @@ class CharacterFileSkillModel with _$CharacterFileSkillModel {
     required String key,
     required CharacterSkillType type,
     String? image,
-    List<CharacterFileSkillAbilityModel>? abilities,
   }) = _CharacterFileSkillModel;
 
   CharacterFileSkillModel._();
 
   factory CharacterFileSkillModel.fromJson(Map<String, dynamic> json) => _$CharacterFileSkillModelFromJson(json);
-}
-
-@freezed
-class CharacterFileSkillAbilityModel with _$CharacterFileSkillAbilityModel {
-  factory CharacterFileSkillAbilityModel({
-    required String key,
-    required CharacterSkillAbilityType type,
-  }) = _CharacterFileSkillAbilityModel;
-
-  CharacterFileSkillAbilityModel._();
-
-  factory CharacterFileSkillAbilityModel.fromJson(Map<String, dynamic> json) => _$CharacterFileSkillAbilityModelFromJson(json);
 }
 
 @freezed
@@ -198,7 +184,7 @@ class CharacterFileStatModel with _$CharacterFileStatModel {
     required double baseAtk,
     required double baseDef,
     required bool isAnAscension,
-    required double specificValue,
+    required double statValue,
   }) = _CharacterFileStatModel;
 
   const CharacterFileStatModel._();
