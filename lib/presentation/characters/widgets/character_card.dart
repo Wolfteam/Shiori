@@ -158,7 +158,7 @@ class CharacterCard extends StatelessWidget {
     }
 
     final bloc = context.read<CharacterBloc>();
-    bloc.add(CharacterEvent.loadFromName(key: keyName));
+    bloc.add(CharacterEvent.loadFromKey(key: keyName));
     final route = MaterialPageRoute(builder: (c) => const CharacterPage());
     await Navigator.push(context, route);
     await route.completed;

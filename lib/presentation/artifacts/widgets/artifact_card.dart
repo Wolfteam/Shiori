@@ -120,7 +120,7 @@ class ArtifactCard extends StatelessWidget {
     }
 
     final bloc = context.read<ArtifactBloc>();
-    bloc.add(ArtifactEvent.loadArtifact(key: keyName));
+    bloc.add(ArtifactEvent.loadFromKey(key: keyName));
     final route = MaterialPageRoute(builder: (ctx) => ArtifactPage());
     await Navigator.of(context).push(route);
     bloc.pop();

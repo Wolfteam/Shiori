@@ -117,8 +117,9 @@ class ItemCard extends StatelessWidget {
                           itemBuilder: (ctx, index) {
                             final item = materials[index];
                             return MaterialItem(
-                              type: item.materialType,
-                              image: item.fullImagePath,
+                              itemKey: item.key,
+                              type: item.type,
+                              image: item.image,
                               quantity: item.quantity,
                               textColor: Colors.white,
                               sessionKey: sessionKey,

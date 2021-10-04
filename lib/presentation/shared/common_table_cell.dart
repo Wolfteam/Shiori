@@ -20,9 +20,9 @@ class CommonTableCell extends StatelessWidget {
   const CommonTableCell.child({
     Key? key,
     required this.child,
-    this.padding = Styles.edgeInsetVertical5,
   })  : text = null,
         textAlign = null,
+        padding = Styles.edgeInsetVertical5,
         super(key: key);
 
   @override

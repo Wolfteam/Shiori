@@ -28,8 +28,8 @@ class SliverCharacterAscensionMaterials extends StatelessWidget {
             itemBuilder: (ctx, index) {
               final e = charAscMaterials[index];
               return e.isFromBoss
-                  ? CharCardAscensionMaterial.fromBoss(name: e.name, image: e.image, bossName: e.bossName, charImgs: e.characters)
-                  : CharCardAscensionMaterial.fromDays(name: e.name, image: e.image, days: e.days, charImgs: e.characters);
+                  ? CharCardAscensionMaterial.fromBoss(itemKey: e.key, name: e.name, image: e.image, bossName: e.bossName, charImgs: e.characters)
+                  : CharCardAscensionMaterial.fromDays(itemKey: e.key, name: e.name, image: e.image, days: e.days, charImgs: e.characters);
             },
           ),
         ),
@@ -43,8 +43,8 @@ class SliverCharacterAscensionMaterials extends StatelessWidget {
       child: ResponsiveGridRow(
         children: charAscMaterials.map((e) {
           final child = e.isFromBoss
-              ? CharCardAscensionMaterial.fromBoss(name: e.name, image: e.image, bossName: e.bossName, charImgs: e.characters)
-              : CharCardAscensionMaterial.fromDays(name: e.name, image: e.image, days: e.days, charImgs: e.characters);
+              ? CharCardAscensionMaterial.fromBoss(itemKey: e.key, name: e.name, image: e.image, bossName: e.bossName, charImgs: e.characters)
+              : CharCardAscensionMaterial.fromDays(itemKey: e.key, name: e.name, image: e.image, days: e.days, charImgs: e.characters);
 
           switch (deviceType) {
             case DeviceScreenType.mobile:

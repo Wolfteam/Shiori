@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/images/circle_character.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
@@ -21,7 +22,7 @@ class TierListRow extends StatelessWidget {
   final int index;
   final String title;
   final Color color;
-  final List<String> images;
+  final List<ItemCommon> items;
   final bool showButtons;
   final bool isUpButtonEnabled;
   final bool isDownButtonEnabled;
@@ -33,7 +34,7 @@ class TierListRow extends StatelessWidget {
     required this.index,
     required this.title,
     required this.color,
-    required this.images,
+    required this.items,
     required this.numberOfRows,
     required this.isTheLastRow,
     this.showButtons = true,
@@ -44,8 +45,8 @@ class TierListRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return DragTarget<String>(
-      builder: (BuildContext context, List<String?> incoming, List<dynamic> rejected) => Column(
+    return DragTarget<ItemCommon>(
+      builder: (BuildContext context, List<ItemCommon?> incoming, List<dynamic> rejected) => Column(
         children: [
           IntrinsicHeight(
             child: Row(
@@ -72,11 +73,12 @@ class TierListRow extends StatelessWidget {
                   child: Wrap(
                     crossAxisAlignment: WrapCrossAlignment.center,
                     alignment: WrapAlignment.center,
-                    children: images
+                    children: items
                         .map((e) => CircleCharacter(
-                              image: e,
+                              itemKey: e.key,
+                              image: e.image,
                               radius: SizeUtils.getSizeForCircleImages(context),
-                              onTap: (img) => context.read<TierListBloc>().add(TierListEvent.deleteCharacterFromRow(index: index, charImg: e)),
+                              onTap: (img) => context.read<TierListBloc>().add(TierListEvent.deleteCharacterFromRow(index: index, item: e)),
                             ))
                         .toList(),
                   ),
@@ -116,7 +118,7 @@ class TierListRow extends StatelessWidget {
                                 value: TierListRowOptionsType.delete,
                                 child: _buildOption(Icons.delete, s.deleteRow),
                               ),
-                            if (images.isNotEmpty)
+                            if (items.isNotEmpty)
                               PopupMenuItem<TierListRowOptionsType>(
                                 value: TierListRowOptionsType.clear,
                                 child: _buildOption(Icons.clear_all, s.clearRow),
@@ -142,7 +144,7 @@ class TierListRow extends StatelessWidget {
           const Divider(),
         ],
       ),
-      onAccept: (charImg) => context.read<TierListBloc>().add(TierListEvent.addCharacterToRow(index: index, charImg: charImg)),
+      onAccept: (item) => context.read<TierListBloc>().add(TierListEvent.addCharacterToRow(index: index, item: item)),
     );
   }
 

@@ -21,7 +21,7 @@ class WeaponCard extends StatelessWidget {
   final String image;
   final String name;
   final int rarity;
-  final int? baseAtk;
+  final double? baseAtk;
   final WeaponType? type;
   final StatType? subStatType;
   final double? subStatValue;
@@ -189,7 +189,7 @@ class WeaponCard extends StatelessWidget {
     }
 
     final bloc = context.read<WeaponBloc>();
-    bloc.add(WeaponEvent.loadFromName(key: keyName));
+    bloc.add(WeaponEvent.loadFromKey(key: keyName));
     final route = MaterialPageRoute(builder: (c) => WeaponPage());
     await Navigator.push(context, route);
     await route.completed;

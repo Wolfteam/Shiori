@@ -80,9 +80,9 @@ class CharacterDetailSkillsCard extends StatelessWidget {
             margin: Styles.edgeInsetAll5,
             child: Column(
               children: [
-                if (e.hasCommonTranslation || e.name.isNotNullEmptyOrWhitespace)
+                if (e.name.isNotNullEmptyOrWhitespace)
                   Text(
-                    e.hasCommonTranslation ? s.translateCharacterSkillAbilityType(e.type!) : e.name!,
+                    e.name!,
                     overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.center,
                     style: theme.textTheme.subtitle1!.copyWith(color: elementType.getElementColorFromContext(context)),

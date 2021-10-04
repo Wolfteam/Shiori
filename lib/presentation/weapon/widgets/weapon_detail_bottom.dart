@@ -20,10 +20,10 @@ class WeaponDetailBottom extends StatelessWidget {
   final int rarity;
   final StatType secondaryStatType;
   final List<ItemAscensionMaterialModel> craftingMaterials;
-  final List<WeaponFileAscensionMaterial> ascensionMaterials;
+  final List<WeaponAscensionModel> ascensionMaterials;
   final List<WeaponFileRefinementModel> refinements;
   final List<WeaponFileStatModel> stats;
-  final List<String> charImgs;
+  final List<ItemCommon> charImgs;
 
   const WeaponDetailBottom({
     Key? key,
@@ -69,10 +69,10 @@ class _PortraitLayout extends StatelessWidget {
   final int rarity;
   final StatType secondaryStatType;
   final List<ItemAscensionMaterialModel> craftingMaterials;
-  final List<WeaponFileAscensionMaterial> ascensionMaterials;
+  final List<WeaponAscensionModel> ascensionMaterials;
   final List<WeaponFileRefinementModel> refinements;
   final List<WeaponFileStatModel> stats;
-  final List<String> charImgs;
+  final List<ItemCommon> charImgs;
 
   const _PortraitLayout({
     Key? key,
@@ -105,7 +105,7 @@ class _PortraitLayout extends StatelessWidget {
             title: s.builds,
             body: Wrap(
               alignment: WrapAlignment.center,
-              children: charImgs.map((e) => CircleCharacter(image: e, radius: SizeUtils.getSizeForCircleImages(context))).toList(),
+              children: charImgs.map((e) => CircleCharacter.fromItem(item: e, radius: SizeUtils.getSizeForCircleImages(context))).toList(),
             ),
             textColor: rarityColor,
           ),
@@ -140,10 +140,10 @@ class _LandscapeLayout extends StatelessWidget {
   final int rarity;
   final StatType secondaryStatType;
   final List<ItemAscensionMaterialModel> craftingMaterials;
-  final List<WeaponFileAscensionMaterial> ascensionMaterials;
+  final List<WeaponAscensionModel> ascensionMaterials;
   final List<WeaponFileRefinementModel> refinements;
   final List<WeaponFileStatModel> stats;
-  final List<String> charImgs;
+  final List<ItemCommon> charImgs;
 
   const _LandscapeLayout({
     Key? key,
@@ -194,7 +194,7 @@ class _LandscapeLayout extends StatelessWidget {
                   title: s.builds,
                   body: Wrap(
                     alignment: WrapAlignment.center,
-                    children: charImgs.map((e) => CircleCharacter(image: e, radius: SizeUtils.getSizeForCircleImages(context))).toList(),
+                    children: charImgs.map((e) => CircleCharacter.fromItem(item: e, radius: SizeUtils.getSizeForCircleImages(context))).toList(),
                   ),
                   textColor: rarityColor,
                 ),
