@@ -77,6 +77,7 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.materialsDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _materialsFile = MaterialsFile.fromJson(json);
+    //TODO: MOVE ALL THIS ASSERTS TO A TEST
     assert(
       _materialsFile.materials.map((e) => e.key).toSet().length == _materialsFile.materials.length,
       'All the material keys must be unique',
@@ -163,43 +164,41 @@ class GenshinServiceImpl implements GenshinService {
 
     final sssTier = _charactersFile.characters
         .where((char) => !char.isComingSoon && char.tier == 'sss')
-        .map((char) => Assets.getCharacterPath(char.image))
+        .map((char) => ItemCommon(char.key, Assets.getCharacterPath(char.image)))
         .toList();
-
     final ssTier = _charactersFile.characters
         .where((char) => !char.isComingSoon && char.tier == 'ss')
-        .map((char) => Assets.getCharacterPath(char.image))
+        .map((char) => ItemCommon(char.key, Assets.getCharacterPath(char.image)))
         .toList();
-
     final sTier = _charactersFile.characters
         .where((char) => !char.isComingSoon && char.tier == 's')
-        .map((char) => Assets.getCharacterPath(char.image))
+        .map((char) => ItemCommon(char.key, Assets.getCharacterPath(char.image)))
         .toList();
     final aTier = _charactersFile.characters
         .where((char) => !char.isComingSoon && char.tier == 'a')
-        .map((char) => Assets.getCharacterPath(char.image))
+        .map((char) => ItemCommon(char.key, Assets.getCharacterPath(char.image)))
         .toList();
     final bTier = _charactersFile.characters
         .where((char) => !char.isComingSoon && char.tier == 'b')
-        .map((char) => Assets.getCharacterPath(char.image))
+        .map((char) => ItemCommon(char.key, Assets.getCharacterPath(char.image)))
         .toList();
     final cTier = _charactersFile.characters
         .where((char) => !char.isComingSoon && char.tier == 'c')
-        .map((char) => Assets.getCharacterPath(char.image))
+        .map((char) => ItemCommon(char.key, Assets.getCharacterPath(char.image)))
         .toList();
     final dTier = _charactersFile.characters
         .where((char) => !char.isComingSoon && char.tier == 'd')
-        .map((char) => Assets.getCharacterPath(char.image))
+        .map((char) => ItemCommon(char.key, Assets.getCharacterPath(char.image)))
         .toList();
 
     return <TierListRowModel>[
-      TierListRowModel.row(tierText: 'SSS', tierColor: colors.first, charImgs: sssTier),
-      TierListRowModel.row(tierText: 'SS', tierColor: colors[1], charImgs: ssTier),
-      TierListRowModel.row(tierText: 'S', tierColor: colors[2], charImgs: sTier),
-      TierListRowModel.row(tierText: 'A', tierColor: colors[3], charImgs: aTier),
-      TierListRowModel.row(tierText: 'B', tierColor: colors[4], charImgs: bTier),
-      TierListRowModel.row(tierText: 'C', tierColor: colors[5], charImgs: cTier),
-      TierListRowModel.row(tierText: 'D', tierColor: colors.last, charImgs: dTier),
+      TierListRowModel.row(tierText: 'SSS', tierColor: colors.first, items: sssTier),
+      TierListRowModel.row(tierText: 'SS', tierColor: colors[1], items: ssTier),
+      TierListRowModel.row(tierText: 'S', tierColor: colors[2], items: sTier),
+      TierListRowModel.row(tierText: 'A', tierColor: colors[3], items: aTier),
+      TierListRowModel.row(tierText: 'B', tierColor: colors[4], items: bTier),
+      TierListRowModel.row(tierText: 'C', tierColor: colors[5], items: cTier),
+      TierListRowModel.row(tierText: 'D', tierColor: colors.last, items: dTier),
     ];
   }
 
@@ -225,20 +224,19 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<String> getCharacterImgsUsingWeapon(String key) {
+  List<ItemCommon> getCharacterImgsUsingWeapon(String key) {
     final weapon = getWeapon(key);
-    final imgs = <String>[];
+    final items = <ItemCommon>[];
     for (final char in _charactersFile.characters.where((el) => !el.isComingSoon)) {
       for (final build in char.builds) {
         final isBeingUsed = build.weaponImages.contains(weapon.image);
-        final img = Assets.getCharacterPath(char.image);
-        if (isBeingUsed && !imgs.contains(img)) {
-          imgs.add(img);
+        if (isBeingUsed && !items.any((el) => el.key == char.key)) {
+          items.add(ItemCommon(char.key, Assets.getCharacterPath(char.image)));
         }
       }
     }
 
-    return imgs;
+    return items;
   }
 
   @override
@@ -260,21 +258,20 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<String> getCharacterImgsUsingArtifact(String key) {
+  List<ItemCommon> getCharacterImgsUsingArtifact(String key) {
     final artifact = getArtifact(key);
-    final imgs = <String>[];
+    final items = <ItemCommon>[];
     for (final char in _charactersFile.characters.where((el) => !el.isComingSoon)) {
       for (final build in char.builds) {
         final isBeingUsed = build.artifacts.any((a) => a.one == artifact.image || a.multiples.any((m) => m.image == artifact.image));
 
-        final img = Assets.getCharacterPath(char.image);
-        if (isBeingUsed && !imgs.contains(img)) {
-          imgs.add(img);
+        if (isBeingUsed && !items.any((el) => el.key == char.key)) {
+          items.add(ItemCommon(char.key, Assets.getCharacterPath(char.image)));
         }
       }
     }
 
-    return imgs;
+    return items;
   }
 
   @override
@@ -305,22 +302,22 @@ class GenshinServiceImpl implements GenshinService {
 
     return iterable.map((e) {
       final translation = _translationFile.materials.firstWhere((t) => t.key == e.key);
-      final characters = <String>[];
+      final characters = <ItemCommon>[];
 
       for (final char in _charactersFile.characters) {
         if (char.isComingSoon) continue;
-        final normalAscMaterial = char.ascensionMaterials.expand((m) => m.materials).where((m) => m.image == e.image).isNotEmpty ||
-            char.talentAscensionMaterials.expand((m) => m.materials).where((m) => m.image == e.image).isNotEmpty;
+        final normalAscMaterial = char.ascensionMaterials.expand((m) => m.materials).where((m) => m.key == e.key).isNotEmpty ||
+            char.talentAscensionMaterials.expand((m) => m.materials).where((m) => m.key == e.key).isNotEmpty;
 
         //The travelers have different ascension materials, that's why we do the following
         var specialAscMaterial = false;
         if (char.multiTalentAscensionMaterials != null) {
-          final keyword = e.image.split('_').last;
+          final keyword = e.key;
           final materials = char.multiTalentAscensionMaterials!
               .expand((m) => m.materials)
               .expand((m) => m.materials)
-              .where((m) => m.materialType == MaterialType.talents)
-              .map((e) => e.image.split('_').last)
+              .where((m) => m.type == MaterialType.talents)
+              .map((e) => e.key)
               .toSet()
               .toList();
 
@@ -328,20 +325,21 @@ class GenshinServiceImpl implements GenshinService {
         }
 
         final materialIsBeingUsed = normalAscMaterial || specialAscMaterial;
-        final charImg = Assets.getCharacterPath(char.image);
-        if (materialIsBeingUsed && !characters.contains(charImg)) {
-          characters.add(charImg);
+        if (materialIsBeingUsed && !characters.any((el) => el.key == char.key)) {
+          characters.add(ItemCommon(char.key, Assets.getCharacterPath(char.image)));
         }
       }
 
       return e.isFromBoss
           ? TodayCharAscensionMaterialsModel.fromBoss(
+              key: e.key,
               name: translation.name,
               image: Assets.getMaterialPath(e.image, e.type),
               bossName: translation.bossName,
               characters: characters,
             )
           : TodayCharAscensionMaterialsModel.fromDays(
+              key: e.key,
               name: translation.name,
               image: Assets.getMaterialPath(e.image, e.type),
               characters: characters,
@@ -359,14 +357,15 @@ class GenshinServiceImpl implements GenshinService {
     return iterable.map((e) {
       final translation = _translationFile.materials.firstWhere((t) => t.key == e.key);
 
-      final weapons = <String>[];
+      final weapons = <ItemCommon>[];
       for (final weapon in _weaponsFile.weapons) {
-        final materialIsBeingUsed = weapon.ascensionMaterials.expand((m) => m.materials).where((m) => m.image == e.image).isNotEmpty;
+        final materialIsBeingUsed = weapon.ascensionMaterials.expand((m) => m.materials).where((m) => m.key == e.key).isNotEmpty;
         if (materialIsBeingUsed) {
-          weapons.add(weapon.fullImagePath);
+          weapons.add(ItemCommon(weapon.key, weapon.fullImagePath));
         }
       }
       return TodayWeaponAscensionMaterialModel(
+        key: e.key,
         days: e.days,
         name: translation.name,
         image: Assets.getMaterialPath(e.image, e.type),
@@ -448,6 +447,16 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
+  MaterialFileModel getMoraMaterial() {
+    return _materialsFile.materials.firstWhere((el) => el.type == MaterialType.currency && el.key == 'mora');
+  }
+
+  @override
+  String getMaterialImg(String key) {
+    return _materialsFile.materials.firstWhere((m) => m.key == key).fullImagePath;
+  }
+
+  @override
   int getServerDay(AppServerResetTimeType type) {
     return getServerDate(type).weekday;
   }
@@ -490,13 +499,13 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<String> getCharacterImgsUsingMaterial(String key) {
+  List<ItemCommon> getCharacterImgsUsingMaterial(String key) {
     final material = getMaterial(key);
-    final imgs = <String>[];
+    final imgs = <ItemCommon>[];
 
     for (final char in _charactersFile.characters.where((c) => !c.isComingSoon)) {
       final multiTalentAscensionMaterials =
-          (char.multiTalentAscensionMaterials?.expand((e) => e.materials).expand((e) => e.materials) ?? <ItemAscensionMaterialModel>[]).toList();
+          (char.multiTalentAscensionMaterials?.expand((e) => e.materials).expand((e) => e.materials) ?? <ItemAscensionMaterialFileModel>[]).toList();
 
       final ascensionMaterial = char.ascensionMaterials.expand((e) => e.materials).toList();
       final talentMaterial = char.talentAscensionMaterials.expand((e) => e.materials).toList();
@@ -504,8 +513,8 @@ class GenshinServiceImpl implements GenshinService {
       final materials = multiTalentAscensionMaterials + ascensionMaterial + talentMaterial;
       final allMaterials = _getMaterialsToUse(materials);
 
-      if (allMaterials.any((m) => m.fullImagePath == material.fullImagePath)) {
-        imgs.add(Assets.getCharacterPath(char.image));
+      if (allMaterials.any((m) => m.key == material.key)) {
+        imgs.add(ItemCommon(char.key, Assets.getCharacterPath(char.image)));
       }
     }
 
@@ -513,32 +522,19 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<String> getWeaponImgsUsingMaterial(String key) {
+  List<ItemCommon> getWeaponImgsUsingMaterial(String key) {
     final material = getMaterial(key);
-    final imgs = <String>[];
+    final items = <ItemCommon>[];
 
     for (final weapon in _weaponsFile.weapons) {
-      final materials = (weapon.craftingMaterials ?? <ItemAscensionMaterialModel>[]) + weapon.ascensionMaterials.expand((e) => e.materials).toList();
+      final materials = weapon.craftingMaterials + weapon.ascensionMaterials.expand((e) => e.materials).toList();
       final allMaterials = _getMaterialsToUse(materials);
-      if (allMaterials.any((m) => m.fullImagePath == material.fullImagePath)) {
-        imgs.add(weapon.fullImagePath);
+      if (allMaterials.any((m) => m.key == material.key)) {
+        items.add(ItemCommon(weapon.key, weapon.fullImagePath));
       }
     }
 
-    return imgs;
-  }
-
-  @override
-  List<String> getRelatedMaterialImgsToMaterial(String key) {
-    final material = getMaterial(key);
-    return _materialsFile.materials
-        .where((m) {
-          final isUsed = m.obtainedFrom.expand((e) => e.items).where((e) => e.fullImagePath == material.fullImagePath).isNotEmpty;
-          return m.key != key && isUsed;
-        })
-        .map((m) => m.fullImagePath)
-        .toSet()
-        .toList();
+    return items;
   }
 
   @override
@@ -594,14 +590,15 @@ class GenshinServiceImpl implements GenshinService {
     return _monstersFile.monsters.where((el) => el.type == type).toList();
   }
 
-  List<ItemAscensionMaterialModel> _getMaterialsToUse(
-    List<ItemAscensionMaterialModel> materials, {
+  List<MaterialFileModel> _getMaterialsToUse(
+    List<ItemAscensionMaterialFileModel> materials, {
     List<MaterialType> ignore = const [MaterialType.currency],
   }) {
-    final mp = <String, ItemAscensionMaterialModel>{};
+    final mp = <String, MaterialFileModel>{};
     for (final item in materials) {
-      if (!ignore.contains(item.materialType)) {
-        mp[item.image] = item;
+      final material = getMaterial(item.key);
+      if (!ignore.contains(item.type)) {
+        mp[item.key] = material;
       }
     }
 
@@ -609,29 +606,27 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<String> getRelatedMonsterImgsToMaterial(String key) {
-    final material = getMaterial(key);
-    final images = <String>[];
+  List<ItemCommon> getRelatedMonsterImgsToMaterial(String key) {
+    final items = <ItemCommon>[];
     for (final monster in _monstersFile.monsters) {
-      if (!monster.drops.any((el) => material.image.contains(el))) {
+      if (!monster.drops.any((el) => el.type == MonsterDropType.material && el.key == key)) {
         continue;
       }
-      images.add(monster.fullImagePath);
+      items.add(ItemCommon(monster.key, monster.fullImagePath));
     }
-    return images;
+    return items;
   }
 
   @override
-  List<String> getRelatedMonsterImgsToArtifact(String key) {
-    final artifact = getArtifact(key);
-    final images = <String>[];
+  List<ItemCommon> getRelatedMonsterImgsToArtifact(String key) {
+    final items = <ItemCommon>[];
     for (final monster in _monstersFile.monsters) {
-      if (!monster.drops.any((el) => artifact.image.contains(el.replaceAll('.png', '')))) {
+      if (!monster.drops.any((el) => el.type == MonsterDropType.artifact && key == el.key)) {
         continue;
       }
-      images.add(monster.fullImagePath);
+      items.add(ItemCommon(monster.key, monster.fullImagePath));
     }
-    return images;
+    return items;
   }
 
   @override
@@ -708,6 +703,7 @@ class GenshinServiceImpl implements GenshinService {
     AppNotificationType notificationType, {
     AppNotificationItemType? notificationItemType,
   }) {
+    //TODO: CHANGE THESE THINGS
     switch (notificationType) {
       case AppNotificationType.resin:
       case AppNotificationType.expedition:
@@ -816,7 +812,7 @@ class GenshinServiceImpl implements GenshinService {
             : null;
 
     final materials =
-        (ascensionMaterial?.materials ?? <ItemAscensionMaterialModel>[]) + (talentMaterial?.materials ?? <ItemAscensionMaterialModel>[]);
+        (ascensionMaterial?.materials ?? <ItemAscensionMaterialFileModel>[]) + (talentMaterial?.materials ?? <ItemAscensionMaterialFileModel>[]);
 
     final quickMaterials = _getMaterialsToUse(materials);
 
@@ -853,15 +849,18 @@ class GenshinServiceImpl implements GenshinService {
 
   ArtifactCardModel _toArtifactForCard(ArtifactFileModel artifact) {
     final translation = _translationFile.artifacts.firstWhere((t) => t.key == artifact.key);
+    //TODO: MOVE THIS BONUS TO A COMMON METHOD SINCE IT IS BEING USED IN THE ARTIFACT BLOC
+    final bonus = <ArtifactCardBonusModel>[];
+    for (var i = 1; i <= translation.bonus.length; i++) {
+      final item = ArtifactCardBonusModel(pieces: i, bonus: translation.bonus[i - 1]);
+      bonus.add(item);
+    }
     return ArtifactCardModel(
       key: artifact.key,
       name: translation.name,
       image: artifact.fullImagePath,
-      rarity: artifact.rarityMax,
-      bonus: translation.bonus.map((t) {
-        final pieces = artifact.bonus.firstWhere((b) => b.key == t.key).pieces;
-        return ArtifactCardBonusModel(pieces: pieces, bonus: t.bonus);
-      }).toList(),
+      rarity: artifact.maxRarity,
+      bonus: bonus,
     );
   }
 

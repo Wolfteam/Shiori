@@ -40,7 +40,7 @@ class DataServiceImpl implements DataService {
   DataServiceImpl(this._genshinService, this._calculatorService);
 
   Future<void> init() async {
-    await Hive.initFlutter();
+    await Hive.initFlutter('shiori_data');
     _registerAdapters();
     _sessionBox = await Hive.openBox<CalculatorSession>('calculatorSessions');
     _calcItemBox = await Hive.openBox<CalculatorItem>('calculatorSessionsItems');
@@ -163,7 +163,7 @@ class DataServiceImpl implements DataService {
 
     //Here we created a used inventory item for each material
     for (final material in item.materials) {
-      final mat = _genshinService.getMaterialByImage(material.fullImagePath);
+      final mat = _genshinService.getMaterial(material.key);
       await _useItemFromInventory(calculatorItemKey, mat.key, ItemType.material, material.quantity);
     }
 
@@ -184,7 +184,7 @@ class DataServiceImpl implements DataService {
     //And finally update the material quantity based on the used inventory items
     //This is quite similar to what the _considerMaterialsInInventory does
     final updatedMaterials = item.materials.map((e) {
-      final material = _genshinService.getMaterialByImage(e.fullImagePath);
+      final material = _genshinService.getMaterial(e.key);
       if (!usedInventoryItems.any((el) => el.itemKey == material.key)) {
         return e;
       }
@@ -420,7 +420,7 @@ class DataServiceImpl implements DataService {
         //If we hit this point, that means that itemKey COULD be being used, so we need to update the used values accordingly
         final item = calItem.isCharacter ? _buildForCharacter(calItem) : _buildForWeapon(calItem);
         final material = _genshinService.getMaterial(itemKey);
-        final desiredQuantityToUse = item.materials.firstWhereOrNull((el) => el.fullImagePath == material.fullImagePath)?.quantity ?? 0;
+        final desiredQuantityToUse = item.materials.firstWhereOrNull((el) => el.key == material.key)?.quantity ?? 0;
 
         //Next, we check if there is a used item for this calculator item
         var usedInInventory = _inventoryUsedItemsBox.values.firstWhereOrNull((el) => el.calculatorItemKey == calItem.key && el.itemKey == itemKey);
@@ -428,7 +428,7 @@ class DataServiceImpl implements DataService {
         //If no used item was found, lets check if this calc. item could benefit from this itemKey
         if (usedInInventory == null) {
           //If itemKey is not in the used materials, then this item does not use this material
-          if (!item.materials.any((el) => el.fullImagePath == material.fullImagePath)) {
+          if (!item.materials.any((el) => el.key == material.key)) {
             continue;
           }
 
@@ -469,7 +469,7 @@ class DataServiceImpl implements DataService {
     return _gameCodesBox.values.map((e) {
       final rewards = _gameCodeRewardsBox.values.where((el) => el.gameCodeKey == e.key).map((reward) {
         final material = _genshinService.getMaterial(reward.itemKey);
-        return ItemAscensionMaterialModel(quantity: reward.quantity, image: material.image, materialType: material.type);
+        return ItemAscensionMaterialModel(quantity: reward.quantity, key: material.key, type: material.type, image: material.fullImagePath);
       }).toList();
       //Some codes don't have an expiration date, that's why we use this boolean here
       final expired = e.isExpired || (e.expiredOn?.isBefore(DateTime.now()) ?? false);
@@ -513,7 +513,7 @@ class DataServiceImpl implements DataService {
   Future<void> saveGameCodeRewards(int gameCodeKey, List<ItemAscensionMaterialModel> rewards) {
     final rewardsToSave = rewards
         .map(
-          (e) => GameCodeReward(gameCodeKey, _genshinService.getMaterialByImage(e.fullImagePath).key, e.quantity),
+          (e) => GameCodeReward(gameCodeKey, _genshinService.getMaterial(e.key).key, e.quantity),
         )
         .toList();
     return _gameCodeRewardsBox.addAll(rewardsToSave);
@@ -535,13 +535,19 @@ class DataServiceImpl implements DataService {
   @override
   List<TierListRowModel> getTierList() {
     final values = _tierListBox.values.toList()..sort((x, y) => x.position.compareTo(y.position));
-    return values.map((e) => TierListRowModel.row(tierText: e.text, charImgs: e.charsImgs, tierColor: e.color)).toList();
+    return values.map((e) {
+      final characters = e.charKeys.map((e) {
+        final character = _genshinService.getCharacter(e);
+        return ItemCommon(character.key, character.fullCharacterImagePath);
+      }).toList();
+      return TierListRowModel.row(tierText: e.text, items: characters, tierColor: e.color);
+    }).toList();
   }
 
   @override
   Future<void> saveTierList(List<TierListRowModel> tierList) async {
     await deleteTierList();
-    final toSave = tierList.mapIndex((e, i) => TierListItem(e.tierText, e.tierColor, i, e.charImgs)).toList();
+    final toSave = tierList.mapIndex((e, i) => TierListItem(e.tierText, e.tierColor, i, e.items.map((i) => i.key).toList())).toList();
     await _tierListBox.addAll(toSave);
   }
 
@@ -1274,7 +1280,7 @@ class DataServiceImpl implements DataService {
   /// Keep in mind that this method must be called in order based on the [calculatorItemKey]
   List<ItemAscensionMaterialModel> _considerMaterialsInInventory(int calculatorItemKey, List<ItemAscensionMaterialModel> materials) {
     return materials.map((e) {
-      final material = _genshinService.getMaterialByImage(e.fullImagePath);
+      final material = _genshinService.getMaterial(e.key);
       if (!isItemInInventory(material.key, ItemType.material)) {
         return e;
       }
