@@ -59,7 +59,7 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
   }
 
   WeaponState _buildInitialState(WeaponFileModel weapon, TranslationWeaponFile translation) {
-    final charImgs = _genshinService.getCharacterImgsUsingWeapon(weapon.key);
+    final charImgs = _genshinService.getCharacterForItemsUsingWeapon(weapon.key);
     final ascensionMaterials = weapon.ascensionMaterials.map((e) {
       final materials = e.materials.map((e) {
         final material = _genshinService.getMaterial(e.key);

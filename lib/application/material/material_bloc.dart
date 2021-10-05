@@ -40,9 +40,9 @@ class MaterialBloc extends PopBloc<MaterialEvent, MaterialState> {
 
   MaterialState _buildInitialState(MaterialFileModel material) {
     final translation = _genshinService.getMaterialTranslation(material.key);
-    final characters = _genshinService.getCharacterImgsUsingMaterial(material.key);
-    final weapons = _genshinService.getWeaponImgsUsingMaterial(material.key);
-    final droppedBy = _genshinService.getRelatedMonsterImgsToMaterial(material.key);
+    final characters = _genshinService.getCharacterForItemsUsingMaterial(material.key);
+    final weapons = _genshinService.getWeaponForItemsUsingMaterial(material.key);
+    final droppedBy = _genshinService.getRelatedMonsterToMaterialForItems(material.key);
     final obtainedFrom = material.obtainedFrom.where((el) => el.createsMaterialKey == material.key).map((el) {
       final needs = el.needs.map((e) {
         final img = _genshinService.getMaterialImg(e.key);

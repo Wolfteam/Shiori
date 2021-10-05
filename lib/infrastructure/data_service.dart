@@ -346,10 +346,9 @@ class DataServiceImpl implements DataService {
   }
 
   @override
-  MaterialCardModel getMaterialFromInventoryByImage(String image) {
-    final material = _genshinService.getMaterialByImage(image);
-    final materialForCard = _genshinService.getMaterialForCard(material.key);
-    final materialInInventory = _inventoryBox.values.firstWhereOrNull((m) => m.itemKey == material.key);
+  MaterialCardModel getMaterialFromInventory(String key) {
+    final materialForCard = _genshinService.getMaterialForCard(key);
+    final materialInInventory = _inventoryBox.values.firstWhereOrNull((m) => m.itemKey == key);
     if (materialInInventory == null) {
       return materialForCard.copyWith.call(quantity: 0);
     }

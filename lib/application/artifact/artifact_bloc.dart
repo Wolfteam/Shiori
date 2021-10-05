@@ -29,8 +29,8 @@ class ArtifactBloc extends PopBloc<ArtifactEvent, ArtifactState> {
       loadFromKey: (e) async {
         final artifact = _genshinService.getArtifact(e.key);
         final translation = _genshinService.getArtifactTranslation(e.key);
-        final charImgs = _genshinService.getCharacterImgsUsingArtifact(e.key);
-        final droppedBy = _genshinService.getRelatedMonsterImgsToArtifact(e.key);
+        final charImgs = _genshinService.getCharacterForItemsUsingArtifact(e.key);
+        final droppedBy = _genshinService.getRelatedMonsterToArtifactForItems(e.key);
 
         var image = artifact.image.split('.png').first;
         image = image.substring(0, image.length - 1);

@@ -645,11 +645,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   String _getSelectedItemKey() {
-    final image = state.images.firstWhere((el) => el.isSelected).image;
-    return state.maybeMap(
-      custom: (s) => _genshinService.getItemKeyFromNotificationType(image, state.type, notificationItemType: s.itemType),
-      orElse: () => _genshinService.getItemKeyFromNotificationType(image, state.type),
-    );
+    return state.images.firstWhere((el) => el.isSelected).itemKey;
   }
 
   List<NotificationItemImage> _getImagesForResin() {

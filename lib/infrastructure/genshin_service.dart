@@ -142,11 +142,6 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  CharacterFileModel getCharacterByImg(String img) {
-    return _charactersFile.characters.firstWhere((element) => Assets.getCharacterPath(element.image) == img);
-  }
-
-  @override
   List<CharacterFileModel> getCharactersForBirthday(DateTime date) {
     return _charactersFile.characters.where((char) {
       if (char.birthday.isNullEmptyOrWhitespace) {
@@ -208,12 +203,6 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  WeaponCardModel getWeaponForCardByImg(String image) {
-    final weapon = _weaponsFile.weapons.firstWhere((e) => e.image == image);
-    return _toWeaponForCard(weapon);
-  }
-
-  @override
   WeaponFileModel getWeapon(String key) {
     return _weaponsFile.weapons.firstWhere((element) => element.key == key);
   }
@@ -224,12 +213,12 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<ItemCommon> getCharacterImgsUsingWeapon(String key) {
+  List<ItemCommon> getCharacterForItemsUsingWeapon(String key) {
     final weapon = getWeapon(key);
     final items = <ItemCommon>[];
     for (final char in _charactersFile.characters.where((el) => !el.isComingSoon)) {
       for (final build in char.builds) {
-        final isBeingUsed = build.weaponImages.contains(weapon.image);
+        final isBeingUsed = build.weaponKeys.contains(weapon.key);
         if (isBeingUsed && !items.any((el) => el.key == char.key)) {
           items.add(ItemCommon(char.key, Assets.getCharacterPath(char.image)));
         }
@@ -245,10 +234,8 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  ArtifactCardModel getArtifactForCardByImg(String image, {bool searchByFullPath = false}) {
-    final artifact = searchByFullPath
-        ? _artifactsFile.artifacts.firstWhere((a) => a.fullImagePath == image)
-        : _artifactsFile.artifacts.firstWhere((a) => a.image == image);
+  ArtifactCardModel getArtifactForCard(String key) {
+    final artifact = _artifactsFile.artifacts.firstWhere((a) => a.key == key);
     return _toArtifactForCard(artifact);
   }
 
@@ -258,12 +245,12 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<ItemCommon> getCharacterImgsUsingArtifact(String key) {
+  List<ItemCommon> getCharacterForItemsUsingArtifact(String key) {
     final artifact = getArtifact(key);
     final items = <ItemCommon>[];
     for (final char in _charactersFile.characters.where((el) => !el.isComingSoon)) {
       for (final build in char.builds) {
-        final isBeingUsed = build.artifacts.any((a) => a.one == artifact.image || a.multiples.any((m) => m.image == artifact.image));
+        final isBeingUsed = build.artifacts.any((a) => a.oneKey == artifact.key || a.multiples.any((m) => m.key == artifact.key));
 
         if (isBeingUsed && !items.any((el) => el.key == char.key)) {
           items.add(ItemCommon(char.key, Assets.getCharacterPath(char.image)));
@@ -499,7 +486,7 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<ItemCommon> getCharacterImgsUsingMaterial(String key) {
+  List<ItemCommon> getCharacterForItemsUsingMaterial(String key) {
     final material = getMaterial(key);
     final imgs = <ItemCommon>[];
 
@@ -522,7 +509,7 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<ItemCommon> getWeaponImgsUsingMaterial(String key) {
+  List<ItemCommon> getWeaponForItemsUsingMaterial(String key) {
     final material = getMaterial(key);
     final items = <ItemCommon>[];
 
@@ -606,7 +593,7 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<ItemCommon> getRelatedMonsterImgsToMaterial(String key) {
+  List<ItemCommon> getRelatedMonsterToMaterialForItems(String key) {
     final items = <ItemCommon>[];
     for (final monster in _monstersFile.monsters) {
       if (!monster.drops.any((el) => el.type == MonsterDropType.material && el.key == key)) {
@@ -618,7 +605,7 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  List<ItemCommon> getRelatedMonsterImgsToArtifact(String key) {
+  List<ItemCommon> getRelatedMonsterToArtifactForItems(String key) {
     final items = <ItemCommon>[];
     for (final monster in _monstersFile.monsters) {
       if (!monster.drops.any((el) => el.type == MonsterDropType.artifact && key == el.key)) {
@@ -694,62 +681,6 @@ class GenshinServiceImpl implements GenshinService {
         return material.fullImagePath;
       default:
         throw Exception('The provided notification item type = $notificationItemType');
-    }
-  }
-
-  @override
-  String getItemKeyFromNotificationType(
-    String itemImage,
-    AppNotificationType notificationType, {
-    AppNotificationItemType? notificationItemType,
-  }) {
-    //TODO: CHANGE THESE THINGS
-    switch (notificationType) {
-      case AppNotificationType.resin:
-      case AppNotificationType.expedition:
-      case AppNotificationType.realmCurrency:
-        final material = getMaterialByImage(itemImage);
-        return material.key;
-      case AppNotificationType.farmingArtifacts:
-        final artifact = getArtifactForCardByImg(itemImage, searchByFullPath: true);
-        return artifact.key;
-      case AppNotificationType.farmingMaterials:
-        final material = getMaterialByImage(itemImage);
-        return material.key;
-      case AppNotificationType.gadget:
-        final gadget = getGadgetByImage(itemImage);
-        return gadget.key;
-      case AppNotificationType.furniture:
-        final furniture = getFurnitureByImage(itemImage);
-        return furniture.key;
-      case AppNotificationType.weeklyBoss:
-        final monster = getMonsterByImg(itemImage);
-        return monster.key;
-      case AppNotificationType.dailyCheckIn:
-        final material = getMaterialByImage(itemImage);
-        return material.key;
-      case AppNotificationType.custom:
-        switch (notificationItemType) {
-          case AppNotificationItemType.character:
-            final character = getCharacterByImg(itemImage);
-            return character.key;
-          case AppNotificationItemType.weapon:
-            final weapon = getWeaponByImg(itemImage);
-            return weapon.key;
-          case AppNotificationItemType.artifact:
-            final artifact = getArtifactForCardByImg(itemImage, searchByFullPath: true);
-            return artifact.key;
-          case AppNotificationItemType.monster:
-            final monster = getMonsterByImg(itemImage);
-            return monster.key;
-          case AppNotificationItemType.material:
-            final material = getMaterialByImage(itemImage);
-            return material.key;
-          default:
-            throw Exception('The provided notification item type = $notificationItemType');
-        }
-      default:
-        throw Exception('The provided notification type = $notificationType');
     }
   }
 

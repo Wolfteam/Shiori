@@ -20,7 +20,7 @@ class CalculatorAscMaterialsItemUpdateQuantityBloc
   Stream<CalculatorAscMaterialsItemUpdateQuantityState> mapEventToState(CalculatorAscMaterialsItemUpdateQuantityEvent event) async* {
     final s = await event.map(
       load: (e) async {
-        final material = _dataService.getMaterialFromInventoryByImage(e.image);
+        final material = _dataService.getMaterialFromInventory(e.key);
         return CalculatorAscMaterialsItemUpdateQuantityState.loaded(key: material.key, quantity: material.quantity);
       },
       update: (e) async {

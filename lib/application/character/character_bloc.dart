@@ -149,16 +149,16 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
       multiTalentAscensionMaterials: multiTalents,
       builds: char.builds.map((build) {
         return CharacterBuildCardModel(
-          isForSupport: build.isSupport,
+          type: build.type,
           subStatsToFocus: build.subStatsToFocus,
-          weapons: build.weaponImages.map((e) => _genshinService.getWeaponForCardByImg(e)).toList(),
+          weapons: build.weaponKeys.map((e) => _genshinService.getWeaponForCard(e)).toList(),
           artifacts: build.artifacts.map(
             (e) {
-              final one = e.one != null ? _genshinService.getArtifactForCardByImg(e.one!) : null;
+              final one = e.oneKey != null ? _genshinService.getArtifactForCard(e.oneKey!) : null;
               final multiples = e.multiples
                   .map((m) => CharacterBuildMultipleArtifactModel(
                         quantity: m.quantity,
-                        artifact: _genshinService.getArtifactForCardByImg(m.image),
+                        artifact: _genshinService.getArtifactForCard(m.key),
                       ))
                   .toList();
 
