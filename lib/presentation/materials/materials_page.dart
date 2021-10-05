@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
@@ -11,6 +10,7 @@ import 'package:shiori/presentation/shared/sliver_scaffold_with_fab.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
+import 'package:waterfall_flow/waterfall_flow.dart';
 
 import 'widgets/material_card.dart';
 
@@ -54,13 +54,16 @@ class MaterialsPage extends StatelessWidget {
             if (state.materials.isNotEmpty)
               SliverPadding(
                 padding: Styles.edgeInsetHorizontal5,
-                sliver: SliverStaggeredGrid.countBuilder(
-                  crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context, itemIsSmall: true),
-                  itemBuilder: (ctx, index) => MaterialCard.item(item: state.materials[index], isInSelectionMode: isInSelectionMode),
-                  itemCount: state.materials.length,
-                  crossAxisSpacing: isPortrait ? 10 : 5,
-                  mainAxisSpacing: 5,
-                  staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
+                sliver: SliverWaterfallFlow(
+                  gridDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context, itemIsSmall: true),
+                    crossAxisSpacing: isPortrait ? 10 : 5,
+                    mainAxisSpacing: 5,
+                  ),
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) => MaterialCard.item(item: state.materials[index], isInSelectionMode: isInSelectionMode),
+                    childCount: state.materials.length,
+                  ),
                 ),
               )
             else

@@ -29,7 +29,7 @@ class CharacterCardAscensionMaterialsBottom extends StatelessWidget {
         return state.map(
           loading: (_) => const Loading(useScaffold: false),
           loaded: (settingsState) => !settingsState.showCharacterDetails
-              ? Container()
+              ? const SizedBox()
               : IntrinsicHeight(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,

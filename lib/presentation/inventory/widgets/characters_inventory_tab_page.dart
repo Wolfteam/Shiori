@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/presentation/characters/characters_page.dart';
@@ -9,6 +8,7 @@ import 'package:shiori/presentation/shared/app_fab.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
+import 'package:waterfall_flow/waterfall_flow.dart';
 
 class CharactersInventoryTabPage extends StatefulWidget {
   @override
@@ -38,14 +38,15 @@ class _CharactersInventoryTabPageState extends State<CharactersInventoryTabPage>
         body: BlocBuilder<InventoryBloc, InventoryState>(
           builder: (ctx, state) => state.map(
             loading: (_) => const Loading(useScaffold: false),
-            loaded: (state) => StaggeredGridView.countBuilder(
+            loaded: (state) => WaterfallFlow.builder(
               controller: scrollController,
-              crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context),
-              itemBuilder: (ctx, index) => CharacterCard.item(char: state.characters[index]),
+              itemBuilder: (context, index) => CharacterCard.item(char: state.characters[index]),
               itemCount: state.characters.length,
-              crossAxisSpacing: isPortrait ? 10 : 5,
-              mainAxisSpacing: 5,
-              staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
+              gridDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+                crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context),
+                crossAxisSpacing: isPortrait ? 10 : 5,
+                mainAxisSpacing: 5,
+              ),
             ),
           ),
         ),

@@ -143,7 +143,7 @@ class WeaponCard extends StatelessWidget {
                     loading: (_) => const Loading(useScaffold: false),
                     loaded: (settingsState) {
                       if (withoutDetails || !settingsState.showWeaponDetails) {
-                        return Container();
+                        return const SizedBox();
                       }
 
                       return Container(

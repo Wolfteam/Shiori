@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -11,6 +10,7 @@ import 'package:shiori/presentation/shared/sliver_page_filter.dart';
 import 'package:shiori/presentation/shared/sliver_scaffold_with_fab.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
+import 'package:waterfall_flow/waterfall_flow.dart';
 
 import 'widgets/weapon_card.dart';
 
@@ -70,27 +70,16 @@ class _WeaponsPageState extends State<WeaponsPage> with AutomaticKeepAliveClient
     final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return SliverPadding(
       padding: const EdgeInsets.symmetric(horizontal: 5),
-      sliver: SliverStaggeredGrid.countBuilder(
-        crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context, isOnMainPage: !widget.isInSelectionMode),
-        itemBuilder: (ctx, index) {
-          final weapon = weapons[index];
-          return WeaponCard(
-            keyName: weapon.key,
-            baseAtk: weapon.baseAtk,
-            image: weapon.image,
-            name: weapon.name,
-            rarity: weapon.rarity,
-            type: weapon.type,
-            subStatType: weapon.subStatType,
-            subStatValue: weapon.subStatValue,
-            isInSelectionMode: widget.isInSelectionMode,
-            isComingSoon: weapon.isComingSoon,
-          );
-        },
-        itemCount: weapons.length,
-        crossAxisSpacing: isPortrait ? 10 : 5,
-        mainAxisSpacing: 5,
-        staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
+      sliver: SliverWaterfallFlow(
+        gridDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+          crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context, isOnMainPage: !widget.isInSelectionMode),
+          crossAxisSpacing: isPortrait ? 10 : 5,
+          mainAxisSpacing: 5,
+        ),
+        delegate: SliverChildBuilderDelegate(
+          (context, index) => WeaponCard.item(weapon: weapons[index], isInSelectionMode: widget.isInSelectionMode),
+          childCount: weapons.length,
+        ),
       ),
     );
   }
