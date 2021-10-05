@@ -110,8 +110,8 @@ class WeaponBottomSheet extends StatelessWidget {
 }
 
 class _OtherFilters extends StatelessWidget {
-  final ItemLocationType tempWeaponLocationType;
-  final StatType tempWeaponSubStatType;
+  final ItemLocationType? tempWeaponLocationType;
+  final StatType? tempWeaponSubStatType;
   final WeaponFilterType tempWeaponFilterType;
   final SortDirectionType tempSortDirectionType;
   final bool forEndDrawer;
@@ -131,20 +131,21 @@ class _OtherFilters extends StatelessWidget {
     return CommonButtonBar(
       alignment: WrapAlignment.spaceEvenly,
       children: [
-        ItemPopupMenuFilter<ItemLocationType>(
+        ItemPopupMenuFilterWithAllValue(
           tooltipText: s.location,
-          onSelected: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.weaponLocationTypeChanged(v)),
-          selectedValue: tempWeaponLocationType,
-          values: ItemLocationType.values.where((el) => el != ItemLocationType.na).toList(),
-          itemText: (val) => s.translateItemLocationType(val),
+          onAllOrValueSelected: (v) =>
+              context.read<WeaponsBloc>().add(WeaponsEvent.weaponLocationTypeChanged(v != null ? ItemLocationType.values[v] : null)),
+          selectedValue: tempWeaponLocationType?.index,
+          values: ItemLocationType.values.where((el) => el != ItemLocationType.na).map((e) => e.index).toList(),
+          itemText: (val) => s.translateItemLocationType(ItemLocationType.values[val]),
           icon: Icon(Icons.location_pin, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
-        ItemPopupMenuFilter<StatType>(
+        ItemPopupMenuFilterWithAllValue(
           tooltipText: s.secondaryState,
-          onSelected: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.weaponSubStatTypeChanged(v)),
-          selectedValue: tempWeaponSubStatType,
-          values: StatType.values.where((el) => !_ignoredSubStats.contains(el)).toList(),
-          itemText: (val) => s.translateStatTypeWithoutValue(val),
+          onAllOrValueSelected: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.weaponSubStatTypeChanged(v != null ? StatType.values[v] : null)),
+          selectedValue: tempWeaponSubStatType?.index,
+          values: StatType.values.where((el) => !_ignoredSubStats.contains(el)).map((e) => e.index).toList(),
+          itemText: (val) => s.translateStatTypeWithoutValue(StatType.values[val]),
           icon: Icon(Shiori.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
         ItemPopupMenuFilter<WeaponFilterType>(

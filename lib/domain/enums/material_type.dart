@@ -1,5 +1,4 @@
 enum MaterialType {
-  all,
   common,
   elementalStone,
   jewels,

@@ -22,9 +22,7 @@ class ArtifactBloc extends PopBloc<ArtifactEvent, ArtifactState> {
   ArtifactEvent getEventForPop(String? key) => ArtifactEvent.loadFromKey(key: key!, addToQueue: false);
 
   @override
-  Stream<ArtifactState> mapEventToState(
-    ArtifactEvent event,
-  ) async* {
+  Stream<ArtifactState> mapEventToState(ArtifactEvent event) async* {
     yield const ArtifactState.loading();
 
     final s = await event.map(

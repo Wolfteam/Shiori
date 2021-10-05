@@ -55,7 +55,7 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
   MonstersState _buildInitialState({
     String? search,
     List<String> excludeKeys = const [],
-    MonsterType type = MonsterType.all,
+    MonsterType? type,
     MonsterFilterType filterType = MonsterFilterType.name,
     SortDirectionType sortDirectionType = SortDirectionType.asc,
   }) {
@@ -83,7 +83,7 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
       data = data.where((el) => el.name.toLowerCase().contains(search.toLowerCase())).toList();
     }
 
-    if (type != MonsterType.all) {
+    if (type != null) {
       data = data.where((el) => el.type == type).toList();
     }
 
@@ -101,11 +101,7 @@ class MonstersBloc extends Bloc<MonstersEvent, MonstersState> {
     return s;
   }
 
-  List<MonsterCardModel> _sortData(
-    List<MonsterCardModel> data,
-    MonsterFilterType filterType,
-    SortDirectionType sortDirectionType,
-  ) {
+  List<MonsterCardModel> _sortData(List<MonsterCardModel> data, MonsterFilterType filterType, SortDirectionType sortDirectionType) {
     switch (filterType) {
       case MonsterFilterType.name:
         return sortDirectionType == SortDirectionType.asc ? data.orderBy((el) => el.name).toList() : data.orderByDescending((el) => el.name).toList();

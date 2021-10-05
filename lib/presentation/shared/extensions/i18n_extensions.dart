@@ -74,9 +74,7 @@ extension I18nExtensions on S {
         return bpBounty;
       case ItemLocationType.quest:
         return quest;
-      case ItemLocationType.all:
-        return all;
-      case ItemLocationType.ps4:
+      case ItemLocationType.playstation:
         return playstation;
       default:
         throw Exception('The provided location type = $type is not valid');
@@ -97,8 +95,6 @@ extension I18nExtensions on S {
 
   String translateStatType(StatType type, double value) {
     switch (type) {
-      case StatType.all:
-        return all;
       case StatType.atk:
         return atk(value);
       case StatType.atkPercentage:
@@ -207,8 +203,6 @@ extension I18nExtensions on S {
 
   String translateReleasedUnreleasedType(ItemStatusType type) {
     switch (type) {
-      case ItemStatusType.all:
-        return all;
       case ItemStatusType.released:
         return released;
       case ItemStatusType.comingSoon:
@@ -267,8 +261,6 @@ extension I18nExtensions on S {
         return utility;
       case CharacterRoleType.na:
         return na;
-      case CharacterRoleType.all:
-        return all;
       default:
         throw Exception('Invalid character type = $type');
     }
@@ -382,8 +374,6 @@ extension I18nExtensions on S {
 
   String translateMaterialType(MaterialType type) {
     switch (type) {
-      case MaterialType.all:
-        return all;
       case MaterialType.common:
         return common;
       case MaterialType.elementalStone:
@@ -413,8 +403,6 @@ extension I18nExtensions on S {
 
   String translateMonsterType(MonsterType type) {
     switch (type) {
-      case MonsterType.all:
-        return all;
       case MonsterType.abyssOrder:
         return abyssOrder;
       case MonsterType.elementalLifeForm:

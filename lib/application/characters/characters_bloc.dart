@@ -20,9 +20,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   _LoadedState get currentState => state as _LoadedState;
 
   @override
-  Stream<CharactersState> mapEventToState(
-    CharactersEvent event,
-  ) async* {
+  Stream<CharactersState> mapEventToState(CharactersEvent event) async* {
     final s = event.map(
       init: (e) => _buildInitialState(excludeKeys: e.excludeKeys, elementTypes: ElementType.values, weaponTypes: WeaponType.values),
       characterFilterTypeChanged: (e) => currentState.copyWith.call(tempCharacterFilterType: e.characterFilterType),
@@ -98,10 +96,10 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     List<WeaponType> weaponTypes = const [],
     List<ElementType> elementTypes = const [],
     int rarity = 0,
-    ItemStatusType statusType = ItemStatusType.all,
+    ItemStatusType? statusType,
     CharacterFilterType characterFilterType = CharacterFilterType.name,
     SortDirectionType sortDirectionType = SortDirectionType.asc,
-    CharacterRoleType roleType = CharacterRoleType.all,
+    CharacterRoleType? roleType,
     RegionType? regionType,
   }) {
     final isLoaded = state is _LoadedState;
@@ -154,7 +152,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
       characters = characters.where((el) => elementTypes.contains(el.elementType)).toList();
     }
 
-    if (roleType != CharacterRoleType.all) {
+    if (roleType != null) {
       characters = characters.where((el) => el.roleType == roleType).toList();
     }
 
@@ -202,11 +200,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     return s;
   }
 
-  void _sortData(
-    List<CharacterCardModel> data,
-    CharacterFilterType characterFilterType,
-    SortDirectionType sortDirectionType,
-  ) {
+  void _sortData(List<CharacterCardModel> data, CharacterFilterType characterFilterType, SortDirectionType sortDirectionType) {
     switch (characterFilterType) {
       case CharacterFilterType.name:
         if (sortDirectionType == SortDirectionType.asc) {

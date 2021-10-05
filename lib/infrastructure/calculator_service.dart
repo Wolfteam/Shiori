@@ -66,8 +66,6 @@ class CalculatorServiceImpl implements CalculatorService {
           case MaterialType.expCharacter:
             key = AscensionMaterialSummaryType.exp;
             break;
-          case MaterialType.all:
-            throw Exception('Material type ${material.type} should not be here');
         }
         newValue = MaterialSummary(
           key: material.key,

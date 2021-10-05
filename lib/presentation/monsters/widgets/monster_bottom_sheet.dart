@@ -71,7 +71,7 @@ class MonsterBottomSheet extends StatelessWidget {
 }
 
 class _OtherFilters extends StatelessWidget {
-  final MonsterType tempType;
+  final MonsterType? tempType;
   final MonsterFilterType tempFilterType;
   final SortDirectionType tempSortDirectionType;
   final bool forEndDrawer;
@@ -90,12 +90,12 @@ class _OtherFilters extends StatelessWidget {
     return CommonButtonBar(
       alignment: WrapAlignment.spaceEvenly,
       children: [
-        ItemPopupMenuFilter<MonsterType>(
+        ItemPopupMenuFilterWithAllValue(
           tooltipText: s.type,
-          onSelected: (v) => context.read<MonstersBloc>().add(MonstersEvent.typeChanged(v)),
-          selectedValue: tempType,
-          values: MonsterType.values,
-          itemText: (val) => s.translateMonsterType(val),
+          onAllOrValueSelected: (v) => context.read<MonstersBloc>().add(MonstersEvent.typeChanged(v != null ? MonsterType.values[v] : null)),
+          selectedValue: tempType?.index,
+          values: MonsterType.values.map((e) => e.index).toList(),
+          itemText: (val) => s.translateMonsterType(MonsterType.values[val]),
           icon: Icon(Icons.filter_list_alt, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, true)),
         ),
         ItemPopupMenuFilter<MonsterFilterType>(

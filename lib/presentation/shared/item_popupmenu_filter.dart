@@ -30,7 +30,7 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
     final translatedValues = getTranslatedValues(context);
     final valuesToUse = getValuesToUse(translatedValues);
     return PopupMenuButton<TEnum>(
-      padding: const EdgeInsets.all(0),
+      padding: EdgeInsets.zero,
       initialValue: selectedValue,
       icon: icon,
       onSelected: handleItemSelected,

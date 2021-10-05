@@ -10,7 +10,7 @@ class MaterialsEvent with _$MaterialsEvent {
 
   const factory MaterialsEvent.rarityChanged(int rarity) = _RarityChanged;
 
-  const factory MaterialsEvent.typeChanged(MaterialType type) = _TypeChanged;
+  const factory MaterialsEvent.typeChanged(MaterialType? type) = _TypeChanged;
 
   const factory MaterialsEvent.filterTypeChanged(MaterialFilterType type) = _FilterTypeChanged;
 

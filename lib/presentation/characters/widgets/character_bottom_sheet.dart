@@ -109,8 +109,8 @@ class CharacterBottomSheet extends StatelessWidget {
 }
 
 class _OtherFilters extends StatelessWidget {
-  final ItemStatusType tempStatusType;
-  final CharacterRoleType tempRoleType;
+  final ItemStatusType? tempStatusType;
+  final CharacterRoleType? tempRoleType;
   final RegionType? tempRegionType;
   final CharacterFilterType tempCharacterFilterType;
   final SortDirectionType tempSortDirectionType;
@@ -133,20 +133,22 @@ class _OtherFilters extends StatelessWidget {
       spacing: 5,
       alignment: WrapAlignment.spaceBetween,
       children: [
-        ItemPopupMenuFilter<ItemStatusType>(
+        ItemPopupMenuFilterWithAllValue(
           tooltipText: '${s.released} / ${s.brandNew} / ${s.comingSoon}',
-          values: ItemStatusType.values,
-          selectedValue: tempStatusType,
-          onSelected: (v) => context.read<CharactersBloc>().add(CharactersEvent.itemStatusChanged(v)),
+          values: ItemStatusType.values.map((e) => e.index).toList(),
+          selectedValue: tempStatusType?.index,
+          onAllOrValueSelected: (v) =>
+              context.read<CharactersBloc>().add(CharactersEvent.itemStatusChanged(v != null ? ItemStatusType.values[v] : null)),
           icon: Icon(Shiori.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
-          itemText: (val) => s.translateReleasedUnreleasedType(val),
+          itemText: (val) => s.translateReleasedUnreleasedType(ItemStatusType.values[val]),
         ),
-        ItemPopupMenuFilter<CharacterRoleType>(
+        ItemPopupMenuFilterWithAllValue(
           tooltipText: s.role,
-          values: CharacterRoleType.values.where((el) => el != CharacterRoleType.na).toList(),
-          selectedValue: tempRoleType,
-          onSelected: (v) => context.read<CharactersBloc>().add(CharactersEvent.roleTypeChanged(v)),
-          itemText: (val) => s.translateCharacterType(val),
+          values: CharacterRoleType.values.where((el) => el != CharacterRoleType.na).map((e) => e.index).toList(),
+          selectedValue: tempRoleType?.index,
+          onAllOrValueSelected: (v) =>
+              context.read<CharactersBloc>().add(CharactersEvent.roleTypeChanged(v != null ? CharacterRoleType.values[v] : null)),
+          itemText: (val) => s.translateCharacterType(CharacterRoleType.values[val]),
           icon: Icon(Shiori.trefoil_lily, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
         ItemPopupMenuFilterWithAllValue(

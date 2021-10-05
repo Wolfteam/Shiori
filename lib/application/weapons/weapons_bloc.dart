@@ -20,9 +20,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
   _LoadedState get currentState => state as _LoadedState;
 
   @override
-  Stream<WeaponsState> mapEventToState(
-    WeaponsEvent event,
-  ) async* {
+  Stream<WeaponsState> mapEventToState(WeaponsEvent event) async* {
     final s = event.map(
       init: (e) => _buildInitialState(excludeKeys: e.excludeKeys, weaponTypes: WeaponType.values),
       weaponFilterTypeChanged: (e) => currentState.copyWith.call(tempWeaponFilterType: e.filterType),
@@ -84,8 +82,8 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
     int rarity = 0,
     WeaponFilterType weaponFilterType = WeaponFilterType.rarity,
     SortDirectionType sortDirectionType = SortDirectionType.asc,
-    StatType weaponSubStatType = StatType.all,
-    ItemLocationType locationType = ItemLocationType.all,
+    StatType? weaponSubStatType,
+    ItemLocationType? locationType,
   }) {
     final isLoaded = state is _LoadedState;
     var data = _genshinService.getWeaponsForCard();
@@ -128,11 +126,11 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
       data = data.where((el) => weaponTypes.contains(el.type)).toList();
     }
 
-    if (weaponSubStatType != StatType.all) {
+    if (weaponSubStatType != null) {
       data = data.where((el) => el.subStatType == weaponSubStatType).toList();
     }
 
-    if (locationType != ItemLocationType.all) {
+    if (locationType != null) {
       data = data.where((el) => el.locationType == locationType).toList();
     }
 
@@ -158,11 +156,7 @@ class WeaponsBloc extends Bloc<WeaponsEvent, WeaponsState> {
     return s;
   }
 
-  void _sortData(
-    List<WeaponCardModel> data,
-    WeaponFilterType weaponFilterType,
-    SortDirectionType sortDirectionType,
-  ) {
+  void _sortData(List<WeaponCardModel> data, WeaponFilterType weaponFilterType, SortDirectionType sortDirectionType) {
     switch (weaponFilterType) {
       case WeaponFilterType.atk:
         if (sortDirectionType == SortDirectionType.asc) {
