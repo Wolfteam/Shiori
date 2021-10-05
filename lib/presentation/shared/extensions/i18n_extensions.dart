@@ -251,14 +251,18 @@ extension I18nExtensions on S {
     }
   }
 
-  String translateCharacterType(CharacterRoleType type) {
+  String translateCharacterRoleType(CharacterRoleType type) {
     switch (type) {
-      case CharacterRoleType.mainDps:
-        return mainDps;
-      case CharacterRoleType.supportDps:
-        return supportDps;
-      case CharacterRoleType.utility:
-        return utility;
+      case CharacterRoleType.dps:
+        return charRoleDps;
+      case CharacterRoleType.subDps:
+        return charRoleSubDps;
+      case CharacterRoleType.burstSupport:
+        return charRoleBurstSupport;
+      case CharacterRoleType.support:
+        return charRoleSupport;
+      case CharacterRoleType.offFieldDps:
+        return charRoleOffFieldDps;
       case CharacterRoleType.na:
         return na;
       default:

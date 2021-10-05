@@ -148,7 +148,7 @@ class _OtherFilters extends StatelessWidget {
           selectedValue: tempRoleType?.index,
           onAllOrValueSelected: (v) =>
               context.read<CharactersBloc>().add(CharactersEvent.roleTypeChanged(v != null ? CharacterRoleType.values[v] : null)),
-          itemText: (val) => s.translateCharacterType(CharacterRoleType.values[val]),
+          itemText: (val) => s.translateCharacterRoleType(CharacterRoleType.values[val]),
           icon: Icon(Shiori.trefoil_lily, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
         ItemPopupMenuFilterWithAllValue(

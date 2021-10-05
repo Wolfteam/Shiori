@@ -12,7 +12,7 @@ import 'package:shiori/presentation/weapons/widgets/weapon_card.dart';
 
 class CharacterDetailBuildCard extends StatelessWidget {
   final ElementType elementType;
-  final bool isForSupport;
+  final CharacterRoleType type;
   final List<WeaponCardModel> weapons;
   final List<CharacterBuildArtifactModel> artifacts;
   final List<StatType> subStatsToFocus;
@@ -23,7 +23,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
   CharacterDetailBuildCard({
     Key? key,
     required this.elementType,
-    required this.isForSupport,
+    required this.type,
     required this.weapons,
     required this.artifacts,
     required this.subStatsToFocus,
@@ -43,7 +43,7 @@ class CharacterDetailBuildCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              isForSupport ? s.support : s.dps,
+              s.translateCharacterRoleType(type),
               style: theme.textTheme.headline6!.copyWith(color: elementType.getElementColorFromContext(context)),
             ),
             Container(

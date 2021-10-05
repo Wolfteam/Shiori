@@ -55,7 +55,7 @@ class MaterialItem extends StatelessWidget {
   }
 
   Future<void> _showQuantityPickerDialog(BuildContext context) async {
-    context.read<CalculatorAscMaterialsItemUpdateQuantityBloc>().add(CalculatorAscMaterialsItemUpdateQuantityEvent.load(image: image));
+    context.read<CalculatorAscMaterialsItemUpdateQuantityBloc>().add(CalculatorAscMaterialsItemUpdateQuantityEvent.load(key: itemKey));
     await showDialog<int>(
       context: context,
       builder: (_) => ChangeMaterialQuantityDialog(sessionKey: sessionKey),
