@@ -156,9 +156,6 @@
   "quest": "请求",
   "subStat": "属性",
   "na": "N/A",
-  "mainDps": "主C",
-  "supportDps": "副C",
-  "utility": "辅助",
   "normalAttack": "普通攻击",
   "elementalSkill": "元素战技",
   "elementalBurst": "元素爆发",
@@ -364,5 +361,10 @@
   "tools": "工具",
   "privacy": "隐私",
   "privacyMsgA": "该 App 不会收集任何个人数据及可能用于识别、跟踪用户的信息。",
-  "privacyMsgB": "App 仅收集关于程序崩溃和使用的数据。这些信息用于识别和修复漏洞，并为程序功能的使用频率提供参考。"
+  "privacyMsgB": "App 仅收集关于程序崩溃和使用的数据。这些信息用于识别和修复漏洞，并为程序功能的使用频率提供参考。",
+  "charRoleDps": "DPS",
+  "charRoleSupport": "Support",
+  "charRoleSubDps": "Sub-DPS",
+  "charRoleOffFieldDps": "Off-Field DPS",
+  "charRoleBurstSupport": "Burst Support"
 }

@@ -156,9 +156,6 @@
   "quest": "Nhiệm vụ",
   "subStat": "Stats Phụ",
   "na": "N/A",
-  "mainDps": "Main DPS",
-  "supportDps": "Support DPS",
-  "utility": "Utility",
   "normalAttack": "Tấn Công Thường",
   "elementalSkill": "Kỹ Năng Nguyên Tố",
   "elementalBurst": "Kỹ Năng Nộ",
@@ -364,5 +361,10 @@
   "tools": "Công cụ hỗ trợ",
   "privacy": "Quyền riêng tư",
   "privacyMsgA": "Ứng dụng này không thu thập bất kì thông tin nào của bạn nhằm mục đính theo dõi.",
-  "privacyMsgB": "Dữ liệu thu thập duy nhất là những thông tin về sự cố và việc sử dụng ứng dụng. Những thông tin này cần thiết cho việc xác định lỗi hoặc tính năng ứng dụng nào được sử dụng nhiều để đưa ra những thay đổi phù hợp yêu cầu người dùng."
+  "privacyMsgB": "Dữ liệu thu thập duy nhất là những thông tin về sự cố và việc sử dụng ứng dụng. Những thông tin này cần thiết cho việc xác định lỗi hoặc tính năng ứng dụng nào được sử dụng nhiều để đưa ra những thay đổi phù hợp yêu cầu người dùng.",
+  "charRoleDps": "DPS",
+  "charRoleSupport": "Support",
+  "charRoleSubDps": "Sub-DPS",
+  "charRoleOffFieldDps": "Off-Field DPS",
+  "charRoleBurstSupport": "Burst Support"
 }

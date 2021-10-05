@@ -156,9 +156,6 @@
   "quest": "任務",
   "subStat": "サブ効果",
   "na": "N/A",
-  "mainDps": "メインアタッカー",
-  "supportDps": "サブアタッカー",
-  "utility": "サポーター",
   "normalAttack": "通常攻撃",
   "elementalSkill": "元素スキル",
   "elementalBurst": "元素爆発",
@@ -364,5 +361,10 @@
   "tools": "ツール",
   "privacy": "プライバシー",
   "privacyMsgA": "このアプリは、ユーザーの追跡や識別に使用される可能性のある個人データや情報を収集しません。",
-  "privacyMsgB": "収集されるデータは、クラッシュとアプリの使用状況のみです。 この情報は、バグの特定と修正に役立ちます。 また、アプリ内で最も使用されている機能と、優先すべき機能を特定することも役立ちます。"
+  "privacyMsgB": "収集されるデータは、クラッシュとアプリの使用状況のみです。 この情報は、バグの特定と修正に役立ちます。 また、アプリ内で最も使用されている機能と、優先すべき機能を特定することも役立ちます。",
+  "charRoleDps": "DPS",
+  "charRoleSupport": "Support",
+  "charRoleSubDps": "Sub-DPS",
+  "charRoleOffFieldDps": "Off-Field DPS",
+  "charRoleBurstSupport": "Burst Support"
 }
