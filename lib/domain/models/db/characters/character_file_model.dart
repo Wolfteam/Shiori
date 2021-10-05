@@ -91,8 +91,8 @@ class CharacterFileMultiTalentAscensionMaterialModel with _$CharacterFileMultiTa
 @freezed
 class CharacterFileBuild with _$CharacterFileBuild {
   factory CharacterFileBuild({
-    required bool isSupport,
-    required List<String> weaponImages,
+    required CharacterRoleType type,
+    required List<String> weaponKeys,
     required List<CharacterFileArtifactBuild> artifacts,
     required List<StatType> subStatsToFocus,
   }) = _CharacterFileBuild;
@@ -104,10 +104,8 @@ class CharacterFileBuild with _$CharacterFileBuild {
 
 @freezed
 class CharacterFileArtifactBuild with _$CharacterFileArtifactBuild {
-  String? get fullImagePath => one != null ? Assets.getArtifactPath(one!) : null;
-
   factory CharacterFileArtifactBuild({
-    String? one,
+    String? oneKey,
     required List<CharacterFileArtifactMultipleBuild> multiples,
     required List<StatType> stats,
   }) = _CharacterFileArtifactBuild;
@@ -119,11 +117,9 @@ class CharacterFileArtifactBuild with _$CharacterFileArtifactBuild {
 
 @freezed
 class CharacterFileArtifactMultipleBuild with _$CharacterFileArtifactMultipleBuild {
-  String get fullImagePath => Assets.getArtifactPath(image);
-
   factory CharacterFileArtifactMultipleBuild({
+    required String key,
     required int quantity,
-    required String image,
   }) = _CharacterFileArtifactMultipleBuild;
 
   CharacterFileArtifactMultipleBuild._();

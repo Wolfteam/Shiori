@@ -16,29 +16,26 @@ abstract class GenshinService {
   List<CharacterCardModel> getCharactersForCard();
   CharacterCardModel getCharacterForCard(String key);
   CharacterFileModel getCharacter(String key);
-  CharacterFileModel getCharacterByImg(String img);
   List<CharacterFileModel> getCharactersForBirthday(DateTime date);
   List<TierListRowModel> getDefaultCharacterTierList(List<int> colors);
   List<String> getUpcomingCharactersKeys();
 
   List<WeaponCardModel> getWeaponsForCard();
   WeaponCardModel getWeaponForCard(String key);
-  WeaponCardModel getWeaponForCardByImg(String image);
   WeaponFileModel getWeapon(String key);
   WeaponFileModel getWeaponByImg(String img);
   List<String> getUpcomingWeaponsKeys();
 
   List<ArtifactCardModel> getArtifactsForCard();
-  ArtifactCardModel getArtifactForCardByImg(String image);
+  ArtifactCardModel getArtifactForCard(String key);
   ArtifactFileModel getArtifact(String key);
 
-  //TODO: RENAME THIS METHODS
-  List<ItemCommon> getCharacterImgsUsingWeapon(String key);
-  List<ItemCommon> getCharacterImgsUsingArtifact(String key);
-  List<ItemCommon> getCharacterImgsUsingMaterial(String key);
-  List<ItemCommon> getWeaponImgsUsingMaterial(String key);
-  List<ItemCommon> getRelatedMonsterImgsToMaterial(String key);
-  List<ItemCommon> getRelatedMonsterImgsToArtifact(String key);
+  List<ItemCommon> getCharacterForItemsUsingWeapon(String key);
+  List<ItemCommon> getCharacterForItemsUsingArtifact(String key);
+  List<ItemCommon> getCharacterForItemsUsingMaterial(String key);
+  List<ItemCommon> getWeaponForItemsUsingMaterial(String key);
+  List<ItemCommon> getRelatedMonsterToMaterialForItems(String key);
+  List<ItemCommon> getRelatedMonsterToArtifactForItems(String key);
 
   TranslationArtifactFile getArtifactTranslation(String key);
   TranslationCharacterFile getCharacterTranslation(String key);
@@ -76,7 +73,6 @@ abstract class GenshinService {
 
   String getItemImageFromNotificationType(String itemKey, AppNotificationType notificationType, {AppNotificationItemType? notificationItemType});
   String getItemImageFromNotificationItemType(String itemKey, AppNotificationItemType notificationItemType);
-  String getItemKeyFromNotificationType(String itemImage, AppNotificationType notificationType, {AppNotificationItemType? notificationItemType});
 
   List<GadgetFileModel> getAllGadgetsForNotifications();
   GadgetFileModel getGadget(String key);

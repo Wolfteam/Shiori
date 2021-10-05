@@ -3,13 +3,13 @@ import 'package:shiori/domain/enums/enums.dart';
 import '../models.dart';
 
 class CharacterBuildCardModel {
-  final bool isForSupport;
+  final CharacterRoleType type;
   final List<WeaponCardModel> weapons;
   final List<CharacterBuildArtifactModel> artifacts;
   final List<StatType> subStatsToFocus;
 
   CharacterBuildCardModel({
-    required this.isForSupport,
+    required this.type,
     required this.weapons,
     required this.artifacts,
     required this.subStatsToFocus,

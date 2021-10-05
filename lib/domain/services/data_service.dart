@@ -47,7 +47,7 @@ abstract class DataService {
 
   List<MaterialCardModel> getAllMaterialsInInventory();
 
-  MaterialCardModel getMaterialFromInventoryByImage(String image);
+  MaterialCardModel getMaterialFromInventory(String image);
 
   Future<void> addItemToInventory(String key, ItemType type, int quantity);
 
