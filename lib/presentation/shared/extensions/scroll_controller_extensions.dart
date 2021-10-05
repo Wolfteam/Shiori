@@ -20,5 +20,5 @@ extension ScrollControllerExtensions on ScrollController {
     }
   }
 
-  void goToTheTop() => animateTo(0, duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
+  void goToTheTop() => animateTo(0, duration: const Duration(milliseconds: 2000), curve: Curves.easeInOut);
 }
