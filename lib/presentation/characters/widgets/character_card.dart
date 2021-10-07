@@ -53,7 +53,7 @@ class CharacterCard extends StatelessWidget {
         elementType = char.elementType,
         isComingSoon = char.isComingSoon,
         isNew = char.isNew,
-        image = char.logoName,
+        image = char.image,
         name = char.name,
         rarity = char.stars,
         weaponType = char.weaponType,

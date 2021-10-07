@@ -139,6 +139,7 @@ class Assets {
     switch (languageType) {
       case AppLanguageType.french:
       case AppLanguageType.english:
+      case AppLanguageType.italian:
         return '$translationsBasePath/en.json';
       case AppLanguageType.spanish:
         return '$translationsBasePath/es.json';
@@ -148,8 +149,8 @@ class Assets {
         return '$translationsBasePath/zh_CN.json';
       case AppLanguageType.portuguese:
         return '$translationsBasePath/pt.json';
-      case AppLanguageType.italian:
-        return '$translationsBasePath/it.json';
+      // case AppLanguageType.italian:
+      // return '$translationsBasePath/it.json';
       case AppLanguageType.japanese:
         return '$translationsBasePath/ja.json';
       case AppLanguageType.vietnamese:

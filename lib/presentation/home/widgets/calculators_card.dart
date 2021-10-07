@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/calculator_asc_materials/calculator_sessions_page.dart';
+import 'package:shiori/presentation/home/widgets/card_description.dart';
 
 import 'card_item.dart';
 
@@ -24,11 +25,7 @@ class CalculatorsCard extends StatelessWidget {
       iconToTheLeft: iconToTheLeft,
       icon: Icon(Icons.calculate, size: 60, color: theme.accentColor),
       children: [
-        Text(
-          s.ascensionMaterialsCalculatorMsg,
-          textAlign: TextAlign.center,
-          style: theme.textTheme.subtitle2,
-        ),
+        CardDescription(text: s.ascensionMaterialsCalculatorMsg),
       ],
     );
   }

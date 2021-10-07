@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/home/widgets/card_description.dart';
 import 'package:shiori/presentation/wish_simulator/wish_simulator_page.dart';
 
 import 'card_item.dart';
@@ -23,7 +24,7 @@ class WishSimulatorCard extends StatelessWidget {
       onClick: _gotoWishSimulatorPage,
       icon: Image.asset(Assets.getOtherMaterialPath('gacha.png'), width: 60, height: 60, color: theme.accentColor),
       children: [
-        Text(s.tryYourLuck, style: theme.textTheme.subtitle2, textAlign: TextAlign.center),
+        CardDescription(text: s.tryYourLuck),
       ],
     );
   }

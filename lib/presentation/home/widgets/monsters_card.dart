@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/home/widgets/card_description.dart';
 import 'package:shiori/presentation/home/widgets/card_item.dart';
 import 'package:shiori/presentation/monsters/monsters_page.dart';
 
@@ -24,11 +25,7 @@ class MonstersCard extends StatelessWidget {
       iconToTheLeft: iconToTheLeft,
       icon: Image.asset(Assets.getOtherMaterialPath('monster.png'), width: 60, height: 60, color: theme.accentColor),
       children: [
-        Text(
-          s.checkAllMonsters,
-          style: theme.textTheme.subtitle2,
-          textAlign: TextAlign.center,
-        ),
+        CardDescription(text: s.checkAllMonsters),
       ],
     );
   }

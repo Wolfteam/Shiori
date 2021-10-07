@@ -21,21 +21,21 @@ extension I18nExtensions on S {
       case AppLanguageType.english:
         return english;
       case AppLanguageType.spanish:
-        return '$spanish ($partial)';
+        return spanish;
       case AppLanguageType.russian:
-        return '$russian ($partial)';
+        return russian;
       case AppLanguageType.simplifiedChinese:
-        return '$simplifiedChinese ($partial)';
+        return simplifiedChinese;
       case AppLanguageType.portuguese:
-        return '$portuguese ($partial)';
+        return portuguese;
       case AppLanguageType.italian:
         return '$italian ($partial)';
       case AppLanguageType.japanese:
-        return '$japanese ($partial)';
+        return japanese;
       case AppLanguageType.vietnamese:
-        return '$vietnamese ($partial)';
+        return vietnamese;
       case AppLanguageType.indonesian:
-        return '$indonesian ($partial)';
+        return indonesian;
       default:
         throw Exception('The provided app lang = $lang is not valid');
     }
