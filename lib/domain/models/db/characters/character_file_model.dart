@@ -19,6 +19,8 @@ class CharacterFileModel with _$CharacterFileModel {
 
   String get fullImagePath => Assets.getCharacterPath(image);
 
+  String? get fullSecondImagePath => secondFullImage != null ? Assets.getCharacterFullPath(secondFullImage!) : null;
+
   factory CharacterFileModel({
     required String key,
     required int rarity,

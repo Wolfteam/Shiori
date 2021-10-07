@@ -2,7 +2,7 @@ import '../../enums/enums.dart';
 
 class CharacterCardModel {
   final String key;
-  final String logoName;
+  final String image;
   final String name;
   final int stars;
   final WeaponType weaponType;
@@ -15,7 +15,7 @@ class CharacterCardModel {
 
   const CharacterCardModel({
     required this.key,
-    required this.logoName,
+    required this.image,
     required this.name,
     required this.stars,
     required this.weaponType,

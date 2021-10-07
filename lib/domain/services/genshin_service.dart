@@ -41,6 +41,7 @@ abstract class GenshinService {
   TranslationCharacterFile getCharacterTranslation(String key);
   TranslationWeaponFile getWeaponTranslation(String key);
   TranslationMaterialFile getMaterialTranslation(String key);
+  TranslationMonsterFile getMonsterTranslation(String key);
   List<MaterialFileModel> getAllMaterialsThatCanBeObtainedFromAnExpedition();
   List<MaterialFileModel> getAllMaterialsThatHaveAFarmingRespawnDuration();
 

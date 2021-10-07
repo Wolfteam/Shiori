@@ -282,6 +282,11 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
+  TranslationMonsterFile getMonsterTranslation(String key) {
+    return _translationFile.monsters.firstWhere((el) => el.key == key);
+  }
+
+  @override
   List<TodayCharAscensionMaterialsModel> getCharacterAscensionMaterials(int day) {
     final iterable = day == DateTime.sunday
         ? _materialsFile.talents.where((t) => t.days.isNotEmpty && t.level == 0)
@@ -750,7 +755,7 @@ class GenshinServiceImpl implements GenshinService {
     return CharacterCardModel(
       key: character.key,
       elementType: character.elementType,
-      logoName: Assets.getCharacterPath(character.image),
+      image: Assets.getCharacterPath(character.image),
       materials: quickMaterials.map((m) => m.fullImagePath).toList(),
       name: translation.name,
       stars: character.rarity,
@@ -809,7 +814,7 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   MonsterCardModel _toMonsterForCard(MonsterFileModel monster) {
-    final translation = _translationFile.monsters.firstWhere((el) => el.key == monster.key);
+    final translation = getMonsterTranslation(monster.key);
     return MonsterCardModel(
       key: monster.key,
       image: monster.fullImagePath,

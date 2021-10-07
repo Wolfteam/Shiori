@@ -307,7 +307,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
         switch (newValue) {
           case AppNotificationItemType.character:
             final character = _genshinService.getCharactersForCard().first;
-            images.add(NotificationItemImage(itemKey: character.key, image: character.logoName, isSelected: true));
+            images.add(NotificationItemImage(itemKey: character.key, image: character.image, isSelected: true));
             break;
           case AppNotificationItemType.weapon:
             final weapon = _genshinService.getWeaponsForCard().first;
