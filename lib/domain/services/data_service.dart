@@ -3,6 +3,8 @@ import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
 
 abstract class DataService {
+  Future<void> init();
+
   List<CalculatorSessionModel> getAllCalAscMatSessions();
 
   CalculatorSessionModel getCalcAscMatSession(int sessionKey);

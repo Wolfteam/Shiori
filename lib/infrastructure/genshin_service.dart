@@ -44,10 +44,6 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.charactersDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _charactersFile = CharactersFile.fromJson(json);
-    assert(
-      _charactersFile.characters.map((e) => e.key).toSet().length == _charactersFile.characters.length,
-      'All the character keys must be unique',
-    );
   }
 
   @override
@@ -55,10 +51,6 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.weaponsDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _weaponsFile = WeaponsFile.fromJson(json);
-    assert(
-      _weaponsFile.weapons.map((e) => e.key).toSet().length == _weaponsFile.weapons.length,
-      'All the weapon keys must be unique',
-    );
   }
 
   @override
@@ -66,10 +58,6 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.artifactsDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _artifactsFile = ArtifactsFile.fromJson(json);
-    assert(
-      _artifactsFile.artifacts.map((e) => e.key).toSet().length == _artifactsFile.artifacts.length,
-      'All the artifact keys must be unique',
-    );
   }
 
   @override
@@ -77,11 +65,6 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.materialsDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _materialsFile = MaterialsFile.fromJson(json);
-    //TODO: MOVE ALL THIS ASSERTS TO A TEST
-    assert(
-      _materialsFile.materials.map((e) => e.key).toSet().length == _materialsFile.materials.length,
-      'All the material keys must be unique',
-    );
   }
 
   @override
@@ -96,10 +79,6 @@ class GenshinServiceImpl implements GenshinService {
     final jsonStr = await rootBundle.loadString(Assets.monstersDbPath);
     final json = jsonDecode(jsonStr) as Map<String, dynamic>;
     _monstersFile = MonstersFile.fromJson(json);
-    assert(
-      _monstersFile.monsters.map((e) => e.key).toSet().length == _monstersFile.monsters.length,
-      'All the monster keys must be unique',
-    );
   }
 
   @override
@@ -208,11 +187,6 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  WeaponFileModel getWeaponByImg(String img) {
-    return _weaponsFile.weapons.firstWhere((element) => Assets.getWeaponPath(element.image, element.type) == img);
-  }
-
-  @override
   List<ItemCommon> getCharacterForItemsUsingWeapon(String key) {
     final weapon = getWeapon(key);
     final items = <ItemCommon>[];
@@ -297,7 +271,9 @@ class GenshinServiceImpl implements GenshinService {
       final characters = <ItemCommon>[];
 
       for (final char in _charactersFile.characters) {
-        if (char.isComingSoon) continue;
+        if (char.isComingSoon) {
+          continue;
+        }
         final normalAscMaterial = char.ascensionMaterials.expand((m) => m.materials).where((m) => m.key == e.key).isNotEmpty ||
             char.talentAscensionMaterials.expand((m) => m.materials).where((m) => m.key == e.key).isNotEmpty;
 
@@ -562,19 +538,8 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  MonsterFileModel getMonsterByImg(String image) {
-    return _monstersFile.monsters.firstWhere((el) => el.fullImagePath == image);
-  }
-
-  @override
   List<MonsterCardModel> getAllMonstersForCard() {
     return _monstersFile.monsters.map((e) => _toMonsterForCard(e)).toList();
-  }
-
-  @override
-  MonsterCardModel getMonsterForCardByImg(String image) {
-    final monster = _monstersFile.monsters.firstWhere((el) => el.fullImagePath == image);
-    return _toMonsterForCard(monster);
   }
 
   @override
@@ -695,13 +660,8 @@ class GenshinServiceImpl implements GenshinService {
   }
 
   @override
-  GadgetFileModel getGadget(String? key) {
+  GadgetFileModel getGadget(String key) {
     return _gadgetsFile.gadgets.firstWhere((m) => m.key == key);
-  }
-
-  @override
-  GadgetFileModel getGadgetByImage(String image) {
-    return _gadgetsFile.gadgets.firstWhere((m) => m.fullImagePath == image);
   }
 
   @override
@@ -712,11 +672,6 @@ class GenshinServiceImpl implements GenshinService {
   @override
   FurnitureFileModel getFurniture(String key) {
     return _furnitureFile.furniture.firstWhere((m) => m.key == key);
-  }
-
-  @override
-  FurnitureFileModel getFurnitureByImage(String image) {
-    return _furnitureFile.furniture.firstWhere((m) => m.fullImagePath == image);
   }
 
   @override

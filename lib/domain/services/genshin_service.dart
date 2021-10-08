@@ -23,7 +23,6 @@ abstract class GenshinService {
   List<WeaponCardModel> getWeaponsForCard();
   WeaponCardModel getWeaponForCard(String key);
   WeaponFileModel getWeapon(String key);
-  WeaponFileModel getWeaponByImg(String img);
   List<String> getUpcomingWeaponsKeys();
 
   List<ArtifactCardModel> getArtifactsForCard();
@@ -67,9 +66,7 @@ abstract class GenshinService {
   List<String> getUpcomingKeys();
 
   MonsterFileModel getMonster(String key);
-  MonsterFileModel getMonsterByImg(String image);
   List<MonsterCardModel> getAllMonstersForCard();
-  MonsterCardModel getMonsterForCardByImg(String image);
   List<MonsterFileModel> getMonsters(MonsterType type);
 
   String getItemImageFromNotificationType(String itemKey, AppNotificationType notificationType, {AppNotificationItemType? notificationItemType});
@@ -77,11 +74,9 @@ abstract class GenshinService {
 
   List<GadgetFileModel> getAllGadgetsForNotifications();
   GadgetFileModel getGadget(String key);
-  GadgetFileModel getGadgetByImage(String image);
 
   FurnitureFileModel getDefaultFurnitureForNotifications();
   FurnitureFileModel getFurniture(String key);
-  FurnitureFileModel getFurnitureByImage(String image);
 
   DateTime getNextDateForWeeklyBoss(AppServerResetTimeType type);
 }

@@ -39,6 +39,7 @@ class DataServiceImpl implements DataService {
 
   DataServiceImpl(this._genshinService, this._calculatorService);
 
+  @override
   Future<void> init() async {
     await Hive.initFlutter('shiori_data');
     _registerAdapters();
