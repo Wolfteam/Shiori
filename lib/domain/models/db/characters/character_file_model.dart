@@ -94,6 +94,7 @@ class CharacterFileMultiTalentAscensionMaterialModel with _$CharacterFileMultiTa
 class CharacterFileBuild with _$CharacterFileBuild {
   factory CharacterFileBuild({
     required CharacterRoleType type,
+    required CharacterRoleSubType subType,
     required List<String> weaponKeys,
     required List<CharacterFileArtifactBuild> artifacts,
     required List<StatType> subStatsToFocus,
@@ -136,12 +137,25 @@ class CharacterFileSkillModel with _$CharacterFileSkillModel {
   factory CharacterFileSkillModel({
     required String key,
     required CharacterSkillType type,
+    required List<CharacterFileSkillStatModel> stats,
     String? image,
   }) = _CharacterFileSkillModel;
 
   CharacterFileSkillModel._();
 
   factory CharacterFileSkillModel.fromJson(Map<String, dynamic> json) => _$CharacterFileSkillModelFromJson(json);
+}
+
+@freezed
+class CharacterFileSkillStatModel with _$CharacterFileSkillStatModel {
+  factory CharacterFileSkillStatModel({
+    required String key,
+    required List<double> values,
+  }) = _CharacterFileSkillStatModel;
+
+  CharacterFileSkillStatModel._();
+
+  factory CharacterFileSkillStatModel.fromJson(Map<String, dynamic> json) => _$CharacterFileSkillStatModelFromJson(json);
 }
 
 @freezed

@@ -7,7 +7,7 @@ enum StatType {
   critRate,
   critRatePercentage,
   critDmgPercentage,
-  elementaryMastery,
+  elementalMastery,
   hpPercentage,
   physDmgPercentage,
   physDmgBonusPercentage,

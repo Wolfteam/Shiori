@@ -12,16 +12,6 @@ import 'package:shiori/presentation/shared/loading.dart';
 
 import 'character_detail.dart';
 
-// final height = MediaQuery.of(context).size.height;
-//
-// // Height (without SafeArea)
-// var padding = MediaQuery.of(context).padding;
-// double height1 = height - padding.top - padding.bottom;
-// // Height (without status bar)
-// double height2 = height - padding.top;
-// // Height (without status and toolbar)
-// double height3 = height - padding.top - kToolbarHeight;
-
 class CharacterDetailBottom extends StatelessWidget {
   const CharacterDetailBottom({Key? key}) : super(key: key);
 
@@ -61,6 +51,7 @@ class _PortraitLayout extends StatelessWidget {
                   children: state.builds
                       .map((build) => CharacterDetailBuildCard(
                             type: build.type,
+                            subType: build.subType,
                             elementType: state.elementType,
                             weapons: build.weapons,
                             artifacts: build.artifacts,
@@ -176,6 +167,7 @@ class _LandscapeLayout extends StatelessWidget {
                   children: state.builds
                       .map((build) => CharacterDetailBuildCard(
                             type: build.type,
+                            subType: build.subType,
                             elementType: state.elementType,
                             weapons: build.weapons,
                             artifacts: build.artifacts,

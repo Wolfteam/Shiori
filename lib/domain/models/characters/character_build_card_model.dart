@@ -4,12 +4,14 @@ import '../models.dart';
 
 class CharacterBuildCardModel {
   final CharacterRoleType type;
+  final CharacterRoleSubType subType;
   final List<WeaponCardModel> weapons;
   final List<CharacterBuildArtifactModel> artifacts;
   final List<StatType> subStatsToFocus;
 
   CharacterBuildCardModel({
     required this.type,
+    required this.subType,
     required this.weapons,
     required this.artifacts,
     required this.subStatsToFocus,

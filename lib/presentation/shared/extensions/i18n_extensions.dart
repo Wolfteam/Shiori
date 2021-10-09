@@ -109,7 +109,7 @@ extension I18nExtensions on S {
         return critRatePercentage(value);
       case StatType.defPercentage:
         return defPercentage(value);
-      case StatType.elementaryMastery:
+      case StatType.elementalMastery:
         return elementaryMastery(value);
       case StatType.energyRechargePercentage:
         return energyRechargePercentage(value);
@@ -564,5 +564,36 @@ extension I18nExtensions on S {
 
     final ratioInHours = '+${getRealmIncreaseRatio(type)}';
     return '$translation (${xEachHour(ratioInHours)})';
+  }
+
+  String translateCharacterRoleSubType(CharacterRoleSubType type) {
+    switch (type) {
+      case CharacterRoleSubType.none:
+        return none;
+      case CharacterRoleSubType.anemo:
+        return anemo;
+      case CharacterRoleSubType.geo:
+        return geo;
+      case CharacterRoleSubType.electro:
+        return electro;
+      case CharacterRoleSubType.dendro:
+        return dendro;
+      case CharacterRoleSubType.hydro:
+        return hydro;
+      case CharacterRoleSubType.pyro:
+        return pyro;
+      case CharacterRoleSubType.cryo:
+        return cryo;
+      case CharacterRoleSubType.elementalMastery:
+        return translateStatTypeWithoutValue(StatType.elementalMastery, removeExtraSigns: true);
+      case CharacterRoleSubType.physical:
+        return translateStatTypeWithoutValue(StatType.physDmgPercentage, removeExtraSigns: true);
+      case CharacterRoleSubType.melt:
+        return melt;
+      case CharacterRoleSubType.freeze:
+        return freeze;
+      case CharacterRoleSubType.shield:
+        return shield;
+    }
   }
 }

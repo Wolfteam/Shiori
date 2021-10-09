@@ -9,6 +9,7 @@ export 'artifact_filter_type.dart';
 export 'artifact_type.dart';
 export 'ascension_material_summary_type.dart';
 export 'character_filter_type.dart';
+export 'character_role_subtype.dart';
 export 'character_role_type.dart';
 export 'character_skill_ability_type.dart';
 export 'character_skill_type.dart';

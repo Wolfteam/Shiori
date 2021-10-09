@@ -28,7 +28,7 @@ class ArtifactInfoCard extends StatelessWidget {
     final atk = s.translateStatTypeWithoutValue(StatType.atk);
     final defPercentage = s.translateStatTypeWithoutValue(StatType.defPercentage);
     final energyRecharge = s.translateStatTypeWithoutValue(StatType.energyRechargePercentage, removeExtraSigns: true);
-    final elementaryMastery = s.translateStatTypeWithoutValue(StatType.elementaryMastery);
+    final elementaryMastery = s.translateStatTypeWithoutValue(StatType.elementalMastery);
     final critRate = s.translateStatTypeWithoutValue(StatType.critRate);
     final critDmg = s.translateStatTypeWithoutValue(StatType.critDmgPercentage, removeExtraSigns: true);
 

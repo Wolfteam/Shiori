@@ -23,20 +23,40 @@ class CharacterDetailSkillsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final cards = skills.mapIndex((e, index) => _buildSkillCard(context, e, index.isEven)).toList();
-    final body = Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Wrap(alignment: WrapAlignment.center, children: cards),
-    );
-
     return ItemDescriptionDetail(
       title: s.skills,
-      body: body,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        child: Wrap(
+          alignment: WrapAlignment.center,
+          children: skills
+              .mapIndex((e, index) => _SkillCard(
+                    model: e,
+                    isEven: index.isEven,
+                    elementType: elementType,
+                  ))
+              .toList(),
+        ),
+      ),
       textColor: elementType.getElementColorFromContext(context),
     );
   }
+}
 
-  Widget _buildSkillCard(BuildContext context, CharacterSkillCardModel model, bool isEven) {
+class _SkillCard extends StatelessWidget {
+  final CharacterSkillCardModel model;
+  final bool isEven;
+  final ElementType elementType;
+
+  const _SkillCard({
+    Key? key,
+    required this.model,
+    required this.isEven,
+    required this.elementType,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
     final img = Expanded(
