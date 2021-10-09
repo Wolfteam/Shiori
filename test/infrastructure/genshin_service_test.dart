@@ -12,6 +12,7 @@ import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
 import 'genshin_service_test.mocks.dart';
+//TODO: ADD TEST FOR FAIL CASES (E.G WEAPON NOT FOUND, IMAGE NOT FOUND ETC)
 
 @GenerateMocks([SettingsService])
 void main() {
@@ -49,7 +50,9 @@ void main() {
     try {
       await rootBundle.load(path);
       return true;
-    } catch (_) {
+    } catch (e) {
+      print(path);
+      print(e);
       return false;
     }
   }
@@ -88,6 +91,16 @@ void main() {
       expect(ascMaterial.level, inInclusiveRange(2, 10));
       _checkItemAscensionMaterialFileModel(service, ascMaterial.materials);
     }
+  }
+
+  void _checkTranslation(String? text, {bool canBeNull = true}) {
+    if (canBeNull && text.isNullEmptyOrWhitespace) {
+      return;
+    }
+
+    expect(text, allOf([isNotNull, isNotEmpty]));
+    final weirdCharacters = text!.contains('#') || text.contains('LAYOUT');
+    expect(weirdCharacters, isFalse);
   }
 
   test('Initialize all languages', () {
@@ -339,7 +352,8 @@ void main() {
 
         for (final refinement in detail.refinements) {
           expect(refinement.level, inInclusiveRange(1, 5));
-          if (detail.rarity >= 4 && detail.key != 'windblume-ode') {
+          final ignore = ['windblume-ode', 'predator'];
+          if (detail.rarity >= 4 && !ignore.contains(detail.key)) {
             expect(refinement.values, isNotEmpty);
           }
         }
@@ -493,8 +507,8 @@ void main() {
           final detail = service.getCharacter(character.key);
           final translation = service.getCharacterTranslation(character.key);
           _checkKey(translation.key);
-          expect(translation.name, allOf([isNotNull, isNotEmpty]));
-          expect(translation.description, allOf([isNotNull, isNotEmpty]));
+          _checkTranslation(translation.name, canBeNull: false);
+          _checkTranslation(translation.description, canBeNull: false);
 
           expect(translation.skills, isNotEmpty);
           expect(translation.skills.length, equals(detail.skills.length));
@@ -510,7 +524,7 @@ void main() {
           for (final skill in translation.skills) {
             _checkKey(skill.key);
             expect(skill.key, isIn(detail.skills.map((e) => e.key).toList()));
-            expect(skill.title, allOf([isNotNull, isNotEmpty]));
+            _checkTranslation(skill.title, canBeNull: false);
             for (final ability in skill.abilities) {
               final oneAtLeast = ability.name.isNotNullEmptyOrWhitespace ||
                   ability.description.isNotNullEmptyOrWhitespace ||
@@ -518,6 +532,9 @@ void main() {
 
               if (!oneAtLeast) {
                 expect(ability.descriptions, isNotEmpty);
+                for (final desc in ability.descriptions) {
+                  _checkTranslation(desc, canBeNull: false);
+                }
               }
             }
           }
@@ -525,14 +542,22 @@ void main() {
           for (final passive in translation.passives) {
             _checkKey(passive.key);
             expect(passive.key, isIn(detail.passives.map((e) => e.key).toList()));
-            expect(passive.title, allOf([isNotNull, isNotEmpty]));
+            _checkTranslation(passive.title, canBeNull: false);
+            _checkTranslation(passive.description, canBeNull: passive.descriptions.isNotEmpty);
+            for (final desc in passive.descriptions) {
+              _checkTranslation(desc, canBeNull: false);
+            }
           }
 
           for (final constellation in translation.constellations) {
             _checkKey(constellation.key);
             expect(constellation.key, isIn(detail.constellations.map((e) => e.key).toList()));
-            expect(constellation.title, allOf([isNotNull, isNotEmpty]));
-            expect(constellation.description, allOf([isNotNull, isNotEmpty]));
+            _checkTranslation(constellation.title, canBeNull: false);
+            _checkTranslation(constellation.description, canBeNull: false);
+            _checkTranslation(constellation.secondDescription);
+            for (final desc in constellation.descriptions) {
+              _checkTranslation(desc, canBeNull: false);
+            }
           }
         }
       }
@@ -547,10 +572,10 @@ void main() {
           final detail = service.getWeapon(weapon.key);
           final translation = service.getWeaponTranslation(weapon.key);
           _checkKey(translation.key);
-          expect(translation.name, allOf([isNotNull, isNotEmpty]));
-          expect(translation.description, allOf([isNotNull, isNotEmpty]));
+          _checkTranslation(translation.name, canBeNull: false);
+          _checkTranslation(translation.description, canBeNull: false);
           if (detail.rarity > 2) {
-            expect(translation.refinement, allOf([isNotNull, isNotEmpty]));
+            _checkTranslation(translation.refinement, canBeNull: false);
           }
         }
       }
@@ -565,23 +590,27 @@ void main() {
           final detail = service.getArtifact(artifact.key);
           final translation = service.getArtifactTranslation(detail.key);
           _checkKey(translation.key);
-          expect(translation.name, allOf([isNotNull, isNotEmpty]));
+          _checkTranslation(translation.name, canBeNull: false);
           expect(translation.bonus.length, inInclusiveRange(1, 2));
+          for (final bonus in translation.bonus) {
+            _checkTranslation(bonus, canBeNull: false);
+          }
         }
       }
     });
 
     test('check the materials', () async {
       final service = _getService();
-      for (final lang in languages) {
+      final toCheck = [AppLanguageType.english, AppLanguageType.spanish, AppLanguageType.simplifiedChinese];
+      for (final lang in toCheck) {
         await service.init(lang);
         final materials = service.getAllMaterialsForCard();
         for (final material in materials) {
           final detail = service.getMaterial(material.key);
           final translation = service.getMaterialTranslation(detail.key);
           _checkKey(translation.key);
-          expect(translation.name, allOf([isNotNull, isNotEmpty]));
-          expect(translation.description, allOf([isNotNull, isNotEmpty]));
+          _checkTranslation(translation.name, canBeNull: false);
+          _checkTranslation(translation.description, canBeNull: false);
         }
       }
     });
@@ -594,7 +623,7 @@ void main() {
         for (final monster in monsters) {
           final translation = service.getMonsterTranslation(monster.key);
           _checkKey(translation.key);
-          expect(translation.name, allOf([isNotNull, isNotEmpty]));
+          _checkTranslation(translation.name, canBeNull: false);
         }
       }
     });
