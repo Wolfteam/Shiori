@@ -368,5 +368,8 @@
   "charRoleSupport": "Support",
   "charRoleSubDps": "Sub-DPS",
   "charRoleOffFieldDps": "Off-Field DPS",
-  "charRoleBurstSupport": "Burst Support"
+  "charRoleBurstSupport": "Burst Support",
+  "melt": "Melt",
+  "freeze": "Freeze",
+  "shield": "Shield"
 }

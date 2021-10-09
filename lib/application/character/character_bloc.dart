@@ -150,6 +150,7 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
       builds: char.builds.map((build) {
         return CharacterBuildCardModel(
           type: build.type,
+          subType: build.subType,
           subStatsToFocus: build.subStatsToFocus,
           weapons: build.weaponKeys.map((e) => _genshinService.getWeaponForCard(e)).toList(),
           artifacts: build.artifacts.map(
