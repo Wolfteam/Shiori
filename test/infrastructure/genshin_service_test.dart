@@ -93,14 +93,19 @@ void main() {
     }
   }
 
-  void _checkTranslation(String? text, {bool canBeNull = true}) {
+  void _checkTranslation(String? text, {bool canBeNull = true, bool checkForColor = true}) {
     if (canBeNull && text.isNullEmptyOrWhitespace) {
       return;
     }
 
     expect(text, allOf([isNotNull, isNotEmpty]));
     final weirdCharacters = text!.contains('#') || text.contains('LAYOUT');
+
     expect(weirdCharacters, isFalse);
+    if (checkForColor) {
+      final hasColor = text.contains('{color}') || text.contains('{/color}');
+      expect(hasColor, isFalse);
+    }
   }
 
   test('Initialize all languages', () {
