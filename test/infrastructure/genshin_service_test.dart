@@ -321,12 +321,24 @@ void main() {
           expect(constellation.number, inInclusiveRange(1, 6));
         }
 
-        for (final stat in detail.stats) {
+        expect(detail.stats.where((e) => e.isAnAscension).length == 6, isTrue);
+        var repetitionCount = 0;
+        for (var i = 0; i < detail.stats.length; i++) {
+          final stat = detail.stats[i];
           expect(stat.level, inInclusiveRange(1, 90));
           expect(stat.baseAtk, greaterThan(0));
           expect(stat.baseHp, greaterThan(0));
           expect(stat.baseDef, greaterThan(0));
-          expect(stat.statValue, greaterThan(0));
+          expect(stat.statValue, greaterThanOrEqualTo(0));
+          if (i > 0 && i < detail.stats.length - 1) {
+            final nextStat = detail.stats[i + 1];
+            if (nextStat.statValue == stat.statValue) {
+              repetitionCount++;
+            } else {
+              repetitionCount = 0;
+            }
+            expect(repetitionCount, lessThanOrEqualTo(4));
+          }
         }
       }
     });
@@ -372,7 +384,19 @@ void main() {
           }
         }
 
-        for (final stat in detail.stats) {
+        final ascensionNumber = detail.stats.where((el) => el.isAnAscension).length;
+        switch (detail.rarity) {
+          case 1:
+          case 2:
+            expect(ascensionNumber == 4, isTrue);
+            break;
+          default:
+            expect(ascensionNumber == 6, isTrue);
+            break;
+        }
+        var repetitionCount = 0;
+        for (var i = 0; i < detail.stats.length; i++) {
+          final stat = detail.stats[i];
           if (detail.rarity >= 3) {
             expect(stat.level, inInclusiveRange(1, 90));
           } else {
@@ -384,6 +408,20 @@ void main() {
             expect(stat.statValue, greaterThan(0));
           } else {
             expect(stat.statValue, greaterThanOrEqualTo(0));
+          }
+          if (i > 0 && i < detail.stats.length - 1 && weapon.rarity > 2) {
+            final nextStat = detail.stats[i + 1];
+            if (nextStat.statValue == stat.statValue) {
+              repetitionCount++;
+            } else {
+              repetitionCount = 0;
+            }
+
+            if (stat.level <= 40 && !stat.isAnAscension) {
+              expect(repetitionCount, lessThanOrEqualTo(4));
+            } else {
+              expect(repetitionCount, lessThanOrEqualTo(2));
+            }
           }
         }
       }

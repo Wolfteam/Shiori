@@ -19,29 +19,25 @@ void main() {
   late final CalculatorService _calculatorService;
   late final GenshinService _genshinService;
 
-  setUp(() async {
+  setUp(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    final settings = MockSettingsService();
-    when(settings.language).thenReturn(AppLanguageType.english);
-    final localeService = LocaleServiceImpl(settings);
+    return Future(() async {
+      final settings = MockSettingsService();
+      when(settings.language).thenReturn(AppLanguageType.english);
+      final localeService = LocaleServiceImpl(settings);
 
-    _genshinService = GenshinServiceImpl(localeService);
-    await _genshinService.init(AppLanguageType.english);
-    _calculatorService = CalculatorServiceImpl(_genshinService);
-    _dataService = DataServiceImpl(_genshinService, _calculatorService);
-    await _dataService.init();
+      _genshinService = GenshinServiceImpl(localeService);
+      await _genshinService.init(AppLanguageType.english);
+      _calculatorService = CalculatorServiceImpl(_genshinService);
+      _dataService = DataServiceImpl(_genshinService, _calculatorService);
+      await _dataService.init(dir: 'shiori_data_tests');
+    });
   });
 
-  tearDown(() async {
-    await _dataService.deleteAllCalAscMatSession();
-    final notifications = _dataService.getAllNotifications();
-    for (final notification in notifications) {
-      _dataService.deleteNotification(notification.key, notification.type);
-    }
-    for (final value in ItemType.values) {
-      await _dataService.deleteItemsFromInventory(value);
-    }
-    await _dataService.deleteTierList();
+  tearDown(() {
+    return Future(() async {
+      await _dataService.deleteThemAll();
+    });
   });
 
   group('Sessions', () {
