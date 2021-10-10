@@ -296,6 +296,9 @@ void main() {
           expect(skill.stats, isNotEmpty);
           final statKeys = skill.stats.map((e) => e.key).toList();
           expect(statKeys.toSet().length, equals(statKeys.length));
+          //check that all the values in the stats have the same length
+          final statCount = skill.stats.map((e) => e.values.length).toSet().length;
+          expect(statCount, equals(1));
           for (final stat in skill.stats) {
             expect(stat.values, isNotEmpty);
           }
@@ -527,10 +530,12 @@ void main() {
           _checkKeys(translation.passives.map((e) => e.key).toList());
           _checkKeys(translation.constellations.map((e) => e.key).toList());
 
-          for (final skill in translation.skills) {
+          for (var i = 0; i < translation.skills.length; i++) {
+            final skill = translation.skills[i];
             _checkKey(skill.key);
             expect(skill.key, isIn(detail.skills.map((e) => e.key).toList()));
             _checkTranslation(skill.title, canBeNull: false);
+            expect(skill.stats, isNotEmpty);
             for (final ability in skill.abilities) {
               final oneAtLeast = ability.name.isNotNullEmptyOrWhitespace ||
                   ability.description.isNotNullEmptyOrWhitespace ||
@@ -543,12 +548,11 @@ void main() {
                 }
               }
             }
-            for (final s in detail.skills) {
-              final stats = service.getCharacterSkillStats(s.stats, skill.stats);
-              expect(stats, isNotEmpty);
-            }
 
-            expect(skill.stats, isNotEmpty);
+            final stats = service.getCharacterSkillStats(detail.skills[i].stats, skill.stats);
+            expect(stats, isNotEmpty);
+            final hasPendingParam = stats.expand((el) => el.descriptions).any((el) => el.contains('param'));
+            expect(hasPendingParam, equals(false));
           }
 
           for (final passive in translation.passives) {
