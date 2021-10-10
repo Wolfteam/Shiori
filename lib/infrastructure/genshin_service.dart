@@ -805,6 +805,7 @@ class GenshinServiceImpl implements GenshinService {
       key: material.key,
       image: material.fullImagePath,
       rarity: material.rarity,
+      position: material.position,
       type: material.type,
       name: translation.name,
       level: material.level,

@@ -10,6 +10,7 @@ class MaterialCardModel with _$MaterialCardModel {
     required String key,
     required String name,
     required int rarity,
+    required int position,
     required String image,
     required MaterialType type,
     required double level,

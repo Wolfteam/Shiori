@@ -41,6 +41,7 @@ class MaterialFileModel with _$MaterialFileModel {
   factory MaterialFileModel({
     required String key,
     required int rarity,
+    required int position,
     required String image,
     required MaterialType type,
     required List<int> days,
