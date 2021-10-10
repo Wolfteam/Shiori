@@ -1,4 +1,5 @@
 export 'package:shiori/infrastructure/calculator_service.dart';
+export 'package:shiori/infrastructure/changelog_provider.dart';
 export 'package:shiori/infrastructure/data_service.dart';
 export 'package:shiori/infrastructure/device_info_service.dart';
 export 'package:shiori/infrastructure/game_codes_service.dart';

@@ -340,6 +340,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_markdown:
+    dependency: "direct main"
+    description:
+      name: flutter_markdown
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.7"
   flutter_native_timezone:
     dependency: "direct main"
     description:
@@ -574,6 +581,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
+  markdown:
+    dependency: transitive
+    description:
+      name: markdown
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.0"
   matcher:
     dependency: transitive
     description:
@@ -1048,6 +1062,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  version_tracker:
+    dependency: "direct main"
+    description:
+      name: version_tracker
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.1"
   watcher:
     dependency: transitive
     description:

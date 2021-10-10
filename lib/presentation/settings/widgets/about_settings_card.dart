@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
@@ -109,7 +110,7 @@ class AboutSettingsCard extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 5),
                   child: Text(s.supportMsg),
                 ),
-                const TextLink(text: 'GitHub', url: 'https://github.com/Wolfteam/Shiori/issues'),
+                const TextLink(text: 'GitHub', url: '$githubPage/issues'),
                 Container(
                   margin: const EdgeInsets.only(top: 5),
                   child: Text('${s.youCanAlsoSendMeAnEmail}:', textAlign: TextAlign.center),

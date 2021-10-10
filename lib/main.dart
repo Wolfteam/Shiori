@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shiori/application/changelog/changelog_bloc.dart';
+import 'package:shiori/domain/services/changelog_provider.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:window_size/window_size.dart';
 
@@ -268,6 +270,12 @@ class MyApp extends StatelessWidget {
             final dataService = getIt<DataService>();
             final telemetryService = getIt<TelemetryService>();
             return CalculatorAscMaterialsItemUpdateQuantityBloc(dataService, telemetryService);
+          },
+        ),
+        BlocProvider(
+          create: (ctx) {
+            final changelogProvider = getIt<ChangelogProvider>();
+            return ChangelogBloc(changelogProvider);
           },
         ),
       ],

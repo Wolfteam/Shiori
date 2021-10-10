@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
+import 'package:shiori/domain/services/changelog_provider.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/game_code_service.dart';
@@ -46,4 +47,7 @@ Future<void> initInjection() async {
   final notificationService = NotificationServiceImpl(loggingService);
   await notificationService.init();
   getIt.registerSingleton<NotificationService>(notificationService);
+
+  final changelogProvider = ChangelogProviderImpl(loggingService, networkService);
+  getIt.registerSingleton<ChangelogProvider>(changelogProvider);
 }
