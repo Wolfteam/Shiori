@@ -898,7 +898,7 @@
           "baseAtk": 20.0,
           "baseDef": 68.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -906,7 +906,7 @@
           "baseAtk": 51.0,
           "baseDef": 177.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -914,7 +914,7 @@
           "baseAtk": 67.0,
           "baseDef": 235.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -922,7 +922,7 @@
           "baseAtk": 101.0,
           "baseDef": 352.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -930,7 +930,7 @@
           "baseAtk": 113.0,
           "baseDef": 394.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 7.2
         },
         {
           "level": 50,
@@ -938,7 +938,7 @@
           "baseAtk": 130.0,
           "baseDef": 453.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 7.2
         },
         {
           "level": 50,
@@ -946,7 +946,7 @@
           "baseAtk": 146.0,
           "baseDef": 508.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 60,
@@ -954,7 +954,7 @@
           "baseAtk": 163.0,
           "baseDef": 568.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 60,
@@ -962,7 +962,7 @@
           "baseAtk": 175.0,
           "baseDef": 610.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 70,
@@ -970,7 +970,7 @@
           "baseAtk": 192.0,
           "baseDef": 670.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 70,
@@ -978,7 +978,7 @@
           "baseAtk": 204.0,
           "baseDef": 712.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 21.6
         },
         {
           "level": 80,
@@ -986,7 +986,7 @@
           "baseAtk": 222.0,
           "baseDef": 773.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 21.6
         },
         {
           "level": 80,
@@ -994,7 +994,7 @@
           "baseAtk": 233.0,
           "baseDef": 815.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 28.8
         },
         {
           "level": 90,
@@ -1002,7 +1002,7 @@
           "baseAtk": 251.0,
           "baseDef": 876.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 28.8
         }
       ]
     },
@@ -1981,7 +1981,7 @@
           "baseAtk": 18.0,
           "baseDef": 53.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -1989,7 +1989,7 @@
           "baseAtk": 47.0,
           "baseDef": 137.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -1997,7 +1997,7 @@
           "baseAtk": 63.0,
           "baseDef": 182.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -2005,7 +2005,7 @@
           "baseAtk": 94.0,
           "baseDef": 272.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -2013,7 +2013,7 @@
           "baseAtk": 105.0,
           "baseDef": 304.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 7.2
         },
         {
           "level": 50,
@@ -2021,7 +2021,7 @@
           "baseAtk": 121.0,
           "baseDef": 350.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 7.2
         },
         {
           "level": 50,
@@ -2029,7 +2029,7 @@
           "baseAtk": 136.0,
           "baseDef": 393.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 60,
@@ -2037,7 +2037,7 @@
           "baseAtk": 152.0,
           "baseDef": 439.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 60,
@@ -2045,7 +2045,7 @@
           "baseAtk": 163.0,
           "baseDef": 471.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 70,
@@ -2053,7 +2053,7 @@
           "baseAtk": 179.0,
           "baseDef": 517.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 70,
@@ -2061,7 +2061,7 @@
           "baseAtk": 190.0,
           "baseDef": 550.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 21.6
         },
         {
           "level": 80,
@@ -2069,7 +2069,7 @@
           "baseAtk": 206.0,
           "baseDef": 597.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 21.6
         },
         {
           "level": 80,
@@ -2077,7 +2077,7 @@
           "baseAtk": 217.0,
           "baseDef": 629.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 28.8
         },
         {
           "level": 90,
@@ -2085,7 +2085,7 @@
           "baseAtk": 234.0,
           "baseDef": 676.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 28.8
         }
       ]
     },
@@ -2998,7 +2998,7 @@
           "baseAtk": 19.0,
           "baseDef": 50.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -3006,7 +3006,7 @@
           "baseAtk": 48.0,
           "baseDef": 129.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -3014,7 +3014,7 @@
           "baseAtk": 62.0,
           "baseDef": 167.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -3022,7 +3022,7 @@
           "baseAtk": 93.0,
           "baseDef": 250.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -3030,7 +3030,7 @@
           "baseAtk": 103.0,
           "baseDef": 277.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -3038,7 +3038,7 @@
           "baseAtk": 118.0,
           "baseDef": 318.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -3046,7 +3046,7 @@
           "baseAtk": 131.0,
           "baseDef": 354.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -3054,7 +3054,7 @@
           "baseAtk": 147.0,
           "baseDef": 396.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -3062,7 +3062,7 @@
           "baseAtk": 157.0,
           "baseDef": 422.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -3070,7 +3070,7 @@
           "baseAtk": 172.0,
           "baseDef": 464.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -3078,7 +3078,7 @@
           "baseAtk": 182.0,
           "baseDef": 491.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -3086,7 +3086,7 @@
           "baseAtk": 198.0,
           "baseDef": 532.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -3094,7 +3094,7 @@
           "baseAtk": 208.0,
           "baseDef": 559.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -3102,7 +3102,7 @@
           "baseAtk": 223.0,
           "baseDef": 601.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ]
     },
@@ -4016,7 +4016,7 @@
           "baseAtk": 13.0,
           "baseDef": 56.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -4024,7 +4024,7 @@
           "baseAtk": 34.0,
           "baseDef": 144.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -4032,7 +4032,7 @@
           "baseAtk": 44.0,
           "baseDef": 186.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -4040,7 +4040,7 @@
           "baseAtk": 66.0,
           "baseDef": 279.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -4048,7 +4048,7 @@
           "baseAtk": 73.0,
           "baseDef": 308.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -4056,7 +4056,7 @@
           "baseAtk": 84.0,
           "baseDef": 355.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -4064,7 +4064,7 @@
           "baseAtk": 94.0,
           "baseDef": 394.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -4072,7 +4072,7 @@
           "baseAtk": 105.0,
           "baseDef": 441.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -4080,7 +4080,7 @@
           "baseAtk": 112.0,
           "baseDef": 470.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -4088,7 +4088,7 @@
           "baseAtk": 123.0,
           "baseDef": 517.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -4096,7 +4096,7 @@
           "baseAtk": 130.0,
           "baseDef": 546.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -4104,7 +4104,7 @@
           "baseAtk": 141.0,
           "baseDef": 593.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -4112,7 +4112,7 @@
           "baseAtk": 148.0,
           "baseDef": 623.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -4120,7 +4120,7 @@
           "baseAtk": 159.0,
           "baseDef": 669.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ]
     },
@@ -5095,7 +5095,7 @@
           "baseAtk": 19.0,
           "baseDef": 54.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -5103,7 +5103,7 @@
           "baseAtk": 48.0,
           "baseDef": 140.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -5111,7 +5111,7 @@
           "baseAtk": 63.0,
           "baseDef": 180.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -5119,7 +5119,7 @@
           "baseAtk": 94.0,
           "baseDef": 270.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -5127,7 +5127,7 @@
           "baseAtk": 104.0,
           "baseDef": 299.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -5135,7 +5135,7 @@
           "baseAtk": 119.0,
           "baseDef": 344.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -5143,7 +5143,7 @@
           "baseAtk": 133.0,
           "baseDef": 382.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -5151,7 +5151,7 @@
           "baseAtk": 148.0,
           "baseDef": 427.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -5159,7 +5159,7 @@
           "baseAtk": 158.0,
           "baseDef": 456.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -5167,7 +5167,7 @@
           "baseAtk": 174.0,
           "baseDef": 501.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -5175,7 +5175,7 @@
           "baseAtk": 184.0,
           "baseDef": 530.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -5183,7 +5183,7 @@
           "baseAtk": 200.0,
           "baseDef": 575.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -5191,7 +5191,7 @@
           "baseAtk": 210.0,
           "baseDef": 603.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -5199,7 +5199,7 @@
           "baseAtk": 225.0,
           "baseDef": 648.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ]
     },
@@ -6312,7 +6312,7 @@
           "baseAtk": 16.0,
           "baseDef": 65.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -6320,7 +6320,7 @@
           "baseAtk": 41.0,
           "baseDef": 166.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -6328,7 +6328,7 @@
           "baseAtk": 53.0,
           "baseDef": 214.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -6336,7 +6336,7 @@
           "baseAtk": 80.0,
           "baseDef": 321.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -6344,7 +6344,7 @@
           "baseAtk": 88.0,
           "baseDef": 356.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.7
         },
         {
           "level": 50,
@@ -6352,7 +6352,7 @@
           "baseAtk": 101.0,
           "baseDef": 409.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.7
         },
         {
           "level": 50,
@@ -6360,7 +6360,7 @@
           "baseAtk": 113.0,
           "baseDef": 455.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 13.3
         },
         {
           "level": 60,
@@ -6368,7 +6368,7 @@
           "baseAtk": 126.0,
           "baseDef": 508.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 13.3
         },
         {
           "level": 60,
@@ -6376,7 +6376,7 @@
           "baseAtk": 134.0,
           "baseDef": 542.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 13.3
         },
         {
           "level": 70,
@@ -6384,7 +6384,7 @@
           "baseAtk": 148.0,
           "baseDef": 596.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 13.3
         },
         {
           "level": 70,
@@ -6392,7 +6392,7 @@
           "baseAtk": 156.0,
           "baseDef": 630.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 20.0
         },
         {
           "level": 80,
@@ -6400,7 +6400,7 @@
           "baseAtk": 169.0,
           "baseDef": 684.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 20.0
         },
         {
           "level": 80,
@@ -6408,7 +6408,7 @@
           "baseAtk": 178.0,
           "baseDef": 718.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 26.7
         },
         {
           "level": 90,
@@ -6416,7 +6416,7 @@
           "baseAtk": 191.0,
           "baseDef": 771.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 26.7
         }
       ]
     },
@@ -7300,7 +7300,7 @@
           "baseAtk": 19.0,
           "baseDef": 54.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -7308,7 +7308,7 @@
           "baseAtk": 48.0,
           "baseDef": 140.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -7316,7 +7316,7 @@
           "baseAtk": 62.0,
           "baseDef": 180.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -7324,7 +7324,7 @@
           "baseAtk": 93.0,
           "baseDef": 270.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -7332,7 +7332,7 @@
           "baseAtk": 103.0,
           "baseDef": 299.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -7340,7 +7340,7 @@
           "baseAtk": 118.0,
           "baseDef": 344.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -7348,7 +7348,7 @@
           "baseAtk": 131.0,
           "baseDef": 382.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -7356,7 +7356,7 @@
           "baseAtk": 147.0,
           "baseDef": 427.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -7364,7 +7364,7 @@
           "baseAtk": 157.0,
           "baseDef": 456.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -7372,7 +7372,7 @@
           "baseAtk": 172.0,
           "baseDef": 501.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -7380,7 +7380,7 @@
           "baseAtk": 182.0,
           "baseDef": 530.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -7388,7 +7388,7 @@
           "baseAtk": 198.0,
           "baseDef": 575.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -7396,7 +7396,7 @@
           "baseAtk": 208.0,
           "baseDef": 603.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -7404,7 +7404,7 @@
           "baseAtk": 223.0,
           "baseDef": 648.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ]
     },
@@ -8340,7 +8340,7 @@
           "baseAtk": 26.0,
           "baseDef": 61.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 5.0
         },
         {
           "level": 20,
@@ -8348,7 +8348,7 @@
           "baseAtk": 68.0,
           "baseDef": 158.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 5.0
         },
         {
           "level": 20,
@@ -8356,7 +8356,7 @@
           "baseAtk": 90.0,
           "baseDef": 211.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 5.0
         },
         {
           "level": 40,
@@ -8364,7 +8364,7 @@
           "baseAtk": 135.0,
           "baseDef": 315.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 5.0
         },
         {
           "level": 40,
@@ -8372,7 +8372,7 @@
           "baseAtk": 151.0,
           "baseDef": 352.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 9.8
         },
         {
           "level": 50,
@@ -8380,7 +8380,7 @@
           "baseAtk": 173.0,
           "baseDef": 405.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 9.8
         },
         {
           "level": 50,
@@ -8388,7 +8388,7 @@
           "baseAtk": 194.0,
           "baseDef": 455.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 14.6
         },
         {
           "level": 60,
@@ -8396,7 +8396,7 @@
           "baseAtk": 217.0,
           "baseDef": 509.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 14.6
         },
         {
           "level": 60,
@@ -8404,7 +8404,7 @@
           "baseAtk": 233.0,
           "baseDef": 546.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 14.6
         },
         {
           "level": 70,
@@ -8412,7 +8412,7 @@
           "baseAtk": 256.0,
           "baseDef": 600.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 14.6
         },
         {
           "level": 70,
@@ -8420,7 +8420,7 @@
           "baseAtk": 272.0,
           "baseDef": 637.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 19.4
         },
         {
           "level": 80,
@@ -8428,7 +8428,7 @@
           "baseAtk": 295.0,
           "baseDef": 692.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 19.4
         },
         {
           "level": 80,
@@ -8436,7 +8436,7 @@
           "baseAtk": 311.0,
           "baseDef": 729.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 24.2
         },
         {
           "level": 90,
@@ -8444,7 +8444,7 @@
           "baseAtk": 335.0,
           "baseDef": 784.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 24.2
         }
       ]
     },
@@ -9436,7 +9436,7 @@
           "baseAtk": 18.0,
           "baseDef": 50.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -9444,7 +9444,7 @@
           "baseAtk": 46.0,
           "baseDef": 129.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -9452,7 +9452,7 @@
           "baseAtk": 59.0,
           "baseDef": 167.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -9460,7 +9460,7 @@
           "baseAtk": 88.0,
           "baseDef": 250.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -9468,7 +9468,7 @@
           "baseAtk": 98.0,
           "baseDef": 277.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -9476,7 +9476,7 @@
           "baseAtk": 113.0,
           "baseDef": 318.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -9484,7 +9484,7 @@
           "baseAtk": 125.0,
           "baseDef": 354.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -9492,7 +9492,7 @@
           "baseAtk": 140.0,
           "baseDef": 396.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -9500,7 +9500,7 @@
           "baseAtk": 149.0,
           "baseDef": 422.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -9508,7 +9508,7 @@
           "baseAtk": 164.0,
           "baseDef": 464.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -9516,7 +9516,7 @@
           "baseAtk": 174.0,
           "baseDef": 491.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -9524,7 +9524,7 @@
           "baseAtk": 188.0,
           "baseDef": 532.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -9532,7 +9532,7 @@
           "baseAtk": 198.0,
           "baseDef": 559.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -9540,7 +9540,7 @@
           "baseAtk": 212.0,
           "baseDef": 601.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ]
     },
@@ -10656,7 +10656,7 @@
           "baseAtk": 27.0,
           "baseDef": 58.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 20,
@@ -10664,7 +10664,7 @@
           "baseAtk": 69.0,
           "baseDef": 152.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 20,
@@ -10672,7 +10672,7 @@
           "baseAtk": 92.0,
           "baseDef": 202.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 40,
@@ -10680,7 +10680,7 @@
           "baseAtk": 138.0,
           "baseDef": 302.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 40,
@@ -10688,7 +10688,7 @@
           "baseAtk": 154.0,
           "baseDef": 337.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 59.6
         },
         {
           "level": 50,
@@ -10696,7 +10696,7 @@
           "baseAtk": 177.0,
           "baseDef": 388.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 59.6
         },
         {
           "level": 50,
@@ -10704,7 +10704,7 @@
           "baseAtk": 198.0,
           "baseDef": 436.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 60,
@@ -10712,7 +10712,7 @@
           "baseAtk": 222.0,
           "baseDef": 487.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 60,
@@ -10720,7 +10720,7 @@
           "baseAtk": 238.0,
           "baseDef": 523.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 70,
@@ -10728,7 +10728,7 @@
           "baseAtk": 262.0,
           "baseDef": 574.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 70,
@@ -10736,7 +10736,7 @@
           "baseAtk": 278.0,
           "baseDef": 610.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 78.8
         },
         {
           "level": 80,
@@ -10744,7 +10744,7 @@
           "baseAtk": 302.0,
           "baseDef": 662.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 78.8
         },
         {
           "level": 80,
@@ -10752,7 +10752,7 @@
           "baseAtk": 318.0,
           "baseDef": 698.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 88.4
         },
         {
           "level": 90,
@@ -10760,7 +10760,7 @@
           "baseAtk": 342.0,
           "baseDef": 751.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 88.4
         }
       ]
     },
@@ -11688,7 +11688,7 @@
           "baseAtk": 20.0,
           "baseDef": 50.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -11696,7 +11696,7 @@
           "baseAtk": 53.0,
           "baseDef": 128.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -11704,7 +11704,7 @@
           "baseAtk": 68.0,
           "baseDef": 165.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -11712,7 +11712,7 @@
           "baseAtk": 102.0,
           "baseDef": 247.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -11720,7 +11720,7 @@
           "baseAtk": 113.0,
           "baseDef": 274.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -11728,7 +11728,7 @@
           "baseAtk": 130.0,
           "baseDef": 315.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -11736,7 +11736,7 @@
           "baseAtk": 144.0,
           "baseDef": 350.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -11744,7 +11744,7 @@
           "baseAtk": 161.0,
           "baseDef": 391.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -11752,7 +11752,7 @@
           "baseAtk": 172.0,
           "baseDef": 418.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -11760,7 +11760,7 @@
           "baseAtk": 189.0,
           "baseDef": 459.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -11768,7 +11768,7 @@
           "baseAtk": 200.0,
           "baseDef": 485.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -11776,7 +11776,7 @@
           "baseAtk": 216.0,
           "baseDef": 526.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -11784,7 +11784,7 @@
           "baseAtk": 227.0,
           "baseDef": 553.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -11792,7 +11792,7 @@
           "baseAtk": 244.0,
           "baseDef": 594.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ]
     },
@@ -12795,7 +12795,7 @@
           "baseAtk": 26.0,
           "baseDef": 49.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 20,
@@ -12803,7 +12803,7 @@
           "baseAtk": 68.0,
           "baseDef": 127.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 20,
@@ -12811,7 +12811,7 @@
           "baseAtk": 90.0,
           "baseDef": 169.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 40,
@@ -12819,7 +12819,7 @@
           "baseAtk": 135.0,
           "baseDef": 253.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 40,
@@ -12827,7 +12827,7 @@
           "baseAtk": 151.0,
           "baseDef": 283.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 59.6
         },
         {
           "level": 50,
@@ -12835,7 +12835,7 @@
           "baseAtk": 173.0,
           "baseDef": 326.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 59.6
         },
         {
           "level": 50,
@@ -12843,7 +12843,7 @@
           "baseAtk": 194.0,
           "baseDef": 366.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 60,
@@ -12851,7 +12851,7 @@
           "baseAtk": 217.0,
           "baseDef": 409.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 60,
@@ -12859,7 +12859,7 @@
           "baseAtk": 233.0,
           "baseDef": 439.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 70,
@@ -12867,7 +12867,7 @@
           "baseAtk": 256.0,
           "baseDef": 482.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 70,
@@ -12875,7 +12875,7 @@
           "baseAtk": 272.0,
           "baseDef": 512.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 78.8
         },
         {
           "level": 80,
@@ -12883,7 +12883,7 @@
           "baseAtk": 295.0,
           "baseDef": 556.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 78.8
         },
         {
           "level": 80,
@@ -12891,7 +12891,7 @@
           "baseAtk": 311.0,
           "baseDef": 586.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 88.4
         },
         {
           "level": 90,
@@ -12899,7 +12899,7 @@
           "baseAtk": 335.0,
           "baseDef": 630.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 88.4
         }
       ]
     },
@@ -13894,7 +13894,7 @@
           "baseAtk": 8.0,
           "baseDef": 68.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 20,
@@ -13902,7 +13902,7 @@
           "baseAtk": 21.0,
           "baseDef": 177.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 20,
@@ -13910,7 +13910,7 @@
           "baseAtk": 29.0,
           "baseDef": 235.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 40,
@@ -13918,7 +13918,7 @@
           "baseAtk": 43.0,
           "baseDef": 352.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 40,
@@ -13926,7 +13926,7 @@
           "baseAtk": 48.0,
           "baseDef": 394.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 59.6
         },
         {
           "level": 50,
@@ -13934,7 +13934,7 @@
           "baseAtk": 55.0,
           "baseDef": 453.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 59.6
         },
         {
           "level": 50,
@@ -13942,7 +13942,7 @@
           "baseAtk": 62.0,
           "baseDef": 508.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 60,
@@ -13950,7 +13950,7 @@
           "baseAtk": 69.0,
           "baseDef": 568.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 60,
@@ -13958,7 +13958,7 @@
           "baseAtk": 74.0,
           "baseDef": 610.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 70,
@@ -13966,7 +13966,7 @@
           "baseAtk": 81.0,
           "baseDef": 670.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 70,
@@ -13974,7 +13974,7 @@
           "baseAtk": 86.0,
           "baseDef": 712.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 78.8
         },
         {
           "level": 80,
@@ -13982,7 +13982,7 @@
           "baseAtk": 94.0,
           "baseDef": 773.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 78.8
         },
         {
           "level": 80,
@@ -13990,7 +13990,7 @@
           "baseAtk": 99.0,
           "baseDef": 815.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 88.4
         },
         {
           "level": 90,
@@ -13998,7 +13998,7 @@
           "baseAtk": 106.0,
           "baseDef": 876.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 88.4
         }
       ]
     },
@@ -14953,7 +14953,7 @@
           "baseAtk": 19.0,
           "baseDef": 60.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -14961,7 +14961,7 @@
           "baseAtk": 48.0,
           "baseDef": 155.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -14969,7 +14969,7 @@
           "baseAtk": 64.0,
           "baseDef": 206.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -14977,7 +14977,7 @@
           "baseAtk": 96.0,
           "baseDef": 309.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -14985,7 +14985,7 @@
           "baseAtk": 108.0,
           "baseDef": 345.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 5.5
         },
         {
           "level": 50,
@@ -14993,7 +14993,7 @@
           "baseAtk": 124.0,
           "baseDef": 397.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 5.5
         },
         {
           "level": 50,
@@ -15001,7 +15001,7 @@
           "baseAtk": 139.0,
           "baseDef": 446.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 11.1
         },
         {
           "level": 60,
@@ -15009,7 +15009,7 @@
           "baseAtk": 155.0,
           "baseDef": 499.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 11.1
         },
         {
           "level": 60,
@@ -15017,7 +15017,7 @@
           "baseAtk": 166.0,
           "baseDef": 535.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 11.1
         },
         {
           "level": 70,
@@ -15025,7 +15025,7 @@
           "baseAtk": 183.0,
           "baseDef": 588.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 11.1
         },
         {
           "level": 70,
@@ -15033,7 +15033,7 @@
           "baseAtk": 194.0,
           "baseDef": 624.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 16.6
         },
         {
           "level": 80,
@@ -15041,7 +15041,7 @@
           "baseAtk": 211.0,
           "baseDef": 678.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 16.6
         },
         {
           "level": 80,
@@ -15049,7 +15049,7 @@
           "baseAtk": 222.0,
           "baseDef": 715.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 22.2
         },
         {
           "level": 90,
@@ -15057,7 +15057,7 @@
           "baseAtk": 239.0,
           "baseDef": 769.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 22.2
         }
       ]
     },
@@ -16031,7 +16031,7 @@
           "baseAtk": 23.0,
           "baseDef": 63.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -16039,7 +16039,7 @@
           "baseAtk": 60.0,
           "baseDef": 163.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -16047,7 +16047,7 @@
           "baseAtk": 80.0,
           "baseDef": 217.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -16055,7 +16055,7 @@
           "baseAtk": 119.0,
           "baseDef": 324.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -16063,7 +16063,7 @@
           "baseAtk": 133.0,
           "baseDef": 363.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 28.8
         },
         {
           "level": 50,
@@ -16071,7 +16071,7 @@
           "baseAtk": 153.0,
           "baseDef": 417.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 28.8
         },
         {
           "level": 50,
@@ -16079,7 +16079,7 @@
           "baseAtk": 172.0,
           "baseDef": 468.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 57.6
         },
         {
           "level": 60,
@@ -16087,7 +16087,7 @@
           "baseAtk": 192.0,
           "baseDef": 523.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 57.6
         },
         {
           "level": 60,
@@ -16095,7 +16095,7 @@
           "baseAtk": 206.0,
           "baseDef": 562.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 57.6
         },
         {
           "level": 70,
@@ -16103,7 +16103,7 @@
           "baseAtk": 227.0,
           "baseDef": 617.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 57.6
         },
         {
           "level": 70,
@@ -16111,7 +16111,7 @@
           "baseAtk": 241.0,
           "baseDef": 656.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 86.4
         },
         {
           "level": 80,
@@ -16119,7 +16119,7 @@
           "baseAtk": 262.0,
           "baseDef": 712.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 86.4
         },
         {
           "level": 80,
@@ -16127,7 +16127,7 @@
           "baseAtk": 276.0,
           "baseDef": 750.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 115.2
         },
         {
           "level": 90,
@@ -16135,7 +16135,7 @@
           "baseAtk": 297.0,
           "baseDef": 807.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 115.2
         }
       ]
     },
@@ -17020,7 +17020,7 @@
           "baseAtk": 19.0,
           "baseDef": 66.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -17028,7 +17028,7 @@
           "baseAtk": 48.0,
           "baseDef": 171.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -17036,7 +17036,7 @@
           "baseAtk": 62.0,
           "baseDef": 220.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -17044,7 +17044,7 @@
           "baseAtk": 93.0,
           "baseDef": 330.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -17052,7 +17052,7 @@
           "baseAtk": 103.0,
           "baseDef": 365.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.7
         },
         {
           "level": 50,
@@ -17060,7 +17060,7 @@
           "baseAtk": 118.0,
           "baseDef": 420.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.7
         },
         {
           "level": 50,
@@ -17068,7 +17068,7 @@
           "baseAtk": 131.0,
           "baseDef": 467.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 13.3
         },
         {
           "level": 60,
@@ -17076,7 +17076,7 @@
           "baseAtk": 147.0,
           "baseDef": 522.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 13.3
         },
         {
           "level": 60,
@@ -17084,7 +17084,7 @@
           "baseAtk": 157.0,
           "baseDef": 557.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 13.3
         },
         {
           "level": 70,
@@ -17092,7 +17092,7 @@
           "baseAtk": 172.0,
           "baseDef": 612.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 13.3
         },
         {
           "level": 70,
@@ -17100,7 +17100,7 @@
           "baseAtk": 182.0,
           "baseDef": 647.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 20.0
         },
         {
           "level": 80,
@@ -17108,7 +17108,7 @@
           "baseAtk": 198.0,
           "baseDef": 702.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 20.0
         },
         {
           "level": 80,
@@ -17116,7 +17116,7 @@
           "baseAtk": 208.0,
           "baseDef": 737.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 26.7
         },
         {
           "level": 90,
@@ -17124,7 +17124,7 @@
           "baseAtk": 223.0,
           "baseDef": 792.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 26.7
         }
       ]
     },
@@ -18045,7 +18045,7 @@
           "baseAtk": 27.0,
           "baseDef": 61.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 20,
@@ -18053,7 +18053,7 @@
           "baseAtk": 69.0,
           "baseDef": 158.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 20,
@@ -18061,7 +18061,7 @@
           "baseAtk": 92.0,
           "baseDef": 211.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 40,
@@ -18069,7 +18069,7 @@
           "baseAtk": 138.0,
           "baseDef": 315.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 40,
@@ -18077,7 +18077,7 @@
           "baseAtk": 154.0,
           "baseDef": 352.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 59.6
         },
         {
           "level": 50,
@@ -18085,7 +18085,7 @@
           "baseAtk": 177.0,
           "baseDef": 405.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 59.6
         },
         {
           "level": 50,
@@ -18093,7 +18093,7 @@
           "baseAtk": 198.0,
           "baseDef": 455.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 60,
@@ -18101,7 +18101,7 @@
           "baseAtk": 222.0,
           "baseDef": 509.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 60,
@@ -18109,7 +18109,7 @@
           "baseAtk": 238.0,
           "baseDef": 546.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 70,
@@ -18117,7 +18117,7 @@
           "baseAtk": 262.0,
           "baseDef": 600.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 70,
@@ -18125,7 +18125,7 @@
           "baseAtk": 278.0,
           "baseDef": 637.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 78.8
         },
         {
           "level": 80,
@@ -18133,7 +18133,7 @@
           "baseAtk": 302.0,
           "baseDef": 692.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 78.8
         },
         {
           "level": 80,
@@ -18141,7 +18141,7 @@
           "baseAtk": 318.0,
           "baseDef": 729.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 88.4
         },
         {
           "level": 90,
@@ -18149,7 +18149,7 @@
           "baseAtk": 342.0,
           "baseDef": 784.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 88.4
         }
       ]
     },
@@ -19185,7 +19185,7 @@
           "baseAtk": 25.0,
           "baseDef": 62.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 20,
@@ -19193,7 +19193,7 @@
           "baseAtk": 65.0,
           "baseDef": 161.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 20,
@@ -19201,7 +19201,7 @@
           "baseAtk": 87.0,
           "baseDef": 215.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 40,
@@ -19209,7 +19209,7 @@
           "baseAtk": 130.0,
           "baseDef": 321.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 50.0
         },
         {
           "level": 40,
@@ -19217,7 +19217,7 @@
           "baseAtk": 145.0,
           "baseDef": 359.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 59.6
         },
         {
           "level": 50,
@@ -19225,7 +19225,7 @@
           "baseAtk": 167.0,
           "baseDef": 413.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 59.6
         },
         {
           "level": 50,
@@ -19233,7 +19233,7 @@
           "baseAtk": 187.0,
           "baseDef": 464.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 60,
@@ -19241,7 +19241,7 @@
           "baseAtk": 209.0,
           "baseDef": 519.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 60,
@@ -19249,7 +19249,7 @@
           "baseAtk": 225.0,
           "baseDef": 556.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 70,
@@ -19257,7 +19257,7 @@
           "baseAtk": 247.0,
           "baseDef": 612.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 69.2
         },
         {
           "level": 70,
@@ -19265,7 +19265,7 @@
           "baseAtk": 262.0,
           "baseDef": 649.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 78.8
         },
         {
           "level": 80,
@@ -19273,7 +19273,7 @@
           "baseAtk": 285.0,
           "baseDef": 705.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 78.8
         },
         {
           "level": 80,
@@ -19281,7 +19281,7 @@
           "baseAtk": 300.0,
           "baseDef": 743.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 88.4
         },
         {
           "level": 90,
@@ -19289,7 +19289,7 @@
           "baseAtk": 323.0,
           "baseDef": 799.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 88.4
         }
       ]
     },
@@ -20135,7 +20135,7 @@
           "baseAtk": 24.0,
           "baseDef": 48.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -20143,7 +20143,7 @@
           "baseAtk": 63.0,
           "baseDef": 124.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -20151,7 +20151,7 @@
           "baseAtk": 84.0,
           "baseDef": 165.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -20159,7 +20159,7 @@
           "baseAtk": 125.0,
           "baseDef": 247.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -20167,7 +20167,7 @@
           "baseAtk": 140.0,
           "baseDef": 276.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 7.2
         },
         {
           "level": 50,
@@ -20175,7 +20175,7 @@
           "baseAtk": 161.0,
           "baseDef": 318.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 7.2
         },
         {
           "level": 50,
@@ -20183,7 +20183,7 @@
           "baseAtk": 180.0,
           "baseDef": 357.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 60,
@@ -20191,7 +20191,7 @@
           "baseAtk": 202.0,
           "baseDef": 399.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 60,
@@ -20199,7 +20199,7 @@
           "baseAtk": 216.0,
           "baseDef": 428.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 70,
@@ -20207,7 +20207,7 @@
           "baseAtk": 238.0,
           "baseDef": 470.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 70,
@@ -20215,7 +20215,7 @@
           "baseAtk": 253.0,
           "baseDef": 500.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 21.6
         },
         {
           "level": 80,
@@ -20223,7 +20223,7 @@
           "baseAtk": 274.0,
           "baseDef": 542.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 21.6
         },
         {
           "level": 80,
@@ -20231,7 +20231,7 @@
           "baseAtk": 289.0,
           "baseDef": 572.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 28.8
         },
         {
           "level": 90,
@@ -20239,7 +20239,7 @@
           "baseAtk": 311.0,
           "baseDef": 615.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 28.8
         }
       ]
     },
@@ -21125,7 +21125,7 @@
           "baseAtk": 16.0,
           "baseDef": 53.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -21133,7 +21133,7 @@
           "baseAtk": 42.0,
           "baseDef": 135.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -21141,7 +21141,7 @@
           "baseAtk": 54.0,
           "baseDef": 175.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -21149,7 +21149,7 @@
           "baseAtk": 81.0,
           "baseDef": 262.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -21157,7 +21157,7 @@
           "baseAtk": 90.0,
           "baseDef": 289.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -21165,7 +21165,7 @@
           "baseAtk": 104.0,
           "baseDef": 333.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -21173,7 +21173,7 @@
           "baseAtk": 115.0,
           "baseDef": 370.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -21181,7 +21181,7 @@
           "baseAtk": 129.0,
           "baseDef": 414.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -21189,7 +21189,7 @@
           "baseAtk": 137.0,
           "baseDef": 442.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -21197,7 +21197,7 @@
           "baseAtk": 151.0,
           "baseDef": 485.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -21205,7 +21205,7 @@
           "baseAtk": 160.0,
           "baseDef": 513.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -21213,7 +21213,7 @@
           "baseAtk": 173.0,
           "baseDef": 556.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -21221,7 +21221,7 @@
           "baseAtk": 182.0,
           "baseDef": 584.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -21229,7 +21229,7 @@
           "baseAtk": 195.0,
           "baseDef": 628.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ]
     },
@@ -22231,7 +22231,7 @@
           "baseAtk": 19.0,
           "baseDef": 48.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -22239,7 +22239,7 @@
           "baseAtk": 50.0,
           "baseDef": 123.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -22247,7 +22247,7 @@
           "baseAtk": 64.0,
           "baseDef": 159.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -22255,7 +22255,7 @@
           "baseAtk": 96.0,
           "baseDef": 239.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -22263,7 +22263,7 @@
           "baseAtk": 107.0,
           "baseDef": 264.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 50,
@@ -22271,7 +22271,7 @@
           "baseAtk": 123.0,
           "baseDef": 304.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 50,
@@ -22279,7 +22279,7 @@
           "baseAtk": 136.0,
           "baseDef": 338.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 48.0
         },
         {
           "level": 60,
@@ -22287,7 +22287,7 @@
           "baseAtk": 153.0,
           "baseDef": 378.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 48.0
         },
         {
           "level": 60,
@@ -22295,7 +22295,7 @@
           "baseAtk": 163.0,
           "baseDef": 403.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 48.0
         },
         {
           "level": 70,
@@ -22303,7 +22303,7 @@
           "baseAtk": 179.0,
           "baseDef": 443.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 48.0
         },
         {
           "level": 70,
@@ -22311,7 +22311,7 @@
           "baseAtk": 189.0,
           "baseDef": 468.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 72.0
         },
         {
           "level": 80,
@@ -22319,7 +22319,7 @@
           "baseAtk": 205.0,
           "baseDef": 508.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 72.0
         },
         {
           "level": 80,
@@ -22327,7 +22327,7 @@
           "baseAtk": 215.0,
           "baseDef": 534.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 96.0
         },
         {
           "level": 90,
@@ -22335,7 +22335,7 @@
           "baseAtk": 232.0,
           "baseDef": 573.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 96.0
         }
       ]
     },
@@ -23256,7 +23256,7 @@
           "baseAtk": 22.0,
           "baseDef": 51.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -23264,7 +23264,7 @@
           "baseAtk": 58.0,
           "baseDef": 132.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -23272,7 +23272,7 @@
           "baseAtk": 77.0,
           "baseDef": 176.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -23280,7 +23280,7 @@
           "baseAtk": 115.0,
           "baseDef": 263.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -23288,7 +23288,7 @@
           "baseAtk": 129.0,
           "baseDef": 294.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 8.0
         },
         {
           "level": 50,
@@ -23296,7 +23296,7 @@
           "baseAtk": 148.0,
           "baseDef": 338.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 8.0
         },
         {
           "level": 50,
@@ -23304,7 +23304,7 @@
           "baseAtk": 167.0,
           "baseDef": 379.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 16.0
         },
         {
           "level": 60,
@@ -23312,7 +23312,7 @@
           "baseAtk": 186.0,
           "baseDef": 424.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 16.0
         },
         {
           "level": 60,
@@ -23320,7 +23320,7 @@
           "baseAtk": 200.0,
           "baseDef": 455.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 16.0
         },
         {
           "level": 70,
@@ -23328,7 +23328,7 @@
           "baseAtk": 220.0,
           "baseDef": 500.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 16.0
         },
         {
           "level": 70,
@@ -23336,7 +23336,7 @@
           "baseAtk": 233.0,
           "baseDef": 531.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 80,
@@ -23344,7 +23344,7 @@
           "baseAtk": 253.0,
           "baseDef": 576.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 80,
@@ -23352,7 +23352,7 @@
           "baseAtk": 267.0,
           "baseDef": 607.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 32.0
         },
         {
           "level": 90,
@@ -23360,7 +23360,7 @@
           "baseAtk": 287.0,
           "baseDef": 653.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 32.0
         }
       ]
     },
@@ -24204,7 +24204,7 @@
           "baseAtk": 18.0,
           "baseDef": 48.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -24212,7 +24212,7 @@
           "baseAtk": 46.0,
           "baseDef": 123.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -24220,7 +24220,7 @@
           "baseAtk": 59.0,
           "baseDef": 159.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -24228,7 +24228,7 @@
           "baseAtk": 88.0,
           "baseDef": 239.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -24236,7 +24236,7 @@
           "baseAtk": 98.0,
           "baseDef": 264.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -24244,7 +24244,7 @@
           "baseAtk": 113.0,
           "baseDef": 304.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -24252,7 +24252,7 @@
           "baseAtk": 125.0,
           "baseDef": 338.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -24260,7 +24260,7 @@
           "baseAtk": 140.0,
           "baseDef": 378.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -24268,7 +24268,7 @@
           "baseAtk": 149.0,
           "baseDef": 403.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -24276,7 +24276,7 @@
           "baseAtk": 164.0,
           "baseDef": 443.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -24284,7 +24284,7 @@
           "baseAtk": 174.0,
           "baseDef": 468.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -24292,7 +24292,7 @@
           "baseAtk": 188.0,
           "baseDef": 508.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -24300,7 +24300,7 @@
           "baseAtk": 198.0,
           "baseDef": 534.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -24308,7 +24308,7 @@
           "baseAtk": 212.0,
           "baseDef": 573.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ]
     },
@@ -25359,7 +25359,7 @@
           "baseAtk": 16.0,
           "baseDef": 67.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -25367,7 +25367,7 @@
           "baseAtk": 41.0,
           "baseDef": 172.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -25375,7 +25375,7 @@
           "baseAtk": 53.0,
           "baseDef": 222.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -25383,7 +25383,7 @@
           "baseAtk": 80.0,
           "baseDef": 333.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -25391,7 +25391,7 @@
           "baseAtk": 88.0,
           "baseDef": 368.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 7.5
         },
         {
           "level": 50,
@@ -25399,7 +25399,7 @@
           "baseAtk": 101.0,
           "baseDef": 423.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 7.5
         },
         {
           "level": 50,
@@ -25407,7 +25407,7 @@
           "baseAtk": 113.0,
           "baseDef": 471.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 15.0
         },
         {
           "level": 60,
@@ -25415,7 +25415,7 @@
           "baseAtk": 126.0,
           "baseDef": 526.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 15.0
         },
         {
           "level": 60,
@@ -25423,7 +25423,7 @@
           "baseAtk": 134.0,
           "baseDef": 562.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 15.0
         },
         {
           "level": 70,
@@ -25431,7 +25431,7 @@
           "baseAtk": 148.0,
           "baseDef": 617.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 15.0
         },
         {
           "level": 70,
@@ -25439,7 +25439,7 @@
           "baseAtk": 156.0,
           "baseDef": 652.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 22.5
         },
         {
           "level": 80,
@@ -25447,7 +25447,7 @@
           "baseAtk": 169.0,
           "baseDef": 708.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 22.5
         },
         {
           "level": 80,
@@ -25455,7 +25455,7 @@
           "baseAtk": 178.0,
           "baseDef": 743.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 30.0
         },
         {
           "level": 90,
@@ -25463,7 +25463,7 @@
           "baseAtk": 191.0,
           "baseDef": 799.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 30.0
         }
       ]
     },
@@ -26518,7 +26518,7 @@
           "baseAtk": 22.0,
           "baseDef": 72.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -26526,7 +26526,7 @@
           "baseAtk": 58.0,
           "baseDef": 186.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -26534,7 +26534,7 @@
           "baseAtk": 77.0,
           "baseDef": 248.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -26542,7 +26542,7 @@
           "baseAtk": 115.0,
           "baseDef": 371.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -26550,7 +26550,7 @@
           "baseAtk": 129.0,
           "baseDef": 415.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 5.5
         },
         {
           "level": 50,
@@ -26558,7 +26558,7 @@
           "baseAtk": 148.0,
           "baseDef": 477.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 5.5
         },
         {
           "level": 50,
@@ -26566,7 +26566,7 @@
           "baseAtk": 167.0,
           "baseDef": 535.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 11.1
         },
         {
           "level": 60,
@@ -26574,7 +26574,7 @@
           "baseAtk": 186.0,
           "baseDef": 598.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 11.1
         },
         {
           "level": 60,
@@ -26582,7 +26582,7 @@
           "baseAtk": 200.0,
           "baseDef": 642.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 11.1
         },
         {
           "level": 70,
@@ -26590,7 +26590,7 @@
           "baseAtk": 220.0,
           "baseDef": 706.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 11.1
         },
         {
           "level": 70,
@@ -26598,7 +26598,7 @@
           "baseAtk": 233.0,
           "baseDef": 749.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 16.6
         },
         {
           "level": 80,
@@ -26606,7 +26606,7 @@
           "baseAtk": 253.0,
           "baseDef": 814.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 16.6
         },
         {
           "level": 80,
@@ -26614,7 +26614,7 @@
           "baseAtk": 267.0,
           "baseDef": 857.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 22.2
         },
         {
           "level": 90,
@@ -26622,7 +26622,7 @@
           "baseAtk": 287.0,
           "baseDef": 922.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 22.2
         }
       ]
     },
@@ -27858,7 +27858,7 @@
           "baseAtk": 26.0,
           "baseDef": 61.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -27866,7 +27866,7 @@
           "baseAtk": 68.0,
           "baseDef": 159.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -27874,7 +27874,7 @@
           "baseAtk": 91.0,
           "baseDef": 212.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -27882,7 +27882,7 @@
           "baseAtk": 136.0,
           "baseDef": 317.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -27890,7 +27890,7 @@
           "baseAtk": 152.0,
           "baseDef": 355.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 8.0
         },
         {
           "level": 50,
@@ -27898,7 +27898,7 @@
           "baseAtk": 174.0,
           "baseDef": 408.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 8.0
         },
         {
           "level": 50,
@@ -27906,7 +27906,7 @@
           "baseAtk": 196.0,
           "baseDef": 458.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 16.0
         },
         {
           "level": 60,
@@ -27914,7 +27914,7 @@
           "baseAtk": 219.0,
           "baseDef": 512.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 16.0
         },
         {
           "level": 60,
@@ -27922,7 +27922,7 @@
           "baseAtk": 235.0,
           "baseDef": 549.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 16.0
         },
         {
           "level": 70,
@@ -27930,7 +27930,7 @@
           "baseAtk": 258.0,
           "baseDef": 604.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 16.0
         },
         {
           "level": 70,
@@ -27938,7 +27938,7 @@
           "baseAtk": 274.0,
           "baseDef": 641.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 80,
@@ -27946,7 +27946,7 @@
           "baseAtk": 298.0,
           "baseDef": 696.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 80,
@@ -27954,7 +27954,7 @@
           "baseAtk": 314.0,
           "baseDef": 734.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 32.0
         },
         {
           "level": 90,
@@ -27962,7 +27962,7 @@
           "baseAtk": 337.0,
           "baseDef": 789.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 32.0
         }
       ]
     },
@@ -28977,7 +28977,7 @@
           "baseAtk": 20.0,
           "baseDef": 63.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -28985,7 +28985,7 @@
           "baseAtk": 50.0,
           "baseDef": 162.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -28993,7 +28993,7 @@
           "baseAtk": 65.0,
           "baseDef": 209.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -29001,7 +29001,7 @@
           "baseAtk": 97.0,
           "baseDef": 313.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -29009,7 +29009,7 @@
           "baseAtk": 108.0,
           "baseDef": 346.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 7.5
         },
         {
           "level": 50,
@@ -29017,7 +29017,7 @@
           "baseAtk": 124.0,
           "baseDef": 398.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 7.5
         },
         {
           "level": 50,
@@ -29025,7 +29025,7 @@
           "baseAtk": 138.0,
           "baseDef": 443.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 15.0
         },
         {
           "level": 60,
@@ -29033,7 +29033,7 @@
           "baseAtk": 154.0,
           "baseDef": 495.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 15.0
         },
         {
           "level": 60,
@@ -29041,7 +29041,7 @@
           "baseAtk": 164.0,
           "baseDef": 528.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 15.0
         },
         {
           "level": 70,
@@ -29049,7 +29049,7 @@
           "baseAtk": 180.0,
           "baseDef": 580.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 15.0
         },
         {
           "level": 70,
@@ -29057,7 +29057,7 @@
           "baseAtk": 191.0,
           "baseDef": 613.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 22.5
         },
         {
           "level": 80,
@@ -29065,7 +29065,7 @@
           "baseAtk": 207.0,
           "baseDef": 665.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 22.5
         },
         {
           "level": 80,
@@ -29073,7 +29073,7 @@
           "baseAtk": 217.0,
           "baseDef": 699.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 30.0
         },
         {
           "level": 90,
@@ -29081,7 +29081,7 @@
           "baseAtk": 234.0,
           "baseDef": 751.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 30.0
         }
       ]
     },
@@ -30046,7 +30046,7 @@
           "baseAtk": 20.0,
           "baseDef": 60.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -30054,7 +30054,7 @@
           "baseAtk": 52.0,
           "baseDef": 153.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -30062,7 +30062,7 @@
           "baseAtk": 67.0,
           "baseDef": 197.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -30070,7 +30070,7 @@
           "baseAtk": 100.0,
           "baseDef": 296.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -30078,7 +30078,7 @@
           "baseAtk": 111.0,
           "baseDef": 327.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -30086,7 +30086,7 @@
           "baseAtk": 127.0,
           "baseDef": 376.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -30094,7 +30094,7 @@
           "baseAtk": 141.0,
           "baseDef": 418.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -30102,7 +30102,7 @@
           "baseAtk": 158.0,
           "baseDef": 468.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -30110,7 +30110,7 @@
           "baseAtk": 169.0,
           "baseDef": 499.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -30118,7 +30118,7 @@
           "baseAtk": 185.0,
           "baseDef": 548.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -30126,7 +30126,7 @@
           "baseAtk": 196.0,
           "baseDef": 580.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -30134,7 +30134,7 @@
           "baseAtk": 213.0,
           "baseDef": 629.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -30142,7 +30142,7 @@
           "baseAtk": 223.0,
           "baseDef": 661.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -30150,7 +30150,7 @@
           "baseAtk": 240.0,
           "baseDef": 710.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ]
     },
@@ -31108,7 +31108,7 @@
           "baseAtk": 18.0,
           "baseDef": 51.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -31116,7 +31116,7 @@
           "baseAtk": 47.0,
           "baseDef": 133.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -31124,7 +31124,7 @@
           "baseAtk": 63.0,
           "baseDef": 177.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -31132,7 +31132,7 @@
           "baseAtk": 94.0,
           "baseDef": 264.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -31140,7 +31140,7 @@
           "baseAtk": 105.0,
           "baseDef": 295.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 7.2
         },
         {
           "level": 50,
@@ -31148,7 +31148,7 @@
           "baseAtk": 121.0,
           "baseDef": 340.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 7.2
         },
         {
           "level": 50,
@@ -31156,7 +31156,7 @@
           "baseAtk": 136.0,
           "baseDef": 381.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 60,
@@ -31164,7 +31164,7 @@
           "baseAtk": 152.0,
           "baseDef": 426.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 60,
@@ -31172,7 +31172,7 @@
           "baseAtk": 163.0,
           "baseDef": 457.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 70,
@@ -31180,7 +31180,7 @@
           "baseAtk": 179.0,
           "baseDef": 503.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 70,
@@ -31188,7 +31188,7 @@
           "baseAtk": 190.0,
           "baseDef": 534.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 21.6
         },
         {
           "level": 80,
@@ -31196,7 +31196,7 @@
           "baseAtk": 207.0,
           "baseDef": 580.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 21.6
         },
         {
           "level": 80,
@@ -31204,7 +31204,7 @@
           "baseAtk": 218.0,
           "baseDef": 611.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 28.8
         },
         {
           "level": 90,
@@ -31212,7 +31212,7 @@
           "baseAtk": 234.0,
           "baseDef": 657.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 28.8
         }
       ]
     },
@@ -32305,7 +32305,7 @@
           "baseAtk": 20.0,
           "baseDef": 62.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -32313,7 +32313,7 @@
           "baseAtk": 53.0,
           "baseDef": 160.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -32321,7 +32321,7 @@
           "baseAtk": 68.0,
           "baseDef": 207.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -32329,7 +32329,7 @@
           "baseAtk": 102.0,
           "baseDef": 310.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -32337,7 +32337,7 @@
           "baseAtk": 113.0,
           "baseDef": 343.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 50,
@@ -32345,7 +32345,7 @@
           "baseAtk": 130.0,
           "baseDef": 395.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 50,
@@ -32353,7 +32353,7 @@
           "baseAtk": 144.0,
           "baseDef": 439.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 48.0
         },
         {
           "level": 60,
@@ -32361,7 +32361,7 @@
           "baseAtk": 161.0,
           "baseDef": 491.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 48.0
         },
         {
           "level": 60,
@@ -32369,7 +32369,7 @@
           "baseAtk": 172.0,
           "baseDef": 524.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 48.0
         },
         {
           "level": 70,
@@ -32377,7 +32377,7 @@
           "baseAtk": 189.0,
           "baseDef": 575.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 48.0
         },
         {
           "level": 70,
@@ -32385,7 +32385,7 @@
           "baseAtk": 200.0,
           "baseDef": 608.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 72.0
         },
         {
           "level": 80,
@@ -32393,7 +32393,7 @@
           "baseAtk": 216.0,
           "baseDef": 660.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 72.0
         },
         {
           "level": 80,
@@ -32401,7 +32401,7 @@
           "baseAtk": 227.0,
           "baseDef": 693.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 96.0
         },
         {
           "level": 90,
@@ -32409,7 +32409,7 @@
           "baseAtk": 244.0,
           "baseDef": 745.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 96.0
         }
       ]
     },
@@ -33245,7 +33245,7 @@
           "baseAtk": 14.0,
           "baseDef": 59.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -33253,7 +33253,7 @@
           "baseAtk": 37.0,
           "baseDef": 151.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -33261,7 +33261,7 @@
           "baseAtk": 47.0,
           "baseDef": 195.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -33269,7 +33269,7 @@
           "baseAtk": 71.0,
           "baseDef": 293.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -33277,7 +33277,7 @@
           "baseAtk": 78.0,
           "baseDef": 324.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -33285,7 +33285,7 @@
           "baseAtk": 90.0,
           "baseDef": 373.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -33293,7 +33293,7 @@
           "baseAtk": 100.0,
           "baseDef": 414.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -33301,7 +33301,7 @@
           "baseAtk": 112.0,
           "baseDef": 463.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -33309,7 +33309,7 @@
           "baseAtk": 120.0,
           "baseDef": 494.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -33317,7 +33317,7 @@
           "baseAtk": 131.0,
           "baseDef": 543.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -33325,7 +33325,7 @@
           "baseAtk": 139.0,
           "baseDef": 574.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -33333,7 +33333,7 @@
           "baseAtk": 151.0,
           "baseDef": 623.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -33341,7 +33341,7 @@
           "baseAtk": 158.0,
           "baseDef": 654.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -33349,7 +33349,7 @@
           "baseAtk": 170.0,
           "baseDef": 703.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ]
     },
@@ -34604,7 +34604,7 @@
           "baseAtk": 23.0,
           "baseDef": 63.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -34612,7 +34612,7 @@
           "baseAtk": 61.0,
           "baseDef": 165.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -34620,7 +34620,7 @@
           "baseAtk": 81.0,
           "baseDef": 219.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -34628,7 +34628,7 @@
           "baseAtk": 121.0,
           "baseDef": 328.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -34636,7 +34636,7 @@
           "baseAtk": 135.0,
           "baseDef": 366.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 7.2
         },
         {
           "level": 50,
@@ -34644,7 +34644,7 @@
           "baseAtk": 156.0,
           "baseDef": 421.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 7.2
         },
         {
           "level": 50,
@@ -34652,7 +34652,7 @@
           "baseAtk": 175.0,
           "baseDef": 473.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 60,
@@ -34660,7 +34660,7 @@
           "baseAtk": 195.0,
           "baseDef": 528.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 60,
@@ -34668,7 +34668,7 @@
           "baseAtk": 210.0,
           "baseDef": 567.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 70,
@@ -34676,7 +34676,7 @@
           "baseAtk": 231.0,
           "baseDef": 623.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 70,
@@ -34684,7 +34684,7 @@
           "baseAtk": 245.0,
           "baseDef": 662.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 21.6
         },
         {
           "level": 80,
@@ -34692,7 +34692,7 @@
           "baseAtk": 266.0,
           "baseDef": 719.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 21.6
         },
         {
           "level": 80,
@@ -34700,7 +34700,7 @@
           "baseAtk": 280.0,
           "baseDef": 757.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 28.8
         },
         {
           "level": 90,
@@ -34708,7 +34708,7 @@
           "baseAtk": 301.0,
           "baseDef": 815.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 28.8
         }
       ]
     },
@@ -35693,7 +35693,7 @@
           "baseAtk": 17.0,
           "baseDef": 63.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -35701,7 +35701,7 @@
           "baseAtk": 43.0,
           "baseDef": 162.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -35709,7 +35709,7 @@
           "baseAtk": 56.0,
           "baseDef": 209.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -35717,7 +35717,7 @@
           "baseAtk": 84.0,
           "baseDef": 313.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -35725,7 +35725,7 @@
           "baseAtk": 93.0,
           "baseDef": 346.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -35733,7 +35733,7 @@
           "baseAtk": 107.0,
           "baseDef": 398.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -35741,7 +35741,7 @@
           "baseAtk": 119.0,
           "baseDef": 443.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -35749,7 +35749,7 @@
           "baseAtk": 133.0,
           "baseDef": 495.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -35757,7 +35757,7 @@
           "baseAtk": 142.0,
           "baseDef": 528.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -35765,7 +35765,7 @@
           "baseAtk": 156.0,
           "baseDef": 580.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -35773,7 +35773,7 @@
           "baseAtk": 165.0,
           "baseDef": 613.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -35781,7 +35781,7 @@
           "baseAtk": 179.0,
           "baseDef": 665.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -35789,7 +35789,7 @@
           "baseAtk": 188.0,
           "baseDef": 699.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -35797,7 +35797,7 @@
           "baseAtk": 202.0,
           "baseDef": 751.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ]
     },
@@ -36521,7 +36521,7 @@
           "baseAtk": 18.0,
           "baseDef": 57.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -36529,7 +36529,7 @@
           "baseAtk": 46.0,
           "baseDef": 147.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -36537,7 +36537,7 @@
           "baseAtk": 59.0,
           "baseDef": 190.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -36545,7 +36545,7 @@
           "baseAtk": 88.0,
           "baseDef": 284.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -36553,7 +36553,7 @@
           "baseAtk": 98.0,
           "baseDef": 315.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -36561,7 +36561,7 @@
           "baseAtk": 113.0,
           "baseDef": 362.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -36569,7 +36569,7 @@
           "baseAtk": 125.0,
           "baseDef": 402.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -36577,7 +36577,7 @@
           "baseAtk": 140.0,
           "baseDef": 450.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -36585,7 +36585,7 @@
           "baseAtk": 149.0,
           "baseDef": 480.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -36593,7 +36593,7 @@
           "baseAtk": 164.0,
           "baseDef": 527.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -36601,7 +36601,7 @@
           "baseAtk": 174.0,
           "baseDef": 558.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -36609,7 +36609,7 @@
           "baseAtk": 188.0,
           "baseDef": 605.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -36617,7 +36617,7 @@
           "baseAtk": 198.0,
           "baseDef": 635.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -36625,7 +36625,7 @@
           "baseAtk": 212.0,
           "baseDef": 683.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ],
       "multiTalentAscensionMaterials": [
@@ -37986,7 +37986,7 @@
           "baseAtk": 18.0,
           "baseDef": 57.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -37994,7 +37994,7 @@
           "baseAtk": 46.0,
           "baseDef": 147.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -38002,7 +38002,7 @@
           "baseAtk": 59.0,
           "baseDef": 190.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -38010,7 +38010,7 @@
           "baseAtk": 88.0,
           "baseDef": 284.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -38018,7 +38018,7 @@
           "baseAtk": 98.0,
           "baseDef": 315.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -38026,7 +38026,7 @@
           "baseAtk": 113.0,
           "baseDef": 362.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -38034,7 +38034,7 @@
           "baseAtk": 125.0,
           "baseDef": 402.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -38042,7 +38042,7 @@
           "baseAtk": 140.0,
           "baseDef": 450.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -38050,7 +38050,7 @@
           "baseAtk": 149.0,
           "baseDef": 480.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -38058,7 +38058,7 @@
           "baseAtk": 164.0,
           "baseDef": 527.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -38066,7 +38066,7 @@
           "baseAtk": 174.0,
           "baseDef": 558.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -38074,7 +38074,7 @@
           "baseAtk": 188.0,
           "baseDef": 605.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -38082,7 +38082,7 @@
           "baseAtk": 198.0,
           "baseDef": 635.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -38090,7 +38090,7 @@
           "baseAtk": 212.0,
           "baseDef": 683.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ],
       "multiTalentAscensionMaterials": [
@@ -38717,8 +38717,8 @@
       "weaponType": "sword",
       "elementType": "geo",
       "image": "traveler-male.png",
-      "fullImage": "traveler-male.png",
-      "secondFullImage": "traveler-female.png",
+      "fullImage": "traveler-female.png",
+      "secondFullImage": "traveler-male.png",
       "isComingSoon": false,
       "isNew": false,
       "isFemale": false,
@@ -39380,7 +39380,7 @@
           "baseAtk": 18.0,
           "baseDef": 57.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -39388,7 +39388,7 @@
           "baseAtk": 46.0,
           "baseDef": 147.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -39396,7 +39396,7 @@
           "baseAtk": 59.0,
           "baseDef": 190.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -39404,7 +39404,7 @@
           "baseAtk": 88.0,
           "baseDef": 284.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -39412,7 +39412,7 @@
           "baseAtk": 98.0,
           "baseDef": 315.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -39420,7 +39420,7 @@
           "baseAtk": 113.0,
           "baseDef": 362.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -39428,7 +39428,7 @@
           "baseAtk": 125.0,
           "baseDef": 402.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -39436,7 +39436,7 @@
           "baseAtk": 140.0,
           "baseDef": 450.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -39444,7 +39444,7 @@
           "baseAtk": 149.0,
           "baseDef": 480.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -39452,7 +39452,7 @@
           "baseAtk": 164.0,
           "baseDef": 527.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -39460,7 +39460,7 @@
           "baseAtk": 174.0,
           "baseDef": 558.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -39468,7 +39468,7 @@
           "baseAtk": 188.0,
           "baseDef": 605.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -39476,7 +39476,7 @@
           "baseAtk": 198.0,
           "baseDef": 635.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -39484,7 +39484,7 @@
           "baseAtk": 212.0,
           "baseDef": 683.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ],
       "multiTalentAscensionMaterials": [
@@ -41055,7 +41055,7 @@
           "baseAtk": 20.0,
           "baseDef": 52.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -41063,7 +41063,7 @@
           "baseAtk": 53.0,
           "baseDef": 135.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -41071,7 +41071,7 @@
           "baseAtk": 71.0,
           "baseDef": 180.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -41079,7 +41079,7 @@
           "baseAtk": 106.0,
           "baseDef": 269.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -41087,7 +41087,7 @@
           "baseAtk": 118.0,
           "baseDef": 301.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 8.0
         },
         {
           "level": 50,
@@ -41095,7 +41095,7 @@
           "baseAtk": 136.0,
           "baseDef": 346.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 8.0
         },
         {
           "level": 50,
@@ -41103,7 +41103,7 @@
           "baseAtk": 153.0,
           "baseDef": 388.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 16.0
         },
         {
           "level": 60,
@@ -41111,7 +41111,7 @@
           "baseAtk": 171.0,
           "baseDef": 434.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 16.0
         },
         {
           "level": 60,
@@ -41119,7 +41119,7 @@
           "baseAtk": 183.0,
           "baseDef": 465.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 16.0
         },
         {
           "level": 70,
@@ -41127,7 +41127,7 @@
           "baseAtk": 201.0,
           "baseDef": 512.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 16.0
         },
         {
           "level": 70,
@@ -41135,7 +41135,7 @@
           "baseAtk": 214.0,
           "baseDef": 543.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 80,
@@ -41143,7 +41143,7 @@
           "baseAtk": 232.0,
           "baseDef": 590.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 80,
@@ -41151,7 +41151,7 @@
           "baseAtk": 245.0,
           "baseDef": 622.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 32.0
         },
         {
           "level": 90,
@@ -41159,7 +41159,7 @@
           "baseAtk": 263.0,
           "baseDef": 669.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 32.0
         }
       ]
     },
@@ -42105,7 +42105,7 @@
           "baseAtk": 19.0,
           "baseDef": 56.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -42113,7 +42113,7 @@
           "baseAtk": 48.0,
           "baseDef": 144.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -42121,7 +42121,7 @@
           "baseAtk": 63.0,
           "baseDef": 186.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -42129,7 +42129,7 @@
           "baseAtk": 94.0,
           "baseDef": 279.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -42137,7 +42137,7 @@
           "baseAtk": 104.0,
           "baseDef": 308.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 50,
@@ -42145,7 +42145,7 @@
           "baseAtk": 119.0,
           "baseDef": 355.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 50,
@@ -42153,7 +42153,7 @@
           "baseAtk": 133.0,
           "baseDef": 394.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 48.0
         },
         {
           "level": 60,
@@ -42161,7 +42161,7 @@
           "baseAtk": 148.0,
           "baseDef": 441.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 48.0
         },
         {
           "level": 60,
@@ -42169,7 +42169,7 @@
           "baseAtk": 158.0,
           "baseDef": 470.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 48.0
         },
         {
           "level": 70,
@@ -42177,7 +42177,7 @@
           "baseAtk": 174.0,
           "baseDef": 517.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 48.0
         },
         {
           "level": 70,
@@ -42185,7 +42185,7 @@
           "baseAtk": 184.0,
           "baseDef": 546.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 72.0
         },
         {
           "level": 80,
@@ -42193,7 +42193,7 @@
           "baseAtk": 200.0,
           "baseDef": 593.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 72.0
         },
         {
           "level": 80,
@@ -42201,7 +42201,7 @@
           "baseAtk": 210.0,
           "baseDef": 623.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 96.0
         },
         {
           "level": 90,
@@ -42209,7 +42209,7 @@
           "baseAtk": 225.0,
           "baseDef": 669.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 96.0
         }
       ]
     },
@@ -43134,7 +43134,7 @@
           "baseAtk": 27.0,
           "baseDef": 62.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 5.0
         },
         {
           "level": 20,
@@ -43142,7 +43142,7 @@
           "baseAtk": 71.0,
           "baseDef": 161.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 5.0
         },
         {
           "level": 20,
@@ -43150,7 +43150,7 @@
           "baseAtk": 94.0,
           "baseDef": 215.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 5.0
         },
         {
           "level": 40,
@@ -43158,7 +43158,7 @@
           "baseAtk": 140.0,
           "baseDef": 321.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 5.0
         },
         {
           "level": 40,
@@ -43166,7 +43166,7 @@
           "baseAtk": 157.0,
           "baseDef": 359.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 9.8
         },
         {
           "level": 50,
@@ -43174,7 +43174,7 @@
           "baseAtk": 181.0,
           "baseDef": 413.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 9.8
         },
         {
           "level": 50,
@@ -43182,7 +43182,7 @@
           "baseAtk": 203.0,
           "baseDef": 464.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 14.6
         },
         {
           "level": 60,
@@ -43190,7 +43190,7 @@
           "baseAtk": 227.0,
           "baseDef": 519.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 14.6
         },
         {
           "level": 60,
@@ -43198,7 +43198,7 @@
           "baseAtk": 243.0,
           "baseDef": 556.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 14.6
         },
         {
           "level": 70,
@@ -43206,7 +43206,7 @@
           "baseAtk": 267.0,
           "baseDef": 612.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 14.6
         },
         {
           "level": 70,
@@ -43214,7 +43214,7 @@
           "baseAtk": 284.0,
           "baseDef": 649.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 19.4
         },
         {
           "level": 80,
@@ -43222,7 +43222,7 @@
           "baseAtk": 308.0,
           "baseDef": 705.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 19.4
         },
         {
           "level": 80,
@@ -43230,7 +43230,7 @@
           "baseAtk": 325.0,
           "baseDef": 743.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 24.2
         },
         {
           "level": 90,
@@ -43238,7 +43238,7 @@
           "baseAtk": 349.0,
           "baseDef": 799.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 24.2
         }
       ]
     },
@@ -44224,7 +44224,7 @@
           "baseAtk": 17.0,
           "baseDef": 64.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -44232,7 +44232,7 @@
           "baseAtk": 43.0,
           "baseDef": 163.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -44240,7 +44240,7 @@
           "baseAtk": 56.0,
           "baseDef": 211.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -44248,7 +44248,7 @@
           "baseAtk": 84.0,
           "baseDef": 316.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -44256,7 +44256,7 @@
           "baseAtk": 93.0,
           "baseDef": 349.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -44264,7 +44264,7 @@
           "baseAtk": 107.0,
           "baseDef": 402.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -44272,7 +44272,7 @@
           "baseAtk": 119.0,
           "baseDef": 447.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -44280,7 +44280,7 @@
           "baseAtk": 133.0,
           "baseDef": 499.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -44288,7 +44288,7 @@
           "baseAtk": 142.0,
           "baseDef": 533.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -44296,7 +44296,7 @@
           "baseAtk": 156.0,
           "baseDef": 585.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -44304,7 +44304,7 @@
           "baseAtk": 165.0,
           "baseDef": 619.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -44312,7 +44312,7 @@
           "baseAtk": 179.0,
           "baseDef": 671.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -44320,7 +44320,7 @@
           "baseAtk": 188.0,
           "baseDef": 705.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -44328,7 +44328,7 @@
           "baseAtk": 202.0,
           "baseDef": 758.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ]
     },
@@ -45399,7 +45399,7 @@
           "baseAtk": 21.0,
           "baseDef": 67.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -45407,7 +45407,7 @@
           "baseAtk": 54.0,
           "baseDef": 172.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -45415,7 +45415,7 @@
           "baseAtk": 69.0,
           "baseDef": 222.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -45423,7 +45423,7 @@
           "baseAtk": 103.0,
           "baseDef": 333.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -45431,7 +45431,7 @@
           "baseAtk": 115.0,
           "baseDef": 368.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -45439,7 +45439,7 @@
           "baseAtk": 132.0,
           "baseDef": 423.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -45447,7 +45447,7 @@
           "baseAtk": 147.0,
           "baseDef": 471.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -45455,7 +45455,7 @@
           "baseAtk": 164.0,
           "baseDef": 526.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -45463,7 +45463,7 @@
           "baseAtk": 175.0,
           "baseDef": 562.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -45471,7 +45471,7 @@
           "baseAtk": 192.0,
           "baseDef": 617.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -45479,7 +45479,7 @@
           "baseAtk": 203.0,
           "baseDef": 652.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -45487,7 +45487,7 @@
           "baseAtk": 220.0,
           "baseDef": 708.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -45495,7 +45495,7 @@
           "baseAtk": 231.0,
           "baseDef": 743.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -45503,7 +45503,7 @@
           "baseAtk": 249.0,
           "baseDef": 799.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ]
     },
@@ -46459,7 +46459,7 @@
           "baseAtk": 20.0,
           "baseDef": 49.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -46467,7 +46467,7 @@
           "baseAtk": 52.0,
           "baseDef": 126.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -46475,7 +46475,7 @@
           "baseAtk": 67.0,
           "baseDef": 163.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -46483,7 +46483,7 @@
           "baseAtk": 100.0,
           "baseDef": 244.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -46491,7 +46491,7 @@
           "baseAtk": 111.0,
           "baseDef": 271.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -46499,7 +46499,7 @@
           "baseAtk": 127.0,
           "baseDef": 311.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 6.0
         },
         {
           "level": 50,
@@ -46507,7 +46507,7 @@
           "baseAtk": 141.0,
           "baseDef": 346.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -46515,7 +46515,7 @@
           "baseAtk": 158.0,
           "baseDef": 387.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 60,
@@ -46523,7 +46523,7 @@
           "baseAtk": 169.0,
           "baseDef": 413.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -46531,7 +46531,7 @@
           "baseAtk": 185.0,
           "baseDef": 453.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 12.0
         },
         {
           "level": 70,
@@ -46539,7 +46539,7 @@
           "baseAtk": 196.0,
           "baseDef": 480.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -46547,7 +46547,7 @@
           "baseAtk": 213.0,
           "baseDef": 520.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 18.0
         },
         {
           "level": 80,
@@ -46555,7 +46555,7 @@
           "baseAtk": 223.0,
           "baseDef": 546.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 24.0
         },
         {
           "level": 90,
@@ -46563,7 +46563,7 @@
           "baseAtk": 240.0,
           "baseDef": 587.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 24.0
         }
       ]
     },
@@ -47528,7 +47528,7 @@
           "baseAtk": 25.0,
           "baseDef": 48.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 5.0
         },
         {
           "level": 20,
@@ -47536,7 +47536,7 @@
           "baseAtk": 65.0,
           "baseDef": 124.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 5.0
         },
         {
           "level": 20,
@@ -47544,7 +47544,7 @@
           "baseAtk": 87.0,
           "baseDef": 165.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 5.0
         },
         {
           "level": 40,
@@ -47552,7 +47552,7 @@
           "baseAtk": 130.0,
           "baseDef": 247.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 5.0
         },
         {
           "level": 40,
@@ -47560,7 +47560,7 @@
           "baseAtk": 145.0,
           "baseDef": 276.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 9.8
         },
         {
           "level": 50,
@@ -47568,7 +47568,7 @@
           "baseAtk": 167.0,
           "baseDef": 318.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 9.8
         },
         {
           "level": 50,
@@ -47576,7 +47576,7 @@
           "baseAtk": 187.0,
           "baseDef": 357.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 14.6
         },
         {
           "level": 60,
@@ -47584,7 +47584,7 @@
           "baseAtk": 209.0,
           "baseDef": 399.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 14.6
         },
         {
           "level": 60,
@@ -47592,7 +47592,7 @@
           "baseAtk": 225.0,
           "baseDef": 428.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 14.6
         },
         {
           "level": 70,
@@ -47600,7 +47600,7 @@
           "baseAtk": 247.0,
           "baseDef": 470.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 14.6
         },
         {
           "level": 70,
@@ -47608,7 +47608,7 @@
           "baseAtk": 262.0,
           "baseDef": 500.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 19.4
         },
         {
           "level": 80,
@@ -47616,7 +47616,7 @@
           "baseAtk": 285.0,
           "baseDef": 542.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 19.4
         },
         {
           "level": 80,
@@ -47624,7 +47624,7 @@
           "baseAtk": 300.0,
           "baseDef": 572.0,
           "isAnAscension": true,
-          "statValue": 50.0
+          "statValue": 24.2
         },
         {
           "level": 90,
@@ -47632,7 +47632,7 @@
           "baseAtk": 323.0,
           "baseDef": 615.0,
           "isAnAscension": false,
-          "statValue": 50.0
+          "statValue": 24.2
         }
       ]
     },
@@ -48663,7 +48663,7 @@
           "baseAtk": 20.0,
           "baseDef": 57.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -48671,7 +48671,7 @@
           "baseAtk": 51.0,
           "baseDef": 149.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 20,
@@ -48679,7 +48679,7 @@
           "baseAtk": 67.0,
           "baseDef": 198.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -48687,7 +48687,7 @@
           "baseAtk": 101.0,
           "baseDef": 297.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 0.0
         },
         {
           "level": 40,
@@ -48695,7 +48695,7 @@
           "baseAtk": 113.0,
           "baseDef": 332.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 7.2
         },
         {
           "level": 50,
@@ -48703,7 +48703,7 @@
           "baseAtk": 130.0,
           "baseDef": 382.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 7.2
         },
         {
           "level": 50,
@@ -48711,7 +48711,7 @@
           "baseAtk": 146.0,
           "baseDef": 428.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 60,
@@ -48719,7 +48719,7 @@
           "baseAtk": 163.0,
           "baseDef": 479.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 60,
@@ -48727,7 +48727,7 @@
           "baseAtk": 175.0,
           "baseDef": 514.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 70,
@@ -48735,7 +48735,7 @@
           "baseAtk": 192.0,
           "baseDef": 564.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 14.4
         },
         {
           "level": 70,
@@ -48743,7 +48743,7 @@
           "baseAtk": 204.0,
           "baseDef": 599.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 21.6
         },
         {
           "level": 80,
@@ -48751,7 +48751,7 @@
           "baseAtk": 222.0,
           "baseDef": 651.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 21.6
         },
         {
           "level": 80,
@@ -48759,7 +48759,7 @@
           "baseAtk": 233.0,
           "baseDef": 686.0,
           "isAnAscension": true,
-          "statValue": 5.0
+          "statValue": 28.8
         },
         {
           "level": 90,
@@ -48767,7 +48767,7 @@
           "baseAtk": 251.0,
           "baseDef": 738.0,
           "isAnAscension": false,
-          "statValue": 5.0
+          "statValue": 28.8
         }
       ]
     }
