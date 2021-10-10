@@ -357,12 +357,12 @@
   "reduceTime": "Kurangi Waktu",
   "use24HourFormatOnDates": "Gunakan format waktu 24 jam pada tanggal",
   "playstation": "PlayStation",
-  "deleteAllSessions": "Delete all sessions",
-  "deleteAllItems": "Delete all items",
-  "confirmQuestion": "Are you sure you wanna proceed ?",
-  "gameSpecific": "Game specific",
+  "deleteAllSessions": "Hapus semua sesi",
+  "deleteAllItems": "Hapus semua item",
+  "confirmQuestion": "Kamu yakin ingin melanjutkan?",
+  "gameSpecific": "Game spesifik",
   "tools": "Tools",
-  "privacy": "Privacy",
-  "privacyMsgA": "This app does not collect any personal data or information that could be used to track or identify the user.",
-  "privacyMsgB": "The only collected data are crashes and app usage. This information is useful for identifying and fixing bugs. It also useful to identify which features are the most used within the app and which ones should be prioritized."
+  "privacy": "Privasi",
+  "privacyMsgA": "Aplikasi ini tidak mengumpulkan data personal atau informasi apapun yang dapat digunakan untuk melacak atau mengidentifikasi pengguna.",
+  "privacyMsgB": "Data yang hanya dikumpulkan merupakan data crash dan penggunaan aplikasi. Informasi ini berguna untuk mengidentifikasi dan memperbaiki bug. Informasi ini juga berguna untuk mengidentifikasi fitur mana yang paling sering digunakan pada aplikasi ini dan mana yang harus diprioritaskan terlebih dahulu."
 }
