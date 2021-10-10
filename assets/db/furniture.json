@@ -1,9 +1,9 @@
 {
   "furniture": [
     {
-      "key": "Mondstadt Mansion: Windward Manor",
+      "key": "mondstadt-mansion-windward-manor",
       "rarity": 5,
-      "image": "mondstadt_mansion_windward_manor.png",
+      "image": "mondstadt-mansion-windward-manor.png",
       "obtainedFrom": []
     }
   ]
