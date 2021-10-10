@@ -40,8 +40,8 @@ class DataServiceImpl implements DataService {
   DataServiceImpl(this._genshinService, this._calculatorService);
 
   @override
-  Future<void> init() async {
-    await Hive.initFlutter('shiori_data');
+  Future<void> init({String dir = 'shiori_data'}) async {
+    await Hive.initFlutter(dir);
     _registerAdapters();
     _sessionBox = await Hive.openBox<CalculatorSession>('calculatorSessions');
     _calcItemBox = await Hive.openBox<CalculatorItem>('calculatorSessionsItems');
@@ -61,6 +61,28 @@ class DataServiceImpl implements DataService {
     _notificationsRealmCurrencyBox = await Hive.openBox('notificationsRealmCurrency');
     _notificationsResinBox = await Hive.openBox('notificationsResin');
     _notificationsWeeklyBossBox = await Hive.openBox('notificationsWeeklyBoss');
+  }
+
+  @override
+  Future<void> deleteThemAll() async {
+    await _sessionBox.clear();
+    await _calcItemBox.clear();
+    await _calcItemSkillBox.clear();
+    await _inventoryBox.clear();
+    await _inventoryUsedItemsBox.clear();
+    await _gameCodesBox.clear();
+    await _gameCodeRewardsBox.clear();
+    await _tierListBox.clear();
+
+    await _notificationsCustomBox.clear();
+    await _notificationsExpeditionBox.clear();
+    await _notificationsFarmingArtifactBox.clear();
+    await _notificationsFarmingMaterialBox.clear();
+    await _notificationsFurnitureBox.clear();
+    await _notificationsGadgetBox.clear();
+    await _notificationsRealmCurrencyBox.clear();
+    await _notificationsResinBox.clear();
+    await _notificationsWeeklyBossBox.clear();
   }
 
   @override
