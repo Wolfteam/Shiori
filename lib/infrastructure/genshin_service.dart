@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:collection/collection.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/assets.dart';
@@ -684,6 +685,49 @@ class GenshinServiceImpl implements GenshinService {
     }
 
     return finalDate;
+  }
+
+  @override
+  List<CharacterSkillStatModel> getCharacterSkillStats(List<CharacterFileSkillStatModel> skillStats, List<String> statsTranslations) {
+    final stats = <CharacterSkillStatModel>[];
+    if (skillStats.isEmpty || statsTranslations.isEmpty) {
+      return stats;
+    }
+    final statExp = RegExp('(?<={).+?(?=})');
+    final maxLevel = skillStats.first.values.length;
+    for (var i = 1; i <= maxLevel; i++) {
+      final stat = CharacterSkillStatModel(level: i, descriptions: []);
+      for (final translation in statsTranslations) {
+        // "Curación continua|{param3}% Max HP + {param4}",
+        final splitted = translation.split('|');
+        if (splitted.isEmpty || splitted.length != 2) {
+          continue;
+        }
+        final desc = splitted.first;
+        var toReplace = splitted[1];
+        final matches = statExp.allMatches(toReplace);
+        for (final match in matches) {
+          final val = match.group(0);
+          final statValues = skillStats.firstWhereOrNull((el) => el.key == val);
+          if (statValues == null) {
+            continue;
+          }
+
+          if (statValues.values.length - 1 < i - 1) {
+            continue;
+          }
+
+          final statValue = statValues.values[i - 1];
+          toReplace = toReplace.replaceFirst('{$val}', '$statValue');
+        }
+
+        stat.descriptions.add('$desc|$toReplace');
+      }
+
+      stats.add(stat);
+    }
+
+    return stats;
   }
 
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {

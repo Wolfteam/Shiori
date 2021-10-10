@@ -23,7 +23,8 @@ class TranslationCharacterSkillFile with _$TranslationCharacterSkillFile {
     required String key,
     required String title,
     String? description,
-    @Default(<TranslationCharacterAbilityFile>[]) List<TranslationCharacterAbilityFile> abilities,
+    required List<TranslationCharacterAbilityFile> abilities,
+    required List<String> stats,
   }) = _TranslationCharacterSkillFile;
 
   factory TranslationCharacterSkillFile.fromJson(Map<String, dynamic> json) => _$TranslationCharacterSkillFileFromJson(json);

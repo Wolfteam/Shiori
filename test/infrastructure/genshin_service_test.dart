@@ -293,6 +293,12 @@ void main() {
         for (final skill in detail.skills) {
           _checkKey(skill.key);
           _checkAsset(skill.fullImagePath);
+          expect(skill.stats, isNotEmpty);
+          final statKeys = skill.stats.map((e) => e.key).toList();
+          expect(statKeys.toSet().length, equals(statKeys.length));
+          for (final stat in skill.stats) {
+            expect(stat.values, isNotEmpty);
+          }
         }
 
         for (final passive in detail.passives) {
@@ -537,6 +543,12 @@ void main() {
                 }
               }
             }
+            for (final s in detail.skills) {
+              final stats = service.getCharacterSkillStats(s.stats, skill.stats);
+              expect(stats, isNotEmpty);
+            }
+
+            expect(skill.stats, isNotEmpty);
           }
 
           for (final passive in translation.passives) {

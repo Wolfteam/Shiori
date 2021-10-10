@@ -6,6 +6,7 @@ class CharacterSkillCardModel {
   final CharacterSkillType type;
   final String? description;
   final List<CharacterSkillAbilityModel> abilities;
+  final List<CharacterSkillStatModel> stats;
 
   CharacterSkillCardModel({
     required this.image,
@@ -13,6 +14,7 @@ class CharacterSkillCardModel {
     required this.type,
     this.description = '',
     required this.abilities,
+    required this.stats,
   });
 }
 
@@ -26,6 +28,16 @@ class CharacterSkillAbilityModel {
     this.name,
     this.description,
     this.secondDescription,
+    required this.descriptions,
+  });
+}
+
+class CharacterSkillStatModel {
+  final int level;
+  final List<String> descriptions;
+
+  CharacterSkillStatModel({
+    required this.level,
     required this.descriptions,
   });
 }

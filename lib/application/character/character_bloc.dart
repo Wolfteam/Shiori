@@ -117,8 +117,10 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
             secondDescription: a.secondDescription,
           );
         }).toList();
+        final stats = _genshinService.getCharacterSkillStats(skill.stats, e.stats);
         return CharacterSkillCardModel(
           image: skill.fullImagePath,
+          stats: stats,
           title: e.title,
           type: skill.type,
           abilities: abilities,

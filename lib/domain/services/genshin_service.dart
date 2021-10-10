@@ -19,6 +19,7 @@ abstract class GenshinService {
   List<CharacterFileModel> getCharactersForBirthday(DateTime date);
   List<TierListRowModel> getDefaultCharacterTierList(List<int> colors);
   List<String> getUpcomingCharactersKeys();
+  List<CharacterSkillStatModel> getCharacterSkillStats(List<CharacterFileSkillStatModel> skillStats, List<String> statsTranslations);
 
   List<WeaponCardModel> getWeaponsForCard();
   WeaponCardModel getWeaponForCard(String key);
