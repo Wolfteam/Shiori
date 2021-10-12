@@ -275,7 +275,8 @@ void main() {
           expect(build.weaponKeys, isNotEmpty);
           expect(build.subStatsToFocus.length, greaterThanOrEqualTo(3));
           for (final key in build.weaponKeys) {
-            expect(() => service.getWeapon(key), returnsNormally);
+            final weapon = service.getWeapon(key);
+            expect(weapon.type == detail.weaponType, isTrue);
           }
 
           for (final artifact in build.artifacts) {

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:darq/darq.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:meta/meta.dart';
@@ -52,10 +53,13 @@ class MaterialBloc extends PopBloc<MaterialEvent, MaterialState> {
     }).toList();
 
     //TODO: SHOW THE QUANTITY IN THE RELATED MATERIALS
-    final relatedMaterials = material.recipes.map((el) {
-      final material = _genshinService.getMaterial(el.createsMaterialKey);
-      return ItemCommon(material.key, material.fullImagePath);
-    }).toList();
+    final relatedMaterials = material.recipes
+        .map((el) {
+          final material = _genshinService.getMaterial(el.createsMaterialKey);
+          return ItemCommon(material.key, material.fullImagePath);
+        })
+        .distinct((x) => x.key)
+        .toList();
     return MaterialState.loaded(
       name: translation.name,
       fullImage: material.fullImagePath,
