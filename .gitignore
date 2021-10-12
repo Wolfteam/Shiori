@@ -5,6 +5,9 @@
 *.freezed.dart
 /lib/generated/**
 *.mocks.dart
+/assets/i18n/**
+!/assets/i18n/en.json
+!/assets/i18n/it.json
 
 # Miscellaneous
 *.class
