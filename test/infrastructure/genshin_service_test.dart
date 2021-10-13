@@ -522,6 +522,15 @@ void main() {
             expect(() => service.getMaterial(needs.key), returnsNormally);
           }
         }
+
+        final characters = service.getCharacterForItemsUsingMaterial(material.key);
+        expect(characters.map((e) => e.key).toSet().length == characters.length, isTrue);
+
+        final weapons = service.getWeaponForItemsUsingMaterial(material.key);
+        expect(weapons.map((e) => e.key).toSet().length == weapons.length, isTrue);
+
+        final droppedBy = service.getRelatedMonsterToMaterialForItems(detail.key);
+        expect(droppedBy.map((e) => e.key).toSet().length == droppedBy.length, isTrue);
       }
     });
 
