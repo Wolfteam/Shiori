@@ -20107,7 +20107,27 @@
                   "quantity": 2
                 },
                 {
-                  "key": "lavawalker",
+                  "key": "gladiators-finale",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "pyroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "crimson-witch-of-flames",
+                  "quantity": 2
+                },
+                {
+                  "key": "shimenawas-reminiscence",
                   "quantity": 2
                 }
               ],
