@@ -68,11 +68,11 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
       return WeaponAscensionModel(level: e.level, materials: materials);
     }).toList();
 
-    final refinements = weapon.refinements.map(
+    final refinements = weapon.refinements.where((el) => el.values.isNotEmpty).map(
       (e) {
         var description = translation.refinement ?? '';
         for (var i = 0; i < e.values.length; i++) {
-          description = description.replaceFirst('{$i}', '${e.values[i]}');
+          description = description.replaceFirst('{$i}', e.values[i]);
         }
 
         return WeaponFileRefinementModel(level: e.level, description: description);
