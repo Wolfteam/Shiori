@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0+16 (13/10/2021)
+
+### Changes
+- Bug fixes
+
 ## 1.2.0+14 (12/10/2021)
 
 ### Breaking
