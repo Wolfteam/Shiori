@@ -4406,190 +4406,189 @@
     },
     {
       "key": "tartaglia",
-      "name": "Tartaglia",
-      "title": "Childe",
-      "description": "No. 11 of The Harbingers, also known as \"Childe.\" His name is highly feared on the battlefield.",
+      "name": "タルタリヤ",
+      "title": "「公子」",
+      "description": "ファトゥス第十一位、「公子」、その戦績や名前は広く知られている。",
       "skills": [
         {
           "key": "s1",
-          "title": "Cutting Torrent",
+          "title": "断雨",
           "description": "",
           "abilities": [
             {
               "name": "Normal Attack",
-              "description": "Perform up to 6 consecutive shots with a bow.\r\n",
+              "description": "最大6段の連続射撃を行う。\r\n",
               "descriptions": []
             },
             {
               "name": "Charged Attack",
-              "description": "Perform a more precise Aimed Shot with increased DMG.\r\nWhile aiming, the power of Hydro will accumulate on the arrowhead. A arrow fully charged with the torrent will deal Hydro DMG and apply the Riptide status.\r\n",
+              "description": "ダメージがより高く、より精確な狙い撃ちを発動する。\r\n照準時、水元素の力が矢先に集まる。激流を込めた矢が敵に命中する時に水元素ダメージを与え、断流効果を付与する。\r\n",
               "descriptions": []
             },
             {
-              "name": "Riptide",
-              "description": "Opponents affected by Riptide will suffer from AoE Hydro DMG effects when attacked by Tartaglia in various ways. DMG dealt in this way is considered Normal Attack DMG.\r\n",
+              "name": "断流",
+              "description": "断流状態の敵がタルタリヤの攻撃を受けると、水元素範囲ダメージが発生する。これらの効果によるダメージは通常攻撃ダメージと見なされる。\r\n",
               "descriptions": [
-                "Riptide Flash: A fully-charged Aimed Shot that hits an opponent affected by Riptide deals consecutive bouts of AoE DMG. Can occur once every 0.7s.",
-                "Riptide Burst: Defeating an opponent affected by Riptide creates a Hydro burst that inflicts the Riptide status on nearby opponents hit."
+                "断流・閃：フルチャージの狙い撃ち攻撃が断流状態の敵に命中した場合、連続範囲ダメージが発生する。断流・閃は0.7秒毎に1回のみ発動可能。",
+                "断流・破：断流効果の敵を倒した時にウォーターブルームを放ち、近くの敵に断流効果を付与する。"
               ]
             },
             {
-              "name": "Plunging Attack",
-              "description": "Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.\r\n",
+              "name": "落下攻撃",
+              "description": "空中から矢の雨を放ち、凄まじいスピードで落下し地面に衝撃を与え、落下時に範囲ダメージを与える。\r\n魔王の武装・荒波の近接モード時、落下攻撃をすることはできない。\r\n",
               "descriptions": []
             }
           ],
           "stats": [
-            "1-Hit DMG|{param1}%",
-            "2-Hit DMG|{param2}%",
-            "3-Hit DMG|{param3}%",
-            "4-Hit DMG|{param4}%",
-            "5-Hit DMG|{param5}%",
-            "6-Hit DMG|{param6}%",
-            "Aimed Shot|{param7}%",
-            "Fully-Charged Aimed Shot|{param8}%",
-            "Riptide Flash DMG|{param9}%×{param10}",
-            "Riptide Burst DMG|{param11}%",
-            "Riptide Duration|{param12}s",
-            "Plunge DMG|{param13}%",
-            "Low/High Plunge DMG|{param14}% / {param15}%"
+            "1段ダメージ|{param1}%",
+            "2段ダメージ|{param2}%",
+            "3段ダメージ|{param3}%",
+            "4段ダメージ|{param4}%",
+            "5段ダメージ|{param5}%",
+            "6段ダメージ|{param6}%",
+            "狙い撃ち|{param7}%",
+            "フルチャージ狙い撃ち|{param8}%",
+            "断流·閃 ダメージ|{param9}%×{param10}",
+            "断流·破 ダメージ|{param11}%",
+            "断流継続時間|{param12}s",
+            "落下期間のダメージ|{param13}%",
+            "低空/高空落下攻撃ダメージ|{param14}% / {param15}%"
           ]
         },
         {
           "key": "s2",
-          "title": "Foul Legacy: Raging Tide",
-          "description": "Unleashes a set of weaponry made of pure water, dealing Hydro DMG to surrounding opponents and entering Melee Stance.",
+          "title": "魔王の武装·荒波",
+          "description": "水で構成された武装を解放し、周囲の敵に水元素ダメージを与え、近接モードに入る。",
           "abilities": [
             {
               "name": "",
-              "description": "In this Stance, Tartaglia's Normal and Charged Attacks are converted to Hydro DMG that cannot be overridden by any other elemental infusion and change as follows:\r\n",
+              "description": "この状態の時、タルタリヤの通常攻撃と重撃は水元素ダメージとなり、元素付与によって他の元素に変化することはない。また、攻撃は下記のように変化する。\r\n",
               "descriptions": []
             },
             {
-              "name": "Normal Attack",
-              "description": "Perform up to 6 consecutive Hydro strikes.\r\n",
+              "name": "通常攻撃",
+              "description": "最大6段の水元素斬撃を行う。\r\n",
               "descriptions": []
             },
             {
-              "name": "Charged Attack",
-              "description": "Consumes a certain amount of Stamina to unleash a cross slash, dealing Hydro DMG.\r\n",
+              "name": "重撃",
+              "description": "スタミナを消費して前方に斬撃を2回放ち、水元素ダメージを与える。\r\n",
               "descriptions": []
             },
             {
-              "name": "Riptide Slash",
-              "description": "Hitting an opponent affected by Riptide with a melee attack unleashes a Riptide Slash that deals AoE Hydro DMG. DMG dealt in this way is considered Elemental Skill DMG, and can only occur once every 1.5s.\r\nAfter 30s, or when the ability is unleashed again, this skill will end. Tartaglia will return to his Ranged Stance and this ability will enter CD. The longer Tartaglia stays in his Melee Stance, the longer the CD.\r\nIf the return to a ranged stance occurs automatically after 30s, the CD is even longer.\r\n",
+              "name": "断流・斬",
+              "description": "近接攻撃が断流状態の敵に命中すると断流・斬を1回発動し、水元素範囲ダメージを与える。断流・斬が与えたダメージは元素スキルダメージと見なされ、1.5秒毎に1回のみ発動可能\r\n。\r\nスキル発動30秒後、または再びスキルを発動すると効果が解除され、遠隔モードに戻り、クールタイムに入る。近接モードの継続時間が長いほど、クールタイムは長くなる。\r\n30秒継続した後に自動的に遠隔モードに戻った場合、スキルのクールタイムは更に長くなる。\r\n",
               "descriptions": []
             }
           ],
           "stats": [
-            "Stance Change DMG|{param1}%",
-            "1-Hit DMG|{param2}%",
-            "2-Hit DMG|{param3}%",
-            "3-Hit DMG|{param4}%",
-            "4-Hit DMG|{param5}%",
-            "5-Hit DMG|{param6}%",
-            "6-Hit DMG|{param7}% + {param8}%",
-            "Charged Attack DMG|{param9}% + {param10}%",
-            "Charged Attack Stamina Cost|{param11}",
-            "Riptide Slash|{param12}%",
-            "Max Duration|{param13}s",
-            "Preemptive CD|{param14}-{param15}s",
-            "Max CD|{param16}s"
+            "状態切替時に与えるダメージ|{param1}%",
+            "1段ダメージ|{param2}%",
+            "2段ダメージ|{param3}%",
+            "3段ダメージ|{param4}%",
+            "4段ダメージ|{param5}%",
+            "5段ダメージ|{param6}%",
+            "6段ダメージ|{param7}% + {param8}%",
+            "重撃ダメージ|{param9}% + {param10}%",
+            "重撃スタミナ消費|{param11}",
+            "断流・斬|{param12}%",
+            "最大継続時間|{param13}s",
+            "クールタイム|{param14}-{param15}s",
+            "継続時間終了後のクールタイム|{param16}s"
           ]
         },
         {
           "key": "s3",
-          "title": "Havoc: Obliteration",
-          "description": "Performs different attacks based on what stance Tartaglia is in when casting.\r\n",
+          "title": "極悪技·尽滅閃",
+          "description": "タルタリヤの戦闘モードによって、異なる攻撃を発動する。\r\n",
           "abilities": [
             {
-              "name": "Ranged Stance: Flash of Havoc",
-              "description": "Swiftly fires a Hydro-imbued magic arrow, dealing AoE Hydro DMG and applying the Riptide status.\r\nReturns a portion of its Energy Cost after use.\r\n",
+              "name": "遠隔モード・魔弾一閃",
+              "description": "前方に素早く水元素を込めた魔矢を放ち、水元素範囲ダメージを与え、敵に断流効果を付与する。\r\n発動後、元素エネルギーが一部返還される。\r\n",
               "descriptions": []
             },
             {
-              "name": "Melee Stance: Light of Obliteration",
-              "description": "Performs a slash with a large AoE, dealing massive Hydro DMG to all surrounding opponents, which triggers Riptide Blast.\r\n",
+              "name": "近接モード・尽滅の水光",
+              "description": "広範囲の斬撃を1回仕掛け、周囲全ての敵に大量の水元素ダメージを与え、断流・爆を発動する。\r\n",
               "descriptions": []
             },
             {
-              "name": "Riptide Blast",
-              "description": "When the obliterating waters hit an opponent affected by Riptide, it clears their Riptide status and triggers a Hydro Explosion that deals AoE Hydro DMG.\r\nDMG dealt in this way is considered Elemental Burst DMG.\r\n",
+              "name": "断流・爆",
+              "description": "尽滅の水光が断流状態の敵に命中した場合、断流効果が消耗され、スチームバーストを発生させて水元素範囲ダメージを与える。\r\n断流・爆が与えたダメージは元素爆発ダメージと見なされる。\r\n",
               "descriptions": []
             }
           ],
           "stats": [
-            "Skill DMG: Melee|{param1}%",
-            "Skill DMG: Ranged|{param2}%",
-            "Riptide Blast DMG|{param3}%",
-            "Energy Return (Ranged)|{param4}",
-            "CD|{param5}s",
-            "Energy Cost|{param6}"
+            "スキルダメージ·近接|{param1}%",
+            "スキルダメージ·遠隔|{param2}%",
+            "断流·爆 ダメージ|{param3}%",
+            "スキルによる元素エネルギー回復(遠隔)|{param4}",
+            "クールタイム|{param5}s",
+            "元素エネルギー|{param6}"
           ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "Master of Weaponry",
-          "description": "Increases your own party members' Normal Attack Level by 1.\r\n",
+          "title": "武芸マスター",
+          "description": "チーム内の自身のキャラクター全員の通常攻撃Lv.+1。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "Never Ending",
-          "description": "Extends Riptide duration by 8s.\r\n",
+          "title": "無尽蔵",
+          "description": "断流効果の継続時間+8秒。\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "Sword of Torrents",
-          "description": "When Tartaglia is in Foul Legacy: Raging Tide's Melee Stance, on dealing a CRIT hit, Normal and Charged Attacks apply the Riptide status effect to opponents.\r\n",
+          "title": "水形剣",
+          "description": "魔王の武装・荒波の近接モード時、通常攻撃と重撃が会心を発生すると、命中した敵に断流効果を付与する。\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "Foul Legacy: Tide Withholder",
-          "description": "Decreases the CD of Foul Legacy: Raging Tide by 20%\r\n",
+          "title": "魔王の武装·押波",
+          "description": "魔王の武装・荒波のクールタイム-20%。\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "Foul Legacy: Understream",
-          "description": "When opponents affected by Riptide are defeated, Tartaglia regenerates 4 Elemental Energy.\r\n",
+          "title": "魔王の武装·暗流",
+          "description": "断流効果の影響を受けた敵が倒されると、タルタリヤの元素エネルギーが4回復する。\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "Abyssal Mayhem: Vortex of Turmoil",
-          "description": "Increases the Level of Foul Legacy: Raging Tide by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "title": "淵の災い·紛争の源",
+          "description": "魔王の武装・荒波のスキルLv.+3。\r\n最大Lv.15まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "Abyssal Mayhem: Hydrospout",
-          "description": "If Tartaglia is in Foul Legacy: Raging Tide's Melee Stance, triggers Riptide Slash against opponents on the field affected by Riptide every 4s, otherwise, triggers Riptide Flash.\r\nRiptide Slashes and Riptide Flashes triggered by this Constellation effect are not subject to the time intervals that would typically apply to these two Riptide effects, nor do they have any effect on those time intervals.\r\n",
+          "title": "淵の災い·復水放流",
+          "description": "4秒毎に、タルタリヤによって発動された断流効果がフィールドに存在する時、タルタリヤが魔王の武装・荒波の近接モードの場合、断流・斬を発動する。それ以外の場合、断流・閃を発動する。\r\nこの効果によって発動された断流・斬と断流・閃は、この二つのスキル本来の発動時間制限を受けない。また、本来のスキルへの発動時間制限にも影響を与えない。\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "Havoc: Formless Blade",
-          "description": "Increases the Level of Havoc: Obliteration by 3.\r\nMaximum upgrade level is 15.\r\n",
+          "title": "極悪技·雨斬り",
+          "description": "極悪技・尽滅閃のスキルLv.+3。\r\n最大Lv.15まで。\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "Havoc: Annihilation",
-          "description": "When Havoc: Obliteration is cast in Melee Stance, the CD of Foul Legacy: Raging Tide is reset.\r\nThis effect will only take place once Tartaglia returns to his Ranged Stance.\r\n",
+          "title": "極悪技·天使の滅び",
+          "description": "極悪技・尽滅閃発動時、魔王の武装・荒波のクールタイムをリセットする。\r\nこの効果は遠隔モードに戻った後に発動する。\r\n",
           "descriptions": []
         }
       ]
-    },
-    {
+    },    {
       "key": "thoma",
-      "name": "Thoma",
+      "name": "トーマ",
       "title": "渡来介者",
       "description": "神里家の家司。稲妻で活躍する「顔役」でもある。",
       "skills": [
@@ -7657,8 +7656,8 @@
     },
     {
       "key": "dvalins-plume",
-      "name": "Dvalin's Plume",
-      "description": "A feather from the tail of the Dragon of the East.\r\nAs a dragon's feather it has experienced more than a thousand years' worth of winds. One senses within it a yearning for freedom so strong that it could whip up a light breeze to rescue it from its current confines. Its former owner's recognition of you is what makes it content to stay in your hands."
+      "name": "東風の羽根",
+      "description": "モンドの東風の主から取った羽根。\nそれは千年の風と共にあった龍の羽根である。羽根の自由を追い求める本能はそよ風を呼び起こし、束縛から逃げようとするが、その旧主が君を認めたため、羽根は君の手のひらに止まることになった。"
     },
     {
       "key": "dvalins-sigh",
