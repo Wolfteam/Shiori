@@ -3608,35 +3608,35 @@
           "level": 1,
           "values": [
             "{color}12{/color}",
-            "{color}10/20/30{/color}"
+            "{color}10/20/30/48{/color}"
           ]
         },
         {
           "level": 2,
           "values": [
             "{color}15{/color}",
-            "{color}12.5{/color}"
+            "{color}12.5/25/37.5/60{/color}"
           ]
         },
         {
           "level": 3,
           "values": [
             "{color}18{/color}",
-            "{color}15/30/45{/color}"
+            "{color}15/30/45/72{/color}"
           ]
         },
         {
           "level": 4,
           "values": [
             "{color}21{/color}",
-            "{color}17.5{/color}"
+            "{color}17.5/35/52.5/84{/color}"
           ]
         },
         {
           "level": 5,
           "values": [
             "{color}24{/color}",
-            "{color}20/40/60{/color}"
+            "{color}20/40/60/96{/color}"
           ]
         }
       ],
