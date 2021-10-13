@@ -40,11 +40,7 @@ class ArtifactBloc extends PopBloc<ArtifactEvent, ArtifactState> {
           currentItemsInStack.add(artifact.key);
         }
 
-        final bonus = <ArtifactCardBonusModel>[];
-        for (var i = 1; i <= translation.bonus.length; i++) {
-          final item = ArtifactCardBonusModel(pieces: i, bonus: translation.bonus[i - 1]);
-          bonus.add(item);
-        }
+        final bonus = _genshinService.getArtifactBonus(translation);
 
         return ArtifactState.loaded(
           name: translation.name,
