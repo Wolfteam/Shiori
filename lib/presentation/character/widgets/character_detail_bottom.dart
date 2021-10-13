@@ -12,16 +12,6 @@ import 'package:shiori/presentation/shared/loading.dart';
 
 import 'character_detail.dart';
 
-// final height = MediaQuery.of(context).size.height;
-//
-// // Height (without SafeArea)
-// var padding = MediaQuery.of(context).padding;
-// double height1 = height - padding.top - padding.bottom;
-// // Height (without status bar)
-// double height2 = height - padding.top;
-// // Height (without status and toolbar)
-// double height3 = height - padding.top - kToolbarHeight;
-
 class CharacterDetailBottom extends StatelessWidget {
   const CharacterDetailBottom({Key? key}) : super(key: key);
 
@@ -60,7 +50,8 @@ class _PortraitLayout extends StatelessWidget {
                 body: Column(
                   children: state.builds
                       .map((build) => CharacterDetailBuildCard(
-                            isForSupport: build.isForSupport,
+                            type: build.type,
+                            subType: build.subType,
                             elementType: state.elementType,
                             weapons: build.weapons,
                             artifacts: build.artifacts,
@@ -79,9 +70,9 @@ class _PortraitLayout extends StatelessWidget {
                 talentAscensionMaterials: state.talentAscensionsMaterials,
                 elementType: state.elementType,
               ),
-            if (state.multiTalentAscensionMaterials != null && state.multiTalentAscensionMaterials!.isNotEmpty)
+            if (state.multiTalentAscensionMaterials.isNotEmpty)
               CharacterDetailTalentAscensionMaterialsCard.withMultiTalents(
-                multiTalentAscensionMaterials: state.multiTalentAscensionMaterials!,
+                multiTalentAscensionMaterials: state.multiTalentAscensionMaterials,
                 elementType: state.elementType,
               ),
             CharacterDetailPassiveCard(elementType: state.elementType, passives: state.passives),
@@ -160,9 +151,9 @@ class _LandscapeLayout extends StatelessWidget {
                     talentAscensionMaterials: state.talentAscensionsMaterials,
                     elementType: state.elementType,
                   ),
-                  if (state.multiTalentAscensionMaterials != null && state.multiTalentAscensionMaterials!.isNotEmpty)
+                  if (state.multiTalentAscensionMaterials.isNotEmpty)
                     CharacterDetailTalentAscensionMaterialsCard.withMultiTalents(
-                      multiTalentAscensionMaterials: state.multiTalentAscensionMaterials ?? [],
+                      multiTalentAscensionMaterials: state.multiTalentAscensionMaterials,
                       elementType: state.elementType,
                     ),
                 ],
@@ -175,7 +166,8 @@ class _LandscapeLayout extends StatelessWidget {
                 body: Column(
                   children: state.builds
                       .map((build) => CharacterDetailBuildCard(
-                            isForSupport: build.isForSupport,
+                            type: build.type,
+                            subType: build.subType,
                             elementType: state.elementType,
                             weapons: build.weapons,
                             artifacts: build.artifacts,

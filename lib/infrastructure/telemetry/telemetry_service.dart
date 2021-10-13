@@ -25,39 +25,18 @@ class TelemetryServiceImpl implements TelemetryService {
   }
 
   @override
-  Future<void> trackCharacterLoaded(
-    String value, {
-    bool loadedFromName = true,
-  }) async {
-    if (loadedFromName) {
-      await trackEventAsync('Character-FromName', {'Name': value});
-    } else {
-      await trackEventAsync('Character-FromImg', {'Image': value});
-    }
+  Future<void> trackCharacterLoaded(String value) async {
+    await trackEventAsync('Character-FromKey', {'Key': value});
   }
 
   @override
-  Future<void> trackWeaponLoaded(
-    String value, {
-    bool loadedFromName = true,
-  }) async {
-    if (loadedFromName) {
-      await trackEventAsync('Weapon-FromName', {'Name': value});
-    } else {
-      await trackEventAsync('Weapon-FromImg', {'Image': value});
-    }
+  Future<void> trackWeaponLoaded(String value) async {
+    await trackEventAsync('Weapon-FromKey', {'Key': value});
   }
 
   @override
-  Future<void> trackArtifactLoaded(
-    String value, {
-    bool loadedFromName = true,
-  }) async {
-    if (loadedFromName) {
-      await trackEventAsync('Artifact-FromName', {'Name': value});
-    } else {
-      await trackEventAsync('Artifact-FromImg', {'Image': value});
-    }
+  Future<void> trackArtifactLoaded(String value) async {
+    await trackEventAsync('Artifact-FromKey', {'Key': value});
   }
 
   @override
@@ -112,12 +91,8 @@ class TelemetryServiceImpl implements TelemetryService {
   Future<void> trackTierListBuilderScreenShootTaken() => trackEventAsync('TierListBuilder-ScreenShootTaken');
 
   @override
-  Future<void> trackMaterialLoaded(String key, {bool loadedFromName = true}) async {
-    if (loadedFromName) {
-      await trackEventAsync('Material-FromName', {'Name': key});
-    } else {
-      await trackEventAsync('Material-FromImg', {'Image': key});
-    }
+  Future<void> trackMaterialLoaded(String key) async {
+    await trackEventAsync('Material-FromKey', {'Key': key});
   }
 
   @override

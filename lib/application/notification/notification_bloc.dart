@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/assets.dart';
@@ -306,7 +307,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
         switch (newValue) {
           case AppNotificationItemType.character:
             final character = _genshinService.getCharactersForCard().first;
-            images.add(NotificationItemImage(itemKey: character.key, image: character.logoName, isSelected: true));
+            images.add(NotificationItemImage(itemKey: character.key, image: character.image, isSelected: true));
             break;
           case AppNotificationItemType.weapon:
             final weapon = _genshinService.getWeaponsForCard().first;
@@ -361,7 +362,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
 
       if (state.key == null) {
         await _telemetryService.trackNotificationCreated(state.type);
-      }else{
+      } else {
         await _telemetryService.trackNotificationUpdated(state.type);
       }
     } catch (e, s) {
@@ -644,11 +645,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   String _getSelectedItemKey() {
-    final image = state.images.firstWhere((el) => el.isSelected).image;
-    return state.maybeMap(
-      custom: (s) => _genshinService.getItemKeyFromNotificationType(image, state.type, notificationItemType: s.itemType),
-      orElse: () => _genshinService.getItemKeyFromNotificationType(image, state.type),
-    );
+    return state.images.firstWhere((el) => el.isSelected).itemKey;
   }
 
   List<NotificationItemImage> _getImagesForResin() {
@@ -657,7 +654,13 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   List<NotificationItemImage> _getImagesForExpeditionNotifications({String? selectedImage}) {
-    final materials = _genshinService.getAllMaterialsThatCanBeObtainedFromAnExpedition();
+    final materials = _genshinService
+        .getAllMaterialsThatCanBeObtainedFromAnExpedition()
+        .orderByDescending(
+          (x) => x.rarity,
+        )
+        .thenBy((x) => x.key)
+        .toList();
     if (selectedImage.isNotNullEmptyOrWhitespace) {
       return materials
           .mapIndex((e, index) => NotificationItemImage(itemKey: e.key, image: e.fullImagePath, isSelected: selectedImage == e.fullImagePath))
@@ -675,7 +678,13 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   List<NotificationItemImage> _getImagesForFarmingMaterialNotifications({String? selectedImage}) {
-    final materials = _genshinService.getAllMaterialsThatHaveAFarmingRespawnDuration();
+    final materials = _genshinService
+        .getAllMaterialsThatHaveAFarmingRespawnDuration()
+        .orderByDescending(
+          (x) => x.rarity,
+        )
+        .thenBy((x) => x.key)
+        .toList();
     final images = materials.mapIndex((e, index) => NotificationItemImage(itemKey: e.key, image: e.fullImagePath)).toList();
     return _getImagesForFarmingNotifications(images, selectedImage: selectedImage);
   }
@@ -709,13 +718,13 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     final materials = _genshinService.getMaterials(MaterialType.currency, onlyReadyToBeUsed: false);
     //TODO: FIGURE OUT HOW CAN I REMOVE THIS KEY FROM HERE
     return materials
-        .where((el) => el.key == 'RealmCurrency')
+        .where((el) => el.key == 'realm-currency')
         .mapIndex((e, i) => NotificationItemImage(itemKey: e.key, image: e.fullImagePath, isSelected: i == 0))
         .toList();
   }
 
   List<NotificationItemImage> _getImagesForWeeklyBossNotifications({String? selectedImage}) {
-    final monsters = _genshinService.getMonsters(MonsterType.boss);
+    final monsters = _genshinService.getMonsters(MonsterType.boss).where((el) => el.drops.isNotEmpty).toList();
     if (selectedImage.isNotNullEmptyOrWhitespace) {
       return monsters
           .map((e) => NotificationItemImage(itemKey: e.key, image: e.fullImagePath, isSelected: e.fullImagePath == selectedImage))
@@ -739,7 +748,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     }
     //TODO: FIGURE OUT HOW CAN I REMOVE THIS KEY FROM HERE
     final materials = _genshinService.getMaterials(MaterialType.currency);
-    final material = materials.firstWhere((el) => el.key == 'Primogem');
+    final material = materials.firstWhere((el) => el.key == 'primogem');
     return [NotificationItemImage(itemKey: material.key, image: material.fullImagePath, isSelected: true)];
   }
 

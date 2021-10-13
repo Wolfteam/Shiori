@@ -8,7 +8,7 @@ class WeaponCardModel {
   final String image;
   final String name;
   final int rarity;
-  final int baseAtk;
+  final double baseAtk;
   final WeaponType type;
   final StatType subStatType;
   final double subStatValue;

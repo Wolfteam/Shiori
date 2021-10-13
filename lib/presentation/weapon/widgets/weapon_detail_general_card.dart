@@ -8,7 +8,7 @@ import 'package:shiori/presentation/shared/item_description.dart';
 
 class WeaponDetailGeneralCard extends StatelessWidget {
   final String name;
-  final int atk;
+  final double atk;
   final int rarity;
   final StatType statType;
   final double secondaryStatValue;

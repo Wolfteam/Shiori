@@ -89,7 +89,7 @@ class MaterialBottomSheet extends StatelessWidget {
 }
 
 class _OtherFilters extends StatelessWidget {
-  final mat.MaterialType tempType;
+  final mat.MaterialType? tempType;
   final MaterialFilterType tempFilterType;
   final SortDirectionType tempSortDirectionType;
   final bool forEndDrawer;
@@ -108,12 +108,12 @@ class _OtherFilters extends StatelessWidget {
     return CommonButtonBar(
       alignment: WrapAlignment.spaceEvenly,
       children: [
-        ItemPopupMenuFilter<mat.MaterialType>(
+        ItemPopupMenuFilterWithAllValue(
           tooltipText: s.secondaryState,
-          onSelected: (v) => context.read<MaterialsBloc>().add(MaterialsEvent.typeChanged(v)),
-          selectedValue: tempType,
-          values: mat.MaterialType.values.where((el) => !_ignoredSubStats.contains(el)).toList(),
-          itemText: (val) => s.translateMaterialType(val),
+          onAllOrValueSelected: (v) => context.read<MaterialsBloc>().add(MaterialsEvent.typeChanged(v != null ? mat.MaterialType.values[v] : null)),
+          selectedValue: tempType?.index,
+          values: mat.MaterialType.values.where((el) => !_ignoredSubStats.contains(el)).map((e) => e.index).toList(),
+          itemText: (val) => s.translateMaterialType(mat.MaterialType.values[val]),
           icon: Icon(Shiori.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
         ItemPopupMenuFilter<MaterialFilterType>(

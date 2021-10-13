@@ -7,11 +7,11 @@ class ArtifactState with _$ArtifactState {
   const factory ArtifactState.loaded({
     required String name,
     required String image,
-    required int rarityMin,
-    required int rarityMax,
+    required int minRarity,
+    required int maxRarity,
     required List<ArtifactCardBonusModel> bonus,
     required List<String> images,
-    required List<String> charImages,
-    required List<String> droppedBy,
+    required List<ItemCommon> charImages,
+    required List<ItemCommon> droppedBy,
   }) = _LoadedState;
 }

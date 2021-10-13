@@ -4,7 +4,6 @@ import 'package:shiori/domain/enums/enums.dart';
 
 import '../../../assets.dart';
 import '../../../enums/character_role_type.dart';
-import '../../../enums/character_skill_ability_type.dart';
 import '../../../enums/character_skill_type.dart';
 import '../../../enums/element_type.dart';
 import '../../../enums/region_type.dart';
@@ -19,6 +18,8 @@ class CharacterFileModel with _$CharacterFileModel {
   String get fullCharacterImagePath => Assets.getCharacterFullPath(image);
 
   String get fullImagePath => Assets.getCharacterPath(image);
+
+  String? get fullSecondImagePath => secondFullImage != null ? Assets.getCharacterFullPath(secondFullImage!) : null;
 
   factory CharacterFileModel({
     required String key,
@@ -56,7 +57,7 @@ class CharacterFileAscensionMaterialModel with _$CharacterFileAscensionMaterialM
   factory CharacterFileAscensionMaterialModel({
     required int rank,
     required int level,
-    required List<ItemAscensionMaterialModel> materials,
+    required List<ItemAscensionMaterialFileModel> materials,
   }) = _CharacterFileAscensionMaterialModel;
 
   const CharacterFileAscensionMaterialModel._();
@@ -68,7 +69,7 @@ class CharacterFileAscensionMaterialModel with _$CharacterFileAscensionMaterialM
 class CharacterFileTalentAscensionMaterialModel with _$CharacterFileTalentAscensionMaterialModel {
   factory CharacterFileTalentAscensionMaterialModel({
     required int level,
-    required List<ItemAscensionMaterialModel> materials,
+    required List<ItemAscensionMaterialFileModel> materials,
   }) = _CharacterFileTalentAscensionMaterialModel;
 
   const CharacterFileTalentAscensionMaterialModel._();
@@ -92,8 +93,9 @@ class CharacterFileMultiTalentAscensionMaterialModel with _$CharacterFileMultiTa
 @freezed
 class CharacterFileBuild with _$CharacterFileBuild {
   factory CharacterFileBuild({
-    required bool isSupport,
-    required List<String> weaponImages,
+    required CharacterRoleType type,
+    required CharacterRoleSubType subType,
+    required List<String> weaponKeys,
     required List<CharacterFileArtifactBuild> artifacts,
     required List<StatType> subStatsToFocus,
   }) = _CharacterFileBuild;
@@ -105,10 +107,8 @@ class CharacterFileBuild with _$CharacterFileBuild {
 
 @freezed
 class CharacterFileArtifactBuild with _$CharacterFileArtifactBuild {
-  String? get fullImagePath => one != null ? Assets.getArtifactPath(one!) : null;
-
   factory CharacterFileArtifactBuild({
-    String? one,
+    String? oneKey,
     required List<CharacterFileArtifactMultipleBuild> multiples,
     required List<StatType> stats,
   }) = _CharacterFileArtifactBuild;
@@ -120,11 +120,9 @@ class CharacterFileArtifactBuild with _$CharacterFileArtifactBuild {
 
 @freezed
 class CharacterFileArtifactMultipleBuild with _$CharacterFileArtifactMultipleBuild {
-  String get fullImagePath => Assets.getArtifactPath(image);
-
   factory CharacterFileArtifactMultipleBuild({
+    required String key,
     required int quantity,
-    required String image,
   }) = _CharacterFileArtifactMultipleBuild;
 
   CharacterFileArtifactMultipleBuild._();
@@ -139,8 +137,8 @@ class CharacterFileSkillModel with _$CharacterFileSkillModel {
   factory CharacterFileSkillModel({
     required String key,
     required CharacterSkillType type,
+    required List<CharacterFileSkillStatModel> stats,
     String? image,
-    List<CharacterFileSkillAbilityModel>? abilities,
   }) = _CharacterFileSkillModel;
 
   CharacterFileSkillModel._();
@@ -149,15 +147,15 @@ class CharacterFileSkillModel with _$CharacterFileSkillModel {
 }
 
 @freezed
-class CharacterFileSkillAbilityModel with _$CharacterFileSkillAbilityModel {
-  factory CharacterFileSkillAbilityModel({
+class CharacterFileSkillStatModel with _$CharacterFileSkillStatModel {
+  factory CharacterFileSkillStatModel({
     required String key,
-    required CharacterSkillAbilityType type,
-  }) = _CharacterFileSkillAbilityModel;
+    required List<double> values,
+  }) = _CharacterFileSkillStatModel;
 
-  CharacterFileSkillAbilityModel._();
+  CharacterFileSkillStatModel._();
 
-  factory CharacterFileSkillAbilityModel.fromJson(Map<String, dynamic> json) => _$CharacterFileSkillAbilityModelFromJson(json);
+  factory CharacterFileSkillStatModel.fromJson(Map<String, dynamic> json) => _$CharacterFileSkillStatModelFromJson(json);
 }
 
 @freezed
@@ -198,7 +196,7 @@ class CharacterFileStatModel with _$CharacterFileStatModel {
     required double baseAtk,
     required double baseDef,
     required bool isAnAscension,
-    required double specificValue,
+    required double statValue,
   }) = _CharacterFileStatModel;
 
   const CharacterFileStatModel._();

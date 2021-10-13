@@ -16,34 +16,32 @@ abstract class GenshinService {
   List<CharacterCardModel> getCharactersForCard();
   CharacterCardModel getCharacterForCard(String key);
   CharacterFileModel getCharacter(String key);
-  CharacterFileModel getCharacterByImg(String img);
   List<CharacterFileModel> getCharactersForBirthday(DateTime date);
   List<TierListRowModel> getDefaultCharacterTierList(List<int> colors);
   List<String> getUpcomingCharactersKeys();
+  List<CharacterSkillStatModel> getCharacterSkillStats(List<CharacterFileSkillStatModel> skillStats, List<String> statsTranslations);
 
   List<WeaponCardModel> getWeaponsForCard();
   WeaponCardModel getWeaponForCard(String key);
-  WeaponCardModel getWeaponForCardByImg(String image);
   WeaponFileModel getWeapon(String key);
-  WeaponFileModel getWeaponByImg(String img);
   List<String> getUpcomingWeaponsKeys();
 
   List<ArtifactCardModel> getArtifactsForCard();
-  ArtifactCardModel getArtifactForCardByImg(String image);
+  ArtifactCardModel getArtifactForCard(String key);
   ArtifactFileModel getArtifact(String key);
 
-  List<String> getCharacterImgsUsingWeapon(String key);
-  List<String> getCharacterImgsUsingArtifact(String key);
-  List<String> getCharacterImgsUsingMaterial(String key);
-  List<String> getWeaponImgsUsingMaterial(String key);
-  List<String> getRelatedMaterialImgsToMaterial(String key);
-  List<String> getRelatedMonsterImgsToMaterial(String key);
-  List<String> getRelatedMonsterImgsToArtifact(String key);
+  List<ItemCommon> getCharacterForItemsUsingWeapon(String key);
+  List<ItemCommon> getCharacterForItemsUsingArtifact(String key);
+  List<ItemCommon> getCharacterForItemsUsingMaterial(String key);
+  List<ItemCommon> getWeaponForItemsUsingMaterial(String key);
+  List<ItemCommon> getRelatedMonsterToMaterialForItems(String key);
+  List<ItemCommon> getRelatedMonsterToArtifactForItems(String key);
 
   TranslationArtifactFile getArtifactTranslation(String key);
   TranslationCharacterFile getCharacterTranslation(String key);
   TranslationWeaponFile getWeaponTranslation(String key);
   TranslationMaterialFile getMaterialTranslation(String key);
+  TranslationMonsterFile getMonsterTranslation(String key);
   List<MaterialFileModel> getAllMaterialsThatCanBeObtainedFromAnExpedition();
   List<MaterialFileModel> getAllMaterialsThatHaveAFarmingRespawnDuration();
 
@@ -59,6 +57,8 @@ abstract class GenshinService {
   MaterialFileModel getMaterial(String key);
   MaterialFileModel getMaterialByImage(String image);
   List<MaterialFileModel> getMaterials(MaterialType type, {bool onlyReadyToBeUsed = true});
+  MaterialFileModel getMoraMaterial();
+  String getMaterialImg(String key);
 
   int getServerDay(AppServerResetTimeType type);
   DateTime getServerDate(AppServerResetTimeType type);
@@ -67,22 +67,17 @@ abstract class GenshinService {
   List<String> getUpcomingKeys();
 
   MonsterFileModel getMonster(String key);
-  MonsterFileModel getMonsterByImg(String image);
   List<MonsterCardModel> getAllMonstersForCard();
-  MonsterCardModel getMonsterForCardByImg(String image);
   List<MonsterFileModel> getMonsters(MonsterType type);
 
   String getItemImageFromNotificationType(String itemKey, AppNotificationType notificationType, {AppNotificationItemType? notificationItemType});
   String getItemImageFromNotificationItemType(String itemKey, AppNotificationItemType notificationItemType);
-  String getItemKeyFromNotificationType(String itemImage, AppNotificationType notificationType, {AppNotificationItemType? notificationItemType});
 
   List<GadgetFileModel> getAllGadgetsForNotifications();
   GadgetFileModel getGadget(String key);
-  GadgetFileModel getGadgetByImage(String image);
 
   FurnitureFileModel getDefaultFurnitureForNotifications();
   FurnitureFileModel getFurniture(String key);
-  FurnitureFileModel getFurnitureByImage(String image);
 
   DateTime getNextDateForWeeklyBoss(AppServerResetTimeType type);
 }

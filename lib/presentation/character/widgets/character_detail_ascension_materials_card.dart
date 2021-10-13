@@ -10,7 +10,7 @@ import 'package:shiori/presentation/shared/styles.dart';
 
 class CharacterDetailAscensionMaterialsCard extends StatelessWidget {
   final ElementType elementType;
-  final List<CharacterFileAscensionMaterialModel> ascensionMaterials;
+  final List<CharacterAscensionModel> ascensionMaterials;
 
   const CharacterDetailAscensionMaterialsCard({
     Key? key,
@@ -53,13 +53,12 @@ class CharacterDetailAscensionMaterialsCard extends StatelessWidget {
     );
   }
 
-  TableRow _buildAscensionRow(CharacterFileAscensionMaterialModel model) {
-    final materials = model.materials.map((m) => WrappedAscensionMaterial(image: m.fullImagePath, quantity: m.quantity)).toList();
+  TableRow _buildAscensionRow(CharacterAscensionModel model) {
+    final materials = model.materials.map((m) => WrappedAscensionMaterial(itemKey: m.key, image: m.image, quantity: m.quantity)).toList();
     return TableRow(children: [
       CommonTableCell(text: '${model.rank}', padding: Styles.edgeInsetAll10),
       CommonTableCell(text: '${model.level}', padding: Styles.edgeInsetAll10),
       CommonTableCell.child(
-        padding: Styles.edgeInsetAll5,
         child: Wrap(alignment: WrapAlignment.center, children: materials),
       ),
     ]);

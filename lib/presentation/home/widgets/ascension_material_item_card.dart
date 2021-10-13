@@ -5,6 +5,7 @@ import 'package:shiori/presentation/shared/material_item_button.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
 class AscensionMaterialItemCard extends StatelessWidget {
+  final String itemKey;
   final String name;
   final String image;
   final List<int> days;
@@ -12,6 +13,7 @@ class AscensionMaterialItemCard extends StatelessWidget {
 
   const AscensionMaterialItemCard({
     Key? key,
+    required this.itemKey,
     required this.name,
     required this.image,
     required this.days,
@@ -33,7 +35,7 @@ class AscensionMaterialItemCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            MaterialItemButton(image: image, size: 100),
+            MaterialItemButton(itemKey: itemKey, image: image, size: 100),
             Tooltip(
               message: name,
               child: Text(

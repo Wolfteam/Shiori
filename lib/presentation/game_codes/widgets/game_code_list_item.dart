@@ -85,7 +85,8 @@ class GameCodeListItem extends StatelessWidget {
                       crossAxisAlignment: WrapCrossAlignment.center,
                       children: rewards
                           .map((m) => WrappedAscensionMaterial(
-                                image: m.fullImagePath,
+                                itemKey: m.key,
+                                image: m.image,
                                 quantity: m.quantity,
                                 size: SizeUtils.getSizeForCircleImages(context) * 0.6,
                               ))

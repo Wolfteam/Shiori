@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/assets.dart';
+import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/images/circle_character.dart';
 import 'package:shiori/presentation/shared/loading.dart';
@@ -31,7 +32,7 @@ class SliverCharactersBirthdayCard extends StatelessWidget {
                         physics: const BouncingScrollPhysics(),
                         scrollDirection: Axis.horizontal,
                         itemCount: state.characterImgBirthday.length,
-                        itemBuilder: (ctx, index) => _CakeCard(image: state.characterImgBirthday[index]),
+                        itemBuilder: (ctx, index) => _CakeCard(item: state.characterImgBirthday[index]),
                       ),
                     ),
                   ],
@@ -44,11 +45,11 @@ class SliverCharactersBirthdayCard extends StatelessWidget {
 }
 
 class _CakeCard extends StatelessWidget {
-  final String image;
+  final ItemCommon item;
 
   const _CakeCard({
     Key? key,
-    required this.image,
+    required this.item,
   }) : super(key: key);
 
   @override
@@ -88,7 +89,7 @@ class _CakeCard extends StatelessWidget {
             Flexible(
               flex: 50,
               fit: FlexFit.tight,
-              child: CircleCharacter(image: image, radius: 55),
+              child: CircleCharacter.fromItem(item: item, radius: 55),
             )
           ],
         ),

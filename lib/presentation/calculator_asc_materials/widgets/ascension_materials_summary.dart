@@ -33,7 +33,15 @@ class AscensionMaterialsSummaryWidget extends StatelessWidget {
             Wrap(
               alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
-              children: summary.materials.map((m) => MaterialItem(image: m.fullImagePath, quantity: m.quantity, type: m.materialType, sessionKey: sessionKey)).toList(),
+              children: summary.materials
+                  .map((m) => MaterialItem(
+                        itemKey: m.key,
+                        image: m.fullImagePath,
+                        quantity: m.quantity,
+                        type: m.materialType,
+                        sessionKey: sessionKey,
+                      ))
+                  .toList(),
             )
           ],
         ),
@@ -71,7 +79,9 @@ class AscensionMaterialsSummaryWidget extends StatelessWidget {
         Wrap(
           alignment: WrapAlignment.center,
           crossAxisAlignment: WrapCrossAlignment.center,
-          children: materials.map((m) => MaterialItem(image: m.fullImagePath, quantity: m.quantity, type: m.materialType, sessionKey: sessionKey)).toList(),
+          children: materials
+              .map((m) => MaterialItem(itemKey: m.key, image: m.fullImagePath, quantity: m.quantity, type: m.materialType, sessionKey: sessionKey))
+              .toList(),
         ),
     ];
   }

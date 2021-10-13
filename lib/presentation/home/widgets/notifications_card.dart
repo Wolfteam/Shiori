@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/home/widgets/card_description.dart';
 import 'package:shiori/presentation/home/widgets/card_item.dart';
 import 'package:shiori/presentation/notifications/notifications_page.dart';
 
@@ -23,11 +24,7 @@ class NotificationsCard extends StatelessWidget {
       iconToTheLeft: iconToTheLeft,
       icon: Icon(Icons.notifications, color: theme.accentColor, size: 60),
       children: [
-        Text(
-          s.createYourCustomNotifications,
-          style: theme.textTheme.subtitle2,
-          textAlign: TextAlign.center,
-        ),
+        CardDescription(text: s.createYourCustomNotifications),
       ],
     );
   }

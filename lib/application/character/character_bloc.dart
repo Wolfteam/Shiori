@@ -28,7 +28,7 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
   ) : super(const CharacterState.loading());
 
   @override
-  CharacterEvent getEventForPop(String? key) => CharacterEvent.loadFromName(key: key!, addToQueue: false);
+  CharacterEvent getEventForPop(String? key) => CharacterEvent.loadFromKey(key: key!, addToQueue: false);
 
   @override
   Stream<CharacterState> mapEventToState(
@@ -39,7 +39,7 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
     }
 
     final s = await event.when(
-      loadFromName: (key, addToQueue) async {
+      loadFromKey: (key, addToQueue) async {
         final char = _genshinService.getCharacter(key);
         final translation = _genshinService.getCharacterTranslation(key);
 
@@ -47,17 +47,6 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
           await _telemetryService.trackCharacterLoaded(key);
           currentItemsInStack.add(char.key);
         }
-        return _buildInitialState(char, translation);
-      },
-      loadFromImg: (img, addToQueue) async {
-        final char = _genshinService.getCharacterByImg(img);
-        final translation = _genshinService.getCharacterTranslation(char.key);
-
-        if (addToQueue) {
-          await _telemetryService.trackCharacterLoaded(img, loadedFromName: false);
-          currentItemsInStack.add(char.key);
-        }
-
         return _buildInitialState(char, translation);
       },
       addedToInventory: (key, wasAdded) async {
@@ -77,7 +66,31 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
     yield s;
   }
 
+  ItemAscensionMaterialModel _mapToItemAscensionModel(ItemAscensionMaterialFileModel m) {
+    final img = _genshinService.getMaterial(m.key).fullImagePath;
+    return ItemAscensionMaterialModel(key: m.key, type: m.type, quantity: m.quantity, image: img);
+  }
+
+  CharacterAscensionModel _mapToAscensionModel(CharacterFileAscensionMaterialModel e) {
+    final materials = e.materials.map((m) => _mapToItemAscensionModel(m)).toList();
+    return CharacterAscensionModel(rank: e.rank, level: e.level, materials: materials);
+  }
+
+  CharacterTalentAscensionModel _mapToTalentAscensionModel(CharacterFileTalentAscensionMaterialModel e) {
+    final materials = e.materials.map((m) => _mapToItemAscensionModel(m)).toList();
+    return CharacterTalentAscensionModel(level: e.level, materials: materials);
+  }
+
   CharacterState _buildInitialState(CharacterFileModel char, TranslationCharacterFile translation) {
+    final ascensionMaterials = char.ascensionMaterials.map((e) => _mapToAscensionModel(e)).toList();
+
+    final talentAscensionMaterials = char.talentAscensionMaterials.map((e) => _mapToTalentAscensionModel(e)).toList();
+
+    final multiTalents = (char.multiTalentAscensionMaterials ?? []).map((e) {
+      final materials = e.materials.map((m) => _mapToTalentAscensionModel(m)).toList();
+      return CharacterMultiTalentAscensionModel(number: e.number, materials: materials);
+    }).toList();
+
     return CharacterState.loaded(
       key: char.key,
       name: translation.name,
@@ -92,23 +105,22 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
       isInInventory: _dataService.isItemInInventory(char.key, ItemType.character),
       elementType: char.elementType,
       weaponType: char.weaponType,
-      ascensionMaterials: char.ascensionMaterials,
-      talentAscensionsMaterials: char.talentAscensionMaterials,
+      ascensionMaterials: ascensionMaterials,
+      talentAscensionsMaterials: talentAscensionMaterials,
       skills: translation.skills.map((e) {
         final skill = char.skills.firstWhere((s) => s.key == e.key);
         final abilities = e.abilities.map((a) {
-          final type =
-              skill.abilities != null && skill.abilities!.any((x) => x.key == a.key) ? skill.abilities!.firstWhere((x) => x.key == a.key).type : null;
           return CharacterSkillAbilityModel(
-            type: type,
             name: a.name,
             description: a.description,
             descriptions: a.descriptions,
             secondDescription: a.secondDescription,
           );
         }).toList();
+        final stats = _genshinService.getCharacterSkillStats(skill.stats, e.stats);
         return CharacterSkillCardModel(
           image: skill.fullImagePath,
+          stats: stats,
           title: e.title,
           type: skill.type,
           abilities: abilities,
@@ -136,19 +148,20 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
           descriptions: e.descriptions,
         );
       }).toList(),
-      multiTalentAscensionMaterials: char.multiTalentAscensionMaterials,
+      multiTalentAscensionMaterials: multiTalents,
       builds: char.builds.map((build) {
         return CharacterBuildCardModel(
-          isForSupport: build.isSupport,
+          type: build.type,
+          subType: build.subType,
           subStatsToFocus: build.subStatsToFocus,
-          weapons: build.weaponImages.map((e) => _genshinService.getWeaponForCardByImg(e)).toList(),
+          weapons: build.weaponKeys.map((e) => _genshinService.getWeaponForCard(e)).toList(),
           artifacts: build.artifacts.map(
             (e) {
-              final one = e.one != null ? _genshinService.getArtifactForCardByImg(e.one!) : null;
+              final one = e.oneKey != null ? _genshinService.getArtifactForCard(e.oneKey!) : null;
               final multiples = e.multiples
                   .map((m) => CharacterBuildMultipleArtifactModel(
                         quantity: m.quantity,
-                        artifact: _genshinService.getArtifactForCardByImg(m.image),
+                        artifact: _genshinService.getArtifactForCard(m.key),
                       ))
                   .toList();
 

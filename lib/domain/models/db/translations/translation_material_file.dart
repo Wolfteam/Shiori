@@ -8,7 +8,7 @@ class TranslationMaterialFile with _$TranslationMaterialFile {
   factory TranslationMaterialFile({
     required String key,
     required String name,
-    String? description,
+    required String description,
     String? bossName,
   }) = _TranslationMaterialFile;
 

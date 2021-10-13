@@ -15,10 +15,10 @@ class WeaponsState with _$WeaponsState {
     required WeaponFilterType tempWeaponFilterType,
     required SortDirectionType sortDirectionType,
     required SortDirectionType tempSortDirectionType,
-    required StatType weaponSubStatType,
-    required StatType tempWeaponSubStatType,
-    required ItemLocationType weaponLocationType,
-    required ItemLocationType tempWeaponLocationType,
+    StatType? weaponSubStatType,
+    StatType? tempWeaponSubStatType,
+    ItemLocationType? weaponLocationType,
+    ItemLocationType? tempWeaponLocationType,
     @Default(<String>[]) List<String> excludeKeys,
   }) = _LoadedState;
 }

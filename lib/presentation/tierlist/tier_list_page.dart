@@ -99,7 +99,7 @@ class _TierListPageState extends State<TierListPage> {
       index: index,
       title: item.tierText,
       color: Color(item.tierColor),
-      images: item.charImgs,
+      items: item.items,
       isUpButtonEnabled: index != 0,
       isDownButtonEnabled: index != totalNumberOfItems - 1,
       numberOfRows: totalNumberOfItems,

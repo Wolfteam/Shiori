@@ -110,8 +110,9 @@ class GameCodeServiceImpl implements GameCodeService {
 
         final quantityString = cellNodes[i + 1].text!.trim().replaceAll('\n', '').replaceAll(',', '');
         final quantity = int.parse(quantityRegex.allMatches(quantityString).first.group(0)!);
-        final image = _getMaterialImage(wikiName, type);
-        rewards.add(ItemAscensionMaterialModel(quantity: quantity, materialType: type, image: image));
+        final key = _getMaterialKey(wikiName, type);
+        final img = _genshinService.getMaterialImg(key);
+        rewards.add(ItemAscensionMaterialModel(quantity: quantity, type: type, key: key, image: img));
       } catch (e, s) {
         _logger.error(runtimeType, '_parseRewards: Unknown error', e, s);
       }
@@ -137,23 +138,25 @@ class GameCodeServiceImpl implements GameCodeService {
     }
   }
 
-  String _getMaterialImage(String wikiName, MaterialType type) {
+  String _getMaterialKey(String wikiName, MaterialType type) {
     final relatedMaterials = _genshinService.getMaterials(type);
 
     final map = <String, int>{};
     for (final material in relatedMaterials) {
       var matches = 0;
-      final imageWithoutExt = material.image.substring(0, material.image.indexOf('.'));
-      final characters = wikiName.split('');
+      final characters = wikiName.toLowerCase().split('');
       for (final char in characters) {
-        if (imageWithoutExt.contains(char)) {
+        if (material.key.contains(char)) {
           matches++;
+        } else {
+          matches--;
         }
       }
-      map.putIfAbsent(material.image, () => matches);
+      map.putIfAbsent(material.key, () => matches);
     }
 
-    return map.entries.orderBy((el) => el.value).last.key;
+    final pickedKey = map.entries.orderBy((el) => el.value).last.key;
+    return pickedKey;
   }
 
   AppServerResetTimeType? _getRegion(String? wikiServer) {

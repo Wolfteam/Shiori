@@ -57,7 +57,7 @@ class CharacterDetailStatsCard extends StatelessWidget {
         CommonTableCell(text: '${e.baseHp}', padding: Styles.edgeInsetAll5),
         CommonTableCell(text: '${e.baseAtk}', padding: Styles.edgeInsetAll5),
         CommonTableCell(text: '${e.baseDef}', padding: Styles.edgeInsetAll5),
-        CommonTableCell(text: '${e.specificValue}', padding: Styles.edgeInsetAll5),
+        CommonTableCell(text: '${e.statValue}', padding: Styles.edgeInsetAll5),
       ],
     );
   }

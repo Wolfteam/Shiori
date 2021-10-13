@@ -40,8 +40,8 @@ class _PortraitLayout extends StatelessWidget {
                 MaterialDetailBottom(
                   description: s.description,
                   rarity: s.rarity,
-                  charImgs: s.charImages,
-                  weaponImgs: s.weaponImages,
+                  characters: s.characters,
+                  weapons: s.weapons,
                   obtainedFrom: s.obtainedFrom,
                   relatedTo: s.relatedMaterials,
                   droppedBy: s.droppedBy,
@@ -82,8 +82,8 @@ class _LandscapeLayout extends StatelessWidget {
                   flex: 60,
                   child: MaterialDetailBottom(
                     rarity: state.rarity,
-                    charImgs: state.charImages,
-                    weaponImgs: state.weaponImages,
+                    characters: state.characters,
+                    weapons: state.weapons,
                     obtainedFrom: state.obtainedFrom,
                     relatedTo: state.relatedMaterials,
                     droppedBy: state.droppedBy,

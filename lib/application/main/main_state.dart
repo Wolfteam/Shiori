@@ -10,6 +10,7 @@ class MainState with _$MainState {
     required LanguageModel language,
     required bool initialized,
     required bool firstInstall,
+    required bool versionChanged,
   }) = _MainLoadedState;
   const MainState._();
 }

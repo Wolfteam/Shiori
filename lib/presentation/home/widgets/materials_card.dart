@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/home/widgets/card_description.dart';
 import 'package:shiori/presentation/materials/materials_page.dart';
 
 import 'card_item.dart';
@@ -25,11 +26,7 @@ class MaterialsCard extends StatelessWidget {
       onClick: _gotoMaterialsPage,
       icon: Image.asset(Assets.getOtherMaterialPath('bag.png'), width: 60, height: 60, color: theme.accentColor),
       children: [
-        Text(
-          s.checkAllMaterials,
-          style: theme.textTheme.subtitle2,
-          textAlign: TextAlign.center,
-        ),
+        CardDescription(text: s.checkAllMaterials),
       ],
     );
   }

@@ -4,6 +4,7 @@ import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/character/widgets/character_stats_dialog.dart';
 import 'package:shiori/presentation/shared/bullet_list.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
@@ -23,80 +24,41 @@ class CharacterDetailSkillsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    final cards = skills.mapIndex((e, index) => _buildSkillCard(context, e, index.isEven)).toList();
-    final body = Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Wrap(alignment: WrapAlignment.center, children: cards),
-    );
-
     return ItemDescriptionDetail(
       title: s.skills,
-      body: body,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        child: Wrap(
+          alignment: WrapAlignment.center,
+          children: skills
+              .mapIndex((e, index) => _SkillCard(
+                    model: e,
+                    isEven: index.isEven,
+                    elementType: elementType,
+                  ))
+              .toList(),
+        ),
+      ),
       textColor: elementType.getElementColorFromContext(context),
     );
   }
+}
 
-  Widget _buildSkillCard(BuildContext context, CharacterSkillCardModel model, bool isEven) {
+class _SkillCard extends StatelessWidget {
+  final CharacterSkillCardModel model;
+  final bool isEven;
+  final ElementType elementType;
+
+  const _SkillCard({
+    Key? key,
+    required this.model,
+    required this.isEven,
+    required this.elementType,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final s = S.of(context);
-    final img = Expanded(
-      child: CircleAvatar(
-        radius: 40,
-        backgroundColor: elementType.getElementColorFromContext(context),
-        child: Image.asset(model.image, width: 65, height: 65),
-      ),
-    );
-    final titles = Expanded(
-      child: Column(
-        children: [
-          Tooltip(
-            message: model.title,
-            child: Text(
-              model.title,
-              overflow: TextOverflow.ellipsis,
-              style: theme.textTheme.headline6!.copyWith(color: elementType.getElementColorFromContext(context)),
-            ),
-          ),
-          Tooltip(
-            message: s.translateCharacterSkillType(model.type),
-            child: Text(
-              s.translateCharacterSkillType(model.type),
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-        ],
-      ),
-    );
-
-    final widgets = <Widget>[];
-    if (model.description != null) {
-      widgets.add(Text(model.description!, style: theme.textTheme.bodyText2!.copyWith(fontSize: 12)));
-    }
-
-    if (model.abilities.isNotEmpty) {
-      widgets.addAll(
-        model.abilities.map(
-          (e) => Container(
-            margin: Styles.edgeInsetAll5,
-            child: Column(
-              children: [
-                if (e.hasCommonTranslation || e.name.isNotNullEmptyOrWhitespace)
-                  Text(
-                    e.hasCommonTranslation ? s.translateCharacterSkillAbilityType(e.type!) : e.name!,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.center,
-                    style: theme.textTheme.subtitle1!.copyWith(color: elementType.getElementColorFromContext(context)),
-                  ),
-                if (e.description != null) Text(e.description!, style: theme.textTheme.bodyText2!.copyWith(fontSize: 12)),
-                if (e.descriptions.isNotEmpty) BulletList(items: e.descriptions),
-                if (e.secondDescription != null) Text(e.secondDescription!, style: theme.textTheme.bodyText2!.copyWith(fontSize: 12)),
-              ],
-            ),
-          ),
-        ),
-      );
-    }
-
     return Card(
       elevation: Styles.cardTenElevation,
       shape: Styles.cardShape,
@@ -106,15 +68,144 @@ class CharacterDetailSkillsCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              margin: const EdgeInsets.only(bottom: 10),
-              child: Row(
-                children: isEven ? [img, titles] : [titles, img],
+            _SkillHeader(
+              title: model.title,
+              image: model.image,
+              type: model.type,
+              elementType: elementType,
+              isEven: isEven,
+              stats: model.stats,
+            ),
+            if (model.description != null) Text(model.description!, style: theme.textTheme.bodyText2!.copyWith(fontSize: 12)),
+            ...model.abilities.map(
+              (e) => _SkillAbility(
+                name: e.name,
+                description: e.description,
+                secondDescription: e.secondDescription,
+                descriptions: e.descriptions,
+                elementType: elementType,
               ),
             ),
-            ...widgets,
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _SkillHeader extends StatelessWidget {
+  final ElementType elementType;
+  final String title;
+  final String image;
+  final bool isEven;
+  final CharacterSkillType type;
+  final List<CharacterSkillStatModel> stats;
+
+  const _SkillHeader({
+    Key? key,
+    required this.elementType,
+    required this.title,
+    required this.image,
+    required this.isEven,
+    required this.type,
+    required this.stats,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final s = S.of(context);
+    final img = Expanded(
+      child: CircleAvatar(
+        radius: 40,
+        backgroundColor: elementType.getElementColorFromContext(context),
+        child: Image.asset(image, width: 65, height: 65),
+      ),
+    );
+    final titles = Expanded(
+      child: Column(
+        children: [
+          Tooltip(
+            message: title,
+            child: Text(
+              title,
+              overflow: TextOverflow.ellipsis,
+              style: theme.textTheme.headline6!.copyWith(color: elementType.getElementColorFromContext(context)),
+            ),
+          ),
+          Tooltip(
+            message: s.translateCharacterSkillType(type),
+            child: Text(
+              s.translateCharacterSkillType(type),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
+      ),
+    );
+
+    final statButton = IconButton(
+      icon: const Icon(Icons.bar_chart),
+      splashRadius: 20,
+      onPressed: () => _showSkillStats(stats, context),
+    );
+    return Container(
+      margin: const EdgeInsets.only(bottom: 10),
+      child: Row(
+        children: isEven
+            ? [
+                img,
+                titles,
+                if (stats.isNotEmpty) statButton,
+              ]
+            : [
+                titles,
+                img,
+                if (stats.isNotEmpty) statButton,
+              ],
+      ),
+    );
+  }
+
+  Future<void> _showSkillStats(List<CharacterSkillStatModel> stats, BuildContext context) async {
+    await showDialog(context: context, builder: (ctx) => CharacterStatsDialog(stats: stats));
+  }
+}
+
+class _SkillAbility extends StatelessWidget {
+  final String? name;
+  final String? description;
+  final String? secondDescription;
+  final List<String> descriptions;
+  final ElementType elementType;
+
+  const _SkillAbility({
+    Key? key,
+    this.name,
+    this.description,
+    this.secondDescription,
+    required this.descriptions,
+    required this.elementType,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Container(
+      margin: Styles.edgeInsetAll5,
+      child: Column(
+        children: [
+          if (name.isNotNullEmptyOrWhitespace)
+            Text(
+              name!,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
+              style: theme.textTheme.subtitle1!.copyWith(color: elementType.getElementColorFromContext(context)),
+            ),
+          if (description != null) Text(description!, style: theme.textTheme.bodyText2!.copyWith(fontSize: 12)),
+          if (descriptions.isNotEmpty) BulletList(items: descriptions),
+          if (secondDescription != null) Text(secondDescription!, style: theme.textTheme.bodyText2!.copyWith(fontSize: 12)),
+        ],
       ),
     );
   }

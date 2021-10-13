@@ -1,7 +1,8 @@
 enum CharacterRoleType {
-  all,
-  mainDps,
-  supportDps,
-  utility,
   na,
+  dps,
+  subDps,
+  burstSupport,
+  support,
+  offFieldDps,
 }

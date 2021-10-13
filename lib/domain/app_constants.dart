@@ -3,6 +3,8 @@ import 'package:shiori/domain/enums/enums.dart';
 
 import 'models/models.dart';
 
+const githubPage = 'https://github.com/Wolfteam/Shiori';
+
 //This order matches the one in the game, and the numbers represent each image
 const artifactOrder = [4, 2, 5, 1, 3];
 
@@ -659,32 +661,32 @@ List<MaterialCardModel> sortMaterialsByGrouping(List<MaterialCardModel> data, So
   final talentsWithoutSiblings = talents.where((el) => !el.hasSiblings);
 
   if (sortDirectionType == SortDirectionType.asc) {
-    return jewels.orderBy((el) => el.key).thenBy((el) => el.level).toList() +
-        expChar.orderBy((el) => el.key).thenBy((el) => el.level).toList() +
-        expWeapon.orderBy((el) => el.key).thenBy((el) => el.level).toList() +
-        weaponPrimary.orderBy((el) => el.key).thenBy((el) => el.level).toList() +
-        weapon.orderBy((el) => el.key).thenBy((el) => el.level).toList() +
-        talentsWithSiblings.orderBy((el) => el.key).thenBy((el) => el.level).toList() +
-        talentsWithoutSiblings.orderBy((el) => el.key).thenBy((el) => el.level).toList() +
-        common.orderBy((el) => el.key).thenBy((el) => el.level).toList() +
-        stones.orderBy((el) => el.rarity).toList() +
-        local.orderBy((el) => el.rarity).toList() +
-        currency.orderBy((el) => el.rarity).toList() +
-        ingredients.orderBy((el) => el.rarity).toList();
+    return expChar.orderBy((el) => el.position).thenBy((el) => el.level).toList() +
+        expWeapon.orderBy((el) => el.position).thenBy((el) => el.level).toList() +
+        common.orderBy((el) => el.position).thenBy((el) => el.level).toList() +
+        weapon.orderBy((el) => el.position).thenBy((el) => el.level).toList() +
+        talentsWithoutSiblings.orderBy((el) => el.position).thenBy((el) => el.level).toList() +
+        stones.orderBy((el) => el.position).thenBy((el) => el.rarity).toList() +
+        jewels.orderBy((el) => el.position).thenBy((el) => el.level).toList() +
+        talentsWithSiblings.orderBy((el) => el.position).thenBy((el) => el.level).toList() +
+        weaponPrimary.orderBy((el) => el.position).thenBy((el) => el.level).toList() +
+        local.orderBy((el) => el.position).thenBy((el) => el.rarity).toList() +
+        currency.orderBy((el) => el.position).thenBy((el) => el.rarity).toList() +
+        ingredients.orderBy((el) => el.position).thenBy((el) => el.rarity).toList();
   }
 
-  return jewels.orderByDescending((el) => el.key).thenByDescending((el) => el.level).toList() +
-      expChar.orderByDescending((el) => el.key).thenByDescending((el) => el.level).toList() +
-      expWeapon.orderByDescending((el) => el.key).thenByDescending((el) => el.level).toList() +
-      weaponPrimary.orderByDescending((el) => el.key).thenByDescending((el) => el.level).toList() +
-      weapon.orderByDescending((el) => el.key).thenByDescending((el) => el.level).toList() +
-      talentsWithSiblings.orderByDescending((el) => el.key).thenByDescending((el) => el.level).toList() +
-      talentsWithoutSiblings.orderByDescending((el) => el.key).thenByDescending((el) => el.level).toList() +
-      common.orderByDescending((el) => el.key).thenByDescending((el) => el.level).toList() +
-      stones.orderByDescending((el) => el.rarity).toList() +
-      local.orderByDescending((el) => el.rarity).toList() +
-      currency.orderByDescending((el) => el.rarity).toList() +
-      ingredients.orderByDescending((el) => el.rarity).toList();
+  return expChar.orderByDescending((el) => el.position).thenByDescending((el) => el.level).toList() +
+      expWeapon.orderByDescending((el) => el.position).thenByDescending((el) => el.level).toList() +
+      common.orderByDescending((el) => el.position).thenByDescending((el) => el.level).toList() +
+      weapon.orderByDescending((el) => el.position).thenByDescending((el) => el.level).toList() +
+      talentsWithoutSiblings.orderByDescending((el) => el.position).thenByDescending((el) => el.level).toList() +
+      stones.orderByDescending((el) => el.position).thenByDescending((el) => el.rarity).toList() +
+      jewels.orderByDescending((el) => el.position).thenByDescending((el) => el.level).toList() +
+      talentsWithSiblings.orderByDescending((el) => el.position).thenByDescending((el) => el.level).toList() +
+      weaponPrimary.orderByDescending((el) => el.position).thenByDescending((el) => el.level).toList() +
+      currency.orderByDescending((el) => el.position).thenByDescending((el) => el.rarity).toList() +
+      local.orderByDescending((el) => el.position).thenByDescending((el) => el.rarity).toList() +
+      ingredients.orderByDescending((el) => el.position).thenByDescending((el) => el.rarity).toList();
 }
 
 DateTime getNotificationDateForResin(int currentResinValue) {

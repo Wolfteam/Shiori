@@ -1,17 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/presentation/home/widgets/ascension_material_item_card.dart';
 import 'package:shiori/presentation/shared/images/circle_character.dart';
 
 class CharCardAscensionMaterial extends StatelessWidget {
+  final String itemKey;
   final String name;
   final String image;
-  final List<String> charImgs;
+  final List<ItemCommon> charImgs;
   final String? bossName;
   final List<int> days;
 
   const CharCardAscensionMaterial.fromDays({
     Key? key,
+    required this.itemKey,
     required this.name,
     required this.image,
     required this.days,
@@ -21,6 +24,7 @@ class CharCardAscensionMaterial extends StatelessWidget {
 
   const CharCardAscensionMaterial.fromBoss({
     Key? key,
+    required this.itemKey,
     required this.name,
     required this.image,
     required this.bossName,
@@ -31,6 +35,7 @@ class CharCardAscensionMaterial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AscensionMaterialItemCard(
+      itemKey: itemKey,
       name: name,
       image: image,
       days: days,
@@ -43,7 +48,7 @@ class CharCardAscensionMaterial extends StatelessWidget {
             itemCount: charImgs.length,
             physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
-            itemBuilder: (ctx, index) => CircleCharacter(image: charImgs[index]),
+            itemBuilder: (ctx, index) => CircleCharacter.fromItem(item: charImgs[index]),
           ),
         ),
       ),

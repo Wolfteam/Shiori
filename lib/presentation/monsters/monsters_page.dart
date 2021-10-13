@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
@@ -10,6 +9,7 @@ import 'package:shiori/presentation/shared/sliver_page_filter.dart';
 import 'package:shiori/presentation/shared/sliver_scaffold_with_fab.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
+import 'package:waterfall_flow/waterfall_flow.dart';
 
 import 'widgets/monster_card.dart';
 
@@ -53,13 +53,16 @@ class MonstersPage extends StatelessWidget {
             if (state.monsters.isNotEmpty)
               SliverPadding(
                 padding: const EdgeInsets.symmetric(horizontal: 5),
-                sliver: SliverStaggeredGrid.countBuilder(
-                  crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context, isOnMainPage: !isInSelectionMode),
-                  itemBuilder: (ctx, index) => MonsterCard.item(item: state.monsters[index], isInSelectionMode: isInSelectionMode),
-                  itemCount: state.monsters.length,
-                  crossAxisSpacing: isPortrait ? 10 : 5,
-                  mainAxisSpacing: 5,
-                  staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
+                sliver: SliverWaterfallFlow(
+                  gridDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context, isOnMainPage: !isInSelectionMode),
+                    crossAxisSpacing: isPortrait ? 10 : 5,
+                    mainAxisSpacing: 5,
+                  ),
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) => MonsterCard.item(item: state.monsters[index], isInSelectionMode: isInSelectionMode),
+                    childCount: state.monsters.length,
+                  ),
                 ),
               )
             else

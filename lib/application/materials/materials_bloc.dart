@@ -61,7 +61,7 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
     String? search,
     List<String> excludeKeys = const [],
     int rarity = 0,
-    MaterialType type = MaterialType.all,
+    MaterialType? type,
     MaterialFilterType filterType = MaterialFilterType.grouped,
     SortDirectionType sortDirectionType = SortDirectionType.asc,
   }) {
@@ -95,7 +95,7 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
       data = data.where((el) => el.rarity == rarity).toList();
     }
 
-    if (type != MaterialType.all) {
+    if (type != null) {
       switch (type) {
         case MaterialType.expWeapon:
         case MaterialType.expCharacter:
@@ -127,11 +127,7 @@ class MaterialsBloc extends Bloc<MaterialsEvent, MaterialsState> {
     return s;
   }
 
-  List<MaterialCardModel> _sortData(
-    List<MaterialCardModel> data,
-    MaterialFilterType filterType,
-    SortDirectionType sortDirectionType,
-  ) {
+  List<MaterialCardModel> _sortData(List<MaterialCardModel> data, MaterialFilterType filterType, SortDirectionType sortDirectionType) {
     switch (filterType) {
       case MaterialFilterType.name:
         return sortDirectionType == SortDirectionType.asc ? data.orderBy((el) => el.name).toList() : data.orderByDescending((el) => el.name).toList();

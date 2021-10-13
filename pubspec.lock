@@ -203,7 +203,7 @@ packages:
       name: device_info_plus
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0"
+    version: "2.2.0"
   device_info_plus_linux:
     dependency: transitive
     description:
@@ -245,7 +245,7 @@ packages:
       name: devicelocale
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.2"
+    version: "0.5.0"
   enum_to_string:
     dependency: "direct main"
     description:
@@ -253,6 +253,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
+  extended_list_library:
+    dependency: transitive
+    description:
+      name: extended_list_library
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.0"
   fake_async:
     dependency: transitive
     description:
@@ -333,6 +340,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_markdown:
+    dependency: "direct main"
+    description:
+      name: flutter_markdown
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.7"
   flutter_native_timezone:
     dependency: "direct main"
     description:
@@ -354,15 +368,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.0"
-  flutter_staggered_grid_view:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: master
-      resolved-ref: "8a2e14ab3c19c80f53608c4d25926f67bcc3ef94"
-      url: "git://github.com/bladeofgod/flutter_staggered_grid_view.git"
-    source: git
-    version: "0.4.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -498,7 +503,7 @@ packages:
       name: image_gallery_saver
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.6.9"
+    version: "1.7.0"
   infinite_listview:
     dependency: transitive
     description:
@@ -576,6 +581,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
+  markdown:
+    dependency: transitive
+    description:
+      name: markdown
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.0"
   matcher:
     dependency: transitive
     description:
@@ -597,6 +609,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  mockito:
+    dependency: "direct dev"
+    description:
+      name: mockito
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.15"
   msix:
     dependency: "direct dev"
     description:
@@ -631,7 +650,7 @@ packages:
       name: package_info_plus
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.6"
+    version: "1.2.1"
   package_info_plus_linux:
     dependency: transitive
     description:
@@ -645,7 +664,7 @@ packages:
       name: package_info_plus_macos
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.1"
+    version: "1.2.0"
   package_info_plus_platform_interface:
     dependency: transitive
     description:
@@ -666,7 +685,7 @@ packages:
       name: package_info_plus_windows
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.3"
+    version: "1.0.4"
   path:
     dependency: "direct main"
     description:
@@ -722,7 +741,7 @@ packages:
       name: permission_handler
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "8.1.4+2"
+    version: "8.1.6"
   permission_handler_platform_interface:
     dependency: transitive
     description:
@@ -1043,6 +1062,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  version_tracker:
+    dependency: "direct main"
+    description:
+      name: version_tracker
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.1"
   watcher:
     dependency: transitive
     description:
@@ -1050,6 +1076,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  waterfall_flow:
+    dependency: "direct main"
+    description:
+      name: waterfall_flow
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.1"
   web_socket_channel:
     dependency: transitive
     description:
@@ -1063,7 +1096,7 @@ packages:
       name: webview_windows
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.7"
+    version: "0.0.8"
   win32:
     dependency: transitive
     description:

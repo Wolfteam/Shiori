@@ -25,7 +25,7 @@ class AppWidget extends StatelessWidget {
           return MaterialApp(
             title: s.appTitle,
             theme: s.accentColor.getThemeData(s.theme),
-            home: MainTabPage(),
+            home: MainTabPage(showChangelog: s.versionChanged),
             //Without this, the lang won't be reloaded
             locale: locale,
             localizationsDelegates: delegates,

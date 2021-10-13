@@ -18,7 +18,7 @@ class WeaponFileModel with _$WeaponFileModel {
     required String key,
     required String image,
     required WeaponType type,
-    required int atk,
+    required double atk,
     required int rarity,
     required StatType secondaryStat,
     required double secondaryStatValue,
@@ -27,7 +27,7 @@ class WeaponFileModel with _$WeaponFileModel {
     required List<WeaponFileAscensionMaterial> ascensionMaterials,
     required List<WeaponFileRefinement> refinements,
     required List<WeaponFileStatModel> stats,
-    List<ItemAscensionMaterialModel>? craftingMaterials,
+    @Default(<ItemAscensionMaterialFileModel>[]) List<ItemAscensionMaterialFileModel> craftingMaterials,
   }) = _WeaponFileModel;
 
   WeaponFileModel._();
@@ -39,7 +39,7 @@ class WeaponFileModel with _$WeaponFileModel {
 class WeaponFileAscensionMaterial with _$WeaponFileAscensionMaterial {
   factory WeaponFileAscensionMaterial({
     required int level,
-    required List<ItemAscensionMaterialModel> materials,
+    required List<ItemAscensionMaterialFileModel> materials,
   }) = _WeaponFileAscensionMaterial;
 
   const WeaponFileAscensionMaterial._();
@@ -51,7 +51,7 @@ class WeaponFileAscensionMaterial with _$WeaponFileAscensionMaterial {
 class WeaponFileRefinement with _$WeaponFileRefinement {
   factory WeaponFileRefinement({
     required int level,
-    required List<double> values,
+    required List<String> values,
   }) = _WeaponFileRefinement;
 
   const WeaponFileRefinement._();
@@ -65,7 +65,7 @@ class WeaponFileStatModel with _$WeaponFileStatModel {
     required int level,
     required double baseAtk,
     required bool isAnAscension,
-    required double specificValue,
+    required double statValue,
   }) = _WeaponFileStatModel;
 
   const WeaponFileStatModel._();

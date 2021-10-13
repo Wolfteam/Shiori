@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
-import 'package:shiori/domain/models/models.dart';
 
 part 'material_file_model.freezed.dart';
 part 'material_file_model.g.dart';
@@ -17,21 +16,40 @@ class MaterialFileModel with _$MaterialFileModel {
 
   Duration? get farmingRespawnDuration => farmingRespawnTime == null ? null : Duration(hours: farmingRespawnTime!);
 
+  //TODO: MOVE THIS TO THE GENERATED CODE ?
+  bool get isFromBoss =>
+      type == MaterialType.elementalStone ||
+      (type == MaterialType.talents && days.isEmpty) ||
+      (type == MaterialType.jewels && !key.startsWith('brilliant-diamond'));
+
+  int? get farmingRespawnTime {
+    if (attributes == null || !attributes!.containsKey('farmingRespawnTime')) {
+      return null;
+    }
+    final value = attributes!.entries.firstWhere((el) => el.key == 'farmingRespawnTime').value as int;
+    return value;
+  }
+
+  bool get canBeObtainedFromAnExpedition {
+    if (attributes == null || !attributes!.containsKey('canBeObtainedFromAnExpedition')) {
+      return false;
+    }
+    final value = attributes!.entries.firstWhere((el) => el.key == 'canBeObtainedFromAnExpedition').value as bool;
+    return value;
+  }
+
   factory MaterialFileModel({
     required String key,
     required int rarity,
+    required int position,
     required String image,
-    required bool isFromBoss,
-    required bool isForCharacters,
-    required bool isForWeapons,
     required MaterialType type,
     required List<int> days,
     required double level,
-    required List<ObtainedFromFileModel> obtainedFrom,
     required bool hasSiblings,
+    required List<MaterialPartOfRecipeFileModel> recipes,
+    required List<MaterialPartOfRecipeFileModel> obtainedFrom,
     @Default(true) bool isReadyToBeUsed,
-    @Default(false) bool canBeObtainedFromAnExpedition,
-    int? farmingRespawnTime,
     Map<String, dynamic>? attributes,
   }) = _MaterialFileModel;
 
@@ -53,12 +71,25 @@ class ExperienceMaterialAttributesModel with _$ExperienceMaterialAttributesModel
 }
 
 @freezed
-class ObtainedFromFileModel with _$ObtainedFromFileModel {
-  factory ObtainedFromFileModel({
-    required List<ItemAscensionMaterialModel> items,
-  }) = _ObtainedFromFileModel;
+class MaterialPartOfRecipeFileModel with _$MaterialPartOfRecipeFileModel {
+  factory MaterialPartOfRecipeFileModel({
+    required String createsMaterialKey,
+    required List<MaterialObtainedFromFileModel> needs,
+  }) = _MaterialPartOfRecipeFileModel;
 
-  ObtainedFromFileModel._();
+  MaterialPartOfRecipeFileModel._();
 
-  factory ObtainedFromFileModel.fromJson(Map<String, dynamic> json) => _$ObtainedFromFileModelFromJson(json);
+  factory MaterialPartOfRecipeFileModel.fromJson(Map<String, dynamic> json) => _$MaterialPartOfRecipeFileModelFromJson(json);
+}
+
+@freezed
+class MaterialObtainedFromFileModel with _$MaterialObtainedFromFileModel {
+  factory MaterialObtainedFromFileModel({
+    required String key,
+    required int quantity,
+  }) = _MaterialObtainedFromFileModel;
+
+  MaterialObtainedFromFileModel._();
+
+  factory MaterialObtainedFromFileModel.fromJson(Map<String, dynamic> json) => _$MaterialObtainedFromFileModelFromJson(json);
 }

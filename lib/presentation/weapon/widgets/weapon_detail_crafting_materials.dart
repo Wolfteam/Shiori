@@ -19,7 +19,7 @@ class WeaponCraftingMaterials extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final size = SizeUtils.getSizeForCircleImages(context);
-    final rows = materials.map((m) => WrappedAscensionMaterial(image: m.fullImagePath, quantity: m.quantity, size: size * 1.2)).toList();
+    final rows = materials.map((m) => WrappedAscensionMaterial(itemKey: m.key, image: m.image, quantity: m.quantity, size: size * 1.2)).toList();
 
     final body = Wrap(
       alignment: WrapAlignment.center,

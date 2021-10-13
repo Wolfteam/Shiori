@@ -91,7 +91,10 @@ class MainBloc extends Bloc<MainEvent, MainState> {
     AppAccentColorType accentColor, {
     bool isInitialized = true,
   }) async {
-    _logger.info(runtimeType, '_init: Is first install = ${_settingsService.isFirstInstall}');
+    _logger.info(
+      runtimeType,
+      '_init: Is first install = ${_settingsService.isFirstInstall} ' + '-- versionChanged = ${_deviceInfoService.versionChanged}',
+    );
 
     return MainState.loaded(
       appTitle: _deviceInfoService.appName,
@@ -100,6 +103,7 @@ class MainBloc extends Bloc<MainEvent, MainState> {
       initialized: isInitialized,
       theme: theme,
       firstInstall: _settingsService.isFirstInstall,
+      versionChanged: _deviceInfoService.versionChanged,
     );
   }
 }

@@ -156,9 +156,6 @@
   "quest": "Quest",
   "subStat": "Sub. Stat",
   "na": "N/A",
-  "mainDps": "Main DPS",
-  "supportDps": "Supporto DPS",
-  "utility": "Supporto",
   "normalAttack": "Attacco Normale",
   "elementalSkill": "Abilità Elementale",
   "elementalBurst": "Elemental Burst",
@@ -366,5 +363,13 @@
   "loginIssuesMsgB": "Nelle impostazioni del gioco vai su Settings > Account > User Center > Link.",
   "privacy": "Informativa Privacy",
   "privacyMsgA": "Questa app non raccoglie alcun Dato o Informazione Personale di geolocalizzazione o identificazione dei propri Utenti.",
-  "privacyMsgB": "Gli unici Dati raccolti sono Crashes e l’App Usage. Queste informazioni sono utili solo per identificare e correggere bugs, e per capire quali features sono i più utilizzati e a quali dare maggiore priorità."
+  "privacyMsgB": "Gli unici Dati raccolti sono Crashes e l’App Usage. Queste informazioni sono utili solo per identificare e correggere bugs, e per capire quali features sono i più utilizzati e a quali dare maggiore priorità.",
+  "charRoleDps": "DPS",
+  "charRoleSupport": "Support",
+  "charRoleSubDps": "Sub-DPS",
+  "charRoleOffFieldDps": "Off-Field DPS",
+  "charRoleBurstSupport": "Burst Support",
+  "melt": "Melt",
+  "freeze": "Freeze",
+  "shield": "Shield"
 }

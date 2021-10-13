@@ -21,21 +21,21 @@ extension I18nExtensions on S {
       case AppLanguageType.english:
         return english;
       case AppLanguageType.spanish:
-        return '$spanish ($partial)';
+        return spanish;
       case AppLanguageType.russian:
-        return '$russian ($partial)';
+        return russian;
       case AppLanguageType.simplifiedChinese:
-        return '$simplifiedChinese ($partial)';
+        return simplifiedChinese;
       case AppLanguageType.portuguese:
-        return '$portuguese ($partial)';
+        return portuguese;
       case AppLanguageType.italian:
         return '$italian ($partial)';
       case AppLanguageType.japanese:
-        return '$japanese ($partial)';
+        return japanese;
       case AppLanguageType.vietnamese:
-        return '$vietnamese ($partial)';
+        return vietnamese;
       case AppLanguageType.indonesian:
-        return '$indonesian ($partial)';
+        return indonesian;
       default:
         throw Exception('The provided app lang = $lang is not valid');
     }
@@ -74,9 +74,7 @@ extension I18nExtensions on S {
         return bpBounty;
       case ItemLocationType.quest:
         return quest;
-      case ItemLocationType.all:
-        return all;
-      case ItemLocationType.ps4:
+      case ItemLocationType.playstation:
         return playstation;
       default:
         throw Exception('The provided location type = $type is not valid');
@@ -97,8 +95,6 @@ extension I18nExtensions on S {
 
   String translateStatType(StatType type, double value) {
     switch (type) {
-      case StatType.all:
-        return all;
       case StatType.atk:
         return atk(value);
       case StatType.atkPercentage:
@@ -113,7 +109,7 @@ extension I18nExtensions on S {
         return critRatePercentage(value);
       case StatType.defPercentage:
         return defPercentage(value);
-      case StatType.elementaryMastery:
+      case StatType.elementalMastery:
         return elementaryMastery(value);
       case StatType.energyRechargePercentage:
         return energyRechargePercentage(value);
@@ -207,8 +203,6 @@ extension I18nExtensions on S {
 
   String translateReleasedUnreleasedType(ItemStatusType type) {
     switch (type) {
-      case ItemStatusType.all:
-        return all;
       case ItemStatusType.released:
         return released;
       case ItemStatusType.comingSoon:
@@ -257,18 +251,20 @@ extension I18nExtensions on S {
     }
   }
 
-  String translateCharacterType(CharacterRoleType type) {
+  String translateCharacterRoleType(CharacterRoleType type) {
     switch (type) {
-      case CharacterRoleType.mainDps:
-        return mainDps;
-      case CharacterRoleType.supportDps:
-        return supportDps;
-      case CharacterRoleType.utility:
-        return utility;
+      case CharacterRoleType.dps:
+        return charRoleDps;
+      case CharacterRoleType.subDps:
+        return charRoleSubDps;
+      case CharacterRoleType.burstSupport:
+        return charRoleBurstSupport;
+      case CharacterRoleType.support:
+        return charRoleSupport;
+      case CharacterRoleType.offFieldDps:
+        return charRoleOffFieldDps;
       case CharacterRoleType.na:
         return na;
-      case CharacterRoleType.all:
-        return all;
       default:
         throw Exception('Invalid character type = $type');
     }
@@ -382,8 +378,6 @@ extension I18nExtensions on S {
 
   String translateMaterialType(MaterialType type) {
     switch (type) {
-      case MaterialType.all:
-        return all;
       case MaterialType.common:
         return common;
       case MaterialType.elementalStone:
@@ -413,8 +407,6 @@ extension I18nExtensions on S {
 
   String translateMonsterType(MonsterType type) {
     switch (type) {
-      case MonsterType.all:
-        return all;
       case MonsterType.abyssOrder:
         return abyssOrder;
       case MonsterType.elementalLifeForm:
@@ -572,5 +564,36 @@ extension I18nExtensions on S {
 
     final ratioInHours = '+${getRealmIncreaseRatio(type)}';
     return '$translation (${xEachHour(ratioInHours)})';
+  }
+
+  String translateCharacterRoleSubType(CharacterRoleSubType type) {
+    switch (type) {
+      case CharacterRoleSubType.none:
+        return none;
+      case CharacterRoleSubType.anemo:
+        return anemo;
+      case CharacterRoleSubType.geo:
+        return geo;
+      case CharacterRoleSubType.electro:
+        return electro;
+      case CharacterRoleSubType.dendro:
+        return dendro;
+      case CharacterRoleSubType.hydro:
+        return hydro;
+      case CharacterRoleSubType.pyro:
+        return pyro;
+      case CharacterRoleSubType.cryo:
+        return cryo;
+      case CharacterRoleSubType.elementalMastery:
+        return translateStatTypeWithoutValue(StatType.elementalMastery, removeExtraSigns: true);
+      case CharacterRoleSubType.physical:
+        return translateStatTypeWithoutValue(StatType.physDmgPercentage, removeExtraSigns: true);
+      case CharacterRoleSubType.melt:
+        return melt;
+      case CharacterRoleSubType.freeze:
+        return freeze;
+      case CharacterRoleSubType.shield:
+        return shield;
+    }
   }
 }

@@ -17,25 +17,26 @@ class CalculatorServiceImpl implements CalculatorService {
     final summary = <AscensionMaterialSummaryType, List<MaterialSummary>>{};
     for (var i = 0; i < flattened.length; i++) {
       final item = flattened[i];
-      final material = _genshinService.getMaterialByImage(item.fullImagePath);
+      final material = _genshinService.getMaterial(item.key);
 
       MaterialSummary newValue;
       AscensionMaterialSummaryType key;
 
       if (material.isFromBoss) {
         key = AscensionMaterialSummaryType.worldBoss;
-        newValue = MaterialSummary.fromBoss(
+        newValue = MaterialSummary(
           key: material.key,
-          materialType: item.materialType,
-          fullImagePath: item.fullImagePath,
+          materialType: material.type,
+          fullImagePath: material.fullImagePath,
           quantity: item.quantity,
+          days: [],
         );
       } else if (material.days.isNotEmpty) {
         key = AscensionMaterialSummaryType.day;
-        newValue = MaterialSummary.fromDays(
+        newValue = MaterialSummary(
           key: material.key,
-          materialType: item.materialType,
-          fullImagePath: item.fullImagePath,
+          materialType: material.type,
+          fullImagePath: material.fullImagePath,
           quantity: item.quantity,
           days: material.days,
         );
@@ -65,14 +66,13 @@ class CalculatorServiceImpl implements CalculatorService {
           case MaterialType.expCharacter:
             key = AscensionMaterialSummaryType.exp;
             break;
-          case MaterialType.all:
-            throw Exception('Material type ${material.type} should not be here');
         }
-        newValue = MaterialSummary.others(
+        newValue = MaterialSummary(
           key: material.key,
           materialType: material.type,
           fullImagePath: material.fullImagePath,
           quantity: item.quantity,
+          days: [],
         );
       }
 
@@ -101,9 +101,8 @@ class CalculatorServiceImpl implements CalculatorService {
 
     final ascensionMaterials = char.ascensionMaterials
         .where((m) => m.rank > currentAscensionLevel && m.rank <= desiredAscensionLevel)
-        .expand(
-          (e) => e.materials,
-        )
+        .expand((e) => e.materials)
+        .map((e) => ItemAscensionMaterialModel.fromFile(e, _genshinService.getMaterialImg(e.key)))
         .toList();
 
     final skillMaterials = <ItemAscensionMaterialModel>[];
@@ -113,6 +112,7 @@ class CalculatorServiceImpl implements CalculatorService {
         final materials = char.talentAscensionMaterials
             .where((m) => m.level > skill.currentLevel && m.level <= skill.desiredLevel)
             .expand((m) => m.materials)
+            .map((e) => ItemAscensionMaterialModel.fromFile(e, _genshinService.getMaterialImg(e.key)))
             .toList();
 
         skillMaterials.addAll(materials);
@@ -127,6 +127,7 @@ class CalculatorServiceImpl implements CalculatorService {
             .expand((mt) => mt.materials)
             .where((m) => m.level > skill.currentLevel && m.level <= skill.desiredLevel)
             .expand((m) => m.materials)
+            .map((e) => ItemAscensionMaterialModel.fromFile(e, _genshinService.getMaterialImg(e.key)))
             .toList();
 
         skillMaterials.addAll(materials);
@@ -150,6 +151,7 @@ class CalculatorServiceImpl implements CalculatorService {
     final materials = weapon.ascensionMaterials
         .where((m) => m.level > _mapToWeaponLevel(currentAscensionLevel) && m.level <= _mapToWeaponLevel(desiredAscensionLevel))
         .expand((m) => m.materials)
+        .map((e) => ItemAscensionMaterialModel.fromFile(e, _genshinService.getMaterialImg(e.key)))
         .toList();
 
     return _flatMaterialsList(expMaterials + materials);
@@ -316,9 +318,9 @@ class CalculatorServiceImpl implements CalculatorService {
 
   List<ItemAscensionMaterialModel> _flatMaterialsList(List<ItemAscensionMaterialModel> current) {
     final materials = <ItemAscensionMaterialModel>[];
-    for (final image in current.map((e) => e.fullImagePath).toSet().toList()) {
-      final item = current.firstWhere((m) => m.fullImagePath == image);
-      final int quantity = current.where((m) => m.fullImagePath == image).map((e) => e.quantity).fold(0, (previous, current) => previous + current);
+    for (final key in current.map((e) => e.key).toSet().toList()) {
+      final item = current.firstWhere((m) => m.key == key);
+      final int quantity = current.where((m) => m.key == key).map((e) => e.quantity).fold(0, (previous, current) => previous + current);
 
       materials.add(item.copyWith.call(quantity: quantity));
     }
@@ -344,7 +346,7 @@ class CalculatorServiceImpl implements CalculatorService {
     final expMaterials = _genshinService.getMaterials(forCharacters ? MaterialType.expCharacter : MaterialType.expWeapon)
       ..sort((x, y) => (y.experienceAttributes!.experience - x.experienceAttributes!.experience).round());
     var requiredExp = getItemTotalExp(currentLevel, desiredLevel, rarity, forCharacters);
-    final moraMaterial = _genshinService.getMaterials(MaterialType.currency).first;
+    final moraMaterial = _genshinService.getMoraMaterial();
 
     for (final material in expMaterials) {
       if (requiredExp <= 0) {
@@ -356,11 +358,21 @@ class CalculatorServiceImpl implements CalculatorService {
       if (quantity == 0) {
         continue;
       }
-      materials.add(ItemAscensionMaterialModel(quantity: quantity, image: material.image, materialType: material.type));
+      materials.add(ItemAscensionMaterialModel(
+        key: material.key,
+        type: material.type,
+        image: material.fullImagePath,
+        quantity: quantity,
+      ));
       requiredExp -= quantity * matExp;
 
       final requiredMora = quantity * material.experienceAttributes!.pricePerUsage;
-      materials.add(ItemAscensionMaterialModel(quantity: requiredMora.round(), image: moraMaterial.image, materialType: moraMaterial.type));
+      materials.add(ItemAscensionMaterialModel(
+        key: moraMaterial.key,
+        type: moraMaterial.type,
+        image: moraMaterial.fullImagePath,
+        quantity: requiredMora.round(),
+      ));
     }
 
     return materials.reversed.toList();

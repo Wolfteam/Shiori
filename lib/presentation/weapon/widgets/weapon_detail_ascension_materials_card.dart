@@ -8,7 +8,7 @@ import 'package:shiori/presentation/shared/utils/size_utils.dart';
 
 class WeaponDetailAscensionMaterialsCard extends StatelessWidget {
   final Color rarityColor;
-  final List<WeaponFileAscensionMaterial> ascensionMaterials;
+  final List<WeaponAscensionModel> ascensionMaterials;
 
   const WeaponDetailAscensionMaterialsCard({
     Key? key,
@@ -55,10 +55,11 @@ class WeaponDetailAscensionMaterialsCard extends StatelessWidget {
     return ItemDescriptionDetail(title: s.ascensionMaterials, body: body, textColor: rarityColor);
   }
 
-  TableRow _buildStatProgressionRow(WeaponFileAscensionMaterial model, double size) {
+  TableRow _buildStatProgressionRow(WeaponAscensionModel model, double size) {
     final materials = model.materials
         .map((m) => WrappedAscensionMaterial(
-              image: m.fullImagePath,
+              itemKey: m.key,
+              image: m.image,
               quantity: m.quantity,
               size: size,
             ))

@@ -18,9 +18,7 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
   _LoadedState get currentState => state as _LoadedState;
 
   @override
-  Stream<ArtifactsState> mapEventToState(
-    ArtifactsEvent event,
-  ) async* {
+  Stream<ArtifactsState> mapEventToState(ArtifactsEvent event) async* {
     final s = event.map(
       init: (e) => _buildInitialState(excludeKeys: e.excludeKeys),
       artifactFilterTypeChanged: (e) => currentState.copyWith.call(tempArtifactFilterType: e.artifactFilterType),
@@ -103,11 +101,7 @@ class ArtifactsBloc extends Bloc<ArtifactsEvent, ArtifactsState> {
     return s;
   }
 
-  void _sortData(
-    List<ArtifactCardModel> data,
-    ArtifactFilterType artifactFilterType,
-    SortDirectionType sortDirectionType,
-  ) {
+  void _sortData(List<ArtifactCardModel> data, ArtifactFilterType artifactFilterType, SortDirectionType sortDirectionType) {
     switch (artifactFilterType) {
       case ArtifactFilterType.name:
         if (sortDirectionType == SortDirectionType.asc) {

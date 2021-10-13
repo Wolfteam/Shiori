@@ -3,6 +3,10 @@ import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
 
 abstract class DataService {
+  Future<void> init({String dir = 'shiori_data'});
+
+  Future<void> deleteThemAll();
+
   List<CalculatorSessionModel> getAllCalAscMatSessions();
 
   CalculatorSessionModel getCalcAscMatSession(int sessionKey);
@@ -47,7 +51,7 @@ abstract class DataService {
 
   List<MaterialCardModel> getAllMaterialsInInventory();
 
-  MaterialCardModel getMaterialFromInventoryByImage(String image);
+  MaterialCardModel getMaterialFromInventory(String image);
 
   Future<void> addItemToInventory(String key, ItemType type, int quantity);
 

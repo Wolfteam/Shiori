@@ -4,7 +4,7 @@ part of 'tier_list_bloc.dart';
 class TierListState with _$TierListState {
   const factory TierListState.loaded({
     required List<TierListRowModel> rows,
-    required List<String> charsAvailable,
+    required List<ItemCommon> charsAvailable,
     required bool readyToSave,
   }) = _LoadedState;
 }

@@ -8,7 +8,7 @@ class MonstersEvent with _$MonstersEvent {
     required String search,
   }) = _SearchChanged;
 
-  const factory MonstersEvent.typeChanged(MonsterType type) = _TypeChanged;
+  const factory MonstersEvent.typeChanged(MonsterType? type) = _TypeChanged;
 
   const factory MonstersEvent.filterTypeChanged(MonsterFilterType type) = _FilterTypeChanged;
 

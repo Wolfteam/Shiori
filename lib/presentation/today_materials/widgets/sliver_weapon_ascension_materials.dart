@@ -28,6 +28,7 @@ class SliverWeaponAscensionMaterials extends StatelessWidget {
             itemBuilder: (ctx, index) {
               final item = weaponAscMaterials[index];
               return WeaponCardAscensionMaterial(
+                itemKey: item.key,
                 name: item.name,
                 image: item.image,
                 days: item.days,
@@ -45,7 +46,7 @@ class SliverWeaponAscensionMaterials extends StatelessWidget {
     return SliverToBoxAdapter(
       child: ResponsiveGridRow(
         children: weaponAscMaterials.map((e) {
-          final child = WeaponCardAscensionMaterial(name: e.name, image: e.image, days: e.days, weapons: e.weapons);
+          final child = WeaponCardAscensionMaterial(itemKey: e.key, name: e.name, image: e.image, days: e.days, weapons: e.weapons);
 
           switch (deviceType) {
             case DeviceScreenType.mobile:

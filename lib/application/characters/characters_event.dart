@@ -16,13 +16,13 @@ class CharactersEvent with _$CharactersEvent {
 
   const factory CharactersEvent.rarityChanged(int rarity) = _RarityChanged;
 
-  const factory CharactersEvent.itemStatusChanged(ItemStatusType statusType) = _ReleasedUnreleasedTypeChanged;
+  const factory CharactersEvent.itemStatusChanged(ItemStatusType? statusType) = _ReleasedUnreleasedTypeChanged;
 
   const factory CharactersEvent.characterFilterTypeChanged(CharacterFilterType characterFilterType) = _CharacterFilterChanged;
 
   const factory CharactersEvent.sortDirectionTypeChanged(SortDirectionType sortDirectionType) = _SortDirectionTypeChanged;
 
-  const factory CharactersEvent.roleTypeChanged(CharacterRoleType roleType) = _CharacterTypeChanged;
+  const factory CharactersEvent.roleTypeChanged(CharacterRoleType? roleType) = _CharacterTypeChanged;
 
   const factory CharactersEvent.regionTypeChanged(RegionType? regionType) = _RegionTypeChanged;
 

@@ -4,11 +4,13 @@ import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter_user_agentx/flutter_user_agent.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
+import 'package:version_tracker/version_tracker.dart';
 
 class DeviceInfoServiceImpl implements DeviceInfoService {
   late Map<String, String> _deviceInfo;
   late String _version;
   late String _appName;
+  late bool _versionChanged = false;
 
   @override
   Map<String, String> get deviceInfo => _deviceInfo;
@@ -18,6 +20,9 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
 
   @override
   String get version => _version;
+
+  @override
+  bool get versionChanged => _versionChanged;
 
   //TODO: COMPLETE THIS
   @override
@@ -31,6 +36,9 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
       final packageInfo = await PackageInfo.fromPlatform();
       _appName = packageInfo.appName;
       _version = '${packageInfo.version}+${packageInfo.buildNumber}';
+      final vt = VersionTracker();
+      await vt.track();
+      _versionChanged = vt.isFirstLaunchForCurrentBuild ?? vt.isFirstLaunchForCurrentVersion ?? vt.isFirstLaunchEver ?? false;
 
       if (Platform.isAndroid) {
         await _initForAndroid();

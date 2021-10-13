@@ -39,7 +39,7 @@ class _PortraitLayout extends StatelessWidget {
           return state.map(
             loading: (_) => const Loading(useScaffold: false),
             loaded: (state) {
-              final rarityColor = state.rarityMax.getRarityColors().last;
+              final rarityColor = state.maxRarity.getRarityColors().last;
               final size = SizeUtils.getSizeForCircleImages(context);
               return Stack(
                 fit: StackFit.passthrough,
@@ -53,7 +53,7 @@ class _PortraitLayout extends StatelessWidget {
                     appBar: const DetailAppBar(),
                     isAnSmallImage: true,
                     generalCard: DetailGeneralCard(
-                      rarity: state.rarityMax,
+                      rarity: state.maxRarity,
                       itemName: state.name,
                       color: rarityColor,
                     ),
@@ -89,7 +89,7 @@ class _PortraitLayout extends StatelessWidget {
                           title: s.builds,
                           body: Wrap(
                             alignment: WrapAlignment.center,
-                            children: state.charImages.map((e) => CircleCharacter(image: e, radius: size)).toList(),
+                            children: state.charImages.map((e) => CircleCharacter(itemKey: e.key, image: e.image, radius: size)).toList(),
                           ),
                           textColor: rarityColor,
                         ),
@@ -98,7 +98,7 @@ class _PortraitLayout extends StatelessWidget {
                           title: s.droppedBy,
                           body: Wrap(
                             alignment: WrapAlignment.center,
-                            children: state.droppedBy.map((e) => CircleMonster(image: e, radius: size)).toList(),
+                            children: state.droppedBy.map((e) => CircleMonster(itemKey: e.key, image: e.image, radius: size)).toList(),
                           ),
                           textColor: rarityColor,
                         ),
@@ -126,7 +126,7 @@ class _LandscapeLayout extends StatelessWidget {
           builder: (ctx, state) => state.map(
             loading: (_) => const Loading(useScaffold: false),
             loaded: (state) {
-              final rarityColor = state.rarityMax.getRarityColors().last;
+              final rarityColor = state.maxRarity.getRarityColors().last;
               final tabs = [
                 s.description,
               ];
@@ -150,7 +150,7 @@ class _LandscapeLayout extends StatelessWidget {
                       fullImage: state.image,
                       charDescriptionHeight: 120,
                       generalCard: DetailGeneralCard(
-                        rarity: state.rarityMax,
+                        rarity: state.maxRarity,
                         itemName: state.name,
                         color: rarityColor,
                       ),
@@ -197,7 +197,7 @@ class _LandscapeLayout extends StatelessWidget {
                               title: s.builds,
                               body: Wrap(
                                 alignment: WrapAlignment.center,
-                                children: state.charImages.map((e) => CircleCharacter(image: e, radius: imgSize)).toList(),
+                                children: state.charImages.map((e) => CircleCharacter(itemKey: e.key, image: e.image, radius: imgSize)).toList(),
                               ),
                               textColor: rarityColor,
                             ),
@@ -208,7 +208,7 @@ class _LandscapeLayout extends StatelessWidget {
                               title: s.droppedBy,
                               body: Wrap(
                                 alignment: WrapAlignment.center,
-                                children: state.droppedBy.map((e) => CircleMonster(image: e, radius: imgSize)).toList(),
+                                children: state.droppedBy.map((e) => CircleMonster(itemKey: e.key, image: e.image, radius: imgSize)).toList(),
                               ),
                               textColor: rarityColor,
                             ),

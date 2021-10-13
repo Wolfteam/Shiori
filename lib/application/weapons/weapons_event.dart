@@ -20,9 +20,9 @@ class WeaponsEvent with _$WeaponsEvent {
 
   const factory WeaponsEvent.sortDirectionTypeChanged(SortDirectionType sortDirectionType) = _SortDirectionTypeChanged;
 
-  const factory WeaponsEvent.weaponSubStatTypeChanged(StatType subStatType) = _WeaponSubStatTypeChanged;
+  const factory WeaponsEvent.weaponSubStatTypeChanged(StatType? subStatType) = _WeaponSubStatTypeChanged;
 
-  const factory WeaponsEvent.weaponLocationTypeChanged(ItemLocationType locationType) = _WeaponLocationTypeChanged;
+  const factory WeaponsEvent.weaponLocationTypeChanged(ItemLocationType? locationType) = _WeaponLocationTypeChanged;
 
   const factory WeaponsEvent.cancelChanges() = _CancelChanges;
 

@@ -156,9 +156,6 @@
   "quest": "Quest",
   "subStat": "Sub. Stat",
   "na": "N/A",
-  "mainDps": "Main DPS",
-  "supportDps": "Support DPS",
-  "utility": "Utility",
   "normalAttack": "Normal Attack",
   "elementalSkill": "Elemental Skill",
   "elementalBurst": "Elemental Burst",
@@ -364,5 +361,13 @@
   "tools": "Tools",
   "privacy": "Privasi",
   "privacyMsgA": "Aplikasi ini tidak mengumpulkan data personal atau informasi apapun yang dapat digunakan untuk melacak atau mengidentifikasi pengguna.",
-  "privacyMsgB": "Data yang hanya dikumpulkan merupakan data crash dan penggunaan aplikasi. Informasi ini berguna untuk mengidentifikasi dan memperbaiki bug. Informasi ini juga berguna untuk mengidentifikasi fitur mana yang paling sering digunakan pada aplikasi ini dan mana yang harus diprioritaskan terlebih dahulu."
+  "privacyMsgB": "Data yang hanya dikumpulkan merupakan data crash dan penggunaan aplikasi. Informasi ini berguna untuk mengidentifikasi dan memperbaiki bug. Informasi ini juga berguna untuk mengidentifikasi fitur mana yang paling sering digunakan pada aplikasi ini dan mana yang harus diprioritaskan terlebih dahulu.",
+  "charRoleDps": "DPS",
+  "charRoleSupport": "Support",
+  "charRoleSubDps": "Sub-DPS",
+  "charRoleOffFieldDps": "Off-Field DPS",
+  "charRoleBurstSupport": "Burst Support",
+  "melt": "Melt",
+  "freeze": "Freeze",
+  "shield": "Shield"
 }

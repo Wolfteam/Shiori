@@ -19,20 +19,18 @@ class ArtifactBloc extends PopBloc<ArtifactEvent, ArtifactState> {
   ArtifactBloc(this._genshinService, this._telemetryService) : super(const ArtifactState.loading());
 
   @override
-  ArtifactEvent getEventForPop(String? key) => ArtifactEvent.loadArtifact(key: key!, addToQueue: false);
+  ArtifactEvent getEventForPop(String? key) => ArtifactEvent.loadFromKey(key: key!, addToQueue: false);
 
   @override
-  Stream<ArtifactState> mapEventToState(
-    ArtifactEvent event,
-  ) async* {
+  Stream<ArtifactState> mapEventToState(ArtifactEvent event) async* {
     yield const ArtifactState.loading();
 
     final s = await event.map(
-      loadArtifact: (e) async {
+      loadFromKey: (e) async {
         final artifact = _genshinService.getArtifact(e.key);
         final translation = _genshinService.getArtifactTranslation(e.key);
-        final charImgs = _genshinService.getCharacterImgsUsingArtifact(e.key);
-        final droppedBy = _genshinService.getRelatedMonsterImgsToArtifact(e.key);
+        final charImgs = _genshinService.getCharacterForItemsUsingArtifact(e.key);
+        final droppedBy = _genshinService.getRelatedMonsterToArtifactForItems(e.key);
 
         var image = artifact.image.split('.png').first;
         image = image.substring(0, image.length - 1);
@@ -42,15 +40,18 @@ class ArtifactBloc extends PopBloc<ArtifactEvent, ArtifactState> {
           currentItemsInStack.add(artifact.key);
         }
 
+        final bonus = <ArtifactCardBonusModel>[];
+        for (var i = 1; i <= translation.bonus.length; i++) {
+          final item = ArtifactCardBonusModel(pieces: i, bonus: translation.bonus[i - 1]);
+          bonus.add(item);
+        }
+
         return ArtifactState.loaded(
           name: translation.name,
           image: artifact.fullImagePath,
-          rarityMin: artifact.rarityMin,
-          rarityMax: artifact.rarityMax,
-          bonus: translation.bonus.map((t) {
-            final pieces = artifact.bonus.firstWhere((b) => b.key == t.key).pieces;
-            return ArtifactCardBonusModel(pieces: pieces, bonus: t.bonus);
-          }).toList(),
+          minRarity: artifact.minRarity,
+          maxRarity: artifact.maxRarity,
+          bonus: bonus,
           images: translation.bonus.length == 1
               ? [artifact.fullImagePath]
               : artifactOrder

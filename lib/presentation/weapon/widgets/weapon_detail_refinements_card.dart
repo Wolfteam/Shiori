@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/common_table_cell.dart';
+import 'package:shiori/presentation/shared/highlighted_text.dart';
 import 'package:shiori/presentation/shared/item_description_detail.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 
@@ -48,7 +49,12 @@ class WeaponDetailRefinementsCard extends StatelessWidget {
     return TableRow(
       children: [
         CommonTableCell(text: '${e.level}', padding: Styles.edgeInsetAll10),
-        CommonTableCell(text: e.description, padding: Styles.edgeInsetAll10, textAlign: TextAlign.start),
+        CommonTableCell.child(
+          child: HighlightedText.color(
+            text: e.description,
+            color: rarityColor,
+          ),
+        ),
       ],
     );
   }

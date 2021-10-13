@@ -11,6 +11,7 @@ import 'change_material_quantity_dialog.dart';
 
 class MaterialItem extends StatelessWidget {
   final app.MaterialType type;
+  final String itemKey;
   final String image;
   final int quantity;
   final Color? textColor;
@@ -18,6 +19,7 @@ class MaterialItem extends StatelessWidget {
 
   const MaterialItem({
     Key? key,
+    required this.itemKey,
     required this.type,
     required this.image,
     required this.quantity,
@@ -53,7 +55,7 @@ class MaterialItem extends StatelessWidget {
   }
 
   Future<void> _showQuantityPickerDialog(BuildContext context) async {
-    context.read<CalculatorAscMaterialsItemUpdateQuantityBloc>().add(CalculatorAscMaterialsItemUpdateQuantityEvent.load(image: image));
+    context.read<CalculatorAscMaterialsItemUpdateQuantityBloc>().add(CalculatorAscMaterialsItemUpdateQuantityEvent.load(key: itemKey));
     await showDialog<int>(
       context: context,
       builder: (_) => ChangeMaterialQuantityDialog(sessionKey: sessionKey),
@@ -62,7 +64,7 @@ class MaterialItem extends StatelessWidget {
 
   Future<void> _gotoMaterialPage(BuildContext context) async {
     final bloc = context.read<MaterialBloc>();
-    bloc.add(MaterialEvent.loadFromImg(image: image));
+    bloc.add(MaterialEvent.loadFromKey(key: itemKey));
     final route = MaterialPageRoute(builder: (c) => mp.MaterialPage());
     await Navigator.push(context, route);
     bloc.pop();

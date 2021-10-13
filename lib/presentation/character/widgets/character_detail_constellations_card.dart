@@ -25,13 +25,35 @@ class CharacterDetailConstellationsCard extends StatelessWidget {
       title: s.constellations,
       body: ResponsiveGridRow(
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: constellations.map((e) => ResponsiveGridCol(md: 6, lg: 6, xl: 6, child: _buildConstellationCard(e, context))).toList(),
+        children: constellations
+            .map((e) => ResponsiveGridCol(
+                  md: 6,
+                  lg: 6,
+                  xl: 6,
+                  child: _ConstellationCard(
+                    model: e,
+                    elementType: elementType,
+                  ),
+                ))
+            .toList(),
       ),
       textColor: elementType.getElementColorFromContext(context),
     );
   }
+}
 
-  Widget _buildConstellationCard(CharacterConstellationModel model, BuildContext context) {
+class _ConstellationCard extends StatelessWidget {
+  final CharacterConstellationModel model;
+  final ElementType elementType;
+
+  const _ConstellationCard({
+    Key? key,
+    required this.model,
+    required this.elementType,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
     return Card(
@@ -48,10 +70,13 @@ class CharacterDetailConstellationsCard extends StatelessWidget {
               backgroundColor: elementType.getElementColorFromContext(context),
               child: Image.asset(model.image, width: 60, height: 60),
             ),
-            Text(
-              model.title,
-              style: theme.textTheme.subtitle1!.copyWith(color: elementType.getElementColorFromContext(context)),
-              textAlign: TextAlign.center,
+            Tooltip(
+              message: model.title,
+              child: Text(
+                model.title,
+                style: theme.textTheme.subtitle1!.copyWith(color: elementType.getElementColorFromContext(context)),
+                textAlign: TextAlign.center,
+              ),
             ),
             Text(
               s.constellationX('${model.number}'),

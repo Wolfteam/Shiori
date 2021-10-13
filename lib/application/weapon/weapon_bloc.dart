@@ -20,7 +20,7 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
   WeaponBloc(this._genshinService, this._telemetryService, this._dataService) : super(const WeaponState.loading());
 
   @override
-  WeaponEvent getEventForPop(String? key) => WeaponEvent.loadFromName(key: key!, addToQueue: false);
+  WeaponEvent getEventForPop(String? key) => WeaponEvent.loadFromKey(key: key!, addToQueue: false);
 
   @override
   Stream<WeaponState> mapEventToState(
@@ -31,22 +31,12 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
     }
 
     final s = await event.when(
-      loadFromImg: (img, addToQueue) async {
-        final weapon = _genshinService.getWeaponByImg(img);
+      loadFromKey: (key, addToQueue) async {
+        final weapon = _genshinService.getWeapon(key);
         final translation = _genshinService.getWeaponTranslation(weapon.key);
 
         if (addToQueue) {
-          await _telemetryService.trackWeaponLoaded(img, loadedFromName: false);
-          currentItemsInStack.add(weapon.key);
-        }
-        return _buildInitialState(weapon, translation);
-      },
-      loadFromName: (name, addToQueue) async {
-        final weapon = _genshinService.getWeapon(name);
-        final translation = _genshinService.getWeaponTranslation(name);
-
-        if (addToQueue) {
-          await _telemetryService.trackWeaponLoaded(name);
+          await _telemetryService.trackWeaponLoaded(key);
           currentItemsInStack.add(weapon.key);
         }
         return _buildInitialState(weapon, translation);
@@ -69,7 +59,30 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
   }
 
   WeaponState _buildInitialState(WeaponFileModel weapon, TranslationWeaponFile translation) {
-    final charImgs = _genshinService.getCharacterImgsUsingWeapon(weapon.key);
+    final charImgs = _genshinService.getCharacterForItemsUsingWeapon(weapon.key);
+    final ascensionMaterials = weapon.ascensionMaterials.map((e) {
+      final materials = e.materials.map((e) {
+        final material = _genshinService.getMaterial(e.key);
+        return ItemAscensionMaterialModel(key: material.key, type: material.type, quantity: e.quantity, image: material.fullImagePath);
+      }).toList();
+      return WeaponAscensionModel(level: e.level, materials: materials);
+    }).toList();
+
+    final refinements = weapon.refinements.map(
+      (e) {
+        var description = translation.refinement ?? '';
+        for (var i = 0; i < e.values.length; i++) {
+          description = description.replaceFirst('{$i}', '${e.values[i]}');
+        }
+
+        return WeaponFileRefinementModel(level: e.level, description: description);
+      },
+    ).toList();
+
+    final craftingMaterials = weapon.craftingMaterials.map((e) {
+      final material = _genshinService.getMaterial(e.key);
+      return ItemAscensionMaterialModel(key: e.key, type: material.type, quantity: e.quantity, image: material.fullImagePath);
+    }).toList();
     return WeaponState.loaded(
       key: weapon.key,
       name: translation.name,
@@ -82,20 +95,11 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
       description: translation.description,
       locationType: weapon.location,
       isInInventory: _dataService.isItemInInventory(weapon.key, ItemType.weapon),
-      ascensionMaterials: weapon.ascensionMaterials,
-      refinements: weapon.refinements.map(
-        (e) {
-          var description = translation.refinement ?? '';
-          for (var i = 0; i < e.values.length; i++) {
-            description = description.replaceFirst('{{$i}}', '${e.values[i]}');
-          }
-
-          return WeaponFileRefinementModel(level: e.level, description: description);
-        },
-      ).toList(),
-      charImages: charImgs,
+      ascensionMaterials: ascensionMaterials,
+      refinements: refinements,
+      characters: charImgs,
       stats: weapon.stats,
-      craftingMaterials: weapon.craftingMaterials ?? [],
+      craftingMaterials: craftingMaterials,
     );
   }
 }

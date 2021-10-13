@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/assets.dart';
-import 'package:shiori/domain/models/models.dart';
 
 part 'gadget_file_model.freezed.dart';
 part 'gadget_file_model.g.dart';
@@ -15,7 +14,6 @@ class GadgetFileModel with _$GadgetFileModel {
     required String key,
     required int rarity,
     required String image,
-    required List<ObtainedFromFileModel> obtainedFrom,
     @Default(null) int? cooldown,
   }) = _GadgetFileModel;
 

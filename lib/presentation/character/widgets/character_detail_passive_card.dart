@@ -29,15 +29,27 @@ class CharacterDetailPassiveCard extends StatelessWidget {
                   md: 6,
                   lg: 6,
                   xl: 6,
-                  child: _buildPassiveCard(e, context),
+                  child: _PassiveCard(model: e, elementType: elementType),
                 ))
             .toList(),
       ),
       textColor: elementType.getElementColorFromContext(context),
     );
   }
+}
 
-  Widget _buildPassiveCard(CharacterPassiveTalentModel model, BuildContext context) {
+class _PassiveCard extends StatelessWidget {
+  final CharacterPassiveTalentModel model;
+  final ElementType elementType;
+
+  const _PassiveCard({
+    Key? key,
+    required this.model,
+    required this.elementType,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
     final unlockedAt = model.unlockedAt >= 1 ? s.unlockedAtAscensionLevelX(model.unlockedAt) : s.unlockedAutomatically;
@@ -55,10 +67,13 @@ class CharacterDetailPassiveCard extends StatelessWidget {
               backgroundColor: elementType.getElementColorFromContext(context),
               child: Image.asset(model.image, width: 60, height: 60),
             ),
-            Text(
-              model.title,
-              style: theme.textTheme.subtitle1!.copyWith(color: elementType.getElementColorFromContext(context)),
-              textAlign: TextAlign.center,
+            Tooltip(
+              message: model.title,
+              child: Text(
+                model.title,
+                style: theme.textTheme.subtitle1!.copyWith(color: elementType.getElementColorFromContext(context)),
+                textAlign: TextAlign.center,
+              ),
             ),
             Text(
               unlockedAt,

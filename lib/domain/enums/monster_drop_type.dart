@@ -1,0 +1,4 @@
+enum MonsterDropType {
+  material,
+  artifact,
+}

@@ -10,7 +10,7 @@ import 'weapon_detail_general_card.dart';
 
 class WeaponDetailTop extends StatelessWidget {
   final String name;
-  final int atk;
+  final double atk;
   final int rarity;
   final StatType secondaryStatType;
   final double secondaryStatValue;

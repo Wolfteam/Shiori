@@ -1,5 +1,4 @@
 enum MonsterType {
-  all,
   abyssOrder,
   elementalLifeForm,
   human,

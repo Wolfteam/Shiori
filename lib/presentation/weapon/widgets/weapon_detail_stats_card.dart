@@ -56,7 +56,7 @@ class WeaponDetailStatsCard extends StatelessWidget {
       children: [
         CommonTableCell(text: level),
         CommonTableCell(text: '${e.baseAtk}'),
-        CommonTableCell(text: '${e.specificValue}'),
+        CommonTableCell(text: '${e.statValue}'),
       ],
     );
   }

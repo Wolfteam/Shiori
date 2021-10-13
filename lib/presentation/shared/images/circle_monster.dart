@@ -5,12 +5,14 @@ import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 import 'circle_item.dart';
 
 class CircleMonster extends StatelessWidget {
+  final String itemKey;
   final String image;
   final double radius;
   final Function(String)? onTap;
 
   const CircleMonster({
     Key? key,
+    required this.itemKey,
     required this.image,
     this.radius = 35,
     this.onTap,

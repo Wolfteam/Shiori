@@ -16,9 +16,14 @@ class LocaleServiceImpl implements LocaleService {
     if (birthday.isNullEmptyOrWhitespace) {
       throw Exception('Character birthday must not be null');
     }
+
+    if (birthday!.length != 5 || !birthday.contains('/')) {
+      throw Exception('Character birthday is not valid');
+    }
     final locale = getFormattedLocale(_settingsService.language);
-    final format = DateFormat('MM/dd', locale);
-    return format.parse(birthday!);
+    final format = DateFormat('MM/dd/yyyy', locale);
+    //The format is in MM/dd, I use 2024 since that is a leap-year
+    return format.parse('$birthday/2024');
   }
 
   @override

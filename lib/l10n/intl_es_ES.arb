@@ -156,9 +156,6 @@
   "quest": "Misión",
   "subStat": "Sub. Stat",
   "na": "N/A",
-  "mainDps": "DPS Principal",
-  "supportDps": "DPS de Soporte",
-  "utility": "Utilidad",
   "normalAttack": "Ataque Normal",
   "elementalSkill": "Habilidad Elemental",
   "elementalBurst": "Impulso Elemental",
@@ -364,5 +361,13 @@
   "tools": "Herramientas",
   "privacy": "Privacidad",
   "privacyMsgA": "Esta aplicación no colecta ninguna información o data personal que pudiese ser usada para localizar o identificar al usuario.",
-  "privacyMsgB": "La única data colectada son los crashes y uso de la aplicación. Esta información es util al momento de identificar y corregir errores. También es usada para saber que secciones son las más usadas y cuales deberian recibir más prioridad en la aplicación."
+  "privacyMsgB": "La única data colectada son los crashes y uso de la aplicación. Esta información es util al momento de identificar y corregir errores. También es usada para saber que secciones son las más usadas y cuales deberian recibir más prioridad en la aplicación.",
+  "charRoleDps": "DPS",
+  "charRoleSupport": "Soporte",
+  "charRoleSubDps": "Sub-DPS",
+  "charRoleOffFieldDps": "Off-Field DPS",
+  "charRoleBurstSupport": "Burst Support",
+  "melt": "Melt",
+  "freeze": "Freeze",
+  "shield": "Shield"
 }

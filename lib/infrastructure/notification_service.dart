@@ -53,6 +53,9 @@ class NotificationServiceImpl implements NotificationService {
     SelectNotificationCallback? onSelectNotification,
   }) async {
     try {
+      if (Platform.isWindows) {
+        return Future.value();
+      }
       const initializationSettingsAndroid = AndroidInitializationSettings('ic_notification');
       final initializationSettingsIOS = IOSInitializationSettings(onDidReceiveLocalNotification: onIosReceiveLocalNotification);
       final initializationSettings = InitializationSettings(android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
@@ -76,6 +79,9 @@ class NotificationServiceImpl implements NotificationService {
 
   @override
   Future<void> showNotification(int id, AppNotificationType type, String title, String body, {String? payload}) {
+    if (Platform.isWindows) {
+      return Future.value();
+    }
     final specifics = _getPlatformChannelSpecifics(type, body);
     final newId = _generateUniqueId(id, type);
     return _flutterLocalNotificationsPlugin.show(newId, title, body, specifics, payload: payload);
@@ -83,17 +89,26 @@ class NotificationServiceImpl implements NotificationService {
 
   @override
   Future<void> cancelNotification(int id, AppNotificationType type) {
+    if (Platform.isWindows) {
+      return Future.value();
+    }
     final realId = _generateUniqueId(id, type);
     return _flutterLocalNotificationsPlugin.cancel(realId, tag: _getTagFromNotificationType(type));
   }
 
   @override
   Future<void> cancelAllNotifications() {
+    if (Platform.isWindows) {
+      return Future.value();
+    }
     return _flutterLocalNotificationsPlugin.cancelAll();
   }
 
   @override
   Future<void> scheduleNotification(int id, AppNotificationType type, String title, String body, DateTime toBeDeliveredOn) async {
+    if (Platform.isWindows) {
+      return;
+    }
     final now = DateTime.now();
     final payload = '${id}_${_getTagFromNotificationType(type)}';
     if (toBeDeliveredOn.isBefore(now) || toBeDeliveredOn.isAtSameMomentAs(now)) {

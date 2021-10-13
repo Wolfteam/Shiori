@@ -182,7 +182,7 @@ class MaterialCard extends StatelessWidget {
     }
 
     final bloc = context.read<MaterialBloc>();
-    bloc.add(MaterialEvent.loadFromName(key: keyName));
+    bloc.add(MaterialEvent.loadFromKey(key: keyName));
     final route = MaterialPageRoute(builder: (c) => mp.MaterialPage());
     await Navigator.push(context, route);
     bloc.pop();

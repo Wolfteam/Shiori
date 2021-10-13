@@ -6,4 +6,10 @@ extension MediaQueryExtensions on MediaQueryData {
     final width = size.width / take;
     return width;
   }
+
+  double getHeightForDialogs(int itemCount, {double itemHeight = 50, double maxHeight = 300}) {
+    final desiredHeight = itemHeight * itemCount;
+    final heightToUse = desiredHeight >= maxHeight ? maxHeight : desiredHeight;
+    return heightToUse;
+  }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/daily_check_in/daily_check_in_page.dart';
+import 'package:shiori/presentation/home/widgets/card_description.dart';
 import 'package:shiori/presentation/home/widgets/card_item.dart';
 
 class DailyCheckInCard extends StatelessWidget {
@@ -21,7 +22,7 @@ class DailyCheckInCard extends StatelessWidget {
       iconToTheLeft: iconToTheLeft,
       icon: Icon(Icons.rotate_right_sharp, size: 60, color: theme.accentColor),
       children: [
-        Text(s.dailyCheckInMsg, style: theme.textTheme.subtitle2, textAlign: TextAlign.center),
+        CardDescription(text: s.dailyCheckInMsg),
       ],
     );
   }

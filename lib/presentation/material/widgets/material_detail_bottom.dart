@@ -18,18 +18,18 @@ import 'package:shiori/presentation/shared/material_item_button.dart';
 class MaterialDetailBottom extends StatelessWidget {
   final String? description;
   final int rarity;
-  final List<String> charImgs;
-  final List<String> weaponImgs;
-  final List<ObtainedFromFileModel> obtainedFrom;
-  final List<String> relatedTo;
-  final List<String> droppedBy;
+  final List<ItemCommon> characters;
+  final List<ItemCommon> weapons;
+  final List<ItemObtainedFrom> obtainedFrom;
+  final List<ItemCommon> relatedTo;
+  final List<ItemCommon> droppedBy;
 
   const MaterialDetailBottom({
     Key? key,
     this.description,
     required this.rarity,
-    required this.charImgs,
-    required this.weaponImgs,
+    required this.characters,
+    required this.weapons,
     required this.obtainedFrom,
     required this.relatedTo,
     required this.droppedBy,
@@ -42,8 +42,8 @@ class MaterialDetailBottom extends StatelessWidget {
         ? _PortraitLayout(
             description: description,
             rarity: rarity,
-            charImgs: charImgs,
-            weaponImgs: weaponImgs,
+            characters: characters,
+            weapons: weapons,
             obtainedFrom: obtainedFrom,
             relatedTo: relatedTo,
             droppedBy: droppedBy,
@@ -51,8 +51,8 @@ class MaterialDetailBottom extends StatelessWidget {
         : _LandscapeLayout(
             description: description,
             rarity: rarity,
-            charImgs: charImgs,
-            weaponImgs: weaponImgs,
+            characters: characters,
+            weapons: weapons,
             obtainedFrom: obtainedFrom,
             relatedTo: relatedTo,
             droppedBy: droppedBy,
@@ -61,7 +61,7 @@ class MaterialDetailBottom extends StatelessWidget {
 }
 
 class _ObtainedFromItem extends StatelessWidget {
-  final ObtainedFromFileModel from;
+  final ItemObtainedFrom from;
   final bool showDivider;
 
   const _ObtainedFromItem({Key? key, required this.from, this.showDivider = true}) : super(key: key);
@@ -76,7 +76,8 @@ class _ObtainedFromItem extends StatelessWidget {
           alignment: WrapAlignment.center,
           children: from.items
               .map((e) => WrappedAscensionMaterial(
-                    image: e.fullImagePath,
+                    itemKey: e.key,
+                    image: e.image,
                     quantity: e.quantity,
                     size: size * 2,
                   ))
@@ -91,18 +92,18 @@ class _ObtainedFromItem extends StatelessWidget {
 class _PortraitLayout extends StatelessWidget {
   final String? description;
   final int rarity;
-  final List<String> charImgs;
-  final List<String> weaponImgs;
-  final List<ObtainedFromFileModel> obtainedFrom;
-  final List<String> relatedTo;
-  final List<String> droppedBy;
+  final List<ItemCommon> characters;
+  final List<ItemCommon> weapons;
+  final List<ItemObtainedFrom> obtainedFrom;
+  final List<ItemCommon> relatedTo;
+  final List<ItemCommon> droppedBy;
 
   const _PortraitLayout({
     Key? key,
     this.description,
     required this.rarity,
-    required this.charImgs,
-    required this.weaponImgs,
+    required this.characters,
+    required this.weapons,
     required this.obtainedFrom,
     required this.relatedTo,
     required this.droppedBy,
@@ -133,21 +134,21 @@ class _PortraitLayout extends StatelessWidget {
             ),
             textColor: rarityColor,
           ),
-        if (charImgs.isNotEmpty)
+        if (characters.isNotEmpty)
           ItemDescriptionDetail(
             title: s.characters,
             body: Wrap(
               alignment: WrapAlignment.center,
-              children: charImgs.map((e) => CircleCharacter(image: e, radius: size)).toList(),
+              children: characters.map((e) => CircleCharacter(itemKey: e.key, image: e.image, radius: size)).toList(),
             ),
             textColor: rarityColor,
           ),
-        if (weaponImgs.isNotEmpty)
+        if (weapons.isNotEmpty)
           ItemDescriptionDetail(
             title: s.weapons,
             body: Wrap(
               alignment: WrapAlignment.center,
-              children: weaponImgs.map((e) => CircleWeapon(image: e, radius: size)).toList(),
+              children: weapons.map((e) => CircleWeapon(itemKey: e.key, image: e.image, radius: size)).toList(),
             ),
             textColor: rarityColor,
           ),
@@ -156,7 +157,7 @@ class _PortraitLayout extends StatelessWidget {
             title: s.related,
             body: Wrap(
               alignment: WrapAlignment.center,
-              children: relatedTo.map((e) => MaterialItemButton(image: e, size: size * 2)).toList(),
+              children: relatedTo.map((e) => MaterialItemButton(itemKey: e.key, image: e.image, size: size * 2)).toList(),
             ),
             textColor: rarityColor,
           ),
@@ -165,7 +166,7 @@ class _PortraitLayout extends StatelessWidget {
             title: s.droppedBy,
             body: Wrap(
               alignment: WrapAlignment.center,
-              children: droppedBy.map((e) => CircleMonster(image: e, radius: size)).toList(),
+              children: droppedBy.map((e) => CircleMonster(itemKey: e.key, image: e.image, radius: size)).toList(),
             ),
             textColor: rarityColor,
           ),
@@ -177,18 +178,18 @@ class _PortraitLayout extends StatelessWidget {
 class _LandscapeLayout extends StatelessWidget {
   final String? description;
   final int rarity;
-  final List<String> charImgs;
-  final List<String> weaponImgs;
-  final List<ObtainedFromFileModel> obtainedFrom;
-  final List<String> relatedTo;
-  final List<String> droppedBy;
+  final List<ItemCommon> characters;
+  final List<ItemCommon> weapons;
+  final List<ItemObtainedFrom> obtainedFrom;
+  final List<ItemCommon> relatedTo;
+  final List<ItemCommon> droppedBy;
 
   const _LandscapeLayout({
     Key? key,
     this.description,
     required this.rarity,
-    required this.charImgs,
-    required this.weaponImgs,
+    required this.characters,
+    required this.weapons,
     required this.obtainedFrom,
     required this.relatedTo,
     required this.droppedBy,
@@ -204,10 +205,10 @@ class _LandscapeLayout extends StatelessWidget {
     if (obtainedFrom.isNotEmpty) {
       tabs.add(s.obtainedFrom);
     }
-    if (charImgs.isNotEmpty) {
+    if (characters.isNotEmpty) {
       tabs.add(s.characters);
     }
-    if (weaponImgs.isNotEmpty) {
+    if (weapons.isNotEmpty) {
       tabs.add(s.weapons);
     }
     if (relatedTo.isNotEmpty) {
@@ -244,24 +245,24 @@ class _LandscapeLayout extends StatelessWidget {
               textColor: rarityColor,
             ),
           ),
-        if (charImgs.isNotEmpty)
+        if (characters.isNotEmpty)
           SingleChildScrollView(
             child: ItemDescriptionDetail(
               title: s.characters,
               body: Wrap(
                 alignment: WrapAlignment.center,
-                children: charImgs.map((e) => CircleCharacter(image: e, radius: size)).toList(),
+                children: characters.map((e) => CircleCharacter(itemKey: e.key, image: e.image, radius: size)).toList(),
               ),
               textColor: rarityColor,
             ),
           ),
-        if (weaponImgs.isNotEmpty)
+        if (weapons.isNotEmpty)
           SingleChildScrollView(
             child: ItemDescriptionDetail(
               title: s.weapons,
               body: Wrap(
                 alignment: WrapAlignment.center,
-                children: weaponImgs.map((e) => CircleWeapon(image: e, radius: size)).toList(),
+                children: weapons.map((e) => CircleWeapon(itemKey: e.key, image: e.image, radius: size)).toList(),
               ),
               textColor: rarityColor,
             ),
@@ -271,7 +272,7 @@ class _LandscapeLayout extends StatelessWidget {
             title: s.related,
             body: Wrap(
               alignment: WrapAlignment.center,
-              children: relatedTo.map((e) => MaterialItemButton(image: e, size: size * 2)).toList(),
+              children: relatedTo.map((e) => MaterialItemButton(itemKey: e.key, image: e.image, size: size * 2)).toList(),
             ),
             textColor: rarityColor,
           ),
@@ -281,7 +282,7 @@ class _LandscapeLayout extends StatelessWidget {
               title: s.droppedBy,
               body: Wrap(
                 alignment: WrapAlignment.center,
-                children: droppedBy.map((e) => CircleMonster(image: e, radius: size)).toList(),
+                children: droppedBy.map((e) => CircleMonster(itemKey: e.key, image: e.image, radius: size)).toList(),
               ),
               textColor: rarityColor,
             ),
