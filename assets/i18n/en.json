@@ -6266,8 +6266,8 @@
     {
       "key": "akuoumaru",
       "name": "Akuoumaru",
-      "description": "This is a calymore",
-      "refinement": "For every point of the entire party's combined maximum Energy, the Elemental Burst DMG of the character equipping this weapon is increased by {0}%. A maximum of {1}% increased Elemental Burst DMG can be achieved this way."
+      "description": "The beloved sword of the legendary \"Akuou.\" The blade is huge and majestic, but is surprisingly easy to wield.",
+      "refinement": "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {0}%. A maximum of {1}% increased Elemental Burst DMG can be achieved this way."
     },
     {
       "key": "alley-hunter",
@@ -6638,8 +6638,8 @@
     {
       "key": "polar-star",
       "name": "Polar Star",
-      "description": "This is a bow",
-      "refinement": "Elemental Skill and Elemental Burst DMG increased by {0}%. After a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst hits an opponent, 1 stack of Byakuya Kyousei will be gained for 12s. When 1/2/3/4 stacks of Byakuya Kyousei are present, ATK is increased by {1}%. The stack of Byakuya Kyousei created by the Normal Attack, Charged Attack, Elemental Skill or Elemental Burst will be counted independently of the others."
+      "description": "A pristine bow that is as sharp as the glaciers of the far north.",
+      "refinement": "Elemental Skill and Elemental Burst DMG increased by {0}%. After a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst hits an opponent, 1 stack of Ashen Nightstar will be gained for 12s. When 1/2/3/4 stacks of Ashen Nightstar are present, ATK is increased by {1}%. The stack of Ashen Nightstar created by the Normal Attack, Charged Attack, Elemental Skill or Elemental Burst will be counted independently of the others."
     },
     {
       "key": "predator",
