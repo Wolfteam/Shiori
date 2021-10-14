@@ -362,12 +362,12 @@
   "privacy": "隐私",
   "privacyMsgA": "该 App 不会收集任何个人数据及可能用于识别、跟踪用户的信息。",
   "privacyMsgB": "App 仅收集关于程序崩溃和使用的数据。这些信息用于识别和修复漏洞，并为程序功能的使用频率提供参考。",
-  "charRoleDps": "DPS",
-  "charRoleSupport": "Support",
-  "charRoleSubDps": "Sub-DPS",
-  "charRoleOffFieldDps": "Off-Field DPS",
-  "charRoleBurstSupport": "Burst Support",
-  "melt": "Melt",
-  "freeze": "Freeze",
-  "shield": "Shield"
+  "charRoleDps": "主C",
+  "charRoleSupport": "辅助",
+  "charRoleSubDps": "副C",
+  "charRoleOffFieldDps": "后台输出",
+  "charRoleBurstSupport": "元素爆发辅助",
+  "melt": "融化",
+  "freeze": "冻结",
+  "shield": "盾"
 }

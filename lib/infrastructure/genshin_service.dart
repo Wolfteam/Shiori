@@ -730,6 +730,18 @@ class GenshinServiceImpl implements GenshinService {
     return stats;
   }
 
+  @override
+  List<ArtifactCardBonusModel> getArtifactBonus(TranslationArtifactFile translation) {
+    final bonus = <ArtifactCardBonusModel>[];
+    var pieces = translation.bonus.length == 2 ? 2 : 1;
+    for (var i = 1; i <= translation.bonus.length; i++) {
+      final item = ArtifactCardBonusModel(pieces: pieces, bonus: translation.bonus[i - 1]);
+      bonus.add(item);
+      pieces += 2;
+    }
+    return bonus;
+  }
+
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {
     final translation = getCharacterTranslation(character.key);
 
@@ -784,12 +796,7 @@ class GenshinServiceImpl implements GenshinService {
 
   ArtifactCardModel _toArtifactForCard(ArtifactFileModel artifact) {
     final translation = _translationFile.artifacts.firstWhere((t) => t.key == artifact.key);
-    //TODO: MOVE THIS BONUS TO A COMMON METHOD SINCE IT IS BEING USED IN THE ARTIFACT BLOC
-    final bonus = <ArtifactCardBonusModel>[];
-    for (var i = 1; i <= translation.bonus.length; i++) {
-      final item = ArtifactCardBonusModel(pieces: i, bonus: translation.bonus[i - 1]);
-      bonus.add(item);
-    }
+    final bonus = getArtifactBonus(translation);
     return ArtifactCardModel(
       key: artifact.key,
       name: translation.name,

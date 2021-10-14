@@ -26,7 +26,7 @@ class _MaterialsInventoryTabPageState extends State<MaterialsInventoryTabPage> w
             loaded: (state) => WaterfallFlow.builder(
               controller: scrollController,
               itemCount: state.materials.length,
-              itemBuilder: (context, index) => MaterialCard.item(item: state.materials[index]),
+              itemBuilder: (context, index) => MaterialCard.quantity(item: state.materials[index]),
               gridDelegate: SliverWaterfallFlowDelegateWithFixedCrossAxisCount(
                 crossAxisCount: SizeUtils.getCrossAxisCountForGrids(context, itemIsSmall: true),
                 crossAxisSpacing: isPortrait ? 10 : 5,

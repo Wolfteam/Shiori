@@ -75,8 +75,8 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
       return TierListState.loaded(rows: defaultTierList, charsAvailable: [], readyToSave: false);
     }
 
-    final usedCharImgs = tierList.expand((el) => el.items).toList();
-    final availableChars = defaultTierList.expand((el) => el.items).where((el) => !usedCharImgs.contains(el)).toList();
+    final items = tierList.expand((el) => el.items).toList();
+    final availableChars = defaultTierList.expand((el) => el.items).where((el) => !items.any((x) => x.key == el.key)).toList();
     return TierListState.loaded(rows: tierList, charsAvailable: availableChars, readyToSave: false);
   }
 

@@ -560,7 +560,7 @@ class DataServiceImpl implements DataService {
     return values.map((e) {
       final characters = e.charKeys.map((e) {
         final character = _genshinService.getCharacter(e);
-        return ItemCommon(character.key, character.fullCharacterImagePath);
+        return ItemCommon(character.key, character.fullImagePath);
       }).toList();
       return TierListRowModel.row(tierText: e.text, items: characters, tierColor: e.color);
     }).toList();

@@ -174,7 +174,11 @@ void main() {
           expect(artifact.bonus, isNotEmpty);
           for (final bonus in artifact.bonus) {
             expect(bonus.bonus, allOf([isNotEmpty, isNotNull]));
-            expect(bonus.pieces, allOf([greaterThanOrEqualTo(1), lessThanOrEqualTo(2)]));
+            if (artifact.bonus.length == 2) {
+              expect(bonus.pieces, isIn([2, 4]));
+            } else {
+              expect(bonus.pieces == 1, isTrue);
+            }
           }
         }
       }
@@ -231,7 +235,7 @@ void main() {
         expect(detail.role, character.roleType);
         expect(detail.isComingSoon, character.isComingSoon);
         expect(detail.isNew, character.isNew);
-        expect(detail.tier, isIn(['NA', 'd', 'c', 'b', 'a', 's', 'ss', 'sss']));
+        expect(detail.tier, isIn(['d', 'c', 'b', 'a', 's', 'ss', 'sss']));
         if (isTraveler) {
           _checkAsset(detail.fullSecondImagePath!);
         } else {
@@ -522,6 +526,15 @@ void main() {
             expect(() => service.getMaterial(needs.key), returnsNormally);
           }
         }
+
+        final characters = service.getCharacterForItemsUsingMaterial(material.key);
+        expect(characters.map((e) => e.key).toSet().length == characters.length, isTrue);
+
+        final weapons = service.getWeaponForItemsUsingMaterial(material.key);
+        expect(weapons.map((e) => e.key).toSet().length == weapons.length, isTrue);
+
+        final droppedBy = service.getRelatedMonsterToMaterialForItems(detail.key);
+        expect(droppedBy.map((e) => e.key).toSet().length == droppedBy.length, isTrue);
       }
     });
 
@@ -780,11 +793,15 @@ void main() {
 
       final service = _getService();
       await service.init(AppLanguageType.english);
-      final tierList = service.getDefaultCharacterTierList(defaultColors);
-      expect(tierList.length, equals(7));
+      final defaultTierList = service.getDefaultCharacterTierList(defaultColors);
+      expect(defaultTierList.length, equals(7));
+
+      final charCountInTierList = defaultTierList.expand((el) => el.items).length;
+      final charCount = service.getCharactersForCard().where((el) => !el.isComingSoon).length;
+      expect(charCountInTierList == charCount, isTrue);
 
       for (var i = 0; i < defaultColors.length; i++) {
-        final tierRow = tierList[i];
+        final tierRow = defaultTierList[i];
         expect(tierRow.tierText, allOf([isNotNull, isNotEmpty]));
         expect(tierRow.items, isNotEmpty);
         expect(tierRow.tierColor, equals(defaultColors[i]));

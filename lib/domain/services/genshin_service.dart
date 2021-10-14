@@ -80,4 +80,6 @@ abstract class GenshinService {
   FurnitureFileModel getFurniture(String key);
 
   DateTime getNextDateForWeeklyBoss(AppServerResetTimeType type);
+
+  List<ArtifactCardBonusModel> getArtifactBonus(TranslationArtifactFile translation);
 }
