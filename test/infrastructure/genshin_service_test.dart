@@ -256,6 +256,15 @@ void main() {
 
         if (!detail.isComingSoon) {
           expect(detail.builds, isNotEmpty);
+          expect(detail.builds.any((el) => el.isRecommended), isTrue);
+          for (final build in detail.builds) {
+            expect(build.skillPriorities.length, inInclusiveRange(1, 3));
+            expect(build.skillPriorities, isNotEmpty);
+            for (final priority in build.skillPriorities) {
+              expect(priority, isIn([CharacterSkillType.normalAttack, CharacterSkillType.elementalBurst, CharacterSkillType.elementalSkill]));
+            }
+          }
+
           expect(detail.skills, isNotEmpty);
           expect(detail.skills.length, inInclusiveRange(3, 4));
           expect(detail.passives, isNotEmpty);
@@ -302,7 +311,9 @@ void main() {
 
         for (final skill in detail.skills) {
           _checkKey(skill.key);
-          _checkAsset(skill.fullImagePath);
+          if (!detail.isComingSoon) {
+            _checkAsset(skill.fullImagePath);
+          }
           expect(skill.stats, isNotEmpty);
           final statKeys = skill.stats.map((e) => e.key).toList();
           expect(statKeys.toSet().length, equals(statKeys.length));
@@ -316,13 +327,18 @@ void main() {
 
         for (final passive in detail.passives) {
           _checkKey(passive.key);
-          _checkAsset(passive.fullImagePath);
+          if (!detail.isComingSoon) {
+            _checkAsset(passive.fullImagePath);
+          }
+
           expect(passive.unlockedAt, isIn([-1, 1, 4]));
         }
 
         for (final constellation in detail.constellations) {
           _checkKey(constellation.key);
-          _checkAsset(constellation.fullImagePath);
+          if (!detail.isComingSoon) {
+            _checkAsset(constellation.fullImagePath);
+          }
           expect(constellation.number, inInclusiveRange(1, 6));
         }
 
@@ -592,6 +608,9 @@ void main() {
             _checkKey(skill.key);
             expect(skill.key, isIn(detail.skills.map((e) => e.key).toList()));
             _checkTranslation(skill.title, canBeNull: false);
+            if (detail.isComingSoon) {
+              continue;
+            }
             expect(skill.stats, isNotEmpty);
             for (final ability in skill.abilities) {
               final oneAtLeast = ability.name.isNotNullEmptyOrWhitespace ||
@@ -615,6 +634,9 @@ void main() {
           for (final passive in translation.passives) {
             _checkKey(passive.key);
             expect(passive.key, isIn(detail.passives.map((e) => e.key).toList()));
+            if (detail.isComingSoon) {
+              continue;
+            }
             _checkTranslation(passive.title, canBeNull: false);
             _checkTranslation(passive.description, canBeNull: passive.descriptions.isNotEmpty);
             for (final desc in passive.descriptions) {
@@ -625,6 +647,9 @@ void main() {
           for (final constellation in translation.constellations) {
             _checkKey(constellation.key);
             expect(constellation.key, isIn(detail.constellations.map((e) => e.key).toList()));
+            if (detail.isComingSoon) {
+              continue;
+            }
             _checkTranslation(constellation.title, canBeNull: false);
             _checkTranslation(constellation.description, canBeNull: false);
             _checkTranslation(constellation.secondDescription);

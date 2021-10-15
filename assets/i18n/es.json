@@ -1,4 +1,4 @@
-{
+﻿{
   "characters": [
     {
       "key": "albedo",
@@ -412,6 +412,99 @@
           "key": "c6",
           "title": "Fuego salvaje",
           "description": "Lluvia ardiente aumenta la Vel. Movimiento de todos los miembros del equipo en un 15% y su ATQ en un 15% durante 10 s.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "arataki-itto",
+      "name": "Arataki Itto",
+      "title": "Hanamizaka Heroics",
+      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -1674,6 +1767,93 @@
           "key": "c6",
           "title": "La clemente",
           "description": "Utilizar Senda de Chilin hace que durante 30 s no se requiera cargar la siguiente flecha helada.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "gorou",
+      "name": "Gorou",
+      "title": "Canine Warrior",
+      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -8827,101 +9007,120 @@
     {
       "key": "Engulfing Storm",
       "name": "Tormenta Envolvente",
-      "effect": "Drena continuamente la recarga de energía del personaje."
+      "effect": "Drena continuamente la recarga de energía del personaje.",
+      "description": null
     },
     {
       "key": "Slowing Water",
       "name": "Agua Ralentizadora",
-      "effect": "Aumenta la duración del CD de habilidades del personaje."
+      "effect": "Aumenta la duración del CD de habilidades del personaje.",
+      "description": null
     },
     {
       "key": "Smoldering Flames",
       "name": "Llamas Humeantes",
-      "effect": "Continuamente inflige daño Pyro al personaje."
+      "effect": "Continuamente inflige daño Pyro al personaje.",
+      "description": null
     },
     {
       "key": "Condensed Ice",
       "name": "Hielo Condensado",
-      "effect": "Aumenta el consumo de «Estamina | Resistencia» del personaje."
+      "effect": "Aumenta el consumo de «Estamina | Resistencia» del personaje.",
+      "description": null
     }
   ],
   "reactions": [
     {
       "key": "Burning",
       "name": "Quemadura",
-      "effect": "Inflige daño Pyro continuo durante un tiempo."
+      "effect": "Inflige daño Pyro continuo durante un tiempo.",
+      "description": null
     },
     {
       "key": "Crystalize",
       "name": "Cristalizar",
-      "effect": "Genera fragmentos elementales correspondientes, que proporcionan escudos elementales."
+      "effect": "Genera fragmentos elementales correspondientes, que proporcionan escudos elementales.",
+      "description": null
     },
     {
       "key": "Electro-Charged",
       "name": "Electrocargado",
-      "effect": "Inflige daño Electro continuo durante un periodo tiempo."
+      "effect": "Inflige daño Electro continuo durante un periodo tiempo.",
+      "description": null
     },
     {
       "key": "Frozen",
       "name": "Congelado",
-      "effect": "Congela el objetivo."
+      "effect": "Congela el objetivo.",
+      "description": null
     },
     {
       "key": "Melt",
       "name": "Derretir",
-      "effect": "Inflige daño extra."
+      "effect": "Inflige daño extra.",
+      "description": null
     },
     {
       "key": "Overloaded",
       "name": "Sobrecargado",
-      "effect": "Crea una explosión que inflige daño Pyro en área."
+      "effect": "Crea una explosión que inflige daño Pyro en área.",
+      "description": null
     },
     {
       "key": "Superconduct",
       "name": "Superconductor",
-      "effect": "Inflige daño Cryo en area y reduce la defensa del objetivo en un 50%"
+      "effect": "Inflige daño Cryo en area y reduce la defensa del objetivo en un 50%",
+      "description": null
     },
     {
       "key": "Swirl",
       "name": "Torbellino",
-      "effect": "Absorbe el primer elemento con el cual entra en contacto y inflige daño extra elemental y genera mas reacciones elementales."
+      "effect": "Absorbe el primer elemento con el cual entra en contacto y inflige daño extra elemental y genera mas reacciones elementales.",
+      "description": null
     },
     {
       "key": "Vaporize",
       "name": "Vaporizar",
-      "effect": "Inflige daño elemental adicional."
+      "effect": "Inflige daño elemental adicional.",
+      "description": null
     }
   ],
   "resonance": [
     {
       "key": "Enduring Rock",
       "name": "Roca Resistente",
-      "effect": "La Protección de Escudo aumenta en un 15%. Cuando un personaje está protegido por un escudo, inflige un 15% mas de daño. Al causar daño contra un enemigo, la RES Geo de dicho enemigo se reduce en un 20% durante 15s."
+      "effect": "La Protección de Escudo aumenta en un 15%. Cuando un personaje está protegido por un escudo, inflige un 15% mas de daño. Al causar daño contra un enemigo, la RES Geo de dicho enemigo se reduce en un 20% durante 15s.",
+      "description": null
     },
     {
       "key": "Fervent Flames",
       "name": "Llamas Fervientes",
-      "effect": "Reduce la duración de efectos con Cryo en 40%. Aumenta ATQ en 25%."
+      "effect": "Reduce la duración de efectos con Cryo en 40%. Aumenta ATQ en 25%.",
+      "description": null
     },
     {
       "key": "Soothing Waters",
       "name": "Agua Medicinal",
-      "effect": "Reduce en un 40% la duración de los efectos Pyro sobre ti. Aumenta en un 30% la curación recibida."
+      "effect": "Reduce en un 40% la duración de los efectos Pyro sobre ti. Aumenta en un 30% la curación recibida.",
+      "description": null
     },
     {
       "key": "Impetuous Winds",
       "name": "Vientos Impetuosos",
-      "effect": "Disminuye el Coste de Aguante en 15%. Aumenta Vel. de Movimiento en 10%. Reduce el TdE en 5%."
+      "effect": "Disminuye el Coste de Aguante en 15%. Aumenta Vel. de Movimiento en 10%. Reduce el TdE en 5%.",
+      "description": null
     },
     {
       "key": "High Voltage",
       "name": "Alto Voltaje",
-      "effect": "Reduce la duración de efectos con Hydro en 40%. Superconductor, Sobrecarga y Electrocargado tienen 100% de generar una Particula Elemental Electro (TdE 5 s.)."
+      "effect": "Reduce la duración de efectos con Hydro en 40%. Superconductor, Sobrecarga y Electrocargado tienen 100% de generar una Particula Elemental Electro (TdE 5 s.).",
+      "description": null
     },
     {
       "key": "Shattering Ice",
       "name": "Hielo Fragmentado",
-      "effect": "Reduce la duración de efectos con Electro en 40%. Aumenta la Prob. CRIT contra oponentes afectados por Cryo o enemigos congelados en un 15%."
+      "effect": "Reduce la duración de efectos con Electro en 40%. Aumenta la Prob. CRIT contra oponentes afectados por Cryo o enemigos congelados en un 15%.",
+      "description": null
     },
     {
       "key": "Protective Canopy",

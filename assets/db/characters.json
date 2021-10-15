@@ -397,6 +397,11 @@
               "key": "tusk-of-monoceros-caeli",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -855,8 +860,13 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "offFieldDps",
           "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "harbinger-of-dawn",
             "primordial-jade-cutter"
@@ -1403,6 +1413,11 @@
               "key": "molten-moment",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -1944,8 +1959,14 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill",
+            "normalAttack"
+          ],
           "weaponKeys": [
             "thundering-pulse",
             "amos-bow",
@@ -2486,6 +2507,11 @@
               "key": "dvalins-sigh",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -2924,8 +2950,14 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "amos-bow",
             "thundering-pulse",
@@ -2963,8 +2995,13 @@
           ]
         },
         {
+          "isRecommended": false,
           "type": "support",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "elegy-for-the-end",
             "favonius-warbow",
@@ -3103,6 +3140,1000 @@
           "baseDef": 601.0,
           "isAnAscension": false,
           "statValue": 24.0
+        }
+      ]
+    },
+    {
+      "key": "arataki-itto",
+      "rarity": 5,
+      "weaponType": "claymore",
+      "elementType": "geo",
+      "image": "arataki-itto.png",
+      "fullImage": "arataki-itto.png",
+      "secondFullImage": null,
+      "isComingSoon": true,
+      "isNew": false,
+      "isFemale": false,
+      "region": "inazuma",
+      "role": "dps",
+      "tier": "s",
+      "birthday": "06/01",
+      "subStatType": "critRatePercentage",
+      "ascensionMaterials": [
+        {
+          "rank": 1,
+          "level": 20,
+          "materials": [
+            {
+              "key": "prithiva-topaz-sliver",
+              "quantity": 1,
+              "type": "jewels"
+            },
+            {
+              "key": "onikabuto",
+              "quantity": 3,
+              "type": "local"
+            },
+            {
+              "key": "slime-condensate",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "level": 40,
+          "materials": [
+            {
+              "key": "prithiva-topaz-fragment",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "onikabuto",
+              "quantity": 10,
+              "type": "local"
+            },
+            {
+              "key": "slime-condensate",
+              "quantity": 15,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 40000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "level": 50,
+          "materials": [
+            {
+              "key": "prithiva-topaz-fragment",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "onikabuto",
+              "quantity": 20,
+              "type": "local"
+            },
+            {
+              "key": "slime-secretions",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 60000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "level": 60,
+          "materials": [
+            {
+              "key": "prithiva-topaz-chunk",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "onikabuto",
+              "quantity": 30,
+              "type": "local"
+            },
+            {
+              "key": "slime-secretions",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 80000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "level": 70,
+          "materials": [
+            {
+              "key": "prithiva-topaz-chunk",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "onikabuto",
+              "quantity": 45,
+              "type": "local"
+            },
+            {
+              "key": "slime-concentrate",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 100000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "level": 80,
+          "materials": [
+            {
+              "key": "prithiva-topaz-gemstone",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "onikabuto",
+              "quantity": 60,
+              "type": "local"
+            },
+            {
+              "key": "slime-concentrate",
+              "quantity": 24,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "talentAscensionMaterials": [
+        {
+          "level": 2,
+          "materials": [
+            {
+              "key": "teachings-of-elegance",
+              "quantity": 3,
+              "type": "talents"
+            },
+            {
+              "key": "slime-condensate",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 12500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "materials": [
+            {
+              "key": "guide-to-elegance",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "slime-secretions",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 17500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "materials": [
+            {
+              "key": "guide-to-elegance",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "slime-secretions",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 25000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "materials": [
+            {
+              "key": "guide-to-elegance",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "slime-secretions",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "materials": [
+            {
+              "key": "guide-to-elegance",
+              "quantity": 9,
+              "type": "talents"
+            },
+            {
+              "key": "slime-secretions",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 37500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "materials": [
+            {
+              "key": "philosophies-of-elegance",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "slime-concentrate",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            },
+            {
+              "key": "ashen-heart",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "materials": [
+            {
+              "key": "philosophies-of-elegance",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "slime-concentrate",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 260000,
+              "type": "currency"
+            },
+            {
+              "key": "ashen-heart",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "materials": [
+            {
+              "key": "philosophies-of-elegance",
+              "quantity": 12,
+              "type": "talents"
+            },
+            {
+              "key": "slime-concentrate",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 450000,
+              "type": "currency"
+            },
+            {
+              "key": "ashen-heart",
+              "quantity": 2,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "materials": [
+            {
+              "key": "philosophies-of-elegance",
+              "quantity": 16,
+              "type": "talents"
+            },
+            {
+              "key": "slime-concentrate",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 700000,
+              "type": "currency"
+            },
+            {
+              "key": "ashen-heart",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "key": "s1",
+          "image": "arataki-itto_s1.png",
+          "type": "normalAttack",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                63.96,
+                69.16,
+                74.37,
+                81.81,
+                87.01,
+                92.96,
+                101.14,
+                109.32,
+                117.5,
+                126.43,
+                136.65,
+                148.68,
+                160.71,
+                172.73,
+                185.85
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                61.09,
+                66.07,
+                71.04,
+                78.14,
+                83.12,
+                88.8,
+                96.61,
+                104.43,
+                112.24,
+                120.77,
+                130.54,
+                142.02,
+                153.51,
+                165.0,
+                177.53
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                73.5,
+                79.49,
+                85.47,
+                94.02,
+                100.0,
+                106.84,
+                116.24,
+                125.64,
+                135.04,
+                145.3,
+                157.05,
+                170.87,
+                184.69,
+                198.51,
+                213.59
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                93.07,
+                100.65,
+                108.23,
+                119.05,
+                126.62,
+                135.28,
+                147.19,
+                159.09,
+                171.0,
+                183.98,
+                198.86,
+                216.36,
+                233.86,
+                251.36,
+                270.45
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                91.16,
+                98.58,
+                106.0,
+                116.6,
+                124.02,
+                132.5,
+                144.16,
+                155.82,
+                167.48,
+                180.2,
+                194.78,
+                211.92,
+                229.06,
+                246.2,
+                264.89
+              ]
+            },
+            {
+              "key": "param6",
+              "values": [
+                190.92,
+                206.46,
+                222.0,
+                244.2,
+                259.74,
+                277.5,
+                301.92,
+                326.34,
+                350.76,
+                377.4,
+                407.93,
+                443.82,
+                479.72,
+                515.62,
+                554.78
+              ]
+            },
+            {
+              "key": "param7",
+              "values": [
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0,
+                60.0
+              ]
+            },
+            {
+              "key": "param8",
+              "values": [
+                90.47,
+                97.84,
+                105.2,
+                115.72,
+                123.08,
+                131.5,
+                143.07,
+                154.64,
+                166.22,
+                178.84,
+                193.31,
+                210.32,
+                227.33,
+                244.34,
+                262.89
+              ]
+            },
+            {
+              "key": "param9",
+              "values": [
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0
+              ]
+            },
+            {
+              "key": "param10",
+              "values": [
+                81.83,
+                88.49,
+                95.16,
+                104.67,
+                111.33,
+                118.94,
+                129.41,
+                139.88,
+                150.35,
+                161.76,
+                173.18,
+                184.6,
+                196.02,
+                207.44,
+                218.86
+              ]
+            },
+            {
+              "key": "param11",
+              "values": [
+                163.63,
+                176.95,
+                190.27,
+                209.3,
+                222.62,
+                237.84,
+                258.77,
+                279.7,
+                300.63,
+                323.46,
+                346.29,
+                369.12,
+                391.96,
+                414.79,
+                437.62
+              ]
+            },
+            {
+              "key": "param12",
+              "values": [
+                204.39,
+                221.02,
+                237.66,
+                261.42,
+                278.06,
+                297.07,
+                323.21,
+                349.36,
+                375.5,
+                404.02,
+                432.54,
+                461.06,
+                489.57,
+                518.09,
+                546.61
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "image": "arataki-itto_s2.png",
+          "type": "elementalSkill",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                307.2,
+                330.24,
+                353.28,
+                384.0,
+                407.04,
+                430.08,
+                460.8,
+                491.52,
+                522.24,
+                552.96,
+                583.68,
+                614.4,
+                652.8,
+                691.2,
+                729.6
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                100.0,
+                100.0,
+                100.0,
+                100.0,
+                100.0,
+                100.0,
+                100.0,
+                100.0,
+                100.0,
+                100.0,
+                100.0,
+                100.0,
+                100.0,
+                100.0,
+                100.0
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0,
+                6.0
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "image": "arataki-itto_s3.png",
+          "type": "elementalBurst",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                57.6,
+                61.92,
+                66.24,
+                72.0,
+                76.32,
+                80.64,
+                86.4,
+                92.16,
+                97.92,
+                103.68,
+                109.44,
+                115.2,
+                122.4,
+                129.6,
+                136.8
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                11.0,
+                11.0,
+                11.0,
+                11.0,
+                11.0,
+                11.0,
+                11.0,
+                11.0,
+                11.0,
+                11.0,
+                11.0,
+                11.0,
+                11.0,
+                11.0,
+                11.0
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p3",
+          "image": "arataki-itto_p3.png",
+          "unlockedAt": -1
+        },
+        {
+          "key": "p4",
+          "image": "arataki-itto_p4.png",
+          "unlockedAt": -1
+        },
+        {
+          "key": "p1",
+          "image": "arataki-itto_p1.png",
+          "unlockedAt": 1
+        },
+        {
+          "key": "p2",
+          "image": "arataki-itto_p2.png",
+          "unlockedAt": 4
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": "arataki-itto_c1.png"
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": "arataki-itto_c2.png"
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": "arataki-itto_c3.png"
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": "arataki-itto_c4.png"
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": "arataki-itto_c5.png"
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": "arataki-itto_c6.png"
+        }
+      ],
+      "builds": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 1067.0,
+          "baseAtk": 15.0,
+          "baseDef": 72.0,
+          "isAnAscension": false,
+          "statValue": 5.0
+        },
+        {
+          "level": 20,
+          "baseHp": 2767.0,
+          "baseAtk": 39.0,
+          "baseDef": 188.0,
+          "isAnAscension": false,
+          "statValue": 5.0
+        },
+        {
+          "level": 20,
+          "baseHp": 3682.0,
+          "baseAtk": 51.0,
+          "baseDef": 250.0,
+          "isAnAscension": true,
+          "statValue": 5.0
+        },
+        {
+          "level": 40,
+          "baseHp": 5509.0,
+          "baseAtk": 77.0,
+          "baseDef": 374.0,
+          "isAnAscension": false,
+          "statValue": 5.0
+        },
+        {
+          "level": 40,
+          "baseHp": 6159.0,
+          "baseAtk": 86.0,
+          "baseDef": 418.0,
+          "isAnAscension": true,
+          "statValue": 9.8
+        },
+        {
+          "level": 50,
+          "baseHp": 7086.0,
+          "baseAtk": 99.0,
+          "baseDef": 481.0,
+          "isAnAscension": false,
+          "statValue": 9.8
+        },
+        {
+          "level": 50,
+          "baseHp": 7953.0,
+          "baseAtk": 111.0,
+          "baseDef": 540.0,
+          "isAnAscension": true,
+          "statValue": 14.6
+        },
+        {
+          "level": 60,
+          "baseHp": 8889.0,
+          "baseAtk": 124.0,
+          "baseDef": 603.0,
+          "isAnAscension": false,
+          "statValue": 14.6
+        },
+        {
+          "level": 60,
+          "baseHp": 9539.0,
+          "baseAtk": 133.0,
+          "baseDef": 647.0,
+          "isAnAscension": true,
+          "statValue": 14.6
+        },
+        {
+          "level": 70,
+          "baseHp": 10484.0,
+          "baseAtk": 146.0,
+          "baseDef": 712.0,
+          "isAnAscension": false,
+          "statValue": 14.6
+        },
+        {
+          "level": 70,
+          "baseHp": 11134.0,
+          "baseAtk": 155.0,
+          "baseDef": 756.0,
+          "isAnAscension": true,
+          "statValue": 19.4
+        },
+        {
+          "level": 80,
+          "baseHp": 12090.0,
+          "baseAtk": 169.0,
+          "baseDef": 820.0,
+          "isAnAscension": false,
+          "statValue": 19.4
+        },
+        {
+          "level": 80,
+          "baseHp": 12740.0,
+          "baseAtk": 178.0,
+          "baseDef": 865.0,
+          "isAnAscension": true,
+          "statValue": 24.2
+        },
+        {
+          "level": 90,
+          "baseHp": 13703.0,
+          "baseAtk": 191.0,
+          "baseDef": 930.0,
+          "isAnAscension": false,
+          "statValue": 24.2
         }
       ]
     },
@@ -3502,6 +4533,11 @@
             {
               "key": "ring-of-boreas",
               "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
               "type": "talents"
             }
           ]
@@ -3981,8 +5017,48 @@
       ],
       "builds": [
         {
+          "isRecommended": false,
+          "type": "dps",
+          "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "skyward-atlas",
+            "the-widsith",
+            "dodoco-tales",
+            "mappa-mare"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "shimenawas-reminiscence",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "hydroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "elementalMastery"
+          ]
+        },
+        {
+          "isRecommended": true,
           "type": "support",
           "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "thrilling-tales-of-dragon-slayers",
             "prototype-amber",
@@ -4520,6 +5596,11 @@
             {
               "key": "dvalins-sigh",
               "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
               "type": "talents"
             }
           ]
@@ -5059,8 +6140,13 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "offFieldDps",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "wolfs-gravestone",
             "serpent-spine",
@@ -5599,6 +6685,11 @@
             {
               "key": "dvalins-plume",
               "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
               "type": "talents"
             }
           ]
@@ -6218,8 +7309,14 @@
       ],
       "builds": [
         {
+          "isRecommended": false,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst",
+            "normalAttack"
+          ],
           "weaponKeys": [
             "mistsplitter-reforged",
             "primordial-jade-cutter",
@@ -6248,17 +7345,34 @@
           ]
         },
         {
+          "isRecommended": true,
           "type": "burstSupport",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "mistsplitter-reforged",
             "aquila-favonia",
             "skyward-blade",
-            "festering-desire"
+            "festering-desire",
+            "prototype-rancour"
           ],
           "artifacts": [
             {
               "oneKey": "noblesse-oblige",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "pyroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": "emblem-of-severed-fate",
               "multiples": [],
               "stats": [
                 "hp",
@@ -6277,8 +7391,12 @@
           ]
         },
         {
+          "isRecommended": false,
           "type": "support",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "mistsplitter-reforged",
             "aquila-favonia",
@@ -6817,6 +7935,11 @@
               "key": "dvalins-sigh",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -7255,8 +8378,13 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "burstSupport",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "wolfs-gravestone",
             "serpent-spine",
@@ -7805,6 +8933,11 @@
               "key": "dvalins-plume",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -8303,8 +9436,14 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalSkill",
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "wolfs-gravestone",
             "the-unforged",
@@ -8845,6 +9984,11 @@
               "key": "shard-of-a-foul-legacy",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -9383,11 +10527,17 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "support",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "sacrificial-bow",
-            "favonius-warbow"
+            "favonius-warbow",
+            "recurve-bow"
           ],
           "artifacts": [
             {
@@ -9940,6 +11090,11 @@
             {
               "key": "dragon-lords-crown",
               "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
               "type": "talents"
             }
           ]
@@ -10619,8 +11774,14 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "song-of-broken-pines",
             "wolfs-gravestone",
@@ -10632,6 +11793,26 @@
             {
               "oneKey": "pale-flame",
               "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "pale-flame",
+                  "quantity": 2
+                },
+                {
+                  "key": "bloodstained-chivalry",
+                  "quantity": 2
+                }
+              ],
               "stats": [
                 "hp",
                 "atk",
@@ -11161,6 +12342,11 @@
               "key": "spirit-locket-of-boreas",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -11579,8 +12765,14 @@
       ],
       "builds": [
         {
+          "isRecommended": false,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalSkill",
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "thundering-pulse",
             "skyward-harp",
@@ -11597,7 +12789,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "electroDmgBonusPercentage",
+                "physDmgBonusPercentage",
                 "critRatePercentage"
               ]
             }
@@ -11610,8 +12802,13 @@
           ]
         },
         {
+          "isRecommended": true,
           "type": "offFieldDps",
           "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "thundering-pulse",
             "skyward-harp",
@@ -12193,6 +13390,11 @@
               "key": "shadow-of-the-warrior",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -12691,8 +13893,14 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "melt",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalSkill",
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "amos-bow",
             "skyward-harp",
@@ -12720,8 +13928,14 @@
           ]
         },
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "freeze",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "amos-bow",
             "thundering-pulse",
@@ -12749,8 +13963,14 @@
           ]
         },
         {
+          "isRecommended": false,
           "type": "offFieldDps",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill",
+            "normalAttack"
+          ],
           "weaponKeys": [
             "thundering-pulse",
             "amos-bow",
@@ -12900,6 +14120,980 @@
           "baseDef": 630.0,
           "isAnAscension": false,
           "statValue": 88.4
+        }
+      ]
+    },
+    {
+      "key": "gorou",
+      "rarity": 4,
+      "weaponType": "bow",
+      "elementType": "geo",
+      "image": "gorou.png",
+      "fullImage": "gorou.png",
+      "secondFullImage": null,
+      "isComingSoon": true,
+      "isNew": false,
+      "isFemale": false,
+      "region": "inazuma",
+      "role": "support",
+      "tier": "a",
+      "birthday": "05/18",
+      "subStatType": "geoDmgBonusPercentage",
+      "ascensionMaterials": [
+        {
+          "rank": 1,
+          "level": 20,
+          "materials": [
+            {
+              "key": "prithiva-topaz-sliver",
+              "quantity": 1,
+              "type": "jewels"
+            },
+            {
+              "key": "sango-pearl",
+              "quantity": 3,
+              "type": "local"
+            },
+            {
+              "key": "spectral-husk",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 2,
+          "level": 40,
+          "materials": [
+            {
+              "key": "prithiva-topaz-fragment",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "perpetual-heart",
+              "quantity": 2,
+              "type": "elementalStone"
+            },
+            {
+              "key": "sango-pearl",
+              "quantity": 10,
+              "type": "local"
+            },
+            {
+              "key": "spectral-husk",
+              "quantity": 15,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 40000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 3,
+          "level": 50,
+          "materials": [
+            {
+              "key": "prithiva-topaz-fragment",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "perpetual-heart",
+              "quantity": 4,
+              "type": "elementalStone"
+            },
+            {
+              "key": "sango-pearl",
+              "quantity": 20,
+              "type": "local"
+            },
+            {
+              "key": "spectral-heart",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 60000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 4,
+          "level": 60,
+          "materials": [
+            {
+              "key": "prithiva-topaz-chunk",
+              "quantity": 3,
+              "type": "jewels"
+            },
+            {
+              "key": "perpetual-heart",
+              "quantity": 8,
+              "type": "elementalStone"
+            },
+            {
+              "key": "sango-pearl",
+              "quantity": 30,
+              "type": "local"
+            },
+            {
+              "key": "spectral-heart",
+              "quantity": 18,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 80000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 5,
+          "level": 70,
+          "materials": [
+            {
+              "key": "prithiva-topaz-chunk",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "perpetual-heart",
+              "quantity": 12,
+              "type": "elementalStone"
+            },
+            {
+              "key": "sango-pearl",
+              "quantity": 45,
+              "type": "local"
+            },
+            {
+              "key": "spectral-nucleus",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 100000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "rank": 6,
+          "level": 80,
+          "materials": [
+            {
+              "key": "prithiva-topaz-gemstone",
+              "quantity": 6,
+              "type": "jewels"
+            },
+            {
+              "key": "perpetual-heart",
+              "quantity": 20,
+              "type": "elementalStone"
+            },
+            {
+              "key": "sango-pearl",
+              "quantity": 60,
+              "type": "local"
+            },
+            {
+              "key": "spectral-nucleus",
+              "quantity": 24,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "talentAscensionMaterials": [
+        {
+          "level": 2,
+          "materials": [
+            {
+              "key": "teachings-of-light",
+              "quantity": 3,
+              "type": "talents"
+            },
+            {
+              "key": "spectral-husk",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 12500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "materials": [
+            {
+              "key": "guide-to-light",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "spectral-heart",
+              "quantity": 3,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 17500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 4,
+          "materials": [
+            {
+              "key": "guide-to-light",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "spectral-heart",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 25000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 5,
+          "materials": [
+            {
+              "key": "guide-to-light",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "spectral-heart",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 6,
+          "materials": [
+            {
+              "key": "guide-to-light",
+              "quantity": 9,
+              "type": "talents"
+            },
+            {
+              "key": "spectral-heart",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 37500,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 7,
+          "materials": [
+            {
+              "key": "philosophies-of-light",
+              "quantity": 4,
+              "type": "talents"
+            },
+            {
+              "key": "spectral-nucleus",
+              "quantity": 4,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 120000,
+              "type": "currency"
+            },
+            {
+              "key": "molten-moment",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 8,
+          "materials": [
+            {
+              "key": "philosophies-of-light",
+              "quantity": 6,
+              "type": "talents"
+            },
+            {
+              "key": "spectral-nucleus",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 260000,
+              "type": "currency"
+            },
+            {
+              "key": "molten-moment",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 9,
+          "materials": [
+            {
+              "key": "philosophies-of-light",
+              "quantity": 12,
+              "type": "talents"
+            },
+            {
+              "key": "spectral-nucleus",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 450000,
+              "type": "currency"
+            },
+            {
+              "key": "molten-moment",
+              "quantity": 2,
+              "type": "talents"
+            }
+          ]
+        },
+        {
+          "level": 10,
+          "materials": [
+            {
+              "key": "philosophies-of-light",
+              "quantity": 16,
+              "type": "talents"
+            },
+            {
+              "key": "spectral-nucleus",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 700000,
+              "type": "currency"
+            },
+            {
+              "key": "molten-moment",
+              "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
+            }
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "key": "s1",
+          "image": "gorou_s1.png",
+          "type": "normalAttack",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                37.75,
+                40.83,
+                43.9,
+                48.29,
+                51.36,
+                54.88,
+                59.7,
+                64.53,
+                69.36,
+                74.63,
+                79.9,
+                85.17,
+                90.43,
+                95.7,
+                100.97
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                37.15,
+                40.18,
+                43.2,
+                47.52,
+                50.54,
+                54.0,
+                58.75,
+                63.5,
+                68.26,
+                73.44,
+                78.62,
+                83.81,
+                88.99,
+                94.18,
+                99.36
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                49.45,
+                53.48,
+                57.5,
+                63.25,
+                67.28,
+                71.88,
+                78.2,
+                84.53,
+                90.85,
+                97.75,
+                104.65,
+                111.55,
+                118.45,
+                125.35,
+                132.25
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                59.0,
+                63.8,
+                68.6,
+                75.46,
+                80.26,
+                85.75,
+                93.3,
+                100.84,
+                108.39,
+                116.62,
+                124.85,
+                133.08,
+                141.32,
+                149.55,
+                157.78
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                43.86,
+                47.43,
+                51.0,
+                56.1,
+                59.67,
+                63.75,
+                69.36,
+                74.97,
+                80.58,
+                86.7,
+                92.82,
+                98.94,
+                105.06,
+                111.18,
+                117.3
+              ]
+            },
+            {
+              "key": "param6",
+              "values": [
+                124.0,
+                133.3,
+                142.6,
+                155.0,
+                164.3,
+                173.6,
+                186.0,
+                198.4,
+                210.8,
+                223.2,
+                235.6,
+                248.0,
+                263.5,
+                279.0,
+                294.5
+              ]
+            },
+            {
+              "key": "param7",
+              "values": [
+                56.83,
+                61.45,
+                66.08,
+                72.69,
+                77.31,
+                82.6,
+                89.87,
+                97.14,
+                104.41,
+                112.34,
+                120.27,
+                128.2,
+                136.12,
+                144.05,
+                151.98
+              ]
+            },
+            {
+              "key": "param8",
+              "values": [
+                113.63,
+                122.88,
+                132.13,
+                145.35,
+                154.59,
+                165.17,
+                179.7,
+                194.23,
+                208.77,
+                224.62,
+                240.48,
+                256.34,
+                272.19,
+                288.05,
+                303.9
+              ]
+            },
+            {
+              "key": "param9",
+              "values": [
+                141.93,
+                153.49,
+                165.04,
+                181.54,
+                193.1,
+                206.3,
+                224.45,
+                242.61,
+                260.76,
+                280.57,
+                300.37,
+                320.18,
+                339.98,
+                359.79,
+                379.59
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s2",
+          "image": "gorou_s2.png",
+          "type": "elementalSkill",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                107.2,
+                115.24,
+                123.28,
+                134.0,
+                142.04,
+                150.08,
+                160.8,
+                171.52,
+                182.24,
+                192.96,
+                203.68,
+                214.4,
+                227.8,
+                241.2,
+                254.6
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                206.0,
+                222.0,
+                237.0,
+                258.0,
+                273.0,
+                289.0,
+                309.0,
+                330.0,
+                350.0,
+                371.0,
+                392.0,
+                412.0,
+                438.0,
+                464.0,
+                490.0
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0,
+                15.0
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0,
+                10.0
+              ]
+            }
+          ]
+        },
+        {
+          "key": "s3",
+          "image": "gorou_s3.png",
+          "type": "elementalBurst",
+          "stats": [
+            {
+              "key": "param1",
+              "values": [
+                98.22,
+                105.58,
+                112.95,
+                122.77,
+                130.14,
+                137.5,
+                147.32,
+                157.15,
+                166.97,
+                176.79,
+                186.61,
+                196.43,
+                208.71,
+                220.99,
+                233.26
+              ]
+            },
+            {
+              "key": "param2",
+              "values": [
+                61.3,
+                65.9,
+                70.5,
+                76.63,
+                81.22,
+                85.82,
+                91.95,
+                98.08,
+                104.21,
+                110.34,
+                116.47,
+                122.6,
+                130.26,
+                137.93,
+                145.59
+              ]
+            },
+            {
+              "key": "param3",
+              "values": [
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0,
+                9.0
+              ]
+            },
+            {
+              "key": "param4",
+              "values": [
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0,
+                20.0
+              ]
+            },
+            {
+              "key": "param5",
+              "values": [
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0,
+                80.0
+              ]
+            }
+          ]
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "image": "gorou_p1.png",
+          "unlockedAt": -1
+        },
+        {
+          "key": "p2",
+          "image": "gorou_p2.png",
+          "unlockedAt": 1
+        },
+        {
+          "key": "p3",
+          "image": "gorou_p3.png",
+          "unlockedAt": 4
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "number": 1,
+          "image": "gorou_c1.png"
+        },
+        {
+          "key": "c2",
+          "number": 2,
+          "image": "gorou_c2.png"
+        },
+        {
+          "key": "c3",
+          "number": 3,
+          "image": "gorou_c3.png"
+        },
+        {
+          "key": "c4",
+          "number": 4,
+          "image": "gorou_c4.png"
+        },
+        {
+          "key": "c5",
+          "number": 5,
+          "image": "gorou_c5.png"
+        },
+        {
+          "key": "c6",
+          "number": 6,
+          "image": "gorou_c6.png"
+        }
+      ],
+      "builds": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseHp": 802.0,
+          "baseAtk": 15.0,
+          "baseDef": 54.0,
+          "isAnAscension": false,
+          "statValue": 0.0
+        },
+        {
+          "level": 20,
+          "baseHp": 2061.0,
+          "baseAtk": 39.0,
+          "baseDef": 140.0,
+          "isAnAscension": false,
+          "statValue": 0.0
+        },
+        {
+          "level": 20,
+          "baseHp": 2661.0,
+          "baseAtk": 51.0,
+          "baseDef": 180.0,
+          "isAnAscension": true,
+          "statValue": 0.0
+        },
+        {
+          "level": 40,
+          "baseHp": 3985.0,
+          "baseAtk": 76.0,
+          "baseDef": 270.0,
+          "isAnAscension": false,
+          "statValue": 0.0
+        },
+        {
+          "level": 40,
+          "baseHp": 4411.0,
+          "baseAtk": 84.0,
+          "baseDef": 299.0,
+          "isAnAscension": true,
+          "statValue": 6.0
+        },
+        {
+          "level": 50,
+          "baseHp": 5074.0,
+          "baseAtk": 97.0,
+          "baseDef": 344.0,
+          "isAnAscension": false,
+          "statValue": 6.0
+        },
+        {
+          "level": 50,
+          "baseHp": 5642.0,
+          "baseAtk": 108.0,
+          "baseDef": 382.0,
+          "isAnAscension": true,
+          "statValue": 12.0
+        },
+        {
+          "level": 60,
+          "baseHp": 6305.0,
+          "baseAtk": 120.0,
+          "baseDef": 427.0,
+          "isAnAscension": false,
+          "statValue": 12.0
+        },
+        {
+          "level": 60,
+          "baseHp": 6731.0,
+          "baseAtk": 128.0,
+          "baseDef": 456.0,
+          "isAnAscension": true,
+          "statValue": 12.0
+        },
+        {
+          "level": 70,
+          "baseHp": 7393.0,
+          "baseAtk": 141.0,
+          "baseDef": 501.0,
+          "isAnAscension": false,
+          "statValue": 12.0
+        },
+        {
+          "level": 70,
+          "baseHp": 7818.0,
+          "baseAtk": 149.0,
+          "baseDef": 530.0,
+          "isAnAscension": true,
+          "statValue": 18.0
+        },
+        {
+          "level": 80,
+          "baseHp": 8481.0,
+          "baseAtk": 162.0,
+          "baseDef": 575.0,
+          "isAnAscension": false,
+          "statValue": 18.0
+        },
+        {
+          "level": 80,
+          "baseHp": 8907.0,
+          "baseAtk": 170.0,
+          "baseDef": 603.0,
+          "isAnAscension": true,
+          "statValue": 24.0
+        },
+        {
+          "level": 90,
+          "baseHp": 9570.0,
+          "baseAtk": 183.0,
+          "baseDef": 648.0,
+          "isAnAscension": false,
+          "statValue": 24.0
         }
       ]
     },
@@ -13299,6 +15493,11 @@
             {
               "key": "shard-of-a-foul-legacy",
               "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
               "type": "talents"
             }
           ]
@@ -13858,13 +16057,20 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalSkill",
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "staff-of-homa",
             "dragons-bane",
             "primordial-jade-winged-spear",
-            "deathmatch"
+            "deathmatch",
+            "white-tassel"
           ],
           "artifacts": [
             {
@@ -13880,9 +16086,9 @@
             }
           ],
           "subStatsToFocus": [
+            "elementalMastery",
             "critDmgPercentage",
             "critRatePercentage",
-            "elementalMastery",
             "hpPercentage"
           ]
         }
@@ -14398,6 +16604,11 @@
             {
               "key": "dvalins-plume",
               "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
               "type": "talents"
             }
           ]
@@ -14917,8 +17128,56 @@
       ],
       "builds": [
         {
+          "isRecommended": false,
+          "type": "dps",
+          "subType": "physical",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "aquila-favonia",
+            "primordial-jade-cutter",
+            "prototype-rancour"
+          ],
+          "artifacts": [
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "pale-flame",
+                  "quantity": 2
+                },
+                {
+                  "key": "bloodstained-chivalry",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "energyRechargePercentage"
+          ]
+        },
+        {
+          "isRecommended": true,
           "type": "burstSupport",
           "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "primordial-jade-cutter",
             "amenoma-kageuchi",
@@ -15458,6 +17717,11 @@
               "key": "gilded-scale",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -15996,8 +18260,14 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "support",
           "subType": "elementalMastery",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill",
+            "normalAttack"
+          ],
           "weaponKeys": [
             "freedom-sworn",
             "sacrificial-sword",
@@ -16536,6 +18806,11 @@
               "key": "spirit-locket-of-boreas",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -16954,13 +19229,20 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "cryo",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "mistsplitter-reforged",
             "primordial-jade-cutter",
             "aquila-favonia",
-            "the-flute"
+            "the-flute",
+            "cool-steel"
           ],
           "artifacts": [
             {
@@ -16983,8 +19265,57 @@
           ]
         },
         {
+          "isRecommended": false,
+          "type": "dps",
+          "subType": "physical",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
+          "weaponKeys": [
+            "aquila-favonia",
+            "primordial-jade-cutter",
+            "mistsplitter-reforged",
+            "prototype-rancour"
+          ],
+          "artifacts": [
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "pale-flame",
+                  "quantity": 2
+                },
+                {
+                  "key": "bloodstained-chivalry",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "atk"
+          ]
+        },
+        {
+          "isRecommended": true,
           "type": "burstSupport",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "primordial-jade-cutter",
             "mistsplitter-reforged",
@@ -17525,6 +19856,11 @@
               "key": "bloodjade-branch",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -18008,8 +20344,14 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "normalAttack",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "mistsplitter-reforged",
             "primordial-jade-cutter",
@@ -18550,6 +20892,11 @@
               "key": "ring-of-boreas",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -19088,8 +21435,14 @@
       ],
       "builds": [
         {
+          "isRecommended": false,
           "type": "dps",
           "subType": "physical",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "aquila-favonia",
             "primordial-jade-cutter",
@@ -19108,6 +21461,26 @@
                 "physDmgBonusPercentage",
                 "critRatePercentage"
               ]
+            },
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "pale-flame",
+                  "quantity": 2
+                },
+                {
+                  "key": "bloodstained-chivalry",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critRatePercentage"
+              ]
             }
           ],
           "subStatsToFocus": [
@@ -19118,8 +21491,14 @@
           ]
         },
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "electro",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "mistsplitter-reforged",
             "primordial-jade-cutter",
@@ -19690,6 +22069,11 @@
               "key": "ring-of-boreas",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -20088,13 +22472,18 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "skyward-atlas",
             "lost-prayer-to-the-sacred-winds",
             "dodoco-tales",
-            "solar-pearl",
             "the-widsith",
             "mappa-mare"
           ],
@@ -20660,6 +23049,11 @@
               "key": "ashen-heart",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -21098,8 +23492,13 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "burstSupport",
           "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "skyward-harp",
             "elegy-for-the-end",
@@ -21650,6 +24049,11 @@
               "key": "dvalins-claw",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -22128,8 +24532,14 @@
       ],
       "builds": [
         {
+          "isRecommended": false,
           "type": "dps",
           "subType": "electro",
+          "skillPriorities": [
+            "elementalSkill",
+            "normalAttack",
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "skyward-atlas",
             "lost-prayer-to-the-sacred-winds",
@@ -22187,8 +24597,14 @@
           ]
         },
         {
+          "isRecommended": true,
           "type": "offFieldDps",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill",
+            "normalAttack"
+          ],
           "weaponKeys": [
             "skyward-atlas",
             "the-widsith",
@@ -22756,6 +25172,11 @@
               "key": "ring-of-boreas",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -23213,8 +25634,13 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "subDps",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "the-widsith",
             "skyward-atlas",
@@ -23235,15 +25661,20 @@
             }
           ],
           "subStatsToFocus": [
+            "energyRechargePercentage",
             "critDmgPercentage",
             "critRatePercentage",
-            "energyRechargePercentage",
             "atkPercentage"
           ]
         },
         {
+          "isRecommended": true,
           "type": "support",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "thrilling-tales-of-dragon-slayers",
             "favonius-codex",
@@ -23781,6 +26212,11 @@
               "key": "spirit-locket-of-boreas",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -24119,14 +26555,20 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "memory-of-dust",
             "skyward-atlas",
-            "lost-prayer-to-the-sacred-winds",
             "dodoco-tales",
-            "eye-of-perception"
+            "eye-of-perception",
+            "frostbearer"
           ],
           "artifacts": [
             {
@@ -24178,14 +26620,21 @@
           ]
         },
         {
+          "isRecommended": false,
           "type": "subDps",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill",
+            "normalAttack"
+          ],
           "weaponKeys": [
             "skyward-atlas",
             "memory-of-dust",
             "lost-prayer-to-the-sacred-winds",
             "solar-pearl",
-            "eye-of-perception"
+            "eye-of-perception",
+            "dodoco-tales"
           ],
           "artifacts": [
             {
@@ -24728,6 +27177,11 @@
             {
               "key": "dvalins-claw",
               "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
               "type": "talents"
             }
           ]
@@ -25307,8 +27761,14 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "serpent-spine",
             "whiteblind",
@@ -25336,8 +27796,14 @@
           ]
         },
         {
+          "isRecommended": false,
           "type": "support",
           "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst",
+            "normalAttack"
+          ],
           "weaponKeys": [
             "whiteblind",
             "sacrificial-greatsword",
@@ -25883,6 +28349,11 @@
             {
               "key": "tail-of-boreas",
               "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
               "type": "talents"
             }
           ]
@@ -26502,8 +28973,13 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "support",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "sacrificial-sword",
             "the-flute",
@@ -27042,6 +29518,11 @@
             {
               "key": "molten-moment",
               "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
               "type": "talents"
             }
           ]
@@ -27841,8 +30322,13 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "electro",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "engulfing-lightning",
             "staff-of-homa",
@@ -28382,6 +30868,11 @@
             {
               "key": "dvalins-claw",
               "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
               "type": "talents"
             }
           ]
@@ -28961,17 +31452,54 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
-            "song-of-broken-pines",
             "wolfs-gravestone",
+            "song-of-broken-pines",
             "serpent-spine",
             "prototype-archaic"
           ],
           "artifacts": [
             {
               "oneKey": "pale-flame",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "pale-flame",
+                  "quantity": 2
+                },
+                {
+                  "key": "bloodstained-chivalry",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": "gladiators-finale",
               "multiples": [],
               "stats": [
                 "hp",
@@ -29502,6 +32030,11 @@
               "key": "shadow-of-the-warrior",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -30000,13 +32533,20 @@
       ],
       "builds": [
         {
+          "isRecommended": false,
           "type": "dps",
           "subType": "cryo",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "primordial-jade-winged-spear",
             "staff-of-homa",
             "skyward-spine",
-            "blackcliff-pole"
+            "blackcliff-pole",
+            "white-tassel"
           ],
           "artifacts": [
             {
@@ -30029,14 +32569,63 @@
           ]
         },
         {
+          "isRecommended": false,
+          "type": "dps",
+          "subType": "physical",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
+          "weaponKeys": [
+            "primordial-jade-winged-spear",
+            "staff-of-homa",
+            "crescent-pike"
+          ],
+          "artifacts": [
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "pale-flame",
+                  "quantity": 2
+                },
+                {
+                  "key": "bloodstained-chivalry",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "energyRechargePercentage"
+          ]
+        },
+        {
+          "isRecommended": true,
           "type": "burstSupport",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "staff-of-homa",
             "the-catch",
             "primordial-jade-winged-spear",
             "skyward-spine",
-            "deathmatch"
+            "deathmatch",
+            "prototype-starglitter"
           ],
           "artifacts": [
             {
@@ -30571,6 +33160,11 @@
               "key": "hellfire-butterfly",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -31094,8 +33688,48 @@
       ],
       "builds": [
         {
+          "isRecommended": false,
+          "type": "dps",
+          "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "normalAttack",
+            "elementalSkill"
+          ],
+          "weaponKeys": [
+            "everlasting-moonglow",
+            "prototype-amber",
+            "hakushin-ring",
+            "thrilling-tales-of-dragon-slayers"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "heart-of-depth",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "hydroDmgBonusPercentage",
+                "healingBonusPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "hpPercentage",
+            "energyRechargePercentage",
+            "atkPercentage",
+            "hp"
+          ]
+        },
+        {
+          "isRecommended": true,
           "type": "support",
           "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "thrilling-tales-of-dragon-slayers",
             "prototype-amber",
@@ -31115,9 +33749,10 @@
             }
           ],
           "subStatsToFocus": [
-            "energyRechargePercentage",
             "hpPercentage",
-            "atkPercentage"
+            "energyRechargePercentage",
+            "atkPercentage",
+            "hp"
           ]
         }
       ],
@@ -31632,6 +34267,11 @@
             {
               "key": "gilded-scale",
               "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
               "type": "talents"
             }
           ]
@@ -32291,8 +34931,13 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "support",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "wolfs-gravestone",
             "sacrificial-greatsword",
@@ -32830,6 +35475,11 @@
               "key": "spirit-locket-of-boreas",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -33228,8 +35878,13 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "support",
           "subType": "elementalMastery",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "sacrificial-fragments",
             "magic-guide",
@@ -33769,6 +36424,11 @@
             {
               "key": "shard-of-a-foul-legacy",
               "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
               "type": "talents"
             }
           ]
@@ -34588,10 +37248,17 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst",
+            "normalAttack"
+          ],
           "weaponKeys": [
             "thundering-pulse",
+            "polar-star",
             "amos-bow",
             "rust",
             "prototype-crescent"
@@ -35128,6 +37795,11 @@
             {
               "key": "hellfire-butterfly",
               "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
               "type": "talents"
             }
           ]
@@ -36505,13 +39177,19 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "anemo",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "primordial-jade-cutter",
             "aquila-favonia",
             "festering-desire",
-            "the-flute"
+            "the-flute",
+            "harbinger-of-dawn"
           ],
           "artifacts": [
             {
@@ -36849,6 +39527,11 @@
                   "key": "dvalins-sigh",
                   "quantity": 2,
                   "type": "talents"
+                },
+                {
+                  "key": "crown-of-insight",
+                  "quantity": 1,
+                  "type": "talents"
                 }
               ]
             }
@@ -37054,6 +39737,11 @@
                   "key": "dvalins-sigh",
                   "quantity": 2,
                   "type": "talents"
+                },
+                {
+                  "key": "crown-of-insight",
+                  "quantity": 1,
+                  "type": "talents"
                 }
               ]
             }
@@ -37258,6 +39946,11 @@
                 {
                   "key": "dvalins-sigh",
                   "quantity": 2,
+                  "type": "talents"
+                },
+                {
+                  "key": "crown-of-insight",
+                  "quantity": 1,
                   "type": "talents"
                 }
               ]
@@ -37970,13 +40663,19 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "support",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "favonius-sword",
             "sacrificial-sword",
             "skyward-blade",
-            "festering-desire"
+            "festering-desire",
+            "skyrider-sword"
           ],
           "artifacts": [
             {
@@ -38314,6 +41013,11 @@
                   "key": "dragon-lords-crown",
                   "quantity": 2,
                   "type": "talents"
+                },
+                {
+                  "key": "crown-of-insight",
+                  "quantity": 1,
+                  "type": "talents"
                 }
               ]
             }
@@ -38519,6 +41223,11 @@
                   "key": "dragon-lords-crown",
                   "quantity": 2,
                   "type": "talents"
+                },
+                {
+                  "key": "crown-of-insight",
+                  "quantity": 1,
+                  "type": "talents"
                 }
               ]
             }
@@ -38723,6 +41432,11 @@
                 {
                   "key": "dragon-lords-crown",
                   "quantity": 2,
+                  "type": "talents"
+                },
+                {
+                  "key": "crown-of-insight",
+                  "quantity": 1,
                   "type": "talents"
                 }
               ]
@@ -39335,8 +42049,13 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
-          "subType": "none",
+          "subType": "geo",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "mistsplitter-reforged",
             "aquila-favonia",
@@ -39708,6 +42427,11 @@
                   "key": "dvalins-sigh",
                   "quantity": 2,
                   "type": "talents"
+                },
+                {
+                  "key": "crown-of-insight",
+                  "quantity": 1,
+                  "type": "talents"
                 }
               ]
             }
@@ -39913,6 +42637,11 @@
                   "key": "tail-of-boreas",
                   "quantity": 2,
                   "type": "talents"
+                },
+                {
+                  "key": "crown-of-insight",
+                  "quantity": 1,
+                  "type": "talents"
                 }
               ]
             }
@@ -40117,6 +42846,11 @@
                 {
                   "key": "tail-of-boreas",
                   "quantity": 2,
+                  "type": "talents"
+                },
+                {
+                  "key": "crown-of-insight",
+                  "quantity": 1,
                   "type": "talents"
                 }
               ]
@@ -40521,6 +43255,11 @@
             {
               "key": "tail-of-boreas",
               "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
               "type": "talents"
             }
           ]
@@ -41040,13 +43779,19 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "offFieldDps",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "the-stringless",
             "windblume-ode",
             "elegy-for-the-end",
-            "skyward-harp"
+            "skyward-harp",
+            "raven-bow"
           ],
           "artifacts": [
             {
@@ -41580,6 +44325,11 @@
               "key": "dvalins-claw",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -42078,13 +44828,19 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "offFieldDps",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "staff-of-homa",
             "the-catch",
             "primordial-jade-winged-spear",
-            "skyward-spine"
+            "skyward-spine",
+            "favonius-lance"
           ],
           "artifacts": [
             {
@@ -42115,6 +44871,59 @@
             "critRatePercentage",
             "critDmgPercentage",
             "atkPercentage"
+          ]
+        },
+        {
+          "isRecommended": false,
+          "type": "dps",
+          "subType": "physical",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
+          "weaponKeys": [
+            "primordial-jade-winged-spear",
+            "crescent-pike"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "pale-flame",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "pale-flame",
+                  "quantity": 2
+                },
+                {
+                  "key": "bloodstained-chivalry",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "pyroDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critRatePercentage",
+            "critDmgPercentage",
+            "atkPercentage",
+            "energyRechargePercentage"
           ]
         }
       ],
@@ -42630,6 +45439,11 @@
               "key": "shadow-of-the-warrior",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -43108,8 +45922,14 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "primordial-jade-winged-spear",
             "staff-of-homa",
@@ -43127,6 +45947,26 @@
                 },
                 {
                   "key": "gladiators-finale",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "anemoDmgBonusPercentage",
+                "critDmgPercentage"
+              ]
+            },
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "viridescent-venerer",
+                  "quantity": 2
+                },
+                {
+                  "key": "shimenawas-reminiscence",
                   "quantity": 2
                 }
               ],
@@ -43659,6 +46499,11 @@
               "key": "tail-of-boreas",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -44177,13 +47022,19 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "offFieldDps",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "sacrificial-sword",
             "skyward-blade",
             "favonius-sword",
-            "festering-desire"
+            "festering-desire",
+            "amenoma-kageuchi"
           ],
           "artifacts": [
             {
@@ -44748,6 +47599,11 @@
             {
               "key": "tusk-of-monoceros-caeli",
               "quantity": 2,
+              "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
               "type": "talents"
             }
           ]
@@ -45347,8 +48203,14 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "skyward-pride",
             "wolfs-gravestone",
@@ -45385,8 +48247,13 @@
           ]
         },
         {
+          "isRecommended": false,
           "type": "support",
           "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "sacrificial-greatsword",
             "luxurious-sea-lord",
@@ -45924,6 +48791,11 @@
               "key": "bloodjade-branch",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -46442,8 +49314,14 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "skyward-atlas",
             "lost-prayer-to-the-sacred-winds",
@@ -46984,6 +49862,11 @@
               "key": "dragon-lords-crown",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -47482,8 +50365,14 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
           "type": "dps",
           "subType": "none",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "thundering-pulse",
             "amos-bow",
@@ -48053,6 +50942,11 @@
               "key": "tusk-of-monoceros-caeli",
               "quantity": 2,
               "type": "talents"
+            },
+            {
+              "key": "crown-of-insight",
+              "quantity": 1,
+              "type": "talents"
             }
           ]
         }
@@ -48611,8 +51505,47 @@
       ],
       "builds": [
         {
+          "isRecommended": true,
+          "type": "dps",
+          "subType": "physical",
+          "skillPriorities": [
+            "normalAttack",
+            "elementalBurst",
+            "elementalSkill"
+          ],
+          "weaponKeys": [
+            "crescent-pike",
+            "primordial-jade-winged-spear",
+            "staff-of-homa"
+          ],
+          "artifacts": [
+            {
+              "oneKey": "pale-flame",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "atkPercentage",
+                "physDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "critDmgPercentage",
+            "critRatePercentage",
+            "atkPercentage",
+            "hpPercentage"
+          ]
+        },
+        {
+          "isRecommended": true,
           "type": "support",
           "subType": "shield",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
           "weaponKeys": [
             "black-tassel",
             "favonius-lance"
@@ -48637,8 +51570,13 @@
           ]
         },
         {
+          "isRecommended": true,
           "type": "burstSupport",
           "subType": "none",
+          "skillPriorities": [
+            "elementalBurst",
+            "elementalSkill"
+          ],
           "weaponKeys": [
             "staff-of-homa",
             "primordial-jade-winged-spear",

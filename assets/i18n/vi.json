@@ -1,4 +1,4 @@
-{
+﻿{
   "characters": [
     {
       "key": "albedo",
@@ -413,6 +413,99 @@
           "key": "c6",
           "title": "Nhanh Như Lửa",
           "description": "Sau khi sử dụng Mưa Tên, 10s tiếp theo tăng 15% tốc độ di chuyển của tất cả thành viên trong đội, tấn công tăng 15%.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "arataki-itto",
+      "name": "Arataki Itto",
+      "title": "Hanamizaka Heroics",
+      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -1675,6 +1768,93 @@
           "key": "c6",
           "title": "Lữ Trùng",
           "description": "Trong vòng 30s sau khi thi triển Sơn Trạch Lân Tích, không cần tụ lực cũng có thể thi triển Cung Sương Hoa lần đầu.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "gorou",
+      "name": "Gorou",
+      "title": "Canine Warrior",
+      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -8737,101 +8917,120 @@
     {
       "key": "Engulfing Storm",
       "name": "Tia Sét Tham Lam",
-      "effect": "Liên tục tiêu hao Năng Lượng Nguyên Tố của nhân vật. Phản ứng Nguyên Tố có thể dập tắt trạng thái nguyên tố Lôi kèm theo nhân vật."
+      "effect": "Liên tục tiêu hao Năng Lượng Nguyên Tố của nhân vật. Phản ứng Nguyên Tố có thể dập tắt trạng thái nguyên tố Lôi kèm theo nhân vật.",
+      "description": null
     },
     {
       "key": "Slowing Water",
       "name": "Nước Lững Lờ",
-      "effect": "Kéo dài thời gian CD."
+      "effect": "Kéo dài thời gian CD.",
+      "description": null
     },
     {
       "key": "Smoldering Flames",
       "name": "Ngọn Lửa Âm Ỉ",
-      "effect": "Liên tục chịu ST Hỏa."
+      "effect": "Liên tục chịu ST Hỏa.",
+      "description": null
     },
     {
       "key": "Condensed Ice",
       "name": "Băng Ngưng Kết",
-      "effect": "Thể lực tiêu hao tăng mạnh."
+      "effect": "Thể lực tiêu hao tăng mạnh.",
+      "description": null
     }
   ],
   "reactions": [
     {
       "key": "Burning",
       "name": "Thiêu Đốt",
-      "effect": "Liên tục gây ST Hỏa."
+      "effect": "Liên tục gây ST Hỏa.",
+      "description": null
     },
     {
       "key": "Crystalize",
       "name": "Kết tinh",
-      "effect": "Sinh ra mảnh nguyên tố tương ứng khi phản ứng. Nhặt mảnh nguyên tố sẽ nhận được khiên tương ứng nguyên tố đó."
+      "effect": "Sinh ra mảnh nguyên tố tương ứng khi phản ứng. Nhặt mảnh nguyên tố sẽ nhận được khiên tương ứng nguyên tố đó.",
+      "description": null
     },
     {
       "key": "Electro-Charged",
       "name": "Điệm Cảm",
-      "effect": "Liên tục gây ST Lôi. Có thể đa mục tiêu."
+      "effect": "Liên tục gây ST Lôi. Có thể đa mục tiêu.",
+      "description": null
     },
     {
       "key": "Frozen",
       "name": "Đóng Băng",
-      "effect": "Đóng băng quái. Không thể di chuyển."
+      "effect": "Đóng băng quái. Không thể di chuyển.",
+      "description": null
     },
     {
       "key": "Melt",
       "name": "Tan Chảy",
-      "effect": "Gây thêm ST, và tiêu tan phản ứng."
+      "effect": "Gây thêm ST, và tiêu tan phản ứng.",
+      "description": null
     },
     {
       "key": "Overloaded",
       "name": "Quá Tải",
-      "effect": "Gây vụ nổ ST lớn. Có thể phá hủy vài vật thể kiên cố (khiên tay của quái, giáp)."
+      "effect": "Gây vụ nổ ST lớn. Có thể phá hủy vài vật thể kiên cố (khiên tay của quái, giáp).",
+      "description": null
     },
     {
       "key": "Superconduct",
       "name": "Siêu Dẫn",
-      "effect": "Gây ST Băng diện rộng và giảm Kháng Vật lý 50%."
+      "effect": "Gây ST Băng diện rộng và giảm Kháng Vật lý 50%.",
+      "description": null
     },
     {
       "key": "Swirl",
       "name": "Khuếch Tán",
-      "effect": "Gây thêm ST Nguyên Tố tương ứng, đính kèm hoặc thúc đẩy phản ứng nguyên tố khác."
+      "effect": "Gây thêm ST Nguyên Tố tương ứng, đính kèm hoặc thúc đẩy phản ứng nguyên tố khác.",
+      "description": null
     },
     {
       "key": "Vaporize",
       "name": "Bốc Hơi",
-      "effect": "Gây thêm ST, và \"bốc hơi\" nguyên tố theo đúng nghĩa."
+      "effect": "Gây thêm ST, và \"bốc hơi\" nguyên tố theo đúng nghĩa.",
+      "description": null
     }
   ],
   "resonance": [
     {
       "key": "Enduring Rock",
       "name": "Nham Kiên Định",
-      "effect": "Hiệu quả khiên tăng 15%. Ngoài ra, khi nhân vật có khiên bảo vệ. ST gây ra tăng 15%, khi nhân vật gây ST cho địch sẽ khiến Kháng Nham của địch giảm 20%, duy trì 15s."
+      "effect": "Hiệu quả khiên tăng 15%. Ngoài ra, khi nhân vật có khiên bảo vệ. ST gây ra tăng 15%, khi nhân vật gây ST cho địch sẽ khiến Kháng Nham của địch giảm 20%, duy trì 15s.",
+      "description": null
     },
     {
       "key": "Fervent Flames",
       "name": "Hỏa Nhiệt Tình",
-      "effect": "Thời gian duy trì nguyên tố Băng kèm theo giảm 40%. Tấn công tăng 25%."
+      "effect": "Thời gian duy trì nguyên tố Băng kèm theo giảm 40%. Tấn công tăng 25%.",
+      "description": null
     },
     {
       "key": "Soothing Waters",
       "name": "Thủy Trị Liệu",
-      "effect": "Thời gian duy trì nguyên tố Hỏa kèm theo giảm 40%. Nhận trị liệu tăng 30%."
+      "effect": "Thời gian duy trì nguyên tố Hỏa kèm theo giảm 40%. Nhận trị liệu tăng 30%.",
+      "description": null
     },
     {
       "key": "Impetuous Winds",
       "name": "Phong Nhạy Bén",
-      "effect": "Tiêu hao thể lực giảm 15%, tốc độ diu chuyển tăng 10%, CD rút ngắn 5%."
+      "effect": "Tiêu hao thể lực giảm 15%, tốc độ diu chuyển tăng 10%, CD rút ngắn 5%.",
+      "description": null
     },
     {
       "key": "High Voltage",
       "name": "Lôi Mạnh Mẽ",
-      "effect": "Thời gian duy trì nguyên tố Thủy kèm theo giảm 40%. Khi kích hoạt phản ứng siêu dẫn, quả tải và điện cảm, có tỉ lệ 100% rơi ra 1 Nguyên Tố Nhân Lôi. CD 5s."
+      "effect": "Thời gian duy trì nguyên tố Thủy kèm theo giảm 40%. Khi kích hoạt phản ứng siêu dẫn, quả tải và điện cảm, có tỉ lệ 100% rơi ra 1 Nguyên Tố Nhân Lôi. CD 5s.",
+      "description": null
     },
     {
       "key": "Shattering Ice",
       "name": "Băng Vụn Vỡ",
-      "effect": "Thời gian duy trì nguyên tố Lôi kèm theo giảm 40%. Khi tấn công kèm theo nguyên tố Băng hoặc địch ở trạng thái Đóng Băng, tỷ lệ bạo kích tăng 15%"
+      "effect": "Thời gian duy trì nguyên tố Lôi kèm theo giảm 40%. Khi tấn công kèm theo nguyên tố Băng hoặc địch ở trạng thái Đóng Băng, tỷ lệ bạo kích tăng 15%",
+      "description": null
     },
     {
       "key": "Protective Canopy",

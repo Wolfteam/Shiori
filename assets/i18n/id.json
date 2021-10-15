@@ -1,4 +1,4 @@
-{
+﻿{
   "characters": [
     {
       "key": "albedo",
@@ -409,6 +409,99 @@
           "key": "c6",
           "title": "Wildfire",
           "description": "Fiery Rain meningkatkan 15% Movement SPD dan 15% ATK seluruh anggota party selama 10 detik.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "arataki-itto",
+      "name": "Arataki Itto",
+      "title": "Hanamizaka Heroics",
+      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -1675,6 +1768,93 @@
           "key": "c6",
           "title": "The Clement",
           "description": "Menggunakan Trail of the Qilin akan menyebabkan Frostflake Arrow yang ditembakkan dalam waktu 30 detik ke depan tidak memerlukan Charge.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "gorou",
+      "name": "Gorou",
+      "title": "Canine Warrior",
+      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -8743,101 +8923,120 @@
     {
       "key": "Engulfing Storm",
       "name": "Engulfing Storm",
-      "effect": "Terus-menerus menguras Energy Recharge."
+      "effect": "Terus-menerus menguras Energy Recharge.",
+      "description": null
     },
     {
       "key": "Slowing Water",
       "name": "Slowing Water",
-      "effect": "Meningkatkan durasi CD skill karakter."
+      "effect": "Meningkatkan durasi CD skill karakter.",
+      "description": null
     },
     {
       "key": "Smoldering Flames",
       "name": "Smoldering Flames",
-      "effect": "Terus menerus menerima damage dari waktu ke waktu."
+      "effect": "Terus menerus menerima damage dari waktu ke waktu.",
+      "description": null
     },
     {
       "key": "Condensed Ice",
       "name": "Condensed Ice",
-      "effect": "Meningkatkan konsumsi stamina."
+      "effect": "Meningkatkan konsumsi stamina.",
+      "description": null
     }
   ],
   "reactions": [
     {
       "key": "Burning",
       "name": "Burning",
-      "effect": "Mengakibatkan Pyro DMG secara terus menerus."
+      "effect": "Mengakibatkan Pyro DMG secara terus menerus.",
+      "description": null
     },
     {
       "key": "Crystalize",
       "name": "Crystalize",
-      "effect": "Menciptakan Elemental Shard yang akan memberikan perisai saat diambil."
+      "effect": "Menciptakan Elemental Shard yang akan memberikan perisai saat diambil.",
+      "description": null
     },
     {
       "key": "Electro-Charged",
       "name": "Electro-Charged",
-      "effect": "Mengakibatkan Electro DMG secara terus menerus."
+      "effect": "Mengakibatkan Electro DMG secara terus menerus.",
+      "description": null
     },
     {
       "key": "Frozen",
       "name": "Frozen",
-      "effect": "Membekukan target."
+      "effect": "Membekukan target.",
+      "description": null
     },
     {
       "key": "Melt",
       "name": "Melt",
-      "effect": "Mengakibatkan damage tambahan."
+      "effect": "Mengakibatkan damage tambahan.",
+      "description": null
     },
     {
       "key": "Overloaded",
       "name": "Overloaded",
-      "effect": "Mengakibatkan Pyro DMG area."
+      "effect": "Mengakibatkan Pyro DMG area.",
+      "description": null
     },
     {
       "key": "Superconduct",
       "name": "Superconduct",
-      "effect": "Mengakibatkan Cryo DMG area dan mengurangi Physical RES target sebesar 50%."
+      "effect": "Mengakibatkan Cryo DMG area dan mengurangi Physical RES target sebesar 50%.",
+      "description": null
     },
     {
       "key": "Swirl",
       "name": "Swirl",
-      "effect": "Mengakibatkan elemental damage tambahan dan menyebarkan efeknya."
+      "effect": "Mengakibatkan elemental damage tambahan dan menyebarkan efeknya.",
+      "description": null
     },
     {
       "key": "Vaporize",
       "name": "Vaporize",
-      "effect": "Mengakibatkan damage tambahan."
+      "effect": "Mengakibatkan damage tambahan.",
+      "description": null
     }
   ],
   "resonance": [
     {
       "key": "Enduring Rock",
       "name": "Enduring Rock",
-      "effect": "Meningkatkan 15% kekuatan perisai. Selain itu, karakter yang sedang dilindungi perisai akan mendapatkan efek berikut: Meningkatkan 15% DMG; Saat karakter mengakibatkan DMG terhadap musuh, mengurangi 20% Geo RES musuh selama 15 detik."
+      "effect": "Meningkatkan 15% kekuatan perisai. Selain itu, karakter yang sedang dilindungi perisai akan mendapatkan efek berikut: Meningkatkan 15% DMG; Saat karakter mengakibatkan DMG terhadap musuh, mengurangi 20% Geo RES musuh selama 15 detik.",
+      "description": null
     },
     {
       "key": "Fervent Flames",
       "name": "Fervent Flames",
-      "effect": "Waktu terpengaruh Cryo berkurang 40%. Meningkatkan 25% ATK."
+      "effect": "Waktu terpengaruh Cryo berkurang 40%. Meningkatkan 25% ATK.",
+      "description": null
     },
     {
       "key": "Soothing Waters",
       "name": "Soothing Waters",
-      "effect": "Waktu terpengaruh Pyro berkurang 40%. Meningkatkan pemulihan HP yang diterima sebesar 30%."
+      "effect": "Waktu terpengaruh Pyro berkurang 40%. Meningkatkan pemulihan HP yang diterima sebesar 30%.",
+      "description": null
     },
     {
       "key": "Impetuous Winds",
       "name": "Impetuous Winds",
-      "effect": "Mengurangi konsumsi Stamina sebanyak 15%. Meningkatkan Movement SPD sebanyak 10%. Mengurangi CD skill sebanyak 5%."
+      "effect": "Mengurangi konsumsi Stamina sebanyak 15%. Meningkatkan Movement SPD sebanyak 10%. Mengurangi CD skill sebanyak 5%.",
+      "description": null
     },
     {
       "key": "High Voltage",
       "name": "High Voltage",
-      "effect": "Waktu terpengaruh Hydro berkurang 40%. Superconduct, Overloaded dan Electro-Charged memiliki 100% kemungkinan menciptakan Electro Elemental Particle (CD: 5 detik)."
+      "effect": "Waktu terpengaruh Hydro berkurang 40%. Superconduct, Overloaded dan Electro-Charged memiliki 100% kemungkinan menciptakan Electro Elemental Particle (CD: 5 detik).",
+      "description": null
     },
     {
       "key": "Shattering Ice",
       "name": "Shattering Ice",
-      "effect": "Waktu terpengaruh Electro berkurang 40%. Meningkatkan CRIT Rate terhadap musuh yang terkena Frozen atau Cryo sebanyak 15%."
+      "effect": "Waktu terpengaruh Electro berkurang 40%. Meningkatkan CRIT Rate terhadap musuh yang terkena Frozen atau Cryo sebanyak 15%.",
+      "description": null
     },
     {
       "key": "Protective Canopy",
