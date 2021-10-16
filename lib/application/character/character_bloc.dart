@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/application/common/pop_bloc.dart';
+import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
@@ -151,8 +152,10 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
       multiTalentAscensionMaterials: multiTalents,
       builds: char.builds.map((build) {
         return CharacterBuildCardModel(
+          isRecommended: build.isRecommended,
           type: build.type,
           subType: build.subType,
+          skillPriorities: build.skillPriorities,
           subStatsToFocus: build.subStatsToFocus,
           weapons: build.weaponKeys.map((e) => _genshinService.getWeaponForCard(e)).toList(),
           artifacts: build.artifacts.map(
@@ -165,13 +168,32 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
                       ))
                   .toList();
 
-              return CharacterBuildArtifactModel(one: one, multiples: multiples, stats: e.stats);
+              if (multiples.isNotEmpty) {
+                final count = multiples.map((e) => e.quantity).fold(0, (int p, int c) => p + c);
+                final diff = artifactOrder.length - count;
+                if (diff >= 1) {
+                  multiples.add(CharacterBuildMultipleArtifactModel(quantity: diff, artifact: multiples.last.artifact));
+                }
+              }
+              return CharacterBuildArtifactModel(one: one, multiples: _flatMultiBuild(multiples), stats: e.stats);
             },
           ).toList(),
         );
-      }).toList(),
+      }).toList()
+        ..sort((x, y) => x.isRecommended ? -1 : 1),
       subStatType: char.subStatType,
       stats: char.stats,
     );
+  }
+
+  List<ArtifactCardModel> _flatMultiBuild(List<CharacterBuildMultipleArtifactModel> multiArtifactBuild) {
+    final multiples = <ArtifactCardModel>[];
+    for (var y = 0; y < multiArtifactBuild.length; y++) {
+      final multiple = multiArtifactBuild[y];
+      for (var x = 1; x <= multiple.quantity; x++) {
+        multiples.add(multiple.artifact);
+      }
+    }
+    return multiples;
   }
 }

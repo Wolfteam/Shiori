@@ -51505,7 +51505,7 @@
       ],
       "builds": [
         {
-          "isRecommended": true,
+          "isRecommended": false,
           "type": "dps",
           "subType": "physical",
           "skillPriorities": [

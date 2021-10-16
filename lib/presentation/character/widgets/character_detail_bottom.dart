@@ -50,8 +50,10 @@ class _PortraitLayout extends StatelessWidget {
                 body: Column(
                   children: state.builds
                       .map((build) => CharacterDetailBuildCard(
+                            isRecommended: build.isRecommended,
                             type: build.type,
                             subType: build.subType,
+                            skillPriorities: build.skillPriorities,
                             elementType: state.elementType,
                             weapons: build.weapons,
                             artifacts: build.artifacts,
@@ -166,8 +168,10 @@ class _LandscapeLayout extends StatelessWidget {
                 body: Column(
                   children: state.builds
                       .map((build) => CharacterDetailBuildCard(
+                            isRecommended: build.isRecommended,
                             type: build.type,
                             subType: build.subType,
+                            skillPriorities: build.skillPriorities,
                             elementType: state.elementType,
                             weapons: build.weapons,
                             artifacts: build.artifacts,
