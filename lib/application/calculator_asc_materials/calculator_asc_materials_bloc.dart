@@ -53,6 +53,7 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
           key: e.key,
           image: Assets.getCharacterPath(char.image),
           position: currentState.items.length,
+          elementType: char.elementType,
           name: translation.name,
           rarity: char.rarity,
           materials: _calculatorService.getCharacterMaterialsToUse(

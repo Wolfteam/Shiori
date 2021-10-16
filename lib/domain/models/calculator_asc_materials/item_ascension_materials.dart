@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shiori/domain/enums/enums.dart';
 
 import '../models.dart';
 
@@ -23,6 +24,7 @@ class ItemAscensionMaterials with _$ItemAscensionMaterials {
     @Default(true) bool isCharacter,
     @Default(false) bool isWeapon,
     @Default(true) bool isActive,
+    ElementType? elementType,
   }) = _ForCharacter;
 
   const factory ItemAscensionMaterials.forWeapons({
@@ -42,5 +44,6 @@ class ItemAscensionMaterials with _$ItemAscensionMaterials {
     @Default(false) bool isCharacter,
     @Default(true) bool isWeapon,
     @Default(true) bool isActive,
+    ElementType? elementType,
   }) = _ForWeapon;
 }

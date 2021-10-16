@@ -32,8 +32,8 @@ class _MaterialItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInImage(
-      height: 25,
-      width: 25,
+      height: 23,
+      width: 23,
       placeholder: MemoryImage(kTransparentImage),
       image: AssetImage(image),
     );
