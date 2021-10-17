@@ -30,6 +30,7 @@ class HighlightedText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     final spans = <TextSpan>[];
     final matches = _regExp.allMatches(text);
     var currentIndex = 0;
@@ -64,7 +65,7 @@ class HighlightedText extends StatelessWidget {
           message: replaceColorTags(text),
           child: RichText(
             textAlign: textAlign,
-            text: TextSpan(children: spans),
+            text: TextSpan(children: spans, style: theme.textTheme.bodyText2),
           ),
         ),
       ),
