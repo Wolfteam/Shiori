@@ -3,15 +3,19 @@ import 'package:shiori/domain/enums/enums.dart';
 import '../models.dart';
 
 class CharacterBuildCardModel {
+  final bool isRecommended;
   final CharacterRoleType type;
   final CharacterRoleSubType subType;
+  final List<CharacterSkillType> skillPriorities;
   final List<WeaponCardModel> weapons;
   final List<CharacterBuildArtifactModel> artifacts;
   final List<StatType> subStatsToFocus;
 
   CharacterBuildCardModel({
+    required this.isRecommended,
     required this.type,
     required this.subType,
+    required this.skillPriorities,
     required this.weapons,
     required this.artifacts,
     required this.subStatsToFocus,
@@ -20,7 +24,7 @@ class CharacterBuildCardModel {
 
 class CharacterBuildArtifactModel {
   final ArtifactCardModel? one;
-  final List<CharacterBuildMultipleArtifactModel> multiples;
+  final List<ArtifactCardModel> multiples;
   final List<StatType> stats;
 
   const CharacterBuildArtifactModel({

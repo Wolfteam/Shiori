@@ -1,4 +1,4 @@
-{
+﻿{
   "characters": [
     {
       "key": "albedo",
@@ -408,6 +408,99 @@
           "key": "c6",
           "title": "Wildfire",
           "description": "Fiery Rain increases all party members' Movement SPD by 15% and ATK by 15% for 10s.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "arataki-itto",
+      "name": "Arataki Itto",
+      "title": "Hanamizaka Heroics",
+      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -1674,6 +1767,93 @@
           "key": "c6",
           "title": "The Clement",
           "description": "Using Trail of the Qilin causes the next Frostflake Arrow shot within 30s to not require charging.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "gorou",
+      "name": "Gorou",
+      "title": "Canine Warrior",
+      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -8751,101 +8931,120 @@
     {
       "key": "Engulfing Storm",
       "name": "Engulfing Storm",
-      "effect": "Consuma continuamente Energy Recharge."
+      "effect": "Consuma continuamente Energy Recharge.",
+      "description": null
     },
     {
       "key": "Slowing Water",
       "name": "Slowing Water",
-      "effect": "Rallenta il CD delle abilità."
+      "effect": "Rallenta il CD delle abilità.",
+      "description": null
     },
     {
       "key": "Smoldering Flames",
       "name": "Smoldering Flames",
-      "effect": "Infliggi/subisci continui danni nel tempo."
+      "effect": "Infliggi/subisci continui danni nel tempo.",
+      "description": null
     },
     {
       "key": "Condensed Ice",
       "name": "Condensed Ice",
-      "effect": "Aumenta il consumo di Stamina e rallenta i movimenti."
+      "effect": "Aumenta il consumo di Stamina e rallenta i movimenti.",
+      "description": null
     }
   ],
   "reactions": [
     {
       "key": "Burning",
       "name": "Burning",
-      "effect": "Infligge elevati danni Pyro nel tempo. L’erba conta come un oggetto Dendro e diffonderà l’incendio nell’area circostante."
+      "effect": "Infligge elevati danni Pyro nel tempo. L’erba conta come un oggetto Dendro e diffonderà l’incendio nell’area circostante.",
+      "description": null
     },
     {
       "key": "Crystalize",
       "name": "Crystalize",
-      "effect": "Assorbe l’elemento e ne crea un cristallo, e se raccolto fornisce uno Scudo. Lo Scudo assorbe tutti i danni elementali ma è più efficace contro l’elemento dello stesso Scudo."
+      "effect": "Assorbe l’elemento e ne crea un cristallo, e se raccolto fornisce uno Scudo. Lo Scudo assorbe tutti i danni elementali ma è più efficace contro l’elemento dello stesso Scudo.",
+      "description": null
     },
     {
       "key": "Electro-Charged",
       "name": "Electro-Charged",
-      "effect": "Infligge danni Electro nel tempo. Ciascuna scossa inibisce temporaneamente le azioni del personaggio/nemico. Genera anche scariche elettriche che rimbalzano da un personaggio/nemico all’altro infliggendo danni Electro."
+      "effect": "Infligge danni Electro nel tempo. Ciascuna scossa inibisce temporaneamente le azioni del personaggio/nemico. Genera anche scariche elettriche che rimbalzano da un personaggio/nemico all’altro infliggendo danni Electro.",
+      "description": null
     },
     {
       "key": "Frozen",
       "name": "Frozen",
-      "effect": "Congela il personaggio/nemico. Colpire un nemico con Claymore, Attacco in Picchiata di Spada o danno Geo (tranne l’Attacco in Picchiata di un Catalyst) provoca l'effetto Shattered che infligge danno fisico."
+      "effect": "Congela il personaggio/nemico. Colpire un nemico con Claymore, Attacco in Picchiata di Spada o danno Geo (tranne l’Attacco in Picchiata di un Catalyst) provoca l'effetto Shattered che infligge danno fisico.",
+      "description": null
     },
     {
       "key": "Melt",
       "name": "Melt",
-      "effect": "Infligge danni Elementali aggiuntivi. Danno Pyro raddoppiato se innescato da un Attacco Pyro oppure danno Cryo potenziato di x1.5 se innescato da un Attacco Cryo."
+      "effect": "Infligge danni Elementali aggiuntivi. Danno Pyro raddoppiato se innescato da un Attacco Pyro oppure danno Cryo potenziato di x1.5 se innescato da un Attacco Cryo.",
+      "description": null
     },
     {
       "key": "Overloaded",
       "name": "Overloaded",
-      "effect": "Infligge danno Pyro AoE mediante un’esplosione."
+      "effect": "Infligge danno Pyro AoE mediante un’esplosione.",
+      "description": null
     },
     {
       "key": "Superconduct",
       "name": "Superconduct",
-      "effect": "Infligge danno Cryo AoE e riduce del 40% la RES fisica del nemico per 12s."
+      "effect": "Infligge danno Cryo AoE e riduce del 40% la RES fisica del nemico per 12s.",
+      "description": null
     },
     {
       "key": "Swirl",
       "name": "Swirl",
-      "effect": "Infligge danni Elementali dell’elemento infuso dalla reazione e ne diffonde l'effetto ai nemici vicini. Non infligge danni Anemo. Solo un elemento può essere infuso di Anemo per volta."
+      "effect": "Infligge danni Elementali dell’elemento infuso dalla reazione e ne diffonde l'effetto ai nemici vicini. Non infligge danni Anemo. Solo un elemento può essere infuso di Anemo per volta.",
+      "description": null
     },
     {
       "key": "Vaporize",
       "name": "Vaporize",
-      "effect": "Infligge danni Elemental aggiuntivi. Danno Pyro aumentato di x1.5 se innescato da un Attacco Pyro oppure danno Hydro raddoppiato se innescato da un Attacco Hydro."
+      "effect": "Infligge danni Elemental aggiuntivi. Danno Pyro aumentato di x1.5 se innescato da un Attacco Pyro oppure danno Hydro raddoppiato se innescato da un Attacco Hydro.",
+      "description": null
     }
   ],
   "resonance": [
     {
       "key": "Enduring Rock",
       "name": "Enduring Rock",
-      "effect": "Aumenta del 15% la resistenza dello scudo. Inoltre, i personaggi protetti dallo scudo ricevono i seguenti potenziamenti: danno inflitto +15% e RES Geo nemica -20% per 15s."
+      "effect": "Aumenta del 15% la resistenza dello scudo. Inoltre, i personaggi protetti dallo scudo ricevono i seguenti potenziamenti: danno inflitto +15% e RES Geo nemica -20% per 15s.",
+      "description": null
     },
     {
       "key": "Fervent Flames",
       "name": "Fervent Flames",
-      "effect": "Si è affetti da Cryo per il 40% di tempo in meno. ATK +25%."
+      "effect": "Si è affetti da Cryo per il 40% di tempo in meno. ATK +25%.",
+      "description": null
     },
     {
       "key": "Soothing Waters",
       "name": "Soothing Waters",
-      "effect": "Si è affetti da Pyro per il 40% di tempo in meno. Le cure ricevute aumentano del 30%."
+      "effect": "Si è affetti da Pyro per il 40% di tempo in meno. Le cure ricevute aumentano del 30%.",
+      "description": null
     },
     {
       "key": "Impetuous Winds",
       "name": "Impetuous Winds",
-      "effect": "Consumo di Stamina ridotto del 15%. Velocità di movimento +10%. CD dell'Abilità ridotto del 5%."
+      "effect": "Consumo di Stamina ridotto del 15%. Velocità di movimento +10%. CD dell'Abilità ridotto del 5%.",
+      "description": null
     },
     {
       "key": "High Voltage",
       "name": "High Voltage",
-      "effect": "Si è affetti da Hydro per il 40% di tempo in meno. Le reazioni Superconduct, Overloaded, and Electro-Charged hanno il 100% di probabilità di generare una Particella Elementale Electro (CD: 5s)."
+      "effect": "Si è affetti da Hydro per il 40% di tempo in meno. Le reazioni Superconduct, Overloaded, and Electro-Charged hanno il 100% di probabilità di generare una Particella Elementale Electro (CD: 5s).",
+      "description": null
     },
     {
       "key": "Shattering Ice",
       "name": "Shattering Ice",
-      "effect": "Si è affetti da Electro per il 40% di tempo in meno. CRIT Rate +15% contro nemici congelati o affetti da Cryo."
+      "effect": "Si è affetti da Electro per il 40% di tempo in meno. CRIT Rate +15% contro nemici congelati o affetti da Cryo.",
+      "description": null
     },
     {
       "key": "Protective Canopy",

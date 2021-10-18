@@ -87,6 +87,7 @@ void main() {
         ItemAscensionMaterials.forCharacters(
           key: char.key,
           name: 'Keqing',
+          elementType: char.elementType,
           position: 0,
           image: char.fullImagePath,
           rarity: char.rarity,

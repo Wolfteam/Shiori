@@ -1,4 +1,4 @@
-{
+﻿{
   "characters": [
     {
       "key": "albedo",
@@ -413,6 +413,99 @@
           "key": "c6",
           "title": "疾如野火",
           "description": "使用箭雨后的10秒内，队伍中所有角色的移动速度提升15%，攻击力提升15%。\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "arataki-itto",
+      "name": "Arataki Itto",
+      "title": "Hanamizaka Heroics",
+      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -1675,6 +1768,93 @@
           "key": "c6",
           "title": "履虫",
           "description": "施放山泽麟迹后30秒内的第一次霜华矢，无需蓄力即可施放。\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "gorou",
+      "name": "Gorou",
+      "title": "Canine Warrior",
+      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -8740,101 +8920,120 @@
     {
       "key": "Engulfing Storm",
       "name": "噬能之雷",
-      "effect": "处于该元素状态下的角色，不断减少元素充能。"
+      "effect": "处于该元素状态下的角色，不断减少元素充能。",
+      "description": null
     },
     {
       "key": "Slowing Water",
       "name": "迟滞之水",
-      "effect": "处于迟滞之水状态下的角色，技能冷却时间会被延长。"
+      "effect": "处于迟滞之水状态下的角色，技能冷却时间会被延长。",
+      "description": null
     },
     {
       "key": "Smoldering Flames",
       "name": "阴燃之火",
-      "effect": "处于阴燃之火状态下的角色，会受到火元素持续伤害。"
+      "effect": "处于阴燃之火状态下的角色，会受到火元素持续伤害。",
+      "description": null
     },
     {
       "key": "Condensed Ice",
       "name": "凝结之冰",
-      "effect": "处于凝结之冰状态下的角色，消耗的体力会增加。"
+      "effect": "处于凝结之冰状态下的角色，消耗的体力会增加。",
+      "description": null
     }
   ],
   "reactions": [
     {
       "key": "Burning",
       "name": "燃烧",
-      "effect": "持续造成火元素伤害，并毁坏草元素的装备、物体。"
+      "effect": "持续造成火元素伤害，并毁坏草元素的装备、物体。",
+      "description": null
     },
     {
       "key": "Crystalize",
       "name": "结晶",
-      "effect": "产生对应元素的晶片，为角色提供各种元素护盾。"
+      "effect": "产生对应元素的晶片，为角色提供各种元素护盾。",
+      "description": null
     },
     {
       "key": "Electro-Charged",
       "name": "感电",
-      "effect": "持续造成雷元素伤害。"
+      "effect": "持续造成雷元素伤害。",
+      "description": null
     },
     {
       "key": "Frozen",
       "name": "冻结",
-      "effect": "冻结目标。"
+      "effect": "冻结目标。",
+      "description": null
     },
     {
       "key": "Melt",
       "name": "融化",
-      "effect": "通过火元素或冰元素攻击导致融化时，会按照一定的比例提高该次攻击造成的伤害。"
+      "effect": "通过火元素或冰元素攻击导致融化时，会按照一定的比例提高该次攻击造成的伤害。",
+      "description": null
     },
     {
       "key": "Overloaded",
       "name": "超载",
-      "effect": "超载反应会引发剧烈的爆炸，造成火元素的爆炸范围伤害。"
+      "effect": "超载反应会引发剧烈的爆炸，造成火元素的爆炸范围伤害。",
+      "description": null
     },
     {
       "key": "Superconduct",
       "name": "超导",
-      "effect": "超导会造成冰元素的范围伤害，并降低受到超导影响的生物50%的防御力。"
+      "effect": "超导会造成冰元素的范围伤害，并降低受到超导影响的生物50%的防御力。",
+      "description": null
     },
     {
       "key": "Swirl",
       "name": "扩散",
-      "effect": "扩散能造成对应元素的伤害，产生附着，或进一步引发其他反应。"
+      "effect": "扩散能造成对应元素的伤害，产生附着，或进一步引发其他反应。",
+      "description": null
     },
     {
       "key": "Vaporize",
       "name": "蒸发",
-      "effect": "通过火元素或水元素攻击导致蒸发时，会按照一定的比例提高该次攻击造成的伤害。"
+      "effect": "通过火元素或水元素攻击导致蒸发时，会按照一定的比例提高该次攻击造成的伤害。",
+      "description": null
     }
   ],
   "resonance": [
     {
       "key": "Enduring Rock",
       "name": "坚定之岩",
-      "effect": "护盾强效提升15%。角色处于护盾保护状态时，造成的伤害提升15%，对敌人造成伤害时会使敌人的的岩元素抗性降低20%，持续15秒。"
+      "effect": "护盾强效提升15%。角色处于护盾保护状态时，造成的伤害提升15%，对敌人造成伤害时会使敌人的的岩元素抗性降低20%，持续15秒。",
+      "description": null
     },
     {
       "key": "Fervent Flames",
       "name": "热诚之火",
-      "effect": "冰元素附着的持续时间下降40%。攻击力提升25%。"
+      "effect": "冰元素附着的持续时间下降40%。攻击力提升25%。",
+      "description": null
     },
     {
       "key": "Soothing Waters",
       "name": "愈疗之水",
-      "effect": "火元素附着的持续时间下降40%。受治疗效果提升30%。"
+      "effect": "火元素附着的持续时间下降40%。受治疗效果提升30%。",
+      "description": null
     },
     {
       "key": "Impetuous Winds",
       "name": "迅捷之风",
-      "effect": "体力消耗降低15%，移动速度提升10%，技能冷却时间缩短5%。"
+      "effect": "体力消耗降低15%，移动速度提升10%，技能冷却时间缩短5%。",
+      "description": null
     },
     {
       "key": "High Voltage",
       "name": "强能之雷",
-      "effect": "水元素附着持续时间下降40%。触发超导、超载和感电反应时，有100%概率掉落1个雷元素微粒，冷却时间5秒。"
+      "effect": "水元素附着持续时间下降40%。触发超导、超载和感电反应时，有100%概率掉落1个雷元素微粒，冷却时间5秒。",
+      "description": null
     },
     {
       "key": "Shattering Ice",
       "name": "粉碎之冰",
-      "effect": "雷元素附着持续时间下降40%。攻击冰元素附着或冻结状态下的敌人时，暴击率提高15%。"
+      "effect": "雷元素附着持续时间下降40%。攻击冰元素附着或冻结状态下的敌人时，暴击率提高15%。",
+      "description": null
     },
     {
       "key": "Protective Canopy",

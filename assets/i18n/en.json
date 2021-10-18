@@ -1,4 +1,4 @@
-{
+﻿{
   "characters": [
     {
       "key": "albedo",
@@ -408,6 +408,99 @@
           "key": "c6",
           "title": "Wildfire",
           "description": "Fiery Rain increases all party members' Movement SPD by 15% and ATK by 15% for 10s.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "arataki-itto",
+      "name": "Arataki Itto",
+      "title": "Hanamizaka Heroics",
+      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -1674,6 +1767,93 @@
           "key": "c6",
           "title": "The Clement",
           "description": "Using Trail of the Qilin causes the next Frostflake Arrow shot within 30s to not require charging.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "gorou",
+      "name": "Gorou",
+      "title": "Canine Warrior",
+      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -8751,101 +8931,120 @@
     {
       "key": "Engulfing Storm",
       "name": "Engulfing Storm",
-      "effect": "Continuously drains Energy Recharge."
+      "effect": "Continuously drains Energy Recharge.",
+      "description": null
     },
     {
       "key": "Slowing Water",
       "name": "Slowing Water",
-      "effect": "Increases skill CD durations."
+      "effect": "Increases skill CD durations.",
+      "description": null
     },
     {
       "key": "Smoldering Flames",
       "name": "Smoldering Flames",
-      "effect": "Continuously inflicts damage over time."
+      "effect": "Continuously inflicts damage over time.",
+      "description": null
     },
     {
       "key": "Condensed Ice",
       "name": "Condensed Ice",
-      "effect": "Increases stamina consumption."
+      "effect": "Increases stamina consumption.",
+      "description": null
     }
   ],
   "reactions": [
     {
       "key": "Burning",
       "name": "Burning",
-      "effect": "Deals Pyro DMG over time."
+      "effect": "Deals Pyro DMG over time.",
+      "description": null
     },
     {
       "key": "Crystalize",
       "name": "Crystalize",
-      "effect": "Creates a crystal that will provide a shield when picked up."
+      "effect": "Creates a crystal that will provide a shield when picked up.",
+      "description": null
     },
     {
       "key": "Electro-Charged",
       "name": "Electro-Charged",
-      "effect": "Deals Electro DMG over time."
+      "effect": "Deals Electro DMG over time.",
+      "description": null
     },
     {
       "key": "Frozen",
       "name": "Frozen",
-      "effect": "Freezes the target."
+      "effect": "Freezes the target.",
+      "description": null
     },
     {
       "key": "Melt",
       "name": "Melt",
-      "effect": "Deals extra damage."
+      "effect": "Deals extra damage.",
+      "description": null
     },
     {
       "key": "Overloaded",
       "name": "Overloaded",
-      "effect": "Deals AoE Pyro DMG."
+      "effect": "Deals AoE Pyro DMG.",
+      "description": null
     },
     {
       "key": "Superconduct",
       "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target's Physical RES by 50%."
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical RES by 50%.",
+      "description": null
     },
     {
       "key": "Swirl",
       "name": "Swirl",
-      "effect": "Deals extra elemental damage and spreads the effect."
+      "effect": "Deals extra elemental damage and spreads the effect.",
+      "description": null
     },
     {
       "key": "Vaporize",
       "name": "Vaporize",
-      "effect": "Deals extra damage."
+      "effect": "Deals extra damage.",
+      "description": null
     }
   ],
   "resonance": [
     {
       "key": "Enduring Rock",
       "name": "Enduring Rock",
-      "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemies will decrease their Geo RES by 20% for 15s."
+      "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemies will decrease their Geo RES by 20% for 15s.",
+      "description": null
     },
     {
       "key": "Fervent Flames",
       "name": "Fervent Flames",
-      "effect": "Affected by Cryo for 40% less time. Increases ATK by 25%."
+      "effect": "Affected by Cryo for 40% less time. Increases ATK by 25%.",
+      "description": null
     },
     {
       "key": "Soothing Waters",
       "name": "Soothing Waters",
-      "effect": "Affected by Pyro for 40% less time. Increases incoming healing by 30%."
+      "effect": "Affected by Pyro for 40% less time. Increases incoming healing by 30%.",
+      "description": null
     },
     {
       "key": "Impetuous Winds",
       "name": "Impetuous Winds",
-      "effect": "Decreases Stamina Consumption by 15%. Increases Movement SPD by 10%. Shortens Skill CD by 5%."
+      "effect": "Decreases Stamina Consumption by 15%. Increases Movement SPD by 10%. Shortens Skill CD by 5%.",
+      "description": null
     },
     {
       "key": "High Voltage",
       "name": "High Voltage",
-      "effect": "Affected by Hydro for 40% less time. Superconduct, Overloaded, and Electro-Charged have a 100% chance to generate an Electro Elemental Particle (CD: 5s)."
+      "effect": "Affected by Hydro for 40% less time. Superconduct, Overloaded, and Electro-Charged have a 100% chance to generate an Electro Elemental Particle (CD: 5s).",
+      "description": null
     },
     {
       "key": "Shattering Ice",
       "name": "Shattering Ice",
-      "effect": "Affected by Electro for 40% less time. Increases CRIT Rate against enemies that are Frozen or affected by Cryo by 15%."
+      "effect": "Affected by Electro for 40% less time. Increases CRIT Rate against enemies that are Frozen or affected by Cryo by 15%.",
+      "description": null
     },
     {
       "key": "Protective Canopy",

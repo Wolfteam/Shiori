@@ -93,8 +93,10 @@ class CharacterFileMultiTalentAscensionMaterialModel with _$CharacterFileMultiTa
 @freezed
 class CharacterFileBuild with _$CharacterFileBuild {
   factory CharacterFileBuild({
+    required bool isRecommended,
     required CharacterRoleType type,
     required CharacterRoleSubType subType,
+    required List<CharacterSkillType> skillPriorities,
     required List<String> weaponKeys,
     required List<CharacterFileArtifactBuild> artifacts,
     required List<StatType> subStatsToFocus,

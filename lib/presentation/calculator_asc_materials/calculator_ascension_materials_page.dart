@@ -235,6 +235,7 @@ class _PortraitLayout extends StatelessWidget {
                         rarity: e.rarity,
                         isWeapon: !e.isCharacter,
                         materials: e.materials,
+                        elementType: e.elementType,
                       ),
                     ),
                   )
@@ -311,6 +312,7 @@ class _LandscapeLayout extends StatelessWidget {
                               rarity: e.rarity,
                               isWeapon: !e.isCharacter,
                               materials: e.materials,
+                              elementType: e.elementType,
                             ),
                           ),
                         )

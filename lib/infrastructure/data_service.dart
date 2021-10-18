@@ -1225,6 +1225,7 @@ class DataServiceImpl implements DataService {
       key: item.itemKey,
       name: translation.name,
       image: Assets.getCharacterPath(character.image),
+      elementType: character.elementType,
       rarity: character.rarity,
       materials: materials,
       currentLevel: item.currentLevel,

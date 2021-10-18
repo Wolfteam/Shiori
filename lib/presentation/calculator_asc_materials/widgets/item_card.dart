@@ -5,6 +5,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/child_item_disabled.dart';
+import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/utils/modal_bottom_sheet_utils.dart';
@@ -23,6 +24,7 @@ class ItemCard extends StatelessWidget {
   final bool isWeapon;
   final List<ItemAscensionMaterialModel> materials;
   final bool isActive;
+  final ElementType? elementType;
 
   const ItemCard({
     Key? key,
@@ -35,13 +37,14 @@ class ItemCard extends StatelessWidget {
     required this.isWeapon,
     required this.materials,
     required this.isActive,
+    this.elementType,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
-    final cardColor = rarity.getRarityColors().last;
+    final cardColor = elementType != null ? elementType!.getElementColorFromContext(context) : rarity.getRarityColors().last;
     final size = MediaQuery.of(context).size;
     var height = size.height / 2.5;
     if (height > 500) {

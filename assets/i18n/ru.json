@@ -1,4 +1,4 @@
-{
+﻿{
   "characters": [
     {
       "key": "albedo",
@@ -409,6 +409,99 @@
           "key": "c6",
           "title": "Горящие пятки",
           "description": "Использование навыка Огненный дождь увеличивает скорость передвижения всех членов отряда и их атаку на 15% в течение 10 сек.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "arataki-itto",
+      "name": "Arataki Itto",
+      "title": "Hanamizaka Heroics",
+      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -1675,6 +1768,93 @@
           "key": "c6",
           "title": "Сострадание",
           "description": "Следующая стрела-снежинка в течение 30 сек. после активации навыка След цилиня не нуждается в зарядке.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "gorou",
+      "name": "Gorou",
+      "title": "Canine Warrior",
+      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -8732,101 +8912,120 @@
     {
       "key": "Engulfing Storm",
       "name": "Объятья грозы",
-      "effect": "Непрерывно выкачивает Энергию элементов из персонажа."
+      "effect": "Непрерывно выкачивает Энергию элементов из персонажа.",
+      "description": null
     },
     {
       "key": "Slowing Water",
       "name": "Медленный поток",
-      "effect": "Увеличивает время отката навыков."
+      "effect": "Увеличивает время отката навыков.",
+      "description": null
     },
     {
       "key": "Smoldering Flames",
       "name": "Тлеющее пламя",
-      "effect": "Непрерывно наносит фиксированный урон."
+      "effect": "Непрерывно наносит фиксированный урон.",
+      "description": null
     },
     {
       "key": "Condensed Ice",
       "name": "Застывший лёд",
-      "effect": "Увеличивает расход выносливости."
+      "effect": "Увеличивает расход выносливости.",
+      "description": null
     }
   ],
   "reactions": [
     {
       "key": "Burning",
       "name": "Горение",
-      "effect": "Наносит постоянный Пиро урон."
+      "effect": "Наносит постоянный Пиро урон.",
+      "description": null
     },
     {
       "key": "Crystalize",
       "name": "Кристаллизация",
-      "effect": "Поглощает часть элементальной энергии противника и роняет сферу, которая может дать персонажу элементальный щит."
+      "effect": "Поглощает часть элементальной энергии противника и роняет сферу, которая может дать персонажу элементальный щит.",
+      "description": null
     },
     {
       "key": "Electro-Charged",
       "name": "Заряд",
-      "effect": "Наносит постоянный Электро урон."
+      "effect": "Наносит постоянный Электро урон.",
+      "description": null
     },
     {
       "key": "Frozen",
       "name": "Замораживание",
-      "effect": "Замораживает цель"
+      "effect": "Замораживает цель",
+      "description": null
     },
     {
       "key": "Melt",
       "name": "Таяние",
-      "effect": "Наносит дополнительный урон."
+      "effect": "Наносит дополнительный урон.",
+      "description": null
     },
     {
       "key": "Overloaded",
       "name": "Перегрузка",
-      "effect": "Вызывает взрыв, который наносит Пиро урон по площади."
+      "effect": "Вызывает взрыв, который наносит Пиро урон по площади.",
+      "description": null
     },
     {
       "key": "Superconduct",
       "name": "Суперпроводник",
-      "effect": "Наносит Крио урон по площади и понижает защиту физ. сопротивление на 50% пострадавших целей"
+      "effect": "Наносит Крио урон по площади и понижает защиту физ. сопротивление на 50% пострадавших целей",
+      "description": null
     },
     {
       "key": "Swirl",
       "name": "Рассеивание",
-      "effect": "Наносит дополнительный элементальный урон и накладывает соответствующий эффект."
+      "effect": "Наносит дополнительный элементальный урон и накладывает соответствующий эффект.",
+      "description": null
     },
     {
       "key": "Vaporize",
       "name": "Пар",
-      "effect": "Наносит дополнительный урон."
+      "effect": "Наносит дополнительный урон.",
+      "description": null
     }
   ],
   "resonance": [
     {
       "key": "Enduring Rock",
       "name": "Прочность Гео",
-      "effect": "Прочность щита повышается на 15%. Если у персонажа активен щит, то урон атаки увеличивается на 15%, а при нанесении урона врагу его Гео сопротивление в течение 15 сек. понижается на 20%."
+      "effect": "Прочность щита повышается на 15%. Если у персонажа активен щит, то урон атаки увеличивается на 15%, а при нанесении урона врагу его Гео сопротивление в течение 15 сек. понижается на 20%.",
+      "description": null
     },
     {
       "key": "Fervent Flames",
       "name": "Преданность Пиро",
-      "effect": "Уменьшает длительность Крио эффекта на 40%, увеличивает силу атаки на 25%."
+      "effect": "Уменьшает длительность Крио эффекта на 40%, увеличивает силу атаки на 25%.",
+      "description": null
     },
     {
       "key": "Soothing Waters",
       "name": "Лечение Гидро",
-      "effect": "Уменьшает длительность Пиро эффекта на 40%, увеличивает бонус получаемого лечения на 30%."
+      "effect": "Уменьшает длительность Пиро эффекта на 40%, увеличивает бонус получаемого лечения на 30%.",
+      "description": null
     },
     {
       "key": "Impetuous Winds",
       "name": "Проворность Анемо",
-      "effect": "Уменьшает потребление выносливости на 15%. Увеличивает скорость передвижения на 10%. Уменьшает время отката навыков на 5%."
+      "effect": "Уменьшает потребление выносливости на 15%. Увеличивает скорость передвижения на 10%. Уменьшает время отката навыков на 5%.",
+      "description": null
     },
     {
       "key": "High Voltage",
       "name": "Энергия Электро",
-      "effect": "Уменьшает длительность Гидро эффекта на 40%, Суперпроводник, Перегрузка и Заряжен имеют шанс в 100% создать элементальную частицу Электро (Уменьшение восстановления умения на 5%)."
+      "effect": "Уменьшает длительность Гидро эффекта на 40%, Суперпроводник, Перегрузка и Заряжен имеют шанс в 100% создать элементальную частицу Электро (Уменьшение восстановления умения на 5%).",
+      "description": null
     },
     {
       "key": "Shattering Ice",
       "name": "Разрушение Крио",
-      "effect": "Уменьшает длительность Электро эффекта на 40%, увеличивает шанс критического урона по замороженным противникам или противникам с Крио эффектом на 15%."
+      "effect": "Уменьшает длительность Электро эффекта на 40%, увеличивает шанс критического урона по замороженным противникам или противникам с Крио эффектом на 15%.",
+      "description": null
     },
     {
       "key": "Protective Canopy",
