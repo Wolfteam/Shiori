@@ -1,25 +1,22 @@
-class ArtifactCardModel {
-  final String key;
-  final String name;
-  final String image;
-  final int rarity;
-  final List<ArtifactCardBonusModel> bonus;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  const ArtifactCardModel({
-    required this.key,
-    required this.name,
-    required this.image,
-    required this.rarity,
-    required this.bonus,
-  });
+part 'artifact_card_model.freezed.dart';
+
+@freezed
+class ArtifactCardModel with _$ArtifactCardModel {
+  const factory ArtifactCardModel({
+    required String key,
+    required String name,
+    required String image,
+    required int rarity,
+    required List<ArtifactCardBonusModel> bonus,
+  }) = _ArtifactCardModel;
 }
 
-class ArtifactCardBonusModel {
-  final int pieces;
-  final String bonus;
-
-  const ArtifactCardBonusModel({
-    required this.pieces,
-    required this.bonus,
-  });
+@freezed
+class ArtifactCardBonusModel with _$ArtifactCardBonusModel {
+  const factory ArtifactCardBonusModel({
+    required int pieces,
+    required String bonus,
+  }) = _ArtifactCardBonusModel;
 }

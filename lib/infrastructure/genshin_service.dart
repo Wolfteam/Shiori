@@ -742,6 +742,13 @@ class GenshinServiceImpl implements GenshinService {
     return bonus;
   }
 
+  @override
+  List<String> getArtifactRelatedParts(String fullImagePath, String image, int bonus) {
+    var imageWithoutExt = image.split('.png').first;
+    imageWithoutExt = imageWithoutExt.substring(0, imageWithoutExt.length - 1);
+    return bonus == 1 ? [fullImagePath] : artifactOrder.map((e) => Assets.getArtifactPath('$imageWithoutExt$e.png')).toList();
+  }
+
   CharacterCardModel _toCharacterForCard(CharacterFileModel character) {
     final translation = getCharacterTranslation(character.key);
 

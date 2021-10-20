@@ -82,4 +82,5 @@ abstract class GenshinService {
   DateTime getNextDateForWeeklyBoss(AppServerResetTimeType type);
 
   List<ArtifactCardBonusModel> getArtifactBonus(TranslationArtifactFile translation);
+  List<String> getArtifactRelatedParts(String fullImagePath, String image, int bonus);
 }

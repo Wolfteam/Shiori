@@ -48,16 +48,13 @@ class MainBloc extends Bloc<MainEvent, MainState> {
   _MainLoadedState get currentState => state as _MainLoadedState;
 
   @override
-  Stream<MainState> mapEventToState(
-    MainEvent event,
-  ) async* {
+  Stream<MainState> mapEventToState(MainEvent event) async* {
     final s = await event.when(
       init: () async => _init(init: true),
       themeChanged: (theme) async => _loadThemeData(theme, _settingsService.accentColor),
       accentColorChanged: (accentColor) async => _loadThemeData(_settingsService.appTheme, accentColor),
       languageChanged: (language) async => _init(languageChanged: true),
     );
-
     yield s;
   }
 
