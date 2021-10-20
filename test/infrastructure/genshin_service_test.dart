@@ -380,11 +380,6 @@ void main() {
         expect(detail.location, equals(weapon.locationType));
         expect(detail.ascensionMaterials, isNotEmpty);
         expect(detail.stats, isNotEmpty);
-        if (detail.rarity > 2) {
-          expect(detail.refinements, isNotEmpty);
-        } else {
-          expect(detail.refinements, isEmpty);
-        }
 
         if (detail.location == ItemLocationType.crafting) {
           expect(detail.craftingMaterials, isNotEmpty);
@@ -395,14 +390,6 @@ void main() {
         for (final ascMaterial in detail.ascensionMaterials) {
           expect(ascMaterial.level, inInclusiveRange(20, 80));
           _checkItemAscensionMaterialFileModel(service, ascMaterial.materials);
-        }
-
-        for (final refinement in detail.refinements) {
-          expect(refinement.level, inInclusiveRange(1, 5));
-          final ignore = ['windblume-ode', 'predator'];
-          if (detail.rarity >= 4 && !ignore.contains(detail.key)) {
-            expect(refinement.values, isNotEmpty);
-          }
         }
 
         final ascensionNumber = detail.stats.where((el) => el.isAnAscension).length;
@@ -673,7 +660,13 @@ void main() {
           _checkTranslation(translation.name, canBeNull: false);
           _checkTranslation(translation.description, canBeNull: false);
           if (detail.rarity > 2) {
-            _checkTranslation(translation.refinement, canBeNull: false);
+            expect(translation.refinements, isNotEmpty);
+          } else {
+            expect(translation.refinements, isEmpty);
+          }
+
+          for (final refinement in translation.refinements) {
+            _checkTranslation(refinement, canBeNull: false, checkForColor: false);
           }
         }
       }

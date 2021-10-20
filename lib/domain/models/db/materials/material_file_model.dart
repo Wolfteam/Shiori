@@ -19,7 +19,7 @@ class MaterialFileModel with _$MaterialFileModel {
   //TODO: MOVE THIS TO THE GENERATED CODE ?
   bool get isFromBoss =>
       type == MaterialType.elementalStone ||
-      (type == MaterialType.talents && days.isEmpty) ||
+      (type == MaterialType.talents && days.isEmpty && !key.startsWith('crown-of-insight')) ||
       (type == MaterialType.jewels && !key.startsWith('brilliant-diamond'));
 
   int? get farmingRespawnTime {
