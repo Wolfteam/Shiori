@@ -163,48 +163,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}2{/color}",
-            "{color}20{/color}",
-            "{color}4{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}2.5{/color}",
-            "{color}25{/color}",
-            "{color}5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}3{/color}",
-            "{color}30{/color}",
-            "{color}6{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}3.5{/color}",
-            "{color}35{/color}",
-            "{color}7{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}4{/color}",
-            "{color}40{/color}",
-            "{color}8{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -521,43 +479,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}",
-            "{color}8{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}15{/color}",
-            "{color}10{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}",
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}21{/color}",
-            "{color}14{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}24{/color}",
-            "{color}16{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -874,38 +795,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}15{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}21{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}24{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -1238,43 +1127,6 @@
           "type": "ingredient"
         }
       ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}4{/color}",
-            "{color}1.2{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}5{/color}",
-            "{color}1.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}6{/color}",
-            "{color}1.8{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}7{/color}",
-            "{color}2.1{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}8{/color}",
-            "{color}2.4{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -1591,48 +1443,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}60{/color}",
-            "{color}100{/color}",
-            "{color}20{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}75{/color}",
-            "{color}125{/color}",
-            "{color}25{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}90{/color}",
-            "{color}150{/color}",
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}105{/color}",
-            "{color}175{/color}",
-            "{color}35{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}120{/color}",
-            "{color}200{/color}",
-            "{color}40{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -1949,43 +1759,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}60{/color}",
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}70{/color}",
-            "{color}10.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}80{/color}",
-            "{color}9{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}90{/color}",
-            "{color}7.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}100{/color}",
-            "{color}6{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -2318,43 +2091,6 @@
           "type": "ingredient"
         }
       ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}16{/color}",
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}20{/color}",
-            "{color}15{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}24{/color}",
-            "{color}18{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}28{/color}",
-            "{color}21{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}32{/color}",
-            "{color}24{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -2621,7 +2357,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [],
       "stats": [
         {
           "level": 1,
@@ -2902,38 +2637,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}100{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}125{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}150{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}175{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}200{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -3250,43 +2953,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}",
-            "{color}20{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}25{/color}",
-            "{color}25{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}30{/color}",
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}35{/color}",
-            "{color}35{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}40{/color}",
-            "{color}40{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -3603,43 +3269,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}",
-            "{color}10/20/30/48{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}15{/color}",
-            "{color}12.5/25/37.5/60{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}",
-            "{color}15/30/45/72{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}21{/color}",
-            "{color}17.5/35/52.5/84{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}24{/color}",
-            "{color}20/40/60/96{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -3956,12 +3585,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": []
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -4294,38 +3917,6 @@
           "type": "ingredient"
         }
       ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}36{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}45{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}54{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}63{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}72{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -4642,38 +4233,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}15{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}21{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}24{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -4990,38 +4549,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}8{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}10{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}14{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}16{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -5338,38 +4865,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}8{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}10{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}14{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}16{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -5686,38 +5181,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}40{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}50{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}60{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}70{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}80{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -6034,43 +5497,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}40{/color}",
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}50{/color}",
-            "{color}26{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}60{/color}",
-            "{color}22{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}70{/color}",
-            "{color}19{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}80{/color}",
-            "{color}16{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -6337,7 +5763,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [],
       "stats": [
         {
           "level": 1,
@@ -6618,38 +6043,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}24{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}36{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}42{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}48{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -6966,48 +6359,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}",
-            "{color}60{/color}",
-            "{color}4{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}25{/color}",
-            "{color}70{/color}",
-            "{color}3.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}30{/color}",
-            "{color}80{/color}",
-            "{color}3{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}35{/color}",
-            "{color}90{/color}",
-            "{color}2.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}40{/color}",
-            "{color}100{/color}",
-            "{color}2{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -7324,38 +6675,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}36{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}42{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}48{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}54{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}60{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -7672,38 +6991,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}24{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}36{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}42{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}48{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -8020,43 +7307,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}40{/color}",
-            "{color}14{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}50{/color}",
-            "{color}13{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}60{/color}",
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}70{/color}",
-            "{color}11{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}80{/color}",
-            "{color}10{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -8373,43 +7623,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}",
-            "{color}12/24/40{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}25{/color}",
-            "{color}15/30/50{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}30{/color}",
-            "{color}18/36/60{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}35{/color}",
-            "{color}21/42/70{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}40{/color}",
-            "{color}24/48/80{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -8726,36 +7939,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}16{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}20{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}24{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}28{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": []
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -9090,38 +8273,6 @@
           "type": "ingredient"
         }
       ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}6{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}7.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}9{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}10.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}12{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -9438,48 +8589,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}",
-            "{color}100{/color}",
-            "{color}200{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}25{/color}",
-            "{color}115{/color}",
-            "{color}230{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}30{/color}",
-            "{color}130{/color}",
-            "{color}260{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}35{/color}",
-            "{color}145{/color}",
-            "{color}290{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}40{/color}",
-            "{color}160{/color}",
-            "{color}320{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -9796,38 +8905,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}15{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}21{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}24{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -10144,38 +9221,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}15{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}21{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}24{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -10492,38 +9537,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}25{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}35{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}40{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -10790,7 +9803,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [],
       "stats": [
         {
           "level": 1,
@@ -11071,43 +10083,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}60{/color}",
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}70{/color}",
-            "{color}10.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}80{/color}",
-            "{color}9{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}90{/color}",
-            "{color}7.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}100{/color}",
-            "{color}6{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -11424,43 +10399,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}16{/color}",
-            "{color}6{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}20{/color}",
-            "{color}7.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}24{/color}",
-            "{color}9{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}28{/color}",
-            "{color}10.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}32{/color}",
-            "{color}12{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -11777,43 +10715,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}240{/color}",
-            "{color}15{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}280{/color}",
-            "{color}14{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}320{/color}",
-            "{color}13{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}360{/color}",
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}400{/color}",
-            "{color}11{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -12130,48 +11031,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}10{/color}",
-            "{color}16{/color}",
-            "{color}20{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}12.5{/color}",
-            "{color}20{/color}",
-            "{color}25{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}15{/color}",
-            "{color}24{/color}",
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}17.5{/color}",
-            "{color}28{/color}",
-            "{color}35{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}20{/color}",
-            "{color}32{/color}",
-            "{color}40{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -12488,38 +11347,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}14{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}17.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}21{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}24.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}28{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -12852,38 +11679,6 @@
           "type": "ingredient"
         }
       ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}6{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}7.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}9{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}10.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}12{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -13200,38 +11995,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}24{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}28{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}32{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}36{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -13548,43 +12311,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}",
-            "{color}8/16/28{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}15{/color}",
-            "{color}10/20/35{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}",
-            "{color}12/24/42{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}21{/color}",
-            "{color}14/28/49{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}24{/color}",
-            "{color}16/32/56{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -13901,43 +12627,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}",
-            "{color}1.2{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}25{/color}",
-            "{color}1.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}30{/color}",
-            "{color}1.8{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}35{/color}",
-            "{color}2.1{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}40{/color}",
-            "{color}2.4{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -14270,38 +12959,6 @@
           "type": "ingredient"
         }
       ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}4{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}6{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}7{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}8{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -14618,38 +13275,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}8{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}10{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}14{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}16{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -14966,43 +13591,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}40{/color}",
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}50{/color}",
-            "{color}26{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}60{/color}",
-            "{color}22{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}70{/color}",
-            "{color}19{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}80{/color}",
-            "{color}16{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -15269,7 +13857,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [],
       "stats": [
         {
           "level": 1,
@@ -15550,38 +14137,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}15{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}21{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}24{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -15898,53 +14453,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}4{/color}",
-            "{color}10{/color}",
-            "{color}10{/color}",
-            "{color}20{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}5{/color}",
-            "{color}10{/color}",
-            "{color}10{/color}",
-            "{color}25{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}6{/color}",
-            "{color}10{/color}",
-            "{color}10{/color}",
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}7{/color}",
-            "{color}10{/color}",
-            "{color}10{/color}",
-            "{color}35{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}8{/color}",
-            "{color}10{/color}",
-            "{color}10{/color}",
-            "{color}40{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -16261,43 +14769,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}",
-            "{color}4{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}25{/color}",
-            "{color}5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}30{/color}",
-            "{color}6{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}35{/color}",
-            "{color}7{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}40{/color}",
-            "{color}8{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -16614,16 +15085,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}50{/color}",
-            "{color}200{/color}",
-            "{color}66{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -16940,38 +15401,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}15{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}21{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}24{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -17288,43 +15717,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}",
-            "{color}60{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}25{/color}",
-            "{color}70{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}30{/color}",
-            "{color}80{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}35{/color}",
-            "{color}90{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}40{/color}",
-            "{color}100{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -17641,38 +16033,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}100{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}125{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}150{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}175{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}200{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -17989,38 +16349,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}1{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}1.25{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}1.5{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}1.75{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}2{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -18289,7 +16617,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [],
       "stats": [
         {
           "level": 1,
@@ -18570,38 +16897,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}15{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}21{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}24{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -18918,43 +17213,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}16{/color}",
-            "{color}8{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}20{/color}",
-            "{color}10{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}24{/color}",
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}28{/color}",
-            "{color}14{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}32{/color}",
-            "{color}16{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -19271,38 +17529,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}25{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}35{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}40{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -19619,43 +17845,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}10{/color}",
-            "{color}1{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}12.5{/color}",
-            "{color}1.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}15{/color}",
-            "{color}2{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}17.5{/color}",
-            "{color}2.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}20{/color}",
-            "{color}3{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -19972,43 +18161,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}240{/color}",
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}270{/color}",
-            "{color}11{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}300{/color}",
-            "{color}10{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}330{/color}",
-            "{color}9{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}360{/color}",
-            "{color}8{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -20325,43 +18477,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}60{/color}",
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}70{/color}",
-            "{color}10.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}80{/color}",
-            "{color}9{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}90{/color}",
-            "{color}7.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}100{/color}",
-            "{color}6{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -20692,48 +18807,6 @@
           "key": "starsilver",
           "quantity": 50,
           "type": "ingredient"
-        }
-      ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}60{/color}",
-            "{color}80{/color}",
-            "{color}200{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}70{/color}",
-            "{color}95{/color}",
-            "{color}240{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}80{/color}",
-            "{color}110{/color}",
-            "{color}280{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}90{/color}",
-            "{color}125{/color}",
-            "{color}320{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}100{/color}",
-            "{color}140{/color}",
-            "{color}360{/color}"
-          ]
         }
       ],
       "stats": [
@@ -21068,38 +19141,6 @@
           "type": "ingredient"
         }
       ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}10{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}12.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}15{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}17.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}20{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -21416,38 +19457,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}8{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}10{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}14{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}16{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -21764,38 +19773,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}15{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}21{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}24{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -22128,38 +20105,6 @@
           "type": "ingredient"
         }
       ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}8{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}10{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}14{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}16{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -22476,43 +20421,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}",
-            "{color}4{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}25{/color}",
-            "{color}5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}30{/color}",
-            "{color}6{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}35{/color}",
-            "{color}7{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}40{/color}",
-            "{color}8{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -22829,38 +20737,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}1{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}1.25{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}1.5{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}1.75{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}2{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -23127,7 +21003,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [],
       "stats": [
         {
           "level": 1,
@@ -23422,43 +21297,6 @@
           "key": "white-iron-chunk",
           "quantity": 50,
           "type": "ingredient"
-        }
-      ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}4{/color}",
-            "{color}4{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}4.5{/color}",
-            "{color}4.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}5{/color}",
-            "{color}5{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}5.5{/color}",
-            "{color}5.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}6{/color}",
-            "{color}6{/color}"
-          ]
         }
       ],
       "stats": [
@@ -23777,38 +21615,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}8{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}10{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}14{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}16{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -24125,43 +21931,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}40{/color}",
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}50{/color}",
-            "{color}26{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}60{/color}",
-            "{color}22{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}70{/color}",
-            "{color}19{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}80{/color}",
-            "{color}16{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -24478,43 +22247,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}",
-            "{color}160{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}15{/color}",
-            "{color}200{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}",
-            "{color}240{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}21{/color}",
-            "{color}280{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}24{/color}",
-            "{color}320{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -24831,43 +22563,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}",
-            "{color}20{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}25{/color}",
-            "{color}25{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}30{/color}",
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}35{/color}",
-            "{color}35{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}40{/color}",
-            "{color}40{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -25184,48 +22879,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}60{/color}",
-            "{color}48{/color}",
-            "{color}240{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}75{/color}",
-            "{color}60{/color}",
-            "{color}300{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}90{/color}",
-            "{color}72{/color}",
-            "{color}360{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}105{/color}",
-            "{color}84{/color}",
-            "{color}420{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}120{/color}",
-            "{color}96{/color}",
-            "{color}480{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -25542,38 +23195,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}24{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}36{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}42{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}48{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -25890,38 +23511,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}14{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}16{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}18{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}20{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -26238,43 +23827,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}14{/color}",
-            "{color}20{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}16{/color}",
-            "{color}25{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}",
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}20{/color}",
-            "{color}35{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}22{/color}",
-            "{color}40{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -26593,43 +24145,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}0.12{/color}",
-            "{color}40{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}0.15{/color}",
-            "{color}50{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}0.18{/color}",
-            "{color}60{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}0.21{/color}",
-            "{color}70{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}0.24{/color}",
-            "{color}80{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -26946,38 +24461,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}15{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}21{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}24{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -27294,38 +24777,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}15{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}21{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}24{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -27642,38 +25093,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}60{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}75{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}90{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}105{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}120{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -27990,43 +25409,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}60{/color}",
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}70{/color}",
-            "{color}10.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}80{/color}",
-            "{color}9{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}90{/color}",
-            "{color}7.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}100{/color}",
-            "{color}6{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -28343,43 +25725,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}70{/color}",
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}75{/color}",
-            "{color}35{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}80{/color}",
-            "{color}40{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}85{/color}",
-            "{color}45{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}90{/color}",
-            "{color}50{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -28712,43 +26057,6 @@
           "type": "ingredient"
         }
       ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}6{/color}",
-            "{color}3{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}7.5{/color}",
-            "{color}3.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}9{/color}",
-            "{color}4{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}10.5{/color}",
-            "{color}4.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}12{/color}",
-            "{color}5{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -29065,43 +26373,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}7{/color}",
-            "{color}3{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}8{/color}",
-            "{color}4{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}9{/color}",
-            "{color}5{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}10{/color}",
-            "{color}6{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}11{/color}",
-            "{color}7{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -29418,43 +26689,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}",
-            "{color}100{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}15{/color}",
-            "{color}125{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}",
-            "{color}150{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}21{/color}",
-            "{color}175{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}24{/color}",
-            "{color}200{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -29721,7 +26955,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [],
       "stats": [
         {
           "level": 1,
@@ -30016,38 +27249,6 @@
           "key": "white-iron-chunk",
           "quantity": 50,
           "type": "ingredient"
-        }
-      ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}240{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}300{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}360{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}420{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}480{/color}"
-          ]
         }
       ],
       "stats": [
@@ -30366,38 +27567,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}24{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}28{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}32{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}36{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -30714,38 +27883,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}8{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}10{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}14{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}16{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -31062,43 +28199,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}40{/color}",
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}50{/color}",
-            "{color}26{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}60{/color}",
-            "{color}22{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}70{/color}",
-            "{color}19{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}80{/color}",
-            "{color}16{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -31415,43 +28515,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}6{/color}",
-            "{color}3{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}7{/color}",
-            "{color}2.7{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}8{/color}",
-            "{color}2.4{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}9{/color}",
-            "{color}2.2{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}10{/color}",
-            "{color}2{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -31768,38 +28831,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}6{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}7{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}8{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}9{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}10{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -32116,43 +29147,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}8{/color}",
-            "{color}80{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}10{/color}",
-            "{color}100{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}12{/color}",
-            "{color}120{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}14{/color}",
-            "{color}140{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}16{/color}",
-            "{color}160{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -32485,48 +29479,6 @@
           "type": "ingredient"
         }
       ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}60{/color}",
-            "{color}80{/color}",
-            "{color}200{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}70{/color}",
-            "{color}95{/color}",
-            "{color}240{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}80{/color}",
-            "{color}110{/color}",
-            "{color}280{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}90{/color}",
-            "{color}125{/color}",
-            "{color}320{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}100{/color}",
-            "{color}140{/color}",
-            "{color}360{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -32843,48 +29795,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}16{/color}",
-            "{color}12{/color}",
-            "{color}20{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}20{/color}",
-            "{color}15{/color}",
-            "{color}25{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}24{/color}",
-            "{color}18{/color}",
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}28{/color}",
-            "{color}21{/color}",
-            "{color}35{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}32{/color}",
-            "{color}24{/color}",
-            "{color}40{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -33201,48 +30111,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}",
-            "{color}45{/color}",
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}23{/color}",
-            "{color}45{/color}",
-            "{color}15{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}26{/color}",
-            "{color}45{/color}",
-            "{color}18{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}29{/color}",
-            "{color}45{/color}",
-            "{color}21{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}32{/color}",
-            "{color}45{/color}",
-            "{color}24{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -33559,43 +30427,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}",
-            "{color}4{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}25{/color}",
-            "{color}5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}30{/color}",
-            "{color}6{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}35{/color}",
-            "{color}7{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}40{/color}",
-            "{color}8{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -33862,7 +30693,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [],
       "stats": [
         {
           "level": 1,
@@ -34143,38 +30973,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}8{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}10{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}14{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}16{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -34507,38 +31305,6 @@
           "type": "ingredient"
         }
       ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}6{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}7.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}9{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}10.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}12{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -34855,43 +31621,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}",
-            "{color}40{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}25{/color}",
-            "{color}50{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}30{/color}",
-            "{color}60{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}35{/color}",
-            "{color}70{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}40{/color}",
-            "{color}80{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -35160,7 +31889,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [],
       "stats": [
         {
           "level": 1,
@@ -35441,38 +32169,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}40{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}50{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}60{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}70{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}80{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -35789,38 +32485,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}15{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}18{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}21{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}24{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -36153,38 +32817,6 @@
           "type": "ingredient"
         }
       ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}25{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}35{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}40{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -36501,48 +33133,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}16{/color}",
-            "{color}16{/color}",
-            "{color}24{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}20{/color}",
-            "{color}20{/color}",
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}24{/color}",
-            "{color}24{/color}",
-            "{color}36{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}28{/color}",
-            "{color}28{/color}",
-            "{color}42{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}32{/color}",
-            "{color}32{/color}",
-            "{color}48{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -36859,38 +33449,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}24{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}28{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}32{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}36{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -37223,48 +33781,6 @@
           "type": "ingredient"
         }
       ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}60{/color}",
-            "{color}80{/color}",
-            "{color}200{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}70{/color}",
-            "{color}95{/color}",
-            "{color}240{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}80{/color}",
-            "{color}110{/color}",
-            "{color}280{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}90{/color}",
-            "{color}125{/color}",
-            "{color}320{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}100{/color}",
-            "{color}140{/color}",
-            "{color}360{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -37581,48 +34097,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}28{/color}",
-            "{color}80{/color}",
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}35{/color}",
-            "{color}90{/color}",
-            "{color}35{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}42{/color}",
-            "{color}100{/color}",
-            "{color}40{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}49{/color}",
-            "{color}110{/color}",
-            "{color}45{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}56{/color}",
-            "{color}120{/color}",
-            "{color}50{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -37939,43 +34413,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}60{/color}",
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}70{/color}",
-            "{color}10.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}80{/color}",
-            "{color}9{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}90{/color}",
-            "{color}7.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}100{/color}",
-            "{color}6{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -38292,38 +34729,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}160{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}200{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}240{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}280{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}320{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -38590,7 +34995,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [],
       "stats": [
         {
           "level": 1,
@@ -38885,43 +35289,6 @@
           "key": "white-iron-chunk",
           "quantity": 50,
           "type": "ingredient"
-        }
-      ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}6{/color}",
-            "{color}3{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}7.5{/color}",
-            "{color}3.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}9{/color}",
-            "{color}4{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}10.5{/color}",
-            "{color}4.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}12{/color}",
-            "{color}5{/color}"
-          ]
         }
       ],
       "stats": [
@@ -39240,43 +35607,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}7{/color}",
-            "{color}3{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}8{/color}",
-            "{color}4{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}9{/color}",
-            "{color}5{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}10{/color}",
-            "{color}6{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}11{/color}",
-            "{color}7{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -39593,43 +35923,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}3.2{/color}",
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}3.9{/color}",
-            "{color}15{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}4.6{/color}",
-            "{color}18{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}5.3{/color}",
-            "{color}21{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}6{/color}",
-            "{color}24{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -39962,38 +36255,6 @@
           "type": "ingredient"
         }
       ],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}8{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}10{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}14{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}16{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -40310,38 +36571,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}8{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}10{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}12{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}14{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}16{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -40658,53 +36887,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}8{/color}",
-            "{color}12{/color}",
-            "{color}50{/color}",
-            "{color}40{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}10{/color}",
-            "{color}12{/color}",
-            "{color}50{/color}",
-            "{color}55{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}12{/color}",
-            "{color}12{/color}",
-            "{color}50{/color}",
-            "{color}70{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}14{/color}",
-            "{color}12{/color}",
-            "{color}50{/color}",
-            "{color}85{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}16{/color}",
-            "{color}12{/color}",
-            "{color}50{/color}",
-            "{color}100{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -41021,48 +37203,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}",
-            "{color}0.8{/color}",
-            "{color}1{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}25{/color}",
-            "{color}1{/color}",
-            "{color}1.2{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}30{/color}",
-            "{color}1.2{/color}",
-            "{color}1.4{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}35{/color}",
-            "{color}1.4{/color}",
-            "{color}1.6{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}40{/color}",
-            "{color}1.6{/color}",
-            "{color}1.8{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -41379,43 +37519,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}16{/color}",
-            "{color}6{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}20{/color}",
-            "{color}7.5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}24{/color}",
-            "{color}9{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}28{/color}",
-            "{color}10.5{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}32{/color}",
-            "{color}12{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -41732,43 +37835,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}20{/color}",
-            "{color}4{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}25{/color}",
-            "{color}5{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}30{/color}",
-            "{color}6{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}35{/color}",
-            "{color}7{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}40{/color}",
-            "{color}8{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,
@@ -42085,38 +38151,6 @@
         }
       ],
       "craftingMaterials": [],
-      "refinements": [
-        {
-          "level": 1,
-          "values": [
-            "{color}24{/color}"
-          ]
-        },
-        {
-          "level": 2,
-          "values": [
-            "{color}30{/color}"
-          ]
-        },
-        {
-          "level": 3,
-          "values": [
-            "{color}36{/color}"
-          ]
-        },
-        {
-          "level": 4,
-          "values": [
-            "{color}42{/color}"
-          ]
-        },
-        {
-          "level": 5,
-          "values": [
-            "{color}48{/color}"
-          ]
-        }
-      ],
       "stats": [
         {
           "level": 1,

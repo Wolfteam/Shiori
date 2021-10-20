@@ -25,7 +25,6 @@ class WeaponFileModel with _$WeaponFileModel {
     required ItemLocationType location,
     required bool isComingSoon,
     required List<WeaponFileAscensionMaterial> ascensionMaterials,
-    required List<WeaponFileRefinement> refinements,
     required List<WeaponFileStatModel> stats,
     @Default(<ItemAscensionMaterialFileModel>[]) List<ItemAscensionMaterialFileModel> craftingMaterials,
   }) = _WeaponFileModel;
@@ -45,18 +44,6 @@ class WeaponFileAscensionMaterial with _$WeaponFileAscensionMaterial {
   const WeaponFileAscensionMaterial._();
 
   factory WeaponFileAscensionMaterial.fromJson(Map<String, dynamic> json) => _$WeaponFileAscensionMaterialFromJson(json);
-}
-
-@freezed
-class WeaponFileRefinement with _$WeaponFileRefinement {
-  factory WeaponFileRefinement({
-    required int level,
-    required List<String> values,
-  }) = _WeaponFileRefinement;
-
-  const WeaponFileRefinement._();
-
-  factory WeaponFileRefinement.fromJson(Map<String, dynamic> json) => _$WeaponFileRefinementFromJson(json);
 }
 
 @freezed
