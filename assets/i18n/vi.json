@@ -10110,6 +10110,14 @@
       "name": "Bạo Đồ Hilichurl Khiên Đá"
     },
     {
+      "key": "rockfond-rifthound",
+      "name": "Thể Nham - Chó Săn Ma Vật"
+    },
+    {
+      "key": "rockfond-rifthound-whelp",
+      "name": "Thể Nham - Ma Thú Con"
+    },
+    {
       "key": "ruin-cruiser",
       "name": "Tuần Tra Di Tích"
     },
@@ -10164,6 +10172,14 @@
     {
       "key": "thunder-manifestation",
       "name": "Thực Thể Sấm Sét"
+    },
+    {
+      "key": "thundercraven-rifthound",
+      "name": "Thể Lôi - Chó Săn Ma Vật"
+    },
+    {
+      "key": "thundercraven-rifthound-whelp",
+      "name": "Thể Lôi - Ma Thú Con"
     },
     {
       "key": "thunderhelm-lawachurl",

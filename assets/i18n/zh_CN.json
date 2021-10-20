@@ -10114,6 +10114,14 @@
       "name": "岩盾丘丘暴徒"
     },
     {
+      "key": "rockfond-rifthound",
+      "name": "嗜岩·兽境猎犬"
+    },
+    {
+      "key": "rockfond-rifthound-whelp",
+      "name": "嗜岩·兽境幼兽"
+    },
+    {
       "key": "ruin-cruiser",
       "name": "遗迹巡弋者"
     },
@@ -10168,6 +10176,14 @@
     {
       "key": "thunder-manifestation",
       "name": "雷音权现"
+    },
+    {
+      "key": "thundercraven-rifthound",
+      "name": "嗜雷·兽境猎犬"
+    },
+    {
+      "key": "thundercraven-rifthound-whelp",
+      "name": "嗜雷·兽境幼兽"
     },
     {
       "key": "thunderhelm-lawachurl",

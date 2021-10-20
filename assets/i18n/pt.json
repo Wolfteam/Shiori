@@ -10015,6 +10015,14 @@
       "name": "Mitachurl de Escudo de Pedra"
     },
     {
+      "key": "rockfond-rifthound",
+      "name": "Cão da Fenda - Geofito"
+    },
+    {
+      "key": "rockfond-rifthound-whelp",
+      "name": "Filhote da Fenda - Geofito"
+    },
+    {
       "key": "ruin-cruiser",
       "name": "Patrulhador das Ruínas"
     },
@@ -10069,6 +10077,14 @@
     {
       "key": "thunder-manifestation",
       "name": "Manifestação Trovejante"
+    },
+    {
+      "key": "thundercraven-rifthound",
+      "name": "Cão da Fenda - Electrofito"
+    },
+    {
+      "key": "thundercraven-rifthound-whelp",
+      "name": "Filhote da Fenda - Electrofito"
     },
     {
       "key": "thunderhelm-lawachurl",

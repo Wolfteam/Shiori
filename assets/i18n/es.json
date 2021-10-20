@@ -10110,6 +10110,14 @@
       "name": "Mitachurl con Escudo de Piedra"
     },
     {
+      "key": "rockfond-rifthound",
+      "name": "Sabueso Acechador Lítico"
+    },
+    {
+      "key": "rockfond-rifthound-whelp",
+      "name": "Cachorro Acechador Lítico"
+    },
+    {
       "key": "ruin-cruiser",
       "name": "Patrullero de las Ruinas"
     },
@@ -10164,6 +10172,14 @@
     {
       "key": "thunder-manifestation",
       "name": "Manifestación del trueno"
+    },
+    {
+      "key": "thundercraven-rifthound",
+      "name": "Sabueso Acechador Eléctrico"
+    },
+    {
+      "key": "thundercraven-rifthound-whelp",
+      "name": "Cachorro Acechador Eléctrico"
     },
     {
       "key": "thunderhelm-lawachurl",
