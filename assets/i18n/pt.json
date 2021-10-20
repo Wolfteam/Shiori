@@ -6353,739 +6353,1408 @@
       "key": "akuoumaru",
       "name": "Akuoumaru",
       "description": "A querida espada do lendário \"Akuou\". A lâmina é gigantesca e majestosa, mas é surpreendentemente fácil de brandi-la.",
-      "refinement": "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {0}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {1}%."
+      "refinements": [
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.12{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}40{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.15{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}50{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.18{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}60{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.21{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}70{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.24{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}80{/color}%."
+      ]
     },
     {
       "key": "alley-hunter",
       "name": "Caçador do Beco",
       "description": "Um arco longo e opulento intrincado. Pertenceu a um ladrão de cavalheiros que nunca foi pego.",
-      "refinement": "Quando o personagem com essa arma equipada estiver na equipe mas não no campo da batalha, o Dano causado por personagem será aumentado em {0}% a cada 1s, a quantidade máxima do aumento do Dano desta maneira é de {1}%. Depois de 4s de ficar no campo, o efeito de aumento do Dano será reduzido em {2}% a cada 1s até que seja reduzido para 0%."
+      "refinements": [
+        "Quando o personagem com essa arma equipada estiver na equipe mas não no campo da batalha, o Dano causado por personagem será aumentado em {color}2{/color}% a cada 1s, a quantidade máxima do aumento do Dano desta maneira é de {color}20{/color}%. Depois de 4s de ficar no campo, o efeito de aumento do Dano será reduzido em {color}4{/color}% a cada 1s até que seja reduzido para 0%.",
+        "Quando o personagem com essa arma equipada estiver na equipe mas não no campo da batalha, o Dano causado por personagem será aumentado em {color}2.5{/color}% a cada 1s, a quantidade máxima do aumento do Dano desta maneira é de {color}25{/color}%. Depois de 4s de ficar no campo, o efeito de aumento do Dano será reduzido em {color}5{/color}% a cada 1s até que seja reduzido para 0%.",
+        "Quando o personagem com essa arma equipada estiver na equipe mas não no campo da batalha, o Dano causado por personagem será aumentado em {color}3{/color}% a cada 1s, a quantidade máxima do aumento do Dano desta maneira é de {color}30{/color}%. Depois de 4s de ficar no campo, o efeito de aumento do Dano será reduzido em {color}6{/color}% a cada 1s até que seja reduzido para 0%.",
+        "Quando o personagem com essa arma equipada estiver na equipe mas não no campo da batalha, o Dano causado por personagem será aumentado em {color}3.5{/color}% a cada 1s, a quantidade máxima do aumento do Dano desta maneira é de {color}35{/color}%. Depois de 4s de ficar no campo, o efeito de aumento do Dano será reduzido em {color}7{/color}% a cada 1s até que seja reduzido para 0%.",
+        "Quando o personagem com essa arma equipada estiver na equipe mas não no campo da batalha, o Dano causado por personagem será aumentado em {color}4{/color}% a cada 1s, a quantidade máxima do aumento do Dano desta maneira é de {color}40{/color}%. Depois de 4s de ficar no campo, o efeito de aumento do Dano será reduzido em {color}8{/color}% a cada 1s até que seja reduzido para 0%."
+      ]
     },
     {
       "key": "amenoma-kageuchi",
       "name": "Lâmina Amenoma Kageuta",
       "description": "Uma lâmina que dizem ter sido feita sob encomenda por um famoso samurai que poderia até mesmo cortar do ar um guerreiro tengu, famoso por sua habilidade em usar sua incrível velocidade.",
-      "refinement": "Depois de lançar a Habilidade Elemental, ganha 1 Semente de Sucessão. Este efeito pode ser ativado uma vez a cada 5s. A Semente de Sucessão dura 30s e no máximo podem coexistir 3 sementes. Depois de lançar o Supremo, todas as Sementes de Sucessão serão eliminadas e, após 2s, o personagem restaura {0} de Energia Elemental por cada Semente de Sucessão consumida."
+      "refinements": [
+        "Depois de lançar a Habilidade Elemental, ganha 1 Semente de Sucessão. Este efeito pode ser ativado uma vez a cada 5s. A Semente de Sucessão dura 30s e no máximo podem coexistir 3 sementes. Depois de lançar o Supremo, todas as Sementes de Sucessão serão eliminadas e, após 2s, o personagem restaura {color}6{/color} de Energia Elemental por cada Semente de Sucessão consumida.",
+        "Depois de lançar a Habilidade Elemental, ganha 1 Semente de Sucessão. Este efeito pode ser ativado uma vez a cada 5s. A Semente de Sucessão dura 30s e no máximo podem coexistir 3 sementes. Depois de lançar o Supremo, todas as Sementes de Sucessão serão eliminadas e, após 2s, o personagem restaura {color}7.5{/color} de Energia Elemental por cada Semente de Sucessão consumida.",
+        "Depois de lançar a Habilidade Elemental, ganha 1 Semente de Sucessão. Este efeito pode ser ativado uma vez a cada 5s. A Semente de Sucessão dura 30s e no máximo podem coexistir 3 sementes. Depois de lançar o Supremo, todas as Sementes de Sucessão serão eliminadas e, após 2s, o personagem restaura {color}9{/color} de Energia Elemental por cada Semente de Sucessão consumida.",
+        "Depois de lançar a Habilidade Elemental, ganha 1 Semente de Sucessão. Este efeito pode ser ativado uma vez a cada 5s. A Semente de Sucessão dura 30s e no máximo podem coexistir 3 sementes. Depois de lançar o Supremo, todas as Sementes de Sucessão serão eliminadas e, após 2s, o personagem restaura {color}10.5{/color} de Energia Elemental por cada Semente de Sucessão consumida.",
+        "Depois de lançar a Habilidade Elemental, ganha 1 Semente de Sucessão. Este efeito pode ser ativado uma vez a cada 5s. A Semente de Sucessão dura 30s e no máximo podem coexistir 3 sementes. Depois de lançar o Supremo, todas as Sementes de Sucessão serão eliminadas e, após 2s, o personagem restaura {color}12{/color} de Energia Elemental por cada Semente de Sucessão consumida."
+      ]
     },
     {
       "key": "amos-bow",
       "name": "Arco de Amos",
       "description": "Um arco extremamente antigo que reteve seu poder, apesar de seu mestre original ter desaparecido há muito tempo. Ele extrai poder de todos e de tudo no mundo, e quanto mais longe você estiver daquilo que seu coração deseja, mais poderoso será.",
-      "refinement": "Aumenta o Dano infligido pelo Ataque Normal e Ataque Carregado em {0}%. O Dano da Flecha com Ataque Normal e Ataque Carregado aumenta {1}% a cada 0.1s até 5 vezes."
+      "refinements": [
+        "Aumenta o Dano infligido pelo Ataque Normal e Ataque Carregado em {color}12{/color}%. O Dano da Flecha com Ataque Normal e Ataque Carregado aumenta {color}8{/color}% a cada 0.1s até 5 vezes.",
+        "Aumenta o Dano infligido pelo Ataque Normal e Ataque Carregado em {color}15{/color}%. O Dano da Flecha com Ataque Normal e Ataque Carregado aumenta {color}10{/color}% a cada 0.1s até 5 vezes.",
+        "Aumenta o Dano infligido pelo Ataque Normal e Ataque Carregado em {color}18{/color}%. O Dano da Flecha com Ataque Normal e Ataque Carregado aumenta {color}12{/color}% a cada 0.1s até 5 vezes.",
+        "Aumenta o Dano infligido pelo Ataque Normal e Ataque Carregado em {color}21{/color}%. O Dano da Flecha com Ataque Normal e Ataque Carregado aumenta {color}14{/color}% a cada 0.1s até 5 vezes.",
+        "Aumenta o Dano infligido pelo Ataque Normal e Ataque Carregado em {color}24{/color}%. O Dano da Flecha com Ataque Normal e Ataque Carregado aumenta {color}16{/color}% a cada 0.1s até 5 vezes."
+      ]
     },
     {
       "key": "apprentices-notes",
       "name": "Anotações do Aprendiz",
       "description": "Notas deixadas por um estudante brilhante que deixou uma lista de magias muito úteis. Sua caligrafia é muito bonita.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "aquila-favonia",
       "name": "Falcão",
       "description": "A alma dos Cavaleiros de Favonius. Milênios depois, ainda chama pelos ventos para expulsar todo o mal - assim como a última heroína que a manejava.",
-      "refinement": "O ATQ aumenta em {0}%; Ativa ao receber Dano: A alma do Falcão do Leste desperta, segurando a bandeira da resistência no alto, regenerando Vida equivalente a {1}% do ATQ e causando {2}% do ATQ como Dano aos inimigos ao redor. Esta habilidade pode ser ativada uma vez a cada 15s."
+      "refinements": [
+        "O ATQ aumenta em {color}20{/color}%; Ativa ao receber Dano: A alma do Falcão do Leste desperta, segurando a bandeira da resistência no alto, regenerando Vida equivalente a {color}100{/color}% do ATQ e causando {color}200{/color}% do ATQ como Dano aos inimigos ao redor. Esta habilidade pode ser ativada uma vez a cada 15s.",
+        "O ATQ aumenta em {color}25{/color}%; Ativa ao receber Dano: A alma do Falcão do Leste desperta, segurando a bandeira da resistência no alto, regenerando Vida equivalente a {color}115{/color}% do ATQ e causando {color}230{/color}% do ATQ como Dano aos inimigos ao redor. Esta habilidade pode ser ativada uma vez a cada 15s.",
+        "O ATQ aumenta em {color}30{/color}%; Ativa ao receber Dano: A alma do Falcão do Leste desperta, segurando a bandeira da resistência no alto, regenerando Vida equivalente a {color}130{/color}% do ATQ e causando {color}260{/color}% do ATQ como Dano aos inimigos ao redor. Esta habilidade pode ser ativada uma vez a cada 15s.",
+        "O ATQ aumenta em {color}35{/color}%; Ativa ao receber Dano: A alma do Falcão do Leste desperta, segurando a bandeira da resistência no alto, regenerando Vida equivalente a {color}145{/color}% do ATQ e causando {color}290{/color}% do ATQ como Dano aos inimigos ao redor. Esta habilidade pode ser ativada uma vez a cada 15s.",
+        "O ATQ aumenta em {color}40{/color}%; Ativa ao receber Dano: A alma do Falcão do Leste desperta, segurando a bandeira da resistência no alto, regenerando Vida equivalente a {color}160{/color}% do ATQ e causando {color}320{/color}% do ATQ como Dano aos inimigos ao redor. Esta habilidade pode ser ativada uma vez a cada 15s."
+      ]
     },
     {
       "key": "beginners-protector",
       "name": "Protetor de Iniciante",
       "description": "Uma arma tão reta quanto uma haste de bandeira. Adequado para a maioria das situações, parece imponente quando é balançada.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "black-tassel",
       "name": "Borla Preta",
       "description": "Bem, isso resolve o problema das borlas brancas que se mancham facilmente.",
-      "refinement": "Aumenta o Dano contra os Slimes em {0}%."
+      "refinements": [
+        "Aumenta o Dano contra os Slimes em {color}40{/color}%.",
+        "O Dano causado em Slimes aumentam {color}50{/color}%.",
+        "Aumenta o Dano contra os Slimes em {color}60{/color}%.",
+        "Aumenta o Dano contra os Slimes em {color}70{/color}%.",
+        "Aumenta o Dano contra os Slimes em {color}80{/color}%."
+      ]
     },
     {
       "key": "blackcliff-agate",
       "name": "Ágata do Penhasco Obscuro",
       "description": "Um misterioso catalisador feito de pedra preta. Tem um brilho carrancudo ameaçador que parece pulsar em sincronia com os tremores das profundezas da terra.",
-      "refinement": "Após derrotar um inimigo, o ATQ é aumentado em {0}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
+      "refinements": [
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}12{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}15{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}18{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}21{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}24{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
+      ]
     },
     {
       "key": "blackcliff-longsword",
       "name": "Espada do Penhasco Obscuro",
       "description": "Uma espada feita de pedra negra. Tem um brilho vermelho escuro em sua lâmina preta.",
-      "refinement": "Após derrotar um inimigo, o ATQ é aumentado em {0}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
+      "refinements": [
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}12{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}15{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}18{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}21{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}24{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
+      ]
     },
     {
       "key": "blackcliff-pole",
       "name": "Lança Obscura",
       "description": "Uma arma afiada e carmesim que já foi o tesouro inestimável de um gladiador. Seu furador foi manchado pelo sangue de incontáveis bestas e homens. Uma arma feita de pedra preta e aerossiderita. Há um brilho vermelho-escuro em seu brilho frio e preto.",
-      "refinement": "Após derrotar um inimigo, o ATQ é aumentado em {0}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
+      "refinements": [
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}12{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}15{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}18{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}21{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}24{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
+      ]
     },
     {
       "key": "blackcliff-slasher",
       "name": "Foice do Penhasco Obscuro",
       "description": "Uma espada extremamente resistente da Forja do Penhasco Obscuro. Tem uma cor carmesim escura ao longo de sua lâmina.",
-      "refinement": "Após derrotar um inimigo, o ATQ é aumentado em {0}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
+      "refinements": [
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}12{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}15{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}18{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}21{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}24{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
+      ]
     },
     {
       "key": "blackcliff-warbow",
       "name": "Arco do Penhasco Obscuro",
       "description": "Um arco feito de Pedra Negra extremamente robusto. Requer um arqueiro com um braço forte para usar.",
-      "refinement": "Após derrotar um inimigo, o ATQ é aumentado em {0}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
+      "refinements": [
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}12{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}15{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}18{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}21{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros.",
+        "Após derrotar um inimigo, o ATQ é aumentado em {color}24{/color}% por 30s. Este efeito pode ser acumulado até 3x e a duração de cada acúmulo é independente dos outros."
+      ]
     },
     {
       "key": "bloodtainted-greatsword",
       "name": "Espadão Sangrento",
       "description": "Uma espada de aço que quem dizem ter sido revestida com sangue de dragão, tornando-a invulnerável ao dano. Contudo, este bônus não é estendido ao seu portador.",
-      "refinement": "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {0}%."
+      "refinements": [
+        "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {color}12{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {color}15{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {color}18{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {color}21{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {color}24{/color}%."
+      ]
     },
     {
       "key": "compound-bow",
       "name": "Arco Composto",
       "description": "Um arco de liga de metal, com rodas que esticam a corda. De difícil manuseio, mas consegue acertar o alvo com uma força incrível.",
-      "refinement": "Ao acertar o Ataque Normal e o Ataque Carregado, aumenta o ATQ em {0}% e a VEL do Ataque Normal em {1}% por 6s, podendo acumular até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s."
+      "refinements": [
+        "Ao acertar o Ataque Normal e o Ataque Carregado, aumenta o ATQ em {color}4{/color}% e a VEL do Ataque Normal em {color}1.2{/color}% por 6s, podendo acumular até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s.",
+        "Ao acertar o Ataque Normal e o Ataque Carregado, aumenta o ATQ em {color}5{/color}% e a VEL do Ataque Normal em {color}1.5{/color}% por 6s, podendo acumular até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s.",
+        "Ao acertar o Ataque Normal e o Ataque Carregado, aumenta o ATQ em {color}6{/color}% e a VEL do Ataque Normal em {color}1.8{/color}% por 6s, podendo acumular até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s.",
+        "Ao acertar o Ataque Normal e o Ataque Carregado, aumenta o ATQ em {color}7{/color}% e a VEL do Ataque Normal em {color}2.1{/color}% por 6s, podendo acumular até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s.",
+        "Ao acertar o Ataque Normal e o Ataque Carregado, aumenta o ATQ em {color}8{/color}% e a VEL do Ataque Normal em {color}2.4{/color}% por 6s, podendo acumular até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s."
+      ]
     },
     {
       "key": "cool-steel",
       "name": "Lâmina Fria",
       "description": "Uma arma laminada confiável, forjada em aço, que serve como testemunho das grandes aventuras de seu antigo mestre.",
-      "refinement": "Aumenta o Dano contra inimigos afetados por Hydro ou Cryo em {0}%."
+      "refinements": [
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Cryo em {color}12{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Cryo em {color}15{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Cryo em {color}18{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Cryo em {color}21{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Cryo em {color}24{/color}%."
+      ]
     },
     {
       "key": "crescent-pike",
       "name": "Pique Crescente",
       "description": "Uma arma exótica com uma lâmina extremamente comprida no topo e uma lâmina crescente na parte de baixo. Foi parar em Liyue através de comerciantes estrangeiros. Com prática, pode causar grandes danos.",
-      "refinement": "Após obter um Orbe Elemental/Partícula Elemental, os Ataques Normais e Ataques Carregados causam um adicional de {0}% de Dano Físico por 5s."
+      "refinements": [
+        "Após obter um Orbe Elemental/Partícula Elemental, os Ataques Normais e Ataques Carregados causam um adicional de {color}20{/color}% de Dano Físico por 5s.",
+        "Após obter um Orbe Elemental/Partícula Elemental, os Ataques Normais e Ataques Carregados causam um adicional de {color}25{/color}% de Dano Físico por 5s.",
+        "Após obter um Orbe Elemental/Partícula Elemental, os Ataques Normais e Ataques Carregados causam um adicional de {color}30{/color}% de Dano Físico por 5s.",
+        "Após obter um Orbe Elemental/Partícula Elemental, os Ataques Normais e Ataques Carregados causam um adicional de {color}35{/color}% de Dano Físico por 5s.",
+        "Após obter um Orbe Elemental/Partícula Elemental, os Ataques Normais e Ataques Carregados causam um adicional de {color}40{/color}% de Dano Físico por 5s."
+      ]
     },
     {
       "key": "dark-iron-sword",
       "name": "Espada de Ferro Negro",
       "description": "Bem, na verdade é apenas uma espada de ferro um pouco escura.",
-      "refinement": "Depois de 12s após a ativação da reação de Sobrecarga, Supercondutor, Redemoinho Electro, aumenta o ATQ em {0}%."
+      "refinements": [
+        "Depois de 12s após a ativação da reação de Sobrecarga, Supercondutor, Redemoinho Electro, aumenta o ATQ em {color}20{/color}%.",
+        "Depois de 12s após a ativação da reação de Sobrecarga, Supercondutor, Redemoinho Electro, aumenta o ATQ em {color}25{/color}%.",
+        "Depois de 12s após a ativação da reação de Sobrecarga, Supercondutor, Redemoinho Electro, aumenta o ATQ em {color}30{/color}%.",
+        "Depois de 12s após a ativação da reação de Sobrecarga, Supercondutor, Redemoinho Electro, aumenta o ATQ em {color}35{/color}%.",
+        "Depois de 12s após a ativação da reação de Sobrecarga, Supercondutor, Redemoinho Electro, aumenta o ATQ em {color}40{/color}%."
+      ]
     },
     {
       "key": "deathmatch",
       "name": "Lança do Duelo",
       "description": "Uma lança afiada vermelho-sangue que era inestimável para um gladiador no passado. Sua ponta está manchada com o sangue de inúmeras bestas e pessoas.",
-      "refinement": "Se houver 2 inimigos ao redor, o ATQ é aumentado em {0}% e a DEF é aumentada em {1}%. Se houver menos que 2 inimigos ao redor, o ATQ é aumentado em {2}%."
+      "refinements": [
+        "Se houver 2 inimigos ao redor, o ATQ é aumentado em {color}16{/color}% e a DEF é aumentada em {color}16{/color}%. Se houver menos que 2 inimigos ao redor, o ATQ é aumentado em {color}24{/color}%.",
+        "Se houver 2 inimigos ao redor, o ATQ é aumentado em {color}20{/color}% e a DEF é aumentada em {color}20{/color}%. Se houver menos que 2 inimigos ao redor, o ATQ é aumentado em {color}30{/color}%.",
+        "Se houver 2 inimigos ao redor, o ATQ é aumentado em {color}24{/color}% e a DEF é aumentada em {color}24{/color}%. Se houver menos que 2 inimigos ao redor, o ATQ é aumentado em {color}36{/color}%.",
+        "Se houver 2 inimigos ao redor, o ATQ é aumentado em {color}28{/color}% e a DEF é aumentada em {color}28{/color}%. Se houver menos que 2 inimigos ao redor, o ATQ é aumentado em {color}42{/color}%.",
+        "Se houver 2 inimigos ao redor, o ATQ é aumentado em {color}32{/color}% e a DEF é aumentada em {color}32{/color}%. Se houver menos que 2 inimigos ao redor, o ATQ é aumentado em {color}48{/color}%."
+      ]
     },
     {
       "key": "debate-club",
       "name": "Porrete da Razão",
       "description": "Um porrete feito de aço. É a base do \"convencimento racional\".",
-      "refinement": "Após usar e acertar uma Habilidade Elemental, Normal ou Ataque Carregado, causa Dano de ATQ adicional de {0}% em uma área pequena por 15s. Pode ser ativado uma vez a cada 3s."
+      "refinements": [
+        "Após usar e acertar uma Habilidade Elemental, Normal ou Ataque Carregado, causa Dano de ATQ adicional de {color}60{/color}% em uma área pequena por 15s. Pode ser ativado uma vez a cada 3s.",
+        "Após usar e acertar uma Habilidade Elemental, Normal ou Ataque Carregado, causa Dano de ATQ adicional de {color}75{/color}% em uma área pequena por 15s. Pode ser ativado uma vez a cada 3s.",
+        "Após usar e acertar uma Habilidade Elemental, Normal ou Ataque Carregado, causa Dano de ATQ adicional de {color}90{/color}% em uma área pequena por 15s. Pode ser ativado uma vez a cada 3s.",
+        "Após usar e acertar uma Habilidade Elemental, Normal ou Ataque Carregado, causa Dano de ATQ adicional de {color}105{/color}% em uma área pequena por 15s. Pode ser ativado uma vez a cada 3s.",
+        "Após usar e acertar uma Habilidade Elemental, Normal ou Ataque Carregado, causa Dano de ATQ adicional de {color}120{/color}% em uma área pequena por 15s. Pode ser ativado uma vez a cada 3s."
+      ]
     },
     {
       "key": "dodoco-tales",
       "name": "Contos de Dodoco",
       "description": "Um livro infantil com uma bela capa. Seu conteúdo é pequenas estórias infantis inofensivas, e quem as ler não poderá evitar rir.\r\nMesmo que seu leitor já seja um adulto, ao ler tais aventuras inocentes, também acabará fascinado por elas.",
-      "refinement": "Dentro de 6s após acertar um inimigo com o Ataque Normal, o Dano causado pelo Ataque Carregado aumenta em {0}%. Dentro de 6s após acertar um inimigo com o Ataque Carregado, o ATQ aumenta {1}%."
+      "refinements": [
+        "Dentro de 6s após acertar um inimigo com o Ataque Normal, o Dano causado pelo Ataque Carregado aumenta em {color}16{/color}%. Dentro de 6s após acertar um inimigo com o Ataque Carregado, o ATQ aumenta {color}8{/color}%.",
+        "Dentro de 6s após acertar um inimigo com o Ataque Normal, o Dano causado pelo Ataque Carregado aumenta em {color}20{/color}%. Dentro de 6s após acertar um inimigo com o Ataque Carregado, o ATQ aumenta {color}10{/color}%.",
+        "Dentro de 6s após acertar um inimigo com o Ataque Normal, o Dano causado pelo Ataque Carregado aumenta em {color}24{/color}%. Dentro de 6s após acertar um inimigo com o Ataque Carregado, o ATQ aumenta {color}12{/color}%.",
+        "Dentro de 6s após acertar um inimigo com o Ataque Normal, o Dano causado pelo Ataque Carregado aumenta em {color}28{/color}%. Dentro de 6s após acertar um inimigo com o Ataque Carregado, o ATQ aumenta {color}14{/color}%.",
+        "Dentro de 6s após acertar um inimigo com o Ataque Normal, o Dano causado pelo Ataque Carregado aumenta em {color}32{/color}%. Dentro de 6s após acertar um inimigo com o Ataque Carregado, o ATQ aumenta {color}16{/color}%."
+      ]
     },
     {
       "key": "dragons-bane",
       "name": "Perdição do Dragão",
       "description": "Uma lança decorada com um dragão dourado entrelaçado. Leve e afiada, esta arma pode muito bem matar dragões com facilidade.",
-      "refinement": "Aumenta o Dano contra inimigos afetados por Hydro ou Pyro em {0}%."
+      "refinements": [
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Pyro em {color}20{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Pyro em {color}24{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Pyro em {color}28{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Pyro em {color}32{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Pyro em {color}36{/color}%."
+      ]
     },
     {
       "key": "dragonspine-spear",
       "name": "Lança da Espinha do Dragão",
       "description": "Uma lança criada a partir da presa de um dragão. É estranhamente quente ao toque.",
-      "refinement": "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {0}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {1}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {2}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s."
+      "refinements": [
+        "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}60{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}80{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}200{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s.",
+        "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}70{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}95{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}240{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s.",
+        "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}80{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}110{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}280{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s.",
+        "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}90{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}125{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}320{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s.",
+        "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}100{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}140{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}360{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s."
+      ]
     },
     {
       "key": "dull-blade",
       "name": "Lâmina Sem Fio",
       "description": "Sonhos de juventude e muita aventura. Se isso não for suficiente, então use a coragem para compensar.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "elegy-for-the-end",
       "name": "Elegia do Suspiro Final",
       "description": "Um arco tão adorável quanto a lira de qualquer bardo, suas flechas perfuram o coração como um suspiro lamentável.",
-      "refinement": "Uma parte do \"Concerto Milenar\" que flutua no vento. Aumenta a Proficiência Elemental em {0}% pontos. Quando a Habilidade Elemental ou o Supremo atingir os inimigos, o personagem obterá um Símbolo das Lembranças, que pode ser ativado uma vez a cada 0.2s, mesmo quando o personagem não está no campo de batalha. Possuir 4 Símbolo das Lembranças faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música da Despedida\" por 12s: A Proficiência Elemental será aumentada em {1} pontos, entretanto o ATQ será aumentado em {2}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos das Lembranças de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+      "refinements": [
+        "Uma parte do \"Concerto Milenar\" que flutua no vento. Aumenta a Proficiência Elemental em {color}60{/color}% pontos. Quando a Habilidade Elemental ou o Supremo atingir os inimigos, o personagem obterá um Símbolo das Lembranças, que pode ser ativado uma vez a cada 0.2s, mesmo quando o personagem não está no campo de batalha. Possuir 4 Símbolo das Lembranças faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música da Despedida\" por 12s: A Proficiência Elemental será aumentada em {color}100{/color} pontos, entretanto o ATQ será aumentado em {color}20{/color}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos das Lembranças de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados.",
+        "Uma parte do Concerto Milenar que flutua no vento. Aumenta a Proficiência Elemental em {color}75{/color}% pontos. Quando a Habilidade Elemental ou o Supremo atingir os inimigos, o personagem obterá um Símbolo das Lembranças, que pode ser ativado uma vez a cada 0.2s, mesmo quando o personagem não está no campo de batalha. Possuir 4 Símbolos das Lembranças faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música da Despedida\" por 12s: A Proficiência Elemental será aumentada em {color}125{/color} pontos, entretanto o ATQ será aumentado em {color}25{/color}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos das Lembranças de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados.",
+        "Uma parte do Concerto Milenar que flutua no vento. Aumenta a Proficiência Elemental em {color}90{/color}% pontos. Quando a Habilidade Elemental ou o Supremo atingir os inimigos, o personagem obterá um Símbolo das Lembranças, que pode ser ativado uma vez a cada 0.2s, mesmo quando o personagem não está no campo de batalha. Possuir 4 Símbolos das Lembranças faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música da Despedida\" por 12s: A Proficiência Elemental será aumentada em {color}150{/color} pontos, entretanto o ATQ será aumentado em {color}30{/color}%. Dentro de 20s depois da ativação, não é possível obter o Símbolos das Lembranças de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados.",
+        "Uma parte do Concerto Milenar que flutua no vento. Aumenta a Proficiência Elemental em {color}105{/color}% pontos. Quando a Habilidade Elemental ou o Supremo atingir os inimigos, o personagem obterá um Símbolo das Lembranças, que pode ser ativado uma vez a cada 0.2s, mesmo quando o personagem não está no campo de batalha. Possuir 4 Símbolos das Lembranças faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Canção da Despedida\" por 12s: A Proficiência Elemental será aumentada em {color}175{/color} pontos, entretanto o ATQ será aumentado em {color}35{/color}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos das Lembranças de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados.",
+        "Uma parte do Concerto Milenar que flutua no vento. Aumenta a Proficiência Elemental em {color}120{/color}% pontos. Quando a Habilidade Elemental ou o Supremo atingir os inimigos, o personagem obterá um Símbolo das Lembranças, que pode ser ativado uma vez a cada 0.2s, mesmo quando o personagem não está no campo de batalha. Possuir 4 Símbolos das Lembranças faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música da Despedida\" por 12s: A Proficiência Elemental será aumentada em {color}200{/color} pontos, entretanto o ATQ será aumentado em {color}40{/color}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos das Lembranças de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+      ]
     },
     {
       "key": "emerald-orb",
       "name": "Orbe de Esmeralda",
       "description": "Um catalisador esculpido com uma jade rígida de Relevo de Jueyun, norte de Liyue. É pequena, leve e durável.",
-      "refinement": "Depois de 12s após a ativação da reação de Vaporização, Eletricamente Carregado, Congelamento ou Redemoinho Hydro, aumenta o ATQ em {0}%."
+      "refinements": [
+        "Depois de 12s após a ativação da reação de Vaporização, Eletricamente Carregado, Congelamento ou Redemoinho Hydro, aumenta o ATQ em {color}20{/color}%.",
+        "Depois de 12s após a ativação da reação de Vaporização, Eletricamente Carregado, Congelamento ou Redemoinho Hydro, aumenta o ATQ em {color}25{/color}%.",
+        "Depois de 12s após a ativação da reação de Vaporização, Eletricamente Carregado, Congelamento ou Redemoinho Hydro, aumenta o ATQ em {color}30{/color}%.",
+        "Depois de 12s após a ativação da reação de Vaporização, Eletricamente Carregado, Congelamento ou Redemoinho Hydro, aumenta o ATQ em {color}35{/color}%.",
+        "Depois de 12s após a ativação da reação de Vaporização, Eletricamente Carregado, Congelamento ou Redemoinho Hydro, aumenta o ATQ em {color}40{/color}%."
+      ]
     },
     {
       "key": "engulfing-lightning",
       "name": "Luz do Cortador de Grama",
       "description": "Uma naginata usada para \"cortar grama\". Qualquer exército que esteja diante desta arma provavelmente será igualmente cortado...",
-      "refinement": "O ATQ é aumentado em {0}% da Recarga de Energia acima da base de 100%. Você pode receber um Bônus máximo de {1}% de ATQ. Ganha {2}% de Recarga de Energia por 12s depois de usar um Supremo."
+      "refinements": [
+        "O ATQ é aumentado em {color}28{/color}% da Recarga de Energia acima da base de 100%. Você pode receber um Bônus máximo de {color}80{/color}% de ATQ. Ganha {color}30{/color}% de Recarga de Energia por 12s depois de usar um Supremo.",
+        "O ATQ é aumentado em {color}35{/color}% da Recarga de Energia acima da base de 100%. Você pode receber um Bônus máximo de {color}90{/color}% de ATQ. Ganha {color}35{/color}% de Recarga de Energia por 12s depois de usar um Supremo.",
+        "O ATQ é aumentado em {color}42{/color}% da Recarga de Energia acima da base de 100%. Você pode receber um Bônus máximo de {color}100{/color}% de ATQ. Ganha {color}40{/color}% de Recarga de Energia por 12s depois de usar um Supremo.",
+        "O ATQ é aumentado em {color}49{/color}% da Recarga de Energia acima da base de 100%. Você pode receber um Bônus máximo de {color}110{/color}% de ATQ. Ganha {color}45{/color}% de Recarga de Energia por 12s depois de usar um Supremo.",
+        "O ATQ é aumentado em {color}56{/color}% da Recarga de Energia acima da base de 100%. Você pode receber um Bônus máximo de {color}120{/color}% de ATQ. Ganha {color}50{/color}% de Recarga de Energia por 12s depois de usar um Supremo."
+      ]
     },
     {
       "key": "everlasting-moonglow",
       "name": "Fumetsu Gekka",
       "description": "Um lindo cordão de jaspe das profundezas do mar. Ele brilha com um brilho puro, e igualmente distante quanto o da lua.",
-      "refinement": "Bônus de Cura aumentado em {0}%, o Ataque Normal é aumentado em {1}% da Vida Máxima do personagem equipando esta arma. Nos 12s após usar um Supremo, os Ataques Normais que acertarem oponentes recuperarão 0.6 de Energia Elemental. A Energia pode ser recuperada desta maneira uma vez a cada 0.1s."
+      "refinements": [
+        "Bônus de Cura aumentado em {color}10{/color}%, o Ataque Normal é aumentado em {color}1{/color}% da Vida Máxima do personagem equipando esta arma. Nos 12s após usar um Supremo, os Ataques Normais que acertarem oponentes recuperarão 0.6 de Energia Elemental. A Energia pode ser recuperada desta maneira uma vez a cada 0.1s.",
+        "Bônus de Cura aumentado em {color}12.5{/color}%, o Ataque Normal é aumentado em {color}1.5{/color}% da Vida Máxima do personagem equipando esta arma. Nos 12s após usar um Supremo, os Ataques Normais que acertarem oponentes recuperarão 0.6 de Energia Elemental. A Energia pode ser recuperada desta maneira uma vez a cada 0.1s.",
+        "Aumenta o Bônus de Cura em {color}15{/color}%; aumenta o Dano do Ataque Normal em {color}2{/color}% da Vida Máxima do personagem com o arma equipada. Nos 12s após utilizar o Supremo, Ataques Normais que atingirem oponentes regenerarão 0.6 pontos de Energia Elemental. Energia Elemental pode ser regenerada dessa forma uma vez a cada 0.1s.",
+        "Bônus de Cura aumentado em {color}17.5{/color}%, o Ataque Normal é aumentado em {color}2.5{/color}% da Vida Máxima do personagem equipando esta arma. Nos 12s após usar um Supremo, os Ataques Normais que acertarem oponentes recuperarão 0.6 de Energia Elemental. A Energia pode ser recuperada desta maneira uma vez a cada 0.1s.",
+        "Bônus de Cura aumentado em {color}20{/color}%, o Ataque Normal é aumentado em {color}3{/color}% da Vida Máxima do personagem equipando esta arma. Nos 12s após usar um Supremo, os Ataques Normais que acertarem oponentes recuperarão 0.6 de Energia Elemental. A Energia pode ser recuperada desta maneira uma vez a cada 0.1s."
+      ]
     },
     {
       "key": "eye-of-perception",
       "name": "Olho da Percepção",
       "description": "Uma pérola negra esmaltada que se diz ter o poder de ler a pureza do coração.",
-      "refinement": "Ataques Normais e Ataques Carregados possuem 50% de chance de disparar uma Bola da Percepção, causando {0}% de Dano de ATQ. Esta bola pode rebater entre os inimigos por até 4x. Este efeito pode ser ativado uma vez a cada {1}s."
+      "refinements": [
+        "Ataques Normais e Ataques Carregados possuem 50% de chance de disparar uma Bola da Percepção, causando {color}240{/color}% de Dano de ATQ. Esta bola pode rebater entre os inimigos por até 4x. Este efeito pode ser ativado uma vez a cada {color}12{/color}s.",
+        "Ataques Normais e Ataques Carregados possuem 50% de chance de disparar uma Bola da Percepção, causando {color}270{/color}% de Dano de ATQ. Esta bola pode rebater entre os inimigos por até 4x. Este efeito pode ser ativado uma vez a cada {color}11{/color}s.",
+        "Ataques Normais e Ataques Carregados possuem 50% de chance de disparar uma Bola da Percepção, causando {color}300{/color}% de Dano de ATQ. Esta bola pode rebater entre os inimigos por até 4x. Este efeito pode ser ativado uma vez a cada {color}10{/color}s.",
+        "Ataques Normais e Ataques Carregados possuem 50% de chance de disparar uma Bola da Percepção, causando {color}330{/color}% de Dano de ATQ. Esta bola pode rebater entre os inimigos por até 4x. Este efeito pode ser ativado uma vez a cada {color}9{/color}s.",
+        "Ataques Normais e Ataques Carregados possuem 50% de chance de disparar uma Bola da Percepção, causando {color}360{/color}% de Dano de ATQ. Esta bola pode rebater entre os inimigos por até 4x. Este efeito pode ser ativado uma vez a cada {color}8{/color}s."
+      ]
     },
     {
       "key": "favonius-codex",
       "name": "Codex de Favonius",
       "description": "Um livro secreto que pertencia aos estudiosos dos Cavaleiros de Favonius. Descreve o poder da matéria e da lógica.",
-      "refinement": "Os Acertos Críticos possuem {0}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {1}s."
+      "refinements": [
+        "Os Acertos Críticos possuem {color}60{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}12{/color}s.",
+        "Os Acertos Críticos possuem {color}70{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}10.5{/color}s.",
+        "Os Acertos Críticos possuem {color}80{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}9{/color}s.",
+        "Os Acertos Críticos possuem {color}90{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}7.5{/color}s.",
+        "Os Acertos Críticos possuem {color}100{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}6{/color}s."
+      ]
     },
     {
       "key": "favonius-greatsword",
       "name": "Espadão de Favonius",
       "description": "Uma espada pesada cerimonial dos Cavaleiros de Favonious. Canaliza poderes elementais facilmente e é altamente destrutiva.",
-      "refinement": "Os Acertos Críticos possuem {0}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {1}s."
+      "refinements": [
+        "Os Acertos Críticos possuem {color}60{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}12{/color}s.",
+        "Os Acertos Críticos possuem {color}70{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}10.5{/color}s.",
+        "Os Acertos Críticos possuem {color}80{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}9{/color}s.",
+        "Os Acertos Críticos possuem {color}90{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}7.5{/color}s.",
+        "Os Acertos Críticos possuem {color}100{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}6{/color}s."
+      ]
     },
     {
       "key": "favonius-lance",
       "name": "Lança de Favonius",
       "description": "Uma lança no estilo dos Cavaleiros de Favonius. Sua haste é reta e sua ponta flui levemente como o vento.",
-      "refinement": "Os Acertos Críticos possuem {0}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {1}s."
+      "refinements": [
+        "Os Acertos Críticos possuem {color}60{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}12{/color}s.",
+        "Os Acertos Críticos possuem {color}70{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}10.5{/color}s.",
+        "Os Acertos Críticos possuem {color}80{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}9{/color}s.",
+        "Os Acertos Críticos possuem {color}90{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}7.5{/color}s.",
+        "Os Acertos Críticos possuem {color}100{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}6{/color}s."
+      ]
     },
     {
       "key": "favonius-sword",
       "name": "Espada de Favonius",
       "description": "Uma espada longa comum usada pelos Cavaleiros de Favonius. Canalizar o poder dos elementos nunca foi tão fácil nesta arma ágil e afiada!",
-      "refinement": "Os Acertos Críticos possuem {0}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {1}s."
+      "refinements": [
+        "Os Acertos Críticos possuem {color}60{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}12{/color}s.",
+        "Os Acertos Críticos possuem {color}70{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}10.5{/color}s.",
+        "Os Acertos Críticos possuem {color}80{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}9{/color}s.",
+        "Os Acertos Críticos possuem {color}90{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}7.5{/color}s.",
+        "Os Acertos Críticos possuem {color}100{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}6{/color}s."
+      ]
     },
     {
       "key": "favonius-warbow",
       "name": "Arco de Guerra de Favonius",
       "description": "Um arco recurvo usado pelos Cavaleiros de Favonius. Apenas os melhores arqueiros conseguem tirar todo o seu potencial.",
-      "refinement": "Os Acertos Críticos possuem {0}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {1}s."
+      "refinements": [
+        "Os Acertos Críticos possuem {color}60{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}12{/color}s.",
+        "Os Acertos Críticos possuem {color}70{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}10.5{/color}s.",
+        "Os Acertos Críticos possuem {color}80{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}9{/color}s.",
+        "Os Acertos Críticos possuem {color}90{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}7.5{/color}s.",
+        "Os Acertos Críticos possuem {color}100{/color}% de chance de gerar uma pequena quantidade de Partícula Elemental, que irá regenerar 6 de Energia para o Personagem. Pode ocorrer uma vez a cada {color}6{/color}s."
+      ]
     },
     {
       "key": "ferrous-shadow",
       "name": "Sombra de Ferro",
       "description": "Uma réplica da espada famosa de Arundolyn, o Leão da Luz. Maneje-a e sinta o poder de um herói lendário! Aviso: Sonhar demais pode ser prejudicial para você.",
-      "refinement": "Quando a Vida estiver inferior a {0}%, Ataques Carregados raramente são interrompidos e aumenta {1}% do Ataque Carregado."
+      "refinements": [
+        "Quando a Vida estiver inferior a {color}70{/color}%, Ataques Carregados raramente são interrompidos e aumenta {color}30{/color}% do Ataque Carregado.",
+        "Quando a Vida estiver inferior a {color}75{/color}%, Ataques Carregados raramente são interrompidos e aumenta {color}35{/color}% do Ataque Carregado.",
+        "Quando a Vida estiver inferior a {color}80{/color}%, Ataques Carregados raramente são interrompidos e aumenta {color}40{/color}% do Ataque Carregado.",
+        "Quando a Vida estiver inferior a {color}85{/color}%, Ataques Carregados raramente são interrompidos e aumenta {color}45{/color}% do Ataque Carregado.",
+        "Quando a Vida estiver inferior a {color}90{/color}%, Ataques Carregados raramente são interrompidos e aumenta {color}50{/color}% do Ataque Carregado."
+      ]
     },
     {
       "key": "festering-desire",
       "name": "Espada Pútrida",
       "description": "Uma espada reta assustadora que parece ansiar pela vida. Ela verte um veneno enfraquecedor que poderia corromper até mesmo um dragão poderoso.",
-      "refinement": "Aumenta em {0}% o Dano da Habilidade Elemental e em {1}% a Taxa CRIT da Habilidade Elemental."
+      "refinements": [
+        "Aumenta em {color}16{/color}% o Dano da Habilidade Elemental e em {color}6{/color}% a Taxa CRIT da Habilidade Elemental.",
+        "Aumenta em {color}20{/color}% o Dano da Habilidade Elemental e em {color}7.5{/color}% a Taxa CRIT da Habilidade Elemental.",
+        "Aumenta em {color}24{/color}% o Dano da Habilidade Elemental e em {color}9{/color}% a Taxa CRIT da Habilidade Elemental.",
+        "Aumenta em {color}28{/color}% o Dano da Habilidade Elemental e em {color}10.5{/color}% a Taxa CRIT da Habilidade Elemental.",
+        "Aumenta em {color}32{/color}% o Dano da Habilidade Elemental e em {color}12{/color}% a Taxa CRIT da Habilidade Elemental."
+      ]
     },
     {
       "key": "fillet-blade",
       "name": "Lâmina de Filés",
       "description": "Uma faca afiada com uma lâmina longa.",
-      "refinement": "Ao acertar, possui 50% de chance de infligir {0}% de Dano de ATQ a um único alvo. Pode ocorrer uma vez a cada {1}s."
+      "refinements": [
+        "Ao acertar, possui 50% de chance de infligir {color}240{/color}% de Dano de ATQ a um único alvo. Pode ocorrer uma vez a cada {color}15{/color}s.",
+        "Ao acertar, possui 50% de chance de infligir {color}280{/color}% de Dano de ATQ a um único alvo. Pode ocorrer uma vez a cada {color}14{/color}s.",
+        "Ao acertar, possui 50% de chance de infligir {color}320{/color}% de Dano de ATQ a um único alvo. Pode ocorrer uma vez a cada {color}13{/color}s.",
+        "Ao acertar, possui 50% de chance de infligir {color}360{/color}% de Dano de ATQ a um único alvo. Pode ocorrer uma vez a cada {color}12{/color}s.",
+        "Ao acertar, possui 50% de chance de infligir {color}400{/color}% de Dano de ATQ a um único alvo. Pode ocorrer uma vez a cada {color}11{/color}s."
+      ]
     },
     {
       "key": "freedom-sworn",
       "name": "Juramento pela Liberdade",
       "description": "Uma espada azul como canção antediluviana e tão aguçada quanto os juramentos de liberdade prestados na Terra do Vento.",
-      "refinement": "Uma parte do \"Concerto Milenar\" que flutua no vento. Aumenta o Dano causado em {0}%. Quando ativa a Reação Elemental, o personagem obterá um Símbolo da Resistência, que pode ser ativado uma vez a cada 0.5s, mesmo quando o personagem não está no campo de batalha. Possuir 2 Símbolos da Resistência faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Canção da Resistência\" por 12s: Aumenta o Dano de Ataque Normal, Ataque Carregado, Ataque Imersivo em {1}%, entretanto o ATQ será aumentado em {2}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos da Resistência de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+      "refinements": [
+        "Uma parte do \"Concerto Milenar\" que flutua no vento. Aumenta o Dano causado em {color}10{/color}%. Quando ativa a Reação Elemental, o personagem obterá um Símbolo da Resistência, que pode ser ativado uma vez a cada 0.5s, mesmo quando o personagem não está no campo de batalha. Possuir 2 Símbolos da Resistência faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Canção da Resistência\" por 12s: Aumenta o Dano de Ataque Normal, Ataque Carregado, Ataque Imersivo em {color}16{/color}%, entretanto o ATQ será aumentado em {color}20{/color}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos da Resistência de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados.",
+        "Uma parte do \"Concerto Milenar\" que flutua no vento. Aumenta o Dano causado em {color}12.5{/color}%. Quando ativa a Reação Elemental, o personagem obterá um Símbolo da Resistência, que pode ser ativado uma vez a cada 0.5s, mesmo quando o personagem não está no campo de batalha. Possuir 2 Símbolos da Resistência faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Canção da Resistência\" por 12s: Aumenta o Dano de Ataque Normal, Ataque Carregado, Ataque Imersivo em {color}20{/color}%, entretanto o ATQ será aumentado em {color}25{/color}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos da Resistência de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados.",
+        "Uma parte do \"Concerto Milenar\" que flutua no vento. Aumenta o Dano causado em {color}15{/color}%. Quando ativa a Reação Elemental, o personagem obterá um Símbolo da Resistência, que pode ser ativado uma vez a cada 0.5s, mesmo quando o personagem não está no campo de batalha. Possuir 2 Símbolos da Resistência faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Canção da Resistência\" por 12s: Aumenta o Dano de Ataque Normal, Ataque Carregado, Ataque Imersivo em {color}24{/color}%, entretanto o ATQ será aumentado em {color}30{/color}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos da Resistência de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados.",
+        "Uma parte do \"Concerto Milenar\" que flutua no vento. Aumenta o Dano causado em {color}17.5{/color}%. Quando ativa a Reação Elemental, o personagem obterá um Símbolo da Resistência, que pode ser ativado uma vez a cada 0.5s, mesmo quando o personagem não está no campo de batalha. Possuir 2 Símbolos da Resistência faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Canção da Resistência\" por 12s: Aumenta o Dano de Ataque Normal, Ataque Carregado, Ataque Imersivo em {color}28{/color}%, entretanto o ATQ será aumentado em {color}35{/color}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos da Resistência de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados.",
+        "Uma parte do \"Concerto Milenar\" que flutua no vento. Aumenta o Dano causado em {color}20{/color}%. Quando ativa a Reação Elemental, o personagem obterá um Símbolo da Resistência, que pode ser ativado uma vez a cada 0.5s, mesmo quando o personagem não está no campo de batalha. Possuir 2 Símbolos da Resistência faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Canção da Resistência\" por 12s: Aumenta o Dano de Ataque Normal, Ataque Carregado, Ataque Imersivo em {color}32{/color}%, entretanto o ATQ será aumentado em {color}40{/color}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos da Resistência de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+      ]
     },
     {
       "key": "frostbearer",
       "name": "Fruto do Sabugueiro",
       "description": "Uma fruta que possui uma aura estranha e gélida. Uma leve sensação de agonia emana dela.",
-      "refinement": "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {0}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {1}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {2}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s."
+      "refinements": [
+        "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}60{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}80{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}200{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s.",
+        "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}70{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}95{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}240{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s.",
+        "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}80{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}110{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}280{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s.",
+        "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}90{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}125{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}320{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s.",
+        "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}100{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}140{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}360{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s."
+      ]
     },
     {
       "key": "hakushin-ring",
       "name": "Anel de Hakushin",
       "description": "Um catalisador que guarda a memória de Kitsune Saiguu dos tempos passados. E, ainda assim, esse dispositivo é apenas um recipiente empobrecido para toda a amplitude do seu pensamento.",
-      "refinement": "Depois de o personagem com essa arma equipada desencadear uma reação Electro, os membros da equipe ao redor com Tipo Elemental envolvidos na reação terão Dano Adicional do Elemento em {0}%, por 6s. O Dano adicional obtido pelo personagem dessa forma não pode ser acumulado."
+      "refinements": [
+        "Depois de o personagem com essa arma equipada desencadear uma reação Electro, os membros da equipe ao redor com Tipo Elemental envolvidos na reação terão Dano Adicional do Elemento em {color}10{/color}%, por 6s. O Dano adicional obtido pelo personagem dessa forma não pode ser acumulado.",
+        "Depois de o personagem com essa arma equipada desencadear uma reação Electro, os membros da equipe ao redor com Tipo Elemental envolvidos na reação terão Dano Adicional do Elemento em {color}12.5{/color}%, por 6s. O Dano adicional obtido pelo personagem dessa forma não pode ser acumulado.",
+        "Depois de o personagem com essa arma equipada desencadear uma reação Electro, os membros da equipe ao redor com Tipo Elemental envolvidos na reação terão Dano Adicional do Elemento em {color}15{/color}%, por 6s. O Dano adicional obtido pelo personagem dessa forma não pode ser acumulado.",
+        "Depois de o personagem com essa arma equipada desencadear uma reação Electro, os membros da equipe ao redor com Tipo Elemental envolvidos na reação terão Dano Adicional do Elemento em {color}17.5{/color}%, por 6s. O Dano adicional obtido pelo personagem dessa forma não pode ser acumulado.",
+        "Depois de o personagem com essa arma equipada desencadear uma reação Electro, os membros da equipe ao redor com Tipo Elemental envolvidos na reação terão Dano Adicional do Elemento em {color}20{/color}%, por 6s. O Dano adicional obtido pelo personagem dessa forma não pode ser acumulado."
+      ]
     },
     {
       "key": "halberd",
       "name": "Alabarda",
       "description": "Uma arma de fogo com uma lâmina de machado montada no topo que pode causar muito dano. É a arma preferida entre os Oficiais de Millelith.",
-      "refinement": "Ataques Normais causam um adicional de {0}% de Dano ao oponente atingido. Este efeito pode ser ativado uma vez a cada 10s."
+      "refinements": [
+        "Ataques Normais causam um adicional de {color}160{/color}% de Dano ao oponente atingido. Este efeito pode ser ativado uma vez a cada 10s.",
+        "Ataques Normais causam um adicional de {color}200{/color}% de Dano ao oponente atingido. Este efeito pode ser ativado uma vez a cada 10s.",
+        "Ataques Normais causam um adicional de {color}240{/color}% de Dano ao oponente atingido. Este efeito pode ser ativado uma vez a cada 10s.",
+        "Ataques Normais causam um adicional de {color}280{/color}% de Dano ao oponente atingido. Este efeito pode ser ativado uma vez a cada 10s.",
+        "Ataques Normais causam um adicional de {color}320{/color}% de Dano ao oponente atingido. Este efeito pode ser ativado uma vez a cada 10s."
+      ]
     },
     {
       "key": "hamayumi",
       "name": "Arco Quebra-Demônios",
       "description": "Uma certa bruxa do templo tinha este arco de guerra. Foi feito com uma excelente habilidade, e ele é complexo e robusto.",
-      "refinement": "Aumenta o Dano de ATQ Normal em {0}% e o Dano de ATQ Carregado em {1}%. Quando a Energia Elemental do personagem equipado com essa arma é igual a 100%, esse efeito aumenta 100%."
+      "refinements": [
+        "Aumenta o Dano de ATQ Normal em {color}16{/color}% e o Dano de ATQ Carregado em {color}12{/color}%. Quando a Energia Elemental do personagem equipado com essa arma é igual a 100%, esse efeito aumenta 100%.",
+        "Aumenta o Dano de ATQ Normal em {color}20{/color}% e o Dano de ATQ Carregado em {color}15{/color}%. Quando a Energia Elemental do personagem equipado com essa arma é igual a 100%, esse efeito aumenta 100%.",
+        "Aumenta o Dano de ATQ Normal em {color}24{/color}% e o Dano de ATQ Carregado em {color}18{/color}%. Quando a Energia Elemental do personagem equipado com essa arma é igual a 100%, esse efeito aumenta 100%.",
+        "Aumenta o Dano de ATQ Normal em {color}28{/color}% e o Dano de ATQ Carregado em {color}21{/color}%. Quando a Energia Elemental do personagem equipado com essa arma é igual a 100%, esse efeito aumenta 100%.",
+        "Aumenta o Dano de ATQ Normal em {color}32{/color}% e o Dano de ATQ Carregado em {color}24{/color}%. Quando a Energia Elemental do personagem equipado com essa arma é igual a 100%, esse efeito aumenta 100%."
+      ]
     },
     {
       "key": "harbinger-of-dawn",
       "name": "Prenúncio do Alvorecer",
       "description": "Uma espada que, uma vez, brilhou como o sol. O portador desta espada será abençoado com um bônus de \"boa sensação\". O material refletivo em sua lâmina já se desgastou há muito tempo.",
-      "refinement": "Quando a Vida estiver acima de 90%, aumenta a Taxa Crítica em {0}%."
+      "refinements": [
+        "Quando a Vida estiver acima de 90%, aumenta a Taxa Crítica em {color}14{/color}%.",
+        "Quando a Vida estiver acima de 90%, aumenta a Taxa Crítica em {color}17.5{/color}%.",
+        "Quando a Vida estiver acima de 90%, aumenta a Taxa Crítica em {color}21{/color}%.",
+        "Quando a Vida estiver acima de 90%, aumenta a Taxa Crítica em {color}24.5{/color}%.",
+        "Quando a Vida estiver acima de 90%, aumenta a Taxa Crítica em {color}28{/color}%."
+      ]
     },
     {
       "key": "hunters-bow",
       "name": "Arco do Caçador",
       "description": "A melodia de um caçador consiste em dois tipos de sons: o som do tensionamento da corda do seu arco e o som da flecha atravessando o ar.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "iron-point",
       "name": "Ponta de Ferro",
       "description": "Afiada e pontiaguda em sua extremidade, é uma arma balanceada e bastante popular entre os viajantes.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "iron-sting",
       "name": "Espinho de Ferro",
       "description": "Espada exótica que de alguma forma acabou nas mãos dos comerciantes de Liyue. É leve, ágil e afiada.",
-      "refinement": "6s após causar Dano Elemental, aumenta todos os Danos em {0}%. Este efeito pode acumular até 2 vezes e pode ser ativado uma vez a cada 1s."
+      "refinements": [
+        "6s após causar Dano Elemental, aumenta todos os Danos em {color}6{/color}%. Este efeito pode acumular até 2 vezes e pode ser ativado uma vez a cada 1s.",
+        "6s após ao causar Dano Elemental, aumenta todos os Danos em {color}7.5{/color}%. Este efeito pode acumular até 2 vezes e pode ser ativado uma vez a cada 1s.",
+        "6s após ao causar Dano Elemental, aumenta todos os Danos em {color}9{/color}%. Este efeito pode acumular até 2 vezes e pode ser ativado uma vez a cada 1s.",
+        "6s após ao causar Dano Elemental, aumenta todos os Danos em {color}10.5{/color}%. Este efeito pode acumular até 2 vezes e pode ser ativado uma vez a cada 1s.",
+        "6s após ao causar Dano Elemental, aumenta todos os Danos em {color}12{/color}%. Este efeito pode acumular até 2 vezes e pode ser ativado uma vez a cada 1s."
+      ]
     },
     {
       "key": "katsuragikiri-nagamasa",
       "name": "Espada Grande de Katsuragi",
       "description": "Uma espada forjada em Tatarasuna. Pesada e resistente.",
-      "refinement": "Aumenta o Dano causado pela Habilidade Elemental em {0}%. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura {1} pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado."
+      "refinements": [
+        "Aumenta o Dano causado pela Habilidade Elemental em {color}6{/color}%. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura {color}3{/color} pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado.",
+        "Aumenta o Dano causado pela Habilidade Elemental em {color}7.5{/color}%. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura {color}3.5{/color} pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado.",
+        "Aumenta o Dano causado pela Habilidade Elemental em {color}9{/color}%. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura {color}4{/color} pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado.",
+        "Aumenta o Dano causado pela Habilidade Elemental em {color}10.5{/color}%. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura {color}4.5{/color} pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado.",
+        "Aumenta o Dano causado pela Habilidade Elemental em {color}12{/color}%. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura {color}5{/color} pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado."
+      ]
     },
     {
       "key": "kitain-cross-spear",
       "name": "Lança Cruzada de Kitain",
       "description": "Uma lança especial que foi usada por um guerreiro famoso que guardava o Tatarigami da Ilha Yashiori.",
-      "refinement": "Aumenta o Dano causado pela Habilidade Elemental em {0}%. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura {1} pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado."
+      "refinements": [
+        "Aumenta o Dano causado pela Habilidade Elemental em {color}6{/color}%. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura {color}3{/color} pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado.",
+        "Aumenta o Dano causado pela Habilidade Elemental em {color}7.5{/color}%. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura {color}3.5{/color} pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado.",
+        "Aumenta o Dano causado pela Habilidade Elemental em {color}9{/color}%. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura {color}4{/color} pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado.",
+        "Aumenta o Dano causado pela Habilidade Elemental em {color}10.5{/color}%. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura {color}4.5{/color} pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado.",
+        "Aumenta o Dano causado pela Habilidade Elemental em {color}12{/color}%. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura {color}5{/color} pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado."
+      ]
     },
     {
       "key": "lions-roar",
       "name": "Rugido do Leão",
       "description": "Uma lâmina afiada com inserções luxuosas que de alguma forma não comprometeu sua durabilidade e nitidez. O som que emite ao fazer cortes pelo ar é como o rugido de leões.",
-      "refinement": "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {0}%."
+      "refinements": [
+        "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {color}20{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {color}24{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {color}28{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {color}32{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {color}36{/color}%."
+      ]
     },
     {
       "key": "lithic-blade",
       "name": "Espada Antiga de Millelith",
       "description": "Uma espada grande esculpida e cinzelada na própria base de Liyue.",
-      "refinement": "Por cada personagem de Liyue que possua na Equipe, aumenta o ATQ do personagem que equipar essa arma em {0}% e aumenta sua Taxa CRIT em {1}%. Esse efeito pode ser acumulado no máximo 4 vezes."
+      "refinements": [
+        "Por cada personagem de Liyue que possua na Equipe, aumenta o ATQ do personagem que equipar essa arma em {color}7{/color}% e aumenta sua Taxa CRIT em {color}3{/color}%. Esse efeito pode ser acumulado no máximo 4 vezes.",
+        "Por cada personagem de Liyue que possua na Equipe, aumenta o ATQ do personagem que equipar essa arma em {color}8{/color}% e aumenta sua Taxa CRIT em {color}4{/color}%. Esse efeito pode ser acumulado no máximo 4 vezes.",
+        "Por cada personagem de Liyue que possua na Equipe, aumenta o ATQ do personagem que equipar essa arma em {color}9{/color}% e aumenta sua Taxa CRIT em {color}5{/color}%. Esse efeito pode ser acumulado no máximo 4 vezes.",
+        "Por cada personagem de Liyue que possua na Equipe, aumenta o ATQ do personagem que equipar essa arma em {color}10{/color}% e aumenta sua Taxa CRIT em {color}6{/color}%. Esse efeito pode ser acumulado no máximo 4 vezes.",
+        "Por cada personagem de Liyue que possua na Equipe, aumenta o ATQ do personagem que equipar essa arma em {color}11{/color}% e aumenta sua Taxa CRIT em {color}7{/color}%. Esse efeito pode ser acumulado no máximo 4 vezes."
+      ]
     },
     {
       "key": "lithic-spear",
       "name": "Lança de Millelith",
       "description": "Uma lança forjada com pedras da floresta de Guyun. Sua robustez é conhecida por não haver outra igual.",
-      "refinement": "Por cada personagem de Liyue que possua na Equipe, aumenta o ATQ do personagem que equipar essa arma em {0}% e aumenta sua Taxa CRIT em {1}%. Esse efeito pode ser acumulado no máximo 4 vezes."
+      "refinements": [
+        "Por cada personagem de Liyue que possua na Equipe, aumenta o ATQ do personagem que equipar essa arma em {color}7{/color}% e aumenta sua Taxa CRIT em {color}3{/color}%. Esse efeito pode ser acumulado no máximo 4 vezes.",
+        "Por cada personagem de Liyue que possua na Equipe, aumenta o ATQ do personagem que equipar essa arma em {color}8{/color}% e aumenta sua Taxa CRIT em {color}4{/color}%. Esse efeito pode ser acumulado no máximo 4 vezes.",
+        "Por cada personagem de Liyue que possua na Equipe, aumenta o ATQ do personagem que equipar essa arma em {color}9{/color}% e aumenta sua Taxa CRIT em {color}5{/color}%. Esse efeito pode ser acumulado no máximo 4 vezes.",
+        "Por cada personagem de Liyue que possua na Equipe, aumenta o ATQ do personagem que equipar essa arma em {color}10{/color}% e aumenta sua Taxa CRIT em {color}6{/color}%. Esse efeito pode ser acumulado no máximo 4 vezes.",
+        "Por cada personagem de Liyue que possua na Equipe, aumenta o ATQ do personagem que equipar essa arma em {color}11{/color}% e aumenta sua Taxa CRIT em {color}7{/color}%. Esse efeito pode ser acumulado no máximo 4 vezes."
+      ]
     },
     {
       "key": "lost-prayer-to-the-sacred-winds",
       "name": "Oração Perdida aos Ventos Sagrados",
       "description": "Um livro educacional escrito por habitantes anônimos que adoravam o vento. Foi abençoado pelo vento por sua fidelidade e influência ao longo dos milênios.",
-      "refinement": "Aumenta a Veloc. Mov. em 10%. Durante a batalha, ganha um adicional de {0}% de Dano Elemental a cada 4s, sendo capaz de acumular até 4 vezes. Dura até o último personagem ser abatido ou trocar de personagem."
+      "refinements": [
+        "Aumenta a Veloc. Mov. em 10%. Durante a batalha, ganha um adicional de {color}8{/color}% de Dano Elemental a cada 4s, sendo capaz de acumular até 4 vezes. Dura até o último personagem ser abatido ou trocar de personagem.",
+        "Aumenta a Veloc. Mov. em 10%. Durante a batalha, ganha um adicional de {color}10{/color}% de Dano Elemental a cada 4s, sendo capaz de acumular até 4 vezes. Dura até o último personagem ser abatido ou trocar de personagem.",
+        "Aumenta a Veloc. Mov. em 10%. Durante a batalha, ganha um adicional de {color}12{/color}% de Dano Elemental a cada 4s, sendo capaz de acumular até 4 vezes. Dura até o último personagem ser abatido ou trocar de personagem.",
+        "Aumenta a Veloc. Mov. em 10%. Durante a batalha, ganha um adicional de {color}14{/color}% de Dano Elemental a cada 4s, sendo capaz de acumular até 4 vezes. Dura até o último personagem ser abatido ou trocar de personagem.",
+        "Aumenta a Veloc. Mov. em 10%. Durante a batalha, ganha um adicional de {color}16{/color}% de Dano Elemental a cada 4s, sendo capaz de acumular até 4 vezes. Dura até o último personagem ser abatido ou trocar de personagem."
+      ]
     },
     {
       "key": "luxurious-sea-lord",
       "name": "Lorde do Mar Luxuoso",
       "description": "O grande rei do oceano. Após ter sido desidratado, serve como uma boa arma, bem como um alimento de emergência.",
-      "refinement": "Aumenta o Dano do Supremo em {0}%. Quando o Supremo acerta os oponentes, existe 100% de chance de invocar uma tuna titânica que avança e causa {1}% do ATQ como Dano em uma AdE. Este efeito pode ocorrer uma vez a cada 15s."
+      "refinements": [
+        "Aumenta o Dano do Supremo em {color}12{/color}%. Quando o Supremo acerta os oponentes, existe 100% de chance de invocar uma tuna titânica que avança e causa {color}100{/color}% do ATQ como Dano em uma AdE. Este efeito pode ocorrer uma vez a cada 15s.",
+        "Aumenta o Dano do Supremo em {color}15{/color}%. Quando o Supremo acerta os oponentes, existe 100% de chance de invocar uma tuna titânica que avança e causa {color}125{/color}% do ATQ como Dano em uma AdE. Este efeito pode ocorrer uma vez a cada 15s.",
+        "Aumenta o Dano do Supremo em {color}18{/color}%. Quando o Supremo acerta os oponentes, existe 100% de chance de invocar uma tuna titânica que avança e causa {color}150{/color}% do ATQ como Dano em uma AdE. Este efeito pode ocorrer uma vez a cada 15s.",
+        "Aumenta o Dano do Supremo em {color}21{/color}%. Quando o Supremo acerta os oponentes, existe 100% de chance de invocar uma tuna titânica que avança e causa {color}175{/color}% do ATQ como Dano em uma AdE. Este efeito pode ocorrer uma vez a cada 15s.",
+        "Aumenta o Dano do Supremo em {color}24{/color}%. Quando o Supremo acerta os oponentes, existe 100% de chance de invocar uma tuna titânica que avança e causa {color}200{/color}% do ATQ como Dano em uma AdE. Este efeito pode ocorrer uma vez a cada 15s."
+      ]
     },
     {
       "key": "magic-guide",
       "name": "Guia de Magia",
       "description": "12ª edição. Uma reedição com correção da 11ª edição e novas adições baseadas nos desenvolvimentos atuais.",
-      "refinement": "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em {0}%."
+      "refinements": [
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em {color}12{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em {color}15{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em {color}18{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em {color}21{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em {color}24{/color}%."
+      ]
     },
     {
       "key": "mappa-mare",
       "name": "Mappa Mare",
       "description": "Um mapa bastante detalhado sobre as águas ao redor de Teyvat. É um documento valioso que apareceu nas rotas comerciais de Liyue.",
-      "refinement": "Ativar uma reação Elemental concede um adicional de {0}% de Dano Elemental por 10s, podendo acumular até 2 vezes."
+      "refinements": [
+        "Ativar uma reação Elemental concede um adicional de {color}8{/color}% de Dano Elemental por 10s, podendo acumular até 2 vezes.",
+        "Ativar uma reação Elemental, concede um adicional de {color}10{/color}% de Dano Elemental por 10s, podendo acumular até 2 vezes.",
+        "Ativar uma reação Elemental concede um adicional de {color}12{/color}% de Dano Elemental por 10s, podendo acumular até 2 vezes.",
+        "Ativar uma reação Elemental concede um adicional de {color}14{/color}% de Dano Elemental por 10s, podendo acumular até 2 vezes.",
+        "Ativar uma reação Elemental concede um adicional de {color}16{/color}% de Dano Elemental por 10s, podendo acumular até 2 vezes."
+      ]
     },
     {
       "key": "memory-of-dust",
       "name": "Memória da Poeira",
       "description": "Uma fechadura de pedra contendo memórias distantes. Suas infinitas transformações revelam seu poder interior.",
-      "refinement": "Aumenta a Força do Escudo em {0}%. Acertar ataques em inimigos aumenta o ataque em {1}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%."
+      "refinements": [
+        "Aumenta a Força do Escudo em {color}20{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}4{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+        "Aumenta a força do Escudo em {color}25{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}5{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+        "Aumenta a força do Escudo em {color}30{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}6{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+        "Aumenta a força do Escudo em {color}35{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}7{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+        "Aumenta a força do Escudo em {color}40{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}8{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%."
+      ]
     },
     {
       "key": "messenger",
       "name": "Mensageiro",
       "description": "Um arco básico de madeira. Dizem que ele foi usado para comunicações de longa distância.",
-      "refinement": "Ao acertar um ponto fraco com Ataque Carregado, causa um adicional de {0}% de Dano de ATQ como Dano Crítico. Este efeito pode ser ativado uma vez a cada 10s."
+      "refinements": [
+        "Ao acertar um ponto fraco com Ataque Carregado, causa um adicional de {color}100{/color}% de Dano de ATQ como Dano Crítico. Este efeito pode ser ativado uma vez a cada 10s.",
+        "Ao acertar um ponto fraco com Ataque Carregado, causa um adicional de {color}125{/color}% de Dano de ATQ como Dano Crítico. Este efeito pode ser ativado uma vez a cada 10s.",
+        "Ao acertar um ponto fraco com Ataque Carregado, causa um adicional de {color}150{/color}% de Dano de ATQ como Dano Crítico. Este efeito pode ser ativado uma vez a cada 10s.",
+        "Ao acertar um ponto fraco com Ataque Carregado, causa um adicional de {color}175{/color}% de Dano de ATQ como Dano Crítico. Este efeito pode ser ativado uma vez a cada 10s.",
+        "Ao acertar um ponto fraco com Ataque Carregado, causa um adicional de {color}200{/color}% de Dano de ATQ como Dano Crítico. Este efeito pode ser ativado uma vez a cada 10s."
+      ]
     },
     {
       "key": "mistsplitter-reforged",
       "name": "Cortadora da Neblina Reforjada",
       "description": "Uma espada que emite uma luz violeta forte. O nome \"reflexo\" é devido a outrora ela estar quebrada.",
-      "refinement": "Ganha um Dano adicional elemental para todos os elementos de {0}% e pode também ganhar o poder do Selo Quebra-nuvens. Selo Quebra-nuvens: Nos acúmulos 1/2/3 do Selo Quebra-nuvens obtém Dano adicional do próprio Elemento em {1}%. Nas situações abaixo, cada personagem obtém 1 acúmulo de Selo Quebra-nuvens: quando o ATQ Normal causa Dano Elemental, dura 5s; quando libera Supremo, dura 10s; além disso, quando a Energia Elemental do personagem é inferior a 100%, irá obter 1 acúmulo do Selo Quebra-nuvens, que desaparecerá quando a Energia Elemental do personagem estiver cheia. O tempo de cada acúmulo de Selo Quebra-nuvens é contado individualmente."
+      "refinements": [
+        "Ganha um Dano adicional elemental para todos os elementos de {color}12{/color}% e pode também ganhar o poder do Selo Quebra-nuvens. Selo Quebra-nuvens: Nos acúmulos 1/2/3 do Selo Quebra-nuvens obtém Dano adicional do próprio Elemento em {color}8/16/28{/color}%. Nas situações abaixo, cada personagem obtém 1 acúmulo de Selo Quebra-nuvens: quando o ATQ Normal causa Dano Elemental, dura 5s; quando libera Supremo, dura 10s; além disso, quando a Energia Elemental do personagem é inferior a 100%, irá obter 1 acúmulo do Selo Quebra-nuvens, que desaparecerá quando a Energia Elemental do personagem estiver cheia. O tempo de cada acúmulo de Selo Quebra-nuvens é contado individualmente.",
+        "Ganha um Dano adicional elemental para todos os elementos de {color}15{/color}% e pode também ganhar o poder do Selo Quebra-nuvens. Selo Quebra-nuvens: Nos acúmulos 1/2/3 do Selo Quebra-nuvens obtém Dano adicional do próprio Elemento em {color}10/20/35{/color}%. Nas situações abaixo, cada personagem obtém 1 acúmulo de Selo Quebra-nuvens: quando o ATQ Normal causa Dano Elemental, dura 5s; quando libera Supremo, dura 10s; além disso, quando a Energia Elemental do personagem é inferior a 100%, irá obter 1 acúmulo do Selo Quebra-nuvens, que desaparecerá quando a Energia Elemental do personagem estiver cheia. O tempo de cada acúmulo de Selo Quebra-nuvens é contado individualmente.",
+        "Ganha um Dano adicional elemental para todos os elementos de {color}18{/color}% e pode também ganhar o poder do Selo Quebra-nuvens. Selo Quebra-nuvens: Nos acúmulos 1/2/3 do Selo Quebra-nuvens obtém Dano adicional do próprio Elemento em {color}12/24/42{/color}%. Nas situações abaixo, cada personagem obtém 1 acúmulo de Selo Quebra-nuvens: quando o ATQ Normal causa Dano Elemental, dura 5s; quando libera Supremo, dura 10s; além disso, quando a Energia Elemental do personagem é inferior a 100%, irá obter 1 acúmulo do Selo Quebra-nuvens, que desaparecerá quando a Energia Elemental do personagem estiver cheia. O tempo de cada acúmulo de Selo Quebra-nuvens é contado individualmente.",
+        "Ganha um Dano adicional elemental para todos os elementos de {color}21{/color}% e pode também ganhar o poder do Selo Quebra-nuvens. Selo Quebra-nuvens: Nos acúmulos 1/2/3 do Selo Quebra-nuvens obtém Dano adicional do próprio Elemento em {color}14/28/49{/color}%. Nas situações abaixo, cada personagem obtém 1 acúmulo de Selo Quebra-nuvens: Quando o ATQ Normal causa Dano Elemental, dura 5s; quando libera Supremo, dura 10s; Para além disso, quando a Energia Elemental do personagem é inferior a 100%, irá obter 1 acúmulo do Selo Quebra-nuvens, que desaparecerá quando a Energia Elemental do personagem estiver cheia. O tempo de cada acúmulo de Selo Quebra-nuvens é contado individualmente.",
+        "Ganha um Dano adicional elemental para todos os elementos de {color}24{/color}% e pode também ganhar o poder do Selo Quebra-nuvens. Selo Quebra-nuvens: Nos acúmulos 1/2/3 do Selo Quebra-nuvens obtém Dano adicional do próprio Elemento em {color}16/32/56{/color}%. Nas situações abaixo, cada personagem obtém 1 acúmulo de Selo Quebra-nuvens: quando o ATQ Normal causa Dano Elemental, dura 5s; quando libera Supremo, dura 10s; além disso, quando a Energia Elemental do personagem é inferior a 100%, irá obter 1 acúmulo do Selo Quebra-nuvens, que desaparecerá quando a Energia Elemental do personagem estiver cheia. O tempo de cada acúmulo de Selo Quebra-nuvens é contado individualmente."
+      ]
     },
     {
       "key": "mitternachts-waltz",
       "name": "Valsa do Crepúsculo",
       "description": "Um arco que possui cores como as da noite de ilusões e de pecados.",
-      "refinement": "Dentro de 5s após acertar um inimigo com o Ataque Normal, o Dano causado pela Habilidade Elemental aumenta em {0}%. Dentro de 5s após acertar um inimigo com a Habilidade Elemental, o Dano do Ataque Normal aumenta {1}%."
+      "refinements": [
+        "Dentro de 5s após acertar um inimigo com o Ataque Normal, o Dano causado pela Habilidade Elemental aumenta em {color}20{/color}%. Dentro de 5s após acertar um inimigo com a Habilidade Elemental, o Dano do Ataque Normal aumenta {color}20{/color}%.",
+        "Dentro de 5s após acertar um inimigo com o Ataque Normal, o Dano causado pela Habilidade Elemental aumenta em {color}25{/color}%. Dentro de 5s após acertar um inimigo com a Habilidade Elemental, o Dano do Ataque Normal aumenta {color}25{/color}%.",
+        "Dentro de 5s após acertar um inimigo com o Ataque Normal, o Dano causado pela Habilidade Elemental aumenta em {color}30{/color}%. Dentro de 5s após acertar um inimigo com a Habilidade Elemental, o Dano do Ataque Normal aumenta {color}30{/color}%.",
+        "Dentro de 5s após acertar um inimigo com o Ataque Normal, o Dano causado pela Habilidade Elemental aumenta em {color}35{/color}%. Dentro de 5s após acertar um inimigo com a Habilidade Elemental, o Dano do Ataque Normal aumenta {color}35{/color}%.",
+        "Dentro de 5s após acertar um inimigo com o Ataque Normal, o Dano causado pela Habilidade Elemental aumenta em {color}40{/color}%. Dentro de 5s após acertar um inimigo com a Habilidade Elemental, o Dano do Ataque Normal aumenta {color}40{/color}%."
+      ]
     },
     {
       "key": "old-mercs-pal",
       "name": "Espada do Mercenário",
       "description": "Uma grande espada testada em batalhas, passou por muitos momentos árduos.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "otherworldly-story",
       "name": "Histórias de Outros Mundos",
       "description": "Um romance de fantasia barato sem valor referencial. Os seus poderes, obviamente, também servem apenas na sua imaginação.",
-      "refinement": "Coletar um Orbe ou Partícula Elemental restaura {0}% da Vida."
+      "refinements": [
+        "Coletar um Orbe ou Partícula Elemental restaura {color}1{/color}% da Vida.",
+        "Coletar um Orbe ou Partícula Elemental restaura {color}1.25{/color}% da Vida.",
+        "Coletar um Orbe ou Partícula Elemental restaura {color}1.5{/color}% da Vida.",
+        "Coletar um Orbe ou Partícula Elemental restaura {color}1.75{/color}% da Vida.",
+        "Coletar um Orbe ou Partícula Elemental restaura {color}2{/color}% da Vida."
+      ]
     },
     {
       "key": "pocket-grimoire",
       "name": "Grimório de Bolso",
       "description": "Um caderno cuidadosamente compilado com os elementos essenciais necessários para passar em um exame de mágica.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "polar-star",
       "name": "Estrela Invernal",
       "description": "Um arco imaculado que é tão afiado quanto as geleiras do extremo norte.",
-      "refinement": "Aumenta o Dano causado por Habilidade Elemental e Supremo em {0}%; Depois que o Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo acerta o inimigo, gera 1 efeito \"Estrela Polar da Noite Branca\" por 12s. Quando tiver 1/2/3/4 acúmulos de \"Estrela Polar da Noite Branca\", o ATQ é aumentado em {1}%. Os efeitos de \"Estrela Polar da Noite Branca\" gerados por Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo são individuais."
+      "refinements": [
+        "Aumenta o Dano causado por Habilidade Elemental e Supremo em {color}12{/color}%; Depois que o Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo acerta o inimigo, gera 1 efeito \"Estrela Polar da Noite Branca\" por 12s. Quando tiver 1/2/3/4 acúmulos de \"Estrela Polar da Noite Branca\", o ATQ é aumentado em {color}10/20/30/48{/color}%. Os efeitos de \"Estrela Polar da Noite Branca\" gerados por Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo são individuais.",
+        "Aumenta o Dano causado por Habilidade Elemental e Supremo em {color}15{/color}%; Depois que o Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo acerta o inimigo, gera 1 efeito \"Estrela Polar da Noite Branca\" por 12s. Quando tiver 1/2/3/4 acúmulos de \"Estrela Polar da Noite Branca\", o ATQ é aumentado em {color}12.5/25/37.5/60{/color}%. Os efeitos de \"Estrela Polar da Noite Branca\" gerados por Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo são individuais.",
+        "Aumenta o Dano causado pela Habilidade Elemental e Supremo em {color}18{/color}%; Depois que o Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo acerta o inimigo, gera 1 efeito \"Estrela Polar da Noite Branca\" que dura 12s. Quando tiver 1/2/3/4 acúmulos de \"Estrela Polar da Noite Branca\", o ATQ é aumentado em {color}15/30/45/72{/color}%. Os efeitos de \"Estrela Polar da Noite Branca\" gerados por Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo são individuais.",
+        "Aumenta o Dano causado por Habilidade Elemental e Supremo em {color}21{/color}%; Depois que o Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo acerta o inimigo, gera 1 efeito \"Estrela Polar da Noite Branca\" por 12s. Quando tiver 1/2/3/4 acúmulos de \"Estrela Polar da Noite Branca\", o ATQ é aumentado em {color}17.5/35/52.5/84{/color}%. Os efeitos de \"Estrela Polar da Noite Branca\" gerados por Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo são individuais.",
+        "Aumenta o Dano causado por Habilidade Elemental e Supremo em {color}24{/color}%; Depois que o Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo acerta o inimigo, gera 1 efeito \"Estrela Polar da Noite Branca\" por 12s. Quando tiver 1/2/3/4 acúmulos de \"Estrela Polar da Noite Branca\", o ATQ é aumentado em {color}20/40/60/96{/color}%. Os efeitos de \"Estrela Polar da Noite Branca\" gerados por Ataque Normal, Ataque Carregado, Habilidade Elemental ou Supremo são individuais."
+      ]
     },
     {
       "key": "predator",
       "name": "Predador",
       "description": "Um arco com um design único. Isto não deve pertencer a este mundo.",
-      "refinement": "Efetivo apenas para jogadores da seguinte plataforma:\r\n\"PlayStation Network\"\r\nCausar Dano cryo aos oponentes aumenta o Dano do Ataque Normal e Carregado do personagem em 10% por 6s. Este efeito pode ter no máximo 2 acúmulos. Adicionalmente, quando Aloy equipa o Predador, o ATQ é aumentado em 66."
+      "refinements": [
+        "Efetivo apenas para jogadores da seguinte plataforma:\r\n\"PlayStation Network\"\r\nCausar Dano cryo aos oponentes aumenta o Dano do Ataque Normal e Carregado do personagem em 10% por 6s. Este efeito pode ter no máximo 2 acúmulos. Adicionalmente, quando Aloy equipa o Predador, o ATQ é aumentado em 66."
+      ]
     },
     {
       "key": "primordial-jade-cutter",
       "name": "Cortador de Jade Primordial",
       "description": "Uma espada para cerimônias feita com essência de jade puro esculpido delicadamente. O ar que produz quando balança emite um som parecido a um suspiro.",
-      "refinement": "Aumenta a Vida em {0}%. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de {1}% com base na Vida Máxima."
+      "refinements": [
+        "Aumenta a Vida em {color}20{/color}%. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de {color}1.2{/color}% com base na Vida Máxima.",
+        "Aumenta a Vida em {color}25{/color}%. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de {color}1.5{/color}% com base na Vida Máxima.",
+        "Aumenta a Vida em {color}30{/color}%. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de {color}1.8{/color}% com base na Vida Máxima.",
+        "Aumenta a Vida em {color}35{/color}%. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de {color}2.1{/color}% com base na Vida Máxima.",
+        "Aumenta a Vida em {color}40{/color}%. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de {color}2.4{/color}% com base na Vida Máxima."
+      ]
     },
     {
       "key": "primordial-jade-winged-spear",
       "name": "Lança de Jade Primitiva",
       "description": "Uma lança pesada e afiada feita de jade. Usada para derrotar monstros marinhos poderosos e pré-históricos.",
-      "refinement": "Ao acertar, aumenta o Dano em {0}% por 6s. Pode acumular até 7 vezes. Pode ocorrer uma vez a cada 0.3s. O acúmulo máximo aumenta o Dano em {1}%."
+      "refinements": [
+        "Ao acertar, aumenta o Dano em {color}3.2{/color}% por 6s. Pode acumular até 7 vezes. Pode ocorrer uma vez a cada 0.3s. O acúmulo máximo aumenta o Dano em {color}12{/color}%.",
+        "Ao acertar, aumenta o Dano em {color}3.9{/color}% por 6s. Pode acumular até 7 vezes. Pode ocorrer uma vez a cada 0.3s. O acúmulo máximo aumenta o Dano em {color}15{/color}%.",
+        "Ao acertar, aumenta o Dano em {color}4.6{/color}% por 6s. Pode acumular até 7 vezes. Pode ocorrer uma vez a cada 0.3s. O acúmulo máximo aumenta o Dano em {color}18{/color}%.",
+        "Ao acertar, aumenta o Dano em {color}5.3{/color}% por 6s. Pode acumular até 7 vezes. Pode ocorrer uma vez a cada 0.3s. O acúmulo máximo aumenta o Dano em {color}21{/color}%.",
+        "Ao acertar, aumenta o Dano em {color}6{/color}% por 6s. Pode acumular até 7 vezes. Pode ocorrer uma vez a cada 0.3s. O acúmulo máximo aumenta o Dano em {color}24{/color}%."
+      ]
     },
     {
       "key": "prototype-amber",
       "name": "Protótipo Âmbar",
       "description": "Um catalisador dourado, guardado secretamente na Forja do Penhasco Obscuro. Parece brilhar com a própria luz do céu.",
-      "refinement": "Ao usar o Supremo, regenera {0} de Energia a cada 2s por 6s. Todos os membros da Equipe regenerarão {1}% de Vida a cada 2s."
+      "refinements": [
+        "Ao usar o Supremo, regenera {color}4{/color} de Energia a cada 2s por 6s. Todos os membros da Equipe regenerarão {color}4{/color}% de Vida a cada 2s.",
+        "Ao usar o Supremo, regenera {color}4.5{/color} de Energia a cada 2s por 6s. Todos os membros da Equipe regenerarão {color}4.5{/color}% de Vida a cada 2s.",
+        "Ao usar o Supremo, regenera {color}5{/color} de Energia a cada 2s por 6s. Todos os membros da Equipe regenerarão {color}5{/color}% de Vida a cada 2s.",
+        "Ao usar o Supremo, regenera {color}5.5{/color} de Energia a cada 2s por 6s. Todos os membros da Equipe regenerarão {color}5.5{/color}% de Vida a cada 2s.",
+        "Ao usar o Supremo, regenera {color}6{/color} de Energia a cada 2s por 6s. Todos os membros da Equipe regenerarão {color}6{/color}% de Vida a cada 2s."
+      ]
     },
     {
       "key": "prototype-archaic",
       "name": "Protótipo Arcaico",
       "description": "Um espadão antigo descoberto no Penhasco Obscuro. Ao brandi-lo, dá a sensação de como se fosse possível cortar o espaço.",
-      "refinement": "Ao acertar um Ataque Normal ou um Ataque Carregado, possui 50% de chance de causar {0}% de Dano de ATQ adicional em uma área pequena. Este efeito pode ser ativado uma vez a cada 15s."
+      "refinements": [
+        "Ao acertar um Ataque Normal ou um Ataque Carregado, possui 50% de chance de causar {color}240{/color}% de Dano de ATQ adicional em uma área pequena. Este efeito pode ser ativado uma vez a cada 15s.",
+        "Ao acertar um Ataque Normal ou um Ataque Carregado, possui 50% de chance de causar {color}300{/color}% de Dano de ATQ adicional em uma área pequena. Este efeito pode ser ativado uma vez a cada 15s.",
+        "Ao acertar um Ataque Normal ou um Ataque Carregado, possui 50% de chance de causar {color}360{/color}% de Dano de ATQ adicional em uma área pequena. Este efeito pode ser ativado uma vez a cada 15s.",
+        "Ao acertar um Ataque Normal ou um Ataque Carregado, possui 50% de chance de causar {color}420{/color}% de Dano de ATQ adicional em uma área pequena. Este efeito pode ser ativado uma vez a cada 15s.",
+        "Ao acertar um Ataque Normal ou um Ataque Carregado, possui 50% de chance de causar {color}480{/color}% de Dano de ATQ adicional em uma área pequena. Este efeito pode ser ativado uma vez a cada 15s."
+      ]
     },
     {
       "key": "prototype-crescent",
       "name": "Protótipo",
       "description": "Um arco de protótipo descoberto na Forja do Penhasco Obscuro. A flecha disparada deste arco brilha como um raio de luar.",
-      "refinement": "Os ataques de Ataques Carregados em pontos fracos aumentam a Veloc. Mov. em 10% e ATQ em {0}% por 10s."
+      "refinements": [
+        "Os ataques de Ataques Carregados em pontos fracos aumentam a Veloc. Mov. em 10% e ATQ em {color}36{/color}% por 10s.",
+        "Os ataques de Ataques Carregados em pontos fracos aumentam a Veloc. Mov. em 10% e ATQ em {color}45{/color}% por 10s.",
+        "Os ataques de Ataques Carregados em pontos fracos aumentam a Veloc. Mov. em 10% e ATQ em {color}54{/color}% por 10s.",
+        "Os ataques de Ataques Carregados em pontos fracos aumentam a Veloc. Mov. em 10% e ATQ em {color}63{/color}% por 10s.",
+        "Os ataques de Ataques Carregados em pontos fracos aumentam a Veloc. Mov. em 10% e ATQ em {color}72{/color}% por 10s."
+      ]
     },
     {
       "key": "prototype-rancour",
       "name": "Protótipo Rancor",
       "description": "Uma antiga espada longa descoberta na Forja do Penhasco Obscuro que corta pedras como uma faca quente na manteiga.",
-      "refinement": "Ao acertar um Ataque Normal ou Ataque Carregado, o ATQ e a DEF aumentam {0}%, com duração de 6s, acumulando até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s."
+      "refinements": [
+        "Ao acertar um Ataque Normal ou Ataque Carregado, o ATQ e a DEF aumentam {color}4{/color}%, com duração de 6s, acumulando até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s.",
+        "Ao acertar um Ataque Normal ou Ataque Carregado, o ATQ e a DEF aumentam {color}5{/color}%, com duração de 6s, acumulando até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s.",
+        "Ao acertar um Ataque Normal ou Ataque Carregado, o ATQ e a DEF aumentam {color}6{/color}%, com duração de 6s, acumulando até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s.",
+        "Ao acertar um Ataque Normal ou Ataque Carregado, o ATQ e a DEF aumentam {color}7{/color}%, com duração de 6s, acumulando até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s.",
+        "Ao acertar um Ataque Normal ou Ataque Carregado, o ATQ e a DEF aumentam {color}8{/color}%, com duração de 6s, acumulando até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.3s."
+      ]
     },
     {
       "key": "prototype-starglitter",
       "name": "Protótipo Estelar",
       "description": "Um rancor descoberto na Forja do Penhasco Obscuro. Os vislumbres ao longo da borda afiada são como estrelas na noite.",
-      "refinement": "Após usar uma Habilidade Elemental, aumenta o Dano do Ataque Normal e Ataque Carregado em {0}% por 12s, podendo acumular até 2 vezes."
+      "refinements": [
+        "Após usar uma Habilidade Elemental, aumenta o Dano do Ataque Normal e Ataque Carregado em {color}8{/color}% por 12s, podendo acumular até 2 vezes.",
+        "Após usar uma Habilidade Elemental, aumenta o Dano do Ataque Normal e Ataque Carregado em {color}10{/color}% por 12s, podendo acumular até 2 vezes.",
+        "Após usar uma Habilidade Elemental, aumenta o Dano do Ataque Normal e Ataque Carregado em {color}12{/color}% por 12s, podendo acumular até 2 vezes.",
+        "Após usar uma Habilidade Elemental, aumenta o Dano do Ataque Normal e Ataque Carregado em {color}14{/color}% por 12s, podendo acumular até 2 vezes.",
+        "Após usar uma Habilidade Elemental, aumenta o Dano do Ataque Normal e Ataque Carregado em {color}16{/color}% por 12s, podendo acumular até 2 vezes."
+      ]
     },
     {
       "key": "rainslasher",
       "name": "Segadeira da Chuva",
       "description": "Uma espada grande fluorescente sem ponta afiada que esmaga os inimigos com força brutal.",
-      "refinement": "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em {0}%."
+      "refinements": [
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em {color}20{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em {color}24{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em {color}28{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em {color}32{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em {color}36{/color}%."
+      ]
     },
     {
       "key": "raven-bow",
       "name": "Arco de Corvo",
       "description": "Os corvos são conhecidos como mensageiros da morte. O arco é decorado com penas de corvo que prenunciam a morte iminente de qualquer alvo.",
-      "refinement": "Aumenta o Dano contra inimigos afetados por Hydro ou Pyro em {0}%."
+      "refinements": [
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Pyro em {color}12{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Pyro em {color}15{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Pyro em {color}18{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Pyro em {color}21{/color}%.",
+        "Aumenta o Dano contra inimigos afetados por Hydro ou Pyro em {color}24{/color}%."
+      ]
     },
     {
       "key": "recurve-bow",
       "name": "Arco Recurvado",
       "description": "Dizem que é possível caçar águias em pleno voo com este arco, mas, na verdade, depende muito das habilidades do arqueiro também.",
-      "refinement": "Derrotar um oponente recupera {0}% da Vida."
+      "refinements": [
+        "Derrotar um oponente recupera {color}8{/color}% da Vida.",
+        "Derrotar um oponente recupera {color}10{/color}% da Vida.",
+        "Derrotar um oponente recupera {color}12{/color}% da Vida.",
+        "Derrotar um oponente recupera {color}14{/color}% da Vida.",
+        "Derrotar um oponente recupera {color}16{/color}% da Vida."
+      ]
     },
     {
       "key": "royal-bow",
       "name": "Arco Real",
       "description": "Um velho arco real que pertencia aos antigos governantes de Mondstadt. Inúmeras gerações depois, a corda do arco ainda está firme e ainda pode disparar flechas com grande força.",
-      "refinement": "Ao atingir um oponente, aumenta a Taxa Crítica em {0}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos."
+      "refinements": [
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}8{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}10{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}12{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}14{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}16{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos."
+      ]
     },
     {
       "key": "royal-greatsword",
       "name": "Espadão Real",
       "description": "Uma velha espada grande que pertencia aos antigos governantes de Mondstadt. É fabricado com materiais da melhor qualidade e resistiu a prova do tempo. Uma arma para ser usada apenas pela realeza.",
-      "refinement": "Ao atingir um oponente, aumenta a Taxa Crítica em {0}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos."
+      "refinements": [
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}8{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}10{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}12{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}14{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}16{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos."
+      ]
     },
     {
       "key": "royal-grimoire",
       "name": "Grimório Real",
       "description": "Um livro que pertenceu a um feiticeiro da realeza de Mondstadt. Guarda feitiços e relatos históricos verdadeiros e extensos.",
-      "refinement": "Ao atingir um oponente, aumenta a Taxa Crítica em {0}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos."
+      "refinements": [
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}8{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}10{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}12{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}14{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}16{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos."
+      ]
     },
     {
       "key": "royal-longsword",
       "name": "Espada Longa Real",
       "description": "Uma velha espada longa que pertencia aos antigos governantes de Mondstadt. Requintadamente trabalhada, as esculturas e enfeites testemunham a estatura de seu dono.",
-      "refinement": "Ao atingir um oponente, aumenta a Taxa Crítica em {0}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos."
+      "refinements": [
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}8{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}10{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}12{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}14{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}16{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos."
+      ]
     },
     {
       "key": "royal-spear",
       "name": "Lança de Caça Real",
       "description": "Esta lança outrora valorizada por um membro da antiga nobreza que governou Mondstadt há muito tempo. Embora nunca tenha visto a luz do dia, ela ainda é incomparavelmente afiada.",
-      "refinement": "Ao atingir um oponente, aumenta a Taxa Crítica em {0}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos."
+      "refinements": [
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}8{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}10{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}12{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}14{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+        "Ao atingir um oponente, aumenta a Taxa Crítica em {color}16{/color}%, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos."
+      ]
     },
     {
       "key": "rust",
       "name": "Arco Enferrujado",
       "description": "Um arco de ferro completamente enferrujado. Uma pessoa comum não teria forças para sequer levantá-lo, muito menos dispará-lo.",
-      "refinement": "Aumenta o Dano do Ataque Normal em {0}% mas diminui o Dano do Ataque Carregado em 10%."
+      "refinements": [
+        "Aumenta o Dano do Ataque Normal em {color}40{/color}% mas diminui o Dano do Ataque Carregado em 10%.",
+        "Aumenta o Dano do Ataque Normal em {color}50{/color}% mas diminui o Dano do Ataque Carregado em 10%.",
+        "Aumenta o Dano do Ataque Normal em {color}60{/color}% mas diminui o Dano do Ataque Carregado em 10%.",
+        "Aumenta o Dano do Ataque Normal em {color}70{/color}% mas diminui o Dano do Ataque Carregado em 10%.",
+        "Aumenta o Dano do Ataque Normal em {color}80{/color}% mas diminui o Dano do Ataque Carregado em 10%."
+      ]
     },
     {
       "key": "sacrificial-bow",
       "name": "Arco do Sacrifício",
       "description": "Um arco de caça decorativo que foi petrificada pelo tempo. Os acessórios inseridos ainda estão visíveis. Garante um grande poder ao seu portador.",
-      "refinement": "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {0}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {1} segundos."
+      "refinements": [
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}40{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}30{/color} segundos.",
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}50{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}26{/color} segundos.",
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}60{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}22{/color} segundos.",
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}70{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}19{/color} segundos.",
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}80{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}16{/color} segundos."
+      ]
     },
     {
       "key": "sacrificial-fragments",
       "name": "Memórias de Sacrifício",
       "description": "Um guia desgastado, cujo texto não é mais legível. Um item amaldiçoado erodido pelos ventos do tempo.",
-      "refinement": "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {0}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {1} segundos."
+      "refinements": [
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}40{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}30{/color} segundos.",
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}50{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}26{/color} segundos.",
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}60{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}22{/color} segundos.",
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}70{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}19{/color} segundos.",
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}80{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}16{/color} segundos."
+      ]
     },
     {
       "key": "sacrificial-greatsword",
       "name": "Espadão do Sacrifício",
       "description": "Um espadão decorativo que foi petrificado com o tempo. Ainda é possível ver os seus adereços. Concede ao portador o poder de suportar os ventos do tempo.",
-      "refinement": "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {0}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {1} segundos."
+      "refinements": [
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}40{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}30{/color} segundos.",
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}50{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}26{/color} segundos.",
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}60{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}22{/color} segundos.",
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}70{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}19{/color} segundos.",
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}80{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}16{/color} segundos."
+      ]
     },
     {
       "key": "sacrificial-sword",
       "name": "Espada do Sacrifício",
       "description": "Uma espada decorativa que foi petrificada pelo tempo. Os acessórios inseridos ainda estão visíveis. Garante um grande poder ao seu portador.",
-      "refinement": "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {0}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {1} segundos."
+      "refinements": [
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}40{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}30{/color} segundos.",
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}50{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}26{/color} segundos.",
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}60{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}22{/color} segundos.",
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}70{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}19{/color} segundos.",
+        "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {color}80{/color}% de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {color}16{/color} segundos."
+      ]
     },
     {
       "key": "seasoned-hunters-bow",
       "name": "Arco do Caçador Experiente",
       "description": "Um arco antigo, mas bem conservado. Pode ser considerado a extensão do braço de um arqueiro quando é utilizado.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "serpent-spine",
       "name": "Espinha Dorsal da Serpente",
       "description": "Uma arma rara cuja origem são os oceanos antigos. Ao brandi-la, é possível ouvir as ondas do mar.",
-      "refinement": "Quando o jogador está em combate, a cada 4s aumenta o dano causado em {0}% e {1}% do Dano recebido. Este efeito pode ser acumulado até 5 vezes, não sendo redefinido após o personagem sair de campo, mas reduzirá 1 camada do efeito quando o personagem receber Dano."
+      "refinements": [
+        "Quando o jogador está em combate, a cada 4s aumenta o dano causado em {color}6{/color}% e {color}3{/color}% do Dano recebido. Este efeito pode ser acumulado até 5 vezes, não sendo redefinido após o personagem sair de campo, mas reduzirá 1 camada do efeito quando o personagem receber Dano.",
+        "Quando o jogador está em combate, a cada 4s aumenta o dano causado em {color}7{/color}% e {color}2.7{/color}% do Dano recebido. Este efeito pode ser acumulado até 5 vezes, não sendo redefinido após o personagem sair de campo, mas reduzirá 1 camada do efeito quando o personagem receber Dano.",
+        "Quando o jogador está em combate, a cada 4s aumenta o dano causado em {color}8{/color}% e {color}2.4{/color}% do Dano recebido. Este efeito pode ser acumulado até 5 vezes, não sendo redefinido após o personagem sair de campo, mas reduzirá 1 camada do efeito quando o personagem receber Dano.",
+        "Quando o jogador está em combate, a cada 4s aumenta o dano causado em {color}9{/color}% e {color}2.2{/color}% do Dano recebido. Este efeito pode ser acumulado até 5 vezes, não sendo redefinido após o personagem sair de campo, mas reduzirá 1 camada do efeito quando o personagem receber Dano.",
+        "Quando o jogador está em combate, a cada 4s aumenta o dano causado em {color}10{/color}% e {color}2{/color}% do Dano recebido. Este efeito pode ser acumulado até 5 vezes, não sendo redefinido após o personagem sair de campo, mas reduzirá 1 camada do efeito quando o personagem receber Dano."
+      ]
     },
     {
       "key": "sharpshooters-oath",
       "name": "Juramento de Sagitário",
       "description": "Este poderoso arco pertencia a um grande arqueiro. Contudo, emana um aroma bastante forte, o tornando inadequado para caças.",
-      "refinement": "Aumenta o Dano contra pontos fracos em {0}%."
+      "refinements": [
+        "Aumenta o Dano contra pontos fracos em {color}24{/color}%.",
+        "Aumenta o Dano contra pontos fracos em {color}30{/color}%.",
+        "Aumenta o Dano contra pontos fracos em {color}36{/color}%.",
+        "Aumenta o Dano contra pontos fracos em {color}42{/color}%.",
+        "Aumenta o Dano contra pontos fracos em {color}48{/color}%."
+      ]
     },
     {
       "key": "silver-sword",
       "name": "Espada de Prata",
       "description": "Uma espada para afastar os demônios. Todos sabem que ela é feita de liga de prata e não de prata pura.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "skyrider-greatsword",
       "name": "Espadão do Cavaleiro do Céu",
       "description": "Um espadão de aço confiável. Uma certa pessoa tentou usá-lo como espada voadora... pela segunda vez.",
-      "refinement": "Ao acertar um Ataque Normal ou Carregado, aumenta o ATQ e DEF em {0}% por 6s, podendo ser acumulado até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.5s."
+      "refinements": [
+        "Ao acertar um Ataque Normal ou Carregado, aumenta o ATQ e DEF em {color}6{/color}% por 6s, podendo ser acumulado até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.5s.",
+        "Ao acertar um Ataque Normal ou Carregado, aumenta o ATQ e DEF em {color}7{/color}% por 6s, podendo ser acumulado até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.5s.",
+        "Ao acertar um Ataque Normal ou Carregado, aumenta o ATQ e DEF em {color}8{/color}% por 6s, podendo ser acumulado até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.5s.",
+        "Ao acertar um Ataque Normal ou Carregado, aumenta o ATQ e DEF em {color}9{/color}% por 6s, podendo ser acumulado até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.5s.",
+        "Ao acertar um Ataque Normal ou Carregado, aumenta o ATQ e DEF em {color}10{/color}% por 6s, podendo ser acumulado até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.5s."
+      ]
     },
     {
       "key": "skyrider-sword",
       "name": "Espada do Cavaleiro do Céu",
       "description": "Uma espada de aço confiável. Uma certa pessoa tentou usá-la como espada voadora...",
-      "refinement": "Ao usar o Supremo, concede um aumento de {0}% no ATQ e Veloc. Mov. por 15s."
+      "refinements": [
+        "Ao usar o Supremo, concede um aumento de {color}12{/color}% no ATQ e Veloc. Mov. por 15s.",
+        "Ao usar o Supremo, concede um aumento de {color}15{/color}% no ATQ e Veloc. Mov. por 15s.",
+        "Ao usar o Supremo, concede um aumento de {color}18{/color}% no ATQ e Veloc. Mov. por 15s.",
+        "Ao usar o Supremo, concede um aumento de {color}21{/color}% no ATQ e Veloc. Mov. por 15s.",
+        "Ao usar o Supremo, concede um aumento de {color}24{/color}% no ATQ e Veloc. Mov. por 15s."
+      ]
     },
     {
       "key": "skyward-atlas",
       "name": "Atlas Celestial",
       "description": "Um atlas das nuvens que simboliza Dvalin e o Arconte Anemo, seu antigo mestre. Detalha os ventos e as nuvens das regiões do norte e contém o poder dos céus e dos ventos.",
-      "refinement": "Aumenta o bônus de Dano Elemental em {0}%. O Ataque Normal possui 50% de chance de obter o favor das nuvens, que busca ativamente por oponentes ao redor para atacar por 15s, causando {1}% de Dano de Ataque. Pode ser ativada uma vez a cada 30s."
+      "refinements": [
+        "Aumenta o bônus de Dano Elemental em {color}12{/color}%. O Ataque Normal possui 50% de chance de obter o favor das nuvens, que busca ativamente por oponentes ao redor para atacar por 15s, causando {color}160{/color}% de Dano de Ataque. Pode ser ativada uma vez a cada 30s.",
+        "Aumenta o bônus de Dano Elemental em {color}15{/color}%. O Ataque Normal possui 50% de chance de obter o favor das nuvens, que busca ativamente por oponentes ao redor para atacar por 15s, causando {color}200{/color}% de Dano de Ataque. Pode ser ativada uma vez a cada 30s.",
+        "Aumenta o bônus de Dano Elemental em {color}18{/color}%. O Ataque Normal possui 50% de chance de obter o favor das nuvens, que busca ativamente por oponentes ao redor para atacar por 15s, causando {color}240{/color}% de Dano de Ataque. Pode ser ativada uma vez a cada 30s.",
+        "Aumenta o bônus de Dano Elemental em {color}21{/color}%. O Ataque Normal possui 50% de chance de obter o favor das nuvens, que busca ativamente por oponentes ao redor para atacar por 15s, causando {color}280{/color}% de Dano de Ataque. Pode ser ativada uma vez a cada 30s.",
+        "Aumenta o Bônus do Dano Elemental em {color}24{/color}%. O Ataque normal possui 50% de chance de ganhar a graça das nuvens, que buscam ativamente por inimigos ao redor para atacar por 15s, causando {color}320{/color}% de Dano de ATQ. Este efeito pode ser ativado uma vez a cada 30s."
+      ]
     },
     {
       "key": "skyward-blade",
       "name": "Espada Celestial",
       "description": "A espada de um cavaleiro que simboliza a honra restaurada de Dvalin. As bênçãos do Arconte Anemo repousam sobre a lâmina mais cheia, imbuindo a espada com os poderes do céu e do vento.",
-      "refinement": "A Taxa Crítica aumenta em {0}%. Obtém a Perfuração Celestial ao usar o Supremo: Aumenta a Veloc. Mov. em {1}%, aumenta a Velocidade de Ataque em {2}%. Quando o Ataque Normal e o Ataque Carregado atingirem, causará um Dano Adicional de {3}% por 12s."
+      "refinements": [
+        "A Taxa Crítica aumenta em {color}4{/color}%. Obtém a Perfuração Celestial ao usar o Supremo: Aumenta a Veloc. Mov. em {color}10{/color}%, aumenta a Velocidade de Ataque em {color}10{/color}%. Quando o Ataque Normal e o Ataque Carregado atingirem, causará um Dano Adicional de {color}20{/color}% por 12s.",
+        "A Taxa Crítica aumenta em {color}5{/color}%. Obtém a Perfuração Celestial ao usar o Supremo: Aumenta a Veloc. Mov. em {color}10{/color}%, aumenta a Velocidade de Ataque em {color}10{/color}%. Quando o Ataque Normal e o Ataque Carregado atingirem, causará um Dano Adicional de {color}25{/color}% por 12s.",
+        "A Taxa Crítica aumenta em {color}6{/color}%. Obtém a Perfuração Celestial ao usar o Supremo: Aumenta a Veloc. Mov. em {color}10{/color}%, aumenta a Velocidade de Ataque em {color}10{/color}%. Quando o Ataque Normal e o Ataque Carregado atingirem, causará um Dano Adicional de {color}30{/color}% por 12s.",
+        "A Taxa Crítica aumenta em {color}7{/color}%. Obtém a Perfuração Celestial ao usar o Supremo: Aumenta a Veloc. Mov. em {color}10{/color}%, aumenta a Velocidade de Ataque em {color}10{/color}%. Quando o Ataque Normal e o Ataque Carregado atingirem, causará um Dano Adicional de {color}35{/color}% por 12s.",
+        "A Taxa Crítica aumenta em {color}8{/color}%. Obtém a Perfuração Celestial ao usar o Supremo: Aumenta a Veloc. Mov. em {color}10{/color}%, aumenta a Velocidade de Ataque em {color}10{/color}%. Quando o Ataque Normal e o Ataque Carregado atingirem, causará um Dano Adicional de {color}40{/color}% por 12s."
+      ]
     },
     {
       "key": "skyward-harp",
       "name": "Harpa Celestial",
       "description": "Um grande arco que simboliza o vínculo entre Dvalin e o Arconte Anemo. O som do disparo das flechas é como música para os ouvidos do Arconte do Vento. Contém poderes dos céus e do vento.",
-      "refinement": "Aumenta o Dano Crítico em {0}%. Ao acertar, possui {1}% de chance de infligir um pequeno ataque AdE, causando 125% de Dano de ATQ Físico. Pode ser ativada uma vez a cada {2}s."
+      "refinements": [
+        "Aumenta o Dano Crítico em {color}20{/color}%. Ao acertar, possui {color}60{/color}% de chance de infligir um pequeno ataque AdE, causando 125% de Dano de ATQ Físico. Pode ser ativada uma vez a cada {color}4{/color}s.",
+        "Aumenta o Dano Crítico em {color}25{/color}%. Ao acertar, possui {color}70{/color}% de chance de infligir um pequeno ataque AdE, causando 125% de Dano de ATQ Físico. Pode ser ativada uma vez a cada {color}3.5{/color}s.",
+        "Aumenta o Dano Crítico em {color}30{/color}%. Ao acertar, possui {color}80{/color}% de chance de infligir um pequeno ataque AdE, causando 125% de Dano de ATQ Físico. Pode ser ativada uma vez a cada {color}3{/color}s.",
+        "Aumenta o Dano Crítico em {color}35{/color}%. Ao acertar, possui {color}90{/color}% de chance de infligir um pequeno ataque AdE, causando 125% de Dano de ATQ Físico. Pode ser ativada uma vez a cada {color}2.5{/color}s.",
+        "Aumenta o Dano Crítico em {color}40{/color}%. Ao acertar, possui {color}125{/color}% de chance de infligir um pequeno ataque AdE, causando 100% de Dano de ATQ Físico. Pode ser ativada uma vez a cada {color}2{/color}s."
+      ]
     },
     {
       "key": "skyward-pride",
       "name": "Orgulho Celestial",
       "description": "Um espadão que simboliza o orgulho de Dvalin nos céus. Quando é utilizada, emite um som que representa a força de Dvalin e o poder de Anemo.",
-      "refinement": "Aumenta o Dano em {0}%. Depois de usar o Supremo, Ataque Normal ou Ataque Carregado, cria uma lâmina de vácuo que causa {1}% de Dano Físico aos oponentes ao longo do caminho. Dura 20s ou 8 lâminas de vácuo."
+      "refinements": [
+        "Aumenta o Dano em {color}8{/color}%. Depois de usar o Supremo, Ataque Normal ou Ataque Carregado, cria uma lâmina de vácuo que causa {color}80{/color}% de Dano Físico aos oponentes ao longo do caminho. Dura 20s ou 8 lâminas de vácuo.",
+        "Aumenta o Dano em {color}10{/color}%. Depois de usar o Supremo, Ataque Normal ou Ataque Carregado, cria uma lâmina de vácuo que causa {color}100{/color}% de Dano Físico aos oponentes ao longo do caminho. Dura 20s ou 8 lâminas de vácuo.",
+        "Aumenta o Dano em {color}12{/color}%. Depois de usar o Supremo, Ataque Normal ou Ataque Carregado, cria uma lâmina de vácuo que causa {color}120{/color}% de Dano Físico aos oponentes ao longo do caminho. Dura 20s ou 8 lâminas de vácuo.",
+        "Aumenta o Dano em {color}14{/color}%. Depois de usar o Supremo, Ataque Normal ou Ataque Carregado, cria uma lâmina de vácuo que causa {color}140{/color}% de Dano Físico aos oponentes ao longo do caminho. Dura 20s ou 8 lâminas de vácuo.",
+        "Aumenta o Dano em {color}16{/color}%. Depois de usar o Supremo, Ataque Normal ou Ataque Carregado, cria uma lâmina de vácuo que causa {color}160{/color}% de Dano Físico aos oponentes ao longo do caminho. Dura 20s ou 8 lâminas de vácuo."
+      ]
     },
     {
       "key": "skyward-spine",
       "name": "Espinha Celestial",
       "description": "Lança que simboliza a determinação firme de Dvalin. O eixo vertical desta arma aponta para o céu, carregado a força do céu e do vento.",
-      "refinement": "A Taxa Crítica aumenta {0}%, a VEL do Ataque Normal aumenta {1}%. Além disso, o Ataque Normal e o Ataque Carregado ao atingir o inimigo possuem {2}% de chance de criar uma Lâmina de Vácuo que causa {3}% de Dano de ATQ adicional em uma área. Este efeito pode ser ativado uma vez a cada 2s."
+      "refinements": [
+        "A Taxa Crítica aumenta {color}8{/color}%, a VEL do Ataque Normal aumenta {color}12{/color}%. Além disso, o Ataque Normal e o Ataque Carregado ao atingir o inimigo possuem {color}50{/color}% de chance de criar uma Lâmina de Vácuo que causa {color}40{/color}% de Dano de ATQ adicional em uma área. Este efeito pode ser ativado uma vez a cada 2s.",
+        "A Taxa Crítica aumenta {color}10{/color}%, a VEL do Ataque Normal aumenta {color}12{/color}%. Além disso, o Ataque Normal e o Ataque Carregado ao atingir o inimigo possuem {color}50{/color}% de chance de criar uma Lâmina de Vácuo que causa {color}55{/color}% de Dano de ATQ adicional em uma área. Este efeito pode ser ativado uma vez a cada 2s.",
+        "A Taxa Crítica aumenta {color}12{/color}%, a VEL do Ataque Normal aumenta {color}12{/color}%. Além disso, o Ataque Normal e o Ataque Carregado ao atingir o inimigo possuem {color}50{/color}% de chance de criar uma Lâmina de Vácuo que causa {color}70{/color}% de Dano de ATQ adicional em uma área. Este efeito pode ser ativado uma vez a cada 2s.",
+        "A Taxa Crítica aumenta {color}14{/color}%, a VEL do Ataque Normal aumenta {color}12{/color}%. Além disso, o Ataque Normal e o Ataque Carregado ao atingir o inimigo possuem {color}50{/color}% de chance de criar uma Lâmina de Vácuo que causa {color}85{/color}% de Dano de ATQ adicional em uma área. Este efeito pode ser ativado uma vez a cada 2s.",
+        "A Taxa Crítica aumenta {color}16{/color}%, a VEL do Ataque Normal aumenta {color}12{/color}%. Além disso, o Ataque Normal e o Ataque Carregado ao atingir o inimigo possuem {color}50{/color}% de chance de criar uma Lâmina de Vácuo que causa {color}100{/color}% de Dano de ATQ adicional em uma área. Este efeito pode ser ativado uma vez a cada 2s."
+      ]
     },
     {
       "key": "slingshot",
       "name": "Estilingue",
       "description": "Na verdade, é um arco. Depois de incontáveis experimentos e melhorias, o mestre criador de estilingues acabou criando um arco.",
-      "refinement": "Se a flecha do Ataque Normal e do Ataque Carregado atingir um alvo dentro de 0.3s após o disparo, o Dano é aumentado em {0}%. Caso contrário, o Dano é diminuído em 10%."
+      "refinements": [
+        "Se a flecha do Ataque Normal e do Ataque Carregado atingir um alvo dentro de 0.3s após o disparo, o Dano é aumentado em {color}36{/color}%. Caso contrário, o Dano é diminuído em 10%.",
+        "Se a flecha do Ataque Normal e do Ataque Carregado atingir um alvo dentro de 0.3s após o disparo, o Dano é aumentado em {color}42{/color}%. Caso contrário, o Dano é diminuído em 10%.",
+        "Se a flecha do Ataque Normal e do Ataque Carregado atingir um alvo dentro de 0.3s após o disparo, o Dano é aumentado em {color}48{/color}%. Caso contrário, o Dano é diminuído em 10%.",
+        "Se a flecha do Ataque Normal e do Ataque Carregado atingir um alvo dentro de 0.3s após o disparo, o Dano é aumentado em {color}54{/color}%. Caso contrário, o Dano é diminuído em 10%.",
+        "Se a flecha do Ataque Normal e do Ataque Carregado atingir um alvo dentro de 0.3s após o disparo, o Dano é aumentado em {color}60{/color}%. Caso contrário, o Dano é diminuído em 10%."
+      ]
     },
     {
       "key": "snow-tombed-starsilver",
       "name": "Estrela de Prata Enterrada na Neve",
       "description": "Um Espadão antigo escondido dentro de uma pintura. Forjado de Prata Estrelada, possui o poder de cortar o gelo.",
-      "refinement": "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {0}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {1}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {2}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s."
+      "refinements": [
+        "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}60{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}80{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}200{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s.",
+        "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}70{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}95{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}240{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s.",
+        "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}80{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}110{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}280{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s.",
+        "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}90{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}125{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}320{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s.",
+        "Atingir um inimigo com um Ataque Normal e Ataque Carregado possui uma chance de {color}100{/color}% de formar e dropar um Núcleo de Cristal Eterno sobre eles, causando {color}140{/color}% de Dano de ATQ em uma AdE. Inimigos afetados por Cryo recebem {color}360{/color}% de Dano de ATQ. Pode ocorrer apenas uma vez a cada 10s."
+      ]
     },
     {
       "key": "solar-pearl",
       "name": "Pérola Solar",
       "description": "Abriga a luz do sol e da lua, uma pérola feita de materiais desconhecidos pulsa com uma força calorosa.",
-      "refinement": "Dentro de 6s após acertar um Ataque Normal, o Dano da Habilidade Elemental e do Supremo aumentam em {0}%. Dentro de 6s após acertar uma Habilidade Elemental e o Supremo, o Dano do Ataque Normal aumenta {1}%."
+      "refinements": [
+        "Dentro de 6s após acertar um Ataque Normal, o Dano da Habilidade Elemental e do Supremo aumentam em {color}20{/color}%. Dentro de 6s após acertar uma Habilidade Elemental e o Supremo, o Dano do Ataque Normal aumenta {color}20{/color}%.",
+        "Dentro de 6s após acertar um Ataque Normal, o Dano da Habilidade Elemental e do Supremo aumentam em {color}25{/color}%. Dentro de 6s após acertar uma Habilidade Elemental e o Supremo, o Dano do Ataque Normal aumenta {color}25{/color}%.",
+        "Dentro de 6s após acertar um Ataque Normal, o Dano da Habilidade Elemental e do Supremo aumentam em {color}30{/color}%. Dentro de 6s após acertar uma Habilidade Elemental e o Supremo, o Dano do Ataque Normal aumenta {color}30{/color}%.",
+        "Dentro de 6s após acertar um Ataque Normal, o Dano da Habilidade Elemental e do Supremo aumentam em {color}35{/color}%. Dentro de 6s após acertar uma Habilidade Elemental e o Supremo, o Dano do Ataque Normal aumenta {color}35{/color}%.",
+        "Dentro de 6s após acertar um Ataque Normal, o Dano da Habilidade Elemental e do Supremo aumentam em {color}40{/color}%. Dentro de 6s após acertar uma Habilidade Elemental e o Supremo, o Dano do Ataque Normal aumenta {color}40{/color}%."
+      ]
     },
     {
       "key": "song-of-broken-pines",
       "name": "Canção dos Pinhos",
       "description": "Uma espada grande tão leve quanto o suspiro de grama na brisa, mas tão impiedosa para os corruptos quanto um tufão.",
-      "refinement": "Uma parte do Concerto Milenar que flutua no vento. Aumenta o ATQ em {0}%. Quando Ataque Normal ou Ataque Carregado atingir os inimigos, o personagem obterá um Símbolo dos Suspiros, que pode ser ativado uma vez a cada 0.3s. Possuir 4 Símbolos dos Sussurros faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música do Levantar da Bandeira\" por 12s: A Vel. de Ataque Normal será aumentada em {1}%, entretanto o ATQ será aumentado em {2}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos dos Sussurros de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+      "refinements": [
+        "Uma parte do Concerto Milenar que flutua no vento. Aumenta o ATQ em {color}16{/color}%. Quando Ataque Normal ou Ataque Carregado atingir os inimigos, o personagem obterá um Símbolo dos Suspiros, que pode ser ativado uma vez a cada 0.3s. Possuir 4 Símbolos dos Sussurros faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música do Levantar da Bandeira\" por 12s: A Vel. de Ataque Normal será aumentada em {color}12{/color}%, entretanto o ATQ será aumentado em {color}20{/color}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos dos Sussurros de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados.",
+        "Uma parte do Concerto Milenar que flutua no vento. Aumenta o ATQ em {color}20{/color}%. Quando Ataque Normal ou Ataque Carregado atingir os inimigos, o personagem obterá um Símbolo dos Suspiros, que pode ser ativado uma vez a cada 0.3s. Possuir 4 Símbolos dos Sussurros faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música do Levantar da Bandeira\" por 12s: A Vel. de Ataque Normal será aumentada em {color}15{/color}%, entretanto o ATQ será aumentado em {color}25{/color}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos dos Sussurros de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados.",
+        "Uma parte do Concerto Milenar que flutua no vento. Aumenta o ATQ em {color}24{/color}%. Quando Ataque Normal ou Ataque Carregado atingir os inimigos, o personagem obterá um Símbolo dos Suspiros, que pode ser ativado uma vez a cada 0.3s. Possuir 4 Símbolos dos Sussurros faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música do Levantar da Bandeira\" por 12s: A Vel. de Ataque Normal será aumentada em {color}18{/color}%, entretanto o ATQ será aumentado em {color}30{/color}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos dos Sussurros de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados.",
+        "Uma parte do Concerto Milenar que flutua no vento. Aumenta o Ataque Comum em {color}28{/color}%. Quando a Ataque Normal ou Ataque Carregado atingir os inimigos, o personagem obterá um Símbolo dos Sussurros, que pode ser ativado uma vez a cada 0.3s. Possuir 4 Símbolos dos Sussurros faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música do Levantar da Bandeira\" por 12s: A Vel. de Ataque Normal será aumentada em {color}21{/color}%, entretanto o ATQ será aumentado em {color}35{/color}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos dos Sussurros de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados.",
+        "Uma parte do Concerto Milenar que flutua no vento. Aumenta o ATQ em {color}32{/color}%. Quando Ataque Normal ou Ataque Carregado atingir os inimigos, o personagem obterá um Símbolo dos Suspiros, que pode ser ativado uma vez a cada 0.3s. Possuir 4 Símbolos dos Sussurros faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música do Levantar da Bandeira\" por 12s: A Vel. de Ataque Normal será aumentada em {color}24{/color}%, entretanto o ATQ será aumentado em {color}40{/color}%. Dentro de 20s depois da ativação, não é possível obter os Símbolos dos Sussurros de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados."
+      ]
     },
     {
       "key": "staff-of-homa",
       "name": "Báculo de Homa",
       "description": "Um bastão vermelho utilizado em um antigo ritual que não se pratica há muito tempo.",
-      "refinement": "Aumenta a Vida em {0}%. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de {1}% com base na Vida Máxima. Quando a Vida do Personagem que equipar essa arma cair para abaixo de 50%, seu ATQ aumentará {2}% com base em sua Vida Máxima."
+      "refinements": [
+        "Aumenta a Vida em {color}20{/color}%. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de {color}0.8{/color}% com base na Vida Máxima. Quando a Vida do Personagem que equipar essa arma cair para abaixo de 50%, seu ATQ aumentará {color}1{/color}% com base em sua Vida Máxima.",
+        "Aumenta a Vida em {color}25{/color}%. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de {color}1{/color}% com base na Vida Máxima. Quando a Vida do Personagem que equipar essa arma cair para abaixo de 50%, seu ATQ aumentará {color}1.2{/color}% com base em sua Vida Máxima.",
+        "Aumenta a Vida em {color}30{/color}%. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de {color}1.2{/color}% com base na Vida Máxima. Quando a Vida do Personagem que equipar essa arma cair para abaixo de 50%, seu ATQ aumentará {color}1.4{/color}% com base em sua Vida Máxima.",
+        "Aumenta a Vida em {color}35{/color}%. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de {color}1.4{/color}% com base na Vida Máxima. Quando a Vida do Personagem que equipar essa arma cair para abaixo de 50%, seu ATQ aumentará {color}1.6{/color}% com base em sua Vida Máxima.",
+        "Aumenta a Vida em {color}40{/color}%. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de {color}1.6{/color}% com base na Vida Máxima. Quando a Vida do Personagem que equipar essa arma cair para abaixo de 50%, seu ATQ aumentará {color}1.8{/color}% com base em sua Vida Máxima."
+      ]
     },
     {
       "key": "summit-shaper",
       "name": "Cortador de Montanhas",
       "description": "Um símbolo de um pacto lendário, esta lâmina afiada uma vez cortou o pico de uma montanha.",
-      "refinement": "Aumenta a Força do Escudo em {0}%. Acertar ataques em inimigos aumenta o ataque em {1}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%."
+      "refinements": [
+        "Aumenta a Força do Escudo em {color}20{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}4{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+        "Aumenta a força do Escudo em {color}25{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}5{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+        "Aumenta a força do Escudo em {color}30{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}6{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+        "Aumenta a força do Escudo em {color}35{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}7{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+        "Aumenta a força do Escudo em {color}40{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}8{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%."
+      ]
     },
     {
       "key": "sword-of-descension",
       "name": "Espada do Advento",
       "description": "Uma espada de artesanato único. Não parece pertencer a este mundo.",
-      "refinement": "Efetivo apenas para jogadores da seguinte plataforma:\r\n\"PlayStation Network\"\r\nAcertar oponentes com um Ataque Normal ou Carregado concede {0}% de chance de causar {1}% do ATQ como Dano em uma pequena AdE. Este efeito pode ocorrer apenas uma vez a cada 10s. Adicionalmente, se (o / a) Viajante equipar a Espada do Advento, seu ATQ é aumentado em {2}"
+      "refinements": [
+        "Efetivo apenas para jogadores da seguinte plataforma:\r\n\"PlayStation Network\"\r\nAcertar oponentes com um Ataque Normal ou Carregado concede {color}50{/color}% de chance de causar {color}200{/color}% do ATQ como Dano em uma pequena AdE. Este efeito pode ocorrer apenas uma vez a cada 10s. Adicionalmente, se (o / a) Viajante equipar a Espada do Advento, seu ATQ é aumentado em {color}66{/color}"
+      ]
     },
     {
       "key": "the-alley-flash",
       "name": "Brilho do Beco",
       "description": "Uma espada negra, tão escura quanto a noite. Pertenceu a um ladrão que vagava pelas ruas à noite.",
-      "refinement": "Aumenta o Dano causado pelo Personagem em {0}%. Ao sofrer Dano, esse efeito de aumento de Dano não ocorrerá por 5s."
+      "refinements": [
+        "Aumenta o Dano causado pelo Personagem em {color}12{/color}%. Ao sofrer Dano, esse efeito de aumento de Dano não ocorrerá por 5s.",
+        "Aumenta o Dano causado pelo Personagem em {color}15{/color}%. Ao sofrer Dano, esse efeito de aumento de Dano não ocorrerá por 5s.",
+        "Aumenta o Dano causado pelo Personagem em {color}18{/color}%. Ao sofrer Dano, esse efeito de aumento de Dano não ocorrerá por 5s.",
+        "Aumenta o Dano causado pelo Personagem em {color}21{/color}%. Ao sofrer Dano, esse efeito de aumento de Dano não ocorrerá por 5s.",
+        "Aumenta o Dano causado pelo Personagem em {color}24{/color}%. Ao sofrer Dano, esse efeito de aumento de Dano não ocorrerá por 5s."
+      ]
     },
     {
       "key": "the-bell",
       "name": "O Sino",
       "description": "Um espadão pesado com um relógio, mas seus mecanismos internos foram danificados.",
-      "refinement": "Ao receber dano, cria um escudo que absorve o equivalente a {0}% da Vida Máxima por 10s ou até o escudo desparecer. Pode ser ativado uma vez a cada {1}s. Quando o personagem estiver com o escudo, o Dano causado aumenta {2}%."
+      "refinements": [
+        "Ao receber dano, cria um escudo que absorve o equivalente a {color}20{/color}% da Vida Máxima por 10s ou até o escudo desparecer. Pode ser ativado uma vez a cada {color}45{/color}s. Quando o personagem estiver com o escudo, o Dano causado aumenta {color}12{/color}%.",
+        "Ao receber dano, cria um escudo que absorve o equivalente a {color}23{/color}% da Vida Máxima por 10s ou até o escudo desparecer. Pode ser ativado uma vez a cada {color}45{/color}s. Quando o personagem estiver com o escudo, o Dano causado aumenta {color}15{/color}%.",
+        "Ao receber dano, cria um escudo que absorve o equivalente a {color}26{/color}% da Vida Máxima por 10s ou até o escudo desparecer. Pode ser ativado uma vez a cada {color}45{/color}s. Quando o personagem estiver com o escudo, o Dano causado aumenta {color}18{/color}%.",
+        "Ao receber dano, cria um escudo que absorve o equivalente a {color}29{/color}% da Vida Máxima por 10s ou até o escudo desparecer. Pode ser ativado uma vez a cada {color}45{/color}s. Quando o personagem estiver com o escudo, o Dano causado aumenta {color}21{/color}%.",
+        "Ao receber dano, cria um escudo que absorve o equivalente a {color}32{/color}% da Vida Máxima por 10s ou até o escudo desparecer. Pode ser ativado uma vez a cada {color}45{/color}s. Quando o personagem estiver com o escudo, o Dano causado aumenta {color}24{/color}%."
+      ]
     },
     {
       "key": "the-black-sword",
       "name": "Espada Negra",
       "description": "Uma espada longa que anseia por conflito e combate. Dizem-se que mergulha seu portador em um desejo violento de se manchar de sangue em um massacre.",
-      "refinement": "Aumenta o dano causado pelos Ataques Normais e Carregados em {0}%, regenera {1}% do ATQ como Vida quando o Ataque Normal ou Ataque Carregado atingir Crítico. Este efeito pode ser ativado uma vez a cada 5s."
+      "refinements": [
+        "Aumenta o dano causado pelos Ataques Normais e Carregados em {color}20{/color}%, regenera {color}60{/color}% do ATQ como Vida quando o Ataque Normal ou Ataque Carregado atingir Crítico. Este efeito pode ser ativado uma vez a cada 5s.",
+        "Aumenta o dano causado pelos Ataques Normais e Carregados em {color}25{/color}%, regenera {color}70{/color}% do ATQ como Vida quando o Ataque Normal ou Ataque Carregado atingir Crítico. Este efeito pode ser ativado uma vez a cada 5s.",
+        "Aumenta o dano causado pelos Ataques Normais e Carregados em {color}30{/color}%, regenera {color}80{/color}% do ATQ como Vida quando o Ataque Normal ou Ataque Carregado atingir Crítico. Este efeito pode ser ativado uma vez a cada 5s.",
+        "Aumenta o dano causado pelos Ataques Normais e Carregados em {color}35{/color}%, regenera {color}90{/color}% do ATQ como Vida quando o Ataque Normal ou Ataque Carregado atingir Crítico. Este efeito pode ser ativado uma vez a cada 5s.",
+        "Aumenta o dano causado pelos Ataques Normais e Carregados em {color}40{/color}%, regenera {color}100{/color}% do ATQ como Vida quando o Ataque Normal ou Ataque Carregado atingir Crítico. Este efeito pode ser ativado uma vez a cada 5s."
+      ]
     },
     {
       "key": "the-catch",
       "name": "\"A Fisgada\"",
       "description": "Num passado distante, esta era a amada lança de um famoso bandido de Inazuma.",
-      "refinement": "Aumenta o Dano do Supremo em {0}% e a Taca CRIT do Supremo em {1}%."
+      "refinements": [
+        "Aumenta o Dano do Supremo em {color}16{/color}% e a Taca CRIT do Supremo em {color}6{/color}%.",
+        "Aumenta o Dano do Supremo em {color}20{/color}% e a Taca CRIT do Supremo em {color}7.5{/color}%.",
+        "Aumenta o Dano do Supremo em {color}24{/color}% e a Taca CRIT do Supremo em {color}9{/color}%.",
+        "Aumenta o Dano do Supremo em {color}28{/color}% e a Taca CRIT do Supremo em {color}10.5{/color}%.",
+        "Aumenta o Dano do Supremo em {color}32{/color}% e a Taca CRIT do Supremo em {color}12{/color}%."
+      ]
     },
     {
       "key": "the-flute",
       "name": "A Flauta",
       "description": "Abaixo da poeira, há uma lâmina fina e luxuosamente decorada. Seus movimentos são suaves como o vento.",
-      "refinement": "O Ataque Normal ou Ataque Carregado concede um Acorde. Obter 5 Acordes ativa o poder da música e causa {0}% de Dano de ATQ aos inimigos ao redor. Os Acordes duram até 30s e pode-se ganhar 1 Acorde a cada 0.5s."
+      "refinements": [
+        "O Ataque Normal ou Ataque Carregado concede um Acorde. Obter 5 Acordes ativa o poder da música e causa {color}100{/color}% de Dano de ATQ aos inimigos ao redor. Os Acordes duram até 30s e pode-se ganhar 1 Acorde a cada 0.5s.",
+        "O Ataque Normal ou Ataque Carregado concede um Acorde. Obter 5 Acordes ativa o poder da música e causa {color}125{/color}% de Dano de ATQ aos inimigos ao redor. Os Acordes duram até 30s e pode-se ganhar 1 Acorde a cada 0.5s.",
+        "O Ataque Normal ou Ataque Carregado concede um Acorde. Obter 5 Acordes ativa o poder da música e causa {color}150{/color}% de Dano de ATQ aos inimigos ao redor. Os Acordes duram até 30s e pode-se ganhar 1 Acorde a cada 0.5s.",
+        "O Ataque Normal ou Ataque Carregado concede um Acorde. Obter 5 Acordes ativa o poder da música e causa {color}175{/color}% de Dano de ATQ aos inimigos ao redor. Os Acordes duram até 30s e pode-se ganhar 1 Acorde a cada 0.5s.",
+        "O Ataque Normal ou Ataque Carregado concede um Acorde. Obter 5 Acordes ativa o poder da música e causa {color}200{/color}% de Dano de ATQ aos inimigos ao redor. Os Acordes duram até 30s e pode-se ganhar 1 Acorde a cada 0.5s."
+      ]
     },
     {
       "key": "the-stringless",
       "name": "Último Acorde",
       "description": "Um arco que serviu como um instrumento extraordinário. Não é mais capaz de fazer pessoas dançarem.",
-      "refinement": "Aumenta o Dano da Habilidade Elemental e do Supremo em {0}%."
+      "refinements": [
+        "Aumenta o Dano da Habilidade Elemental e do Supremo em {color}24{/color}%.",
+        "Aumenta o Dano da Habilidade Elemental e do Supremo em {color}30{/color}%.",
+        "Aumenta o Dano da Habilidade Elemental e do Supremo em {color}36{/color}%.",
+        "Aumenta o Dano da Habilidade Elemental e do Supremo em {color}42{/color}%.",
+        "Aumenta o Dano da Habilidade Elemental e do Supremo em {color}48{/color}%."
+      ]
     },
     {
       "key": "the-unforged",
       "name": "Espada Áspera",
       "description": "Capaz de afastar tanto os espíritos malignos quanto as pessoas maléficas, este Espadão sem fio parece possuir o poder divino.",
-      "refinement": "Aumenta a Força do Escudo em {0}%. Acertar ataques em inimigos aumenta o ataque em {1}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%."
+      "refinements": [
+        "Aumenta a Força do Escudo em {color}20{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}4{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+        "Aumenta a força do Escudo em {color}25{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}5{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+        "Aumenta a força do Escudo em {color}30{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}6{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+        "Aumenta a força do Escudo em {color}35{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}7{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+        "Aumenta a força do Escudo em {color}40{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}8{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%."
+      ]
     },
     {
       "key": "the-viridescent-hunt",
       "name": "Arco Esmeralda do Caçador",
       "description": "Um arco de caça verde puro. Isso pertenceu a um certo caçador cuja casa era a floresta.",
-      "refinement": "Ao acertar um Ataque Normal ou Ataque com Mira, possui 50% de chance de gerar um Ciclone, que atrairá continuamente os inimigos ao redor, causando {0}% de Dano de ATQ a estes inimigos a cada 0.5s por 4s. Este efeito pode ser ativado uma vez a cada {1}s."
+      "refinements": [
+        "Ao acertar um Ataque Normal ou Ataque com Mira, possui 50% de chance de gerar um Ciclone, que atrairá continuamente os inimigos ao redor, causando {color}40{/color}% de Dano de ATQ a estes inimigos a cada 0.5s por 4s. Este efeito pode ser ativado uma vez a cada {color}14{/color}s.",
+        "Ao acertar um Ataque Normal ou Ataque com Mira, possui 50% de chance de gerar um Ciclone que atacará continuamente os inimigos ao redor, causando {color}50{/color}% de Dano de ATQ a esses inimigos a cada 0.5s por 4s. Este efeito pode ser ativado uma vez a cada {color}13{/color}s.",
+        "Ao acertar um Ataque Normal ou Ataque com Mira, possui 50% de chance de gerar um Ciclone que atacará continuamente os inimigos ao redor, causando {color}60{/color}% de Dano de ATQ a esses inimigos a cada 0.5s por 4s. Este efeito pode ser ativado uma vez a cada {color}12{/color}s.",
+        "Ao acertar um Ataque Normal ou Ataque com Mira, possui 50% de chance de gerar um Ciclone que atacará continuamente os inimigos ao redor, causando {color}70{/color}% de Dano de ATQ a esses inimigos a cada 0.5s por 4s. Este efeito pode ser ativado uma vez a cada {color}11{/color}s.",
+        "Ao acertar um Ataque Normal ou Ataque com Mira, possui 50% de chance de gerar um Ciclone que atacará continuamente os inimigos ao redor, causando {color}80{/color}% de Dano de ATQ a esses inimigos a cada 0.5s por 4s. Este efeito pode ser ativado uma vez a cada {color}10{/color}s."
+      ]
     },
     {
       "key": "the-widsith",
       "name": "Sinfonia dos Indolentes",
       "description": "Um caderno pesado cheio de partituras. Apesar de já estar bastante danificado, ainda há muito poder que pode ser encontrado nas palavras escritas.",
-      "refinement": "Ao entrar no campo de batalha, o personagem ganha uma música temática aleatória por 10s. Pode ser ativada uma vez a cada 30s. Recitativa: O ATQ é aumentado em {0}%; Aria: Aumenta todos os Danos Elementais em {1}%; Interlúdio: A Proficiência Elemental é aumentada em {2}"
+      "refinements": [
+        "Ao entrar no campo de batalha, o personagem ganha uma música temática aleatória por 10s. Pode ser ativada uma vez a cada 30s. Recitativa: O ATQ é aumentado em {color}60{/color}%; Aria: Aumenta todos os Danos Elementais em {color}48{/color}%; Interlúdio: A Proficiência Elemental é aumentada em {color}240{/color}",
+        "Ao entrar no campo de batalha, o personagem ganha uma música temática aleatória por 10s. Pode ser ativada uma vez a cada 30s. Recitativa: O ATQ é aumentado em {color}75{/color}%; Ária: Aumenta todos os Danos Elementais em {color}60{/color}%; Interlúdio: A Proficiência Elemental é aumentada em {color}300{/color}",
+        "Ao entrar no campo de batalha, o personagem ganha uma música temática aleatória por 10s. Pode ser ativada uma vez a cada 30s. Recitativa: O ATQ é aumentado em {color}90{/color}%; Aria: Aumenta todos os Danos Elementais em {color}72{/color}%; Interlúdio: A Proficiência Elemental é aumentada em {color}360{/color}",
+        "Ao entrar no campo de batalha, o personagem ganha uma música temática aleatória por 10s. Pode ser ativada uma vez a cada 30s. Recitativa: O ATQ é aumentado em {color}105{/color}%; Aria: Aumenta todos os Danos Elementais em {color}84{/color}%; Interlúdio: A Proficiência Elemental é aumentada em {color}420{/color}",
+        "Ao entrar no campo de batalha, o personagem ganha uma música temática aleatória por 10s. Pode ser ativada uma vez a cada 30s. Recitativa: O ATQ é aumentado em {color}120{/color}%; Aria: Aumenta todos os Danos Elementais em {color}96{/color}%; Interlúdio: A Proficiência Elemental é aumentada em {color}480{/color}"
+      ]
     },
     {
       "key": "thrilling-tales-of-dragon-slayers",
       "name": "Histórias Extraordinárias de Caçadores de Dragões",
       "description": "Uma história fictícia de um grupo de 5 heróis em uma viagem de caça de dragões. Possui péssima caligrafia e está mal estruturada, porém transmite a importância de não cometer erros.",
-      "refinement": "Ao mudar de personagem, o ATQ do novo personagem é aumentado em {0}% por 10s. Este efeito pode ser ativado uma vez a cada 20s."
+      "refinements": [
+        "Ao mudar de personagem, o ATQ do novo personagem é aumentado em {color}24{/color}% por 10s. Este efeito pode ser ativado uma vez a cada 20s.",
+        "Ao mudar de personagem, o ATQ do novo personagem é aumentado em {color}30{/color}% por 10s. Este efeito pode ser ativado uma vez a cada 20s.",
+        "Ao mudar de personagem, o ATQ do novo personagem é aumentado em {color}36{/color}% por 10s. Este efeito pode ser ativado uma vez a cada 20s.",
+        "Ao mudar de personagem, o ATQ do novo personagem é aumentado em {color}42{/color}% por 10s. Este efeito pode ser ativado uma vez a cada 20s.",
+        "Ao mudar de personagem, o ATQ do novo personagem é aumentado em {color}48{/color}% por 10s. Este efeito pode ser ativado uma vez a cada 20s."
+      ]
     },
     {
       "key": "thundering-pulse",
       "name": "Agitação Trovejante",
       "description": "Um Arco Longo que foi dado a alguém pela Shogun. Ele emite raios que nunca se apagam.",
-      "refinement": "Aumenta o Ataque em {0}%, e concede a grandeza do Selo da Trovoada. Nas cargas 1/2/3, o Selo de Trovoada aumenta o Dano do Ataque Normal em {1}%. O personagem obterá uma carga de Selo da Trovoada nos seguintes cenários: Ataque Normal que causa Dano (a carga dura 5s), lançar uma Habilidade Elemental (carga dura 10s); Energia Elemental menor que 100% (carga desaparece quando a energia está completa). A duração de cada carga é calculada independentemente uma da outra."
+      "refinements": [
+        "Aumenta o Ataque em {color}20{/color}%, e concede a grandeza do Selo da Trovoada. Nas cargas 1/2/3, o Selo de Trovoada aumenta o Dano do Ataque Normal em {color}12/24/40{/color}%. O personagem obterá uma carga de Selo da Trovoada nos seguintes cenários: Ataque Normal que causa Dano (a carga dura 5s), lançar uma Habilidade Elemental (carga dura 10s); Energia Elemental menor que 100% (carga desaparece quando a energia está completa). A duração de cada carga é calculada independentemente uma da outra.",
+        "Aumenta o Ataque em {color}25{/color}%, e concede a grandeza do Selo da Trovoada. Nas cargas 1/2/3, o Selo de Trovoada aumenta o Dano do Ataque Normal em {color}15/30/50{/color}%. O personagem obterá uma carga de Selo da Trovoada nos seguintes cenários: Ataque Normal que causa Dano (a carga dura 5s), lançar uma Habilidade Elemental (carga dura 10s); Energia Elemental menor que 100% (carga desaparece quando a energia está completa). A duração de cada carga é calculada independentemente uma da outra.",
+        "Aumenta o ATQ em {color}30{/color}% e pode também ganhar o poder do Selo da Trovoada. Selo da Trovoada: Nos acúmulos 1/2/3 do Selo da Trovoada obtém aumento de Dano causado por ATQ Normal em {color}18/36/60{/color}%. Nas situações abaixo, cada personagem obtém 1 acúmulo de Selo da Trovoada: quando o ATQ Normal causa Dano Elemental, dura 5s; quando libera a Habilidade Elemental, dura 10s; além disso, quando a Energia Elemental do personagem é inferior a 100%, irá obter 1 acúmulo do Selo da Trovoada, que desaparecerá quando a Energia Elemental do personagem estiver cheia. O tempo de cada acúmulo de Selo da Trovoada é contado individualmente.",
+        "Aumenta o Ataque em {color}35{/color}%, e concede a grandeza do Selo da Trovoada. Nas cargas 1/2/3, o Selo de Trovoada aumenta o Dano do Ataque Normal em {color}21/42/70{/color}%. O personagem obterá uma carga de Selo da Trovoada nos seguintes cenários: Ataque Normal que causa Dano (a carga dura 5s), lançar uma Habilidade Elemental (carga dura 10s); Energia Elemental menor que 100% (carga desaparece quando a energia está completa). A duração de cada carga é calculada independentemente uma da outra.",
+        "Aumenta o Ataque em {color}40{/color}%, e concede a grandeza do Selo da Trovoada. Nas cargas 1/2/3, o Selo de Trovoada aumenta o Dano do Ataque Normal em {color}24/48/80{/color}%. O personagem obterá uma carga de Selo da Trovoada nos seguintes cenários: Ataque Normal que causa Dano (a carga dura 5s), lançar uma Habilidade Elemental (carga dura 10s); Energia Elemental menor que 100% (carga desaparece quando a energia está completa). A duração de cada carga é calculada independentemente uma da outra."
+      ]
     },
     {
       "key": "travelers-handy-sword",
       "name": "Espada do Viajante",
       "description": "Uma espada de aço que esconde tesouras, lupas, entre outros itens úteis de viagem em sua bainha.",
-      "refinement": "Cada Orbe ou Partícula Elemental coletada restaura {0}% da Vida."
+      "refinements": [
+        "Cada Orbe ou Partícula Elemental coletada restaura {color}1{/color}% da Vida.",
+        "Cada Orbe ou Partícula Elemental coletada restaura {color}1.25{/color}% da Vida.",
+        "Cada Orbe ou Partícula Elemental coletada restaura {color}1.5{/color}% da Vida.",
+        "Cada Orbe ou Partícula Elemental coletada restaura {color}1.75{/color}% da Vida.",
+        "Cada Orbe ou Partícula Elemental coletada restaura {color}2{/color}% da Vida."
+      ]
     },
     {
       "key": "twin-nephrite",
       "name": "Nefrita Gêmea",
       "description": "Um pingente de jade colocado junto entre duas pedras de jade.",
-      "refinement": "Ao derrotar um inimigo, aumenta a Veloc. Mov. e o ATQ em {0}% por 15s."
+      "refinements": [
+        "Ao derrotar um inimigo, aumenta a Veloc. Mov. e o ATQ em {color}12{/color}% por 15s.",
+        "Ao derrotar um inimigo, aumenta a Veloc. Mov. e o ATQ em {color}14{/color}% por 15s.",
+        "Ao derrotar um inimigo, aumenta a Veloc. Mov. e o ATQ em {color}16{/color}% por 15s.",
+        "Ao derrotar um inimigo, aumenta a Veloc. Mov. e o ATQ em {color}18{/color}% por 15s.",
+        "Ao derrotar um inimigo, aumenta a Veloc. Mov. e o ATQ em {color}20{/color}% por 15s."
+      ]
     },
     {
       "key": "vortex-vanquisher",
       "name": "Perfuradora Prismática",
       "description": "Esta lança afiada pode aparentemente perfurar qualquer coisa. Quando balançada, quase se pode ver a fenda que ela rasga no ar.",
-      "refinement": "Aumenta a Força do Escudo em {0}%. Acertar ataques em inimigos aumenta o ataque em {1}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%."
+      "refinements": [
+        "Aumenta a Força do Escudo em {color}20{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}4{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+        "Aumenta a força do Escudo em {color}25{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}5{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+        "Aumenta a força do Escudo em {color}30{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}6{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+        "Aumenta a força do Escudo em {color}35{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}7{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+        "Aumenta a força do Escudo em {color}40{/color}%. Acertar ataques em inimigos aumenta o ataque em {color}8{/color}% por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%."
+      ]
     },
     {
       "key": "waster-greatsword",
       "name": "Espadão do Julgamento",
       "description": "Uma chapa de ferro resistente, que pode ser boa o suficiente para separar montanhas com força de vontade suficiente.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "white-iron-greatsword",
       "name": "Espadão de Ferro Branco",
       "description": "Um espadão feito com ferro branco que aumenta o poder durante o corte. Adequado até mesmo para as pessoas com forças normais, mas seu poder pode aumentar exponencialmente com a força do seu manejador.",
-      "refinement": "Derrotar um oponente recupera {0}% da Vida."
+      "refinements": [
+        "Derrotar um oponente recupera {color}8{/color}% da Vida.",
+        "Derrotar um oponente recupera {color}10{/color}% da Vida.",
+        "Derrotar um oponente recupera {color}12{/color}% da Vida.",
+        "Derrotar um oponente recupera {color}14{/color}% da Vida.",
+        "Derrotar um oponente recupera {color}16{/color}% da Vida."
+      ]
     },
     {
       "key": "white-tassel",
       "name": "Borla Branca",
       "description": "Uma arma padrão dos soldados de Millelith. Tem uma ponta bastante afida e resistente. É uma arma confiável.",
-      "refinement": "O Dano causado pelo Ataque Normal aumenta {0}%."
+      "refinements": [
+        "O Dano causado pelo Ataque Normal aumenta {color}24{/color}%.",
+        "O Dano causado pelo Ataque Normal aumenta {color}30{/color}%.",
+        "O Dano causado pelo Ataque Normal aumenta {color}36{/color}%.",
+        "O Dano causado pelo Ataque Normal aumenta {color}42{/color}%.",
+        "O Dano causado pelo Ataque Normal aumenta {color}48{/color}%."
+      ]
     },
     {
       "key": "whiteblind",
       "name": "Sombra Branca",
       "description": "Uma espada exótica com uma lâmina que ficou sem corte. Chegou a Liyue pelas mãos de comerciantes estrangeiros. Incrivelmente poderosa nas mãos de alguém que sabe usá-la.",
-      "refinement": "Após acertar um Ataque Normal e um Ataque Carregado, o ATQ e a DEF aumentam {0}% por 6s, podendo ser acumulado até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.5s."
+      "refinements": [
+        "Após acertar um Ataque Normal e um Ataque Carregado, o ATQ e a DEF aumentam {color}6{/color}% por 6s, podendo ser acumulado até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.5s.",
+        "Após acertar um Ataque Normal e um Ataque Carregado, o ATQ e a DEF aumentam {color}7.5{/color}% por 6s, podendo ser acumulado até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.5s.",
+        "Após acertar um Ataque Normal e um Ataque Carregado, o ATQ e a DEF aumentam {color}9{/color}% por 6s, podendo ser acumulado até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.5s.",
+        "Após acertar um Ataque Normal e um Ataque Carregado, o ATQ e a DEF aumentam {color}10.5{/color}% por 6s, podendo ser acumulado até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.5s.",
+        "Após acertar um Ataque Normal e um Ataque Carregado, o ATQ e a DEF aumentam {color}12{/color}% por 6s, podendo ser acumulado até 4 vezes. Este efeito pode ser ativado uma vez a cada 0.5s."
+      ]
     },
     {
       "key": "windblume-ode",
       "name": "Ode à Brisa Florescente",
       "description": "Um arco adornado com flores desconhecidas que carrega as esperanças de uma pessoa também desconhecida.",
-      "refinement": "Ao lançar uma Habilidade Elemental, se obtém o desejo antigo da Flor do Vento, e o Ataque aumenta {0}% por 6s."
+      "refinements": [
+        "Ao lançar uma Habilidade Elemental, se obtém o desejo antigo da Flor do Vento, e o Ataque aumenta {color}16{/color}% por 6s.",
+        "Ao lançar uma Habilidade Elemental, se obtém o desejo antigo da Flor do Vento, e o Ataque aumenta {color}20{/color}% por 6s.",
+        "Ao lançar uma Habilidade Elemental, se obtém o desejo antigo da Flor do Vento, e o Ataque aumenta {color}24{/color}% por 6s.",
+        "Ao lançar uma Habilidade Elemental, se obtém o desejo antigo da Flor do Vento, e o Ataque aumenta {color}28{/color}% por 6s."
+      ]
     },
     {
       "key": "wine-and-song",
       "name": "Vinho e Música",
       "description": "Um livro de canções da época aristocrática passada, cujo compositor foi esquecido. Ele narra a história de um certo fora-da-lei heroico.",
-      "refinement": "Quando um Ataque Normal atingir um inimigo, o consumo de Stamina ao Correr ou utilizar uma habilidade que substitua Correr reduz em {0}% por 5s. Além disso, depois de Correr ou utilizar uma habilidade que substitua Correr aumenta o Ataque em {1}% durante 5s."
+      "refinements": [
+        "Quando um Ataque Normal atingir um inimigo, o consumo de Stamina ao Correr ou utilizar uma habilidade que substitua Correr reduz em {color}14{/color}% por 5s. Além disso, depois de Correr ou utilizar uma habilidade que substitua Correr aumenta o Ataque em {color}20{/color}% durante 5s.",
+        "Quando um Ataque Normal atingir um inimigo, o consumo de Stamina ao Correr ou utilizar uma habilidade que substitua Correr reduz em {color}16{/color}% por 5s. Além disso, depois de Correr ou utilizar uma habilidade que substitua Correr aumenta o Ataque em {color}25{/color}% durante 5s.",
+        "Quando um Ataque Normal atingir um inimigo, o consumo de Stamina ao Correr ou utilizar uma habilidade que substitua Correr reduz em {color}18{/color}% por 5s. Além disso, depois de Correr ou utilizar uma habilidade que substitua Correr aumenta o Ataque em {color}30{/color}% durante 5s.",
+        "Quando um Ataque Normal atingir um inimigo, o consumo de Stamina ao Correr ou utilizar uma habilidade que substitua Correr reduz em {color}20{/color}% por 5s. Além disso, depois de Correr ou utilizar uma habilidade que substitua Correr aumenta o Ataque em {color}35{/color}% durante 5s.",
+        "Quando um Ataque Normal atingir um inimigo, o consumo de Stamina ao Correr ou utilizar uma habilidade que substitua Correr reduz em {color}22{/color}% por 5s. Além disso, depois de Correr ou utilizar uma habilidade que substitua Correr aumenta o Ataque em {color}40{/color}% durante 5s."
+      ]
     },
     {
       "key": "wolfs-gravestone",
       "name": "Túmulo do Lobo",
       "description": "Uma grande espada que foi usada pelo Cavaleiro Lobo. Originalmente era apenas uma lâmina de ferro pesada que foi dado por um ferreiro da cidade. No entanto, recebeu poderes lendários por sua amizade com os lobos.",
-      "refinement": "Aumenta o ATQ em {0}%. Ao acertar o ataque em oponentes com Vida inferior a 30%, aumenta o ATQ de todos os companheiros em {1}% por 12s. Este efeito pode ser ativado uma vez a cada 30s."
+      "refinements": [
+        "Aumenta o ATQ em {color}20{/color}%. Ao acertar o ataque em oponentes com Vida inferior a 30%, aumenta o ATQ de todos os companheiros em {color}40{/color}% por 12s. Este efeito pode ser ativado uma vez a cada 30s.",
+        "Aumenta o ATQ em {color}25{/color}%. Ao acertar o ataque em oponentes com Vida inferior a 30%, aumenta o ATQ de todos os companheiros em {color}50{/color}% por 12s. Este efeito pode ser ativado uma vez a cada 30s.",
+        "Aumenta o ATQ em {color}30{/color}%. Ao acertar o ataque em oponentes com menos de 30% de sua Vida, aumenta o ATQ de todos os companheiros em {color}60{/color}% por 12s. Este efeito pode ser ativado uma vez a cada 30s.",
+        "Aumenta o ATQ em {color}35{/color}%. Ao acertar o ataque em oponentes com menos de 30% de sua Vida, aumenta o ATQ de todos os companheiros em {color}70{/color}% por 12s. Este efeito pode ser ativado uma vez a cada 30s.",
+        "Aumenta o ATQ em {color}40{/color}%. Ao acertar o ataque em oponentes com Vida inferior a 30%, aumenta o ATQ de todos os companheiros em {color}80{/color}% por 12s. Este efeito pode ser ativado uma vez a cada 30s."
+      ]
     }
   ],
   "artifacts": [

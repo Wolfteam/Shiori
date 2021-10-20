@@ -9,7 +9,7 @@ class TranslationWeaponFile with _$TranslationWeaponFile {
     required String key,
     required String name,
     required String description,
-    String? refinement,
+    required List<String> refinements,
   }) = _TranslationWeaponFile;
 
   factory TranslationWeaponFile.fromJson(Map<String, dynamic> json) => _$TranslationWeaponFileFromJson(json);
