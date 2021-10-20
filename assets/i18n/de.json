@@ -6395,739 +6395,1409 @@
       "key": "akuoumaru",
       "name": "Akuoumaru",
       "description": "Das geliebte Schwert des legendären „Akuou“. Die Klinge ist lang und majestätisch, aber überraschend einfach zu handhaben.",
-      "refinement": "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {0},12 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {1} %."
+      "refinements": [
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},12 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}40{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},15 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}50{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},18 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}60{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},21 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}70{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},24 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}80{/color} %."
+      ]
     },
     {
       "key": "alley-hunter",
       "name": "Gassenjäger",
       "description": "Ein präziser und extravaganter Langbogen, der einmal einem Vogelfreien gehört hat, der sich der Gerechtigkeit verschrieben hat und niemals gefangen wurde.",
-      "refinement": "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um {0} % und insgesamt um bis zu {1} %. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um {2} %, bis der Bonus auf 0 % gefallen ist."
+      "refinements": [
+        "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um {color}2{/color} % und insgesamt um bis zu {color}20{/color} %. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um {color}4{/color} %, bis der Bonus auf 0 % gefallen ist.",
+        "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um {color}2{/color},5 % und insgesamt um bis zu {color}25{/color} %. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um {color}5{/color} %, bis der Bonus auf 0 % gefallen ist.",
+        "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um {color}3{/color} % und insgesamt um bis zu {color}30{/color} %. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um {color}6{/color} %, bis der Bonus auf 0 % gefallen ist.",
+        "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um {color}3{/color},5 % und insgesamt um bis zu {color}35{/color} %. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um {color}7{/color} %, bis der Bonus auf 0 % gefallen ist.",
+        "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um {color}4{/color} % und insgesamt um bis zu {color}40{/color} %. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um {color}8{/color} %, bis der Bonus auf 0 % gefallen ist."
+      ]
     },
     {
       "key": "amenoma-kageuchi",
       "name": "Amenoma Kageuchi",
       "description": "Ein Schwert, das auf Bestellung von einem berühmten Samurai angefertigt wurde, der, den Legenden nach, sogar den schnellsten Tengu-Krieger mühelos niederschlagen konnte.",
-      "refinement": "Gewährt beim Auslösen einer Elementarfähigkeit 1 Samen der Nachkommenschaft, 5 s Abklingzeit. Samen der Nachkommenschaft halten 30 s, zu einem Zeitpunkt können bis zu 3 existieren. Verbraucht beim Auslösen einer Spezialfähigkeit alle vorhandenen Samen der Nachkommenschaft und stellt der Figur 2 s später {0} Punkte Elementarenergie pro verbrauchten Samen der Nachkommenschaft wieder her."
+      "refinements": [
+        "Gewährt beim Auslösen einer Elementarfähigkeit 1 Samen der Nachkommenschaft, 5 s Abklingzeit. Samen der Nachkommenschaft halten 30 s, zu einem Zeitpunkt können bis zu 3 existieren. Verbraucht beim Auslösen einer Spezialfähigkeit alle vorhandenen Samen der Nachkommenschaft und stellt der Figur 2 s später {color}6{/color} Punkte Elementarenergie pro verbrauchten Samen der Nachkommenschaft wieder her.",
+        "Gewährt beim Auslösen einer Elementarfähigkeit 1 Samen der Nachkommenschaft, 5 s Abklingzeit. Samen der Nachkommenschaft halten 30 s, zu einem Zeitpunkt können bis zu 3 existieren. Verbraucht beim Auslösen einer Spezialfähigkeit alle vorhandenen Samen der Nachkommenschaft und stellt der Figur 2 s später {color}7{/color},5 Punkte Elementarenergie pro verbrauchten Samen der Nachkommenschaft wieder her.",
+        "Gewährt beim Auslösen einer Elementarfähigkeit 1 Samen der Nachkommenschaft, 5 s Abklingzeit. Samen der Nachkommenschaft halten 30 s, zu einem Zeitpunkt können bis zu 3 existieren. Verbraucht beim Auslösen einer Spezialfähigkeit alle vorhandenen Samen der Nachkommenschaft und stellt der Figur 2 s später {color}9{/color} Punkte Elementarenergie pro verbrauchten Samen der Nachkommenschaft wieder her.",
+        "Gewährt beim Auslösen einer Elementarfähigkeit 1 Samen der Nachkommenschaft, 5 s Abklingzeit. Samen der Nachkommenschaft halten 30 s, zu einem Zeitpunkt können bis zu 3 existieren. Verbraucht beim Auslösen einer Spezialfähigkeit alle vorhandenen Samen der Nachkommenschaft und stellt der Figur 2 s später {color}10{/color},5 Punkte Elementarenergie pro verbrauchten Samen der Nachkommenschaft wieder her.",
+        "Gewährt beim Auslösen einer Elementarfähigkeit 1 Samen der Nachkommenschaft, 5 s Abklingzeit. Samen der Nachkommenschaft halten 30 s, zu einem Zeitpunkt können bis zu 3 existieren. Verbraucht beim Auslösen einer Spezialfähigkeit alle vorhandenen Samen der Nachkommenschaft und stellt der Figur 2 s später {color}12{/color} Punkte Elementarenergie pro verbrauchten Samen der Nachkommenschaft wieder her."
+      ]
     },
     {
       "key": "amos-bow",
       "name": "Amos’ Bogen",
       "description": "Ein äußerst alter Bogen, der zwar seinen Meister verloren hat, jedoch nicht seine Kraft, die stärker wird, je weiter der Träger des Bogens von dem entfernt ist, was er begehrt.",
-      "refinement": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {0} % und den Gesamtschaden von Pfeilen von Standardangriffen und heftigen Schlägen alle 0,1 s nach dem Abschießen um {1} %, 5-fach stapelbar."
+      "refinements": [
+        "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}12{/color} % und den Gesamtschaden von Pfeilen von Standardangriffen und heftigen Schlägen alle 0,1 s nach dem Abschießen um {color}8{/color} %, 5-fach stapelbar.",
+        "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}15{/color} % und den Gesamtschaden von Pfeilen von Standardangriffen und heftigen Schlägen alle 0,1 s nach dem Abschießen um {color}10{/color} %, 5-fach stapelbar.",
+        "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}18{/color} % und den Gesamtschaden von Pfeilen von Standardangriffen und heftigen Schlägen alle 0,1 s nach dem Abschießen um {color}12{/color} %, 5-fach stapelbar.",
+        "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}21{/color} % und den Gesamtschaden von Pfeilen von Standardangriffen und heftigen Schlägen alle 0,1 s nach dem Abschießen um {color}14{/color} %, 5-fach stapelbar.",
+        "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}24{/color} % und den Gesamtschaden von Pfeilen von Standardangriffen und heftigen Schlägen alle 0,1 s nach dem Abschießen um {color}16{/color} %, 5-fach stapelbar."
+      ]
     },
     {
       "key": "apprentices-notes",
       "name": "Aufzeichnungen eines Lehrlings",
       "description": "Die Aufzeichnungen eines sehr begabten Schülers. Die Handschrift ist wunderschön und gibt so einige nützliche Zaubersprüche wieder.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "aquila-favonia",
       "name": "Windfalke",
       "description": "Die Seele des Ordo Favonius. Selbst nach Jahrtausenden ruft es in dir den Wind der Gerechtigkeit hervor, um das Böse zu bekämpfen, ganz wie bei der letzten Heldin, die es trug.",
-      "refinement": "Erhöht den ANG um {0} %. Effekt beim Erleiden von Schaden: Die Seele des Falken des Westens erwacht und erhebt die Fahne des Widerstands. Stellt LP in Höhe von {1} % ANG wieder her und fügt Gegnern in der Umgebung Schaden in Höhe von {2} % ANG zu. 15 s Abklingzeit."
+      "refinements": [
+        "Erhöht den ANG um {color}20{/color} %. Effekt beim Erleiden von Schaden: Die Seele des Falken des Westens erwacht und erhebt die Fahne des Widerstands. Stellt LP in Höhe von {color}100{/color} % ANG wieder her und fügt Gegnern in der Umgebung Schaden in Höhe von {color}200{/color} % ANG zu. 15 s Abklingzeit.",
+        "Erhöht den ANG um {color}25{/color} %. Effekt beim Erleiden von Schaden: Die Seele des Falken des Westens erwacht und erhebt die Fahne des Widerstands. Stellt LP in Höhe von {color}115{/color} % ANG wieder her und fügt Gegnern in der Umgebung Schaden in Höhe von {color}230{/color} % ANG zu. 15 s Abklingzeit.",
+        "Erhöht den ANG um {color}30{/color} %. Effekt beim Erleiden von Schaden: Die Seele des Falken des Westens erwacht und erhebt die Fahne des Widerstands. Stellt LP in Höhe von {color}130{/color} % ANG wieder her und fügt Gegnern in der Umgebung Schaden in Höhe von {color}260{/color} % ANG zu. 15 s Abklingzeit.",
+        "Erhöht den ANG um {color}35{/color} %. Effekt beim Erleiden von Schaden: Die Seele des Falken des Westens erwacht und erhebt die Fahne des Widerstands. Stellt LP in Höhe von {color}145{/color} % ANG wieder her und fügt Gegnern in der Umgebung Schaden in Höhe von {color}290{/color} % ANG zu. 15 s Abklingzeit.",
+        "Erhöht den ANG um {color}40{/color} %. Effekt beim Erleiden von Schaden: Die Seele des Falken des Westens erwacht und erhebt die Fahne des Widerstands. Stellt LP in Höhe von {color}160{/color} % ANG wieder her und fügt Gegnern in der Umgebung Schaden in Höhe von {color}320{/color} % ANG zu. 15 s Abklingzeit."
+      ]
     },
     {
       "key": "beginners-protector",
       "name": "Anfängerlanze",
       "description": "Eine Lanze so gerade wie ein Fahnenmast. In der Luft gewirbelt schindet sie ordentlich Eindruck und lässt sich in den meisten Situationen anwenden.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "black-tassel",
       "name": "Schwarze Quaste",
       "description": "Mit dieser Lanze wurde das Problem gelöst, dass weiße Quasten schnell dreckig werden.",
-      "refinement": "Erhöht den Schleimen zugefügten Schaden um {0} %."
+      "refinements": [
+        "Erhöht den Schleimen zugefügten Schaden um {color}40{/color} %.",
+        "Erhöht den Schleimen zugefügten Schaden um {color}50{/color} %.",
+        "Erhöht den Schleimen zugefügten Schaden um {color}60{/color} %.",
+        "Erhöht den Schleimen zugefügten Schaden um {color}70{/color} %.",
+        "Erhöht den Schleimen zugefügten Schaden um {color}80{/color} %."
+      ]
     },
     {
       "key": "blackcliff-agate",
       "name": "Schwarzstein-Achat",
       "description": "Ein geheimnisvoller Katalysator gefertigt aus Schwarzstein. Der merkwürdige rote Schein kommt einem vor, als würde er eindringlich pulsieren.",
-      "refinement": "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {0} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig."
+      "refinements": [
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}12{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}15{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}18{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}21{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}24{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig."
+      ]
     },
     {
       "key": "blackcliff-longsword",
       "name": "Schwarzstein-Langschwert",
       "description": "Ein aus Schwarzstein geschmiedetes Langschwert. Die dunkle Klinge schimmert rötlich.",
-      "refinement": "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {0} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig."
+      "refinements": [
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}12{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}15{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}18{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}21{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}24{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig."
+      ]
     },
     {
       "key": "blackcliff-pole",
       "name": "Schwarzsteinlanze",
       "description": "Eine aus Schwarzstein und Aerosiderit geschmiedete Waffe, deren kalte Klinge rötlich strahlt, als würde sie bluten.",
-      "refinement": "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {0} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig."
+      "refinements": [
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}12{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}15{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}18{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}21{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}24{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig."
+      ]
     },
     {
       "key": "blackcliff-slasher",
       "name": "Schwarzstein-Schneide",
       "description": "Ein Schwarzstein-Großschwert, dessen Härte unübertroffen ist. Es ist schwarz mit roten Einschlüssen.",
-      "refinement": "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {0} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig."
+      "refinements": [
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}12{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}15{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}18{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}21{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}24{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig."
+      ]
     },
     {
       "key": "blackcliff-warbow",
       "name": "Schwarzstein-Kriegsbogen",
       "description": "Ein aus Schwarzstein hergestellter Bogen. Die Arme halten eine unfassbare Zugkraft aus. Nur die Kräftigsten können diesen Bogen nach Belieben benutzen.",
-      "refinement": "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {0} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig."
+      "refinements": [
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}12{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}15{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}18{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}21{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig.",
+        "Erhöht den ANG beim Besiegen von Gegnern 30 s lang um {color}24{/color} %. 3-fach stapelbar, Wirkungsdauer jeder Stapelung ist unabhängig."
+      ]
     },
     {
       "key": "bloodtainted-greatsword",
       "name": "Drachenblutschwert",
       "description": "Der Sage nach wurde dieses stählerne Großschwert von einem Helden aus dem Norden in Drachenblut getränkt, weshalb es unzerstörbar sein soll. Das gilt aber nicht für denjenigen, der es führt.",
-      "refinement": "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {0} %."
+      "refinements": [
+        "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}12{/color} %.",
+        "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}15{/color} %.",
+        "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}18{/color} %.",
+        "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}21{/color} %.",
+        "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}24{/color} %."
+      ]
     },
     {
       "key": "compound-bow",
       "name": "Compoundbogen",
       "description": "Ein Compoundbogen aus Metall, bei dem Räder die Sehne spannen. Aufgrund seines sonderbaren Aufbaus ist er schwierig zu pflegen. Gespannt wird er dafür umso einfacher.",
-      "refinement": "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {0} % und die Standardangriffs-GSW um {1},2 %. 4-fach stapelbar, 0,3 s Abklingzeit."
+      "refinements": [
+        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}4{/color} % und die Standardangriffs-GSW um {color}1{/color},2 %. 4-fach stapelbar, 0,3 s Abklingzeit.",
+        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}5{/color} % und die Standardangriffs-GSW um {color}1{/color},5 %. 4-fach stapelbar, 0,3 s Abklingzeit.",
+        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}6{/color} % und die Standardangriffs-GSW um {color}1{/color},8 %. 4-fach stapelbar, 0,3 s Abklingzeit.",
+        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}7{/color} % und die Standardangriffs-GSW um {color}2{/color},1 %. 4-fach stapelbar, 0,3 s Abklingzeit.",
+        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}8{/color} % und die Standardangriffs-GSW um {color}2{/color},4 %. 4-fach stapelbar, 0,3 s Abklingzeit."
+      ]
     },
     {
       "key": "cool-steel",
       "name": "Kühle Klinge",
       "description": "Eine stabile Waffe aus mehrfach gefaltetem Stahl, die ihrem ehemaligen Besitzer bei vielen Abenteuern nützlich war.",
-      "refinement": "Erhöht den von Hydro- oder Kryo-Effekten betroffenen Gegnern zugefügten Schaden um {0} %."
+      "refinements": [
+        "Erhöht den von Hydro- oder Kryo-Effekten betroffenen Gegnern zugefügten Schaden um {color}12{/color} %.",
+        "Erhöht den von Hydro- oder Kryo-Effekten betroffenen Gegnern zugefügten Schaden um {color}15{/color} %.",
+        "Erhöht den von Hydro- oder Kryo-Effekten betroffenen Gegnern zugefügten Schaden um {color}18{/color} %.",
+        "Erhöht den von Hydro- oder Kryo-Effekten betroffenen Gegnern zugefügten Schaden um {color}21{/color} %.",
+        "Erhöht den von Hydro- oder Kryo-Effekten betroffenen Gegnern zugefügten Schaden um {color}24{/color} %."
+      ]
     },
     {
       "key": "crescent-pike",
       "name": "Mondpike",
       "description": "Diese fremdländische Lanze hat eine lange und schmale Spitze sowie eine halbmondförmige Klinge am anderen Ende. Ihren Weg fand sie auf Handelsrouten nach Liyue. Mit etwas Übung kann man mit ihr eine überragende Angriffskraft entfalten.",
-      "refinement": "Verursacht nach dem Erhalten von Elementarteilchen oder Elementarkristallen 5 s lang zusätzlichen Schaden in Höhe von {0} % ANG mit Standardangriffen und heftigen Schlägen."
+      "refinements": [
+        "Verursacht nach dem Erhalten von Elementarteilchen oder Elementarkristallen 5 s lang zusätzlichen Schaden in Höhe von {color}20{/color} % ANG mit Standardangriffen und heftigen Schlägen.",
+        "Verursacht nach dem Erhalten von Elementarteilchen oder Elementarkristallen 5 s lang zusätzlichen Schaden in Höhe von {color}25{/color} % ANG mit Standardangriffen und heftigen Schlägen.",
+        "Verursacht nach dem Erhalten von Elementarteilchen oder Elementarkristallen 5 s lang zusätzlichen Schaden in Höhe von {color}30{/color} % ANG mit Standardangriffen und heftigen Schlägen.",
+        "Verursacht nach dem Erhalten von Elementarteilchen oder Elementarkristallen 5 s lang zusätzlichen Schaden in Höhe von {color}35{/color} % ANG mit Standardangriffen und heftigen Schlägen.",
+        "Verursacht nach dem Erhalten von Elementarteilchen oder Elementarkristallen 5 s lang zusätzlichen Schaden in Höhe von {color}40{/color} % ANG mit Standardangriffen und heftigen Schlägen."
+      ]
     },
     {
       "key": "dark-iron-sword",
       "name": "Dunkles Eisenschwert",
       "description": "Das ist einfach nur ein normales Eisenschwert, das etwas dunkler geraten ist.",
-      "refinement": "Erhöht den ANG nach Auslösen der Reaktionen „Überladen“, „Supraleiter“, „Unter Strom“ und „Elektro-Verwirbelung“ 12 s lang um {0} %."
+      "refinements": [
+        "Erhöht den ANG nach Auslösen der Reaktionen „Überladen“, „Supraleiter“, „Unter Strom“ und „Elektro-Verwirbelung“ 12 s lang um {color}20{/color} %.",
+        "Erhöht den ANG nach Auslösen der Reaktionen „Überladen“, „Supraleiter“, „Unter Strom“ und „Elektro-Verwirbelung“ 12 s lang um {color}25{/color} %.",
+        "Erhöht den ANG nach Auslösen der Reaktionen „Überladen“, „Supraleiter“, „Unter Strom“ und „Elektro-Verwirbelung“ 12 s lang um {color}30{/color} %.",
+        "Erhöht den ANG nach Auslösen der Reaktionen „Überladen“, „Supraleiter“, „Unter Strom“ und „Elektro-Verwirbelung“ 12 s lang um {color}35{/color} %.",
+        "Erhöht den ANG nach Auslösen der Reaktionen „Überladen“, „Supraleiter“, „Unter Strom“ und „Elektro-Verwirbelung“ 12 s lang um {color}40{/color} %."
+      ]
     },
     {
       "key": "deathmatch",
       "name": "Duelllanze",
       "description": "Eine lange Lanze mit scharfer, roter Spitze, in Ehren gehalten von einem Gladiator. Der Schaft wurde immer wieder in das Blut von Monstern und Menschen getaucht, bis er dessen Farbe annahm.",
-      "refinement": "Erhöht den ANG bei Anwesenheit von mindestens 2 Gegnern um {0} % und die VTD um {1} %, erhöht den ANG bei weniger als 2 Gegnern stattdessen um {2} %."
+      "refinements": [
+        "Erhöht den ANG bei Anwesenheit von mindestens 2 Gegnern um {color}16{/color} % und die VTD um {color}16{/color} %, erhöht den ANG bei weniger als 2 Gegnern stattdessen um {color}24{/color} %.",
+        "Erhöht den ANG bei Anwesenheit von mindestens 2 Gegnern um {color}20{/color} % und die VTD um {color}20{/color} %, erhöht den ANG bei weniger als 2 Gegnern stattdessen um {color}30{/color} %.",
+        "Erhöht den ANG bei Anwesenheit von mindestens 2 Gegnern um {color}24{/color} % und die VTD um {color}24{/color} %, erhöht den ANG bei weniger als 2 Gegnern stattdessen um {color}36{/color} %.",
+        "Erhöht den ANG bei Anwesenheit von mindestens 2 Gegnern um {color}28{/color} % und die VTD um {color}28{/color} %, erhöht den ANG bei weniger als 2 Gegnern stattdessen um {color}42{/color} %.",
+        "Erhöht den ANG bei Anwesenheit von mindestens 2 Gegnern um {color}32{/color} % und die VTD um {color}32{/color} %, erhöht den ANG bei weniger als 2 Gegnern stattdessen um {color}48{/color} %."
+      ]
     },
     {
       "key": "debate-club",
       "name": "Schlagfestes Argument",
       "description": "Ein großer, aus robustem Stahl gefertigter Stab, mit dem man seinen Standpunkt vernünftig und doch mit großer Überzeugungskraft vertreten kann.",
-      "refinement": "Verursacht bei Treffern mit Standardangriffen und heftigen Schlägen nach Anwendung einer Elementarfähigkeit 15 s lang zusätzlichen Schaden in Höhe von {0} % ANG mit geringer Reichweite. 3 s Abklingzeit für Schaden."
+      "refinements": [
+        "Verursacht bei Treffern mit Standardangriffen und heftigen Schlägen nach Anwendung einer Elementarfähigkeit 15 s lang zusätzlichen Schaden in Höhe von {color}60{/color} % ANG mit geringer Reichweite. 3 s Abklingzeit für Schaden.",
+        "Verursacht bei Treffern mit Standardangriffen und heftigen Schlägen nach Anwendung einer Elementarfähigkeit 15 s lang zusätzlichen Schaden in Höhe von {color}75{/color} % ANG mit geringer Reichweite. 3 s Abklingzeit für Schaden.",
+        "Verursacht bei Treffern mit Standardangriffen und heftigen Schlägen nach Anwendung einer Elementarfähigkeit 15 s lang zusätzlichen Schaden in Höhe von {color}90{/color} % ANG mit geringer Reichweite. 3 s Abklingzeit für Schaden.",
+        "Verursacht bei Treffern mit Standardangriffen und heftigen Schlägen nach Anwendung einer Elementarfähigkeit 15 s lang zusätzlichen Schaden in Höhe von {color}105{/color} % ANG mit geringer Reichweite. 3 s Abklingzeit für Schaden.",
+        "Verursacht bei Treffern mit Standardangriffen und heftigen Schlägen nach Anwendung einer Elementarfähigkeit 15 s lang zusätzlichen Schaden in Höhe von {color}120{/color} % ANG mit geringer Reichweite. 3 s Abklingzeit für Schaden."
+      ]
     },
     {
       "key": "dodoco-tales",
       "name": "Dodoco-Geschichten",
       "description": "Ein Kinderbuch mit vielen lustigen Kurzgeschichten. \r\nDie unschuldigen, kindlichen Abenteuern, die in den Geschichten geschildert werden, reißen selbst die längst erwachsenen Leser beim Lesen mit.",
-      "refinement": "Erhöht den mit heftigen Schlägen verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 6 s lang um {0} %. Erhöht den ANG nach dem Treffen von Gegnern mit heftigen Schlägen 6 s lang um {1} %."
+      "refinements": [
+        "Erhöht den mit heftigen Schlägen verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 6 s lang um {color}16{/color} %. Erhöht den ANG nach dem Treffen von Gegnern mit heftigen Schlägen 6 s lang um {color}8{/color} %.",
+        "Erhöht den mit heftigen Schlägen verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 6 s lang um {color}20{/color} %. Erhöht den ANG nach dem Treffen von Gegnern mit heftigen Schlägen 6 s lang um {color}10{/color} %.",
+        "Erhöht den mit heftigen Schlägen verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 6 s lang um {color}24{/color} %. Erhöht den ANG nach dem Treffen von Gegnern mit heftigen Schlägen 6 s lang um {color}12{/color} %.",
+        "Erhöht den mit heftigen Schlägen verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 6 s lang um {color}28{/color} %. Erhöht den ANG nach dem Treffen von Gegnern mit heftigen Schlägen 6 s lang um {color}14{/color} %.",
+        "Erhöht den mit heftigen Schlägen verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 6 s lang um {color}32{/color} %. Erhöht den ANG nach dem Treffen von Gegnern mit heftigen Schlägen 6 s lang um {color}16{/color} %."
+      ]
     },
     {
       "key": "dragons-bane",
       "name": "Drachenschreck",
       "description": "Umschlungen von einem Drachen aus Metall ist diese Lanze unvergleichlich leicht und spitz. Wahrscheinlich kann man damit wirklich mühelos einen Drachen töten.",
-      "refinement": "Erhöht den von Hydro- oder Pyro-Effekten betroffenen Gegnern zugefügten Schaden um {0} %."
+      "refinements": [
+        "Erhöht den von Hydro- oder Pyro-Effekten betroffenen Gegnern zugefügten Schaden um {color}20{/color} %.",
+        "Erhöht den von Hydro- oder Pyro-Effekten betroffenen Gegnern zugefügten Schaden um {color}24{/color} %.",
+        "Erhöht den von Hydro- oder Pyro-Effekten betroffenen Gegnern zugefügten Schaden um {color}28{/color} %.",
+        "Erhöht den von Hydro- oder Pyro-Effekten betroffenen Gegnern zugefügten Schaden um {color}32{/color} %.",
+        "Erhöht den von Hydro- oder Pyro-Effekten betroffenen Gegnern zugefügten Schaden um {color}36{/color} %."
+      ]
     },
     {
       "key": "dragonspine-spear",
       "name": "Drachengratspeer",
       "description": "Ein Speer, der aus dem Reißzahn eines Drachen hergestellt wurde. Er fühlt sich seltsam warm an.",
-      "refinement": "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {0} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {1} % ANG verursacht. Verursacht Schaden in Höhe von {2} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit."
+      "refinements": [
+        "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}60{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}80{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}200{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit.",
+        "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}70{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}95{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}240{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit.",
+        "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}80{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}110{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}280{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit.",
+        "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}90{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}125{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}320{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit.",
+        "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}100{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}140{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}360{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit."
+      ]
     },
     {
       "key": "dull-blade",
       "name": "Stumpfes Schwert",
       "description": "Die Träume eines Abenteurers und der Enthusiasmus bei der Reise sind zwei wertvolle Dinge, die das Schwert aber auch nicht schärfer machen. Mach es einfach mit Mut wieder wett!",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "elegy-for-the-end",
       "name": "Letzter Seufzer",
       "description": "Ein wunderschöner Bogen so elegant wie das Instrument eines Barden. Wie ein schweres Seufzen durchdringen seine Pfeile die Herzen ihrer Ziele.",
-      "refinement": "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht die Elementarkunde um {0} Punkte. Gibt der damit ausgerüsteten Figur beim Treffen von Gegnern mit Elementarfähigkeiten und Spezialfähigkeiten ein Zeichen des Gedenkens, 0,2 s Abklingzeit. Der Effekt bleibt auch bestehen, wenn die Figur ausgewechselt wird. Verbraucht alle Zeichen des Gedenkens, sobald 4 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied vom Abschied“: Erhöht die Elementarkunde um {1} Punkte und den ANG um {2} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen des Gedenkens erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden."
+      "refinements": [
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht die Elementarkunde um {color}60{/color} Punkte. Gibt der damit ausgerüsteten Figur beim Treffen von Gegnern mit Elementarfähigkeiten und Spezialfähigkeiten ein Zeichen des Gedenkens, 0,2 s Abklingzeit. Der Effekt bleibt auch bestehen, wenn die Figur ausgewechselt wird. Verbraucht alle Zeichen des Gedenkens, sobald 4 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied vom Abschied“: Erhöht die Elementarkunde um {color}100{/color} Punkte und den ANG um {color}20{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen des Gedenkens erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht die Elementarkunde um {color}75{/color} Punkte. Gibt der Figur beim Treffen von Gegnern mit Elementarfähigkeiten und Spezialfähigkeiten ein Zeichen des Gedenkens, 0,2 s Abklingzeit. Kann auch ausgelöst werden, wenn die Figur nicht eingewechselt ist. Verbraucht alle Zeichen des Gedenkens, sobald 4 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied vom Abschied“: Erhöht die Elementarkunde um {color}125{/color} Punkte und den ANG um {color}25{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen des Gedenkens erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht die Elementarkunde um {color}90{/color} Punkte. Gibt der Figur beim Treffen von Gegnern mit Elementarfähigkeiten und Spezialfähigkeiten ein Zeichen des Gedenkens, 0,2 s Abklingzeit. Kann auch ausgelöst werden, wenn die Figur nicht eingewechselt ist. Verbraucht alle Zeichen des Gedenkens, sobald 4 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied vom Abschied“: Erhöht die Elementarkunde um {color}150{/color} Punkte und den ANG um {color}30{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen des Gedenkens erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht die Elementarkunde um {color}105{/color} Punkte. Gibt der Figur beim Treffen von Gegnern mit Elementarfähigkeiten und Spezialfähigkeiten ein Zeichen des Gedenkens, 0,2 s Abklingzeit. Kann auch ausgelöst werden, wenn die Figur nicht eingewechselt ist. Verbraucht alle Zeichen des Gedenkens, sobald 4 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied vom Abschied“: Erhöht die Elementarkunde um {color}175{/color} Punkte und den ANG um {color}35{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen des Gedenkens erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht die Elementarkunde um {color}120{/color} Punkte. Gibt der Figur beim Treffen von Gegnern mit Elementarfähigkeiten und Spezialfähigkeiten ein Zeichen des Gedenkens, 0,2 s Abklingzeit. Kann auch ausgelöst werden, wenn die Figur nicht eingewechselt ist. Verbraucht alle Zeichen des Gedenkens, sobald 4 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied vom Abschied“: Erhöht die Elementarkunde um {color}200{/color} Punkte und den ANG um {color}40{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen des Gedenkens erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden."
+      ]
     },
     {
       "key": "emerald-orb",
       "name": "Jadekugel",
       "description": "Ein magischer Katalysator geschnitzt aus der harten Jade aus dem Jueyun-Karst im Norden Liyues. Handlich, leicht und haltbar. Er wird weithin auch als „Jadeperle“ bezeichnet.",
-      "refinement": "Erhöht den ANG nach Auslösen der Reaktionen „Verdampfen“, „Unter Strom“, „Gefroren“ und „Hydro-Verwirbelung“ 12 s lang um {0} %."
+      "refinements": [
+        "Erhöht den ANG nach Auslösen der Reaktionen „Verdampfen“, „Unter Strom“, „Gefroren“ und „Hydro-Verwirbelung“ 12 s lang um {color}20{/color} %.",
+        "Erhöht den ANG nach Auslösen der Reaktionen „Verdampfen“, „Unter Strom“, „Gefroren“ und „Hydro-Verwirbelung“ 12 s lang um {color}25{/color} %.",
+        "Erhöht den ANG nach Auslösen der Reaktionen „Verdampfen“, „Unter Strom“, „Gefroren“ und „Hydro-Verwirbelung“ 12 s lang um {color}30{/color} %.",
+        "Erhöht den ANG nach Auslösen der Reaktionen „Verdampfen“, „Unter Strom“, „Gefroren“ und „Hydro-Verwirbelung“ 12 s lang um {color}35{/color} %.",
+        "Erhöht den ANG nach Auslösen der Reaktionen „Verdampfen“, „Unter Strom“, „Gefroren“ und „Hydro-Verwirbelung“ 12 s lang um {color}40{/color} %."
+      ]
     },
     {
       "key": "engulfing-lightning",
       "name": "Grasschnittstrahl",
       "description": "Ein Naginata, das zum „Grasschneiden“ verwendet wird. Jede Armee, die vor dieser Waffe steht, wird wahrscheinlich ebenfalls niedergemäht ...",
-      "refinement": "Erhöht den Angriff um {0} % der Prozentpunkte über 100 % der Aufladerate. Bis zu {1} % Bonus auf diese Weise möglich. Erhöht die Aufladerate nach Anwendung von Spezialfähigkeiten 12 s lang um {2} %."
+      "refinements": [
+        "Erhöht den Angriff um {color}28{/color} % der Prozentpunkte über 100 % der Aufladerate. Bis zu {color}80{/color} % Bonus auf diese Weise möglich. Erhöht die Aufladerate nach Anwendung von Spezialfähigkeiten 12 s lang um {color}30{/color} %.",
+        "Erhöht den Angriff um {color}35{/color} % der Prozentpunkte über 100 % der Aufladerate. Bis zu {color}80{/color} % Bonus auf diese Weise möglich. Erhöht die Aufladerate nach Anwendung von Spezialfähigkeiten 12 s lang um {color}35{/color} %.",
+        "Erhöht den Angriff um {color}42{/color} % der Prozentpunkte über 100 % der Aufladerate. Bis zu {color}100{/color} % Bonus auf diese Weise möglich. Erhöht die Aufladerate nach Anwendung von Spezialfähigkeiten 12 s lang um {color}40{/color} %.",
+        "Erhöht den Angriff um {color}49{/color} % der Prozentpunkte über 100 % der Aufladerate. Bis zu {color}110{/color} % Bonus auf diese Weise möglich. Erhöht die Aufladerate nach Anwendung von Spezialfähigkeiten 12 s lang um {color}45{/color} %.",
+        "Erhöht den Angriff um {color}56{/color} % der Prozentpunkte über 100 % der Aufladerate. Bis zu {color}120{/color} % Bonus auf diese Weise möglich. Erhöht die Aufladerate nach Anwendung von Spezialfähigkeiten 12 s lang um {color}50{/color} %."
+      ]
     },
     {
       "key": "everlasting-moonglow",
       "name": "Ewiger Mondschein",
       "description": "Ein Ring aus lieblichem Jaspis der Tiefsee. Er glänzt mit einem reinen Glanz wie der des Mondes und genauso unendlich weit.",
-      "refinement": "Erhöht den Heilungseffekt um {0} %. Erhöht den mit Standardangriffen verursachten Schaden um {1} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her."
+      "refinements": [
+        "Erhöht den Heilungseffekt um {color}10{/color} %. Erhöht den mit Standardangriffen verursachten Schaden um {color}1{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her.",
+        "Erhöht den Heilungseffekt um {color}12{/color},5 %. Erhöht den mit Standardangriffen verursachten Schaden um {color}1{/color},5 % der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her.",
+        "Erhöht den Heilungseffekt um {color}15{/color} %. Erhöht den mit Standardangriffen verursachten Schaden um {color}2{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her.",
+        "Erhöht den Heilungseffekt um {color}17{/color},5 %. Erhöht den mit Standardangriffen verursachten Schaden um {color}2{/color},5 % der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her.",
+        "Erhöht den Heilungseffekt um {color}20{/color} %. Erhöht den mit Standardangriffen verursachten Schaden um {color}3{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her."
+      ]
     },
     {
       "key": "eye-of-perception",
       "name": "Herzensblick",
       "description": "Eine dunkle Kristallkugel, die angeblich erkennen kann, ob das Herz eines Menschen rein ist.",
-      "refinement": "Schießt bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % eine Kugel des Herzensblicks ab und verursacht Schaden in Höhe von {0} % ANG. Geht bis zu 4-mal auf Gegner in der Nähe über. {1} s Abklingzeit."
+      "refinements": [
+        "Schießt bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % eine Kugel des Herzensblicks ab und verursacht Schaden in Höhe von {color}240{/color} % ANG. Geht bis zu 4-mal auf Gegner in der Nähe über. {color}12{/color} s Abklingzeit.",
+        "Schießt bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % eine Kugel des Herzensblicks ab und verursacht Schaden in Höhe von {color}270{/color} % ANG. Geht bis zu 4-mal auf Gegner in der Nähe über. {color}11{/color} s Abklingzeit.",
+        "Schießt bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % eine Kugel des Herzensblicks ab und verursacht Schaden in Höhe von {color}300{/color} % ANG. Geht bis zu 4-mal auf Gegner in der Nähe über. {color}10{/color} s Abklingzeit.",
+        "Schießt bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % eine Kugel des Herzensblicks ab und verursacht Schaden in Höhe von {color}330{/color} % ANG. Geht bis zu 4-mal auf Gegner in der Nähe über. {color}9{/color} s Abklingzeit.",
+        "Schießt bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % eine Kugel des Herzensblicks ab und verursacht Schaden in Höhe von {color}360{/color} % ANG. Geht bis zu 4-mal auf Gegner in der Nähe über. {color}8{/color} s Abklingzeit."
+      ]
     },
     {
       "key": "favonius-codex",
       "name": "Favonius-Kodex",
       "description": "Ein Kodex, der unter den Gelehrten des Ordo Favonius weitergetragen wird. Darin werden die Prinzipien und Kräfte von Elementen und Stoffen erläutert.",
-      "refinement": "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {0} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {1} s Abklingzeit."
+      "refinements": [
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}60{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}12{/color} s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}70{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}10{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}80{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}9{/color} s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}90{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}7{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}100{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}6{/color} s Abklingzeit."
+      ]
     },
     {
       "key": "favonius-greatsword",
       "name": "Favonius-Großschwert",
       "description": "Ein zeremonielles Schwert des Ordo Favonius. Es vereinfacht das Bündeln elementarer Energie, während es eine enorme Zerstörungskraft mitbringt.",
-      "refinement": "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {0} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {1} s Abklingzeit."
+      "refinements": [
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}60{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}12{/color} s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}70{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}10{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}80{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}9{/color} s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}90{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}7{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}100{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}6{/color} s Abklingzeit."
+      ]
     },
     {
       "key": "favonius-lance",
       "name": "Favonius-Lanze",
       "description": "Eine Lanze in der Machart des Ordo Favonius. Sie ist makellos gerade und ihre Spitze zischt leicht durch die Luft.",
-      "refinement": "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {0} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {1} s Abklingzeit."
+      "refinements": [
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}60{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}12{/color} s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}70{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}10{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}80{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}9{/color} s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}90{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}7{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}100{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}6{/color} s Abklingzeit."
+      ]
     },
     {
       "key": "favonius-sword",
       "name": "Favonius-Schwert",
       "description": "Ein Standardlangschwert des Ordo Favonius. Durch seinen leichten Aufbau und seine scharfe Klinge wird das Bündeln elementarer Energie vereinfacht.",
-      "refinement": "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {0} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {1} s Abklingzeit."
+      "refinements": [
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}60{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}12{/color} s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}70{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}10{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}80{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}9{/color} s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}90{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}7{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}100{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}6{/color} s Abklingzeit."
+      ]
     },
     {
       "key": "favonius-warbow",
       "name": "Favonius-Jagdbogen",
       "description": "Der Standardreflexbogen des Ordo Favonius, den nur die besten Schützen bedienen und seine Leistung voll ausnutzen können.",
-      "refinement": "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {0} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {1} s Abklingzeit."
+      "refinements": [
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}60{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}12{/color} s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}70{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}10{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}80{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}9{/color} s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}90{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}7{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}100{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}6{/color} s Abklingzeit."
+      ]
     },
     {
       "key": "ferrous-shadow",
       "name": "Eiserner Schatten",
       "description": "Dieses Schwert ist dem des berühmten Arundolyn, des Löwen des Lichts, nachempfunden. Mit ihm in den Händen fühlst du dich wie der legendäre Krieger selbst! Aber sei vorsichtig, zu viel Tagträumerei ist gefährlich!",
-      "refinement": "Ein heftiger Schlag wird bei weniger als {0} % LP nicht so leicht abgewehrt. Erhöht den Schaden heftiger Schläge dabei um {1} %."
+      "refinements": [
+        "Ein heftiger Schlag wird bei weniger als {color}70{/color} % LP nicht so leicht abgewehrt. Erhöht den Schaden heftiger Schläge dabei um {color}30{/color} %.",
+        "Ein heftiger Schlag wird bei weniger als {color}75{/color} % LP nicht so leicht abgewehrt. Erhöht den Schaden heftiger Schläge dabei um {color}35{/color} %.",
+        "Ein heftiger Schlag wird bei weniger als {color}80{/color} % LP nicht so leicht abgewehrt. Erhöht den Schaden heftiger Schläge dabei um {color}40{/color} %.",
+        "Ein heftiger Schlag wird bei weniger als {color}85{/color} % LP nicht so leicht abgewehrt. Erhöht den Schaden heftiger Schläge dabei um {color}45{/color} %.",
+        "Ein heftiger Schlag wird bei weniger als {color}90{/color} % LP nicht so leicht abgewehrt. Erhöht den Schaden heftiger Schläge dabei um {color}50{/color} %."
+      ]
     },
     {
       "key": "festering-desire",
       "name": "Schwert der Verderbnis",
       "description": "Ein recht unheimliches, sehr gerades Schwert, das sich nach Lebenskraft zu sehnen scheint. Es trieft von einem säureartigen Gift, welches sogar einen mächtigen Drachen töten könnte.",
-      "refinement": "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {0} % und die KT von Elementarfähigkeiten um {1} %."
+      "refinements": [
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}16{/color} % und die KT von Elementarfähigkeiten um {color}6{/color} %.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}20{/color} % und die KT von Elementarfähigkeiten um {color}7.5{/color} %.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}24{/color} % und die KT von Elementarfähigkeiten um {color}9{/color} %.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}28{/color} % und die KT von Elementarfähigkeiten um {color}10.5{/color} %.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}32{/color} % und die KT von Elementarfähigkeiten um {color}12{/color} %."
+      ]
     },
     {
       "key": "fillet-blade",
       "name": "Filetiermesser",
       "description": "Ein eisernes Messer zum Filetieren von Fisch. Die Klinge ist nicht nur lang und schmal, sondern auch äußerst scharf.",
-      "refinement": "Fügt einem einzelnen Gegner bei einem Treffer mit einer Wahrscheinlichkeit von 50 % Schaden in Höhe von {0} % ANG zu. {1} s Abklingzeit."
+      "refinements": [
+        "Fügt einem einzelnen Gegner bei einem Treffer mit einer Wahrscheinlichkeit von 50 % Schaden in Höhe von {color}240{/color} % ANG zu. {color}15{/color} s Abklingzeit.",
+        "Fügt einem einzelnen Gegner bei einem Treffer mit einer Wahrscheinlichkeit von 50 % Schaden in Höhe von {color}280{/color} % ANG zu. {color}14{/color} s Abklingzeit.",
+        "Fügt einem einzelnen Gegner bei einem Treffer mit einer Wahrscheinlichkeit von 50 % Schaden in Höhe von {color}320{/color} % ANG zu. {color}13{/color} s Abklingzeit.",
+        "Fügt einem einzelnen Gegner bei einem Treffer mit einer Wahrscheinlichkeit von 50 % Schaden in Höhe von {color}360{/color} % ANG zu. {color}12{/color} s Abklingzeit.",
+        "Fügt einem einzelnen Gegner bei einem Treffer mit einer Wahrscheinlichkeit von 50 % Schaden in Höhe von {color}400{/color} % ANG zu. {color}11{/color} s Abklingzeit."
+      ]
     },
     {
       "key": "freedom-sworn",
       "name": "Blasser Schwur der Freiheit",
       "description": "Ein gerades Schwert, blass-bläulich, das an uralte Gesänge erinnert. Diese Waffe ist so scharf wie der Schwur der Freiheit des Reichs des Windes.",
-      "refinement": "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den verursachten Schaden um {0} %. Gibt der damit ausgerüsteten Figur beim Auslösen der Elementarreaktionen ein Zeichen der Revolte, 0,5 s Abklingzeit. Der Effekt bleibt auch bestehen, wenn die Figur ausgewechselt wird. Verbraucht alle Zeichen der Revolte, sobald 2 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied der Revolution“: Erhöht den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall um {1} % und den ANG um {2} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen der Revolte erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden."
+      "refinements": [
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den verursachten Schaden um {color}10{/color} %. Gibt der damit ausgerüsteten Figur beim Auslösen der Elementarreaktionen ein Zeichen der Revolte, 0,5 s Abklingzeit. Der Effekt bleibt auch bestehen, wenn die Figur ausgewechselt wird. Verbraucht alle Zeichen der Revolte, sobald 2 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied der Revolution“: Erhöht den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall um {color}16{/color} % und den ANG um {color}20{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen der Revolte erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den verursachten Schaden um {color}12{/color},5 %. Gibt der damit ausgerüsteten Figur beim Auslösen der Elementarreaktionen ein Zeichen der Revolte, 0,5 s Abklingzeit. Der Effekt bleibt auch bestehen, wenn die Figur ausgewechselt wird. Verbraucht alle Zeichen der Revolte, sobald 2 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied der Revolution“: Erhöht den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall um {color}20{/color} % und den ANG um {color}25{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen der Revolte erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den verursachten Schaden um {color}15{/color} %. Gibt der damit ausgerüsteten Figur beim Auslösen der Elementarreaktionen ein Zeichen der Revolte, 0,5 s Abklingzeit. Der Effekt bleibt auch bestehen, wenn die Figur ausgewechselt wird. Verbraucht alle Zeichen der Revolte, sobald 2 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied der Revolution“: Erhöht den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall um {color}24{/color} % und den ANG um {color}30{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen der Revolte erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den verursachten Schaden um {color}17{/color},5 %. Gibt der damit ausgerüsteten Figur beim Auslösen der Elementarreaktionen ein Zeichen der Revolte, 0,5 s Abklingzeit. Der Effekt bleibt auch bestehen, wenn die Figur ausgewechselt wird. Verbraucht alle Zeichen der Revolte, sobald 2 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied der Revolution“: Erhöht den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall um {color}28{/color} % und den ANG um {color}35{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen der Revolte erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den verursachten Schaden um {color}20{/color} %. Gibt der damit ausgerüsteten Figur beim Auslösen der Elementarreaktionen ein Zeichen der Revolte, 0,5 s Abklingzeit. Der Effekt bleibt auch bestehen, wenn die Figur ausgewechselt wird. Verbraucht alle Zeichen der Revolte, sobald 2 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied der Revolution“: Erhöht den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall um {color}32{/color} % und den ANG um {color}40{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen der Revolte erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden."
+      ]
     },
     {
       "key": "frostbearer",
       "name": "Permafrostfrucht",
       "description": "Eine Frucht, die einen seltsamen, frostigen Willen besitzt. Sie riecht entfernt nach Verbitterung.",
-      "refinement": "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {0} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {1} % ANG verursacht. Verursacht Schaden in Höhe von {2} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit."
+      "refinements": [
+        "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}60{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}80{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}200{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit.",
+        "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}70{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}95{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}240{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit.",
+        "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}80{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}110{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}280{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit.",
+        "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}90{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}125{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}320{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit.",
+        "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}100{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}140{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}360{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit."
+      ]
     },
     {
       "key": "hakushin-ring",
       "name": "Hakushin-Ring",
       "description": "Ein Katalysator, der die Erinnerung der „Kitsune Saiguu“ der alten Zeit trägt. Und doch ist dieses Gerät immer noch zu klein für das immense Volumen ihrer Erinnerungen.",
-      "refinement": "Erhöht beim Auslösen von Elektro-Reaktionen durch die mit dieser Waffe ausgerüsteten Figur den Elementar-SCH von Truppenmitgliedern mit dem an der Elementarreaktion beteiligten Element in der Nähe 6 s lang um {0} %. Der auf diese Weise durch die Figur erhaltene Elementar-SCH-Bonus ist nicht stapelbar."
+      "refinements": [
+        "Erhöht beim Auslösen von Elektro-Reaktionen durch die mit dieser Waffe ausgerüsteten Figur den Elementar-SCH von Truppenmitgliedern mit dem an der Elementarreaktion beteiligten Element in der Nähe 6 s lang um {color}10{/color} %. Der auf diese Weise durch die Figur erhaltene Elementar-SCH-Bonus ist nicht stapelbar.",
+        "Erhöht beim Auslösen von Elektro-Reaktionen durch die mit dieser Waffe ausgerüsteten Figur den Elementar-SCH von Truppenmitgliedern mit dem an der Elementarreaktion beteiligten Element in der Nähe 6 s lang um {color}12{/color},5 %. Der auf diese Weise durch die Figur erhaltene Elementar-SCH-Bonus ist nicht stapelbar.",
+        "Erhöht beim Auslösen von Elektro-Reaktionen durch die mit dieser Waffe ausgerüsteten Figur den Elementar-SCH von Truppenmitgliedern mit dem an der Elementarreaktion beteiligten Element in der Nähe 6 s lang um {color}15{/color} %. Der auf diese Weise durch die Figur erhaltene Elementar-SCH-Bonus ist nicht stapelbar.",
+        "Erhöht beim Auslösen von Elektro-Reaktionen durch die mit dieser Waffe ausgerüsteten Figur den Elementar-SCH von Truppenmitgliedern mit dem an der Elementarreaktion beteiligten Element in der Nähe 6 s lang um {color}17{/color},5 %. Der auf diese Weise durch die Figur erhaltene Elementar-SCH-Bonus ist nicht stapelbar.",
+        "Erhöht beim Auslösen von Elektro-Reaktionen durch die mit dieser Waffe ausgerüsteten Figur den Elementar-SCH von Truppenmitgliedern mit dem an der Elementarreaktion beteiligten Element in der Nähe 6 s lang um {color}20{/color} %. Der auf diese Weise durch die Figur erhaltene Elementar-SCH-Bonus ist nicht stapelbar."
+      ]
     },
     {
       "key": "halberd",
       "name": "Hellebarde",
       "description": "Im Grunde eine Lanze gepaart mit einer Axt. Genau das macht sie zu einer zerstörerischen Waffe. Sie wird besonders gern von Millelithen-Offizieren verwendet.",
-      "refinement": "Fügt mit Standardangriffen getroffenen Gegnern zusätzlichen Schaden in Höhe von {0} % ANG zu. 10 s Abklingzeit."
+      "refinements": [
+        "Fügt mit Standardangriffen getroffenen Gegnern zusätzlichen Schaden in Höhe von {color}160{/color} % ANG zu. 10 s Abklingzeit.",
+        "Fügt mit Standardangriffen getroffenen Gegnern zusätzlichen Schaden in Höhe von {color}200{/color} % ANG zu. 10 s Abklingzeit.",
+        "Fügt mit Standardangriffen getroffenen Gegnern zusätzlichen Schaden in Höhe von {color}240{/color} % ANG zu. 10 s Abklingzeit.",
+        "Fügt mit Standardangriffen getroffenen Gegnern zusätzlichen Schaden in Höhe von {color}280{/color} % ANG zu. 10 s Abklingzeit.",
+        "Fügt mit Standardangriffen getroffenen Gegnern zusätzlichen Schaden in Höhe von {color}320{/color} % ANG zu. 10 s Abklingzeit."
+      ]
     },
     {
       "key": "hamayumi",
       "name": "Hamayumi",
       "description": "Eine gewisse Schreinjungfer besaß einst diesen Bogen. Er wurde mit überragendem Geschick gefertigt und ist sowohl kunstvoll als auch robust.",
-      "refinement": "Erhöht den mit Standardangriffen verursachten Schaden um {0} % und den mit heftigen Schlägen verursachten Schaden um {1} %. Verstärkt diesen Effekt bei 100 % Elementarenergie der mit dieser Waffe ausgerüsteten Figur um 100 %."
+      "refinements": [
+        "Erhöht den mit Standardangriffen verursachten Schaden um {color}16{/color} % und den mit heftigen Schlägen verursachten Schaden um {color}12{/color} %. Verstärkt diesen Effekt bei 100 % Elementarenergie der mit dieser Waffe ausgerüsteten Figur um 100 %.",
+        "Erhöht den mit Standardangriffen verursachten Schaden um {color}20{/color} % und den mit heftigen Schlägen verursachten Schaden um {color}15{/color} %. Verstärkt diesen Effekt bei 100 % Elementarenergie der mit dieser Waffe ausgerüsteten Figur um 100 %.",
+        "Erhöht den mit Standardangriffen verursachten Schaden um {color}24{/color} % und den mit heftigen Schlägen verursachten Schaden um {color}18{/color} %. Verstärkt diesen Effekt bei 100 % Elementarenergie der mit dieser Waffe ausgerüsteten Figur um 100 %.",
+        "Erhöht den mit Standardangriffen verursachten Schaden um {color}28{/color} % und den mit heftigen Schlägen verursachten Schaden um {color}21{/color} %. Verstärkt diesen Effekt bei 100 % Elementarenergie der mit dieser Waffe ausgerüsteten Figur um 100 %.",
+        "Erhöht den mit Standardangriffen verursachten Schaden um {color}32{/color} % und den mit heftigen Schlägen verursachten Schaden um {color}24{/color} %. Verstärkt diesen Effekt bei 100 % Elementarenergie der mit dieser Waffe ausgerüsteten Figur um 100 %."
+      ]
     },
     {
       "key": "harbinger-of-dawn",
       "name": "Schwert der Dämmerung",
       "description": "Ein wertvolles Schwert, das einst wie die Sonne glänzte. Hält man es in der Hand, fühlt man sich überaus selbstbewusst. Das leuchtende Material hat sich mit der Zeit abgenutzt.",
-      "refinement": "Erhöht die KT bei mehr als 90 % LP um {0} %."
+      "refinements": [
+        "Erhöht die KT bei mehr als 90 % LP um {color}14{/color} %.",
+        "Erhöht die KT bei mehr als 90 % LP um {color}17.5{/color} %.",
+        "Erhöht die KT bei mehr als 90 % LP um {color}21{/color} %.",
+        "Erhöht die KT bei mehr als 90 % LP um {color}24.5{/color} %.",
+        "Erhöht die KT bei mehr als 90 % LP um {color}28{/color} %."
+      ]
     },
     {
       "key": "hunters-bow",
       "name": "Jagdbogen",
       "description": "Die von Jägern gespielte Musik besteht aus zwei Klängen: dem Spannen des Bogens und dem Sausen der Pfeile.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "iron-point",
       "name": "Eisenlanze",
       "description": "Spitz an einem Ende, geeignet für Angriff und Verteidigung. Äußerst beliebt bei Reisenden.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "iron-sting",
       "name": "Eisenstich",
       "description": "Ein dünner, glatter Degen aus fremden Landen, der auf Handelsrouten seinen Weg nach Liyue gefunden hat. Er ist äußerst leicht und spitz.",
-      "refinement": "Erhöht den von dieser Figur verursachten Schaden nach Verursachen von Elementar-SCH 6 s lang um {0} %, 2-fach stapelbar. 1 s Abklingzeit."
+      "refinements": [
+        "Erhöht den von dieser Figur verursachten Schaden nach Verursachen von Elementar-SCH 6 s lang um {color}6{/color} %, 2-fach stapelbar. 1 s Abklingzeit.",
+        "Erhöht den von dieser Figur verursachten Schaden nach Verursachen von Elementar-SCH 6 s lang um {color}7{/color},5 %, 2-fach stapelbar. 1 s Abklingzeit.",
+        "Erhöht den von dieser Figur verursachten Schaden nach Verursachen von Elementar-SCH 6 s lang um {color}9{/color} %, 2-fach stapelbar. 1 s Abklingzeit.",
+        "Erhöht den von dieser Figur verursachten Schaden nach Verursachen von Elementar-SCH 6 s lang um {color}10{/color},5 %, 2-fach stapelbar. 1 s Abklingzeit.",
+        "Erhöht den von dieser Figur verursachten Schaden nach Verursachen von Elementar-SCH 6 s lang um {color}12{/color} %, 2-fach stapelbar. 1 s Abklingzeit."
+      ]
     },
     {
       "key": "katsuragikiri-nagamasa",
       "name": "Katsuragikiri Nagamasa",
       "description": "Ein Schwert, das in Tatarasuna hergestellt wurde. Schwer und zäh.",
-      "refinement": "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {0} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {1} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden."
+      "refinements": [
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}6{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}3{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}7{/color},5 %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}3{/color},5 Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}9{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}4{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}10{/color},5 %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}4{/color},5 Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}12{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}5{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden."
+      ]
     },
     {
       "key": "kitain-cross-spear",
       "name": "Kitain-Kreuzlanze",
       "description": "Eine besondere Lanze, die einst von einem berühmten Krieger benutzt wurde, der die Tatarigami auf der Insel Yashiori bewachte.",
-      "refinement": "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {0} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {1} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden."
+      "refinements": [
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}6{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}3{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}7{/color},5 %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}3{/color},5 Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}9{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}4{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}10{/color},5 %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}4{/color},5 Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}12{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}5{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden."
+      ]
     },
     {
       "key": "lions-roar",
       "name": "Drachenschrei",
       "description": "Eine aufwendig gefertigte Klinge, die jedoch nichts an Biegsamkeit und Schärfe einbüßt. Schwingt man sie durch die Luft, ist es, als höre man einen Drachen schreien.",
-      "refinement": "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {0} %."
+      "refinements": [
+        "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}20{/color} %.",
+        "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}24{/color} %.",
+        "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}28{/color} %.",
+        "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}32{/color} %.",
+        "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}36{/color} %."
+      ]
     },
     {
       "key": "lithic-blade",
       "name": "Antikes Millelithenschwert",
       "description": "Ein wuchtiges Schwert gemeißelt aus dem Gestein, auf dem Liyue gebaut ist.",
-      "refinement": "Erhöht den Angriff der mit dieser Waffe ausgerüsteten Figur für jede Figur aus Liyue in der Truppe um {0} % und die KT um je {1} %. 4-fach stapelbar."
+      "refinements": [
+        "Erhöht den Angriff der mit dieser Waffe ausgerüsteten Figur für jede Figur aus Liyue in der Truppe um {color}7{/color} % und die KT um je {color}3{/color} %. 4-fach stapelbar.",
+        "Erhöht den Angriff der mit dieser Waffe ausgerüsteten Figur für jede Figur aus Liyue in der Truppe um {color}8{/color} % und die KT um je {color}4{/color} %. 4-fach stapelbar.",
+        "Erhöht den Angriff der mit dieser Waffe ausgerüsteten Figur für jede Figur aus Liyue in der Truppe um {color}9{/color} % und die KT um je {color}5{/color} %. 4-fach stapelbar.",
+        "Erhöht den Angriff der mit dieser Waffe ausgerüsteten Figur für jede Figur aus Liyue in der Truppe um {color}10{/color} % und die KT um je {color}6{/color} %. 4-fach stapelbar.",
+        "Erhöht den Angriff der mit dieser Waffe ausgerüsteten Figur für jede Figur aus Liyue in der Truppe um {color}11{/color} % und die KT um je {color}7{/color} %. 4-fach stapelbar."
+      ]
     },
     {
       "key": "lithic-spear",
       "name": "Millelithenlanze",
       "description": "Eine Lanze mit großem Geschick aus dem Gestein der Guyun-Türme gehauen. Die Härte der Speerspitze sucht ihresgleichen.",
-      "refinement": "Erhöht den Angriff der mit dieser Waffe ausgerüsteten Figur für jede Figur aus Liyue in der Truppe um {0} % und die KT um je {1} %. 4-fach stapelbar."
+      "refinements": [
+        "Erhöht den Angriff der mit dieser Waffe ausgerüsteten Figur für jede Figur aus Liyue in der Truppe um {color}7{/color} % und die KT um je {color}3{/color} %. 4-fach stapelbar.",
+        "Erhöht den Angriff der mit dieser Waffe ausgerüsteten Figur für jede Figur aus Liyue in der Truppe um {color}8{/color} % und die KT um je {color}4{/color} %. 4-fach stapelbar.",
+        "Erhöht den Angriff der mit dieser Waffe ausgerüsteten Figur für jede Figur aus Liyue in der Truppe um {color}9{/color} % und die KT um je {color}5{/color} %. 4-fach stapelbar.",
+        "Erhöht den Angriff der mit dieser Waffe ausgerüsteten Figur für jede Figur aus Liyue in der Truppe um {color}10{/color} % und die KT um je {color}6{/color} %. 4-fach stapelbar.",
+        "Erhöht den Angriff der mit dieser Waffe ausgerüsteten Figur für jede Figur aus Liyue in der Truppe um {color}11{/color} % und die KT um je {color}7{/color} %. 4-fach stapelbar."
+      ]
     },
     {
       "key": "lost-prayer-to-the-sacred-winds",
       "name": "Gebete der Vier Winde",
       "description": "Ein wertvolles Lehrbuch von einem Unbekannten über die Anbetung des Windes. Für das über die Jahrtausende überlieferte Vertrauen erhielt es das Wohlwollen des Windes und somit seinen Segen und seine Kraft.",
-      "refinement": "Erhöht die Bewegungs-GSW um 10 % und den Elementar-SCH nach dem Einwechseln alle 4 s um {0} %. 4-fach stapelbar, hält bis zum Auswechseln oder, bis die Figur ohnmächtig wird."
+      "refinements": [
+        "Erhöht die Bewegungs-GSW um 10 % und den Elementar-SCH nach dem Einwechseln alle 4 s um {color}8{/color} %. 4-fach stapelbar, hält bis zum Auswechseln oder, bis die Figur ohnmächtig wird.",
+        "Erhöht die Bewegungs-GSW um 10 % und erhält alle 4 s nach dem Einwechseln einen Elementar-SCH-Bonus in Höhe von {color}10{/color} %. 4-fach stapelbar, hält bis zum Auswechseln oder, bis die Figur ohnmächtig wird.",
+        "Erhöht die Bewegungs-GSW um 10 % und den Elementar-SCH nach dem Einwechseln alle 4 s um {color}12{/color} %. 4-fach stapelbar, hält bis zum Auswechseln oder, bis die Figur ohnmächtig wird.",
+        "Erhöht die Bewegungs-GSW um 10 % und den Elementar-SCH nach dem Einwechseln alle 4 s um {color}14{/color} %. 4-fach stapelbar, hält bis zum Auswechseln oder, bis die Figur ohnmächtig wird.",
+        "Erhöht die Bewegungs-GSW um 10 % und den Elementar-SCH nach dem Einwechseln alle 4 s um {color}16{/color} %. 4-fach stapelbar, hält bis zum Auswechseln oder, bis die Figur ohnmächtig wird."
+      ]
     },
     {
       "key": "luxurious-sea-lord",
       "name": "Luxuriöser Seekönig",
       "description": "Der große König des Ozeans. An der Luft getrocknet, eignet er sich sowohl als Waffe als auch als Notfallnahrung.",
-      "refinement": "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {0} %. Wenn die Spezialfähigkeiten Gegner treffen, besteht eine Wahrscheinlichkeit von 100 %, dass ein titanischer Thunfisch beschworen wird, der Flächenschaden in Höhe von {1} % des Angriffs verursacht. 15 s Abklingzeit."
+      "refinements": [
+        "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}12{/color} %. Wenn die Spezialfähigkeiten Gegner treffen, besteht eine Wahrscheinlichkeit von 100 %, dass ein titanischer Thunfisch beschworen wird, der Flächenschaden in Höhe von {color}100{/color} % des Angriffs verursacht. 15 s Abklingzeit.",
+        "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}15{/color} %. Wenn die Spezialfähigkeiten Gegner treffen, besteht eine Wahrscheinlichkeit von 100 %, dass ein titanischer Thunfisch beschworen wird, der Flächenschaden in Höhe von {color}125{/color} % des Angriffs verursacht. 15 s Abklingzeit.",
+        "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}18{/color} %. Wenn die Spezialfähigkeiten Gegner treffen, besteht eine Wahrscheinlichkeit von 100 %, dass ein titanischer Thunfisch beschworen wird, der Flächenschaden in Höhe von {color}150{/color} % des Angriffs verursacht. 15 s Abklingzeit.",
+        "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}21{/color} %. Wenn die Spezialfähigkeiten Gegner treffen, besteht eine Wahrscheinlichkeit von 100 %, dass ein titanischer Thunfisch beschworen wird, der Flächenschaden in Höhe von {color}175{/color} % des Angriffs verursacht. 15 s Abklingzeit.",
+        "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}24{/color} %. Wenn die Spezialfähigkeiten Gegner treffen, besteht eine Wahrscheinlichkeit von 100 %, dass ein titanischer Thunfisch beschworen wird, der Flächenschaden in Höhe von {color}200{/color} % des Angriffs verursacht. 15 s Abklingzeit."
+      ]
     },
     {
       "key": "magic-guide",
       "name": "Magieführer",
       "description": "Auflage 12. Mit den Inhalten und Korrekturen von Auflage 11 sowie Ergänzungen zu den neusten Entwicklungen der Zeit.",
-      "refinement": "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {0} %."
+      "refinements": [
+        "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}12{/color} %.",
+        "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}15{/color} %.",
+        "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}18{/color} %.",
+        "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}21{/color} %.",
+        "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}24{/color} %."
+      ]
     },
     {
       "key": "mappa-mare",
       "name": "Illustrationen von Landen und Wassern",
       "description": "Eine sehr detailreiche Seekarte mit den Gewässern rund um Teyvat. Es gehört zu den wundersamen Dokumenten, die über Handelswege nach Liyue gelangt sind.",
-      "refinement": "Erhöht den Elementar-SCH beim Auslösen von Elementarreaktionen 10 s lang um {0} %. 2-fach stapelbar."
+      "refinements": [
+        "Erhöht den Elementar-SCH beim Auslösen von Elementarreaktionen 10 s lang um {color}8{/color} %. 2-fach stapelbar.",
+        "Erhöht den Elementar-SCH beim Auslösen von Elementareffekten 10 s lang um {color}10{/color} %. 2-fach stapelbar.",
+        "Erhöht den Elementar-SCH beim Auslösen von Elementarreaktionen 10 s lang um {color}12{/color} %. 2-fach stapelbar.",
+        "Erhöht den Elementar-SCH beim Auslösen von Elementarreaktionen 10 s lang um {color}14{/color} %. 2-fach stapelbar.",
+        "Erhöht den Elementar-SCH beim Auslösen von Elementarreaktionen 10 s lang um {color}16{/color} %. 2-fach stapelbar."
+      ]
     },
     {
       "key": "memory-of-dust",
       "name": "Ketten des Diesseits",
       "description": "Ein steinernes Schloss, das längst vergangene Erinnerungen verschlossen hält. Nach unendlichen Umwandlungen zeigt es seine wahre Kraft.",
-      "refinement": "Erhöht die Schildeffizienz um {0} %. Erhöht den ANG nach Treffern 8 s lang um {1} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %."
+      "refinements": [
+        "Erhöht die Schildeffizienz um {color}20{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}4{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+        "Erhöht die Schildeffizienz um {color}25{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}5{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+        "Erhöht die Schildeffizienz um {color}30{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}6{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+        "Erhöht die Schildeffizienz um {color}35{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}7{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+        "Erhöht die Schildeffizienz um {color}40{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}8{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %."
+      ]
     },
     {
       "key": "messenger",
       "name": "Überbringer",
       "description": "Ein einfacher Holzbogen, mit dem man früher wohl einmal Nachrichten übermittelt hat.",
-      "refinement": "Verursacht beim Treffen von Schwachstellen mit heftigen Schlägen zusätzlichen Schaden in Höhe von {0} % ANG sowie auf jeden Fall einen KT. 10 s Abklingzeit."
+      "refinements": [
+        "Verursacht beim Treffen von Schwachstellen mit heftigen Schlägen zusätzlichen Schaden in Höhe von {color}100{/color} % ANG sowie auf jeden Fall einen KT. 10 s Abklingzeit.",
+        "Verursacht beim Treffen von Schwachstellen mit heftigen Schlägen zusätzlichen Schaden in Höhe von {color}125{/color} % ANG sowie auf jeden Fall einen KT. 10 s Abklingzeit.",
+        "Verursacht beim Treffen von Schwachstellen mit heftigen Schlägen zusätzlichen Schaden in Höhe von {color}150{/color} % ANG sowie auf jeden Fall einen KT. 10 s Abklingzeit.",
+        "Verursacht beim Treffen von Schwachstellen mit heftigen Schlägen zusätzlichen Schaden in Höhe von {color}175{/color} % ANG sowie auf jeden Fall einen KT. 10 s Abklingzeit.",
+        "Verursacht beim Treffen von Schwachstellen mit heftigen Schlägen zusätzlichen Schaden in Höhe von {color}200{/color} % ANG sowie auf jeden Fall einen KT. 10 s Abklingzeit."
+      ]
     },
     {
       "key": "mistsplitter-reforged",
       "name": "Widerschein des Nebelsplitters",
       "description": "Ein Katana, das in einem traurigen violetten Licht leuchtet. Weil es einmal zerbrochen wurde, wurde es „Widerschein“ genannt.",
-      "refinement": "Erhöht den Elementar-SCH aller Elemente um {0} % und verleiht die Kraft des „Nebelspaltersiegels“: Erhöht den Elementar-SCH des eigenen Elements bei 1/2/3 Stapelungen um jeweils {1} %. Verleiht der Figur in folgenden Situationen je 1 Nebelspaltersiegel: Verursachen von Elementar-SCH mit Standardangriffen, hält 5 s; Anwendung von Spezialfähigkeiten, hält 10 s; Elementarenergie der Figur unter 100 %, verschwindet bei voller Elementarenergie. Wirkungsdauer jeder Stapelung Nebelspaltersiegel ist unabhängig."
+      "refinements": [
+        "Erhöht den Elementar-SCH aller Elemente um {color}12{/color} % und verleiht die Kraft des „Nebelspaltersiegels“: Erhöht den Elementar-SCH des eigenen Elements bei 1/2/3 Stapelungen um jeweils {color}8/16/28{/color} %. Verleiht der Figur in folgenden Situationen je 1 Nebelspaltersiegel: Verursachen von Elementar-SCH mit Standardangriffen, hält 5 s; Anwendung von Spezialfähigkeiten, hält 10 s; Elementarenergie der Figur unter 100 %, verschwindet bei voller Elementarenergie. Wirkungsdauer jeder Stapelung Nebelspaltersiegel ist unabhängig.",
+        "Erhöht den Elementar-SCH aller Elemente um {color}15{/color} % und verleiht die Kraft des „Nebelspaltersiegels“: Erhöht den Elementar-SCH des eigenen Elements bei 1/2/3 Stapelungen um jeweils {color}10/20/35{/color} %. Verleiht der Figur in folgenden Situationen je 1 Nebelspaltersiegel: Verursachen von Elementar-SCH mit Standardangriffen, hält 5 s; Anwendung von Spezialfähigkeiten, hält 10 s; Elementarenergie der Figur unter 100 %, verschwindet bei voller Elementarenergie. Wirkungsdauer jeder Stapelung Nebelspaltersiegel ist unabhängig.",
+        "Erhöht den Elementar-SCH aller Elemente um {color}18{/color} % und verleiht die Kraft des „Nebelspaltersiegels“: Erhöht den Elementar-SCH des eigenen Elements bei 1/2/3 Stapelungen um jeweils {color}12/24/42{/color} %. Verleiht der Figur in folgenden Situationen je 1 Nebelspaltersiegel: Verursachen von Elementar-SCH mit Standardangriffen, hält 5 s; Anwendung von Spezialfähigkeiten, hält 10 s; Elementarenergie der Figur unter 100 %, verschwindet bei voller Elementarenergie. Wirkungsdauer jeder Stapelung Nebelspaltersiegel ist unabhängig.",
+        "Erhöht den Elementar-SCH aller Elemente um {color}21{/color} % und verleiht die Kraft des „Nebelspaltersiegels“: Erhöht den Elementar-SCH des eigenen Elements bei 1/2/3 Stapelungen um jeweils {color}14/28/49{/color} %. Verleiht der Figur in folgenden Situationen je 1 Nebelspaltersiegel: Verursachen von Elementar-SCH mit Standardangriffen, hält 5 s; Anwendung von Spezialfähigkeiten, hält 10 s; Elementarenergie der Figur unter 100 %, verschwindet bei voller Elementarenergie. Wirkungsdauer jeder Stapelung Nebelspaltersiegel ist unabhängig.",
+        "Erhöht den Elementar-SCH aller Elemente um {color}24{/color} % und verleiht die Kraft des „Nebelspaltersiegels“: Erhöht den Elementar-SCH des eigenen Elements bei 1/2/3 Stapelungen um jeweils {color}16/32/56{/color} %. Verleiht der Figur in folgenden Situationen je 1 Nebelspaltersiegel: Verursachen von Elementar-SCH mit Standardangriffen, hält 5 s; Anwendung von Spezialfähigkeiten, hält 10 s; Elementarenergie der Figur unter 100 %, verschwindet bei voller Elementarenergie. Wirkungsdauer jeder Stapelung Nebelspaltersiegel ist unabhängig."
+      ]
     },
     {
       "key": "mitternachts-waltz",
       "name": "Mitternachtswalzer",
       "description": "Ein Bogen in der Farbe der Sünden und der Nächte der Illusion.",
-      "refinement": "Erhöht den mit Elementarfähigkeiten verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 5 s lang um {0} %. Erhöht den mit Standardangriffen verursachten Schaden nach dem Treffen von Gegnern mit Elementarfähigkeiten 5 s lang um {1} %."
+      "refinements": [
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 5 s lang um {color}20{/color} %. Erhöht den mit Standardangriffen verursachten Schaden nach dem Treffen von Gegnern mit Elementarfähigkeiten 5 s lang um {color}20{/color} %.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 5 s lang um {color}25{/color} %. Erhöht den mit Standardangriffen verursachten Schaden nach dem Treffen von Gegnern mit Elementarfähigkeiten 5 s lang um {color}25{/color} %.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 5 s lang um {color}30{/color} %. Erhöht den mit Standardangriffen verursachten Schaden nach dem Treffen von Gegnern mit Elementarfähigkeiten 5 s lang um {color}30{/color} %.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 5 s lang um {color}35{/color} %. Erhöht den mit Standardangriffen verursachten Schaden nach dem Treffen von Gegnern mit Elementarfähigkeiten 5 s lang um {color}35{/color} %.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden nach dem Treffen von Gegnern mit Standardangriffen 5 s lang um {color}40{/color} %. Erhöht den mit Standardangriffen verursachten Schaden nach dem Treffen von Gegnern mit Elementarfähigkeiten 5 s lang um {color}40{/color} %."
+      ]
     },
     {
       "key": "old-mercs-pal",
       "name": "Söldnerzweihänder",
       "description": "Ein altes, schweres, aber stabiles Großschwert, das schon viele Jahre und Kämpfe überstanden hat.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "otherworldly-story",
       "name": "Geschichten einer anderen Welt",
       "description": "Ein nahezu wertloser Fantasyroman. Auch seine Nutzung als magischer Katalysator entspringt eher der Fantasie.",
-      "refinement": "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen {0} % LP wieder her."
+      "refinements": [
+        "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen {color}1{/color} % LP wieder her.",
+        "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen {color}1{/color},25 % LP wieder her.",
+        "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen {color}1{/color},5 % LP wieder her.",
+        "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen {color}1{/color},75 % LP wieder her.",
+        "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen {color}2{/color} % LP wieder her."
+      ]
     },
     {
       "key": "pocket-grimoire",
       "name": "Taschenzauberbuch",
       "description": "Ein gewissenhaft verfasstes Büchlein mit Hinweisen zu Prüfungsinhalten der Magie.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "polar-star",
       "name": "Polarstern",
       "description": "Ein makelloser Bogen, so scharf wie die Gletscher des hohen Nordens.",
-      "refinement": "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um {0} %. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um {1} %. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander."
+      "refinements": [
+        "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um {color}12{/color} %. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um {color}10/20/30/48{/color} %. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander.",
+        "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um {color}15{/color} %. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um {color}12{/color},5/25/37,5/60 %. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander.",
+        "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um {color}18{/color} %. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um {color}15/30/45/72{/color} %. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander.",
+        "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um {color}21{/color} %. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um {color}17{/color},5/35/52,5/84 %. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander.",
+        "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um {color}24{/color} %. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um {color}20/40/60/96{/color} %. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander."
+      ]
     },
     {
       "key": "predator",
       "name": "Raubtier",
       "description": "Ein Bogen von außergewöhnlicher Machart. Er scheint nicht von dieser Welt zu sein.",
-      "refinement": "Nur für Spieler auf folgender Plattform wirksam:\r\n„PlayStation Network“\r\nFügt Gegnern Kryo-Schaden zu und erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden 6 s lang um 10 %, 2-fach stapelbar. Erhöht Aloys ANG beim Anlegen von Raubtier zusätzlich um 66 Punkte."
+      "refinements": [
+        "Nur für Spieler auf folgender Plattform wirksam:\r\n„PlayStation Network“\r\nFügt Gegnern Kryo-Schaden zu und erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden 6 s lang um 10 %, 2-fach stapelbar. Erhöht Aloys ANG beim Anlegen von Raubtier zusätzlich um 66 Punkte."
+      ]
     },
     {
       "key": "primordial-jade-cutter",
       "name": "Moosgrüner Fels",
       "description": "Ein rituelles Schwert, das aus reinster Jade gehauen wurde. Man meint, ein leichtes Stöhnen zu vernehmen, während man es schwingt.",
-      "refinement": "Erhöht die LP um {0} %. Erhöht den ANG um {1},2 % der max. LP der mit dieser Waffe ausgerüsteten Figur."
+      "refinements": [
+        "Erhöht die LP um {color}20{/color} %. Erhöht den ANG um {color}1{/color},2 % der max. LP der mit dieser Waffe ausgerüsteten Figur.",
+        "Erhöht die LP um {color}25{/color} %. Erhöht den ANG um {color}1{/color},5 % der max. LP der mit dieser Waffe ausgerüsteten Figur.",
+        "Erhöht die LP um {color}30{/color} %. Erhöht den ANG um {color}1{/color},8 % der max. LP der mit dieser Waffe ausgerüsteten Figur.",
+        "Erhöht die LP um {color}35{/color} %. Erhöht den ANG um {color}2{/color},1 % der max. LP der mit dieser Waffe ausgerüsteten Figur.",
+        "Erhöht die LP um {color}40{/color} %. Erhöht den ANG um {color}2{/color},4 % der max. LP der mit dieser Waffe ausgerüsteten Figur."
+      ]
     },
     {
       "key": "primordial-jade-winged-spear",
       "name": "Urzeitlicher Jadespeer",
       "description": "Ein schwerer und spitzer Speer aus magischer Jade, mit dem man selbst die gewaltigen Meeresungeheuer der Urzeit überwältigen kann.",
-      "refinement": "Erhöht den eigenen ANG bei einem Treffer 6 s lang um {0},2 %, 7-fach stapelbar. 0,3 s Abklingzeit. Erhöht den Schaden nach Erreichen des Stapellimits um {1} %."
+      "refinements": [
+        "Erhöht den eigenen ANG bei einem Treffer 6 s lang um {color}3{/color},2 %, 7-fach stapelbar. 0,3 s Abklingzeit. Erhöht den Schaden nach Erreichen des Stapellimits um {color}12{/color} %.",
+        "Erhöht den eigenen ANG bei einem Treffer 6 s lang um {color}3{/color},9 %, 7-fach stapelbar. 0,3 s Abklingzeit. Erhöht den Schaden nach Erreichen des Stapellimits um {color}15{/color} %.",
+        "Erhöht den eigenen ANG bei einem Treffer 6 s lang um {color}4{/color},6 %, 7-fach stapelbar. 0,3 s Abklingzeit. Erhöht den Schaden nach Erreichen des Stapellimits um {color}18{/color} %.",
+        "Erhöht den eigenen ANG bei einem Treffer 6 s lang um {color}5{/color},3 %, 7-fach stapelbar. 0,3 s Abklingzeit. Erhöht den Schaden nach Erreichen des Stapellimits um {color}21{/color} %.",
+        "Erhöht den eigenen ANG bei einem Treffer 6 s lang um {color}6{/color} %, 7-fach stapelbar. 0,3 s Abklingzeit. Erhöht den Schaden nach Erreichen des Stapellimits um {color}24{/color} %."
+      ]
     },
     {
       "key": "prototype-amber",
       "name": "Bernstein-Prototyp",
       "description": "Ein magischer Katalysator versteckt in der Schwarzsteinschmiede. Aus ihm dringt das Licht von Sonne, Mond und Sternen.",
-      "refinement": "Stellt nach Anwendung von Spezialfähigkeiten 6 s lang alle 2 s {0} Punkte Elementarenergie und allen Truppenmitgliedern alle 2 s {1} % LP wieder her."
+      "refinements": [
+        "Stellt nach Anwendung von Spezialfähigkeiten 6 s lang alle 2 s {color}4{/color} Punkte Elementarenergie und allen Truppenmitgliedern alle 2 s {color}4{/color} % LP wieder her.",
+        "Stellt nach Anwendung von Spezialfähigkeiten 6 s lang alle 2 s {color}4{/color},5 Punkte Elementarenergie und allen Truppenmitgliedern alle 2 s {color}4{/color},5 % LP wieder her.",
+        "Stellt nach Anwendung von Spezialfähigkeiten 6 s lang alle 2 s {color}5{/color} Punkte Elementarenergie und allen Truppenmitgliedern alle 2 s {color}5{/color} % LP wieder her.",
+        "Stellt nach Anwendung von Spezialfähigkeiten 6 s lang alle 2 s {color}5{/color},5 Punkte Elementarenergie und allen Truppenmitgliedern alle 2 s {color}5{/color},5 % LP wieder her.",
+        "Stellt nach Anwendung von Spezialfähigkeiten 6 s lang alle 2 s {color}6{/color} Punkte Elementarenergie und allen Truppenmitgliedern alle 2 s {color}6{/color} % LP wieder her."
+      ]
     },
     {
       "key": "prototype-archaic",
       "name": "Guhua-Prototyp",
       "description": "Ein in der Schwarzsteinschmiede verstecktes, uraltes Großschwert. Schwingst du es durch die Luft, könntest du meinen, den Raum selbst zu spalten.",
-      "refinement": "Fügt Gegnern bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % zusätzlichen Schaden in Höhe von {0} % ANG mit geringer Reichweite zu. 15 s Abklingzeit."
+      "refinements": [
+        "Fügt Gegnern bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % zusätzlichen Schaden in Höhe von {color}240{/color} % ANG mit geringer Reichweite zu. 15 s Abklingzeit.",
+        "Fügt Gegnern bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % zusätzlichen Schaden in Höhe von {color}300{/color} % ANG mit geringer Reichweite zu. 15 s Abklingzeit.",
+        "Fügt Gegnern bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % zusätzlichen Schaden in Höhe von {color}360{/color} % ANG mit geringer Reichweite zu. 15 s Abklingzeit.",
+        "Fügt Gegnern bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % zusätzlichen Schaden in Höhe von {color}420{/color} % ANG mit geringer Reichweite zu. 15 s Abklingzeit.",
+        "Fügt Gegnern bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % zusätzlichen Schaden in Höhe von {color}480{/color} % ANG mit geringer Reichweite zu. 15 s Abklingzeit."
+      ]
     },
     {
       "key": "prototype-crescent",
       "name": "Mondschein-Prototyp",
       "description": "Der Prototyp eines Langbogens, versteckt in der Schwarzsteinschmiede. Beim Schießen des Pfeils macht man eine Figur, die an den leuchtenden Mond erinnert.",
-      "refinement": "Erhöht die Bewegungs-GSW beim Treffen von Schwachstellen mit heftigen Schlägen 10 s lang um 10 % und den ANG um {0} %."
+      "refinements": [
+        "Erhöht die Bewegungs-GSW beim Treffen von Schwachstellen mit heftigen Schlägen 10 s lang um 10 % und den ANG um {color}36{/color} %.",
+        "Erhöht die Bewegungs-GSW beim Treffen von Schwachstellen mit heftigen Schlägen 10 s lang um 10 % und den ANG um {color}45{/color} %.",
+        "Erhöht die Bewegungs-GSW beim Treffen von Schwachstellen mit heftigen Schlägen 10 s lang um 10 % und den ANG um {color}54{/color} %.",
+        "Erhöht die Bewegungs-GSW beim Treffen von Schwachstellen mit heftigen Schlägen 10 s lang um 10 % und den ANG um {color}63{/color} %.",
+        "Erhöht die Bewegungs-GSW beim Treffen von Schwachstellen mit heftigen Schlägen 10 s lang um 10 % und den ANG um {color}72{/color} %."
+      ]
     },
     {
       "key": "prototype-rancour",
       "name": "Steinschneider-Prototyp",
       "description": "Ein uraltes Langschwert aus der Schwarzsteinschmiede, das durch Felsen gleitet, als wären sie Butter.",
-      "refinement": "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {0} %, 4-fach stapelbar. 0,3 s Abklingzeit."
+      "refinements": [
+        "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}4{/color} %, 4-fach stapelbar. 0,3 s Abklingzeit.",
+        "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}5{/color} %, 4-fach stapelbar. 0,3 s Abklingzeit.",
+        "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}6{/color} %, 4-fach stapelbar. 0,3 s Abklingzeit.",
+        "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}7{/color} %, 4-fach stapelbar. 0,3 s Abklingzeit.",
+        "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}8{/color} %, 4-fach stapelbar. 0,3 s Abklingzeit."
+      ]
     },
     {
       "key": "prototype-starglitter",
       "name": "Sternsichel-Prototyp",
       "description": "Diese alte Sichel war gut in der Schwarzsteinschmiede versteckt. Das Funkeln an der Klinge erinnert an den sternenklaren Nachthimmel.",
-      "refinement": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden nach Anwendung von Elementarfähigkeiten 12 s lang um {0} %, 2-fach stapelbar."
+      "refinements": [
+        "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden nach Anwendung von Elementarfähigkeiten 12 s lang um {color}8{/color} %, 2-fach stapelbar.",
+        "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden nach Anwendung von Elementarfähigkeiten 12 s lang um {color}10{/color} %, 2-fach stapelbar.",
+        "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden nach Anwendung von Elementarfähigkeiten 12 s lang um {color}12{/color} %, 2-fach stapelbar.",
+        "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden nach Anwendung von Elementarfähigkeiten 12 s lang um {color}14{/color} %, 2-fach stapelbar.",
+        "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden nach Anwendung von Elementarfähigkeiten 12 s lang um {color}16{/color} %, 2-fach stapelbar."
+      ]
     },
     {
       "key": "rainslasher",
       "name": "Regenschnitter",
       "description": "Ein Großschwert ohne scharfe Klinge, das leicht schimmert. Hält man dieses Schwert in den Händen, zerschlägt man seine Feinde gnadenlos mit purer Gewalt.",
-      "refinement": "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {0} %."
+      "refinements": [
+        "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}20{/color} %.",
+        "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}24{/color} %.",
+        "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}28{/color} %.",
+        "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}32{/color} %.",
+        "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {color}36{/color} %."
+      ]
     },
     {
       "key": "raven-bow",
       "name": "Rabenbogen",
       "description": "Raben sind in den Mythen die Gesandten des Todes. Rabenfedern schmücken den Bogen und geben der Beute so schon beim Abschuss des Pfeils die Nachricht ihres Todes bekannt.",
-      "refinement": "Erhöht den von Hydro- oder Pyro-Effekten betroffenen Gegnern zugefügten Schaden um {0} %."
+      "refinements": [
+        "Erhöht den von Hydro- oder Pyro-Effekten betroffenen Gegnern zugefügten Schaden um {color}12{/color} %.",
+        "Erhöht den von Hydro- oder Pyro-Effekten betroffenen Gegnern zugefügten Schaden um {color}15{/color} %.",
+        "Erhöht den von Hydro- oder Pyro-Effekten betroffenen Gegnern zugefügten Schaden um {color}18{/color} %.",
+        "Erhöht den von Hydro- oder Pyro-Effekten betroffenen Gegnern zugefügten Schaden um {color}21{/color} %.",
+        "Erhöht den von Hydro- oder Pyro-Effekten betroffenen Gegnern zugefügten Schaden um {color}24{/color} %."
+      ]
     },
     {
       "key": "recurve-bow",
       "name": "Reflexbogen",
       "description": "Mit diesem Jagdbogen soll man selbst einen Adler im Flug aus dem Himmel holen können. Das hängt aber doch sehr stark von der Kunst des Schützen ab.",
-      "refinement": "Stellt beim Besiegen eines Gegners {0} % LP wieder her."
+      "refinements": [
+        "Stellt beim Besiegen eines Gegners {color}8{/color} % LP wieder her.",
+        "Stellt beim Besiegen eines Gegners {color}10{/color} % LP wieder her.",
+        "Stellt beim Besiegen eines Gegners {color}12{/color} % LP wieder her.",
+        "Stellt beim Besiegen eines Gegners {color}14{/color} % LP wieder her.",
+        "Stellt beim Besiegen eines Gegners {color}16{/color} % LP wieder her."
+      ]
     },
     {
       "key": "royal-bow",
       "name": "Königlicher Langbogen",
       "description": "Ein Langbogen der Aristokraten, die einst über Mondstadt herrschten. Obwohl er aus einem längst vergangenen Zeitalter stammt, ist die Sehne noch vollständig intakt und die Pfeile schießen ungehemmt davon.",
-      "refinement": "Erhöht die KT beim Verursachen von Schaden um {0} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT."
+      "refinements": [
+        "Erhöht die KT beim Verursachen von Schaden um {color}8{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}10{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}12{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}14{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}16{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT."
+      ]
     },
     {
       "key": "royal-greatsword",
       "name": "Königliches Großschwert",
       "description": "Dieses Großschwert wurde einst vom alten Adel Mondstadts geführt. Sein Material ist erlesen und hat all die Zeit gut überstanden. Diese Waffe ist für Aristokraten vorgesehen.",
-      "refinement": "Erhöht die KT beim Verursachen von Schaden um {0} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT."
+      "refinements": [
+        "Erhöht die KT beim Verursachen von Schaden um {color}8{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}10{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}12{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}14{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}16{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT."
+      ]
     },
     {
       "key": "royal-grimoire",
       "name": "Königliches Zauberbuch",
       "description": "Es gehörte einst dem königlichen Hofmagier von Mondstadt und enthält Aufzeichnungen über wahre Begebenheiten und die Zauberkunst.",
-      "refinement": "Erhöht die KT beim Verursachen von Schaden um {0} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT."
+      "refinements": [
+        "Erhöht die KT beim Verursachen von Schaden um {color}8{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}10{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}12{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}14{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}16{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT."
+      ]
     },
     {
       "key": "royal-longsword",
       "name": "Königliches Langschwert",
       "description": "Ein altes Schwert der Aristokraten, die einst über Mondstadt herrschten. Es ist fein ausgearbeitet und zeigt mit seinen Verzierungen und Schnitzereien den Status seines Trägers.",
-      "refinement": "Erhöht die KT beim Verursachen von Schaden um {0} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT."
+      "refinements": [
+        "Erhöht die KT beim Verursachen von Schaden um {color}8{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}10{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}12{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}14{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}16{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT."
+      ]
     },
     {
       "key": "royal-spear",
       "name": "Königlicher Jagdspeer",
       "description": "Eine Lanze, die früher einer der alten Aristokraten von Mondstadt führte und von diesem gehegt und gepflegt wurde. Sie hat bisher nie das Tageslicht gesehen, ist aber trotzdem unvergleichlich spitz.",
-      "refinement": "Erhöht die KT beim Verursachen von Schaden um {0} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT."
+      "refinements": [
+        "Erhöht die KT beim Verursachen von Schaden um {color}8{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}10{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}12{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}14{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+        "Erhöht die KT beim Verursachen von Schaden um {color}16{/color} %, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT."
+      ]
     },
     {
       "key": "rust",
       "name": "Rostiger Bogen",
       "description": "Ein großer, vollständig in Rost gekleideter Eisenbogen. Mit normaler Stärke kann man ihn kaum anheben, ganz zu schweigen vom Abschießen der Pfeile.",
-      "refinement": "Erhöht den mit Standardangriffen verursachten Schaden um {0} % und verringert den mit heftigen Schlägen verursachten Schaden um 10 %."
+      "refinements": [
+        "Erhöht den mit Standardangriffen verursachten Schaden um {color}40{/color} % und verringert den mit heftigen Schlägen verursachten Schaden um 10 %.",
+        "Erhöht den mit Standardangriffen verursachten Schaden um {color}50{/color} % und verringert den mit heftigen Schlägen verursachten Schaden um 10 %.",
+        "Erhöht den mit Standardangriffen verursachten Schaden um {color}60{/color} % und verringert den mit heftigen Schlägen verursachten Schaden um 10 %.",
+        "Erhöht den mit Standardangriffen verursachten Schaden um {color}70{/color} % und verringert den mit heftigen Schlägen verursachten Schaden um 10 %.",
+        "Erhöht den mit Standardangriffen verursachten Schaden um {color}80{/color} % und verringert den mit heftigen Schlägen verursachten Schaden um 10 %."
+      ]
     },
     {
       "key": "sacrificial-bow",
       "name": "Opferbogen",
       "description": "Ein über die Zeit verkrusteter Bogen mit noch gut zu erkennenden Ornamenten. Mit ihm kann man die Winde der Zeit gut überstehen.",
-      "refinement": "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {0} %, {1} s Abklingzeit."
+      "refinements": [
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}40{/color} %, {color}30{/color} s Abklingzeit.",
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}50{/color} %, {color}26{/color} s Abklingzeit.",
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}60{/color} %, {color}22{/color} s Abklingzeit.",
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}70{/color} %, {color}19{/color} s Abklingzeit.",
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}80{/color} %, {color}16{/color} s Abklingzeit."
+      ]
     },
     {
       "key": "sacrificial-fragments",
       "name": "Opferrituale",
       "description": "An den Texten und Skripten in diesem Buch nagt deutlich der Zahn der Zeit. Sie sind kaum noch erkennbar und erliegen dem Fluch von Zeit und Wind.",
-      "refinement": "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {0} %, {1} s Abklingzeit."
+      "refinements": [
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}40{/color} %, {color}30{/color} s Abklingzeit.",
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}50{/color} %, {color}26{/color} s Abklingzeit.",
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}60{/color} %, {color}22{/color} s Abklingzeit.",
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}70{/color} %, {color}19{/color} s Abklingzeit.",
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}80{/color} %, {color}16{/color} s Abklingzeit."
+      ]
     },
     {
       "key": "sacrificial-greatsword",
       "name": "Opfergroßschwert",
       "description": "Ein großes, über die Zeit verkrustetes Schwert mit noch gut zu erkennenden Ornamenten. Mit ihm kann man die Winde der Zeit gut überstehen.",
-      "refinement": "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {0} %, {1} s Abklingzeit."
+      "refinements": [
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}40{/color} %, {color}30{/color} s Abklingzeit.",
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}50{/color} %, {color}26{/color} s Abklingzeit.",
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}60{/color} %, {color}22{/color} s Abklingzeit.",
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}70{/color} %, {color}19{/color} s Abklingzeit.",
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}80{/color} %, {color}16{/color} s Abklingzeit."
+      ]
     },
     {
       "key": "sacrificial-sword",
       "name": "Opferschwert",
       "description": "Ein über die Zeit verkrustetes Schwert mit noch gut zu erkennenden Ornamenten. Mit ihm kann man die Winde der Zeit gut überstehen.",
-      "refinement": "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {0} %, {1} s Abklingzeit."
+      "refinements": [
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}40{/color} %, {color}30{/color} s Abklingzeit.",
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}50{/color} %, {color}26{/color} s Abklingzeit.",
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}60{/color} %, {color}22{/color} s Abklingzeit.",
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}70{/color} %, {color}19{/color} s Abklingzeit.",
+        "Überspringt die Abklingzeit einer Elementarfähigkeit beim Verursachen von Schaden mit dieser Fähigkeit mit einer Wahrscheinlichkeit von {color}80{/color} %, {color}16{/color} s Abklingzeit."
+      ]
     },
     {
       "key": "seasoned-hunters-bow",
       "name": "Alter Jagdbogen",
       "description": "Ein in die Jahre gekommener, aber gut gepflegter Bogen. Er funktioniert so gut, dass es sich anfühlt, als arbeite der Bogen mit dem Schützen zusammen.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "serpent-spine",
       "name": "Knochenschwert",
       "description": "Eine seltene Waffe aus dem Ozean alter Zeiten. Schwingt man es durch die Luft, so hört man das Rauschen der Wellen.",
-      "refinement": "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um {0} % und den erlittenen Schaden um {1} %, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt."
+      "refinements": [
+        "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um {color}6{/color} % und den erlittenen Schaden um {color}3{/color} %, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt.",
+        "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um {color}7{/color} % und den erlittenen Schaden um {color}2{/color},7 %, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt.",
+        "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um {color}8{/color} % und den erlittenen Schaden um {color}2{/color},4 %, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt.",
+        "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um {color}9{/color} % und den erlittenen Schaden um {color}2{/color},2 %, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt.",
+        "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um {color}10{/color} % und den erlittenen Schaden um {color}2{/color} %, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt."
+      ]
     },
     {
       "key": "sharpshooters-oath",
       "name": "Eid des Scharfschützen",
       "description": "Dieser perfekt ausgearbeitete Bogen gehörte angeblich einst einem meisterlichen Bogenschützen. Aufgrund seines starken Geruchs eignet er sich aber nicht gut zum Jagen.",
-      "refinement": "Erhöht den Schwachstellen zugefügten Schaden um {0} %."
+      "refinements": [
+        "Erhöht den Schwachstellen zugefügten Schaden um {color}24{/color} %.",
+        "Erhöht den Schwachstellen zugefügten Schaden um {color}30{/color} %.",
+        "Erhöht den Schwachstellen zugefügten Schaden um {color}36{/color} %.",
+        "Erhöht den Schwachstellen zugefügten Schaden um {color}42{/color} %.",
+        "Erhöht den Schwachstellen zugefügten Schaden um {color}48{/color} %."
+      ]
     },
     {
       "key": "silver-sword",
       "name": "Silberschwert",
       "description": "Ein Schwert aus Silber, mit dem man Dämonen vertreiben kann. Aber eigentlich weiß jeder, dass so ein Schwert nicht aus reinem Silber besteht, sondern lediglich aus einer Legierung.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "skyrider-greatsword",
       "name": "Himmelsflug-Großschwert",
       "description": "Ein recht robustes Großschwert. Der sagenumwobene „Schwertprinz“ hat mit ihm den zweiten Versuch unternommen, gen Himmel zu fliegen.",
-      "refinement": "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {0} %, 4-fach stapelbar. 0,5 s Abklingzeit."
+      "refinements": [
+        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}6{/color} %, 4-fach stapelbar. 0,5 s Abklingzeit.",
+        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}7{/color} %, 4-fach stapelbar. 0,5 s Abklingzeit.",
+        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}8{/color} %, 4-fach stapelbar. 0,5 s Abklingzeit.",
+        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}9{/color} %, 4-fach stapelbar. 0,5 s Abklingzeit.",
+        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}10{/color} %, 4-fach stapelbar. 0,5 s Abklingzeit."
+      ]
     },
     {
       "key": "skyrider-sword",
       "name": "Himmelsflug-Schwert",
       "description": "Ein recht robustes Schwert. Der sagenumwobene „Schwertprinz“ hat einst versucht, mit ihm gen Himmel zu fliegen.",
-      "refinement": "Erhöht den ANG und die Bewegungs-GSW nach Anwendung einer Spezialfähigkeit 15 s lang um {0} %."
+      "refinements": [
+        "Erhöht den ANG und die Bewegungs-GSW nach Anwendung einer Spezialfähigkeit 15 s lang um {color}12{/color} %.",
+        "Erhöht den ANG und die Bewegungs-GSW nach Anwendung einer Spezialfähigkeit 15 s lang um {color}15{/color} %.",
+        "Erhöht den ANG und die Bewegungs-GSW nach Anwendung einer Spezialfähigkeit 15 s lang um {color}18{/color} %.",
+        "Erhöht den ANG und die Bewegungs-GSW nach Anwendung einer Spezialfähigkeit 15 s lang um {color}21{/color} %.",
+        "Erhöht den ANG und die Bewegungs-GSW nach Anwendung einer Spezialfähigkeit 15 s lang um {color}24{/color} %."
+      ]
     },
     {
       "key": "skyward-atlas",
       "name": "Himmelsatlas",
       "description": "Ein Atlas von der Wolkenlandschaft, geschaffen von Dvalin und seinem Herrn, dem Archon des Windes. Er beschreibt den Wind und die Wolken des Himmels im Norden detailliert und enthält die Kraft von Himmel und Wind.",
-      "refinement": "Erhöht den Elementarschaden um {0} % und erhält bei Treffern mit Standardangriffen mit einer Wahrscheinlichkeit von 50 % die Gunst der Wolken, die Gegner in der Umgebung aktiv angreifen und Schaden in Höhe von {1} % ANG verursachen. 30 s Abklingzeit."
+      "refinements": [
+        "Erhöht den Elementarschaden um {color}12{/color} % und erhält bei Treffern mit Standardangriffen mit einer Wahrscheinlichkeit von 50 % die Gunst der Wolken, die Gegner in der Umgebung aktiv angreifen und Schaden in Höhe von {color}160{/color} % ANG verursachen. 30 s Abklingzeit.",
+        "Erhöht den Elementarschaden um {color}15{/color} % und erhält bei Treffern mit Standardangriffen mit einer Wahrscheinlichkeit von 50 % die Gunst der Wolken, die Gegner in der Umgebung aktiv angreifen und Schaden in Höhe von {color}200{/color} % ANG verursachen. 30 s Abklingzeit.",
+        "Erhöht den Elementarschaden um {color}18{/color} % und erhält bei Treffern mit Standardangriffen mit einer Wahrscheinlichkeit von 50 % die Gunst der Wolken, die Gegner in der Umgebung aktiv angreifen und Schaden in Höhe von {color}240{/color} % ANG verursachen. 30 s Abklingzeit.",
+        "Erhöht den Elementarschaden um {color}21{/color} % und erhält bei Treffern mit Standardangriffen mit einer Wahrscheinlichkeit von 50 % die Gunst der Wolken, die Gegner in der Umgebung aktiv angreifen und Schaden in Höhe von {color}280{/color} % ANG verursachen. 30 s Abklingzeit.",
+        "Erhöht den Elementarschaden um {color}24{/color} % und erhält bei Treffern mit Standardangriffen mit einer Wahrscheinlichkeit von 50 % die Gunst der Wolken, die Gegner in der Umgebung aktiv angreifen und Schaden in Höhe von {color}320{/color} % ANG verursachen. 30 s Abklingzeit."
+      ]
     },
     {
       "key": "skyward-blade",
       "name": "Himmelsklinge",
       "description": "Ein ritterliches Schwert, das Dvalins wiedererlangte Ehre symbolisiert. Auf der Hohlkehle liegt der Segen des Archons des Windes mit der Kraft von Himmel und Wind.",
-      "refinement": "Erhöht die KT um {0} %. Aktiviert bei Anwendung von Spezialfähigkeiten Himmelsbohrer: Erhöht die Bewegungs-GSW um {1} % und die Angriffs-GSW um {2} %, verursacht bei Treffern mit Standardangriffen und heftigen Schlägen zusätzlichen Schaden in Höhe von {3} % ANG, hält 12 s."
+      "refinements": [
+        "Erhöht die KT um {color}4{/color} %. Aktiviert bei Anwendung von Spezialfähigkeiten Himmelsbohrer: Erhöht die Bewegungs-GSW um {color}10{/color} % und die Angriffs-GSW um {color}10{/color} %, verursacht bei Treffern mit Standardangriffen und heftigen Schlägen zusätzlichen Schaden in Höhe von {color}20{/color} % ANG, hält 12 s.",
+        "Erhöht die KT um {color}5{/color} %. Aktiviert bei Anwendung von Spezialfähigkeiten Himmelsbohrer: Erhöht die Bewegungs-GSW um {color}10{/color} % und die Angriffs-GSW um {color}10{/color} %, verursacht bei Treffern mit Standardangriffen und heftigen Schlägen zusätzlichen Schaden in Höhe von {color}25{/color} % ANG, hält 12 s.",
+        "Erhöht die KT um {color}6{/color} %. Aktiviert bei Anwendung von Spezialfähigkeiten Himmelsbohrer: Erhöht die Bewegungs-GSW um {color}10{/color} % und die Angriffs-GSW um {color}10{/color} %, verursacht bei Treffern mit Standardangriffen und heftigen Schlägen zusätzlichen Schaden in Höhe von {color}30{/color} % ANG, hält 12 s.",
+        "Erhöht die KT um {color}7{/color} %. Aktiviert bei Anwendung von Spezialfähigkeiten Himmelsbohrer: Erhöht die Bewegungs-GSW um {color}10{/color} % und die Angriffs-GSW um {color}10{/color} %, verursacht bei Treffern mit Standardangriffen und heftigen Schlägen zusätzlichen Schaden in Höhe von {color}35{/color} % ANG, hält 12 s.",
+        "Erhöht die KT um {color}8{/color} %. Aktiviert bei Anwendung von Spezialfähigkeiten Himmelsbohrer: Erhöht die Bewegungs-GSW um {color}10{/color} % und die Angriffs-GSW um {color}10{/color} %, verursacht bei Treffern mit Standardangriffen und heftigen Schlägen zusätzlichen Schaden in Höhe von {color}40{/color} % ANG, hält 12 s."
+      ]
     },
     {
       "key": "skyward-harp",
       "name": "Himmelsflügel",
       "description": "Ein großer Bogen, der die Zusammengehörigkeit von Dvalin und dem Archon des Windes symbolisiert. Der Klang beim Loslassen der Sehne ist wie Musik in den Ohren des Archons und enthält die Kraft von Himmel und Wind.",
-      "refinement": "Erhöht den KSCH um {0} % und verursacht bei einem Treffer mit einer Wahrscheinlichkeit von {1} % physischen Schaden mit geringer Reichweite in Höhe von 125 % ANG. {2} s Abklingzeit."
+      "refinements": [
+        "Erhöht den KSCH um {color}20{/color} % und verursacht bei einem Treffer mit einer Wahrscheinlichkeit von {color}60{/color} % physischen Schaden mit geringer Reichweite in Höhe von 125 % ANG. {color}4{/color} s Abklingzeit.",
+        "Erhöht den KSCH um {color}25{/color} % und verursacht bei einem Treffer mit einer Wahrscheinlichkeit von {color}70{/color} % physischen Schaden mit geringer Reichweite in Höhe von 125 % ANG. {color}3{/color},5 s Abklingzeit.",
+        "Erhöht den KSCH um {color}30{/color} % und verursacht bei einem Treffer mit einer Wahrscheinlichkeit von {color}80{/color} % physischen Schaden mit geringer Reichweite in Höhe von 125 % ANG. {color}3{/color} s Abklingzeit.",
+        "Erhöht den KSCH um {color}35{/color} % und verursacht bei einem Treffer mit einer Wahrscheinlichkeit von {color}90{/color} % physischen Schaden mit geringer Reichweite in Höhe von 125 % ANG. {color}2{/color},5 s Abklingzeit.",
+        "Erhöht den KSCH um {color}40{/color} % und verursacht bei einem Treffer mit einer Wahrscheinlichkeit von {color}100{/color} % physischen Schaden mit geringer Reichweite in Höhe von 125 % ANG. {color}2{/color} s Abklingzeit."
+      ]
     },
     {
       "key": "skyward-pride",
       "name": "Stolz des Himmels",
       "description": "Ein Zweihänder, der Dvalins stolzen Flug im Himmel symbolisiert. Geschwungen ertönt Dvalins tiefe Stimme mit der Kraft von Himmel und Wind.",
-      "refinement": "Erhöht den verursachten Schaden um {0} %. Nach Anwendung der Spezialfähigkeit: Erschafft nach Treffern mit Standardangriffen und heftigen Schlägen eine Vakuumklinge, die Gegnern in der Bahn Schaden in Höhe von {1} % ANG zufügt. Hält 20 s oder 8 Vakuumklingen lang."
+      "refinements": [
+        "Erhöht den verursachten Schaden um {color}8{/color} %. Nach Anwendung der Spezialfähigkeit: Erschafft nach Treffern mit Standardangriffen und heftigen Schlägen eine Vakuumklinge, die Gegnern in der Bahn Schaden in Höhe von {color}80{/color} % ANG zufügt. Hält 20 s oder 8 Vakuumklingen lang.",
+        "Erhöht den verursachten Schaden um {color}10{/color} %. Nach Anwendung der Spezialfähigkeit: Erschafft nach Treffern mit Standardangriffen und heftigen Schlägen eine Vakuumklinge, die Gegnern in der Bahn Schaden in Höhe von {color}100{/color} % ANG zufügt. Hält 20 s oder 8 Vakuumklingen lang.",
+        "Erhöht den verursachten Schaden um {color}12{/color} %. Nach Anwendung der Spezialfähigkeit: Erschafft nach Treffern mit Standardangriffen und heftigen Schlägen eine Vakuumklinge, die Gegnern in der Bahn Schaden in Höhe von {color}120{/color} % ANG zufügt. Hält 20 s oder 8 Vakuumklingen lang.",
+        "Erhöht den verursachten Schaden um {color}14{/color} %. Nach Anwendung der Spezialfähigkeit: Erschafft nach Treffern mit Standardangriffen und heftigen Schlägen eine Vakuumklinge, die Gegnern in der Bahn Schaden in Höhe von {color}140{/color} % ANG zufügt. Hält 20 s oder 8 Vakuumklingen lang.",
+        "Erhöht den verursachten Schaden um {color}16{/color} %. Nach Anwendung der Spezialfähigkeit: Erschafft nach Treffern mit Standardangriffen und heftigen Schlägen eine Vakuumklinge, die Gegnern in der Bahn Schaden in Höhe von {color}160{/color} % ANG zufügt. Hält 20 s oder 8 Vakuumklingen lang."
+      ]
     },
     {
       "key": "skyward-spine",
       "name": "Himmelsgrat",
       "description": "Eine Lanze, die Dvalins Entschlossenheit symbolisiert. Aufrecht gehalten zeigt sie unnachgiebig nach oben und birgt die Kraft von Himmel und Wind.",
-      "refinement": "Erhöht die KT um {0} % und die Standardangriffs-GSW um {1} %. Wendet beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {2} % eine Vakuumklinge an und verursacht zusätzlichen Schaden in Höhe von {3} % ANG mit geringer Reichweite. 2 s Abklingzeit."
+      "refinements": [
+        "Erhöht die KT um {color}8{/color} % und die Standardangriffs-GSW um {color}12{/color} %. Wendet beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}50{/color} % eine Vakuumklinge an und verursacht zusätzlichen Schaden in Höhe von {color}40{/color} % ANG mit geringer Reichweite. 2 s Abklingzeit.",
+        "Erhöht die KT um {color}10{/color} % und die Standardangriffs-GSW um {color}12{/color} %. Wendet beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}50{/color} % eine Vakuumklinge an und verursacht zusätzlichen Schaden in Höhe von {color}55{/color} % ANG mit geringer Reichweite. 2 s Abklingzeit.",
+        "Erhöht die KT um {color}12{/color} % und die Standardangriffs-GSW um {color}12{/color} %. Wendet beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}50{/color} % eine Vakuumklinge an und verursacht zusätzlichen Schaden in Höhe von {color}70{/color} % ANG mit geringer Reichweite. 2 s Abklingzeit.",
+        "Erhöht die KT um {color}14{/color} % und die Standardangriffs-GSW um {color}12{/color} %. Wendet beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}50{/color} % eine Vakuumklinge an und verursacht zusätzlichen Schaden in Höhe von {color}85{/color} % ANG mit geringer Reichweite. 2 s Abklingzeit.",
+        "Erhöht die KT um {color}16{/color} % und die Standardangriffs-GSW um {color}12{/color} %. Wendet beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}50{/color} % eine Vakuumklinge an und verursacht zusätzlichen Schaden in Höhe von {color}100{/color} % ANG mit geringer Reichweite. 2 s Abklingzeit."
+      ]
     },
     {
       "key": "slingshot",
       "name": "Steinschleuder",
       "description": "Eigentlich ein Bogen. Nach unzähligen Verbesserungen und Experimenten, um die ultimative Steinschleuder zu schaffen, stand der Erfinder am Ende mit einem Bogen in der Hand da.",
-      "refinement": "Erhöht den Schaden beim Treffen von Gegnern mit Pfeilen von Standardangriffen und heftigen Schlägen innerhalb von 0,3 s nach dem Abschießen eines Pfeils um {0} %, verringert den verursachten Schaden ansonsten jedoch um 10 %."
+      "refinements": [
+        "Erhöht den Schaden beim Treffen von Gegnern mit Pfeilen von Standardangriffen und heftigen Schlägen innerhalb von 0,3 s nach dem Abschießen eines Pfeils um {color}36{/color} %, verringert den verursachten Schaden ansonsten jedoch um 10 %.",
+        "Erhöht den Schaden beim Treffen von Gegnern mit Pfeilen von Standardangriffen und heftigen Schlägen innerhalb von 0,3 s nach dem Abschießen eines Pfeils um {color}42{/color} %, verringert den verursachten Schaden ansonsten jedoch um 10 %.",
+        "Erhöht den Schaden beim Treffen von Gegnern mit Pfeilen von Standardangriffen und heftigen Schlägen innerhalb von 0,3 s nach dem Abschießen eines Pfeils um {color}48{/color} %, verringert den verursachten Schaden ansonsten jedoch um 10 %.",
+        "Erhöht den Schaden beim Treffen von Gegnern mit Pfeilen von Standardangriffen und heftigen Schlägen innerhalb von 0,3 s nach dem Abschießen eines Pfeils um {color}54{/color} %, verringert den verursachten Schaden ansonsten jedoch um 10 %.",
+        "Erhöht den Schaden beim Treffen von Gegnern mit Pfeilen von Standardangriffen und heftigen Schlägen innerhalb von 0,3 s nach dem Abschießen eines Pfeils um {color}60{/color} %, verringert den verursachten Schaden ansonsten jedoch um 10 %."
+      ]
     },
     {
       "key": "snow-tombed-starsilver",
       "name": "Unter Schnee begrabenes Sternsilber",
       "description": "Ein antikes Großschwert, welches zwischen alten Wandgemälden verstaut war. Aus Sternsilber geschmiedet besitzt es die Macht, Eis und Schnee auseinanderzutreiben.",
-      "refinement": "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {0} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {1} % ANG verursacht. Verursacht Schaden in Höhe von {2} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit."
+      "refinements": [
+        "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}60{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}80{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}200{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit.",
+        "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}70{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}95{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}240{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit.",
+        "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}80{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}110{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}280{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit.",
+        "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}90{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}125{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}320{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit.",
+        "Erstellt beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}100{/color} % über den Gegnern einen Kristallkern ewigen Eises, der herunterfällt und Flächenschaden in Höhe von {color}140{/color} % ANG verursacht. Verursacht Schaden in Höhe von {color}360{/color} % ANG, wenn die Gegner von Kryo-Effekten betroffen sind. 10 s Abklingzeit."
+      ]
     },
     {
       "key": "solar-pearl",
       "name": "Sonne und Mond",
       "description": "Diese Kugel aus unbekanntem dunklem Metall enthält den himmlischen Glanz von Sonne und Mond und strahlt eine spürbare Wärme aus.",
-      "refinement": "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten bei Treffern mit Standardangriffen 6 s lang um {0} %. Erhöht den Schaden von Standardangriffen bei Treffern mit Elementarfähigkeiten und Spezialfähigkeiten 6 s lang um {1} %."
+      "refinements": [
+        "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten bei Treffern mit Standardangriffen 6 s lang um {color}20{/color} %. Erhöht den Schaden von Standardangriffen bei Treffern mit Elementarfähigkeiten und Spezialfähigkeiten 6 s lang um {color}20{/color} %.",
+        "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten bei Treffern mit Standardangriffen 6 s lang um {color}25{/color} %. Erhöht den Schaden von Standardangriffen bei Treffern mit Elementarfähigkeiten und Spezialfähigkeiten 6 s lang um {color}25{/color} %.",
+        "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten bei Treffern mit Standardangriffen 6 s lang um {color}30{/color} %. Erhöht den Schaden von Standardangriffen bei Treffern mit Elementarfähigkeiten und Spezialfähigkeiten 6 s lang um {color}30{/color} %.",
+        "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten bei Treffern mit Standardangriffen 6 s lang um {color}35{/color} %. Erhöht den Schaden von Standardangriffen bei Treffern mit Elementarfähigkeiten und Spezialfähigkeiten 6 s lang um {color}35{/color} %.",
+        "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten bei Treffern mit Standardangriffen 6 s lang um {color}40{/color} %. Erhöht den Schaden von Standardangriffen bei Treffern mit Elementarfähigkeiten und Spezialfähigkeiten 6 s lang um {color}40{/color} %."
+      ]
     },
     {
       "key": "song-of-broken-pines",
       "name": "Kiefernklang",
       "description": "Ein Großschwert so leicht wie Gras, das vom Wind bewegt wird, und so gewaltig wie ein Orkan, der Bäume entwurzelt.",
-      "refinement": "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den ANG um {0} %. Gibt der Figur beim Treffen von Gegnern mit Standardangriffen oder heftigen Schlägen ein Zeichen des Flüsterns, 0,3 s Abklingzeit. Verbraucht alle Zeichen des Flüsterns, sobald 4 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied vom Aufstand“: Erhöht die Standardangriffs-GSW um {1} % und den ANG um {2} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen des Flüsterns erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden."
+      "refinements": [
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den ANG um {color}16{/color} %. Gibt der Figur beim Treffen von Gegnern mit Standardangriffen oder heftigen Schlägen ein Zeichen des Flüsterns, 0,3 s Abklingzeit. Verbraucht alle Zeichen des Flüsterns, sobald 4 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied vom Aufstand“: Erhöht die Standardangriffs-GSW um {color}12{/color} % und den ANG um {color}20{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen des Flüsterns erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den ANG um {color}20{/color} %. Gibt der Figur beim Treffen von Gegnern mit Standardangriffen oder heftigen Schlägen ein Zeichen des Flüsterns, 0,3 s Abklingzeit. Verbraucht alle Zeichen des Flüsterns, sobald 4 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied vom Aufstand“: Erhöht die Standardangriffs-GSW um {color}15{/color} % und den ANG um {color}25{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen des Flüsterns erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den ANG um {color}24{/color} %. Gibt der Figur beim Treffen von Gegnern mit Standardangriffen oder heftigen Schlägen ein Zeichen des Flüsterns, 0,3 s Abklingzeit. Verbraucht alle Zeichen des Flüsterns, sobald 4 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied vom Aufstand“: Erhöht die Standardangriffs-GSW um {color}18{/color} % und den ANG um {color}30{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen des Flüsterns erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den ANG um {color}28{/color} %. Gibt der Figur beim Treffen von Gegnern mit Standardangriffen oder heftigen Schlägen ein Zeichen des Flüsterns, 0,3 s Abklingzeit. Verbraucht alle Zeichen des Flüsterns, sobald 4 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied vom Aufstand“: Erhöht die Standardangriffs-GSW um {color}21{/color} % und den ANG um {color}35{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen des Flüsterns erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den ANG um {color}32{/color} %. Gibt der Figur beim Treffen von Gegnern mit Standardangriffen oder heftigen Schlägen ein Zeichen des Flüsterns, 0,3 s Abklingzeit. Verbraucht alle Zeichen des Flüsterns, sobald 4 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied vom Aufstand“: Erhöht die Standardangriffs-GSW um {color}24{/color} % und den ANG um {color}40{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen des Flüsterns erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden."
+      ]
     },
     {
       "key": "staff-of-homa",
       "name": "Homa-Stab",
       "description": "Ein sogenannter roter Brennholzstab, der in alten, mittlerweile vergessenen Ritualen verwendet wurde.",
-      "refinement": "Erhöht die LP um {0} %. Erhöht den ANG um {1},8 % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {2} % der max. LP."
+      "refinements": [
+        "Erhöht die LP um {color}20{/color} %. Erhöht den ANG um {color}0{/color},8 % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1{/color} % der max. LP.",
+        "Erhöht die LP um {color}25{/color} %. Erhöht den ANG um {color}1{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1{/color},2 % der max. LP.",
+        "Erhöht die LP um {color}30{/color} %. Erhöht den ANG um {color}1{/color},2 % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1{/color},4 % der max. LP.",
+        "Erhöht die LP um {color}35{/color} %. Erhöht den ANG um {color}1{/color},4 % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1{/color},6 % der max. LP.",
+        "Erhöht die LP um {color}40{/color} %. Erhöht den ANG um {color}1{/color},6 % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1{/color},8 % der max. LP."
+      ]
     },
     {
       "key": "summit-shaper",
       "name": "Gipfelbrecher",
       "description": "Eine scharfe Klinge, die der Legende nach zu einem ganz bestimmten Pakt gehört. Sie soll einst den Gipfel eines ganzen Berges abgetrennt haben.",
-      "refinement": "Erhöht die Schildeffizienz um {0} %. Erhöht den ANG nach Treffern 8 s lang um {1} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %."
+      "refinements": [
+        "Erhöht die Schildeffizienz um {color}20{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}4{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+        "Erhöht die Schildeffizienz um {color}25{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}5{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+        "Erhöht die Schildeffizienz um {color}30{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}6{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+        "Erhöht die Schildeffizienz um {color}35{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}7{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+        "Erhöht die Schildeffizienz um {color}40{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}8{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %."
+      ]
     },
     {
       "key": "sword-of-descension",
       "name": "Schwert der Niederkunft",
       "description": "Ein Schwert von außergewöhnlicher Machart. Es scheint nicht von dieser Welt zu sein.",
-      "refinement": "Nur für Spieler auf folgender Plattform wirksam:\r\n„PlayStation Network“\r\nVerursacht beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {0} % Schaden in Höhe von {1} % ANG mit geringer Reichweite. 10 s Abklingzeit. Erhöht den ANG zusätzlich um {2} Punkte, wenn (die / der) Reisende mit dem Schwert der Niederkunft ausgerüstet ist."
+      "refinements": [
+        "Nur für Spieler auf folgender Plattform wirksam:\r\n„PlayStation Network“\r\nVerursacht beim Treffen von Gegnern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von {color}50{/color} % Schaden in Höhe von {color}200{/color} % ANG mit geringer Reichweite. 10 s Abklingzeit. Erhöht den ANG zusätzlich um {color}66{/color} Punkte, wenn (die / der) Reisende mit dem Schwert der Niederkunft ausgerüstet ist."
+      ]
     },
     {
       "key": "the-alley-flash",
       "name": "Gassenleuchte",
       "description": "Ein Langschwert so schwarz wie die Nacht. Es gehört früher einem Räuber, der sich nachts durch die Gassen trieb.",
-      "refinement": "Erhöht den von Figuren verursachten Schaden um {0} %. Dieser Schadensbonus erlischt beim Erleiden von Schaden 5 s lang."
+      "refinements": [
+        "Erhöht den von Figuren verursachten Schaden um {color}12{/color} %. Dieser Schadensbonus erlischt beim Erleiden von Schaden 5 s lang.",
+        "Erhöht den von Figuren verursachten Schaden um {color}15{/color} %. Dieser Schadensbonus erlischt beim Erleiden von Schaden 5 s lang.",
+        "Erhöht den von Figuren verursachten Schaden um {color}18{/color} %. Dieser Schadensbonus erlischt beim Erleiden von Schaden 5 s lang.",
+        "Erhöht den von Figuren verursachten Schaden um {color}21{/color} %. Dieser Schadensbonus erlischt beim Erleiden von Schaden 5 s lang.",
+        "Erhöht den von Figuren verursachten Schaden um {color}24{/color} %. Dieser Schadensbonus erlischt beim Erleiden von Schaden 5 s lang."
+      ]
     },
     {
       "key": "the-bell",
       "name": "Glocke",
       "description": "Ein schweres Großschwert mit einer eingebauten Uhr, die jedoch längst nicht mehr geht.",
-      "refinement": "Erstellt beim Erleiden von Schaden einen Schutzschild mit einer Stärke von {0} % der max. LP. Hält solange, bis die Schadensmenge erreicht ist, aber max. 10 s. {1} s Abklingzeit. Erhöht den verursachten Schaden der Figur während der Wirkungsdauer um {2} %."
+      "refinements": [
+        "Erstellt beim Erleiden von Schaden einen Schutzschild mit einer Stärke von {color}20{/color} % der max. LP. Hält solange, bis die Schadensmenge erreicht ist, aber max. 10 s. {color}45{/color} s Abklingzeit. Erhöht den verursachten Schaden der Figur während der Wirkungsdauer um {color}12{/color} %.",
+        "Erstellt beim Erleiden von Schaden einen Schutzschild mit einer Stärke von {color}23{/color} % der max. LP. Hält solange, bis die Schadensmenge erreicht ist, aber max. 10 s. {color}45{/color} s Abklingzeit. Erhöht den verursachten Schaden der Figur während der Wirkungsdauer um {color}15{/color} %.",
+        "Erstellt beim Erleiden von Schaden einen Schutzschild mit einer Stärke von {color}26{/color} % der max. LP. Hält solange, bis die Schadensmenge erreicht ist, aber max. 10 s. {color}45{/color} s Abklingzeit. Erhöht den verursachten Schaden der Figur während der Wirkungsdauer um {color}18{/color} %.",
+        "Erstellt beim Erleiden von Schaden einen Schutzschild mit einer Stärke von {color}29{/color} % der max. LP. Hält solange, bis die Schadensmenge erreicht ist, aber max. 10 s. {color}45{/color} s Abklingzeit. Erhöht den verursachten Schaden der Figur während der Wirkungsdauer um {color}21{/color} %.",
+        "Erstellt beim Erleiden von Schaden einen Schutzschild mit einer Stärke von {color}32{/color} % der max. LP. Hält solange, bis die Schadensmenge erreicht ist, aber max. 10 s. {color}45{/color} s Abklingzeit. Erhöht den verursachten Schaden der Figur während der Wirkungsdauer um {color}24{/color} %."
+      ]
     },
     {
       "key": "the-black-sword",
       "name": "Schwarzes Schwert",
       "description": "Ein tiefschwarzes Langschwert, das nach Streit und Schlacht dürstet. Es soll seinen Träger dazu bringen, ekstatisch im Blut der Niedergemetzelten zu baden.",
-      "refinement": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {0} %. Stellt bei KT von Standardangriffen und heftigen Schlägen LP in Höhe von {1} % ANG wieder her. 5 s Abklingzeit."
+      "refinements": [
+        "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}20{/color} %. Stellt bei KT von Standardangriffen und heftigen Schlägen LP in Höhe von {color}60{/color} % ANG wieder her. 5 s Abklingzeit.",
+        "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}25{/color} %. Stellt bei KT von Standardangriffen und heftigen Schlägen LP in Höhe von {color}70{/color} % ANG wieder her. 5 s Abklingzeit.",
+        "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}30{/color} %. Stellt bei KT von Standardangriffen und heftigen Schlägen LP in Höhe von {color}80{/color} % ANG wieder her. 5 s Abklingzeit.",
+        "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}35{/color} %. Stellt bei KT von Standardangriffen und heftigen Schlägen LP in Höhe von {color}90{/color} % ANG wieder her. 5 s Abklingzeit.",
+        "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {color}40{/color} %. Stellt bei KT von Standardangriffen und heftigen Schlägen LP in Höhe von {color}100{/color} % ANG wieder her. 5 s Abklingzeit."
+      ]
     },
     {
       "key": "the-catch",
       "name": "„Der Fang“",
       "description": "In der fernen Vergangenheit war dies der geliebte Speer eines berühmten Banditen aus Inazuma.",
-      "refinement": "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {0} % und die KT von Spezialfähigkeiten um {1} %."
+      "refinements": [
+        "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}16{/color} % und die KT von Spezialfähigkeiten um {color}6{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}20{/color} % und die KT von Spezialfähigkeiten um {color}7{/color},5 %.",
+        "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}24{/color} % und die KT von Spezialfähigkeiten um {color}9{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}28{/color} % und die KT von Spezialfähigkeiten um {color}10{/color},5 %.",
+        "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}32{/color} % und die KT von Spezialfähigkeiten um {color}12{/color} %."
+      ]
     },
     {
       "key": "the-flute",
       "name": "Flöte",
       "description": "Dieses dünne Schwert verbirgt sich unter einer Schicht aus Rost. Die aufwendigen Verzierungen sind aber immer noch gut zu erkennen. Im Kampf bewegt man sich damit leicht wie eine Feder.",
-      "refinement": "Erzeugt bei Treffern mit Standardangriffen und heftigen Schlägen einen harmonischen Ton. Hast du insgesamt 5 harmonische Töne gesammelt, wird die Kraft der Klänge freigegeben und fügt den Gegnern in der Umgebung Schaden in Höhe von {0} % ANG zu. Harmonische Töne bestehen für 30 s. Erzeugt höchstens alle 0,5 s 1 harmonischen Ton."
+      "refinements": [
+        "Erzeugt bei Treffern mit Standardangriffen und heftigen Schlägen einen harmonischen Ton. Hast du insgesamt 5 harmonische Töne gesammelt, wird die Kraft der Klänge freigegeben und fügt den Gegnern in der Umgebung Schaden in Höhe von {color}100{/color} % ANG zu. Harmonische Töne bestehen für 30 s. Erzeugt höchstens alle 0,5 s 1 harmonischen Ton.",
+        "Erzeugt bei Treffern mit Standardangriffen und heftigen Schlägen einen harmonischen Ton. Hast du insgesamt 5 harmonische Töne gesammelt, wird die Kraft der Klänge freigegeben und fügt den Gegnern in der Umgebung Schaden in Höhe von {color}125{/color} % ANG zu. Harmonische Töne bestehen für 30 s. Erzeugt höchstens alle 0,5 s 1 harmonischen Ton.",
+        "Erzeugt bei Treffern mit Standardangriffen und heftigen Schlägen einen harmonischen Ton. Hast du insgesamt 5 harmonische Töne gesammelt, wird die Kraft der Klänge freigegeben und fügt den Gegnern in der Umgebung Schaden in Höhe von {color}150{/color} % ANG zu. Harmonische Töne bestehen für 30 s. Erzeugt höchstens alle 0,5 s 1 harmonischen Ton.",
+        "Erzeugt bei Treffern mit Standardangriffen und heftigen Schlägen einen harmonischen Ton. Hast du insgesamt 5 harmonische Töne gesammelt, wird die Kraft der Klänge freigegeben und fügt den Gegnern in der Umgebung Schaden in Höhe von {color}175{/color} % ANG zu. Harmonische Töne bestehen für 30 s. Erzeugt höchstens alle 0,5 s 1 harmonischen Ton.",
+        "Erzeugt bei Treffern mit Standardangriffen und heftigen Schlägen einen harmonischen Ton. Hast du insgesamt 5 harmonische Töne gesammelt, wird die Kraft der Klänge freigegeben und fügt den Gegnern in der Umgebung Schaden in Höhe von {color}200{/color} % ANG zu. Harmonische Töne bestehen für 30 s. Erzeugt höchstens alle 0,5 s 1 harmonischen Ton."
+      ]
     },
     {
       "key": "the-stringless",
       "name": "Der Sehnenlose",
       "description": "Ein großer, prächtiger Bogen, der einst als Musikinstrument gedient hat. Mittlerweile bringt er niemanden mehr zum Tanzen.",
-      "refinement": "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten um {0} %."
+      "refinements": [
+        "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten um {color}24{/color} %.",
+        "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten um {color}30{/color} %.",
+        "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten um {color}36{/color} %.",
+        "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten um {color}42{/color} %.",
+        "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten um {color}48{/color} %."
+      ]
     },
     {
       "key": "the-unforged",
       "name": "Grobes Schwert",
       "description": "Ein Großschwert, das böse Geister und Menschen gleichsam vertreiben kann. Es scheint keine scharfe Kante zu haben und doch göttliche Kraft zu besitzen.",
-      "refinement": "Erhöht die Schildeffizienz um {0} %. Erhöht den ANG nach Treffern 8 s lang um {1} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %."
+      "refinements": [
+        "Erhöht die Schildeffizienz um {color}20{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}4{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+        "Erhöht die Schildeffizienz um {color}25{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}5{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+        "Erhöht die Schildeffizienz um {color}30{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}6{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+        "Erhöht die Schildeffizienz um {color}35{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}7{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+        "Erhöht die Schildeffizienz um {color}40{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}8{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %."
+      ]
     },
     {
       "key": "the-viridescent-hunt",
       "name": "Grasgrüner Jagdbogen",
       "description": "Ein glänzend grüner Bogen, der ursprünglich jemandem gehörte, der in den Wäldern auf die Jagd ging.",
-      "refinement": "Erschafft bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % ein Windauge, das Gegner in der Umgebung fortlaufend ansaugt und ihnen 4 s lang alle 0,5 s Schaden in Höhe von {0} % ANG zufügt. {1} s Abklingzeit."
+      "refinements": [
+        "Erschafft bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % ein Windauge, das Gegner in der Umgebung fortlaufend ansaugt und ihnen 4 s lang alle 0,5 s Schaden in Höhe von {color}40{/color} % ANG zufügt. {color}14{/color} s Abklingzeit.",
+        "Erschafft bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % ein Windauge, das Gegner in der Umgebung fortlaufend ansaugt und ihnen 4 s lang alle 0,5 s Schaden in Höhe von {color}50{/color} % ANG zufügt. {color}13{/color} s Abklingzeit.",
+        "Erschafft bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % ein Windauge, das Gegner in der Umgebung fortlaufend ansaugt und ihnen 4 s lang alle 0,5 s Schaden in Höhe von {color}60{/color} % ANG zufügt. {color}12{/color} s Abklingzeit.",
+        "Erschafft bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % ein Windauge, das Gegner in der Umgebung fortlaufend ansaugt und ihnen 4 s lang alle 0,5 s Schaden in Höhe von {color}70{/color} % ANG zufügt. {color}11{/color} s Abklingzeit.",
+        "Erschafft bei Treffern mit Standardangriffen und heftigen Schlägen mit einer Wahrscheinlichkeit von 50 % ein Windauge, das Gegner in der Umgebung fortlaufend ansaugt und ihnen 4 s lang alle 0,5 s Schaden in Höhe von {color}80{/color} % ANG zufügt. {color}10{/color} s Abklingzeit."
+      ]
     },
     {
       "key": "the-widsith",
       "name": "Landstreichernoten",
       "description": "Ein dickes Notizheft voller Noten. Obgleich halb verwittert, ist die Kraft der Handschrift noch deutlich spürbar.",
-      "refinement": "Spielt beim Wechseln zu dieser Figur 10 s lang ein zufälliges Lied. 30 s Abklingzeit. Rezitativ: Erhöht ANG um {0} %; Arie: Erhöht gesamten Elementar-SCH um {1} %; Intermezzo: Erhöht Elementarkunde um {2} Punkte."
+      "refinements": [
+        "Spielt beim Wechseln zu dieser Figur 10 s lang ein zufälliges Lied. 30 s Abklingzeit. Rezitativ: Erhöht ANG um {color}60{/color} %; Arie: Erhöht gesamten Elementar-SCH um {color}48{/color} %; Intermezzo: Erhöht Elementarkunde um {color}240{/color} Punkte.",
+        "Spielt beim Wechseln zu dieser Figur 10 s lang ein zufälliges Lied. 30 s Abklingzeit. Rezitativ: Erhöht ANG um {color}75{/color} %; Arie: Erhöht gesamten Elementar-SCH um {color}60{/color} %; Intermezzo: Erhöht Elementarkunde um {color}300{/color} Punkte.",
+        "Spielt beim Wechseln zu dieser Figur 10 s lang ein zufälliges Lied. 30 s Abklingzeit. Rezitativ: Erhöht ANG um {color}90{/color} %; Arie: Erhöht gesamten Elementar-SCH um {color}72{/color} %; Intermezzo: Erhöht Elementarkunde um {color}360{/color} Punkte.",
+        "Spielt beim Wechseln zu dieser Figur 10 s lang ein zufälliges Lied. 30 s Abklingzeit. Rezitativ: Erhöht ANG um {color}105{/color} %; Arie: Erhöht gesamten Elementar-SCH um {color}84{/color} %; Intermezzo: Erhöht Elementarkunde um {color}420{/color} Punkte.",
+        "Spielt beim Wechseln zu dieser Figur 10 s lang ein zufälliges Lied. 30 s Abklingzeit. Rezitativ: Erhöht ANG um {color}120{/color} %; Arie: Erhöht gesamten Elementar-SCH um {color}96{/color} %; Intermezzo: Erhöht Elementarkunde um {color}480{/color} Punkte."
+      ]
     },
     {
       "key": "thrilling-tales-of-dragon-slayers",
       "name": "Von den Heldentaten der Drachenbezwinger",
       "description": "Eine schlecht und unorganisiert geschriebene Geschichte über fünf Helden, die gemeinsam auf Drachenjagd gehen. Der Misserfolg ist die wichtigste Lehre, die man diesem Buch entnehmen kann.",
-      "refinement": "Erhöht den ANG aktiv eingewechselter Figuren 10 s lang um {0} %. 20 s Abklingzeit."
+      "refinements": [
+        "Erhöht den ANG aktiv eingewechselter Figuren 10 s lang um {color}24{/color} %. 20 s Abklingzeit.",
+        "Erhöht den ANG aktiv eingewechselter Figuren 10 s lang um {color}30{/color} %. 20 s Abklingzeit.",
+        "Erhöht den ANG aktiv eingewechselter Figuren 10 s lang um {color}36{/color} %. 20 s Abklingzeit.",
+        "Erhöht den ANG aktiv eingewechselter Figuren 10 s lang um {color}42{/color} %. 20 s Abklingzeit.",
+        "Erhöht den ANG aktiv eingewechselter Figuren 10 s lang um {color}48{/color} %. 20 s Abklingzeit."
+      ]
     },
     {
       "key": "thundering-pulse",
       "name": "Donnerpuls",
       "description": "Ein Langbogen, der ein Geschenk des Shouguns war. Ewige Blitze knistern rundherum.",
-      "refinement": "Erhöht den ANG um {0} % und verleiht die Kraft des „Blitzflugsiegels“: Erhöht den mit Standardangriffen verursachten Schaden bei 1/2/3 Stapelungen um jeweils {1} %. Verleiht der Figur in folgenden Situationen je 1 Blitzflugsiegel: Verursachen von Schaden mit Standardangriffen, hält 5 s; Anwendung von Elementarfähigkeiten, hält 10 s; Elementarenergie der Figur unter 100 %, verschwindet bei voller Elementarenergie. Wirkungsdauer jeder Stapelung Blitzflugsiegel ist unabhängig."
+      "refinements": [
+        "Erhöht den ANG um {color}20{/color} % und verleiht die Kraft des „Blitzflugsiegels“: Erhöht den mit Standardangriffen verursachten Schaden bei 1/2/3 Stapelungen um jeweils {color}12/24/40{/color} %. Verleiht der Figur in folgenden Situationen je 1 Blitzflugsiegel: Verursachen von Schaden mit Standardangriffen, hält 5 s; Anwendung von Elementarfähigkeiten, hält 10 s; Elementarenergie der Figur unter 100 %, verschwindet bei voller Elementarenergie. Wirkungsdauer jeder Stapelung Blitzflugsiegel ist unabhängig.",
+        "Erhöht den ANG um {color}25{/color} % und verleiht die Kraft des „Blitzflugsiegels“: Erhöht den mit Standardangriffen verursachten Schaden bei 1/2/3 Stapelungen um jeweils {color}15/30/50{/color} %. Verleiht der Figur in folgenden Situationen je 1 Blitzflugsiegel: Verursachen von Schaden mit Standardangriffen, hält 5 s; Anwendung von Elementarfähigkeiten, hält 10 s; Elementarenergie der Figur unter 100 %, verschwindet bei voller Elementarenergie. Wirkungsdauer jeder Stapelung Blitzflugsiegel ist unabhängig.",
+        "Erhöht den ANG um {color}30{/color} % und verleiht die Kraft des „Blitzflugsiegels“: Erhöht den mit Standardangriffen verursachten Schaden bei 1/2/3 Stapelungen um jeweils {color}18/36/60{/color} %. Verleiht der Figur in folgenden Situationen je 1 Blitzflugsiegel: Verursachen von Schaden mit Standardangriffen, hält 5 s; Anwendung von Elementarfähigkeiten, hält 10 s; Elementarenergie der Figur unter 100 %, verschwindet bei voller Elementarenergie. Wirkungsdauer jeder Stapelung Blitzflugsiegel ist unabhängig.",
+        "Erhöht den ANG um {color}35{/color} % und verleiht die Kraft des „Blitzflugsiegels“: Erhöht den mit Standardangriffen verursachten Schaden bei 1/2/3 Stapelungen um jeweils {color}21/42/70{/color} %. Verleiht der Figur in folgenden Situationen je 1 Blitzflugsiegel: Verursachen von Schaden mit Standardangriffen, hält 5 s; Anwendung von Elementarfähigkeiten, hält 10 s; Elementarenergie der Figur unter 100 %, verschwindet bei voller Elementarenergie. Wirkungsdauer jeder Stapelung Blitzflugsiegel ist unabhängig.",
+        "Erhöht den ANG um {color}40{/color} % und verleiht die Kraft des „Blitzflugsiegels“: Erhöht den mit Standardangriffen verursachten Schaden bei 1/2/3 Stapelungen um jeweils {color}24/48/80{/color} %. Verleiht der Figur in folgenden Situationen je 1 Blitzflugsiegel: Verursachen von Schaden mit Standardangriffen, hält 5 s; Anwendung von Elementarfähigkeiten, hält 10 s; Elementarenergie der Figur unter 100 %, verschwindet bei voller Elementarenergie. Wirkungsdauer jeder Stapelung Blitzflugsiegel ist unabhängig."
+      ]
     },
     {
       "key": "travelers-handy-sword",
       "name": "Reiseschwert",
       "description": "Ein praktisches Schwert aus Stahl, in dessen Scheide sich unter anderem Schere, Fernglas und Zunder für die Reise befinden.",
-      "refinement": "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen {0} % LP wieder her."
+      "refinements": [
+        "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen {color}1{/color} % LP wieder her.",
+        "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen {color}1{/color},25 % LP wieder her.",
+        "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen {color}1{/color},5 % LP wieder her.",
+        "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen {color}1{/color},75 % LP wieder her.",
+        "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen {color}2{/color} % LP wieder her."
+      ]
     },
     {
       "key": "twin-nephrite",
       "name": "Zwillingsnephrit",
       "description": "Ein feiner, aus zwei Edelsteinen zusammengesetzter Anhänger.",
-      "refinement": "Erhöht die Bewegungs-GSW und den ANG beim Besiegen von Gegnern 15 s lang um {0} %."
+      "refinements": [
+        "Erhöht die Bewegungs-GSW und den ANG beim Besiegen von Gegnern 15 s lang um {color}12{/color} %.",
+        "Erhöht die Bewegungs-GSW und den ANG beim Besiegen von Gegnern 15 s lang um {color}14{/color} %.",
+        "Erhöht die Bewegungs-GSW und den ANG beim Besiegen von Gegnern 15 s lang um {color}16{/color} %.",
+        "Erhöht die Bewegungs-GSW und den ANG beim Besiegen von Gegnern 15 s lang um {color}18{/color} %.",
+        "Erhöht die Bewegungs-GSW und den ANG beim Besiegen von Gegnern 15 s lang um {color}20{/color} %."
+      ]
     },
     {
       "key": "vortex-vanquisher",
       "name": "Regenbogenstecher",
       "description": "Eine Stangenwaffe, die womöglich alles und jeden aufspießen kann. In der Luft geschwungen meint man, Spuren ihrer Schnitte sehen zu können.",
-      "refinement": "Erhöht die Schildeffizienz um {0} %. Erhöht den ANG nach Treffern 8 s lang um {1} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %."
+      "refinements": [
+        "Erhöht die Schildeffizienz um {color}20{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}4{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+        "Erhöht die Schildeffizienz um {color}25{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}5{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+        "Erhöht die Schildeffizienz um {color}30{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}6{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+        "Erhöht die Schildeffizienz um {color}35{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}7{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+        "Erhöht die Schildeffizienz um {color}40{/color} %. Erhöht den ANG nach Treffern 8 s lang um {color}8{/color} %. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %."
+      ]
     },
     {
       "key": "waster-greatsword",
       "name": "Übungsgroßschwert",
       "description": "Lediglich eine dicke Platte aus Eisen in der Form eines Schwertes. Mit genügend Willenskraft kann man damit immer noch Berge spalten.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "white-iron-greatsword",
       "name": "Weißes Eisengroßschwert",
       "description": "Ein aus weißem Eisen geschmiedeter Zweihänder, dessen Vorteile Gewicht und Stärke sind. Obwohl selbst mittelmäßig trainierte Menschen damit umgehen können, erhöht sich seine Wirksamkeit mit der Kraft des Anwenders.",
-      "refinement": "Stellt beim Besiegen eines Gegners {0} % LP wieder her."
+      "refinements": [
+        "Stellt beim Besiegen eines Gegners {color}8{/color} % LP wieder her.",
+        "Stellt beim Besiegen eines Gegners {color}10{/color} % LP wieder her.",
+        "Stellt beim Besiegen eines Gegners {color}12{/color} % LP wieder her.",
+        "Stellt beim Besiegen eines Gegners {color}14{/color} % LP wieder her.",
+        "Stellt beim Besiegen eines Gegners {color}16{/color} % LP wieder her."
+      ]
     },
     {
       "key": "white-tassel",
       "name": "Weiße Quaste",
       "description": "Diese Lanze gehört zur Standardausrüstung eines Millelithen. Sie ist stabil und sehr spitz, weswegen man sich auf sie verlassen kann.",
-      "refinement": "Erhöht den mit Standardangriffen verursachten Schaden um {0} %."
+      "refinements": [
+        "Erhöht den mit Standardangriffen verursachten Schaden um {color}24{/color} %.",
+        "Erhöht den mit Standardangriffen verursachten Schaden um {color}30{/color} %.",
+        "Erhöht den mit Standardangriffen verursachten Schaden um {color}36{/color} %.",
+        "Erhöht den mit Standardangriffen verursachten Schaden um {color}42{/color} %.",
+        "Erhöht den mit Standardangriffen verursachten Schaden um {color}48{/color} %."
+      ]
     },
     {
       "key": "whiteblind",
       "name": "Weißer Schatten",
       "description": "Ein fremdländisches Großschwert mit einer stumpfen Seite, das über Handelsrouten nach Liyue gelangt ist. Wer weiß, wie man damit umgeht, kann seine ungemeine Zerstörungskraft entfesseln.",
-      "refinement": "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {0} %, 4-fach stapelbar. 0,5 s Abklingzeit."
+      "refinements": [
+        "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}6{/color} %, 4-fach stapelbar. 0,5 s Abklingzeit.",
+        "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}7{/color},5 %, 4-fach stapelbar. 0,5 s Abklingzeit.",
+        "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}9{/color} %, 4-fach stapelbar. 0,5 s Abklingzeit.",
+        "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}10{/color},5 %, 4-fach stapelbar. 0,5 s Abklingzeit.",
+        "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}12{/color} %, 4-fach stapelbar. 0,5 s Abklingzeit."
+      ]
     },
     {
       "key": "windblume-ode",
       "name": "Windblumenode",
       "description": "Ein Bogen, geschmückt mit namenlosen Blumen, der die innigsten Wünsche einer ebenso namenlosen Person trägt.",
-      "refinement": "Verleiht beim Auslösen von Elementarfähigkeiten den alten Wunsch der Windblumen und erhöht den ANG 6 s lang um {0} %."
+      "refinements": [
+        "Verleiht beim Auslösen von Elementarfähigkeiten den alten Wunsch der Windblumen und erhöht den ANG 6 s lang um {color}16{/color} %.",
+        "Verleiht beim Auslösen von Elementarfähigkeiten den alten Wunsch der Windblumen und erhöht den ANG 6 s lang um {color}20{/color} %.",
+        "Verleiht beim Auslösen von Elementarfähigkeiten den alten Wunsch der Windblumen und erhöht den ANG 6 s lang um {color}24{/color} %.",
+        "Verleiht beim Auslösen von Elementarfähigkeiten den alten Wunsch der Windblumen und erhöht den ANG 6 s lang um {color}28{/color} %.",
+        "Verleiht beim Auslösen von Elementarfähigkeiten den alten Wunsch der Windblumen und erhöht den ANG 6 s lang um {color}32{/color} %."
+      ]
     },
     {
       "key": "wine-and-song",
       "name": "Wein und Gesang in den Gassen",
       "description": "Ein Gesangbuch aus den Zeiten der Aristokratie, dessen Autor in Vergessenheit geraten ist. Darin geht es um die Geschichten eines vogelfreien Kämpfers.",
-      "refinement": "Verringert den Ausdauerverbrauch beim Rennen oder von Fähigkeiten, die Rennen ersetzen, beim Treffen von Gegnern mit Standardangriffen 5 s lang um {0} %. Erhöht außerdem den ANG beim Rennen oder bei Anwendung von Fähigkeiten, die Rennen ersetzen, 5 s lang um {1} %."
+      "refinements": [
+        "Verringert den Ausdauerverbrauch beim Rennen oder von Fähigkeiten, die Rennen ersetzen, beim Treffen von Gegnern mit Standardangriffen 5 s lang um {color}14{/color} %. Erhöht außerdem den ANG beim Rennen oder bei Anwendung von Fähigkeiten, die Rennen ersetzen, 5 s lang um {color}20{/color} %.",
+        "Verringert den Ausdauerverbrauch beim Rennen oder von Fähigkeiten, die Rennen ersetzen, beim Treffen von Gegnern mit Standardangriffen 5 s lang um {color}16{/color} %. Erhöht außerdem den ANG beim Rennen oder bei Anwendung von Fähigkeiten, die Rennen ersetzen, 5 s lang um {color}25{/color} %.",
+        "Verringert den Ausdauerverbrauch beim Rennen oder von Fähigkeiten, die Rennen ersetzen, beim Treffen von Gegnern mit Standardangriffen 5 s lang um {color}18{/color} %. Erhöht außerdem den ANG beim Rennen oder bei Anwendung von Fähigkeiten, die Rennen ersetzen, 5 s lang um {color}30{/color} %.",
+        "Verringert den Ausdauerverbrauch beim Rennen oder von Fähigkeiten, die Rennen ersetzen, beim Treffen von Gegnern mit Standardangriffen 5 s lang um {color}20{/color} %. Erhöht außerdem den ANG beim Rennen oder bei Anwendung von Fähigkeiten, die Rennen ersetzen, 5 s lang um {color}35{/color} %.",
+        "Verringert den Ausdauerverbrauch beim Rennen oder von Fähigkeiten, die Rennen ersetzen, beim Treffen von Gegnern mit Standardangriffen 5 s lang um {color}22{/color} %. Erhöht außerdem den ANG beim Rennen oder bei Anwendung von Fähigkeiten, die Rennen ersetzen, 5 s lang um {color}40{/color} %."
+      ]
     },
     {
       "key": "wolfs-gravestone",
       "name": "Wolfsgrab",
       "description": "Das vom Wolfsritter geführte Großschwert. Ursprünglich war es nicht mehr als eine grobe Eisenplatte, ein Geschenk des Schmieds in der Stadt. Durch seine Freundschaft mit den Wölfen erhielt es aber seine heute legendäre Kraft.",
-      "refinement": "Erhöht den ANG um {0} %. Erhöht den ANG aller Truppenmitglieder beim Treffen eines Gegners mit weniger als 30 % LP 12 s lang um {1} %. 30 s Abklingzeit."
+      "refinements": [
+        "Erhöht den ANG um {color}20{/color} %. Erhöht den ANG aller Truppenmitglieder beim Treffen eines Gegners mit weniger als 30 % LP 12 s lang um {color}40{/color} %. 30 s Abklingzeit.",
+        "Erhöht den ANG um {color}25{/color} %. Erhöht den ANG aller Truppenmitglieder beim Treffen eines Gegners mit weniger als 30 % LP 12 s lang um {color}50{/color} %. 30 s Abklingzeit.",
+        "Erhöht den ANG um {color}30{/color} %. Erhöht den ANG aller Truppenmitglieder beim Treffen eines Gegners mit weniger als 30 % LP 12 s lang um {color}60{/color} %. 30 s Abklingzeit.",
+        "Erhöht den ANG um {color}35{/color} %. Erhöht den ANG aller Truppenmitglieder beim Treffen eines Gegners mit weniger als 30 % LP 12 s lang um {color}70{/color} %. 30 s Abklingzeit.",
+        "Erhöht den ANG um {color}40{/color} %. Erhöht den ANG aller Truppenmitglieder beim Treffen eines Gegners mit weniger als 30 % LP 12 s lang um {color}80{/color} %. 30 s Abklingzeit."
+      ]
     }
   ],
   "artifacts": [
@@ -9224,22 +9894,6 @@
       "name": "Hydro-Hypostase"
     },
     {
-      "key": "hydro-hypostasis-summon",
-      "name": "Hydro Hypostasis Summon"
-    },
-    {
-      "key": "hydro-hypostasis-summon",
-      "name": "Hydro Hypostasis Summon"
-    },
-    {
-      "key": "hydro-hypostasis-summon",
-      "name": "Hydro Hypostasis Summon"
-    },
-    {
-      "key": "hydro-hypostasis-summon",
-      "name": "Hydro Hypostasis Summon"
-    },
-    {
       "key": "hydro-mimic-boar",
       "name": "Hydro-Mimenschwein"
     },
@@ -9424,6 +10078,14 @@
       "name": "Mitachurl mit Steinschild"
     },
     {
+      "key": "rockfond-rifthound",
+      "name": "Felsenfressender Garm"
+    },
+    {
+      "key": "rockfond-rifthound-whelp",
+      "name": "Felsenfressender Garmwelpe"
+    },
+    {
       "key": "ruin-cruiser",
       "name": "Ruinenkreuzer"
     },
@@ -9478,6 +10140,14 @@
     {
       "key": "thunder-manifestation",
       "name": "Verkörperung des Donners"
+    },
+    {
+      "key": "thundercraven-rifthound",
+      "name": "Donnerfressender Garm"
+    },
+    {
+      "key": "thundercraven-rifthound-whelp",
+      "name": "Donnerfressender Garmwelpe"
     },
     {
       "key": "thunderhelm-lawachurl",
