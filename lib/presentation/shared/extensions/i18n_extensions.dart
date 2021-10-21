@@ -36,6 +36,8 @@ extension I18nExtensions on S {
         return vietnamese;
       case AppLanguageType.indonesian:
         return indonesian;
+      case AppLanguageType.deutsch:
+        return deutsch;
       default:
         throw Exception('The provided app lang = $lang is not valid');
     }

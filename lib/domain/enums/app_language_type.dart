@@ -9,4 +9,5 @@ enum AppLanguageType {
   japanese,
   vietnamese,
   indonesian,
+  deutsch,
 }

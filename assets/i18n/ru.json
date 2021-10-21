@@ -10105,6 +10105,14 @@
       "name": "Митачурл с каменным щитом"
     },
     {
+      "key": "rockfond-rifthound",
+      "name": "Гончая Разрыва: Камнегрыз"
+    },
+    {
+      "key": "rockfond-rifthound-whelp",
+      "name": "Щенок Разрыва: Камнегрыз"
+    },
+    {
       "key": "ruin-cruiser",
       "name": "Руинный патрульный"
     },
@@ -10159,6 +10167,14 @@
     {
       "key": "thunder-manifestation",
       "name": "Манифестация грома"
+    },
+    {
+      "key": "thundercraven-rifthound",
+      "name": "Гончая Разрыва: Громоед"
+    },
+    {
+      "key": "thundercraven-rifthound-whelp",
+      "name": "Щенок Разрыва: Громоед"
     },
     {
       "key": "thunderhelm-lawachurl",

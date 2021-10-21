@@ -10099,6 +10099,14 @@
       "name": "ヒルチャール暴徒·岩盾"
     },
     {
+      "key": "rockfond-rifthound",
+      "name": "獣域ハウンド·岩"
+    },
+    {
+      "key": "rockfond-rifthound-whelp",
+      "name": "獣域ウェルプ·岩"
+    },
+    {
       "key": "ruin-cruiser",
       "name": "遺跡巡視者"
     },
@@ -10153,6 +10161,14 @@
     {
       "key": "thunder-manifestation",
       "name": "雷音権現"
+    },
+    {
+      "key": "thundercraven-rifthound",
+      "name": "獣域ハウンド·雷"
+    },
+    {
+      "key": "thundercraven-rifthound-whelp",
+      "name": "獣域ウェルプ·雷"
     },
     {
       "key": "thunderhelm-lawachurl",

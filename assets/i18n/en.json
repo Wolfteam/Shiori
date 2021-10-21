@@ -9940,22 +9940,6 @@
       "name": "Hydro Hypostasis"
     },
     {
-      "key": "hydro-hypostasis-summon",
-      "name": "Hydro Hypostasis Summon"
-    },
-    {
-      "key": "hydro-hypostasis-summon",
-      "name": "Hydro Hypostasis Summon"
-    },
-    {
-      "key": "hydro-hypostasis-summon",
-      "name": "Hydro Hypostasis Summon"
-    },
-    {
-      "key": "hydro-hypostasis-summon",
-      "name": "Hydro Hypostasis Summon"
-    },
-    {
       "key": "hydro-mimic-boar",
       "name": "Hydro Mimic Boar"
     },
@@ -10140,6 +10124,14 @@
       "name": "Rock Shieldwall Mitachurl"
     },
     {
+      "key": "rockfond-rifthound",
+      "name": "Rockfond Rifthound"
+    },
+    {
+      "key": "rockfond-rifthound-whelp",
+      "name": "Rockfond Rifthound Whelp"
+    },
+    {
       "key": "ruin-cruiser",
       "name": "Ruin Cruiser"
     },
@@ -10194,6 +10186,14 @@
     {
       "key": "thunder-manifestation",
       "name": "Thunder Manifestation"
+    },
+    {
+      "key": "thundercraven-rifthound",
+      "name": "Thundercraven Rifthound"
+    },
+    {
+      "key": "thundercraven-rifthound-whelp",
+      "name": "Thundercraven Rifthound Whelp"
     },
     {
       "key": "thunderhelm-lawachurl",
