@@ -92,6 +92,9 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
       return CharacterMultiTalentAscensionModel(number: e.number, materials: materials);
     }).toList();
 
+    final birthday = _localeService.formatCharBirthDate(char.birthday);
+    final isInInventory = _dataService.isItemInInventory(char.key, ItemType.character);
+
     return CharacterState.loaded(
       key: char.key,
       name: translation.name,
@@ -102,8 +105,8 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
       secondFullImage: char.secondFullImage != null ? Assets.getCharacterFullPath(char.secondFullImage!) : null,
       description: translation.description,
       rarity: char.rarity,
-      birthday: _localeService.formatCharBirthDate(char.birthday),
-      isInInventory: _dataService.isItemInInventory(char.key, ItemType.character),
+      birthday: birthday,
+      isInInventory: isInInventory,
       elementType: char.elementType,
       weaponType: char.weaponType,
       ascensionMaterials: ascensionMaterials,
