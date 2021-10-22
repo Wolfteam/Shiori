@@ -9,6 +9,7 @@ import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
+import '../common.dart';
 import '../mocks.mocks.dart';
 
 void main() {
@@ -27,7 +28,7 @@ void main() {
       await _genshinService.init(AppLanguageType.english);
       _calculatorService = CalculatorServiceImpl(_genshinService);
       _dataService = DataServiceImpl(_genshinService, _calculatorService);
-      await _dataService.init(dir: 'shiori_data_tests');
+      await _dataService.init(dir: defaultDbFolder);
     });
   });
 

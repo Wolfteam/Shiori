@@ -8,6 +8,7 @@ import 'package:shiori/domain/services/locale_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
+import '../../common.dart';
 import '../../mocks.mocks.dart';
 
 void main() {
@@ -38,26 +39,26 @@ void main() {
       key,
       build: () => _artifactBloc,
       act: (bloc) => bloc.add(const ArtifactEvent.loadFromKey(key: key)),
-      expect: () {
-        final detail = _genshinService.getArtifact(key);
-        final translation = _genshinService.getArtifactTranslation(key);
-        final bonus = _genshinService.getArtifactBonus(translation);
-        final charImgs = _genshinService.getCharacterForItemsUsingArtifact(key);
-        final droppedBy = _genshinService.getRelatedMonsterToArtifactForItems(key);
-        final images = _genshinService.getArtifactRelatedParts(detail.fullImagePath, detail.image, translation.bonus.length);
-        return [
-          const ArtifactState.loading(),
-          ArtifactState.loaded(
-            name: translation.name,
-            image: detail.fullImagePath,
-            minRarity: detail.minRarity,
-            maxRarity: detail.maxRarity,
-            bonus: bonus,
-            images: images,
-            charImages: charImgs,
-            droppedBy: droppedBy,
-          )
-        ];
+      verify: (bloc) {
+        bloc.state.map(
+          loading: (_) => throw Exception('Invalid state'),
+          loaded: (state) {
+            checkTranslation(state.name, canBeNull: false);
+            checkAsset(state.image);
+            for (final img in state.images) {
+              checkAsset(img);
+            }
+            for (final item in state.charImages) {
+              checkItemCommon(item);
+            }
+            for (final item in state.droppedBy) {
+              checkItemCommon(item);
+            }
+            expect(state.minRarity, inInclusiveRange(2, 4));
+            expect(state.maxRarity, inInclusiveRange(4, 5));
+            expect(state.bonus, isNotEmpty);
+          },
+        );
       },
     );
   });
