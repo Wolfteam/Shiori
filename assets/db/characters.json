@@ -5213,7 +5213,7 @@
       "isFemale": true,
       "region": "liyue",
       "role": "offFieldDps",
-      "tier": "a",
+      "tier": "ss",
       "birthday": "02/14",
       "subStatType": "electroDmgBonusPercentage",
       "ascensionMaterials": [
@@ -44913,8 +44913,8 @@
               "stats": [
                 "hp",
                 "atk",
-                "energyRechargePercentage",
-                "pyroDmgBonusPercentage",
+                "atkPercentage",
+                "physDmgBonusPercentage",
                 "critRatePercentage"
               ]
             }

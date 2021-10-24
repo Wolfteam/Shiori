@@ -7,6 +7,8 @@ abstract class DataService {
 
   Future<void> deleteThemAll();
 
+  Future<void> closeThemAll();
+
   List<CalculatorSessionModel> getAllCalAscMatSessions();
 
   CalculatorSessionModel getCalcAscMatSession(int sessionKey);
