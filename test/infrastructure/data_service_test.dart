@@ -12,6 +12,8 @@ import 'package:shiori/infrastructure/infrastructure.dart';
 import '../common.dart';
 import '../mocks.mocks.dart';
 
+const _dbFolder = 'shiori_data_service_tests';
+
 void main() {
   late final DataService _dataService;
   late final CalculatorService _calculatorService;
@@ -19,22 +21,24 @@ void main() {
 
   setUp(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    return Future(() async {
-      final settings = MockSettingsService();
-      when(settings.language).thenReturn(AppLanguageType.english);
-      final localeService = LocaleServiceImpl(settings);
+    final settings = MockSettingsService();
+    when(settings.language).thenReturn(AppLanguageType.english);
+    final localeService = LocaleServiceImpl(settings);
 
-      _genshinService = GenshinServiceImpl(localeService);
+    _genshinService = GenshinServiceImpl(localeService);
+    _calculatorService = CalculatorServiceImpl(_genshinService);
+    _dataService = DataServiceImpl(_genshinService, _calculatorService);
+
+    return Future(() async {
       await _genshinService.init(AppLanguageType.english);
-      _calculatorService = CalculatorServiceImpl(_genshinService);
-      _dataService = DataServiceImpl(_genshinService, _calculatorService);
-      await _dataService.init(dir: defaultDbFolder);
+      await _dataService.init(dir: _dbFolder);
     });
   });
 
   tearDown(() {
     return Future(() async {
-      await _dataService.deleteThemAll();
+      await _dataService.closeThemAll();
+      await deleteDbFolder(_dbFolder);
     });
   });
 

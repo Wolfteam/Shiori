@@ -13,6 +13,8 @@ import 'package:shiori/infrastructure/infrastructure.dart';
 import '../../common.dart';
 import '../../mocks.mocks.dart';
 
+const _dbFolder = 'shiori_inventory_bloc_tests';
+
 void main() {
   late final TelemetryService _telemetryService;
   late final SettingsService _settingsService;
@@ -38,13 +40,14 @@ void main() {
     _weaponBloc = WeaponBloc(_genshinService, _telemetryService, _dataService);
     return Future(() async {
       await _genshinService.init(_settingsService.language);
-      await _dataService.init(dir: defaultDbFolder);
+      await _dataService.init(dir: _dbFolder);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
-      await _dataService.deleteThemAll();
+      await _dataService.closeThemAll();
+      await deleteDbFolder(_dbFolder);
     });
   });
 

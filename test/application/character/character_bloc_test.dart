@@ -13,6 +13,8 @@ import 'package:shiori/infrastructure/infrastructure.dart';
 import '../../common.dart';
 import '../../mocks.mocks.dart';
 
+const _dbFolder = 'shiori_character_bloc_tests';
+
 void main() {
   late TelemetryService _telemetryService;
   late LocaleService _localeService;
@@ -31,13 +33,14 @@ void main() {
     manuallyInitLocale(_localeService, AppLanguageType.english);
     return Future(() async {
       await _genshinService.init(AppLanguageType.english);
-      await _dataService.init(dir: defaultDbFolder);
+      await _dataService.init(dir: _dbFolder);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
-      await _dataService.deleteThemAll();
+      await _dataService.closeThemAll();
+      await deleteDbFolder(_dbFolder);
     });
   });
 

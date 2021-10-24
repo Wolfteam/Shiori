@@ -15,6 +15,8 @@ import 'package:shiori/infrastructure/infrastructure.dart';
 import '../../common.dart';
 import '../../mocks.mocks.dart';
 
+const _dbFolder = 'shiori_game_codes_bloc_tests';
+
 void main() {
   late final TelemetryService _telemetryService;
   late final NetworkService _networkService;
@@ -55,13 +57,14 @@ void main() {
     _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService));
     return Future(() async {
       await _genshinService.init(AppLanguageType.english);
-      await _dataService.init(dir: defaultDbFolder);
+      await _dataService.init(dir: _dbFolder);
     });
   });
 
   tearDownAll(() {
     return Future(() async {
-      await _dataService.deleteThemAll();
+      await _dataService.closeThemAll();
+      await deleteDbFolder(_dbFolder);
     });
   });
 

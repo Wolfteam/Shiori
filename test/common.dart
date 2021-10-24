@@ -1,13 +1,23 @@
+import 'dart:io';
+
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:path/path.dart' as path_helper;
+import 'package:path_provider/path_provider.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
 
-const defaultDbFolder = 'shiori_data_tests';
+//since we are using a real impl of the data service,
+// to avoid problems we just create different folders and delete them all after the test completes
+Future<void> deleteDbFolder(String subDir) async {
+  final appDir = await getApplicationDocumentsDirectory();
+  final path = path_helper.join(appDir.path, subDir);
+  await Directory(path).delete(recursive: true);
+}
 
 void manuallyInitLocale(LocaleService service, AppLanguageType language) {
   //for some reason in the tests I need to initialize this thing
