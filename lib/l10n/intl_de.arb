@@ -375,5 +375,6 @@
   "charRoleBurstSupport": "Burst Support",
   "melt": "Melt",
   "freeze": "Freeze",
-  "shield": "Shield"
+  "shield": "Shield",
+  "unofficial": "Unofficial"
 }
