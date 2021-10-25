@@ -6447,739 +6447,1408 @@
       "key": "akuoumaru",
       "name": "Akuoumaru",
       "description": "L'amata spada del leggendario Akuou. La lama è immensa e maestosa, sorprendentemente facile da maneggiare.",
-      "refinement": "Per ciascun punto di Energy Massima dell'intero party combinato, l'Elemental Burst DMG del personaggio che lo equipaggia aumenta del {0}%. Il massimo aumento possibile di Elemental Burst DMG è del {1}%."
+      "refinements": [
+        "Per ciascun punto di Energy Massima dell'intero party combinato, l'Elemental Burst DMG del personaggio che lo equipaggia aumenta del 0.12%. Il massimo aumento possibile di Elemental Burst DMG è del 40%.",
+        "Per ciascun punto di Energy Massima dell'intero party combinato, l'Elemental Burst DMG del personaggio che lo equipaggia aumenta del 0.15%. Il massimo aumento possibile di Elemental Burst DMG è del 50%.",
+        "Per ciascun punto di Energy Massima dell'intero party combinato, l'Elemental Burst DMG del personaggio che lo equipaggia aumenta del 0.18%. Il massimo aumento possibile di Elemental Burst DMG è del 60%.",
+        "Per ciascun punto di Energy Massima dell'intero party combinato, l'Elemental Burst DMG del personaggio che lo equipaggia aumenta del 0.21%. Il massimo aumento possibile di Elemental Burst DMG è del 70%.",
+        "Per ciascun punto di Energy Massima dell'intero party combinato, l'Elemental Burst DMG del personaggio che lo equipaggia aumenta del 0.24%. Il massimo aumento possibile di Elemental Burst DMG è del 80%."
+      ]
     },
     {
       "key": "alley-hunter",
       "name": "Alley Hunter",
       "description": "Un arco lungo, intricato e opulento. Una volta apparteneva a un ladro gentiluomo che non è mai stato catturato.",
-      "refinement": "Se il personaggio che lo equipaggia è presente nel party ma non è in uso, il DMG inflitto aumenta del {0}% ogni secondo fino a un massimo del {1}%. Se invece è in uso da più di 4s, il potenziamento ottenuto cala del {2}% ogni secondo fino a raggiungere lo 0%."
+      "refinements": [
+        "Se il personaggio che lo equipaggia è presente nel party ma non è in uso, il DMG inflitto aumenta del 2% ogni secondo fino a un massimo del 20%. Se invece è in uso da più di 4s, il potenziamento ottenuto cala del 4% ogni secondo fino a raggiungere lo 0%.",
+        "Se il personaggio che lo equipaggia è presente nel party ma non è in uso, il DMG inflitto aumenta del 2.5% ogni secondo fino a un massimo del 25%. Se invece è in uso da più di 4s, il potenziamento ottenuto cala del 5% ogni secondo fino a raggiungere lo 0%.",
+        "Se il personaggio che lo equipaggia è presente nel party ma non è in uso, il DMG inflitto aumenta del 3% ogni secondo fino a un massimo del 30%. Se invece è in uso da più di 4s, il potenziamento ottenuto cala del 6% ogni secondo fino a raggiungere lo 0%.",
+        "Se il personaggio che lo equipaggia è presente nel party ma non è in uso, il DMG inflitto aumenta del 3.5% ogni secondo fino a un massimo del 35%. Se invece è in uso da più di 4s, il potenziamento ottenuto cala del 7% ogni secondo fino a raggiungere lo 0%.",
+        "Se il personaggio che lo equipaggia è presente nel party ma non è in uso, il DMG inflitto aumenta del 4% ogni secondo fino a un massimo del 40%. Se invece è in uso da più di 4s, il potenziamento ottenuto cala del 8% ogni secondo fino a raggiungere lo 0%."
+      ]
     },
     {
       "key": "amenoma-kageuchi",
       "name": "Amenoma Kageuchi",
       "description": "Una lama forgiata su misura per un famoso samurai capace di abbattere a mezz'aria un guerriero tengu, noti per la loro incredibile agilità.",
-      "refinement": "Dopo aver scatenato un'Elemental Skill ottieni 1 \"Succession Seed\". L’effetto può avvenire una volta ogni 5s. Il Succession Seed dura per 30s. Massimo 3 Succession Seeds possono esistere contemporaneamente. Dopo aver usato un Elemental Burst, tutti i Succession Seeds si consumano e dopo 2s il personaggio rigenera {0} Energy per ciascun Seed consumato."
+      "refinements": [
+        "Dopo aver scatenato un'Elemental Skill ottieni 1 \"Succession Seed\". L’effetto può avvenire una volta ogni 5s. Il Succession Seed dura per 30s. Massimo 3 Succession Seeds possono esistere contemporaneamente. Dopo aver usato un Elemental Burst, tutti i Succession Seeds si consumano e dopo 2s il personaggio rigenera 6 Energy per ciascun Seed consumato.",
+        "Dopo aver scatenato un'Elemental Skill ottieni 1 \"Succession Seed\". L’effetto può avvenire una volta ogni 5s. Il Succession Seed dura per 30s. Massimo 3 Succession Seeds possono esistere contemporaneamente. Dopo aver usato un Elemental Burst, tutti i Succession Seeds si consumano e dopo 2s il personaggio rigenera 7.5 Energy per ciascun Seed consumato.",
+        "Dopo aver scatenato un'Elemental Skill ottieni 1 \"Succession Seed\". L’effetto può avvenire una volta ogni 5s. Il Succession Seed dura per 30s. Massimo 3 Succession Seeds possono esistere contemporaneamente. Dopo aver usato un Elemental Burst, tutti i Succession Seeds si consumano e dopo 2s il personaggio rigenera 9 Energy per ciascun Seed consumato.",
+        "Dopo aver scatenato un'Elemental Skill ottieni 1 \"Succession Seed\". L’effetto può avvenire una volta ogni 5s. Il Succession Seed dura per 30s. Massimo 3 Succession Seeds possono esistere contemporaneamente. Dopo aver usato un Elemental Burst, tutti i Succession Seeds si consumano e dopo 2s il personaggio rigenera 10.5 Energy per ciascun Seed consumato.",
+        "Dopo aver scatenato un'Elemental Skill ottieni 1 \"Succession Seed\". L’effetto può avvenire una volta ogni 5s. Il Succession Seed dura per 30s. Massimo 3 Succession Seeds possono esistere contemporaneamente. Dopo aver usato un Elemental Burst, tutti i Succession Seeds si consumano e dopo 2s il personaggio rigenera 12 Energy per ciascun Seed consumato."
+      ]
     },
     {
       "key": "amos-bow",
       "name": "Amos' Bow",
       "description": "Un arco estremamente antico che ha conservato il suo potere, sebbene il suo primo maestro se ne fosse andato ormai da tempo. Trae potere da tutti e da tutto nel mondo, ed è tanto più potente quanto più è lontano il tuo cuore da ciò che desidera.",
-      "refinement": "Aumenta del {0}% il DMG di Attacchi Normali e Caricati; il loro DMG aumenta di un ulteriore {1}% ogni 0.1s mentre la freccia è in volo, fino a un massimo di 5 potenziamenti."
+      "refinements": [
+        "Aumenta del 12% il DMG di Attacchi Normali e Caricati; il loro DMG aumenta di un ulteriore 8% ogni 0.1s mentre la freccia è in volo, fino a un massimo di 5 potenziamenti.",
+        "Aumenta del 15% il DMG di Attacchi Normali e Caricati; il loro DMG aumenta di un ulteriore 10% ogni 0.1s mentre la freccia è in volo, fino a un massimo di 5 potenziamenti.",
+        "Aumenta del 18% il DMG di Attacchi Normali e Caricati; il loro DMG aumenta di un ulteriore 12% ogni 0.1s mentre la freccia è in volo, fino a un massimo di 5 potenziamenti.",
+        "Aumenta del 21% il DMG di Attacchi Normali e Caricati; il loro DMG aumenta di un ulteriore 14% ogni 0.1s mentre la freccia è in volo, fino a un massimo di 5 potenziamenti.",
+        "Aumenta del 24% il DMG di Attacchi Normali e Caricati; il loro DMG aumenta di un ulteriore 16% ogni 0.1s mentre la freccia è in volo, fino a un massimo di 5 potenziamenti."
+      ]
     },
     {
       "key": "apprentices-notes",
       "name": "Apprentice's Notes",
       "description": "Note lasciate da uno studente modello. Sono elencati molti incantesimi utili e la grafia è bellissima.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "aquila-favonia",
       "name": "Aquila Favonia",
       "description": "L'anima dei cavalieri di Favonius. Millenni dopo, richiama ancora a sé i forti venti della giustizia per sconfiggere ogni male — proprio come l'ultima eroina che l'ha impugnata.",
-      "refinement": "L'ATK aumenta del {0}%. Si attiva subendo DMG: l'arma risveglia l’anima del \"Falco dell'Ovest\" che, sventolando in volo il vessillo della resistenza, rigenera HP pari al {1}% dell’ATK e infligge DMG pari al {2}% dell'ATK ai nemici circostanti. L'effetto può avvenire una volta ogni 15s."
+      "refinements": [
+        "L'ATK aumenta del 20%. Si attiva subendo DMG: l'arma risveglia l’anima del \"Falco dell'Ovest\" che, sventolando in volo il vessillo della resistenza, rigenera HP pari al 100% dell’ATK e infligge DMG pari al 200% dell'ATK ai nemici circostanti. L'effetto può avvenire una volta ogni 15s.",
+        "L'ATK aumenta del 25%. Si attiva subendo DMG: l'arma risveglia l’anima del \"Falco dell'Ovest\" che, sventolando in volo il vessillo della resistenza, rigenera HP pari al 115% dell’ATK e infligge DMG pari al 230% dell'ATK ai nemici circostanti. L'effetto può avvenire una volta ogni 15s.",
+        "L'ATK aumenta del 30%. Si attiva subendo DMG: l'arma risveglia l’anima del \"Falco dell'Ovest\" che, sventolando in volo il vessillo della resistenza, rigenera HP pari al 130% dell’ATK e infligge DMG pari al 260% dell'ATK ai nemici circostanti. L'effetto può avvenire una volta ogni 15s.",
+        "L'ATK aumenta del 35%. Si attiva subendo DMG: l'arma risveglia l’anima del \"Falco dell'Ovest\" che, sventolando in volo il vessillo della resistenza, rigenera HP pari al 145% dell’ATK e infligge DMG pari al 290% dell'ATK ai nemici circostanti. L'effetto può avvenire una volta ogni 15s.",
+        "L'ATK aumenta del 40%. Si attiva subendo DMG: l'arma risveglia l’anima del \"Falco dell'Ovest\" che, sventolando in volo il vessillo della resistenza, rigenera HP pari al 160% dell’ATK e infligge DMG pari al 320% dell'ATK ai nemici circostanti. L'effetto può avvenire una volta ogni 15s."
+      ]
     },
     {
       "key": "beginners-protector",
       "name": "Beginner's Protector",
       "description": "Un polearm retto come l’asta di una bandiera. Adatto alla maggior parte dei combattimenti, ha una presenza imponente quando brandito.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "black-tassel",
       "name": "Black Tassel",
       "description": "Un polearm eccezionalmente potente che offre una soluzione semplice ma elegante al problema della nappa bianca facilmente macchiata.",
-      "refinement": "Aumenta del {0}% i DMG contro gli Slimes."
+      "refinements": [
+        "Aumenta del 40% i DMG contro gli Slimes.",
+        "Aumenta del 50% i DMG contro gli Slimes.",
+        "Aumenta del 60% i DMG contro gli Slimes.",
+        "Aumenta del 70% i DMG contro gli Slimes.",
+        "Aumenta del 80% i DMG contro gli Slimes."
+      ]
     },
     {
       "key": "blackcliff-agate",
       "name": "Blackcliff Agate",
       "description": "Un misterioso Catalyst fatto di un materiale conosciuto come \"blackcliff.\" Emana un minaccioso bagliore cremisi che sembra pulsare in sincronia con i tremori delle profondità della terra.",
-      "refinement": "Dopo aver sconfitto un nemico, l'ATK aumenta del {0}% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre."
+      "refinements": [
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 12% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 15% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 18% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 21% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 24% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre."
+      ]
     },
     {
       "key": "blackcliff-longsword",
       "name": "Blackcliff Longsword",
       "description": "Una spada fatta di un materiale conosciuto come \"blackcliff.\" Sulla sua lama ha un bagliore cremisi scuro.",
-      "refinement": "Dopo aver sconfitto un nemico, l'ATK aumenta del {0}% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre."
+      "refinements": [
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 12% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 15% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 18% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 21% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 24% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre."
+      ]
     },
     {
       "key": "blackcliff-pole",
       "name": "Blackcliff Pole",
       "description": "Un’arma fatta di blackcliff e aerosiderite. Dalla sua fredda lucentezza nera emana uno scuro bagliore cremisi.",
-      "refinement": "Dopo aver sconfitto un nemico, l'ATK aumenta del {0}% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre."
+      "refinements": [
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 12% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 15% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 18% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 21% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 24% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre."
+      ]
     },
     {
       "key": "blackcliff-slasher",
       "name": "Blackcliff Slasher",
       "description": "Uno spadone notevolmente robusto proveniente dalla Blackcliff Forge. Un colore cremisi scuro si estende dalla lama all'elsa.",
-      "refinement": "Dopo aver sconfitto un nemico, l'ATK aumenta del {0}% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre."
+      "refinements": [
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 12% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 15% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 18% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 21% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 24% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre."
+      ]
     },
     {
       "key": "blackcliff-warbow",
       "name": "Blackcliff Warbow",
       "description": "Un arco blackcliff da guerra che presenta flettenti estremamente robusti. Per usarlo occorre un arciere con un braccio forte.",
-      "refinement": "Dopo aver sconfitto un nemico, l'ATK aumenta del {0}% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre."
+      "refinements": [
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 12% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 15% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 18% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 21% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre.",
+        "Dopo aver sconfitto un nemico, l'ATK aumenta del 24% per 30s. L'effetto ha un massimo di 3 stacks e la durata di ciascuno non dipende dalle altre."
+      ]
     },
     {
       "key": "bloodtainted-greatsword",
       "name": "Bloodtainted Greatsword",
       "description": "Una spada di ferro che si dice sia stata rivestita del sangue di drago per renderla invulnerabile ai danni. Tuttavia, non si estende a chi lo brandisce.",
-      "refinement": "Aumenta del {0}% i DMG contro nemici affetti da Pyro o Electro."
+      "refinements": [
+        "Aumenta del 12% i DMG contro nemici affetti da Pyro o Electro.",
+        "Aumenta del 15% i DMG contro nemici affetti da Pyro o Electro.",
+        "Aumenta del 18% i DMG contro nemici affetti da Pyro o Electro.",
+        "Aumenta del 21% i DMG contro nemici affetti da Pyro o Electro.",
+        "Aumenta del 24% i DMG contro nemici affetti da Pyro o Electro."
+      ]
     },
     {
       "key": "compound-bow",
       "name": "Compound Bow",
       "description": "Un arco metallico esotico proveniente da una terra lontana. Sebbene sia estremamente difficile da sistemare, è facile da maneggiare e scocca con una forza tremenda.",
-      "refinement": "Gli Attacchi Normali e Caricati aumentano l'ATK del {0}% e la velocità degli Attacchi Normali del {1}% per 6s. Massimo 4 stacks. L'effetto si attiva una volta ogni 0.3s."
+      "refinements": [
+        "Gli Attacchi Normali e Caricati aumentano l'ATK del 4% e la velocità degli Attacchi Normali del 1.2% per 6s. Massimo 4 stacks. L'effetto si attiva una volta ogni 0.3s.",
+        "Gli Attacchi Normali e Caricati aumentano l'ATK del 5% e la velocità degli Attacchi Normali del 1.5% per 6s. Massimo 4 stacks. L'effetto si attiva una volta ogni 0.3s.",
+        "Gli Attacchi Normali e Caricati aumentano l'ATK del 6% e la velocità degli Attacchi Normali del 1.8% per 6s. Massimo 4 stacks. L'effetto si attiva una volta ogni 0.3s.",
+        "Gli Attacchi Normali e Caricati aumentano l'ATK del 7% e la velocità degli Attacchi Normali del 2.1% per 6s. Massimo 4 stacks. L'effetto si attiva una volta ogni 0.3s.",
+        "Gli Attacchi Normali e Caricati aumentano l'ATK del 8% e la velocità degli Attacchi Normali del 2.4% per 6s. Massimo 4 stacks. L'effetto si attiva una volta ogni 0.3s."
+      ]
     },
     {
       "key": "cool-steel",
       "name": "Cool Steel",
       "description": "Un’arma affidabile e forgiata in acciaio. È la testimonianza delle grandi avventure del suo vecchio maestro.",
-      "refinement": "Aumenta del {0}% i DMG contro nemici affetti da Hydro or Cryo."
+      "refinements": [
+        "Aumenta del 12% i DMG contro nemici affetti da Hydro or Cryo.",
+        "Aumenta del 15% i DMG contro nemici affetti da Hydro or Cryo.",
+        "Aumenta del 18% i DMG contro nemici affetti da Hydro or Cryo.",
+        "Aumenta del 21% i DMG contro nemici affetti da Hydro or Cryo.",
+        "Aumenta del 24% i DMG contro nemici affetti da Hydro or Cryo."
+      ]
     },
     {
       "key": "crescent-pike",
       "name": "Crescent Pike",
       "description": "Un’arma esotica con una lama estremamente lunga in alto e una falce di luna in basso. È giunta a Liyue attraverso commercianti stranieri. Con la pratica, può infliggere gravi danni.",
-      "refinement": "Raccogliendo Elemental Orb/Particle, gli Attacchi Normali e Caricati infliggono un ulteriore DMG pari al {0}% dell'ATK per 5s."
+      "refinements": [
+        "Raccogliendo Elemental Orb/Particle, gli Attacchi Normali e Caricati infliggono un ulteriore DMG pari al 20% dell'ATK per 5s.",
+        "Raccogliendo Elemental Orb/Particle, gli Attacchi Normali e Caricati infliggono un ulteriore DMG pari al 25% dell'ATK per 5s.",
+        "Raccogliendo Elemental Orb/Particle, gli Attacchi Normali e Caricati infliggono un ulteriore DMG pari al 30% dell'ATK per 5s.",
+        "Raccogliendo Elemental Orb/Particle, gli Attacchi Normali e Caricati infliggono un ulteriore DMG pari al 35% dell'ATK per 5s.",
+        "Raccogliendo Elemental Orb/Particle, gli Attacchi Normali e Caricati infliggono un ulteriore DMG pari al 40% dell'ATK per 5s."
+      ]
     },
     {
       "key": "dark-iron-sword",
       "name": "Dark Iron Sword",
       "description": "Una spada di ferro ordinaria, solo leggermente più scura del solito.",
-      "refinement": "Causando una reazione Overloaded, Superconduct, Electro-Charged o uno Swirl infuso di Electro, l'ATK aumenta del {0}% per 12s."
+      "refinements": [
+        "Causando una reazione Overloaded, Superconduct, Electro-Charged o uno Swirl infuso di Electro, l'ATK aumenta del 20% per 12s.",
+        "Causando una reazione Overloaded, Superconduct, Electro-Charged o uno Swirl infuso di Electro, l'ATK aumenta del 25% per 12s.",
+        "Causando una reazione Overloaded, Superconduct, Electro-Charged o uno Swirl infuso di Electro, l'ATK aumenta del 30% per 12s.",
+        "Causando una reazione Overloaded, Superconduct, Electro-Charged o uno Swirl infuso di Electro, l'ATK aumenta del 35% per 12s.",
+        "Causando una reazione Overloaded, Superconduct, Electro-Charged o uno Swirl infuso di Electro, l'ATK aumenta del 40% per 12s."
+      ]
     },
     {
       "key": "deathmatch",
       "name": "Deathmatch",
       "description": "Un polearm cremisi e affilato che è stato il tesoro inestimabile di un gladiatore. La sua punta si è macchiata del sangue di innumerevoli belve e uomini.",
-      "refinement": "Quando ci sono almeno 2 nemici vicini, aumenta l'ATK del {0}% e la DEF del {1}%. Se ci sono meno di 2 nemici vicini l’ATK aumenta del {2}%."
+      "refinements": [
+        "Quando ci sono almeno 2 nemici vicini, aumenta l'ATK del 16% e la DEF del 16%. Se ci sono meno di 2 nemici vicini l’ATK aumenta del 24%.",
+        "Quando ci sono almeno 2 nemici vicini, aumenta l'ATK del 20% e la DEF del 20%. Se ci sono meno di 2 nemici vicini l’ATK aumenta del 30%.",
+        "Quando ci sono almeno 2 nemici vicini, aumenta l'ATK del 24% e la DEF del 24%. Se ci sono meno di 2 nemici vicini l’ATK aumenta del 36%.",
+        "Quando ci sono almeno 2 nemici vicini, aumenta l'ATK del 28% e la DEF del 28%. Se ci sono meno di 2 nemici vicini l’ATK aumenta del 42%.",
+        "Quando ci sono almeno 2 nemici vicini, aumenta l'ATK del 32% e la DEF del 32%. Se ci sono meno di 2 nemici vicini l’ATK aumenta del 48%."
+      ]
     },
     {
       "key": "debate-club",
       "name": "Debate Club",
       "description": "Una pratica mazza di ferro pregiato. Il mezzo più persuasivo e ragionevole nell’arsenale di chi ha sempre voglia di discutere.",
-      "refinement": "Elemental Skill, Attacchi Normali o Caricati infliggono un ulteriore piccolo AoE DMG pari al {0}% dell'ATK. Dura per 15s. L'effetto può avvenire una volta ogni 3s."
+      "refinements": [
+        "Elemental Skill, Attacchi Normali o Caricati infliggono un ulteriore piccolo AoE DMG pari al 60% dell'ATK. Dura per 15s. L'effetto può avvenire una volta ogni 3s.",
+        "Elemental Skill, Attacchi Normali o Caricati infliggono un ulteriore piccolo AoE DMG pari al 75% dell'ATK. Dura per 15s. L'effetto può avvenire una volta ogni 3s.",
+        "Elemental Skill, Attacchi Normali o Caricati infliggono un ulteriore piccolo AoE DMG pari al 90% dell'ATK. Dura per 15s. L'effetto può avvenire una volta ogni 3s.",
+        "Elemental Skill, Attacchi Normali o Caricati infliggono un ulteriore piccolo AoE DMG pari al 105% dell'ATK. Dura per 15s. L'effetto può avvenire una volta ogni 3s.",
+        "Elemental Skill, Attacchi Normali o Caricati infliggono un ulteriore piccolo AoE DMG pari al 120% dell'ATK. Dura per 15s. L'effetto può avvenire una volta ogni 3s."
+      ]
     },
     {
       "key": "dodoco-tales",
       "name": "Dodoco Tales",
       "description": "Un libro per bambini pieno di racconti infantili che riescono sempre a strappare un sorriso.\r\nAnche quei lettori che da tempo sono adulti riescono a immergersi all’interno di queste piccole avventure innocenti e ingenue.",
-      "refinement": "Gli Attacchi Normali aumentano il DMG di Attacchi Caricati del {0} per 6s. Gli Attacchi Caricati aumentano l’ATK del {1} per 6s."
+      "refinements": [
+        "Gli Attacchi Normali aumentano il DMG di Attacchi Caricati del 16 per 6s. Gli Attacchi Caricati aumentano l’ATK del 8 per 6s.",
+        "Gli Attacchi Normali aumentano il DMG di Attacchi Caricati del 20 per 6s. Gli Attacchi Caricati aumentano l’ATK del 10 per 6s.",
+        "Gli Attacchi Normali aumentano il DMG di Attacchi Caricati del 24 per 6s. Gli Attacchi Caricati aumentano l’ATK del 12 per 6s.",
+        "Gli Attacchi Normali aumentano il DMG di Attacchi Caricati del 28 per 6s. Gli Attacchi Caricati aumentano l’ATK del 14 per 6s.",
+        "Gli Attacchi Normali aumentano il DMG di Attacchi Caricati del 32 per 6s. Gli Attacchi Caricati aumentano l’ATK del 16 per 6s."
+      ]
     },
     {
       "key": "dragons-bane",
       "name": "Dragon's Bane",
       "description": "Un polearm decorato con un drago dorato aggrovigliato. Leggera e affilata, quest’arma può benissimo uccidere i draghi con facilità.",
-      "refinement": "Aumenta del {0}% i DMG contro nemici affetti da Hydro or Pyro."
+      "refinements": [
+        "Aumenta del 20% i DMG contro nemici affetti da Hydro or Pyro.",
+        "Aumenta del 24% i DMG contro nemici affetti da Hydro or Pyro.",
+        "Aumenta del 28% i DMG contro nemici affetti da Hydro or Pyro.",
+        "Aumenta del 32% i DMG contro nemici affetti da Hydro or Pyro.",
+        "Aumenta del 36% i DMG contro nemici affetti da Hydro or Pyro."
+      ]
     },
     {
       "key": "dragonspine-spear",
       "name": "Dragonspine Spear",
       "description": "Una lancia creata dalla zanna di un drago. È stranamente calda al tatto.",
-      "refinement": "Colpire nemici con Attacchi Normali e Caricati ha il {0}% di probabilità di far precipitare loro un Everfrost Icicle che infligge AoE DMG pari al {1}% dell'ATK. Infligge DMG pari al {2}% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s."
+      "refinements": [
+        "Colpire nemici con Attacchi Normali e Caricati ha il 60% di probabilità di far precipitare loro un Everfrost Icicle che infligge AoE DMG pari al 80% dell'ATK. Infligge DMG pari al 200% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s.",
+        "Colpire nemici con Attacchi Normali e Caricati ha il 70% di probabilità di far precipitare loro un Everfrost Icicle che infligge AoE DMG pari al 95% dell'ATK. Infligge DMG pari al 240% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s.",
+        "Colpire nemici con Attacchi Normali e Caricati ha il 80% di probabilità di far precipitare loro un Everfrost Icicle che infligge AoE DMG pari al 110% dell'ATK. Infligge DMG pari al 280% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s.",
+        "Colpire nemici con Attacchi Normali e Caricati ha il 90% di probabilità di far precipitare loro un Everfrost Icicle che infligge AoE DMG pari al 125% dell'ATK. Infligge DMG pari al 320% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s.",
+        "Colpire nemici con Attacchi Normali e Caricati ha il 100% di probabilità di far precipitare loro un Everfrost Icicle che infligge AoE DMG pari al 140% dell'ATK. Infligge DMG pari al 360% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s."
+      ]
     },
     {
       "key": "dull-blade",
       "name": "Dull Blade",
       "description": "Sogni giovanili e brivido dell’avventura. Se non è abbastanza, allora rimedia con valore!",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "elegy-for-the-end",
       "name": "Elegy for the End",
       "description": "Un arco adorabile come la lira di un bardo. Le sue frecce trafiggono il cuore come un lamentoso sospiro.",
-      "refinement": "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta l’Elemental Mastery di {0}. Quando l'Elemental Skill o l’Elemental Burst del personaggio che usa l'arma colpisce nemici, il personaggio ottiene un \"Sigil of Remembrance\". L’effetto può essere attivato una volta ogni 0.2s anche quando il personaggio non è sul campo. Quando possiedi 4 Sigils of Remembrance, ciascuno si consumerà conferendo a tutti i membri del party vicini l’effetto \"Millennial Movement: Farewell Song\" per 12s. \"Millennial Movement: Farewell Song\" aumenta l’Elemental Mastery di {1} e aumenta l’ATK del {2}%. Quando avviene, non potrai ottenere ulteriori Sigils of Remembrance per 20s. Ai tanti effetti del \"Millennial Movement,\" i buff dello stesso tipo non sono sommabili."
+      "refinements": [
+        "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta l’Elemental Mastery di 60. Quando l'Elemental Skill o l’Elemental Burst del personaggio che usa l'arma colpisce nemici, il personaggio ottiene un \"Sigil of Remembrance\". L’effetto può essere attivato una volta ogni 0.2s anche quando il personaggio non è sul campo. Quando possiedi 4 Sigils of Remembrance, ciascuno si consumerà conferendo a tutti i membri del party vicini l’effetto \"Millennial Movement: Farewell Song\" per 12s. \"Millennial Movement: Farewell Song\" aumenta l’Elemental Mastery di 100 e aumenta l’ATK del 20%. Quando avviene, non potrai ottenere ulteriori Sigils of Remembrance per 20s. Ai tanti effetti del \"Millennial Movement,\" i buff dello stesso tipo non sono sommabili.",
+        "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta l’Elemental Mastery di 75. Quando l'Elemental Skill o l’Elemental Burst del personaggio che usa l'arma colpisce nemici, il personaggio ottiene un \"Sigil of Remembrance\". L’effetto può essere attivato una volta ogni 0.2s anche quando il personaggio non è sul campo. Quando possiedi 4 Sigils of Remembrance, ciascuno si consumerà conferendo a tutti i membri del party vicini l’effetto \"Millennial Movement: Farewell Song\" per 12s. \"Millennial Movement: Farewell Song\" aumenta l’Elemental Mastery di 125 e aumenta l’ATK del 25%. Quando avviene, non potrai ottenere ulteriori Sigils of Remembrance per 20s. Ai tanti effetti del \"Millennial Movement,\" i buff dello stesso tipo non sono sommabili.",
+        "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta l’Elemental Mastery di 90. Quando l'Elemental Skill o l’Elemental Burst del personaggio che usa l'arma colpisce nemici, il personaggio ottiene un \"Sigil of Remembrance\". L’effetto può essere attivato una volta ogni 0.2s anche quando il personaggio non è sul campo. Quando possiedi 4 Sigils of Remembrance, ciascuno si consumerà conferendo a tutti i membri del party vicini l’effetto \"Millennial Movement: Farewell Song\" per 12s. \"Millennial Movement: Farewell Song\" aumenta l’Elemental Mastery di 150 e aumenta l’ATK del 30%. Quando avviene, non potrai ottenere ulteriori Sigils of Remembrance per 20s. Ai tanti effetti del \"Millennial Movement,\" i buff dello stesso tipo non sono sommabili.",
+        "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta l’Elemental Mastery di 105. Quando l'Elemental Skill o l’Elemental Burst del personaggio che usa l'arma colpisce nemici, il personaggio ottiene un \"Sigil of Remembrance\". L’effetto può essere attivato una volta ogni 0.2s anche quando il personaggio non è sul campo. Quando possiedi 4 Sigils of Remembrance, ciascuno si consumerà conferendo a tutti i membri del party vicini l’effetto \"Millennial Movement: Farewell Song\" per 12s. \"Millennial Movement: Farewell Song\" aumenta l’Elemental Mastery di 175 e aumenta l’ATK del 35%. Quando avviene, non potrai ottenere ulteriori Sigils of Remembrance per 20s. Ai tanti effetti del \"Millennial Movement,\" i buff dello stesso tipo non sono sommabili.",
+        "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta l’Elemental Mastery di 120. Quando l'Elemental Skill o l’Elemental Burst del personaggio che usa l'arma colpisce nemici, il personaggio ottiene un \"Sigil of Remembrance\". L’effetto può essere attivato una volta ogni 0.2s anche quando il personaggio non è sul campo. Quando possiedi 4 Sigils of Remembrance, ciascuno si consumerà conferendo a tutti i membri del party vicini l’effetto \"Millennial Movement: Farewell Song\" per 12s. \"Millennial Movement: Farewell Song\" aumenta l’Elemental Mastery di 200 e aumenta l’ATK del 40%. Quando avviene, non potrai ottenere ulteriori Sigils of Remembrance per 20s. Ai tanti effetti del \"Millennial Movement,\" i buff dello stesso tipo non sono sommabili."
+      ]
     },
     {
       "key": "emerald-orb",
       "name": "Emerald Orb",
       "description": "Un Catalyst ricavato dal duro Jade del Jueyun Karst a nord di Liyue. È piccolo, leggero e resistente, è conosciuto più colloquialmente come \"palla jade.\"",
-      "refinement": "Causando una reazione Vaporize, Electro-Charged, Frozen, o uno Swirl infuso di Hydro, l'ATK aumenta del {0}% per 12s."
+      "refinements": [
+        "Causando una reazione Vaporize, Electro-Charged, Frozen, o uno Swirl infuso di Hydro, l'ATK aumenta del 20% per 12s.",
+        "Causando una reazione Vaporize, Electro-Charged, Frozen, o uno Swirl infuso di Hydro, l'ATK aumenta del 25% per 12s.",
+        "Causando una reazione Vaporize, Electro-Charged, Frozen, o uno Swirl infuso di Hydro, l'ATK aumenta del 30% per 12s.",
+        "Causando una reazione Vaporize, Electro-Charged, Frozen, o uno Swirl infuso di Hydro, l'ATK aumenta del 35% per 12s.",
+        "Causando una reazione Vaporize, Electro-Charged, Frozen, o uno Swirl infuso di Hydro, l'ATK aumenta del 40% per 12s."
+      ]
     },
     {
       "key": "engulfing-lightning",
       "name": "Engulfing Lightning",
       "description": "Una naginata usata per \"falciare l'erba\". Qualunque esercito che gli si opporrà dinanzi verrà probabilmente decimato allo stesso modo...",
-      "refinement": "L'ATK aumenta del {0}% dell'Energy Recharge superiore al valore base del 100%. Il massimo ATK Bonus è del {1}%. Dopo un Elemental Burst, per 12s ottieni il {2}% di Energy Recharge."
+      "refinements": [
+        "L'ATK aumenta del 28% dell'Energy Recharge superiore al valore base del 100%. Il massimo ATK Bonus è del 80%. Dopo un Elemental Burst, per 12s ottieni il 30% di Energy Recharge.",
+        "L'ATK aumenta del 35% dell'Energy Recharge superiore al valore base del 100%. Il massimo ATK Bonus è del 90%. Dopo un Elemental Burst, per 12s ottieni il 35% di Energy Recharge.",
+        "L'ATK aumenta del 42% dell'Energy Recharge superiore al valore base del 100%. Il massimo ATK Bonus è del 100%. Dopo un Elemental Burst, per 12s ottieni il 40% di Energy Recharge.",
+        "L'ATK aumenta del 49% dell'Energy Recharge superiore al valore base del 100%. Il massimo ATK Bonus è del 110%. Dopo un Elemental Burst, per 12s ottieni il 45% di Energy Recharge.",
+        "L'ATK aumenta del 56% dell'Energy Recharge superiore al valore base del 100%. Il massimo ATK Bonus è del 120%. Dopo un Elemental Burst, per 12s ottieni il 50% di Energy Recharge."
+      ]
     },
     {
       "key": "everlasting-moonglow",
       "name": "Everlasting Moonglow",
       "description": "Un insieme di adorabili diaspri dalle profondità del mare. Sempre altrettanto distante, brilla dello stesso splendore puro della Luna.",
-      "refinement": "L’Healing Bonus aumenta del {0}%, il DMG di Attacchi Normali aumenta del {1}% dei Max HP del personaggio che lo equipaggia. Dopo un’Elemental Burst, per 12s gli Attacchi Normali che colpiscono nemici rigenerano 0.6 Energy. Questa rigenerazione può avvenire solo una volta ogni 0.1s."
+      "refinements": [
+        "L’Healing Bonus aumenta del 10%, il DMG di Attacchi Normali aumenta del 1% dei Max HP del personaggio che lo equipaggia. Dopo un’Elemental Burst, per 12s gli Attacchi Normali che colpiscono nemici rigenerano 0.6 Energy. Questa rigenerazione può avvenire solo una volta ogni 0.1s.",
+        "L’Healing Bonus aumenta del 12.5%, il DMG di Attacchi Normali aumenta del 1.5% dei Max HP del personaggio che lo equipaggia. Dopo un’Elemental Burst, per 12s gli Attacchi Normali che colpiscono nemici rigenerano 0.6 Energy. Questa rigenerazione può avvenire solo una volta ogni 0.1s.",
+        "L’Healing Bonus aumenta del 15%, il DMG di Attacchi Normali aumenta del 2% dei Max HP del personaggio che lo equipaggia. Dopo un’Elemental Burst, per 12s gli Attacchi Normali che colpiscono nemici rigenerano 0.6 Energy. Questa rigenerazione può avvenire solo una volta ogni 0.1s.",
+        "L’Healing Bonus aumenta del 17.5%, il DMG di Attacchi Normali aumenta del 2.5% dei Max HP del personaggio che lo equipaggia. Dopo un’Elemental Burst, per 12s gli Attacchi Normali che colpiscono nemici rigenerano 0.6 Energy. Questa rigenerazione può avvenire solo una volta ogni 0.1s.",
+        "L’Healing Bonus aumenta del 20%, il DMG di Attacchi Normali aumenta del 3% dei Max HP del personaggio che lo equipaggia. Dopo un’Elemental Burst, per 12s gli Attacchi Normali che colpiscono nemici rigenerano 0.6 Energy. Questa rigenerazione può avvenire solo una volta ogni 0.1s."
+      ]
     },
     {
       "key": "eye-of-perception",
       "name": "Eye of Perception",
       "description": "Una perla smaltata di un nero tenue. Si dice che abbia il potere di leggere la purezza del cuore altrui.",
-      "refinement": "Gli Attacchi Normali e Caricati hanno il 50% di probabilità di scagliare una \"Saetta della Percezione\" che infligge DMG pari al {0}% dell'ATK. Questo fulmine può saltare su massimo 4 nemici. L'effetto può avvenire una volta ogni {1}s."
+      "refinements": [
+        "Gli Attacchi Normali e Caricati hanno il 50% di probabilità di scagliare una \"Saetta della Percezione\" che infligge DMG pari al 240% dell'ATK. Questo fulmine può saltare su massimo 4 nemici. L'effetto può avvenire una volta ogni 12s.",
+        "Gli Attacchi Normali e Caricati hanno il 50% di probabilità di scagliare una \"Saetta della Percezione\" che infligge DMG pari al 270% dell'ATK. Questo fulmine può saltare su massimo 4 nemici. L'effetto può avvenire una volta ogni 11s.",
+        "Gli Attacchi Normali e Caricati hanno il 50% di probabilità di scagliare una \"Saetta della Percezione\" che infligge DMG pari al 300% dell'ATK. Questo fulmine può saltare su massimo 4 nemici. L'effetto può avvenire una volta ogni 10s.",
+        "Gli Attacchi Normali e Caricati hanno il 50% di probabilità di scagliare una \"Saetta della Percezione\" che infligge DMG pari al 330% dell'ATK. Questo fulmine può saltare su massimo 4 nemici. L'effetto può avvenire una volta ogni 9s.",
+        "Gli Attacchi Normali e Caricati hanno il 50% di probabilità di scagliare una \"Saetta della Percezione\" che infligge DMG pari al 360% dell'ATK. Questo fulmine può saltare su massimo 4 nemici. L'effetto può avvenire una volta ogni 8s."
+      ]
     },
     {
       "key": "favonius-codex",
       "name": "Favonius Codex",
       "description": "Un tomo segreto appartenuto agli studiosi dei Cavalieri di Favonius. Descrive la logica e il potere degli elementi e della materia.",
-      "refinement": "I Colpi CRIT hanno il {0}% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni {1}s."
+      "refinements": [
+        "I Colpi CRIT hanno il 60% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 12s.",
+        "I Colpi CRIT hanno il 70% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 10.5s.",
+        "I Colpi CRIT hanno il 80% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 9s.",
+        "I Colpi CRIT hanno il 90% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 7.5s.",
+        "I Colpi CRIT hanno il 100% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 6s."
+      ]
     },
     {
       "key": "favonius-greatsword",
       "name": "Favonius Greatsword",
       "description": "Una spada cerimoniale pesante dei Cavalieri di Favonius. Incanala facilmente il potere elementale ed è altamente distruttiva.",
-      "refinement": "I Colpi CRIT hanno il {0}% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni {1}s."
+      "refinements": [
+        "I Colpi CRIT hanno il 60% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 12s.",
+        "I Colpi CRIT hanno il 70% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 10.5s.",
+        "I Colpi CRIT hanno il 80% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 9s.",
+        "I Colpi CRIT hanno il 90% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 7.5s.",
+        "I Colpi CRIT hanno il 100% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 6s."
+      ]
     },
     {
       "key": "favonius-lance",
       "name": "Favonius Lance",
       "description": "Un polearm realizzato secondo lo stile dei Cavalieri di Favonius. La sua asta è retta e la sua punta fende leggera e veloce come il vento.",
-      "refinement": "I Colpi CRIT hanno il {0}% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni {1}s."
+      "refinements": [
+        "I Colpi CRIT hanno il 60% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 12s.",
+        "I Colpi CRIT hanno il 70% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 10.5s.",
+        "I Colpi CRIT hanno il 80% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 9s.",
+        "I Colpi CRIT hanno il 90% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 7.5s.",
+        "I Colpi CRIT hanno il 100% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 6s."
+      ]
     },
     {
       "key": "favonius-sword",
       "name": "Favonius Sword",
       "description": "La spada lunga standard dei Cavalieri di Favonius. Quando brandisci quest’arma agile e affilata, incanalare il potere degli elementi non è mai stato così facile!",
-      "refinement": "I Colpi CRIT hanno il {0}% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni {1}s."
+      "refinements": [
+        "I Colpi CRIT hanno il 60% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 12s.",
+        "I Colpi CRIT hanno il 70% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 10.5s.",
+        "I Colpi CRIT hanno il 80% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 9s.",
+        "I Colpi CRIT hanno il 90% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 7.5s.",
+        "I Colpi CRIT hanno il 100% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 6s."
+      ]
     },
     {
       "key": "favonius-warbow",
       "name": "Favonius Warbow",
       "description": "L'arco ricurvo standard dei Cavalieri di Favonius. Solo i migliori arcieri possono sfruttare tutto il suo potenziale.",
-      "refinement": "I Colpi CRIT hanno il {0}% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni {1}s."
+      "refinements": [
+        "I Colpi CRIT hanno il 60% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 12s.",
+        "I Colpi CRIT hanno il 70% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 10.5s.",
+        "I Colpi CRIT hanno il 80% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 9s.",
+        "I Colpi CRIT hanno il 90% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 7.5s.",
+        "I Colpi CRIT hanno il 100% di probabilità di generare una piccola quantità di Elemental Particles che rigenerano 6 Energy al personaggio. L'effetto può avvenire una volta ogni 6s."
+      ]
     },
     {
       "key": "ferrous-shadow",
       "name": "Ferrous Shadow",
       "description": "Una replica della famosa spada di Arundolyn, il Leone della Luce. Mentre impugni questa spada senti il potere di un leggendario eroe! Immagina te stesso come quel grande guerriero in persona! Nota: Sognare ad occhi aperti non è raccomandato mentre si combatte.",
-      "refinement": "Quando si ha HP < {0}%,i DMG degli Attacchi Caricati aumentano del {1}% e sono più difficili da interrompere."
+      "refinements": [
+        "Quando si ha HP < 70%,i DMG degli Attacchi Caricati aumentano del 30% e sono più difficili da interrompere.",
+        "Quando si ha HP < 75%,i DMG degli Attacchi Caricati aumentano del 35% e sono più difficili da interrompere.",
+        "Quando si ha HP < 80%,i DMG degli Attacchi Caricati aumentano del 40% e sono più difficili da interrompere.",
+        "Quando si ha HP < 85%,i DMG degli Attacchi Caricati aumentano del 45% e sono più difficili da interrompere.",
+        "Quando si ha HP < 90%,i DMG degli Attacchi Caricati aumentano del 50% e sono più difficili da interrompere."
+      ]
     },
     {
       "key": "festering-desire",
       "name": "Festering Desire",
       "description": "Una spada inquietante che sembra quasi bramare la vita. Gocciola veleno avvizzito che potrebbe persino corrompere un potente drago.",
-      "refinement": "Aumenta gli Elemental Skill DMG del {0}% e il CRIT Rate dell'Elemental Skill del {1}%."
+      "refinements": [
+        "Aumenta gli Elemental Skill DMG del 16% e il CRIT Rate dell'Elemental Skill del 6%.",
+        "Aumenta gli Elemental Skill DMG del 20% e il CRIT Rate dell'Elemental Skill del 7.5%.",
+        "Aumenta gli Elemental Skill DMG del 24% e il CRIT Rate dell'Elemental Skill del 9%.",
+        "Aumenta gli Elemental Skill DMG del 28% e il CRIT Rate dell'Elemental Skill del 10.5%.",
+        "Aumenta gli Elemental Skill DMG del 32% e il CRIT Rate dell'Elemental Skill del 12%."
+      ]
     },
     {
       "key": "fillet-blade",
       "name": "Fillet Blade",
       "description": "Un coltello affilato per sfilettare. La lama è lunga, sottile e incredibilmente affilata.",
-      "refinement": "Ciascun colpo ha il 50% di probabilità di infliggere DMG a un singolo nemico pari al {0}% dell'ATK. L'effetto può avvenire una volta ogni {1}s."
+      "refinements": [
+        "Ciascun colpo ha il 50% di probabilità di infliggere DMG a un singolo nemico pari al 240% dell'ATK. L'effetto può avvenire una volta ogni 15s.",
+        "Ciascun colpo ha il 50% di probabilità di infliggere DMG a un singolo nemico pari al 280% dell'ATK. L'effetto può avvenire una volta ogni 14s.",
+        "Ciascun colpo ha il 50% di probabilità di infliggere DMG a un singolo nemico pari al 320% dell'ATK. L'effetto può avvenire una volta ogni 13s.",
+        "Ciascun colpo ha il 50% di probabilità di infliggere DMG a un singolo nemico pari al 360% dell'ATK. L'effetto può avvenire una volta ogni 12s.",
+        "Ciascun colpo ha il 50% di probabilità di infliggere DMG a un singolo nemico pari al 400% dell'ATK. L'effetto può avvenire una volta ogni 11s."
+      ]
     },
     {
       "key": "freedom-sworn",
       "name": "Freedom-Sworn",
       "description": "Una spada azzurra come un canto antidiluviano e affilata come i giuramenti di libertà fatti nella Terra del Vento.",
-      "refinement": "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta il DMG del {0}%. Quando si innesca una Reazione Elementale si ottiene un \"Sigil of Rebellion\". L'effetto può avvenire una volta ogni 0.5 anche quando il personaggio che impugna l’arma non è sul campo. Quando si possiedono 2 Sigils of Rebellion, ciascuno si consumerà conferendo ai membri vicini del party \"Millennial Movement: Song of Resistance\" per 12s. \"Millennial Movement: Song of Resistance\" aumenta il DMG di Attacchi Normali, Caricati e in Picchiata del {1}% e aumenta l’ATK del {2}%. Quando avviene, non potrai ottenere ulteriori Sigils of Rebellion per 20s. Tra i tanti effetti del \"Millennial Movement,\" i buffs dello stesso tipo non sono sommabili."
+      "refinements": [
+        "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta il DMG del 10%. Quando si innesca una Reazione Elementale si ottiene un \"Sigil of Rebellion\". L'effetto può avvenire una volta ogni 0.5 anche quando il personaggio che impugna l’arma non è sul campo. Quando si possiedono 2 Sigils of Rebellion, ciascuno si consumerà conferendo ai membri vicini del party \"Millennial Movement: Song of Resistance\" per 12s. \"Millennial Movement: Song of Resistance\" aumenta il DMG di Attacchi Normali, Caricati e in Picchiata del 16% e aumenta l’ATK del 20%. Quando avviene, non potrai ottenere ulteriori Sigils of Rebellion per 20s. Tra i tanti effetti del \"Millennial Movement,\" i buffs dello stesso tipo non sono sommabili.",
+        "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta il DMG del 12.5%. Quando si innesca una Reazione Elementale si ottiene un \"Sigil of Rebellion\". L'effetto può avvenire una volta ogni 0.5 anche quando il personaggio che impugna l’arma non è sul campo. Quando si possiedono 2 Sigils of Rebellion, ciascuno si consumerà conferendo ai membri vicini del party \"Millennial Movement: Song of Resistance\" per 12s. \"Millennial Movement: Song of Resistance\" aumenta il DMG di Attacchi Normali, Caricati e in Picchiata del 20% e aumenta l’ATK del 25%. Quando avviene, non potrai ottenere ulteriori Sigils of Rebellion per 20s. Tra i tanti effetti del \"Millennial Movement,\" i buffs dello stesso tipo non sono sommabili.",
+        "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta il DMG del 15%. Quando si innesca una Reazione Elementale si ottiene un \"Sigil of Rebellion\". L'effetto può avvenire una volta ogni 0.5 anche quando il personaggio che impugna l’arma non è sul campo. Quando si possiedono 2 Sigils of Rebellion, ciascuno si consumerà conferendo ai membri vicini del party \"Millennial Movement: Song of Resistance\" per 12s. \"Millennial Movement: Song of Resistance\" aumenta il DMG di Attacchi Normali, Caricati e in Picchiata del 24% e aumenta l’ATK del 30%. Quando avviene, non potrai ottenere ulteriori Sigils of Rebellion per 20s. Tra i tanti effetti del \"Millennial Movement,\" i buffs dello stesso tipo non sono sommabili.",
+        "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta il DMG del 17.5%. Quando si innesca una Reazione Elementale si ottiene un \"Sigil of Rebellion\". L'effetto può avvenire una volta ogni 0.5 anche quando il personaggio che impugna l’arma non è sul campo. Quando si possiedono 2 Sigils of Rebellion, ciascuno si consumerà conferendo ai membri vicini del party \"Millennial Movement: Song of Resistance\" per 12s. \"Millennial Movement: Song of Resistance\" aumenta il DMG di Attacchi Normali, Caricati e in Picchiata del 28% e aumenta l’ATK del 35%. Quando avviene, non potrai ottenere ulteriori Sigils of Rebellion per 20s. Tra i tanti effetti del \"Millennial Movement,\" i buffs dello stesso tipo non sono sommabili.",
+        "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta il DMG del 20%. Quando si innesca una Reazione Elementale si ottiene un \"Sigil of Rebellion\". L'effetto può avvenire una volta ogni 0.5 anche quando il personaggio che impugna l’arma non è sul campo. Quando si possiedono 2 Sigils of Rebellion, ciascuno si consumerà conferendo ai membri vicini del party \"Millennial Movement: Song of Resistance\" per 12s. \"Millennial Movement: Song of Resistance\" aumenta il DMG di Attacchi Normali, Caricati e in Picchiata del 32% e aumenta l’ATK del 40%. Quando avviene, non potrai ottenere ulteriori Sigils of Rebellion per 20s. Tra i tanti effetti del \"Millennial Movement,\" i buffs dello stesso tipo non sono sommabili."
+      ]
     },
     {
       "key": "frostbearer",
       "name": "Frostbearer",
       "description": "Un frutto che possiede una strana e gelida volontà. Emana un tenue senso di agonia.",
-      "refinement": "Colpire i nemici con Attacchi Normali e Caricati ha il {0}% di probabilità di far precipitare loro un \"Everfrost Icicle\" che infligge AoE DMG pari al {1}% dell'ATK. Infligge DMG pari al {2}% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s."
+      "refinements": [
+        "Colpire i nemici con Attacchi Normali e Caricati ha il 60% di probabilità di far precipitare loro un \"Everfrost Icicle\" che infligge AoE DMG pari al 80% dell'ATK. Infligge DMG pari al 200% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s.",
+        "Colpire i nemici con Attacchi Normali e Caricati ha il 70% di probabilità di far precipitare loro un \"Everfrost Icicle\" che infligge AoE DMG pari al 95% dell'ATK. Infligge DMG pari al 240% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s.",
+        "Colpire i nemici con Attacchi Normali e Caricati ha il 80% di probabilità di far precipitare loro un \"Everfrost Icicle\" che infligge AoE DMG pari al 110% dell'ATK. Infligge DMG pari al 280% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s.",
+        "Colpire i nemici con Attacchi Normali e Caricati ha il 90% di probabilità di far precipitare loro un \"Everfrost Icicle\" che infligge AoE DMG pari al 125% dell'ATK. Infligge DMG pari al 320% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s.",
+        "Colpire i nemici con Attacchi Normali e Caricati ha il 100% di probabilità di far precipitare loro un \"Everfrost Icicle\" che infligge AoE DMG pari al 140% dell'ATK. Infligge DMG pari al 360% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s."
+      ]
     },
     {
       "key": "hakushin-ring",
       "name": "Hakushin Ring",
       "description": "Il Catalyst di Kitsune Saiguu che racchiude in sé il ricordo dei suoi tempi antichi. Tuttavia, questo dispositivo non è altro che un impoverito vascello dell’intera vastità del suo pensiero.",
-      "refinement": "Quando il personaggio che lo equipaggia scatena una Reazione Elementale Electro, i vicini membri del party il cui elemento viene coinvolto nella reazione elementale ricevono un {0}% di Elemental DMG Bonus per il loro elemento. Dura 6s. Ulteriori Elemental Bonus ottenuti in questo modo non sono sommabili."
+      "refinements": [
+        "Quando il personaggio che lo equipaggia scatena una Reazione Elementale Electro, i vicini membri del party il cui elemento viene coinvolto nella reazione elementale ricevono un 10% di Elemental DMG Bonus per il loro elemento. Dura 6s. Ulteriori Elemental Bonus ottenuti in questo modo non sono sommabili.",
+        "Quando il personaggio che lo equipaggia scatena una Reazione Elementale Electro, i vicini membri del party il cui elemento viene coinvolto nella reazione elementale ricevono un 12.5% di Elemental DMG Bonus per il loro elemento. Dura 6s. Ulteriori Elemental Bonus ottenuti in questo modo non sono sommabili.",
+        "Quando il personaggio che lo equipaggia scatena una Reazione Elementale Electro, i vicini membri del party il cui elemento viene coinvolto nella reazione elementale ricevono un 15% di Elemental DMG Bonus per il loro elemento. Dura 6s. Ulteriori Elemental Bonus ottenuti in questo modo non sono sommabili.",
+        "Quando il personaggio che lo equipaggia scatena una Reazione Elementale Electro, i vicini membri del party il cui elemento viene coinvolto nella reazione elementale ricevono un 17.5% di Elemental DMG Bonus per il loro elemento. Dura 6s. Ulteriori Elemental Bonus ottenuti in questo modo non sono sommabili.",
+        "Quando il personaggio che lo equipaggia scatena una Reazione Elementale Electro, i vicini membri del party il cui elemento viene coinvolto nella reazione elementale ricevono un 20% di Elemental DMG Bonus per il loro elemento. Dura 6s. Ulteriori Elemental Bonus ottenuti in questo modo non sono sommabili."
+      ]
     },
     {
       "key": "halberd",
       "name": "Halberd",
       "description": "Un polearm dotato di un’ascia sulla parte superiore che può infliggere molti danni. È il preferito degli ufficiali Millelith.",
-      "refinement": "Gli Attacchi Normali infliggono il {0}% di DMG aggiuntivi. L'effetto può avvenire una volta ogni 10s."
+      "refinements": [
+        "Gli Attacchi Normali infliggono il 160% di DMG aggiuntivi. L'effetto può avvenire una volta ogni 10s.",
+        "Gli Attacchi Normali infliggono il 200% di DMG aggiuntivi. L'effetto può avvenire una volta ogni 10s.",
+        "Gli Attacchi Normali infliggono il 240% di DMG aggiuntivi. L'effetto può avvenire una volta ogni 10s.",
+        "Gli Attacchi Normali infliggono il 280% di DMG aggiuntivi. L'effetto può avvenire una volta ogni 10s.",
+        "Gli Attacchi Normali infliggono il 320% di DMG aggiuntivi. L'effetto può avvenire una volta ogni 10s."
+      ]
     },
     {
       "key": "hamayumi",
       "name": "Hamayumi",
       "description": "Quest’arco da guerra una volta apparteneva a una giovane nubile del santuario. È stato realizzato con insuperabile maestria, è sia intricato che robusto.",
-      "refinement": "Aumenta il DMG di Attacchi Normali del {0}% e il DMG di Attacchi Caricati del {1}%. Quando il personaggio che lo equipaggia raggiunge Energy 100%, questo potenziamento aumenta del 100%."
+      "refinements": [
+        "Aumenta il DMG di Attacchi Normali del 16% e il DMG di Attacchi Caricati del 12%. Quando il personaggio che lo equipaggia raggiunge Energy 100%, questo potenziamento aumenta del 100%.",
+        "Aumenta il DMG di Attacchi Normali del 20% e il DMG di Attacchi Caricati del 15%. Quando il personaggio che lo equipaggia raggiunge Energy 100%, questo potenziamento aumenta del 100%.",
+        "Aumenta il DMG di Attacchi Normali del 24% e il DMG di Attacchi Caricati del 18%. Quando il personaggio che lo equipaggia raggiunge Energy 100%, questo potenziamento aumenta del 100%.",
+        "Aumenta il DMG di Attacchi Normali del 28% e il DMG di Attacchi Caricati del 21%. Quando il personaggio che lo equipaggia raggiunge Energy 100%, questo potenziamento aumenta del 100%.",
+        "Aumenta il DMG di Attacchi Normali del 32% e il DMG di Attacchi Caricati del 24%. Quando il personaggio che lo equipaggia raggiunge Energy 100%, questo potenziamento aumenta del 100%."
+      ]
     },
     {
       "key": "harbinger-of-dawn",
       "name": "Harbinger of Dawn",
       "description": "Una spada che una volta risplendeva come il Sole. Chi la impugna sarà benedetto con il buff \"sensazione di sollievo\". Il materiale riflettente sulla lama si è consumato ormai da tempo.",
-      "refinement": "Quando gli HP > 90%, il CRIT Rate aumenta del {0}%."
+      "refinements": [
+        "Quando gli HP > 90%, il CRIT Rate aumenta del 14%.",
+        "Quando gli HP > 90%, il CRIT Rate aumenta del 17.5%.",
+        "Quando gli HP > 90%, il CRIT Rate aumenta del 21%.",
+        "Quando gli HP > 90%, il CRIT Rate aumenta del 24.5%.",
+        "Quando gli HP > 90%, il CRIT Rate aumenta del 28%."
+      ]
     },
     {
       "key": "hunters-bow",
       "name": "Hunter's Bow",
       "description": "La sinfonia di un cacciatore è composta da due soli suoni: il suono vibrante della corda tesa dell’arco e il sibilo delle frecce in volo.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "iron-point",
       "name": "Iron Point",
       "description": "Affilata e appuntita a un’estremità, è un’arma bilanciata e molto popolare tra i viaggiatori.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "iron-sting",
       "name": "Iron Sting",
       "description": "Uno stocco esotico a lama lunga che, in qualche modo, è arrivato a Liyue tramite commercianti stranieri. È leggero, agile e affilato.",
-      "refinement": "Infliggere Elemental DMG aumenta tutti i DMG inflitti del {0}% per 6s. Massimo 2 stacks. L'effetto può avvenire una volta ogni 1s."
+      "refinements": [
+        "Infliggere Elemental DMG aumenta tutti i DMG inflitti del 6% per 6s. Massimo 2 stacks. L'effetto può avvenire una volta ogni 1s.",
+        "Infliggere Elemental DMG aumenta tutti i DMG inflitti del 7.5% per 6s. Massimo 2 stacks. L'effetto può avvenire una volta ogni 1s.",
+        "Infliggere Elemental DMG aumenta tutti i DMG inflitti del 9% per 6s. Massimo 2 stacks. L'effetto può avvenire una volta ogni 1s.",
+        "Infliggere Elemental DMG aumenta tutti i DMG inflitti del 10.5% per 6s. Massimo 2 stacks. L'effetto può avvenire una volta ogni 1s.",
+        "Infliggere Elemental DMG aumenta tutti i DMG inflitti del 12% per 6s. Massimo 2 stacks. L'effetto può avvenire una volta ogni 1s."
+      ]
     },
     {
       "key": "katsuragikiri-nagamasa",
       "name": "Katsuragikiri Nagamasa",
       "description": "Una lama che è stata forgiata a Tatarasuna. Pesante e resistente.",
-      "refinement": "Aumenta l’Elemental Skill DMG del {0}%. Quando l’Elemental Skill colpisce nemici, il personaggio perde 3 Energy ma ne rigenera {1} ogni 2s per i prossimi 6s. L'effetto può avvenire una volta ogni 10s. Si può attivare anche quando il personaggio che la impugna non è sul campo."
+      "refinements": [
+        "Aumenta l’Elemental Skill DMG del 6%. Quando l’Elemental Skill colpisce nemici, il personaggio perde 3 Energy ma ne rigenera 3 ogni 2s per i prossimi 6s. L'effetto può avvenire una volta ogni 10s. Si può attivare anche quando il personaggio che la impugna non è sul campo.",
+        "Aumenta l’Elemental Skill DMG del 7.5%. Quando l’Elemental Skill colpisce nemici, il personaggio perde 3 Energy ma ne rigenera 3.5 ogni 2s per i prossimi 6s. L'effetto può avvenire una volta ogni 10s. Si può attivare anche quando il personaggio che la impugna non è sul campo.",
+        "Aumenta l’Elemental Skill DMG del 9%. Quando l’Elemental Skill colpisce nemici, il personaggio perde 3 Energy ma ne rigenera 4 ogni 2s per i prossimi 6s. L'effetto può avvenire una volta ogni 10s. Si può attivare anche quando il personaggio che la impugna non è sul campo.",
+        "Aumenta l’Elemental Skill DMG del 10.5%. Quando l’Elemental Skill colpisce nemici, il personaggio perde 3 Energy ma ne rigenera 4.5 ogni 2s per i prossimi 6s. L'effetto può avvenire una volta ogni 10s. Si può attivare anche quando il personaggio che la impugna non è sul campo.",
+        "Aumenta l’Elemental Skill DMG del 12%. Quando l’Elemental Skill colpisce nemici, il personaggio perde 3 Energy ma ne rigenera 5 ogni 2s per i prossimi 6s. L'effetto può avvenire una volta ogni 10s. Si può attivare anche quando il personaggio che la impugna non è sul campo."
+      ]
     },
     {
       "key": "kitain-cross-spear",
       "name": "Kitain Cross Spear",
       "description": "Una speciale lancia che un tempo era usata da un famoso guerriero che proteggeva Tatarigami sull’Isola Yashiori.",
-      "refinement": "Aumenta l’Elemental Skill DMG del {0}%. Quando l’Elemental Skill colpisce nemici, il personaggio perde 3 Energy ma ne rigenera {1} ogni 2s per i prossimi 6s. L'effetto può avvenire una volta ogni 10s. Si può attivare anche quando il personaggio che la impugna non è sul campo."
+      "refinements": [
+        "Aumenta l’Elemental Skill DMG del 6%. Quando l’Elemental Skill colpisce nemici, il personaggio perde 3 Energy ma ne rigenera 3 ogni 2s per i prossimi 6s. L'effetto può avvenire una volta ogni 10s. Si può attivare anche quando il personaggio che la impugna non è sul campo.",
+        "Aumenta l’Elemental Skill DMG del 7.5%. Quando l’Elemental Skill colpisce nemici, il personaggio perde 3 Energy ma ne rigenera 3.5 ogni 2s per i prossimi 6s. L'effetto può avvenire una volta ogni 10s. Si può attivare anche quando il personaggio che la impugna non è sul campo.",
+        "Aumenta l’Elemental Skill DMG del 9%. Quando l’Elemental Skill colpisce nemici, il personaggio perde 3 Energy ma ne rigenera 4 ogni 2s per i prossimi 6s. L'effetto può avvenire una volta ogni 10s. Si può attivare anche quando il personaggio che la impugna non è sul campo.",
+        "Aumenta l’Elemental Skill DMG del 10.5%. Quando l’Elemental Skill colpisce nemici, il personaggio perde 3 Energy ma ne rigenera 4.5 ogni 2s per i prossimi 6s. L'effetto può avvenire una volta ogni 10s. Si può attivare anche quando il personaggio che la impugna non è sul campo.",
+        "Aumenta l’Elemental Skill DMG del 12%. Quando l’Elemental Skill colpisce nemici, il personaggio perde 3 Energy ma ne rigenera 5 ogni 2s per i prossimi 6s. L'effetto può avvenire una volta ogni 10s. Si può attivare anche quando il personaggio che la impugna non è sul campo."
+      ]
     },
     {
       "key": "lions-roar",
       "name": "Lion's Roar",
       "description": "Una lama affilata con intagli stravaganti che in qualche modo non compromettono durata e affilatura. Ruggisce come un leone mentre fende l'aria.",
-      "refinement": "Aumenta del {0}% i DMG contro nemici affetti da Pyro o Electro."
+      "refinements": [
+        "Aumenta del 20% i DMG contro nemici affetti da Pyro o Electro.",
+        "Aumenta del 24% i DMG contro nemici affetti da Pyro o Electro.",
+        "Aumenta del 28% i DMG contro nemici affetti da Pyro o Electro.",
+        "Aumenta del 32% i DMG contro nemici affetti da Pyro o Electro.",
+        "Aumenta del 36% i DMG contro nemici affetti da Pyro o Electro."
+      ]
     },
     {
       "key": "lithic-blade",
       "name": "Lithic Blade",
       "description": "Uno spadone intagliata e cesellata dalle profondità rocciose di Liyue.",
-      "refinement": "Per ogni personaggio nel party che proviene da Liyue e brandisce quest’arma, l’ATK aumenta del {0}% e il CRIT Rate del {1}%. Massimo 4 stacks."
+      "refinements": [
+        "Per ogni personaggio nel party che proviene da Liyue e brandisce quest’arma, l’ATK aumenta del 7% e il CRIT Rate del 3%. Massimo 4 stacks.",
+        "Per ogni personaggio nel party che proviene da Liyue e brandisce quest’arma, l’ATK aumenta del 8% e il CRIT Rate del 4%. Massimo 4 stacks.",
+        "Per ogni personaggio nel party che proviene da Liyue e brandisce quest’arma, l’ATK aumenta del 9% e il CRIT Rate del 5%. Massimo 4 stacks.",
+        "Per ogni personaggio nel party che proviene da Liyue e brandisce quest’arma, l’ATK aumenta del 10% e il CRIT Rate del 6%. Massimo 4 stacks.",
+        "Per ogni personaggio nel party che proviene da Liyue e brandisce quest’arma, l’ATK aumenta del 11% e il CRIT Rate del 7%. Massimo 4 stacks."
+      ]
     },
     {
       "key": "lithic-spear",
       "name": "Lithic Spear",
       "description": "Una lancia forgiata dalle rocce della Guyun Stone Forest. La sua durezza non conosce eguali.",
-      "refinement": "Per ogni personaggio nel party che proviene da Liyue e brandisce quest’arma, l’ATK aumenta del {0}% e il CRIT Rate del {1}%. Massimo 4 stacks."
+      "refinements": [
+        "Per ogni personaggio nel party che proviene da Liyue e brandisce quest’arma, l’ATK aumenta del 7% e il CRIT Rate del 3%. Massimo 4 stacks.",
+        "Per ogni personaggio nel party che proviene da Liyue e brandisce quest’arma, l’ATK aumenta del 8% e il CRIT Rate del 4%. Massimo 4 stacks.",
+        "Per ogni personaggio nel party che proviene da Liyue e brandisce quest’arma, l’ATK aumenta del 9% e il CRIT Rate del 5%. Massimo 4 stacks.",
+        "Per ogni personaggio nel party che proviene da Liyue e brandisce quest’arma, l’ATK aumenta del 10% e il CRIT Rate del 6%. Massimo 4 stacks.",
+        "Per ogni personaggio nel party che proviene da Liyue e brandisce quest’arma, l’ATK aumenta del 11% e il CRIT Rate del 7%. Massimo 4 stacks."
+      ]
     },
     {
       "key": "lost-prayer-to-the-sacred-winds",
       "name": "Lost Prayer to the Sacred Winds",
       "description": "Un tomo educativo scritto dai primi abitanti ignoti che veneravano il vento. È stato benedetto dal vento per la sua grande fedeltà e influenza nel corso dei millenni.",
-      "refinement": "Aumenta il Movement SPD del 10%. In combattimento, ottieni il {0}% di Elemental DMG Bonus aggiuntivi ogni 4s. Massimo 4 stacks. Si interrompe quando il personaggio muore o abbandona il combattimento."
+      "refinements": [
+        "Aumenta il Movement SPD del 10%. In combattimento, ottieni il 8% di Elemental DMG Bonus aggiuntivi ogni 4s. Massimo 4 stacks. Si interrompe quando il personaggio muore o abbandona il combattimento.",
+        "Aumenta il Movement SPD del 10%. In combattimento, ottieni il 10% di Elemental DMG Bonus aggiuntivi ogni 4s. Massimo 4 stacks. Si interrompe quando il personaggio muore o abbandona il combattimento.",
+        "Aumenta il Movement SPD del 10%. In combattimento, ottieni il 12% di Elemental DMG Bonus aggiuntivi ogni 4s. Massimo 4 stacks. Si interrompe quando il personaggio muore o abbandona il combattimento.",
+        "Aumenta il Movement SPD del 10%. In combattimento, ottieni il 14% di Elemental DMG Bonus aggiuntivi ogni 4s. Massimo 4 stacks. Si interrompe quando il personaggio muore o abbandona il combattimento.",
+        "Aumenta il Movement SPD del 10%. In combattimento, ottieni il 16% di Elemental DMG Bonus aggiuntivi ogni 4s. Massimo 4 stacks. Si interrompe quando il personaggio muore o abbandona il combattimento."
+      ]
     },
     {
       "key": "luxurious-sea-lord",
       "name": "Luxurious Sea-Lord",
       "description": "Il grande Re dell’oceano. Dopo averlo essiccato all’aria, è un’arma eccellente e anche \"cibo di emergenza\".",
-      "refinement": "Aumenta gli Elemental Burst DMG del {0}%. Quando un’Elemental Burst colpisce nemici, c’è il 100% di probabilità di evocare un tonno titanico che carica e infligge AoE DMG pari al {1}% dell’ATK. Questo effetto può avvenire solo una volta ogni 15s."
+      "refinements": [
+        "Aumenta gli Elemental Burst DMG del 12%. Quando un’Elemental Burst colpisce nemici, c’è il 100% di probabilità di evocare un tonno titanico che carica e infligge AoE DMG pari al 100% dell’ATK. Questo effetto può avvenire solo una volta ogni 15s.",
+        "Aumenta gli Elemental Burst DMG del 15%. Quando un’Elemental Burst colpisce nemici, c’è il 100% di probabilità di evocare un tonno titanico che carica e infligge AoE DMG pari al 125% dell’ATK. Questo effetto può avvenire solo una volta ogni 15s.",
+        "Aumenta gli Elemental Burst DMG del 18%. Quando un’Elemental Burst colpisce nemici, c’è il 100% di probabilità di evocare un tonno titanico che carica e infligge AoE DMG pari al 150% dell’ATK. Questo effetto può avvenire solo una volta ogni 15s.",
+        "Aumenta gli Elemental Burst DMG del 21%. Quando un’Elemental Burst colpisce nemici, c’è il 100% di probabilità di evocare un tonno titanico che carica e infligge AoE DMG pari al 175% dell’ATK. Questo effetto può avvenire solo una volta ogni 15s.",
+        "Aumenta gli Elemental Burst DMG del 24%. Quando un’Elemental Burst colpisce nemici, c’è il 100% di probabilità di evocare un tonno titanico che carica e infligge AoE DMG pari al 200% dell’ATK. Questo effetto può avvenire solo una volta ogni 15s."
+      ]
     },
     {
       "key": "magic-guide",
       "name": "Magic Guide",
       "description": "Versione 12. Una ristampa corretta della Versione 11 con migliorie nuove di zecca basate sui recenti sviluppi.",
-      "refinement": "Aumenta del {0}% i DMG contro nemici affetti da Hydro o Electro."
+      "refinements": [
+        "Aumenta del 12% i DMG contro nemici affetti da Hydro o Electro.",
+        "Aumenta del 15% i DMG contro nemici affetti da Hydro o Electro.",
+        "Aumenta del 18% i DMG contro nemici affetti da Hydro o Electro.",
+        "Aumenta del 21% i DMG contro nemici affetti da Hydro o Electro.",
+        "Aumenta del 24% i DMG contro nemici affetti da Hydro o Electro."
+      ]
     },
     {
       "key": "mappa-mare",
       "name": "Mappa Mare",
       "description": "Una carta nautica che mostra le correnti e i climi vicini; in qualche modo è arrivato a Liyue tramite commercianti stranieri.",
-      "refinement": "Innescare una reazione Elementale conferisce il {0}% di Elemental DMG Bonus per 10s. Massimo 2 stacks."
+      "refinements": [
+        "Innescare una reazione Elementale conferisce il 8% di Elemental DMG Bonus per 10s. Massimo 2 stacks.",
+        "Innescare una reazione Elementale conferisce il 10% di Elemental DMG Bonus per 10s. Massimo 2 stacks.",
+        "Innescare una reazione Elementale conferisce il 12% di Elemental DMG Bonus per 10s. Massimo 2 stacks.",
+        "Innescare una reazione Elementale conferisce il 14% di Elemental DMG Bonus per 10s. Massimo 2 stacks.",
+        "Innescare una reazione Elementale conferisce il 16% di Elemental DMG Bonus per 10s. Massimo 2 stacks."
+      ]
     },
     {
       "key": "memory-of-dust",
       "name": "Memory of Dust",
       "description": "Un manubrio di pietra che conserva memorie distanti. Le sue infinite trasformazioni ne rivelano il potere interiore.",
-      "refinement": "Lo Shield Strength aumenta del {0}%. Segnare colpi aumenta l’ATK del {1}% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%."
+      "refinements": [
+        "Lo Shield Strength aumenta del 20%. Segnare colpi aumenta l’ATK del 4% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%.",
+        "Lo Shield Strength aumenta del 25%. Segnare colpi aumenta l’ATK del 5% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%.",
+        "Lo Shield Strength aumenta del 30%. Segnare colpi aumenta l’ATK del 6% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%.",
+        "Lo Shield Strength aumenta del 35%. Segnare colpi aumenta l’ATK del 7% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%.",
+        "Lo Shield Strength aumenta del 40%. Segnare colpi aumenta l’ATK del 8% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%."
+      ]
     },
     {
       "key": "messenger",
       "name": "Messenger",
       "description": "Un semplice arco di legno. Si dice che una volta sia stato usato come mezzo per comunicazioni a lunga distanza.",
-      "refinement": "Gli Attacchi Caricati sui punti deboli infliggono il {0}% di ATK DMG aggiuntivo come CRIT DMG. L'effetto può avvenire una volta ogni 10s."
+      "refinements": [
+        "Gli Attacchi Caricati sui punti deboli infliggono il 100% di ATK DMG aggiuntivo come CRIT DMG. L'effetto può avvenire una volta ogni 10s.",
+        "Gli Attacchi Caricati sui punti deboli infliggono il 125% di ATK DMG aggiuntivo come CRIT DMG. L'effetto può avvenire una volta ogni 10s.",
+        "Gli Attacchi Caricati sui punti deboli infliggono il 150% di ATK DMG aggiuntivo come CRIT DMG. L'effetto può avvenire una volta ogni 10s.",
+        "Gli Attacchi Caricati sui punti deboli infliggono il 175% di ATK DMG aggiuntivo come CRIT DMG. L'effetto può avvenire una volta ogni 10s.",
+        "Gli Attacchi Caricati sui punti deboli infliggono il 200% di ATK DMG aggiuntivo come CRIT DMG. L'effetto può avvenire una volta ogni 10s."
+      ]
     },
     {
       "key": "mistsplitter-reforged",
       "name": "Mistsplitter Reforged",
       "description": "Una spada che risplende di una feroce luce viola. Il titolo \"Reforged\" deriva dal fatto che è stata distrutta già una volta.",
-      "refinement": "Ottieni il {0}% di Elemental DMG Bonus per tutti gli elementi e ricevi il potere del \"Mistsplitter's Emblem\". Ai corrispondenti livelli di stack 1/2/3, il Mistsplitter's Emblem fornisce un {1}/{{2}}/{{3}}% di Elemental DMG Bonus per l’elemento del personaggio. Il personaggio otterrà 1 stack di Mistsplitter's Emblem in ciascuno dei seguenti scenari: quando un Attacco Normale infligge Elemental DMG (lo stack durerà 5s), quando si scatena un Elemental Burst (lo stack durerà 10s) e/o quando l’Energy < 100% (lo stack svanisce quando l’Energy è piena). La durata di ciascuno stack calcolato è indipendente dalle altre."
+      "refinements": [
+        "Ottieni il 12% di Elemental DMG Bonus per tutti gli elementi e ricevi il potere del \"Mistsplitter's Emblem\". Ai corrispondenti livelli di stack 1/2/3, il Mistsplitter's Emblem fornisce un 8/16/28/{{2}}/{{3}}% di Elemental DMG Bonus per l’elemento del personaggio. Il personaggio otterrà 1 stack di Mistsplitter's Emblem in ciascuno dei seguenti scenari: quando un Attacco Normale infligge Elemental DMG (lo stack durerà 5s), quando si scatena un Elemental Burst (lo stack durerà 10s) e/o quando l’Energy < 100% (lo stack svanisce quando l’Energy è piena). La durata di ciascuno stack calcolato è indipendente dalle altre.",
+        "Ottieni il 15% di Elemental DMG Bonus per tutti gli elementi e ricevi il potere del \"Mistsplitter's Emblem\". Ai corrispondenti livelli di stack 1/2/3, il Mistsplitter's Emblem fornisce un 10/20/35/{{2}}/{{3}}% di Elemental DMG Bonus per l’elemento del personaggio. Il personaggio otterrà 1 stack di Mistsplitter's Emblem in ciascuno dei seguenti scenari: quando un Attacco Normale infligge Elemental DMG (lo stack durerà 5s), quando si scatena un Elemental Burst (lo stack durerà 10s) e/o quando l’Energy < 100% (lo stack svanisce quando l’Energy è piena). La durata di ciascuno stack calcolato è indipendente dalle altre.",
+        "Ottieni il 18% di Elemental DMG Bonus per tutti gli elementi e ricevi il potere del \"Mistsplitter's Emblem\". Ai corrispondenti livelli di stack 1/2/3, il Mistsplitter's Emblem fornisce un 12/24/42/{{2}}/{{3}}% di Elemental DMG Bonus per l’elemento del personaggio. Il personaggio otterrà 1 stack di Mistsplitter's Emblem in ciascuno dei seguenti scenari: quando un Attacco Normale infligge Elemental DMG (lo stack durerà 5s), quando si scatena un Elemental Burst (lo stack durerà 10s) e/o quando l’Energy < 100% (lo stack svanisce quando l’Energy è piena). La durata di ciascuno stack calcolato è indipendente dalle altre.",
+        "Ottieni il 21% di Elemental DMG Bonus per tutti gli elementi e ricevi il potere del \"Mistsplitter's Emblem\". Ai corrispondenti livelli di stack 1/2/3, il Mistsplitter's Emblem fornisce un 14/28/49/{{2}}/{{3}}% di Elemental DMG Bonus per l’elemento del personaggio. Il personaggio otterrà 1 stack di Mistsplitter's Emblem in ciascuno dei seguenti scenari: quando un Attacco Normale infligge Elemental DMG (lo stack durerà 5s), quando si scatena un Elemental Burst (lo stack durerà 10s) e/o quando l’Energy < 100% (lo stack svanisce quando l’Energy è piena). La durata di ciascuno stack calcolato è indipendente dalle altre.",
+        "Ottieni il 24% di Elemental DMG Bonus per tutti gli elementi e ricevi il potere del \"Mistsplitter's Emblem\". Ai corrispondenti livelli di stack 1/2/3, il Mistsplitter's Emblem fornisce un 16/32/56/{{2}}/{{3}}% di Elemental DMG Bonus per l’elemento del personaggio. Il personaggio otterrà 1 stack di Mistsplitter's Emblem in ciascuno dei seguenti scenari: quando un Attacco Normale infligge Elemental DMG (lo stack durerà 5s), quando si scatena un Elemental Burst (lo stack durerà 10s) e/o quando l’Energy < 100% (lo stack svanisce quando l’Energy è piena). La durata di ciascuno stack calcolato è indipendente dalle altre."
+      ]
     },
     {
       "key": "mitternachts-waltz",
       "name": "Mitternachts Waltz",
       "description": "Un arco intriso dei colori del peccato e della notte della fantasia più recondita.",
-      "refinement": "Gli Attacchi Normali aumentano i DMG dell'Elemental Skill del {0}% per 5s. I colpi delle Elemental Skill aumentano il DMG di Attacchi Normali del {1}% per 5s."
+      "refinements": [
+        "Gli Attacchi Normali aumentano i DMG dell'Elemental Skill del 20% per 5s. I colpi delle Elemental Skill aumentano il DMG di Attacchi Normali del 20% per 5s.",
+        "Gli Attacchi Normali aumentano i DMG dell'Elemental Skill del 25% per 5s. I colpi delle Elemental Skill aumentano il DMG di Attacchi Normali del 25% per 5s.",
+        "Gli Attacchi Normali aumentano i DMG dell'Elemental Skill del 30% per 5s. I colpi delle Elemental Skill aumentano il DMG di Attacchi Normali del 30% per 5s.",
+        "Gli Attacchi Normali aumentano i DMG dell'Elemental Skill del 35% per 5s. I colpi delle Elemental Skill aumentano il DMG di Attacchi Normali del 35% per 5s.",
+        "Gli Attacchi Normali aumentano i DMG dell'Elemental Skill del 40% per 5s. I colpi delle Elemental Skill aumentano il DMG di Attacchi Normali del 40% per 5s."
+      ]
     },
     {
       "key": "old-mercs-pal",
       "name": "Old Merc's Pal",
       "description": "Uno spadone testato in battaglia che ha visto giorni migliori e peggiori.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "otherworldly-story",
       "name": "Otherworldly Story",
       "description": "Un romanzo fantasy economico ma senza alcun valore. Qualsiasi affermazione che possieda poteri Catalyst è pura fantasia.",
-      "refinement": "Raccogliere una Elemental Energy Orb/Particle rigenera il {0}% di HP."
+      "refinements": [
+        "Raccogliere una Elemental Energy Orb/Particle rigenera il 1% di HP.",
+        "Raccogliere una Elemental Energy Orb/Particle rigenera il 1.25% di HP.",
+        "Raccogliere una Elemental Energy Orb/Particle rigenera il 1.5% di HP.",
+        "Raccogliere una Elemental Energy Orb/Particle rigenera il 1.75% di HP.",
+        "Raccogliere una Elemental Energy Orb/Particle rigenera il 2% di HP."
+      ]
     },
     {
       "key": "pocket-grimoire",
       "name": "Pocket Grimoire",
       "description": "Un taccuino accuratamente scritto con il minimo necessario per superare un esame di magia.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "polar-star",
       "name": "Polar Star",
       "description": "Un arco immacolato, tagliente come i ghiacciai dell'estremo nord",
-      "refinement": "Gli Elemental Skill e Elemental Burst DMG aumentano del {0}%. Un Attacco Normale, Caricato, Elemental Skill o Elemental Burst conferisce 1 stack di \"Byakuya Kyousei\" per 12s. Quando si accumulano 1/2/3/4 stacks di Byakuya Kyousei, l'ATK aumenta del {1}%. Ciascuno stack calcolato è indipendente dalle altre."
+      "refinements": [
+        "Gli Elemental Skill e Elemental Burst DMG aumentano del 12%. Un Attacco Normale, Caricato, Elemental Skill o Elemental Burst conferisce 1 stack di \"Byakuya Kyousei\" per 12s. Quando si accumulano 1/2/3/4 stacks di Byakuya Kyousei, l'ATK aumenta del 10/20/30/48%. Ciascuno stack calcolato è indipendente dalle altre.",
+        "Gli Elemental Skill e Elemental Burst DMG aumentano del 15%. Un Attacco Normale, Caricato, Elemental Skill o Elemental Burst conferisce 1 stack di \"Byakuya Kyousei\" per 12s. Quando si accumulano 1/2/3/4 stacks di Byakuya Kyousei, l'ATK aumenta del 12.5/25/37.5/60%. Ciascuno stack calcolato è indipendente dalle altre.",
+        "Gli Elemental Skill e Elemental Burst DMG aumentano del 18%. Un Attacco Normale, Caricato, Elemental Skill o Elemental Burst conferisce 1 stack di \"Byakuya Kyousei\" per 12s. Quando si accumulano 1/2/3/4 stacks di Byakuya Kyousei, l'ATK aumenta del 15/30/45/72%. Ciascuno stack calcolato è indipendente dalle altre.",
+        "Gli Elemental Skill e Elemental Burst DMG aumentano del 21%. Un Attacco Normale, Caricato, Elemental Skill o Elemental Burst conferisce 1 stack di \"Byakuya Kyousei\" per 12s. Quando si accumulano 1/2/3/4 stacks di Byakuya Kyousei, l'ATK aumenta del 17.5/35/52.5/84%. Ciascuno stack calcolato è indipendente dalle altre.",
+        "Gli Elemental Skill e Elemental Burst DMG aumentano del 24%. Un Attacco Normale, Caricato, Elemental Skill o Elemental Burst conferisce 1 stack di \"Byakuya Kyousei\" per 12s. Quando si accumulano 1/2/3/4 stacks di Byakuya Kyousei, l'ATK aumenta del 20/40/60/96%. Ciascuno stack calcolato è indipendente dalle altre."
+      ]
     },
     {
       "key": "predator",
       "name": "Predator",
       "description": "Un arco dal design unico che non dovrebbe appartenere a questo mondo.",
-      "refinement": "Esclusiva disponibile giocando su: \r\n\"PlayStation Network\"\r\nInfliggere Cryo DMG aumenta a chi lo usa il DMG dell'Attacco Normale e Caricato del 10% per 6s. Massimo 2 stacks. Inoltre, se lo equipaggia Aloy, aumenta anche il suo ATK di 66."
+      "refinements": [
+        "Esclusiva disponibile giocando su: \n\"PlayStation Network\"\nInfliggere Cryo DMG aumenta a chi lo usa il DMG dell'Attacco Normale e Caricato del 10% per 6s. Massimo 2 stacks. Inoltre, se lo equipaggia Aloy, aumenta anche il suo ATK di 66."
+      ]
     },
     {
       "key": "primordial-jade-cutter",
       "name": "Primordial Jade Cutter",
       "description": "Una spada cerimoniale ricavata con maestria da jade puro. Quando la si brandisce sembra quasi che il vento sospiri.",
-      "refinement": "Gli HP aumentano del {0}%. Inoltre, conferisce un ATK Bonus in base al {1}% dei Max HP del personaggio che la equipaggia."
+      "refinements": [
+        "Gli HP aumentano del 20%. Inoltre, conferisce un ATK Bonus in base al 1.2% dei Max HP del personaggio che la equipaggia.",
+        "Gli HP aumentano del 25%. Inoltre, conferisce un ATK Bonus in base al 1.5% dei Max HP del personaggio che la equipaggia.",
+        "Gli HP aumentano del 30%. Inoltre, conferisce un ATK Bonus in base al 1.8% dei Max HP del personaggio che la equipaggia.",
+        "Gli HP aumentano del 35%. Inoltre, conferisce un ATK Bonus in base al 2.1% dei Max HP del personaggio che la equipaggia.",
+        "Gli HP aumentano del 40%. Inoltre, conferisce un ATK Bonus in base al 2.4% dei Max HP del personaggio che la equipaggia."
+      ]
     },
     {
       "key": "primordial-jade-winged-spear",
       "name": "Primordial Jade Winged-Spear",
       "description": "Un jade polearm realizzato dagli Archons, capace di sconfiggere bestie antiche.",
-      "refinement": "L’ATK aumenta del {0}% per 6s. Massimo 7 stacks. L'effetto può avvenire una volta ogni 0.3s. Quando si raggiunge il massimo numero di stacks il DMG inflitto aumenta del {1}%."
+      "refinements": [
+        "L’ATK aumenta del 3.2% per 6s. Massimo 7 stacks. L'effetto può avvenire una volta ogni 0.3s. Quando si raggiunge il massimo numero di stacks il DMG inflitto aumenta del 12%.",
+        "L’ATK aumenta del 3.9% per 6s. Massimo 7 stacks. L'effetto può avvenire una volta ogni 0.3s. Quando si raggiunge il massimo numero di stacks il DMG inflitto aumenta del 15%.",
+        "L’ATK aumenta del 4.6% per 6s. Massimo 7 stacks. L'effetto può avvenire una volta ogni 0.3s. Quando si raggiunge il massimo numero di stacks il DMG inflitto aumenta del 18%.",
+        "L’ATK aumenta del 5.3% per 6s. Massimo 7 stacks. L'effetto può avvenire una volta ogni 0.3s. Quando si raggiunge il massimo numero di stacks il DMG inflitto aumenta del 21%.",
+        "L’ATK aumenta del 6% per 6s. Massimo 7 stacks. L'effetto può avvenire una volta ogni 0.3s. Quando si raggiunge il massimo numero di stacks il DMG inflitto aumenta del 24%."
+      ]
     },
     {
       "key": "prototype-amber",
       "name": "Prototype Amber",
       "description": "Un monotono Catalyst dorato custodito segretamente nel Blackcliff Forge. Sembra risplendere della stessa luce del cielo.",
-      "refinement": "Usare un Elemental Burst rigenera {0} Energy ogni 2s per 6s. Tutti i membri del party rigenereranno il {1}% dei loro HP ogni 2s per tutta la durata."
+      "refinements": [
+        "Usare un Elemental Burst rigenera 4 Energy ogni 2s per 6s. Tutti i membri del party rigenereranno il 4% dei loro HP ogni 2s per tutta la durata.",
+        "Usare un Elemental Burst rigenera 4.5 Energy ogni 2s per 6s. Tutti i membri del party rigenereranno il 4.5% dei loro HP ogni 2s per tutta la durata.",
+        "Usare un Elemental Burst rigenera 5 Energy ogni 2s per 6s. Tutti i membri del party rigenereranno il 5% dei loro HP ogni 2s per tutta la durata.",
+        "Usare un Elemental Burst rigenera 5.5 Energy ogni 2s per 6s. Tutti i membri del party rigenereranno il 5.5% dei loro HP ogni 2s per tutta la durata.",
+        "Usare un Elemental Burst rigenera 6 Energy ogni 2s per 6s. Tutti i membri del party rigenereranno il 6% dei loro HP ogni 2s per tutta la durata."
+      ]
     },
     {
       "key": "prototype-archaic",
       "name": "Prototype Archaic",
       "description": "Uno spadone antico scoperto nella Blackcliff Forge. Si brandisce con una forza così immensa da far credere di poter fendere la realtà stessa.",
-      "refinement": "Gli Attacchi Normali e Caricati hanno il 50% di probabilità di infliggere un ulteriore piccolo AoE DMG pari al {0}% dell'ATK. L'effetto può avvenire una volta ogni 15s."
+      "refinements": [
+        "Gli Attacchi Normali e Caricati hanno il 50% di probabilità di infliggere un ulteriore piccolo AoE DMG pari al 240% dell'ATK. L'effetto può avvenire una volta ogni 15s.",
+        "Gli Attacchi Normali e Caricati hanno il 50% di probabilità di infliggere un ulteriore piccolo AoE DMG pari al 300% dell'ATK. L'effetto può avvenire una volta ogni 15s.",
+        "Gli Attacchi Normali e Caricati hanno il 50% di probabilità di infliggere un ulteriore piccolo AoE DMG pari al 360% dell'ATK. L'effetto può avvenire una volta ogni 15s.",
+        "Gli Attacchi Normali e Caricati hanno il 50% di probabilità di infliggere un ulteriore piccolo AoE DMG pari al 420% dell'ATK. L'effetto può avvenire una volta ogni 15s.",
+        "Gli Attacchi Normali e Caricati hanno il 50% di probabilità di infliggere un ulteriore piccolo AoE DMG pari al 480% dell'ATK. L'effetto può avvenire una volta ogni 15s."
+      ]
     },
     {
       "key": "prototype-crescent",
       "name": "Prototype Crescent",
       "description": "Un prototipo di arco lungo scoperto nella Blackcliff Forge. La freccia scoccata da questo arco brilla come un raggio di Luna.",
-      "refinement": "Attacchi Caricati su punti deboli aumentano il Movement SPD del 10% e l'ATK del {0}% per 10s."
+      "refinements": [
+        "Attacchi Caricati su punti deboli aumentano il Movement SPD del 10% e l'ATK del 36% per 10s.",
+        "Attacchi Caricati su punti deboli aumentano il Movement SPD del 10% e l'ATK del 45% per 10s.",
+        "Attacchi Caricati su punti deboli aumentano il Movement SPD del 10% e l'ATK del 54% per 10s.",
+        "Attacchi Caricati su punti deboli aumentano il Movement SPD del 10% e l'ATK del 63% per 10s.",
+        "Attacchi Caricati su punti deboli aumentano il Movement SPD del 10% e l'ATK del 72% per 10s."
+      ]
     },
     {
       "key": "prototype-rancour",
       "name": "Prototype Rancour",
       "description": "Un’antica spada lunga, scoperta nella Blackcliff Forge, capace di tagliare le rocce come un coltello rovente nel burro.",
-      "refinement": "Gli Attacchi Normali e Caricati aumentano ATK e DEF del {0}% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.3s."
+      "refinements": [
+        "Gli Attacchi Normali e Caricati aumentano ATK e DEF del 4% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.3s.",
+        "Gli Attacchi Normali e Caricati aumentano ATK e DEF del 5% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.3s.",
+        "Gli Attacchi Normali e Caricati aumentano ATK e DEF del 6% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.3s.",
+        "Gli Attacchi Normali e Caricati aumentano ATK e DEF del 7% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.3s.",
+        "Gli Attacchi Normali e Caricati aumentano ATK e DEF del 8% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.3s."
+      ]
     },
     {
       "key": "prototype-starglitter",
       "name": "Prototype Starglitter",
       "description": "Un rancore scoperto nella Blackcliff Forge. I bagliori lungo la lama tagliente sono come stelle nella notte.",
-      "refinement": "Usare un'Elemental Skill aumenta del {0}% il DMG di Attacchi Normali e Caricati per 12s. Max 2 stacks."
+      "refinements": [
+        "Usare un'Elemental Skill aumenta del 8% il DMG di Attacchi Normali e Caricati per 12s. Max 2 stacks.",
+        "Usare un'Elemental Skill aumenta del 10% il DMG di Attacchi Normali e Caricati per 12s. Max 2 stacks.",
+        "Usare un'Elemental Skill aumenta del 12% il DMG di Attacchi Normali e Caricati per 12s. Max 2 stacks.",
+        "Usare un'Elemental Skill aumenta del 14% il DMG di Attacchi Normali e Caricati per 12s. Max 2 stacks.",
+        "Usare un'Elemental Skill aumenta del 16% il DMG di Attacchi Normali e Caricati per 12s. Max 2 stacks."
+      ]
     },
     {
       "key": "rainslasher",
       "name": "Rainslasher",
       "description": "Uno spadone fluorescente e non affilato, ma che schiaccia i nemici con forza bruta e pura potenza.",
-      "refinement": "Aumenta del {0}% i DMG contro nemici affetti da Hydro o Electro."
+      "refinements": [
+        "Aumenta del 20% i DMG contro nemici affetti da Hydro o Electro.",
+        "Aumenta del 24% i DMG contro nemici affetti da Hydro o Electro.",
+        "Aumenta del 28% i DMG contro nemici affetti da Hydro o Electro.",
+        "Aumenta del 32% i DMG contro nemici affetti da Hydro o Electro.",
+        "Aumenta del 36% i DMG contro nemici affetti da Hydro o Electro."
+      ]
     },
     {
       "key": "raven-bow",
       "name": "Raven Bow",
       "description": "I corvi sono noti come i traghettatori dei morti. Uno dei suoi flettenti è decorato con piume di corvo che preannunciano la morte imminente dei suoi bersagli.",
-      "refinement": "Aumenta del {0}% i DMG contro nemici affetti da Hydro o Pyro."
+      "refinements": [
+        "Aumenta del 12% i DMG contro nemici affetti da Hydro o Pyro.",
+        "Aumenta del 15% i DMG contro nemici affetti da Hydro o Pyro.",
+        "Aumenta del 18% i DMG contro nemici affetti da Hydro o Pyro.",
+        "Aumenta del 21% i DMG contro nemici affetti da Hydro o Pyro.",
+        "Aumenta del 24% i DMG contro nemici affetti da Hydro o Pyro."
+      ]
     },
     {
       "key": "recurve-bow",
       "name": "Recurve Bow",
       "description": "Si dice che questo arco possa abbattere le aquile in volo, ma alla fine quanto sia vero dipende dall’abilità dell’arciere.",
-      "refinement": "Sconfiggere un nemico rigenera il {0}% di HP."
+      "refinements": [
+        "Sconfiggere un nemico rigenera il 8% di HP.",
+        "Sconfiggere un nemico rigenera il 10% di HP.",
+        "Sconfiggere un nemico rigenera il 12% di HP.",
+        "Sconfiggere un nemico rigenera il 14% di HP.",
+        "Sconfiggere un nemico rigenera il 16% di HP."
+      ]
     },
     {
       "key": "royal-bow",
       "name": "Royal Bow",
       "description": "Un vecchio arco lungo reale che apparteneva ai passati governatori di Mondstadt. Innumerevoli generazioni dopo, la corda dell’arco è ancora tesa e può ancora scoccare frecce con grande forza.",
-      "refinement": "Se si colpisce un nemico, il CRIT Rate aumenta del {0}%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti."
+      "refinements": [
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 8%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 10%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 12%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 14%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 16%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti."
+      ]
     },
     {
       "key": "royal-greatsword",
       "name": "Royal Greatsword",
       "description": "Un vecchio spadone che apparteneva ai passati governatori di Mondstadt. È realizzato con i materiali della migliore qualità e ha resistito all'usura del tempo. Un’arma ad uso esclusivo dei reali.",
-      "refinement": "Se si colpisce un nemico, il CRIT Rate aumenta del {0}%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti."
+      "refinements": [
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 8%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 10%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 12%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 14%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 16%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti."
+      ]
     },
     {
       "key": "royal-grimoire",
       "name": "Royal Grimoire",
       "description": "Un libro che una volta apparteneva a un mago reale di Mondstadt. Contiene fedeli ed esaurienti resoconti storici e incantesimi magici.",
-      "refinement": "Se si colpisce un nemico, il CRIT Rate aumenta del {0}%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti."
+      "refinements": [
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 8%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 10%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 12%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 14%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 16%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti."
+      ]
     },
     {
       "key": "royal-longsword",
       "name": "Royal Longsword",
       "description": "Una vecchia spada lunga che apparteneva ai passati governatori di Mondstadt. Realizzati squisitamente, gli intagli e gli abbellimenti testimoniano la status sociale del suo proprietario.",
-      "refinement": "Se si colpisce un nemico, il CRIT Rate aumenta del {0}%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti."
+      "refinements": [
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 8%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 10%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 12%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 14%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 16%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti."
+      ]
     },
     {
       "key": "royal-spear",
       "name": "Royal Spear",
       "description": "Questa polearm era amata da un membro della vecchia nobiltà che governò Mondstadt molto tempo fa. Sebbene non abbia mai visto la luce del giorno, è ancora incomparabilmente affilato.",
-      "refinement": "Se si colpisce un nemico, il CRIT Rate aumenta del {0}%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti."
+      "refinements": [
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 8%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 10%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 12%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 14%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti.",
+        "Se si colpisce un nemico, il CRIT Rate aumenta del 16%. Massimo 5 stacks. Un colpo CRIT li rimuove tutti."
+      ]
     },
     {
       "key": "rust",
       "name": "Rust",
       "description": "Un grande arco in ferro completamente arrugginito. Alla persona comune mancherebbe anche la forza di sollevarlo, figuriamoci di tenderlo.",
-      "refinement": "Aumenta del {0}% il DMG di Attacchi Normali ma riduce del 10% il DMG di quelli Caricati."
+      "refinements": [
+        "Aumenta del 40% il DMG di Attacchi Normali ma riduce del 10% il DMG di quelli Caricati.",
+        "Aumenta del 50% il DMG di Attacchi Normali ma riduce del 10% il DMG di quelli Caricati.",
+        "Aumenta del 60% il DMG di Attacchi Normali ma riduce del 10% il DMG di quelli Caricati.",
+        "Aumenta del 70% il DMG di Attacchi Normali ma riduce del 10% il DMG di quelli Caricati.",
+        "Aumenta del 80% il DMG di Attacchi Normali ma riduce del 10% il DMG di quelli Caricati."
+      ]
     },
     {
       "key": "sacrificial-bow",
       "name": "Sacrificial Bow",
       "description": "Un arco da caccia cerimoniale che si è pietrificato nel tempo. I suoi ninnoli sono ancora visibili. Conferisce a chi lo impugna il potere di resistere ai venti che furono.",
-      "refinement": "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il {0}% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni {1}s."
+      "refinements": [
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 40% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 30s.",
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 50% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 26s.",
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 60% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 22s.",
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 70% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 19s.",
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 80% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 16s."
+      ]
     },
     {
       "key": "sacrificial-fragments",
       "name": "Sacrificial Fragments",
       "description": "Uno scritto corroso dalle intemperie, il suo testo non è più leggibile. È un oggetto maledetto eroso dai venti che furono.",
-      "refinement": "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il {0}% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni {1}s."
+      "refinements": [
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 40% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 30s.",
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 50% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 26s.",
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 60% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 22s.",
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 70% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 19s.",
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 80% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 16s."
+      ]
     },
     {
       "key": "sacrificial-greatsword",
       "name": "Sacrificial Greatsword",
       "description": "Uno spadone cerimoniale che si è pietrificato nel tempo. I suoi ninnoli sono ancora visibili. Conferisce a chi lo impugna il potere di resistere ai venti che furono.",
-      "refinement": "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il {0}% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni {1}s."
+      "refinements": [
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 40% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 30s.",
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 50% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 26s.",
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 60% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 22s.",
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 70% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 19s.",
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 80% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 16s."
+      ]
     },
     {
       "key": "sacrificial-sword",
       "name": "Sacrificial Sword",
       "description": "Una spada cerimoniale che si è pietrificata nel tempo. I suoi ninnoli sono ancora visibili. Conferisce a chi lo impugna il potere di resistere ai venti che furono.",
-      "refinement": "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il {0}% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni {1}s."
+      "refinements": [
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 40% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 30s.",
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 50% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 26s.",
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 60% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 22s.",
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 70% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 19s.",
+        "Dopo aver danneggiato un nemico con un'Elemental Skill, questa ha il 80% di probabilità di azzerare il suo CD. L'effetto può avvenire una volta ogni 16s."
+      ]
     },
     {
       "key": "seasoned-hunters-bow",
       "name": "Seasoned Hunter's Bow",
       "description": "Un arco che nel tempo è stato ben lucidato e meticolosamente curato dal suo proprietario. Sembra quasi un’estensione del braccio di un arciere.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "serpent-spine",
       "name": "Serpent Spine",
       "description": "Un’arma rara la cui origine è l’antico oceano. Quando la si brandisce si può sentire il risuonare delle onde eterne.",
-      "refinement": "Ogni 4s che un personaggio è sul campo, il DMG inflitto aumenta del {0}% ma si subiscono il {1}% di DMG in più. L'effetto ha un massimo di 5 stacks e non si resetta quando il personaggio abbandona il combattimento ma si riduce di 1 stack ogni volta che si subiscono DMG."
+      "refinements": [
+        "Ogni 4s che un personaggio è sul campo, il DMG inflitto aumenta del 6% ma si subiscono il 3% di DMG in più. L'effetto ha un massimo di 5 stacks e non si resetta quando il personaggio abbandona il combattimento ma si riduce di 1 stack ogni volta che si subiscono DMG.",
+        "Ogni 4s che un personaggio è sul campo, il DMG inflitto aumenta del 7% ma si subiscono il 2.7% di DMG in più. L'effetto ha un massimo di 5 stacks e non si resetta quando il personaggio abbandona il combattimento ma si riduce di 1 stack ogni volta che si subiscono DMG.",
+        "Ogni 4s che un personaggio è sul campo, il DMG inflitto aumenta del 8% ma si subiscono il 2.4% di DMG in più. L'effetto ha un massimo di 5 stacks e non si resetta quando il personaggio abbandona il combattimento ma si riduce di 1 stack ogni volta che si subiscono DMG.",
+        "Ogni 4s che un personaggio è sul campo, il DMG inflitto aumenta del 9% ma si subiscono il 2.2% di DMG in più. L'effetto ha un massimo di 5 stacks e non si resetta quando il personaggio abbandona il combattimento ma si riduce di 1 stack ogni volta che si subiscono DMG.",
+        "Ogni 4s che un personaggio è sul campo, il DMG inflitto aumenta del 10% ma si subiscono il 2% di DMG in più. L'effetto ha un massimo di 5 stacks e non si resetta quando il personaggio abbandona il combattimento ma si riduce di 1 stack ogni volta che si subiscono DMG."
+      ]
     },
     {
       "key": "sharpshooters-oath",
       "name": "Sharpshooter's Oath",
       "description": "Questo arco eccelso una volta apparteneva a un maestro arciere. Tuttavia, emana un forte odore rendendolo inutile per la caccia.",
-      "refinement": "Aumenta del {0}% i DMG sui punti deboli."
+      "refinements": [
+        "Aumenta del 24% i DMG sui punti deboli.",
+        "Aumenta del 30% i DMG sui punti deboli.",
+        "Aumenta del 36% i DMG sui punti deboli.",
+        "Aumenta del 42% i DMG sui punti deboli.",
+        "Aumenta del 48% i DMG sui punti deboli."
+      ]
     },
     {
       "key": "silver-sword",
       "name": "Silver Sword",
       "description": "Una spada per esorcizzare i demoni. Tutti sanno che non è fatto di argento puro ma di una lega d’argento.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "skyrider-greatsword",
       "name": "Skyrider Greatsword",
       "description": "Una spada d’acciaio affidabile. Il leggendario Skyrider una volta provò a cavalcarla come una spada volante... per la seconda volta.",
-      "refinement": "Gli Attacchi Normali e Caricati aumentano l'ATK del {0}% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.5s."
+      "refinements": [
+        "Gli Attacchi Normali e Caricati aumentano l'ATK del 6% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.5s.",
+        "Gli Attacchi Normali e Caricati aumentano l'ATK del 7% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.5s.",
+        "Gli Attacchi Normali e Caricati aumentano l'ATK del 8% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.5s.",
+        "Gli Attacchi Normali e Caricati aumentano l'ATK del 9% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.5s.",
+        "Gli Attacchi Normali e Caricati aumentano l'ATK del 10% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.5s."
+      ]
     },
     {
       "key": "skyrider-sword",
       "name": "Skyrider Sword",
       "description": "Una spada d’acciaio affidabile. Il leggendario Skyrider una volta provò a cavalcarla come una spada volante...",
-      "refinement": "Usare un Elemental Burst aumenta ATK e Movement SPD del {0}% per 15s."
+      "refinements": [
+        "Usare un Elemental Burst aumenta ATK e Movement SPD del 12% per 15s.",
+        "Usare un Elemental Burst aumenta ATK e Movement SPD del 15% per 15s.",
+        "Usare un Elemental Burst aumenta ATK e Movement SPD del 18% per 15s.",
+        "Usare un Elemental Burst aumenta ATK e Movement SPD del 21% per 15s.",
+        "Usare un Elemental Burst aumenta ATK e Movement SPD del 24% per 15s."
+      ]
     },
     {
       "key": "skyward-atlas",
       "name": "Skyward Atlas",
       "description": "Un atlante delle nuvole che simboleggia Dvalin e il suo vecchio maestro, l’Archon Anemo. Descrive i venti e le nubi delle regioni settentrionali e contiene il potere del cielo e del vento.",
-      "refinement": "Aumenta del {0}% l’Elemental DMG Bonus. Gli Attacchi Normali hanno il 50% di probabilità di evocare il sostegno delle nuvole che attaccheranno i nemici vicini per 15s infliggendo DMG pari al {1}% dell'ATK. L'effetto può avvenire una volta ogni 30s."
+      "refinements": [
+        "Aumenta del 12% l’Elemental DMG Bonus. Gli Attacchi Normali hanno il 50% di probabilità di evocare il sostegno delle nuvole che attaccheranno i nemici vicini per 15s infliggendo DMG pari al 160% dell'ATK. L'effetto può avvenire una volta ogni 30s.",
+        "Aumenta del 15% l’Elemental DMG Bonus. Gli Attacchi Normali hanno il 50% di probabilità di evocare il sostegno delle nuvole che attaccheranno i nemici vicini per 15s infliggendo DMG pari al 200% dell'ATK. L'effetto può avvenire una volta ogni 30s.",
+        "Aumenta del 18% l’Elemental DMG Bonus. Gli Attacchi Normali hanno il 50% di probabilità di evocare il sostegno delle nuvole che attaccheranno i nemici vicini per 15s infliggendo DMG pari al 240% dell'ATK. L'effetto può avvenire una volta ogni 30s.",
+        "Aumenta del 21% l’Elemental DMG Bonus. Gli Attacchi Normali hanno il 50% di probabilità di evocare il sostegno delle nuvole che attaccheranno i nemici vicini per 15s infliggendo DMG pari al 280% dell'ATK. L'effetto può avvenire una volta ogni 30s.",
+        "Aumenta del 24% l’Elemental DMG Bonus. Gli Attacchi Normali hanno il 50% di probabilità di evocare il sostegno delle nuvole che attaccheranno i nemici vicini per 15s infliggendo DMG pari al 320% dell'ATK. L'effetto può avvenire una volta ogni 30s."
+      ]
     },
     {
       "key": "skyward-blade",
       "name": "Skyward Blade",
       "description": "La spada di un cavaliere che simboleggia l'onore restaurato di Dvalin. Le benedizioni dell'Archon Anemo risiedono nell'elsa e infondono alla spada i poteri del cielo e del vento.",
-      "refinement": "Il CRIT Rate aumenta del {0}%. All'attivazione di un Elemental Burst, si ottiene \"Skypiercing Might\": Movement SPD +10%, ATK SPD +10%, e il DMG di Attacchi Normali e Caricati aumentato del {1}% per 12s."
+      "refinements": [
+        "Il CRIT Rate aumenta del 4%. All'attivazione di un Elemental Burst, si ottiene \"Skypiercing Might\": Movement SPD +10%, ATK SPD +10%, e il DMG di Attacchi Normali e Caricati aumentato del 10% per 12s.",
+        "Il CRIT Rate aumenta del 5%. All'attivazione di un Elemental Burst, si ottiene \"Skypiercing Might\": Movement SPD +10%, ATK SPD +10%, e il DMG di Attacchi Normali e Caricati aumentato del 10% per 12s.",
+        "Il CRIT Rate aumenta del 6%. All'attivazione di un Elemental Burst, si ottiene \"Skypiercing Might\": Movement SPD +10%, ATK SPD +10%, e il DMG di Attacchi Normali e Caricati aumentato del 10% per 12s.",
+        "Il CRIT Rate aumenta del 7%. All'attivazione di un Elemental Burst, si ottiene \"Skypiercing Might\": Movement SPD +10%, ATK SPD +10%, e il DMG di Attacchi Normali e Caricati aumentato del 10% per 12s.",
+        "Il CRIT Rate aumenta del 8%. All'attivazione di un Elemental Burst, si ottiene \"Skypiercing Might\": Movement SPD +10%, ATK SPD +10%, e il DMG di Attacchi Normali e Caricati aumentato del 10% per 12s."
+      ]
     },
     {
       "key": "skyward-harp",
       "name": "Skyward Harp",
       "description": "Un grande arco che simboleggia l’affiliazione di Dvalin con l’Archon Anemo. In azione, la sua vibrante melodia è musica per le orecchie delle divinità.",
-      "refinement": "Aumenta del {0}% il CRIT DMG. I colpi hanno il {1}% di probabilità di infliggere Physical DMG pari al 125% dell'ATK in un piccolo AoE. L'effetto può avvenire una volta ogni {2}s."
+      "refinements": [
+        "Aumenta del 20% il CRIT DMG. I colpi hanno il 60% di probabilità di infliggere Physical DMG pari al 125% dell'ATK in un piccolo AoE. L'effetto può avvenire una volta ogni 4s.",
+        "Aumenta del 25% il CRIT DMG. I colpi hanno il 70% di probabilità di infliggere Physical DMG pari al 125% dell'ATK in un piccolo AoE. L'effetto può avvenire una volta ogni 3.5s.",
+        "Aumenta del 30% il CRIT DMG. I colpi hanno il 80% di probabilità di infliggere Physical DMG pari al 125% dell'ATK in un piccolo AoE. L'effetto può avvenire una volta ogni 3s.",
+        "Aumenta del 35% il CRIT DMG. I colpi hanno il 90% di probabilità di infliggere Physical DMG pari al 125% dell'ATK in un piccolo AoE. L'effetto può avvenire una volta ogni 2.5s.",
+        "Aumenta del 40% il CRIT DMG. I colpi hanno il 100% di probabilità di infliggere Physical DMG pari al 125% dell'ATK in un piccolo AoE. L'effetto può avvenire una volta ogni 2s."
+      ]
     },
     {
       "key": "skyward-pride",
       "name": "Skyward Pride",
       "description": "Una Claymore che simboleggia l’orgoglio di Dvalin che vola nei cieli. Quando la si brandisce, emette un verso profondo quanto la forza dell'ordine di Dvalin e scatena i venti.",
-      "refinement": "Tutti i DMG aumentano del {0}%. Usare un Elemental Burst, Attacco Normale o Caricato crea una \"lama del vuoto\" che infligge DMG pari al {1}% dell'ATK ai nemici che incontra. Dura per 20s o 8 lame del vuoto."
+      "refinements": [
+        "Tutti i DMG aumentano del 8%. Usare un Elemental Burst, Attacco Normale o Caricato crea una \"lama del vuoto\" che infligge DMG pari al 80% dell'ATK ai nemici che incontra. Dura per 20s o 8 lame del vuoto.",
+        "Tutti i DMG aumentano del 10%. Usare un Elemental Burst, Attacco Normale o Caricato crea una \"lama del vuoto\" che infligge DMG pari al 100% dell'ATK ai nemici che incontra. Dura per 20s o 8 lame del vuoto.",
+        "Tutti i DMG aumentano del 12%. Usare un Elemental Burst, Attacco Normale o Caricato crea una \"lama del vuoto\" che infligge DMG pari al 120% dell'ATK ai nemici che incontra. Dura per 20s o 8 lame del vuoto.",
+        "Tutti i DMG aumentano del 14%. Usare un Elemental Burst, Attacco Normale o Caricato crea una \"lama del vuoto\" che infligge DMG pari al 140% dell'ATK ai nemici che incontra. Dura per 20s o 8 lame del vuoto.",
+        "Tutti i DMG aumentano del 16%. Usare un Elemental Burst, Attacco Normale o Caricato crea una \"lama del vuoto\" che infligge DMG pari al 160% dell'ATK ai nemici che incontra. Dura per 20s o 8 lame del vuoto."
+      ]
     },
     {
       "key": "skyward-spine",
       "name": "Skyward Spine",
       "description": "Un polearm che simboleggia la ferma determinazione di Dvalin. L’asta di quest’arma, rivestita dalla potenza del cielo e del vento, punta verso gli astri.",
-      "refinement": "Il CRIT Rate aumenta del {0}% e il Normal ATK SPD aumenta del 12%. Inoltre, gli Attacchi Normali e Caricati hanno il 50% di probabilità di innescare una \"lama del vuoto\" che infligge un piccolo AoE DMG pari al {1}% dell'ATK. Non può accadere più di una volta ogni 2s."
+      "refinements": [
+        "Il CRIT Rate aumenta del 8% e il Normal ATK SPD aumenta del 12%. Inoltre, gli Attacchi Normali e Caricati hanno il 50% di probabilità di innescare una \"lama del vuoto\" che infligge un piccolo AoE DMG pari al 12% dell'ATK. Non può accadere più di una volta ogni 2s.",
+        "Il CRIT Rate aumenta del 10% e il Normal ATK SPD aumenta del 12%. Inoltre, gli Attacchi Normali e Caricati hanno il 50% di probabilità di innescare una \"lama del vuoto\" che infligge un piccolo AoE DMG pari al 12% dell'ATK. Non può accadere più di una volta ogni 2s.",
+        "Il CRIT Rate aumenta del 12% e il Normal ATK SPD aumenta del 12%. Inoltre, gli Attacchi Normali e Caricati hanno il 50% di probabilità di innescare una \"lama del vuoto\" che infligge un piccolo AoE DMG pari al 12% dell'ATK. Non può accadere più di una volta ogni 2s.",
+        "Il CRIT Rate aumenta del 14% e il Normal ATK SPD aumenta del 12%. Inoltre, gli Attacchi Normali e Caricati hanno il 50% di probabilità di innescare una \"lama del vuoto\" che infligge un piccolo AoE DMG pari al 12% dell'ATK. Non può accadere più di una volta ogni 2s.",
+        "Il CRIT Rate aumenta del 16% e il Normal ATK SPD aumenta del 12%. Inoltre, gli Attacchi Normali e Caricati hanno il 50% di probabilità di innescare una \"lama del vuoto\" che infligge un piccolo AoE DMG pari al 12% dell'ATK. Non può accadere più di una volta ogni 2s."
+      ]
     },
     {
       "key": "slingshot",
       "name": "Slingshot",
       "description": "Nonostante il nome, è un arco. Dopo innumerevoli esperimenti e miglioramenti al design, l’ideatore della fionda definitiva si è ritrovato per le mani quello che in realtà era un arco.",
-      "refinement": "Se gli Attacchi Normali o Caricati colpiscono un bersaglio entro 0.3s, i DMG aumentano del {0}%, altrimenti li riduce del 10%."
+      "refinements": [
+        "Se gli Attacchi Normali o Caricati colpiscono un bersaglio entro 0.3s, i DMG aumentano del 36%, altrimenti li riduce del 10%.",
+        "Se gli Attacchi Normali o Caricati colpiscono un bersaglio entro 0.3s, i DMG aumentano del 42%, altrimenti li riduce del 10%.",
+        "Se gli Attacchi Normali o Caricati colpiscono un bersaglio entro 0.3s, i DMG aumentano del 48%, altrimenti li riduce del 10%.",
+        "Se gli Attacchi Normali o Caricati colpiscono un bersaglio entro 0.3s, i DMG aumentano del 54%, altrimenti li riduce del 10%.",
+        "Se gli Attacchi Normali o Caricati colpiscono un bersaglio entro 0.3s, i DMG aumentano del 60%, altrimenti li riduce del 10%."
+      ]
     },
     {
       "key": "snow-tombed-starsilver",
       "name": "Snow-Tombed Starsilver",
       "description": "Un antico spadone che era nascosto tra gli affreschi. Forgiato dallo Starsilver, ha il potere di fendere il ghiaccio e la neve.",
-      "refinement": "Colpire nemici con Attacchi Normali e Caricati ha il {0}% di probabilità di far precipitare loro un Everfrost Icicle che infligge AoE DMG pari al {1}% dell'ATK. Infligge DMG pari al {2}% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s."
+      "refinements": [
+        "Colpire nemici con Attacchi Normali e Caricati ha il 60% di probabilità di far precipitare loro un Everfrost Icicle che infligge AoE DMG pari al 80% dell'ATK. Infligge DMG pari al 200% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s.",
+        "Colpire nemici con Attacchi Normali e Caricati ha il 70% di probabilità di far precipitare loro un Everfrost Icicle che infligge AoE DMG pari al 95% dell'ATK. Infligge DMG pari al 240% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s.",
+        "Colpire nemici con Attacchi Normali e Caricati ha il 80% di probabilità di far precipitare loro un Everfrost Icicle che infligge AoE DMG pari al 110% dell'ATK. Infligge DMG pari al 280% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s.",
+        "Colpire nemici con Attacchi Normali e Caricati ha il 90% di probabilità di far precipitare loro un Everfrost Icicle che infligge AoE DMG pari al 125% dell'ATK. Infligge DMG pari al 320% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s.",
+        "Colpire nemici con Attacchi Normali e Caricati ha il 100% di probabilità di far precipitare loro un Everfrost Icicle che infligge AoE DMG pari al 140% dell'ATK. Infligge DMG pari al 360% dell'ATK su nemici affetti da Cryo. L'effetto può avvenire una volta ogni 10s."
+      ]
     },
     {
       "key": "solar-pearl",
       "name": "Solar Pearl",
       "description": "Una perla dorata e opaca, costituita da una sostanza sconosciuta che concentra sia la luce solare che lunare. Pulsa con una forza mite.",
-      "refinement": "Gli Attacchi Normali aumentano i DMG di Elemental Skill e Elemental Burst del {0}% per 6s. Viceversa, Usare Elemental Skill e/o Elemental Burst aumenta i DMG di Attacchi Normali del {1}% per 6s."
+      "refinements": [
+        "Gli Attacchi Normali aumentano i DMG di Elemental Skill e Elemental Burst del 20% per 6s. Viceversa, Usare Elemental Skill e/o Elemental Burst aumenta i DMG di Attacchi Normali del 20% per 6s.",
+        "Gli Attacchi Normali aumentano i DMG di Elemental Skill e Elemental Burst del 25% per 6s. Viceversa, Usare Elemental Skill e/o Elemental Burst aumenta i DMG di Attacchi Normali del 25% per 6s.",
+        "Gli Attacchi Normali aumentano i DMG di Elemental Skill e Elemental Burst del 30% per 6s. Viceversa, Usare Elemental Skill e/o Elemental Burst aumenta i DMG di Attacchi Normali del 30% per 6s.",
+        "Gli Attacchi Normali aumentano i DMG di Elemental Skill e Elemental Burst del 35% per 6s. Viceversa, Usare Elemental Skill e/o Elemental Burst aumenta i DMG di Attacchi Normali del 35% per 6s.",
+        "Gli Attacchi Normali aumentano i DMG di Elemental Skill e Elemental Burst del 40% per 6s. Viceversa, Usare Elemental Skill e/o Elemental Burst aumenta i DMG di Attacchi Normali del 40% per 6s."
+      ]
     },
     {
       "key": "song-of-broken-pines",
       "name": "Song of Broken Pines",
       "description": "Uno spadone leggero come la danza dell’erba nella brezza ma spietato contro i corrotti come un tifone.",
-      "refinement": "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta l’ATK del {0}% e, quando Attacchi Normali e Caricati vanno a segno, il personaggio ottiene un \"Sigil of Whispers\". L’effetto può essere attivato una volta ogni 0.3s. Quando possiedi 4 Sigils of Whispers, ciascuno si consumerà conferendo ai membri del party vicini l’effetto \"Millennial Movement: Banner-Hymn\" per 12s. \"Millennial Movement: Banner-Hymn\" aumenta il Normal ATK SPD del {1}% e aumenta l’ATK del {2}%. Quando avviene, non potrai ottenere ulteriori Sigils of Remembrance per 20s. Ai tanti effetti del \"Millennial Movement,\" i buff dello stesso tipo non sono sommabili."
+      "refinements": [
+        "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta l’ATK del 16% e, quando Attacchi Normali e Caricati vanno a segno, il personaggio ottiene un \"Sigil of Whispers\". L’effetto può essere attivato una volta ogni 0.3s. Quando possiedi 4 Sigils of Whispers, ciascuno si consumerà conferendo ai membri del party vicini l’effetto \"Millennial Movement: Banner-Hymn\" per 12s. \"Millennial Movement: Banner-Hymn\" aumenta il Normal ATK SPD del 12% e aumenta l’ATK del 20%. Quando avviene, non potrai ottenere ulteriori Sigils of Remembrance per 20s. Ai tanti effetti del \"Millennial Movement,\" i buff dello stesso tipo non sono sommabili.",
+        "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta l’ATK del 20% e, quando Attacchi Normali e Caricati vanno a segno, il personaggio ottiene un \"Sigil of Whispers\". L’effetto può essere attivato una volta ogni 0.3s. Quando possiedi 4 Sigils of Whispers, ciascuno si consumerà conferendo ai membri del party vicini l’effetto \"Millennial Movement: Banner-Hymn\" per 12s. \"Millennial Movement: Banner-Hymn\" aumenta il Normal ATK SPD del 15% e aumenta l’ATK del 25%. Quando avviene, non potrai ottenere ulteriori Sigils of Remembrance per 20s. Ai tanti effetti del \"Millennial Movement,\" i buff dello stesso tipo non sono sommabili.",
+        "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta l’ATK del 24% e, quando Attacchi Normali e Caricati vanno a segno, il personaggio ottiene un \"Sigil of Whispers\". L’effetto può essere attivato una volta ogni 0.3s. Quando possiedi 4 Sigils of Whispers, ciascuno si consumerà conferendo ai membri del party vicini l’effetto \"Millennial Movement: Banner-Hymn\" per 12s. \"Millennial Movement: Banner-Hymn\" aumenta il Normal ATK SPD del 18% e aumenta l’ATK del 30%. Quando avviene, non potrai ottenere ulteriori Sigils of Remembrance per 20s. Ai tanti effetti del \"Millennial Movement,\" i buff dello stesso tipo non sono sommabili.",
+        "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta l’ATK del 28% e, quando Attacchi Normali e Caricati vanno a segno, il personaggio ottiene un \"Sigil of Whispers\". L’effetto può essere attivato una volta ogni 0.3s. Quando possiedi 4 Sigils of Whispers, ciascuno si consumerà conferendo ai membri del party vicini l’effetto \"Millennial Movement: Banner-Hymn\" per 12s. \"Millennial Movement: Banner-Hymn\" aumenta il Normal ATK SPD del 21% e aumenta l’ATK del 35%. Quando avviene, non potrai ottenere ulteriori Sigils of Remembrance per 20s. Ai tanti effetti del \"Millennial Movement,\" i buff dello stesso tipo non sono sommabili.",
+        "Una parte del \"Millennial Movement\" che vaga tra i venti. Aumenta l’ATK del 32% e, quando Attacchi Normali e Caricati vanno a segno, il personaggio ottiene un \"Sigil of Whispers\". L’effetto può essere attivato una volta ogni 0.3s. Quando possiedi 4 Sigils of Whispers, ciascuno si consumerà conferendo ai membri del party vicini l’effetto \"Millennial Movement: Banner-Hymn\" per 12s. \"Millennial Movement: Banner-Hymn\" aumenta il Normal ATK SPD del 24% e aumenta l’ATK del 40%. Quando avviene, non potrai ottenere ulteriori Sigils of Remembrance per 20s. Ai tanti effetti del \"Millennial Movement,\" i buff dello stesso tipo non sono sommabili."
+      ]
     },
     {
       "key": "staff-of-homa",
       "name": "Staff of Homa",
       "description": "Un \"firewood staff\" usato tempo fa in rituali antichi dimenticati nel tempo.",
-      "refinement": "Gli HP aumentano del {0}%. Inoltre, conferisce un ATK Bonus in base al {1}% dei Max HP del personaggio che la equipaggia. Se chi lo usa ha HP < 50%, l’ATK Bonus aumenta di un ulteriore {2}% dei Max HP."
+      "refinements": [
+        "Gli HP aumentano del 20%. Inoltre, conferisce un ATK Bonus in base al 0.8% dei Max HP del personaggio che la equipaggia. Se chi lo usa ha HP < 50%, l’ATK Bonus aumenta di un ulteriore 1% dei Max HP.",
+        "Gli HP aumentano del 25%. Inoltre, conferisce un ATK Bonus in base al 1% dei Max HP del personaggio che la equipaggia. Se chi lo usa ha HP < 50%, l’ATK Bonus aumenta di un ulteriore 1.2% dei Max HP.",
+        "Gli HP aumentano del 30%. Inoltre, conferisce un ATK Bonus in base al 1.2% dei Max HP del personaggio che la equipaggia. Se chi lo usa ha HP < 50%, l’ATK Bonus aumenta di un ulteriore 1.4% dei Max HP.",
+        "Gli HP aumentano del 35%. Inoltre, conferisce un ATK Bonus in base al 1.4% dei Max HP del personaggio che la equipaggia. Se chi lo usa ha HP < 50%, l’ATK Bonus aumenta di un ulteriore 1.6% dei Max HP.",
+        "Gli HP aumentano del 40%. Inoltre, conferisce un ATK Bonus in base al 1.6% dei Max HP del personaggio che la equipaggia. Se chi lo usa ha HP < 50%, l’ATK Bonus aumenta di un ulteriore 1.8% dei Max HP."
+      ]
     },
     {
       "key": "summit-shaper",
       "name": "Summit Shaper",
       "description": "Simbolo di un giuramento leggendario, questa lama affilata un tempo tagliò la cima di una montagna.",
-      "refinement": "Lo Shield Strength aumenta del {0}%. Segnare colpi aumenta l’ATK del {1}% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%."
+      "refinements": [
+        "Lo Shield Strength aumenta del 20%. Segnare colpi aumenta l’ATK del 4% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%.",
+        "Lo Shield Strength aumenta del 25%. Segnare colpi aumenta l’ATK del 5% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%.",
+        "Lo Shield Strength aumenta del 30%. Segnare colpi aumenta l’ATK del 6% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%.",
+        "Lo Shield Strength aumenta del 35%. Segnare colpi aumenta l’ATK del 7% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%.",
+        "Lo Shield Strength aumenta del 40%. Segnare colpi aumenta l’ATK del 8% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%."
+      ]
     },
     {
       "key": "sword-of-descension",
       "name": "Sword of Descension",
       "description": "Una spada forgiata con maestria unica. Non sembra appartenere a questo mondo.",
-      "refinement": "Esclusiva disponibile giocando su: \r\n\"PlayStation Network\"\r\nAttacchi Normali o Caricati hanno il 50% di probabilità di infliggere un piccolo AoE DMG pari al 200% dell'ATK. L'effetto può avvenire una volta ogni 10s. Inoltre, se lo equipaggia il Traveler, il suo ATK aumenta di 66."
+      "refinements": [
+        "Esclusiva disponibile giocando su: \r\n\"PlayStation Network\"\r\nAttacchi Normali o Caricati hanno il 50% di probabilità di infliggere un piccolo AoE DMG pari al 200% dell'ATK. L'effetto può avvenire una volta ogni 10s. Inoltre, se lo equipaggia il Traveler, il suo ATK aumenta di 66."
+      ]
     },
     {
       "key": "the-alley-flash",
       "name": "The Alley Flash",
       "description": "Una spada dritta e nera come la notte. Un tempo apparteneva a un ladro che vagava per le strade arretrate.",
-      "refinement": "Il personaggio che la equipaggia aumenta il DMG inflitto del {0}%. Subire DMG disattiva l’effetto per 5s."
+      "refinements": [
+        "Il personaggio che la equipaggia aumenta il DMG inflitto del 12%. Subire DMG disattiva l’effetto per 5s.",
+        "Il personaggio che la equipaggia aumenta il DMG inflitto del 15%. Subire DMG disattiva l’effetto per 5s.",
+        "Il personaggio che la equipaggia aumenta il DMG inflitto del 18%. Subire DMG disattiva l’effetto per 5s.",
+        "Il personaggio che la equipaggia aumenta il DMG inflitto del 21%. Subire DMG disattiva l’effetto per 5s.",
+        "Il personaggio che la equipaggia aumenta il DMG inflitto del 24%. Subire DMG disattiva l’effetto per 5s."
+      ]
     },
     {
       "key": "the-bell",
       "name": "The Bell",
       "description": "Uno spadone pesante. Possiede un orologio al suo interno, sebbene i suoi meccanismi siano stati danneggiati da tempo.",
-      "refinement": "Subire DMG genera uno scudo che assorbe DMG fino al {0}% dei Max HP. Questo scudo dura per 10s o finché non viene distrutto; L'effetto può avvenire una volta ogni 45s. Mentre si è protetti dallo scudo, il personaggio ottiene il {1}% di DMG aggiuntivi."
+      "refinements": [
+        "Subire DMG genera uno scudo che assorbe DMG fino al 20% dei Max HP. Questo scudo dura per 10s o finché non viene distrutto; L'effetto può avvenire una volta ogni 45s. Mentre si è protetti dallo scudo, il personaggio ottiene il 45% di DMG aggiuntivi.",
+        "Subire DMG genera uno scudo che assorbe DMG fino al 23% dei Max HP. Questo scudo dura per 10s o finché non viene distrutto; L'effetto può avvenire una volta ogni 45s. Mentre si è protetti dallo scudo, il personaggio ottiene il 45% di DMG aggiuntivi.",
+        "Subire DMG genera uno scudo che assorbe DMG fino al 26% dei Max HP. Questo scudo dura per 10s o finché non viene distrutto; L'effetto può avvenire una volta ogni 45s. Mentre si è protetti dallo scudo, il personaggio ottiene il 45% di DMG aggiuntivi.",
+        "Subire DMG genera uno scudo che assorbe DMG fino al 29% dei Max HP. Questo scudo dura per 10s o finché non viene distrutto; L'effetto può avvenire una volta ogni 45s. Mentre si è protetti dallo scudo, il personaggio ottiene il 45% di DMG aggiuntivi.",
+        "Subire DMG genera uno scudo che assorbe DMG fino al 32% dei Max HP. Questo scudo dura per 10s o finché non viene distrutto; L'effetto può avvenire una volta ogni 45s. Mentre si è protetti dallo scudo, il personaggio ottiene il 45% di DMG aggiuntivi."
+      ]
     },
     {
       "key": "the-black-sword",
       "name": "The Black Sword",
       "description": "Una spada lunga nera come la pece e assetata di violenza e devastazione. Si dice che quest'arma possa far impazzire chi lo brandisce del rosso vino del massacro.",
-      "refinement": "Aumenta del {0}% i DMG inflitti da Attacchi Normali e Caricati. Inoltre, i Colpi CRIT rigenerano il {1}% di ATK come HP. L'effetto può avvenire una volta ogni 5s."
+      "refinements": [
+        "Aumenta del 20% i DMG inflitti da Attacchi Normali e Caricati. Inoltre, i Colpi CRIT rigenerano il 60% di ATK come HP. L'effetto può avvenire una volta ogni 5s.",
+        "Aumenta del 25% i DMG inflitti da Attacchi Normali e Caricati. Inoltre, i Colpi CRIT rigenerano il 70% di ATK come HP. L'effetto può avvenire una volta ogni 5s.",
+        "Aumenta del 30% i DMG inflitti da Attacchi Normali e Caricati. Inoltre, i Colpi CRIT rigenerano il 80% di ATK come HP. L'effetto può avvenire una volta ogni 5s.",
+        "Aumenta del 35% i DMG inflitti da Attacchi Normali e Caricati. Inoltre, i Colpi CRIT rigenerano il 90% di ATK come HP. L'effetto può avvenire una volta ogni 5s.",
+        "Aumenta del 40% i DMG inflitti da Attacchi Normali e Caricati. Inoltre, i Colpi CRIT rigenerano il 100% di ATK come HP. L'effetto può avvenire una volta ogni 5s."
+      ]
     },
     {
       "key": "the-catch",
       "name": "\"The Catch\"",
       "description": "In tempi remoti, questa era la beneamata lancia di un famoso bandito di Inazuma.",
-      "refinement": "Aumenta l'Elemental Burst DMG del {0}% e l'Elemental Burst CRIT Rate del {1}%."
+      "refinements": [
+        "Aumenta l'Elemental Burst DMG del 16% e l'Elemental Burst CRIT Rate del 6%.",
+        "Aumenta l'Elemental Burst DMG del 20% e l'Elemental Burst CRIT Rate del 7.5%.",
+        "Aumenta l'Elemental Burst DMG del 24% e l'Elemental Burst CRIT Rate del 9%.",
+        "Aumenta l'Elemental Burst DMG del 28% e l'Elemental Burst CRIT Rate del 10.5%.",
+        "Aumenta l'Elemental Burst DMG del 32% e l'Elemental Burst CRIT Rate del 12%."
+      ]
     },
     {
       "key": "the-flute",
       "name": "The Flute",
       "description": "Sotto il suo aspetto arrugginito c'è una lama sottile e riccamente decorata. La si brandisce veloce come il vento.",
-      "refinement": "Attacchi Normali o Caricati conferiscono \"Harmonic\". Ottenere 5 Harmonics innesca il potere della musica e infligge DMG pari al {0}% dell'ATK ai nemici circostanti. Harmonics dura fino a 30s e può essere ottenuto solo una volta ogni 0.5s."
+      "refinements": [
+        "Attacchi Normali o Caricati conferiscono \"Harmonic\". Ottenere 5 Harmonics innesca il potere della musica e infligge DMG pari al 100% dell'ATK ai nemici circostanti. Harmonics dura fino a 30s e può essere ottenuto solo una volta ogni 0.5s.",
+        "Attacchi Normali o Caricati conferiscono \"Harmonic\". Ottenere 5 Harmonics innesca il potere della musica e infligge DMG pari al 125% dell'ATK ai nemici circostanti. Harmonics dura fino a 30s e può essere ottenuto solo una volta ogni 0.5s.",
+        "Attacchi Normali o Caricati conferiscono \"Harmonic\". Ottenere 5 Harmonics innesca il potere della musica e infligge DMG pari al 150% dell'ATK ai nemici circostanti. Harmonics dura fino a 30s e può essere ottenuto solo una volta ogni 0.5s.",
+        "Attacchi Normali o Caricati conferiscono \"Harmonic\". Ottenere 5 Harmonics innesca il potere della musica e infligge DMG pari al 175% dell'ATK ai nemici circostanti. Harmonics dura fino a 30s e può essere ottenuto solo una volta ogni 0.5s.",
+        "Attacchi Normali o Caricati conferiscono \"Harmonic\". Ottenere 5 Harmonics innesca il potere della musica e infligge DMG pari al 200% dell'ATK ai nemici circostanti. Harmonics dura fino a 30s e può essere ottenuto solo una volta ogni 0.5s."
+      ]
     },
     {
       "key": "the-stringless",
       "name": "The Stringless",
       "description": "Un arco che è stato uno strumento straordinario. Non è più in grado di mettere di buon umore la gente.",
-      "refinement": "Aumenta del {0}% i DMG di Elemental Skill e Elemental Burst."
+      "refinements": [
+        "Aumenta del 24% i DMG di Elemental Skill e Elemental Burst.",
+        "Aumenta del 30% i DMG di Elemental Skill e Elemental Burst.",
+        "Aumenta del 36% i DMG di Elemental Skill e Elemental Burst.",
+        "Aumenta del 42% i DMG di Elemental Skill e Elemental Burst.",
+        "Aumenta del 48% i DMG di Elemental Skill e Elemental Burst."
+      ]
     },
     {
       "key": "the-unforged",
       "name": "The Unforged",
       "description": "Capace di scacciare spiriti maligni e persone malvagie, questa Claymore senza spigoli sembra avere una forza divina.",
-      "refinement": "Lo Shield Strength aumenta del {0}%. Segnare colpi aumenta l’ATK del {1}% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%."
+      "refinements": [
+        "Lo Shield Strength aumenta del 20%. Segnare colpi aumenta l’ATK del 4% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%.",
+        "Lo Shield Strength aumenta del 25%. Segnare colpi aumenta l’ATK del 5% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%.",
+        "Lo Shield Strength aumenta del 30%. Segnare colpi aumenta l’ATK del 6% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%.",
+        "Lo Shield Strength aumenta del 35%. Segnare colpi aumenta l’ATK del 7% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%.",
+        "Lo Shield Strength aumenta del 40%. Segnare colpi aumenta l’ATK del 8% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%."
+      ]
     },
     {
       "key": "the-viridescent-hunt",
       "name": "The Viridescent Hunt",
       "description": "Un arco da caccia puro di colore verde. Una volta apparteneva a un noto cacciatore la cui casa era la foresta.",
-      "refinement": "I Colpi Normali e Mirati hanno il 50% di probabilità di generare un \"Ciclone\" che attrae continuamente i nemici circostanti, infliggendo DMG pari al {0}% dell'ATK ogni 0.5s per 4s. L'effetto può avvenire una volta ogni {1}s."
+      "refinements": [
+        "I Colpi Normali e Mirati hanno il 50% di probabilità di generare un \"Ciclone\" che attrae continuamente i nemici circostanti, infliggendo DMG pari al 40% dell'ATK ogni 0.5s per 4s. L'effetto può avvenire una volta ogni 14s.",
+        "I Colpi Normali e Mirati hanno il 50% di probabilità di generare un \"Ciclone\" che attrae continuamente i nemici circostanti, infliggendo DMG pari al 50% dell'ATK ogni 0.5s per 4s. L'effetto può avvenire una volta ogni 13s.",
+        "I Colpi Normali e Mirati hanno il 50% di probabilità di generare un \"Ciclone\" che attrae continuamente i nemici circostanti, infliggendo DMG pari al 60% dell'ATK ogni 0.5s per 4s. L'effetto può avvenire una volta ogni 12s.",
+        "I Colpi Normali e Mirati hanno il 50% di probabilità di generare un \"Ciclone\" che attrae continuamente i nemici circostanti, infliggendo DMG pari al 70% dell'ATK ogni 0.5s per 4s. L'effetto può avvenire una volta ogni 11s.",
+        "I Colpi Normali e Mirati hanno il 50% di probabilità di generare un \"Ciclone\" che attrae continuamente i nemici circostanti, infliggendo DMG pari al 80% dell'ATK ogni 0.5s per 4s. L'effetto può avvenire una volta ogni 10s."
+      ]
     },
     {
       "key": "the-widsith",
       "name": "The Widsith",
       "description": "Un pesante taccuino pieno di spartiti musicali. Sebbene rovinato da forte usura e danni da tarme, al suo interno tra le parole scritte a mano si cela ancora molto potere.",
-      "refinement": "Quando un personaggio appare sul campo ottiene un \"tema musicale\" casuale per 10s. L'effetto può avvenire una volta ogni 30s. Recitative: l'ATK aumenta del {0}%. Aria: Tutti gli Elemental DMG aumentano del {1}%. Interlude: l'Elemental Mastery aumenta di {2}."
+      "refinements": [
+        "Quando un personaggio appare sul campo ottiene un \"tema musicale\" casuale per 10s. L'effetto può avvenire una volta ogni 30s. Recitative: l'ATK aumenta del 60%. Aria: Tutti gli Elemental DMG aumentano del 48%. Interlude: l'Elemental Mastery aumenta di 240.",
+        "Quando un personaggio appare sul campo ottiene un \"tema musicale\" casuale per 10s. L'effetto può avvenire una volta ogni 30s. Recitative: l'ATK aumenta del 75%. Aria: Tutti gli Elemental DMG aumentano del 60%. Interlude: l'Elemental Mastery aumenta di 300.",
+        "Quando un personaggio appare sul campo ottiene un \"tema musicale\" casuale per 10s. L'effetto può avvenire una volta ogni 30s. Recitative: l'ATK aumenta del 90%. Aria: Tutti gli Elemental DMG aumentano del 72%. Interlude: l'Elemental Mastery aumenta di 360.",
+        "Quando un personaggio appare sul campo ottiene un \"tema musicale\" casuale per 10s. L'effetto può avvenire una volta ogni 30s. Recitative: l'ATK aumenta del 105%. Aria: Tutti gli Elemental DMG aumentano del 84%. Interlude: l'Elemental Mastery aumenta di 420.",
+        "Quando un personaggio appare sul campo ottiene un \"tema musicale\" casuale per 10s. L'effetto può avvenire una volta ogni 30s. Recitative: l'ATK aumenta del 120%. Aria: Tutti gli Elemental DMG aumentano del 96%. Interlude: l'Elemental Mastery aumenta di 480."
+      ]
     },
     {
       "key": "thrilling-tales-of-dragon-slayers",
       "name": "Thrilling Tales of Dragon Slayers",
       "description": "La storia immaginaria di una banda di cinque eroi che vanno a caccia di draghi. È scritta male e strutturalmente incoerente. Il suo valore sta nelle molte lezioni che si possono imparare dal fallimento.",
-      "refinement": "Quando si cambia personaggio, l'ATK del nuovo personaggio in uso aumenta del {0}% per 10s. L'effetto può avvenire una volta ogni 20s."
+      "refinements": [
+        "Quando si cambia personaggio, l'ATK del nuovo personaggio in uso aumenta del 24% per 10s. L'effetto può avvenire una volta ogni 20s.",
+        "Quando si cambia personaggio, l'ATK del nuovo personaggio in uso aumenta del 30% per 10s. L'effetto può avvenire una volta ogni 20s.",
+        "Quando si cambia personaggio, l'ATK del nuovo personaggio in uso aumenta del 36% per 10s. L'effetto può avvenire una volta ogni 20s.",
+        "Quando si cambia personaggio, l'ATK del nuovo personaggio in uso aumenta del 42% per 10s. L'effetto può avvenire una volta ogni 20s.",
+        "Quando si cambia personaggio, l'ATK del nuovo personaggio in uso aumenta del 48% per 10s. L'effetto può avvenire una volta ogni 20s."
+      ]
     },
     {
       "key": "thundering-pulse",
       "name": "Thundering Pulse",
       "description": "Un arco lungo che fu regalato allo Shogun. Tutt’intorno ad esso crepita la potenza del Fulmine Eterno.",
-      "refinement": "Aumenta ATK del {0}% e conferisce il potere del \"Thunder Emblem\". Ai corrispondenti livelli di stack 1/2/3, il Thunder Emblem aumenta il DMG Attacco Normale del {1}/{2}/{{3}}%. Il personaggio otterrà 1 stack di Thunder Emblem per ciascuno dei seguenti scenari: quando un Attacco Normale infligge DMG (lo stack durerà 5s), quando scatena un'Elemental Skill (lo stack durerà 10s) e quando l’Energy < 100% (lo stack svanisce quando l’Energy è piena). La durata di ciascuno stack calcolato è indipendente dalle altre."
+      "refinements": [
+        "Aumenta ATK del 20% e conferisce il potere del \"Thunder Emblem\". Ai corrispondenti livelli di stack 1/2/3, il Thunder Emblem aumenta il DMG Attacco Normale del 12/24/40/{2}/{{3}}%. Il personaggio otterrà 1 stack di Thunder Emblem per ciascuno dei seguenti scenari: quando un Attacco Normale infligge DMG (lo stack durerà 5s), quando scatena un'Elemental Skill (lo stack durerà 10s) e quando l’Energy < 100% (lo stack svanisce quando l’Energy è piena). La durata di ciascuno stack calcolato è indipendente dalle altre.",
+        "Aumenta ATK del 25% e conferisce il potere del \"Thunder Emblem\". Ai corrispondenti livelli di stack 1/2/3, il Thunder Emblem aumenta il DMG Attacco Normale del 15/30/50/{2}/{{3}}%. Il personaggio otterrà 1 stack di Thunder Emblem per ciascuno dei seguenti scenari: quando un Attacco Normale infligge DMG (lo stack durerà 5s), quando scatena un'Elemental Skill (lo stack durerà 10s) e quando l’Energy < 100% (lo stack svanisce quando l’Energy è piena). La durata di ciascuno stack calcolato è indipendente dalle altre.",
+        "Aumenta ATK del 30% e conferisce il potere del \"Thunder Emblem\". Ai corrispondenti livelli di stack 1/2/3, il Thunder Emblem aumenta il DMG Attacco Normale del 18/36/60/{2}/{{3}}%. Il personaggio otterrà 1 stack di Thunder Emblem per ciascuno dei seguenti scenari: quando un Attacco Normale infligge DMG (lo stack durerà 5s), quando scatena un'Elemental Skill (lo stack durerà 10s) e quando l’Energy < 100% (lo stack svanisce quando l’Energy è piena). La durata di ciascuno stack calcolato è indipendente dalle altre.",
+        "Aumenta ATK del 35% e conferisce il potere del \"Thunder Emblem\". Ai corrispondenti livelli di stack 1/2/3, il Thunder Emblem aumenta il DMG Attacco Normale del 21/42/70/{2}/{{3}}%. Il personaggio otterrà 1 stack di Thunder Emblem per ciascuno dei seguenti scenari: quando un Attacco Normale infligge DMG (lo stack durerà 5s), quando scatena un'Elemental Skill (lo stack durerà 10s) e quando l’Energy < 100% (lo stack svanisce quando l’Energy è piena). La durata di ciascuno stack calcolato è indipendente dalle altre.",
+        "Aumenta ATK del 40% e conferisce il potere del \"Thunder Emblem\". Ai corrispondenti livelli di stack 1/2/3, il Thunder Emblem aumenta il DMG Attacco Normale del 24/48/80/{2}/{{3}}%. Il personaggio otterrà 1 stack di Thunder Emblem per ciascuno dei seguenti scenari: quando un Attacco Normale infligge DMG (lo stack durerà 5s), quando scatena un'Elemental Skill (lo stack durerà 10s) e quando l’Energy < 100% (lo stack svanisce quando l’Energy è piena). La durata di ciascuno stack calcolato è indipendente dalle altre."
+      ]
     },
     {
       "key": "travelers-handy-sword",
       "name": "Traveler's Handy Sword",
       "description": "Una pratica spada d’acciaio che contiene forbici, una lente d’ingrandimento, un’esca e altri oggetti utili nel fodero.",
-      "refinement": "Ciascun Elemental Orb/Particle raccolto rigenera il {0}% di HP."
+      "refinements": [
+        "Ciascun Elemental Orb/Particle raccolto rigenera il 1% di HP.",
+        "Ciascun Elemental Orb/Particle raccolto rigenera il 1.25% di HP.",
+        "Ciascun Elemental Orb/Particle raccolto rigenera il 1.5% di HP.",
+        "Ciascun Elemental Orb/Particle raccolto rigenera il 1.75% di HP.",
+        "Ciascun Elemental Orb/Particle raccolto rigenera il 2% di HP."
+      ]
     },
     {
       "key": "twin-nephrite",
       "name": "Twin Nephrite",
       "description": "Un ciondolo jade formato dalla fusione di due pietre jade.",
-      "refinement": "Sconfiggere un nemico aumenta Movement SPD e ATK del {0}% per 15s."
+      "refinements": [
+        "Sconfiggere un nemico aumenta Movement SPD e ATK del 12% per 15s.",
+        "Sconfiggere un nemico aumenta Movement SPD e ATK del 14% per 15s.",
+        "Sconfiggere un nemico aumenta Movement SPD e ATK del 16% per 15s.",
+        "Sconfiggere un nemico aumenta Movement SPD e ATK del 18% per 15s.",
+        "Sconfiggere un nemico aumenta Movement SPD e ATK del 20% per 15s."
+      ]
     },
     {
       "key": "vortex-vanquisher",
       "name": "Vortex Vanquisher",
       "description": "Questa polearm affilata sembra possa trapassare qualsiasi cosa. Quando lo si fende si può quasi vedere il taglio che squarcia l’aria.",
-      "refinement": "Lo Shield Strength aumenta del {0}%. Segnare colpi aumenta l’ATK del {1}% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%."
+      "refinements": [
+        "Lo Shield Strength aumenta del 20%. Segnare colpi aumenta l’ATK del 4% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%.",
+        "Lo Shield Strength aumenta del 25%. Segnare colpi aumenta l’ATK del 5% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%.",
+        "Lo Shield Strength aumenta del 30%. Segnare colpi aumenta l’ATK del 6% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%.",
+        "Lo Shield Strength aumenta del 35%. Segnare colpi aumenta l’ATK del 7% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%.",
+        "Lo Shield Strength aumenta del 40%. Segnare colpi aumenta l’ATK del 8% per 8s. Massimo 5 stacks. L'effetto può avvenire una volta ogni 0.3s. Mentre si è protetti da uno scudo, questo potenziamento all'ATK aumenta del 100%."
+      ]
     },
     {
       "key": "waster-greatsword",
       "name": "Waster Greatsword",
       "description": "Una robusta \"lamina di ferro\" abbastanza potente da dividere montagne in due, se impugnata con sufficiente forza di volontà.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "white-iron-greatsword",
       "name": "White Iron Greatsword",
       "description": "Una Claymore di ferro bianco. È leggera ma non ne compromette le potenzialità. È efficace anche se impugnato da qualcuno con una forza nella media, ma è estremamente letale nelle mani di qualcuno fisicamente più forte.",
-      "refinement": "Sconfiggere un nemico rigenera il {0}% di HP."
+      "refinements": [
+        "Sconfiggere un nemico rigenera il 8% di HP.",
+        "Sconfiggere un nemico rigenera il 10% di HP.",
+        "Sconfiggere un nemico rigenera il 12% di HP.",
+        "Sconfiggere un nemico rigenera il 14% di HP.",
+        "Sconfiggere un nemico rigenera il 16% di HP."
+      ]
     },
     {
       "key": "white-tassel",
       "name": "White Tassel",
       "description": "L’arma standard dei soldati Millelith. Ha un’asta robusta e una punta affilata. È un’arma affidabile.",
-      "refinement": "Aumenta del {0}% il DMG di Attacchi Normali."
+      "refinements": [
+        "Aumenta del 24% il DMG di Attacchi Normali.",
+        "Aumenta del 30% il DMG di Attacchi Normali.",
+        "Aumenta del 36% il DMG di Attacchi Normali.",
+        "Aumenta del 42% il DMG di Attacchi Normali.",
+        "Aumenta del 48% il DMG di Attacchi Normali."
+      ]
     },
     {
       "key": "whiteblind",
       "name": "Whiteblind",
       "description": "Una spada esotica con una parte lasciata non affilata. È arrivata a Liyue grazie a commercianti stranieri. È incredibilmente potente nelle mani giuste.",
-      "refinement": "Gli Attacchi Normali e Caricati aumentano ATK e DEF del {0}% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.5s."
+      "refinements": [
+        "Gli Attacchi Normali e Caricati aumentano ATK e DEF del 6% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.5s.",
+        "Gli Attacchi Normali e Caricati aumentano ATK e DEF del 7.5% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.5s.",
+        "Gli Attacchi Normali e Caricati aumentano ATK e DEF del 9% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.5s.",
+        "Gli Attacchi Normali e Caricati aumentano ATK e DEF del 10.5% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.5s.",
+        "Gli Attacchi Normali e Caricati aumentano ATK e DEF del 12% per 6s. Massimo 4 stacks. L'effetto può avvenire una volta ogni 0.5s."
+      ]
     },
     {
       "key": "windblume-ode",
       "name": "Windblume Ode",
       "description": "Un arco decorato con fiori ignoti e che porta le con sé le sincere speranze di una persona altrettanto ignota.",
-      "refinement": "Dopo aver usato un'Elemental Skill, ricevi una benedizione dall’antico desiderio del Windblume: l’ATK aumenta del {0}% per 6s."
+      "refinements": [
+        "Dopo aver usato un'Elemental Skill, ricevi una benedizione dall’antico desiderio del Windblume: l’ATK aumenta del 16% per 6s.",
+        "Dopo aver usato un'Elemental Skill, ricevi una benedizione dall’antico desiderio del Windblume: l’ATK aumenta del 20% per 6s.",
+        "Dopo aver usato un'Elemental Skill, ricevi una benedizione dall’antico desiderio del Windblume: l’ATK aumenta del 24% per 6s.",
+        "Dopo aver usato un'Elemental Skill, ricevi una benedizione dall’antico desiderio del Windblume: l’ATK aumenta del 28% per 6s."
+      ]
     },
     {
       "key": "wine-and-song",
       "name": "Wine and Song",
       "description": "Una raccolta di canzoni dell'era aristocratica passata, il cui compositore è ora sconosciuto. Racconta la storia di un noto eroico fuorilegge.",
-      "refinement": "Gli Attacchi Normali a segno riducono il consumo di Stamina per Sprint (corsa) o Sprint Alternativo del {0}% per 5s. Inoltre, correre (Sprint) o usare una Skill con Sprint Alternativo aumenta l’ATK del {1}% per 5s."
+      "refinements": [
+        "Gli Attacchi Normali a segno riducono il consumo di Stamina per Sprint (corsa) o Sprint Alternativo del 14% per 5s. Inoltre, correre (Sprint) o usare una Skill con Sprint Alternativo aumenta l’ATK del 20% per 5s.",
+        "Gli Attacchi Normali a segno riducono il consumo di Stamina per Sprint (corsa) o Sprint Alternativo del 16% per 5s. Inoltre, correre (Sprint) o usare una Skill con Sprint Alternativo aumenta l’ATK del 25% per 5s.",
+        "Gli Attacchi Normali a segno riducono il consumo di Stamina per Sprint (corsa) o Sprint Alternativo del 18% per 5s. Inoltre, correre (Sprint) o usare una Skill con Sprint Alternativo aumenta l’ATK del 30% per 5s.",
+        "Gli Attacchi Normali a segno riducono il consumo di Stamina per Sprint (corsa) o Sprint Alternativo del 20% per 5s. Inoltre, correre (Sprint) o usare una Skill con Sprint Alternativo aumenta l’ATK del 35% per 5s.",
+        "Gli Attacchi Normali a segno riducono il consumo di Stamina per Sprint (corsa) o Sprint Alternativo del 22% per 5s. Inoltre, correre (Sprint) o usare una Skill con Sprint Alternativo aumenta l’ATK del 40% per 5s."
+      ]
     },
     {
       "key": "wolfs-gravestone",
       "name": "Wolf's Gravestone",
       "description": "Una spada lunga del Wolf Knight. In origine era solo una pesante lama di ferro donata al cavaliere da un fabbro della città, ma divenne imbevuto di potere leggendario grazie alla sua amicizia con i lupi.",
-      "refinement": "L’ATK aumenta del {0}%. Attacchi inferti a nemici con HP < 30% aumentano l’ATK di tutti i membri del party del {1}% per 12s. L'effetto può avvenire una volta ogni 30s."
+      "refinements": [
+        "L’ATK aumenta del 20%. Attacchi inferti a nemici con HP < 30% aumentano l’ATK di tutti i membri del party del 40% per 12s. L'effetto può avvenire una volta ogni 30s.",
+        "L’ATK aumenta del 25%. Attacchi inferti a nemici con HP < 30% aumentano l’ATK di tutti i membri del party del 50% per 12s. L'effetto può avvenire una volta ogni 30s.",
+        "L’ATK aumenta del 30%. Attacchi inferti a nemici con HP < 30% aumentano l’ATK di tutti i membri del party del 60% per 12s. L'effetto può avvenire una volta ogni 30s.",
+        "L’ATK aumenta del 35%. Attacchi inferti a nemici con HP < 30% aumentano l’ATK di tutti i membri del party del 70% per 12s. L'effetto può avvenire una volta ogni 30s.",
+        "L’ATK aumenta del 40%. Attacchi inferti a nemici con HP < 30% aumentano l’ATK di tutti i membri del party del 80% per 12s. L'effetto può avvenire una volta ogni 30s."
+      ]
     }
   ],
   "artifacts": [
