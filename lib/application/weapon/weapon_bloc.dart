@@ -23,9 +23,7 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
   WeaponEvent getEventForPop(String? key) => WeaponEvent.loadFromKey(key: key!, addToQueue: false);
 
   @override
-  Stream<WeaponState> mapEventToState(
-    WeaponEvent event,
-  ) async* {
+  Stream<WeaponState> mapEventToState(WeaponEvent event) async* {
     if (event is! _AddedToInventory) {
       yield const WeaponState.loading();
     }

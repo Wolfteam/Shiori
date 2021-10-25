@@ -1,17 +1,15 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 
-class MonsterCardModel {
-  final String key;
-  final String image;
-  final String name;
-  final MonsterType type;
-  final bool isComingSoon;
+part 'monster_card_model.freezed.dart';
 
-  MonsterCardModel({
-    required this.key,
-    required this.image,
-    required this.name,
-    required this.type,
-    required this.isComingSoon,
-  });
+@freezed
+class MonsterCardModel with _$MonsterCardModel {
+  const factory MonsterCardModel({
+    required String key,
+    required String image,
+    required String name,
+    required MonsterType type,
+    required bool isComingSoon,
+  }) = _MonsterCardModel;
 }

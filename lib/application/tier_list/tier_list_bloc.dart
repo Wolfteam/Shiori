@@ -20,7 +20,7 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
   final DataService _dataService;
   final TelemetryService _telemetryService;
   final LoggingService _loggingService;
-  final List<int> defaultColors = [
+  static final List<int> defaultColors = [
     0xfff44336,
     0xfff56c62,
     0xffff7d06,
@@ -142,6 +142,9 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
   }
 
   Future<TierListState> _addCharacterToRow(int index, ItemCommon item) async {
+    if (!currentState.charsAvailable.any((el) => el.key == item.key)) {
+      return currentState;
+    }
     final row = currentState.rows.elementAt(index);
     final updated = row.copyWith.call(items: [...row.items, item]);
     final updatedChars = _updateAvailableChars(currentState.charsAvailable, [item]);

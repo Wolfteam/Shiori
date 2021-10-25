@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/enums/enums.dart';
@@ -8,12 +7,13 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
-import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
-import 'data_service_test.mocks.dart';
+import '../common.dart';
+import '../mocks.mocks.dart';
 
-@GenerateMocks([SettingsService])
+const _dbFolder = 'shiori_data_service_tests';
+
 void main() {
   late final DataService _dataService;
   late final CalculatorService _calculatorService;
@@ -21,22 +21,24 @@ void main() {
 
   setUp(() {
     TestWidgetsFlutterBinding.ensureInitialized();
-    return Future(() async {
-      final settings = MockSettingsService();
-      when(settings.language).thenReturn(AppLanguageType.english);
-      final localeService = LocaleServiceImpl(settings);
+    final settings = MockSettingsService();
+    when(settings.language).thenReturn(AppLanguageType.english);
+    final localeService = LocaleServiceImpl(settings);
 
-      _genshinService = GenshinServiceImpl(localeService);
+    _genshinService = GenshinServiceImpl(localeService);
+    _calculatorService = CalculatorServiceImpl(_genshinService);
+    _dataService = DataServiceImpl(_genshinService, _calculatorService);
+
+    return Future(() async {
       await _genshinService.init(AppLanguageType.english);
-      _calculatorService = CalculatorServiceImpl(_genshinService);
-      _dataService = DataServiceImpl(_genshinService, _calculatorService);
-      await _dataService.init(dir: 'shiori_data_tests');
+      await _dataService.init(dir: _dbFolder);
     });
   });
 
   tearDown(() {
     return Future(() async {
-      await _dataService.deleteThemAll();
+      await _dataService.closeThemAll();
+      await deleteDbFolder(_dbFolder);
     });
   });
 

@@ -14,25 +14,23 @@ class TodayMaterialsBloc extends Bloc<TodayMaterialsEvent, TodayMaterialsState> 
   final GenshinService _genshinService;
   final TelemetryService _telemetryService;
 
+  static final days = [
+    DateTime.monday,
+    DateTime.tuesday,
+    DateTime.wednesday,
+    DateTime.thursday,
+    DateTime.friday,
+    DateTime.saturday,
+    DateTime.sunday,
+  ];
+
   TodayMaterialsBloc(this._genshinService, this._telemetryService) : super(const TodayMaterialsState.loading());
 
   @override
-  Stream<TodayMaterialsState> mapEventToState(
-    TodayMaterialsEvent event,
-  ) async* {
+  Stream<TodayMaterialsState> mapEventToState(TodayMaterialsEvent event) async* {
     await _telemetryService.trackAscensionMaterialsOpened();
     final s = event.when(
       init: () {
-        final days = [
-          DateTime.monday,
-          DateTime.tuesday,
-          DateTime.wednesday,
-          DateTime.thursday,
-          DateTime.friday,
-          DateTime.saturday,
-          DateTime.sunday,
-        ];
-
         final charMaterials = <TodayCharAscensionMaterialsModel>[];
         final weaponMaterials = <TodayWeaponAscensionMaterialModel>[];
 //TODO: YOU MAY WANT TO SHOW THE BOSS ITEMS AS WELL
