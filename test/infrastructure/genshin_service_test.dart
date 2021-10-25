@@ -499,7 +499,9 @@ void main() {
           final translation = service.getCharacterTranslation(character.key);
           checkKey(translation.key);
           checkTranslation(translation.name, canBeNull: false);
-          checkTranslation(translation.description, canBeNull: false);
+          if (!detail.isComingSoon) {
+            checkTranslation(translation.description, canBeNull: false);
+          }
 
           expect(translation.skills, isNotEmpty);
           expect(translation.skills.length, equals(detail.skills.length));
