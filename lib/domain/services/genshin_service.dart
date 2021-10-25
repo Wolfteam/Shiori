@@ -68,6 +68,7 @@ abstract class GenshinService {
 
   MonsterFileModel getMonster(String key);
   List<MonsterCardModel> getAllMonstersForCard();
+  MonsterCardModel getMonsterForCard(String key);
   List<MonsterFileModel> getMonsters(MonsterType type);
 
   String getItemImageFromNotificationType(String itemKey, AppNotificationType notificationType, {AppNotificationItemType? notificationItemType});
@@ -82,4 +83,5 @@ abstract class GenshinService {
   DateTime getNextDateForWeeklyBoss(AppServerResetTimeType type);
 
   List<ArtifactCardBonusModel> getArtifactBonus(TranslationArtifactFile translation);
+  List<String> getArtifactRelatedParts(String fullImagePath, String image, int bonus);
 }

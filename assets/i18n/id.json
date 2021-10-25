@@ -6454,739 +6454,1408 @@
       "key": "akuoumaru",
       "name": "Akuoumaru",
       "description": "Pedang kesayangan \"Akuou\" yang legendaris. Pedang ini sangat besar dan agung, tapi ternyata cukup mudah digunakan.",
-      "refinement": "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {0},12% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {1}%."
+      "refinements": [
+        "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},12% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}40{/color}%.",
+        "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},15% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}50{/color}%.",
+        "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},18% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}60{/color}%.",
+        "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},21% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}70{/color}%.",
+        "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},24% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}80{/color}%."
+      ]
     },
     {
       "key": "alley-hunter",
       "name": "Alley Hunter",
       "description": "Busur panjang yang indah, dulunya digunakan oleh seorang pencuri ulung yang tidak pernah tertangkap.",
-      "refinement": "Saat Karakter yang menggunakan senjata ini ada dalam party tapi tidak berada di medan pertempuran, DMG Karakter tersebut akan meningkat {0}% setiap detik, hingga maksimal {1}%. Saat Karakter tersebut memasuki medan pertempuran selama lebih dari 4 detik, peningkatan DMG akan berkurang {2}% setiap detik, sampai kembali ke 0%."
+      "refinements": [
+        "Saat Karakter yang menggunakan senjata ini ada dalam party tapi tidak berada di medan pertempuran, DMG Karakter tersebut akan meningkat {color}2{/color}% setiap detik, hingga maksimal {color}20{/color}%. Saat Karakter tersebut memasuki medan pertempuran selama lebih dari 4 detik, peningkatan DMG akan berkurang {color}4{/color}% setiap detik, sampai kembali ke 0%.",
+        "Saat Karakter yang menggunakan senjata ini ada dalam party tapi tidak berada di medan pertempuran, DMG Karakter tersebut akan meningkat {color}2{/color},5% setiap detik, hingga maksimal {color}25{/color}%. Saat Karakter tersebut memasuki medan pertempuran selama lebih dari 4 detik, peningkatan DMG akan berkurang {color}5{/color}% setiap detik, sampai kembali ke 0%.",
+        "Saat Karakter yang menggunakan senjata ini ada dalam party tapi tidak berada di medan pertempuran, DMG Karakter tersebut akan meningkat {color}3{/color}% setiap detik, hingga maksimal {color}30{/color}%. Saat Karakter tersebut memasuki medan pertempuran selama lebih dari 4 detik, peningkatan DMG akan berkurang {color}6{/color}% setiap detik, sampai kembali ke 0%.",
+        "Saat Karakter yang menggunakan senjata ini ada dalam party tapi tidak berada di medan pertempuran, DMG Karakter tersebut akan meningkat {color}3{/color},5% setiap detik, hingga maksimal {color}35{/color}%. Saat Karakter tersebut memasuki medan pertempuran selama lebih dari 4 detik, peningkatan DMG akan berkurang {color}7{/color}% setiap detik, sampai kembali ke 0%.",
+        "Saat Karakter yang menggunakan senjata ini ada dalam party tapi tidak berada di medan pertempuran, DMG Karakter tersebut akan meningkat {color}4{/color}% setiap detik, hingga maksimal {color}40{/color}%. Saat Karakter tersebut memasuki medan pertempuran selama lebih dari 4 detik, peningkatan DMG akan berkurang {color}8{/color}% setiap detik, sampai kembali ke 0%."
+      ]
     },
     {
       "key": "amenoma-kageuchi",
       "name": "Amenoma Kageuchi",
       "description": "Pedang yang konon dibuat sesuai permintaan samurai terkenal yang bahkan sanggup memotong prajurit tengu. Pedang ini termasyhur karena kecepatannya, menebas tajam dari udara.",
-      "refinement": "Setelah melancarkan Elemental Skill, akan mendapatkan 1 Succession Seed. Efek dapat terpicu setiap 5 detik. Succession Seed bertahan selama 30 detik. Bisa terdapat sampai 3 Succession Seed dalam waktu bersamaan. Setelah menggunakan Elemental Burst, semua Succession Seed akan terkonsumsi dan setelah 2 detik, Karakter akan mendapatkan pemulihan {0} Energy untuk setiap seed yang terkonsumsi."
+      "refinements": [
+        "Setelah melancarkan Elemental Skill, akan mendapatkan 1 Succession Seed. Efek dapat terpicu setiap 5 detik. Succession Seed bertahan selama 30 detik. Bisa terdapat sampai 3 Succession Seed dalam waktu bersamaan. Setelah menggunakan Elemental Burst, semua Succession Seed akan terkonsumsi dan setelah 2 detik, Karakter akan mendapatkan pemulihan {color}6{/color} Energy untuk setiap seed yang terkonsumsi.",
+        "Setelah melancarkan Elemental Skill, akan mendapatkan 1 Succession Seed. Efek dapat terpicu setiap 5 detik. Succession Seed bertahan selama 30 detik. Bisa terdapat sampai 3 Succession Seed dalam waktu bersamaan. Setelah menggunakan Elemental Burst, semua Succession Seed akan terkonsumsi dan setelah 2 detik, Karakter akan mendapatkan pemulihan {color}7{/color},5 Energy untuk setiap seed yang terkonsumsi.",
+        "Setelah melancarkan Elemental Skill, akan mendapatkan 1 Succession Seed. Efek dapat terpicu setiap 5 detik. Succession Seed bertahan selama 30 detik. Bisa terdapat sampai 3 Succession Seed dalam waktu bersamaan. Setelah menggunakan Elemental Burst, semua Succession Seed akan terkonsumsi dan setelah 2 detik, Karakter akan mendapatkan pemulihan {color}9{/color} Energy untuk setiap seed yang terkonsumsi.",
+        "Setelah melancarkan Elemental Skill, akan mendapatkan 1 Succession Seed. Efek dapat terpicu setiap 5 detik. Succession Seed bertahan selama 30 detik. Bisa terdapat sampai 3 Succession Seed dalam waktu bersamaan. Setelah menggunakan Elemental Burst, semua Succession Seed akan terkonsumsi dan setelah 2 detik, Karakter akan mendapatkan pemulihan {color}10{/color},5 Energy untuk setiap seed yang terkonsumsi.",
+        "Setelah melancarkan Elemental Skill, akan mendapatkan 1 Succession Seed. Efek dapat terpicu setiap 5 detik. Succession Seed bertahan selama 30 detik. Bisa terdapat sampai 3 Succession Seed dalam waktu bersamaan. Setelah menggunakan Elemental Burst, semua Succession Seed akan terkonsumsi dan setelah 2 detik, Karakter akan mendapatkan pemulihan {color}12{/color} Energy untuk setiap seed yang terkonsumsi."
+      ]
     },
     {
       "key": "amos-bow",
       "name": "Amos' Bow",
       "description": "Busur kuno yang masih menyimpan kekuatan walaupun pemiliknya telah lama hilang. Menarik kekuatan dari semua orang dan segala yang ada di dunia, dan semakin jauh seseorang dari keinginan hatinya, semakin kuat pula busur tersebut.",
-      "refinement": "Meningkatkan DMG dari Normal dan Charged Attack sebesar {0}%. DMG Normal dan Charged Attack meningkat sebesar {1}% setiap 0,1 detik sampai 5 kali."
+      "refinements": [
+        "Meningkatkan DMG dari Normal dan Charged Attack sebesar {color}12{/color}%. DMG Normal dan Charged Attack meningkat sebesar {color}8{/color}% setiap 0,1 detik sampai 5 kali.",
+        "Meningkatkan DMG dari Normal dan Charged Attack sebesar {color}15{/color}%. DMG Normal dan Charged Attack meningkat sebesar {color}10{/color}% setiap 0,1 detik sampai 5 kali.",
+        "Meningkatkan DMG dari Normal dan Charged Attack sebesar {color}18{/color}%. DMG Normal dan Charged Attack meningkat sebesar {color}12{/color}% setiap 0,1 detik sampai 5 kali.",
+        "Meningkatkan DMG dari Normal dan Charged Attack sebesar {color}21{/color}%. DMG Normal dan Charged Attack meningkat sebesar {color}14{/color}% setiap 0,1 detik sampai 5 kali.",
+        "Meningkatkan DMG dari Normal dan Charged Attack sebesar {color}24{/color}%. DMG Normal dan Charged Attack meningkat sebesar {color}16{/color}% setiap 0,1 detik sampai 5 kali."
+      ]
     },
     {
       "key": "apprentices-notes",
       "name": "Apprentice's Notes",
       "description": "Catatan milik salah satu murid terbaik, di dalamnya terdapat berbagai sihir yang sangat berguna, dan tulisan tangannya sangat indah.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "aquila-favonia",
       "name": "Aquila Favonia",
       "description": "Lambang jiwa dan raga dari Knights of Favonius. Ribuan tahun berlalu pun, pedang ini masih akan menghembuskan angin keadilan, dan membasmi kejahatan, seperti pahlawan wanita yang terakhir menggenggamnya.",
-      "refinement": "Saat menerima DMG dapat memicu peningkatan ATK sebesar {0}%. Jiwa dari Falcon of the West bangkit dan membangkitkan bendera pertahanan. Memulihkan HP {1}% dari ATK dan mengakibatkan {2}% DMG pada musuh di sekitarnya. Dapat terpicu setiap 15 detik."
+      "refinements": [
+        "Saat menerima DMG dapat memicu peningkatan ATK sebesar {color}20{/color}%. Jiwa dari Falcon of the West bangkit dan membangkitkan bendera pertahanan. Memulihkan HP {color}100{/color}% dari ATK dan mengakibatkan {color}200{/color}% DMG pada musuh di sekitarnya. Dapat terpicu setiap 15 detik.",
+        "Saat menerima DMG dapat memicu peningkatan ATK sebesar {color}25{/color}%. Jiwa dari Falcon of the West bangkit dan membangkitkan bendera pertahanan. Memulihkan HP {color}115{/color}% dari ATK dan mengakibatkan {color}230{/color}% DMG pada musuh di sekitarnya. Dapat terpicu setiap 15 detik.",
+        "Saat menerima DMG dapat memicu peningkatan ATK sebesar {color}30{/color}%. Jiwa dari Falcon of the West bangkit dan membangkitkan bendera pertahanan. Memulihkan HP {color}130{/color}% dari ATK dan mengakibatkan {color}260{/color}% DMG pada musuh di sekitarnya. Dapat terpicu setiap 15 detik.",
+        "Saat menerima DMG dapat memicu peningkatan ATK sebesar {color}35{/color}%. Jiwa dari Falcon of the West bangkit dan membangkitkan bendera pertahanan. Memulihkan HP {color}145{/color}% dari ATK dan mengakibatkan {color}290{/color}% DMG pada musuh di sekitarnya. Dapat terpicu setiap 15 detik.",
+        "Saat menerima DMG dapat memicu peningkatan ATK sebesar {color}40{/color}%. Jiwa dari Falcon of the West bangkit dan membangkitkan bendera pertahanan. Memulihkan HP {color}160{/color}% dari ATK dan mengakibatkan {color}320{/color}% DMG pada musuh di sekitarnya. Dapat terpicu setiap 15 detik."
+      ]
     },
     {
       "key": "beginners-protector",
       "name": "Beginner's Protector",
       "description": "Sebuah polearm yang sangat lurus seperti sebuah tiang bendera. Cocok digunakan di berbagai situasi.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "black-tassel",
       "name": "Black Tassel",
       "description": "Warnanya yang hitam memberikan solusi pada White Tassel yang mudah kotor.",
-      "refinement": "Meningkatkan {0}% DMG terhadap Slime."
+      "refinements": [
+        "Meningkatkan {color}40{/color}% DMG terhadap Slime.",
+        "Meningkatkan {color}50{/color}% DMG terhadap Slime.",
+        "Meningkatkan {color}60{/color}% DMG terhadap Slime.",
+        "Meningkatkan {color}70{/color}% DMG terhadap Slime.",
+        "Meningkatkan {color}80{/color}% DMG terhadap Slime."
+      ]
     },
     {
       "key": "blackcliff-agate",
       "name": "Blackcliff Amulet",
       "description": "Catalyst misterius yang terbuat dari material Blackstone. Memiliki cahaya merah tua yang berpendar bagaikan getaran inti bumi.",
-      "refinement": "Setelah mengalahkan musuh, meningkatkan {0}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
+      "refinements": [
+        "Setelah mengalahkan musuh, meningkatkan {color}12{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}15{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}18{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}21{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}24{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
+      ]
     },
     {
       "key": "blackcliff-longsword",
       "name": "Blackcliff Longsword",
       "description": "Sebuah pedang yang dibuat dari blackstone. Mempunyai cahaya merah tua pada bilahnya.",
-      "refinement": "Setelah mengalahkan musuh, meningkatkan {0}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
+      "refinements": [
+        "Setelah mengalahkan musuh, meningkatkan {color}12{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}15{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}18{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}21{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}24{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
+      ]
     },
     {
       "key": "blackcliff-pole",
       "name": "Blackcliff Pole",
       "description": "Senjata yang terbuat dari blackstone dan aerosiderite. Bercahaya merah tua pada bilah hitamnya.",
-      "refinement": "Setelah mengalahkan musuh, meningkatkan {0}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
+      "refinements": [
+        "Setelah mengalahkan musuh, meningkatkan {color}12{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}15{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}18{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}21{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}24{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
+      ]
     },
     {
       "key": "blackcliff-slasher",
       "name": "Blackcliff Slasher",
       "description": "Pedang yang sangat kokoh dan kuat dari Blackcliff Forge. Berwarna merah gelap di sepanjang bilahnya.",
-      "refinement": "Setelah mengalahkan musuh, meningkatkan {0}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
+      "refinements": [
+        "Setelah mengalahkan musuh, meningkatkan {color}12{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}15{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}18{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}21{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}24{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
+      ]
     },
     {
       "key": "blackcliff-warbow",
       "name": "Blackcliff Warbow",
       "description": "Sebuah busur yang dibuat dari blackstone, sangat kokoh. Membutuhkan seorang pemanah dengan lengan yang kuat untuk menggunakannya.",
-      "refinement": "Setelah mengalahkan musuh, meningkatkan {0}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
+      "refinements": [
+        "Setelah mengalahkan musuh, meningkatkan {color}12{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}15{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}18{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}21{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain.",
+        "Setelah mengalahkan musuh, meningkatkan {color}24{/color}% ATK selama 30 detik. Maksimum 3 lapis, dan durasi setiap lapis tidak terpengaruh satu sama lain."
+      ]
     },
     {
       "key": "bloodtainted-greatsword",
       "name": "Bloodtainted Greatsword",
       "description": "Pedang baja yang konon pernah dimandikan dengan darah naga oleh pahlawan dari Utara, membuatnya tidak dapat dihancurkan. Sayangnya efek perlindungan ini nampaknya tidak tersalurkan pada penggunanya.",
-      "refinement": "Meningkatkan {0}% DMG terhadap musuh yang terpengaruh Pyro atau Electro."
+      "refinements": [
+        "Meningkatkan {color}12{/color}% DMG terhadap musuh yang terpengaruh Pyro atau Electro.",
+        "Meningkatkan {color}15{/color}% DMG terhadap musuh yang terpengaruh Pyro atau Electro.",
+        "Meningkatkan {color}18{/color}% DMG terhadap musuh yang terpengaruh Pyro atau Electro.",
+        "Meningkatkan {color}21{/color}% DMG terhadap musuh yang terpengaruh Pyro atau Electro.",
+        "Meningkatkan {color}24{/color}% DMG terhadap musuh yang terpengaruh Pyro atau Electro."
+      ]
     },
     {
       "key": "compound-bow",
       "name": "Compound Bow",
       "description": "Busur indah yang terbuat dari logam. Sangat sulit untuk dirawat, tetapi sangat mudah untuk digunakan dan memiliki kekuatan yang mengejutkan.",
-      "refinement": "Saat Normal Attack dan Charged Attack mengenai musuh maka akan meningkatkan ATK sebesar {0}% dan Normal ATK SPD sebesar {1},2% selama 6 detik. Maks. 4 lapis. Dapat terpicu setiap 0,3 detik."
+      "refinements": [
+        "Saat Normal Attack dan Charged Attack mengenai musuh maka akan meningkatkan ATK sebesar {color}4{/color}% dan Normal ATK SPD sebesar {color}1{/color},2% selama 6 detik. Maks. 4 lapis. Dapat terpicu setiap 0,3 detik.",
+        "Saat Normal Attack dan Charged Attack mengenai musuh maka akan meningkatkan ATK sebesar {color}5{/color}% dan Normal ATK SPD sebesar {color}1{/color},5% selama 6 detik. Maks. 4 lapis. Dapat terpicu setiap 0,3 detik.",
+        "Saat Normal Attack dan Charged Attack mengenai musuh maka akan meningkatkan ATK sebesar {color}6{/color}% dan Normal ATK SPD sebesar {color}1{/color},8% selama 6 detik. Maks. 4 lapis. Dapat terpicu setiap 0,3 detik.",
+        "Saat Normal Attack dan Charged Attack mengenai musuh maka akan meningkatkan ATK sebesar {color}7{/color}% dan Normal ATK SPD sebesar {color}2{/color},1% selama 6 detik. Maks. 4 lapis. Dapat terpicu setiap 0,3 detik.",
+        "Saat Normal Attack dan Charged Attack mengenai musuh maka akan meningkatkan ATK sebesar {color}8{/color}% dan Normal ATK SPD sebesar {color}2{/color},4% selama 6 detik. Maks. 4 lapis. Dapat terpicu setiap 0,3 detik."
+      ]
     },
     {
       "key": "cool-steel",
       "name": "Cool Steel",
       "description": "Senjata yang dibentuk dari banyak lapisan baja, juga menjadi tanda akan petualangan-petualangan besar pemiliknya.",
-      "refinement": "Meningkatkan {0}% DMG terhadap musuh yang terkena elemen Hydro atau Cryo."
+      "refinements": [
+        "Meningkatkan {color}12{/color}% DMG terhadap musuh yang terkena elemen Hydro atau Cryo.",
+        "Meningkatkan {color}15{/color}% DMG terhadap musuh yang terkena elemen Hydro atau Cryo.",
+        "Meningkatkan {color}18{/color}% DMG terhadap musuh yang terkena elemen Hydro atau Cryo.",
+        "Meningkatkan {color}21{/color}% DMG terhadap musuh yang terkena elemen Hydro atau Cryo.",
+        "Meningkatkan {color}24{/color}% DMG terhadap musuh yang terkena elemen Hydro atau Cryo."
+      ]
     },
     {
       "key": "crescent-pike",
       "name": "Crescent Pike",
       "description": "Senjata indah dengan mata pedang yang sangat panjang di bagian atas, dan sabit di bagian bawah. Mencapai di Liyue setelah melalui tangan beberapa tangan pedagang. Dengan latihan, ini bisa menjadi senjata mematikan.",
-      "refinement": "Setelah mengambil Elemental Orb atau Particle, Normal dan Charged Attack mendapatkan {0}% DMG tambahan selama 5 detik."
+      "refinements": [
+        "Setelah mengambil Elemental Orb atau Particle, Normal dan Charged Attack mendapatkan {color}20{/color}% DMG tambahan selama 5 detik.",
+        "Setelah mengambil Elemental Orb atau Particle, Normal dan Charged Attack mendapatkan {color}25{/color}% DMG tambahan selama 5 detik.",
+        "Setelah mengambil Elemental Orb atau Particle, Normal dan Charged Attack mendapatkan {color}30{/color}% DMG tambahan selama 5 detik.",
+        "Setelah mengambil Elemental Orb atau Particle, Normal dan Charged Attack mendapatkan {color}35{/color}% DMG tambahan selama 5 detik.",
+        "Setelah mengambil Elemental Orb atau Particle, Normal dan Charged Attack mendapatkan {color}40{/color}% DMG tambahan selama 5 detik."
+      ]
     },
     {
       "key": "dark-iron-sword",
       "name": "Dark Iron Sword",
       "description": "Sebenarnya, hanya sebilah pedang yang sedikit lebih gelap dari Iron Sword.",
-      "refinement": "Saat Overloaded, Superconduct, Electro-Charged, atau reaksi Swirl dengan elemen Electro terpicu, meningkatkan ATK sebesar {0}% selama 12 detik."
+      "refinements": [
+        "Saat Overloaded, Superconduct, Electro-Charged, atau reaksi Swirl dengan elemen Electro terpicu, meningkatkan ATK sebesar {color}20{/color}% selama 12 detik.",
+        "Saat Overloaded, Superconduct, Electro-Charged, atau reaksi Swirl dengan elemen Electro terpicu, meningkatkan ATK sebesar {color}25{/color}% selama 12 detik.",
+        "Saat Overloaded, Superconduct, Electro-Charged, atau reaksi Swirl dengan elemen Electro terpicu, meningkatkan ATK sebesar {color}30{/color}% selama 12 detik.",
+        "Saat Overloaded, Superconduct, Electro-Charged, atau reaksi Swirl dengan elemen Electro terpicu, meningkatkan ATK sebesar {color}35{/color}% selama 12 detik.",
+        "Saat Overloaded, Superconduct, Electro-Charged, atau reaksi Swirl dengan elemen Electro terpicu, meningkatkan ATK sebesar {color}40{/color}% selama 12 detik."
+      ]
     },
     {
       "key": "deathmatch",
       "name": "Deathmatch",
       "description": "Tombak tajam berwarna merah darah yang sangat berharga bagi seorang gladiator di masa lalu. Ujungnya diwarnai dengan darah binatang buas dan manusia yang tak terhitung jumlahnya.",
-      "refinement": "Meningkatkan {0}% ATK dan DEF ketika terdapat 2 musuh atau lebih di sekitar karakter; Jika jumlah musuh di sekitar karakter kurang dari 2, meningkatkan {1}% ATK."
+      "refinements": [
+        "Meningkatkan {color}16{/color}% ATK dan DEF ketika terdapat 2 musuh atau lebih di sekitar karakter; Jika jumlah musuh di sekitar karakter kurang dari 2, meningkatkan {color}24{/color}% ATK.",
+        "Meningkatkan {color}20{/color}% ATK dan DEF ketika terdapat 2 musuh atau lebih di sekitar karakter; Jika jumlah musuh di sekitar karakter kurang dari 2, meningkatkan {color}30{/color}% ATK.",
+        "Meningkatkan {color}24{/color}% ATK dan DEF ketika terdapat 2 musuh atau lebih di sekitar karakter; Jika jumlah musuh di sekitar karakter kurang dari 2, meningkatkan {color}36{/color}% ATK.",
+        "Meningkatkan {color}28{/color}% ATK dan DEF ketika terdapat 2 musuh atau lebih di sekitar karakter; Jika jumlah musuh di sekitar karakter kurang dari 2, meningkatkan {color}42{/color}% ATK.",
+        "Meningkatkan {color}32{/color}% ATK dan DEF ketika terdapat 2 musuh atau lebih di sekitar karakter; Jika jumlah musuh di sekitar karakter kurang dari 2, meningkatkan {color}48{/color}% ATK."
+      ]
     },
     {
       "key": "debate-club",
       "name": "Debate Club",
       "description": "Tongkat praktis yang terbuat dari baja berkualitas. Ini adalah perlengkapan dasar yang diperlukan untuk memiliki debat yang rasional.",
-      "refinement": "Setelah mengerahkan Elemental Skill, Normal, atau Charged Attack, serangan mengakibatkan DMG tambahan sebesar {0}% ATK di area kecil, efek bertahan selama 15 detik. Dapat terpicu setiap 3 detik."
+      "refinements": [
+        "Setelah mengerahkan Elemental Skill, Normal, atau Charged Attack, serangan mengakibatkan DMG tambahan sebesar {color}60{/color}% ATK di area kecil, efek bertahan selama 15 detik. Dapat terpicu setiap 3 detik.",
+        "Setelah mengerahkan Elemental Skill, Normal, atau Charged Attack, serangan mengakibatkan DMG tambahan sebesar {color}75{/color}% ATK di area kecil, efek bertahan selama 15 detik. Dapat terpicu setiap 3 detik.",
+        "Setelah mengerahkan Elemental Skill, Normal, atau Charged Attack, serangan mengakibatkan DMG tambahan sebesar {color}90{/color}% ATK di area kecil, efek bertahan selama 15 detik. Dapat terpicu setiap 3 detik.",
+        "Setelah mengerahkan Elemental Skill, Normal, atau Charged Attack, serangan mengakibatkan DMG tambahan sebesar {color}105{/color}% ATK di area kecil, efek bertahan selama 15 detik. Dapat terpicu setiap 3 detik.",
+        "Setelah mengerahkan Elemental Skill, Normal, atau Charged Attack, serangan mengakibatkan DMG tambahan sebesar {color}120{/color}% ATK di area kecil, efek bertahan selama 15 detik. Dapat terpicu setiap 3 detik."
+      ]
     },
     {
       "key": "dodoco-tales",
       "name": "Dodoco Tales",
       "description": "Buku anak-anak yang penuh dengan cerita pendek anak-anak yang bisa membuat pembacanya tertawa.\r\nMereka yang sudah dewasa sekali pun akan terpukau dengan kepolosan, kesucian petualangan kecil yang tergambarkan di dalamnya.",
-      "refinement": "Saat Normal Attack mengenai musuh, meningkatkan {0}% DMG Charged Attack selama 6 detik; Saat Charged Attack mengenai musuh, meningkatkan {1}% ATK selama 6 detik."
+      "refinements": [
+        "Saat Normal Attack mengenai musuh, meningkatkan {color}16{/color}% DMG Charged Attack selama 6 detik; Saat Charged Attack mengenai musuh, meningkatkan {color}8{/color}% ATK selama 6 detik.",
+        "Saat Normal Attack mengenai musuh, meningkatkan {color}20{/color}% DMG Charged Attack selama 6 detik; Saat Charged Attack mengenai musuh, meningkatkan {color}10{/color}% ATK selama 6 detik.",
+        "Saat Normal Attack mengenai musuh, meningkatkan {color}24{/color}% DMG Charged Attack selama 6 detik; Saat Charged Attack mengenai musuh, meningkatkan {color}12{/color}% ATK selama 6 detik.",
+        "Saat Normal Attack mengenai musuh, meningkatkan {color}28{/color}% DMG Charged Attack selama 6 detik; Saat Charged Attack mengenai musuh, meningkatkan {color}14{/color}% ATK selama 6 detik.",
+        "Saat Normal Attack mengenai musuh, meningkatkan {color}32{/color}% DMG Charged Attack selama 6 detik; Saat Charged Attack mengenai musuh, meningkatkan {color}16{/color}% ATK selama 6 detik."
+      ]
     },
     {
       "key": "dragons-bane",
       "name": "Dragon's Bane",
       "description": "Tombak dengan ukiran naga emas yang membelit menjadi satu. Ringan dan tajam, mungkin senjata ini sungguh dapat membunuh naga.",
-      "refinement": "Meningkatkan {0}% DMG terhadap musuh yang terkena elemen Hydro atau Pyro."
+      "refinements": [
+        "Meningkatkan {color}20{/color}% DMG terhadap musuh yang terkena elemen Hydro atau Pyro.",
+        "Meningkatkan {color}24{/color}% DMG terhadap musuh yang terpengaruh Hydro atau Pyro.",
+        "Meningkatkan {color}28{/color}% DMG terhadap musuh yang terkena elemen Hydro atau Pyro.",
+        "Meningkatkan {color}32{/color}% DMG terhadap musuh yang terkena elemen Hydro atau Pyro.",
+        "Meningkatkan {color}36{/color}% DMG terhadap musuh yang terkena elemen Hydro atau Pyro."
+      ]
     },
     {
       "key": "dragonspine-spear",
       "name": "Dragonspine Spear",
       "description": "Sebuah tombak yang dibuat dari gigi naga. Anehnya, tombak ini terasa hangat saat disentuh.",
-      "refinement": "Saat Normal atau Charged Attack mengenai musuh, memiliki {0}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {1}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {2}% ATK. Efek ini dapat terpicu setiap 10 detik."
+      "refinements": [
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}60{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}80{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}200{/color}% ATK. Efek ini dapat terpicu setiap 10 detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}70{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}95{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}240{/color}% ATK. Efek ini dapat terpicu setiap 10 detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}80{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}110{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}280{/color}% ATK. Efek ini dapat terpicu setiap 10 detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}90{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}125{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}320{/color}% ATK. Efek ini dapat terpicu setiap 10 detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}100{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}140{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}360{/color}% ATK. Efek ini dapat terpicu setiap 10 detik."
+      ]
     },
     {
       "key": "dull-blade",
       "name": "Dull Blade",
       "description": "Mimpi masa muda dan semangat petualang, kalau dua hal itu tidak cukup tajam, tambahkanlah keberanian!",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "elegy-for-the-end",
       "name": "Elegy for the End",
       "description": "Sebuah busur seanggun alat musik penyair, panah yang ditembakkan menghasilkan suara merdu yang mampu menembus hati seseorang.",
-      "refinement": "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan {0} Elemental Mastery, dan saat Elemental Skill atau Elemental Burst dari pengguna senjata ini mengenai musuh, Karakter akan mendapatkan Sigil of Remembrance. Efek ini dapat terpicu setiap 0,2 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di medan bertarung. Saat kamu mempunyai 4 Sigil of Remembrance, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Farewell Song\" selama 12 detik. \"Millennial Movement: Farewell Song\" meningkatkan {1} Elemental Mastery dan {2}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Remembrance selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk."
+      "refinements": [
+        "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan {color}60{/color} Elemental Mastery, dan saat Elemental Skill atau Elemental Burst dari pengguna senjata ini mengenai musuh, Karakter akan mendapatkan Sigil of Remembrance. Efek ini dapat terpicu setiap 0,2 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di medan bertarung. Saat kamu mempunyai 4 Sigil of Remembrance, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Farewell Song\" selama 12 detik. \"Millennial Movement: Farewell Song\" meningkatkan {color}100{/color} Elemental Mastery dan {color}20{/color}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Remembrance selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk.",
+        "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan {color}75{/color} Elemental Mastery, dan saat Elemental Skill atau Elemental Burst mengenai musuh, Karakter akan mendapatkan Sigil of Remembrance. Efek ini dapat terpicu setiap 0,2 detik dan dapat terpicu walaupun Karakter tersebut tidak berada di medan bertarung. Saat kamu mempunyai 4 Sigil of Remembrance, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Farewell Song\" selama 12 detik. \"Millennial Movement: Farewell Song\" meningkatkan {color}125{/color} Elemental Mastery dan {color}25{/color}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Remembrance selama 20 detik. Dari sekian banyak efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk.",
+        "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan {color}90{/color} Elemental Mastery, dan saat Elemental Skill atau Elemental Burst mengenai musuh, Karakter akan mendapatkan Sigil of Remembrance. Efek ini dapat terpicu setiap 0,2 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di medan bertarung. Saat kamu mempunyai 4 Sigil of Remembrance, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Farewell Song\" selama 12 detik. \"Millennial Movement: Farewell Song\" meningkatkan {color}150{/color} Elemental Mastery dan {color}30{/color}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Remembrance selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk.",
+        "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan {color}105{/color} Elemental Mastery, dan saat Elemental Skill atau Elemental Burst mengenai musuh, Karakter akan mendapatkan Sigil of Remembrance. Efek ini dapat terpicu setiap 0,2 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di medan bertarung. Saat kamu mempunyai 4 Sigil of Remembrance, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Farewell Song\" selama 12 detik. \"Millennial Movement: Farewell Song\" meningkatkan {color}175{/color} Elemental Mastery dan {color}35{/color}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Remembrance selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk.",
+        "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan {color}120{/color} Elemental Mastery, dan saat Elemental Skill atau Elemental Burst mengenai musuh, Karakter akan mendapatkan Sigil of Remembrance. Efek ini dapat terpicu setiap 0,2 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di medan bertarung. Saat kamu mempunyai 4 Sigil of Remembrance, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Farewell Song\" selama 12 detik. \"Millennial Movement: Farewell Song\" meningkatkan {color}200{/color} Elemental Mastery dan {color}40{/color}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Remembrance selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk."
+      ]
     },
     {
       "key": "emerald-orb",
       "name": "Emerald Orb",
       "description": "Sebuah Catalyst yang dibentuk dari giok keras yang berasal dari Jueyun Karst di Utara Liyue. Bentuknya kecil, ringan, dan memiliki ketahanan yang kuat.",
-      "refinement": "Saat memicu Vaporize, Electro-Charged, Frozen, atau reaksi Swirl berbasis Pyro, meningkatkan {0}% ATK selama 12 detik."
+      "refinements": [
+        "Saat memicu Vaporize, Electro-Charged, Frozen, atau reaksi Swirl berbasis Pyro, meningkatkan {color}20{/color}% ATK selama 12 detik.",
+        "Saat memicu Vaporize, Electro-Charged, Frozen, atau reaksi Swirl berbasis Pyro, meningkatkan {color}25{/color}% ATK selama 12 detik.",
+        "Saat memicu Vaporize, Electro-Charged, Frozen, atau reaksi Swirl berbasis Pyro, meningkatkan {color}30{/color}% ATK selama 12 detik.",
+        "Saat memicu Vaporize, Electro-Charged, Frozen, atau reaksi Swirl berbasis Pyro, meningkatkan {color}35{/color}% ATK selama 12 detik.",
+        "Saat memicu Vaporize, Electro-Charged, Frozen, atau reaksi Swirl berbasis Pyro, meningkatkan {color}40{/color}% ATK selama 12 detik."
+      ]
     },
     {
       "key": "engulfing-lightning",
       "name": "Engulfing Lightning",
       "description": "Naginata yang digunakan untuk \"memotong rumput\". Pasukan yang berani berdiri di hadapan senjata ini pasti akan tertebas seperti rumput liar...",
-      "refinement": "Mendapatkan Bonus ATK sebesar {0}% dari jumlah Energy Recharge di atas angka 100%. Maksimum bisa meningkatkan {1}% ATK dengan cara ini. Melancarkan Elemental Burst akan meningkatkan Energy Recharge sebesar {2}% selama 12 detik."
+      "refinements": [
+        "Mendapatkan Bonus ATK sebesar {color}28{/color}% dari jumlah Energy Recharge di atas angka 100%. Maksimum bisa meningkatkan {color}80{/color}% ATK dengan cara ini. Melancarkan Elemental Burst akan meningkatkan Energy Recharge sebesar {color}30{/color}% selama 12 detik.",
+        "Mendapatkan Bonus ATK sebesar {color}35{/color}% dari jumlah Energy Recharge di atas angka 100%. Maksimum bisa meningkatkan {color}90{/color}% ATK dengan cara ini. Melancarkan Elemental Burst akan meningkatkan Energy Recharge sebesar {color}35{/color}% selama 12 detik.",
+        "Mendapatkan Bonus ATK sebesar {color}42{/color}% dari jumlah Energy Recharge di atas angka 100%. Maksimum bisa meningkatkan {color}100{/color}% ATK dengan cara ini. Melancarkan Elemental Burst akan meningkatkan Energy Recharge sebesar {color}40{/color}% selama 12 detik.",
+        "Mendapatkan Bonus ATK sebesar {color}49{/color}% dari jumlah Energy Recharge di atas angka 100%. Maksimum bisa meningkatkan {color}110{/color}% ATK dengan cara ini. Melancarkan Elemental Burst akan meningkatkan Energy Recharge sebesar {color}45{/color}% selama 12 detik.",
+        "Mendapatkan Bonus ATK sebesar {color}56{/color}% dari jumlah Energy Recharge di atas angka 100%. Maksimum bisa meningkatkan {color}120{/color}% ATK dengan cara ini. Melancarkan Elemental Burst akan meningkatkan Energy Recharge sebesar {color}50{/color}% selama 12 detik."
+      ]
     },
     {
       "key": "everlasting-moonglow",
       "name": "Everlasting Moonglow",
       "description": "Serangkaian cincin giok indah yang berasal dari laut dalam. Mereka memancarkan sinar yang murni seperti rembulan, dan selalu terasa sulit untuk dijangkau.",
-      "refinement": "Meningkatkan {0}% Healing Bonus. Meningkatkan DMG Normal Attack sebesar {1}% dari Max HP Karakter yang mengenakan senjata ini. Setelah melancarkan Elemental Burst, Normal Attack yang mengenai musuh akan memulihkan 0,6 Energy. Efek pemulihan Energy ini berlangsung selama 12 detik dan dapat terpicu setiap 0,1 detik."
+      "refinements": [
+        "Meningkatkan {color}10{/color}% Healing Bonus. Meningkatkan DMG Normal Attack sebesar {color}1{/color}% dari Max HP Karakter yang mengenakan senjata ini. Setelah melancarkan Elemental Burst, Normal Attack yang mengenai musuh akan memulihkan 0,6 Energy. Efek pemulihan Energy ini berlangsung selama 12 detik dan dapat terpicu setiap 0,1 detik.",
+        "Meningkatkan {color}12.5{/color}% Healing Bonus. Meningkatkan DMG Normal Attack sebesar {color}1{/color},5% dari Max HP Karakter yang mengenakan senjata ini. Setelah melancarkan Elemental Burst, Normal Attack yang mengenai musuh akan memulihkan 0,6 Energy. Efek pemulihan Energy ini berlangsung selama 12 detik dan dapat terpicu setiap 0,1 detik.",
+        "Meningkatkan {color}15{/color}% Healing Bonus. Meningkatkan DMG Normal Attack sebesar {color}2{/color}% dari Max HP Karakter yang mengenakan senjata ini. Setelah melancarkan Elemental Burst, Normal Attack yang mengenai musuh akan memulihkan 0,6 Energy. Efek pemulihan Energy ini berlangsung selama 12 detik dan dapat terpicu setiap 0,1 detik.",
+        "Meningkatkan {color}17.5{/color}% Healing Bonus. Meningkatkan DMG Normal Attack sebesar {color}2.5{/color}% dari Max HP Karakter yang mengenakan senjata ini. Setelah melancarkan Elemental Burst, Normal Attack yang mengenai musuh akan memulihkan 0,6 Energy. Efek pemulihan Energy ini berlangsung selama 12 detik dan dapat terpicu setiap 0,1 detik.",
+        "Meningkatkan {color}20{/color}% Healing Bonus. Meningkatkan DMG Normal Attack sebesar {color}3{/color}% dari Max HP Karakter yang mengenakan senjata ini. Setelah melancarkan Elemental Burst, Normal Attack yang mengenai musuh akan memulihkan 0,6 Energy. Efek pemulihan Energy ini berlangsung selama 12 detik dan dapat terpicu setiap 0,1 detik."
+      ]
     },
     {
       "key": "eye-of-perception",
       "name": "Eye of Perception",
       "description": "Bola kristal gelap yang memiliki kekuatan legendaris untuk melihat isi hati seseorang yang sebenarnya.",
-      "refinement": "Saat melancarkan Normal atau Charged Attack, memiliki 50% persentase untuk melancarkan Bolt of Perception, mengakibatkan {0}% DMG. Bolt ini dapat terpantulkan 4 kali di antara musuh. Dapat terpicu setiap {1} detik."
+      "refinements": [
+        "Saat melancarkan Normal atau Charged Attack, memiliki 50% persentase untuk melancarkan Bolt of Perception, mengakibatkan {color}240{/color}% DMG. Bolt ini dapat terpantulkan 4 kali di antara musuh. Dapat terpicu setiap {color}12{/color} detik.",
+        "Saat melancarkan Normal atau Charged Attack, memiliki 50% persentase untuk melancarkan Bolt of Perception, mengakibatkan {color}270{/color}% DMG. Bolt ini dapat terpantulkan 4 kali di antara musuh. Dapat terpicu setiap {color}11{/color} detik.",
+        "Saat melancarkan Normal atau Charged Attack, memiliki 50% persentase untuk melancarkan Bolt of Perception, mengakibatkan {color}300{/color}% DMG. Bolt ini dapat terpantulkan 4 kali di antara musuh. Dapat terpicu setiap {color}10{/color} detik.",
+        "Saat melancarkan Normal atau Charged Attack, memiliki 50% persentase untuk melancarkan Bolt of Perception, mengakibatkan {color}330{/color}% DMG. Bolt ini dapat terpantulkan 4 kali di antara musuh. Dapat terpicu setiap {color}9{/color} detik.",
+        "Saat melancarkan Normal atau Charged Attack, memiliki 50% persentase untuk melancarkan Bolt of Perception, mengakibatkan {color}360{/color}% DMG. Bolt ini dapat terpantulkan 4 kali di antara musuh. Dapat terpicu setiap {color}8{/color} detik."
+      ]
     },
     {
       "key": "favonius-codex",
       "name": "Favonius Codex",
       "description": "Kitab rahasia milik para sarjana Knights of Favonius. Di dalamnya tercatat logika dan kekuatan akan elemen dan materi alam.",
-      "refinement": "Serangan CRIT memiliki {0}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {1} detik."
+      "refinements": [
+        "Serangan CRIT memiliki {color}60{/color}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}12{/color} detik.",
+        "Serangan CRIT memiliki {color}70{/color}% persentase untuk memunculkan sejumlah kecil Elemental Orb yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}10{/color},5 detik.",
+        "Serangan CRIT memiliki {color}80{/color}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}9{/color} detik.",
+        "Serangan CRIT memiliki {color}90{/color}% persentase untuk memunculkan sejumlah kecil Elemental Orb yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}7{/color},5 detik.",
+        "Serangan CRIT memiliki {color}100{/color}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}6{/color} detik."
+      ]
     },
     {
       "key": "favonius-greatsword",
       "name": "Favonius Greatsword",
       "description": "Pedang ritual milik Knights of Favonius. Dapat mengalirkan kekuatan elemen dengan mudah, dan memiliki daya hancur yang besar.",
-      "refinement": "Serangan CRIT memiliki {0}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {1} detik."
+      "refinements": [
+        "Serangan CRIT memiliki {color}60{/color}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}12{/color} detik.",
+        "Serangan CRIT memiliki {color}70{/color}% persentase untuk memunculkan sejumlah kecil Elemental Orb yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}10{/color},5 detik.",
+        "Serangan CRIT memiliki {color}80{/color}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}9{/color} detik.",
+        "Serangan CRIT memiliki {color}90{/color}% persentase untuk memunculkan sejumlah kecil Elemental Orb yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}7{/color},5 detik.",
+        "Serangan CRIT memiliki {color}100{/color}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}6{/color} detik."
+      ]
     },
     {
       "key": "favonius-lance",
       "name": "Favonius Lance",
       "description": "Polearm yang dibuat berdasarkan gaya dari Knights of Favonius. Gagangnya lurus dan panjang, dan mata pedangnya ringan seperti angin.",
-      "refinement": "Serangan CRIT memiliki {0}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {1} detik."
+      "refinements": [
+        "Serangan CRIT memiliki {color}60{/color}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}12{/color} detik.",
+        "Serangan CRIT memiliki {color}70{/color}% persentase untuk memunculkan sejumlah kecil Elemental Orb yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}10{/color},5 detik.",
+        "Serangan CRIT memiliki {color}80{/color}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}9{/color} detik.",
+        "Serangan CRIT memiliki {color}90{/color}% persentase untuk memunculkan sejumlah kecil Elemental Orb yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}7{/color},5 detik.",
+        "Serangan CRIT memiliki {color}100{/color}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}6{/color} detik."
+      ]
     },
     {
       "key": "favonius-sword",
       "name": "Favonius Sword",
       "description": "Pedang panjang yang digunakan oleh para anggota Knights of Favonius. Ringan dan tajam, juga dapat dialirkan kekuatan elemen dengan mudah.",
-      "refinement": "Serangan CRIT memiliki {0}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {1} detik."
+      "refinements": [
+        "Serangan CRIT memiliki {color}60{/color}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}12{/color} detik.",
+        "Serangan CRIT memiliki {color}70{/color}% persentase untuk memunculkan sejumlah kecil Elemental Orb yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}10{/color},5 detik.",
+        "Serangan CRIT memiliki {color}80{/color}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}9{/color} detik.",
+        "Serangan CRIT memiliki {color}90{/color}% persentase untuk memunculkan sejumlah kecil Elemental Orb yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}7{/color},5 detik.",
+        "Serangan CRIT memiliki {color}100{/color}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}6{/color} detik."
+      ]
     },
     {
       "key": "favonius-warbow",
       "name": "Favonius Warbow",
       "description": "Recurve Bow sederhana yang digunakan oleh Knights of Favonius. Hanya pemanah terhandal yang dapat menggunakan busur ini sampai ke potensi terbesarnya.",
-      "refinement": "Serangan CRIT memiliki {0}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {1} detik."
+      "refinements": [
+        "Serangan CRIT memiliki {color}60{/color}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}12{/color} detik.",
+        "Serangan CRIT memiliki {color}70{/color}% persentase untuk memunculkan sejumlah kecil Elemental Orb yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}10{/color},5 detik.",
+        "Serangan CRIT memiliki {color}80{/color}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}9{/color} detik.",
+        "Serangan CRIT memiliki {color}90{/color}% persentase untuk memunculkan sejumlah kecil Elemental Orb yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}7{/color},5 detik.",
+        "Serangan CRIT memiliki {color}100{/color}% persentase untuk memunculkan sejumlah kecil Elemental Particle yang bisa memulihkan energy karakter sebanyak 6 pt. Dapat terpicu setiap {color}6{/color} detik."
+      ]
     },
     {
       "key": "ferrous-shadow",
       "name": "Ferrous Shadow",
       "description": "Replika dari pedang terkenal Arundolyn, Lion of Light. Genggam dan rasakan kekuatan pahlawan legendaris! Perhatian: Terlalu banyak berkhayal dapat membawa dampak buruk!",
-      "refinement": "Saat HP kurang dari {0}%, Charged Attack menjadi lebih sulit untuk diinterupsi, dan DMG Charged Attack meningkat {1}%."
+      "refinements": [
+        "Saat HP kurang dari {color}70{/color}%, Charged Attack menjadi lebih sulit untuk diinterupsi, dan DMG Charged Attack meningkat {color}30{/color}%.",
+        "Saat HP kurang dari {color}75{/color}%, Charged Attack menjadi lebih sulit untuk diinterupsi, dan DMG Charged Attack meningkat {color}35{/color}%.",
+        "Saat HP kurang dari {color}80{/color}%, Charged Attack menjadi lebih sulit untuk diinterupsi, dan DMG Charged Attack meningkat {color}40{/color}%.",
+        "Saat HP kurang dari {color}85{/color}%, Charged Attack menjadi lebih sulit untuk diinterupsi, dan DMG Charged Attack meningkat {color}45{/color}%.",
+        "Saat HP kurang dari {color}90{/color}%, Charged Attack menjadi lebih sulit untuk diinterupsi, dan DMG Charged Attack meningkat {color}50{/color}%."
+      ]
     },
     {
       "key": "festering-desire",
       "name": "Festering Desire",
       "description": "Sebilah pedang mengerikan yang seakan-akan haus akan nyawa. Pedang ini dilapisi oleh racun mematikan yang bisa melukai seekor naga sekalipun.",
-      "refinement": "Meningkatkan DMG Elemental Skill sebanyak {0}%, dan meningkatkan CRIT Rate Elemental Skill sebanyak {1}%."
+      "refinements": [
+        "Meningkatkan DMG Elemental Skill sebanyak {color}16{/color}%, dan meningkatkan CRIT Rate Elemental Skill sebanyak {color}6{/color}%.",
+        "Meningkatkan DMG Elemental Skill sebanyak {color}20{/color}%, dan meningkatkan CRIT Rate Elemental Skill sebanyak {color}7.5{/color}%.",
+        "Meningkatkan DMG Elemental Skill sebanyak {color}24{/color}%, dan meningkatkan CRIT Rate Elemental Skill sebanyak {color}9{/color}%.",
+        "Meningkatkan DMG Elemental Skill sebanyak {color}28{/color}%, dan meningkatkan CRIT Rate Elemental Skill sebanyak {color}10.5{/color}%.",
+        "Meningkatkan DMG Elemental Skill sebanyak {color}32{/color}%, dan meningkatkan CRIT Rate Elemental Skill sebanyak {color}12{/color}%."
+      ]
     },
     {
       "key": "fillet-blade",
       "name": "Fillet Blade",
       "description": "Pedang tajam yang digunakan untuk memotong ikan, mata pedangnya panjang dan sangat tajam.",
-      "refinement": "Saat mengenai, memiliki 50% persentase untuk mengakibatkan {0}% ATK DMG ke suatu target. Dapat terpicu setiap {1} detik."
+      "refinements": [
+        "Saat mengenai, memiliki 50% persentase untuk mengakibatkan {color}240{/color}% ATK DMG ke suatu target. Dapat terpicu setiap {color}15{/color} detik.",
+        "Saat mengenai, memiliki 50% persentase untuk mengakibatkan {color}280{/color}% ATK DMG ke suatu target. Dapat terpicu setiap {color}14{/color} detik.",
+        "Saat mengenai, memiliki 50% persentase untuk mengakibatkan {color}320{/color}% ATK DMG ke suatu target. Dapat terpicu setiap {color}13{/color} detik.",
+        "Saat mengenai, memiliki 50% persentase untuk mengakibatkan {color}360{/color}% ATK DMG ke suatu target. Dapat terpicu setiap {color}12{/color} detik.",
+        "Saat mengenai, memiliki 50% persentase untuk mengakibatkan {color}400{/color}% ATK DMG ke suatu target. Dapat terpicu setiap {color}11{/color} detik."
+      ]
     },
     {
       "key": "freedom-sworn",
       "name": "Freedom-Sworn",
       "description": "Pedang biru langit yang mengingatkan pada lagu lama, senjata tajam seperti sumpah kebebasan di Kota milik Dewa Angin.",
-      "refinement": "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan DMG sebesar {0}%, dan saat Karakter yang menggunakan senjata ini memicu Reaksi Elemental, Karakter akan mendapatkan Sigil of Rebellion. Efek ini dapat terpicu setiap 0,5 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di lapangan. Saat kamu mempunyai 2 Sigil of Rebellion, semuanya akan terkonsumsi dan semua anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Song of Resistance\" selama 12 detik. \"Millennial Movement: Song of Resistance\" meningkatkan {1}% DMG Normal, Charged dan Plunging Attack, serta meningkatkan {2}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigils of Rebellion lagi selama 20 detik. Dari sekian banyak efek \"Millennial Movement\", efek dengan jenis yang sama tidak bisa ditumpuk."
+      "refinements": [
+        "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan DMG sebesar {color}10{/color}%, dan saat Karakter yang menggunakan senjata ini memicu Reaksi Elemental, Karakter akan mendapatkan Sigil of Rebellion. Efek ini dapat terpicu setiap 0,5 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di lapangan. Saat kamu mempunyai 2 Sigil of Rebellion, semuanya akan terkonsumsi dan semua anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Song of Resistance\" selama 12 detik. \"Millennial Movement: Song of Resistance\" meningkatkan {color}16{/color}% DMG Normal, Charged dan Plunging Attack, serta meningkatkan {color}20{/color}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigils of Rebellion lagi selama 20 detik. Dari sekian banyak efek \"Millennial Movement\", efek dengan jenis yang sama tidak bisa ditumpuk.",
+        "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan DMG sebesar {color}12{/color},5%, dan saat Karakter yang menggunakan senjata ini memicu Reaksi Elemental, Karakter akan mendapatkan Sigil of Rebellion. Efek ini dapat terpicu setiap 0,5 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di lapangan. Saat kamu mempunyai 2 Sigil of Rebellion, semuanya akan terkonsumsi dan semua anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Song of Resistance\" selama 12 detik. \"Millennial Movement: Song of Resistance\" meningkatkan {color}20{/color}% DMG Normal, Charged dan Plunging Attack, serta meningkatkan {color}25{/color}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigils of Rebellion lagi selama 20 detik. Dari sekian banyak efek \"Millennial Movement\", efek dengan jenis yang sama tidak bisa ditumpuk.",
+        "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan DMG sebesar {color}15{/color}%, dan saat Karakter yang menggunakan senjata ini memicu Reaksi Elemental, Karakter akan mendapatkan Sigil of Rebellion. Efek ini dapat terpicu setiap 0,5 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di lapangan. Saat kamu mempunyai 2 Sigil of Rebellion, semuanya akan terkonsumsi dan semua anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Song of Resistance\" selama 12 detik. \"Millennial Movement: Song of Resistance\" meningkatkan {color}24{/color}% DMG Normal, Charged dan Plunging Attack, serta meningkatkan {color}30{/color}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigils of Rebellion lagi selama 20 detik. Dari sekian banyak efek \"Millennial Movement\", efek dengan jenis yang sama tidak bisa ditumpuk.",
+        "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan DMG sebesar {color}17{/color},5%, dan saat Karakter yang menggunakan senjata ini memicu Reaksi Elemental, Karakter akan mendapatkan Sigil of Rebellion. Efek ini dapat terpicu setiap 0,5 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di lapangan. Saat kamu mempunyai 2 Sigil of Rebellion, semuanya akan terkonsumsi dan semua anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Song of Resistance\" selama 12 detik. \"Millennial Movement: Song of Resistance\" meningkatkan {color}28{/color}% DMG Normal, Charged dan Plunging Attack, serta meningkatkan {color}35{/color}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigils of Rebellion lagi selama 20 detik. Dari sekian banyak efek \"Millennial Movement\", efek dengan jenis yang sama tidak bisa ditumpuk.",
+        "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan DMG sebesar {color}20{/color}%, dan saat Karakter yang menggunakan senjata ini memicu Reaksi Elemental, Karakter akan mendapatkan Sigil of Rebellion. Efek ini dapat terpicu setiap 0,5 detik dan bisa terpicu walaupun Karakter tersebut tidak berada di lapangan. Saat kamu mempunyai 2 Sigil of Rebellion, semuanya akan terkonsumsi dan semua anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Song of Resistance\" selama 12 detik. \"Millennial Movement: Song of Resistance\" meningkatkan {color}32{/color}% DMG Normal, Charged dan Plunging Attack, serta meningkatkan {color}40{/color}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigils of Rebellion lagi selama 20 detik. Dari sekian banyak efek \"Millennial Movement\", efek dengan jenis yang sama tidak bisa ditumpuk."
+      ]
     },
     {
       "key": "frostbearer",
       "name": "Frostbearer",
       "description": "Buah unik yang seakan memiliki sebuah keinginan sendiri. Senjata ini memancarkan sebuah aura kepedihan yang samar.",
-      "refinement": "Saat Normal atau Charged Attack mengenai musuh, memiliki {0}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {1}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {2}% ATK. Efek ini dapat terpicu setiap 10 detik."
+      "refinements": [
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}60{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}80{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}200{/color}% ATK. Efek ini dapat terpicu setiap 10 detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}70{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}95{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}240{/color}% ATK. Efek ini dapat terpicu setiap 10 detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}80{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}110{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}280{/color}% ATK. Efek ini dapat terpicu setiap 10 detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}90{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}125{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}320{/color}% ATK. Efek ini dapat terpicu setiap 10 detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}100{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}140{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}360{/color}% ATK. Efek ini dapat terpicu setiap 10 detik."
+      ]
     },
     {
       "key": "hakushin-ring",
       "name": "Hakushin Ring",
       "description": "Catalyst yang menyimpan ingatan Kitsune Saiguu akan masa lalu. Bagaimanapun, benda ini tidak punya cukup ruang untuk menampung luasnya pemikiran Kitsune Saiguu.",
-      "refinement": "Setelah Karakter yang memakai senjata ini memicu reaksi elemental Electro, anggota party di sekitar dengan Tipe Elemen yang terlibat dalam reaksi elemental tersebut akan menerima {0}% Elemental DMG Bonus untuk elemen mereka selama 6 detik. Bonus Elemental yang didapat dengan cara ini tidak dapat ditumpuk."
+      "refinements": [
+        "Setelah Karakter yang memakai senjata ini memicu reaksi elemental Electro, anggota party di sekitar dengan Tipe Elemen yang terlibat dalam reaksi elemental tersebut akan menerima {color}10{/color}% Elemental DMG Bonus untuk elemen mereka selama 6 detik. Bonus Elemental yang didapat dengan cara ini tidak dapat ditumpuk.",
+        "Setelah Karakter yang memakai senjata ini memicu reaksi elemental Electro, anggota party di sekitar dengan Tipe Elemen yang terlibat dalam reaksi elemental tersebut akan menerima {color}12{/color},5% Elemental DMG Bonus untuk elemen mereka selama 6 detik. Bonus Elemental yang didapat dengan cara ini tidak dapat ditumpuk.",
+        "Setelah Karakter yang memakai senjata ini memicu reaksi elemental Electro, anggota party di sekitar dengan Tipe Elemen yang terlibat dalam reaksi elemental tersebut akan menerima {color}15{/color}% Elemental DMG Bonus untuk elemen mereka selama 6 detik. Bonus Elemental yang didapat dengan cara ini tidak dapat ditumpuk.",
+        "Setelah Karakter yang memakai senjata ini memicu reaksi elemental Electro, anggota party di sekitar dengan Tipe Elemen yang terlibat dalam reaksi elemental tersebut akan menerima {color}17{/color},5% Elemental DMG Bonus untuk elemen mereka selama 6 detik. Bonus Elemental yang didapat dengan cara ini tidak dapat ditumpuk.",
+        "Setelah Karakter yang memakai senjata ini memicu reaksi elemental Electro, anggota party di sekitar dengan Tipe Elemen yang terlibat dalam reaksi elemental tersebut akan menerima {color}20{/color}% Elemental DMG Bonus untuk elemen mereka selama 6 detik. Bonus Elemental yang didapat dengan cara ini tidak dapat ditumpuk."
+      ]
     },
     {
       "key": "halberd",
       "name": "Halberd",
       "description": "Sebuah polearm dengan sebilah kapak terpasang di atasnya yang bisa menyebabkan DMG luar biasa. Senjata yang sangat disukai oleh prajurit Millelith.",
-      "refinement": "Normal Attack mengakibatkan serangan tambahan sebesar {0}% ATK pada musuh. Hanya dapat terpicu setiap 10 detik."
+      "refinements": [
+        "Normal Attack mengakibatkan serangan tambahan sebesar {color}160{/color}% ATK pada musuh. Hanya dapat terpicu setiap 10 detik.",
+        "Normal Attack mengakibatkan serangan tambahan sebesar {color}200{/color}% ATK pada musuh. Hanya dapat terpicu setiap 10 detik.",
+        "Normal Attack mengakibatkan serangan tambahan sebesar {color}240{/color}% ATK pada musuh. Hanya dapat terpicu setiap 10 detik.",
+        "Normal Attack mengakibatkan serangan tambahan sebesar {color}280{/color}% ATK pada musuh. Hanya dapat terpicu setiap 10 detik.",
+        "Normal Attack mengakibatkan serangan tambahan sebesar {color}320{/color}% ATK pada musuh. Hanya dapat terpicu setiap 10 detik."
+      ]
     },
     {
       "key": "hamayumi",
       "name": "Hamayumi",
       "description": "Seorang miko tertentu pernah memiliki busur ini. Busur ini dibuat dengan keahlian yang luar biasa, rumit, juga kokoh.",
-      "refinement": "Meningkatkan {0}% Normal Attack DMG dan {1}% Charged ATK DMG. Saat Energy dari Karakter yang menggunakan senjata ini mencapai 100%, efek meningkat 100%."
+      "refinements": [
+        "Meningkatkan {color}16{/color}% Normal Attack DMG dan {color}12{/color}% Charged ATK DMG. Saat Energy dari Karakter yang menggunakan senjata ini mencapai 100%, efek meningkat 100%.",
+        "Meningkatkan {color}20{/color}% Normal Attack DMG dan {color}15{/color}% Charged ATK DMG. Saat Energy dari Karakter yang menggunakan senjata ini mencapai 100%, efek meningkat 100%.",
+        "Meningkatkan {color}24{/color}% Normal Attack DMG dan {color}18{/color}% Charged ATK DMG. Saat Energy dari Karakter yang menggunakan senjata ini mencapai 100%, efek meningkat 100%.",
+        "Meningkatkan {color}28{/color}% Normal Attack DMG dan {color}21{/color}% Charged ATK DMG. Saat Energy dari Karakter yang menggunakan senjata ini mencapai 100%, efek meningkat 100%.",
+        "Meningkatkan {color}32{/color}% Normal Attack DMG dan {color}24{/color}% Charged ATK DMG. Saat Energy dari Karakter yang menggunakan senjata ini mencapai 100%, efek meningkat 100%."
+      ]
     },
     {
       "key": "harbinger-of-dawn",
       "name": "Harbinger of Dawn",
       "description": "Pedang yang sebelumnya bersinar seterang matahari. Memberikan buff dan efek \"Feel-good\". Bahan yang memantulkan cahaya telah pudar dari permukaannya.",
-      "refinement": "Saat HP lebih dari 90%, CRIT Rate meningkat {0}%."
+      "refinements": [
+        "Saat HP lebih dari 90%, CRIT Rate meningkat {color}14{/color}%.",
+        "Saat HP di atas 90%, meningkatkan CRIT Rate sebesar {color}17{/color},5%.",
+        "Saat HP lebih dari 90%, CRIT Rate meningkat {color}21{/color}%.",
+        "Saat HP di atas 90%, meningkatkan CRIT Rate sebesar {color}24{/color},5%.",
+        "Saat HP lebih dari 90%, CRIT Rate meningkat {color}28{/color}%."
+      ]
     },
     {
       "key": "hunters-bow",
       "name": "Hunter's Bow",
       "description": "Bagi seorang pemburu, lagu terindah adalah suara tali busur yang ditariknya, dan suara anak panah yang melaju dengan kencang.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "iron-point",
       "name": "Iron Point",
       "description": "Mata pedangnya sangat tajam, sebuah senjata dengan keseimbangan yang baik, senjata ini populer di kalangan para petualang.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "iron-sting",
       "name": "Iron Sting",
       "description": "Pedang panjang eksotis yang mencapai Liyue melalui perdagangan antar bangsa. Beratnya ringan, mudah diayunkan, dan sangat tajam.",
-      "refinement": "Mengakibatkan Elemental DMG akan meningkatkan {0}% DMG selama 6 detik. Maksimum 2 lapis. Dapat terpicu setiap 1 detik."
+      "refinements": [
+        "Mengakibatkan Elemental DMG akan meningkatkan {color}6{/color}% DMG selama 6 detik. Maksimum 2 lapis. Dapat terpicu setiap 1 detik.",
+        "Mengakibatkan Elemental DMG akan meningkatkan {color}7{/color},5% DMG selama 6 detik. Maksimum 2 lapis. Dapat terpicu setiap 1 detik.",
+        "Mengakibatkan Elemental DMG akan meningkatkan {color}9{/color}% DMG selama 6 detik. Maksimum 2 lapis. Dapat terpicu setiap 1 detik.",
+        "Mengakibatkan Elemental DMG akan meningkatkan {color}10{/color},5% DMG selama 6 detik. Maksimum 2 lapis. Dapat terpicu setiap 1 detik.",
+        "Mengakibatkan Elemental DMG akan meningkatkan {color}12{/color}% DMG selama 6 detik. Maksimum 2 lapis. Dapat terpicu setiap 1 detik."
+      ]
     },
     {
       "key": "katsuragikiri-nagamasa",
       "name": "Katsuragikiri Nagamasa",
       "description": "Pedang yang dibuat di Tatarasuna. Bobotnya berat dan bodinya kasar.",
-      "refinement": "Meningkatkan {0}% Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan {1} Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan pertempuran."
+      "refinements": [
+        "Meningkatkan {color}6{/color}% Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan {color}3{/color} Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan pertempuran.",
+        "Meningkatkan {color}7{/color},5% Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan {color}3{/color},5 Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan perang.",
+        "Meningkatkan {color}9{/color}% Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan {color}4{/color} Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan perang.",
+        "Meningkatkan {color}10{/color},5% Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan {color}4{/color},5 Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan perang.",
+        "Meningkatkan {color}12{/color}% Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan {color}5{/color} Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan perang."
+      ]
     },
     {
       "key": "kitain-cross-spear",
       "name": "Kitain Cross Spear",
       "description": "Tombak spesial yang pernah digunakan oleh prajurit terkenal yang menjaga Tatarigami di Pulau Yashiori.",
-      "refinement": "Meningkatkan {0}% Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan {1} Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan pertempuran."
+      "refinements": [
+        "Meningkatkan {color}6{/color}% Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan {color}3{/color} Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan pertempuran.",
+        "Meningkatkan {color}7{/color},5% Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan {color}3{/color},5 Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan perang.",
+        "Meningkatkan {color}9{/color}% Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan {color}4{/color} Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan perang.",
+        "Meningkatkan {color}10{/color},5% Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan {color}4{/color},5 Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan perang.",
+        "Meningkatkan {color}12{/color}% Elemental Skill DMG. Setelah Elemental Skill mengenai musuh, 3 Energy hilang tapi akan memulihkan {color}5{/color} Energy setiap 2 detik selama 6 detik. Efek terpicu setiap 10 detik. Dapat terpicu walaupun Karakter tersebut tidak berada di medan perang."
+      ]
     },
     {
       "key": "lions-roar",
       "name": "Lion's Roar",
       "description": "Pedang dengan ukiran dan desain yang mewah, tetapi sama sekali tidak memengaruhi ketajaman dan ketahanan pedang ini. Suara dari tebasannya menyerupai suara amarah singa.",
-      "refinement": "Meningkatkan {0}% DMG terhadap musuh yang terpengaruh Pyro atau Electro."
+      "refinements": [
+        "Meningkatkan {color}20{/color}% DMG terhadap musuh yang terpengaruh Pyro atau Electro.",
+        "Meningkatkan {color}24{/color}% DMG terhadap musuh yang terpengaruh Pyro atau Electro.",
+        "Meningkatkan {color}28{/color}% DMG terhadap musuh yang terpengaruh Pyro atau Electro.",
+        "Meningkatkan {color}32{/color}% DMG terhadap musuh yang terpengaruh Pyro atau Electro.",
+        "Meningkatkan {color}36{/color}% DMG terhadap musuh yang terpengaruh Pyro atau Electro."
+      ]
     },
     {
       "key": "lithic-blade",
       "name": "Lithic Blade",
       "description": "Pedang tebal dan berat, terbuat dari batu Liyue.",
-      "refinement": "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan {0}% ATK dan {1}% CRIT Rate. Efek ini dapat ditumpuk maks. 4 lapis."
+      "refinements": [
+        "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan {color}7{/color}% ATK dan {color}3{/color}% CRIT Rate. Efek ini dapat ditumpuk maks. 4 lapis.",
+        "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan {color}8{/color}% ATK dan {color}4{/color}% CRIT Rate. Efek ini dapat ditumpuk maks. 4 lapis.",
+        "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan {color}9{/color}% ATK dan {color}5{/color}% CRIT Rate. Efek ini dapat ditumpuk maks. 4 lapis.",
+        "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan {color}10{/color}% ATK dan {color}6{/color}% CRIT Rate. Efek ini dapat ditumpuk maks. 4 lapis.",
+        "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan {color}11{/color}% ATK dan {color}7{/color}% CRIT Rate. Efek ini dapat ditumpuk maks. 4 lapis."
+      ]
     },
     {
       "key": "lithic-spear",
       "name": "Lithic Spear",
       "description": "Tombak panjang yang ditempa dari bebatuan di Guyun Stone Forest. Tingkat kekerasan tombak ini sungguh tiada duanya.",
-      "refinement": "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan {0}% ATK dan {1}% CRIT Rate. Efek ini dapat ditumpuk maks. 4 lapis."
+      "refinements": [
+        "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan {color}7{/color}% ATK dan {color}3{/color}% CRIT Rate. Efek ini dapat ditumpuk maks. 4 lapis.",
+        "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan {color}8{/color}% ATK dan {color}4{/color}% CRIT Rate. Efek ini dapat ditumpuk maks. 4 lapis.",
+        "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan {color}9{/color}% ATK dan {color}5{/color}% CRIT Rate. Efek ini dapat ditumpuk maks. 4 lapis.",
+        "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan {color}10{/color}% ATK dan {color}6{/color}% CRIT Rate. Efek ini dapat ditumpuk maks. 4 lapis.",
+        "Untuk setiap karakter dalam party yang berasal dari Liyue, karakter yang menggunakan senjata ini mendapatkan peningkatan {color}11{/color}% ATK dan {color}7{/color}% CRIT Rate. Efek ini dapat ditumpuk maks. 4 lapis."
+      ]
     },
     {
       "key": "lost-prayer-to-the-sacred-winds",
       "name": "Lost Prayer to the Sacred Winds",
       "description": "Kitab pembelajaran yang ditulis oleh pemuja Anemo tanpa nama dari zaman dahulu. Diberkati oleh angin untuk kesetiaan dan pengaruh yang telah ditunjukkannya.",
-      "refinement": "Meningkatkan 10% Movement SPD. Saat di dalam pertarungan, meningkatkan {0}% Elemental DMG setiap 4 detik. Maksimum 4 lapis. Efek bertahan sampai karakter gugur atau meninggalkan pertarungan."
+      "refinements": [
+        "Meningkatkan 10% Movement SPD. Saat di dalam pertarungan, meningkatkan {color}8{/color}% Elemental DMG setiap 4 detik. Maksimum 4 lapis. Efek bertahan sampai karakter gugur atau meninggalkan pertarungan.",
+        "Meningkatkan 10% Movement SPD. Saat di dalam pertarungan, meningkatkan {color}10{/color}% Elemental DMG setiap 4 detik. Maksimum 4 lapis. Efek bertahan sampai karakter gugur atau meninggalkan pertarungan.",
+        "Meningkatkan 10% Movement SPD. Saat di dalam pertarungan, meningkatkan {color}12{/color}% Elemental DMG setiap 4 detik. Maksimum 4 lapis. Efek bertahan sampai karakter gugur atau meninggalkan pertarungan.",
+        "Meningkatkan 10% Movement SPD. Saat di dalam pertarungan, meningkatkan {color}14{/color}% Elemental DMG setiap 4 detik. Maksimum 4 lapis. Efek bertahan sampai karakter gugur atau meninggalkan pertarungan.",
+        "Meningkatkan 10% Movement SPD. Saat di dalam pertarungan, meningkatkan {color}16{/color}% Elemental DMG setiap 4 detik. Maksimum 4 lapis. Efek bertahan sampai karakter gugur atau meninggalkan pertarungan."
+      ]
     },
     {
       "key": "luxurious-sea-lord",
       "name": "Luxurious Sea-Lord",
       "description": "Sang raja laut yang agung. Setelah dikeringkan, tidak hanya menjadi senjata yang bagus namun juga bisa dipakai sebagai makanan darurat.",
-      "refinement": "Meningkatkan {0}% DMG Elemental Burst. Saat Elemental Burst mengenai musuh, ada 100% kemungkinan memanggil ikan tuna besar untuk menyerang musuh dan mengakibatkan DMG Area sebesar {1}% ATK. Efek ini dapat terpicu setiap 15 detik."
+      "refinements": [
+        "Meningkatkan {color}12{/color}% DMG Elemental Burst. Saat Elemental Burst mengenai musuh, ada 100% kemungkinan memanggil ikan tuna besar untuk menyerang musuh dan mengakibatkan DMG Area sebesar {color}100{/color}% ATK. Efek ini dapat terpicu setiap 15 detik.",
+        "Meningkatkan {color}15{/color}% DMG Elemental Burst. Saat Elemental Burst mengenai musuh, ada 100% kemungkinan memanggil ikan tuna besar untuk menyerang musuh dan mengakibatkan DMG Area sebesar {color}125{/color}% ATK. Efek ini dapat terpicu setiap 15 detik.",
+        "Meningkatkan {color}18{/color}% DMG Elemental Burst. Saat Elemental Burst mengenai musuh, ada 100% kemungkinan memanggil ikan tuna besar untuk menyerang musuh dan mengakibatkan DMG Area sebesar {color}150{/color}% ATK. Efek ini dapat terpicu setiap 15 detik.",
+        "Meningkatkan {color}21{/color}% DMG Elemental Burst. Saat Elemental Burst mengenai musuh, ada 100% kemungkinan memanggil ikan tuna besar untuk menyerang musuh dan mengakibatkan DMG Area sebesar {color}175{/color}% ATK. Efek ini dapat terpicu setiap 15 detik.",
+        "Meningkatkan {color}24{/color}% DMG Elemental Burst. Saat Elemental Burst mengenai musuh, ada 100% kemungkinan memanggil ikan tuna besar untuk menyerang musuh dan mengakibatkan DMG Area sebesar {color}200{/color}% ATK. Efek ini dapat terpicu setiap 15 detik."
+      ]
     },
     {
       "key": "magic-guide",
       "name": "Magic Guide",
       "description": "Jilid ke-12. Edisi ini merupakan revisi jilid ke-11 dengan beberapa perbaikan dan penambahan berdasarkan perkembangan terkini.",
-      "refinement": "Meningkatkan {0}% DMG terhadap musuh yang terpengaruh Hydro atau Electro."
+      "refinements": [
+        "Meningkatkan {color}12{/color}% DMG terhadap musuh yang terpengaruh Hydro atau Electro.",
+        "Meningkatkan {color}15{/color}% DMG terhadap musuh yang terpengaruh Hydro atau Electro.",
+        "Meningkatkan {color}18{/color}% DMG terhadap musuh yang terpengaruh Hydro atau Electro.",
+        "Meningkatkan {color}21{/color}% DMG terhadap musuh yang terpengaruh Hydro atau Electro.",
+        "Meningkatkan {color}24{/color}% DMG terhadap musuh yang terpengaruh Hydro atau Electro."
+      ]
     },
     {
       "key": "mappa-mare",
       "name": "Mappa Mare",
       "description": "Grafik petunjuk untuk berlayar di laut, menunjukkan arus dan iklim di sekitar, mencapai Liyue melalui tangan para pedagang.",
-      "refinement": "Memicu Elemental reaction akan meningkatkan Elemental DMG sebanyak {0}% selama 10 detik. Efek ini dapat ditumpuk maksimum 2 lapis."
+      "refinements": [
+        "Memicu Elemental reaction akan meningkatkan Elemental DMG sebanyak {color}8{/color}% selama 10 detik. Efek ini dapat ditumpuk maksimum 2 lapis.",
+        "Memicu Reaksi Elemental akan meningkatkan Elemental DMG sebanyak {color}10{/color}% selama 10 detik. Efek ini dapat ditumpuk maksimum 2 lapis.",
+        "Memicu Reaksi Elemental akan meningkatkan Elemental DMG sebanyak {color}12{/color}% selama 10 detik. Efek ini dapat ditumpuk maksimum 2 lapis.",
+        "Memicu Reaksi Elemental akan meningkatkan Elemental DMG sebanyak {color}14{/color}% selama 10 detik. Efek ini dapat ditumpuk maksimum 2 lapis.",
+        "Memicu Reaksi Elemental akan meningkatkan Elemental DMG sebanyak {color}16{/color}% selama 10 detik. Efek ini dapat ditumpuk maksimum 2 lapis."
+      ]
     },
     {
       "key": "memory-of-dust",
       "name": "Memory of Dust",
       "description": "Kunci batu yang berisi memori dari masa lalu, dapat mengeluarkan kekuatan seiring dengan perubahannya yang tidak terbatas.",
-      "refinement": "Meningkatkan kekuatan perisai sebesar {0}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {1}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%."
+      "refinements": [
+        "Meningkatkan kekuatan perisai sebesar {color}20{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}4{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%.",
+        "Meningkatkan kekuatan perisai sebesar {color}25{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}5{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%.",
+        "Meningkatkan kekuatan perisai sebesar {color}30{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}6{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%.",
+        "Meningkatkan kekuatan perisai sebesar {color}35{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}7{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%.",
+        "Meningkatkan kekuatan perisai sebesar {color}40{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}8{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%."
+      ]
     },
     {
       "key": "messenger",
       "name": "Messenger",
       "description": "Busur kayu yang sederhana. Konon busur ini biasanya digunakan hanya untuk mengirimkan pesan surat.",
-      "refinement": "Saat Charged Attack mengenai titik kelemahan musuh, akan mengakibatkan tambahan DMG sebesar {0}% ATK sebagai CRIT DMG. Dapat terpicu setiap 10 detik."
+      "refinements": [
+        "Saat Charged Attack mengenai titik kelemahan musuh, akan mengakibatkan tambahan DMG sebesar {color}100{/color}% ATK sebagai CRIT DMG. Dapat terpicu setiap 10 detik.",
+        "Saat Charged Attack mengenai titik kelemahan musuh, akan mengakibatkan tambahan DMG sebesar {color}125{/color}% ATK sebagai CRIT DMG. Dapat terpicu setiap 10 detik.",
+        "Saat Charged Attack mengenai titik kelemahan musuh, akan mengakibatkan tambahan DMG sebesar {color}150{/color}% ATK sebagai CRIT DMG. Dapat terpicu setiap 10 detik.",
+        "Saat Charged Attack mengenai titik kelemahan musuh, akan mengakibatkan tambahan DMG sebesar {color}175{/color}% ATK sebagai CRIT DMG. Dapat terpicu setiap 10 detik.",
+        "Saat Charged Attack mengenai titik kelemahan musuh, akan mengakibatkan tambahan DMG sebesar {color}200{/color}% ATK sebagai CRIT DMG. Dapat terpicu setiap 10 detik."
+      ]
     },
     {
       "key": "mistsplitter-reforged",
       "name": "Mistsplitter Reforged",
       "description": "Pedang yang menyala dengan cahaya ungu yang dahsyat. Ia dinamakan \"Reforged\" karena pernah patah di masa lalu.",
-      "refinement": "Mendapatkan {0}% Elemental DMG Bonus untuk setiap elemen dan mendapatkan kekuatan Mistsplitter's Emblem. Pada lapisan level 1/2/3, Mistsplitter's Emblem memberikan {1}% Elemental DMG Bonus untuk tipe Elemen Karakter tersebut. Karakter akan mendapatkan 1 lapis Mistsplitter's Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan Elemental DMG (lapisan bertahan 5 detik), saat melancarkan Elemental Burst (lapisan bertahan 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan menghilang saat Energy penuh). Durasi setiap lapis dihitung terpisah."
+      "refinements": [
+        "Mendapatkan {color}12{/color}% Elemental DMG Bonus untuk setiap elemen dan mendapatkan kekuatan Mistsplitter's Emblem. Pada lapisan level 1/2/3, Mistsplitter's Emblem memberikan {color}8/16/28{/color}% Elemental DMG Bonus untuk tipe Elemen Karakter tersebut. Karakter akan mendapatkan 1 lapis Mistsplitter's Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan Elemental DMG (lapisan bertahan 5 detik), saat melancarkan Elemental Burst (lapisan bertahan 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan menghilang saat Energy penuh). Durasi setiap lapis dihitung terpisah.",
+        "Mendapatkan {color}15{/color}% Elemental DMG Bonus untuk setiap elemen dan mendapatkan kekuatan Mistsplitter's Emblem. Pada lapisan level 1/2/3, Mistsplitter's Emblem memberikan {color}10/20/35{/color}% Elemental DMG Bonus untuk tipe Elemen Karakter tersebut. Karakter akan mendapatkan 1 lapis Mistsplitter's Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan Elemental DMG (lapisan bertahan 5 detik), saat melancarkan Elemental Burst (lapisan bertahan 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan menghilang saat Energy penuh). Durasi setiap lapis dihitung terpisah.",
+        "Mendapatkan {color}18{/color}% Elemental DMG Bonus untuk setiap elemen dan mendapatkan kekuatan Mistsplitter's Emblem. Pada lapisan level 1/2/3, Mistsplitter's Emblem memberikan {color}12/24/42{/color}% Elemental DMG Bonus untuk tipe Elemen Karakter tersebut. Karakter akan mendapatkan 1 lapis Mistsplitter's Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan Elemental DMG (lapisan bertahan 5 detik), saat melancarkan Elemental Burst (lapisan bertahan 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan saat Energy penuh). Durasi setiap lapis dihitung terpisah.",
+        "Mendapatkan {color}21{/color}% Elemental DMG Bonus untuk setiap elemen dan mendapatkan kekuatan Mistsplitter's Emblem. Pada lapisan level 1/2/3, Mistsplitter's Emblem memberikan {color}14/28/49{/color}% Elemental DMG Bonus untuk tipe Elemen Karakter tersebut. Karakter akan mendapatkan 1 lapis Mistsplitter's Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan Elemental DMG (lapisan bertahan 5 detik), saat melancarkan Elemental Burst (lapisan bertahan 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan menghilang saat Energy penuh). Durasi setiap lapis dihitung terpisah.",
+        "Mendapatkan {color}24{/color}% Elemental DMG Bonus untuk setiap elemen dan mendapatkan kekuatan Mistsplitter's Emblem. Pada lapisan level 1/2/3, Mistsplitter's Emblem memberikan {color}16/32/56{/color}% Elemental DMG Bonus untuk tipe Elemen Karakter tersebut. Karakter akan mendapatkan 1 lapis Mistsplitter's Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan Elemental DMG (lapisan bertahan 5 detik), saat melancarkan Elemental Burst (lapisan bertahan 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan menghilang saat Energy penuh). Durasi setiap lapis dihitung terpisah."
+      ]
     },
     {
       "key": "mitternachts-waltz",
       "name": "Mitternachts Waltz",
       "description": "Busur yang diwarnai dengan warna kelam bagaikan dosa dan malam hari pada imajinasi yang liar.",
-      "refinement": "Saat Normal Attack mengenai musuh, meningkatkan {0}% DMG Elemental Skill selama 5 detik; Saat Elemental Skill mengenai musuh, meningkatkan {1}% DMG Normal Attack selama 5 detik."
+      "refinements": [
+        "Saat Normal Attack mengenai musuh, meningkatkan {color}20{/color}% DMG Elemental Skill selama 5 detik; Saat Elemental Skill mengenai musuh, meningkatkan {color}20{/color}% DMG Normal Attack selama 5 detik.",
+        "Saat Normal Attack mengenai musuh, meningkatkan {color}25{/color}% DMG Elemental Skill selama 5 detik; Saat Elemental Skill mengenai musuh, meningkatkan {color}25{/color}% DMG Normal Attack selama 5 detik.",
+        "Saat Normal Attack mengenai musuh, meningkatkan {color}30{/color}% DMG Elemental Skill selama 5 detik; Saat Elemental Skill mengenai musuh, meningkatkan {color}30{/color}% DMG Normal Attack selama 5 detik.",
+        "Saat Normal Attack mengenai musuh, meningkatkan {color}35{/color}% DMG Elemental Skill selama 5 detik; Saat Elemental Skill mengenai musuh, meningkatkan {color}35{/color}% DMG Normal Attack selama 5 detik.",
+        "Saat Normal Attack mengenai musuh, meningkatkan {color}40{/color}% DMG Elemental Skill selama 5 detik; Saat Elemental Skill mengenai musuh, meningkatkan {color}40{/color}% DMG Normal Attack selama 5 detik."
+      ]
     },
     {
       "key": "old-mercs-pal",
       "name": "Old Merc's Pal",
       "description": "Pedang besar kuno yang telah diuji oleh waktu, telah melalui api dan badai perang yang tak terhitung jumlahnya.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "otherworldly-story",
       "name": "Otherworldly Story",
       "description": "Novel yang menceritakan sebuah kisah fantasi tanpa nilai moral apa pun. Kekuatannya sebagai Catalyst juga tentunya, hanyalah fantasi.",
-      "refinement": "Mengambil Elemental Energy Orb/Particle memulihkan {0}% HP."
+      "refinements": [
+        "Mengambil Elemental Energy Orb/Particle memulihkan {color}1{/color}% HP.",
+        "Mengambil Elemental Energy Orb/Particle memulihkan {color}1.25{/color}% HP.",
+        "Mengambil Elemental Energy Orb/Particle memulihkan {color}1.5{/color}% HP.",
+        "Mengambil Elemental Energy Orb/Particle memulihkan {color}1.75{/color}% HP.",
+        "Mengambil Elemental Energy Orb/Particle memulihkan {color}2{/color}% HP."
+      ]
     },
     {
       "key": "pocket-grimoire",
       "name": "Pocket Grimoire",
       "description": "Buku catatan yang disusun dengan hati-hati, berisi hal-hal penting yang berguna untuk lulus ujian sihir.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "polar-star",
       "name": "Polar Star",
       "description": "Busur murni nan tajam bagaikan es gletser di kutub utara yang dinginnya menusuk.",
-      "refinement": "Meningkatkan {0}% DMG yang dihasilkan oleh Elemental Skill dan Elemental Burst. Setelah Normal Attack, Charged Attack, Elemental Skill, dan Elemental Burst mengenai musuh, Karakter akan mendapatkan 1 lapis Ashen Nightstar yang bertahan selama 12 detik. Saat memiliki 1/2/3/4 lapisan Ashen Nightstar, ATK Karakter akan meningkat sebesar {1}%. Lapisan Ashen Nightstar yang didapatkan dari Normal Attack, Charged Attack, Elemental Skill dan Elemental Burst akan dihitung secara terpisah."
+      "refinements": [
+        "Meningkatkan {color}12{/color}% DMG yang dihasilkan oleh Elemental Skill dan Elemental Burst. Setelah Normal Attack, Charged Attack, Elemental Skill, dan Elemental Burst mengenai musuh, Karakter akan mendapatkan 1 lapis Ashen Nightstar yang bertahan selama 12 detik. Saat memiliki 1/2/3/4 lapisan Ashen Nightstar, ATK Karakter akan meningkat sebesar {color}10/20/30/48{/color}%. Lapisan Ashen Nightstar yang didapatkan dari Normal Attack, Charged Attack, Elemental Skill dan Elemental Burst akan dihitung secara terpisah.",
+        "Meningkatkan {color}15{/color}% DMG yang dihasilkan oleh Elemental Skill dan Elemental Burst. Setelah Normal Attack, Charged Attack, Elemental Skill, dan Elemental Burst mengenai musuh, Karakter akan mendapatkan 1 lapis Ashen Nightstar yang bertahan selama 12 detik. Saat memiliki 1/2/3/4 lapisan Ashen Nightstar, ATK Karakter akan meningkat sebesar {color}12{/color},5/25/37,5/60%. Lapisan Ashen Nightstar yang didapatkan dari Normal Attack, Charged Attack, Elemental Skill dan Elemental Burst akan dihitung secara terpisah.",
+        "Meningkatkan {color}18{/color}% DMG yang dihasilkan oleh Elemental Skill dan Elemental Burst. Setelah Normal Attack, Charged Attack, Elemental Skill, dan Elemental Burst mengenai musuh, Karakter akan mendapatkan 1 lapis Ashen Nightstar yang bertahan selama 12 detik. Saat memiliki 1/2/3/4 lapisan Ashen Nightstar, ATK Karakter akan meningkat sebesar {color}15/30/45/72{/color}%. Lapisan Ashen Nightstar yang didapatkan dari Normal Attack, Charged Attack, Elemental Skill dan Elemental Burst akan dihitung secara terpisah.",
+        "Meningkatkan {color}21{/color}% DMG yang dihasilkan oleh Elemental Skill dan Elemental Burst. Setelah Normal Attack, Charged Attack, Elemental Skill, dan Elemental Burst mengenai musuh, Karakter akan mendapatkan 1 lapis Ashen Nightstar yang bertahan selama 12 detik. Saat memiliki 1/2/3/4 lapisan Ashen Nightstar, ATK Karakter akan meningkat sebesar {color}17{/color},5/35/52,5/84%. Lapisan Ashen Nightstar yang didapatkan dari Normal Attack, Charged Attack, Elemental Skill dan Elemental Burst akan dihitung secara terpisah.",
+        "Meningkatkan {color}24{/color}% DMG yang dihasilkan oleh Elemental Skill dan Elemental Burst. Setelah Normal Attack, Charged Attack, Elemental Skill, dan Elemental Burst mengenai musuh, Karakter akan mendapatkan 1 lapis Ashen Nightstar yang bertahan selama 12 detik. Saat memiliki 1/2/3/4 lapisan Ashen Nightstar, ATK Karakter akan meningkat sebesar {color}20/40/60/96{/color}%. Lapisan Ashen Nightstar yang didapatkan dari Normal Attack, Charged Attack, Elemental Skill dan Elemental Burst akan dihitung secara terpisah."
+      ]
     },
     {
       "key": "predator",
       "name": "Predator",
       "description": "Busur dengan desain unik. Seharusnya senjata ini bukan berasal dari dunia ini.",
-      "refinement": "Berlaku khusus untuk pemain di: \r\n\"PlayStation Network\"\r\nSaat mengakibatkan Cryo DMG pada musuh, maka DMG Normal dan Charged Attack dari Karakter tersebut akan meningkat 10% selama 6 detik, dapat ditumpuk sampai 2 lapis. Selain itu, jika Aloy yang mengenakan Predator, ATK-nya akan meningkat sebesar 66."
+      "refinements": [
+        "Berlaku khusus untuk pemain di: \r\n\"PlayStation Network\"\r\nSaat mengakibatkan Cryo DMG pada musuh, maka DMG Normal dan Charged Attack dari Karakter tersebut akan meningkat 10% selama 6 detik, dapat ditumpuk sampai 2 lapis. Selain itu, jika Aloy yang mengenakan Predator, ATK-nya akan meningkat sebesar 66."
+      ]
     },
     {
       "key": "primordial-jade-cutter",
       "name": "Primordial Jade Cutter",
       "description": "Pedang upacara yang diukir dari giok murni. Suara ayunannya seperti suara desahan napas yang samar.",
-      "refinement": "Meningkatkan {0}% Max HP, dan memberikan Bonus ATK sebesar {1},2% dari Max HP pengguna."
+      "refinements": [
+        "Meningkatkan {color}20{/color}% Max HP, dan memberikan Bonus ATK sebesar {color}1{/color},2% dari Max HP pengguna.",
+        "Meningkatkan {color}25{/color}% Max HP, dan memberikan Bonus ATK sebesar {color}1{/color},5% dari Max HP pengguna.",
+        "Meningkatkan {color}30{/color}% Max HP, dan memberikan Bonus ATK sebesar {color}1{/color},8% dari Max HP pengguna.",
+        "Meningkatkan {color}35{/color}% Max HP, dan memberikan Bonus ATK sebesar {color}2{/color},1% dari Max HP pengguna.",
+        "Meningkatkan {color}40{/color}% Max HP, dan memberikan Bonus ATK sebesar {color}2{/color},4% dari Max HP pengguna."
+      ]
     },
     {
       "key": "primordial-jade-winged-spear",
       "name": "Primordial Jade Winged-Spear",
       "description": "Sebuah polearm giok yang diciptakan oleh para Archon, memiliki kekuatan untuk membunuh monster laut legenda.",
-      "refinement": "Saat mengenai musuh, meningkatkan {0},2% ATK selama 6 detik. Maks. 7 lapis. Dapat terpicu setiap 0,3 detik. Saat tumpukan penuh, meningkatkan {1}% DMG."
+      "refinements": [
+        "Saat mengenai musuh, meningkatkan {color}3{/color},2% ATK selama 6 detik. Maks. 7 lapis. Dapat terpicu setiap 0,3 detik. Saat tumpukan penuh, meningkatkan {color}12{/color}% DMG.",
+        "Saat mengenai musuh, meningkatkan {color}3{/color},9% ATK selama 6 detik. Maks. 7 lapis. Dapat terpicu setiap 0,3 detik. Saat tumpukan penuh, meningkatkan {color}15{/color}% DMG.",
+        "Saat mengenai musuh, meningkatkan {color}4{/color},6% ATK selama 6 detik. Maks. 7 lapis. Dapat terpicu setiap 0,3 detik. Saat tumpukan penuh, meningkatkan {color}18{/color}% DMG.",
+        "Saat mengenai musuh, meningkatkan {color}5{/color},3% ATK selama 6 detik. Maks. 7 lapis. Dapat terpicu setiap 0,3 detik. Saat tumpukan penuh, meningkatkan {color}21{/color}% DMG.",
+        "Saat mengenai musuh, meningkatkan {color}6{/color}% ATK selama 6 detik. Maks. 7 lapis. Dapat terpicu setiap 0,3 detik. Saat tumpukan penuh, meningkatkan {color}24{/color}% DMG."
+      ]
     },
     {
       "key": "prototype-amber",
       "name": "Prototype Amber",
       "description": "Catalyst yang dilapisi dengan emas, tersembunyi dan dijaga di dalam Blackcliff Forge, sepertinya benda ini dapat menampung cahaya dari langit.",
-      "refinement": "Setelah melancarkan Elemental Burst, memulihkan {0} Energy setiap 2 detik dan memulihkan {1}% HP kepada seluruh anggota party setiap 2 detik."
+      "refinements": [
+        "Setelah melancarkan Elemental Burst, memulihkan {color}4{/color} Energy setiap 2 detik dan memulihkan {color}4{/color}% HP kepada seluruh anggota party setiap 2 detik.",
+        "Setelah melancarkan Elemental Burst, memulihkan {color}4{/color},5 Energy setiap 2 detik dan memulihkan {color}4{/color},5% HP kepada seluruh anggota party setiap 2 detik.",
+        "Setelah melancarkan Elemental Burst, memulihkan {color}5{/color} Energy setiap 2 detik dan memulihkan {color}5{/color}% HP kepada seluruh anggota party setiap 2 detik.",
+        "Setelah melancarkan Elemental Burst, memulihkan {color}5{/color},5 Energy setiap 2 detik dan memulihkan {color}5{/color},5% HP kepada seluruh anggota party setiap 2 detik.",
+        "Setelah melancarkan Elemental Burst, memulihkan {color}6{/color} Energy setiap 2 detik dan memulihkan {color}6{/color}% HP kepada seluruh anggota party setiap 2 detik."
+      ]
     },
     {
       "key": "prototype-archaic",
       "name": "Prototype Archaic",
       "description": "Sebuah greatsword kuno yang ditemukan di Blackcliff Forge. Mempunyai kekuatan ayunan yang luar biasa seolah dapat membelah dimensi.",
-      "refinement": "Saat mengenai musuh, Normal atau Charged Attack memiliki 50% persentase untuk mengakibatkan DMG tambahan sebesar {0}% ATK di area kecil. Dapat terpicu setiap 15 detik"
+      "refinements": [
+        "Saat mengenai musuh, Normal atau Charged Attack memiliki 50% persentase untuk mengakibatkan DMG tambahan sebesar {color}240{/color}% ATK di area kecil. Dapat terpicu setiap 15 detik",
+        "Saat mengenai musuh, Normal atau Charged Attack memiliki 50% persentase untuk mengakibatkan DMG tambahan sebesar {color}300{/color}% ATK di area kecil. Dapat terpicu setiap 15 detik",
+        "Saat mengenai musuh, Normal atau Charged Attack memiliki 50% persentase untuk mengakibatkan DMG tambahan sebesar {color}360{/color}% ATK di area kecil. Dapat terpicu setiap 15 detik",
+        "Saat mengenai musuh, Normal atau Charged Attack memiliki 50% persentase untuk mengakibatkan DMG tambahan sebesar {color}420{/color}% ATK di area kecil. Dapat terpicu setiap 15 detik",
+        "Saat mengenai musuh, Normal atau Charged Attack memiliki 50% persentase untuk mengakibatkan DMG tambahan sebesar {color}480{/color}% ATK di area kecil. Dapat terpicu setiap 15 detik"
+      ]
     },
     {
       "key": "prototype-crescent",
       "name": "Prototype Crescent",
       "description": "Sebuah prototipe busur yang ditemukan di Blackcliff Forge. Anak panah yang ditembakkan dari busur ini bercahaya bagaikan cahaya rembulan.",
-      "refinement": "Saat Charged Attack mengenai titik kelemahan musuh, akan meningkatkan Movement SPD sebanyak 10% dan ATK sebesar {0}% selama 10 detik."
+      "refinements": [
+        "Saat Charged Attack mengenai titik kelemahan musuh, akan meningkatkan Movement SPD sebanyak 10% dan ATK sebesar {color}36{/color}% selama 10 detik.",
+        "Saat Charged Attack mengenai titik kelemahan musuh, akan meningkatkan Movement SPD sebanyak 10% dan ATK sebesar {color}45{/color}% selama 10 detik.",
+        "Saat Charged Attack mengenai titik kelemahan musuh, akan meningkatkan Movement SPD sebanyak 10% dan ATK sebesar {color}54{/color}% selama 10 detik.",
+        "Saat Charged Attack mengenai titik kelemahan musuh, akan meningkatkan Movement SPD sebanyak 10% dan ATK sebesar {color}63{/color}% selama 10 detik.",
+        "Saat Charged Attack mengenai titik kelemahan musuh, akan meningkatkan Movement SPD sebanyak 10% dan ATK sebesar {color}72{/color}% selama 10 detik."
+      ]
     },
     {
       "key": "prototype-rancour",
       "name": "Prototype Rancour",
       "description": "Pedang panjang kuno yang ditemukan di Blackcliff Forge. Dapat dengan mudah memotong batu bagaikan pisau memotong batangan mentega.",
-      "refinement": "Saat Normal atau Charged Attack mengenai musuh, meningkatkan {0}% ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,3 detik."
+      "refinements": [
+        "Saat Normal atau Charged Attack mengenai musuh, meningkatkan {color}4{/color}% ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,3 detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, meningkatkan {color}5{/color}% ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,3 detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, meningkatkan {color}6{/color}% ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,3 detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, meningkatkan {color}7{/color}% ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,3 detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, meningkatkan {color}8{/color}% ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,3 detik."
+      ]
     },
     {
       "key": "prototype-starglitter",
       "name": "Prototype Starglitter",
       "description": "Sebuah glaive yang ditemukan di Blackcliff Forge. Kilatan cahaya di ujungnya yang tajam bagaikan bintang di malam hari.",
-      "refinement": "Setelah melancarkan Elemental Skill, meningkatkan {0}% Normal dan Charged Attack selama 12 detik. Efek ini dapat ditumpuk maksimum 2 lapis."
+      "refinements": [
+        "Setelah melancarkan Elemental Skill, meningkatkan {color}8{/color}% Normal dan Charged Attack selama 12 detik. Efek ini dapat ditumpuk maksimum 2 lapis.",
+        "Setelah melancarkan Elemental Skill, meningkatkan {color}10{/color}% Normal dan Charged Attack selama 12 detik. Efek ini dapat ditumpuk maksimum 2 lapis.",
+        "Setelah melancarkan Elemental Skill, meningkatkan {color}12{/color}% Normal dan Charged Attack selama 12 detik. Maksimum 2 lapis.",
+        "Setelah melancarkan Elemental Skill, meningkatkan {color}14{/color}% Normal dan Charged Attack selama 12 detik. Maksimum 2 lapis.",
+        "Setelah melancarkan Elemental Skill, meningkatkan {color}16{/color}% Normal dan Charged Attack selama 12 detik. Maksimum 2 lapis."
+      ]
     },
     {
       "key": "rainslasher",
       "name": "Rainslasher",
       "description": "Pedang besar tanpa mata pedang yang bersinar gelap. Meremukkan musuh-musuhnya dengan kekuatan yang besar.",
-      "refinement": "Meningkatkan {0}% DMG terhadap musuh yang terpengaruh Hydro atau Electro."
+      "refinements": [
+        "Meningkatkan {color}20{/color}% DMG terhadap musuh yang terpengaruh Hydro atau Electro.",
+        "Meningkatkan {color}24{/color}% DMG terhadap musuh yang terpengaruh Hydro atau Electro.",
+        "Meningkatkan {color}28{/color}% DMG terhadap musuh yang terpengaruh Hydro atau Electro.",
+        "Meningkatkan {color}32{/color}% DMG terhadap musuh yang terpengaruh Hydro atau Electro.",
+        "Meningkatkan {color}36{/color}% DMG terhadap musuh yang terpengaruh Hydro atau Electro."
+      ]
     },
     {
       "key": "raven-bow",
       "name": "Raven Bow",
       "description": "Burung gagak diketahui sebagai pengantar kematian. Tubuh busur ini dihiasi dengan bulu burung gagak yang menandakan kematian bagi mangsa yang diincarnya.",
-      "refinement": "Meningkatkan {0}% DMG terhadap musuh yang terpengaruh Hydro atau Pyro."
+      "refinements": [
+        "Meningkatkan {color}12{/color}% DMG terhadap musuh yang terpengaruh Hydro atau Pyro.",
+        "Meningkatkan {color}15{/color}% DMG terhadap musuh yang terpengaruh Hydro atau Pyro.",
+        "Meningkatkan {color}18{/color}% DMG terhadap musuh yang terpengaruh Hydro atau Pyro.",
+        "Meningkatkan {color}21{/color}% DMG terhadap musuh yang terpengaruh Hydro atau Pyro.",
+        "Meningkatkan {color}24{/color}% DMG terhadap musuh yang terpengaruh Hydro atau Pyro."
+      ]
     },
     {
       "key": "recurve-bow",
       "name": "Recurve Bow",
       "description": "Konon busur ini dapat mengenai burung elang yang sedang terbang, tetapi tentunya juga harus mengandalkan kemahiran dari sang pemburu.",
-      "refinement": "Memulihkan {0}% HP saat mengalahkan satu musuh."
+      "refinements": [
+        "Memulihkan {color}8{/color}% HP saat mengalahkan satu musuh.",
+        "Memulihkan {color}10{/color}% HP saat mengalahkan satu musuh.",
+        "Memulihkan {color}12{/color}% HP saat mengalahkan satu musuh.",
+        "Memulihkan {color}14{/color}% HP saat mengalahkan satu musuh.",
+        "Memulihkan {color}16{/color}% HP saat mengalahkan satu musuh."
+      ]
     },
     {
       "key": "royal-bow",
       "name": "Royal Bow",
       "description": "Busur tua yang pernah digunakan oleh para bangsawan penguasa Mondstadt di zaman dahulu. Setelah generasi demi generasi berlalu, busur ini masih dapat menembakkan panah dengan sangat cepat.",
-      "refinement": "Saat mengakibatkan DMG pada musuh, meningkatkan {0}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang."
+      "refinements": [
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}8{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}10{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}12{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}14{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan efek akan hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}16{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan efek akan hilang."
+      ]
     },
     {
       "key": "royal-greatsword",
       "name": "Royal Greatsword",
       "description": "Pedang panjang tua milik bangsawan Mondstadt di masa lampau. Terbuat dari bahan dengan kualitas terbaik, dan telah melalui ujian waktu. Pedang yang digunakan oleh keluarga kerajaan.",
-      "refinement": "Saat mengakibatkan DMG pada musuh, meningkatkan {0}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang."
+      "refinements": [
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}8{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}10{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}12{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}14{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan efek akan hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}16{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan efek akan hilang."
+      ]
     },
     {
       "key": "royal-grimoire",
       "name": "Royal Grimoire",
       "description": "Buku yang sebelumnya dimiliki oleh penyihir istana di Mondstadt. Di dalamnya tercatat kebenaran sejarah dan berbagai sihir.",
-      "refinement": "Saat mengakibatkan DMG pada musuh, meningkatkan {0}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang."
+      "refinements": [
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}8{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}10{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}12{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}14{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan efek akan hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}16{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan efek akan hilang."
+      ]
     },
     {
       "key": "royal-longsword",
       "name": "Royal Longsword",
       "description": "Pedang panjang tua milik bangsawan Mondstadt di masa lampau. Memiliki ukiran dan ornamen yang elegan yang melambangkan status dari pemiliknya.",
-      "refinement": "Saat mengakibatkan DMG pada musuh, meningkatkan {0}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang."
+      "refinements": [
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}8{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}10{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}12{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}14{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan efek akan hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}16{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan efek akan hilang."
+      ]
     },
     {
       "key": "royal-spear",
       "name": "Royal Spear",
       "description": "Tombak yang dulu dipuja-puja oleh bangsawan kuno yang pernah menjajah Mondstadt. Tombak ini sudah lama tidak digunakan, tetapi masih tajam tiada banding.",
-      "refinement": "Saat mengakibatkan DMG pada musuh, meningkatkan {0}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang."
+      "refinements": [
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}8{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}10{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}12{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan CRIT Rate hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}14{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan efek akan hilang.",
+        "Saat mengakibatkan DMG pada musuh, meningkatkan {color}16{/color}% CRIT Rate. Maksimum 5 lapis, dan saat serangan CRIT terpicu, seluruh lapisan efek akan hilang."
+      ]
     },
     {
       "key": "rust",
       "name": "Rust",
       "description": "Busur besar yang terbuat dari perak, tetapi kini telah tertutup penuh oleh karat. Orang biasa jangankan menembakkan panah, mengangkatnya pun tidak sanggup.",
-      "refinement": "Meningkatkan DMG Normal Attack sebesar {0}% tapi menurunkan DMG Charged Attack sebesar 10%."
+      "refinements": [
+        "Meningkatkan DMG Normal Attack sebesar {color}40{/color}% tapi menurunkan DMG Charged Attack sebesar 10%.",
+        "Meningkatkan DMG Normal Attack sebesar {color}50{/color}% tapi menurunkan DMG Charged Attack sebesar 10%.",
+        "Meningkatkan DMG Normal Attack sebesar {color}60{/color}% tapi menurunkan DMG Charged Attack sebesar 10%.",
+        "Meningkatkan DMG Normal Attack sebesar {color}70{/color}% tapi menurunkan DMG Charged Attack sebesar 10%.",
+        "Meningkatkan DMG Normal Attack sebesar {color}80{/color}% tapi menurunkan DMG Charged Attack sebesar 10%."
+      ]
     },
     {
       "key": "sacrificial-bow",
       "name": "Sacrificial Bow",
       "description": "Busur berburu dekorasi yang telah membatu oleh waktu. Dekorasi yang ada di atasnya masih terlihat dengan jelas. Memberikan kekuatan melawan angin waktu bagi penggunanya.",
-      "refinement": "Setelah Elemental Skill mengakibatkan DMG, terdapat {0}% persentase CD Skill langsung selesai. Dapat terpicu setiap {1} detik."
+      "refinements": [
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}40{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}30{/color} detik.",
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}50{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}26{/color} detik.",
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}60{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}22{/color} detik.",
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}70{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}19{/color} detik.",
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}80{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}16{/color} detik."
+      ]
     },
     {
       "key": "sacrificial-fragments",
       "name": "Sacrificial Fragments",
       "description": "Naskah yang sudah tua dan lapuk, tulisannya tidak lagi dapat dibaca. Benda terkutuk yang telah terkikis oleh angin waktu.",
-      "refinement": "Setelah Elemental Skill mengakibatkan DMG, terdapat {0}% persentase CD Skill langsung selesai. Dapat terpicu setiap {1} detik."
+      "refinements": [
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}40{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}30{/color} detik.",
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}50{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}26{/color} detik.",
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}60{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}22{/color} detik.",
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}70{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}19{/color} detik.",
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}80{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}16{/color} detik."
+      ]
     },
     {
       "key": "sacrificial-greatsword",
       "name": "Sacrificial Greatsword",
       "description": "Pedang dekorasi yang telah membatu oleh waktu, tetapi perhiasan di dalamnya masih dapat terlihat jelas. Memberikan kekuatan melawan angin waktu bagi penggunanya.",
-      "refinement": "Setelah Elemental Skill mengakibatkan DMG, terdapat {0}% persentase CD Skill langsung selesai. Dapat terpicu setiap {1} detik."
+      "refinements": [
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}40{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}30{/color} detik.",
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}50{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}26{/color} detik.",
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}60{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}22{/color} detik.",
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}70{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}19{/color} detik.",
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}80{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}16{/color} detik."
+      ]
     },
     {
       "key": "sacrificial-sword",
       "name": "Sacrificial Sword",
       "description": "Pedang dekoratif yang telah membatu karena usianya yang sangat tua, tetapi perhiasan yang tertanam di dalamnya masih dapat terlihat. Memberikan kekuatan berkat akan angin waktu kepada pemegangnya.",
-      "refinement": "Setelah Elemental Skill mengakibatkan DMG, terdapat {0}% persentase CD Skill langsung selesai. Dapat terpicu setiap {1} detik."
+      "refinements": [
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}40{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}30{/color} detik.",
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}50{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}26{/color} detik.",
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}60{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}22{/color} detik.",
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}70{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}19{/color} detik.",
+        "Setelah Elemental Skill mengakibatkan DMG, terdapat {color}80{/color}% persentase CD Skill langsung selesai. Dapat terpicu setiap {color}16{/color} detik."
+      ]
     },
     {
       "key": "seasoned-hunters-bow",
       "name": "Seasoned Hunter's Bow",
       "description": "Busur yang terasah dengan baik oleh waktu dan tangan pemburu. Terasa seperti kepanjangan tangan dari seorang pemburu handal.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "serpent-spine",
       "name": "Serpent Spine",
       "description": "Senjata kuno langka yang berasal dari laut, suaranya bagaikan suara ombak di masa lampau.",
-      "refinement": "Saat karakter bertarung, setiap 4 detik meningkatkan {0}% DMG yang diakibatkan dan {1}% DMG yang diterima. Efek ini dapat ditumpuk maksimum 5 lapis, dan akan berkurang 1 lapis saat menerima DMG. Efek tidak akan hilang saat karakter bertarung digantikan."
+      "refinements": [
+        "Saat karakter bertarung, setiap 4 detik meningkatkan {color}6{/color}% DMG yang diakibatkan dan {color}3{/color}% DMG yang diterima. Efek ini dapat ditumpuk maksimum 5 lapis, dan akan berkurang 1 lapis saat menerima DMG. Efek tidak akan hilang saat karakter bertarung digantikan.",
+        "Saat karakter bertarung, setiap 4 detik meningkatkan {color}7{/color}% DMG yang diakibatkan dan {color}2{/color},7% DMG yang diterima. Efek ini dapat ditumpuk maksimum 5 lapis, dan akan berkurang 1 lapis saat menerima DMG. Efek tidak akan hilang saat karakter digantikan.",
+        "Saat karakter bertarung, setiap 4 detik meningkatkan {color}8{/color}% DMG yang diakibatkan dan {color}2{/color},4% DMG yang diterima. Efek ini dapat ditumpuk maksimum 5 lapis, dan akan berkurang 1 lapis saat menerima DMG. Efek tidak akan hilang saat karakter bertarung digantikan.",
+        "Saat karakter bertarung, setiap 4 detik meningkatkan {color}9{/color}% DMG yang diakibatkan dan {color}2{/color},2% DMG yang diterima. Efek ini dapat ditumpuk maksimum 5 lapis, dan akan berkurang 1 lapis saat menerima DMG. Efek tidak akan hilang saat karakter digantikan.",
+        "Saat karakter bertarung, setiap 4 detik meningkatkan {color}10{/color}% DMG yang diakibatkan dan {color}2{/color}% DMG yang diterima. Efek ini dapat ditumpuk maksimum 5 lapis, dan akan berkurang 1 lapis saat menerima DMG. Efek tidak akan hilang saat karakter bertarung digantikan."
+      ]
     },
     {
       "key": "sharpshooters-oath",
       "name": "Sharpshooter's Oath",
       "description": "Busur kuat yang pernah dimiliki oleh seorang pemanah terbaik. Tetapi aura kuat yang terpancar dari busur ini membuatnya tidak cocok dipakai untuk berburu.",
-      "refinement": "Meningkatkan {0}% DMG serangan yang mengenai titik kelemahan musuh."
+      "refinements": [
+        "Meningkatkan {color}24{/color}% DMG serangan yang mengenai titik kelemahan musuh.",
+        "Meningkatkan {color}30{/color}% DMG serangan yang mengenai titik kelemahan musuh.",
+        "Meningkatkan {color}36{/color}% DMG serangan yang mengenai titik kelemahan musuh.",
+        "Meningkatkan {color}42{/color}% DMG serangan yang mengenai titik kelemahan musuh.",
+        "Meningkatkan {color}48{/color}% DMG serangan yang mengenai titik kelemahan musuh."
+      ]
     },
     {
       "key": "silver-sword",
       "name": "Silver Sword",
       "description": "Pedang perak yang ditakuti iblis. Tapi semua orang tahu, sebenarnya ini bukan perak murni, melainkan perak campuran.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "skyrider-greatsword",
       "name": "Skyrider Greatsword",
       "description": "Pedang besar yang dapat diandalkan. Konon, Skyrider terkenal pernah mencoba meminjam kekuatannya untuk terbang, untuk yang kedua kalinya...",
-      "refinement": "Saat Normal or Charged Attack mengenai musuh, meningkatkan {0}% ATK selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik."
+      "refinements": [
+        "Saat Normal or Charged Attack mengenai musuh, meningkatkan {color}6{/color}% ATK selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik.",
+        "Saat Normal or Charged Attack mengenai musuh, meningkatkan {color}7{/color}% ATK selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik.",
+        "Saat Normal or Charged Attack mengenai musuh, meningkatkan {color}8{/color}% ATK selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik.",
+        "Saat Normal or Charged Attack mengenai musuh, meningkatkan {color}9{/color}% ATK selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik.",
+        "Saat Normal or Charged Attack mengenai musuh, meningkatkan {color}10{/color}% ATK selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik."
+      ]
     },
     {
       "key": "skyrider-sword",
       "name": "Skyrider Sword",
       "description": "Pedang baja yang dapat diandalkan. Konon, Skyrider yang terkenal pernah mencoba meminjam kekuatannya untuk terbang...",
-      "refinement": "Menggunakan Elemental Burst meningkatkan {0}% ATK dan Movement SPD selama 15 detik."
+      "refinements": [
+        "Menggunakan Elemental Burst meningkatkan {color}12{/color}% ATK dan Movement SPD selama 15 detik.",
+        "Menggunakan Elemental Burst meningkatkan {color}15{/color}% ATK dan Movement SPD selama 15 detik.",
+        "Menggunakan Elemental Burst meningkatkan {color}18{/color}% ATK dan Movement SPD selama 15 detik.",
+        "Menggunakan Elemental Burst meningkatkan {color}21{/color}% ATK dan Movement SPD selama 15 detik.",
+        "Menggunakan Elemental Burst meningkatkan {color}24{/color}% ATK dan Movement SPD selama 15 detik."
+      ]
     },
     {
       "key": "skyward-atlas",
       "name": "Skyward Atlas",
       "description": "Atlas awan yang melambangkan Dvalin dan tuannya, Archon Anemo. Menunjukkan secara rinci awan dan angin di daerah Utara, mengandung kekuatan angin dan angkasa.",
-      "refinement": "Meningkatkan {0}% Elemental DMG Bonus. Saat Normal Attack mengenai musuh, memiliki 50% persentase untuk mendapatkan bantuan dari awan yang mengincar musuh terdekat selama 15 detik, dan mengakibatkan DMG sebesar {1}% ATK. Dapat terpicu setiap 30 detik."
+      "refinements": [
+        "Meningkatkan {color}12{/color}% Elemental DMG Bonus. Saat Normal Attack mengenai musuh, memiliki 50% persentase untuk mendapatkan bantuan dari awan yang mengincar musuh terdekat selama 15 detik, dan mengakibatkan DMG sebesar {color}160{/color}% ATK. Dapat terpicu setiap 30 detik.",
+        "Meningkatkan {color}15{/color}% Elemental DMG Bonus. Saat Normal Attack mengenai musuh, memiliki 50% persentase untuk mendapatkan bantuan dari awan yang mengincar musuh terdekat selama 15 detik, dan mengakibatkan DMG sebesar {color}200{/color}% ATK. Dapat terpicu setiap 30 detik.",
+        "Meningkatkan {color}18{/color}% Elemental DMG Bonus. Saat Normal Attack mengenai musuh, memiliki 50% persentase untuk mendapatkan bantuan dari awan yang mengincar musuh terdekat selama 15 detik, dan mengakibatkan DMG sebesar {color}240{/color}% ATK. Dapat terpicu setiap 30 detik.",
+        "Meningkatkan {color}21{/color}% Elemental DMG Bonus. Saat Normal Attack mengenai musuh, memiliki 50% persentase untuk mendapatkan bantuan dari awan yang mengincar musuh terdekat selama 15 detik, dan mengakibatkan DMG sebesar {color}280{/color}% ATK. Dapat terpicu setiap 30 detik.",
+        "Meningkatkan {color}24{/color}% Elemental DMG Bonus. Saat Normal Attack mengenai musuh, memiliki 50% persentase untuk mendapatkan bantuan dari awan yang mengincar musuh terdekat selama 15 detik, dan mengakibatkan DMG sebesar {color}320{/color}% ATK. Dapat terpicu setiap 30 detik."
+      ]
     },
     {
       "key": "skyward-blade",
       "name": "Skyward Blade",
       "description": "Pedang Knight yang melambangkan kemuliaan Dvalin yang sudah terpulihkan. Berkat Archon Anemo berinar di atas mata pedangnya, memberikan kekuatan langit dan angin.",
-      "refinement": "Saat melakukan Elemental Burst akan meningkatkan CRIT Rate sebesar {0}%, meningkatkan Movement SPD sebesar {1}%, dan ATK SPD sebesar {2}%. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG {3}% ATK selama 12 detik."
+      "refinements": [
+        "Saat melakukan Elemental Burst akan meningkatkan CRIT Rate sebesar {color}4{/color}%, meningkatkan Movement SPD sebesar {color}10{/color}%, dan ATK SPD sebesar {color}10{/color}%. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG {color}20{/color}% ATK selama 12 detik.",
+        "Saat melakukan Elemental Burst akan meningkatkan CRIT Rate sebesar {color}5{/color}%, meningkatkan Movement SPD sebesar {color}10{/color}%, dan ATK SPD sebesar {color}10{/color}%. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG {color}25{/color}% ATK selama 12 detik.",
+        "Saat melakukan Elemental Burst akan meningkatkan CRIT Rate sebesar {color}6{/color}%, meningkatkan Movement SPD sebesar {color}10{/color}%, dan ATK SPD sebesar {color}10{/color}%. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG {color}30{/color}% ATK selama 12 detik.",
+        "Saat melakukan Elemental Burst akan meningkatkan CRIT Rate sebesar {color}7{/color}%, meningkatkan Movement SPD sebesar {color}10{/color}%, dan ATK SPD sebesar {color}10{/color}%. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG {color}35{/color}% ATK selama 12 detik.",
+        "Saat melakukan Elemental Burst akan meningkatkan CRIT Rate sebesar {color}8{/color}%, meningkatkan Movement SPD sebesar {color}10{/color}%, dan ATK SPD sebesar {color}10{/color}%. Lalu saat Normal dan Charged Attack mengenai target, akan mendapatkan tambahan DMG {color}40{/color}% ATK selama 12 detik."
+      ]
     },
     {
       "key": "skyward-harp",
       "name": "Skyward Harp",
       "description": "Busur besar yang melambangkan hubungan erat antara Dvalin dan Archon Anemo. Suara yang ditimbulkan busur ini bagaikan musik di telinga Archon Anemo, di dalamnya terdapat kekuatan angin dan angkasa.",
-      "refinement": "Meningkatkan {0}% CRIT DMG. Saat serangan mengenai musuh, memiliki {1}% persentase untuk mengakibatkan DMG pada area kecil sebesar 125% ATK. Dapat terpicu setiap {2} detik."
+      "refinements": [
+        "Meningkatkan {color}20{/color}% CRIT DMG. Saat serangan mengenai musuh, memiliki {color}60{/color}% persentase untuk mengakibatkan DMG pada area kecil sebesar 125% ATK. Dapat terpicu setiap {color}4{/color} detik.",
+        "Meningkatkan {color}25{/color}% CRIT DMG. Saat serangan mengenai musuh, memiliki {color}70{/color}% persentase untuk mengakibatkan DMG pada area kecil sebesar 125% ATK. Dapat terpicu setiap {color}3{/color},5 detik.",
+        "Meningkatkan {color}30{/color}% CRIT DMG. Saat serangan mengenai musuh, memiliki {color}80{/color}% persentase untuk mengakibatkan DMG pada area kecil sebesar 125% ATK. Dapat terpicu setiap {color}3{/color} detik.",
+        "Meningkatkan {color}35{/color}% CRIT DMG. Saat serangan mengenai musuh, memiliki {color}90{/color}% persentase untuk mengakibatkan DMG pada area kecil sebesar 125% ATK. Dapat terpicu setiap {color}2{/color},5 detik.",
+        "Meningkatkan {color}40{/color}% CRIT DMG. Saat serangan mengenai musuh, memiliki {color}100{/color}% persentase untuk mengakibatkan DMG pada area kecil sebesar 125% ATK. Dapat terpicu setiap {color}2{/color} detik."
+      ]
     },
     {
       "key": "skyward-pride",
       "name": "Skyward Pride",
       "description": "Claymore yang melambangkan keagungan Dvalin yang mengumandang di bentang angkasa. Saat diayunkan, terdengar kekuatan Dvalin dan Anemo dalam suara yang ditimbulkannya.",
-      "refinement": "Meningkatkan {0}% DMG. Setelah menggunakan Elemental Burst: Normal atau Charged Attack yang mengenai musuh akan menciptakan tebasan vakum yang mengakibatkan DMG sebesar {1}% ATK kepada musuh di jalurnya. Bertahan selama 20 detik, atau 8 tebasan vakum."
+      "refinements": [
+        "Meningkatkan {color}8{/color}% DMG. Setelah menggunakan Elemental Burst: Normal atau Charged Attack yang mengenai musuh akan menciptakan tebasan vakum yang mengakibatkan DMG sebesar {color}80{/color}% ATK kepada musuh di jalurnya. Bertahan selama 20 detik, atau 8 tebasan vakum.",
+        "Meningkatkan {color}10{/color}% DMG. Setelah menggunakan Elemental Burst: Normal atau Charged Attack yang mengenai musuh akan menciptakan tebasan vakum yang mengakibatkan DMG sebesar {color}100{/color}% ATK kepada musuh di jalurnya. Bertahan selama 20 detik, atau 8 tebasan vakum.",
+        "Meningkatkan {color}12{/color}% DMG. Setelah menggunakan Elemental Burst: Normal atau Charged Attack yang mengenai musuh akan menciptakan tebasan vakum yang mengakibatkan DMG sebesar {color}120{/color}% ATK kepada musuh di jalurnya. Bertahan selama 20 detik, atau 8 tebasan vakum.",
+        "Meningkatkan {color}14{/color}% DMG. Setelah menggunakan Elemental Burst: Normal atau Charged Attack yang mengenai musuh akan menciptakan tebasan vakum yang mengakibatkan DMG sebesar {color}140{/color}% ATK kepada musuh di jalurnya. Bertahan selama 20 detik, atau 8 tebasan vakum.",
+        "Meningkatkan {color}16{/color}% DMG. Setelah menggunakan Elemental Burst: Normal atau Charged Attack yang mengenai musuh akan menciptakan tebasan vakum yang mengakibatkan DMG sebesar {color}160{/color}% ATK kepada musuh di jalurnya. Bertahan selama 20 detik, atau 8 tebasan vakum."
+      ]
     },
     {
       "key": "skyward-spine",
       "name": "Skyward Spine",
       "description": "Tombak polearm yang melambangkan kebulatan hati Dvalin. Bagian atas gagangnya menengadah ke langit, dan terbelah di hadapan kekuatan angin dan langit.",
-      "refinement": "Meningkatkan {0}% CRIT Rate dan {1}% Normal ATK SPD. Selain itu, saat mengenai musuh, Normal dan Charged Attack memiliki {2}% persentase untuk memicu pisau hampa yang mengakibatkan DMG di area kecil sebesar {3}% ATK. Efek ini dapat terpicu setiap 2 detik."
+      "refinements": [
+        "Meningkatkan {color}8{/color}% CRIT Rate dan {color}12{/color}% Normal ATK SPD. Selain itu, saat mengenai musuh, Normal dan Charged Attack memiliki {color}50{/color}% persentase untuk memicu pisau hampa yang mengakibatkan DMG di area kecil sebesar {color}40{/color}% ATK. Efek ini dapat terpicu setiap 2 detik.",
+        "Meningkatkan {color}10{/color}% CRIT Rate dan {color}12{/color}% Normal ATK SPD. Selain itu, saat mengenai musuh, Normal dan Charged Attack memiliki {color}50{/color}% persentase untuk memicu pisau hampa yang mengakibatkan DMG di area kecil sebesar {color}55{/color}% ATK. Efek ini dapat terpicu setiap 2 detik.",
+        "Meningkatkan {color}12{/color}% CRIT Rate dan {color}12{/color}% Normal ATK SPD. Selain itu, saat mengenai musuh, Normal dan Charged Attack memiliki {color}50{/color}% persentase untuk memicu pisau hampa yang mengakibatkan DMG di area kecil sebesar {color}70{/color}% ATK. Efek ini dapat terpicu setiap 2 detik.",
+        "Meningkatkan {color}14{/color}% CRIT Rate dan {color}12{/color}% Normal ATK SPD. Selain itu, saat mengenai musuh, Normal dan Charged Attack memiliki {color}50{/color}% persentase untuk memicu pisau hampa yang mengakibatkan DMG di area kecil sebesar {color}85{/color}% ATK. Efek ini dapat terpicu setiap 2 detik.",
+        "Meningkatkan {color}16{/color}% CRIT Rate dan {color}12{/color}% Normal ATK SPD. Selain itu, saat mengenai musuh, Normal dan Charged Attack memiliki {color}50{/color}% persentase untuk memicu pisau hampa yang mengakibatkan DMG di area kecil sebesar {color}100{/color}% ATK. Efek ini dapat terpicu setiap 2 detik."
+      ]
     },
     {
       "key": "slingshot",
       "name": "Slingshot",
       "description": "Selepas namanya, ini adalah sebuah busur. Setelah percobaan dan peningkatan yang tak terhitung jumlahnya, orang yang membuat Slingshot baru menyadari bahwa yang terbentuk adalah sebuah busur.",
-      "refinement": "Jika Normal atau Charged Attack mengenai target dalam waktu 0,3 detik setelah dilancarkan, DMG meningkat sebesar {0}%. Sebaliknya jika tidak, maka DMG menurun sebesar 10%."
+      "refinements": [
+        "Jika Normal atau Charged Attack mengenai target dalam waktu 0,3 detik setelah dilancarkan, DMG meningkat sebesar {color}36{/color}%. Sebaliknya jika tidak, maka DMG menurun sebesar 10%.",
+        "Jika Normal atau Charged Attack mengenai target dalam waktu 0,3 detik setelah dilancarkan, DMG meningkat sebesar {color}42{/color}%. Sebaliknya jika tidak, maka DMG menurun sebesar 10%.",
+        "Jika Normal atau Charged Attack mengenai target dalam waktu 0,3 detik setelah dilancarkan, DMG meningkat sebesar {color}48{/color}%. Sebaliknya jika tidak, maka DMG menurun sebesar 10%.",
+        "Jika Normal atau Charged Attack mengenai target dalam waktu 0,3 detik setelah dilancarkan, DMG meningkat sebesar {color}54{/color}%. Sebaliknya jika tidak, maka DMG menurun sebesar 10%.",
+        "Jika Normal atau Charged Attack mengenai target dalam waktu 0,3 detik setelah dilancarkan, DMG meningkat sebesar {color}60{/color}%. Sebaliknya jika tidak, maka DMG menurun sebesar 10%."
+      ]
     },
     {
       "key": "snow-tombed-starsilver",
       "name": "Snow-Tombed Starsilver",
       "description": "Pedang besar kuno yang tersimpan di antara lukisan dinding. Ditempa dari Starsilver, mempunyai kekuatan untuk membelah es dan salju.",
-      "refinement": "Saat Normal atau Charged Attack mengenai musuh, memiliki {0}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {1}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {2}% ATK. Efek ini dapat terpicu setiap 10 detik."
+      "refinements": [
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}60{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}80{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}200{/color}% ATK. Efek ini dapat terpicu setiap 10 detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}70{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}95{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}240{/color}% ATK. Efek ini dapat terpicu setiap 10 detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}80{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}110{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}280{/color}% ATK. Efek ini dapat terpicu setiap 10 detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}90{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}125{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}320{/color}% ATK. Efek ini dapat terpicu setiap 10 detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki {color}100{/color}% persentase untuk menciptakan Everfrost Icicle di atas musuh, mengakibatkan DMG area sebesar {color}140{/color}% ATK. Jika musuh berada dalam efek Cryo, maka Everfrost Icicle akan mengakibatkan DMG sebesar {color}360{/color}% ATK. Efek ini dapat terpicu setiap 10 detik."
+      ]
     },
     {
       "key": "solar-pearl",
       "name": "Solar Pearl",
       "description": "Mutiara emas yang terbuat dari benda yang menyimpan cahaya matahari dan bulan, memancarkan kekuatan hangat.",
-      "refinement": "Saat Normal Attack mengenai musuh, meningkatkan {0}% DMG Elemental Skill dan Elemental Burst selama 6 detik. Sebaliknya, saat Elemental Skill atau Elemental Burst mengenai musuh, meningkatkan {1}% DMG Normal Attack selama 6 detik."
+      "refinements": [
+        "Saat Normal Attack mengenai musuh, meningkatkan {color}20{/color}% DMG Elemental Skill dan Elemental Burst selama 6 detik. Sebaliknya, saat Elemental Skill atau Elemental Burst mengenai musuh, meningkatkan {color}20{/color}% DMG Normal Attack selama 6 detik.",
+        "Saat Normal Attack mengenai musuh, meningkatkan {color}25{/color}% DMG Elemental Skill dan Elemental Burst selama 6 detik. Sebaliknya, saat Elemental Skill atau Elemental Burst mengenai musuh, meningkatkan {color}25{/color}% DMG Normal Attack selama 6 detik.",
+        "Saat Normal Attack mengenai musuh, meningkatkan {color}30{/color}% DMG Elemental Skill dan Elemental Burst selama 6 detik. Sebaliknya, saat Elemental Skill atau Elemental Burst mengenai musuh, meningkatkan {color}30{/color}% DMG Normal Attack selama 6 detik.",
+        "Saat Normal Attack mengenai musuh, meningkatkan {color}35{/color}% DMG Elemental Skill dan Elemental Burst selama 6 detik. Sebaliknya, saat Elemental Skill atau Elemental Burst mengenai musuh, meningkatkan {color}35{/color}% DMG Normal Attack selama 6 detik.",
+        "Saat Normal Attack mengenai musuh, meningkatkan {color}40{/color}% DMG Elemental Skill dan Elemental Burst selama 6 detik. Sebaliknya, saat Elemental Skill atau Elemental Burst mengenai musuh, meningkatkan {color}40{/color}% DMG Normal Attack selama 6 detik."
+      ]
     },
     {
       "key": "song-of-broken-pines",
       "name": "Song of Broken Pines",
       "description": "Pedang besar seringan angin yang meniup dedaunan dengan lembut, tapi juga bagaikan angin topan yang ganas dan tanpa ampun bagi mereka yang korup.",
-      "refinement": "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan {0}% ATK; Saat Normal atau Charged Attack mengenai musuh, Karakter akan mendapatkan satu Sigil of Whispers. Efek ini dapat terpicu setiap 0,3 detik. Saat kamu mempunyai 4 Sigil of Whispers, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Banner-Hymn\" selama 12 detik. \"Millennial Movement: Banner-Hymn\" akan meningkatkan {1}% Normal ATK SPD dan meningkatkan {2}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Whispers lagi selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk."
+      "refinements": [
+        "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan {color}16{/color}% ATK; Saat Normal atau Charged Attack mengenai musuh, Karakter akan mendapatkan satu Sigil of Whispers. Efek ini dapat terpicu setiap 0,3 detik. Saat kamu mempunyai 4 Sigil of Whispers, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Banner-Hymn\" selama 12 detik. \"Millennial Movement: Banner-Hymn\" akan meningkatkan {color}12{/color}% Normal ATK SPD dan meningkatkan {color}20{/color}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Whispers lagi selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk.",
+        "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan {color}20{/color}% ATK; Saat Normal atau Charged Attack mengenai musuh, Karakter akan mendapatkan satu Sigil of Whispers. Efek ini dapat terpicu setiap 0,3 detik. Saat kamu mempunyai 4 Sigil of Whispers, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Banner-Hymn\" selama 12 detik. \"Millennial Movement: Banner-Hymn\" akan meningkatkan {color}15{/color}% Normal ATK SPD dan meningkatkan {color}25{/color}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Whispers lagi selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk.",
+        "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan {color}24{/color}% ATK; Saat Normal atau Charged Attack mengenai musuh, Karakter akan mendapatkan satu Sigil of Whispers. Efek ini dapat terpicu setiap 0,3 detik. Saat kamu mempunyai 4 Sigil of Whispers, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Banner-Hymn\" selama 12 detik. \"Millennial Movement: Banner-Hymn\" akan meningkatkan {color}18{/color}% Normal ATK SPD dan meningkatkan {color}30{/color}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Whispers lagi selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk.",
+        "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan {color}28{/color}% ATK; Saat Normal atau Charged Attack mengenai musuh, Karakter akan mendapatkan satu Sigil of Whispers. Efek ini dapat terpicu setiap 0,3 detik. Saat kamu mempunyai 4 Sigil of Whispers, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Banner-Hymn\" selama 12 detik. \"Millennial Movement: Banner-Hymn\" akan meningkatkan {color}21{/color}% Normal ATK SPD dan meningkatkan {color}35{/color}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Whispers lagi selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk.",
+        "Bagian dari \"Millennial Movement\" yang mengembara di tengah angin. Meningkatkan {color}32{/color}% ATK; Saat Normal atau Charged Attack mengenai musuh, Karakter akan mendapatkan satu Sigil of Whispers. Efek ini dapat terpicu setiap 0,3 detik. Saat kamu mempunyai 4 Sigil of Whispers, semuanya akan terkonsumsi dan seluruh anggota party di sekitar akan mendapatkan efek \"Millennial Movement: Banner-Hymn\" selama 12 detik. \"Millennial Movement: Banner-Hymn\" akan meningkatkan {color}24{/color}% Normal ATK SPD dan meningkatkan {color}40{/color}% ATK. Ketika efek ini sudah terpicu, kamu tidak akan mendapatkan Sigil of Whispers lagi selama 20 detik. Dari beragam efek \"Millennial Movement\" yang ada, efek dengan jenis sama tidak bisa ditumpuk."
+      ]
     },
     {
       "key": "staff-of-homa",
       "name": "Staff of Homa",
       "description": "Sebuah \"tongkat kayu bakar\" yang pernah digunakan dalam ritual kuno dan telah lama hilang.",
-      "refinement": "Meningkatkan {0}% Max HP, dan memberikan Bonus ATK sebesar {1},8% dari Max HP pengguna. Saat HP pengguna kurang dari 50%, maka pengguna akan mendapatkan Bonus ATK tambahan sebesar {2}% dari Max HP."
+      "refinements": [
+        "Meningkatkan {color}20{/color}% Max HP, dan memberikan Bonus ATK sebesar {color}0{/color},8% dari Max HP pengguna. Saat HP pengguna kurang dari 50%, maka pengguna akan mendapatkan Bonus ATK tambahan sebesar {color}1{/color}% dari Max HP.",
+        "Meningkatkan {color}25{/color}% Max HP, dan memberikan Bonus ATK sebesar {color}1{/color}% dari Max HP pengguna. Saat HP pengguna kurang dari 50%, maka pengguna akan mendapatkan Bonus ATK tambahan sebesar {color}1{/color},2% dari Max HP.",
+        "Meningkatkan {color}30{/color}% Max HP, dan memberikan Bonus ATK sebesar {color}1{/color},2% dari Max HP pengguna. Saat HP pengguna kurang dari 50%, maka pengguna akan mendapatkan Bonus ATK tambahan sebesar {color}1{/color},4% dari Max HP.",
+        "Meningkatkan {color}35{/color}% Max HP, dan memberikan Bonus ATK sebesar {color}1{/color},4% dari Max HP pengguna. Saat HP pengguna kurang dari 50%, maka pengguna akan mendapatkan Bonus ATK tambahan sebesar {color}1{/color},6% dari Max HP.",
+        "Meningkatkan {color}40{/color}% Max HP, dan memberikan Bonus ATK sebesar {color}1{/color},6% dari Max HP pengguna. Saat HP pengguna kurang dari 50%, maka pengguna akan mendapatkan Bonus ATK tambahan sebesar {color}1{/color},8% dari Max HP."
+      ]
     },
     {
       "key": "summit-shaper",
       "name": "Summit Shaper",
       "description": "Sebuah pedang legenda yang menjadi simbol sebuah kontrak bertepi tajam, konon pedang ini pernah memotong puncak dari suatu gunung.",
-      "refinement": "Meningkatkan kekuatan perisai sebesar {0}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {1}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%."
+      "refinements": [
+        "Meningkatkan kekuatan perisai sebesar {color}20{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}4{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%.",
+        "Meningkatkan kekuatan perisai sebesar {color}25{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}5{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%.",
+        "Meningkatkan kekuatan perisai sebesar {color}30{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}6{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%.",
+        "Meningkatkan kekuatan perisai sebesar {color}35{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}7{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%.",
+        "Meningkatkan kekuatan perisai sebesar {color}40{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}8{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%."
+      ]
     },
     {
       "key": "sword-of-descension",
       "name": "Sword of Descension",
       "description": "Sebilah pedang dengan bentuk yang unik, sepertinya bukan berasal dari dunia ini.",
-      "refinement": "Hanya efektif untuk pemain pada: \r\n\"PlayStation Network\"\r\nMemukul musuh dengan Normal dan Charged Attack akan mendapatkan kesempatan {0}% untuk menghasilkan {1}% ATK sebagai DMG pada area kecil. Efek terpicu setiap 10 detik. Lalu, jika Pengembara menggunakan Sword of Descension, maka ATK akan meningkat sebanyak {2}"
+      "refinements": [
+        "Hanya efektif untuk pemain pada: \r\n\"PlayStation Network\"\r\nMemukul musuh dengan Normal dan Charged Attack akan mendapatkan kesempatan {color}50{/color}% untuk menghasilkan {color}200{/color}% ATK sebagai DMG pada area kecil. Efek terpicu setiap 10 detik. Lalu, jika Pengembara menggunakan Sword of Descension, maka ATK akan meningkat sebanyak {color}66{/color}"
+      ]
     },
     {
       "key": "the-alley-flash",
       "name": "The Alley Flash",
       "description": "Longsword sehitam langit malam. Dulunya milik pencuri yang senang berkeliaran di lorong-lorong gelap.",
-      "refinement": "Meningkatkan {0}% DMG yang diakibatkan Karakter. Efek akan menghilang selama 5 detik bila Karakter menerima DMG."
+      "refinements": [
+        "Meningkatkan {color}12{/color}% DMG yang diakibatkan Karakter. Efek akan menghilang selama 5 detik bila Karakter menerima DMG.",
+        "Meningkatkan {color}15{/color}% DMG yang diakibatkan Karakter. Efek akan menghilang selama 5 detik bila Karakter menerima DMG.",
+        "Meningkatkan {color}18{/color}% DMG yang diakibatkan Karakter. Efek akan menghilang selama 5 detik bila Karakter menerima DMG.",
+        "Meningkatkan {color}21{/color}% DMG yang diakibatkan Karakter. Efek akan menghilang selama 5 detik bila Karakter menerima DMG.",
+        "Meningkatkan {color}24{/color}% DMG yang diakibatkan Karakter. Efek akan menghilang selama 5 detik bila Karakter menerima DMG."
+      ]
     },
     {
       "key": "the-bell",
       "name": "The Bell",
       "description": "Greatsword yang besar dengan sebuah jam tertanam di tengahnya, tetapi mesin di dalamnya telah rusak sejak lama.",
-      "refinement": "Saat menerima DMG, menciptakan sebuah perisai yang dapat menahan DMG sebesar {0}% dari Max HP. Perisai ini bertahan selama 10 detik, atau sampai terhancurkan. Perisai dapat terpicu setiap {1} detik. Saat terlindungi oleh perisai, karakter memperoleh peningkatan {2}% DMG."
+      "refinements": [
+        "Saat menerima DMG, menciptakan sebuah perisai yang dapat menahan DMG sebesar {color}20{/color}% dari Max HP. Perisai ini bertahan selama 10 detik, atau sampai terhancurkan. Perisai dapat terpicu setiap {color}45{/color} detik. Saat terlindungi oleh perisai, karakter memperoleh peningkatan {color}12{/color}% DMG.",
+        "Saat menerima DMG, menciptakan sebuah perisai yang dapat menahan DMG sebesar {color}23{/color}% dari Max HP. Perisai ini bertahan selama 10 detik, atau sampai terhancurkan. Perisai dapat terpicu setiap {color}45{/color} detik. Saat terlindungi oleh perisai, karakter memperoleh peningkatan {color}15{/color}% DMG.",
+        "Saat menerima DMG, menciptakan sebuah perisai yang dapat menahan DMG sebesar {color}26{/color}% dari Max HP. Perisai ini bertahan selama 10 detik, atau sampai terhancurkan. Perisai dapat terpicu setiap {color}45{/color} detik. Saat terlindungi oleh perisai, karakter memperoleh peningkatan {color}18{/color}% DMG.",
+        "Saat menerima DMG, menciptakan sebuah perisai yang dapat menahan DMG sebesar {color}29{/color}% dari Max HP. Perisai ini bertahan selama 10 detik, atau sampai terhancurkan. Perisai dapat terpicu setiap {color}45{/color} detik. Saat terlindungi oleh perisai, karakter memperoleh peningkatan {color}21{/color}% DMG.",
+        "Saat menerima DMG, menciptakan sebuah perisai yang dapat menahan DMG sebesar {color}32{/color}% dari Max HP. Perisai ini bertahan selama 10 detik, atau sampai terhancurkan. Perisai dapat terpicu setiap {color}45{/color} detik. Saat terlindungi oleh perisai, karakter memperoleh peningkatan {color}24{/color}% DMG."
+      ]
     },
     {
       "key": "the-black-sword",
       "name": "The Black Sword",
       "description": "Longsword hitam yang haus akan konflik dan pertempuran. Dikatakan bahwa pedang ini bisa membuat pemiliknya menjadi haus darah dan pembantaian.",
-      "refinement": "Meningkatkan {0}% DMG Normal dan Charged Attack. Selain itu saat Normal dan Charged Attack menghasilkan CRIT, akan memulihkan HP sebanyak {1}% dari ATK. Dapat terpicu setiap 5 detik."
+      "refinements": [
+        "Meningkatkan {color}20{/color}% DMG Normal dan Charged Attack. Selain itu saat Normal dan Charged Attack menghasilkan CRIT, akan memulihkan HP sebanyak {color}60{/color}% dari ATK. Dapat terpicu setiap 5 detik.",
+        "Meningkatkan {color}25{/color}% DMG Normal dan Charged Attack. Selain itu saat Normal dan Charged Attack menghasilkan CRIT, akan memulihkan HP sebanyak {color}70{/color}% dari ATK. Dapat terpicu setiap 5 detik.",
+        "Meningkatkan {color}30{/color}% DMG Normal dan Charged Attack. Selain itu saat Normal dan Charged Attack menghasilkan CRIT, akan memulihkan HP sebanyak {color}80{/color}% dari ATK. Dapat terpicu setiap 5 detik.",
+        "Meningkatkan {color}35{/color}% DMG Normal dan Charged Attack. Selain itu saat Normal dan Charged Attack menghasilkan CRIT, akan memulihkan HP sebanyak {color}90{/color}% dari ATK. Dapat terpicu setiap 5 detik.",
+        "Meningkatkan {color}40{/color}% DMG Normal dan Charged Attack. Selain itu saat Normal dan Charged Attack menghasilkan CRIT, akan memulihkan HP sebanyak {color}100{/color}% dari ATK. Dapat terpicu setiap 5 detik."
+      ]
     },
     {
       "key": "the-catch",
       "name": "\"The Catch\"",
       "description": "Pada zaman dahulu kala, ini adalah tombak kesayangan milik bandit Inazuma yang terkenal.",
-      "refinement": "Meningkatkan {0}% DMG Elemental Burst dan {1}% CRIT Rate Elemental Burst."
+      "refinements": [
+        "Meningkatkan {color}16{/color}% DMG Elemental Burst dan {color}6{/color}% CRIT Rate Elemental Burst.",
+        "Meningkatkan {color}20{/color}% DMG Elemental Burst dan {color}7.5{/color}% CRIT Rate Elemental Burst.",
+        "Meningkatkan {color}24{/color}% DMG Elemental Burst dan {color}9{/color}% CRIT Rate Elemental Burst.",
+        "Meningkatkan {color}28{/color}% DMG Elemental Burst dan {color}10.5{/color}% CRIT Rate Elemental Burst.",
+        "Meningkatkan {color}32{/color}% DMG Elemental Burst dan {color}12{/color}% CRIT Rate Elemental Burst."
+      ]
     },
     {
       "key": "the-flute",
       "name": "The Flute",
       "description": "Di balik karatnya, terdapat pedang dengan dekorasi mewah. Dapat diayunkan cepat dengan sangat mudah.",
-      "refinement": "Saat mengenai, Normal atau Charged Attack akan memberikan 1 Harmonic. Setiap 5 Harmonic akan memicu kekuatan lagu, mengakibatkan {0}% ATK DMG kepada musuh di sekitar. Setiap Harmonic dapat tersimpan selama 30 detik, dan dapat terciptakan setiap 0,5 detik."
+      "refinements": [
+        "Saat mengenai, Normal atau Charged Attack akan memberikan 1 Harmonic. Setiap 5 Harmonic akan memicu kekuatan lagu, mengakibatkan {color}100{/color}% ATK DMG kepada musuh di sekitar. Setiap Harmonic dapat tersimpan selama 30 detik, dan dapat terciptakan setiap 0,5 detik.",
+        "Saat mengenai, Normal atau Charged Attack akan memberikan 1 Harmonic. Setiap 5 Harmonic akan memicu kekuatan lagu, mengakibatkan {color}125{/color}% ATK DMG kepada musuh di sekitar. Setiap Harmonic dapat tersimpan selama 30 detik, dan dapat terciptakan setiap 0,5 detik.",
+        "Saat mengenai, Normal atau Charged Attack akan memberikan 1 Harmonic. Setiap 5 Harmonic akan memicu kekuatan lagu, mengakibatkan {color}150{/color}% ATK DMG kepada musuh di sekitar. Setiap Harmonic dapat tersimpan selama 30 detik, dan dapat terciptakan setiap 0,5 detik.",
+        "Saat mengenai, Normal atau Charged Attack akan memberikan 1 Harmonic. Setiap 5 Harmonic akan memicu kekuatan lagu, mengakibatkan {color}175{/color}% ATK DMG kepada musuh di sekitar. Setiap Harmonic dapat tersimpan selama 30 detik, dan dapat terciptakan setiap 0,5 detik.",
+        "Saat mengenai, Normal atau Charged Attack akan memberikan 1 Harmonic. Setiap 5 Harmonic akan memicu kekuatan lagu, mengakibatkan {color}200{/color}% ATK DMG kepada musuh di sekitar. Setiap Harmonic dapat tersimpan selama 30 detik, dan dapat terciptakan setiap 0,5 detik."
+      ]
     },
     {
       "key": "the-stringless",
       "name": "The Stringless",
       "description": "Sebuah busur yang dulunya merupakan instrumen luar biasa. Kini tak mampu lagi untuk membuat orang menari.",
-      "refinement": "Meningkatkan {0}% DMG Elemental Skill dan Elemental Burst."
+      "refinements": [
+        "Meningkatkan {color}24{/color}% DMG Elemental Skill dan Elemental Burst.",
+        "Meningkatkan {color}30{/color}% DMG Elemental Skill dan Elemental Burst.",
+        "Meningkatkan {color}36{/color}% DMG Elemental Skill dan Elemental Burst.",
+        "Meningkatkan {color}42{/color}% DMG Elemental Skill dan Elemental Burst.",
+        "Meningkatkan {color}48{/color}% DMG Elemental Skill dan Elemental Burst."
+      ]
     },
     {
       "key": "the-unforged",
       "name": "The Unforged",
       "description": "Pedang tanpa ujung yang memiliki kekuatan hebat untuk mengusir iblis.",
-      "refinement": "Meningkatkan kekuatan perisai sebesar {0}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {1}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%."
+      "refinements": [
+        "Meningkatkan kekuatan perisai sebesar {color}20{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}4{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%.",
+        "Meningkatkan kekuatan perisai sebesar {color}25{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}5{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%.",
+        "Meningkatkan kekuatan perisai sebesar {color}30{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}6{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%.",
+        "Meningkatkan kekuatan perisai sebesar {color}35{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}7{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%.",
+        "Meningkatkan kekuatan perisai sebesar {color}40{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}8{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%."
+      ]
     },
     {
       "key": "the-viridescent-hunt",
       "name": "The Viridescent Hunt",
       "description": "Busur berburu warna hijau tua, dulunya milik seorang pemburu hutan.",
-      "refinement": "Saat Normal atau Charged Attack mengenai musuh, memiliki 50% persentase untuk menciptakan Cyclone yang akan menarik musuh di sekitar dan mengakibatkan {0}% DMG setiap 0,5 detik. Efek ini berlangsung selama 4 detik. Dapat dipicu setiap {1} detik."
+      "refinements": [
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki 50% persentase untuk menciptakan Cyclone yang akan menarik musuh di sekitar dan mengakibatkan {color}40{/color}% DMG setiap 0,5 detik. Efek ini berlangsung selama 4 detik. Dapat dipicu setiap {color}14{/color} detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki 50% persentase untuk menciptakan Cyclone yang akan menarik musuh di sekitar dan mengakibatkan {color}50{/color}% DMG setiap 0,5 detik. Efek ini berlangsung selama 4 detik. Dapat dipicu setiap {color}13{/color} detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki 50% persentase untuk menciptakan Cyclone yang akan menarik musuh di sekitar dan mengakibatkan {color}60{/color}% DMG setiap 0,5 detik. Efek ini berlangsung selama 4 detik. Dapat dipicu setiap {color}12{/color} detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki 50% persentase untuk menciptakan Cyclone yang akan menarik musuh di sekitar dan mengakibatkan {color}70{/color}% DMG setiap 0,5 detik. Efek ini berlangsung selama 4 detik. Dapat dipicu setiap {color}11{/color} detik.",
+        "Saat Normal atau Charged Attack mengenai musuh, memiliki 50% persentase untuk menciptakan Cyclone yang akan menarik musuh di sekitar dan mengakibatkan {color}80{/color}% DMG setiap 0,5 detik. Efek ini berlangsung selama 4 detik. Dapat dipicu setiap {color}10{/color} detik."
+      ]
     },
     {
       "key": "the-widsith",
       "name": "The Widsith",
       "description": "Sebuah buku catatan tebal yang berisi beragam tulisan lagu. Meskipun sudah tua dan dimakan ngengat, di dalam tulisannya masih tersimpan kekuatan yang besar.",
-      "refinement": "Saat memasuki pertempuran, memulai sebuah musik secara acak selama 10 detik. Dapat terpicu setiap 30 detik. Recitative: Meningkatkan {0}% ATK. Aria: Meningkatkan {1}% Elemental DMG. Interlude: Meningkatkan {2} Elemental Mastery."
+      "refinements": [
+        "Saat memasuki pertempuran, memulai sebuah musik secara acak selama 10 detik. Dapat terpicu setiap 30 detik. Recitative: Meningkatkan {color}60{/color}% ATK. Aria: Meningkatkan {color}48{/color}% Elemental DMG. Interlude: Meningkatkan {color}240{/color} Elemental Mastery.",
+        "Saat memasuki pertempuran, memulai sebuah musik secara acak selama 10 detik. Dapat terpicu setiap 30 detik. Recitative: Meningkatkan {color}75{/color}% ATK. Aria: Meningkatkan {color}60{/color}% Elemental DMG. Interlude: Meningkatkan {color}300{/color} Elemental Mastery.",
+        "Saat memasuki pertempuran, memulai sebuah musik secara acak selama 10 detik. Dapat terpicu setiap 30 detik. Recitative: Meningkatkan {color}90{/color}% ATK. Aria: Meningkatkan {color}72{/color}% Elemental DMG. Interlude: Meningkatkan {color}360{/color} Elemental Mastery.",
+        "Saat memasuki pertempuran, memulai sebuah musik secara acak selama 10 detik. Dapat terpicu setiap 30 detik. Recitative: Meningkatkan {color}105{/color}% ATK. Aria: Meningkatkan {color}84{/color}% Elemental DMG. Interlude: Meningkatkan {color}420{/color} Elemental Mastery.",
+        "Saat memasuki pertempuran, memulai sebuah musik secara acak selama 10 detik. Dapat terpicu setiap 30 detik. Recitative: Meningkatkan {color}120{/color}% ATK. Aria: Meningkatkan {color}96{/color}% Elemental DMG. Interlude: Meningkatkan {color}480{/color} Elemental Mastery."
+      ]
     },
     {
       "key": "thrilling-tales-of-dragon-slayers",
       "name": "Thrilling Tales of Dragon Slayers",
       "description": "Kisah fiksi tentang kelompok beranggotakan 5 pahlawan yang tengah dalam perjalanan memburu naga. Penulisannya sangat buruk dan tidak memiliki struktur yang jelas. Tetapi buku ini kaya akan pelajaran untuk tidak membuat kesalahan.",
-      "refinement": "Saat berganti karakter, ATK karakter tersebut meningkat {0}% selama 10 detik. Efek ini dapat terpicu setiap 20 detik."
+      "refinements": [
+        "Saat berganti karakter, ATK karakter tersebut meningkat {color}24{/color}% selama 10 detik. Efek ini dapat terpicu setiap 20 detik.",
+        "Saat berganti karakter, ATK karakter tersebut meningkat {color}30{/color}% selama 10 detik. Efek ini dapat terpicu setiap 20 detik.",
+        "Saat berganti karakter, ATK karakter tersebut meningkat {color}36{/color}% selama 10 detik. Efek ini dapat terpicu setiap 20 detik.",
+        "Saat berganti karakter, ATK karakter tersebut meningkat {color}42{/color}% selama 10 detik. Efek ini dapat terpicu setiap 20 detik.",
+        "Saat berganti karakter, ATK karakter tersebut meningkat {color}48{/color}% selama 10 detik. Efek ini dapat terpicu setiap 20 detik."
+      ]
     },
     {
       "key": "thundering-pulse",
       "name": "Thundering Pulse",
       "description": "Busur panjang yang dihadiahkan oleh Shogun, memancarkan kilatan cahaya yang tidak pernah padam.",
-      "refinement": "Meningkatkan {0}% ATK dan memberikan kekuatan Thunder Emblem. Pada lapisan level 1/2/3, Thunder Emblem meningkatkan Normal Attack DMG sebesar {1}%. Karakter akan mendapatkan 1 lapis Thunder Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan DMG (lapisan bertahan selama 5 detik), saat melancarkan Elemental Skill (lapisan bertahan selama 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan menghilang saat Energy penuh). Durasi setiap lapis dihitung secara terpisah."
+      "refinements": [
+        "Meningkatkan {color}20{/color}% ATK dan memberikan kekuatan Thunder Emblem. Pada lapisan level 1/2/3, Thunder Emblem meningkatkan Normal Attack DMG sebesar {color}12/24/40{/color}%. Karakter akan mendapatkan 1 lapis Thunder Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan DMG (lapisan bertahan selama 5 detik), saat melancarkan Elemental Skill (lapisan bertahan selama 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan menghilang saat Energy penuh). Durasi setiap lapis dihitung secara terpisah.",
+        "Meningkatkan {color}25{/color}% ATK dan memberikan kekuatan Thunder Emblem. Pada lapisan level 1/2/3, Thunder Emblem meningkatkan Normal Attack DMG sebesar {color}15/30/50{/color}%. Karakter akan mendapatkan 1 lapis Thunder Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan DMG (lapisan bertahan selama 5 detik), saat melancarkan Elemental Skill (lapisan bertahan selama 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan menghilang saat Energy penuh). Durasi setiap lapis dihitung secara terpisah.",
+        "Meningkatkan {color}30{/color}% ATK dan memberikan kekuatan Thunder Emblem. Pada lapisan level 1/2/3, Thunder Emblem meningkatkan Normal Attack DMG sebesar {color}18/36/60{/color}%. Karakter akan mendapatkan 1 lapis Thunder Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan DMG (lapisan bertahan selama 5 detik), saat melancarkan Elemental Skill (lapisan bertahan selama 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan menghilang saat Energy penuh). Durasi setiap lapis dihitung secara terpisah.",
+        "Meningkatkan {color}35{/color}% ATK dan memberikan kekuatan Thunder Emblem. Pada lapisan level 1/2/3, Thunder Emblem meningkatkan Normal Attack DMG sebesar {color}21/42/70{/color}%. Karakter akan mendapatkan 1 lapis Thunder Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan DMG (lapisan bertahan selama 5 detik), saat melancarkan Elemental Skill (lapisan bertahan selama 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan menghilang saat Energy penuh). Durasi setiap lapis dihitung secara terpisah.",
+        "Meningkatkan {color}40{/color}% ATK dan memberikan kekuatan Thunder Emblem. dan memberikan kekuatan Thunder Emblem. Pada lapisan level 1/2/3, Thunder Emblem meningkatkan Normal Attack DMG sebesar {color}24/48/80{/color}%. Karakter akan mendapatkan 1 lapis Thunder Emblem untuk setiap skenario berikut: Saat Normal Attack mengakibatkan DMG (lapisan bertahan selama 5 detik), saat melancarkan Elemental Skill (lapisan bertahan selama 10 detik). Selain itu, Karakter juga akan mendapatkan 1 lapis saat Energy kurang dari 100% (lapisan ini akan menghilang saat Energy penuh). Durasi setiap lapis dihitung secara terpisah."
+      ]
     },
     {
       "key": "travelers-handy-sword",
       "name": "Traveler's Handy Sword",
       "description": "Pedang baja yang nyaman untuk digenggam, di dalamnya tersembunyi gunting, kaca pembesar, kayu bakar, dan berbagai kebutuhan bertualang lainnya.",
-      "refinement": "Mengambil Elemental Energy Orb/Particle memulihkan {0}% HP."
+      "refinements": [
+        "Mengambil Elemental Energy Orb/Particle memulihkan {color}1{/color}% HP.",
+        "Mengambil Elemental Energy Orb/Particle memulihkan {color}1.25{/color}% HP.",
+        "Mengambil Elemental Energy Orb/Particle memulihkan {color}1.5{/color}% HP.",
+        "Mengambil Elemental Energy Orb/Particle memulihkan {color}1.75{/color}% HP.",
+        "Mengambil Elemental Energy Orb/Particle memulihkan {color}2{/color}% HP."
+      ]
     },
     {
       "key": "twin-nephrite",
       "name": "Twin Nephrite",
       "description": "Sebuah kalung giok yang disatukan oleh dua potong giok.",
-      "refinement": "Mengalahkan musuh meningkatkan {0}% Movement SPD dan ATK selama 15 detik."
+      "refinements": [
+        "Mengalahkan musuh meningkatkan {color}12{/color}% Movement SPD dan ATK selama 15 detik.",
+        "Mengalahkan musuh meningkatkan {color}14{/color}% Movement SPD dan ATK selama 15 detik.",
+        "Mengalahkan musuh meningkatkan {color}16{/color}% Movement SPD dan ATK selama 15 detik.",
+        "Mengalahkan musuh meningkatkan {color}18{/color}% Movement SPD dan ATK selama 15 detik.",
+        "Mengalahkan musuh meningkatkan {color}20{/color}% Movement SPD dan ATK selama 15 detik."
+      ]
     },
     {
       "key": "vortex-vanquisher",
       "name": "Vortex Vanquisher",
       "description": "Tombak tajam yang seakan-akan bisa menusuk segalanya. Saat tombak ini diayunkan, ujung tombak seakan-akan membuat retakan di udara.",
-      "refinement": "Meningkatkan kekuatan perisai sebesar {0}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {1}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%."
+      "refinements": [
+        "Meningkatkan kekuatan perisai sebesar {color}20{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}4{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%.",
+        "Meningkatkan kekuatan perisai sebesar {color}25{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}5{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%.",
+        "Meningkatkan kekuatan perisai sebesar {color}30{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}6{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%.",
+        "Meningkatkan kekuatan perisai sebesar {color}35{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}7{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%.",
+        "Meningkatkan kekuatan perisai sebesar {color}40{/color}%. Serangan yang mengenai musuh meningkatkan ATK sebesar {color}8{/color}% selama 8 detik. Maksimal 5 lapis. Dapat terpicu setiap 0,3 detik. Saat dilindungi oleh perisai, efek ATK ini meningkat sebesar 100%."
+      ]
     },
     {
       "key": "waster-greatsword",
       "name": "Waster Greatsword",
       "description": "Lempengan besi tebal yang sangat kokoh, dengan tekad yang cukup kuat, pedang ini terlihat dapat membelah bahkan gunung sekalipun.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "white-iron-greatsword",
       "name": "White Iron Greatsword",
       "description": "Claymore yang terbuat dari besi putih, mengandalkan berat untuk meningkatkan daya hancur. Semakin kuat penggunanya, semakin besar daya hancur yang diakibatkannya.",
-      "refinement": "Memulihkan {0}% HP saat mengalahkan satu musuh."
+      "refinements": [
+        "Memulihkan {color}8{/color}% HP saat mengalahkan satu musuh.",
+        "Memulihkan {color}10{/color}% HP saat mengalahkan satu musuh.",
+        "Memulihkan {color}12{/color}% HP saat mengalahkan satu musuh.",
+        "Memulihkan {color}14{/color}% HP saat mengalahkan satu musuh.",
+        "Memulihkan {color}16{/color}% HP saat mengalahkan satu musuh."
+      ]
     },
     {
       "key": "white-tassel",
       "name": "White Tassel",
       "description": "Senjata standar milik prajurit Millelith dengan poros yang kokoh dan ujung tombak yang tajam. Sebuah senjata yang dapat diandalkan.",
-      "refinement": "Meningkatkan DMG Normal Attack sebesar {0}%."
+      "refinements": [
+        "Meningkatkan DMG Normal Attack sebesar {color}24{/color}%.",
+        "Meningkatkan DMG Normal Attack sebesar {color}30{/color}%.",
+        "Meningkatkan DMG Normal Attack sebesar {color}36{/color}%.",
+        "Meningkatkan DMG Normal Attack sebesar {color}42{/color}%.",
+        "Meningkatkan DMG Normal Attack sebesar {color}48{/color}%."
+      ]
     },
     {
       "key": "whiteblind",
       "name": "Whiteblind",
       "description": "Pedang indah yang memiliki bagian tumpul di mata pedangnya. Mencapai Liyue setelah melewati tangan beberapa pedagang. Dapat menjadi senjata mematikan di tangan orang yang dapat menggunakannya.",
-      "refinement": "Saat mengenai musuh, Normal atau Charged Attack meningkatkan {0}% ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik."
+      "refinements": [
+        "Saat mengenai musuh, Normal atau Charged Attack meningkatkan {color}6{/color}% ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik.",
+        "Saat mengenai musuh, Normal atau Charged Attack meningkatkan {color}7{/color},5% ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik.",
+        "Saat mengenai musuh, Normal atau Charged Attack meningkatkan {color}9{/color}% ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik.",
+        "Saat mengenai musuh, Normal atau Charged Attack meningkatkan {color}10{/color},5% ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik.",
+        "Saat mengenai musuh, Normal atau Charged Attack meningkatkan {color}12{/color}% ATK dan DEF selama 6 detik. Maksimum 4 lapis. Dapat terpicu setiap 0,5 detik."
+      ]
     },
     {
       "key": "windblume-ode",
       "name": "Windblume Ode",
       "description": "Sebuah busur yang dihiasi dengan bunga tanpa nama, bunga tersebut mengandung harapan dari orang-orang yang juga tidak pernah berkesempatan memiliki sebuah nama.",
-      "refinement": "Saat menggunakan Elemental Skill, pengguna busur ini akan mendapatkan berkat dari harapan kuno Windblume, meningkatkan {0}% ATK selama 6 detik."
+      "refinements": [
+        "Saat menggunakan Elemental Skill, pengguna busur ini akan mendapatkan berkat dari harapan kuno Windblume, meningkatkan {color}16{/color}% ATK selama 6 detik.",
+        "Saat menggunakan Elemental Skill, akan mendapatkan hadiah dari harapan Windblume, meningkatkan {color}20{/color}% ATK selama 6 detik.",
+        "Saat menggunakan Elemental Skill, akan mendapatkan hadiah dari harapan Windblume, meningkatkan {color}24{/color}% ATK selama 6 detik.",
+        "Saat menggunakan Elemental Skill, akan mendapatkan hadiah dari harapan Windblume, meningkatkan {color}28{/color}% ATK selama 6 detik."
+      ]
     },
     {
       "key": "wine-and-song",
       "name": "Wine and Song",
       "description": "Lagu yang sangat populer di era kebangsawanan. Penulisnya tak diketahui. Menceritakan kisah seorang bandit...",
-      "refinement": "Setelah Normal Attack mengenai musuh, konsumsi Stamina saat Berlari atau Alternate Sprint berkurang {0}% selama 5 detik. Lalu, setelah Berlari atau Alternate Sprint, ATK meningkat {1}% selama 5 detik."
+      "refinements": [
+        "Setelah Normal Attack mengenai musuh, konsumsi Stamina saat Berlari atau Alternate Sprint berkurang {color}14{/color}% selama 5 detik. Lalu, setelah Berlari atau Alternate Sprint, ATK meningkat {color}20{/color}% selama 5 detik.",
+        "Setelah Normal Attack mengenai musuh, konsumsi Stamina saat Berlari atau Alternate Sprint berkurang {color}16{/color}% selama 5 detik. Lalu, setelah Berlari atau Alternate Sprint, ATK meningkat {color}25{/color}% selama 5 detik.",
+        "Setelah Normal Attack mengenai musuh, konsumsi Stamina saat Berlari atau Alternate Sprint berkurang {color}18{/color}% selama 5 detik. Lalu, setelah Berlari atau Alternate Sprint, ATK meningkat {color}30{/color}% selama 5 detik.",
+        "Setelah Normal Attack mengenai musuh, konsumsi Stamina saat Berlari atau Alternate Sprint berkurang {color}20{/color}% selama 5 detik. Lalu, setelah Berlari atau Alternate Sprint, ATK meningkat {color}35{/color}% selama 5 detik.",
+        "Setelah Normal Attack mengenai musuh, konsumsi Stamina saat Berlari atau Alternate Sprint berkurang {color}22{/color}% selama 5 detik. Lalu, setelah Berlari atau Alternate Sprint, ATK meningkat {color}40{/color}% selama 5 detik."
+      ]
     },
     {
       "key": "wolfs-gravestone",
       "name": "Wolf's Gravestone",
       "description": "Pedang panjang yang digunakan oleh Wolf Knight. Dibentuk menggunakan selempeng besi yang biasa saja oleh seorang blacksmith kota. Tetapi persahabatannya dengan para serigala memberikan kekuatan yang spesial di dalam karya ini.",
-      "refinement": "Meningkatkan {0}% ATK. Saat berhasil mengenai musuh dengan HP kurang dari 30%, meningkatkan {1}% ATK seluruh anggota party selama 12 detik. Dapat terpicu setiap 30 detik."
+      "refinements": [
+        "Meningkatkan {color}20{/color}% ATK. Saat berhasil mengenai musuh dengan HP kurang dari 30%, meningkatkan {color}40{/color}% ATK seluruh anggota party selama 12 detik. Dapat terpicu setiap 30 detik.",
+        "Meningkatkan {color}25{/color}% ATK. Saat berhasil mengenai musuh dengan HP kurang dari 30%, meningkatkan {color}50{/color}% ATK seluruh anggota party selama 12 detik. Dapat terpicu setiap 30 detik.",
+        "Meningkatkan {color}30{/color}% ATK. Saat berhasil mengenai musuh dengan HP kurang dari 30%, meningkatkan {color}60{/color}% ATK seluruh anggota party selama 12 detik. Dapat terpicu setiap 30 detik.",
+        "Meningkatkan {color}35{/color}% ATK. Saat berhasil mengenai musuh dengan HP kurang dari 30%, meningkatkan {color}70{/color}% ATK seluruh anggota party selama 12 detik. Dapat terpicu setiap 30 detik.",
+        "Meningkatkan {color}40{/color}% ATK. Saat berhasil mengenai musuh dengan HP kurang dari 30%, meningkatkan {color}80{/color}% ATK seluruh anggota party selama 12 detik. Dapat terpicu setiap 30 detik."
+      ]
     }
   ],
   "artifacts": [
@@ -9447,6 +10116,14 @@
       "name": "Rock Shieldwall Mitachurl"
     },
     {
+      "key": "rockfond-rifthound",
+      "name": "Rockfond Rifthound"
+    },
+    {
+      "key": "rockfond-rifthound-whelp",
+      "name": "Rockfond Rifthound Whelp"
+    },
+    {
       "key": "ruin-cruiser",
       "name": "Ruin Cruiser"
     },
@@ -9475,10 +10152,6 @@
       "name": "Ruin Scout"
     },
     {
-      "key": "samurai-dog",
-      "name": "Samurai Dog"
-    },
-    {
       "key": "sangonomiya-cohort",
       "name": "Sangonomiya Cohort"
     },
@@ -9501,6 +10174,14 @@
     {
       "key": "thunder-manifestation",
       "name": "Thunder Manifestation"
+    },
+    {
+      "key": "thundercraven-rifthound",
+      "name": "Thundercraven Rifthound"
+    },
+    {
+      "key": "thundercraven-rifthound-whelp",
+      "name": "Thundercraven Rifthound Whelp"
     },
     {
       "key": "thunderhelm-lawachurl",

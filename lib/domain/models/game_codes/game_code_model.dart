@@ -1,24 +1,18 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart';
 
-class GameCodeModel {
-  final String code;
-  final AppServerResetTimeType? region;
+part 'game_code_model.freezed.dart';
 
-  final DateTime? discoveredOn;
-  final DateTime? expiredOn;
-  final bool isExpired;
-
-  final bool isUsed;
-  final List<ItemAscensionMaterialModel> rewards;
-
-  GameCodeModel({
-    required this.code,
-    required this.isUsed,
-    required this.rewards,
-    required this.isExpired,
-    this.discoveredOn,
-    this.expiredOn,
-    this.region,
-  });
+@freezed
+class GameCodeModel with _$GameCodeModel {
+  const factory GameCodeModel({
+    required String code,
+    AppServerResetTimeType? region,
+    DateTime? discoveredOn,
+    DateTime? expiredOn,
+    required bool isExpired,
+    required bool isUsed,
+    required List<ItemAscensionMaterialModel> rewards,
+  }) = _GameCodeModel;
 }

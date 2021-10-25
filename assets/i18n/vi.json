@@ -6448,739 +6448,1408 @@
       "key": "akuoumaru",
       "name": "Akuoumaru",
       "description": "Từng là thanh đao yêu thích của \"Akuou\". Thân đao trông rất nặng và đồ sộ, nhưng khi sử dụng lại nhẹ ngoài sức tưởng tượng.",
-      "refinement": "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {0}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này gây ra. Thông qua cách này, sát thương Kỹ Năng Nộ tăng tối đa {1}%."
+      "refinements": [
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.12{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này gây ra. Thông qua cách này, sát thương Kỹ Năng Nộ tăng tối đa {color}40{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.15{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}50{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.18{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}60{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.21{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}70{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.24{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}80{/color}%."
+      ]
     },
     {
       "key": "alley-hunter",
       "name": "Thợ Săn Hẻm Tối",
       "description": "Cây cung dài với hình dáng tinh xảo xa xỉ, từng thuộc về tên trộm nghĩa hiệp nào đó chưa từng bị bắt.",
-      "refinement": "Khi nhân vật trang bị vũ khí này ở trong đội, cứ mỗi giây nhân vật sẽ tăng {0}% sát thương tạo thành, tối đa có thể dùng cách này để tăng {1}% sát thương; Sau khi ra trận quá 4s, hiệu quả sát thương tăng thêm nêu trên sẽ mất đi {2}% sau mỗi giây, cho đến khi giảm xuống còn 0%."
+      "refinements": [
+        "Khi nhân vật trang bị vũ khí này ở trong đội, cứ mỗi giây nhân vật sẽ tăng {color}2{/color}% sát thương tạo thành, tối đa có thể dùng cách này để tăng {color}20{/color}% sát thương; Sau khi ra trận quá 4s, hiệu quả sát thương tăng thêm nêu trên sẽ mất đi {color}4{/color}% sau mỗi giây, cho đến khi giảm xuống còn 0%.",
+        "Khi nhân vật trang bị vũ khí này ở trong đội, cứ mỗi giây nhân vật sẽ tăng {color}2.5{/color}% sát thương tạo thành, tối đa có thể dùng cách này để tăng {color}25{/color}% sát thương; Sau khi ra trận 4s, hiệu quả sát thương tăng thêm nêu trên sẽ mất đi {color}5{/color}% sau mỗi giây, cho đến khi giảm xuống còn 0%.",
+        "Khi nhân vật trang bị vũ khí này ở trong đội, cứ mỗi giây nhân vật sẽ tăng {color}3{/color}% sát thương tạo thành, tối đa có thể dùng cách này để tăng {color}30{/color}% sát thương; Sau khi ra trận 4s, hiệu quả sát thương tăng thêm nêu trên sẽ mất đi {color}6{/color}% sau mỗi giây, cho đến khi giảm xuống còn 0%.",
+        "Khi nhân vật trang bị vũ khí này ở trong đội, cứ mỗi giây nhân vật sẽ tăng {color}3.5{/color}% sát thương tạo thành, tối đa có thể dùng cách này để tăng {color}35{/color}% sát thương; Sau khi ra trận 4s, hiệu quả sát thương tăng thêm nêu trên sẽ mất đi {color}7{/color}% sau mỗi giây, cho đến khi giảm xuống còn 0%.",
+        "Khi nhân vật trang bị vũ khí này ở trong đội, cứ mỗi giây nhân vật sẽ tăng {color}4{/color}% sát thương tạo thành, tối đa có thể dùng cách này để tăng {color}40{/color}% sát thương; Sau khi ra trận 4s, hiệu quả sát thương tăng thêm nêu trên sẽ mất đi {color}8{/color}% sau mỗi giây, cho đến khi giảm xuống còn 0%."
+      ]
     },
     {
       "key": "amenoma-kageuchi",
       "name": "Đoản Đao Amenoma",
       "description": "Thanh kiếm chế tạo theo lệnh của một samurai nổi tiếng. Theo truyền thuyết có thể nhanh chóng hạ gục ngay cả chiến binh Tengu thần tốc.",
-      "refinement": "Sau khi thi triển Kỹ Năng Nguyên Tố, nhận 1 Âm Chủng, hiệu quả này mỗi 5s nhiều nhất kích hoạt 1 lần. Âm Chủng kéo dài 30s, cùng lúc có thể tồn tại nhiều nhất 3 cái. Sau khi thi triển Kỹ Năng Nộ, sẽ xóa tất cả Âm Chủng hiện có, và 2s sau đó sẽ dựa vào số Âm Chủng tiêu hao mà hồi {0} điểm năng lượng nguyên tố cho nhân vật đó."
+      "refinements": [
+        "Sau khi thi triển Kỹ Năng Nguyên Tố, nhận 1 Âm Chủng, hiệu quả này mỗi 5s nhiều nhất kích hoạt 1 lần. Âm Chủng kéo dài 30s, cùng lúc có thể tồn tại nhiều nhất 3 cái. Sau khi thi triển Kỹ Năng Nộ, sẽ xóa tất cả Âm Chủng hiện có, và 2s sau đó sẽ dựa vào số Âm Chủng tiêu hao mà hồi {color}6{/color} điểm năng lượng nguyên tố cho nhân vật đó.",
+        "Sau khi thi triển Kỹ Năng Nguyên Tố, nhận 1 Âm Chủng, hiệu quả này mỗi 5s nhiều nhất kích hoạt 1 lần. Âm Chủng kéo dài 30s, cùng lúc có thể tồn tại nhiều nhất 3 cái. Sau khi thi triển Kỹ Năng Nộ, sẽ xóa tất cả Âm Chủng hiện có, và 2s sau đó sẽ dựa vào số Âm Chủng tiêu hao mà hồi {color}7.5{/color} điểm năng lượng nguyên tố cho nhân vật đó.",
+        "Sau khi thi triển Kỹ Năng Nguyên Tố, nhận 1 Âm Chủng, hiệu quả này mỗi 5s nhiều nhất kích hoạt 1 lần. Âm Chủng kéo dài 30s, cùng lúc có thể tồn tại nhiều nhất 3 cái. Sau khi thi triển Kỹ Năng Nộ, sẽ xóa tất cả Âm Chủng hiện có, và 2s sau đó sẽ dựa vào số Âm Chủng tiêu hao mà hồi {color}9{/color} điểm năng lượng nguyên tố cho nhân vật đó.",
+        "Sau khi thi triển Kỹ Năng Nguyên Tố, nhận 1 Âm Chủng, hiệu quả này mỗi 5s nhiều nhất kích hoạt 1 lần. Âm Chủng kéo dài 30s, cùng lúc có thể tồn tại nhiều nhất 3 cái. Sau khi thi triển Kỹ Năng Nộ, sẽ xóa tất cả Âm Chủng hiện có, và 2s sau đó sẽ dựa vào số Âm Chủng tiêu hao mà hồi {color}10.5{/color} điểm năng lượng nguyên tố cho nhân vật đó.",
+        "Sau khi thi triển Kỹ Năng Nguyên Tố, nhận 1 Âm Chủng, hiệu quả này mỗi 5s nhiều nhất kích hoạt 1 lần. Âm Chủng kéo dài 30s, cùng lúc có thể tồn tại nhiều nhất 3 cái. Sau khi thi triển Kỹ Năng Nộ, sẽ xóa tất cả Âm Chủng hiện có, và 2s sau đó sẽ dựa vào số Âm Chủng tiêu hao mà hồi {color}12{/color} điểm năng lượng nguyên tố cho nhân vật đó."
+      ]
     },
     {
       "key": "amos-bow",
       "name": "Cung Amos",
       "description": "Cung vô cùng cổ xưa. Ngay cả khi chủ nhân ban đầu không còn tồn tại, thế nhưng sức mạnh ẩn chứa trong nó vẫn còn như xưa - sức mạnh vô chủ, nhưng tồn tại trong tất cả mọi thứ. Khoảng cách tâm hệ càng lớn thì sức mạnh càng mãnh liệt..",
-      "refinement": "Tăng {0}% sát thương của tấn công thường và trọng kích. Tấn công thường và trọng kích mỗi 0.1s sau khi bắn tên, sát thương sẽ tăng {1}%, tối đa tăng 5 lần."
+      "refinements": [
+        "Tăng {color}12{/color}% sát thương của tấn công thường và trọng kích. Tấn công thường và trọng kích mỗi 0.1s sau khi bắn tên, sát thương sẽ tăng {color}8{/color}%, tối đa tăng 5 lần.",
+        "Tăng {color}15{/color}% sát thương của tấn công thường và trọng kích. Tấn công thường và trọng kích mỗi 0.1s sau khi bắn tên, sát thương sẽ tăng {color}10{/color}%, tối đa tăng 5 lần.",
+        "Tăng {color}18{/color}% sát thương của tấn công thường và trọng kích. Tấn công thường và trọng kích mỗi 0.1s sau khi bắn tên, sát thương sẽ tăng {color}12{/color}%, tối đa tăng 5 lần.",
+        "Tăng {color}21{/color}% sát thương của tấn công thường và trọng kích. Tấn công thường và trọng kích mỗi 0.1s sau khi bắn tên, sát thương sẽ tăng {color}14{/color}%, tối đa tăng 5 lần.",
+        "Tăng {color}24{/color}% sát thương của tấn công thường và trọng kích. Tấn công thường và trọng kích mỗi 0.1s sau khi bắn tên, sát thương sẽ tăng {color}16{/color}%, tối đa tăng 5 lần."
+      ]
     },
     {
       "key": "apprentices-notes",
       "name": "Nhật Ký Học Sinh",
       "description": "Tập sách được một học sinh ưu tú lưu lại, nét chữ rất đẹp. Ghi chép nhiều bùa chú hữu ích.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "aquila-favonia",
       "name": "Phong Ưng Kiếm",
       "description": "Linh hồn của Đội Kỵ Sĩ Tây Phong. Trải qua ngàn năm vẫn không ngừng gọi gió chính nghĩa, trừ gian diệt ác, giống như người nữ anh hùng từng dùng nó.",
-      "refinement": "Tấn công tăng {0}%, kích hoạt khi chịu sát thương: Linh hồn Tây Phong Ưng thức tỉnh dưới cờ hiệu kháng chiến, hồi HP bằng {1}% tấn công và gây cho địch xung quanh sát thương bằng {2}% lực tấn công. Mỗi 15s kích hoạt 1 lần."
+      "refinements": [
+        "Tấn công tăng {color}20{/color}%, kích hoạt khi chịu sát thương: Linh hồn Tây Phong Ưng thức tỉnh dưới cờ hiệu kháng chiến, hồi HP bằng {color}100{/color}% tấn công và gây cho địch xung quanh sát thương bằng {color}200{/color}% lực tấn công. Mỗi 15s kích hoạt 1 lần.",
+        "Tấn công tăng {color}25{/color}%, kích hoạt khi chịu sát thương: Linh hồn Tây Phong Ưng thức tỉnh dưới cờ hiệu kháng chiến, hồi HP bằng {color}115{/color}% tấn công và gây cho địch xung quanh sát thương bằng {color}230{/color}% lực tấn công. Mỗi 15s kích hoạt 1 lần.",
+        "Tấn công tăng {color}30{/color}%, kích hoạt khi chịu sát thương: Linh hồn Tây Phong Ưng thức tỉnh dưới cờ hiệu kháng chiến, hồi HP bằng {color}130{/color}% tấn công và gây cho địch xung quanh sát thương bằng {color}260{/color}% lực tấn công. Mỗi 15s kích hoạt 1 lần.",
+        "Tấn công tăng {color}35{/color}%, kích hoạt khi chịu sát thương: Linh hồn Tây Phong Ưng thức tỉnh dưới cờ hiệu kháng chiến, hồi HP bằng {color}145{/color}% tấn công và gây cho địch xung quanh sát thương bằng {color}290{/color}% lực tấn công. Mỗi 15s kích hoạt 1 lần.",
+        "Tấn công tăng {color}40{/color}%, kích hoạt khi chịu sát thương: Linh hồn Tây Phong Ưng thức tỉnh dưới cờ hiệu kháng chiến, hồi HP bằng {color}160{/color}% tấn công và gây cho địch xung quanh sát thương bằng {color}320{/color}% lực tấn công. Mỗi 15s kích hoạt 1 lần."
+      ]
     },
     {
       "key": "beginners-protector",
       "name": "Thương Tân Thủ",
       "description": "Thương dài như cột cờ, có một khí thế kiên cường. Có thể ứng phó với nhiều tình huống.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "black-tassel",
       "name": "Hắc Anh Thương",
       "description": "Tuyệt thế hảo thương giải quyết được việc Bạch Anh Thương dễ bị bẩn.",
-      "refinement": "Tăng {0}% sát thương với kẻ địch là Slime."
+      "refinements": [
+        "Tăng {color}40{/color}% sát thương với kẻ địch là Slime.",
+        "Tăng {color}50{/color}% sát thương với kẻ địch là Slime.",
+        "Tăng {color}60{/color}% sát thương với kẻ địch là Slime.",
+        "Tăng {color}70{/color}% sát thương với kẻ địch là Slime.",
+        "Tăng {color}80{/color}% sát thương với kẻ địch là Slime."
+      ]
     },
     {
       "key": "blackcliff-agate",
       "name": "Hắc Nham Phỉ Ngọc",
       "description": "Là pháp khí thần kì được Hắc Nham Xưởng tạo ra, sắc đỏ khác thường dường như là sự hòa quyện của sự khiếp sợ nơi vực sâu.",
-      "refinement": "Sau khi đánh bại kẻ địch, tấn công tăng {0}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập."
+      "refinements": [
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}12{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}15{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}18{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}21{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}24{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập."
+      ]
     },
     {
       "key": "blackcliff-longsword",
       "name": "Hắc Nham Trường Kiếm",
       "description": "Thanh kiếm được rèn từ hắc nham. Thân kiếm đen tuyền thoắt ẩn thoắt hiện màu máu.",
-      "refinement": "Sau khi đánh bại kẻ địch, tấn công tăng {0}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập."
+      "refinements": [
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}12{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}15{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}18{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}21{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}24{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập."
+      ]
     },
     {
       "key": "blackcliff-pole",
       "name": "Thương Hắc Nham",
       "description": "Binh khí được rèn từ hắc nham và sắt thiên thạch, trong ánh sáng loang loáng thoắt hiện màu máu.",
-      "refinement": "Sau khi đánh bại kẻ địch, tấn công tăng {0}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập."
+      "refinements": [
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}12{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}15{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}18{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}21{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}24{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập."
+      ]
     },
     {
       "key": "blackcliff-slasher",
       "name": "Hắc Nham Trảm Đao",
       "description": "Thanh kiếm hắc nham chắc cứng sắc bén, toàn thân có màu đen đỏ.",
-      "refinement": "Sau khi đánh bại kẻ địch, tấn công tăng {0}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập."
+      "refinements": [
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}12{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}15{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}18{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}21{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}24{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập."
+      ]
     },
     {
       "key": "blackcliff-warbow",
       "name": "Cung Hắc Nham",
       "description": "Tạo nên từ hắc nham. Cung chắc chắn và nặng vô cùng, chỉ có cung thủ có thể lực tốt mới có thể phát huy hết sức mạnh.",
-      "refinement": "Sau khi đánh bại kẻ địch, tấn công tăng {0}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập."
+      "refinements": [
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}12{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}15{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}18{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}21{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập.",
+        "Sau khi đánh bại kẻ địch, tấn công tăng {color}24{/color}%, kéo dài 30s. Hiệu quả này cộng dồn đến 3 tầng, CD mỗi tầng độc lập."
+      ]
     },
     {
       "key": "bloodtainted-greatsword",
       "name": "Kiếm Huyết Rồng",
       "description": "Kiếm của anh hùng phương bắc đã từng được ngâm trong máu rồng, có thần lực đao thương bất nhập... Nhưng sức mạnh này lại không được truyền cho người dùng nó.",
-      "refinement": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng {0}%."
+      "refinements": [
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng {color}12{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng {color}15{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi Nguyên Tố Hỏa hoặc Lôi tăng {color}18{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng {color}21{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng {color}24{/color}%."
+      ]
     },
     {
       "key": "compound-bow",
       "name": "Cung Thép",
       "description": "Được làm từ kim loại, kết hợp với những bánh xe để kéo dây, đến từ dị quốc. Bảo dưỡng cực kì khó, nhưng kéo dây cung nhẹ nhàng, uy lực hơn người.",
-      "refinement": "Khi đánh thường và trọng kích đánh trúng địch, tăng {0}% tấn công và {1}% tốc độ đánh thường. Kéo dài 6s, cộng dồn 4 tầng, mỗi 0.3s mới thi triển 1 lần."
+      "refinements": [
+        "Khi đánh thường và trọng kích đánh trúng địch, tăng {color}4{/color}% tấn công và {color}1.2{/color}% tốc độ đánh thường. Kéo dài 6s, cộng dồn 4 tầng, mỗi 0.3s mới thi triển 1 lần.",
+        "Khi đánh thường và trọng kích đánh trúng địch, tăng {color}5{/color}% tấn công và {color}1.5{/color}% tốc độ đánh thường. Kéo dài 6s, cộng dồn 4 tầng, mỗi 0.3s mới thi triển 1 lần.",
+        "Khi đánh thường và trọng kích đánh trúng địch, tăng {color}6{/color}% tấn công và {color}1.8{/color}% tốc độ đánh thường. Kéo dài 6s, cộng dồn 4 tầng, mỗi 0.3s mới thi triển 1 lần.",
+        "Khi đánh thường và trọng kích đánh trúng địch, tăng {color}7{/color}% tấn công và {color}2.1{/color}% tốc độ đánh thường. Kéo dài 6s, cộng dồn 4 tầng, mỗi 0.3s mới thi triển 1 lần.",
+        "Khi đánh thường và trọng kích đánh trúng địch, tăng {color}8{/color}% tấn công và {color}2.4{/color}% tốc độ đánh thường. Kéo dài 6s, cộng dồn 4 tầng, mỗi 0.3s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "cool-steel",
       "name": "Lãnh Nhẫn",
       "description": "Binh khí làm từ thép tinh khiết trải qua nhiều lần tôi luyện, từng chứng kiến nhiều cuộc mạo hiểm thăng trầm của chủ cũ.",
-      "refinement": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Băng tăng {0}%."
+      "refinements": [
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Băng tăng {color}12{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Băng tăng {color}15{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Băng tăng {color}18{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Băng tăng {color}21{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Băng tăng {color}24{/color}%."
+      ]
     },
     {
       "key": "crescent-pike",
       "name": "Lưu Nguyệt Châm",
       "description": "Mũi thương dài hẹp, binh khí này đến từ dị quốc, đuôi thương có hình bán nguyệt, được thương nhân mang đến Liyue. Chỉ cần tập luyện thì sẽ có sức sát thương khủng khiếp.",
-      "refinement": "Trong 5s sau khi nhận Nguyên Tố Hạt Nhân hoặc Nguyên Tố Tinh Cầu, tấn công thường và trọng kích sẽ tạo thêm sát thương bằng {0}% tấn công."
+      "refinements": [
+        "Trong 5s sau khi nhận Nguyên Tố Hạt Nhân hoặc Nguyên Tố Tinh Cầu, tấn công thường và trọng kích sẽ tạo thêm sát thương bằng {color}20{/color}% tấn công.",
+        "Trong 5s sau khi nhận Nguyên Tố Hạt Nhân hoặc Nguyên Tố Tinh Cầu, tấn công thường và trọng kích sẽ tạo thêm sát thương bằng {color}25{/color}% tấn công.",
+        "Trong 5s sau khi nhận Nguyên Tố Hạt Nhân hoặc Nguyên Tố Tinh Cầu, tấn công thường và trọng kích sẽ tạo thêm sát thương bằng {color}30{/color}% tấn công.",
+        "Trong 5s sau khi nhận Nguyên Tố Hạt Nhân hoặc Nguyên Tố Tinh Cầu, tấn công thường và trọng kích sẽ tạo thêm sát thương bằng {color}35{/color}% tấn công.",
+        "Trong 5s sau khi nhận Nguyên Tố Hạt Nhân hoặc Nguyên Tố Tinh Cầu, tấn công thường và trọng kích sẽ tạo thêm sát thương bằng {color}40{/color}% tấn công."
+      ]
     },
     {
       "key": "dark-iron-sword",
       "name": "Kiếm Sắt Đen",
       "description": "Kiếm sắt hơi bị đen một chút",
-      "refinement": "Sau khi kích hoạt phản ứng quá tải, siêu dẫn, điện cảm hoặc khuếch tán Nguyên Tố Lôi, tăng {0}% tấn công trong 12s."
+      "refinements": [
+        "Sau khi kích hoạt phản ứng quá tải, siêu dẫn, điện cảm hoặc khuếch tán Nguyên Tố Lôi, tăng {color}20{/color}% tấn công trong 12s.",
+        "Sau khi kích hoạt phản ứng quá tải, siêu dẫn, điện cảm hoặc khuếch tán Nguyên Tố Lôi, tăng {color}25{/color}% tấn công trong 12s.",
+        "Sau khi kích hoạt phản ứng quá tải, siêu dẫn, điện cảm hoặc khuếch tán Nguyên Tố Lôi, tăng {color}30{/color}% tấn công trong 12s.",
+        "Sau khi kích hoạt phản ứng quá tải, siêu dẫn, điện cảm hoặc khuếch tán Nguyên Tố Lôi, tăng {color}35{/color}% tấn công trong 12s.",
+        "Sau khi kích hoạt phản ứng quá tải, siêu dẫn, điện cảm hoặc khuếch tán Nguyên Tố Lôi, tăng {color}40{/color}% tấn công trong 12s."
+      ]
     },
     {
       "key": "deathmatch",
       "name": "Thương Quyết Chiến",
       "description": "Thương dài sắc bén màu máu tươi, xưa kia là bảo vật trân quý của một đấu sĩ nào đó. Mũi thương đã nhuộm đầy máu tươi của vô số dã thú và sinh mệnh.",
-      "refinement": "Khi bên cạnh có ít nhất 2 kẻ địch, được tăng {0}% tấn công và {1}% phòng ngự, khi có dưới 2 kẻ địch, được tăng {2}% tấn công."
+      "refinements": [
+        "Khi bên cạnh có ít nhất 2 kẻ địch, được tăng {color}16{/color}% tấn công và {color}16{/color}% phòng ngự, khi có dưới 2 kẻ địch, được tăng {color}24{/color}% tấn công.",
+        "Khi bên cạnh có ít nhất 2 kẻ địch, được tăng {color}20{/color}% tấn công và {color}20{/color}% phòng ngự, khi có dưới 2 kẻ địch, được tăng {color}30{/color}% tấn công.",
+        "Khi bên cạnh có ít nhất 2 kẻ địch, được tăng {color}24{/color}% tấn công và {color}24{/color}% phòng ngự, khi có dưới 2 kẻ địch, được tăng {color}36{/color}% tấn công.",
+        "Khi bên cạnh có ít nhất 2 kẻ địch, được tăng {color}28{/color}% tấn công và {color}28{/color}% phòng ngự, khi có dưới 2 kẻ địch, được tăng {color}42{/color}% tấn công.",
+        "Khi bên cạnh có ít nhất 2 kẻ địch, được tăng {color}32{/color}% tấn công và {color}32{/color}% phòng ngự, khi có dưới 2 kẻ địch, được tăng {color}48{/color}% tấn công."
+      ]
     },
     {
       "key": "debate-club",
       "name": "Gậy Thu Phục",
       "description": "Gậy lớn được làm từ tinh thiết. Là căn cứ lý luận tốt nhất.",
-      "refinement": "Sau khi thi triển kỹ năng nguyên tố, tấn công thường và trọng kích đánh trúng địch sẽ tạo thêm sát thương bằng {0}% tấn công trong phạm vi nhỏ. Hiệu quả kéo dài 15s, sát thương mỗi 3s mới thi triển 1 lần."
+      "refinements": [
+        "Sau khi thi triển kỹ năng nguyên tố, tấn công thường và trọng kích đánh trúng địch sẽ tạo thêm sát thương bằng {color}60{/color}% tấn công trong phạm vi nhỏ. Hiệu quả kéo dài 15s, sát thương mỗi 3s mới thi triển 1 lần.",
+        "Sau khi thi triển kỹ năng nguyên tố, tấn công thường và trọng kích đánh trúng địch sẽ tạo thêm sát thương bằng {color}75{/color}% tấn công trong phạm vi nhỏ. Hiệu quả kéo dài 15s, sát thương mỗi 3s mới thi triển 1 lần.",
+        "Sau khi thi triển kỹ năng nguyên tố, tấn công thường và trọng kích đánh trúng địch sẽ tạo thêm sát thương bằng {color}90{/color}% tấn công trong phạm vi nhỏ. Hiệu quả kéo dài 15s, sát thương mỗi 3s mới thi triển 1 lần.",
+        "Sau khi thi triển kỹ năng nguyên tố, tấn công thường và trọng kích đánh trúng địch sẽ tạo thêm sát thương bằng {color}105{/color}% tấn công kích trong phạm vi nhỏ. Hiệu quả kéo dài 15s, sát thương mỗi 3s mới thi triển 1 lần.",
+        "Sau khi thi triển kỹ năng Nguyên Tố, tấn công thường và trọng kích đánh trúng địch sẽ tạo thêm sát thương bằng {color}120{/color}% tấn công trong phạm vi nhỏ. Hiệu quả kéo dài 15s, sát thương mỗi 3s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "dodoco-tales",
       "name": "Tuyển tập các câu chuyện về Dodoco",
       "description": "Một cuốn sách thiếu nhi với trang bìa lộng lẫy, nội dung toàn là truyện ngắn với ngôn từ trẻ con, sẽ khiến người đọc không kìm được cảm xúc.\r\n Ngay cả những độc giả trưởng thành khi đọc những câu chuyện phiêu lưu hồn nhiên và ngây thơ trong cuốn sách cũng không thể không bị cuốn hút.",
-      "refinement": "Trong 6s sau khi tấn công thường đánh trúng địch, sát thương trọng kích tạo thành tăng {0}%; Trong 6s sau khi trọng kích đánh trúng địch, tấn công tăng {1}%."
+      "refinements": [
+        "Trong 6s sau khi tấn công thường đánh trúng địch, sát thương trọng kích tạo thành tăng {color}16{/color}%; Trong 6s sau khi trọng kích đánh trúng địch, tấn công tăng {color}8{/color}%.",
+        "Trong 6s sau khi tấn công thường đánh trúng địch, sát thương trọng kích tạo thành tăng {color}20{/color}%; Trong 6s sau khi trọng kích đánh trúng địch, tấn công tăng {color}10{/color}%.",
+        "Trong 6s sau khi tấn công thường đánh trúng địch, sát thương trọng kích tạo thành tăng {color}24{/color}%; Trong 6s sau khi trọng kích đánh trúng địch, tấn công tăng {color}12{/color}%.",
+        "Trong 6s sau khi tấn công thường đánh trúng địch, sát thương trọng kích tạo thành tăng {color}28{/color}%; Trong 6s sau khi trọng kích đánh trúng địch, tấn công tăng {color}14{/color}%.",
+        "Trong 6s sau khi tấn công thường đánh trúng địch, sát thương trọng kích tạo thành tăng {color}32{/color}%; Trong 6s sau khi trọng kích đánh trúng địch, tấn công tăng {color}16{/color}%."
+      ]
     },
     {
       "key": "dragons-bane",
       "name": "Tai Ương Của Rồng",
       "description": "Thương dài có rồng cuộn quanh, sắc bén khôn lường. Có thể dễ dàng diệt rồng.",
-      "refinement": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi Nguyên Tố Thủy hoặc Hỏa tăng {0}%."
+      "refinements": [
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi Nguyên Tố Thủy hoặc Hỏa tăng {color}20{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng {color}24{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng {color}28{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng {color}32{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng {color}36{/color}%."
+      ]
     },
     {
       "key": "dragonspine-spear",
       "name": "Thương Long Tích",
       "description": "Trường thương được chế tạo từ răng rồng. Có một cảm giác ấm áp kỳ lạ.",
-      "refinement": "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {0}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {1}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {2}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần."
+      "refinements": [
+        "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}60{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}80{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}200{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}70{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}95{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}240{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}80{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}110{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}280{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}90{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}125{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}320{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}100{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}140{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}360{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần."
+      ]
     },
     {
       "key": "dull-blade",
       "name": "Vô Phong Kiếm",
       "description": "Là ước mơ và khát vọng của những thiếu niên, nếu hai phẩm chất đáng quý này vẫn không đủ, vậy thì thêm chút dũng khí nào.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "elegy-for-the-end",
       "name": "Tiếng Thở Dài Vô Tận",
       "description": "Cây cung đẹp hoàn mỹ như nhạc cụ của thi nhân, tên bắn ra như tiếng than ai oán xuyên thấu tâm can.",
-      "refinement": "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tinh Thông Nguyên Tố tăng {0} điểm. Khi Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của nhân vật dùng vũ khí này đánh trúng địch, nhân vật sẽ nhận 1 Lá Bùa Tưởng Nhớ, mỗi 0.2 giây kích hoạt nhiều nhất 1 lần, khi nhân vật ở trong đội phía sau cũng có thể kích hoạt. Khi có 4 Lá Bùa Tưởng Nhớ sẽ tiêu hao tất cả bùa, khiến tất cả nhân vật trong đội đang ở gần nhận hiệu quả \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Ly Biệt\": Tinh Thông Nguyên Tố tăng {1} điểm, tấn công tăng {2}% trong 12 giây. Trong vòng 20 giây sau khi kích hoạt sẽ không thể nhận Lá Bùa Tưởng Nhớ nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn."
+      "refinements": [
+        "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tinh Thông Nguyên Tố tăng {color}60{/color} điểm. Khi Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ của nhân vật dùng vũ khí này đánh trúng địch, nhân vật sẽ nhận 1 Lá Bùa Tưởng Nhớ, mỗi 0.2 giây kích hoạt nhiều nhất 1 lần, khi nhân vật ở trong đội phía sau cũng có thể kích hoạt. Khi có 4 Lá Bùa Tưởng Nhớ sẽ tiêu hao tất cả bùa, khiến tất cả nhân vật trong đội đang ở gần nhận hiệu quả \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Ly Biệt\": Tinh Thông Nguyên Tố tăng {color}100{/color} điểm, tấn công tăng {color}20{/color}% trong 12 giây. Trong vòng 20 giây sau khi kích hoạt sẽ không thể nhận Lá Bùa Tưởng Nhớ nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn.",
+        "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tinh Thông Nguyên Tố tăng {color}75{/color} điểm. Khi Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ đánh trúng địch, nhân vật sẽ nhận 1 Lá Bùa Tưởng Nhớ, mỗi 0.2 giây kích hoạt nhiều nhất 1 lần, nhân vật trong đội cũng có thể kích hoạt. Khi có 4 Lá Bùa Tưởng Nhớ sẽ tiêu hao tất cả bùa, khiến tất cả nhân vật trong đội đang ở gần nhận hiệu quả \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Ly Biệt\": Tinh Thông Nguyên Tố tăng {color}125{/color} điểm, tấn công tăng {color}25{/color}% trong 12 giây. Trong vòng 20 giây sau khi kích hoạt sẽ không thể nhận Lá Bùa Tưởng Nhớ nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn.",
+        "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tinh Thông Nguyên Tố tăng {color}90{/color} điểm. Khi Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ đánh trúng địch, nhân vật sẽ nhận 1 Lá Bùa Tưởng Nhớ, mỗi 0.2 giây kích hoạt nhiều nhất 1 lần, nhân vật trong đội cũng có thể kích hoạt. Khi có 4 Lá Bùa Tưởng Nhớ sẽ tiêu hao tất cả bùa, khiến tất cả nhân vật trong đội đang ở gần nhận hiệu quả \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Ly Biệt\": Tinh Thông Nguyên Tố tăng {color}150{/color} điểm, tấn công tăng {color}30{/color}% trong 12 giây. Trong vòng 20 giây sau khi kích hoạt sẽ không thể nhận Lá Bùa Tưởng Nhớ nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn.",
+        "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tinh Thông Nguyên Tố tăng {color}105{/color} điểm. Khi Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ đánh trúng địch, nhân vật sẽ nhận 1 Lá Bùa Tưởng Nhớ, mỗi 0.2 giây kích hoạt nhiều nhất 1 lần, nhân vật trong đội cũng có thể kích hoạt. Khi có 4 Lá Bùa Tưởng Nhớ sẽ tiêu hao tất cả bùa, khiến tất cả nhân vật trong đội đang ở gần nhận hiệu quả \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Ly Biệt\": Tinh Thông Nguyên Tố tăng {color}175{/color} điểm, tấn công tăng {color}35{/color}% trong 12 giây. Trong vòng 20 giây sau khi kích hoạt sẽ không thể nhận Lá Bùa Tưởng Nhớ nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn.",
+        "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tinh Thông Nguyên Tố tăng {color}120{/color} điểm. Khi Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ đánh trúng địch, nhân vật sẽ nhận 1 Lá Bùa Tưởng Nhớ, mỗi 0.2 giây kích hoạt nhiều nhất 1 lần, nhân vật trong đội cũng có thể kích hoạt. Khi có 4 Lá Bùa Tưởng Nhớ sẽ tiêu hao tất cả bùa, khiến tất cả nhân vật trong đội đang ở gần nhận hiệu quả \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Ly Biệt\": Tinh Thông Nguyên Tố tăng {color}200{/color} điểm, tấn công tăng {color}40{/color}% trong 12 giây. Trong vòng 20 giây sau khi kích hoạt sẽ không thể nhận Lá Bùa Tưởng Nhớ nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn."
+      ]
     },
     {
       "key": "emerald-orb",
       "name": "Quả Cầu Ngọc",
       "description": "Pháp khí được điêu khắc từ bảo ngọc Tuyệt Vân Gián phía bắc Liyue. Nhỏ nhắn xinh xắn, được mệnh danh là Phỉ Ngọc Hoàn.",
-      "refinement": "Sau khi kích hoạt phản ứng bốc hơi, điện cảm, đóng băng hoặc khuếch tán Nguyên Tố Thủy, trong 12s tăng tấn công {0}%."
+      "refinements": [
+        "Sau khi kích hoạt phản ứng bốc hơi, điện cảm, đóng băng hoặc khuếch tán Nguyên Tố Thủy, trong 12s tăng tấn công {color}20{/color}%.",
+        "Sau khi kích hoạt phản ứng bốc hơi, điện cảm, đóng băng hoặc khuếch tán Nguyên Tố Thủy, trong 12s tăng tấn công {color}25{/color}%.",
+        "Sau khi kích hoạt phản ứng bốc hơi, điện cảm, đóng băng hoặc khuếch tán Nguyên Tố Thủy, trong 12s tăng tấn công {color}30{/color}%.",
+        "Sau khi kích hoạt phản ứng bốc hơi, điện cảm, đóng băng hoặc khuếch tán Nguyên Tố Thủy, trong 12s tăng tấn công {color}35{/color}%.",
+        "Sau khi kích hoạt phản ứng bốc hơi, điện cảm, đóng băng hoặc khuếch tán Nguyên Tố Thủy, trong 12s tăng tấn công {color}40{/color}%."
+      ]
     },
     {
       "key": "engulfing-lightning",
       "name": "Đoạn Thảo Trường Đao",
       "description": "Trảm thảo trường đao, kẻ đối mặt với thanh đao này cũng sẽ như ngọn cỏ ngã xuống.",
-      "refinement": "Tăng sức tấn công nhận được, mức tăng thêm tương đương {0}% lượng dư ra trên 100% của Hiệu Quả Nạp Nguyên Tố, tối đa tăng {1}% từ cách này. Trong 12s sau khi thi triển Kỹ Năng Nộ, tăng {2}% Hiệu Quả Nạp Nguyên Tố."
+      "refinements": [
+        "Tăng sức tấn công nhận được, mức tăng thêm tương đương {color}28{/color}% lượng dư ra trên 100% của Hiệu Quả Nạp Nguyên Tố, tối đa tăng {color}80{/color}% từ cách này. Trong 12s sau khi thi triển Kỹ Năng Nộ, tăng {color}30{/color}% Hiệu Quả Nạp Nguyên Tố.",
+        "Tăng sức tấn công nhận được, mức tăng thêm tương đương {color}35{/color}% lượng dư ra trên 100% của Hiệu Quả Nạp Nguyên Tố, tối đa tăng {color}90{/color}% từ cách này. Trong 12s sau khi thi triển Kỹ Năng Nộ, tăng {color}35{/color}% Hiệu Quả Nạp Nguyên Tố.",
+        "Tăng sức tấn công nhận được, mức tăng thêm tương đương {color}42{/color}% lượng dư ra trên 100% của Hiệu Quả Nạp Nguyên Tố, tối đa tăng {color}100{/color}% từ cách này. Trong 12s sau khi thi triển Kỹ Năng Nộ, tăng {color}40{/color}% Hiệu Quả Nạp Nguyên Tố.",
+        "Tăng sức tấn công nhận được, mức tăng thêm tương đương {color}49{/color}% lượng dư ra trên 100% của Hiệu Quả Nạp Nguyên Tố, tối đa tăng {color}110{/color}% từ cách này. Trong 12s sau khi thi triển Kỹ Năng Nộ, tăng {color}45{/color}% Hiệu Quả Nạp Nguyên Tố.",
+        "Tăng sức tấn công nhận được, mức tăng thêm tương đương {color}56{/color}% lượng dư ra trên 100% của Hiệu Quả Nạp Nguyên Tố, tối đa tăng {color}120{/color}% từ cách này. Trong 12s sau khi thi triển Kỹ Năng Nộ, tăng {color}50{/color}% Hiệu Quả Nạp Nguyên Tố."
+      ]
     },
     {
       "key": "everlasting-moonglow",
       "name": "Vầng Trăng Bất Diệt",
       "description": "Vòng ngọc biển sâu, tỏa ra ánh hào quang thuần khiết như mặt trăng.",
-      "refinement": "Trị liệu tăng {0}%; Tăng lượng sát thương đánh thường gây ra, lượng tăng thêm sẽ là {1}% giới hạn HP của nhân vật trang bị vũ khí này. Trong 12s sau khi thi triển Kỹ Năng Nộ, đánh thường trúng kẻ địch sẽ hồi phục 0.6 Năng Lượng Nguyên Tố, mỗi 0.1s tối đa hồi phục Năng Lượng Nguyên Tố một lần bằng cách này."
+      "refinements": [
+        "Trị liệu tăng {color}10{/color}%; Tăng lượng sát thương đánh thường gây ra, lượng tăng thêm sẽ là {color}1{/color}% giới hạn HP của nhân vật trang bị vũ khí này. Trong 12s sau khi thi triển Kỹ Năng Nộ, đánh thường trúng kẻ địch sẽ hồi phục 0.6 Năng Lượng Nguyên Tố, mỗi 0.1s tối đa hồi phục Năng Lượng Nguyên Tố một lần bằng cách này.",
+        "Trị liệu tăng {color}12.5{/color}%; Tăng lượng sát thương đánh thường gây ra, lượng tăng thêm sẽ là {color}1.5{/color}% giới hạn HP của nhân vật trang bị vũ khí này. Trong 12s sau khi thi triển Kỹ Năng Nộ, đánh thường trúng kẻ địch sẽ hồi phục 0.6 Năng Lượng Nguyên Tố, mỗi 0.1s tối đa hồi phục Năng Lượng Nguyên Tố một lần bằng cách này.",
+        "Trị liệu tăng {color}15{/color}%; Tăng lượng sát thương đánh thường gây ra, lượng tăng thêm sẽ là {color}2{/color}% giới hạn HP của nhân vật trang bị vũ khí này. Trong 12s sau khi thi triển Kỹ Năng Nộ, đánh thường trúng kẻ địch sẽ hồi phục 0.6 Năng Lượng Nguyên Tố, mỗi 0.1s tối đa hồi phục Năng Lượng Nguyên Tố một lần bằng cách này.",
+        "Trị liệu tăng {color}17.5{/color}%; Tăng lượng sát thương đánh thường gây ra, lượng tăng thêm sẽ là {color}2.5{/color}% giới hạn HP của nhân vật trang bị vũ khí này. Trong 12s sau khi thi triển Kỹ Năng Nộ, đánh thường trúng kẻ địch sẽ hồi phục 0.6 Năng Lượng Nguyên Tố, mỗi 0.1s tối đa hồi phục Năng Lượng Nguyên Tố một lần bằng cách này.",
+        "Trị liệu tăng {color}20{/color}%; Tăng lượng sát thương đánh thường gây ra, lượng tăng thêm sẽ là {color}3{/color}% giới hạn HP của nhân vật trang bị vũ khí này. Trong 12s sau khi thi triển Kỹ Năng Nộ, đánh thường trúng kẻ địch sẽ hồi phục 0.6 Năng Lượng Nguyên Tố, mỗi 0.1s tối đa hồi phục Năng Lượng Nguyên Tố một lần bằng cách này."
+      ]
     },
     {
       "key": "eye-of-perception",
       "name": "Chiêu Tâm",
       "description": "Trân châu u ám, tương truyền sở hữu sức mạnh nhìn thấu tâm can.",
-      "refinement": "Khi tấn công thường và trọng kích đánh trúng, có 50% tỷ lệ thi triển 1 cầu phép Chiêu Tâm, gây sát thương bằng {0}% lực tấn công, tối đa bắn 4 lần vào địch. Mỗi {1}s thi triển nhiều nhất 1 lần."
+      "refinements": [
+        "Khi tấn công thường và trọng kích đánh trúng, có 50% tỷ lệ thi triển 1 cầu phép Chiêu Tâm, gây sát thương bằng {color}240{/color}% lực tấn công, tối đa bắn 4 lần vào địch. Mỗi {color}12{/color}s thi triển nhiều nhất 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng, có 50% tỷ lệ thi triển 1 cầu phép Chiêu Tâm, gây sát thương bằng {color}270{/color}% lực tấn công, tối đa bắn 4 lần vào địch. Mỗi {color}11{/color}s thi triển nhiều nhất 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng, có 50% tỷ lệ thi triển 1 cầu phép Chiêu Tâm, gây sát thương bằng {color}300{/color}% lực tấn công, tối đa bắn 4 lần vào địch. Mỗi {color}10{/color}s thi triển nhiều nhất 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng, có 50% tỷ lệ thi triển 1 cầu phép Chiêu Tâm, gây sát thương bằng {color}330{/color}% lực tấn công, tối đa bắn 4 lần vào địch. Mỗi {color}9{/color}s thi triển nhiều nhất 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng, có 50% tỷ lệ thi triển 1 cầu phép Chiêu Tâm, gây sát thương bằng {color}360{/color}% lực tấn công, tối đa bắn 4 lần vào địch. Mỗi {color}8{/color}s thi triển nhiều nhất 1 lần."
+      ]
     },
     {
       "key": "favonius-codex",
       "name": "Tây Phong Mật Điển",
       "description": "Mật điển được học giả Đội Kỵ Sĩ Tây Phong lưu truyền. Ghi chép đạo lý và sức mạnh của vật chất và Nguyên Tố.",
-      "refinement": "Khi tạo thành bạo kích có tỷ lệ {0}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {1}s mới thi triển 1 lần."
+      "refinements": [
+        "Khi tạo thành bạo kích có tỷ lệ {color}60{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}12{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}70{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}10.5{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}80{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}9{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}90{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}7.5{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}100{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}6{/color}s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "favonius-greatsword",
       "name": "Đại Kiếm Tây Phong",
       "description": "Kiếm nghi thức loại lớn của Đội Kỵ Sĩ Tây Phong. Có thể dễ dàng tạo ra sức mạnh Nguyên Tố, có sức phá hoại cực mạnh.",
-      "refinement": "Khi tạo thành bạo kích có tỷ lệ {0}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {1}s mới thi triển 1 lần."
+      "refinements": [
+        "Khi tạo thành bạo kích có tỷ lệ {color}60{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}12{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}70{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}10.5{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}80{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}9{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}90{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}7.5{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}100{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}6{/color}s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "favonius-lance",
       "name": "Thương Tây Phong",
       "description": "Thương nghi thức của Đội Kỵ Sĩ Tây Phong. Mũi thương dài thẳng, đầu thương nhọn như xé được gió.",
-      "refinement": "Khi tạo thành bạo kích có tỷ lệ {0}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {1}s mới thi triển 1 lần."
+      "refinements": [
+        "Khi tạo thành bạo kích có tỷ lệ {color}60{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}12{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}70{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}10.5{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}80{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}9{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}90{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}7.5{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}100{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}6{/color}s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "favonius-sword",
       "name": "Tây Phong Kiếm",
       "description": "Kiếm nghi thức của Đội Kỵ Sĩ Tây Phong. Sắc bén nhẹ nhàng, cũng dễ phát ra sức mạnh Nguyên Tố.",
-      "refinement": "Khi tạo thành bạo kích có tỷ lệ {0}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {1}s mới thi triển 1 lần."
+      "refinements": [
+        "Khi tạo thành bạo kích có tỷ lệ {color}60{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}12{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}70{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}10.5{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}80{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}9{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}90{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}7.5{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}100{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}6{/color}s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "favonius-warbow",
       "name": "Cung Tây Phong",
       "description": "Cung Phản Khúc của đội Đội Kỵ Sĩ Tây Phong, chỉ có cung thủ kiệt xuất mới có thể sử dụng được tính năng kiệt xuất của nó.",
-      "refinement": "Khi tạo thành bạo kích có tỷ lệ {0}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {1}s mới thi triển 1 lần."
+      "refinements": [
+        "Khi tạo thành bạo kích có tỷ lệ {color}60{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}12{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}70{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}10.5{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}80{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}9{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}90{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}7.5{/color}s mới thi triển 1 lần.",
+        "Khi tạo thành bạo kích có tỷ lệ {color}100{/color}% sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {color}6{/color}s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "ferrous-shadow",
       "name": "Kiếm Thiết Ảnh",
       "description": "Đây là bội kiếm nổi tiếng của Arundolyn, sư tử ánh sáng. Nắm giữ nó, cảm nhận sức mạnh của anh hùng trong truyền thuyết! Chú ý: Mơ mộng cũng phải có mức độ.",
-      "refinement": "Khi HP dưới {0}%, trọng kích khó bị ngắt đoạn, và tăng {1}% sát thương trọng kích."
+      "refinements": [
+        "Khi HP dưới {color}70{/color}%, trọng kích khó bị ngắt đoạn, và tăng {color}30{/color}% sát thương trọng kích.",
+        "Khi HP dưới {color}75{/color}%, trọng kích khó bị ngắt đoạn, và tăng {color}35{/color}% sát thương trọng kích.",
+        "Khi HP dưới {color}80{/color}%, trọng kích khó bị ngắt đoạn, và tăng {color}40{/color}% sát thương trọng kích.",
+        "Khi HP dưới {color}85{/color}%, trọng kích khó bị ngắt đoạn, và tăng {color}45{/color}% sát thương trọng kích.",
+        "Khi HP dưới {color}90{/color}%, trọng kích khó bị ngắt đoạn, và tăng {color}50{/color}% sát thương trọng kích."
+      ]
     },
     {
       "key": "festering-desire",
       "name": "Răng Nanh Rỉ Sét",
       "description": "Thanh kiếm cổ quái khao khát sinh mệnh, có độc tính có thể ăn mòn cả Rồng.",
-      "refinement": "Tăng {0}% sát thương kỹ năng nguyên tố, tăng {1}% tỷ lệ bạo kích của kỹ năng nguyên tố."
+      "refinements": [
+        "Tăng {color}16{/color}% sát thương kỹ năng nguyên tố, tăng {color}6{/color}% tỷ lệ bạo kích của kỹ năng nguyên tố.",
+        "Tăng {color}20{/color}% sát thương kỹ năng nguyên tố, tăng {color}7.5{/color}% tỷ lệ bạo kích của kỹ năng nguyên tố.",
+        "Tăng {color}24{/color}% sát thương kỹ năng nguyên tố, tăng {color}9{/color}% tỷ lệ bạo kích của kỹ năng nguyên tố.",
+        "Tăng {color}28{/color}% sát thương kỹ năng nguyên tố, tăng {color}10.5{/color}% tỷ lệ bạo kích của kỹ năng nguyên tố.",
+        "Tăng {color}32{/color}% sát thương kỹ năng nguyên tố, tăng {color}12{/color}% tỷ lệ bạo kích của kỹ năng nguyên tố."
+      ]
     },
     {
       "key": "fillet-blade",
       "name": "Đao Săn Cá",
       "description": "Đao bằng thép sắc bén dùng để làm cá, thân thon dài, cực kỳ sắc bén.",
-      "refinement": "Khi đánh trúng, có 50% cơ hội tạo thành {0}% sát thương tấn công vào mục tiêu đơn. Hiệu quả này {1}s xuất hiện một lần."
+      "refinements": [
+        "Khi đánh trúng, có 50% cơ hội tạo thành {color}240{/color}% sát thương tấn công vào mục tiêu đơn. Hiệu quả này {color}15{/color}s xuất hiện một lần.",
+        "Khi đánh trúng, có 50% cơ hội tạo thành {color}280{/color}% sát thương tấn công vào mục tiêu đơn. Hiệu quả này {color}14{/color}s xuất hiện một lần.",
+        "Khi đánh trúng, có 50% cơ hội tạo thành {color}320{/color}% sát thương tấn công vào mục tiêu đơn. Hiệu quả này {color}13{/color}s xuất hiện một lần.",
+        "Khi đánh trúng, có 50% cơ hội tạo thành {color}360{/color}% sát thương tấn công vào mục tiêu đơn. Hiệu quả này {color}12{/color}s xuất hiện một lần.",
+        "Khi đánh trúng, có 50% cơ hội tạo thành {color}400{/color}% sát thương tấn công vào mục tiêu đơn. Hiệu quả này {color}11{/color}s xuất hiện một lần."
+      ]
     },
     {
       "key": "freedom-sworn",
       "name": "Lời Thề Tự Do Cổ Xưa",
       "description": "Thanh kiếm thẳng tắp màu xanh lam như tiếng ca hoài cổ, vũ khí sắc bén như lời thề tự do ở đất nước của gió.",
-      "refinement": "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Sát thương tạo thành tăng {0}%; Khi kích hoạt phản ứng nguyên tố, nhân vật sẽ nhận 1 Lá Bùa Phấn Khởi, mỗi 0.5s tối đa kích hoạt một lần, nhân vật dự bị trong đội cũng sẽ kích hoạt. Khi có 2 Lá Bùa Phấn Khởi sẽ tiêu hao tất cả Lá Bùa Phấn Khởi, khiến tất cả nhân vật trong đội gần đó nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Kháng Chiến\" trong 12s: Sát thương đánh thường, trọng kích, tấn công khi đáp tăng {1}%, tấn công tăng {2}%. Trong 20s sau khi kích hoạt sẽ không nhận được Lá Bùa Phấn Khởi nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn."
+      "refinements": [
+        "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Sát thương tạo thành tăng {color}10{/color}%; Khi kích hoạt phản ứng nguyên tố, nhân vật sẽ nhận 1 Lá Bùa Phấn Khởi, mỗi 0.5s tối đa kích hoạt một lần, nhân vật dự bị trong đội cũng sẽ kích hoạt. Khi có 2 Lá Bùa Phấn Khởi sẽ tiêu hao tất cả Lá Bùa Phấn Khởi, khiến tất cả nhân vật trong đội gần đó nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Kháng Chiến\" trong 12s: Sát thương đánh thường, trọng kích, tấn công khi đáp tăng {color}16{/color}%, tấn công tăng {color}20{/color}%. Trong 20s sau khi kích hoạt sẽ không nhận được Lá Bùa Phấn Khởi nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn.",
+        "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Sát thương tạo thành tăng {color}12.5{/color}%; Khi kích hoạt phản ứng nguyên tố, nhân vật sẽ nhận 1 Lá Bùa Phấn Khởi, mỗi 0.5s tối đa kích hoạt một lần, nhân vật dự bị trong đội cũng sẽ kích hoạt. Khi có 2 Lá Bùa Phấn Khởi sẽ tiêu hao tất cả Lá Bùa Phấn Khởi, khiến tất cả nhân vật trong đội gần đó nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Kháng Chiến\" trong 12s: Sát thương đánh thường, trọng kích, tấn công khi đáp tăng {color}20{/color}%, tấn công tăng {color}25{/color}%. Trong 20s sau khi kích hoạt sẽ không nhận được Lá Bùa Phấn Khởi nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn.",
+        "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Sát thương tạo thành tăng {color}15{/color}%; Khi kích hoạt phản ứng nguyên tố, nhân vật sẽ nhận 1 Lá Bùa Phấn Khởi, mỗi 0.5s tối đa kích hoạt một lần, nhân vật dự bị trong đội cũng sẽ kích hoạt. Khi có 2 Lá Bùa Phấn Khởi sẽ tiêu hao tất cả Lá Bùa Phấn Khởi, khiến tất cả nhân vật trong đội gần đó nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Kháng Chiến\" trong 12s: Sát thương đánh thường, trọng kích, tấn công khi đáp tăng {color}24{/color}%, tấn công tăng {color}30{/color}%. Trong 20s sau khi kích hoạt sẽ không nhận được Lá Bùa Phấn Khởi nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn.",
+        "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Sát thương tạo thành tăng {color}17.5{/color}%; Khi kích hoạt phản ứng nguyên tố, nhân vật sẽ nhận 1 Lá Bùa Phấn Khởi, mỗi 0.5s tối đa kích hoạt một lần, nhân vật dự bị trong đội cũng sẽ kích hoạt. Khi có 2 Lá Bùa Phấn Khởi sẽ tiêu hao tất cả Lá Bùa Phấn Khởi, khiến tất cả nhân vật trong đội gần đó nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Kháng Chiến\" trong 12s: Sát thương đánh thường, trọng kích, tấn công khi đáp tăng {color}28{/color}%, tấn công tăng {color}35{/color}%. Trong 20s sau khi kích hoạt sẽ không nhận được Lá Bùa Phấn Khởi nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn.",
+        "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Sát thương tạo thành tăng {color}20{/color}%; Khi kích hoạt phản ứng nguyên tố, nhân vật sẽ nhận 1 Lá Bùa Phấn Khởi, mỗi 0.5s tối đa kích hoạt một lần, nhân vật dự bị trong đội cũng sẽ kích hoạt. Khi có 2 Lá Bùa Phấn Khởi sẽ tiêu hao tất cả Lá Bùa Phấn Khởi, khiến tất cả nhân vật trong đội gần đó nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Bài Ca Kháng Chiến\" trong 12s: Sát thương đánh thường, trọng kích, tấn công khi đáp tăng {color}32{/color}%, tấn công tăng {color}40{/color}%. Trong 20s sau khi kích hoạt sẽ không nhận được Lá Bùa Phấn Khởi nữa. Khi các hiệu quả của \"Ca Khúc Thời Đại Nghìn Năm\" đang kích hoạt, những hiệu quả cùng loại khác sẽ không được cộng dồn."
+      ]
     },
     {
       "key": "frostbearer",
       "name": "Trái Chịu Lạnh",
       "description": "Loại trái cây kỳ lạ toát ra sự lạnh lẽo, phảng phất nhẹ mùi vị đắng chát.",
-      "refinement": "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {0}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {1}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {2}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần."
+      "refinements": [
+        "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}60{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}80{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}200{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}70{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}95{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}240{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}80{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}110{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}280{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}90{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}125{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}320{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}100{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}140{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}360{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần."
+      ]
     },
     {
       "key": "hakushin-ring",
       "name": "Vòng Bạch Thần",
       "description": "Pháp khí kế thừa ý niệm của Ngài Kitsune. Chỉ có điều ý niệm của ngài lớn mạnh như vậy vật nhỏ bé này chẳng thể chứa đựng được hết.",
-      "refinement": "Mỗi khi nhân vật trang bị vũ khí này kích hoạt phản ứng liên quan đến nguyên tố lôi, thì nhân vật lân cận trong đội có thuộc tính nguyên tố gây ra các phản ứng liên quan sẽ tăng {0}% Sát Thương Nguyên Tố của nguyên tố tương ứng và kéo dài 6 giây. Nhân vật được tăng Sát Thương Nguyên Tố bằng hình thức này sẽ không được cộng dồn."
+      "refinements": [
+        "Mỗi khi nhân vật trang bị vũ khí này kích hoạt phản ứng liên quan đến nguyên tố lôi, thì nhân vật lân cận trong đội có thuộc tính nguyên tố gây ra các phản ứng liên quan sẽ tăng {color}10{/color}% Sát Thương Nguyên Tố của nguyên tố tương ứng và kéo dài 6 giây. Nhân vật được tăng Sát Thương Nguyên Tố bằng hình thức này sẽ không được cộng dồn.",
+        "Mỗi khi nhân vật trang bị vũ khí này kích hoạt phản ứng liên quan đến nguyên tố lôi, thì nhân vật lân cận trong đội có thuộc tính nguyên tố gây ra các phản ứng liên quan sẽ tăng {color}12.5{/color}% Sát Thương Nguyên Tố của nguyên tố tương ứng và kéo dài 6 giây. Nhân vật được tăng Sát Thương Nguyên Tố bằng hình thức này sẽ không được cộng dồn.",
+        "Mỗi khi nhân vật trang bị vũ khí này kích hoạt phản ứng liên quan đến nguyên tố lôi, thì nhân vật lân cận trong đội có thuộc tính nguyên tố gây ra các phản ứng liên quan sẽ tăng {color}15{/color}% Sát Thương Nguyên Tố của nguyên tố tương ứng và kéo dài 6 giây. Nhân vật được tăng Sát Thương Nguyên Tố bằng hình thức này sẽ không được cộng dồn.",
+        "Mỗi khi nhân vật trang bị vũ khí này kích hoạt phản ứng liên quan đến nguyên tố lôi, thì nhân vật lân cận trong đội có thuộc tính nguyên tố gây ra các phản ứng liên quan sẽ tăng {color}17.5{/color}% Sát Thương Nguyên Tố của nguyên tố tương ứng và kéo dài 6 giây. Nhân vật được tăng Sát Thương Nguyên Tố bằng hình thức này sẽ không được cộng dồn.",
+        "Mỗi khi nhân vật trang bị vũ khí này kích hoạt phản ứng liên quan đến nguyên tố lôi, thì nhân vật lân cận trong đội có thuộc tính nguyên tố gây ra các phản ứng liên quan sẽ tăng {color}20{/color}% Sát Thương Nguyên Tố của nguyên tố tương ứng và kéo dài 6 giây. Nhân vật được tăng Sát Thương Nguyên Tố bằng hình thức này sẽ không được cộng dồn."
+      ]
     },
     {
       "key": "halberd",
       "name": "Thuẫn Kích",
       "description": "Binh khí trên mũi có gắn thêm lưỡi đao nhọn, có sức phá hủy lớn. Là vũ khí được Thiên Nham Quân ưa chuộng.",
-      "refinement": "Tạo thành thêm {0}% công kích cho kẻ địch bị tấn công thường đánh trúng. Mỗi 10s mới thi triển 1 lần."
+      "refinements": [
+        "Tạo thành thêm {color}160{/color}% công kích cho kẻ địch bị tấn công thường đánh trúng. Mỗi 10s mới thi triển 1 lần.",
+        "Tạo thành thêm {color}200{/color}%công kích cho kẻ địch bị tấn công thường đánh trúng. Mỗi 10s mới thi triển 1 lần.",
+        "Tạo thành thêm {color}240{/color}% công kích cho kẻ địch bị tấn công thường đánh trúng. Mỗi 10s mới thi triển 1 lần.",
+        "Tạo thành thêm {color}280{/color}% công kích cho kẻ địch bị tấn công thường đánh trúng. Mỗi 10s mới thi triển 1 lần.",
+        "Tạo thành thêm {color}320{/color}% công kích cho kẻ địch bị tấn công thường đánh trúng. Mỗi 10s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "hamayumi",
       "name": "Cung Trừ Ma",
       "description": "Cây cung từng thuộc về một pháp sư nào đó, tạo hình tinh xảo nhưng rất dễ sử dụng.",
-      "refinement": "Tăng {0}% sát thương tấn công thường, tăng {1}% sát thương trọng kích. Khi Năng Lượng Nguyên Tố đạt 100%, tăng 100% hiệu quả cho nhân vật trang bị vũ khí này."
+      "refinements": [
+        "Tăng {color}16{/color}% sát thương tấn công thường, tăng {color}12{/color}% sát thương trọng kích. Khi Năng Lượng Nguyên Tố đạt 100%, tăng 100% hiệu quả cho nhân vật trang bị vũ khí này.",
+        "Tăng {color}20{/color}% sát thương tấn công thường, tăng {color}15{/color}% sát thương trọng kích. Khi Năng Lượng Nguyên Tố đạt 100%, tăng 100% hiệu quả cho nhân vật trang bị vũ khí này.",
+        "Tăng {color}24{/color}% sát thương tấn công thường, tăng {color}18{/color}% sát thương trọng kích. Khi Năng Lượng Nguyên Tố đạt 100%, tăng 100% hiệu quả cho nhân vật trang bị vũ khí này.",
+        "Tăng {color}28{/color}% sát thương tấn công thường, tăng {color}21{/color}% sát thương trọng kích. Khi Năng Lượng Nguyên Tố đạt 100%, tăng 100% hiệu quả cho nhân vật trang bị vũ khí này.",
+        "Tăng {color}32{/color}% sát thương tấn công thường, tăng {color}24{/color}% sát thương trọng kích. Khi Năng Lượng Nguyên Tố đạt 100%, tăng 100% hiệu quả cho nhân vật trang bị vũ khí này."
+      ]
     },
     {
       "key": "harbinger-of-dawn",
       "name": "Thần Kiếm Lê Minh",
       "description": "Một thanh bảo kiếm sáng ngời, người nắm giữ nó sẽ có được sức mạnh \"Tự mình cảm thấy ưu tú\". Nhưng thanh kiếm đã có đôi chút xuống sắc.",
-      "refinement": "Khi HP trên 90%, tỷ lệ bạo kích tăng {0}%."
+      "refinements": [
+        "Khi HP trên 90%, tỷ lệ bạo kích tăng {color}14{/color}%.",
+        "Khi HP trên 90%, tỷ lệ bạo kích tăng {color}17.5{/color}%.",
+        "Khi HP trên 90%, tỷ lệ bạo kích tăng {color}21{/color}%.",
+        "Khi HP trên 90%, tỷ lệ bạo kích tăng {color}24.5{/color}%.",
+        "Khi HP trên 90%, tỷ lệ bạo kích tăng {color}28{/color}%."
+      ]
     },
     {
       "key": "hunters-bow",
       "name": "Cung Săn Bắn",
       "description": "Âm nhạc mà người thợ săn biểu diễn được tạo thành từ hai loại âm sắc. Âm thanh từ cung và tiếng phát ra của tên khi bay.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "iron-point",
       "name": "Thương Sắt",
       "description": "Một đầu nhọn, là vũ khí hộ thân có thể công thủ. Rất thịnh hành trong giới lữ hành.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "iron-sting",
       "name": "Thiết Phong Kích",
       "description": "Kiếm có ngoại hình thon nhọn, là thần binh lợi khí từ dị quốc theo thương nhân lưu lạc đến Liyue. Nhanh nhẹn hiếm thấy, cực kỳ sắc bén.",
-      "refinement": "Trong 6s sau khi tạo thành sát thương nguyên tố, sát thương nhân vật tạo ra tăng {0}%, cộng dồn 2 lần. Mỗi 1s mới thi triển 1 lần."
+      "refinements": [
+        "Trong 6s sau khi tạo thành sát thương nguyên tố, sát thương nhân vật tạo ra tăng {color}6{/color}%, cộng dồn 2 lần. Mỗi 1s mới thi triển 1 lần.",
+        "Trong 6s sau khi tạo thành sát thương nguyên tố, sát thương nhân vật tạo ra tăng {color}7.5{/color}%, cộng dồn 2 lần. Mỗi 1s mới thi triển 1 lần.",
+        "Trong 6s sau khi tạo thành sát thương nguyên tố, sát thương nhân vật tạo ra tăng{color}9{/color}%, cộng dồn 2 lần. Mỗi 1s mới thi triển 1 lần.",
+        "Trong 6s sau khi tạo thành sát thương nguyên tố, sát thương nhân vật tạo ra tăng{color}10.5{/color}%, cộng dồn 2 lần. Mỗi 1s mới thi triển 1 lần.",
+        "Trong 6s sau khi tạo thành sát thương nguyên tố, sát thương nhân vật tạo ra tăng {color}12{/color}%, cộng dồn 2 lần. Mỗi 1s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "katsuragikiri-nagamasa",
       "name": "Trường Đao Katsuragi",
       "description": "Thanh kiếm được Tatarasuna rèn, tuy nặng nề nhưng vô cùng sắc bén.",
-      "refinement": "Tăng sát thương Kỹ Năng Nguyên Tố {0}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {1} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt."
+      "refinements": [
+        "Tăng sát thương Kỹ Năng Nguyên Tố {color}6{/color}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {color}3{/color} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt.",
+        "Tăng sát thương Kỹ Năng Nguyên Tố {color}7.5{/color}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {color}3.5{/color} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt.",
+        "Tăng sát thương Kỹ Năng Nguyên Tố {color}9{/color}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {color}4{/color} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt.",
+        "Tăng sát thương Kỹ Năng Nguyên Tố {color}10.5{/color}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {color}4.5{/color} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt.",
+        "Tăng sát thương Kỹ Năng Nguyên Tố {color}12{/color}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {color}5{/color} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt."
+      ]
     },
     {
       "key": "kitain-cross-spear",
       "name": "Giáo Thập Tự Kitain",
       "description": "Một cây thương đặc biệt đã từng được sử dụng bởi một chiến binh nổi tiếng, người bảo vệ đảo Yashiori khỏi Họa Thần.",
-      "refinement": "Tăng sát thương Kỹ Năng Nguyên Tố {0}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {1} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt."
+      "refinements": [
+        "Tăng sát thương Kỹ Năng Nguyên Tố {color}6{/color}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {color}3{/color} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt.",
+        "Tăng sát thương Kỹ Năng Nguyên Tố {color}7.5{/color}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {color}3.5{/color} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt.",
+        "Tăng sát thương Kỹ Năng Nguyên Tố {color}9{/color}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {color}4{/color} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt.",
+        "Tăng sát thương Kỹ Năng Nguyên Tố {color}10.5{/color}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {color}4.5{/color} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt.",
+        "Tăng sát thương Kỹ Năng Nguyên Tố {color}12{/color}%. Sau khi Kỹ Năng Nguyên Tố đánh trúng, nhân vật mất 3 điểm Năng Lượng Nguyên Tố, đồng thời 6 giây tiếp theo mỗi 2 giây hồi phục {color}5{/color} điểm. Hiệu quả này mỗi 10 giây kích hoạt 1 lần, nhân vật ở trong đội nhưng không ra trận vẫn có thể kích hoạt."
+      ]
     },
     {
       "key": "lions-roar",
       "name": "Tiếng Hét Của Rồng",
       "description": "Phát ra sức mạnh tinh anh nhưng không hề ảnh hưởng đến sự sắc bén cũng như linh hoạt. Vung lên như tiếng hét của rồng.",
-      "refinement": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi Nguyên Tố Hỏa hoặc Lôi tăng {0}%."
+      "refinements": [
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi Nguyên Tố Hỏa hoặc Lôi tăng {color}20{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng {color}24{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng {color}28{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng {color}32{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Hỏa hoặc Lôi tăng {color}36{/color}%."
+      ]
     },
     {
       "key": "lithic-blade",
       "name": "Thiên Nham Cổ Kiếm",
       "description": "Đại kiếm được mài giũa từ đá ở Liyue.",
-      "refinement": "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận {0}% tăng tấn công và {1}% tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng."
+      "refinements": [
+        "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận {color}7{/color}% tăng tấn công và {color}3{/color}% tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng.",
+        "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận {color}8{/color}% tăng tấn công và {color}4{/color}% tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng.",
+        "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận {color}9{/color}% tăng tấn công và {color}5{/color}% tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng.",
+        "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận {color}10{/color}% tăng tấn công và {color}6{/color}% tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng.",
+        "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận {color}11{/color}% tăng tấn công và {color}7{/color}% tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng."
+      ]
     },
     {
       "key": "lithic-spear",
       "name": "Thương Thiên Nham",
       "description": "Thương dài được chế tạo kỳ công từ phiến đá ở Cô Vân Các, mũi thương bén nhọn vô cùng.",
-      "refinement": "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận {0}% tăng tấn công và {1}% tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng."
+      "refinements": [
+        "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận {color}7{/color}% tăng tấn công và {color}3{/color}% tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng.",
+        "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận {color}8{/color}% tăng tấn công và {color}4{/color}% tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng.",
+        "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận {color}9{/color}% tăng tấn công và {color}5{/color}% tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng.",
+        "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận {color}10{/color}% tăng tấn công và {color}6{/color}% tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng.",
+        "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận {color}11{/color}% tăng tấn công và {color}7{/color}% tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng."
+      ]
     },
     {
       "key": "lost-prayer-to-the-sacred-winds",
       "name": "Điển Tích Tây Phong",
       "description": "Điển tích được người dân sùng bái gió viết nên. Qua ngàn năm, niềm tin được lưu truyền và nhận được sự ưu ái của gió, tràn đầy sức mạnh và sự chúc phúc.",
-      "refinement": "Tốc độ di chuyển tăng 10%; Lên trận mỗi 4s nhận {0}% buff sát thương Nguyên Tố. Cộng dồn tối đa 4 lần, kéo dài đến khi nhân vật ngã xuống hoặc rời trận."
+      "refinements": [
+        "Tốc độ di chuyển tăng 10%; Lên trận mỗi 4s nhận {color}8{/color}% buff sát thương Nguyên Tố. Cộng dồn tối đa 4 lần, kéo dài đến khi nhân vật ngã xuống hoặc rời trận.",
+        "Tốc độ di chuyển tăng 10%; Lên trận mỗi 4s nhận {color}10{/color}% buff sát thương nguyên tố. Cộng dồn tối đa 4 lần, kéo dài đến khi nhân vật ngã xuống hoặc rời trận.",
+        "Tốc độ di chuyển tăng 10%; Lên trận mỗi 4s nhận {color}12{/color}% buff sát thương Nguyên Tố. Cộng dồn tối đa 4 lần, kéo dài đến khi nhân vật ngã xuống hoặc rời trận.",
+        "Tốc độ di chuyển tăng 10%; Lên trận mỗi 4s nhận {color}14{/color}% buff sát thương Nguyên Tố. Cộng dồn tối đa 4 lần, kéo dài đến khi nhân vật ngã xuống hoặc rời trận.",
+        "Tốc độ di chuyển tăng 10%; Lên trận mỗi 4s nhận {color}16{/color}% buff sát thương Nguyên Tố. Cộng dồn tối đa 4 lần, kéo dài đến khi nhân vật ngã xuống hoặc rời trận."
+      ]
     },
     {
       "key": "luxurious-sea-lord",
       "name": "Vua Biển Hàng Hiệu",
       "description": "Vua của biển cả. Sau khi sấy khô thì sẽ trở thành binh khí và cả thức ăn dự trữ nữa.",
-      "refinement": "Sát thương từ Kỹ Năng Nộ tăng {0}%. Khi Kỹ Năng Nộ trúng địch, có 100% tỷ lệ triệu hồi kình ngư xung kích, gây sát thương phạm vi bằng {1}% sức tấn công. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+      "refinements": [
+        "Sát thương từ Kỹ Năng Nộ tăng {color}12{/color}%. Khi Kỹ Năng Nộ trúng địch, có 100% tỷ lệ triệu hồi kình ngư xung kích, gây sát thương phạm vi bằng {color}100{/color}% sức tấn công. Hiệu quả này mỗi 15s tối đa kích hoạt một lần.",
+        "Sát thương từ Kỹ Năng Nộ tăng {color}15{/color}%. Khi Kỹ Năng Nộ trúng địch, có 100% tỷ lệ triệu hồi kình ngư xung kích, gây sát thương phạm vi bằng {color}125{/color}% sức tấn công. Hiệu quả này mỗi 15s tối đa kích hoạt một lần.",
+        "Sát thương từ Kỹ Năng Nộ tăng {color}18{/color}%. Khi Kỹ Năng Nộ trúng địch, có 100% tỷ lệ triệu hồi kình ngư xung kích, gây sát thương phạm vi bằng {color}150{/color}% sức tấn công. Hiệu quả này mỗi 15s tối đa kích hoạt một lần.",
+        "Sát thương từ Kỹ Năng Nộ tăng {color}21{/color}%. Khi Kỹ Năng Nộ trúng địch, có 100% tỷ lệ triệu hồi kình ngư xung kích, gây sát thương phạm vi bằng {color}175{/color}% sức tấn công. Hiệu quả này mỗi 15s tối đa kích hoạt một lần.",
+        "Sát thương từ Kỹ Năng Nộ tăng {color}24{/color}%. Khi Kỹ Năng Nộ trúng địch, có 100% tỷ lệ triệu hồi kình ngư xung kích, gây sát thương phạm vi bằng {color}200{/color}% sức tấn công. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+      ]
     },
     {
       "key": "magic-guide",
       "name": "Tóm Tắt Ma Pháp",
       "description": "Phần 12, kết hợp thêm nội dung thời đại mới và sửa đổi một số lỗi của phần 11.",
-      "refinement": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Lôi tăng {0}%."
+      "refinements": [
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Lôi tăng {color}12{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Lôi tăng {color}15{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Lôi tăng {color}18{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Lôi tăng {color}21{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Lôi tăng {color}24{/color}%."
+      ]
     },
     {
       "key": "mappa-mare",
       "name": "Hải Đồ Vạn Quốc",
       "description": "Hải đồ ghi lại chi tiết vùng khí hậu hải lưu xung quanh đại lục, từ dị quốc qua tay thương nhân lưu lạc đến Liyue.",
-      "refinement": "Trong 10s sau khi kích hoạt phản ứng Nguyên Tố, nhận {0}% buff sát thương Nguyên Tố, cộng dồn 2 tầng."
+      "refinements": [
+        "Trong 10s sau khi kích hoạt phản ứng Nguyên Tố, nhận {color}8{/color}% buff sát thương Nguyên Tố, cộng dồn 2 tầng.",
+        "Trong 10s sau khi kích hoạt phản ứng nguyên tố, nhận {color}10{/color}% buff sát thương nguyên tố, cộng dồn 2 tầng.",
+        "Trong 10s sau khi kích hoạt phản ứng Nguyên Tố, nhận {color}12{/color}% buff sát thương Nguyên Tố, cộng dồn 2 tầng.",
+        "Trong 10s sau khi kích hoạt phản ứng Nguyên Tố, nhận {color}14{/color}% buff sát thương Nguyên Tố, cộng dồn 2 tầng.",
+        "Trong 10s sau khi kích hoạt phản ứng Nguyên Tố, nhận {color}16{/color}% buff sát thương Nguyên Tố, cộng dồn 2 tầng."
+      ]
     },
     {
       "key": "memory-of-dust",
       "name": "Khóa Trần Thế",
       "description": "Chiếc khóa bằng đá dường như ẩn chứa những dòng lịch sử cổ xưa nào đó, sự thay đổi của thời gian khiến nó để lộ ra sức mạnh trong đó.",
-      "refinement": "Hiệu quả khiên tăng {0}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {1}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%."
+      "refinements": [
+        "Hiệu quả khiên tăng {color}20{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}4{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%.",
+        "Hiệu quả khiên tăng {color}25{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}5{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%.",
+        "Hiệu quả khiên tăng {color}30{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}6{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%.",
+        "Hiệu quả khiên tăng {color}35{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}7{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%.",
+        "Hiệu quả khiên tăng {color}40{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}8{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%."
+      ]
     },
     {
       "key": "messenger",
       "name": "Tín Sứ",
       "description": "Cung làm từ gỗ có tạo hình đơn giản. Nghe nói nó từng được dùng làm công cụ truyền tin xa.",
-      "refinement": "Nếu trọng kích đánh trúng điểm yếu, sẽ tạo thành thêm sát thương bằng {0}% tấn công, sát thương này chắc chắn bạo kích. Mỗi 10s chỉ có hiệu quả 1 lần."
+      "refinements": [
+        "Nếu trọng kích đánh trúng điểm yếu, sẽ tạo thành thêm sát thương bằng {color}100{/color}% tấn công, sát thương này chắc chắn bạo kích. Mỗi 10s chỉ có hiệu quả 1 lần.",
+        "Nếu trọng kích đánh trúng điểm yếu, sẽ tạo thành thêm sát thương bằng {color}125{/color}% tấn công, sát thương này chắc chắn bạo kích. Mỗi 10s chỉ có hiệu quả 1 lần.",
+        "Nếu trọng kích đánh trúng điểm yếu, sẽ tạo thành thêm sát thương bằng {color}150{/color}% tấn công, sát thương này chắc chắn bạo kích. Mỗi 10s chỉ có hiệu quả 1 lần.",
+        "Nếu trọng kích đánh trúng điểm yếu, sẽ tạo thành thêm sát thương bằng {color}175{/color}% tấn công, sát thương này chắc chắn bạo kích. Mỗi 10s chỉ có hiệu quả 1 lần.",
+        "Nếu trọng kích đánh trúng điểm yếu, sẽ tạo thành thêm sát thương bằng {color}200{/color}% tấn công, sát thương này chắc chắn bạo kích. Mỗi 10s chỉ có hiệu quả 1 lần."
+      ]
     },
     {
       "key": "mistsplitter-reforged",
       "name": "Ánh Sáng Đêm Sương Mù",
       "description": "Một thanh kiếm rực lên với ánh sáng tím. Cái tên \"Ánh Sáng\" gợi nhớ quá khứ từng tan vỡ.",
-      "refinement": "Tăng {0}% Sát Thương Nguyên Tố, đồng thời nhận lấy sức mạnh \"Vết Cắt Sương Mù\". Khi Vết Cắt Sương Mù ở tầng 1/2/3 sẽ tăng Sát Thương Nguyên Tố cùng loại với bản thân, tương ứng là {1}%. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sương Mù khi: Tấn Công Thường tạo thành Sát Thương Nguyên Tố tồn tại trong 5 giây; Thi triển Kỹ Năng Nộ tồn tại trong 10 giây; Ngoài ra, Năng Lượng Nguyên Tố của nhân vật khi thấp hơn 100%, sẽ tạo ra một tầng Vết Cắt Sương Mù, Vết Cắt Sương Mù của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sương Mù được tính độc lập với nhau."
+      "refinements": [
+        "Tăng {color}12{/color}% Sát Thương Nguyên Tố, đồng thời nhận lấy sức mạnh \"Vết Cắt Sương Mù\". Khi Vết Cắt Sương Mù ở tầng 1/2/3 sẽ tăng Sát Thương Nguyên Tố cùng loại với bản thân, tương ứng là {color}8/16/28{/color}%. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sương Mù khi: Tấn Công Thường tạo thành Sát Thương Nguyên Tố tồn tại trong 5 giây; Thi triển Kỹ Năng Nộ tồn tại trong 10 giây; Ngoài ra, Năng Lượng Nguyên Tố của nhân vật khi thấp hơn 100%, sẽ tạo ra một tầng Vết Cắt Sương Mù, Vết Cắt Sương Mù của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sương Mù được tính độc lập với nhau.",
+        "Tăng {color}15{/color}% Sát Thương Nguyên Tố, đồng thời nhận lấy sức mạnh \"Vết Cắt Sương Mù\". Khi Vết Cắt Sương Mù ở tầng 1/2/3 sẽ tăng Sát Thương Nguyên Tố cùng loại với bản thân, tương ứng là {color}10/20/35{/color}%. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sương Mù khi: Tấn Công Thường tạo thành Sát Thương Nguyên Tố tồn tại trong 5 giây; Thi triển Kỹ Năng Nộ tồn tại trong 10 giây; Ngoài ra, Năng Lượng Nguyên Tố của nhân vật khi thấp hơn 100%, sẽ tạo ra một tầng Vết Cắt Sương Mù, Vết Cắt Sương Mù của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sương Mù được tính độc lập với nhau.",
+        "Tăng {color}18{/color}% Sát Thương Nguyên Tố, đồng thời nhận lấy sức mạnh \"Vết Cắt Sương Mù\". Khi Vết Cắt Sương Mù ở tầng 1/2/3 sẽ tăng Sát Thương Nguyên Tố cùng loại với bản thân, tương ứng là {color}12/24/42{/color}%. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sương Mù khi: Tấn Công Thường tạo thành Sát Thương Nguyên Tố tồn tại trong 5 giây; Thi triển Kỹ Năng Nộ tồn tại trong 10 giây; Ngoài ra, Năng Lượng Nguyên Tố của nhân vật khi thấp hơn 100%, sẽ tạo ra một tầng Vết Cắt Sương Mù, Vết Cắt Sương Mù của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sương Mù được tính độc lập với nhau.",
+        "Tăng {color}21{/color}% Sát Thương Nguyên Tố, đồng thời nhận lấy sức mạnh \"Vết Cắt Sương Mù\". Khi Vết Cắt Sương Mù ở tầng 1/2/3 sẽ tăng Sát Thương Nguyên Tố cùng loại với bản thân, tương ứng là {color}14/28/49{/color}%. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sương Mù khi: Tấn Công Thường tạo thành Sát Thương Nguyên Tố tồn tại trong 5 giây; Thi triển Kỹ Năng Nộ tồn tại trong 10 giây; Ngoài ra, Năng Lượng Nguyên Tố của nhân vật khi thấp hơn 100%, sẽ tạo ra một tầng Vết Cắt Sương Mù, Vết Cắt Sương Mù của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sương Mù được tính độc lập với nhau.",
+        "Tăng {color}24{/color}% Sát Thương Nguyên Tố, đồng thời nhận lấy sức mạnh \"Vết Cắt Sương Mù\". Khi Vết Cắt Sương Mù ở tầng 1/2/3 sẽ tăng Sát Thương Nguyên Tố cùng loại với bản thân, tương ứng là {color}16/32/56{/color}%. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sương Mù khi: Tấn Công Thường tạo thành Sát Thương Nguyên Tố tồn tại trong 5 giây; Thi triển Kỹ Năng Nộ tồn tại trong 10 giây; Ngoài ra, Năng Lượng Nguyên Tố của nhân vật khi thấp hơn 100%, sẽ tạo ra một tầng Vết Cắt Sương Mù, Vết Cắt Sương Mù của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sương Mù được tính độc lập với nhau."
+      ]
     },
     {
       "key": "mitternachts-waltz",
       "name": "Điệu Van Ban Đêm",
       "description": "Chiếc cung có màu sắc giống như màn đêm huyền ảo và tội lỗi.",
-      "refinement": "Trong 5s sau khi tấn công thường đánh trúng địch, sát thương kỹ năng nguyên tố tạo thành tăng {0}%; Trong 5s sau khi kỹ năng nguyên tố đánh trúng địch, sát thương đánh thường tạo thành tăng {1}%."
+      "refinements": [
+        "Trong 5s sau khi tấn công thường đánh trúng địch, sát thương kỹ năng nguyên tố tạo thành tăng {color}20{/color}%; Trong 5s sau khi kỹ năng nguyên tố đánh trúng địch, sát thương đánh thường tạo thành tăng {color}20{/color}%.",
+        "Trong 5s sau khi tấn công thường đánh trúng địch, sát thương kỹ năng nguyên tố tạo thành tăng {color}25{/color}%; Trong 5s sau khi kỹ năng nguyên tố đánh trúng địch, sát thương đánh thường tạo thành tăng {color}25{/color}%.",
+        "Trong 5s sau khi tấn công thường đánh trúng địch, sát thương kỹ năng nguyên tố tạo thành tăng {color}30{/color}%; Trong 5s sau khi kỹ năng nguyên tố đánh trúng địch, sát thương đánh thường tạo thành tăng {color}30{/color}%.",
+        "Trong 5s sau khi tấn công thường đánh trúng địch, sát thương kỹ năng nguyên tố tạo thành tăng {color}35{/color}%; Trong 5s sau khi kỹ năng nguyên tố đánh trúng địch, sát thương đánh thường tạo thành tăng {color}35{/color}%.",
+        "Trong 5s sau khi tấn công thường đánh trúng địch, sát thương kỹ năng nguyên tố tạo thành tăng {color}40{/color}%; Trong 5s sau khi kỹ năng nguyên tố đánh trúng địch, sát thương đánh thường tạo thành tăng {color}40{/color}%."
+      ]
     },
     {
       "key": "old-mercs-pal",
       "name": "Kiếm Dụng Binh",
       "description": "Kiếm cổ rất nặng và kiên cố, được tôi luyện qua năm tháng và chiến tranh.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "otherworldly-story",
       "name": "Tiểu Thuyết Dị Giới",
       "description": "Tiểu thuyết viễn tưởng rẻ tiền, không có giá trị tham khảo. Sức mạnh đến từ pháp khí cũng là do tưởng tượng ra.",
-      "refinement": "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục {0}%HP"
+      "refinements": [
+        "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục {color}1{/color}%HP",
+        "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục {color}1.25{/color}%HP",
+        "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục {color}1.5{/color}%HP",
+        "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục {color}1.75{/color}%HP",
+        "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục {color}2{/color}%HP"
+      ]
     },
     {
       "key": "pocket-grimoire",
       "name": "Số Tay Ma Pháp",
       "description": "Là cuốn sách được biên soạn cẩn thận, chỉ để tham khảo hướng dẫn ma thuật trong các đợt khảo thí trọng điểm.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "polar-star",
       "name": "Ngôi Sao Cực Đông",
       "description": "Cánh cung hoàn mỹ như giá lạnh của băng tuyết cực Bắc.",
-      "refinement": "Tăng {0}% sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ gây ra; Tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sau khi đánh trúng kẻ địch sẽ sản sinh 1 tầng hiệu quả \"Ngôi Sao Đêm Trắng\" trong 12s. Khi trong trạng thái \"Ngôi Sao Đêm Trắng\" tầng 1/2/3/4, sức tấn công tăng {1}%. Hiệu quả \"Ngôi Sao Đêm Trắng\" sinh ra từ tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tồn tại độc lập với nhau."
+      "refinements": [
+        "Tăng {color}12{/color}% sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ gây ra; Tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sau khi đánh trúng kẻ địch sẽ sản sinh 1 tầng hiệu quả \"Ngôi Sao Đêm Trắng\" trong 12s. Khi trong trạng thái \"Ngôi Sao Đêm Trắng\" tầng 1/2/3/4, sức tấn công tăng {color}10/20/30/48{/color}%. Hiệu quả \"Ngôi Sao Đêm Trắng\" sinh ra từ tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tồn tại độc lập với nhau.",
+        "Tăng {color}15{/color}% sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ gây ra; Tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sau khi đánh trúng kẻ địch sẽ sản sinh 1 tầng hiệu quả \"Ngôi Sao Đêm Trắng\" trong 12s. Khi trong trạng thái \"Ngôi Sao Đêm Trắng\" tầng 1/2/3/4, sức tấn công tăng {color}12.5/25/37.5/60{/color}%. Hiệu quả \"Ngôi Sao Đêm Trắng\" sinh ra từ tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tồn tại độc lập với nhau.",
+        "Tăng {color}18{/color}% sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ gây ra; Tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sau khi đánh trúng kẻ địch sẽ sản sinh 1 tầng hiệu quả \"Ngôi Sao Đêm Trắng\" trong 12s. Khi trong trạng thái \"Ngôi Sao Đêm Trắng\" tầng 1/2/3/4, sức tấn công tăng {color}15/30/45/72{/color}%. Hiệu quả \"Ngôi Sao Đêm Trắng\" sinh ra từ tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tồn tại độc lập với nhau.",
+        "Tăng {color}21{/color}% sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ gây ra; Tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sau khi đánh trúng kẻ địch sẽ sản sinh 1 tầng hiệu quả \"Ngôi Sao Đêm Trắng\" trong 12s. Khi trong trạng thái \"Ngôi Sao Đêm Trắng\" tầng 1/2/3/4, sức tấn công tăng {color}17.5/35/52.5/84{/color}%. Hiệu quả \"Ngôi Sao Đêm Trắng\" sinh ra từ tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tồn tại độc lập với nhau.",
+        "Tăng {color}24{/color}% sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ gây ra; Tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sau khi đánh trúng kẻ địch sẽ sản sinh 1 tầng hiệu quả \"Ngôi Sao Đêm Trắng\" trong 12s. Khi trong trạng thái \"Ngôi Sao Đêm Trắng\" tầng 1/2/3/4, sức tấn công tăng {color}20/40/60/96{/color}%. Hiệu quả \"Ngôi Sao Đêm Trắng\" sinh ra từ tấn công thường, trọng kích, Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ tồn tại độc lập với nhau."
+      ]
     },
     {
       "key": "predator",
       "name": "Kẻ Săn Mồi",
       "description": "Chiếc cung với phong cách thiết kế đặc biệt, có vẻ như không thuộc về thế giới này.",
-      "refinement": "Chỉ có hiệu lực trong:\r\n\"PlayStation Network\"\r\nSau khi gây Sát Thương Nguyên Tố Băng lên kẻ địch, tăng 10% sát thương tấn công thường và trọng kích gây ra, hiệu quả duy trì 6 giây, tối đa cộng dồn 2 lần; Ngoài ra, khi Aloy trang bị \"Kẻ Săn Mồi\", tấn công tăng 66 điểm."
+      "refinements": [
+        "Chỉ có hiệu lực trong:\r\n\"PlayStation Network\"\r\nSau khi gây Sát Thương Nguyên Tố Băng lên kẻ địch, tăng 10% sát thương tấn công thường và trọng kích gây ra, hiệu quả duy trì 6 giây, tối đa cộng dồn 2 lần; Ngoài ra, khi Aloy trang bị \"Kẻ Săn Mồi\", tấn công tăng 66 điểm."
+      ]
     },
     {
       "key": "primordial-jade-cutter",
       "name": "Bàn Nham Kết Lục",
       "description": "Thanh kiếm được dùng trong nghi lễ, được chạm khắc cẩn thận từ ngọc bích tinh khiết, khi vung lên, âm thanh giống như tiếng thở dài trong gió.",
-      "refinement": "HP tăng {0}%. Ngoài ra, nhận được buff tấn công dựa trên {1}% giới hạn HP của nhân vật trang bị vũ khí này."
+      "refinements": [
+        "HP tăng {color}20{/color}%. Ngoài ra, nhận được buff tấn công dựa trên {color}1.2{/color}% giới hạn HP của nhân vật trang bị vũ khí này.",
+        "HP tăng {color}25{/color}%. Ngoài ra, nhận được buff tấn công dựa trên {color}1.5{/color}% giới hạn HP của nhân vật trang bị vũ khí này.",
+        "HP tăng {color}30{/color}%. Ngoài ra, nhận được buff tấn công dựa trên {color}1.8{/color}% giới hạn HP của nhân vật trang bị vũ khí này.",
+        "HP tăng {color}35{/color}%. Ngoài ra, nhận được buff tấn công dựa trên {color}2.1{/color}% giới hạn HP của nhân vật trang bị vũ khí này.",
+        "HP tăng {color}40{/color}%. Ngoài ra, nhận được buff tấn công dựa trên {color}2.4{/color}% giới hạn HP của nhân vật trang bị vũ khí này."
+      ]
     },
     {
       "key": "primordial-jade-winged-spear",
       "name": "Hòa Phác Diên",
       "description": "Thương hóa thân từ ma thần, có độ sắc bén và sức mạnh từ thời viễn cổ.",
-      "refinement": "Khi đánh trúng kẻ địch tấn công của bản thân tăng {0}%, kéo dài 6s, có thể cộng dồn 7 tầng. Mỗi 0.3s có hiệu quả 1 lần, khi cộng dồn đầy sẽ tăng {1}% sát thương."
+      "refinements": [
+        "Khi đánh trúng kẻ địch tấn công của bản thân tăng {color}3.2{/color}%, kéo dài 6s, có thể cộng dồn 7 tầng. Mỗi 0.3s có hiệu quả 1 lần, khi cộng dồn đầy sẽ tăng {color}12{/color}% sát thương.",
+        "Khi đánh trúng kẻ địch tấn công của bản thân tăng {color}3.9{/color}%, kéo dài 6s, có thể cộng dồn 7 tầng. Mỗi 0.3s có hiệu quả 1 lần, khi cộng dồn đầy sẽ tăng {color}15{/color}% sát thương.",
+        "Khi đánh trúng kẻ địch tấn công của bản thân tăng {color}4.6{/color}%, kéo dài 6s, có thể cộng dồn 7 tầng. Mỗi 0.3s có hiệu quả 1 lần, khi cộng dồn đầy sẽ tăng {color}18{/color}% sát thương.",
+        "Khi đánh trúng kẻ địch tấn công của bản thân tăng {color}5.3{/color}%, kéo dài 6s, có thể cộng dồn 7 tầng. Mỗi 0.3s có hiệu quả 1 lần, khi cộng dồn đầy sẽ tăng {color}21{/color}% sát thương.",
+        "Khi đánh trúng kẻ địch tấn công của bản thân tăng {color}6{/color}%, kéo dài 6s, có thể cộng dồn 7 tầng. Mỗi 0.3s có hiệu quả 1 lần, khi cộng dồn đầy sẽ tăng {color}24{/color}% sát thương."
+      ]
     },
     {
       "key": "prototype-amber",
       "name": "Mẫu Kim Phách",
       "description": "Pháp khí kim phách của Hắc Nham Xưởng. Trong ánh đen phát ra tia sáng của nhật nguyệt sao.",
-      "refinement": "6s sau khi thi triển kỹ năng nộ, mỗi 2s hồi {0} điểm năng lượng nguyên tố; Tất cả nhân vật trong đội mỗi 2s hồi {1}% HP."
+      "refinements": [
+        "6s sau khi thi triển kỹ năng nộ, mỗi 2s hồi {color}4{/color} điểm năng lượng nguyên tố; Tất cả nhân vật trong đội mỗi 2s hồi {color}4{/color}% HP.",
+        "6s sau khi thi triển kỹ năng nộ, mỗi 2s hồi {color}4.5{/color} điểm năng lượng nguyên tố; Tất cả nhân vật trong đội mỗi 2s hồi {color}4.5{/color}% HP.",
+        "6s sau khi thi triển kỹ năng nộ, mỗi 2s hồi {color}5{/color} điểm năng lượng nguyên tố; Tất cả nhân vật trong đội mỗi 2s hồi {color}5{/color}% HP.",
+        "6s sau khi thi triển kỹ năng nộ, mỗi 2s hồi {color}5.5{/color} điểm năng lượng nguyên tố; Tất cả nhân vật trong đội mỗi 2s hồi {color}5.5{/color}% HP.",
+        "6s sau khi thi triển kỹ năng nộ, mỗi 2s hồi {color}6{/color} điểm năng lượng nguyên tố; Tất cả nhân vật trong đội mỗi 2s hồi {color}6{/color}% HP."
+      ]
     },
     {
       "key": "prototype-archaic",
       "name": "Mẫu Cổ Hoa",
       "description": "Đại đao cổ xưa của Hắc Nham Xưởng. Khi vung lên uy lực như có thể chém không gian ra thành hai mảnh.",
-      "refinement": "Khi tấn công thường và trọng kích đánh trúng địch, có tỷ lệ 50% tạo thành {0}% sát thương thêm trong phạm vi nhỏ. Mỗi 15s mới thi triển 1 lần."
+      "refinements": [
+        "Khi tấn công thường và trọng kích đánh trúng địch, có tỷ lệ 50% tạo thành {color}240{/color}% sát thương thêm trong phạm vi nhỏ. Mỗi 15s mới thi triển 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng địch, có tỷ lệ 50% tạo thành {color}300{/color}% sát thương thêm trong phạm vi nhỏ. Mỗi 15s mới thi triển 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng địch, có tỷ lệ 50% tạo thành {color}360{/color}% sát thương thêm trong phạm vi nhỏ. Mỗi 15s mới thi triển 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng địch, có tỷ lệ 50% tạo thành {color}420{/color}% sát thương thêm trong phạm vi nhỏ. Mỗi 15s mới thi triển 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng địch, có tỷ lệ 50% tạo thành {color}480{/color}% sát thương thêm trong phạm vi nhỏ. Mỗi 15s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "prototype-crescent",
       "name": "Mẫu Đạm Nguyệt",
       "description": "Trường cung của Hắc Nham Xưởng. Thế bắn tên như xuyên qua ánh trăng.",
-      "refinement": "Nếu trọng kích đánh trúng điểm yếu, sẽ tăng 10% tốc độ di chuyển và {0}% tấn công, kéo dài 10s."
+      "refinements": [
+        "Nếu trọng kích đánh trúng điểm yếu, sẽ tăng 10% tốc độ di chuyển và {color}36{/color}% tấn công, kéo dài 10s.",
+        "Nếu trọng kích đánh trúng điểm yếu, sẽ tăng 10% tốc độ di chuyển và {color}45{/color}% tấn công, kéo dài 10s.",
+        "Nếu trọng kích đánh trúng điểm yếu, sẽ tăng 10% tốc độ di chuyển và {color}54{/color}% tấn công, kéo dài 10s.",
+        "Nếu trọng kích đánh trúng điểm yếu, sẽ tăng 10% tốc độ di chuyển và {color}63{/color}% tấn công, kéo dài 10s.",
+        "Nếu trọng kích đánh trúng điểm yếu, sẽ tăng 10% tốc độ di chuyển và {color}72{/color}% tấn công, kéo dài 10s."
+      ]
     },
     {
       "key": "prototype-rancour",
       "name": "Mẫu Trảm Nham",
       "description": "Kiếm dài cổ xưa được cất giữ trong Hắc Nham Xưởng, có thể chém sắt như chém bùn.",
-      "refinement": "Khi tấn công thường hoặc trọng kích đánh trúng địch, tấn công và phòng ngự tăng {0}%, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.3s mới thi triển 1 lần."
+      "refinements": [
+        "Khi tấn công thường hoặc trọng kích đánh trúng địch, tấn công và phòng ngự tăng {color}4{/color}%, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.3s mới thi triển 1 lần.",
+        "Khi tấn công thường hoặc trọng kích đánh trúng địch, tấn công và phòng ngự tăng {color}5{/color}%, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.3s mới thi triển 1 lần.",
+        "Khi tấn công thường hoặc trọng kích đánh trúng địch, tấn công và phòng ngự tăng {color}6{/color}%, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.3s mới thi triển 1 lần.",
+        "Khi tấn công thường hoặc trọng kích đánh trúng địch, tấn công và phòng ngự tăng {color}7{/color}%, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.3s mới thi triển 1 lần.",
+        "Khi tấn công thường hoặc trọng kích đánh trúng địch, tấn công và phòng ngự tăng {color}8{/color}%, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.3s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "prototype-starglitter",
       "name": "Mẫu Tinh Liêm",
       "description": "Thương móc cổ xưa của Hắc Nham Xưởng. Trên đầu lưỡi lấp lánh như ánh sáng của bầu trời vắng sao.",
-      "refinement": "Sau khi thi triển kỹ năng nguyên tố, sát thương tấn công thường và trọng kích tăng {0}%. Kéo dài 12s, tối đa cộng dồn 2 tầng."
+      "refinements": [
+        "Sau khi thi triển kỹ năng nguyên tố, sát thương tấn công thường và trọng kích tăng {color}8{/color}%. Kéo dài 12s, tối đa cộng dồn 2 tầng.",
+        "Sau khi thi triển kỹ năng nguyên tố, sát thương tấn công thường và trọng kích tăng {color}10{/color}%. Kéo dài 12s, tối đa cộng dồn 2 tầng.",
+        "Sau khi thi triển kỹ năng nguyên tố, sát thương tấn công thường và trọng kích tăng {color}12{/color}%. Kéo dài 12s, tối đa cộng dồn 2 tầng.",
+        "Sau khi thi triển kỹ năng nguyên tố, sát thương tấn công thường và trọng kích tăng {color}14{/color}%. Kéo dài 12s, tối đa cộng dồn 2 tầng.",
+        "Sau khi thi triển kỹ năng nguyên tố, sát thương tấn công thường và trọng kích tăng {color}16{/color}%. Kéo dài 12s, tối đa cộng dồn 2 tầng."
+      ]
     },
     {
       "key": "rainslasher",
       "name": "Vũ Tài",
       "description": "Đại kiếm tỏa ra ánh sáng ảm đạm, chỉ dùng khí thế và sức mạnh để đàn áp kẻ địch.",
-      "refinement": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi Nguyên Tố Thủy hoặc Lôi tăng {0}%."
+      "refinements": [
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi Nguyên Tố Thủy hoặc Lôi tăng {color}20{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Lôi tăng {color}24{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Lôi tăng {color}28{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Lôi tăng {color}32{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Lôi tăng {color}36{/color}%."
+      ]
     },
     {
       "key": "raven-bow",
       "name": "Cung Lông Vịt",
       "description": "Nghe nói quạ đen là sứ giả báo tử. Đem lông quạ gắn lên cung, mỗi mũi tên bắn ra đều là lời tuyên cáo cuối cùng của con mồi.",
-      "refinement": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng {0}%."
+      "refinements": [
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng {color}12{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng {color}15{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng {color}18{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng {color}21{/color}%.",
+        "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Hỏa tăng {color}24{/color}%."
+      ]
     },
     {
       "key": "recurve-bow",
       "name": "Cung Phản Khúc",
       "description": "Là cây cung có thể bắn được đại bàng, nhưng chủ yếu vẫn còn phải phụ thuộc vào kỹ thuật người cầm cung.",
-      "refinement": "Khi đánh bại kẻ địch, hồi {0}% HP."
+      "refinements": [
+        "Khi đánh bại kẻ địch, hồi {color}8{/color}% HP.",
+        "Khi đánh bại kẻ địch, hồi {color}10{/color}%HP",
+        "Khi đánh bại kẻ địch, hồi {color}12{/color}%HP",
+        "Khi đánh bại kẻ địch, hồi {color}14{/color}%HP",
+        "Khi đánh bại kẻ địch, hồi {color}16{/color}%HP"
+      ]
     },
     {
       "key": "royal-bow",
       "name": "Trường Cung Tông Thất",
       "description": "Cung dài từng thuộc về quý tộc Monstadt cũ. Trải qua nhiều đời, dây cung vẫn rất mạnh mẽ.",
-      "refinement": "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {0}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có."
+      "refinements": [
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}8{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}10{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}12{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}14{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}16{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có."
+      ]
     },
     {
       "key": "royal-greatsword",
       "name": "Đại Kiếm Tông Thất",
       "description": "Kiếm quý tộc từng chi phối Mondstadt. Nguyên liệu cực phẩm, là binh khí chiến đấu của giới quý tộc.",
-      "refinement": "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {0}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có."
+      "refinements": [
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}8{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}10{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}12{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}14{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}16{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có."
+      ]
     },
     {
       "key": "royal-grimoire",
       "name": "Mật Pháp Tông Thất",
       "description": "Thuộc về Ma Đạo Sư cung đình dưới thời quý tộc Mondstadt, trên đó có ghi chép pháp thuật và lịch sử.",
-      "refinement": "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {0}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có."
+      "refinements": [
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}8{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}10{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}12{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}14{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}16{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có."
+      ]
     },
     {
       "key": "royal-longsword",
       "name": "Trường Kiếm Tông Thất",
       "description": "Bội kiếm từng được giới quý tộc Mondstadt dùng. Chế tác tinh xảo, trang sức và hoa cũng thể hiện thân phận người dùng.",
-      "refinement": "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {0}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có."
+      "refinements": [
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}8{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}10{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}12{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}14{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}16{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có."
+      ]
     },
     {
       "key": "royal-spear",
       "name": "Thương Săn Tông Thất",
       "description": "Thanh thương yêu thích của một nhà quý tộc cổ xưa trị vì Mondstadt. Tuy trải qua bao nhiêu năm tháng, đến nay nó vẫn sắc bén vô cùng.",
-      "refinement": "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {0}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có."
+      "refinements": [
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}8{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}10{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}12{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}14{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có.",
+        "Khi tấn công tạo thành sát thương, tăng tỷ lệ bạo kích {color}16{/color}%, nhiều nhất cộng dồn 5 lần. Sau khi tấn công tạo thành bạo kích, xóa hiệu quả Chuyên Chú đã có."
+      ]
     },
     {
       "key": "rust",
       "name": "Cung Rỉ Sét",
       "description": "Cung bằng sắt đã bị rỉ sét, người thường khó nhấc lên được chứ đừng nói có thể khiến nó bắn ra.",
-      "refinement": "Tăng {0}% sát thương của tấn công thường, giảm 10% sát thương trọng kích."
+      "refinements": [
+        "Tăng {color}40{/color}% sát thương của tấn công thường, giảm 10% sát thương trọng kích.",
+        "Tăng {color}50{/color}% sát thương của tấn công thường, giảm 10% sát thương trọng kích.",
+        "Tăng {color}60{/color}% sát thương của tấn công thường, giảm 10% sát thương trọng kích.",
+        "Tăng {color}70{/color}% sát thương của tấn công thường, giảm 10% sát thương trọng kích.",
+        "Tăng {color}80{/color}% sát thương của tấn công thường, giảm 10% sát thương trọng kích."
+      ]
     },
     {
       "key": "sacrificial-bow",
       "name": "Cung Tế Lễ",
       "description": "Cung săn bắn đã bị hóa đá theo năm tháng, vẫn có thể thấy được trang sức được khảm trên đó. Mang theo sức mạnh chúc phúc của gió thời gian.",
-      "refinement": "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {0}% làm mới thời gian CD kỹ năng đó, mỗi {1}s mới thi triển 1 lần."
+      "refinements": [
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}40{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}30{/color}s mới thi triển 1 lần.",
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}50{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}26{/color}s mới thi triển 1 lần.",
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}60{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}22{/color}s mới thi triển 1 lần.",
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}70{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}19{/color}s mới thi triển 1 lần.",
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}80{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}16{/color}s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "sacrificial-fragments",
       "name": "Mảnh Chương Tế Lễ",
       "description": "Cuốn kịch bản có thời gian lịch sử lâu dài, ghi lại những lời chúc phúc không còn nhận ra được nữa. Bị nguyền rủa, ăn mòn bởi gió thời gian.",
-      "refinement": "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {0}% làm mới thời gian CD kỹ năng đó, mỗi {1}s mới thi triển 1 lần."
+      "refinements": [
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}40{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}30{/color}s mới thi triển 1 lần.",
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}50{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}26{/color}s mới thi triển 1 lần.",
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}60{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}22{/color}s mới thi triển 1 lần.",
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}70{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}19{/color}s mới thi triển 1 lần.",
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}80{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}16{/color}s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "sacrificial-greatsword",
       "name": "Đại Kiếm Tế Lễ",
       "description": "Đại Kiếm bị hóa đá theo năm tháng, nhưng độ tinh xảo của trang sức treo trên đó vẫn lấp lánh. Có sức mạnh chúc phúc của gió thời gian.",
-      "refinement": "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {0}% làm mới thời gian CD kỹ năng đó, mỗi {1}s mới thi triển 1 lần."
+      "refinements": [
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}40{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}30{/color}s mới thi triển 1 lần.",
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}50{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}26{/color}s mới thi triển 1 lần.",
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}60{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}22{/color}s mới thi triển 1 lần.",
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}70{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}19{/color}s mới thi triển 1 lần.",
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}80{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}16{/color}s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "sacrificial-sword",
       "name": "Kiếm Tế Lễ",
       "description": "Kiếm bị hóa đá theo năm tháng, nhưng độ tinh xảo của trang sức treo trên đó vẫn lấp lánh. Có sức mạnh chúc phúc của gió thời gian.",
-      "refinement": "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {0}% làm mới thời gian CD kỹ năng đó, mỗi {1}s mới thi triển 1 lần."
+      "refinements": [
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}40{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}30{/color}s mới thi triển 1 lần.",
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}50{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}26{/color}s mới thi triển 1 lần.",
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}60{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}22{/color}s mới thi triển 1 lần.",
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}70{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}19{/color}s mới thi triển 1 lần.",
+        "Khi kỹ năng Nguyên Tố tạo thành sát thương, có tỷ lệ {color}80{/color}% làm mới thời gian CD kỹ năng đó, mỗi {color}16{/color}s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "seasoned-hunters-bow",
       "name": "Cung Săn Bắn Tôi Luyện",
       "description": "Cung được tôi luyện kỹ và bảo dưỡng tốt, trải qua năm tháng dài, dường như đã tự biết phối hợp với người thợ săn.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "serpent-spine",
       "name": "Kiếm Li Cốt",
       "description": "Binh khí hiếm đến từ biển cổ đại, múa kiếm vùn vụt như sóng dữ.",
-      "refinement": "Khi nhân vật ra trận, mỗi 4s tăng {0}% sát thương gây ra, {1}% sát thương phải chịu. Cộng dồn tối đa 5 tầng, không làm mới khi nhân vật rời khỏi trận, sau khi chịu sát thương sẽ giảm 1 tầng hiệu quả."
+      "refinements": [
+        "Khi nhân vật ra trận, mỗi 4s tăng {color}6{/color}% sát thương gây ra, {color}3{/color}% sát thương phải chịu. Cộng dồn tối đa 5 tầng, không làm mới khi nhân vật rời khỏi trận, sau khi chịu sát thương sẽ giảm 1 tầng hiệu quả.",
+        "Khi nhân vật ra trận, mỗi 4s tăng {color}7{/color}% sát thương gây ra, {color}2.7{/color}% sát thương phải chịu. Cộng dồn tối đa 5 tầng, không làm mới khi nhân vật rời khỏi trận, sau khi chịu sát thương sẽ giảm 1 tầng hiệu quả.",
+        "Khi nhân vật ra trận, mỗi 4s tăng {color}8{/color}% sát thương gây ra, {color}2.4{/color}% sát thương phải chịu. Cộng dồn tối đa 5 tầng, không làm mới khi nhân vật rời khỏi trận, sau khi chịu sát thương sẽ giảm 1 tầng hiệu quả.",
+        "Khi nhân vật ra trận, mỗi 4s tăng {color}9{/color}% sát thương gây ra, {color}2.2{/color}% sát thương phải chịu. Cộng dồn tối đa 5 tầng, không làm mới khi nhân vật rời khỏi trận, sau khi chịu sát thương sẽ giảm 1 tầng hiệu quả.",
+        "Khi nhân vật ra trận, mỗi 4s tăng {color}10{/color}% sát thương gây ra, {color}2{/color}% sát thương phải chịu. Cộng dồn tối đa 5 tầng, không làm mới khi nhân vật rời khỏi trận, sau khi chịu sát thương sẽ giảm 1 tầng hiệu quả."
+      ]
     },
     {
       "key": "sharpshooters-oath",
       "name": "Lời Thề Xạ Thủ Thần",
       "description": "Từng thuộc về người xạ thủ lão luyện, là một cây cung tốt. Vì phát ra hơi thở mạnh mẽ nên khó có thể dùng để săn bắn.",
-      "refinement": "Tăng {0}% sát thương tạo thành với điểm yếu."
+      "refinements": [
+        "Tăng {color}24{/color}% sát thương tạo thành với điểm yếu.",
+        "Tăng {color}30{/color}% sát thương tạo thành với điểm yếu.",
+        "Tăng {color}36{/color}% sát thương tạo thành với điểm yếu.",
+        "Tăng {color}42{/color}% sát thương tạo thành với điểm yếu.",
+        "Tăng {color}48{/color}% sát thương tạo thành với điểm yếu."
+      ]
     },
     {
       "key": "silver-sword",
       "name": "Kiếm Bạc",
       "description": "Kiếm bạc có thể đánh lùi ma quỷ. Nhưng mọi người đều biết kỳ thực nguyên liệu là hợp kim bạc chứ không phải bạc nguyên chất.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "skyrider-greatsword",
       "name": "Đại Kiếm Phi Thiên",
       "description": "Kiếm bằng gang, truyền thuyết nói rằng \"Ngự Kiếm Công Tử\" từng muốn dùng nó để bay lên trời lần nữa.",
-      "refinement": "Khi tấn công thường và trọng kích đánh trúng địch, tấn công tăng {0}%, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần."
+      "refinements": [
+        "Khi tấn công thường và trọng kích đánh trúng địch, tấn công tăng {color}6{/color}%, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng địch, tấn công tăng {color}7{/color}%, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng địch, tấn công tăng {color}8{/color}%, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng địch, tấn công tăng {color}9{/color}%, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng địch, tấn công tăng {color}10{/color}%, kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "skyrider-sword",
       "name": "Kiếm Phi Thiên",
       "description": "Kiếm bằng gang, truyền thuyết nói rằng \"Ngự Kiếm Công Tử\" từng muốn dùng nó để bay lên trời.",
-      "refinement": "Sau khi thi triển Kỹ Năng Nộ, tăng {0}% tấn công và tốc độ di chuyển, kéo dài 15s."
+      "refinements": [
+        "Sau khi thi triển Kỹ Năng Nộ, tăng {color}12{/color}% tấn công và tốc độ di chuyển, kéo dài 15s.",
+        "Sau khi thi triển Kỹ Năng Nộ, tăng {color}15{/color}% tấn công và tốc độ di chuyển, kéo dài 15s.",
+        "Sau khi thi triển kỹ năng nộ, tăng {color}18{/color}% tấn công và tốc độ di chuyển, kéo dài 15s.",
+        "Sau khi thi triển Kỹ Năng Nộ, tăng {color}21{/color}% tấn công và tốc độ di chuyển, kéo dài 15s.",
+        "Sau khi thi triển Kỹ Năng Nộ, tăng {color}24{/color}% tấn công và tốc độ di chuyển, kéo dài 15s."
+      ]
     },
     {
       "key": "skyward-atlas",
       "name": "Quyển Thiên Không",
       "description": "Tập sách tượng trưng cho Phong Long và chủ nhân Phong Thần của nó. Ghi chép tỷ mỉ về gió và mây của bầu trời phương bắc, ẩn giấu sức mạnh của thiên không và gió.",
-      "refinement": "Tăng sát thương Nguyên Tố {0}%; khi tấn công thường đánh trúng địch, có tỷ lệ 50% nhận được sự ưu ái của mây trời, trong 15s chủ động tấn công kẻ địch ở gần, tạo thành sát thương bằng {1}% lực tấn công. Mỗi 30s mới thi triển 1 lần."
+      "refinements": [
+        "Tăng sát thương Nguyên Tố {color}12{/color}%; khi tấn công thường đánh trúng địch, có tỷ lệ 50% nhận được sự ưu ái của mây trời, trong 15s chủ động tấn công kẻ địch ở gần, tạo thành sát thương bằng {color}160{/color}% lực tấn công. Mỗi 30s mới thi triển 1 lần.",
+        "Tăng sát thương Nguyên Tố {color}15{/color}%; khi tấn công thường đánh trúng địch, có tỷ lệ 50% nhận được sự ưu ái của mây trời, trong 15s chủ động tấn công kẻ địch ở gần, tạo thành sát thương bằng {color}200{/color}% lực tấn công. Mỗi 30s mới thi triển 1 lần.",
+        "Tăng sát thương Nguyên Tố {color}18{/color}%; khi tấn công thường đánh trúng địch, có tỷ lệ 50% nhận được sự ưu ái của mây trời, trong 15s chủ động tấn công kẻ địch ở gần, tạo thành sát thương bằng {color}240{/color}% lực tấn công. Mỗi 30s mới thi triển 1 lần.",
+        "Tăng sát thương Nguyên Tố {color}21{/color}%; khi tấn công thường đánh trúng địch, có tỷ lệ 50% nhận được sự ưu ái của mây trời, trong 15s chủ động tấn công kẻ địch ở gần, tạo thành sát thương bằng {color}280{/color}% lực tấn công. Mỗi 30s mới thi triển 1 lần.",
+        "Tăng sát thương Nguyên Tố {color}24{/color}%; khi tấn công thường đánh trúng địch, có tỷ lệ 50% nhận được sự ưu ái của mây trời, trong 15s chủ động tấn công kẻ địch ở gần, tạo thành sát thương bằng {color}320{/color}% lực tấn công. Mỗi 30s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "skyward-blade",
       "name": "Thiên Không Kiếm",
       "description": "Thanh kiếm kỵ sĩ, tượng trưng cho danh dự của Phong Long. Lưỡi kiếm toát ra lời chúc phúc của thần gió, chứa đựng sức mạnh của bầu trời và ngàn ngọn gió.",
-      "refinement": "Tỷ lệ bạo kích tăng {0}%, khi thi triển kỹ năng nộ, nhận khí thế phá hủy trên không: Tốc độ di chuyển tăng {1}%, tốc độ tấn công tăng {2}%, khi tấn công thường và trọng kích đánh trúng, sẽ tạo thêm sát thương bằng {3}% lực tấn công, kéo dài 12s."
+      "refinements": [
+        "Tỷ lệ bạo kích tăng {color}4{/color}%, khi thi triển kỹ năng nộ, nhận khí thế phá hủy trên không: Tốc độ di chuyển tăng {color}10{/color}%, tốc độ tấn công tăng {color}10{/color}%, khi tấn công thường và trọng kích đánh trúng, sẽ tạo thêm sát thương bằng {color}20{/color}% lực tấn công, kéo dài 12s.",
+        "Tỷ lệ bạo kích tăng {color}5{/color}%, khi thi triển kỹ năng nộ, nhận khí thế phá hủy trên không: tốc độ di chuyển tăng {color}10{/color}%, tốc độ tấn công tăng {color}10{/color}%, khi tấn công thường và trọng kích đánh trúng, sẽ tạo thêm sát thương bằng {color}25{/color}% lực tấn công, kéo dài 12s.",
+        "Tỷ lệ bạo kích tăng {color}6{/color}%, khi thi triển kỹ năng nộ, nhận khí thế phá hủy trên không: tốc độ di chuyển tăng {color}10{/color}%, tốc độ tấn công tăng {color}10{/color}%, khi tấn công thường và trọng kích đánh trúng, sẽ tạo thêm sát thương bằng {color}30{/color}% lực tấn công, kéo dài 12s.",
+        "Tỷ lệ bạo kích tăng {color}7{/color}%, khi thi triển kỹ năng nộ, nhận khí thế phá hủy trên không: tốc độ di chuyển tăng {color}10{/color}%, tốc độ tấn công tăng {color}10{/color}%, khi tấn công thường và trọng kích đánh trúng, sẽ tạo thêm sát thương bằng {color}35{/color}% lực tấn công, kéo dài 12s.",
+        "Tỷ lệ bạo kích tăng {color}8{/color}%, khi thi triển kỹ năng nộ, nhận khí thế phá hủy trên không: tốc độ di chuyển tăng {color}10{/color}%, tốc độ tấn công tăng {color}10{/color}%, khi tấn công thường và trọng kích đánh trúng, sẽ tạo thêm sát thương bằng {color}40{/color}% lực tấn công, kéo dài 12s."
+      ]
     },
     {
       "key": "skyward-harp",
       "name": "Cánh Thiên Không",
       "description": "Cung tượng trưng cho Phong Long và Phong Thần. Âm thanh phát ra khi kéo dây cung giống như tình yêu của thần, ẩn chứa sức mạnh từ gió và bầu trời.",
-      "refinement": "Sát thương bạo kích tăng {0}%; Khi đánh trúng có {1}% tỷ lệ tạo thành sát thương vật lý 125% trong phạm vi nhỏ, mỗi {2}s mới có hiệu quả một lần."
+      "refinements": [
+        "Sát thương bạo kích tăng {color}20{/color}%; Khi đánh trúng có {color}60{/color}% tỷ lệ tạo thành sát thương vật lý 125% trong phạm vi nhỏ, mỗi {color}4{/color}s mới có hiệu quả một lần.",
+        "Sát thương bạo kích tăng {color}25{/color}%; Khi đánh trúng có {color}70{/color}% tỷ lệ tạo thành sát thương vật lý 125% trong phạm vi nhỏ, mỗi {color}3.5{/color}s mới có hiệu quả một lần.",
+        "Sát thương bạo kích tăng {color}30{/color}%; Khi đánh trúng có {color}80{/color}% tỷ lệ tạo thành sát thương vật lý 125% trong phạm vi nhỏ, mỗi {color}3{/color}s mới có hiệu quả một lần.",
+        "Sát thương bạo kích tăng {color}35{/color}%; Khi đánh trúng có {color}90{/color}% tỷ lệ tạo thành sát thương vật lý 125% trong phạm vi nhỏ, mỗi {color}2.5{/color}s mới có hiệu quả một lần.",
+        "Sát thương bạo kích tăng {color}40{/color}%; Khi đánh trúng có {color}100{/color}% tỷ lệ tạo thành sát thương vật lý 125% trong phạm vi nhỏ, mỗi {color}2{/color}s mới có hiệu quả một lần."
+      ]
     },
     {
       "key": "skyward-pride",
       "name": "Thiên Không Kiêu Ngạo",
       "description": "Là kiếm tượng trưng cho sự kiêu ngạo của Phong Long. Khi vung lên có khí thế của rồng, ẩn chứa sức mạnh của gió và thiên không.",
-      "refinement": "Sát thương tạo thành tăng {0}%; Sau khi thi triển kỹ năng nộ: Khi tấn công thường và trọng kích đánh trúng địch sẽ phóng ra lưỡi dao chân không, tạo thành {1}% sát thương cho kẻ địch trên đường đi, kéo dài 20s hoặc đến khi phóng ra 8 lần dao chân không."
+      "refinements": [
+        "Sát thương tạo thành tăng {color}8{/color}%; Sau khi thi triển kỹ năng nộ: Khi tấn công thường và trọng kích đánh trúng địch sẽ phóng ra lưỡi dao chân không, tạo thành {color}80{/color}% sát thương cho kẻ địch trên đường đi, kéo dài 20s hoặc đến khi phóng ra 8 lần dao chân không.",
+        "Sát thương tạo thành tăng {color}10{/color}%; Sau khi thi triển kỹ năng nộ: Khi tấn công thường và trọng kích đánh trúng địch sẽ phóng ra lưỡi dao chân không, tạo thành {color}100{/color}% sát thương cho kẻ địch trên đường đi, kéo dài 20s hoặc đến khi phóng ra 8 lần dao chân không.",
+        "Sát thương tạo thành tăng {color}12{/color}%; Sau khi thi triển kỹ năng nộ: Khi tấn công thường và trọng kích đánh trúng địch sẽ phóng ra lưỡi dao chân không, tạo thành {color}120{/color}% sát thương cho kẻ địch trên đường đi, kéo dài 20s hoặc đến khi phóng ra 8 lần dao chân không.",
+        "Sát thương tạo thành tăng {color}14{/color}%; Sau khi thi triển kỹ năng nộ: Khi tấn công thường và trọng kích đánh trúng địch sẽ phóng ra lưỡi dao chân không, tạo thành {color}140{/color}% sát thương cho kẻ địch trên đường đi, kéo dài 20s hoặc đến khi phóng ra 8 lần dao chân không.",
+        "Sát thương tạo thành tăng {color}16{/color}%; Sau khi thi triển kỹ năng nộ: Khi tấn công thường và trọng kích đánh trúng địch sẽ phóng ra lưỡi dao chân không, tạo thành {color}160{/color}% sát thương cho kẻ địch trên đường đi, kéo dài 20s hoặc đến khi phóng ra 8 lần dao chân không."
+      ]
     },
     {
       "key": "skyward-spine",
       "name": "Xương Sống Thiên Không",
       "description": "Thương dài tượng trưng cho sự quyết tâm của Phong Long. Cán thương dài nhọn chỉ thẳng lên trời, có chứa sức mạnh của gió và bầu trời cao.",
-      "refinement": "Tỷ lệ bạo kích tăng {0}%,tốc độ tấn công thường tăng {1}%. Ngoài ra, khi tấn công thường và trọng kích đánh trúng kẻ địch, có tỷ lệ {2}% thi triển Lưỡi Dao Chân Không, tạo thêm sát thương bằng {3}% tấn công trong phạm vi nhỏ. Hiệu quả này mỗi 2s thi triển nhiều nhất 1 lần."
+      "refinements": [
+        "Tỷ lệ bạo kích tăng {color}8{/color}%,tốc độ tấn công thường tăng {color}12{/color}%. Ngoài ra, khi tấn công thường và trọng kích đánh trúng kẻ địch, có tỷ lệ {color}50{/color}% thi triển Lưỡi Dao Chân Không, tạo thêm sát thương bằng {color}40{/color}% tấn công trong phạm vi nhỏ. Hiệu quả này mỗi 2s thi triển nhiều nhất 1 lần.",
+        "Tỷ lệ bạo kích tăng {color}10{/color}%,tốc độ tấn công thường tăng {color}12{/color}%. Ngoài ra, khi tấn công thường và trọng kích đánh trúng kẻ địch, có tỷ lệ {color}50{/color}% thi triển Lưỡi Dao Chân Không, tạo thêm sát thương bằng {color}55{/color}% tấn công trong phạm vi nhỏ. Hiệu quả này mỗi 2s thi triển nhiều nhất 1 lần.",
+        "Tỷ lệ bạo kích tăng {color}12{/color}%,tốc độ tấn công thường tăng {color}12{/color}%. Ngoài ra, khi tấn công thường và trọng kích đánh trúng kẻ địch, có tỷ lệ {color}50{/color}% thi triển Lưỡi Dao Chân Không, tạo thêm sát thương bằng {color}70{/color}% tấn công trong phạm vi nhỏ. Hiệu quả này mỗi 2s thi triển nhiều nhất 1 lần.",
+        "Tỷ lệ bạo kích tăng {color}14{/color}%,tốc độ tấn công thường tăng {color}12{/color}%. Ngoài ra, khi tấn công thường và trọng kích đánh trúng kẻ địch, có tỷ lệ {color}50{/color}% thi triển Lưỡi Dao Chân Không, tạo thêm sát thương bằng {color}85{/color}% tấn công trong phạm vi nhỏ. Hiệu quả này mỗi 2s thi triển nhiều nhất 1 lần.",
+        "Tỷ lệ bạo kích tăng {color}16{/color}%,tốc độ tấn công thường tăng {color}12{/color}%. Ngoài ra, khi tấn công thường và trọng kích đánh trúng kẻ địch, có tỷ lệ {color}50{/color}% thi triển Lưỡi Dao Chân Không, tạo thêm sát thương bằng {color}100{/color}% tấn công trong phạm vi nhỏ. Hiệu quả này mỗi 2s thi triển nhiều nhất 1 lần."
+      ]
     },
     {
       "key": "slingshot",
       "name": "Nỏ Kéo",
       "description": "Thực chất là một cây cung. Trải qua vô số lần cải tiến và thực nghiệm, người làm ra nó phát hiện mình đã làm một cây nỏ.",
-      "refinement": "Khi đánh thường hoặc trọng kích, nếu mũi tên bắn trúng kẻ địch trong 0.3s sau khi phóng, sát thương tạo thành sẽ tăng {0}%; Nếu không, sát thương tạo thành giảm 10%."
+      "refinements": [
+        "Khi đánh thường hoặc trọng kích, nếu mũi tên bắn trúng kẻ địch trong 0.3s sau khi phóng, sát thương tạo thành sẽ tăng {color}36{/color}%; Nếu không, sát thương tạo thành giảm 10%.",
+        "Khi đánh thường hoặc trọng kích, nếu mũi tên bắn trúng kẻ địch trong 0.3s sau khi phóng, sát thương tạo thành sẽ tăng {color}42{/color}%; Nếu không, sát thương tạo thành giảm 10%.",
+        "Khi đánh thường hoặc trọng kích, nếu mũi tên bắn trúng kẻ địch trong 0.3s sau khi phóng, sát thương tạo thành sẽ tăng {color}48{/color}%; Nếu không, sát thương tạo thành giảm 10%.",
+        "Khi đánh thường hoặc trọng kích, nếu mũi tên bắn trúng kẻ địch trong 0.3s sau khi phóng, sát thương tạo thành sẽ tăng {color}54{/color}%; Nếu không, sát thương tạo thành giảm 10%.",
+        "Khi đánh thường hoặc trọng kích, nếu mũi tên bắn trúng kẻ địch trong 0.3s sau khi phóng, sát thương tạo thành sẽ tăng {color}60{/color}%; Nếu không, sát thương tạo thành giảm 10%."
+      ]
     },
     {
       "key": "snow-tombed-starsilver",
       "name": "Tuyết Vùi Tinh Ngân",
       "description": "Thanh kiếm cổ xưa được cất giấu giữa bức bích họa. Được đúc từ Tinh Ngân, dường như có sở hữu sức mạnh có thể cắt vỡ băng tuyết.",
-      "refinement": "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {0}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {1}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {2}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần."
+      "refinements": [
+        "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}60{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}80{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}200{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}70{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}95{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}240{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}80{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}110{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}280{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}90{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}125{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}320{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}100{/color}% tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {color}140{/color}% tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {color}360{/color}% tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần."
+      ]
     },
     {
       "key": "solar-pearl",
-      "name": "Nhật Nguyệt Hạp",
-      "description": "Bảo châu màu vàng kim đậm được làm từ nguyên liệu ít ai biết, tràn đầy ánh sáng của đất trời và sức mạnh ấm áp.",
-      "refinement": "Trong 6s sau khi tấn công thường đánh trúng địch, sát thương kỹ năng Nguyên Tố và kỹ năng nộ tăng {0}%; Trong 6s sau khi kỹ năng thường và kỹ năng nộ đánh trúng địch, sát thương tấn công thường tăng {1}%."
+      "name": "Solar Pearl",
+      "description": "A dull, golden pearl made of an unknown substance that harbors the light of the sun and the moon and pulses with a warm strength.",
+      "refinements": [
+        "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {color}20{/color}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {color}20{/color}% for 6s.",
+        "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {color}25{/color}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {color}25{/color}% for 6s.",
+        "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {color}30{/color}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {color}30{/color}% for 6s.",
+        "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {color}35{/color}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {color}35{/color}% for 6s.",
+        "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {color}40{/color}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {color}40{/color}% for 6s."
+      ]
     },
     {
       "key": "song-of-broken-pines",
       "name": "Tiếng Gió Trong Rừng Thông",
       "description": "Đại kiếm có nhát chém mềm mại như hơi thở của cỏ cây, là vũ khí có sức mạnh như bão tố quật ngã cây cối.",
-      "refinement": "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tấn công tăng {0}%; Khi đánh thường hoặc trọng kích trúng kẻ địch sẽ cung cấp cho nhân vật 1 Bùa Thì Thầm, mỗi 0.3s tối đa kích hoạt 1 lần. Khi có 4 Bùa Thì Thầm sẽ tiêu hao tất cả, khiến tất cả nhân vật trong đội gần đó sẽ nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Khúc Ca Vén Cờ\" kéo dài 12s: Tốc độ đánh thường tăng {1}%, tấn công tăng {2}%. Trong 20s sau khi kích hoạt sẽ không thể nhận lại Bùa Thì Thầm. Các chỉ số cùng loại trong \"Ca Khúc Thời Đại Nghìn Năm\" không thể cộng dồn."
+      "refinements": [
+        "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tấn công tăng {color}16{/color}%; Khi đánh thường hoặc trọng kích trúng kẻ địch sẽ cung cấp cho nhân vật 1 Bùa Thì Thầm, mỗi 0.3s tối đa kích hoạt 1 lần. Khi có 4 Bùa Thì Thầm sẽ tiêu hao tất cả, khiến tất cả nhân vật trong đội gần đó sẽ nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Khúc Ca Vén Cờ\" kéo dài 12s: Tốc độ đánh thường tăng {color}12{/color}%, tấn công tăng {color}20{/color}%. Trong 20s sau khi kích hoạt sẽ không thể nhận lại Bùa Thì Thầm. Các chỉ số cùng loại trong \"Ca Khúc Thời Đại Nghìn Năm\" không thể cộng dồn.",
+        "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tấn công tăng {color}20{/color}%; Khi đánh thường hoặc trọng kích trúng kẻ địch sẽ cung cấp cho nhân vật 1 Bùa Thì Thầm, mỗi 0.3s tối đa kích hoạt 1 lần. Khi có 4 Bùa Thì Thầm thì sẽ tiêu hao tất cả và tất cả nhân vật trong đội gần đó sẽ nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Khúc Ca Vén Cờ\" kéo dài 12s: Tốc độ đánh thường tăng {color}15{/color}%, tấn công tăng {color}25{/color}%. Trong 20s sau khi kích hoạt sẽ không thể nhận lại Bùa Thì Thầm. Các chỉ số cùng loại trong \"Ca Khúc Thời Đại Nghìn Năm\" không thể cộng dồn.",
+        "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tấn công tăng {color}24{/color}%; Khi đánh thường hoặc trọng kích trúng kẻ địch sẽ cung cấp cho nhân vật 1 Bùa Thì Thầm, mỗi 0.3s tối đa kích hoạt 1 lần. Khi có 4 Bùa Thì Thầm thì sẽ tiêu hao tất cả và tất cả nhân vật trong đội gần đó sẽ nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Khúc Ca Vén Cờ\" kéo dài 12s: Tốc độ đánh thường tăng {color}18{/color}%, tấn công tăng {color}30{/color}%. Trong 20s sau khi kích hoạt sẽ không thể nhận lại Bùa Thì Thầm. Các chỉ số cùng loại trong \"Ca Khúc Thời Đại Nghìn Năm\" không thể cộng dồn.",
+        "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tấn công tăng {color}28{/color}%; Khi đánh thường hoặc trọng kích trúng kẻ địch sẽ cung cấp cho nhân vật 1 Bùa Thì Thầm, mỗi 0.3s tối đa kích hoạt 1 lần. Khi có 4 Bùa Thì Thầm thì sẽ tiêu hao tất cả và tất cả nhân vật trong đội gần đó sẽ nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Khúc Ca Vén Cờ\" kéo dài 12s: Tốc độ đánh thường tăng {color}21{/color}%, tấn công tăng {color}35{/color}%. Trong 20s sau khi kích hoạt sẽ không thể nhận lại Bùa Thì Thầm. Các chỉ số cùng loại trong \"Ca Khúc Thời Đại Nghìn Năm\" không thể cộng dồn.",
+        "Một phần của \"Ca Khúc Thời Đại Nghìn Năm\" lãng du trong gió. Tấn công tăng {color}32{/color}%; Khi đánh thường hoặc trọng kích trúng kẻ địch sẽ cung cấp cho nhân vật 1 Bùa Thì Thầm, mỗi 0.3s tối đa kích hoạt 1 lần. Khi có 4 Bùa Thì Thầm thì sẽ tiêu hao tất cả và tất cả nhân vật trong đội gần đó sẽ nhận được hiệu ứng \"Ca Khúc Thời Đại Nghìn Năm - Khúc Ca Vén Cờ\" kéo dài 12s: Tốc độ đánh thường tăng {color}24{/color}%, tấn công tăng {color}40{/color}%. Trong 20s sau khi kích hoạt sẽ không thể nhận lại Bùa Thì Thầm. Các chỉ số cùng loại trong \"Ca Khúc Thời Đại Nghìn Năm\" không thể cộng dồn."
+      ]
     },
     {
       "key": "staff-of-homa",
       "name": "Trượng Hộ Ma",
       "description": "\"Trượng Lửa\" màu đỏ sử dụng trong nghi lễ cổ xưa, đã thất truyền từ lâu.",
-      "refinement": "HP tăng {0}%. Ngoài ra, nhận được buff tấn công bằng {1}% giới hạn HP của nhân vật trang bị vũ khí này. Khi HP của nhân vật trang bị vũ khí này dưới 50%, sẽ nhận thêm buff tấn công bằng {2}% giới hạn HP."
+      "refinements": [
+        "HP tăng {color}20{/color}%. Ngoài ra, nhận được buff tấn công bằng {color}0.8{/color}% giới hạn HP của nhân vật trang bị vũ khí này. Khi HP của nhân vật trang bị vũ khí này dưới 50%, sẽ nhận thêm buff tấn công bằng {color}1{/color}% giới hạn HP.",
+        "HP tăng {color}25{/color}%. Ngoài ra, nhận được buff tấn công bằng {color}1{/color}% giới hạn HP của nhân vật trang bị vũ khí này. Khi HP của nhân vật trang bị vũ khí này dưới 50%, sẽ nhận thêm buff tấn công bằng {color}1.2{/color}% giới hạn HP.",
+        "HP tăng {color}30{/color}%. Ngoài ra, nhận được buff tấn công bằng {color}1.2{/color}% giới hạn HP của nhân vật trang bị vũ khí này. Khi HP của nhân vật trang bị vũ khí này dưới 50%, sẽ nhận thêm buff tấn công bằng {color}1.4{/color}% giới hạn HP.",
+        "HP tăng {color}35{/color}%. Ngoài ra, nhận được buff tấn công bằng {color}1.4{/color}% giới hạn HP của nhân vật trang bị vũ khí này. Khi HP của nhân vật trang bị vũ khí này dưới 50%, sẽ nhận thêm buff tấn công bằng {color}1.6{/color}% giới hạn HP.",
+        "HP tăng {color}40{/color}%. Ngoài ra, nhận được buff tấn công bằng {color}1.6{/color}% giới hạn HP của nhân vật trang bị vũ khí này. Khi HP của nhân vật trang bị vũ khí này dưới 50%, sẽ nhận thêm buff tấn công bằng {color}1.8{/color}% giới hạn HP."
+      ]
     },
     {
       "key": "summit-shaper",
       "name": "Kiếm Chước Phong",
       "description": "Thanh kiếm sắc bén tượng trưng cho khế ước đặc biệt nào đó trong truyền thuyết, từng được dùng để san bằng các đỉnh núi cao.",
-      "refinement": "Hiệu quả khiên tăng {0}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {1}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%."
+      "refinements": [
+        "Hiệu quả khiên tăng {color}20{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}4{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%.",
+        "Hiệu quả khiên tăng {color}25{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}5{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%.",
+        "Hiệu quả khiên tăng {color}30{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}6{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%.",
+        "Hiệu quả khiên tăng {color}35{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}7{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%.",
+        "Hiệu quả khiên tăng {color}40{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}8{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%."
+      ]
     },
     {
       "key": "sword-of-descension",
       "name": "Kiếm Giáng Lâm",
       "description": "Kiếm có tạo hình đặc biệt. Nhìn có vẻ không thuộc về thế giới này.",
-      "refinement": "Chỉ có hiệu lực trong:\r\n\"PlayStation Network\"\r\nSau khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {0}% tạo thành {1}% sát thương tấn công trong phạm vi nhỏ. Hiệu quả này mỗi 10 giây chỉ kích hoạt 1 lần; Ngoài ra, Nhà Lữ Hành có trang bị Kiếm Giáng Lâm thì tấn công sẽ tăng {2} điểm."
+      "refinements": [
+        "Chỉ có hiệu lực trong:\r\n\"PlayStation Network\"\r\nSau khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {color}50{/color}% tạo thành {color}200{/color}% sát thương tấn công trong phạm vi nhỏ. Hiệu quả này mỗi 10 giây chỉ kích hoạt 1 lần; Ngoài ra, Nhà Lữ Hành có trang bị Kiếm Giáng Lâm thì tấn công sẽ tăng {color}66{/color} điểm."
+      ]
     },
     {
       "key": "the-alley-flash",
       "name": "Tia Sáng Nơi Hẻm Tối",
       "description": "Trường kiếm thẳng tắp có màu sắc của bóng đêm, từng thuộc về tên cướp ở bến cảng.",
-      "refinement": "Sát thương nhân vật tạo thành tăng {0}%. Sau khi chịu phải sát thương, hiệu quả tăng sát thương này sẽ mất hiệu lực 5s."
+      "refinements": [
+        "Sát thương nhân vật tạo thành tăng {color}12{/color}%. Sau khi chịu phải sát thương, hiệu quả tăng sát thương này sẽ mất hiệu lực 5s.",
+        "Sát thương nhân vật tạo thành tăng {color}15{/color}%. Sau khi chịu phải sát thương, hiệu quả tăng sát thương này sẽ mất hiệu lực 5s.",
+        "Sát thương nhân vật tạo thành tăng {color}18{/color}%. Sau khi chịu phải sát thương, hiệu quả tăng sát thương này sẽ mất hiệu lực 5s.",
+        "Sát thương nhân vật tạo thành tăng {color}21{/color}%. Sau khi chịu phải sát thương, hiệu quả tăng sát thương này sẽ mất hiệu lực 5s.",
+        "Sát thương nhân vật tạo thành tăng {color}24{/color}%. Sau khi chịu phải sát thương, hiệu quả tăng sát thương này sẽ mất hiệu lực 5s."
+      ]
     },
     {
       "key": "the-bell",
       "name": "Kiếm Chuông",
       "description": "Kiếm lớn và nặng có gắn thêm đồng hồ, nhưng cơ quan tính giờ của nó đã bị phá hoại.",
-      "refinement": "Khi nhận sát thương sẽ tạo ra khiên có lượng hấp thụ sát thương bằng {0}% giới hạn HP, kéo dài 10s hoặc đến khi khiên mất hiệu lực, mỗi {1}s chỉ thi triển 1 lần. Khi nhân vật được khiên bảo vệ, sát thương tạo thành tăng {2}%."
+      "refinements": [
+        "Khi nhận sát thương sẽ tạo ra khiên có lượng hấp thụ sát thương bằng {color}20{/color}% giới hạn HP, kéo dài 10s hoặc đến khi khiên mất hiệu lực, mỗi {color}45{/color}s chỉ thi triển 1 lần. Khi nhân vật được khiên bảo vệ, sát thương tạo thành tăng {color}12{/color}%.",
+        "Khi nhận sát thương sẽ tạo ra khiên có lượng hấp thụ sát thương bằng {color}23{/color}% giới hạn HP, kéo dài 10s hoặc đến khi khiên mất hiệu lực, mỗi {color}45{/color}s chỉ thi triển 1 lần. Khi nhân vật được khiên bảo vệ, sát thương tạo thành tăng {color}15{/color}%.",
+        "Khi nhận sát thương sẽ tạo ra khiên có lượng hấp thụ sát thương bằng {color}26{/color}% giới hạn HP, kéo dài 10s hoặc đến khi khiên mất hiệu lực, mỗi {color}45{/color}s chỉ thi triển 1 lần. Khi nhân vật được khiên bảo vệ, sát thương tạo thành tăng {color}18{/color}%.",
+        "Khi nhận sát thương sẽ tạo ra khiên có lượng hấp thụ sát thương bằng {color}29{/color}% giới hạn HP, kéo dài 10s hoặc đến khi khiên mất hiệu lực, mỗi {color}45{/color}s chỉ thi triển 1 lần. Khi nhân vật được khiên bảo vệ, sát thương tạo thành tăng {color}21{/color}%.",
+        "Khi nhận sát thương sẽ tạo ra khiên có lượng hấp thụ sát thương bằng {color}32{/color}% giới hạn HP, kéo dài 10s hoặc đến khi khiên mất hiệu lực, mỗi {color}45{/color}s chỉ thi triển 1 lần. Khi nhân vật được khiên bảo vệ, sát thương tạo thành tăng {color}24{/color}%."
+      ]
     },
     {
       "key": "the-black-sword",
       "name": "Kiếm Đen",
       "description": "Trường kiếm đen khao khát chiến tranh và chém giết, nghe nói có thể khiến người ta chìm đắm trong cuồng sát.",
-      "refinement": "Tấn công thường và sát thương trọng kích tăng {0}%, ngoài ra khi tấn công thường và bạo kích trọng kích sẽ hồi HP bằng {1}% tấn công. Hiệu quả này mỗi 5s thi triển 1 lần."
+      "refinements": [
+        "Tấn công thường và sát thương trọng kích tăng {color}20{/color}%, ngoài ra khi tấn công thường và bạo kích trọng kích sẽ hồi HP bằng {color}60{/color}% tấn công. Hiệu quả này mỗi 5s thi triển 1 lần.",
+        "Tấn công thường và sát thương trọng kích tăng {color}25{/color}%, ngoài ra khi tấn công thường và bạo kích trọng kích sẽ hồi HP bằng {color}70{/color}% tấn công. Hiệu quả này mỗi 5s thi triển 1 lần.",
+        "Sát thương tấn công thường và trọng kích gây ra tăng {color}30{/color}%, ngoài ra khi tấn công thường và trọng kích bạo kích sẽ hồi HP bằng {color}80{/color}% tấn công. Hiệu quả này mỗi 5s thi triển 1 lần.",
+        "Tấn công thường và sát thương trọng kích tăng {color}35{/color}%, ngoài ra khi tấn công thường và bạo kích trọng kích sẽ hồi HP bằng {color}90{/color}% tấn công. Hiệu quả này mỗi 5s thi triển 1 lần.",
+        "Tấn công thường và sát thương trọng kích tăng {color}40{/color}%, ngoài ra khi tấn công thường và bạo kích trọng kích sẽ hồi HP bằng {color}100{/color}% tấn công. Hiệu quả này mỗi 5s thi triển 1 lần."
+      ]
     },
     {
       "key": "the-catch",
       "name": "Lao Xiên Cá",
       "description": "Từng là một vũ khí ưa dùng của tướng cướp Inazuma thời xưa.",
-      "refinement": "Sát thương Kỹ Năng Nộ gây ra tăng {0}%, tỷ lệ bạo của Kỹ Năng Nộ tăng {1}%."
+      "refinements": [
+        "Sát thương Kỹ Năng Nộ gây ra tăng {color}16{/color}%, tỷ lệ bạo của Kỹ Năng Nộ tăng {color}6{/color}%.",
+        "Sát thương Kỹ Năng Nộ gây ra tăng {color}20{/color}%, tỷ lệ bạo của Kỹ Năng Nộ tăng {color}7.5{/color}%.",
+        "Sát thương Kỹ Năng Nộ gây ra tăng {color}24{/color}%, tỷ lệ bạo của Kỹ Năng Nộ tăng {color}9{/color}%.",
+        "Sát thương Kỹ Năng Nộ gây ra tăng {color}28{/color}%, tỷ lệ bạo của Kỹ Năng Nộ tăng {color}10.5{/color}%.",
+        "Sát thương Kỹ Năng Nộ gây ra tăng {color}32{/color}%, tỷ lệ bạo của Kỹ Năng Nộ tăng {color}12{/color}%."
+      ]
     },
     {
       "key": "the-flute",
       "name": "Kiếm Sáo",
       "description": "Trang sức hoa lệ trong suốt, khi vung lên cảm giác nhẹ nhàng như không khí.",
-      "refinement": "Khi tấn công thường hoặc trọng kích đánh trúng địch, sẽ nhận 1 hợp âm. Sau khi tích lũy đủ 5 hợp âm, phát ra sức mạnh của âm luật, tạo thành {0}% sát thương công kích cho kẻ địch xung quanh. Hợp âm có thể tồn lại lâu nhất 30s, mỗi 0.5s nhiều nhất có thể nhận 1 hợp âm."
+      "refinements": [
+        "Khi tấn công thường hoặc trọng kích đánh trúng địch, sẽ nhận 1 hợp âm. Sau khi tích lũy đủ 5 hợp âm, phát ra sức mạnh của âm luật, tạo thành {color}100{/color}% sát thương công kích cho kẻ địch xung quanh. Hợp âm có thể tồn lại lâu nhất 30s, mỗi 0.5s nhiều nhất có thể nhận 1 hợp âm.",
+        "Khi tấn công thường hoặc trọng kích đánh trúng địch, sẽ nhận 1 hợp âm. Sau khi tích lũy đủ 5 hợp âm, phát ra sức mạnh của âm luật, tạo thành {color}125{/color}% sát thương công kích cho kẻ địch xung quanh. Hợp âm có thể tồn lại lâu nhất 30s, mỗi 0.5s nhiều nhất có thể nhận 1 hợp âm.",
+        "Khi tấn công thường hoặc trọng kích đánh trúng địch, sẽ nhận 1 hợp âm. Sau khi tích lũy đủ 5 hợp âm, phát ra sức mạnh của âm luật, tạo thành {color}150{/color}% sát thương công kích cho kẻ địch xung quanh. Hợp âm có thể tồn lại lâu nhất 30s, mỗi 0.5s nhiều nhất có thể nhận 1 hợp âm.",
+        "Khi tấn công thường hoặc trọng kích đánh trúng địch, sẽ nhận 1 hợp âm. Sau khi tích lũy đủ 5 hợp âm, phát ra sức mạnh của âm luật, tạo thành {color}175{/color}% sát thương công kích cho kẻ địch xung quanh. Hợp âm có thể tồn lại lâu nhất 30s, mỗi 0.5s nhiều nhất có thể nhận 1 hợp âm.",
+        "Khi tấn công thường hoặc trọng kích đánh trúng địch, sẽ nhận 1 hợp âm. Sau khi tích lũy đủ 5 hợp âm, phát ra sức mạnh của âm luật, tạo thành {color}200{/color}% sát thương công kích cho kẻ địch xung quanh. Hợp âm có thể tồn lại lâu nhất 30s, mỗi 0.5s nhiều nhất có thể nhận 1 hợp âm."
+      ]
     },
     {
       "key": "the-stringless",
       "name": "Tuyệt Huyền",
       "description": "Cung được sử dụng như nhạc cụ phát ra ánh sáng rực rỡ. Đến nay nó không còn có thể khiến người khác cất bước khiêu vũ được nữa.",
-      "refinement": "Tăng {0}% sát thương kỹ năng Nguyên Tố và kỹ năng nộ."
+      "refinements": [
+        "Tăng {color}24{/color}% sát thương kỹ năng Nguyên Tố và kỹ năng nộ.",
+        "Tăng {color}30{/color}% sát thương kỹ năng Nguyên Tố và kỹ năng nộ.",
+        "Tăng {color}36{/color}% sát thương kỹ năng Nguyên Tố và kỹ năng nộ.",
+        "Tăng {color}42{/color}% sát thương kỹ năng Nguyên Tố và kỹ năng nộ.",
+        "Tăng {color}48{/color}% sát thương kỹ năng Nguyên Tố và kỹ năng nộ."
+      ]
     },
     {
       "key": "the-unforged",
       "name": "Kiếm Vô Công",
       "description": "Thanh kiếm sắc bén có thể trừ yêu diệt ma, tựa như có uy lực của thần linh vậy.",
-      "refinement": "Hiệu quả khiên tăng {0}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {1}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%."
+      "refinements": [
+        "Hiệu quả khiên tăng {color}20{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}4{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%.",
+        "Hiệu quả khiên tăng {color}25{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}5{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%.",
+        "Hiệu quả khiên tăng {color}30{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}6{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%.",
+        "Hiệu quả khiên tăng {color}35{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}7{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%.",
+        "Hiệu quả khiên tăng {color}40{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}8{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%."
+      ]
     },
     {
       "key": "the-viridescent-hunt",
       "name": "Cung Sắc Xanh",
       "description": "Cung săn bắn màu xanh lục, từng thuộc về một thợ săn nào đó trong rừng.",
-      "refinement": "Khi tấn công thường và trọng kích đánh trúng, có 50% tỷ lệ gây ra 1 mắt gió, thu hút địch xung quanh và mỗi 0.5s gây cho chúng sát thương bằng {0}% tấn công. Hiệu quả kéo dài 4s, mỗi {1}s thi triển nhiều nhất 1 lần."
+      "refinements": [
+        "Khi tấn công thường và trọng kích đánh trúng, có 50% tỷ lệ gây ra 1 mắt gió, thu hút địch xung quanh và mỗi 0.5s gây cho chúng sát thương bằng {color}40{/color}% tấn công. Hiệu quả kéo dài 4s, mỗi {color}14{/color}s thi triển nhiều nhất 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng, có 50% tỷ lệ gây ra 1 mắt gió, thu hút địch xung quanh và mỗi 0.5s gây cho chúng sát thương bằng {color}50{/color}% tấn công. Hiệu quả kéo dài 4s, mỗi {color}13{/color}s thi triển nhiều nhất 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng, có 50% tỷ lệ gây ra 1 mắt gió, thu hút địch xung quanh và mỗi 0.5s gây cho chúng sát thương bằng {color}60{/color}% tấn công. Hiệu quả kéo dài 4s, mỗi {color}12{/color}s thi triển nhiều nhất 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng, có 50% tỷ lệ gây ra 1 mắt gió, thu hút địch xung quanh và mỗi 0.5s gây cho chúng sát thương bằng {color}70{/color}% tấn công. Hiệu quả kéo dài 4s, mỗi {color}11{/color}s thi triển nhiều nhất 1 lần.",
+        "Khi tấn công thường và trọng kích đánh trúng,có 50% tỷ lệ gây ra 1 mắt gió, thu hút địch xung quanh và mỗi 0.5s gây cho chúng sát thương bằng {color}80{/color}% tấn công. Hiệu quả kéo dài 4s, mỗi {color}10{/color}s thi triển nhiều nhất 1 lần."
+      ]
     },
     {
       "key": "the-widsith",
       "name": "Chương Nhạc Lang Thang",
       "description": "Quyển sổ dày ghi chép nhiều bản nhạc. Tuy rằng bị mọt gặm nhấm, nhưng bút tích còn sót lại vẫn phát ra sức mạnh.",
-      "refinement": "Khi nhân vật ra trận, ngẫu nhiên nhận 1 ca khúc, kéo dài 10s. Mỗi 30s mới thi triển 1 lần. Nhạc dạo: Tấn công tăng {0}%; Điệp khúc: Toàn bộ sát thương nguyên tố tăng {1}%; Khúc nhạc ngắn: Tinh thông nguyên tố tăng {2}"
+      "refinements": [
+        "Khi nhân vật ra trận, ngẫu nhiên nhận 1 ca khúc, kéo dài 10s. Mỗi 30s mới thi triển 1 lần. Nhạc dạo: Tấn công tăng {color}60{/color}%; Điệp khúc: Toàn bộ sát thương nguyên tố tăng {color}48{/color}%; Khúc nhạc ngắn: Tinh thông nguyên tố tăng {color}240{/color}",
+        "Khi nhân vật ra trận, ngẫu nhiên nhận 1 ca khúc, kéo dài 10s. Mỗi 30s mới thi triển 1 lần. Nhạc dạo: Tấn công tăng {color}75{/color}%; Điệp khúc: Toàn bộ sát thương nguyên tố tăng {color}60{/color}%; Khúc nhạc ngắn: Tinh thông nguyên tố tăng {color}300{/color}",
+        "Khi nhân vật ra trận, ngẫu nhiên nhận 1 ca khúc, kéo dài 10s. Mỗi 30s mới thi triển 1 lần. Nhạc dạo: Tấn công tăng {color}90{/color}%; Điệp khúc: Toàn bộ sát thương nguyên tố tăng {color}72{/color}%; Khúc nhạc ngắn: Tinh thông nguyên tố tăng {color}360{/color}",
+        "Khi nhân vật ra trận, ngẫu nhiên nhận 1 ca khúc, kéo dài 10s. Mỗi 30s mới thi triển 1 lần. Nhạc dạo: Tấn công tăng {color}105{/color}%; Điệp khúc: Toàn bộ sát thương nguyên tố tăng {color}84{/color}%; Khúc nhạc ngắn: Tinh thông nguyên tố tăng {color}420{/color}",
+        "Khi nhân vật ra trận, ngẫu nhiên nhận 1 ca khúc, kéo dài 10s. Mỗi 30s mới thi triển 1 lần. Nhạc dạo: Tấn công tăng {color}120{/color}%; Điệp khúc: Toàn bộ sát thương nguyên tố tăng {color}96{/color}%; Khúc nhạc ngắn: Tinh thông nguyên tố tăng {color}480{/color}"
+      ]
     },
     {
       "key": "thrilling-tales-of-dragon-slayers",
       "name": "Câu Chuyện Diệt Rồng",
       "description": "Câu chuyện hư cấu về 5 anh hùng diệt rồng. Cách hành văn rất tệ, bố cục rời rạc. Bài học từ thất bại là sức mạnh lớn nhất của quyển sách này.",
-      "refinement": "Khi chủ động đổi nhân vật, tấn công của nhân vật mới vào trận tăng {0}%, kéo dài 10s. Mỗi 20s mới thi triển 1 lần."
+      "refinements": [
+        "Khi chủ động đổi nhân vật, tấn công của nhân vật mới vào trận tăng {color}24{/color}%, kéo dài 10s. Mỗi 20s mới thi triển 1 lần.",
+        "Khi chủ động đổi nhân vật, tấn công của nhân vật mới vào trận tăng {color}30{/color}%, kéo dài 10s. Mỗi 20s mới thi triển 1 lần.",
+        "Khi chủ động đổi nhân vật, tấn công của nhân vật mới vào trận tăng {color}36{/color}%, kéo dài 10s. Mỗi 20s mới thi triển 1 lần.",
+        "Khi chủ động đổi nhân vật, tấn công của nhân vật mới vào trận tăng {color}42{/color}%, kéo dài 10s. Mỗi 20s mới thi triển 1 lần.",
+        "Khi chủ động đổi nhân vật, tấn công của nhân vật mới vào trận tăng {color}48{/color}%, kéo dài 10s. Mỗi 20s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "thundering-pulse",
       "name": "Sấm Sét Rung Động",
       "description": "Chiếc cung được Shogun ban tặng, ánh lên sắc màu của lôi điện bất diệt.",
-      "refinement": "Tấn công tăng {0}%, đồng thời nhận lấy sức mạnh \"Vết Cắt Sấm Sét\". Khi Vết Cắt Sấm Sét ở tầng 1/2/3 sẽ tăng sát thương tấn công thường tương ứng {1}%. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sấm Sét khi: Gây sát thương tấn công thường trong 5 giây; thi triển Kỹ Năng Nguyên Tố tồn tại trong 10 giây; ngoài ra Năng Lượng Nguyên Tố thấp hơn 100%, sẽ tạo một tầng Vết Cắt Sấm Sét, Vết Cắt Sấm Sét của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sấm Sét được tính độc lập với nhau."
+      "refinements": [
+        "Tấn công tăng {color}20{/color}%, đồng thời nhận lấy sức mạnh \"Vết Cắt Sấm Sét\". Khi Vết Cắt Sấm Sét ở tầng 1/2/3 sẽ tăng sát thương tấn công thường tương ứng {color}12/24/40{/color}%. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sấm Sét khi: Gây sát thương tấn công thường trong 5 giây; thi triển Kỹ Năng Nguyên Tố tồn tại trong 10 giây; ngoài ra Năng Lượng Nguyên Tố thấp hơn 100%, sẽ tạo một tầng Vết Cắt Sấm Sét, Vết Cắt Sấm Sét của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sấm Sét được tính độc lập với nhau.",
+        "Tấn công tăng {color}25{/color}%, đồng thời nhận lấy sức mạnh \"Vết Cắt Sấm Sét\". Khi Vết Cắt Sấm Sét ở tầng 1/2/3 sẽ tăng sát thương tấn công thường tương ứng {color}15/30/50{/color}%. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sấm Sét khi: Gây sát thương tấn công thường trong 5 giây; thi triển Kỹ Năng Nguyên Tố tồn tại trong 10 giây; ngoài ra Năng Lượng Nguyên Tố thấp hơn 100%, sẽ tạo một tầng Vết Cắt Sấm Sét, Vết Cắt Sấm Sét của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sấm Sét được tính độc lập với nhau.",
+        "Tấn công tăng {color}30{/color}%, đồng thời nhận lấy sức mạnh \"Vết Cắt Sấm Sét\". Khi Vết Cắt Sấm Sét ở tầng 1/2/3 sẽ tăng sát thương tấn công thường tương ứng {color}18/36/60{/color}%. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sấm Sét khi: Gây sát thương tấn công thường trong 5 giây; thi triển Kỹ Năng Nguyên Tố tồn tại trong 10 giây; ngoài ra Năng Lượng Nguyên Tố thấp hơn 100%, sẽ tạo một tầng Vết Cắt Sấm Sét, Vết Cắt Sấm Sét của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sấm Sét được tính độc lập với nhau.",
+        "Tấn công tăng {color}35{/color}%, đồng thời nhận lấy sức mạnh \"Vết Cắt Sấm Sét\". Khi Vết Cắt Sấm Sét ở tầng 1/2/3 sẽ tăng sát thương tấn công thường tương ứng {color}21/42/70{/color}%. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sấm Sét khi: Gây sát thương tấn công thường trong 5 giây; thi triển Kỹ Năng Nguyên Tố tồn tại trong 10 giây; ngoài ra Năng Lượng Nguyên Tố thấp hơn 100%, sẽ tạo một tầng Vết Cắt Sấm Sét, Vết Cắt Sấm Sét của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sấm Sét được tính độc lập với nhau.",
+        "Tấn công tăng {color}40{/color}%, đồng thời nhận lấy sức mạnh \"Vết Cắt Sấm Sét\". Khi Vết Cắt Sấm Sét ở tầng 1/2/3 sẽ tăng sát thương tấn công thường tương ứng {color}24/48/80{/color}%. Nhân vật sẽ được nhận 1 tầng Vết Cắt Sấm Sét khi: Gây sát thương tấn công thường trong 5 giây; thi triển Kỹ Năng Nguyên Tố tồn tại trong 10 giây; ngoài ra Năng Lượng Nguyên Tố thấp hơn 100%, sẽ tạo một tầng Vết Cắt Sấm Sét, Vết Cắt Sấm Sét của lần này sẽ biến mất sau khi Năng Lượng Nguyên Tố của nhân vật được nạp đầy. Thời gian tồn tại của mỗi tầng Vết Cắt Sấm Sét được tính độc lập với nhau."
+      ]
     },
     {
       "key": "travelers-handy-sword",
       "name": "Kiếm Lữ Hành",
       "description": "Kiếm làm bằng gang thép rất chắc tay, trên thanh kiếm có ẩn giấu kéo, kính lúp, dây dẫn lửa v.v, rất tiện lợi cho việc lữ hành.",
-      "refinement": "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục {0}%HP"
+      "refinements": [
+        "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục {color}1{/color}%HP",
+        "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục {color}1.25{/color}%HP",
+        "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục {color}1.5{/color}%HP",
+        "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục {color}1.75{/color}%HP",
+        "Khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân, hồi phục {color}2{/color}%HP"
+      ]
     },
     {
       "key": "twin-nephrite",
       "name": "Ngọc Sinh Đôi",
       "description": "Ngọc bội tinh xảo được ghép từ hai miếng ngọc.",
-      "refinement": "Trong 15s sau khi đánh bại kẻ địch, tốc độ di chuyển và tấn công tăng {0}%."
+      "refinements": [
+        "Trong 15s sau khi đánh bại kẻ địch, tốc độ di chuyển và tấn công tăng {color}12{/color}%.",
+        "Trong 15s sau khi đánh bại kẻ địch, tốc độ di chuyển và tấn công tăng {color}14{/color}%.",
+        "Trong 15s sau khi đánh bại kẻ địch, tốc độ di chuyển và tấn công tăng {color}16{/color}%.",
+        "Trong 15s sau khi đánh bại kẻ địch, tốc độ di chuyển và tấn công tăng {color}18{/color}%.",
+        "Trong 15s sau khi đánh bại kẻ địch, tốc độ di chuyển và tấn công tăng {color}20{/color}%."
+      ]
     },
     {
       "key": "vortex-vanquisher",
       "name": "Giáo Nịnh Thần",
       "description": "Thanh thương sắc bén có thể chọc thủng mọi thứ. Khi sử dụng, dường như thấy được vệt rách mà thanh thương cứa vào không khí.",
-      "refinement": "Hiệu quả khiên tăng {0}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {1}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%."
+      "refinements": [
+        "Hiệu quả khiên tăng {color}20{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}4{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%.",
+        "Hiệu quả khiên tăng {color}25{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}5{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%.",
+        "Hiệu quả khiên tăng {color}30{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}6{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%.",
+        "Hiệu quả khiên tăng {color}35{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}7{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%.",
+        "Hiệu quả khiên tăng {color}40{/color}%. Trong vòng 8s sau khi đánh trúng, tấn công tăng {color}8{/color}%. Cộng dồn 5 tầng, mỗi 0.3s chỉ được thi triển 1 lần. Ngoài ra, khi được khiên bảo vệ, hiệu quả tăng tấn công sẽ tăng 100%."
+      ]
     },
     {
       "key": "waster-greatsword",
       "name": "Kiếm Huấn Luyện",
       "description": "Một thanh sắt được mài thành hình kiếm. Khi ở trong tay người có ý chí, thì cũng có được sức mạnh xẻ đá phá rừng.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "white-iron-greatsword",
       "name": "Kiếm Bạch Thiết",
       "description": "Kiếm được tôi luyện từ thép trắng, có trọng lực và cường độ tốt. Cho dù người thường cũng có thể sử dụng, trong tay kẻ mạnh thì càng có uy lực xuất chúng.",
-      "refinement": "Khi đánh bại kẻ địch, hồi {0}% HP."
+      "refinements": [
+        "Khi đánh bại kẻ địch, hồi {color}8{/color}% HP.",
+        "Khi đánh bại kẻ địch, hồi {color}10{/color}%HP",
+        "Khi đánh bại kẻ địch, hồi {color}12{/color}%HP",
+        "Khi đánh bại kẻ địch, hồi {color}14{/color}%HP",
+        "Khi đánh bại kẻ địch, hồi {color}16{/color}%HP"
+      ]
     },
     {
       "key": "white-tassel",
       "name": "Thương Bạch Anh",
       "description": "Trang bị cho binh sĩ của Thiên Nham Quân, thân thương chắc chắn, mũi sắc nhọn, là vũ khí vô cùng tốt.",
-      "refinement": "Tấn công thường sát thương tăng {0}%."
+      "refinements": [
+        "Tấn công thường sát thương tăng {color}24{/color}%.",
+        "Tấn công thường sát thương tăng {color}30{/color}%.",
+        "Tấn công thường sát thương tăng {color}36{/color}%.",
+        "Tấn công thường sát thương tăng {color}42{/color}%.",
+        "Tấn công thường sát thương tăng {color}48{/color}%."
+      ]
     },
     {
       "key": "whiteblind",
       "name": "Kiếm Bạch Ảnh",
       "description": "Đại kiếm đến từ dị quốc, theo tay thương nhân lưu lạc vào Liyue. Nằm trong tay người hiểu kiếm sẽ có sức mạnh khôn lường.",
-      "refinement": "Sau khi tấn công thường và trọng kích đánh trúng địch, tấn công và phòng ngự tăng {0}%. Kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần."
+      "refinements": [
+        "Sau khi tấn công thường và trọng kích đánh trúng địch, tấn công và phòng ngự tăng {color}6{/color}%. Kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần.",
+        "Sau khi tấn công thường và trọng kích đánh trúng địch, tấn công và phòng ngự tăng {color}7.5{/color}%. Kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần.",
+        "Sau khi tấn công thường và trọng kích đánh trúng địch, tấn công và phòng ngự tăng {color}9{/color}%. Kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần.",
+        "Sau khi tấn công thường và trọng kích đánh trúng địch, tấn công và phòng ngự tăng {color}10.5{/color}%. Kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần.",
+        "Sau khi tấn công thường và trọng kích đánh trúng địch, tấn công và phòng ngự tăng {color}12{/color}%. Kéo dài 6s, tối đa cộng dồn 4 lần. Mỗi 0.5s mới thi triển 1 lần."
+      ]
     },
     {
       "key": "windblume-ode",
       "name": "Bài Ca Hoa Gió",
       "description": "Cây cung được điểm xuyết bởi đóa hoa không tên mang theo hy vọng tha thiết của những người vô danh.",
-      "refinement": "Khi thi triển kỹ năng nguyên tố, nhận được lời chúc của Hoa Gió cổ xưa, tấn công tăng {0}%, kéo dài 6s."
+      "refinements": [
+        "Khi thi triển kỹ năng nguyên tố, nhận được lời chúc của Hoa Gió cổ xưa, tấn công tăng {color}16{/color}%, kéo dài 6s.",
+        "Khi thi triển kỹ năng nguyên tố, nhận được lời chúc của Hoa Gió cổ xưa, tấn công tăng {color}20{/color}%, kéo dài 6s.",
+        "Khi thi triển kỹ năng nguyên tố, nhận được lời chúc của Hoa Gió cổ xưa, tấn công tăng {color}24{/color}%, kéo dài 6s.",
+        "Khi thi triển kỹ năng nguyên tố, nhận được lời chúc của Hoa Gió cổ xưa, tấn công tăng {color}28{/color}%, kéo dài 6s."
+      ]
     },
     {
       "key": "wine-and-song",
       "name": "Rượu Và Thơ Nơi Hẻm Tối",
       "description": "Nhạc phổ lưu hành ở thời đại quý tộc xa xưa, không biết tác giả là ai. Trong đó ghi chép về câu chuyện của một hiệp đạo nào đó...",
-      "refinement": "Sau khi đánh thường trúng kẻ địch, thể lực tiêu hao của xung kích hoặc kỹ năng thay thế của xung kích giảm {0}%, kéo dài 5s. Ngoài ra, sau khi dùng xung kích hoặc kỹ năng thay thế của xung kích, tấn công tăng {1}%, kéo dài 5s."
+      "refinements": [
+        "Sau khi đánh thường trúng kẻ địch, thể lực tiêu hao của xung kích hoặc kỹ năng thay thế của xung kích giảm {color}14{/color}%, kéo dài 5s. Ngoài ra, sau khi dùng xung kích hoặc kỹ năng thay thế của xung kích, tấn công tăng {color}20{/color}%, kéo dài 5s.",
+        "Sau khi đánh thường trúng kẻ địch, thể lực tiêu hao của xung kích hoặc kỹ năng thay thế của xung kích giảm {color}16{/color}%, kéo dài 5s. Ngoài ra, sau khi dùng xung kích hoặc kỹ năng thay thế của xung kích, tấn công tăng {color}25{/color}%, kéo dài 5s.",
+        "Sau khi đánh thường trúng kẻ địch, thể lực tiêu hao của xung kích hoặc kỹ năng thay thế của xung kích giảm {color}18{/color}%, kéo dài 5s. Ngoài ra, sau khi dùng xung kích hoặc kỹ năng thay thế của xung kích, tấn công tăng {color}30{/color}%, kéo dài 5s.",
+        "Sau khi đánh thường trúng kẻ địch, thể lực tiêu hao của xung kích hoặc kỹ năng thay thế của xung kích giảm {color}20{/color}%, kéo dài 5s. Ngoài ra, sau khi dùng xung kích hoặc kỹ năng thay thế của xung kích, tấn công tăng {color}35{/color}%, kéo dài 5s.",
+        "Sau khi đánh thường trúng kẻ địch, thể lực tiêu hao của xung kích hoặc kỹ năng thay thế của xung kích giảm {color}22{/color}%, kéo dài 5s. Ngoài ra, sau khi dùng xung kích hoặc kỹ năng thay thế của xung kích, tấn công tăng {color}40{/color}%, kéo dài 5s."
+      ]
     },
     {
       "key": "wolfs-gravestone",
       "name": "Đường Cùng Của Sói",
       "description": "Kiếm được kỵ sĩ của sói dùng. Vốn chỉ là miếng sắt của lò rèn trong thành, nhưng do tình bạn với sói mà nhận được sức mạnh thần thánh.",
-      "refinement": "Tấn công tăng {0}%; Khi tấn công đánh trúng kẻ địch có HP dưới 30%, lực tấn công của tất cả thành viên đội tăng {1}%, kéo dài 12s. Mỗi 30s mới thi triển 1 lần."
+      "refinements": [
+        "Tấn công tăng {color}20{/color}%; Khi tấn công đánh trúng kẻ địch có HP dưới 30%, lực tấn công của tất cả thành viên đội tăng {color}40{/color}%, kéo dài 12s. Mỗi 30s mới thi triển 1 lần.",
+        "Tấn công tăng {color}25{/color}%; Khi đánh trúng kẻ địch có HP dưới 30%, lực tấn công của tất cả thành viên đội tăng {color}50{/color}%, kéo dài 12s. Mỗi 30s mới thi triển 1 lần.",
+        "Tấn công tăng {color}30{/color}%; Khi đánh trúng kẻ địch có HP dưới 30%, lực tấn công của tất cả thành viên đội tăng {color}60{/color}%, kéo dài 12s. Mỗi 30s mới thi triển 1 lần.",
+        "Tấn công tăng {color}35{/color}%; Khi tấn công đánh trúng kẻ địch có HP dưới 30%, lực tấn công của tất cả thành viên đội tăng {color}70{/color}%, kéo dài 12s. Mỗi 30s mới thi triển 1 lần.",
+        "Tấn công tăng {color}40{/color}%; Khi đánh trúng kẻ địch có HP dưới 30%, lực tấn công của tất cả thành viên đội tăng {color}80{/color}%, kéo dài 12s. Mỗi 30s mới thi triển 1 lần."
+      ]
     }
   ],
   "artifacts": [
@@ -9441,6 +10110,14 @@
       "name": "Bạo Đồ Hilichurl Khiên Đá"
     },
     {
+      "key": "rockfond-rifthound",
+      "name": "Thể Nham - Chó Săn Ma Vật"
+    },
+    {
+      "key": "rockfond-rifthound-whelp",
+      "name": "Thể Nham - Ma Thú Con"
+    },
+    {
       "key": "ruin-cruiser",
       "name": "Tuần Tra Di Tích"
     },
@@ -9469,10 +10146,6 @@
       "name": "Trinh Sát Di Tích"
     },
     {
-      "key": "samurai-dog",
-      "name": "Cẩu Samurai"
-    },
-    {
       "key": "sangonomiya-cohort",
       "name": "Quân Sangonomiya"
     },
@@ -9495,6 +10168,14 @@
     {
       "key": "thunder-manifestation",
       "name": "Thực Thể Sấm Sét"
+    },
+    {
+      "key": "thundercraven-rifthound",
+      "name": "Thể Lôi - Chó Săn Ma Vật"
+    },
+    {
+      "key": "thundercraven-rifthound-whelp",
+      "name": "Thể Lôi - Ma Thú Con"
     },
     {
       "key": "thunderhelm-lawachurl",

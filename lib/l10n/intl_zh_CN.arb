@@ -13,6 +13,9 @@
   "vietnamese": "越南语",
   "indonesian": "印尼语",
   "deutsch": "Deutsch",
+  "korean": "Korean",
+  "thai": "Thai",
+  "traditionalChinese": "Chinese (Traditional)",
   "bow": "弓",
   "claymore": "双手剑",
   "sword": "单手剑",
@@ -370,5 +373,6 @@
   "charRoleBurstSupport": "元素爆发辅助",
   "melt": "融化",
   "freeze": "冻结",
-  "shield": "盾"
+  "shield": "盾",
+  "unofficial": "Unofficial"
 }

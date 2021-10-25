@@ -715,12 +715,9 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   }
 
   List<NotificationItemImage> _getImagesForRealmCurrencyNotifications({String? selectedImage}) {
-    final materials = _genshinService.getMaterials(MaterialType.currency, onlyReadyToBeUsed: false);
     //TODO: FIGURE OUT HOW CAN I REMOVE THIS KEY FROM HERE
-    return materials
-        .where((el) => el.key == 'realm-currency')
-        .mapIndex((e, i) => NotificationItemImage(itemKey: e.key, image: e.fullImagePath, isSelected: i == 0))
-        .toList();
+    final material = _genshinService.getMaterial('realm-currency');
+    return [NotificationItemImage(itemKey: material.key, image: material.fullImagePath, isSelected: true)];
   }
 
   List<NotificationItemImage> _getImagesForWeeklyBossNotifications({String? selectedImage}) {

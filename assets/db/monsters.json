@@ -3805,6 +3805,46 @@
       ]
     },
     {
+      "key": "rockfond-rifthound",
+      "image": "rockfond-rifthound.png",
+      "type": "abyssOrder",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "concealed-claw",
+          "type": "material"
+        },
+        {
+          "key": "concealed-unguis",
+          "type": "material"
+        },
+        {
+          "key": "concealed-talon",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "rockfond-rifthound-whelp",
+      "image": "rockfond-rifthound-whelp.png",
+      "type": "abyssOrder",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "concealed-claw",
+          "type": "material"
+        },
+        {
+          "key": "concealed-unguis",
+          "type": "material"
+        },
+        {
+          "key": "concealed-talon",
+          "type": "material"
+        }
+      ]
+    },
+    {
       "key": "ruin-cruiser",
       "image": "ruin-cruiser.png",
       "type": "automaton",
@@ -4141,13 +4181,6 @@
       ]
     },
     {
-      "key": "samurai-dog",
-      "image": "samurai-dog.png",
-      "type": "na",
-      "isComingSoon": false,
-      "drops": []
-    },
-    {
       "key": "sangonomiya-cohort",
       "image": "sangonomiya-cohort.png",
       "type": "na",
@@ -4440,6 +4473,46 @@
         },
         {
           "key": "mora",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "thundercraven-rifthound",
+      "image": "thundercraven-rifthound.png",
+      "type": "abyssOrder",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "concealed-claw",
+          "type": "material"
+        },
+        {
+          "key": "concealed-unguis",
+          "type": "material"
+        },
+        {
+          "key": "concealed-talon",
+          "type": "material"
+        }
+      ]
+    },
+    {
+      "key": "thundercraven-rifthound-whelp",
+      "image": "thundercraven-rifthound-whelp.png",
+      "type": "abyssOrder",
+      "isComingSoon": false,
+      "drops": [
+        {
+          "key": "concealed-claw",
+          "type": "material"
+        },
+        {
+          "key": "concealed-unguis",
+          "type": "material"
+        },
+        {
+          "key": "concealed-talon",
           "type": "material"
         }
       ]

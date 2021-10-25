@@ -1,30 +1,20 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shiori/domain/enums/enums.dart';
 
-import '../../enums/stat_type.dart';
-import '../../enums/weapon_type.dart';
+part 'weapon_card_model.freezed.dart';
 
-class WeaponCardModel {
-  final String key;
-  final String image;
-  final String name;
-  final int rarity;
-  final double baseAtk;
-  final WeaponType type;
-  final StatType subStatType;
-  final double subStatValue;
-  final bool isComingSoon;
-  final ItemLocationType locationType;
-
-  const WeaponCardModel({
-    required this.key,
-    required this.image,
-    required this.name,
-    required this.rarity,
-    required this.baseAtk,
-    required this.type,
-    required this.subStatType,
-    required this.subStatValue,
-    required this.isComingSoon,
-    required this.locationType,
-  });
+@freezed
+class WeaponCardModel with _$WeaponCardModel {
+  const factory WeaponCardModel({
+    required String key,
+    required String image,
+    required String name,
+    required int rarity,
+    required double baseAtk,
+    required WeaponType type,
+    required StatType subStatType,
+    required double subStatValue,
+    required bool isComingSoon,
+    required ItemLocationType locationType,
+  }) = _WeaponCardModel;
 }

@@ -6447,739 +6447,1408 @@
       "key": "akuoumaru",
       "name": "Akuoumaru",
       "description": "The beloved sword of the legendary \"Akuou.\" The blade is huge and majestic, but is surprisingly easy to wield.",
-      "refinement": "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {0}%. A maximum of {1}% increased Elemental Burst DMG can be achieved this way."
+      "refinements": [
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.12{/color}%. A maximum of {color}40{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.15{/color}%. A maximum of {color}50{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.18{/color}%. A maximum of {color}60{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.21{/color}%. A maximum of {color}70{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.24{/color}%. A maximum of {color}80{/color}% increased Elemental Burst DMG can be achieved this way."
+      ]
     },
     {
       "key": "alley-hunter",
       "name": "Alley Hunter",
       "description": "An intricate, opulent longbow. It once belonged to a gentleman thief who was never caught.",
-      "refinement": "While the character equipped with this weapon is in the party but not on the field, their DMG increases by {0}% every second up to a max of {1}%. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by {2}% per second until it reaches 0%."
+      "refinements": [
+        "While the character equipped with this weapon is in the party but not on the field, their DMG increases by {color}2{/color}% every second up to a max of {color}20{/color}%. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by {color}4{/color}% per second until it reaches 0%.",
+        "While the character equipped with this weapon is in the party but not on the field, their DMG increases by {color}2.5{/color}% every second up to a max of {color}25{/color}%. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by {color}5{/color}% per second until it reaches 0%.",
+        "While the character equipped with this weapon is in the party but not on the field, their DMG increases by {color}3{/color}% every second up to a max of {color}30{/color}%. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by {color}6{/color}% per second until it reaches 0%.",
+        "While the character equipped with this weapon is in the party but not on the field, their DMG increases by {color}3.5{/color}% every second up to a max of {color}35{/color}%. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by {color}7{/color}% per second until it reaches 0%.",
+        "While the character equipped with this weapon is in the party but not on the field, their DMG increases by {color}4{/color}% every second up to a max of {color}40{/color}%. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by {color}8{/color}% per second until it reaches 0%."
+      ]
     },
     {
       "key": "amenoma-kageuchi",
       "name": "Amenoma Kageuchi",
       "description": "A blade custom made for a famed samurai who could strike down a tengu warrior, known for their incredible agility, in midair.",
-      "refinement": "After casting an Elemental Skill, gain 1 Succession Seed. This effect can be triggered once every 5s. The Succession Seed lasts for 30s. Up to 3 Succession Seeds may exist simultaneously. After using an Elemental Burst, all Succession Seeds are consumed and after 2s, the character regenerates {0} Energy for each seed consumed."
+      "refinements": [
+        "After casting an Elemental Skill, gain 1 Succession Seed. This effect can be triggered once every 5s. The Succession Seed lasts for 30s. Up to 3 Succession Seeds may exist simultaneously. After using an Elemental Burst, all Succession Seeds are consumed and after 2s, the character regenerates {color}6{/color} Energy for each seed consumed.",
+        "After casting an Elemental Skill, gain 1 Succession Seed. This effect can be triggered once every 5s. The Succession Seed lasts for 30s. Up to 3 Succession Seeds may exist simultaneously. After using an Elemental Burst, all Succession Seeds are consumed and after 2s, the character regenerates {color}7.5{/color} Energy for each seed consumed.",
+        "After casting an Elemental Skill, gain 1 Succession Seed. This effect can be triggered once every 5s. The Succession Seed lasts for 30s. Up to 3 Succession Seeds may exist simultaneously. After using an Elemental Burst, all Succession Seeds are consumed and after 2s, the character regenerates {color}9{/color} Energy for each seed consumed.",
+        "After casting an Elemental Skill, gain 1 Succession Seed. This effect can be triggered once every 5s. The Succession Seed lasts for 30s. Up to 3 Succession Seeds may exist simultaneously. After using an Elemental Burst, all Succession Seeds are consumed and after 2s, the character regenerates {color}10.5{/color} Energy for each seed consumed.",
+        "After casting an Elemental Skill, gain 1 Succession Seed. This effect can be triggered once every 5s. The Succession Seed lasts for 30s. Up to 3 Succession Seeds may exist simultaneously. After using an Elemental Burst, all Succession Seeds are consumed and after 2s, the character regenerates {color}12{/color} Energy for each seed consumed."
+      ]
     },
     {
       "key": "amos-bow",
       "name": "Amos' Bow",
       "description": "An extremely ancient bow that has retained its power despite its original master being long gone. It draws power from everyone and everything in the world, and the further away you are from that which your heart desires, the more powerful it is.",
-      "refinement": "Increases Normal and Charged Attack DMG by {0}%. After a Normal or Charged Attack is fired, DMG dealt increases by a further {1}% every 0.1s the arrow is in the air for up to 5 times."
+      "refinements": [
+        "Increases Normal and Charged Attack DMG by {color}12{/color}%. After a Normal or Charged Attack is fired, DMG dealt increases by a further {color}8{/color}% every 0.1s the arrow is in the air for up to 5 times.",
+        "Increases Normal and Charged Attack DMG by {color}15{/color}%. After a Normal or Charged Attack is fired, DMG dealt increases by a further {color}10{/color}% every 0.1s the arrow is in the air for up to 5 times.",
+        "Increases Normal and Charged Attack DMG by {color}18{/color}%. After a Normal or Charged Attack is fired, DMG dealt increases by a further {color}12{/color}% every 0.1s the arrow is in the air for up to 5 times.",
+        "Increases Normal and Charged Attack DMG by {color}21{/color}%. After a Normal or Charged Attack is fired, DMG dealt increases by a further {color}14{/color}% every 0.1s the arrow is in the air for up to 5 times.",
+        "Increases Normal and Charged Attack DMG by {color}24{/color}%. After a Normal or Charged Attack is fired, DMG dealt increases by a further {color}16{/color}% every 0.1s the arrow is in the air for up to 5 times."
+      ]
     },
     {
       "key": "apprentices-notes",
       "name": "Apprentice's Notes",
       "description": "Notes left behind by a top student. Many useful spells are listed, and the handwriting is beautiful.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "aquila-favonia",
       "name": "Aquila Favonia",
       "description": "The soul of the Knights of Favonius. Millennia later, it still calls on the winds of swift justice to vanquish all evil — just like the last heroine who wielded it.",
-      "refinement": "ATK is increased by {0}%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {1}% of ATK and dealing {2}% of ATK as DMG to surrounding opponents. This effect can only occur once every 15s."
+      "refinements": [
+        "ATK is increased by {color}20{/color}%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {color}100{/color}% of ATK and dealing {color}200{/color}% of ATK as DMG to surrounding opponents. This effect can only occur once every 15s.",
+        "ATK is increased by {color}25{/color}%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {color}115{/color}% of ATK and dealing {color}230{/color}% of ATK as DMG to surrounding opponents. This effect can only occur once every 15s.",
+        "ATK is increased by {color}30{/color}%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {color}130{/color}% of ATK and dealing {color}260{/color}% of ATK as DMG to surrounding opponents. This effect can only occur once every 15s.",
+        "ATK is increased by {color}35{/color}%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {color}145{/color}% of ATK and dealing {color}290{/color}% of ATK as DMG to surrounding opponents. This effect can only occur once every 15s.",
+        "ATK is increased by {color}40{/color}%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {color}160{/color}% of ATK and dealing {color}320{/color}% of ATK as DMG to surrounding opponents. This effect can only occur once every 15s."
+      ]
     },
     {
       "key": "beginners-protector",
       "name": "Beginner's Protector",
       "description": "A polearm as straight as a flag pole. Well suited to most combat situations, it has an imposing presence when swung.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "black-tassel",
       "name": "Black Tassel",
       "description": "An exceptionally powerful polearm that also offers a simple but elegant solution to the issue of the easily stained white tassel.",
-      "refinement": "Increases DMG against slimes by {0}%."
+      "refinements": [
+        "Increases DMG against slimes by {color}40{/color}%.",
+        "Increases DMG against slimes by {color}50{/color}%.",
+        "Increases DMG against slimes by {color}60{/color}%.",
+        "Increases DMG against slimes by {color}70{/color}%.",
+        "Increases DMG against slimes by {color}80{/color}%."
+      ]
     },
     {
       "key": "blackcliff-agate",
       "name": "Blackcliff Agate",
       "description": "A mysterious catalyst made of a material known as \"blackcliff.\" It has an ominous crimson glow that seems to pulse in synchronization with the tremors from deep within the earth.",
-      "refinement": "After defeating an enemy, ATK is increased by {0}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "refinements": [
+        "After defeating an enemy, ATK is increased by {color}12{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an enemy, ATK is increased by {color}15{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an enemy, ATK is increased by {color}18{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an enemy, ATK is increased by {color}21{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an enemy, ATK is increased by {color}24{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      ]
     },
     {
       "key": "blackcliff-longsword",
       "name": "Blackcliff Longsword",
       "description": "A sword made of a material known as \"blackcliff.\" It has a dark crimson glow on its black blade.",
-      "refinement": "After defeating an opponent, ATK is increased by {0}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "refinements": [
+        "After defeating an opponent, ATK is increased by {color}12{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an opponent, ATK is increased by {color}15{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an opponent, ATK is increased by {color}18{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an opponent, ATK is increased by {color}21{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an opponent, ATK is increased by {color}24{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      ]
     },
     {
       "key": "blackcliff-pole",
       "name": "Blackcliff Pole",
       "description": "A weapon made of blackcliff and aerosiderite. There is a dark crimson glow on its cold black sheen.",
-      "refinement": "After defeating an enemy, ATK is increased by {0}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "refinements": [
+        "After defeating an enemy, ATK is increased by {color}12{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an enemy, ATK is increased by {color}15{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an enemy, ATK is increased by {color}18{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an enemy, ATK is increased by {color}21{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an enemy, ATK is increased by {color}24{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      ]
     },
     {
       "key": "blackcliff-slasher",
       "name": "Blackcliff Slasher",
       "description": "An extremely sturdy greatsword from the Blackcliff Forge. It has a dark crimson color from the blade to pommel.",
-      "refinement": "After defeating an opponent, ATK is increased by {0}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "refinements": [
+        "After defeating an opponent, ATK is increased by {color}12{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an opponent, ATK is increased by {color}15{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an enemy, ATK is increased by {color}18{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an enemy, ATK is increased by {color}21{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an enemy, ATK is increased by {color}24{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      ]
     },
     {
       "key": "blackcliff-warbow",
       "name": "Blackcliff Warbow",
       "description": "A bow made of blackcliff that features extremely sturdy bow limbs. It requires an archer with a strong bow arm to use.",
-      "refinement": "After defeating an enemy, ATK is increased by {0}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      "refinements": [
+        "After defeating an enemy, ATK is increased by {color}12{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an enemy, ATK is increased by {color}15{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an enemy, ATK is increased by {color}18{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an enemy, ATK is increased by {color}21{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+        "After defeating an enemy, ATK is increased by {color}24{/color}% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others."
+      ]
     },
     {
       "key": "bloodtainted-greatsword",
       "name": "Bloodtainted Greatsword",
       "description": "A steel sword that is said to have been coated with dragon blood, rendering it invulnerable to damage. This effect is not extended to its wielder, however.",
-      "refinement": "Increases DMG dealt against opponents affected by Pyro or Electro by {0}%."
+      "refinements": [
+        "Increases DMG dealt against opponents affected by Pyro or Electro by {color}12{/color}%.",
+        "Increases DMG dealt against opponents affected by Pyro or Electro by {color}15{/color}%.",
+        "Increases DMG dealt against opponents affected by Pyro or Electro by {color}18{/color}%.",
+        "Increases DMG dealt against opponents affected by Pyro or Electro by {color}21{/color}%.",
+        "Increases DMG against opponents affected by Pyro or Electro by {color}24{/color}%."
+      ]
     },
     {
       "key": "compound-bow",
       "name": "Compound Bow",
       "description": "An exotic metallic bow from a distant land. Though extremely difficult to maintain, it is easy to nock and fires with tremendous force.",
-      "refinement": "Normal Attack and Charged Attack hits increase ATK by {0}% and Normal ATK SPD by {1}% for 6s. Max 4 stacks. Can only occur once every 0.3s."
+      "refinements": [
+        "Normal Attack and Charged Attack hits increase ATK by {color}4{/color}% and Normal ATK SPD by {color}1.2{/color}% for 6s. Max 4 stacks. Can only occur once every 0.3s.",
+        "Normal Attack and Charged Attack hits increase ATK by {color}5{/color}% and Normal ATK SPD by {color}1.5{/color}% for 6s. Max 4 stacks. Can only occur once every 0.3s.",
+        "Normal Attack and Charged Attack hits increase ATK by {color}6{/color}% and Normal ATK SPD by {color}1.8{/color}% for 6s. Max 4 stacks. Can only occur once every 0.3s.",
+        "Normal Attack and Charged Attack hits increase ATK by {color}7{/color}% and Normal ATK SPD by {color}2.1{/color}% for 6s. Max 4 stacks. Can only occur once every 0.3s.",
+        "Normal Attack and Charged Attack hits increase ATK by {color}8{/color}% and Normal ATK SPD by {color}2.4{/color}% for 6s. Max 4 stacks. Can only occur once every 0.3s."
+      ]
     },
     {
       "key": "cool-steel",
       "name": "Cool Steel",
       "description": "A reliable steel-forged weapon that serves as a testament to the great adventures of its old master.",
-      "refinement": "Increases DMG against opponents affected by Hydro or Cryo by {0}%."
+      "refinements": [
+        "Increases DMG against opponents affected by Hydro or Cryo by {color}12{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Cryo by {color}15{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Cryo by {color}18{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Cryo by {color}21{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Cryo by {color}24{/color}%."
+      ]
     },
     {
       "key": "crescent-pike",
       "name": "Crescent Pike",
       "description": "An exotic weapon with an extremely long blade on the top and a crescent blade at the bottom. It found its way into Liyue through foreign traders. With practice, it can deal heavy damage.",
-      "refinement": "After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal additional DMG equal to {0}% of ATK for 5s."
+      "refinements": [
+        "After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal additional DMG equal to {color}20{/color}% of ATK for 5s.",
+        "After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal additional DMG equal to {color}25{/color}% of ATK for 5s.",
+        "After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal additional DMG equal to {color}30{/color}% of ATK for 5s.",
+        "After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal additional DMG equal to {color}35{/color}% of ATK for 5s.",
+        "After picking up an Elemental Orb/Particle, Normal and Charged Attacks deal additional DMG equal to {color}40{/color}% of ATK for 5s."
+      ]
     },
     {
       "key": "dark-iron-sword",
       "name": "Dark Iron Sword",
       "description": "A perfectly ordinary iron sword, just slightly darker than most.",
-      "refinement": "Upon causing an Overloaded, Superconduct, Electro-Charged, or an Electro-infused Swirl reaction, ATK is increased by {0}% for 12s."
+      "refinements": [
+        "Upon causing an Overloaded, Superconduct, Electro-Charged, or an Electro-infused Swirl reaction, ATK is increased by {color}20{/color}% for 12s.",
+        "Upon causing an Overloaded, Superconduct, Electro-Charged, or an Electro-infused Swirl reaction, ATK is increased by {color}25{/color}% for 12s.",
+        "Upon causing an Overloaded, Superconduct, Electro-Charged, or an Electro-infused Swirl reaction, ATK is increased by {color}30{/color}% for 12s.",
+        "Upon causing an Overloaded, Superconduct, Electro-Charged, or an Electro-infused Swirl reaction, ATK is increased by {color}35{/color}% for 12s.",
+        "Upon causing an Overloaded, Superconduct, Electro-Charged, or an Electro-infused Swirl reaction, ATK is increased by {color}40{/color}% for 12s."
+      ]
     },
     {
       "key": "deathmatch",
       "name": "Deathmatch",
       "description": "A sharp crimson polearm that was once a gladiator's priceless treasure. Its awl has been stained by the blood of countless beasts and men.",
-      "refinement": "If there are at least 2 opponents nearby, ATK is increased by {0}% and DEF is increased by {1}%. If there are fewer than 2 opponents nearby, ATK is increased by {2}%."
+      "refinements": [
+        "If there are at least 2 opponents nearby, ATK is increased by {color}16{/color}% and DEF is increased by {color}16{/color}%. If there are fewer than 2 opponents nearby, ATK is increased by {color}24{/color}%.",
+        "If there are at least 2 opponents nearby, ATK is increased by {color}20{/color}% and DEF is increased by {color}20{/color}%. If there are fewer than 2 opponents nearby, ATK is increased by {color}30{/color}%.",
+        "If there are at least 2 opponents nearby, ATK is increased by {color}24{/color}% and DEF is increased by {color}24{/color}%. If there are fewer than 2 opponents nearby, ATK is increased by {color}36{/color}%.",
+        "If there are at least 2 opponents nearby, ATK is increased by {color}28{/color}% and DEF is increased by {color}28{/color}%. If there are fewer than 2 opponents nearby, ATK is increased by {color}42{/color}%.",
+        "If there are at least 2 opponents nearby, ATK is increased by {color}32{/color}% and DEF is increased by {color}32{/color}%. If there are fewer than 2 opponents nearby, ATK is increased by {color}48{/color}%."
+      ]
     },
     {
       "key": "debate-club",
       "name": "Debate Club",
       "description": "A handy club made of fine steel. The most persuasive line of reasoning in any debater's arsenal.",
-      "refinement": "After using an Elemental Skill, on hit, Normal and Charged Attacks deal additional DMG equal to {0}% of ATK in a small AoE. Effect lasts 15s. DMG can only occur once every 3s."
+      "refinements": [
+        "After using an Elemental Skill, on hit, Normal and Charged Attacks deal additional DMG equal to {color}60{/color}% of ATK in a small AoE. Effect lasts 15s. DMG can only occur once every 3s.",
+        "After using an Elemental Skill, on hit, Normal and Charged Attacks deal additional DMG equal to {color}75{/color}% of ATK in a small AoE. Effect lasts 15s. DMG can only occur once every 3s.",
+        "After using an Elemental Skill, on hit, Normal and Charged Attacks deal additional DMG equal to {color}90{/color}% of ATK in a small AoE. Effect lasts 15s. DMG can only occur once every 3s.",
+        "After using an Elemental Skill, on hit, Normal and Charged Attacks deal additional DMG equal to {color}105{/color}% of ATK in a small AoE. Effect lasts 15s. DMG can only occur once every 3s.",
+        "After using an Elemental Skill, on hit, Normal and Charged Attacks deal additional DMG equal to {color}120{/color}% of ATK in a small AoE. Effect lasts 15s. DMG can only occur once every 3s."
+      ]
     },
     {
       "key": "dodoco-tales",
       "name": "Dodoco Tales",
       "description": "A children's book filled with childish short stories at which one cannot help but laugh.\r\nEven those readers who have long reached adulthood cannot help but be absorbed by the innocent, naive little adventures portrayed within.",
-      "refinement": "Normal Attack hits on opponents increase Charged Attack DMG by {0}% for 6s. Charged Attack hits on opponents increase ATK by {1}% for 6s."
+      "refinements": [
+        "Normal Attack hits on opponents increase Charged Attack DMG by {color}16{/color}% for 6s. Charged Attack hits on opponents increase ATK by {color}8{/color}% for 6s.",
+        "Normal Attack hits on opponents increase Charged Attack DMG by {color}20{/color}% for 6s. Charged Attack hits on opponents increase ATK by {color}10{/color}% for 6s.",
+        "Normal Attack hits on opponents increase Charged Attack DMG by {color}24{/color}% for 6s. Charged Attack hits on opponents increase ATK by {color}12{/color}% for 6s.",
+        "Normal Attack hits on opponents increase Charged Attack DMG by {color}28{/color}% for 6s. Charged Attack hits on opponents increase ATK by {color}14{/color}% for 6s.",
+        "Normal Attack hits on opponents increase Charged Attack DMG by {color}32{/color}% for 6s. Charged Attack hits on opponents increase ATK by {color}16{/color}% for 6s."
+      ]
     },
     {
       "key": "dragons-bane",
       "name": "Dragon's Bane",
       "description": "A polearm decorated with an entwining golden dragon. Light and sharp, this weapon may very well kill dragons with ease.",
-      "refinement": "Increases DMG against opponents affected by Hydro or Pyro by {0}%."
+      "refinements": [
+        "Increases DMG against opponents affected by Hydro or Pyro by {color}20{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Pyro by {color}24{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Pyro by {color}28{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Pyro by {color}32{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Pyro by {color}36{/color}%."
+      ]
     },
     {
       "key": "dragonspine-spear",
       "name": "Dragonspine Spear",
       "description": "A spear created from the fang of a dragon. It is oddly warm to the touch.",
-      "refinement": "Hitting an opponent with Normal and Charged Attacks has a {0}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {1}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {2}% of ATK. Can only occur once every 10s."
+      "refinements": [
+        "Hitting an opponent with Normal and Charged Attacks has a {color}60{/color}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {color}80{/color}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {color}200{/color}% of ATK. Can only occur once every 10s.",
+        "Hitting an opponent with Normal and Charged Attacks has a {color}70{/color}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {color}95{/color}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {color}240{/color}% of ATK. Can only occur once every 10s.",
+        "Hitting an opponent with Normal and Charged Attacks has an {color}80{/color}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {color}110{/color}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {color}280{/color}% of ATK. Can only occur once every 10s.",
+        "Hitting an opponent with Normal and Charged Attacks has a {color}90{/color}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {color}125{/color}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {color}320{/color}% of ATK. Can only occur once every 10s.",
+        "Hitting an opponent with Normal and Charged Attacks has a {color}100{/color}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {color}140{/color}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {color}360{/color}% of ATK. Can only occur once every 10s."
+      ]
     },
     {
       "key": "dull-blade",
       "name": "Dull Blade",
       "description": "Youthful dreams and the thrill of adventure. If this isn't enough, then make it up with valiance.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "elegy-for-the-end",
       "name": "Elegy for the End",
       "description": "A bow as lovely as any bard's lyre, its arrows pierce the heart like a lamenting sigh.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by {0}. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by {1} and increases ATK by {2}%. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "refinements": [
+        "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by {color}60{/color}. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by {color}100{/color} and increases ATK by {color}20{/color}%. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack.",
+        "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by {color}75{/color}. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by {color}125{/color} and increases ATK by {color}25{/color}%. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack.",
+        "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by {color}90{/color}. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by {color}150{/color} and increases ATK by {color}30{/color}%. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack.",
+        "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by {color}105{/color}. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by {color}175{/color} and increases ATK by {color}35{/color}%. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack.",
+        "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases Elemental Mastery by {color}120{/color}. When the Elemental Skills or Elemental Bursts of the character wielding this weapon hit opponents, that character gains a Sigil of Remembrance. This effect can be triggered once every 0.2s and can be triggered even if said character is not on the field. When you possess 4 Sigils of Remembrance, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Farewell Song\" effect for 12s. \"Millennial Movement: Farewell Song\" increases Elemental Mastery by {color}200{/color} and increases ATK by {color}40{/color}%. Once this effect is triggered, you will not gain Sigils of Remembrance for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      ]
     },
     {
       "key": "emerald-orb",
       "name": "Emerald Orb",
       "description": "A catalyst carved out of the hard jade from Jueyun Karst north of Liyue. Small, light, and durable, it is known more colloquially as the \"jade ball.\"",
-      "refinement": "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by {0}% for 12s."
+      "refinements": [
+        "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by {color}20{/color}% for 12s.",
+        "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by {color}25{/color}% for 12s.",
+        "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by {color}30{/color}% for 12s.",
+        "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by {color}35{/color}% for 12s.",
+        "Upon causing a Vaporize, Electro-Charged, Frozen, or a Hydro-infused Swirl reaction, increases ATK by {color}40{/color}% for 12s."
+      ]
     },
     {
       "key": "engulfing-lightning",
       "name": "Engulfing Lightning",
       "description": "A naginata used to \"cut grass.\" Any army that stands before this weapon will probably be likewise cut down...",
-      "refinement": "ATK increased by {0}% of Energy Recharge over the base 100%. You can gain a maximum bonus of {1}% ATK. Gain {2}% Energy Recharge for 12s after using an Elemental Burst."
+      "refinements": [
+        "ATK increased by {color}28{/color}% of Energy Recharge over the base 100%. You can gain a maximum bonus of {color}80{/color}% ATK. Gain {color}30{/color}% Energy Recharge for 12s after using an Elemental Burst.",
+        "ATK increased by {color}35{/color}% of Energy Recharge over the base 100%. You can gain a maximum bonus of {color}90{/color}% ATK. Gain {color}35{/color}% Energy Recharge for 12s after using an Elemental Burst.",
+        "ATK increased by {color}42{/color}% of Energy Recharge over the base 100%. You can gain a maximum bonus of {color}100{/color}% ATK. Gain {color}40{/color}% Energy Recharge for 12s after using an Elemental Burst.",
+        "ATK increased by {color}49{/color}% of Energy Recharge over the base 100%. You can gain a maximum bonus of {color}110{/color}% ATK. Gain {color}45{/color}% Energy Recharge for 12s after using an Elemental Burst.",
+        "ATK increased by {color}56{/color}% of Energy Recharge over the base 100%. You can gain a maximum bonus of {color}120{/color}% ATK. Gain {color}50{/color}% Energy Recharge for 12s after using an Elemental Burst."
+      ]
     },
     {
       "key": "everlasting-moonglow",
       "name": "Everlasting Moonglow",
       "description": "A string of lovely jasper from the deep sea. It shines with a pure radiance like that of the moon, and just as ever-distant.",
-      "refinement": "Healing Bonus increased by {0}%, Normal Attack DMG is increased by {1}% of the Max HP of the character equipping this weapon. For 12s after using an Elemental Burst, Normal Attacks that hit opponents will restore 0.6 Energy. Energy can be restored this way once every 0.1s."
+      "refinements": [
+        "Healing Bonus increased by {color}10{/color}%, Normal Attack DMG is increased by {color}1{/color}% of the Max HP of the character equipping this weapon. For 12s after using an Elemental Burst, Normal Attacks that hit opponents will restore 0.6 Energy. Energy can be restored this way once every 0.1s.",
+        "Healing Bonus increased by {color}12.5{/color}%, Normal Attack DMG is increased by {color}1.5{/color}% of the Max HP of the character equipping this weapon. For 12s after using an Elemental Burst, Normal Attacks that hit opponents will restore 0.6 Energy. Energy can be restored this way once every 0.1s.",
+        "Healing Bonus increased by {color}15{/color}%, Normal Attack DMG is increased by {color}2{/color}% of the Max HP of the character equipping this weapon. For 12s after using an Elemental Burst, Normal Attacks that hit opponents will restore 0.6 Energy. Energy can be restored this way once every 0.1s.",
+        "Healing Bonus increased by {color}17.5{/color}%, Normal Attack DMG is increased by {color}2.5{/color}% of the Max HP of the character equipping this weapon. For 12s after using an Elemental Burst, Normal Attacks that hit opponents will restore 0.6 Energy. Energy can be restored this way once every 0.1s.",
+        "Healing Bonus increased by {color}20{/color}%, Normal Attack DMG is increased by {color}3{/color}% of the Max HP of the character equipping this weapon. For 12s after using an Elemental Burst, Normal Attacks that hit opponents will restore 0.6 Energy. Energy can be restored this way once every 0.1s."
+      ]
     },
     {
       "key": "eye-of-perception",
       "name": "Eye of Perception",
       "description": "A dim black glaze pearl that is said to have the power to read the purity of one's heart.",
-      "refinement": "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing {0}% ATK as DMG. This bolt can bounce between opponents a maximum of 4 times. This effect can occur once every {1}s."
+      "refinements": [
+        "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing {color}240{/color}% ATK as DMG. This bolt can bounce between opponents a maximum of 4 times. This effect can occur once every {color}12{/color}s.",
+        "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing {color}270{/color}% ATK as DMG. This bolt can bounce between opponents a maximum of 4 times. This effect can occur once every {color}11{/color}s.",
+        "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing {color}300{/color}% ATK as DMG. This bolt can bounce between opponents a maximum of 4 times. This effect can occur once every {color}10{/color}s.",
+        "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing {color}330{/color}% ATK as DMG. This bolt can bounce between opponents a maximum of 4 times. This effect can occur once every {color}9{/color}s.",
+        "Normal and Charged Attacks have a 50% chance to fire a Bolt of Perception, dealing {color}360{/color}% ATK as DMG. This bolt can bounce between opponents a maximum of 4 times. This effect can occur once every {color}8{/color}s."
+      ]
     },
     {
       "key": "favonius-codex",
       "name": "Favonius Codex",
       "description": "A secret tome that belonged to the scholars of the Knights of Favonius. It describes the logic and power of elements and matter.",
-      "refinement": "CRIT Hits have a {0}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {1}s."
+      "refinements": [
+        "CRIT Hits have a {color}60{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}12{/color}s.",
+        "CRIT Hits have a {color}70{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}10.5{/color}s.",
+        "CRIT Hits have a {color}80{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}9{/color}s.",
+        "CRIT Hits have a {color}90{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}7.5{/color}s.",
+        "CRIT Hits have a {color}100{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}6{/color}s."
+      ]
     },
     {
       "key": "favonius-greatsword",
       "name": "Favonius Greatsword",
       "description": "A heavy ceremonial sword of the Knights of Favonius. It channels elemental power easily and is highly destructive.",
-      "refinement": "CRIT Hits have a {0}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {1}s."
+      "refinements": [
+        "CRIT Hits have a {color}60{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}12{/color}s.",
+        "CRIT Hits have a {color}70{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}10.5{/color}s.",
+        "CRIT Hits have a {color}80{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}9{/color}s.",
+        "CRIT Hits have a {color}90{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}7.5{/color}s.",
+        "CRIT Hits have a {color}100{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}6{/color}s."
+      ]
     },
     {
       "key": "favonius-lance",
       "name": "Favonius Lance",
       "description": "A polearm made in the style of the Knights of Favonius. Its shaft is straight, and its tip flows lightly like the wind.",
-      "refinement": "CRIT Hits have a {0}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {1}s."
+      "refinements": [
+        "CRIT Hits have a {color}60{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}12{/color}s.",
+        "CRIT Hits have a {color}70{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}10.5{/color}s.",
+        "CRIT Hits have a {color}80{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}9{/color}s.",
+        "CRIT Hits have a {color}90{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}7.5{/color}s.",
+        "CRIT Hits have a {color}100{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}6{/color}s."
+      ]
     },
     {
       "key": "favonius-sword",
       "name": "Favonius Sword",
       "description": "A standard-issue longsword of the Knights of Favonius. When you're armed with this agile and sharp weapon, channeling the power of the elements has never been so easy!",
-      "refinement": "CRIT Hits have a {0}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {1}s."
+      "refinements": [
+        "CRIT Hits have a {color}60{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}12{/color}s.",
+        "CRIT Hits have a {color}70{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}10.5{/color}s.",
+        "CRIT Hits have a {color}80{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}9{/color}s.",
+        "CRIT Hits have a {color}90{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}7.5{/color}s.",
+        "CRIT Hits have a {color}100{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}6{/color}s."
+      ]
     },
     {
       "key": "favonius-warbow",
       "name": "Favonius Warbow",
       "description": "A standard-issue recurve bow of the Knights of Favonius. Only the best archers can unleash its full potential.",
-      "refinement": "CRIT Hits have a {0}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {1}s."
+      "refinements": [
+        "CRIT Hits have a {color}60{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}12{/color}s.",
+        "CRIT Hits have a {color}70{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}10.5{/color}s.",
+        "CRIT Hits have a {color}80{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}9{/color}s.",
+        "CRIT Hits have a {color}90{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}7.5{/color}s.",
+        "CRIT Hits have a {color}100{/color}% chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {color}6{/color}s."
+      ]
     },
     {
       "key": "ferrous-shadow",
       "name": "Ferrous Shadow",
       "description": "A replica of the famed sword of Arundolyn, the Lion of Light. Feel the power of a legendary hero as you hold this sword in your hand! Imagine yourself as the great warrior himself! Note: Daydreaming not recommended in live combat.",
-      "refinement": "When HP falls below {0}%, increases Charged Attack DMG by {1}% and Charged Attacks become harder to interrupt."
+      "refinements": [
+        "When HP falls below {color}70{/color}%, increases Charged Attack DMG by {color}30{/color}% and Charged Attacks become harder to interrupt.",
+        "When HP falls below {color}75{/color}%, increases Charged Attack DMG by {color}35{/color}% and Charged Attacks become harder to interrupt.",
+        "When HP falls below {color}80{/color}%, increases Charged Attack DMG by {color}40{/color}% and Charged Attacks become harder to interrupt.",
+        "When HP falls below {color}85{/color}%, increases Charged Attack DMG by {color}45{/color}% and Charged Attacks become harder to interrupt.",
+        "When HP falls below {color}90{/color}%, increases Charged Attack DMG by {color}50{/color}% and Charged Attacks become harder to interrupt."
+      ]
     },
     {
       "key": "festering-desire",
       "name": "Festering Desire",
       "description": "A creepy straight sword that almost seems to yearn for life. It drips with a shriveling venom that could even corrupt a mighty dragon.",
-      "refinement": "Increases Elemental Skill DMG by {0}% and Elemental Skill CRIT Rate by {1}%."
+      "refinements": [
+        "Increases Elemental Skill DMG by {color}16{/color}% and Elemental Skill CRIT Rate by {color}6{/color}%.",
+        "Increases Elemental Skill DMG by {color}20{/color}% and Elemental Skill CRIT Rate by {color}7.5{/color}%.",
+        "Increases Elemental Skill DMG by {color}24{/color}% and Elemental Skill CRIT Rate by {color}9{/color}%.",
+        "Increases Elemental Skill DMG by {color}28{/color}% and Elemental Skill CRIT Rate by {color}10.5{/color}%.",
+        "Increases Elemental Skill DMG by {color}32{/color}% and Elemental Skill CRIT Rate by {color}12{/color}%."
+      ]
     },
     {
       "key": "fillet-blade",
       "name": "Fillet Blade",
       "description": "A sharp filleting knife. The blade is long, thin, and incredibly sharp.",
-      "refinement": "On hit, has a 50% chance to deal {0}% ATK DMG to a single opponent. Can only occur once every {1}s."
+      "refinements": [
+        "On hit, has a 50% chance to deal {color}240{/color}% ATK DMG to a single opponent. Can only occur once every {color}15{/color}s.",
+        "On hit, has a 50% chance to deal {color}280{/color}% ATK DMG to a single opponent. Can only occur once every {color}14{/color}s.",
+        "On hit, has a 50% chance to deal {color}320{/color}% ATK DMG to a single opponent. Can only occur once every {color}13{/color}s.",
+        "On hit, has a 50% chance to deal {color}360{/color}% ATK DMG to a single opponent. Can only occur once every {color}12{/color}s.",
+        "On hit, has a 50% chance to deal {color}400{/color}% ATK DMG to a single target. Can only occur once every {color}11{/color}s."
+      ]
     },
     {
       "key": "freedom-sworn",
       "name": "Freedom-Sworn",
       "description": "A straight sword, azure as antediluvian song, and as keen as the oaths of freedom taken in the Land of Wind.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {0}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {1}% and increases ATK by {2}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "refinements": [
+        "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {color}10{/color}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {color}16{/color}% and increases ATK by {color}20{/color}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack.",
+        "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {color}12.5{/color}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {color}20{/color}% and increases ATK by {color}25{/color}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack.",
+        "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {color}15{/color}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {color}24{/color}% and increases ATK by {color}30{/color}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack.",
+        "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {color}17.5{/color}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {color}28{/color}% and increases ATK by {color}35{/color}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack.",
+        "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases DMG by {color}20{/color}%. When the character wielding this weapon triggers Elemental Reactions, they gain a Sigil of Rebellion. This effect can be triggered once every 0.5s and can be triggered even if said character is not on the field. When you possess 2 Sigils of Rebellion, all of them will be consumed and all nearby party members will obtain \"Millennial Movement: Song of Resistance\" for 12s. \"Millennial Movement: Song of Resistance\" increases Normal, Charged and Plunging Attack DMG by {color}32{/color}% and increases ATK by {color}40{/color}%. Once this effect is triggered, you will not gain Sigils of Rebellion for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      ]
     },
     {
       "key": "frostbearer",
       "name": "Frostbearer",
       "description": "A fruit that possesses a strange, frosty will. A faint sense of agony emanates from it.",
-      "refinement": "Hitting an opponent with Normal and Charged Attacks has a {0}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {1}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {2}% of ATK. Can only occur once every 10s."
+      "refinements": [
+        "Hitting an opponent with Normal and Charged Attacks has a {color}60{/color}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {color}80{/color}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {color}200{/color}% of ATK. Can only occur once every 10s.",
+        "Hitting an opponent with Normal and Charged Attacks has a {color}70{/color}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {color}95{/color}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {color}240{/color}% of ATK. Can only occur once every 10s.",
+        "Hitting an opponent with Normal and Charged Attacks has an {color}80{/color}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {color}110{/color}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {color}280{/color}% of ATK. Can only occur once every 10s.",
+        "Hitting an opponent with Normal and Charged Attacks has a {color}90{/color}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {color}125{/color}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {color}320{/color}% of ATK. Can only occur once every 10s.",
+        "Hitting an opponent with Normal and Charged Attacks has a {color}100{/color}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {color}140{/color}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {color}360{/color}% of ATK. Can only occur once every 10s."
+      ]
     },
     {
       "key": "hakushin-ring",
       "name": "Hakushin Ring",
       "description": "A catalyst that carries the memory of the Kitsune Saiguu of ancient times. However, this device is but an impoverished vessel for the full breadth of her thought.",
-      "refinement": "After the character equipped with this weapon triggers an Electro elemental reaction, nearby party members of an Elemental Type involved in the elemental reaction receive a {0}% Elemental DMG Bonus for their element, lasting 6s. Elemental Bonuses gained in this way cannot be stacked."
+      "refinements": [
+        "After the character equipped with this weapon triggers an Electro elemental reaction, nearby party members of an Elemental Type involved in the elemental reaction receive a {color}10{/color}% Elemental DMG Bonus for their element, lasting 6s. Elemental Bonuses gained in this way cannot be stacked.",
+        "After the character equipped with this weapon triggers an Electro elemental reaction, nearby party members of an Elemental Type involved in the elemental reaction receive a {color}12.5{/color}% Elemental DMG Bonus for their element, lasting 6s. Elemental Bonuses gained in this way cannot be stacked.",
+        "After the character equipped with this weapon triggers an Electro elemental reaction, nearby party members of an Elemental Type involved in the elemental reaction receive a {color}15{/color}% Elemental DMG Bonus for their element, lasting 6s. Elemental Bonuses gained in this way cannot be stacked.",
+        "After the character equipped with this weapon triggers an Electro elemental reaction, nearby party members of an Elemental Type involved in the elemental reaction receive a {color}17.5{/color}% Elemental DMG Bonus for their element, lasting 6s. Elemental Bonuses gained in this way cannot be stacked.",
+        "After the character equipped with this weapon triggers an Electro elemental reaction, nearby party members of an Elemental Type involved in the elemental reaction receive a {color}20{/color}% Elemental DMG Bonus for their element, lasting 6s. Elemental Bonuses gained in this way cannot be stacked."
+      ]
     },
     {
       "key": "halberd",
       "name": "Halberd",
       "description": "A polearm with an axe blade mounted on top that can deal quite a lot of damage. It's favored by the Millelith officers.",
-      "refinement": "Normal Attacks deal an additional {0}% ATK as DMG. Can only occur once every 10s."
+      "refinements": [
+        "Normal Attacks deal an additional {color}160{/color}% ATK as DMG. Can only occur once every 10s.",
+        "Normal Attacks deal an additional {color}200{/color}% ATK as DMG. This effect can only occur once every 10s.",
+        "Normal Attacks deal an additional {color}240{/color}% ATK as DMG. This effect can only occur once every 10s.",
+        "Normal Attacks deal an additional {color}280{/color}% ATK as DMG. This effect can only occur once every 10s.",
+        "Normal Attacks deal an additional {color}320{/color}% ATK as DMG. This effect can only occur once every 10s."
+      ]
     },
     {
       "key": "hamayumi",
       "name": "Hamayumi",
       "description": "A certain shrine maiden once owned this warbow. It was made with surpassing skill, and is both intricate and sturdy.",
-      "refinement": "Increases Normal Attack DMG by {0}% and Charged Attack DMG by {1}%. When the equipping character's Energy reaches 100%, this effect is increased by 100%."
+      "refinements": [
+        "Increases Normal Attack DMG by {color}16{/color}% and Charged Attack DMG by {color}12{/color}%. When the equipping character's Energy reaches 100%, this effect is increased by 100%.",
+        "Increases Normal Attack DMG by {color}20{/color}% and Charged Attack DMG by {color}15{/color}%. When the equipping character's Energy reaches 100%, this effect is increased by 100%.",
+        "Increases Normal Attack DMG by {color}24{/color}% and Charged Attack DMG by {color}18{/color}%. When the equipping character's Energy reaches 100%, this effect is increased by 100%.",
+        "Increases Normal Attack DMG by {color}28{/color}% and Charged Attack DMG by {color}21{/color}%. When the equipping character's Energy reaches 100%, this effect is increased by 100%.",
+        "Increases Normal Attack DMG by {color}32{/color}% and Charged Attack DMG by {color}24{/color}%. When the equipping character's Energy reaches 100%, this effect is increased by 100%."
+      ]
     },
     {
       "key": "harbinger-of-dawn",
       "name": "Harbinger of Dawn",
       "description": "A sword that once shone like the sun. The wielder of this sword will be blessed with a \"feel-good\" buff. The reflective material on the blade has long worn off.",
-      "refinement": "When HP is above 90%, increases CRIT Rate by {0}%."
+      "refinements": [
+        "When HP is above 90%, increases CRIT Rate by {color}14{/color}%.",
+        "When HP is above 90%, increases CRIT Rate by {color}17.5{/color}%.",
+        "When HP is above 90%, increases CRIT Rate by {color}21{/color}%.",
+        "When HP is above 90%, increases CRIT Rate by {color}24.5{/color}%.",
+        "When HP is above 90%, increases CRIT Rate by {color}28{/color}%."
+      ]
     },
     {
       "key": "hunters-bow",
       "name": "Hunter's Bow",
       "description": "A hunter's music consists of but two sounds: the twang of the bowstring and the whoosh of soaring arrows.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "iron-point",
       "name": "Iron Point",
       "description": "Sharp and pointy at one end, it is a balanced weapon that is quite popular among travelers.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "iron-sting",
       "name": "Iron Sting",
       "description": "An exotic long-bladed rapier that somehow found its way into Liyue via foreign traders. It is light, agile, and sharp.",
-      "refinement": "Dealing Elemental DMG increases all DMG by {0}% for 6s. Max 2 stacks. Can occur once every 1s."
+      "refinements": [
+        "Dealing Elemental DMG increases all DMG by {color}6{/color}% for 6s. Max 2 stacks. Can occur once every 1s.",
+        "Dealing Elemental DMG increases all DMG by {color}7.5{/color}% for 6s. Max 2 stacks. Can occur once every 1s.",
+        "Dealing Elemental DMG increases all DMG by {color}9{/color}% for 6s. Max 2 stacks. Can occur once every 1s.",
+        "Dealing Elemental DMG increases all DMG by {color}10.5{/color}% for 6s. Max 2 stacks. Can occur once every 1s.",
+        "Dealing Elemental DMG increases all DMG by {color}12{/color}% for 6s. Max 2 stacks. Can occur once every 1s."
+      ]
     },
     {
       "key": "katsuragikiri-nagamasa",
       "name": "Katsuragikiri Nagamasa",
       "description": "A blade that was once made in Tatarasuna. Heavy and tough.",
-      "refinement": "Increases Elemental Skill DMG by {0}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {1} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field."
+      "refinements": [
+        "Increases Elemental Skill DMG by {color}6{/color}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {color}3{/color} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field.",
+        "Increases Elemental Skill DMG by {color}7.5{/color}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {color}3.5{/color} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field.",
+        "Increases Elemental Skill DMG by {color}9{/color}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {color}4{/color} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field.",
+        "Increases Elemental Skill DMG by {color}10.5{/color}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {color}4.5{/color} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field.",
+        "Increases Elemental Skill DMG by {color}12{/color}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {color}5{/color} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field."
+      ]
     },
     {
       "key": "kitain-cross-spear",
       "name": "Kitain Cross Spear",
       "description": "A special lance that was once used by a famed warrior who guarded the Tatarigami on Yashiori Island.",
-      "refinement": "Increases Elemental Skill DMG by {0}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {1} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field."
+      "refinements": [
+        "Increases Elemental Skill DMG by {color}6{/color}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {color}3{/color} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field.",
+        "Increases Elemental Skill DMG by {color}7.5{/color}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {color}3.5{/color} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field.",
+        "Increases Elemental Skill DMG by {color}9{/color}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {color}4{/color} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field.",
+        "Increases Elemental Skill DMG by {color}10.5{/color}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {color}4.5{/color} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field.",
+        "Increases Elemental Skill DMG by {color}12{/color}%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates {color}5{/color} Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field."
+      ]
     },
     {
       "key": "lions-roar",
       "name": "Lion's Roar",
       "description": "A sharp blade with extravagant carvings that somehow does not compromise on durability and sharpness. It roars like a lion as it cuts through the air.",
-      "refinement": "Increases DMG against opponents affected by Pyro or Electro by {0}%."
+      "refinements": [
+        "Increases DMG against opponents affected by Pyro or Electro by {color}20{/color}%.",
+        "Increases DMG against opponents affected by Pyro or Electro by {color}24{/color}%.",
+        "Increases DMG against opponents affected by Pyro or Electro by {color}28{/color}%.",
+        "Increases DMG against opponents affected by Pyro or Electro by {color}32{/color}%.",
+        "Increases DMG against opponents affected by Pyro or Electro by {color}36{/color}%."
+      ]
     },
     {
       "key": "lithic-blade",
       "name": "Lithic Blade",
       "description": "A greatsword carved and chiseled from the very bedrock of Liyue.",
-      "refinement": "For every character in the party who hails from Liyue, the character who equips this weapon gains a {0}% ATK increase and a {1}% CRIT Rate increase. This effect stacks up to 4 times."
+      "refinements": [
+        "For every character in the party who hails from Liyue, the character who equips this weapon gains a {color}7{/color}% ATK increase and a {color}3{/color}% CRIT Rate increase. This effect stacks up to 4 times.",
+        "For every character in the party who hails from Liyue, the character who equips this weapon gains a {color}8{/color}% ATK increase and a {color}4{/color}% CRIT Rate increase. This effect stacks up to 4 times.",
+        "For every character in the party who hails from Liyue, the character who equips this weapon gains a {color}9{/color}% ATK increase and a {color}5{/color}% CRIT Rate increase. This effect stacks up to 4 times.",
+        "For every character in the party who hails from Liyue, the character who equips this weapon gains a {color}10{/color}% ATK increase and a {color}6{/color}% CRIT Rate increase. This effect stacks up to 4 times.",
+        "For every character in the party who hails from Liyue, the character who equips this weapon gains a {color}11{/color}% ATK increase and a {color}7{/color}% CRIT Rate increase. This effect stacks up to 4 times."
+      ]
     },
     {
       "key": "lithic-spear",
       "name": "Lithic Spear",
       "description": "A spear forged from the rocks of the Guyun Stone Forest. Its hardness knows no equal.",
-      "refinement": "For every character in the party who hails from Liyue, the character who equips this weapon gains a {0}% ATK increase and a {1}% CRIT Rate increase. This effect stacks up to 4 times."
+      "refinements": [
+        "For every character in the party who hails from Liyue, the character who equips this weapon gains a {color}7{/color}% ATK increase and a {color}3{/color}% CRIT Rate increase. This effect stacks up to 4 times.",
+        "For every character in the party who hails from Liyue, the character who equips this weapon gains a {color}8{/color}% ATK increase and a {color}4{/color}% CRIT Rate increase. This effect stacks up to 4 times.",
+        "For every character in the party who hails from Liyue, the character who equips this weapon gains a {color}9{/color}% ATK increase and a {color}5{/color}% CRIT Rate increase. This effect stacks up to 4 times.",
+        "For every character in the party who hails from Liyue, the character who equips this weapon gains a {color}10{/color}% ATK increase and a {color}6{/color}% CRIT Rate increase. This effect stacks up to 4 times.",
+        "For every character in the party who hails from Liyue, the character who equips this weapon gains a {color}11{/color}% ATK increase and a {color}7{/color}% CRIT Rate increase. This effect stacks up to 4 times."
+      ]
     },
     {
       "key": "lost-prayer-to-the-sacred-winds",
       "name": "Lost Prayer to the Sacred Winds",
       "description": "An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.",
-      "refinement": "Increases Movement SPD by 10%. When in battle, gain an {0}% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat."
+      "refinements": [
+        "Increases Movement SPD by 10%. When in battle, gain an {color}8{/color}% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat.",
+        "Increases Movement SPD by 10%. When in battle, earn a {color}10{/color}% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat.",
+        "Increases Movement SPD by 10%. When in battle, gain a {color}12{/color}% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat.",
+        "Increases Movement SPD by 10%. When in battle, gain a {color}14{/color}% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat.",
+        "Increases Movement SPD by 10%. When in battle, gain a {color}16{/color}% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat."
+      ]
     },
     {
       "key": "luxurious-sea-lord",
       "name": "Luxurious Sea-Lord",
       "description": "The great king of the ocean. Having been air-dried, it makes for a fine weapon as well as emergency sustenance.",
-      "refinement": "Increases Elemental Burst DMG by {0}%. When Elemental Burst hits opponents, there is a 100% chance of summoning a titanic tuna that charges and deals {1}% ATK as AoE DMG. This effect can occur once every 15s."
+      "refinements": [
+        "Increases Elemental Burst DMG by {color}12{/color}%. When Elemental Burst hits opponents, there is a 100% chance of summoning a titanic tuna that charges and deals {color}100{/color}% ATK as AoE DMG. This effect can occur once every 15s.",
+        "Increases Elemental Burst DMG by {color}15{/color}%. When Elemental Burst hits opponents, there is a 100% chance of summoning a titanic tuna that charges and deals {color}125{/color}% ATK as AoE DMG. This effect can occur once every 15s.",
+        "Increases Elemental Burst DMG by {color}18{/color}%. When Elemental Burst hits opponents, there is a 100% chance of summoning a titanic tuna that charges and deals {color}150{/color}% ATK as AoE DMG. This effect can occur once every 15s.",
+        "Increases Elemental Burst DMG by {color}21{/color}%. When Elemental Burst hits opponents, there is a 100% chance of summoning a titanic tuna that charges and deals {color}175{/color}% ATK as AoE DMG. This effect can occur once every 15s.",
+        "Increases Elemental Burst DMG by {color}24{/color}%. When Elemental Burst hits opponents, there is a 100% chance of summoning a titanic tuna that charges and deals {color}200{/color}% ATK as AoE DMG. This effect can occur once every 15s."
+      ]
     },
     {
       "key": "magic-guide",
       "name": "Magic Guide",
       "description": "Version 12. A reprint featuring corrections to Version 11 and brand-new additions based on recent developments.",
-      "refinement": "Increases DMG against opponents affected by Hydro or Electro by {0}%."
+      "refinements": [
+        "Increases DMG against opponents affected by Hydro or Electro by {color}12{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Electro by {color}15{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Electro by {color}18{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Electro by {color}21{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Electro by {color}24{/color}%."
+      ]
     },
     {
       "key": "mappa-mare",
       "name": "Mappa Mare",
       "description": "A nautical chart featuring nearby currents and climates that somehow found its way into Liyue via foreign traders.",
-      "refinement": "Triggering an Elemental reaction grants a {0}% Elemental DMG Bonus for 10s. Max 2 stacks."
+      "refinements": [
+        "Triggering an Elemental reaction grants a {color}8{/color}% Elemental DMG Bonus for 10s. Max 2 stacks.",
+        "Triggering an Elemental reaction grants a {color}10{/color}% Elemental DMG Bonus for 10s. Max 2 stacks.",
+        "Triggering an Elemental reaction grants a {color}12{/color}% Elemental DMG Bonus for 10s. Max 2 stacks.",
+        "Triggering an Elemental reaction grants a {color}14{/color}% Elemental DMG Bonus for 10s. Max 2 stacks.",
+        "Triggering an Elemental reaction grants a {color}16{/color}% Elemental DMG Bonus for 10s. Max 2 stacks."
+      ]
     },
     {
       "key": "memory-of-dust",
       "name": "Memory of Dust",
       "description": "A stone dumbbell containing distant memories. Its endless transformations reveal the power within.",
-      "refinement": "Increases Shield Strength by {0}%. Scoring hits on opponents increases ATK by {1}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "refinements": [
+        "Increases Shield Strength by {color}20{/color}%. Scoring hits on opponents increases ATK by {color}4{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+        "Increases Shield Strength by {color}25{/color}%. Scoring hits on opponents increases ATK by {color}5{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+        "Increases Shield Strength by {color}30{/color}%. Scoring hits on opponents increases ATK by {color}6{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+        "Increases Shield Strength by {color}35{/color}%. Scoring hits on opponents increases ATK by {color}7{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+        "Increases Shield Strength by {color}40{/color}%. Scoring hits on opponents increases ATK by {color}8{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      ]
     },
     {
       "key": "messenger",
       "name": "Messenger",
       "description": "A basic wooden bow. It is said to have once been used as a tool for long-distance communication.",
-      "refinement": "Charged Attack hits on weak points deal an additional {0}% ATK DMG as CRIT DMG. Can only occur once every 10s."
+      "refinements": [
+        "Charged Attack hits on weak points deal an additional {color}100{/color}% ATK DMG as CRIT DMG. Can only occur once every 10s.",
+        "Charged Attack hits on weak points deal an additional {color}125{/color}% ATK DMG as CRIT DMG. Can only occur once every 10s.",
+        "Charged Attack hits on weak points deal an additional {color}150{/color}% ATK DMG as CRIT DMG. Can only occur once every 10s.",
+        "Charged Attack hits on weak points deal an additional {color}175{/color}% ATK DMG as CRIT DMG. Can only occur once every 10s.",
+        "Charged Attack hits on weak points deal an additional {color}200{/color}% ATK DMG as CRIT DMG. Can only occur once every 10s."
+      ]
     },
     {
       "key": "mistsplitter-reforged",
       "name": "Mistsplitter Reforged",
       "description": "A sword that blazes with a fierce violet light. The name \"Reforged\" comes from it having been broken once before.",
-      "refinement": "Gain a {0}% Elemental DMG Bonus for all element and receive the might of the Mistsplitter's Emblem. At stack levels 1/2/3, the Mistsplitter's Emblem provides a {1}% Elemental DMG Bonus for the character's Elemental Type. The character will obtain 1 stack of Mistsplitter's Emblem in each of the following scenarios: Normal Attack deals Elemental DMG (stack lasts 5s), casting Elemental Burst (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently."
+      "refinements": [
+        "Gain a {color}12{/color}% Elemental DMG Bonus for all element and receive the might of the Mistsplitter's Emblem. At stack levels 1/2/3, the Mistsplitter's Emblem provides a {color}8/16/28{/color}% Elemental DMG Bonus for the character's Elemental Type. The character will obtain 1 stack of Mistsplitter's Emblem in each of the following scenarios: Normal Attack deals Elemental DMG (stack lasts 5s), casting Elemental Burst (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently.",
+        "Gain a {color}15{/color}% Elemental DMG Bonus for all element and receive the might of the Mistsplitter's Emblem. At stack levels 1/2/3, the Mistsplitter's Emblem provides a {color}10/20/35{/color}% Elemental DMG Bonus for the character's Elemental Type. The character will obtain 1 stack of Mistsplitter's Emblem in each of the following scenarios: Normal Attack deals Elemental DMG (stack lasts 5s), casting Elemental Burst (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently.",
+        "Gain a {color}18{/color}% Elemental DMG Bonus for all element and receive the might of the Mistsplitter's Emblem. At stack levels 1/2/3, the Mistsplitter's Emblem provides a {color}12/24/42{/color}% Elemental DMG Bonus for the character's Elemental Type. The character will obtain 1 stack of Mistsplitter's Emblem in each of the following scenarios: Normal Attack deals Elemental DMG (stack lasts 5s), casting Elemental Burst (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently.",
+        "Gain a {color}21{/color}% Elemental DMG Bonus for all element and receive the might of the Mistsplitter's Emblem. At stack levels 1/2/3, the Mistsplitter's Emblem provides a {color}14/28/49{/color}% Elemental DMG Bonus for the character's Elemental Type. The character will obtain 1 stack of Mistsplitter's Emblem in each of the following scenarios: Normal Attack deals Elemental DMG (stack lasts 5s), casting Elemental Burst (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently.",
+        "Gain a {color}24{/color}% Elemental DMG Bonus for all element and receive the might of the Mistsplitter's Emblem. At stack levels 1/2/3, the Mistsplitter's Emblem provides a {color}16/32/56{/color}% Elemental DMG Bonus for the character's Elemental Type. The character will obtain 1 stack of the Mistsplitter's Emblem in each of the following scenarios: Normal Attack deals Elemental DMG (stack lasts 5s), casting Elemental Burst (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently."
+      ]
     },
     {
       "key": "mitternachts-waltz",
       "name": "Mitternachts Waltz",
       "description": "A bow painted the color of transgression and nights of illusion.",
-      "refinement": "Normal Attack hits on opponents increase Elemental Skill DMG by {0}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {1}% for 5s."
+      "refinements": [
+        "Normal Attack hits on opponents increase Elemental Skill DMG by {color}20{/color}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {color}20{/color}% for 5s.",
+        "Normal Attack hits on opponents increase Elemental Skill DMG by {color}25{/color}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {color}25{/color}% for 5s.",
+        "Normal Attack hits on opponents increase Elemental Skill DMG by {color}30{/color}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {color}30{/color}% for 5s.",
+        "Normal Attack hits on opponents increase Elemental Skill DMG by {color}35{/color}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {color}35{/color}% for 5s.",
+        "Normal Attack hits on opponents increase Elemental Skill DMG by {color}40{/color}% for 5s. Elemental Skill hits on opponents increase Normal Attack DMG by {color}40{/color}% for 5s."
+      ]
     },
     {
       "key": "old-mercs-pal",
       "name": "Old Merc's Pal",
       "description": "A battle-tested greatsword that has seen better days and worse.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "otherworldly-story",
       "name": "Otherworldly Story",
       "description": "A cheap fantasy novel with no value whatsoever. Any claim that it possesses the power of catalysis is also pure fantasy.",
-      "refinement": "Picking up an Elemental Energy Orb/Particle recovers {0}% HP."
+      "refinements": [
+        "Picking up an Elemental Energy Orb/Particle recovers {color}1{/color}% HP.",
+        "Each Elemental Orb or Particle collected restores {color}1.25{/color}% HP.",
+        "Each Elemental Orb or Particle collected restores {color}1.5{/color}% HP.",
+        "Each Elemental Orb or Particle collected restores {color}1.75{/color}% HP.",
+        "Each Elemental Orb or Particle collected restores {color}2{/color}% HP."
+      ]
     },
     {
       "key": "pocket-grimoire",
       "name": "Pocket Grimoire",
       "description": "A carefully compiled notebook featuring the essentials needed to pass a magic exam.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "polar-star",
       "name": "Polar Star",
       "description": "A pristine bow that is as sharp as the glaciers of the far north.",
-      "refinement": "Elemental Skill and Elemental Burst DMG increased by {0}%. After a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst hits an opponent, 1 stack of Ashen Nightstar will be gained for 12s. When 1/2/3/4 stacks of Ashen Nightstar are present, ATK is increased by {1}%. The stack of Ashen Nightstar created by the Normal Attack, Charged Attack, Elemental Skill or Elemental Burst will be counted independently of the others."
+      "refinements": [
+        "Elemental Skill and Elemental Burst DMG increased by {color}12{/color}%. After a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst hits an opponent, 1 stack of Ashen Nightstar will be gained for 12s. When 1/2/3/4 stacks of Ashen Nightstar are present, ATK is increased by {color}10/20/30/48{/color}%. The stack of Ashen Nightstar created by the Normal Attack, Charged Attack, Elemental Skill or Elemental Burst will be counted independently of the others.",
+        "Elemental Skill and Elemental Burst DMG increased by {color}15{/color}%. After a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst hits an opponent, 1 stack of Ashen Nightstar will be gained for 12s. When 1/2/3/4 stacks of Ashen Nightstar are present, ATK is increased by {color}12.5/25/37.5/60{/color}%. The stack of Ashen Nightstar created by the Normal Attack, Charged Attack, Elemental Skill or Elemental Burst will be counted independently of the others.",
+        "Elemental Skill and Elemental Burst DMG increased by {color}18{/color}%. After a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst hits an opponent, 1 stack of Ashen Nightstar will be gained for 12s. When 1/2/3/4 stacks of Ashen Nightstar are present, ATK is increased by {color}15/30/45/72{/color}%. The stack of Ashen Nightstar created by the Normal Attack, Charged Attack, Elemental Skill or Elemental Burst will be counted independently of the others.",
+        "Elemental Skill and Elemental Burst DMG increased by {color}21{/color}%. After a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst hits an opponent, 1 stack of Ashen Nightstar will be gained for 12s. When 1/2/3/4 stacks of Ashen Nightstar are present, ATK is increased by {color}17.5/35/52.5/84{/color}%. The stack of Ashen Nightstar created by the Normal Attack, Charged Attack, Elemental Skill or Elemental Burst will be counted independently of the others.",
+        "Elemental Skill and Elemental Burst DMG increased by {color}24{/color}%. After a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst hits an opponent, 1 stack of Ashen Nightstar will be gained for 12s. When 1/2/3/4 stacks of Ashen Nightstar are present, ATK is increased by {color}20/40/60/96{/color}%. The stack of Ashen Nightstar created by the Normal Attack, Charged Attack, Elemental Skill or Elemental Burst will be counted independently of the others."
+      ]
     },
     {
       "key": "predator",
       "name": "Predator",
       "description": "A uniquely-designed bow. This should not belong in this world.",
-      "refinement": "Effective only on the following platform: \r\n\"PlayStation Network\"\r\nDealing Cryo DMG to opponents increases this character's Normal and Charged Attack DMG by 10% for 6s. This effect can have a maximum of 2 stacks. Additionally, when Aloy equips Predator, ATK is increased by 66."
+      "refinements": [
+        "Effective only on the following platform: \r\n\"PlayStation Network\"\r\nDealing Cryo DMG to opponents increases this character's Normal and Charged Attack DMG by 10% for 6s. This effect can have a maximum of 2 stacks. Additionally, when Aloy equips Predator, ATK is increased by 66."
+      ]
     },
     {
       "key": "primordial-jade-cutter",
       "name": "Primordial Jade Cutter",
       "description": "A ceremonial sword masterfully carved from pure jade. There almost seems to be an audible sigh in the wind as it is swung.",
-      "refinement": "HP increased by {0}%. Additionally, provides an ATK Bonus based on {1}% of the wielder's Max HP."
+      "refinements": [
+        "HP increased by {color}20{/color}%. Additionally, provides an ATK Bonus based on {color}1.2{/color}% of the wielder's Max HP.",
+        "HP increased by {color}25{/color}%. Additionally, provides an ATK Bonus based on {color}1.5{/color}% of the wielder's Max HP.",
+        "HP increased by {color}30{/color}%. Additionally, provides an ATK Bonus based on {color}1.8{/color}% of the wielder's Max HP.",
+        "HP increased by {color}35{/color}%. Additionally, provides an ATK Bonus based on {color}2.1{/color}% of the wielder's Max HP.",
+        "HP increased by {color}40{/color}%. Additionally, provides an ATK Bonus based on {color}2.4{/color}% of the wielder's Max HP."
+      ]
     },
     {
       "key": "primordial-jade-winged-spear",
       "name": "Primordial Jade Winged-Spear",
       "description": "A jade polearm made by the archons, capable of slaying ancient beasts.",
-      "refinement": "On hit, increases ATK by {0}% for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by {1}%."
+      "refinements": [
+        "On hit, increases ATK by {color}3.2{/color}% for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by {color}12{/color}%.",
+        "On hit, increases ATK by {color}3.9{/color}% for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by {color}15{/color}%.",
+        "On hit, increases ATK by {color}4.6{/color}% for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by {color}18{/color}%.",
+        "On hit, increases ATK by {color}5.3{/color}% for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by {color}21{/color}%.",
+        "On hit, increases ATK by {color}6{/color}% for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by {color}24{/color}%."
+      ]
     },
     {
       "key": "prototype-amber",
       "name": "Prototype Amber",
       "description": "A dully gilded catalyst secretly guarded in the Blackcliff Forge. It seems to glow with the very light from the sky.",
-      "refinement": "Using an Elemental Burst regenerates {0} Energy every 2s for 6s. All party members will regenerate {1}% HP every 2s for this duration."
+      "refinements": [
+        "Using an Elemental Burst regenerates {color}4{/color} Energy every 2s for 6s. All party members will regenerate {color}4{/color}% HP every 2s for this duration.",
+        "Using an Elemental Burst regenerates {color}4.5{/color} Energy every 2s for 6s. All party members will regenerate {color}4.5{/color}% HP every 2s for this duration.",
+        "Using an Elemental Burst regenerates {color}5{/color} Energy every 2s for 6s. All party members will regenerate {color}5{/color}% HP every 2s for this duration.",
+        "Using an Elemental Burst regenerates {color}5.5{/color} Energy every 2s for 6s. All party members will regenerate {color}5.5{/color}% HP every 2s for this duration.",
+        "Using an Elemental Burst regenerates {color}6{/color} Energy every 2s for 6s. All party members will regenerate {color}6{/color}% HP every 2s for this duration."
+      ]
     },
     {
       "key": "prototype-archaic",
       "name": "Prototype Archaic",
       "description": "An ancient greatsword discovered in the Blackcliff Forge. It swings with such an immense force that one feels it could cut straight through reality itself.",
-      "refinement": "On hit, Normal or Charged Attacks have a 50% chance to deal an additional {0}% ATK DMG to opponents within a small AoE. Can only occur once every 15s."
+      "refinements": [
+        "On hit, Normal or Charged Attacks have a 50% chance to deal an additional {color}240{/color}% ATK DMG to opponents within a small AoE. Can only occur once every 15s.",
+        "On hit, Normal or Charged Attacks have a 50% chance to deal an additional {color}300{/color}% ATK DMG to opponents within a small AoE. Can only occur once every 15s.",
+        "On hit, Normal or Charged Attacks have a 50% chance to deal an additional {color}360{/color}% ATK DMG to opponents within a small AoE. Can only occur once every 15s.",
+        "On hit, Normal or Charged Attacks have a 50% chance to deal an additional {color}420{/color}% ATK DMG to opponents within a small AoE. Can only occur once every 15s.",
+        "On hit, Normal or Charged Attacks have a 50% chance to deal an additional {color}480{/color}% ATK DMG to opponents within a small AoE. Can only occur once every 15s."
+      ]
     },
     {
       "key": "prototype-crescent",
       "name": "Prototype Crescent",
       "description": "A prototype longbow discovered in the Blackcliff Forge. The arrow fired from this bow glimmers like a ray of moonlight.",
-      "refinement": "Charged Attack hits on weak points increase Movement SPD by 10% and ATK by {0}% for 10s."
+      "refinements": [
+        "Charged Attack hits on weak points increase Movement SPD by 10% and ATK by {color}36{/color}% for 10s.",
+        "Charged Attack hits on weak points increase Movement SPD by 10% and ATK by {color}45{/color}% for 10s.",
+        "Charged Attack hits on weak points increase Movement SPD by 10% and ATK by {color}54{/color}% for 10s.",
+        "Charged Attack hits on weak points increase Movement SPD by 10% and ATK by {color}63{/color}% for 10s.",
+        "Charged Attack hits on weak points increase Movement SPD by 10% and ATK by {color}72{/color}% for 10s."
+      ]
     },
     {
       "key": "prototype-rancour",
       "name": "Prototype Rancour",
       "description": "An ancient longsword discovered in the Blackcliff Forge that cuts through rocks like a hot knife through butter.",
-      "refinement": "On hit, Normal or Charged Attacks increase ATK and DEF by {0}% for 6s. Max 4 stacks. This effect can only occur once every 0.3s."
+      "refinements": [
+        "On hit, Normal or Charged Attacks increase ATK and DEF by {color}4{/color}% for 6s. Max 4 stacks. This effect can only occur once every 0.3s.",
+        "On hit, Normal or Charged Attacks increase ATK and DEF by {color}5{/color}% for 6s. Max 4 stacks. This effect can only occur once every 0.3s.",
+        "On hit, Normal or Charged Attacks increase ATK and DEF by {color}6{/color}% for 6s. Max 4 stacks. This effect can only occur once every 0.3s.",
+        "On hit, Normal or Charged Attacks increase ATK and DEF by {color}7{/color}% for 6s. Max 4 stacks. This effect can only occur once every 0.3s.",
+        "On hit, Normal or Charged Attacks increase ATK and DEF by {color}8{/color}% for 6s. Max 4 stacks. This effect can only occur once every 0.3s."
+      ]
     },
     {
       "key": "prototype-starglitter",
       "name": "Prototype Starglitter",
       "description": "A grudge discovered in the Blackcliff Forge. The glimmers along the sharp edge are like stars in the night.",
-      "refinement": "After using an Elemental Skill, increases Normal and Charged Attack DMG by {0}% for 12s. Max 2 stacks."
+      "refinements": [
+        "After using an Elemental Skill, increases Normal and Charged Attack DMG by {color}8{/color}% for 12s. Max 2 stacks.",
+        "After using an Elemental Skill, increases Normal and Charged Attack DMG by {color}10{/color}% for 12s. Max 2 stacks.",
+        "After using an Elemental Skill, increases Normal and Charged Attack DMG by {color}12{/color}% for 12s. Max 2 stacks.",
+        "After using an Elemental Skill, increases Normal and Charged Attack DMG by {color}14{/color}% for 12s. Max 2 stacks.",
+        "After using an Elemental Skill, increases Normal and Charged Attack DMG by {color}16{/color}% for 12s. Max 2 stacks."
+      ]
     },
     {
       "key": "rainslasher",
       "name": "Rainslasher",
       "description": "A fluorescent greatsword with no sharp edge that crushes enemies with brute force and raw power.",
-      "refinement": "Increases DMG against opponents affected by Hydro or Electro by {0}%."
+      "refinements": [
+        "Increases DMG against opponents affected by Hydro or Electro by {color}20{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Electro by {color}24{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Electro by {color}28{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Electro by {color}32{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Electro by {color}36{/color}%."
+      ]
     },
     {
       "key": "raven-bow",
       "name": "Raven Bow",
       "description": "Ravens are known to be the ferrymen of the dead. This bow's limb is decorated with raven feathers, which forebode the imminent death of its target.",
-      "refinement": "Increases DMG against opponents affected by Hydro or Pyro by {0}%."
+      "refinements": [
+        "Increases DMG against opponents affected by Hydro or Pyro by {color}12{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Pyro by {color}15{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Pyro by {color}18{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Pyro by {color}21{/color}%.",
+        "Increases DMG against opponents affected by Hydro or Pyro by {color}24{/color}%."
+      ]
     },
     {
       "key": "recurve-bow",
       "name": "Recurve Bow",
       "description": "It is said that this bow can shoot down eagles in flight, but ultimately how true that is depends on the skill of the archer.",
-      "refinement": "Defeating an opponent restores {0}% HP."
+      "refinements": [
+        "Defeating an opponent restores {color}8{/color}% HP.",
+        "Defeating an opponent restores {color}10{/color}% HP.",
+        "Defeating an opponent restores {color}12{/color}% HP.",
+        "Defeating an opponent restores {color}14{/color}% HP.",
+        "Defeating an opponent restores {color}16{/color}% HP."
+      ]
     },
     {
       "key": "royal-bow",
       "name": "Royal Bow",
       "description": "An old royal longbow that belonged to the erstwhile rulers of Mondstadt. Countless generations later, the bowstring is still tight and can still fire arrows with great force.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {0}%. Max 5 stacks. A CRIT Hit removes all stacks."
+      "refinements": [
+        "Upon damaging an opponent, increases CRIT Rate by {color}8{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}10{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}12{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}14{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}16{/color}%. Max 5 stacks. A CRIT Hit removes all stacks."
+      ]
     },
     {
       "key": "royal-greatsword",
       "name": "Royal Greatsword",
       "description": "An old greatsword that belonged to the erstwhile rulers of Mondstadt. It is made from the finest-quality materials and has stood the test of time. A weapon for use by royals only.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {0}%. Max 5 stacks. A CRIT Hit removes all stacks."
+      "refinements": [
+        "Upon damaging an opponent, increases CRIT Rate by {color}8{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}10{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}12{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}14{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}16{/color}%. Max 5 stacks. A CRIT Hit removes all stacks."
+      ]
     },
     {
       "key": "royal-grimoire",
       "name": "Royal Grimoire",
       "description": "A book that once belonged to a royal mage of Mondstadt. It contains faithful and comprehensive historical accounts as well as magic spells.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {0}%. Max 5 stacks. A CRIT Hit removes all stacks."
+      "refinements": [
+        "Upon damaging an opponent, increases CRIT Rate by {color}8{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}10{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}12{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}14{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}16{/color}%. Max 5 stacks. A CRIT Hit removes all stacks."
+      ]
     },
     {
       "key": "royal-longsword",
       "name": "Royal Longsword",
       "description": "An old longsword that belonged to the erstwhile rulers of Mondstadt. Exquisitely crafted, the carvings and embellishments testify to the stature of its owner.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {0}%. Max 5 stacks. A CRIT Hit removes all stacks."
+      "refinements": [
+        "Upon damaging an opponent, increases CRIT Rate by {color}8{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}10{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}12{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}14{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}16{/color}%. Max 5 stacks. A CRIT Hit removes all stacks."
+      ]
     },
     {
       "key": "royal-spear",
       "name": "Royal Spear",
       "description": "This polearm was once cherished by a member of the old nobility that governed Mondstadt long ago. Although it has never seen the light of day, it is still incomparably sharp.",
-      "refinement": "Upon damaging an opponent, increases CRIT Rate by {0}%. Max 5 stacks. A CRIT Hit removes all stacks."
+      "refinements": [
+        "Upon damaging an opponent, increases CRIT Rate by {color}8{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}10{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}12{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}14{/color}%. Max 5 stacks. A CRIT Hit removes all stacks.",
+        "Upon damaging an opponent, increases CRIT Rate by {color}16{/color}%. Max 5 stacks. A CRIT Hit removes all stacks."
+      ]
     },
     {
       "key": "rust",
       "name": "Rust",
       "description": "A completely rusted iron greatbow. The average person would lack the strength to even lift it, let alone fire it.",
-      "refinement": "Increases Normal Attack DMG by {0}% but decreases Charged Attack DMG by 10%."
+      "refinements": [
+        "Increases Normal Attack DMG by {color}40{/color}% but decreases Charged Attack DMG by 10%.",
+        "Increases Normal Attack DMG by {color}50{/color}% but decreases Charged Attack DMG by 10%.",
+        "Increases Normal Attack DMG by {color}60{/color}% but decreases Charged Attack DMG by 10%.",
+        "Increases Normal Attack DMG by {color}70{/color}% but decreases Charged Attack DMG by 10%.",
+        "Increases Normal Attack DMG by {color}80{/color}% but decreases Charged Attack DMG by 10%."
+      ]
     },
     {
       "key": "sacrificial-bow",
       "name": "Sacrificial Bow",
       "description": "A ceremonial hunting bow that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {0}% chance to end its own CD. Can only occur once every {1}s."
+      "refinements": [
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}40{/color}% chance to end its own CD. Can only occur once every {color}30{/color}s.",
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}50{/color}% chance to end its own CD. Can only occur once every {color}26{/color}s.",
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}60{/color}% chance to end its own CD. Can only occur once every {color}22{/color}s.",
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}70{/color}% chance to end its own CD. Can only occur once every {color}19{/color}s.",
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}80{/color}% chance to end its own CD. Can only occur once every {color}16{/color}s."
+      ]
     },
     {
       "key": "sacrificial-fragments",
       "name": "Sacrificial Fragments",
       "description": "A weathered script, the text of which is no longer legible. A cursed item eroded by the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {0}% chance to end its own CD. Can only occur once every {1}s."
+      "refinements": [
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}40{/color}% chance to end its own CD. Can only occur once every {color}30{/color}s.",
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}50{/color}% chance to end its own CD. Can only occur once every {color}26{/color}s.",
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}60{/color}% chance to end its own CD. Can only occur once every {color}22{/color}s.",
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}70{/color}% chance to end its own CD. Can only occur once every {color}19{/color}s.",
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}80{/color}% chance to end its own CD. Can only occur once every {color}16{/color}s."
+      ]
     },
     {
       "key": "sacrificial-greatsword",
       "name": "Sacrificial Greatsword",
       "description": "A ceremonial greatsword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {0}% chance to end its own CD. Can only occur once every {1}s."
+      "refinements": [
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}40{/color}% chance to end its own CD. Can only occur once every {color}30{/color}s.",
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}50{/color}% chance to end its own CD. Can only occur once every {color}26{/color}s.",
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}60{/color}% chance to end its own CD. Can only occur once every {color}22{/color}s.",
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}70{/color}% chance to end its own CD. Can only occur once every {color}19{/color}s.",
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}80{/color}% chance to end its own CD. Can only occur once every {color}16{/color}s."
+      ]
     },
     {
       "key": "sacrificial-sword",
       "name": "Sacrificial Sword",
       "description": "A ceremonial sword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
-      "refinement": "After damaging an opponent with an Elemental Skill, the skill has a {0}% chance to end its own CD. Can only occur once every {1}s."
+      "refinements": [
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}40{/color}% chance to end its own CD. Can only occur once every {color}30{/color}s.",
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}50{/color}% chance to end its own CD. Can only occur once every {color}26{/color}s.",
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}60{/color}% chance to end its own CD. Can only occur once every {color}22{/color}s.",
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}70{/color}% chance to end its own CD. Can only occur once every {color}19{/color}s.",
+        "After damaging an opponent with an Elemental Skill, the skill has a {color}80{/color}% chance to end its own CD. Can only occur once every {color}16{/color}s."
+      ]
     },
     {
       "key": "seasoned-hunters-bow",
       "name": "Seasoned Hunter's Bow",
       "description": "A bow that has been well-polished by time and meticulously cared for by its owner. It feels almost like an extension of the archer's arm.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "serpent-spine",
       "name": "Serpent Spine",
       "description": "A rare weapon whose origin is the ancient ocean. One can hear the sound of the ageless waves as one swings it.",
-      "refinement": "Every 4s a character is on the field, they will deal {0}% more DMG and take {1}% more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG."
+      "refinements": [
+        "Every 4s a character is on the field, they will deal {color}6{/color}% more DMG and take {color}3{/color}% more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG.",
+        "Every 4s a character is on the field, they will deal {color}7{/color}% more DMG and take {color}2.7{/color}% more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG.",
+        "Every 4s a character is on the field, they will deal {color}8{/color}% more DMG and take {color}2.4{/color}% more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG.",
+        "Every 4s a character is on the field, they will deal {color}9{/color}% more DMG and take {color}2.2{/color}% more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG.",
+        "Every 4s a character is on the field, they will deal {color}10{/color}% more DMG and take {color}2{/color}% more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG."
+      ]
     },
     {
       "key": "sharpshooters-oath",
       "name": "Sharpshooter's Oath",
       "description": "This superior bow once belonged to a master archer. However, it gives off a strong scent, thus making it unsuitable for hunting.",
-      "refinement": "Increases DMG against weak spots by {0}%."
+      "refinements": [
+        "Increases DMG against weak spots by {color}24{/color}%.",
+        "Increases DMG against weak spots by {color}30{/color}%.",
+        "Increases DMG against weak spots by {color}36{/color}%.",
+        "Increases DMG against weak spots by {color}42{/color}%.",
+        "Increases DMG against weak spots by {color}48{/color}%."
+      ]
     },
     {
       "key": "silver-sword",
       "name": "Silver Sword",
       "description": "A sword for exorcising demons. Everyone knows it's made of a silver alloy, not pure silver.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "skyrider-greatsword",
       "name": "Skyrider Greatsword",
       "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword... for the second time.",
-      "refinement": "On hit, Normal or Charged Attacks increase ATK by {0}% for 6s. Max 4 stacks. Can occur once every 0.5s."
+      "refinements": [
+        "On hit, Normal or Charged Attacks increase ATK by {color}6{/color}% for 6s. Max 4 stacks. Can occur once every 0.5s.",
+        "On hit, Normal or Charged Attacks increase ATK by {color}7{/color}% for 6s. Max 4 stacks. Can occur once every 0.5s.",
+        "On hit, Normal or Charged Attacks increase ATK by {color}8{/color}% for 6s. Max 4 stacks. Can occur once every 0.5s.",
+        "On hit, Normal or Charged Attacks increase ATK by {color}9{/color}% for 6s. Max 4 stacks. Can occur once every 0.5s.",
+        "On hit, Normal or Charged Attacks increase ATK by {color}10{/color}% for 6s. Max 4 stacks. Can occur once every 0.5s."
+      ]
     },
     {
       "key": "skyrider-sword",
       "name": "Skyrider Sword",
       "description": "A reliable steel sword. The legendary Skyrider once tried to ride it as a flying sword...",
-      "refinement": "Using an Elemental Burst grants a {0}% increase in ATK and Movement SPD for 15s."
+      "refinements": [
+        "Using an Elemental Burst grants a {color}12{/color}% increase in ATK and Movement SPD for 15s.",
+        "Using an Elemental Burst grants a {color}15{/color}% increase in ATK and Movement SPD for 15s.",
+        "Using an Elemental Burst grants a {color}18{/color}% increase in ATK and Movement SPD for 15s.",
+        "Using an Elemental Burst grants a {color}21{/color}% increase in ATK and Movement SPD for 15s.",
+        "Using an Elemental Burst grants a {color}24{/color}% increase in ATK and Movement SPD for 15s."
+      ]
     },
     {
       "key": "skyward-atlas",
       "name": "Skyward Atlas",
       "description": "A cloud atlas symbolizing Dvalin and his former master, the Anemo Archon. It details the winds and clouds of the northern regions and contains the powers of the sky and wind.",
-      "refinement": "Increases Elemental DMG Bonus by {0}%. Normal Attack hits have a 50% chance to earn the favor of the clouds, which actively seek out nearby opponents to attack for 15s, dealing {1}% ATK DMG. Can only occur once every 30s."
+      "refinements": [
+        "Increases Elemental DMG Bonus by {color}12{/color}%. Normal Attack hits have a 50% chance to earn the favor of the clouds, which actively seek out nearby opponents to attack for 15s, dealing {color}160{/color}% ATK DMG. Can only occur once every 30s.",
+        "Increases Elemental DMG Bonus by {color}15{/color}%. Normal Attack hits have a 50% chance to earn the favor of the clouds, which actively seek out nearby opponents to attack for 15s, dealing {color}200{/color}% ATK DMG. Can only occur once every 30s.",
+        "Increases Elemental DMG Bonus by {color}18{/color}%. Normal Attack hits have a 50% chance to earn the favor of the clouds, which actively seek out nearby opponents to attack for 15s, dealing {color}240{/color}% ATK DMG. Can only occur once every 30s.",
+        "Increases Elemental DMG Bonus by {color}21{/color}%. Normal Attack hits have a 50% chance to earn the favor of the clouds, which actively seek out nearby opponents to attack for 15s, dealing {color}280{/color}% ATK DMG. Can only occur once every 30s.",
+        "Increases Elemental DMG Bonus by {color}24{/color}%. Normal Attack hits have a 50% chance to earn the favor of the clouds, which actively seek out nearby opponents to attack for 15s, dealing {color}320{/color}% ATK DMG. Can only occur once every 30s."
+      ]
     },
     {
       "key": "skyward-blade",
       "name": "Skyward Blade",
       "description": "The sword of a knight that symbolizes the restored honor of Dvalin. The blessings of the Anemo Archon rest on the fuller of the blade, imbuing the sword with the powers of the sky and the wind.",
-      "refinement": "CRIT Rate increased by {0}%. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by {1}%, increases ATK SPD by {2}%, and Normal and Charged hits deal additional DMG equal to {3}% of ATK. Skypiercing Might lasts for 12s."
+      "refinements": [
+        "CRIT Rate increased by {color}4{/color}%. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by {color}10{/color}%, increases ATK SPD by {color}10{/color}%, and Normal and Charged hits deal additional DMG equal to {color}20{/color}% of ATK. Skypiercing Might lasts for 12s.",
+        "CRIT Rate increased by {color}5{/color}%, Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by {color}10{/color}%, increases ATK SPD by {color}10{/color}%, and Normal and Charged hits deal additional DMG equal to {color}25{/color}% of ATK. Skypiercing Might lasts for 12s.",
+        "CRIT Rate increased by {color}6{/color}%. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by {color}10{/color}%, increases ATK SPD by {color}10{/color}%, and Normal and Charged hits deal additional DMG equal to {color}30{/color}% of ATK. Skypiercing Might lasts for 12s.",
+        "CRIT Rate increased by {color}7{/color}%. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by {color}10{/color}%, increases ATK SPD by {color}10{/color}%, and Normal and Charged hits deal additional DMG equal to {color}35{/color}% of ATK. Skypiercing Might lasts for 12s.",
+        "CRIT Rate increased by {color}8{/color}%. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by {color}10{/color}%, increases ATK SPD by {color}10{/color}%, and Normal and Charged hits deal additional DMG equal to {color}40{/color}% of ATK. Skypiercing Might lasts for 12s."
+      ]
     },
     {
       "key": "skyward-harp",
       "name": "Skyward Harp",
       "description": "A greatbow that symbolizes Dvalin's affiliation with the Anemo Archon. The sound of the bow firing is music to the Anemo Archon's ears. It contains the power of the sky and wind within.",
-      "refinement": "Increases CRIT DMG by {0}%. Hits have a {1}% chance to inflict a small AoE attack, dealing 125% Physical ATK DMG. Can only occur once every {2}s."
+      "refinements": [
+        "Increases CRIT DMG by {color}20{/color}%. Hits have a {color}60{/color}% chance to inflict a small AoE attack, dealing 125% Physical ATK DMG. Can only occur once every {color}4{/color}s.",
+        "Increases CRIT DMG by {color}25{/color}%. Hits have a {color}70{/color}% chance to inflict a small AoE attack, dealing 125% Physical ATK DMG. Can only occur once every {color}3.5{/color}s.",
+        "Increases CRIT DMG by {color}30{/color}%. Hits have a {color}80{/color}% chance to inflict a small AoE attack, dealing 125% Physical ATK DMG. Can only occur once every {color}3{/color}s.",
+        "Increases CRIT DMG by {color}35{/color}%. Hits have a {color}90{/color}% chance to inflict a small AoE attack, dealing 125% Physical ATK DMG. Can only occur once every {color}2.5{/color}s.",
+        "Increases CRIT DMG by {color}40{/color}%. Hits have a {color}100{/color}% chance to inflict a small AoE attack, dealing 125% Physical ATK DMG. Can only occur once every {color}2{/color}s."
+      ]
     },
     {
       "key": "skyward-pride",
       "name": "Skyward Pride",
       "description": "A claymore that symbolizes the pride of Dvalin soaring through the skies. When swung, it emits a deep hum as the full force of Dvalin's command of the sky and the wind is unleashed.",
-      "refinement": "Increases all DMG by {0}%. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does {1}% of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades."
+      "refinements": [
+        "Increases all DMG by {color}8{/color}%. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does {color}80{/color}% of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.",
+        "Increases all DMG by {color}10{/color}%. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does {color}100{/color}% of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.",
+        "Increases all DMG by {color}12{/color}%. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does {color}120{/color}% of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.",
+        "Increases all DMG by {color}14{/color}%. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does {color}140{/color}% of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.",
+        "Increases all DMG by {color}16{/color}%. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does {color}160{/color}% of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades."
+      ]
     },
     {
       "key": "skyward-spine",
       "name": "Skyward Spine",
       "description": "A polearm that symbolizes Dvalin's firm resolve. The upright shaft of this weapon points towards the heavens, clad in the might of sky and wind.",
-      "refinement": "Increases CRIT Rate by {0}% and increases Normal ATK SPD by {1}%. Additionally, Normal and Charged Attacks hits on opponents have a {2}% chance to trigger a vacuum blade that deals {3}% of ATK as DMG in a small AoE. This effect can occur no more than once every 2s."
+      "refinements": [
+        "Increases CRIT Rate by {color}8{/color}% and increases Normal ATK SPD by {color}12{/color}%. Additionally, Normal and Charged Attacks hits on opponents have a {color}50{/color}% chance to trigger a vacuum blade that deals {color}40{/color}% of ATK as DMG in a small AoE. This effect can occur no more than once every 2s.",
+        "Increases CRIT Rate by {color}10{/color}% and increases Normal ATK SPD by {color}12{/color}%. Additionally, Normal and Charged Attacks hits on opponents have a {color}50{/color}% chance to trigger a vacuum blade that deals {color}55{/color}% of ATK as DMG in a small AoE. This effect can occur no more than once every 2s.",
+        "Increases CRIT Rate by {color}12{/color}% and increases Normal ATK SPD by {color}12{/color}%. Additionally, Normal and Charged Attacks hits on opponents have a {color}50{/color}% chance to trigger a vacuum blade that deals {color}70{/color}% of ATK as DMG in a small AoE. This effect can occur no more than once every 2s.",
+        "Increases CRIT Rate by {color}14{/color}% and increases Normal ATK SPD by {color}12{/color}%. Additionally, Normal and Charged Attacks hits on opponents have a {color}50{/color}% chance to trigger a vacuum blade that deals {color}85{/color}% of ATK as DMG in a small AoE. This effect can occur no more than once every 2s.",
+        "Increases CRIT Rate by {color}16{/color}% and increases Normal ATK SPD by {color}12{/color}%. Additionally, Normal and Charged Attacks hits on opponents have a {color}50{/color}% chance to trigger a vacuum blade that deals {color}100{/color}% of ATK as DMG in a small AoE. This effect can occur no more than once every 2s."
+      ]
     },
     {
       "key": "slingshot",
       "name": "Slingshot",
       "description": "A bow, despite the name. After countless experiments and improvements to the design, the creator of the ultimate slingshot found himself to have made what was actually a bow.",
-      "refinement": "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by {0}%. Otherwise, decreases DMG by 10%."
+      "refinements": [
+        "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by {color}36{/color}%. Otherwise, decreases DMG by 10%.",
+        "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by {color}42{/color}%. Otherwise, decreases DMG by 10%.",
+        "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by {color}48{/color}%. Otherwise, decreases DMG by 10%.",
+        "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by {color}54{/color}%. Otherwise, decreases DMG by 10%.",
+        "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by {color}60{/color}%. Otherwise, decreases DMG by 10%."
+      ]
     },
     {
       "key": "snow-tombed-starsilver",
       "name": "Snow-Tombed Starsilver",
       "description": "An ancient greatsword that was stored between frescoes. Forged from Starsilver, it has the power to cleave through ice and snow.",
-      "refinement": "Hitting an opponent with Normal and Charged Attacks has a {0}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {1}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {2}% of ATK. Can only occur once every 10s."
+      "refinements": [
+        "Hitting an opponent with Normal and Charged Attacks has a {color}60{/color}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {color}80{/color}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {color}200{/color}% of ATK. Can only occur once every 10s.",
+        "Hitting an opponent with Normal and Charged Attacks has a {color}70{/color}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {color}95{/color}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {color}240{/color}% of ATK. Can only occur once every 10s.",
+        "Hitting an opponent with Normal and Charged Attacks has an {color}80{/color}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {color}110{/color}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {color}280{/color}% of ATK. Can only occur once every 10s.",
+        "Hitting an opponent with Normal and Charged Attacks has a {color}90{/color}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {color}125{/color}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {color}320{/color}% of ATK. Can only occur once every 10s.",
+        "Hitting an opponent with Normal and Charged Attacks has a {color}100{/color}% chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {color}140{/color}% of ATK. Opponents affected by Cryo are instead dealt DMG equal to {color}360{/color}% of ATK. Can only occur once every 10s."
+      ]
     },
     {
       "key": "solar-pearl",
       "name": "Solar Pearl",
       "description": "A dull, golden pearl made of an unknown substance that harbors the light of the sun and the moon and pulses with a warm strength.",
-      "refinement": "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {0}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {1}% for 6s."
+      "refinements": [
+        "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {color}20{/color}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {color}20{/color}% for 6s.",
+        "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {color}25{/color}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {color}25{/color}% for 6s.",
+        "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {color}30{/color}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {color}30{/color}% for 6s.",
+        "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {color}35{/color}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {color}35{/color}% for 6s.",
+        "Normal Attack hits increase Elemental Skill and Elemental Burst DMG by {color}40{/color}% for 6s. Likewise, Elemental Skill or Elemental Burst hits increase Normal Attack DMG by {color}40{/color}% for 6s."
+      ]
     },
     {
       "key": "song-of-broken-pines",
       "name": "Song of Broken Pines",
       "description": "A greatsword as light as the sigh of grass in the breeze, yet as merciless to the corrupt as a typhoon.",
-      "refinement": "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {0}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {1}% and increases ATK by {2}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      "refinements": [
+        "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {color}16{/color}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {color}12{/color}% and increases ATK by {color}20{/color}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack.",
+        "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {color}20{/color}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {color}15{/color}% and increases ATK by {color}25{/color}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack.",
+        "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {color}24{/color}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {color}18{/color}% and increases ATK by {color}30{/color}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack.",
+        "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {color}28{/color}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {color}21{/color}% and increases ATK by {color}35{/color}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack.",
+        "A part of the \"Millennial Movement\" that wanders amidst the winds. Increases ATK by {color}32{/color}%, and when Normal or Charged Attacks hit opponents, the character gains a Sigil of Whispers. This effect can be triggered once every 0.3s. When you possess 4 Sigils of Whispers, all of them will be consumed and all nearby party members will obtain the \"Millennial Movement: Banner-Hymn\" effect for 12s. \"Millennial Movement: Banner-Hymn\" increases Normal ATK SPD by {color}24{/color}% and increases ATK by {color}40{/color}%. Once this effect is triggered, you will not gain Sigils of Whispers for 20s. Of the many effects of the \"Millennial Movement,\" buffs of the same type will not stack."
+      ]
     },
     {
       "key": "staff-of-homa",
       "name": "Staff of Homa",
       "description": "A \"firewood staff\" that was once used in ancient and long-lost rituals.",
-      "refinement": "HP increased by {0}%. Additionally, provides an ATK Bonus based on {1}% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional {2}% of Max HP."
+      "refinements": [
+        "HP increased by {color}20{/color}%. Additionally, provides an ATK Bonus based on {color}0.8{/color}% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional {color}1{/color}% of Max HP.",
+        "HP increased by {color}25{/color}%. Additionally, provides an ATK Bonus based on {color}1{/color}% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional {color}1.2{/color}% of Max HP.",
+        "HP increased by {color}30{/color}%. Additionally, provides an ATK Bonus based on {color}1.2{/color}% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional {color}1.4{/color}% of Max HP.",
+        "HP increased by {color}35{/color}%. Additionally, provides an ATK Bonus based on {color}1.4{/color}% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional {color}1.6{/color}% of Max HP.",
+        "HP increased by {color}40{/color}%. Additionally, provides an ATK Bonus based on {color}1.6{/color}% of the wielder's Max HP. When the wielder's HP is less than 50%, this ATK Bonus is increased by an additional {color}1.8{/color}% of Max HP."
+      ]
     },
     {
       "key": "summit-shaper",
       "name": "Summit Shaper",
       "description": "A symbol of a legendary pact, this sharp blade once cut off the peak of a mountain.",
-      "refinement": "Increases Shield Strength by {0}%. Scoring hits on opponents increases ATK by {1}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "refinements": [
+        "Increases Shield Strength by {color}20{/color}%. Scoring hits on opponents increases ATK by {color}4{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+        "Increases Shield Strength by {color}25{/color}%. Scoring hits on opponents increases ATK by {color}5{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+        "Increases Shield Strength by {color}30{/color}%. Scoring hits on opponents increases ATK by {color}6{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+        "Increases Shield Strength by {color}35{/color}%. Scoring hits on opponents increases ATK by {color}7{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+        "Increases Shield Strength by {color}40{/color}%. Scoring hits on opponents increases ATK by {color}8{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      ]
     },
     {
       "key": "sword-of-descension",
       "name": "Sword of Descension",
       "description": "A sword of unique craftsmanship. It does not appear to belong to this world.",
-      "refinement": "Effective only on the following platform: \r\n\"PlayStation Network\"\r\nHitting opponents with Normal and Charged Attacks grants a {0}% chance to deal {1}% ATK as DMG in a small AoE. This effect can only occur once every 10s. Additionally, if the Traveler equips the Sword of Descension, their ATK is increased by {2}"
+      "refinements": [
+        "Effective only on the following platform: \r\n\"PlayStation Network\"\r\nHitting opponents with Normal and Charged Attacks grants a {color}50{/color}% chance to deal {color}200{/color}% ATK as DMG in a small AoE. This effect can only occur once every 10s. Additionally, if the Traveler equips the Sword of Descension, their ATK is increased by {color}66{/color}"
+      ]
     },
     {
       "key": "the-alley-flash",
       "name": "The Alley Flash",
       "description": "A straight sword as black as the night. It once belonged to a thief who roamed the benighted streets.",
-      "refinement": "Increases DMG dealt by the character equipping this weapon by {0}%. Taking DMG disables this effect for 5s."
+      "refinements": [
+        "Increases DMG dealt by the character equipping this weapon by {color}12{/color}%. Taking DMG disables this effect for 5s.",
+        "Increases DMG dealt by the character equipping this weapon by {color}15{/color}%. Taking DMG disables this effect for 5s.",
+        "Increases DMG dealt by the character equipping this weapon by {color}18{/color}%. Taking DMG disables this effect for 5s.",
+        "Increases DMG dealt by the character equipping this weapon by {color}21{/color}%. Taking DMG disables this effect for 5s.",
+        "Increases DMG dealt by the character equipping this weapon by {color}24{/color}%. Taking DMG disables this effect for 5s."
+      ]
     },
     {
       "key": "the-bell",
       "name": "The Bell",
       "description": "A heavy greatsword. A clock is embedded within it, though its internal mechanisms have long been damaged.",
-      "refinement": "Taking DMG generates a shield which absorbs DMG up to {0}% of Max HP. This shield lasts for 10s or until broken, and can only be triggered once every {1}s. While protected by the shield, the character gains {2}% increased DMG."
+      "refinements": [
+        "Taking DMG generates a shield which absorbs DMG up to {color}20{/color}% of Max HP. This shield lasts for 10s or until broken, and can only be triggered once every {color}45{/color}s. While protected by the shield, the character gains {color}12{/color}% increased DMG.",
+        "Taking DMG generates a shield which absorbs DMG up to {color}23{/color}% of Max HP. This shield lasts for 10s or until broken, and can only be triggered once every {color}45{/color}s. While protected by the shield, the character gains {color}15{/color}% increased DMG.",
+        "Taking DMG generates a shield which absorbs DMG up to {color}26{/color}% of Max HP. This shield lasts for 10s or until broken, and can only be triggered once every {color}45{/color}s. While protected by the shield, the character gains {color}18{/color}% increased DMG.",
+        "Taking DMG generates a shield which absorbs DMG up to {color}29{/color}% of Max HP. This shield lasts for 10s or until broken, and can only be triggered once every {color}45{/color}s. While protected by the shield, the character gains {color}21{/color}% increased DMG.",
+        "Taking DMG generates a shield which absorbs DMG up to {color}32{/color}% of Max HP. This shield lasts for 10s or until broken, and can only be triggered once every {color}45{/color}s. While protected by the shield, the character gains {color}24{/color}% increased DMG."
+      ]
     },
     {
       "key": "the-black-sword",
       "name": "The Black Sword",
       "description": "A pitch-black longsword that thirsts for violence and conflict. It is said that this weapon can cause its user to become drunk on the red wine of slaughter.",
-      "refinement": "Increases DMG dealt by Normal and Charged Attacks by {0}%. Additionally, regenerates {1}% of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s."
+      "refinements": [
+        "Increases DMG dealt by Normal and Charged Attacks by {color}20{/color}%. Additionally, regenerates {color}60{/color}% of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s.",
+        "Increases DMG dealt by Normal and Charged Attacks by {color}25{/color}%. Additionally, regenerates {color}70{/color}% of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s.",
+        "Increases DMG dealt by Normal and Charged Attacks by {color}30{/color}%. Additionally, regenerates {color}80{/color}% of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s.",
+        "Increases DMG dealt by Normal and Charged Attacks by {color}35{/color}%. Additionally, regenerates {color}90{/color}% of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s.",
+        "Increases DMG dealt by Normal and Charged Attacks by {color}40{/color}%. Additionally, regenerates {color}100{/color}% of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s."
+      ]
     },
     {
       "key": "the-catch",
       "name": "\"The Catch\"",
       "description": "In the distant past, this was the beloved spear of a famed Inazuman bandit.",
-      "refinement": "Increases Elemental Burst DMG by {0}% and Elemental Burst CRIT Rate by {1}%."
+      "refinements": [
+        "Increases Elemental Burst DMG by {color}16{/color}% and Elemental Burst CRIT Rate by {color}6{/color}%.",
+        "Increases Elemental Burst DMG by {color}20{/color}% and Elemental Burst CRIT Rate by {color}7.5{/color}%.",
+        "Increases Elemental Burst DMG by {color}24{/color}% and Elemental Burst CRIT Rate by {color}9{/color}%.",
+        "Increases Elemental Burst DMG by {color}28{/color}% and Elemental Burst CRIT Rate by {color}10.5{/color}%.",
+        "Increases Elemental Burst DMG by {color}32{/color}% and Elemental Burst CRIT Rate by {color}12{/color}%."
+      ]
     },
     {
       "key": "the-flute",
       "name": "The Flute",
       "description": "Beneath its rusty exterior is a lavishly decorated thin blade. It swings as swiftly as the wind.",
-      "refinement": "Normal or Charged Attacks grant a Harmonic on hits. Gaining 5 Harmonics triggers the power of music and deals {0}% ATK DMG to surrounding opponents. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s."
+      "refinements": [
+        "Normal or Charged Attacks grant a Harmonic on hits. Gaining 5 Harmonics triggers the power of music and deals {color}100{/color}% ATK DMG to surrounding opponents. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s.",
+        "Normal or Charged Attacks grant a Harmonic on hits. Gaining 5 Harmonics triggers the power of music and deals {color}125{/color}% ATK DMG to surrounding opponents. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s.",
+        "Normal or Charged Attacks grant a Harmonic on hits. Gaining 5 Harmonics triggers the power of music and deals {color}150{/color}% ATK DMG to surrounding opponents. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s.",
+        "Normal or Charged Attacks grant a Harmonic on hits. Gaining 5 Harmonics triggers the power of music and deals {color}175{/color}% ATK DMG to surrounding opponents. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s.",
+        "Normal or Charged Attacks grant a Harmonic on hits. Gaining 5 Harmonics triggers the power of music and deals {color}200{/color}% ATK DMG to surrounding opponents. Harmonics last up to 30s, and a maximum of 1 can be gained every 0.5s."
+      ]
     },
     {
       "key": "the-stringless",
       "name": "The Stringless",
       "description": "A bow that once served as an extraordinary instrument. It is no longer capable of getting people up and dancing.",
-      "refinement": "Increases Elemental Skill and Elemental Burst DMG by {0}%."
+      "refinements": [
+        "Increases Elemental Skill and Elemental Burst DMG by {color}24{/color}%.",
+        "Increases Elemental Skill and Elemental Burst DMG by {color}30{/color}%.",
+        "Increases Elemental Skill and Elemental Burst DMG by {color}36{/color}%.",
+        "Increases Elemental Skill and Elemental Burst DMG by {color}42{/color}%.",
+        "Increases Elemental Skill and Elemental Burst DMG by {color}48{/color}%."
+      ]
     },
     {
       "key": "the-unforged",
       "name": "The Unforged",
       "description": "Capable of driving away evil spirits and wicked people alike, this edgeless claymore seems to possess divine might.",
-      "refinement": "Increases Shield Strength by {0}%. Scoring hits on opponents increases ATK by {1}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "refinements": [
+        "Increases Shield Strength by {color}20{/color}%. Scoring hits on opponents increases ATK by {color}4{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+        "Increases Shield Strength by {color}25{/color}%. Scoring hits on opponents increases ATK by {color}5{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+        "Increases Shield Strength by {color}30{/color}%. Scoring hits on opponents increases ATK by {color}6{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+        "Increases Shield Strength by {color}35{/color}%. Scoring hits on opponents increases ATK by {color}7{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+        "Increases Shield Strength by {color}40{/color}%. Scoring hits on opponents increases ATK by {color}8{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      ]
     },
     {
       "key": "the-viridescent-hunt",
       "name": "The Viridescent Hunt",
       "description": "A pure green hunting bow. This once belonged to a certain hunter whose home was the forest.",
-      "refinement": "Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding opponents, dealing {0}% of ATK as DMG to these opponents every 0.5s for 4s. This effect can only occur once every {1}s."
+      "refinements": [
+        "Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding opponents, dealing {color}40{/color}% of ATK as DMG to these opponents every 0.5s for 4s. This effect can only occur once every {color}14{/color}s.",
+        "Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding opponents, dealing {color}50{/color}% of ATK as DMG to these opponents every 0.5s for 4s. This effect can only occur once every {color}13{/color}s.",
+        "Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding opponents, dealing {color}60{/color}% of ATK as DMG to these opponents every 0.5s for 4s. This effect can only occur once every {color}12{/color}s.",
+        "Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding opponents, dealing {color}70{/color}% of ATK as DMG to these opponents every 0.5s for 4s. This effect can only occur once every {color}11{/color}s.",
+        "Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding opponents, dealing {color}80{/color}% of ATK as DMG to these opponents every 0.5s for 4s. This effect can only occur once every {color}10{/color}s."
+      ]
     },
     {
       "key": "the-widsith",
       "name": "The Widsith",
       "description": "A heavy notebook filled with musical scores. Though suffering from moth damage and heavy wear-and-tear, there is still much power to be found among the hand-written words within.",
-      "refinement": "When the character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s. Recitative: ATK is increased by {0}%. Aria: Increases all Elemental DMG by {1}%. Interlude: Elemental Mastery is increased by {2}"
+      "refinements": [
+        "When the character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s. Recitative: ATK is increased by {color}60{/color}%. Aria: Increases all Elemental DMG by {color}48{/color}%. Interlude: Elemental Mastery is increased by {color}240{/color}",
+        "When the character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s. Recitative: ATK is increased by {color}75{/color}%. Aria: Increases all Elemental DMG by {color}60{/color}%. Interlude: Elemental Mastery is increased by {color}300{/color}",
+        "When the character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s. Recitative: ATK is increased by {color}90{/color}%. Aria: Increases all Elemental DMG by {color}72{/color}%. Interlude: Elemental Mastery is increased by {color}360{/color}",
+        "When the character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s. Recitative: ATK is increased by {color}105{/color}%. Aria: Increases all Elemental DMG by {color}84{/color}%. Interlude: Elemental Mastery is increased by {color}420{/color}",
+        "When the character takes the field, they will gain a random theme song for 10s. This can only occur once every 30s. Recitative: ATK is increased by {color}120{/color}%. Aria: Increases all Elemental DMG by {color}96{/color}%. Interlude: Elemental Mastery is increased by {color}480{/color}"
+      ]
     },
     {
       "key": "thrilling-tales-of-dragon-slayers",
       "name": "Thrilling Tales of Dragon Slayers",
       "description": "A fictional story of a band of five heroes who go off on a dragon hunt. It is poorly written and structurally incoherent. Its value lies in the many lessons that can be learned from failure.",
-      "refinement": "When switching characters, the new character taking the field has their ATK increased by {0}% for 10s. This effect can only occur once every 20s."
+      "refinements": [
+        "When switching characters, the new character taking the field has their ATK increased by {color}24{/color}% for 10s. This effect can only occur once every 20s.",
+        "When switching characters, the new character taking the field has their ATK increased by {color}30{/color}% for 10s. This effect can only occur once every 20s.",
+        "When switching characters, the new character taking the field has their ATK increased by {color}36{/color}% for 10s. This effect can only occur once every 20s.",
+        "When switching characters, the new character taking the field has their ATK increased by {color}42{/color}% for 10s. This effect can only occur once every 20s.",
+        "When switching characters, the new character taking the field has their ATK increased by {color}48{/color}% for 10s. This effect can only occur once every 20s."
+      ]
     },
     {
       "key": "thundering-pulse",
       "name": "Thundering Pulse",
       "description": "A longbow that was a gift from the Shogun. Eternal lightning crackles all around it.",
-      "refinement": "Increases ATK by {0}% and grants the might of the Thunder Emblem. At stack levels 1/2/3, the Thunder Emblem increases Normal Attack DMG by {1}%. The character will obtain 1 stack of Thunder Emblem in each of the following scenarios: Normal Attack deals DMG (stack lasts 5s), casting Elemental Skill (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently."
+      "refinements": [
+        "Increases ATK by {color}20{/color}% and grants the might of the Thunder Emblem. At stack levels 1/2/3, the Thunder Emblem increases Normal Attack DMG by {color}12/24/40{/color}%. The character will obtain 1 stack of Thunder Emblem in each of the following scenarios: Normal Attack deals DMG (stack lasts 5s), casting Elemental Skill (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently.",
+        "Increases ATK by {color}25{/color}% and grants the might of the Thunder Emblem. At stack levels 1/2/3, the Thunder Emblem increases Normal Attack DMG by {color}15/30/50{/color}%. The character will obtain 1 stack of Thunder Emblem in each of the following scenarios: Normal Attack deals DMG (stack lasts 5s), casting Elemental Skill (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently.",
+        "Increases ATK by {color}30{/color}% and grants the might of the Thunder Emblem. At stack levels 1/2/3, the Thunder Emblem increases Normal Attack DMG by {color}18/36/60{/color}%. The character will obtain 1 stack of Thunder Emblem in each of the following scenarios: Normal Attack deals DMG (stack lasts 5s), casting Elemental Skill (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently.",
+        "Increases ATK by {color}35{/color}% and grants the might of the Thunder Emblem. At stack levels 1/2/3, the Thunder Emblem increases Normal Attack DMG by {color}21/42/70{/color}%. The character will obtain 1 stack of Thunder Emblem in each of the following scenarios: Normal Attack deals DMG (stack lasts 5s), casting Elemental Skill (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently.",
+        "Increases ATK by {color}40{/color}% and grants the might of the Thunder Emblem. At stack levels 1/2/3, the Thunder Emblem increases Normal Attack DMG by {color}24/48/80{/color}%. The character will obtain 1 stack of Thunder Emblem in each of the following scenarios: Normal Attack deals DMG (stack lasts 5s), casting Elemental Skill (stack lasts 10s); Energy is less than 100% (stack disappears when Energy is full). Each stack's duration is calculated independently."
+      ]
     },
     {
       "key": "travelers-handy-sword",
       "name": "Traveler's Handy Sword",
       "description": "A handy steel sword which contains scissors, a magnifying glass, tinder, and other useful items in its sheath.",
-      "refinement": "Each Elemental Orb or Particle collected restores {0}% HP."
+      "refinements": [
+        "Each Elemental Orb or Particle collected restores {color}1{/color}% HP.",
+        "Each Elemental Orb or Particle collected restores {color}1.25{/color}% HP.",
+        "Each Elemental Orb or Particle collected restores {color}1.5{/color}% HP.",
+        "Each Elemental Orb or Particle collected restores {color}1.75{/color}% HP.",
+        "Each Elemental Orb or Particle collected restores {color}2{/color}% HP."
+      ]
     },
     {
       "key": "twin-nephrite",
       "name": "Twin Nephrite",
       "description": "A jade pendant formed by piecing together two jade stones.",
-      "refinement": "Defeating an opponent increases Movement SPD and ATK by {0}% for 15s."
+      "refinements": [
+        "Defeating an opponent increases Movement SPD and ATK by {color}12{/color}% for 15s.",
+        "Defeating an opponent increases Movement SPD and ATK by {color}14{/color}% for 15s.",
+        "Defeating an opponent increases Movement SPD and ATK by {color}16{/color}% for 15s.",
+        "Defeating an opponent increases Movement SPD and ATK by {color}18{/color}% for 15s.",
+        "Defeating an opponent increases Movement SPD and ATK by {color}20{/color}% for 15s."
+      ]
     },
     {
       "key": "vortex-vanquisher",
       "name": "Vortex Vanquisher",
       "description": "This sharp polearm can seemingly pierce through anything. When swung, one can almost see the rift it tears in the air.",
-      "refinement": "Increases Shield Strength by {0}%. Scoring hits on opponents increases ATK by {1}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      "refinements": [
+        "Increases Shield Strength by {color}20{/color}%. Scoring hits on opponents increases ATK by {color}4{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+        "Increases Shield Strength by {color}25{/color}%. Scoring hits on opponents increases ATK by {color}5{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+        "Increases Shield Strength by {color}30{/color}%. Scoring hits on opponents increases ATK by {color}6{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+        "Increases Shield Strength by {color}35{/color}%. Scoring hits on opponents increases ATK by {color}7{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+        "Increases Shield Strength by {color}40{/color}%. Scoring hits on opponents increases ATK by {color}8{/color}% for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%."
+      ]
     },
     {
       "key": "waster-greatsword",
       "name": "Waster Greatsword",
       "description": "A sturdy sheet of iron that may be powerful enough to break apart mountains if wielded with enough willpower.",
-      "refinement": null
+      "refinements": []
     },
     {
       "key": "white-iron-greatsword",
       "name": "White Iron Greatsword",
       "description": "A claymore made from white iron. Lightweight without compromising on power. Effective even when wielded by one of average strength, it is extremely deadly in the hands of a physically stronger wielder.",
-      "refinement": "Defeating an opponent restores {0}% HP."
+      "refinements": [
+        "Defeating an opponent restores {color}8{/color}% HP.",
+        "Defeating an opponent restores {color}10{/color}% HP.",
+        "Defeating an opponent restores {color}12{/color}% HP.",
+        "Defeating an opponent restores {color}14{/color}% HP.",
+        "Defeating an opponent restores {color}16{/color}% HP."
+      ]
     },
     {
       "key": "white-tassel",
       "name": "White Tassel",
       "description": "A standard-issue weapon of the Millelith soldiers. It has a sturdy shaft and sharp spearhead. It's a reliable weapon.",
-      "refinement": "Increases Normal Attack DMG by {0}%."
+      "refinements": [
+        "Increases Normal Attack DMG by {color}24{/color}%.",
+        "Increases Normal Attack DMG by {color}30{/color}%.",
+        "Increases Normal Attack DMG by {color}36{/color}%.",
+        "Increases Normal Attack DMG by {color}42{/color}%.",
+        "Increases Normal Attack DMG by {color}48{/color}%."
+      ]
     },
     {
       "key": "whiteblind",
       "name": "Whiteblind",
       "description": "An exotic sword with one section of the blade left blunt. It made its way into Liyue via the hands of foreign traders. Incredibly powerful in the hands of someone who knows how to use it.",
-      "refinement": "On hit, Normal or Charged Attacks increase ATK and DEF by {0}% for 6s. Max 4 stacks. This effect can only occur once every 0.5s."
+      "refinements": [
+        "On hit, Normal or Charged Attacks increase ATK and DEF by {color}6{/color}% for 6s. Max 4 stacks. This effect can only occur once every 0.5s.",
+        "On hit, Normal or Charged Attacks increase ATK and DEF by {color}7.5{/color}% for 6s. Max 4 stacks. This effect can only occur once every 0.5s.",
+        "On hit, Normal or Charged Attacks increase ATK and DEF by {color}9{/color}% for 6s. Max 4 stacks. This effect can only occur once every 0.5s.",
+        "On hit, Normal or Charged Attacks increase ATK and DEF by {color}10.5{/color}% for 6s. Max 4 stacks. This effect can only occur once every 0.5s.",
+        "On hit, Normal or Charged Attacks increase ATK and DEF by {color}12{/color}% for 6s. Max 4 stacks. This effect can only occur once every 0.5s."
+      ]
     },
     {
       "key": "windblume-ode",
       "name": "Windblume Ode",
       "description": "A bow adorned with nameless flowers that bears the earnest hopes of an equally nameless person.",
-      "refinement": "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by {0}% for 6s."
+      "refinements": [
+        "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by {color}16{/color}% for 6s.",
+        "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by {color}20{/color}% for 6s.",
+        "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by {color}24{/color}% for 6s.",
+        "After using an Elemental Skill, receive a boon from the ancient wish of the Windblume, increasing ATK by {color}28{/color}% for 6s."
+      ]
     },
     {
       "key": "wine-and-song",
       "name": "Wine and Song",
       "description": "A songbook from the bygone aristocratic era, whose composer has become forgotten. It chronicles the tale of a certain heroic outlaw.",
-      "refinement": "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by {0}% for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by {1}% for 5s."
+      "refinements": [
+        "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by {color}14{/color}% for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by {color}20{/color}% for 5s.",
+        "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by {color}16{/color}% for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by {color}25{/color}% for 5s.",
+        "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by {color}18{/color}% for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by {color}30{/color}% for 5s.",
+        "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by {color}20{/color}% for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by {color}35{/color}% for 5s.",
+        "Hitting an opponent with a Normal Attack decreases the Stamina consumption of Sprint or Alternate Sprint by {color}22{/color}% for 5s. Additionally, using a Sprint or Alternate Sprint ability increases ATK by {color}40{/color}% for 5s."
+      ]
     },
     {
       "key": "wolfs-gravestone",
       "name": "Wolf's Gravestone",
       "description": "A longsword used by the Wolf Knight. Originally just a heavy sheet of iron given to the knight by a blacksmith from the city, it became endowed with legendary power owing to his friendship with the wolves.",
-      "refinement": "Increases ATK by {0}%. On hit, attacks against opponents with less than 30% HP increase all party members' ATK by {1}% for 12s. Can only occur once every 30s."
+      "refinements": [
+        "Increases ATK by {color}20{/color}%. On hit, attacks against opponents with less than 30% HP increase all party members' ATK by {color}40{/color}% for 12s. Can only occur once every 30s.",
+        "Increases ATK by {color}25{/color}%. On hit, attacks against opponents with less than 30% HP increase all party members' ATK by {color}50{/color}% for 12s. Can only occur once every 30s.",
+        "Increases ATK by {color}30{/color}%. On hit, attacks against opponents with less than 30% HP increase all party members' ATK by {color}60{/color}% for 12s. Can only occur once every 30s.",
+        "Increases ATK by {color}35{/color}%. On hit, attacks against opponents with less than 30% HP increase all party members' ATK by {color}70{/color}% for 12s. Can only occur once every 30s.",
+        "Increases ATK by {color}40{/color}%. On hit, attacks against opponents with less than 30% HP increase all party members' ATK by {color}80{/color}% for 12s. Can only occur once every 30s."
+      ]
     }
   ],
   "artifacts": [
@@ -9271,22 +9940,6 @@
       "name": "Hydro Hypostasis"
     },
     {
-      "key": "hydro-hypostasis-summon",
-      "name": "Hydro Hypostasis Summon"
-    },
-    {
-      "key": "hydro-hypostasis-summon",
-      "name": "Hydro Hypostasis Summon"
-    },
-    {
-      "key": "hydro-hypostasis-summon",
-      "name": "Hydro Hypostasis Summon"
-    },
-    {
-      "key": "hydro-hypostasis-summon",
-      "name": "Hydro Hypostasis Summon"
-    },
-    {
       "key": "hydro-mimic-boar",
       "name": "Hydro Mimic Boar"
     },
@@ -9471,6 +10124,14 @@
       "name": "Rock Shieldwall Mitachurl"
     },
     {
+      "key": "rockfond-rifthound",
+      "name": "Rockfond Rifthound"
+    },
+    {
+      "key": "rockfond-rifthound-whelp",
+      "name": "Rockfond Rifthound Whelp"
+    },
+    {
       "key": "ruin-cruiser",
       "name": "Ruin Cruiser"
     },
@@ -9499,10 +10160,6 @@
       "name": "Ruin Scout"
     },
     {
-      "key": "samurai-dog",
-      "name": "Samurai Dog"
-    },
-    {
       "key": "sangonomiya-cohort",
       "name": "Sangonomiya Cohort"
     },
@@ -9525,6 +10182,14 @@
     {
       "key": "thunder-manifestation",
       "name": "Thunder Manifestation"
+    },
+    {
+      "key": "thundercraven-rifthound",
+      "name": "Thundercraven Rifthound"
+    },
+    {
+      "key": "thundercraven-rifthound-whelp",
+      "name": "Thundercraven Rifthound Whelp"
     },
     {
       "key": "thunderhelm-lawachurl",

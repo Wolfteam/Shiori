@@ -88,7 +88,6 @@ class _CakeCard extends StatelessWidget {
             ),
             Flexible(
               flex: 50,
-              fit: FlexFit.tight,
               child: CircleCharacter.fromItem(item: item, radius: 55),
             )
           ],

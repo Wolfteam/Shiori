@@ -16,6 +16,9 @@ class MainTabBloc extends Bloc<MainTabEvent, MainTabState> {
   ) async* {
     final s = await event.when(
       goToTab: (index) async {
+        if (index < 0) {
+          return state;
+        }
         return state.copyWith(currentSelectedTab: index);
       },
     );

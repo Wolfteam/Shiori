@@ -13,6 +13,9 @@
   "vietnamese": "Вьетнамский",
   "indonesian": "Indonesian",
   "deutsch": "Deutsch",
+  "korean": "Korean",
+  "thai": "Thai",
+  "traditionalChinese": "Chinese (Traditional)",
   "bow": "Лук",
   "claymore": "Двуручный меч",
   "sword": "Меч",
@@ -370,5 +373,6 @@
   "charRoleBurstSupport": "Поддержка Взрывом стихии",
   "melt": "Таяние",
   "freeze": "Заморозка",
-  "shield": "Защита"
+  "shield": "Защита",
+  "unofficial": "Unofficial"
 }

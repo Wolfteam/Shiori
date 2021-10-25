@@ -1,20 +1,16 @@
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:intl/date_symbol_data_local.dart';
-import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
-import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
 import 'package:shiori/domain/services/locale_service.dart';
-import 'package:shiori/domain/services/settings_service.dart';
 import 'package:shiori/infrastructure/infrastructure.dart';
 
-import 'genshin_service_test.mocks.dart';
+import '../common.dart';
+import '../mocks.mocks.dart';
+
 //TODO: ADD TEST FOR FAIL CASES (E.G WEAPON NOT FOUND, IMAGE NOT FOUND ETC)
 
-@GenerateMocks([SettingsService])
 void main() {
   final languages = AppLanguageType.values.toList();
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -24,9 +20,7 @@ void main() {
     when(settings.language).thenReturn(language);
     final service = LocaleServiceImpl(settings);
 
-    //for some reason in the tests I need to initialize this thing
-    final locale = service.getFormattedLocale(language);
-    initializeDateFormatting(locale);
+    manuallyInitLocale(service, language);
     return service;
   }
 
@@ -34,78 +28,6 @@ void main() {
     final localeService = _getLocaleService(AppLanguageType.english);
     final service = GenshinServiceImpl(localeService);
     return service;
-  }
-
-  void _checkKey(String value) {
-    expect(value, allOf([isNotEmpty, isNotNull]));
-    final lower = value.toLowerCase();
-    expect(lower, equals(value));
-  }
-
-  void _checkKeys(List<String> keys) {
-    expect(keys.toSet().length, equals(keys.length));
-  }
-
-  Future<bool> _assetExists(String path) async {
-    try {
-      await rootBundle.load(path);
-      return true;
-    } catch (e) {
-      print(path);
-      print(e);
-      return false;
-    }
-  }
-
-  void _checkAsset(String path) {
-    expect(path, allOf([isNotEmpty, isNotNull]));
-    expect(_assetExists(path), completion(equals(true)));
-  }
-
-  void _checkItemCommon(ItemCommon item) {
-    _checkKey(item.key);
-    _checkAsset(item.image);
-  }
-
-  void _checkItemAscensionMaterialFileModel(GenshinService service, List<ItemAscensionMaterialFileModel> all) {
-    expect(all, isNotEmpty);
-    for (final material in all) {
-      _checkKey(material.key);
-      expect(() => service.getMaterial(material.key), returnsNormally);
-      expect(material.quantity, greaterThanOrEqualTo(0));
-    }
-  }
-
-  void _checkCharacterFileAscensionMaterialModel(GenshinService service, List<CharacterFileAscensionMaterialModel> all) {
-    expect(all, isNotEmpty);
-    for (final ascMaterial in all) {
-      expect(ascMaterial.rank, allOf([greaterThanOrEqualTo(1), lessThanOrEqualTo(6)]));
-      expect(ascMaterial.level, allOf([greaterThanOrEqualTo(20), lessThanOrEqualTo(80)]));
-      _checkItemAscensionMaterialFileModel(service, ascMaterial.materials);
-    }
-  }
-
-  void _checkCharacterFileTalentAscensionMaterialModel(GenshinService service, List<CharacterFileTalentAscensionMaterialModel> all) {
-    expect(all, isNotEmpty);
-    for (final ascMaterial in all) {
-      expect(ascMaterial.level, inInclusiveRange(2, 10));
-      _checkItemAscensionMaterialFileModel(service, ascMaterial.materials);
-    }
-  }
-
-  void _checkTranslation(String? text, {bool canBeNull = true, bool checkForColor = true}) {
-    if (canBeNull && text.isNullEmptyOrWhitespace) {
-      return;
-    }
-
-    expect(text, allOf([isNotNull, isNotEmpty]));
-    final weirdCharacters = text!.contains('#') || text.contains('LAYOUT');
-
-    expect(weirdCharacters, isFalse);
-    if (checkForColor) {
-      final hasColor = text.contains('{color}') || text.contains('{/color}');
-      expect(hasColor, isFalse);
-    }
   }
 
   test('Initialize all languages', () {
@@ -123,12 +45,12 @@ void main() {
       for (final lang in languages) {
         await service.init(lang);
         final characters = service.getCharactersForCard();
-        _checkKeys(characters.map((e) => e.key).toList());
+        checkKeys(characters.map((e) => e.key).toList());
         final materialImgs = service.getAllMaterialsForCard().map((e) => e.image).toList();
         for (final char in characters) {
-          _checkKey(char.key);
+          checkKey(char.key);
           expect(char.name, allOf([isNotEmpty, isNotNull]));
-          _checkAsset(char.image);
+          checkAsset(char.image);
           expect(char.stars, allOf([greaterThanOrEqualTo(4), lessThanOrEqualTo(5)]));
           if (char.isNew || char.isComingSoon) {
             expect(char.isNew, isNot(char.isComingSoon));
@@ -148,10 +70,10 @@ void main() {
       for (final lang in languages) {
         await service.init(lang);
         final weapons = service.getWeaponsForCard();
-        _checkKeys(weapons.map((e) => e.key).toList());
+        checkKeys(weapons.map((e) => e.key).toList());
         for (final weapon in weapons) {
-          _checkKey(weapon.key);
-          _checkAsset(weapon.image);
+          checkKey(weapon.key);
+          checkAsset(weapon.image);
           expect(weapon.name, allOf([isNotEmpty, isNotNull]));
           expect(weapon.rarity, allOf([greaterThanOrEqualTo(1), lessThanOrEqualTo(5)]));
           expect(weapon.baseAtk, greaterThan(0));
@@ -165,10 +87,10 @@ void main() {
       for (final lang in languages) {
         await service.init(lang);
         final artifacts = service.getArtifactsForCard();
-        _checkKeys(artifacts.map((e) => e.key).toList());
+        checkKeys(artifacts.map((e) => e.key).toList());
         for (final artifact in artifacts) {
-          _checkKey(artifact.key);
-          _checkAsset(artifact.image);
+          checkKey(artifact.key);
+          checkAsset(artifact.image);
           expect(artifact.name, allOf([isNotEmpty, isNotNull]));
           expect(artifact.rarity, allOf([greaterThanOrEqualTo(3), lessThanOrEqualTo(5)]));
           expect(artifact.bonus, isNotEmpty);
@@ -189,10 +111,10 @@ void main() {
       for (final lang in languages) {
         await service.init(lang);
         final materials = service.getAllMaterialsForCard();
-        _checkKeys(materials.map((e) => e.key).toList());
+        checkKeys(materials.map((e) => e.key).toList());
         for (final material in materials) {
-          _checkKey(material.key);
-          _checkAsset(material.image);
+          checkKey(material.key);
+          checkAsset(material.image);
           expect(material.name, allOf([isNotEmpty, isNotNull]));
           expect(material.rarity, allOf([greaterThanOrEqualTo(1), lessThanOrEqualTo(5)]));
           expect(material.level, greaterThanOrEqualTo(0));
@@ -205,10 +127,10 @@ void main() {
       for (final lang in languages) {
         await service.init(lang);
         final monsters = service.getAllMonstersForCard();
-        _checkKeys(monsters.map((e) => e.key).toList());
+        checkKeys(monsters.map((e) => e.key).toList());
         for (final monster in monsters) {
-          _checkKey(monster.key);
-          _checkAsset(monster.image);
+          checkKey(monster.key);
+          checkAsset(monster.image);
           expect(monster.name, allOf([isNotEmpty, isNotNull]));
         }
       }
@@ -225,19 +147,19 @@ void main() {
         final travelerKeys = ['traveler-geo', 'traveler-electro', 'traveler-anemo', 'traveler-hydro', 'traveler-pyro', 'traveler-cryo'];
         final detail = service.getCharacter(character.key);
         final isTraveler = travelerKeys.contains(character.key);
-        _checkKey(detail.key);
+        checkKey(detail.key);
         expect(detail.rarity, character.stars);
         expect(detail.weaponType, character.weaponType);
         expect(detail.elementType, character.elementType);
-        _checkAsset(detail.fullImagePath);
-        _checkAsset(detail.fullCharacterImagePath);
+        checkAsset(detail.fullImagePath);
+        checkAsset(detail.fullCharacterImagePath);
         expect(detail.region, character.regionType);
         expect(detail.role, character.roleType);
         expect(detail.isComingSoon, character.isComingSoon);
         expect(detail.isNew, character.isNew);
         expect(detail.tier, isIn(['d', 'c', 'b', 'a', 's', 'ss', 'sss']));
         if (isTraveler) {
-          _checkAsset(detail.fullSecondImagePath!);
+          checkAsset(detail.fullSecondImagePath!);
         } else {
           expect(detail.birthday, allOf([isNotNull, isNotEmpty]));
 
@@ -274,13 +196,13 @@ void main() {
           expect(detail.stats, isNotEmpty);
         }
 
-        _checkCharacterFileAscensionMaterialModel(service, detail.ascensionMaterials);
+        checkCharacterFileAscensionMaterialModel(service, detail.ascensionMaterials);
         if (!isTraveler) {
-          _checkCharacterFileTalentAscensionMaterialModel(service, detail.talentAscensionMaterials);
+          checkCharacterFileTalentAscensionMaterialModel(service, detail.talentAscensionMaterials);
         } else {
           for (final ascMaterial in detail.multiTalentAscensionMaterials!) {
             expect(ascMaterial.number, inInclusiveRange(1, 3));
-            _checkCharacterFileTalentAscensionMaterialModel(service, ascMaterial.materials);
+            checkCharacterFileTalentAscensionMaterialModel(service, ascMaterial.materials);
           }
         }
 
@@ -310,9 +232,9 @@ void main() {
         }
 
         for (final skill in detail.skills) {
-          _checkKey(skill.key);
+          checkKey(skill.key);
           if (!detail.isComingSoon) {
-            _checkAsset(skill.fullImagePath);
+            checkAsset(skill.fullImagePath);
           }
           expect(skill.stats, isNotEmpty);
           final statKeys = skill.stats.map((e) => e.key).toList();
@@ -326,18 +248,18 @@ void main() {
         }
 
         for (final passive in detail.passives) {
-          _checkKey(passive.key);
+          checkKey(passive.key);
           if (!detail.isComingSoon) {
-            _checkAsset(passive.fullImagePath);
+            checkAsset(passive.fullImagePath);
           }
 
           expect(passive.unlockedAt, isIn([-1, 1, 4]));
         }
 
         for (final constellation in detail.constellations) {
-          _checkKey(constellation.key);
+          checkKey(constellation.key);
           if (!detail.isComingSoon) {
-            _checkAsset(constellation.fullImagePath);
+            checkAsset(constellation.fullImagePath);
           }
           expect(constellation.number, inInclusiveRange(1, 6));
         }
@@ -370,8 +292,8 @@ void main() {
       final weapons = service.getWeaponsForCard();
       for (final weapon in weapons) {
         final detail = service.getWeapon(weapon.key);
-        _checkKey(detail.key);
-        _checkAsset(detail.fullImagePath);
+        checkKey(detail.key);
+        checkAsset(detail.fullImagePath);
         expect(detail.type, equals(weapon.type));
         expect(detail.atk, equals(weapon.baseAtk));
         expect(detail.rarity, equals(weapon.rarity));
@@ -380,11 +302,6 @@ void main() {
         expect(detail.location, equals(weapon.locationType));
         expect(detail.ascensionMaterials, isNotEmpty);
         expect(detail.stats, isNotEmpty);
-        if (detail.rarity > 2) {
-          expect(detail.refinements, isNotEmpty);
-        } else {
-          expect(detail.refinements, isEmpty);
-        }
 
         if (detail.location == ItemLocationType.crafting) {
           expect(detail.craftingMaterials, isNotEmpty);
@@ -394,15 +311,7 @@ void main() {
 
         for (final ascMaterial in detail.ascensionMaterials) {
           expect(ascMaterial.level, inInclusiveRange(20, 80));
-          _checkItemAscensionMaterialFileModel(service, ascMaterial.materials);
-        }
-
-        for (final refinement in detail.refinements) {
-          expect(refinement.level, inInclusiveRange(1, 5));
-          final ignore = ['windblume-ode', 'predator'];
-          if (detail.rarity >= 4 && !ignore.contains(detail.key)) {
-            expect(refinement.values, isNotEmpty);
-          }
+          checkItemAscensionMaterialFileModel(service, ascMaterial.materials);
         }
 
         final ascensionNumber = detail.stats.where((el) => el.isAnAscension).length;
@@ -454,8 +363,8 @@ void main() {
       final artifacts = service.getArtifactsForCard();
       for (final artifact in artifacts) {
         final detail = service.getArtifact(artifact.key);
-        _checkKey(detail.key);
-        _checkAsset(detail.fullImagePath);
+        checkKey(detail.key);
+        checkAsset(detail.fullImagePath);
         expect(detail.minRarity, inInclusiveRange(2, 4));
         expect(detail.maxRarity, inInclusiveRange(3, 5));
       }
@@ -467,8 +376,8 @@ void main() {
       final materials = service.getAllMaterialsForCard();
       for (final material in materials) {
         final detail = service.getMaterial(material.key);
-        _checkKey(detail.key);
-        _checkAsset(detail.fullImagePath);
+        checkKey(detail.key);
+        checkAsset(detail.fullImagePath);
         expect(detail.rarity, equals(material.rarity));
         expect(detail.type, equals(material.type));
 
@@ -535,7 +444,7 @@ void main() {
         final partOfRecipes = detail.recipes + detail.obtainedFrom;
 
         for (final part in partOfRecipes) {
-          _checkKey(part.createsMaterialKey);
+          checkKey(part.createsMaterialKey);
           expect(() => service.getMaterial(part.createsMaterialKey), returnsNormally);
           for (final needs in part.needs) {
             expect(needs.quantity, greaterThanOrEqualTo(1));
@@ -560,8 +469,8 @@ void main() {
       final monsters = service.getAllMonstersForCard();
       for (final monster in monsters) {
         final detail = service.getMonster(monster.key);
-        _checkKey(detail.key);
-        _checkAsset(detail.fullImagePath);
+        checkKey(detail.key);
+        checkAsset(detail.fullImagePath);
 
         for (final drop in detail.drops) {
           switch (drop.type) {
@@ -588,9 +497,11 @@ void main() {
         for (final character in characters) {
           final detail = service.getCharacter(character.key);
           final translation = service.getCharacterTranslation(character.key);
-          _checkKey(translation.key);
-          _checkTranslation(translation.name, canBeNull: false);
-          _checkTranslation(translation.description, canBeNull: false);
+          checkKey(translation.key);
+          checkTranslation(translation.name, canBeNull: false);
+          if (!detail.isComingSoon) {
+            checkTranslation(translation.description, canBeNull: false);
+          }
 
           expect(translation.skills, isNotEmpty);
           expect(translation.skills.length, equals(detail.skills.length));
@@ -599,15 +510,15 @@ void main() {
           expect(translation.constellations, isNotEmpty);
           expect(translation.constellations.length, equals(detail.constellations.length));
 
-          _checkKeys(translation.skills.map((e) => e.key).toList());
-          _checkKeys(translation.passives.map((e) => e.key).toList());
-          _checkKeys(translation.constellations.map((e) => e.key).toList());
+          checkKeys(translation.skills.map((e) => e.key).toList());
+          checkKeys(translation.passives.map((e) => e.key).toList());
+          checkKeys(translation.constellations.map((e) => e.key).toList());
 
           for (var i = 0; i < translation.skills.length; i++) {
             final skill = translation.skills[i];
-            _checkKey(skill.key);
+            checkKey(skill.key);
             expect(skill.key, isIn(detail.skills.map((e) => e.key).toList()));
-            _checkTranslation(skill.title, canBeNull: false);
+            checkTranslation(skill.title, canBeNull: false);
             if (detail.isComingSoon) {
               continue;
             }
@@ -620,7 +531,7 @@ void main() {
               if (!oneAtLeast) {
                 expect(ability.descriptions, isNotEmpty);
                 for (final desc in ability.descriptions) {
-                  _checkTranslation(desc, canBeNull: false);
+                  checkTranslation(desc, canBeNull: false);
                 }
               }
             }
@@ -632,29 +543,29 @@ void main() {
           }
 
           for (final passive in translation.passives) {
-            _checkKey(passive.key);
+            checkKey(passive.key);
             expect(passive.key, isIn(detail.passives.map((e) => e.key).toList()));
             if (detail.isComingSoon) {
               continue;
             }
-            _checkTranslation(passive.title, canBeNull: false);
-            _checkTranslation(passive.description, canBeNull: passive.descriptions.isNotEmpty);
+            checkTranslation(passive.title, canBeNull: false);
+            checkTranslation(passive.description, canBeNull: passive.descriptions.isNotEmpty);
             for (final desc in passive.descriptions) {
-              _checkTranslation(desc, canBeNull: false);
+              checkTranslation(desc, canBeNull: false);
             }
           }
 
           for (final constellation in translation.constellations) {
-            _checkKey(constellation.key);
+            checkKey(constellation.key);
             expect(constellation.key, isIn(detail.constellations.map((e) => e.key).toList()));
             if (detail.isComingSoon) {
               continue;
             }
-            _checkTranslation(constellation.title, canBeNull: false);
-            _checkTranslation(constellation.description, canBeNull: false);
-            _checkTranslation(constellation.secondDescription);
+            checkTranslation(constellation.title, canBeNull: false);
+            checkTranslation(constellation.description, canBeNull: false);
+            checkTranslation(constellation.secondDescription);
             for (final desc in constellation.descriptions) {
-              _checkTranslation(desc, canBeNull: false);
+              checkTranslation(desc, canBeNull: false);
             }
           }
         }
@@ -669,11 +580,17 @@ void main() {
         for (final weapon in weapons) {
           final detail = service.getWeapon(weapon.key);
           final translation = service.getWeaponTranslation(weapon.key);
-          _checkKey(translation.key);
-          _checkTranslation(translation.name, canBeNull: false);
-          _checkTranslation(translation.description, canBeNull: false);
+          checkKey(translation.key);
+          checkTranslation(translation.name, canBeNull: false);
+          checkTranslation(translation.description, canBeNull: false);
           if (detail.rarity > 2) {
-            _checkTranslation(translation.refinement, canBeNull: false);
+            expect(translation.refinements, isNotEmpty);
+          } else {
+            expect(translation.refinements, isEmpty);
+          }
+
+          for (final refinement in translation.refinements) {
+            checkTranslation(refinement, canBeNull: false, checkForColor: false);
           }
         }
       }
@@ -687,11 +604,11 @@ void main() {
         for (final artifact in artifacts) {
           final detail = service.getArtifact(artifact.key);
           final translation = service.getArtifactTranslation(detail.key);
-          _checkKey(translation.key);
-          _checkTranslation(translation.name, canBeNull: false);
+          checkKey(translation.key);
+          checkTranslation(translation.name, canBeNull: false);
           expect(translation.bonus.length, inInclusiveRange(1, 2));
           for (final bonus in translation.bonus) {
-            _checkTranslation(bonus, canBeNull: false);
+            checkTranslation(bonus, canBeNull: false);
           }
         }
       }
@@ -706,9 +623,9 @@ void main() {
         for (final material in materials) {
           final detail = service.getMaterial(material.key);
           final translation = service.getMaterialTranslation(detail.key);
-          _checkKey(translation.key);
-          _checkTranslation(translation.name, canBeNull: false);
-          _checkTranslation(translation.description, canBeNull: false);
+          checkKey(translation.key);
+          checkTranslation(translation.name, canBeNull: false);
+          checkTranslation(translation.description, canBeNull: false);
         }
       }
     });
@@ -720,8 +637,8 @@ void main() {
         final monsters = service.getAllMonstersForCard();
         for (final monster in monsters) {
           final translation = service.getMonsterTranslation(monster.key);
-          _checkKey(translation.key);
-          _checkTranslation(translation.name, canBeNull: false);
+          checkKey(translation.key);
+          checkTranslation(translation.name, canBeNull: false);
         }
       }
     });
@@ -758,7 +675,7 @@ void main() {
         for (final debuff in debuffs) {
           expect(debuff.name, allOf([isNotNull, isNotEmpty]));
           expect(debuff.effect, allOf([isNotNull, isNotEmpty]));
-          _checkAsset(debuff.image);
+          checkAsset(debuff.image);
         }
       }
     });
@@ -778,7 +695,7 @@ void main() {
 
           final imgs = reaction.principal + reaction.secondary;
           for (final img in imgs) {
-            _checkAsset(img);
+            checkAsset(img);
           }
         }
       }
@@ -797,7 +714,7 @@ void main() {
 
           final imgs = resonance.principal + resonance.secondary;
           for (final img in imgs) {
-            _checkAsset(img);
+            checkAsset(img);
           }
         }
       }
@@ -832,8 +749,8 @@ void main() {
         expect(tierRow.tierColor, equals(defaultColors[i]));
 
         for (final item in tierRow.items) {
-          _checkKey(item.key);
-          _checkAsset(item.image);
+          checkKey(item.key);
+          checkAsset(item.image);
         }
       }
     });
@@ -857,13 +774,13 @@ void main() {
         final materials = service.getCharacterAscensionMaterials(day);
         expect(materials, isNotEmpty);
         for (final material in materials) {
-          _checkKey(material.key);
-          _checkAsset(material.image);
+          checkKey(material.key);
+          checkAsset(material.image);
           expect(material.name, allOf([isNotNull, isNotEmpty]));
           expect(material.characters, isNotEmpty);
           expect(material.days, isNotEmpty);
           for (final item in material.characters) {
-            _checkItemCommon(item);
+            checkItemCommon(item);
           }
         }
 

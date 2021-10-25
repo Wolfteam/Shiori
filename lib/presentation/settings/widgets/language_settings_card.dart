@@ -6,6 +6,7 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
 import 'settings_card.dart';
@@ -15,8 +16,7 @@ class LanguageSettingsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
-    final ignored = [AppLanguageType.french];
-    final languages = AppLanguageType.values.where((x) => !ignored.contains(x)).toList();
+    final languages = EnumUtils.getTranslatedAndSortedEnum<AppLanguageType>(AppLanguageType.values, (val) => s.translateAppLanguageType(val));
     return SettingsCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -58,8 +58,8 @@ class LanguageSettingsCard extends StatelessWidget {
                     items: languages
                         .map<DropdownMenuItem<AppLanguageType>>(
                           (lang) => DropdownMenuItem<AppLanguageType>(
-                            value: lang,
-                            child: Text(s.translateAppLanguageType(lang)),
+                            value: lang.enumValue,
+                            child: Text(lang.translation),
                           ),
                         )
                         .toList(),

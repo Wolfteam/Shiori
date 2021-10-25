@@ -23,9 +23,7 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
   WeaponEvent getEventForPop(String? key) => WeaponEvent.loadFromKey(key: key!, addToQueue: false);
 
   @override
-  Stream<WeaponState> mapEventToState(
-    WeaponEvent event,
-  ) async* {
+  Stream<WeaponState> mapEventToState(WeaponEvent event) async* {
     if (event is! _AddedToInventory) {
       yield const WeaponState.loading();
     }
@@ -68,16 +66,7 @@ class WeaponBloc extends PopBloc<WeaponEvent, WeaponState> {
       return WeaponAscensionModel(level: e.level, materials: materials);
     }).toList();
 
-    final refinements = weapon.refinements.where((el) => el.values.isNotEmpty).map(
-      (e) {
-        var description = translation.refinement ?? '';
-        for (var i = 0; i < e.values.length; i++) {
-          description = description.replaceFirst('{$i}', e.values[i]);
-        }
-
-        return WeaponFileRefinementModel(level: e.level, description: description);
-      },
-    ).toList();
+    final refinements = translation.refinements.mapIndexed((index, e) => WeaponFileRefinementModel(level: index + 1, description: e)).toList();
 
     final craftingMaterials = weapon.craftingMaterials.map((e) {
       final material = _genshinService.getMaterial(e.key);
