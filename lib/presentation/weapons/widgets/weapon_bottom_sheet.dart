@@ -20,7 +20,7 @@ final _ignoredSubStats = [
   StatType.atk,
   StatType.critAtk,
   StatType.critRate,
-  StatType.physDmgBonusPercentage,
+  StatType.physDmgPercentage,
   StatType.hp,
   StatType.electroDmgBonusPercentage,
   StatType.cryoDmgBonusPercentage,

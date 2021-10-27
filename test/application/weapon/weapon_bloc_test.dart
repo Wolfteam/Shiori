@@ -58,7 +58,7 @@ void main() {
           expect(state.rarity, 5);
           expect(state.atk, 48);
           expect(state.secondaryStatValue, 9);
-          expect(state.secondaryStat, StatType.physDmgBonusPercentage);
+          expect(state.secondaryStat, StatType.physDmgBonus);
           expect(state.locationType, ItemLocationType.gacha);
           expect(state.weaponType, WeaponType.sword);
           expect(state.isInInventory, isInInventory);
