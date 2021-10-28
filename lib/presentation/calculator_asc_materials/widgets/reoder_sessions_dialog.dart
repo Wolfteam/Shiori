@@ -14,31 +14,25 @@ class ReorderSessionsDialog extends StatelessWidget {
     final mq = MediaQuery.of(context);
     return AlertDialog(
       title: Text(s.priority),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          BlocBuilder<CalculatorAscMaterialsSessionsOrderBloc, CalculatorAscMaterialsSessionsOrderState>(
-            builder: (ctx, state) => SizedBox(
-              height: mq.getHeightForDialogs(state.sessions.length),
-              width: mq.getWidthForDialogs(),
-              child: ReorderableListView.builder(
-                shrinkWrap: true,
-                itemCount: state.sessions.length,
-                itemBuilder: (ctx, index) {
-                  final session = state.sessions[index];
-                  final position = index + 1;
-                  return ListTile(
-                    key: Key('$index'),
-                    title: Text('#$position - ${session.name}', overflow: TextOverflow.ellipsis),
-                    onTap: () => ToastUtils.showInfoToast(fToast, s.holdToReorder),
-                  );
-                },
-                onReorder: (oldIndex, newIndex) => _onReorder(oldIndex, newIndex, context),
-              ),
-            ),
+      content: BlocBuilder<CalculatorAscMaterialsSessionsOrderBloc, CalculatorAscMaterialsSessionsOrderState>(
+        builder: (ctx, state) => SizedBox(
+          height: mq.getHeightForDialogs(state.sessions.length),
+          width: mq.getWidthForDialogs(),
+          child: ReorderableListView.builder(
+            shrinkWrap: true,
+            itemCount: state.sessions.length,
+            itemBuilder: (ctx, index) {
+              final session = state.sessions[index];
+              final position = index + 1;
+              return ListTile(
+                key: Key('$index'),
+                title: Text('#$position - ${session.name}', overflow: TextOverflow.ellipsis),
+                onTap: () => ToastUtils.showInfoToast(fToast, s.holdToReorder),
+              );
+            },
+            onReorder: (oldIndex, newIndex) => _onReorder(oldIndex, newIndex, context),
           ),
-        ],
+        ),
       ),
       actions: [
         OutlinedButton(
