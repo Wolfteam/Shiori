@@ -11797,7 +11797,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "physDmgBonusPercentage",
+                "physDmgPercentage",
                 "critRatePercentage"
               ]
             },
@@ -11817,7 +11817,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "physDmgBonusPercentage",
+                "physDmgPercentage",
                 "critRatePercentage"
               ]
             }
@@ -12789,7 +12789,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "physDmgBonusPercentage",
+                "physDmgPercentage",
                 "critRatePercentage"
               ]
             }
@@ -17158,7 +17158,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "physDmgBonusPercentage",
+                "physDmgPercentage",
                 "critRatePercentage"
               ]
             }
@@ -18270,6 +18270,7 @@
           ],
           "weaponKeys": [
             "freedom-sworn",
+            "iron-sting",
             "sacrificial-sword",
             "favonius-sword",
             "amenoma-kageuchi"
@@ -19296,7 +19297,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "physDmgBonusPercentage",
+                "physDmgPercentage",
                 "critRatePercentage"
               ]
             }
@@ -21458,7 +21459,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "physDmgBonusPercentage",
+                "physDmgPercentage",
                 "critRatePercentage"
               ]
             },
@@ -21478,7 +21479,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "physDmgBonusPercentage",
+                "physDmgPercentage",
                 "critRatePercentage"
               ]
             }
@@ -30487,7 +30488,7 @@
       "role": "dps",
       "tier": "a",
       "birthday": "09/09",
-      "subStatType": "physDmgBonusPercentage",
+      "subStatType": "physDmgPercentage",
       "ascensionMaterials": [
         {
           "rank": 1,
@@ -31474,7 +31475,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "physDmgBonusPercentage",
+                "physDmgPercentage",
                 "critRatePercentage"
               ]
             },
@@ -31494,7 +31495,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "physDmgBonusPercentage",
+                "physDmgPercentage",
                 "critRatePercentage"
               ]
             },
@@ -31505,7 +31506,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "physDmgBonusPercentage",
+                "physDmgPercentage",
                 "critRatePercentage"
               ]
             }
@@ -32599,7 +32600,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "physDmgBonusPercentage",
+                "physDmgPercentage",
                 "critRatePercentage"
               ]
             }
@@ -44894,7 +44895,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "physDmgBonusPercentage",
+                "physDmgPercentage",
                 "critRatePercentage"
               ]
             },
@@ -44914,7 +44915,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "physDmgBonusPercentage",
+                "physDmgPercentage",
                 "critRatePercentage"
               ]
             }
@@ -51526,7 +51527,7 @@
                 "hp",
                 "atk",
                 "atkPercentage",
-                "physDmgBonusPercentage",
+                "physDmgPercentage",
                 "critRatePercentage"
               ]
             }

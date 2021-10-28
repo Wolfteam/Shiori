@@ -10,7 +10,7 @@ enum StatType {
   elementalMastery,
   hpPercentage,
   physDmgPercentage,
-  physDmgBonusPercentage,
+  physDmgBonus,
   energyRechargePercentage,
   hp,
   electroDmgBonusPercentage,

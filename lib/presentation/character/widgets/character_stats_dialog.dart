@@ -32,48 +32,50 @@ class _CharacterStatsDialogState extends State<CharacterStatsDialog> {
     final s = S.of(context);
     final mq = MediaQuery.of(context);
     return AlertDialog(
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          IncrementButton(
-            title: s.level,
-            value: _currentStat.level,
-            onMinus: _levelChanged,
-            onAdd: _levelChanged,
-            decrementIsDisabled: _currentStat.level == 1,
-            incrementIsDisabled: _currentStat.level == widget.stats.map((e) => e.level).reduce(max),
-          ),
-          SizedBox(
-            height: mq.getHeightForDialogs(_currentStat.descriptions.length),
-            width: mq.getWidthForDialogs(),
-            child: ListView.separated(
-              shrinkWrap: true,
-              separatorBuilder: (ctx, index) => const Divider(),
-              itemCount: _currentStat.descriptions.length,
-              itemBuilder: (ctx, index) {
-                final desc = _currentStat.descriptions[index];
-                final splitted = desc.split('|');
-                final a = splitted.first;
-                final b = splitted.last;
-
-                return ListTile(
-                  dense: true,
-                  title: Row(
-                    children: [
-                      Expanded(
-                        child: Text(a, textAlign: TextAlign.start),
-                      ),
-                      Expanded(
-                        child: Text(b, textAlign: TextAlign.end),
-                      ),
-                    ],
-                  ),
-                );
-              },
+      content: SizedBox(
+        height: mq.getHeightForDialogs(_currentStat.descriptions.length),
+        width: mq.getWidthForDialogs(),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            IncrementButton(
+              title: s.level,
+              value: _currentStat.level,
+              onMinus: _levelChanged,
+              onAdd: _levelChanged,
+              decrementIsDisabled: _currentStat.level == 1,
+              incrementIsDisabled: _currentStat.level == widget.stats.map((e) => e.level).reduce(max),
             ),
-          )
-        ],
+            Expanded(
+              child: ListView.separated(
+                shrinkWrap: true,
+                separatorBuilder: (ctx, index) => const Divider(),
+                itemCount: _currentStat.descriptions.length,
+                itemBuilder: (ctx, index) {
+                  final desc = _currentStat.descriptions[index];
+                  final splitted = desc.split('|');
+                  final a = splitted.first;
+                  final b = splitted.last;
+
+                  return ListTile(
+                    dense: true,
+                    title: Row(
+                      children: [
+                        Expanded(
+                          child: Text(a, textAlign: TextAlign.start),
+                        ),
+                        Expanded(
+                          child: Text(b, textAlign: TextAlign.end),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            )
+          ],
+        ),
       ),
       actions: [
         ElevatedButton(

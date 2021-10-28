@@ -14,31 +14,25 @@ class ReorderItemsDialog extends StatelessWidget {
     final mq = MediaQuery.of(context);
     return AlertDialog(
       title: Text(s.priority),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          BlocBuilder<CalculatorAscMaterialsOrderBloc, CalculatorAscMaterialsOrderState>(
-            builder: (ctx, state) => SizedBox(
-              height: mq.getHeightForDialogs(state.items.length),
-              width: mq.getWidthForDialogs(),
-              child: ReorderableListView.builder(
-                shrinkWrap: true,
-                itemCount: state.items.length,
-                itemBuilder: (ctx, index) {
-                  final item = state.items[index];
-                  final position = index + 1;
-                  return ListTile(
-                    key: Key('$index'),
-                    title: Text('#$position - ${item.name}', overflow: TextOverflow.ellipsis),
-                    onTap: () => ToastUtils.showInfoToast(fToast, s.holdToReorder),
-                  );
-                },
-                onReorder: (oldIndex, newIndex) => _onReorder(oldIndex, newIndex, context),
-              ),
-            ),
+      content: BlocBuilder<CalculatorAscMaterialsOrderBloc, CalculatorAscMaterialsOrderState>(
+        builder: (ctx, state) => SizedBox(
+          height: mq.getHeightForDialogs(state.items.length),
+          width: mq.getWidthForDialogs(),
+          child: ReorderableListView.builder(
+            shrinkWrap: true,
+            itemCount: state.items.length,
+            itemBuilder: (ctx, index) {
+              final item = state.items[index];
+              final position = index + 1;
+              return ListTile(
+                key: Key('$index'),
+                title: Text('#$position - ${item.name}', overflow: TextOverflow.ellipsis),
+                onTap: () => ToastUtils.showInfoToast(fToast, s.holdToReorder),
+              );
+            },
+            onReorder: (oldIndex, newIndex) => _onReorder(oldIndex, newIndex, context),
           ),
-        ],
+        ),
       ),
       actions: [
         OutlinedButton(

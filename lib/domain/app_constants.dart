@@ -650,7 +650,7 @@ double getItemTotalExp(int currentLevel, int desiredLevel, int rarity, bool forC
       .fold(0, (previous, current) => previous + current);
 }
 
-List<MaterialCardModel> sortMaterialsByGrouping(List<MaterialCardModel> data, SortDirectionType sortDirectionType) {
+List<T> sortMaterialsByGrouping<T extends SortableGroupedMaterial>(List<T> data, SortDirectionType sortDirectionType) {
   final expChar = data.where((el) => el.type == MaterialType.expCharacter);
   final expWeapon = data.where((el) => el.type == MaterialType.expWeapon);
   final common = data.where((el) => el.type == MaterialType.common);

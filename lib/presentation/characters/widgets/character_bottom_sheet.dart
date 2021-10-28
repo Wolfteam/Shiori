@@ -140,7 +140,7 @@ class _OtherFilters extends StatelessWidget {
           onAllOrValueSelected: (v) =>
               context.read<CharactersBloc>().add(CharactersEvent.itemStatusChanged(v != null ? ItemStatusType.values[v] : null)),
           icon: Icon(Shiori.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
-          itemText: (val) => s.translateReleasedUnreleasedType(ItemStatusType.values[val]),
+          itemText: (val, _) => s.translateReleasedUnreleasedType(ItemStatusType.values[val]),
         ),
         ItemPopupMenuFilterWithAllValue(
           tooltipText: s.role,
@@ -148,7 +148,7 @@ class _OtherFilters extends StatelessWidget {
           selectedValue: tempRoleType?.index,
           onAllOrValueSelected: (v) =>
               context.read<CharactersBloc>().add(CharactersEvent.roleTypeChanged(v != null ? CharacterRoleType.values[v] : null)),
-          itemText: (val) => s.translateCharacterRoleType(CharacterRoleType.values[val]),
+          itemText: (val, _) => s.translateCharacterRoleType(CharacterRoleType.values[val]),
           icon: Icon(Shiori.trefoil_lily, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
         ItemPopupMenuFilterWithAllValue(
@@ -156,7 +156,7 @@ class _OtherFilters extends StatelessWidget {
           values: RegionType.values.map((e) => e.index).toList(),
           selectedValue: tempRegionType?.index,
           onAllOrValueSelected: (v) => context.read<CharactersBloc>().add(CharactersEvent.regionTypeChanged(v == null ? null : RegionType.values[v])),
-          itemText: (val) => s.translateRegionType(RegionType.values[val]),
+          itemText: (val, _) => s.translateRegionType(RegionType.values[val]),
           icon: Icon(Shiori.reactor, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
         ItemPopupMenuFilter<CharacterFilterType>(
@@ -164,7 +164,7 @@ class _OtherFilters extends StatelessWidget {
           values: CharacterFilterType.values,
           selectedValue: tempCharacterFilterType,
           onSelected: (v) => context.read<CharactersBloc>().add(CharactersEvent.characterFilterTypeChanged(v)),
-          itemText: (val) => s.translateCharacterFilterType(val),
+          itemText: (val, _) => s.translateCharacterFilterType(val),
           icon: Icon(Icons.filter_list, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, true)),
         ),
         SortDirectionPopupMenuFilter(

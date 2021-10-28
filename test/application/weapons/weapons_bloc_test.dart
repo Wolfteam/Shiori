@@ -144,7 +144,7 @@ void main() {
         ..add(const WeaponsEvent.weaponTypeChanged(WeaponType.catalyst))
         ..add(const WeaponsEvent.weaponTypeChanged(WeaponType.polearm))
         ..add(const WeaponsEvent.weaponLocationTypeChanged(ItemLocationType.gacha))
-        ..add(const WeaponsEvent.weaponSubStatTypeChanged(StatType.physDmgBonusPercentage))
+        ..add(const WeaponsEvent.weaponSubStatTypeChanged(StatType.physDmgBonus))
         ..add(const WeaponsEvent.sortDirectionTypeChanged(SortDirectionType.desc))
         ..add(const WeaponsEvent.applyFilterChanges()),
       skip: 11,
@@ -164,8 +164,8 @@ void main() {
             tempSortDirectionType: SortDirectionType.desc,
             weaponLocationType: ItemLocationType.gacha,
             tempWeaponLocationType: ItemLocationType.gacha,
-            weaponSubStatType: StatType.physDmgBonusPercentage,
-            tempWeaponSubStatType: StatType.physDmgBonusPercentage,
+            weaponSubStatType: StatType.physDmgBonus,
+            tempWeaponSubStatType: StatType.physDmgBonus,
             search: search,
           )
         ];
@@ -180,7 +180,7 @@ void main() {
         ..add(const WeaponsEvent.rarityChanged(5))
         ..add(const WeaponsEvent.weaponFilterTypeChanged(WeaponFilterType.subStat))
         ..add(const WeaponsEvent.sortDirectionTypeChanged(SortDirectionType.desc))
-        ..add(const WeaponsEvent.weaponSubStatTypeChanged(StatType.physDmgBonusPercentage))
+        ..add(const WeaponsEvent.weaponSubStatTypeChanged(StatType.physDmgBonus))
         ..add(const WeaponsEvent.applyFilterChanges())
         ..add(const WeaponsEvent.weaponTypeChanged(WeaponType.bow))
         ..add(const WeaponsEvent.weaponTypeChanged(WeaponType.catalyst))
@@ -192,11 +192,8 @@ void main() {
         ..add(const WeaponsEvent.cancelChanges()),
       skip: 13,
       expect: () {
-        final weapons = _genshinService
-            .getWeaponsForCard()
-            .where((el) => el.subStatType == StatType.physDmgBonusPercentage && el.rarity == 5)
-            .toList()
-              ..sort((x, y) => y.subStatValue.compareTo(x.subStatValue));
+        final weapons = _genshinService.getWeaponsForCard().where((el) => el.subStatType == StatType.physDmgBonus && el.rarity == 5).toList()
+          ..sort((x, y) => y.subStatValue.compareTo(x.subStatValue));
         return [
           WeaponsState.loaded(
             weapons: weapons,
@@ -209,8 +206,8 @@ void main() {
             tempWeaponFilterType: WeaponFilterType.subStat,
             sortDirectionType: SortDirectionType.desc,
             tempSortDirectionType: SortDirectionType.desc,
-            weaponSubStatType: StatType.physDmgBonusPercentage,
-            tempWeaponSubStatType: StatType.physDmgBonusPercentage,
+            weaponSubStatType: StatType.physDmgBonus,
+            tempWeaponSubStatType: StatType.physDmgBonus,
           )
         ];
       },

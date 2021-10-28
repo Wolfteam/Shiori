@@ -113,7 +113,7 @@ class _OtherFilters extends StatelessWidget {
           onAllOrValueSelected: (v) => context.read<MaterialsBloc>().add(MaterialsEvent.typeChanged(v != null ? mat.MaterialType.values[v] : null)),
           selectedValue: tempType?.index,
           values: mat.MaterialType.values.where((el) => !_ignoredSubStats.contains(el)).map((e) => e.index).toList(),
-          itemText: (val) => s.translateMaterialType(mat.MaterialType.values[val]),
+          itemText: (val, _) => s.translateMaterialType(mat.MaterialType.values[val]),
           icon: Icon(Shiori.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
         ItemPopupMenuFilter<MaterialFilterType>(
@@ -121,7 +121,7 @@ class _OtherFilters extends StatelessWidget {
           onSelected: (v) => context.read<MaterialsBloc>().add(MaterialsEvent.filterTypeChanged(v)),
           selectedValue: tempFilterType,
           values: MaterialFilterType.values,
-          itemText: (val) => s.translateMaterialFilterType(val),
+          itemText: (val, _) => s.translateMaterialFilterType(val),
           icon: Icon(Icons.filter_list, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, true)),
         ),
         SortDirectionPopupMenuFilter(

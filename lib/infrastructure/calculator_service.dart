@@ -26,7 +26,11 @@ class CalculatorServiceImpl implements CalculatorService {
         key = AscensionMaterialSummaryType.worldBoss;
         newValue = MaterialSummary(
           key: material.key,
-          materialType: material.type,
+          type: material.type,
+          rarity: material.rarity,
+          position: material.position,
+          level: material.level,
+          hasSiblings: material.hasSiblings,
           fullImagePath: material.fullImagePath,
           quantity: item.quantity,
           days: [],
@@ -35,7 +39,11 @@ class CalculatorServiceImpl implements CalculatorService {
         key = AscensionMaterialSummaryType.day;
         newValue = MaterialSummary(
           key: material.key,
-          materialType: material.type,
+          type: material.type,
+          rarity: material.rarity,
+          position: material.position,
+          level: material.level,
+          hasSiblings: material.hasSiblings,
           fullImagePath: material.fullImagePath,
           quantity: item.quantity,
           days: material.days,
@@ -72,7 +80,11 @@ class CalculatorServiceImpl implements CalculatorService {
         }
         newValue = MaterialSummary(
           key: material.key,
-          materialType: material.type,
+          type: material.type,
+          rarity: material.rarity,
+          position: material.position,
+          level: material.level,
+          hasSiblings: material.hasSiblings,
           fullImagePath: material.fullImagePath,
           quantity: item.quantity,
           days: [],
@@ -88,7 +100,9 @@ class CalculatorServiceImpl implements CalculatorService {
       summary[key]!.sort((x, y) => x.key.compareTo(y.key));
     }
 
-    return summary.entries.map((entry) => AscensionMaterialsSummary(type: entry.key, materials: entry.value)).toList();
+    return summary.entries
+        .map((entry) => AscensionMaterialsSummary(type: entry.key, materials: sortMaterialsByGrouping(entry.value, SortDirectionType.desc)))
+        .toList();
   }
 
   @override

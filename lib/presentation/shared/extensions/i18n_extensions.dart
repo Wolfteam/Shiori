@@ -126,7 +126,7 @@ extension I18nExtensions on S {
         return hpPercentage(value);
       case StatType.none:
         return none;
-      case StatType.physDmgBonusPercentage:
+      case StatType.physDmgBonus:
         return physDmgBonus(value);
       case StatType.physDmgPercentage:
         return physDmgPercentage(value);

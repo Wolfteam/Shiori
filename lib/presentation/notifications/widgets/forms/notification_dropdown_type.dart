@@ -24,17 +24,16 @@ class NotificationDropdownType extends StatelessWidget {
     final s = S.of(context);
     final translatedValues = EnumUtils.getTranslatedAndSortedEnum<AppNotificationType>(
       AppNotificationType.values,
-      (type) => s.translateAppNotificationType(type),
+      (type, _) => s.translateAppNotificationType(type),
     );
 
-    return DropdownButtonWithTitle<TranslatedEnum<AppNotificationType>>(
+    return DropdownButtonWithTitle<AppNotificationType>(
       margin: EdgeInsets.zero,
       title: s.notificationType,
       isExpanded: isExpanded,
-      currentValue: translatedValues.firstWhere((el) => el.enumValue == selectedValue),
+      currentValue: translatedValues.firstWhere((el) => el.enumValue == selectedValue).enumValue,
       items: translatedValues,
-      itemBuilder: (translatedType, _) => Text(translatedType.translation, overflow: TextOverflow.ellipsis),
-      onChanged: isInEditMode ? null : (v) => context.read<NotificationBloc>().add(NotificationEvent.typeChanged(newValue: v.enumValue)),
+      onChanged: isInEditMode ? null : (v) => context.read<NotificationBloc>().add(NotificationEvent.typeChanged(newValue: v)),
     );
   }
 }
