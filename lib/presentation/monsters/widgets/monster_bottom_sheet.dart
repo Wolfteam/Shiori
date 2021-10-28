@@ -95,7 +95,7 @@ class _OtherFilters extends StatelessWidget {
           onAllOrValueSelected: (v) => context.read<MonstersBloc>().add(MonstersEvent.typeChanged(v != null ? MonsterType.values[v] : null)),
           selectedValue: tempType?.index,
           values: MonsterType.values.map((e) => e.index).toList(),
-          itemText: (val) => s.translateMonsterType(MonsterType.values[val]),
+          itemText: (val, _) => s.translateMonsterType(MonsterType.values[val]),
           icon: Icon(Icons.filter_list_alt, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, true)),
         ),
         ItemPopupMenuFilter<MonsterFilterType>(
@@ -103,7 +103,7 @@ class _OtherFilters extends StatelessWidget {
           onSelected: (v) => context.read<MonstersBloc>().add(MonstersEvent.filterTypeChanged(v)),
           selectedValue: tempFilterType,
           values: MonsterFilterType.values,
-          itemText: (val) => s.translateMonsterFilterType(val),
+          itemText: (val, _) => s.translateMonsterFilterType(val),
           icon: Icon(Icons.filter_list, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, true)),
         ),
         SortDirectionPopupMenuFilter(

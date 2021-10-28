@@ -3,17 +3,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
 import 'settings_card.dart';
 
 class ThemeSettingsCard extends StatelessWidget {
+  const ThemeSettingsCard({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-
     return SettingsCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -38,32 +41,18 @@ class ThemeSettingsCard extends StatelessWidget {
             ),
           ),
           BlocBuilder<SettingsBloc, SettingsState>(
-            builder: (context, state) {
-              return state.map(
-                loading: (_) => const Loading(useScaffold: false),
-                loaded: (state) => Padding(
-                  padding: Styles.edgeInsetHorizontal16,
-                  child: DropdownButton<AppThemeType>(
-                    isExpanded: true,
-                    hint: Text(s.chooseBaseAppTheme),
-                    value: state.currentTheme,
-                    underline: Container(
-                      height: 0,
-                      color: Colors.transparent,
-                    ),
-                    onChanged: (v) => _appThemeChanged(v!, context),
-                    items: AppThemeType.values
-                        .map<DropdownMenuItem<AppThemeType>>(
-                          (theme) => DropdownMenuItem<AppThemeType>(
-                            value: theme,
-                            child: Text(s.translateAppThemeType(theme)),
-                          ),
-                        )
-                        .toList(),
-                  ),
+            builder: (context, state) => state.map(
+              loading: (_) => const Loading(useScaffold: false),
+              loaded: (state) => Padding(
+                padding: Styles.edgeInsetHorizontal16,
+                child: CommonDropdownButton<AppThemeType>(
+                  hint: s.chooseBaseAppTheme,
+                  currentValue: state.currentTheme,
+                  values: EnumUtils.getTranslatedAndSortedEnum<AppThemeType>(AppThemeType.values, (val, _) => s.translateAppThemeType(val)),
+                  onChanged: _appThemeChanged,
                 ),
-              );
-            },
+              ),
+            ),
           ),
         ],
       ),

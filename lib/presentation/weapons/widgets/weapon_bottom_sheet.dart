@@ -137,7 +137,7 @@ class _OtherFilters extends StatelessWidget {
               context.read<WeaponsBloc>().add(WeaponsEvent.weaponLocationTypeChanged(v != null ? ItemLocationType.values[v] : null)),
           selectedValue: tempWeaponLocationType?.index,
           values: ItemLocationType.values.where((el) => el != ItemLocationType.na).map((e) => e.index).toList(),
-          itemText: (val) => s.translateItemLocationType(ItemLocationType.values[val]),
+          itemText: (val, _) => s.translateItemLocationType(ItemLocationType.values[val]),
           icon: Icon(Icons.location_pin, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
         ItemPopupMenuFilterWithAllValue(
@@ -145,7 +145,7 @@ class _OtherFilters extends StatelessWidget {
           onAllOrValueSelected: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.weaponSubStatTypeChanged(v != null ? StatType.values[v] : null)),
           selectedValue: tempWeaponSubStatType?.index,
           values: StatType.values.where((el) => !_ignoredSubStats.contains(el)).map((e) => e.index).toList(),
-          itemText: (val) => s.translateStatTypeWithoutValue(StatType.values[val]),
+          itemText: (val, _) => s.translateStatTypeWithoutValue(StatType.values[val]),
           icon: Icon(Shiori.sliders_h, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, false)),
         ),
         ItemPopupMenuFilter<WeaponFilterType>(
@@ -153,7 +153,7 @@ class _OtherFilters extends StatelessWidget {
           onSelected: (v) => context.read<WeaponsBloc>().add(WeaponsEvent.weaponFilterTypeChanged(v)),
           selectedValue: tempWeaponFilterType,
           values: WeaponFilterType.values,
-          itemText: (val) => s.translateWeaponFilterType(val),
+          itemText: (val, _) => s.translateWeaponFilterType(val),
           icon: Icon(Icons.filter_list, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, true)),
         ),
         SortDirectionPopupMenuFilter(

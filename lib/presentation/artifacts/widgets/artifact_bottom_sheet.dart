@@ -102,7 +102,7 @@ class _OtherFilters extends StatelessWidget {
           onSelected: (v) => context.read<ArtifactsBloc>().add(ArtifactsEvent.artifactFilterTypeChanged(v)),
           selectedValue: tempArtifactFilterType,
           values: ArtifactFilterType.values,
-          itemText: (val) => s.translateArtifactFilterType(val),
+          itemText: (val, _) => s.translateArtifactFilterType(val),
           icon: Icon(Icons.filter_list, size: Styles.getIconSizeForItemPopupMenuFilter(forEndDrawer, true)),
         ),
         SortDirectionPopupMenuFilter(

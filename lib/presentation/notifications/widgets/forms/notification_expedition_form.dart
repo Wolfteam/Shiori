@@ -7,6 +7,7 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/notifications/widgets/forms/notification_note.dart';
 import 'package:shiori/presentation/shared/dropdown_button_with_title.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
 import 'notification_circle_item.dart';
 import 'notification_dropdown_type.dart';
@@ -49,9 +50,8 @@ class NotificationExpeditionForm extends StatelessWidget {
         NotificationDropdownType(selectedValue: AppNotificationType.expedition, isInEditMode: isInEditMode),
         DropdownButtonWithTitle<ExpeditionTimeType>(
           title: s.expeditionTime,
-          items: ExpeditionTimeType.values,
+          items: EnumUtils.getTranslatedAndSortedEnum(ExpeditionTimeType.values, (val, _) => s.translateExpeditionTimeType(val)),
           currentValue: timeType,
-          itemBuilder: (type, _) => Text(s.translateExpeditionTimeType(type), overflow: TextOverflow.ellipsis),
           onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.expeditionTimeTypeChanged(newValue: v)),
         ),
         NotificationTitleBody(title: title, body: body),

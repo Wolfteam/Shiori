@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:responsive_grid/responsive_grid.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
@@ -14,6 +15,9 @@ class AccentColorSettingsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final mq = MediaQuery.of(context);
+    final deviceType = getDeviceType(mq.size);
+    final isLandscape = mq.orientation == Orientation.landscape;
     return SettingsCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -43,7 +47,7 @@ class AccentColorSettingsCard extends StatelessWidget {
               loaded: (s) => ResponsiveGridRow(
                 children: AppAccentColorType.values
                     .map(
-                      (accentColor) => _buildAccentColorItem(accentColor, s.currentAccentColor, context),
+                      (accentColor) => _buildAccentColorItem(accentColor, s.currentAccentColor, deviceType, isLandscape, context),
                     )
                     .toList(),
               ),
@@ -58,13 +62,43 @@ class AccentColorSettingsCard extends StatelessWidget {
     context.read<SettingsBloc>().add(SettingsEvent.accentColorChanged(newValue: newValue));
   }
 
-  ResponsiveGridCol _buildAccentColorItem(AppAccentColorType current, AppAccentColorType selected, BuildContext context) {
+  ResponsiveGridCol _buildAccentColorItem(
+    AppAccentColorType current,
+    AppAccentColorType selected,
+    DeviceScreenType deviceType,
+    bool isLandscape,
+    BuildContext context,
+  ) {
+    var xs = 2;
+    var sm = 2;
+    var md = 2;
+    var lg = 2;
+    var xl = 2;
+    switch (deviceType) {
+      case DeviceScreenType.tablet:
+      case DeviceScreenType.desktop:
+        xs = 3;
+        sm = 3;
+        md = 3;
+        lg = 3;
+        xl = 2;
+        break;
+      default:
+        if (isLandscape) {
+          xs = 4;
+          sm = 3;
+          md = 3;
+          lg = 3;
+          xl = 3;
+        }
+        break;
+    }
     return ResponsiveGridCol(
-      xs: 2,
-      sm: 2,
-      md: 1,
-      lg: 2,
-      xl: 2,
+      xs: xs,
+      sm: sm,
+      md: md,
+      lg: lg,
+      xl: xl,
       child: InkWell(
         onTap: () => _accentColorChanged(current, context),
         child: Container(

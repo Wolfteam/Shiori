@@ -26,7 +26,7 @@ class SortDirectionPopupMenuFilter extends StatelessWidget {
       values: SortDirectionType.values,
       onSelected: onSelected,
       icon: icon,
-      itemText: (val) => s.translateSortDirectionType(val),
+      itemText: (val, _) => s.translateSortDirectionType(val),
     );
   }
 }
