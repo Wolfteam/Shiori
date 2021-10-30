@@ -13,6 +13,9 @@
   "vietnamese": "ベトナム語",
   "indonesian": "インドネシア語",
   "deutsch": "ドイツ語",
+  "korean": "韓国語",
+  "thai": "タイ語",
+  "traditionalChinese": "中国語(繁体)",
   "bow": "弓",
   "claymore": "両手剣",
   "sword": "片手剣",
@@ -370,5 +373,6 @@
   "charRoleBurstSupport": "バーストサポート",
   "melt": "メルト",
   "freeze": "フリーズ",
-  "shield": "シールド"
+  "shield": "シールド",
+  "unofficial": "非公式"
 }
