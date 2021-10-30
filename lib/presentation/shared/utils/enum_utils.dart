@@ -1,3 +1,5 @@
+import 'package:shiori/domain/extensions/iterable_extensions.dart';
+
 class TranslatedEnum<TEnum> {
   final TEnum enumValue;
   final String translation;
@@ -8,12 +10,16 @@ class TranslatedEnum<TEnum> {
 class EnumUtils {
   static List<TranslatedEnum<TEnum>> getTranslatedAndSortedEnum<TEnum>(
     List<TEnum> values,
-    String Function(TEnum) itemText, {
+    String Function(TEnum, int) itemText, {
     List<TEnum> exclude = const [],
+    bool sort = true,
   }) {
     final filterValues = exclude.isNotEmpty ? values.where((el) => !exclude.contains(el)) : values;
-    final translatedValues = filterValues.map((filter) => TranslatedEnum<TEnum>(filter, itemText(filter))).toList()
-      ..sort((x, y) => x.translation.compareTo(y.translation));
+    final translatedValues = filterValues.mapIndex((filter, index) => TranslatedEnum<TEnum>(filter, itemText(filter, index))).toList();
+
+    if (sort) {
+      translatedValues.sort((x, y) => x.translation.compareTo(y.translation));
+    }
     return translatedValues;
   }
 
@@ -21,14 +27,20 @@ class EnumUtils {
     TEnum allValue,
     String allValueText,
     List<TEnum> values,
-    String Function(TEnum) itemText, {
+    String Function(TEnum, int) itemText, {
     List<TEnum> exclude = const [],
+    bool sort = true,
   }) {
     final filterValues = exclude.isNotEmpty ? values.where((el) => !exclude.contains(el)) : values;
     final translatedValues = filterValues
-        .map((filter) => TranslatedEnum<TEnum>(filter, filter == allValue ? allValueText : itemText(filter)))
-        .toList()
-          ..sort((x, y) => x.translation.compareTo(y.translation));
+        .mapIndex((filter, index) => TranslatedEnum<TEnum>(
+              filter,
+              filter == allValue ? allValueText : itemText(filter, index),
+            ))
+        .toList();
+    if (sort) {
+      translatedValues.sort((x, y) => x.translation.compareTo(y.translation));
+    }
     return translatedValues;
   }
 }

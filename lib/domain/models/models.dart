@@ -46,6 +46,7 @@ export 'items/item_common.dart';
 export 'items/item_experience_model.dart';
 export 'language_model.dart';
 export 'materials/material_card_model.dart';
+export 'materials/sortable_grouped_material.dart';
 export 'monsters/monster_card_model.dart';
 export 'notifications/notification_item.dart';
 export 'notifications/notification_item_image.dart';

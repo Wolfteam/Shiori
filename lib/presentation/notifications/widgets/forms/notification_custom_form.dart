@@ -8,6 +8,7 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/notifications/widgets/forms/notification_note.dart';
 import 'package:shiori/presentation/shared/dropdown_button_with_title.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
 import 'notification_circle_item.dart';
@@ -59,8 +60,7 @@ class NotificationCustomForm extends StatelessWidget {
               child: DropdownButtonWithTitle<AppNotificationItemType>(
                 title: s.type,
                 currentValue: itemType,
-                items: AppNotificationItemType.values,
-                itemBuilder: (type, _) => Text(s.translateAppNotificationItemType(type), overflow: TextOverflow.ellipsis),
+                items: EnumUtils.getTranslatedAndSortedEnum(AppNotificationItemType.values, (val, _) => s.translateAppNotificationItemType(val)),
                 onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.itemTypeChanged(newValue: v)),
               ),
             ),

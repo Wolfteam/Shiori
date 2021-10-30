@@ -22,6 +22,7 @@ class IncrementButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final color = Theme.of(context).accentColor;
     return Container(
       margin: Styles.edgeInsetVertical5,
       child: Column(
@@ -35,6 +36,7 @@ class IncrementButton extends StatelessWidget {
                 child: IconButton(
                   icon: const Icon(Icons.remove),
                   splashRadius: 20,
+                  color: color,
                   constraints: const BoxConstraints(),
                   onPressed: decrementIsDisabled ? null : () => onMinus(value - 1),
                 ),
@@ -45,7 +47,7 @@ class IncrementButton extends StatelessWidget {
                 child: IconButton(
                   icon: const Icon(Icons.add),
                   splashRadius: 20,
-                  color: Colors.red,
+                  color: color,
                   constraints: const BoxConstraints(),
                   onPressed: incrementIsDisabled ? null : () => onAdd(value + 1),
                 ),

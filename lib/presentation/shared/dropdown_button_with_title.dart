@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:shiori/domain/extensions/iterable_extensions.dart';
+import 'package:shiori/presentation/shared/common_dropdown_button.dart';
+import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
 class DropdownButtonWithTitle<T> extends StatelessWidget {
   final String title;
   final T currentValue;
   final bool isExpanded;
-  final Iterable<T> items;
+  final List<TranslatedEnum<T>> items;
   final void Function(T)? onChanged;
-  final Widget Function(T, int) itemBuilder;
   final EdgeInsets margin;
 
   const DropdownButtonWithTitle({
@@ -15,7 +15,6 @@ class DropdownButtonWithTitle<T> extends StatelessWidget {
     required this.title,
     required this.currentValue,
     required this.items,
-    required this.itemBuilder,
     this.onChanged,
     this.isExpanded = true,
     this.margin = const EdgeInsets.only(bottom: 15, top: 10),
@@ -34,12 +33,13 @@ class DropdownButtonWithTitle<T> extends StatelessWidget {
             transform: Matrix4.translationValues(0.0, 5.0, 0.0),
             child: Text(title, style: theme.textTheme.caption),
           ),
-          DropdownButton<T>(
+          CommonDropdownButton<T>(
+            hint: title,
+            currentValue: currentValue,
             isExpanded: isExpanded,
-            hint: Text(title),
-            value: currentValue,
-            onChanged: onChanged != null ? (v) => onChanged!(v!) : null,
-            items: items.mapIndex((item, index) => DropdownMenuItem<T>(value: item, child: itemBuilder(item, index))).toList(),
+            withoutUnderLine: false,
+            values: items,
+            onChanged: onChanged != null ? (v, _) => onChanged!(v!) : null,
           ),
         ],
       ),

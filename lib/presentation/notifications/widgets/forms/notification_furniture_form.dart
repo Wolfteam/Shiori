@@ -6,6 +6,7 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/dropdown_button_with_title.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
 import 'notification_circle_item.dart';
 import 'notification_dropdown_type.dart';
@@ -49,8 +50,7 @@ class NotificationFurnitureForm extends StatelessWidget {
         DropdownButtonWithTitle<FurnitureCraftingTimeType>(
           title: s.time,
           currentValue: timeType,
-          items: FurnitureCraftingTimeType.values,
-          itemBuilder: (type, _) => Text(s.translateFurnitureCraftingTimeType(type), overflow: TextOverflow.ellipsis),
+          items: EnumUtils.getTranslatedAndSortedEnum(FurnitureCraftingTimeType.values, (val, _) => s.translateFurnitureCraftingTimeType(val)),
           onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.furnitureCraftingTimeTypeChanged(newValue: v)),
         ),
         NotificationTitleBody(title: title, body: body),

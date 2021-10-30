@@ -3,7 +3,7 @@ import 'package:shiori/generated/l10n.dart';
 
 import 'utils/enum_utils.dart';
 
-typedef PopupMenuItemText<T> = String Function(T value);
+typedef PopupMenuItemText<T> = String Function(T value, int index);
 
 class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
   final String tooltipText;
@@ -27,14 +27,15 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final translatedValues = getTranslatedValues(context);
-    final valuesToUse = getValuesToUse(translatedValues);
     return PopupMenuButton<TEnum>(
       padding: EdgeInsets.zero,
       initialValue: selectedValue,
       icon: icon,
       onSelected: handleItemSelected,
-      itemBuilder: (context) => valuesToUse,
+      itemBuilder: (context) {
+        final translatedValues = getTranslatedValues(context);
+        return getValuesToUse(translatedValues);
+      },
       tooltip: tooltipText,
     );
   }

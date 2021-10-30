@@ -8,6 +8,7 @@ import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/dialogs/number_picker_dialog.dart';
 import 'package:shiori/presentation/shared/dropdown_button_with_title.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
+import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
 import 'notification_circle_item.dart';
 import 'notification_dropdown_type.dart';
@@ -76,8 +77,7 @@ class NotificationRealmCurrency extends StatelessWidget {
               child: DropdownButtonWithTitle<RealmRankType>(
                 title: s.realmRank,
                 currentValue: currentRankType,
-                items: RealmRankType.values,
-                itemBuilder: (type, index) => Text('# ${index + 1} - ${s.translateRealRankType(type)}', overflow: TextOverflow.ellipsis),
+                items: EnumUtils.getTranslatedAndSortedEnum(RealmRankType.values, (val, index) => '# ${index + 1} - ${s.translateRealRankType(val)}'),
                 onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.realmRankTypeChanged(newValue: v)),
               ),
             ),
@@ -87,8 +87,7 @@ class NotificationRealmCurrency extends StatelessWidget {
               child: DropdownButtonWithTitle<int>(
                 title: s.trustRank,
                 currentValue: currentTrustRank,
-                items: realmTrustRank.keys,
-                itemBuilder: (level, _) => Text('$level', overflow: TextOverflow.ellipsis),
+                items: realmTrustRank.keys.map((level) => TranslatedEnum<int>(level, '$level')).toList(),
                 onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.realmTrustRankLevelChanged(newValue: v)),
               ),
             ),

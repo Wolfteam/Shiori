@@ -13,6 +13,7 @@ import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/data_service.dart';
 import 'package:shiori/domain/services/genshin_service.dart';
+import 'package:synchronized/synchronized.dart';
 
 class DataServiceImpl implements DataService {
   final GenshinService _genshinService;
@@ -37,52 +38,66 @@ class DataServiceImpl implements DataService {
   late Box<NotificationResin> _notificationsResinBox;
   late Box<NotificationWeeklyBoss> _notificationsWeeklyBossBox;
 
+  final _initLock = Lock();
+  final _deleteAllLock = Lock();
+
   DataServiceImpl(this._genshinService, this._calculatorService);
 
   @override
   Future<void> init({String dir = 'shiori_data'}) async {
-    await Hive.initFlutter(dir);
-    _registerAdapters();
-    _sessionBox = await Hive.openBox<CalculatorSession>('calculatorSessions');
-    _calcItemBox = await Hive.openBox<CalculatorItem>('calculatorSessionsItems');
-    _calcItemSkillBox = await Hive.openBox<CalculatorCharacterSkill>('calculatorSessionsItemsSkills');
-    _inventoryBox = await Hive.openBox<InventoryItem>('inventory');
-    _inventoryUsedItemsBox = await Hive.openBox<InventoryUsedItem>('inventoryUsedItems');
-    _gameCodesBox = await Hive.openBox<GameCode>('gameCodes');
-    _gameCodeRewardsBox = await Hive.openBox<GameCodeReward>('gameCodeRewards');
-    _tierListBox = await Hive.openBox<TierListItem>('tierList');
+    await _initLock.synchronized(() async {
+      await Hive.initFlutter(dir);
+      _registerAdapters();
+      _sessionBox = await Hive.openBox<CalculatorSession>('calculatorSessions');
+      _calcItemBox = await Hive.openBox<CalculatorItem>('calculatorSessionsItems');
+      _calcItemSkillBox = await Hive.openBox<CalculatorCharacterSkill>('calculatorSessionsItemsSkills');
+      _inventoryBox = await Hive.openBox<InventoryItem>('inventory');
+      _inventoryUsedItemsBox = await Hive.openBox<InventoryUsedItem>('inventoryUsedItems');
+      _gameCodesBox = await Hive.openBox<GameCode>('gameCodes');
+      _gameCodeRewardsBox = await Hive.openBox<GameCodeReward>('gameCodeRewards');
+      _tierListBox = await Hive.openBox<TierListItem>('tierList');
 
-    _notificationsCustomBox = await Hive.openBox('notificationsCustom');
-    _notificationsExpeditionBox = await Hive.openBox('notificationsExpedition');
-    _notificationsFarmingArtifactBox = await Hive.openBox('notificationsFarmingArtifact');
-    _notificationsFarmingMaterialBox = await Hive.openBox('notificationsFarmingMaterial');
-    _notificationsFurnitureBox = await Hive.openBox('notificationsFurniture');
-    _notificationsGadgetBox = await Hive.openBox('notificationsGadget');
-    _notificationsRealmCurrencyBox = await Hive.openBox('notificationsRealmCurrency');
-    _notificationsResinBox = await Hive.openBox('notificationsResin');
-    _notificationsWeeklyBossBox = await Hive.openBox('notificationsWeeklyBoss');
+      _notificationsCustomBox = await Hive.openBox('notificationsCustom');
+      _notificationsExpeditionBox = await Hive.openBox('notificationsExpedition');
+      _notificationsFarmingArtifactBox = await Hive.openBox('notificationsFarmingArtifact');
+      _notificationsFarmingMaterialBox = await Hive.openBox('notificationsFarmingMaterial');
+      _notificationsFurnitureBox = await Hive.openBox('notificationsFurniture');
+      _notificationsGadgetBox = await Hive.openBox('notificationsGadget');
+      _notificationsRealmCurrencyBox = await Hive.openBox('notificationsRealmCurrency');
+      _notificationsResinBox = await Hive.openBox('notificationsResin');
+      _notificationsWeeklyBossBox = await Hive.openBox('notificationsWeeklyBoss');
+    });
   }
 
   @override
   Future<void> deleteThemAll() async {
-    await _sessionBox.clear();
-    await _calcItemBox.clear();
-    await _calcItemSkillBox.clear();
-    await _inventoryBox.clear();
-    await _inventoryUsedItemsBox.clear();
-    await _gameCodesBox.clear();
-    await _gameCodeRewardsBox.clear();
-    await _tierListBox.clear();
+    await _deleteAllLock.synchronized(() async {
+      await _sessionBox.clear();
+      await _calcItemBox.clear();
+      await _calcItemSkillBox.clear();
+      await _inventoryBox.clear();
+      await _inventoryUsedItemsBox.clear();
+      await _gameCodesBox.clear();
+      await _gameCodeRewardsBox.clear();
+      await _tierListBox.clear();
 
-    await _notificationsCustomBox.clear();
-    await _notificationsExpeditionBox.clear();
-    await _notificationsFarmingArtifactBox.clear();
-    await _notificationsFarmingMaterialBox.clear();
-    await _notificationsFurnitureBox.clear();
-    await _notificationsGadgetBox.clear();
-    await _notificationsRealmCurrencyBox.clear();
-    await _notificationsResinBox.clear();
-    await _notificationsWeeklyBossBox.clear();
+      await _notificationsCustomBox.clear();
+      await _notificationsExpeditionBox.clear();
+      await _notificationsFarmingArtifactBox.clear();
+      await _notificationsFarmingMaterialBox.clear();
+      await _notificationsFurnitureBox.clear();
+      await _notificationsGadgetBox.clear();
+      await _notificationsRealmCurrencyBox.clear();
+      await _notificationsResinBox.clear();
+      await _notificationsWeeklyBossBox.clear();
+    });
+  }
+
+  @override
+  Future<void> closeThemAll() async {
+    await _deleteAllLock.synchronized(() async {
+      await Hive.close();
+    });
   }
 
   @override

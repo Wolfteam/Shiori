@@ -33,11 +33,6 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
         return;
       }
       yield _initialState.copyWith.call(isBusy: true, workingGameCodes: [], expiredGameCodes: []);
-      final gameCodes = await _gameCodeService.getAllGameCodes();
-      await _dataService.saveGameCodes(gameCodes);
-
-      add(const GameCodesEvent.init());
-      return;
     }
 
     final s = await event.maybeWhen(
@@ -50,6 +45,13 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
         return _buildInitialState();
       },
       close: () async => _initialState,
+      refresh: () async {
+        final gameCodes = await _gameCodeService.getAllGameCodes();
+        await _dataService.saveGameCodes(gameCodes);
+
+        await _telemetryService.trackGameCodesOpened();
+        return _buildInitialState();
+      },
       orElse: () async => _initialState,
     );
 

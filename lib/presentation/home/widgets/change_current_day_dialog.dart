@@ -26,6 +26,7 @@ class _ChangeCurrentDayDialogState extends State<ChangeCurrentDayDialog> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final mq = MediaQuery.of(context);
     final s = S.of(context);
     final days = <int, String>{
       DateTime.monday: s.monday,
@@ -40,22 +41,27 @@ class _ChangeCurrentDayDialogState extends State<ChangeCurrentDayDialog> {
     return AlertDialog(
       title: Text(s.day),
       content: SizedBox(
-        width: MediaQuery.of(context).getWidthForDialogs(),
+        width: mq.getWidthForDialogs(),
+        height: mq.getHeightForDialogs(days.length),
         child: ListView.builder(
-          shrinkWrap: true,
           itemCount: days.entries.length,
           itemBuilder: (ctx, index) {
             final day = days.entries.elementAt(index);
-            return ListTile(
-              key: Key('$index'),
-              title: Text(day.value, overflow: TextOverflow.ellipsis),
-              selected: currentSelectedDay == day.key,
-              selectedTileColor: theme.accentColor.withOpacity(0.2),
-              onTap: () {
-                setState(() {
-                  currentSelectedDay = day.key;
-                });
-              },
+            //For some reason I need to wrap this thing on a material to avoid this problem
+            // https://stackoverflow.com/questions/67912387/scrollable-listview-bleeds-background-color-to-adjacent-widgets
+            return Material(
+              color: Colors.transparent,
+              child: ListTile(
+                key: Key('$index'),
+                title: Text(day.value, overflow: TextOverflow.ellipsis),
+                selected: currentSelectedDay == day.key,
+                selectedTileColor: theme.accentColor.withOpacity(0.2),
+                onTap: () {
+                  setState(() {
+                    currentSelectedDay = day.key;
+                  });
+                },
+              ),
             );
           },
         ),

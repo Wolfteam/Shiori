@@ -13,6 +13,9 @@
   "vietnamese": "Vietnamese",
   "indonesian": "Indonesian",
   "deutsch": "Deutsch",
+  "korean": "Korean",
+  "thai": "Thai",
+  "traditionalChinese": "Chinese (Traditional)",
   "bow": "Bogen",
   "claymore": "Zweihänder",
   "sword": "Einhänder",
@@ -372,5 +375,6 @@
   "charRoleBurstSupport": "Burst Support",
   "melt": "Melt",
   "freeze": "Freeze",
-  "shield": "Shield"
+  "shield": "Shield",
+  "unofficial": "Unofficial"
 }

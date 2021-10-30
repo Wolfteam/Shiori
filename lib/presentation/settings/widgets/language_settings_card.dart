@@ -3,9 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/common_dropdown_button.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
+import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
 import 'settings_card.dart';
@@ -15,8 +17,6 @@ class LanguageSettingsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
-    final ignored = [AppLanguageType.french];
-    final languages = AppLanguageType.values.where((x) => !ignored.contains(x)).toList();
     return SettingsCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -41,32 +41,18 @@ class LanguageSettingsCard extends StatelessWidget {
             ),
           ),
           BlocBuilder<SettingsBloc, SettingsState>(
-            builder: (context, state) {
-              return state.map(
-                loading: (_) => const Loading(useScaffold: false),
-                loaded: (state) => Padding(
-                  padding: Styles.edgeInsetHorizontal16,
-                  child: DropdownButton<AppLanguageType>(
-                    isExpanded: true,
-                    hint: Text(s.chooseLanguage),
-                    value: state.currentLanguage,
-                    underline: Container(
-                      height: 0,
-                      color: Colors.transparent,
-                    ),
-                    onChanged: (v) => _languageChanged(v!, context),
-                    items: languages
-                        .map<DropdownMenuItem<AppLanguageType>>(
-                          (lang) => DropdownMenuItem<AppLanguageType>(
-                            value: lang,
-                            child: Text(s.translateAppLanguageType(lang)),
-                          ),
-                        )
-                        .toList(),
-                  ),
+            builder: (context, state) => state.map(
+              loading: (_) => const Loading(useScaffold: false),
+              loaded: (state) => Padding(
+                padding: Styles.edgeInsetHorizontal16,
+                child: CommonDropdownButton<AppLanguageType>(
+                  hint: s.chooseLanguage,
+                  currentValue: state.currentLanguage,
+                  values: EnumUtils.getTranslatedAndSortedEnum<AppLanguageType>(AppLanguageType.values, (val, _) => s.translateAppLanguageType(val)),
+                  onChanged: _languageChanged,
                 ),
-              );
-            },
+              ),
+            ),
           ),
         ],
       ),
