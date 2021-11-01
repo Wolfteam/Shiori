@@ -9622,25 +9622,25 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
+      "key": "engulfing-storm",
       "name": "Engulfing Storm",
       "effect": "Consuma continuamente Energy Recharge.",
       "description": null
     },
     {
-      "key": "Slowing Water",
+      "key": "slowing-water",
       "name": "Slowing Water",
       "effect": "Rallenta il CD delle abilità.",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
+      "key": "smoldering-flames",
       "name": "Smoldering Flames",
       "effect": "Infliggi/subisci continui danni nel tempo.",
       "description": null
     },
     {
-      "key": "Condensed Ice",
+      "key": "condensed-ice",
       "name": "Condensed Ice",
       "effect": "Aumenta il consumo di Stamina e rallenta i movimenti.",
       "description": null
@@ -9648,99 +9648,111 @@
   ],
   "reactions": [
     {
-      "key": "Burning",
+      "key": "vaporize",
+      "name": "vaporize",
+      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "burning",
       "name": "Burning",
-      "effect": "Infligge elevati danni Pyro nel tempo. L’erba conta come un oggetto Dendro e diffonderà l’incendio nell’area circostante.",
+      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
       "description": null
     },
     {
-      "key": "Crystalize",
-      "name": "Crystalize",
-      "effect": "Assorbe l’elemento e ne crea un cristallo, e se raccolto fornisce uno Scudo. Lo Scudo assorbe tutti i danni elementali ma è più efficace contro l’elemento dello stesso Scudo.",
-      "description": null
-    },
-    {
-      "key": "Electro-Charged",
-      "name": "Electro-Charged",
-      "effect": "Infligge danni Electro nel tempo. Ciascuna scossa inibisce temporaneamente le azioni del personaggio/nemico. Genera anche scariche elettriche che rimbalzano da un personaggio/nemico all’altro infliggendo danni Electro.",
-      "description": null
-    },
-    {
-      "key": "Frozen",
-      "name": "Frozen",
-      "effect": "Congela il personaggio/nemico. Colpire un nemico con Claymore, Attacco in Picchiata di Spada o danno Geo (tranne l’Attacco in Picchiata di un Catalyst) provoca l'effetto Shattered che infligge danno fisico.",
-      "description": null
-    },
-    {
-      "key": "Melt",
-      "name": "Melt",
-      "effect": "Infligge danni Elementali aggiuntivi. Danno Pyro raddoppiato se innescato da un Attacco Pyro oppure danno Cryo potenziato di x1.5 se innescato da un Attacco Cryo.",
-      "description": null
-    },
-    {
-      "key": "Overloaded",
+      "key": "overloaded",
       "name": "Overloaded",
-      "effect": "Infligge danno Pyro AoE mediante un’esplosione.",
+      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
       "description": null
     },
     {
-      "key": "Superconduct",
-      "name": "Superconduct",
-      "effect": "Infligge danno Cryo AoE e riduce del 40% la RES fisica del nemico per 12s.",
+      "key": "melt",
+      "name": "Melt",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Swirl",
+      "key": "vaporize-reverse",
+      "name": "Vaporize (Reverse)",
+      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "electro-charged",
+      "name": "Electro Charged",
+      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
+      "description": null
+    },
+    {
+      "key": "frozen",
+      "name": "Frozen",
+      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
+      "description": null
+    },
+    {
+      "key": "swirl",
       "name": "Swirl",
-      "effect": "Infligge danni Elementali dell’elemento infuso dalla reazione e ne diffonde l'effetto ai nemici vicini. Non infligge danni Anemo. Solo un elemento può essere infuso di Anemo per volta.",
+      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
       "description": null
     },
     {
-      "key": "Vaporize",
-      "name": "Vaporize",
-      "effect": "Infligge danni Elemental aggiuntivi. Danno Pyro aumentato di x1.5 se innescato da un Attacco Pyro oppure danno Hydro raddoppiato se innescato da un Attacco Hydro.",
+      "key": "superconduct",
+      "name": "Superconduct",
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Melt (Reverse)",
+      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Crystallize",
+      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
+      "key": "enduring-rock",
       "name": "Enduring Rock",
       "effect": "Aumenta del 15% la resistenza dello scudo. Inoltre, i personaggi protetti dallo scudo ricevono i seguenti potenziamenti: danno inflitto +15% e RES Geo nemica -20% per 15s.",
       "description": null
     },
     {
-      "key": "Fervent Flames",
+      "key": "fervent-flames",
       "name": "Fervent Flames",
       "effect": "Si è affetti da Cryo per il 40% di tempo in meno. ATK +25%.",
       "description": null
     },
     {
-      "key": "Soothing Waters",
+      "key": "soothing-waters",
       "name": "Soothing Waters",
       "effect": "Si è affetti da Pyro per il 40% di tempo in meno. Le cure ricevute aumentano del 30%.",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
+      "key": "impetuous-winds",
       "name": "Impetuous Winds",
       "effect": "Consumo di Stamina ridotto del 15%. Velocità di movimento +10%. CD dell'Abilità ridotto del 5%.",
       "description": null
     },
     {
-      "key": "High Voltage",
+      "key": "high-voltage",
       "name": "High Voltage",
       "effect": "Si è affetti da Hydro per il 40% di tempo in meno. Le reazioni Superconduct, Overloaded, and Electro-Charged hanno il 100% di probabilità di generare una Particella Elementale Electro (CD: 5s).",
       "description": null
     },
     {
-      "key": "Shattering Ice",
+      "key": "shattering-ice",
       "name": "Shattering Ice",
       "effect": "Si è affetti da Electro per il 40% di tempo in meno. CRIT Rate +15% contro nemici congelati o affetti da Cryo.",
       "description": null
     },
     {
-      "key": "Protective Canopy",
+      "key": "protective-canopy",
       "name": "Protective Canopy",
       "effect": "RES Elementale +15% per tutti gli elementi. RES fisica +15%",
       "description": "4 Elementi diversi."

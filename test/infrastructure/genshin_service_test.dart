@@ -686,7 +686,7 @@ void main() {
       for (final lang in languages) {
         await service.init(lang);
         final reactions = service.getElementReactions();
-        expect(reactions.length, equals(9));
+        expect(reactions.length, equals(12));
         for (final reaction in reactions) {
           expect(reaction.name, allOf([isNotNull, isNotEmpty]));
           expect(reaction.effect, allOf([isNotNull, isNotEmpty]));

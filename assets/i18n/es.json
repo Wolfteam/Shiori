@@ -9608,25 +9608,25 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
+      "key": "engulfing-storm",
       "name": "Tormenta Envolvente",
       "effect": "Drena continuamente la recarga de energía del personaje.",
       "description": null
     },
     {
-      "key": "Slowing Water",
+      "key": "slowing-water",
       "name": "Agua Ralentizadora",
       "effect": "Aumenta la duración del CD de habilidades del personaje.",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
+      "key": "smoldering-flames",
       "name": "Llamas Humeantes",
       "effect": "Continuamente inflige daño Pyro al personaje.",
       "description": null
     },
     {
-      "key": "Condensed Ice",
+      "key": "condensed-ice",
       "name": "Hielo Condensado",
       "effect": "Aumenta el consumo de «Estamina | Resistencia» del personaje.",
       "description": null
@@ -9634,99 +9634,111 @@
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "Quemadura",
-      "effect": "Inflige daño Pyro continuo durante un tiempo.",
+      "key": "vaporize",
+      "name": "vaporize",
+      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Crystalize",
-      "name": "Cristalizar",
-      "effect": "Genera fragmentos elementales correspondientes, que proporcionan escudos elementales.",
+      "key": "burning",
+      "name": "Burning",
+      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
       "description": null
     },
     {
-      "key": "Electro-Charged",
-      "name": "Electrocargado",
-      "effect": "Inflige daño Electro continuo durante un periodo tiempo.",
+      "key": "overloaded",
+      "name": "Overloaded",
+      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
       "description": null
     },
     {
-      "key": "Frozen",
-      "name": "Congelado",
-      "effect": "Congela el objetivo.",
+      "key": "melt",
+      "name": "Melt",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Melt",
-      "name": "Derretir",
-      "effect": "Inflige daño extra.",
+      "key": "vaporize-reverse",
+      "name": "Vaporize (Reverse)",
+      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Overloaded",
-      "name": "Sobrecargado",
-      "effect": "Crea una explosión que inflige daño Pyro en área.",
+      "key": "electro-charged",
+      "name": "Electro Charged",
+      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
       "description": null
     },
     {
-      "key": "Superconduct",
-      "name": "Superconductor",
-      "effect": "Inflige daño Cryo en area y reduce la defensa del objetivo en un 50%",
+      "key": "frozen",
+      "name": "Frozen",
+      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
       "description": null
     },
     {
-      "key": "Swirl",
-      "name": "Torbellino",
-      "effect": "Absorbe el primer elemento con el cual entra en contacto y inflige daño extra elemental y genera mas reacciones elementales.",
+      "key": "swirl",
+      "name": "Swirl",
+      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
       "description": null
     },
     {
-      "key": "Vaporize",
-      "name": "Vaporizar",
-      "effect": "Inflige daño elemental adicional.",
+      "key": "superconduct",
+      "name": "Superconduct",
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Melt (Reverse)",
+      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Crystallize",
+      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
+      "key": "enduring-rock",
       "name": "Roca Resistente",
       "effect": "La Protección de Escudo aumenta en un 15%. Cuando un personaje está protegido por un escudo, inflige un 15% mas de daño. Al causar daño contra un enemigo, la RES Geo de dicho enemigo se reduce en un 20% durante 15s.",
       "description": null
     },
     {
-      "key": "Fervent Flames",
+      "key": "fervent-flames",
       "name": "Llamas Fervientes",
       "effect": "Reduce la duración de efectos con Cryo en 40%. Aumenta ATQ en 25%.",
       "description": null
     },
     {
-      "key": "Soothing Waters",
+      "key": "soothing-waters",
       "name": "Agua Medicinal",
       "effect": "Reduce en un 40% la duración de los efectos Pyro sobre ti. Aumenta en un 30% la curación recibida.",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
+      "key": "impetuous-winds",
       "name": "Vientos Impetuosos",
       "effect": "Disminuye el Coste de Aguante en 15%. Aumenta Vel. de Movimiento en 10%. Reduce el TdE en 5%.",
       "description": null
     },
     {
-      "key": "High Voltage",
+      "key": "high-voltage",
       "name": "Alto Voltaje",
       "effect": "Reduce la duración de efectos con Hydro en 40%. Superconductor, Sobrecarga y Electrocargado tienen 100% de generar una Particula Elemental Electro (TdE 5 s.).",
       "description": null
     },
     {
-      "key": "Shattering Ice",
+      "key": "shattering-ice",
       "name": "Hielo Fragmentado",
       "effect": "Reduce la duración de efectos con Electro en 40%. Aumenta la Prob. CRIT contra oponentes afectados por Cryo o enemigos congelados en un 15%.",
       "description": null
     },
     {
-      "key": "Protective Canopy",
+      "key": "protective-canopy",
       "name": "Cubierta Protectora",
       "effect": "Todas las RES elementales + 15%, RES Física + 15%.",
       "description": "Cualquiera de los 4 elementos únicos"

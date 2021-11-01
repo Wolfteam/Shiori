@@ -9603,25 +9603,25 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
+      "key": "engulfing-storm",
       "name": "Объятья грозы",
       "effect": "Непрерывно выкачивает Энергию элементов из персонажа.",
       "description": null
     },
     {
-      "key": "Slowing Water",
+      "key": "slowing-water",
       "name": "Медленный поток",
       "effect": "Увеличивает время отката навыков.",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
+      "key": "smoldering-flames",
       "name": "Тлеющее пламя",
       "effect": "Непрерывно наносит фиксированный урон.",
       "description": null
     },
     {
-      "key": "Condensed Ice",
+      "key": "condensed-ice",
       "name": "Застывший лёд",
       "effect": "Увеличивает расход выносливости.",
       "description": null
@@ -9629,99 +9629,111 @@
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "Горение",
-      "effect": "Наносит постоянный Пиро урон.",
+      "key": "vaporize",
+      "name": "vaporize",
+      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Crystalize",
-      "name": "Кристаллизация",
-      "effect": "Поглощает часть элементальной энергии противника и роняет сферу, которая может дать персонажу элементальный щит.",
+      "key": "burning",
+      "name": "Burning",
+      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
       "description": null
     },
     {
-      "key": "Electro-Charged",
-      "name": "Заряд",
-      "effect": "Наносит постоянный Электро урон.",
+      "key": "overloaded",
+      "name": "Overloaded",
+      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
       "description": null
     },
     {
-      "key": "Frozen",
-      "name": "Замораживание",
-      "effect": "Замораживает цель",
+      "key": "melt",
+      "name": "Melt",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Melt",
-      "name": "Таяние",
-      "effect": "Наносит дополнительный урон.",
+      "key": "vaporize-reverse",
+      "name": "Vaporize (Reverse)",
+      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Overloaded",
-      "name": "Перегрузка",
-      "effect": "Вызывает взрыв, который наносит Пиро урон по площади.",
+      "key": "electro-charged",
+      "name": "Electro Charged",
+      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
       "description": null
     },
     {
-      "key": "Superconduct",
-      "name": "Суперпроводник",
-      "effect": "Наносит Крио урон по площади и понижает защиту физ. сопротивление на 50% пострадавших целей",
+      "key": "frozen",
+      "name": "Frozen",
+      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
       "description": null
     },
     {
-      "key": "Swirl",
-      "name": "Рассеивание",
-      "effect": "Наносит дополнительный элементальный урон и накладывает соответствующий эффект.",
+      "key": "swirl",
+      "name": "Swirl",
+      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
       "description": null
     },
     {
-      "key": "Vaporize",
-      "name": "Пар",
-      "effect": "Наносит дополнительный урон.",
+      "key": "superconduct",
+      "name": "Superconduct",
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Melt (Reverse)",
+      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Crystallize",
+      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
+      "key": "enduring-rock",
       "name": "Прочность Гео",
       "effect": "Прочность щита повышается на 15%. Если у персонажа активен щит, то урон атаки увеличивается на 15%, а при нанесении урона врагу его Гео сопротивление в течение 15 сек. понижается на 20%.",
       "description": null
     },
     {
-      "key": "Fervent Flames",
+      "key": "fervent-flames",
       "name": "Преданность Пиро",
       "effect": "Уменьшает длительность Крио эффекта на 40%, увеличивает силу атаки на 25%.",
       "description": null
     },
     {
-      "key": "Soothing Waters",
+      "key": "soothing-waters",
       "name": "Лечение Гидро",
       "effect": "Уменьшает длительность Пиро эффекта на 40%, увеличивает бонус получаемого лечения на 30%.",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
+      "key": "impetuous-winds",
       "name": "Проворность Анемо",
       "effect": "Уменьшает потребление выносливости на 15%. Увеличивает скорость передвижения на 10%. Уменьшает время отката навыков на 5%.",
       "description": null
     },
     {
-      "key": "High Voltage",
+      "key": "high-voltage",
       "name": "Энергия Электро",
       "effect": "Уменьшает длительность Гидро эффекта на 40%, Суперпроводник, Перегрузка и Заряжен имеют шанс в 100% создать элементальную частицу Электро (Уменьшение восстановления умения на 5%).",
       "description": null
     },
     {
-      "key": "Shattering Ice",
+      "key": "shattering-ice",
       "name": "Разрушение Крио",
       "effect": "Уменьшает длительность Электро эффекта на 40%, увеличивает шанс критического урона по замороженным противникам или противникам с Крио эффектом на 15%.",
       "description": null
     },
     {
-      "key": "Protective Canopy",
+      "key": "protective-canopy",
       "name": "Нити защиты",
       "effect": "Элементальное сопротивление повышается на 15%.",
       "description": "4 неодинаковых элемента"

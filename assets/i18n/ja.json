@@ -9597,25 +9597,25 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
+      "key": "engulfing-storm",
       "name": "嗜欲の雷",
       "effect": "持続的に、元素エネルギーが減少する。",
       "description": null
     },
     {
-      "key": "Slowing Water",
+      "key": "slowing-water",
       "name": "停滞の水",
       "effect": "スキルクールタイムが大幅に延長する。",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
+      "key": "smoldering-flames",
       "name": "陰燃の炎",
       "effect": "継続的に炎ダメージを受ける。",
       "description": null
     },
     {
-      "key": "Condensed Ice",
+      "key": "condensed-ice",
       "name": "凝結の氷",
       "effect": "スタミナの消費が大幅に増加。",
       "description": null
@@ -9623,99 +9623,111 @@
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "燃焼",
-      "effect": "継続的な炎ダメージを与える。",
+      "key": "vaporize",
+      "name": "vaporize",
+      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Crystalize",
-      "name": "結晶化",
-      "effect": "対応の元素シールドを一定時間付与する。",
+      "key": "burning",
+      "name": "Burning",
+      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
       "description": null
     },
     {
-      "key": "Electro-Charged",
-      "name": "感電",
-      "effect": "継続的な雷ダメージを与える。",
+      "key": "overloaded",
+      "name": "Overloaded",
+      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
       "description": null
     },
     {
-      "key": "Frozen",
-      "name": "凍結",
-      "effect": "一定時間行動不能にする。",
+      "key": "melt",
+      "name": "Melt",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Melt",
-      "name": "溶解",
-      "effect": "反応による追加ダメージを与える。",
+      "key": "vaporize-reverse",
+      "name": "Vaporize (Reverse)",
+      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Overloaded",
-      "name": "過負荷",
-      "effect": "爆発による炎の範囲ダメージを与える。",
+      "key": "electro-charged",
+      "name": "Electro Charged",
+      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
       "description": null
     },
     {
-      "key": "Superconduct",
-      "name": "超電導",
-      "effect": "氷の範囲ダメージを与え、一定時間防御力を下げる。",
+      "key": "frozen",
+      "name": "Frozen",
+      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
       "description": null
     },
     {
-      "key": "Swirl",
-      "name": "拡散",
-      "effect": "対象の元素によるダメージを与え、周りに元素の効果を発生させる。",
+      "key": "swirl",
+      "name": "Swirl",
+      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
       "description": null
     },
     {
-      "key": "Vaporize",
-      "name": "蒸発",
-      "effect": "反応による追加ダメージを与える。",
+      "key": "superconduct",
+      "name": "Superconduct",
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Melt (Reverse)",
+      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Crystallize",
+      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
+      "key": "enduring-rock",
       "name": "不動の岩",
       "effect": "シールド強化+15%。また、キャラクターがシールド状態の時、以下の効果を得る。与えるダメージ+15%。敵にダメージを与えた時、敵の岩元素耐性-20%、継続時間15秒。",
       "description": null
     },
     {
-      "key": "Fervent Flames",
+      "key": "fervent-flames",
       "name": "誠意の炎",
       "effect": "氷元素付着の効果継続時間-40%。攻撃力+25%。",
       "description": null
     },
     {
-      "key": "Soothing Waters",
+      "key": "soothing-waters",
       "name": "治癒の水",
       "effect": "炎元素付着の継続時間-40%。被回復量+30%。",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
+      "key": "impetuous-winds",
       "name": "迅速の風",
       "effect": "スタミナ消費-15%、移動速度+10%、元素スキルのクールタイム-5%。",
       "description": null
     },
     {
-      "key": "High Voltage",
+      "key": "high-voltage",
       "name": "強権の雷",
       "effect": "水元素付着の継続時間-40%。超電導、過負荷または感電反応を起こした時、100%の確率で雷元素粒子を生成する、クールタイム5秒。",
       "description": null
     },
     {
-      "key": "Shattering Ice",
+      "key": "shattering-ice",
       "name": "粉砕の氷",
       "effect": "雷元素付着の継続時間-40%。氷元素付着または凍結状態の敵を攻撃する時、会心率+15%。",
       "description": null
     },
     {
-      "key": "Protective Canopy",
+      "key": "protective-canopy",
       "name": "交錯の護り",
       "effect": "全元素耐性+15%。物理的耐性+15%",
       "description": "任意の異なる4種類の元素"
