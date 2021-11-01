@@ -12,10 +12,10 @@
   "japanese": "日本語",
   "vietnamese": "ベトナム語",
   "indonesian": "インドネシア語",
-  "deutsch": "Deutsch",
-  "korean": "Korean",
-  "thai": "Thai",
-  "traditionalChinese": "Chinese (Traditional)",
+  "deutsch": "ドイツ語",
+  "korean": "韓国語",
+  "thai": "タイ語",
+  "traditionalChinese": "中国語(繁体)",
   "bow": "弓",
   "claymore": "両手剣",
   "sword": "片手剣",
@@ -374,5 +374,5 @@
   "melt": "メルト",
   "freeze": "フリーズ",
   "shield": "シールド",
-  "unofficial": "Unofficial"
+  "unofficial": "非公式"
 }
