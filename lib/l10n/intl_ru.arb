@@ -12,10 +12,10 @@
   "japanese": "Японский",
   "vietnamese": "Вьетнамский",
   "indonesian": "Индонезийский",
-  "deutsch": "Deutsch",
-  "korean": "Korean",
-  "thai": "Thai",
-  "traditionalChinese": "Chinese (Traditional)",
+  "deutsch": "Немецкий",
+  "korean": "Корейский",
+  "thai": "Тайский",
+  "traditionalChinese": "Китайский (традиционный)",
   "bow": "Лук",
   "claymore": "Двуручный меч",
   "sword": "Меч",
@@ -374,5 +374,5 @@
   "melt": "Таяние",
   "freeze": "Заморозка",
   "shield": "Защита",
-  "unofficial": "Unofficial"
+  "unofficial": "Неофициальный"
 }
