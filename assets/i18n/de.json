@@ -9553,26 +9553,26 @@
   "debuffs": [
     {
       "key": "Engulfing Storm",
-      "name": "Engulfing Storm",
-      "effect": "Continuously drains Energy Recharge.",
+      "name": "Hungriger Blitz",
+      "effect": "Verbraucht fortlaufend Elementarenergie.",
       "description": null
     },
     {
       "key": "Slowing Water",
-      "name": "Slowing Water",
-      "effect": "Increases skill CD durations.",
+      "name": "Zähflüssige Bremse",
+      "effect": "Verlängert die Abklingzeit von Fähigkeiten.",
       "description": null
     },
     {
       "key": "Smoldering Flames",
-      "name": "Smoldering Flames",
-      "effect": "Continuously inflicts damage over time.",
+      "name": "Schwelbrand",
+      "effect": "Verursacht fortlaufenden Pyro-Schaden.",
       "description": null
     },
     {
       "key": "Condensed Ice",
-      "name": "Condensed Ice",
-      "effect": "Increases stamina consumption.",
+      "name": "Erstarrte Glieder",
+      "effect": "Erhöht den Ausdauerverbrauch.",
       "description": null
     }
   ],
@@ -9635,45 +9635,45 @@
   "resonance": [
     {
       "key": "Enduring Rock",
-      "name": "Enduring Rock",
-      "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemies will decrease their Geo RES by 20% for 15s.",
+      "name": "Beständiges Gestein",
+      "effect": "Erhöht die Schildeffizienz um 15% und verleiht Figuren im Schutz von Schilden folgende Merkmale: Erhöht den verursachten Schaden um 15% und verringert den Geo-WDS von Gegnern, denen die Figuren Schaden zufügen, um 20%. Hält 15s.",
       "description": null
     },
     {
       "key": "Fervent Flames",
-      "name": "Fervent Flames",
-      "effect": "Affected by Cryo for 40% less time. Increases ATK by 25%.",
+      "name": "Aufrichtiges Feuer",
+      "effect": "Verringert die Dauer der Beeinträchtigung durch zusätzliches Kryo-Attribut um 40% und erhöht den ANG um 25%.",
       "description": null
     },
     {
       "key": "Soothing Waters",
-      "name": "Soothing Waters",
-      "effect": "Affected by Pyro for 40% less time. Increases incoming healing by 30%.",
+      "name": "Heilendes Wasser",
+      "effect": "Verringert die Dauer der Beeinträchtigung durch zusätzliches Pyro-Attribut um 40% und erhöht den passiven Heilungseffekt um 30%.",
       "description": null
     },
     {
       "key": "Impetuous Winds",
-      "name": "Impetuous Winds",
-      "effect": "Decreases Stamina Consumption by 15%. Increases Movement SPD by 10%. Shortens Skill CD by 5%.",
+      "name": "Ungestümer Wind",
+      "effect": "Verringert den Ausdauerverbrauch um 15%, erhöht die Bewegungsgeschwindigkeit um 10% und verkürzt die Abklingzeit von Fähigkeiten um 5%.",
       "description": null
     },
     {
       "key": "High Voltage",
-      "name": "High Voltage",
-      "effect": "Affected by Hydro for 40% less time. Superconduct, Overloaded, and Electro-Charged have a 100% chance to generate an Electro Elemental Particle (CD: 5s).",
+      "name": "Energiereicher Blitz",
+      "effect": "Verringert die Dauer der Beeinträchtigung durch zusätzliches Hydro-Attribut um 40% und erschafft beim Auslösen der Reaktionen Supraleiter, Überladen und Unter Strom mit einer Wahrscheinlichkeit von 100% ein Elektro-Elementarteilchen, 5s Ablinkzeit",
       "description": null
     },
     {
       "key": "Shattering Ice",
-      "name": "Shattering Ice",
-      "effect": "Affected by Electro for 40% less time. Increases CRIT Rate against enemies that are Frozen or affected by Cryo by 15%.",
+      "name": "Zerspringendes Eis",
+      "effect": "Verringert die Dauer der Beeinträchtigung durch zusätzliches Elektro-Attribut um 40% und erhöht die KT bei Angriffen auf von Kryo-Effekten oder Gefroren betroffenden Gegnern um 15%.",
       "description": null
     },
     {
       "key": "Protective Canopy",
-      "name": "Protective Canopy",
-      "effect": "All Elemental RES by 15%. Physical RES + 15%",
-      "description": "Any 4 Unique Elements"
+      "name": "Verwobene Wehr",
+      "effect": "Erhöht den WDS gegen alle Elemente um 15% und den phys. WDS um 15%.",
+      "description": "4 unterschiedliche Elemente"
     }
   ],
   "monsters": [
