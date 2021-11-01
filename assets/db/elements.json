@@ -103,15 +103,6 @@
       ]
     },
     {
-      "key": "burning",
-      "principal": [
-        "dendro"
-      ],
-      "secondary": [
-        "pyro"
-      ]
-    },
-    {
       "key": "melt-reverse",
       "principal": [
         "cryo"

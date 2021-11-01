@@ -9641,7 +9641,7 @@
   "reactions": [
     {
       "key": "vaporize",
-      "name": "vaporize",
+      "name": "Vaporize",
       "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
