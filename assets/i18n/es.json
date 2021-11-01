@@ -7123,6 +7123,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "Luna de Mouun",
+      "description": "Un elegante arco hecho con caracolas de mar y corales. Una melancólica luz lunar fluye por él.",
+      "refinements": [
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.12{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}40{/color}% de esta forma.",
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.15{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}50{/color}% de esta forma.",
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.18{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}60{/color}% de esta forma.",
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.21{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}70{/color}% de esta forma.",
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.24{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}80{/color}% de esta forma."
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "Espada del Mercenario",
       "description": "Una gran espada antigua y pesada que ha vivo innumerables batallas.",
@@ -7779,6 +7791,18 @@
       "name": "Gran Espada del Guerrero",
       "description": "Una plancha de hierro resistente que, con la fuerza de voluntad de la persona que la empuñe, puede ser lo suficientemente potente como para romper montañas.",
       "refinements": []
+    },
+    {
+      "key": "wavebreakers-fin",
+      "name": "Aleta Cortaolas",
+      "description": "Una naginata fabricada a partir de un brillante material de las profundidades del océano. En el pasado, perteneció a la raza de los tengu.",
+      "refinements": [
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.12{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}40{/color}% de esta forma.",
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.15{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}50{/color}% de esta forma.",
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.18{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}60{/color}% de esta forma.",
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.21{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}70{/color}% de esta forma.",
+        "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {color}0.24{/color}% por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {color}80{/color}% de esta forma."
+      ]
     },
     {
       "key": "white-iron-greatsword",

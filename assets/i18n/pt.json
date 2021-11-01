@@ -7028,6 +7028,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "Lua de Mouun",
+      "description": "Um arco de guerra adorável feito de conchas e coral. Um brilho lúgubre flui ao longo de seus braços coloridos à luz da lua.",
+      "refinements": [
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.12{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}40{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.15{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}50{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.18{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}60{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.21{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}70{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.24{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}80{/color}%."
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "Espada do Mercenário",
       "description": "Uma grande espada testada em batalhas, passou por muitos momentos árduos.",
@@ -7684,6 +7696,18 @@
       "name": "Espadão do Julgamento",
       "description": "Uma chapa de ferro resistente, que pode ser boa o suficiente para separar montanhas com força de vontade suficiente.",
       "refinements": []
+    },
+    {
+      "key": "wavebreakers-fin",
+      "name": "Barbatana do Quebra Ondas",
+      "description": "Uma naginata forjada a partir de um material luminescente das profundezas do oceano. No passado pertenceu ao povo tengu.",
+      "refinements": [
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.12{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}40{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.15{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}50{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.18{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}60{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.21{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}70{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.24{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}80{/color}%."
+      ]
     },
     {
       "key": "white-iron-greatsword",

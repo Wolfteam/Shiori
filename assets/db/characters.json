@@ -37412,7 +37412,7 @@
       "isNew": false,
       "isFemale": false,
       "region": "inazuma",
-      "role": "na",
+      "role": "support",
       "tier": "a",
       "birthday": "01/09",
       "subStatType": "atkPercentage",
@@ -38378,7 +38378,48 @@
           "image": "thoma_c6.png"
         }
       ],
-      "builds": [],
+      "builds": [
+        {
+          "isRecommended": false,
+          "type": "support",
+          "subType": "none",
+          "skillPriorities": [
+            "elementalSkill",
+            "elementalBurst"
+          ],
+          "weaponKeys": [
+            "staff-of-homa",
+            "the-catch"
+          ],
+          "artifacts": [
+            {
+              "oneKey": null,
+              "multiples": [
+                {
+                  "key": "crimson-witch-of-flames",
+                  "quantity": 2
+                },
+                {
+                  "key": "tenacity-of-the-millelith",
+                  "quantity": 2
+                }
+              ],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "hpPercentage",
+                "hpPercentage"
+              ]
+            }
+          ],
+          "subStatsToFocus": [
+            "energyRechargePercentage",
+            "hpPercentage",
+            "hp"
+          ]
+        }
+      ],
       "stats": [
         {
           "level": 1,

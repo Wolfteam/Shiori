@@ -7123,6 +7123,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "Ánh Trăng Mouun",
+      "description": "Chiến cung tinh xảo làm từ vỏ sò và san hô. Trên thân cung phản chiếu ánh trăng đầy đau thương.",
+      "refinements": [
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.12{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này gây ra. Thông qua cách này, sát thương Kỹ Năng Nộ tăng tối đa {color}40{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.15{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}50{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.18{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}60{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.21{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}70{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.24{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}80{/color}%."
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "Kiếm Dụng Binh",
       "description": "Kiếm cổ rất nặng và kiên cố, được tôi luyện qua năm tháng và chiến tranh.",
@@ -7779,6 +7791,18 @@
       "name": "Kiếm Huấn Luyện",
       "description": "Một thanh sắt được mài thành hình kiếm. Khi ở trong tay người có ý chí, thì cũng có được sức mạnh xẻ đá phá rừng.",
       "refinements": []
+    },
+    {
+      "key": "wavebreakers-fin",
+      "name": "Vây Cá Chẻ Sóng",
+      "description": "Trường đao làm từ những chất liệu lấp lánh sâu dưới đáy biển, từng được sở hữu bởi tộc Tengu.",
+      "refinements": [
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.12{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này gây ra. Thông qua cách này, sát thương Kỹ Năng Nộ tăng tối đa {color}40{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.15{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}50{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.18{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}60{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.21{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}70{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.24{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}80{/color}%."
+      ]
     },
     {
       "key": "white-iron-greatsword",

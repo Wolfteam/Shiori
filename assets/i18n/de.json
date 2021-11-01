@@ -7070,6 +7070,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "Mouun-Mond",
+      "description": "Ein schöner Kriegsbogen aus Muscheln und Korallen. Ein trauriger Glanz fließt entlang seiner mondlichtfarbenen Wurfarme.",
+      "refinements": [
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},12 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}40{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},15 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}50{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},18 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}60{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},21 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}70{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},24 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}80{/color} %."
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "Söldnerzweihänder",
       "description": "Ein altes, schweres, aber stabiles Großschwert, das schon viele Jahre und Kämpfe überstanden hat.",
@@ -7726,6 +7738,18 @@
       "name": "Übungsgroßschwert",
       "description": "Lediglich eine dicke Platte aus Eisen in der Form eines Schwertes. Mit genügend Willenskraft kann man damit immer noch Berge spalten.",
       "refinements": []
+    },
+    {
+      "key": "wavebreakers-fin",
+      "name": "Wellenbrecherflosse",
+      "description": "Ein Naginata, das aus leuchtendem Material aus den Tiefen des Meeres geschmiedet wurde. Es gehörte einst den Tengu.",
+      "refinements": [
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},12 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}40{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},15 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}50{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},18 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}60{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},21 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}70{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},24 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}80{/color} %."
+      ]
     },
     {
       "key": "white-iron-greatsword",

@@ -7076,6 +7076,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "Lune de Mouun",
+      "description": "Un élégant arc de guerre fait de coquillages et de corail. Un éclat mélancolique se répand le long de ses branches couleur clair de lune.",
+      "refinements": [
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},12 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}40{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},15 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}50{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},18 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}60{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},21 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}70{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},24 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}80{/color} % de cette manière."
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "Lame du mercenaire",
       "description": "Un espadon qui a fait des ravages sur bien des champs de bataille. Il a vu des jours meilleurs, mais aussi bien pires.",
@@ -7732,6 +7744,18 @@
       "name": "Épée d'entraînement",
       "description": "Une épée façonnée à partir d'une lame de fer épaisse et solide. Capable de briser des montagnes si son propriétaire est suffisamment motivé.",
       "refinements": []
+    },
+    {
+      "key": "wavebreakers-fin",
+      "name": "Aileron de brise-vagues",
+      "description": "Une naginata forgée à partir d'un matériau luminescent provenant du fond des océans. Elle était autrefois la possession des Tengu.",
+      "refinements": [
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},12 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}40{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},15 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}50{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},18 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}60{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},21 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}70{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},24 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}80{/color} % de cette manière."
+      ]
     },
     {
       "key": "white-iron-greatsword",

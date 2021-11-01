@@ -7122,6 +7122,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "Mouun's Moon",
+      "description": "A lovely warbow made from seashells and coral. A mournful brilliance flows along its moonlight-colored arms.",
+      "refinements": [
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.12{/color}%. A maximum of {color}40{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.15{/color}%. A maximum of {color}50{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.18{/color}%. A maximum of {color}60{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.21{/color}%. A maximum of {color}70{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.24{/color}%. A maximum of {color}80{/color}% increased Elemental Burst DMG can be achieved this way."
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "Old Merc's Pal",
       "description": "Uno spadone testato in battaglia che ha visto giorni migliori e peggiori.",
@@ -7778,6 +7790,18 @@
       "name": "Waster Greatsword",
       "description": "Una robusta \"lamina di ferro\" abbastanza potente da dividere montagne in due, se impugnata con sufficiente forza di volontà.",
       "refinements": []
+    },
+    {
+      "key": "wavebreakers-fin",
+      "name": "Wavebreaker's Fin",
+      "description": "A naginata forged from luminescent material deep in the ocean depths. It was once the possession of the tengu race.",
+      "refinements": [
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.12{/color}%. A maximum of {color}40{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.15{/color}%. A maximum of {color}50{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.18{/color}%. A maximum of {color}60{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.21{/color}%. A maximum of {color}70{/color}% increased Elemental Burst DMG can be achieved this way.",
+        "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by {color}0.24{/color}%. A maximum of {color}80{/color}% increased Elemental Burst DMG can be achieved this way."
+      ]
     },
     {
       "key": "white-iron-greatsword",
