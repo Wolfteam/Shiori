@@ -4860,7 +4860,7 @@
         {
           "key": "p1",
           "title": "Apasionado de la pesca",
-          "description": "Al pescar en Inazuma, hay un 20% de probabilidad de obtener el doble de peces.\r\n",
+          "description": "Cuando el viajero pesca en Inazuma, hay un 20% de probabilidad de obtener el doble de peces gracias a la ayuda de Thoma.",
           "descriptions": []
         },
         {
@@ -4880,7 +4880,7 @@
         {
           "key": "c1",
           "title": "El deber de un compañero",
-          "description": "Cuando el escudo llameante de un personaje distinto a Thoma recibe daño, tanto el TdE de Bendición incandescente como el de Armadura calcinante se reducen en 3 s.\r\nEste efecto solo puede ocurrir una vez cada 20 s.\r\n",
+          "description": "Cuando los personajes que estén bajo la protección de un escudo llameante (a excepción de Thoma) reciben un ataque, tanto el TdE de Bendición incandescente como el de Armadura calcinante se reducen en 3 s.\r\nEste efecto solo puede ocurrir una vez cada 20 s.\r\n",
           "descriptions": []
         },
         {

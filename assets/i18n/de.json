@@ -4779,81 +4779,141 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Schneller Schmetterspeer",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 4 Lanzenstiche aus.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH PHase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}% ×{param4}",
+            "SCH Phase 4|{param5}%",
+            "SCH heftiger Schläge|{param6}%",
+            "Ausdauerverbrauch heftiger Schläge|{param7} Punkte",
+            "SCH beim Fallen|{param8}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lodernder Segen",
+          "description": "Thoma benutzt die Spitze seiner Stangenwaffe als Punkt, um Flammen zu kanalisieren und einen Tritt auszuführen, mit dem er Pyro-Flächenschaden verursacht. Erschafft dann einen Schild des lodernden Segens und verleiht Thoma beim Auslösen das Pyro-Attribut.\r\nDie Schildstärke hängt von Thomas max. LP ab.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Merkmale des Schilds des lodernden Segens:\r\n",
+              "descriptions": [
+                "Hält bei Pyro-Schaden 250 % ab.",
+                "Addiert die verbleibende Schildstärke beim Erhalten eines neuen Schilds des lodernden Segens hinzu und setzt die Wirkungsdauer zurück.",
+                "Die Schildstärke kann einen bestimmten Teil der max. LP von Thoma nicht übersteigen."
+              ]
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "Schildstärke|{param2}% der max. LP + {param3}",
+            "Schilddauer|{param4} s",
+            "Max. Schildstärke|{param5}% der max. LP + {param6}",
+            "Abklingzeit|{param7} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Rote Ooyoroi",
+          "description": "Thoma wirbelt seinen Speer herum und durchschneidet die Gegner in der Umgebung mit prasselndem Feuer, womit er ihnen Pyro-Flächenschaden zufügt. Umhüllt sich dann in eine brennende Ooyoroi.\r\n",
+          "abilities": [
+            {
+              "name": "Brennende Ooyoroi",
+              "description": "Löst bei Angriffen aktueller Figuren unter dem Einfluss des Effekts „brennende Ooyoroi“ mit Standardangriffen „Brennender Zusammenbruch“ aus, verursacht damit Pyro-Flächenschaden und erschafft einen Schild des lodernden Segens.\r\n1 s Abklingzeit für „Brennender Zusammenbruch“.\r\nVon der Schildstärke abgesehen sind die Merkmale dieses Schildes identisch mit denen des Schildes der Elementarfähigkeit „Lodernder Segen“:\r\n",
+              "descriptions": [
+                "Hält bei Pyro-Schaden 250 % ab.",
+                "Addiert die verbleibende Schildstärke beim Erhalten eines neuen Schilds des lodernden Segens hinzu und setzt die Wirkungsdauer zurück.",
+                "Die Schildstärke kann einen bestimmten Teil der max. LP von Thoma nicht übersteigen.",
+                "Effekt der brennenden Ooyoroi erlischt, wenn Thoma ohnmächtig wird."
+              ]
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "SCH von brennendem Zusammenbruch|{param2}%",
+            "Schildstärke|{param3}% der max. LP + {param4}",
+            "Schilddauer|{param5} s",
+            "Dauer der brennenden Ooyoroi|{param6} s",
+            "Abklingzeit|{param7} s",
+            "Elementarenergie|{param8}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Brassenjagd",
+          "description": "Bringt beim erfolgreichen Angeln in Inazuma mit einer Wahrscheinlichkeit von 20 % den 2-fachen Ertrag.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Schichtpanzer",
+          "description": "Erhöht die Schildeffizienz aktueller Figuren beim Erhalten oder Aktualisieren von Schild des lodernden Segens 6 s lang um 5 %.\r\n0,3 s Abklingzeit, 5-fach stapelbar.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Flammenangriff",
+          "description": "Erhöht den mit dem brennenden Zusammenbruch von Rote Ooyoroi verursachten Schaden in Höhe von 2,2 % der max. LP von Thoma.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Kameradschaftliche Pflichten",
+          "description": "Verkürzt beim Schützen vor Angriffen durch Schild des lodernden Segens für Figuren außer Thoma die Abklingzeit von Thomas eigenem Lodernder Segen um 3 s und die Abklingzeit von Rote Ooyoroi um 3 s.\r\n20 s Abklingzeit.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Beflissener Assistent",
+          "description": "Verlängert die Dauer von Rote Ooyoroi um 3 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Bestimmtheit vor dem Feind",
+          "description": "Erhöht die Stufe der Fähigkeit Lodernder Segen um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Längerfristige Planung",
+          "description": "Stellt Thoma nach Anwendung von Rote Ooyoroi 15 Punkte Elementarenergie wieder her.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Weitreichende Flammen",
+          "description": "Erhöht die Stufe der Fähigkeit Rote Ooyoroi um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Brennendes Herz",
+          "description": "Erhöht beim Erhalten oder Aktualisieren von Schild des lodernden Segens den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall aller Truppenmitglieder verursachten Schaden 6 s lang um 15 %.\r\n",
           "descriptions": []
         }
       ]

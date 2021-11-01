@@ -4797,7 +4797,7 @@
             "Sát Thương Lần 3|{param3}% *{param4}",
             "Sát Thương Lần 4|{param5}%",
             "Sát Thương Trọng Kích|{param6}%",
-            "Thể lực Trọng Kích tiêu hao|{param7} điểm",
+            "Thể Lực Trọng Kích Tiêu Hao|{param7} điểm",
             "Sát Thương Khi Rơi|{param8}%",
             "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param9}% / {param10}%"
           ]
@@ -4813,7 +4813,7 @@
               "descriptions": [
                 "Có 250% hiệu quả hấp thụ đối với Sát Thương Nguyên Tố Hỏa;",
                 "Lượng hấp thụ sát thương còn lại của khiên sẽ cộng dồn khi nhận Khiên Lửa Hộ Mệnh lần nữa, đồng thời làm mới thời gian duy trì.",
-                "Lượng hấp thụ sát thương tối đa sẽ không vượt quá tỉ lệ nhất định dựa trên giới hạn HP của Thoma."
+                "Lượng hấp thụ sát thương của khiên tối đa sẽ không vượt quá tỷ lệ nhất định dựa trên giới hạn HP của Thoma."
               ]
             }
           ],
@@ -4832,11 +4832,11 @@
           "abilities": [
             {
               "name": "Chiến Giáp Lửa Đỏ",
-              "description": "Nhân vật trong trận có hiệu quả Chiến Giáp Lửa Đỏ khi đánh thường sẽ kích hoạt Lửa Đỏ Công Phá, gây Sát Thương Phạm Vi Nguyên Tố Hỏa, đồng thời triệu hồi ra Khiên Lửa Hộ Mệnh.\r\nLửa Đỏ Công Phá mỗi 1 giây tối đa kích hoạt một lần.\r\nKhi tạo khiên, ngoài lượng hấp thụ sát thương ra, đặc tính sẽ giống như khiên của kỹ năng nguyên tố \"Liệt Hỏa Hộ Mệnh\":\r\n",
+              "description": "Nhân vật trong trận có hiệu quả Chiến Giáp Lửa Đỏ khi đánh thường sẽ kích hoạt Lửa Đỏ Công Phá, gây Sát Thương Phạm Vi Nguyên Tố Hỏa, đồng thời triệu hồi ra Khiên Lửa Hộ Mệnh.\r\nLửa Đỏ Công Phá mỗi 1 giây tối đa kích hoạt một lần.\r\nĐối với khiên tạo ra, ngoài lượng hấp thụ sát thương ra, đặc tính sẽ giống như khiên của kỹ năng nguyên tố \"Liệt Hỏa Hộ Mệnh\":\r\n",
               "descriptions": [
                 "Có 250% hiệu quả hấp thụ đối với Sát Thương Nguyên Tố Hỏa;",
                 "Lượng hấp thụ sát thương còn lại của khiên sẽ cộng dồn khi nhận Khiên Lửa Hộ Mệnh lần nữa, đồng thời làm mới thời gian duy trì.",
-                "Lượng hấp thụ sát thương tối đa sẽ không vượt quá tỉ lệ nhất định dựa trên giới hạn HP của Thoma.",
+                "Lượng hấp thụ sát thương của khiên tối đa sẽ không vượt quá tỷ lệ nhất định dựa trên giới hạn HP của Thoma.",
                 "Khi Thoma ngã xuống, hiệu quả Chiến Giáp Lửa Đỏ sẽ bị xóa."
               ]
             }
@@ -4856,7 +4856,7 @@
         {
           "key": "p1",
           "title": "Tài Năng Câu Cá",
-          "description": "Khi câu cá thành công tại Inazuma, có 20% nhận gấp đôi sản lượng.\r\n",
+          "description": "Khi Nhà Lữ Hành câu cá thành công tại Inazuma, nhờ có Thoma giúp đỡ, có 20% khả năng nhận gấp đôi sản lượng.\r\n",
           "descriptions": []
         },
         {
@@ -4876,7 +4876,7 @@
         {
           "key": "c1",
           "title": "Nghĩa Vụ Của Đồng Bào",
-          "description": "Khiên Lửa Hộ Mệnh khi chịu sát thương cho nhân vật không phải Thoma, sẽ giúp Thoma giảm 3 giây CD kỹ năng Liệt Hỏa Hộ Mệnh, giảm 3 giây CD Chiến Giáp Rực Cháy.\r\nHiệu quả này mỗi 20 giây tối đa kích hoạt một lần.\r\n",
+          "description": "Khi nhân vật (Ngoại trừ bản thân Thoma) được bảo vệ bởi Khiên Lửa Hộ Mệnh của Thoma bị tấn công, sẽ giảm 3 giây CD Liệt Hỏa Hộ Mệnh, giảm 3 giây CD Chiến Giáp Rực Cháy của Thoma.\r\nHiệu quả này mỗi 20 giây tối đa kích hoạt 1 lần.\r\n",
           "descriptions": []
         },
         {
@@ -4906,7 +4906,7 @@
         {
           "key": "c6",
           "title": "Trái Tim Nhiệt Huyết",
-          "description": "Khi nhận hoặc làm mới Khiên Lửa Hộ Mệnh, tấn công thường, trọng kích, tấn công khi đáp của tất cả nhân vật trong đội tăng 15%, duy trì 6 giây.\r\n",
+          "description": "Khi nhận hoặc làm mới Khiên Lửa Hộ Mệnh, sát thương gây ra bởi tấn công thường, trọng kích, tấn công khi đáp của tất cả nhân vật trong đội tăng 15%, duy trì 6 giây.\r\n",
           "descriptions": []
         }
       ]

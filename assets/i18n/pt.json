@@ -4725,9 +4725,9 @@
             "Dano do 3° Golpe|{param3}% *{param4}",
             "Dano do 4° Golpe|{param5}%",
             "Dano de Ataque Carregado|{param6}%",
-            "Consumo de Stamina de Ataque Carregado|{param7}",
+            "Consumo de Stamina do Ataque Carregado|{param7}",
             "Dano Durante a Queda|{param8}%",
-            "Dano de Queda de Alta/Baixa Altitude|{param9}% / {param10}%"
+            "Dano de Queda de Baixa/Alta Altitude|{param9}% / {param10}%"
           ]
         },
         {
@@ -4747,7 +4747,7 @@
           ],
           "stats": [
             "Dano de Habilidade|{param1}%",
-            "Absorção de Escudo|{param2}% Limite da Vida + {param3}",
+            "Absorção de Escudo|{param2}% do Limite da Vida Máxima + {param3}",
             "Duração do Escudo|{param4} s",
             "Limite Máximo de Absorção de Dano do Escudo|{param5}% da Vida Máxima + {param6}",
             "Tempo de Recarga|{param7} s"
@@ -4767,7 +4767,7 @@
           "stats": [
             "Dano de Habilidade|{param1}%",
             "Dano do Colapso Ardente|{param2}%",
-            "Absorção de Escudo|{param3}% Limite da Vida + {param4}",
+            "Absorção de Escudo|{param3}% do Limite da Vida + {param4}",
             "Duração do Escudo|{param5} s",
             "Duração da Armadura Flamejante|{param6} s",
             "Tempo de Recarga|{param7} s",
@@ -4779,7 +4779,7 @@
         {
           "key": "p1",
           "title": "Apaixonado Pela Pesca",
-          "description": "Ao Pescar com sucesso em Inazuma, possui 20% de chance de obter o dobro de peixe.\r\n",
+          "description": "Quando você pescar com sucesso em Inazuma, possui 20% de chance de obter o dobro de peixe graças a ajuda do Thoma.\r\n",
           "descriptions": []
         },
         {

@@ -4804,15 +4804,15 @@
         {
           "key": "s2",
           "title": "Blazing Blessing",
-          "description": "Thoma uses the tip of his spear as a pivot to channel flames and perform a kick that deals AoE Pyro DMG and unleashes a defensive Blazing Barrier. At the moment it is unleashed, the Elemental Burst will apply Pyro to Thoma.\r\nThe DMG Absorption of the Barrier is based on Thoma's Max HP.\r\n",
+          "description": "Thoma vaults forward with his polearm and delivers a flame-filled flying kick that deals AoE Pyro DMG, while also summoning a defensive Blazing Barrier. At the moment of casting, Thoma's Elemental Skill applies Pyro to himself.\r\nThe DMG Absorption of the Blazing Barrier scales off Thoma's Max HP.\r\n",
           "abilities": [
             {
               "name": "",
               "description": "The Blazing Barrier has the following traits:\r\n",
               "descriptions": [
                 "Absorbs Pyro DMG 250% more effectively.",
-                "The remaining DMG Absorption of an existing Blazing Barrier will stack and its duration will be refreshed if another Blazing Barrier is obtained during this time.",
-                "The maximum DMG Absorption of the Barrier will not exceed a certain percentage of Thoma's Max HP."
+                "When a new Blazing Barrier is obtained, the remaining DMG Absorption of an existing Blazing Barrier will stack and its duration will be refreshed.",
+                "The maximum DMG Absorption of the Blazing Barrier will not exceed a certain percentage of Thoma's Max HP."
               ]
             }
           ],
@@ -4827,16 +4827,16 @@
         {
           "key": "s3",
           "title": "Crimson Ooyoroi",
-          "description": "Thoma spins his spear, slicing through his foes with roaring fires that deal AoE Pyro DMG and weave themselves into a Scorching Ooyoroi.\r\n",
+          "description": "Thoma spins his polearm, slicing at his foes with roaring flames that deal AoE Pyro DMG and weave themselves into a Scorching Ooyoroi.\r\n",
           "abilities": [
             {
               "name": "Scorching Ooyoroi",
-              "description": "The Normal Attacks of active characters affected by the Scorching Ooyoroi will trigger Fiery Collapses that deal AoE Pyro DMG and summon Blazing Barriers.\r\n1 Fiery Collapse can be triggered every 1s.\r\nThe Blazing Barriers created in this way are identical to those created by Thoma's Elemental Skill, Blazing Blessing, except in the amount of DMG they can absorb.\r\n",
+              "description": "While Scorching Ooyoroi is in effect, the active character's Normal Attacks will trigger Fiery Collapse, dealing AoE Pyro DMG and summoning a Blazing Barrier.\r\nFiery Collapse can be triggered once every 1s.\r\nExcept for the amount of DMG they can absorb, the Blazing Barriers created in this way are identical to those created by Thoma's Elemental Skill, Blazing Blessing:\r\n",
               "descriptions": [
-                "They absorb Pyro DMG 250% more effectively.",
-                "The remaining DMG Absorption of an existing Blazing Barrier will stack and its duration will be refreshed if another Blazing Barrier is obtained during this time.",
-                "The maximum DMG Absorption of the Barrier will not exceed a certain percentage of Thoma's Max HP.",
-                "If Thoma falls, the effects of Scorching Ooyoroi will dissipate."
+                "Absorbs Pyro DMG 250% more effectively.",
+                "When a new Blazing Barrier is obtained, the remaining DMG Absorption of an existing Blazing Barrier will stack and its duration will be refreshed.",
+                "The maximum DMG Absorption of the Blazing Barrier will not exceed a certain percentage of Thoma's Max HP.",
+                "If Thoma falls, the effects of Scorching Ooyoroi will be cleared."
               ]
             }
           ],
@@ -4855,7 +4855,7 @@
         {
           "key": "p1",
           "title": "Snap and Swing",
-          "description": "Successful fishing attempts in Inazuma have a 20% chance of scoring a double catch.\r\n",
+          "description": "When you fish successfully in Inazuma, Thoma's help grants a 20% chance of scoring a double catch.\r\n",
           "descriptions": []
         },
         {
@@ -4867,7 +4867,7 @@
         {
           "key": "p3",
           "title": "Flaming Assault",
-          "description": "The DMG dealt by Crimson Ooyoroi's Fiery Collapses are increased by 2.2% of Thoma's Max HP.\r\n",
+          "description": "DMG dealt by Crimson Ooyoroi's Fiery Collapse is increased by 2.2% of Thoma's Max HP.\r\n",
           "descriptions": []
         }
       ],
@@ -4875,7 +4875,7 @@
         {
           "key": "c1",
           "title": "A Comrade's Duty",
-          "description": "When a Blazing Barrier takes DMG for any character other than Thoma, Thoma's own Blazing Blessing CD is decreased by 3s, while his own Crimson Ooyoroi's CD is decreased by 3s.\r\nThis effect can be triggered once every 20s.\r\n",
+          "description": "When a character protected by Thoma's own Blazing Barrier (Thoma excluded) is attacked, Thoma's own Blazing Blessing CD is decreased by 3s, while his own Crimson Ooyoroi's CD is decreased by 3s.\r\nThis effect can be triggered once every 20s.\r\n",
           "descriptions": []
         },
         {
@@ -4905,7 +4905,7 @@
         {
           "key": "c6",
           "title": "Burning Heart",
-          "description": "When a Blazing Barrier is obtained or stacked, the DMG dealt by the Normal, Charged, and Plunging Attacks of all party members is increased by 15% for 6s.\r\n",
+          "description": "When a Blazing Barrier is obtained or refreshed, the DMG dealt by all party members' Normal, Charged, and Plunging Attacks is increased by 15% for 6s.\r\n",
           "descriptions": []
         }
       ]

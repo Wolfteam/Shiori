@@ -4770,81 +4770,141 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "普通攻擊·迅破槍勢",
+          "description": "",
+          "abilities": [
+            {
+              "name": "普通攻擊",
+              "description": "進行至多四段的連續槍擊。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "重擊",
+              "description": "消耗一定體力，向前方突進，對路徑上的敵人造成傷害。\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "下落攻擊",
+              "description": "從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成範圍傷害。",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "一段傷害|{param1}%",
+            "二段傷害|{param2}%",
+            "三段傷害|{param3}% *{param4}",
+            "四段傷害|{param5}%",
+            "重擊傷害|{param6}%",
+            "重擊體力消耗|{param7} 點",
+            "下墜期間傷害|{param8}%",
+            "低空/高空墜地衝擊傷害|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "烈燒佑命之侍護",
+          "description": "托馬以槍尖刺地作為支點，傾注燃焰之力，向前迅猛踢擊，造成火元素範圍傷害，喚出護體的烈燒佑命護盾，並在施放的瞬間，為托馬施加火元素附著。\r\n護盾的傷害吸收量受益於托馬的生命值上限。\r\n烈燒佑命護盾具有如下特性：\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "",
+              "descriptions": [
+                "對火元素傷害有250%的吸收效果；",
+                "護盾剩餘的傷害吸收量在獲得新的烈燒佑命護盾時將會疊加，並重置持續時間。",
+                "護盾的傷害吸收量至多不超過托馬生命值上限的一定比例。"
+              ]
+            }
+          ],
+          "stats": [
+            "技能傷害|{param1}%",
+            "護盾吸收量|{param2}% 生命值上限+ {param3}",
+            "護盾持續時間|{param4} 秒",
+            "護盾吸收量上限|{param5}% 生命值上限+ {param6}",
+            "冷卻時間|{param7} 秒"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "真紅熾火之大鎧",
+          "description": "托馬旋轉長槍，以熾烈的燃焰揮斬周圍的敵人，造成火元素範圍傷害，並產生熾火大鎧。\r\n",
+          "abilities": [
+            {
+              "name": "熾火大鎧",
+              "description": "處於熾火大鎧效果下的目前場上角色進行普通攻擊時，將觸發熾火崩破，造成火元素範圍傷害，並喚出護體的烈燒佑命護盾。\r\n熾火崩破每1秒至多觸發一次。\r\n產生的護盾，除傷害吸收量以外，特性與元素戰技「烈燒佑命之侍護」的護盾相同：\r\n",
+              "descriptions": [
+                "對火元素傷害有250%的吸收效果；",
+                "護盾剩餘的傷害吸收量在獲得新的烈燒佑命護盾時將會疊加，並重置持續時間。",
+                "護盾的傷害吸收量至多不超過托馬生命值上限的一定比例。",
+                "托馬倒下時，將會清除熾火大鎧的效果。"
+              ]
+            }
+          ],
+          "stats": [
+            "技能傷害|{param1}%",
+            "熾火崩破傷害|{param2}%",
+            "護盾吸收量|{param3}% 生命值上限+ {param4}",
+            "護盾持續時間|{param5} 秒",
+            "熾火大鎧持續時間|{param6} 秒",
+            "冷卻時間|{param7} 秒",
+            "元素能量|{param8}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "懸鯛狩",
+          "description": "旅行者在稻妻成功釣魚時，因為托馬的幫助，有20%的機率獲得2倍產出。\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "甲衣交疊",
+          "description": "目前場上自己的角色獲得或重置烈燒佑命護盾時，護盾強效提升5%，持續時間6秒。\r\n此效果每0.3秒至多觸發一次，至多疊加5次。\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "烈火攻燔",
+          "description": "真紅熾火之大鎧的熾火崩破造成的傷害提高，提高值相當於托馬生命值上限的2.2%。\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "同袍的義理",
+          "description": "處於托馬自身的烈燒佑命護盾庇護下的角色（除了托馬自身）受到攻擊時，托馬自身的烈燒佑命之侍護的冷卻時間減少3秒，真紅熾火之大鎧的冷卻時間減少3秒。\r\n該效果每20秒至多觸發一次。\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "僚佐的才巧",
+          "description": "真紅熾火之大鎧的持續時間延長3秒。\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "禦敵的執定",
+          "description": "烈燒佑命之侍護的技能等級提高3級。\r\n至多提升至15級。\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "用臣的久計",
+          "description": "施放真紅熾火之大鎧後，為托馬恢復15點元素能量。\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "野火的豪烈",
+          "description": "真紅熾火之大鎧的技能等級提高3級。\r\n至多提升至15級。\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "熾燒的至心",
+          "description": "獲得或重置烈燒佑命護盾時，隊伍中所有角色的普通攻擊，重擊與下落攻擊造成的傷害提升15%，持續6秒。\r\n",
           "descriptions": []
         }
       ]
