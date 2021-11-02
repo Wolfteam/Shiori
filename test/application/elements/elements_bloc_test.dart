@@ -40,7 +40,7 @@ void main() {
         loading: (_) => throw Exception('Invalid state'),
         loaded: (state) {
           expect(state.debuffs.length, 4);
-          expect(state.reactions.length, 12);
+          expect(state.reactions.length, 11);
           expect(state.resonances.length, 7);
 
           for (final debuff in state.debuffs) {
