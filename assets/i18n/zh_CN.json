@@ -4764,7 +4764,7 @@
     },
     {
       "key": "thoma",
-      "name": "测试角色_50",
+      "name": "托马",
       "title": "渡来介者",
       "description": "神里家的家政官，活跃在稻妻的「地头蛇」。",
       "skills": [
@@ -7111,6 +7111,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "曚云之月",
+      "description": "出自螺钿与珊瑚的精美战弓，月色的弓臂上流动着凄然的光彩。",
+      "refinements": [
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.12{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}40{/color}%。",
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.15{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}50{/color}%。",
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.18{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}60{/color}%。",
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.21{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}70{/color}%。",
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.24{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}80{/color}%。"
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "佣兵重剑",
       "description": "沉重坚实的古旧大剑，饱经战火与岁月的洗练。",
@@ -7767,6 +7779,18 @@
       "name": "训练大剑",
       "description": "仅仅是削出了剑形的厚重铁片。在意志强韧的人手里，也有劈开磐石的力量。",
       "refinements": []
+    },
+    {
+      "key": "wavebreakers-fin",
+      "name": "断浪长鳍",
+      "description": "以海渊之下的闪亮材质打造而成的薙刀，一度曾为天狗一族所有。",
+      "refinements": [
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.12{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}40{/color}%。",
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.15{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}50{/color}%。",
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.18{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}60{/color}%。",
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.21{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}70{/color}%。",
+        "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高{color}0.24{/color}%，通过这种方式，元素爆发造成的伤害至多提高{color}80{/color}%。"
+      ]
     },
     {
       "key": "white-iron-greatsword",
@@ -9588,25 +9612,25 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
+      "key": "engulfing-storm",
       "name": "噬能之雷",
       "effect": "处于该元素状态下的角色，不断减少元素充能。",
       "description": null
     },
     {
-      "key": "Slowing Water",
+      "key": "slowing-water",
       "name": "迟滞之水",
       "effect": "处于迟滞之水状态下的角色，技能冷却时间会被延长。",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
+      "key": "smoldering-flames",
       "name": "阴燃之火",
       "effect": "处于阴燃之火状态下的角色，会受到火元素持续伤害。",
       "description": null
     },
     {
-      "key": "Condensed Ice",
+      "key": "condensed-ice",
       "name": "凝结之冰",
       "effect": "处于凝结之冰状态下的角色，消耗的体力会增加。",
       "description": null
@@ -9614,99 +9638,111 @@
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "燃烧",
-      "effect": "持续造成火元素伤害，并毁坏草元素的装备、物体。",
+      "key": "vaporize",
+      "name": "Vaporize",
+      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Crystalize",
-      "name": "结晶",
-      "effect": "产生对应元素的晶片，为角色提供各种元素护盾。",
+      "key": "burning",
+      "name": "Burning",
+      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
       "description": null
     },
     {
-      "key": "Electro-Charged",
-      "name": "感电",
-      "effect": "持续造成雷元素伤害。",
+      "key": "overloaded",
+      "name": "Overloaded",
+      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
       "description": null
     },
     {
-      "key": "Frozen",
-      "name": "冻结",
-      "effect": "冻结目标。",
+      "key": "melt",
+      "name": "Melt",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Melt",
-      "name": "融化",
-      "effect": "通过火元素或冰元素攻击导致融化时，会按照一定的比例提高该次攻击造成的伤害。",
+      "key": "vaporize-reverse",
+      "name": "Vaporize (Reverse)",
+      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Overloaded",
-      "name": "超载",
-      "effect": "超载反应会引发剧烈的爆炸，造成火元素的爆炸范围伤害。",
+      "key": "electro-charged",
+      "name": "Electro Charged",
+      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
       "description": null
     },
     {
-      "key": "Superconduct",
-      "name": "超导",
-      "effect": "超导会造成冰元素的范围伤害，并降低受到超导影响的生物50%的防御力。",
+      "key": "frozen",
+      "name": "Frozen",
+      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
       "description": null
     },
     {
-      "key": "Swirl",
-      "name": "扩散",
-      "effect": "扩散能造成对应元素的伤害，产生附着，或进一步引发其他反应。",
+      "key": "swirl",
+      "name": "Swirl",
+      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
       "description": null
     },
     {
-      "key": "Vaporize",
-      "name": "蒸发",
-      "effect": "通过火元素或水元素攻击导致蒸发时，会按照一定的比例提高该次攻击造成的伤害。",
+      "key": "superconduct",
+      "name": "Superconduct",
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Melt (Reverse)",
+      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Crystallize",
+      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
+      "key": "enduring-rock",
       "name": "坚定之岩",
       "effect": "护盾强效提升15%。角色处于护盾保护状态时，造成的伤害提升15%，对敌人造成伤害时会使敌人的的岩元素抗性降低20%，持续15秒。",
       "description": null
     },
     {
-      "key": "Fervent Flames",
+      "key": "fervent-flames",
       "name": "热诚之火",
       "effect": "冰元素附着的持续时间下降40%。攻击力提升25%。",
       "description": null
     },
     {
-      "key": "Soothing Waters",
+      "key": "soothing-waters",
       "name": "愈疗之水",
       "effect": "火元素附着的持续时间下降40%。受治疗效果提升30%。",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
+      "key": "impetuous-winds",
       "name": "迅捷之风",
       "effect": "体力消耗降低15%，移动速度提升10%，技能冷却时间缩短5%。",
       "description": null
     },
     {
-      "key": "High Voltage",
+      "key": "high-voltage",
       "name": "强能之雷",
       "effect": "水元素附着持续时间下降40%。触发超导、超载和感电反应时，有100%概率掉落1个雷元素微粒，冷却时间5秒。",
       "description": null
     },
     {
-      "key": "Shattering Ice",
+      "key": "shattering-ice",
       "name": "粉碎之冰",
       "effect": "雷元素附着持续时间下降40%。攻击冰元素附着或冻结状态下的敌人时，暴击率提高15%。",
       "description": null
     },
     {
-      "key": "Protective Canopy",
+      "key": "protective-canopy",
       "name": "交织之护",
       "effect": "所有元素抗性提升15%，物理抗性提升15%。",
       "description": "任意四种不同元素"

@@ -4716,81 +4716,141 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "โจมตีปกติ - Swiftshatter Spear",
+          "description": "",
+          "abilities": [
+            {
+              "name": "โจมตีปกติ",
+              "description": "โจมตีด้วยหอกต่อเนื่องมากสุดสี่ครั้ง\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "ชาร์จโจมตี",
+              "description": "ใช้พลังกายปริมาณหนึ่งเพื่อพุ่งไปข้างหน้า และสร้างความเสียหายแก่ศัตรูที่อยู่ในเส้นทาง\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "โจมตีพุ่งลงจากอากาศ",
+              "description": "กระโจนจากกลางอากาศลงมายังพื้นดิน เพื่อโจมตีศัตรูที่อยู่ในเส้นทางการโจมตี โดยจะสร้างความเสียหายวงกว้างเมื่อลงถึงพื้น",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "ความเสียหายขั้น 1|{param1}%",
+            "ความเสียหายขั้น 2|{param2}%",
+            "ความเสียหายขั้น 3|{param3}% ×{param4}",
+            "ความเสียหายขั้น 4|{param5}%",
+            "ความเสียหายชาร์จโจมตี|{param6}%",
+            "ชาร์จโจมตีใช้พลังกาย|{param7} หน่วย",
+            "ความเสียหายพุ่งลง|{param8}%",
+            "ความเสียหายพุ่งถึงพื้นจากที่ต่ำ/สูง|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Blazing Blessing",
+          "description": "Thoma จะใช้ปลายแหลมของหอกเป็นจุดศูนย์กลาง ทุ่มเทพลังของเปลวไฟที่ลุกโชน และเตะไปข้างหน้าอย่างรุนแรง เพื่อสร้างความเสียหายไฟวงกว้าง จากนั้นจะเรียก Blazing Barrier ขึ้นมาป้องกันร่างกาย โดยที่ในช่วงเวลาที่ปลดปล่อยออกมานั้น จะทำให้ Thoma ติดสถานะธาตุไฟ\r\nปริมาณการดูดซับความเสียหายของโล่ จะขึ้นอยู่กับพลังชีวิตสูงสุดของ Thoma\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Blazing Barrier มีคุณลักษณะพิเศษดังต่อไปนี้:\r\n",
+              "descriptions": [
+                "มีเอฟเฟกต์การดูดซับความเสียหายไฟ 250%;",
+                "ปริมาณการดูดซับความเสียหายที่เหลืออยู่ของโล่ป้องกัน จะซ้อนทับกับโล่ป้องกันของ Blazing Barrier ที่ได้รับในครั้งต่อไป โดยที่ช่วงเวลาต่อเนื่องจะถูกรีเฟรช",
+                "ปริมาณสูงสุดของการดูดซับความเสียหาย จะไม่เกินค่าอัตราส่วนที่กำหนดของพลังชีวิตสูงสุดของ Thoma"
+              ]
+            }
+          ],
+          "stats": [
+            "ความเสียหายสกิล|{param1}%",
+            "ปริมาณการดูดซับของโล่|{param2}% ของ HP สูงสุด + {param3}",
+            "ระยะเวลาต่อเนื่องของโล่|{param4} วิ",
+            "ปริมาณการดูดซับสูงสุดของโล่|{param5}% ของ HP สูงสุด + {param6}",
+            "คูลดาวน์|{param7} วิ"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Crimson Ooyoroi",
+          "description": "Thoma จะหมุนควงหอกของเขา และฟาดฟันศัตรูรอบตัวด้วยเปลวไฟอันร้อนระอุ เพื่อสร้างความเสียหายไฟวงกว้าง และทำให้เกิด Scorching Ooyoroi\r\n",
+          "abilities": [
+            {
+              "name": "Scorching Ooyoroi",
+              "description": "เมื่อตัวละครที่เข้าร่วมการต่อสู้ในขณะนั้น อยู่ภายใต้สภาวะของเอฟเฟกต์ Scorching Ooyoroi และทำการโจมตีปกติ จะทำให้เกิด Fiery Collapse เพื่อสร้างความเสียหายไฟวงกว้าง และเรียก Blazing Barrier ขึ้นมาป้องกันร่างกาย\r\nFiery Collapse สามารถเกิดขึ้นได้มากสุดหนึ่งครั้ง ในทุก 1 วินาที\r\nโล่ที่เกิดขึ้น นอกจากปริมาณในการดูดซับความเสียหายแล้ว จะมีคุณลักษณะพิเศษ ที่เหมือนกันกับโล่ป้องกันของสกิลธาตุ Blazing Blessing:\r\n",
+              "descriptions": [
+                "มีเอฟเฟกต์การดูดซับความเสียหายไฟ 250%;",
+                "ปริมาณการดูดซับความเสียหายที่เหลืออยู่ของโล่ป้องกัน จะซ้อนทับกับโล่ป้องกันของ Blazing Barrier ที่ได้รับในครั้งต่อไป โดยที่ช่วงเวลาต่อเนื่องจะถูกรีเฟรช",
+                "ปริมาณสูงสุดของการดูดซับความเสียหาย จะไม่เกินค่าอัตราส่วนที่กำหนดของพลังชีวิตสูงสุดของ Thoma",
+                "หาก Thoma หมดสติ เอฟเฟกต์ Scorching Ooyoroi จะหายไป"
+              ]
+            }
+          ],
+          "stats": [
+            "ความเสียหายสกิล|{param1}%",
+            "ความเสียหาย Fiery Collapse|{param2}%",
+            "ปริมาณการดูดซับของโล่|{param3}% ของ HP สูงสุด + {param4}",
+            "ระยะเวลาต่อเนื่องของโล่|{param5} วิ",
+            "ช่วงเวลาของ Scorching Ooyoroi|{param6} วิ",
+            "คูลดาวน์|{param7} วิ",
+            "พลังงานธาตุ|{param8}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Snap and Swing",
+          "description": "เมื่อนักเดินทางตกปลาใน Inazuma สำเร็จ ด้วยความช่วยเหลือของ Thoma จะทำให้มีโอกาส 20% ที่จะได้รับปลาเพิ่มเป็น 2 เท่า\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Imbricated Armor",
+          "description": "เมื่อตัวละครของตัวเองที่เข้าร่วมการต่อสู้ในขณะนั้น ได้รับหรือรีเฟรช Blazing Barrier ประสิทธิภาพโล่ป้องกันจะเพิ่มขึ้น 5% เป็นเวลา 6 วินาที\r\nเอฟเฟกต์นี้สามารถเกิดขึ้นได้มากสุดหนึ่งครั้ง ในทุก 0.3 วินาที และซ้อนทับได้สูงสุด 5 ครั้ง\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Flaming Assault",
+          "description": "Fiery Collapse ของ Crimson Ooyoroi สร้างความเสียหายเพิ่มขึ้น โดยปริมาณที่เพิ่มจะเท่ากับ 2.2% ของพลังชีวิตสูงสุดของ Thoma\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "A Comrade's Duty",
+          "description": "เมื่อตัวละครที่ได้รับการปกป้องจาก Blazing Barrier ของตัว Thoma เองถูกโจมตี ช่วงเวลาคูลดาวน์ของ Blazing Blessing ของตัว Thoma เองจะลดลง 3 วินาที และช่วงเวลาคูลดาวน์ของ Crismon Ooyoroi ของตัว Thoma เองจะลดลง 3 วินาที\r\nเอฟเฟกต์นี้จะเกิดขึ้นได้มากสุดหนึ่งครั้ง ในทุก 20 วินาที\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "A Subordinate's Skills",
+          "description": "ช่วงเวลาต่อเนื่องของ Crimson Ooyoroi เพิ่มขึ้น 3 วินาที\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Fortified Resolve",
+          "description": "เพิ่มเลเวลสกิลของ Blazing Blessing ขึ้น 3 ระดับ\r\nเพิ่มได้มากสุด 15 ระดับ\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Long-Term Planning",
+          "description": "หลังจากปล่อย Crimson Ooyoroi จะทำการฟื้นฟูพลังงานธาตุให้ Thoma 15 หน่วย\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Raging Wildfire",
+          "description": "เพิ่มเลเวลสกิลของ Crimson Ooyoroi ขึ้น 3 ระดับ\r\nเพิ่มได้มากสุด 15 ระดับ\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Burning Heart",
+          "description": "เมื่อได้รับหรือรีเฟรช Blazing Barrier การโจมตีปกติ, ชาร์จโจมตี และโจมตีพุ่งลงจากอากาศ ของตัวละครทั้งหมดในทีม จะสร้างความเสียหายเพิ่มขึ้น 15% เป็นเวลา 6 วินาที\r\n",
           "descriptions": []
         }
       ]
@@ -6993,6 +7053,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "Mouun's Moon",
+      "description": "ธนูสงครามอันงดงามที่ทำขึ้นจากเปลือกหอยและปะการัง ประกายอันเศร้าสร้อยอาบไว้ไปบนคันธนูสีแสงจันทร์",
+      "refinements": [
+        "ทุก 1 หน่วย ของผลรวมพลังงานธาตุสูงสุดของตัวละครทั้งหมดในทีม จะทำให้ท่าไม้ตายของตัวละครที่ใช้อาวุธนี้ สร้างความเสียหายเพิ่มขึ้น {color}0.12{/color}% โดยความเสียหายท่าไม้ตายที่เพิ่มขึ้นด้วยวิธีนี้ จะเพิ่มได้มากสุด {color}40{/color}",
+        "ทุก 1 หน่วย ของผลรวมพลังงานธาตุสูงสุดของตัวละครทั้งหมดในทีม จะทำให้ท่าไม้ตายของตัวละครที่ใช้อาวุธนี้ สร้างความเสียหายเพิ่มขึ้น {color}0.15{/color}% โดยความเสียหายท่าไม้ตายที่เพิ่มขึ้นด้วยวิธีนี้ จะสามารถเพิ่มได้มากสุด {color}50{/color}",
+        "ทุก 1 หน่วย ของผลรวมพลังงานธาตุสูงสุดของตัวละครทั้งหมดในทีม จะทำให้ท่าไม้ตายของตัวละครที่ใช้อาวุธนี้ สร้างความเสียหายเพิ่มขึ้น {color}0.18{/color}% โดยความเสียหายท่าไม้ตายที่เพิ่มขึ้นด้วยวิธีนี้ จะสามารถเพิ่มได้มากสุด {color}60{/color}",
+        "ทุก 1 หน่วย ของผลรวมพลังงานธาตุสูงสุดของตัวละครทั้งหมดในทีม จะทำให้ท่าไม้ตายของตัวละครที่ใช้อาวุธนี้ สร้างความเสียหายเพิ่มขึ้น {color}0.21{/color}% โดยความเสียหายท่าไม้ตายที่เพิ่มขึ้นด้วยวิธีนี้ จะสามารถเพิ่มได้มากสุด {color}70{/color}",
+        "ทุก 1 หน่วย ของผลรวมพลังงานธาตุสูงสุดของตัวละครทั้งหมดในทีม จะทำให้ท่าไม้ตายของตัวละครที่ใช้อาวุธนี้ สร้างความเสียหายเพิ่มขึ้น {color}0.24{/color}% โดยความเสียหายจากท่าไม้ตาย จะสามารถเพิ่มด้วยวิธีนี้ได้มากสุด {color}80{/color}"
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "Old Merc's Pal",
       "description": "ดาบใหญ่ที่ผ่านการใช้งานมาอย่างยาวนาน ทั้งวันที่ดีและร้ายปะปนเป็นแรมปี",
@@ -7649,6 +7721,18 @@
       "name": "Waster Greatsword",
       "description": "แผ่นเหล็กที่ทนทานซึ่งอาจ ทำลายได้แม้กระทั่งภูเขา หากมีแรงมุ่งมั่นที่มากพอ",
       "refinements": []
+    },
+    {
+      "key": "wavebreakers-fin",
+      "name": "Wavebreaker's Fin",
+      "description": "นางินาตะที่ทำจากวัสดุแวววาวที่มาจากห้วงลึกใต้ท้องทะเล ครั้งหนึ่งมันเคยเป็นสมบัติของเผ่าเท็งงุ",
+      "refinements": [
+        "ทุก 1 หน่วย ของผลรวมพลังงานธาตุสูงสุดของตัวละครทั้งหมดในทีม จะทำให้ท่าไม้ตายของตัวละครที่ใช้อาวุธนี้ สร้างความเสียหายเพิ่มขึ้น {color}0.12{/color}% โดยความเสียหายท่าไม้ตายที่เพิ่มขึ้นด้วยวิธีนี้ จะเพิ่มได้มากสุด {color}40{/color}",
+        "ทุก 1 หน่วย ของผลรวมพลังงานธาตุสูงสุดของตัวละครทั้งหมดในทีม จะทำให้ท่าไม้ตายของตัวละครที่ใช้อาวุธนี้ สร้างความเสียหายเพิ่มขึ้น {color}0.15{/color}% โดยความเสียหายท่าไม้ตายที่เพิ่มขึ้นด้วยวิธีนี้ จะสามารถเพิ่มได้มากสุด {color}50{/color}",
+        "ทุก 1 หน่วย ของผลรวมพลังงานธาตุสูงสุดของตัวละครทั้งหมดในทีม จะทำให้ท่าไม้ตายของตัวละครที่ใช้อาวุธนี้ สร้างความเสียหายเพิ่มขึ้น {color}0.18{/color}% โดยความเสียหายท่าไม้ตายที่เพิ่มขึ้นด้วยวิธีนี้ จะสามารถเพิ่มได้มากสุด {color}60{/color}",
+        "ทุก 1 หน่วย ของผลรวมพลังงานธาตุสูงสุดของตัวละครทั้งหมดในทีม จะทำให้ท่าไม้ตายของตัวละครที่ใช้อาวุธนี้ สร้างความเสียหายเพิ่มขึ้น {color}0.21{/color}% โดยความเสียหายท่าไม้ตายที่เพิ่มขึ้นด้วยวิธีนี้ จะสามารถเพิ่มได้มากสุด {color}70{/color}",
+        "ทุก 1 หน่วย ของผลรวมพลังงานธาตุสูงสุดของตัวละครทั้งหมดในทีม จะทำให้ท่าไม้ตายของตัวละครที่ใช้อาวุธนี้ สร้างความเสียหายเพิ่มขึ้น {color}0.24{/color}% โดยความเสียหายจากท่าไม้ตาย จะสามารถเพิ่มด้วยวิธีนี้ได้มากสุด {color}80{/color}"
+      ]
     },
     {
       "key": "white-iron-greatsword",
@@ -9454,25 +9538,25 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
+      "key": "engulfing-storm",
       "name": "Engulfing Storm",
       "effect": "Continuously drains Energy Recharge.",
       "description": null
     },
     {
-      "key": "Slowing Water",
+      "key": "slowing-water",
       "name": "Slowing Water",
       "effect": "Increases skill CD durations.",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
+      "key": "smoldering-flames",
       "name": "Smoldering Flames",
       "effect": "Continuously inflicts damage over time.",
       "description": null
     },
     {
-      "key": "Condensed Ice",
+      "key": "condensed-ice",
       "name": "Condensed Ice",
       "effect": "Increases stamina consumption.",
       "description": null
@@ -9480,99 +9564,111 @@
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "Burning",
-      "effect": "Deals Pyro DMG over time.",
-      "description": null
-    },
-    {
-      "key": "Crystalize",
-      "name": "Crystalize",
-      "effect": "Creates a crystal that will provide a shield when picked up.",
-      "description": null
-    },
-    {
-      "key": "Electro-Charged",
-      "name": "Electro-Charged",
-      "effect": "Deals Electro DMG over time.",
-      "description": null
-    },
-    {
-      "key": "Frozen",
-      "name": "Frozen",
-      "effect": "Freezes the target.",
-      "description": null
-    },
-    {
-      "key": "Melt",
-      "name": "Melt",
-      "effect": "Deals extra damage.",
-      "description": null
-    },
-    {
-      "key": "Overloaded",
-      "name": "Overloaded",
-      "effect": "Deals AoE Pyro DMG.",
-      "description": null
-    },
-    {
-      "key": "Superconduct",
-      "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target's Physical RES by 50%.",
-      "description": null
-    },
-    {
-      "key": "Swirl",
-      "name": "Swirl",
-      "effect": "Deals extra elemental damage and spreads the effect.",
-      "description": null
-    },
-    {
-      "key": "Vaporize",
+      "key": "vaporize",
       "name": "Vaporize",
-      "effect": "Deals extra damage.",
+      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "burning",
+      "name": "Burning",
+      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
+      "description": null
+    },
+    {
+      "key": "overloaded",
+      "name": "Overloaded",
+      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
+      "description": null
+    },
+    {
+      "key": "melt",
+      "name": "Melt",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "vaporize-reverse",
+      "name": "Vaporize (Reverse)",
+      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "electro-charged",
+      "name": "Electro Charged",
+      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
+      "description": null
+    },
+    {
+      "key": "frozen",
+      "name": "Frozen",
+      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
+      "description": null
+    },
+    {
+      "key": "swirl",
+      "name": "Swirl",
+      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
+      "description": null
+    },
+    {
+      "key": "superconduct",
+      "name": "Superconduct",
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Melt (Reverse)",
+      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Crystallize",
+      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
+      "key": "enduring-rock",
       "name": "Enduring Rock",
       "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemies will decrease their Geo RES by 20% for 15s.",
       "description": null
     },
     {
-      "key": "Fervent Flames",
+      "key": "fervent-flames",
       "name": "Fervent Flames",
       "effect": "Affected by Cryo for 40% less time. Increases ATK by 25%.",
       "description": null
     },
     {
-      "key": "Soothing Waters",
+      "key": "soothing-waters",
       "name": "Soothing Waters",
       "effect": "Affected by Pyro for 40% less time. Increases incoming healing by 30%.",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
+      "key": "impetuous-winds",
       "name": "Impetuous Winds",
       "effect": "Decreases Stamina Consumption by 15%. Increases Movement SPD by 10%. Shortens Skill CD by 5%.",
       "description": null
     },
     {
-      "key": "High Voltage",
+      "key": "high-voltage",
       "name": "High Voltage",
       "effect": "Affected by Hydro for 40% less time. Superconduct, Overloaded, and Electro-Charged have a 100% chance to generate an Electro Elemental Particle (CD: 5s).",
       "description": null
     },
     {
-      "key": "Shattering Ice",
+      "key": "shattering-ice",
       "name": "Shattering Ice",
       "effect": "Affected by Electro for 40% less time. Increases CRIT Rate against enemies that are Frozen or affected by Cryo by 15%.",
       "description": null
     },
     {
-      "key": "Protective Canopy",
+      "key": "protective-canopy",
       "name": "Protective Canopy",
       "effect": "All Elemental RES by 15%. Physical RES + 15%",
       "description": "Any 4 Unique Elements"

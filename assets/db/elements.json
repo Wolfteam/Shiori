@@ -1,170 +1,188 @@
 {
-    "debuffs": [
-        {
-            "key": "Engulfing Storm",
-            "image": "electro.png"
-        },
-        {
-            "key": "Slowing Water",
-            "image": "hydro.png"
-        },
-        {
-            "key": "Smoldering Flames",
-            "image": "pyro.png"
-        },
-        {
-            "key": "Condensed Ice",
-            "image": "cryo.png"
-        }
-    ],
-    "reactions": [
-        {
-            "key": "Burning",
-            "principal": [
-                "dendro.png"
-            ],
-            "secondary": [
-                "pyro.png"
-            ]
-        },
-        {
-            "key": "Crystalize",
-            "principal": [
-                "geo.png"
-            ],
-            "secondary": [
-                "cryo.png",
-                "electro.png",
-                "hydro.png",
-                "pyro.png"
-            ]
-        },
-        {
-            "key": "Electro-Charged",
-            "principal": [
-                "electro.png"
-            ],
-            "secondary": [
-                "hydro.png"
-            ]
-        },
-        {
-            "key": "Frozen",
-            "principal": [
-                "cryo.png"
-            ],
-            "secondary": [
-                "hydro.png"
-            ]
-        },
-        {
-            "key": "Melt",
-            "principal": [
-                "cryo.png"
-            ],
-            "secondary": [
-                "pyro.png"
-            ]
-        },
-        {
-            "key": "Overloaded",
-            "principal": [
-                "electro.png"
-            ],
-            "secondary": [
-                "pyro.png"
-            ]
-        },
-        {
-            "key": "Superconduct",
-            "principal": [
-                "cryo.png"
-            ],
-            "secondary": [
-                "electro.png"
-            ]
-        },
-        {
-            "key": "Swirl",
-            "principal": [
-                "anemo.png"
-            ],
-            "secondary": [
-                "cryo.png",
-                "electro.png",
-                "hydro.png",
-                "pyro.png"
-            ]
-        },
-        {
-            "key": "Vaporize",
-            "principal": [
-                "hydro.png"
-            ],
-            "secondary": [
-                "pyro.png"
-            ]
-        }
-    ],
-    "resonance": [
-        {
-            "key": "Enduring Rock",
-            "principal": [
-                "geo.png"
-            ],
-            "secondary": [
-                "geo.png"
-            ]
-        },
-        {
-            "key": "Fervent Flames",
-            "principal": [
-                "pyro.png"
-            ],
-            "secondary": [
-                "pyro.png"
-            ]
-        },
-        {
-            "key": "Soothing Waters",
-            "principal": [
-                "hydro.png"
-            ],
-            "secondary": [
-                "hydro.png"
-            ]
-        },
-        {
-            "key": "Impetuous Winds",
-            "principal": [
-                "anemo.png"
-            ],
-            "secondary": [
-                "anemo.png"
-            ]
-        },
-        {
-            "key": "High Voltage",
-            "principal": [
-                "electro.png"
-            ],
-            "secondary": [
-                "electro.png"
-            ]
-        },
-        {
-            "key": "Shattering Ice",
-            "principal": [
-                "cryo.png"
-            ],
-            "secondary": [
-                "cryo.png"
-            ]
-        },
-        {
-            "key": "Protective Canopy",
-            "principal": [],
-            "secondary": []
-        }
-    ]
+  "debuffs": [
+    {
+      "key": "engulfing-storm",
+      "type": "electro"
+    },
+    {
+      "key": "slowing-water",
+      "type": "hydro"
+    },
+    {
+      "key": "smoldering-flames",
+      "type": "pyro"
+    },
+    {
+      "key": "condensed-ice",
+      "type": "cryo"
+    }
+  ],
+  "reactions": [
+    {
+      "key": "vaporize",
+      "principal": [
+        "pyro"
+      ],
+      "secondary": [
+        "hydro"
+      ]
+    },
+    {
+      "key": "burning",
+      "principal": [
+        "pyro"
+      ],
+      "secondary": [
+        "dendro"
+      ]
+    },
+    {
+      "key": "overloaded",
+      "principal": [
+        "pyro"
+      ],
+      "secondary": [
+        "electro"
+      ]
+    },
+    {
+      "key": "melt",
+      "principal": [
+        "pyro"
+      ],
+      "secondary": [
+        "cryo"
+      ]
+    },
+    {
+      "key": "vaporize-reverse",
+      "principal": [
+        "hydro"
+      ],
+      "secondary": [
+        "pyro"
+      ]
+    },
+    {
+      "key": "electro-charged",
+      "principal": [
+        "hydro"
+      ],
+      "secondary": [
+        "electro"
+      ]
+    },
+    {
+      "key": "frozen",
+      "principal": [
+        "hydro"
+      ],
+      "secondary": [
+        "cryo"
+      ]
+    },
+    {
+      "key": "swirl",
+      "principal": [
+        "anemo"
+      ],
+      "secondary": [
+        "pyro",
+        "hydro",
+        "electro",
+        "cryo"
+      ]
+    },
+    {
+      "key": "superconduct",
+      "principal": [
+        "electro"
+      ],
+      "secondary": [
+        "cryo"
+      ]
+    },
+    {
+      "key": "melt-reverse",
+      "principal": [
+        "cryo"
+      ],
+      "secondary": [
+        "pyro"
+      ]
+    },
+    {
+      "key": "crystallize",
+      "principal": [
+        "geo"
+      ],
+      "secondary": [
+        "pyro",
+        "hydro",
+        "electro",
+        "cryo"
+      ]
+    }
+  ],
+  "resonance": [
+    {
+      "key": "enduring-rock",
+      "principal": [
+        "geo"
+      ],
+      "secondary": [
+        "geo"
+      ]
+    },
+    {
+      "key": "fervent-flames",
+      "principal": [
+        "pyro"
+      ],
+      "secondary": [
+        "pyro"
+      ]
+    },
+    {
+      "key": "soothing-waters",
+      "principal": [
+        "hydro"
+      ],
+      "secondary": [
+        "hydro"
+      ]
+    },
+    {
+      "key": "impetuous-winds",
+      "principal": [
+        "anemo"
+      ],
+      "secondary": [
+        "anemo"
+      ]
+    },
+    {
+      "key": "high-voltage",
+      "principal": [
+        "electro"
+      ],
+      "secondary": [
+        "electro"
+      ]
+    },
+    {
+      "key": "shattering-ice",
+      "principal": [
+        "cryo"
+      ],
+      "secondary": [
+        "cryo"
+      ]
+    },
+    {
+      "key": "protective-canopy",
+      "principal": [],
+      "secondary": []
+    }
+  ]
 }

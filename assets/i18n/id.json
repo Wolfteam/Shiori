@@ -4783,7 +4783,7 @@
           "abilities": [
             {
               "name": "Normal Attack",
-              "description": "Melancarkan hingga 4 serangan berturut-turut.\r\n",
+              "description": "Melancarkan hingga 4 serangan tombak berturut-turut.\r\n",
               "descriptions": []
             },
             {
@@ -4811,7 +4811,7 @@
         {
           "key": "s2",
           "title": "Blazing Blessing",
-          "description": "Thoma menggunakan ujung tombaknya sebagai poros untuk menyalurkan apinya dan melakukan tendangan yang mengakibatkan Pyro DMG Area dan melancarkan Blazing Barrier. Saat dilancarkan, Barrier tersebut akan memberikan efek elemen Pyro pada Thoma.\r\nDMG yang dapat ditahan oleh Barrier berdasarkan pada Max HP Thoma.\r\n",
+          "description": "Thoma menggunakan ujung tombaknya sebagai poros untuk menyalurkan apinya dan melakukan tendangan yang mengakibatkan Pyro DMG Area, kemudian menciptakan sebuah Blazing Barrier. Saat melancarkan Elemental Skill, Thoma akan terkena efek elemen Pyro selama sekejap.\r\nDMG yang dapat ditahan oleh Barrier berdasar pada Max HP Thoma.\r\n",
           "abilities": [
             {
               "name": "",
@@ -4819,7 +4819,7 @@
               "descriptions": [
                 "Menahan Pyro DMG 250% lebih efektif.",
                 "Saat menciptakan Blazing Barrier baru, sisa DMG yang dapat ditahan oleh Blazing Barrier akan ditumpuk dan durasinya diperbarui.",
-                "DMG maksimum yang dapat ditahan oleh Perisai tidak akan melebihi persentase tertentu dari Max HP Thoma."
+                "DMG maksimum yang dapat ditahan oleh Barrier tidak akan melebihi persentase tertentu dari Max HP Thoma."
               ]
             }
           ],
@@ -4834,15 +4834,15 @@
         {
           "key": "s3",
           "title": "Crimson Ooyoroi",
-          "description": "Thoma memutar tombaknya untuk menebas musuh-musuhnya dengan api membara yang mengakibatkan Pyro DMG Area dan membalut dirinya dalam Scorching Ooyoroi.\r\n",
+          "description": "Thoma memutar tombaknya untuk menebas musuh-musuhnya dengan api membara yang mengakibatkan Pyro DMG Area, kemudian menciptakan efek Scorching Ooyoroi.\r\n",
           "abilities": [
             {
               "name": "Scorching Ooyoroi",
-              "description": "Normal Attack dari Karakter aktif yang memiliki efek Scorching Ooyoroi akan memicu Fiery Collapse yang mengakibatkan Pyro DMG Area dan menciptakan Blazing Barrier.\r\nFiery Collapse dapat terpicu sekali setiap detik.\r\nBlazing Barrier yang diciptakan dengan cara ini mempunyai karakteristik yang sama dengan yang terbuat dari Elemental Skill Thoma, Blazing Blessing, kecuali pada jumlah DMG yang dapat ditahan.\r\n",
+              "description": "Normal Attack dari Karakter aktif yang memiliki efek Scorching Ooyoroi akan memicu Fiery Collapse yang mengakibatkan Pyro DMG Area dan menciptakan Blazing Barrier.\r\nFiery Collapse dapat terpicu sekali setiap detik.\r\nBlazing Barrier yang diciptakan dengan cara ini mempunyai karakteristik yang sama dengan yang terbuat dari Elemental Skill Thoma \"Blazing Blessing\", kecuali pada jumlah DMG yang dapat ditahan:\r\n",
               "descriptions": [
                 "Menahan Pyro DMG 250% lebih efektif.",
                 "Saat menciptakan Blazing Barrier baru, sisa DMG yang dapat ditahan oleh Blazing Barrier akan ditumpuk dan durasinya diperbarui.",
-                "DMG maksimum yang dapat ditahan oleh Perisai tidak akan melebihi persentase tertentu dari Max HP Thoma.",
+                "DMG maksimum yang dapat ditahan oleh Barrier tidak akan melebihi persentase tertentu dari Max HP Thoma.",
                 "Jika Thoma gugur, efek Scorching Ooyoroi akan hilang."
               ]
             }
@@ -4862,13 +4862,13 @@
         {
           "key": "p1",
           "title": "Snap and Swing",
-          "description": "Saat sukses memancing di Inazuma, terdapat 20% kemungkinan untuk mendapatkan hasil dua kali lipat.\r\n",
+          "description": "Saat Traveler sukses memancing di Inazuma, terdapat 20% kemungkinan untuk mendapatkan hasil dua kali lipat berkat bantuan Thoma.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
           "title": "Imbricated Armor",
-          "description": "Saat Karakter yang sedang digunakan mendapatkan atau memperbarui Blazing Barrier, maka kekuatan Perisai meningkat 5% selama 6 detik.\r\nEfek ini dapat terpicu setiap 0,3 detik. Maks. 5 tumpuk.\r\n",
+          "description": "Saat Karakter yang sedang digunakan mendapatkan atau memperbarui Blazing Barrier, kekuatan perisai akan meningkat 5% selama 6 detik.\r\nEfek ini dapat terpicu setiap 0,3 detik. Maks. 5 tumpuk.\r\n",
           "descriptions": []
         },
         {
@@ -4882,7 +4882,7 @@
         {
           "key": "c1",
           "title": "A Comrade's Duty",
-          "description": "Saat Blazing Barrier menerima DMG untuk semua Karakter kecuali Thoma, maka CD Blazing Blessing milik Thoma akan berkurang 3 detik dan CD Crismon Ooyoroi milik Thoma juga berkurang 3 detik.\r\nEfek ini dapat terpicu setiap 20 detik.\r\n",
+          "description": "Saat Karakter yang dilindungi oleh Blazing Barrier milik Thoma (kecuali Thoma sendiri) terkena serangan, maka CD Blazing Blessing Thoma akan berkurang 3 detik, dan CD Crimson Ooyoroi Thoma juga berkurang 3 detik.\r\nEfek ini dapat terpicu setiap 20 detik.\r\n",
           "descriptions": []
         },
         {
@@ -4912,7 +4912,7 @@
         {
           "key": "c6",
           "title": "Burning Heart",
-          "description": "Saat Blazing Barrier didapatkan atau ditumpuk, akan meningkatkan 15% DMG yang dihasilkan oleh Normal, Charged, dan Plunging Attack dari semua anggota party selama 6 detik.\r\n",
+          "description": "Saat mendapatkan atau memperbarui Blazing Barrier, DMG Normal, Charged, dan Plunging Attack yang diakibatkan semua anggota party akan meningkat 15% selama 6 detik.\r\n",
           "descriptions": []
         }
       ]
@@ -7129,6 +7129,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "Mouun's Moon",
+      "description": "Busur perang cantik yang terbuat dari kerang dan karang. Cahayanya yang gemerlap nan menyedihkan tersirat di sepanjang lekukannya yang berwarna terang bagaikan rembulan.",
+      "refinements": [
+        "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},12% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}40{/color}%.",
+        "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},15% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}50{/color}%.",
+        "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},18% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}60{/color}%.",
+        "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},21% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}70{/color}%.",
+        "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},24% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}80{/color}%."
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "Old Merc's Pal",
       "description": "Pedang besar kuno yang telah diuji oleh waktu, telah melalui api dan badai perang yang tak terhitung jumlahnya.",
@@ -7785,6 +7797,18 @@
       "name": "Waster Greatsword",
       "description": "Lempengan besi tebal yang sangat kokoh, dengan tekad yang cukup kuat, pedang ini terlihat dapat membelah bahkan gunung sekalipun.",
       "refinements": []
+    },
+    {
+      "key": "wavebreakers-fin",
+      "name": "Wavebreaker's Fin",
+      "description": "Sebuah naginata yang ditempa dari material bercahaya yang berasal dari dasar laut. Dulunya naginata ini dimiliki oleh para tengu.",
+      "refinements": [
+        "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},12% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}40{/color}%.",
+        "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},15% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}50{/color}%.",
+        "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},18% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}60{/color}%.",
+        "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},21% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}70{/color}%.",
+        "Setiap 1 poin dari gabungan jumlah Energy maksimum seluruh anggota party akan meningkatkan {color}0{/color},24% DMG Elemental Burst milik Karakter yang mengenakan senjata ini. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah {color}80{/color}%."
+      ]
     },
     {
       "key": "white-iron-greatsword",
@@ -9590,25 +9614,25 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
+      "key": "engulfing-storm",
       "name": "Engulfing Storm",
       "effect": "Terus-menerus menguras Energy Recharge.",
       "description": null
     },
     {
-      "key": "Slowing Water",
+      "key": "slowing-water",
       "name": "Slowing Water",
       "effect": "Meningkatkan durasi CD skill karakter.",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
+      "key": "smoldering-flames",
       "name": "Smoldering Flames",
       "effect": "Terus menerus menerima damage dari waktu ke waktu.",
       "description": null
     },
     {
-      "key": "Condensed Ice",
+      "key": "condensed-ice",
       "name": "Condensed Ice",
       "effect": "Meningkatkan konsumsi stamina.",
       "description": null
@@ -9616,99 +9640,111 @@
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "Burning",
-      "effect": "Mengakibatkan Pyro DMG secara terus menerus.",
-      "description": null
-    },
-    {
-      "key": "Crystalize",
-      "name": "Crystalize",
-      "effect": "Menciptakan Elemental Shard yang akan memberikan perisai saat diambil.",
-      "description": null
-    },
-    {
-      "key": "Electro-Charged",
-      "name": "Electro-Charged",
-      "effect": "Mengakibatkan Electro DMG secara terus menerus.",
-      "description": null
-    },
-    {
-      "key": "Frozen",
-      "name": "Frozen",
-      "effect": "Membekukan target.",
-      "description": null
-    },
-    {
-      "key": "Melt",
-      "name": "Melt",
-      "effect": "Mengakibatkan damage tambahan.",
-      "description": null
-    },
-    {
-      "key": "Overloaded",
-      "name": "Overloaded",
-      "effect": "Mengakibatkan Pyro DMG area.",
-      "description": null
-    },
-    {
-      "key": "Superconduct",
-      "name": "Superconduct",
-      "effect": "Mengakibatkan Cryo DMG area dan mengurangi Physical RES target sebesar 50%.",
-      "description": null
-    },
-    {
-      "key": "Swirl",
-      "name": "Swirl",
-      "effect": "Mengakibatkan elemental damage tambahan dan menyebarkan efeknya.",
-      "description": null
-    },
-    {
-      "key": "Vaporize",
+      "key": "vaporize",
       "name": "Vaporize",
-      "effect": "Mengakibatkan damage tambahan.",
+      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "burning",
+      "name": "Burning",
+      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
+      "description": null
+    },
+    {
+      "key": "overloaded",
+      "name": "Overloaded",
+      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
+      "description": null
+    },
+    {
+      "key": "melt",
+      "name": "Melt",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "vaporize-reverse",
+      "name": "Vaporize (Reverse)",
+      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "electro-charged",
+      "name": "Electro Charged",
+      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
+      "description": null
+    },
+    {
+      "key": "frozen",
+      "name": "Frozen",
+      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
+      "description": null
+    },
+    {
+      "key": "swirl",
+      "name": "Swirl",
+      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
+      "description": null
+    },
+    {
+      "key": "superconduct",
+      "name": "Superconduct",
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Melt (Reverse)",
+      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Crystallize",
+      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
+      "key": "enduring-rock",
       "name": "Enduring Rock",
       "effect": "Meningkatkan 15% kekuatan perisai. Selain itu, karakter yang sedang dilindungi perisai akan mendapatkan efek berikut: Meningkatkan 15% DMG; Saat karakter mengakibatkan DMG terhadap musuh, mengurangi 20% Geo RES musuh selama 15 detik.",
       "description": null
     },
     {
-      "key": "Fervent Flames",
+      "key": "fervent-flames",
       "name": "Fervent Flames",
       "effect": "Waktu terpengaruh Cryo berkurang 40%. Meningkatkan 25% ATK.",
       "description": null
     },
     {
-      "key": "Soothing Waters",
+      "key": "soothing-waters",
       "name": "Soothing Waters",
       "effect": "Waktu terpengaruh Pyro berkurang 40%. Meningkatkan pemulihan HP yang diterima sebesar 30%.",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
+      "key": "impetuous-winds",
       "name": "Impetuous Winds",
       "effect": "Mengurangi konsumsi Stamina sebanyak 15%. Meningkatkan Movement SPD sebanyak 10%. Mengurangi CD skill sebanyak 5%.",
       "description": null
     },
     {
-      "key": "High Voltage",
+      "key": "high-voltage",
       "name": "High Voltage",
       "effect": "Waktu terpengaruh Hydro berkurang 40%. Superconduct, Overloaded dan Electro-Charged memiliki 100% kemungkinan menciptakan Electro Elemental Particle (CD: 5 detik).",
       "description": null
     },
     {
-      "key": "Shattering Ice",
+      "key": "shattering-ice",
       "name": "Shattering Ice",
       "effect": "Waktu terpengaruh Electro berkurang 40%. Meningkatkan CRIT Rate terhadap musuh yang terkena Frozen atau Cryo sebanyak 15%.",
       "description": null
     },
     {
-      "key": "Protective Canopy",
+      "key": "protective-canopy",
       "name": "Protective Canopy",
       "effect": "Semua Elemental RES +15%, Physical RES +15%",
       "description": "Any 4 Unique Elements"

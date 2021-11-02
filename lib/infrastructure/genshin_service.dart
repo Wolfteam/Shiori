@@ -351,7 +351,8 @@ class GenshinServiceImpl implements GenshinService {
         final reaction = ElementCardModel(name: translation.name, effect: translation.effect, image: e.fullImagePath);
         return reaction;
       },
-    ).toList();
+    ).toList()
+      ..sort((x, y) => x.name.compareTo(y.name));
   }
 
   @override
@@ -367,7 +368,8 @@ class GenshinServiceImpl implements GenshinService {
         );
         return reaction;
       },
-    ).toList();
+    ).toList()
+      ..sort((x, y) => x.name.compareTo(y.name));
   }
 
   @override

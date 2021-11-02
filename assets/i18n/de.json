@@ -4779,81 +4779,141 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Schneller Schmetterspeer",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Standardangriff",
+              "description": "Führt bis zu 4 Lanzenstiche aus.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Heftiger Schlag",
+              "description": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Angriff aus dem Fall",
+              "description": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "SCH PHase 1|{param1}%",
+            "SCH Phase 2|{param2}%",
+            "SCH Phase 3|{param3}% ×{param4}",
+            "SCH Phase 4|{param5}%",
+            "SCH heftiger Schläge|{param6}%",
+            "Ausdauerverbrauch heftiger Schläge|{param7} Punkte",
+            "SCH beim Fallen|{param8}%",
+            "SCH beim Fallen aus niedriger/großer Höhe|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lodernder Segen",
+          "description": "Thoma benutzt die Spitze seiner Stangenwaffe als Punkt, um Flammen zu kanalisieren und einen Tritt auszuführen, mit dem er Pyro-Flächenschaden verursacht. Erschafft dann einen Schild des lodernden Segens und verleiht Thoma beim Auslösen das Pyro-Attribut.\r\nDie Schildstärke hängt von Thomas max. LP ab.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "Merkmale des Schilds des lodernden Segens:\r\n",
+              "descriptions": [
+                "Hält bei Pyro-Schaden 250 % ab.",
+                "Addiert die verbleibende Schildstärke beim Erhalten eines neuen Schilds des lodernden Segens hinzu und setzt die Wirkungsdauer zurück.",
+                "Die Schildstärke kann einen bestimmten Teil der max. LP von Thoma nicht übersteigen."
+              ]
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "Schildstärke|{param2}% der max. LP + {param3}",
+            "Schilddauer|{param4} s",
+            "Max. Schildstärke|{param5}% der max. LP + {param6}",
+            "Abklingzeit|{param7} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Rote Ooyoroi",
+          "description": "Thoma wirbelt seinen Speer herum und durchschneidet die Gegner in der Umgebung mit prasselndem Feuer, womit er ihnen Pyro-Flächenschaden zufügt. Umhüllt sich dann in eine brennende Ooyoroi.\r\n",
+          "abilities": [
+            {
+              "name": "Brennende Ooyoroi",
+              "description": "Löst bei Angriffen aktueller Figuren unter dem Einfluss des Effekts „brennende Ooyoroi“ mit Standardangriffen „Brennender Zusammenbruch“ aus, verursacht damit Pyro-Flächenschaden und erschafft einen Schild des lodernden Segens.\r\n1 s Abklingzeit für „Brennender Zusammenbruch“.\r\nVon der Schildstärke abgesehen sind die Merkmale dieses Schildes identisch mit denen des Schildes der Elementarfähigkeit „Lodernder Segen“:\r\n",
+              "descriptions": [
+                "Hält bei Pyro-Schaden 250 % ab.",
+                "Addiert die verbleibende Schildstärke beim Erhalten eines neuen Schilds des lodernden Segens hinzu und setzt die Wirkungsdauer zurück.",
+                "Die Schildstärke kann einen bestimmten Teil der max. LP von Thoma nicht übersteigen.",
+                "Effekt der brennenden Ooyoroi erlischt, wenn Thoma ohnmächtig wird."
+              ]
+            }
+          ],
+          "stats": [
+            "Fähigkeits-SCH|{param1}%",
+            "SCH von brennendem Zusammenbruch|{param2}%",
+            "Schildstärke|{param3}% der max. LP + {param4}",
+            "Schilddauer|{param5} s",
+            "Dauer der brennenden Ooyoroi|{param6} s",
+            "Abklingzeit|{param7} s",
+            "Elementarenergie|{param8}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Brassenjagd",
+          "description": "Bringt beim erfolgreichen Angeln in Inazuma mit einer Wahrscheinlichkeit von 20 % den 2-fachen Ertrag.\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Schichtpanzer",
+          "description": "Erhöht die Schildeffizienz aktueller Figuren beim Erhalten oder Aktualisieren von Schild des lodernden Segens 6 s lang um 5 %.\r\n0,3 s Abklingzeit, 5-fach stapelbar.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Flammenangriff",
+          "description": "Erhöht den mit dem brennenden Zusammenbruch von Rote Ooyoroi verursachten Schaden in Höhe von 2,2 % der max. LP von Thoma.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Kameradschaftliche Pflichten",
+          "description": "Verkürzt beim Schützen vor Angriffen durch Schild des lodernden Segens für Figuren außer Thoma die Abklingzeit von Thomas eigenem Lodernder Segen um 3 s und die Abklingzeit von Rote Ooyoroi um 3 s.\r\n20 s Abklingzeit.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Beflissener Assistent",
+          "description": "Verlängert die Dauer von Rote Ooyoroi um 3 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Bestimmtheit vor dem Feind",
+          "description": "Erhöht die Stufe der Fähigkeit Lodernder Segen um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Längerfristige Planung",
+          "description": "Stellt Thoma nach Anwendung von Rote Ooyoroi 15 Punkte Elementarenergie wieder her.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Weitreichende Flammen",
+          "description": "Erhöht die Stufe der Fähigkeit Rote Ooyoroi um 3.\r\nHöchststufe 15.\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Brennendes Herz",
+          "description": "Erhöht beim Erhalten oder Aktualisieren von Schild des lodernden Segens den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall aller Truppenmitglieder verursachten Schaden 6 s lang um 15 %.\r\n",
           "descriptions": []
         }
       ]
@@ -7070,6 +7130,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "Mouun-Mond",
+      "description": "Ein schöner Kriegsbogen aus Muscheln und Korallen. Ein trauriger Glanz fließt entlang seiner mondlichtfarbenen Wurfarme.",
+      "refinements": [
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},12 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}40{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},15 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}50{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},18 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}60{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},21 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}70{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},24 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}80{/color} %."
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "Söldnerzweihänder",
       "description": "Ein altes, schweres, aber stabiles Großschwert, das schon viele Jahre und Kämpfe überstanden hat.",
@@ -7726,6 +7798,18 @@
       "name": "Übungsgroßschwert",
       "description": "Lediglich eine dicke Platte aus Eisen in der Form eines Schwertes. Mit genügend Willenskraft kann man damit immer noch Berge spalten.",
       "refinements": []
+    },
+    {
+      "key": "wavebreakers-fin",
+      "name": "Wellenbrecherflosse",
+      "description": "Ein Naginata, das aus leuchtendem Material aus den Tiefen des Meeres geschmiedet wurde. Es gehörte einst den Tengu.",
+      "refinements": [
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},12 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}40{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},15 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}50{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},18 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}60{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},21 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}70{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},24 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}80{/color} %."
+      ]
     },
     {
       "key": "white-iron-greatsword",
@@ -9552,128 +9636,140 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
-      "name": "Engulfing Storm",
-      "effect": "Continuously drains Energy Recharge.",
+      "key": "engulfing-storm",
+      "name": "Hungriger Blitz",
+      "effect": "Verbraucht fortlaufend Elementarenergie.",
       "description": null
     },
     {
-      "key": "Slowing Water",
-      "name": "Slowing Water",
-      "effect": "Increases skill CD durations.",
+      "key": "slowing-water",
+      "name": "Zähflüssige Bremse",
+      "effect": "Verlängert die Abklingzeit von Fähigkeiten.",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
-      "name": "Smoldering Flames",
-      "effect": "Continuously inflicts damage over time.",
+      "key": "smoldering-flames",
+      "name": "Schwelbrand",
+      "effect": "Verursacht fortlaufenden Pyro-Schaden.",
       "description": null
     },
     {
-      "key": "Condensed Ice",
-      "name": "Condensed Ice",
-      "effect": "Increases stamina consumption.",
+      "key": "condensed-ice",
+      "name": "Erstarrte Glieder",
+      "effect": "Erhöht den Ausdauerverbrauch.",
       "description": null
     }
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "Burning",
-      "effect": "Deals Pyro DMG over time.",
-      "description": null
-    },
-    {
-      "key": "Crystalize",
-      "name": "Crystalize",
-      "effect": "Creates a crystal that will provide a shield when picked up.",
-      "description": null
-    },
-    {
-      "key": "Electro-Charged",
-      "name": "Electro-Charged",
-      "effect": "Deals Electro DMG over time.",
-      "description": null
-    },
-    {
-      "key": "Frozen",
-      "name": "Frozen",
-      "effect": "Freezes the target.",
-      "description": null
-    },
-    {
-      "key": "Melt",
-      "name": "Melt",
-      "effect": "Deals extra damage.",
-      "description": null
-    },
-    {
-      "key": "Overloaded",
-      "name": "Overloaded",
-      "effect": "Deals AoE Pyro DMG.",
-      "description": null
-    },
-    {
-      "key": "Superconduct",
-      "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target's Physical RES by 50%.",
-      "description": null
-    },
-    {
-      "key": "Swirl",
-      "name": "Swirl",
-      "effect": "Deals extra elemental damage and spreads the effect.",
-      "description": null
-    },
-    {
-      "key": "Vaporize",
+      "key": "vaporize",
       "name": "Vaporize",
-      "effect": "Deals extra damage.",
+      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "burning",
+      "name": "Burning",
+      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
+      "description": null
+    },
+    {
+      "key": "overloaded",
+      "name": "Overloaded",
+      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
+      "description": null
+    },
+    {
+      "key": "melt",
+      "name": "Melt",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "vaporize-reverse",
+      "name": "Vaporize (Reverse)",
+      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "electro-charged",
+      "name": "Electro Charged",
+      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
+      "description": null
+    },
+    {
+      "key": "frozen",
+      "name": "Frozen",
+      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
+      "description": null
+    },
+    {
+      "key": "swirl",
+      "name": "Swirl",
+      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
+      "description": null
+    },
+    {
+      "key": "superconduct",
+      "name": "Superconduct",
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Melt (Reverse)",
+      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Crystallize",
+      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
-      "name": "Enduring Rock",
-      "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemies will decrease their Geo RES by 20% for 15s.",
+      "key": "enduring-rock",
+      "name": "Beständiges Gestein",
+      "effect": "Erhöht die Schildeffizienz um 15% und verleiht Figuren im Schutz von Schilden folgende Merkmale: Erhöht den verursachten Schaden um 15% und verringert den Geo-WDS von Gegnern, denen die Figuren Schaden zufügen, um 20%. Hält 15s.",
       "description": null
     },
     {
-      "key": "Fervent Flames",
-      "name": "Fervent Flames",
-      "effect": "Affected by Cryo for 40% less time. Increases ATK by 25%.",
+      "key": "fervent-flames",
+      "name": "Aufrichtiges Feuer",
+      "effect": "Verringert die Dauer der Beeinträchtigung durch zusätzliches Kryo-Attribut um 40% und erhöht den ANG um 25%.",
       "description": null
     },
     {
-      "key": "Soothing Waters",
-      "name": "Soothing Waters",
-      "effect": "Affected by Pyro for 40% less time. Increases incoming healing by 30%.",
+      "key": "soothing-waters",
+      "name": "Heilendes Wasser",
+      "effect": "Verringert die Dauer der Beeinträchtigung durch zusätzliches Pyro-Attribut um 40% und erhöht den passiven Heilungseffekt um 30%.",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
-      "name": "Impetuous Winds",
-      "effect": "Decreases Stamina Consumption by 15%. Increases Movement SPD by 10%. Shortens Skill CD by 5%.",
+      "key": "impetuous-winds",
+      "name": "Ungestümer Wind",
+      "effect": "Verringert den Ausdauerverbrauch um 15%, erhöht die Bewegungsgeschwindigkeit um 10% und verkürzt die Abklingzeit von Fähigkeiten um 5%.",
       "description": null
     },
     {
-      "key": "High Voltage",
-      "name": "High Voltage",
-      "effect": "Affected by Hydro for 40% less time. Superconduct, Overloaded, and Electro-Charged have a 100% chance to generate an Electro Elemental Particle (CD: 5s).",
+      "key": "high-voltage",
+      "name": "Energiereicher Blitz",
+      "effect": "Verringert die Dauer der Beeinträchtigung durch zusätzliches Hydro-Attribut um 40% und erschafft beim Auslösen der Reaktionen Supraleiter, Überladen und Unter Strom mit einer Wahrscheinlichkeit von 100% ein Elektro-Elementarteilchen, 5s Ablinkzeit",
       "description": null
     },
     {
-      "key": "Shattering Ice",
-      "name": "Shattering Ice",
-      "effect": "Affected by Electro for 40% less time. Increases CRIT Rate against enemies that are Frozen or affected by Cryo by 15%.",
+      "key": "shattering-ice",
+      "name": "Zerspringendes Eis",
+      "effect": "Verringert die Dauer der Beeinträchtigung durch zusätzliches Elektro-Attribut um 40% und erhöht die KT bei Angriffen auf von Kryo-Effekten oder Gefroren betroffenden Gegnern um 15%.",
       "description": null
     },
     {
-      "key": "Protective Canopy",
-      "name": "Protective Canopy",
-      "effect": "All Elemental RES by 15%. Physical RES + 15%",
-      "description": "Any 4 Unique Elements"
+      "key": "protective-canopy",
+      "name": "Verwobene Wehr",
+      "effect": "Erhöht den WDS gegen alle Elemente um 15% und den phys. WDS um 15%.",
+      "description": "4 unterschiedliche Elemente"
     }
   ],
   "monsters": [

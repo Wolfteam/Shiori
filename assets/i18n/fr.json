@@ -4785,81 +4785,141 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Lance célère",
+          "description": "",
+          "abilities": [
+            {
+              "name": "Attaque normale",
+              "description": "Enchaîne jusqu'à 4 coups de lance.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque chargée",
+              "description": "Charge en ligne droite et inflige des DGT aux ennemis sur sa route ; cette attaque consomme de l'endurance.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "Attaque plongeante",
+              "description": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis sur la route et des DGT de zone à l'impact.",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "DGT 1er coup|{param1}%",
+            "DGT 2e coup|{param2}%",
+            "DGT 3e coup|{param3}% ×{param4}",
+            "DGT 4e coup|{param5}%",
+            "DGT attaque chargée|{param6}%",
+            "Coût d'endurance attaque chargée|{param7} pts",
+            "DGT durant la chute|{param8}%",
+            "DGT chute basse/élevée|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "Bénédiction flamboyante",
+          "description": "Thomas utilise la pointe de sa lance comme point d'appui pour canaliser les flammes et effectuer un coup de pied qui inflige des DGT Pyro de zone et libère une barrière défensive brûlante. Au moment où elle se déclenche, la barrière applique l'élément Pyro à Thomas.\r\nL'absorption des DGT de la barrière est fonction des PV max de Thomas.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "La barrière brûlante possède les caractéristiques suivantes :\r\n",
+              "descriptions": [
+                "Elle absorbe les DGT Pyro avec 250 % d'efficacité.",
+                "L'absorption de DGT restante d'une barrière brûlante existante se cumulera si une autre barrière brûlante est obtenue en même temps, tandis que sa durée sera actualisée.",
+                "L'absorption maximale de DGT de la barrière ne dépassera pas un certain pourcentage des PV max de Thomas."
+              ]
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}%",
+            "PV du bouclier|{param2}% PV max + {param3} PV",
+            "Durée du bouclier|{param4} s",
+            "PV max du bouclier|{param5}% PV max + {param6}",
+            "Temps de recharge|{param7} s"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "O-yoroi écarlate",
+          "description": "Thomas fait tournoyer sa lance, tranchant ses ennemis avec des flammes rugissantes qui infligent des DGT Pyro de zone et se transforment en un o-yoroi embrasé.\r\n",
+          "abilities": [
+            {
+              "name": "O-yoroi embrasé",
+              "description": "L'attaque normale d'un personnage déployé affecté par un o-yoroi embrasé déclenchera un effondrement ardent qui inflige des DGT Pyro de zone et crée une barrière brûlante.\r\nUn effondrement ardent peut être déclenché une fois toutes les secondes.\r\nUne barrière brûlante créée de cette manière est identique à celle créée grâce à la compétence élémentaire « Bénédiction flamboyante » de Thomas, à l'exception de la quantité de DGT qu'elle peut absorber.\r\n",
+              "descriptions": [
+                "Elle absorbe les DGT Pyro avec 250 % d'efficacité.",
+                "L'absorption de DGT restante d'une barrière brûlante existante se cumulera si une autre barrière brûlante est obtenue en même temps, tandis que sa durée sera actualisée.",
+                "L'absorption maximale de DGT de la barrière ne dépassera pas un certain pourcentage des PV max de Thomas.",
+                "Si Thomas est vaincu, les effets de l'o-yoroi embrasé se dissiperont."
+              ]
+            }
+          ],
+          "stats": [
+            "DGT compétence|{param1}%",
+            "DGT effondrement ardent|{param2}%",
+            "PV du bouclier|{param3}% PV max + {param4} PV",
+            "Durée du bouclier|{param5} s",
+            "Durée O-yoroi embrasé|{param6} s",
+            "Temps de recharge|{param7} s",
+            "Énergie élémentaire|{param8}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "Passion pêche",
+          "description": "Lorsque le voyageur réussit une pêche à Inazuma, l'aide de Thomas accorde 20 % de chances d'obtenir le double de prises.",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "Superposition d'armures",
+          "description": "Lorsque le personnage déployé obtient ou actualise une barrière brûlante, la force de son bouclier augmente de 5 % pendant 6 s.\r\nCet effet peut être déclenché une fois toutes les 0,3 s et cumulé jusqu'à 5 fois.\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "Assaut enflammé",
+          "description": "Les DGT infligés par l'effondrement ardent d'O-yoroi écarlate augmentent d'une valeur équivalant à 2,2 % des PV max de Thomas.\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "Devoir de camarade",
+          "description": "Lorsqu'un personnage protégé par la barrière brûlante de Thomas subit une attaque (Thomas excepté), les TdR de Bénédiction flamboyante et d'O-yoroi écarlate de Thomas diminuent de 3 s.\r\nCet effet peut être déclenché une fois toutes les 20 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "Compétences de subordonné",
+          "description": "Prolonge la durée d'O-yoroi écarlate de 3 s.\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "Résolution à toute épreuve",
+          "description": "Niveau d'aptitude Bénédiction flamboyante +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "Planification à long terme",
+          "description": "Après avoir utilisé O-yoroi écarlate, Thomas récupère 15 pts d'énergie élémentaire.\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "Feu incontrôlable",
+          "description": "Niveau d'aptitude O-yoroi écarlate +3.\r\nNiveau max : 15\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "Cœur brûlant",
+          "description": "Lorsqu'une barrière brûlante est obtenue ou actualisée, les DGT des attaques normales, chargées et plongeantes de tous les personnages de l'équipe augmentent de 15 % pendant 6 s.\r\n",
           "descriptions": []
         }
       ]
@@ -7076,6 +7136,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "Lune de Mouun",
+      "description": "Un élégant arc de guerre fait de coquillages et de corail. Un éclat mélancolique se répand le long de ses branches couleur clair de lune.",
+      "refinements": [
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},12 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}40{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},15 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}50{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},18 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}60{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},21 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}70{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},24 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}80{/color} % de cette manière."
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "Lame du mercenaire",
       "description": "Un espadon qui a fait des ravages sur bien des champs de bataille. Il a vu des jours meilleurs, mais aussi bien pires.",
@@ -7732,6 +7804,18 @@
       "name": "Épée d'entraînement",
       "description": "Une épée façonnée à partir d'une lame de fer épaisse et solide. Capable de briser des montagnes si son propriétaire est suffisamment motivé.",
       "refinements": []
+    },
+    {
+      "key": "wavebreakers-fin",
+      "name": "Aileron de brise-vagues",
+      "description": "Une naginata forgée à partir d'un matériau luminescent provenant du fond des océans. Elle était autrefois la possession des Tengu.",
+      "refinements": [
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},12 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}40{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},15 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}50{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},18 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}60{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},21 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}70{/color} % de cette manière.",
+        "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {color}0{/color},24 %. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {color}80{/color} % de cette manière."
+      ]
     },
     {
       "key": "white-iron-greatsword",
@@ -9537,25 +9621,25 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
+      "key": "engulfing-storm",
       "name": "Engulfing Storm",
       "effect": "Continuously drains Energy Recharge.",
       "description": null
     },
     {
-      "key": "Slowing Water",
+      "key": "slowing-water",
       "name": "Slowing Water",
       "effect": "Increases skill CD durations.",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
+      "key": "smoldering-flames",
       "name": "Smoldering Flames",
       "effect": "Continuously inflicts damage over time.",
       "description": null
     },
     {
-      "key": "Condensed Ice",
+      "key": "condensed-ice",
       "name": "Condensed Ice",
       "effect": "Increases stamina consumption.",
       "description": null
@@ -9563,99 +9647,111 @@
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "Burning",
-      "effect": "Deals Pyro DMG over time.",
-      "description": null
-    },
-    {
-      "key": "Crystalize",
-      "name": "Crystalize",
-      "effect": "Creates a crystal that will provide a shield when picked up.",
-      "description": null
-    },
-    {
-      "key": "Electro-Charged",
-      "name": "Electro-Charged",
-      "effect": "Deals Electro DMG over time.",
-      "description": null
-    },
-    {
-      "key": "Frozen",
-      "name": "Frozen",
-      "effect": "Freezes the target.",
-      "description": null
-    },
-    {
-      "key": "Melt",
-      "name": "Melt",
-      "effect": "Deals extra damage.",
-      "description": null
-    },
-    {
-      "key": "Overloaded",
-      "name": "Overloaded",
-      "effect": "Deals AoE Pyro DMG.",
-      "description": null
-    },
-    {
-      "key": "Superconduct",
-      "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target's Physical RES by 50%.",
-      "description": null
-    },
-    {
-      "key": "Swirl",
-      "name": "Swirl",
-      "effect": "Deals extra elemental damage and spreads the effect.",
-      "description": null
-    },
-    {
-      "key": "Vaporize",
+      "key": "vaporize",
       "name": "Vaporize",
-      "effect": "Deals extra damage.",
+      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "burning",
+      "name": "Burning",
+      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
+      "description": null
+    },
+    {
+      "key": "overloaded",
+      "name": "Overloaded",
+      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
+      "description": null
+    },
+    {
+      "key": "melt",
+      "name": "Melt",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "vaporize-reverse",
+      "name": "Vaporize (Reverse)",
+      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "electro-charged",
+      "name": "Electro Charged",
+      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
+      "description": null
+    },
+    {
+      "key": "frozen",
+      "name": "Frozen",
+      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
+      "description": null
+    },
+    {
+      "key": "swirl",
+      "name": "Swirl",
+      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
+      "description": null
+    },
+    {
+      "key": "superconduct",
+      "name": "Superconduct",
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Melt (Reverse)",
+      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Crystallize",
+      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
+      "key": "enduring-rock",
       "name": "Enduring Rock",
       "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemies will decrease their Geo RES by 20% for 15s.",
       "description": null
     },
     {
-      "key": "Fervent Flames",
+      "key": "fervent-flames",
       "name": "Fervent Flames",
       "effect": "Affected by Cryo for 40% less time. Increases ATK by 25%.",
       "description": null
     },
     {
-      "key": "Soothing Waters",
+      "key": "soothing-waters",
       "name": "Soothing Waters",
       "effect": "Affected by Pyro for 40% less time. Increases incoming healing by 30%.",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
+      "key": "impetuous-winds",
       "name": "Impetuous Winds",
       "effect": "Decreases Stamina Consumption by 15%. Increases Movement SPD by 10%. Shortens Skill CD by 5%.",
       "description": null
     },
     {
-      "key": "High Voltage",
+      "key": "high-voltage",
       "name": "High Voltage",
       "effect": "Affected by Hydro for 40% less time. Superconduct, Overloaded, and Electro-Charged have a 100% chance to generate an Electro Elemental Particle (CD: 5s).",
       "description": null
     },
     {
-      "key": "Shattering Ice",
+      "key": "shattering-ice",
       "name": "Shattering Ice",
       "effect": "Affected by Electro for 40% less time. Increases CRIT Rate against enemies that are Frozen or affected by Cryo by 15%.",
       "description": null
     },
     {
-      "key": "Protective Canopy",
+      "key": "protective-canopy",
       "name": "Protective Canopy",
       "effect": "All Elemental RES by 15%. Physical RES + 15%",
       "description": "Any 4 Unique Elements"

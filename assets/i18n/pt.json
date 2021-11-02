@@ -4725,9 +4725,9 @@
             "Dano do 3° Golpe|{param3}% *{param4}",
             "Dano do 4° Golpe|{param5}%",
             "Dano de Ataque Carregado|{param6}%",
-            "Consumo de Stamina de Ataque Carregado|{param7}",
+            "Consumo de Stamina do Ataque Carregado|{param7}",
             "Dano Durante a Queda|{param8}%",
-            "Dano de Queda de Alta/Baixa Altitude|{param9}% / {param10}%"
+            "Dano de Queda de Baixa/Alta Altitude|{param9}% / {param10}%"
           ]
         },
         {
@@ -4747,7 +4747,7 @@
           ],
           "stats": [
             "Dano de Habilidade|{param1}%",
-            "Absorção de Escudo|{param2}% Limite da Vida + {param3}",
+            "Absorção de Escudo|{param2}% do Limite da Vida Máxima + {param3}",
             "Duração do Escudo|{param4} s",
             "Limite Máximo de Absorção de Dano do Escudo|{param5}% da Vida Máxima + {param6}",
             "Tempo de Recarga|{param7} s"
@@ -4767,7 +4767,7 @@
           "stats": [
             "Dano de Habilidade|{param1}%",
             "Dano do Colapso Ardente|{param2}%",
-            "Absorção de Escudo|{param3}% Limite da Vida + {param4}",
+            "Absorção de Escudo|{param3}% do Limite da Vida + {param4}",
             "Duração do Escudo|{param5} s",
             "Duração da Armadura Flamejante|{param6} s",
             "Tempo de Recarga|{param7} s",
@@ -4779,7 +4779,7 @@
         {
           "key": "p1",
           "title": "Apaixonado Pela Pesca",
-          "description": "Ao Pescar com sucesso em Inazuma, possui 20% de chance de obter o dobro de peixe.\r\n",
+          "description": "Quando você pescar com sucesso em Inazuma, possui 20% de chance de obter o dobro de peixe graças a ajuda do Thoma.\r\n",
           "descriptions": []
         },
         {
@@ -7028,6 +7028,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "Lua de Mouun",
+      "description": "Um arco de guerra adorável feito de conchas e coral. Um brilho lúgubre flui ao longo de seus braços coloridos à luz da lua.",
+      "refinements": [
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.12{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}40{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.15{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}50{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.18{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}60{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.21{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}70{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.24{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}80{/color}%."
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "Espada do Mercenário",
       "description": "Uma grande espada testada em batalhas, passou por muitos momentos árduos.",
@@ -7684,6 +7696,18 @@
       "name": "Espadão do Julgamento",
       "description": "Uma chapa de ferro resistente, que pode ser boa o suficiente para separar montanhas com força de vontade suficiente.",
       "refinements": []
+    },
+    {
+      "key": "wavebreakers-fin",
+      "name": "Barbatana do Quebra Ondas",
+      "description": "Uma naginata forjada a partir de um material luminescente das profundezas do oceano. No passado pertenceu ao povo tengu.",
+      "refinements": [
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.12{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}40{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.15{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}50{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.18{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}60{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.21{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}70{/color}%.",
+        "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {color}0.24{/color}% por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {color}80{/color}%."
+      ]
     },
     {
       "key": "white-iron-greatsword",
@@ -9489,25 +9513,25 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
+      "key": "engulfing-storm",
       "name": "Engulfing Storm",
       "effect": "Drena continuamente a recarga de energía.",
       "description": null
     },
     {
-      "key": "Slowing Water",
+      "key": "slowing-water",
       "name": "Slowing Water",
       "effect": "Aumenta a duração do CD de habilidade.",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
+      "key": "smoldering-flames",
       "name": "Smoldering Flames",
       "effect": "Inflige danos continuamente ao longo do tempo.",
       "description": null
     },
     {
-      "key": "Condensed Ice",
+      "key": "condensed-ice",
       "name": "Condensed Ice",
       "effect": "Aumenta o consumo da stamina.",
       "description": null
@@ -9515,99 +9539,111 @@
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "Queimando",
-      "effect": "Causa dano de Pyro ao longo do tempo.",
-      "description": null
-    },
-    {
-      "key": "Crystalize",
-      "name": "Cristalizar",
-      "effect": "Cria um cristal que fornecerá um escudo quando for recolhido.",
-      "description": null
-    },
-    {
-      "key": "Electro-Charged",
-      "name": "Electro-Charged",
-      "effect": "Deals Electro DMG over time.",
-      "description": null
-    },
-    {
-      "key": "Frozen",
-      "name": "Frozen",
-      "effect": "Freezes the target.",
-      "description": null
-    },
-    {
-      "key": "Melt",
-      "name": "Melt",
-      "effect": "Deals extra damage.",
-      "description": null
-    },
-    {
-      "key": "Overloaded",
-      "name": "Overloaded",
-      "effect": "Deals AoE Pyro DMG.",
-      "description": null
-    },
-    {
-      "key": "Superconduct",
-      "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target's Physical RES by 50%.",
-      "description": null
-    },
-    {
-      "key": "Swirl",
-      "name": "Swirl",
-      "effect": "Deals extra elemental damage and spreads the effect.",
-      "description": null
-    },
-    {
-      "key": "Vaporize",
+      "key": "vaporize",
       "name": "Vaporize",
-      "effect": "Deals extra damage.",
+      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "burning",
+      "name": "Burning",
+      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
+      "description": null
+    },
+    {
+      "key": "overloaded",
+      "name": "Overloaded",
+      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
+      "description": null
+    },
+    {
+      "key": "melt",
+      "name": "Melt",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "vaporize-reverse",
+      "name": "Vaporize (Reverse)",
+      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "electro-charged",
+      "name": "Electro Charged",
+      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
+      "description": null
+    },
+    {
+      "key": "frozen",
+      "name": "Frozen",
+      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
+      "description": null
+    },
+    {
+      "key": "swirl",
+      "name": "Swirl",
+      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
+      "description": null
+    },
+    {
+      "key": "superconduct",
+      "name": "Superconduct",
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Melt (Reverse)",
+      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Crystallize",
+      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
+      "key": "enduring-rock",
       "name": "Enduring Rock",
-      "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemeies will decrease their Geo RES by 20% for 15s.",
+      "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemies will decrease their Geo RES by 20% for 15s.",
       "description": null
     },
     {
-      "key": "Fervent Flames",
+      "key": "fervent-flames",
       "name": "Fervent Flames",
       "effect": "Affected by Cryo for 40% less time. Increases ATK by 25%.",
       "description": null
     },
     {
-      "key": "Soothing Waters",
+      "key": "soothing-waters",
       "name": "Soothing Waters",
       "effect": "Affected by Pyro for 40% less time. Increases incoming healing by 30%.",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
+      "key": "impetuous-winds",
       "name": "Impetuous Winds",
       "effect": "Decreases Stamina Consumption by 15%. Increases Movement SPD by 10%. Shortens Skill CD by 5%.",
       "description": null
     },
     {
-      "key": "High Voltage",
+      "key": "high-voltage",
       "name": "High Voltage",
       "effect": "Affected by Hydro for 40% less time. Superconduct, Overloaded, and Electro-Charged have a 100% chance to generate an Electro Elemental Particle (CD: 5s).",
       "description": null
     },
     {
-      "key": "Shattering Ice",
+      "key": "shattering-ice",
       "name": "Shattering Ice",
       "effect": "Affected by Electro for 40% less time. Increases CRIT Rate against enemies that are Frozen or affected by Cryo by 15%.",
       "description": null
     },
     {
-      "key": "Protective Canopy",
+      "key": "protective-canopy",
       "name": "Protective Canopy",
       "effect": "All Elemental RES by 15%. Physical RES + 15%",
       "description": "Any 4 Unique Elements"

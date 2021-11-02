@@ -4792,81 +4792,141 @@
       "skills": [
         {
           "key": "s1",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "일반 공격·신속한 창의 기세",
+          "description": "",
+          "abilities": [
+            {
+              "name": "일반 공격",
+              "description": "창으로 최대 4번 공격한다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "강공격",
+              "description": "일정 스태미나를 소모해 전방으로 돌진하여 경로상의 적에게 피해를 준다.\r\n",
+              "descriptions": []
+            },
+            {
+              "name": "낙하 공격",
+              "description": "공중에서 땅을 내려찍어 경로상의 적을 공격하고 착지 시 범위 피해를 준다",
+              "descriptions": []
+            }
+          ],
+          "stats": [
+            "1단 공격 피해|{param1}%",
+            "2단 공격 피해|{param2}%",
+            "3단 공격 피해|{param3}% *{param4}",
+            "4단 공격 피해|{param5}%",
+            "강공격 피해|{param6}%",
+            "강공격 스태미나 소모|{param7} pt",
+            "낙하 기간 피해|{param8}%",
+            "저공/고공 추락 충격 피해|{param9}% / {param10}%"
+          ]
         },
         {
           "key": "s2",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "타오르는 우명의 보호",
+          "description": "토마는 창끝으로 화염의 힘을 피워내며 전방을 향해 돌진해 불 원소 범위 피해를 준다. 몸을 보호하는 타오르는 우명의 방패를 소환하고, 발동하는 순간 토마에게 불 원소를 부착한다.\r\n방패의 피해 흡수량은 토마 HP 최대치의 영향을 받는다.\r\n",
+          "abilities": [
+            {
+              "name": "",
+              "description": "타오르는 우명의 방패는 아래의 특성을 가진다:\r\n",
+              "descriptions": [
+                "불 원소 피해에 대해 250%의 흡수 효과가 있다.",
+                "방패의 남은 피해 흡수량은, 타오르는 우명의 방패 갱신 시 중첩되며 지속 시간이 갱신된다.",
+                "방패의 피해 흡수량은 토마의 HP 최대치의 일정 비율을 초과할 수 없다."
+              ]
+            }
+          ],
+          "stats": [
+            "스킬 피해|{param1}%",
+            "보호막 흡수량|HP 최대치의 {param2}% + {param3}",
+            "보호막 지속 시간|{param4} 초",
+            "보호막 흡수량 최대치|HP 최대치의 {param5}% + {param6}",
+            "재사용 대기시간|{param7} 초"
+          ]
         },
         {
           "key": "s3",
-          "title": "NA",
-          "description": null,
-          "abilities": [],
-          "stats": []
+          "title": "진홍 열화의 오오요로이",
+          "description": "토마는 창을 회전 시켜 불타오르는 화염을 휘둘러 주변의 적에게 불 원소 범위 피해를 주고 열화의 오오요로이를 생성한다.\r\n",
+          "abilities": [
+            {
+              "name": "열화의 오오요로이",
+              "description": "필드 위에서 열화의 오오요로이 효과를 받고 있는 캐릭터가 일반 공격 시, 열화의 붕괴를 발동하고 불 원소 범위 피해를 주는 동시에 몸을 지키는 타오르는 우명의 방패를 소환한다.\r\n열화의 붕괴는 1초마다 최대 1회 발동된다.\r\n생성된 방패의 피해 흡수량을 제외한 특성과 원소전투 스킬은 「타오르는 우명의 보호」와 동일하다.\r\n",
+              "descriptions": [
+                "불 원소 피해에 대해 250%의 흡수 효과를 보인다.",
+                "방패의 남은 피해 흡수량은, 타오르는 우명의 방패 갱신 시 중첩되며 지속 시간이 갱신된다.",
+                "방패의 피해 흡수량은 토마의 HP 최대치의 일정 비율을 초과할 수 없다.",
+                "토마가 전투 불능 시 열화의 오오요로이 효과는 사라진다."
+              ]
+            }
+          ],
+          "stats": [
+            "스킬 피해|{param1}%",
+            "열화의 붕괴 피해|{param2}%",
+            "보호막 흡수량|HP 최대치의 {param3}% + {param4}",
+            "보호막 지속 시간|{param5} 초",
+            "열화의 오오요로이 지속 시간|{param6} 초",
+            "재사용 대기시간|{param7} 초",
+            "원소 에너지|{param8}"
+          ]
         }
       ],
       "passives": [
         {
           "key": "p1",
-          "title": "NA",
-          "description": "",
+          "title": "가케타이 낚시",
+          "description": "여행자가 이나즈마에서 낚시를 성공하면, 토마의 도움을 받아 20%의 확률로 2배의 어획량을 획득한다\r\n",
           "descriptions": []
         },
         {
           "key": "p2",
-          "title": "NA",
-          "description": "",
+          "title": "다중 갑옷",
+          "description": "현재 필드 위에 있는 자신의 캐릭터가 타오르는 우명의 방패를 획득 또는 갱신하면, 보호막 강화 효과가 5% 증가한다. 지속 시간: 6초.\r\n해당 효과는 0.3초마다 최대 1회 발동한다. 최대 중첩수: 5회\r\n",
           "descriptions": []
         },
         {
           "key": "p3",
-          "title": "NA",
-          "description": "",
+          "title": "집어삼키는 불길",
+          "description": "진홍 열화의 오오요로이의 열화의 붕괴가 가하는 피해가 토마 HP 최대치의 2.2%만큼 증가한다\r\n",
           "descriptions": []
         }
       ],
       "constellations": [
         {
           "key": "c1",
-          "title": "NA",
-          "description": "",
+          "title": "전우의 의리",
+          "description": "토마 자신을 제외하고 토마의 타오르는 우명의 방패의 보호를 받는 캐릭터가 공격을 받으면, 토마의 타오르는 우명의 보호와 진홍 열화의 오오요로이의 재사용 대기시간이 3초 감소한다.\r\n해당 효과는 20초마다 최대 1회 발동한다\r\n",
           "descriptions": []
         },
         {
           "key": "c2",
-          "title": "NA",
-          "description": "",
+          "title": "보좌관의 재주",
+          "description": "진홍 열화의 오오요로이의 지속 시간이 3초 증가한다\r\n",
           "descriptions": []
         },
         {
           "key": "c3",
-          "title": "NA",
-          "description": "",
+          "title": "항거의 결의",
+          "description": "타오르는 우명의 보호의 스킬 레벨+3\r\n최대 Lv.15까지 상승\r\n",
           "descriptions": []
         },
         {
           "key": "c4",
-          "title": "NA",
-          "description": "",
+          "title": "가신의 오랜 계획",
+          "description": "진홍 열화의 오오요로이 발동 후, 토마의 원소 에너지를 15pt 회복한다\r\n",
           "descriptions": []
         },
         {
           "key": "c5",
-          "title": "NA",
-          "description": "",
+          "title": "맹렬한 들불",
+          "description": "진홍 열화의 오오요로이의 스킬 레벨+3\r\n최대 Lv.15까지 상승\r\n",
           "descriptions": []
         },
         {
           "key": "c6",
-          "title": "NA",
-          "description": "",
+          "title": "불타오르는 진심",
+          "description": "타오르는 우명의 방패 획득 또는 갱신 시, 파티 내 모든 캐릭터의 일반 공격, 강공격, 낙하 공격으로 가하는 피해가 15% 증가한다. 지속 시간: 6초\r\n",
           "descriptions": []
         }
       ]
@@ -7082,6 +7142,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "모운의 달",
+      "description": "자개와 산호로 만든 아름다운 전투용 활. 달빛의 활대엔 처연한 광채가 흐른다",
+      "refinements": [
+        "파티 내 모든 캐릭터의 원소 에너지 최대치의 총합을 기반으로, 1pt마다 해당 무기를 장착한 캐릭터의 원소폭발 피해가 {color}0.12{/color}% 증가한다. 해당 방식을 통해 원소폭발로 가하는 피해가 최대 {color}40{/color}%까지 증가한다",
+        "파티 내 모든 캐릭터의 원소 에너지 최대치의 총합을 기반으로, 1pt마다 해당 무기를 장착한 캐릭터의 원소폭발 피해가 {color}0.15{/color}% 증가한다. 해당 방식을 통해 원소폭발로 가하는 피해가 최대 {color}50{/color}%까지 증가한다",
+        "파티 내 모든 캐릭터의 원소 에너지 최대치의 총합을 기반으로, 1pt마다 해당 무기를 장착한 캐릭터의 원소폭발 피해가 {color}0.18{/color}% 증가한다. 해당 방식을 통해 원소폭발로 가하는 피해가 최대 {color}60{/color}%까지 증가한다",
+        "파티 내 모든 캐릭터의 원소 에너지 최대치의 총합을 기반으로, 1pt마다 해당 무기를 장착한 캐릭터의 원소폭발 피해가 {color}0.21{/color}% 증가한다. 해당 방식을 통해 원소폭발로 가하는 피해가 최대 {color}70{/color}%까지 증가한다",
+        "파티 내 모든 캐릭터의 원소 에너지 최대치의 총합을 기반으로, 1pt마다 해당 무기를 장착한 캐릭터의 원소폭발 피해가 {color}0.24{/color}% 증가한다. 해당 방식을 통해 원소폭발로 가하는 피해가 최대 {color}80{/color}%까지 증가한다"
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "용병 중검",
       "description": "수많은 전쟁과 오랜 세월을 견뎌낸 무겁고 단단한 대검",
@@ -7738,6 +7810,18 @@
       "name": "훈련용 대검",
       "description": "비록 그저 검 모양으로 만든 두꺼운 쇠붙이일 뿐이지만, 의지가 강한 사람은 이 대검으로 거대한 바위도 벨 수 있다",
       "refinements": []
+    },
+    {
+      "key": "wavebreakers-fin",
+      "name": "파도 베는 지느러미",
+      "description": "바닷속 반짝이는 재료로 만든 치도. 한때 텐구 일족이 소유했던 무기다",
+      "refinements": [
+        "파티 내 모든 캐릭터의 원소 에너지 최대치의 총합을 기반으로, 1pt마다 해당 무기를 장착한 캐릭터의 원소폭발 피해가 {color}0.12{/color}% 증가한다. 해당 방식을 통해 원소폭발로 가하는 피해가 최대 {color}40{/color}%까지 증가한다",
+        "파티 내 모든 캐릭터의 원소 에너지 최대치의 총합을 기반으로, 1pt마다 해당 무기를 장착한 캐릭터의 원소폭발 피해가 {color}0.15{/color}% 증가한다. 해당 방식을 통해 원소폭발로 가하는 피해가 최대 {color}50{/color}%까지 증가한다",
+        "파티 내 모든 캐릭터의 원소 에너지 최대치의 총합을 기반으로, 1pt마다 해당 무기를 장착한 캐릭터의 원소폭발 피해가 {color}0.18{/color}% 증가한다. 해당 방식을 통해 원소폭발로 가하는 피해가 최대 {color}60{/color}%까지 증가한다",
+        "파티 내 모든 캐릭터의 원소 에너지 최대치의 총합을 기반으로, 1pt마다 해당 무기를 장착한 캐릭터의 원소폭발 피해가 {color}0.21{/color}% 증가한다. 해당 방식을 통해 원소폭발로 가하는 피해가 최대 {color}70{/color}%까지 증가한다",
+        "파티 내 모든 캐릭터의 원소 에너지 최대치의 총합을 기반으로, 1pt마다 해당 무기를 장착한 캐릭터의 원소폭발 피해가 {color}0.24{/color}% 증가한다. 해당 방식을 통해 원소폭발로 가하는 피해가 최대 {color}80{/color}%까지 증가한다"
+      ]
     },
     {
       "key": "white-iron-greatsword",
@@ -9543,25 +9627,25 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
+      "key": "engulfing-storm",
       "name": "Engulfing Storm",
       "effect": "Continuously drains Energy Recharge.",
       "description": null
     },
     {
-      "key": "Slowing Water",
+      "key": "slowing-water",
       "name": "Slowing Water",
       "effect": "Increases skill CD durations.",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
+      "key": "smoldering-flames",
       "name": "Smoldering Flames",
       "effect": "Continuously inflicts damage over time.",
       "description": null
     },
     {
-      "key": "Condensed Ice",
+      "key": "condensed-ice",
       "name": "Condensed Ice",
       "effect": "Increases stamina consumption.",
       "description": null
@@ -9569,99 +9653,111 @@
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "Burning",
-      "effect": "Deals Pyro DMG over time.",
-      "description": null
-    },
-    {
-      "key": "Crystalize",
-      "name": "Crystalize",
-      "effect": "Creates a crystal that will provide a shield when picked up.",
-      "description": null
-    },
-    {
-      "key": "Electro-Charged",
-      "name": "Electro-Charged",
-      "effect": "Deals Electro DMG over time.",
-      "description": null
-    },
-    {
-      "key": "Frozen",
-      "name": "Frozen",
-      "effect": "Freezes the target.",
-      "description": null
-    },
-    {
-      "key": "Melt",
-      "name": "Melt",
-      "effect": "Deals extra damage.",
-      "description": null
-    },
-    {
-      "key": "Overloaded",
-      "name": "Overloaded",
-      "effect": "Deals AoE Pyro DMG.",
-      "description": null
-    },
-    {
-      "key": "Superconduct",
-      "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target's Physical RES by 50%.",
-      "description": null
-    },
-    {
-      "key": "Swirl",
-      "name": "Swirl",
-      "effect": "Deals extra elemental damage and spreads the effect.",
-      "description": null
-    },
-    {
-      "key": "Vaporize",
+      "key": "vaporize",
       "name": "Vaporize",
-      "effect": "Deals extra damage.",
+      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "burning",
+      "name": "Burning",
+      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
+      "description": null
+    },
+    {
+      "key": "overloaded",
+      "name": "Overloaded",
+      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
+      "description": null
+    },
+    {
+      "key": "melt",
+      "name": "Melt",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "vaporize-reverse",
+      "name": "Vaporize (Reverse)",
+      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "electro-charged",
+      "name": "Electro Charged",
+      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
+      "description": null
+    },
+    {
+      "key": "frozen",
+      "name": "Frozen",
+      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
+      "description": null
+    },
+    {
+      "key": "swirl",
+      "name": "Swirl",
+      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
+      "description": null
+    },
+    {
+      "key": "superconduct",
+      "name": "Superconduct",
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Melt (Reverse)",
+      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Crystallize",
+      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
+      "key": "enduring-rock",
       "name": "Enduring Rock",
       "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemies will decrease their Geo RES by 20% for 15s.",
       "description": null
     },
     {
-      "key": "Fervent Flames",
+      "key": "fervent-flames",
       "name": "Fervent Flames",
       "effect": "Affected by Cryo for 40% less time. Increases ATK by 25%.",
       "description": null
     },
     {
-      "key": "Soothing Waters",
+      "key": "soothing-waters",
       "name": "Soothing Waters",
       "effect": "Affected by Pyro for 40% less time. Increases incoming healing by 30%.",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
+      "key": "impetuous-winds",
       "name": "Impetuous Winds",
       "effect": "Decreases Stamina Consumption by 15%. Increases Movement SPD by 10%. Shortens Skill CD by 5%.",
       "description": null
     },
     {
-      "key": "High Voltage",
+      "key": "high-voltage",
       "name": "High Voltage",
       "effect": "Affected by Hydro for 40% less time. Superconduct, Overloaded, and Electro-Charged have a 100% chance to generate an Electro Elemental Particle (CD: 5s).",
       "description": null
     },
     {
-      "key": "Shattering Ice",
+      "key": "shattering-ice",
       "name": "Shattering Ice",
       "effect": "Affected by Electro for 40% less time. Increases CRIT Rate against enemies that are Frozen or affected by Cryo by 15%.",
       "description": null
     },
     {
-      "key": "Protective Canopy",
+      "key": "protective-canopy",
       "name": "Protective Canopy",
       "effect": "All Elemental RES by 15%. Physical RES + 15%",
       "description": "Any 4 Unique Elements"

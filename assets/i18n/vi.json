@@ -4797,7 +4797,7 @@
             "Sát Thương Lần 3|{param3}% *{param4}",
             "Sát Thương Lần 4|{param5}%",
             "Sát Thương Trọng Kích|{param6}%",
-            "Thể lực Trọng Kích tiêu hao|{param7} điểm",
+            "Thể Lực Trọng Kích Tiêu Hao|{param7} điểm",
             "Sát Thương Khi Rơi|{param8}%",
             "Sát Thương Khi Rơi Từ Độ Cao Thấp/Cao|{param9}% / {param10}%"
           ]
@@ -4813,7 +4813,7 @@
               "descriptions": [
                 "Có 250% hiệu quả hấp thụ đối với Sát Thương Nguyên Tố Hỏa;",
                 "Lượng hấp thụ sát thương còn lại của khiên sẽ cộng dồn khi nhận Khiên Lửa Hộ Mệnh lần nữa, đồng thời làm mới thời gian duy trì.",
-                "Lượng hấp thụ sát thương tối đa sẽ không vượt quá tỉ lệ nhất định dựa trên giới hạn HP của Thoma."
+                "Lượng hấp thụ sát thương của khiên tối đa sẽ không vượt quá tỷ lệ nhất định dựa trên giới hạn HP của Thoma."
               ]
             }
           ],
@@ -4832,11 +4832,11 @@
           "abilities": [
             {
               "name": "Chiến Giáp Lửa Đỏ",
-              "description": "Nhân vật trong trận có hiệu quả Chiến Giáp Lửa Đỏ khi đánh thường sẽ kích hoạt Lửa Đỏ Công Phá, gây Sát Thương Phạm Vi Nguyên Tố Hỏa, đồng thời triệu hồi ra Khiên Lửa Hộ Mệnh.\r\nLửa Đỏ Công Phá mỗi 1 giây tối đa kích hoạt một lần.\r\nKhi tạo khiên, ngoài lượng hấp thụ sát thương ra, đặc tính sẽ giống như khiên của kỹ năng nguyên tố \"Liệt Hỏa Hộ Mệnh\":\r\n",
+              "description": "Nhân vật trong trận có hiệu quả Chiến Giáp Lửa Đỏ khi đánh thường sẽ kích hoạt Lửa Đỏ Công Phá, gây Sát Thương Phạm Vi Nguyên Tố Hỏa, đồng thời triệu hồi ra Khiên Lửa Hộ Mệnh.\r\nLửa Đỏ Công Phá mỗi 1 giây tối đa kích hoạt một lần.\r\nĐối với khiên tạo ra, ngoài lượng hấp thụ sát thương ra, đặc tính sẽ giống như khiên của kỹ năng nguyên tố \"Liệt Hỏa Hộ Mệnh\":\r\n",
               "descriptions": [
                 "Có 250% hiệu quả hấp thụ đối với Sát Thương Nguyên Tố Hỏa;",
                 "Lượng hấp thụ sát thương còn lại của khiên sẽ cộng dồn khi nhận Khiên Lửa Hộ Mệnh lần nữa, đồng thời làm mới thời gian duy trì.",
-                "Lượng hấp thụ sát thương tối đa sẽ không vượt quá tỉ lệ nhất định dựa trên giới hạn HP của Thoma.",
+                "Lượng hấp thụ sát thương của khiên tối đa sẽ không vượt quá tỷ lệ nhất định dựa trên giới hạn HP của Thoma.",
                 "Khi Thoma ngã xuống, hiệu quả Chiến Giáp Lửa Đỏ sẽ bị xóa."
               ]
             }
@@ -4856,7 +4856,7 @@
         {
           "key": "p1",
           "title": "Tài Năng Câu Cá",
-          "description": "Khi câu cá thành công tại Inazuma, có 20% nhận gấp đôi sản lượng.\r\n",
+          "description": "Khi Nhà Lữ Hành câu cá thành công tại Inazuma, nhờ có Thoma giúp đỡ, có 20% khả năng nhận gấp đôi sản lượng.\r\n",
           "descriptions": []
         },
         {
@@ -4876,7 +4876,7 @@
         {
           "key": "c1",
           "title": "Nghĩa Vụ Của Đồng Bào",
-          "description": "Khiên Lửa Hộ Mệnh khi chịu sát thương cho nhân vật không phải Thoma, sẽ giúp Thoma giảm 3 giây CD kỹ năng Liệt Hỏa Hộ Mệnh, giảm 3 giây CD Chiến Giáp Rực Cháy.\r\nHiệu quả này mỗi 20 giây tối đa kích hoạt một lần.\r\n",
+          "description": "Khi nhân vật (Ngoại trừ bản thân Thoma) được bảo vệ bởi Khiên Lửa Hộ Mệnh của Thoma bị tấn công, sẽ giảm 3 giây CD Liệt Hỏa Hộ Mệnh, giảm 3 giây CD Chiến Giáp Rực Cháy của Thoma.\r\nHiệu quả này mỗi 20 giây tối đa kích hoạt 1 lần.\r\n",
           "descriptions": []
         },
         {
@@ -4906,7 +4906,7 @@
         {
           "key": "c6",
           "title": "Trái Tim Nhiệt Huyết",
-          "description": "Khi nhận hoặc làm mới Khiên Lửa Hộ Mệnh, tấn công thường, trọng kích, tấn công khi đáp của tất cả nhân vật trong đội tăng 15%, duy trì 6 giây.\r\n",
+          "description": "Khi nhận hoặc làm mới Khiên Lửa Hộ Mệnh, sát thương gây ra bởi tấn công thường, trọng kích, tấn công khi đáp của tất cả nhân vật trong đội tăng 15%, duy trì 6 giây.\r\n",
           "descriptions": []
         }
       ]
@@ -7123,6 +7123,18 @@
       ]
     },
     {
+      "key": "mouuns-moon",
+      "name": "Ánh Trăng Mouun",
+      "description": "Chiến cung tinh xảo làm từ vỏ sò và san hô. Trên thân cung phản chiếu ánh trăng đầy đau thương.",
+      "refinements": [
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.12{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này gây ra. Thông qua cách này, sát thương Kỹ Năng Nộ tăng tối đa {color}40{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.15{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}50{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.18{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}60{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.21{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}70{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.24{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}80{/color}%."
+      ]
+    },
+    {
       "key": "old-mercs-pal",
       "name": "Kiếm Dụng Binh",
       "description": "Kiếm cổ rất nặng và kiên cố, được tôi luyện qua năm tháng và chiến tranh.",
@@ -7779,6 +7791,18 @@
       "name": "Kiếm Huấn Luyện",
       "description": "Một thanh sắt được mài thành hình kiếm. Khi ở trong tay người có ý chí, thì cũng có được sức mạnh xẻ đá phá rừng.",
       "refinements": []
+    },
+    {
+      "key": "wavebreakers-fin",
+      "name": "Vây Cá Chẻ Sóng",
+      "description": "Trường đao làm từ những chất liệu lấp lánh sâu dưới đáy biển, từng được sở hữu bởi tộc Tengu.",
+      "refinements": [
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.12{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này gây ra. Thông qua cách này, sát thương Kỹ Năng Nộ tăng tối đa {color}40{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.15{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}50{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.18{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}60{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.21{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}70{/color}%.",
+        "Tổng giới hạn Năng Lượng Nguyên Tố của tất cả nhân vật trong đội, mỗi 1 điểm sẽ tăng {color}0.24{/color}% sát thương Kỹ Năng Nộ của nhân vật trang bị vũ khí này. Thông qua cách này, sát thương Kỹ Năng Nộ có thể tăng tối đa {color}80{/color}%."
+      ]
     },
     {
       "key": "white-iron-greatsword",
@@ -9584,25 +9608,25 @@
   ],
   "debuffs": [
     {
-      "key": "Engulfing Storm",
+      "key": "engulfing-storm",
       "name": "Tia Sét Tham Lam",
       "effect": "Liên tục tiêu hao Năng Lượng Nguyên Tố của nhân vật. Phản ứng Nguyên Tố có thể dập tắt trạng thái nguyên tố Lôi kèm theo nhân vật.",
       "description": null
     },
     {
-      "key": "Slowing Water",
+      "key": "slowing-water",
       "name": "Nước Lững Lờ",
       "effect": "Kéo dài thời gian CD.",
       "description": null
     },
     {
-      "key": "Smoldering Flames",
+      "key": "smoldering-flames",
       "name": "Ngọn Lửa Âm Ỉ",
       "effect": "Liên tục chịu ST Hỏa.",
       "description": null
     },
     {
-      "key": "Condensed Ice",
+      "key": "condensed-ice",
       "name": "Băng Ngưng Kết",
       "effect": "Thể lực tiêu hao tăng mạnh.",
       "description": null
@@ -9610,99 +9634,111 @@
   ],
   "reactions": [
     {
-      "key": "Burning",
-      "name": "Thiêu Đốt",
-      "effect": "Liên tục gây ST Hỏa.",
+      "key": "vaporize",
+      "name": "Vaporize",
+      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Crystalize",
-      "name": "Kết tinh",
-      "effect": "Sinh ra mảnh nguyên tố tương ứng khi phản ứng. Nhặt mảnh nguyên tố sẽ nhận được khiên tương ứng nguyên tố đó.",
+      "key": "burning",
+      "name": "Burning",
+      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
       "description": null
     },
     {
-      "key": "Electro-Charged",
-      "name": "Điệm Cảm",
-      "effect": "Liên tục gây ST Lôi. Có thể đa mục tiêu.",
+      "key": "overloaded",
+      "name": "Overloaded",
+      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
       "description": null
     },
     {
-      "key": "Frozen",
-      "name": "Đóng Băng",
-      "effect": "Đóng băng quái. Không thể di chuyển.",
+      "key": "melt",
+      "name": "Melt",
+      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Melt",
-      "name": "Tan Chảy",
-      "effect": "Gây thêm ST, và tiêu tan phản ứng.",
+      "key": "vaporize-reverse",
+      "name": "Vaporize (Reverse)",
+      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
       "description": null
     },
     {
-      "key": "Overloaded",
-      "name": "Quá Tải",
-      "effect": "Gây vụ nổ ST lớn. Có thể phá hủy vài vật thể kiên cố (khiên tay của quái, giáp).",
+      "key": "electro-charged",
+      "name": "Electro Charged",
+      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
       "description": null
     },
     {
-      "key": "Superconduct",
-      "name": "Siêu Dẫn",
-      "effect": "Gây ST Băng diện rộng và giảm Kháng Vật lý 50%.",
+      "key": "frozen",
+      "name": "Frozen",
+      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
       "description": null
     },
     {
-      "key": "Swirl",
-      "name": "Khuếch Tán",
-      "effect": "Gây thêm ST Nguyên Tố tương ứng, đính kèm hoặc thúc đẩy phản ứng nguyên tố khác.",
+      "key": "swirl",
+      "name": "Swirl",
+      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
       "description": null
     },
     {
-      "key": "Vaporize",
-      "name": "Bốc Hơi",
-      "effect": "Gây thêm ST, và \"bốc hơi\" nguyên tố theo đúng nghĩa.",
+      "key": "superconduct",
+      "name": "Superconduct",
+      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "description": null
+    },
+    {
+      "key": "melt-reverse",
+      "name": "Melt (Reverse)",
+      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "description": null
+    },
+    {
+      "key": "crystallize",
+      "name": "Crystallize",
+      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
       "description": null
     }
   ],
   "resonance": [
     {
-      "key": "Enduring Rock",
+      "key": "enduring-rock",
       "name": "Nham Kiên Định",
       "effect": "Hiệu quả khiên tăng 15%. Ngoài ra, khi nhân vật có khiên bảo vệ. ST gây ra tăng 15%, khi nhân vật gây ST cho địch sẽ khiến Kháng Nham của địch giảm 20%, duy trì 15s.",
       "description": null
     },
     {
-      "key": "Fervent Flames",
+      "key": "fervent-flames",
       "name": "Hỏa Nhiệt Tình",
       "effect": "Thời gian duy trì nguyên tố Băng kèm theo giảm 40%. Tấn công tăng 25%.",
       "description": null
     },
     {
-      "key": "Soothing Waters",
+      "key": "soothing-waters",
       "name": "Thủy Trị Liệu",
       "effect": "Thời gian duy trì nguyên tố Hỏa kèm theo giảm 40%. Nhận trị liệu tăng 30%.",
       "description": null
     },
     {
-      "key": "Impetuous Winds",
+      "key": "impetuous-winds",
       "name": "Phong Nhạy Bén",
       "effect": "Tiêu hao thể lực giảm 15%, tốc độ diu chuyển tăng 10%, CD rút ngắn 5%.",
       "description": null
     },
     {
-      "key": "High Voltage",
+      "key": "high-voltage",
       "name": "Lôi Mạnh Mẽ",
       "effect": "Thời gian duy trì nguyên tố Thủy kèm theo giảm 40%. Khi kích hoạt phản ứng siêu dẫn, quả tải và điện cảm, có tỉ lệ 100% rơi ra 1 Nguyên Tố Nhân Lôi. CD 5s.",
       "description": null
     },
     {
-      "key": "Shattering Ice",
+      "key": "shattering-ice",
       "name": "Băng Vụn Vỡ",
       "effect": "Thời gian duy trì nguyên tố Lôi kèm theo giảm 40%. Khi tấn công kèm theo nguyên tố Băng hoặc địch ở trạng thái Đóng Băng, tỷ lệ bạo kích tăng 15%",
       "description": null
     },
     {
-      "key": "Protective Canopy",
+      "key": "protective-canopy",
       "name": "Bảo Hộ Đan Xen",
       "effect": "Tất cả kháng Nguyên Tố tăng 15%, kháng Vật Lý tăng 15%.",
       "description": "4 Nguyên tố khác nhau bất kỳ"
