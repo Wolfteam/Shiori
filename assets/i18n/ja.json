@@ -8,7 +8,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·西風剣術·白",
+          "title": "西風剣術·白",
           "description": "",
           "abilities": [
             {
@@ -151,7 +151,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·ラピッドファイア",
+          "title": "ラピッドファイア",
           "description": "",
           "abilities": [
             {
@@ -287,7 +287,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·一流射手",
+          "title": "一流射手",
           "description": "",
           "abilities": [
             {
@@ -419,7 +419,7 @@
     },
     {
       "key": "arataki-itto",
-      "name": "Arataki Itto",
+      "name": "荒瀧一斗",
       "title": "Hanamizaka Heroics",
       "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
       "skills": [
@@ -518,7 +518,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·水の囁き",
+          "title": "水の囁き",
           "description": "",
           "abilities": [
             {
@@ -655,7 +655,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·征浪",
+          "title": "征浪",
           "description": "",
           "abilities": [
             {
@@ -809,7 +809,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·好運の剣",
+          "title": "好運の剣",
           "description": "",
           "abilities": [
             {
@@ -962,7 +962,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·滅邪四式",
+          "title": "滅邪四式",
           "description": "",
           "abilities": [
             {
@@ -1085,7 +1085,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·百煉の剣",
+          "title": "百煉の剣",
           "description": "",
           "abilities": [
             {
@@ -1211,7 +1211,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·狩人の射術",
+          "title": "狩人の射術",
           "description": "",
           "abilities": [
             {
@@ -1360,7 +1360,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·西風剣術·旧貴族",
+          "title": "西風剣術·旧貴族",
           "description": "",
           "abilities": [
             {
@@ -1509,7 +1509,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·罪滅ぼしの矢",
+          "title": "罪滅ぼしの矢",
           "description": "",
           "abilities": [
             {
@@ -1641,7 +1641,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·流天射術",
+          "title": "流天射術",
           "description": "",
           "abilities": [
             {
@@ -1774,7 +1774,7 @@
     },
     {
       "key": "gorou",
-      "name": "Gorou",
+      "name": "ゴロー",
       "title": "Canine Warrior",
       "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
       "skills": [
@@ -1867,7 +1867,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·往生秘伝槍法",
+          "title": "往生秘伝槍法",
           "description": "",
           "abilities": [
             {
@@ -2011,7 +2011,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·西風剣術",
+          "title": "西風剣術",
           "description": "",
           "abilities": [
             {
@@ -2152,7 +2152,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·我流剣術",
+          "title": "我流剣術",
           "description": "",
           "abilities": [
             {
@@ -2316,7 +2316,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·儀典の剣術",
+          "title": "儀典の剣術",
           "description": "",
           "abilities": [
             {
@@ -2437,7 +2437,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·神里流·傾き",
+          "title": "神里流·傾き",
           "description": "",
           "abilities": [
             {
@@ -2591,7 +2591,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·雲来剣法",
+          "title": "雲来剣法",
           "description": "",
           "abilities": [
             {
@@ -2729,7 +2729,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·バンバン",
+          "title": "バンバン",
           "description": "",
           "abilities": [
             {
@@ -2850,7 +2850,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·天狗伝弓術",
+          "title": "天狗伝弓術",
           "description": "",
           "abilities": [
             {
@@ -2975,7 +2975,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·指先の雷",
+          "title": "指先の雷",
           "description": "",
           "abilities": [
             {
@@ -3114,7 +3114,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·因果点破",
+          "title": "因果点破",
           "description": "",
           "abilities": [
             {
@@ -3285,7 +3285,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·千金擲",
+          "title": "千金擲",
           "description": "",
           "abilities": [
             {
@@ -3413,7 +3413,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·西風剣術·メイド",
+          "title": "西風剣術·メイド",
           "description": "",
           "abilities": [
             {
@@ -3564,7 +3564,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·雲来古剣法",
+          "title": "雲来古剣法",
           "description": "",
           "abilities": [
             {
@@ -3706,7 +3706,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·源流",
+          "title": "源流",
           "description": "",
           "abilities": [
             {
@@ -3867,7 +3867,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·鋼の脊",
+          "title": "鋼の脊",
           "description": "",
           "abilities": [
             {
@@ -4022,7 +4022,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·教会槍術",
+          "title": "教会槍術",
           "description": "",
           "abilities": [
             {
@@ -4144,7 +4144,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·水の常形",
+          "title": "水の常形",
           "description": "",
           "abilities": [
             {
@@ -4295,7 +4295,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·忍刀·終末番",
+          "title": "忍刀·終末番",
           "description": "",
           "abilities": [
             {
@@ -4465,7 +4465,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·簡式風霊作成",
+          "title": "簡式風霊作成",
           "description": "",
           "abilities": [
             {
@@ -4596,12 +4596,12 @@
           "description": "",
           "abilities": [
             {
-              "name": "Normal Attack",
+              "name": "通常攻撃",
               "description": "最大6段の連続射撃を行う。\r\n",
               "descriptions": []
             },
             {
-              "name": "Charged Attack",
+              "name": "重撃",
               "description": "ダメージがより高く、より精確な狙い撃ちを発動する。\r\n照準時、水元素の力が矢先に集まる。激流を込めた矢が敵に命中する時に水元素ダメージを与え、断流効果を付与する。\r\n",
               "descriptions": []
             },
@@ -4775,7 +4775,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·瞬破槍勢",
+          "title": "瞬破槍勢",
           "description": "",
           "abilities": [
             {
@@ -4922,7 +4922,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·異邦の鉄風",
+          "title": "異邦の鉄風",
           "description": "",
           "abilities": [
             {
@@ -5059,7 +5059,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·異邦の驚雷",
+          "title": "異邦の驚雷",
           "description": "",
           "abilities": [
             {
@@ -5195,7 +5195,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·異邦の岩峰",
+          "title": "異邦の岩峰",
           "description": "",
           "abilities": [
             {
@@ -5317,7 +5317,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·神代の射術",
+          "title": "神代の射術",
           "description": "",
           "abilities": [
             {
@@ -5459,7 +5459,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·料理技法",
+          "title": "料理技法",
           "description": "",
           "abilities": [
             {
@@ -5583,7 +5583,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·微塵突進",
+          "title": "微塵突進",
           "description": "",
           "abilities": [
             {
@@ -5718,7 +5718,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·古華剣法",
+          "title": "古華剣法",
           "description": "",
           "abilities": [
             {
@@ -5863,7 +5863,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·炎舞",
+          "title": "炎舞",
           "description": "",
           "abilities": [
             {
@@ -6003,7 +6003,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·封蝋の印",
+          "title": "封蝋の印",
           "description": "",
           "abilities": [
             {
@@ -6136,7 +6136,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·打ち上げ花火",
+          "title": "打ち上げ花火",
           "description": "",
           "abilities": [
             {
@@ -6275,7 +6275,7 @@
       "skills": [
         {
           "key": "s1",
-          "title": "通常攻撃·岩雨",
+          "title": "岩雨",
           "description": "",
           "abilities": [
             {
@@ -9624,68 +9624,68 @@
   "reactions": [
     {
       "key": "vaporize",
-      "name": "Vaporize",
-      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "name": "蒸発",
+      "effect": "「炎元素」と「水元素」が接触すると、「蒸発」反応が発生します。蒸発反応が発生した後、元にあった水元素または炎元素は蒸気と共に気化します…",
       "description": null
     },
     {
       "key": "burning",
-      "name": "Burning",
-      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
+      "name": "燃焼",
+      "effect": "「炎元素」と「草元素」が接触すると、「燃焼」反応が発生します…燃焼反応は持続的に炎元素ダメージを与えます。",
       "description": null
     },
     {
       "key": "overloaded",
-      "name": "Overloaded",
-      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
+      "name": "過負荷",
+      "effect": "「炎元素」と「雷元素」が接触すると、「過負荷」反応が発生します。過負荷反応は激しい爆発を起こし、炎元素範囲ダメージを与えます。また爆発は堅い物体を簡単に壊すことができるようです…",
       "description": null
     },
     {
       "key": "melt",
-      "name": "Melt",
-      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "name": "溶解",
+      "effect": "「氷元素」と「炎元素」が接触すると、「溶解」反応が発生します。溶解反応が発生した後、元にあった氷元素または炎元素は反応と共に消えていきます…",
       "description": null
     },
     {
       "key": "vaporize-reverse",
-      "name": "Vaporize (Reverse)",
-      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "name": "蒸発 (Reverse)",
+      "effect": "「蒸発」反応自体ダメージはありませんが、「炎元素」または「水元素」の攻撃によって蒸発が発生すると、一定の比率で該当攻撃の与えるダメージがアップします…",
       "description": null
     },
     {
       "key": "electro-charged",
-      "name": "Electro Charged",
-      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
+      "name": "感電",
+      "effect": "「雷元素」と「水元素」が接触すると、「感電」反応が発生し、発生期間中は雷元素ダメージを持続的に与えます。",
       "description": null
     },
     {
       "key": "frozen",
-      "name": "Frozen",
-      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
+      "name": "凍結",
+      "effect": "「氷元素」と「水元素」が接触すると、「凍結」反応が発生します。生物が凍結状態になると行動不能になり、硬くなります…",
       "description": null
     },
     {
       "key": "swirl",
-      "name": "Swirl",
-      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
+      "name": "拡散",
+      "effect": "「風元素」が一部の元素と接触すると、「拡散」が発生する可能性があります。拡散は元素ダメージを与え、付着または他の反応を起こすことができます。",
       "description": null
     },
     {
       "key": "superconduct",
-      "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "name": "超電導",
+      "effect": "「氷元素」と「雷元素」が接触すると、「超電導」反応が発生します…超電導反応は氷元素範囲ダメージを与え、影響を受けた生物の物理耐性を大幅に減少させます。",
       "description": null
     },
     {
       "key": "melt-reverse",
-      "name": "Melt (Reverse)",
-      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "name": "溶解 (Reverse)",
+      "effect": "「溶解」反応自体ダメージはありませんが、「炎元素」または「氷元素」攻撃によって溶解が発生すると、一定の比率で該当攻撃の与えるダメージがアップします…",
       "description": null
     },
     {
       "key": "crystallize",
-      "name": "Crystallize",
-      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
+      "name": "結晶化",
+      "effect": "「岩元素」が水/炎/氷/雷元素と接触する時、「結晶」反応が起こります！",
       "description": null
     }
   ],
