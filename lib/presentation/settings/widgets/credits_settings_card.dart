@@ -99,6 +99,22 @@ class CreditsSettingsCard extends StatelessWidget {
               ),
             ),
             const BulletList(items: ['Arctara#7162'], fontSize: 12),
+            Container(
+              margin: const EdgeInsets.only(top: 10),
+              child: Text(
+                s.deutsch,
+                style: textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+              ),
+            ),
+            const BulletList(items: ['Marik#0823', 'yourGeneralGenshinWeeb#1460'], fontSize: 12),
+            Container(
+              margin: const EdgeInsets.only(top: 10),
+              child: Text(
+                s.french,
+                style: textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
+              ),
+            ),
+            const BulletList(items: ['GuadoDex#3357', 'therealcorwin', 'Herellya#8181'], fontSize: 12),
           ],
         ),
       ),
