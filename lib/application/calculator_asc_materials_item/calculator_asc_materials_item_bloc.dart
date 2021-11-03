@@ -183,14 +183,16 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
         minSkillLevel,
         maxSkillLevel,
       );
-      skills.add(item.copyWith.call(
-        currentLevel: cl,
-        desiredLevel: dl,
-        isCurrentDecEnabled: enableTuple.item1,
-        isCurrentIncEnabled: enableTuple.item2,
-        isDesiredDecEnabled: enableTuple.item3,
-        isDesiredIncEnabled: enableTuple.item4,
-      ));
+      skills.add(
+        item.copyWith.call(
+          currentLevel: cl,
+          desiredLevel: dl,
+          isCurrentDecEnabled: enableTuple.item1,
+          isCurrentIncEnabled: enableTuple.item2,
+          isDesiredDecEnabled: enableTuple.item3,
+          isDesiredIncEnabled: enableTuple.item4,
+        ),
+      );
     }
 
     return currentState.copyWith.call(skills: skills);
@@ -227,14 +229,16 @@ class CalculatorAscMaterialsItemBloc extends Bloc<CalculatorAscMaterialsItemEven
         minSkillLevel,
         maxSkillLevel,
       );
-      skills.add(skill.copyWith.call(
-        currentLevel: cSkill,
-        desiredLevel: dSkill,
-        isCurrentDecEnabled: enableTuple.item1,
-        isCurrentIncEnabled: enableTuple.item2,
-        isDesiredDecEnabled: enableTuple.item3,
-        isDesiredIncEnabled: enableTuple.item4,
-      ));
+      skills.add(
+        skill.copyWith.call(
+          currentLevel: cSkill,
+          desiredLevel: dSkill,
+          isCurrentDecEnabled: enableTuple.item1,
+          isCurrentIncEnabled: enableTuple.item2,
+          isDesiredDecEnabled: enableTuple.item3,
+          isDesiredIncEnabled: enableTuple.item4,
+        ),
+      );
     }
 
     return skills;
