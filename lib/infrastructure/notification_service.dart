@@ -140,7 +140,7 @@ class NotificationServiceImpl implements NotificationService {
     final _androidPlatformChannelSpecifics = AndroidNotificationDetails(
       _channelId,
       _channelName,
-      _channelDescription,
+      channelDescription: _channelDescription,
       importance: Importance.max,
       priority: Priority.high,
       enableLights: true,
