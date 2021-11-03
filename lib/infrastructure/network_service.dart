@@ -14,7 +14,7 @@ class NetworkServiceImpl implements NetworkService {
       InternetAddress('2620:0:ccc::2', type: InternetAddressType.IPv6), // OpenDNS
       InternetAddress('180.76.76.76', type: InternetAddressType.IPv4), // Baidu
       InternetAddress('2400:da00::6666', type: InternetAddressType.IPv6), // Baidu
-    ].map((e) => AddressCheckOptions(e)).toList();
+    ].map((e) => AddressCheckOptions(e, timeout: const Duration(seconds: 5))).toList();
 
     CustomInternetConnectionChecker().addresses = [...CustomInternetConnectionChecker.DEFAULT_ADDRESSES] + address;
   }
