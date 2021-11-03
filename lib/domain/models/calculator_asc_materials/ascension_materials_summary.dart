@@ -14,7 +14,7 @@ class AscensionMaterialsSummary with _$AscensionMaterialsSummary {
 
 @freezed
 class MaterialSummary with _$MaterialSummary implements SortableGroupedMaterial {
-  @Implements(SortableGroupedMaterial)
+  @Implements<SortableGroupedMaterial>()
   const factory MaterialSummary({
     required String key,
     required MaterialType type,

@@ -7,7 +7,7 @@ part 'material_card_model.freezed.dart';
 
 @freezed
 class MaterialCardModel with _$MaterialCardModel implements SortableGroupedMaterial {
-  @Implements(SortableGroupedMaterial)
+  @Implements<SortableGroupedMaterial>()
   const factory MaterialCardModel.item({
     required String key,
     required String name,
