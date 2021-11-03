@@ -11,5 +11,7 @@ analyzer:
     - '**/*.g.dart'
     - lib/**/*.*.dart
     - lib/generated/intl/*
+    - '**/mocks.mocks.dart'
+    - '**/shiori_icons.dart'
   errors:
     missing_return: error
