@@ -100,7 +100,7 @@ class NotificationListTitle extends StatelessWidget {
                 Positioned(
                   top: 0,
                   right: 0,
-                  child: Icon(Icons.notifications_active, color: theme.accentColor),
+                  child: Icon(Icons.notifications_active, color: theme.colorScheme.secondary),
                 ),
             ],
           ),

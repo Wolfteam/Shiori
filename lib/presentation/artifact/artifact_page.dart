@@ -76,10 +76,12 @@ class _PortraitLayout extends StatelessWidget {
                         body: Wrap(
                           alignment: WrapAlignment.center,
                           children: state.images
-                              .map((e) => Container(
-                                    margin: Styles.edgeInsetAll5,
-                                    child: Image.asset(e, width: size * 2, height: size * 2),
-                                  ))
+                              .map(
+                                (e) => Container(
+                                  margin: Styles.edgeInsetAll5,
+                                  child: Image.asset(e, width: size * 2, height: size * 2),
+                                ),
+                              )
                               .toList(),
                         ),
                         textColor: rarityColor,
@@ -182,8 +184,12 @@ class _LandscapeLayout extends StatelessWidget {
                                 body: Wrap(
                                   alignment: WrapAlignment.center,
                                   children: state.images
-                                      .map((e) =>
-                                          Container(margin: Styles.edgeInsetAll5, child: Image.asset(e, width: imgSize * 2, height: imgSize * 2)))
+                                      .map(
+                                        (e) => Container(
+                                          margin: Styles.edgeInsetAll5,
+                                          child: Image.asset(e, width: imgSize * 2, height: imgSize * 2),
+                                        ),
+                                      )
                                       .toList(),
                                 ),
                                 textColor: rarityColor,

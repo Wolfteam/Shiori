@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
@@ -9,7 +10,6 @@ import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/mixins/app_fab_mixin.dart';
 import 'package:shiori/presentation/shared/nothing_found_column.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'widgets/game_code_list_item.dart';
@@ -193,7 +193,7 @@ class __PortraitLayoutState extends State<_PortraitLayout> {
                   margin: const EdgeInsets.only(top: 10),
                   child: ItemDescriptionDetail(
                     title: s.workingCodes,
-                    textColor: Theme.of(context).accentColor,
+                    textColor: Theme.of(context).colorScheme.secondary,
                     body: Container(),
                   ),
                 ),
@@ -208,7 +208,7 @@ class __PortraitLayoutState extends State<_PortraitLayout> {
               SliverToBoxAdapter(
                 child: ItemDescriptionDetail(
                   title: s.expiredCodes,
-                  textColor: Theme.of(context).accentColor,
+                  textColor: Theme.of(context).colorScheme.secondary,
                   body: Container(),
                 ),
               ),
@@ -282,7 +282,7 @@ class __LandScapeLayoutState extends State<_LandScapeLayout> {
                       margin: const EdgeInsets.only(top: 10),
                       child: ItemDescriptionDetail(
                         title: s.workingCodes,
-                        textColor: Theme.of(context).accentColor,
+                        textColor: Theme.of(context).colorScheme.secondary,
                         body: Container(),
                       ),
                     ),
@@ -310,7 +310,7 @@ class __LandScapeLayoutState extends State<_LandScapeLayout> {
                       margin: const EdgeInsets.only(top: 10),
                       child: ItemDescriptionDetail(
                         title: s.expiredCodes,
-                        textColor: Theme.of(context).accentColor,
+                        textColor: Theme.of(context).colorScheme.secondary,
                         body: Container(),
                       ),
                     ),

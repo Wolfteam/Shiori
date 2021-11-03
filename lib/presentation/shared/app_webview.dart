@@ -3,9 +3,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/shared/page_message.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import 'package:webview_windows/webview_windows.dart';
 
 import 'loading.dart';

@@ -35,7 +35,7 @@ class _ClearAllDialogState extends State<ClearAllDialog> {
             return ListTile(
               key: Key('$index'),
               title: Text(item, overflow: TextOverflow.ellipsis),
-              selectedTileColor: theme.accentColor.withOpacity(0.2),
+              selectedTileColor: theme.colorScheme.secondary.withOpacity(0.2),
               selected: _itemToClear == item,
               onTap: () {
                 setState(() {

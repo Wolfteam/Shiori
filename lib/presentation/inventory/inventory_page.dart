@@ -21,7 +21,7 @@ class InventoryPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text(s.myInventory),
-          bottom: TabBar(tabs: tabs),
+          bottom: TabBar(tabs: tabs, indicatorColor: Theme.of(context).colorScheme.secondary),
           actions: [
             IconButton(
               icon: const Icon(Icons.clear_all),

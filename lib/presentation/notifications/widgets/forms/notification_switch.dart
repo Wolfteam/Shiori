@@ -21,7 +21,7 @@ class NotificationSwitch extends StatelessWidget {
       value: showNotification,
       onChanged: (newValue) => context.read<NotificationBloc>().add(NotificationEvent.showNotificationChanged(show: newValue)),
       controlAffinity: ListTileControlAffinity.leading,
-      activeColor: theme.accentColor,
+      activeColor: theme.colorScheme.secondary,
     );
   }
 }

@@ -49,16 +49,18 @@ class _PortraitLayout extends StatelessWidget {
                 title: s.builds,
                 body: Column(
                   children: state.builds
-                      .map((build) => CharacterDetailBuildCard(
-                            isRecommended: build.isRecommended,
-                            type: build.type,
-                            subType: build.subType,
-                            skillPriorities: build.skillPriorities,
-                            elementType: state.elementType,
-                            weapons: build.weapons,
-                            artifacts: build.artifacts,
-                            subStatsToFocus: build.subStatsToFocus,
-                          ))
+                      .map(
+                        (build) => CharacterDetailBuildCard(
+                          isRecommended: build.isRecommended,
+                          type: build.type,
+                          subType: build.subType,
+                          skillPriorities: build.skillPriorities,
+                          elementType: state.elementType,
+                          weapons: build.weapons,
+                          artifacts: build.artifacts,
+                          subStatsToFocus: build.subStatsToFocus,
+                        ),
+                      )
                       .toList(),
                 ),
                 textColor: state.elementType.getElementColorFromContext(context),
@@ -167,16 +169,18 @@ class _LandscapeLayout extends StatelessWidget {
                 title: s.builds,
                 body: Column(
                   children: state.builds
-                      .map((build) => CharacterDetailBuildCard(
-                            isRecommended: build.isRecommended,
-                            type: build.type,
-                            subType: build.subType,
-                            skillPriorities: build.skillPriorities,
-                            elementType: state.elementType,
-                            weapons: build.weapons,
-                            artifacts: build.artifacts,
-                            subStatsToFocus: build.subStatsToFocus,
-                          ))
+                      .map(
+                        (build) => CharacterDetailBuildCard(
+                          isRecommended: build.isRecommended,
+                          type: build.type,
+                          subType: build.subType,
+                          skillPriorities: build.skillPriorities,
+                          elementType: state.elementType,
+                          weapons: build.weapons,
+                          artifacts: build.artifacts,
+                          subStatsToFocus: build.subStatsToFocus,
+                        ),
+                      )
                       .toList(),
                 ),
                 textColor: state.elementType.getElementColorFromContext(context),

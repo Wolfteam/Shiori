@@ -74,14 +74,7 @@ class _ObtainedFromItem extends StatelessWidget {
       children: [
         Wrap(
           alignment: WrapAlignment.center,
-          children: from.items
-              .map((e) => WrappedAscensionMaterial(
-                    itemKey: e.key,
-                    image: e.image,
-                    quantity: e.quantity,
-                    size: size * 2,
-                  ))
-              .toList(),
+          children: from.items.map((e) => WrappedAscensionMaterial(itemKey: e.key, image: e.image, quantity: e.quantity, size: size * 2)).toList(),
         ),
         if (showDivider) const FractionallySizedBox(widthFactor: 0.8, child: Divider()),
       ],

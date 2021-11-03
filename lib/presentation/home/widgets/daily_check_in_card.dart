@@ -20,7 +20,7 @@ class DailyCheckInCard extends StatelessWidget {
       title: s.dailyCheckIn,
       onClick: _goToPageDailyCheckInPage,
       iconToTheLeft: iconToTheLeft,
-      icon: Icon(Icons.rotate_right_sharp, size: 60, color: theme.accentColor),
+      icon: Icon(Icons.rotate_right_sharp, size: 60, color: theme.colorScheme.secondary),
       children: [
         CardDescription(text: s.dailyCheckInMsg),
       ],

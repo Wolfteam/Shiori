@@ -24,7 +24,7 @@ class TierListCard extends StatelessWidget {
       title: s.tierListBuilder,
       iconToTheLeft: iconToTheLeft,
       onClick: _gotoTierListPage,
-      icon: Icon(Shiori.hive_emblem, size: 60, color: theme.accentColor),
+      icon: Icon(Shiori.hive_emblem, size: 60, color: theme.colorScheme.secondary),
       children: [
         CardDescription(text: s.buildYourOwnTierList),
       ],

@@ -4,6 +4,7 @@ linter:
   rules:
     prefer_single_quotes: true
     avoid_classes_with_only_static_members: false
+    depend_on_referenced_packages: false
 
 analyzer:
   exclude: 

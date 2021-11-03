@@ -45,10 +45,7 @@ class HighlightedText extends StatelessWidget {
       spans.add(TextSpan(text: part));
 
       final highlighted = text.substring(currentIndex + part.length, currentIndex + part.length + value.length);
-      spans.add(TextSpan(
-        text: replaceColorTags(highlighted),
-        style: highlightedStyle,
-      ));
+      spans.add(TextSpan(text: replaceColorTags(highlighted), style: highlightedStyle));
 
       currentIndex += part.length + highlighted.length;
     }

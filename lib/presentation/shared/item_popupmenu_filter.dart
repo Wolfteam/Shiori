@@ -46,18 +46,18 @@ class ItemPopupMenuFilter<TEnum> extends StatelessWidget {
 
   List<CheckedPopupMenuItem<TEnum>> getValuesToUse(List<TranslatedEnum<TEnum>> translatedValues) {
     return translatedValues
-        .map((e) => CheckedPopupMenuItem<TEnum>(
-              checked: selectedValue == e.enumValue,
-              value: e.enumValue,
-              child: Text(e.translation),
-            ))
+        .map(
+          (e) => CheckedPopupMenuItem<TEnum>(
+            checked: selectedValue == e.enumValue,
+            value: e.enumValue,
+            child: Text(e.translation),
+          ),
+        )
         .toList();
   }
 
   void handleItemSelected(TEnum value) {
-    if (onSelected != null) {
-      onSelected!(value);
-    }
+    onSelected?.call(value);
   }
 }
 

@@ -60,7 +60,7 @@ class _NotificationsPageState extends State<NotificationsPage> with SingleTicker
                 groupBy: (item) => s.translateAppNotificationType(item.type),
                 itemBuilder: (context, element) => _buildNotificationItem(state.useTwentyFourHoursFormat, element),
                 groupSeparatorBuilder: (type) => Container(
-                  color: theme.accentColor.withOpacity(0.5),
+                  color: theme.colorScheme.secondary.withOpacity(0.5),
                   padding: Styles.edgeInsetAll5,
                   child: Text(type, style: theme.textTheme.headline6),
                 ),

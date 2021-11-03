@@ -64,7 +64,7 @@ class _SearchBoxState extends State<SearchBox> {
               child: TextField(
                 controller: _searchBoxTextController,
                 focusNode: _searchFocusNode,
-                cursorColor: theme.accentColor,
+                cursorColor: theme.colorScheme.secondary,
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.go,
                 decoration: InputDecoration(

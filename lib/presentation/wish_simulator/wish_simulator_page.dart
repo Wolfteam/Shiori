@@ -40,19 +40,21 @@ class _WishSimulatorPageState extends State<WishSimulatorPage> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return SafeArea(child: BlocBuilder<UrlPageBloc, UrlPageState>(
-      builder: (context, state) {
-        return state.map(
-          loading: (_) => const Loading(),
-          loaded: (state) => AppWebView(
-            appBar: AppBar(title: Text(s.wishSimulator)),
-            url: state.wishSimulatorUrl,
-            userAgent: state.userAgent,
-            hasInternetConnection: state.hasInternetConnection,
-            script: script,
-          ),
-        );
-      },
-    ));
+    return SafeArea(
+      child: BlocBuilder<UrlPageBloc, UrlPageState>(
+        builder: (context, state) {
+          return state.map(
+            loading: (_) => const Loading(),
+            loaded: (state) => AppWebView(
+              appBar: AppBar(title: Text(s.wishSimulator)),
+              url: state.wishSimulatorUrl,
+              userAgent: state.userAgent,
+              hasInternetConnection: state.hasInternetConnection,
+              script: script,
+            ),
+          );
+        },
+      ),
+    );
   }
 }

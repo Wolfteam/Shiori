@@ -34,15 +34,16 @@ class MaterialItem extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         InkWell(
-            onLongPress: () => _showQuantityPickerDialog(context),
-            borderRadius: BorderRadius.circular(30),
-            child: IconButton(
-              icon: Image.asset(image),
-              iconSize: 45,
-              splashRadius: 30,
-              constraints: const BoxConstraints(),
-              onPressed: () => _gotoMaterialPage(context),
-            )),
+          onLongPress: () => _showQuantityPickerDialog(context),
+          borderRadius: BorderRadius.circular(30),
+          child: IconButton(
+            icon: Image.asset(image),
+            iconSize: 45,
+            splashRadius: 30,
+            constraints: const BoxConstraints(),
+            onPressed: () => _gotoMaterialPage(context),
+          ),
+        ),
         if (quantity > 0)
           Text(
             type == app.MaterialType.currency ? CurrencyUtils.formatNumber(quantity) : '$quantity',

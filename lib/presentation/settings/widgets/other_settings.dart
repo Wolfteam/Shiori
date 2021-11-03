@@ -44,31 +44,31 @@ class OtherSettings extends StatelessWidget {
                 loaded: (settingsState) => Column(
                   children: [
                     SwitchListTile(
-                      activeColor: theme.accentColor,
+                      activeColor: theme.colorScheme.secondary,
                       title: Text(s.showCharacterDetails),
                       value: settingsState.showCharacterDetails,
                       onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.showCharacterDetailsChanged(newValue: newVal)),
                     ),
                     SwitchListTile(
-                      activeColor: theme.accentColor,
+                      activeColor: theme.colorScheme.secondary,
                       title: Text(s.showWeaponDetails),
                       value: settingsState.showWeaponDetails,
                       onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.showWeaponDetailsChanged(newValue: newVal)),
                     ),
                     SwitchListTile(
-                      activeColor: theme.accentColor,
+                      activeColor: theme.colorScheme.secondary,
                       title: Text(s.pressOnceAgainToExit),
                       value: settingsState.doubleBackToClose,
                       onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.doubleBackToCloseChanged(newValue: newVal)),
                     ),
                     SwitchListTile(
-                      activeColor: theme.accentColor,
+                      activeColor: theme.colorScheme.secondary,
                       title: Text(s.useOfficialMap),
                       value: settingsState.useOfficialMap,
                       onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.useOfficialMapChanged(newValue: newVal)),
                     ),
                     SwitchListTile(
-                      activeColor: theme.accentColor,
+                      activeColor: theme.colorScheme.secondary,
                       title: Text(s.use24HourFormatOnDates),
                       value: settingsState.useTwentyFourHoursFormat,
                       onChanged: (newVal) => context.read<SettingsBloc>().add(SettingsEvent.useTwentyFourHoursFormat(newValue: newVal)),

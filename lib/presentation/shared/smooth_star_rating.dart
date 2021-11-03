@@ -19,7 +19,7 @@ class SmoothStarRating extends StatefulWidget {
   final double spacing;
   final bool isReadOnly;
 
-  SmoothStarRating({
+  const SmoothStarRating({
     this.starCount = 5,
     this.isReadOnly = false,
     this.spacing = 0.0,
@@ -32,9 +32,7 @@ class SmoothStarRating extends StatefulWidget {
     this.filledIconData = Icons.star,
     this.halfFilledIconData = Icons.star_half,
     this.allowHalfRating = true,
-  }) {
-    assert(this.rating != null);
-  }
+  });
 
   @override
   _SmoothStarRatingState createState() => _SmoothStarRatingState();

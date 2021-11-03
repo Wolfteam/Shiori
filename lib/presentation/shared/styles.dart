@@ -22,7 +22,7 @@ class Styles {
   static const edgeInsetAll15 = EdgeInsets.all(15);
   static const edgeInsetAll10 = EdgeInsets.all(10);
   static const edgeInsetAll5 = EdgeInsets.all(5);
-  static const edgeInsetAll0 = EdgeInsets.all(0);
+  static const edgeInsetAll0 = EdgeInsets.zero;
   static const edgeInsetHorizontal16 = EdgeInsets.symmetric(horizontal: 16);
   static const edgeInsetVertical5 = EdgeInsets.symmetric(vertical: 5);
   static const edgeInsetHorizontal5 = EdgeInsets.symmetric(horizontal: 5);

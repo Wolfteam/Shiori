@@ -22,7 +22,7 @@ class NotificationsCard extends StatelessWidget {
       title: s.notifications,
       onClick: (context) => _goToNotificationsPage(context),
       iconToTheLeft: iconToTheLeft,
-      icon: Icon(Icons.notifications, color: theme.accentColor, size: 60),
+      icon: Icon(Icons.notifications, color: theme.colorScheme.secondary, size: 60),
       children: [
         CardDescription(text: s.createYourCustomNotifications),
       ],
