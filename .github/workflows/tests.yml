@@ -1,4 +1,4 @@
-name: Tests
+name: flutter_tests
 on:
   pull_request:
     branches:
@@ -14,6 +14,10 @@ jobs:
     steps:
       - name: Checkout the code
         uses: actions/checkout@v2
+
+      - name: Create secrets file
+        run: |
+          echo class Secrets { static String appCenterKey = '1234'; } > lib/infrastructure/telemetry/secrets.dart
 
       - name: Install and set flutter version
         uses: subosito/flutter-action@v1.4.0
