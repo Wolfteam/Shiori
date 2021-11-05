@@ -1,0 +1,31 @@
+name: Tests
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+  push:
+    branches:
+      - main
+      - develop
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: Install and set flutter version
+        uses: subosito/flutter-action@v1.4.0
+
+      - name: Restore packages
+        run: flutter pub get
+
+      - name: Run build_runner build
+        run: flutter pub run build_runner build --delete-conflicting-outputs
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Run tests
+        run: flutter test --coverage
