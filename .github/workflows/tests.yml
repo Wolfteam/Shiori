@@ -19,19 +19,19 @@ jobs:
         run: |
           echo "class Secrets { static String appCenterKey = '1234'; }" > lib/infrastructure/telemetry/secrets.dart
 
-      - name: Generate localization files
-        run: flutter pub add intl_utils
-
       - name: Install and set flutter version
         uses: subosito/flutter-action@v1
         with:
           flutter-version: '2.5.3'
-
-      - name: Restore packages
-        run: | 
-          flutter pub get
+          
+      - name: Generate localization files
+        run: |
+          flutter pub add intl_utils
           flutter pub run intl_utils:generate
 
+      - name: Restore packages
+        run: flutter pub get
+          
       - name: Run build_runner build
         run: flutter pub run build_runner build --delete-conflicting-outputs
 
