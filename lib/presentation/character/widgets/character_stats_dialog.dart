@@ -33,10 +33,9 @@ class _CharacterStatsDialogState extends State<CharacterStatsDialog> {
     final mq = MediaQuery.of(context);
     return AlertDialog(
       content: SizedBox(
-        height: mq.getHeightForDialogs(_currentStat.descriptions.length),
+        height: mq.getHeightForDialogs(_currentStat.descriptions.length, itemHeight: 80),
         width: mq.getWidthForDialogs(),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             IncrementButton(

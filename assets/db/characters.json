@@ -38388,15 +38388,28 @@
             "elementalBurst"
           ],
           "weaponKeys": [
-            "staff-of-homa",
-            "the-catch"
+            "favonius-lance",
+            "engulfing-lightning",
+            "the-catch",
+            "prototype-starglitter"
           ],
           "artifacts": [
+            {
+              "oneKey": "noblesse-oblige",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "hpPercentage",
+                "hpPercentage",
+                "hpPercentage"
+              ]
+            },
             {
               "oneKey": null,
               "multiples": [
                 {
-                  "key": "crimson-witch-of-flames",
+                  "key": "emblem-of-severed-fate",
                   "quantity": 2
                 },
                 {

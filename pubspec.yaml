@@ -15,7 +15,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.2.5+25
+version: 1.2.5+26
 
 environment:
   sdk: '>=2.14.0 <3.0.0'
@@ -134,13 +134,14 @@ flutter_intl:
   enabled: true
 
 msix_config:
-  display_name: Shiori
+  display_name: "Shiori for Genshin: Unofficial"
   publisher_display_name: MiraiSoft
-  identity_name: com.miraisoft.shiori
-  msix_version: 1.0.0.0
+  identity_name: 52493MiraiSoft.ShioriforGenshinUnofficial
+  msix_version: 1.2.5.0
   publisher: CN=58BF90DC-3D34-433E-A12B-4C504DF78641
   logo_path: assets\icon\icon.png
   start_menu_icon_path: assets\icon\icon.png
-  languages: en, es, id, it, ja, pt, ru, vi, zh-cn
+  languages: en
   icons_background_color: transparent
   capabilities: 'internetClient'
+  store: true
