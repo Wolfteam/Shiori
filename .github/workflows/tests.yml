@@ -1,13 +1,10 @@
 name: flutter_tests
 on:
   pull_request:
-    branches:
-      - main
-      - develop
+    branches: [main, develop]
   push:
-    branches:
-      - main
-      - develop
+    branches: [main, develop]
+
 jobs:
   tests:
     runs-on: ubuntu-latest
