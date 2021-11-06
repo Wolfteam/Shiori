@@ -58,8 +58,10 @@ void main() {
 
   test(
     'Initial state',
-    () => expect(NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService).state,
-        const NotificationsState.initial(notifications: [], ticks: 0)),
+    () => expect(
+      NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService).state,
+      const NotificationsState.initial(notifications: [], ticks: 0),
+    ),
   );
 
   blocTest<NotificationsBloc, NotificationsState>(
@@ -129,7 +131,9 @@ void main() {
       await _dataService.deleteThemAll();
     },
     build: () => NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService),
-    act: (bloc) => bloc..add(const NotificationsEvent.init())..add(const NotificationsEvent.reset(id: 0, type: AppNotificationType.resin)),
+    act: (bloc) => bloc
+      ..add(const NotificationsEvent.init())
+      ..add(const NotificationsEvent.reset(id: 0, type: AppNotificationType.resin)),
     verify: (bloc) {
       verify(_notificationService.cancelNotification(0, AppNotificationType.resin)).called(1);
       verify(_notificationService.scheduleNotification(any, any, any, any, any)).called(1);
@@ -156,7 +160,9 @@ void main() {
       await _dataService.deleteThemAll();
     },
     build: () => NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService),
-    act: (bloc) => bloc..add(const NotificationsEvent.init())..add(const NotificationsEvent.stop(id: 0, type: AppNotificationType.resin)),
+    act: (bloc) => bloc
+      ..add(const NotificationsEvent.init())
+      ..add(const NotificationsEvent.stop(id: 0, type: AppNotificationType.resin)),
     verify: (bloc) {
       verify(_notificationService.cancelNotification(0, AppNotificationType.resin)).called(1);
       expect(bloc.state.notifications.length, 1);
@@ -183,7 +189,9 @@ void main() {
       await _dataService.deleteThemAll();
     },
     build: () => NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService),
-    act: (bloc) => bloc..add(const NotificationsEvent.init())..add(const NotificationsEvent.refresh(ticks: 5)),
+    act: (bloc) => bloc
+      ..add(const NotificationsEvent.init())
+      ..add(const NotificationsEvent.refresh(ticks: 5)),
     verify: (bloc) {
       expect(bloc.state.notifications.length, 1);
       expect(bloc.state.ticks, 5);
@@ -240,7 +248,9 @@ void main() {
   blocTest<NotificationsBloc, NotificationsState>(
     'Close',
     build: () => NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService),
-    act: (bloc) => bloc..add(const NotificationsEvent.init())..add(const NotificationsEvent.close()),
+    act: (bloc) => bloc
+      ..add(const NotificationsEvent.init())
+      ..add(const NotificationsEvent.close()),
     expect: () => const [NotificationsState.initial(notifications: [], ticks: 0)],
   );
 }

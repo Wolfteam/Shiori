@@ -95,22 +95,21 @@ class _FabMenu extends StatelessWidget {
     final size = getDeviceType(MediaQuery.of(context).size);
     return HawkFabMenu(
       icon: AnimatedIcons.menu_arrow,
-      fabColor: theme.accentColor,
-      iconColor: Colors.white,
+      fabColor: theme.colorScheme.secondary,
       items: [
         HawkFabMenuItem(
           label: s.addCharacter,
           ontap: () => _openCharacterPage(context),
           icon: const Icon(Icons.people),
-          color: theme.accentColor,
-          labelColor: theme.accentColor,
+          color: theme.colorScheme.secondary,
+          labelColor: theme.colorScheme.secondary,
         ),
         HawkFabMenuItem(
           label: s.addWeapon,
           ontap: () => _openWeaponPage(context),
           icon: const Icon(Shiori.crossed_swords),
-          color: theme.accentColor,
-          labelColor: theme.accentColor,
+          color: theme.colorScheme.secondary,
+          labelColor: theme.colorScheme.secondary,
         ),
       ],
       body: BlocBuilder<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
@@ -209,7 +208,7 @@ class _PortraitLayout extends StatelessWidget {
           sliver: SliverToBoxAdapter(
             child: ItemDescriptionDetail(
               title: '${s.characters} / ${s.weapons}',
-              textColor: theme.accentColor,
+              textColor: theme.colorScheme.secondary,
             ),
           ),
         ),
@@ -247,7 +246,7 @@ class _PortraitLayout extends StatelessWidget {
           SliverToBoxAdapter(
             child: ItemDescriptionDetail(
               title: s.summary,
-              textColor: theme.accentColor,
+              textColor: theme.colorScheme.secondary,
               body: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: summary,
@@ -259,7 +258,7 @@ class _PortraitLayout extends StatelessWidget {
   }
 }
 
-class _LandscapeLayout extends StatelessWidget {
+class _LandscapeLayout extends StatefulWidget {
   final int sessionKey;
   final List<ItemAscensionMaterials> items;
   final List<Widget> summary;
@@ -272,6 +271,21 @@ class _LandscapeLayout extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<_LandscapeLayout> createState() => _LandscapeLayoutState();
+}
+
+class _LandscapeLayoutState extends State<_LandscapeLayout> {
+  late final ScrollController _controllerRight;
+  late final ScrollController _controllerLeft;
+
+  @override
+  void initState() {
+    super.initState();
+    _controllerRight = ScrollController();
+    _controllerLeft = ScrollController();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     final theme = Theme.of(context);
@@ -281,13 +295,14 @@ class _LandscapeLayout extends StatelessWidget {
           flex: 60,
           fit: FlexFit.tight,
           child: CustomScrollView(
+            controller: _controllerLeft,
             slivers: [
               SliverPadding(
                 padding: const EdgeInsets.only(top: 10),
                 sliver: SliverToBoxAdapter(
                   child: ItemDescriptionDetail(
                     title: '${s.characters} / ${s.weapons}',
-                    textColor: theme.accentColor,
+                    textColor: theme.colorScheme.secondary,
                   ),
                 ),
               ),
@@ -295,7 +310,7 @@ class _LandscapeLayout extends StatelessWidget {
                 padding: Styles.edgeInsetHorizontal16,
                 sliver: SliverToBoxAdapter(
                   child: ResponsiveGridRow(
-                    children: items
+                    children: widget.items
                         .mapIndex(
                           (e, index) => ResponsiveGridCol(
                             sm: 6,
@@ -303,7 +318,7 @@ class _LandscapeLayout extends StatelessWidget {
                             lg: 3,
                             xl: 3,
                             child: ItemCard(
-                              sessionKey: sessionKey,
+                              sessionKey: widget.sessionKey,
                               isActive: e.isActive,
                               index: index,
                               itemKey: e.key,
@@ -327,16 +342,17 @@ class _LandscapeLayout extends StatelessWidget {
           flex: 40,
           fit: FlexFit.tight,
           child: CustomScrollView(
+            controller: _controllerRight,
             slivers: [
               SliverPadding(
                 padding: const EdgeInsets.only(top: 10),
                 sliver: SliverToBoxAdapter(
                   child: ItemDescriptionDetail(
                     title: s.summary,
-                    textColor: theme.accentColor,
+                    textColor: theme.colorScheme.secondary,
                     body: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: summary,
+                      children: widget.summary,
                     ),
                   ),
                 ),

@@ -30,7 +30,7 @@ abstract class _CommonBaseState {
 
 @freezed
 class NotificationState with _$NotificationState {
-  @Implements(_CommonBaseState)
+  @Implements<_CommonBaseState>()
   const factory NotificationState.resin({
     int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
@@ -49,7 +49,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool showOtherImages,
   }) = _ResinState;
 
-  @Implements(_CommonBaseState)
+  @Implements<_CommonBaseState>()
   const factory NotificationState.expedition({
     int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
@@ -69,7 +69,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool showOtherImages,
   }) = _ExpeditionState;
 
-  @Implements(_CommonBaseState)
+  @Implements<_CommonBaseState>()
   const factory NotificationState.farmingArtifact({
     int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
@@ -88,7 +88,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool showOtherImages,
   }) = _FarmingArtifactState;
 
-  @Implements(_CommonBaseState)
+  @Implements<_CommonBaseState>()
   const factory NotificationState.farmingMaterial({
     int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
@@ -106,7 +106,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool showOtherImages,
   }) = _FarmingMaterialState;
 
-  @Implements(_CommonBaseState)
+  @Implements<_CommonBaseState>()
   const factory NotificationState.gadget({
     int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
@@ -124,7 +124,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool showOtherImages,
   }) = _GadgetState;
 
-  @Implements(_CommonBaseState)
+  @Implements<_CommonBaseState>()
   const factory NotificationState.furniture({
     int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
@@ -143,7 +143,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool showOtherImages,
   }) = _FurnitureState;
 
-  @Implements(_CommonBaseState)
+  @Implements<_CommonBaseState>()
   const factory NotificationState.realmCurrency({
     int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
@@ -164,7 +164,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool showOtherImages,
   }) = _RealmCurrencyState;
 
-  @Implements(_CommonBaseState)
+  @Implements<_CommonBaseState>()
   const factory NotificationState.weeklyBoss({
     int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
@@ -182,7 +182,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool showOtherImages,
   }) = _WeeklyBossState;
 
-  @Implements(_CommonBaseState)
+  @Implements<_CommonBaseState>()
   const factory NotificationState.custom({
     int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,
@@ -204,7 +204,7 @@ class NotificationState with _$NotificationState {
     @Default(false) bool useTwentyFourHoursFormat,
   }) = _CustomState;
 
-  @Implements(_CommonBaseState)
+  @Implements<_CommonBaseState>()
   const factory NotificationState.dailyCheckIn({
     int? key,
     @Default(<NotificationItemImage>[]) List<NotificationItemImage> images,

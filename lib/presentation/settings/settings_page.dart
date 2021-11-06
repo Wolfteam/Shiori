@@ -35,7 +35,7 @@ class _MobileLayout extends StatelessWidget {
       padding: Styles.edgeInsetAll10,
       shrinkWrap: true,
       children: [
-        ThemeSettingsCard(),
+        const ThemeSettingsCard(),
         AccentColorSettingsCard(),
         LanguageSettingsCard(),
         OtherSettings(),
@@ -61,7 +61,7 @@ class _DesktopTabletLayout extends StatelessWidget {
             Expanded(
               child: Column(
                 children: [
-                  ThemeSettingsCard(),
+                  const ThemeSettingsCard(),
                   AccentColorSettingsCard(),
                   LanguageSettingsCard(),
                   AboutSettingsCard(),

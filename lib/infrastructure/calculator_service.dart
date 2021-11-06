@@ -375,21 +375,25 @@ class CalculatorServiceImpl implements CalculatorService {
       if (quantity == 0) {
         continue;
       }
-      materials.add(ItemAscensionMaterialModel(
-        key: material.key,
-        type: material.type,
-        image: material.fullImagePath,
-        quantity: quantity,
-      ));
+      materials.add(
+        ItemAscensionMaterialModel(
+          key: material.key,
+          type: material.type,
+          image: material.fullImagePath,
+          quantity: quantity,
+        ),
+      );
       requiredExp -= quantity * matExp;
 
       final requiredMora = quantity * material.experienceAttributes!.pricePerUsage;
-      materials.add(ItemAscensionMaterialModel(
-        key: moraMaterial.key,
-        type: moraMaterial.type,
-        image: moraMaterial.fullImagePath,
-        quantity: requiredMora.round(),
-      ));
+      materials.add(
+        ItemAscensionMaterialModel(
+          key: moraMaterial.key,
+          type: moraMaterial.type,
+          image: moraMaterial.fullImagePath,
+          quantity: requiredMora.round(),
+        ),
+      );
     }
 
     return materials.reversed.toList();

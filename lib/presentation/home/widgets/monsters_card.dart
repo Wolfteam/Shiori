@@ -23,7 +23,7 @@ class MonstersCard extends StatelessWidget {
       title: s.monsters,
       onClick: (context) => _goToMonstersPage(context),
       iconToTheLeft: iconToTheLeft,
-      icon: Image.asset(Assets.getOtherMaterialPath('monster.png'), width: 60, height: 60, color: theme.accentColor),
+      icon: Image.asset(Assets.getOtherMaterialPath('monster.png'), width: 60, height: 60, color: theme.colorScheme.secondary),
       children: [
         CardDescription(text: s.checkAllMonsters),
       ],

@@ -13,7 +13,7 @@ class ItemCounter extends StatelessWidget {
       width: 40,
       height: 40,
       decoration: BoxDecoration(
-        color: theme.accentColor,
+        color: theme.colorScheme.secondary,
         borderRadius: BorderRadius.circular(20.0),
       ),
       child: Align(

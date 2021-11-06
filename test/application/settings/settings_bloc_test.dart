@@ -75,8 +75,10 @@ void main() {
 
   test(
     'Double back to close returns valid value',
-    () => expect(SettingsBloc(_settingsService, _deviceInfoService, _mainBloc, _homeBloc, _urlPageBloc).doubleBackToClose(),
-        _defaultSettings.doubleBackToClose),
+    () => expect(
+      SettingsBloc(_settingsService, _deviceInfoService, _mainBloc, _homeBloc, _urlPageBloc).doubleBackToClose(),
+      _defaultSettings.doubleBackToClose,
+    ),
   );
 
   blocTest<SettingsBloc, SettingsState>(

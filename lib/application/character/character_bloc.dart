@@ -165,10 +165,12 @@ class CharacterBloc extends PopBloc<CharacterEvent, CharacterState> {
             (e) {
               final one = e.oneKey != null ? _genshinService.getArtifactForCard(e.oneKey!) : null;
               final multiples = e.multiples
-                  .map((m) => CharacterBuildMultipleArtifactModel(
-                        quantity: m.quantity,
-                        artifact: _genshinService.getArtifactForCard(m.key),
-                      ))
+                  .map(
+                    (m) => CharacterBuildMultipleArtifactModel(
+                      quantity: m.quantity,
+                      artifact: _genshinService.getArtifactForCard(m.key),
+                    ),
+                  )
                   .toList();
 
               if (multiples.isNotEmpty) {

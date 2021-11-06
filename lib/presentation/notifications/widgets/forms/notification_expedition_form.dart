@@ -66,7 +66,7 @@ class NotificationExpeditionForm extends StatelessWidget {
                 value: withTimeReduction,
                 onChanged: (v) => context.read<NotificationBloc>().add(NotificationEvent.timeReductionChanged(withTimeReduction: v)),
                 controlAffinity: ListTileControlAffinity.leading,
-                activeColor: theme.accentColor,
+                activeColor: theme.colorScheme.secondary,
               ),
             ),
             Expanded(child: NotificationSwitch(showNotification: showNotification)),

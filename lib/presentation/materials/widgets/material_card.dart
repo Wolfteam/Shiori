@@ -133,7 +133,7 @@ class MaterialCard extends StatelessWidget {
                           padding: const EdgeInsets.all(3),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: theme.accentColor.withOpacity(0.8),
+                            color: theme.colorScheme.secondary.withOpacity(0.8),
                           ),
                           child: Text(
                             ' - ${CurrencyUtils.formatNumber(usedQuantity)} ',

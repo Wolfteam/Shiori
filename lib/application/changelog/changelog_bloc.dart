@@ -13,10 +13,12 @@ class ChangelogBloc extends Bloc<ChangelogEvent, ChangelogState> {
 
   @override
   Stream<ChangelogState> mapEventToState(ChangelogEvent event) async* {
-    final s = await event.map(init: (_) async {
-      final changelog = await _changelogProvider.load();
-      return ChangelogState.loadedState(changelog);
-    });
+    final s = await event.map(
+      init: (_) async {
+        final changelog = await _changelogProvider.load();
+        return ChangelogState.loadedState(changelog);
+      },
+    );
     yield s;
   }
 }

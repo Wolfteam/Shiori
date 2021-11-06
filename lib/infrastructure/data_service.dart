@@ -925,11 +925,9 @@ class DataServiceImpl implements DataService {
       case AppNotificationType.realmCurrency:
         final item = _getNotification<NotificationRealmCurrency>(key, type);
         item.realmCurrency = 0;
-        item.completesAt = DateTime.now().add(getRealmCurrencyDuration(
-          item.realmCurrency,
-          item.realmTrustRank,
-          RealmRankType.values[item.realmRankType],
-        ));
+        item.completesAt = DateTime.now().add(
+          getRealmCurrencyDuration(item.realmCurrency, item.realmTrustRank, RealmRankType.values[item.realmRankType]),
+        );
         await item.save();
         return _mapToNotificationItem(item);
       case AppNotificationType.weeklyBoss:

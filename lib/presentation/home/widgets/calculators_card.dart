@@ -23,7 +23,7 @@ class CalculatorsCard extends StatelessWidget {
       title: s.calculators,
       onClick: _gotoSessionsPage,
       iconToTheLeft: iconToTheLeft,
-      icon: Icon(Icons.calculate, size: 60, color: theme.accentColor),
+      icon: Icon(Icons.calculate, size: 60, color: theme.colorScheme.secondary),
       children: [
         CardDescription(text: s.ascensionMaterialsCalculatorMsg),
       ],

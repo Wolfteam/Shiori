@@ -23,7 +23,7 @@ class GameCodesCard extends StatelessWidget {
       title: s.gameCodes,
       iconToTheLeft: iconToTheLeft,
       onClick: _showGameCodesDialog,
-      icon: Icon(Icons.code, size: 60, color: theme.accentColor),
+      icon: Icon(Icons.code, size: 60, color: theme.colorScheme.secondary),
       children: [
         CardDescription(text: s.seeAllInGameGameCodes),
       ],

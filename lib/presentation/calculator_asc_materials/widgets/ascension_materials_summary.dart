@@ -34,13 +34,7 @@ class AscensionMaterialsSummaryWidget extends StatelessWidget {
               alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: summary.materials
-                  .map((m) => MaterialItem(
-                        itemKey: m.key,
-                        image: m.fullImagePath,
-                        quantity: m.quantity,
-                        type: m.type,
-                        sessionKey: sessionKey,
-                      ))
+                  .map((m) => MaterialItem(itemKey: m.key, image: m.fullImagePath, quantity: m.quantity, type: m.type, sessionKey: sessionKey))
                   .toList(),
             )
           ],

@@ -33,10 +33,12 @@ class EnumUtils {
   }) {
     final filterValues = exclude.isNotEmpty ? values.where((el) => !exclude.contains(el)) : values;
     final translatedValues = filterValues
-        .mapIndex((filter, index) => TranslatedEnum<TEnum>(
-              filter,
-              filter == allValue ? allValueText : itemText(filter, index),
-            ))
+        .mapIndex(
+          (filter, index) => TranslatedEnum<TEnum>(
+            filter,
+            filter == allValue ? allValueText : itemText(filter, index),
+          ),
+        )
         .toList();
     if (sort) {
       translatedValues.sort((x, y) => x.translation.compareTo(y.translation));

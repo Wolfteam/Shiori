@@ -74,12 +74,14 @@ class TierListRow extends StatelessWidget {
                     crossAxisAlignment: WrapCrossAlignment.center,
                     alignment: WrapAlignment.center,
                     children: items
-                        .map((e) => CircleCharacter(
-                              itemKey: e.key,
-                              image: e.image,
-                              radius: SizeUtils.getSizeForCircleImages(context),
-                              onTap: (img) => context.read<TierListBloc>().add(TierListEvent.deleteCharacterFromRow(index: index, item: e)),
-                            ))
+                        .map(
+                          (e) => CircleCharacter(
+                            itemKey: e.key,
+                            image: e.image,
+                            radius: SizeUtils.getSizeForCircleImages(context),
+                            onTap: (img) => context.read<TierListBloc>().add(TierListEvent.deleteCharacterFromRow(index: index, item: e)),
+                          ),
+                        )
                         .toList(),
                   ),
                 ),

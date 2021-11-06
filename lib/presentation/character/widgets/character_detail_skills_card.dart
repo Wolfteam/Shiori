@@ -30,13 +30,7 @@ class CharacterDetailSkillsCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: Wrap(
           alignment: WrapAlignment.center,
-          children: skills
-              .mapIndex((e, index) => _SkillCard(
-                    model: e,
-                    isEven: index.isEven,
-                    elementType: elementType,
-                  ))
-              .toList(),
+          children: skills.mapIndex((e, index) => _SkillCard(model: e, isEven: index.isEven, elementType: elementType)).toList(),
         ),
       ),
       textColor: elementType.getElementColorFromContext(context),
