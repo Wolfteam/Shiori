@@ -36,7 +36,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
       //TODO: VERSION DOES NOT MATCH THE ONE ON THE PUBSPEC
       final packageInfo = await PackageInfo.fromPlatform();
       _appName = packageInfo.appName;
-      _version = '${packageInfo.version}+${packageInfo.buildNumber}';
+      _version = Platform.isWindows ? packageInfo.version : '${packageInfo.version}+${packageInfo.buildNumber}';
 
       await _initVersionTracker();
 
@@ -65,8 +65,9 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
     final deviceInfo = device_info_plus_windows.DeviceInfoWindows();
     //TODO: DeviceInfoPlugin CRASHES ON WINDOWS
     final info = await deviceInfo.windowsInfo();
+    final model = info != null ? info.computerName : 'N/A';
     _deviceInfo = {
-      'Model': info?.computerName ?? 'N/A',
+      'Model': model,
       'OsVersion': 'N/A',
       'AppVersion': _version,
     };
