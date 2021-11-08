@@ -60,6 +60,7 @@ class ItemCard extends StatelessWidget {
         shape: Styles.mainCardShape,
         elevation: Styles.cardTenElevation,
         color: cardColor,
+        shadowColor: Colors.transparent,
         child: ChildItemDisabled(
           isDisabled: !isActive,
           child: Column(
