@@ -9630,68 +9630,68 @@
   "reactions": [
     {
       "key": "vaporize",
-      "name": "Vaporize",
-      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "name": "Пар",
+      "effect": "Добавляет х1.5 к урону, если нанести Пиро урон по Гидро.",
       "description": null
     },
     {
       "key": "burning",
-      "name": "Burning",
-      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
+      "name": "Горение",
+      "effect": "Постоянно наносит большой Пиро урон. Трава считается объектом Дендро и распространяет эффект горения по всей территории.",
       "description": null
     },
     {
       "key": "overloaded",
-      "name": "Overloaded",
-      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
+      "name": "Перегрузка",
+      "effect": "Вызывает взрыв, который наносит Пиро урон по площади. Произведенный взрыв считается тяжелой атакой.",
       "description": null
     },
     {
       "key": "melt",
-      "name": "Melt",
-      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "name": "Таяние",
+      "effect": "Добавляет х2 к урону, если нанести Пиро урон по Крио.",
       "description": null
     },
     {
       "key": "vaporize-reverse",
-      "name": "Vaporize (Reverse)",
-      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "name": "Пар (на оборот)",
+      "effect": "Добавляет х2 к урону, если нанести Пиро урон по Крио.",
       "description": null
     },
     {
       "key": "electro-charged",
-      "name": "Electro Charged",
-      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
+      "name": "Заряджен",
+      "effect": "Наносит Электро Урон в течением времени, пока эффект не исчезнет, каждое тик сотрясает и прерывает любое действие. Он также создает разряд молнии, который направляется на ближайшую Мокрую цель, нанося Электро урон",
       "description": null
     },
     {
       "key": "frozen",
-      "name": "Frozen",
-      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
+      "name": "Заморозка",
+      "effect": "Замораживает цель. Если замороженная цель поражена двуручным мечом, атакой в парение с мечом или Гео уроном (исключая атаки в падении пользователя Каталиста), это вызовет Разрушение Заморозки. Разрушение замороженной цели нанесет дополнительный физический урон.",
       "description": null
     },
     {
       "key": "swirl",
-      "name": "Swirl",
-      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
+      "name": "Рассеивание",
+      "effect": "Поглощает элемент и наносит стихийный урон, распространяя эффект на ближайших врагов. Он не наносит Анемо урон (поскольку видимый урон от стихий исходит от таланта, который наносит элемент Анемо). Одновременно с помощью Анемо можно поглотить только один элемент.",
       "description": null
     },
     {
       "key": "superconduct",
-      "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "name": "Сверхпроводник",
+      "effect": "Наносит крио-урон по области и снижает сопротивление цели к физическому урону на -40% на 12 секунд. Каждая реакция сверхпроводимости наносит урон целям в пределах своего диапазона один раз, что означает, что если есть 3 реакции сверхпроводимости, при условии, что все 3 цели находятся в пределах области реакции, каждая цель получит урон 3 раза.",
       "description": null
     },
     {
       "key": "melt-reverse",
-      "name": "Melt (Reverse)",
-      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "name": "Таяние (на оборот)",
+      "effect": "Добавляет х1.5 к урону, если нанести Крио урон по Пиро.",
       "description": null
     },
     {
       "key": "crystallize",
-      "name": "Crystallize",
-      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
+      "name": "Кристалл",
+      "effect": "Поглощает часть элементальной энергии противника и роняет сферу, которая может дать персонажу элементальный щит. Щит поглощает все виды элементального урона, в зависимости от подобранной сферы.",
       "description": null
     }
   ],

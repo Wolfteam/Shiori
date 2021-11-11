@@ -114,7 +114,7 @@ class CreditsSettingsCard extends StatelessWidget {
                 style: textTheme.subtitle1!.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
-            const BulletList(items: ['GuadoDex#3357', 'therealcorwin', 'Herellya#8181'], fontSize: 12),
+            const BulletList(items: ['GuadoDex#3357', 'therealcorwin', 'Herellya#8181', 'Muden#2742'], fontSize: 12),
           ],
         ),
       ),

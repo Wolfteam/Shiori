@@ -9656,75 +9656,75 @@
     {
       "key": "condensed-ice",
       "name": "Erstarrte Glieder",
-      "effect": "Erhöht den Ausdauerverbrauch.",
+      "effect": "Erhöht den Ausdauerverbrauch und verlangsamt Standardangriffs- und Bewegungs-GSW.",
       "description": null
     }
   ],
   "reactions": [
     {
       "key": "vaporize",
-      "name": "Vaporize",
-      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "name": "Verdampfen",
+      "effect": "Verursacht 1,5-fachen Pyro-Schaden, wenn eine Pyro-Attacke die Reaktion auslöst.",
       "description": null
     },
     {
       "key": "burning",
-      "name": "Burning",
-      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
+      "name": "In Flammen",
+      "effect": "Verursacht kontinuierlichen Pyro-Schaden. Gras zählt als Dendro-Objekt und wird den Effekt “In Flammen” verbreiten.",
       "description": null
     },
     {
       "key": "overloaded",
-      "name": "Overloaded",
-      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
+      "name": "Überladen",
+      "effect": "Verursacht eine gewaltige Explosion, die Pyro-Flächenschaden verursacht. Diese Explosion wird als schwerer Treffer gewertet.",
       "description": null
     },
     {
       "key": "melt",
-      "name": "Melt",
-      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "name": "Schmelzen",
+      "effect": "Verursacht doppelten Pyro-Schaden, wenn eine Pyro-Attacke die Reaktion auslöst.",
       "description": null
     },
     {
       "key": "vaporize-reverse",
-      "name": "Vaporize (Reverse)",
-      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "name": "Verdampfen (umgekehrt)",
+      "effect": "Verursacht doppelten Hydro-Schaden, wenn eine Hydro-Attacke die Reaktion auslöst.",
       "description": null
     },
     {
       "key": "electro-charged",
-      "name": "Electro Charged",
-      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
+      "name": "Unter Strom",
+      "effect": "Verursacht kontinuierlichen Elektro-Schaden, der, bis der Effekt abklingt, jeden Gegner schockt. Jeder Schock unterbricht die Gegner. Außerdem entsteht ein Blitz, der zwischen allen von Hydro-Effekten betroffenen Gegnern und Objekten extra Elektro-Schaden verursacht.",
       "description": null
     },
     {
       "key": "frozen",
-      "name": "Frozen",
-      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
+      "name": "Gefroren",
+      "effect": "Friert das Ziel ein. Wenn das Ziel mit einer Zweihänder-Attacke, einer Attacke aus dem fall eines Einhänders oder Geo-Schaden (mit Ausnahme von einer Attacke aus dem Fall, eines Katalysator-Nutzers) getroffen wird. Wird “Zersplittern” verursacht. “Zersplittern” sorgt für zusätzlichen physischen Schaden.",
       "description": null
     },
     {
       "key": "swirl",
       "name": "Swirl",
-      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
+      "effect": "Absorbiert ein Element (Hydro, Pyro, Kryo, Elektro) und lässt Gegner in der Nähe diesen elementaren Schaden nehmen. Anemo-Schaden wird auf diese Weise nicht verursacht (da dieser Schaden von dem Talent, das den Anemo-Schaden verursacht, kommt). Nur ein Element auf Einmal kann auf diese Weise verbreitet werden.",
       "description": null
     },
     {
       "key": "superconduct",
-      "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "name": "Supraleiter",
+      "effect": "Verursacht Kryo-Flächenschaden und verringert den physischen WDS um 40% für 12 Sekunden. Jede Reaktion verursacht ihren Flächenschaden genau einmal.",
       "description": null
     },
     {
       "key": "melt-reverse",
-      "name": "Melt (Reverse)",
-      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "name": "Schmelzen (umgekehrt)",
+      "effect": "Verursacht 1,5-fachen Kryo-Schaden, wenn eine Kryo-Attacke die Reaktion auslöst.",
       "description": null
     },
     {
       "key": "crystallize",
-      "name": "Crystallize",
-      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
+      "name": "Kristallisation",
+      "effect": "Absorbiert das Element (Hydro, Pyro, Kryo, Elektro) und lässt einen Kristall fallen, der einen Schild gibt. Der Schild stoppt zwar jede Art von Schaden, aber beschützt gegen das Element des Schildes am effizientesten",
       "description": null
     }
   ],
