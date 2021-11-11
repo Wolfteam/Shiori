@@ -1,7 +1,4 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/presentation/shared/utils/enum_utils.dart';
 
 class CommonDropdownButton<T> extends StatelessWidget {
@@ -24,11 +21,6 @@ class CommonDropdownButton<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    var deviceType = getDeviceType(size);
-    if (Platform.isWindows) {
-      deviceType = DeviceScreenType.desktop;
-    }
     return DropdownButton<T>(
       isExpanded: isExpanded,
       hint: Text(hint),
@@ -58,7 +50,13 @@ class CommonDropdownButton<T> extends StatelessWidget {
                     margin: const EdgeInsets.symmetric(horizontal: 20),
                     child: lang.enumValue != currentValue ? const SizedBox(width: 20) : const Center(child: Icon(Icons.check)),
                   ),
-                  Expanded(child: Text(lang.translation, overflow: TextOverflow.ellipsis)),
+                  Expanded(
+                    child: Text(
+                      lang.translation,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                    ),
+                  ),
                 ],
               ),
             ),
