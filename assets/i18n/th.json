@@ -3752,8 +3752,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Wishes Unnumbered",
-          "description": "เมื่อตัวละครในทีมที่อยู่ในบริเวณใกล้เคียงได้รับอณูธาตุหรือลูกแก้วธาตุ Chakra Desiderata จะได้รับ Resolve 2 ชั้น\r\nเอฟเฟกต์นี้จะเกิดขึ้นได้มากสุดหนึ่งครั้ง ในทุก 3 วินาที\r\n",
+          "title": "All-Preserver",
+          "description": "จำนวน Mora ที่ใช้ในการเลื่อนขั้น อาวุธประเภทดาบและหอกลดลง 50%\r\n",
           "descriptions": []
         },
         {
@@ -3767,8 +3767,8 @@
         },
         {
           "key": "p3",
-          "title": "All-Preserver",
-          "description": "จำนวน Mora ที่ใช้ในการเลื่อนขั้น อาวุธประเภทดาบและหอกลดลง 50%\r\n",
+          "title": "Wishes Unnumbered",
+          "description": "เมื่อตัวละครในทีมที่อยู่ในบริเวณใกล้เคียงได้รับอณูธาตุหรือลูกแก้วธาตุ Chakra Desiderata จะได้รับ Resolve 2 ชั้น\r\nเอฟเฟกต์นี้จะเกิดขึ้นได้มากสุดหนึ่งครั้ง ในทุก 3 วินาที\r\n",
           "descriptions": []
         }
       ],

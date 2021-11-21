@@ -3805,8 +3805,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Wishes Unnumbered",
-          "description": "Saat anggota party di sekitar memperoleh Elemental Orb atau Elemental Particle, Chakra Desiderata akan mendapatkan 2 lapis Resolve.\r\nEfek ini dapat terpicu setiap 3 detik.\r\n",
+          "title": "All-Preserver",
+          "description": "Mora yang terkonsumsi untuk melakukan Ascend Senjata Sword dan Polearm berkurang 50%.\r\n",
           "descriptions": []
         },
         {
@@ -3820,8 +3820,8 @@
         },
         {
           "key": "p3",
-          "title": "All-Preserver",
-          "description": "Mora yang terkonsumsi untuk melakukan Ascend Senjata Sword dan Polearm berkurang 50%.\r\n",
+          "title": "Wishes Unnumbered",
+          "description": "Saat anggota party di sekitar memperoleh Elemental Orb atau Elemental Particle, Chakra Desiderata akan mendapatkan 2 lapis Resolve.\r\nEfek ini dapat terpicu setiap 3 detik.\r\n",
           "descriptions": []
         }
       ],

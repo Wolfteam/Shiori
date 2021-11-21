@@ -3740,8 +3740,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Desejos Incontados",
-          "description": "Quando Personagens próximos ganham Orbes Elementais ou Partículas Elementais, Shogan Byakugen no Rin ganha 2 cargas de Determinação.\r\nEsse efeito pode ocorrer uma vez a cada 3s.\r\n",
+          "title": "Preservação Suprema",
+          "description": "Ao ascender Espadas e Lanças, Mora gasta é reduzida em 50%.\r\n",
           "descriptions": []
         },
         {
@@ -3755,8 +3755,8 @@
         },
         {
           "key": "p3",
-          "title": "Preservação Suprema",
-          "description": "Ao ascender Espadas e Lanças, Mora gasta é reduzida em 50%.\r\n",
+          "title": "Desejos Incontados",
+          "description": "Quando Personagens próximos ganham Orbes Elementais ou Partículas Elementais, Shogan Byakugen no Rin ganha 2 cargas de Determinação.\r\nEsse efeito pode ocorrer uma vez a cada 3s.\r\n",
           "descriptions": []
         }
       ],

@@ -3802,8 +3802,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Wishes Unnumbered",
-          "description": "Quando i membri vicini del party ottengono Elemental Orbs/Particles, Chakra Desiderata riceve 2 stacks di Resolve.\r\nL'effetto può avvenire una volta ogni 3s.\r\n",
+          "title": "All-Preserver",
+          "description": "Potenziare Spade e Polearms costa il 50% di Mora in meno.\r\n",
           "descriptions": []
         },
         {
@@ -3817,8 +3817,8 @@
         },
         {
           "key": "p3",
-          "title": "All-Preserver",
-          "description": "Potenziare Spade e Polearms costa il 50% di Mora in meno.\r\n",
+          "title": "Wishes Unnumbered",
+          "description": "Quando i membri vicini del party ottengono Elemental Orbs/Particles, Chakra Desiderata riceve 2 stacks di Resolve.\r\nL'effetto può avvenire una volta ogni 3s.\r\n",
           "descriptions": []
         }
       ],

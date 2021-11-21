@@ -3809,8 +3809,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Souhaits innombrables",
-          "description": "Lorsque les personnages de l'équipe à proximité obtiennent un orbe ou une particule élémentaire, le Chakra Desiderata accumule 2 charges de résolution.\r\nCet effet peut être déclenché une fois toutes les 3 s.\r\n",
+          "title": "Préservation suprême",
+          "description": "Les moras utilisés lors de l'élévation d'épées à une main et d'armes d'hast sont réduits de 50 %.\r\n",
           "descriptions": []
         },
         {
@@ -3824,8 +3824,8 @@
         },
         {
           "key": "p3",
-          "title": "Préservation suprême",
-          "description": "Les moras utilisés lors de l'élévation d'épées à une main et d'armes d'hast sont réduits de 50 %.\r\n",
+          "title": "Souhaits innombrables",
+          "description": "Lorsque les personnages de l'équipe à proximité obtiennent un orbe ou une particule élémentaire, le Chakra Desiderata accumule 2 charges de résolution.\r\nCet effet peut être déclenché une fois toutes les 3 s.\r\n",
           "descriptions": []
         }
       ],

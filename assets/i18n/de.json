@@ -3805,8 +3805,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Unzählige Wünsche",
-          "description": "Fügt Charkra-Desiderate beim Erhalten von Elementarkristallen oder Elementarteilchen durch Truppenmitglieder in der Nähe 2 Stapelungen Entschlusskraft hinzu.\r\n3 s Abklingzeit.\r\n",
+          "title": "Weltberühmte Bewahrerin",
+          "description": "Verringert die für den Aufstieg von Einhändern oder Stangenwaffen verbrauchte Menge an Mora um 50 %.\r\n",
           "descriptions": []
         },
         {
@@ -3820,8 +3820,8 @@
         },
         {
           "key": "p3",
-          "title": "Weltberühmte Bewahrerin",
-          "description": "Verringert die für den Aufstieg von Einhändern oder Stangenwaffen verbrauchte Menge an Mora um 50 %.\r\n",
+          "title": "Unzählige Wünsche",
+          "description": "Fügt Charkra-Desiderate beim Erhalten von Elementarkristallen oder Elementarteilchen durch Truppenmitglieder in der Nähe 2 Stapelungen Entschlusskraft hinzu.\r\n3 s Abklingzeit.\r\n",
           "descriptions": []
         }
       ],

@@ -3800,8 +3800,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Aspiración infinita",
-          "description": "Los orbes o partículas elementales obtenidos por los personajes cercanos del equipo otorgan 2 cargas de ambición a rueda de la ambición.\r\nEste efecto solo puede ocurrir una vez cada 3 s.\r\n",
+          "title": "La protectora",
+          "description": "Reduce en un 50% el Mora necesario para ascender espadas ligeras y lanzas.\r\n",
           "descriptions": []
         },
         {
@@ -3815,8 +3815,8 @@
         },
         {
           "key": "p3",
-          "title": "La protectora",
-          "description": "Reduce en un 50% el Mora necesario para ascender espadas ligeras y lanzas.\r\n",
+          "title": "Aspiración infinita",
+          "description": "Los orbes o partículas elementales obtenidos por los personajes cercanos del equipo otorgan 2 cargas de ambición a rueda de la ambición.\r\nEste efecto solo puede ocurrir una vez cada 3 s.\r\n",
           "descriptions": []
         }
       ],

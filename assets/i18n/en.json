@@ -3802,8 +3802,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Wishes Unnumbered",
-          "description": "When nearby party members gain Elemental Orbs or Particles, Chakra Desiderata gains 2 Resolve stacks.\r\nThis effect can occur once every 3s.\r\n",
+          "title": "All-Preserver",
+          "description": "Mora expended when ascending Swords and Polearms is decreased by 50%.\r\n",
           "descriptions": []
         },
         {
@@ -3817,8 +3817,8 @@
         },
         {
           "key": "p3",
-          "title": "All-Preserver",
-          "description": "Mora expended when ascending Swords and Polearms is decreased by 50%.\r\n",
+          "title": "Wishes Unnumbered",
+          "description": "When nearby party members gain Elemental Orbs or Particles, Chakra Desiderata gains 2 Resolve stacks.\r\nThis effect can occur once every 3s.\r\n",
           "descriptions": []
         }
       ],
