@@ -25,7 +25,6 @@ class CalculatorAscMaterialsSessionFormBloc extends Bloc<CalculatorAscMaterialsS
 
         return state.copyWith.call(name: e.name, isNameDirty: isDirty, isNameValid: isValid);
       },
-      close: (_) => _defaultState,
     );
 
     yield s;

@@ -5,6 +5,4 @@ class CalculatorAscMaterialsSessionFormEvent with _$CalculatorAscMaterialsSessio
   const factory CalculatorAscMaterialsSessionFormEvent.nameChanged({
     required String name,
   }) = _NameChanged;
-
-  const factory CalculatorAscMaterialsSessionFormEvent.close() = _Close;
 }

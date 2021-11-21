@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/injection.dart';
 
-class AddEditSessionDialog extends StatefulWidget {
+class AddEditSessionDialog extends StatelessWidget {
   final int? sessionKey;
   final String? name;
 
@@ -20,10 +21,25 @@ class AddEditSessionDialog extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _AddEditSessionDialogState createState() => _AddEditSessionDialogState();
+  Widget build(BuildContext context) {
+    return BlocProvider<CalculatorAscMaterialsSessionFormBloc>(
+      create: (ctx) => Injection.calculatorAscMaterialsSessionFormBloc,
+      child: _Body(sessionKey: sessionKey, name: name),
+    );
+  }
 }
 
-class _AddEditSessionDialogState extends State<AddEditSessionDialog> {
+class _Body extends StatefulWidget {
+  final int? sessionKey;
+  final String? name;
+
+  const _Body({Key? key, this.sessionKey, this.name}) : super(key: key);
+
+  @override
+  State<_Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<_Body> {
   late TextEditingController _textEditingController;
   String? _currentValue;
 

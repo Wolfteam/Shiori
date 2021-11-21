@@ -205,7 +205,6 @@ class MyApp extends StatelessWidget {
             return MaterialBloc(genshinService, telemetryService);
           },
         ),
-        BlocProvider(create: (_) => CalculatorAscMaterialsSessionFormBloc()),
         BlocProvider(
           create: (ctx) {
             final genshinService = getIt<GenshinService>();

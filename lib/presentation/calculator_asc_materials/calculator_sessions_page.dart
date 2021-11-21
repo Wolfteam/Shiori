@@ -90,7 +90,6 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
 
   Future<void> _showAddSessionDialog(BuildContext context) async {
     await showDialog(context: context, builder: (_) => const AddEditSessionDialog.create());
-    context.read<CalculatorAscMaterialsSessionFormBloc>().add(const CalculatorAscMaterialsSessionFormEvent.close());
   }
 
   Future<void> _showReorderDialog(List<CalculatorSessionModel> sessions, BuildContext context) async {

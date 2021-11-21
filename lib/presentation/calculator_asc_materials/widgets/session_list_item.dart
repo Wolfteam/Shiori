@@ -57,7 +57,6 @@ class SessionListItem extends StatelessWidget {
 
   Future<void> _showEditSessionDialog(int sessionKey, String name, BuildContext context) async {
     await showDialog(context: context, builder: (_) => AddEditSessionDialog.update(sessionKey: sessionKey, name: name));
-    context.read<CalculatorAscMaterialsSessionFormBloc>().add(const CalculatorAscMaterialsSessionFormEvent.close());
   }
 
   Future<void> _showDeleteSessionDialog(int sessionKey, String name, BuildContext context) async {

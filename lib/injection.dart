@@ -1,5 +1,5 @@
 import 'package:get_it/get_it.dart';
-import 'package:shiori/application/changelog/changelog_bloc.dart';
+import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/changelog_provider.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -17,6 +17,10 @@ import 'package:shiori/infrastructure/infrastructure.dart';
 final GetIt getIt = GetIt.instance;
 
 class Injection {
+  static CalculatorAscMaterialsSessionFormBloc get calculatorAscMaterialsSessionFormBloc {
+    return CalculatorAscMaterialsSessionFormBloc();
+  }
+
   static ChangelogBloc get changelogBloc {
     final changelogProvider = getIt<ChangelogProvider>();
     return ChangelogBloc(changelogProvider);
