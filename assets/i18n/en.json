@@ -6066,11 +6066,11 @@
           ],
           "stats": [
             "Skill DMG|{param1}%",
-            "Scarlet Seal Grant Interval|{param2}%",
-            "Charged Attack DMG Bonus|{param3}s",
-            "Duration|{param4}%",
+            "Scarlet Seal Grant Interval|{param2}s",
+            "Charged Attack DMG Bonus|{param3}%",
+            "Duration|{param4}s",
             "CD|{param5}s",
-            "Energy Cost|{param6}s"
+            "Energy Cost|{param6}"
           ]
         }
       ],

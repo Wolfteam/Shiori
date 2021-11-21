@@ -6066,11 +6066,11 @@
           ],
           "stats": [
             "Skill DMG|{param1}%",
-            "Intervallo di ottenimento di un Scarlet Seal|{param2}%",
-            "DMG Bonus Attacco Caricato|{param3}s",
-            "Durata|{param4}%",
+            "Intervallo di ottenimento di un Scarlet Seal|{param2}s",
+            "DMG Bonus Attacco Caricato|{param3}%",
+            "Durata|{param4}s",
             "CD (Tempo Ricarica)|{param5}s",
-            "Costo Energy|{param6}s"
+            "Costo Energy|{param6}"
           ]
         }
       ],

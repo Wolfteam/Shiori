@@ -6067,11 +6067,11 @@
           ],
           "stats": [
             "Sát Thương Kỹ Năng|{param1}%",
-            "Giãn cách cung cấp Đan Hỏa Ấn|{param2}%",
-            "Sát Thương Trọng Kích Tăng|{param3}s",
-            "Thời Gian Kéo Dài|{param4}%",
+            "Giãn cách cung cấp Đan Hỏa Ấn|{param2}s",
+            "Sát Thương Trọng Kích Tăng|{param3}%",
+            "Thời Gian Kéo Dài|{param4}s",
             "CD|{param5}s",
-            "Năng Lượng Nguyên Tố|{param6}s"
+            "Năng Lượng Nguyên Tố|{param6}"
           ]
         }
       ],

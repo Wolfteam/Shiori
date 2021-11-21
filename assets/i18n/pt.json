@@ -5978,11 +5978,11 @@
           ],
           "stats": [
             "Dano de Habilidade|{param1}%",
-            "Intervalo de Obtenção de Insígnia de Chamas|{param2}%",
-            "Aumenta Dano de Ataque Carregado|{param3}s",
-            "Duração|{param4}%",
+            "Intervalo de Obtenção de Insígnia de Chamas|{param2}s",
+            "Aumenta Dano de Ataque Carregado|{param3}%",
+            "Duração|{param4}s",
             "Tempo de Recarga|{param5}s",
-            "Energia Elemental|{param6}s"
+            "Energia Elemental|{param6}"
           ]
         }
       ],

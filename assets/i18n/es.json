@@ -6070,11 +6070,11 @@
           ],
           "stats": [
             "Daño de habilidad|{param1}%",
-            "Intervalo de obtención de sellos escarlatas|{param2}%",
-            "Aumento de daño de ATQ Cargado|{param3}s",
-            "Duración|{param4}%",
+            "Intervalo de obtención de sellos escarlatas|{param2}s",
+            "Aumento de daño de ATQ Cargado|{param3}%",
+            "Duración|{param4}s",
             "TdE|{param5}s",
-            "Energía Elemental|{param6}s"
+            "Energía Elemental|{param6}"
           ]
         }
       ],

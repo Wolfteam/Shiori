@@ -6073,11 +6073,11 @@
           ],
           "stats": [
             "DMG Skill|{param1}%",
-            "Jeda Pemberian Scarlet Seal|{param2}%",
-            "Peningkatan DMG Charged Attack|{param3}s",
-            "Durasi|{param4}%",
+            "Jeda Pemberian Scarlet Seal|{param2}s",
+            "Peningkatan DMG Charged Attack|{param3}%",
+            "Durasi|{param4}s",
             "CD|{param5}s",
-            "Konsumsi Energy|{param6}s"
+            "Konsumsi Energy|{param6}"
           ]
         }
       ],

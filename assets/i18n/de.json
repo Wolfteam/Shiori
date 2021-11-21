@@ -6074,11 +6074,11 @@
           ],
           "stats": [
             "Fähigkeits-SCH|{param1}%",
-            "Intervall der flammenden Siegel|{param2}%",
-            "SCH-Bonus für heftige Schläge|{param3}s",
-            "Dauer|{param4}%",
+            "Intervall der flammenden Siegel|{param2}s",
+            "SCH-Bonus für heftige Schläge|{param3}%",
+            "Dauer|{param4}s",
             "Abklingzeit|{param5}s",
-            "Elementarenergie|{param6}s"
+            "Elementarenergie|{param6}"
           ]
         }
       ],

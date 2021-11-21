@@ -6080,11 +6080,11 @@
           ],
           "stats": [
             "DGT compétence|{param1}%",
-            "Intervalle entre les sceaux écarlates|{param2}%",
-            "Bonus ATQ chargée|{param3}s",
-            "Durée|{param4}%",
+            "Intervalle entre les sceaux écarlates|{param2}s",
+            "Bonus ATQ chargée|{param3}%",
+            "Durée|{param4}s",
             "Temps de recharge|{param5}s",
-            "Énergie élémentaire|{param6}s"
+            "Énergie élémentaire|{param6}"
           ]
         }
       ],
