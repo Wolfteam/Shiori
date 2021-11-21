@@ -26,6 +26,11 @@ class Injection {
     return ChangelogBloc(changelogProvider);
   }
 
+  static ElementsBloc get elementsBloc {
+    final genshinService = getIt<GenshinService>();
+    return ElementsBloc(genshinService);
+  }
+
   static Future<void> init() async {
     final networkService = NetworkServiceImpl();
     networkService.init();

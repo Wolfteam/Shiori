@@ -78,7 +78,6 @@ void main() {
   late final WeaponsBloc _weaponsBloc;
   late final HomeBloc _homeBloc;
   late final ArtifactsBloc _artifactsBloc;
-  late final ElementsBloc _elementsBloc;
 
   setUpAll(() {
     TestWidgetsFlutterBinding.ensureInitialized();
@@ -103,7 +102,6 @@ void main() {
     _weaponsBloc = MockWeaponsBloc();
     _homeBloc = MockHomeBloc();
     _artifactsBloc = MockArtifactsBloc();
-    _elementsBloc = MockElementsBloc();
   });
 
   setUp(() {
@@ -129,7 +127,6 @@ void main() {
       _weaponsBloc,
       _homeBloc,
       _artifactsBloc,
-      _elementsBloc,
     );
     expect(bloc.state, const MainState.loading());
   });
@@ -148,7 +145,6 @@ void main() {
         _weaponsBloc,
         _homeBloc,
         _artifactsBloc,
-        _elementsBloc,
       ),
       act: (bloc) => bloc.add(const MainEvent.init()),
       expect: () => [
@@ -179,9 +175,10 @@ void main() {
         _weaponsBloc,
         _homeBloc,
         _artifactsBloc,
-        _elementsBloc,
       ),
-      act: (bloc) => bloc..add(const MainEvent.init())..add(const MainEvent.themeChanged(newValue: AppThemeType.light)),
+      act: (bloc) => bloc
+        ..add(const MainEvent.init())
+        ..add(const MainEvent.themeChanged(newValue: AppThemeType.light)),
       skip: 1,
       expect: () => [
         MainState.loaded(
@@ -209,9 +206,10 @@ void main() {
         _weaponsBloc,
         _homeBloc,
         _artifactsBloc,
-        _elementsBloc,
       ),
-      act: (bloc) => bloc..add(const MainEvent.init())..add(const MainEvent.accentColorChanged(newValue: AppAccentColorType.blueGrey)),
+      act: (bloc) => bloc
+        ..add(const MainEvent.init())
+        ..add(const MainEvent.accentColorChanged(newValue: AppAccentColorType.blueGrey)),
       skip: 1,
       expect: () => [
         MainState.loaded(
@@ -241,12 +239,13 @@ void main() {
         _weaponsBloc,
         _homeBloc,
         _artifactsBloc,
-        _elementsBloc,
       ),
       setUp: () {
         when(_settingsService.language).thenReturn(AppLanguageType.russian);
       },
-      act: (bloc) => bloc..add(const MainEvent.init())..add(const MainEvent.languageChanged(newValue: AppLanguageType.russian)),
+      act: (bloc) => bloc
+        ..add(const MainEvent.init())
+        ..add(const MainEvent.languageChanged(newValue: AppLanguageType.russian)),
       expect: () => [
         MainState.loaded(
           appTitle: _defaultAppName,

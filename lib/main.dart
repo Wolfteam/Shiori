@@ -94,12 +94,6 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
-            return ElementsBloc(genshinService);
-          },
-        ),
-        BlocProvider(
-          create: (ctx) {
-            final genshinService = getIt<GenshinService>();
             final telemetryService = getIt<TelemetryService>();
             return TodayMaterialsBloc(genshinService, telemetryService);
           },
@@ -148,7 +142,6 @@ class MyApp extends StatelessWidget {
               ctx.read<WeaponsBloc>(),
               ctx.read<HomeBloc>(),
               ctx.read<ArtifactsBloc>(),
-              ctx.read<ElementsBloc>(),
             )..add(const MainEvent.init());
           },
         ),
