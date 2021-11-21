@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/dialogs/changelog_dialog.dart';
 import 'package:shiori/presentation/shared/loading.dart';
 import 'package:shiori/presentation/shared/styles.dart';
 import 'package:shiori/presentation/shared/text_link.dart';
@@ -69,6 +70,10 @@ class AboutSettingsCard extends StatelessWidget {
                   },
                 ),
                 Text(s.aboutSummary, textAlign: TextAlign.center),
+                TextLink.withoutLink(
+                  text: 'Changelog',
+                  onTap: () => showDialog(context: context, builder: (ctx) => const ChangelogDialog()),
+                ),
                 TextLink(text: s.discordServer, url: 'https://discord.gg/A8SgudQMwP'),
                 TextLink(text: s.otherApps, url: 'https://wolfteam.github.io'),
                 Container(

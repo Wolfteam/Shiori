@@ -2,8 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shiori/application/changelog/changelog_bloc.dart';
-import 'package:shiori/domain/services/changelog_provider.dart';
 import 'package:shiori/presentation/shared/utils/size_utils.dart';
 import 'package:window_size/window_size.dart';
 
@@ -25,7 +23,7 @@ import 'presentation/app_widget.dart';
 Future<void> main() async {
   //This is required by app center
   WidgetsFlutterBinding.ensureInitialized();
-  await initInjection();
+  await Injection.init();
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
     setWindowMinSize(SizeUtils.minSizeOnDesktop);
     setWindowMaxSize(Size.infinite);
@@ -270,12 +268,6 @@ class MyApp extends StatelessWidget {
             final dataService = getIt<DataService>();
             final telemetryService = getIt<TelemetryService>();
             return CalculatorAscMaterialsItemUpdateQuantityBloc(dataService, telemetryService);
-          },
-        ),
-        BlocProvider(
-          create: (ctx) {
-            final changelogProvider = getIt<ChangelogProvider>();
-            return ChangelogBloc(changelogProvider);
           },
         ),
       ],

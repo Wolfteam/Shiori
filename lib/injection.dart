@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:shiori/application/changelog/changelog_bloc.dart';
 import 'package:shiori/domain/services/calculator_service.dart';
 import 'package:shiori/domain/services/changelog_provider.dart';
 import 'package:shiori/domain/services/data_service.dart';
@@ -15,39 +16,46 @@ import 'package:shiori/infrastructure/infrastructure.dart';
 
 final GetIt getIt = GetIt.instance;
 
-Future<void> initInjection() async {
-  final networkService = NetworkServiceImpl();
-  networkService.init();
-  getIt.registerSingleton<NetworkService>(networkService);
+class Injection {
+  static ChangelogBloc get changelogBloc {
+    final changelogProvider = getIt<ChangelogProvider>();
+    return ChangelogBloc(changelogProvider);
+  }
 
-  final deviceInfoService = DeviceInfoServiceImpl();
-  getIt.registerSingleton<DeviceInfoService>(deviceInfoService);
-  await deviceInfoService.init();
+  static Future<void> init() async {
+    final networkService = NetworkServiceImpl();
+    networkService.init();
+    getIt.registerSingleton<NetworkService>(networkService);
 
-  final telemetryService = TelemetryServiceImpl(deviceInfoService);
-  getIt.registerSingleton<TelemetryService>(telemetryService);
-  await telemetryService.initTelemetry();
+    final deviceInfoService = DeviceInfoServiceImpl();
+    getIt.registerSingleton<DeviceInfoService>(deviceInfoService);
+    await deviceInfoService.init();
 
-  final loggingService = LoggingServiceImpl(getIt<TelemetryService>(), deviceInfoService);
+    final telemetryService = TelemetryServiceImpl(deviceInfoService);
+    getIt.registerSingleton<TelemetryService>(telemetryService);
+    await telemetryService.initTelemetry();
 
-  getIt.registerSingleton<LoggingService>(loggingService);
-  final settingsService = SettingsServiceImpl(loggingService);
-  await settingsService.init();
-  getIt.registerSingleton<SettingsService>(settingsService);
-  getIt.registerSingleton<LocaleService>(LocaleServiceImpl(getIt<SettingsService>()));
-  getIt.registerSingleton<GenshinService>(GenshinServiceImpl(getIt<LocaleService>()));
-  getIt.registerSingleton<CalculatorService>(CalculatorServiceImpl(getIt<GenshinService>()));
+    final loggingService = LoggingServiceImpl(getIt<TelemetryService>(), deviceInfoService);
 
-  final dataService = DataServiceImpl(getIt<GenshinService>(), getIt<CalculatorService>());
-  await dataService.init();
-  getIt.registerSingleton<DataService>(dataService);
+    getIt.registerSingleton<LoggingService>(loggingService);
+    final settingsService = SettingsServiceImpl(loggingService);
+    await settingsService.init();
+    getIt.registerSingleton<SettingsService>(settingsService);
+    getIt.registerSingleton<LocaleService>(LocaleServiceImpl(getIt<SettingsService>()));
+    getIt.registerSingleton<GenshinService>(GenshinServiceImpl(getIt<LocaleService>()));
+    getIt.registerSingleton<CalculatorService>(CalculatorServiceImpl(getIt<GenshinService>()));
 
-  getIt.registerSingleton<GameCodeService>(GameCodeServiceImpl(getIt<LoggingService>(), getIt<GenshinService>()));
+    final dataService = DataServiceImpl(getIt<GenshinService>(), getIt<CalculatorService>());
+    await dataService.init();
+    getIt.registerSingleton<DataService>(dataService);
 
-  final notificationService = NotificationServiceImpl(loggingService);
-  await notificationService.init();
-  getIt.registerSingleton<NotificationService>(notificationService);
+    getIt.registerSingleton<GameCodeService>(GameCodeServiceImpl(getIt<LoggingService>(), getIt<GenshinService>()));
 
-  final changelogProvider = ChangelogProviderImpl(loggingService, networkService);
-  getIt.registerSingleton<ChangelogProvider>(changelogProvider);
+    final notificationService = NotificationServiceImpl(loggingService);
+    await notificationService.init();
+    getIt.registerSingleton<NotificationService>(notificationService);
+
+    final changelogProvider = ChangelogProviderImpl(loggingService, networkService);
+    getIt.registerSingleton<ChangelogProvider>(changelogProvider);
+  }
 }

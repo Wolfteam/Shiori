@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rate_my_app/rate_my_app.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/application/bloc.dart';
-import 'package:shiori/application/changelog/changelog_bloc.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/desktop_tablet_scaffold.dart';
 import 'package:shiori/presentation/mobile_scaffold.dart';
@@ -53,7 +52,6 @@ class _MainTabPageState extends State<MainTabPage> with SingleTickerProviderStat
     context.read<SettingsBloc>().add(const SettingsEvent.init());
 
     if (widget.showChangelog) {
-      context.read<ChangelogBloc>().add(const ChangelogEvent.init());
       WidgetsBinding.instance?.addPostFrameCallback((_) {
         showDialog(context: context, builder: (ctx) => const ChangelogDialog());
       });
