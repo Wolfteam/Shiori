@@ -31,6 +31,14 @@ class Injection {
     return ElementsBloc(genshinService);
   }
 
+  static GameCodesBloc get gameCodesBloc {
+    final dataService = getIt<DataService>();
+    final telemetryService = getIt<TelemetryService>();
+    final gameCodeService = getIt<GameCodeService>();
+    final networkService = getIt<NetworkService>();
+    return GameCodesBloc(dataService, telemetryService, gameCodeService, networkService);
+  }
+
   static Future<void> init() async {
     final networkService = NetworkServiceImpl();
     networkService.init();

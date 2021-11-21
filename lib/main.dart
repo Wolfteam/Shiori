@@ -9,7 +9,6 @@ import 'application/bloc.dart';
 import 'domain/services/calculator_service.dart';
 import 'domain/services/data_service.dart';
 import 'domain/services/device_info_service.dart';
-import 'domain/services/game_code_service.dart';
 import 'domain/services/genshin_service.dart';
 import 'domain/services/locale_service.dart';
 import 'domain/services/logging_service.dart';
@@ -112,15 +111,6 @@ class MyApp extends StatelessWidget {
             final genshinService = getIt<GenshinService>();
             final telemetryService = getIt<TelemetryService>();
             return ArtifactBloc(genshinService, telemetryService);
-          },
-        ),
-        BlocProvider(
-          create: (ctx) {
-            final dataService = getIt<DataService>();
-            final telemetryService = getIt<TelemetryService>();
-            final gameCodeService = getIt<GameCodeService>();
-            final networkService = getIt<NetworkService>();
-            return GameCodesBloc(dataService, telemetryService, gameCodeService, networkService);
           },
         ),
         BlocProvider(

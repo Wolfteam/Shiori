@@ -78,7 +78,7 @@ class _SearchBoxState extends State<SearchBox> {
             if (widget.showClearButton)
               IconButton(
                 icon: const Icon(Icons.close),
-                splashRadius: Styles.buttonSplashRadius,
+                splashRadius: Styles.smallButtonSplashRadius,
                 onPressed: _cleanSearchText,
               ),
           ],
