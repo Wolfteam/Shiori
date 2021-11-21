@@ -93,8 +93,7 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
   }
 
   Future<void> _showReorderDialog(List<CalculatorSessionModel> sessions, BuildContext context) async {
-    context.read<CalculatorAscMaterialsSessionsOrderBloc>().add(CalculatorAscMaterialsSessionsOrderEvent.init(sessions: sessions));
-    await showDialog(context: context, builder: (_) => ReorderSessionsDialog());
+    await showDialog(context: context, builder: (_) => ReorderSessionsDialog(sessions: sessions));
   }
 
   Future<void> _showInfoDialog(BuildContext context) async {

@@ -39,9 +39,18 @@ class Injection {
     return GameCodesBloc(dataService, telemetryService, gameCodeService, networkService);
   }
 
+  static ItemQuantityFormBloc get itemQuantityFormBloc {
+    return ItemQuantityFormBloc();
+  }
+
   static CalculatorAscMaterialsOrderBloc getCalculatorAscMaterialsOrderBloc(CalculatorAscMaterialsBloc bloc) {
     final dataService = getIt<DataService>();
     return CalculatorAscMaterialsOrderBloc(dataService, bloc);
+  }
+
+  static CalculatorAscMaterialsSessionsOrderBloc getCalculatorAscMaterialsSessionsOrderBloc(CalculatorAscMaterialsSessionsBloc bloc) {
+    final dataService = getIt<DataService>();
+    return CalculatorAscMaterialsSessionsOrderBloc(dataService, bloc);
   }
 
   static Future<void> init() async {

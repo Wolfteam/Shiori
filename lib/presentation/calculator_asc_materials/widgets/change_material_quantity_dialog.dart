@@ -18,7 +18,6 @@ class ChangeMaterialQuantityDialog extends StatelessWidget {
       listener: (ctx, state) {
         state.maybeMap(
           saved: (_) {
-            context.read<ItemQuantityFormBloc>().add(const ItemQuantityFormEvent.close());
             if (sessionKey != null) {
               context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.init(sessionKey: sessionKey!));
             }

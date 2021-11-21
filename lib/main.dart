@@ -196,13 +196,6 @@ class MyApp extends StatelessWidget {
             return InventoryBloc(genshinService, dataService, telemetryService, ctx.read<CharacterBloc>(), ctx.read<WeaponBloc>());
           },
         ),
-        BlocProvider(create: (_) => ItemQuantityFormBloc()),
-        BlocProvider(
-          create: (ctx) {
-            final dataService = getIt<DataService>();
-            return CalculatorAscMaterialsSessionsOrderBloc(dataService, ctx.read<CalculatorAscMaterialsSessionsBloc>());
-          },
-        ),
         BlocProvider(
           create: (ctx) {
             final dataService = getIt<DataService>();

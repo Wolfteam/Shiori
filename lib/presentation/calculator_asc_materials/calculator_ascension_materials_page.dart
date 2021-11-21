@@ -76,8 +76,7 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   Future<void> _showReorderDialog(List<ItemAscensionMaterials> items, BuildContext context) async {
-    context.read<CalculatorAscMaterialsOrderBloc>().add(CalculatorAscMaterialsOrderEvent.init(sessionKey: sessionKey, items: items));
-    await showDialog(context: context, builder: (_) => ReorderItemsDialog());
+    await showDialog(context: context, builder: (_) => ReorderItemsDialog(sessionKey: sessionKey, items: items));
   }
 
   Future<void> _showDeleteAllDialog(BuildContext context) async {
