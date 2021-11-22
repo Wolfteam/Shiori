@@ -40,7 +40,6 @@ class CalculatorAscMaterialsOrderBloc extends Bloc<CalculatorAscMaterialsOrderEv
 
         return state;
       },
-      discardChanges: (_) async => _initialState,
     );
 
     yield s;

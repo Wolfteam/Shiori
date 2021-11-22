@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
@@ -55,11 +56,20 @@ class _NotificationTitleBodyState extends State<NotificationTitleBody> {
         Flexible(
           flex: 45,
           fit: FlexFit.tight,
-          child: BlocBuilder<NotificationBloc, NotificationState>(
+          child: BlocConsumer<NotificationBloc, NotificationState>(
+            listener: (ctx, state) {
+              if (state.title != _title || state.body != _body) {
+                setState(() {
+                  _title = state.title;
+                  _titleController.text = _title;
+                });
+              }
+            },
             builder: (ctx, state) => TextField(
               controller: _titleController,
               maxLength: NotificationBloc.maxTitleLength,
               keyboardType: TextInputType.text,
+              maxLengthEnforcement: MaxLengthEnforcement.enforced,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.zero,
                 hintText: s.title,
@@ -74,11 +84,20 @@ class _NotificationTitleBodyState extends State<NotificationTitleBody> {
         Flexible(
           flex: 45,
           fit: FlexFit.tight,
-          child: BlocBuilder<NotificationBloc, NotificationState>(
+          child: BlocConsumer<NotificationBloc, NotificationState>(
+            listener: (ctx, state) {
+              if (state.body != _body) {
+                setState(() {
+                  _body = state.body;
+                  _bodyController.text = _body;
+                });
+              }
+            },
             builder: (ctx, state) => TextField(
               controller: _bodyController,
               maxLength: NotificationBloc.maxBodyLength,
               keyboardType: TextInputType.text,
+              maxLengthEnforcement: MaxLengthEnforcement.enforced,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.zero,
                 hintText: s.body,

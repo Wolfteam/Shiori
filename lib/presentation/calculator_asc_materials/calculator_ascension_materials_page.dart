@@ -8,6 +8,7 @@ import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/characters/characters_page.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
@@ -34,10 +35,14 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _AppBar(sessionKey: sessionKey),
-      body: SafeArea(
-        child: _FabMenu(sessionKey: sessionKey),
+    return BlocProvider(
+      create: (ctx) => Injection.getCalculatorAscMaterialsBloc(ctx.read<CalculatorAscMaterialsSessionsBloc>())
+        ..add(CalculatorAscMaterialsEvent.init(sessionKey: sessionKey)),
+      child: Scaffold(
+        appBar: _AppBar(sessionKey: sessionKey),
+        body: SafeArea(
+          child: _FabMenu(sessionKey: sessionKey),
+        ),
       ),
     );
   }
@@ -76,14 +81,20 @@ class _AppBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   Future<void> _showReorderDialog(List<ItemAscensionMaterials> items, BuildContext context) async {
-    await showDialog(context: context, builder: (_) => ReorderItemsDialog(sessionKey: sessionKey, items: items));
+    await showDialog(
+      context: context,
+      builder: (_) => BlocProvider.value(
+        value: context.read<CalculatorAscMaterialsBloc>(),
+        child: ReorderItemsDialog(sessionKey: sessionKey, items: items),
+      ),
+    );
   }
 
   Future<void> _showDeleteAllDialog(BuildContext context) async {
     final s = S.of(context);
     await showDialog(
       context: context,
-      builder: (context) => ConfirmDialog(
+      builder: (_) => ConfirmDialog(
         title: s.deleteAllItems,
         content: s.confirmQuestion,
         onOk: () => context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.clearAllItems(sessionKey)),

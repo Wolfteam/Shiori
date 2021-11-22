@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/enums/app_notification_type.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/bottom_sheets/common_bottom_sheet.dart';
 import 'package:shiori/presentation/shared/bottom_sheets/common_bottom_sheet_buttons.dart';
 import 'package:shiori/presentation/shared/bottom_sheets/right_bottom_sheet.dart';
@@ -18,6 +20,12 @@ import 'forms/notification_realm_currency_form.dart';
 import 'forms/notification_resin_form.dart';
 import 'forms/notification_weekly_boss_form.dart';
 
+const _titleKey = 'title';
+const _bodyKey = 'body';
+const _itemKey = 'key';
+const _itemTypeKey = 'type';
+const _isInEditModeKey = 'isInEditMode';
+
 class AddEditNotificationBottomSheet extends StatelessWidget {
   final bool isInEditMode;
 
@@ -26,12 +34,22 @@ class AddEditNotificationBottomSheet extends StatelessWidget {
     required this.isInEditMode,
   }) : super(key: key);
 
-  static Map<String, dynamic> buildNavigationArgs({bool isInEditMode = false}) => <String, dynamic>{'isInEditMode': isInEditMode};
+  static Map<String, dynamic> buildNavigationArgsForAdd(String title, String body) =>
+      <String, dynamic>{_isInEditModeKey: false, _titleKey: title, _bodyKey: body};
 
-  static AddEditNotificationBottomSheet getWidgetFromArgs(Map<String, dynamic> args) {
+  static Map<String, dynamic> buildNavigationArgsForEdit(int key, AppNotificationType type) =>
+      <String, dynamic>{_isInEditModeKey: true, _itemKey: key, _itemTypeKey: type};
+
+  static Widget getWidgetFromArgs(BuildContext context, Map<String, dynamic> args) {
     assert(args.isNotEmpty);
-    final isInEditMode = args['isInEditMode'] as bool;
-    return AddEditNotificationBottomSheet(isInEditMode: isInEditMode);
+    final isInEditMode = args[_isInEditModeKey] as bool;
+    final event = isInEditMode
+        ? NotificationEvent.edit(key: args[_itemKey] as int, type: args[_itemTypeKey] as AppNotificationType)
+        : NotificationEvent.add(defaultTitle: args[_titleKey] as String, defaultBody: args[_bodyKey] as String);
+    return BlocProvider<NotificationBloc>(
+      create: (ctx) => Injection.getNotificationBloc(context.read<NotificationsBloc>())..add(event),
+      child: AddEditNotificationBottomSheet(isInEditMode: isInEditMode),
+    );
   }
 
   @override
@@ -43,7 +61,7 @@ class AddEditNotificationBottomSheet extends StatelessWidget {
         builder: (ctx, state) => CommonBottomSheet(
           titleIcon: isInEditMode ? Icons.edit : Icons.add,
           title: isInEditMode ? s.editNotification : s.addNotification,
-          onOk: !state.isBodyValid || !state.isTitleValid ? null : () => _saveChanges(context),
+          onOk: !state.isBodyValid || !state.isTitleValid ? null : () => _saveChanges(ctx),
           onCancel: () => Navigator.pop(context),
           child: _FormWidget(isInEditMode: isInEditMode),
         ),
@@ -54,7 +72,7 @@ class AddEditNotificationBottomSheet extends StatelessWidget {
       builder: (ctx, state) => RightBottomSheet(
         bottom: CommonButtonSheetButtons(
           onCancel: () => Navigator.pop(context),
-          onOk: !state.isBodyValid || !state.isTitleValid ? null : () => _saveChanges(context),
+          onOk: !state.isBodyValid || !state.isTitleValid ? null : () => _saveChanges(ctx),
         ),
         children: [
           _FormWidget(isInEditMode: isInEditMode),

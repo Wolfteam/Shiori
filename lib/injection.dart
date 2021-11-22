@@ -43,6 +43,50 @@ class Injection {
     return ItemQuantityFormBloc();
   }
 
+  static NotificationTimerBloc get notificationTimerBloc {
+    return NotificationTimerBloc();
+  }
+
+  static NotificationsBloc get notificationsBloc {
+    final dataService = getIt<DataService>();
+    final notificationService = getIt<NotificationService>();
+    final settingsService = getIt<SettingsService>();
+    final telemetryService = getIt<TelemetryService>();
+    return NotificationsBloc(dataService, notificationService, settingsService, telemetryService);
+  }
+
+  static CalculatorAscMaterialsSessionsBloc get calculatorAscMaterialsSessionsBloc {
+    final dataService = getIt<DataService>();
+    final telemetryService = getIt<TelemetryService>();
+    return CalculatorAscMaterialsSessionsBloc(dataService, telemetryService);
+  }
+
+  //TODO: USE THIS PROP
+  // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
+  //   final genshinService = getIt<GenshinService>();
+  //   final calculatorService = getIt<CalculatorService>();
+  //   return CalculatorAscMaterialsItemBloc(genshinService, calculatorService);
+  // }
+
+  static CalculatorAscMaterialsBloc getCalculatorAscMaterialsBloc(CalculatorAscMaterialsSessionsBloc parentBloc) {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    final calculatorService = getIt<CalculatorService>();
+    final dataService = getIt<DataService>();
+    return CalculatorAscMaterialsBloc(genshinService, telemetryService, calculatorService, dataService, parentBloc);
+  }
+
+  static NotificationBloc getNotificationBloc(NotificationsBloc bloc) {
+    final dataService = getIt<DataService>();
+    final notificationService = getIt<NotificationService>();
+    final genshinService = getIt<GenshinService>();
+    final localeService = getIt<LocaleService>();
+    final loggingService = getIt<LoggingService>();
+    final telemetryService = getIt<TelemetryService>();
+    final settingsService = getIt<SettingsService>();
+    return NotificationBloc(dataService, notificationService, genshinService, localeService, loggingService, telemetryService, settingsService, bloc);
+  }
+
   static CalculatorAscMaterialsOrderBloc getCalculatorAscMaterialsOrderBloc(CalculatorAscMaterialsBloc bloc) {
     final dataService = getIt<DataService>();
     return CalculatorAscMaterialsOrderBloc(dataService, bloc);

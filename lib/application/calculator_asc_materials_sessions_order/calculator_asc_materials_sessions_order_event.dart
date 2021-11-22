@@ -12,6 +12,4 @@ class CalculatorAscMaterialsSessionsOrderEvent with _$CalculatorAscMaterialsSess
   }) = _PositionChanged;
 
   const factory CalculatorAscMaterialsSessionsOrderEvent.applyChanges() = _ApplyChanges;
-
-  const factory CalculatorAscMaterialsSessionsOrderEvent.discardChanges() = _DiscardChanged;
 }

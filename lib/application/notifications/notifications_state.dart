@@ -4,7 +4,6 @@ part of 'notifications_bloc.dart';
 class NotificationsState with _$NotificationsState {
   const factory NotificationsState.initial({
     required List<NotificationItem> notifications,
-    required int ticks,
     @Default(false) bool useTwentyFourHoursFormat,
   }) = _InitialState;
 }

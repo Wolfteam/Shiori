@@ -56,7 +56,13 @@ class SessionListItem extends StatelessWidget {
   }
 
   Future<void> _showEditSessionDialog(int sessionKey, String name, BuildContext context) async {
-    await showDialog(context: context, builder: (_) => AddEditSessionDialog.update(sessionKey: sessionKey, name: name));
+    await showDialog(
+      context: context,
+      builder: (_) => BlocProvider.value(
+        value: context.read<CalculatorAscMaterialsSessionsBloc>(),
+        child: AddEditSessionDialog.update(sessionKey: sessionKey, name: name),
+      ),
+    );
   }
 
   Future<void> _showDeleteSessionDialog(int sessionKey, String name, BuildContext context) async {
@@ -85,11 +91,13 @@ class SessionListItem extends StatelessWidget {
   }
 
   Future<void> _gotoCalculatorAscensionMaterialsPage(BuildContext context) async {
-    context.read<CalculatorAscMaterialsBloc>().add(CalculatorAscMaterialsEvent.init(sessionKey: session.key));
-    final route = MaterialPageRoute(builder: (c) => CalculatorAscensionMaterialsPage(sessionKey: session.key));
+    final route = MaterialPageRoute(
+      builder: (c) => BlocProvider.value(
+        value: context.read<CalculatorAscMaterialsSessionsBloc>(),
+        child: CalculatorAscensionMaterialsPage(sessionKey: session.key),
+      ),
+    );
     await Navigator.push(context, route);
     await route.completed;
-    context.read<CalculatorAscMaterialsBloc>().add(const CalculatorAscMaterialsEvent.close());
-    context.read<CalculatorAscMaterialsOrderBloc>().add(const CalculatorAscMaterialsOrderEvent.discardChanges());
   }
 }

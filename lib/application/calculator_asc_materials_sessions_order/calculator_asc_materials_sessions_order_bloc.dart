@@ -50,7 +50,6 @@ class CalculatorAscMaterialsSessionsOrderBloc extends Bloc<CalculatorAscMaterial
 
         return state;
       },
-      discardChanges: (_) async => _initialState,
     );
 
     yield s;

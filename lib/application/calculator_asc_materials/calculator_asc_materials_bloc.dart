@@ -175,7 +175,6 @@ class CalculatorAscMaterialsBloc extends Bloc<CalculatorAscMaterialsEvent, Calcu
 
         return _updateItem(e.sessionKey, e.index, updatedWeapon);
       },
-      close: (e) async => _initialState,
       clearAllItems: (e) async {
         await _dataService.deleteAllCalAscMatSessionItems(e.sessionKey);
         return const CalculatorAscMaterialsState.initial(items: [], summary: []);

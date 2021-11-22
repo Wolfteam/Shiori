@@ -15,7 +15,7 @@ class ReorderSessionsDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<CalculatorAscMaterialsSessionsOrderBloc>(
-      create: (ctx) => Injection.getCalculatorAscMaterialsSessionsOrderBloc(ctx.read<CalculatorAscMaterialsSessionsBloc>())
+      create: (ctx) => Injection.getCalculatorAscMaterialsSessionsOrderBloc(context.read<CalculatorAscMaterialsSessionsBloc>())
         ..add(CalculatorAscMaterialsSessionsOrderEvent.init(sessions: sessions)),
       child: const _Body(),
     );

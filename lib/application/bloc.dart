@@ -22,6 +22,7 @@ export 'material/material_bloc.dart';
 export 'materials/materials_bloc.dart';
 export 'monsters/monsters_bloc.dart';
 export 'notification/notification_bloc.dart';
+export 'notification_timer/notification_timer_bloc.dart';
 export 'notifications/notifications_bloc.dart';
 export 'settings/settings_bloc.dart';
 export 'tier_list/tier_list_bloc.dart';

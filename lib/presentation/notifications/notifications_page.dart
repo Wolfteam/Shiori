@@ -5,6 +5,7 @@ import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/models.dart' as models;
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/app_fab.dart';
 import 'package:shiori/presentation/shared/dialogs/info_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
@@ -35,54 +36,97 @@ class _NotificationsPageState extends State<NotificationsPage> with SingleTicker
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(s.notifications),
-        actions: [
-          IconButton(
-            tooltip: s.information,
-            icon: const Icon(Icons.info),
-            onPressed: () => _showInfoDialog(context),
-          ),
-        ],
-      ),
-      body: SafeArea(
-        child: BlocBuilder<NotificationsBloc, NotificationsState>(
-          builder: (ctx, state) => state.map(
-            initial: (state) {
-              if (state.notifications.isEmpty) {
-                return NothingFoundColumn(msg: s.startByCreatingANotification);
-              }
+    return BlocProvider<NotificationsBloc>(
+      create: (ctx) => Injection.notificationsBloc..add(const NotificationsEvent.init()),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(s.notifications),
+          actions: [
+            IconButton(
+              tooltip: s.information,
+              icon: const Icon(Icons.info),
+              onPressed: () => _showInfoDialog(context),
+            ),
+          ],
+        ),
+        body: SafeArea(
+          child: BlocBuilder<NotificationsBloc, NotificationsState>(
+            builder: (ctx, state) => state.map(
+              initial: (state) {
+                if (state.notifications.isEmpty) {
+                  return NothingFoundColumn(msg: s.startByCreatingANotification);
+                }
 
-              return GroupedListView<models.NotificationItem, String>(
-                elements: state.notifications,
-                controller: scrollController,
-                groupBy: (item) => s.translateAppNotificationType(item.type),
-                itemBuilder: (context, element) => _buildNotificationItem(state.useTwentyFourHoursFormat, element),
-                groupSeparatorBuilder: (type) => Container(
-                  color: theme.colorScheme.secondary.withOpacity(0.5),
-                  padding: Styles.edgeInsetAll5,
-                  child: Text(type, style: theme.textTheme.headline6),
-                ),
-              );
-            },
+                return GroupedListView<models.NotificationItem, String>(
+                  elements: state.notifications,
+                  controller: scrollController,
+                  groupBy: (item) => s.translateAppNotificationType(item.type),
+                  itemBuilder: (context, element) => _NotificationItem(
+                    useTwentyFourHoursFormat: state.useTwentyFourHoursFormat,
+                    element: element,
+                  ),
+                  groupSeparatorBuilder: (type) => Container(
+                    color: theme.colorScheme.secondary.withOpacity(0.5),
+                    padding: Styles.edgeInsetAll5,
+                    child: Text(type, style: theme.textTheme.headline6),
+                  ),
+                );
+              },
+            ),
           ),
         ),
-      ),
-      //we use a builder here to get the scaffold context
-      floatingActionButton: Builder(
-        builder: (ctx) => AppFab(
-          onPressed: () => _showAddModal(ctx),
-          icon: const Icon(Icons.add),
-          hideFabAnimController: hideFabAnimController,
-          scrollController: scrollController,
-          mini: false,
+        //we use a builder here to get the scaffold context
+        floatingActionButton: Builder(
+          builder: (ctx) => AppFab(
+            onPressed: () => _showAddModal(ctx),
+            icon: const Icon(Icons.add),
+            hideFabAnimController: hideFabAnimController,
+            scrollController: scrollController,
+            mini: false,
+          ),
         ),
       ),
     );
   }
 
-  Widget _buildNotificationItem(bool useTwentyFourHoursFormat, models.NotificationItem element) {
+  Future<void> _showAddModal(BuildContext context) async {
+    final s = S.of(context);
+    await ModalBottomSheetUtils.showAppModalBottomSheet(
+      context,
+      EndDrawerItemType.notifications,
+      args: AddEditNotificationBottomSheet.buildNavigationArgsForAdd(s.appName, s.notifications),
+    );
+  }
+
+  Future<void> _showInfoDialog(BuildContext context) async {
+    final s = S.of(context);
+    final explanations = [
+      s.notifInfoMsgA,
+      s.notifInfoMsgB,
+      s.notifInfoMsgC,
+      s.notifInfoMsgD,
+      s.swipeToSeeMoreOptions,
+      s.notifInfoMsgE,
+    ];
+    await showDialog(
+      context: context,
+      builder: (context) => InfoDialog(explanations: explanations),
+    );
+  }
+}
+
+class _NotificationItem extends StatelessWidget {
+  final bool useTwentyFourHoursFormat;
+  final models.NotificationItem element;
+
+  const _NotificationItem({
+    Key? key,
+    required this.useTwentyFourHoursFormat,
+    required this.element,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     Widget subtitle;
     switch (element.type) {
       case AppNotificationType.resin:
@@ -116,32 +160,5 @@ class _NotificationsPageState extends State<NotificationsPage> with SingleTicker
     }
 
     return NotificationListTitle(item: element, subtitle: subtitle);
-  }
-
-  Future<void> _showAddModal(BuildContext context) async {
-    final s = S.of(context);
-    context.read<NotificationBloc>().add(NotificationEvent.add(defaultTitle: s.appName, defaultBody: s.notifications));
-    await ModalBottomSheetUtils.showAppModalBottomSheet(
-      context,
-      EndDrawerItemType.notifications,
-      args: AddEditNotificationBottomSheet.buildNavigationArgs(),
-    );
-    context.read<NotificationsBloc>().add(const NotificationsEvent.init());
-  }
-
-  Future<void> _showInfoDialog(BuildContext context) async {
-    final s = S.of(context);
-    final explanations = [
-      s.notifInfoMsgA,
-      s.notifInfoMsgB,
-      s.notifInfoMsgC,
-      s.notifInfoMsgD,
-      s.swipeToSeeMoreOptions,
-      s.notifInfoMsgE,
-    ];
-    await showDialog(
-      context: context,
-      builder: (context) => InfoDialog(explanations: explanations),
-    );
   }
 }

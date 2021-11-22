@@ -46,7 +46,6 @@ class CalculatorAscMaterialsSessionsBloc extends Bloc<CalculatorAscMaterialsSess
         final sessions = _dataService.getAllCalAscMatSessions();
         return CalculatorAscMaterialsSessionsState.loaded(sessions: sessions);
       },
-      close: (e) async => const CalculatorAscMaterialsSessionsState.loaded(sessions: []),
       deleteAllSessions: (_) async {
         await _telemetryService.trackCalculatorAscMaterialsSessionsDeleted(all: true);
         await _dataService.deleteAllCalAscMatSession();

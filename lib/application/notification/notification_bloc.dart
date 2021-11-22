@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:darq/darq.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/app_constants.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/domain/enums/enums.dart';
@@ -37,6 +38,8 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   final TelemetryService _telemetryService;
   final SettingsService _settingsService;
 
+  final NotificationsBloc _notificationsBloc;
+
   static int get maxTitleLength => 40;
 
   static int get maxBodyLength => 40;
@@ -51,6 +54,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     this._loggingService,
     this._telemetryService,
     this._settingsService,
+    this._notificationsBloc,
   ) : super(_initialState);
 
   @override
@@ -368,6 +372,8 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
     } catch (e, s) {
       _loggingService.error(runtimeType, '_saveChanges: Unknown error while saving changes', e, s);
     }
+
+    _notificationsBloc.add(const NotificationsEvent.init());
 
     return state;
   }

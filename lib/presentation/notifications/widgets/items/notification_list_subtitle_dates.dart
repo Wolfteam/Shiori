@@ -17,39 +17,45 @@ class NotificationListSubtitleDates extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Expanded(
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                margin: const EdgeInsets.only(right: 5),
-                child: const Icon(Icons.date_range, size: 13),
-              ),
-              Expanded(
-                child: Text(
-                  utils.DateUtils.formatDateMilitaryTime(createdAt, useTwentyFourHoursFormat: useTwentyFourHoursFormat),
+          child: RichText(
+            overflow: TextOverflow.ellipsis,
+            text: TextSpan(
+              children: [
+                WidgetSpan(
+                  child: Container(
+                    margin: const EdgeInsets.only(right: 5),
+                    child: const Icon(Icons.date_range, size: 13),
+                  ),
+                ),
+                TextSpan(
+                  text: utils.DateUtils.formatDateMilitaryTime(createdAt, useTwentyFourHoursFormat: useTwentyFourHoursFormat),
                   style: theme.textTheme.caption,
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         Expanded(
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                margin: const EdgeInsets.only(right: 5),
-                child: const Icon(Icons.notifications_active, size: 13),
-              ),
-              Expanded(
-                child: Text(
-                  utils.DateUtils.formatDateMilitaryTime(completesAt, useTwentyFourHoursFormat: useTwentyFourHoursFormat),
+          child: RichText(
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.end,
+            text: TextSpan(
+              children: [
+                WidgetSpan(
+                  child: Container(
+                    margin: const EdgeInsets.only(right: 5),
+                    child: const Icon(Icons.notifications_active, size: 13),
+                  ),
+                ),
+                TextSpan(
+                  text: utils.DateUtils.formatDateMilitaryTime(completesAt, useTwentyFourHoursFormat: useTwentyFourHoursFormat),
                   style: theme.textTheme.caption,
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ],
