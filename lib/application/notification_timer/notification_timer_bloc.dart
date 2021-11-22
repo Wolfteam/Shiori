@@ -16,13 +16,14 @@ class NotificationTimerBloc extends Bloc<NotificationTimerEvent, NotificationTim
   Stream<NotificationTimerState> mapEventToState(NotificationTimerEvent event) async* {
     final s = event.map(
       init: (e) {
-        startTime();
+        _startTime();
         return NotificationTimerState.loaded(completesAt: e.completesAt, remaining: e.completesAt.difference(DateTime.now()));
       },
       refresh: (e) {
         if (state.remaining.inSeconds > 0) {
           return state.copyWith.call(remaining: state.completesAt.difference(DateTime.now()));
         }
+        _cancelTimer();
         return state;
       },
     );
@@ -32,15 +33,15 @@ class NotificationTimerBloc extends Bloc<NotificationTimerEvent, NotificationTim
 
   @override
   Future<void> close() {
-    cancelTimer();
+    _cancelTimer();
     return super.close();
   }
 
-  void startTime() {
+  void _startTime() {
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) => add(NotificationTimerEvent.refresh(ticks: timer.tick)));
   }
 
-  void cancelTimer() {
+  void _cancelTimer() {
     _timer?.cancel();
     _timer = null;
   }

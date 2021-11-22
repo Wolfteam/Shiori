@@ -134,11 +134,4 @@ void main() {
       ),
     ],
   );
-
-  blocTest<GameCodesBloc, GameCodesState>(
-    'Close',
-    build: () => GameCodesBloc(_dataService, _telemetryService, _gameCodeService, _networkService),
-    act: (bloc) => bloc.add(const GameCodesEvent.close()),
-    expect: () => [_defaultState],
-  );
 }
