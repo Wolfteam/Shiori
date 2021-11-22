@@ -12,10 +12,10 @@
   "japanese": "日语",
   "vietnamese": "越南语",
   "indonesian": "印尼语",
-  "deutsch": "Deutsch",
-  "korean": "Korean",
-  "thai": "Thai",
-  "traditionalChinese": "Chinese (Traditional)",
+  "deutsch": "德语",
+  "korean": "韩语",
+  "thai": "泰语",
+  "traditionalChinese": "繁体中文",
   "bow": "弓",
   "claymore": "双手剑",
   "sword": "单手剑",
@@ -89,7 +89,7 @@
   "sortBy": "排序方式",
   "flower": "花",
   "plume": "羽",
-  "clock": "钟",
+  "clock": "沙",
   "goblet": "杯",
   "crown": "冠",
   "elementalDmgPercentage": "元素伤害 %",
@@ -374,5 +374,5 @@
   "melt": "融化",
   "freeze": "冻结",
   "shield": "盾",
-  "unofficial": "Unofficial"
+  "unofficial": "非官方"
 }

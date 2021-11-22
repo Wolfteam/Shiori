@@ -7,6 +7,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/extensions/duration_extensions.dart';
 import 'package:shiori/domain/models/models.dart' as models;
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/dialogs/number_picker_dialog.dart';
 import 'package:shiori/presentation/shared/images/circle_item.dart';
 import 'package:shiori/presentation/shared/styles.dart';
@@ -18,7 +19,7 @@ class NotificationListTitle extends StatelessWidget {
   final int itemKey;
   final AppNotificationType type;
   final String image;
-  final Duration remaining;
+  final Duration initialRemaining;
   final DateTime createdAt;
   final DateTime completesAt;
   final String? note;
@@ -33,7 +34,7 @@ class NotificationListTitle extends StatelessWidget {
   })  : itemKey = item.key,
         type = item.type,
         image = item.image,
-        remaining = item.remaining,
+        initialRemaining = item.remaining,
         createdAt = item.createdAt,
         completesAt = item.completesAt,
         note = item.note,
@@ -44,87 +45,96 @@ class NotificationListTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final s = S.of(context);
-    return Slidable(
-      actionPane: const SlidableDrawerActionPane(),
-      actions: [
-        IconSlideAction(
-          caption: s.stop,
-          color: Colors.deepOrange,
-          icon: Icons.stop,
-          foregroundColor: Colors.white,
-          onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.stop(id: itemKey, type: type)),
-        ),
-        IconSlideAction(
-          caption: s.delete,
-          color: Colors.red,
-          icon: Icons.delete,
-          onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.delete(id: itemKey, type: type)),
-        ),
-      ],
-      secondaryActions: [
-        IconSlideAction(
-          caption: s.edit,
-          color: Colors.orange,
-          icon: Icons.edit,
-          foregroundColor: Colors.white,
+    final typeIsValidForReduction = type != AppNotificationType.resin && type != AppNotificationType.realmCurrency;
+    return BlocProvider<NotificationTimerBloc>(
+      create: (ctx) => Injection.notificationTimerBloc..add(NotificationTimerEvent.init(completesAt: completesAt)),
+      child: Slidable(
+        actionPane: const SlidableDrawerActionPane(),
+        actions: [
+          IconSlideAction(
+            caption: s.stop,
+            color: Colors.deepOrange,
+            icon: Icons.stop,
+            foregroundColor: Colors.white,
+            onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.stop(id: itemKey, type: type)),
+          ),
+          IconSlideAction(
+            caption: s.delete,
+            color: Colors.red,
+            icon: Icons.delete,
+            onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.delete(id: itemKey, type: type)),
+          ),
+        ],
+        secondaryActions: [
+          IconSlideAction(
+            caption: s.edit,
+            color: Colors.orange,
+            icon: Icons.edit,
+            foregroundColor: Colors.white,
+            onTap: () => _showEditModal(context),
+          ),
+          if (type != AppNotificationType.custom)
+            IconSlideAction(
+              caption: s.reset,
+              color: Colors.green,
+              icon: Icons.restore,
+              foregroundColor: Colors.white,
+              onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.reset(id: itemKey, type: type)),
+            ),
+          if (initialRemaining.inHours > 1 && typeIsValidForReduction)
+            BlocBuilder<NotificationTimerBloc, NotificationTimerState>(
+              builder: (ctx, state) {
+                final canBeUsed = state.remaining.inHours > 1 && typeIsValidForReduction;
+                return IconSlideAction(
+                  caption: s.reduceTime,
+                  color: canBeUsed ? Colors.purpleAccent : Colors.grey,
+                  icon: Icons.timelapse,
+                  foregroundColor: Colors.white,
+                  onTap: canBeUsed ? () => _showReduceTimeModal(context, state.remaining) : null,
+                );
+              },
+            ),
+        ],
+        child: ListTile(
+          contentPadding: Styles.edgeInsetAll5,
+          horizontalTitleGap: 10,
           onTap: () => _showEditModal(context),
+          leading: Container(
+            constraints: BoxConstraints.tight(const Size.fromRadius(30)),
+            child: Stack(
+              children: [
+                CircleItem(image: image, forDrag: true, radius: 50, imageSizeTimesTwo: false),
+                if (showNotification)
+                  Positioned(
+                    top: 0,
+                    right: 0,
+                    child: Icon(Icons.notifications_active, color: theme.colorScheme.secondary),
+                  ),
+              ],
+            ),
+          ),
+          title: BlocBuilder<NotificationTimerBloc, NotificationTimerState>(
+            builder: (ctx, state) => Text(
+              state.remaining.formatDuration(negativeText: s.completed),
+              style: theme.textTheme.subtitle1,
+            ),
+          ),
+          subtitle: subtitle,
         ),
-        if (type != AppNotificationType.custom)
-          IconSlideAction(
-            caption: s.reset,
-            color: Colors.green,
-            icon: Icons.restore,
-            foregroundColor: Colors.white,
-            onTap: () => context.read<NotificationsBloc>().add(NotificationsEvent.reset(id: itemKey, type: type)),
-          ),
-        if (remaining.inHours > 1 && type != AppNotificationType.resin && type != AppNotificationType.realmCurrency)
-          IconSlideAction(
-            caption: s.reduceTime,
-            color: Colors.purpleAccent,
-            icon: Icons.timelapse,
-            foregroundColor: Colors.white,
-            onTap: () => _showReduceTimeModal(context),
-          ),
-      ],
-      child: ListTile(
-        contentPadding: Styles.edgeInsetAll5,
-        minVerticalPadding: 10,
-        horizontalTitleGap: 10,
-        onTap: () => _showEditModal(context),
-        leading: Container(
-          constraints: BoxConstraints.tight(const Size.fromRadius(30)),
-          child: Stack(
-            children: [
-              CircleItem(image: image, forDrag: true),
-              if (showNotification)
-                Positioned(
-                  top: 0,
-                  right: 0,
-                  child: Icon(Icons.notifications_active, color: theme.colorScheme.secondary),
-                ),
-            ],
-          ),
-        ),
-        title: Text(remaining.formatDuration(negativeText: s.completed), style: theme.textTheme.subtitle1),
-        subtitle: subtitle,
       ),
     );
   }
 
   Future<void> _showEditModal(BuildContext context) async {
-    context.read<NotificationsBloc>().cancelTimer();
-    context.read<NotificationBloc>().add(NotificationEvent.edit(key: itemKey, type: type));
-    ModalBottomSheetUtils.showAppModalBottomSheet(
+    await ModalBottomSheetUtils.showAppModalBottomSheet(
       context,
       EndDrawerItemType.notifications,
-      args: AddEditNotificationBottomSheet.buildNavigationArgs(isInEditMode: true),
+      args: AddEditNotificationBottomSheet.buildNavigationArgsForEdit(itemKey, type),
     );
-    context.read<NotificationsBloc>().add(const NotificationsEvent.init());
   }
 
-  Future<void> _showReduceTimeModal(BuildContext context) async {
+  Future<void> _showReduceTimeModal(BuildContext context, Duration remaining) async {
     final s = S.of(context);
-    context.read<NotificationsBloc>().cancelTimer();
     final hoursToReduce = await showDialog<int>(
       context: context,
       builder: (_) => NumberPickerDialog(
@@ -136,7 +146,6 @@ class NotificationListTitle extends StatelessWidget {
       ),
     );
 
-    context.read<NotificationsBloc>().add(const NotificationsEvent.init());
     if (hoursToReduce == null) {
       return;
     }

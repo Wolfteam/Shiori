@@ -3805,8 +3805,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Unzählige Wünsche",
-          "description": "Fügt Charkra-Desiderate beim Erhalten von Elementarkristallen oder Elementarteilchen durch Truppenmitglieder in der Nähe 2 Stapelungen Entschlusskraft hinzu.\r\n3 s Abklingzeit.\r\n",
+          "title": "Weltberühmte Bewahrerin",
+          "description": "Verringert die für den Aufstieg von Einhändern oder Stangenwaffen verbrauchte Menge an Mora um 50 %.\r\n",
           "descriptions": []
         },
         {
@@ -3820,8 +3820,8 @@
         },
         {
           "key": "p3",
-          "title": "Weltberühmte Bewahrerin",
-          "description": "Verringert die für den Aufstieg von Einhändern oder Stangenwaffen verbrauchte Menge an Mora um 50 %.\r\n",
+          "title": "Unzählige Wünsche",
+          "description": "Fügt Charkra-Desiderate beim Erhalten von Elementarkristallen oder Elementarteilchen durch Truppenmitglieder in der Nähe 2 Stapelungen Entschlusskraft hinzu.\r\n3 s Abklingzeit.\r\n",
           "descriptions": []
         }
       ],
@@ -6074,11 +6074,11 @@
           ],
           "stats": [
             "Fähigkeits-SCH|{param1}%",
-            "Intervall der flammenden Siegel|{param2}%",
-            "SCH-Bonus für heftige Schläge|{param3}s",
-            "Dauer|{param4}%",
+            "Intervall der flammenden Siegel|{param2}s",
+            "SCH-Bonus für heftige Schläge|{param3}%",
+            "Dauer|{param4}s",
             "Abklingzeit|{param5}s",
-            "Elementarenergie|{param6}s"
+            "Elementarenergie|{param6}"
           ]
         }
       ],
@@ -6456,11 +6456,11 @@
       "name": "Akuoumaru",
       "description": "Das geliebte Schwert des legendären „Akuou“. Die Klinge ist lang und majestätisch, aber überraschend einfach zu handhaben.",
       "refinements": [
-        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},12 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}40{/color} %.",
-        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},15 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}50{/color} %.",
-        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},18 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}60{/color} %.",
-        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},21 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}70{/color} %.",
-        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},24 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}80{/color} %."
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,12{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}40{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,15{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}50{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,18{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}60{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,21{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}70{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,24{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}80{/color} %."
       ]
     },
     {
@@ -6469,9 +6469,9 @@
       "description": "Ein präziser und extravaganter Langbogen, der einmal einem Vogelfreien gehört hat, der sich der Gerechtigkeit verschrieben hat und niemals gefangen wurde.",
       "refinements": [
         "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um {color}2{/color} % und insgesamt um bis zu {color}20{/color} %. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um {color}4{/color} %, bis der Bonus auf 0 % gefallen ist.",
-        "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um {color}2{/color},5 % und insgesamt um bis zu {color}25{/color} %. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um {color}5{/color} %, bis der Bonus auf 0 % gefallen ist.",
+        "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um {color}2,5{/color} % und insgesamt um bis zu {color}25{/color} %. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um {color}5{/color} %, bis der Bonus auf 0 % gefallen ist.",
         "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um {color}3{/color} % und insgesamt um bis zu {color}30{/color} %. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um {color}6{/color} %, bis der Bonus auf 0 % gefallen ist.",
-        "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um {color}3{/color},5 % und insgesamt um bis zu {color}35{/color} %. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um {color}7{/color} %, bis der Bonus auf 0 % gefallen ist.",
+        "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um {color}3,5{/color} % und insgesamt um bis zu {color}35{/color} %. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um {color}7{/color} %, bis der Bonus auf 0 % gefallen ist.",
         "Erhöht den von der mit dieser Waffe ausgerüsteten Figur verursachten Schaden, wenn diese Figur in der Truppe, aber nicht eingewechselt ist, pro s um {color}4{/color} % und insgesamt um bis zu {color}40{/color} %. Verringert diesen Schadensbonus 4 s nach Einwechseln dieser Figur pro s um {color}8{/color} %, bis der Bonus auf 0 % gefallen ist."
       ]
     },
@@ -6481,9 +6481,9 @@
       "description": "Ein Schwert, das auf Bestellung von einem berühmten Samurai angefertigt wurde, der, den Legenden nach, sogar den schnellsten Tengu-Krieger mühelos niederschlagen konnte.",
       "refinements": [
         "Gewährt beim Auslösen einer Elementarfähigkeit 1 Samen der Nachkommenschaft, 5 s Abklingzeit. Samen der Nachkommenschaft halten 30 s, zu einem Zeitpunkt können bis zu 3 existieren. Verbraucht beim Auslösen einer Spezialfähigkeit alle vorhandenen Samen der Nachkommenschaft und stellt der Figur 2 s später {color}6{/color} Punkte Elementarenergie pro verbrauchten Samen der Nachkommenschaft wieder her.",
-        "Gewährt beim Auslösen einer Elementarfähigkeit 1 Samen der Nachkommenschaft, 5 s Abklingzeit. Samen der Nachkommenschaft halten 30 s, zu einem Zeitpunkt können bis zu 3 existieren. Verbraucht beim Auslösen einer Spezialfähigkeit alle vorhandenen Samen der Nachkommenschaft und stellt der Figur 2 s später {color}7{/color},5 Punkte Elementarenergie pro verbrauchten Samen der Nachkommenschaft wieder her.",
+        "Gewährt beim Auslösen einer Elementarfähigkeit 1 Samen der Nachkommenschaft, 5 s Abklingzeit. Samen der Nachkommenschaft halten 30 s, zu einem Zeitpunkt können bis zu 3 existieren. Verbraucht beim Auslösen einer Spezialfähigkeit alle vorhandenen Samen der Nachkommenschaft und stellt der Figur 2 s später {color}7,5{/color} Punkte Elementarenergie pro verbrauchten Samen der Nachkommenschaft wieder her.",
         "Gewährt beim Auslösen einer Elementarfähigkeit 1 Samen der Nachkommenschaft, 5 s Abklingzeit. Samen der Nachkommenschaft halten 30 s, zu einem Zeitpunkt können bis zu 3 existieren. Verbraucht beim Auslösen einer Spezialfähigkeit alle vorhandenen Samen der Nachkommenschaft und stellt der Figur 2 s später {color}9{/color} Punkte Elementarenergie pro verbrauchten Samen der Nachkommenschaft wieder her.",
-        "Gewährt beim Auslösen einer Elementarfähigkeit 1 Samen der Nachkommenschaft, 5 s Abklingzeit. Samen der Nachkommenschaft halten 30 s, zu einem Zeitpunkt können bis zu 3 existieren. Verbraucht beim Auslösen einer Spezialfähigkeit alle vorhandenen Samen der Nachkommenschaft und stellt der Figur 2 s später {color}10{/color},5 Punkte Elementarenergie pro verbrauchten Samen der Nachkommenschaft wieder her.",
+        "Gewährt beim Auslösen einer Elementarfähigkeit 1 Samen der Nachkommenschaft, 5 s Abklingzeit. Samen der Nachkommenschaft halten 30 s, zu einem Zeitpunkt können bis zu 3 existieren. Verbraucht beim Auslösen einer Spezialfähigkeit alle vorhandenen Samen der Nachkommenschaft und stellt der Figur 2 s später {color}10,5{/color} Punkte Elementarenergie pro verbrauchten Samen der Nachkommenschaft wieder her.",
         "Gewährt beim Auslösen einer Elementarfähigkeit 1 Samen der Nachkommenschaft, 5 s Abklingzeit. Samen der Nachkommenschaft halten 30 s, zu einem Zeitpunkt können bis zu 3 existieren. Verbraucht beim Auslösen einer Spezialfähigkeit alle vorhandenen Samen der Nachkommenschaft und stellt der Figur 2 s später {color}12{/color} Punkte Elementarenergie pro verbrauchten Samen der Nachkommenschaft wieder her."
       ]
     },
@@ -6612,11 +6612,11 @@
       "name": "Compoundbogen",
       "description": "Ein Compoundbogen aus Metall, bei dem Räder die Sehne spannen. Aufgrund seines sonderbaren Aufbaus ist er schwierig zu pflegen. Gespannt wird er dafür umso einfacher.",
       "refinements": [
-        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}4{/color} % und die Standardangriffs-GSW um {color}1{/color},2 %. 4-fach stapelbar, 0,3 s Abklingzeit.",
-        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}5{/color} % und die Standardangriffs-GSW um {color}1{/color},5 %. 4-fach stapelbar, 0,3 s Abklingzeit.",
-        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}6{/color} % und die Standardangriffs-GSW um {color}1{/color},8 %. 4-fach stapelbar, 0,3 s Abklingzeit.",
-        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}7{/color} % und die Standardangriffs-GSW um {color}2{/color},1 %. 4-fach stapelbar, 0,3 s Abklingzeit.",
-        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}8{/color} % und die Standardangriffs-GSW um {color}2{/color},4 %. 4-fach stapelbar, 0,3 s Abklingzeit."
+        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}4{/color} % und die Standardangriffs-GSW um {color}1,2{/color} %. 4-fach stapelbar, 0,3 s Abklingzeit.",
+        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}5{/color} % und die Standardangriffs-GSW um {color}1,5{/color} %. 4-fach stapelbar, 0,3 s Abklingzeit.",
+        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}6{/color} % und die Standardangriffs-GSW um {color}1,8{/color} %. 4-fach stapelbar, 0,3 s Abklingzeit.",
+        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}7{/color} % und die Standardangriffs-GSW um {color}2,1{/color} %. 4-fach stapelbar, 0,3 s Abklingzeit.",
+        "Erhöht den ANG bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}8{/color} % und die Standardangriffs-GSW um {color}2,4{/color} %. 4-fach stapelbar, 0,3 s Abklingzeit."
       ]
     },
     {
@@ -6763,9 +6763,9 @@
       "description": "Ein Ring aus lieblichem Jaspis der Tiefsee. Er glänzt mit einem reinen Glanz wie der des Mondes und genauso unendlich weit.",
       "refinements": [
         "Erhöht den Heilungseffekt um {color}10{/color} %. Erhöht den mit Standardangriffen verursachten Schaden um {color}1{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her.",
-        "Erhöht den Heilungseffekt um {color}12{/color},5 %. Erhöht den mit Standardangriffen verursachten Schaden um {color}1{/color},5 % der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her.",
+        "Erhöht den Heilungseffekt um {color}12,5{/color} %. Erhöht den mit Standardangriffen verursachten Schaden um {color}1,5{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her.",
         "Erhöht den Heilungseffekt um {color}15{/color} %. Erhöht den mit Standardangriffen verursachten Schaden um {color}2{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her.",
-        "Erhöht den Heilungseffekt um {color}17{/color},5 %. Erhöht den mit Standardangriffen verursachten Schaden um {color}2{/color},5 % der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her.",
+        "Erhöht den Heilungseffekt um {color}17,5{/color} %. Erhöht den mit Standardangriffen verursachten Schaden um {color}2,5{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her.",
         "Erhöht den Heilungseffekt um {color}20{/color} %. Erhöht den mit Standardangriffen verursachten Schaden um {color}3{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Stellt nach Anwendung von Spezialfähigkeiten 12 s lang beim Treffen von Gegnern mit Standardangriffen 0,6 Punkte Elementarenergie wieder her. Stellt auf diese Weise alle 0,1 s höchstens einmal Elementarenergie wieder her."
       ]
     },
@@ -6787,9 +6787,9 @@
       "description": "Ein Kodex, der unter den Gelehrten des Ordo Favonius weitergetragen wird. Darin werden die Prinzipien und Kräfte von Elementen und Stoffen erläutert.",
       "refinements": [
         "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}60{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}12{/color} s Abklingzeit.",
-        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}70{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}10{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}70{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}10,5{/color} s Abklingzeit.",
         "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}80{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}9{/color} s Abklingzeit.",
-        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}90{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}7{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}90{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}7,5{/color} s Abklingzeit.",
         "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}100{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}6{/color} s Abklingzeit."
       ]
     },
@@ -6799,9 +6799,9 @@
       "description": "Ein zeremonielles Schwert des Ordo Favonius. Es vereinfacht das Bündeln elementarer Energie, während es eine enorme Zerstörungskraft mitbringt.",
       "refinements": [
         "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}60{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}12{/color} s Abklingzeit.",
-        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}70{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}10{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}70{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}10,5{/color} s Abklingzeit.",
         "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}80{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}9{/color} s Abklingzeit.",
-        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}90{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}7{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}90{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}7,5{/color} s Abklingzeit.",
         "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}100{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}6{/color} s Abklingzeit."
       ]
     },
@@ -6811,9 +6811,9 @@
       "description": "Eine Lanze in der Machart des Ordo Favonius. Sie ist makellos gerade und ihre Spitze zischt leicht durch die Luft.",
       "refinements": [
         "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}60{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}12{/color} s Abklingzeit.",
-        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}70{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}10{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}70{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}10,5{/color} s Abklingzeit.",
         "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}80{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}9{/color} s Abklingzeit.",
-        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}90{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}7{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}90{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}7,5{/color} s Abklingzeit.",
         "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}100{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}6{/color} s Abklingzeit."
       ]
     },
@@ -6823,9 +6823,9 @@
       "description": "Ein Standardlangschwert des Ordo Favonius. Durch seinen leichten Aufbau und seine scharfe Klinge wird das Bündeln elementarer Energie vereinfacht.",
       "refinements": [
         "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}60{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}12{/color} s Abklingzeit.",
-        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}70{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}10{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}70{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}10,5{/color} s Abklingzeit.",
         "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}80{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}9{/color} s Abklingzeit.",
-        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}90{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}7{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}90{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}7,5{/color} s Abklingzeit.",
         "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}100{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}6{/color} s Abklingzeit."
       ]
     },
@@ -6835,9 +6835,9 @@
       "description": "Der Standardreflexbogen des Ordo Favonius, den nur die besten Schützen bedienen und seine Leistung voll ausnutzen können.",
       "refinements": [
         "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}60{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}12{/color} s Abklingzeit.",
-        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}70{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}10{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}70{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}10,5{/color} s Abklingzeit.",
         "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}80{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}9{/color} s Abklingzeit.",
-        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}90{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}7{/color},5 s Abklingzeit.",
+        "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}90{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}7,5{/color} s Abklingzeit.",
         "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {color}100{/color} % einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {color}6{/color} s Abklingzeit."
       ]
     },
@@ -6883,9 +6883,9 @@
       "description": "Ein gerades Schwert, blass-bläulich, das an uralte Gesänge erinnert. Diese Waffe ist so scharf wie der Schwur der Freiheit des Reichs des Windes.",
       "refinements": [
         "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den verursachten Schaden um {color}10{/color} %. Gibt der damit ausgerüsteten Figur beim Auslösen der Elementarreaktionen ein Zeichen der Revolte, 0,5 s Abklingzeit. Der Effekt bleibt auch bestehen, wenn die Figur ausgewechselt wird. Verbraucht alle Zeichen der Revolte, sobald 2 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied der Revolution“: Erhöht den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall um {color}16{/color} % und den ANG um {color}20{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen der Revolte erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
-        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den verursachten Schaden um {color}12{/color},5 %. Gibt der damit ausgerüsteten Figur beim Auslösen der Elementarreaktionen ein Zeichen der Revolte, 0,5 s Abklingzeit. Der Effekt bleibt auch bestehen, wenn die Figur ausgewechselt wird. Verbraucht alle Zeichen der Revolte, sobald 2 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied der Revolution“: Erhöht den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall um {color}20{/color} % und den ANG um {color}25{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen der Revolte erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den verursachten Schaden um {color}12,5{/color} %. Gibt der damit ausgerüsteten Figur beim Auslösen der Elementarreaktionen ein Zeichen der Revolte, 0,5 s Abklingzeit. Der Effekt bleibt auch bestehen, wenn die Figur ausgewechselt wird. Verbraucht alle Zeichen der Revolte, sobald 2 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied der Revolution“: Erhöht den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall um {color}20{/color} % und den ANG um {color}25{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen der Revolte erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
         "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den verursachten Schaden um {color}15{/color} %. Gibt der damit ausgerüsteten Figur beim Auslösen der Elementarreaktionen ein Zeichen der Revolte, 0,5 s Abklingzeit. Der Effekt bleibt auch bestehen, wenn die Figur ausgewechselt wird. Verbraucht alle Zeichen der Revolte, sobald 2 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied der Revolution“: Erhöht den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall um {color}24{/color} % und den ANG um {color}30{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen der Revolte erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
-        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den verursachten Schaden um {color}17{/color},5 %. Gibt der damit ausgerüsteten Figur beim Auslösen der Elementarreaktionen ein Zeichen der Revolte, 0,5 s Abklingzeit. Der Effekt bleibt auch bestehen, wenn die Figur ausgewechselt wird. Verbraucht alle Zeichen der Revolte, sobald 2 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied der Revolution“: Erhöht den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall um {color}28{/color} % und den ANG um {color}35{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen der Revolte erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
+        "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den verursachten Schaden um {color}17,5{/color} %. Gibt der damit ausgerüsteten Figur beim Auslösen der Elementarreaktionen ein Zeichen der Revolte, 0,5 s Abklingzeit. Der Effekt bleibt auch bestehen, wenn die Figur ausgewechselt wird. Verbraucht alle Zeichen der Revolte, sobald 2 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied der Revolution“: Erhöht den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall um {color}28{/color} % und den ANG um {color}35{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen der Revolte erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden.",
         "Ein Teil der „Bewegung des Jahrtausends“, die mit dem Wind zieht. Erhöht den verursachten Schaden um {color}20{/color} %. Gibt der damit ausgerüsteten Figur beim Auslösen der Elementarreaktionen ein Zeichen der Revolte, 0,5 s Abklingzeit. Der Effekt bleibt auch bestehen, wenn die Figur ausgewechselt wird. Verbraucht alle Zeichen der Revolte, sobald 2 davon vorhanden sind, und verleiht allen Truppenmitgliedern in der Nähe den 12 s anhaltenden Effekt von „Bewegung des Jahrtausends – Lied der Revolution“: Erhöht den mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall um {color}32{/color} % und den ANG um {color}40{/color} %. Nach Auslösen dieses Effekts kann 20 s lang kein weiteres Zeichen der Revolte erhalten werden. Die verschiedenen durch „Bewegung des Jahrtausends“ ausgelösten Boni können bei gleicher Art nicht gestapelt werden."
       ]
     },
@@ -6907,9 +6907,9 @@
       "description": "Ein Katalysator, der die Erinnerung der „Kitsune Saiguu“ der alten Zeit trägt. Und doch ist dieses Gerät immer noch zu klein für das immense Volumen ihrer Erinnerungen.",
       "refinements": [
         "Erhöht beim Auslösen von Elektro-Reaktionen durch die mit dieser Waffe ausgerüsteten Figur den Elementar-SCH von Truppenmitgliedern mit dem an der Elementarreaktion beteiligten Element in der Nähe 6 s lang um {color}10{/color} %. Der auf diese Weise durch die Figur erhaltene Elementar-SCH-Bonus ist nicht stapelbar.",
-        "Erhöht beim Auslösen von Elektro-Reaktionen durch die mit dieser Waffe ausgerüsteten Figur den Elementar-SCH von Truppenmitgliedern mit dem an der Elementarreaktion beteiligten Element in der Nähe 6 s lang um {color}12{/color},5 %. Der auf diese Weise durch die Figur erhaltene Elementar-SCH-Bonus ist nicht stapelbar.",
+        "Erhöht beim Auslösen von Elektro-Reaktionen durch die mit dieser Waffe ausgerüsteten Figur den Elementar-SCH von Truppenmitgliedern mit dem an der Elementarreaktion beteiligten Element in der Nähe 6 s lang um {color}12,5{/color} %. Der auf diese Weise durch die Figur erhaltene Elementar-SCH-Bonus ist nicht stapelbar.",
         "Erhöht beim Auslösen von Elektro-Reaktionen durch die mit dieser Waffe ausgerüsteten Figur den Elementar-SCH von Truppenmitgliedern mit dem an der Elementarreaktion beteiligten Element in der Nähe 6 s lang um {color}15{/color} %. Der auf diese Weise durch die Figur erhaltene Elementar-SCH-Bonus ist nicht stapelbar.",
-        "Erhöht beim Auslösen von Elektro-Reaktionen durch die mit dieser Waffe ausgerüsteten Figur den Elementar-SCH von Truppenmitgliedern mit dem an der Elementarreaktion beteiligten Element in der Nähe 6 s lang um {color}17{/color},5 %. Der auf diese Weise durch die Figur erhaltene Elementar-SCH-Bonus ist nicht stapelbar.",
+        "Erhöht beim Auslösen von Elektro-Reaktionen durch die mit dieser Waffe ausgerüsteten Figur den Elementar-SCH von Truppenmitgliedern mit dem an der Elementarreaktion beteiligten Element in der Nähe 6 s lang um {color}17,5{/color} %. Der auf diese Weise durch die Figur erhaltene Elementar-SCH-Bonus ist nicht stapelbar.",
         "Erhöht beim Auslösen von Elektro-Reaktionen durch die mit dieser Waffe ausgerüsteten Figur den Elementar-SCH von Truppenmitgliedern mit dem an der Elementarreaktion beteiligten Element in der Nähe 6 s lang um {color}20{/color} %. Der auf diese Weise durch die Figur erhaltene Elementar-SCH-Bonus ist nicht stapelbar."
       ]
     },
@@ -6967,9 +6967,9 @@
       "description": "Ein dünner, glatter Degen aus fremden Landen, der auf Handelsrouten seinen Weg nach Liyue gefunden hat. Er ist äußerst leicht und spitz.",
       "refinements": [
         "Erhöht den von dieser Figur verursachten Schaden nach Verursachen von Elementar-SCH 6 s lang um {color}6{/color} %, 2-fach stapelbar. 1 s Abklingzeit.",
-        "Erhöht den von dieser Figur verursachten Schaden nach Verursachen von Elementar-SCH 6 s lang um {color}7{/color},5 %, 2-fach stapelbar. 1 s Abklingzeit.",
+        "Erhöht den von dieser Figur verursachten Schaden nach Verursachen von Elementar-SCH 6 s lang um {color}7,5{/color} %, 2-fach stapelbar. 1 s Abklingzeit.",
         "Erhöht den von dieser Figur verursachten Schaden nach Verursachen von Elementar-SCH 6 s lang um {color}9{/color} %, 2-fach stapelbar. 1 s Abklingzeit.",
-        "Erhöht den von dieser Figur verursachten Schaden nach Verursachen von Elementar-SCH 6 s lang um {color}10{/color},5 %, 2-fach stapelbar. 1 s Abklingzeit.",
+        "Erhöht den von dieser Figur verursachten Schaden nach Verursachen von Elementar-SCH 6 s lang um {color}10,5{/color} %, 2-fach stapelbar. 1 s Abklingzeit.",
         "Erhöht den von dieser Figur verursachten Schaden nach Verursachen von Elementar-SCH 6 s lang um {color}12{/color} %, 2-fach stapelbar. 1 s Abklingzeit."
       ]
     },
@@ -6979,9 +6979,9 @@
       "description": "Ein Schwert, das in Tatarasuna hergestellt wurde. Schwer und zäh.",
       "refinements": [
         "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}6{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}3{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
-        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}7{/color},5 %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}3{/color},5 Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}7,5{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}3,5{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
         "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}9{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}4{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
-        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}10{/color},5 %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}4{/color},5 Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}10,5{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}4,5{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
         "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}12{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}5{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden."
       ]
     },
@@ -6991,9 +6991,9 @@
       "description": "Eine besondere Lanze, die einst von einem berühmten Krieger benutzt wurde, der die Tatarigami auf der Insel Yashiori bewachte.",
       "refinements": [
         "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}6{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}3{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
-        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}7{/color},5 %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}3{/color},5 Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}7,5{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}3,5{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
         "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}9{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}4{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
-        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}10{/color},5 %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}4{/color},5 Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}10,5{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}4,5{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
         "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}12{/color} %. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {color}5{/color} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden."
       ]
     },
@@ -7134,11 +7134,11 @@
       "name": "Mouun-Mond",
       "description": "Ein schöner Kriegsbogen aus Muscheln und Korallen. Ein trauriger Glanz fließt entlang seiner mondlichtfarbenen Wurfarme.",
       "refinements": [
-        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},12 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}40{/color} %.",
-        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},15 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}50{/color} %.",
-        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},18 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}60{/color} %.",
-        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},21 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}70{/color} %.",
-        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},24 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}80{/color} %."
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,12{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}40{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,15{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}50{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,18{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}60{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,21{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}70{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,24{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}80{/color} %."
       ]
     },
     {
@@ -7153,9 +7153,9 @@
       "description": "Ein nahezu wertloser Fantasyroman. Auch seine Nutzung als magischer Katalysator entspringt eher der Fantasie.",
       "refinements": [
         "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen {color}1{/color} % LP wieder her.",
-        "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen {color}1{/color},25 % LP wieder her.",
-        "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen {color}1{/color},5 % LP wieder her.",
-        "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen {color}1{/color},75 % LP wieder her.",
+        "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen {color}1,25{/color} % LP wieder her.",
+        "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen {color}1,5{/color} % LP wieder her.",
+        "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen {color}1,75{/color} % LP wieder her.",
         "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen {color}2{/color} % LP wieder her."
       ]
     },
@@ -7171,9 +7171,9 @@
       "description": "Ein makelloser Bogen, so scharf wie die Gletscher des hohen Nordens.",
       "refinements": [
         "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um {color}12{/color} %. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um {color}10/20/30/48{/color} %. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander.",
-        "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um {color}15{/color} %. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um {color}12{/color},5/25/37,5/60 %. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander.",
+        "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um {color}15{/color} %. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um {color}12,5/25/37,5/60{/color} %. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander.",
         "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um {color}18{/color} %. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um {color}15/30/45/72{/color} %. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander.",
-        "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um {color}21{/color} %. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um {color}17{/color},5/35/52,5/84 %. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander.",
+        "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um {color}21{/color} %. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um {color}17,5/35/52,5/84{/color} %. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander.",
         "Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden um {color}24{/color} %. Erschafft beim Treffen von Gegnern mit Standardangriffen, heftigen Schlägen, Elementarfähigkeiten oder Spezialfähigkeiten 1 12 s anhaltende Stapelung des Effekts „Stern der weißen Nacht“. Erhöht den ANG bei 1/2/3/4 Stapelungen von „Stern der weißen Nacht“ um {color}20/40/60/96{/color} %. Die durch Standardangriffe, heftige Schläge, Elementarfähigkeiten oder Spezialfähigkeiten entstandenen Effekte von „Stern der weißen Nacht“ existieren unabhängig voneinander."
       ]
     },
@@ -7190,11 +7190,11 @@
       "name": "Moosgrüner Fels",
       "description": "Ein rituelles Schwert, das aus reinster Jade gehauen wurde. Man meint, ein leichtes Stöhnen zu vernehmen, während man es schwingt.",
       "refinements": [
-        "Erhöht die LP um {color}20{/color} %. Erhöht den ANG um {color}1{/color},2 % der max. LP der mit dieser Waffe ausgerüsteten Figur.",
-        "Erhöht die LP um {color}25{/color} %. Erhöht den ANG um {color}1{/color},5 % der max. LP der mit dieser Waffe ausgerüsteten Figur.",
-        "Erhöht die LP um {color}30{/color} %. Erhöht den ANG um {color}1{/color},8 % der max. LP der mit dieser Waffe ausgerüsteten Figur.",
-        "Erhöht die LP um {color}35{/color} %. Erhöht den ANG um {color}2{/color},1 % der max. LP der mit dieser Waffe ausgerüsteten Figur.",
-        "Erhöht die LP um {color}40{/color} %. Erhöht den ANG um {color}2{/color},4 % der max. LP der mit dieser Waffe ausgerüsteten Figur."
+        "Erhöht die LP um {color}20{/color} %. Erhöht den ANG um {color}1,2{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur.",
+        "Erhöht die LP um {color}25{/color} %. Erhöht den ANG um {color}1,5{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur.",
+        "Erhöht die LP um {color}30{/color} %. Erhöht den ANG um {color}1,8{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur.",
+        "Erhöht die LP um {color}35{/color} %. Erhöht den ANG um {color}2,1{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur.",
+        "Erhöht die LP um {color}40{/color} %. Erhöht den ANG um {color}2,4{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur."
       ]
     },
     {
@@ -7202,10 +7202,10 @@
       "name": "Urzeitlicher Jadespeer",
       "description": "Ein schwerer und spitzer Speer aus magischer Jade, mit dem man selbst die gewaltigen Meeresungeheuer der Urzeit überwältigen kann.",
       "refinements": [
-        "Erhöht den eigenen ANG bei einem Treffer 6 s lang um {color}3{/color},2 %, 7-fach stapelbar. 0,3 s Abklingzeit. Erhöht den Schaden nach Erreichen des Stapellimits um {color}12{/color} %.",
-        "Erhöht den eigenen ANG bei einem Treffer 6 s lang um {color}3{/color},9 %, 7-fach stapelbar. 0,3 s Abklingzeit. Erhöht den Schaden nach Erreichen des Stapellimits um {color}15{/color} %.",
-        "Erhöht den eigenen ANG bei einem Treffer 6 s lang um {color}4{/color},6 %, 7-fach stapelbar. 0,3 s Abklingzeit. Erhöht den Schaden nach Erreichen des Stapellimits um {color}18{/color} %.",
-        "Erhöht den eigenen ANG bei einem Treffer 6 s lang um {color}5{/color},3 %, 7-fach stapelbar. 0,3 s Abklingzeit. Erhöht den Schaden nach Erreichen des Stapellimits um {color}21{/color} %.",
+        "Erhöht den eigenen ANG bei einem Treffer 6 s lang um {color}3,2{/color} %, 7-fach stapelbar. 0,3 s Abklingzeit. Erhöht den Schaden nach Erreichen des Stapellimits um {color}12{/color} %.",
+        "Erhöht den eigenen ANG bei einem Treffer 6 s lang um {color}3,9{/color} %, 7-fach stapelbar. 0,3 s Abklingzeit. Erhöht den Schaden nach Erreichen des Stapellimits um {color}15{/color} %.",
+        "Erhöht den eigenen ANG bei einem Treffer 6 s lang um {color}4,6{/color} %, 7-fach stapelbar. 0,3 s Abklingzeit. Erhöht den Schaden nach Erreichen des Stapellimits um {color}18{/color} %.",
+        "Erhöht den eigenen ANG bei einem Treffer 6 s lang um {color}5,3{/color} %, 7-fach stapelbar. 0,3 s Abklingzeit. Erhöht den Schaden nach Erreichen des Stapellimits um {color}21{/color} %.",
         "Erhöht den eigenen ANG bei einem Treffer 6 s lang um {color}6{/color} %, 7-fach stapelbar. 0,3 s Abklingzeit. Erhöht den Schaden nach Erreichen des Stapellimits um {color}24{/color} %."
       ]
     },
@@ -7215,9 +7215,9 @@
       "description": "Ein magischer Katalysator versteckt in der Schwarzsteinschmiede. Aus ihm dringt das Licht von Sonne, Mond und Sternen.",
       "refinements": [
         "Stellt nach Anwendung von Spezialfähigkeiten 6 s lang alle 2 s {color}4{/color} Punkte Elementarenergie und allen Truppenmitgliedern alle 2 s {color}4{/color} % LP wieder her.",
-        "Stellt nach Anwendung von Spezialfähigkeiten 6 s lang alle 2 s {color}4{/color},5 Punkte Elementarenergie und allen Truppenmitgliedern alle 2 s {color}4{/color},5 % LP wieder her.",
+        "Stellt nach Anwendung von Spezialfähigkeiten 6 s lang alle 2 s {color}4,5{/color} Punkte Elementarenergie und allen Truppenmitgliedern alle 2 s {color}4,5{/color} % LP wieder her.",
         "Stellt nach Anwendung von Spezialfähigkeiten 6 s lang alle 2 s {color}5{/color} Punkte Elementarenergie und allen Truppenmitgliedern alle 2 s {color}5{/color} % LP wieder her.",
-        "Stellt nach Anwendung von Spezialfähigkeiten 6 s lang alle 2 s {color}5{/color},5 Punkte Elementarenergie und allen Truppenmitgliedern alle 2 s {color}5{/color},5 % LP wieder her.",
+        "Stellt nach Anwendung von Spezialfähigkeiten 6 s lang alle 2 s {color}5,5{/color} Punkte Elementarenergie und allen Truppenmitgliedern alle 2 s {color}5,5{/color} % LP wieder her.",
         "Stellt nach Anwendung von Spezialfähigkeiten 6 s lang alle 2 s {color}6{/color} Punkte Elementarenergie und allen Truppenmitgliedern alle 2 s {color}6{/color} % LP wieder her."
       ]
     },
@@ -7437,9 +7437,9 @@
       "description": "Eine seltene Waffe aus dem Ozean alter Zeiten. Schwingt man es durch die Luft, so hört man das Rauschen der Wellen.",
       "refinements": [
         "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um {color}6{/color} % und den erlittenen Schaden um {color}3{/color} %, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt.",
-        "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um {color}7{/color} % und den erlittenen Schaden um {color}2{/color},7 %, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt.",
-        "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um {color}8{/color} % und den erlittenen Schaden um {color}2{/color},4 %, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt.",
-        "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um {color}9{/color} % und den erlittenen Schaden um {color}2{/color},2 %, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt.",
+        "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um {color}7{/color} % und den erlittenen Schaden um {color}2,7{/color} %, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt.",
+        "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um {color}8{/color} % und den erlittenen Schaden um {color}2,4{/color} %, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt.",
+        "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um {color}9{/color} % und den erlittenen Schaden um {color}2,2{/color} %, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt.",
         "Erhöht den verursachten Schaden bei Anwesenheit der Figur alle 4 s um {color}10{/color} % und den erlittenen Schaden um {color}2{/color} %, 5-fach stapelbar. Effekt wird nicht bei Auswechseln der Figur zurückgesetzt, 1 Stapelung des Effekts wird bei Erleiden von Schaden aber entfernt."
       ]
     },
@@ -7515,9 +7515,9 @@
       "description": "Ein großer Bogen, der die Zusammengehörigkeit von Dvalin und dem Archon des Windes symbolisiert. Der Klang beim Loslassen der Sehne ist wie Musik in den Ohren des Archons und enthält die Kraft von Himmel und Wind.",
       "refinements": [
         "Erhöht den KSCH um {color}20{/color} % und verursacht bei einem Treffer mit einer Wahrscheinlichkeit von {color}60{/color} % physischen Schaden mit geringer Reichweite in Höhe von 125 % ANG. {color}4{/color} s Abklingzeit.",
-        "Erhöht den KSCH um {color}25{/color} % und verursacht bei einem Treffer mit einer Wahrscheinlichkeit von {color}70{/color} % physischen Schaden mit geringer Reichweite in Höhe von 125 % ANG. {color}3{/color},5 s Abklingzeit.",
+        "Erhöht den KSCH um {color}25{/color} % und verursacht bei einem Treffer mit einer Wahrscheinlichkeit von {color}70{/color} % physischen Schaden mit geringer Reichweite in Höhe von 125 % ANG. {color}3,5{/color} s Abklingzeit.",
         "Erhöht den KSCH um {color}30{/color} % und verursacht bei einem Treffer mit einer Wahrscheinlichkeit von {color}80{/color} % physischen Schaden mit geringer Reichweite in Höhe von 125 % ANG. {color}3{/color} s Abklingzeit.",
-        "Erhöht den KSCH um {color}35{/color} % und verursacht bei einem Treffer mit einer Wahrscheinlichkeit von {color}90{/color} % physischen Schaden mit geringer Reichweite in Höhe von 125 % ANG. {color}2{/color},5 s Abklingzeit.",
+        "Erhöht den KSCH um {color}35{/color} % und verursacht bei einem Treffer mit einer Wahrscheinlichkeit von {color}90{/color} % physischen Schaden mit geringer Reichweite in Höhe von 125 % ANG. {color}2,5{/color} s Abklingzeit.",
         "Erhöht den KSCH um {color}40{/color} % und verursacht bei einem Treffer mit einer Wahrscheinlichkeit von {color}100{/color} % physischen Schaden mit geringer Reichweite in Höhe von 125 % ANG. {color}2{/color} s Abklingzeit."
       ]
     },
@@ -7598,11 +7598,11 @@
       "name": "Homa-Stab",
       "description": "Ein sogenannter roter Brennholzstab, der in alten, mittlerweile vergessenen Ritualen verwendet wurde.",
       "refinements": [
-        "Erhöht die LP um {color}20{/color} %. Erhöht den ANG um {color}0{/color},8 % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1{/color} % der max. LP.",
-        "Erhöht die LP um {color}25{/color} %. Erhöht den ANG um {color}1{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1{/color},2 % der max. LP.",
-        "Erhöht die LP um {color}30{/color} %. Erhöht den ANG um {color}1{/color},2 % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1{/color},4 % der max. LP.",
-        "Erhöht die LP um {color}35{/color} %. Erhöht den ANG um {color}1{/color},4 % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1{/color},6 % der max. LP.",
-        "Erhöht die LP um {color}40{/color} %. Erhöht den ANG um {color}1{/color},6 % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1{/color},8 % der max. LP."
+        "Erhöht die LP um {color}20{/color} %. Erhöht den ANG um {color}0,8{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1{/color} % der max. LP.",
+        "Erhöht die LP um {color}25{/color} %. Erhöht den ANG um {color}1{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1,2{/color} % der max. LP.",
+        "Erhöht die LP um {color}30{/color} %. Erhöht den ANG um {color}1,2{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1,4{/color} % der max. LP.",
+        "Erhöht die LP um {color}35{/color} %. Erhöht den ANG um {color}1,4{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1,6{/color} % der max. LP.",
+        "Erhöht die LP um {color}40{/color} %. Erhöht den ANG um {color}1,6{/color} % der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {color}1,8{/color} % der max. LP."
       ]
     },
     {
@@ -7667,9 +7667,9 @@
       "description": "In der fernen Vergangenheit war dies der geliebte Speer eines berühmten Banditen aus Inazuma.",
       "refinements": [
         "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}16{/color} % und die KT von Spezialfähigkeiten um {color}6{/color} %.",
-        "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}20{/color} % und die KT von Spezialfähigkeiten um {color}7{/color},5 %.",
+        "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}20{/color} % und die KT von Spezialfähigkeiten um {color}7,5{/color} %.",
         "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}24{/color} % und die KT von Spezialfähigkeiten um {color}9{/color} %.",
-        "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}28{/color} % und die KT von Spezialfähigkeiten um {color}10{/color},5 %.",
+        "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}28{/color} % und die KT von Spezialfähigkeiten um {color}10,5{/color} %.",
         "Erhöht den mit Spezialfähigkeiten verursachten Schaden um {color}32{/color} % und die KT von Spezialfähigkeiten um {color}12{/color} %."
       ]
     },
@@ -7763,9 +7763,9 @@
       "description": "Ein praktisches Schwert aus Stahl, in dessen Scheide sich unter anderem Schere, Fernglas und Zunder für die Reise befinden.",
       "refinements": [
         "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen {color}1{/color} % LP wieder her.",
-        "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen {color}1{/color},25 % LP wieder her.",
-        "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen {color}1{/color},5 % LP wieder her.",
-        "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen {color}1{/color},75 % LP wieder her.",
+        "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen {color}1,25{/color} % LP wieder her.",
+        "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen {color}1,5{/color} % LP wieder her.",
+        "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen {color}1,75{/color} % LP wieder her.",
         "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen {color}2{/color} % LP wieder her."
       ]
     },
@@ -7804,11 +7804,11 @@
       "name": "Wellenbrecherflosse",
       "description": "Ein Naginata, das aus leuchtendem Material aus den Tiefen des Meeres geschmiedet wurde. Es gehörte einst den Tengu.",
       "refinements": [
-        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},12 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}40{/color} %.",
-        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},15 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}50{/color} %.",
-        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},18 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}60{/color} %.",
-        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},21 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}70{/color} %.",
-        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0{/color},24 %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}80{/color} %."
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,12{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}40{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,15{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}50{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,18{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}60{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,21{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}70{/color} %.",
+        "Erhöht den mit Spezialfähigkeiten der mit dieser Waffe ausgerüsteten Figur verursachten Schaden für jeden Punkt aus der Summe der max. Elementarenergie aller Truppenmitglieder zusammengerechnet um {color}0,24{/color} %. Erhöht den mit Spezialfähigkeit verursachten Schaden auf diese Weise um bis zu {color}80{/color} %."
       ]
     },
     {
@@ -7841,9 +7841,9 @@
       "description": "Ein fremdländisches Großschwert mit einer stumpfen Seite, das über Handelsrouten nach Liyue gelangt ist. Wer weiß, wie man damit umgeht, kann seine ungemeine Zerstörungskraft entfesseln.",
       "refinements": [
         "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}6{/color} %, 4-fach stapelbar. 0,5 s Abklingzeit.",
-        "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}7{/color},5 %, 4-fach stapelbar. 0,5 s Abklingzeit.",
+        "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}7,5{/color} %, 4-fach stapelbar. 0,5 s Abklingzeit.",
         "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}9{/color} %, 4-fach stapelbar. 0,5 s Abklingzeit.",
-        "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}10{/color},5 %, 4-fach stapelbar. 0,5 s Abklingzeit.",
+        "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}10,5{/color} %, 4-fach stapelbar. 0,5 s Abklingzeit.",
         "Erhöht den ANG und die VTD bei Treffern mit Standardangriffen und heftigen Schlägen 6 s lang um {color}12{/color} %, 4-fach stapelbar. 0,5 s Abklingzeit."
       ]
     },
@@ -9656,75 +9656,75 @@
     {
       "key": "condensed-ice",
       "name": "Erstarrte Glieder",
-      "effect": "Erhöht den Ausdauerverbrauch.",
+      "effect": "Erhöht den Ausdauerverbrauch und verlangsamt Standardangriffs- und Bewegungs-GSW.",
       "description": null
     }
   ],
   "reactions": [
     {
       "key": "vaporize",
-      "name": "Vaporize",
-      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "name": "Verdampfen",
+      "effect": "Verursacht 1,5-fachen Pyro-Schaden, wenn eine Pyro-Attacke die Reaktion auslöst.",
       "description": null
     },
     {
       "key": "burning",
-      "name": "Burning",
-      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
+      "name": "In Flammen",
+      "effect": "Verursacht kontinuierlichen Pyro-Schaden. Gras zählt als Dendro-Objekt und wird den Effekt “In Flammen” verbreiten.",
       "description": null
     },
     {
       "key": "overloaded",
-      "name": "Overloaded",
-      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
+      "name": "Überladen",
+      "effect": "Verursacht eine gewaltige Explosion, die Pyro-Flächenschaden verursacht. Diese Explosion wird als schwerer Treffer gewertet.",
       "description": null
     },
     {
       "key": "melt",
-      "name": "Melt",
-      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "name": "Schmelzen",
+      "effect": "Verursacht doppelten Pyro-Schaden, wenn eine Pyro-Attacke die Reaktion auslöst.",
       "description": null
     },
     {
       "key": "vaporize-reverse",
-      "name": "Vaporize (Reverse)",
-      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "name": "Verdampfen (umgekehrt)",
+      "effect": "Verursacht doppelten Hydro-Schaden, wenn eine Hydro-Attacke die Reaktion auslöst.",
       "description": null
     },
     {
       "key": "electro-charged",
-      "name": "Electro Charged",
-      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
+      "name": "Unter Strom",
+      "effect": "Verursacht kontinuierlichen Elektro-Schaden, der, bis der Effekt abklingt, jeden Gegner schockt. Jeder Schock unterbricht die Gegner. Außerdem entsteht ein Blitz, der zwischen allen von Hydro-Effekten betroffenen Gegnern und Objekten extra Elektro-Schaden verursacht.",
       "description": null
     },
     {
       "key": "frozen",
-      "name": "Frozen",
-      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
+      "name": "Gefroren",
+      "effect": "Friert das Ziel ein. Wenn das Ziel mit einer Zweihänder-Attacke, einer Attacke aus dem fall eines Einhänders oder Geo-Schaden (mit Ausnahme von einer Attacke aus dem Fall, eines Katalysator-Nutzers) getroffen wird. Wird “Zersplittern” verursacht. “Zersplittern” sorgt für zusätzlichen physischen Schaden.",
       "description": null
     },
     {
       "key": "swirl",
       "name": "Swirl",
-      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
+      "effect": "Absorbiert ein Element (Hydro, Pyro, Kryo, Elektro) und lässt Gegner in der Nähe diesen elementaren Schaden nehmen. Anemo-Schaden wird auf diese Weise nicht verursacht (da dieser Schaden von dem Talent, das den Anemo-Schaden verursacht, kommt). Nur ein Element auf Einmal kann auf diese Weise verbreitet werden.",
       "description": null
     },
     {
       "key": "superconduct",
-      "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "name": "Supraleiter",
+      "effect": "Verursacht Kryo-Flächenschaden und verringert den physischen WDS um 40% für 12 Sekunden. Jede Reaktion verursacht ihren Flächenschaden genau einmal.",
       "description": null
     },
     {
       "key": "melt-reverse",
-      "name": "Melt (Reverse)",
-      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "name": "Schmelzen (umgekehrt)",
+      "effect": "Verursacht 1,5-fachen Kryo-Schaden, wenn eine Kryo-Attacke die Reaktion auslöst.",
       "description": null
     },
     {
       "key": "crystallize",
-      "name": "Crystallize",
-      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
+      "name": "Kristallisation",
+      "effect": "Absorbiert das Element (Hydro, Pyro, Kryo, Elektro) und lässt einen Kristall fallen, der einen Schild gibt. Der Schild stoppt zwar jede Art von Schaden, aber beschützt gegen das Element des Schildes am effizientesten",
       "description": null
     }
   ],

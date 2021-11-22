@@ -45,7 +45,7 @@ class GameCodeListItem extends StatelessWidget {
         : theme.textTheme.subtitle1!.copyWith(
             decoration: TextDecoration.lineThrough,
             decorationColor: theme.colorScheme.secondary,
-            decorationThickness: 2,
+            decorationThickness: 3,
           );
 
     return Slidable(

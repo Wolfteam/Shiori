@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/app_fab.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/dialogs/info_dialog.dart';
@@ -16,12 +17,26 @@ import 'widgets/add_edit_session_dialog.dart';
 import 'widgets/reoder_sessions_dialog.dart';
 import 'widgets/session_list_item.dart';
 
-class CalculatorSessionsPage extends StatefulWidget {
+class CalculatorSessionsPage extends StatelessWidget {
+  const CalculatorSessionsPage({Key? key}) : super(key: key);
+
   @override
-  _CalculatorSessionsPageState createState() => _CalculatorSessionsPageState();
+  Widget build(BuildContext context) {
+    return BlocProvider<CalculatorAscMaterialsSessionsBloc>(
+      create: (ctx) => Injection.calculatorAscMaterialsSessionsBloc..add(const CalculatorAscMaterialsSessionsEvent.init()),
+      child: const _Body(),
+    );
+  }
 }
 
-class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with SingleTickerProviderStateMixin, AppFabMixin {
+class _Body extends StatefulWidget {
+  const _Body({Key? key}) : super(key: key);
+
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<_Body> with SingleTickerProviderStateMixin, AppFabMixin {
   @override
   bool get isInitiallyVisible => true;
 
@@ -42,24 +57,24 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
                 IconButton(
                   tooltip: s.priority,
                   icon: const Icon(Icons.unfold_more),
-                  onPressed: () => _showReorderDialog(state.sessions, context),
+                  onPressed: () => _showReorderDialog(state.sessions),
                 ),
               if (state.sessions.isNotEmpty)
                 IconButton(
                   tooltip: s.delete,
                   icon: const Icon(Icons.clear_all),
-                  onPressed: () => _showDeleteAllSessionsDialog(context),
+                  onPressed: () => _showDeleteAllSessionsDialog(),
                 ),
               IconButton(
                 tooltip: s.information,
                 icon: const Icon(Icons.info),
-                onPressed: () => _showInfoDialog(context),
+                onPressed: () => _showInfoDialog(),
               ),
             ],
           ),
         ),
         floatingActionButton: AppFab(
-          onPressed: () => _showAddSessionDialog(context),
+          onPressed: () => _showAddSessionDialog(),
           icon: const Icon(Icons.add),
           hideFabAnimController: hideFabAnimController,
           scrollController: scrollController,
@@ -88,17 +103,27 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
     );
   }
 
-  Future<void> _showAddSessionDialog(BuildContext context) async {
-    await showDialog(context: context, builder: (_) => const AddEditSessionDialog.create());
-    context.read<CalculatorAscMaterialsSessionFormBloc>().add(const CalculatorAscMaterialsSessionFormEvent.close());
+  Future<void> _showAddSessionDialog() async {
+    await showDialog(
+      context: context,
+      builder: (_) => BlocProvider.value(
+        value: context.read<CalculatorAscMaterialsSessionsBloc>(),
+        child: const AddEditSessionDialog.create(),
+      ),
+    );
   }
 
-  Future<void> _showReorderDialog(List<CalculatorSessionModel> sessions, BuildContext context) async {
-    context.read<CalculatorAscMaterialsSessionsOrderBloc>().add(CalculatorAscMaterialsSessionsOrderEvent.init(sessions: sessions));
-    await showDialog(context: context, builder: (_) => ReorderSessionsDialog());
+  Future<void> _showReorderDialog(List<CalculatorSessionModel> sessions) async {
+    await showDialog(
+      context: context,
+      builder: (_) => BlocProvider.value(
+        value: context.read<CalculatorAscMaterialsSessionsBloc>(),
+        child: ReorderSessionsDialog(sessions: sessions),
+      ),
+    );
   }
 
-  Future<void> _showInfoDialog(BuildContext context) async {
+  Future<void> _showInfoDialog() async {
     final s = S.of(context);
     final explanations = [
       s.calcSessionInfoMsgA,
@@ -113,7 +138,7 @@ class _CalculatorSessionsPageState extends State<CalculatorSessionsPage> with Si
     );
   }
 
-  Future<void> _showDeleteAllSessionsDialog(BuildContext context) async {
+  Future<void> _showDeleteAllSessionsDialog() async {
     final s = S.of(context);
     await showDialog(
       context: context,

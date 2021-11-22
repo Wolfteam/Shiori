@@ -3802,8 +3802,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Wishes Unnumbered",
-          "description": "Quando i membri vicini del party ottengono Elemental Orbs/Particles, Chakra Desiderata riceve 2 stacks di Resolve.\r\nL'effetto può avvenire una volta ogni 3s.\r\n",
+          "title": "All-Preserver",
+          "description": "Potenziare Spade e Polearms costa il 50% di Mora in meno.\r\n",
           "descriptions": []
         },
         {
@@ -3817,8 +3817,8 @@
         },
         {
           "key": "p3",
-          "title": "All-Preserver",
-          "description": "Potenziare Spade e Polearms costa il 50% di Mora in meno.\r\n",
+          "title": "Wishes Unnumbered",
+          "description": "Quando i membri vicini del party ottengono Elemental Orbs/Particles, Chakra Desiderata riceve 2 stacks di Resolve.\r\nL'effetto può avvenire una volta ogni 3s.\r\n",
           "descriptions": []
         }
       ],
@@ -4767,7 +4767,7 @@
       "key": "thoma",
       "name": "Thoma",
       "title": "Protector From Afar",
-      "description": "Servitore del Clan Kamisato. È meglio noto come un \"fixer\" di Inazuma.",
+      "description": "Tuttofare del Clan Kamisato. È meglio noto come un \"fixer\" di Inazuma.",
       "skills": [
         {
           "key": "s1",
@@ -4793,7 +4793,7 @@
           "stats": [
             "DMG 1° Colpo|{param1}%",
             "DMG 2° Colpo|{param2}%",
-            "DMG 3° Colpo|{param3}% ×{param4}",
+            "DMG 3° Colpo|{param3}% × {param4}",
             "DMG 4° Colpo|{param5}%",
             "DMG Attacco Caricato|{param6}%",
             "Costo in Stamina Attacco Caricato|{param7}",
@@ -4810,7 +4810,7 @@
               "name": "",
               "description": "La Barriera Ardente presenta le seguenti proprietà:\r\n",
               "descriptions": [
-                "Migliora del 250% l'assorbimento Pyro DMG 250%.",
+                "Migliora del 250% l'assorbimento di Pyro DMG.",
                 "Attivando una seconda Barriera Ardente, la durata della precedente barriera si aggiornerà e la quantità di Pyro DMG che poteva ancora assorbire si sommerà a quella della nuova barriera.",
                 "Il massimo assorbimento dei danni non può superare una data soglia definita dai Max HP di Thoma."
               ]
@@ -6066,11 +6066,11 @@
           ],
           "stats": [
             "Skill DMG|{param1}%",
-            "Intervallo di ottenimento di un Scarlet Seal|{param2}%",
-            "DMG Bonus Attacco Caricato|{param3}s",
-            "Durata|{param4}%",
+            "Intervallo di ottenimento di un Scarlet Seal|{param2}s",
+            "DMG Bonus Attacco Caricato|{param3}%",
+            "Durata|{param4}s",
             "CD (Tempo Ricarica)|{param5}s",
-            "Costo Energy|{param6}s"
+            "Costo Energy|{param6}"
           ]
         }
       ],
@@ -9649,7 +9649,7 @@
   "reactions": [
     {
       "key": "vaporize",
-      "name": "Vaporize",
+      "name": "vaporize",
       "effect": "Infligge Pyro DMG x1.5 se innescato da un Attacco Pyro.",
       "description": null
     },

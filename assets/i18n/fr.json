@@ -3809,8 +3809,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Souhaits innombrables",
-          "description": "Lorsque les personnages de l'équipe à proximité obtiennent un orbe ou une particule élémentaire, le Chakra Desiderata accumule 2 charges de résolution.\r\nCet effet peut être déclenché une fois toutes les 3 s.\r\n",
+          "title": "Préservation suprême",
+          "description": "Les moras utilisés lors de l'élévation d'épées à une main et d'armes d'hast sont réduits de 50 %.\r\n",
           "descriptions": []
         },
         {
@@ -3824,8 +3824,8 @@
         },
         {
           "key": "p3",
-          "title": "Préservation suprême",
-          "description": "Les moras utilisés lors de l'élévation d'épées à une main et d'armes d'hast sont réduits de 50 %.\r\n",
+          "title": "Souhaits innombrables",
+          "description": "Lorsque les personnages de l'équipe à proximité obtiennent un orbe ou une particule élémentaire, le Chakra Desiderata accumule 2 charges de résolution.\r\nCet effet peut être déclenché une fois toutes les 3 s.\r\n",
           "descriptions": []
         }
       ],
@@ -6080,11 +6080,11 @@
           ],
           "stats": [
             "DGT compétence|{param1}%",
-            "Intervalle entre les sceaux écarlates|{param2}%",
-            "Bonus ATQ chargée|{param3}s",
-            "Durée|{param4}%",
+            "Intervalle entre les sceaux écarlates|{param2}s",
+            "Bonus ATQ chargée|{param3}%",
+            "Durée|{param4}s",
             "Temps de recharge|{param5}s",
-            "Énergie élémentaire|{param6}s"
+            "Énergie élémentaire|{param6}"
           ]
         }
       ],
@@ -9622,139 +9622,139 @@
   "debuffs": [
     {
       "key": "engulfing-storm",
-      "name": "Engulfing Storm",
-      "effect": "Continuously drains Energy Recharge.",
+      "name": "Tempête dévastatrice",
+      "effect": "Draine l’énergie élémentaire jusqu’à ce que l’attribut Électro soit ôté.",
       "description": null
     },
     {
       "key": "slowing-water",
-      "name": "Slowing Water",
-      "effect": "Increases skill CD durations.",
+      "name": "Eau ralentissante",
+      "effect": "Augmente le TdR des compétences jusqu’à ce que l’attribut Hydro soit ôté.",
       "description": null
     },
     {
       "key": "smoldering-flames",
-      "name": "Smoldering Flames",
-      "effect": "Continuously inflicts damage over time.",
+      "name": "Flammes dévoreuses",
+      "effect": "Inflige des DGT Pyro continus jusqu’à ce que l’attribut Pyro soit ôté.",
       "description": null
     },
     {
       "key": "condensed-ice",
-      "name": "Condensed Ice",
-      "effect": "Increases stamina consumption.",
+      "name": "Glace condensée",
+      "effect": "Augmente la consommation d’endurance et empêche sa régénération, jusqu’à ce que l’attribut Cryo soit ôté.",
       "description": null
     }
   ],
   "reactions": [
     {
       "key": "vaporize",
-      "name": "Vaporize",
-      "effect": "Deals ×1.5 Pyro DMG when a Pyro attack triggers the reaction.",
+      "name": "Évaporation",
+      "effect": "Multiplie par 1.5 les DGT Pyro de la réaction lorsqu’une attaque Pyro déclenche la réaction.",
       "description": null
     },
     {
       "key": "burning",
-      "name": "Burning",
-      "effect": "Deals large Pyro DMG over time. Grass is considered a Dendro object and will spread the burn effect around the area.",
+      "name": "Brûlure",
+      "effect": "Inflige d’importants DGT Pyro en continu. L’herbe est considérée comme une entité Dendro et répandra l’effet autour de sa zone.",
       "description": null
     },
     {
       "key": "overloaded",
-      "name": "Overloaded",
-      "effect": "Deals AoE Pyro DMG and causes an explosion. The explosion generated is considered as a Heavy Attack.",
+      "name": "Surcharge",
+      "effect": "Génère une explosion qui inflige des DGT Pyro de zone. L’explosion générée est considérée comme un coup puissant, pouvant réduire considérablement la solidité des objets en pierre du jeu (Exemple : boucliers en pierre, gisements...).",
       "description": null
     },
     {
       "key": "melt",
-      "name": "Melt",
-      "effect": "Deals ×2 Pyro DMG when a Pyro attack triggers the reaction.",
+      "name": "Fonte",
+      "effect": "Multiplie par 2 les DGT Pyro de la réaction lorsqu’une attaque Pyro déclenche la réaction.",
       "description": null
     },
     {
       "key": "vaporize-reverse",
-      "name": "Vaporize (Reverse)",
-      "effect": "Deals ×2 Hydro DMG when a Hydro attack triggers the reaction.",
+      "name": "Évaporation (Inversée)",
+      "effect": "Multiplie par 2 les DGT Hydro de la réaction lorsqu’une attaque Hydro déclenche la réaction.",
       "description": null
     },
     {
       "key": "electro-charged",
-      "name": "Electro Charged",
-      "effect": "Deals Electro DMG over time until the effect wears off, every tick shocks and interrupts any action. It also creates a lightning bolt that jumps to one nearby Wet target, dealing Electro DMG.",
+      "name": "Électrocution",
+      "effect": "Inflige des DGT Électro continus tant que l’effet est actif. Chaque décharge électrocute et interrompt l’action du personnage. La décharge rebondit également de façon intermittente sur les ennemis affectés par l’élément Hydro pour leur infliger des DGT Électro.",
       "description": null
     },
     {
       "key": "frozen",
-      "name": "Frozen",
-      "effect": "Freezes the target. If the frozen target is hit by a Claymore, a Sword Plunge Attack, or Geo DMG (excluding Catalyst user's Plunge), it will cause Shattered. Shattering a frozen target will deal additional Physical damage.",
+      "name": "Gel",
+      "effect": "Gèle la cible. Si la créature gelée est touchée par une attaque d’épée à deux mains, une attaque plongeante ou des DGT Géo (excepté les attaques plongeantes des manieurs de catalyseur), ceux-ci déclencheront l’effet Brise-glace. Cet effet inflige des DGT Physiques à l’ennemi.",
       "description": null
     },
     {
       "key": "swirl",
-      "name": "Swirl",
-      "effect": "Infuses an element and deals that elemental damage while spreading the effect to nearby enemies. It does not deal Anemo damage (as that elemental damage seen comes from the talent that is dealing the Anemo element). Only one element at a time can be infused with Anemo.",
+      "name": "Dispersion",
+      "effect": "Lorsque l’élément Anémo entre en contact avec d’autres éléments, une Dispersion peut être déclenchée. Cette réaction inflige des DGT de zone selon l’élément infusé tout en appliquant l’attribut infusé aux créatures proches. Elle n’inflige pas de DGT Anémo (puisque l’attaque Anémo utilisée a été infusée avec un autre élément). Un seul élément à la fois peut être infusé par l’élément Anémo.",
       "description": null
     },
     {
       "key": "superconduct",
-      "name": "Superconduct",
-      "effect": "Deals AoE Cryo DMG and reduces the target's Physical DMG Resistance by -40% for 12 seconds. Each Superconduct reaction deals DMG to targets within its range once, meaning if there are 3 Superconduct reactions, given all 3 targets are within the reactions' AoE, each target will take DMG 3 times.",
+      "name": "Supraconduction",
+      "effect": "Inflige des DGT Cryo de zone et réduit de 40% la RES Physique de la cible pendant 12 secondes. Chaque Supraconduction inflige une seule fois des DGT aux ennemis autour de la cible dans la zone d’effet de la réaction. Cela signifie que s’il y a 3 Supraconductions déclenchées simultanément (une réaction par ennemi), chaque ennemi présent dans la zone d’effet subira 3 fois les DGT de la réaction.",
       "description": null
     },
     {
       "key": "melt-reverse",
-      "name": "Melt (Reverse)",
-      "effect": "Deals ×1.5 Cryo DMG when a Cryo attack triggers the reaction.",
+      "name": "Fonte (Inversée)",
+      "effect": "Multiplie par 1.5 les DGT Cryo de la réaction lorsqu’une attaque Cryo déclenche la réaction.",
       "description": null
     },
     {
       "key": "crystallize",
-      "name": "Crystallize",
-      "effect": "Absorbs the element and drops a crystal of that same element. The crystal will give an elemental shield. The shield absorbs all types of damage, but it protects more efficiently against the shield's element.",
+      "name": "Cristallisation",
+      "effect": "Génère des fragments élémentaires et protège le personnage qui récupère le fragment à l’aide de différents types de boucliers élémentaires. La Cristallisation absorbe les deux éléments mis en réaction. Le bouclier élémentaire protège de tous types de DGT mais absorbe plus efficacement les DGT infligés par le même élément que celui du fragment cristallisé (Exemple : un bouclier Électro protège mieux des DGT Électro).",
       "description": null
     }
   ],
   "resonance": [
     {
       "key": "enduring-rock",
-      "name": "Enduring Rock",
-      "effect": "Increases shield strength by 15%. Aditionally, characters protected by a shield will have the following special characterists: DMG dealt increased by 15%, dealing DMG to enemies will decrease their Geo RES by 20% for 15s.",
+      "name": "Roc inamovible",
+      "effect": "Augmente la force du bouclier de 15%. De plus, lorsqu’un personnage est sous la protection d’un bouclier, il obtient les caractéristiques suivantes : tout les DGT infligés par le personnage sont augmentés de 15%, la RES Géo de l’ennemi est diminuée de 20% pendant 15s lorsqu’il subit des DGT de la part du personnage.",
       "description": null
     },
     {
       "key": "fervent-flames",
-      "name": "Fervent Flames",
-      "effect": "Affected by Cryo for 40% less time. Increases ATK by 25%.",
+      "name": "Flammes de la ferveur",
+      "effect": "Réduit de 40% la durée d’application de l’ élément Cryo sur l’ équipe. Augmente l’ ATQ de toute l’ équipe de 25%.",
       "description": null
     },
     {
       "key": "soothing-waters",
-      "name": "Soothing Waters",
-      "effect": "Affected by Pyro for 40% less time. Increases incoming healing by 30%.",
+      "name": "Eau salvatrice",
+      "effect": "Réduit de 40% la durée d’application de l’élément Pyro sur toute l’équipe. Augmente de 30% le bonus de soins reçus.",
       "description": null
     },
     {
       "key": "impetuous-winds",
-      "name": "Impetuous Winds",
-      "effect": "Decreases Stamina Consumption by 15%. Increases Movement SPD by 10%. Shortens Skill CD by 5%.",
+      "name": "Vents de la célérité",
+      "effect": "Réduit la consommation d’ endurance de 15%. Augmente la VIT de déplacement de 10% et réduit le TdR des compétences élémentaires de 5%.",
       "description": null
     },
     {
       "key": "high-voltage",
-      "name": "High Voltage",
-      "effect": "Affected by Hydro for 40% less time. Superconduct, Overloaded, and Electro-Charged have a 100% chance to generate an Electro Elemental Particle (CD: 5s).",
+      "name": "Tonnerre puissant",
+      "effect": "Réduit de 40% la durée d’application de l’effet Hydro sur toute l’équipe. Les réactions Supraconduction, Surcharge ou Électrocution génèrent une particule élémentaire lorsqu’elles sont déclenchées. TdR : 5s.",
       "description": null
     },
     {
       "key": "shattering-ice",
-      "name": "Shattering Ice",
-      "effect": "Affected by Electro for 40% less time. Increases CRIT Rate against enemies that are Frozen or affected by Cryo by 15%.",
+      "name": "Gel pulvérisateur",
+      "effect": "Réduit de 40% la durée d’application de l’attribut Électro sur toute l’équipe. Augmente le taux CRIT de 15% lorsque vous attaquez des ennemis gelés ou affectés par Cryo.",
       "description": null
     },
     {
       "key": "protective-canopy",
-      "name": "Protective Canopy",
-      "effect": "All Elemental RES by 15%. Physical RES + 15%",
-      "description": "Any 4 Unique Elements"
+      "name": "Lianes protectrices",
+      "effect": "Augmente toutes les RES élémentaires et la RES physique de 15%",
+      "description": "4 éléments différents"
     }
   ],
   "monsters": [

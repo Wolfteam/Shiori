@@ -14,15 +14,13 @@ part 'notifications_bloc.freezed.dart';
 part 'notifications_event.dart';
 part 'notifications_state.dart';
 
-const _initialState = NotificationsState.initial(notifications: [], ticks: 0);
+const _initialState = NotificationsState.initial(notifications: []);
 
 class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   final DataService _dataService;
   final NotificationService _notificationService;
   final SettingsService _settingsService;
   final TelemetryService _telemetryService;
-
-  Timer? _timer;
 
   NotificationsBloc(this._dataService, this._notificationService, this._settingsService, this._telemetryService) : super(_initialState);
 
@@ -33,32 +31,15 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
       delete: (e) async => _deleteNotification(e.id, e.type),
       reset: (e) async => _resetNotification(e.id, e.type),
       stop: (e) async => _stopNotification(e.id, e.type),
-      refresh: (e) async => _refreshNotifications(e.ticks),
-      close: (_) async {
-        cancelTimer();
-        return _initialState;
-      },
       reduceHours: (e) async => _reduceHours(e.id, e.type, e.hoursToReduce),
     );
     yield s;
   }
 
-  void startTime() {
-    _timer = Timer.periodic(const Duration(seconds: 5), (timer) => add(NotificationsEvent.refresh(ticks: timer.tick)));
-  }
-
-  void cancelTimer() {
-    _timer?.cancel();
-    _timer = null;
-  }
-
   NotificationsState _buildInitialState() {
-    cancelTimer();
     final notifications = _dataService.getAllNotifications();
-    startTime();
     return NotificationsState.initial(
       notifications: notifications,
-      ticks: _timer?.tick ?? 0,
       useTwentyFourHoursFormat: _settingsService.useTwentyFourHoursFormat,
     );
   }
@@ -93,14 +74,6 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     notifications.removeAt(index);
     notifications.insert(index, updated);
     return state.copyWith.call(notifications: notifications);
-  }
-
-  NotificationsState _refreshNotifications(int ticks) {
-    if (state is _InitialState) {
-      final notifications = state.notifications.map((e) => e.copyWith.call()).toList();
-      return state.copyWith.call(notifications: notifications, ticks: ticks);
-    }
-    return state;
   }
 
   Future<NotificationsState> _reduceHours(int key, AppNotificationType type, int hours) async {

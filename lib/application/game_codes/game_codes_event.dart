@@ -10,6 +10,4 @@ class GameCodesEvent with _$GameCodesEvent {
   }) = _MarkAsUsed;
 
   const factory GameCodesEvent.refresh() = _Refresh;
-
-  const factory GameCodesEvent.close() = _Close;
 }

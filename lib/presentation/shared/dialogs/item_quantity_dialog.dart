@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/injection.dart';
 
-class ItemQuantityDialog extends StatefulWidget {
+class ItemQuantityDialog extends StatelessWidget {
   final int quantity;
   final int quantityLength;
   final void Function(int)? onSave;
@@ -18,10 +20,33 @@ class ItemQuantityDialog extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _ItemQuantityDialogState createState() => _ItemQuantityDialogState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (ctx) => Injection.itemQuantityFormBloc,
+      child: _Body(quantity: quantity, quantityLength: quantityLength, onSave: onSave, onClose: onClose),
+    );
+  }
 }
 
-class _ItemQuantityDialogState extends State<ItemQuantityDialog> {
+class _Body extends StatefulWidget {
+  final int quantity;
+  final int quantityLength;
+  final void Function(int)? onSave;
+  final VoidCallback? onClose;
+
+  const _Body({
+    Key? key,
+    required this.quantity,
+    required this.quantityLength,
+    this.onSave,
+    this.onClose,
+  }) : super(key: key);
+
+  @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<_Body> {
   late TextEditingController _textEditingController;
   late String _currentValue;
 
@@ -44,6 +69,7 @@ class _ItemQuantityDialogState extends State<ItemQuantityDialog> {
           maxLength: widget.quantityLength,
           controller: _textEditingController,
           autofocus: true,
+          maxLengthEnforcement: MaxLengthEnforcement.enforced,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
             hintText: '0',

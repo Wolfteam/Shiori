@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
@@ -34,15 +35,26 @@ class _NotificationNoteState extends State<NotificationNote> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
-    return TextField(
-      maxLength: NotificationBloc.maxNoteLength,
-      controller: _textController,
-      keyboardType: TextInputType.text,
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.zero,
-        hintText: s.note,
-        alignLabelWithHint: true,
-        labelText: s.note,
+    return BlocConsumer<NotificationBloc, NotificationState>(
+      listener: (ctx, state) {
+        if (state.note != _currentValue) {
+          setState(() {
+            _currentValue = state.note;
+            _textController.text = _currentValue!;
+          });
+        }
+      },
+      builder: (ctx, state) => TextField(
+        maxLength: NotificationBloc.maxNoteLength,
+        controller: _textController,
+        keyboardType: TextInputType.text,
+        maxLengthEnforcement: MaxLengthEnforcement.enforced,
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.zero,
+          hintText: s.note,
+          alignLabelWithHint: true,
+          labelText: s.note,
+        ),
       ),
     );
   }

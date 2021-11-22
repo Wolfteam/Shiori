@@ -194,7 +194,6 @@ class MaterialCard extends StatelessWidget {
       builder: (_) => ItemQuantityDialog(quantity: quantity),
     );
 
-    context.read<ItemQuantityFormBloc>().add(const ItemQuantityFormEvent.close());
     if (newValue == null) {
       return;
     }

@@ -60,7 +60,7 @@ void main() {
     'Initial state',
     () => expect(
       NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService).state,
-      const NotificationsState.initial(notifications: [], ticks: 0),
+      const NotificationsState.initial(notifications: []),
     ),
   );
 
@@ -84,7 +84,6 @@ void main() {
     verify: (bloc) {
       expect(bloc.state.notifications.length, 1);
       expect(bloc.state.useTwentyFourHoursFormat, _settingsService.useTwentyFourHoursFormat);
-      expect(bloc.state.ticks, 0);
 
       final notif = bloc.state.notifications.first;
       expect(notif.key, 0);
@@ -181,34 +180,6 @@ void main() {
   );
 
   blocTest<NotificationsBloc, NotificationsState>(
-    'Refresh',
-    setUp: () async {
-      await _dataService.saveResinNotification(_fragileResinKey, _defaultTitle, _defaultBody, 100, note: _defaultNote);
-    },
-    tearDown: () async {
-      await _dataService.deleteThemAll();
-    },
-    build: () => NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService),
-    act: (bloc) => bloc
-      ..add(const NotificationsEvent.init())
-      ..add(const NotificationsEvent.refresh(ticks: 5)),
-    verify: (bloc) {
-      expect(bloc.state.notifications.length, 1);
-      expect(bloc.state.ticks, 5);
-
-      final notif = bloc.state.notifications.first;
-      expect(notif.key, 0);
-      expect(notif.itemKey, _fragileResinKey);
-      expect(notif.title, _defaultTitle);
-      expect(notif.body, _defaultBody);
-      expect(notif.note, _defaultNote);
-      checkAsset(notif.image);
-      expect(notif.type, AppNotificationType.resin);
-      expect(notif.currentResinValue, 100);
-    },
-  );
-
-  blocTest<NotificationsBloc, NotificationsState>(
     'Reduce hours',
     setUp: () async {
       await _dataService.saveCustomNotification(
@@ -243,14 +214,5 @@ void main() {
       expect(notif.notificationItemType, AppNotificationItemType.character);
       expect(notif.completesAt, lessThanOrEqualTo(_now.add(const Duration(hours: 1))));
     },
-  );
-
-  blocTest<NotificationsBloc, NotificationsState>(
-    'Close',
-    build: () => NotificationsBloc(_dataService, _notificationService, _settingsService, _telemetryService),
-    act: (bloc) => bloc
-      ..add(const NotificationsEvent.init())
-      ..add(const NotificationsEvent.close()),
-    expect: () => const [NotificationsState.initial(notifications: [], ticks: 0)],
   );
 }

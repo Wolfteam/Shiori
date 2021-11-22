@@ -3798,8 +3798,8 @@
       "passives": [
         {
           "key": "p1",
-          "title": "Ngàn Vạn Ước Nguyện",
-          "description": "Nhân vật trong đội ở gần khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân sẽ tích tụ 2 tầng Ý Lực cho Ước Nguyện Chakra.\r\nHiệu quả này mỗi 3s tối đa kích hoạt một lần.\r\n",
+          "title": "Kẻ Trấn Giữ Thiên Hạ",
+          "description": "Khi đột phá kiếm đơn và vũ khí cán dài, lượng Mora tiêu hao giảm 50%.\r\n",
           "descriptions": []
         },
         {
@@ -3813,8 +3813,8 @@
         },
         {
           "key": "p3",
-          "title": "Kẻ Trấn Giữ Thiên Hạ",
-          "description": "Khi đột phá kiếm đơn và vũ khí cán dài, lượng Mora tiêu hao giảm 50%.\r\n",
+          "title": "Ngàn Vạn Ước Nguyện",
+          "description": "Nhân vật trong đội ở gần khi nhận được Nguyên Tố Tinh Cầu hoặc Nguyên Tố Hạt Nhân sẽ tích tụ 2 tầng Ý Lực cho Ước Nguyện Chakra.\r\nHiệu quả này mỗi 3s tối đa kích hoạt một lần.\r\n",
           "descriptions": []
         }
       ],
@@ -6067,11 +6067,11 @@
           ],
           "stats": [
             "Sát Thương Kỹ Năng|{param1}%",
-            "Giãn cách cung cấp Đan Hỏa Ấn|{param2}%",
-            "Sát Thương Trọng Kích Tăng|{param3}s",
-            "Thời Gian Kéo Dài|{param4}%",
+            "Giãn cách cung cấp Đan Hỏa Ấn|{param2}s",
+            "Sát Thương Trọng Kích Tăng|{param3}%",
+            "Thời Gian Kéo Dài|{param4}s",
             "CD|{param5}s",
-            "Năng Lượng Nguyên Tố|{param6}s"
+            "Năng Lượng Nguyên Tố|{param6}"
           ]
         }
       ],

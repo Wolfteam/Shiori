@@ -44,7 +44,6 @@ class GameCodesBloc extends Bloc<GameCodesEvent, GameCodesState> {
         await _dataService.markCodeAsUsed(code, wasUsed: wasUsed);
         return _buildInitialState();
       },
-      close: () async => _initialState,
       refresh: () async {
         final gameCodes = await _gameCodeService.getAllGameCodes();
         await _dataService.saveGameCodes(gameCodes);

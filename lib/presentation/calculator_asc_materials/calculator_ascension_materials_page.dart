@@ -8,6 +8,7 @@ import 'package:shiori/domain/extensions/iterable_extensions.dart';
 import 'package:shiori/domain/extensions/string_extensions.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/characters/characters_page.dart';
 import 'package:shiori/presentation/shared/dialogs/confirm_dialog.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
@@ -34,39 +35,59 @@ class CalculatorAscensionMaterialsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
+    return BlocProvider(
+      create: (ctx) => Injection.getCalculatorAscMaterialsBloc(ctx.read<CalculatorAscMaterialsSessionsBloc>())
+        ..add(CalculatorAscMaterialsEvent.init(sessionKey: sessionKey)),
+      child: Scaffold(
+        appBar: _AppBar(sessionKey: sessionKey),
+        body: SafeArea(
+          child: _FabMenu(sessionKey: sessionKey),
+        ),
+      ),
+    );
+  }
+}
 
-    return Scaffold(
-      appBar: AppBar(
+class _AppBar extends StatelessWidget implements PreferredSizeWidget {
+  final int sessionKey;
+
+  const _AppBar({Key? key, required this.sessionKey}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final s = S.of(context);
+    return BlocBuilder<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
+      builder: (ctx, state) => AppBar(
         title: Text(s.ascensionMaterials),
         actions: [
-          BlocBuilder<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
-            builder: (context, state) => state.items.length > 1
-                ? IconButton(
-                    icon: const Icon(Icons.unfold_more),
-                    onPressed: () => _showReorderDialog(state.items, context),
-                  )
-                : Container(),
-          ),
-          BlocBuilder<CalculatorAscMaterialsBloc, CalculatorAscMaterialsState>(
-            builder: (context, state) => state.items.isNotEmpty
-                ? IconButton(
-                    icon: const Icon(Icons.clear_all),
-                    onPressed: () => _showDeleteAllDialog(context),
-                  )
-                : Container(),
-          ),
+          if (state.items.length > 1)
+            IconButton(
+              icon: const Icon(Icons.unfold_more),
+              splashRadius: Styles.mediumButtonSplashRadius,
+              onPressed: () => _showReorderDialog(state.items, context),
+            ),
+          if (state.items.isNotEmpty)
+            IconButton(
+              icon: const Icon(Icons.clear_all),
+              splashRadius: Styles.mediumButtonSplashRadius,
+              onPressed: () => _showDeleteAllDialog(context),
+            )
         ],
-      ),
-      body: SafeArea(
-        child: _FabMenu(sessionKey: sessionKey),
       ),
     );
   }
 
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+
   Future<void> _showReorderDialog(List<ItemAscensionMaterials> items, BuildContext context) async {
-    context.read<CalculatorAscMaterialsOrderBloc>().add(CalculatorAscMaterialsOrderEvent.init(sessionKey: sessionKey, items: items));
-    await showDialog(context: context, builder: (_) => ReorderItemsDialog());
+    await showDialog(
+      context: context,
+      builder: (_) => BlocProvider.value(
+        value: context.read<CalculatorAscMaterialsBloc>(),
+        child: ReorderItemsDialog(sessionKey: sessionKey, items: items),
+      ),
+    );
   }
 
   Future<void> _showDeleteAllDialog(BuildContext context) async {

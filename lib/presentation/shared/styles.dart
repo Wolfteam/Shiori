@@ -57,6 +57,9 @@ class Styles {
   static const endDrawerFilterItemMargin = EdgeInsets.only(top: 20);
   static const double endDrawerIconSize = 40;
 
+  static const double smallButtonSplashRadius = 18;
+  static const double mediumButtonSplashRadius = 25;
+
   static double getIconSizeForItemPopupMenuFilter(bool forEndDrawer, bool forDefaultIcons) {
     if (forDefaultIcons) {
       return forEndDrawer ? 36 : 24;

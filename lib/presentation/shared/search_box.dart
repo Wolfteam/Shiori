@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 typedef SearchChanged = void Function(String val);
 
@@ -52,7 +53,7 @@ class _SearchBoxState extends State<SearchBox> {
       constraints: BoxConstraints(maxWidth: maxSize),
       child: Card(
         elevation: 3,
-        margin: const EdgeInsets.all(10),
+        margin: Styles.edgeInsetAll10,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         child: Row(
           children: <Widget>[
@@ -77,6 +78,7 @@ class _SearchBoxState extends State<SearchBox> {
             if (widget.showClearButton)
               IconButton(
                 icon: const Icon(Icons.close),
+                splashRadius: Styles.smallButtonSplashRadius,
                 onPressed: _cleanSearchText,
               ),
           ],

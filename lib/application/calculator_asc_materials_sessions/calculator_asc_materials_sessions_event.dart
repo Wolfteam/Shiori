@@ -17,7 +17,5 @@ class CalculatorAscMaterialsSessionsEvent with _$CalculatorAscMaterialsSessionsE
     required int key,
   }) = _DeleteSession;
 
-  const factory CalculatorAscMaterialsSessionsEvent.close() = _Close;
-
   const factory CalculatorAscMaterialsSessionsEvent.deleteAllSessions() = _DeleteAllSessions;
 }

@@ -29,12 +29,4 @@ void main() {
       expect: () => [ItemQuantityFormState.loaded(quantity: ItemQuantityFormBloc.maxQuantity + 1, isQuantityDirty: true, isQuantityValid: false)],
     );
   });
-
-  blocTest<ItemQuantityFormBloc, ItemQuantityFormState>(
-    'Close',
-    build: () => ItemQuantityFormBloc(),
-    act: (bloc) => bloc..add(const ItemQuantityFormEvent.quantityChanged(quantity: 1))..add(const ItemQuantityFormEvent.close()),
-    skip: 1,
-    expect: () => [_defaultState],
-  );
 }

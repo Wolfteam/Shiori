@@ -19,12 +19,6 @@ class NotificationsEvent with _$NotificationsEvent {
     required AppNotificationType type,
   }) = _Stop;
 
-  const factory NotificationsEvent.close() = _Close;
-
-  const factory NotificationsEvent.refresh({
-    required int ticks,
-  }) = _Refresh;
-
   const factory NotificationsEvent.reduceHours({
     required int id,
     required AppNotificationType type,

@@ -5,12 +5,21 @@ import 'package:url_launcher/url_launcher.dart';
 class TextLink extends StatelessWidget {
   final String text;
   final String url;
+  final Function? onTap;
 
   const TextLink({
     Key? key,
     required this.text,
     required this.url,
+    this.onTap,
   }) : super(key: key);
+
+  const TextLink.withoutLink({
+    Key? key,
+    required this.text,
+    required this.onTap,
+  })  : url = '',
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +38,7 @@ class TextLink extends StatelessWidget {
                 decorationColor: Colors.blue,
                 fontSize: 18,
               ),
-              recognizer: TapGestureRecognizer()..onTap = () => _launchUrl(url),
+              recognizer: TapGestureRecognizer()..onTap = () => onTap != null ? onTap!() : _launchUrl(url),
             ),
           ],
         ),

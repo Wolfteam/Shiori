@@ -79,6 +79,7 @@ class CharacterCard extends StatelessWidget {
         shape: Styles.mainCardShape,
         elevation: Styles.cardTenElevation,
         color: elementType.getElementColorFromContext(context),
+        shadowColor: Colors.transparent,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,

@@ -1,11 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
+import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/extensions/media_query_extensions.dart';
 import 'package:shiori/presentation/shared/utils/toast_utils.dart';
 
 class ReorderItemsDialog extends StatelessWidget {
+  final int sessionKey;
+  final List<ItemAscensionMaterials> items;
+
+  const ReorderItemsDialog({Key? key, required this.sessionKey, required this.items}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider<CalculatorAscMaterialsOrderBloc>(
+      create: (ctx) => Injection.getCalculatorAscMaterialsOrderBloc(ctx.read<CalculatorAscMaterialsBloc>())
+        ..add(CalculatorAscMaterialsOrderEvent.init(sessionKey: sessionKey, items: items)),
+      child: const _Body(),
+    );
+  }
+}
+
+class _Body extends StatelessWidget {
+  const _Body({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -30,7 +50,7 @@ class ReorderItemsDialog extends StatelessWidget {
                 onTap: () => ToastUtils.showInfoToast(fToast, s.holdToReorder),
               );
             },
-            onReorder: (oldIndex, newIndex) => _onReorder(oldIndex, newIndex, context),
+            onReorder: (oldIndex, newIndex) => _onReorder(oldIndex, newIndex, ctx),
           ),
         ),
       ),

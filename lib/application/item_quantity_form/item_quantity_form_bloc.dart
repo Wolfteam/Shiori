@@ -24,7 +24,6 @@ class ItemQuantityFormBloc extends Bloc<ItemQuantityFormEvent, ItemQuantityFormS
 
         return state.copyWith.call(quantity: e.quantity, isQuantityDirty: isDirty, isQuantityValid: isValid);
       },
-      close: (_) => _defaultState,
     );
 
     yield s;
