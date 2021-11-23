@@ -5,6 +5,7 @@ linter:
     prefer_single_quotes: true
     avoid_classes_with_only_static_members: false
     depend_on_referenced_packages: false
+    avoid_positional_boolean_parameters: false
 
 analyzer:
   exclude: 
