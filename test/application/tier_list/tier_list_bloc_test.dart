@@ -114,7 +114,9 @@ void main() {
       tearDown: () async {
         await _dataService.deleteTierList();
       },
-      act: (bloc) => bloc..add(const TierListEvent.init())..add(const TierListEvent.rowTextChanged(index: 0, newValue: 'Updated')),
+      act: (bloc) => bloc
+        ..add(const TierListEvent.init())
+        ..add(const TierListEvent.rowTextChanged(index: 0, newValue: 'Updated')),
       verify: (bloc) {
         expect(bloc.state.rows.first.tierText, 'Updated');
       },
@@ -126,7 +128,9 @@ void main() {
       tearDown: () async {
         await _dataService.deleteTierList();
       },
-      act: (bloc) => bloc..add(const TierListEvent.init())..add(const TierListEvent.rowPositionChanged(index: 0, newIndex: 5)),
+      act: (bloc) => bloc
+        ..add(const TierListEvent.init())
+        ..add(const TierListEvent.rowPositionChanged(index: 0, newIndex: 5)),
       verify: (bloc) {
         final defaultTierList = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors);
         final movedOne = defaultTierList.first;
@@ -140,7 +144,9 @@ void main() {
       tearDown: () async {
         await _dataService.deleteTierList();
       },
-      act: (bloc) => bloc..add(const TierListEvent.init())..add(TierListEvent.rowColorChanged(index: 0, newColor: TierListBloc.defaultColors.last)),
+      act: (bloc) => bloc
+        ..add(const TierListEvent.init())
+        ..add(TierListEvent.rowColorChanged(index: 0, newColor: TierListBloc.defaultColors.last)),
       verify: (bloc) {
         expect(bloc.state.rows.first.tierColor, TierListBloc.defaultColors.last);
       },
@@ -173,7 +179,9 @@ void main() {
       build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
       act: (bloc) {
         final firstRow = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors).first;
-        return bloc..add(const TierListEvent.init())..add(TierListEvent.deleteCharacterFromRow(index: 0, item: firstRow.items.first));
+        return bloc
+          ..add(const TierListEvent.init())
+          ..add(TierListEvent.deleteCharacterFromRow(index: 0, item: firstRow.items.first));
       },
       verify: (bloc) {
         final firstRow = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors).first;
@@ -190,7 +198,9 @@ void main() {
       tearDown: () async {
         await _dataService.deleteTierList();
       },
-      act: (bloc) => bloc..add(const TierListEvent.init())..add(const TierListEvent.addNewRow(index: 0, above: true)),
+      act: (bloc) => bloc
+        ..add(const TierListEvent.init())
+        ..add(const TierListEvent.addNewRow(index: 0, above: true)),
       verify: (bloc) {
         final defaultTierList = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors);
         expect(bloc.state.rows.length, defaultTierList.length + 1);
@@ -204,7 +214,9 @@ void main() {
       tearDown: () async {
         await _dataService.deleteTierList();
       },
-      act: (bloc) => bloc..add(const TierListEvent.init())..add(const TierListEvent.addNewRow(index: 0, above: false)),
+      act: (bloc) => bloc
+        ..add(const TierListEvent.init())
+        ..add(const TierListEvent.addNewRow(index: 0, above: false)),
       verify: (bloc) {
         final defaultTierList = _genshinService.getDefaultCharacterTierList(TierListBloc.defaultColors);
         expect(bloc.state.rows.length, defaultTierList.length + 1);
@@ -218,7 +230,9 @@ void main() {
       tearDown: () async {
         await _dataService.deleteTierList();
       },
-      act: (bloc) => bloc..add(const TierListEvent.init())..add(const TierListEvent.clearRow(index: 0)),
+      act: (bloc) => bloc
+        ..add(const TierListEvent.init())
+        ..add(const TierListEvent.clearRow(index: 0)),
       verify: (bloc) {
         expect(bloc.state.rows.first.items, isEmpty);
         expect(bloc.state.charsAvailable, isNotEmpty);
@@ -231,7 +245,9 @@ void main() {
       tearDown: () async {
         await _dataService.deleteTierList();
       },
-      act: (bloc) => bloc..add(const TierListEvent.init())..add(const TierListEvent.clearAllRows()),
+      act: (bloc) => bloc
+        ..add(const TierListEvent.init())
+        ..add(const TierListEvent.clearAllRows()),
       verify: (bloc) {
         expect(bloc.state.rows.expand((el) => el.items).toList(), isEmpty);
         expect(bloc.state.charsAvailable, isNotEmpty);
@@ -252,13 +268,5 @@ void main() {
     verify: (bloc) {
       expect(bloc.state.readyToSave, true);
     },
-  );
-
-  blocTest<TierListBloc, TierListState>(
-    'Close',
-    build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
-    act: (bloc) => bloc..add(const TierListEvent.init())..add(const TierListEvent.close()),
-    skip: 1,
-    expect: () => const [TierListState.loaded(rows: [], charsAvailable: [], readyToSave: false)],
   );
 }

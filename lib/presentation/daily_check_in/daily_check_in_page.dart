@@ -2,17 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
+import 'package:shiori/injection.dart';
 import 'package:shiori/presentation/shared/app_webview.dart';
 import 'package:shiori/presentation/shared/dialogs/info_dialog.dart';
 import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
-class DailyCheckInPage extends StatefulWidget {
-  @override
-  _DailyCheckInPageState createState() => _DailyCheckInPageState();
-}
-
-class _DailyCheckInPageState extends State<DailyCheckInPage> {
-  final script = '''
+const _script = '''
     function removeButtons() {
       if (document.querySelectorAll('div[class*="back"]').length > 0 && document.querySelectorAll('div[class*="share"]').length > 0) {
           document.querySelectorAll('div[class*="back"]')[0].remove();
@@ -38,37 +34,36 @@ class _DailyCheckInPageState extends State<DailyCheckInPage> {
     setTimeout(removeButtons, 6000);
    ''';
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    context.read<UrlPageBloc>().add(const UrlPageEvent.init(loadMap: false, loadWishSimulator: false, loadDailyCheckIn: true));
-  }
-
+class DailyCheckInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
     return SafeArea(
-      child: BlocBuilder<UrlPageBloc, UrlPageState>(
-        builder: (context, state) {
-          return state.map(
-            loading: (_) => const Loading(),
-            loaded: (state) => AppWebView(
-              appBar: AppBar(
-                title: Text(s.dailyCheckIn),
-                actions: [
-                  IconButton(
-                    icon: const Icon(Icons.info),
-                    onPressed: () => _showInfoDialog(context),
-                  ),
-                ],
+      child: BlocProvider(
+        create: (ctx) => Injection.urlPageBloc..add(const UrlPageEvent.init(loadMap: false, loadWishSimulator: false, loadDailyCheckIn: true)),
+        child: BlocBuilder<UrlPageBloc, UrlPageState>(
+          builder: (context, state) {
+            return state.map(
+              loading: (_) => const Loading(),
+              loaded: (state) => AppWebView(
+                appBar: AppBar(
+                  title: Text(s.dailyCheckIn),
+                  actions: [
+                    IconButton(
+                      icon: const Icon(Icons.info),
+                      splashRadius: Styles.mediumButtonSplashRadius,
+                      onPressed: () => _showInfoDialog(context),
+                    ),
+                  ],
+                ),
+                url: state.dailyCheckInUrl,
+                userAgent: state.userAgent,
+                hasInternetConnection: state.hasInternetConnection,
+                script: _script,
               ),
-              url: state.dailyCheckInUrl,
-              userAgent: state.userAgent,
-              hasInternetConnection: state.hasInternetConnection,
-              script: script,
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }

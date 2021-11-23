@@ -5,6 +5,7 @@ import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
 import 'package:shiori/presentation/shared/extensions/rarity_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 import 'weapon_detail_general_card.dart';
 
@@ -60,6 +61,7 @@ class WeaponDetailTop extends StatelessWidget {
               loaded: (state) => IconButton(
                 icon: Icon(state.isInInventory ? Icons.favorite : Icons.favorite_border),
                 color: Colors.red,
+                splashRadius: Styles.mediumButtonSplashRadius,
                 onPressed: () => _favoriteWeapon(state.key, state.isInInventory, context),
               ),
             ),

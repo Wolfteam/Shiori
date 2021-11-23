@@ -73,6 +73,14 @@ class Injection {
     return TierListFormBloc();
   }
 
+  static UrlPageBloc get urlPageBloc {
+    final networkService = getIt<NetworkService>();
+    final telemetryService = getIt<TelemetryService>();
+    final deviceInfoService = getIt<DeviceInfoService>();
+    final settingsService = getIt<SettingsService>();
+    return UrlPageBloc(networkService, telemetryService, deviceInfoService, settingsService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();

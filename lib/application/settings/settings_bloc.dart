@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shiori/application/url_page/url_page_bloc.dart';
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/services/device_info_service.dart';
 import 'package:shiori/domain/services/settings_service.dart';
@@ -19,14 +18,12 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
   final DeviceInfoService _deviceInfoService;
   final MainBloc _mainBloc;
   final HomeBloc _homeBloc;
-  final UrlPageBloc _urlPageBloc;
 
   SettingsBloc(
     this._settingsService,
     this._deviceInfoService,
     this._mainBloc,
     this._homeBloc,
-    this._urlPageBloc,
   ) : super(const SettingsState.loading());
 
   _LoadedState get currentState => state as _LoadedState;
@@ -97,7 +94,6 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
       },
       useOfficialMapChanged: (event) async {
         _settingsService.useOfficialMap = event.newValue;
-        _urlPageBloc.add(const UrlPageEvent.init(loadMap: false, loadWishSimulator: false, loadDailyCheckIn: false));
         return currentState.copyWith.call(useOfficialMap: event.newValue);
       },
       useTwentyFourHoursFormat: (event) async {
