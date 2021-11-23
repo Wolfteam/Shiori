@@ -255,18 +255,35 @@ void main() {
     );
   });
 
-  blocTest<TierListBloc, TierListState>(
-    'Screenshot taken',
-    build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
-    tearDown: () async {
-      await _dataService.deleteTierList();
-    },
-    act: (bloc) => bloc
-      ..add(const TierListEvent.init())
-      ..add(const TierListEvent.readyToSave(ready: true))
-      ..add(const TierListEvent.screenshotTaken(succeed: true)),
-    verify: (bloc) {
-      expect(bloc.state.readyToSave, true);
-    },
-  );
+  group('Screenshot', () {
+    blocTest<TierListBloc, TierListState>(
+      'was successfully taken',
+      build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
+      tearDown: () async {
+        await _dataService.deleteTierList();
+      },
+      act: (bloc) => bloc
+        ..add(const TierListEvent.init())
+        ..add(const TierListEvent.readyToSave(ready: true))
+        ..add(const TierListEvent.screenshotTaken(succeed: true)),
+      verify: (bloc) {
+        expect(bloc.state.readyToSave, false);
+      },
+    );
+
+    blocTest<TierListBloc, TierListState>(
+      'could not be taken',
+      build: () => TierListBloc(_genshinService, _dataService, _telemetryService, _loggingService),
+      tearDown: () async {
+        await _dataService.deleteTierList();
+      },
+      act: (bloc) => bloc
+        ..add(const TierListEvent.init())
+        ..add(const TierListEvent.readyToSave(ready: true))
+        ..add(const TierListEvent.screenshotTaken(succeed: false)),
+      verify: (bloc) {
+        expect(bloc.state.readyToSave, true);
+      },
+    );
+  });
 }
