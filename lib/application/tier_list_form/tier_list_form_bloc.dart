@@ -25,7 +25,6 @@ class TierListFormBloc extends Bloc<TierListFormEvent, TierListFormState> {
 
         return state.copyWith.call(name: e.name, isNameDirty: isDirty, isNameValid: isValid);
       },
-      close: (_) => _initialState,
     );
 
     yield s;

@@ -19,15 +19,21 @@ class TierListFab extends StatelessWidget {
                   physics: const BouncingScrollPhysics(),
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  children: state.charsAvailable.map((e) => _buildDraggableItem(e)).toList(),
+                  children: state.charsAvailable.map((e) => _DraggableItem(item: e)).toList(),
                 ),
               ),
             )
           : Container(),
     );
   }
+}
 
-  Widget _buildDraggableItem(ItemCommon item) {
+class _DraggableItem extends StatelessWidget {
+  final ItemCommon item;
+  const _DraggableItem({Key? key, required this.item}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return Draggable<ItemCommon>(
       data: item,
       feedback: CircleCharacter.fromItem(item: item, forDrag: true),

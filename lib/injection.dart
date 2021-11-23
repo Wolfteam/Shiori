@@ -61,6 +61,18 @@ class Injection {
     return CalculatorAscMaterialsSessionsBloc(dataService, telemetryService);
   }
 
+  static TierListBloc get tierListBloc {
+    final genshinService = getIt<GenshinService>();
+    final dataService = getIt<DataService>();
+    final telemetryService = getIt<TelemetryService>();
+    final loggingService = getIt<LoggingService>();
+    return TierListBloc(genshinService, dataService, telemetryService, loggingService);
+  }
+
+  static TierListFormBloc get tierListFormBloc {
+    return TierListFormBloc();
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();
