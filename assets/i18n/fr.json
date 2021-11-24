@@ -6614,6 +6614,18 @@
       ]
     },
     {
+      "key": "cinnabar-spindle",
+      "name": "Fuseau de cinabre",
+      "description": "Une lame faite de matériaux qui n'appartiennent pas à ce monde. Le pouvoir à l'intérieur peut même résister à une corruption venimeuse ayant pourtant atteint un puissant dragon.",
+      "refinements": [
+        "Augmente les dégâts infligés par la compétence élémentaire d'une valeur équivalant à {color}40{/color} % de la DÉF. Cet effet peut être déclenché une fois toutes les 1,5 s, et est annulé 0,1 s après que la compétence élémentaire inflige des DGT.",
+        "Augmente les dégâts infligés par la compétence élémentaire d'une valeur équivalant à {color}50{/color} % de la DÉF. Cet effet peut être déclenché une fois toutes les 1,5 s, et est annulé 0,1 s après que la compétence élémentaire inflige des DGT.",
+        "Augmente les dégâts infligés par la compétence élémentaire d'une valeur équivalant à {color}60{/color} % de la DÉF. Cet effet peut être déclenché une fois toutes les 1,5 s, et est annulé 0,1 s après que la compétence élémentaire inflige des DGT.",
+        "Augmente les dégâts infligés par la compétence élémentaire d'une valeur équivalant à {color}70{/color} % de la DÉF. Cet effet peut être déclenché une fois toutes les 1,5 s, et est annulé 0,1 s après que la compétence élémentaire inflige des DGT.",
+        "Augmente les dégâts infligés par la compétence élémentaire d'une valeur équivalant à {color}80{/color} % de la DÉF. Cet effet peut être déclenché une fois toutes les 1,5 s, et est annulé 0,1 s après que la compétence élémentaire inflige des DGT."
+      ]
+    },
+    {
       "key": "compound-bow",
       "name": "Arc à poulies",
       "description": "Un arc en alliage de métal, dont la corde est tendue par des poulies. Son étrange design le rend difficile à manier, mais une fois la flèche est partie, celle-ci s'abat sur la proie avec une force impressionnante.",

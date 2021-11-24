@@ -6601,6 +6601,18 @@
       ]
     },
     {
+      "key": "cinnabar-spindle",
+      "name": "Con Thoi Chu Sa",
+      "description": "Thanh kiếm có vẻ như được chế tạo từ thứ vật chất không thuộc thế giới này, sức mạnh của nó có thể chế ngự cả chất độc của rồng.",
+      "refinements": [
+        "Tăng sát thương do Kỹ Năng Nguyên Tố gây ra, lượng tăng thêm tương đương {color}40{/color}% phòng ngự. Hiệu quả này mỗi 1.5s tối đa kích hoạt 1 lần, sau 0.1s khi Kỹ Năng Nguyên Tố gây ra sát thương, hiệu quả này sẽ biến mất.",
+        "Tăng sát thương do Kỹ Năng Nguyên Tố gây ra, lượng tăng thêm tương đương {color}50{/color}% phòng ngự. Hiệu quả này mỗi 1.5s tối đa kích hoạt 1 lần, sau 0.1s khi Kỹ Năng Nguyên Tố gây ra sát thương, hiệu quả này sẽ biến mất.",
+        "Tăng sát thương do Kỹ Năng Nguyên Tố gây ra, lượng tăng thêm tương đương {color}60{/color}% phòng ngự. Hiệu quả này mỗi 1.5s tối đa kích hoạt 1 lần, sau 0.1s khi Kỹ Năng Nguyên Tố gây ra sát thương, hiệu quả này sẽ biến mất.",
+        "Tăng sát thương do Kỹ Năng Nguyên Tố gây ra, lượng tăng thêm tương đương {color}70{/color}% phòng ngự. Hiệu quả này mỗi 1.5s tối đa kích hoạt 1 lần, sau 0.1s khi Kỹ Năng Nguyên Tố gây ra sát thương, hiệu quả này sẽ biến mất.",
+        "Tăng sát thương do Kỹ Năng Nguyên Tố gây ra, lượng tăng thêm tương đương {color}80{/color}% phòng ngự. Hiệu quả này mỗi 1.5s tối đa kích hoạt 1 lần, sau 0.1s khi Kỹ Năng Nguyên Tố gây ra sát thương, hiệu quả này sẽ biến mất."
+      ]
+    },
+    {
       "key": "compound-bow",
       "name": "Cung Thép",
       "description": "Được làm từ kim loại, kết hợp với những bánh xe để kéo dây, đến từ dị quốc. Bảo dưỡng cực kì khó, nhưng kéo dây cung nhẹ nhàng, uy lực hơn người.",
