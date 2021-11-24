@@ -9375,6 +9375,322 @@
       ]
     },
     {
+      "key": "cinnabar-spindle",
+      "image": "cinnabar-spindle.png",
+      "type": "sword",
+      "atk": 41.0,
+      "rarity": 4,
+      "secondaryStat": "defPercentage",
+      "secondaryStatValue": 15.0,
+      "location": "quest",
+      "isComingSoon": false,
+      "ascensionMaterials": [
+        {
+          "level": 20,
+          "materials": [
+            {
+              "key": "tile-of-decarabians-tower",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-device",
+              "quantity": 3,
+              "type": "weapon"
+            },
+            {
+              "key": "damaged-mask",
+              "quantity": 2,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 5000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 40,
+          "materials": [
+            {
+              "key": "debris-of-decarabians-city",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-device",
+              "quantity": 12,
+              "type": "weapon"
+            },
+            {
+              "key": "damaged-mask",
+              "quantity": 8,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 15000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 50,
+          "materials": [
+            {
+              "key": "debris-of-decarabians-city",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-circuit",
+              "quantity": 6,
+              "type": "weapon"
+            },
+            {
+              "key": "stained-mask",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 20000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 60,
+          "materials": [
+            {
+              "key": "fragment-of-decarabians-epic",
+              "quantity": 3,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-circuit",
+              "quantity": 12,
+              "type": "weapon"
+            },
+            {
+              "key": "stained-mask",
+              "quantity": 9,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 30000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 70,
+          "materials": [
+            {
+              "key": "fragment-of-decarabians-epic",
+              "quantity": 6,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-core",
+              "quantity": 9,
+              "type": "weapon"
+            },
+            {
+              "key": "ominous-mask",
+              "quantity": 6,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 35000,
+              "type": "currency"
+            }
+          ]
+        },
+        {
+          "level": 80,
+          "materials": [
+            {
+              "key": "scattered-piece-of-decarabians-dream",
+              "quantity": 4,
+              "type": "weaponPrimary"
+            },
+            {
+              "key": "chaos-core",
+              "quantity": 18,
+              "type": "weapon"
+            },
+            {
+              "key": "ominous-mask",
+              "quantity": 12,
+              "type": "common"
+            },
+            {
+              "key": "mora",
+              "quantity": 45000,
+              "type": "currency"
+            }
+          ]
+        }
+      ],
+      "craftingMaterials": [],
+      "stats": [
+        {
+          "level": 1,
+          "baseAtk": 41.0,
+          "statValue": 15.0,
+          "isAnAscension": false
+        },
+        {
+          "level": 5,
+          "baseAtk": 54.0,
+          "statValue": 17.4,
+          "isAnAscension": false
+        },
+        {
+          "level": 10,
+          "baseAtk": 69.0,
+          "statValue": 20.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 15,
+          "baseAtk": 84.0,
+          "statValue": 23.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 99.0,
+          "statValue": 26.5,
+          "isAnAscension": false
+        },
+        {
+          "level": 20,
+          "baseAtk": 125.0,
+          "statValue": 26.5,
+          "isAnAscension": true
+        },
+        {
+          "level": 25,
+          "baseAtk": 140.0,
+          "statValue": 29.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 30,
+          "baseAtk": 155.0,
+          "statValue": 32.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 35,
+          "baseAtk": 169.0,
+          "statValue": 35.6,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 184.0,
+          "statValue": 38.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 40,
+          "baseAtk": 210.0,
+          "statValue": 38.7,
+          "isAnAscension": true
+        },
+        {
+          "level": 45,
+          "baseAtk": 224.0,
+          "statValue": 41.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 238.0,
+          "statValue": 44.7,
+          "isAnAscension": false
+        },
+        {
+          "level": 50,
+          "baseAtk": 264.0,
+          "statValue": 44.7,
+          "isAnAscension": true
+        },
+        {
+          "level": 55,
+          "baseAtk": 278.0,
+          "statValue": 47.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 293.0,
+          "statValue": 50.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 60,
+          "baseAtk": 319.0,
+          "statValue": 50.8,
+          "isAnAscension": true
+        },
+        {
+          "level": 65,
+          "baseAtk": 333.0,
+          "statValue": 53.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 347.0,
+          "statValue": 56.8,
+          "isAnAscension": false
+        },
+        {
+          "level": 70,
+          "baseAtk": 373.0,
+          "statValue": 56.8,
+          "isAnAscension": true
+        },
+        {
+          "level": 75,
+          "baseAtk": 387.0,
+          "statValue": 59.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 401.0,
+          "statValue": 62.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 80,
+          "baseAtk": 427.0,
+          "statValue": 62.9,
+          "isAnAscension": true
+        },
+        {
+          "level": 85,
+          "baseAtk": 440.0,
+          "statValue": 65.9,
+          "isAnAscension": false
+        },
+        {
+          "level": 90,
+          "baseAtk": 454.0,
+          "statValue": 69.0,
+          "isAnAscension": false
+        }
+      ]
+    },
+    {
       "key": "cool-steel",
       "image": "cool-steel.png",
       "type": "sword",

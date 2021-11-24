@@ -135,6 +135,7 @@ class NotificationListTitle extends StatelessWidget {
 
   Future<void> _showReduceTimeModal(BuildContext context, Duration remaining) async {
     final s = S.of(context);
+    final bloc = context.read<NotificationsBloc>();
     final hoursToReduce = await showDialog<int>(
       context: context,
       builder: (_) => NumberPickerDialog(
@@ -150,6 +151,6 @@ class NotificationListTitle extends StatelessWidget {
       return;
     }
 
-    context.read<NotificationsBloc>().add(NotificationsEvent.reduceHours(id: itemKey, type: type, hoursToReduce: hoursToReduce));
+    bloc.add(NotificationsEvent.reduceHours(id: itemKey, type: type, hoursToReduce: hoursToReduce));
   }
 }

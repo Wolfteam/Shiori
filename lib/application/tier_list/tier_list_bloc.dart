@@ -51,13 +51,13 @@ class TierListBloc extends Bloc<TierListEvent, TierListState> {
       screenshotTaken: (e) async {
         if (e.succeed) {
           await _telemetryService.trackTierListBuilderScreenShootTaken();
+          return _init(false);
         } else {
           _loggingService.error(runtimeType, 'Something went wrong while taking the tier list builder screenshot', e.ex, e.trace);
         }
 
         return currentState;
       },
-      close: (e) async => _initialState,
     );
 
     yield s;

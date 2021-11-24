@@ -186,22 +186,25 @@ class TierListRow extends StatelessWidget {
     await showDialog<void>(
       context: context,
       barrierDismissible: false, // user must tap button!
-      builder: (_) => RenameTierListRowDialog(
-        title: title,
-        index: index,
+      builder: (_) => BlocProvider.value(
+        value: context.read<TierListBloc>(),
+        child: RenameTierListRowDialog(
+          title: title,
+          index: index,
+        ),
       ),
     );
-    context.read<TierListFormBloc>().add(const TierListFormEvent.close());
   }
 
   Future<void> _showColorPicker(BuildContext context) async {
+    final bloc = context.read<TierListBloc>();
     final newColor = await showDialog<Color>(
       context: context,
       builder: (_) => TierListRowColorPicker(currentColor: color),
     );
 
     if (newColor != null && newColor != color) {
-      context.read<TierListBloc>().add(TierListEvent.rowColorChanged(index: index, newColor: newColor.value));
+      bloc.add(TierListEvent.rowColorChanged(index: index, newColor: newColor.value));
     }
   }
 }

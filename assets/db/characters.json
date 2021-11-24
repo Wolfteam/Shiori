@@ -2950,7 +2950,7 @@
       ],
       "builds": [
         {
-          "isRecommended": true,
+          "isRecommended": false,
           "type": "dps",
           "subType": "none",
           "skillPriorities": [
@@ -2995,7 +2995,7 @@
           ]
         },
         {
-          "isRecommended": false,
+          "isRecommended": true,
           "type": "support",
           "subType": "none",
           "skillPriorities": [
@@ -21506,7 +21506,7 @@
             "aquila-favonia",
             "lions-roar",
             "the-flute",
-            "prototype-rancour"
+            "amenoma-kageuchi"
           ],
           "artifacts": [
             {
@@ -23503,7 +23503,7 @@
           "weaponKeys": [
             "skyward-harp",
             "elegy-for-the-end",
-            "alley-hunter",
+            "mouuns-moon",
             "prototype-crescent"
           ],
           "artifacts": [
@@ -32543,11 +32543,12 @@
             "elementalSkill"
           ],
           "weaponKeys": [
-            "primordial-jade-winged-spear",
             "staff-of-homa",
+            "primordial-jade-winged-spear",
+            "wavebreakers-fin",
             "skyward-spine",
-            "blackcliff-pole",
-            "white-tassel"
+            "the-catch",
+            "blackcliff-pole"
           ],
           "artifacts": [
             {
@@ -32622,9 +32623,9 @@
           ],
           "weaponKeys": [
             "staff-of-homa",
-            "the-catch",
             "primordial-jade-winged-spear",
             "skyward-spine",
+            "the-catch",
             "deathmatch",
             "prototype-starglitter"
           ],
@@ -35888,10 +35889,9 @@
           ],
           "weaponKeys": [
             "sacrificial-fragments",
+            "thrilling-tales-of-dragon-slayers",
             "magic-guide",
-            "mappa-mare",
-            "the-widsith",
-            "thrilling-tales-of-dragon-slayers"
+            "the-widsith"
           ],
           "artifacts": [
             {
@@ -50430,7 +50430,7 @@
           ],
           "weaponKeys": [
             "thundering-pulse",
-            "amos-bow",
+            "polar-star",
             "skyward-harp",
             "rust",
             "prototype-crescent"

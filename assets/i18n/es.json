@@ -6601,6 +6601,18 @@
       ]
     },
     {
+      "key": "cinnabar-spindle",
+      "name": "Huso de Cinabrio",
+      "description": "Una espada forjada con materiales que no son de este mundo. El poder que contiene podría incluso resistir la corrupción de un veneno capaz de derribar a un poderoso dragón.",
+      "refinements": [
+        "El daño infligido por la Habilidad Elemental aumenta en una cantidad equivalente al {color}40{/color}% de la DEF. Este efecto solo puede activarse una vez cada 1.5 s y se anula 0.1 s después de que la Habilidad Elemental inflija daño.",
+        "El daño infligido por la Habilidad Elemental aumenta en una cantidad equivalente al {color}50{/color}% de la DEF. Este efecto solo puede activarse una vez cada 1.5 s y se anula 0.1 s después de que la Habilidad Elemental inflija daño.",
+        "El daño infligido por la Habilidad Elemental aumenta en una cantidad equivalente al {color}60{/color}% de la DEF. Este efecto solo puede activarse una vez cada 1.5 s y se anula 0.1 s después de que la Habilidad Elemental inflija daño.",
+        "El daño infligido por la Habilidad Elemental aumenta en una cantidad equivalente al {color}70{/color}% de la DEF. Este efecto solo puede activarse una vez cada 1.5 s y se anula 0.1 s después de que la Habilidad Elemental inflija daño.",
+        "El daño infligido por la Habilidad Elemental aumenta en una cantidad equivalente al {color}80{/color}% de la DEF. Este efecto solo puede activarse una vez cada 1.5 s y se anula 0.1 s después de que la Habilidad Elemental inflija daño."
+      ]
+    },
+    {
       "key": "compound-bow",
       "name": "Arco Compuesto",
       "description": "Un arco de aleación de metal con unos engranajes para estirar más la cuerda. Su extraña estructura hace que sea difícil de manejar, pero sus flechas golpean al objetivo con una fuerza impresionante.",

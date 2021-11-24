@@ -8,6 +8,7 @@ import 'package:shiori/presentation/shared/details/detail_top_layout.dart';
 import 'package:shiori/presentation/shared/extensions/element_type_extensions.dart';
 import 'package:shiori/presentation/shared/extensions/i18n_extensions.dart';
 import 'package:shiori/presentation/shared/loading.dart';
+import 'package:shiori/presentation/shared/styles.dart';
 
 class CharacterDetailTop extends StatelessWidget {
   const CharacterDetailTop({
@@ -45,6 +46,7 @@ class CharacterDetailTop extends StatelessWidget {
                   loaded: (state) => IconButton(
                     icon: Icon(state.isInInventory ? Icons.favorite : Icons.favorite_border),
                     color: Colors.red,
+                    splashRadius: Styles.mediumButtonSplashRadius,
                     onPressed: () => _favoriteCharacter(state.key, state.isInInventory, context),
                   ),
                 ),

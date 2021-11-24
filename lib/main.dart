@@ -12,7 +12,6 @@ import 'domain/services/device_info_service.dart';
 import 'domain/services/genshin_service.dart';
 import 'domain/services/locale_service.dart';
 import 'domain/services/logging_service.dart';
-import 'domain/services/network_service.dart';
 import 'domain/services/notification_service.dart';
 import 'domain/services/settings_service.dart';
 import 'domain/services/telemetry_service.dart';
@@ -99,15 +98,6 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (ctx) {
-            final networkService = getIt<NetworkService>();
-            final telemetryService = getIt<TelemetryService>();
-            final deviceInfoService = getIt<DeviceInfoService>();
-            final settingsService = getIt<SettingsService>();
-            return UrlPageBloc(networkService, telemetryService, deviceInfoService, settingsService);
-          },
-        ),
-        BlocProvider(
-          create: (ctx) {
             final genshinService = getIt<GenshinService>();
             final telemetryService = getIt<TelemetryService>();
             return ArtifactBloc(genshinService, telemetryService);
@@ -135,11 +125,12 @@ class MyApp extends StatelessWidget {
             )..add(const MainEvent.init());
           },
         ),
+        // _urlPageBloc.add(const UrlPageEvent.init(loadMap: false, loadWishSimulator: false, loadDailyCheckIn: false));
         BlocProvider(
           create: (ctx) {
             final settingsService = getIt<SettingsService>();
             final deviceInfoService = getIt<DeviceInfoService>();
-            return SettingsBloc(settingsService, deviceInfoService, ctx.read<MainBloc>(), ctx.read<HomeBloc>(), ctx.read<UrlPageBloc>());
+            return SettingsBloc(settingsService, deviceInfoService, ctx.read<MainBloc>(), ctx.read<HomeBloc>());
           },
         ),
         BlocProvider(
@@ -147,15 +138,6 @@ class MyApp extends StatelessWidget {
             final genshinService = getIt<GenshinService>();
             final calculatorService = getIt<CalculatorService>();
             return CalculatorAscMaterialsItemBloc(genshinService, calculatorService);
-          },
-        ),
-        BlocProvider(
-          create: (_) {
-            final genshinService = getIt<GenshinService>();
-            final dataService = getIt<DataService>();
-            final telemetryService = getIt<TelemetryService>();
-            final loggingService = getIt<LoggingService>();
-            return TierListBloc(genshinService, dataService, telemetryService, loggingService);
           },
         ),
         BlocProvider(
@@ -171,6 +153,7 @@ class MyApp extends StatelessWidget {
             return MaterialBloc(genshinService, telemetryService);
           },
         ),
+        //TODO: REMOVE THIS BLOC FROM HERE ?
         BlocProvider(
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
@@ -179,7 +162,6 @@ class MyApp extends StatelessWidget {
             return InventoryBloc(genshinService, dataService, telemetryService, ctx.read<CharacterBloc>(), ctx.read<WeaponBloc>());
           },
         ),
-        BlocProvider(create: (_) => TierListFormBloc()),
         BlocProvider(
           create: (ctx) {
             final genshinService = getIt<GenshinService>();

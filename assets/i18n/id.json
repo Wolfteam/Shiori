@@ -6607,6 +6607,18 @@
       ]
     },
     {
+      "key": "cinnabar-spindle",
+      "name": "Cinnabar Spindle",
+      "description": "Pedang yang terbentuk dari material yang bukan berasal dari dunia ini. Energi di dalam pedang ini bahkan dapat menangkis racun mematikan yang dapat melukai seekor naga.",
+      "refinements": [
+        "Meningkatkan DMG Elemental Skill sebesar {color}40{/color}% DEF. Efek ini dapat terpicu setiap 1,5 detik dan akan langsung hilang dalam waktu 0,1 detik setelah Elemental Skill mengakibatkan DMG.",
+        "Meningkatkan DMG Elemental Skill sebesar {color}50{/color}% DEF. Efek ini dapat terpicu setiap 1,5 detik dan akan langsung hilang dalam waktu 0,1 detik setelah Elemental Skill mengakibatkan DMG.",
+        "Meningkatkan DMG Elemental Skill sebesar {color}60{/color}% DEF. Efek ini dapat terpicu setiap 1,5 detik dan akan langsung hilang dalam waktu 0,1 detik setelah Elemental Skill mengakibatkan DMG.",
+        "Meningkatkan DMG Elemental Skill sebesar {color}70{/color}% DEF. Efek ini dapat terpicu setiap 1,5 detik dan akan langsung hilang dalam waktu 0,1 detik setelah Elemental Skill mengakibatkan DMG.",
+        "Meningkatkan DMG Elemental Skill sebesar {color}80{/color}% DEF. Efek ini dapat terpicu setiap 1,5 detik dan akan langsung hilang dalam waktu 0,1 detik setelah Elemental Skill mengakibatkan DMG."
+      ]
+    },
+    {
       "key": "compound-bow",
       "name": "Compound Bow",
       "description": "Busur indah yang terbuat dari logam. Sangat sulit untuk dirawat, tetapi sangat mudah untuk digunakan dan memiliki kekuatan yang mengejutkan.",

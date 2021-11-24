@@ -6608,6 +6608,18 @@
       ]
     },
     {
+      "key": "cinnabar-spindle",
+      "name": "Zinnoberspindel",
+      "description": "Ein Schwert aus Materialien, die nicht in diese Welt gehören. Die Kraft darin könnte sogar der Korruption eines Giftes widerstehen, das einen mächtigen Drachen zersetzen könnte.",
+      "refinements": [
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}40{/color} % VTD. Dieser Effekt erlischt 0,1 s nach dem Verursachen von Schaden mit der Elementarfähigkeit. 1,5 s Abklingzeit.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}50{/color} % VTD. Dieser Effekt erlischt 0,1 s nach dem Verursachen von Schaden mit der Elementarfähigkeit. 1,5 s Abklingzeit.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}60{/color} % VTD. Dieser Effekt erlischt 0,1 s nach dem Verursachen von Schaden mit der Elementarfähigkeit. 1,5 s Abklingzeit.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}70{/color} % VTD. Dieser Effekt erlischt 0,1 s nach dem Verursachen von Schaden mit der Elementarfähigkeit. 1,5 s Abklingzeit.",
+        "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {color}80{/color} % VTD. Dieser Effekt erlischt 0,1 s nach dem Verursachen von Schaden mit der Elementarfähigkeit. 1,5 s Abklingzeit."
+      ]
+    },
+    {
       "key": "compound-bow",
       "name": "Compoundbogen",
       "description": "Ein Compoundbogen aus Metall, bei dem Räder die Sehne spannen. Aufgrund seines sonderbaren Aufbaus ist er schwierig zu pflegen. Gespannt wird er dafür umso einfacher.",

@@ -53,6 +53,4 @@ class TierListEvent with _$TierListEvent {
     Object? ex,
     StackTrace? trace,
   }) = _ScreenshotTaken;
-
-  const factory TierListEvent.close() = _Close;
 }
