@@ -419,9 +419,9 @@
     },
     {
       "key": "arataki-itto",
-      "name": "Arataki Itto",
-      "title": "",
-      "description": "",
+      "name": "아라타키 이토",
+      "title": "하나미자카 쾌걸",
+      "description": "이나즈마성 하나미자카에서 활동하는 「아라타키파」의 초대 두목이다. 뭐라고, 아라타키파를 처음 들어본다고? 시비 거는 거냐?",
       "skills": [
         {
           "key": "s1",
@@ -447,18 +447,6 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
           "title": "NA",
           "description": "",
@@ -466,6 +454,12 @@
         },
         {
           "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
           "title": "NA",
           "description": "",
           "descriptions": []
@@ -1777,9 +1771,9 @@
     },
     {
       "key": "gorou",
-      "name": "Gorou",
-      "title": "",
-      "description": "",
+      "name": "고로",
+      "title": "견족의 전사",
+      "description": "와타츠미군의 대장, 부하들의 깊은 신뢰를 받고 있다",
       "skills": [
         {
           "key": "s1",
@@ -4464,6 +4458,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "설탕",
       "title": "무해한 달콤함",
@@ -6291,6 +6372,93 @@
           "key": "c6",
           "title": "나가노하라 유성군",
           "description": "염초 정화(庭火)의 춤 지속 시간 동안 요이미야가 일반 공격을 사용하면, 50%의 확률로 염초 화살을 추가로 1발 더 발사해 기존 피해의 60%에 해당하는 피해를 준다. 해당 피해는 일반 공격 피해로 간주한다\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -9251,6 +9419,11 @@
       "key": "rice",
       "name": "쌀",
       "description": "티바트에서 흔히 볼 수 있는 벼과 식물. 이런 한 올 한 올 씹히는 탱탱한 식감을 싫어하는 사람은 없을 것이다"
+    },
+    {
+      "key": "riftborn-regalia",
+      "name": "수계(獸界) 늑대왕의 그릇",
+      "description": "수계의 늑대왕을 처치하고 얻은 부러진 뿔. 원래는 처치당한 후 세상에 남아 있지 않은 게 정상이다.\r\n수계 늑대 무리의 왕일지라도, 마수의 족보에선 그의 형들의 조족지혈에 불과하다.\r\n「황금」이 무수한 수계 늑대 무리를 버려진 종이처럼 구겨서 압축해 탄생한 기형 마수다. 뿔에는 검은 늑대 무리가 그를 위해 공간까지 녹일 수 있게 하는 권능이 담겨있다"
     },
     {
       "key": "ring-of-boreas",

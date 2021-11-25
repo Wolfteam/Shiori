@@ -420,8 +420,8 @@
     {
       "key": "arataki-itto",
       "name": "Arataki Itto",
-      "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "title": "Quái Kiệt Hanamizaka",
+      "description": "Thủ lĩnh đời đầu của \"Bang Arataki\" địa bàn Hanamizaka. Sao, chưa nghe qua Bang Arataki à, đùa ta sao?",
       "skills": [
         {
           "key": "s1",
@@ -447,18 +447,6 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
           "title": "NA",
           "description": "",
@@ -466,6 +454,12 @@
         },
         {
           "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
           "title": "NA",
           "description": "",
           "descriptions": []
@@ -1775,8 +1769,8 @@
     {
       "key": "gorou",
       "name": "Gorou",
-      "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "title": "Chiến Khuyển Nanh Nhọn",
+      "description": "Đại tướng đảo Watatsumi, rất được thuộc hạ tin tưởng.",
       "skills": [
         {
           "key": "s1",
@@ -4450,6 +4444,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Sucrose",
       "title": "Độ Ngọt Vô Hại",
@@ -6272,6 +6353,93 @@
           "key": "c6",
           "title": "Chòm Sao Băng Naganohara",
           "description": "Trong thời gian duy trì của Điệu Nhảy Niwabi Cháy Bỏng, khi Yoimiya chủ động thực hiện tấn công thường sẽ có 50% tỷ lệ bắn thêm 1 mũi tên lửa, gây sát thương bằng 60% sát thương ban đầu. Sát thương này xem như sát thương tấn công thường.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -9232,6 +9400,11 @@
       "key": "rice",
       "name": "Lúa Nước",
       "description": "Loài cây thân lúa thường được trồng trên đại lục Teyvat. Bất kỳ ai cũng yêu thích hương vị thơm ngon của chúng, cái tên \"hạt gạo nuôi trăm dân\" cũng từ đó mà ra."
+    },
+    {
+      "key": "riftborn-regalia",
+      "name": "Sừng Vua Quái Cảnh",
+      "description": "Một chiếc sừng gãy có được sau khi chiến thắng Vua Thú. Đáng lẽ nó không nên để lại bất kỳ tàn dư gì sau khi bị trục xuất mới đúng.\r\nNgay cả một vua thú giữa bầy sói trong Quái Cảnh cũng chẳng là gì trước những ma thú thuộc hệ cao hơn.\r\n\"Gold\" sau khi dồn nén vô số bầy sói ma vật giống như nén mớ tranh bỏ đi, đã vô tình sản sinh ra ma thú với hình thù kỳ lạ, và thứ chất chứa bên trong chiếc sừng của nó chính là quyền năng hiệu lệnh cho bầy sói đen làm xói mòn không gian cho nó."
     },
     {
       "key": "ring-of-boreas",

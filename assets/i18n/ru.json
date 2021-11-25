@@ -415,9 +415,9 @@
     },
     {
       "key": "arataki-itto",
-      "name": "Arataki Itto",
-      "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "name": "Итто",
+      "title": "Герой Ханамидзаки",
+      "description": "Первый и величайший предводитель банды Аратаки, прославленной по всей Ханамидзаке города Инадзумы. Что, вы никогда о ней не слышали? Нарываетесь?",
       "skills": [
         {
           "key": "s1",
@@ -443,18 +443,6 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
           "title": "NA",
           "description": "",
@@ -462,6 +450,12 @@
         },
         {
           "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
           "title": "NA",
           "description": "",
           "descriptions": []
@@ -1774,9 +1768,9 @@
     },
     {
       "key": "gorou",
-      "name": "Gorou",
-      "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "name": "Горо",
+      "title": "Пёс войны",
+      "description": "Великий генерал армии Ватацуми. Пользуется безграничным доверием своих подчинённых.",
       "skills": [
         {
           "key": "s1",
@@ -4454,6 +4448,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Сахароза",
       "title": "Безобидная карамелька",
@@ -6267,6 +6348,93 @@
           "key": "c6",
           "title": "Падающие звёзды Наганохары",
           "description": "Во время действия навыка Огненный танец Ниваби обычные атаки Ёимии имеют 50% шанс пустить дополнительную зажигательную стрелу, которая наносит 60% от первоначального урона. Этот урон считается уроном обычной атаки.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -9227,6 +9395,11 @@
       "key": "rice",
       "name": "Рис",
       "description": "Зерновая культура, широко распространенная в Тейвате. Нет человека, который не восхищался бы формой и питательностью рисовых зёрен. Вот почему часто говорят: «Один и тот же рис способен вскормить сотню разных людей»"
+    },
+    {
+      "key": "riftborn-regalia",
+      "name": "Эмблема Разрыва",
+      "description": "Сломанный рог, полученный после победы над Золотым волчьим вожаком. Хотя после охоты от него ничего не должно было остаться в реальном мире. \r\nДаже повелитель волков Разрыва - ничто по сравнению с более высокородными монстрами. \r\n«Золото» создало эти уродливые волчьи стаи случайно, будто скомкав лист бумаги с рисунком. Рога вожака символизируют его власть и позволяют приказывать своему тёмному выводку растворять само пространство."
     },
     {
       "key": "ring-of-boreas",

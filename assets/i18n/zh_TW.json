@@ -419,9 +419,9 @@
     },
     {
       "key": "arataki-itto",
-      "name": "Arataki Itto",
-      "title": "",
-      "description": "",
+      "name": "荒瀧一斗",
+      "title": "花坂豪快",
+      "description": "活躍在稻妻城花見坂的「荒瀧派」初代目頭領。什麼，從沒聽說過荒瀧派？你是想找碴嗎？",
       "skills": [
         {
           "key": "s1",
@@ -447,18 +447,6 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
           "title": "NA",
           "description": "",
@@ -466,6 +454,12 @@
         },
         {
           "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
           "title": "NA",
           "description": "",
           "descriptions": []
@@ -1774,9 +1768,9 @@
     },
     {
       "key": "gorou",
-      "name": "Gorou",
-      "title": "",
-      "description": "",
+      "name": "五郎",
+      "title": "戎犬鏘鏘",
+      "description": "海祇島軍的大將，深受部下信賴。",
       "skills": [
         {
           "key": "s1",
@@ -4452,6 +4446,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "砂糖",
       "title": "無害甜度",
@@ -6260,6 +6341,93 @@
           "key": "c6",
           "title": "長野原龍勢流星群",
           "description": "在焰硝庭火舞的持續期間內，宵宮主動進行普通攻擊時，有50%機率發射一枚額外的熾焰箭，造成原本60%的傷害。該傷害視為普通攻擊傷害。\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -9221,6 +9389,11 @@
       "key": "rice",
       "name": "稻米",
       "description": "提瓦特常見的禾本作物。無論是什麼樣的人，都能欣賞這種顆粒分明的飽滿口感，正所謂「一樣米養百樣人」。"
+    },
+    {
+      "key": "riftborn-regalia",
+      "name": "獸境王器",
+      "description": "戰勝王獸後，得到的折斷犄角。在牠遭到驅逐後，不應殘留在此世才對。\r\n即使在獸境群狼中貴為王獸，在魔獸的系譜中也不及其兄長們的萬分之一吧。\r\n「黃金」將無數獸境的群狼如同將棄置的畫紙一般壓縮後而意外產生的畸形魔獸，而寄寓在其犄角中的是足以號令黑色的狼群為牠溶解空間的權威。"
     },
     {
       "key": "ring-of-boreas",

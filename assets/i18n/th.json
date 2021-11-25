@@ -410,8 +410,8 @@
     {
       "key": "arataki-itto",
       "name": "Arataki Itto",
-      "title": "",
-      "description": "",
+      "title": "ขาใหญ่ประจำ Hanamizaka",
+      "description": "ผู้นำรุ่นแรกของแก๊ง Arataki ผู้โด่งดังไปทั่วทั้ง Hanamizaka แห่ง Inazuma... หืม ว่ายังไงนะ? ไม่เคยได้ยินชื่อแก๊ง Arataki? อยากมีเรื่องรึไง?",
       "skills": [
         {
           "key": "s1",
@@ -437,18 +437,6 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
           "title": "NA",
           "description": "",
@@ -456,6 +444,12 @@
         },
         {
           "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
           "title": "NA",
           "description": "",
           "descriptions": []
@@ -1742,8 +1736,8 @@
     {
       "key": "gorou",
       "name": "Gorou",
-      "title": "",
-      "description": "",
+      "title": "นักรบคู่หูผู้ซื่อสัตย์",
+      "description": "พลเอกของกองทหารแห่งเกาะ Watatsumi ผู้ได้รับความไว้วางใจจากผู้ใต้บังคับบัญชาเป็นอย่างสูง",
       "skills": [
         {
           "key": "s1",
@@ -4399,6 +4393,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Sucrose",
       "title": "ความหวานที่ไร้พิษสง",
@@ -6202,6 +6283,93 @@
           "key": "c6",
           "title": "Naganohara Meteor Swarm",
           "description": "ภายในช่วงเวลาต่อเนื่องของ Niwabi Fire-Dance เมื่อ Yoimiya ใช้การโจมตีปกติ จะมีโอกาส 50% ที่จะยิง Blazing Arrow ที่สร้างความเสียหายเป็น 60% จากของเดิมเพิ่มอีกหนึ่งดอก โดยที่ความเสียหายนี้จะถูกมองว่าเป็นความเสียหายจากการโจมตีปกติ\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -9162,6 +9330,11 @@
       "key": "rice",
       "name": "Rice",
       "description": "พืชที่พบได้ทั่วไปใน Teyvat ไม่ว่าจะเป็นคนประเภทไหนล้วนสามารถลิ้มลองรสสัมผัสเป็นเม็ดที่เต็มอิ่มนี้ได้ เหมือนกับคำที่ว่า \"ข้าวชนิดเดียวเลี้ยงคนได้ร้อยประเภท\""
+    },
+    {
+      "key": "riftborn-regalia",
+      "name": "Riftborn Regalia",
+      "description": "เขาแตกร้าวที่ได้รับจากการเอาชนะ Wolflord มันไม่ควรจะหลงเหลืออะไรไว้ในโลกใบนี้หลังจากที่พ่ายแพ้ไปแล้วด้วยซ้ำ\r\nแม้จะเป็น Wolflord ในหมู่ Riftwolf แต่มันก็ไม่มีอะไรที่จะเทียบกับอสูรตัวอื่นในลำดับวงศ์ตระกูลเดียวกันได้เลย\r\n\"Gold\" ได้บีบอัดหมาป่าที่มีรูปร่างผิดปกติเหล่านี้ออกมาเป็นจำนวนมาก ราวกับภาพวาดที่ย่อขนาดลงบนกระดาษที่ทิ้งแล้ว และสิ่งที่อยู่ในเขาของมันนั้นก็มีอำนาจเพียงพอที่จะสั่งให้ฝูงหมาป่าสีดำละลายพื้นที่ได้"
     },
     {
       "key": "ring-of-boreas",

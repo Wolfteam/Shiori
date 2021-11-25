@@ -417,7 +417,7 @@
       "key": "arataki-itto",
       "name": "Arataki Itto",
       "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "description": "Ketua Geng Arataki yang Pertama dan yang Terhebat, dan terkenal di Hanamizaka, Kota Inazuma ... Apa katamu? Belum pernah dengar? Mau cari ribut ya?",
       "skills": [
         {
           "key": "s1",
@@ -443,18 +443,6 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
           "title": "NA",
           "description": "",
@@ -462,6 +450,12 @@
         },
         {
           "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
           "title": "NA",
           "description": "",
           "descriptions": []
@@ -1776,7 +1770,7 @@
       "key": "gorou",
       "name": "Gorou",
       "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "description": "Jenderal pasukan di Pulau Watatsumi. Dia sangat dipercaya anak buahnya.",
       "skills": [
         {
           "key": "s1",
@@ -4456,6 +4450,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Sucrose",
       "title": "Harmless Sweetie",
@@ -6278,6 +6359,93 @@
           "key": "c6",
           "title": "Naganohara Meteor Swarm",
           "description": "Selama durasi Niwabi Fire-Dance, Normal Attack Yoimiya memiliki 50% kemungkinan menembakkan Blazing Arrow tambahan yang mengakibatkan 60% DMG aslinya. DMG ini terhitung sebagai Normal Attack DMG.\r\n",
+          "descriptions": []
+        }
+      ]
+    },
+    {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
           "descriptions": []
         }
       ]
@@ -9238,6 +9406,11 @@
       "key": "rice",
       "name": "Rice",
       "description": "Sebuah tanaman biji-bijian yang biasa ditemukan di Teyvat. Orang-orang dari semua lapisan masyarakat menikmati tekstur butirannya yang berbeda, seperti kata pepatah \"Jenis beras yang sama dapat memberi makan 100 jenis orang.\""
+    },
+    {
+      "key": "riftborn-regalia",
+      "name": "Riftborn Regalia",
+      "description": "Tanduk patah yang kamu peroleh dari mengalahkan Wolflord. Meskipun begitu, benda ini seharusnya sudah tidak ada jejaknya lagi setelah dia diusir dari dunia ini.\r\nBahkan sesosok penguasa di antara Riftwolves bukanlah lawan yang berarti bagi monster dari silsilah yang lebih tinggi.\r\n\"Emas\" memproduksi massal gerombolan serigala yang cacat ini seolah-olah secara tidak sengaja, bagaikan menuliskan sesuatu di atas kertas yang penuh tulisan, dan menjadikan tanduk yang satu ini mewakili otoritasnya untuk memerintahkan induk gelapnya untuk membubarkan ruang itu sendiri."
     },
     {
       "key": "ring-of-boreas",

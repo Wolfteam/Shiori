@@ -1,4 +1,4 @@
-{
+﻿{
   "talents": [
     {
       "key": "ashen-heart",
@@ -5119,6 +5119,19 @@
       "image": "perpetual-heart.png",
       "rarity": 4,
       "position": 41,
+      "level": 0,
+      "type": "elementalStone",
+      "hasSiblings": false,
+      "days": [],
+      "recipes": [],
+      "obtainedFrom": [],
+      "attributes": null
+    },
+    {
+      "key": "riftborn-regalia",
+      "image": "riftborn-regalia.png",
+      "rarity": 4,
+      "position": 45,
       "level": 0,
       "type": "elementalStone",
       "hasSiblings": false,
