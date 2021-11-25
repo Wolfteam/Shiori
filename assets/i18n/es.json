@@ -7950,7 +7950,7 @@
       "name": "Corazón del Guardián",
       "bonus": [
         "DEF +30%.",
-        "Por cada miembro de tu equipo con un Tipo Elemental distinto, La RES Elemental del personaje que lleve este conjunto aumenta en un 30% contra dicho elemento."
+        "Por cada miembro de tu equipo con un tipo elemental distinto, La RES Elemental del personaje que lleve este conjunto aumenta en un 30% contra dicho elemento."
       ]
     },
     {
@@ -7983,6 +7983,14 @@
       "bonus": [
         "Bono de Daño Hydro +15%.",
         "Tras usar la Habilidad Elemental, aumenta el daño de Ataque Normal y Ataque Cargado en un 30% durante 15 s."
+      ]
+    },
+    {
+      "key": "husk-of-opulent-dreams",
+      "name": "Cáscara de Sueños Opulentos",
+      "bonus": [
+        "DEF +30%.",
+        "El personaje que equipe este conjunto de artefactos obtendrá el efecto de “curiosidad” en las siguientes circunstancias al golpear a un enemigo con un ataque Geo, obtiene una carga, lo cual solo puede ocurrir una vez cada 0.3 s; mientras está en tu equipo pero no en combate, obtiene una carga cada 3 s. Este efecto puede acumularse hasta 4 veces, y cada carga aumenta en un 6% la DEF y otorga un 6% de Bono de Daño Geo. Si el personaje no obtiene una carga de curiosidad en 6 s, perderá una acumulación."
       ]
     },
     {
@@ -8031,6 +8039,14 @@
       "bonus": [
         "Daño de Habilidad Definitiva +20%.",
         "Después de lanzar una Habilidad Definitiva, aumenta el ATQ de todos los miembros del equipo en un 20% durante 12 s. Este efecto no puede acumularse."
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Perla Oceánica",
+      "bonus": [
+        "Bono de Curación +15%.",
+        "Cuando el personaje que equipa este conjunto de artefactos cura a otro, crea el efecto de “burbuja marina” durante 3 s, el cual registra la cantidad de Vida regenerada (incluida la regenerada por encima del 100%). Tras ello, la burbuja marina estalla e inflige contra los enemigos cercanos un daño basado en el 90% de la cantidad regenerada. Este daño se calcula de manera similar al de las reacciones de Electrocargado, Superconductor, etc., pero no varía en función de la Maestría Elemental, el nivel del personaje o el bono de daño de las reacciones. Solo se puede crear una burbuja marina cada 3.5 s, la cual solo puede registrar un máximo de 30 000 pts. de Vida regenerada, incluyendo la regenerada por encima del 100%. Además, solo puede existir una burbuja marina en tu equipo al mismo tiempo. Cuando el personaje que equipa este conjunto de artefactos está en el equipo pero no en combate, también podrá activar este efecto."
       ]
     },
     {

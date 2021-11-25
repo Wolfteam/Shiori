@@ -7891,6 +7891,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "Casca de Sonhos Opulentos",
+      "bonus": [
+        "DEF +30%",
+        "Um personagem com este conjunto de artefatos equipado obterá o efeito de Curiosidade nas seguintes condições Quando estiver no campo de batalha, o personagem ganha 1 carga após atingir um adversário com um ataque Geo, isso pode ser desencadeado uma vez a cada 0.3s. Quando fora do campo de batalha, o personagem ganha 1 carga a cada 3s. A Curiosidade pode acumular em até 4 vezes, cada uma fornecendo 6% de DEF e um Bônus de Dano Geo de também 6%. Quando 6 segundos passam sem ganhar um acúmulo de Curiosidade, 1 acúmulo é perdido."
+      ]
+    },
+    {
       "key": "instructor",
       "name": "Instrutor",
       "bonus": [
@@ -7936,6 +7944,14 @@
       "bonus": [
         "Dano do Supremo +20%",
         "Usar o Supremo aumenta o ATQ de todos os membros da equipe em 20% por 12s. Este efeito não pode ser acumulado."
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Concha Tingida Pelo Mar",
+      "bonus": [
+        "Bônus de Cura +15%",
+        "Quando o personagem que equipa este conjunto de artefatos cura outro personagem da sua equipe, ele cria o efeito de \"Bolha de Espuma do Mar\" durante 3s, que registra a quantidade de vida regenerada (incluindo a regenerada acima de 100%). No final da duração do efeito, a Bolha de Espuma do Mar explode, causando dano aos inimigos ao redor com base em 90% da vida regenerada. (Esse Dano é calculado de forma semelhante a reações como Eletricamente Carregado e Supercondutor, mas não é afetado pela Proficiência Elemental, níveis de personagens ou dano bônus de reações.) Apenas se pode criar uma Bolha de Espuma do Mar a cada 3.5s, e esta poderá registrar no máximo 30.000 pontos de vida, incluindo aqueles regenerados acima de 100%. Além disso, apenas uma Bolha de Espuma do Mar pode existir em sua equipe de cada vez. Quando o personagem equipando este conjunto de artefatos está na equipe, mas não em combate, poderá ainda assim ativar este efeito."
       ]
     },
     {

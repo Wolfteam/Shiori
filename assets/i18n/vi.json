@@ -7986,6 +7986,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "Giấc Mộng Phù Hoa",
+      "bonus": [
+        "Phòng ngự tăng 30%.",
+        "Nhân vật trang bị bộ Thánh Di Vật này sẽ nhận hiệu quả \"Vấn Đáp\" trong các trường hợp sau đây Sau khi nhân vật trong trận sử dụng tấn công Nguyên Tố Nham đánh trúng kẻ địch sẽ nhận 1 tầng, mỗi 0.3s tối đa kích hoạt 1 lần; trong đội chờ, mỗi 3s nhận 1 tầng. Vấn Đáp cộng dồn tối đa 4 tầng, mỗi tầng sẽ tăng 6% phòng ngự và 6% buff sát thương Nguyên Tố Nham. Mỗi 6s, nếu chưa nhận hiệu quả Vấn Đáp sẽ mất đi 1 tầng."
+      ]
+    },
+    {
       "key": "instructor",
       "name": "Giáo Quan",
       "bonus": [
@@ -8034,11 +8042,19 @@
       ]
     },
     {
+      "key": "ocean-hued-clam",
+      "name": "Xà Cừ Đại Dương",
+      "bonus": [
+        "Tăng Trị Liệu lên 15%.",
+        "Khi nhân vật trang bị bộ Thánh Di Vật này thực hiện trị liệu cho nhân vật trong đội, sẽ tạo ra Bọt Biển kéo dài 3s, ghi lại lượng HP hồi phục của việc trị liệu (Bao gồm cả lượng vượt mức). Khi kết thúc thời gian duy trì, Bọt Biển sẽ nổ tung, gây cho kẻ địch xung quanh sát thương bằng 90% lượng hồi phục tích lũy (Cách tính sát thương này giống với các phản ứng nguyên tố như Điện Cảm, Siêu Dẫn...nhưng không bị ảnh hưởng bởi Tinh Thông Nguyên Tố, cấp hoặc buff sát thương phản ứng). Mỗi 3.5s tối đa tạo 1 Bọt Biển; Bọt Biển tối đa ghi lại 30,000 điểm hồi phục, bao gồm cả lượng trị liệu vượt mức; đội của bản thân cùng lúc chỉ được tồn tại tối đa 1 Bọt Biển. Khi nhân vật trang bị bộ Thánh Di Vật này ở trong đội chờ, vẫn có thể kích hoạt hiệu quả này."
+      ]
+    },
+    {
       "key": "pale-flame",
       "name": "Lửa Trắng Xám",
       "bonus": [
         "Sát thương vật lý tạo thành tăng 25%.",
-        "Sau khi kỹ năng nguyên tố đánh trúng kẻ địch, tấn công tăng 9%, kéo dài 7s, tối đa cộng dồn 2 tầng. Mỗi 0.3s tối đa kích hoạt 1 lần, sau khi tích đầy 2 tầng, hiệu quả 2 bộ tăng 100%"
+        "Sau khi kỹ năng nguyên tố đánh trúng kẻ địch, tấn công tăng 9%, kéo dài 7s, tối đa cộng dồn 2 tầng. Mỗi 0.3s tối đa kích hoạt 1 lần, sau khi tích đầy 2 tầng, hiệu quả bộ 2 món tăng 100%."
       ]
     },
     {

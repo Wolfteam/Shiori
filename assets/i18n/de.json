@@ -8002,6 +8002,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "Schale der üppigen Träume",
+      "bonus": [
+        "Erhöht die VTD um 30 %.",
+        "Die mit diesem Artefaktset ausgerüsteten Figuren erhalten unter den folgenden Umständen den Effekt „Neugier“ Aktuelle Figuren erhalten mit 0,3 s Abklingzeit eine Stapelung beim Treffen von Gegnern mit Geo-Angriffen, während die inaktiven Figuren in der Truppe alle 3 s eine Stapelung erhalten. 4-fach stapelbar. Jede Stapelung verleiht einen VTD-Bonus von 6 % und einen Geo-Schadens-Bonus von 6 %. Wenn kein neuer Effekt der „Neugier“ hinzukommt, erlischt alle 6 s eine Stapelung dieses Effekts."
+      ]
+    },
+    {
       "key": "instructor",
       "name": "Ausbilder",
       "bonus": [
@@ -8030,7 +8038,7 @@
       "name": "Ins Herz geschlossenes Mädchen",
       "bonus": [
         "Erhöht den aktiven Heileffekt der Figur um 15 %.",
-        "Erhöht den passiven Heileffekt aller Truppenmitglieder nach Anwendung von Elementarfähigkeiten oder Spezialfähigkeiten 10 s lang um 20 %."
+        "Erhöht den passiven Heilungseffekt aller Truppenmitglieder nach Anwendung von Elementarfähigkeiten oder Spezialfähigkeiten 10 s lang um 20 %."
       ]
     },
     {
@@ -8047,6 +8055,14 @@
       "bonus": [
         "Erhöht den mit Spezialfähigkeiten verursachten Schaden um 20 %.",
         "Erhöht den ANG aller Truppenmitglieder nach Anwendung von Spezialfähigkeiten 12 s lang um 20 %, nicht stapelbar."
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Meeresmuschel",
+      "bonus": [
+        "Erhöht den Heilungsbonus um 15 %.",
+        "Wenn die mit diesem Artefaktset ausgerüsteten Figuren die Figuren in der Truppe heilen, entsteht eine Meeresblase, die 3 s hält und die wiederhergestellten Lebenspunkte beim Heilen (einschließlich des überschüssigen Heilungswerts) aufzeichnet. Wenn ihre Dauer endet, explodiert die Meeresblase, was Gegnern in der Umgebung Schaden, der 90 % der insgesamt wiederhergestellten LP entspricht, zufügt (Diese SCH-Berechnungsweise gleicht der der Elementarreaktionen Unter Strom und Supraleiter, ist jedoch von der Elementarkunde, der Stufe oder dem Reaktion-SCH-Bonus unabhängig). Alle 3,5 s kann höchstens eine Meeresblase entstehen. Jede Meeresblase kann bis zu 30.000 wiederhergestellte Lebenspunkte (einschließlich des überschüssigen Heilungswerts) aufzeichnen. In der eigenen Truppe kann gleichzeitig höchstens eine Meeresblase bestehen. Wenn die mit diesem Artefaktset ausgerüsteten Figuren inaktiv in der Truppe sind, kann dieser Effekt auch ausgelöst werden."
       ]
     },
     {
