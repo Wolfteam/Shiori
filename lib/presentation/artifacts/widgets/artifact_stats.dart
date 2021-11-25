@@ -28,11 +28,15 @@ class ArtifactStats extends StatelessWidget {
                   Text(
                     s.xPieces(b.pieces),
                     textAlign: TextAlign.center,
+                    maxLines: 10,
+                    overflow: TextOverflow.ellipsis,
                     style: theme.textTheme.subtitle2!.copyWith(fontSize: 14, color: textColor),
                   ),
                   Text(
                     b.bonus,
                     textAlign: TextAlign.center,
+                    maxLines: 10,
+                    overflow: TextOverflow.ellipsis,
                     style: theme.textTheme.bodyText2!.copyWith(fontSize: 12, color: textColor),
                   ),
                 ],
