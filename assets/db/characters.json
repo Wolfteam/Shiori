@@ -868,10 +868,22 @@
             "elementalBurst"
           ],
           "weaponKeys": [
-            "harbinger-of-dawn",
-            "primordial-jade-cutter"
+            "primordial-jade-cutter",
+            "cinnabar-spindle",
+            "harbinger-of-dawn"
           ],
           "artifacts": [
+            {
+              "oneKey": "husk-of-opulent-dreams",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "defPercentage",
+                "geoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
             {
               "oneKey": null,
               "multiples": [
@@ -880,7 +892,7 @@
                   "quantity": 2
                 },
                 {
-                  "key": "noblesse-oblige",
+                  "key": "husk-of-opulent-dreams",
                   "quantity": 2
                 }
               ],
@@ -27798,6 +27810,17 @@
           ],
           "artifacts": [
             {
+              "oneKey": "husk-of-opulent-dreams",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "defPercentage",
+                "geoDmgBonusPercentage",
+                "critRatePercentage"
+              ]
+            },
+            {
               "oneKey": "retracing-bolide",
               "multiples": [],
               "stats": [
@@ -27832,10 +27855,21 @@
           ],
           "artifacts": [
             {
+              "oneKey": "husk-of-opulent-dreams",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "defPercentage",
+                "defPercentage",
+                "defPercentage"
+              ]
+            },
+            {
               "oneKey": null,
               "multiples": [
                 {
-                  "key": "defenders-will",
+                  "key": "husk-of-opulent-dreams",
                   "quantity": 2
                 },
                 {
@@ -33725,6 +33759,17 @@
             "thrilling-tales-of-dragon-slayers"
           ],
           "artifacts": [
+            {
+              "oneKey": "ocean-hued-clam",
+              "multiples": [],
+              "stats": [
+                "hp",
+                "atk",
+                "energyRechargePercentage",
+                "hpPercentage",
+                "healingBonusPercentage"
+              ]
+            },
             {
               "oneKey": "heart-of-depth",
               "multiples": [],
