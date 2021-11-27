@@ -66,10 +66,7 @@ class MaterialItem extends StatelessWidget {
   }
 
   Future<void> _gotoMaterialPage(BuildContext context) async {
-    final bloc = context.read<MaterialBloc>();
-    bloc.add(MaterialEvent.loadFromKey(key: itemKey));
-    final route = MaterialPageRoute(builder: (c) => mp.MaterialPage());
+    final route = MaterialPageRoute(builder: (c) => mp.MaterialPage(itemKey: itemKey));
     await Navigator.push(context, route);
-    bloc.pop();
   }
 }

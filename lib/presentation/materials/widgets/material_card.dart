@@ -181,11 +181,8 @@ class MaterialCard extends StatelessWidget {
       return;
     }
 
-    final bloc = context.read<MaterialBloc>();
-    bloc.add(MaterialEvent.loadFromKey(key: keyName));
-    final route = MaterialPageRoute(builder: (c) => mp.MaterialPage());
+    final route = MaterialPageRoute(builder: (c) => mp.MaterialPage(itemKey: keyName));
     await Navigator.push(context, route);
-    bloc.pop();
   }
 
   Future<void> _showQuantityPickerDialog(BuildContext context) async {

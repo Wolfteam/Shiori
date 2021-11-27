@@ -21,7 +21,7 @@ class ModalBottomSheetUtils {
       case EndDrawerItemType.artifacts:
         return const artifacts.ArtifactBottomSheet();
       case EndDrawerItemType.materials:
-        return const materials.MaterialBottomSheet();
+        return materials.MaterialBottomSheet.route(context);
       case EndDrawerItemType.monsters:
         return monsters.MonsterBottomSheet.route(context);
       case EndDrawerItemType.calculatorAscMaterialsAdd:

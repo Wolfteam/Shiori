@@ -98,6 +98,17 @@ class Injection {
     return ArtifactBloc(genshinService, telemetryService);
   }
 
+  static MaterialsBloc get materialsBloc {
+    final genshinService = getIt<GenshinService>();
+    return MaterialsBloc(genshinService);
+  }
+
+  static MaterialBloc get materialBloc {
+    final genshinService = getIt<GenshinService>();
+    final telemetryService = getIt<TelemetryService>();
+    return MaterialBloc(genshinService, telemetryService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();

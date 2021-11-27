@@ -133,19 +133,6 @@ class MyApp extends StatelessWidget {
             return CalculatorAscMaterialsItemBloc(genshinService, calculatorService);
           },
         ),
-        BlocProvider(
-          create: (_) {
-            final genshinService = getIt<GenshinService>();
-            return MaterialsBloc(genshinService);
-          },
-        ),
-        BlocProvider(
-          create: (_) {
-            final genshinService = getIt<GenshinService>();
-            final telemetryService = getIt<TelemetryService>();
-            return MaterialBloc(genshinService, telemetryService);
-          },
-        ),
         //TODO: REMOVE THIS BLOC FROM HERE ?
         BlocProvider(
           create: (ctx) {
