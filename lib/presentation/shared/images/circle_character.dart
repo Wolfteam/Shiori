@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/models/models.dart';
 import 'package:shiori/presentation/character/character_page.dart';
 
@@ -43,11 +41,8 @@ class CircleCharacter extends StatelessWidget {
   }
 
   Future<void> _gotoCharacterPage(BuildContext context) async {
-    final bloc = context.read<CharacterBloc>();
-    bloc.add(CharacterEvent.loadFromKey(key: itemKey));
-    final route = MaterialPageRoute(builder: (c) => const CharacterPage());
+    final route = MaterialPageRoute(builder: (c) => CharacterPage(itemKey: itemKey));
     await Navigator.push(context, route);
     await route.completed;
-    bloc.pop();
   }
 }

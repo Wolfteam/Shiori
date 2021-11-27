@@ -72,7 +72,7 @@ class WeaponDetailTop extends StatelessWidget {
   }
 
   void _favoriteWeapon(String key, bool isInInventory, BuildContext context) {
-    final event = !isInInventory ? InventoryEvent.addWeapon(key: key) : InventoryEvent.deleteWeapon(key: key);
-    context.read<InventoryBloc>().add(event);
+    final event = !isInInventory ? WeaponEvent.addToInventory(key: key) : WeaponEvent.deleteFromInventory(key: key);
+    context.read<WeaponBloc>().add(event);
   }
 }

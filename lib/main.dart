@@ -7,7 +7,6 @@ import 'package:window_size/window_size.dart';
 
 import 'application/bloc.dart';
 import 'domain/services/calculator_service.dart';
-import 'domain/services/data_service.dart';
 import 'domain/services/device_info_service.dart';
 import 'domain/services/genshin_service.dart';
 import 'domain/services/locale_service.dart';
@@ -62,25 +61,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (ctx) {
             final genshinService = getIt<GenshinService>();
-            final telemetryService = getIt<TelemetryService>();
-            final localeService = getIt<LocaleService>();
-            final dataService = getIt<DataService>();
-            return CharacterBloc(genshinService, telemetryService, localeService, dataService);
-          },
-        ),
-        BlocProvider(
-          create: (ctx) {
-            final genshinService = getIt<GenshinService>();
             final settingsService = getIt<SettingsService>();
             return WeaponsBloc(genshinService, settingsService);
-          },
-        ),
-        BlocProvider(
-          create: (ctx) {
-            final genshinService = getIt<GenshinService>();
-            final telemetryService = getIt<TelemetryService>();
-            final dataService = getIt<DataService>();
-            return WeaponBloc(genshinService, telemetryService, dataService);
           },
         ),
         BlocProvider(
@@ -118,7 +100,6 @@ class MyApp extends StatelessWidget {
             )..add(const MainEvent.init());
           },
         ),
-        // _urlPageBloc.add(const UrlPageEvent.init(loadMap: false, loadWishSimulator: false, loadDailyCheckIn: false));
         BlocProvider(
           create: (ctx) {
             final settingsService = getIt<SettingsService>();
@@ -131,15 +112,6 @@ class MyApp extends StatelessWidget {
             final genshinService = getIt<GenshinService>();
             final calculatorService = getIt<CalculatorService>();
             return CalculatorAscMaterialsItemBloc(genshinService, calculatorService);
-          },
-        ),
-        //TODO: REMOVE THIS BLOC FROM HERE ?
-        BlocProvider(
-          create: (ctx) {
-            final genshinService = getIt<GenshinService>();
-            final telemetryService = getIt<TelemetryService>();
-            final dataService = getIt<DataService>();
-            return InventoryBloc(genshinService, dataService, telemetryService, ctx.read<CharacterBloc>(), ctx.read<WeaponBloc>());
           },
         ),
       ],

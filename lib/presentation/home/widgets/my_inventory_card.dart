@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shiori/application/bloc.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/home/widgets/card_description.dart';
 import 'package:shiori/presentation/home/widgets/card_item.dart';
@@ -31,9 +29,7 @@ class MyInventoryCard extends StatelessWidget {
 }
 
 Future<void> _goToInventoryPage(BuildContext context) async {
-  context.read<InventoryBloc>().add(const InventoryEvent.init());
   final route = MaterialPageRoute(builder: (c) => InventoryPage());
   await Navigator.push(context, route);
   await route.completed;
-  context.read<InventoryBloc>().add(const InventoryEvent.close());
 }
