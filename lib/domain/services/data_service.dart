@@ -1,8 +1,16 @@
+import 'dart:async';
+
 import 'package:shiori/domain/enums/enums.dart';
 import 'package:shiori/domain/models/entities.dart';
 import 'package:shiori/domain/models/models.dart';
 
 abstract class DataService {
+  StreamController<ItemType> get itemAddedToInventory;
+
+  StreamController<ItemType> get itemUpdatedInInventory;
+
+  StreamController<ItemType> get itemDeletedFromInventory;
+
   Future<void> init({String dir = 'shiori_data'});
 
   Future<void> deleteThemAll();
@@ -54,6 +62,14 @@ abstract class DataService {
   List<MaterialCardModel> getAllMaterialsInInventory();
 
   MaterialCardModel getMaterialFromInventory(String image);
+
+  Future<void> addCharacterToInventory(String key);
+
+  Future<void> deleteCharacterFromInventory(String key);
+
+  Future<void> addWeaponToInventory(String key);
+
+  Future<void> deleteWeaponFromInventory(String key);
 
   Future<void> addItemToInventory(String key, ItemType type, int quantity);
 

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:darq/darq.dart';
 import 'package:hive/hive.dart';
@@ -40,6 +42,15 @@ class DataServiceImpl implements DataService {
 
   final _initLock = Lock();
   final _deleteAllLock = Lock();
+
+  @override
+  final StreamController<ItemType> itemAddedToInventory = StreamController.broadcast();
+
+  @override
+  final StreamController<ItemType> itemUpdatedInInventory = StreamController.broadcast();
+
+  @override
+  final StreamController<ItemType> itemDeletedFromInventory = StreamController.broadcast();
 
   DataServiceImpl(this._genshinService, this._calculatorService);
 
@@ -98,6 +109,12 @@ class DataServiceImpl implements DataService {
     await _deleteAllLock.synchronized(() async {
       await Hive.close();
     });
+
+    await Future.wait([
+      itemAddedToInventory.close(),
+      itemUpdatedInInventory.close(),
+      itemDeletedFromInventory.close(),
+    ]);
   }
 
   @override
@@ -290,11 +307,24 @@ class DataServiceImpl implements DataService {
   }
 
   @override
-  Future<void> addItemToInventory(String key, ItemType type, int quantity) {
+  Future<void> addCharacterToInventory(String key) => addItemToInventory(key, ItemType.character, 1);
+
+  @override
+  Future<void> deleteCharacterFromInventory(String key) => deleteItemFromInventory(key, ItemType.character);
+
+  @override
+  Future<void> addWeaponToInventory(String key) => addItemToInventory(key, ItemType.weapon, 1);
+
+  @override
+  Future<void> deleteWeaponFromInventory(String key) => deleteItemFromInventory(key, ItemType.weapon);
+
+  @override
+  Future<void> addItemToInventory(String key, ItemType type, int quantity) async {
     if (isItemInInventory(key, type)) {
       return Future.value();
     }
-    return _inventoryBox.add(InventoryItem(key, quantity, type.index));
+    await _inventoryBox.add(InventoryItem(key, quantity, type.index));
+    itemAddedToInventory.add(type);
   }
 
   @override
@@ -304,6 +334,8 @@ class DataServiceImpl implements DataService {
     if (item != null) {
       await _inventoryBox.delete(item.key);
     }
+
+    itemDeletedFromInventory.add(type);
   }
 
   @override
@@ -318,6 +350,7 @@ class DataServiceImpl implements DataService {
         deleteAllUsedMaterialItems();
         break;
     }
+    itemDeletedFromInventory.add(type);
   }
 
   Future<void> deleteAllItemsInInventoryExceptMaterials(ItemType? type) async {
@@ -421,6 +454,7 @@ class DataServiceImpl implements DataService {
       await item.save();
     }
     await redistributeInventoryMaterial(key, quantity);
+    itemUpdatedInInventory.add(type);
   }
 
   @override
