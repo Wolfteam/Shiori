@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shiori/application/bloc.dart';
 import 'package:shiori/domain/assets.dart';
 import 'package:shiori/generated/l10n.dart';
 import 'package:shiori/presentation/home/widgets/card_description.dart';
@@ -23,7 +21,12 @@ class MonstersCard extends StatelessWidget {
       title: s.monsters,
       onClick: (context) => _goToMonstersPage(context),
       iconToTheLeft: iconToTheLeft,
-      icon: Image.asset(Assets.getOtherMaterialPath('monster.png'), width: 60, height: 60, color: theme.colorScheme.secondary),
+      icon: Image.asset(
+        Assets.getOtherMaterialPath('monster.png'),
+        width: 60,
+        height: 60,
+        color: theme.colorScheme.secondary,
+      ),
       children: [
         CardDescription(text: s.checkAllMonsters),
       ],
@@ -31,10 +34,8 @@ class MonstersCard extends StatelessWidget {
   }
 
   Future<void> _goToMonstersPage(BuildContext context) async {
-    context.read<MonstersBloc>().add(const MonstersEvent.init());
     final route = MaterialPageRoute(builder: (c) => const MonstersPage());
     await Navigator.push(context, route);
     await route.completed;
-    context.read<MonstersBloc>().add(const MonstersEvent.close());
   }
 }

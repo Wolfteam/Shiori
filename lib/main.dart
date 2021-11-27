@@ -162,12 +162,6 @@ class MyApp extends StatelessWidget {
             return InventoryBloc(genshinService, dataService, telemetryService, ctx.read<CharacterBloc>(), ctx.read<WeaponBloc>());
           },
         ),
-        BlocProvider(
-          create: (ctx) {
-            final genshinService = getIt<GenshinService>();
-            return MonstersBloc(genshinService);
-          },
-        ),
       ],
       child: BlocBuilder<MainBloc, MainState>(
         builder: (ctx, state) => AppWidget(),

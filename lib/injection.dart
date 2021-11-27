@@ -87,6 +87,11 @@ class Injection {
     return CalculatorAscMaterialsItemUpdateQuantityBloc(dataService, telemetryService);
   }
 
+  static MonstersBloc get monstersBloc {
+    final genshinService = getIt<GenshinService>();
+    return MonstersBloc(genshinService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();

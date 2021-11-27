@@ -18,7 +18,5 @@ class MonstersEvent with _$MonstersEvent {
 
   const factory MonstersEvent.cancelChanges() = _CancelChanges;
 
-  const factory MonstersEvent.close() = _Close;
-
   const factory MonstersEvent.resetFilters() = _ResetFilters;
 }
