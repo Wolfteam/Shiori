@@ -81,6 +81,12 @@ class Injection {
     return UrlPageBloc(networkService, telemetryService, deviceInfoService, settingsService);
   }
 
+  static CalculatorAscMaterialsItemUpdateQuantityBloc get calculatorAscMaterialsItemUpdateQuantityBloc {
+    final dataService = getIt<DataService>();
+    final telemetryService = getIt<TelemetryService>();
+    return CalculatorAscMaterialsItemUpdateQuantityBloc(dataService, telemetryService);
+  }
+
   //TODO: USE THIS PROP
   // static CalculatorAscMaterialsItemBloc get calculatorAscMaterialsItemBloc {
   //   final genshinService = getIt<GenshinService>();

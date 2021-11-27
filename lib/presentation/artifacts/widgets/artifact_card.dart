@@ -105,7 +105,12 @@ class ArtifactCard extends StatelessWidget {
                 ),
               ),
               Rarity(stars: rarity),
-              if (bonus.isNotEmpty) ArtifactStats(bonus: bonus, textColor: Colors.white),
+              if (bonus.isNotEmpty)
+                ArtifactStats(
+                  bonus: bonus,
+                  textColor: Colors.white,
+                  maxLines: 10,
+                ),
             ],
           ),
         ),
