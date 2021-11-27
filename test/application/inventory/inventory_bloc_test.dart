@@ -21,8 +21,6 @@ void main() {
   late final LocaleService _localeService;
   late final GenshinService _genshinService;
   late final DataService _dataService;
-  late final CharacterBloc _characterBloc;
-  late final WeaponBloc _weaponBloc;
 
   const _keqingKey = 'keqing';
   const _aquilaFavoniaKey = 'aquila-favonia';
@@ -36,8 +34,6 @@ void main() {
     _localeService = LocaleServiceImpl(_settingsService);
     _genshinService = GenshinServiceImpl(_localeService);
     _dataService = DataServiceImpl(_genshinService, CalculatorServiceImpl(_genshinService));
-    _characterBloc = CharacterBloc(_genshinService, _telemetryService, _localeService, _dataService);
-    _weaponBloc = WeaponBloc(_genshinService, _telemetryService, _dataService);
     return Future(() async {
       await _genshinService.init(_settingsService.language);
       await _dataService.init(dir: _dbFolder);
@@ -54,8 +50,8 @@ void main() {
   test(
     'Initial state',
     () => expect(
-      InventoryBloc(_genshinService, _dataService, _telemetryService, _characterBloc, _weaponBloc).state,
-      const InventoryState.loading(),
+      InventoryBloc(_genshinService, _dataService, _telemetryService).state,
+      const InventoryState.loaded(characters: [], weapons: [], materials: []),
     ),
   );
 
@@ -64,14 +60,14 @@ void main() {
     setUp: () async {
       await _dataService.deleteThemAll();
     },
-    build: () => InventoryBloc(_genshinService, _dataService, _telemetryService, _characterBloc, _weaponBloc),
+    build: () => InventoryBloc(_genshinService, _dataService, _telemetryService),
     act: (bloc) => bloc
       ..add(const InventoryEvent.addCharacter(key: _keqingKey))
       ..add(const InventoryEvent.addWeapon(key: _aquilaFavoniaKey))
       ..add(const InventoryEvent.updateMaterial(key: _moraKey, quantity: 20000))
       ..add(const InventoryEvent.init()),
-    //here I skip only 1 cause initially the state is loading and does not change until we send the init event
-    skip: 1,
+    //here I skip only 2 cause the init event does not make an state change
+    skip: 2,
     expect: () {
       final character = _genshinService.getCharacterForCard(_keqingKey);
       final weapon = _genshinService.getWeaponForCard(_aquilaFavoniaKey);
@@ -94,8 +90,10 @@ void main() {
       setUp: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService, _characterBloc, _weaponBloc),
-      act: (bloc) => bloc..add(const InventoryEvent.init())..add(const InventoryEvent.addCharacter(key: _keqingKey)),
+      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService),
+      act: (bloc) => bloc
+        ..add(const InventoryEvent.init())
+        ..add(const InventoryEvent.addCharacter(key: _keqingKey)),
       skip: 1,
       expect: () {
         final character = _genshinService.getCharacterForCard(_keqingKey);
@@ -115,8 +113,10 @@ void main() {
       setUp: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService, _characterBloc, _weaponBloc),
-      act: (bloc) => bloc..add(const InventoryEvent.init())..add(const InventoryEvent.addWeapon(key: _aquilaFavoniaKey)),
+      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService),
+      act: (bloc) => bloc
+        ..add(const InventoryEvent.init())
+        ..add(const InventoryEvent.addWeapon(key: _aquilaFavoniaKey)),
       skip: 1,
       expect: () {
         final weapon = _genshinService.getWeaponForCard(_aquilaFavoniaKey);
@@ -136,8 +136,10 @@ void main() {
       setUp: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService, _characterBloc, _weaponBloc),
-      act: (bloc) => bloc..add(const InventoryEvent.init())..add(const InventoryEvent.updateMaterial(key: _moraKey, quantity: 100000)),
+      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService),
+      act: (bloc) => bloc
+        ..add(const InventoryEvent.init())
+        ..add(const InventoryEvent.updateMaterial(key: _moraKey, quantity: 100000)),
       skip: 1,
       expect: () {
         final materials = _dataService.getAllMaterialsInInventory();
@@ -160,13 +162,13 @@ void main() {
       setUp: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService, _characterBloc, _weaponBloc),
+      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService),
       act: (bloc) => bloc
         ..add(const InventoryEvent.addCharacter(key: _keqingKey))
         ..add(const InventoryEvent.deleteCharacter(key: _keqingKey))
         ..add(const InventoryEvent.init()),
-      //here I skip only 1 cause initially the state is loading and does not change until we send the init event
-      skip: 1,
+      //here I skip only 2 cause the init event does not make an state change
+      skip: 2,
       expect: () {
         final materials = _dataService.getAllMaterialsInInventory();
         return [
@@ -184,13 +186,13 @@ void main() {
       setUp: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService, _characterBloc, _weaponBloc),
+      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService),
       act: (bloc) => bloc
         ..add(const InventoryEvent.addWeapon(key: _aquilaFavoniaKey))
         ..add(const InventoryEvent.deleteWeapon(key: _aquilaFavoniaKey))
         ..add(const InventoryEvent.init()),
-      //here I skip only 1 cause initially the state is loading and does not change until we send the init event
-      skip: 1,
+      //here I skip only 2 cause the init event does not make an state change
+      skip: 2,
       expect: () {
         final materials = _dataService.getAllMaterialsInInventory();
         return [
@@ -208,12 +210,12 @@ void main() {
       setUp: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService, _characterBloc, _weaponBloc),
+      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService),
       act: (bloc) => bloc
         ..add(const InventoryEvent.updateMaterial(key: _moraKey, quantity: 900))
         ..add(const InventoryEvent.updateMaterial(key: _moraKey, quantity: 0))
         ..add(const InventoryEvent.init()),
-      //here I skip only 1 cause initially the state is loading and does not change until we send the init event
+      //here I skip only 1 cause the init event does not make an state change
       skip: 1,
       expect: () {
         final materials = _dataService.getAllMaterialsInInventory();
@@ -236,7 +238,7 @@ void main() {
       setUp: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService, _characterBloc, _weaponBloc),
+      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService),
       act: (bloc) => bloc
         ..add(const InventoryEvent.init())
         ..add(const InventoryEvent.addCharacter(key: _keqingKey))
@@ -259,7 +261,7 @@ void main() {
       setUp: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService, _characterBloc, _weaponBloc),
+      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService),
       act: (bloc) => bloc
         ..add(const InventoryEvent.init())
         ..add(const InventoryEvent.addWeapon(key: _aquilaFavoniaKey))
@@ -282,7 +284,7 @@ void main() {
       setUp: () async {
         await _dataService.deleteThemAll();
       },
-      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService, _characterBloc, _weaponBloc),
+      build: () => InventoryBloc(_genshinService, _dataService, _telemetryService),
       act: (bloc) => bloc
         ..add(const InventoryEvent.init())
         ..add(const InventoryEvent.updateMaterial(key: _moraKey, quantity: 900))
@@ -301,18 +303,4 @@ void main() {
       },
     );
   });
-
-  blocTest<InventoryBloc, InventoryState>(
-    'Close',
-    setUp: () async {
-      await _dataService.deleteThemAll();
-    },
-    build: () => InventoryBloc(_genshinService, _dataService, _telemetryService, _characterBloc, _weaponBloc),
-    act: (bloc) => bloc
-      ..add(const InventoryEvent.init())
-      ..add(const InventoryEvent.updateMaterial(key: _moraKey, quantity: 900))
-      ..add(const InventoryEvent.close()),
-    skip: 2,
-    expect: () => const [InventoryState.loaded(characters: [], weapons: [], materials: [])],
-  );
 }
