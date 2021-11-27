@@ -307,39 +307,43 @@ class DataServiceImpl implements DataService {
   }
 
   @override
-  Future<void> addCharacterToInventory(String key) => addItemToInventory(key, ItemType.character, 1);
+  Future<void> addCharacterToInventory(String key, {bool raiseEvent = true}) => addItemToInventory(key, ItemType.character, 1);
 
   @override
-  Future<void> deleteCharacterFromInventory(String key) => deleteItemFromInventory(key, ItemType.character);
+  Future<void> deleteCharacterFromInventory(String key, {bool raiseEvent = true}) => deleteItemFromInventory(key, ItemType.character);
 
   @override
-  Future<void> addWeaponToInventory(String key) => addItemToInventory(key, ItemType.weapon, 1);
+  Future<void> addWeaponToInventory(String key, {bool raiseEvent = true}) => addItemToInventory(key, ItemType.weapon, 1);
 
   @override
-  Future<void> deleteWeaponFromInventory(String key) => deleteItemFromInventory(key, ItemType.weapon);
+  Future<void> deleteWeaponFromInventory(String key, {bool raiseEvent = true}) => deleteItemFromInventory(key, ItemType.weapon);
 
   @override
-  Future<void> addItemToInventory(String key, ItemType type, int quantity) async {
+  Future<void> addItemToInventory(String key, ItemType type, int quantity, {bool raiseEvent = true}) async {
     if (isItemInInventory(key, type)) {
       return Future.value();
     }
     await _inventoryBox.add(InventoryItem(key, quantity, type.index));
-    itemAddedToInventory.add(type);
+    if (raiseEvent) {
+      itemAddedToInventory.add(type);
+    }
   }
 
   @override
-  Future<void> deleteItemFromInventory(String key, ItemType type) async {
+  Future<void> deleteItemFromInventory(String key, ItemType type, {bool raiseEvent = true}) async {
     final item = _getItemFromInventory(key, type);
 
     if (item != null) {
       await _inventoryBox.delete(item.key);
     }
 
-    itemDeletedFromInventory.add(type);
+    if (raiseEvent) {
+      itemDeletedFromInventory.add(type);
+    }
   }
 
   @override
-  Future<void> deleteItemsFromInventory(ItemType type) async {
+  Future<void> deleteItemsFromInventory(ItemType type, {bool raiseEvent = true}) async {
     switch (type) {
       case ItemType.character:
       case ItemType.weapon:
@@ -350,7 +354,10 @@ class DataServiceImpl implements DataService {
         deleteAllUsedMaterialItems();
         break;
     }
-    itemDeletedFromInventory.add(type);
+
+    if (raiseEvent) {
+      itemDeletedFromInventory.add(type);
+    }
   }
 
   Future<void> deleteAllItemsInInventoryExceptMaterials(ItemType? type) async {
@@ -440,7 +447,7 @@ class DataServiceImpl implements DataService {
   }
 
   @override
-  Future<void> updateItemInInventory(String key, ItemType type, int quantity) async {
+  Future<void> updateItemInInventory(String key, ItemType type, int quantity, {bool raiseEvent = true}) async {
     var item = _getItemFromInventory(key, type);
     if (item == null) {
       item = InventoryItem(key, quantity, type.index);
@@ -454,7 +461,9 @@ class DataServiceImpl implements DataService {
       await item.save();
     }
     await redistributeInventoryMaterial(key, quantity);
-    itemUpdatedInInventory.add(type);
+    if (raiseEvent) {
+      itemUpdatedInInventory.add(type);
+    }
   }
 
   @override

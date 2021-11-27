@@ -63,21 +63,21 @@ abstract class DataService {
 
   MaterialCardModel getMaterialFromInventory(String image);
 
-  Future<void> addCharacterToInventory(String key);
+  Future<void> addCharacterToInventory(String key, {bool raiseEvent = true});
 
-  Future<void> deleteCharacterFromInventory(String key);
+  Future<void> deleteCharacterFromInventory(String key, {bool raiseEvent = true});
 
-  Future<void> addWeaponToInventory(String key);
+  Future<void> addWeaponToInventory(String key, {bool raiseEvent = true});
 
-  Future<void> deleteWeaponFromInventory(String key);
+  Future<void> deleteWeaponFromInventory(String key, {bool raiseEvent = true});
 
-  Future<void> addItemToInventory(String key, ItemType type, int quantity);
+  Future<void> addItemToInventory(String key, ItemType type, int quantity, {bool raiseEvent = true});
 
-  Future<void> updateItemInInventory(String key, ItemType type, int quantity);
+  Future<void> updateItemInInventory(String key, ItemType type, int quantity, {bool raiseEvent = true});
 
-  Future<void> deleteItemFromInventory(String key, ItemType type);
+  Future<void> deleteItemFromInventory(String key, ItemType type, {bool raiseEvent = true});
 
-  Future<void> deleteItemsFromInventory(ItemType type);
+  Future<void> deleteItemsFromInventory(ItemType type, {bool raiseEvent = true});
 
   bool isItemInInventory(String key, ItemType type);
 
