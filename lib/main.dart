@@ -98,13 +98,6 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (ctx) {
-            final genshinService = getIt<GenshinService>();
-            final telemetryService = getIt<TelemetryService>();
-            return ArtifactBloc(genshinService, telemetryService);
-          },
-        ),
-        BlocProvider(
-          create: (ctx) {
             final loggingService = getIt<LoggingService>();
             final genshinService = getIt<GenshinService>();
             final settingsService = getIt<SettingsService>();
