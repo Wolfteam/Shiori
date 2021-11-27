@@ -33765,8 +33765,8 @@
               "stats": [
                 "hp",
                 "atk",
-                "energyRechargePercentage",
                 "hpPercentage",
+                "hydroDmgBonusPercentage",
                 "healingBonusPercentage"
               ]
             },
