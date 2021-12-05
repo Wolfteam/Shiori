@@ -168,13 +168,6 @@ class MyApp extends StatelessWidget {
             return MonstersBloc(genshinService);
           },
         ),
-        BlocProvider(
-          create: (ctx) {
-            final dataService = getIt<DataService>();
-            final telemetryService = getIt<TelemetryService>();
-            return CalculatorAscMaterialsItemUpdateQuantityBloc(dataService, telemetryService);
-          },
-        ),
       ],
       child: BlocBuilder<MainBloc, MainState>(
         builder: (ctx, state) => AppWidget(),

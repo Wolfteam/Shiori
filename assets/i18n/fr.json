@@ -420,8 +420,8 @@
     {
       "key": "arataki-itto",
       "name": "Arataki Itto",
-      "title": "",
-      "description": "",
+      "title": "Héros de Hanamizaka",
+      "description": "Le premier et plus grand chef du gang Arataki, célèbre dans tout Hanamizaka, à la Cité d'Inazuma... Hein, quoi ? Jamais entendu parler d'eux ? Sérieux?",
       "skills": [
         {
           "key": "s1",
@@ -447,18 +447,6 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
           "title": "NA",
           "description": "",
@@ -466,6 +454,12 @@
         },
         {
           "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
           "title": "NA",
           "description": "",
           "descriptions": []
@@ -1786,8 +1780,8 @@
     {
       "key": "gorou",
       "name": "Gorou",
-      "title": "",
-      "description": "",
+      "title": "Guerrier canin",
+      "description": "Le grand général des forces de l'Île de Watatsumi, en qui ses subordonnés ont profondément confiance.",
       "skills": [
         {
           "key": "s1",
@@ -4461,6 +4455,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Sucrose",
       "title": "Alchimiste 100 % naturelle",
@@ -6290,6 +6371,93 @@
       ]
     },
     {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "zhongli",
       "name": "Zhongli",
       "title": "Vagabond du monde mortel",
@@ -7947,7 +8115,7 @@
       "name": "Cœur du Brave",
       "bonus": [
         "Augmente l'ATQ de 18 %.",
-        "Augmente les DGT infligés aux ennemis ayant plus de 50 % de PV de 30 %."
+        "Augmente les DGT infligés aux ennemis dont les PV sont supérieurs à 50 % de 30 %."
       ]
     },
     {
@@ -7971,7 +8139,7 @@
       "name": "Emblème du destin brisé",
       "bonus": [
         "Augmente la recharge d'énergie de 20 %.",
-        "Augmente les DGT infligés par le déchaînement élémentaire d'une valeur équivalant à 25 % de la recharge d'énergie. Les DGT peuvent être augmentés de cette manière jusqu'à 75 %."
+        "Augmente les DGT infligés par le déchaînement élémentaire d'une valeur équivalant à 25 % de la recharge d'énergie. Les DGT peuvent être augmentés de 75 % max de cette manière."
       ]
     },
     {
@@ -7992,10 +8160,18 @@
     },
     {
       "key": "heart-of-depth",
-      "name": "Âme du naufragé",
+      "name": "Âme des profondeurs",
       "bonus": [
         "Confère un bonus de DGT Hydro de 15 %.",
         "Augmente les DGT infligés par les attaques normales et chargées de 30 % pendant 15 s après l'utilisation d'une compétence élémentaire."
+      ]
+    },
+    {
+      "key": "husk-of-opulent-dreams",
+      "name": "Coquille des rêves opulents",
+      "bonus": [
+        "Augmente la DÉF de 30 %.",
+        "Un personnage équipé de ce set d'artéfacts obtiendra 1 cumul de Curiosité des façons suivantes  sur le champ de bataille, il gagne 1 cumul en touchant un ennemi avec une attaque Géo, ceci pouvant être déclenché une fois toutes les 0,3 s ; en faisant partie de l'équipe mais en n'étant pas déployé, il gagne 1 cumul toutes les 3 s. La Curiosité peut être cumulée 4 fois maximum, chaque cumul accordant 6 % de bonus de DÉF et 6 % de Bonus de DGT Géo. Si 6 s s'écoulent sans gagner de cumul de Curiosité, 1 cumul sera perdu."
       ]
     },
     {
@@ -8044,6 +8220,14 @@
       "bonus": [
         "Augmente les DGT infligés par le déchaînement élémentaire de 20 %.",
         "Augmente l'ATQ de tous les personnages de l'équipe de 20 % pendant 12 s après un déchaînement élémentaire. Cet effet est non cumulable."
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Palourde aux teintes océaniques",
+      "bonus": [
+        "Augmente le bonus de soins de 15 %.",
+        "Lorsqu'un personnage équipé de ce set d'artéfacts soigne un personnage de l'équipe, une mousse marine apparaîtra pendant 3 s, accumulant la quantité de PV récupérée grâce au soin (y compris tout surplus au-dessus de 100 %). À la fin de la durée, la mousse marine explosera, infligeant des DGT aux ennemis proches d'une valeur équivalant à 90 % du soin accumulé (Ces DGT sont calculés de la même manière que les réactions d'Électrocution et de Supraconduction, mais ne sont pas affectés par la maîtrise élémentaire, les niveaux des personnages ou les bonus de DGT de réactions élémentaires). Une mousse marine peut être générée toutes les 3,5 s, et chaque mousse marine peut accumuler jusqu'à 30 000 PV, incluant tout surplus au-dessus de 100 %. Il ne peut exister qu'une seule mousse marine à la fois. Cet effet peut être déclenché même si le personnage équipé de ce set d'artéfacts fait partie de l'équipe mais n'est pas déployé."
       ]
     },
     {
@@ -8135,7 +8319,7 @@
       "name": "Colère de tonnerre",
       "bonus": [
         "Confère un bonus de DGT Électro de 15 %.",
-        "Augmente les DGT infligés par Surcharge, Décharge électrique et Supraconductivité de 40 %. Lorsque vous déclenchez ces réactions élémentaires, le TdR de compétence élémentaire est réduit de 1 s. Cet effet peut être déclenché une fois toutes les 0,8 s."
+        "Augmente les DGT infligés par Surcharge, Électrocution et Supraconduction de 40 %. Lorsque vous déclenchez ces réactions élémentaires, le TdR de la compétence élémentaire est réduit de 1 s. Cet effet peut être déclenché une fois toutes les 0,8 s."
       ]
     },
     {
@@ -9229,6 +9413,11 @@
       "key": "rice",
       "name": "Riz",
       "description": "Une céréale commune en Teyvat. Son goût et sa texture sont appréciés des masses."
+    },
+    {
+      "key": "riftborn-regalia",
+      "name": "Régalia de faille",
+      "description": "Un corne brisée obtenue après avoir vaincu le loup alpha. Cela dit, il n'aurait dû rien rester après votre chasse.\r\nMême un seigneur des failles n'est rien en comparaison avec des monstres plus puissants.\r\nL'« Or » a produit en masse ce genre de meutes de canidés malformés comme par accident, un peu comme des gribouillis ratés sur des vieux morceaux de papier, et les cornes de ce dernier représentent son autorité à commander sa sombre meute à dissoudre l'espace lui-même."
     },
     {
       "key": "ring-of-boreas",

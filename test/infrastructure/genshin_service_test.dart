@@ -235,13 +235,14 @@ void main() {
           checkKey(skill.key);
           if (!detail.isComingSoon) {
             checkAsset(skill.fullImagePath);
+            expect(skill.stats, isNotEmpty);
+            final statKeys = skill.stats.map((e) => e.key).toList();
+            expect(statKeys.toSet().length, equals(statKeys.length));
+            //check that all the values in the stats have the same length
+            final statCount = skill.stats.map((e) => e.values.length).toSet().length;
+            expect(statCount, equals(1));
           }
-          expect(skill.stats, isNotEmpty);
-          final statKeys = skill.stats.map((e) => e.key).toList();
-          expect(statKeys.toSet().length, equals(statKeys.length));
-          //check that all the values in the stats have the same length
-          final statCount = skill.stats.map((e) => e.values.length).toSet().length;
-          expect(statCount, equals(1));
+
           for (final stat in skill.stats) {
             expect(stat.values, isNotEmpty);
           }

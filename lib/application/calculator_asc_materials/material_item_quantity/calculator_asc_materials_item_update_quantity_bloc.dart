@@ -27,7 +27,6 @@ class CalculatorAscMaterialsItemUpdateQuantityBloc
         await _updateMaterialQuantity(e.key, e.quantity);
         return CalculatorAscMaterialsItemUpdateQuantityState.saved(key: e.key, quantity: e.quantity);
       },
-      close: (_) async => const CalculatorAscMaterialsItemUpdateQuantityState.loading(),
     );
 
     yield s;

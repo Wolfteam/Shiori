@@ -410,8 +410,8 @@
     {
       "key": "arataki-itto",
       "name": "Arataki Itto",
-      "title": "",
-      "description": "",
+      "title": "ขาใหญ่ประจำ Hanamizaka",
+      "description": "ผู้นำรุ่นแรกของแก๊ง Arataki ผู้โด่งดังไปทั่วทั้ง Hanamizaka แห่ง Inazuma... หืม ว่ายังไงนะ? ไม่เคยได้ยินชื่อแก๊ง Arataki? อยากมีเรื่องรึไง?",
       "skills": [
         {
           "key": "s1",
@@ -437,18 +437,6 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
           "title": "NA",
           "description": "",
@@ -456,6 +444,12 @@
         },
         {
           "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
           "title": "NA",
           "description": "",
           "descriptions": []
@@ -1742,8 +1736,8 @@
     {
       "key": "gorou",
       "name": "Gorou",
-      "title": "",
-      "description": "",
+      "title": "นักรบคู่หูผู้ซื่อสัตย์",
+      "description": "พลเอกของกองทหารแห่งเกาะ Watatsumi ผู้ได้รับความไว้วางใจจากผู้ใต้บังคับบัญชาเป็นอย่างสูง",
       "skills": [
         {
           "key": "s1",
@@ -4399,6 +4393,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Sucrose",
       "title": "ความหวานที่ไร้พิษสง",
@@ -6207,6 +6288,93 @@
       ]
     },
     {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "zhongli",
       "name": "Zhongli",
       "title": "ผู้พเนจรแห่งแดนมนุษย์",
@@ -7916,6 +8084,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "Husk of Opulent Dreams",
+      "bonus": [
+        "เพิ่มพลังป้องกัน 30%",
+        "ตัวละครที่สวมใส่เซ็ตอาร์ติแฟกต์นี้จะได้รับเอฟเฟกต์ Curiosity ภายใต้สถานการณ์ต่อไปนี้ ในขณะที่อยู่ในการต่อสู้ จะได้รับหนึ่งชั้นหลังจากโจมตีถูกศัตรูด้วยธาตุหิน โดยจะเกิดขึ้นได้มากสุดหนึ่งครั้ง ในทุก 0.3 วินาที; เมื่ออยู่ในทีมแต่ไม่ได้อยู่ในการต่อสู้ ในทุก 3 วินาที จะได้รับหนึ่งชั้น โดยที่ Curiosity จะสามารถซ้อนทับได้มากสุด 4 ชั้น ซึ่งแต่ละชั้นจะมอบโบนัสพลังป้องกัน 6% และโบนัสความเสียหายธาตุหิน 6% และในทุก 6 วินาที หากไม่ได้รับเอฟเฟกต์ Curiosity จะสูญเสียหนึ่งชั้น"
+      ]
+    },
+    {
       "key": "instructor",
       "name": "Instructor",
       "bonus": [
@@ -7961,6 +8137,14 @@
       "bonus": [
         "ความเสียหายของท่าไม้ตายเพิ่มขึ้น 20%",
         "หลังจากใช้ท่าไม้ตาย เพิ่มพลังโจมตีของตัวละครทั้งหมดในทีม 20% เป็นเวลา 12 วิ โดยเอฟเฟกต์นี้จะไม่สามารถซ้อนทับได้"
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Ocean-Hued Clam",
+      "bonus": [
+        "เพิ่มโบนัสการรักษา 15%",
+        "เมื่อตัวละครที่สวมใส่เซ็ตอาร์ติแฟกต์นี้ทำการรักษาตัวละครในทีม จะเกิด Sea-Dyed Foam ขึ้นเป็นเวลา 3 วินาที และบันทึกปริมาณการฟื้นฟูพลังชีวิตของการรักษา (รวมไปถึงค่าส่วนเกิน) เมื่อช่วงเวลาต่อเนื่องสิ้นสุดลง Sea-Dyed Foam จะระเบิด สร้างความเสียหายเป็น 90% ของปริมาณการฟื้นฟูพลังชีวิตที่สะสมแก่ศัตรูโดยรอบ (วิธีคำนวณความเสียหายนี้จะเหมือนกับปฏิกิริยาของธาตุ เช่น ชาร์จไฟฟ้า, นำไฟฟ้า และอื่น ๆ แต่จะไม่ได้รับผลกระทบจากความชำนาญธาตุ, เลเวล หรือเอฟเฟกต์โบนัสความเสียหายของปฏิกิริยา) ในทุก 3.5 วินาที จะเกิด Sea-Dyed Foam ได้มากสุดหนึ่งอัน; Sea-Dyed Foam จะบันทึกปริมาณการฟื้นฟูได้มากสุด 30000 หน่วย รวมถึงปริมาณการรักษาส่วนที่เกิน; ในช่วงเวลาเดียวกัน จะมี Sea-Dyed Foam ในทีมของตัวเองได้มากสุดหนึ่งอันเท่านั้น ซึ่งเอฟเฟกต์นี้จะยังคงเกิดขึ้นได้ แม้ในขณะที่ตัวละครที่สวมใส่เซ็ตอาร์ติแฟกต์นี้อยู่ในทีมแต่ไม่ได้อยู่ในการต่อสู้"
       ]
     },
     {
@@ -9146,6 +9330,11 @@
       "key": "rice",
       "name": "Rice",
       "description": "พืชที่พบได้ทั่วไปใน Teyvat ไม่ว่าจะเป็นคนประเภทไหนล้วนสามารถลิ้มลองรสสัมผัสเป็นเม็ดที่เต็มอิ่มนี้ได้ เหมือนกับคำที่ว่า \"ข้าวชนิดเดียวเลี้ยงคนได้ร้อยประเภท\""
+    },
+    {
+      "key": "riftborn-regalia",
+      "name": "Riftborn Regalia",
+      "description": "เขาแตกร้าวที่ได้รับจากการเอาชนะ Wolflord มันไม่ควรจะหลงเหลืออะไรไว้ในโลกใบนี้หลังจากที่พ่ายแพ้ไปแล้วด้วยซ้ำ\r\nแม้จะเป็น Wolflord ในหมู่ Riftwolf แต่มันก็ไม่มีอะไรที่จะเทียบกับอสูรตัวอื่นในลำดับวงศ์ตระกูลเดียวกันได้เลย\r\n\"Gold\" ได้บีบอัดหมาป่าที่มีรูปร่างผิดปกติเหล่านี้ออกมาเป็นจำนวนมาก ราวกับภาพวาดที่ย่อขนาดลงบนกระดาษที่ทิ้งแล้ว และสิ่งที่อยู่ในเขาของมันนั้นก็มีอำนาจเพียงพอที่จะสั่งให้ฝูงหมาป่าสีดำละลายพื้นที่ได้"
     },
     {
       "key": "ring-of-boreas",

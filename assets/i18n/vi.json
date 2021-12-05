@@ -420,8 +420,8 @@
     {
       "key": "arataki-itto",
       "name": "Arataki Itto",
-      "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "title": "Quái Kiệt Hanamizaka",
+      "description": "Thủ lĩnh đời đầu của \"Bang Arataki\" địa bàn Hanamizaka. Sao, chưa nghe qua Bang Arataki à, đùa ta sao?",
       "skills": [
         {
           "key": "s1",
@@ -447,18 +447,6 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
           "title": "NA",
           "description": "",
@@ -466,6 +454,12 @@
         },
         {
           "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
           "title": "NA",
           "description": "",
           "descriptions": []
@@ -1775,8 +1769,8 @@
     {
       "key": "gorou",
       "name": "Gorou",
-      "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "title": "Chiến Khuyển Nanh Nhọn",
+      "description": "Đại tướng đảo Watatsumi, rất được thuộc hạ tin tưởng.",
       "skills": [
         {
           "key": "s1",
@@ -4450,6 +4444,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Sucrose",
       "title": "Độ Ngọt Vô Hại",
@@ -6277,6 +6358,93 @@
       ]
     },
     {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "zhongli",
       "name": "Zhongli",
       "title": "Du Ngoạn Trần Thế",
@@ -7986,6 +8154,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "Giấc Mộng Phù Hoa",
+      "bonus": [
+        "Phòng ngự tăng 30%.",
+        "Nhân vật trang bị bộ Thánh Di Vật này sẽ nhận hiệu quả \"Vấn Đáp\" trong các trường hợp sau đây Sau khi nhân vật trong trận sử dụng tấn công Nguyên Tố Nham đánh trúng kẻ địch sẽ nhận 1 tầng, mỗi 0.3s tối đa kích hoạt 1 lần; trong đội chờ, mỗi 3s nhận 1 tầng. Vấn Đáp cộng dồn tối đa 4 tầng, mỗi tầng sẽ tăng 6% phòng ngự và 6% buff sát thương Nguyên Tố Nham. Mỗi 6s, nếu chưa nhận hiệu quả Vấn Đáp sẽ mất đi 1 tầng."
+      ]
+    },
+    {
       "key": "instructor",
       "name": "Giáo Quan",
       "bonus": [
@@ -8034,11 +8210,19 @@
       ]
     },
     {
+      "key": "ocean-hued-clam",
+      "name": "Xà Cừ Đại Dương",
+      "bonus": [
+        "Tăng Trị Liệu lên 15%.",
+        "Khi nhân vật trang bị bộ Thánh Di Vật này thực hiện trị liệu cho nhân vật trong đội, sẽ tạo ra Bọt Biển kéo dài 3s, ghi lại lượng HP hồi phục của việc trị liệu (Bao gồm cả lượng vượt mức). Khi kết thúc thời gian duy trì, Bọt Biển sẽ nổ tung, gây cho kẻ địch xung quanh sát thương bằng 90% lượng hồi phục tích lũy (Cách tính sát thương này giống với các phản ứng nguyên tố như Điện Cảm, Siêu Dẫn...nhưng không bị ảnh hưởng bởi Tinh Thông Nguyên Tố, cấp hoặc buff sát thương phản ứng). Mỗi 3.5s tối đa tạo 1 Bọt Biển; Bọt Biển tối đa ghi lại 30,000 điểm hồi phục, bao gồm cả lượng trị liệu vượt mức; đội của bản thân cùng lúc chỉ được tồn tại tối đa 1 Bọt Biển. Khi nhân vật trang bị bộ Thánh Di Vật này ở trong đội chờ, vẫn có thể kích hoạt hiệu quả này."
+      ]
+    },
+    {
       "key": "pale-flame",
       "name": "Lửa Trắng Xám",
       "bonus": [
         "Sát thương vật lý tạo thành tăng 25%.",
-        "Sau khi kỹ năng nguyên tố đánh trúng kẻ địch, tấn công tăng 9%, kéo dài 7s, tối đa cộng dồn 2 tầng. Mỗi 0.3s tối đa kích hoạt 1 lần, sau khi tích đầy 2 tầng, hiệu quả 2 bộ tăng 100%"
+        "Sau khi kỹ năng nguyên tố đánh trúng kẻ địch, tấn công tăng 9%, kéo dài 7s, tối đa cộng dồn 2 tầng. Mỗi 0.3s tối đa kích hoạt 1 lần, sau khi tích đầy 2 tầng, hiệu quả bộ 2 món tăng 100%."
       ]
     },
     {
@@ -9216,6 +9400,11 @@
       "key": "rice",
       "name": "Lúa Nước",
       "description": "Loài cây thân lúa thường được trồng trên đại lục Teyvat. Bất kỳ ai cũng yêu thích hương vị thơm ngon của chúng, cái tên \"hạt gạo nuôi trăm dân\" cũng từ đó mà ra."
+    },
+    {
+      "key": "riftborn-regalia",
+      "name": "Sừng Vua Quái Cảnh",
+      "description": "Một chiếc sừng gãy có được sau khi chiến thắng Vua Thú. Đáng lẽ nó không nên để lại bất kỳ tàn dư gì sau khi bị trục xuất mới đúng.\r\nNgay cả một vua thú giữa bầy sói trong Quái Cảnh cũng chẳng là gì trước những ma thú thuộc hệ cao hơn.\r\n\"Gold\" sau khi dồn nén vô số bầy sói ma vật giống như nén mớ tranh bỏ đi, đã vô tình sản sinh ra ma thú với hình thù kỳ lạ, và thứ chất chứa bên trong chiếc sừng của nó chính là quyền năng hiệu lệnh cho bầy sói đen làm xói mòn không gian cho nó."
     },
     {
       "key": "ring-of-boreas",

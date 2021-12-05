@@ -420,8 +420,8 @@
     {
       "key": "arataki-itto",
       "name": "荒瀧一斗",
-      "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "title": "花坂豪快",
+      "description": "稲妻城の花見坂で活動する「荒瀧派」の初代親分。なにっ！？荒瀧派なんて聞いたこともないだと？喧嘩売ってんのか、コラァ！？",
       "skills": [
         {
           "key": "s1",
@@ -447,18 +447,6 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
           "title": "NA",
           "description": "",
@@ -466,6 +454,12 @@
         },
         {
           "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
           "title": "NA",
           "description": "",
           "descriptions": []
@@ -1775,8 +1769,8 @@
     {
       "key": "gorou",
       "name": "ゴロー",
-      "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "title": "雄々しき戎犬",
+      "description": "海祇島軍隊の大将で、部下から厚く信頼されている。",
       "skills": [
         {
           "key": "s1",
@@ -4458,6 +4452,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "スクロース",
       "title": "無害の甘味",
@@ -6268,6 +6349,93 @@
       ]
     },
     {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "zhongli",
       "name": "鍾離",
       "title": "浮世閑歩",
@@ -7975,6 +8143,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "華館夢醒形骸記",
+      "bonus": [
+        "防御力+30%。",
+        "この聖遺物セットを装備したキャラクターは、以下の状況において「問答」効果を獲得する。「問答」効果：フィールドで岩元素攻撃が敵に命中すると、0.3秒毎に1層のみ獲得できる。待機中の場合、3秒毎に1層獲得する。重ね掛けできる「問答」は最大4層までとなり、1層につき防御力+6%、岩元素ダメージ+6%。6秒毎に「問答」効果を獲得していない場合は、1層失う。"
+      ]
+    },
+    {
       "key": "instructor",
       "name": "教官",
       "bonus": [
@@ -8020,6 +8196,14 @@
       "bonus": [
         "元素爆発のダメージ+20%。",
         "元素爆発を発動すると、チーム全員の攻撃力+20%、継続時間12秒、重ねがけ不可。"
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "海染硨磲",
+      "bonus": [
+        "与える治療効果+15%。",
+        "この聖遺物セットを装備したキャラクターがチーム内のキャラクターに治療を行うと、治療によるHP回復量（HP上限を超えた回復量も含む）を記録する海染の泡を生成する。海染の泡は3秒継続する。継続時間終了時、海染の泡は破裂し、周囲の敵に記録した回復量の90%分のダメージを与える（このダメージは感電や超電導などの元素反応と同じように計算されるが、元素熟知、キャラクターLv、または元素反応のダメージアップ効果の影響は受けない）。海染の泡は3.5秒毎に1回のみ生成可能。海染の泡が記録できる回復量は最大30000までとなり、HP上限超過分の回復量を含む。チーム内で、海染の泡は同時に最大1つまで存在できる。この聖遺物セットを装備したキャラクターは待機中でも、この効果を発動できる。"
       ]
     },
     {
@@ -9205,6 +9389,11 @@
       "key": "rice",
       "name": "米",
       "description": "テイワットで特に見られる作物。何度食べても飽きない、空腹を満たしてくれる最高の食材。"
+    },
+    {
+      "key": "riftborn-regalia",
+      "name": "獣域王器",
+      "description": "王獣を倒すと入手した折れた角。追放された後、この世に存在すべきではないもの。\r\n獣域ウルブズの中で帝王と呼ばれていても、魔獣たちの系譜では、その兄たちの万分の一にも満たないだろう。\r\n「黄金」は無数の獣域ウルブズを捨て紙のように圧縮して偶然にできた異形の魔獣。その角には、黒いウルブズを命じて自分のために空間を溶かす権威が秘めている。"
     },
     {
       "key": "ring-of-boreas",

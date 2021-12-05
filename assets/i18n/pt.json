@@ -401,8 +401,8 @@
     {
       "key": "arataki-itto",
       "name": "Arataki Itto",
-      "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "title": "Heroísmo de Hanamizaka",
+      "description": "O primeiro e maior chefe da Gangue Arataki, famosa em Hanamizaka, na cidade de Inazuma... Espere, o quê? Nunca ouviu falar deles? Sério?",
       "skills": [
         {
           "key": "s1",
@@ -428,18 +428,6 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
           "title": "NA",
           "description": "",
@@ -447,6 +435,12 @@
         },
         {
           "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
           "title": "NA",
           "description": "",
           "descriptions": []
@@ -1734,8 +1728,8 @@
     {
       "key": "gorou",
       "name": "Gorou",
-      "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "title": "Guerreiro Canino",
+      "description": "O grande general das tropas da Ilha Watatsumi. Ele é extremamente confiado por seus subordinados.",
       "skills": [
         {
           "key": "s1",
@@ -4379,6 +4373,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Sucrose",
       "title": "Doçura Inofensiva",
@@ -6188,6 +6269,93 @@
       ]
     },
     {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "zhongli",
       "name": "Zhongli",
       "title": "Andarilho do Reino Mortal",
@@ -7891,6 +8059,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "Casca de Sonhos Opulentos",
+      "bonus": [
+        "DEF +30%",
+        "Um personagem com este conjunto de artefatos equipado obterá o efeito de Curiosidade nas seguintes condições Quando estiver no campo de batalha, o personagem ganha 1 carga após atingir um adversário com um ataque Geo, isso pode ser desencadeado uma vez a cada 0.3s. Quando fora do campo de batalha, o personagem ganha 1 carga a cada 3s. A Curiosidade pode acumular em até 4 vezes, cada uma fornecendo 6% de DEF e um Bônus de Dano Geo de também 6%. Quando 6 segundos passam sem ganhar um acúmulo de Curiosidade, 1 acúmulo é perdido."
+      ]
+    },
+    {
       "key": "instructor",
       "name": "Instrutor",
       "bonus": [
@@ -7936,6 +8112,14 @@
       "bonus": [
         "Dano do Supremo +20%",
         "Usar o Supremo aumenta o ATQ de todos os membros da equipe em 20% por 12s. Este efeito não pode ser acumulado."
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Concha Tingida Pelo Mar",
+      "bonus": [
+        "Bônus de Cura +15%",
+        "Quando o personagem que equipa este conjunto de artefatos cura outro personagem da sua equipe, ele cria o efeito de \"Bolha de Espuma do Mar\" durante 3s, que registra a quantidade de vida regenerada (incluindo a regenerada acima de 100%). No final da duração do efeito, a Bolha de Espuma do Mar explode, causando dano aos inimigos ao redor com base em 90% da vida regenerada. (Esse Dano é calculado de forma semelhante a reações como Eletricamente Carregado e Supercondutor, mas não é afetado pela Proficiência Elemental, níveis de personagens ou dano bônus de reações.) Apenas se pode criar uma Bolha de Espuma do Mar a cada 3.5s, e esta poderá registrar no máximo 30.000 pontos de vida, incluindo aqueles regenerados acima de 100%. Além disso, apenas uma Bolha de Espuma do Mar pode existir em sua equipe de cada vez. Quando o personagem equipando este conjunto de artefatos está na equipe, mas não em combate, poderá ainda assim ativar este efeito."
       ]
     },
     {
@@ -9121,6 +9305,11 @@
       "key": "rice",
       "name": "Arroz",
       "description": "Uma colheita de grãos comumente encontrada em Teyvat. Pessoas de todas as esferas da vida desfrutam de sua textura granulada distinta. Como diz o ditado, \"O mesmo tipo de arroz pode alimentar cem tipos de pessoas\"."
+    },
+    {
+      "key": "riftborn-regalia",
+      "name": "Chifre do Rei Canino",
+      "description": "Um chifre quebrado que você obteve ao derrotar o Rei Canino, mas que na verdade não deveria ter sido deixado para trás após sua derrota.\r\nMesmo que seja o líder da sua matilha, ele não é nada comparado a outros monstros da mesma genealogia.\r\n\"Ouro\" produziu em massa essas matilhas defeituosas quase como por acidente, como se fossem protótipos desenhados em papel e descartados. Os chifres deste Rei Canino representam sua autoridade para comandar sua matilha."
     },
     {
       "key": "ring-of-boreas",

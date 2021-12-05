@@ -419,9 +419,9 @@
     },
     {
       "key": "arataki-itto",
-      "name": "Arataki Itto",
-      "title": "",
-      "description": "",
+      "name": "荒瀧一斗",
+      "title": "花坂豪快",
+      "description": "活躍在稻妻城花見坂的「荒瀧派」初代目頭領。什麼，從沒聽說過荒瀧派？你是想找碴嗎？",
       "skills": [
         {
           "key": "s1",
@@ -447,18 +447,6 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
           "title": "NA",
           "description": "",
@@ -466,6 +454,12 @@
         },
         {
           "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
           "title": "NA",
           "description": "",
           "descriptions": []
@@ -1774,9 +1768,9 @@
     },
     {
       "key": "gorou",
-      "name": "Gorou",
-      "title": "",
-      "description": "",
+      "name": "五郎",
+      "title": "戎犬鏘鏘",
+      "description": "海祇島軍的大將，深受部下信賴。",
       "skills": [
         {
           "key": "s1",
@@ -4452,6 +4446,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "砂糖",
       "title": "無害甜度",
@@ -6265,6 +6346,93 @@
       ]
     },
     {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "zhongli",
       "name": "鍾離",
       "title": "塵世閒遊",
@@ -7975,6 +8143,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "華館夢醒形骸記",
+      "bonus": [
+        "防禦力提高30%。",
+        "裝備此聖遺物套裝的角色在以下情況下，將獲得「問答」效果：在場上用岩元素攻擊命中敵人後獲得一層，每0.3秒至多觸發一次；在隊伍後台中，每3秒獲得一層。問答至多疊加4層，每層能提供6%防禦力與6%岩元素傷害加成。每6秒，若未獲得問答效果，將損失一層。"
+      ]
+    },
+    {
       "key": "instructor",
       "name": "教官",
       "bonus": [
@@ -8020,6 +8196,14 @@
       "bonus": [
         "元素爆發造成的傷害提升20%。",
         "施放元素爆發後，隊伍中所有角色攻擊力提升20%，持續12秒。該效果不可疊加。"
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "海染硨磲",
+      "bonus": [
+        "治療加成提高15%。",
+        "裝備此聖遺物套裝的角色對隊伍中的角色進行治療時，將產生持續3秒的海染泡沫，記錄治療的生命值回復量（包括溢出值）。持續時間結束時，海染泡沫將會爆炸，對周圍的敵人造成90%累計回復量的傷害（該傷害結算方式同感電、超導等元素反應，但不受元素精通、等級或反應傷害加成效果影響）。每3.5秒至多產生一個海染泡沫；海染泡沫至多記錄30000點回復量，含溢出部分的治療量；自己的隊伍中同時至多存在一個海染泡沫。裝備此聖遺物套裝的角色處於隊伍後台時，依然能觸發該效果。"
       ]
     },
     {
@@ -9205,6 +9389,11 @@
       "key": "rice",
       "name": "稻米",
       "description": "提瓦特常見的禾本作物。無論是什麼樣的人，都能欣賞這種顆粒分明的飽滿口感，正所謂「一樣米養百樣人」。"
+    },
+    {
+      "key": "riftborn-regalia",
+      "name": "獸境王器",
+      "description": "戰勝王獸後，得到的折斷犄角。在牠遭到驅逐後，不應殘留在此世才對。\r\n即使在獸境群狼中貴為王獸，在魔獸的系譜中也不及其兄長們的萬分之一吧。\r\n「黃金」將無數獸境的群狼如同將棄置的畫紙一般壓縮後而意外產生的畸形魔獸，而寄寓在其犄角中的是足以號令黑色的狼群為牠溶解空間的權威。"
     },
     {
       "key": "ring-of-boreas",

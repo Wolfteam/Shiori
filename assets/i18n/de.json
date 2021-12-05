@@ -420,8 +420,8 @@
     {
       "key": "arataki-itto",
       "name": "Arataki Itto",
-      "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "title": "Held von Hanamizaka",
+      "description": "Der erste und größte Anführer der Arataki-Bande, berühmt in ganz Hanamizaka im Gebiet von Inazuma ... Wie bitte? Du hast noch nie von der Arataki-Bande gehört? Ernsthaft?",
       "skills": [
         {
           "key": "s1",
@@ -447,18 +447,6 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
           "title": "NA",
           "description": "",
@@ -466,6 +454,12 @@
         },
         {
           "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
           "title": "NA",
           "description": "",
           "descriptions": []
@@ -1778,8 +1772,8 @@
     {
       "key": "gorou",
       "name": "Gorou",
-      "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "title": "Hundekrieger",
+      "description": "Der große General der Streitkräfte von Watatsumi, dessen Untergebene ihm voll und ganz vertrauen.",
       "skills": [
         {
           "key": "s1",
@@ -4457,6 +4451,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Saccharose",
       "title": "Harmlos und süß",
@@ -6284,6 +6365,93 @@
       ]
     },
     {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "zhongli",
       "name": "Zhongli",
       "title": "Besucher bei den Sterblichen",
@@ -8002,6 +8170,14 @@
       ]
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "name": "Schale der üppigen Träume",
+      "bonus": [
+        "Erhöht die VTD um 30 %.",
+        "Die mit diesem Artefaktset ausgerüsteten Figuren erhalten unter den folgenden Umständen den Effekt „Neugier“ Aktuelle Figuren erhalten mit 0,3 s Abklingzeit eine Stapelung beim Treffen von Gegnern mit Geo-Angriffen, während die inaktiven Figuren in der Truppe alle 3 s eine Stapelung erhalten. 4-fach stapelbar. Jede Stapelung verleiht einen VTD-Bonus von 6 % und einen Geo-Schadens-Bonus von 6 %. Wenn kein neuer Effekt der „Neugier“ hinzukommt, erlischt alle 6 s eine Stapelung dieses Effekts."
+      ]
+    },
+    {
       "key": "instructor",
       "name": "Ausbilder",
       "bonus": [
@@ -8030,7 +8206,7 @@
       "name": "Ins Herz geschlossenes Mädchen",
       "bonus": [
         "Erhöht den aktiven Heileffekt der Figur um 15 %.",
-        "Erhöht den passiven Heileffekt aller Truppenmitglieder nach Anwendung von Elementarfähigkeiten oder Spezialfähigkeiten 10 s lang um 20 %."
+        "Erhöht den passiven Heilungseffekt aller Truppenmitglieder nach Anwendung von Elementarfähigkeiten oder Spezialfähigkeiten 10 s lang um 20 %."
       ]
     },
     {
@@ -8047,6 +8223,14 @@
       "bonus": [
         "Erhöht den mit Spezialfähigkeiten verursachten Schaden um 20 %.",
         "Erhöht den ANG aller Truppenmitglieder nach Anwendung von Spezialfähigkeiten 12 s lang um 20 %, nicht stapelbar."
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Meeresmuschel",
+      "bonus": [
+        "Erhöht den Heilungsbonus um 15 %.",
+        "Wenn die mit diesem Artefaktset ausgerüsteten Figuren die Figuren in der Truppe heilen, entsteht eine Meeresblase, die 3 s hält und die wiederhergestellten Lebenspunkte beim Heilen (einschließlich des überschüssigen Heilungswerts) aufzeichnet. Wenn ihre Dauer endet, explodiert die Meeresblase, was Gegnern in der Umgebung Schaden, der 90 % der insgesamt wiederhergestellten LP entspricht, zufügt (Diese SCH-Berechnungsweise gleicht der der Elementarreaktionen Unter Strom und Supraleiter, ist jedoch von der Elementarkunde, der Stufe oder dem Reaktion-SCH-Bonus unabhängig). Alle 3,5 s kann höchstens eine Meeresblase entstehen. Jede Meeresblase kann bis zu 30.000 wiederhergestellte Lebenspunkte (einschließlich des überschüssigen Heilungswerts) aufzeichnen. In der eigenen Truppe kann gleichzeitig höchstens eine Meeresblase bestehen. Wenn die mit diesem Artefaktset ausgerüsteten Figuren inaktiv in der Truppe sind, kann dieser Effekt auch ausgelöst werden."
       ]
     },
     {
@@ -9242,8 +9426,8 @@
     },
     {
       "key": "riftborn-regalia",
-      "name": "",
-      "description": ""
+      "name": "Gehörn des Wolfskönigs",
+      "description": "Ein zerbrochenes Horn, das du beim Besiegen des Garmfürsten erhalten hast. Allerdings sollte es nach deiner Jagd eigentlich überhaupt nicht weiter auf der Welt existieren.\r\nSelbst ein Fürst unter den Garmwölfen ist nichts vor Monstern mit höherem Stammbaum.\r\n„Gold“ entwarf diese missgebildeten Wolfsrudel schon fast zufällig in Massen. Sie waren damals nichts mehr als Gekritzel auf ein paar weggeworfenen, geschrumpften Papierbögen. Die Hörner auf diesem hier repräsentieren seine Autorität, seiner dunklen Brut zu befehlen, den Raum aufzulösen."
     },
     {
       "key": "ring-of-boreas",

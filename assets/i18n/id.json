@@ -417,7 +417,7 @@
       "key": "arataki-itto",
       "name": "Arataki Itto",
       "title": "Hanamizaka Heroics",
-      "description": "The first and greatest head of the Arataki Gang, famed throughout Hanamizaka in Inazuma City... Wait, what? Never heard of them? Seriously?",
+      "description": "Ketua Geng Arataki yang Pertama dan yang Terhebat, dan terkenal di Hanamizaka, Kota Inazuma ... Apa katamu? Belum pernah dengar? Mau cari ribut ya?",
       "skills": [
         {
           "key": "s1",
@@ -443,18 +443,6 @@
       ],
       "passives": [
         {
-          "key": "p3",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
-          "key": "p4",
-          "title": "NA",
-          "description": "",
-          "descriptions": []
-        },
-        {
           "key": "p1",
           "title": "NA",
           "description": "",
@@ -462,6 +450,12 @@
         },
         {
           "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
           "title": "NA",
           "description": "",
           "descriptions": []
@@ -1776,7 +1770,7 @@
       "key": "gorou",
       "name": "Gorou",
       "title": "Canine Warrior",
-      "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+      "description": "Jenderal pasukan di Pulau Watatsumi. Dia sangat dipercaya anak buahnya.",
       "skills": [
         {
           "key": "s1",
@@ -4456,6 +4450,93 @@
       ]
     },
     {
+      "key": "shenhe",
+      "name": "Shenhe",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "sucrose",
       "name": "Sucrose",
       "title": "Harmless Sweetie",
@@ -6283,6 +6364,93 @@
       ]
     },
     {
+      "key": "yun-jin",
+      "name": "Yun Jin",
+      "title": "？？？",
+      "description": "",
+      "skills": [
+        {
+          "key": "s1",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s2",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        },
+        {
+          "key": "s3",
+          "title": "NA",
+          "description": null,
+          "abilities": [],
+          "stats": []
+        }
+      ],
+      "passives": [
+        {
+          "key": "p1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "p3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ],
+      "constellations": [
+        {
+          "key": "c1",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c2",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c3",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c4",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c5",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        },
+        {
+          "key": "c6",
+          "title": "NA",
+          "description": "",
+          "descriptions": []
+        }
+      ]
+    },
+    {
       "key": "zhongli",
       "name": "Zhongli",
       "title": "Vago Mundo",
@@ -7964,7 +8132,7 @@
       "name": "Emblem of Severed Fate",
       "bonus": [
         "Energy Recharge +20%.",
-        "Meningkatkan Elemental Burst DMG sebesar 25% dari Energy Recharge. Dengan cara ini Karakter bisa mendapatkan peningkatan DMG maksimal hingga 75%."
+        "Meningkatkan DMG Elemental Burst sebesar 25% dari Energy Recharge. Peningkatan DMG Elemental Burst maksimum yang bisa didapatkan dengan cara ini adalah 75%."
       ]
     },
     {
@@ -7989,6 +8157,14 @@
       "bonus": [
         "Hydro DMG Bonus +15%.",
         "Setelah melancarkan Elemental Skill, meningkatkan 30% DMG Normal dan Charged Attack selama 15 detik."
+      ]
+    },
+    {
+      "key": "husk-of-opulent-dreams",
+      "name": "Husk of Opulent Dreams",
+      "bonus": [
+        "DEF +30%.",
+        "Karakter yang mengenakan set Artefak ini akan mendapatkan efek Curiosity dalam kondisi berikut Karakter aktif akan mendapatkan 1 lapis setelah serangan Geo-nya mengenai musuh, dapat terpicu setiap 0,3 detik. Karakter bisa mendapatkan 1 lapis setiap 3 detik jika tidak berada di medan pertempuran. Efek Curiosity dapat ditumpuk hingga 4 lapis, setiap lapis meningkatkan 6% DEF dan 6% Geo DMG Bonus. Karakter akan kehilangan 1 lapis setiap 6 detik jika tidak mendapatkan efek Curiosity baru."
       ]
     },
     {
@@ -8036,7 +8212,15 @@
       "name": "Noblesse Oblige",
       "bonus": [
         "Meningkatkan 20% DMG Elemental Burst.",
-        "Setelah melancarkan Elemental Burst, meningkatkan ATK 20% semua anggota party selama 12 detik. Efek ini tidak dapat ditumpuk."
+        "Setelah melancarkan Elemental Burst, meningkatkan 20% ATK semua anggota party selama 12 detik. Efek ini tidak dapat ditumpuk."
+      ]
+    },
+    {
+      "key": "ocean-hued-clam",
+      "name": "Ocean-Hued Clam",
+      "bonus": [
+        "Bonus pemulihan +15%.",
+        "Jika Karakter yang mengenakan set Artefak ini memulihkan HP salah satu Karakter dalam party, akan muncul Sea-Dyed Foam yang berlangsung selama 3 detik yang mencatat dan mengakumulasi jumlah pemulihan yang dilakukan (termasuk pemulihan yang berlebih). Setelah durasinya berakhir, Sea-Dyed Foam akan meledak dan mengakibatkan DMG sebesar 90% dari jumlah pemulihan yang tercatat (Perhitungan DMG ini mirip dengan Reaksi Elemental seperti Electro-Charged, Superconduct, dan lainnya, tetapi tidak dipengaruhi oleh Elemental Mastery, Level Karakter, atau Bonus DMG Reaksi Elemental). Sea-Dyed Foam hanya bisa muncul setiap 3,5 detik. Setiap Sea-Dyed Foam dapat mengakumulasi pemulihan hingga 30.000 HP (termasuk pemulihan yang berlebih). Dalam party sendiri, hanya bisa ada satu Sea-Dyed Foam yang muncul dalam waktu bersamaan. Efek dari set Artefak ini tetap dapat terpicu meskipun Karakter party yang mengenakannya tidak berada di medan pertempuran."
       ]
     },
     {
@@ -9222,6 +9406,11 @@
       "key": "rice",
       "name": "Rice",
       "description": "Sebuah tanaman biji-bijian yang biasa ditemukan di Teyvat. Orang-orang dari semua lapisan masyarakat menikmati tekstur butirannya yang berbeda, seperti kata pepatah \"Jenis beras yang sama dapat memberi makan 100 jenis orang.\""
+    },
+    {
+      "key": "riftborn-regalia",
+      "name": "Riftborn Regalia",
+      "description": "Tanduk patah yang kamu peroleh dari mengalahkan Wolflord. Meskipun begitu, benda ini seharusnya sudah tidak ada jejaknya lagi setelah dia diusir dari dunia ini.\r\nBahkan sesosok penguasa di antara Riftwolves bukanlah lawan yang berarti bagi monster dari silsilah yang lebih tinggi.\r\n\"Emas\" memproduksi massal gerombolan serigala yang cacat ini seolah-olah secara tidak sengaja, bagaikan menuliskan sesuatu di atas kertas yang penuh tulisan, dan menjadikan tanduk yang satu ini mewakili otoritasnya untuk memerintahkan induk gelapnya untuk membubarkan ruang itu sendiri."
     },
     {
       "key": "ring-of-boreas",

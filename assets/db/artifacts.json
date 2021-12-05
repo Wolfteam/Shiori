@@ -1,4 +1,4 @@
-{
+﻿{
   "artifacts": [
     {
       "key": "adventurer",
@@ -73,6 +73,12 @@
       "maxRarity": 5
     },
     {
+      "key": "husk-of-opulent-dreams",
+      "image": "husk-of-opulent-dreams_4.png",
+      "minRarity": 4,
+      "maxRarity": 5
+    },
+    {
       "key": "instructor",
       "image": "instructor_4.png",
       "minRarity": 3,
@@ -105,6 +111,12 @@
     {
       "key": "noblesse-oblige",
       "image": "noblesse-oblige_4.png",
+      "minRarity": 4,
+      "maxRarity": 5
+    },
+    {
+      "key": "ocean-hued-clam",
+      "image": "ocean-hued-clam_4.png",
       "minRarity": 4,
       "maxRarity": 5
     },
